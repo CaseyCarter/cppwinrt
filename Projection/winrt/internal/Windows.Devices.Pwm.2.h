@@ -66,12 +66,8 @@ template <> struct __declspec(uuid("e72bd078-ce02-55ac-a7b9-abd01248d888")) __de
 namespace Windows::Devices::Pwm {
 
 template <typename D>
-class WINRT_EBO impl_IPwmController
+struct WINRT_EBO impl_IPwmController
 {
-    auto shim() const { return impl::shim<D, IPwmController>(this); }
-
-public:
-
     int32_t PinCount() const;
     double ActualFrequency() const;
     double SetDesiredFrequency(double desiredFrequency) const;
@@ -81,32 +77,20 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPwmControllerStatics
+struct WINRT_EBO impl_IPwmControllerStatics
 {
-    auto shim() const { return impl::shim<D, IPwmControllerStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Pwm::PwmController>> GetControllersAsync(const Windows::Devices::Pwm::Provider::IPwmProvider & provider) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPwmControllerStatics2
+struct WINRT_EBO impl_IPwmControllerStatics2
 {
-    auto shim() const { return impl::shim<D, IPwmControllerStatics2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Devices::Pwm::PwmController> GetDefaultAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPwmPin
+struct WINRT_EBO impl_IPwmPin
 {
-    auto shim() const { return impl::shim<D, IPwmPin>(this); }
-
-public:
-
     Windows::Devices::Pwm::PwmController Controller() const;
     double GetActiveDutyCyclePercentage() const;
     void SetActiveDutyCyclePercentage(double dutyCyclePercentage) const;

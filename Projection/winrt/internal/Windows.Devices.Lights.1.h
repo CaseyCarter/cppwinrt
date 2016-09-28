@@ -50,9 +50,9 @@ template <> struct traits<Windows::Devices::Lights::LampAvailabilityChangedEvent
 
 namespace Windows::Devices::Lights {
 
-template <typename T> class impl_ILamp;
-template <typename T> class impl_ILampAvailabilityChangedEventArgs;
-template <typename T> class impl_ILampStatics;
+template <typename T> struct impl_ILamp;
+template <typename T> struct impl_ILampAvailabilityChangedEventArgs;
+template <typename T> struct impl_ILampStatics;
 
 }
 
@@ -79,14 +79,12 @@ template <> struct traits<Windows::Devices::Lights::ILampStatics>
 template <> struct traits<Windows::Devices::Lights::Lamp>
 {
     using abi = ABI::Windows::Devices::Lights::Lamp;
-    using default_interface = Windows::Devices::Lights::ILamp;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Lights.Lamp"; }
 };
 
 template <> struct traits<Windows::Devices::Lights::LampAvailabilityChangedEventArgs>
 {
     using abi = ABI::Windows::Devices::Lights::LampAvailabilityChangedEventArgs;
-    using default_interface = Windows::Devices::Lights::ILampAvailabilityChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Lights.LampAvailabilityChangedEventArgs"; }
 };
 

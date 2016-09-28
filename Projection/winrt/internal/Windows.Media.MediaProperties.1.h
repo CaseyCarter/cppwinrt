@@ -224,25 +224,25 @@ template <> struct traits<Windows::Media::MediaProperties::VideoEncodingProperti
 
 namespace Windows::Media::MediaProperties {
 
-template <typename T> class impl_IAudioEncodingProperties;
-template <typename T> class impl_IAudioEncodingPropertiesStatics;
-template <typename T> class impl_IAudioEncodingPropertiesWithFormatUserData;
-template <typename T> class impl_IContainerEncodingProperties;
-template <typename T> class impl_IH264ProfileIdsStatics;
-template <typename T> class impl_IImageEncodingProperties;
-template <typename T> class impl_IImageEncodingPropertiesStatics;
-template <typename T> class impl_IImageEncodingPropertiesStatics2;
-template <typename T> class impl_IMediaEncodingProfile;
-template <typename T> class impl_IMediaEncodingProfileStatics;
-template <typename T> class impl_IMediaEncodingProfileStatics2;
-template <typename T> class impl_IMediaEncodingProperties;
-template <typename T> class impl_IMediaEncodingSubtypesStatics;
-template <typename T> class impl_IMediaRatio;
-template <typename T> class impl_IMpeg2ProfileIdsStatics;
-template <typename T> class impl_IVideoEncodingProperties;
-template <typename T> class impl_IVideoEncodingProperties2;
-template <typename T> class impl_IVideoEncodingProperties3;
-template <typename T> class impl_IVideoEncodingPropertiesStatics;
+template <typename T> struct impl_IAudioEncodingProperties;
+template <typename T> struct impl_IAudioEncodingPropertiesStatics;
+template <typename T> struct impl_IAudioEncodingPropertiesWithFormatUserData;
+template <typename T> struct impl_IContainerEncodingProperties;
+template <typename T> struct impl_IH264ProfileIdsStatics;
+template <typename T> struct impl_IImageEncodingProperties;
+template <typename T> struct impl_IImageEncodingPropertiesStatics;
+template <typename T> struct impl_IImageEncodingPropertiesStatics2;
+template <typename T> struct impl_IMediaEncodingProfile;
+template <typename T> struct impl_IMediaEncodingProfileStatics;
+template <typename T> struct impl_IMediaEncodingProfileStatics2;
+template <typename T> struct impl_IMediaEncodingProperties;
+template <typename T> struct impl_IMediaEncodingSubtypesStatics;
+template <typename T> struct impl_IMediaRatio;
+template <typename T> struct impl_IMpeg2ProfileIdsStatics;
+template <typename T> struct impl_IVideoEncodingProperties;
+template <typename T> struct impl_IVideoEncodingProperties2;
+template <typename T> struct impl_IVideoEncodingProperties3;
+template <typename T> struct impl_IVideoEncodingPropertiesStatics;
 
 }
 
@@ -365,14 +365,12 @@ template <> struct traits<Windows::Media::MediaProperties::IVideoEncodingPropert
 template <> struct traits<Windows::Media::MediaProperties::AudioEncodingProperties>
 {
     using abi = ABI::Windows::Media::MediaProperties::AudioEncodingProperties;
-    using default_interface = Windows::Media::MediaProperties::IAudioEncodingProperties;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.MediaProperties.AudioEncodingProperties"; }
 };
 
 template <> struct traits<Windows::Media::MediaProperties::ContainerEncodingProperties>
 {
     using abi = ABI::Windows::Media::MediaProperties::ContainerEncodingProperties;
-    using default_interface = Windows::Media::MediaProperties::IContainerEncodingProperties;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.MediaProperties.ContainerEncodingProperties"; }
 };
 
@@ -384,14 +382,12 @@ template <> struct traits<Windows::Media::MediaProperties::H264ProfileIds>
 template <> struct traits<Windows::Media::MediaProperties::ImageEncodingProperties>
 {
     using abi = ABI::Windows::Media::MediaProperties::ImageEncodingProperties;
-    using default_interface = Windows::Media::MediaProperties::IImageEncodingProperties;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.MediaProperties.ImageEncodingProperties"; }
 };
 
 template <> struct traits<Windows::Media::MediaProperties::MediaEncodingProfile>
 {
     using abi = ABI::Windows::Media::MediaProperties::MediaEncodingProfile;
-    using default_interface = Windows::Media::MediaProperties::IMediaEncodingProfile;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.MediaProperties.MediaEncodingProfile"; }
 };
 
@@ -403,14 +399,12 @@ template <> struct traits<Windows::Media::MediaProperties::MediaEncodingSubtypes
 template <> struct traits<Windows::Media::MediaProperties::MediaPropertySet>
 {
     using abi = ABI::Windows::Media::MediaProperties::MediaPropertySet;
-    using default_interface = Windows::Foundation::Collections::IMap<GUID, Windows::IInspectable>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.MediaProperties.MediaPropertySet"; }
 };
 
 template <> struct traits<Windows::Media::MediaProperties::MediaRatio>
 {
     using abi = ABI::Windows::Media::MediaProperties::MediaRatio;
-    using default_interface = Windows::Media::MediaProperties::IMediaRatio;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.MediaProperties.MediaRatio"; }
 };
 
@@ -422,7 +416,6 @@ template <> struct traits<Windows::Media::MediaProperties::Mpeg2ProfileIds>
 template <> struct traits<Windows::Media::MediaProperties::VideoEncodingProperties>
 {
     using abi = ABI::Windows::Media::MediaProperties::VideoEncodingProperties;
-    using default_interface = Windows::Media::MediaProperties::IVideoEncodingProperties;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.MediaProperties.VideoEncodingProperties"; }
 };
 

@@ -178,22 +178,22 @@ template <> struct traits<Windows::Media::Capture::Frames::VideoMediaFrameFormat
 
 namespace Windows::Media::Capture::Frames {
 
-template <typename T> class impl_IBufferMediaFrame;
-template <typename T> class impl_IDepthMediaFrame;
-template <typename T> class impl_IDepthMediaFrameFormat;
-template <typename T> class impl_IInfraredMediaFrame;
-template <typename T> class impl_IMediaFrameArrivedEventArgs;
-template <typename T> class impl_IMediaFrameFormat;
-template <typename T> class impl_IMediaFrameReader;
-template <typename T> class impl_IMediaFrameReference;
-template <typename T> class impl_IMediaFrameSource;
-template <typename T> class impl_IMediaFrameSourceController;
-template <typename T> class impl_IMediaFrameSourceGetPropertyResult;
-template <typename T> class impl_IMediaFrameSourceGroup;
-template <typename T> class impl_IMediaFrameSourceGroupStatics;
-template <typename T> class impl_IMediaFrameSourceInfo;
-template <typename T> class impl_IVideoMediaFrame;
-template <typename T> class impl_IVideoMediaFrameFormat;
+template <typename T> struct impl_IBufferMediaFrame;
+template <typename T> struct impl_IDepthMediaFrame;
+template <typename T> struct impl_IDepthMediaFrameFormat;
+template <typename T> struct impl_IInfraredMediaFrame;
+template <typename T> struct impl_IMediaFrameArrivedEventArgs;
+template <typename T> struct impl_IMediaFrameFormat;
+template <typename T> struct impl_IMediaFrameReader;
+template <typename T> struct impl_IMediaFrameReference;
+template <typename T> struct impl_IMediaFrameSource;
+template <typename T> struct impl_IMediaFrameSourceController;
+template <typename T> struct impl_IMediaFrameSourceGetPropertyResult;
+template <typename T> struct impl_IMediaFrameSourceGroup;
+template <typename T> struct impl_IMediaFrameSourceGroupStatics;
+template <typename T> struct impl_IMediaFrameSourceInfo;
+template <typename T> struct impl_IVideoMediaFrame;
+template <typename T> struct impl_IVideoMediaFrameFormat;
 
 }
 
@@ -298,105 +298,90 @@ template <> struct traits<Windows::Media::Capture::Frames::IVideoMediaFrameForma
 template <> struct traits<Windows::Media::Capture::Frames::BufferMediaFrame>
 {
     using abi = ABI::Windows::Media::Capture::Frames::BufferMediaFrame;
-    using default_interface = Windows::Media::Capture::Frames::IBufferMediaFrame;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.Frames.BufferMediaFrame"; }
 };
 
 template <> struct traits<Windows::Media::Capture::Frames::DepthMediaFrame>
 {
     using abi = ABI::Windows::Media::Capture::Frames::DepthMediaFrame;
-    using default_interface = Windows::Media::Capture::Frames::IDepthMediaFrame;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.Frames.DepthMediaFrame"; }
 };
 
 template <> struct traits<Windows::Media::Capture::Frames::DepthMediaFrameFormat>
 {
     using abi = ABI::Windows::Media::Capture::Frames::DepthMediaFrameFormat;
-    using default_interface = Windows::Media::Capture::Frames::IDepthMediaFrameFormat;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.Frames.DepthMediaFrameFormat"; }
 };
 
 template <> struct traits<Windows::Media::Capture::Frames::InfraredMediaFrame>
 {
     using abi = ABI::Windows::Media::Capture::Frames::InfraredMediaFrame;
-    using default_interface = Windows::Media::Capture::Frames::IInfraredMediaFrame;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.Frames.InfraredMediaFrame"; }
 };
 
 template <> struct traits<Windows::Media::Capture::Frames::MediaFrameArrivedEventArgs>
 {
     using abi = ABI::Windows::Media::Capture::Frames::MediaFrameArrivedEventArgs;
-    using default_interface = Windows::Media::Capture::Frames::IMediaFrameArrivedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.Frames.MediaFrameArrivedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Capture::Frames::MediaFrameFormat>
 {
     using abi = ABI::Windows::Media::Capture::Frames::MediaFrameFormat;
-    using default_interface = Windows::Media::Capture::Frames::IMediaFrameFormat;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.Frames.MediaFrameFormat"; }
 };
 
 template <> struct traits<Windows::Media::Capture::Frames::MediaFrameReader>
 {
     using abi = ABI::Windows::Media::Capture::Frames::MediaFrameReader;
-    using default_interface = Windows::Media::Capture::Frames::IMediaFrameReader;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.Frames.MediaFrameReader"; }
 };
 
 template <> struct traits<Windows::Media::Capture::Frames::MediaFrameReference>
 {
     using abi = ABI::Windows::Media::Capture::Frames::MediaFrameReference;
-    using default_interface = Windows::Media::Capture::Frames::IMediaFrameReference;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.Frames.MediaFrameReference"; }
 };
 
 template <> struct traits<Windows::Media::Capture::Frames::MediaFrameSource>
 {
     using abi = ABI::Windows::Media::Capture::Frames::MediaFrameSource;
-    using default_interface = Windows::Media::Capture::Frames::IMediaFrameSource;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.Frames.MediaFrameSource"; }
 };
 
 template <> struct traits<Windows::Media::Capture::Frames::MediaFrameSourceController>
 {
     using abi = ABI::Windows::Media::Capture::Frames::MediaFrameSourceController;
-    using default_interface = Windows::Media::Capture::Frames::IMediaFrameSourceController;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.Frames.MediaFrameSourceController"; }
 };
 
 template <> struct traits<Windows::Media::Capture::Frames::MediaFrameSourceGetPropertyResult>
 {
     using abi = ABI::Windows::Media::Capture::Frames::MediaFrameSourceGetPropertyResult;
-    using default_interface = Windows::Media::Capture::Frames::IMediaFrameSourceGetPropertyResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.Frames.MediaFrameSourceGetPropertyResult"; }
 };
 
 template <> struct traits<Windows::Media::Capture::Frames::MediaFrameSourceGroup>
 {
     using abi = ABI::Windows::Media::Capture::Frames::MediaFrameSourceGroup;
-    using default_interface = Windows::Media::Capture::Frames::IMediaFrameSourceGroup;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.Frames.MediaFrameSourceGroup"; }
 };
 
 template <> struct traits<Windows::Media::Capture::Frames::MediaFrameSourceInfo>
 {
     using abi = ABI::Windows::Media::Capture::Frames::MediaFrameSourceInfo;
-    using default_interface = Windows::Media::Capture::Frames::IMediaFrameSourceInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.Frames.MediaFrameSourceInfo"; }
 };
 
 template <> struct traits<Windows::Media::Capture::Frames::VideoMediaFrame>
 {
     using abi = ABI::Windows::Media::Capture::Frames::VideoMediaFrame;
-    using default_interface = Windows::Media::Capture::Frames::IVideoMediaFrame;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.Frames.VideoMediaFrame"; }
 };
 
 template <> struct traits<Windows::Media::Capture::Frames::VideoMediaFrameFormat>
 {
     using abi = ABI::Windows::Media::Capture::Frames::VideoMediaFrameFormat;
-    using default_interface = Windows::Media::Capture::Frames::IVideoMediaFrameFormat;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.Frames.VideoMediaFrameFormat"; }
 };
 

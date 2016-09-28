@@ -162,42 +162,42 @@ namespace Windows::Devices::Radios {
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Radios::Radio>> impl_IRadioStatics<D>::GetRadiosAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Radios::Radio>> value;
-    check_hresult(shim()->abi_GetRadiosAsync(put(value)));
+    check_hresult(static_cast<const IRadioStatics &>(static_cast<const D &>(*this))->abi_GetRadiosAsync(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IRadioStatics<D>::GetDeviceSelector() const
 {
     hstring deviceSelector;
-    check_hresult(shim()->abi_GetDeviceSelector(put(deviceSelector)));
+    check_hresult(static_cast<const IRadioStatics &>(static_cast<const D &>(*this))->abi_GetDeviceSelector(put(deviceSelector)));
     return deviceSelector;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Radios::Radio> impl_IRadioStatics<D>::FromIdAsync(hstring_ref deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Radios::Radio> value;
-    check_hresult(shim()->abi_FromIdAsync(get(deviceId), put(value)));
+    check_hresult(static_cast<const IRadioStatics &>(static_cast<const D &>(*this))->abi_FromIdAsync(get(deviceId), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Radios::RadioAccessStatus> impl_IRadioStatics<D>::RequestAccessAsync() const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Radios::RadioAccessStatus> value;
-    check_hresult(shim()->abi_RequestAccessAsync(put(value)));
+    check_hresult(static_cast<const IRadioStatics &>(static_cast<const D &>(*this))->abi_RequestAccessAsync(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Radios::RadioAccessStatus> impl_IRadio<D>::SetStateAsync(Windows::Devices::Radios::RadioState value) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Radios::RadioAccessStatus> retval;
-    check_hresult(shim()->abi_SetStateAsync(value, put(retval)));
+    check_hresult(static_cast<const IRadio &>(static_cast<const D &>(*this))->abi_SetStateAsync(value, put(retval)));
     return retval;
 }
 
 template <typename D> event_token impl_IRadio<D>::StateChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Radios::Radio, Windows::IInspectable> & handler) const
 {
     event_token eventCookie {};
-    check_hresult(shim()->add_StateChanged(get(handler), &eventCookie));
+    check_hresult(static_cast<const IRadio &>(static_cast<const D &>(*this))->add_StateChanged(get(handler), &eventCookie));
     return eventCookie;
 }
 
@@ -208,27 +208,27 @@ template <typename D> event_revoker<IRadio> impl_IRadio<D>::StateChanged(auto_re
 
 template <typename D> void impl_IRadio<D>::StateChanged(event_token eventCookie) const
 {
-    check_hresult(shim()->remove_StateChanged(eventCookie));
+    check_hresult(static_cast<const IRadio &>(static_cast<const D &>(*this))->remove_StateChanged(eventCookie));
 }
 
 template <typename D> Windows::Devices::Radios::RadioState impl_IRadio<D>::State() const
 {
     Windows::Devices::Radios::RadioState value {};
-    check_hresult(shim()->get_State(&value));
+    check_hresult(static_cast<const IRadio &>(static_cast<const D &>(*this))->get_State(&value));
     return value;
 }
 
 template <typename D> hstring impl_IRadio<D>::Name() const
 {
     hstring value;
-    check_hresult(shim()->get_Name(put(value)));
+    check_hresult(static_cast<const IRadio &>(static_cast<const D &>(*this))->get_Name(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Radios::RadioKind impl_IRadio<D>::Kind() const
 {
     Windows::Devices::Radios::RadioKind value {};
-    check_hresult(shim()->get_Kind(&value));
+    check_hresult(static_cast<const IRadio &>(static_cast<const D &>(*this))->get_Kind(&value));
     return value;
 }
 

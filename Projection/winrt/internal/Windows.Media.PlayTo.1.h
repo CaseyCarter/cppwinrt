@@ -205,24 +205,24 @@ template <> struct traits<Windows::Media::PlayTo::VolumeChangeRequestedEventArgs
 
 namespace Windows::Media::PlayTo {
 
-template <typename T> class impl_ICurrentTimeChangeRequestedEventArgs;
-template <typename T> class impl_IMuteChangeRequestedEventArgs;
-template <typename T> class impl_IPlayToConnection;
-template <typename T> class impl_IPlayToConnectionErrorEventArgs;
-template <typename T> class impl_IPlayToConnectionStateChangedEventArgs;
-template <typename T> class impl_IPlayToConnectionTransferredEventArgs;
-template <typename T> class impl_IPlayToManager;
-template <typename T> class impl_IPlayToManagerStatics;
-template <typename T> class impl_IPlayToReceiver;
-template <typename T> class impl_IPlayToSource;
-template <typename T> class impl_IPlayToSourceDeferral;
-template <typename T> class impl_IPlayToSourceRequest;
-template <typename T> class impl_IPlayToSourceRequestedEventArgs;
-template <typename T> class impl_IPlayToSourceSelectedEventArgs;
-template <typename T> class impl_IPlayToSourceWithPreferredSourceUri;
-template <typename T> class impl_IPlaybackRateChangeRequestedEventArgs;
-template <typename T> class impl_ISourceChangeRequestedEventArgs;
-template <typename T> class impl_IVolumeChangeRequestedEventArgs;
+template <typename T> struct impl_ICurrentTimeChangeRequestedEventArgs;
+template <typename T> struct impl_IMuteChangeRequestedEventArgs;
+template <typename T> struct impl_IPlayToConnection;
+template <typename T> struct impl_IPlayToConnectionErrorEventArgs;
+template <typename T> struct impl_IPlayToConnectionStateChangedEventArgs;
+template <typename T> struct impl_IPlayToConnectionTransferredEventArgs;
+template <typename T> struct impl_IPlayToManager;
+template <typename T> struct impl_IPlayToManagerStatics;
+template <typename T> struct impl_IPlayToReceiver;
+template <typename T> struct impl_IPlayToSource;
+template <typename T> struct impl_IPlayToSourceDeferral;
+template <typename T> struct impl_IPlayToSourceRequest;
+template <typename T> struct impl_IPlayToSourceRequestedEventArgs;
+template <typename T> struct impl_IPlayToSourceSelectedEventArgs;
+template <typename T> struct impl_IPlayToSourceWithPreferredSourceUri;
+template <typename T> struct impl_IPlaybackRateChangeRequestedEventArgs;
+template <typename T> struct impl_ISourceChangeRequestedEventArgs;
+template <typename T> struct impl_IVolumeChangeRequestedEventArgs;
 
 }
 
@@ -339,112 +339,96 @@ template <> struct traits<Windows::Media::PlayTo::IVolumeChangeRequestedEventArg
 template <> struct traits<Windows::Media::PlayTo::CurrentTimeChangeRequestedEventArgs>
 {
     using abi = ABI::Windows::Media::PlayTo::CurrentTimeChangeRequestedEventArgs;
-    using default_interface = Windows::Media::PlayTo::ICurrentTimeChangeRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.PlayTo.CurrentTimeChangeRequestedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::PlayTo::MuteChangeRequestedEventArgs>
 {
     using abi = ABI::Windows::Media::PlayTo::MuteChangeRequestedEventArgs;
-    using default_interface = Windows::Media::PlayTo::IMuteChangeRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.PlayTo.MuteChangeRequestedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::PlayTo::PlayToConnection>
 {
     using abi = ABI::Windows::Media::PlayTo::PlayToConnection;
-    using default_interface = Windows::Media::PlayTo::IPlayToConnection;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.PlayTo.PlayToConnection"; }
 };
 
 template <> struct traits<Windows::Media::PlayTo::PlayToConnectionErrorEventArgs>
 {
     using abi = ABI::Windows::Media::PlayTo::PlayToConnectionErrorEventArgs;
-    using default_interface = Windows::Media::PlayTo::IPlayToConnectionErrorEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.PlayTo.PlayToConnectionErrorEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::PlayTo::PlayToConnectionStateChangedEventArgs>
 {
     using abi = ABI::Windows::Media::PlayTo::PlayToConnectionStateChangedEventArgs;
-    using default_interface = Windows::Media::PlayTo::IPlayToConnectionStateChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.PlayTo.PlayToConnectionStateChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::PlayTo::PlayToConnectionTransferredEventArgs>
 {
     using abi = ABI::Windows::Media::PlayTo::PlayToConnectionTransferredEventArgs;
-    using default_interface = Windows::Media::PlayTo::IPlayToConnectionTransferredEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.PlayTo.PlayToConnectionTransferredEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::PlayTo::PlayToManager>
 {
     using abi = ABI::Windows::Media::PlayTo::PlayToManager;
-    using default_interface = Windows::Media::PlayTo::IPlayToManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.PlayTo.PlayToManager"; }
 };
 
 template <> struct traits<Windows::Media::PlayTo::PlayToReceiver>
 {
     using abi = ABI::Windows::Media::PlayTo::PlayToReceiver;
-    using default_interface = Windows::Media::PlayTo::IPlayToReceiver;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.PlayTo.PlayToReceiver"; }
 };
 
 template <> struct traits<Windows::Media::PlayTo::PlayToSource>
 {
     using abi = ABI::Windows::Media::PlayTo::PlayToSource;
-    using default_interface = Windows::Media::PlayTo::IPlayToSource;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.PlayTo.PlayToSource"; }
 };
 
 template <> struct traits<Windows::Media::PlayTo::PlayToSourceDeferral>
 {
     using abi = ABI::Windows::Media::PlayTo::PlayToSourceDeferral;
-    using default_interface = Windows::Media::PlayTo::IPlayToSourceDeferral;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.PlayTo.PlayToSourceDeferral"; }
 };
 
 template <> struct traits<Windows::Media::PlayTo::PlayToSourceRequest>
 {
     using abi = ABI::Windows::Media::PlayTo::PlayToSourceRequest;
-    using default_interface = Windows::Media::PlayTo::IPlayToSourceRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.PlayTo.PlayToSourceRequest"; }
 };
 
 template <> struct traits<Windows::Media::PlayTo::PlayToSourceRequestedEventArgs>
 {
     using abi = ABI::Windows::Media::PlayTo::PlayToSourceRequestedEventArgs;
-    using default_interface = Windows::Media::PlayTo::IPlayToSourceRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.PlayTo.PlayToSourceRequestedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::PlayTo::PlayToSourceSelectedEventArgs>
 {
     using abi = ABI::Windows::Media::PlayTo::PlayToSourceSelectedEventArgs;
-    using default_interface = Windows::Media::PlayTo::IPlayToSourceSelectedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.PlayTo.PlayToSourceSelectedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::PlayTo::PlaybackRateChangeRequestedEventArgs>
 {
     using abi = ABI::Windows::Media::PlayTo::PlaybackRateChangeRequestedEventArgs;
-    using default_interface = Windows::Media::PlayTo::IPlaybackRateChangeRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.PlayTo.PlaybackRateChangeRequestedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::PlayTo::SourceChangeRequestedEventArgs>
 {
     using abi = ABI::Windows::Media::PlayTo::SourceChangeRequestedEventArgs;
-    using default_interface = Windows::Media::PlayTo::ISourceChangeRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.PlayTo.SourceChangeRequestedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::PlayTo::VolumeChangeRequestedEventArgs>
 {
     using abi = ABI::Windows::Media::PlayTo::VolumeChangeRequestedEventArgs;
-    using default_interface = Windows::Media::PlayTo::IVolumeChangeRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.PlayTo.VolumeChangeRequestedEventArgs"; }
 };
 

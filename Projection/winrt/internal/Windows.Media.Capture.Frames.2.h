@@ -206,23 +206,15 @@ template <> struct __declspec(uuid("cff78a64-bd44-5638-af2f-540c23b322e7")) __de
 namespace Windows::Media::Capture::Frames {
 
 template <typename D>
-class WINRT_EBO impl_IBufferMediaFrame
+struct WINRT_EBO impl_IBufferMediaFrame
 {
-    auto shim() const { return impl::shim<D, IBufferMediaFrame>(this); }
-
-public:
-
     Windows::Media::Capture::Frames::MediaFrameReference FrameReference() const;
     Windows::Storage::Streams::IBuffer Buffer() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDepthMediaFrame
+struct WINRT_EBO impl_IDepthMediaFrame
 {
-    auto shim() const { return impl::shim<D, IDepthMediaFrame>(this); }
-
-public:
-
     Windows::Media::Capture::Frames::MediaFrameReference FrameReference() const;
     Windows::Media::Capture::Frames::VideoMediaFrame VideoMediaFrame() const;
     Windows::Media::Capture::Frames::DepthMediaFrameFormat DepthFormat() const;
@@ -230,44 +222,28 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDepthMediaFrameFormat
+struct WINRT_EBO impl_IDepthMediaFrameFormat
 {
-    auto shim() const { return impl::shim<D, IDepthMediaFrameFormat>(this); }
-
-public:
-
     Windows::Media::Capture::Frames::VideoMediaFrameFormat VideoFormat() const;
     double DepthScaleInMeters() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInfraredMediaFrame
+struct WINRT_EBO impl_IInfraredMediaFrame
 {
-    auto shim() const { return impl::shim<D, IInfraredMediaFrame>(this); }
-
-public:
-
     Windows::Media::Capture::Frames::MediaFrameReference FrameReference() const;
     Windows::Media::Capture::Frames::VideoMediaFrame VideoMediaFrame() const;
     bool IsIlluminated() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaFrameArrivedEventArgs
+struct WINRT_EBO impl_IMediaFrameArrivedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMediaFrameArrivedEventArgs>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaFrameFormat
+struct WINRT_EBO impl_IMediaFrameFormat
 {
-    auto shim() const { return impl::shim<D, IMediaFrameFormat>(this); }
-
-public:
-
     hstring MajorType() const;
     hstring Subtype() const;
     Windows::Media::MediaProperties::MediaRatio FrameRate() const;
@@ -276,12 +252,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaFrameReader
+struct WINRT_EBO impl_IMediaFrameReader
 {
-    auto shim() const { return impl::shim<D, IMediaFrameReader>(this); }
-
-public:
-
     event_token FrameArrived(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Frames::MediaFrameReader, Windows::Media::Capture::Frames::MediaFrameArrivedEventArgs> & handler) const;
     using FrameArrived_revoker = event_revoker<IMediaFrameReader>;
     FrameArrived_revoker FrameArrived(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Frames::MediaFrameReader, Windows::Media::Capture::Frames::MediaFrameArrivedEventArgs> & handler) const;
@@ -292,12 +264,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaFrameReference
+struct WINRT_EBO impl_IMediaFrameReference
 {
-    auto shim() const { return impl::shim<D, IMediaFrameReference>(this); }
-
-public:
-
     Windows::Media::Capture::Frames::MediaFrameSourceKind SourceKind() const;
     Windows::Media::Capture::Frames::MediaFrameFormat Format() const;
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> SystemRelativeTime() const;
@@ -309,12 +277,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaFrameSource
+struct WINRT_EBO impl_IMediaFrameSource
 {
-    auto shim() const { return impl::shim<D, IMediaFrameSource>(this); }
-
-public:
-
     Windows::Media::Capture::Frames::MediaFrameSourceInfo Info() const;
     Windows::Media::Capture::Frames::MediaFrameSourceController Controller() const;
     Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::Frames::MediaFrameFormat> SupportedFormats() const;
@@ -328,59 +292,39 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaFrameSourceController
+struct WINRT_EBO impl_IMediaFrameSourceController
 {
-    auto shim() const { return impl::shim<D, IMediaFrameSourceController>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Frames::MediaFrameSourceGetPropertyResult> GetPropertyAsync(hstring_ref propertyId) const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::Media::Capture::Frames::MediaFrameSourceSetPropertyStatus> SetPropertyAsync(hstring_ref propertyId, const Windows::IInspectable & propertyValue) const;
     Windows::Media::Devices::VideoDeviceController VideoDeviceController() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaFrameSourceGetPropertyResult
+struct WINRT_EBO impl_IMediaFrameSourceGetPropertyResult
 {
-    auto shim() const { return impl::shim<D, IMediaFrameSourceGetPropertyResult>(this); }
-
-public:
-
     Windows::Media::Capture::Frames::MediaFrameSourceGetPropertyStatus Status() const;
     Windows::IInspectable Value() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaFrameSourceGroup
+struct WINRT_EBO impl_IMediaFrameSourceGroup
 {
-    auto shim() const { return impl::shim<D, IMediaFrameSourceGroup>(this); }
-
-public:
-
     hstring Id() const;
     hstring DisplayName() const;
     Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::Frames::MediaFrameSourceInfo> SourceInfos() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaFrameSourceGroupStatics
+struct WINRT_EBO impl_IMediaFrameSourceGroupStatics
 {
-    auto shim() const { return impl::shim<D, IMediaFrameSourceGroupStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::Frames::MediaFrameSourceGroup>> FindAllAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Frames::MediaFrameSourceGroup> FromIdAsync(hstring_ref id) const;
     hstring GetDeviceSelector() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaFrameSourceInfo
+struct WINRT_EBO impl_IMediaFrameSourceInfo
 {
-    auto shim() const { return impl::shim<D, IMediaFrameSourceInfo>(this); }
-
-public:
-
     hstring Id() const;
     Windows::Media::Capture::MediaStreamType MediaStreamType() const;
     Windows::Media::Capture::Frames::MediaFrameSourceKind SourceKind() const;
@@ -391,12 +335,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVideoMediaFrame
+struct WINRT_EBO impl_IVideoMediaFrame
 {
-    auto shim() const { return impl::shim<D, IVideoMediaFrame>(this); }
-
-public:
-
     Windows::Media::Capture::Frames::MediaFrameReference FrameReference() const;
     Windows::Media::Capture::Frames::VideoMediaFrameFormat VideoFormat() const;
     Windows::Graphics::Imaging::SoftwareBitmap SoftwareBitmap() const;
@@ -408,12 +348,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVideoMediaFrameFormat
+struct WINRT_EBO impl_IVideoMediaFrameFormat
 {
-    auto shim() const { return impl::shim<D, IVideoMediaFrameFormat>(this); }
-
-public:
-
     Windows::Media::Capture::Frames::MediaFrameFormat MediaFrameFormat() const;
     Windows::Media::Capture::Frames::DepthMediaFrameFormat DepthFormat() const;
     uint32_t Width() const;

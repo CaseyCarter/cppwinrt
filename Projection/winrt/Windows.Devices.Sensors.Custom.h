@@ -197,54 +197,54 @@ namespace Windows::Devices::Sensors::Custom {
 template <typename D> hstring impl_ICustomSensorStatics<D>::GetDeviceSelector(GUID interfaceId) const
 {
     hstring result;
-    check_hresult(shim()->abi_GetDeviceSelector(interfaceId, put(result)));
+    check_hresult(static_cast<const ICustomSensorStatics &>(static_cast<const D &>(*this))->abi_GetDeviceSelector(interfaceId, put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::Custom::CustomSensor> impl_ICustomSensorStatics<D>::FromIdAsync(hstring_ref sensorId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::Custom::CustomSensor> result;
-    check_hresult(shim()->abi_FromIdAsync(get(sensorId), put(result)));
+    check_hresult(static_cast<const ICustomSensorStatics &>(static_cast<const D &>(*this))->abi_FromIdAsync(get(sensorId), put(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::Sensors::Custom::CustomSensorReading impl_ICustomSensor<D>::GetCurrentReading() const
 {
     Windows::Devices::Sensors::Custom::CustomSensorReading value { nullptr };
-    check_hresult(shim()->abi_GetCurrentReading(put(value)));
+    check_hresult(static_cast<const ICustomSensor &>(static_cast<const D &>(*this))->abi_GetCurrentReading(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_ICustomSensor<D>::MinimumReportInterval() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_MinimumReportInterval(&value));
+    check_hresult(static_cast<const ICustomSensor &>(static_cast<const D &>(*this))->get_MinimumReportInterval(&value));
     return value;
 }
 
 template <typename D> void impl_ICustomSensor<D>::ReportInterval(uint32_t value) const
 {
-    check_hresult(shim()->put_ReportInterval(value));
+    check_hresult(static_cast<const ICustomSensor &>(static_cast<const D &>(*this))->put_ReportInterval(value));
 }
 
 template <typename D> uint32_t impl_ICustomSensor<D>::ReportInterval() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_ReportInterval(&value));
+    check_hresult(static_cast<const ICustomSensor &>(static_cast<const D &>(*this))->get_ReportInterval(&value));
     return value;
 }
 
 template <typename D> hstring impl_ICustomSensor<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(shim()->get_DeviceId(put(value)));
+    check_hresult(static_cast<const ICustomSensor &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_ICustomSensor<D>::ReadingChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Sensors::Custom::CustomSensor, Windows::Devices::Sensors::Custom::CustomSensorReadingChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_ReadingChanged(get(handler), &token));
+    check_hresult(static_cast<const ICustomSensor &>(static_cast<const D &>(*this))->add_ReadingChanged(get(handler), &token));
     return token;
 }
 
@@ -255,27 +255,27 @@ template <typename D> event_revoker<ICustomSensor> impl_ICustomSensor<D>::Readin
 
 template <typename D> void impl_ICustomSensor<D>::ReadingChanged(event_token token) const
 {
-    check_hresult(shim()->remove_ReadingChanged(token));
+    check_hresult(static_cast<const ICustomSensor &>(static_cast<const D &>(*this))->remove_ReadingChanged(token));
 }
 
 template <typename D> Windows::Foundation::DateTime impl_ICustomSensorReading<D>::Timestamp() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->get_Timestamp(put(value)));
+    check_hresult(static_cast<const ICustomSensorReading &>(static_cast<const D &>(*this))->get_Timestamp(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> impl_ICustomSensorReading<D>::Properties() const
 {
     Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> value;
-    check_hresult(shim()->get_Properties(put(value)));
+    check_hresult(static_cast<const ICustomSensorReading &>(static_cast<const D &>(*this))->get_Properties(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Sensors::Custom::CustomSensorReading impl_ICustomSensorReadingChangedEventArgs<D>::Reading() const
 {
     Windows::Devices::Sensors::Custom::CustomSensorReading value { nullptr };
-    check_hresult(shim()->get_Reading(put(value)));
+    check_hresult(static_cast<const ICustomSensorReadingChangedEventArgs &>(static_cast<const D &>(*this))->get_Reading(put(value)));
     return value;
 }
 

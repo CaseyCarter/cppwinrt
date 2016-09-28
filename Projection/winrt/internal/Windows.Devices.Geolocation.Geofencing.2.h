@@ -65,12 +65,8 @@ template <> struct __declspec(uuid("76f50b4e-7aa7-565b-aada-b0c1cc144ed0")) __de
 namespace Windows::Devices::Geolocation::Geofencing {
 
 template <typename D>
-class WINRT_EBO impl_IGeofence
+struct WINRT_EBO impl_IGeofence
 {
-    auto shim() const { return impl::shim<D, IGeofence>(this); }
-
-public:
-
     Windows::Foundation::DateTime StartTime() const;
     Windows::Foundation::TimeSpan Duration() const;
     Windows::Foundation::TimeSpan DwellTime() const;
@@ -81,12 +77,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IGeofenceFactory
+struct WINRT_EBO impl_IGeofenceFactory
 {
-    auto shim() const { return impl::shim<D, IGeofenceFactory>(this); }
-
-public:
-
     Windows::Devices::Geolocation::Geofencing::Geofence Create(hstring_ref id, const Windows::Devices::Geolocation::IGeoshape & geoshape) const;
     Windows::Devices::Geolocation::Geofencing::Geofence CreateWithMonitorStates(hstring_ref id, const Windows::Devices::Geolocation::IGeoshape & geoshape, Windows::Devices::Geolocation::Geofencing::MonitoredGeofenceStates monitoredStates, bool singleUse) const;
     Windows::Devices::Geolocation::Geofencing::Geofence CreateWithMonitorStatesAndDwellTime(hstring_ref id, const Windows::Devices::Geolocation::IGeoshape & geoshape, Windows::Devices::Geolocation::Geofencing::MonitoredGeofenceStates monitoredStates, bool singleUse, const Windows::Foundation::TimeSpan & dwellTime) const;
@@ -94,12 +86,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IGeofenceMonitor
+struct WINRT_EBO impl_IGeofenceMonitor
 {
-    auto shim() const { return impl::shim<D, IGeofenceMonitor>(this); }
-
-public:
-
     Windows::Devices::Geolocation::Geofencing::GeofenceMonitorStatus Status() const;
     Windows::Foundation::Collections::IVector<Windows::Devices::Geolocation::Geofencing::Geofence> Geofences() const;
     Windows::Devices::Geolocation::Geoposition LastKnownGeoposition() const;
@@ -115,22 +103,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IGeofenceMonitorStatics
+struct WINRT_EBO impl_IGeofenceMonitorStatics
 {
-    auto shim() const { return impl::shim<D, IGeofenceMonitorStatics>(this); }
-
-public:
-
     Windows::Devices::Geolocation::Geofencing::GeofenceMonitor Current() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGeofenceStateChangeReport
+struct WINRT_EBO impl_IGeofenceStateChangeReport
 {
-    auto shim() const { return impl::shim<D, IGeofenceStateChangeReport>(this); }
-
-public:
-
     Windows::Devices::Geolocation::Geofencing::GeofenceState NewState() const;
     Windows::Devices::Geolocation::Geofencing::Geofence Geofence() const;
     Windows::Devices::Geolocation::Geoposition Geoposition() const;

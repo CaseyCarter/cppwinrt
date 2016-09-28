@@ -171,44 +171,28 @@ template <> struct __declspec(uuid("bfea3fad-411e-5721-88f5-92c9b9fbbe14")) __de
 namespace Windows::Devices::SmartCards {
 
 template <typename D>
-class WINRT_EBO impl_ICardAddedEventArgs
+struct WINRT_EBO impl_ICardAddedEventArgs
 {
-    auto shim() const { return impl::shim<D, ICardAddedEventArgs>(this); }
-
-public:
-
     Windows::Devices::SmartCards::SmartCard SmartCard() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICardRemovedEventArgs
+struct WINRT_EBO impl_ICardRemovedEventArgs
 {
-    auto shim() const { return impl::shim<D, ICardRemovedEventArgs>(this); }
-
-public:
-
     Windows::Devices::SmartCards::SmartCard SmartCard() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISmartCard
+struct WINRT_EBO impl_ISmartCard
 {
-    auto shim() const { return impl::shim<D, ISmartCard>(this); }
-
-public:
-
     Windows::Devices::SmartCards::SmartCardReader Reader() const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::SmartCards::SmartCardStatus> GetStatusAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> GetAnswerToResetAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISmartCardChallengeContext
+struct WINRT_EBO impl_ISmartCardChallengeContext
 {
-    auto shim() const { return impl::shim<D, ISmartCardChallengeContext>(this); }
-
-public:
-
     Windows::Storage::Streams::IBuffer Challenge() const;
     Windows::Foundation::IAsyncOperation<bool> VerifyResponseAsync(const Windows::Storage::Streams::IBuffer & response) const;
     Windows::Foundation::IAsyncAction ProvisionAsync(const Windows::Storage::Streams::IBuffer & response, bool formatCard) const;
@@ -217,32 +201,20 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISmartCardConnect
+struct WINRT_EBO impl_ISmartCardConnect
 {
-    auto shim() const { return impl::shim<D, ISmartCardConnect>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardConnection> ConnectAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISmartCardConnection
+struct WINRT_EBO impl_ISmartCardConnection
 {
-    auto shim() const { return impl::shim<D, ISmartCardConnection>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> TransmitAsync(const Windows::Storage::Streams::IBuffer & command) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISmartCardPinPolicy
+struct WINRT_EBO impl_ISmartCardPinPolicy
 {
-    auto shim() const { return impl::shim<D, ISmartCardPinPolicy>(this); }
-
-public:
-
     uint32_t MinLength() const;
     void MinLength(uint32_t value) const;
     uint32_t MaxLength() const;
@@ -258,22 +230,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISmartCardPinResetDeferral
+struct WINRT_EBO impl_ISmartCardPinResetDeferral
 {
-    auto shim() const { return impl::shim<D, ISmartCardPinResetDeferral>(this); }
-
-public:
-
     void Complete() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISmartCardPinResetRequest
+struct WINRT_EBO impl_ISmartCardPinResetRequest
 {
-    auto shim() const { return impl::shim<D, ISmartCardPinResetRequest>(this); }
-
-public:
-
     Windows::Storage::Streams::IBuffer Challenge() const;
     Windows::Foundation::DateTime Deadline() const;
     Windows::Devices::SmartCards::SmartCardPinResetDeferral GetDeferral() const;
@@ -281,12 +245,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISmartCardProvisioning
+struct WINRT_EBO impl_ISmartCardProvisioning
 {
-    auto shim() const { return impl::shim<D, ISmartCardProvisioning>(this); }
-
-public:
-
     Windows::Devices::SmartCards::SmartCard SmartCard() const;
     Windows::Foundation::IAsyncOperation<GUID> GetIdAsync() const;
     Windows::Foundation::IAsyncOperation<hstring> GetNameAsync() const;
@@ -296,22 +256,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISmartCardProvisioning2
+struct WINRT_EBO impl_ISmartCardProvisioning2
 {
-    auto shim() const { return impl::shim<D, ISmartCardProvisioning2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<hstring> GetAuthorityKeyContainerNameAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISmartCardProvisioningStatics
+struct WINRT_EBO impl_ISmartCardProvisioningStatics
 {
-    auto shim() const { return impl::shim<D, ISmartCardProvisioningStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning> FromSmartCardAsync(const Windows::Devices::SmartCards::SmartCard & card) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning> RequestVirtualSmartCardCreationAsync(hstring_ref friendlyName, const Windows::Storage::Streams::IBuffer & administrativeKey, const Windows::Devices::SmartCards::SmartCardPinPolicy & pinPolicy) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning> RequestVirtualSmartCardCreationAsync(hstring_ref friendlyName, const Windows::Storage::Streams::IBuffer & administrativeKey, const Windows::Devices::SmartCards::SmartCardPinPolicy & pinPolicy, GUID cardId) const;
@@ -319,23 +271,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISmartCardProvisioningStatics2
+struct WINRT_EBO impl_ISmartCardProvisioningStatics2
 {
-    auto shim() const { return impl::shim<D, ISmartCardProvisioningStatics2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning> RequestAttestedVirtualSmartCardCreationAsync(hstring_ref friendlyName, const Windows::Storage::Streams::IBuffer & administrativeKey, const Windows::Devices::SmartCards::SmartCardPinPolicy & pinPolicy) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning> RequestAttestedVirtualSmartCardCreationAsync(hstring_ref friendlyName, const Windows::Storage::Streams::IBuffer & administrativeKey, const Windows::Devices::SmartCards::SmartCardPinPolicy & pinPolicy, GUID cardId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISmartCardReader
+struct WINRT_EBO impl_ISmartCardReader
 {
-    auto shim() const { return impl::shim<D, ISmartCardReader>(this); }
-
-public:
-
     hstring DeviceId() const;
     hstring Name() const;
     Windows::Devices::SmartCards::SmartCardReaderKind Kind() const;
@@ -352,12 +296,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISmartCardReaderStatics
+struct WINRT_EBO impl_ISmartCardReaderStatics
 {
-    auto shim() const { return impl::shim<D, ISmartCardReaderStatics>(this); }
-
-public:
-
     hstring GetDeviceSelector() const;
     hstring GetDeviceSelector(Windows::Devices::SmartCards::SmartCardReaderKind kind) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardReader> FromIdAsync(hstring_ref deviceId) const;

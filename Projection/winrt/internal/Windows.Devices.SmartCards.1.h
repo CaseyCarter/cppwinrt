@@ -152,21 +152,21 @@ template <> struct traits<Windows::Devices::SmartCards::SmartCardReader> { using
 
 namespace Windows::Devices::SmartCards {
 
-template <typename T> class impl_ICardAddedEventArgs;
-template <typename T> class impl_ICardRemovedEventArgs;
-template <typename T> class impl_ISmartCard;
-template <typename T> class impl_ISmartCardChallengeContext;
-template <typename T> class impl_ISmartCardConnect;
-template <typename T> class impl_ISmartCardConnection;
-template <typename T> class impl_ISmartCardPinPolicy;
-template <typename T> class impl_ISmartCardPinResetDeferral;
-template <typename T> class impl_ISmartCardPinResetRequest;
-template <typename T> class impl_ISmartCardProvisioning;
-template <typename T> class impl_ISmartCardProvisioning2;
-template <typename T> class impl_ISmartCardProvisioningStatics;
-template <typename T> class impl_ISmartCardProvisioningStatics2;
-template <typename T> class impl_ISmartCardReader;
-template <typename T> class impl_ISmartCardReaderStatics;
+template <typename T> struct impl_ICardAddedEventArgs;
+template <typename T> struct impl_ICardRemovedEventArgs;
+template <typename T> struct impl_ISmartCard;
+template <typename T> struct impl_ISmartCardChallengeContext;
+template <typename T> struct impl_ISmartCardConnect;
+template <typename T> struct impl_ISmartCardConnection;
+template <typename T> struct impl_ISmartCardPinPolicy;
+template <typename T> struct impl_ISmartCardPinResetDeferral;
+template <typename T> struct impl_ISmartCardPinResetRequest;
+template <typename T> struct impl_ISmartCardProvisioning;
+template <typename T> struct impl_ISmartCardProvisioning2;
+template <typename T> struct impl_ISmartCardProvisioningStatics;
+template <typename T> struct impl_ISmartCardProvisioningStatics2;
+template <typename T> struct impl_ISmartCardReader;
+template <typename T> struct impl_ISmartCardReaderStatics;
 template <typename T> struct impl_SmartCardPinResetHandler;
 
 }
@@ -271,70 +271,60 @@ template <> struct traits<Windows::Devices::SmartCards::SmartCardPinResetHandler
 template <> struct traits<Windows::Devices::SmartCards::CardAddedEventArgs>
 {
     using abi = ABI::Windows::Devices::SmartCards::CardAddedEventArgs;
-    using default_interface = Windows::Devices::SmartCards::ICardAddedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.SmartCards.CardAddedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::SmartCards::CardRemovedEventArgs>
 {
     using abi = ABI::Windows::Devices::SmartCards::CardRemovedEventArgs;
-    using default_interface = Windows::Devices::SmartCards::ICardRemovedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.SmartCards.CardRemovedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::SmartCards::SmartCard>
 {
     using abi = ABI::Windows::Devices::SmartCards::SmartCard;
-    using default_interface = Windows::Devices::SmartCards::ISmartCard;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.SmartCards.SmartCard"; }
 };
 
 template <> struct traits<Windows::Devices::SmartCards::SmartCardChallengeContext>
 {
     using abi = ABI::Windows::Devices::SmartCards::SmartCardChallengeContext;
-    using default_interface = Windows::Devices::SmartCards::ISmartCardChallengeContext;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.SmartCards.SmartCardChallengeContext"; }
 };
 
 template <> struct traits<Windows::Devices::SmartCards::SmartCardConnection>
 {
     using abi = ABI::Windows::Devices::SmartCards::SmartCardConnection;
-    using default_interface = Windows::Devices::SmartCards::ISmartCardConnection;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.SmartCards.SmartCardConnection"; }
 };
 
 template <> struct traits<Windows::Devices::SmartCards::SmartCardPinPolicy>
 {
     using abi = ABI::Windows::Devices::SmartCards::SmartCardPinPolicy;
-    using default_interface = Windows::Devices::SmartCards::ISmartCardPinPolicy;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.SmartCards.SmartCardPinPolicy"; }
 };
 
 template <> struct traits<Windows::Devices::SmartCards::SmartCardPinResetDeferral>
 {
     using abi = ABI::Windows::Devices::SmartCards::SmartCardPinResetDeferral;
-    using default_interface = Windows::Devices::SmartCards::ISmartCardPinResetDeferral;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.SmartCards.SmartCardPinResetDeferral"; }
 };
 
 template <> struct traits<Windows::Devices::SmartCards::SmartCardPinResetRequest>
 {
     using abi = ABI::Windows::Devices::SmartCards::SmartCardPinResetRequest;
-    using default_interface = Windows::Devices::SmartCards::ISmartCardPinResetRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.SmartCards.SmartCardPinResetRequest"; }
 };
 
 template <> struct traits<Windows::Devices::SmartCards::SmartCardProvisioning>
 {
     using abi = ABI::Windows::Devices::SmartCards::SmartCardProvisioning;
-    using default_interface = Windows::Devices::SmartCards::ISmartCardProvisioning;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.SmartCards.SmartCardProvisioning"; }
 };
 
 template <> struct traits<Windows::Devices::SmartCards::SmartCardReader>
 {
     using abi = ABI::Windows::Devices::SmartCards::SmartCardReader;
-    using default_interface = Windows::Devices::SmartCards::ISmartCardReader;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.SmartCards.SmartCardReader"; }
 };
 

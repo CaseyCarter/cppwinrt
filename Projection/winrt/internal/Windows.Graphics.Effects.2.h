@@ -10,23 +10,15 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::Graphics::Effects {
 
 template <typename D>
-class WINRT_EBO impl_IGraphicsEffect
+struct WINRT_EBO impl_IGraphicsEffect
 {
-    auto shim() const { return impl::shim<D, IGraphicsEffect>(this); }
-
-public:
-
     hstring Name() const;
     void Name(hstring_ref name) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGraphicsEffectSource
+struct WINRT_EBO impl_IGraphicsEffectSource
 {
-    auto shim() const { return impl::shim<D, IGraphicsEffectSource>(this); }
-
-public:
-
 };
 
 struct IGraphicsEffect :

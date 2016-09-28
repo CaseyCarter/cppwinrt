@@ -155,15 +155,15 @@ template <> struct traits<Windows::Storage::FileProperties::VideoProperties> { u
 
 namespace Windows::Storage::FileProperties {
 
-template <typename T> class impl_IBasicProperties;
-template <typename T> class impl_IDocumentProperties;
-template <typename T> class impl_IGeotagHelperStatics;
-template <typename T> class impl_IImageProperties;
-template <typename T> class impl_IMusicProperties;
-template <typename T> class impl_IStorageItemContentProperties;
-template <typename T> class impl_IStorageItemExtraProperties;
-template <typename T> class impl_IThumbnailProperties;
-template <typename T> class impl_IVideoProperties;
+template <typename T> struct impl_IBasicProperties;
+template <typename T> struct impl_IDocumentProperties;
+template <typename T> struct impl_IGeotagHelperStatics;
+template <typename T> struct impl_IImageProperties;
+template <typename T> struct impl_IMusicProperties;
+template <typename T> struct impl_IStorageItemContentProperties;
+template <typename T> struct impl_IStorageItemExtraProperties;
+template <typename T> struct impl_IThumbnailProperties;
+template <typename T> struct impl_IVideoProperties;
 
 }
 
@@ -226,14 +226,12 @@ template <> struct traits<Windows::Storage::FileProperties::IVideoProperties>
 template <> struct traits<Windows::Storage::FileProperties::BasicProperties>
 {
     using abi = ABI::Windows::Storage::FileProperties::BasicProperties;
-    using default_interface = Windows::Storage::FileProperties::IBasicProperties;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.FileProperties.BasicProperties"; }
 };
 
 template <> struct traits<Windows::Storage::FileProperties::DocumentProperties>
 {
     using abi = ABI::Windows::Storage::FileProperties::DocumentProperties;
-    using default_interface = Windows::Storage::FileProperties::IDocumentProperties;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.FileProperties.DocumentProperties"; }
 };
 
@@ -245,35 +243,30 @@ template <> struct traits<Windows::Storage::FileProperties::GeotagHelper>
 template <> struct traits<Windows::Storage::FileProperties::ImageProperties>
 {
     using abi = ABI::Windows::Storage::FileProperties::ImageProperties;
-    using default_interface = Windows::Storage::FileProperties::IImageProperties;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.FileProperties.ImageProperties"; }
 };
 
 template <> struct traits<Windows::Storage::FileProperties::MusicProperties>
 {
     using abi = ABI::Windows::Storage::FileProperties::MusicProperties;
-    using default_interface = Windows::Storage::FileProperties::IMusicProperties;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.FileProperties.MusicProperties"; }
 };
 
 template <> struct traits<Windows::Storage::FileProperties::StorageItemContentProperties>
 {
     using abi = ABI::Windows::Storage::FileProperties::StorageItemContentProperties;
-    using default_interface = Windows::Storage::FileProperties::IStorageItemContentProperties;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.FileProperties.StorageItemContentProperties"; }
 };
 
 template <> struct traits<Windows::Storage::FileProperties::StorageItemThumbnail>
 {
     using abi = ABI::Windows::Storage::FileProperties::StorageItemThumbnail;
-    using default_interface = Windows::Storage::Streams::IRandomAccessStreamWithContentType;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.FileProperties.StorageItemThumbnail"; }
 };
 
 template <> struct traits<Windows::Storage::FileProperties::VideoProperties>
 {
     using abi = ABI::Windows::Storage::FileProperties::VideoProperties;
-    using default_interface = Windows::Storage::FileProperties::IVideoProperties;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.FileProperties.VideoProperties"; }
 };
 

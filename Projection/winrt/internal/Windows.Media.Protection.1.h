@@ -125,18 +125,18 @@ template <> struct traits<Windows::Media::Protection::ServiceRequestedEventArgs>
 
 namespace Windows::Media::Protection {
 
-template <typename T> class impl_IComponentLoadFailedEventArgs;
-template <typename T> class impl_IHdcpSession;
-template <typename T> class impl_IMediaProtectionManager;
-template <typename T> class impl_IMediaProtectionPMPServer;
-template <typename T> class impl_IMediaProtectionPMPServerFactory;
-template <typename T> class impl_IMediaProtectionServiceCompletion;
-template <typename T> class impl_IMediaProtectionServiceRequest;
-template <typename T> class impl_IProtectionCapabilities;
-template <typename T> class impl_IRevocationAndRenewalInformation;
-template <typename T> class impl_IRevocationAndRenewalItem;
-template <typename T> class impl_IServiceRequestedEventArgs;
-template <typename T> class impl_IServiceRequestedEventArgs2;
+template <typename T> struct impl_IComponentLoadFailedEventArgs;
+template <typename T> struct impl_IHdcpSession;
+template <typename T> struct impl_IMediaProtectionManager;
+template <typename T> struct impl_IMediaProtectionPMPServer;
+template <typename T> struct impl_IMediaProtectionPMPServerFactory;
+template <typename T> struct impl_IMediaProtectionServiceCompletion;
+template <typename T> struct impl_IMediaProtectionServiceRequest;
+template <typename T> struct impl_IProtectionCapabilities;
+template <typename T> struct impl_IRevocationAndRenewalInformation;
+template <typename T> struct impl_IRevocationAndRenewalItem;
+template <typename T> struct impl_IServiceRequestedEventArgs;
+template <typename T> struct impl_IServiceRequestedEventArgs2;
 template <typename T> struct impl_ComponentLoadFailedEventHandler;
 template <typename T> struct impl_RebootNeededEventHandler;
 template <typename T> struct impl_ServiceRequestedEventHandler;
@@ -235,63 +235,54 @@ template <> struct traits<Windows::Media::Protection::ServiceRequestedEventHandl
 template <> struct traits<Windows::Media::Protection::ComponentLoadFailedEventArgs>
 {
     using abi = ABI::Windows::Media::Protection::ComponentLoadFailedEventArgs;
-    using default_interface = Windows::Media::Protection::IComponentLoadFailedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Protection.ComponentLoadFailedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Protection::HdcpSession>
 {
     using abi = ABI::Windows::Media::Protection::HdcpSession;
-    using default_interface = Windows::Media::Protection::IHdcpSession;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Protection.HdcpSession"; }
 };
 
 template <> struct traits<Windows::Media::Protection::MediaProtectionManager>
 {
     using abi = ABI::Windows::Media::Protection::MediaProtectionManager;
-    using default_interface = Windows::Media::Protection::IMediaProtectionManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Protection.MediaProtectionManager"; }
 };
 
 template <> struct traits<Windows::Media::Protection::MediaProtectionPMPServer>
 {
     using abi = ABI::Windows::Media::Protection::MediaProtectionPMPServer;
-    using default_interface = Windows::Media::Protection::IMediaProtectionPMPServer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Protection.MediaProtectionPMPServer"; }
 };
 
 template <> struct traits<Windows::Media::Protection::MediaProtectionServiceCompletion>
 {
     using abi = ABI::Windows::Media::Protection::MediaProtectionServiceCompletion;
-    using default_interface = Windows::Media::Protection::IMediaProtectionServiceCompletion;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Protection.MediaProtectionServiceCompletion"; }
 };
 
 template <> struct traits<Windows::Media::Protection::ProtectionCapabilities>
 {
     using abi = ABI::Windows::Media::Protection::ProtectionCapabilities;
-    using default_interface = Windows::Media::Protection::IProtectionCapabilities;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Protection.ProtectionCapabilities"; }
 };
 
 template <> struct traits<Windows::Media::Protection::RevocationAndRenewalInformation>
 {
     using abi = ABI::Windows::Media::Protection::RevocationAndRenewalInformation;
-    using default_interface = Windows::Media::Protection::IRevocationAndRenewalInformation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Protection.RevocationAndRenewalInformation"; }
 };
 
 template <> struct traits<Windows::Media::Protection::RevocationAndRenewalItem>
 {
     using abi = ABI::Windows::Media::Protection::RevocationAndRenewalItem;
-    using default_interface = Windows::Media::Protection::IRevocationAndRenewalItem;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Protection.RevocationAndRenewalItem"; }
 };
 
 template <> struct traits<Windows::Media::Protection::ServiceRequestedEventArgs>
 {
     using abi = ABI::Windows::Media::Protection::ServiceRequestedEventArgs;
-    using default_interface = Windows::Media::Protection::IServiceRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Protection.ServiceRequestedEventArgs"; }
 };
 

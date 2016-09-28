@@ -406,23 +406,15 @@ template <> struct __declspec(uuid("f8491bcd-2db5-58e0-8c47-44e6eb10c12d")) __de
 namespace Windows::Services::Store {
 
 template <typename D>
-class WINRT_EBO impl_IStoreAcquireLicenseResult
+struct WINRT_EBO impl_IStoreAcquireLicenseResult
 {
-    auto shim() const { return impl::shim<D, IStoreAcquireLicenseResult>(this); }
-
-public:
-
     Windows::Services::Store::StorePackageLicense StorePackageLicense() const;
     HRESULT ExtendedError() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStoreAppLicense
+struct WINRT_EBO impl_IStoreAppLicense
 {
-    auto shim() const { return impl::shim<D, IStoreAppLicense>(this); }
-
-public:
-
     hstring SkuStoreId() const;
     bool IsActive() const;
     bool IsTrial() const;
@@ -435,12 +427,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStoreAvailability
+struct WINRT_EBO impl_IStoreAvailability
 {
-    auto shim() const { return impl::shim<D, IStoreAvailability>(this); }
-
-public:
-
     hstring StoreId() const;
     Windows::Foundation::DateTime EndDate() const;
     Windows::Services::Store::StorePrice Price() const;
@@ -450,12 +438,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStoreCollectionData
+struct WINRT_EBO impl_IStoreCollectionData
 {
-    auto shim() const { return impl::shim<D, IStoreCollectionData>(this); }
-
-public:
-
     bool IsTrial() const;
     hstring CampaignId() const;
     hstring DeveloperOfferId() const;
@@ -467,12 +451,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStoreConsumableResult
+struct WINRT_EBO impl_IStoreConsumableResult
 {
-    auto shim() const { return impl::shim<D, IStoreConsumableResult>(this); }
-
-public:
-
     Windows::Services::Store::StoreConsumableStatus Status() const;
     GUID TrackingId() const;
     uint32_t BalanceRemaining() const;
@@ -480,12 +460,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStoreContext
+struct WINRT_EBO impl_IStoreContext
 {
-    auto shim() const { return impl::shim<D, IStoreContext>(this); }
-
-public:
-
     Windows::System::User User() const;
     event_token OfflineLicensesChanged(const Windows::Foundation::TypedEventHandler<Windows::Services::Store::StoreContext, Windows::IInspectable> & handler) const;
     using OfflineLicensesChanged_revoker = event_revoker<IStoreContext>;
@@ -512,23 +488,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStoreContextStatics
+struct WINRT_EBO impl_IStoreContextStatics
 {
-    auto shim() const { return impl::shim<D, IStoreContextStatics>(this); }
-
-public:
-
     Windows::Services::Store::StoreContext GetDefault() const;
     Windows::Services::Store::StoreContext GetForUser(const Windows::System::User & user) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStoreImage
+struct WINRT_EBO impl_IStoreImage
 {
-    auto shim() const { return impl::shim<D, IStoreImage>(this); }
-
-public:
-
     Windows::Foundation::Uri Uri() const;
     hstring ImagePurposeTag() const;
     uint32_t Width() const;
@@ -537,12 +505,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStoreLicense
+struct WINRT_EBO impl_IStoreLicense
 {
-    auto shim() const { return impl::shim<D, IStoreLicense>(this); }
-
-public:
-
     hstring SkuStoreId() const;
     bool IsActive() const;
     Windows::Foundation::DateTime ExpirationDate() const;
@@ -551,12 +515,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorePackageLicense
+struct WINRT_EBO impl_IStorePackageLicense
 {
-    auto shim() const { return impl::shim<D, IStorePackageLicense>(this); }
-
-public:
-
     event_token LicenseLost(const Windows::Foundation::TypedEventHandler<Windows::Services::Store::StorePackageLicense, Windows::IInspectable> & handler) const;
     using LicenseLost_revoker = event_revoker<IStorePackageLicense>;
     LicenseLost_revoker LicenseLost(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Services::Store::StorePackageLicense, Windows::IInspectable> & handler) const;
@@ -567,34 +527,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorePackageUpdate
+struct WINRT_EBO impl_IStorePackageUpdate
 {
-    auto shim() const { return impl::shim<D, IStorePackageUpdate>(this); }
-
-public:
-
     Windows::ApplicationModel::Package Package() const;
     bool Mandatory() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorePackageUpdateResult
+struct WINRT_EBO impl_IStorePackageUpdateResult
 {
-    auto shim() const { return impl::shim<D, IStorePackageUpdateResult>(this); }
-
-public:
-
     Windows::Services::Store::StorePackageUpdateState OverallState() const;
     Windows::Foundation::Collections::IVectorView<Windows::Services::Store::StorePackageUpdateStatus> StorePackageUpdateStatuses() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorePrice
+struct WINRT_EBO impl_IStorePrice
 {
-    auto shim() const { return impl::shim<D, IStorePrice>(this); }
-
-public:
-
     hstring FormattedBasePrice() const;
     hstring FormattedPrice() const;
     bool IsOnSale() const;
@@ -604,12 +552,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStoreProduct
+struct WINRT_EBO impl_IStoreProduct
 {
-    auto shim() const { return impl::shim<D, IStoreProduct>(this); }
-
-public:
-
     hstring StoreId() const;
     hstring Language() const;
     hstring Title() const;
@@ -631,12 +575,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStoreProductPagedQueryResult
+struct WINRT_EBO impl_IStoreProductPagedQueryResult
 {
-    auto shim() const { return impl::shim<D, IStoreProductPagedQueryResult>(this); }
-
-public:
-
     Windows::Foundation::Collections::IMapView<hstring, Windows::Services::Store::StoreProduct> Products() const;
     bool HasMoreResults() const;
     HRESULT ExtendedError() const;
@@ -644,34 +584,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStoreProductQueryResult
+struct WINRT_EBO impl_IStoreProductQueryResult
 {
-    auto shim() const { return impl::shim<D, IStoreProductQueryResult>(this); }
-
-public:
-
     Windows::Foundation::Collections::IMapView<hstring, Windows::Services::Store::StoreProduct> Products() const;
     HRESULT ExtendedError() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStoreProductResult
+struct WINRT_EBO impl_IStoreProductResult
 {
-    auto shim() const { return impl::shim<D, IStoreProductResult>(this); }
-
-public:
-
     Windows::Services::Store::StoreProduct Product() const;
     HRESULT ExtendedError() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorePurchaseProperties
+struct WINRT_EBO impl_IStorePurchaseProperties
 {
-    auto shim() const { return impl::shim<D, IStorePurchaseProperties>(this); }
-
-public:
-
     hstring Name() const;
     void Name(hstring_ref value) const;
     hstring ExtendedJsonData() const;
@@ -679,54 +607,34 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorePurchasePropertiesFactory
+struct WINRT_EBO impl_IStorePurchasePropertiesFactory
 {
-    auto shim() const { return impl::shim<D, IStorePurchasePropertiesFactory>(this); }
-
-public:
-
     Windows::Services::Store::StorePurchaseProperties Create(hstring_ref name) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorePurchaseResult
+struct WINRT_EBO impl_IStorePurchaseResult
 {
-    auto shim() const { return impl::shim<D, IStorePurchaseResult>(this); }
-
-public:
-
     Windows::Services::Store::StorePurchaseStatus Status() const;
     HRESULT ExtendedError() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStoreRequestHelperStatics
+struct WINRT_EBO impl_IStoreRequestHelperStatics
 {
-    auto shim() const { return impl::shim<D, IStoreRequestHelperStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreSendRequestResult> SendRequestAsync(const Windows::Services::Store::StoreContext & context, uint32_t requestKind, hstring_ref parametersAsJson) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStoreSendRequestResult
+struct WINRT_EBO impl_IStoreSendRequestResult
 {
-    auto shim() const { return impl::shim<D, IStoreSendRequestResult>(this); }
-
-public:
-
     hstring Response() const;
     HRESULT ExtendedError() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStoreSku
+struct WINRT_EBO impl_IStoreSku
 {
-    auto shim() const { return impl::shim<D, IStoreSku>(this); }
-
-public:
-
     hstring StoreId() const;
     hstring Language() const;
     hstring Title() const;
@@ -749,12 +657,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStoreSubscriptionInfo
+struct WINRT_EBO impl_IStoreSubscriptionInfo
 {
-    auto shim() const { return impl::shim<D, IStoreSubscriptionInfo>(this); }
-
-public:
-
     uint32_t BillingPeriod() const;
     Windows::Services::Store::StoreDurationUnit BillingPeriodUnit() const;
     bool HasTrialPeriod() const;
@@ -763,12 +667,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStoreVideo
+struct WINRT_EBO impl_IStoreVideo
 {
-    auto shim() const { return impl::shim<D, IStoreVideo>(this); }
-
-public:
-
     Windows::Foundation::Uri Uri() const;
     hstring VideoPurposeTag() const;
     uint32_t Width() const;

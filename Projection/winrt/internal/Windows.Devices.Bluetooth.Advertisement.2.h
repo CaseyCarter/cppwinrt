@@ -130,12 +130,8 @@ template <> struct __declspec(uuid("a7d9983a-a11f-572e-89fb-683ea429bcbc")) __de
 namespace Windows::Devices::Bluetooth::Advertisement {
 
 template <typename D>
-class WINRT_EBO impl_IBluetoothLEAdvertisement
+struct WINRT_EBO impl_IBluetoothLEAdvertisement
 {
-    auto shim() const { return impl::shim<D, IBluetoothLEAdvertisement>(this); }
-
-public:
-
     Windows::Foundation::IReference<winrt::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFlags> Flags() const;
     void Flags(const Windows::Foundation::IReference<winrt::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFlags> & value) const;
     hstring LocalName() const;
@@ -148,12 +144,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBluetoothLEAdvertisementBytePattern
+struct WINRT_EBO impl_IBluetoothLEAdvertisementBytePattern
 {
-    auto shim() const { return impl::shim<D, IBluetoothLEAdvertisementBytePattern>(this); }
-
-public:
-
     uint8_t DataType() const;
     void DataType(uint8_t value) const;
     int16_t Offset() const;
@@ -163,22 +155,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBluetoothLEAdvertisementBytePatternFactory
+struct WINRT_EBO impl_IBluetoothLEAdvertisementBytePatternFactory
 {
-    auto shim() const { return impl::shim<D, IBluetoothLEAdvertisementBytePatternFactory>(this); }
-
-public:
-
     Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementBytePattern Create(uint8_t dataType, int16_t offset, const Windows::Storage::Streams::IBuffer & data) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBluetoothLEAdvertisementDataSection
+struct WINRT_EBO impl_IBluetoothLEAdvertisementDataSection
 {
-    auto shim() const { return impl::shim<D, IBluetoothLEAdvertisementDataSection>(this); }
-
-public:
-
     uint8_t DataType() const;
     void DataType(uint8_t value) const;
     Windows::Storage::Streams::IBuffer Data() const;
@@ -186,22 +170,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBluetoothLEAdvertisementDataSectionFactory
+struct WINRT_EBO impl_IBluetoothLEAdvertisementDataSectionFactory
 {
-    auto shim() const { return impl::shim<D, IBluetoothLEAdvertisementDataSectionFactory>(this); }
-
-public:
-
     Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementDataSection Create(uint8_t dataType, const Windows::Storage::Streams::IBuffer & data) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBluetoothLEAdvertisementDataTypesStatics
+struct WINRT_EBO impl_IBluetoothLEAdvertisementDataTypesStatics
 {
-    auto shim() const { return impl::shim<D, IBluetoothLEAdvertisementDataTypesStatics>(this); }
-
-public:
-
     uint8_t Flags() const;
     uint8_t IncompleteService16BitUuids() const;
     uint8_t CompleteService16BitUuids() const;
@@ -227,24 +203,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBluetoothLEAdvertisementFilter
+struct WINRT_EBO impl_IBluetoothLEAdvertisementFilter
 {
-    auto shim() const { return impl::shim<D, IBluetoothLEAdvertisementFilter>(this); }
-
-public:
-
     Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisement Advertisement() const;
     void Advertisement(const Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisement & value) const;
     Windows::Foundation::Collections::IVector<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementBytePattern> BytePatterns() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBluetoothLEAdvertisementPublisher
+struct WINRT_EBO impl_IBluetoothLEAdvertisementPublisher
 {
-    auto shim() const { return impl::shim<D, IBluetoothLEAdvertisementPublisher>(this); }
-
-public:
-
     Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisherStatus Status() const;
     Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisement Advertisement() const;
     void Start() const;
@@ -256,33 +224,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBluetoothLEAdvertisementPublisherFactory
+struct WINRT_EBO impl_IBluetoothLEAdvertisementPublisherFactory
 {
-    auto shim() const { return impl::shim<D, IBluetoothLEAdvertisementPublisherFactory>(this); }
-
-public:
-
     Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisher Create(const Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisement & advertisement) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBluetoothLEAdvertisementPublisherStatusChangedEventArgs
+struct WINRT_EBO impl_IBluetoothLEAdvertisementPublisherStatusChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IBluetoothLEAdvertisementPublisherStatusChangedEventArgs>(this); }
-
-public:
-
     Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisherStatus Status() const;
     Windows::Devices::Bluetooth::BluetoothError Error() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBluetoothLEAdvertisementReceivedEventArgs
+struct WINRT_EBO impl_IBluetoothLEAdvertisementReceivedEventArgs
 {
-    auto shim() const { return impl::shim<D, IBluetoothLEAdvertisementReceivedEventArgs>(this); }
-
-public:
-
     int16_t RawSignalStrengthInDBm() const;
     uint64_t BluetoothAddress() const;
     Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementType AdvertisementType() const;
@@ -291,12 +247,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBluetoothLEAdvertisementWatcher
+struct WINRT_EBO impl_IBluetoothLEAdvertisementWatcher
 {
-    auto shim() const { return impl::shim<D, IBluetoothLEAdvertisementWatcher>(this); }
-
-public:
-
     Windows::Foundation::TimeSpan MinSamplingInterval() const;
     Windows::Foundation::TimeSpan MaxSamplingInterval() const;
     Windows::Foundation::TimeSpan MinOutOfRangeTimeout() const;
@@ -321,32 +273,20 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBluetoothLEAdvertisementWatcherFactory
+struct WINRT_EBO impl_IBluetoothLEAdvertisementWatcherFactory
 {
-    auto shim() const { return impl::shim<D, IBluetoothLEAdvertisementWatcherFactory>(this); }
-
-public:
-
     Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcher Create(const Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFilter & advertisementFilter) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBluetoothLEAdvertisementWatcherStoppedEventArgs
+struct WINRT_EBO impl_IBluetoothLEAdvertisementWatcherStoppedEventArgs
 {
-    auto shim() const { return impl::shim<D, IBluetoothLEAdvertisementWatcherStoppedEventArgs>(this); }
-
-public:
-
     Windows::Devices::Bluetooth::BluetoothError Error() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBluetoothLEManufacturerData
+struct WINRT_EBO impl_IBluetoothLEManufacturerData
 {
-    auto shim() const { return impl::shim<D, IBluetoothLEManufacturerData>(this); }
-
-public:
-
     uint16_t CompanyId() const;
     void CompanyId(uint16_t value) const;
     Windows::Storage::Streams::IBuffer Data() const;
@@ -354,12 +294,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBluetoothLEManufacturerDataFactory
+struct WINRT_EBO impl_IBluetoothLEManufacturerDataFactory
 {
-    auto shim() const { return impl::shim<D, IBluetoothLEManufacturerDataFactory>(this); }
-
-public:
-
     Windows::Devices::Bluetooth::Advertisement::BluetoothLEManufacturerData Create(uint16_t companyId, const Windows::Storage::Streams::IBuffer & data) const;
 };
 

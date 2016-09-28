@@ -155,35 +155,23 @@ template <> struct __declspec(uuid("83e14307-0be1-5560-8bfc-291095cf6d30")) __de
 namespace Windows::Data::Text {
 
 template <typename D>
-class WINRT_EBO impl_IAlternateWordForm
+struct WINRT_EBO impl_IAlternateWordForm
 {
-    auto shim() const { return impl::shim<D, IAlternateWordForm>(this); }
-
-public:
-
     Windows::Data::Text::TextSegment SourceTextSegment() const;
     hstring AlternateText() const;
     Windows::Data::Text::AlternateNormalizationFormat NormalizationFormat() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISelectableWordSegment
+struct WINRT_EBO impl_ISelectableWordSegment
 {
-    auto shim() const { return impl::shim<D, ISelectableWordSegment>(this); }
-
-public:
-
     hstring Text() const;
     Windows::Data::Text::TextSegment SourceTextSegment() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISelectableWordsSegmenter
+struct WINRT_EBO impl_ISelectableWordsSegmenter
 {
-    auto shim() const { return impl::shim<D, ISelectableWordsSegmenter>(this); }
-
-public:
-
     hstring ResolvedLanguage() const;
     Windows::Data::Text::SelectableWordSegment GetTokenAt(hstring_ref text, uint32_t startIndex) const;
     Windows::Foundation::Collections::IVectorView<Windows::Data::Text::SelectableWordSegment> GetTokens(hstring_ref text) const;
@@ -191,44 +179,28 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISelectableWordsSegmenterFactory
+struct WINRT_EBO impl_ISelectableWordsSegmenterFactory
 {
-    auto shim() const { return impl::shim<D, ISelectableWordsSegmenterFactory>(this); }
-
-public:
-
     Windows::Data::Text::SelectableWordsSegmenter CreateWithLanguage(hstring_ref language) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISemanticTextQuery
+struct WINRT_EBO impl_ISemanticTextQuery
 {
-    auto shim() const { return impl::shim<D, ISemanticTextQuery>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextSegment> Find(hstring_ref content) const;
     Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextSegment> FindInProperty(hstring_ref propertyContent, hstring_ref propertyName) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISemanticTextQueryFactory
+struct WINRT_EBO impl_ISemanticTextQueryFactory
 {
-    auto shim() const { return impl::shim<D, ISemanticTextQueryFactory>(this); }
-
-public:
-
     Windows::Data::Text::SemanticTextQuery Create(hstring_ref aqsFilter) const;
     Windows::Data::Text::SemanticTextQuery CreateWithLanguage(hstring_ref aqsFilter, hstring_ref filterLanguage) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITextConversionGenerator
+struct WINRT_EBO impl_ITextConversionGenerator
 {
-    auto shim() const { return impl::shim<D, ITextConversionGenerator>(this); }
-
-public:
-
     hstring ResolvedLanguage() const;
     bool LanguageAvailableButNotInstalled() const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> GetCandidatesAsync(hstring_ref input) const;
@@ -236,33 +208,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ITextConversionGeneratorFactory
+struct WINRT_EBO impl_ITextConversionGeneratorFactory
 {
-    auto shim() const { return impl::shim<D, ITextConversionGeneratorFactory>(this); }
-
-public:
-
     Windows::Data::Text::TextConversionGenerator Create(hstring_ref languageTag) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITextPhoneme
+struct WINRT_EBO impl_ITextPhoneme
 {
-    auto shim() const { return impl::shim<D, ITextPhoneme>(this); }
-
-public:
-
     hstring DisplayText() const;
     hstring ReadingText() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITextPredictionGenerator
+struct WINRT_EBO impl_ITextPredictionGenerator
 {
-    auto shim() const { return impl::shim<D, ITextPredictionGenerator>(this); }
-
-public:
-
     hstring ResolvedLanguage() const;
     bool LanguageAvailableButNotInstalled() const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> GetCandidatesAsync(hstring_ref input) const;
@@ -270,54 +230,34 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ITextPredictionGeneratorFactory
+struct WINRT_EBO impl_ITextPredictionGeneratorFactory
 {
-    auto shim() const { return impl::shim<D, ITextPredictionGeneratorFactory>(this); }
-
-public:
-
     Windows::Data::Text::TextPredictionGenerator Create(hstring_ref languageTag) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITextReverseConversionGenerator
+struct WINRT_EBO impl_ITextReverseConversionGenerator
 {
-    auto shim() const { return impl::shim<D, ITextReverseConversionGenerator>(this); }
-
-public:
-
     hstring ResolvedLanguage() const;
     bool LanguageAvailableButNotInstalled() const;
     Windows::Foundation::IAsyncOperation<hstring> ConvertBackAsync(hstring_ref input) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITextReverseConversionGenerator2
+struct WINRT_EBO impl_ITextReverseConversionGenerator2
 {
-    auto shim() const { return impl::shim<D, ITextReverseConversionGenerator2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextPhoneme>> GetPhonemesAsync(hstring_ref input) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITextReverseConversionGeneratorFactory
+struct WINRT_EBO impl_ITextReverseConversionGeneratorFactory
 {
-    auto shim() const { return impl::shim<D, ITextReverseConversionGeneratorFactory>(this); }
-
-public:
-
     Windows::Data::Text::TextReverseConversionGenerator Create(hstring_ref languageTag) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUnicodeCharactersStatics
+struct WINRT_EBO impl_IUnicodeCharactersStatics
 {
-    auto shim() const { return impl::shim<D, IUnicodeCharactersStatics>(this); }
-
-public:
-
     uint32_t GetCodepointFromSurrogatePair(uint32_t highSurrogate, uint32_t lowSurrogate) const;
     void GetSurrogatePairFromCodepoint(uint32_t codepoint, wchar_t & highSurrogate, wchar_t & lowSurrogate) const;
     bool IsHighSurrogate(uint32_t codepoint) const;
@@ -338,24 +278,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IWordSegment
+struct WINRT_EBO impl_IWordSegment
 {
-    auto shim() const { return impl::shim<D, IWordSegment>(this); }
-
-public:
-
     hstring Text() const;
     Windows::Data::Text::TextSegment SourceTextSegment() const;
     Windows::Foundation::Collections::IVectorView<Windows::Data::Text::AlternateWordForm> AlternateForms() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWordsSegmenter
+struct WINRT_EBO impl_IWordsSegmenter
 {
-    auto shim() const { return impl::shim<D, IWordsSegmenter>(this); }
-
-public:
-
     hstring ResolvedLanguage() const;
     Windows::Data::Text::WordSegment GetTokenAt(hstring_ref text, uint32_t startIndex) const;
     Windows::Foundation::Collections::IVectorView<Windows::Data::Text::WordSegment> GetTokens(hstring_ref text) const;
@@ -363,12 +295,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IWordsSegmenterFactory
+struct WINRT_EBO impl_IWordsSegmenterFactory
 {
-    auto shim() const { return impl::shim<D, IWordsSegmenterFactory>(this); }
-
-public:
-
     Windows::Data::Text::WordsSegmenter CreateWithLanguage(hstring_ref language) const;
 };
 

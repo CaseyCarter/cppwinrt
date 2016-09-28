@@ -744,199 +744,199 @@ namespace Windows::Devices::WiFiDirect {
 template <typename D> hstring impl_IWiFiDirectDeviceStatics<D>::GetDeviceSelector() const
 {
     hstring deviceSelector;
-    check_hresult(shim()->abi_GetDeviceSelector(put(deviceSelector)));
+    check_hresult(static_cast<const IWiFiDirectDeviceStatics &>(static_cast<const D &>(*this))->abi_GetDeviceSelector(put(deviceSelector)));
     return deviceSelector;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::WiFiDirectDevice> impl_IWiFiDirectDeviceStatics<D>::FromIdAsync(hstring_ref deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::WiFiDirectDevice> asyncOp;
-    check_hresult(shim()->abi_FromIdAsync(get(deviceId), put(asyncOp)));
+    check_hresult(static_cast<const IWiFiDirectDeviceStatics &>(static_cast<const D &>(*this))->abi_FromIdAsync(get(deviceId), put(asyncOp)));
     return asyncOp;
 }
 
 template <typename D> hstring impl_IWiFiDirectDeviceStatics2<D>::GetDeviceSelector(Windows::Devices::WiFiDirect::WiFiDirectDeviceSelectorType type) const
 {
     hstring result;
-    check_hresult(shim()->abi_GetDeviceSelector(type, put(result)));
+    check_hresult(static_cast<const IWiFiDirectDeviceStatics2 &>(static_cast<const D &>(*this))->abi_GetDeviceSelector(type, put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::WiFiDirectDevice> impl_IWiFiDirectDeviceStatics2<D>::FromIdAsync(hstring_ref deviceId, const Windows::Devices::WiFiDirect::WiFiDirectConnectionParameters & connectionParameters) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::WiFiDirectDevice> result;
-    check_hresult(shim()->abi_FromIdAsync(get(deviceId), get(connectionParameters), put(result)));
+    check_hresult(static_cast<const IWiFiDirectDeviceStatics2 &>(static_cast<const D &>(*this))->abi_FromIdAsync(get(deviceId), get(connectionParameters), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Devices::WiFiDirect::WiFiDirectInformationElement> impl_IWiFiDirectInformationElementStatics<D>::CreateFromBuffer(const Windows::Storage::Streams::IBuffer & buffer) const
 {
     Windows::Foundation::Collections::IVector<Windows::Devices::WiFiDirect::WiFiDirectInformationElement> result;
-    check_hresult(shim()->abi_CreateFromBuffer(get(buffer), put(result)));
+    check_hresult(static_cast<const IWiFiDirectInformationElementStatics &>(static_cast<const D &>(*this))->abi_CreateFromBuffer(get(buffer), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Devices::WiFiDirect::WiFiDirectInformationElement> impl_IWiFiDirectInformationElementStatics<D>::CreateFromDeviceInformation(const Windows::Devices::Enumeration::DeviceInformation & deviceInformation) const
 {
     Windows::Foundation::Collections::IVector<Windows::Devices::WiFiDirect::WiFiDirectInformationElement> result;
-    check_hresult(shim()->abi_CreateFromDeviceInformation(get(deviceInformation), put(result)));
+    check_hresult(static_cast<const IWiFiDirectInformationElementStatics &>(static_cast<const D &>(*this))->abi_CreateFromDeviceInformation(get(deviceInformation), put(result)));
     return result;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IWiFiDirectInformationElement<D>::Oui() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(shim()->get_Oui(put(value)));
+    check_hresult(static_cast<const IWiFiDirectInformationElement &>(static_cast<const D &>(*this))->get_Oui(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWiFiDirectInformationElement<D>::Oui(const Windows::Storage::Streams::IBuffer & value) const
 {
-    check_hresult(shim()->put_Oui(get(value)));
+    check_hresult(static_cast<const IWiFiDirectInformationElement &>(static_cast<const D &>(*this))->put_Oui(get(value)));
 }
 
 template <typename D> uint8_t impl_IWiFiDirectInformationElement<D>::OuiType() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_OuiType(&value));
+    check_hresult(static_cast<const IWiFiDirectInformationElement &>(static_cast<const D &>(*this))->get_OuiType(&value));
     return value;
 }
 
 template <typename D> void impl_IWiFiDirectInformationElement<D>::OuiType(uint8_t value) const
 {
-    check_hresult(shim()->put_OuiType(value));
+    check_hresult(static_cast<const IWiFiDirectInformationElement &>(static_cast<const D &>(*this))->put_OuiType(value));
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IWiFiDirectInformationElement<D>::Value() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(shim()->get_Value(put(value)));
+    check_hresult(static_cast<const IWiFiDirectInformationElement &>(static_cast<const D &>(*this))->get_Value(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWiFiDirectInformationElement<D>::Value(const Windows::Storage::Streams::IBuffer & value) const
 {
-    check_hresult(shim()->put_Value(get(value)));
+    check_hresult(static_cast<const IWiFiDirectInformationElement &>(static_cast<const D &>(*this))->put_Value(get(value)));
 }
 
 template <typename D> bool impl_IWiFiDirectLegacySettings<D>::IsEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_IsEnabled(&value));
+    check_hresult(static_cast<const IWiFiDirectLegacySettings &>(static_cast<const D &>(*this))->get_IsEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IWiFiDirectLegacySettings<D>::IsEnabled(bool value) const
 {
-    check_hresult(shim()->put_IsEnabled(value));
+    check_hresult(static_cast<const IWiFiDirectLegacySettings &>(static_cast<const D &>(*this))->put_IsEnabled(value));
 }
 
 template <typename D> hstring impl_IWiFiDirectLegacySettings<D>::Ssid() const
 {
     hstring value;
-    check_hresult(shim()->get_Ssid(put(value)));
+    check_hresult(static_cast<const IWiFiDirectLegacySettings &>(static_cast<const D &>(*this))->get_Ssid(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWiFiDirectLegacySettings<D>::Ssid(hstring_ref value) const
 {
-    check_hresult(shim()->put_Ssid(get(value)));
+    check_hresult(static_cast<const IWiFiDirectLegacySettings &>(static_cast<const D &>(*this))->put_Ssid(get(value)));
 }
 
 template <typename D> Windows::Security::Credentials::PasswordCredential impl_IWiFiDirectLegacySettings<D>::Passphrase() const
 {
     Windows::Security::Credentials::PasswordCredential value { nullptr };
-    check_hresult(shim()->get_Passphrase(put(value)));
+    check_hresult(static_cast<const IWiFiDirectLegacySettings &>(static_cast<const D &>(*this))->get_Passphrase(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWiFiDirectLegacySettings<D>::Passphrase(const Windows::Security::Credentials::PasswordCredential & value) const
 {
-    check_hresult(shim()->put_Passphrase(get(value)));
+    check_hresult(static_cast<const IWiFiDirectLegacySettings &>(static_cast<const D &>(*this))->put_Passphrase(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Devices::WiFiDirect::WiFiDirectInformationElement> impl_IWiFiDirectAdvertisement<D>::InformationElements() const
 {
     Windows::Foundation::Collections::IVector<Windows::Devices::WiFiDirect::WiFiDirectInformationElement> value;
-    check_hresult(shim()->get_InformationElements(put(value)));
+    check_hresult(static_cast<const IWiFiDirectAdvertisement &>(static_cast<const D &>(*this))->get_InformationElements(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWiFiDirectAdvertisement<D>::InformationElements(const Windows::Foundation::Collections::IVector<Windows::Devices::WiFiDirect::WiFiDirectInformationElement> & value) const
 {
-    check_hresult(shim()->put_InformationElements(get(value)));
+    check_hresult(static_cast<const IWiFiDirectAdvertisement &>(static_cast<const D &>(*this))->put_InformationElements(get(value)));
 }
 
 template <typename D> Windows::Devices::WiFiDirect::WiFiDirectAdvertisementListenStateDiscoverability impl_IWiFiDirectAdvertisement<D>::ListenStateDiscoverability() const
 {
     Windows::Devices::WiFiDirect::WiFiDirectAdvertisementListenStateDiscoverability value {};
-    check_hresult(shim()->get_ListenStateDiscoverability(&value));
+    check_hresult(static_cast<const IWiFiDirectAdvertisement &>(static_cast<const D &>(*this))->get_ListenStateDiscoverability(&value));
     return value;
 }
 
 template <typename D> void impl_IWiFiDirectAdvertisement<D>::ListenStateDiscoverability(Windows::Devices::WiFiDirect::WiFiDirectAdvertisementListenStateDiscoverability value) const
 {
-    check_hresult(shim()->put_ListenStateDiscoverability(value));
+    check_hresult(static_cast<const IWiFiDirectAdvertisement &>(static_cast<const D &>(*this))->put_ListenStateDiscoverability(value));
 }
 
 template <typename D> bool impl_IWiFiDirectAdvertisement<D>::IsAutonomousGroupOwnerEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_IsAutonomousGroupOwnerEnabled(&value));
+    check_hresult(static_cast<const IWiFiDirectAdvertisement &>(static_cast<const D &>(*this))->get_IsAutonomousGroupOwnerEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IWiFiDirectAdvertisement<D>::IsAutonomousGroupOwnerEnabled(bool value) const
 {
-    check_hresult(shim()->put_IsAutonomousGroupOwnerEnabled(value));
+    check_hresult(static_cast<const IWiFiDirectAdvertisement &>(static_cast<const D &>(*this))->put_IsAutonomousGroupOwnerEnabled(value));
 }
 
 template <typename D> Windows::Devices::WiFiDirect::WiFiDirectLegacySettings impl_IWiFiDirectAdvertisement<D>::LegacySettings() const
 {
     Windows::Devices::WiFiDirect::WiFiDirectLegacySettings value { nullptr };
-    check_hresult(shim()->get_LegacySettings(put(value)));
+    check_hresult(static_cast<const IWiFiDirectAdvertisement &>(static_cast<const D &>(*this))->get_LegacySettings(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<winrt::Windows::Devices::WiFiDirect::WiFiDirectConfigurationMethod> impl_IWiFiDirectAdvertisement2<D>::SupportedConfigurationMethods() const
 {
     Windows::Foundation::Collections::IVector<winrt::Windows::Devices::WiFiDirect::WiFiDirectConfigurationMethod> value;
-    check_hresult(shim()->get_SupportedConfigurationMethods(put(value)));
+    check_hresult(static_cast<const IWiFiDirectAdvertisement2 &>(static_cast<const D &>(*this))->get_SupportedConfigurationMethods(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisherStatus impl_IWiFiDirectAdvertisementPublisherStatusChangedEventArgs<D>::Status() const
 {
     Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisherStatus value {};
-    check_hresult(shim()->get_Status(&value));
+    check_hresult(static_cast<const IWiFiDirectAdvertisementPublisherStatusChangedEventArgs &>(static_cast<const D &>(*this))->get_Status(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::WiFiDirect::WiFiDirectError impl_IWiFiDirectAdvertisementPublisherStatusChangedEventArgs<D>::Error() const
 {
     Windows::Devices::WiFiDirect::WiFiDirectError value {};
-    check_hresult(shim()->get_Error(&value));
+    check_hresult(static_cast<const IWiFiDirectAdvertisementPublisherStatusChangedEventArgs &>(static_cast<const D &>(*this))->get_Error(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::WiFiDirect::WiFiDirectAdvertisement impl_IWiFiDirectAdvertisementPublisher<D>::Advertisement() const
 {
     Windows::Devices::WiFiDirect::WiFiDirectAdvertisement value { nullptr };
-    check_hresult(shim()->get_Advertisement(put(value)));
+    check_hresult(static_cast<const IWiFiDirectAdvertisementPublisher &>(static_cast<const D &>(*this))->get_Advertisement(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisherStatus impl_IWiFiDirectAdvertisementPublisher<D>::Status() const
 {
     Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisherStatus value {};
-    check_hresult(shim()->get_Status(&value));
+    check_hresult(static_cast<const IWiFiDirectAdvertisementPublisher &>(static_cast<const D &>(*this))->get_Status(&value));
     return value;
 }
 
 template <typename D> event_token impl_IWiFiDirectAdvertisementPublisher<D>::StatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisher, Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisherStatusChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_StatusChanged(get(handler), &token));
+    check_hresult(static_cast<const IWiFiDirectAdvertisementPublisher &>(static_cast<const D &>(*this))->add_StatusChanged(get(handler), &token));
     return token;
 }
 
@@ -947,68 +947,68 @@ template <typename D> event_revoker<IWiFiDirectAdvertisementPublisher> impl_IWiF
 
 template <typename D> void impl_IWiFiDirectAdvertisementPublisher<D>::StatusChanged(event_token token) const
 {
-    check_hresult(shim()->remove_StatusChanged(token));
+    check_hresult(static_cast<const IWiFiDirectAdvertisementPublisher &>(static_cast<const D &>(*this))->remove_StatusChanged(token));
 }
 
 template <typename D> void impl_IWiFiDirectAdvertisementPublisher<D>::Start() const
 {
-    check_hresult(shim()->abi_Start());
+    check_hresult(static_cast<const IWiFiDirectAdvertisementPublisher &>(static_cast<const D &>(*this))->abi_Start());
 }
 
 template <typename D> void impl_IWiFiDirectAdvertisementPublisher<D>::Stop() const
 {
-    check_hresult(shim()->abi_Stop());
+    check_hresult(static_cast<const IWiFiDirectAdvertisementPublisher &>(static_cast<const D &>(*this))->abi_Stop());
 }
 
 template <typename D> Windows::Devices::Enumeration::DevicePairingKinds impl_IWiFiDirectConnectionParametersStatics<D>::GetDevicePairingKinds(Windows::Devices::WiFiDirect::WiFiDirectConfigurationMethod configurationMethod) const
 {
     Windows::Devices::Enumeration::DevicePairingKinds result {};
-    check_hresult(shim()->abi_GetDevicePairingKinds(configurationMethod, &result));
+    check_hresult(static_cast<const IWiFiDirectConnectionParametersStatics &>(static_cast<const D &>(*this))->abi_GetDevicePairingKinds(configurationMethod, &result));
     return result;
 }
 
 template <typename D> int16_t impl_IWiFiDirectConnectionParameters<D>::GroupOwnerIntent() const
 {
     int16_t value {};
-    check_hresult(shim()->get_GroupOwnerIntent(&value));
+    check_hresult(static_cast<const IWiFiDirectConnectionParameters &>(static_cast<const D &>(*this))->get_GroupOwnerIntent(&value));
     return value;
 }
 
 template <typename D> void impl_IWiFiDirectConnectionParameters<D>::GroupOwnerIntent(int16_t value) const
 {
-    check_hresult(shim()->put_GroupOwnerIntent(value));
+    check_hresult(static_cast<const IWiFiDirectConnectionParameters &>(static_cast<const D &>(*this))->put_GroupOwnerIntent(value));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<winrt::Windows::Devices::WiFiDirect::WiFiDirectConfigurationMethod> impl_IWiFiDirectConnectionParameters2<D>::PreferenceOrderedConfigurationMethods() const
 {
     Windows::Foundation::Collections::IVector<winrt::Windows::Devices::WiFiDirect::WiFiDirectConfigurationMethod> value;
-    check_hresult(shim()->get_PreferenceOrderedConfigurationMethods(put(value)));
+    check_hresult(static_cast<const IWiFiDirectConnectionParameters2 &>(static_cast<const D &>(*this))->get_PreferenceOrderedConfigurationMethods(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::WiFiDirect::WiFiDirectPairingProcedure impl_IWiFiDirectConnectionParameters2<D>::PreferredPairingProcedure() const
 {
     Windows::Devices::WiFiDirect::WiFiDirectPairingProcedure value {};
-    check_hresult(shim()->get_PreferredPairingProcedure(&value));
+    check_hresult(static_cast<const IWiFiDirectConnectionParameters2 &>(static_cast<const D &>(*this))->get_PreferredPairingProcedure(&value));
     return value;
 }
 
 template <typename D> void impl_IWiFiDirectConnectionParameters2<D>::PreferredPairingProcedure(Windows::Devices::WiFiDirect::WiFiDirectPairingProcedure value) const
 {
-    check_hresult(shim()->put_PreferredPairingProcedure(value));
+    check_hresult(static_cast<const IWiFiDirectConnectionParameters2 &>(static_cast<const D &>(*this))->put_PreferredPairingProcedure(value));
 }
 
 template <typename D> Windows::Devices::WiFiDirect::WiFiDirectConnectionRequest impl_IWiFiDirectConnectionRequestedEventArgs<D>::GetConnectionRequest() const
 {
     Windows::Devices::WiFiDirect::WiFiDirectConnectionRequest result { nullptr };
-    check_hresult(shim()->abi_GetConnectionRequest(put(result)));
+    check_hresult(static_cast<const IWiFiDirectConnectionRequestedEventArgs &>(static_cast<const D &>(*this))->abi_GetConnectionRequest(put(result)));
     return result;
 }
 
 template <typename D> event_token impl_IWiFiDirectConnectionListener<D>::ConnectionRequested(const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectConnectionListener, Windows::Devices::WiFiDirect::WiFiDirectConnectionRequestedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_ConnectionRequested(get(handler), &token));
+    check_hresult(static_cast<const IWiFiDirectConnectionListener &>(static_cast<const D &>(*this))->add_ConnectionRequested(get(handler), &token));
     return token;
 }
 
@@ -1019,27 +1019,27 @@ template <typename D> event_revoker<IWiFiDirectConnectionListener> impl_IWiFiDir
 
 template <typename D> void impl_IWiFiDirectConnectionListener<D>::ConnectionRequested(event_token token) const
 {
-    check_hresult(shim()->remove_ConnectionRequested(token));
+    check_hresult(static_cast<const IWiFiDirectConnectionListener &>(static_cast<const D &>(*this))->remove_ConnectionRequested(token));
 }
 
 template <typename D> Windows::Devices::WiFiDirect::WiFiDirectConnectionStatus impl_IWiFiDirectDevice<D>::ConnectionStatus() const
 {
     Windows::Devices::WiFiDirect::WiFiDirectConnectionStatus value {};
-    check_hresult(shim()->get_ConnectionStatus(&value));
+    check_hresult(static_cast<const IWiFiDirectDevice &>(static_cast<const D &>(*this))->get_ConnectionStatus(&value));
     return value;
 }
 
 template <typename D> hstring impl_IWiFiDirectDevice<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(shim()->get_DeviceId(put(value)));
+    check_hresult(static_cast<const IWiFiDirectDevice &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IWiFiDirectDevice<D>::ConnectionStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectDevice, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_ConnectionStatusChanged(get(handler), &token));
+    check_hresult(static_cast<const IWiFiDirectDevice &>(static_cast<const D &>(*this))->add_ConnectionStatusChanged(get(handler), &token));
     return token;
 }
 
@@ -1050,20 +1050,20 @@ template <typename D> event_revoker<IWiFiDirectDevice> impl_IWiFiDirectDevice<D>
 
 template <typename D> void impl_IWiFiDirectDevice<D>::ConnectionStatusChanged(event_token token) const
 {
-    check_hresult(shim()->remove_ConnectionStatusChanged(token));
+    check_hresult(static_cast<const IWiFiDirectDevice &>(static_cast<const D &>(*this))->remove_ConnectionStatusChanged(token));
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair> impl_IWiFiDirectDevice<D>::GetConnectionEndpointPairs() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair> value;
-    check_hresult(shim()->abi_GetConnectionEndpointPairs(put(value)));
+    check_hresult(static_cast<const IWiFiDirectDevice &>(static_cast<const D &>(*this))->abi_GetConnectionEndpointPairs(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Enumeration::DeviceInformation impl_IWiFiDirectConnectionRequest<D>::DeviceInformation() const
 {
     Windows::Devices::Enumeration::DeviceInformation value { nullptr };
-    check_hresult(shim()->get_DeviceInformation(put(value)));
+    check_hresult(static_cast<const IWiFiDirectConnectionRequest &>(static_cast<const D &>(*this))->get_DeviceInformation(put(value)));
     return value;
 }
 

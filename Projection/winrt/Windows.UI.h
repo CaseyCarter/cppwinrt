@@ -1878,994 +1878,994 @@ namespace Windows::UI {
 template <typename D> Windows::UI::Color impl_IColorHelperStatics<D>::FromArgb(uint8_t a, uint8_t r, uint8_t g, uint8_t b) const
 {
     Windows::UI::Color returnValue {};
-    check_hresult(shim()->abi_FromArgb(a, r, g, b, put(returnValue)));
+    check_hresult(static_cast<const IColorHelperStatics &>(static_cast<const D &>(*this))->abi_FromArgb(a, r, g, b, put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::AliceBlue() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_AliceBlue(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_AliceBlue(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::AntiqueWhite() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_AntiqueWhite(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_AntiqueWhite(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Aqua() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Aqua(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Aqua(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Aquamarine() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Aquamarine(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Aquamarine(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Azure() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Azure(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Azure(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Beige() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Beige(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Beige(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Bisque() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Bisque(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Bisque(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Black() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Black(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Black(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::BlanchedAlmond() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_BlanchedAlmond(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_BlanchedAlmond(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Blue() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Blue(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Blue(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::BlueViolet() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_BlueViolet(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_BlueViolet(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Brown() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Brown(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Brown(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::BurlyWood() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_BurlyWood(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_BurlyWood(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::CadetBlue() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_CadetBlue(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_CadetBlue(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Chartreuse() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Chartreuse(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Chartreuse(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Chocolate() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Chocolate(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Chocolate(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Coral() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Coral(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Coral(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::CornflowerBlue() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_CornflowerBlue(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_CornflowerBlue(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Cornsilk() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Cornsilk(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Cornsilk(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Crimson() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Crimson(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Crimson(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Cyan() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Cyan(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Cyan(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::DarkBlue() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_DarkBlue(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_DarkBlue(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::DarkCyan() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_DarkCyan(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_DarkCyan(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::DarkGoldenrod() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_DarkGoldenrod(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_DarkGoldenrod(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::DarkGray() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_DarkGray(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_DarkGray(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::DarkGreen() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_DarkGreen(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_DarkGreen(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::DarkKhaki() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_DarkKhaki(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_DarkKhaki(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::DarkMagenta() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_DarkMagenta(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_DarkMagenta(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::DarkOliveGreen() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_DarkOliveGreen(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_DarkOliveGreen(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::DarkOrange() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_DarkOrange(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_DarkOrange(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::DarkOrchid() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_DarkOrchid(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_DarkOrchid(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::DarkRed() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_DarkRed(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_DarkRed(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::DarkSalmon() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_DarkSalmon(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_DarkSalmon(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::DarkSeaGreen() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_DarkSeaGreen(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_DarkSeaGreen(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::DarkSlateBlue() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_DarkSlateBlue(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_DarkSlateBlue(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::DarkSlateGray() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_DarkSlateGray(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_DarkSlateGray(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::DarkTurquoise() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_DarkTurquoise(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_DarkTurquoise(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::DarkViolet() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_DarkViolet(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_DarkViolet(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::DeepPink() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_DeepPink(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_DeepPink(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::DeepSkyBlue() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_DeepSkyBlue(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_DeepSkyBlue(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::DimGray() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_DimGray(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_DimGray(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::DodgerBlue() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_DodgerBlue(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_DodgerBlue(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Firebrick() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Firebrick(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Firebrick(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::FloralWhite() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_FloralWhite(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_FloralWhite(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::ForestGreen() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_ForestGreen(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_ForestGreen(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Fuchsia() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Fuchsia(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Fuchsia(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Gainsboro() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Gainsboro(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Gainsboro(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::GhostWhite() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_GhostWhite(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_GhostWhite(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Gold() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Gold(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Gold(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Goldenrod() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Goldenrod(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Goldenrod(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Gray() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Gray(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Gray(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Green() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Green(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Green(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::GreenYellow() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_GreenYellow(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_GreenYellow(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Honeydew() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Honeydew(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Honeydew(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::HotPink() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_HotPink(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_HotPink(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::IndianRed() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_IndianRed(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_IndianRed(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Indigo() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Indigo(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Indigo(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Ivory() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Ivory(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Ivory(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Khaki() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Khaki(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Khaki(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Lavender() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Lavender(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Lavender(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::LavenderBlush() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_LavenderBlush(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_LavenderBlush(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::LawnGreen() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_LawnGreen(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_LawnGreen(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::LemonChiffon() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_LemonChiffon(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_LemonChiffon(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::LightBlue() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_LightBlue(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_LightBlue(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::LightCoral() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_LightCoral(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_LightCoral(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::LightCyan() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_LightCyan(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_LightCyan(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::LightGoldenrodYellow() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_LightGoldenrodYellow(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_LightGoldenrodYellow(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::LightGreen() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_LightGreen(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_LightGreen(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::LightGray() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_LightGray(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_LightGray(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::LightPink() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_LightPink(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_LightPink(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::LightSalmon() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_LightSalmon(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_LightSalmon(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::LightSeaGreen() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_LightSeaGreen(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_LightSeaGreen(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::LightSkyBlue() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_LightSkyBlue(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_LightSkyBlue(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::LightSlateGray() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_LightSlateGray(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_LightSlateGray(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::LightSteelBlue() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_LightSteelBlue(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_LightSteelBlue(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::LightYellow() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_LightYellow(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_LightYellow(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Lime() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Lime(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Lime(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::LimeGreen() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_LimeGreen(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_LimeGreen(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Linen() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Linen(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Linen(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Magenta() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Magenta(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Magenta(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Maroon() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Maroon(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Maroon(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::MediumAquamarine() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_MediumAquamarine(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_MediumAquamarine(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::MediumBlue() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_MediumBlue(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_MediumBlue(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::MediumOrchid() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_MediumOrchid(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_MediumOrchid(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::MediumPurple() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_MediumPurple(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_MediumPurple(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::MediumSeaGreen() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_MediumSeaGreen(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_MediumSeaGreen(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::MediumSlateBlue() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_MediumSlateBlue(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_MediumSlateBlue(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::MediumSpringGreen() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_MediumSpringGreen(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_MediumSpringGreen(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::MediumTurquoise() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_MediumTurquoise(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_MediumTurquoise(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::MediumVioletRed() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_MediumVioletRed(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_MediumVioletRed(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::MidnightBlue() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_MidnightBlue(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_MidnightBlue(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::MintCream() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_MintCream(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_MintCream(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::MistyRose() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_MistyRose(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_MistyRose(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Moccasin() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Moccasin(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Moccasin(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::NavajoWhite() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_NavajoWhite(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_NavajoWhite(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Navy() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Navy(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Navy(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::OldLace() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_OldLace(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_OldLace(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Olive() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Olive(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Olive(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::OliveDrab() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_OliveDrab(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_OliveDrab(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Orange() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Orange(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Orange(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::OrangeRed() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_OrangeRed(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_OrangeRed(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Orchid() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Orchid(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Orchid(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::PaleGoldenrod() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_PaleGoldenrod(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_PaleGoldenrod(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::PaleGreen() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_PaleGreen(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_PaleGreen(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::PaleTurquoise() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_PaleTurquoise(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_PaleTurquoise(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::PaleVioletRed() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_PaleVioletRed(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_PaleVioletRed(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::PapayaWhip() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_PapayaWhip(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_PapayaWhip(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::PeachPuff() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_PeachPuff(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_PeachPuff(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Peru() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Peru(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Peru(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Pink() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Pink(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Pink(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Plum() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Plum(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Plum(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::PowderBlue() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_PowderBlue(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_PowderBlue(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Purple() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Purple(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Purple(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Red() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Red(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Red(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::RosyBrown() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_RosyBrown(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_RosyBrown(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::RoyalBlue() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_RoyalBlue(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_RoyalBlue(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::SaddleBrown() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_SaddleBrown(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_SaddleBrown(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Salmon() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Salmon(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Salmon(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::SandyBrown() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_SandyBrown(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_SandyBrown(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::SeaGreen() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_SeaGreen(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_SeaGreen(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::SeaShell() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_SeaShell(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_SeaShell(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Sienna() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Sienna(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Sienna(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Silver() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Silver(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Silver(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::SkyBlue() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_SkyBlue(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_SkyBlue(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::SlateBlue() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_SlateBlue(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_SlateBlue(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::SlateGray() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_SlateGray(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_SlateGray(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Snow() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Snow(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Snow(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::SpringGreen() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_SpringGreen(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_SpringGreen(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::SteelBlue() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_SteelBlue(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_SteelBlue(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Tan() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Tan(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Tan(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Teal() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Teal(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Teal(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Thistle() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Thistle(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Thistle(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Tomato() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Tomato(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Tomato(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Transparent() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Transparent(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Transparent(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Turquoise() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Turquoise(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Turquoise(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Violet() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Violet(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Violet(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Wheat() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Wheat(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Wheat(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::White() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_White(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_White(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::WhiteSmoke() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_WhiteSmoke(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_WhiteSmoke(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::Yellow() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Yellow(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_Yellow(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IColorsStatics<D>::YellowGreen() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_YellowGreen(put(value)));
+    check_hresult(static_cast<const IColorsStatics &>(static_cast<const D &>(*this))->get_YellowGreen(put(value)));
     return value;
 }
 

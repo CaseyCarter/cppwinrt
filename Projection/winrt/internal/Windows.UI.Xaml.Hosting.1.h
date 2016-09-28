@@ -35,8 +35,8 @@ template <> struct traits<Windows::UI::Xaml::Hosting::ElementCompositionPreview>
 
 namespace Windows::UI::Xaml::Hosting {
 
-template <typename T> class impl_IElementCompositionPreview;
-template <typename T> class impl_IElementCompositionPreviewStatics;
+template <typename T> struct impl_IElementCompositionPreview;
+template <typename T> struct impl_IElementCompositionPreviewStatics;
 
 }
 
@@ -57,7 +57,6 @@ template <> struct traits<Windows::UI::Xaml::Hosting::IElementCompositionPreview
 template <> struct traits<Windows::UI::Xaml::Hosting::ElementCompositionPreview>
 {
     using abi = ABI::Windows::UI::Xaml::Hosting::ElementCompositionPreview;
-    using default_interface = Windows::UI::Xaml::Hosting::IElementCompositionPreview;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Hosting.ElementCompositionPreview"; }
 };
 

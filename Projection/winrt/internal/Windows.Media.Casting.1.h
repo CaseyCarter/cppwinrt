@@ -104,14 +104,14 @@ template <> struct traits<Windows::Media::Casting::CastingSource> { using defaul
 
 namespace Windows::Media::Casting {
 
-template <typename T> class impl_ICastingConnection;
-template <typename T> class impl_ICastingConnectionErrorOccurredEventArgs;
-template <typename T> class impl_ICastingDevice;
-template <typename T> class impl_ICastingDevicePicker;
-template <typename T> class impl_ICastingDevicePickerFilter;
-template <typename T> class impl_ICastingDeviceSelectedEventArgs;
-template <typename T> class impl_ICastingDeviceStatics;
-template <typename T> class impl_ICastingSource;
+template <typename T> struct impl_ICastingConnection;
+template <typename T> struct impl_ICastingConnectionErrorOccurredEventArgs;
+template <typename T> struct impl_ICastingDevice;
+template <typename T> struct impl_ICastingDevicePicker;
+template <typename T> struct impl_ICastingDevicePickerFilter;
+template <typename T> struct impl_ICastingDeviceSelectedEventArgs;
+template <typename T> struct impl_ICastingDeviceStatics;
+template <typename T> struct impl_ICastingSource;
 
 }
 
@@ -168,49 +168,42 @@ template <> struct traits<Windows::Media::Casting::ICastingSource>
 template <> struct traits<Windows::Media::Casting::CastingConnection>
 {
     using abi = ABI::Windows::Media::Casting::CastingConnection;
-    using default_interface = Windows::Media::Casting::ICastingConnection;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Casting.CastingConnection"; }
 };
 
 template <> struct traits<Windows::Media::Casting::CastingConnectionErrorOccurredEventArgs>
 {
     using abi = ABI::Windows::Media::Casting::CastingConnectionErrorOccurredEventArgs;
-    using default_interface = Windows::Media::Casting::ICastingConnectionErrorOccurredEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Casting.CastingConnectionErrorOccurredEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Casting::CastingDevice>
 {
     using abi = ABI::Windows::Media::Casting::CastingDevice;
-    using default_interface = Windows::Media::Casting::ICastingDevice;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Casting.CastingDevice"; }
 };
 
 template <> struct traits<Windows::Media::Casting::CastingDevicePicker>
 {
     using abi = ABI::Windows::Media::Casting::CastingDevicePicker;
-    using default_interface = Windows::Media::Casting::ICastingDevicePicker;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Casting.CastingDevicePicker"; }
 };
 
 template <> struct traits<Windows::Media::Casting::CastingDevicePickerFilter>
 {
     using abi = ABI::Windows::Media::Casting::CastingDevicePickerFilter;
-    using default_interface = Windows::Media::Casting::ICastingDevicePickerFilter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Casting.CastingDevicePickerFilter"; }
 };
 
 template <> struct traits<Windows::Media::Casting::CastingDeviceSelectedEventArgs>
 {
     using abi = ABI::Windows::Media::Casting::CastingDeviceSelectedEventArgs;
-    using default_interface = Windows::Media::Casting::ICastingDeviceSelectedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Casting.CastingDeviceSelectedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Casting::CastingSource>
 {
     using abi = ABI::Windows::Media::Casting::CastingSource;
-    using default_interface = Windows::Media::Casting::ICastingSource;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Casting.CastingSource"; }
 };
 

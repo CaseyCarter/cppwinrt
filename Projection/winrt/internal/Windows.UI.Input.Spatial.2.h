@@ -125,12 +125,8 @@ template <> struct __declspec(uuid("7ecce0f5-0874-506f-8d42-4c9519156407")) __de
 namespace Windows::UI::Input::Spatial {
 
 template <typename D>
-class WINRT_EBO impl_ISpatialGestureRecognizer
+struct WINRT_EBO impl_ISpatialGestureRecognizer
 {
-    auto shim() const { return impl::shim<D, ISpatialGestureRecognizer>(this); }
-
-public:
-
     event_token RecognitionStarted(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialRecognitionStartedEventArgs> & handler) const;
     using RecognitionStarted_revoker = event_revoker<ISpatialGestureRecognizer>;
     RecognitionStarted_revoker RecognitionStarted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialRecognitionStartedEventArgs> & handler) const;
@@ -194,75 +190,47 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialGestureRecognizerFactory
+struct WINRT_EBO impl_ISpatialGestureRecognizerFactory
 {
-    auto shim() const { return impl::shim<D, ISpatialGestureRecognizerFactory>(this); }
-
-public:
-
     Windows::UI::Input::Spatial::SpatialGestureRecognizer Create(Windows::UI::Input::Spatial::SpatialGestureSettings settings) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialHoldCanceledEventArgs
+struct WINRT_EBO impl_ISpatialHoldCanceledEventArgs
 {
-    auto shim() const { return impl::shim<D, ISpatialHoldCanceledEventArgs>(this); }
-
-public:
-
     Windows::UI::Input::Spatial::SpatialInteractionSourceKind InteractionSourceKind() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialHoldCompletedEventArgs
+struct WINRT_EBO impl_ISpatialHoldCompletedEventArgs
 {
-    auto shim() const { return impl::shim<D, ISpatialHoldCompletedEventArgs>(this); }
-
-public:
-
     Windows::UI::Input::Spatial::SpatialInteractionSourceKind InteractionSourceKind() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialHoldStartedEventArgs
+struct WINRT_EBO impl_ISpatialHoldStartedEventArgs
 {
-    auto shim() const { return impl::shim<D, ISpatialHoldStartedEventArgs>(this); }
-
-public:
-
     Windows::UI::Input::Spatial::SpatialInteractionSourceKind InteractionSourceKind() const;
     Windows::UI::Input::Spatial::SpatialPointerPose TryGetPointerPose(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialInteraction
+struct WINRT_EBO impl_ISpatialInteraction
 {
-    auto shim() const { return impl::shim<D, ISpatialInteraction>(this); }
-
-public:
-
     Windows::UI::Input::Spatial::SpatialInteractionSourceState SourceState() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialInteractionDetectedEventArgs
+struct WINRT_EBO impl_ISpatialInteractionDetectedEventArgs
 {
-    auto shim() const { return impl::shim<D, ISpatialInteractionDetectedEventArgs>(this); }
-
-public:
-
     Windows::UI::Input::Spatial::SpatialInteractionSourceKind InteractionSourceKind() const;
     Windows::UI::Input::Spatial::SpatialPointerPose TryGetPointerPose(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const;
     Windows::UI::Input::Spatial::SpatialInteraction Interaction() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialInteractionManager
+struct WINRT_EBO impl_ISpatialInteractionManager
 {
-    auto shim() const { return impl::shim<D, ISpatialInteractionManager>(this); }
-
-public:
-
     event_token SourceDetected(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> & handler) const;
     using SourceDetected_revoker = event_revoker<ISpatialInteractionManager>;
     SourceDetected_revoker SourceDetected(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> & handler) const;
@@ -291,76 +259,48 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialInteractionManagerStatics
+struct WINRT_EBO impl_ISpatialInteractionManagerStatics
 {
-    auto shim() const { return impl::shim<D, ISpatialInteractionManagerStatics>(this); }
-
-public:
-
     Windows::UI::Input::Spatial::SpatialInteractionManager GetForCurrentView() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialInteractionSource
+struct WINRT_EBO impl_ISpatialInteractionSource
 {
-    auto shim() const { return impl::shim<D, ISpatialInteractionSource>(this); }
-
-public:
-
     uint32_t Id() const;
     Windows::UI::Input::Spatial::SpatialInteractionSourceKind Kind() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialInteractionSourceEventArgs
+struct WINRT_EBO impl_ISpatialInteractionSourceEventArgs
 {
-    auto shim() const { return impl::shim<D, ISpatialInteractionSourceEventArgs>(this); }
-
-public:
-
     Windows::UI::Input::Spatial::SpatialInteractionSourceState State() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialInteractionSourceLocation
+struct WINRT_EBO impl_ISpatialInteractionSourceLocation
 {
-    auto shim() const { return impl::shim<D, ISpatialInteractionSourceLocation>(this); }
-
-public:
-
     Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> Position() const;
     Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> Velocity() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialInteractionSourceLocation2
+struct WINRT_EBO impl_ISpatialInteractionSourceLocation2
 {
-    auto shim() const { return impl::shim<D, ISpatialInteractionSourceLocation2>(this); }
-
-public:
-
     Windows::Foundation::IReference<Windows::Foundation::Numerics::quaternion> Orientation() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialInteractionSourceProperties
+struct WINRT_EBO impl_ISpatialInteractionSourceProperties
 {
-    auto shim() const { return impl::shim<D, ISpatialInteractionSourceProperties>(this); }
-
-public:
-
     Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> TryGetSourceLossMitigationDirection(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const;
     double SourceLossRisk() const;
     Windows::UI::Input::Spatial::SpatialInteractionSourceLocation TryGetLocation(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialInteractionSourceState
+struct WINRT_EBO impl_ISpatialInteractionSourceState
 {
-    auto shim() const { return impl::shim<D, ISpatialInteractionSourceState>(this); }
-
-public:
-
     Windows::UI::Input::Spatial::SpatialInteractionSource Source() const;
     Windows::UI::Input::Spatial::SpatialInteractionSourceProperties Properties() const;
     bool IsPressed() const;
@@ -369,86 +309,54 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialManipulationCanceledEventArgs
+struct WINRT_EBO impl_ISpatialManipulationCanceledEventArgs
 {
-    auto shim() const { return impl::shim<D, ISpatialManipulationCanceledEventArgs>(this); }
-
-public:
-
     Windows::UI::Input::Spatial::SpatialInteractionSourceKind InteractionSourceKind() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialManipulationCompletedEventArgs
+struct WINRT_EBO impl_ISpatialManipulationCompletedEventArgs
 {
-    auto shim() const { return impl::shim<D, ISpatialManipulationCompletedEventArgs>(this); }
-
-public:
-
     Windows::UI::Input::Spatial::SpatialInteractionSourceKind InteractionSourceKind() const;
     Windows::UI::Input::Spatial::SpatialManipulationDelta TryGetCumulativeDelta(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialManipulationDelta
+struct WINRT_EBO impl_ISpatialManipulationDelta
 {
-    auto shim() const { return impl::shim<D, ISpatialManipulationDelta>(this); }
-
-public:
-
     Windows::Foundation::Numerics::float3 Translation() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialManipulationStartedEventArgs
+struct WINRT_EBO impl_ISpatialManipulationStartedEventArgs
 {
-    auto shim() const { return impl::shim<D, ISpatialManipulationStartedEventArgs>(this); }
-
-public:
-
     Windows::UI::Input::Spatial::SpatialInteractionSourceKind InteractionSourceKind() const;
     Windows::UI::Input::Spatial::SpatialPointerPose TryGetPointerPose(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialManipulationUpdatedEventArgs
+struct WINRT_EBO impl_ISpatialManipulationUpdatedEventArgs
 {
-    auto shim() const { return impl::shim<D, ISpatialManipulationUpdatedEventArgs>(this); }
-
-public:
-
     Windows::UI::Input::Spatial::SpatialInteractionSourceKind InteractionSourceKind() const;
     Windows::UI::Input::Spatial::SpatialManipulationDelta TryGetCumulativeDelta(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialNavigationCanceledEventArgs
+struct WINRT_EBO impl_ISpatialNavigationCanceledEventArgs
 {
-    auto shim() const { return impl::shim<D, ISpatialNavigationCanceledEventArgs>(this); }
-
-public:
-
     Windows::UI::Input::Spatial::SpatialInteractionSourceKind InteractionSourceKind() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialNavigationCompletedEventArgs
+struct WINRT_EBO impl_ISpatialNavigationCompletedEventArgs
 {
-    auto shim() const { return impl::shim<D, ISpatialNavigationCompletedEventArgs>(this); }
-
-public:
-
     Windows::UI::Input::Spatial::SpatialInteractionSourceKind InteractionSourceKind() const;
     Windows::Foundation::Numerics::float3 NormalizedOffset() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialNavigationStartedEventArgs
+struct WINRT_EBO impl_ISpatialNavigationStartedEventArgs
 {
-    auto shim() const { return impl::shim<D, ISpatialNavigationStartedEventArgs>(this); }
-
-public:
-
     Windows::UI::Input::Spatial::SpatialInteractionSourceKind InteractionSourceKind() const;
     Windows::UI::Input::Spatial::SpatialPointerPose TryGetPointerPose(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const;
     bool IsNavigatingX() const;
@@ -457,66 +365,42 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialNavigationUpdatedEventArgs
+struct WINRT_EBO impl_ISpatialNavigationUpdatedEventArgs
 {
-    auto shim() const { return impl::shim<D, ISpatialNavigationUpdatedEventArgs>(this); }
-
-public:
-
     Windows::UI::Input::Spatial::SpatialInteractionSourceKind InteractionSourceKind() const;
     Windows::Foundation::Numerics::float3 NormalizedOffset() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialPointerPose
+struct WINRT_EBO impl_ISpatialPointerPose
 {
-    auto shim() const { return impl::shim<D, ISpatialPointerPose>(this); }
-
-public:
-
     Windows::Perception::PerceptionTimestamp Timestamp() const;
     Windows::Perception::People::HeadPose Head() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialPointerPoseStatics
+struct WINRT_EBO impl_ISpatialPointerPoseStatics
 {
-    auto shim() const { return impl::shim<D, ISpatialPointerPoseStatics>(this); }
-
-public:
-
     Windows::UI::Input::Spatial::SpatialPointerPose TryGetAtTimestamp(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem, const Windows::Perception::PerceptionTimestamp & timestamp) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialRecognitionEndedEventArgs
+struct WINRT_EBO impl_ISpatialRecognitionEndedEventArgs
 {
-    auto shim() const { return impl::shim<D, ISpatialRecognitionEndedEventArgs>(this); }
-
-public:
-
     Windows::UI::Input::Spatial::SpatialInteractionSourceKind InteractionSourceKind() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialRecognitionStartedEventArgs
+struct WINRT_EBO impl_ISpatialRecognitionStartedEventArgs
 {
-    auto shim() const { return impl::shim<D, ISpatialRecognitionStartedEventArgs>(this); }
-
-public:
-
     Windows::UI::Input::Spatial::SpatialInteractionSourceKind InteractionSourceKind() const;
     Windows::UI::Input::Spatial::SpatialPointerPose TryGetPointerPose(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const;
     bool IsGesturePossible(Windows::UI::Input::Spatial::SpatialGestureSettings gesture) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialTappedEventArgs
+struct WINRT_EBO impl_ISpatialTappedEventArgs
 {
-    auto shim() const { return impl::shim<D, ISpatialTappedEventArgs>(this); }
-
-public:
-
     Windows::UI::Input::Spatial::SpatialInteractionSourceKind InteractionSourceKind() const;
     Windows::UI::Input::Spatial::SpatialPointerPose TryGetPointerPose(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const;
     uint32_t TapCount() const;

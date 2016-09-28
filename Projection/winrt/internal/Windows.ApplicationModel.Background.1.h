@@ -485,74 +485,74 @@ template <> struct traits<Windows::ApplicationModel::Background::UserNotificatio
 
 namespace Windows::ApplicationModel::Background {
 
-template <typename T> class impl_IActivitySensorTrigger;
-template <typename T> class impl_IActivitySensorTriggerFactory;
-template <typename T> class impl_IApplicationTrigger;
-template <typename T> class impl_IApplicationTriggerDetails;
-template <typename T> class impl_IAppointmentStoreNotificationTrigger;
-template <typename T> class impl_IBackgroundCondition;
-template <typename T> class impl_IBackgroundExecutionManagerStatics;
-template <typename T> class impl_IBackgroundTask;
-template <typename T> class impl_IBackgroundTaskBuilder;
-template <typename T> class impl_IBackgroundTaskBuilder2;
-template <typename T> class impl_IBackgroundTaskBuilder3;
-template <typename T> class impl_IBackgroundTaskCompletedEventArgs;
-template <typename T> class impl_IBackgroundTaskDeferral;
-template <typename T> class impl_IBackgroundTaskInstance;
-template <typename T> class impl_IBackgroundTaskInstance2;
-template <typename T> class impl_IBackgroundTaskInstance4;
-template <typename T> class impl_IBackgroundTaskProgressEventArgs;
-template <typename T> class impl_IBackgroundTaskRegistration;
-template <typename T> class impl_IBackgroundTaskRegistration2;
-template <typename T> class impl_IBackgroundTaskRegistrationStatics;
-template <typename T> class impl_IBackgroundTrigger;
-template <typename T> class impl_IBackgroundWorkCostStatics;
-template <typename T> class impl_IBluetoothLEAdvertisementPublisherTrigger;
-template <typename T> class impl_IBluetoothLEAdvertisementWatcherTrigger;
-template <typename T> class impl_ICachedFileUpdaterTrigger;
-template <typename T> class impl_ICachedFileUpdaterTriggerDetails;
-template <typename T> class impl_IChatMessageNotificationTrigger;
-template <typename T> class impl_IChatMessageReceivedNotificationTrigger;
-template <typename T> class impl_IContactStoreNotificationTrigger;
-template <typename T> class impl_IContentPrefetchTrigger;
-template <typename T> class impl_IContentPrefetchTriggerFactory;
-template <typename T> class impl_IDeviceConnectionChangeTrigger;
-template <typename T> class impl_IDeviceConnectionChangeTriggerStatics;
-template <typename T> class impl_IDeviceManufacturerNotificationTrigger;
-template <typename T> class impl_IDeviceManufacturerNotificationTriggerFactory;
-template <typename T> class impl_IDeviceServicingTrigger;
-template <typename T> class impl_IDeviceUseTrigger;
-template <typename T> class impl_IDeviceWatcherTrigger;
-template <typename T> class impl_IEmailStoreNotificationTrigger;
-template <typename T> class impl_IGattCharacteristicNotificationTrigger;
-template <typename T> class impl_IGattCharacteristicNotificationTriggerFactory;
-template <typename T> class impl_ILocationTrigger;
-template <typename T> class impl_ILocationTriggerFactory;
-template <typename T> class impl_IMaintenanceTrigger;
-template <typename T> class impl_IMaintenanceTriggerFactory;
-template <typename T> class impl_IMediaProcessingTrigger;
-template <typename T> class impl_INetworkOperatorHotspotAuthenticationTrigger;
-template <typename T> class impl_INetworkOperatorNotificationTrigger;
-template <typename T> class impl_INetworkOperatorNotificationTriggerFactory;
-template <typename T> class impl_IPushNotificationTriggerFactory;
-template <typename T> class impl_IRcsEndUserMessageAvailableTrigger;
-template <typename T> class impl_IRfcommConnectionTrigger;
-template <typename T> class impl_ISecondaryAuthenticationFactorAuthenticationTrigger;
-template <typename T> class impl_ISensorDataThresholdTrigger;
-template <typename T> class impl_ISensorDataThresholdTriggerFactory;
-template <typename T> class impl_ISmsMessageReceivedTriggerFactory;
-template <typename T> class impl_ISocketActivityTrigger;
-template <typename T> class impl_IStorageLibraryContentChangedTrigger;
-template <typename T> class impl_IStorageLibraryContentChangedTriggerStatics;
-template <typename T> class impl_ISystemCondition;
-template <typename T> class impl_ISystemConditionFactory;
-template <typename T> class impl_ISystemTrigger;
-template <typename T> class impl_ISystemTriggerFactory;
-template <typename T> class impl_ITimeTrigger;
-template <typename T> class impl_ITimeTriggerFactory;
-template <typename T> class impl_IToastNotificationActionTriggerFactory;
-template <typename T> class impl_IToastNotificationHistoryChangedTriggerFactory;
-template <typename T> class impl_IUserNotificationChangedTriggerFactory;
+template <typename T> struct impl_IActivitySensorTrigger;
+template <typename T> struct impl_IActivitySensorTriggerFactory;
+template <typename T> struct impl_IApplicationTrigger;
+template <typename T> struct impl_IApplicationTriggerDetails;
+template <typename T> struct impl_IAppointmentStoreNotificationTrigger;
+template <typename T> struct impl_IBackgroundCondition;
+template <typename T> struct impl_IBackgroundExecutionManagerStatics;
+template <typename T> struct impl_IBackgroundTask;
+template <typename T> struct impl_IBackgroundTaskBuilder;
+template <typename T> struct impl_IBackgroundTaskBuilder2;
+template <typename T> struct impl_IBackgroundTaskBuilder3;
+template <typename T> struct impl_IBackgroundTaskCompletedEventArgs;
+template <typename T> struct impl_IBackgroundTaskDeferral;
+template <typename T> struct impl_IBackgroundTaskInstance;
+template <typename T> struct impl_IBackgroundTaskInstance2;
+template <typename T> struct impl_IBackgroundTaskInstance4;
+template <typename T> struct impl_IBackgroundTaskProgressEventArgs;
+template <typename T> struct impl_IBackgroundTaskRegistration;
+template <typename T> struct impl_IBackgroundTaskRegistration2;
+template <typename T> struct impl_IBackgroundTaskRegistrationStatics;
+template <typename T> struct impl_IBackgroundTrigger;
+template <typename T> struct impl_IBackgroundWorkCostStatics;
+template <typename T> struct impl_IBluetoothLEAdvertisementPublisherTrigger;
+template <typename T> struct impl_IBluetoothLEAdvertisementWatcherTrigger;
+template <typename T> struct impl_ICachedFileUpdaterTrigger;
+template <typename T> struct impl_ICachedFileUpdaterTriggerDetails;
+template <typename T> struct impl_IChatMessageNotificationTrigger;
+template <typename T> struct impl_IChatMessageReceivedNotificationTrigger;
+template <typename T> struct impl_IContactStoreNotificationTrigger;
+template <typename T> struct impl_IContentPrefetchTrigger;
+template <typename T> struct impl_IContentPrefetchTriggerFactory;
+template <typename T> struct impl_IDeviceConnectionChangeTrigger;
+template <typename T> struct impl_IDeviceConnectionChangeTriggerStatics;
+template <typename T> struct impl_IDeviceManufacturerNotificationTrigger;
+template <typename T> struct impl_IDeviceManufacturerNotificationTriggerFactory;
+template <typename T> struct impl_IDeviceServicingTrigger;
+template <typename T> struct impl_IDeviceUseTrigger;
+template <typename T> struct impl_IDeviceWatcherTrigger;
+template <typename T> struct impl_IEmailStoreNotificationTrigger;
+template <typename T> struct impl_IGattCharacteristicNotificationTrigger;
+template <typename T> struct impl_IGattCharacteristicNotificationTriggerFactory;
+template <typename T> struct impl_ILocationTrigger;
+template <typename T> struct impl_ILocationTriggerFactory;
+template <typename T> struct impl_IMaintenanceTrigger;
+template <typename T> struct impl_IMaintenanceTriggerFactory;
+template <typename T> struct impl_IMediaProcessingTrigger;
+template <typename T> struct impl_INetworkOperatorHotspotAuthenticationTrigger;
+template <typename T> struct impl_INetworkOperatorNotificationTrigger;
+template <typename T> struct impl_INetworkOperatorNotificationTriggerFactory;
+template <typename T> struct impl_IPushNotificationTriggerFactory;
+template <typename T> struct impl_IRcsEndUserMessageAvailableTrigger;
+template <typename T> struct impl_IRfcommConnectionTrigger;
+template <typename T> struct impl_ISecondaryAuthenticationFactorAuthenticationTrigger;
+template <typename T> struct impl_ISensorDataThresholdTrigger;
+template <typename T> struct impl_ISensorDataThresholdTriggerFactory;
+template <typename T> struct impl_ISmsMessageReceivedTriggerFactory;
+template <typename T> struct impl_ISocketActivityTrigger;
+template <typename T> struct impl_IStorageLibraryContentChangedTrigger;
+template <typename T> struct impl_IStorageLibraryContentChangedTriggerStatics;
+template <typename T> struct impl_ISystemCondition;
+template <typename T> struct impl_ISystemConditionFactory;
+template <typename T> struct impl_ISystemTrigger;
+template <typename T> struct impl_ISystemTriggerFactory;
+template <typename T> struct impl_ITimeTrigger;
+template <typename T> struct impl_ITimeTriggerFactory;
+template <typename T> struct impl_IToastNotificationActionTriggerFactory;
+template <typename T> struct impl_IToastNotificationHistoryChangedTriggerFactory;
+template <typename T> struct impl_IUserNotificationChangedTriggerFactory;
 template <typename T> struct impl_BackgroundTaskCanceledEventHandler;
 template <typename T> struct impl_BackgroundTaskCompletedEventHandler;
 template <typename T> struct impl_BackgroundTaskProgressEventHandler;
@@ -987,28 +987,24 @@ template <> struct traits<Windows::ApplicationModel::Background::IUserNotificati
 template <> struct traits<Windows::ApplicationModel::Background::ActivitySensorTrigger>
 {
     using abi = ABI::Windows::ApplicationModel::Background::ActivitySensorTrigger;
-    using default_interface = Windows::ApplicationModel::Background::IActivitySensorTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.ActivitySensorTrigger"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::ApplicationTrigger>
 {
     using abi = ABI::Windows::ApplicationModel::Background::ApplicationTrigger;
-    using default_interface = Windows::ApplicationModel::Background::IApplicationTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.ApplicationTrigger"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::ApplicationTriggerDetails>
 {
     using abi = ABI::Windows::ApplicationModel::Background::ApplicationTriggerDetails;
-    using default_interface = Windows::ApplicationModel::Background::IApplicationTriggerDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.ApplicationTriggerDetails"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::AppointmentStoreNotificationTrigger>
 {
     using abi = ABI::Windows::ApplicationModel::Background::AppointmentStoreNotificationTrigger;
-    using default_interface = Windows::ApplicationModel::Background::IAppointmentStoreNotificationTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.AppointmentStoreNotificationTrigger"; }
 };
 
@@ -1020,35 +1016,30 @@ template <> struct traits<Windows::ApplicationModel::Background::BackgroundExecu
 template <> struct traits<Windows::ApplicationModel::Background::BackgroundTaskBuilder>
 {
     using abi = ABI::Windows::ApplicationModel::Background::BackgroundTaskBuilder;
-    using default_interface = Windows::ApplicationModel::Background::IBackgroundTaskBuilder;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.BackgroundTaskBuilder"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::BackgroundTaskCompletedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Background::BackgroundTaskCompletedEventArgs;
-    using default_interface = Windows::ApplicationModel::Background::IBackgroundTaskCompletedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.BackgroundTaskCompletedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::BackgroundTaskDeferral>
 {
     using abi = ABI::Windows::ApplicationModel::Background::BackgroundTaskDeferral;
-    using default_interface = Windows::ApplicationModel::Background::IBackgroundTaskDeferral;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.BackgroundTaskDeferral"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::BackgroundTaskProgressEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Background::BackgroundTaskProgressEventArgs;
-    using default_interface = Windows::ApplicationModel::Background::IBackgroundTaskProgressEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.BackgroundTaskProgressEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::BackgroundTaskRegistration>
 {
     using abi = ABI::Windows::ApplicationModel::Background::BackgroundTaskRegistration;
-    using default_interface = Windows::ApplicationModel::Background::IBackgroundTaskRegistration;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.BackgroundTaskRegistration"; }
 };
 
@@ -1060,266 +1051,228 @@ template <> struct traits<Windows::ApplicationModel::Background::BackgroundWorkC
 template <> struct traits<Windows::ApplicationModel::Background::BluetoothLEAdvertisementPublisherTrigger>
 {
     using abi = ABI::Windows::ApplicationModel::Background::BluetoothLEAdvertisementPublisherTrigger;
-    using default_interface = Windows::ApplicationModel::Background::IBluetoothLEAdvertisementPublisherTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.BluetoothLEAdvertisementPublisherTrigger"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::BluetoothLEAdvertisementWatcherTrigger>
 {
     using abi = ABI::Windows::ApplicationModel::Background::BluetoothLEAdvertisementWatcherTrigger;
-    using default_interface = Windows::ApplicationModel::Background::IBluetoothLEAdvertisementWatcherTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.BluetoothLEAdvertisementWatcherTrigger"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::CachedFileUpdaterTrigger>
 {
     using abi = ABI::Windows::ApplicationModel::Background::CachedFileUpdaterTrigger;
-    using default_interface = Windows::ApplicationModel::Background::ICachedFileUpdaterTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.CachedFileUpdaterTrigger"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::CachedFileUpdaterTriggerDetails>
 {
     using abi = ABI::Windows::ApplicationModel::Background::CachedFileUpdaterTriggerDetails;
-    using default_interface = Windows::ApplicationModel::Background::ICachedFileUpdaterTriggerDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.CachedFileUpdaterTriggerDetails"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::ChatMessageNotificationTrigger>
 {
     using abi = ABI::Windows::ApplicationModel::Background::ChatMessageNotificationTrigger;
-    using default_interface = Windows::ApplicationModel::Background::IChatMessageNotificationTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.ChatMessageNotificationTrigger"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::ChatMessageReceivedNotificationTrigger>
 {
     using abi = ABI::Windows::ApplicationModel::Background::ChatMessageReceivedNotificationTrigger;
-    using default_interface = Windows::ApplicationModel::Background::IChatMessageReceivedNotificationTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.ChatMessageReceivedNotificationTrigger"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::ContactStoreNotificationTrigger>
 {
     using abi = ABI::Windows::ApplicationModel::Background::ContactStoreNotificationTrigger;
-    using default_interface = Windows::ApplicationModel::Background::IContactStoreNotificationTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.ContactStoreNotificationTrigger"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::ContentPrefetchTrigger>
 {
     using abi = ABI::Windows::ApplicationModel::Background::ContentPrefetchTrigger;
-    using default_interface = Windows::ApplicationModel::Background::IContentPrefetchTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.ContentPrefetchTrigger"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::DeviceConnectionChangeTrigger>
 {
     using abi = ABI::Windows::ApplicationModel::Background::DeviceConnectionChangeTrigger;
-    using default_interface = Windows::ApplicationModel::Background::IDeviceConnectionChangeTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.DeviceConnectionChangeTrigger"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::DeviceManufacturerNotificationTrigger>
 {
     using abi = ABI::Windows::ApplicationModel::Background::DeviceManufacturerNotificationTrigger;
-    using default_interface = Windows::ApplicationModel::Background::IDeviceManufacturerNotificationTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.DeviceManufacturerNotificationTrigger"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::DeviceServicingTrigger>
 {
     using abi = ABI::Windows::ApplicationModel::Background::DeviceServicingTrigger;
-    using default_interface = Windows::ApplicationModel::Background::IDeviceServicingTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.DeviceServicingTrigger"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::DeviceUseTrigger>
 {
     using abi = ABI::Windows::ApplicationModel::Background::DeviceUseTrigger;
-    using default_interface = Windows::ApplicationModel::Background::IDeviceUseTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.DeviceUseTrigger"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::DeviceWatcherTrigger>
 {
     using abi = ABI::Windows::ApplicationModel::Background::DeviceWatcherTrigger;
-    using default_interface = Windows::ApplicationModel::Background::IDeviceWatcherTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.DeviceWatcherTrigger"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::EmailStoreNotificationTrigger>
 {
     using abi = ABI::Windows::ApplicationModel::Background::EmailStoreNotificationTrigger;
-    using default_interface = Windows::ApplicationModel::Background::IEmailStoreNotificationTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.EmailStoreNotificationTrigger"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::GattCharacteristicNotificationTrigger>
 {
     using abi = ABI::Windows::ApplicationModel::Background::GattCharacteristicNotificationTrigger;
-    using default_interface = Windows::ApplicationModel::Background::IGattCharacteristicNotificationTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.GattCharacteristicNotificationTrigger"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::LocationTrigger>
 {
     using abi = ABI::Windows::ApplicationModel::Background::LocationTrigger;
-    using default_interface = Windows::ApplicationModel::Background::ILocationTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.LocationTrigger"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::MaintenanceTrigger>
 {
     using abi = ABI::Windows::ApplicationModel::Background::MaintenanceTrigger;
-    using default_interface = Windows::ApplicationModel::Background::IMaintenanceTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.MaintenanceTrigger"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::MediaProcessingTrigger>
 {
     using abi = ABI::Windows::ApplicationModel::Background::MediaProcessingTrigger;
-    using default_interface = Windows::ApplicationModel::Background::IMediaProcessingTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.MediaProcessingTrigger"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::MobileBroadbandDeviceServiceNotificationTrigger>
 {
     using abi = ABI::Windows::ApplicationModel::Background::MobileBroadbandDeviceServiceNotificationTrigger;
-    using default_interface = Windows::ApplicationModel::Background::IBackgroundTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.MobileBroadbandDeviceServiceNotificationTrigger"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::MobileBroadbandPinLockStateChangeTrigger>
 {
     using abi = ABI::Windows::ApplicationModel::Background::MobileBroadbandPinLockStateChangeTrigger;
-    using default_interface = Windows::ApplicationModel::Background::IBackgroundTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.MobileBroadbandPinLockStateChangeTrigger"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::MobileBroadbandRadioStateChangeTrigger>
 {
     using abi = ABI::Windows::ApplicationModel::Background::MobileBroadbandRadioStateChangeTrigger;
-    using default_interface = Windows::ApplicationModel::Background::IBackgroundTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.MobileBroadbandRadioStateChangeTrigger"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::MobileBroadbandRegistrationStateChangeTrigger>
 {
     using abi = ABI::Windows::ApplicationModel::Background::MobileBroadbandRegistrationStateChangeTrigger;
-    using default_interface = Windows::ApplicationModel::Background::IBackgroundTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.MobileBroadbandRegistrationStateChangeTrigger"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::NetworkOperatorHotspotAuthenticationTrigger>
 {
     using abi = ABI::Windows::ApplicationModel::Background::NetworkOperatorHotspotAuthenticationTrigger;
-    using default_interface = Windows::ApplicationModel::Background::INetworkOperatorHotspotAuthenticationTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.NetworkOperatorHotspotAuthenticationTrigger"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::NetworkOperatorNotificationTrigger>
 {
     using abi = ABI::Windows::ApplicationModel::Background::NetworkOperatorNotificationTrigger;
-    using default_interface = Windows::ApplicationModel::Background::INetworkOperatorNotificationTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.NetworkOperatorNotificationTrigger"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::PushNotificationTrigger>
 {
     using abi = ABI::Windows::ApplicationModel::Background::PushNotificationTrigger;
-    using default_interface = Windows::ApplicationModel::Background::IBackgroundTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.PushNotificationTrigger"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::RcsEndUserMessageAvailableTrigger>
 {
     using abi = ABI::Windows::ApplicationModel::Background::RcsEndUserMessageAvailableTrigger;
-    using default_interface = Windows::ApplicationModel::Background::IRcsEndUserMessageAvailableTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.RcsEndUserMessageAvailableTrigger"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::RfcommConnectionTrigger>
 {
     using abi = ABI::Windows::ApplicationModel::Background::RfcommConnectionTrigger;
-    using default_interface = Windows::ApplicationModel::Background::IRfcommConnectionTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.RfcommConnectionTrigger"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::SecondaryAuthenticationFactorAuthenticationTrigger>
 {
     using abi = ABI::Windows::ApplicationModel::Background::SecondaryAuthenticationFactorAuthenticationTrigger;
-    using default_interface = Windows::ApplicationModel::Background::ISecondaryAuthenticationFactorAuthenticationTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.SecondaryAuthenticationFactorAuthenticationTrigger"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::SensorDataThresholdTrigger>
 {
     using abi = ABI::Windows::ApplicationModel::Background::SensorDataThresholdTrigger;
-    using default_interface = Windows::ApplicationModel::Background::ISensorDataThresholdTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.SensorDataThresholdTrigger"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::SmsMessageReceivedTrigger>
 {
     using abi = ABI::Windows::ApplicationModel::Background::SmsMessageReceivedTrigger;
-    using default_interface = Windows::ApplicationModel::Background::IBackgroundTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.SmsMessageReceivedTrigger"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::SocketActivityTrigger>
 {
     using abi = ABI::Windows::ApplicationModel::Background::SocketActivityTrigger;
-    using default_interface = Windows::ApplicationModel::Background::IBackgroundTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.SocketActivityTrigger"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::StorageLibraryContentChangedTrigger>
 {
     using abi = ABI::Windows::ApplicationModel::Background::StorageLibraryContentChangedTrigger;
-    using default_interface = Windows::ApplicationModel::Background::IStorageLibraryContentChangedTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.StorageLibraryContentChangedTrigger"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::SystemCondition>
 {
     using abi = ABI::Windows::ApplicationModel::Background::SystemCondition;
-    using default_interface = Windows::ApplicationModel::Background::ISystemCondition;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.SystemCondition"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::SystemTrigger>
 {
     using abi = ABI::Windows::ApplicationModel::Background::SystemTrigger;
-    using default_interface = Windows::ApplicationModel::Background::ISystemTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.SystemTrigger"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::TimeTrigger>
 {
     using abi = ABI::Windows::ApplicationModel::Background::TimeTrigger;
-    using default_interface = Windows::ApplicationModel::Background::ITimeTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.TimeTrigger"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::ToastNotificationActionTrigger>
 {
     using abi = ABI::Windows::ApplicationModel::Background::ToastNotificationActionTrigger;
-    using default_interface = Windows::ApplicationModel::Background::IBackgroundTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.ToastNotificationActionTrigger"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::ToastNotificationHistoryChangedTrigger>
 {
     using abi = ABI::Windows::ApplicationModel::Background::ToastNotificationHistoryChangedTrigger;
-    using default_interface = Windows::ApplicationModel::Background::IBackgroundTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.ToastNotificationHistoryChangedTrigger"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Background::UserNotificationChangedTrigger>
 {
     using abi = ABI::Windows::ApplicationModel::Background::UserNotificationChangedTrigger;
-    using default_interface = Windows::ApplicationModel::Background::IBackgroundTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Background.UserNotificationChangedTrigger"; }
 };
 

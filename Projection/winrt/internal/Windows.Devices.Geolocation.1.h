@@ -231,32 +231,32 @@ template <> struct traits<Windows::Devices::Geolocation::VenueData> { using defa
 
 namespace Windows::Devices::Geolocation {
 
-template <typename T> class impl_ICivicAddress;
-template <typename T> class impl_IGeoboundingBox;
-template <typename T> class impl_IGeoboundingBoxFactory;
-template <typename T> class impl_IGeoboundingBoxStatics;
-template <typename T> class impl_IGeocircle;
-template <typename T> class impl_IGeocircleFactory;
-template <typename T> class impl_IGeocoordinate;
-template <typename T> class impl_IGeocoordinateSatelliteData;
-template <typename T> class impl_IGeocoordinateWithPoint;
-template <typename T> class impl_IGeocoordinateWithPositionData;
-template <typename T> class impl_IGeocoordinateWithPositionSourceTimestamp;
-template <typename T> class impl_IGeolocator;
-template <typename T> class impl_IGeolocator2;
-template <typename T> class impl_IGeolocatorStatics;
-template <typename T> class impl_IGeolocatorStatics2;
-template <typename T> class impl_IGeolocatorWithScalarAccuracy;
-template <typename T> class impl_IGeopath;
-template <typename T> class impl_IGeopathFactory;
-template <typename T> class impl_IGeopoint;
-template <typename T> class impl_IGeopointFactory;
-template <typename T> class impl_IGeoposition;
-template <typename T> class impl_IGeoposition2;
-template <typename T> class impl_IGeoshape;
-template <typename T> class impl_IPositionChangedEventArgs;
-template <typename T> class impl_IStatusChangedEventArgs;
-template <typename T> class impl_IVenueData;
+template <typename T> struct impl_ICivicAddress;
+template <typename T> struct impl_IGeoboundingBox;
+template <typename T> struct impl_IGeoboundingBoxFactory;
+template <typename T> struct impl_IGeoboundingBoxStatics;
+template <typename T> struct impl_IGeocircle;
+template <typename T> struct impl_IGeocircleFactory;
+template <typename T> struct impl_IGeocoordinate;
+template <typename T> struct impl_IGeocoordinateSatelliteData;
+template <typename T> struct impl_IGeocoordinateWithPoint;
+template <typename T> struct impl_IGeocoordinateWithPositionData;
+template <typename T> struct impl_IGeocoordinateWithPositionSourceTimestamp;
+template <typename T> struct impl_IGeolocator;
+template <typename T> struct impl_IGeolocator2;
+template <typename T> struct impl_IGeolocatorStatics;
+template <typename T> struct impl_IGeolocatorStatics2;
+template <typename T> struct impl_IGeolocatorWithScalarAccuracy;
+template <typename T> struct impl_IGeopath;
+template <typename T> struct impl_IGeopathFactory;
+template <typename T> struct impl_IGeopoint;
+template <typename T> struct impl_IGeopointFactory;
+template <typename T> struct impl_IGeoposition;
+template <typename T> struct impl_IGeoposition2;
+template <typename T> struct impl_IGeoshape;
+template <typename T> struct impl_IPositionChangedEventArgs;
+template <typename T> struct impl_IStatusChangedEventArgs;
+template <typename T> struct impl_IVenueData;
 
 }
 
@@ -421,84 +421,72 @@ template <> struct traits<Windows::Devices::Geolocation::IVenueData>
 template <> struct traits<Windows::Devices::Geolocation::CivicAddress>
 {
     using abi = ABI::Windows::Devices::Geolocation::CivicAddress;
-    using default_interface = Windows::Devices::Geolocation::ICivicAddress;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Geolocation.CivicAddress"; }
 };
 
 template <> struct traits<Windows::Devices::Geolocation::GeoboundingBox>
 {
     using abi = ABI::Windows::Devices::Geolocation::GeoboundingBox;
-    using default_interface = Windows::Devices::Geolocation::IGeoboundingBox;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Geolocation.GeoboundingBox"; }
 };
 
 template <> struct traits<Windows::Devices::Geolocation::Geocircle>
 {
     using abi = ABI::Windows::Devices::Geolocation::Geocircle;
-    using default_interface = Windows::Devices::Geolocation::IGeocircle;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Geolocation.Geocircle"; }
 };
 
 template <> struct traits<Windows::Devices::Geolocation::Geocoordinate>
 {
     using abi = ABI::Windows::Devices::Geolocation::Geocoordinate;
-    using default_interface = Windows::Devices::Geolocation::IGeocoordinate;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Geolocation.Geocoordinate"; }
 };
 
 template <> struct traits<Windows::Devices::Geolocation::GeocoordinateSatelliteData>
 {
     using abi = ABI::Windows::Devices::Geolocation::GeocoordinateSatelliteData;
-    using default_interface = Windows::Devices::Geolocation::IGeocoordinateSatelliteData;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Geolocation.GeocoordinateSatelliteData"; }
 };
 
 template <> struct traits<Windows::Devices::Geolocation::Geolocator>
 {
     using abi = ABI::Windows::Devices::Geolocation::Geolocator;
-    using default_interface = Windows::Devices::Geolocation::IGeolocator;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Geolocation.Geolocator"; }
 };
 
 template <> struct traits<Windows::Devices::Geolocation::Geopath>
 {
     using abi = ABI::Windows::Devices::Geolocation::Geopath;
-    using default_interface = Windows::Devices::Geolocation::IGeopath;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Geolocation.Geopath"; }
 };
 
 template <> struct traits<Windows::Devices::Geolocation::Geopoint>
 {
     using abi = ABI::Windows::Devices::Geolocation::Geopoint;
-    using default_interface = Windows::Devices::Geolocation::IGeopoint;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Geolocation.Geopoint"; }
 };
 
 template <> struct traits<Windows::Devices::Geolocation::Geoposition>
 {
     using abi = ABI::Windows::Devices::Geolocation::Geoposition;
-    using default_interface = Windows::Devices::Geolocation::IGeoposition;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Geolocation.Geoposition"; }
 };
 
 template <> struct traits<Windows::Devices::Geolocation::PositionChangedEventArgs>
 {
     using abi = ABI::Windows::Devices::Geolocation::PositionChangedEventArgs;
-    using default_interface = Windows::Devices::Geolocation::IPositionChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Geolocation.PositionChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::Geolocation::StatusChangedEventArgs>
 {
     using abi = ABI::Windows::Devices::Geolocation::StatusChangedEventArgs;
-    using default_interface = Windows::Devices::Geolocation::IStatusChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Geolocation.StatusChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::Geolocation::VenueData>
 {
     using abi = ABI::Windows::Devices::Geolocation::VenueData;
-    using default_interface = Windows::Devices::Geolocation::IVenueData;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Geolocation.VenueData"; }
 };
 

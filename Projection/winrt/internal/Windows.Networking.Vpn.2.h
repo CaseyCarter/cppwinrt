@@ -335,12 +335,8 @@ template <> struct __declspec(uuid("dac6dd72-a5d1-56d4-afc4-989f84dcb2b3")) __de
 namespace Windows::Networking::Vpn {
 
 template <typename D>
-class WINRT_EBO impl_IVpnAppId
+struct WINRT_EBO impl_IVpnAppId
 {
-    auto shim() const { return impl::shim<D, IVpnAppId>(this); }
-
-public:
-
     Windows::Networking::Vpn::VpnAppIdType Type() const;
     void Type(Windows::Networking::Vpn::VpnAppIdType value) const;
     hstring Value() const;
@@ -348,22 +344,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnAppIdFactory
+struct WINRT_EBO impl_IVpnAppIdFactory
 {
-    auto shim() const { return impl::shim<D, IVpnAppIdFactory>(this); }
-
-public:
-
     Windows::Networking::Vpn::VpnAppId Create(Windows::Networking::Vpn::VpnAppIdType type, hstring_ref value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnChannel
+struct WINRT_EBO impl_IVpnChannel
 {
-    auto shim() const { return impl::shim<D, IVpnChannel>(this); }
-
-public:
-
     void AssociateTransport(const Windows::IInspectable & mainOuterTunnelTransport, const Windows::IInspectable & optionalOuterTunnelTransport) const;
     void Start(const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv4list, const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv6list, const Windows::Networking::Vpn::VpnInterfaceId & vpnInterfaceId, const Windows::Networking::Vpn::VpnRouteAssignment & routeScope, const Windows::Networking::Vpn::VpnNamespaceAssignment & namespaceScope, uint32_t mtuSize, uint32_t maxFrameSize, bool optimizeForLowCostNetwork, const Windows::IInspectable & mainOuterTunnelTransport, const Windows::IInspectable & optionalOuterTunnelTransport) const;
     void Stop() const;
@@ -385,12 +373,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnChannel2
+struct WINRT_EBO impl_IVpnChannel2
 {
-    auto shim() const { return impl::shim<D, IVpnChannel2>(this); }
-
-public:
-
     void StartWithMainTransport(const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv4list, const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv6list, const Windows::Networking::Vpn::VpnInterfaceId & vpnInterfaceId, const Windows::Networking::Vpn::VpnRouteAssignment & assignedRoutes, const Windows::Networking::Vpn::VpnDomainNameAssignment & assignedDomainName, uint32_t mtuSize, uint32_t maxFrameSize, bool Reserved, const Windows::IInspectable & mainOuterTunnelTransport) const;
     void StartExistingTransports(const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv4list, const Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> & assignedClientIPv6list, const Windows::Networking::Vpn::VpnInterfaceId & vpnInterfaceId, const Windows::Networking::Vpn::VpnRouteAssignment & assignedRoutes, const Windows::Networking::Vpn::VpnDomainNameAssignment & assignedDomainName, uint32_t mtuSize, uint32_t maxFrameSize, bool Reserved) const;
     event_token ActivityStateChange(const Windows::Foundation::TypedEventHandler<Windows::Networking::Vpn::VpnChannel, Windows::Networking::Vpn::VpnChannelActivityStateChangedArgs> & handler) const;
@@ -408,64 +392,40 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnChannelActivityEventArgs
+struct WINRT_EBO impl_IVpnChannelActivityEventArgs
 {
-    auto shim() const { return impl::shim<D, IVpnChannelActivityEventArgs>(this); }
-
-public:
-
     Windows::Networking::Vpn::VpnChannelActivityEventType Type() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnChannelActivityStateChangedArgs
+struct WINRT_EBO impl_IVpnChannelActivityStateChangedArgs
 {
-    auto shim() const { return impl::shim<D, IVpnChannelActivityStateChangedArgs>(this); }
-
-public:
-
     Windows::Networking::Vpn::VpnChannelActivityEventType ActivityState() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnChannelConfiguration
+struct WINRT_EBO impl_IVpnChannelConfiguration
 {
-    auto shim() const { return impl::shim<D, IVpnChannelConfiguration>(this); }
-
-public:
-
     hstring ServerServiceName() const;
     Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> ServerHostNameList() const;
     hstring CustomField() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnChannelConfiguration2
+struct WINRT_EBO impl_IVpnChannelConfiguration2
 {
-    auto shim() const { return impl::shim<D, IVpnChannelConfiguration2>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Foundation::Uri> ServerUris() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnChannelStatics
+struct WINRT_EBO impl_IVpnChannelStatics
 {
-    auto shim() const { return impl::shim<D, IVpnChannelStatics>(this); }
-
-public:
-
     void ProcessEventAsync(const Windows::IInspectable & thirdPartyPlugIn, const Windows::IInspectable & event) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnCredential
+struct WINRT_EBO impl_IVpnCredential
 {
-    auto shim() const { return impl::shim<D, IVpnCredential>(this); }
-
-public:
-
     Windows::Security::Credentials::PasswordCredential PasskeyCredential() const;
     Windows::Security::Cryptography::Certificates::Certificate CertificateCredential() const;
     hstring AdditionalPin() const;
@@ -473,36 +433,24 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnCustomCheckBox
+struct WINRT_EBO impl_IVpnCustomCheckBox
 {
-    auto shim() const { return impl::shim<D, IVpnCustomCheckBox>(this); }
-
-public:
-
     void InitialCheckState(bool value) const;
     bool InitialCheckState() const;
     bool Checked() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnCustomComboBox
+struct WINRT_EBO impl_IVpnCustomComboBox
 {
-    auto shim() const { return impl::shim<D, IVpnCustomComboBox>(this); }
-
-public:
-
     void OptionsText(const Windows::Foundation::Collections::IVectorView<hstring> & value) const;
     Windows::Foundation::Collections::IVectorView<hstring> OptionsText() const;
     uint32_t Selected() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnCustomEditBox
+struct WINRT_EBO impl_IVpnCustomEditBox
 {
-    auto shim() const { return impl::shim<D, IVpnCustomEditBox>(this); }
-
-public:
-
     void DefaultText(hstring_ref value) const;
     hstring DefaultText() const;
     void NoEcho(bool value) const;
@@ -511,21 +459,13 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnCustomErrorBox
+struct WINRT_EBO impl_IVpnCustomErrorBox
 {
-    auto shim() const { return impl::shim<D, IVpnCustomErrorBox>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnCustomPrompt
+struct WINRT_EBO impl_IVpnCustomPrompt
 {
-    auto shim() const { return impl::shim<D, IVpnCustomPrompt>(this); }
-
-public:
-
     void Label(hstring_ref value) const;
     hstring Label() const;
     void Compulsory(bool value) const;
@@ -535,24 +475,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnCustomPromptBooleanInput
+struct WINRT_EBO impl_IVpnCustomPromptBooleanInput
 {
-    auto shim() const { return impl::shim<D, IVpnCustomPromptBooleanInput>(this); }
-
-public:
-
     void InitialValue(bool value) const;
     bool InitialValue() const;
     bool Value() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnCustomPromptElement
+struct WINRT_EBO impl_IVpnCustomPromptElement
 {
-    auto shim() const { return impl::shim<D, IVpnCustomPromptElement>(this); }
-
-public:
-
     void DisplayName(hstring_ref value) const;
     hstring DisplayName() const;
     void Compulsory(bool value) const;
@@ -562,34 +494,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnCustomPromptOptionSelector
+struct WINRT_EBO impl_IVpnCustomPromptOptionSelector
 {
-    auto shim() const { return impl::shim<D, IVpnCustomPromptOptionSelector>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<hstring> Options() const;
     uint32_t SelectedIndex() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnCustomPromptText
+struct WINRT_EBO impl_IVpnCustomPromptText
 {
-    auto shim() const { return impl::shim<D, IVpnCustomPromptText>(this); }
-
-public:
-
     void Text(hstring_ref value) const;
     hstring Text() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnCustomPromptTextInput
+struct WINRT_EBO impl_IVpnCustomPromptTextInput
 {
-    auto shim() const { return impl::shim<D, IVpnCustomPromptTextInput>(this); }
-
-public:
-
     void PlaceholderText(hstring_ref value) const;
     hstring PlaceholderText() const;
     void IsTextHidden(bool value) const;
@@ -598,35 +518,23 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnCustomTextBox
+struct WINRT_EBO impl_IVpnCustomTextBox
 {
-    auto shim() const { return impl::shim<D, IVpnCustomTextBox>(this); }
-
-public:
-
     void DisplayText(hstring_ref value) const;
     hstring DisplayText() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnDomainNameAssignment
+struct WINRT_EBO impl_IVpnDomainNameAssignment
 {
-    auto shim() const { return impl::shim<D, IVpnDomainNameAssignment>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnDomainNameInfo> DomainNameList() const;
     void ProxyAutoConfigurationUri(const Windows::Foundation::Uri & value) const;
     Windows::Foundation::Uri ProxyAutoConfigurationUri() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnDomainNameInfo
+struct WINRT_EBO impl_IVpnDomainNameInfo
 {
-    auto shim() const { return impl::shim<D, IVpnDomainNameInfo>(this); }
-
-public:
-
     void DomainName(const Windows::Networking::HostName & value) const;
     Windows::Networking::HostName DomainName() const;
     void DomainNameType(Windows::Networking::Vpn::VpnDomainNameType value) const;
@@ -636,52 +544,32 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnDomainNameInfo2
+struct WINRT_EBO impl_IVpnDomainNameInfo2
 {
-    auto shim() const { return impl::shim<D, IVpnDomainNameInfo2>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<Windows::Foundation::Uri> WebProxyUris() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnDomainNameInfoFactory
+struct WINRT_EBO impl_IVpnDomainNameInfoFactory
 {
-    auto shim() const { return impl::shim<D, IVpnDomainNameInfoFactory>(this); }
-
-public:
-
     Windows::Networking::Vpn::VpnDomainNameInfo CreateVpnDomainNameInfo(hstring_ref name, Windows::Networking::Vpn::VpnDomainNameType nameType, const Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> & dnsServerList, const Windows::Foundation::Collections::IIterable<Windows::Networking::HostName> & proxyServerList) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnInterfaceId
+struct WINRT_EBO impl_IVpnInterfaceId
 {
-    auto shim() const { return impl::shim<D, IVpnInterfaceId>(this); }
-
-public:
-
     void GetAddressInfo(com_array<uint8_t> & id) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnInterfaceIdFactory
+struct WINRT_EBO impl_IVpnInterfaceIdFactory
 {
-    auto shim() const { return impl::shim<D, IVpnInterfaceIdFactory>(this); }
-
-public:
-
     Windows::Networking::Vpn::VpnInterfaceId CreateVpnInterfaceId(array_ref<const uint8_t> address) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnManagementAgent
+struct WINRT_EBO impl_IVpnManagementAgent
 {
-    auto shim() const { return impl::shim<D, IVpnManagementAgent>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> AddProfileFromXmlAsync(hstring_ref xml) const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> AddProfileFromObjectAsync(const Windows::Networking::Vpn::IVpnProfile & profile) const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::Networking::Vpn::VpnManagementErrorStatus> UpdateProfileFromXmlAsync(hstring_ref xml) const;
@@ -694,12 +582,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnNamespaceAssignment
+struct WINRT_EBO impl_IVpnNamespaceAssignment
 {
-    auto shim() const { return impl::shim<D, IVpnNamespaceAssignment>(this); }
-
-public:
-
     void NamespaceList(const Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnNamespaceInfo> & value) const;
     Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnNamespaceInfo> NamespaceList() const;
     void ProxyAutoConfigUri(const Windows::Foundation::Uri & value) const;
@@ -707,12 +591,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnNamespaceInfo
+struct WINRT_EBO impl_IVpnNamespaceInfo
 {
-    auto shim() const { return impl::shim<D, IVpnNamespaceInfo>(this); }
-
-public:
-
     void Namespace(hstring_ref value) const;
     hstring Namespace() const;
     void DnsServers(const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> & value) const;
@@ -722,22 +602,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnNamespaceInfoFactory
+struct WINRT_EBO impl_IVpnNamespaceInfoFactory
 {
-    auto shim() const { return impl::shim<D, IVpnNamespaceInfoFactory>(this); }
-
-public:
-
     Windows::Networking::Vpn::VpnNamespaceInfo CreateVpnNamespaceInfo(hstring_ref name, const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> & dnsServerList, const Windows::Foundation::Collections::IVector<Windows::Networking::HostName> & proxyServerList) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnNativeProfile
+struct WINRT_EBO impl_IVpnNativeProfile
 {
-    auto shim() const { return impl::shim<D, IVpnNativeProfile>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<hstring> Servers() const;
     Windows::Networking::Vpn::VpnRoutingPolicyType RoutingPolicyType() const;
     void RoutingPolicyType(Windows::Networking::Vpn::VpnRoutingPolicyType value) const;
@@ -752,24 +624,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnNativeProfile2
+struct WINRT_EBO impl_IVpnNativeProfile2
 {
-    auto shim() const { return impl::shim<D, IVpnNativeProfile2>(this); }
-
-public:
-
     bool RequireVpnClientAppUI() const;
     void RequireVpnClientAppUI(bool value) const;
     Windows::Networking::Vpn::VpnManagementConnectionStatus ConnectionStatus() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnPacketBuffer
+struct WINRT_EBO impl_IVpnPacketBuffer
 {
-    auto shim() const { return impl::shim<D, IVpnPacketBuffer>(this); }
-
-public:
-
     Windows::Storage::Streams::Buffer Buffer() const;
     void Status(Windows::Networking::Vpn::VpnPacketBufferStatus value) const;
     Windows::Networking::Vpn::VpnPacketBufferStatus Status() const;
@@ -778,32 +642,20 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnPacketBuffer2
+struct WINRT_EBO impl_IVpnPacketBuffer2
 {
-    auto shim() const { return impl::shim<D, IVpnPacketBuffer2>(this); }
-
-public:
-
     Windows::Networking::Vpn::VpnAppId AppId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnPacketBufferFactory
+struct WINRT_EBO impl_IVpnPacketBufferFactory
 {
-    auto shim() const { return impl::shim<D, IVpnPacketBufferFactory>(this); }
-
-public:
-
     Windows::Networking::Vpn::VpnPacketBuffer CreateVpnPacketBuffer(const Windows::Networking::Vpn::VpnPacketBuffer & parentBuffer, uint32_t offset, uint32_t length) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnPacketBufferList
+struct WINRT_EBO impl_IVpnPacketBufferList
 {
-    auto shim() const { return impl::shim<D, IVpnPacketBufferList>(this); }
-
-public:
-
     void Append(const Windows::Networking::Vpn::VpnPacketBuffer & nextVpnPacketBuffer) const;
     void AddAtBegin(const Windows::Networking::Vpn::VpnPacketBuffer & nextVpnPacketBuffer) const;
     Windows::Networking::Vpn::VpnPacketBuffer RemoveAtEnd() const;
@@ -815,12 +667,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnPacketBufferList2
+struct WINRT_EBO impl_IVpnPacketBufferList2
 {
-    auto shim() const { return impl::shim<D, IVpnPacketBufferList2>(this); }
-
-public:
-
     void AddLeadingPacket(const Windows::Networking::Vpn::VpnPacketBuffer & nextVpnPacketBuffer) const;
     Windows::Networking::Vpn::VpnPacketBuffer RemoveLeadingPacket() const;
     void AddTrailingPacket(const Windows::Networking::Vpn::VpnPacketBuffer & nextVpnPacketBuffer) const;
@@ -828,24 +676,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnPickedCredential
+struct WINRT_EBO impl_IVpnPickedCredential
 {
-    auto shim() const { return impl::shim<D, IVpnPickedCredential>(this); }
-
-public:
-
     Windows::Security::Credentials::PasswordCredential PasskeyCredential() const;
     hstring AdditionalPin() const;
     Windows::Security::Credentials::PasswordCredential OldPasswordCredential() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnPlugIn
+struct WINRT_EBO impl_IVpnPlugIn
 {
-    auto shim() const { return impl::shim<D, IVpnPlugIn>(this); }
-
-public:
-
     void Connect(const Windows::Networking::Vpn::VpnChannel & channel) const;
     void Disconnect(const Windows::Networking::Vpn::VpnChannel & channel) const;
     void GetKeepAlivePayload(const Windows::Networking::Vpn::VpnChannel & channel, Windows::Networking::Vpn::VpnPacketBuffer & keepAlivePacket) const;
@@ -854,12 +694,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnPlugInProfile
+struct WINRT_EBO impl_IVpnPlugInProfile
 {
-    auto shim() const { return impl::shim<D, IVpnPlugInProfile>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<Windows::Foundation::Uri> ServerUris() const;
     hstring CustomConfiguration() const;
     void CustomConfiguration(hstring_ref value) const;
@@ -868,24 +704,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnPlugInProfile2
+struct WINRT_EBO impl_IVpnPlugInProfile2
 {
-    auto shim() const { return impl::shim<D, IVpnPlugInProfile2>(this); }
-
-public:
-
     bool RequireVpnClientAppUI() const;
     void RequireVpnClientAppUI(bool value) const;
     Windows::Networking::Vpn::VpnManagementConnectionStatus ConnectionStatus() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnProfile
+struct WINRT_EBO impl_IVpnProfile
 {
-    auto shim() const { return impl::shim<D, IVpnProfile>(this); }
-
-public:
-
     hstring ProfileName() const;
     void ProfileName(hstring_ref value) const;
     Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnAppId> AppTriggers() const;
@@ -899,12 +727,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnRoute
+struct WINRT_EBO impl_IVpnRoute
 {
-    auto shim() const { return impl::shim<D, IVpnRoute>(this); }
-
-public:
-
     void Address(const Windows::Networking::HostName & value) const;
     Windows::Networking::HostName Address() const;
     void PrefixSize(uint8_t value) const;
@@ -912,12 +736,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnRouteAssignment
+struct WINRT_EBO impl_IVpnRouteAssignment
 {
-    auto shim() const { return impl::shim<D, IVpnRouteAssignment>(this); }
-
-public:
-
     void Ipv4InclusionRoutes(const Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> & value) const;
     void Ipv6InclusionRoutes(const Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> & value) const;
     Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnRoute> Ipv4InclusionRoutes() const;
@@ -931,32 +751,20 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnRouteFactory
+struct WINRT_EBO impl_IVpnRouteFactory
 {
-    auto shim() const { return impl::shim<D, IVpnRouteFactory>(this); }
-
-public:
-
     Windows::Networking::Vpn::VpnRoute CreateVpnRoute(const Windows::Networking::HostName & address, uint8_t prefixSize) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnSystemHealth
+struct WINRT_EBO impl_IVpnSystemHealth
 {
-    auto shim() const { return impl::shim<D, IVpnSystemHealth>(this); }
-
-public:
-
     Windows::Storage::Streams::Buffer StatementOfHealth() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnTrafficFilter
+struct WINRT_EBO impl_IVpnTrafficFilter
 {
-    auto shim() const { return impl::shim<D, IVpnTrafficFilter>(this); }
-
-public:
-
     Windows::Networking::Vpn::VpnAppId AppId() const;
     void AppId(const Windows::Networking::Vpn::VpnAppId & value) const;
     Windows::Foundation::Collections::IVector<hstring> AppClaims() const;
@@ -971,12 +779,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnTrafficFilterAssignment
+struct WINRT_EBO impl_IVpnTrafficFilterAssignment
 {
-    auto shim() const { return impl::shim<D, IVpnTrafficFilterAssignment>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<Windows::Networking::Vpn::VpnTrafficFilter> TrafficFilterList() const;
     bool AllowOutbound() const;
     void AllowOutbound(bool value) const;
@@ -985,12 +789,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVpnTrafficFilterFactory
+struct WINRT_EBO impl_IVpnTrafficFilterFactory
 {
-    auto shim() const { return impl::shim<D, IVpnTrafficFilterFactory>(this); }
-
-public:
-
     Windows::Networking::Vpn::VpnTrafficFilter Create(const Windows::Networking::Vpn::VpnAppId & appId) const;
 };
 

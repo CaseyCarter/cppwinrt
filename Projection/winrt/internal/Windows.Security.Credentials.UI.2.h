@@ -45,12 +45,8 @@ template <> struct __declspec(uuid("0cffc6c9-4c2b-5cd4-b38c-7b8df3ff5afb")) __de
 namespace Windows::Security::Credentials::UI {
 
 template <typename D>
-class WINRT_EBO impl_ICredentialPickerOptions
+struct WINRT_EBO impl_ICredentialPickerOptions
 {
-    auto shim() const { return impl::shim<D, ICredentialPickerOptions>(this); }
-
-public:
-
     void Caption(hstring_ref value) const;
     hstring Caption() const;
     void Message(hstring_ref value) const;
@@ -74,12 +70,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICredentialPickerResults
+struct WINRT_EBO impl_ICredentialPickerResults
 {
-    auto shim() const { return impl::shim<D, ICredentialPickerResults>(this); }
-
-public:
-
     uint32_t ErrorCode() const;
     Windows::Security::Credentials::UI::CredentialSaveOption CredentialSaveOption() const;
     bool CredentialSaved() const;
@@ -90,24 +82,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICredentialPickerStatics
+struct WINRT_EBO impl_ICredentialPickerStatics
 {
-    auto shim() const { return impl::shim<D, ICredentialPickerStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> PickAsync(const Windows::Security::Credentials::UI::CredentialPickerOptions & options) const;
     Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> PickAsync(hstring_ref targetName, hstring_ref message) const;
     Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> PickAsync(hstring_ref targetName, hstring_ref message, hstring_ref caption) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUserConsentVerifierStatics
+struct WINRT_EBO impl_IUserConsentVerifierStatics
 {
-    auto shim() const { return impl::shim<D, IUserConsentVerifierStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Credentials::UI::UserConsentVerifierAvailability> CheckAvailabilityAsync() const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Credentials::UI::UserConsentVerificationResult> RequestVerificationAsync(hstring_ref message) const;
 };

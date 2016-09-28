@@ -11,12 +11,8 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::UI::Xaml::Automation::Provider {
 
 template <typename D>
-class WINRT_EBO impl_IAnnotationProvider
+struct WINRT_EBO impl_IAnnotationProvider
 {
-    auto shim() const { return impl::shim<D, IAnnotationProvider>(this); }
-
-public:
-
     int32_t AnnotationTypeId() const;
     hstring AnnotationTypeName() const;
     hstring Author() const;
@@ -25,33 +21,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICustomNavigationProvider
+struct WINRT_EBO impl_ICustomNavigationProvider
 {
-    auto shim() const { return impl::shim<D, ICustomNavigationProvider>(this); }
-
-public:
-
     Windows::IInspectable NavigateCustom(Windows::UI::Xaml::Automation::Peers::AutomationNavigationDirection direction) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDockProvider
+struct WINRT_EBO impl_IDockProvider
 {
-    auto shim() const { return impl::shim<D, IDockProvider>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::DockPosition DockPosition() const;
     void SetDockPosition(Windows::UI::Xaml::Automation::DockPosition dockPosition) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDragProvider
+struct WINRT_EBO impl_IDragProvider
 {
-    auto shim() const { return impl::shim<D, IDragProvider>(this); }
-
-public:
-
     bool IsGrabbed() const;
     hstring DropEffect() const;
     com_array<hstring> DropEffects() const;
@@ -59,35 +43,23 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDropTargetProvider
+struct WINRT_EBO impl_IDropTargetProvider
 {
-    auto shim() const { return impl::shim<D, IDropTargetProvider>(this); }
-
-public:
-
     hstring DropEffect() const;
     com_array<hstring> DropEffects() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IExpandCollapseProvider
+struct WINRT_EBO impl_IExpandCollapseProvider
 {
-    auto shim() const { return impl::shim<D, IExpandCollapseProvider>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::ExpandCollapseState ExpandCollapseState() const;
     void Collapse() const;
     void Expand() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGridItemProvider
+struct WINRT_EBO impl_IGridItemProvider
 {
-    auto shim() const { return impl::shim<D, IGridItemProvider>(this); }
-
-public:
-
     int32_t Column() const;
     int32_t ColumnSpan() const;
     Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple ContainingGrid() const;
@@ -96,53 +68,33 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IGridProvider
+struct WINRT_EBO impl_IGridProvider
 {
-    auto shim() const { return impl::shim<D, IGridProvider>(this); }
-
-public:
-
     int32_t ColumnCount() const;
     int32_t RowCount() const;
     Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple GetItem(int32_t row, int32_t column) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IIRawElementProviderSimple
+struct WINRT_EBO impl_IIRawElementProviderSimple
 {
-    auto shim() const { return impl::shim<D, IIRawElementProviderSimple>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IInvokeProvider
+struct WINRT_EBO impl_IInvokeProvider
 {
-    auto shim() const { return impl::shim<D, IInvokeProvider>(this); }
-
-public:
-
     void Invoke() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IItemContainerProvider
+struct WINRT_EBO impl_IItemContainerProvider
 {
-    auto shim() const { return impl::shim<D, IItemContainerProvider>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple FindItemByProperty(const Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple & startAfter, const Windows::UI::Xaml::Automation::AutomationProperty & automationProperty, const Windows::IInspectable & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMultipleViewProvider
+struct WINRT_EBO impl_IMultipleViewProvider
 {
-    auto shim() const { return impl::shim<D, IMultipleViewProvider>(this); }
-
-public:
-
     int32_t CurrentView() const;
     com_array<int32_t> GetSupportedViews() const;
     hstring GetViewName(int32_t viewId) const;
@@ -150,22 +102,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IObjectModelProvider
+struct WINRT_EBO impl_IObjectModelProvider
 {
-    auto shim() const { return impl::shim<D, IObjectModelProvider>(this); }
-
-public:
-
     Windows::IInspectable GetUnderlyingObjectModel() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRangeValueProvider
+struct WINRT_EBO impl_IRangeValueProvider
 {
-    auto shim() const { return impl::shim<D, IRangeValueProvider>(this); }
-
-public:
-
     bool IsReadOnly() const;
     double LargeChange() const;
     double Maximum() const;
@@ -176,22 +120,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IScrollItemProvider
+struct WINRT_EBO impl_IScrollItemProvider
 {
-    auto shim() const { return impl::shim<D, IScrollItemProvider>(this); }
-
-public:
-
     void ScrollIntoView() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IScrollProvider
+struct WINRT_EBO impl_IScrollProvider
 {
-    auto shim() const { return impl::shim<D, IScrollProvider>(this); }
-
-public:
-
     bool HorizontallyScrollable() const;
     double HorizontalScrollPercent() const;
     double HorizontalViewSize() const;
@@ -203,12 +139,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISelectionItemProvider
+struct WINRT_EBO impl_ISelectionItemProvider
 {
-    auto shim() const { return impl::shim<D, ISelectionItemProvider>(this); }
-
-public:
-
     bool IsSelected() const;
     Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple SelectionContainer() const;
     void AddToSelection() const;
@@ -217,46 +149,30 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISelectionProvider
+struct WINRT_EBO impl_ISelectionProvider
 {
-    auto shim() const { return impl::shim<D, ISelectionProvider>(this); }
-
-public:
-
     bool CanSelectMultiple() const;
     bool IsSelectionRequired() const;
     com_array<Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple> GetSelection() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpreadsheetItemProvider
+struct WINRT_EBO impl_ISpreadsheetItemProvider
 {
-    auto shim() const { return impl::shim<D, ISpreadsheetItemProvider>(this); }
-
-public:
-
     hstring Formula() const;
     com_array<Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple> GetAnnotationObjects() const;
     com_array<Windows::UI::Xaml::Automation::AnnotationType> GetAnnotationTypes() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpreadsheetProvider
+struct WINRT_EBO impl_ISpreadsheetProvider
 {
-    auto shim() const { return impl::shim<D, ISpreadsheetProvider>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple GetItemByName(hstring_ref name) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStylesProvider
+struct WINRT_EBO impl_IStylesProvider
 {
-    auto shim() const { return impl::shim<D, IStylesProvider>(this); }
-
-public:
-
     hstring ExtendedProperties() const;
     Windows::UI::Color FillColor() const;
     Windows::UI::Color FillPatternColor() const;
@@ -267,68 +183,44 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISynchronizedInputProvider
+struct WINRT_EBO impl_ISynchronizedInputProvider
 {
-    auto shim() const { return impl::shim<D, ISynchronizedInputProvider>(this); }
-
-public:
-
     void Cancel() const;
     void StartListening(Windows::UI::Xaml::Automation::SynchronizedInputType inputType) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITableItemProvider
+struct WINRT_EBO impl_ITableItemProvider
 {
-    auto shim() const { return impl::shim<D, ITableItemProvider>(this); }
-
-public:
-
     com_array<Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple> GetColumnHeaderItems() const;
     com_array<Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple> GetRowHeaderItems() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITableProvider
+struct WINRT_EBO impl_ITableProvider
 {
-    auto shim() const { return impl::shim<D, ITableProvider>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::RowOrColumnMajor RowOrColumnMajor() const;
     com_array<Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple> GetColumnHeaders() const;
     com_array<Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple> GetRowHeaders() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITextChildProvider
+struct WINRT_EBO impl_ITextChildProvider
 {
-    auto shim() const { return impl::shim<D, ITextChildProvider>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple TextContainer() const;
     Windows::UI::Xaml::Automation::Provider::ITextRangeProvider TextRange() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITextEditProvider
+struct WINRT_EBO impl_ITextEditProvider
 {
-    auto shim() const { return impl::shim<D, ITextEditProvider>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Provider::ITextRangeProvider GetActiveComposition() const;
     Windows::UI::Xaml::Automation::Provider::ITextRangeProvider GetConversionTarget() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITextProvider
+struct WINRT_EBO impl_ITextProvider
 {
-    auto shim() const { return impl::shim<D, ITextProvider>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Provider::ITextRangeProvider DocumentRange() const;
     Windows::UI::Xaml::Automation::SupportedTextSelection SupportedTextSelection() const;
     com_array<Windows::UI::Xaml::Automation::Provider::ITextRangeProvider> GetSelection() const;
@@ -338,23 +230,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ITextProvider2
+struct WINRT_EBO impl_ITextProvider2
 {
-    auto shim() const { return impl::shim<D, ITextProvider2>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Provider::ITextRangeProvider RangeFromAnnotation(const Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple & annotationElement) const;
     Windows::UI::Xaml::Automation::Provider::ITextRangeProvider GetCaretRange(bool & isActive) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITextRangeProvider
+struct WINRT_EBO impl_ITextRangeProvider
 {
-    auto shim() const { return impl::shim<D, ITextRangeProvider>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Provider::ITextRangeProvider Clone() const;
     bool Compare(const Windows::UI::Xaml::Automation::Provider::ITextRangeProvider & textRangeProvider) const;
     int32_t CompareEndpoints(Windows::UI::Xaml::Automation::Text::TextPatternRangeEndpoint endpoint, const Windows::UI::Xaml::Automation::Provider::ITextRangeProvider & textRangeProvider, Windows::UI::Xaml::Automation::Text::TextPatternRangeEndpoint targetEndpoint) const;
@@ -376,33 +260,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ITextRangeProvider2
+struct WINRT_EBO impl_ITextRangeProvider2
 {
-    auto shim() const { return impl::shim<D, ITextRangeProvider2>(this); }
-
-public:
-
     void ShowContextMenu() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IToggleProvider
+struct WINRT_EBO impl_IToggleProvider
 {
-    auto shim() const { return impl::shim<D, IToggleProvider>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::ToggleState ToggleState() const;
     void Toggle() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITransformProvider
+struct WINRT_EBO impl_ITransformProvider
 {
-    auto shim() const { return impl::shim<D, ITransformProvider>(this); }
-
-public:
-
     bool CanMove() const;
     bool CanResize() const;
     bool CanRotate() const;
@@ -412,12 +284,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ITransformProvider2
+struct WINRT_EBO impl_ITransformProvider2
 {
-    auto shim() const { return impl::shim<D, ITransformProvider2>(this); }
-
-public:
-
     bool CanZoom() const;
     double ZoomLevel() const;
     double MaxZoom() const;
@@ -427,34 +295,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IValueProvider
+struct WINRT_EBO impl_IValueProvider
 {
-    auto shim() const { return impl::shim<D, IValueProvider>(this); }
-
-public:
-
     bool IsReadOnly() const;
     hstring Value() const;
     void SetValue(hstring_ref value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVirtualizedItemProvider
+struct WINRT_EBO impl_IVirtualizedItemProvider
 {
-    auto shim() const { return impl::shim<D, IVirtualizedItemProvider>(this); }
-
-public:
-
     void Realize() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWindowProvider
+struct WINRT_EBO impl_IWindowProvider
 {
-    auto shim() const { return impl::shim<D, IWindowProvider>(this); }
-
-public:
-
     bool IsModal() const;
     bool IsTopmost() const;
     bool Maximizable() const;

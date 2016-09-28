@@ -509,12 +509,8 @@ template <> struct __declspec(uuid("a785be1d-159e-53ad-9553-598b03dca048")) __de
 namespace Windows::Storage {
 
 template <typename D>
-class WINRT_EBO impl_IApplicationData
+struct WINRT_EBO impl_IApplicationData
 {
-    auto shim() const { return impl::shim<D, IApplicationData>(this); }
-
-public:
-
     uint32_t Version() const;
     Windows::Foundation::IAsyncAction SetVersionAsync(uint32_t desiredVersion, const Windows::Storage::ApplicationDataSetVersionHandler & handler) const;
     Windows::Foundation::IAsyncAction ClearAsync() const;
@@ -533,34 +529,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IApplicationData2
+struct WINRT_EBO impl_IApplicationData2
 {
-    auto shim() const { return impl::shim<D, IApplicationData2>(this); }
-
-public:
-
     Windows::Storage::StorageFolder LocalCacheFolder() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IApplicationData3
+struct WINRT_EBO impl_IApplicationData3
 {
-    auto shim() const { return impl::shim<D, IApplicationData3>(this); }
-
-public:
-
     Windows::Storage::StorageFolder GetPublisherCacheFolder(hstring_ref folderName) const;
     Windows::Foundation::IAsyncAction ClearPublisherCacheFolderAsync(hstring_ref folderName) const;
     Windows::Storage::StorageFolder SharedLocalFolder() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IApplicationDataContainer
+struct WINRT_EBO impl_IApplicationDataContainer
 {
-    auto shim() const { return impl::shim<D, IApplicationDataContainer>(this); }
-
-public:
-
     hstring Name() const;
     Windows::Storage::ApplicationDataLocality Locality() const;
     Windows::Foundation::Collections::IPropertySet Values() const;
@@ -570,43 +554,27 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IApplicationDataStatics
+struct WINRT_EBO impl_IApplicationDataStatics
 {
-    auto shim() const { return impl::shim<D, IApplicationDataStatics>(this); }
-
-public:
-
     Windows::Storage::ApplicationData Current() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IApplicationDataStatics2
+struct WINRT_EBO impl_IApplicationDataStatics2
 {
-    auto shim() const { return impl::shim<D, IApplicationDataStatics2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Storage::ApplicationData> GetForUserAsync(const Windows::System::User & user) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICachedFileManagerStatics
+struct WINRT_EBO impl_ICachedFileManagerStatics
 {
-    auto shim() const { return impl::shim<D, ICachedFileManagerStatics>(this); }
-
-public:
-
     void DeferUpdates(const Windows::Storage::IStorageFile & file) const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::Storage::Provider::FileUpdateStatus> CompleteUpdatesAsync(const Windows::Storage::IStorageFile & file) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDownloadsFolderStatics
+struct WINRT_EBO impl_IDownloadsFolderStatics
 {
-    auto shim() const { return impl::shim<D, IDownloadsFolderStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateFileAsync(hstring_ref desiredName) const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> CreateFolderAsync(hstring_ref desiredName) const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateFileAsync(hstring_ref desiredName, Windows::Storage::CreationCollisionOption option) const;
@@ -614,12 +582,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDownloadsFolderStatics2
+struct WINRT_EBO impl_IDownloadsFolderStatics2
 {
-    auto shim() const { return impl::shim<D, IDownloadsFolderStatics2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateFileForUserAsync(const Windows::System::User & user, hstring_ref desiredName) const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> CreateFolderForUserAsync(const Windows::System::User & user, hstring_ref desiredName) const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateFileForUserAsync(const Windows::System::User & user, hstring_ref desiredName, Windows::Storage::CreationCollisionOption option) const;
@@ -627,12 +591,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IFileIOStatics
+struct WINRT_EBO impl_IFileIOStatics
 {
-    auto shim() const { return impl::shim<D, IFileIOStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<hstring> ReadTextAsync(const Windows::Storage::IStorageFile & file) const;
     Windows::Foundation::IAsyncOperation<hstring> ReadTextAsync(const Windows::Storage::IStorageFile & file, Windows::Storage::Streams::UnicodeEncoding encoding) const;
     Windows::Foundation::IAsyncAction WriteTextAsync(const Windows::Storage::IStorageFile & file, hstring_ref contents) const;
@@ -651,42 +611,26 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IKnownFoldersCameraRollStatics
+struct WINRT_EBO impl_IKnownFoldersCameraRollStatics
 {
-    auto shim() const { return impl::shim<D, IKnownFoldersCameraRollStatics>(this); }
-
-public:
-
     Windows::Storage::StorageFolder CameraRoll() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IKnownFoldersPlaylistsStatics
+struct WINRT_EBO impl_IKnownFoldersPlaylistsStatics
 {
-    auto shim() const { return impl::shim<D, IKnownFoldersPlaylistsStatics>(this); }
-
-public:
-
     Windows::Storage::StorageFolder Playlists() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IKnownFoldersSavedPicturesStatics
+struct WINRT_EBO impl_IKnownFoldersSavedPicturesStatics
 {
-    auto shim() const { return impl::shim<D, IKnownFoldersSavedPicturesStatics>(this); }
-
-public:
-
     Windows::Storage::StorageFolder SavedPictures() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IKnownFoldersStatics
+struct WINRT_EBO impl_IKnownFoldersStatics
 {
-    auto shim() const { return impl::shim<D, IKnownFoldersStatics>(this); }
-
-public:
-
     Windows::Storage::StorageFolder MusicLibrary() const;
     Windows::Storage::StorageFolder PicturesLibrary() const;
     Windows::Storage::StorageFolder VideosLibrary() const;
@@ -697,34 +641,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IKnownFoldersStatics2
+struct WINRT_EBO impl_IKnownFoldersStatics2
 {
-    auto shim() const { return impl::shim<D, IKnownFoldersStatics2>(this); }
-
-public:
-
     Windows::Storage::StorageFolder Objects3D() const;
     Windows::Storage::StorageFolder AppCaptures() const;
     Windows::Storage::StorageFolder RecordedCalls() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IKnownFoldersStatics3
+struct WINRT_EBO impl_IKnownFoldersStatics3
 {
-    auto shim() const { return impl::shim<D, IKnownFoldersStatics3>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> GetFolderForUserAsync(const Windows::System::User & user, Windows::Storage::KnownFolderId folderId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPathIOStatics
+struct WINRT_EBO impl_IPathIOStatics
 {
-    auto shim() const { return impl::shim<D, IPathIOStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<hstring> ReadTextAsync(hstring_ref absolutePath) const;
     Windows::Foundation::IAsyncOperation<hstring> ReadTextAsync(hstring_ref absolutePath, Windows::Storage::Streams::UnicodeEncoding encoding) const;
     Windows::Foundation::IAsyncAction WriteTextAsync(hstring_ref absolutePath, hstring_ref contents) const;
@@ -743,34 +675,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISetVersionDeferral
+struct WINRT_EBO impl_ISetVersionDeferral
 {
-    auto shim() const { return impl::shim<D, ISetVersionDeferral>(this); }
-
-public:
-
     void Complete() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISetVersionRequest
+struct WINRT_EBO impl_ISetVersionRequest
 {
-    auto shim() const { return impl::shim<D, ISetVersionRequest>(this); }
-
-public:
-
     uint32_t CurrentVersion() const;
     uint32_t DesiredVersion() const;
     Windows::Storage::SetVersionDeferral GetDeferral() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorageFile
+struct WINRT_EBO impl_IStorageFile
 {
-    auto shim() const { return impl::shim<D, IStorageFile>(this); }
-
-public:
-
     hstring FileType() const;
     hstring ContentType() const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> OpenAsync(Windows::Storage::FileAccessMode accessMode) const;
@@ -786,33 +706,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorageFile2
+struct WINRT_EBO impl_IStorageFile2
 {
-    auto shim() const { return impl::shim<D, IStorageFile2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> OpenAsync(Windows::Storage::FileAccessMode accessMode, Windows::Storage::StorageOpenOptions options) const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageStreamTransaction> OpenTransactedWriteAsync(Windows::Storage::StorageOpenOptions options) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorageFilePropertiesWithAvailability
+struct WINRT_EBO impl_IStorageFilePropertiesWithAvailability
 {
-    auto shim() const { return impl::shim<D, IStorageFilePropertiesWithAvailability>(this); }
-
-public:
-
     bool IsAvailable() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorageFileStatics
+struct WINRT_EBO impl_IStorageFileStatics
 {
-    auto shim() const { return impl::shim<D, IStorageFileStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> GetFileFromPathAsync(hstring_ref path) const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> GetFileFromApplicationUriAsync(const Windows::Foundation::Uri & uri) const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateStreamedFileAsync(hstring_ref displayNameWithExtension, const Windows::Storage::StreamedFileDataRequestedHandler & dataRequested, const Windows::Storage::Streams::IRandomAccessStreamReference & thumbnail) const;
@@ -822,12 +730,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorageFolder
+struct WINRT_EBO impl_IStorageFolder
 {
-    auto shim() const { return impl::shim<D, IStorageFolder>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateFileAsync(hstring_ref desiredName) const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CreateFileAsync(hstring_ref desiredName, Windows::Storage::CreationCollisionOption options) const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> CreateFolderAsync(hstring_ref desiredName) const;
@@ -841,32 +745,20 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorageFolder2
+struct WINRT_EBO impl_IStorageFolder2
 {
-    auto shim() const { return impl::shim<D, IStorageFolder2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Storage::IStorageItem> TryGetItemAsync(hstring_ref name) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorageFolderStatics
+struct WINRT_EBO impl_IStorageFolderStatics
 {
-    auto shim() const { return impl::shim<D, IStorageFolderStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> GetFolderFromPathAsync(hstring_ref path) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorageItem
+struct WINRT_EBO impl_IStorageItem
 {
-    auto shim() const { return impl::shim<D, IStorageItem>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction RenameAsync(hstring_ref desiredName) const;
     Windows::Foundation::IAsyncAction RenameAsync(hstring_ref desiredName, Windows::Storage::NameCollisionOption option) const;
     Windows::Foundation::IAsyncAction DeleteAsync() const;
@@ -880,23 +772,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorageItem2
+struct WINRT_EBO impl_IStorageItem2
 {
-    auto shim() const { return impl::shim<D, IStorageItem2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> GetParentAsync() const;
     bool IsEqual(const Windows::Storage::IStorageItem & item) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorageItemProperties
+struct WINRT_EBO impl_IStorageItemProperties
 {
-    auto shim() const { return impl::shim<D, IStorageItemProperties>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::StorageItemThumbnail> GetThumbnailAsync(Windows::Storage::FileProperties::ThumbnailMode mode) const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::StorageItemThumbnail> GetThumbnailAsync(Windows::Storage::FileProperties::ThumbnailMode mode, uint32_t requestedSize) const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::StorageItemThumbnail> GetThumbnailAsync(Windows::Storage::FileProperties::ThumbnailMode mode, uint32_t requestedSize, Windows::Storage::FileProperties::ThumbnailOptions options) const;
@@ -907,34 +791,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorageItemProperties2
+struct WINRT_EBO impl_IStorageItemProperties2
 {
-    auto shim() const { return impl::shim<D, IStorageItemProperties2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::StorageItemThumbnail> GetScaledImageAsThumbnailAsync(Windows::Storage::FileProperties::ThumbnailMode mode) const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::StorageItemThumbnail> GetScaledImageAsThumbnailAsync(Windows::Storage::FileProperties::ThumbnailMode mode, uint32_t requestedSize) const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::StorageItemThumbnail> GetScaledImageAsThumbnailAsync(Windows::Storage::FileProperties::ThumbnailMode mode, uint32_t requestedSize, Windows::Storage::FileProperties::ThumbnailOptions options) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorageItemPropertiesWithProvider
+struct WINRT_EBO impl_IStorageItemPropertiesWithProvider
 {
-    auto shim() const { return impl::shim<D, IStorageItemPropertiesWithProvider>(this); }
-
-public:
-
     Windows::Storage::StorageProvider Provider() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorageLibrary
+struct WINRT_EBO impl_IStorageLibrary
 {
-    auto shim() const { return impl::shim<D, IStorageLibrary>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> RequestAddFolderAsync() const;
     Windows::Foundation::IAsyncOperation<bool> RequestRemoveFolderAsync(const Windows::Storage::StorageFolder & folder) const;
     Windows::Foundation::Collections::IObservableVector<Windows::Storage::StorageFolder> Folders() const;
@@ -946,22 +818,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorageLibrary2
+struct WINRT_EBO impl_IStorageLibrary2
 {
-    auto shim() const { return impl::shim<D, IStorageLibrary2>(this); }
-
-public:
-
     Windows::Storage::StorageLibraryChangeTracker ChangeTracker() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorageLibraryChange
+struct WINRT_EBO impl_IStorageLibraryChange
 {
-    auto shim() const { return impl::shim<D, IStorageLibraryChange>(this); }
-
-public:
-
     Windows::Storage::StorageLibraryChangeType ChangeType() const;
     hstring Path() const;
     hstring PreviousPath() const;
@@ -970,119 +834,75 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorageLibraryChangeReader
+struct WINRT_EBO impl_IStorageLibraryChangeReader
 {
-    auto shim() const { return impl::shim<D, IStorageLibraryChangeReader>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::StorageLibraryChange>> ReadBatchAsync() const;
     Windows::Foundation::IAsyncAction AcceptChangesAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorageLibraryChangeTracker
+struct WINRT_EBO impl_IStorageLibraryChangeTracker
 {
-    auto shim() const { return impl::shim<D, IStorageLibraryChangeTracker>(this); }
-
-public:
-
     Windows::Storage::StorageLibraryChangeReader GetChangeReader() const;
     void Enable() const;
     void Reset() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorageLibraryStatics
+struct WINRT_EBO impl_IStorageLibraryStatics
 {
-    auto shim() const { return impl::shim<D, IStorageLibraryStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageLibrary> GetLibraryAsync(Windows::Storage::KnownLibraryId libraryId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorageLibraryStatics2
+struct WINRT_EBO impl_IStorageLibraryStatics2
 {
-    auto shim() const { return impl::shim<D, IStorageLibraryStatics2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageLibrary> GetLibraryForUserAsync(const Windows::System::User & user, Windows::Storage::KnownLibraryId libraryId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorageProvider
+struct WINRT_EBO impl_IStorageProvider
 {
-    auto shim() const { return impl::shim<D, IStorageProvider>(this); }
-
-public:
-
     hstring Id() const;
     hstring DisplayName() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorageStreamTransaction
+struct WINRT_EBO impl_IStorageStreamTransaction
 {
-    auto shim() const { return impl::shim<D, IStorageStreamTransaction>(this); }
-
-public:
-
     Windows::Storage::Streams::IRandomAccessStream Stream() const;
     Windows::Foundation::IAsyncAction CommitAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStreamedFileDataRequest
+struct WINRT_EBO impl_IStreamedFileDataRequest
 {
-    auto shim() const { return impl::shim<D, IStreamedFileDataRequest>(this); }
-
-public:
-
     void FailAndClose(Windows::Storage::StreamedFileFailureMode failureMode) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISystemAudioProperties
+struct WINRT_EBO impl_ISystemAudioProperties
 {
-    auto shim() const { return impl::shim<D, ISystemAudioProperties>(this); }
-
-public:
-
     hstring EncodingBitrate() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISystemGPSProperties
+struct WINRT_EBO impl_ISystemGPSProperties
 {
-    auto shim() const { return impl::shim<D, ISystemGPSProperties>(this); }
-
-public:
-
     hstring LatitudeDecimal() const;
     hstring LongitudeDecimal() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISystemImageProperties
+struct WINRT_EBO impl_ISystemImageProperties
 {
-    auto shim() const { return impl::shim<D, ISystemImageProperties>(this); }
-
-public:
-
     hstring HorizontalSize() const;
     hstring VerticalSize() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISystemMediaProperties
+struct WINRT_EBO impl_ISystemMediaProperties
 {
-    auto shim() const { return impl::shim<D, ISystemMediaProperties>(this); }
-
-public:
-
     hstring Duration() const;
     hstring Producer() const;
     hstring Publisher() const;
@@ -1092,12 +912,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISystemMusicProperties
+struct WINRT_EBO impl_ISystemMusicProperties
 {
-    auto shim() const { return impl::shim<D, ISystemMusicProperties>(this); }
-
-public:
-
     hstring AlbumArtist() const;
     hstring AlbumTitle() const;
     hstring Artist() const;
@@ -1109,12 +925,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISystemPhotoProperties
+struct WINRT_EBO impl_ISystemPhotoProperties
 {
-    auto shim() const { return impl::shim<D, ISystemPhotoProperties>(this); }
-
-public:
-
     hstring CameraManufacturer() const;
     hstring CameraModel() const;
     hstring DateTaken() const;
@@ -1123,12 +935,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISystemProperties
+struct WINRT_EBO impl_ISystemProperties
 {
-    auto shim() const { return impl::shim<D, ISystemProperties>(this); }
-
-public:
-
     hstring Author() const;
     hstring Comment() const;
     hstring ItemNameDisplay() const;
@@ -1145,12 +953,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISystemVideoProperties
+struct WINRT_EBO impl_ISystemVideoProperties
 {
-    auto shim() const { return impl::shim<D, ISystemVideoProperties>(this); }
-
-public:
-
     hstring Director() const;
     hstring FrameHeight() const;
     hstring FrameWidth() const;

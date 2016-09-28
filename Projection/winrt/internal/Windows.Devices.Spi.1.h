@@ -83,13 +83,13 @@ template <> struct traits<Windows::Devices::Spi::SpiDevice> { using default_inte
 
 namespace Windows::Devices::Spi {
 
-template <typename T> class impl_ISpiBusInfo;
-template <typename T> class impl_ISpiConnectionSettings;
-template <typename T> class impl_ISpiConnectionSettingsFactory;
-template <typename T> class impl_ISpiController;
-template <typename T> class impl_ISpiControllerStatics;
-template <typename T> class impl_ISpiDevice;
-template <typename T> class impl_ISpiDeviceStatics;
+template <typename T> struct impl_ISpiBusInfo;
+template <typename T> struct impl_ISpiConnectionSettings;
+template <typename T> struct impl_ISpiConnectionSettingsFactory;
+template <typename T> struct impl_ISpiController;
+template <typename T> struct impl_ISpiControllerStatics;
+template <typename T> struct impl_ISpiDevice;
+template <typename T> struct impl_ISpiDeviceStatics;
 
 }
 
@@ -140,28 +140,24 @@ template <> struct traits<Windows::Devices::Spi::ISpiDeviceStatics>
 template <> struct traits<Windows::Devices::Spi::SpiBusInfo>
 {
     using abi = ABI::Windows::Devices::Spi::SpiBusInfo;
-    using default_interface = Windows::Devices::Spi::ISpiBusInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Spi.SpiBusInfo"; }
 };
 
 template <> struct traits<Windows::Devices::Spi::SpiConnectionSettings>
 {
     using abi = ABI::Windows::Devices::Spi::SpiConnectionSettings;
-    using default_interface = Windows::Devices::Spi::ISpiConnectionSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Spi.SpiConnectionSettings"; }
 };
 
 template <> struct traits<Windows::Devices::Spi::SpiController>
 {
     using abi = ABI::Windows::Devices::Spi::SpiController;
-    using default_interface = Windows::Devices::Spi::ISpiController;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Spi.SpiController"; }
 };
 
 template <> struct traits<Windows::Devices::Spi::SpiDevice>
 {
     using abi = ABI::Windows::Devices::Spi::SpiDevice;
-    using default_interface = Windows::Devices::Spi::ISpiDevice;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Spi.SpiDevice"; }
 };
 

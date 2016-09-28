@@ -40,23 +40,15 @@ template <> struct __declspec(uuid("09212bd4-851b-52bd-b82c-421bf3d6f511")) __de
 namespace Windows::Devices::Gpio::Provider {
 
 template <typename D>
-class WINRT_EBO impl_IGpioControllerProvider
+struct WINRT_EBO impl_IGpioControllerProvider
 {
-    auto shim() const { return impl::shim<D, IGpioControllerProvider>(this); }
-
-public:
-
     int32_t PinCount() const;
     Windows::Devices::Gpio::Provider::IGpioPinProvider OpenPinProvider(int32_t pin, Windows::Devices::Gpio::Provider::ProviderGpioSharingMode sharingMode) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGpioPinProvider
+struct WINRT_EBO impl_IGpioPinProvider
 {
-    auto shim() const { return impl::shim<D, IGpioPinProvider>(this); }
-
-public:
-
     event_token ValueChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Gpio::Provider::IGpioPinProvider, Windows::Devices::Gpio::Provider::GpioPinProviderValueChangedEventArgs> & handler) const;
     using ValueChanged_revoker = event_revoker<IGpioPinProvider>;
     ValueChanged_revoker ValueChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Gpio::Provider::IGpioPinProvider, Windows::Devices::Gpio::Provider::GpioPinProviderValueChangedEventArgs> & handler) const;
@@ -73,32 +65,20 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IGpioPinProviderValueChangedEventArgs
+struct WINRT_EBO impl_IGpioPinProviderValueChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IGpioPinProviderValueChangedEventArgs>(this); }
-
-public:
-
     Windows::Devices::Gpio::Provider::ProviderGpioPinEdge Edge() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGpioPinProviderValueChangedEventArgsFactory
+struct WINRT_EBO impl_IGpioPinProviderValueChangedEventArgsFactory
 {
-    auto shim() const { return impl::shim<D, IGpioPinProviderValueChangedEventArgsFactory>(this); }
-
-public:
-
     Windows::Devices::Gpio::Provider::GpioPinProviderValueChangedEventArgs Create(Windows::Devices::Gpio::Provider::ProviderGpioPinEdge edge) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGpioProvider
+struct WINRT_EBO impl_IGpioProvider
 {
-    auto shim() const { return impl::shim<D, IGpioProvider>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Gpio::Provider::IGpioControllerProvider> GetControllers() const;
 };
 

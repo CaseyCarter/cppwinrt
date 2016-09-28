@@ -116,54 +116,34 @@ template <> struct __declspec(uuid("a1c0a397-0364-5e4c-9dca-7cd7011bd114")) __de
 namespace Windows::Media {
 
 template <typename D>
-class WINRT_EBO impl_IAudioBuffer
+struct WINRT_EBO impl_IAudioBuffer
 {
-    auto shim() const { return impl::shim<D, IAudioBuffer>(this); }
-
-public:
-
     uint32_t Capacity() const;
     uint32_t Length() const;
     void Length(uint32_t value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioFrame
+struct WINRT_EBO impl_IAudioFrame
 {
-    auto shim() const { return impl::shim<D, IAudioFrame>(this); }
-
-public:
-
     Windows::Media::AudioBuffer LockBuffer(Windows::Media::AudioBufferAccessMode mode) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioFrameFactory
+struct WINRT_EBO impl_IAudioFrameFactory
 {
-    auto shim() const { return impl::shim<D, IAudioFrameFactory>(this); }
-
-public:
-
     Windows::Media::AudioFrame Create(uint32_t capacity) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAutoRepeatModeChangeRequestedEventArgs
+struct WINRT_EBO impl_IAutoRepeatModeChangeRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, IAutoRepeatModeChangeRequestedEventArgs>(this); }
-
-public:
-
     Windows::Media::MediaPlaybackAutoRepeatMode RequestedAutoRepeatMode() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IImageDisplayProperties
+struct WINRT_EBO impl_IImageDisplayProperties
 {
-    auto shim() const { return impl::shim<D, IImageDisplayProperties>(this); }
-
-public:
-
     hstring Title() const;
     void Title(hstring_ref value) const;
     hstring Subtitle() const;
@@ -171,22 +151,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaExtension
+struct WINRT_EBO impl_IMediaExtension
 {
-    auto shim() const { return impl::shim<D, IMediaExtension>(this); }
-
-public:
-
     void SetProperties(const Windows::Foundation::Collections::IPropertySet & configuration) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaExtensionManager
+struct WINRT_EBO impl_IMediaExtensionManager
 {
-    auto shim() const { return impl::shim<D, IMediaExtensionManager>(this); }
-
-public:
-
     void RegisterSchemeHandler(hstring_ref activatableClassId, hstring_ref scheme) const;
     void RegisterSchemeHandler(hstring_ref activatableClassId, hstring_ref scheme, const Windows::Foundation::Collections::IPropertySet & configuration) const;
     void RegisterByteStreamHandler(hstring_ref activatableClassId, hstring_ref fileExtension, hstring_ref mimeType) const;
@@ -202,12 +174,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaFrame
+struct WINRT_EBO impl_IMediaFrame
 {
-    auto shim() const { return impl::shim<D, IMediaFrame>(this); }
-
-public:
-
     hstring Type() const;
     bool IsReadOnly() const;
     void RelativeTime(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const;
@@ -222,54 +190,34 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaMarker
+struct WINRT_EBO impl_IMediaMarker
 {
-    auto shim() const { return impl::shim<D, IMediaMarker>(this); }
-
-public:
-
     Windows::Foundation::TimeSpan Time() const;
     hstring MediaMarkerType() const;
     hstring Text() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaMarkerTypesStatics
+struct WINRT_EBO impl_IMediaMarkerTypesStatics
 {
-    auto shim() const { return impl::shim<D, IMediaMarkerTypesStatics>(this); }
-
-public:
-
     hstring Bookmark() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaMarkers
+struct WINRT_EBO impl_IMediaMarkers
 {
-    auto shim() const { return impl::shim<D, IMediaMarkers>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Media::IMediaMarker> Markers() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaProcessingTriggerDetails
+struct WINRT_EBO impl_IMediaProcessingTriggerDetails
 {
-    auto shim() const { return impl::shim<D, IMediaProcessingTriggerDetails>(this); }
-
-public:
-
     Windows::Foundation::Collections::ValueSet Arguments() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaTimelineController
+struct WINRT_EBO impl_IMediaTimelineController
 {
-    auto shim() const { return impl::shim<D, IMediaTimelineController>(this); }
-
-public:
-
     void Start() const;
     void Resume() const;
     void Pause() const;
@@ -289,12 +237,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMusicDisplayProperties
+struct WINRT_EBO impl_IMusicDisplayProperties
 {
-    auto shim() const { return impl::shim<D, IMusicDisplayProperties>(this); }
-
-public:
-
     hstring Title() const;
     void Title(hstring_ref value) const;
     hstring AlbumArtist() const;
@@ -304,12 +248,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMusicDisplayProperties2
+struct WINRT_EBO impl_IMusicDisplayProperties2
 {
-    auto shim() const { return impl::shim<D, IMusicDisplayProperties2>(this); }
-
-public:
-
     hstring AlbumTitle() const;
     void AlbumTitle(hstring_ref value) const;
     uint32_t TrackNumber() const;
@@ -318,53 +258,33 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMusicDisplayProperties3
+struct WINRT_EBO impl_IMusicDisplayProperties3
 {
-    auto shim() const { return impl::shim<D, IMusicDisplayProperties3>(this); }
-
-public:
-
     uint32_t AlbumTrackCount() const;
     void AlbumTrackCount(uint32_t value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlaybackPositionChangeRequestedEventArgs
+struct WINRT_EBO impl_IPlaybackPositionChangeRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, IPlaybackPositionChangeRequestedEventArgs>(this); }
-
-public:
-
     Windows::Foundation::TimeSpan RequestedPlaybackPosition() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlaybackRateChangeRequestedEventArgs
+struct WINRT_EBO impl_IPlaybackRateChangeRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, IPlaybackRateChangeRequestedEventArgs>(this); }
-
-public:
-
     double RequestedPlaybackRate() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IShuffleEnabledChangeRequestedEventArgs
+struct WINRT_EBO impl_IShuffleEnabledChangeRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, IShuffleEnabledChangeRequestedEventArgs>(this); }
-
-public:
-
     bool RequestedShuffleEnabled() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISystemMediaTransportControls
+struct WINRT_EBO impl_ISystemMediaTransportControls
 {
-    auto shim() const { return impl::shim<D, ISystemMediaTransportControls>(this); }
-
-public:
-
     Windows::Media::MediaPlaybackStatus PlaybackStatus() const;
     void PlaybackStatus(Windows::Media::MediaPlaybackStatus value) const;
     Windows::Media::SystemMediaTransportControlsDisplayUpdater DisplayUpdater() const;
@@ -402,12 +322,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISystemMediaTransportControls2
+struct WINRT_EBO impl_ISystemMediaTransportControls2
 {
-    auto shim() const { return impl::shim<D, ISystemMediaTransportControls2>(this); }
-
-public:
-
     Windows::Media::MediaPlaybackAutoRepeatMode AutoRepeatMode() const;
     void AutoRepeatMode(Windows::Media::MediaPlaybackAutoRepeatMode value) const;
     bool ShuffleEnabled() const;
@@ -434,22 +350,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISystemMediaTransportControlsButtonPressedEventArgs
+struct WINRT_EBO impl_ISystemMediaTransportControlsButtonPressedEventArgs
 {
-    auto shim() const { return impl::shim<D, ISystemMediaTransportControlsButtonPressedEventArgs>(this); }
-
-public:
-
     Windows::Media::SystemMediaTransportControlsButton Button() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISystemMediaTransportControlsDisplayUpdater
+struct WINRT_EBO impl_ISystemMediaTransportControlsDisplayUpdater
 {
-    auto shim() const { return impl::shim<D, ISystemMediaTransportControlsDisplayUpdater>(this); }
-
-public:
-
     Windows::Media::MediaPlaybackType Type() const;
     void Type(Windows::Media::MediaPlaybackType value) const;
     hstring AppMediaId() const;
@@ -465,32 +373,20 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISystemMediaTransportControlsPropertyChangedEventArgs
+struct WINRT_EBO impl_ISystemMediaTransportControlsPropertyChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, ISystemMediaTransportControlsPropertyChangedEventArgs>(this); }
-
-public:
-
     Windows::Media::SystemMediaTransportControlsProperty Property() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISystemMediaTransportControlsStatics
+struct WINRT_EBO impl_ISystemMediaTransportControlsStatics
 {
-    auto shim() const { return impl::shim<D, ISystemMediaTransportControlsStatics>(this); }
-
-public:
-
     Windows::Media::SystemMediaTransportControls GetForCurrentView() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISystemMediaTransportControlsTimelineProperties
+struct WINRT_EBO impl_ISystemMediaTransportControlsTimelineProperties
 {
-    auto shim() const { return impl::shim<D, ISystemMediaTransportControlsTimelineProperties>(this); }
-
-public:
-
     Windows::Foundation::TimeSpan StartTime() const;
     void StartTime(const Windows::Foundation::TimeSpan & value) const;
     Windows::Foundation::TimeSpan EndTime() const;
@@ -504,12 +400,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVideoDisplayProperties
+struct WINRT_EBO impl_IVideoDisplayProperties
 {
-    auto shim() const { return impl::shim<D, IVideoDisplayProperties>(this); }
-
-public:
-
     hstring Title() const;
     void Title(hstring_ref value) const;
     hstring Subtitle() const;
@@ -517,44 +409,28 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVideoDisplayProperties2
+struct WINRT_EBO impl_IVideoDisplayProperties2
 {
-    auto shim() const { return impl::shim<D, IVideoDisplayProperties2>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<hstring> Genres() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVideoEffectsStatics
+struct WINRT_EBO impl_IVideoEffectsStatics
 {
-    auto shim() const { return impl::shim<D, IVideoEffectsStatics>(this); }
-
-public:
-
     hstring VideoStabilization() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVideoFrame
+struct WINRT_EBO impl_IVideoFrame
 {
-    auto shim() const { return impl::shim<D, IVideoFrame>(this); }
-
-public:
-
     Windows::Graphics::Imaging::SoftwareBitmap SoftwareBitmap() const;
     Windows::Foundation::IAsyncAction CopyToAsync(const Windows::Media::VideoFrame & frame) const;
     Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface Direct3DSurface() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVideoFrameFactory
+struct WINRT_EBO impl_IVideoFrameFactory
 {
-    auto shim() const { return impl::shim<D, IVideoFrameFactory>(this); }
-
-public:
-
     Windows::Media::VideoFrame Create(Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height) const;
     Windows::Media::VideoFrame CreateWithAlpha(Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height, Windows::Graphics::Imaging::BitmapAlphaMode alpha) const;
 };

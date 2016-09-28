@@ -253,22 +253,22 @@ template <> struct traits<Windows::Media::Import::PhotoImportVideoSegment> { usi
 
 namespace Windows::Media::Import {
 
-template <typename T> class impl_IPhotoImportDeleteImportedItemsFromSourceResult;
-template <typename T> class impl_IPhotoImportFindItemsResult;
-template <typename T> class impl_IPhotoImportFindItemsResult2;
-template <typename T> class impl_IPhotoImportImportItemsResult;
-template <typename T> class impl_IPhotoImportItem;
-template <typename T> class impl_IPhotoImportItemImportedEventArgs;
-template <typename T> class impl_IPhotoImportManagerStatics;
-template <typename T> class impl_IPhotoImportOperation;
-template <typename T> class impl_IPhotoImportSelectionChangedEventArgs;
-template <typename T> class impl_IPhotoImportSession;
-template <typename T> class impl_IPhotoImportSession2;
-template <typename T> class impl_IPhotoImportSidecar;
-template <typename T> class impl_IPhotoImportSource;
-template <typename T> class impl_IPhotoImportSourceStatics;
-template <typename T> class impl_IPhotoImportStorageMedium;
-template <typename T> class impl_IPhotoImportVideoSegment;
+template <typename T> struct impl_IPhotoImportDeleteImportedItemsFromSourceResult;
+template <typename T> struct impl_IPhotoImportFindItemsResult;
+template <typename T> struct impl_IPhotoImportFindItemsResult2;
+template <typename T> struct impl_IPhotoImportImportItemsResult;
+template <typename T> struct impl_IPhotoImportItem;
+template <typename T> struct impl_IPhotoImportItemImportedEventArgs;
+template <typename T> struct impl_IPhotoImportManagerStatics;
+template <typename T> struct impl_IPhotoImportOperation;
+template <typename T> struct impl_IPhotoImportSelectionChangedEventArgs;
+template <typename T> struct impl_IPhotoImportSession;
+template <typename T> struct impl_IPhotoImportSession2;
+template <typename T> struct impl_IPhotoImportSidecar;
+template <typename T> struct impl_IPhotoImportSource;
+template <typename T> struct impl_IPhotoImportSourceStatics;
+template <typename T> struct impl_IPhotoImportStorageMedium;
+template <typename T> struct impl_IPhotoImportVideoSegment;
 
 }
 
@@ -373,35 +373,30 @@ template <> struct traits<Windows::Media::Import::IPhotoImportVideoSegment>
 template <> struct traits<Windows::Media::Import::PhotoImportDeleteImportedItemsFromSourceResult>
 {
     using abi = ABI::Windows::Media::Import::PhotoImportDeleteImportedItemsFromSourceResult;
-    using default_interface = Windows::Media::Import::IPhotoImportDeleteImportedItemsFromSourceResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Import.PhotoImportDeleteImportedItemsFromSourceResult"; }
 };
 
 template <> struct traits<Windows::Media::Import::PhotoImportFindItemsResult>
 {
     using abi = ABI::Windows::Media::Import::PhotoImportFindItemsResult;
-    using default_interface = Windows::Media::Import::IPhotoImportFindItemsResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Import.PhotoImportFindItemsResult"; }
 };
 
 template <> struct traits<Windows::Media::Import::PhotoImportImportItemsResult>
 {
     using abi = ABI::Windows::Media::Import::PhotoImportImportItemsResult;
-    using default_interface = Windows::Media::Import::IPhotoImportImportItemsResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Import.PhotoImportImportItemsResult"; }
 };
 
 template <> struct traits<Windows::Media::Import::PhotoImportItem>
 {
     using abi = ABI::Windows::Media::Import::PhotoImportItem;
-    using default_interface = Windows::Media::Import::IPhotoImportItem;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Import.PhotoImportItem"; }
 };
 
 template <> struct traits<Windows::Media::Import::PhotoImportItemImportedEventArgs>
 {
     using abi = ABI::Windows::Media::Import::PhotoImportItemImportedEventArgs;
-    using default_interface = Windows::Media::Import::IPhotoImportItemImportedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Import.PhotoImportItemImportedEventArgs"; }
 };
 
@@ -413,49 +408,42 @@ template <> struct traits<Windows::Media::Import::PhotoImportManager>
 template <> struct traits<Windows::Media::Import::PhotoImportOperation>
 {
     using abi = ABI::Windows::Media::Import::PhotoImportOperation;
-    using default_interface = Windows::Media::Import::IPhotoImportOperation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Import.PhotoImportOperation"; }
 };
 
 template <> struct traits<Windows::Media::Import::PhotoImportSelectionChangedEventArgs>
 {
     using abi = ABI::Windows::Media::Import::PhotoImportSelectionChangedEventArgs;
-    using default_interface = Windows::Media::Import::IPhotoImportSelectionChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Import.PhotoImportSelectionChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Import::PhotoImportSession>
 {
     using abi = ABI::Windows::Media::Import::PhotoImportSession;
-    using default_interface = Windows::Media::Import::IPhotoImportSession;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Import.PhotoImportSession"; }
 };
 
 template <> struct traits<Windows::Media::Import::PhotoImportSidecar>
 {
     using abi = ABI::Windows::Media::Import::PhotoImportSidecar;
-    using default_interface = Windows::Media::Import::IPhotoImportSidecar;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Import.PhotoImportSidecar"; }
 };
 
 template <> struct traits<Windows::Media::Import::PhotoImportSource>
 {
     using abi = ABI::Windows::Media::Import::PhotoImportSource;
-    using default_interface = Windows::Media::Import::IPhotoImportSource;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Import.PhotoImportSource"; }
 };
 
 template <> struct traits<Windows::Media::Import::PhotoImportStorageMedium>
 {
     using abi = ABI::Windows::Media::Import::PhotoImportStorageMedium;
-    using default_interface = Windows::Media::Import::IPhotoImportStorageMedium;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Import.PhotoImportStorageMedium"; }
 };
 
 template <> struct traits<Windows::Media::Import::PhotoImportVideoSegment>
 {
     using abi = ABI::Windows::Media::Import::PhotoImportVideoSegment;
-    using default_interface = Windows::Media::Import::IPhotoImportVideoSegment;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Import.PhotoImportVideoSegment"; }
 };
 

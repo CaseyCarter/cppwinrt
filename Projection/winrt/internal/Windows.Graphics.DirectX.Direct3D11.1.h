@@ -55,8 +55,8 @@ namespace ABI {
 
 namespace Windows::Graphics::DirectX::Direct3D11 {
 
-template <typename T> class impl_IDirect3DDevice;
-template <typename T> class impl_IDirect3DSurface;
+template <typename T> struct impl_IDirect3DDevice;
+template <typename T> struct impl_IDirect3DSurface;
 
 }
 

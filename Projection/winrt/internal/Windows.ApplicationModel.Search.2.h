@@ -55,12 +55,8 @@ template <> struct __declspec(uuid("4669befc-ae5c-52b1-8a97-5466ce61e94e")) __de
 namespace Windows::ApplicationModel::Search {
 
 template <typename D>
-class WINRT_EBO impl_ILocalContentSuggestionSettings
+struct WINRT_EBO impl_ILocalContentSuggestionSettings
 {
-    auto shim() const { return impl::shim<D, ILocalContentSuggestionSettings>(this); }
-
-public:
-
     void Enabled(bool value) const;
     bool Enabled() const;
     Windows::Foundation::Collections::IVector<Windows::Storage::StorageFolder> Locations() const;
@@ -70,46 +66,30 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISearchPaneQueryLinguisticDetails
+struct WINRT_EBO impl_ISearchPaneQueryLinguisticDetails
 {
-    auto shim() const { return impl::shim<D, ISearchPaneQueryLinguisticDetails>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<hstring> QueryTextAlternatives() const;
     uint32_t QueryTextCompositionStart() const;
     uint32_t QueryTextCompositionLength() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISearchQueryLinguisticDetails
+struct WINRT_EBO impl_ISearchQueryLinguisticDetails
 {
-    auto shim() const { return impl::shim<D, ISearchQueryLinguisticDetails>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<hstring> QueryTextAlternatives() const;
     uint32_t QueryTextCompositionStart() const;
     uint32_t QueryTextCompositionLength() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISearchQueryLinguisticDetailsFactory
+struct WINRT_EBO impl_ISearchQueryLinguisticDetailsFactory
 {
-    auto shim() const { return impl::shim<D, ISearchQueryLinguisticDetailsFactory>(this); }
-
-public:
-
     Windows::ApplicationModel::Search::SearchQueryLinguisticDetails CreateInstance(const Windows::Foundation::Collections::IIterable<hstring> & queryTextAlternatives, uint32_t queryTextCompositionStart, uint32_t queryTextCompositionLength) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISearchSuggestionCollection
+struct WINRT_EBO impl_ISearchSuggestionCollection
 {
-    auto shim() const { return impl::shim<D, ISearchSuggestionCollection>(this); }
-
-public:
-
     uint32_t Size() const;
     void AppendQuerySuggestion(hstring_ref text) const;
     void AppendQuerySuggestions(const Windows::Foundation::Collections::IIterable<hstring> & suggestions) const;
@@ -118,24 +98,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISearchSuggestionsRequest
+struct WINRT_EBO impl_ISearchSuggestionsRequest
 {
-    auto shim() const { return impl::shim<D, ISearchSuggestionsRequest>(this); }
-
-public:
-
     bool IsCanceled() const;
     Windows::ApplicationModel::Search::SearchSuggestionCollection SearchSuggestionCollection() const;
     Windows::ApplicationModel::Search::SearchSuggestionsRequestDeferral GetDeferral() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISearchSuggestionsRequestDeferral
+struct WINRT_EBO impl_ISearchSuggestionsRequestDeferral
 {
-    auto shim() const { return impl::shim<D, ISearchSuggestionsRequestDeferral>(this); }
-
-public:
-
     void Complete() const;
 };
 

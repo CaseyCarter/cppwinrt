@@ -176,17 +176,17 @@ template <> struct traits<Windows::UI::WebUI::WebUIWebAuthenticationBrokerContin
 
 namespace Windows::UI::WebUI {
 
-template <typename T> class impl_IActivatedDeferral;
-template <typename T> class impl_IActivatedEventArgsDeferral;
-template <typename T> class impl_IActivatedOperation;
-template <typename T> class impl_IHtmlPrintDocumentSource;
-template <typename T> class impl_IWebUIActivationStatics;
-template <typename T> class impl_IWebUIActivationStatics2;
-template <typename T> class impl_IWebUIBackgroundTaskInstance;
-template <typename T> class impl_IWebUIBackgroundTaskInstanceStatics;
-template <typename T> class impl_IWebUINavigatedDeferral;
-template <typename T> class impl_IWebUINavigatedEventArgs;
-template <typename T> class impl_IWebUINavigatedOperation;
+template <typename T> struct impl_IActivatedDeferral;
+template <typename T> struct impl_IActivatedEventArgsDeferral;
+template <typename T> struct impl_IActivatedOperation;
+template <typename T> struct impl_IHtmlPrintDocumentSource;
+template <typename T> struct impl_IWebUIActivationStatics;
+template <typename T> struct impl_IWebUIActivationStatics2;
+template <typename T> struct impl_IWebUIBackgroundTaskInstance;
+template <typename T> struct impl_IWebUIBackgroundTaskInstanceStatics;
+template <typename T> struct impl_IWebUINavigatedDeferral;
+template <typename T> struct impl_IWebUINavigatedEventArgs;
+template <typename T> struct impl_IWebUINavigatedOperation;
 template <typename T> struct impl_ActivatedEventHandler;
 template <typename T> struct impl_EnteredBackgroundEventHandler;
 template <typename T> struct impl_LeavingBackgroundEventHandler;
@@ -297,56 +297,48 @@ template <> struct traits<Windows::UI::WebUI::SuspendingEventHandler>
 template <> struct traits<Windows::UI::WebUI::ActivatedDeferral>
 {
     using abi = ABI::Windows::UI::WebUI::ActivatedDeferral;
-    using default_interface = Windows::UI::WebUI::IActivatedDeferral;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.ActivatedDeferral"; }
 };
 
 template <> struct traits<Windows::UI::WebUI::ActivatedOperation>
 {
     using abi = ABI::Windows::UI::WebUI::ActivatedOperation;
-    using default_interface = Windows::UI::WebUI::IActivatedOperation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.ActivatedOperation"; }
 };
 
 template <> struct traits<Windows::UI::WebUI::EnteredBackgroundEventArgs>
 {
     using abi = ABI::Windows::UI::WebUI::EnteredBackgroundEventArgs;
-    using default_interface = Windows::ApplicationModel::IEnteredBackgroundEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.EnteredBackgroundEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::WebUI::HtmlPrintDocumentSource>
 {
     using abi = ABI::Windows::UI::WebUI::HtmlPrintDocumentSource;
-    using default_interface = Windows::UI::WebUI::IHtmlPrintDocumentSource;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.HtmlPrintDocumentSource"; }
 };
 
 template <> struct traits<Windows::UI::WebUI::LeavingBackgroundEventArgs>
 {
     using abi = ABI::Windows::UI::WebUI::LeavingBackgroundEventArgs;
-    using default_interface = Windows::ApplicationModel::ILeavingBackgroundEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.LeavingBackgroundEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::WebUI::SuspendingDeferral>
 {
     using abi = ABI::Windows::UI::WebUI::SuspendingDeferral;
-    using default_interface = Windows::ApplicationModel::ISuspendingDeferral;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.SuspendingDeferral"; }
 };
 
 template <> struct traits<Windows::UI::WebUI::SuspendingEventArgs>
 {
     using abi = ABI::Windows::UI::WebUI::SuspendingEventArgs;
-    using default_interface = Windows::ApplicationModel::ISuspendingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.SuspendingEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::WebUI::SuspendingOperation>
 {
     using abi = ABI::Windows::UI::WebUI::SuspendingOperation;
-    using default_interface = Windows::ApplicationModel::ISuspendingOperation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.SuspendingOperation"; }
 };
 
@@ -358,35 +350,30 @@ template <> struct traits<Windows::UI::WebUI::WebUIApplication>
 template <> struct traits<Windows::UI::WebUI::WebUIAppointmentsProviderAddAppointmentActivatedEventArgs>
 {
     using abi = ABI::Windows::UI::WebUI::WebUIAppointmentsProviderAddAppointmentActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IAppointmentsProviderAddAppointmentActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.WebUIAppointmentsProviderAddAppointmentActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::WebUI::WebUIAppointmentsProviderRemoveAppointmentActivatedEventArgs>
 {
     using abi = ABI::Windows::UI::WebUI::WebUIAppointmentsProviderRemoveAppointmentActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IAppointmentsProviderRemoveAppointmentActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.WebUIAppointmentsProviderRemoveAppointmentActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::WebUI::WebUIAppointmentsProviderReplaceAppointmentActivatedEventArgs>
 {
     using abi = ABI::Windows::UI::WebUI::WebUIAppointmentsProviderReplaceAppointmentActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IAppointmentsProviderReplaceAppointmentActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.WebUIAppointmentsProviderReplaceAppointmentActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::WebUI::WebUIAppointmentsProviderShowAppointmentDetailsActivatedEventArgs>
 {
     using abi = ABI::Windows::UI::WebUI::WebUIAppointmentsProviderShowAppointmentDetailsActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.WebUIAppointmentsProviderShowAppointmentDetailsActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::WebUI::WebUIAppointmentsProviderShowTimeFrameActivatedEventArgs>
 {
     using abi = ABI::Windows::UI::WebUI::WebUIAppointmentsProviderShowTimeFrameActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IAppointmentsProviderShowTimeFrameActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.WebUIAppointmentsProviderShowTimeFrameActivatedEventArgs"; }
 };
 
@@ -398,175 +385,150 @@ template <> struct traits<Windows::UI::WebUI::WebUIBackgroundTaskInstance>
 template <> struct traits<Windows::UI::WebUI::WebUIBackgroundTaskInstanceRuntimeClass>
 {
     using abi = ABI::Windows::UI::WebUI::WebUIBackgroundTaskInstanceRuntimeClass;
-    using default_interface = Windows::UI::WebUI::IWebUIBackgroundTaskInstance;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.WebUIBackgroundTaskInstanceRuntimeClass"; }
 };
 
 template <> struct traits<Windows::UI::WebUI::WebUICachedFileUpdaterActivatedEventArgs>
 {
     using abi = ABI::Windows::UI::WebUI::WebUICachedFileUpdaterActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::ICachedFileUpdaterActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.WebUICachedFileUpdaterActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::WebUI::WebUIDeviceActivatedEventArgs>
 {
     using abi = ABI::Windows::UI::WebUI::WebUIDeviceActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IDeviceActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.WebUIDeviceActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::WebUI::WebUIDevicePairingActivatedEventArgs>
 {
     using abi = ABI::Windows::UI::WebUI::WebUIDevicePairingActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IDevicePairingActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.WebUIDevicePairingActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::WebUI::WebUIDialReceiverActivatedEventArgs>
 {
     using abi = ABI::Windows::UI::WebUI::WebUIDialReceiverActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IDialReceiverActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.WebUIDialReceiverActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::WebUI::WebUIFileActivatedEventArgs>
 {
     using abi = ABI::Windows::UI::WebUI::WebUIFileActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IFileActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.WebUIFileActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::WebUI::WebUIFileOpenPickerActivatedEventArgs>
 {
     using abi = ABI::Windows::UI::WebUI::WebUIFileOpenPickerActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IFileOpenPickerActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.WebUIFileOpenPickerActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::WebUI::WebUIFileOpenPickerContinuationEventArgs>
 {
     using abi = ABI::Windows::UI::WebUI::WebUIFileOpenPickerContinuationEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IFileOpenPickerContinuationEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.WebUIFileOpenPickerContinuationEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::WebUI::WebUIFileSavePickerActivatedEventArgs>
 {
     using abi = ABI::Windows::UI::WebUI::WebUIFileSavePickerActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IFileSavePickerActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.WebUIFileSavePickerActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::WebUI::WebUIFileSavePickerContinuationEventArgs>
 {
     using abi = ABI::Windows::UI::WebUI::WebUIFileSavePickerContinuationEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IFileSavePickerContinuationEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.WebUIFileSavePickerContinuationEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::WebUI::WebUIFolderPickerContinuationEventArgs>
 {
     using abi = ABI::Windows::UI::WebUI::WebUIFolderPickerContinuationEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IFolderPickerContinuationEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.WebUIFolderPickerContinuationEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::WebUI::WebUILaunchActivatedEventArgs>
 {
     using abi = ABI::Windows::UI::WebUI::WebUILaunchActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::ILaunchActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.WebUILaunchActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::WebUI::WebUILockScreenActivatedEventArgs>
 {
     using abi = ABI::Windows::UI::WebUI::WebUILockScreenActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::ILockScreenActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.WebUILockScreenActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::WebUI::WebUINavigatedDeferral>
 {
     using abi = ABI::Windows::UI::WebUI::WebUINavigatedDeferral;
-    using default_interface = Windows::UI::WebUI::IWebUINavigatedDeferral;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.WebUINavigatedDeferral"; }
 };
 
 template <> struct traits<Windows::UI::WebUI::WebUINavigatedEventArgs>
 {
     using abi = ABI::Windows::UI::WebUI::WebUINavigatedEventArgs;
-    using default_interface = Windows::UI::WebUI::IWebUINavigatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.WebUINavigatedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::WebUI::WebUINavigatedOperation>
 {
     using abi = ABI::Windows::UI::WebUI::WebUINavigatedOperation;
-    using default_interface = Windows::UI::WebUI::IWebUINavigatedOperation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.WebUINavigatedOperation"; }
 };
 
 template <> struct traits<Windows::UI::WebUI::WebUIProtocolActivatedEventArgs>
 {
     using abi = ABI::Windows::UI::WebUI::WebUIProtocolActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IProtocolActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.WebUIProtocolActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::WebUI::WebUIProtocolForResultsActivatedEventArgs>
 {
     using abi = ABI::Windows::UI::WebUI::WebUIProtocolForResultsActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IProtocolForResultsActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.WebUIProtocolForResultsActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::WebUI::WebUIRestrictedLaunchActivatedEventArgs>
 {
     using abi = ABI::Windows::UI::WebUI::WebUIRestrictedLaunchActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IRestrictedLaunchActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.WebUIRestrictedLaunchActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::WebUI::WebUIShareTargetActivatedEventArgs>
 {
     using abi = ABI::Windows::UI::WebUI::WebUIShareTargetActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IShareTargetActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.WebUIShareTargetActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::WebUI::WebUIToastNotificationActivatedEventArgs>
 {
     using abi = ABI::Windows::UI::WebUI::WebUIToastNotificationActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IToastNotificationActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.WebUIToastNotificationActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::WebUI::WebUIUserDataAccountProviderActivatedEventArgs>
 {
     using abi = ABI::Windows::UI::WebUI::WebUIUserDataAccountProviderActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IUserDataAccountProviderActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.WebUIUserDataAccountProviderActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::WebUI::WebUIVoiceCommandActivatedEventArgs>
 {
     using abi = ABI::Windows::UI::WebUI::WebUIVoiceCommandActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IVoiceCommandActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.WebUIVoiceCommandActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::WebUI::WebUIWebAccountProviderActivatedEventArgs>
 {
     using abi = ABI::Windows::UI::WebUI::WebUIWebAccountProviderActivatedEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IWebAccountProviderActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.WebUIWebAccountProviderActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::WebUI::WebUIWebAuthenticationBrokerContinuationEventArgs>
 {
     using abi = ABI::Windows::UI::WebUI::WebUIWebAuthenticationBrokerContinuationEventArgs;
-    using default_interface = Windows::ApplicationModel::Activation::IWebAuthenticationBrokerContinuationEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.WebUI.WebUIWebAuthenticationBrokerContinuationEventArgs"; }
 };
 

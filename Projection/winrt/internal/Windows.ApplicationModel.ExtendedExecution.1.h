@@ -41,8 +41,8 @@ template <> struct traits<Windows::ApplicationModel::ExtendedExecution::Extended
 
 namespace Windows::ApplicationModel::ExtendedExecution {
 
-template <typename T> class impl_IExtendedExecutionRevokedEventArgs;
-template <typename T> class impl_IExtendedExecutionSession;
+template <typename T> struct impl_IExtendedExecutionRevokedEventArgs;
+template <typename T> struct impl_IExtendedExecutionSession;
 
 }
 
@@ -63,14 +63,12 @@ template <> struct traits<Windows::ApplicationModel::ExtendedExecution::IExtende
 template <> struct traits<Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionRevokedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionRevokedEventArgs;
-    using default_interface = Windows::ApplicationModel::ExtendedExecution::IExtendedExecutionRevokedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionRevokedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionSession>
 {
     using abi = ABI::Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionSession;
-    using default_interface = Windows::ApplicationModel::ExtendedExecution::IExtendedExecutionSession;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.ExtendedExecution.ExtendedExecutionSession"; }
 };
 

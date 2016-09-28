@@ -32,8 +32,8 @@ namespace ABI {
 
 namespace Windows::Web {
 
-template <typename T> class impl_IUriToStreamResolver;
-template <typename T> class impl_IWebErrorStatics;
+template <typename T> struct impl_IUriToStreamResolver;
+template <typename T> struct impl_IWebErrorStatics;
 
 }
 

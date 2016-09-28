@@ -35,12 +35,8 @@ template <> struct __declspec(uuid("9a3e6d46-e880-5deb-9006-92fe5c43ace1")) __de
 namespace Windows::ApplicationModel::SocialInfo {
 
 template <typename D>
-class WINRT_EBO impl_ISocialFeedChildItem
+struct WINRT_EBO impl_ISocialFeedChildItem
 {
-    auto shim() const { return impl::shim<D, ISocialFeedChildItem>(this); }
-
-public:
-
     Windows::ApplicationModel::SocialInfo::SocialUserInfo Author() const;
     Windows::ApplicationModel::SocialInfo::SocialFeedContent PrimaryContent() const;
     Windows::ApplicationModel::SocialInfo::SocialFeedContent SecondaryContent() const;
@@ -54,12 +50,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISocialFeedContent
+struct WINRT_EBO impl_ISocialFeedContent
 {
-    auto shim() const { return impl::shim<D, ISocialFeedContent>(this); }
-
-public:
-
     hstring Title() const;
     void Title(hstring_ref value) const;
     hstring Message() const;
@@ -69,12 +61,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISocialFeedItem
+struct WINRT_EBO impl_ISocialFeedItem
 {
-    auto shim() const { return impl::shim<D, ISocialFeedItem>(this); }
-
-public:
-
     Windows::ApplicationModel::SocialInfo::SocialUserInfo Author() const;
     Windows::ApplicationModel::SocialInfo::SocialFeedContent PrimaryContent() const;
     Windows::ApplicationModel::SocialInfo::SocialFeedContent SecondaryContent() const;
@@ -98,12 +86,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISocialFeedSharedItem
+struct WINRT_EBO impl_ISocialFeedSharedItem
 {
-    auto shim() const { return impl::shim<D, ISocialFeedSharedItem>(this); }
-
-public:
-
     Windows::Foundation::Uri OriginalSource() const;
     void OriginalSource(const Windows::Foundation::Uri & value) const;
     Windows::ApplicationModel::SocialInfo::SocialFeedContent Content() const;
@@ -116,12 +100,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISocialItemThumbnail
+struct WINRT_EBO impl_ISocialItemThumbnail
 {
-    auto shim() const { return impl::shim<D, ISocialItemThumbnail>(this); }
-
-public:
-
     Windows::Foundation::Uri TargetUri() const;
     void TargetUri(const Windows::Foundation::Uri & value) const;
     Windows::Foundation::Uri ImageUri() const;
@@ -132,12 +112,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISocialUserInfo
+struct WINRT_EBO impl_ISocialUserInfo
 {
-    auto shim() const { return impl::shim<D, ISocialUserInfo>(this); }
-
-public:
-
     hstring DisplayName() const;
     void DisplayName(hstring_ref value) const;
     hstring UserName() const;

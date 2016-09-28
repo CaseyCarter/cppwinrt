@@ -269,111 +269,111 @@ namespace Windows::Networking {
 template <typename D> int32_t impl_IHostNameStatics<D>::Compare(hstring_ref value1, hstring_ref value2) const
 {
     int32_t result {};
-    check_hresult(shim()->abi_Compare(get(value1), get(value2), &result));
+    check_hresult(static_cast<const IHostNameStatics &>(static_cast<const D &>(*this))->abi_Compare(get(value1), get(value2), &result));
     return result;
 }
 
 template <typename D> Windows::Networking::Connectivity::IPInformation impl_IHostName<D>::IPInformation() const
 {
     Windows::Networking::Connectivity::IPInformation value { nullptr };
-    check_hresult(shim()->get_IPInformation(put(value)));
+    check_hresult(static_cast<const IHostName &>(static_cast<const D &>(*this))->get_IPInformation(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IHostName<D>::RawName() const
 {
     hstring value;
-    check_hresult(shim()->get_RawName(put(value)));
+    check_hresult(static_cast<const IHostName &>(static_cast<const D &>(*this))->get_RawName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IHostName<D>::DisplayName() const
 {
     hstring value;
-    check_hresult(shim()->get_DisplayName(put(value)));
+    check_hresult(static_cast<const IHostName &>(static_cast<const D &>(*this))->get_DisplayName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IHostName<D>::CanonicalName() const
 {
     hstring value;
-    check_hresult(shim()->get_CanonicalName(put(value)));
+    check_hresult(static_cast<const IHostName &>(static_cast<const D &>(*this))->get_CanonicalName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::HostNameType impl_IHostName<D>::Type() const
 {
     Windows::Networking::HostNameType value {};
-    check_hresult(shim()->get_Type(&value));
+    check_hresult(static_cast<const IHostName &>(static_cast<const D &>(*this))->get_Type(&value));
     return value;
 }
 
 template <typename D> bool impl_IHostName<D>::IsEqual(const Windows::Networking::HostName & hostName) const
 {
     bool isEqual {};
-    check_hresult(shim()->abi_IsEqual(get(hostName), &isEqual));
+    check_hresult(static_cast<const IHostName &>(static_cast<const D &>(*this))->abi_IsEqual(get(hostName), &isEqual));
     return isEqual;
 }
 
 template <typename D> Windows::Networking::HostName impl_IHostNameFactory<D>::CreateHostName(hstring_ref hostName) const
 {
     Windows::Networking::HostName value { nullptr };
-    check_hresult(shim()->abi_CreateHostName(get(hostName), put(value)));
+    check_hresult(static_cast<const IHostNameFactory &>(static_cast<const D &>(*this))->abi_CreateHostName(get(hostName), put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::HostName impl_IEndpointPair<D>::LocalHostName() const
 {
     Windows::Networking::HostName value { nullptr };
-    check_hresult(shim()->get_LocalHostName(put(value)));
+    check_hresult(static_cast<const IEndpointPair &>(static_cast<const D &>(*this))->get_LocalHostName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IEndpointPair<D>::LocalHostName(const Windows::Networking::HostName & value) const
 {
-    check_hresult(shim()->put_LocalHostName(get(value)));
+    check_hresult(static_cast<const IEndpointPair &>(static_cast<const D &>(*this))->put_LocalHostName(get(value)));
 }
 
 template <typename D> hstring impl_IEndpointPair<D>::LocalServiceName() const
 {
     hstring value;
-    check_hresult(shim()->get_LocalServiceName(put(value)));
+    check_hresult(static_cast<const IEndpointPair &>(static_cast<const D &>(*this))->get_LocalServiceName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IEndpointPair<D>::LocalServiceName(hstring_ref value) const
 {
-    check_hresult(shim()->put_LocalServiceName(get(value)));
+    check_hresult(static_cast<const IEndpointPair &>(static_cast<const D &>(*this))->put_LocalServiceName(get(value)));
 }
 
 template <typename D> Windows::Networking::HostName impl_IEndpointPair<D>::RemoteHostName() const
 {
     Windows::Networking::HostName value { nullptr };
-    check_hresult(shim()->get_RemoteHostName(put(value)));
+    check_hresult(static_cast<const IEndpointPair &>(static_cast<const D &>(*this))->get_RemoteHostName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IEndpointPair<D>::RemoteHostName(const Windows::Networking::HostName & value) const
 {
-    check_hresult(shim()->put_RemoteHostName(get(value)));
+    check_hresult(static_cast<const IEndpointPair &>(static_cast<const D &>(*this))->put_RemoteHostName(get(value)));
 }
 
 template <typename D> hstring impl_IEndpointPair<D>::RemoteServiceName() const
 {
     hstring value;
-    check_hresult(shim()->get_RemoteServiceName(put(value)));
+    check_hresult(static_cast<const IEndpointPair &>(static_cast<const D &>(*this))->get_RemoteServiceName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IEndpointPair<D>::RemoteServiceName(hstring_ref value) const
 {
-    check_hresult(shim()->put_RemoteServiceName(get(value)));
+    check_hresult(static_cast<const IEndpointPair &>(static_cast<const D &>(*this))->put_RemoteServiceName(get(value)));
 }
 
 template <typename D> Windows::Networking::EndpointPair impl_IEndpointPairFactory<D>::CreateEndpointPair(const Windows::Networking::HostName & localHostName, hstring_ref localServiceName, const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName) const
 {
     Windows::Networking::EndpointPair value { nullptr };
-    check_hresult(shim()->abi_CreateEndpointPair(get(localHostName), get(localServiceName), get(remoteHostName), get(remoteServiceName), put(value)));
+    check_hresult(static_cast<const IEndpointPairFactory &>(static_cast<const D &>(*this))->abi_CreateEndpointPair(get(localHostName), get(localServiceName), get(remoteHostName), get(remoteServiceName), put(value)));
     return value;
 }
 

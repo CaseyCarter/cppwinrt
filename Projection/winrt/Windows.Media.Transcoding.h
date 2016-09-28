@@ -312,127 +312,127 @@ namespace Windows::Media::Transcoding {
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Transcoding::PrepareTranscodeResult> impl_IMediaTranscoder2<D>::PrepareMediaStreamSourceTranscodeAsync(const Windows::Media::Core::IMediaSource & source, const Windows::Storage::Streams::IRandomAccessStream & destination, const Windows::Media::MediaProperties::MediaEncodingProfile & profile) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::Transcoding::PrepareTranscodeResult> operation;
-    check_hresult(shim()->abi_PrepareMediaStreamSourceTranscodeAsync(get(source), get(destination), get(profile), put(operation)));
+    check_hresult(static_cast<const IMediaTranscoder2 &>(static_cast<const D &>(*this))->abi_PrepareMediaStreamSourceTranscodeAsync(get(source), get(destination), get(profile), put(operation)));
     return operation;
 }
 
 template <typename D> void impl_IMediaTranscoder2<D>::VideoProcessingAlgorithm(Windows::Media::Transcoding::MediaVideoProcessingAlgorithm value) const
 {
-    check_hresult(shim()->put_VideoProcessingAlgorithm(value));
+    check_hresult(static_cast<const IMediaTranscoder2 &>(static_cast<const D &>(*this))->put_VideoProcessingAlgorithm(value));
 }
 
 template <typename D> Windows::Media::Transcoding::MediaVideoProcessingAlgorithm impl_IMediaTranscoder2<D>::VideoProcessingAlgorithm() const
 {
     Windows::Media::Transcoding::MediaVideoProcessingAlgorithm value {};
-    check_hresult(shim()->get_VideoProcessingAlgorithm(&value));
+    check_hresult(static_cast<const IMediaTranscoder2 &>(static_cast<const D &>(*this))->get_VideoProcessingAlgorithm(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaTranscoder<D>::TrimStartTime(const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(shim()->put_TrimStartTime(get(value)));
+    check_hresult(static_cast<const IMediaTranscoder &>(static_cast<const D &>(*this))->put_TrimStartTime(get(value)));
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IMediaTranscoder<D>::TrimStartTime() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_TrimStartTime(put(value)));
+    check_hresult(static_cast<const IMediaTranscoder &>(static_cast<const D &>(*this))->get_TrimStartTime(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaTranscoder<D>::TrimStopTime(const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(shim()->put_TrimStopTime(get(value)));
+    check_hresult(static_cast<const IMediaTranscoder &>(static_cast<const D &>(*this))->put_TrimStopTime(get(value)));
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IMediaTranscoder<D>::TrimStopTime() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_TrimStopTime(put(value)));
+    check_hresult(static_cast<const IMediaTranscoder &>(static_cast<const D &>(*this))->get_TrimStopTime(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaTranscoder<D>::AlwaysReencode(bool value) const
 {
-    check_hresult(shim()->put_AlwaysReencode(value));
+    check_hresult(static_cast<const IMediaTranscoder &>(static_cast<const D &>(*this))->put_AlwaysReencode(value));
 }
 
 template <typename D> bool impl_IMediaTranscoder<D>::AlwaysReencode() const
 {
     bool value {};
-    check_hresult(shim()->get_AlwaysReencode(&value));
+    check_hresult(static_cast<const IMediaTranscoder &>(static_cast<const D &>(*this))->get_AlwaysReencode(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaTranscoder<D>::HardwareAccelerationEnabled(bool value) const
 {
-    check_hresult(shim()->put_HardwareAccelerationEnabled(value));
+    check_hresult(static_cast<const IMediaTranscoder &>(static_cast<const D &>(*this))->put_HardwareAccelerationEnabled(value));
 }
 
 template <typename D> bool impl_IMediaTranscoder<D>::HardwareAccelerationEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_HardwareAccelerationEnabled(&value));
+    check_hresult(static_cast<const IMediaTranscoder &>(static_cast<const D &>(*this))->get_HardwareAccelerationEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaTranscoder<D>::AddAudioEffect(hstring_ref activatableClassId) const
 {
-    check_hresult(shim()->abi_AddAudioEffect(get(activatableClassId)));
+    check_hresult(static_cast<const IMediaTranscoder &>(static_cast<const D &>(*this))->abi_AddAudioEffect(get(activatableClassId)));
 }
 
 template <typename D> void impl_IMediaTranscoder<D>::AddAudioEffect(hstring_ref activatableClassId, bool effectRequired, const Windows::Foundation::Collections::IPropertySet & configuration) const
 {
-    check_hresult(shim()->abi_AddAudioEffectWithSettings(get(activatableClassId), effectRequired, get(configuration)));
+    check_hresult(static_cast<const IMediaTranscoder &>(static_cast<const D &>(*this))->abi_AddAudioEffectWithSettings(get(activatableClassId), effectRequired, get(configuration)));
 }
 
 template <typename D> void impl_IMediaTranscoder<D>::AddVideoEffect(hstring_ref activatableClassId) const
 {
-    check_hresult(shim()->abi_AddVideoEffect(get(activatableClassId)));
+    check_hresult(static_cast<const IMediaTranscoder &>(static_cast<const D &>(*this))->abi_AddVideoEffect(get(activatableClassId)));
 }
 
 template <typename D> void impl_IMediaTranscoder<D>::AddVideoEffect(hstring_ref activatableClassId, bool effectRequired, const Windows::Foundation::Collections::IPropertySet & configuration) const
 {
-    check_hresult(shim()->abi_AddVideoEffectWithSettings(get(activatableClassId), effectRequired, get(configuration)));
+    check_hresult(static_cast<const IMediaTranscoder &>(static_cast<const D &>(*this))->abi_AddVideoEffectWithSettings(get(activatableClassId), effectRequired, get(configuration)));
 }
 
 template <typename D> void impl_IMediaTranscoder<D>::ClearEffects() const
 {
-    check_hresult(shim()->abi_ClearEffects());
+    check_hresult(static_cast<const IMediaTranscoder &>(static_cast<const D &>(*this))->abi_ClearEffects());
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Transcoding::PrepareTranscodeResult> impl_IMediaTranscoder<D>::PrepareFileTranscodeAsync(const Windows::Storage::IStorageFile & source, const Windows::Storage::IStorageFile & destination, const Windows::Media::MediaProperties::MediaEncodingProfile & profile) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::Transcoding::PrepareTranscodeResult> operation;
-    check_hresult(shim()->abi_PrepareFileTranscodeAsync(get(source), get(destination), get(profile), put(operation)));
+    check_hresult(static_cast<const IMediaTranscoder &>(static_cast<const D &>(*this))->abi_PrepareFileTranscodeAsync(get(source), get(destination), get(profile), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Transcoding::PrepareTranscodeResult> impl_IMediaTranscoder<D>::PrepareStreamTranscodeAsync(const Windows::Storage::Streams::IRandomAccessStream & source, const Windows::Storage::Streams::IRandomAccessStream & destination, const Windows::Media::MediaProperties::MediaEncodingProfile & profile) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::Transcoding::PrepareTranscodeResult> operation;
-    check_hresult(shim()->abi_PrepareStreamTranscodeAsync(get(source), get(destination), get(profile), put(operation)));
+    check_hresult(static_cast<const IMediaTranscoder &>(static_cast<const D &>(*this))->abi_PrepareStreamTranscodeAsync(get(source), get(destination), get(profile), put(operation)));
     return operation;
 }
 
 template <typename D> bool impl_IPrepareTranscodeResult<D>::CanTranscode() const
 {
     bool value {};
-    check_hresult(shim()->get_CanTranscode(&value));
+    check_hresult(static_cast<const IPrepareTranscodeResult &>(static_cast<const D &>(*this))->get_CanTranscode(&value));
     return value;
 }
 
 template <typename D> Windows::Media::Transcoding::TranscodeFailureReason impl_IPrepareTranscodeResult<D>::FailureReason() const
 {
     Windows::Media::Transcoding::TranscodeFailureReason value {};
-    check_hresult(shim()->get_FailureReason(&value));
+    check_hresult(static_cast<const IPrepareTranscodeResult &>(static_cast<const D &>(*this))->get_FailureReason(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncActionWithProgress<double> impl_IPrepareTranscodeResult<D>::TranscodeAsync() const
 {
     Windows::Foundation::IAsyncActionWithProgress<double> operation;
-    check_hresult(shim()->abi_TranscodeAsync(put(operation)));
+    check_hresult(static_cast<const IPrepareTranscodeResult &>(static_cast<const D &>(*this))->abi_TranscodeAsync(put(operation)));
     return operation;
 }
 

@@ -30,12 +30,8 @@ template <> struct __declspec(uuid("cf7c902f-0f0d-5b22-90b1-85141b5816cd")) __de
 namespace Windows::Networking::PushNotifications {
 
 template <typename D>
-class WINRT_EBO impl_IPushNotificationChannel
+struct WINRT_EBO impl_IPushNotificationChannel
 {
-    auto shim() const { return impl::shim<D, IPushNotificationChannel>(this); }
-
-public:
-
     hstring Uri() const;
     Windows::Foundation::DateTime ExpirationTime() const;
     void Close() const;
@@ -46,12 +42,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPushNotificationChannelManagerForUser
+struct WINRT_EBO impl_IPushNotificationChannelManagerForUser
 {
-    auto shim() const { return impl::shim<D, IPushNotificationChannelManagerForUser>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> CreatePushNotificationChannelForApplicationAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> CreatePushNotificationChannelForApplicationAsync(hstring_ref applicationId) const;
     Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> CreatePushNotificationChannelForSecondaryTileAsync(hstring_ref tileId) const;
@@ -59,34 +51,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPushNotificationChannelManagerStatics
+struct WINRT_EBO impl_IPushNotificationChannelManagerStatics
 {
-    auto shim() const { return impl::shim<D, IPushNotificationChannelManagerStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> CreatePushNotificationChannelForApplicationAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> CreatePushNotificationChannelForApplicationAsync(hstring_ref applicationId) const;
     Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> CreatePushNotificationChannelForSecondaryTileAsync(hstring_ref tileId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPushNotificationChannelManagerStatics2
+struct WINRT_EBO impl_IPushNotificationChannelManagerStatics2
 {
-    auto shim() const { return impl::shim<D, IPushNotificationChannelManagerStatics2>(this); }
-
-public:
-
     Windows::Networking::PushNotifications::PushNotificationChannelManagerForUser GetForUser(const Windows::System::User & user) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPushNotificationReceivedEventArgs
+struct WINRT_EBO impl_IPushNotificationReceivedEventArgs
 {
-    auto shim() const { return impl::shim<D, IPushNotificationReceivedEventArgs>(this); }
-
-public:
-
     void Cancel(bool value) const;
     bool Cancel() const;
     Windows::Networking::PushNotifications::PushNotificationType NotificationType() const;
@@ -97,12 +77,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IRawNotification
+struct WINRT_EBO impl_IRawNotification
 {
-    auto shim() const { return impl::shim<D, IRawNotification>(this); }
-
-public:
-
     hstring Content() const;
 };
 

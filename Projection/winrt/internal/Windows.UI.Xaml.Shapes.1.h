@@ -163,22 +163,22 @@ template <> struct traits<Windows::UI::Xaml::Shapes::Shape> { using default_inte
 
 namespace Windows::UI::Xaml::Shapes {
 
-template <typename T> class impl_IEllipse;
-template <typename T> class impl_ILine;
-template <typename T> class impl_ILineStatics;
-template <typename T> class impl_IPath;
-template <typename T> class impl_IPathFactory;
-template <typename T> class impl_IPathStatics;
-template <typename T> class impl_IPolygon;
-template <typename T> class impl_IPolygonStatics;
-template <typename T> class impl_IPolyline;
-template <typename T> class impl_IPolylineStatics;
-template <typename T> class impl_IRectangle;
-template <typename T> class impl_IRectangleStatics;
-template <typename T> class impl_IShape;
-template <typename T> class impl_IShape2;
-template <typename T> class impl_IShapeFactory;
-template <typename T> class impl_IShapeStatics;
+template <typename T> struct impl_IEllipse;
+template <typename T> struct impl_ILine;
+template <typename T> struct impl_ILineStatics;
+template <typename T> struct impl_IPath;
+template <typename T> struct impl_IPathFactory;
+template <typename T> struct impl_IPathStatics;
+template <typename T> struct impl_IPolygon;
+template <typename T> struct impl_IPolygonStatics;
+template <typename T> struct impl_IPolyline;
+template <typename T> struct impl_IPolylineStatics;
+template <typename T> struct impl_IRectangle;
+template <typename T> struct impl_IRectangleStatics;
+template <typename T> struct impl_IShape;
+template <typename T> struct impl_IShape2;
+template <typename T> struct impl_IShapeFactory;
+template <typename T> struct impl_IShapeStatics;
 
 }
 
@@ -283,49 +283,42 @@ template <> struct traits<Windows::UI::Xaml::Shapes::IShapeStatics>
 template <> struct traits<Windows::UI::Xaml::Shapes::Ellipse>
 {
     using abi = ABI::Windows::UI::Xaml::Shapes::Ellipse;
-    using default_interface = Windows::UI::Xaml::Shapes::IEllipse;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Shapes.Ellipse"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Shapes::Line>
 {
     using abi = ABI::Windows::UI::Xaml::Shapes::Line;
-    using default_interface = Windows::UI::Xaml::Shapes::ILine;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Shapes.Line"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Shapes::Path>
 {
     using abi = ABI::Windows::UI::Xaml::Shapes::Path;
-    using default_interface = Windows::UI::Xaml::Shapes::IPath;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Shapes.Path"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Shapes::Polygon>
 {
     using abi = ABI::Windows::UI::Xaml::Shapes::Polygon;
-    using default_interface = Windows::UI::Xaml::Shapes::IPolygon;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Shapes.Polygon"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Shapes::Polyline>
 {
     using abi = ABI::Windows::UI::Xaml::Shapes::Polyline;
-    using default_interface = Windows::UI::Xaml::Shapes::IPolyline;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Shapes.Polyline"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Shapes::Rectangle>
 {
     using abi = ABI::Windows::UI::Xaml::Shapes::Rectangle;
-    using default_interface = Windows::UI::Xaml::Shapes::IRectangle;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Shapes.Rectangle"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Shapes::Shape>
 {
     using abi = ABI::Windows::UI::Xaml::Shapes::Shape;
-    using default_interface = Windows::UI::Xaml::Shapes::IShape;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Shapes.Shape"; }
 };
 

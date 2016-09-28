@@ -162,24 +162,16 @@ template <> struct __declspec(uuid("7344f356-8399-5756-a2f8-abd50c4146ff")) __de
 namespace Windows::Storage::FileProperties {
 
 template <typename D>
-class WINRT_EBO impl_IBasicProperties
+struct WINRT_EBO impl_IBasicProperties
 {
-    auto shim() const { return impl::shim<D, IBasicProperties>(this); }
-
-public:
-
     uint64_t Size() const;
     Windows::Foundation::DateTime DateModified() const;
     Windows::Foundation::DateTime ItemDate() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDocumentProperties
+struct WINRT_EBO impl_IDocumentProperties
 {
-    auto shim() const { return impl::shim<D, IDocumentProperties>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<hstring> Author() const;
     hstring Title() const;
     void Title(hstring_ref value) const;
@@ -189,24 +181,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IGeotagHelperStatics
+struct WINRT_EBO impl_IGeotagHelperStatics
 {
-    auto shim() const { return impl::shim<D, IGeotagHelperStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Devices::Geolocation::Geopoint> GetGeotagAsync(const Windows::Storage::IStorageFile & file) const;
     Windows::Foundation::IAsyncAction SetGeotagFromGeolocatorAsync(const Windows::Storage::IStorageFile & file, const Windows::Devices::Geolocation::Geolocator & geolocator) const;
     Windows::Foundation::IAsyncAction SetGeotagAsync(const Windows::Storage::IStorageFile & file, const Windows::Devices::Geolocation::Geopoint & geopoint) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IImageProperties
+struct WINRT_EBO impl_IImageProperties
 {
-    auto shim() const { return impl::shim<D, IImageProperties>(this); }
-
-public:
-
     uint32_t Rating() const;
     void Rating(uint32_t value) const;
     Windows::Foundation::Collections::IVector<hstring> Keywords() const;
@@ -227,12 +211,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMusicProperties
+struct WINRT_EBO impl_IMusicProperties
 {
-    auto shim() const { return impl::shim<D, IMusicProperties>(this); }
-
-public:
-
     hstring Album() const;
     void Album(hstring_ref value) const;
     hstring Artist() const;
@@ -261,12 +241,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorageItemContentProperties
+struct WINRT_EBO impl_IStorageItemContentProperties
 {
-    auto shim() const { return impl::shim<D, IStorageItemContentProperties>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::MusicProperties> GetMusicPropertiesAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::VideoProperties> GetVideoPropertiesAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::ImageProperties> GetImagePropertiesAsync() const;
@@ -274,24 +250,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorageItemExtraProperties
+struct WINRT_EBO impl_IStorageItemExtraProperties
 {
-    auto shim() const { return impl::shim<D, IStorageItemExtraProperties>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMap<hstring, Windows::IInspectable>> RetrievePropertiesAsync(const Windows::Foundation::Collections::IIterable<hstring> & propertiesToRetrieve) const;
     Windows::Foundation::IAsyncAction SavePropertiesAsync(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>> & propertiesToSave) const;
     Windows::Foundation::IAsyncAction SavePropertiesAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IThumbnailProperties
+struct WINRT_EBO impl_IThumbnailProperties
 {
-    auto shim() const { return impl::shim<D, IThumbnailProperties>(this); }
-
-public:
-
     uint32_t OriginalWidth() const;
     uint32_t OriginalHeight() const;
     bool ReturnedSmallerCachedSize() const;
@@ -299,12 +267,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVideoProperties
+struct WINRT_EBO impl_IVideoProperties
 {
-    auto shim() const { return impl::shim<D, IVideoProperties>(this); }
-
-public:
-
     uint32_t Rating() const;
     void Rating(uint32_t value) const;
     Windows::Foundation::Collections::IVector<hstring> Keywords() const;

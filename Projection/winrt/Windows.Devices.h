@@ -148,55 +148,55 @@ namespace Windows::Devices {
 template <typename D> Windows::Devices::Adc::Provider::IAdcControllerProvider impl_ILowLevelDevicesAggregateProvider<D>::AdcControllerProvider() const
 {
     Windows::Devices::Adc::Provider::IAdcControllerProvider value;
-    check_hresult(shim()->get_AdcControllerProvider(put(value)));
+    check_hresult(static_cast<const ILowLevelDevicesAggregateProvider &>(static_cast<const D &>(*this))->get_AdcControllerProvider(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Pwm::Provider::IPwmControllerProvider impl_ILowLevelDevicesAggregateProvider<D>::PwmControllerProvider() const
 {
     Windows::Devices::Pwm::Provider::IPwmControllerProvider value;
-    check_hresult(shim()->get_PwmControllerProvider(put(value)));
+    check_hresult(static_cast<const ILowLevelDevicesAggregateProvider &>(static_cast<const D &>(*this))->get_PwmControllerProvider(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Gpio::Provider::IGpioControllerProvider impl_ILowLevelDevicesAggregateProvider<D>::GpioControllerProvider() const
 {
     Windows::Devices::Gpio::Provider::IGpioControllerProvider value;
-    check_hresult(shim()->get_GpioControllerProvider(put(value)));
+    check_hresult(static_cast<const ILowLevelDevicesAggregateProvider &>(static_cast<const D &>(*this))->get_GpioControllerProvider(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::I2c::Provider::II2cControllerProvider impl_ILowLevelDevicesAggregateProvider<D>::I2cControllerProvider() const
 {
     Windows::Devices::I2c::Provider::II2cControllerProvider value;
-    check_hresult(shim()->get_I2cControllerProvider(put(value)));
+    check_hresult(static_cast<const ILowLevelDevicesAggregateProvider &>(static_cast<const D &>(*this))->get_I2cControllerProvider(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Spi::Provider::ISpiControllerProvider impl_ILowLevelDevicesAggregateProvider<D>::SpiControllerProvider() const
 {
     Windows::Devices::Spi::Provider::ISpiControllerProvider value;
-    check_hresult(shim()->get_SpiControllerProvider(put(value)));
+    check_hresult(static_cast<const ILowLevelDevicesAggregateProvider &>(static_cast<const D &>(*this))->get_SpiControllerProvider(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::LowLevelDevicesAggregateProvider impl_ILowLevelDevicesAggregateProviderFactory<D>::Create(const Windows::Devices::Adc::Provider::IAdcControllerProvider & adc, const Windows::Devices::Pwm::Provider::IPwmControllerProvider & pwm, const Windows::Devices::Gpio::Provider::IGpioControllerProvider & gpio, const Windows::Devices::I2c::Provider::II2cControllerProvider & i2c, const Windows::Devices::Spi::Provider::ISpiControllerProvider & spi) const
 {
     Windows::Devices::LowLevelDevicesAggregateProvider value { nullptr };
-    check_hresult(shim()->abi_Create(get(adc), get(pwm), get(gpio), get(i2c), get(spi), put(value)));
+    check_hresult(static_cast<const ILowLevelDevicesAggregateProviderFactory &>(static_cast<const D &>(*this))->abi_Create(get(adc), get(pwm), get(gpio), get(i2c), get(spi), put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::ILowLevelDevicesAggregateProvider impl_ILowLevelDevicesControllerStatics<D>::DefaultProvider() const
 {
     Windows::Devices::ILowLevelDevicesAggregateProvider value;
-    check_hresult(shim()->get_DefaultProvider(put(value)));
+    check_hresult(static_cast<const ILowLevelDevicesControllerStatics &>(static_cast<const D &>(*this))->get_DefaultProvider(put(value)));
     return value;
 }
 
 template <typename D> void impl_ILowLevelDevicesControllerStatics<D>::DefaultProvider(const Windows::Devices::ILowLevelDevicesAggregateProvider & value) const
 {
-    check_hresult(shim()->put_DefaultProvider(get(value)));
+    check_hresult(static_cast<const ILowLevelDevicesControllerStatics &>(static_cast<const D &>(*this))->put_DefaultProvider(get(value)));
 }
 
 inline LowLevelDevicesAggregateProvider::LowLevelDevicesAggregateProvider(const Windows::Devices::Adc::Provider::IAdcControllerProvider & adc, const Windows::Devices::Pwm::Provider::IPwmControllerProvider & pwm, const Windows::Devices::Gpio::Provider::IGpioControllerProvider & gpio, const Windows::Devices::I2c::Provider::II2cControllerProvider & i2c, const Windows::Devices::Spi::Provider::ISpiControllerProvider & spi) :

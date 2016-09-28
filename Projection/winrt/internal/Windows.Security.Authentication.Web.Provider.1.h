@@ -179,27 +179,27 @@ template <> struct traits<Windows::Security::Authentication::Web::Provider::WebP
 
 namespace Windows::Security::Authentication::Web::Provider {
 
-template <typename T> class impl_IWebAccountClientView;
-template <typename T> class impl_IWebAccountClientViewFactory;
-template <typename T> class impl_IWebAccountManagerStatics;
-template <typename T> class impl_IWebAccountManagerStatics2;
-template <typename T> class impl_IWebAccountMapManagerStatics;
-template <typename T> class impl_IWebAccountProviderAddAccountOperation;
-template <typename T> class impl_IWebAccountProviderBaseReportOperation;
-template <typename T> class impl_IWebAccountProviderDeleteAccountOperation;
-template <typename T> class impl_IWebAccountProviderManageAccountOperation;
-template <typename T> class impl_IWebAccountProviderOperation;
-template <typename T> class impl_IWebAccountProviderRetrieveCookiesOperation;
-template <typename T> class impl_IWebAccountProviderSignOutAccountOperation;
-template <typename T> class impl_IWebAccountProviderSilentReportOperation;
-template <typename T> class impl_IWebAccountProviderTokenObjects;
-template <typename T> class impl_IWebAccountProviderTokenOperation;
-template <typename T> class impl_IWebAccountProviderUIReportOperation;
-template <typename T> class impl_IWebAccountScopeManagerStatics;
-template <typename T> class impl_IWebProviderTokenRequest;
-template <typename T> class impl_IWebProviderTokenRequest2;
-template <typename T> class impl_IWebProviderTokenResponse;
-template <typename T> class impl_IWebProviderTokenResponseFactory;
+template <typename T> struct impl_IWebAccountClientView;
+template <typename T> struct impl_IWebAccountClientViewFactory;
+template <typename T> struct impl_IWebAccountManagerStatics;
+template <typename T> struct impl_IWebAccountManagerStatics2;
+template <typename T> struct impl_IWebAccountMapManagerStatics;
+template <typename T> struct impl_IWebAccountProviderAddAccountOperation;
+template <typename T> struct impl_IWebAccountProviderBaseReportOperation;
+template <typename T> struct impl_IWebAccountProviderDeleteAccountOperation;
+template <typename T> struct impl_IWebAccountProviderManageAccountOperation;
+template <typename T> struct impl_IWebAccountProviderOperation;
+template <typename T> struct impl_IWebAccountProviderRetrieveCookiesOperation;
+template <typename T> struct impl_IWebAccountProviderSignOutAccountOperation;
+template <typename T> struct impl_IWebAccountProviderSilentReportOperation;
+template <typename T> struct impl_IWebAccountProviderTokenObjects;
+template <typename T> struct impl_IWebAccountProviderTokenOperation;
+template <typename T> struct impl_IWebAccountProviderUIReportOperation;
+template <typename T> struct impl_IWebAccountScopeManagerStatics;
+template <typename T> struct impl_IWebProviderTokenRequest;
+template <typename T> struct impl_IWebProviderTokenRequest2;
+template <typename T> struct impl_IWebProviderTokenResponse;
+template <typename T> struct impl_IWebProviderTokenResponseFactory;
 
 }
 
@@ -334,7 +334,6 @@ template <> struct traits<Windows::Security::Authentication::Web::Provider::IWeb
 template <> struct traits<Windows::Security::Authentication::Web::Provider::WebAccountClientView>
 {
     using abi = ABI::Windows::Security::Authentication::Web::Provider::WebAccountClientView;
-    using default_interface = Windows::Security::Authentication::Web::Provider::IWebAccountClientView;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Authentication.Web.Provider.WebAccountClientView"; }
 };
 
@@ -346,70 +345,60 @@ template <> struct traits<Windows::Security::Authentication::Web::Provider::WebA
 template <> struct traits<Windows::Security::Authentication::Web::Provider::WebAccountProviderAddAccountOperation>
 {
     using abi = ABI::Windows::Security::Authentication::Web::Provider::WebAccountProviderAddAccountOperation;
-    using default_interface = Windows::Security::Authentication::Web::Provider::IWebAccountProviderAddAccountOperation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Authentication.Web.Provider.WebAccountProviderAddAccountOperation"; }
 };
 
 template <> struct traits<Windows::Security::Authentication::Web::Provider::WebAccountProviderDeleteAccountOperation>
 {
     using abi = ABI::Windows::Security::Authentication::Web::Provider::WebAccountProviderDeleteAccountOperation;
-    using default_interface = Windows::Security::Authentication::Web::Provider::IWebAccountProviderDeleteAccountOperation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Authentication.Web.Provider.WebAccountProviderDeleteAccountOperation"; }
 };
 
 template <> struct traits<Windows::Security::Authentication::Web::Provider::WebAccountProviderGetTokenSilentOperation>
 {
     using abi = ABI::Windows::Security::Authentication::Web::Provider::WebAccountProviderGetTokenSilentOperation;
-    using default_interface = Windows::Security::Authentication::Web::Provider::IWebAccountProviderTokenOperation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Authentication.Web.Provider.WebAccountProviderGetTokenSilentOperation"; }
 };
 
 template <> struct traits<Windows::Security::Authentication::Web::Provider::WebAccountProviderManageAccountOperation>
 {
     using abi = ABI::Windows::Security::Authentication::Web::Provider::WebAccountProviderManageAccountOperation;
-    using default_interface = Windows::Security::Authentication::Web::Provider::IWebAccountProviderManageAccountOperation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Authentication.Web.Provider.WebAccountProviderManageAccountOperation"; }
 };
 
 template <> struct traits<Windows::Security::Authentication::Web::Provider::WebAccountProviderRequestTokenOperation>
 {
     using abi = ABI::Windows::Security::Authentication::Web::Provider::WebAccountProviderRequestTokenOperation;
-    using default_interface = Windows::Security::Authentication::Web::Provider::IWebAccountProviderTokenOperation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Authentication.Web.Provider.WebAccountProviderRequestTokenOperation"; }
 };
 
 template <> struct traits<Windows::Security::Authentication::Web::Provider::WebAccountProviderRetrieveCookiesOperation>
 {
     using abi = ABI::Windows::Security::Authentication::Web::Provider::WebAccountProviderRetrieveCookiesOperation;
-    using default_interface = Windows::Security::Authentication::Web::Provider::IWebAccountProviderRetrieveCookiesOperation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Authentication.Web.Provider.WebAccountProviderRetrieveCookiesOperation"; }
 };
 
 template <> struct traits<Windows::Security::Authentication::Web::Provider::WebAccountProviderSignOutAccountOperation>
 {
     using abi = ABI::Windows::Security::Authentication::Web::Provider::WebAccountProviderSignOutAccountOperation;
-    using default_interface = Windows::Security::Authentication::Web::Provider::IWebAccountProviderSignOutAccountOperation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Authentication.Web.Provider.WebAccountProviderSignOutAccountOperation"; }
 };
 
 template <> struct traits<Windows::Security::Authentication::Web::Provider::WebAccountProviderTriggerDetails>
 {
     using abi = ABI::Windows::Security::Authentication::Web::Provider::WebAccountProviderTriggerDetails;
-    using default_interface = Windows::Security::Authentication::Web::Provider::IWebAccountProviderTokenObjects;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Authentication.Web.Provider.WebAccountProviderTriggerDetails"; }
 };
 
 template <> struct traits<Windows::Security::Authentication::Web::Provider::WebProviderTokenRequest>
 {
     using abi = ABI::Windows::Security::Authentication::Web::Provider::WebProviderTokenRequest;
-    using default_interface = Windows::Security::Authentication::Web::Provider::IWebProviderTokenRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Authentication.Web.Provider.WebProviderTokenRequest"; }
 };
 
 template <> struct traits<Windows::Security::Authentication::Web::Provider::WebProviderTokenResponse>
 {
     using abi = ABI::Windows::Security::Authentication::Web::Provider::WebProviderTokenResponse;
-    using default_interface = Windows::Security::Authentication::Web::Provider::IWebProviderTokenResponse;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Authentication.Web.Provider.WebProviderTokenResponse"; }
 };
 

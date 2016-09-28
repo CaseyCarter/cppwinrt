@@ -110,24 +110,16 @@ template <> struct __declspec(uuid("51c74372-9452-57ce-9270-762009fbfe4d")) __de
 namespace Windows::ApplicationModel {
 
 template <typename D>
-class WINRT_EBO impl_IAppDisplayInfo
+struct WINRT_EBO impl_IAppDisplayInfo
 {
-    auto shim() const { return impl::shim<D, IAppDisplayInfo>(this); }
-
-public:
-
     hstring DisplayName() const;
     hstring Description() const;
     Windows::Storage::Streams::RandomAccessStreamReference GetLogo(const Windows::Foundation::Size & size) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppInfo
+struct WINRT_EBO impl_IAppInfo
 {
-    auto shim() const { return impl::shim<D, IAppInfo>(this); }
-
-public:
-
     hstring Id() const;
     hstring AppUserModelId() const;
     Windows::ApplicationModel::AppDisplayInfo DisplayInfo() const;
@@ -135,42 +127,26 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDesignModeStatics
+struct WINRT_EBO impl_IDesignModeStatics
 {
-    auto shim() const { return impl::shim<D, IDesignModeStatics>(this); }
-
-public:
-
     bool DesignModeEnabled() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEnteredBackgroundEventArgs
+struct WINRT_EBO impl_IEnteredBackgroundEventArgs
 {
-    auto shim() const { return impl::shim<D, IEnteredBackgroundEventArgs>(this); }
-
-public:
-
     Windows::Foundation::Deferral GetDeferral() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILeavingBackgroundEventArgs
+struct WINRT_EBO impl_ILeavingBackgroundEventArgs
 {
-    auto shim() const { return impl::shim<D, ILeavingBackgroundEventArgs>(this); }
-
-public:
-
     Windows::Foundation::Deferral GetDeferral() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPackage
+struct WINRT_EBO impl_IPackage
 {
-    auto shim() const { return impl::shim<D, IPackage>(this); }
-
-public:
-
     Windows::ApplicationModel::PackageId Id() const;
     Windows::Storage::StorageFolder InstalledLocation() const;
     bool IsFramework() const;
@@ -178,12 +154,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPackage2
+struct WINRT_EBO impl_IPackage2
 {
-    auto shim() const { return impl::shim<D, IPackage2>(this); }
-
-public:
-
     hstring DisplayName() const;
     hstring PublisherDisplayName() const;
     hstring Description() const;
@@ -194,36 +166,24 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPackage3
+struct WINRT_EBO impl_IPackage3
 {
-    auto shim() const { return impl::shim<D, IPackage3>(this); }
-
-public:
-
     Windows::ApplicationModel::PackageStatus Status() const;
     Windows::Foundation::DateTime InstalledDate() const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Core::AppListEntry>> GetAppListEntriesAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPackage4
+struct WINRT_EBO impl_IPackage4
 {
-    auto shim() const { return impl::shim<D, IPackage4>(this); }
-
-public:
-
     Windows::ApplicationModel::PackageSignatureKind SignatureKind() const;
     bool IsOptional() const;
     Windows::Foundation::IAsyncOperation<bool> VerifyContentIntegrityAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPackageCatalog
+struct WINRT_EBO impl_IPackageCatalog
 {
-    auto shim() const { return impl::shim<D, IPackageCatalog>(this); }
-
-public:
-
     event_token PackageStaging(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageStagingEventArgs> & handler) const;
     using PackageStaging_revoker = event_revoker<IPackageCatalog>;
     PackageStaging_revoker PackageStaging(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageStagingEventArgs> & handler) const;
@@ -247,23 +207,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPackageCatalogStatics
+struct WINRT_EBO impl_IPackageCatalogStatics
 {
-    auto shim() const { return impl::shim<D, IPackageCatalogStatics>(this); }
-
-public:
-
     Windows::ApplicationModel::PackageCatalog OpenForCurrentPackage() const;
     Windows::ApplicationModel::PackageCatalog OpenForCurrentUser() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPackageId
+struct WINRT_EBO impl_IPackageId
 {
-    auto shim() const { return impl::shim<D, IPackageId>(this); }
-
-public:
-
     hstring Name() const;
     Windows::ApplicationModel::PackageVersion Version() const;
     Windows::System::ProcessorArchitecture Architecture() const;
@@ -275,23 +227,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPackageIdWithMetadata
+struct WINRT_EBO impl_IPackageIdWithMetadata
 {
-    auto shim() const { return impl::shim<D, IPackageIdWithMetadata>(this); }
-
-public:
-
     hstring ProductId() const;
     hstring Author() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPackageInstallingEventArgs
+struct WINRT_EBO impl_IPackageInstallingEventArgs
 {
-    auto shim() const { return impl::shim<D, IPackageInstallingEventArgs>(this); }
-
-public:
-
     GUID ActivityId() const;
     Windows::ApplicationModel::Package Package() const;
     double Progress() const;
@@ -300,12 +244,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPackageStagingEventArgs
+struct WINRT_EBO impl_IPackageStagingEventArgs
 {
-    auto shim() const { return impl::shim<D, IPackageStagingEventArgs>(this); }
-
-public:
-
     GUID ActivityId() const;
     Windows::ApplicationModel::Package Package() const;
     double Progress() const;
@@ -314,22 +254,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPackageStatics
+struct WINRT_EBO impl_IPackageStatics
 {
-    auto shim() const { return impl::shim<D, IPackageStatics>(this); }
-
-public:
-
     Windows::ApplicationModel::Package Current() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPackageStatus
+struct WINRT_EBO impl_IPackageStatus
 {
-    auto shim() const { return impl::shim<D, IPackageStatus>(this); }
-
-public:
-
     bool VerifyIsOK() const;
     bool NotAvailable() const;
     bool PackageOffline() const;
@@ -345,22 +277,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPackageStatusChangedEventArgs
+struct WINRT_EBO impl_IPackageStatusChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IPackageStatusChangedEventArgs>(this); }
-
-public:
-
     Windows::ApplicationModel::Package Package() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPackageUninstallingEventArgs
+struct WINRT_EBO impl_IPackageUninstallingEventArgs
 {
-    auto shim() const { return impl::shim<D, IPackageUninstallingEventArgs>(this); }
-
-public:
-
     GUID ActivityId() const;
     Windows::ApplicationModel::Package Package() const;
     double Progress() const;
@@ -369,12 +293,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPackageUpdatingEventArgs
+struct WINRT_EBO impl_IPackageUpdatingEventArgs
 {
-    auto shim() const { return impl::shim<D, IPackageUpdatingEventArgs>(this); }
-
-public:
-
     GUID ActivityId() const;
     Windows::ApplicationModel::Package SourcePackage() const;
     Windows::ApplicationModel::Package TargetPackage() const;
@@ -384,44 +304,28 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPackageWithMetadata
+struct WINRT_EBO impl_IPackageWithMetadata
 {
-    auto shim() const { return impl::shim<D, IPackageWithMetadata>(this); }
-
-public:
-
     Windows::Foundation::DateTime InstallDate() const;
     hstring GetThumbnailToken() const;
     void Launch(hstring_ref parameters) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISuspendingDeferral
+struct WINRT_EBO impl_ISuspendingDeferral
 {
-    auto shim() const { return impl::shim<D, ISuspendingDeferral>(this); }
-
-public:
-
     void Complete() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISuspendingEventArgs
+struct WINRT_EBO impl_ISuspendingEventArgs
 {
-    auto shim() const { return impl::shim<D, ISuspendingEventArgs>(this); }
-
-public:
-
     Windows::ApplicationModel::SuspendingOperation SuspendingOperation() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISuspendingOperation
+struct WINRT_EBO impl_ISuspendingOperation
 {
-    auto shim() const { return impl::shim<D, ISuspendingOperation>(this); }
-
-public:
-
     Windows::ApplicationModel::SuspendingDeferral GetDeferral() const;
     Windows::Foundation::DateTime Deadline() const;
 };

@@ -214,35 +214,35 @@ template <> struct traits<Windows::Devices::Midi::MidiTuneRequestMessage> { usin
 
 namespace Windows::Devices::Midi {
 
-template <typename T> class impl_IMidiChannelPressureMessage;
-template <typename T> class impl_IMidiChannelPressureMessageFactory;
-template <typename T> class impl_IMidiControlChangeMessage;
-template <typename T> class impl_IMidiControlChangeMessageFactory;
-template <typename T> class impl_IMidiInPort;
-template <typename T> class impl_IMidiInPortStatics;
-template <typename T> class impl_IMidiMessage;
-template <typename T> class impl_IMidiMessageReceivedEventArgs;
-template <typename T> class impl_IMidiNoteOffMessage;
-template <typename T> class impl_IMidiNoteOffMessageFactory;
-template <typename T> class impl_IMidiNoteOnMessage;
-template <typename T> class impl_IMidiNoteOnMessageFactory;
-template <typename T> class impl_IMidiOutPort;
-template <typename T> class impl_IMidiOutPortStatics;
-template <typename T> class impl_IMidiPitchBendChangeMessage;
-template <typename T> class impl_IMidiPitchBendChangeMessageFactory;
-template <typename T> class impl_IMidiPolyphonicKeyPressureMessage;
-template <typename T> class impl_IMidiPolyphonicKeyPressureMessageFactory;
-template <typename T> class impl_IMidiProgramChangeMessage;
-template <typename T> class impl_IMidiProgramChangeMessageFactory;
-template <typename T> class impl_IMidiSongPositionPointerMessage;
-template <typename T> class impl_IMidiSongPositionPointerMessageFactory;
-template <typename T> class impl_IMidiSongSelectMessage;
-template <typename T> class impl_IMidiSongSelectMessageFactory;
-template <typename T> class impl_IMidiSynthesizer;
-template <typename T> class impl_IMidiSynthesizerStatics;
-template <typename T> class impl_IMidiSystemExclusiveMessageFactory;
-template <typename T> class impl_IMidiTimeCodeMessage;
-template <typename T> class impl_IMidiTimeCodeMessageFactory;
+template <typename T> struct impl_IMidiChannelPressureMessage;
+template <typename T> struct impl_IMidiChannelPressureMessageFactory;
+template <typename T> struct impl_IMidiControlChangeMessage;
+template <typename T> struct impl_IMidiControlChangeMessageFactory;
+template <typename T> struct impl_IMidiInPort;
+template <typename T> struct impl_IMidiInPortStatics;
+template <typename T> struct impl_IMidiMessage;
+template <typename T> struct impl_IMidiMessageReceivedEventArgs;
+template <typename T> struct impl_IMidiNoteOffMessage;
+template <typename T> struct impl_IMidiNoteOffMessageFactory;
+template <typename T> struct impl_IMidiNoteOnMessage;
+template <typename T> struct impl_IMidiNoteOnMessageFactory;
+template <typename T> struct impl_IMidiOutPort;
+template <typename T> struct impl_IMidiOutPortStatics;
+template <typename T> struct impl_IMidiPitchBendChangeMessage;
+template <typename T> struct impl_IMidiPitchBendChangeMessageFactory;
+template <typename T> struct impl_IMidiPolyphonicKeyPressureMessage;
+template <typename T> struct impl_IMidiPolyphonicKeyPressureMessageFactory;
+template <typename T> struct impl_IMidiProgramChangeMessage;
+template <typename T> struct impl_IMidiProgramChangeMessageFactory;
+template <typename T> struct impl_IMidiSongPositionPointerMessage;
+template <typename T> struct impl_IMidiSongPositionPointerMessageFactory;
+template <typename T> struct impl_IMidiSongSelectMessage;
+template <typename T> struct impl_IMidiSongSelectMessageFactory;
+template <typename T> struct impl_IMidiSynthesizer;
+template <typename T> struct impl_IMidiSynthesizerStatics;
+template <typename T> struct impl_IMidiSystemExclusiveMessageFactory;
+template <typename T> struct impl_IMidiTimeCodeMessage;
+template <typename T> struct impl_IMidiTimeCodeMessageFactory;
 
 }
 
@@ -425,154 +425,132 @@ template <> struct traits<Windows::Devices::Midi::IMidiTimeCodeMessageFactory>
 template <> struct traits<Windows::Devices::Midi::MidiActiveSensingMessage>
 {
     using abi = ABI::Windows::Devices::Midi::MidiActiveSensingMessage;
-    using default_interface = Windows::Devices::Midi::IMidiMessage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Midi.MidiActiveSensingMessage"; }
 };
 
 template <> struct traits<Windows::Devices::Midi::MidiChannelPressureMessage>
 {
     using abi = ABI::Windows::Devices::Midi::MidiChannelPressureMessage;
-    using default_interface = Windows::Devices::Midi::IMidiChannelPressureMessage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Midi.MidiChannelPressureMessage"; }
 };
 
 template <> struct traits<Windows::Devices::Midi::MidiContinueMessage>
 {
     using abi = ABI::Windows::Devices::Midi::MidiContinueMessage;
-    using default_interface = Windows::Devices::Midi::IMidiMessage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Midi.MidiContinueMessage"; }
 };
 
 template <> struct traits<Windows::Devices::Midi::MidiControlChangeMessage>
 {
     using abi = ABI::Windows::Devices::Midi::MidiControlChangeMessage;
-    using default_interface = Windows::Devices::Midi::IMidiControlChangeMessage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Midi.MidiControlChangeMessage"; }
 };
 
 template <> struct traits<Windows::Devices::Midi::MidiInPort>
 {
     using abi = ABI::Windows::Devices::Midi::MidiInPort;
-    using default_interface = Windows::Devices::Midi::IMidiInPort;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Midi.MidiInPort"; }
 };
 
 template <> struct traits<Windows::Devices::Midi::MidiMessageReceivedEventArgs>
 {
     using abi = ABI::Windows::Devices::Midi::MidiMessageReceivedEventArgs;
-    using default_interface = Windows::Devices::Midi::IMidiMessageReceivedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Midi.MidiMessageReceivedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::Midi::MidiNoteOffMessage>
 {
     using abi = ABI::Windows::Devices::Midi::MidiNoteOffMessage;
-    using default_interface = Windows::Devices::Midi::IMidiNoteOffMessage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Midi.MidiNoteOffMessage"; }
 };
 
 template <> struct traits<Windows::Devices::Midi::MidiNoteOnMessage>
 {
     using abi = ABI::Windows::Devices::Midi::MidiNoteOnMessage;
-    using default_interface = Windows::Devices::Midi::IMidiNoteOnMessage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Midi.MidiNoteOnMessage"; }
 };
 
 template <> struct traits<Windows::Devices::Midi::MidiOutPort>
 {
     using abi = ABI::Windows::Devices::Midi::MidiOutPort;
-    using default_interface = Windows::Devices::Midi::IMidiOutPort;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Midi.MidiOutPort"; }
 };
 
 template <> struct traits<Windows::Devices::Midi::MidiPitchBendChangeMessage>
 {
     using abi = ABI::Windows::Devices::Midi::MidiPitchBendChangeMessage;
-    using default_interface = Windows::Devices::Midi::IMidiPitchBendChangeMessage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Midi.MidiPitchBendChangeMessage"; }
 };
 
 template <> struct traits<Windows::Devices::Midi::MidiPolyphonicKeyPressureMessage>
 {
     using abi = ABI::Windows::Devices::Midi::MidiPolyphonicKeyPressureMessage;
-    using default_interface = Windows::Devices::Midi::IMidiPolyphonicKeyPressureMessage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Midi.MidiPolyphonicKeyPressureMessage"; }
 };
 
 template <> struct traits<Windows::Devices::Midi::MidiProgramChangeMessage>
 {
     using abi = ABI::Windows::Devices::Midi::MidiProgramChangeMessage;
-    using default_interface = Windows::Devices::Midi::IMidiProgramChangeMessage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Midi.MidiProgramChangeMessage"; }
 };
 
 template <> struct traits<Windows::Devices::Midi::MidiSongPositionPointerMessage>
 {
     using abi = ABI::Windows::Devices::Midi::MidiSongPositionPointerMessage;
-    using default_interface = Windows::Devices::Midi::IMidiSongPositionPointerMessage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Midi.MidiSongPositionPointerMessage"; }
 };
 
 template <> struct traits<Windows::Devices::Midi::MidiSongSelectMessage>
 {
     using abi = ABI::Windows::Devices::Midi::MidiSongSelectMessage;
-    using default_interface = Windows::Devices::Midi::IMidiSongSelectMessage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Midi.MidiSongSelectMessage"; }
 };
 
 template <> struct traits<Windows::Devices::Midi::MidiStartMessage>
 {
     using abi = ABI::Windows::Devices::Midi::MidiStartMessage;
-    using default_interface = Windows::Devices::Midi::IMidiMessage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Midi.MidiStartMessage"; }
 };
 
 template <> struct traits<Windows::Devices::Midi::MidiStopMessage>
 {
     using abi = ABI::Windows::Devices::Midi::MidiStopMessage;
-    using default_interface = Windows::Devices::Midi::IMidiMessage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Midi.MidiStopMessage"; }
 };
 
 template <> struct traits<Windows::Devices::Midi::MidiSynthesizer>
 {
     using abi = ABI::Windows::Devices::Midi::MidiSynthesizer;
-    using default_interface = Windows::Devices::Midi::IMidiSynthesizer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Midi.MidiSynthesizer"; }
 };
 
 template <> struct traits<Windows::Devices::Midi::MidiSystemExclusiveMessage>
 {
     using abi = ABI::Windows::Devices::Midi::MidiSystemExclusiveMessage;
-    using default_interface = Windows::Devices::Midi::IMidiMessage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Midi.MidiSystemExclusiveMessage"; }
 };
 
 template <> struct traits<Windows::Devices::Midi::MidiSystemResetMessage>
 {
     using abi = ABI::Windows::Devices::Midi::MidiSystemResetMessage;
-    using default_interface = Windows::Devices::Midi::IMidiMessage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Midi.MidiSystemResetMessage"; }
 };
 
 template <> struct traits<Windows::Devices::Midi::MidiTimeCodeMessage>
 {
     using abi = ABI::Windows::Devices::Midi::MidiTimeCodeMessage;
-    using default_interface = Windows::Devices::Midi::IMidiTimeCodeMessage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Midi.MidiTimeCodeMessage"; }
 };
 
 template <> struct traits<Windows::Devices::Midi::MidiTimingClockMessage>
 {
     using abi = ABI::Windows::Devices::Midi::MidiTimingClockMessage;
-    using default_interface = Windows::Devices::Midi::IMidiMessage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Midi.MidiTimingClockMessage"; }
 };
 
 template <> struct traits<Windows::Devices::Midi::MidiTuneRequestMessage>
 {
     using abi = ABI::Windows::Devices::Midi::MidiTuneRequestMessage;
-    using default_interface = Windows::Devices::Midi::IMidiMessage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Midi.MidiTuneRequestMessage"; }
 };
 

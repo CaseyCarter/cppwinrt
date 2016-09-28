@@ -30,33 +30,21 @@ template <> struct __declspec(uuid("97b73627-b296-5076-b8cd-6bd8a240e966")) __de
 namespace Windows::System::Diagnostics {
 
 template <typename D>
-class WINRT_EBO impl_IProcessCpuUsage
+struct WINRT_EBO impl_IProcessCpuUsage
 {
-    auto shim() const { return impl::shim<D, IProcessCpuUsage>(this); }
-
-public:
-
     Windows::System::Diagnostics::ProcessCpuUsageReport GetReport() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IProcessCpuUsageReport
+struct WINRT_EBO impl_IProcessCpuUsageReport
 {
-    auto shim() const { return impl::shim<D, IProcessCpuUsageReport>(this); }
-
-public:
-
     Windows::Foundation::TimeSpan KernelTime() const;
     Windows::Foundation::TimeSpan UserTime() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IProcessDiagnosticInfo
+struct WINRT_EBO impl_IProcessDiagnosticInfo
 {
-    auto shim() const { return impl::shim<D, IProcessDiagnosticInfo>(this); }
-
-public:
-
     uint32_t ProcessId() const;
     hstring ExecutableFileName() const;
     Windows::System::Diagnostics::ProcessDiagnosticInfo Parent() const;
@@ -67,33 +55,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IProcessDiagnosticInfoStatics
+struct WINRT_EBO impl_IProcessDiagnosticInfoStatics
 {
-    auto shim() const { return impl::shim<D, IProcessDiagnosticInfoStatics>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::System::Diagnostics::ProcessDiagnosticInfo> GetForProcesses() const;
     Windows::System::Diagnostics::ProcessDiagnosticInfo GetForCurrentProcess() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IProcessDiskUsage
+struct WINRT_EBO impl_IProcessDiskUsage
 {
-    auto shim() const { return impl::shim<D, IProcessDiskUsage>(this); }
-
-public:
-
     Windows::System::Diagnostics::ProcessDiskUsageReport GetReport() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IProcessDiskUsageReport
+struct WINRT_EBO impl_IProcessDiskUsageReport
 {
-    auto shim() const { return impl::shim<D, IProcessDiskUsageReport>(this); }
-
-public:
-
     int64_t ReadOperationCount() const;
     int64_t WriteOperationCount() const;
     int64_t OtherOperationCount() const;
@@ -103,22 +79,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IProcessMemoryUsage
+struct WINRT_EBO impl_IProcessMemoryUsage
 {
-    auto shim() const { return impl::shim<D, IProcessMemoryUsage>(this); }
-
-public:
-
     Windows::System::Diagnostics::ProcessMemoryUsageReport GetReport() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IProcessMemoryUsageReport
+struct WINRT_EBO impl_IProcessMemoryUsageReport
 {
-    auto shim() const { return impl::shim<D, IProcessMemoryUsageReport>(this); }
-
-public:
-
     uint64_t NonPagedPoolSizeInBytes() const;
     uint32_t PageFaultCount() const;
     uint64_t PageFileSizeInBytes() const;

@@ -61,12 +61,8 @@ template <> struct __declspec(uuid("bd8eeadc-2dd9-5ad8-ac5d-f3b13b94b9c2")) __de
 namespace Windows::Media::Devices::Core {
 
 template <typename D>
-class WINRT_EBO impl_ICameraIntrinsics
+struct WINRT_EBO impl_ICameraIntrinsics
 {
-    auto shim() const { return impl::shim<D, ICameraIntrinsics>(this); }
-
-public:
-
     Windows::Foundation::Numerics::float2 FocalLength() const;
     Windows::Foundation::Numerics::float2 PrincipalPoint() const;
     Windows::Foundation::Numerics::float3 RadialDistortion() const;
@@ -80,12 +76,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICameraIntrinsics2
+struct WINRT_EBO impl_ICameraIntrinsics2
 {
-    auto shim() const { return impl::shim<D, ICameraIntrinsics2>(this); }
-
-public:
-
     Windows::Foundation::Numerics::float4x4 UndistortedProjectionTransform() const;
     Windows::Foundation::Point DistortPoint(const Windows::Foundation::Point & input) const;
     void DistortPoints(array_ref<const Windows::Foundation::Point> inputs, array_ref<Windows::Foundation::Point> results) const;
@@ -94,22 +86,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICameraIntrinsicsFactory
+struct WINRT_EBO impl_ICameraIntrinsicsFactory
 {
-    auto shim() const { return impl::shim<D, ICameraIntrinsicsFactory>(this); }
-
-public:
-
     Windows::Media::Devices::Core::CameraIntrinsics Create(const Windows::Foundation::Numerics::float2 & focalLength, const Windows::Foundation::Numerics::float2 & principalPoint, const Windows::Foundation::Numerics::float3 & radialDistortion, const Windows::Foundation::Numerics::float2 & tangentialDistortion, uint32_t imageWidth, uint32_t imageHeight) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDepthCorrelatedCoordinateMapper
+struct WINRT_EBO impl_IDepthCorrelatedCoordinateMapper
 {
-    auto shim() const { return impl::shim<D, IDepthCorrelatedCoordinateMapper>(this); }
-
-public:
-
     Windows::Foundation::Numerics::float3 UnprojectPoint(const Windows::Foundation::Point & sourcePoint, const Windows::Perception::Spatial::SpatialCoordinateSystem & targetCoordinateSystem) const;
     void UnprojectPoints(array_ref<const Windows::Foundation::Point> sourcePoints, const Windows::Perception::Spatial::SpatialCoordinateSystem & targetCoordinateSystem, array_ref<Windows::Foundation::Numerics::float3> results) const;
     Windows::Foundation::Point MapPoint(const Windows::Foundation::Point & sourcePoint, const Windows::Perception::Spatial::SpatialCoordinateSystem & targetCoordinateSystem, const Windows::Media::Devices::Core::CameraIntrinsics & targetCameraIntrinsics) const;
@@ -117,12 +101,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IFrameControlCapabilities
+struct WINRT_EBO impl_IFrameControlCapabilities
 {
-    auto shim() const { return impl::shim<D, IFrameControlCapabilities>(this); }
-
-public:
-
     Windows::Media::Devices::Core::FrameExposureCapabilities Exposure() const;
     Windows::Media::Devices::Core::FrameExposureCompensationCapabilities ExposureCompensation() const;
     Windows::Media::Devices::Core::FrameIsoSpeedCapabilities IsoSpeed() const;
@@ -131,22 +111,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IFrameControlCapabilities2
+struct WINRT_EBO impl_IFrameControlCapabilities2
 {
-    auto shim() const { return impl::shim<D, IFrameControlCapabilities2>(this); }
-
-public:
-
     Windows::Media::Devices::Core::FrameFlashCapabilities Flash() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFrameController
+struct WINRT_EBO impl_IFrameController
 {
-    auto shim() const { return impl::shim<D, IFrameController>(this); }
-
-public:
-
     Windows::Media::Devices::Core::FrameExposureControl ExposureControl() const;
     Windows::Media::Devices::Core::FrameExposureCompensationControl ExposureCompensationControl() const;
     Windows::Media::Devices::Core::FrameIsoSpeedControl IsoSpeedControl() const;
@@ -156,22 +128,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IFrameController2
+struct WINRT_EBO impl_IFrameController2
 {
-    auto shim() const { return impl::shim<D, IFrameController2>(this); }
-
-public:
-
     Windows::Media::Devices::Core::FrameFlashControl FlashControl() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFrameExposureCapabilities
+struct WINRT_EBO impl_IFrameExposureCapabilities
 {
-    auto shim() const { return impl::shim<D, IFrameExposureCapabilities>(this); }
-
-public:
-
     bool Supported() const;
     Windows::Foundation::TimeSpan Min() const;
     Windows::Foundation::TimeSpan Max() const;
@@ -179,12 +143,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IFrameExposureCompensationCapabilities
+struct WINRT_EBO impl_IFrameExposureCompensationCapabilities
 {
-    auto shim() const { return impl::shim<D, IFrameExposureCompensationCapabilities>(this); }
-
-public:
-
     bool Supported() const;
     float Min() const;
     float Max() const;
@@ -192,23 +152,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IFrameExposureCompensationControl
+struct WINRT_EBO impl_IFrameExposureCompensationControl
 {
-    auto shim() const { return impl::shim<D, IFrameExposureCompensationControl>(this); }
-
-public:
-
     Windows::Foundation::IReference<float> Value() const;
     void Value(const Windows::Foundation::IReference<float> & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFrameExposureControl
+struct WINRT_EBO impl_IFrameExposureControl
 {
-    auto shim() const { return impl::shim<D, IFrameExposureControl>(this); }
-
-public:
-
     bool Auto() const;
     void Auto(bool value) const;
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> Value() const;
@@ -216,24 +168,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IFrameFlashCapabilities
+struct WINRT_EBO impl_IFrameFlashCapabilities
 {
-    auto shim() const { return impl::shim<D, IFrameFlashCapabilities>(this); }
-
-public:
-
     bool Supported() const;
     bool RedEyeReductionSupported() const;
     bool PowerSupported() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFrameFlashControl
+struct WINRT_EBO impl_IFrameFlashControl
 {
-    auto shim() const { return impl::shim<D, IFrameFlashControl>(this); }
-
-public:
-
     Windows::Media::Devices::Core::FrameFlashMode Mode() const;
     void Mode(Windows::Media::Devices::Core::FrameFlashMode value) const;
     bool Auto() const;
@@ -245,12 +189,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IFrameFocusCapabilities
+struct WINRT_EBO impl_IFrameFocusCapabilities
 {
-    auto shim() const { return impl::shim<D, IFrameFocusCapabilities>(this); }
-
-public:
-
     bool Supported() const;
     uint32_t Min() const;
     uint32_t Max() const;
@@ -258,23 +198,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IFrameFocusControl
+struct WINRT_EBO impl_IFrameFocusControl
 {
-    auto shim() const { return impl::shim<D, IFrameFocusControl>(this); }
-
-public:
-
     Windows::Foundation::IReference<uint32_t> Value() const;
     void Value(const Windows::Foundation::IReference<uint32_t> & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFrameIsoSpeedCapabilities
+struct WINRT_EBO impl_IFrameIsoSpeedCapabilities
 {
-    auto shim() const { return impl::shim<D, IFrameIsoSpeedCapabilities>(this); }
-
-public:
-
     bool Supported() const;
     uint32_t Min() const;
     uint32_t Max() const;
@@ -282,12 +214,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IFrameIsoSpeedControl
+struct WINRT_EBO impl_IFrameIsoSpeedControl
 {
-    auto shim() const { return impl::shim<D, IFrameIsoSpeedControl>(this); }
-
-public:
-
     bool Auto() const;
     void Auto(bool value) const;
     Windows::Foundation::IReference<uint32_t> Value() const;
@@ -295,12 +223,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVariablePhotoSequenceController
+struct WINRT_EBO impl_IVariablePhotoSequenceController
 {
-    auto shim() const { return impl::shim<D, IVariablePhotoSequenceController>(this); }
-
-public:
-
     bool Supported() const;
     float MaxPhotosPerSecond() const;
     float PhotosPerSecondLimit() const;

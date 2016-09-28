@@ -302,23 +302,15 @@ template <> struct __declspec(uuid("05eb86f1-7140-5517-b88d-cbaebe57e6b1")) __de
 namespace Windows::Web::Http {
 
 template <typename D>
-class WINRT_EBO impl_IHttpBufferContentFactory
+struct WINRT_EBO impl_IHttpBufferContentFactory
 {
-    auto shim() const { return impl::shim<D, IHttpBufferContentFactory>(this); }
-
-public:
-
     Windows::Web::Http::HttpBufferContent CreateFromBuffer(const Windows::Storage::Streams::IBuffer & content) const;
     Windows::Web::Http::HttpBufferContent CreateFromBufferWithOffset(const Windows::Storage::Streams::IBuffer & content, uint32_t offset, uint32_t count) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpClient
+struct WINRT_EBO impl_IHttpClient
 {
-    auto shim() const { return impl::shim<D, IHttpClient>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress> DeleteAsync(const Windows::Foundation::Uri & uri) const;
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress> GetAsync(const Windows::Foundation::Uri & uri) const;
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress> GetAsync(const Windows::Foundation::Uri & uri, Windows::Web::Http::HttpCompletionOption completionOption) const;
@@ -333,22 +325,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpClientFactory
+struct WINRT_EBO impl_IHttpClientFactory
 {
-    auto shim() const { return impl::shim<D, IHttpClientFactory>(this); }
-
-public:
-
     Windows::Web::Http::HttpClient Create(const Windows::Web::Http::Filters::IHttpFilter & filter) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpContent
+struct WINRT_EBO impl_IHttpContent
 {
-    auto shim() const { return impl::shim<D, IHttpContent>(this); }
-
-public:
-
     Windows::Web::Http::Headers::HttpContentHeaderCollection Headers() const;
     Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t> BufferAllAsync() const;
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Storage::Streams::IBuffer, uint64_t> ReadAsBufferAsync() const;
@@ -359,12 +343,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpCookie
+struct WINRT_EBO impl_IHttpCookie
 {
-    auto shim() const { return impl::shim<D, IHttpCookie>(this); }
-
-public:
-
     hstring Name() const;
     hstring Domain() const;
     hstring Path() const;
@@ -379,22 +359,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpCookieFactory
+struct WINRT_EBO impl_IHttpCookieFactory
 {
-    auto shim() const { return impl::shim<D, IHttpCookieFactory>(this); }
-
-public:
-
     Windows::Web::Http::HttpCookie Create(hstring_ref name, hstring_ref domain, hstring_ref path) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpCookieManager
+struct WINRT_EBO impl_IHttpCookieManager
 {
-    auto shim() const { return impl::shim<D, IHttpCookieManager>(this); }
-
-public:
-
     bool SetCookie(const Windows::Web::Http::HttpCookie & cookie) const;
     bool SetCookie(const Windows::Web::Http::HttpCookie & cookie, bool thirdParty) const;
     void DeleteCookie(const Windows::Web::Http::HttpCookie & cookie) const;
@@ -402,42 +374,26 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpFormUrlEncodedContentFactory
+struct WINRT_EBO impl_IHttpFormUrlEncodedContentFactory
 {
-    auto shim() const { return impl::shim<D, IHttpFormUrlEncodedContentFactory>(this); }
-
-public:
-
     Windows::Web::Http::HttpFormUrlEncodedContent Create(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, hstring>> & content) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpMethod
+struct WINRT_EBO impl_IHttpMethod
 {
-    auto shim() const { return impl::shim<D, IHttpMethod>(this); }
-
-public:
-
     hstring Method() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpMethodFactory
+struct WINRT_EBO impl_IHttpMethodFactory
 {
-    auto shim() const { return impl::shim<D, IHttpMethodFactory>(this); }
-
-public:
-
     Windows::Web::Http::HttpMethod Create(hstring_ref method) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpMethodStatics
+struct WINRT_EBO impl_IHttpMethodStatics
 {
-    auto shim() const { return impl::shim<D, IHttpMethodStatics>(this); }
-
-public:
-
     Windows::Web::Http::HttpMethod Delete() const;
     Windows::Web::Http::HttpMethod Get() const;
     Windows::Web::Http::HttpMethod Head() const;
@@ -448,55 +404,35 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpMultipartContent
+struct WINRT_EBO impl_IHttpMultipartContent
 {
-    auto shim() const { return impl::shim<D, IHttpMultipartContent>(this); }
-
-public:
-
     void Add(const Windows::Web::Http::IHttpContent & content) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpMultipartContentFactory
+struct WINRT_EBO impl_IHttpMultipartContentFactory
 {
-    auto shim() const { return impl::shim<D, IHttpMultipartContentFactory>(this); }
-
-public:
-
     Windows::Web::Http::HttpMultipartContent CreateWithSubtype(hstring_ref subtype) const;
     Windows::Web::Http::HttpMultipartContent CreateWithSubtypeAndBoundary(hstring_ref subtype, hstring_ref boundary) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpMultipartFormDataContent
+struct WINRT_EBO impl_IHttpMultipartFormDataContent
 {
-    auto shim() const { return impl::shim<D, IHttpMultipartFormDataContent>(this); }
-
-public:
-
     void Add(const Windows::Web::Http::IHttpContent & content) const;
     void Add(const Windows::Web::Http::IHttpContent & content, hstring_ref name) const;
     void Add(const Windows::Web::Http::IHttpContent & content, hstring_ref name, hstring_ref fileName) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpMultipartFormDataContentFactory
+struct WINRT_EBO impl_IHttpMultipartFormDataContentFactory
 {
-    auto shim() const { return impl::shim<D, IHttpMultipartFormDataContentFactory>(this); }
-
-public:
-
     Windows::Web::Http::HttpMultipartFormDataContent CreateWithBoundary(hstring_ref boundary) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpRequestMessage
+struct WINRT_EBO impl_IHttpRequestMessage
 {
-    auto shim() const { return impl::shim<D, IHttpRequestMessage>(this); }
-
-public:
-
     Windows::Web::Http::IHttpContent Content() const;
     void Content(const Windows::Web::Http::IHttpContent & value) const;
     Windows::Web::Http::Headers::HttpRequestHeaderCollection Headers() const;
@@ -509,22 +445,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpRequestMessageFactory
+struct WINRT_EBO impl_IHttpRequestMessageFactory
 {
-    auto shim() const { return impl::shim<D, IHttpRequestMessageFactory>(this); }
-
-public:
-
     Windows::Web::Http::HttpRequestMessage Create(const Windows::Web::Http::HttpMethod & method, const Windows::Foundation::Uri & uri) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpResponseMessage
+struct WINRT_EBO impl_IHttpResponseMessage
 {
-    auto shim() const { return impl::shim<D, IHttpResponseMessage>(this); }
-
-public:
-
     Windows::Web::Http::IHttpContent Content() const;
     void Content(const Windows::Web::Http::IHttpContent & value) const;
     Windows::Web::Http::Headers::HttpResponseHeaderCollection Headers() const;
@@ -543,44 +471,28 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpResponseMessageFactory
+struct WINRT_EBO impl_IHttpResponseMessageFactory
 {
-    auto shim() const { return impl::shim<D, IHttpResponseMessageFactory>(this); }
-
-public:
-
     Windows::Web::Http::HttpResponseMessage Create(Windows::Web::Http::HttpStatusCode statusCode) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpStreamContentFactory
+struct WINRT_EBO impl_IHttpStreamContentFactory
 {
-    auto shim() const { return impl::shim<D, IHttpStreamContentFactory>(this); }
-
-public:
-
     Windows::Web::Http::HttpStreamContent CreateFromInputStream(const Windows::Storage::Streams::IInputStream & content) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpStringContentFactory
+struct WINRT_EBO impl_IHttpStringContentFactory
 {
-    auto shim() const { return impl::shim<D, IHttpStringContentFactory>(this); }
-
-public:
-
     Windows::Web::Http::HttpStringContent CreateFromString(hstring_ref content) const;
     Windows::Web::Http::HttpStringContent CreateFromStringWithEncoding(hstring_ref content, Windows::Storage::Streams::UnicodeEncoding encoding) const;
     Windows::Web::Http::HttpStringContent CreateFromStringWithEncodingAndMediaType(hstring_ref content, Windows::Storage::Streams::UnicodeEncoding encoding, hstring_ref mediaType) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpTransportInformation
+struct WINRT_EBO impl_IHttpTransportInformation
 {
-    auto shim() const { return impl::shim<D, IHttpTransportInformation>(this); }
-
-public:
-
     Windows::Security::Cryptography::Certificates::Certificate ServerCertificate() const;
     Windows::Networking::Sockets::SocketSslErrorSeverity ServerCertificateErrorSeverity() const;
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Security::Cryptography::Certificates::ChainValidationResult> ServerCertificateErrors() const;

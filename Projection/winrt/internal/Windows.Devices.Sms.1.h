@@ -248,23 +248,23 @@ template <> struct traits<Windows::Devices::Sms::SmsWapMessage> { using default_
 
 namespace Windows::Devices::Sms {
 
-template <typename T> class impl_ISmsAppMessage;
-template <typename T> class impl_ISmsBroadcastMessage;
-template <typename T> class impl_ISmsDevice2;
-template <typename T> class impl_ISmsDevice2Statics;
-template <typename T> class impl_ISmsFilterRule;
-template <typename T> class impl_ISmsFilterRuleFactory;
-template <typename T> class impl_ISmsFilterRules;
-template <typename T> class impl_ISmsFilterRulesFactory;
-template <typename T> class impl_ISmsMessageBase;
-template <typename T> class impl_ISmsMessageReceivedTriggerDetails;
-template <typename T> class impl_ISmsMessageRegistration;
-template <typename T> class impl_ISmsMessageRegistrationStatics;
-template <typename T> class impl_ISmsSendMessageResult;
-template <typename T> class impl_ISmsStatusMessage;
-template <typename T> class impl_ISmsTextMessage2;
-template <typename T> class impl_ISmsVoicemailMessage;
-template <typename T> class impl_ISmsWapMessage;
+template <typename T> struct impl_ISmsAppMessage;
+template <typename T> struct impl_ISmsBroadcastMessage;
+template <typename T> struct impl_ISmsDevice2;
+template <typename T> struct impl_ISmsDevice2Statics;
+template <typename T> struct impl_ISmsFilterRule;
+template <typename T> struct impl_ISmsFilterRuleFactory;
+template <typename T> struct impl_ISmsFilterRules;
+template <typename T> struct impl_ISmsFilterRulesFactory;
+template <typename T> struct impl_ISmsMessageBase;
+template <typename T> struct impl_ISmsMessageReceivedTriggerDetails;
+template <typename T> struct impl_ISmsMessageRegistration;
+template <typename T> struct impl_ISmsMessageRegistrationStatics;
+template <typename T> struct impl_ISmsSendMessageResult;
+template <typename T> struct impl_ISmsStatusMessage;
+template <typename T> struct impl_ISmsTextMessage2;
+template <typename T> struct impl_ISmsVoicemailMessage;
+template <typename T> struct impl_ISmsWapMessage;
 
 }
 
@@ -375,84 +375,72 @@ template <> struct traits<Windows::Devices::Sms::ISmsWapMessage>
 template <> struct traits<Windows::Devices::Sms::SmsAppMessage>
 {
     using abi = ABI::Windows::Devices::Sms::SmsAppMessage;
-    using default_interface = Windows::Devices::Sms::ISmsAppMessage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sms.SmsAppMessage"; }
 };
 
 template <> struct traits<Windows::Devices::Sms::SmsBroadcastMessage>
 {
     using abi = ABI::Windows::Devices::Sms::SmsBroadcastMessage;
-    using default_interface = Windows::Devices::Sms::ISmsBroadcastMessage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sms.SmsBroadcastMessage"; }
 };
 
 template <> struct traits<Windows::Devices::Sms::SmsDevice2>
 {
     using abi = ABI::Windows::Devices::Sms::SmsDevice2;
-    using default_interface = Windows::Devices::Sms::ISmsDevice2;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sms.SmsDevice2"; }
 };
 
 template <> struct traits<Windows::Devices::Sms::SmsFilterRule>
 {
     using abi = ABI::Windows::Devices::Sms::SmsFilterRule;
-    using default_interface = Windows::Devices::Sms::ISmsFilterRule;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sms.SmsFilterRule"; }
 };
 
 template <> struct traits<Windows::Devices::Sms::SmsFilterRules>
 {
     using abi = ABI::Windows::Devices::Sms::SmsFilterRules;
-    using default_interface = Windows::Devices::Sms::ISmsFilterRules;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sms.SmsFilterRules"; }
 };
 
 template <> struct traits<Windows::Devices::Sms::SmsMessageReceivedTriggerDetails>
 {
     using abi = ABI::Windows::Devices::Sms::SmsMessageReceivedTriggerDetails;
-    using default_interface = Windows::Devices::Sms::ISmsMessageReceivedTriggerDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sms.SmsMessageReceivedTriggerDetails"; }
 };
 
 template <> struct traits<Windows::Devices::Sms::SmsMessageRegistration>
 {
     using abi = ABI::Windows::Devices::Sms::SmsMessageRegistration;
-    using default_interface = Windows::Devices::Sms::ISmsMessageRegistration;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sms.SmsMessageRegistration"; }
 };
 
 template <> struct traits<Windows::Devices::Sms::SmsSendMessageResult>
 {
     using abi = ABI::Windows::Devices::Sms::SmsSendMessageResult;
-    using default_interface = Windows::Devices::Sms::ISmsSendMessageResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sms.SmsSendMessageResult"; }
 };
 
 template <> struct traits<Windows::Devices::Sms::SmsStatusMessage>
 {
     using abi = ABI::Windows::Devices::Sms::SmsStatusMessage;
-    using default_interface = Windows::Devices::Sms::ISmsStatusMessage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sms.SmsStatusMessage"; }
 };
 
 template <> struct traits<Windows::Devices::Sms::SmsTextMessage2>
 {
     using abi = ABI::Windows::Devices::Sms::SmsTextMessage2;
-    using default_interface = Windows::Devices::Sms::ISmsTextMessage2;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sms.SmsTextMessage2"; }
 };
 
 template <> struct traits<Windows::Devices::Sms::SmsVoicemailMessage>
 {
     using abi = ABI::Windows::Devices::Sms::SmsVoicemailMessage;
-    using default_interface = Windows::Devices::Sms::ISmsVoicemailMessage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sms.SmsVoicemailMessage"; }
 };
 
 template <> struct traits<Windows::Devices::Sms::SmsWapMessage>
 {
     using abi = ABI::Windows::Devices::Sms::SmsWapMessage;
-    using default_interface = Windows::Devices::Sms::ISmsWapMessage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sms.SmsWapMessage"; }
 };
 

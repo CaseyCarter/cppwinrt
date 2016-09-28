@@ -406,56 +406,56 @@ namespace Windows::Devices::WiFi {
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::WiFi::WiFiAdapter>> impl_IWiFiAdapterStatics<D>::FindAllAdaptersAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::WiFi::WiFiAdapter>> value;
-    check_hresult(shim()->abi_FindAllAdaptersAsync(put(value)));
+    check_hresult(static_cast<const IWiFiAdapterStatics &>(static_cast<const D &>(*this))->abi_FindAllAdaptersAsync(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IWiFiAdapterStatics<D>::GetDeviceSelector() const
 {
     hstring deviceSelector;
-    check_hresult(shim()->abi_GetDeviceSelector(put(deviceSelector)));
+    check_hresult(static_cast<const IWiFiAdapterStatics &>(static_cast<const D &>(*this))->abi_GetDeviceSelector(put(deviceSelector)));
     return deviceSelector;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::WiFi::WiFiAdapter> impl_IWiFiAdapterStatics<D>::FromIdAsync(hstring_ref deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::WiFi::WiFiAdapter> asyncOp;
-    check_hresult(shim()->abi_FromIdAsync(get(deviceId), put(asyncOp)));
+    check_hresult(static_cast<const IWiFiAdapterStatics &>(static_cast<const D &>(*this))->abi_FromIdAsync(get(deviceId), put(asyncOp)));
     return asyncOp;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::WiFi::WiFiAccessStatus> impl_IWiFiAdapterStatics<D>::RequestAccessAsync() const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::WiFi::WiFiAccessStatus> value;
-    check_hresult(shim()->abi_RequestAccessAsync(put(value)));
+    check_hresult(static_cast<const IWiFiAdapterStatics &>(static_cast<const D &>(*this))->abi_RequestAccessAsync(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Connectivity::NetworkAdapter impl_IWiFiAdapter<D>::NetworkAdapter() const
 {
     Windows::Networking::Connectivity::NetworkAdapter value { nullptr };
-    check_hresult(shim()->get_NetworkAdapter(put(value)));
+    check_hresult(static_cast<const IWiFiAdapter &>(static_cast<const D &>(*this))->get_NetworkAdapter(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IWiFiAdapter<D>::ScanAsync() const
 {
     Windows::Foundation::IAsyncAction value;
-    check_hresult(shim()->abi_ScanAsync(put(value)));
+    check_hresult(static_cast<const IWiFiAdapter &>(static_cast<const D &>(*this))->abi_ScanAsync(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::WiFi::WiFiNetworkReport impl_IWiFiAdapter<D>::NetworkReport() const
 {
     Windows::Devices::WiFi::WiFiNetworkReport value { nullptr };
-    check_hresult(shim()->get_NetworkReport(put(value)));
+    check_hresult(static_cast<const IWiFiAdapter &>(static_cast<const D &>(*this))->get_NetworkReport(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IWiFiAdapter<D>::AvailableNetworksChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFi::WiFiAdapter, Windows::IInspectable> & args) const
 {
     event_token eventCookie {};
-    check_hresult(shim()->add_AvailableNetworksChanged(get(args), &eventCookie));
+    check_hresult(static_cast<const IWiFiAdapter &>(static_cast<const D &>(*this))->add_AvailableNetworksChanged(get(args), &eventCookie));
     return eventCookie;
 }
 
@@ -466,130 +466,130 @@ template <typename D> event_revoker<IWiFiAdapter> impl_IWiFiAdapter<D>::Availabl
 
 template <typename D> void impl_IWiFiAdapter<D>::AvailableNetworksChanged(event_token eventCookie) const
 {
-    check_hresult(shim()->remove_AvailableNetworksChanged(eventCookie));
+    check_hresult(static_cast<const IWiFiAdapter &>(static_cast<const D &>(*this))->remove_AvailableNetworksChanged(eventCookie));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::WiFi::WiFiConnectionResult> impl_IWiFiAdapter<D>::ConnectAsync(const Windows::Devices::WiFi::WiFiAvailableNetwork & availableNetwork, Windows::Devices::WiFi::WiFiReconnectionKind reconnectionKind) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::WiFi::WiFiConnectionResult> value;
-    check_hresult(shim()->abi_ConnectAsync(get(availableNetwork), reconnectionKind, put(value)));
+    check_hresult(static_cast<const IWiFiAdapter &>(static_cast<const D &>(*this))->abi_ConnectAsync(get(availableNetwork), reconnectionKind, put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::WiFi::WiFiConnectionResult> impl_IWiFiAdapter<D>::ConnectAsync(const Windows::Devices::WiFi::WiFiAvailableNetwork & availableNetwork, Windows::Devices::WiFi::WiFiReconnectionKind reconnectionKind, const Windows::Security::Credentials::PasswordCredential & passwordCredential) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::WiFi::WiFiConnectionResult> value;
-    check_hresult(shim()->abi_ConnectWithPasswordCredentialAsync(get(availableNetwork), reconnectionKind, get(passwordCredential), put(value)));
+    check_hresult(static_cast<const IWiFiAdapter &>(static_cast<const D &>(*this))->abi_ConnectWithPasswordCredentialAsync(get(availableNetwork), reconnectionKind, get(passwordCredential), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::WiFi::WiFiConnectionResult> impl_IWiFiAdapter<D>::ConnectAsync(const Windows::Devices::WiFi::WiFiAvailableNetwork & availableNetwork, Windows::Devices::WiFi::WiFiReconnectionKind reconnectionKind, const Windows::Security::Credentials::PasswordCredential & passwordCredential, hstring_ref ssid) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::WiFi::WiFiConnectionResult> value;
-    check_hresult(shim()->abi_ConnectWithPasswordCredentialAndSsidAsync(get(availableNetwork), reconnectionKind, get(passwordCredential), get(ssid), put(value)));
+    check_hresult(static_cast<const IWiFiAdapter &>(static_cast<const D &>(*this))->abi_ConnectWithPasswordCredentialAndSsidAsync(get(availableNetwork), reconnectionKind, get(passwordCredential), get(ssid), put(value)));
     return value;
 }
 
 template <typename D> void impl_IWiFiAdapter<D>::Disconnect() const
 {
-    check_hresult(shim()->abi_Disconnect());
+    check_hresult(static_cast<const IWiFiAdapter &>(static_cast<const D &>(*this))->abi_Disconnect());
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IWiFiNetworkReport<D>::Timestamp() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->get_Timestamp(put(value)));
+    check_hresult(static_cast<const IWiFiNetworkReport &>(static_cast<const D &>(*this))->get_Timestamp(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::WiFi::WiFiAvailableNetwork> impl_IWiFiNetworkReport<D>::AvailableNetworks() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::WiFi::WiFiAvailableNetwork> value;
-    check_hresult(shim()->get_AvailableNetworks(put(value)));
+    check_hresult(static_cast<const IWiFiNetworkReport &>(static_cast<const D &>(*this))->get_AvailableNetworks(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IWiFiAvailableNetwork<D>::Uptime() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_Uptime(put(value)));
+    check_hresult(static_cast<const IWiFiAvailableNetwork &>(static_cast<const D &>(*this))->get_Uptime(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IWiFiAvailableNetwork<D>::Ssid() const
 {
     hstring value;
-    check_hresult(shim()->get_Ssid(put(value)));
+    check_hresult(static_cast<const IWiFiAvailableNetwork &>(static_cast<const D &>(*this))->get_Ssid(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IWiFiAvailableNetwork<D>::Bssid() const
 {
     hstring value;
-    check_hresult(shim()->get_Bssid(put(value)));
+    check_hresult(static_cast<const IWiFiAvailableNetwork &>(static_cast<const D &>(*this))->get_Bssid(put(value)));
     return value;
 }
 
 template <typename D> int32_t impl_IWiFiAvailableNetwork<D>::ChannelCenterFrequencyInKilohertz() const
 {
     int32_t value {};
-    check_hresult(shim()->get_ChannelCenterFrequencyInKilohertz(&value));
+    check_hresult(static_cast<const IWiFiAvailableNetwork &>(static_cast<const D &>(*this))->get_ChannelCenterFrequencyInKilohertz(&value));
     return value;
 }
 
 template <typename D> double impl_IWiFiAvailableNetwork<D>::NetworkRssiInDecibelMilliwatts() const
 {
     double value {};
-    check_hresult(shim()->get_NetworkRssiInDecibelMilliwatts(&value));
+    check_hresult(static_cast<const IWiFiAvailableNetwork &>(static_cast<const D &>(*this))->get_NetworkRssiInDecibelMilliwatts(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IWiFiAvailableNetwork<D>::SignalBars() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_SignalBars(&value));
+    check_hresult(static_cast<const IWiFiAvailableNetwork &>(static_cast<const D &>(*this))->get_SignalBars(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::WiFi::WiFiNetworkKind impl_IWiFiAvailableNetwork<D>::NetworkKind() const
 {
     Windows::Devices::WiFi::WiFiNetworkKind value {};
-    check_hresult(shim()->get_NetworkKind(&value));
+    check_hresult(static_cast<const IWiFiAvailableNetwork &>(static_cast<const D &>(*this))->get_NetworkKind(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::WiFi::WiFiPhyKind impl_IWiFiAvailableNetwork<D>::PhyKind() const
 {
     Windows::Devices::WiFi::WiFiPhyKind value {};
-    check_hresult(shim()->get_PhyKind(&value));
+    check_hresult(static_cast<const IWiFiAvailableNetwork &>(static_cast<const D &>(*this))->get_PhyKind(&value));
     return value;
 }
 
 template <typename D> Windows::Networking::Connectivity::NetworkSecuritySettings impl_IWiFiAvailableNetwork<D>::SecuritySettings() const
 {
     Windows::Networking::Connectivity::NetworkSecuritySettings value { nullptr };
-    check_hresult(shim()->get_SecuritySettings(put(value)));
+    check_hresult(static_cast<const IWiFiAvailableNetwork &>(static_cast<const D &>(*this))->get_SecuritySettings(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IWiFiAvailableNetwork<D>::BeaconInterval() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_BeaconInterval(put(value)));
+    check_hresult(static_cast<const IWiFiAvailableNetwork &>(static_cast<const D &>(*this))->get_BeaconInterval(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IWiFiAvailableNetwork<D>::IsWiFiDirect() const
 {
     bool value {};
-    check_hresult(shim()->get_IsWiFiDirect(&value));
+    check_hresult(static_cast<const IWiFiAvailableNetwork &>(static_cast<const D &>(*this))->get_IsWiFiDirect(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::WiFi::WiFiConnectionStatus impl_IWiFiConnectionResult<D>::ConnectionStatus() const
 {
     Windows::Devices::WiFi::WiFiConnectionStatus value {};
-    check_hresult(shim()->get_ConnectionStatus(&value));
+    check_hresult(static_cast<const IWiFiConnectionResult &>(static_cast<const D &>(*this))->get_ConnectionStatus(&value));
     return value;
 }
 

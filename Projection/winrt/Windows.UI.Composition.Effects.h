@@ -154,61 +154,61 @@ namespace Windows::UI::Composition::Effects {
 template <typename D> float impl_ISceneLightingEffect<D>::AmbientAmount() const
 {
     float value {};
-    check_hresult(shim()->get_AmbientAmount(&value));
+    check_hresult(static_cast<const ISceneLightingEffect &>(static_cast<const D &>(*this))->get_AmbientAmount(&value));
     return value;
 }
 
 template <typename D> void impl_ISceneLightingEffect<D>::AmbientAmount(float value) const
 {
-    check_hresult(shim()->put_AmbientAmount(value));
+    check_hresult(static_cast<const ISceneLightingEffect &>(static_cast<const D &>(*this))->put_AmbientAmount(value));
 }
 
 template <typename D> float impl_ISceneLightingEffect<D>::DiffuseAmount() const
 {
     float value {};
-    check_hresult(shim()->get_DiffuseAmount(&value));
+    check_hresult(static_cast<const ISceneLightingEffect &>(static_cast<const D &>(*this))->get_DiffuseAmount(&value));
     return value;
 }
 
 template <typename D> void impl_ISceneLightingEffect<D>::DiffuseAmount(float value) const
 {
-    check_hresult(shim()->put_DiffuseAmount(value));
+    check_hresult(static_cast<const ISceneLightingEffect &>(static_cast<const D &>(*this))->put_DiffuseAmount(value));
 }
 
 template <typename D> Windows::Graphics::Effects::IGraphicsEffectSource impl_ISceneLightingEffect<D>::NormalMapSource() const
 {
     Windows::Graphics::Effects::IGraphicsEffectSource value;
-    check_hresult(shim()->get_NormalMapSource(put(value)));
+    check_hresult(static_cast<const ISceneLightingEffect &>(static_cast<const D &>(*this))->get_NormalMapSource(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISceneLightingEffect<D>::NormalMapSource(const Windows::Graphics::Effects::IGraphicsEffectSource & value) const
 {
-    check_hresult(shim()->put_NormalMapSource(get(value)));
+    check_hresult(static_cast<const ISceneLightingEffect &>(static_cast<const D &>(*this))->put_NormalMapSource(get(value)));
 }
 
 template <typename D> float impl_ISceneLightingEffect<D>::SpecularAmount() const
 {
     float value {};
-    check_hresult(shim()->get_SpecularAmount(&value));
+    check_hresult(static_cast<const ISceneLightingEffect &>(static_cast<const D &>(*this))->get_SpecularAmount(&value));
     return value;
 }
 
 template <typename D> void impl_ISceneLightingEffect<D>::SpecularAmount(float value) const
 {
-    check_hresult(shim()->put_SpecularAmount(value));
+    check_hresult(static_cast<const ISceneLightingEffect &>(static_cast<const D &>(*this))->put_SpecularAmount(value));
 }
 
 template <typename D> float impl_ISceneLightingEffect<D>::SpecularShine() const
 {
     float value {};
-    check_hresult(shim()->get_SpecularShine(&value));
+    check_hresult(static_cast<const ISceneLightingEffect &>(static_cast<const D &>(*this))->get_SpecularShine(&value));
     return value;
 }
 
 template <typename D> void impl_ISceneLightingEffect<D>::SpecularShine(float value) const
 {
-    check_hresult(shim()->put_SpecularShine(value));
+    check_hresult(static_cast<const ISceneLightingEffect &>(static_cast<const D &>(*this))->put_SpecularShine(value));
 }
 
 inline SceneLightingEffect::SceneLightingEffect() :

@@ -10,34 +10,22 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::UI::Xaml::Interop {
 
 template <typename D>
-class WINRT_EBO impl_IBindableIterable
+struct WINRT_EBO impl_IBindableIterable
 {
-    auto shim() const { return impl::shim<D, IBindableIterable>(this); }
-
-public:
-
     Windows::UI::Xaml::Interop::IBindableIterator First() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBindableIterator
+struct WINRT_EBO impl_IBindableIterator
 {
-    auto shim() const { return impl::shim<D, IBindableIterator>(this); }
-
-public:
-
     Windows::IInspectable Current() const;
     bool HasCurrent() const;
     bool MoveNext() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBindableObservableVector
+struct WINRT_EBO impl_IBindableObservableVector
 {
-    auto shim() const { return impl::shim<D, IBindableObservableVector>(this); }
-
-public:
-
     event_token VectorChanged(const Windows::UI::Xaml::Interop::BindableVectorChangedEventHandler & value) const;
     using VectorChanged_revoker = event_revoker<IBindableObservableVector>;
     VectorChanged_revoker VectorChanged(auto_revoke_t, const Windows::UI::Xaml::Interop::BindableVectorChangedEventHandler & value) const;
@@ -45,12 +33,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBindableVector
+struct WINRT_EBO impl_IBindableVector
 {
-    auto shim() const { return impl::shim<D, IBindableVector>(this); }
-
-public:
-
     Windows::IInspectable GetAt(uint32_t index) const;
     uint32_t Size() const;
     Windows::UI::Xaml::Interop::IBindableVectorView GetView() const;
@@ -64,24 +48,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBindableVectorView
+struct WINRT_EBO impl_IBindableVectorView
 {
-    auto shim() const { return impl::shim<D, IBindableVectorView>(this); }
-
-public:
-
     Windows::IInspectable GetAt(uint32_t index) const;
     uint32_t Size() const;
     bool IndexOf(const Windows::IInspectable & value, uint32_t & index) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_INotifyCollectionChanged
+struct WINRT_EBO impl_INotifyCollectionChanged
 {
-    auto shim() const { return impl::shim<D, INotifyCollectionChanged>(this); }
-
-public:
-
     event_token CollectionChanged(const Windows::UI::Xaml::Interop::NotifyCollectionChangedEventHandler & value) const;
     using CollectionChanged_revoker = event_revoker<INotifyCollectionChanged>;
     CollectionChanged_revoker CollectionChanged(auto_revoke_t, const Windows::UI::Xaml::Interop::NotifyCollectionChangedEventHandler & value) const;
@@ -89,12 +65,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_INotifyCollectionChangedEventArgs
+struct WINRT_EBO impl_INotifyCollectionChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, INotifyCollectionChangedEventArgs>(this); }
-
-public:
-
     Windows::UI::Xaml::Interop::NotifyCollectionChangedAction Action() const;
     Windows::UI::Xaml::Interop::IBindableVector NewItems() const;
     Windows::UI::Xaml::Interop::IBindableVector OldItems() const;
@@ -103,12 +75,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_INotifyCollectionChangedEventArgsFactory
+struct WINRT_EBO impl_INotifyCollectionChangedEventArgsFactory
 {
-    auto shim() const { return impl::shim<D, INotifyCollectionChangedEventArgsFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Interop::NotifyCollectionChangedEventArgs CreateInstanceWithAllParameters(Windows::UI::Xaml::Interop::NotifyCollectionChangedAction action, const Windows::UI::Xaml::Interop::IBindableVector & newItems, const Windows::UI::Xaml::Interop::IBindableVector & oldItems, int32_t newIndex, int32_t oldIndex, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 

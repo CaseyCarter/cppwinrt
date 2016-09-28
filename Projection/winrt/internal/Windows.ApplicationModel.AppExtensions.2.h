@@ -115,12 +115,8 @@ template <> struct __declspec(uuid("cbd3ea3b-1275-5688-8610-0ab1f83442fc")) __de
 namespace Windows::ApplicationModel::AppExtensions {
 
 template <typename D>
-class WINRT_EBO impl_IAppExtension
+struct WINRT_EBO impl_IAppExtension
 {
-    auto shim() const { return impl::shim<D, IAppExtension>(this); }
-
-public:
-
     hstring Id() const;
     hstring DisplayName() const;
     hstring Description() const;
@@ -131,12 +127,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppExtensionCatalog
+struct WINRT_EBO impl_IAppExtensionCatalog
 {
-    auto shim() const { return impl::shim<D, IAppExtensionCatalog>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppExtensions::AppExtension>> FindAllAsync() const;
     Windows::Foundation::IAsyncOperation<bool> RequestRemovePackageAsync(hstring_ref packageFullName) const;
     event_token PackageInstalled(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppExtensions::AppExtensionCatalog, Windows::ApplicationModel::AppExtensions::AppExtensionPackageInstalledEventArgs> & handler) const;
@@ -162,68 +154,44 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppExtensionCatalogStatics
+struct WINRT_EBO impl_IAppExtensionCatalogStatics
 {
-    auto shim() const { return impl::shim<D, IAppExtensionCatalogStatics>(this); }
-
-public:
-
     Windows::ApplicationModel::AppExtensions::AppExtensionCatalog Open(hstring_ref appExtensionName) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppExtensionPackageInstalledEventArgs
+struct WINRT_EBO impl_IAppExtensionPackageInstalledEventArgs
 {
-    auto shim() const { return impl::shim<D, IAppExtensionPackageInstalledEventArgs>(this); }
-
-public:
-
     hstring AppExtensionName() const;
     Windows::ApplicationModel::Package Package() const;
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppExtensions::AppExtension> Extensions() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppExtensionPackageStatusChangedEventArgs
+struct WINRT_EBO impl_IAppExtensionPackageStatusChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IAppExtensionPackageStatusChangedEventArgs>(this); }
-
-public:
-
     hstring AppExtensionName() const;
     Windows::ApplicationModel::Package Package() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppExtensionPackageUninstallingEventArgs
+struct WINRT_EBO impl_IAppExtensionPackageUninstallingEventArgs
 {
-    auto shim() const { return impl::shim<D, IAppExtensionPackageUninstallingEventArgs>(this); }
-
-public:
-
     hstring AppExtensionName() const;
     Windows::ApplicationModel::Package Package() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppExtensionPackageUpdatedEventArgs
+struct WINRT_EBO impl_IAppExtensionPackageUpdatedEventArgs
 {
-    auto shim() const { return impl::shim<D, IAppExtensionPackageUpdatedEventArgs>(this); }
-
-public:
-
     hstring AppExtensionName() const;
     Windows::ApplicationModel::Package Package() const;
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppExtensions::AppExtension> Extensions() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppExtensionPackageUpdatingEventArgs
+struct WINRT_EBO impl_IAppExtensionPackageUpdatingEventArgs
 {
-    auto shim() const { return impl::shim<D, IAppExtensionPackageUpdatingEventArgs>(this); }
-
-public:
-
     hstring AppExtensionName() const;
     Windows::ApplicationModel::Package Package() const;
 };

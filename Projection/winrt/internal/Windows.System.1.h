@@ -307,37 +307,37 @@ template <> struct traits<Windows::System::UserWatcher> { using default_interfac
 
 namespace Windows::System {
 
-template <typename T> class impl_IAppMemoryReport;
-template <typename T> class impl_IAppMemoryUsageLimitChangingEventArgs;
-template <typename T> class impl_IFolderLauncherOptions;
-template <typename T> class impl_IKnownUserPropertiesStatics;
-template <typename T> class impl_ILaunchUriResult;
-template <typename T> class impl_ILauncherOptions;
-template <typename T> class impl_ILauncherOptions2;
-template <typename T> class impl_ILauncherOptions3;
-template <typename T> class impl_ILauncherStatics;
-template <typename T> class impl_ILauncherStatics2;
-template <typename T> class impl_ILauncherStatics3;
-template <typename T> class impl_ILauncherStatics4;
-template <typename T> class impl_ILauncherUIOptions;
-template <typename T> class impl_ILauncherViewOptions;
-template <typename T> class impl_IMemoryManagerStatics;
-template <typename T> class impl_IMemoryManagerStatics2;
-template <typename T> class impl_IMemoryManagerStatics3;
-template <typename T> class impl_IProcessMemoryReport;
-template <typename T> class impl_IProtocolForResultsOperation;
-template <typename T> class impl_IRemoteLauncherOptions;
-template <typename T> class impl_IRemoteLauncherStatics;
-template <typename T> class impl_IUser;
-template <typename T> class impl_IUserAuthenticationStatusChangeDeferral;
-template <typename T> class impl_IUserAuthenticationStatusChangingEventArgs;
-template <typename T> class impl_IUserChangedEventArgs;
-template <typename T> class impl_IUserDeviceAssociationChangedEventArgs;
-template <typename T> class impl_IUserDeviceAssociationStatics;
-template <typename T> class impl_IUserPicker;
-template <typename T> class impl_IUserPickerStatics;
-template <typename T> class impl_IUserStatics;
-template <typename T> class impl_IUserWatcher;
+template <typename T> struct impl_IAppMemoryReport;
+template <typename T> struct impl_IAppMemoryUsageLimitChangingEventArgs;
+template <typename T> struct impl_IFolderLauncherOptions;
+template <typename T> struct impl_IKnownUserPropertiesStatics;
+template <typename T> struct impl_ILaunchUriResult;
+template <typename T> struct impl_ILauncherOptions;
+template <typename T> struct impl_ILauncherOptions2;
+template <typename T> struct impl_ILauncherOptions3;
+template <typename T> struct impl_ILauncherStatics;
+template <typename T> struct impl_ILauncherStatics2;
+template <typename T> struct impl_ILauncherStatics3;
+template <typename T> struct impl_ILauncherStatics4;
+template <typename T> struct impl_ILauncherUIOptions;
+template <typename T> struct impl_ILauncherViewOptions;
+template <typename T> struct impl_IMemoryManagerStatics;
+template <typename T> struct impl_IMemoryManagerStatics2;
+template <typename T> struct impl_IMemoryManagerStatics3;
+template <typename T> struct impl_IProcessMemoryReport;
+template <typename T> struct impl_IProtocolForResultsOperation;
+template <typename T> struct impl_IRemoteLauncherOptions;
+template <typename T> struct impl_IRemoteLauncherStatics;
+template <typename T> struct impl_IUser;
+template <typename T> struct impl_IUserAuthenticationStatusChangeDeferral;
+template <typename T> struct impl_IUserAuthenticationStatusChangingEventArgs;
+template <typename T> struct impl_IUserChangedEventArgs;
+template <typename T> struct impl_IUserDeviceAssociationChangedEventArgs;
+template <typename T> struct impl_IUserDeviceAssociationStatics;
+template <typename T> struct impl_IUserPicker;
+template <typename T> struct impl_IUserPickerStatics;
+template <typename T> struct impl_IUserStatics;
+template <typename T> struct impl_IUserWatcher;
 
 }
 
@@ -532,21 +532,18 @@ template <> struct traits<Windows::System::IUserWatcher>
 template <> struct traits<Windows::System::AppMemoryReport>
 {
     using abi = ABI::Windows::System::AppMemoryReport;
-    using default_interface = Windows::System::IAppMemoryReport;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.AppMemoryReport"; }
 };
 
 template <> struct traits<Windows::System::AppMemoryUsageLimitChangingEventArgs>
 {
     using abi = ABI::Windows::System::AppMemoryUsageLimitChangingEventArgs;
-    using default_interface = Windows::System::IAppMemoryUsageLimitChangingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.AppMemoryUsageLimitChangingEventArgs"; }
 };
 
 template <> struct traits<Windows::System::FolderLauncherOptions>
 {
     using abi = ABI::Windows::System::FolderLauncherOptions;
-    using default_interface = Windows::System::IFolderLauncherOptions;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.FolderLauncherOptions"; }
 };
 
@@ -558,7 +555,6 @@ template <> struct traits<Windows::System::KnownUserProperties>
 template <> struct traits<Windows::System::LaunchUriResult>
 {
     using abi = ABI::Windows::System::LaunchUriResult;
-    using default_interface = Windows::System::ILaunchUriResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.LaunchUriResult"; }
 };
 
@@ -570,14 +566,12 @@ template <> struct traits<Windows::System::Launcher>
 template <> struct traits<Windows::System::LauncherOptions>
 {
     using abi = ABI::Windows::System::LauncherOptions;
-    using default_interface = Windows::System::ILauncherOptions;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.LauncherOptions"; }
 };
 
 template <> struct traits<Windows::System::LauncherUIOptions>
 {
     using abi = ABI::Windows::System::LauncherUIOptions;
-    using default_interface = Windows::System::ILauncherUIOptions;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.LauncherUIOptions"; }
 };
 
@@ -589,14 +583,12 @@ template <> struct traits<Windows::System::MemoryManager>
 template <> struct traits<Windows::System::ProcessMemoryReport>
 {
     using abi = ABI::Windows::System::ProcessMemoryReport;
-    using default_interface = Windows::System::IProcessMemoryReport;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.ProcessMemoryReport"; }
 };
 
 template <> struct traits<Windows::System::ProtocolForResultsOperation>
 {
     using abi = ABI::Windows::System::ProtocolForResultsOperation;
-    using default_interface = Windows::System::IProtocolForResultsOperation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.ProtocolForResultsOperation"; }
 };
 
@@ -608,35 +600,30 @@ template <> struct traits<Windows::System::RemoteLauncher>
 template <> struct traits<Windows::System::RemoteLauncherOptions>
 {
     using abi = ABI::Windows::System::RemoteLauncherOptions;
-    using default_interface = Windows::System::IRemoteLauncherOptions;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.RemoteLauncherOptions"; }
 };
 
 template <> struct traits<Windows::System::User>
 {
     using abi = ABI::Windows::System::User;
-    using default_interface = Windows::System::IUser;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.User"; }
 };
 
 template <> struct traits<Windows::System::UserAuthenticationStatusChangeDeferral>
 {
     using abi = ABI::Windows::System::UserAuthenticationStatusChangeDeferral;
-    using default_interface = Windows::System::IUserAuthenticationStatusChangeDeferral;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.UserAuthenticationStatusChangeDeferral"; }
 };
 
 template <> struct traits<Windows::System::UserAuthenticationStatusChangingEventArgs>
 {
     using abi = ABI::Windows::System::UserAuthenticationStatusChangingEventArgs;
-    using default_interface = Windows::System::IUserAuthenticationStatusChangingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.UserAuthenticationStatusChangingEventArgs"; }
 };
 
 template <> struct traits<Windows::System::UserChangedEventArgs>
 {
     using abi = ABI::Windows::System::UserChangedEventArgs;
-    using default_interface = Windows::System::IUserChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.UserChangedEventArgs"; }
 };
 
@@ -648,21 +635,18 @@ template <> struct traits<Windows::System::UserDeviceAssociation>
 template <> struct traits<Windows::System::UserDeviceAssociationChangedEventArgs>
 {
     using abi = ABI::Windows::System::UserDeviceAssociationChangedEventArgs;
-    using default_interface = Windows::System::IUserDeviceAssociationChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.UserDeviceAssociationChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::System::UserPicker>
 {
     using abi = ABI::Windows::System::UserPicker;
-    using default_interface = Windows::System::IUserPicker;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.UserPicker"; }
 };
 
 template <> struct traits<Windows::System::UserWatcher>
 {
     using abi = ABI::Windows::System::UserWatcher;
-    using default_interface = Windows::System::IUserWatcher;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.UserWatcher"; }
 };
 

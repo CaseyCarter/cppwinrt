@@ -1921,7 +1921,7 @@ namespace Windows::UI::Xaml::Input {
 template <typename D> event_token impl_ICommand<D>::CanExecuteChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_CanExecuteChanged(get(value), &token));
+    check_hresult(static_cast<const ICommand &>(static_cast<const D &>(*this))->add_CanExecuteChanged(get(value), &token));
     return token;
 }
 
@@ -1932,51 +1932,51 @@ template <typename D> event_revoker<ICommand> impl_ICommand<D>::CanExecuteChange
 
 template <typename D> void impl_ICommand<D>::CanExecuteChanged(event_token token) const
 {
-    check_hresult(shim()->remove_CanExecuteChanged(token));
+    check_hresult(static_cast<const ICommand &>(static_cast<const D &>(*this))->remove_CanExecuteChanged(token));
 }
 
 template <typename D> bool impl_ICommand<D>::CanExecute(const Windows::IInspectable & parameter) const
 {
     bool returnValue {};
-    check_hresult(shim()->abi_CanExecute(get(parameter), &returnValue));
+    check_hresult(static_cast<const ICommand &>(static_cast<const D &>(*this))->abi_CanExecute(get(parameter), &returnValue));
     return returnValue;
 }
 
 template <typename D> void impl_ICommand<D>::Execute(const Windows::IInspectable & parameter) const
 {
-    check_hresult(shim()->abi_Execute(get(parameter)));
+    check_hresult(static_cast<const ICommand &>(static_cast<const D &>(*this))->abi_Execute(get(parameter)));
 }
 
 template <typename D> hstring impl_IAccessKeyDisplayRequestedEventArgs<D>::PressedKeys() const
 {
     hstring value;
-    check_hresult(shim()->get_PressedKeys(put(value)));
+    check_hresult(static_cast<const IAccessKeyDisplayRequestedEventArgs &>(static_cast<const D &>(*this))->get_PressedKeys(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IAccessKeyInvokedEventArgs<D>::Handled() const
 {
     bool value {};
-    check_hresult(shim()->get_Handled(&value));
+    check_hresult(static_cast<const IAccessKeyInvokedEventArgs &>(static_cast<const D &>(*this))->get_Handled(&value));
     return value;
 }
 
 template <typename D> void impl_IAccessKeyInvokedEventArgs<D>::Handled(bool value) const
 {
-    check_hresult(shim()->put_Handled(value));
+    check_hresult(static_cast<const IAccessKeyInvokedEventArgs &>(static_cast<const D &>(*this))->put_Handled(value));
 }
 
 template <typename D> bool impl_IAccessKeyManagerStatics<D>::IsDisplayModeEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_IsDisplayModeEnabled(&value));
+    check_hresult(static_cast<const IAccessKeyManagerStatics &>(static_cast<const D &>(*this))->get_IsDisplayModeEnabled(&value));
     return value;
 }
 
 template <typename D> event_token impl_IAccessKeyManagerStatics<D>::IsDisplayModeEnabledChanged(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::IInspectable> & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_IsDisplayModeEnabledChanged(get(value), &token));
+    check_hresult(static_cast<const IAccessKeyManagerStatics &>(static_cast<const D &>(*this))->add_IsDisplayModeEnabledChanged(get(value), &token));
     return token;
 }
 
@@ -1987,709 +1987,709 @@ template <typename D> event_revoker<IAccessKeyManagerStatics> impl_IAccessKeyMan
 
 template <typename D> void impl_IAccessKeyManagerStatics<D>::IsDisplayModeEnabledChanged(event_token token) const
 {
-    check_hresult(shim()->remove_IsDisplayModeEnabledChanged(token));
+    check_hresult(static_cast<const IAccessKeyManagerStatics &>(static_cast<const D &>(*this))->remove_IsDisplayModeEnabledChanged(token));
 }
 
 template <typename D> void impl_IAccessKeyManagerStatics<D>::ExitDisplayMode() const
 {
-    check_hresult(shim()->abi_ExitDisplayMode());
+    check_hresult(static_cast<const IAccessKeyManagerStatics &>(static_cast<const D &>(*this))->abi_ExitDisplayMode());
 }
 
 template <typename D> Windows::IInspectable impl_IFocusManagerStatics<D>::GetFocusedElement() const
 {
     Windows::IInspectable returnValue;
-    check_hresult(shim()->abi_GetFocusedElement(put(returnValue)));
+    check_hresult(static_cast<const IFocusManagerStatics &>(static_cast<const D &>(*this))->abi_GetFocusedElement(put(returnValue)));
     return returnValue;
 }
 
 template <typename D> bool impl_IFocusManagerStatics2<D>::TryMoveFocus(Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection) const
 {
     bool returnValue {};
-    check_hresult(shim()->abi_TryMoveFocus(focusNavigationDirection, &returnValue));
+    check_hresult(static_cast<const IFocusManagerStatics2 &>(static_cast<const D &>(*this))->abi_TryMoveFocus(focusNavigationDirection, &returnValue));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::UIElement impl_IFocusManagerStatics3<D>::FindNextFocusableElement(Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection) const
 {
     Windows::UI::Xaml::UIElement result { nullptr };
-    check_hresult(shim()->abi_FindNextFocusableElement(focusNavigationDirection, put(result)));
+    check_hresult(static_cast<const IFocusManagerStatics3 &>(static_cast<const D &>(*this))->abi_FindNextFocusableElement(focusNavigationDirection, put(result)));
     return result;
 }
 
 template <typename D> Windows::UI::Xaml::UIElement impl_IFocusManagerStatics3<D>::FindNextFocusableElement(Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection, const Windows::Foundation::Rect & hintRect) const
 {
     Windows::UI::Xaml::UIElement result { nullptr };
-    check_hresult(shim()->abi_FindNextFocusableElementWithHint(focusNavigationDirection, get(hintRect), put(result)));
+    check_hresult(static_cast<const IFocusManagerStatics3 &>(static_cast<const D &>(*this))->abi_FindNextFocusableElementWithHint(focusNavigationDirection, get(hintRect), put(result)));
     return result;
 }
 
 template <typename D> double impl_IInertiaExpansionBehavior<D>::DesiredDeceleration() const
 {
     double value {};
-    check_hresult(shim()->get_DesiredDeceleration(&value));
+    check_hresult(static_cast<const IInertiaExpansionBehavior &>(static_cast<const D &>(*this))->get_DesiredDeceleration(&value));
     return value;
 }
 
 template <typename D> void impl_IInertiaExpansionBehavior<D>::DesiredDeceleration(double value) const
 {
-    check_hresult(shim()->put_DesiredDeceleration(value));
+    check_hresult(static_cast<const IInertiaExpansionBehavior &>(static_cast<const D &>(*this))->put_DesiredDeceleration(value));
 }
 
 template <typename D> double impl_IInertiaExpansionBehavior<D>::DesiredExpansion() const
 {
     double value {};
-    check_hresult(shim()->get_DesiredExpansion(&value));
+    check_hresult(static_cast<const IInertiaExpansionBehavior &>(static_cast<const D &>(*this))->get_DesiredExpansion(&value));
     return value;
 }
 
 template <typename D> void impl_IInertiaExpansionBehavior<D>::DesiredExpansion(double value) const
 {
-    check_hresult(shim()->put_DesiredExpansion(value));
+    check_hresult(static_cast<const IInertiaExpansionBehavior &>(static_cast<const D &>(*this))->put_DesiredExpansion(value));
 }
 
 template <typename D> double impl_IInertiaRotationBehavior<D>::DesiredDeceleration() const
 {
     double value {};
-    check_hresult(shim()->get_DesiredDeceleration(&value));
+    check_hresult(static_cast<const IInertiaRotationBehavior &>(static_cast<const D &>(*this))->get_DesiredDeceleration(&value));
     return value;
 }
 
 template <typename D> void impl_IInertiaRotationBehavior<D>::DesiredDeceleration(double value) const
 {
-    check_hresult(shim()->put_DesiredDeceleration(value));
+    check_hresult(static_cast<const IInertiaRotationBehavior &>(static_cast<const D &>(*this))->put_DesiredDeceleration(value));
 }
 
 template <typename D> double impl_IInertiaRotationBehavior<D>::DesiredRotation() const
 {
     double value {};
-    check_hresult(shim()->get_DesiredRotation(&value));
+    check_hresult(static_cast<const IInertiaRotationBehavior &>(static_cast<const D &>(*this))->get_DesiredRotation(&value));
     return value;
 }
 
 template <typename D> void impl_IInertiaRotationBehavior<D>::DesiredRotation(double value) const
 {
-    check_hresult(shim()->put_DesiredRotation(value));
+    check_hresult(static_cast<const IInertiaRotationBehavior &>(static_cast<const D &>(*this))->put_DesiredRotation(value));
 }
 
 template <typename D> double impl_IInertiaTranslationBehavior<D>::DesiredDeceleration() const
 {
     double value {};
-    check_hresult(shim()->get_DesiredDeceleration(&value));
+    check_hresult(static_cast<const IInertiaTranslationBehavior &>(static_cast<const D &>(*this))->get_DesiredDeceleration(&value));
     return value;
 }
 
 template <typename D> void impl_IInertiaTranslationBehavior<D>::DesiredDeceleration(double value) const
 {
-    check_hresult(shim()->put_DesiredDeceleration(value));
+    check_hresult(static_cast<const IInertiaTranslationBehavior &>(static_cast<const D &>(*this))->put_DesiredDeceleration(value));
 }
 
 template <typename D> double impl_IInertiaTranslationBehavior<D>::DesiredDisplacement() const
 {
     double value {};
-    check_hresult(shim()->get_DesiredDisplacement(&value));
+    check_hresult(static_cast<const IInertiaTranslationBehavior &>(static_cast<const D &>(*this))->get_DesiredDisplacement(&value));
     return value;
 }
 
 template <typename D> void impl_IInertiaTranslationBehavior<D>::DesiredDisplacement(double value) const
 {
-    check_hresult(shim()->put_DesiredDisplacement(value));
+    check_hresult(static_cast<const IInertiaTranslationBehavior &>(static_cast<const D &>(*this))->put_DesiredDisplacement(value));
 }
 
 template <typename D> Windows::Foundation::Point impl_IManipulationPivot<D>::Center() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(shim()->get_Center(put(value)));
+    check_hresult(static_cast<const IManipulationPivot &>(static_cast<const D &>(*this))->get_Center(put(value)));
     return value;
 }
 
 template <typename D> void impl_IManipulationPivot<D>::Center(const Windows::Foundation::Point & value) const
 {
-    check_hresult(shim()->put_Center(get(value)));
+    check_hresult(static_cast<const IManipulationPivot &>(static_cast<const D &>(*this))->put_Center(get(value)));
 }
 
 template <typename D> double impl_IManipulationPivot<D>::Radius() const
 {
     double value {};
-    check_hresult(shim()->get_Radius(&value));
+    check_hresult(static_cast<const IManipulationPivot &>(static_cast<const D &>(*this))->get_Radius(&value));
     return value;
 }
 
 template <typename D> void impl_IManipulationPivot<D>::Radius(double value) const
 {
-    check_hresult(shim()->put_Radius(value));
+    check_hresult(static_cast<const IManipulationPivot &>(static_cast<const D &>(*this))->put_Radius(value));
 }
 
 template <typename D> Windows::UI::Xaml::Input::ManipulationPivot impl_IManipulationPivotFactory<D>::CreateInstanceWithCenterAndRadius(const Windows::Foundation::Point & center, double radius) const
 {
     Windows::UI::Xaml::Input::ManipulationPivot instance { nullptr };
-    check_hresult(shim()->abi_CreateInstanceWithCenterAndRadius(get(center), radius, put(instance)));
+    check_hresult(static_cast<const IManipulationPivotFactory &>(static_cast<const D &>(*this))->abi_CreateInstanceWithCenterAndRadius(get(center), radius, put(instance)));
     return instance;
 }
 
 template <typename D> uint32_t impl_IPointer<D>::PointerId() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_PointerId(&value));
+    check_hresult(static_cast<const IPointer &>(static_cast<const D &>(*this))->get_PointerId(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Input::PointerDeviceType impl_IPointer<D>::PointerDeviceType() const
 {
     Windows::Devices::Input::PointerDeviceType value {};
-    check_hresult(shim()->get_PointerDeviceType(&value));
+    check_hresult(static_cast<const IPointer &>(static_cast<const D &>(*this))->get_PointerDeviceType(&value));
     return value;
 }
 
 template <typename D> bool impl_IPointer<D>::IsInContact() const
 {
     bool value {};
-    check_hresult(shim()->get_IsInContact(&value));
+    check_hresult(static_cast<const IPointer &>(static_cast<const D &>(*this))->get_IsInContact(&value));
     return value;
 }
 
 template <typename D> bool impl_IPointer<D>::IsInRange() const
 {
     bool value {};
-    check_hresult(shim()->get_IsInRange(&value));
+    check_hresult(static_cast<const IPointer &>(static_cast<const D &>(*this))->get_IsInRange(&value));
     return value;
 }
 
 template <typename D> bool impl_IContextRequestedEventArgs<D>::Handled() const
 {
     bool value {};
-    check_hresult(shim()->get_Handled(&value));
+    check_hresult(static_cast<const IContextRequestedEventArgs &>(static_cast<const D &>(*this))->get_Handled(&value));
     return value;
 }
 
 template <typename D> void impl_IContextRequestedEventArgs<D>::Handled(bool value) const
 {
-    check_hresult(shim()->put_Handled(value));
+    check_hresult(static_cast<const IContextRequestedEventArgs &>(static_cast<const D &>(*this))->put_Handled(value));
 }
 
 template <typename D> bool impl_IContextRequestedEventArgs<D>::TryGetPosition(const Windows::UI::Xaml::UIElement & relativeTo, Windows::Foundation::Point & point) const
 {
     bool returnValue {};
-    check_hresult(shim()->abi_TryGetPosition(get(relativeTo), put(point), &returnValue));
+    check_hresult(static_cast<const IContextRequestedEventArgs &>(static_cast<const D &>(*this))->abi_TryGetPosition(get(relativeTo), put(point), &returnValue));
     return returnValue;
 }
 
 template <typename D> Windows::Devices::Input::PointerDeviceType impl_IDoubleTappedRoutedEventArgs<D>::PointerDeviceType() const
 {
     Windows::Devices::Input::PointerDeviceType value {};
-    check_hresult(shim()->get_PointerDeviceType(&value));
+    check_hresult(static_cast<const IDoubleTappedRoutedEventArgs &>(static_cast<const D &>(*this))->get_PointerDeviceType(&value));
     return value;
 }
 
 template <typename D> bool impl_IDoubleTappedRoutedEventArgs<D>::Handled() const
 {
     bool value {};
-    check_hresult(shim()->get_Handled(&value));
+    check_hresult(static_cast<const IDoubleTappedRoutedEventArgs &>(static_cast<const D &>(*this))->get_Handled(&value));
     return value;
 }
 
 template <typename D> void impl_IDoubleTappedRoutedEventArgs<D>::Handled(bool value) const
 {
-    check_hresult(shim()->put_Handled(value));
+    check_hresult(static_cast<const IDoubleTappedRoutedEventArgs &>(static_cast<const D &>(*this))->put_Handled(value));
 }
 
 template <typename D> Windows::Foundation::Point impl_IDoubleTappedRoutedEventArgs<D>::GetPosition(const Windows::UI::Xaml::UIElement & relativeTo) const
 {
     Windows::Foundation::Point returnValue {};
-    check_hresult(shim()->abi_GetPosition(get(relativeTo), put(returnValue)));
+    check_hresult(static_cast<const IDoubleTappedRoutedEventArgs &>(static_cast<const D &>(*this))->abi_GetPosition(get(relativeTo), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Devices::Input::PointerDeviceType impl_IHoldingRoutedEventArgs<D>::PointerDeviceType() const
 {
     Windows::Devices::Input::PointerDeviceType value {};
-    check_hresult(shim()->get_PointerDeviceType(&value));
+    check_hresult(static_cast<const IHoldingRoutedEventArgs &>(static_cast<const D &>(*this))->get_PointerDeviceType(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Input::HoldingState impl_IHoldingRoutedEventArgs<D>::HoldingState() const
 {
     Windows::UI::Input::HoldingState value {};
-    check_hresult(shim()->get_HoldingState(&value));
+    check_hresult(static_cast<const IHoldingRoutedEventArgs &>(static_cast<const D &>(*this))->get_HoldingState(&value));
     return value;
 }
 
 template <typename D> bool impl_IHoldingRoutedEventArgs<D>::Handled() const
 {
     bool value {};
-    check_hresult(shim()->get_Handled(&value));
+    check_hresult(static_cast<const IHoldingRoutedEventArgs &>(static_cast<const D &>(*this))->get_Handled(&value));
     return value;
 }
 
 template <typename D> void impl_IHoldingRoutedEventArgs<D>::Handled(bool value) const
 {
-    check_hresult(shim()->put_Handled(value));
+    check_hresult(static_cast<const IHoldingRoutedEventArgs &>(static_cast<const D &>(*this))->put_Handled(value));
 }
 
 template <typename D> Windows::Foundation::Point impl_IHoldingRoutedEventArgs<D>::GetPosition(const Windows::UI::Xaml::UIElement & relativeTo) const
 {
     Windows::Foundation::Point returnValue {};
-    check_hresult(shim()->abi_GetPosition(get(relativeTo), put(returnValue)));
+    check_hresult(static_cast<const IHoldingRoutedEventArgs &>(static_cast<const D &>(*this))->abi_GetPosition(get(relativeTo), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Input::InputScopeName> impl_IInputScope<D>::Names() const
 {
     Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Input::InputScopeName> value;
-    check_hresult(shim()->get_Names(put(value)));
+    check_hresult(static_cast<const IInputScope &>(static_cast<const D &>(*this))->get_Names(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Input::InputScopeNameValue impl_IInputScopeName<D>::NameValue() const
 {
     Windows::UI::Xaml::Input::InputScopeNameValue value {};
-    check_hresult(shim()->get_NameValue(&value));
+    check_hresult(static_cast<const IInputScopeName &>(static_cast<const D &>(*this))->get_NameValue(&value));
     return value;
 }
 
 template <typename D> void impl_IInputScopeName<D>::NameValue(Windows::UI::Xaml::Input::InputScopeNameValue value) const
 {
-    check_hresult(shim()->put_NameValue(value));
+    check_hresult(static_cast<const IInputScopeName &>(static_cast<const D &>(*this))->put_NameValue(value));
 }
 
 template <typename D> Windows::UI::Xaml::Input::InputScopeName impl_IInputScopeNameFactory<D>::CreateInstance(Windows::UI::Xaml::Input::InputScopeNameValue nameValue) const
 {
     Windows::UI::Xaml::Input::InputScopeName instance { nullptr };
-    check_hresult(shim()->abi_CreateInstance(nameValue, put(instance)));
+    check_hresult(static_cast<const IInputScopeNameFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(nameValue, put(instance)));
     return instance;
 }
 
 template <typename D> Windows::System::VirtualKey impl_IKeyRoutedEventArgs<D>::Key() const
 {
     Windows::System::VirtualKey value {};
-    check_hresult(shim()->get_Key(&value));
+    check_hresult(static_cast<const IKeyRoutedEventArgs &>(static_cast<const D &>(*this))->get_Key(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Core::CorePhysicalKeyStatus impl_IKeyRoutedEventArgs<D>::KeyStatus() const
 {
     Windows::UI::Core::CorePhysicalKeyStatus value {};
-    check_hresult(shim()->get_KeyStatus(put(value)));
+    check_hresult(static_cast<const IKeyRoutedEventArgs &>(static_cast<const D &>(*this))->get_KeyStatus(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IKeyRoutedEventArgs<D>::Handled() const
 {
     bool value {};
-    check_hresult(shim()->get_Handled(&value));
+    check_hresult(static_cast<const IKeyRoutedEventArgs &>(static_cast<const D &>(*this))->get_Handled(&value));
     return value;
 }
 
 template <typename D> void impl_IKeyRoutedEventArgs<D>::Handled(bool value) const
 {
-    check_hresult(shim()->put_Handled(value));
+    check_hresult(static_cast<const IKeyRoutedEventArgs &>(static_cast<const D &>(*this))->put_Handled(value));
 }
 
 template <typename D> Windows::System::VirtualKey impl_IKeyRoutedEventArgs2<D>::OriginalKey() const
 {
     Windows::System::VirtualKey value {};
-    check_hresult(shim()->get_OriginalKey(&value));
+    check_hresult(static_cast<const IKeyRoutedEventArgs2 &>(static_cast<const D &>(*this))->get_OriginalKey(&value));
     return value;
 }
 
 template <typename D> hstring impl_IKeyRoutedEventArgs3<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(shim()->get_DeviceId(put(value)));
+    check_hresult(static_cast<const IKeyRoutedEventArgs3 &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::UIElement impl_IManipulationCompletedRoutedEventArgs<D>::Container() const
 {
     Windows::UI::Xaml::UIElement value { nullptr };
-    check_hresult(shim()->get_Container(put(value)));
+    check_hresult(static_cast<const IManipulationCompletedRoutedEventArgs &>(static_cast<const D &>(*this))->get_Container(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Point impl_IManipulationCompletedRoutedEventArgs<D>::Position() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(shim()->get_Position(put(value)));
+    check_hresult(static_cast<const IManipulationCompletedRoutedEventArgs &>(static_cast<const D &>(*this))->get_Position(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IManipulationCompletedRoutedEventArgs<D>::IsInertial() const
 {
     bool value {};
-    check_hresult(shim()->get_IsInertial(&value));
+    check_hresult(static_cast<const IManipulationCompletedRoutedEventArgs &>(static_cast<const D &>(*this))->get_IsInertial(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Input::ManipulationDelta impl_IManipulationCompletedRoutedEventArgs<D>::Cumulative() const
 {
     Windows::UI::Input::ManipulationDelta value {};
-    check_hresult(shim()->get_Cumulative(put(value)));
+    check_hresult(static_cast<const IManipulationCompletedRoutedEventArgs &>(static_cast<const D &>(*this))->get_Cumulative(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::ManipulationVelocities impl_IManipulationCompletedRoutedEventArgs<D>::Velocities() const
 {
     Windows::UI::Input::ManipulationVelocities value {};
-    check_hresult(shim()->get_Velocities(put(value)));
+    check_hresult(static_cast<const IManipulationCompletedRoutedEventArgs &>(static_cast<const D &>(*this))->get_Velocities(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IManipulationCompletedRoutedEventArgs<D>::Handled() const
 {
     bool value {};
-    check_hresult(shim()->get_Handled(&value));
+    check_hresult(static_cast<const IManipulationCompletedRoutedEventArgs &>(static_cast<const D &>(*this))->get_Handled(&value));
     return value;
 }
 
 template <typename D> void impl_IManipulationCompletedRoutedEventArgs<D>::Handled(bool value) const
 {
-    check_hresult(shim()->put_Handled(value));
+    check_hresult(static_cast<const IManipulationCompletedRoutedEventArgs &>(static_cast<const D &>(*this))->put_Handled(value));
 }
 
 template <typename D> Windows::Devices::Input::PointerDeviceType impl_IManipulationCompletedRoutedEventArgs<D>::PointerDeviceType() const
 {
     Windows::Devices::Input::PointerDeviceType value {};
-    check_hresult(shim()->get_PointerDeviceType(&value));
+    check_hresult(static_cast<const IManipulationCompletedRoutedEventArgs &>(static_cast<const D &>(*this))->get_PointerDeviceType(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::UIElement impl_IManipulationDeltaRoutedEventArgs<D>::Container() const
 {
     Windows::UI::Xaml::UIElement value { nullptr };
-    check_hresult(shim()->get_Container(put(value)));
+    check_hresult(static_cast<const IManipulationDeltaRoutedEventArgs &>(static_cast<const D &>(*this))->get_Container(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Point impl_IManipulationDeltaRoutedEventArgs<D>::Position() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(shim()->get_Position(put(value)));
+    check_hresult(static_cast<const IManipulationDeltaRoutedEventArgs &>(static_cast<const D &>(*this))->get_Position(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IManipulationDeltaRoutedEventArgs<D>::IsInertial() const
 {
     bool value {};
-    check_hresult(shim()->get_IsInertial(&value));
+    check_hresult(static_cast<const IManipulationDeltaRoutedEventArgs &>(static_cast<const D &>(*this))->get_IsInertial(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Input::ManipulationDelta impl_IManipulationDeltaRoutedEventArgs<D>::Delta() const
 {
     Windows::UI::Input::ManipulationDelta value {};
-    check_hresult(shim()->get_Delta(put(value)));
+    check_hresult(static_cast<const IManipulationDeltaRoutedEventArgs &>(static_cast<const D &>(*this))->get_Delta(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::ManipulationDelta impl_IManipulationDeltaRoutedEventArgs<D>::Cumulative() const
 {
     Windows::UI::Input::ManipulationDelta value {};
-    check_hresult(shim()->get_Cumulative(put(value)));
+    check_hresult(static_cast<const IManipulationDeltaRoutedEventArgs &>(static_cast<const D &>(*this))->get_Cumulative(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::ManipulationVelocities impl_IManipulationDeltaRoutedEventArgs<D>::Velocities() const
 {
     Windows::UI::Input::ManipulationVelocities value {};
-    check_hresult(shim()->get_Velocities(put(value)));
+    check_hresult(static_cast<const IManipulationDeltaRoutedEventArgs &>(static_cast<const D &>(*this))->get_Velocities(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IManipulationDeltaRoutedEventArgs<D>::Handled() const
 {
     bool value {};
-    check_hresult(shim()->get_Handled(&value));
+    check_hresult(static_cast<const IManipulationDeltaRoutedEventArgs &>(static_cast<const D &>(*this))->get_Handled(&value));
     return value;
 }
 
 template <typename D> void impl_IManipulationDeltaRoutedEventArgs<D>::Handled(bool value) const
 {
-    check_hresult(shim()->put_Handled(value));
+    check_hresult(static_cast<const IManipulationDeltaRoutedEventArgs &>(static_cast<const D &>(*this))->put_Handled(value));
 }
 
 template <typename D> Windows::Devices::Input::PointerDeviceType impl_IManipulationDeltaRoutedEventArgs<D>::PointerDeviceType() const
 {
     Windows::Devices::Input::PointerDeviceType value {};
-    check_hresult(shim()->get_PointerDeviceType(&value));
+    check_hresult(static_cast<const IManipulationDeltaRoutedEventArgs &>(static_cast<const D &>(*this))->get_PointerDeviceType(&value));
     return value;
 }
 
 template <typename D> void impl_IManipulationDeltaRoutedEventArgs<D>::Complete() const
 {
-    check_hresult(shim()->abi_Complete());
+    check_hresult(static_cast<const IManipulationDeltaRoutedEventArgs &>(static_cast<const D &>(*this))->abi_Complete());
 }
 
 template <typename D> Windows::UI::Xaml::UIElement impl_IManipulationInertiaStartingRoutedEventArgs<D>::Container() const
 {
     Windows::UI::Xaml::UIElement value { nullptr };
-    check_hresult(shim()->get_Container(put(value)));
+    check_hresult(static_cast<const IManipulationInertiaStartingRoutedEventArgs &>(static_cast<const D &>(*this))->get_Container(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Input::InertiaExpansionBehavior impl_IManipulationInertiaStartingRoutedEventArgs<D>::ExpansionBehavior() const
 {
     Windows::UI::Xaml::Input::InertiaExpansionBehavior value { nullptr };
-    check_hresult(shim()->get_ExpansionBehavior(put(value)));
+    check_hresult(static_cast<const IManipulationInertiaStartingRoutedEventArgs &>(static_cast<const D &>(*this))->get_ExpansionBehavior(put(value)));
     return value;
 }
 
 template <typename D> void impl_IManipulationInertiaStartingRoutedEventArgs<D>::ExpansionBehavior(const Windows::UI::Xaml::Input::InertiaExpansionBehavior & value) const
 {
-    check_hresult(shim()->put_ExpansionBehavior(get(value)));
+    check_hresult(static_cast<const IManipulationInertiaStartingRoutedEventArgs &>(static_cast<const D &>(*this))->put_ExpansionBehavior(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::Input::InertiaRotationBehavior impl_IManipulationInertiaStartingRoutedEventArgs<D>::RotationBehavior() const
 {
     Windows::UI::Xaml::Input::InertiaRotationBehavior value { nullptr };
-    check_hresult(shim()->get_RotationBehavior(put(value)));
+    check_hresult(static_cast<const IManipulationInertiaStartingRoutedEventArgs &>(static_cast<const D &>(*this))->get_RotationBehavior(put(value)));
     return value;
 }
 
 template <typename D> void impl_IManipulationInertiaStartingRoutedEventArgs<D>::RotationBehavior(const Windows::UI::Xaml::Input::InertiaRotationBehavior & value) const
 {
-    check_hresult(shim()->put_RotationBehavior(get(value)));
+    check_hresult(static_cast<const IManipulationInertiaStartingRoutedEventArgs &>(static_cast<const D &>(*this))->put_RotationBehavior(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::Input::InertiaTranslationBehavior impl_IManipulationInertiaStartingRoutedEventArgs<D>::TranslationBehavior() const
 {
     Windows::UI::Xaml::Input::InertiaTranslationBehavior value { nullptr };
-    check_hresult(shim()->get_TranslationBehavior(put(value)));
+    check_hresult(static_cast<const IManipulationInertiaStartingRoutedEventArgs &>(static_cast<const D &>(*this))->get_TranslationBehavior(put(value)));
     return value;
 }
 
 template <typename D> void impl_IManipulationInertiaStartingRoutedEventArgs<D>::TranslationBehavior(const Windows::UI::Xaml::Input::InertiaTranslationBehavior & value) const
 {
-    check_hresult(shim()->put_TranslationBehavior(get(value)));
+    check_hresult(static_cast<const IManipulationInertiaStartingRoutedEventArgs &>(static_cast<const D &>(*this))->put_TranslationBehavior(get(value)));
 }
 
 template <typename D> bool impl_IManipulationInertiaStartingRoutedEventArgs<D>::Handled() const
 {
     bool value {};
-    check_hresult(shim()->get_Handled(&value));
+    check_hresult(static_cast<const IManipulationInertiaStartingRoutedEventArgs &>(static_cast<const D &>(*this))->get_Handled(&value));
     return value;
 }
 
 template <typename D> void impl_IManipulationInertiaStartingRoutedEventArgs<D>::Handled(bool value) const
 {
-    check_hresult(shim()->put_Handled(value));
+    check_hresult(static_cast<const IManipulationInertiaStartingRoutedEventArgs &>(static_cast<const D &>(*this))->put_Handled(value));
 }
 
 template <typename D> Windows::Devices::Input::PointerDeviceType impl_IManipulationInertiaStartingRoutedEventArgs<D>::PointerDeviceType() const
 {
     Windows::Devices::Input::PointerDeviceType value {};
-    check_hresult(shim()->get_PointerDeviceType(&value));
+    check_hresult(static_cast<const IManipulationInertiaStartingRoutedEventArgs &>(static_cast<const D &>(*this))->get_PointerDeviceType(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Input::ManipulationDelta impl_IManipulationInertiaStartingRoutedEventArgs<D>::Delta() const
 {
     Windows::UI::Input::ManipulationDelta value {};
-    check_hresult(shim()->get_Delta(put(value)));
+    check_hresult(static_cast<const IManipulationInertiaStartingRoutedEventArgs &>(static_cast<const D &>(*this))->get_Delta(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::ManipulationDelta impl_IManipulationInertiaStartingRoutedEventArgs<D>::Cumulative() const
 {
     Windows::UI::Input::ManipulationDelta value {};
-    check_hresult(shim()->get_Cumulative(put(value)));
+    check_hresult(static_cast<const IManipulationInertiaStartingRoutedEventArgs &>(static_cast<const D &>(*this))->get_Cumulative(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::ManipulationVelocities impl_IManipulationInertiaStartingRoutedEventArgs<D>::Velocities() const
 {
     Windows::UI::Input::ManipulationVelocities value {};
-    check_hresult(shim()->get_Velocities(put(value)));
+    check_hresult(static_cast<const IManipulationInertiaStartingRoutedEventArgs &>(static_cast<const D &>(*this))->get_Velocities(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::UIElement impl_IManipulationStartedRoutedEventArgs<D>::Container() const
 {
     Windows::UI::Xaml::UIElement value { nullptr };
-    check_hresult(shim()->get_Container(put(value)));
+    check_hresult(static_cast<const IManipulationStartedRoutedEventArgs &>(static_cast<const D &>(*this))->get_Container(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Point impl_IManipulationStartedRoutedEventArgs<D>::Position() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(shim()->get_Position(put(value)));
+    check_hresult(static_cast<const IManipulationStartedRoutedEventArgs &>(static_cast<const D &>(*this))->get_Position(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IManipulationStartedRoutedEventArgs<D>::Handled() const
 {
     bool value {};
-    check_hresult(shim()->get_Handled(&value));
+    check_hresult(static_cast<const IManipulationStartedRoutedEventArgs &>(static_cast<const D &>(*this))->get_Handled(&value));
     return value;
 }
 
 template <typename D> void impl_IManipulationStartedRoutedEventArgs<D>::Handled(bool value) const
 {
-    check_hresult(shim()->put_Handled(value));
+    check_hresult(static_cast<const IManipulationStartedRoutedEventArgs &>(static_cast<const D &>(*this))->put_Handled(value));
 }
 
 template <typename D> Windows::Devices::Input::PointerDeviceType impl_IManipulationStartedRoutedEventArgs<D>::PointerDeviceType() const
 {
     Windows::Devices::Input::PointerDeviceType value {};
-    check_hresult(shim()->get_PointerDeviceType(&value));
+    check_hresult(static_cast<const IManipulationStartedRoutedEventArgs &>(static_cast<const D &>(*this))->get_PointerDeviceType(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Input::ManipulationDelta impl_IManipulationStartedRoutedEventArgs<D>::Cumulative() const
 {
     Windows::UI::Input::ManipulationDelta value {};
-    check_hresult(shim()->get_Cumulative(put(value)));
+    check_hresult(static_cast<const IManipulationStartedRoutedEventArgs &>(static_cast<const D &>(*this))->get_Cumulative(put(value)));
     return value;
 }
 
 template <typename D> void impl_IManipulationStartedRoutedEventArgs<D>::Complete() const
 {
-    check_hresult(shim()->abi_Complete());
+    check_hresult(static_cast<const IManipulationStartedRoutedEventArgs &>(static_cast<const D &>(*this))->abi_Complete());
 }
 
 template <typename D> Windows::UI::Xaml::Input::ManipulationStartedRoutedEventArgs impl_IManipulationStartedRoutedEventArgsFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::Input::ManipulationStartedRoutedEventArgs instance { nullptr };
-    check_hresult(shim()->abi_CreateInstance(get(outer), put(inner), put(instance)));
+    check_hresult(static_cast<const IManipulationStartedRoutedEventArgsFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::UI::Xaml::Input::ManipulationModes impl_IManipulationStartingRoutedEventArgs<D>::Mode() const
 {
     Windows::UI::Xaml::Input::ManipulationModes value {};
-    check_hresult(shim()->get_Mode(&value));
+    check_hresult(static_cast<const IManipulationStartingRoutedEventArgs &>(static_cast<const D &>(*this))->get_Mode(&value));
     return value;
 }
 
 template <typename D> void impl_IManipulationStartingRoutedEventArgs<D>::Mode(Windows::UI::Xaml::Input::ManipulationModes value) const
 {
-    check_hresult(shim()->put_Mode(value));
+    check_hresult(static_cast<const IManipulationStartingRoutedEventArgs &>(static_cast<const D &>(*this))->put_Mode(value));
 }
 
 template <typename D> Windows::UI::Xaml::UIElement impl_IManipulationStartingRoutedEventArgs<D>::Container() const
 {
     Windows::UI::Xaml::UIElement value { nullptr };
-    check_hresult(shim()->get_Container(put(value)));
+    check_hresult(static_cast<const IManipulationStartingRoutedEventArgs &>(static_cast<const D &>(*this))->get_Container(put(value)));
     return value;
 }
 
 template <typename D> void impl_IManipulationStartingRoutedEventArgs<D>::Container(const Windows::UI::Xaml::UIElement & value) const
 {
-    check_hresult(shim()->put_Container(get(value)));
+    check_hresult(static_cast<const IManipulationStartingRoutedEventArgs &>(static_cast<const D &>(*this))->put_Container(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::Input::ManipulationPivot impl_IManipulationStartingRoutedEventArgs<D>::Pivot() const
 {
     Windows::UI::Xaml::Input::ManipulationPivot value { nullptr };
-    check_hresult(shim()->get_Pivot(put(value)));
+    check_hresult(static_cast<const IManipulationStartingRoutedEventArgs &>(static_cast<const D &>(*this))->get_Pivot(put(value)));
     return value;
 }
 
 template <typename D> void impl_IManipulationStartingRoutedEventArgs<D>::Pivot(const Windows::UI::Xaml::Input::ManipulationPivot & value) const
 {
-    check_hresult(shim()->put_Pivot(get(value)));
+    check_hresult(static_cast<const IManipulationStartingRoutedEventArgs &>(static_cast<const D &>(*this))->put_Pivot(get(value)));
 }
 
 template <typename D> bool impl_IManipulationStartingRoutedEventArgs<D>::Handled() const
 {
     bool value {};
-    check_hresult(shim()->get_Handled(&value));
+    check_hresult(static_cast<const IManipulationStartingRoutedEventArgs &>(static_cast<const D &>(*this))->get_Handled(&value));
     return value;
 }
 
 template <typename D> void impl_IManipulationStartingRoutedEventArgs<D>::Handled(bool value) const
 {
-    check_hresult(shim()->put_Handled(value));
+    check_hresult(static_cast<const IManipulationStartingRoutedEventArgs &>(static_cast<const D &>(*this))->put_Handled(value));
 }
 
 template <typename D> Windows::UI::Xaml::Input::Pointer impl_IPointerRoutedEventArgs<D>::Pointer() const
 {
     Windows::UI::Xaml::Input::Pointer value { nullptr };
-    check_hresult(shim()->get_Pointer(put(value)));
+    check_hresult(static_cast<const IPointerRoutedEventArgs &>(static_cast<const D &>(*this))->get_Pointer(put(value)));
     return value;
 }
 
 template <typename D> Windows::System::VirtualKeyModifiers impl_IPointerRoutedEventArgs<D>::KeyModifiers() const
 {
     Windows::System::VirtualKeyModifiers value {};
-    check_hresult(shim()->get_KeyModifiers(&value));
+    check_hresult(static_cast<const IPointerRoutedEventArgs &>(static_cast<const D &>(*this))->get_KeyModifiers(&value));
     return value;
 }
 
 template <typename D> bool impl_IPointerRoutedEventArgs<D>::Handled() const
 {
     bool value {};
-    check_hresult(shim()->get_Handled(&value));
+    check_hresult(static_cast<const IPointerRoutedEventArgs &>(static_cast<const D &>(*this))->get_Handled(&value));
     return value;
 }
 
 template <typename D> void impl_IPointerRoutedEventArgs<D>::Handled(bool value) const
 {
-    check_hresult(shim()->put_Handled(value));
+    check_hresult(static_cast<const IPointerRoutedEventArgs &>(static_cast<const D &>(*this))->put_Handled(value));
 }
 
 template <typename D> Windows::UI::Input::PointerPoint impl_IPointerRoutedEventArgs<D>::GetCurrentPoint(const Windows::UI::Xaml::UIElement & relativeTo) const
 {
     Windows::UI::Input::PointerPoint returnValue { nullptr };
-    check_hresult(shim()->abi_GetCurrentPoint(get(relativeTo), put(returnValue)));
+    check_hresult(static_cast<const IPointerRoutedEventArgs &>(static_cast<const D &>(*this))->abi_GetCurrentPoint(get(relativeTo), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::UI::Input::PointerPoint> impl_IPointerRoutedEventArgs<D>::GetIntermediatePoints(const Windows::UI::Xaml::UIElement & relativeTo) const
 {
     Windows::Foundation::Collections::IVector<Windows::UI::Input::PointerPoint> returnValue;
-    check_hresult(shim()->abi_GetIntermediatePoints(get(relativeTo), put(returnValue)));
+    check_hresult(static_cast<const IPointerRoutedEventArgs &>(static_cast<const D &>(*this))->abi_GetIntermediatePoints(get(relativeTo), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Devices::Input::PointerDeviceType impl_IRightTappedRoutedEventArgs<D>::PointerDeviceType() const
 {
     Windows::Devices::Input::PointerDeviceType value {};
-    check_hresult(shim()->get_PointerDeviceType(&value));
+    check_hresult(static_cast<const IRightTappedRoutedEventArgs &>(static_cast<const D &>(*this))->get_PointerDeviceType(&value));
     return value;
 }
 
 template <typename D> bool impl_IRightTappedRoutedEventArgs<D>::Handled() const
 {
     bool value {};
-    check_hresult(shim()->get_Handled(&value));
+    check_hresult(static_cast<const IRightTappedRoutedEventArgs &>(static_cast<const D &>(*this))->get_Handled(&value));
     return value;
 }
 
 template <typename D> void impl_IRightTappedRoutedEventArgs<D>::Handled(bool value) const
 {
-    check_hresult(shim()->put_Handled(value));
+    check_hresult(static_cast<const IRightTappedRoutedEventArgs &>(static_cast<const D &>(*this))->put_Handled(value));
 }
 
 template <typename D> Windows::Foundation::Point impl_IRightTappedRoutedEventArgs<D>::GetPosition(const Windows::UI::Xaml::UIElement & relativeTo) const
 {
     Windows::Foundation::Point returnValue {};
-    check_hresult(shim()->abi_GetPosition(get(relativeTo), put(returnValue)));
+    check_hresult(static_cast<const IRightTappedRoutedEventArgs &>(static_cast<const D &>(*this))->abi_GetPosition(get(relativeTo), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Devices::Input::PointerDeviceType impl_ITappedRoutedEventArgs<D>::PointerDeviceType() const
 {
     Windows::Devices::Input::PointerDeviceType value {};
-    check_hresult(shim()->get_PointerDeviceType(&value));
+    check_hresult(static_cast<const ITappedRoutedEventArgs &>(static_cast<const D &>(*this))->get_PointerDeviceType(&value));
     return value;
 }
 
 template <typename D> bool impl_ITappedRoutedEventArgs<D>::Handled() const
 {
     bool value {};
-    check_hresult(shim()->get_Handled(&value));
+    check_hresult(static_cast<const ITappedRoutedEventArgs &>(static_cast<const D &>(*this))->get_Handled(&value));
     return value;
 }
 
 template <typename D> void impl_ITappedRoutedEventArgs<D>::Handled(bool value) const
 {
-    check_hresult(shim()->put_Handled(value));
+    check_hresult(static_cast<const ITappedRoutedEventArgs &>(static_cast<const D &>(*this))->put_Handled(value));
 }
 
 template <typename D> Windows::Foundation::Point impl_ITappedRoutedEventArgs<D>::GetPosition(const Windows::UI::Xaml::UIElement & relativeTo) const
 {
     Windows::Foundation::Point returnValue {};
-    check_hresult(shim()->abi_GetPosition(get(relativeTo), put(returnValue)));
+    check_hresult(static_cast<const ITappedRoutedEventArgs &>(static_cast<const D &>(*this))->abi_GetPosition(get(relativeTo), put(returnValue)));
     return returnValue;
 }
 

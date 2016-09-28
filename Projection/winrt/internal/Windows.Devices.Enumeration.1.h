@@ -282,36 +282,36 @@ template <> struct traits<Windows::Devices::Enumeration::EnclosureLocation> { us
 
 namespace Windows::Devices::Enumeration {
 
-template <typename T> class impl_IDeviceAccessChangedEventArgs;
-template <typename T> class impl_IDeviceAccessChangedEventArgs2;
-template <typename T> class impl_IDeviceAccessInformation;
-template <typename T> class impl_IDeviceAccessInformationStatics;
-template <typename T> class impl_IDeviceConnectionChangeTriggerDetails;
-template <typename T> class impl_IDeviceDisconnectButtonClickedEventArgs;
-template <typename T> class impl_IDeviceInformation;
-template <typename T> class impl_IDeviceInformation2;
-template <typename T> class impl_IDeviceInformationCustomPairing;
-template <typename T> class impl_IDeviceInformationPairing;
-template <typename T> class impl_IDeviceInformationPairing2;
-template <typename T> class impl_IDeviceInformationPairingStatics;
-template <typename T> class impl_IDeviceInformationStatics;
-template <typename T> class impl_IDeviceInformationStatics2;
-template <typename T> class impl_IDeviceInformationUpdate;
-template <typename T> class impl_IDeviceInformationUpdate2;
-template <typename T> class impl_IDevicePairingRequestedEventArgs;
-template <typename T> class impl_IDevicePairingResult;
-template <typename T> class impl_IDevicePairingSettings;
-template <typename T> class impl_IDevicePicker;
-template <typename T> class impl_IDevicePickerAppearance;
-template <typename T> class impl_IDevicePickerFilter;
-template <typename T> class impl_IDeviceSelectedEventArgs;
-template <typename T> class impl_IDeviceUnpairingResult;
-template <typename T> class impl_IDeviceWatcher;
-template <typename T> class impl_IDeviceWatcher2;
-template <typename T> class impl_IDeviceWatcherEvent;
-template <typename T> class impl_IDeviceWatcherTriggerDetails;
-template <typename T> class impl_IEnclosureLocation;
-template <typename T> class impl_IEnclosureLocation2;
+template <typename T> struct impl_IDeviceAccessChangedEventArgs;
+template <typename T> struct impl_IDeviceAccessChangedEventArgs2;
+template <typename T> struct impl_IDeviceAccessInformation;
+template <typename T> struct impl_IDeviceAccessInformationStatics;
+template <typename T> struct impl_IDeviceConnectionChangeTriggerDetails;
+template <typename T> struct impl_IDeviceDisconnectButtonClickedEventArgs;
+template <typename T> struct impl_IDeviceInformation;
+template <typename T> struct impl_IDeviceInformation2;
+template <typename T> struct impl_IDeviceInformationCustomPairing;
+template <typename T> struct impl_IDeviceInformationPairing;
+template <typename T> struct impl_IDeviceInformationPairing2;
+template <typename T> struct impl_IDeviceInformationPairingStatics;
+template <typename T> struct impl_IDeviceInformationStatics;
+template <typename T> struct impl_IDeviceInformationStatics2;
+template <typename T> struct impl_IDeviceInformationUpdate;
+template <typename T> struct impl_IDeviceInformationUpdate2;
+template <typename T> struct impl_IDevicePairingRequestedEventArgs;
+template <typename T> struct impl_IDevicePairingResult;
+template <typename T> struct impl_IDevicePairingSettings;
+template <typename T> struct impl_IDevicePicker;
+template <typename T> struct impl_IDevicePickerAppearance;
+template <typename T> struct impl_IDevicePickerFilter;
+template <typename T> struct impl_IDeviceSelectedEventArgs;
+template <typename T> struct impl_IDeviceUnpairingResult;
+template <typename T> struct impl_IDeviceWatcher;
+template <typename T> struct impl_IDeviceWatcher2;
+template <typename T> struct impl_IDeviceWatcherEvent;
+template <typename T> struct impl_IDeviceWatcherTriggerDetails;
+template <typename T> struct impl_IEnclosureLocation;
+template <typename T> struct impl_IEnclosureLocation2;
 
 }
 
@@ -500,147 +500,126 @@ template <> struct traits<Windows::Devices::Enumeration::IEnclosureLocation2>
 template <> struct traits<Windows::Devices::Enumeration::DeviceAccessChangedEventArgs>
 {
     using abi = ABI::Windows::Devices::Enumeration::DeviceAccessChangedEventArgs;
-    using default_interface = Windows::Devices::Enumeration::IDeviceAccessChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Enumeration.DeviceAccessChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::Enumeration::DeviceAccessInformation>
 {
     using abi = ABI::Windows::Devices::Enumeration::DeviceAccessInformation;
-    using default_interface = Windows::Devices::Enumeration::IDeviceAccessInformation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Enumeration.DeviceAccessInformation"; }
 };
 
 template <> struct traits<Windows::Devices::Enumeration::DeviceConnectionChangeTriggerDetails>
 {
     using abi = ABI::Windows::Devices::Enumeration::DeviceConnectionChangeTriggerDetails;
-    using default_interface = Windows::Devices::Enumeration::IDeviceConnectionChangeTriggerDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Enumeration.DeviceConnectionChangeTriggerDetails"; }
 };
 
 template <> struct traits<Windows::Devices::Enumeration::DeviceDisconnectButtonClickedEventArgs>
 {
     using abi = ABI::Windows::Devices::Enumeration::DeviceDisconnectButtonClickedEventArgs;
-    using default_interface = Windows::Devices::Enumeration::IDeviceDisconnectButtonClickedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Enumeration.DeviceDisconnectButtonClickedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::Enumeration::DeviceInformation>
 {
     using abi = ABI::Windows::Devices::Enumeration::DeviceInformation;
-    using default_interface = Windows::Devices::Enumeration::IDeviceInformation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Enumeration.DeviceInformation"; }
 };
 
 template <> struct traits<Windows::Devices::Enumeration::DeviceInformationCollection>
 {
     using abi = ABI::Windows::Devices::Enumeration::DeviceInformationCollection;
-    using default_interface = Windows::Foundation::Collections::IVectorView<Windows::Devices::Enumeration::DeviceInformation>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Enumeration.DeviceInformationCollection"; }
 };
 
 template <> struct traits<Windows::Devices::Enumeration::DeviceInformationCustomPairing>
 {
     using abi = ABI::Windows::Devices::Enumeration::DeviceInformationCustomPairing;
-    using default_interface = Windows::Devices::Enumeration::IDeviceInformationCustomPairing;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Enumeration.DeviceInformationCustomPairing"; }
 };
 
 template <> struct traits<Windows::Devices::Enumeration::DeviceInformationPairing>
 {
     using abi = ABI::Windows::Devices::Enumeration::DeviceInformationPairing;
-    using default_interface = Windows::Devices::Enumeration::IDeviceInformationPairing;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Enumeration.DeviceInformationPairing"; }
 };
 
 template <> struct traits<Windows::Devices::Enumeration::DeviceInformationUpdate>
 {
     using abi = ABI::Windows::Devices::Enumeration::DeviceInformationUpdate;
-    using default_interface = Windows::Devices::Enumeration::IDeviceInformationUpdate;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Enumeration.DeviceInformationUpdate"; }
 };
 
 template <> struct traits<Windows::Devices::Enumeration::DevicePairingRequestedEventArgs>
 {
     using abi = ABI::Windows::Devices::Enumeration::DevicePairingRequestedEventArgs;
-    using default_interface = Windows::Devices::Enumeration::IDevicePairingRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Enumeration.DevicePairingRequestedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::Enumeration::DevicePairingResult>
 {
     using abi = ABI::Windows::Devices::Enumeration::DevicePairingResult;
-    using default_interface = Windows::Devices::Enumeration::IDevicePairingResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Enumeration.DevicePairingResult"; }
 };
 
 template <> struct traits<Windows::Devices::Enumeration::DevicePicker>
 {
     using abi = ABI::Windows::Devices::Enumeration::DevicePicker;
-    using default_interface = Windows::Devices::Enumeration::IDevicePicker;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Enumeration.DevicePicker"; }
 };
 
 template <> struct traits<Windows::Devices::Enumeration::DevicePickerAppearance>
 {
     using abi = ABI::Windows::Devices::Enumeration::DevicePickerAppearance;
-    using default_interface = Windows::Devices::Enumeration::IDevicePickerAppearance;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Enumeration.DevicePickerAppearance"; }
 };
 
 template <> struct traits<Windows::Devices::Enumeration::DevicePickerFilter>
 {
     using abi = ABI::Windows::Devices::Enumeration::DevicePickerFilter;
-    using default_interface = Windows::Devices::Enumeration::IDevicePickerFilter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Enumeration.DevicePickerFilter"; }
 };
 
 template <> struct traits<Windows::Devices::Enumeration::DeviceSelectedEventArgs>
 {
     using abi = ABI::Windows::Devices::Enumeration::DeviceSelectedEventArgs;
-    using default_interface = Windows::Devices::Enumeration::IDeviceSelectedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Enumeration.DeviceSelectedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::Enumeration::DeviceThumbnail>
 {
     using abi = ABI::Windows::Devices::Enumeration::DeviceThumbnail;
-    using default_interface = Windows::Storage::Streams::IRandomAccessStreamWithContentType;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Enumeration.DeviceThumbnail"; }
 };
 
 template <> struct traits<Windows::Devices::Enumeration::DeviceUnpairingResult>
 {
     using abi = ABI::Windows::Devices::Enumeration::DeviceUnpairingResult;
-    using default_interface = Windows::Devices::Enumeration::IDeviceUnpairingResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Enumeration.DeviceUnpairingResult"; }
 };
 
 template <> struct traits<Windows::Devices::Enumeration::DeviceWatcher>
 {
     using abi = ABI::Windows::Devices::Enumeration::DeviceWatcher;
-    using default_interface = Windows::Devices::Enumeration::IDeviceWatcher;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Enumeration.DeviceWatcher"; }
 };
 
 template <> struct traits<Windows::Devices::Enumeration::DeviceWatcherEvent>
 {
     using abi = ABI::Windows::Devices::Enumeration::DeviceWatcherEvent;
-    using default_interface = Windows::Devices::Enumeration::IDeviceWatcherEvent;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Enumeration.DeviceWatcherEvent"; }
 };
 
 template <> struct traits<Windows::Devices::Enumeration::DeviceWatcherTriggerDetails>
 {
     using abi = ABI::Windows::Devices::Enumeration::DeviceWatcherTriggerDetails;
-    using default_interface = Windows::Devices::Enumeration::IDeviceWatcherTriggerDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Enumeration.DeviceWatcherTriggerDetails"; }
 };
 
 template <> struct traits<Windows::Devices::Enumeration::EnclosureLocation>
 {
     using abi = ABI::Windows::Devices::Enumeration::EnclosureLocation;
-    using default_interface = Windows::Devices::Enumeration::IEnclosureLocation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Enumeration.EnclosureLocation"; }
 };
 

@@ -106,12 +106,8 @@ template <> struct __declspec(uuid("00939468-25d8-533f-854e-4f20f36c51dc")) __de
 namespace Windows::Media::Effects {
 
 template <typename D>
-class WINRT_EBO impl_IAudioCaptureEffectsManager
+struct WINRT_EBO impl_IAudioCaptureEffectsManager
 {
-    auto shim() const { return impl::shim<D, IAudioCaptureEffectsManager>(this); }
-
-public:
-
     event_token AudioCaptureEffectsChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioCaptureEffectsManager, Windows::IInspectable> & handler) const;
     using AudioCaptureEffectsChanged_revoker = event_revoker<IAudioCaptureEffectsManager>;
     AudioCaptureEffectsChanged_revoker AudioCaptureEffectsChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioCaptureEffectsManager, Windows::IInspectable> & handler) const;
@@ -120,44 +116,28 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioEffect
+struct WINRT_EBO impl_IAudioEffect
 {
-    auto shim() const { return impl::shim<D, IAudioEffect>(this); }
-
-public:
-
     Windows::Media::Effects::AudioEffectType AudioEffectType() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioEffectDefinition
+struct WINRT_EBO impl_IAudioEffectDefinition
 {
-    auto shim() const { return impl::shim<D, IAudioEffectDefinition>(this); }
-
-public:
-
     hstring ActivatableClassId() const;
     Windows::Foundation::Collections::IPropertySet Properties() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioEffectDefinitionFactory
+struct WINRT_EBO impl_IAudioEffectDefinitionFactory
 {
-    auto shim() const { return impl::shim<D, IAudioEffectDefinitionFactory>(this); }
-
-public:
-
     Windows::Media::Effects::AudioEffectDefinition Create(hstring_ref activatableClassId) const;
     Windows::Media::Effects::AudioEffectDefinition CreateWithProperties(hstring_ref activatableClassId, const Windows::Foundation::Collections::IPropertySet & props) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioEffectsManagerStatics
+struct WINRT_EBO impl_IAudioEffectsManagerStatics
 {
-    auto shim() const { return impl::shim<D, IAudioEffectsManagerStatics>(this); }
-
-public:
-
     Windows::Media::Effects::AudioRenderEffectsManager CreateAudioRenderEffectsManager(hstring_ref deviceId, Windows::Media::Render::AudioRenderCategory category) const;
     Windows::Media::Effects::AudioRenderEffectsManager CreateAudioRenderEffectsManager(hstring_ref deviceId, Windows::Media::Render::AudioRenderCategory category, Windows::Media::AudioProcessing mode) const;
     Windows::Media::Effects::AudioCaptureEffectsManager CreateAudioCaptureEffectsManager(hstring_ref deviceId, Windows::Media::Capture::MediaCategory category) const;
@@ -165,12 +145,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioRenderEffectsManager
+struct WINRT_EBO impl_IAudioRenderEffectsManager
 {
-    auto shim() const { return impl::shim<D, IAudioRenderEffectsManager>(this); }
-
-public:
-
     event_token AudioRenderEffectsChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioRenderEffectsManager, Windows::IInspectable> & handler) const;
     using AudioRenderEffectsChanged_revoker = event_revoker<IAudioRenderEffectsManager>;
     AudioRenderEffectsChanged_revoker AudioRenderEffectsChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioRenderEffectsManager, Windows::IInspectable> & handler) const;
@@ -179,24 +155,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioRenderEffectsManager2
+struct WINRT_EBO impl_IAudioRenderEffectsManager2
 {
-    auto shim() const { return impl::shim<D, IAudioRenderEffectsManager2>(this); }
-
-public:
-
     Windows::Storage::Streams::IRandomAccessStreamWithContentType EffectsProviderThumbnail() const;
     hstring EffectsProviderSettingsLabel() const;
     void ShowSettingsUI() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBasicAudioEffect
+struct WINRT_EBO impl_IBasicAudioEffect
 {
-    auto shim() const { return impl::shim<D, IBasicAudioEffect>(this); }
-
-public:
-
     bool UseInputFrameForOutput() const;
     Windows::Foundation::Collections::IVectorView<Windows::Media::MediaProperties::AudioEncodingProperties> SupportedEncodingProperties() const;
     void SetEncodingProperties(const Windows::Media::MediaProperties::AudioEncodingProperties & encodingProperties) const;
@@ -206,12 +174,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBasicVideoEffect
+struct WINRT_EBO impl_IBasicVideoEffect
 {
-    auto shim() const { return impl::shim<D, IBasicVideoEffect>(this); }
-
-public:
-
     bool IsReadOnly() const;
     Windows::Media::Effects::MediaMemoryTypes SupportedMemoryTypes() const;
     bool TimeIndependent() const;
@@ -223,12 +187,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositeVideoFrameContext
+struct WINRT_EBO impl_ICompositeVideoFrameContext
 {
-    auto shim() const { return impl::shim<D, ICompositeVideoFrameContext>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface> SurfacesToOverlay() const;
     Windows::Media::VideoFrame BackgroundFrame() const;
     Windows::Media::VideoFrame OutputFrame() const;
@@ -236,34 +196,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IProcessAudioFrameContext
+struct WINRT_EBO impl_IProcessAudioFrameContext
 {
-    auto shim() const { return impl::shim<D, IProcessAudioFrameContext>(this); }
-
-public:
-
     Windows::Media::AudioFrame InputFrame() const;
     Windows::Media::AudioFrame OutputFrame() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IProcessVideoFrameContext
+struct WINRT_EBO impl_IProcessVideoFrameContext
 {
-    auto shim() const { return impl::shim<D, IProcessVideoFrameContext>(this); }
-
-public:
-
     Windows::Media::VideoFrame InputFrame() const;
     Windows::Media::VideoFrame OutputFrame() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVideoCompositor
+struct WINRT_EBO impl_IVideoCompositor
 {
-    auto shim() const { return impl::shim<D, IVideoCompositor>(this); }
-
-public:
-
     bool TimeIndependent() const;
     void SetEncodingProperties(const Windows::Media::MediaProperties::VideoEncodingProperties & backgroundProperties, const Windows::Graphics::DirectX::Direct3D11::IDirect3DDevice & device) const;
     void CompositeFrame(const Windows::Media::Effects::CompositeVideoFrameContext & context) const;
@@ -272,56 +220,36 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVideoCompositorDefinition
+struct WINRT_EBO impl_IVideoCompositorDefinition
 {
-    auto shim() const { return impl::shim<D, IVideoCompositorDefinition>(this); }
-
-public:
-
     hstring ActivatableClassId() const;
     Windows::Foundation::Collections::IPropertySet Properties() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVideoCompositorDefinitionFactory
+struct WINRT_EBO impl_IVideoCompositorDefinitionFactory
 {
-    auto shim() const { return impl::shim<D, IVideoCompositorDefinitionFactory>(this); }
-
-public:
-
     Windows::Media::Effects::VideoCompositorDefinition Create(hstring_ref activatableClassId) const;
     Windows::Media::Effects::VideoCompositorDefinition CreateWithProperties(hstring_ref activatableClassId, const Windows::Foundation::Collections::IPropertySet & props) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVideoEffectDefinition
+struct WINRT_EBO impl_IVideoEffectDefinition
 {
-    auto shim() const { return impl::shim<D, IVideoEffectDefinition>(this); }
-
-public:
-
     hstring ActivatableClassId() const;
     Windows::Foundation::Collections::IPropertySet Properties() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVideoEffectDefinitionFactory
+struct WINRT_EBO impl_IVideoEffectDefinitionFactory
 {
-    auto shim() const { return impl::shim<D, IVideoEffectDefinitionFactory>(this); }
-
-public:
-
     Windows::Media::Effects::VideoEffectDefinition Create(hstring_ref activatableClassId) const;
     Windows::Media::Effects::VideoEffectDefinition CreateWithProperties(hstring_ref activatableClassId, const Windows::Foundation::Collections::IPropertySet & props) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVideoTransformEffectDefinition
+struct WINRT_EBO impl_IVideoTransformEffectDefinition
 {
-    auto shim() const { return impl::shim<D, IVideoTransformEffectDefinition>(this); }
-
-public:
-
     Windows::UI::Color PaddingColor() const;
     void PaddingColor(const Windows::UI::Color & value) const;
     Windows::Foundation::Size OutputSize() const;

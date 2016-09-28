@@ -20,12 +20,8 @@ template <> struct __declspec(uuid("c50898f6-c536-5f47-8583-8b2c2438a13b")) __de
 namespace Windows::Gaming::UI {
 
 template <typename D>
-class WINRT_EBO impl_IGameBarStatics
+struct WINRT_EBO impl_IGameBarStatics
 {
-    auto shim() const { return impl::shim<D, IGameBarStatics>(this); }
-
-public:
-
     event_token VisibilityChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const;
     using VisibilityChanged_revoker = event_revoker<IGameBarStatics>;
     VisibilityChanged_revoker VisibilityChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const;

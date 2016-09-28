@@ -30,12 +30,8 @@ template <> struct __declspec(uuid("add21d46-17df-5a43-a685-3262fce84643")) __de
 namespace Windows::ApplicationModel::DataTransfer::DragDrop::Core {
 
 template <typename D>
-class WINRT_EBO impl_ICoreDragDropManager
+struct WINRT_EBO impl_ICoreDragDropManager
 {
-    auto shim() const { return impl::shim<D, ICoreDragDropManager>(this); }
-
-public:
-
     event_token TargetRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragDropManager, Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDropOperationTargetRequestedEventArgs> & value) const;
     using TargetRequested_revoker = event_revoker<ICoreDragDropManager>;
     TargetRequested_revoker TargetRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragDropManager, Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDropOperationTargetRequestedEventArgs> & value) const;
@@ -45,44 +41,28 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreDragDropManagerStatics
+struct WINRT_EBO impl_ICoreDragDropManagerStatics
 {
-    auto shim() const { return impl::shim<D, ICoreDragDropManagerStatics>(this); }
-
-public:
-
     Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragDropManager GetForCurrentView() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreDragInfo
+struct WINRT_EBO impl_ICoreDragInfo
 {
-    auto shim() const { return impl::shim<D, ICoreDragInfo>(this); }
-
-public:
-
     Windows::ApplicationModel::DataTransfer::DataPackageView Data() const;
     Windows::ApplicationModel::DataTransfer::DragDrop::DragDropModifiers Modifiers() const;
     Windows::Foundation::Point Position() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreDragInfo2
+struct WINRT_EBO impl_ICoreDragInfo2
 {
-    auto shim() const { return impl::shim<D, ICoreDragInfo2>(this); }
-
-public:
-
     Windows::ApplicationModel::DataTransfer::DataPackageOperation AllowedOperations() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreDragOperation
+struct WINRT_EBO impl_ICoreDragOperation
 {
-    auto shim() const { return impl::shim<D, ICoreDragOperation>(this); }
-
-public:
-
     Windows::ApplicationModel::DataTransfer::DataPackage Data() const;
     void SetPointerId(uint32_t pointerId) const;
     void SetDragUIContentFromSoftwareBitmap(const Windows::Graphics::Imaging::SoftwareBitmap & softwareBitmap) const;
@@ -93,23 +73,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreDragOperation2
+struct WINRT_EBO impl_ICoreDragOperation2
 {
-    auto shim() const { return impl::shim<D, ICoreDragOperation2>(this); }
-
-public:
-
     Windows::ApplicationModel::DataTransfer::DataPackageOperation AllowedOperations() const;
     void AllowedOperations(Windows::ApplicationModel::DataTransfer::DataPackageOperation value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreDragUIOverride
+struct WINRT_EBO impl_ICoreDragUIOverride
 {
-    auto shim() const { return impl::shim<D, ICoreDragUIOverride>(this); }
-
-public:
-
     void SetContentFromSoftwareBitmap(const Windows::Graphics::Imaging::SoftwareBitmap & softwareBitmap) const;
     void SetContentFromSoftwareBitmap(const Windows::Graphics::Imaging::SoftwareBitmap & softwareBitmap, const Windows::Foundation::Point & anchorPoint) const;
     bool IsContentVisible() const;
@@ -124,12 +96,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreDropOperationTarget
+struct WINRT_EBO impl_ICoreDropOperationTarget
 {
-    auto shim() const { return impl::shim<D, ICoreDropOperationTarget>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::DataTransfer::DataPackageOperation> EnterAsync(const Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragInfo & dragInfo, const Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragUIOverride & dragUIOverride) const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::DataTransfer::DataPackageOperation> OverAsync(const Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragInfo & dragInfo, const Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragUIOverride & dragUIOverride) const;
     Windows::Foundation::IAsyncAction LeaveAsync(const Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragInfo & dragInfo) const;
@@ -137,12 +105,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreDropOperationTargetRequestedEventArgs
+struct WINRT_EBO impl_ICoreDropOperationTargetRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, ICoreDropOperationTargetRequestedEventArgs>(this); }
-
-public:
-
     void SetTarget(const Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDropOperationTarget & target) const;
 };
 

@@ -41,9 +41,9 @@ template <> struct traits<Windows::Security::Authentication::Identity::Enterpris
 
 namespace Windows::Security::Authentication::Identity {
 
-template <typename T> class impl_IEnterpriseKeyCredentialRegistrationInfo;
-template <typename T> class impl_IEnterpriseKeyCredentialRegistrationManager;
-template <typename T> class impl_IEnterpriseKeyCredentialRegistrationManagerStatics;
+template <typename T> struct impl_IEnterpriseKeyCredentialRegistrationInfo;
+template <typename T> struct impl_IEnterpriseKeyCredentialRegistrationManager;
+template <typename T> struct impl_IEnterpriseKeyCredentialRegistrationManagerStatics;
 
 }
 
@@ -70,14 +70,12 @@ template <> struct traits<Windows::Security::Authentication::Identity::IEnterpri
 template <> struct traits<Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationInfo>
 {
     using abi = ABI::Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationInfo;
-    using default_interface = Windows::Security::Authentication::Identity::IEnterpriseKeyCredentialRegistrationInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Authentication.Identity.EnterpriseKeyCredentialRegistrationInfo"; }
 };
 
 template <> struct traits<Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationManager>
 {
     using abi = ABI::Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationManager;
-    using default_interface = Windows::Security::Authentication::Identity::IEnterpriseKeyCredentialRegistrationManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Authentication.Identity.EnterpriseKeyCredentialRegistrationManager"; }
 };
 

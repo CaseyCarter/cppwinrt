@@ -37,8 +37,8 @@ template <> struct traits<Windows::Security::Cryptography::DataProtection::DataP
 
 namespace Windows::Security::Cryptography::DataProtection {
 
-template <typename T> class impl_IDataProtectionProvider;
-template <typename T> class impl_IDataProtectionProviderFactory;
+template <typename T> struct impl_IDataProtectionProvider;
+template <typename T> struct impl_IDataProtectionProviderFactory;
 
 }
 
@@ -59,7 +59,6 @@ template <> struct traits<Windows::Security::Cryptography::DataProtection::IData
 template <> struct traits<Windows::Security::Cryptography::DataProtection::DataProtectionProvider>
 {
     using abi = ABI::Windows::Security::Cryptography::DataProtection::DataProtectionProvider;
-    using default_interface = Windows::Security::Cryptography::DataProtection::IDataProtectionProvider;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Cryptography.DataProtection.DataProtectionProvider"; }
 };
 

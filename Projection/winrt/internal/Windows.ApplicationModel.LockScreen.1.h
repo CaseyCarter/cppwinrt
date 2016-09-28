@@ -76,12 +76,12 @@ template <> struct traits<Windows::ApplicationModel::LockScreen::LockScreenUnloc
 
 namespace Windows::ApplicationModel::LockScreen {
 
-template <typename T> class impl_ILockApplicationHost;
-template <typename T> class impl_ILockApplicationHostStatics;
-template <typename T> class impl_ILockScreenBadge;
-template <typename T> class impl_ILockScreenInfo;
-template <typename T> class impl_ILockScreenUnlockingDeferral;
-template <typename T> class impl_ILockScreenUnlockingEventArgs;
+template <typename T> struct impl_ILockApplicationHost;
+template <typename T> struct impl_ILockApplicationHostStatics;
+template <typename T> struct impl_ILockScreenBadge;
+template <typename T> struct impl_ILockScreenInfo;
+template <typename T> struct impl_ILockScreenUnlockingDeferral;
+template <typename T> struct impl_ILockScreenUnlockingEventArgs;
 
 }
 
@@ -126,35 +126,30 @@ template <> struct traits<Windows::ApplicationModel::LockScreen::ILockScreenUnlo
 template <> struct traits<Windows::ApplicationModel::LockScreen::LockApplicationHost>
 {
     using abi = ABI::Windows::ApplicationModel::LockScreen::LockApplicationHost;
-    using default_interface = Windows::ApplicationModel::LockScreen::ILockApplicationHost;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.LockScreen.LockApplicationHost"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::LockScreen::LockScreenBadge>
 {
     using abi = ABI::Windows::ApplicationModel::LockScreen::LockScreenBadge;
-    using default_interface = Windows::ApplicationModel::LockScreen::ILockScreenBadge;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.LockScreen.LockScreenBadge"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::LockScreen::LockScreenInfo>
 {
     using abi = ABI::Windows::ApplicationModel::LockScreen::LockScreenInfo;
-    using default_interface = Windows::ApplicationModel::LockScreen::ILockScreenInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.LockScreen.LockScreenInfo"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::LockScreen::LockScreenUnlockingDeferral>
 {
     using abi = ABI::Windows::ApplicationModel::LockScreen::LockScreenUnlockingDeferral;
-    using default_interface = Windows::ApplicationModel::LockScreen::ILockScreenUnlockingDeferral;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.LockScreen.LockScreenUnlockingDeferral"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::LockScreen::LockScreenUnlockingEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::LockScreen::LockScreenUnlockingEventArgs;
-    using default_interface = Windows::ApplicationModel::LockScreen::ILockScreenUnlockingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.LockScreen.LockScreenUnlockingEventArgs"; }
 };
 

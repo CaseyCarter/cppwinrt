@@ -194,56 +194,56 @@ namespace Windows::Media::Capture::Core {
 template <typename D> Windows::Media::Capture::CapturedFrame impl_IVariablePhotoCapturedEventArgs<D>::Frame() const
 {
     Windows::Media::Capture::CapturedFrame value { nullptr };
-    check_hresult(shim()->get_Frame(put(value)));
+    check_hresult(static_cast<const IVariablePhotoCapturedEventArgs &>(static_cast<const D &>(*this))->get_Frame(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IVariablePhotoCapturedEventArgs<D>::CaptureTimeOffset() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_CaptureTimeOffset(put(value)));
+    check_hresult(static_cast<const IVariablePhotoCapturedEventArgs &>(static_cast<const D &>(*this))->get_CaptureTimeOffset(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<uint32_t> impl_IVariablePhotoCapturedEventArgs<D>::UsedFrameControllerIndex() const
 {
     Windows::Foundation::IReference<uint32_t> value;
-    check_hresult(shim()->get_UsedFrameControllerIndex(put(value)));
+    check_hresult(static_cast<const IVariablePhotoCapturedEventArgs &>(static_cast<const D &>(*this))->get_UsedFrameControllerIndex(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Capture::CapturedFrameControlValues impl_IVariablePhotoCapturedEventArgs<D>::CapturedFrameControlValues() const
 {
     Windows::Media::Capture::CapturedFrameControlValues value { nullptr };
-    check_hresult(shim()->get_CapturedFrameControlValues(put(value)));
+    check_hresult(static_cast<const IVariablePhotoCapturedEventArgs &>(static_cast<const D &>(*this))->get_CapturedFrameControlValues(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IVariablePhotoSequenceCapture<D>::StartAsync() const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_StartAsync(put(operation)));
+    check_hresult(static_cast<const IVariablePhotoSequenceCapture &>(static_cast<const D &>(*this))->abi_StartAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IVariablePhotoSequenceCapture<D>::StopAsync() const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_StopAsync(put(operation)));
+    check_hresult(static_cast<const IVariablePhotoSequenceCapture &>(static_cast<const D &>(*this))->abi_StopAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IVariablePhotoSequenceCapture<D>::FinishAsync() const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_FinishAsync(put(operation)));
+    check_hresult(static_cast<const IVariablePhotoSequenceCapture &>(static_cast<const D &>(*this))->abi_FinishAsync(put(operation)));
     return operation;
 }
 
 template <typename D> event_token impl_IVariablePhotoSequenceCapture<D>::PhotoCaptured(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Core::VariablePhotoSequenceCapture, Windows::Media::Capture::Core::VariablePhotoCapturedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_PhotoCaptured(get(handler), &token));
+    check_hresult(static_cast<const IVariablePhotoSequenceCapture &>(static_cast<const D &>(*this))->add_PhotoCaptured(get(handler), &token));
     return token;
 }
 
@@ -254,13 +254,13 @@ template <typename D> event_revoker<IVariablePhotoSequenceCapture> impl_IVariabl
 
 template <typename D> void impl_IVariablePhotoSequenceCapture<D>::PhotoCaptured(event_token token) const
 {
-    check_hresult(shim()->remove_PhotoCaptured(token));
+    check_hresult(static_cast<const IVariablePhotoSequenceCapture &>(static_cast<const D &>(*this))->remove_PhotoCaptured(token));
 }
 
 template <typename D> event_token impl_IVariablePhotoSequenceCapture<D>::Stopped(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Core::VariablePhotoSequenceCapture, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_Stopped(get(handler), &token));
+    check_hresult(static_cast<const IVariablePhotoSequenceCapture &>(static_cast<const D &>(*this))->add_Stopped(get(handler), &token));
     return token;
 }
 
@@ -271,13 +271,13 @@ template <typename D> event_revoker<IVariablePhotoSequenceCapture> impl_IVariabl
 
 template <typename D> void impl_IVariablePhotoSequenceCapture<D>::Stopped(event_token token) const
 {
-    check_hresult(shim()->remove_Stopped(token));
+    check_hresult(static_cast<const IVariablePhotoSequenceCapture &>(static_cast<const D &>(*this))->remove_Stopped(token));
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IVariablePhotoSequenceCapture2<D>::UpdateSettingsAsync() const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_UpdateSettingsAsync(put(operation)));
+    check_hresult(static_cast<const IVariablePhotoSequenceCapture2 &>(static_cast<const D &>(*this))->abi_UpdateSettingsAsync(put(operation)));
     return operation;
 }
 

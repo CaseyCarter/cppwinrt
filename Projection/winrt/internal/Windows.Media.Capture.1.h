@@ -463,48 +463,48 @@ template <> struct traits<Windows::Media::Capture::VideoStreamConfiguration> { u
 
 namespace Windows::Media::Capture {
 
-template <typename T> class impl_IAdvancedCapturedPhoto;
-template <typename T> class impl_IAdvancedCapturedPhoto2;
-template <typename T> class impl_IAdvancedPhotoCapture;
-template <typename T> class impl_IAppCapture;
-template <typename T> class impl_IAppCaptureStatics;
-template <typename T> class impl_ICameraCaptureUI;
-template <typename T> class impl_ICameraCaptureUIPhotoCaptureSettings;
-template <typename T> class impl_ICameraCaptureUIVideoCaptureSettings;
-template <typename T> class impl_ICapturedFrame;
-template <typename T> class impl_ICapturedFrameControlValues;
-template <typename T> class impl_ICapturedFrameControlValues2;
-template <typename T> class impl_ICapturedFrameWithSoftwareBitmap;
-template <typename T> class impl_ICapturedPhoto;
-template <typename T> class impl_ILowLagMediaRecording;
-template <typename T> class impl_ILowLagMediaRecording2;
-template <typename T> class impl_ILowLagMediaRecording3;
-template <typename T> class impl_ILowLagPhotoCapture;
-template <typename T> class impl_ILowLagPhotoSequenceCapture;
-template <typename T> class impl_IMediaCapture;
-template <typename T> class impl_IMediaCapture2;
-template <typename T> class impl_IMediaCapture3;
-template <typename T> class impl_IMediaCapture4;
-template <typename T> class impl_IMediaCapture5;
-template <typename T> class impl_IMediaCaptureFailedEventArgs;
-template <typename T> class impl_IMediaCaptureFocusChangedEventArgs;
-template <typename T> class impl_IMediaCaptureInitializationSettings;
-template <typename T> class impl_IMediaCaptureInitializationSettings2;
-template <typename T> class impl_IMediaCaptureInitializationSettings3;
-template <typename T> class impl_IMediaCaptureInitializationSettings4;
-template <typename T> class impl_IMediaCaptureInitializationSettings5;
-template <typename T> class impl_IMediaCapturePauseResult;
-template <typename T> class impl_IMediaCaptureSettings;
-template <typename T> class impl_IMediaCaptureSettings2;
-template <typename T> class impl_IMediaCaptureStatics;
-template <typename T> class impl_IMediaCaptureStopResult;
-template <typename T> class impl_IMediaCaptureVideoPreview;
-template <typename T> class impl_IMediaCaptureVideoProfile;
-template <typename T> class impl_IMediaCaptureVideoProfileMediaDescription;
-template <typename T> class impl_IOptionalReferencePhotoCapturedEventArgs;
-template <typename T> class impl_IPhotoCapturedEventArgs;
-template <typename T> class impl_IPhotoConfirmationCapturedEventArgs;
-template <typename T> class impl_IVideoStreamConfiguration;
+template <typename T> struct impl_IAdvancedCapturedPhoto;
+template <typename T> struct impl_IAdvancedCapturedPhoto2;
+template <typename T> struct impl_IAdvancedPhotoCapture;
+template <typename T> struct impl_IAppCapture;
+template <typename T> struct impl_IAppCaptureStatics;
+template <typename T> struct impl_ICameraCaptureUI;
+template <typename T> struct impl_ICameraCaptureUIPhotoCaptureSettings;
+template <typename T> struct impl_ICameraCaptureUIVideoCaptureSettings;
+template <typename T> struct impl_ICapturedFrame;
+template <typename T> struct impl_ICapturedFrameControlValues;
+template <typename T> struct impl_ICapturedFrameControlValues2;
+template <typename T> struct impl_ICapturedFrameWithSoftwareBitmap;
+template <typename T> struct impl_ICapturedPhoto;
+template <typename T> struct impl_ILowLagMediaRecording;
+template <typename T> struct impl_ILowLagMediaRecording2;
+template <typename T> struct impl_ILowLagMediaRecording3;
+template <typename T> struct impl_ILowLagPhotoCapture;
+template <typename T> struct impl_ILowLagPhotoSequenceCapture;
+template <typename T> struct impl_IMediaCapture;
+template <typename T> struct impl_IMediaCapture2;
+template <typename T> struct impl_IMediaCapture3;
+template <typename T> struct impl_IMediaCapture4;
+template <typename T> struct impl_IMediaCapture5;
+template <typename T> struct impl_IMediaCaptureFailedEventArgs;
+template <typename T> struct impl_IMediaCaptureFocusChangedEventArgs;
+template <typename T> struct impl_IMediaCaptureInitializationSettings;
+template <typename T> struct impl_IMediaCaptureInitializationSettings2;
+template <typename T> struct impl_IMediaCaptureInitializationSettings3;
+template <typename T> struct impl_IMediaCaptureInitializationSettings4;
+template <typename T> struct impl_IMediaCaptureInitializationSettings5;
+template <typename T> struct impl_IMediaCapturePauseResult;
+template <typename T> struct impl_IMediaCaptureSettings;
+template <typename T> struct impl_IMediaCaptureSettings2;
+template <typename T> struct impl_IMediaCaptureStatics;
+template <typename T> struct impl_IMediaCaptureStopResult;
+template <typename T> struct impl_IMediaCaptureVideoPreview;
+template <typename T> struct impl_IMediaCaptureVideoProfile;
+template <typename T> struct impl_IMediaCaptureVideoProfileMediaDescription;
+template <typename T> struct impl_IOptionalReferencePhotoCapturedEventArgs;
+template <typename T> struct impl_IPhotoCapturedEventArgs;
+template <typename T> struct impl_IPhotoConfirmationCapturedEventArgs;
+template <typename T> struct impl_IVideoStreamConfiguration;
 template <typename T> struct impl_MediaCaptureFailedEventHandler;
 template <typename T> struct impl_RecordLimitationExceededEventHandler;
 
@@ -777,175 +777,150 @@ template <> struct traits<Windows::Media::Capture::RecordLimitationExceededEvent
 template <> struct traits<Windows::Media::Capture::AdvancedCapturedPhoto>
 {
     using abi = ABI::Windows::Media::Capture::AdvancedCapturedPhoto;
-    using default_interface = Windows::Media::Capture::IAdvancedCapturedPhoto;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.AdvancedCapturedPhoto"; }
 };
 
 template <> struct traits<Windows::Media::Capture::AdvancedPhotoCapture>
 {
     using abi = ABI::Windows::Media::Capture::AdvancedPhotoCapture;
-    using default_interface = Windows::Media::Capture::IAdvancedPhotoCapture;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.AdvancedPhotoCapture"; }
 };
 
 template <> struct traits<Windows::Media::Capture::AppCapture>
 {
     using abi = ABI::Windows::Media::Capture::AppCapture;
-    using default_interface = Windows::Media::Capture::IAppCapture;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.AppCapture"; }
 };
 
 template <> struct traits<Windows::Media::Capture::CameraCaptureUI>
 {
     using abi = ABI::Windows::Media::Capture::CameraCaptureUI;
-    using default_interface = Windows::Media::Capture::ICameraCaptureUI;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.CameraCaptureUI"; }
 };
 
 template <> struct traits<Windows::Media::Capture::CameraCaptureUIPhotoCaptureSettings>
 {
     using abi = ABI::Windows::Media::Capture::CameraCaptureUIPhotoCaptureSettings;
-    using default_interface = Windows::Media::Capture::ICameraCaptureUIPhotoCaptureSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.CameraCaptureUIPhotoCaptureSettings"; }
 };
 
 template <> struct traits<Windows::Media::Capture::CameraCaptureUIVideoCaptureSettings>
 {
     using abi = ABI::Windows::Media::Capture::CameraCaptureUIVideoCaptureSettings;
-    using default_interface = Windows::Media::Capture::ICameraCaptureUIVideoCaptureSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.CameraCaptureUIVideoCaptureSettings"; }
 };
 
 template <> struct traits<Windows::Media::Capture::CapturedFrame>
 {
     using abi = ABI::Windows::Media::Capture::CapturedFrame;
-    using default_interface = Windows::Media::Capture::ICapturedFrame;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.CapturedFrame"; }
 };
 
 template <> struct traits<Windows::Media::Capture::CapturedFrameControlValues>
 {
     using abi = ABI::Windows::Media::Capture::CapturedFrameControlValues;
-    using default_interface = Windows::Media::Capture::ICapturedFrameControlValues;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.CapturedFrameControlValues"; }
 };
 
 template <> struct traits<Windows::Media::Capture::CapturedPhoto>
 {
     using abi = ABI::Windows::Media::Capture::CapturedPhoto;
-    using default_interface = Windows::Media::Capture::ICapturedPhoto;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.CapturedPhoto"; }
 };
 
 template <> struct traits<Windows::Media::Capture::LowLagMediaRecording>
 {
     using abi = ABI::Windows::Media::Capture::LowLagMediaRecording;
-    using default_interface = Windows::Media::Capture::ILowLagMediaRecording;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.LowLagMediaRecording"; }
 };
 
 template <> struct traits<Windows::Media::Capture::LowLagPhotoCapture>
 {
     using abi = ABI::Windows::Media::Capture::LowLagPhotoCapture;
-    using default_interface = Windows::Media::Capture::ILowLagPhotoCapture;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.LowLagPhotoCapture"; }
 };
 
 template <> struct traits<Windows::Media::Capture::LowLagPhotoSequenceCapture>
 {
     using abi = ABI::Windows::Media::Capture::LowLagPhotoSequenceCapture;
-    using default_interface = Windows::Media::Capture::ILowLagPhotoSequenceCapture;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.LowLagPhotoSequenceCapture"; }
 };
 
 template <> struct traits<Windows::Media::Capture::MediaCapture>
 {
     using abi = ABI::Windows::Media::Capture::MediaCapture;
-    using default_interface = Windows::Media::Capture::IMediaCapture;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.MediaCapture"; }
 };
 
 template <> struct traits<Windows::Media::Capture::MediaCaptureFailedEventArgs>
 {
     using abi = ABI::Windows::Media::Capture::MediaCaptureFailedEventArgs;
-    using default_interface = Windows::Media::Capture::IMediaCaptureFailedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.MediaCaptureFailedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Capture::MediaCaptureFocusChangedEventArgs>
 {
     using abi = ABI::Windows::Media::Capture::MediaCaptureFocusChangedEventArgs;
-    using default_interface = Windows::Media::Capture::IMediaCaptureFocusChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.MediaCaptureFocusChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Capture::MediaCaptureInitializationSettings>
 {
     using abi = ABI::Windows::Media::Capture::MediaCaptureInitializationSettings;
-    using default_interface = Windows::Media::Capture::IMediaCaptureInitializationSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.MediaCaptureInitializationSettings"; }
 };
 
 template <> struct traits<Windows::Media::Capture::MediaCapturePauseResult>
 {
     using abi = ABI::Windows::Media::Capture::MediaCapturePauseResult;
-    using default_interface = Windows::Media::Capture::IMediaCapturePauseResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.MediaCapturePauseResult"; }
 };
 
 template <> struct traits<Windows::Media::Capture::MediaCaptureSettings>
 {
     using abi = ABI::Windows::Media::Capture::MediaCaptureSettings;
-    using default_interface = Windows::Media::Capture::IMediaCaptureSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.MediaCaptureSettings"; }
 };
 
 template <> struct traits<Windows::Media::Capture::MediaCaptureStopResult>
 {
     using abi = ABI::Windows::Media::Capture::MediaCaptureStopResult;
-    using default_interface = Windows::Media::Capture::IMediaCaptureStopResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.MediaCaptureStopResult"; }
 };
 
 template <> struct traits<Windows::Media::Capture::MediaCaptureVideoProfile>
 {
     using abi = ABI::Windows::Media::Capture::MediaCaptureVideoProfile;
-    using default_interface = Windows::Media::Capture::IMediaCaptureVideoProfile;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.MediaCaptureVideoProfile"; }
 };
 
 template <> struct traits<Windows::Media::Capture::MediaCaptureVideoProfileMediaDescription>
 {
     using abi = ABI::Windows::Media::Capture::MediaCaptureVideoProfileMediaDescription;
-    using default_interface = Windows::Media::Capture::IMediaCaptureVideoProfileMediaDescription;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.MediaCaptureVideoProfileMediaDescription"; }
 };
 
 template <> struct traits<Windows::Media::Capture::OptionalReferencePhotoCapturedEventArgs>
 {
     using abi = ABI::Windows::Media::Capture::OptionalReferencePhotoCapturedEventArgs;
-    using default_interface = Windows::Media::Capture::IOptionalReferencePhotoCapturedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.OptionalReferencePhotoCapturedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Capture::PhotoCapturedEventArgs>
 {
     using abi = ABI::Windows::Media::Capture::PhotoCapturedEventArgs;
-    using default_interface = Windows::Media::Capture::IPhotoCapturedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.PhotoCapturedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Capture::PhotoConfirmationCapturedEventArgs>
 {
     using abi = ABI::Windows::Media::Capture::PhotoConfirmationCapturedEventArgs;
-    using default_interface = Windows::Media::Capture::IPhotoConfirmationCapturedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.PhotoConfirmationCapturedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Capture::VideoStreamConfiguration>
 {
     using abi = ABI::Windows::Media::Capture::VideoStreamConfiguration;
-    using default_interface = Windows::Media::Capture::IVideoStreamConfiguration;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Capture.VideoStreamConfiguration"; }
 };
 

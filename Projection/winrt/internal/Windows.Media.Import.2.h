@@ -271,12 +271,8 @@ template <> struct __declspec(uuid("72cde698-9247-5053-8cbd-d9076bfdfda5")) __de
 namespace Windows::Media::Import {
 
 template <typename D>
-class WINRT_EBO impl_IPhotoImportDeleteImportedItemsFromSourceResult
+struct WINRT_EBO impl_IPhotoImportDeleteImportedItemsFromSourceResult
 {
-    auto shim() const { return impl::shim<D, IPhotoImportDeleteImportedItemsFromSourceResult>(this); }
-
-public:
-
     Windows::Media::Import::PhotoImportSession Session() const;
     bool HasSucceeded() const;
     Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportItem> DeletedItems() const;
@@ -293,12 +289,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPhotoImportFindItemsResult
+struct WINRT_EBO impl_IPhotoImportFindItemsResult
 {
-    auto shim() const { return impl::shim<D, IPhotoImportFindItemsResult>(this); }
-
-public:
-
     Windows::Media::Import::PhotoImportSession Session() const;
     bool HasSucceeded() const;
     Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportItem> FoundItems() const;
@@ -339,22 +331,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPhotoImportFindItemsResult2
+struct WINRT_EBO impl_IPhotoImportFindItemsResult2
 {
-    auto shim() const { return impl::shim<D, IPhotoImportFindItemsResult2>(this); }
-
-public:
-
     void AddItemsInDateRangeToSelection(const Windows::Foundation::DateTime & rangeStart, const Windows::Foundation::TimeSpan & rangeLength) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPhotoImportImportItemsResult
+struct WINRT_EBO impl_IPhotoImportImportItemsResult
 {
-    auto shim() const { return impl::shim<D, IPhotoImportImportItemsResult>(this); }
-
-public:
-
     Windows::Media::Import::PhotoImportSession Session() const;
     bool HasSucceeded() const;
     Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportItem> ImportedItems() const;
@@ -372,12 +356,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPhotoImportItem
+struct WINRT_EBO impl_IPhotoImportItem
 {
-    auto shim() const { return impl::shim<D, IPhotoImportItem>(this); }
-
-public:
-
     hstring Name() const;
     uint64_t ItemKey() const;
     Windows::Media::Import::PhotoImportContentType ContentType() const;
@@ -394,34 +374,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPhotoImportItemImportedEventArgs
+struct WINRT_EBO impl_IPhotoImportItemImportedEventArgs
 {
-    auto shim() const { return impl::shim<D, IPhotoImportItemImportedEventArgs>(this); }
-
-public:
-
     Windows::Media::Import::PhotoImportItem ImportedItem() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPhotoImportManagerStatics
+struct WINRT_EBO impl_IPhotoImportManagerStatics
 {
-    auto shim() const { return impl::shim<D, IPhotoImportManagerStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<bool> IsSupportedAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportSource>> FindAllSourcesAsync() const;
     Windows::Foundation::Collections::IVectorView<Windows::Media::Import::PhotoImportOperation> GetPendingOperations() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPhotoImportOperation
+struct WINRT_EBO impl_IPhotoImportOperation
 {
-    auto shim() const { return impl::shim<D, IPhotoImportOperation>(this); }
-
-public:
-
     Windows::Media::Import::PhotoImportStage Stage() const;
     Windows::Media::Import::PhotoImportSession Session() const;
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Media::Import::PhotoImportFindItemsResult, uint32_t> ContinueFindingItemsAsync() const;
@@ -430,22 +398,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPhotoImportSelectionChangedEventArgs
+struct WINRT_EBO impl_IPhotoImportSelectionChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IPhotoImportSelectionChangedEventArgs>(this); }
-
-public:
-
     bool IsSelectionEmpty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPhotoImportSession
+struct WINRT_EBO impl_IPhotoImportSession
 {
-    auto shim() const { return impl::shim<D, IPhotoImportSession>(this); }
-
-public:
-
     Windows::Media::Import::PhotoImportSource Source() const;
     GUID SessionId() const;
     void DestinationFolder(const Windows::Storage::IStorageFolder & value) const;
@@ -460,12 +420,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPhotoImportSession2
+struct WINRT_EBO impl_IPhotoImportSession2
 {
-    auto shim() const { return impl::shim<D, IPhotoImportSession2>(this); }
-
-public:
-
     void SubfolderDateFormat(Windows::Media::Import::PhotoImportSubfolderDateFormat value) const;
     Windows::Media::Import::PhotoImportSubfolderDateFormat SubfolderDateFormat() const;
     void RememberDeselectedItems(bool value) const;
@@ -473,24 +429,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPhotoImportSidecar
+struct WINRT_EBO impl_IPhotoImportSidecar
 {
-    auto shim() const { return impl::shim<D, IPhotoImportSidecar>(this); }
-
-public:
-
     hstring Name() const;
     uint64_t SizeInBytes() const;
     Windows::Foundation::DateTime Date() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPhotoImportSource
+struct WINRT_EBO impl_IPhotoImportSource
 {
-    auto shim() const { return impl::shim<D, IPhotoImportSource>(this); }
-
-public:
-
     hstring Id() const;
     hstring DisplayName() const;
     hstring Description() const;
@@ -511,23 +459,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPhotoImportSourceStatics
+struct WINRT_EBO impl_IPhotoImportSourceStatics
 {
-    auto shim() const { return impl::shim<D, IPhotoImportSourceStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Media::Import::PhotoImportSource> FromIdAsync(hstring_ref sourceId) const;
     Windows::Foundation::IAsyncOperation<Windows::Media::Import::PhotoImportSource> FromFolderAsync(const Windows::Storage::IStorageFolder & sourceRootFolder) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPhotoImportStorageMedium
+struct WINRT_EBO impl_IPhotoImportStorageMedium
 {
-    auto shim() const { return impl::shim<D, IPhotoImportStorageMedium>(this); }
-
-public:
-
     hstring Name() const;
     hstring Description() const;
     hstring SerialNumber() const;
@@ -539,12 +479,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPhotoImportVideoSegment
+struct WINRT_EBO impl_IPhotoImportVideoSegment
 {
-    auto shim() const { return impl::shim<D, IPhotoImportVideoSegment>(this); }
-
-public:
-
     hstring Name() const;
     uint64_t SizeInBytes() const;
     Windows::Foundation::DateTime Date() const;

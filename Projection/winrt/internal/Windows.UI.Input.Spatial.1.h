@@ -262,35 +262,35 @@ template <> struct traits<Windows::UI::Input::Spatial::SpatialTappedEventArgs> {
 
 namespace Windows::UI::Input::Spatial {
 
-template <typename T> class impl_ISpatialGestureRecognizer;
-template <typename T> class impl_ISpatialGestureRecognizerFactory;
-template <typename T> class impl_ISpatialHoldCanceledEventArgs;
-template <typename T> class impl_ISpatialHoldCompletedEventArgs;
-template <typename T> class impl_ISpatialHoldStartedEventArgs;
-template <typename T> class impl_ISpatialInteraction;
-template <typename T> class impl_ISpatialInteractionDetectedEventArgs;
-template <typename T> class impl_ISpatialInteractionManager;
-template <typename T> class impl_ISpatialInteractionManagerStatics;
-template <typename T> class impl_ISpatialInteractionSource;
-template <typename T> class impl_ISpatialInteractionSourceEventArgs;
-template <typename T> class impl_ISpatialInteractionSourceLocation;
-template <typename T> class impl_ISpatialInteractionSourceLocation2;
-template <typename T> class impl_ISpatialInteractionSourceProperties;
-template <typename T> class impl_ISpatialInteractionSourceState;
-template <typename T> class impl_ISpatialManipulationCanceledEventArgs;
-template <typename T> class impl_ISpatialManipulationCompletedEventArgs;
-template <typename T> class impl_ISpatialManipulationDelta;
-template <typename T> class impl_ISpatialManipulationStartedEventArgs;
-template <typename T> class impl_ISpatialManipulationUpdatedEventArgs;
-template <typename T> class impl_ISpatialNavigationCanceledEventArgs;
-template <typename T> class impl_ISpatialNavigationCompletedEventArgs;
-template <typename T> class impl_ISpatialNavigationStartedEventArgs;
-template <typename T> class impl_ISpatialNavigationUpdatedEventArgs;
-template <typename T> class impl_ISpatialPointerPose;
-template <typename T> class impl_ISpatialPointerPoseStatics;
-template <typename T> class impl_ISpatialRecognitionEndedEventArgs;
-template <typename T> class impl_ISpatialRecognitionStartedEventArgs;
-template <typename T> class impl_ISpatialTappedEventArgs;
+template <typename T> struct impl_ISpatialGestureRecognizer;
+template <typename T> struct impl_ISpatialGestureRecognizerFactory;
+template <typename T> struct impl_ISpatialHoldCanceledEventArgs;
+template <typename T> struct impl_ISpatialHoldCompletedEventArgs;
+template <typename T> struct impl_ISpatialHoldStartedEventArgs;
+template <typename T> struct impl_ISpatialInteraction;
+template <typename T> struct impl_ISpatialInteractionDetectedEventArgs;
+template <typename T> struct impl_ISpatialInteractionManager;
+template <typename T> struct impl_ISpatialInteractionManagerStatics;
+template <typename T> struct impl_ISpatialInteractionSource;
+template <typename T> struct impl_ISpatialInteractionSourceEventArgs;
+template <typename T> struct impl_ISpatialInteractionSourceLocation;
+template <typename T> struct impl_ISpatialInteractionSourceLocation2;
+template <typename T> struct impl_ISpatialInteractionSourceProperties;
+template <typename T> struct impl_ISpatialInteractionSourceState;
+template <typename T> struct impl_ISpatialManipulationCanceledEventArgs;
+template <typename T> struct impl_ISpatialManipulationCompletedEventArgs;
+template <typename T> struct impl_ISpatialManipulationDelta;
+template <typename T> struct impl_ISpatialManipulationStartedEventArgs;
+template <typename T> struct impl_ISpatialManipulationUpdatedEventArgs;
+template <typename T> struct impl_ISpatialNavigationCanceledEventArgs;
+template <typename T> struct impl_ISpatialNavigationCompletedEventArgs;
+template <typename T> struct impl_ISpatialNavigationStartedEventArgs;
+template <typename T> struct impl_ISpatialNavigationUpdatedEventArgs;
+template <typename T> struct impl_ISpatialPointerPose;
+template <typename T> struct impl_ISpatialPointerPoseStatics;
+template <typename T> struct impl_ISpatialRecognitionEndedEventArgs;
+template <typename T> struct impl_ISpatialRecognitionStartedEventArgs;
+template <typename T> struct impl_ISpatialTappedEventArgs;
 
 }
 
@@ -473,175 +473,150 @@ template <> struct traits<Windows::UI::Input::Spatial::ISpatialTappedEventArgs>
 template <> struct traits<Windows::UI::Input::Spatial::SpatialGestureRecognizer>
 {
     using abi = ABI::Windows::UI::Input::Spatial::SpatialGestureRecognizer;
-    using default_interface = Windows::UI::Input::Spatial::ISpatialGestureRecognizer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Spatial.SpatialGestureRecognizer"; }
 };
 
 template <> struct traits<Windows::UI::Input::Spatial::SpatialHoldCanceledEventArgs>
 {
     using abi = ABI::Windows::UI::Input::Spatial::SpatialHoldCanceledEventArgs;
-    using default_interface = Windows::UI::Input::Spatial::ISpatialHoldCanceledEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Spatial.SpatialHoldCanceledEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Input::Spatial::SpatialHoldCompletedEventArgs>
 {
     using abi = ABI::Windows::UI::Input::Spatial::SpatialHoldCompletedEventArgs;
-    using default_interface = Windows::UI::Input::Spatial::ISpatialHoldCompletedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Spatial.SpatialHoldCompletedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Input::Spatial::SpatialHoldStartedEventArgs>
 {
     using abi = ABI::Windows::UI::Input::Spatial::SpatialHoldStartedEventArgs;
-    using default_interface = Windows::UI::Input::Spatial::ISpatialHoldStartedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Spatial.SpatialHoldStartedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Input::Spatial::SpatialInteraction>
 {
     using abi = ABI::Windows::UI::Input::Spatial::SpatialInteraction;
-    using default_interface = Windows::UI::Input::Spatial::ISpatialInteraction;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Spatial.SpatialInteraction"; }
 };
 
 template <> struct traits<Windows::UI::Input::Spatial::SpatialInteractionDetectedEventArgs>
 {
     using abi = ABI::Windows::UI::Input::Spatial::SpatialInteractionDetectedEventArgs;
-    using default_interface = Windows::UI::Input::Spatial::ISpatialInteractionDetectedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Spatial.SpatialInteractionDetectedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Input::Spatial::SpatialInteractionManager>
 {
     using abi = ABI::Windows::UI::Input::Spatial::SpatialInteractionManager;
-    using default_interface = Windows::UI::Input::Spatial::ISpatialInteractionManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Spatial.SpatialInteractionManager"; }
 };
 
 template <> struct traits<Windows::UI::Input::Spatial::SpatialInteractionSource>
 {
     using abi = ABI::Windows::UI::Input::Spatial::SpatialInteractionSource;
-    using default_interface = Windows::UI::Input::Spatial::ISpatialInteractionSource;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Spatial.SpatialInteractionSource"; }
 };
 
 template <> struct traits<Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs>
 {
     using abi = ABI::Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs;
-    using default_interface = Windows::UI::Input::Spatial::ISpatialInteractionSourceEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Spatial.SpatialInteractionSourceEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Input::Spatial::SpatialInteractionSourceLocation>
 {
     using abi = ABI::Windows::UI::Input::Spatial::SpatialInteractionSourceLocation;
-    using default_interface = Windows::UI::Input::Spatial::ISpatialInteractionSourceLocation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Spatial.SpatialInteractionSourceLocation"; }
 };
 
 template <> struct traits<Windows::UI::Input::Spatial::SpatialInteractionSourceProperties>
 {
     using abi = ABI::Windows::UI::Input::Spatial::SpatialInteractionSourceProperties;
-    using default_interface = Windows::UI::Input::Spatial::ISpatialInteractionSourceProperties;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Spatial.SpatialInteractionSourceProperties"; }
 };
 
 template <> struct traits<Windows::UI::Input::Spatial::SpatialInteractionSourceState>
 {
     using abi = ABI::Windows::UI::Input::Spatial::SpatialInteractionSourceState;
-    using default_interface = Windows::UI::Input::Spatial::ISpatialInteractionSourceState;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Spatial.SpatialInteractionSourceState"; }
 };
 
 template <> struct traits<Windows::UI::Input::Spatial::SpatialManipulationCanceledEventArgs>
 {
     using abi = ABI::Windows::UI::Input::Spatial::SpatialManipulationCanceledEventArgs;
-    using default_interface = Windows::UI::Input::Spatial::ISpatialManipulationCanceledEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Spatial.SpatialManipulationCanceledEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Input::Spatial::SpatialManipulationCompletedEventArgs>
 {
     using abi = ABI::Windows::UI::Input::Spatial::SpatialManipulationCompletedEventArgs;
-    using default_interface = Windows::UI::Input::Spatial::ISpatialManipulationCompletedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Spatial.SpatialManipulationCompletedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Input::Spatial::SpatialManipulationDelta>
 {
     using abi = ABI::Windows::UI::Input::Spatial::SpatialManipulationDelta;
-    using default_interface = Windows::UI::Input::Spatial::ISpatialManipulationDelta;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Spatial.SpatialManipulationDelta"; }
 };
 
 template <> struct traits<Windows::UI::Input::Spatial::SpatialManipulationStartedEventArgs>
 {
     using abi = ABI::Windows::UI::Input::Spatial::SpatialManipulationStartedEventArgs;
-    using default_interface = Windows::UI::Input::Spatial::ISpatialManipulationStartedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Spatial.SpatialManipulationStartedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Input::Spatial::SpatialManipulationUpdatedEventArgs>
 {
     using abi = ABI::Windows::UI::Input::Spatial::SpatialManipulationUpdatedEventArgs;
-    using default_interface = Windows::UI::Input::Spatial::ISpatialManipulationUpdatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Spatial.SpatialManipulationUpdatedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Input::Spatial::SpatialNavigationCanceledEventArgs>
 {
     using abi = ABI::Windows::UI::Input::Spatial::SpatialNavigationCanceledEventArgs;
-    using default_interface = Windows::UI::Input::Spatial::ISpatialNavigationCanceledEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Spatial.SpatialNavigationCanceledEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Input::Spatial::SpatialNavigationCompletedEventArgs>
 {
     using abi = ABI::Windows::UI::Input::Spatial::SpatialNavigationCompletedEventArgs;
-    using default_interface = Windows::UI::Input::Spatial::ISpatialNavigationCompletedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Spatial.SpatialNavigationCompletedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Input::Spatial::SpatialNavigationStartedEventArgs>
 {
     using abi = ABI::Windows::UI::Input::Spatial::SpatialNavigationStartedEventArgs;
-    using default_interface = Windows::UI::Input::Spatial::ISpatialNavigationStartedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Spatial.SpatialNavigationStartedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Input::Spatial::SpatialNavigationUpdatedEventArgs>
 {
     using abi = ABI::Windows::UI::Input::Spatial::SpatialNavigationUpdatedEventArgs;
-    using default_interface = Windows::UI::Input::Spatial::ISpatialNavigationUpdatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Spatial.SpatialNavigationUpdatedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Input::Spatial::SpatialPointerPose>
 {
     using abi = ABI::Windows::UI::Input::Spatial::SpatialPointerPose;
-    using default_interface = Windows::UI::Input::Spatial::ISpatialPointerPose;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Spatial.SpatialPointerPose"; }
 };
 
 template <> struct traits<Windows::UI::Input::Spatial::SpatialRecognitionEndedEventArgs>
 {
     using abi = ABI::Windows::UI::Input::Spatial::SpatialRecognitionEndedEventArgs;
-    using default_interface = Windows::UI::Input::Spatial::ISpatialRecognitionEndedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Spatial.SpatialRecognitionEndedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Input::Spatial::SpatialRecognitionStartedEventArgs>
 {
     using abi = ABI::Windows::UI::Input::Spatial::SpatialRecognitionStartedEventArgs;
-    using default_interface = Windows::UI::Input::Spatial::ISpatialRecognitionStartedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Spatial.SpatialRecognitionStartedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Input::Spatial::SpatialTappedEventArgs>
 {
     using abi = ABI::Windows::UI::Input::Spatial::SpatialTappedEventArgs;
-    using default_interface = Windows::UI::Input::Spatial::ISpatialTappedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Input.Spatial.SpatialTappedEventArgs"; }
 };
 

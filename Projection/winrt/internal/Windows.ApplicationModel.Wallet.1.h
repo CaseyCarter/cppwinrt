@@ -186,19 +186,19 @@ template <> struct traits<Windows::ApplicationModel::Wallet::WalletVerb> { using
 
 namespace Windows::ApplicationModel::Wallet {
 
-template <typename T> class impl_IWalletBarcode;
-template <typename T> class impl_IWalletBarcodeFactory;
-template <typename T> class impl_IWalletItem;
-template <typename T> class impl_IWalletItemCustomProperty;
-template <typename T> class impl_IWalletItemCustomPropertyFactory;
-template <typename T> class impl_IWalletItemFactory;
-template <typename T> class impl_IWalletItemStore;
-template <typename T> class impl_IWalletItemStore2;
-template <typename T> class impl_IWalletManagerStatics;
-template <typename T> class impl_IWalletRelevantLocation;
-template <typename T> class impl_IWalletTransaction;
-template <typename T> class impl_IWalletVerb;
-template <typename T> class impl_IWalletVerbFactory;
+template <typename T> struct impl_IWalletBarcode;
+template <typename T> struct impl_IWalletBarcodeFactory;
+template <typename T> struct impl_IWalletItem;
+template <typename T> struct impl_IWalletItemCustomProperty;
+template <typename T> struct impl_IWalletItemCustomPropertyFactory;
+template <typename T> struct impl_IWalletItemFactory;
+template <typename T> struct impl_IWalletItemStore;
+template <typename T> struct impl_IWalletItemStore2;
+template <typename T> struct impl_IWalletManagerStatics;
+template <typename T> struct impl_IWalletRelevantLocation;
+template <typename T> struct impl_IWalletTransaction;
+template <typename T> struct impl_IWalletVerb;
+template <typename T> struct impl_IWalletVerbFactory;
 
 }
 
@@ -285,28 +285,24 @@ template <> struct traits<Windows::ApplicationModel::Wallet::IWalletVerbFactory>
 template <> struct traits<Windows::ApplicationModel::Wallet::WalletBarcode>
 {
     using abi = ABI::Windows::ApplicationModel::Wallet::WalletBarcode;
-    using default_interface = Windows::ApplicationModel::Wallet::IWalletBarcode;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Wallet.WalletBarcode"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Wallet::WalletItem>
 {
     using abi = ABI::Windows::ApplicationModel::Wallet::WalletItem;
-    using default_interface = Windows::ApplicationModel::Wallet::IWalletItem;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Wallet.WalletItem"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Wallet::WalletItemCustomProperty>
 {
     using abi = ABI::Windows::ApplicationModel::Wallet::WalletItemCustomProperty;
-    using default_interface = Windows::ApplicationModel::Wallet::IWalletItemCustomProperty;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Wallet.WalletItemCustomProperty"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Wallet::WalletItemStore>
 {
     using abi = ABI::Windows::ApplicationModel::Wallet::WalletItemStore;
-    using default_interface = Windows::ApplicationModel::Wallet::IWalletItemStore;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Wallet.WalletItemStore"; }
 };
 
@@ -318,21 +314,18 @@ template <> struct traits<Windows::ApplicationModel::Wallet::WalletManager>
 template <> struct traits<Windows::ApplicationModel::Wallet::WalletRelevantLocation>
 {
     using abi = ABI::Windows::ApplicationModel::Wallet::WalletRelevantLocation;
-    using default_interface = Windows::ApplicationModel::Wallet::IWalletRelevantLocation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Wallet.WalletRelevantLocation"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Wallet::WalletTransaction>
 {
     using abi = ABI::Windows::ApplicationModel::Wallet::WalletTransaction;
-    using default_interface = Windows::ApplicationModel::Wallet::IWalletTransaction;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Wallet.WalletTransaction"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Wallet::WalletVerb>
 {
     using abi = ABI::Windows::ApplicationModel::Wallet::WalletVerb;
-    using default_interface = Windows::ApplicationModel::Wallet::IWalletVerb;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Wallet.WalletVerb"; }
 };
 

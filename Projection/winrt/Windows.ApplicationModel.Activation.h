@@ -1031,14 +1031,14 @@ namespace Windows::ApplicationModel::Activation {
 template <typename D> Windows::Foundation::Rect impl_ISplashScreen<D>::ImageLocation() const
 {
     Windows::Foundation::Rect value {};
-    check_hresult(shim()->get_ImageLocation(put(value)));
+    check_hresult(static_cast<const ISplashScreen &>(static_cast<const D &>(*this))->get_ImageLocation(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_ISplashScreen<D>::Dismissed(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Activation::SplashScreen, Windows::IInspectable> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_Dismissed(get(handler), &cookie));
+    check_hresult(static_cast<const ISplashScreen &>(static_cast<const D &>(*this))->add_Dismissed(get(handler), &cookie));
     return cookie;
 }
 
@@ -1049,398 +1049,398 @@ template <typename D> event_revoker<ISplashScreen> impl_ISplashScreen<D>::Dismis
 
 template <typename D> void impl_ISplashScreen<D>::Dismissed(event_token cookie) const
 {
-    check_hresult(shim()->remove_Dismissed(cookie));
+    check_hresult(static_cast<const ISplashScreen &>(static_cast<const D &>(*this))->remove_Dismissed(cookie));
 }
 
 template <typename D> Windows::ApplicationModel::Activation::ActivationKind impl_IActivatedEventArgs<D>::Kind() const
 {
     Windows::ApplicationModel::Activation::ActivationKind value {};
-    check_hresult(shim()->get_Kind(&value));
+    check_hresult(static_cast<const IActivatedEventArgs &>(static_cast<const D &>(*this))->get_Kind(&value));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Activation::ApplicationExecutionState impl_IActivatedEventArgs<D>::PreviousExecutionState() const
 {
     Windows::ApplicationModel::Activation::ApplicationExecutionState value {};
-    check_hresult(shim()->get_PreviousExecutionState(&value));
+    check_hresult(static_cast<const IActivatedEventArgs &>(static_cast<const D &>(*this))->get_PreviousExecutionState(&value));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Activation::SplashScreen impl_IActivatedEventArgs<D>::SplashScreen() const
 {
     Windows::ApplicationModel::Activation::SplashScreen value { nullptr };
-    check_hresult(shim()->get_SplashScreen(put(value)));
+    check_hresult(static_cast<const IActivatedEventArgs &>(static_cast<const D &>(*this))->get_SplashScreen(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAppointmentsProviderActivatedEventArgs<D>::Verb() const
 {
     hstring value;
-    check_hresult(shim()->get_Verb(put(value)));
+    check_hresult(static_cast<const IAppointmentsProviderActivatedEventArgs &>(static_cast<const D &>(*this))->get_Verb(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Appointments::AppointmentsProvider::AddAppointmentOperation impl_IAppointmentsProviderAddAppointmentActivatedEventArgs<D>::AddAppointmentOperation() const
 {
     Windows::ApplicationModel::Appointments::AppointmentsProvider::AddAppointmentOperation value { nullptr };
-    check_hresult(shim()->get_AddAppointmentOperation(put(value)));
+    check_hresult(static_cast<const IAppointmentsProviderAddAppointmentActivatedEventArgs &>(static_cast<const D &>(*this))->get_AddAppointmentOperation(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Appointments::AppointmentsProvider::ReplaceAppointmentOperation impl_IAppointmentsProviderReplaceAppointmentActivatedEventArgs<D>::ReplaceAppointmentOperation() const
 {
     Windows::ApplicationModel::Appointments::AppointmentsProvider::ReplaceAppointmentOperation value { nullptr };
-    check_hresult(shim()->get_ReplaceAppointmentOperation(put(value)));
+    check_hresult(static_cast<const IAppointmentsProviderReplaceAppointmentActivatedEventArgs &>(static_cast<const D &>(*this))->get_ReplaceAppointmentOperation(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Appointments::AppointmentsProvider::RemoveAppointmentOperation impl_IAppointmentsProviderRemoveAppointmentActivatedEventArgs<D>::RemoveAppointmentOperation() const
 {
     Windows::ApplicationModel::Appointments::AppointmentsProvider::RemoveAppointmentOperation value { nullptr };
-    check_hresult(shim()->get_RemoveAppointmentOperation(put(value)));
+    check_hresult(static_cast<const IAppointmentsProviderRemoveAppointmentActivatedEventArgs &>(static_cast<const D &>(*this))->get_RemoveAppointmentOperation(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateTime> impl_IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs<D>::InstanceStartDate() const
 {
     Windows::Foundation::IReference<Windows::Foundation::DateTime> value;
-    check_hresult(shim()->get_InstanceStartDate(put(value)));
+    check_hresult(static_cast<const IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs &>(static_cast<const D &>(*this))->get_InstanceStartDate(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs<D>::LocalId() const
 {
     hstring value;
-    check_hresult(shim()->get_LocalId(put(value)));
+    check_hresult(static_cast<const IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs &>(static_cast<const D &>(*this))->get_LocalId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs<D>::RoamingId() const
 {
     hstring value;
-    check_hresult(shim()->get_RoamingId(put(value)));
+    check_hresult(static_cast<const IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs &>(static_cast<const D &>(*this))->get_RoamingId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IAppointmentsProviderShowTimeFrameActivatedEventArgs<D>::TimeToShow() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->get_TimeToShow(put(value)));
+    check_hresult(static_cast<const IAppointmentsProviderShowTimeFrameActivatedEventArgs &>(static_cast<const D &>(*this))->get_TimeToShow(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IAppointmentsProviderShowTimeFrameActivatedEventArgs<D>::Duration() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_Duration(put(value)));
+    check_hresult(static_cast<const IAppointmentsProviderShowTimeFrameActivatedEventArgs &>(static_cast<const D &>(*this))->get_Duration(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::UserDataAccounts::Provider::IUserDataAccountProviderOperation impl_IUserDataAccountProviderActivatedEventArgs<D>::Operation() const
 {
     Windows::ApplicationModel::UserDataAccounts::Provider::IUserDataAccountProviderOperation value;
-    check_hresult(shim()->get_Operation(put(value)));
+    check_hresult(static_cast<const IUserDataAccountProviderActivatedEventArgs &>(static_cast<const D &>(*this))->get_Operation(put(value)));
     return value;
 }
 
 template <typename D> Windows::System::User impl_IActivatedEventArgsWithUser<D>::User() const
 {
     Windows::System::User value { nullptr };
-    check_hresult(shim()->get_User(put(value)));
+    check_hresult(static_cast<const IActivatedEventArgsWithUser &>(static_cast<const D &>(*this))->get_User(put(value)));
     return value;
 }
 
 template <typename D> int32_t impl_IApplicationViewActivatedEventArgs<D>::CurrentlyShownApplicationViewId() const
 {
     int32_t value {};
-    check_hresult(shim()->get_CurrentlyShownApplicationViewId(&value));
+    check_hresult(static_cast<const IApplicationViewActivatedEventArgs &>(static_cast<const D &>(*this))->get_CurrentlyShownApplicationViewId(&value));
     return value;
 }
 
 template <typename D> Windows::UI::ViewManagement::ActivationViewSwitcher impl_IViewSwitcherProvider<D>::ViewSwitcher() const
 {
     Windows::UI::ViewManagement::ActivationViewSwitcher value { nullptr };
-    check_hresult(shim()->get_ViewSwitcher(put(value)));
+    check_hresult(static_cast<const IViewSwitcherProvider &>(static_cast<const D &>(*this))->get_ViewSwitcher(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IPrelaunchActivatedEventArgs<D>::PrelaunchActivated() const
 {
     bool value {};
-    check_hresult(shim()->get_PrelaunchActivated(&value));
+    check_hresult(static_cast<const IPrelaunchActivatedEventArgs &>(static_cast<const D &>(*this))->get_PrelaunchActivated(&value));
     return value;
 }
 
 template <typename D> hstring impl_ILaunchActivatedEventArgs<D>::Arguments() const
 {
     hstring value;
-    check_hresult(shim()->get_Arguments(put(value)));
+    check_hresult(static_cast<const ILaunchActivatedEventArgs &>(static_cast<const D &>(*this))->get_Arguments(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ILaunchActivatedEventArgs<D>::TileId() const
 {
     hstring value;
-    check_hresult(shim()->get_TileId(put(value)));
+    check_hresult(static_cast<const ILaunchActivatedEventArgs &>(static_cast<const D &>(*this))->get_TileId(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Activation::TileActivatedInfo impl_ILaunchActivatedEventArgs2<D>::TileActivatedInfo() const
 {
     Windows::ApplicationModel::Activation::TileActivatedInfo value { nullptr };
-    check_hresult(shim()->get_TileActivatedInfo(put(value)));
+    check_hresult(static_cast<const ILaunchActivatedEventArgs2 &>(static_cast<const D &>(*this))->get_TileActivatedInfo(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISearchActivatedEventArgs<D>::QueryText() const
 {
     hstring value;
-    check_hresult(shim()->get_QueryText(put(value)));
+    check_hresult(static_cast<const ISearchActivatedEventArgs &>(static_cast<const D &>(*this))->get_QueryText(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISearchActivatedEventArgs<D>::Language() const
 {
     hstring value;
-    check_hresult(shim()->get_Language(put(value)));
+    check_hresult(static_cast<const ISearchActivatedEventArgs &>(static_cast<const D &>(*this))->get_Language(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Search::SearchPaneQueryLinguisticDetails impl_ISearchActivatedEventArgsWithLinguisticDetails<D>::LinguisticDetails() const
 {
     Windows::ApplicationModel::Search::SearchPaneQueryLinguisticDetails value { nullptr };
-    check_hresult(shim()->get_LinguisticDetails(put(value)));
+    check_hresult(static_cast<const ISearchActivatedEventArgsWithLinguisticDetails &>(static_cast<const D &>(*this))->get_LinguisticDetails(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::DataTransfer::ShareTarget::ShareOperation impl_IShareTargetActivatedEventArgs<D>::ShareOperation() const
 {
     Windows::ApplicationModel::DataTransfer::ShareTarget::ShareOperation value { nullptr };
-    check_hresult(shim()->get_ShareOperation(put(value)));
+    check_hresult(static_cast<const IShareTargetActivatedEventArgs &>(static_cast<const D &>(*this))->get_ShareOperation(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Storage::IStorageItem> impl_IFileActivatedEventArgs<D>::Files() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Storage::IStorageItem> value;
-    check_hresult(shim()->get_Files(put(value)));
+    check_hresult(static_cast<const IFileActivatedEventArgs &>(static_cast<const D &>(*this))->get_Files(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IFileActivatedEventArgs<D>::Verb() const
 {
     hstring value;
-    check_hresult(shim()->get_Verb(put(value)));
+    check_hresult(static_cast<const IFileActivatedEventArgs &>(static_cast<const D &>(*this))->get_Verb(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Search::StorageFileQueryResult impl_IFileActivatedEventArgsWithNeighboringFiles<D>::NeighboringFilesQuery() const
 {
     Windows::Storage::Search::StorageFileQueryResult value { nullptr };
-    check_hresult(shim()->get_NeighboringFilesQuery(put(value)));
+    check_hresult(static_cast<const IFileActivatedEventArgsWithNeighboringFiles &>(static_cast<const D &>(*this))->get_NeighboringFilesQuery(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IFileActivatedEventArgsWithCallerPackageFamilyName<D>::CallerPackageFamilyName() const
 {
     hstring value;
-    check_hresult(shim()->get_CallerPackageFamilyName(put(value)));
+    check_hresult(static_cast<const IFileActivatedEventArgsWithCallerPackageFamilyName &>(static_cast<const D &>(*this))->get_CallerPackageFamilyName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Uri impl_IProtocolActivatedEventArgs<D>::Uri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(shim()->get_Uri(put(value)));
+    check_hresult(static_cast<const IProtocolActivatedEventArgs &>(static_cast<const D &>(*this))->get_Uri(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData<D>::CallerPackageFamilyName() const
 {
     hstring value;
-    check_hresult(shim()->get_CallerPackageFamilyName(put(value)));
+    check_hresult(static_cast<const IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData &>(static_cast<const D &>(*this))->get_CallerPackageFamilyName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::ValueSet impl_IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData<D>::Data() const
 {
     Windows::Foundation::Collections::ValueSet value { nullptr };
-    check_hresult(shim()->get_Data(put(value)));
+    check_hresult(static_cast<const IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData &>(static_cast<const D &>(*this))->get_Data(put(value)));
     return value;
 }
 
 template <typename D> Windows::System::ProtocolForResultsOperation impl_IProtocolForResultsActivatedEventArgs<D>::ProtocolForResultsOperation() const
 {
     Windows::System::ProtocolForResultsOperation value { nullptr };
-    check_hresult(shim()->get_ProtocolForResultsOperation(put(value)));
+    check_hresult(static_cast<const IProtocolForResultsActivatedEventArgs &>(static_cast<const D &>(*this))->get_ProtocolForResultsOperation(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Pickers::Provider::FileOpenPickerUI impl_IFileOpenPickerActivatedEventArgs<D>::FileOpenPickerUI() const
 {
     Windows::Storage::Pickers::Provider::FileOpenPickerUI value { nullptr };
-    check_hresult(shim()->get_FileOpenPickerUI(put(value)));
+    check_hresult(static_cast<const IFileOpenPickerActivatedEventArgs &>(static_cast<const D &>(*this))->get_FileOpenPickerUI(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IFileOpenPickerActivatedEventArgs2<D>::CallerPackageFamilyName() const
 {
     hstring value;
-    check_hresult(shim()->get_CallerPackageFamilyName(put(value)));
+    check_hresult(static_cast<const IFileOpenPickerActivatedEventArgs2 &>(static_cast<const D &>(*this))->get_CallerPackageFamilyName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Pickers::Provider::FileSavePickerUI impl_IFileSavePickerActivatedEventArgs<D>::FileSavePickerUI() const
 {
     Windows::Storage::Pickers::Provider::FileSavePickerUI value { nullptr };
-    check_hresult(shim()->get_FileSavePickerUI(put(value)));
+    check_hresult(static_cast<const IFileSavePickerActivatedEventArgs &>(static_cast<const D &>(*this))->get_FileSavePickerUI(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IFileSavePickerActivatedEventArgs2<D>::CallerPackageFamilyName() const
 {
     hstring value;
-    check_hresult(shim()->get_CallerPackageFamilyName(put(value)));
+    check_hresult(static_cast<const IFileSavePickerActivatedEventArgs2 &>(static_cast<const D &>(*this))->get_CallerPackageFamilyName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IFileSavePickerActivatedEventArgs2<D>::EnterpriseId() const
 {
     hstring value;
-    check_hresult(shim()->get_EnterpriseId(put(value)));
+    check_hresult(static_cast<const IFileSavePickerActivatedEventArgs2 &>(static_cast<const D &>(*this))->get_EnterpriseId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Provider::CachedFileUpdaterUI impl_ICachedFileUpdaterActivatedEventArgs<D>::CachedFileUpdaterUI() const
 {
     Windows::Storage::Provider::CachedFileUpdaterUI value { nullptr };
-    check_hresult(shim()->get_CachedFileUpdaterUI(put(value)));
+    check_hresult(static_cast<const ICachedFileUpdaterActivatedEventArgs &>(static_cast<const D &>(*this))->get_CachedFileUpdaterUI(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IDeviceActivatedEventArgs<D>::DeviceInformationId() const
 {
     hstring value;
-    check_hresult(shim()->get_DeviceInformationId(put(value)));
+    check_hresult(static_cast<const IDeviceActivatedEventArgs &>(static_cast<const D &>(*this))->get_DeviceInformationId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IDeviceActivatedEventArgs<D>::Verb() const
 {
     hstring value;
-    check_hresult(shim()->get_Verb(put(value)));
+    check_hresult(static_cast<const IDeviceActivatedEventArgs &>(static_cast<const D &>(*this))->get_Verb(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPickerReturnedActivatedEventArgs<D>::PickerOperationId() const
 {
     hstring value;
-    check_hresult(shim()->get_PickerOperationId(put(value)));
+    check_hresult(static_cast<const IPickerReturnedActivatedEventArgs &>(static_cast<const D &>(*this))->get_PickerOperationId(put(value)));
     return value;
 }
 
 template <typename D> Windows::IInspectable impl_IRestrictedLaunchActivatedEventArgs<D>::SharedContext() const
 {
     Windows::IInspectable value;
-    check_hresult(shim()->get_SharedContext(put(value)));
+    check_hresult(static_cast<const IRestrictedLaunchActivatedEventArgs &>(static_cast<const D &>(*this))->get_SharedContext(put(value)));
     return value;
 }
 
 template <typename D> Windows::IInspectable impl_ILockScreenActivatedEventArgs<D>::Info() const
 {
     Windows::IInspectable value;
-    check_hresult(shim()->get_Info(put(value)));
+    check_hresult(static_cast<const ILockScreenActivatedEventArgs &>(static_cast<const D &>(*this))->get_Info(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::ValueSet impl_IContinuationActivatedEventArgs<D>::ContinuationData() const
 {
     Windows::Foundation::Collections::ValueSet value { nullptr };
-    check_hresult(shim()->get_ContinuationData(put(value)));
+    check_hresult(static_cast<const IContinuationActivatedEventArgs &>(static_cast<const D &>(*this))->get_ContinuationData(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Storage::StorageFile> impl_IFileOpenPickerContinuationEventArgs<D>::Files() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Storage::StorageFile> value;
-    check_hresult(shim()->get_Files(put(value)));
+    check_hresult(static_cast<const IFileOpenPickerContinuationEventArgs &>(static_cast<const D &>(*this))->get_Files(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::StorageFile impl_IFileSavePickerContinuationEventArgs<D>::File() const
 {
     Windows::Storage::StorageFile value { nullptr };
-    check_hresult(shim()->get_File(put(value)));
+    check_hresult(static_cast<const IFileSavePickerContinuationEventArgs &>(static_cast<const D &>(*this))->get_File(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::StorageFolder impl_IFolderPickerContinuationEventArgs<D>::Folder() const
 {
     Windows::Storage::StorageFolder value { nullptr };
-    check_hresult(shim()->get_Folder(put(value)));
+    check_hresult(static_cast<const IFolderPickerContinuationEventArgs &>(static_cast<const D &>(*this))->get_Folder(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Authentication::Web::WebAuthenticationResult impl_IWebAuthenticationBrokerContinuationEventArgs<D>::WebAuthenticationResult() const
 {
     Windows::Security::Authentication::Web::WebAuthenticationResult result { nullptr };
-    check_hresult(shim()->get_WebAuthenticationResult(put(result)));
+    check_hresult(static_cast<const IWebAuthenticationBrokerContinuationEventArgs &>(static_cast<const D &>(*this))->get_WebAuthenticationResult(put(result)));
     return result;
 }
 
 template <typename D> Windows::Security::Authentication::Web::Provider::IWebAccountProviderOperation impl_IWebAccountProviderActivatedEventArgs<D>::Operation() const
 {
     Windows::Security::Authentication::Web::Provider::IWebAccountProviderOperation value;
-    check_hresult(shim()->get_Operation(put(value)));
+    check_hresult(static_cast<const IWebAccountProviderActivatedEventArgs &>(static_cast<const D &>(*this))->get_Operation(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IToastNotificationActivatedEventArgs<D>::Argument() const
 {
     hstring argument;
-    check_hresult(shim()->get_Argument(put(argument)));
+    check_hresult(static_cast<const IToastNotificationActivatedEventArgs &>(static_cast<const D &>(*this))->get_Argument(put(argument)));
     return argument;
 }
 
 template <typename D> Windows::Foundation::Collections::ValueSet impl_IToastNotificationActivatedEventArgs<D>::UserInput() const
 {
     Windows::Foundation::Collections::ValueSet value { nullptr };
-    check_hresult(shim()->get_UserInput(put(value)));
+    check_hresult(static_cast<const IToastNotificationActivatedEventArgs &>(static_cast<const D &>(*this))->get_UserInput(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IDialReceiverActivatedEventArgs<D>::AppName() const
 {
     hstring value;
-    check_hresult(shim()->get_AppName(put(value)));
+    check_hresult(static_cast<const IDialReceiverActivatedEventArgs &>(static_cast<const D &>(*this))->get_AppName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::ShownTileNotification> impl_ITileActivatedInfo<D>::RecentlyShownNotifications() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::ShownTileNotification> value;
-    check_hresult(shim()->get_RecentlyShownNotifications(put(value)));
+    check_hresult(static_cast<const ITileActivatedInfo &>(static_cast<const D &>(*this))->get_RecentlyShownNotifications(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Background::IBackgroundTaskInstance impl_IBackgroundActivatedEventArgs<D>::TaskInstance() const
 {
     Windows::ApplicationModel::Background::IBackgroundTaskInstance value;
-    check_hresult(shim()->get_TaskInstance(put(value)));
+    check_hresult(static_cast<const IBackgroundActivatedEventArgs &>(static_cast<const D &>(*this))->get_TaskInstance(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Enumeration::DeviceInformation impl_IDevicePairingActivatedEventArgs<D>::DeviceInformation() const
 {
     Windows::Devices::Enumeration::DeviceInformation value { nullptr };
-    check_hresult(shim()->get_DeviceInformation(put(value)));
+    check_hresult(static_cast<const IDevicePairingActivatedEventArgs &>(static_cast<const D &>(*this))->get_DeviceInformation(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::SpeechRecognition::SpeechRecognitionResult impl_IVoiceCommandActivatedEventArgs<D>::Result() const
 {
     Windows::Media::SpeechRecognition::SpeechRecognitionResult value { nullptr };
-    check_hresult(shim()->get_Result(put(value)));
+    check_hresult(static_cast<const IVoiceCommandActivatedEventArgs &>(static_cast<const D &>(*this))->get_Result(put(value)));
     return value;
 }
 

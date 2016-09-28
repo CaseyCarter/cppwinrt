@@ -108,12 +108,8 @@ template <> struct __declspec(uuid("020713ec-604a-5e45-b03f-1b9e65253804")) __de
 namespace Windows::Storage::BulkAccess {
 
 template <typename D>
-class WINRT_EBO impl_IFileInformationFactory
+struct WINRT_EBO impl_IFileInformationFactory
 {
-    auto shim() const { return impl::shim<D, IFileInformationFactory>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::BulkAccess::IStorageItemInformation>> GetItemsAsync(uint32_t startIndex, uint32_t maxItemsToRetrieve) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::BulkAccess::IStorageItemInformation>> GetItemsAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::BulkAccess::FileInformation>> GetFilesAsync(uint32_t startIndex, uint32_t maxItemsToRetrieve) const;
@@ -126,12 +122,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IFileInformationFactoryFactory
+struct WINRT_EBO impl_IFileInformationFactoryFactory
 {
-    auto shim() const { return impl::shim<D, IFileInformationFactoryFactory>(this); }
-
-public:
-
     Windows::Storage::BulkAccess::FileInformationFactory CreateWithMode(const Windows::Storage::Search::IStorageQueryResultBase & queryResult, Windows::Storage::FileProperties::ThumbnailMode mode) const;
     Windows::Storage::BulkAccess::FileInformationFactory CreateWithModeAndSize(const Windows::Storage::Search::IStorageQueryResultBase & queryResult, Windows::Storage::FileProperties::ThumbnailMode mode, uint32_t requestedThumbnailSize) const;
     Windows::Storage::BulkAccess::FileInformationFactory CreateWithModeAndSizeAndOptions(const Windows::Storage::Search::IStorageQueryResultBase & queryResult, Windows::Storage::FileProperties::ThumbnailMode mode, uint32_t requestedThumbnailSize, Windows::Storage::FileProperties::ThumbnailOptions thumbnailOptions) const;
@@ -139,12 +131,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorageItemInformation
+struct WINRT_EBO impl_IStorageItemInformation
 {
-    auto shim() const { return impl::shim<D, IStorageItemInformation>(this); }
-
-public:
-
     Windows::Storage::FileProperties::MusicProperties MusicProperties() const;
     Windows::Storage::FileProperties::VideoProperties VideoProperties() const;
     Windows::Storage::FileProperties::ImageProperties ImageProperties() const;

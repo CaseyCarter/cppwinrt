@@ -150,12 +150,8 @@ template <> struct __declspec(uuid("80fb0327-5a00-55cc-85db-a852719981b9")) __de
 namespace Windows::ApplicationModel::Background {
 
 template <typename D>
-class WINRT_EBO impl_IActivitySensorTrigger
+struct WINRT_EBO impl_IActivitySensorTrigger
 {
-    auto shim() const { return impl::shim<D, IActivitySensorTrigger>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<winrt::Windows::Devices::Sensors::ActivityType> SubscribedActivities() const;
     uint32_t ReportInterval() const;
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Devices::Sensors::ActivityType> SupportedActivities() const;
@@ -163,61 +159,37 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IActivitySensorTriggerFactory
+struct WINRT_EBO impl_IActivitySensorTriggerFactory
 {
-    auto shim() const { return impl::shim<D, IActivitySensorTriggerFactory>(this); }
-
-public:
-
     Windows::ApplicationModel::Background::ActivitySensorTrigger Create(uint32_t reportIntervalInMilliseconds) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IApplicationTrigger
+struct WINRT_EBO impl_IApplicationTrigger
 {
-    auto shim() const { return impl::shim<D, IApplicationTrigger>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::ApplicationTriggerResult> RequestAsync() const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::ApplicationTriggerResult> RequestAsync(const Windows::Foundation::Collections::ValueSet & arguments) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IApplicationTriggerDetails
+struct WINRT_EBO impl_IApplicationTriggerDetails
 {
-    auto shim() const { return impl::shim<D, IApplicationTriggerDetails>(this); }
-
-public:
-
     Windows::Foundation::Collections::ValueSet Arguments() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentStoreNotificationTrigger
+struct WINRT_EBO impl_IAppointmentStoreNotificationTrigger
 {
-    auto shim() const { return impl::shim<D, IAppointmentStoreNotificationTrigger>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundCondition
+struct WINRT_EBO impl_IBackgroundCondition
 {
-    auto shim() const { return impl::shim<D, IBackgroundCondition>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundExecutionManagerStatics
+struct WINRT_EBO impl_IBackgroundExecutionManagerStatics
 {
-    auto shim() const { return impl::shim<D, IBackgroundExecutionManagerStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::BackgroundAccessStatus> RequestAccessAsync() const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::BackgroundAccessStatus> RequestAccessAsync(hstring_ref applicationId) const;
     void RemoveAccess() const;
@@ -227,22 +199,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundTask
+struct WINRT_EBO impl_IBackgroundTask
 {
-    auto shim() const { return impl::shim<D, IBackgroundTask>(this); }
-
-public:
-
     void Run(const Windows::ApplicationModel::Background::IBackgroundTaskInstance & taskInstance) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundTaskBuilder
+struct WINRT_EBO impl_IBackgroundTaskBuilder
 {
-    auto shim() const { return impl::shim<D, IBackgroundTaskBuilder>(this); }
-
-public:
-
     void TaskEntryPoint(hstring_ref value) const;
     hstring TaskEntryPoint() const;
     void SetTrigger(const Windows::ApplicationModel::Background::IBackgroundTrigger & trigger) const;
@@ -253,55 +217,35 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundTaskBuilder2
+struct WINRT_EBO impl_IBackgroundTaskBuilder2
 {
-    auto shim() const { return impl::shim<D, IBackgroundTaskBuilder2>(this); }
-
-public:
-
     void CancelOnConditionLoss(bool value) const;
     bool CancelOnConditionLoss() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundTaskBuilder3
+struct WINRT_EBO impl_IBackgroundTaskBuilder3
 {
-    auto shim() const { return impl::shim<D, IBackgroundTaskBuilder3>(this); }
-
-public:
-
     void IsNetworkRequested(bool value) const;
     bool IsNetworkRequested() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundTaskCompletedEventArgs
+struct WINRT_EBO impl_IBackgroundTaskCompletedEventArgs
 {
-    auto shim() const { return impl::shim<D, IBackgroundTaskCompletedEventArgs>(this); }
-
-public:
-
     GUID InstanceId() const;
     void CheckResult() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundTaskDeferral
+struct WINRT_EBO impl_IBackgroundTaskDeferral
 {
-    auto shim() const { return impl::shim<D, IBackgroundTaskDeferral>(this); }
-
-public:
-
     void Complete() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundTaskInstance
+struct WINRT_EBO impl_IBackgroundTaskInstance
 {
-    auto shim() const { return impl::shim<D, IBackgroundTaskInstance>(this); }
-
-public:
-
     GUID InstanceId() const;
     Windows::ApplicationModel::Background::BackgroundTaskRegistration Task() const;
     uint32_t Progress() const;
@@ -316,43 +260,27 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundTaskInstance2
+struct WINRT_EBO impl_IBackgroundTaskInstance2
 {
-    auto shim() const { return impl::shim<D, IBackgroundTaskInstance2>(this); }
-
-public:
-
     uint32_t GetThrottleCount(Windows::ApplicationModel::Background::BackgroundTaskThrottleCounter counter) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundTaskInstance4
+struct WINRT_EBO impl_IBackgroundTaskInstance4
 {
-    auto shim() const { return impl::shim<D, IBackgroundTaskInstance4>(this); }
-
-public:
-
     Windows::System::User User() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundTaskProgressEventArgs
+struct WINRT_EBO impl_IBackgroundTaskProgressEventArgs
 {
-    auto shim() const { return impl::shim<D, IBackgroundTaskProgressEventArgs>(this); }
-
-public:
-
     GUID InstanceId() const;
     uint32_t Progress() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundTaskRegistration
+struct WINRT_EBO impl_IBackgroundTaskRegistration
 {
-    auto shim() const { return impl::shim<D, IBackgroundTaskRegistration>(this); }
-
-public:
-
     GUID TaskId() const;
     hstring Name() const;
     event_token Progress(const Windows::ApplicationModel::Background::BackgroundTaskProgressEventHandler & handler) const;
@@ -367,61 +295,37 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundTaskRegistration2
+struct WINRT_EBO impl_IBackgroundTaskRegistration2
 {
-    auto shim() const { return impl::shim<D, IBackgroundTaskRegistration2>(this); }
-
-public:
-
     Windows::ApplicationModel::Background::IBackgroundTrigger Trigger() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundTaskRegistrationStatics
+struct WINRT_EBO impl_IBackgroundTaskRegistrationStatics
 {
-    auto shim() const { return impl::shim<D, IBackgroundTaskRegistrationStatics>(this); }
-
-public:
-
     Windows::Foundation::Collections::IMapView<GUID, Windows::ApplicationModel::Background::IBackgroundTaskRegistration> AllTasks() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundTrigger
+struct WINRT_EBO impl_IBackgroundTrigger
 {
-    auto shim() const { return impl::shim<D, IBackgroundTrigger>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundWorkCostStatics
+struct WINRT_EBO impl_IBackgroundWorkCostStatics
 {
-    auto shim() const { return impl::shim<D, IBackgroundWorkCostStatics>(this); }
-
-public:
-
     Windows::ApplicationModel::Background::BackgroundWorkCostValue CurrentBackgroundWorkCost() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBluetoothLEAdvertisementPublisherTrigger
+struct WINRT_EBO impl_IBluetoothLEAdvertisementPublisherTrigger
 {
-    auto shim() const { return impl::shim<D, IBluetoothLEAdvertisementPublisherTrigger>(this); }
-
-public:
-
     Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisement Advertisement() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBluetoothLEAdvertisementWatcherTrigger
+struct WINRT_EBO impl_IBluetoothLEAdvertisementWatcherTrigger
 {
-    auto shim() const { return impl::shim<D, IBluetoothLEAdvertisementWatcherTrigger>(this); }
-
-public:
-
     Windows::Foundation::TimeSpan MinSamplingInterval() const;
     Windows::Foundation::TimeSpan MaxSamplingInterval() const;
     Windows::Foundation::TimeSpan MinOutOfRangeTimeout() const;
@@ -433,80 +337,48 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICachedFileUpdaterTrigger
+struct WINRT_EBO impl_ICachedFileUpdaterTrigger
 {
-    auto shim() const { return impl::shim<D, ICachedFileUpdaterTrigger>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ICachedFileUpdaterTriggerDetails
+struct WINRT_EBO impl_ICachedFileUpdaterTriggerDetails
 {
-    auto shim() const { return impl::shim<D, ICachedFileUpdaterTriggerDetails>(this); }
-
-public:
-
     Windows::Storage::Provider::CachedFileTarget UpdateTarget() const;
     Windows::Storage::Provider::FileUpdateRequest UpdateRequest() const;
     bool CanRequestUserInput() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IChatMessageNotificationTrigger
+struct WINRT_EBO impl_IChatMessageNotificationTrigger
 {
-    auto shim() const { return impl::shim<D, IChatMessageNotificationTrigger>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IChatMessageReceivedNotificationTrigger
+struct WINRT_EBO impl_IChatMessageReceivedNotificationTrigger
 {
-    auto shim() const { return impl::shim<D, IChatMessageReceivedNotificationTrigger>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactStoreNotificationTrigger
+struct WINRT_EBO impl_IContactStoreNotificationTrigger
 {
-    auto shim() const { return impl::shim<D, IContactStoreNotificationTrigger>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IContentPrefetchTrigger
+struct WINRT_EBO impl_IContentPrefetchTrigger
 {
-    auto shim() const { return impl::shim<D, IContentPrefetchTrigger>(this); }
-
-public:
-
     Windows::Foundation::TimeSpan WaitInterval() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IContentPrefetchTriggerFactory
+struct WINRT_EBO impl_IContentPrefetchTriggerFactory
 {
-    auto shim() const { return impl::shim<D, IContentPrefetchTriggerFactory>(this); }
-
-public:
-
     Windows::ApplicationModel::Background::ContentPrefetchTrigger Create(const Windows::Foundation::TimeSpan & waitInterval) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDeviceConnectionChangeTrigger
+struct WINRT_EBO impl_IDeviceConnectionChangeTrigger
 {
-    auto shim() const { return impl::shim<D, IDeviceConnectionChangeTrigger>(this); }
-
-public:
-
     hstring DeviceId() const;
     bool CanMaintainConnection() const;
     bool MaintainConnection() const;
@@ -514,203 +386,123 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDeviceConnectionChangeTriggerStatics
+struct WINRT_EBO impl_IDeviceConnectionChangeTriggerStatics
 {
-    auto shim() const { return impl::shim<D, IDeviceConnectionChangeTriggerStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::DeviceConnectionChangeTrigger> FromIdAsync(hstring_ref deviceId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDeviceManufacturerNotificationTrigger
+struct WINRT_EBO impl_IDeviceManufacturerNotificationTrigger
 {
-    auto shim() const { return impl::shim<D, IDeviceManufacturerNotificationTrigger>(this); }
-
-public:
-
     hstring TriggerQualifier() const;
     bool OneShot() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDeviceManufacturerNotificationTriggerFactory
+struct WINRT_EBO impl_IDeviceManufacturerNotificationTriggerFactory
 {
-    auto shim() const { return impl::shim<D, IDeviceManufacturerNotificationTriggerFactory>(this); }
-
-public:
-
     Windows::ApplicationModel::Background::DeviceManufacturerNotificationTrigger Create(hstring_ref triggerQualifier, bool oneShot) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDeviceServicingTrigger
+struct WINRT_EBO impl_IDeviceServicingTrigger
 {
-    auto shim() const { return impl::shim<D, IDeviceServicingTrigger>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> RequestAsync(hstring_ref deviceId, const Windows::Foundation::TimeSpan & expectedDuration) const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> RequestAsync(hstring_ref deviceId, const Windows::Foundation::TimeSpan & expectedDuration, hstring_ref arguments) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDeviceUseTrigger
+struct WINRT_EBO impl_IDeviceUseTrigger
 {
-    auto shim() const { return impl::shim<D, IDeviceUseTrigger>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> RequestAsync(hstring_ref deviceId) const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> RequestAsync(hstring_ref deviceId, hstring_ref arguments) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDeviceWatcherTrigger
+struct WINRT_EBO impl_IDeviceWatcherTrigger
 {
-    auto shim() const { return impl::shim<D, IDeviceWatcherTrigger>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailStoreNotificationTrigger
+struct WINRT_EBO impl_IEmailStoreNotificationTrigger
 {
-    auto shim() const { return impl::shim<D, IEmailStoreNotificationTrigger>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IGattCharacteristicNotificationTrigger
+struct WINRT_EBO impl_IGattCharacteristicNotificationTrigger
 {
-    auto shim() const { return impl::shim<D, IGattCharacteristicNotificationTrigger>(this); }
-
-public:
-
     Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic Characteristic() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGattCharacteristicNotificationTriggerFactory
+struct WINRT_EBO impl_IGattCharacteristicNotificationTriggerFactory
 {
-    auto shim() const { return impl::shim<D, IGattCharacteristicNotificationTriggerFactory>(this); }
-
-public:
-
     Windows::ApplicationModel::Background::GattCharacteristicNotificationTrigger Create(const Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic & characteristic) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILocationTrigger
+struct WINRT_EBO impl_ILocationTrigger
 {
-    auto shim() const { return impl::shim<D, ILocationTrigger>(this); }
-
-public:
-
     Windows::ApplicationModel::Background::LocationTriggerType TriggerType() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILocationTriggerFactory
+struct WINRT_EBO impl_ILocationTriggerFactory
 {
-    auto shim() const { return impl::shim<D, ILocationTriggerFactory>(this); }
-
-public:
-
     Windows::ApplicationModel::Background::LocationTrigger Create(Windows::ApplicationModel::Background::LocationTriggerType triggerType) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMaintenanceTrigger
+struct WINRT_EBO impl_IMaintenanceTrigger
 {
-    auto shim() const { return impl::shim<D, IMaintenanceTrigger>(this); }
-
-public:
-
     uint32_t FreshnessTime() const;
     bool OneShot() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMaintenanceTriggerFactory
+struct WINRT_EBO impl_IMaintenanceTriggerFactory
 {
-    auto shim() const { return impl::shim<D, IMaintenanceTriggerFactory>(this); }
-
-public:
-
     Windows::ApplicationModel::Background::MaintenanceTrigger Create(uint32_t freshnessTime, bool oneShot) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaProcessingTrigger
+struct WINRT_EBO impl_IMediaProcessingTrigger
 {
-    auto shim() const { return impl::shim<D, IMediaProcessingTrigger>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::MediaProcessingTriggerResult> RequestAsync() const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::MediaProcessingTriggerResult> RequestAsync(const Windows::Foundation::Collections::ValueSet & arguments) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_INetworkOperatorHotspotAuthenticationTrigger
+struct WINRT_EBO impl_INetworkOperatorHotspotAuthenticationTrigger
 {
-    auto shim() const { return impl::shim<D, INetworkOperatorHotspotAuthenticationTrigger>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_INetworkOperatorNotificationTrigger
+struct WINRT_EBO impl_INetworkOperatorNotificationTrigger
 {
-    auto shim() const { return impl::shim<D, INetworkOperatorNotificationTrigger>(this); }
-
-public:
-
     hstring NetworkAccountId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_INetworkOperatorNotificationTriggerFactory
+struct WINRT_EBO impl_INetworkOperatorNotificationTriggerFactory
 {
-    auto shim() const { return impl::shim<D, INetworkOperatorNotificationTriggerFactory>(this); }
-
-public:
-
     Windows::ApplicationModel::Background::NetworkOperatorNotificationTrigger Create(hstring_ref networkAccountId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPushNotificationTriggerFactory
+struct WINRT_EBO impl_IPushNotificationTriggerFactory
 {
-    auto shim() const { return impl::shim<D, IPushNotificationTriggerFactory>(this); }
-
-public:
-
     Windows::ApplicationModel::Background::PushNotificationTrigger Create(hstring_ref applicationId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRcsEndUserMessageAvailableTrigger
+struct WINRT_EBO impl_IRcsEndUserMessageAvailableTrigger
 {
-    auto shim() const { return impl::shim<D, IRcsEndUserMessageAvailableTrigger>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IRfcommConnectionTrigger
+struct WINRT_EBO impl_IRfcommConnectionTrigger
 {
-    auto shim() const { return impl::shim<D, IRfcommConnectionTrigger>(this); }
-
-public:
-
     Windows::Devices::Bluetooth::Background::RfcommInboundConnectionInformation InboundConnection() const;
     Windows::Devices::Bluetooth::Background::RfcommOutboundConnectionInformation OutboundConnection() const;
     bool AllowMultipleConnections() const;
@@ -722,162 +514,98 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISecondaryAuthenticationFactorAuthenticationTrigger
+struct WINRT_EBO impl_ISecondaryAuthenticationFactorAuthenticationTrigger
 {
-    auto shim() const { return impl::shim<D, ISecondaryAuthenticationFactorAuthenticationTrigger>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ISensorDataThresholdTrigger
+struct WINRT_EBO impl_ISensorDataThresholdTrigger
 {
-    auto shim() const { return impl::shim<D, ISensorDataThresholdTrigger>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ISensorDataThresholdTriggerFactory
+struct WINRT_EBO impl_ISensorDataThresholdTriggerFactory
 {
-    auto shim() const { return impl::shim<D, ISensorDataThresholdTriggerFactory>(this); }
-
-public:
-
     Windows::ApplicationModel::Background::SensorDataThresholdTrigger Create(const Windows::Devices::Sensors::ISensorDataThreshold & threshold) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISmsMessageReceivedTriggerFactory
+struct WINRT_EBO impl_ISmsMessageReceivedTriggerFactory
 {
-    auto shim() const { return impl::shim<D, ISmsMessageReceivedTriggerFactory>(this); }
-
-public:
-
     Windows::ApplicationModel::Background::SmsMessageReceivedTrigger Create(const Windows::Devices::Sms::SmsFilterRules & filterRules) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISocketActivityTrigger
+struct WINRT_EBO impl_ISocketActivityTrigger
 {
-    auto shim() const { return impl::shim<D, ISocketActivityTrigger>(this); }
-
-public:
-
     bool IsWakeFromLowPowerSupported() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorageLibraryContentChangedTrigger
+struct WINRT_EBO impl_IStorageLibraryContentChangedTrigger
 {
-    auto shim() const { return impl::shim<D, IStorageLibraryContentChangedTrigger>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorageLibraryContentChangedTriggerStatics
+struct WINRT_EBO impl_IStorageLibraryContentChangedTriggerStatics
 {
-    auto shim() const { return impl::shim<D, IStorageLibraryContentChangedTriggerStatics>(this); }
-
-public:
-
     Windows::ApplicationModel::Background::StorageLibraryContentChangedTrigger Create(const Windows::Storage::StorageLibrary & storageLibrary) const;
     Windows::ApplicationModel::Background::StorageLibraryContentChangedTrigger CreateFromLibraries(const Windows::Foundation::Collections::IIterable<Windows::Storage::StorageLibrary> & storageLibraries) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISystemCondition
+struct WINRT_EBO impl_ISystemCondition
 {
-    auto shim() const { return impl::shim<D, ISystemCondition>(this); }
-
-public:
-
     Windows::ApplicationModel::Background::SystemConditionType ConditionType() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISystemConditionFactory
+struct WINRT_EBO impl_ISystemConditionFactory
 {
-    auto shim() const { return impl::shim<D, ISystemConditionFactory>(this); }
-
-public:
-
     Windows::ApplicationModel::Background::SystemCondition Create(Windows::ApplicationModel::Background::SystemConditionType conditionType) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISystemTrigger
+struct WINRT_EBO impl_ISystemTrigger
 {
-    auto shim() const { return impl::shim<D, ISystemTrigger>(this); }
-
-public:
-
     bool OneShot() const;
     Windows::ApplicationModel::Background::SystemTriggerType TriggerType() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISystemTriggerFactory
+struct WINRT_EBO impl_ISystemTriggerFactory
 {
-    auto shim() const { return impl::shim<D, ISystemTriggerFactory>(this); }
-
-public:
-
     Windows::ApplicationModel::Background::SystemTrigger Create(Windows::ApplicationModel::Background::SystemTriggerType triggerType, bool oneShot) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITimeTrigger
+struct WINRT_EBO impl_ITimeTrigger
 {
-    auto shim() const { return impl::shim<D, ITimeTrigger>(this); }
-
-public:
-
     uint32_t FreshnessTime() const;
     bool OneShot() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITimeTriggerFactory
+struct WINRT_EBO impl_ITimeTriggerFactory
 {
-    auto shim() const { return impl::shim<D, ITimeTriggerFactory>(this); }
-
-public:
-
     Windows::ApplicationModel::Background::TimeTrigger Create(uint32_t freshnessTime, bool oneShot) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IToastNotificationActionTriggerFactory
+struct WINRT_EBO impl_IToastNotificationActionTriggerFactory
 {
-    auto shim() const { return impl::shim<D, IToastNotificationActionTriggerFactory>(this); }
-
-public:
-
     Windows::ApplicationModel::Background::ToastNotificationActionTrigger Create(hstring_ref applicationId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IToastNotificationHistoryChangedTriggerFactory
+struct WINRT_EBO impl_IToastNotificationHistoryChangedTriggerFactory
 {
-    auto shim() const { return impl::shim<D, IToastNotificationHistoryChangedTriggerFactory>(this); }
-
-public:
-
     Windows::ApplicationModel::Background::ToastNotificationHistoryChangedTrigger Create(hstring_ref applicationId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUserNotificationChangedTriggerFactory
+struct WINRT_EBO impl_IUserNotificationChangedTriggerFactory
 {
-    auto shim() const { return impl::shim<D, IUserNotificationChangedTriggerFactory>(this); }
-
-public:
-
     Windows::ApplicationModel::Background::UserNotificationChangedTrigger Create(Windows::UI::Notifications::NotificationKinds notificationKinds) const;
 };
 

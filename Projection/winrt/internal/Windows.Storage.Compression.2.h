@@ -27,44 +27,28 @@ template <> struct __declspec(uuid("c1d3d1a2-ae17-5a5f-b5a2-bdcc8844889a")) __de
 namespace Windows::Storage::Compression {
 
 template <typename D>
-class WINRT_EBO impl_ICompressor
+struct WINRT_EBO impl_ICompressor
 {
-    auto shim() const { return impl::shim<D, ICompressor>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<bool> FinishAsync() const;
     Windows::Storage::Streams::IOutputStream DetachStream() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompressorFactory
+struct WINRT_EBO impl_ICompressorFactory
 {
-    auto shim() const { return impl::shim<D, ICompressorFactory>(this); }
-
-public:
-
     Windows::Storage::Compression::Compressor CreateCompressor(const Windows::Storage::Streams::IOutputStream & underlyingStream) const;
     Windows::Storage::Compression::Compressor CreateCompressorEx(const Windows::Storage::Streams::IOutputStream & underlyingStream, Windows::Storage::Compression::CompressAlgorithm algorithm, uint32_t blockSize) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDecompressor
+struct WINRT_EBO impl_IDecompressor
 {
-    auto shim() const { return impl::shim<D, IDecompressor>(this); }
-
-public:
-
     Windows::Storage::Streams::IInputStream DetachStream() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDecompressorFactory
+struct WINRT_EBO impl_IDecompressorFactory
 {
-    auto shim() const { return impl::shim<D, IDecompressorFactory>(this); }
-
-public:
-
     Windows::Storage::Compression::Decompressor CreateDecompressor(const Windows::Storage::Streams::IInputStream & underlyingStream) const;
 };
 

@@ -115,42 +115,42 @@ namespace Windows::Devices::Printers {
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Printers::Print3DDevice> impl_IPrint3DDeviceStatics<D>::FromIdAsync(hstring_ref deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Printers::Print3DDevice> operation;
-    check_hresult(shim()->abi_FromIdAsync(get(deviceId), put(operation)));
+    check_hresult(static_cast<const IPrint3DDeviceStatics &>(static_cast<const D &>(*this))->abi_FromIdAsync(get(deviceId), put(operation)));
     return operation;
 }
 
 template <typename D> hstring impl_IPrint3DDeviceStatics<D>::GetDeviceSelector() const
 {
     hstring result;
-    check_hresult(shim()->abi_GetDeviceSelector(put(result)));
+    check_hresult(static_cast<const IPrint3DDeviceStatics &>(static_cast<const D &>(*this))->abi_GetDeviceSelector(put(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::Printers::PrintSchema impl_IPrint3DDevice<D>::PrintSchema() const
 {
     Windows::Devices::Printers::PrintSchema value { nullptr };
-    check_hresult(shim()->get_PrintSchema(put(value)));
+    check_hresult(static_cast<const IPrint3DDevice &>(static_cast<const D &>(*this))->get_PrintSchema(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamWithContentType> impl_IPrintSchema<D>::GetDefaultPrintTicketAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamWithContentType> operation;
-    check_hresult(shim()->abi_GetDefaultPrintTicketAsync(put(operation)));
+    check_hresult(static_cast<const IPrintSchema &>(static_cast<const D &>(*this))->abi_GetDefaultPrintTicketAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamWithContentType> impl_IPrintSchema<D>::GetCapabilitiesAsync(const Windows::Storage::Streams::IRandomAccessStreamWithContentType & constrainTicket) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamWithContentType> operation;
-    check_hresult(shim()->abi_GetCapabilitiesAsync(get(constrainTicket), put(operation)));
+    check_hresult(static_cast<const IPrintSchema &>(static_cast<const D &>(*this))->abi_GetCapabilitiesAsync(get(constrainTicket), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamWithContentType> impl_IPrintSchema<D>::MergeAndValidateWithDefaultPrintTicketAsync(const Windows::Storage::Streams::IRandomAccessStreamWithContentType & deltaTicket) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamWithContentType> operation;
-    check_hresult(shim()->abi_MergeAndValidateWithDefaultPrintTicketAsync(get(deltaTicket), put(operation)));
+    check_hresult(static_cast<const IPrintSchema &>(static_cast<const D &>(*this))->abi_MergeAndValidateWithDefaultPrintTicketAsync(get(deltaTicket), put(operation)));
     return operation;
 }
 

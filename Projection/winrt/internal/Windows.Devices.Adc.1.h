@@ -53,10 +53,10 @@ template <> struct traits<Windows::Devices::Adc::AdcController> { using default_
 
 namespace Windows::Devices::Adc {
 
-template <typename T> class impl_IAdcChannel;
-template <typename T> class impl_IAdcController;
-template <typename T> class impl_IAdcControllerStatics;
-template <typename T> class impl_IAdcControllerStatics2;
+template <typename T> struct impl_IAdcChannel;
+template <typename T> struct impl_IAdcController;
+template <typename T> struct impl_IAdcControllerStatics;
+template <typename T> struct impl_IAdcControllerStatics2;
 
 }
 
@@ -89,14 +89,12 @@ template <> struct traits<Windows::Devices::Adc::IAdcControllerStatics2>
 template <> struct traits<Windows::Devices::Adc::AdcChannel>
 {
     using abi = ABI::Windows::Devices::Adc::AdcChannel;
-    using default_interface = Windows::Devices::Adc::IAdcChannel;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Adc.AdcChannel"; }
 };
 
 template <> struct traits<Windows::Devices::Adc::AdcController>
 {
     using abi = ABI::Windows::Devices::Adc::AdcController;
-    using default_interface = Windows::Devices::Adc::IAdcController;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Adc.AdcController"; }
 };
 

@@ -15,42 +15,26 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::UI::WebUI {
 
 template <typename D>
-class WINRT_EBO impl_IActivatedDeferral
+struct WINRT_EBO impl_IActivatedDeferral
 {
-    auto shim() const { return impl::shim<D, IActivatedDeferral>(this); }
-
-public:
-
     void Complete() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IActivatedEventArgsDeferral
+struct WINRT_EBO impl_IActivatedEventArgsDeferral
 {
-    auto shim() const { return impl::shim<D, IActivatedEventArgsDeferral>(this); }
-
-public:
-
     Windows::UI::WebUI::ActivatedOperation ActivatedOperation() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IActivatedOperation
+struct WINRT_EBO impl_IActivatedOperation
 {
-    auto shim() const { return impl::shim<D, IActivatedOperation>(this); }
-
-public:
-
     Windows::UI::WebUI::ActivatedDeferral GetDeferral() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHtmlPrintDocumentSource
+struct WINRT_EBO impl_IHtmlPrintDocumentSource
 {
-    auto shim() const { return impl::shim<D, IHtmlPrintDocumentSource>(this); }
-
-public:
-
     Windows::UI::WebUI::PrintContent Content() const;
     void Content(Windows::UI::WebUI::PrintContent value) const;
     float LeftMargin() const;
@@ -72,12 +56,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebUIActivationStatics
+struct WINRT_EBO impl_IWebUIActivationStatics
 {
-    auto shim() const { return impl::shim<D, IWebUIActivationStatics>(this); }
-
-public:
-
     event_token Activated(const Windows::UI::WebUI::ActivatedEventHandler & handler) const;
     using Activated_revoker = event_revoker<IWebUIActivationStatics>;
     Activated_revoker Activated(auto_revoke_t, const Windows::UI::WebUI::ActivatedEventHandler & handler) const;
@@ -97,12 +77,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebUIActivationStatics2
+struct WINRT_EBO impl_IWebUIActivationStatics2
 {
-    auto shim() const { return impl::shim<D, IWebUIActivationStatics2>(this); }
-
-public:
-
     event_token LeavingBackground(const Windows::UI::WebUI::LeavingBackgroundEventHandler & handler) const;
     using LeavingBackground_revoker = event_revoker<IWebUIActivationStatics2>;
     LeavingBackground_revoker LeavingBackground(auto_revoke_t, const Windows::UI::WebUI::LeavingBackgroundEventHandler & handler) const;
@@ -115,53 +91,33 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebUIBackgroundTaskInstance
+struct WINRT_EBO impl_IWebUIBackgroundTaskInstance
 {
-    auto shim() const { return impl::shim<D, IWebUIBackgroundTaskInstance>(this); }
-
-public:
-
     bool Succeeded() const;
     void Succeeded(bool succeeded) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebUIBackgroundTaskInstanceStatics
+struct WINRT_EBO impl_IWebUIBackgroundTaskInstanceStatics
 {
-    auto shim() const { return impl::shim<D, IWebUIBackgroundTaskInstanceStatics>(this); }
-
-public:
-
     Windows::UI::WebUI::IWebUIBackgroundTaskInstance Current() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebUINavigatedDeferral
+struct WINRT_EBO impl_IWebUINavigatedDeferral
 {
-    auto shim() const { return impl::shim<D, IWebUINavigatedDeferral>(this); }
-
-public:
-
     void Complete() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebUINavigatedEventArgs
+struct WINRT_EBO impl_IWebUINavigatedEventArgs
 {
-    auto shim() const { return impl::shim<D, IWebUINavigatedEventArgs>(this); }
-
-public:
-
     Windows::UI::WebUI::WebUINavigatedOperation NavigatedOperation() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebUINavigatedOperation
+struct WINRT_EBO impl_IWebUINavigatedOperation
 {
-    auto shim() const { return impl::shim<D, IWebUINavigatedOperation>(this); }
-
-public:
-
     Windows::UI::WebUI::WebUINavigatedDeferral GetDeferral() const;
 };
 

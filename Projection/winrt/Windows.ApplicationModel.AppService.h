@@ -414,154 +414,154 @@ namespace Windows::ApplicationModel::AppService {
 
 template <typename D> void impl_IAppServiceDeferral<D>::Complete() const
 {
-    check_hresult(shim()->abi_Complete());
+    check_hresult(static_cast<const IAppServiceDeferral &>(static_cast<const D &>(*this))->abi_Complete());
 }
 
 template <typename D> Windows::ApplicationModel::AppService::AppServiceClosedStatus impl_IAppServiceClosedEventArgs<D>::Status() const
 {
     Windows::ApplicationModel::AppService::AppServiceClosedStatus value {};
-    check_hresult(shim()->get_Status(&value));
+    check_hresult(static_cast<const IAppServiceClosedEventArgs &>(static_cast<const D &>(*this))->get_Status(&value));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::AppService::AppServiceRequest impl_IAppServiceRequestReceivedEventArgs<D>::Request() const
 {
     Windows::ApplicationModel::AppService::AppServiceRequest value { nullptr };
-    check_hresult(shim()->get_Request(put(value)));
+    check_hresult(static_cast<const IAppServiceRequestReceivedEventArgs &>(static_cast<const D &>(*this))->get_Request(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::AppService::AppServiceDeferral impl_IAppServiceRequestReceivedEventArgs<D>::GetDeferral() const
 {
     Windows::ApplicationModel::AppService::AppServiceDeferral value { nullptr };
-    check_hresult(shim()->abi_GetDeferral(put(value)));
+    check_hresult(static_cast<const IAppServiceRequestReceivedEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::AppService::AppServiceConnectionStatus> impl_IAppServiceConnection2<D>::OpenRemoteAsync(const Windows::System::RemoteSystems::RemoteSystemConnectionRequest & remoteSystemConnectionRequest) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::AppService::AppServiceConnectionStatus> operation;
-    check_hresult(shim()->abi_OpenRemoteAsync(get(remoteSystemConnectionRequest), put(operation)));
+    check_hresult(static_cast<const IAppServiceConnection2 &>(static_cast<const D &>(*this))->abi_OpenRemoteAsync(get(remoteSystemConnectionRequest), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::System::User impl_IAppServiceConnection2<D>::User() const
 {
     Windows::System::User value { nullptr };
-    check_hresult(shim()->get_User(put(value)));
+    check_hresult(static_cast<const IAppServiceConnection2 &>(static_cast<const D &>(*this))->get_User(put(value)));
     return value;
 }
 
 template <typename D> void impl_IAppServiceConnection2<D>::User(const Windows::System::User & value) const
 {
-    check_hresult(shim()->put_User(get(value)));
+    check_hresult(static_cast<const IAppServiceConnection2 &>(static_cast<const D &>(*this))->put_User(get(value)));
 }
 
 template <typename D> hstring impl_IAppServiceTriggerDetails<D>::Name() const
 {
     hstring value;
-    check_hresult(shim()->get_Name(put(value)));
+    check_hresult(static_cast<const IAppServiceTriggerDetails &>(static_cast<const D &>(*this))->get_Name(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAppServiceTriggerDetails<D>::CallerPackageFamilyName() const
 {
     hstring value;
-    check_hresult(shim()->get_CallerPackageFamilyName(put(value)));
+    check_hresult(static_cast<const IAppServiceTriggerDetails &>(static_cast<const D &>(*this))->get_CallerPackageFamilyName(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::AppService::AppServiceConnection impl_IAppServiceTriggerDetails<D>::AppServiceConnection() const
 {
     Windows::ApplicationModel::AppService::AppServiceConnection value { nullptr };
-    check_hresult(shim()->get_AppServiceConnection(put(value)));
+    check_hresult(static_cast<const IAppServiceTriggerDetails &>(static_cast<const D &>(*this))->get_AppServiceConnection(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IAppServiceTriggerDetails2<D>::IsRemoteSystemConnection() const
 {
     bool value {};
-    check_hresult(shim()->get_IsRemoteSystemConnection(&value));
+    check_hresult(static_cast<const IAppServiceTriggerDetails2 &>(static_cast<const D &>(*this))->get_IsRemoteSystemConnection(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::ValueSet impl_IAppServiceRequest<D>::Message() const
 {
     Windows::Foundation::Collections::ValueSet value { nullptr };
-    check_hresult(shim()->get_Message(put(value)));
+    check_hresult(static_cast<const IAppServiceRequest &>(static_cast<const D &>(*this))->get_Message(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::AppService::AppServiceResponseStatus> impl_IAppServiceRequest<D>::SendResponseAsync(const Windows::Foundation::Collections::ValueSet & message) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::AppService::AppServiceResponseStatus> operation;
-    check_hresult(shim()->abi_SendResponseAsync(get(message), put(operation)));
+    check_hresult(static_cast<const IAppServiceRequest &>(static_cast<const D &>(*this))->abi_SendResponseAsync(get(message), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::Collections::ValueSet impl_IAppServiceResponse<D>::Message() const
 {
     Windows::Foundation::Collections::ValueSet value { nullptr };
-    check_hresult(shim()->get_Message(put(value)));
+    check_hresult(static_cast<const IAppServiceResponse &>(static_cast<const D &>(*this))->get_Message(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::AppService::AppServiceResponseStatus impl_IAppServiceResponse<D>::Status() const
 {
     Windows::ApplicationModel::AppService::AppServiceResponseStatus value {};
-    check_hresult(shim()->get_Status(&value));
+    check_hresult(static_cast<const IAppServiceResponse &>(static_cast<const D &>(*this))->get_Status(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> impl_IAppServiceCatalogStatics<D>::FindAppServiceProvidersAsync(hstring_ref appServiceName) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> operation;
-    check_hresult(shim()->abi_FindAppServiceProvidersAsync(get(appServiceName), put(operation)));
+    check_hresult(static_cast<const IAppServiceCatalogStatics &>(static_cast<const D &>(*this))->abi_FindAppServiceProvidersAsync(get(appServiceName), put(operation)));
     return operation;
 }
 
 template <typename D> hstring impl_IAppServiceConnection<D>::AppServiceName() const
 {
     hstring value;
-    check_hresult(shim()->get_AppServiceName(put(value)));
+    check_hresult(static_cast<const IAppServiceConnection &>(static_cast<const D &>(*this))->get_AppServiceName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IAppServiceConnection<D>::AppServiceName(hstring_ref value) const
 {
-    check_hresult(shim()->put_AppServiceName(get(value)));
+    check_hresult(static_cast<const IAppServiceConnection &>(static_cast<const D &>(*this))->put_AppServiceName(get(value)));
 }
 
 template <typename D> hstring impl_IAppServiceConnection<D>::PackageFamilyName() const
 {
     hstring value;
-    check_hresult(shim()->get_PackageFamilyName(put(value)));
+    check_hresult(static_cast<const IAppServiceConnection &>(static_cast<const D &>(*this))->get_PackageFamilyName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IAppServiceConnection<D>::PackageFamilyName(hstring_ref value) const
 {
-    check_hresult(shim()->put_PackageFamilyName(get(value)));
+    check_hresult(static_cast<const IAppServiceConnection &>(static_cast<const D &>(*this))->put_PackageFamilyName(get(value)));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::AppService::AppServiceConnectionStatus> impl_IAppServiceConnection<D>::OpenAsync() const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::AppService::AppServiceConnectionStatus> operation;
-    check_hresult(shim()->abi_OpenAsync(put(operation)));
+    check_hresult(static_cast<const IAppServiceConnection &>(static_cast<const D &>(*this))->abi_OpenAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::AppService::AppServiceResponse> impl_IAppServiceConnection<D>::SendMessageAsync(const Windows::Foundation::Collections::ValueSet & message) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::AppService::AppServiceResponse> operation;
-    check_hresult(shim()->abi_SendMessageAsync(get(message), put(operation)));
+    check_hresult(static_cast<const IAppServiceConnection &>(static_cast<const D &>(*this))->abi_SendMessageAsync(get(message), put(operation)));
     return operation;
 }
 
 template <typename D> event_token impl_IAppServiceConnection<D>::RequestReceived(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppService::AppServiceConnection, Windows::ApplicationModel::AppService::AppServiceRequestReceivedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_RequestReceived(get(handler), &token));
+    check_hresult(static_cast<const IAppServiceConnection &>(static_cast<const D &>(*this))->add_RequestReceived(get(handler), &token));
     return token;
 }
 
@@ -572,13 +572,13 @@ template <typename D> event_revoker<IAppServiceConnection> impl_IAppServiceConne
 
 template <typename D> void impl_IAppServiceConnection<D>::RequestReceived(event_token token) const
 {
-    check_hresult(shim()->remove_RequestReceived(token));
+    check_hresult(static_cast<const IAppServiceConnection &>(static_cast<const D &>(*this))->remove_RequestReceived(token));
 }
 
 template <typename D> event_token impl_IAppServiceConnection<D>::ServiceClosed(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppService::AppServiceConnection, Windows::ApplicationModel::AppService::AppServiceClosedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_ServiceClosed(get(handler), &token));
+    check_hresult(static_cast<const IAppServiceConnection &>(static_cast<const D &>(*this))->add_ServiceClosed(get(handler), &token));
     return token;
 }
 
@@ -589,7 +589,7 @@ template <typename D> event_revoker<IAppServiceConnection> impl_IAppServiceConne
 
 template <typename D> void impl_IAppServiceConnection<D>::ServiceClosed(event_token token) const
 {
-    check_hresult(shim()->remove_ServiceClosed(token));
+    check_hresult(static_cast<const IAppServiceConnection &>(static_cast<const D &>(*this))->remove_ServiceClosed(token));
 }
 
 inline Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> AppServiceCatalog::FindAppServiceProvidersAsync(hstring_ref appServiceName)

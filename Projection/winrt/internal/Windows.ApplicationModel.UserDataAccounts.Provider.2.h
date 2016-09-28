@@ -30,57 +30,37 @@ template <> struct __declspec(uuid("5cdb425e-da5a-55fa-b349-5467996cab32")) __de
 namespace Windows::ApplicationModel::UserDataAccounts::Provider {
 
 template <typename D>
-class WINRT_EBO impl_IUserDataAccountPartnerAccountInfo
+struct WINRT_EBO impl_IUserDataAccountPartnerAccountInfo
 {
-    auto shim() const { return impl::shim<D, IUserDataAccountPartnerAccountInfo>(this); }
-
-public:
-
     hstring DisplayName() const;
     uint32_t Priority() const;
     Windows::ApplicationModel::UserDataAccounts::Provider::UserDataAccountProviderPartnerAccountKind AccountKind() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUserDataAccountProviderAddAccountOperation
+struct WINRT_EBO impl_IUserDataAccountProviderAddAccountOperation
 {
-    auto shim() const { return impl::shim<D, IUserDataAccountProviderAddAccountOperation>(this); }
-
-public:
-
     Windows::ApplicationModel::UserDataAccounts::UserDataAccountContentKinds ContentKinds() const;
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::UserDataAccounts::Provider::UserDataAccountPartnerAccountInfo> PartnerAccountInfos() const;
     void ReportCompleted(hstring_ref userDataAccountId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUserDataAccountProviderOperation
+struct WINRT_EBO impl_IUserDataAccountProviderOperation
 {
-    auto shim() const { return impl::shim<D, IUserDataAccountProviderOperation>(this); }
-
-public:
-
     Windows::ApplicationModel::UserDataAccounts::Provider::UserDataAccountProviderOperationKind Kind() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUserDataAccountProviderResolveErrorsOperation
+struct WINRT_EBO impl_IUserDataAccountProviderResolveErrorsOperation
 {
-    auto shim() const { return impl::shim<D, IUserDataAccountProviderResolveErrorsOperation>(this); }
-
-public:
-
     hstring UserDataAccountId() const;
     void ReportCompleted() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUserDataAccountProviderSettingsOperation
+struct WINRT_EBO impl_IUserDataAccountProviderSettingsOperation
 {
-    auto shim() const { return impl::shim<D, IUserDataAccountProviderSettingsOperation>(this); }
-
-public:
-
     hstring UserDataAccountId() const;
     void ReportCompleted() const;
 };

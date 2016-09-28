@@ -24,7 +24,7 @@ namespace ABI {
 
 namespace Windows::Data::Html {
 
-template <typename T> class impl_IHtmlUtilities;
+template <typename T> struct impl_IHtmlUtilities;
 
 }
 

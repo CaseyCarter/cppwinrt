@@ -10,24 +10,16 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::System::Power::Diagnostics {
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundEnergyDiagnosticsStatics
+struct WINRT_EBO impl_IBackgroundEnergyDiagnosticsStatics
 {
-    auto shim() const { return impl::shim<D, IBackgroundEnergyDiagnosticsStatics>(this); }
-
-public:
-
     double DeviceSpecificConversionFactor() const;
     uint64_t ComputeTotalEnergyUsage() const;
     void ResetTotalEnergyUsage() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IForegroundEnergyDiagnosticsStatics
+struct WINRT_EBO impl_IForegroundEnergyDiagnosticsStatics
 {
-    auto shim() const { return impl::shim<D, IForegroundEnergyDiagnosticsStatics>(this); }
-
-public:
-
     double DeviceSpecificConversionFactor() const;
     uint64_t ComputeTotalEnergyUsage() const;
     void ResetTotalEnergyUsage() const;

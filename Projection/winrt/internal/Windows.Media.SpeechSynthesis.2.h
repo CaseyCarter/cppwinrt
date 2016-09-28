@@ -72,33 +72,21 @@ template <> struct __declspec(uuid("c972b996-6165-50d4-af60-a8c3df51d092")) __de
 namespace Windows::Media::SpeechSynthesis {
 
 template <typename D>
-class WINRT_EBO impl_IInstalledVoicesStatic
+struct WINRT_EBO impl_IInstalledVoicesStatic
 {
-    auto shim() const { return impl::shim<D, IInstalledVoicesStatic>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Media::SpeechSynthesis::VoiceInformation> AllVoices() const;
     Windows::Media::SpeechSynthesis::VoiceInformation DefaultVoice() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpeechSynthesisStream
+struct WINRT_EBO impl_ISpeechSynthesisStream
 {
-    auto shim() const { return impl::shim<D, ISpeechSynthesisStream>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Media::IMediaMarker> Markers() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpeechSynthesizer
+struct WINRT_EBO impl_ISpeechSynthesizer
 {
-    auto shim() const { return impl::shim<D, ISpeechSynthesizer>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Media::SpeechSynthesis::SpeechSynthesisStream> SynthesizeTextToStreamAsync(hstring_ref text) const;
     Windows::Foundation::IAsyncOperation<Windows::Media::SpeechSynthesis::SpeechSynthesisStream> SynthesizeSsmlToStreamAsync(hstring_ref Ssml) const;
     void Voice(const Windows::Media::SpeechSynthesis::VoiceInformation & value) const;
@@ -106,12 +94,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVoiceInformation
+struct WINRT_EBO impl_IVoiceInformation
 {
-    auto shim() const { return impl::shim<D, IVoiceInformation>(this); }
-
-public:
-
     hstring DisplayName() const;
     hstring Id() const;
     hstring Language() const;

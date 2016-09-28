@@ -290,12 +290,8 @@ template <> struct __declspec(uuid("51436e75-ace1-5a68-b260-f843b846f0db")) __de
 namespace Windows::ApplicationModel::DataTransfer {
 
 template <typename D>
-class WINRT_EBO impl_IClipboardStatics
+struct WINRT_EBO impl_IClipboardStatics
 {
-    auto shim() const { return impl::shim<D, IClipboardStatics>(this); }
-
-public:
-
     Windows::ApplicationModel::DataTransfer::DataPackageView GetContent() const;
     void SetContent(const Windows::ApplicationModel::DataTransfer::DataPackage & content) const;
     void Flush() const;
@@ -307,12 +303,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDataPackage
+struct WINRT_EBO impl_IDataPackage
 {
-    auto shim() const { return impl::shim<D, IDataPackage>(this); }
-
-public:
-
     Windows::ApplicationModel::DataTransfer::DataPackageView GetView() const;
     Windows::ApplicationModel::DataTransfer::DataPackagePropertySet Properties() const;
     Windows::ApplicationModel::DataTransfer::DataPackageOperation RequestedOperation() const;
@@ -338,23 +330,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDataPackage2
+struct WINRT_EBO impl_IDataPackage2
 {
-    auto shim() const { return impl::shim<D, IDataPackage2>(this); }
-
-public:
-
     void SetApplicationLink(const Windows::Foundation::Uri & value) const;
     void SetWebLink(const Windows::Foundation::Uri & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDataPackagePropertySet
+struct WINRT_EBO impl_IDataPackagePropertySet
 {
-    auto shim() const { return impl::shim<D, IDataPackagePropertySet>(this); }
-
-public:
-
     hstring Title() const;
     void Title(hstring_ref value) const;
     hstring Description() const;
@@ -369,12 +353,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDataPackagePropertySet2
+struct WINRT_EBO impl_IDataPackagePropertySet2
 {
-    auto shim() const { return impl::shim<D, IDataPackagePropertySet2>(this); }
-
-public:
-
     Windows::Foundation::Uri ContentSourceWebLink() const;
     void ContentSourceWebLink(const Windows::Foundation::Uri & value) const;
     Windows::Foundation::Uri ContentSourceApplicationLink() const;
@@ -388,23 +368,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDataPackagePropertySet3
+struct WINRT_EBO impl_IDataPackagePropertySet3
 {
-    auto shim() const { return impl::shim<D, IDataPackagePropertySet3>(this); }
-
-public:
-
     hstring EnterpriseId() const;
     void EnterpriseId(hstring_ref value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDataPackagePropertySetView
+struct WINRT_EBO impl_IDataPackagePropertySetView
 {
-    auto shim() const { return impl::shim<D, IDataPackagePropertySetView>(this); }
-
-public:
-
     hstring Title() const;
     hstring Description() const;
     Windows::Storage::Streams::RandomAccessStreamReference Thumbnail() const;
@@ -414,12 +386,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDataPackagePropertySetView2
+struct WINRT_EBO impl_IDataPackagePropertySetView2
 {
-    auto shim() const { return impl::shim<D, IDataPackagePropertySetView2>(this); }
-
-public:
-
     hstring PackageFamilyName() const;
     Windows::Foundation::Uri ContentSourceWebLink() const;
     Windows::Foundation::Uri ContentSourceApplicationLink() const;
@@ -428,22 +396,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDataPackagePropertySetView3
+struct WINRT_EBO impl_IDataPackagePropertySetView3
 {
-    auto shim() const { return impl::shim<D, IDataPackagePropertySetView3>(this); }
-
-public:
-
     hstring EnterpriseId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDataPackageView
+struct WINRT_EBO impl_IDataPackageView
 {
-    auto shim() const { return impl::shim<D, IDataPackageView>(this); }
-
-public:
-
     Windows::ApplicationModel::DataTransfer::DataPackagePropertySetView Properties() const;
     Windows::ApplicationModel::DataTransfer::DataPackageOperation RequestedOperation() const;
     void ReportOperationCompleted(Windows::ApplicationModel::DataTransfer::DataPackageOperation value) const;
@@ -461,55 +421,35 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDataPackageView2
+struct WINRT_EBO impl_IDataPackageView2
 {
-    auto shim() const { return impl::shim<D, IDataPackageView2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Uri> GetApplicationLinkAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Uri> GetWebLinkAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDataPackageView3
+struct WINRT_EBO impl_IDataPackageView3
 {
-    auto shim() const { return impl::shim<D, IDataPackageView3>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<winrt::Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult> RequestAccessAsync() const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult> RequestAccessAsync(hstring_ref enterpriseId) const;
     Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult UnlockAndAssumeEnterpriseIdentity() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDataPackageView4
+struct WINRT_EBO impl_IDataPackageView4
 {
-    auto shim() const { return impl::shim<D, IDataPackageView4>(this); }
-
-public:
-
     void SetAcceptedFormatId(hstring_ref formatId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDataProviderDeferral
+struct WINRT_EBO impl_IDataProviderDeferral
 {
-    auto shim() const { return impl::shim<D, IDataProviderDeferral>(this); }
-
-public:
-
     void Complete() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDataProviderRequest
+struct WINRT_EBO impl_IDataProviderRequest
 {
-    auto shim() const { return impl::shim<D, IDataProviderRequest>(this); }
-
-public:
-
     hstring FormatId() const;
     Windows::Foundation::DateTime Deadline() const;
     Windows::ApplicationModel::DataTransfer::DataProviderDeferral GetDeferral() const;
@@ -517,12 +457,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDataRequest
+struct WINRT_EBO impl_IDataRequest
 {
-    auto shim() const { return impl::shim<D, IDataRequest>(this); }
-
-public:
-
     Windows::ApplicationModel::DataTransfer::DataPackage Data() const;
     void Data(const Windows::ApplicationModel::DataTransfer::DataPackage & value) const;
     Windows::Foundation::DateTime Deadline() const;
@@ -531,32 +467,20 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDataRequestDeferral
+struct WINRT_EBO impl_IDataRequestDeferral
 {
-    auto shim() const { return impl::shim<D, IDataRequestDeferral>(this); }
-
-public:
-
     void Complete() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDataRequestedEventArgs
+struct WINRT_EBO impl_IDataRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, IDataRequestedEventArgs>(this); }
-
-public:
-
     Windows::ApplicationModel::DataTransfer::DataRequest Request() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDataTransferManager
+struct WINRT_EBO impl_IDataTransferManager
 {
-    auto shim() const { return impl::shim<D, IDataTransferManager>(this); }
-
-public:
-
     event_token DataRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::DataRequestedEventArgs> & eventHandler) const;
     using DataRequested_revoker = event_revoker<IDataTransferManager>;
     DataRequested_revoker DataRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::DataRequestedEventArgs> & eventHandler) const;
@@ -568,76 +492,48 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDataTransferManagerStatics
+struct WINRT_EBO impl_IDataTransferManagerStatics
 {
-    auto shim() const { return impl::shim<D, IDataTransferManagerStatics>(this); }
-
-public:
-
     void ShowShareUI() const;
     Windows::ApplicationModel::DataTransfer::DataTransferManager GetForCurrentView() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDataTransferManagerStatics2
+struct WINRT_EBO impl_IDataTransferManagerStatics2
 {
-    auto shim() const { return impl::shim<D, IDataTransferManagerStatics2>(this); }
-
-public:
-
     bool IsSupported() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHtmlFormatHelperStatics
+struct WINRT_EBO impl_IHtmlFormatHelperStatics
 {
-    auto shim() const { return impl::shim<D, IHtmlFormatHelperStatics>(this); }
-
-public:
-
     hstring GetStaticFragment(hstring_ref htmlFormat) const;
     hstring CreateHtmlFormat(hstring_ref htmlFragment) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IOperationCompletedEventArgs
+struct WINRT_EBO impl_IOperationCompletedEventArgs
 {
-    auto shim() const { return impl::shim<D, IOperationCompletedEventArgs>(this); }
-
-public:
-
     Windows::ApplicationModel::DataTransfer::DataPackageOperation Operation() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IOperationCompletedEventArgs2
+struct WINRT_EBO impl_IOperationCompletedEventArgs2
 {
-    auto shim() const { return impl::shim<D, IOperationCompletedEventArgs2>(this); }
-
-public:
-
     hstring AcceptedFormatId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISharedStorageAccessManagerStatics
+struct WINRT_EBO impl_ISharedStorageAccessManagerStatics
 {
-    auto shim() const { return impl::shim<D, ISharedStorageAccessManagerStatics>(this); }
-
-public:
-
     hstring AddFile(const Windows::Storage::IStorageFile & file) const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> RedeemTokenForFileAsync(hstring_ref token) const;
     void RemoveFile(hstring_ref token) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStandardDataFormatsStatics
+struct WINRT_EBO impl_IStandardDataFormatsStatics
 {
-    auto shim() const { return impl::shim<D, IStandardDataFormatsStatics>(this); }
-
-public:
-
     hstring Text() const;
     hstring Uri() const;
     hstring Html() const;
@@ -647,23 +543,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStandardDataFormatsStatics2
+struct WINRT_EBO impl_IStandardDataFormatsStatics2
 {
-    auto shim() const { return impl::shim<D, IStandardDataFormatsStatics2>(this); }
-
-public:
-
     hstring WebLink() const;
     hstring ApplicationLink() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITargetApplicationChosenEventArgs
+struct WINRT_EBO impl_ITargetApplicationChosenEventArgs
 {
-    auto shim() const { return impl::shim<D, ITargetApplicationChosenEventArgs>(this); }
-
-public:
-
     hstring ApplicationName() const;
 };
 

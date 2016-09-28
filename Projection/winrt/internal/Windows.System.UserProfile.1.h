@@ -74,14 +74,14 @@ template <> struct traits<Windows::System::UserProfile::UserProfilePersonalizati
 
 namespace Windows::System::UserProfile {
 
-template <typename T> class impl_IAdvertisingManagerForUser;
-template <typename T> class impl_IAdvertisingManagerStatics;
-template <typename T> class impl_IAdvertisingManagerStatics2;
-template <typename T> class impl_IFirstSignInSettings;
-template <typename T> class impl_IFirstSignInSettingsStatics;
-template <typename T> class impl_IGlobalizationPreferencesStatics;
-template <typename T> class impl_IUserProfilePersonalizationSettings;
-template <typename T> class impl_IUserProfilePersonalizationSettingsStatics;
+template <typename T> struct impl_IAdvertisingManagerForUser;
+template <typename T> struct impl_IAdvertisingManagerStatics;
+template <typename T> struct impl_IAdvertisingManagerStatics2;
+template <typename T> struct impl_IFirstSignInSettings;
+template <typename T> struct impl_IFirstSignInSettingsStatics;
+template <typename T> struct impl_IGlobalizationPreferencesStatics;
+template <typename T> struct impl_IUserProfilePersonalizationSettings;
+template <typename T> struct impl_IUserProfilePersonalizationSettingsStatics;
 
 }
 
@@ -143,14 +143,12 @@ template <> struct traits<Windows::System::UserProfile::AdvertisingManager>
 template <> struct traits<Windows::System::UserProfile::AdvertisingManagerForUser>
 {
     using abi = ABI::Windows::System::UserProfile::AdvertisingManagerForUser;
-    using default_interface = Windows::System::UserProfile::IAdvertisingManagerForUser;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.UserProfile.AdvertisingManagerForUser"; }
 };
 
 template <> struct traits<Windows::System::UserProfile::FirstSignInSettings>
 {
     using abi = ABI::Windows::System::UserProfile::FirstSignInSettings;
-    using default_interface = Windows::System::UserProfile::IFirstSignInSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.UserProfile.FirstSignInSettings"; }
 };
 
@@ -162,7 +160,6 @@ template <> struct traits<Windows::System::UserProfile::GlobalizationPreferences
 template <> struct traits<Windows::System::UserProfile::UserProfilePersonalizationSettings>
 {
     using abi = ABI::Windows::System::UserProfile::UserProfilePersonalizationSettings;
-    using default_interface = Windows::System::UserProfile::IUserProfilePersonalizationSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.UserProfile.UserProfilePersonalizationSettings"; }
 };
 

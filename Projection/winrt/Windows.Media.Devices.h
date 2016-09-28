@@ -3312,56 +3312,56 @@ namespace Windows::Media::Devices {
 template <typename D> hstring impl_IDefaultAudioDeviceChangedEventArgs<D>::Id() const
 {
     hstring value;
-    check_hresult(shim()->get_Id(put(value)));
+    check_hresult(static_cast<const IDefaultAudioDeviceChangedEventArgs &>(static_cast<const D &>(*this))->get_Id(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::AudioDeviceRole impl_IDefaultAudioDeviceChangedEventArgs<D>::Role() const
 {
     Windows::Media::Devices::AudioDeviceRole value {};
-    check_hresult(shim()->get_Role(&value));
+    check_hresult(static_cast<const IDefaultAudioDeviceChangedEventArgs &>(static_cast<const D &>(*this))->get_Role(&value));
     return value;
 }
 
 template <typename D> hstring impl_IMediaDeviceStatics<D>::GetAudioCaptureSelector() const
 {
     hstring selector;
-    check_hresult(shim()->abi_GetAudioCaptureSelector(put(selector)));
+    check_hresult(static_cast<const IMediaDeviceStatics &>(static_cast<const D &>(*this))->abi_GetAudioCaptureSelector(put(selector)));
     return selector;
 }
 
 template <typename D> hstring impl_IMediaDeviceStatics<D>::GetAudioRenderSelector() const
 {
     hstring selector;
-    check_hresult(shim()->abi_GetAudioRenderSelector(put(selector)));
+    check_hresult(static_cast<const IMediaDeviceStatics &>(static_cast<const D &>(*this))->abi_GetAudioRenderSelector(put(selector)));
     return selector;
 }
 
 template <typename D> hstring impl_IMediaDeviceStatics<D>::GetVideoCaptureSelector() const
 {
     hstring selector;
-    check_hresult(shim()->abi_GetVideoCaptureSelector(put(selector)));
+    check_hresult(static_cast<const IMediaDeviceStatics &>(static_cast<const D &>(*this))->abi_GetVideoCaptureSelector(put(selector)));
     return selector;
 }
 
 template <typename D> hstring impl_IMediaDeviceStatics<D>::GetDefaultAudioCaptureId(Windows::Media::Devices::AudioDeviceRole role) const
 {
     hstring deviceId;
-    check_hresult(shim()->abi_GetDefaultAudioCaptureId(role, put(deviceId)));
+    check_hresult(static_cast<const IMediaDeviceStatics &>(static_cast<const D &>(*this))->abi_GetDefaultAudioCaptureId(role, put(deviceId)));
     return deviceId;
 }
 
 template <typename D> hstring impl_IMediaDeviceStatics<D>::GetDefaultAudioRenderId(Windows::Media::Devices::AudioDeviceRole role) const
 {
     hstring deviceId;
-    check_hresult(shim()->abi_GetDefaultAudioRenderId(role, put(deviceId)));
+    check_hresult(static_cast<const IMediaDeviceStatics &>(static_cast<const D &>(*this))->abi_GetDefaultAudioRenderId(role, put(deviceId)));
     return deviceId;
 }
 
 template <typename D> event_token impl_IMediaDeviceStatics<D>::DefaultAudioCaptureDeviceChanged(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_DefaultAudioCaptureDeviceChanged(get(handler), &cookie));
+    check_hresult(static_cast<const IMediaDeviceStatics &>(static_cast<const D &>(*this))->add_DefaultAudioCaptureDeviceChanged(get(handler), &cookie));
     return cookie;
 }
 
@@ -3372,13 +3372,13 @@ template <typename D> event_revoker<IMediaDeviceStatics> impl_IMediaDeviceStatic
 
 template <typename D> void impl_IMediaDeviceStatics<D>::DefaultAudioCaptureDeviceChanged(event_token cookie) const
 {
-    check_hresult(shim()->remove_DefaultAudioCaptureDeviceChanged(cookie));
+    check_hresult(static_cast<const IMediaDeviceStatics &>(static_cast<const D &>(*this))->remove_DefaultAudioCaptureDeviceChanged(cookie));
 }
 
 template <typename D> event_token impl_IMediaDeviceStatics<D>::DefaultAudioRenderDeviceChanged(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_DefaultAudioRenderDeviceChanged(get(handler), &cookie));
+    check_hresult(static_cast<const IMediaDeviceStatics &>(static_cast<const D &>(*this))->add_DefaultAudioRenderDeviceChanged(get(handler), &cookie));
     return cookie;
 }
 
@@ -3389,1492 +3389,1492 @@ template <typename D> event_revoker<IMediaDeviceStatics> impl_IMediaDeviceStatic
 
 template <typename D> void impl_IMediaDeviceStatics<D>::DefaultAudioRenderDeviceChanged(event_token cookie) const
 {
-    check_hresult(shim()->remove_DefaultAudioRenderDeviceChanged(cookie));
+    check_hresult(static_cast<const IMediaDeviceStatics &>(static_cast<const D &>(*this))->remove_DefaultAudioRenderDeviceChanged(cookie));
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::CaptureSceneMode> impl_ISceneModeControl<D>::SupportedModes() const
 {
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::CaptureSceneMode> value;
-    check_hresult(shim()->get_SupportedModes(put(value)));
+    check_hresult(static_cast<const ISceneModeControl &>(static_cast<const D &>(*this))->get_SupportedModes(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::CaptureSceneMode impl_ISceneModeControl<D>::Value() const
 {
     Windows::Media::Devices::CaptureSceneMode value {};
-    check_hresult(shim()->get_Value(&value));
+    check_hresult(static_cast<const ISceneModeControl &>(static_cast<const D &>(*this))->get_Value(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_ISceneModeControl<D>::SetValueAsync(Windows::Media::Devices::CaptureSceneMode sceneMode) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(shim()->abi_SetValueAsync(sceneMode, put(asyncInfo)));
+    check_hresult(static_cast<const ISceneModeControl &>(static_cast<const D &>(*this))->abi_SetValueAsync(sceneMode, put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> bool impl_ITorchControl<D>::Supported() const
 {
     bool value {};
-    check_hresult(shim()->get_Supported(&value));
+    check_hresult(static_cast<const ITorchControl &>(static_cast<const D &>(*this))->get_Supported(&value));
     return value;
 }
 
 template <typename D> bool impl_ITorchControl<D>::PowerSupported() const
 {
     bool value {};
-    check_hresult(shim()->get_PowerSupported(&value));
+    check_hresult(static_cast<const ITorchControl &>(static_cast<const D &>(*this))->get_PowerSupported(&value));
     return value;
 }
 
 template <typename D> bool impl_ITorchControl<D>::Enabled() const
 {
     bool value {};
-    check_hresult(shim()->get_Enabled(&value));
+    check_hresult(static_cast<const ITorchControl &>(static_cast<const D &>(*this))->get_Enabled(&value));
     return value;
 }
 
 template <typename D> void impl_ITorchControl<D>::Enabled(bool value) const
 {
-    check_hresult(shim()->put_Enabled(value));
+    check_hresult(static_cast<const ITorchControl &>(static_cast<const D &>(*this))->put_Enabled(value));
 }
 
 template <typename D> float impl_ITorchControl<D>::PowerPercent() const
 {
     float value {};
-    check_hresult(shim()->get_PowerPercent(&value));
+    check_hresult(static_cast<const ITorchControl &>(static_cast<const D &>(*this))->get_PowerPercent(&value));
     return value;
 }
 
 template <typename D> void impl_ITorchControl<D>::PowerPercent(float value) const
 {
-    check_hresult(shim()->put_PowerPercent(value));
+    check_hresult(static_cast<const ITorchControl &>(static_cast<const D &>(*this))->put_PowerPercent(value));
 }
 
 template <typename D> bool impl_IFlashControl<D>::Supported() const
 {
     bool value {};
-    check_hresult(shim()->get_Supported(&value));
+    check_hresult(static_cast<const IFlashControl &>(static_cast<const D &>(*this))->get_Supported(&value));
     return value;
 }
 
 template <typename D> bool impl_IFlashControl<D>::PowerSupported() const
 {
     bool value {};
-    check_hresult(shim()->get_PowerSupported(&value));
+    check_hresult(static_cast<const IFlashControl &>(static_cast<const D &>(*this))->get_PowerSupported(&value));
     return value;
 }
 
 template <typename D> bool impl_IFlashControl<D>::RedEyeReductionSupported() const
 {
     bool value {};
-    check_hresult(shim()->get_RedEyeReductionSupported(&value));
+    check_hresult(static_cast<const IFlashControl &>(static_cast<const D &>(*this))->get_RedEyeReductionSupported(&value));
     return value;
 }
 
 template <typename D> bool impl_IFlashControl<D>::Enabled() const
 {
     bool value {};
-    check_hresult(shim()->get_Enabled(&value));
+    check_hresult(static_cast<const IFlashControl &>(static_cast<const D &>(*this))->get_Enabled(&value));
     return value;
 }
 
 template <typename D> void impl_IFlashControl<D>::Enabled(bool value) const
 {
-    check_hresult(shim()->put_Enabled(value));
+    check_hresult(static_cast<const IFlashControl &>(static_cast<const D &>(*this))->put_Enabled(value));
 }
 
 template <typename D> bool impl_IFlashControl<D>::Auto() const
 {
     bool value {};
-    check_hresult(shim()->get_Auto(&value));
+    check_hresult(static_cast<const IFlashControl &>(static_cast<const D &>(*this))->get_Auto(&value));
     return value;
 }
 
 template <typename D> void impl_IFlashControl<D>::Auto(bool value) const
 {
-    check_hresult(shim()->put_Auto(value));
+    check_hresult(static_cast<const IFlashControl &>(static_cast<const D &>(*this))->put_Auto(value));
 }
 
 template <typename D> bool impl_IFlashControl<D>::RedEyeReduction() const
 {
     bool value {};
-    check_hresult(shim()->get_RedEyeReduction(&value));
+    check_hresult(static_cast<const IFlashControl &>(static_cast<const D &>(*this))->get_RedEyeReduction(&value));
     return value;
 }
 
 template <typename D> void impl_IFlashControl<D>::RedEyeReduction(bool value) const
 {
-    check_hresult(shim()->put_RedEyeReduction(value));
+    check_hresult(static_cast<const IFlashControl &>(static_cast<const D &>(*this))->put_RedEyeReduction(value));
 }
 
 template <typename D> float impl_IFlashControl<D>::PowerPercent() const
 {
     float value {};
-    check_hresult(shim()->get_PowerPercent(&value));
+    check_hresult(static_cast<const IFlashControl &>(static_cast<const D &>(*this))->get_PowerPercent(&value));
     return value;
 }
 
 template <typename D> void impl_IFlashControl<D>::PowerPercent(float value) const
 {
-    check_hresult(shim()->put_PowerPercent(value));
+    check_hresult(static_cast<const IFlashControl &>(static_cast<const D &>(*this))->put_PowerPercent(value));
 }
 
 template <typename D> bool impl_IFlashControl2<D>::AssistantLightSupported() const
 {
     bool value {};
-    check_hresult(shim()->get_AssistantLightSupported(&value));
+    check_hresult(static_cast<const IFlashControl2 &>(static_cast<const D &>(*this))->get_AssistantLightSupported(&value));
     return value;
 }
 
 template <typename D> bool impl_IFlashControl2<D>::AssistantLightEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_AssistantLightEnabled(&value));
+    check_hresult(static_cast<const IFlashControl2 &>(static_cast<const D &>(*this))->get_AssistantLightEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IFlashControl2<D>::AssistantLightEnabled(bool value) const
 {
-    check_hresult(shim()->put_AssistantLightEnabled(value));
+    check_hresult(static_cast<const IFlashControl2 &>(static_cast<const D &>(*this))->put_AssistantLightEnabled(value));
 }
 
 template <typename D> bool impl_IExposureCompensationControl<D>::Supported() const
 {
     bool value {};
-    check_hresult(shim()->get_Supported(&value));
+    check_hresult(static_cast<const IExposureCompensationControl &>(static_cast<const D &>(*this))->get_Supported(&value));
     return value;
 }
 
 template <typename D> float impl_IExposureCompensationControl<D>::Min() const
 {
     float value {};
-    check_hresult(shim()->get_Min(&value));
+    check_hresult(static_cast<const IExposureCompensationControl &>(static_cast<const D &>(*this))->get_Min(&value));
     return value;
 }
 
 template <typename D> float impl_IExposureCompensationControl<D>::Max() const
 {
     float value {};
-    check_hresult(shim()->get_Max(&value));
+    check_hresult(static_cast<const IExposureCompensationControl &>(static_cast<const D &>(*this))->get_Max(&value));
     return value;
 }
 
 template <typename D> float impl_IExposureCompensationControl<D>::Step() const
 {
     float value {};
-    check_hresult(shim()->get_Step(&value));
+    check_hresult(static_cast<const IExposureCompensationControl &>(static_cast<const D &>(*this))->get_Step(&value));
     return value;
 }
 
 template <typename D> float impl_IExposureCompensationControl<D>::Value() const
 {
     float value {};
-    check_hresult(shim()->get_Value(&value));
+    check_hresult(static_cast<const IExposureCompensationControl &>(static_cast<const D &>(*this))->get_Value(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IExposureCompensationControl<D>::SetValueAsync(float value) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(shim()->abi_SetValueAsync(value, put(asyncInfo)));
+    check_hresult(static_cast<const IExposureCompensationControl &>(static_cast<const D &>(*this))->abi_SetValueAsync(value, put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> bool impl_IIsoSpeedControl<D>::Supported() const
 {
     bool value {};
-    check_hresult(shim()->get_Supported(&value));
+    check_hresult(static_cast<const IIsoSpeedControl &>(static_cast<const D &>(*this))->get_Supported(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::IsoSpeedPreset> impl_IIsoSpeedControl<D>::SupportedPresets() const
 {
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::IsoSpeedPreset> value;
-    check_hresult(shim()->get_SupportedPresets(put(value)));
+    check_hresult(static_cast<const IIsoSpeedControl &>(static_cast<const D &>(*this))->get_SupportedPresets(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::IsoSpeedPreset impl_IIsoSpeedControl<D>::Preset() const
 {
     Windows::Media::Devices::IsoSpeedPreset value {};
-    check_hresult(shim()->get_Preset(&value));
+    check_hresult(static_cast<const IIsoSpeedControl &>(static_cast<const D &>(*this))->get_Preset(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IIsoSpeedControl<D>::SetPresetAsync(Windows::Media::Devices::IsoSpeedPreset preset) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(shim()->abi_SetPresetAsync(preset, put(asyncInfo)));
+    check_hresult(static_cast<const IIsoSpeedControl &>(static_cast<const D &>(*this))->abi_SetPresetAsync(preset, put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> uint32_t impl_IIsoSpeedControl2<D>::Min() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_Min(&value));
+    check_hresult(static_cast<const IIsoSpeedControl2 &>(static_cast<const D &>(*this))->get_Min(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IIsoSpeedControl2<D>::Max() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_Max(&value));
+    check_hresult(static_cast<const IIsoSpeedControl2 &>(static_cast<const D &>(*this))->get_Max(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IIsoSpeedControl2<D>::Step() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_Step(&value));
+    check_hresult(static_cast<const IIsoSpeedControl2 &>(static_cast<const D &>(*this))->get_Step(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IIsoSpeedControl2<D>::Value() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_Value(&value));
+    check_hresult(static_cast<const IIsoSpeedControl2 &>(static_cast<const D &>(*this))->get_Value(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IIsoSpeedControl2<D>::SetValueAsync(uint32_t isoSpeed) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(shim()->abi_SetValueAsync(isoSpeed, put(asyncInfo)));
+    check_hresult(static_cast<const IIsoSpeedControl2 &>(static_cast<const D &>(*this))->abi_SetValueAsync(isoSpeed, put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> bool impl_IIsoSpeedControl2<D>::Auto() const
 {
     bool value {};
-    check_hresult(shim()->get_Auto(&value));
+    check_hresult(static_cast<const IIsoSpeedControl2 &>(static_cast<const D &>(*this))->get_Auto(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IIsoSpeedControl2<D>::SetAutoAsync() const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(shim()->abi_SetAutoAsync(put(asyncInfo)));
+    check_hresult(static_cast<const IIsoSpeedControl2 &>(static_cast<const D &>(*this))->abi_SetAutoAsync(put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> bool impl_IWhiteBalanceControl<D>::Supported() const
 {
     bool value {};
-    check_hresult(shim()->get_Supported(&value));
+    check_hresult(static_cast<const IWhiteBalanceControl &>(static_cast<const D &>(*this))->get_Supported(&value));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::ColorTemperaturePreset impl_IWhiteBalanceControl<D>::Preset() const
 {
     Windows::Media::Devices::ColorTemperaturePreset value {};
-    check_hresult(shim()->get_Preset(&value));
+    check_hresult(static_cast<const IWhiteBalanceControl &>(static_cast<const D &>(*this))->get_Preset(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IWhiteBalanceControl<D>::SetPresetAsync(Windows::Media::Devices::ColorTemperaturePreset preset) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(shim()->abi_SetPresetAsync(preset, put(asyncInfo)));
+    check_hresult(static_cast<const IWhiteBalanceControl &>(static_cast<const D &>(*this))->abi_SetPresetAsync(preset, put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> uint32_t impl_IWhiteBalanceControl<D>::Min() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_Min(&value));
+    check_hresult(static_cast<const IWhiteBalanceControl &>(static_cast<const D &>(*this))->get_Min(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IWhiteBalanceControl<D>::Max() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_Max(&value));
+    check_hresult(static_cast<const IWhiteBalanceControl &>(static_cast<const D &>(*this))->get_Max(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IWhiteBalanceControl<D>::Step() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_Step(&value));
+    check_hresult(static_cast<const IWhiteBalanceControl &>(static_cast<const D &>(*this))->get_Step(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IWhiteBalanceControl<D>::Value() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_Value(&value));
+    check_hresult(static_cast<const IWhiteBalanceControl &>(static_cast<const D &>(*this))->get_Value(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IWhiteBalanceControl<D>::SetValueAsync(uint32_t temperature) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(shim()->abi_SetValueAsync(temperature, put(asyncInfo)));
+    check_hresult(static_cast<const IWhiteBalanceControl &>(static_cast<const D &>(*this))->abi_SetValueAsync(temperature, put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> bool impl_IExposureControl<D>::Supported() const
 {
     bool value {};
-    check_hresult(shim()->get_Supported(&value));
+    check_hresult(static_cast<const IExposureControl &>(static_cast<const D &>(*this))->get_Supported(&value));
     return value;
 }
 
 template <typename D> bool impl_IExposureControl<D>::Auto() const
 {
     bool value {};
-    check_hresult(shim()->get_Auto(&value));
+    check_hresult(static_cast<const IExposureControl &>(static_cast<const D &>(*this))->get_Auto(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IExposureControl<D>::SetAutoAsync(bool value) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(shim()->abi_SetAutoAsync(value, put(asyncInfo)));
+    check_hresult(static_cast<const IExposureControl &>(static_cast<const D &>(*this))->abi_SetAutoAsync(value, put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IExposureControl<D>::Min() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_Min(put(value)));
+    check_hresult(static_cast<const IExposureControl &>(static_cast<const D &>(*this))->get_Min(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IExposureControl<D>::Max() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_Max(put(value)));
+    check_hresult(static_cast<const IExposureControl &>(static_cast<const D &>(*this))->get_Max(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IExposureControl<D>::Step() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_Step(put(value)));
+    check_hresult(static_cast<const IExposureControl &>(static_cast<const D &>(*this))->get_Step(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IExposureControl<D>::Value() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_Value(put(value)));
+    check_hresult(static_cast<const IExposureControl &>(static_cast<const D &>(*this))->get_Value(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IExposureControl<D>::SetValueAsync(const Windows::Foundation::TimeSpan & shutterDuration) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(shim()->abi_SetValueAsync(get(shutterDuration), put(asyncInfo)));
+    check_hresult(static_cast<const IExposureControl &>(static_cast<const D &>(*this))->abi_SetValueAsync(get(shutterDuration), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Media::Devices::ZoomTransitionMode impl_IZoomSettings<D>::Mode() const
 {
     Windows::Media::Devices::ZoomTransitionMode value {};
-    check_hresult(shim()->get_Mode(&value));
+    check_hresult(static_cast<const IZoomSettings &>(static_cast<const D &>(*this))->get_Mode(&value));
     return value;
 }
 
 template <typename D> void impl_IZoomSettings<D>::Mode(Windows::Media::Devices::ZoomTransitionMode value) const
 {
-    check_hresult(shim()->put_Mode(value));
+    check_hresult(static_cast<const IZoomSettings &>(static_cast<const D &>(*this))->put_Mode(value));
 }
 
 template <typename D> float impl_IZoomSettings<D>::Value() const
 {
     float value {};
-    check_hresult(shim()->get_Value(&value));
+    check_hresult(static_cast<const IZoomSettings &>(static_cast<const D &>(*this))->get_Value(&value));
     return value;
 }
 
 template <typename D> void impl_IZoomSettings<D>::Value(float value) const
 {
-    check_hresult(shim()->put_Value(value));
+    check_hresult(static_cast<const IZoomSettings &>(static_cast<const D &>(*this))->put_Value(value));
 }
 
 template <typename D> bool impl_IZoomControl<D>::Supported() const
 {
     bool value {};
-    check_hresult(shim()->get_Supported(&value));
+    check_hresult(static_cast<const IZoomControl &>(static_cast<const D &>(*this))->get_Supported(&value));
     return value;
 }
 
 template <typename D> float impl_IZoomControl<D>::Min() const
 {
     float value {};
-    check_hresult(shim()->get_Min(&value));
+    check_hresult(static_cast<const IZoomControl &>(static_cast<const D &>(*this))->get_Min(&value));
     return value;
 }
 
 template <typename D> float impl_IZoomControl<D>::Max() const
 {
     float value {};
-    check_hresult(shim()->get_Max(&value));
+    check_hresult(static_cast<const IZoomControl &>(static_cast<const D &>(*this))->get_Max(&value));
     return value;
 }
 
 template <typename D> float impl_IZoomControl<D>::Step() const
 {
     float value {};
-    check_hresult(shim()->get_Step(&value));
+    check_hresult(static_cast<const IZoomControl &>(static_cast<const D &>(*this))->get_Step(&value));
     return value;
 }
 
 template <typename D> float impl_IZoomControl<D>::Value() const
 {
     float value {};
-    check_hresult(shim()->get_Value(&value));
+    check_hresult(static_cast<const IZoomControl &>(static_cast<const D &>(*this))->get_Value(&value));
     return value;
 }
 
 template <typename D> void impl_IZoomControl<D>::Value(float value) const
 {
-    check_hresult(shim()->put_Value(value));
+    check_hresult(static_cast<const IZoomControl &>(static_cast<const D &>(*this))->put_Value(value));
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::ZoomTransitionMode> impl_IZoomControl2<D>::SupportedModes() const
 {
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::ZoomTransitionMode> value;
-    check_hresult(shim()->get_SupportedModes(put(value)));
+    check_hresult(static_cast<const IZoomControl2 &>(static_cast<const D &>(*this))->get_SupportedModes(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::ZoomTransitionMode impl_IZoomControl2<D>::Mode() const
 {
     Windows::Media::Devices::ZoomTransitionMode value {};
-    check_hresult(shim()->get_Mode(&value));
+    check_hresult(static_cast<const IZoomControl2 &>(static_cast<const D &>(*this))->get_Mode(&value));
     return value;
 }
 
 template <typename D> void impl_IZoomControl2<D>::Configure(const Windows::Media::Devices::ZoomSettings & settings) const
 {
-    check_hresult(shim()->abi_Configure(get(settings)));
+    check_hresult(static_cast<const IZoomControl2 &>(static_cast<const D &>(*this))->abi_Configure(get(settings)));
 }
 
 template <typename D> Windows::Media::Devices::FocusMode impl_IFocusSettings<D>::Mode() const
 {
     Windows::Media::Devices::FocusMode value {};
-    check_hresult(shim()->get_Mode(&value));
+    check_hresult(static_cast<const IFocusSettings &>(static_cast<const D &>(*this))->get_Mode(&value));
     return value;
 }
 
 template <typename D> void impl_IFocusSettings<D>::Mode(Windows::Media::Devices::FocusMode value) const
 {
-    check_hresult(shim()->put_Mode(value));
+    check_hresult(static_cast<const IFocusSettings &>(static_cast<const D &>(*this))->put_Mode(value));
 }
 
 template <typename D> Windows::Media::Devices::AutoFocusRange impl_IFocusSettings<D>::AutoFocusRange() const
 {
     Windows::Media::Devices::AutoFocusRange value {};
-    check_hresult(shim()->get_AutoFocusRange(&value));
+    check_hresult(static_cast<const IFocusSettings &>(static_cast<const D &>(*this))->get_AutoFocusRange(&value));
     return value;
 }
 
 template <typename D> void impl_IFocusSettings<D>::AutoFocusRange(Windows::Media::Devices::AutoFocusRange value) const
 {
-    check_hresult(shim()->put_AutoFocusRange(value));
+    check_hresult(static_cast<const IFocusSettings &>(static_cast<const D &>(*this))->put_AutoFocusRange(value));
 }
 
 template <typename D> Windows::Foundation::IReference<uint32_t> impl_IFocusSettings<D>::Value() const
 {
     Windows::Foundation::IReference<uint32_t> value;
-    check_hresult(shim()->get_Value(put(value)));
+    check_hresult(static_cast<const IFocusSettings &>(static_cast<const D &>(*this))->get_Value(put(value)));
     return value;
 }
 
 template <typename D> void impl_IFocusSettings<D>::Value(const Windows::Foundation::IReference<uint32_t> & value) const
 {
-    check_hresult(shim()->put_Value(get(value)));
+    check_hresult(static_cast<const IFocusSettings &>(static_cast<const D &>(*this))->put_Value(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<winrt::Windows::Media::Devices::ManualFocusDistance> impl_IFocusSettings<D>::Distance() const
 {
     Windows::Foundation::IReference<winrt::Windows::Media::Devices::ManualFocusDistance> value;
-    check_hresult(shim()->get_Distance(put(value)));
+    check_hresult(static_cast<const IFocusSettings &>(static_cast<const D &>(*this))->get_Distance(put(value)));
     return value;
 }
 
 template <typename D> void impl_IFocusSettings<D>::Distance(const Windows::Foundation::IReference<winrt::Windows::Media::Devices::ManualFocusDistance> & value) const
 {
-    check_hresult(shim()->put_Distance(get(value)));
+    check_hresult(static_cast<const IFocusSettings &>(static_cast<const D &>(*this))->put_Distance(get(value)));
 }
 
 template <typename D> bool impl_IFocusSettings<D>::WaitForFocus() const
 {
     bool value {};
-    check_hresult(shim()->get_WaitForFocus(&value));
+    check_hresult(static_cast<const IFocusSettings &>(static_cast<const D &>(*this))->get_WaitForFocus(&value));
     return value;
 }
 
 template <typename D> void impl_IFocusSettings<D>::WaitForFocus(bool value) const
 {
-    check_hresult(shim()->put_WaitForFocus(value));
+    check_hresult(static_cast<const IFocusSettings &>(static_cast<const D &>(*this))->put_WaitForFocus(value));
 }
 
 template <typename D> bool impl_IFocusSettings<D>::DisableDriverFallback() const
 {
     bool value {};
-    check_hresult(shim()->get_DisableDriverFallback(&value));
+    check_hresult(static_cast<const IFocusSettings &>(static_cast<const D &>(*this))->get_DisableDriverFallback(&value));
     return value;
 }
 
 template <typename D> void impl_IFocusSettings<D>::DisableDriverFallback(bool value) const
 {
-    check_hresult(shim()->put_DisableDriverFallback(value));
+    check_hresult(static_cast<const IFocusSettings &>(static_cast<const D &>(*this))->put_DisableDriverFallback(value));
 }
 
 template <typename D> bool impl_IFocusControl<D>::Supported() const
 {
     bool value {};
-    check_hresult(shim()->get_Supported(&value));
+    check_hresult(static_cast<const IFocusControl &>(static_cast<const D &>(*this))->get_Supported(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::FocusPreset> impl_IFocusControl<D>::SupportedPresets() const
 {
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::FocusPreset> value;
-    check_hresult(shim()->get_SupportedPresets(put(value)));
+    check_hresult(static_cast<const IFocusControl &>(static_cast<const D &>(*this))->get_SupportedPresets(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::FocusPreset impl_IFocusControl<D>::Preset() const
 {
     Windows::Media::Devices::FocusPreset value {};
-    check_hresult(shim()->get_Preset(&value));
+    check_hresult(static_cast<const IFocusControl &>(static_cast<const D &>(*this))->get_Preset(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IFocusControl<D>::SetPresetAsync(Windows::Media::Devices::FocusPreset preset) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(shim()->abi_SetPresetAsync(preset, put(asyncInfo)));
+    check_hresult(static_cast<const IFocusControl &>(static_cast<const D &>(*this))->abi_SetPresetAsync(preset, put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IFocusControl<D>::SetPresetAsync(Windows::Media::Devices::FocusPreset preset, bool completeBeforeFocus) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(shim()->abi_SetPresetWithCompletionOptionAsync(preset, completeBeforeFocus, put(asyncInfo)));
+    check_hresult(static_cast<const IFocusControl &>(static_cast<const D &>(*this))->abi_SetPresetWithCompletionOptionAsync(preset, completeBeforeFocus, put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> uint32_t impl_IFocusControl<D>::Min() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_Min(&value));
+    check_hresult(static_cast<const IFocusControl &>(static_cast<const D &>(*this))->get_Min(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IFocusControl<D>::Max() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_Max(&value));
+    check_hresult(static_cast<const IFocusControl &>(static_cast<const D &>(*this))->get_Max(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IFocusControl<D>::Step() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_Step(&value));
+    check_hresult(static_cast<const IFocusControl &>(static_cast<const D &>(*this))->get_Step(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IFocusControl<D>::Value() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_Value(&value));
+    check_hresult(static_cast<const IFocusControl &>(static_cast<const D &>(*this))->get_Value(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IFocusControl<D>::SetValueAsync(uint32_t focus) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(shim()->abi_SetValueAsync(focus, put(asyncInfo)));
+    check_hresult(static_cast<const IFocusControl &>(static_cast<const D &>(*this))->abi_SetValueAsync(focus, put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IFocusControl<D>::FocusAsync() const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(shim()->abi_FocusAsync(put(asyncInfo)));
+    check_hresult(static_cast<const IFocusControl &>(static_cast<const D &>(*this))->abi_FocusAsync(put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> bool impl_IFocusControl2<D>::FocusChangedSupported() const
 {
     bool value {};
-    check_hresult(shim()->get_FocusChangedSupported(&value));
+    check_hresult(static_cast<const IFocusControl2 &>(static_cast<const D &>(*this))->get_FocusChangedSupported(&value));
     return value;
 }
 
 template <typename D> bool impl_IFocusControl2<D>::WaitForFocusSupported() const
 {
     bool value {};
-    check_hresult(shim()->get_WaitForFocusSupported(&value));
+    check_hresult(static_cast<const IFocusControl2 &>(static_cast<const D &>(*this))->get_WaitForFocusSupported(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::FocusMode> impl_IFocusControl2<D>::SupportedFocusModes() const
 {
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::FocusMode> value;
-    check_hresult(shim()->get_SupportedFocusModes(put(value)));
+    check_hresult(static_cast<const IFocusControl2 &>(static_cast<const D &>(*this))->get_SupportedFocusModes(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::ManualFocusDistance> impl_IFocusControl2<D>::SupportedFocusDistances() const
 {
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::ManualFocusDistance> value;
-    check_hresult(shim()->get_SupportedFocusDistances(put(value)));
+    check_hresult(static_cast<const IFocusControl2 &>(static_cast<const D &>(*this))->get_SupportedFocusDistances(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::AutoFocusRange> impl_IFocusControl2<D>::SupportedFocusRanges() const
 {
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::AutoFocusRange> value;
-    check_hresult(shim()->get_SupportedFocusRanges(put(value)));
+    check_hresult(static_cast<const IFocusControl2 &>(static_cast<const D &>(*this))->get_SupportedFocusRanges(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::FocusMode impl_IFocusControl2<D>::Mode() const
 {
     Windows::Media::Devices::FocusMode value {};
-    check_hresult(shim()->get_Mode(&value));
+    check_hresult(static_cast<const IFocusControl2 &>(static_cast<const D &>(*this))->get_Mode(&value));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::MediaCaptureFocusState impl_IFocusControl2<D>::FocusState() const
 {
     Windows::Media::Devices::MediaCaptureFocusState value {};
-    check_hresult(shim()->get_FocusState(&value));
+    check_hresult(static_cast<const IFocusControl2 &>(static_cast<const D &>(*this))->get_FocusState(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IFocusControl2<D>::UnlockAsync() const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(shim()->abi_UnlockAsync(put(asyncInfo)));
+    check_hresult(static_cast<const IFocusControl2 &>(static_cast<const D &>(*this))->abi_UnlockAsync(put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IFocusControl2<D>::LockAsync() const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(shim()->abi_LockAsync(put(asyncInfo)));
+    check_hresult(static_cast<const IFocusControl2 &>(static_cast<const D &>(*this))->abi_LockAsync(put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> void impl_IFocusControl2<D>::Configure(const Windows::Media::Devices::FocusSettings & settings) const
 {
-    check_hresult(shim()->abi_Configure(get(settings)));
+    check_hresult(static_cast<const IFocusControl2 &>(static_cast<const D &>(*this))->abi_Configure(get(settings)));
 }
 
 template <typename D> bool impl_IRegionOfInterest<D>::AutoFocusEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_AutoFocusEnabled(&value));
+    check_hresult(static_cast<const IRegionOfInterest &>(static_cast<const D &>(*this))->get_AutoFocusEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IRegionOfInterest<D>::AutoFocusEnabled(bool value) const
 {
-    check_hresult(shim()->put_AutoFocusEnabled(value));
+    check_hresult(static_cast<const IRegionOfInterest &>(static_cast<const D &>(*this))->put_AutoFocusEnabled(value));
 }
 
 template <typename D> bool impl_IRegionOfInterest<D>::AutoWhiteBalanceEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_AutoWhiteBalanceEnabled(&value));
+    check_hresult(static_cast<const IRegionOfInterest &>(static_cast<const D &>(*this))->get_AutoWhiteBalanceEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IRegionOfInterest<D>::AutoWhiteBalanceEnabled(bool value) const
 {
-    check_hresult(shim()->put_AutoWhiteBalanceEnabled(value));
+    check_hresult(static_cast<const IRegionOfInterest &>(static_cast<const D &>(*this))->put_AutoWhiteBalanceEnabled(value));
 }
 
 template <typename D> bool impl_IRegionOfInterest<D>::AutoExposureEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_AutoExposureEnabled(&value));
+    check_hresult(static_cast<const IRegionOfInterest &>(static_cast<const D &>(*this))->get_AutoExposureEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IRegionOfInterest<D>::AutoExposureEnabled(bool value) const
 {
-    check_hresult(shim()->put_AutoExposureEnabled(value));
+    check_hresult(static_cast<const IRegionOfInterest &>(static_cast<const D &>(*this))->put_AutoExposureEnabled(value));
 }
 
 template <typename D> Windows::Foundation::Rect impl_IRegionOfInterest<D>::Bounds() const
 {
     Windows::Foundation::Rect value {};
-    check_hresult(shim()->get_Bounds(put(value)));
+    check_hresult(static_cast<const IRegionOfInterest &>(static_cast<const D &>(*this))->get_Bounds(put(value)));
     return value;
 }
 
 template <typename D> void impl_IRegionOfInterest<D>::Bounds(const Windows::Foundation::Rect & value) const
 {
-    check_hresult(shim()->put_Bounds(get(value)));
+    check_hresult(static_cast<const IRegionOfInterest &>(static_cast<const D &>(*this))->put_Bounds(get(value)));
 }
 
 template <typename D> Windows::Media::Devices::RegionOfInterestType impl_IRegionOfInterest2<D>::Type() const
 {
     Windows::Media::Devices::RegionOfInterestType value {};
-    check_hresult(shim()->get_Type(&value));
+    check_hresult(static_cast<const IRegionOfInterest2 &>(static_cast<const D &>(*this))->get_Type(&value));
     return value;
 }
 
 template <typename D> void impl_IRegionOfInterest2<D>::Type(Windows::Media::Devices::RegionOfInterestType value) const
 {
-    check_hresult(shim()->put_Type(value));
+    check_hresult(static_cast<const IRegionOfInterest2 &>(static_cast<const D &>(*this))->put_Type(value));
 }
 
 template <typename D> bool impl_IRegionOfInterest2<D>::BoundsNormalized() const
 {
     bool value {};
-    check_hresult(shim()->get_BoundsNormalized(&value));
+    check_hresult(static_cast<const IRegionOfInterest2 &>(static_cast<const D &>(*this))->get_BoundsNormalized(&value));
     return value;
 }
 
 template <typename D> void impl_IRegionOfInterest2<D>::BoundsNormalized(bool value) const
 {
-    check_hresult(shim()->put_BoundsNormalized(value));
+    check_hresult(static_cast<const IRegionOfInterest2 &>(static_cast<const D &>(*this))->put_BoundsNormalized(value));
 }
 
 template <typename D> uint32_t impl_IRegionOfInterest2<D>::Weight() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_Weight(&value));
+    check_hresult(static_cast<const IRegionOfInterest2 &>(static_cast<const D &>(*this))->get_Weight(&value));
     return value;
 }
 
 template <typename D> void impl_IRegionOfInterest2<D>::Weight(uint32_t value) const
 {
-    check_hresult(shim()->put_Weight(value));
+    check_hresult(static_cast<const IRegionOfInterest2 &>(static_cast<const D &>(*this))->put_Weight(value));
 }
 
 template <typename D> uint32_t impl_IRegionsOfInterestControl<D>::MaxRegions() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_MaxRegions(&value));
+    check_hresult(static_cast<const IRegionsOfInterestControl &>(static_cast<const D &>(*this))->get_MaxRegions(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IRegionsOfInterestControl<D>::SetRegionsAsync(const Windows::Foundation::Collections::IIterable<Windows::Media::Devices::RegionOfInterest> & regions) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(shim()->abi_SetRegionsAsync(get(regions), put(asyncInfo)));
+    check_hresult(static_cast<const IRegionsOfInterestControl &>(static_cast<const D &>(*this))->abi_SetRegionsAsync(get(regions), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IRegionsOfInterestControl<D>::SetRegionsAsync(const Windows::Foundation::Collections::IIterable<Windows::Media::Devices::RegionOfInterest> & regions, bool lockValues) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(shim()->abi_SetRegionsWithLockAsync(get(regions), lockValues, put(asyncInfo)));
+    check_hresult(static_cast<const IRegionsOfInterestControl &>(static_cast<const D &>(*this))->abi_SetRegionsWithLockAsync(get(regions), lockValues, put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IRegionsOfInterestControl<D>::ClearRegionsAsync() const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(shim()->abi_ClearRegionsAsync(put(asyncInfo)));
+    check_hresult(static_cast<const IRegionsOfInterestControl &>(static_cast<const D &>(*this))->abi_ClearRegionsAsync(put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> bool impl_IRegionsOfInterestControl<D>::AutoFocusSupported() const
 {
     bool value {};
-    check_hresult(shim()->get_AutoFocusSupported(&value));
+    check_hresult(static_cast<const IRegionsOfInterestControl &>(static_cast<const D &>(*this))->get_AutoFocusSupported(&value));
     return value;
 }
 
 template <typename D> bool impl_IRegionsOfInterestControl<D>::AutoWhiteBalanceSupported() const
 {
     bool value {};
-    check_hresult(shim()->get_AutoWhiteBalanceSupported(&value));
+    check_hresult(static_cast<const IRegionsOfInterestControl &>(static_cast<const D &>(*this))->get_AutoWhiteBalanceSupported(&value));
     return value;
 }
 
 template <typename D> bool impl_IRegionsOfInterestControl<D>::AutoExposureSupported() const
 {
     bool value {};
-    check_hresult(shim()->get_AutoExposureSupported(&value));
+    check_hresult(static_cast<const IRegionsOfInterestControl &>(static_cast<const D &>(*this))->get_AutoExposureSupported(&value));
     return value;
 }
 
 template <typename D> bool impl_IExposurePriorityVideoControl<D>::Supported() const
 {
     bool value {};
-    check_hresult(shim()->get_Supported(&value));
+    check_hresult(static_cast<const IExposurePriorityVideoControl &>(static_cast<const D &>(*this))->get_Supported(&value));
     return value;
 }
 
 template <typename D> bool impl_IExposurePriorityVideoControl<D>::Enabled() const
 {
     bool value {};
-    check_hresult(shim()->get_Enabled(&value));
+    check_hresult(static_cast<const IExposurePriorityVideoControl &>(static_cast<const D &>(*this))->get_Enabled(&value));
     return value;
 }
 
 template <typename D> void impl_IExposurePriorityVideoControl<D>::Enabled(bool value) const
 {
-    check_hresult(shim()->put_Enabled(value));
+    check_hresult(static_cast<const IExposurePriorityVideoControl &>(static_cast<const D &>(*this))->put_Enabled(value));
 }
 
 template <typename D> bool impl_IHdrVideoControl<D>::Supported() const
 {
     bool value {};
-    check_hresult(shim()->get_Supported(&value));
+    check_hresult(static_cast<const IHdrVideoControl &>(static_cast<const D &>(*this))->get_Supported(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::HdrVideoMode> impl_IHdrVideoControl<D>::SupportedModes() const
 {
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::HdrVideoMode> value;
-    check_hresult(shim()->get_SupportedModes(put(value)));
+    check_hresult(static_cast<const IHdrVideoControl &>(static_cast<const D &>(*this))->get_SupportedModes(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::HdrVideoMode impl_IHdrVideoControl<D>::Mode() const
 {
     Windows::Media::Devices::HdrVideoMode value {};
-    check_hresult(shim()->get_Mode(&value));
+    check_hresult(static_cast<const IHdrVideoControl &>(static_cast<const D &>(*this))->get_Mode(&value));
     return value;
 }
 
 template <typename D> void impl_IHdrVideoControl<D>::Mode(Windows::Media::Devices::HdrVideoMode value) const
 {
-    check_hresult(shim()->put_Mode(value));
+    check_hresult(static_cast<const IHdrVideoControl &>(static_cast<const D &>(*this))->put_Mode(value));
 }
 
 template <typename D> Windows::Media::Devices::AdvancedPhotoMode impl_IAdvancedPhotoCaptureSettings<D>::Mode() const
 {
     Windows::Media::Devices::AdvancedPhotoMode value {};
-    check_hresult(shim()->get_Mode(&value));
+    check_hresult(static_cast<const IAdvancedPhotoCaptureSettings &>(static_cast<const D &>(*this))->get_Mode(&value));
     return value;
 }
 
 template <typename D> void impl_IAdvancedPhotoCaptureSettings<D>::Mode(Windows::Media::Devices::AdvancedPhotoMode value) const
 {
-    check_hresult(shim()->put_Mode(value));
+    check_hresult(static_cast<const IAdvancedPhotoCaptureSettings &>(static_cast<const D &>(*this))->put_Mode(value));
 }
 
 template <typename D> bool impl_IAdvancedPhotoControl<D>::Supported() const
 {
     bool value {};
-    check_hresult(shim()->get_Supported(&value));
+    check_hresult(static_cast<const IAdvancedPhotoControl &>(static_cast<const D &>(*this))->get_Supported(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::AdvancedPhotoMode> impl_IAdvancedPhotoControl<D>::SupportedModes() const
 {
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::AdvancedPhotoMode> value;
-    check_hresult(shim()->get_SupportedModes(put(value)));
+    check_hresult(static_cast<const IAdvancedPhotoControl &>(static_cast<const D &>(*this))->get_SupportedModes(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::AdvancedPhotoMode impl_IAdvancedPhotoControl<D>::Mode() const
 {
     Windows::Media::Devices::AdvancedPhotoMode value {};
-    check_hresult(shim()->get_Mode(&value));
+    check_hresult(static_cast<const IAdvancedPhotoControl &>(static_cast<const D &>(*this))->get_Mode(&value));
     return value;
 }
 
 template <typename D> void impl_IAdvancedPhotoControl<D>::Configure(const Windows::Media::Devices::AdvancedPhotoCaptureSettings & settings) const
 {
-    check_hresult(shim()->abi_Configure(get(settings)));
+    check_hresult(static_cast<const IAdvancedPhotoControl &>(static_cast<const D &>(*this))->abi_Configure(get(settings)));
 }
 
 template <typename D> bool impl_IOpticalImageStabilizationControl<D>::Supported() const
 {
     bool value {};
-    check_hresult(shim()->get_Supported(&value));
+    check_hresult(static_cast<const IOpticalImageStabilizationControl &>(static_cast<const D &>(*this))->get_Supported(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::OpticalImageStabilizationMode> impl_IOpticalImageStabilizationControl<D>::SupportedModes() const
 {
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::OpticalImageStabilizationMode> value;
-    check_hresult(shim()->get_SupportedModes(put(value)));
+    check_hresult(static_cast<const IOpticalImageStabilizationControl &>(static_cast<const D &>(*this))->get_SupportedModes(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::OpticalImageStabilizationMode impl_IOpticalImageStabilizationControl<D>::Mode() const
 {
     Windows::Media::Devices::OpticalImageStabilizationMode value {};
-    check_hresult(shim()->get_Mode(&value));
+    check_hresult(static_cast<const IOpticalImageStabilizationControl &>(static_cast<const D &>(*this))->get_Mode(&value));
     return value;
 }
 
 template <typename D> void impl_IOpticalImageStabilizationControl<D>::Mode(Windows::Media::Devices::OpticalImageStabilizationMode value) const
 {
-    check_hresult(shim()->put_Mode(value));
+    check_hresult(static_cast<const IOpticalImageStabilizationControl &>(static_cast<const D &>(*this))->put_Mode(value));
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::MediaProperties::IMediaEncodingProperties> impl_IMediaDeviceController<D>::GetAvailableMediaStreamProperties(Windows::Media::Capture::MediaStreamType mediaStreamType) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Media::MediaProperties::IMediaEncodingProperties> value;
-    check_hresult(shim()->abi_GetAvailableMediaStreamProperties(mediaStreamType, put(value)));
+    check_hresult(static_cast<const IMediaDeviceController &>(static_cast<const D &>(*this))->abi_GetAvailableMediaStreamProperties(mediaStreamType, put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::MediaProperties::IMediaEncodingProperties impl_IMediaDeviceController<D>::GetMediaStreamProperties(Windows::Media::Capture::MediaStreamType mediaStreamType) const
 {
     Windows::Media::MediaProperties::IMediaEncodingProperties value;
-    check_hresult(shim()->abi_GetMediaStreamProperties(mediaStreamType, put(value)));
+    check_hresult(static_cast<const IMediaDeviceController &>(static_cast<const D &>(*this))->abi_GetMediaStreamProperties(mediaStreamType, put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IMediaDeviceController<D>::SetMediaStreamPropertiesAsync(Windows::Media::Capture::MediaStreamType mediaStreamType, const Windows::Media::MediaProperties::IMediaEncodingProperties & mediaEncodingProperties) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(shim()->abi_SetMediaStreamPropertiesAsync(mediaStreamType, get(mediaEncodingProperties), put(asyncInfo)));
+    check_hresult(static_cast<const IMediaDeviceController &>(static_cast<const D &>(*this))->abi_SetMediaStreamPropertiesAsync(mediaStreamType, get(mediaEncodingProperties), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> void impl_IAudioDeviceController<D>::Muted(bool value) const
 {
-    check_hresult(shim()->put_Muted(value));
+    check_hresult(static_cast<const IAudioDeviceController &>(static_cast<const D &>(*this))->put_Muted(value));
 }
 
 template <typename D> bool impl_IAudioDeviceController<D>::Muted() const
 {
     bool value {};
-    check_hresult(shim()->get_Muted(&value));
+    check_hresult(static_cast<const IAudioDeviceController &>(static_cast<const D &>(*this))->get_Muted(&value));
     return value;
 }
 
 template <typename D> void impl_IAudioDeviceController<D>::VolumePercent(float value) const
 {
-    check_hresult(shim()->put_VolumePercent(value));
+    check_hresult(static_cast<const IAudioDeviceController &>(static_cast<const D &>(*this))->put_VolumePercent(value));
 }
 
 template <typename D> float impl_IAudioDeviceController<D>::VolumePercent() const
 {
     float value {};
-    check_hresult(shim()->get_VolumePercent(&value));
+    check_hresult(static_cast<const IAudioDeviceController &>(static_cast<const D &>(*this))->get_VolumePercent(&value));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::MediaDeviceControl impl_IVideoDeviceController<D>::Brightness() const
 {
     Windows::Media::Devices::MediaDeviceControl value { nullptr };
-    check_hresult(shim()->get_Brightness(put(value)));
+    check_hresult(static_cast<const IVideoDeviceController &>(static_cast<const D &>(*this))->get_Brightness(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::MediaDeviceControl impl_IVideoDeviceController<D>::Contrast() const
 {
     Windows::Media::Devices::MediaDeviceControl value { nullptr };
-    check_hresult(shim()->get_Contrast(put(value)));
+    check_hresult(static_cast<const IVideoDeviceController &>(static_cast<const D &>(*this))->get_Contrast(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::MediaDeviceControl impl_IVideoDeviceController<D>::Hue() const
 {
     Windows::Media::Devices::MediaDeviceControl value { nullptr };
-    check_hresult(shim()->get_Hue(put(value)));
+    check_hresult(static_cast<const IVideoDeviceController &>(static_cast<const D &>(*this))->get_Hue(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::MediaDeviceControl impl_IVideoDeviceController<D>::WhiteBalance() const
 {
     Windows::Media::Devices::MediaDeviceControl value { nullptr };
-    check_hresult(shim()->get_WhiteBalance(put(value)));
+    check_hresult(static_cast<const IVideoDeviceController &>(static_cast<const D &>(*this))->get_WhiteBalance(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::MediaDeviceControl impl_IVideoDeviceController<D>::BacklightCompensation() const
 {
     Windows::Media::Devices::MediaDeviceControl value { nullptr };
-    check_hresult(shim()->get_BacklightCompensation(put(value)));
+    check_hresult(static_cast<const IVideoDeviceController &>(static_cast<const D &>(*this))->get_BacklightCompensation(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::MediaDeviceControl impl_IVideoDeviceController<D>::Pan() const
 {
     Windows::Media::Devices::MediaDeviceControl value { nullptr };
-    check_hresult(shim()->get_Pan(put(value)));
+    check_hresult(static_cast<const IVideoDeviceController &>(static_cast<const D &>(*this))->get_Pan(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::MediaDeviceControl impl_IVideoDeviceController<D>::Tilt() const
 {
     Windows::Media::Devices::MediaDeviceControl value { nullptr };
-    check_hresult(shim()->get_Tilt(put(value)));
+    check_hresult(static_cast<const IVideoDeviceController &>(static_cast<const D &>(*this))->get_Tilt(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::MediaDeviceControl impl_IVideoDeviceController<D>::Zoom() const
 {
     Windows::Media::Devices::MediaDeviceControl value { nullptr };
-    check_hresult(shim()->get_Zoom(put(value)));
+    check_hresult(static_cast<const IVideoDeviceController &>(static_cast<const D &>(*this))->get_Zoom(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::MediaDeviceControl impl_IVideoDeviceController<D>::Roll() const
 {
     Windows::Media::Devices::MediaDeviceControl value { nullptr };
-    check_hresult(shim()->get_Roll(put(value)));
+    check_hresult(static_cast<const IVideoDeviceController &>(static_cast<const D &>(*this))->get_Roll(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::MediaDeviceControl impl_IVideoDeviceController<D>::Exposure() const
 {
     Windows::Media::Devices::MediaDeviceControl value { nullptr };
-    check_hresult(shim()->get_Exposure(put(value)));
+    check_hresult(static_cast<const IVideoDeviceController &>(static_cast<const D &>(*this))->get_Exposure(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::MediaDeviceControl impl_IVideoDeviceController<D>::Focus() const
 {
     Windows::Media::Devices::MediaDeviceControl value { nullptr };
-    check_hresult(shim()->get_Focus(put(value)));
+    check_hresult(static_cast<const IVideoDeviceController &>(static_cast<const D &>(*this))->get_Focus(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IVideoDeviceController<D>::TrySetPowerlineFrequency(Windows::Media::Capture::PowerlineFrequency value) const
 {
     bool succeeded {};
-    check_hresult(shim()->abi_TrySetPowerlineFrequency(value, &succeeded));
+    check_hresult(static_cast<const IVideoDeviceController &>(static_cast<const D &>(*this))->abi_TrySetPowerlineFrequency(value, &succeeded));
     return succeeded;
 }
 
 template <typename D> bool impl_IVideoDeviceController<D>::TryGetPowerlineFrequency(Windows::Media::Capture::PowerlineFrequency & value) const
 {
     bool succeeded {};
-    check_hresult(shim()->abi_TryGetPowerlineFrequency(&value, &succeeded));
+    check_hresult(static_cast<const IVideoDeviceController &>(static_cast<const D &>(*this))->abi_TryGetPowerlineFrequency(&value, &succeeded));
     return succeeded;
 }
 
 template <typename D> Windows::Media::Devices::LowLagPhotoSequenceControl impl_IAdvancedVideoCaptureDeviceController2<D>::LowLagPhotoSequence() const
 {
     Windows::Media::Devices::LowLagPhotoSequenceControl value { nullptr };
-    check_hresult(shim()->get_LowLagPhotoSequence(put(value)));
+    check_hresult(static_cast<const IAdvancedVideoCaptureDeviceController2 &>(static_cast<const D &>(*this))->get_LowLagPhotoSequence(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::LowLagPhotoControl impl_IAdvancedVideoCaptureDeviceController2<D>::LowLagPhoto() const
 {
     Windows::Media::Devices::LowLagPhotoControl value { nullptr };
-    check_hresult(shim()->get_LowLagPhoto(put(value)));
+    check_hresult(static_cast<const IAdvancedVideoCaptureDeviceController2 &>(static_cast<const D &>(*this))->get_LowLagPhoto(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::SceneModeControl impl_IAdvancedVideoCaptureDeviceController2<D>::SceneModeControl() const
 {
     Windows::Media::Devices::SceneModeControl value { nullptr };
-    check_hresult(shim()->get_SceneModeControl(put(value)));
+    check_hresult(static_cast<const IAdvancedVideoCaptureDeviceController2 &>(static_cast<const D &>(*this))->get_SceneModeControl(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::TorchControl impl_IAdvancedVideoCaptureDeviceController2<D>::TorchControl() const
 {
     Windows::Media::Devices::TorchControl value { nullptr };
-    check_hresult(shim()->get_TorchControl(put(value)));
+    check_hresult(static_cast<const IAdvancedVideoCaptureDeviceController2 &>(static_cast<const D &>(*this))->get_TorchControl(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::FlashControl impl_IAdvancedVideoCaptureDeviceController2<D>::FlashControl() const
 {
     Windows::Media::Devices::FlashControl value { nullptr };
-    check_hresult(shim()->get_FlashControl(put(value)));
+    check_hresult(static_cast<const IAdvancedVideoCaptureDeviceController2 &>(static_cast<const D &>(*this))->get_FlashControl(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::WhiteBalanceControl impl_IAdvancedVideoCaptureDeviceController2<D>::WhiteBalanceControl() const
 {
     Windows::Media::Devices::WhiteBalanceControl value { nullptr };
-    check_hresult(shim()->get_WhiteBalanceControl(put(value)));
+    check_hresult(static_cast<const IAdvancedVideoCaptureDeviceController2 &>(static_cast<const D &>(*this))->get_WhiteBalanceControl(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::ExposureControl impl_IAdvancedVideoCaptureDeviceController2<D>::ExposureControl() const
 {
     Windows::Media::Devices::ExposureControl value { nullptr };
-    check_hresult(shim()->get_ExposureControl(put(value)));
+    check_hresult(static_cast<const IAdvancedVideoCaptureDeviceController2 &>(static_cast<const D &>(*this))->get_ExposureControl(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::FocusControl impl_IAdvancedVideoCaptureDeviceController2<D>::FocusControl() const
 {
     Windows::Media::Devices::FocusControl value { nullptr };
-    check_hresult(shim()->get_FocusControl(put(value)));
+    check_hresult(static_cast<const IAdvancedVideoCaptureDeviceController2 &>(static_cast<const D &>(*this))->get_FocusControl(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::ExposureCompensationControl impl_IAdvancedVideoCaptureDeviceController2<D>::ExposureCompensationControl() const
 {
     Windows::Media::Devices::ExposureCompensationControl value { nullptr };
-    check_hresult(shim()->get_ExposureCompensationControl(put(value)));
+    check_hresult(static_cast<const IAdvancedVideoCaptureDeviceController2 &>(static_cast<const D &>(*this))->get_ExposureCompensationControl(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::IsoSpeedControl impl_IAdvancedVideoCaptureDeviceController2<D>::IsoSpeedControl() const
 {
     Windows::Media::Devices::IsoSpeedControl value { nullptr };
-    check_hresult(shim()->get_IsoSpeedControl(put(value)));
+    check_hresult(static_cast<const IAdvancedVideoCaptureDeviceController2 &>(static_cast<const D &>(*this))->get_IsoSpeedControl(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::RegionsOfInterestControl impl_IAdvancedVideoCaptureDeviceController2<D>::RegionsOfInterestControl() const
 {
     Windows::Media::Devices::RegionsOfInterestControl value { nullptr };
-    check_hresult(shim()->get_RegionsOfInterestControl(put(value)));
+    check_hresult(static_cast<const IAdvancedVideoCaptureDeviceController2 &>(static_cast<const D &>(*this))->get_RegionsOfInterestControl(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::CaptureUse impl_IAdvancedVideoCaptureDeviceController2<D>::PrimaryUse() const
 {
     Windows::Media::Devices::CaptureUse value {};
-    check_hresult(shim()->get_PrimaryUse(&value));
+    check_hresult(static_cast<const IAdvancedVideoCaptureDeviceController2 &>(static_cast<const D &>(*this))->get_PrimaryUse(&value));
     return value;
 }
 
 template <typename D> void impl_IAdvancedVideoCaptureDeviceController2<D>::PrimaryUse(Windows::Media::Devices::CaptureUse value) const
 {
-    check_hresult(shim()->put_PrimaryUse(value));
+    check_hresult(static_cast<const IAdvancedVideoCaptureDeviceController2 &>(static_cast<const D &>(*this))->put_PrimaryUse(value));
 }
 
 template <typename D> Windows::Media::Devices::Core::VariablePhotoSequenceController impl_IAdvancedVideoCaptureDeviceController3<D>::VariablePhotoSequenceController() const
 {
     Windows::Media::Devices::Core::VariablePhotoSequenceController value { nullptr };
-    check_hresult(shim()->get_VariablePhotoSequenceController(put(value)));
+    check_hresult(static_cast<const IAdvancedVideoCaptureDeviceController3 &>(static_cast<const D &>(*this))->get_VariablePhotoSequenceController(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::PhotoConfirmationControl impl_IAdvancedVideoCaptureDeviceController3<D>::PhotoConfirmationControl() const
 {
     Windows::Media::Devices::PhotoConfirmationControl value { nullptr };
-    check_hresult(shim()->get_PhotoConfirmationControl(put(value)));
+    check_hresult(static_cast<const IAdvancedVideoCaptureDeviceController3 &>(static_cast<const D &>(*this))->get_PhotoConfirmationControl(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::ZoomControl impl_IAdvancedVideoCaptureDeviceController3<D>::ZoomControl() const
 {
     Windows::Media::Devices::ZoomControl value { nullptr };
-    check_hresult(shim()->get_ZoomControl(put(value)));
+    check_hresult(static_cast<const IAdvancedVideoCaptureDeviceController3 &>(static_cast<const D &>(*this))->get_ZoomControl(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::ExposurePriorityVideoControl impl_IAdvancedVideoCaptureDeviceController4<D>::ExposurePriorityVideoControl() const
 {
     Windows::Media::Devices::ExposurePriorityVideoControl value { nullptr };
-    check_hresult(shim()->get_ExposurePriorityVideoControl(put(value)));
+    check_hresult(static_cast<const IAdvancedVideoCaptureDeviceController4 &>(static_cast<const D &>(*this))->get_ExposurePriorityVideoControl(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::MediaCaptureOptimization impl_IAdvancedVideoCaptureDeviceController4<D>::DesiredOptimization() const
 {
     Windows::Media::Devices::MediaCaptureOptimization value {};
-    check_hresult(shim()->get_DesiredOptimization(&value));
+    check_hresult(static_cast<const IAdvancedVideoCaptureDeviceController4 &>(static_cast<const D &>(*this))->get_DesiredOptimization(&value));
     return value;
 }
 
 template <typename D> void impl_IAdvancedVideoCaptureDeviceController4<D>::DesiredOptimization(Windows::Media::Devices::MediaCaptureOptimization value) const
 {
-    check_hresult(shim()->put_DesiredOptimization(value));
+    check_hresult(static_cast<const IAdvancedVideoCaptureDeviceController4 &>(static_cast<const D &>(*this))->put_DesiredOptimization(value));
 }
 
 template <typename D> Windows::Media::Devices::HdrVideoControl impl_IAdvancedVideoCaptureDeviceController4<D>::HdrVideoControl() const
 {
     Windows::Media::Devices::HdrVideoControl value { nullptr };
-    check_hresult(shim()->get_HdrVideoControl(put(value)));
+    check_hresult(static_cast<const IAdvancedVideoCaptureDeviceController4 &>(static_cast<const D &>(*this))->get_HdrVideoControl(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::OpticalImageStabilizationControl impl_IAdvancedVideoCaptureDeviceController4<D>::OpticalImageStabilizationControl() const
 {
     Windows::Media::Devices::OpticalImageStabilizationControl value { nullptr };
-    check_hresult(shim()->get_OpticalImageStabilizationControl(put(value)));
+    check_hresult(static_cast<const IAdvancedVideoCaptureDeviceController4 &>(static_cast<const D &>(*this))->get_OpticalImageStabilizationControl(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::AdvancedPhotoControl impl_IAdvancedVideoCaptureDeviceController4<D>::AdvancedPhotoControl() const
 {
     Windows::Media::Devices::AdvancedPhotoControl value { nullptr };
-    check_hresult(shim()->get_AdvancedPhotoControl(put(value)));
+    check_hresult(static_cast<const IAdvancedVideoCaptureDeviceController4 &>(static_cast<const D &>(*this))->get_AdvancedPhotoControl(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::MediaDeviceControlCapabilities impl_IMediaDeviceControl<D>::Capabilities() const
 {
     Windows::Media::Devices::MediaDeviceControlCapabilities value { nullptr };
-    check_hresult(shim()->get_Capabilities(put(value)));
+    check_hresult(static_cast<const IMediaDeviceControl &>(static_cast<const D &>(*this))->get_Capabilities(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IMediaDeviceControl<D>::TryGetValue(double & value) const
 {
     bool succeeded {};
-    check_hresult(shim()->abi_TryGetValue(&value, &succeeded));
+    check_hresult(static_cast<const IMediaDeviceControl &>(static_cast<const D &>(*this))->abi_TryGetValue(&value, &succeeded));
     return succeeded;
 }
 
 template <typename D> bool impl_IMediaDeviceControl<D>::TrySetValue(double value) const
 {
     bool succeeded {};
-    check_hresult(shim()->abi_TrySetValue(value, &succeeded));
+    check_hresult(static_cast<const IMediaDeviceControl &>(static_cast<const D &>(*this))->abi_TrySetValue(value, &succeeded));
     return succeeded;
 }
 
 template <typename D> bool impl_IMediaDeviceControl<D>::TryGetAuto(bool & value) const
 {
     bool succeeded {};
-    check_hresult(shim()->abi_TryGetAuto(&value, &succeeded));
+    check_hresult(static_cast<const IMediaDeviceControl &>(static_cast<const D &>(*this))->abi_TryGetAuto(&value, &succeeded));
     return succeeded;
 }
 
 template <typename D> bool impl_IMediaDeviceControl<D>::TrySetAuto(bool value) const
 {
     bool succeeded {};
-    check_hresult(shim()->abi_TrySetAuto(value, &succeeded));
+    check_hresult(static_cast<const IMediaDeviceControl &>(static_cast<const D &>(*this))->abi_TrySetAuto(value, &succeeded));
     return succeeded;
 }
 
 template <typename D> bool impl_IMediaDeviceControlCapabilities<D>::Supported() const
 {
     bool value {};
-    check_hresult(shim()->get_Supported(&value));
+    check_hresult(static_cast<const IMediaDeviceControlCapabilities &>(static_cast<const D &>(*this))->get_Supported(&value));
     return value;
 }
 
 template <typename D> double impl_IMediaDeviceControlCapabilities<D>::Min() const
 {
     double value {};
-    check_hresult(shim()->get_Min(&value));
+    check_hresult(static_cast<const IMediaDeviceControlCapabilities &>(static_cast<const D &>(*this))->get_Min(&value));
     return value;
 }
 
 template <typename D> double impl_IMediaDeviceControlCapabilities<D>::Max() const
 {
     double value {};
-    check_hresult(shim()->get_Max(&value));
+    check_hresult(static_cast<const IMediaDeviceControlCapabilities &>(static_cast<const D &>(*this))->get_Max(&value));
     return value;
 }
 
 template <typename D> double impl_IMediaDeviceControlCapabilities<D>::Step() const
 {
     double value {};
-    check_hresult(shim()->get_Step(&value));
+    check_hresult(static_cast<const IMediaDeviceControlCapabilities &>(static_cast<const D &>(*this))->get_Step(&value));
     return value;
 }
 
 template <typename D> double impl_IMediaDeviceControlCapabilities<D>::Default() const
 {
     double value {};
-    check_hresult(shim()->get_Default(&value));
+    check_hresult(static_cast<const IMediaDeviceControlCapabilities &>(static_cast<const D &>(*this))->get_Default(&value));
     return value;
 }
 
 template <typename D> bool impl_IMediaDeviceControlCapabilities<D>::AutoModeSupported() const
 {
     bool value {};
-    check_hresult(shim()->get_AutoModeSupported(&value));
+    check_hresult(static_cast<const IMediaDeviceControlCapabilities &>(static_cast<const D &>(*this))->get_AutoModeSupported(&value));
     return value;
 }
 
 template <typename D> void impl_IAdvancedVideoCaptureDeviceController<D>::SetDeviceProperty(hstring_ref propertyId, const Windows::IInspectable & propertyValue) const
 {
-    check_hresult(shim()->abi_SetDeviceProperty(get(propertyId), get(propertyValue)));
+    check_hresult(static_cast<const IAdvancedVideoCaptureDeviceController &>(static_cast<const D &>(*this))->abi_SetDeviceProperty(get(propertyId), get(propertyValue)));
 }
 
 template <typename D> Windows::IInspectable impl_IAdvancedVideoCaptureDeviceController<D>::GetDeviceProperty(hstring_ref propertyId) const
 {
     Windows::IInspectable propertyValue;
-    check_hresult(shim()->abi_GetDeviceProperty(get(propertyId), put(propertyValue)));
+    check_hresult(static_cast<const IAdvancedVideoCaptureDeviceController &>(static_cast<const D &>(*this))->abi_GetDeviceProperty(get(propertyId), put(propertyValue)));
     return propertyValue;
 }
 
 template <typename D> bool impl_ILowLagPhotoSequenceControl<D>::Supported() const
 {
     bool value {};
-    check_hresult(shim()->get_Supported(&value));
+    check_hresult(static_cast<const ILowLagPhotoSequenceControl &>(static_cast<const D &>(*this))->get_Supported(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_ILowLagPhotoSequenceControl<D>::MaxPastPhotos() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_MaxPastPhotos(&value));
+    check_hresult(static_cast<const ILowLagPhotoSequenceControl &>(static_cast<const D &>(*this))->get_MaxPastPhotos(&value));
     return value;
 }
 
 template <typename D> float impl_ILowLagPhotoSequenceControl<D>::MaxPhotosPerSecond() const
 {
     float value {};
-    check_hresult(shim()->get_MaxPhotosPerSecond(&value));
+    check_hresult(static_cast<const ILowLagPhotoSequenceControl &>(static_cast<const D &>(*this))->get_MaxPhotosPerSecond(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_ILowLagPhotoSequenceControl<D>::PastPhotoLimit() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_PastPhotoLimit(&value));
+    check_hresult(static_cast<const ILowLagPhotoSequenceControl &>(static_cast<const D &>(*this))->get_PastPhotoLimit(&value));
     return value;
 }
 
 template <typename D> void impl_ILowLagPhotoSequenceControl<D>::PastPhotoLimit(uint32_t value) const
 {
-    check_hresult(shim()->put_PastPhotoLimit(value));
+    check_hresult(static_cast<const ILowLagPhotoSequenceControl &>(static_cast<const D &>(*this))->put_PastPhotoLimit(value));
 }
 
 template <typename D> float impl_ILowLagPhotoSequenceControl<D>::PhotosPerSecondLimit() const
 {
     float value {};
-    check_hresult(shim()->get_PhotosPerSecondLimit(&value));
+    check_hresult(static_cast<const ILowLagPhotoSequenceControl &>(static_cast<const D &>(*this))->get_PhotosPerSecondLimit(&value));
     return value;
 }
 
 template <typename D> void impl_ILowLagPhotoSequenceControl<D>::PhotosPerSecondLimit(float value) const
 {
-    check_hresult(shim()->put_PhotosPerSecondLimit(value));
+    check_hresult(static_cast<const ILowLagPhotoSequenceControl &>(static_cast<const D &>(*this))->put_PhotosPerSecondLimit(value));
 }
 
 template <typename D> Windows::Media::MediaProperties::MediaRatio impl_ILowLagPhotoSequenceControl<D>::GetHighestConcurrentFrameRate(const Windows::Media::MediaProperties::IMediaEncodingProperties & captureProperties) const
 {
     Windows::Media::MediaProperties::MediaRatio value { nullptr };
-    check_hresult(shim()->abi_GetHighestConcurrentFrameRate(get(captureProperties), put(value)));
+    check_hresult(static_cast<const ILowLagPhotoSequenceControl &>(static_cast<const D &>(*this))->abi_GetHighestConcurrentFrameRate(get(captureProperties), put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::MediaProperties::MediaRatio impl_ILowLagPhotoSequenceControl<D>::GetCurrentFrameRate() const
 {
     Windows::Media::MediaProperties::MediaRatio value { nullptr };
-    check_hresult(shim()->abi_GetCurrentFrameRate(put(value)));
+    check_hresult(static_cast<const ILowLagPhotoSequenceControl &>(static_cast<const D &>(*this))->abi_GetCurrentFrameRate(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ILowLagPhotoSequenceControl<D>::ThumbnailEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_ThumbnailEnabled(&value));
+    check_hresult(static_cast<const ILowLagPhotoSequenceControl &>(static_cast<const D &>(*this))->get_ThumbnailEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_ILowLagPhotoSequenceControl<D>::ThumbnailEnabled(bool value) const
 {
-    check_hresult(shim()->put_ThumbnailEnabled(value));
+    check_hresult(static_cast<const ILowLagPhotoSequenceControl &>(static_cast<const D &>(*this))->put_ThumbnailEnabled(value));
 }
 
 template <typename D> Windows::Media::MediaProperties::MediaThumbnailFormat impl_ILowLagPhotoSequenceControl<D>::ThumbnailFormat() const
 {
     Windows::Media::MediaProperties::MediaThumbnailFormat value {};
-    check_hresult(shim()->get_ThumbnailFormat(&value));
+    check_hresult(static_cast<const ILowLagPhotoSequenceControl &>(static_cast<const D &>(*this))->get_ThumbnailFormat(&value));
     return value;
 }
 
 template <typename D> void impl_ILowLagPhotoSequenceControl<D>::ThumbnailFormat(Windows::Media::MediaProperties::MediaThumbnailFormat value) const
 {
-    check_hresult(shim()->put_ThumbnailFormat(value));
+    check_hresult(static_cast<const ILowLagPhotoSequenceControl &>(static_cast<const D &>(*this))->put_ThumbnailFormat(value));
 }
 
 template <typename D> uint32_t impl_ILowLagPhotoSequenceControl<D>::DesiredThumbnailSize() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_DesiredThumbnailSize(&value));
+    check_hresult(static_cast<const ILowLagPhotoSequenceControl &>(static_cast<const D &>(*this))->get_DesiredThumbnailSize(&value));
     return value;
 }
 
 template <typename D> void impl_ILowLagPhotoSequenceControl<D>::DesiredThumbnailSize(uint32_t value) const
 {
-    check_hresult(shim()->put_DesiredThumbnailSize(value));
+    check_hresult(static_cast<const ILowLagPhotoSequenceControl &>(static_cast<const D &>(*this))->put_DesiredThumbnailSize(value));
 }
 
 template <typename D> uint32_t impl_ILowLagPhotoSequenceControl<D>::HardwareAcceleratedThumbnailSupported() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_HardwareAcceleratedThumbnailSupported(&value));
+    check_hresult(static_cast<const ILowLagPhotoSequenceControl &>(static_cast<const D &>(*this))->get_HardwareAcceleratedThumbnailSupported(&value));
     return value;
 }
 
 template <typename D> Windows::Media::MediaProperties::MediaRatio impl_ILowLagPhotoControl<D>::GetHighestConcurrentFrameRate(const Windows::Media::MediaProperties::IMediaEncodingProperties & captureProperties) const
 {
     Windows::Media::MediaProperties::MediaRatio value { nullptr };
-    check_hresult(shim()->abi_GetHighestConcurrentFrameRate(get(captureProperties), put(value)));
+    check_hresult(static_cast<const ILowLagPhotoControl &>(static_cast<const D &>(*this))->abi_GetHighestConcurrentFrameRate(get(captureProperties), put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::MediaProperties::MediaRatio impl_ILowLagPhotoControl<D>::GetCurrentFrameRate() const
 {
     Windows::Media::MediaProperties::MediaRatio value { nullptr };
-    check_hresult(shim()->abi_GetCurrentFrameRate(put(value)));
+    check_hresult(static_cast<const ILowLagPhotoControl &>(static_cast<const D &>(*this))->abi_GetCurrentFrameRate(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ILowLagPhotoControl<D>::ThumbnailEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_ThumbnailEnabled(&value));
+    check_hresult(static_cast<const ILowLagPhotoControl &>(static_cast<const D &>(*this))->get_ThumbnailEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_ILowLagPhotoControl<D>::ThumbnailEnabled(bool value) const
 {
-    check_hresult(shim()->put_ThumbnailEnabled(value));
+    check_hresult(static_cast<const ILowLagPhotoControl &>(static_cast<const D &>(*this))->put_ThumbnailEnabled(value));
 }
 
 template <typename D> Windows::Media::MediaProperties::MediaThumbnailFormat impl_ILowLagPhotoControl<D>::ThumbnailFormat() const
 {
     Windows::Media::MediaProperties::MediaThumbnailFormat value {};
-    check_hresult(shim()->get_ThumbnailFormat(&value));
+    check_hresult(static_cast<const ILowLagPhotoControl &>(static_cast<const D &>(*this))->get_ThumbnailFormat(&value));
     return value;
 }
 
 template <typename D> void impl_ILowLagPhotoControl<D>::ThumbnailFormat(Windows::Media::MediaProperties::MediaThumbnailFormat value) const
 {
-    check_hresult(shim()->put_ThumbnailFormat(value));
+    check_hresult(static_cast<const ILowLagPhotoControl &>(static_cast<const D &>(*this))->put_ThumbnailFormat(value));
 }
 
 template <typename D> uint32_t impl_ILowLagPhotoControl<D>::DesiredThumbnailSize() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_DesiredThumbnailSize(&value));
+    check_hresult(static_cast<const ILowLagPhotoControl &>(static_cast<const D &>(*this))->get_DesiredThumbnailSize(&value));
     return value;
 }
 
 template <typename D> void impl_ILowLagPhotoControl<D>::DesiredThumbnailSize(uint32_t value) const
 {
-    check_hresult(shim()->put_DesiredThumbnailSize(value));
+    check_hresult(static_cast<const ILowLagPhotoControl &>(static_cast<const D &>(*this))->put_DesiredThumbnailSize(value));
 }
 
 template <typename D> uint32_t impl_ILowLagPhotoControl<D>::HardwareAcceleratedThumbnailSupported() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_HardwareAcceleratedThumbnailSupported(&value));
+    check_hresult(static_cast<const ILowLagPhotoControl &>(static_cast<const D &>(*this))->get_HardwareAcceleratedThumbnailSupported(&value));
     return value;
 }
 
 template <typename D> bool impl_IPhotoConfirmationControl<D>::Supported() const
 {
     bool pbSupported {};
-    check_hresult(shim()->get_Supported(&pbSupported));
+    check_hresult(static_cast<const IPhotoConfirmationControl &>(static_cast<const D &>(*this))->get_Supported(&pbSupported));
     return pbSupported;
 }
 
 template <typename D> bool impl_IPhotoConfirmationControl<D>::Enabled() const
 {
     bool value {};
-    check_hresult(shim()->get_Enabled(&value));
+    check_hresult(static_cast<const IPhotoConfirmationControl &>(static_cast<const D &>(*this))->get_Enabled(&value));
     return value;
 }
 
 template <typename D> void impl_IPhotoConfirmationControl<D>::Enabled(bool value) const
 {
-    check_hresult(shim()->put_Enabled(value));
+    check_hresult(static_cast<const IPhotoConfirmationControl &>(static_cast<const D &>(*this))->put_Enabled(value));
 }
 
 template <typename D> Windows::Media::MediaProperties::MediaPixelFormat impl_IPhotoConfirmationControl<D>::PixelFormat() const
 {
     Windows::Media::MediaProperties::MediaPixelFormat format {};
-    check_hresult(shim()->get_PixelFormat(&format));
+    check_hresult(static_cast<const IPhotoConfirmationControl &>(static_cast<const D &>(*this))->get_PixelFormat(&format));
     return format;
 }
 
 template <typename D> void impl_IPhotoConfirmationControl<D>::PixelFormat(Windows::Media::MediaProperties::MediaPixelFormat format) const
 {
-    check_hresult(shim()->put_PixelFormat(format));
+    check_hresult(static_cast<const IPhotoConfirmationControl &>(static_cast<const D &>(*this))->put_PixelFormat(format));
 }
 
 inline AdvancedPhotoCaptureSettings::AdvancedPhotoCaptureSettings() :

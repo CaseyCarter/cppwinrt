@@ -1947,860 +1947,860 @@ namespace Windows::UI::Xaml::Automation::Provider {
 template <typename D> int32_t impl_IAnnotationProvider<D>::AnnotationTypeId() const
 {
     int32_t value {};
-    check_hresult(shim()->get_AnnotationTypeId(&value));
+    check_hresult(static_cast<const IAnnotationProvider &>(static_cast<const D &>(*this))->get_AnnotationTypeId(&value));
     return value;
 }
 
 template <typename D> hstring impl_IAnnotationProvider<D>::AnnotationTypeName() const
 {
     hstring value;
-    check_hresult(shim()->get_AnnotationTypeName(put(value)));
+    check_hresult(static_cast<const IAnnotationProvider &>(static_cast<const D &>(*this))->get_AnnotationTypeName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAnnotationProvider<D>::Author() const
 {
     hstring value;
-    check_hresult(shim()->get_Author(put(value)));
+    check_hresult(static_cast<const IAnnotationProvider &>(static_cast<const D &>(*this))->get_Author(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAnnotationProvider<D>::DateTime() const
 {
     hstring value;
-    check_hresult(shim()->get_DateTime(put(value)));
+    check_hresult(static_cast<const IAnnotationProvider &>(static_cast<const D &>(*this))->get_DateTime(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple impl_IAnnotationProvider<D>::Target() const
 {
     Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple value { nullptr };
-    check_hresult(shim()->get_Target(put(value)));
+    check_hresult(static_cast<const IAnnotationProvider &>(static_cast<const D &>(*this))->get_Target(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::DockPosition impl_IDockProvider<D>::DockPosition() const
 {
     Windows::UI::Xaml::Automation::DockPosition value {};
-    check_hresult(shim()->get_DockPosition(&value));
+    check_hresult(static_cast<const IDockProvider &>(static_cast<const D &>(*this))->get_DockPosition(&value));
     return value;
 }
 
 template <typename D> void impl_IDockProvider<D>::SetDockPosition(Windows::UI::Xaml::Automation::DockPosition dockPosition) const
 {
-    check_hresult(shim()->abi_SetDockPosition(dockPosition));
+    check_hresult(static_cast<const IDockProvider &>(static_cast<const D &>(*this))->abi_SetDockPosition(dockPosition));
 }
 
 template <typename D> bool impl_IDragProvider<D>::IsGrabbed() const
 {
     bool value {};
-    check_hresult(shim()->get_IsGrabbed(&value));
+    check_hresult(static_cast<const IDragProvider &>(static_cast<const D &>(*this))->get_IsGrabbed(&value));
     return value;
 }
 
 template <typename D> hstring impl_IDragProvider<D>::DropEffect() const
 {
     hstring value;
-    check_hresult(shim()->get_DropEffect(put(value)));
+    check_hresult(static_cast<const IDragProvider &>(static_cast<const D &>(*this))->get_DropEffect(put(value)));
     return value;
 }
 
 template <typename D> com_array<hstring> impl_IDragProvider<D>::DropEffects() const
 {
     com_array<hstring> value;
-    check_hresult(shim()->get_DropEffects(put_size(value), put(value)));
+    check_hresult(static_cast<const IDragProvider &>(static_cast<const D &>(*this))->get_DropEffects(put_size(value), put(value)));
     return value;
 }
 
 template <typename D> com_array<Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple> impl_IDragProvider<D>::GetGrabbedItems() const
 {
     com_array<Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple> returnValue { nullptr };
-    check_hresult(shim()->abi_GetGrabbedItems(put_size(returnValue), put(returnValue)));
+    check_hresult(static_cast<const IDragProvider &>(static_cast<const D &>(*this))->abi_GetGrabbedItems(put_size(returnValue), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> hstring impl_IDropTargetProvider<D>::DropEffect() const
 {
     hstring value;
-    check_hresult(shim()->get_DropEffect(put(value)));
+    check_hresult(static_cast<const IDropTargetProvider &>(static_cast<const D &>(*this))->get_DropEffect(put(value)));
     return value;
 }
 
 template <typename D> com_array<hstring> impl_IDropTargetProvider<D>::DropEffects() const
 {
     com_array<hstring> value;
-    check_hresult(shim()->get_DropEffects(put_size(value), put(value)));
+    check_hresult(static_cast<const IDropTargetProvider &>(static_cast<const D &>(*this))->get_DropEffects(put_size(value), put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::ExpandCollapseState impl_IExpandCollapseProvider<D>::ExpandCollapseState() const
 {
     Windows::UI::Xaml::Automation::ExpandCollapseState value {};
-    check_hresult(shim()->get_ExpandCollapseState(&value));
+    check_hresult(static_cast<const IExpandCollapseProvider &>(static_cast<const D &>(*this))->get_ExpandCollapseState(&value));
     return value;
 }
 
 template <typename D> void impl_IExpandCollapseProvider<D>::Collapse() const
 {
-    check_hresult(shim()->abi_Collapse());
+    check_hresult(static_cast<const IExpandCollapseProvider &>(static_cast<const D &>(*this))->abi_Collapse());
 }
 
 template <typename D> void impl_IExpandCollapseProvider<D>::Expand() const
 {
-    check_hresult(shim()->abi_Expand());
+    check_hresult(static_cast<const IExpandCollapseProvider &>(static_cast<const D &>(*this))->abi_Expand());
 }
 
 template <typename D> int32_t impl_IGridItemProvider<D>::Column() const
 {
     int32_t value {};
-    check_hresult(shim()->get_Column(&value));
+    check_hresult(static_cast<const IGridItemProvider &>(static_cast<const D &>(*this))->get_Column(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IGridItemProvider<D>::ColumnSpan() const
 {
     int32_t value {};
-    check_hresult(shim()->get_ColumnSpan(&value));
+    check_hresult(static_cast<const IGridItemProvider &>(static_cast<const D &>(*this))->get_ColumnSpan(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple impl_IGridItemProvider<D>::ContainingGrid() const
 {
     Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple value { nullptr };
-    check_hresult(shim()->get_ContainingGrid(put(value)));
+    check_hresult(static_cast<const IGridItemProvider &>(static_cast<const D &>(*this))->get_ContainingGrid(put(value)));
     return value;
 }
 
 template <typename D> int32_t impl_IGridItemProvider<D>::Row() const
 {
     int32_t value {};
-    check_hresult(shim()->get_Row(&value));
+    check_hresult(static_cast<const IGridItemProvider &>(static_cast<const D &>(*this))->get_Row(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IGridItemProvider<D>::RowSpan() const
 {
     int32_t value {};
-    check_hresult(shim()->get_RowSpan(&value));
+    check_hresult(static_cast<const IGridItemProvider &>(static_cast<const D &>(*this))->get_RowSpan(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IGridProvider<D>::ColumnCount() const
 {
     int32_t value {};
-    check_hresult(shim()->get_ColumnCount(&value));
+    check_hresult(static_cast<const IGridProvider &>(static_cast<const D &>(*this))->get_ColumnCount(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IGridProvider<D>::RowCount() const
 {
     int32_t value {};
-    check_hresult(shim()->get_RowCount(&value));
+    check_hresult(static_cast<const IGridProvider &>(static_cast<const D &>(*this))->get_RowCount(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple impl_IGridProvider<D>::GetItem(int32_t row, int32_t column) const
 {
     Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple returnValue { nullptr };
-    check_hresult(shim()->abi_GetItem(row, column, put(returnValue)));
+    check_hresult(static_cast<const IGridProvider &>(static_cast<const D &>(*this))->abi_GetItem(row, column, put(returnValue)));
     return returnValue;
 }
 
 template <typename D> void impl_IInvokeProvider<D>::Invoke() const
 {
-    check_hresult(shim()->abi_Invoke());
+    check_hresult(static_cast<const IInvokeProvider &>(static_cast<const D &>(*this))->abi_Invoke());
 }
 
 template <typename D> Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple impl_IItemContainerProvider<D>::FindItemByProperty(const Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple & startAfter, const Windows::UI::Xaml::Automation::AutomationProperty & automationProperty, const Windows::IInspectable & value) const
 {
     Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple returnValue { nullptr };
-    check_hresult(shim()->abi_FindItemByProperty(get(startAfter), get(automationProperty), get(value), put(returnValue)));
+    check_hresult(static_cast<const IItemContainerProvider &>(static_cast<const D &>(*this))->abi_FindItemByProperty(get(startAfter), get(automationProperty), get(value), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> int32_t impl_IMultipleViewProvider<D>::CurrentView() const
 {
     int32_t value {};
-    check_hresult(shim()->get_CurrentView(&value));
+    check_hresult(static_cast<const IMultipleViewProvider &>(static_cast<const D &>(*this))->get_CurrentView(&value));
     return value;
 }
 
 template <typename D> com_array<int32_t> impl_IMultipleViewProvider<D>::GetSupportedViews() const
 {
     com_array<int32_t> returnValue {};
-    check_hresult(shim()->abi_GetSupportedViews(put_size(returnValue), put(returnValue)));
+    check_hresult(static_cast<const IMultipleViewProvider &>(static_cast<const D &>(*this))->abi_GetSupportedViews(put_size(returnValue), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> hstring impl_IMultipleViewProvider<D>::GetViewName(int32_t viewId) const
 {
     hstring returnValue;
-    check_hresult(shim()->abi_GetViewName(viewId, put(returnValue)));
+    check_hresult(static_cast<const IMultipleViewProvider &>(static_cast<const D &>(*this))->abi_GetViewName(viewId, put(returnValue)));
     return returnValue;
 }
 
 template <typename D> void impl_IMultipleViewProvider<D>::SetCurrentView(int32_t viewId) const
 {
-    check_hresult(shim()->abi_SetCurrentView(viewId));
+    check_hresult(static_cast<const IMultipleViewProvider &>(static_cast<const D &>(*this))->abi_SetCurrentView(viewId));
 }
 
 template <typename D> Windows::IInspectable impl_IObjectModelProvider<D>::GetUnderlyingObjectModel() const
 {
     Windows::IInspectable returnValue;
-    check_hresult(shim()->abi_GetUnderlyingObjectModel(put(returnValue)));
+    check_hresult(static_cast<const IObjectModelProvider &>(static_cast<const D &>(*this))->abi_GetUnderlyingObjectModel(put(returnValue)));
     return returnValue;
 }
 
 template <typename D> bool impl_IRangeValueProvider<D>::IsReadOnly() const
 {
     bool value {};
-    check_hresult(shim()->get_IsReadOnly(&value));
+    check_hresult(static_cast<const IRangeValueProvider &>(static_cast<const D &>(*this))->get_IsReadOnly(&value));
     return value;
 }
 
 template <typename D> double impl_IRangeValueProvider<D>::LargeChange() const
 {
     double value {};
-    check_hresult(shim()->get_LargeChange(&value));
+    check_hresult(static_cast<const IRangeValueProvider &>(static_cast<const D &>(*this))->get_LargeChange(&value));
     return value;
 }
 
 template <typename D> double impl_IRangeValueProvider<D>::Maximum() const
 {
     double value {};
-    check_hresult(shim()->get_Maximum(&value));
+    check_hresult(static_cast<const IRangeValueProvider &>(static_cast<const D &>(*this))->get_Maximum(&value));
     return value;
 }
 
 template <typename D> double impl_IRangeValueProvider<D>::Minimum() const
 {
     double value {};
-    check_hresult(shim()->get_Minimum(&value));
+    check_hresult(static_cast<const IRangeValueProvider &>(static_cast<const D &>(*this))->get_Minimum(&value));
     return value;
 }
 
 template <typename D> double impl_IRangeValueProvider<D>::SmallChange() const
 {
     double value {};
-    check_hresult(shim()->get_SmallChange(&value));
+    check_hresult(static_cast<const IRangeValueProvider &>(static_cast<const D &>(*this))->get_SmallChange(&value));
     return value;
 }
 
 template <typename D> double impl_IRangeValueProvider<D>::Value() const
 {
     double value {};
-    check_hresult(shim()->get_Value(&value));
+    check_hresult(static_cast<const IRangeValueProvider &>(static_cast<const D &>(*this))->get_Value(&value));
     return value;
 }
 
 template <typename D> void impl_IRangeValueProvider<D>::SetValue(double value) const
 {
-    check_hresult(shim()->abi_SetValue(value));
+    check_hresult(static_cast<const IRangeValueProvider &>(static_cast<const D &>(*this))->abi_SetValue(value));
 }
 
 template <typename D> void impl_IScrollItemProvider<D>::ScrollIntoView() const
 {
-    check_hresult(shim()->abi_ScrollIntoView());
+    check_hresult(static_cast<const IScrollItemProvider &>(static_cast<const D &>(*this))->abi_ScrollIntoView());
 }
 
 template <typename D> bool impl_IScrollProvider<D>::HorizontallyScrollable() const
 {
     bool value {};
-    check_hresult(shim()->get_HorizontallyScrollable(&value));
+    check_hresult(static_cast<const IScrollProvider &>(static_cast<const D &>(*this))->get_HorizontallyScrollable(&value));
     return value;
 }
 
 template <typename D> double impl_IScrollProvider<D>::HorizontalScrollPercent() const
 {
     double value {};
-    check_hresult(shim()->get_HorizontalScrollPercent(&value));
+    check_hresult(static_cast<const IScrollProvider &>(static_cast<const D &>(*this))->get_HorizontalScrollPercent(&value));
     return value;
 }
 
 template <typename D> double impl_IScrollProvider<D>::HorizontalViewSize() const
 {
     double value {};
-    check_hresult(shim()->get_HorizontalViewSize(&value));
+    check_hresult(static_cast<const IScrollProvider &>(static_cast<const D &>(*this))->get_HorizontalViewSize(&value));
     return value;
 }
 
 template <typename D> bool impl_IScrollProvider<D>::VerticallyScrollable() const
 {
     bool value {};
-    check_hresult(shim()->get_VerticallyScrollable(&value));
+    check_hresult(static_cast<const IScrollProvider &>(static_cast<const D &>(*this))->get_VerticallyScrollable(&value));
     return value;
 }
 
 template <typename D> double impl_IScrollProvider<D>::VerticalScrollPercent() const
 {
     double value {};
-    check_hresult(shim()->get_VerticalScrollPercent(&value));
+    check_hresult(static_cast<const IScrollProvider &>(static_cast<const D &>(*this))->get_VerticalScrollPercent(&value));
     return value;
 }
 
 template <typename D> double impl_IScrollProvider<D>::VerticalViewSize() const
 {
     double value {};
-    check_hresult(shim()->get_VerticalViewSize(&value));
+    check_hresult(static_cast<const IScrollProvider &>(static_cast<const D &>(*this))->get_VerticalViewSize(&value));
     return value;
 }
 
 template <typename D> void impl_IScrollProvider<D>::Scroll(Windows::UI::Xaml::Automation::ScrollAmount horizontalAmount, Windows::UI::Xaml::Automation::ScrollAmount verticalAmount) const
 {
-    check_hresult(shim()->abi_Scroll(horizontalAmount, verticalAmount));
+    check_hresult(static_cast<const IScrollProvider &>(static_cast<const D &>(*this))->abi_Scroll(horizontalAmount, verticalAmount));
 }
 
 template <typename D> void impl_IScrollProvider<D>::SetScrollPercent(double horizontalPercent, double verticalPercent) const
 {
-    check_hresult(shim()->abi_SetScrollPercent(horizontalPercent, verticalPercent));
+    check_hresult(static_cast<const IScrollProvider &>(static_cast<const D &>(*this))->abi_SetScrollPercent(horizontalPercent, verticalPercent));
 }
 
 template <typename D> bool impl_ISelectionItemProvider<D>::IsSelected() const
 {
     bool value {};
-    check_hresult(shim()->get_IsSelected(&value));
+    check_hresult(static_cast<const ISelectionItemProvider &>(static_cast<const D &>(*this))->get_IsSelected(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple impl_ISelectionItemProvider<D>::SelectionContainer() const
 {
     Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple value { nullptr };
-    check_hresult(shim()->get_SelectionContainer(put(value)));
+    check_hresult(static_cast<const ISelectionItemProvider &>(static_cast<const D &>(*this))->get_SelectionContainer(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISelectionItemProvider<D>::AddToSelection() const
 {
-    check_hresult(shim()->abi_AddToSelection());
+    check_hresult(static_cast<const ISelectionItemProvider &>(static_cast<const D &>(*this))->abi_AddToSelection());
 }
 
 template <typename D> void impl_ISelectionItemProvider<D>::RemoveFromSelection() const
 {
-    check_hresult(shim()->abi_RemoveFromSelection());
+    check_hresult(static_cast<const ISelectionItemProvider &>(static_cast<const D &>(*this))->abi_RemoveFromSelection());
 }
 
 template <typename D> void impl_ISelectionItemProvider<D>::Select() const
 {
-    check_hresult(shim()->abi_Select());
+    check_hresult(static_cast<const ISelectionItemProvider &>(static_cast<const D &>(*this))->abi_Select());
 }
 
 template <typename D> bool impl_ISelectionProvider<D>::CanSelectMultiple() const
 {
     bool value {};
-    check_hresult(shim()->get_CanSelectMultiple(&value));
+    check_hresult(static_cast<const ISelectionProvider &>(static_cast<const D &>(*this))->get_CanSelectMultiple(&value));
     return value;
 }
 
 template <typename D> bool impl_ISelectionProvider<D>::IsSelectionRequired() const
 {
     bool value {};
-    check_hresult(shim()->get_IsSelectionRequired(&value));
+    check_hresult(static_cast<const ISelectionProvider &>(static_cast<const D &>(*this))->get_IsSelectionRequired(&value));
     return value;
 }
 
 template <typename D> com_array<Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple> impl_ISelectionProvider<D>::GetSelection() const
 {
     com_array<Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple> returnValue { nullptr };
-    check_hresult(shim()->abi_GetSelection(put_size(returnValue), put(returnValue)));
+    check_hresult(static_cast<const ISelectionProvider &>(static_cast<const D &>(*this))->abi_GetSelection(put_size(returnValue), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> hstring impl_ISpreadsheetItemProvider<D>::Formula() const
 {
     hstring value;
-    check_hresult(shim()->get_Formula(put(value)));
+    check_hresult(static_cast<const ISpreadsheetItemProvider &>(static_cast<const D &>(*this))->get_Formula(put(value)));
     return value;
 }
 
 template <typename D> com_array<Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple> impl_ISpreadsheetItemProvider<D>::GetAnnotationObjects() const
 {
     com_array<Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple> returnValue { nullptr };
-    check_hresult(shim()->abi_GetAnnotationObjects(put_size(returnValue), put(returnValue)));
+    check_hresult(static_cast<const ISpreadsheetItemProvider &>(static_cast<const D &>(*this))->abi_GetAnnotationObjects(put_size(returnValue), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> com_array<Windows::UI::Xaml::Automation::AnnotationType> impl_ISpreadsheetItemProvider<D>::GetAnnotationTypes() const
 {
     com_array<Windows::UI::Xaml::Automation::AnnotationType> returnValue {};
-    check_hresult(shim()->abi_GetAnnotationTypes(put_size(returnValue), put(returnValue)));
+    check_hresult(static_cast<const ISpreadsheetItemProvider &>(static_cast<const D &>(*this))->abi_GetAnnotationTypes(put_size(returnValue), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple impl_ISpreadsheetProvider<D>::GetItemByName(hstring_ref name) const
 {
     Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple returnValue { nullptr };
-    check_hresult(shim()->abi_GetItemByName(get(name), put(returnValue)));
+    check_hresult(static_cast<const ISpreadsheetProvider &>(static_cast<const D &>(*this))->abi_GetItemByName(get(name), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> hstring impl_IStylesProvider<D>::ExtendedProperties() const
 {
     hstring value;
-    check_hresult(shim()->get_ExtendedProperties(put(value)));
+    check_hresult(static_cast<const IStylesProvider &>(static_cast<const D &>(*this))->get_ExtendedProperties(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IStylesProvider<D>::FillColor() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_FillColor(put(value)));
+    check_hresult(static_cast<const IStylesProvider &>(static_cast<const D &>(*this))->get_FillColor(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IStylesProvider<D>::FillPatternColor() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_FillPatternColor(put(value)));
+    check_hresult(static_cast<const IStylesProvider &>(static_cast<const D &>(*this))->get_FillPatternColor(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStylesProvider<D>::FillPatternStyle() const
 {
     hstring value;
-    check_hresult(shim()->get_FillPatternStyle(put(value)));
+    check_hresult(static_cast<const IStylesProvider &>(static_cast<const D &>(*this))->get_FillPatternStyle(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStylesProvider<D>::Shape() const
 {
     hstring value;
-    check_hresult(shim()->get_Shape(put(value)));
+    check_hresult(static_cast<const IStylesProvider &>(static_cast<const D &>(*this))->get_Shape(put(value)));
     return value;
 }
 
 template <typename D> int32_t impl_IStylesProvider<D>::StyleId() const
 {
     int32_t value {};
-    check_hresult(shim()->get_StyleId(&value));
+    check_hresult(static_cast<const IStylesProvider &>(static_cast<const D &>(*this))->get_StyleId(&value));
     return value;
 }
 
 template <typename D> hstring impl_IStylesProvider<D>::StyleName() const
 {
     hstring value;
-    check_hresult(shim()->get_StyleName(put(value)));
+    check_hresult(static_cast<const IStylesProvider &>(static_cast<const D &>(*this))->get_StyleName(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISynchronizedInputProvider<D>::Cancel() const
 {
-    check_hresult(shim()->abi_Cancel());
+    check_hresult(static_cast<const ISynchronizedInputProvider &>(static_cast<const D &>(*this))->abi_Cancel());
 }
 
 template <typename D> void impl_ISynchronizedInputProvider<D>::StartListening(Windows::UI::Xaml::Automation::SynchronizedInputType inputType) const
 {
-    check_hresult(shim()->abi_StartListening(inputType));
+    check_hresult(static_cast<const ISynchronizedInputProvider &>(static_cast<const D &>(*this))->abi_StartListening(inputType));
 }
 
 template <typename D> com_array<Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple> impl_ITableItemProvider<D>::GetColumnHeaderItems() const
 {
     com_array<Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple> returnValue { nullptr };
-    check_hresult(shim()->abi_GetColumnHeaderItems(put_size(returnValue), put(returnValue)));
+    check_hresult(static_cast<const ITableItemProvider &>(static_cast<const D &>(*this))->abi_GetColumnHeaderItems(put_size(returnValue), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> com_array<Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple> impl_ITableItemProvider<D>::GetRowHeaderItems() const
 {
     com_array<Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple> returnValue { nullptr };
-    check_hresult(shim()->abi_GetRowHeaderItems(put_size(returnValue), put(returnValue)));
+    check_hresult(static_cast<const ITableItemProvider &>(static_cast<const D &>(*this))->abi_GetRowHeaderItems(put_size(returnValue), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::RowOrColumnMajor impl_ITableProvider<D>::RowOrColumnMajor() const
 {
     Windows::UI::Xaml::Automation::RowOrColumnMajor value {};
-    check_hresult(shim()->get_RowOrColumnMajor(&value));
+    check_hresult(static_cast<const ITableProvider &>(static_cast<const D &>(*this))->get_RowOrColumnMajor(&value));
     return value;
 }
 
 template <typename D> com_array<Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple> impl_ITableProvider<D>::GetColumnHeaders() const
 {
     com_array<Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple> returnValue { nullptr };
-    check_hresult(shim()->abi_GetColumnHeaders(put_size(returnValue), put(returnValue)));
+    check_hresult(static_cast<const ITableProvider &>(static_cast<const D &>(*this))->abi_GetColumnHeaders(put_size(returnValue), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> com_array<Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple> impl_ITableProvider<D>::GetRowHeaders() const
 {
     com_array<Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple> returnValue { nullptr };
-    check_hresult(shim()->abi_GetRowHeaders(put_size(returnValue), put(returnValue)));
+    check_hresult(static_cast<const ITableProvider &>(static_cast<const D &>(*this))->abi_GetRowHeaders(put_size(returnValue), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple impl_ITextChildProvider<D>::TextContainer() const
 {
     Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple value { nullptr };
-    check_hresult(shim()->get_TextContainer(put(value)));
+    check_hresult(static_cast<const ITextChildProvider &>(static_cast<const D &>(*this))->get_TextContainer(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::Provider::ITextRangeProvider impl_ITextChildProvider<D>::TextRange() const
 {
     Windows::UI::Xaml::Automation::Provider::ITextRangeProvider value;
-    check_hresult(shim()->get_TextRange(put(value)));
+    check_hresult(static_cast<const ITextChildProvider &>(static_cast<const D &>(*this))->get_TextRange(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::Provider::ITextRangeProvider impl_ITextRangeProvider<D>::Clone() const
 {
     Windows::UI::Xaml::Automation::Provider::ITextRangeProvider returnValue;
-    check_hresult(shim()->abi_Clone(put(returnValue)));
+    check_hresult(static_cast<const ITextRangeProvider &>(static_cast<const D &>(*this))->abi_Clone(put(returnValue)));
     return returnValue;
 }
 
 template <typename D> bool impl_ITextRangeProvider<D>::Compare(const Windows::UI::Xaml::Automation::Provider::ITextRangeProvider & textRangeProvider) const
 {
     bool returnValue {};
-    check_hresult(shim()->abi_Compare(get(textRangeProvider), &returnValue));
+    check_hresult(static_cast<const ITextRangeProvider &>(static_cast<const D &>(*this))->abi_Compare(get(textRangeProvider), &returnValue));
     return returnValue;
 }
 
 template <typename D> int32_t impl_ITextRangeProvider<D>::CompareEndpoints(Windows::UI::Xaml::Automation::Text::TextPatternRangeEndpoint endpoint, const Windows::UI::Xaml::Automation::Provider::ITextRangeProvider & textRangeProvider, Windows::UI::Xaml::Automation::Text::TextPatternRangeEndpoint targetEndpoint) const
 {
     int32_t returnValue {};
-    check_hresult(shim()->abi_CompareEndpoints(endpoint, get(textRangeProvider), targetEndpoint, &returnValue));
+    check_hresult(static_cast<const ITextRangeProvider &>(static_cast<const D &>(*this))->abi_CompareEndpoints(endpoint, get(textRangeProvider), targetEndpoint, &returnValue));
     return returnValue;
 }
 
 template <typename D> void impl_ITextRangeProvider<D>::ExpandToEnclosingUnit(Windows::UI::Xaml::Automation::Text::TextUnit unit) const
 {
-    check_hresult(shim()->abi_ExpandToEnclosingUnit(unit));
+    check_hresult(static_cast<const ITextRangeProvider &>(static_cast<const D &>(*this))->abi_ExpandToEnclosingUnit(unit));
 }
 
 template <typename D> Windows::UI::Xaml::Automation::Provider::ITextRangeProvider impl_ITextRangeProvider<D>::FindAttribute(int32_t attributeId, const Windows::IInspectable & value, bool backward) const
 {
     Windows::UI::Xaml::Automation::Provider::ITextRangeProvider returnValue;
-    check_hresult(shim()->abi_FindAttribute(attributeId, get(value), backward, put(returnValue)));
+    check_hresult(static_cast<const ITextRangeProvider &>(static_cast<const D &>(*this))->abi_FindAttribute(attributeId, get(value), backward, put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::Provider::ITextRangeProvider impl_ITextRangeProvider<D>::FindText(hstring_ref text, bool backward, bool ignoreCase) const
 {
     Windows::UI::Xaml::Automation::Provider::ITextRangeProvider returnValue;
-    check_hresult(shim()->abi_FindText(get(text), backward, ignoreCase, put(returnValue)));
+    check_hresult(static_cast<const ITextRangeProvider &>(static_cast<const D &>(*this))->abi_FindText(get(text), backward, ignoreCase, put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::IInspectable impl_ITextRangeProvider<D>::GetAttributeValue(int32_t attributeId) const
 {
     Windows::IInspectable returnValue;
-    check_hresult(shim()->abi_GetAttributeValue(attributeId, put(returnValue)));
+    check_hresult(static_cast<const ITextRangeProvider &>(static_cast<const D &>(*this))->abi_GetAttributeValue(attributeId, put(returnValue)));
     return returnValue;
 }
 
 template <typename D> void impl_ITextRangeProvider<D>::GetBoundingRectangles(com_array<double> & returnValue) const
 {
-    check_hresult(shim()->abi_GetBoundingRectangles(put_size(returnValue), put(returnValue)));
+    check_hresult(static_cast<const ITextRangeProvider &>(static_cast<const D &>(*this))->abi_GetBoundingRectangles(put_size(returnValue), put(returnValue)));
 }
 
 template <typename D> Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple impl_ITextRangeProvider<D>::GetEnclosingElement() const
 {
     Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple returnValue { nullptr };
-    check_hresult(shim()->abi_GetEnclosingElement(put(returnValue)));
+    check_hresult(static_cast<const ITextRangeProvider &>(static_cast<const D &>(*this))->abi_GetEnclosingElement(put(returnValue)));
     return returnValue;
 }
 
 template <typename D> hstring impl_ITextRangeProvider<D>::GetText(int32_t maxLength) const
 {
     hstring returnValue;
-    check_hresult(shim()->abi_GetText(maxLength, put(returnValue)));
+    check_hresult(static_cast<const ITextRangeProvider &>(static_cast<const D &>(*this))->abi_GetText(maxLength, put(returnValue)));
     return returnValue;
 }
 
 template <typename D> int32_t impl_ITextRangeProvider<D>::Move(Windows::UI::Xaml::Automation::Text::TextUnit unit, int32_t count) const
 {
     int32_t returnValue {};
-    check_hresult(shim()->abi_Move(unit, count, &returnValue));
+    check_hresult(static_cast<const ITextRangeProvider &>(static_cast<const D &>(*this))->abi_Move(unit, count, &returnValue));
     return returnValue;
 }
 
 template <typename D> int32_t impl_ITextRangeProvider<D>::MoveEndpointByUnit(Windows::UI::Xaml::Automation::Text::TextPatternRangeEndpoint endpoint, Windows::UI::Xaml::Automation::Text::TextUnit unit, int32_t count) const
 {
     int32_t returnValue {};
-    check_hresult(shim()->abi_MoveEndpointByUnit(endpoint, unit, count, &returnValue));
+    check_hresult(static_cast<const ITextRangeProvider &>(static_cast<const D &>(*this))->abi_MoveEndpointByUnit(endpoint, unit, count, &returnValue));
     return returnValue;
 }
 
 template <typename D> void impl_ITextRangeProvider<D>::MoveEndpointByRange(Windows::UI::Xaml::Automation::Text::TextPatternRangeEndpoint endpoint, const Windows::UI::Xaml::Automation::Provider::ITextRangeProvider & textRangeProvider, Windows::UI::Xaml::Automation::Text::TextPatternRangeEndpoint targetEndpoint) const
 {
-    check_hresult(shim()->abi_MoveEndpointByRange(endpoint, get(textRangeProvider), targetEndpoint));
+    check_hresult(static_cast<const ITextRangeProvider &>(static_cast<const D &>(*this))->abi_MoveEndpointByRange(endpoint, get(textRangeProvider), targetEndpoint));
 }
 
 template <typename D> void impl_ITextRangeProvider<D>::Select() const
 {
-    check_hresult(shim()->abi_Select());
+    check_hresult(static_cast<const ITextRangeProvider &>(static_cast<const D &>(*this))->abi_Select());
 }
 
 template <typename D> void impl_ITextRangeProvider<D>::AddToSelection() const
 {
-    check_hresult(shim()->abi_AddToSelection());
+    check_hresult(static_cast<const ITextRangeProvider &>(static_cast<const D &>(*this))->abi_AddToSelection());
 }
 
 template <typename D> void impl_ITextRangeProvider<D>::RemoveFromSelection() const
 {
-    check_hresult(shim()->abi_RemoveFromSelection());
+    check_hresult(static_cast<const ITextRangeProvider &>(static_cast<const D &>(*this))->abi_RemoveFromSelection());
 }
 
 template <typename D> void impl_ITextRangeProvider<D>::ScrollIntoView(bool alignToTop) const
 {
-    check_hresult(shim()->abi_ScrollIntoView(alignToTop));
+    check_hresult(static_cast<const ITextRangeProvider &>(static_cast<const D &>(*this))->abi_ScrollIntoView(alignToTop));
 }
 
 template <typename D> com_array<Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple> impl_ITextRangeProvider<D>::GetChildren() const
 {
     com_array<Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple> returnValue { nullptr };
-    check_hresult(shim()->abi_GetChildren(put_size(returnValue), put(returnValue)));
+    check_hresult(static_cast<const ITextRangeProvider &>(static_cast<const D &>(*this))->abi_GetChildren(put_size(returnValue), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::Provider::ITextRangeProvider impl_ITextProvider<D>::DocumentRange() const
 {
     Windows::UI::Xaml::Automation::Provider::ITextRangeProvider value;
-    check_hresult(shim()->get_DocumentRange(put(value)));
+    check_hresult(static_cast<const ITextProvider &>(static_cast<const D &>(*this))->get_DocumentRange(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::SupportedTextSelection impl_ITextProvider<D>::SupportedTextSelection() const
 {
     Windows::UI::Xaml::Automation::SupportedTextSelection value {};
-    check_hresult(shim()->get_SupportedTextSelection(&value));
+    check_hresult(static_cast<const ITextProvider &>(static_cast<const D &>(*this))->get_SupportedTextSelection(&value));
     return value;
 }
 
 template <typename D> com_array<Windows::UI::Xaml::Automation::Provider::ITextRangeProvider> impl_ITextProvider<D>::GetSelection() const
 {
     com_array<Windows::UI::Xaml::Automation::Provider::ITextRangeProvider> returnValue;
-    check_hresult(shim()->abi_GetSelection(put_size(returnValue), put(returnValue)));
+    check_hresult(static_cast<const ITextProvider &>(static_cast<const D &>(*this))->abi_GetSelection(put_size(returnValue), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> com_array<Windows::UI::Xaml::Automation::Provider::ITextRangeProvider> impl_ITextProvider<D>::GetVisibleRanges() const
 {
     com_array<Windows::UI::Xaml::Automation::Provider::ITextRangeProvider> returnValue;
-    check_hresult(shim()->abi_GetVisibleRanges(put_size(returnValue), put(returnValue)));
+    check_hresult(static_cast<const ITextProvider &>(static_cast<const D &>(*this))->abi_GetVisibleRanges(put_size(returnValue), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::Provider::ITextRangeProvider impl_ITextProvider<D>::RangeFromChild(const Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple & childElement) const
 {
     Windows::UI::Xaml::Automation::Provider::ITextRangeProvider returnValue;
-    check_hresult(shim()->abi_RangeFromChild(get(childElement), put(returnValue)));
+    check_hresult(static_cast<const ITextProvider &>(static_cast<const D &>(*this))->abi_RangeFromChild(get(childElement), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::Provider::ITextRangeProvider impl_ITextProvider<D>::RangeFromPoint(const Windows::Foundation::Point & screenLocation) const
 {
     Windows::UI::Xaml::Automation::Provider::ITextRangeProvider returnValue;
-    check_hresult(shim()->abi_RangeFromPoint(get(screenLocation), put(returnValue)));
+    check_hresult(static_cast<const ITextProvider &>(static_cast<const D &>(*this))->abi_RangeFromPoint(get(screenLocation), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::Provider::ITextRangeProvider impl_ITextProvider2<D>::RangeFromAnnotation(const Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple & annotationElement) const
 {
     Windows::UI::Xaml::Automation::Provider::ITextRangeProvider returnValue;
-    check_hresult(shim()->abi_RangeFromAnnotation(get(annotationElement), put(returnValue)));
+    check_hresult(static_cast<const ITextProvider2 &>(static_cast<const D &>(*this))->abi_RangeFromAnnotation(get(annotationElement), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::Provider::ITextRangeProvider impl_ITextProvider2<D>::GetCaretRange(bool & isActive) const
 {
     Windows::UI::Xaml::Automation::Provider::ITextRangeProvider returnValue;
-    check_hresult(shim()->abi_GetCaretRange(&isActive, put(returnValue)));
+    check_hresult(static_cast<const ITextProvider2 &>(static_cast<const D &>(*this))->abi_GetCaretRange(&isActive, put(returnValue)));
     return returnValue;
 }
 
 template <typename D> void impl_ITextRangeProvider2<D>::ShowContextMenu() const
 {
-    check_hresult(shim()->abi_ShowContextMenu());
+    check_hresult(static_cast<const ITextRangeProvider2 &>(static_cast<const D &>(*this))->abi_ShowContextMenu());
 }
 
 template <typename D> Windows::UI::Xaml::Automation::ToggleState impl_IToggleProvider<D>::ToggleState() const
 {
     Windows::UI::Xaml::Automation::ToggleState value {};
-    check_hresult(shim()->get_ToggleState(&value));
+    check_hresult(static_cast<const IToggleProvider &>(static_cast<const D &>(*this))->get_ToggleState(&value));
     return value;
 }
 
 template <typename D> void impl_IToggleProvider<D>::Toggle() const
 {
-    check_hresult(shim()->abi_Toggle());
+    check_hresult(static_cast<const IToggleProvider &>(static_cast<const D &>(*this))->abi_Toggle());
 }
 
 template <typename D> bool impl_ITransformProvider<D>::CanMove() const
 {
     bool value {};
-    check_hresult(shim()->get_CanMove(&value));
+    check_hresult(static_cast<const ITransformProvider &>(static_cast<const D &>(*this))->get_CanMove(&value));
     return value;
 }
 
 template <typename D> bool impl_ITransformProvider<D>::CanResize() const
 {
     bool value {};
-    check_hresult(shim()->get_CanResize(&value));
+    check_hresult(static_cast<const ITransformProvider &>(static_cast<const D &>(*this))->get_CanResize(&value));
     return value;
 }
 
 template <typename D> bool impl_ITransformProvider<D>::CanRotate() const
 {
     bool value {};
-    check_hresult(shim()->get_CanRotate(&value));
+    check_hresult(static_cast<const ITransformProvider &>(static_cast<const D &>(*this))->get_CanRotate(&value));
     return value;
 }
 
 template <typename D> void impl_ITransformProvider<D>::Move(double x, double y) const
 {
-    check_hresult(shim()->abi_Move(x, y));
+    check_hresult(static_cast<const ITransformProvider &>(static_cast<const D &>(*this))->abi_Move(x, y));
 }
 
 template <typename D> void impl_ITransformProvider<D>::Resize(double width, double height) const
 {
-    check_hresult(shim()->abi_Resize(width, height));
+    check_hresult(static_cast<const ITransformProvider &>(static_cast<const D &>(*this))->abi_Resize(width, height));
 }
 
 template <typename D> void impl_ITransformProvider<D>::Rotate(double degrees) const
 {
-    check_hresult(shim()->abi_Rotate(degrees));
+    check_hresult(static_cast<const ITransformProvider &>(static_cast<const D &>(*this))->abi_Rotate(degrees));
 }
 
 template <typename D> bool impl_ITransformProvider2<D>::CanZoom() const
 {
     bool value {};
-    check_hresult(shim()->get_CanZoom(&value));
+    check_hresult(static_cast<const ITransformProvider2 &>(static_cast<const D &>(*this))->get_CanZoom(&value));
     return value;
 }
 
 template <typename D> double impl_ITransformProvider2<D>::ZoomLevel() const
 {
     double value {};
-    check_hresult(shim()->get_ZoomLevel(&value));
+    check_hresult(static_cast<const ITransformProvider2 &>(static_cast<const D &>(*this))->get_ZoomLevel(&value));
     return value;
 }
 
 template <typename D> double impl_ITransformProvider2<D>::MaxZoom() const
 {
     double value {};
-    check_hresult(shim()->get_MaxZoom(&value));
+    check_hresult(static_cast<const ITransformProvider2 &>(static_cast<const D &>(*this))->get_MaxZoom(&value));
     return value;
 }
 
 template <typename D> double impl_ITransformProvider2<D>::MinZoom() const
 {
     double value {};
-    check_hresult(shim()->get_MinZoom(&value));
+    check_hresult(static_cast<const ITransformProvider2 &>(static_cast<const D &>(*this))->get_MinZoom(&value));
     return value;
 }
 
 template <typename D> void impl_ITransformProvider2<D>::Zoom(double zoom) const
 {
-    check_hresult(shim()->abi_Zoom(zoom));
+    check_hresult(static_cast<const ITransformProvider2 &>(static_cast<const D &>(*this))->abi_Zoom(zoom));
 }
 
 template <typename D> void impl_ITransformProvider2<D>::ZoomByUnit(Windows::UI::Xaml::Automation::ZoomUnit zoomUnit) const
 {
-    check_hresult(shim()->abi_ZoomByUnit(zoomUnit));
+    check_hresult(static_cast<const ITransformProvider2 &>(static_cast<const D &>(*this))->abi_ZoomByUnit(zoomUnit));
 }
 
 template <typename D> bool impl_IValueProvider<D>::IsReadOnly() const
 {
     bool value {};
-    check_hresult(shim()->get_IsReadOnly(&value));
+    check_hresult(static_cast<const IValueProvider &>(static_cast<const D &>(*this))->get_IsReadOnly(&value));
     return value;
 }
 
 template <typename D> hstring impl_IValueProvider<D>::Value() const
 {
     hstring value;
-    check_hresult(shim()->get_Value(put(value)));
+    check_hresult(static_cast<const IValueProvider &>(static_cast<const D &>(*this))->get_Value(put(value)));
     return value;
 }
 
 template <typename D> void impl_IValueProvider<D>::SetValue(hstring_ref value) const
 {
-    check_hresult(shim()->abi_SetValue(get(value)));
+    check_hresult(static_cast<const IValueProvider &>(static_cast<const D &>(*this))->abi_SetValue(get(value)));
 }
 
 template <typename D> void impl_IVirtualizedItemProvider<D>::Realize() const
 {
-    check_hresult(shim()->abi_Realize());
+    check_hresult(static_cast<const IVirtualizedItemProvider &>(static_cast<const D &>(*this))->abi_Realize());
 }
 
 template <typename D> bool impl_IWindowProvider<D>::IsModal() const
 {
     bool value {};
-    check_hresult(shim()->get_IsModal(&value));
+    check_hresult(static_cast<const IWindowProvider &>(static_cast<const D &>(*this))->get_IsModal(&value));
     return value;
 }
 
 template <typename D> bool impl_IWindowProvider<D>::IsTopmost() const
 {
     bool value {};
-    check_hresult(shim()->get_IsTopmost(&value));
+    check_hresult(static_cast<const IWindowProvider &>(static_cast<const D &>(*this))->get_IsTopmost(&value));
     return value;
 }
 
 template <typename D> bool impl_IWindowProvider<D>::Maximizable() const
 {
     bool value {};
-    check_hresult(shim()->get_Maximizable(&value));
+    check_hresult(static_cast<const IWindowProvider &>(static_cast<const D &>(*this))->get_Maximizable(&value));
     return value;
 }
 
 template <typename D> bool impl_IWindowProvider<D>::Minimizable() const
 {
     bool value {};
-    check_hresult(shim()->get_Minimizable(&value));
+    check_hresult(static_cast<const IWindowProvider &>(static_cast<const D &>(*this))->get_Minimizable(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::WindowInteractionState impl_IWindowProvider<D>::InteractionState() const
 {
     Windows::UI::Xaml::Automation::WindowInteractionState value {};
-    check_hresult(shim()->get_InteractionState(&value));
+    check_hresult(static_cast<const IWindowProvider &>(static_cast<const D &>(*this))->get_InteractionState(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::WindowVisualState impl_IWindowProvider<D>::VisualState() const
 {
     Windows::UI::Xaml::Automation::WindowVisualState value {};
-    check_hresult(shim()->get_VisualState(&value));
+    check_hresult(static_cast<const IWindowProvider &>(static_cast<const D &>(*this))->get_VisualState(&value));
     return value;
 }
 
 template <typename D> void impl_IWindowProvider<D>::Close() const
 {
-    check_hresult(shim()->abi_Close());
+    check_hresult(static_cast<const IWindowProvider &>(static_cast<const D &>(*this))->abi_Close());
 }
 
 template <typename D> void impl_IWindowProvider<D>::SetVisualState(Windows::UI::Xaml::Automation::WindowVisualState state) const
 {
-    check_hresult(shim()->abi_SetVisualState(state));
+    check_hresult(static_cast<const IWindowProvider &>(static_cast<const D &>(*this))->abi_SetVisualState(state));
 }
 
 template <typename D> bool impl_IWindowProvider<D>::WaitForInputIdle(int32_t milliseconds) const
 {
     bool returnValue {};
-    check_hresult(shim()->abi_WaitForInputIdle(milliseconds, &returnValue));
+    check_hresult(static_cast<const IWindowProvider &>(static_cast<const D &>(*this))->abi_WaitForInputIdle(milliseconds, &returnValue));
     return returnValue;
 }
 
 template <typename D> Windows::IInspectable impl_ICustomNavigationProvider<D>::NavigateCustom(Windows::UI::Xaml::Automation::Peers::AutomationNavigationDirection direction) const
 {
     Windows::IInspectable returnValue;
-    check_hresult(shim()->abi_NavigateCustom(direction, put(returnValue)));
+    check_hresult(static_cast<const ICustomNavigationProvider &>(static_cast<const D &>(*this))->abi_NavigateCustom(direction, put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::Provider::ITextRangeProvider impl_ITextEditProvider<D>::GetActiveComposition() const
 {
     Windows::UI::Xaml::Automation::Provider::ITextRangeProvider returnValue;
-    check_hresult(shim()->abi_GetActiveComposition(put(returnValue)));
+    check_hresult(static_cast<const ITextEditProvider &>(static_cast<const D &>(*this))->abi_GetActiveComposition(put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::Automation::Provider::ITextRangeProvider impl_ITextEditProvider<D>::GetConversionTarget() const
 {
     Windows::UI::Xaml::Automation::Provider::ITextRangeProvider returnValue;
-    check_hresult(shim()->abi_GetConversionTarget(put(returnValue)));
+    check_hresult(static_cast<const ITextEditProvider &>(static_cast<const D &>(*this))->abi_GetConversionTarget(put(returnValue)));
     return returnValue;
 }
 

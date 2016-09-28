@@ -1480,689 +1480,689 @@ namespace Windows::Graphics::Imaging {
 template <typename D> uint32_t impl_IBitmapTransform<D>::ScaledWidth() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_ScaledWidth(&value));
+    check_hresult(static_cast<const IBitmapTransform &>(static_cast<const D &>(*this))->get_ScaledWidth(&value));
     return value;
 }
 
 template <typename D> void impl_IBitmapTransform<D>::ScaledWidth(uint32_t value) const
 {
-    check_hresult(shim()->put_ScaledWidth(value));
+    check_hresult(static_cast<const IBitmapTransform &>(static_cast<const D &>(*this))->put_ScaledWidth(value));
 }
 
 template <typename D> uint32_t impl_IBitmapTransform<D>::ScaledHeight() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_ScaledHeight(&value));
+    check_hresult(static_cast<const IBitmapTransform &>(static_cast<const D &>(*this))->get_ScaledHeight(&value));
     return value;
 }
 
 template <typename D> void impl_IBitmapTransform<D>::ScaledHeight(uint32_t value) const
 {
-    check_hresult(shim()->put_ScaledHeight(value));
+    check_hresult(static_cast<const IBitmapTransform &>(static_cast<const D &>(*this))->put_ScaledHeight(value));
 }
 
 template <typename D> Windows::Graphics::Imaging::BitmapInterpolationMode impl_IBitmapTransform<D>::InterpolationMode() const
 {
     Windows::Graphics::Imaging::BitmapInterpolationMode value {};
-    check_hresult(shim()->get_InterpolationMode(&value));
+    check_hresult(static_cast<const IBitmapTransform &>(static_cast<const D &>(*this))->get_InterpolationMode(&value));
     return value;
 }
 
 template <typename D> void impl_IBitmapTransform<D>::InterpolationMode(Windows::Graphics::Imaging::BitmapInterpolationMode value) const
 {
-    check_hresult(shim()->put_InterpolationMode(value));
+    check_hresult(static_cast<const IBitmapTransform &>(static_cast<const D &>(*this))->put_InterpolationMode(value));
 }
 
 template <typename D> Windows::Graphics::Imaging::BitmapFlip impl_IBitmapTransform<D>::Flip() const
 {
     Windows::Graphics::Imaging::BitmapFlip value {};
-    check_hresult(shim()->get_Flip(&value));
+    check_hresult(static_cast<const IBitmapTransform &>(static_cast<const D &>(*this))->get_Flip(&value));
     return value;
 }
 
 template <typename D> void impl_IBitmapTransform<D>::Flip(Windows::Graphics::Imaging::BitmapFlip value) const
 {
-    check_hresult(shim()->put_Flip(value));
+    check_hresult(static_cast<const IBitmapTransform &>(static_cast<const D &>(*this))->put_Flip(value));
 }
 
 template <typename D> Windows::Graphics::Imaging::BitmapRotation impl_IBitmapTransform<D>::Rotation() const
 {
     Windows::Graphics::Imaging::BitmapRotation value {};
-    check_hresult(shim()->get_Rotation(&value));
+    check_hresult(static_cast<const IBitmapTransform &>(static_cast<const D &>(*this))->get_Rotation(&value));
     return value;
 }
 
 template <typename D> void impl_IBitmapTransform<D>::Rotation(Windows::Graphics::Imaging::BitmapRotation value) const
 {
-    check_hresult(shim()->put_Rotation(value));
+    check_hresult(static_cast<const IBitmapTransform &>(static_cast<const D &>(*this))->put_Rotation(value));
 }
 
 template <typename D> Windows::Graphics::Imaging::BitmapBounds impl_IBitmapTransform<D>::Bounds() const
 {
     Windows::Graphics::Imaging::BitmapBounds value {};
-    check_hresult(shim()->get_Bounds(put(value)));
+    check_hresult(static_cast<const IBitmapTransform &>(static_cast<const D &>(*this))->get_Bounds(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBitmapTransform<D>::Bounds(const Windows::Graphics::Imaging::BitmapBounds & value) const
 {
-    check_hresult(shim()->put_Bounds(get(value)));
+    check_hresult(static_cast<const IBitmapTransform &>(static_cast<const D &>(*this))->put_Bounds(get(value)));
 }
 
 template <typename D> Windows::IInspectable impl_IBitmapTypedValue<D>::Value() const
 {
     Windows::IInspectable value;
-    check_hresult(shim()->get_Value(put(value)));
+    check_hresult(static_cast<const IBitmapTypedValue &>(static_cast<const D &>(*this))->get_Value(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::PropertyType impl_IBitmapTypedValue<D>::Type() const
 {
     Windows::Foundation::PropertyType value {};
-    check_hresult(shim()->get_Type(&value));
+    check_hresult(static_cast<const IBitmapTypedValue &>(static_cast<const D &>(*this))->get_Type(&value));
     return value;
 }
 
 template <typename D> Windows::Graphics::Imaging::BitmapTypedValue impl_IBitmapTypedValueFactory<D>::Create(const Windows::IInspectable & value, Windows::Foundation::PropertyType type) const
 {
     Windows::Graphics::Imaging::BitmapTypedValue bitmapTypedValue { nullptr };
-    check_hresult(shim()->abi_Create(get(value), type, put(bitmapTypedValue)));
+    check_hresult(static_cast<const IBitmapTypedValueFactory &>(static_cast<const D &>(*this))->abi_Create(get(value), type, put(bitmapTypedValue)));
     return bitmapTypedValue;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapPropertySet> impl_IBitmapPropertiesView<D>::GetPropertiesAsync(const Windows::Foundation::Collections::IIterable<hstring> & propertiesToRetrieve) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapPropertySet> asyncInfo;
-    check_hresult(shim()->abi_GetPropertiesAsync(get(propertiesToRetrieve), put(asyncInfo)));
+    check_hresult(static_cast<const IBitmapPropertiesView &>(static_cast<const D &>(*this))->abi_GetPropertiesAsync(get(propertiesToRetrieve), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IBitmapProperties<D>::SetPropertiesAsync(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> & propertiesToSet) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(shim()->abi_SetPropertiesAsync(get(propertiesToSet), put(asyncInfo)));
+    check_hresult(static_cast<const IBitmapProperties &>(static_cast<const D &>(*this))->abi_SetPropertiesAsync(get(propertiesToSet), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> com_array<uint8_t> impl_IPixelDataProvider<D>::DetachPixelData() const
 {
     com_array<uint8_t> pixelData {};
-    check_hresult(shim()->abi_DetachPixelData(put_size(pixelData), put(pixelData)));
+    check_hresult(static_cast<const IPixelDataProvider &>(static_cast<const D &>(*this))->abi_DetachPixelData(put_size(pixelData), put(pixelData)));
     return pixelData;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::ImageStream> impl_IBitmapFrame<D>::GetThumbnailAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::ImageStream> asyncInfo;
-    check_hresult(shim()->abi_GetThumbnailAsync(put(asyncInfo)));
+    check_hresult(static_cast<const IBitmapFrame &>(static_cast<const D &>(*this))->abi_GetThumbnailAsync(put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Graphics::Imaging::BitmapPropertiesView impl_IBitmapFrame<D>::BitmapProperties() const
 {
     Windows::Graphics::Imaging::BitmapPropertiesView value { nullptr };
-    check_hresult(shim()->get_BitmapProperties(put(value)));
+    check_hresult(static_cast<const IBitmapFrame &>(static_cast<const D &>(*this))->get_BitmapProperties(put(value)));
     return value;
 }
 
 template <typename D> Windows::Graphics::Imaging::BitmapPixelFormat impl_IBitmapFrame<D>::BitmapPixelFormat() const
 {
     Windows::Graphics::Imaging::BitmapPixelFormat value {};
-    check_hresult(shim()->get_BitmapPixelFormat(&value));
+    check_hresult(static_cast<const IBitmapFrame &>(static_cast<const D &>(*this))->get_BitmapPixelFormat(&value));
     return value;
 }
 
 template <typename D> Windows::Graphics::Imaging::BitmapAlphaMode impl_IBitmapFrame<D>::BitmapAlphaMode() const
 {
     Windows::Graphics::Imaging::BitmapAlphaMode value {};
-    check_hresult(shim()->get_BitmapAlphaMode(&value));
+    check_hresult(static_cast<const IBitmapFrame &>(static_cast<const D &>(*this))->get_BitmapAlphaMode(&value));
     return value;
 }
 
 template <typename D> double impl_IBitmapFrame<D>::DpiX() const
 {
     double value {};
-    check_hresult(shim()->get_DpiX(&value));
+    check_hresult(static_cast<const IBitmapFrame &>(static_cast<const D &>(*this))->get_DpiX(&value));
     return value;
 }
 
 template <typename D> double impl_IBitmapFrame<D>::DpiY() const
 {
     double value {};
-    check_hresult(shim()->get_DpiY(&value));
+    check_hresult(static_cast<const IBitmapFrame &>(static_cast<const D &>(*this))->get_DpiY(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBitmapFrame<D>::PixelWidth() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_PixelWidth(&value));
+    check_hresult(static_cast<const IBitmapFrame &>(static_cast<const D &>(*this))->get_PixelWidth(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBitmapFrame<D>::PixelHeight() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_PixelHeight(&value));
+    check_hresult(static_cast<const IBitmapFrame &>(static_cast<const D &>(*this))->get_PixelHeight(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBitmapFrame<D>::OrientedPixelWidth() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_OrientedPixelWidth(&value));
+    check_hresult(static_cast<const IBitmapFrame &>(static_cast<const D &>(*this))->get_OrientedPixelWidth(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBitmapFrame<D>::OrientedPixelHeight() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_OrientedPixelHeight(&value));
+    check_hresult(static_cast<const IBitmapFrame &>(static_cast<const D &>(*this))->get_OrientedPixelHeight(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::PixelDataProvider> impl_IBitmapFrame<D>::GetPixelDataAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::PixelDataProvider> asyncInfo;
-    check_hresult(shim()->abi_GetPixelDataAsync(put(asyncInfo)));
+    check_hresult(static_cast<const IBitmapFrame &>(static_cast<const D &>(*this))->abi_GetPixelDataAsync(put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::PixelDataProvider> impl_IBitmapFrame<D>::GetPixelDataAsync(Windows::Graphics::Imaging::BitmapPixelFormat pixelFormat, Windows::Graphics::Imaging::BitmapAlphaMode alphaMode, const Windows::Graphics::Imaging::BitmapTransform & transform, Windows::Graphics::Imaging::ExifOrientationMode exifOrientationMode, Windows::Graphics::Imaging::ColorManagementMode colorManagementMode) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::PixelDataProvider> asyncInfo;
-    check_hresult(shim()->abi_GetPixelDataTransformedAsync(pixelFormat, alphaMode, get(transform), exifOrientationMode, colorManagementMode, put(asyncInfo)));
+    check_hresult(static_cast<const IBitmapFrame &>(static_cast<const D &>(*this))->abi_GetPixelDataTransformedAsync(pixelFormat, alphaMode, get(transform), exifOrientationMode, colorManagementMode, put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::SoftwareBitmap> impl_IBitmapFrameWithSoftwareBitmap<D>::GetSoftwareBitmapAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::SoftwareBitmap> value;
-    check_hresult(shim()->abi_GetSoftwareBitmapAsync(put(value)));
+    check_hresult(static_cast<const IBitmapFrameWithSoftwareBitmap &>(static_cast<const D &>(*this))->abi_GetSoftwareBitmapAsync(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::SoftwareBitmap> impl_IBitmapFrameWithSoftwareBitmap<D>::GetSoftwareBitmapAsync(Windows::Graphics::Imaging::BitmapPixelFormat pixelFormat, Windows::Graphics::Imaging::BitmapAlphaMode alphaMode) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::SoftwareBitmap> value;
-    check_hresult(shim()->abi_GetSoftwareBitmapConvertedAsync(pixelFormat, alphaMode, put(value)));
+    check_hresult(static_cast<const IBitmapFrameWithSoftwareBitmap &>(static_cast<const D &>(*this))->abi_GetSoftwareBitmapConvertedAsync(pixelFormat, alphaMode, put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::SoftwareBitmap> impl_IBitmapFrameWithSoftwareBitmap<D>::GetSoftwareBitmapAsync(Windows::Graphics::Imaging::BitmapPixelFormat pixelFormat, Windows::Graphics::Imaging::BitmapAlphaMode alphaMode, const Windows::Graphics::Imaging::BitmapTransform & transform, Windows::Graphics::Imaging::ExifOrientationMode exifOrientationMode, Windows::Graphics::Imaging::ColorManagementMode colorManagementMode) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::SoftwareBitmap> value;
-    check_hresult(shim()->abi_GetSoftwareBitmapTransformedAsync(pixelFormat, alphaMode, get(transform), exifOrientationMode, colorManagementMode, put(value)));
+    check_hresult(static_cast<const IBitmapFrameWithSoftwareBitmap &>(static_cast<const D &>(*this))->abi_GetSoftwareBitmapTransformedAsync(pixelFormat, alphaMode, get(transform), exifOrientationMode, colorManagementMode, put(value)));
     return value;
 }
 
 template <typename D> GUID impl_IBitmapCodecInformation<D>::CodecId() const
 {
     GUID value {};
-    check_hresult(shim()->get_CodecId(&value));
+    check_hresult(static_cast<const IBitmapCodecInformation &>(static_cast<const D &>(*this))->get_CodecId(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_IBitmapCodecInformation<D>::FileExtensions() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(shim()->get_FileExtensions(put(value)));
+    check_hresult(static_cast<const IBitmapCodecInformation &>(static_cast<const D &>(*this))->get_FileExtensions(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IBitmapCodecInformation<D>::FriendlyName() const
 {
     hstring value;
-    check_hresult(shim()->get_FriendlyName(put(value)));
+    check_hresult(static_cast<const IBitmapCodecInformation &>(static_cast<const D &>(*this))->get_FriendlyName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_IBitmapCodecInformation<D>::MimeTypes() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(shim()->get_MimeTypes(put(value)));
+    check_hresult(static_cast<const IBitmapCodecInformation &>(static_cast<const D &>(*this))->get_MimeTypes(put(value)));
     return value;
 }
 
 template <typename D> GUID impl_IBitmapDecoderStatics<D>::BmpDecoderId() const
 {
     GUID value {};
-    check_hresult(shim()->get_BmpDecoderId(&value));
+    check_hresult(static_cast<const IBitmapDecoderStatics &>(static_cast<const D &>(*this))->get_BmpDecoderId(&value));
     return value;
 }
 
 template <typename D> GUID impl_IBitmapDecoderStatics<D>::JpegDecoderId() const
 {
     GUID value {};
-    check_hresult(shim()->get_JpegDecoderId(&value));
+    check_hresult(static_cast<const IBitmapDecoderStatics &>(static_cast<const D &>(*this))->get_JpegDecoderId(&value));
     return value;
 }
 
 template <typename D> GUID impl_IBitmapDecoderStatics<D>::PngDecoderId() const
 {
     GUID value {};
-    check_hresult(shim()->get_PngDecoderId(&value));
+    check_hresult(static_cast<const IBitmapDecoderStatics &>(static_cast<const D &>(*this))->get_PngDecoderId(&value));
     return value;
 }
 
 template <typename D> GUID impl_IBitmapDecoderStatics<D>::TiffDecoderId() const
 {
     GUID value {};
-    check_hresult(shim()->get_TiffDecoderId(&value));
+    check_hresult(static_cast<const IBitmapDecoderStatics &>(static_cast<const D &>(*this))->get_TiffDecoderId(&value));
     return value;
 }
 
 template <typename D> GUID impl_IBitmapDecoderStatics<D>::GifDecoderId() const
 {
     GUID value {};
-    check_hresult(shim()->get_GifDecoderId(&value));
+    check_hresult(static_cast<const IBitmapDecoderStatics &>(static_cast<const D &>(*this))->get_GifDecoderId(&value));
     return value;
 }
 
 template <typename D> GUID impl_IBitmapDecoderStatics<D>::JpegXRDecoderId() const
 {
     GUID value {};
-    check_hresult(shim()->get_JpegXRDecoderId(&value));
+    check_hresult(static_cast<const IBitmapDecoderStatics &>(static_cast<const D &>(*this))->get_JpegXRDecoderId(&value));
     return value;
 }
 
 template <typename D> GUID impl_IBitmapDecoderStatics<D>::IcoDecoderId() const
 {
     GUID value {};
-    check_hresult(shim()->get_IcoDecoderId(&value));
+    check_hresult(static_cast<const IBitmapDecoderStatics &>(static_cast<const D &>(*this))->get_IcoDecoderId(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Graphics::Imaging::BitmapCodecInformation> impl_IBitmapDecoderStatics<D>::GetDecoderInformationEnumerator() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Graphics::Imaging::BitmapCodecInformation> decoderInformationEnumerator;
-    check_hresult(shim()->abi_GetDecoderInformationEnumerator(put(decoderInformationEnumerator)));
+    check_hresult(static_cast<const IBitmapDecoderStatics &>(static_cast<const D &>(*this))->abi_GetDecoderInformationEnumerator(put(decoderInformationEnumerator)));
     return decoderInformationEnumerator;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapDecoder> impl_IBitmapDecoderStatics<D>::CreateAsync(const Windows::Storage::Streams::IRandomAccessStream & stream) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapDecoder> asyncInfo;
-    check_hresult(shim()->abi_CreateAsync(get(stream), put(asyncInfo)));
+    check_hresult(static_cast<const IBitmapDecoderStatics &>(static_cast<const D &>(*this))->abi_CreateAsync(get(stream), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapDecoder> impl_IBitmapDecoderStatics<D>::CreateAsync(GUID decoderId, const Windows::Storage::Streams::IRandomAccessStream & stream) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapDecoder> asyncInfo;
-    check_hresult(shim()->abi_CreateWithIdAsync(decoderId, get(stream), put(asyncInfo)));
+    check_hresult(static_cast<const IBitmapDecoderStatics &>(static_cast<const D &>(*this))->abi_CreateWithIdAsync(decoderId, get(stream), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Graphics::Imaging::BitmapPropertiesView impl_IBitmapDecoder<D>::BitmapContainerProperties() const
 {
     Windows::Graphics::Imaging::BitmapPropertiesView value { nullptr };
-    check_hresult(shim()->get_BitmapContainerProperties(put(value)));
+    check_hresult(static_cast<const IBitmapDecoder &>(static_cast<const D &>(*this))->get_BitmapContainerProperties(put(value)));
     return value;
 }
 
 template <typename D> Windows::Graphics::Imaging::BitmapCodecInformation impl_IBitmapDecoder<D>::DecoderInformation() const
 {
     Windows::Graphics::Imaging::BitmapCodecInformation value { nullptr };
-    check_hresult(shim()->get_DecoderInformation(put(value)));
+    check_hresult(static_cast<const IBitmapDecoder &>(static_cast<const D &>(*this))->get_DecoderInformation(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IBitmapDecoder<D>::FrameCount() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_FrameCount(&value));
+    check_hresult(static_cast<const IBitmapDecoder &>(static_cast<const D &>(*this))->get_FrameCount(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::ImageStream> impl_IBitmapDecoder<D>::GetPreviewAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::ImageStream> asyncInfo;
-    check_hresult(shim()->abi_GetPreviewAsync(put(asyncInfo)));
+    check_hresult(static_cast<const IBitmapDecoder &>(static_cast<const D &>(*this))->abi_GetPreviewAsync(put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapFrame> impl_IBitmapDecoder<D>::GetFrameAsync(uint32_t frameIndex) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapFrame> asyncInfo;
-    check_hresult(shim()->abi_GetFrameAsync(frameIndex, put(asyncInfo)));
+    check_hresult(static_cast<const IBitmapDecoder &>(static_cast<const D &>(*this))->abi_GetFrameAsync(frameIndex, put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> GUID impl_IBitmapEncoderStatics<D>::BmpEncoderId() const
 {
     GUID value {};
-    check_hresult(shim()->get_BmpEncoderId(&value));
+    check_hresult(static_cast<const IBitmapEncoderStatics &>(static_cast<const D &>(*this))->get_BmpEncoderId(&value));
     return value;
 }
 
 template <typename D> GUID impl_IBitmapEncoderStatics<D>::JpegEncoderId() const
 {
     GUID value {};
-    check_hresult(shim()->get_JpegEncoderId(&value));
+    check_hresult(static_cast<const IBitmapEncoderStatics &>(static_cast<const D &>(*this))->get_JpegEncoderId(&value));
     return value;
 }
 
 template <typename D> GUID impl_IBitmapEncoderStatics<D>::PngEncoderId() const
 {
     GUID value {};
-    check_hresult(shim()->get_PngEncoderId(&value));
+    check_hresult(static_cast<const IBitmapEncoderStatics &>(static_cast<const D &>(*this))->get_PngEncoderId(&value));
     return value;
 }
 
 template <typename D> GUID impl_IBitmapEncoderStatics<D>::TiffEncoderId() const
 {
     GUID value {};
-    check_hresult(shim()->get_TiffEncoderId(&value));
+    check_hresult(static_cast<const IBitmapEncoderStatics &>(static_cast<const D &>(*this))->get_TiffEncoderId(&value));
     return value;
 }
 
 template <typename D> GUID impl_IBitmapEncoderStatics<D>::GifEncoderId() const
 {
     GUID value {};
-    check_hresult(shim()->get_GifEncoderId(&value));
+    check_hresult(static_cast<const IBitmapEncoderStatics &>(static_cast<const D &>(*this))->get_GifEncoderId(&value));
     return value;
 }
 
 template <typename D> GUID impl_IBitmapEncoderStatics<D>::JpegXREncoderId() const
 {
     GUID value {};
-    check_hresult(shim()->get_JpegXREncoderId(&value));
+    check_hresult(static_cast<const IBitmapEncoderStatics &>(static_cast<const D &>(*this))->get_JpegXREncoderId(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Graphics::Imaging::BitmapCodecInformation> impl_IBitmapEncoderStatics<D>::GetEncoderInformationEnumerator() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Graphics::Imaging::BitmapCodecInformation> encoderInformationEnumerator;
-    check_hresult(shim()->abi_GetEncoderInformationEnumerator(put(encoderInformationEnumerator)));
+    check_hresult(static_cast<const IBitmapEncoderStatics &>(static_cast<const D &>(*this))->abi_GetEncoderInformationEnumerator(put(encoderInformationEnumerator)));
     return encoderInformationEnumerator;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> impl_IBitmapEncoderStatics<D>::CreateAsync(GUID encoderId, const Windows::Storage::Streams::IRandomAccessStream & stream) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> asyncInfo;
-    check_hresult(shim()->abi_CreateAsync(encoderId, get(stream), put(asyncInfo)));
+    check_hresult(static_cast<const IBitmapEncoderStatics &>(static_cast<const D &>(*this))->abi_CreateAsync(encoderId, get(stream), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> impl_IBitmapEncoderStatics<D>::CreateAsync(GUID encoderId, const Windows::Storage::Streams::IRandomAccessStream & stream, const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> & encodingOptions) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> asyncInfo;
-    check_hresult(shim()->abi_CreateWithEncodingOptionsAsync(encoderId, get(stream), get(encodingOptions), put(asyncInfo)));
+    check_hresult(static_cast<const IBitmapEncoderStatics &>(static_cast<const D &>(*this))->abi_CreateWithEncodingOptionsAsync(encoderId, get(stream), get(encodingOptions), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> impl_IBitmapEncoderStatics<D>::CreateForTranscodingAsync(const Windows::Storage::Streams::IRandomAccessStream & stream, const Windows::Graphics::Imaging::BitmapDecoder & bitmapDecoder) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> asyncInfo;
-    check_hresult(shim()->abi_CreateForTranscodingAsync(get(stream), get(bitmapDecoder), put(asyncInfo)));
+    check_hresult(static_cast<const IBitmapEncoderStatics &>(static_cast<const D &>(*this))->abi_CreateForTranscodingAsync(get(stream), get(bitmapDecoder), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> impl_IBitmapEncoderStatics<D>::CreateForInPlacePropertyEncodingAsync(const Windows::Graphics::Imaging::BitmapDecoder & bitmapDecoder) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapEncoder> asyncInfo;
-    check_hresult(shim()->abi_CreateForInPlacePropertyEncodingAsync(get(bitmapDecoder), put(asyncInfo)));
+    check_hresult(static_cast<const IBitmapEncoderStatics &>(static_cast<const D &>(*this))->abi_CreateForInPlacePropertyEncodingAsync(get(bitmapDecoder), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Graphics::Imaging::BitmapCodecInformation impl_IBitmapEncoder<D>::EncoderInformation() const
 {
     Windows::Graphics::Imaging::BitmapCodecInformation value { nullptr };
-    check_hresult(shim()->get_EncoderInformation(put(value)));
+    check_hresult(static_cast<const IBitmapEncoder &>(static_cast<const D &>(*this))->get_EncoderInformation(put(value)));
     return value;
 }
 
 template <typename D> Windows::Graphics::Imaging::BitmapProperties impl_IBitmapEncoder<D>::BitmapProperties() const
 {
     Windows::Graphics::Imaging::BitmapProperties value { nullptr };
-    check_hresult(shim()->get_BitmapProperties(put(value)));
+    check_hresult(static_cast<const IBitmapEncoder &>(static_cast<const D &>(*this))->get_BitmapProperties(put(value)));
     return value;
 }
 
 template <typename D> Windows::Graphics::Imaging::BitmapProperties impl_IBitmapEncoder<D>::BitmapContainerProperties() const
 {
     Windows::Graphics::Imaging::BitmapProperties value { nullptr };
-    check_hresult(shim()->get_BitmapContainerProperties(put(value)));
+    check_hresult(static_cast<const IBitmapEncoder &>(static_cast<const D &>(*this))->get_BitmapContainerProperties(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IBitmapEncoder<D>::IsThumbnailGenerated() const
 {
     bool value {};
-    check_hresult(shim()->get_IsThumbnailGenerated(&value));
+    check_hresult(static_cast<const IBitmapEncoder &>(static_cast<const D &>(*this))->get_IsThumbnailGenerated(&value));
     return value;
 }
 
 template <typename D> void impl_IBitmapEncoder<D>::IsThumbnailGenerated(bool value) const
 {
-    check_hresult(shim()->put_IsThumbnailGenerated(value));
+    check_hresult(static_cast<const IBitmapEncoder &>(static_cast<const D &>(*this))->put_IsThumbnailGenerated(value));
 }
 
 template <typename D> uint32_t impl_IBitmapEncoder<D>::GeneratedThumbnailWidth() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_GeneratedThumbnailWidth(&value));
+    check_hresult(static_cast<const IBitmapEncoder &>(static_cast<const D &>(*this))->get_GeneratedThumbnailWidth(&value));
     return value;
 }
 
 template <typename D> void impl_IBitmapEncoder<D>::GeneratedThumbnailWidth(uint32_t value) const
 {
-    check_hresult(shim()->put_GeneratedThumbnailWidth(value));
+    check_hresult(static_cast<const IBitmapEncoder &>(static_cast<const D &>(*this))->put_GeneratedThumbnailWidth(value));
 }
 
 template <typename D> uint32_t impl_IBitmapEncoder<D>::GeneratedThumbnailHeight() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_GeneratedThumbnailHeight(&value));
+    check_hresult(static_cast<const IBitmapEncoder &>(static_cast<const D &>(*this))->get_GeneratedThumbnailHeight(&value));
     return value;
 }
 
 template <typename D> void impl_IBitmapEncoder<D>::GeneratedThumbnailHeight(uint32_t value) const
 {
-    check_hresult(shim()->put_GeneratedThumbnailHeight(value));
+    check_hresult(static_cast<const IBitmapEncoder &>(static_cast<const D &>(*this))->put_GeneratedThumbnailHeight(value));
 }
 
 template <typename D> Windows::Graphics::Imaging::BitmapTransform impl_IBitmapEncoder<D>::BitmapTransform() const
 {
     Windows::Graphics::Imaging::BitmapTransform value { nullptr };
-    check_hresult(shim()->get_BitmapTransform(put(value)));
+    check_hresult(static_cast<const IBitmapEncoder &>(static_cast<const D &>(*this))->get_BitmapTransform(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBitmapEncoder<D>::SetPixelData(Windows::Graphics::Imaging::BitmapPixelFormat pixelFormat, Windows::Graphics::Imaging::BitmapAlphaMode alphaMode, uint32_t width, uint32_t height, double dpiX, double dpiY, array_ref<const uint8_t> pixels) const
 {
-    check_hresult(shim()->abi_SetPixelData(pixelFormat, alphaMode, width, height, dpiX, dpiY, pixels.size(), get(pixels)));
+    check_hresult(static_cast<const IBitmapEncoder &>(static_cast<const D &>(*this))->abi_SetPixelData(pixelFormat, alphaMode, width, height, dpiX, dpiY, pixels.size(), get(pixels)));
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IBitmapEncoder<D>::GoToNextFrameAsync() const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(shim()->abi_GoToNextFrameAsync(put(asyncInfo)));
+    check_hresult(static_cast<const IBitmapEncoder &>(static_cast<const D &>(*this))->abi_GoToNextFrameAsync(put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IBitmapEncoder<D>::GoToNextFrameAsync(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> & encodingOptions) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(shim()->abi_GoToNextFrameWithEncodingOptionsAsync(get(encodingOptions), put(asyncInfo)));
+    check_hresult(static_cast<const IBitmapEncoder &>(static_cast<const D &>(*this))->abi_GoToNextFrameWithEncodingOptionsAsync(get(encodingOptions), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IBitmapEncoder<D>::FlushAsync() const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(shim()->abi_FlushAsync(put(asyncInfo)));
+    check_hresult(static_cast<const IBitmapEncoder &>(static_cast<const D &>(*this))->abi_FlushAsync(put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> void impl_IBitmapEncoderWithSoftwareBitmap<D>::SetSoftwareBitmap(const Windows::Graphics::Imaging::SoftwareBitmap & bitmap) const
 {
-    check_hresult(shim()->abi_SetSoftwareBitmap(get(bitmap)));
+    check_hresult(static_cast<const IBitmapEncoderWithSoftwareBitmap &>(static_cast<const D &>(*this))->abi_SetSoftwareBitmap(get(bitmap)));
 }
 
 template <typename D> Windows::Graphics::Imaging::SoftwareBitmap impl_ISoftwareBitmapFactory<D>::Create(Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height) const
 {
     Windows::Graphics::Imaging::SoftwareBitmap value { nullptr };
-    check_hresult(shim()->abi_Create(format, width, height, put(value)));
+    check_hresult(static_cast<const ISoftwareBitmapFactory &>(static_cast<const D &>(*this))->abi_Create(format, width, height, put(value)));
     return value;
 }
 
 template <typename D> Windows::Graphics::Imaging::SoftwareBitmap impl_ISoftwareBitmapFactory<D>::CreateWithAlpha(Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height, Windows::Graphics::Imaging::BitmapAlphaMode alpha) const
 {
     Windows::Graphics::Imaging::SoftwareBitmap value { nullptr };
-    check_hresult(shim()->abi_CreateWithAlpha(format, width, height, alpha, put(value)));
+    check_hresult(static_cast<const ISoftwareBitmapFactory &>(static_cast<const D &>(*this))->abi_CreateWithAlpha(format, width, height, alpha, put(value)));
     return value;
 }
 
 template <typename D> Windows::Graphics::Imaging::SoftwareBitmap impl_ISoftwareBitmapStatics<D>::Copy(const Windows::Graphics::Imaging::SoftwareBitmap & source) const
 {
     Windows::Graphics::Imaging::SoftwareBitmap value { nullptr };
-    check_hresult(shim()->abi_Copy(get(source), put(value)));
+    check_hresult(static_cast<const ISoftwareBitmapStatics &>(static_cast<const D &>(*this))->abi_Copy(get(source), put(value)));
     return value;
 }
 
 template <typename D> Windows::Graphics::Imaging::SoftwareBitmap impl_ISoftwareBitmapStatics<D>::Convert(const Windows::Graphics::Imaging::SoftwareBitmap & source, Windows::Graphics::Imaging::BitmapPixelFormat format) const
 {
     Windows::Graphics::Imaging::SoftwareBitmap value { nullptr };
-    check_hresult(shim()->abi_Convert(get(source), format, put(value)));
+    check_hresult(static_cast<const ISoftwareBitmapStatics &>(static_cast<const D &>(*this))->abi_Convert(get(source), format, put(value)));
     return value;
 }
 
 template <typename D> Windows::Graphics::Imaging::SoftwareBitmap impl_ISoftwareBitmapStatics<D>::Convert(const Windows::Graphics::Imaging::SoftwareBitmap & source, Windows::Graphics::Imaging::BitmapPixelFormat format, Windows::Graphics::Imaging::BitmapAlphaMode alpha) const
 {
     Windows::Graphics::Imaging::SoftwareBitmap value { nullptr };
-    check_hresult(shim()->abi_ConvertWithAlpha(get(source), format, alpha, put(value)));
+    check_hresult(static_cast<const ISoftwareBitmapStatics &>(static_cast<const D &>(*this))->abi_ConvertWithAlpha(get(source), format, alpha, put(value)));
     return value;
 }
 
 template <typename D> Windows::Graphics::Imaging::SoftwareBitmap impl_ISoftwareBitmapStatics<D>::CreateCopyFromBuffer(const Windows::Storage::Streams::IBuffer & source, Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height) const
 {
     Windows::Graphics::Imaging::SoftwareBitmap value { nullptr };
-    check_hresult(shim()->abi_CreateCopyFromBuffer(get(source), format, width, height, put(value)));
+    check_hresult(static_cast<const ISoftwareBitmapStatics &>(static_cast<const D &>(*this))->abi_CreateCopyFromBuffer(get(source), format, width, height, put(value)));
     return value;
 }
 
 template <typename D> Windows::Graphics::Imaging::SoftwareBitmap impl_ISoftwareBitmapStatics<D>::CreateCopyFromBuffer(const Windows::Storage::Streams::IBuffer & source, Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height, Windows::Graphics::Imaging::BitmapAlphaMode alpha) const
 {
     Windows::Graphics::Imaging::SoftwareBitmap value { nullptr };
-    check_hresult(shim()->abi_CreateCopyWithAlphaFromBuffer(get(source), format, width, height, alpha, put(value)));
+    check_hresult(static_cast<const ISoftwareBitmapStatics &>(static_cast<const D &>(*this))->abi_CreateCopyWithAlphaFromBuffer(get(source), format, width, height, alpha, put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::SoftwareBitmap> impl_ISoftwareBitmapStatics<D>::CreateCopyFromSurfaceAsync(const Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface & surface) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::SoftwareBitmap> value;
-    check_hresult(shim()->abi_CreateCopyFromSurfaceAsync(get(surface), put(value)));
+    check_hresult(static_cast<const ISoftwareBitmapStatics &>(static_cast<const D &>(*this))->abi_CreateCopyFromSurfaceAsync(get(surface), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::SoftwareBitmap> impl_ISoftwareBitmapStatics<D>::CreateCopyFromSurfaceAsync(const Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface & surface, Windows::Graphics::Imaging::BitmapAlphaMode alpha) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::SoftwareBitmap> value;
-    check_hresult(shim()->abi_CreateCopyWithAlphaFromSurfaceAsync(get(surface), alpha, put(value)));
+    check_hresult(static_cast<const ISoftwareBitmapStatics &>(static_cast<const D &>(*this))->abi_CreateCopyWithAlphaFromSurfaceAsync(get(surface), alpha, put(value)));
     return value;
 }
 
 template <typename D> Windows::Graphics::Imaging::BitmapPixelFormat impl_ISoftwareBitmap<D>::BitmapPixelFormat() const
 {
     Windows::Graphics::Imaging::BitmapPixelFormat value {};
-    check_hresult(shim()->get_BitmapPixelFormat(&value));
+    check_hresult(static_cast<const ISoftwareBitmap &>(static_cast<const D &>(*this))->get_BitmapPixelFormat(&value));
     return value;
 }
 
 template <typename D> Windows::Graphics::Imaging::BitmapAlphaMode impl_ISoftwareBitmap<D>::BitmapAlphaMode() const
 {
     Windows::Graphics::Imaging::BitmapAlphaMode value {};
-    check_hresult(shim()->get_BitmapAlphaMode(&value));
+    check_hresult(static_cast<const ISoftwareBitmap &>(static_cast<const D &>(*this))->get_BitmapAlphaMode(&value));
     return value;
 }
 
 template <typename D> int32_t impl_ISoftwareBitmap<D>::PixelWidth() const
 {
     int32_t value {};
-    check_hresult(shim()->get_PixelWidth(&value));
+    check_hresult(static_cast<const ISoftwareBitmap &>(static_cast<const D &>(*this))->get_PixelWidth(&value));
     return value;
 }
 
 template <typename D> int32_t impl_ISoftwareBitmap<D>::PixelHeight() const
 {
     int32_t value {};
-    check_hresult(shim()->get_PixelHeight(&value));
+    check_hresult(static_cast<const ISoftwareBitmap &>(static_cast<const D &>(*this))->get_PixelHeight(&value));
     return value;
 }
 
 template <typename D> bool impl_ISoftwareBitmap<D>::IsReadOnly() const
 {
     bool value {};
-    check_hresult(shim()->get_IsReadOnly(&value));
+    check_hresult(static_cast<const ISoftwareBitmap &>(static_cast<const D &>(*this))->get_IsReadOnly(&value));
     return value;
 }
 
 template <typename D> void impl_ISoftwareBitmap<D>::DpiX(double value) const
 {
-    check_hresult(shim()->put_DpiX(value));
+    check_hresult(static_cast<const ISoftwareBitmap &>(static_cast<const D &>(*this))->put_DpiX(value));
 }
 
 template <typename D> double impl_ISoftwareBitmap<D>::DpiX() const
 {
     double value {};
-    check_hresult(shim()->get_DpiX(&value));
+    check_hresult(static_cast<const ISoftwareBitmap &>(static_cast<const D &>(*this))->get_DpiX(&value));
     return value;
 }
 
 template <typename D> void impl_ISoftwareBitmap<D>::DpiY(double value) const
 {
-    check_hresult(shim()->put_DpiY(value));
+    check_hresult(static_cast<const ISoftwareBitmap &>(static_cast<const D &>(*this))->put_DpiY(value));
 }
 
 template <typename D> double impl_ISoftwareBitmap<D>::DpiY() const
 {
     double value {};
-    check_hresult(shim()->get_DpiY(&value));
+    check_hresult(static_cast<const ISoftwareBitmap &>(static_cast<const D &>(*this))->get_DpiY(&value));
     return value;
 }
 
 template <typename D> Windows::Graphics::Imaging::BitmapBuffer impl_ISoftwareBitmap<D>::LockBuffer(Windows::Graphics::Imaging::BitmapBufferAccessMode mode) const
 {
     Windows::Graphics::Imaging::BitmapBuffer value { nullptr };
-    check_hresult(shim()->abi_LockBuffer(mode, put(value)));
+    check_hresult(static_cast<const ISoftwareBitmap &>(static_cast<const D &>(*this))->abi_LockBuffer(mode, put(value)));
     return value;
 }
 
 template <typename D> void impl_ISoftwareBitmap<D>::CopyTo(const Windows::Graphics::Imaging::SoftwareBitmap & bitmap) const
 {
-    check_hresult(shim()->abi_CopyTo(get(bitmap)));
+    check_hresult(static_cast<const ISoftwareBitmap &>(static_cast<const D &>(*this))->abi_CopyTo(get(bitmap)));
 }
 
 template <typename D> void impl_ISoftwareBitmap<D>::CopyFromBuffer(const Windows::Storage::Streams::IBuffer & buffer) const
 {
-    check_hresult(shim()->abi_CopyFromBuffer(get(buffer)));
+    check_hresult(static_cast<const ISoftwareBitmap &>(static_cast<const D &>(*this))->abi_CopyFromBuffer(get(buffer)));
 }
 
 template <typename D> void impl_ISoftwareBitmap<D>::CopyToBuffer(const Windows::Storage::Streams::IBuffer & buffer) const
 {
-    check_hresult(shim()->abi_CopyToBuffer(get(buffer)));
+    check_hresult(static_cast<const ISoftwareBitmap &>(static_cast<const D &>(*this))->abi_CopyToBuffer(get(buffer)));
 }
 
 template <typename D> Windows::Graphics::Imaging::SoftwareBitmap impl_ISoftwareBitmap<D>::GetReadOnlyView() const
 {
     Windows::Graphics::Imaging::SoftwareBitmap value { nullptr };
-    check_hresult(shim()->abi_GetReadOnlyView(put(value)));
+    check_hresult(static_cast<const ISoftwareBitmap &>(static_cast<const D &>(*this))->abi_GetReadOnlyView(put(value)));
     return value;
 }
 
 template <typename D> int32_t impl_IBitmapBuffer<D>::GetPlaneCount() const
 {
     int32_t value {};
-    check_hresult(shim()->abi_GetPlaneCount(&value));
+    check_hresult(static_cast<const IBitmapBuffer &>(static_cast<const D &>(*this))->abi_GetPlaneCount(&value));
     return value;
 }
 
 template <typename D> Windows::Graphics::Imaging::BitmapPlaneDescription impl_IBitmapBuffer<D>::GetPlaneDescription(int32_t index) const
 {
     Windows::Graphics::Imaging::BitmapPlaneDescription value {};
-    check_hresult(shim()->abi_GetPlaneDescription(index, put(value)));
+    check_hresult(static_cast<const IBitmapBuffer &>(static_cast<const D &>(*this))->abi_GetPlaneDescription(index, put(value)));
     return value;
 }
 

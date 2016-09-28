@@ -96,14 +96,14 @@ template <> struct traits<Windows::ApplicationModel::Store::Preview::StorePrevie
 
 namespace Windows::ApplicationModel::Store::Preview {
 
-template <typename T> class impl_IStoreConfigurationStatics;
-template <typename T> class impl_IStoreConfigurationStatics2;
-template <typename T> class impl_IStoreConfigurationStatics3;
-template <typename T> class impl_IStoreHardwareManufacturerInfo;
-template <typename T> class impl_IStorePreview;
-template <typename T> class impl_IStorePreviewProductInfo;
-template <typename T> class impl_IStorePreviewPurchaseResults;
-template <typename T> class impl_IStorePreviewSkuInfo;
+template <typename T> struct impl_IStoreConfigurationStatics;
+template <typename T> struct impl_IStoreConfigurationStatics2;
+template <typename T> struct impl_IStoreConfigurationStatics3;
+template <typename T> struct impl_IStoreHardwareManufacturerInfo;
+template <typename T> struct impl_IStorePreview;
+template <typename T> struct impl_IStorePreviewProductInfo;
+template <typename T> struct impl_IStorePreviewPurchaseResults;
+template <typename T> struct impl_IStorePreviewSkuInfo;
 
 }
 
@@ -165,7 +165,6 @@ template <> struct traits<Windows::ApplicationModel::Store::Preview::StoreConfig
 template <> struct traits<Windows::ApplicationModel::Store::Preview::StoreHardwareManufacturerInfo>
 {
     using abi = ABI::Windows::ApplicationModel::Store::Preview::StoreHardwareManufacturerInfo;
-    using default_interface = Windows::ApplicationModel::Store::Preview::IStoreHardwareManufacturerInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Store.Preview.StoreHardwareManufacturerInfo"; }
 };
 
@@ -177,21 +176,18 @@ template <> struct traits<Windows::ApplicationModel::Store::Preview::StorePrevie
 template <> struct traits<Windows::ApplicationModel::Store::Preview::StorePreviewProductInfo>
 {
     using abi = ABI::Windows::ApplicationModel::Store::Preview::StorePreviewProductInfo;
-    using default_interface = Windows::ApplicationModel::Store::Preview::IStorePreviewProductInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Store.Preview.StorePreviewProductInfo"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Store::Preview::StorePreviewPurchaseResults>
 {
     using abi = ABI::Windows::ApplicationModel::Store::Preview::StorePreviewPurchaseResults;
-    using default_interface = Windows::ApplicationModel::Store::Preview::IStorePreviewPurchaseResults;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Store.Preview.StorePreviewPurchaseResults"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Store::Preview::StorePreviewSkuInfo>
 {
     using abi = ABI::Windows::ApplicationModel::Store::Preview::StorePreviewSkuInfo;
-    using default_interface = Windows::ApplicationModel::Store::Preview::IStorePreviewSkuInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Store.Preview.StorePreviewSkuInfo"; }
 };
 

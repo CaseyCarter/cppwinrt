@@ -853,370 +853,370 @@ namespace Windows::ApplicationModel::SocialInfo {
 template <typename D> Windows::Foundation::Uri impl_ISocialItemThumbnail<D>::TargetUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(shim()->get_TargetUri(put(value)));
+    check_hresult(static_cast<const ISocialItemThumbnail &>(static_cast<const D &>(*this))->get_TargetUri(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISocialItemThumbnail<D>::TargetUri(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(shim()->put_TargetUri(get(value)));
+    check_hresult(static_cast<const ISocialItemThumbnail &>(static_cast<const D &>(*this))->put_TargetUri(get(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_ISocialItemThumbnail<D>::ImageUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(shim()->get_ImageUri(put(value)));
+    check_hresult(static_cast<const ISocialItemThumbnail &>(static_cast<const D &>(*this))->get_ImageUri(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISocialItemThumbnail<D>::ImageUri(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(shim()->put_ImageUri(get(value)));
+    check_hresult(static_cast<const ISocialItemThumbnail &>(static_cast<const D &>(*this))->put_ImageUri(get(value)));
 }
 
 template <typename D> Windows::Graphics::Imaging::BitmapSize impl_ISocialItemThumbnail<D>::BitmapSize() const
 {
     Windows::Graphics::Imaging::BitmapSize value {};
-    check_hresult(shim()->get_BitmapSize(put(value)));
+    check_hresult(static_cast<const ISocialItemThumbnail &>(static_cast<const D &>(*this))->get_BitmapSize(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISocialItemThumbnail<D>::BitmapSize(const Windows::Graphics::Imaging::BitmapSize & value) const
 {
-    check_hresult(shim()->put_BitmapSize(get(value)));
+    check_hresult(static_cast<const ISocialItemThumbnail &>(static_cast<const D &>(*this))->put_BitmapSize(get(value)));
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_ISocialItemThumbnail<D>::SetImageAsync(const Windows::Storage::Streams::IInputStream & image) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_SetImageAsync(get(image), put(operation)));
+    check_hresult(static_cast<const ISocialItemThumbnail &>(static_cast<const D &>(*this))->abi_SetImageAsync(get(image), put(operation)));
     return operation;
 }
 
 template <typename D> hstring impl_ISocialFeedContent<D>::Title() const
 {
     hstring value;
-    check_hresult(shim()->get_Title(put(value)));
+    check_hresult(static_cast<const ISocialFeedContent &>(static_cast<const D &>(*this))->get_Title(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISocialFeedContent<D>::Title(hstring_ref value) const
 {
-    check_hresult(shim()->put_Title(get(value)));
+    check_hresult(static_cast<const ISocialFeedContent &>(static_cast<const D &>(*this))->put_Title(get(value)));
 }
 
 template <typename D> hstring impl_ISocialFeedContent<D>::Message() const
 {
     hstring value;
-    check_hresult(shim()->get_Message(put(value)));
+    check_hresult(static_cast<const ISocialFeedContent &>(static_cast<const D &>(*this))->get_Message(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISocialFeedContent<D>::Message(hstring_ref value) const
 {
-    check_hresult(shim()->put_Message(get(value)));
+    check_hresult(static_cast<const ISocialFeedContent &>(static_cast<const D &>(*this))->put_Message(get(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_ISocialFeedContent<D>::TargetUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(shim()->get_TargetUri(put(value)));
+    check_hresult(static_cast<const ISocialFeedContent &>(static_cast<const D &>(*this))->get_TargetUri(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISocialFeedContent<D>::TargetUri(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(shim()->put_TargetUri(get(value)));
+    check_hresult(static_cast<const ISocialFeedContent &>(static_cast<const D &>(*this))->put_TargetUri(get(value)));
 }
 
 template <typename D> hstring impl_ISocialUserInfo<D>::DisplayName() const
 {
     hstring value;
-    check_hresult(shim()->get_DisplayName(put(value)));
+    check_hresult(static_cast<const ISocialUserInfo &>(static_cast<const D &>(*this))->get_DisplayName(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISocialUserInfo<D>::DisplayName(hstring_ref value) const
 {
-    check_hresult(shim()->put_DisplayName(get(value)));
+    check_hresult(static_cast<const ISocialUserInfo &>(static_cast<const D &>(*this))->put_DisplayName(get(value)));
 }
 
 template <typename D> hstring impl_ISocialUserInfo<D>::UserName() const
 {
     hstring value;
-    check_hresult(shim()->get_UserName(put(value)));
+    check_hresult(static_cast<const ISocialUserInfo &>(static_cast<const D &>(*this))->get_UserName(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISocialUserInfo<D>::UserName(hstring_ref value) const
 {
-    check_hresult(shim()->put_UserName(get(value)));
+    check_hresult(static_cast<const ISocialUserInfo &>(static_cast<const D &>(*this))->put_UserName(get(value)));
 }
 
 template <typename D> hstring impl_ISocialUserInfo<D>::RemoteId() const
 {
     hstring value;
-    check_hresult(shim()->get_RemoteId(put(value)));
+    check_hresult(static_cast<const ISocialUserInfo &>(static_cast<const D &>(*this))->get_RemoteId(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISocialUserInfo<D>::RemoteId(hstring_ref value) const
 {
-    check_hresult(shim()->put_RemoteId(get(value)));
+    check_hresult(static_cast<const ISocialUserInfo &>(static_cast<const D &>(*this))->put_RemoteId(get(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_ISocialUserInfo<D>::TargetUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(shim()->get_TargetUri(put(value)));
+    check_hresult(static_cast<const ISocialUserInfo &>(static_cast<const D &>(*this))->get_TargetUri(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISocialUserInfo<D>::TargetUri(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(shim()->put_TargetUri(get(value)));
+    check_hresult(static_cast<const ISocialUserInfo &>(static_cast<const D &>(*this))->put_TargetUri(get(value)));
 }
 
 template <typename D> Windows::ApplicationModel::SocialInfo::SocialUserInfo impl_ISocialFeedItem<D>::Author() const
 {
     Windows::ApplicationModel::SocialInfo::SocialUserInfo value { nullptr };
-    check_hresult(shim()->get_Author(put(value)));
+    check_hresult(static_cast<const ISocialFeedItem &>(static_cast<const D &>(*this))->get_Author(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::SocialInfo::SocialFeedContent impl_ISocialFeedItem<D>::PrimaryContent() const
 {
     Windows::ApplicationModel::SocialInfo::SocialFeedContent value { nullptr };
-    check_hresult(shim()->get_PrimaryContent(put(value)));
+    check_hresult(static_cast<const ISocialFeedItem &>(static_cast<const D &>(*this))->get_PrimaryContent(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::SocialInfo::SocialFeedContent impl_ISocialFeedItem<D>::SecondaryContent() const
 {
     Windows::ApplicationModel::SocialInfo::SocialFeedContent value { nullptr };
-    check_hresult(shim()->get_SecondaryContent(put(value)));
+    check_hresult(static_cast<const ISocialFeedItem &>(static_cast<const D &>(*this))->get_SecondaryContent(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_ISocialFeedItem<D>::Timestamp() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->get_Timestamp(put(value)));
+    check_hresult(static_cast<const ISocialFeedItem &>(static_cast<const D &>(*this))->get_Timestamp(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISocialFeedItem<D>::Timestamp(const Windows::Foundation::DateTime & value) const
 {
-    check_hresult(shim()->put_Timestamp(get(value)));
+    check_hresult(static_cast<const ISocialFeedItem &>(static_cast<const D &>(*this))->put_Timestamp(get(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_ISocialFeedItem<D>::TargetUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(shim()->get_TargetUri(put(value)));
+    check_hresult(static_cast<const ISocialFeedItem &>(static_cast<const D &>(*this))->get_TargetUri(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISocialFeedItem<D>::TargetUri(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(shim()->put_TargetUri(get(value)));
+    check_hresult(static_cast<const ISocialFeedItem &>(static_cast<const D &>(*this))->put_TargetUri(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::ApplicationModel::SocialInfo::SocialItemThumbnail> impl_ISocialFeedItem<D>::Thumbnails() const
 {
     Windows::Foundation::Collections::IVector<Windows::ApplicationModel::SocialInfo::SocialItemThumbnail> value;
-    check_hresult(shim()->get_Thumbnails(put(value)));
+    check_hresult(static_cast<const ISocialFeedItem &>(static_cast<const D &>(*this))->get_Thumbnails(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::SocialInfo::SocialFeedSharedItem impl_ISocialFeedItem<D>::SharedItem() const
 {
     Windows::ApplicationModel::SocialInfo::SocialFeedSharedItem value { nullptr };
-    check_hresult(shim()->get_SharedItem(put(value)));
+    check_hresult(static_cast<const ISocialFeedItem &>(static_cast<const D &>(*this))->get_SharedItem(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISocialFeedItem<D>::SharedItem(const Windows::ApplicationModel::SocialInfo::SocialFeedSharedItem & value) const
 {
-    check_hresult(shim()->put_SharedItem(get(value)));
+    check_hresult(static_cast<const ISocialFeedItem &>(static_cast<const D &>(*this))->put_SharedItem(get(value)));
 }
 
 template <typename D> Windows::ApplicationModel::SocialInfo::SocialItemBadgeStyle impl_ISocialFeedItem<D>::BadgeStyle() const
 {
     Windows::ApplicationModel::SocialInfo::SocialItemBadgeStyle value {};
-    check_hresult(shim()->get_BadgeStyle(&value));
+    check_hresult(static_cast<const ISocialFeedItem &>(static_cast<const D &>(*this))->get_BadgeStyle(&value));
     return value;
 }
 
 template <typename D> void impl_ISocialFeedItem<D>::BadgeStyle(Windows::ApplicationModel::SocialInfo::SocialItemBadgeStyle value) const
 {
-    check_hresult(shim()->put_BadgeStyle(value));
+    check_hresult(static_cast<const ISocialFeedItem &>(static_cast<const D &>(*this))->put_BadgeStyle(value));
 }
 
 template <typename D> int32_t impl_ISocialFeedItem<D>::BadgeCountValue() const
 {
     int32_t value {};
-    check_hresult(shim()->get_BadgeCountValue(&value));
+    check_hresult(static_cast<const ISocialFeedItem &>(static_cast<const D &>(*this))->get_BadgeCountValue(&value));
     return value;
 }
 
 template <typename D> void impl_ISocialFeedItem<D>::BadgeCountValue(int32_t value) const
 {
-    check_hresult(shim()->put_BadgeCountValue(value));
+    check_hresult(static_cast<const ISocialFeedItem &>(static_cast<const D &>(*this))->put_BadgeCountValue(value));
 }
 
 template <typename D> hstring impl_ISocialFeedItem<D>::RemoteId() const
 {
     hstring value;
-    check_hresult(shim()->get_RemoteId(put(value)));
+    check_hresult(static_cast<const ISocialFeedItem &>(static_cast<const D &>(*this))->get_RemoteId(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISocialFeedItem<D>::RemoteId(hstring_ref value) const
 {
-    check_hresult(shim()->put_RemoteId(get(value)));
+    check_hresult(static_cast<const ISocialFeedItem &>(static_cast<const D &>(*this))->put_RemoteId(get(value)));
 }
 
 template <typename D> Windows::ApplicationModel::SocialInfo::SocialFeedChildItem impl_ISocialFeedItem<D>::ChildItem() const
 {
     Windows::ApplicationModel::SocialInfo::SocialFeedChildItem value { nullptr };
-    check_hresult(shim()->get_ChildItem(put(value)));
+    check_hresult(static_cast<const ISocialFeedItem &>(static_cast<const D &>(*this))->get_ChildItem(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISocialFeedItem<D>::ChildItem(const Windows::ApplicationModel::SocialInfo::SocialFeedChildItem & value) const
 {
-    check_hresult(shim()->put_ChildItem(get(value)));
+    check_hresult(static_cast<const ISocialFeedItem &>(static_cast<const D &>(*this))->put_ChildItem(get(value)));
 }
 
 template <typename D> Windows::ApplicationModel::SocialInfo::SocialFeedItemStyle impl_ISocialFeedItem<D>::Style() const
 {
     Windows::ApplicationModel::SocialInfo::SocialFeedItemStyle value {};
-    check_hresult(shim()->get_Style(&value));
+    check_hresult(static_cast<const ISocialFeedItem &>(static_cast<const D &>(*this))->get_Style(&value));
     return value;
 }
 
 template <typename D> void impl_ISocialFeedItem<D>::Style(Windows::ApplicationModel::SocialInfo::SocialFeedItemStyle value) const
 {
-    check_hresult(shim()->put_Style(value));
+    check_hresult(static_cast<const ISocialFeedItem &>(static_cast<const D &>(*this))->put_Style(value));
 }
 
 template <typename D> Windows::ApplicationModel::SocialInfo::SocialUserInfo impl_ISocialFeedChildItem<D>::Author() const
 {
     Windows::ApplicationModel::SocialInfo::SocialUserInfo value { nullptr };
-    check_hresult(shim()->get_Author(put(value)));
+    check_hresult(static_cast<const ISocialFeedChildItem &>(static_cast<const D &>(*this))->get_Author(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::SocialInfo::SocialFeedContent impl_ISocialFeedChildItem<D>::PrimaryContent() const
 {
     Windows::ApplicationModel::SocialInfo::SocialFeedContent value { nullptr };
-    check_hresult(shim()->get_PrimaryContent(put(value)));
+    check_hresult(static_cast<const ISocialFeedChildItem &>(static_cast<const D &>(*this))->get_PrimaryContent(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::SocialInfo::SocialFeedContent impl_ISocialFeedChildItem<D>::SecondaryContent() const
 {
     Windows::ApplicationModel::SocialInfo::SocialFeedContent value { nullptr };
-    check_hresult(shim()->get_SecondaryContent(put(value)));
+    check_hresult(static_cast<const ISocialFeedChildItem &>(static_cast<const D &>(*this))->get_SecondaryContent(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_ISocialFeedChildItem<D>::Timestamp() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->get_Timestamp(put(value)));
+    check_hresult(static_cast<const ISocialFeedChildItem &>(static_cast<const D &>(*this))->get_Timestamp(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISocialFeedChildItem<D>::Timestamp(const Windows::Foundation::DateTime & value) const
 {
-    check_hresult(shim()->put_Timestamp(get(value)));
+    check_hresult(static_cast<const ISocialFeedChildItem &>(static_cast<const D &>(*this))->put_Timestamp(get(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_ISocialFeedChildItem<D>::TargetUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(shim()->get_TargetUri(put(value)));
+    check_hresult(static_cast<const ISocialFeedChildItem &>(static_cast<const D &>(*this))->get_TargetUri(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISocialFeedChildItem<D>::TargetUri(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(shim()->put_TargetUri(get(value)));
+    check_hresult(static_cast<const ISocialFeedChildItem &>(static_cast<const D &>(*this))->put_TargetUri(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::ApplicationModel::SocialInfo::SocialItemThumbnail> impl_ISocialFeedChildItem<D>::Thumbnails() const
 {
     Windows::Foundation::Collections::IVector<Windows::ApplicationModel::SocialInfo::SocialItemThumbnail> value;
-    check_hresult(shim()->get_Thumbnails(put(value)));
+    check_hresult(static_cast<const ISocialFeedChildItem &>(static_cast<const D &>(*this))->get_Thumbnails(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::SocialInfo::SocialFeedSharedItem impl_ISocialFeedChildItem<D>::SharedItem() const
 {
     Windows::ApplicationModel::SocialInfo::SocialFeedSharedItem value { nullptr };
-    check_hresult(shim()->get_SharedItem(put(value)));
+    check_hresult(static_cast<const ISocialFeedChildItem &>(static_cast<const D &>(*this))->get_SharedItem(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISocialFeedChildItem<D>::SharedItem(const Windows::ApplicationModel::SocialInfo::SocialFeedSharedItem & value) const
 {
-    check_hresult(shim()->put_SharedItem(get(value)));
+    check_hresult(static_cast<const ISocialFeedChildItem &>(static_cast<const D &>(*this))->put_SharedItem(get(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_ISocialFeedSharedItem<D>::OriginalSource() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(shim()->get_OriginalSource(put(value)));
+    check_hresult(static_cast<const ISocialFeedSharedItem &>(static_cast<const D &>(*this))->get_OriginalSource(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISocialFeedSharedItem<D>::OriginalSource(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(shim()->put_OriginalSource(get(value)));
+    check_hresult(static_cast<const ISocialFeedSharedItem &>(static_cast<const D &>(*this))->put_OriginalSource(get(value)));
 }
 
 template <typename D> Windows::ApplicationModel::SocialInfo::SocialFeedContent impl_ISocialFeedSharedItem<D>::Content() const
 {
     Windows::ApplicationModel::SocialInfo::SocialFeedContent value { nullptr };
-    check_hresult(shim()->get_Content(put(value)));
+    check_hresult(static_cast<const ISocialFeedSharedItem &>(static_cast<const D &>(*this))->get_Content(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_ISocialFeedSharedItem<D>::Timestamp() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->get_Timestamp(put(value)));
+    check_hresult(static_cast<const ISocialFeedSharedItem &>(static_cast<const D &>(*this))->get_Timestamp(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISocialFeedSharedItem<D>::Timestamp(const Windows::Foundation::DateTime & value) const
 {
-    check_hresult(shim()->put_Timestamp(get(value)));
+    check_hresult(static_cast<const ISocialFeedSharedItem &>(static_cast<const D &>(*this))->put_Timestamp(get(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_ISocialFeedSharedItem<D>::TargetUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(shim()->get_TargetUri(put(value)));
+    check_hresult(static_cast<const ISocialFeedSharedItem &>(static_cast<const D &>(*this))->get_TargetUri(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISocialFeedSharedItem<D>::TargetUri(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(shim()->put_TargetUri(get(value)));
+    check_hresult(static_cast<const ISocialFeedSharedItem &>(static_cast<const D &>(*this))->put_TargetUri(get(value)));
 }
 
 template <typename D> void impl_ISocialFeedSharedItem<D>::Thumbnail(const Windows::ApplicationModel::SocialInfo::SocialItemThumbnail & value) const
 {
-    check_hresult(shim()->put_Thumbnail(get(value)));
+    check_hresult(static_cast<const ISocialFeedSharedItem &>(static_cast<const D &>(*this))->put_Thumbnail(get(value)));
 }
 
 template <typename D> Windows::ApplicationModel::SocialInfo::SocialItemThumbnail impl_ISocialFeedSharedItem<D>::Thumbnail() const
 {
     Windows::ApplicationModel::SocialInfo::SocialItemThumbnail value { nullptr };
-    check_hresult(shim()->get_Thumbnail(put(value)));
+    check_hresult(static_cast<const ISocialFeedSharedItem &>(static_cast<const D &>(*this))->get_Thumbnail(put(value)));
     return value;
 }
 

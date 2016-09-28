@@ -125,12 +125,8 @@ template <> struct __declspec(uuid("868757d1-be21-51d9-8dee-a958b9deec71")) __de
 namespace Windows::Perception::Spatial::Surfaces {
 
 template <typename D>
-class WINRT_EBO impl_ISpatialSurfaceInfo
+struct WINRT_EBO impl_ISpatialSurfaceInfo
 {
-    auto shim() const { return impl::shim<D, ISpatialSurfaceInfo>(this); }
-
-public:
-
     GUID Id() const;
     Windows::Foundation::DateTime UpdateTime() const;
     Windows::Foundation::IReference<Windows::Perception::Spatial::SpatialBoundingOrientedBox> TryGetBounds(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const;
@@ -139,12 +135,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialSurfaceMesh
+struct WINRT_EBO impl_ISpatialSurfaceMesh
 {
-    auto shim() const { return impl::shim<D, ISpatialSurfaceMesh>(this); }
-
-public:
-
     Windows::Perception::Spatial::Surfaces::SpatialSurfaceInfo SurfaceInfo() const;
     Windows::Perception::Spatial::SpatialCoordinateSystem CoordinateSystem() const;
     Windows::Perception::Spatial::Surfaces::SpatialSurfaceMeshBuffer TriangleIndices() const;
@@ -154,12 +146,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialSurfaceMeshBuffer
+struct WINRT_EBO impl_ISpatialSurfaceMeshBuffer
 {
-    auto shim() const { return impl::shim<D, ISpatialSurfaceMeshBuffer>(this); }
-
-public:
-
     Windows::Graphics::DirectX::DirectXPixelFormat Format() const;
     uint32_t Stride() const;
     uint32_t ElementCount() const;
@@ -167,12 +155,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialSurfaceMeshOptions
+struct WINRT_EBO impl_ISpatialSurfaceMeshOptions
 {
-    auto shim() const { return impl::shim<D, ISpatialSurfaceMeshOptions>(this); }
-
-public:
-
     Windows::Graphics::DirectX::DirectXPixelFormat VertexPositionFormat() const;
     void VertexPositionFormat(Windows::Graphics::DirectX::DirectXPixelFormat value) const;
     Windows::Graphics::DirectX::DirectXPixelFormat TriangleIndexFormat() const;
@@ -184,24 +168,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialSurfaceMeshOptionsStatics
+struct WINRT_EBO impl_ISpatialSurfaceMeshOptionsStatics
 {
-    auto shim() const { return impl::shim<D, ISpatialSurfaceMeshOptionsStatics>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Graphics::DirectX::DirectXPixelFormat> SupportedVertexPositionFormats() const;
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Graphics::DirectX::DirectXPixelFormat> SupportedTriangleIndexFormats() const;
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Graphics::DirectX::DirectXPixelFormat> SupportedVertexNormalFormats() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialSurfaceObserver
+struct WINRT_EBO impl_ISpatialSurfaceObserver
 {
-    auto shim() const { return impl::shim<D, ISpatialSurfaceObserver>(this); }
-
-public:
-
     Windows::Foundation::Collections::IMapView<GUID, Windows::Perception::Spatial::Surfaces::SpatialSurfaceInfo> GetObservedSurfaces() const;
     void SetBoundingVolume(const Windows::Perception::Spatial::SpatialBoundingVolume & bounds) const;
     void SetBoundingVolumes(const Windows::Foundation::Collections::IIterable<Windows::Perception::Spatial::SpatialBoundingVolume> & bounds) const;
@@ -212,12 +188,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialSurfaceObserverStatics
+struct WINRT_EBO impl_ISpatialSurfaceObserverStatics
 {
-    auto shim() const { return impl::shim<D, ISpatialSurfaceObserverStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<winrt::Windows::Perception::Spatial::SpatialPerceptionAccessStatus> RequestAccessAsync() const;
 };
 

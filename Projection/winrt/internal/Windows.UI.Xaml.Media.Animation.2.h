@@ -182,63 +182,39 @@ template <> struct __declspec(uuid("541af22b-280b-5276-bfcb-3e60a157d62c")) __de
 namespace Windows::UI::Xaml::Media::Animation {
 
 template <typename D>
-class WINRT_EBO impl_IAddDeleteThemeTransition
+struct WINRT_EBO impl_IAddDeleteThemeTransition
 {
-    auto shim() const { return impl::shim<D, IAddDeleteThemeTransition>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackEase
+struct WINRT_EBO impl_IBackEase
 {
-    auto shim() const { return impl::shim<D, IBackEase>(this); }
-
-public:
-
     double Amplitude() const;
     void Amplitude(double value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackEaseStatics
+struct WINRT_EBO impl_IBackEaseStatics
 {
-    auto shim() const { return impl::shim<D, IBackEaseStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty AmplitudeProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBeginStoryboard
+struct WINRT_EBO impl_IBeginStoryboard
 {
-    auto shim() const { return impl::shim<D, IBeginStoryboard>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Animation::Storyboard Storyboard() const;
     void Storyboard(const Windows::UI::Xaml::Media::Animation::Storyboard & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBeginStoryboardStatics
+struct WINRT_EBO impl_IBeginStoryboardStatics
 {
-    auto shim() const { return impl::shim<D, IBeginStoryboardStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty StoryboardProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBounceEase
+struct WINRT_EBO impl_IBounceEase
 {
-    auto shim() const { return impl::shim<D, IBounceEase>(this); }
-
-public:
-
     int32_t Bounces() const;
     void Bounces(int32_t value) const;
     double Bounciness() const;
@@ -246,32 +222,20 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBounceEaseStatics
+struct WINRT_EBO impl_IBounceEaseStatics
 {
-    auto shim() const { return impl::shim<D, IBounceEaseStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty BouncesProperty() const;
     Windows::UI::Xaml::DependencyProperty BouncinessProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICircleEase
+struct WINRT_EBO impl_ICircleEase
 {
-    auto shim() const { return impl::shim<D, ICircleEase>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IColorAnimation
+struct WINRT_EBO impl_IColorAnimation
 {
-    auto shim() const { return impl::shim<D, IColorAnimation>(this); }
-
-public:
-
     Windows::Foundation::IReference<Windows::UI::Color> From() const;
     void From(const Windows::Foundation::IReference<Windows::UI::Color> & value) const;
     Windows::Foundation::IReference<Windows::UI::Color> To() const;
@@ -285,12 +249,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IColorAnimationStatics
+struct WINRT_EBO impl_IColorAnimationStatics
 {
-    auto shim() const { return impl::shim<D, IColorAnimationStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty FromProperty() const;
     Windows::UI::Xaml::DependencyProperty ToProperty() const;
     Windows::UI::Xaml::DependencyProperty ByProperty() const;
@@ -299,34 +259,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IColorAnimationUsingKeyFrames
+struct WINRT_EBO impl_IColorAnimationUsingKeyFrames
 {
-    auto shim() const { return impl::shim<D, IColorAnimationUsingKeyFrames>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Animation::ColorKeyFrameCollection KeyFrames() const;
     bool EnableDependentAnimation() const;
     void EnableDependentAnimation(bool value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IColorAnimationUsingKeyFramesStatics
+struct WINRT_EBO impl_IColorAnimationUsingKeyFramesStatics
 {
-    auto shim() const { return impl::shim<D, IColorAnimationUsingKeyFramesStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty EnableDependentAnimationProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IColorKeyFrame
+struct WINRT_EBO impl_IColorKeyFrame
 {
-    auto shim() const { return impl::shim<D, IColorKeyFrame>(this); }
-
-public:
-
     Windows::UI::Color Value() const;
     void Value(const Windows::UI::Color & value) const;
     Windows::UI::Xaml::Media::Animation::KeyTime KeyTime() const;
@@ -334,44 +282,28 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IColorKeyFrameFactory
+struct WINRT_EBO impl_IColorKeyFrameFactory
 {
-    auto shim() const { return impl::shim<D, IColorKeyFrameFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Animation::ColorKeyFrame CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IColorKeyFrameStatics
+struct WINRT_EBO impl_IColorKeyFrameStatics
 {
-    auto shim() const { return impl::shim<D, IColorKeyFrameStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty ValueProperty() const;
     Windows::UI::Xaml::DependencyProperty KeyTimeProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICommonNavigationTransitionInfo
+struct WINRT_EBO impl_ICommonNavigationTransitionInfo
 {
-    auto shim() const { return impl::shim<D, ICommonNavigationTransitionInfo>(this); }
-
-public:
-
     bool IsStaggeringEnabled() const;
     void IsStaggeringEnabled(bool value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICommonNavigationTransitionInfoStatics
+struct WINRT_EBO impl_ICommonNavigationTransitionInfoStatics
 {
-    auto shim() const { return impl::shim<D, ICommonNavigationTransitionInfoStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty IsStaggeringEnabledProperty() const;
     Windows::UI::Xaml::DependencyProperty IsStaggerElementProperty() const;
     bool GetIsStaggerElement(const Windows::UI::Xaml::UIElement & element) const;
@@ -379,12 +311,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IConnectedAnimation
+struct WINRT_EBO impl_IConnectedAnimation
 {
-    auto shim() const { return impl::shim<D, IConnectedAnimation>(this); }
-
-public:
-
     event_token Completed(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Animation::ConnectedAnimation, Windows::IInspectable> & value) const;
     using Completed_revoker = event_revoker<IConnectedAnimation>;
     Completed_revoker Completed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Animation::ConnectedAnimation, Windows::IInspectable> & value) const;
@@ -394,12 +322,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IConnectedAnimationService
+struct WINRT_EBO impl_IConnectedAnimationService
 {
-    auto shim() const { return impl::shim<D, IConnectedAnimationService>(this); }
-
-public:
-
     Windows::Foundation::TimeSpan DefaultDuration() const;
     void DefaultDuration(const Windows::Foundation::TimeSpan & value) const;
     Windows::UI::Composition::CompositionEasingFunction DefaultEasingFunction() const;
@@ -409,22 +333,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IConnectedAnimationServiceStatics
+struct WINRT_EBO impl_IConnectedAnimationServiceStatics
 {
-    auto shim() const { return impl::shim<D, IConnectedAnimationServiceStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Animation::ConnectedAnimationService GetForCurrentView() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IContentThemeTransition
+struct WINRT_EBO impl_IContentThemeTransition
 {
-    auto shim() const { return impl::shim<D, IContentThemeTransition>(this); }
-
-public:
-
     double HorizontalOffset() const;
     void HorizontalOffset(double value) const;
     double VerticalOffset() const;
@@ -432,34 +348,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IContentThemeTransitionStatics
+struct WINRT_EBO impl_IContentThemeTransitionStatics
 {
-    auto shim() const { return impl::shim<D, IContentThemeTransitionStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty HorizontalOffsetProperty() const;
     Windows::UI::Xaml::DependencyProperty VerticalOffsetProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IContinuumNavigationTransitionInfo
+struct WINRT_EBO impl_IContinuumNavigationTransitionInfo
 {
-    auto shim() const { return impl::shim<D, IContinuumNavigationTransitionInfo>(this); }
-
-public:
-
     Windows::UI::Xaml::UIElement ExitElement() const;
     void ExitElement(const Windows::UI::Xaml::UIElement & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IContinuumNavigationTransitionInfoStatics
+struct WINRT_EBO impl_IContinuumNavigationTransitionInfoStatics
 {
-    auto shim() const { return impl::shim<D, IContinuumNavigationTransitionInfoStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty ExitElementProperty() const;
     Windows::UI::Xaml::DependencyProperty IsEntranceElementProperty() const;
     bool GetIsEntranceElement(const Windows::UI::Xaml::UIElement & element) const;
@@ -473,57 +377,33 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICubicEase
+struct WINRT_EBO impl_ICubicEase
 {
-    auto shim() const { return impl::shim<D, ICubicEase>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IDiscreteColorKeyFrame
+struct WINRT_EBO impl_IDiscreteColorKeyFrame
 {
-    auto shim() const { return impl::shim<D, IDiscreteColorKeyFrame>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IDiscreteDoubleKeyFrame
+struct WINRT_EBO impl_IDiscreteDoubleKeyFrame
 {
-    auto shim() const { return impl::shim<D, IDiscreteDoubleKeyFrame>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IDiscreteObjectKeyFrame
+struct WINRT_EBO impl_IDiscreteObjectKeyFrame
 {
-    auto shim() const { return impl::shim<D, IDiscreteObjectKeyFrame>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IDiscretePointKeyFrame
+struct WINRT_EBO impl_IDiscretePointKeyFrame
 {
-    auto shim() const { return impl::shim<D, IDiscretePointKeyFrame>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IDoubleAnimation
+struct WINRT_EBO impl_IDoubleAnimation
 {
-    auto shim() const { return impl::shim<D, IDoubleAnimation>(this); }
-
-public:
-
     Windows::Foundation::IReference<double> From() const;
     void From(const Windows::Foundation::IReference<double> & value) const;
     Windows::Foundation::IReference<double> To() const;
@@ -537,12 +417,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDoubleAnimationStatics
+struct WINRT_EBO impl_IDoubleAnimationStatics
 {
-    auto shim() const { return impl::shim<D, IDoubleAnimationStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty FromProperty() const;
     Windows::UI::Xaml::DependencyProperty ToProperty() const;
     Windows::UI::Xaml::DependencyProperty ByProperty() const;
@@ -551,34 +427,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDoubleAnimationUsingKeyFrames
+struct WINRT_EBO impl_IDoubleAnimationUsingKeyFrames
 {
-    auto shim() const { return impl::shim<D, IDoubleAnimationUsingKeyFrames>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Animation::DoubleKeyFrameCollection KeyFrames() const;
     bool EnableDependentAnimation() const;
     void EnableDependentAnimation(bool value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDoubleAnimationUsingKeyFramesStatics
+struct WINRT_EBO impl_IDoubleAnimationUsingKeyFramesStatics
 {
-    auto shim() const { return impl::shim<D, IDoubleAnimationUsingKeyFramesStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty EnableDependentAnimationProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDoubleKeyFrame
+struct WINRT_EBO impl_IDoubleKeyFrame
 {
-    auto shim() const { return impl::shim<D, IDoubleKeyFrame>(this); }
-
-public:
-
     double Value() const;
     void Value(double value) const;
     Windows::UI::Xaml::Media::Animation::KeyTime KeyTime() const;
@@ -586,54 +450,34 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDoubleKeyFrameFactory
+struct WINRT_EBO impl_IDoubleKeyFrameFactory
 {
-    auto shim() const { return impl::shim<D, IDoubleKeyFrameFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Animation::DoubleKeyFrame CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDoubleKeyFrameStatics
+struct WINRT_EBO impl_IDoubleKeyFrameStatics
 {
-    auto shim() const { return impl::shim<D, IDoubleKeyFrameStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty ValueProperty() const;
     Windows::UI::Xaml::DependencyProperty KeyTimeProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDragItemThemeAnimation
+struct WINRT_EBO impl_IDragItemThemeAnimation
 {
-    auto shim() const { return impl::shim<D, IDragItemThemeAnimation>(this); }
-
-public:
-
     hstring TargetName() const;
     void TargetName(hstring_ref value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDragItemThemeAnimationStatics
+struct WINRT_EBO impl_IDragItemThemeAnimationStatics
 {
-    auto shim() const { return impl::shim<D, IDragItemThemeAnimationStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty TargetNameProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDragOverThemeAnimation
+struct WINRT_EBO impl_IDragOverThemeAnimation
 {
-    auto shim() const { return impl::shim<D, IDragOverThemeAnimation>(this); }
-
-public:
-
     hstring TargetName() const;
     void TargetName(hstring_ref value) const;
     double ToOffset() const;
@@ -643,33 +487,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDragOverThemeAnimationStatics
+struct WINRT_EBO impl_IDragOverThemeAnimationStatics
 {
-    auto shim() const { return impl::shim<D, IDragOverThemeAnimationStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty TargetNameProperty() const;
     Windows::UI::Xaml::DependencyProperty ToOffsetProperty() const;
     Windows::UI::Xaml::DependencyProperty DirectionProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDrillInNavigationTransitionInfo
+struct WINRT_EBO impl_IDrillInNavigationTransitionInfo
 {
-    auto shim() const { return impl::shim<D, IDrillInNavigationTransitionInfo>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IDrillInThemeAnimation
+struct WINRT_EBO impl_IDrillInThemeAnimation
 {
-    auto shim() const { return impl::shim<D, IDrillInThemeAnimation>(this); }
-
-public:
-
     hstring EntranceTargetName() const;
     void EntranceTargetName(hstring_ref value) const;
     Windows::UI::Xaml::DependencyObject EntranceTarget() const;
@@ -681,12 +513,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDrillInThemeAnimationStatics
+struct WINRT_EBO impl_IDrillInThemeAnimationStatics
 {
-    auto shim() const { return impl::shim<D, IDrillInThemeAnimationStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty EntranceTargetNameProperty() const;
     Windows::UI::Xaml::DependencyProperty EntranceTargetProperty() const;
     Windows::UI::Xaml::DependencyProperty ExitTargetNameProperty() const;
@@ -694,12 +522,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDrillOutThemeAnimation
+struct WINRT_EBO impl_IDrillOutThemeAnimation
 {
-    auto shim() const { return impl::shim<D, IDrillOutThemeAnimation>(this); }
-
-public:
-
     hstring EntranceTargetName() const;
     void EntranceTargetName(hstring_ref value) const;
     Windows::UI::Xaml::DependencyObject EntranceTarget() const;
@@ -711,12 +535,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDrillOutThemeAnimationStatics
+struct WINRT_EBO impl_IDrillOutThemeAnimationStatics
 {
-    auto shim() const { return impl::shim<D, IDrillOutThemeAnimationStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty EntranceTargetNameProperty() const;
     Windows::UI::Xaml::DependencyProperty EntranceTargetProperty() const;
     Windows::UI::Xaml::DependencyProperty ExitTargetNameProperty() const;
@@ -724,148 +544,92 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDropTargetItemThemeAnimation
+struct WINRT_EBO impl_IDropTargetItemThemeAnimation
 {
-    auto shim() const { return impl::shim<D, IDropTargetItemThemeAnimation>(this); }
-
-public:
-
     hstring TargetName() const;
     void TargetName(hstring_ref value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDropTargetItemThemeAnimationStatics
+struct WINRT_EBO impl_IDropTargetItemThemeAnimationStatics
 {
-    auto shim() const { return impl::shim<D, IDropTargetItemThemeAnimationStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty TargetNameProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEasingColorKeyFrame
+struct WINRT_EBO impl_IEasingColorKeyFrame
 {
-    auto shim() const { return impl::shim<D, IEasingColorKeyFrame>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Animation::EasingFunctionBase EasingFunction() const;
     void EasingFunction(const Windows::UI::Xaml::Media::Animation::EasingFunctionBase & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEasingColorKeyFrameStatics
+struct WINRT_EBO impl_IEasingColorKeyFrameStatics
 {
-    auto shim() const { return impl::shim<D, IEasingColorKeyFrameStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty EasingFunctionProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEasingDoubleKeyFrame
+struct WINRT_EBO impl_IEasingDoubleKeyFrame
 {
-    auto shim() const { return impl::shim<D, IEasingDoubleKeyFrame>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Animation::EasingFunctionBase EasingFunction() const;
     void EasingFunction(const Windows::UI::Xaml::Media::Animation::EasingFunctionBase & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEasingDoubleKeyFrameStatics
+struct WINRT_EBO impl_IEasingDoubleKeyFrameStatics
 {
-    auto shim() const { return impl::shim<D, IEasingDoubleKeyFrameStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty EasingFunctionProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEasingFunctionBase
+struct WINRT_EBO impl_IEasingFunctionBase
 {
-    auto shim() const { return impl::shim<D, IEasingFunctionBase>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Animation::EasingMode EasingMode() const;
     void EasingMode(Windows::UI::Xaml::Media::Animation::EasingMode value) const;
     double Ease(double normalizedTime) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEasingFunctionBaseFactory
+struct WINRT_EBO impl_IEasingFunctionBaseFactory
 {
-    auto shim() const { return impl::shim<D, IEasingFunctionBaseFactory>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IEasingFunctionBaseStatics
+struct WINRT_EBO impl_IEasingFunctionBaseStatics
 {
-    auto shim() const { return impl::shim<D, IEasingFunctionBaseStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty EasingModeProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEasingPointKeyFrame
+struct WINRT_EBO impl_IEasingPointKeyFrame
 {
-    auto shim() const { return impl::shim<D, IEasingPointKeyFrame>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Animation::EasingFunctionBase EasingFunction() const;
     void EasingFunction(const Windows::UI::Xaml::Media::Animation::EasingFunctionBase & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEasingPointKeyFrameStatics
+struct WINRT_EBO impl_IEasingPointKeyFrameStatics
 {
-    auto shim() const { return impl::shim<D, IEasingPointKeyFrameStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty EasingFunctionProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEdgeUIThemeTransition
+struct WINRT_EBO impl_IEdgeUIThemeTransition
 {
-    auto shim() const { return impl::shim<D, IEdgeUIThemeTransition>(this); }
-
-public:
-
     Windows::UI::Xaml::Controls::Primitives::EdgeTransitionLocation Edge() const;
     void Edge(Windows::UI::Xaml::Controls::Primitives::EdgeTransitionLocation value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEdgeUIThemeTransitionStatics
+struct WINRT_EBO impl_IEdgeUIThemeTransitionStatics
 {
-    auto shim() const { return impl::shim<D, IEdgeUIThemeTransitionStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty EdgeProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IElasticEase
+struct WINRT_EBO impl_IElasticEase
 {
-    auto shim() const { return impl::shim<D, IElasticEase>(this); }
-
-public:
-
     int32_t Oscillations() const;
     void Oscillations(int32_t value) const;
     double Springiness() const;
@@ -873,44 +637,28 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IElasticEaseStatics
+struct WINRT_EBO impl_IElasticEaseStatics
 {
-    auto shim() const { return impl::shim<D, IElasticEaseStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty OscillationsProperty() const;
     Windows::UI::Xaml::DependencyProperty SpringinessProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEntranceNavigationTransitionInfo
+struct WINRT_EBO impl_IEntranceNavigationTransitionInfo
 {
-    auto shim() const { return impl::shim<D, IEntranceNavigationTransitionInfo>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IEntranceNavigationTransitionInfoStatics
+struct WINRT_EBO impl_IEntranceNavigationTransitionInfoStatics
 {
-    auto shim() const { return impl::shim<D, IEntranceNavigationTransitionInfoStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty IsTargetElementProperty() const;
     bool GetIsTargetElement(const Windows::UI::Xaml::UIElement & element) const;
     void SetIsTargetElement(const Windows::UI::Xaml::UIElement & element, bool value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEntranceThemeTransition
+struct WINRT_EBO impl_IEntranceThemeTransition
 {
-    auto shim() const { return impl::shim<D, IEntranceThemeTransition>(this); }
-
-public:
-
     double FromHorizontalOffset() const;
     void FromHorizontalOffset(double value) const;
     double FromVerticalOffset() const;
@@ -920,87 +668,55 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IEntranceThemeTransitionStatics
+struct WINRT_EBO impl_IEntranceThemeTransitionStatics
 {
-    auto shim() const { return impl::shim<D, IEntranceThemeTransitionStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty FromHorizontalOffsetProperty() const;
     Windows::UI::Xaml::DependencyProperty FromVerticalOffsetProperty() const;
     Windows::UI::Xaml::DependencyProperty IsStaggeringEnabledProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IExponentialEase
+struct WINRT_EBO impl_IExponentialEase
 {
-    auto shim() const { return impl::shim<D, IExponentialEase>(this); }
-
-public:
-
     double Exponent() const;
     void Exponent(double value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IExponentialEaseStatics
+struct WINRT_EBO impl_IExponentialEaseStatics
 {
-    auto shim() const { return impl::shim<D, IExponentialEaseStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty ExponentProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFadeInThemeAnimation
+struct WINRT_EBO impl_IFadeInThemeAnimation
 {
-    auto shim() const { return impl::shim<D, IFadeInThemeAnimation>(this); }
-
-public:
-
     hstring TargetName() const;
     void TargetName(hstring_ref value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFadeInThemeAnimationStatics
+struct WINRT_EBO impl_IFadeInThemeAnimationStatics
 {
-    auto shim() const { return impl::shim<D, IFadeInThemeAnimationStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty TargetNameProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFadeOutThemeAnimation
+struct WINRT_EBO impl_IFadeOutThemeAnimation
 {
-    auto shim() const { return impl::shim<D, IFadeOutThemeAnimation>(this); }
-
-public:
-
     hstring TargetName() const;
     void TargetName(hstring_ref value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFadeOutThemeAnimationStatics
+struct WINRT_EBO impl_IFadeOutThemeAnimationStatics
 {
-    auto shim() const { return impl::shim<D, IFadeOutThemeAnimationStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty TargetNameProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IKeySpline
+struct WINRT_EBO impl_IKeySpline
 {
-    auto shim() const { return impl::shim<D, IKeySpline>(this); }
-
-public:
-
     Windows::Foundation::Point ControlPoint1() const;
     void ControlPoint1(const Windows::Foundation::Point & value) const;
     Windows::Foundation::Point ControlPoint2() const;
@@ -1008,131 +724,79 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IKeyTimeHelper
+struct WINRT_EBO impl_IKeyTimeHelper
 {
-    auto shim() const { return impl::shim<D, IKeyTimeHelper>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IKeyTimeHelperStatics
+struct WINRT_EBO impl_IKeyTimeHelperStatics
 {
-    auto shim() const { return impl::shim<D, IKeyTimeHelperStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Animation::KeyTime FromTimeSpan(const Windows::Foundation::TimeSpan & timeSpan) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILinearColorKeyFrame
+struct WINRT_EBO impl_ILinearColorKeyFrame
 {
-    auto shim() const { return impl::shim<D, ILinearColorKeyFrame>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ILinearDoubleKeyFrame
+struct WINRT_EBO impl_ILinearDoubleKeyFrame
 {
-    auto shim() const { return impl::shim<D, ILinearDoubleKeyFrame>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ILinearPointKeyFrame
+struct WINRT_EBO impl_ILinearPointKeyFrame
 {
-    auto shim() const { return impl::shim<D, ILinearPointKeyFrame>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_INavigationThemeTransition
+struct WINRT_EBO impl_INavigationThemeTransition
 {
-    auto shim() const { return impl::shim<D, INavigationThemeTransition>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo DefaultNavigationTransitionInfo() const;
     void DefaultNavigationTransitionInfo(const Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_INavigationThemeTransitionStatics
+struct WINRT_EBO impl_INavigationThemeTransitionStatics
 {
-    auto shim() const { return impl::shim<D, INavigationThemeTransitionStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty DefaultNavigationTransitionInfoProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_INavigationTransitionInfo
+struct WINRT_EBO impl_INavigationTransitionInfo
 {
-    auto shim() const { return impl::shim<D, INavigationTransitionInfo>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_INavigationTransitionInfoFactory
+struct WINRT_EBO impl_INavigationTransitionInfoFactory
 {
-    auto shim() const { return impl::shim<D, INavigationTransitionInfoFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_INavigationTransitionInfoOverrides
+struct WINRT_EBO impl_INavigationTransitionInfoOverrides
 {
-    auto shim() const { return impl::shim<D, INavigationTransitionInfoOverrides>(this); }
-
-public:
-
     hstring GetNavigationStateCore() const;
     void SetNavigationStateCore(hstring_ref navigationState) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IObjectAnimationUsingKeyFrames
+struct WINRT_EBO impl_IObjectAnimationUsingKeyFrames
 {
-    auto shim() const { return impl::shim<D, IObjectAnimationUsingKeyFrames>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Animation::ObjectKeyFrameCollection KeyFrames() const;
     bool EnableDependentAnimation() const;
     void EnableDependentAnimation(bool value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IObjectAnimationUsingKeyFramesStatics
+struct WINRT_EBO impl_IObjectAnimationUsingKeyFramesStatics
 {
-    auto shim() const { return impl::shim<D, IObjectAnimationUsingKeyFramesStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty EnableDependentAnimationProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IObjectKeyFrame
+struct WINRT_EBO impl_IObjectKeyFrame
 {
-    auto shim() const { return impl::shim<D, IObjectKeyFrame>(this); }
-
-public:
-
     Windows::IInspectable Value() const;
     void Value(const Windows::IInspectable & value) const;
     Windows::UI::Xaml::Media::Animation::KeyTime KeyTime() const;
@@ -1140,54 +804,34 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IObjectKeyFrameFactory
+struct WINRT_EBO impl_IObjectKeyFrameFactory
 {
-    auto shim() const { return impl::shim<D, IObjectKeyFrameFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Animation::ObjectKeyFrame CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IObjectKeyFrameStatics
+struct WINRT_EBO impl_IObjectKeyFrameStatics
 {
-    auto shim() const { return impl::shim<D, IObjectKeyFrameStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty ValueProperty() const;
     Windows::UI::Xaml::DependencyProperty KeyTimeProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPaneThemeTransition
+struct WINRT_EBO impl_IPaneThemeTransition
 {
-    auto shim() const { return impl::shim<D, IPaneThemeTransition>(this); }
-
-public:
-
     Windows::UI::Xaml::Controls::Primitives::EdgeTransitionLocation Edge() const;
     void Edge(Windows::UI::Xaml::Controls::Primitives::EdgeTransitionLocation value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPaneThemeTransitionStatics
+struct WINRT_EBO impl_IPaneThemeTransitionStatics
 {
-    auto shim() const { return impl::shim<D, IPaneThemeTransitionStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty EdgeProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPointAnimation
+struct WINRT_EBO impl_IPointAnimation
 {
-    auto shim() const { return impl::shim<D, IPointAnimation>(this); }
-
-public:
-
     Windows::Foundation::IReference<Windows::Foundation::Point> From() const;
     void From(const Windows::Foundation::IReference<Windows::Foundation::Point> & value) const;
     Windows::Foundation::IReference<Windows::Foundation::Point> To() const;
@@ -1201,12 +845,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPointAnimationStatics
+struct WINRT_EBO impl_IPointAnimationStatics
 {
-    auto shim() const { return impl::shim<D, IPointAnimationStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty FromProperty() const;
     Windows::UI::Xaml::DependencyProperty ToProperty() const;
     Windows::UI::Xaml::DependencyProperty ByProperty() const;
@@ -1215,34 +855,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPointAnimationUsingKeyFrames
+struct WINRT_EBO impl_IPointAnimationUsingKeyFrames
 {
-    auto shim() const { return impl::shim<D, IPointAnimationUsingKeyFrames>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Animation::PointKeyFrameCollection KeyFrames() const;
     bool EnableDependentAnimation() const;
     void EnableDependentAnimation(bool value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPointAnimationUsingKeyFramesStatics
+struct WINRT_EBO impl_IPointAnimationUsingKeyFramesStatics
 {
-    auto shim() const { return impl::shim<D, IPointAnimationUsingKeyFramesStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty EnableDependentAnimationProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPointKeyFrame
+struct WINRT_EBO impl_IPointKeyFrame
 {
-    auto shim() const { return impl::shim<D, IPointKeyFrame>(this); }
-
-public:
-
     Windows::Foundation::Point Value() const;
     void Value(const Windows::Foundation::Point & value) const;
     Windows::UI::Xaml::Media::Animation::KeyTime KeyTime() const;
@@ -1250,75 +878,47 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPointKeyFrameFactory
+struct WINRT_EBO impl_IPointKeyFrameFactory
 {
-    auto shim() const { return impl::shim<D, IPointKeyFrameFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Animation::PointKeyFrame CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPointKeyFrameStatics
+struct WINRT_EBO impl_IPointKeyFrameStatics
 {
-    auto shim() const { return impl::shim<D, IPointKeyFrameStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty ValueProperty() const;
     Windows::UI::Xaml::DependencyProperty KeyTimeProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPointerDownThemeAnimation
+struct WINRT_EBO impl_IPointerDownThemeAnimation
 {
-    auto shim() const { return impl::shim<D, IPointerDownThemeAnimation>(this); }
-
-public:
-
     hstring TargetName() const;
     void TargetName(hstring_ref value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPointerDownThemeAnimationStatics
+struct WINRT_EBO impl_IPointerDownThemeAnimationStatics
 {
-    auto shim() const { return impl::shim<D, IPointerDownThemeAnimationStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty TargetNameProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPointerUpThemeAnimation
+struct WINRT_EBO impl_IPointerUpThemeAnimation
 {
-    auto shim() const { return impl::shim<D, IPointerUpThemeAnimation>(this); }
-
-public:
-
     hstring TargetName() const;
     void TargetName(hstring_ref value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPointerUpThemeAnimationStatics
+struct WINRT_EBO impl_IPointerUpThemeAnimationStatics
 {
-    auto shim() const { return impl::shim<D, IPointerUpThemeAnimationStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty TargetNameProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPopInThemeAnimation
+struct WINRT_EBO impl_IPopInThemeAnimation
 {
-    auto shim() const { return impl::shim<D, IPopInThemeAnimation>(this); }
-
-public:
-
     hstring TargetName() const;
     void TargetName(hstring_ref value) const;
     double FromHorizontalOffset() const;
@@ -1328,45 +928,29 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPopInThemeAnimationStatics
+struct WINRT_EBO impl_IPopInThemeAnimationStatics
 {
-    auto shim() const { return impl::shim<D, IPopInThemeAnimationStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty TargetNameProperty() const;
     Windows::UI::Xaml::DependencyProperty FromHorizontalOffsetProperty() const;
     Windows::UI::Xaml::DependencyProperty FromVerticalOffsetProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPopOutThemeAnimation
+struct WINRT_EBO impl_IPopOutThemeAnimation
 {
-    auto shim() const { return impl::shim<D, IPopOutThemeAnimation>(this); }
-
-public:
-
     hstring TargetName() const;
     void TargetName(hstring_ref value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPopOutThemeAnimationStatics
+struct WINRT_EBO impl_IPopOutThemeAnimationStatics
 {
-    auto shim() const { return impl::shim<D, IPopOutThemeAnimationStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty TargetNameProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPopupThemeTransition
+struct WINRT_EBO impl_IPopupThemeTransition
 {
-    auto shim() const { return impl::shim<D, IPopupThemeTransition>(this); }
-
-public:
-
     double FromHorizontalOffset() const;
     void FromHorizontalOffset(double value) const;
     double FromVerticalOffset() const;
@@ -1374,89 +958,53 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPopupThemeTransitionStatics
+struct WINRT_EBO impl_IPopupThemeTransitionStatics
 {
-    auto shim() const { return impl::shim<D, IPopupThemeTransitionStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty FromHorizontalOffsetProperty() const;
     Windows::UI::Xaml::DependencyProperty FromVerticalOffsetProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPowerEase
+struct WINRT_EBO impl_IPowerEase
 {
-    auto shim() const { return impl::shim<D, IPowerEase>(this); }
-
-public:
-
     double Power() const;
     void Power(double value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPowerEaseStatics
+struct WINRT_EBO impl_IPowerEaseStatics
 {
-    auto shim() const { return impl::shim<D, IPowerEaseStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty PowerProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IQuadraticEase
+struct WINRT_EBO impl_IQuadraticEase
 {
-    auto shim() const { return impl::shim<D, IQuadraticEase>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IQuarticEase
+struct WINRT_EBO impl_IQuarticEase
 {
-    auto shim() const { return impl::shim<D, IQuarticEase>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IQuinticEase
+struct WINRT_EBO impl_IQuinticEase
 {
-    auto shim() const { return impl::shim<D, IQuinticEase>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IReorderThemeTransition
+struct WINRT_EBO impl_IReorderThemeTransition
 {
-    auto shim() const { return impl::shim<D, IReorderThemeTransition>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IRepeatBehaviorHelper
+struct WINRT_EBO impl_IRepeatBehaviorHelper
 {
-    auto shim() const { return impl::shim<D, IRepeatBehaviorHelper>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IRepeatBehaviorHelperStatics
+struct WINRT_EBO impl_IRepeatBehaviorHelperStatics
 {
-    auto shim() const { return impl::shim<D, IRepeatBehaviorHelperStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Animation::RepeatBehavior Forever() const;
     Windows::UI::Xaml::Media::Animation::RepeatBehavior FromCount(double count) const;
     Windows::UI::Xaml::Media::Animation::RepeatBehavior FromDuration(const Windows::Foundation::TimeSpan & duration) const;
@@ -1466,12 +1014,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IRepositionThemeAnimation
+struct WINRT_EBO impl_IRepositionThemeAnimation
 {
-    auto shim() const { return impl::shim<D, IRepositionThemeAnimation>(this); }
-
-public:
-
     hstring TargetName() const;
     void TargetName(hstring_ref value) const;
     double FromHorizontalOffset() const;
@@ -1481,135 +1025,83 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IRepositionThemeAnimationStatics
+struct WINRT_EBO impl_IRepositionThemeAnimationStatics
 {
-    auto shim() const { return impl::shim<D, IRepositionThemeAnimationStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty TargetNameProperty() const;
     Windows::UI::Xaml::DependencyProperty FromHorizontalOffsetProperty() const;
     Windows::UI::Xaml::DependencyProperty FromVerticalOffsetProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRepositionThemeTransition
+struct WINRT_EBO impl_IRepositionThemeTransition
 {
-    auto shim() const { return impl::shim<D, IRepositionThemeTransition>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IRepositionThemeTransition2
+struct WINRT_EBO impl_IRepositionThemeTransition2
 {
-    auto shim() const { return impl::shim<D, IRepositionThemeTransition2>(this); }
-
-public:
-
     bool IsStaggeringEnabled() const;
     void IsStaggeringEnabled(bool value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRepositionThemeTransitionStatics2
+struct WINRT_EBO impl_IRepositionThemeTransitionStatics2
 {
-    auto shim() const { return impl::shim<D, IRepositionThemeTransitionStatics2>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty IsStaggeringEnabledProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISineEase
+struct WINRT_EBO impl_ISineEase
 {
-    auto shim() const { return impl::shim<D, ISineEase>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ISlideNavigationTransitionInfo
+struct WINRT_EBO impl_ISlideNavigationTransitionInfo
 {
-    auto shim() const { return impl::shim<D, ISlideNavigationTransitionInfo>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ISplineColorKeyFrame
+struct WINRT_EBO impl_ISplineColorKeyFrame
 {
-    auto shim() const { return impl::shim<D, ISplineColorKeyFrame>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Animation::KeySpline KeySpline() const;
     void KeySpline(const Windows::UI::Xaml::Media::Animation::KeySpline & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISplineColorKeyFrameStatics
+struct WINRT_EBO impl_ISplineColorKeyFrameStatics
 {
-    auto shim() const { return impl::shim<D, ISplineColorKeyFrameStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty KeySplineProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISplineDoubleKeyFrame
+struct WINRT_EBO impl_ISplineDoubleKeyFrame
 {
-    auto shim() const { return impl::shim<D, ISplineDoubleKeyFrame>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Animation::KeySpline KeySpline() const;
     void KeySpline(const Windows::UI::Xaml::Media::Animation::KeySpline & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISplineDoubleKeyFrameStatics
+struct WINRT_EBO impl_ISplineDoubleKeyFrameStatics
 {
-    auto shim() const { return impl::shim<D, ISplineDoubleKeyFrameStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty KeySplineProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISplinePointKeyFrame
+struct WINRT_EBO impl_ISplinePointKeyFrame
 {
-    auto shim() const { return impl::shim<D, ISplinePointKeyFrame>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Animation::KeySpline KeySpline() const;
     void KeySpline(const Windows::UI::Xaml::Media::Animation::KeySpline & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISplinePointKeyFrameStatics
+struct WINRT_EBO impl_ISplinePointKeyFrameStatics
 {
-    auto shim() const { return impl::shim<D, ISplinePointKeyFrameStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty KeySplineProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISplitCloseThemeAnimation
+struct WINRT_EBO impl_ISplitCloseThemeAnimation
 {
-    auto shim() const { return impl::shim<D, ISplitCloseThemeAnimation>(this); }
-
-public:
-
     hstring OpenedTargetName() const;
     void OpenedTargetName(hstring_ref value) const;
     Windows::UI::Xaml::DependencyObject OpenedTarget() const;
@@ -1635,12 +1127,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISplitCloseThemeAnimationStatics
+struct WINRT_EBO impl_ISplitCloseThemeAnimationStatics
 {
-    auto shim() const { return impl::shim<D, ISplitCloseThemeAnimationStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty OpenedTargetNameProperty() const;
     Windows::UI::Xaml::DependencyProperty OpenedTargetProperty() const;
     Windows::UI::Xaml::DependencyProperty ClosedTargetNameProperty() const;
@@ -1655,12 +1143,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISplitOpenThemeAnimation
+struct WINRT_EBO impl_ISplitOpenThemeAnimation
 {
-    auto shim() const { return impl::shim<D, ISplitOpenThemeAnimation>(this); }
-
-public:
-
     hstring OpenedTargetName() const;
     void OpenedTargetName(hstring_ref value) const;
     Windows::UI::Xaml::DependencyObject OpenedTarget() const;
@@ -1686,12 +1170,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISplitOpenThemeAnimationStatics
+struct WINRT_EBO impl_ISplitOpenThemeAnimationStatics
 {
-    auto shim() const { return impl::shim<D, ISplitOpenThemeAnimationStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty OpenedTargetNameProperty() const;
     Windows::UI::Xaml::DependencyProperty OpenedTargetProperty() const;
     Windows::UI::Xaml::DependencyProperty ClosedTargetNameProperty() const;
@@ -1706,12 +1186,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStoryboard
+struct WINRT_EBO impl_IStoryboard
 {
-    auto shim() const { return impl::shim<D, IStoryboard>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Animation::TimelineCollection Children() const;
     void Seek(const Windows::Foundation::TimeSpan & offset) const;
     void Stop() const;
@@ -1725,12 +1201,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStoryboardStatics
+struct WINRT_EBO impl_IStoryboardStatics
 {
-    auto shim() const { return impl::shim<D, IStoryboardStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty TargetPropertyProperty() const;
     hstring GetTargetProperty(const Windows::UI::Xaml::Media::Animation::Timeline & element) const;
     void SetTargetProperty(const Windows::UI::Xaml::Media::Animation::Timeline & element, hstring_ref path) const;
@@ -1741,21 +1213,13 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISuppressNavigationTransitionInfo
+struct WINRT_EBO impl_ISuppressNavigationTransitionInfo
 {
-    auto shim() const { return impl::shim<D, ISuppressNavigationTransitionInfo>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ISwipeBackThemeAnimation
+struct WINRT_EBO impl_ISwipeBackThemeAnimation
 {
-    auto shim() const { return impl::shim<D, ISwipeBackThemeAnimation>(this); }
-
-public:
-
     hstring TargetName() const;
     void TargetName(hstring_ref value) const;
     double FromHorizontalOffset() const;
@@ -1765,24 +1229,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISwipeBackThemeAnimationStatics
+struct WINRT_EBO impl_ISwipeBackThemeAnimationStatics
 {
-    auto shim() const { return impl::shim<D, ISwipeBackThemeAnimationStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty TargetNameProperty() const;
     Windows::UI::Xaml::DependencyProperty FromHorizontalOffsetProperty() const;
     Windows::UI::Xaml::DependencyProperty FromVerticalOffsetProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISwipeHintThemeAnimation
+struct WINRT_EBO impl_ISwipeHintThemeAnimation
 {
-    auto shim() const { return impl::shim<D, ISwipeHintThemeAnimation>(this); }
-
-public:
-
     hstring TargetName() const;
     void TargetName(hstring_ref value) const;
     double ToHorizontalOffset() const;
@@ -1792,24 +1248,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISwipeHintThemeAnimationStatics
+struct WINRT_EBO impl_ISwipeHintThemeAnimationStatics
 {
-    auto shim() const { return impl::shim<D, ISwipeHintThemeAnimationStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty TargetNameProperty() const;
     Windows::UI::Xaml::DependencyProperty ToHorizontalOffsetProperty() const;
     Windows::UI::Xaml::DependencyProperty ToVerticalOffsetProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITimeline
+struct WINRT_EBO impl_ITimeline
 {
-    auto shim() const { return impl::shim<D, ITimeline>(this); }
-
-public:
-
     bool AutoReverse() const;
     void AutoReverse(bool value) const;
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> BeginTime() const;
@@ -1829,22 +1277,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ITimelineFactory
+struct WINRT_EBO impl_ITimelineFactory
 {
-    auto shim() const { return impl::shim<D, ITimelineFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Animation::Timeline CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITimelineStatics
+struct WINRT_EBO impl_ITimelineStatics
 {
-    auto shim() const { return impl::shim<D, ITimelineStatics>(this); }
-
-public:
-
     bool AllowDependentAnimations() const;
     void AllowDependentAnimations(bool value) const;
     Windows::UI::Xaml::DependencyProperty AutoReverseProperty() const;
@@ -1856,21 +1296,13 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ITransition
+struct WINRT_EBO impl_ITransition
 {
-    auto shim() const { return impl::shim<D, ITransition>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ITransitionFactory
+struct WINRT_EBO impl_ITransitionFactory
 {
-    auto shim() const { return impl::shim<D, ITransitionFactory>(this); }
-
-public:
-
 };
 
 struct IAddDeleteThemeTransition :

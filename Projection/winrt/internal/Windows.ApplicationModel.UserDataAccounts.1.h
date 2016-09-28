@@ -100,15 +100,15 @@ template <> struct traits<Windows::ApplicationModel::UserDataAccounts::UserDataA
 
 namespace Windows::ApplicationModel::UserDataAccounts {
 
-template <typename T> class impl_IUserDataAccount;
-template <typename T> class impl_IUserDataAccount2;
-template <typename T> class impl_IUserDataAccount3;
-template <typename T> class impl_IUserDataAccountManagerForUser;
-template <typename T> class impl_IUserDataAccountManagerStatics;
-template <typename T> class impl_IUserDataAccountManagerStatics2;
-template <typename T> class impl_IUserDataAccountStore;
-template <typename T> class impl_IUserDataAccountStore2;
-template <typename T> class impl_IUserDataAccountStoreChangedEventArgs;
+template <typename T> struct impl_IUserDataAccount;
+template <typename T> struct impl_IUserDataAccount2;
+template <typename T> struct impl_IUserDataAccount3;
+template <typename T> struct impl_IUserDataAccountManagerForUser;
+template <typename T> struct impl_IUserDataAccountManagerStatics;
+template <typename T> struct impl_IUserDataAccountManagerStatics2;
+template <typename T> struct impl_IUserDataAccountStore;
+template <typename T> struct impl_IUserDataAccountStore2;
+template <typename T> struct impl_IUserDataAccountStoreChangedEventArgs;
 
 }
 
@@ -171,7 +171,6 @@ template <> struct traits<Windows::ApplicationModel::UserDataAccounts::IUserData
 template <> struct traits<Windows::ApplicationModel::UserDataAccounts::UserDataAccount>
 {
     using abi = ABI::Windows::ApplicationModel::UserDataAccounts::UserDataAccount;
-    using default_interface = Windows::ApplicationModel::UserDataAccounts::IUserDataAccount;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.UserDataAccounts.UserDataAccount"; }
 };
 
@@ -183,21 +182,18 @@ template <> struct traits<Windows::ApplicationModel::UserDataAccounts::UserDataA
 template <> struct traits<Windows::ApplicationModel::UserDataAccounts::UserDataAccountManagerForUser>
 {
     using abi = ABI::Windows::ApplicationModel::UserDataAccounts::UserDataAccountManagerForUser;
-    using default_interface = Windows::ApplicationModel::UserDataAccounts::IUserDataAccountManagerForUser;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.UserDataAccounts.UserDataAccountManagerForUser"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::UserDataAccounts::UserDataAccountStore>
 {
     using abi = ABI::Windows::ApplicationModel::UserDataAccounts::UserDataAccountStore;
-    using default_interface = Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStore;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.UserDataAccounts.UserDataAccountStore"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreChangedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreChangedEventArgs;
-    using default_interface = Windows::ApplicationModel::UserDataAccounts::IUserDataAccountStoreChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.UserDataAccounts.UserDataAccountStoreChangedEventArgs"; }
 };
 

@@ -1324,135 +1324,135 @@ template <> struct traits<Windows::UI::Xaml::WindowCreatedEventArgs> { using def
 
 namespace Windows::UI::Xaml {
 
-template <typename T> class impl_IAdaptiveTrigger;
-template <typename T> class impl_IAdaptiveTriggerFactory;
-template <typename T> class impl_IAdaptiveTriggerStatics;
-template <typename T> class impl_IApplication;
-template <typename T> class impl_IApplication2;
-template <typename T> class impl_IApplicationFactory;
-template <typename T> class impl_IApplicationInitializationCallbackParams;
-template <typename T> class impl_IApplicationOverrides;
-template <typename T> class impl_IApplicationOverrides2;
-template <typename T> class impl_IApplicationStatics;
-template <typename T> class impl_IBindingFailedEventArgs;
-template <typename T> class impl_ICornerRadiusHelper;
-template <typename T> class impl_ICornerRadiusHelperStatics;
-template <typename T> class impl_IDataContextChangedEventArgs;
-template <typename T> class impl_IDataTemplate;
-template <typename T> class impl_IDataTemplateExtension;
-template <typename T> class impl_IDataTemplateFactory;
-template <typename T> class impl_IDataTemplateKey;
-template <typename T> class impl_IDataTemplateKeyFactory;
-template <typename T> class impl_IDataTemplateStatics2;
-template <typename T> class impl_IDebugSettings;
-template <typename T> class impl_IDebugSettings2;
-template <typename T> class impl_IDebugSettings3;
-template <typename T> class impl_IDependencyObject;
-template <typename T> class impl_IDependencyObject2;
-template <typename T> class impl_IDependencyObjectCollectionFactory;
-template <typename T> class impl_IDependencyObjectFactory;
-template <typename T> class impl_IDependencyProperty;
-template <typename T> class impl_IDependencyPropertyChangedEventArgs;
-template <typename T> class impl_IDependencyPropertyStatics;
-template <typename T> class impl_IDispatcherTimer;
-template <typename T> class impl_IDispatcherTimerFactory;
-template <typename T> class impl_IDragEventArgs;
-template <typename T> class impl_IDragEventArgs2;
-template <typename T> class impl_IDragEventArgs3;
-template <typename T> class impl_IDragOperationDeferral;
-template <typename T> class impl_IDragStartingEventArgs;
-template <typename T> class impl_IDragStartingEventArgs2;
-template <typename T> class impl_IDragUI;
-template <typename T> class impl_IDragUIOverride;
-template <typename T> class impl_IDropCompletedEventArgs;
-template <typename T> class impl_IDurationHelper;
-template <typename T> class impl_IDurationHelperStatics;
-template <typename T> class impl_IElementSoundPlayer;
-template <typename T> class impl_IElementSoundPlayerStatics;
-template <typename T> class impl_IEventTrigger;
-template <typename T> class impl_IExceptionRoutedEventArgs;
-template <typename T> class impl_IExceptionRoutedEventArgsFactory;
-template <typename T> class impl_IFrameworkElement;
-template <typename T> class impl_IFrameworkElement2;
-template <typename T> class impl_IFrameworkElement3;
-template <typename T> class impl_IFrameworkElement4;
-template <typename T> class impl_IFrameworkElementFactory;
-template <typename T> class impl_IFrameworkElementOverrides;
-template <typename T> class impl_IFrameworkElementOverrides2;
-template <typename T> class impl_IFrameworkElementStatics;
-template <typename T> class impl_IFrameworkElementStatics2;
-template <typename T> class impl_IFrameworkElementStatics4;
-template <typename T> class impl_IFrameworkTemplate;
-template <typename T> class impl_IFrameworkTemplateFactory;
-template <typename T> class impl_IFrameworkView;
-template <typename T> class impl_IFrameworkViewSource;
-template <typename T> class impl_IGridLengthHelper;
-template <typename T> class impl_IGridLengthHelperStatics;
-template <typename T> class impl_IMediaFailedRoutedEventArgs;
-template <typename T> class impl_IPointHelper;
-template <typename T> class impl_IPointHelperStatics;
-template <typename T> class impl_IPropertyMetadata;
-template <typename T> class impl_IPropertyMetadataFactory;
-template <typename T> class impl_IPropertyMetadataStatics;
-template <typename T> class impl_IPropertyPath;
-template <typename T> class impl_IPropertyPathFactory;
-template <typename T> class impl_IRectHelper;
-template <typename T> class impl_IRectHelperStatics;
-template <typename T> class impl_IResourceDictionary;
-template <typename T> class impl_IResourceDictionaryFactory;
-template <typename T> class impl_IRoutedEvent;
-template <typename T> class impl_IRoutedEventArgs;
-template <typename T> class impl_IRoutedEventArgsFactory;
-template <typename T> class impl_ISetter;
-template <typename T> class impl_ISetter2;
-template <typename T> class impl_ISetterBase;
-template <typename T> class impl_ISetterBaseCollection;
-template <typename T> class impl_ISetterBaseFactory;
-template <typename T> class impl_ISetterFactory;
-template <typename T> class impl_ISizeChangedEventArgs;
-template <typename T> class impl_ISizeHelper;
-template <typename T> class impl_ISizeHelperStatics;
-template <typename T> class impl_IStateTrigger;
-template <typename T> class impl_IStateTriggerBase;
-template <typename T> class impl_IStateTriggerBaseFactory;
-template <typename T> class impl_IStateTriggerBaseProtected;
-template <typename T> class impl_IStateTriggerStatics;
-template <typename T> class impl_IStyle;
-template <typename T> class impl_IStyleFactory;
-template <typename T> class impl_ITargetPropertyPath;
-template <typename T> class impl_ITargetPropertyPathFactory;
-template <typename T> class impl_IThicknessHelper;
-template <typename T> class impl_IThicknessHelperStatics;
-template <typename T> class impl_ITriggerAction;
-template <typename T> class impl_ITriggerActionFactory;
-template <typename T> class impl_ITriggerBase;
-template <typename T> class impl_ITriggerBaseFactory;
-template <typename T> class impl_IUIElement;
-template <typename T> class impl_IUIElement2;
-template <typename T> class impl_IUIElement3;
-template <typename T> class impl_IUIElement4;
-template <typename T> class impl_IUIElementFactory;
-template <typename T> class impl_IUIElementOverrides;
-template <typename T> class impl_IUIElementStatics;
-template <typename T> class impl_IUIElementStatics2;
-template <typename T> class impl_IUIElementStatics3;
-template <typename T> class impl_IUIElementStatics4;
-template <typename T> class impl_IUnhandledExceptionEventArgs;
-template <typename T> class impl_IVisualState;
-template <typename T> class impl_IVisualState2;
-template <typename T> class impl_IVisualStateChangedEventArgs;
-template <typename T> class impl_IVisualStateGroup;
-template <typename T> class impl_IVisualStateManager;
-template <typename T> class impl_IVisualStateManagerFactory;
-template <typename T> class impl_IVisualStateManagerOverrides;
-template <typename T> class impl_IVisualStateManagerProtected;
-template <typename T> class impl_IVisualStateManagerStatics;
-template <typename T> class impl_IVisualTransition;
-template <typename T> class impl_IVisualTransitionFactory;
-template <typename T> class impl_IWindow;
-template <typename T> class impl_IWindow2;
-template <typename T> class impl_IWindowCreatedEventArgs;
-template <typename T> class impl_IWindowStatics;
+template <typename T> struct impl_IAdaptiveTrigger;
+template <typename T> struct impl_IAdaptiveTriggerFactory;
+template <typename T> struct impl_IAdaptiveTriggerStatics;
+template <typename T> struct impl_IApplication;
+template <typename T> struct impl_IApplication2;
+template <typename T> struct impl_IApplicationFactory;
+template <typename T> struct impl_IApplicationInitializationCallbackParams;
+template <typename T> struct impl_IApplicationOverrides;
+template <typename T> struct impl_IApplicationOverrides2;
+template <typename T> struct impl_IApplicationStatics;
+template <typename T> struct impl_IBindingFailedEventArgs;
+template <typename T> struct impl_ICornerRadiusHelper;
+template <typename T> struct impl_ICornerRadiusHelperStatics;
+template <typename T> struct impl_IDataContextChangedEventArgs;
+template <typename T> struct impl_IDataTemplate;
+template <typename T> struct impl_IDataTemplateExtension;
+template <typename T> struct impl_IDataTemplateFactory;
+template <typename T> struct impl_IDataTemplateKey;
+template <typename T> struct impl_IDataTemplateKeyFactory;
+template <typename T> struct impl_IDataTemplateStatics2;
+template <typename T> struct impl_IDebugSettings;
+template <typename T> struct impl_IDebugSettings2;
+template <typename T> struct impl_IDebugSettings3;
+template <typename T> struct impl_IDependencyObject;
+template <typename T> struct impl_IDependencyObject2;
+template <typename T> struct impl_IDependencyObjectCollectionFactory;
+template <typename T> struct impl_IDependencyObjectFactory;
+template <typename T> struct impl_IDependencyProperty;
+template <typename T> struct impl_IDependencyPropertyChangedEventArgs;
+template <typename T> struct impl_IDependencyPropertyStatics;
+template <typename T> struct impl_IDispatcherTimer;
+template <typename T> struct impl_IDispatcherTimerFactory;
+template <typename T> struct impl_IDragEventArgs;
+template <typename T> struct impl_IDragEventArgs2;
+template <typename T> struct impl_IDragEventArgs3;
+template <typename T> struct impl_IDragOperationDeferral;
+template <typename T> struct impl_IDragStartingEventArgs;
+template <typename T> struct impl_IDragStartingEventArgs2;
+template <typename T> struct impl_IDragUI;
+template <typename T> struct impl_IDragUIOverride;
+template <typename T> struct impl_IDropCompletedEventArgs;
+template <typename T> struct impl_IDurationHelper;
+template <typename T> struct impl_IDurationHelperStatics;
+template <typename T> struct impl_IElementSoundPlayer;
+template <typename T> struct impl_IElementSoundPlayerStatics;
+template <typename T> struct impl_IEventTrigger;
+template <typename T> struct impl_IExceptionRoutedEventArgs;
+template <typename T> struct impl_IExceptionRoutedEventArgsFactory;
+template <typename T> struct impl_IFrameworkElement;
+template <typename T> struct impl_IFrameworkElement2;
+template <typename T> struct impl_IFrameworkElement3;
+template <typename T> struct impl_IFrameworkElement4;
+template <typename T> struct impl_IFrameworkElementFactory;
+template <typename T> struct impl_IFrameworkElementOverrides;
+template <typename T> struct impl_IFrameworkElementOverrides2;
+template <typename T> struct impl_IFrameworkElementStatics;
+template <typename T> struct impl_IFrameworkElementStatics2;
+template <typename T> struct impl_IFrameworkElementStatics4;
+template <typename T> struct impl_IFrameworkTemplate;
+template <typename T> struct impl_IFrameworkTemplateFactory;
+template <typename T> struct impl_IFrameworkView;
+template <typename T> struct impl_IFrameworkViewSource;
+template <typename T> struct impl_IGridLengthHelper;
+template <typename T> struct impl_IGridLengthHelperStatics;
+template <typename T> struct impl_IMediaFailedRoutedEventArgs;
+template <typename T> struct impl_IPointHelper;
+template <typename T> struct impl_IPointHelperStatics;
+template <typename T> struct impl_IPropertyMetadata;
+template <typename T> struct impl_IPropertyMetadataFactory;
+template <typename T> struct impl_IPropertyMetadataStatics;
+template <typename T> struct impl_IPropertyPath;
+template <typename T> struct impl_IPropertyPathFactory;
+template <typename T> struct impl_IRectHelper;
+template <typename T> struct impl_IRectHelperStatics;
+template <typename T> struct impl_IResourceDictionary;
+template <typename T> struct impl_IResourceDictionaryFactory;
+template <typename T> struct impl_IRoutedEvent;
+template <typename T> struct impl_IRoutedEventArgs;
+template <typename T> struct impl_IRoutedEventArgsFactory;
+template <typename T> struct impl_ISetter;
+template <typename T> struct impl_ISetter2;
+template <typename T> struct impl_ISetterBase;
+template <typename T> struct impl_ISetterBaseCollection;
+template <typename T> struct impl_ISetterBaseFactory;
+template <typename T> struct impl_ISetterFactory;
+template <typename T> struct impl_ISizeChangedEventArgs;
+template <typename T> struct impl_ISizeHelper;
+template <typename T> struct impl_ISizeHelperStatics;
+template <typename T> struct impl_IStateTrigger;
+template <typename T> struct impl_IStateTriggerBase;
+template <typename T> struct impl_IStateTriggerBaseFactory;
+template <typename T> struct impl_IStateTriggerBaseProtected;
+template <typename T> struct impl_IStateTriggerStatics;
+template <typename T> struct impl_IStyle;
+template <typename T> struct impl_IStyleFactory;
+template <typename T> struct impl_ITargetPropertyPath;
+template <typename T> struct impl_ITargetPropertyPathFactory;
+template <typename T> struct impl_IThicknessHelper;
+template <typename T> struct impl_IThicknessHelperStatics;
+template <typename T> struct impl_ITriggerAction;
+template <typename T> struct impl_ITriggerActionFactory;
+template <typename T> struct impl_ITriggerBase;
+template <typename T> struct impl_ITriggerBaseFactory;
+template <typename T> struct impl_IUIElement;
+template <typename T> struct impl_IUIElement2;
+template <typename T> struct impl_IUIElement3;
+template <typename T> struct impl_IUIElement4;
+template <typename T> struct impl_IUIElementFactory;
+template <typename T> struct impl_IUIElementOverrides;
+template <typename T> struct impl_IUIElementStatics;
+template <typename T> struct impl_IUIElementStatics2;
+template <typename T> struct impl_IUIElementStatics3;
+template <typename T> struct impl_IUIElementStatics4;
+template <typename T> struct impl_IUnhandledExceptionEventArgs;
+template <typename T> struct impl_IVisualState;
+template <typename T> struct impl_IVisualState2;
+template <typename T> struct impl_IVisualStateChangedEventArgs;
+template <typename T> struct impl_IVisualStateGroup;
+template <typename T> struct impl_IVisualStateManager;
+template <typename T> struct impl_IVisualStateManagerFactory;
+template <typename T> struct impl_IVisualStateManagerOverrides;
+template <typename T> struct impl_IVisualStateManagerProtected;
+template <typename T> struct impl_IVisualStateManagerStatics;
+template <typename T> struct impl_IVisualTransition;
+template <typename T> struct impl_IVisualTransitionFactory;
+template <typename T> struct impl_IWindow;
+template <typename T> struct impl_IWindow2;
+template <typename T> struct impl_IWindowCreatedEventArgs;
+template <typename T> struct impl_IWindowStatics;
 template <typename T> struct impl_ApplicationInitializationCallback;
 template <typename T> struct impl_BindingFailedEventHandler;
 template <typename T> struct impl_CreateDefaultValueCallback;
@@ -2349,420 +2349,360 @@ template <> struct traits<Windows::UI::Xaml::WindowVisibilityChangedEventHandler
 template <> struct traits<Windows::UI::Xaml::AdaptiveTrigger>
 {
     using abi = ABI::Windows::UI::Xaml::AdaptiveTrigger;
-    using default_interface = Windows::UI::Xaml::IAdaptiveTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.AdaptiveTrigger"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Application>
 {
     using abi = ABI::Windows::UI::Xaml::Application;
-    using default_interface = Windows::UI::Xaml::IApplication;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Application"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::ApplicationInitializationCallbackParams>
 {
     using abi = ABI::Windows::UI::Xaml::ApplicationInitializationCallbackParams;
-    using default_interface = Windows::UI::Xaml::IApplicationInitializationCallbackParams;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.ApplicationInitializationCallbackParams"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::BindingFailedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::BindingFailedEventArgs;
-    using default_interface = Windows::UI::Xaml::IBindingFailedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.BindingFailedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::CornerRadiusHelper>
 {
     using abi = ABI::Windows::UI::Xaml::CornerRadiusHelper;
-    using default_interface = Windows::UI::Xaml::ICornerRadiusHelper;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.CornerRadiusHelper"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::DataContextChangedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::DataContextChangedEventArgs;
-    using default_interface = Windows::UI::Xaml::IDataContextChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.DataContextChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::DataTemplate>
 {
     using abi = ABI::Windows::UI::Xaml::DataTemplate;
-    using default_interface = Windows::UI::Xaml::IDataTemplate;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.DataTemplate"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::DataTemplateKey>
 {
     using abi = ABI::Windows::UI::Xaml::DataTemplateKey;
-    using default_interface = Windows::UI::Xaml::IDataTemplateKey;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.DataTemplateKey"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::DebugSettings>
 {
     using abi = ABI::Windows::UI::Xaml::DebugSettings;
-    using default_interface = Windows::UI::Xaml::IDebugSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.DebugSettings"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::DependencyObject>
 {
     using abi = ABI::Windows::UI::Xaml::DependencyObject;
-    using default_interface = Windows::UI::Xaml::IDependencyObject;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.DependencyObject"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::DependencyObjectCollection>
 {
     using abi = ABI::Windows::UI::Xaml::DependencyObjectCollection;
-    using default_interface = Windows::Foundation::Collections::IObservableVector<Windows::UI::Xaml::DependencyObject>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.DependencyObjectCollection"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::DependencyProperty>
 {
     using abi = ABI::Windows::UI::Xaml::DependencyProperty;
-    using default_interface = Windows::UI::Xaml::IDependencyProperty;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.DependencyProperty"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::DependencyPropertyChangedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::DependencyPropertyChangedEventArgs;
-    using default_interface = Windows::UI::Xaml::IDependencyPropertyChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.DependencyPropertyChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::DispatcherTimer>
 {
     using abi = ABI::Windows::UI::Xaml::DispatcherTimer;
-    using default_interface = Windows::UI::Xaml::IDispatcherTimer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.DispatcherTimer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::DragEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::DragEventArgs;
-    using default_interface = Windows::UI::Xaml::IDragEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.DragEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::DragOperationDeferral>
 {
     using abi = ABI::Windows::UI::Xaml::DragOperationDeferral;
-    using default_interface = Windows::UI::Xaml::IDragOperationDeferral;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.DragOperationDeferral"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::DragStartingEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::DragStartingEventArgs;
-    using default_interface = Windows::UI::Xaml::IDragStartingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.DragStartingEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::DragUI>
 {
     using abi = ABI::Windows::UI::Xaml::DragUI;
-    using default_interface = Windows::UI::Xaml::IDragUI;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.DragUI"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::DragUIOverride>
 {
     using abi = ABI::Windows::UI::Xaml::DragUIOverride;
-    using default_interface = Windows::UI::Xaml::IDragUIOverride;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.DragUIOverride"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::DropCompletedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::DropCompletedEventArgs;
-    using default_interface = Windows::UI::Xaml::IDropCompletedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.DropCompletedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::DurationHelper>
 {
     using abi = ABI::Windows::UI::Xaml::DurationHelper;
-    using default_interface = Windows::UI::Xaml::IDurationHelper;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.DurationHelper"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::ElementSoundPlayer>
 {
     using abi = ABI::Windows::UI::Xaml::ElementSoundPlayer;
-    using default_interface = Windows::UI::Xaml::IElementSoundPlayer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.ElementSoundPlayer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::EventTrigger>
 {
     using abi = ABI::Windows::UI::Xaml::EventTrigger;
-    using default_interface = Windows::UI::Xaml::IEventTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.EventTrigger"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::ExceptionRoutedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::ExceptionRoutedEventArgs;
-    using default_interface = Windows::UI::Xaml::IExceptionRoutedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.ExceptionRoutedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::FrameworkElement>
 {
     using abi = ABI::Windows::UI::Xaml::FrameworkElement;
-    using default_interface = Windows::UI::Xaml::IFrameworkElement;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.FrameworkElement"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::FrameworkTemplate>
 {
     using abi = ABI::Windows::UI::Xaml::FrameworkTemplate;
-    using default_interface = Windows::UI::Xaml::IFrameworkTemplate;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.FrameworkTemplate"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::FrameworkView>
 {
     using abi = ABI::Windows::UI::Xaml::FrameworkView;
-    using default_interface = Windows::UI::Xaml::IFrameworkView;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.FrameworkView"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::FrameworkViewSource>
 {
     using abi = ABI::Windows::UI::Xaml::FrameworkViewSource;
-    using default_interface = Windows::UI::Xaml::IFrameworkViewSource;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.FrameworkViewSource"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::GridLengthHelper>
 {
     using abi = ABI::Windows::UI::Xaml::GridLengthHelper;
-    using default_interface = Windows::UI::Xaml::IGridLengthHelper;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.GridLengthHelper"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::MediaFailedRoutedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::MediaFailedRoutedEventArgs;
-    using default_interface = Windows::UI::Xaml::IMediaFailedRoutedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.MediaFailedRoutedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::PointHelper>
 {
     using abi = ABI::Windows::UI::Xaml::PointHelper;
-    using default_interface = Windows::UI::Xaml::IPointHelper;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.PointHelper"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::PropertyMetadata>
 {
     using abi = ABI::Windows::UI::Xaml::PropertyMetadata;
-    using default_interface = Windows::UI::Xaml::IPropertyMetadata;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.PropertyMetadata"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::PropertyPath>
 {
     using abi = ABI::Windows::UI::Xaml::PropertyPath;
-    using default_interface = Windows::UI::Xaml::IPropertyPath;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.PropertyPath"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::RectHelper>
 {
     using abi = ABI::Windows::UI::Xaml::RectHelper;
-    using default_interface = Windows::UI::Xaml::IRectHelper;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.RectHelper"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::ResourceDictionary>
 {
     using abi = ABI::Windows::UI::Xaml::ResourceDictionary;
-    using default_interface = Windows::UI::Xaml::IResourceDictionary;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.ResourceDictionary"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::RoutedEvent>
 {
     using abi = ABI::Windows::UI::Xaml::RoutedEvent;
-    using default_interface = Windows::UI::Xaml::IRoutedEvent;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.RoutedEvent"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::RoutedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::RoutedEventArgs;
-    using default_interface = Windows::UI::Xaml::IRoutedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.RoutedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Setter>
 {
     using abi = ABI::Windows::UI::Xaml::Setter;
-    using default_interface = Windows::UI::Xaml::ISetter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Setter"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::SetterBase>
 {
     using abi = ABI::Windows::UI::Xaml::SetterBase;
-    using default_interface = Windows::UI::Xaml::ISetterBase;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.SetterBase"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::SetterBaseCollection>
 {
     using abi = ABI::Windows::UI::Xaml::SetterBaseCollection;
-    using default_interface = Windows::UI::Xaml::ISetterBaseCollection;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.SetterBaseCollection"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::SizeChangedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::SizeChangedEventArgs;
-    using default_interface = Windows::UI::Xaml::ISizeChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.SizeChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::SizeHelper>
 {
     using abi = ABI::Windows::UI::Xaml::SizeHelper;
-    using default_interface = Windows::UI::Xaml::ISizeHelper;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.SizeHelper"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::StateTrigger>
 {
     using abi = ABI::Windows::UI::Xaml::StateTrigger;
-    using default_interface = Windows::UI::Xaml::IStateTrigger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.StateTrigger"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::StateTriggerBase>
 {
     using abi = ABI::Windows::UI::Xaml::StateTriggerBase;
-    using default_interface = Windows::UI::Xaml::IStateTriggerBase;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.StateTriggerBase"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Style>
 {
     using abi = ABI::Windows::UI::Xaml::Style;
-    using default_interface = Windows::UI::Xaml::IStyle;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Style"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::TargetPropertyPath>
 {
     using abi = ABI::Windows::UI::Xaml::TargetPropertyPath;
-    using default_interface = Windows::UI::Xaml::ITargetPropertyPath;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.TargetPropertyPath"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::ThicknessHelper>
 {
     using abi = ABI::Windows::UI::Xaml::ThicknessHelper;
-    using default_interface = Windows::UI::Xaml::IThicknessHelper;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.ThicknessHelper"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::TriggerAction>
 {
     using abi = ABI::Windows::UI::Xaml::TriggerAction;
-    using default_interface = Windows::UI::Xaml::ITriggerAction;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.TriggerAction"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::TriggerActionCollection>
 {
     using abi = ABI::Windows::UI::Xaml::TriggerActionCollection;
-    using default_interface = Windows::Foundation::Collections::IVector<Windows::UI::Xaml::TriggerAction>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.TriggerActionCollection"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::TriggerBase>
 {
     using abi = ABI::Windows::UI::Xaml::TriggerBase;
-    using default_interface = Windows::UI::Xaml::ITriggerBase;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.TriggerBase"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::TriggerCollection>
 {
     using abi = ABI::Windows::UI::Xaml::TriggerCollection;
-    using default_interface = Windows::Foundation::Collections::IVector<Windows::UI::Xaml::TriggerBase>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.TriggerCollection"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::UIElement>
 {
     using abi = ABI::Windows::UI::Xaml::UIElement;
-    using default_interface = Windows::UI::Xaml::IUIElement;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.UIElement"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::UnhandledExceptionEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::UnhandledExceptionEventArgs;
-    using default_interface = Windows::UI::Xaml::IUnhandledExceptionEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.UnhandledExceptionEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::VisualState>
 {
     using abi = ABI::Windows::UI::Xaml::VisualState;
-    using default_interface = Windows::UI::Xaml::IVisualState;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.VisualState"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::VisualStateChangedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::VisualStateChangedEventArgs;
-    using default_interface = Windows::UI::Xaml::IVisualStateChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.VisualStateChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::VisualStateGroup>
 {
     using abi = ABI::Windows::UI::Xaml::VisualStateGroup;
-    using default_interface = Windows::UI::Xaml::IVisualStateGroup;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.VisualStateGroup"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::VisualStateManager>
 {
     using abi = ABI::Windows::UI::Xaml::VisualStateManager;
-    using default_interface = Windows::UI::Xaml::IVisualStateManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.VisualStateManager"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::VisualTransition>
 {
     using abi = ABI::Windows::UI::Xaml::VisualTransition;
-    using default_interface = Windows::UI::Xaml::IVisualTransition;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.VisualTransition"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Window>
 {
     using abi = ABI::Windows::UI::Xaml::Window;
-    using default_interface = Windows::UI::Xaml::IWindow;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Window"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::WindowCreatedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::WindowCreatedEventArgs;
-    using default_interface = Windows::UI::Xaml::IWindowCreatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.WindowCreatedEventArgs"; }
 };
 

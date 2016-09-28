@@ -60,11 +60,11 @@ template <> struct traits<Windows::Devices::Spi::Provider::ProviderSpiConnection
 
 namespace Windows::Devices::Spi::Provider {
 
-template <typename T> class impl_IProviderSpiConnectionSettings;
-template <typename T> class impl_IProviderSpiConnectionSettingsFactory;
-template <typename T> class impl_ISpiControllerProvider;
-template <typename T> class impl_ISpiDeviceProvider;
-template <typename T> class impl_ISpiProvider;
+template <typename T> struct impl_IProviderSpiConnectionSettings;
+template <typename T> struct impl_IProviderSpiConnectionSettingsFactory;
+template <typename T> struct impl_ISpiControllerProvider;
+template <typename T> struct impl_ISpiDeviceProvider;
+template <typename T> struct impl_ISpiProvider;
 
 }
 
@@ -103,7 +103,6 @@ template <> struct traits<Windows::Devices::Spi::Provider::ISpiProvider>
 template <> struct traits<Windows::Devices::Spi::Provider::ProviderSpiConnectionSettings>
 {
     using abi = ABI::Windows::Devices::Spi::Provider::ProviderSpiConnectionSettings;
-    using default_interface = Windows::Devices::Spi::Provider::IProviderSpiConnectionSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Spi.Provider.ProviderSpiConnectionSettings"; }
 };
 

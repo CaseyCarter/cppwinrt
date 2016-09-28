@@ -26,7 +26,7 @@ template <> struct traits<Windows::Foundation::Collections::ValueSet> { using de
 
 namespace Windows::Foundation::Collections {
 
-template <typename T> class impl_IPropertySet;
+template <typename T> struct impl_IPropertySet;
 
 }
 
@@ -41,21 +41,18 @@ template <> struct traits<Windows::Foundation::Collections::IPropertySet>
 template <> struct traits<Windows::Foundation::Collections::PropertySet>
 {
     using abi = ABI::Windows::Foundation::Collections::PropertySet;
-    using default_interface = Windows::Foundation::Collections::IPropertySet;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Foundation.Collections.PropertySet"; }
 };
 
 template <> struct traits<Windows::Foundation::Collections::StringMap>
 {
     using abi = ABI::Windows::Foundation::Collections::StringMap;
-    using default_interface = Windows::Foundation::Collections::IMap<hstring, hstring>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Foundation.Collections.StringMap"; }
 };
 
 template <> struct traits<Windows::Foundation::Collections::ValueSet>
 {
     using abi = ABI::Windows::Foundation::Collections::ValueSet;
-    using default_interface = Windows::Foundation::Collections::IPropertySet;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Foundation.Collections.ValueSet"; }
 };
 

@@ -82,12 +82,12 @@ template <> struct traits<Windows::UI::Xaml::Printing::PrintDocument> { using de
 
 namespace Windows::UI::Xaml::Printing {
 
-template <typename T> class impl_IAddPagesEventArgs;
-template <typename T> class impl_IGetPreviewPageEventArgs;
-template <typename T> class impl_IPaginateEventArgs;
-template <typename T> class impl_IPrintDocument;
-template <typename T> class impl_IPrintDocumentFactory;
-template <typename T> class impl_IPrintDocumentStatics;
+template <typename T> struct impl_IAddPagesEventArgs;
+template <typename T> struct impl_IGetPreviewPageEventArgs;
+template <typename T> struct impl_IPaginateEventArgs;
+template <typename T> struct impl_IPrintDocument;
+template <typename T> struct impl_IPrintDocumentFactory;
+template <typename T> struct impl_IPrintDocumentStatics;
 template <typename T> struct impl_AddPagesEventHandler;
 template <typename T> struct impl_GetPreviewPageEventHandler;
 template <typename T> struct impl_PaginateEventHandler;
@@ -150,28 +150,24 @@ template <> struct traits<Windows::UI::Xaml::Printing::PaginateEventHandler>
 template <> struct traits<Windows::UI::Xaml::Printing::AddPagesEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Printing::AddPagesEventArgs;
-    using default_interface = Windows::UI::Xaml::Printing::IAddPagesEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Printing.AddPagesEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Printing::GetPreviewPageEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Printing::GetPreviewPageEventArgs;
-    using default_interface = Windows::UI::Xaml::Printing::IGetPreviewPageEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Printing.GetPreviewPageEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Printing::PaginateEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Printing::PaginateEventArgs;
-    using default_interface = Windows::UI::Xaml::Printing::IPaginateEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Printing.PaginateEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Printing::PrintDocument>
 {
     using abi = ABI::Windows::UI::Xaml::Printing::PrintDocument;
-    using default_interface = Windows::UI::Xaml::Printing::IPrintDocument;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Printing.PrintDocument"; }
 };
 

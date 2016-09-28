@@ -225,23 +225,15 @@ template <> struct __declspec(uuid("d7fc75d5-3492-5bbb-9b34-dac3e24e79d0")) __de
 namespace Windows::Media::Devices {
 
 template <typename D>
-class WINRT_EBO impl_IAdvancedPhotoCaptureSettings
+struct WINRT_EBO impl_IAdvancedPhotoCaptureSettings
 {
-    auto shim() const { return impl::shim<D, IAdvancedPhotoCaptureSettings>(this); }
-
-public:
-
     Windows::Media::Devices::AdvancedPhotoMode Mode() const;
     void Mode(Windows::Media::Devices::AdvancedPhotoMode value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAdvancedPhotoControl
+struct WINRT_EBO impl_IAdvancedPhotoControl
 {
-    auto shim() const { return impl::shim<D, IAdvancedPhotoControl>(this); }
-
-public:
-
     bool Supported() const;
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::AdvancedPhotoMode> SupportedModes() const;
     Windows::Media::Devices::AdvancedPhotoMode Mode() const;
@@ -249,23 +241,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAdvancedVideoCaptureDeviceController
+struct WINRT_EBO impl_IAdvancedVideoCaptureDeviceController
 {
-    auto shim() const { return impl::shim<D, IAdvancedVideoCaptureDeviceController>(this); }
-
-public:
-
     void SetDeviceProperty(hstring_ref propertyId, const Windows::IInspectable & propertyValue) const;
     Windows::IInspectable GetDeviceProperty(hstring_ref propertyId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAdvancedVideoCaptureDeviceController2
+struct WINRT_EBO impl_IAdvancedVideoCaptureDeviceController2
 {
-    auto shim() const { return impl::shim<D, IAdvancedVideoCaptureDeviceController2>(this); }
-
-public:
-
     Windows::Media::Devices::LowLagPhotoSequenceControl LowLagPhotoSequence() const;
     Windows::Media::Devices::LowLagPhotoControl LowLagPhoto() const;
     Windows::Media::Devices::SceneModeControl SceneModeControl() const;
@@ -282,24 +266,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAdvancedVideoCaptureDeviceController3
+struct WINRT_EBO impl_IAdvancedVideoCaptureDeviceController3
 {
-    auto shim() const { return impl::shim<D, IAdvancedVideoCaptureDeviceController3>(this); }
-
-public:
-
     Windows::Media::Devices::Core::VariablePhotoSequenceController VariablePhotoSequenceController() const;
     Windows::Media::Devices::PhotoConfirmationControl PhotoConfirmationControl() const;
     Windows::Media::Devices::ZoomControl ZoomControl() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAdvancedVideoCaptureDeviceController4
+struct WINRT_EBO impl_IAdvancedVideoCaptureDeviceController4
 {
-    auto shim() const { return impl::shim<D, IAdvancedVideoCaptureDeviceController4>(this); }
-
-public:
-
     Windows::Media::Devices::ExposurePriorityVideoControl ExposurePriorityVideoControl() const;
     Windows::Media::Devices::MediaCaptureOptimization DesiredOptimization() const;
     void DesiredOptimization(Windows::Media::Devices::MediaCaptureOptimization value) const;
@@ -309,12 +285,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioDeviceController
+struct WINRT_EBO impl_IAudioDeviceController
 {
-    auto shim() const { return impl::shim<D, IAudioDeviceController>(this); }
-
-public:
-
     void Muted(bool value) const;
     bool Muted() const;
     void VolumePercent(float value) const;
@@ -322,23 +294,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDefaultAudioDeviceChangedEventArgs
+struct WINRT_EBO impl_IDefaultAudioDeviceChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IDefaultAudioDeviceChangedEventArgs>(this); }
-
-public:
-
     hstring Id() const;
     Windows::Media::Devices::AudioDeviceRole Role() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IExposureCompensationControl
+struct WINRT_EBO impl_IExposureCompensationControl
 {
-    auto shim() const { return impl::shim<D, IExposureCompensationControl>(this); }
-
-public:
-
     bool Supported() const;
     float Min() const;
     float Max() const;
@@ -348,12 +312,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IExposureControl
+struct WINRT_EBO impl_IExposureControl
 {
-    auto shim() const { return impl::shim<D, IExposureControl>(this); }
-
-public:
-
     bool Supported() const;
     bool Auto() const;
     Windows::Foundation::IAsyncAction SetAutoAsync(bool value) const;
@@ -365,24 +325,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IExposurePriorityVideoControl
+struct WINRT_EBO impl_IExposurePriorityVideoControl
 {
-    auto shim() const { return impl::shim<D, IExposurePriorityVideoControl>(this); }
-
-public:
-
     bool Supported() const;
     bool Enabled() const;
     void Enabled(bool value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFlashControl
+struct WINRT_EBO impl_IFlashControl
 {
-    auto shim() const { return impl::shim<D, IFlashControl>(this); }
-
-public:
-
     bool Supported() const;
     bool PowerSupported() const;
     bool RedEyeReductionSupported() const;
@@ -397,24 +349,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IFlashControl2
+struct WINRT_EBO impl_IFlashControl2
 {
-    auto shim() const { return impl::shim<D, IFlashControl2>(this); }
-
-public:
-
     bool AssistantLightSupported() const;
     bool AssistantLightEnabled() const;
     void AssistantLightEnabled(bool value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFocusControl
+struct WINRT_EBO impl_IFocusControl
 {
-    auto shim() const { return impl::shim<D, IFocusControl>(this); }
-
-public:
-
     bool Supported() const;
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::FocusPreset> SupportedPresets() const;
     Windows::Media::Devices::FocusPreset Preset() const;
@@ -429,12 +373,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IFocusControl2
+struct WINRT_EBO impl_IFocusControl2
 {
-    auto shim() const { return impl::shim<D, IFocusControl2>(this); }
-
-public:
-
     bool FocusChangedSupported() const;
     bool WaitForFocusSupported() const;
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::FocusMode> SupportedFocusModes() const;
@@ -448,12 +388,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IFocusSettings
+struct WINRT_EBO impl_IFocusSettings
 {
-    auto shim() const { return impl::shim<D, IFocusSettings>(this); }
-
-public:
-
     Windows::Media::Devices::FocusMode Mode() const;
     void Mode(Windows::Media::Devices::FocusMode value) const;
     Windows::Media::Devices::AutoFocusRange AutoFocusRange() const;
@@ -469,12 +405,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHdrVideoControl
+struct WINRT_EBO impl_IHdrVideoControl
 {
-    auto shim() const { return impl::shim<D, IHdrVideoControl>(this); }
-
-public:
-
     bool Supported() const;
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::HdrVideoMode> SupportedModes() const;
     Windows::Media::Devices::HdrVideoMode Mode() const;
@@ -482,12 +414,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IIsoSpeedControl
+struct WINRT_EBO impl_IIsoSpeedControl
 {
-    auto shim() const { return impl::shim<D, IIsoSpeedControl>(this); }
-
-public:
-
     bool Supported() const;
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::IsoSpeedPreset> SupportedPresets() const;
     Windows::Media::Devices::IsoSpeedPreset Preset() const;
@@ -495,12 +423,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IIsoSpeedControl2
+struct WINRT_EBO impl_IIsoSpeedControl2
 {
-    auto shim() const { return impl::shim<D, IIsoSpeedControl2>(this); }
-
-public:
-
     uint32_t Min() const;
     uint32_t Max() const;
     uint32_t Step() const;
@@ -511,12 +435,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ILowLagPhotoControl
+struct WINRT_EBO impl_ILowLagPhotoControl
 {
-    auto shim() const { return impl::shim<D, ILowLagPhotoControl>(this); }
-
-public:
-
     Windows::Media::MediaProperties::MediaRatio GetHighestConcurrentFrameRate(const Windows::Media::MediaProperties::IMediaEncodingProperties & captureProperties) const;
     Windows::Media::MediaProperties::MediaRatio GetCurrentFrameRate() const;
     bool ThumbnailEnabled() const;
@@ -529,12 +449,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ILowLagPhotoSequenceControl
+struct WINRT_EBO impl_ILowLagPhotoSequenceControl
 {
-    auto shim() const { return impl::shim<D, ILowLagPhotoSequenceControl>(this); }
-
-public:
-
     bool Supported() const;
     uint32_t MaxPastPhotos() const;
     float MaxPhotosPerSecond() const;
@@ -554,12 +470,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaDeviceControl
+struct WINRT_EBO impl_IMediaDeviceControl
 {
-    auto shim() const { return impl::shim<D, IMediaDeviceControl>(this); }
-
-public:
-
     Windows::Media::Devices::MediaDeviceControlCapabilities Capabilities() const;
     bool TryGetValue(double & value) const;
     bool TrySetValue(double value) const;
@@ -568,12 +480,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaDeviceControlCapabilities
+struct WINRT_EBO impl_IMediaDeviceControlCapabilities
 {
-    auto shim() const { return impl::shim<D, IMediaDeviceControlCapabilities>(this); }
-
-public:
-
     bool Supported() const;
     double Min() const;
     double Max() const;
@@ -583,24 +491,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaDeviceController
+struct WINRT_EBO impl_IMediaDeviceController
 {
-    auto shim() const { return impl::shim<D, IMediaDeviceController>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Media::MediaProperties::IMediaEncodingProperties> GetAvailableMediaStreamProperties(Windows::Media::Capture::MediaStreamType mediaStreamType) const;
     Windows::Media::MediaProperties::IMediaEncodingProperties GetMediaStreamProperties(Windows::Media::Capture::MediaStreamType mediaStreamType) const;
     Windows::Foundation::IAsyncAction SetMediaStreamPropertiesAsync(Windows::Media::Capture::MediaStreamType mediaStreamType, const Windows::Media::MediaProperties::IMediaEncodingProperties & mediaEncodingProperties) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaDeviceStatics
+struct WINRT_EBO impl_IMediaDeviceStatics
 {
-    auto shim() const { return impl::shim<D, IMediaDeviceStatics>(this); }
-
-public:
-
     hstring GetAudioCaptureSelector() const;
     hstring GetAudioRenderSelector() const;
     hstring GetVideoCaptureSelector() const;
@@ -617,12 +517,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IOpticalImageStabilizationControl
+struct WINRT_EBO impl_IOpticalImageStabilizationControl
 {
-    auto shim() const { return impl::shim<D, IOpticalImageStabilizationControl>(this); }
-
-public:
-
     bool Supported() const;
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::OpticalImageStabilizationMode> SupportedModes() const;
     Windows::Media::Devices::OpticalImageStabilizationMode Mode() const;
@@ -630,12 +526,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPhotoConfirmationControl
+struct WINRT_EBO impl_IPhotoConfirmationControl
 {
-    auto shim() const { return impl::shim<D, IPhotoConfirmationControl>(this); }
-
-public:
-
     bool Supported() const;
     bool Enabled() const;
     void Enabled(bool value) const;
@@ -644,12 +536,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IRegionOfInterest
+struct WINRT_EBO impl_IRegionOfInterest
 {
-    auto shim() const { return impl::shim<D, IRegionOfInterest>(this); }
-
-public:
-
     bool AutoFocusEnabled() const;
     void AutoFocusEnabled(bool value) const;
     bool AutoWhiteBalanceEnabled() const;
@@ -661,12 +549,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IRegionOfInterest2
+struct WINRT_EBO impl_IRegionOfInterest2
 {
-    auto shim() const { return impl::shim<D, IRegionOfInterest2>(this); }
-
-public:
-
     Windows::Media::Devices::RegionOfInterestType Type() const;
     void Type(Windows::Media::Devices::RegionOfInterestType value) const;
     bool BoundsNormalized() const;
@@ -676,12 +560,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IRegionsOfInterestControl
+struct WINRT_EBO impl_IRegionsOfInterestControl
 {
-    auto shim() const { return impl::shim<D, IRegionsOfInterestControl>(this); }
-
-public:
-
     uint32_t MaxRegions() const;
     Windows::Foundation::IAsyncAction SetRegionsAsync(const Windows::Foundation::Collections::IIterable<Windows::Media::Devices::RegionOfInterest> & regions) const;
     Windows::Foundation::IAsyncAction SetRegionsAsync(const Windows::Foundation::Collections::IIterable<Windows::Media::Devices::RegionOfInterest> & regions, bool lockValues) const;
@@ -692,24 +572,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISceneModeControl
+struct WINRT_EBO impl_ISceneModeControl
 {
-    auto shim() const { return impl::shim<D, ISceneModeControl>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::CaptureSceneMode> SupportedModes() const;
     Windows::Media::Devices::CaptureSceneMode Value() const;
     Windows::Foundation::IAsyncAction SetValueAsync(Windows::Media::Devices::CaptureSceneMode sceneMode) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITorchControl
+struct WINRT_EBO impl_ITorchControl
 {
-    auto shim() const { return impl::shim<D, ITorchControl>(this); }
-
-public:
-
     bool Supported() const;
     bool PowerSupported() const;
     bool Enabled() const;
@@ -719,12 +591,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVideoDeviceController
+struct WINRT_EBO impl_IVideoDeviceController
 {
-    auto shim() const { return impl::shim<D, IVideoDeviceController>(this); }
-
-public:
-
     Windows::Media::Devices::MediaDeviceControl Brightness() const;
     Windows::Media::Devices::MediaDeviceControl Contrast() const;
     Windows::Media::Devices::MediaDeviceControl Hue() const;
@@ -741,12 +609,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IWhiteBalanceControl
+struct WINRT_EBO impl_IWhiteBalanceControl
 {
-    auto shim() const { return impl::shim<D, IWhiteBalanceControl>(this); }
-
-public:
-
     bool Supported() const;
     Windows::Media::Devices::ColorTemperaturePreset Preset() const;
     Windows::Foundation::IAsyncAction SetPresetAsync(Windows::Media::Devices::ColorTemperaturePreset preset) const;
@@ -758,12 +622,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IZoomControl
+struct WINRT_EBO impl_IZoomControl
 {
-    auto shim() const { return impl::shim<D, IZoomControl>(this); }
-
-public:
-
     bool Supported() const;
     float Min() const;
     float Max() const;
@@ -773,24 +633,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IZoomControl2
+struct WINRT_EBO impl_IZoomControl2
 {
-    auto shim() const { return impl::shim<D, IZoomControl2>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::ZoomTransitionMode> SupportedModes() const;
     Windows::Media::Devices::ZoomTransitionMode Mode() const;
     void Configure(const Windows::Media::Devices::ZoomSettings & settings) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IZoomSettings
+struct WINRT_EBO impl_IZoomSettings
 {
-    auto shim() const { return impl::shim<D, IZoomSettings>(this); }
-
-public:
-
     Windows::Media::Devices::ZoomTransitionMode Mode() const;
     void Mode(Windows::Media::Devices::ZoomTransitionMode value) const;
     float Value() const;

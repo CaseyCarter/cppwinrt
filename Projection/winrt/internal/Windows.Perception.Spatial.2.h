@@ -130,12 +130,8 @@ template <> struct __declspec(uuid("3a950aa3-9c65-586e-af75-1acf07190e90")) __de
 namespace Windows::Perception::Spatial {
 
 template <typename D>
-class WINRT_EBO impl_ISpatialAnchor
+struct WINRT_EBO impl_ISpatialAnchor
 {
-    auto shim() const { return impl::shim<D, ISpatialAnchor>(this); }
-
-public:
-
     Windows::Perception::Spatial::SpatialCoordinateSystem CoordinateSystem() const;
     Windows::Perception::Spatial::SpatialCoordinateSystem RawCoordinateSystem() const;
     event_token RawCoordinateSystemAdjusted(const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialAnchor, Windows::Perception::Spatial::SpatialAnchorRawCoordinateSystemAdjustedEventArgs> & handler) const;
@@ -145,54 +141,34 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialAnchor2
+struct WINRT_EBO impl_ISpatialAnchor2
 {
-    auto shim() const { return impl::shim<D, ISpatialAnchor2>(this); }
-
-public:
-
     bool RemovedByUser() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialAnchorManagerStatics
+struct WINRT_EBO impl_ISpatialAnchorManagerStatics
 {
-    auto shim() const { return impl::shim<D, ISpatialAnchorManagerStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialAnchorStore> RequestStoreAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialAnchorRawCoordinateSystemAdjustedEventArgs
+struct WINRT_EBO impl_ISpatialAnchorRawCoordinateSystemAdjustedEventArgs
 {
-    auto shim() const { return impl::shim<D, ISpatialAnchorRawCoordinateSystemAdjustedEventArgs>(this); }
-
-public:
-
     Windows::Foundation::Numerics::float4x4 OldRawCoordinateSystemToNewRawCoordinateSystemTransform() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialAnchorStatics
+struct WINRT_EBO impl_ISpatialAnchorStatics
 {
-    auto shim() const { return impl::shim<D, ISpatialAnchorStatics>(this); }
-
-public:
-
     Windows::Perception::Spatial::SpatialAnchor TryCreateRelativeTo(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const;
     Windows::Perception::Spatial::SpatialAnchor TryCreateRelativeTo(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem, const Windows::Foundation::Numerics::float3 & position) const;
     Windows::Perception::Spatial::SpatialAnchor TryCreateRelativeTo(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem, const Windows::Foundation::Numerics::float3 & position, const Windows::Foundation::Numerics::quaternion & orientation) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialAnchorStore
+struct WINRT_EBO impl_ISpatialAnchorStore
 {
-    auto shim() const { return impl::shim<D, ISpatialAnchorStore>(this); }
-
-public:
-
     Windows::Foundation::Collections::IMapView<hstring, Windows::Perception::Spatial::SpatialAnchor> GetAllSavedAnchors() const;
     bool TrySave(hstring_ref id, const Windows::Perception::Spatial::SpatialAnchor & anchor) const;
     void Remove(hstring_ref id) const;
@@ -200,33 +176,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialAnchorTransferManagerStatics
+struct WINRT_EBO impl_ISpatialAnchorTransferManagerStatics
 {
-    auto shim() const { return impl::shim<D, ISpatialAnchorTransferManagerStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMapView<hstring, Windows::Perception::Spatial::SpatialAnchor>> TryImportAnchorsAsync(const Windows::Storage::Streams::IInputStream & stream) const;
     Windows::Foundation::IAsyncOperation<bool> TryExportAnchorsAsync(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Perception::Spatial::SpatialAnchor>> & anchors, const Windows::Storage::Streams::IOutputStream & stream) const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::Perception::Spatial::SpatialPerceptionAccessStatus> RequestAccessAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialBoundingVolume
+struct WINRT_EBO impl_ISpatialBoundingVolume
 {
-    auto shim() const { return impl::shim<D, ISpatialBoundingVolume>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialBoundingVolumeStatics
+struct WINRT_EBO impl_ISpatialBoundingVolumeStatics
 {
-    auto shim() const { return impl::shim<D, ISpatialBoundingVolumeStatics>(this); }
-
-public:
-
     Windows::Perception::Spatial::SpatialBoundingVolume FromBox(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem, const Windows::Perception::Spatial::SpatialBoundingBox & box) const;
     Windows::Perception::Spatial::SpatialBoundingVolume FromOrientedBox(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem, const Windows::Perception::Spatial::SpatialBoundingOrientedBox & box) const;
     Windows::Perception::Spatial::SpatialBoundingVolume FromSphere(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem, const Windows::Perception::Spatial::SpatialBoundingSphere & sphere) const;
@@ -234,22 +198,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialCoordinateSystem
+struct WINRT_EBO impl_ISpatialCoordinateSystem
 {
-    auto shim() const { return impl::shim<D, ISpatialCoordinateSystem>(this); }
-
-public:
-
     Windows::Foundation::IReference<Windows::Foundation::Numerics::float4x4> TryGetTransformTo(const Windows::Perception::Spatial::SpatialCoordinateSystem & target) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialLocation
+struct WINRT_EBO impl_ISpatialLocation
 {
-    auto shim() const { return impl::shim<D, ISpatialLocation>(this); }
-
-public:
-
     Windows::Foundation::Numerics::float3 Position() const;
     Windows::Foundation::Numerics::quaternion Orientation() const;
     Windows::Foundation::Numerics::float3 AbsoluteLinearVelocity() const;
@@ -259,12 +215,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialLocator
+struct WINRT_EBO impl_ISpatialLocator
 {
-    auto shim() const { return impl::shim<D, ISpatialLocator>(this); }
-
-public:
-
     Windows::Perception::Spatial::SpatialLocatability Locatability() const;
     event_token LocatabilityChanged(const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::IInspectable> & handler) const;
     using LocatabilityChanged_revoker = event_revoker<ISpatialLocator>;
@@ -286,12 +238,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialLocatorAttachedFrameOfReference
+struct WINRT_EBO impl_ISpatialLocatorAttachedFrameOfReference
 {
-    auto shim() const { return impl::shim<D, ISpatialLocatorAttachedFrameOfReference>(this); }
-
-public:
-
     Windows::Foundation::Numerics::float3 RelativePosition() const;
     void RelativePosition(const Windows::Foundation::Numerics::float3 & value) const;
     Windows::Foundation::Numerics::quaternion RelativeOrientation() const;
@@ -302,33 +250,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialLocatorPositionalTrackingDeactivatingEventArgs
+struct WINRT_EBO impl_ISpatialLocatorPositionalTrackingDeactivatingEventArgs
 {
-    auto shim() const { return impl::shim<D, ISpatialLocatorPositionalTrackingDeactivatingEventArgs>(this); }
-
-public:
-
     bool Canceled() const;
     void Canceled(bool value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialLocatorStatics
+struct WINRT_EBO impl_ISpatialLocatorStatics
 {
-    auto shim() const { return impl::shim<D, ISpatialLocatorStatics>(this); }
-
-public:
-
     Windows::Perception::Spatial::SpatialLocator GetDefault() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpatialStationaryFrameOfReference
+struct WINRT_EBO impl_ISpatialStationaryFrameOfReference
 {
-    auto shim() const { return impl::shim<D, ISpatialStationaryFrameOfReference>(this); }
-
-public:
-
     Windows::Perception::Spatial::SpatialCoordinateSystem CoordinateSystem() const;
 };
 

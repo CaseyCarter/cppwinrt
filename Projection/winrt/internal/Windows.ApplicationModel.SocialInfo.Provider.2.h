@@ -80,12 +80,8 @@ template <> struct __declspec(uuid("c1d3d1a2-ae17-5a5f-b5a2-bdcc8844889a")) __de
 namespace Windows::ApplicationModel::SocialInfo::Provider {
 
 template <typename D>
-class WINRT_EBO impl_ISocialDashboardItemUpdater
+struct WINRT_EBO impl_ISocialDashboardItemUpdater
 {
-    auto shim() const { return impl::shim<D, ISocialDashboardItemUpdater>(this); }
-
-public:
-
     hstring OwnerRemoteId() const;
     Windows::ApplicationModel::SocialInfo::SocialFeedContent Content() const;
     Windows::Foundation::DateTime Timestamp() const;
@@ -98,12 +94,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISocialFeedUpdater
+struct WINRT_EBO impl_ISocialFeedUpdater
 {
-    auto shim() const { return impl::shim<D, ISocialFeedUpdater>(this); }
-
-public:
-
     hstring OwnerRemoteId() const;
     Windows::ApplicationModel::SocialInfo::SocialFeedKind Kind() const;
     Windows::Foundation::Collections::IVector<Windows::ApplicationModel::SocialInfo::SocialFeedItem> Items() const;
@@ -111,12 +103,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISocialInfoProviderManagerStatics
+struct WINRT_EBO impl_ISocialInfoProviderManagerStatics
 {
-    auto shim() const { return impl::shim<D, ISocialInfoProviderManagerStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::SocialInfo::Provider::SocialFeedUpdater> CreateSocialFeedUpdaterAsync(Windows::ApplicationModel::SocialInfo::SocialFeedKind kind, Windows::ApplicationModel::SocialInfo::SocialFeedUpdateMode mode, hstring_ref ownerRemoteId) const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::SocialInfo::Provider::SocialDashboardItemUpdater> CreateDashboardItemUpdaterAsync(hstring_ref ownerRemoteId) const;
     void UpdateBadgeCountValue(hstring_ref itemRemoteId, int32_t newCount) const;

@@ -1198,531 +1198,531 @@ namespace Windows::Storage::Streams {
 template <typename D> uint32_t impl_IDataReader<D>::UnconsumedBufferLength() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_UnconsumedBufferLength(&value));
+    check_hresult(static_cast<const IDataReader &>(static_cast<const D &>(*this))->get_UnconsumedBufferLength(&value));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::UnicodeEncoding impl_IDataReader<D>::UnicodeEncoding() const
 {
     Windows::Storage::Streams::UnicodeEncoding value {};
-    check_hresult(shim()->get_UnicodeEncoding(&value));
+    check_hresult(static_cast<const IDataReader &>(static_cast<const D &>(*this))->get_UnicodeEncoding(&value));
     return value;
 }
 
 template <typename D> void impl_IDataReader<D>::UnicodeEncoding(Windows::Storage::Streams::UnicodeEncoding value) const
 {
-    check_hresult(shim()->put_UnicodeEncoding(value));
+    check_hresult(static_cast<const IDataReader &>(static_cast<const D &>(*this))->put_UnicodeEncoding(value));
 }
 
 template <typename D> Windows::Storage::Streams::ByteOrder impl_IDataReader<D>::ByteOrder() const
 {
     Windows::Storage::Streams::ByteOrder value {};
-    check_hresult(shim()->get_ByteOrder(&value));
+    check_hresult(static_cast<const IDataReader &>(static_cast<const D &>(*this))->get_ByteOrder(&value));
     return value;
 }
 
 template <typename D> void impl_IDataReader<D>::ByteOrder(Windows::Storage::Streams::ByteOrder value) const
 {
-    check_hresult(shim()->put_ByteOrder(value));
+    check_hresult(static_cast<const IDataReader &>(static_cast<const D &>(*this))->put_ByteOrder(value));
 }
 
 template <typename D> Windows::Storage::Streams::InputStreamOptions impl_IDataReader<D>::InputStreamOptions() const
 {
     Windows::Storage::Streams::InputStreamOptions value {};
-    check_hresult(shim()->get_InputStreamOptions(&value));
+    check_hresult(static_cast<const IDataReader &>(static_cast<const D &>(*this))->get_InputStreamOptions(&value));
     return value;
 }
 
 template <typename D> void impl_IDataReader<D>::InputStreamOptions(Windows::Storage::Streams::InputStreamOptions value) const
 {
-    check_hresult(shim()->put_InputStreamOptions(value));
+    check_hresult(static_cast<const IDataReader &>(static_cast<const D &>(*this))->put_InputStreamOptions(value));
 }
 
 template <typename D> uint8_t impl_IDataReader<D>::ReadByte() const
 {
     uint8_t value {};
-    check_hresult(shim()->abi_ReadByte(&value));
+    check_hresult(static_cast<const IDataReader &>(static_cast<const D &>(*this))->abi_ReadByte(&value));
     return value;
 }
 
 template <typename D> void impl_IDataReader<D>::ReadBytes(array_ref<uint8_t> value) const
 {
-    check_hresult(shim()->abi_ReadBytes(value.size(), get(value)));
+    check_hresult(static_cast<const IDataReader &>(static_cast<const D &>(*this))->abi_ReadBytes(value.size(), get(value)));
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IDataReader<D>::ReadBuffer(uint32_t length) const
 {
     Windows::Storage::Streams::IBuffer buffer;
-    check_hresult(shim()->abi_ReadBuffer(length, put(buffer)));
+    check_hresult(static_cast<const IDataReader &>(static_cast<const D &>(*this))->abi_ReadBuffer(length, put(buffer)));
     return buffer;
 }
 
 template <typename D> bool impl_IDataReader<D>::ReadBoolean() const
 {
     bool value {};
-    check_hresult(shim()->abi_ReadBoolean(&value));
+    check_hresult(static_cast<const IDataReader &>(static_cast<const D &>(*this))->abi_ReadBoolean(&value));
     return value;
 }
 
 template <typename D> GUID impl_IDataReader<D>::ReadGuid() const
 {
     GUID value {};
-    check_hresult(shim()->abi_ReadGuid(&value));
+    check_hresult(static_cast<const IDataReader &>(static_cast<const D &>(*this))->abi_ReadGuid(&value));
     return value;
 }
 
 template <typename D> int16_t impl_IDataReader<D>::ReadInt16() const
 {
     int16_t value {};
-    check_hresult(shim()->abi_ReadInt16(&value));
+    check_hresult(static_cast<const IDataReader &>(static_cast<const D &>(*this))->abi_ReadInt16(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IDataReader<D>::ReadInt32() const
 {
     int32_t value {};
-    check_hresult(shim()->abi_ReadInt32(&value));
+    check_hresult(static_cast<const IDataReader &>(static_cast<const D &>(*this))->abi_ReadInt32(&value));
     return value;
 }
 
 template <typename D> int64_t impl_IDataReader<D>::ReadInt64() const
 {
     int64_t value {};
-    check_hresult(shim()->abi_ReadInt64(&value));
+    check_hresult(static_cast<const IDataReader &>(static_cast<const D &>(*this))->abi_ReadInt64(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IDataReader<D>::ReadUInt16() const
 {
     uint16_t value {};
-    check_hresult(shim()->abi_ReadUInt16(&value));
+    check_hresult(static_cast<const IDataReader &>(static_cast<const D &>(*this))->abi_ReadUInt16(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IDataReader<D>::ReadUInt32() const
 {
     uint32_t value {};
-    check_hresult(shim()->abi_ReadUInt32(&value));
+    check_hresult(static_cast<const IDataReader &>(static_cast<const D &>(*this))->abi_ReadUInt32(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IDataReader<D>::ReadUInt64() const
 {
     uint64_t value {};
-    check_hresult(shim()->abi_ReadUInt64(&value));
+    check_hresult(static_cast<const IDataReader &>(static_cast<const D &>(*this))->abi_ReadUInt64(&value));
     return value;
 }
 
 template <typename D> float impl_IDataReader<D>::ReadSingle() const
 {
     float value {};
-    check_hresult(shim()->abi_ReadSingle(&value));
+    check_hresult(static_cast<const IDataReader &>(static_cast<const D &>(*this))->abi_ReadSingle(&value));
     return value;
 }
 
 template <typename D> double impl_IDataReader<D>::ReadDouble() const
 {
     double value {};
-    check_hresult(shim()->abi_ReadDouble(&value));
+    check_hresult(static_cast<const IDataReader &>(static_cast<const D &>(*this))->abi_ReadDouble(&value));
     return value;
 }
 
 template <typename D> hstring impl_IDataReader<D>::ReadString(uint32_t codeUnitCount) const
 {
     hstring value;
-    check_hresult(shim()->abi_ReadString(codeUnitCount, put(value)));
+    check_hresult(static_cast<const IDataReader &>(static_cast<const D &>(*this))->abi_ReadString(codeUnitCount, put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IDataReader<D>::ReadDateTime() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->abi_ReadDateTime(put(value)));
+    check_hresult(static_cast<const IDataReader &>(static_cast<const D &>(*this))->abi_ReadDateTime(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IDataReader<D>::ReadTimeSpan() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->abi_ReadTimeSpan(put(value)));
+    check_hresult(static_cast<const IDataReader &>(static_cast<const D &>(*this))->abi_ReadTimeSpan(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::DataReaderLoadOperation impl_IDataReader<D>::LoadAsync(uint32_t count) const
 {
     Windows::Storage::Streams::DataReaderLoadOperation operation { nullptr };
-    check_hresult(shim()->abi_LoadAsync(count, put(operation)));
+    check_hresult(static_cast<const IDataReader &>(static_cast<const D &>(*this))->abi_LoadAsync(count, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IDataReader<D>::DetachBuffer() const
 {
     Windows::Storage::Streams::IBuffer buffer;
-    check_hresult(shim()->abi_DetachBuffer(put(buffer)));
+    check_hresult(static_cast<const IDataReader &>(static_cast<const D &>(*this))->abi_DetachBuffer(put(buffer)));
     return buffer;
 }
 
 template <typename D> Windows::Storage::Streams::IInputStream impl_IDataReader<D>::DetachStream() const
 {
     Windows::Storage::Streams::IInputStream stream;
-    check_hresult(shim()->abi_DetachStream(put(stream)));
+    check_hresult(static_cast<const IDataReader &>(static_cast<const D &>(*this))->abi_DetachStream(put(stream)));
     return stream;
 }
 
 template <typename D> Windows::Storage::Streams::DataReader impl_IDataReaderFactory<D>::CreateDataReader(const Windows::Storage::Streams::IInputStream & inputStream) const
 {
     Windows::Storage::Streams::DataReader dataReader { nullptr };
-    check_hresult(shim()->abi_CreateDataReader(get(inputStream), put(dataReader)));
+    check_hresult(static_cast<const IDataReaderFactory &>(static_cast<const D &>(*this))->abi_CreateDataReader(get(inputStream), put(dataReader)));
     return dataReader;
 }
 
 template <typename D> Windows::Storage::Streams::DataReader impl_IDataReaderStatics<D>::FromBuffer(const Windows::Storage::Streams::IBuffer & buffer) const
 {
     Windows::Storage::Streams::DataReader dataReader { nullptr };
-    check_hresult(shim()->abi_FromBuffer(get(buffer), put(dataReader)));
+    check_hresult(static_cast<const IDataReaderStatics &>(static_cast<const D &>(*this))->abi_FromBuffer(get(buffer), put(dataReader)));
     return dataReader;
 }
 
 template <typename D> uint32_t impl_IDataWriter<D>::UnstoredBufferLength() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_UnstoredBufferLength(&value));
+    check_hresult(static_cast<const IDataWriter &>(static_cast<const D &>(*this))->get_UnstoredBufferLength(&value));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::UnicodeEncoding impl_IDataWriter<D>::UnicodeEncoding() const
 {
     Windows::Storage::Streams::UnicodeEncoding value {};
-    check_hresult(shim()->get_UnicodeEncoding(&value));
+    check_hresult(static_cast<const IDataWriter &>(static_cast<const D &>(*this))->get_UnicodeEncoding(&value));
     return value;
 }
 
 template <typename D> void impl_IDataWriter<D>::UnicodeEncoding(Windows::Storage::Streams::UnicodeEncoding value) const
 {
-    check_hresult(shim()->put_UnicodeEncoding(value));
+    check_hresult(static_cast<const IDataWriter &>(static_cast<const D &>(*this))->put_UnicodeEncoding(value));
 }
 
 template <typename D> Windows::Storage::Streams::ByteOrder impl_IDataWriter<D>::ByteOrder() const
 {
     Windows::Storage::Streams::ByteOrder value {};
-    check_hresult(shim()->get_ByteOrder(&value));
+    check_hresult(static_cast<const IDataWriter &>(static_cast<const D &>(*this))->get_ByteOrder(&value));
     return value;
 }
 
 template <typename D> void impl_IDataWriter<D>::ByteOrder(Windows::Storage::Streams::ByteOrder value) const
 {
-    check_hresult(shim()->put_ByteOrder(value));
+    check_hresult(static_cast<const IDataWriter &>(static_cast<const D &>(*this))->put_ByteOrder(value));
 }
 
 template <typename D> void impl_IDataWriter<D>::WriteByte(uint8_t value) const
 {
-    check_hresult(shim()->abi_WriteByte(value));
+    check_hresult(static_cast<const IDataWriter &>(static_cast<const D &>(*this))->abi_WriteByte(value));
 }
 
 template <typename D> void impl_IDataWriter<D>::WriteBytes(array_ref<const uint8_t> value) const
 {
-    check_hresult(shim()->abi_WriteBytes(value.size(), get(value)));
+    check_hresult(static_cast<const IDataWriter &>(static_cast<const D &>(*this))->abi_WriteBytes(value.size(), get(value)));
 }
 
 template <typename D> void impl_IDataWriter<D>::WriteBuffer(const Windows::Storage::Streams::IBuffer & buffer) const
 {
-    check_hresult(shim()->abi_WriteBuffer(get(buffer)));
+    check_hresult(static_cast<const IDataWriter &>(static_cast<const D &>(*this))->abi_WriteBuffer(get(buffer)));
 }
 
 template <typename D> void impl_IDataWriter<D>::WriteBuffer(const Windows::Storage::Streams::IBuffer & buffer, uint32_t start, uint32_t count) const
 {
-    check_hresult(shim()->abi_WriteBufferRange(get(buffer), start, count));
+    check_hresult(static_cast<const IDataWriter &>(static_cast<const D &>(*this))->abi_WriteBufferRange(get(buffer), start, count));
 }
 
 template <typename D> void impl_IDataWriter<D>::WriteBoolean(bool value) const
 {
-    check_hresult(shim()->abi_WriteBoolean(value));
+    check_hresult(static_cast<const IDataWriter &>(static_cast<const D &>(*this))->abi_WriteBoolean(value));
 }
 
 template <typename D> void impl_IDataWriter<D>::WriteGuid(GUID value) const
 {
-    check_hresult(shim()->abi_WriteGuid(value));
+    check_hresult(static_cast<const IDataWriter &>(static_cast<const D &>(*this))->abi_WriteGuid(value));
 }
 
 template <typename D> void impl_IDataWriter<D>::WriteInt16(int16_t value) const
 {
-    check_hresult(shim()->abi_WriteInt16(value));
+    check_hresult(static_cast<const IDataWriter &>(static_cast<const D &>(*this))->abi_WriteInt16(value));
 }
 
 template <typename D> void impl_IDataWriter<D>::WriteInt32(int32_t value) const
 {
-    check_hresult(shim()->abi_WriteInt32(value));
+    check_hresult(static_cast<const IDataWriter &>(static_cast<const D &>(*this))->abi_WriteInt32(value));
 }
 
 template <typename D> void impl_IDataWriter<D>::WriteInt64(int64_t value) const
 {
-    check_hresult(shim()->abi_WriteInt64(value));
+    check_hresult(static_cast<const IDataWriter &>(static_cast<const D &>(*this))->abi_WriteInt64(value));
 }
 
 template <typename D> void impl_IDataWriter<D>::WriteUInt16(uint16_t value) const
 {
-    check_hresult(shim()->abi_WriteUInt16(value));
+    check_hresult(static_cast<const IDataWriter &>(static_cast<const D &>(*this))->abi_WriteUInt16(value));
 }
 
 template <typename D> void impl_IDataWriter<D>::WriteUInt32(uint32_t value) const
 {
-    check_hresult(shim()->abi_WriteUInt32(value));
+    check_hresult(static_cast<const IDataWriter &>(static_cast<const D &>(*this))->abi_WriteUInt32(value));
 }
 
 template <typename D> void impl_IDataWriter<D>::WriteUInt64(uint64_t value) const
 {
-    check_hresult(shim()->abi_WriteUInt64(value));
+    check_hresult(static_cast<const IDataWriter &>(static_cast<const D &>(*this))->abi_WriteUInt64(value));
 }
 
 template <typename D> void impl_IDataWriter<D>::WriteSingle(float value) const
 {
-    check_hresult(shim()->abi_WriteSingle(value));
+    check_hresult(static_cast<const IDataWriter &>(static_cast<const D &>(*this))->abi_WriteSingle(value));
 }
 
 template <typename D> void impl_IDataWriter<D>::WriteDouble(double value) const
 {
-    check_hresult(shim()->abi_WriteDouble(value));
+    check_hresult(static_cast<const IDataWriter &>(static_cast<const D &>(*this))->abi_WriteDouble(value));
 }
 
 template <typename D> void impl_IDataWriter<D>::WriteDateTime(const Windows::Foundation::DateTime & value) const
 {
-    check_hresult(shim()->abi_WriteDateTime(get(value)));
+    check_hresult(static_cast<const IDataWriter &>(static_cast<const D &>(*this))->abi_WriteDateTime(get(value)));
 }
 
 template <typename D> void impl_IDataWriter<D>::WriteTimeSpan(const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(shim()->abi_WriteTimeSpan(get(value)));
+    check_hresult(static_cast<const IDataWriter &>(static_cast<const D &>(*this))->abi_WriteTimeSpan(get(value)));
 }
 
 template <typename D> uint32_t impl_IDataWriter<D>::WriteString(hstring_ref value) const
 {
     uint32_t codeUnitCount {};
-    check_hresult(shim()->abi_WriteString(get(value), &codeUnitCount));
+    check_hresult(static_cast<const IDataWriter &>(static_cast<const D &>(*this))->abi_WriteString(get(value), &codeUnitCount));
     return codeUnitCount;
 }
 
 template <typename D> uint32_t impl_IDataWriter<D>::MeasureString(hstring_ref value) const
 {
     uint32_t codeUnitCount {};
-    check_hresult(shim()->abi_MeasureString(get(value), &codeUnitCount));
+    check_hresult(static_cast<const IDataWriter &>(static_cast<const D &>(*this))->abi_MeasureString(get(value), &codeUnitCount));
     return codeUnitCount;
 }
 
 template <typename D> Windows::Storage::Streams::DataWriterStoreOperation impl_IDataWriter<D>::StoreAsync() const
 {
     Windows::Storage::Streams::DataWriterStoreOperation operation { nullptr };
-    check_hresult(shim()->abi_StoreAsync(put(operation)));
+    check_hresult(static_cast<const IDataWriter &>(static_cast<const D &>(*this))->abi_StoreAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IDataWriter<D>::FlushAsync() const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(shim()->abi_FlushAsync(put(operation)));
+    check_hresult(static_cast<const IDataWriter &>(static_cast<const D &>(*this))->abi_FlushAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IDataWriter<D>::DetachBuffer() const
 {
     Windows::Storage::Streams::IBuffer buffer;
-    check_hresult(shim()->abi_DetachBuffer(put(buffer)));
+    check_hresult(static_cast<const IDataWriter &>(static_cast<const D &>(*this))->abi_DetachBuffer(put(buffer)));
     return buffer;
 }
 
 template <typename D> Windows::Storage::Streams::IOutputStream impl_IDataWriter<D>::DetachStream() const
 {
     Windows::Storage::Streams::IOutputStream outputStream;
-    check_hresult(shim()->abi_DetachStream(put(outputStream)));
+    check_hresult(static_cast<const IDataWriter &>(static_cast<const D &>(*this))->abi_DetachStream(put(outputStream)));
     return outputStream;
 }
 
 template <typename D> Windows::Storage::Streams::DataWriter impl_IDataWriterFactory<D>::CreateDataWriter(const Windows::Storage::Streams::IOutputStream & outputStream) const
 {
     Windows::Storage::Streams::DataWriter dataWriter { nullptr };
-    check_hresult(shim()->abi_CreateDataWriter(get(outputStream), put(dataWriter)));
+    check_hresult(static_cast<const IDataWriterFactory &>(static_cast<const D &>(*this))->abi_CreateDataWriter(get(outputStream), put(dataWriter)));
     return dataWriter;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamWithContentType> impl_IRandomAccessStreamReference<D>::OpenReadAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamWithContentType> operation;
-    check_hresult(shim()->abi_OpenReadAsync(put(operation)));
+    check_hresult(static_cast<const IRandomAccessStreamReference &>(static_cast<const D &>(*this))->abi_OpenReadAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t> impl_IRandomAccessStreamStatics<D>::CopyAsync(const Windows::Storage::Streams::IInputStream & source, const Windows::Storage::Streams::IOutputStream & destination) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t> operation;
-    check_hresult(shim()->abi_CopyAsync(get(source), get(destination), put(operation)));
+    check_hresult(static_cast<const IRandomAccessStreamStatics &>(static_cast<const D &>(*this))->abi_CopyAsync(get(source), get(destination), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t> impl_IRandomAccessStreamStatics<D>::CopyAsync(const Windows::Storage::Streams::IInputStream & source, const Windows::Storage::Streams::IOutputStream & destination, uint64_t bytesToCopy) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t> operation;
-    check_hresult(shim()->abi_CopySizeAsync(get(source), get(destination), bytesToCopy, put(operation)));
+    check_hresult(static_cast<const IRandomAccessStreamStatics &>(static_cast<const D &>(*this))->abi_CopySizeAsync(get(source), get(destination), bytesToCopy, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t> impl_IRandomAccessStreamStatics<D>::CopyAndCloseAsync(const Windows::Storage::Streams::IInputStream & source, const Windows::Storage::Streams::IOutputStream & destination) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t> operation;
-    check_hresult(shim()->abi_CopyAndCloseAsync(get(source), get(destination), put(operation)));
+    check_hresult(static_cast<const IRandomAccessStreamStatics &>(static_cast<const D &>(*this))->abi_CopyAndCloseAsync(get(source), get(destination), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Storage::Streams::Buffer impl_IBufferFactory<D>::Create(uint32_t capacity) const
 {
     Windows::Storage::Streams::Buffer value { nullptr };
-    check_hresult(shim()->abi_Create(capacity, put(value)));
+    check_hresult(static_cast<const IBufferFactory &>(static_cast<const D &>(*this))->abi_Create(capacity, put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IBuffer<D>::Capacity() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_Capacity(&value));
+    check_hresult(static_cast<const IBuffer &>(static_cast<const D &>(*this))->get_Capacity(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBuffer<D>::Length() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_Length(&value));
+    check_hresult(static_cast<const IBuffer &>(static_cast<const D &>(*this))->get_Length(&value));
     return value;
 }
 
 template <typename D> void impl_IBuffer<D>::Length(uint32_t value) const
 {
-    check_hresult(shim()->put_Length(value));
+    check_hresult(static_cast<const IBuffer &>(static_cast<const D &>(*this))->put_Length(value));
 }
 
 template <typename D> Windows::Storage::Streams::Buffer impl_IBufferStatics<D>::CreateCopyFromMemoryBuffer(const Windows::Foundation::IMemoryBuffer & input) const
 {
     Windows::Storage::Streams::Buffer value { nullptr };
-    check_hresult(shim()->abi_CreateCopyFromMemoryBuffer(get(input), put(value)));
+    check_hresult(static_cast<const IBufferStatics &>(static_cast<const D &>(*this))->abi_CreateCopyFromMemoryBuffer(get(input), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::MemoryBuffer impl_IBufferStatics<D>::CreateMemoryBufferOverIBuffer(const Windows::Storage::Streams::IBuffer & input) const
 {
     Windows::Foundation::MemoryBuffer value { nullptr };
-    check_hresult(shim()->abi_CreateMemoryBufferOverIBuffer(get(input), put(value)));
+    check_hresult(static_cast<const IBufferStatics &>(static_cast<const D &>(*this))->abi_CreateMemoryBufferOverIBuffer(get(input), put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IContentTypeProvider<D>::ContentType() const
 {
     hstring value;
-    check_hresult(shim()->get_ContentType(put(value)));
+    check_hresult(static_cast<const IContentTypeProvider &>(static_cast<const D &>(*this))->get_ContentType(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IInputStream> impl_IInputStreamReference<D>::OpenSequentialReadAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IInputStream> operation;
-    check_hresult(shim()->abi_OpenSequentialReadAsync(put(operation)));
+    check_hresult(static_cast<const IInputStreamReference &>(static_cast<const D &>(*this))->abi_OpenSequentialReadAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Storage::Streams::RandomAccessStreamReference impl_IRandomAccessStreamReferenceStatics<D>::CreateFromFile(const Windows::Storage::IStorageFile & file) const
 {
     Windows::Storage::Streams::RandomAccessStreamReference streamReference { nullptr };
-    check_hresult(shim()->abi_CreateFromFile(get(file), put(streamReference)));
+    check_hresult(static_cast<const IRandomAccessStreamReferenceStatics &>(static_cast<const D &>(*this))->abi_CreateFromFile(get(file), put(streamReference)));
     return streamReference;
 }
 
 template <typename D> Windows::Storage::Streams::RandomAccessStreamReference impl_IRandomAccessStreamReferenceStatics<D>::CreateFromUri(const Windows::Foundation::Uri & uri) const
 {
     Windows::Storage::Streams::RandomAccessStreamReference streamReference { nullptr };
-    check_hresult(shim()->abi_CreateFromUri(get(uri), put(streamReference)));
+    check_hresult(static_cast<const IRandomAccessStreamReferenceStatics &>(static_cast<const D &>(*this))->abi_CreateFromUri(get(uri), put(streamReference)));
     return streamReference;
 }
 
 template <typename D> Windows::Storage::Streams::RandomAccessStreamReference impl_IRandomAccessStreamReferenceStatics<D>::CreateFromStream(const Windows::Storage::Streams::IRandomAccessStream & stream) const
 {
     Windows::Storage::Streams::RandomAccessStreamReference streamReference { nullptr };
-    check_hresult(shim()->abi_CreateFromStream(get(stream), put(streamReference)));
+    check_hresult(static_cast<const IRandomAccessStreamReferenceStatics &>(static_cast<const D &>(*this))->abi_CreateFromStream(get(stream), put(streamReference)));
     return streamReference;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Storage::Streams::IBuffer, uint32_t> impl_IInputStream<D>::ReadAsync(const Windows::Storage::Streams::IBuffer & buffer, uint32_t count, Windows::Storage::Streams::InputStreamOptions options) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Storage::Streams::IBuffer, uint32_t> operation;
-    check_hresult(shim()->abi_ReadAsync(get(buffer), count, options, put(operation)));
+    check_hresult(static_cast<const IInputStream &>(static_cast<const D &>(*this))->abi_ReadAsync(get(buffer), count, options, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<uint32_t, uint32_t> impl_IOutputStream<D>::WriteAsync(const Windows::Storage::Streams::IBuffer & buffer) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<uint32_t, uint32_t> operation;
-    check_hresult(shim()->abi_WriteAsync(get(buffer), put(operation)));
+    check_hresult(static_cast<const IOutputStream &>(static_cast<const D &>(*this))->abi_WriteAsync(get(buffer), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IOutputStream<D>::FlushAsync() const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(shim()->abi_FlushAsync(put(operation)));
+    check_hresult(static_cast<const IOutputStream &>(static_cast<const D &>(*this))->abi_FlushAsync(put(operation)));
     return operation;
 }
 
 template <typename D> uint64_t impl_IRandomAccessStream<D>::Size() const
 {
     uint64_t value {};
-    check_hresult(shim()->get_Size(&value));
+    check_hresult(static_cast<const IRandomAccessStream &>(static_cast<const D &>(*this))->get_Size(&value));
     return value;
 }
 
 template <typename D> void impl_IRandomAccessStream<D>::Size(uint64_t value) const
 {
-    check_hresult(shim()->put_Size(value));
+    check_hresult(static_cast<const IRandomAccessStream &>(static_cast<const D &>(*this))->put_Size(value));
 }
 
 template <typename D> Windows::Storage::Streams::IInputStream impl_IRandomAccessStream<D>::GetInputStreamAt(uint64_t position) const
 {
     Windows::Storage::Streams::IInputStream stream;
-    check_hresult(shim()->abi_GetInputStreamAt(position, put(stream)));
+    check_hresult(static_cast<const IRandomAccessStream &>(static_cast<const D &>(*this))->abi_GetInputStreamAt(position, put(stream)));
     return stream;
 }
 
 template <typename D> Windows::Storage::Streams::IOutputStream impl_IRandomAccessStream<D>::GetOutputStreamAt(uint64_t position) const
 {
     Windows::Storage::Streams::IOutputStream stream;
-    check_hresult(shim()->abi_GetOutputStreamAt(position, put(stream)));
+    check_hresult(static_cast<const IRandomAccessStream &>(static_cast<const D &>(*this))->abi_GetOutputStreamAt(position, put(stream)));
     return stream;
 }
 
 template <typename D> uint64_t impl_IRandomAccessStream<D>::Position() const
 {
     uint64_t value {};
-    check_hresult(shim()->get_Position(&value));
+    check_hresult(static_cast<const IRandomAccessStream &>(static_cast<const D &>(*this))->get_Position(&value));
     return value;
 }
 
 template <typename D> void impl_IRandomAccessStream<D>::Seek(uint64_t position) const
 {
-    check_hresult(shim()->abi_Seek(position));
+    check_hresult(static_cast<const IRandomAccessStream &>(static_cast<const D &>(*this))->abi_Seek(position));
 }
 
 template <typename D> Windows::Storage::Streams::IRandomAccessStream impl_IRandomAccessStream<D>::CloneStream() const
 {
     Windows::Storage::Streams::IRandomAccessStream stream;
-    check_hresult(shim()->abi_CloneStream(put(stream)));
+    check_hresult(static_cast<const IRandomAccessStream &>(static_cast<const D &>(*this))->abi_CloneStream(put(stream)));
     return stream;
 }
 
 template <typename D> bool impl_IRandomAccessStream<D>::CanRead() const
 {
     bool value {};
-    check_hresult(shim()->get_CanRead(&value));
+    check_hresult(static_cast<const IRandomAccessStream &>(static_cast<const D &>(*this))->get_CanRead(&value));
     return value;
 }
 
 template <typename D> bool impl_IRandomAccessStream<D>::CanWrite() const
 {
     bool value {};
-    check_hresult(shim()->get_CanWrite(&value));
+    check_hresult(static_cast<const IRandomAccessStream &>(static_cast<const D &>(*this))->get_CanWrite(&value));
     return value;
 }
 

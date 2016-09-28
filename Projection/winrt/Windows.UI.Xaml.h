@@ -8509,79 +8509,79 @@ namespace Windows::UI::Xaml {
 
 template <typename D> void impl_IDataTemplateExtension<D>::ResetTemplate() const
 {
-    check_hresult(shim()->abi_ResetTemplate());
+    check_hresult(static_cast<const IDataTemplateExtension &>(static_cast<const D &>(*this))->abi_ResetTemplate());
 }
 
 template <typename D> bool impl_IDataTemplateExtension<D>::ProcessBinding(uint32_t phase) const
 {
     bool returnValue {};
-    check_hresult(shim()->abi_ProcessBinding(phase, &returnValue));
+    check_hresult(static_cast<const IDataTemplateExtension &>(static_cast<const D &>(*this))->abi_ProcessBinding(phase, &returnValue));
     return returnValue;
 }
 
 template <typename D> int32_t impl_IDataTemplateExtension<D>::ProcessBindings(const Windows::UI::Xaml::Controls::ContainerContentChangingEventArgs & arg) const
 {
     int32_t returnValue {};
-    check_hresult(shim()->abi_ProcessBindings(get(arg), &returnValue));
+    check_hresult(static_cast<const IDataTemplateExtension &>(static_cast<const D &>(*this))->abi_ProcessBindings(get(arg), &returnValue));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyObject impl_IDataTemplate<D>::LoadContent() const
 {
     Windows::UI::Xaml::DependencyObject returnValue { nullptr };
-    check_hresult(shim()->abi_LoadContent(put(returnValue)));
+    check_hresult(static_cast<const IDataTemplate &>(static_cast<const D &>(*this))->abi_LoadContent(put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::DataTemplate impl_IDataTemplateFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::DataTemplate instance { nullptr };
-    check_hresult(shim()->abi_CreateInstance(get(outer), put(inner), put(instance)));
+    check_hresult(static_cast<const IDataTemplateFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IDataTemplateStatics2<D>::ExtensionInstanceProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_ExtensionInstanceProperty(put(value)));
+    check_hresult(static_cast<const IDataTemplateStatics2 &>(static_cast<const D &>(*this))->get_ExtensionInstanceProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::IDataTemplateExtension impl_IDataTemplateStatics2<D>::GetExtensionInstance(const Windows::UI::Xaml::FrameworkElement & element) const
 {
     Windows::UI::Xaml::IDataTemplateExtension value;
-    check_hresult(shim()->abi_GetExtensionInstance(get(element), put(value)));
+    check_hresult(static_cast<const IDataTemplateStatics2 &>(static_cast<const D &>(*this))->abi_GetExtensionInstance(get(element), put(value)));
     return value;
 }
 
 template <typename D> void impl_IDataTemplateStatics2<D>::SetExtensionInstance(const Windows::UI::Xaml::FrameworkElement & element, const Windows::UI::Xaml::IDataTemplateExtension & value) const
 {
-    check_hresult(shim()->abi_SetExtensionInstance(get(element), get(value)));
+    check_hresult(static_cast<const IDataTemplateStatics2 &>(static_cast<const D &>(*this))->abi_SetExtensionInstance(get(element), get(value)));
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IDispatcherTimer<D>::Interval() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_Interval(put(value)));
+    check_hresult(static_cast<const IDispatcherTimer &>(static_cast<const D &>(*this))->get_Interval(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDispatcherTimer<D>::Interval(const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(shim()->put_Interval(get(value)));
+    check_hresult(static_cast<const IDispatcherTimer &>(static_cast<const D &>(*this))->put_Interval(get(value)));
 }
 
 template <typename D> bool impl_IDispatcherTimer<D>::IsEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_IsEnabled(&value));
+    check_hresult(static_cast<const IDispatcherTimer &>(static_cast<const D &>(*this))->get_IsEnabled(&value));
     return value;
 }
 
 template <typename D> event_token impl_IDispatcherTimer<D>::Tick(const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_Tick(get(value), &token));
+    check_hresult(static_cast<const IDispatcherTimer &>(static_cast<const D &>(*this))->add_Tick(get(value), &token));
     return token;
 }
 
@@ -8592,607 +8592,607 @@ template <typename D> event_revoker<IDispatcherTimer> impl_IDispatcherTimer<D>::
 
 template <typename D> void impl_IDispatcherTimer<D>::Tick(event_token token) const
 {
-    check_hresult(shim()->remove_Tick(token));
+    check_hresult(static_cast<const IDispatcherTimer &>(static_cast<const D &>(*this))->remove_Tick(token));
 }
 
 template <typename D> void impl_IDispatcherTimer<D>::Start() const
 {
-    check_hresult(shim()->abi_Start());
+    check_hresult(static_cast<const IDispatcherTimer &>(static_cast<const D &>(*this))->abi_Start());
 }
 
 template <typename D> void impl_IDispatcherTimer<D>::Stop() const
 {
-    check_hresult(shim()->abi_Stop());
+    check_hresult(static_cast<const IDispatcherTimer &>(static_cast<const D &>(*this))->abi_Stop());
 }
 
 template <typename D> Windows::UI::Xaml::DispatcherTimer impl_IDispatcherTimerFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::DispatcherTimer instance { nullptr };
-    check_hresult(shim()->abi_CreateInstance(get(outer), put(inner), put(instance)));
+    check_hresult(static_cast<const IDispatcherTimerFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::UI::Xaml::CornerRadius impl_ICornerRadiusHelperStatics<D>::FromRadii(double topLeft, double topRight, double bottomRight, double bottomLeft) const
 {
     Windows::UI::Xaml::CornerRadius returnValue {};
-    check_hresult(shim()->abi_FromRadii(topLeft, topRight, bottomRight, bottomLeft, put(returnValue)));
+    check_hresult(static_cast<const ICornerRadiusHelperStatics &>(static_cast<const D &>(*this))->abi_FromRadii(topLeft, topRight, bottomRight, bottomLeft, put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::CornerRadius impl_ICornerRadiusHelperStatics<D>::FromUniformRadius(double uniformRadius) const
 {
     Windows::UI::Xaml::CornerRadius returnValue {};
-    check_hresult(shim()->abi_FromUniformRadius(uniformRadius, put(returnValue)));
+    check_hresult(static_cast<const ICornerRadiusHelperStatics &>(static_cast<const D &>(*this))->abi_FromUniformRadius(uniformRadius, put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::Duration impl_IDurationHelperStatics<D>::Automatic() const
 {
     Windows::UI::Xaml::Duration value {};
-    check_hresult(shim()->get_Automatic(put(value)));
+    check_hresult(static_cast<const IDurationHelperStatics &>(static_cast<const D &>(*this))->get_Automatic(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Duration impl_IDurationHelperStatics<D>::Forever() const
 {
     Windows::UI::Xaml::Duration value {};
-    check_hresult(shim()->get_Forever(put(value)));
+    check_hresult(static_cast<const IDurationHelperStatics &>(static_cast<const D &>(*this))->get_Forever(put(value)));
     return value;
 }
 
 template <typename D> int32_t impl_IDurationHelperStatics<D>::Compare(const Windows::UI::Xaml::Duration & duration1, const Windows::UI::Xaml::Duration & duration2) const
 {
     int32_t returnValue {};
-    check_hresult(shim()->abi_Compare(get(duration1), get(duration2), &returnValue));
+    check_hresult(static_cast<const IDurationHelperStatics &>(static_cast<const D &>(*this))->abi_Compare(get(duration1), get(duration2), &returnValue));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::Duration impl_IDurationHelperStatics<D>::FromTimeSpan(const Windows::Foundation::TimeSpan & timeSpan) const
 {
     Windows::UI::Xaml::Duration returnValue {};
-    check_hresult(shim()->abi_FromTimeSpan(get(timeSpan), put(returnValue)));
+    check_hresult(static_cast<const IDurationHelperStatics &>(static_cast<const D &>(*this))->abi_FromTimeSpan(get(timeSpan), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> bool impl_IDurationHelperStatics<D>::GetHasTimeSpan(const Windows::UI::Xaml::Duration & target) const
 {
     bool value {};
-    check_hresult(shim()->abi_GetHasTimeSpan(get(target), &value));
+    check_hresult(static_cast<const IDurationHelperStatics &>(static_cast<const D &>(*this))->abi_GetHasTimeSpan(get(target), &value));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Duration impl_IDurationHelperStatics<D>::Add(const Windows::UI::Xaml::Duration & target, const Windows::UI::Xaml::Duration & duration) const
 {
     Windows::UI::Xaml::Duration returnValue {};
-    check_hresult(shim()->abi_Add(get(target), get(duration), put(returnValue)));
+    check_hresult(static_cast<const IDurationHelperStatics &>(static_cast<const D &>(*this))->abi_Add(get(target), get(duration), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> bool impl_IDurationHelperStatics<D>::Equals(const Windows::UI::Xaml::Duration & target, const Windows::UI::Xaml::Duration & value) const
 {
     bool returnValue {};
-    check_hresult(shim()->abi_Equals(get(target), get(value), &returnValue));
+    check_hresult(static_cast<const IDurationHelperStatics &>(static_cast<const D &>(*this))->abi_Equals(get(target), get(value), &returnValue));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::Duration impl_IDurationHelperStatics<D>::Subtract(const Windows::UI::Xaml::Duration & target, const Windows::UI::Xaml::Duration & duration) const
 {
     Windows::UI::Xaml::Duration returnValue {};
-    check_hresult(shim()->abi_Subtract(get(target), get(duration), put(returnValue)));
+    check_hresult(static_cast<const IDurationHelperStatics &>(static_cast<const D &>(*this))->abi_Subtract(get(target), get(duration), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::Thickness impl_IThicknessHelperStatics<D>::FromLengths(double left, double top, double right, double bottom) const
 {
     Windows::UI::Xaml::Thickness returnValue {};
-    check_hresult(shim()->abi_FromLengths(left, top, right, bottom, put(returnValue)));
+    check_hresult(static_cast<const IThicknessHelperStatics &>(static_cast<const D &>(*this))->abi_FromLengths(left, top, right, bottom, put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::Thickness impl_IThicknessHelperStatics<D>::FromUniformLength(double uniformLength) const
 {
     Windows::UI::Xaml::Thickness returnValue {};
-    check_hresult(shim()->abi_FromUniformLength(uniformLength, put(returnValue)));
+    check_hresult(static_cast<const IThicknessHelperStatics &>(static_cast<const D &>(*this))->abi_FromUniformLength(uniformLength, put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::IInspectable impl_IDataContextChangedEventArgs<D>::NewValue() const
 {
     Windows::IInspectable value;
-    check_hresult(shim()->get_NewValue(put(value)));
+    check_hresult(static_cast<const IDataContextChangedEventArgs &>(static_cast<const D &>(*this))->get_NewValue(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IDataContextChangedEventArgs<D>::Handled() const
 {
     bool value {};
-    check_hresult(shim()->get_Handled(&value));
+    check_hresult(static_cast<const IDataContextChangedEventArgs &>(static_cast<const D &>(*this))->get_Handled(&value));
     return value;
 }
 
 template <typename D> void impl_IDataContextChangedEventArgs<D>::Handled(bool value) const
 {
-    check_hresult(shim()->put_Handled(value));
+    check_hresult(static_cast<const IDataContextChangedEventArgs &>(static_cast<const D &>(*this))->put_Handled(value));
 }
 
 template <typename D> Windows::IInspectable impl_IDataTemplateKey<D>::DataType() const
 {
     Windows::IInspectable value;
-    check_hresult(shim()->get_DataType(put(value)));
+    check_hresult(static_cast<const IDataTemplateKey &>(static_cast<const D &>(*this))->get_DataType(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDataTemplateKey<D>::DataType(const Windows::IInspectable & value) const
 {
-    check_hresult(shim()->put_DataType(get(value)));
+    check_hresult(static_cast<const IDataTemplateKey &>(static_cast<const D &>(*this))->put_DataType(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::DataTemplateKey impl_IDataTemplateKeyFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::DataTemplateKey instance { nullptr };
-    check_hresult(shim()->abi_CreateInstance(get(outer), put(inner), put(instance)));
+    check_hresult(static_cast<const IDataTemplateKeyFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::UI::Xaml::DataTemplateKey impl_IDataTemplateKeyFactory<D>::CreateInstanceWithType(const Windows::IInspectable & dataType, const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::DataTemplateKey instance { nullptr };
-    check_hresult(shim()->abi_CreateInstanceWithType(get(dataType), get(outer), put(inner), put(instance)));
+    check_hresult(static_cast<const IDataTemplateKeyFactory &>(static_cast<const D &>(*this))->abi_CreateInstanceWithType(get(dataType), get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::IInspectable impl_IDependencyObject<D>::GetValue(const Windows::UI::Xaml::DependencyProperty & dp) const
 {
     Windows::IInspectable returnValue;
-    check_hresult(shim()->abi_GetValue(get(dp), put(returnValue)));
+    check_hresult(static_cast<const IDependencyObject &>(static_cast<const D &>(*this))->abi_GetValue(get(dp), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> void impl_IDependencyObject<D>::SetValue(const Windows::UI::Xaml::DependencyProperty & dp, const Windows::IInspectable & value) const
 {
-    check_hresult(shim()->abi_SetValue(get(dp), get(value)));
+    check_hresult(static_cast<const IDependencyObject &>(static_cast<const D &>(*this))->abi_SetValue(get(dp), get(value)));
 }
 
 template <typename D> void impl_IDependencyObject<D>::ClearValue(const Windows::UI::Xaml::DependencyProperty & dp) const
 {
-    check_hresult(shim()->abi_ClearValue(get(dp)));
+    check_hresult(static_cast<const IDependencyObject &>(static_cast<const D &>(*this))->abi_ClearValue(get(dp)));
 }
 
 template <typename D> Windows::IInspectable impl_IDependencyObject<D>::ReadLocalValue(const Windows::UI::Xaml::DependencyProperty & dp) const
 {
     Windows::IInspectable returnValue;
-    check_hresult(shim()->abi_ReadLocalValue(get(dp), put(returnValue)));
+    check_hresult(static_cast<const IDependencyObject &>(static_cast<const D &>(*this))->abi_ReadLocalValue(get(dp), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::IInspectable impl_IDependencyObject<D>::GetAnimationBaseValue(const Windows::UI::Xaml::DependencyProperty & dp) const
 {
     Windows::IInspectable returnValue;
-    check_hresult(shim()->abi_GetAnimationBaseValue(get(dp), put(returnValue)));
+    check_hresult(static_cast<const IDependencyObject &>(static_cast<const D &>(*this))->abi_GetAnimationBaseValue(get(dp), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Core::CoreDispatcher impl_IDependencyObject<D>::Dispatcher() const
 {
     Windows::UI::Core::CoreDispatcher value { nullptr };
-    check_hresult(shim()->get_Dispatcher(put(value)));
+    check_hresult(static_cast<const IDependencyObject &>(static_cast<const D &>(*this))->get_Dispatcher(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyObject impl_IDependencyObjectFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::DependencyObject instance { nullptr };
-    check_hresult(shim()->abi_CreateInstance(get(outer), put(inner), put(instance)));
+    check_hresult(static_cast<const IDependencyObjectFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> int64_t impl_IDependencyObject2<D>::RegisterPropertyChangedCallback(const Windows::UI::Xaml::DependencyProperty & dp, const Windows::UI::Xaml::DependencyPropertyChangedCallback & callback) const
 {
     int64_t returnValue {};
-    check_hresult(shim()->abi_RegisterPropertyChangedCallback(get(dp), get(callback), &returnValue));
+    check_hresult(static_cast<const IDependencyObject2 &>(static_cast<const D &>(*this))->abi_RegisterPropertyChangedCallback(get(dp), get(callback), &returnValue));
     return returnValue;
 }
 
 template <typename D> void impl_IDependencyObject2<D>::UnregisterPropertyChangedCallback(const Windows::UI::Xaml::DependencyProperty & dp, int64_t token) const
 {
-    check_hresult(shim()->abi_UnregisterPropertyChangedCallback(get(dp), token));
+    check_hresult(static_cast<const IDependencyObject2 &>(static_cast<const D &>(*this))->abi_UnregisterPropertyChangedCallback(get(dp), token));
 }
 
 template <typename D> Windows::UI::Xaml::PropertyMetadata impl_IDependencyProperty<D>::GetMetadata(const Windows::UI::Xaml::Interop::TypeName & forType) const
 {
     Windows::UI::Xaml::PropertyMetadata returnValue { nullptr };
-    check_hresult(shim()->abi_GetMetadata(get(forType), put(returnValue)));
+    check_hresult(static_cast<const IDependencyProperty &>(static_cast<const D &>(*this))->abi_GetMetadata(get(forType), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::IInspectable impl_IDependencyPropertyStatics<D>::UnsetValue() const
 {
     Windows::IInspectable value;
-    check_hresult(shim()->get_UnsetValue(put(value)));
+    check_hresult(static_cast<const IDependencyPropertyStatics &>(static_cast<const D &>(*this))->get_UnsetValue(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IDependencyPropertyStatics<D>::Register(hstring_ref name, const Windows::UI::Xaml::Interop::TypeName & propertyType, const Windows::UI::Xaml::Interop::TypeName & ownerType, const Windows::UI::Xaml::PropertyMetadata & typeMetadata) const
 {
     Windows::UI::Xaml::DependencyProperty returnValue { nullptr };
-    check_hresult(shim()->abi_Register(get(name), get(propertyType), get(ownerType), get(typeMetadata), put(returnValue)));
+    check_hresult(static_cast<const IDependencyPropertyStatics &>(static_cast<const D &>(*this))->abi_Register(get(name), get(propertyType), get(ownerType), get(typeMetadata), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IDependencyPropertyStatics<D>::RegisterAttached(hstring_ref name, const Windows::UI::Xaml::Interop::TypeName & propertyType, const Windows::UI::Xaml::Interop::TypeName & ownerType, const Windows::UI::Xaml::PropertyMetadata & defaultMetadata) const
 {
     Windows::UI::Xaml::DependencyProperty returnValue { nullptr };
-    check_hresult(shim()->abi_RegisterAttached(get(name), get(propertyType), get(ownerType), get(defaultMetadata), put(returnValue)));
+    check_hresult(static_cast<const IDependencyPropertyStatics &>(static_cast<const D &>(*this))->abi_RegisterAttached(get(name), get(propertyType), get(ownerType), get(defaultMetadata), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IDependencyPropertyChangedEventArgs<D>::Property() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_Property(put(value)));
+    check_hresult(static_cast<const IDependencyPropertyChangedEventArgs &>(static_cast<const D &>(*this))->get_Property(put(value)));
     return value;
 }
 
 template <typename D> Windows::IInspectable impl_IDependencyPropertyChangedEventArgs<D>::OldValue() const
 {
     Windows::IInspectable value;
-    check_hresult(shim()->get_OldValue(put(value)));
+    check_hresult(static_cast<const IDependencyPropertyChangedEventArgs &>(static_cast<const D &>(*this))->get_OldValue(put(value)));
     return value;
 }
 
 template <typename D> Windows::IInspectable impl_IDependencyPropertyChangedEventArgs<D>::NewValue() const
 {
     Windows::IInspectable value;
-    check_hresult(shim()->get_NewValue(put(value)));
+    check_hresult(static_cast<const IDependencyPropertyChangedEventArgs &>(static_cast<const D &>(*this))->get_NewValue(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDragOperationDeferral<D>::Complete() const
 {
-    check_hresult(shim()->abi_Complete());
+    check_hresult(static_cast<const IDragOperationDeferral &>(static_cast<const D &>(*this))->abi_Complete());
 }
 
 template <typename D> void impl_IDragUI<D>::SetContentFromBitmapImage(const Windows::UI::Xaml::Media::Imaging::BitmapImage & bitmapImage) const
 {
-    check_hresult(shim()->abi_SetContentFromBitmapImage(get(bitmapImage)));
+    check_hresult(static_cast<const IDragUI &>(static_cast<const D &>(*this))->abi_SetContentFromBitmapImage(get(bitmapImage)));
 }
 
 template <typename D> void impl_IDragUI<D>::SetContentFromBitmapImage(const Windows::UI::Xaml::Media::Imaging::BitmapImage & bitmapImage, const Windows::Foundation::Point & anchorPoint) const
 {
-    check_hresult(shim()->abi_SetContentFromBitmapImageWithAnchorPoint(get(bitmapImage), get(anchorPoint)));
+    check_hresult(static_cast<const IDragUI &>(static_cast<const D &>(*this))->abi_SetContentFromBitmapImageWithAnchorPoint(get(bitmapImage), get(anchorPoint)));
 }
 
 template <typename D> void impl_IDragUI<D>::SetContentFromSoftwareBitmap(const Windows::Graphics::Imaging::SoftwareBitmap & softwareBitmap) const
 {
-    check_hresult(shim()->abi_SetContentFromSoftwareBitmap(get(softwareBitmap)));
+    check_hresult(static_cast<const IDragUI &>(static_cast<const D &>(*this))->abi_SetContentFromSoftwareBitmap(get(softwareBitmap)));
 }
 
 template <typename D> void impl_IDragUI<D>::SetContentFromSoftwareBitmap(const Windows::Graphics::Imaging::SoftwareBitmap & softwareBitmap, const Windows::Foundation::Point & anchorPoint) const
 {
-    check_hresult(shim()->abi_SetContentFromSoftwareBitmapWithAnchorPoint(get(softwareBitmap), get(anchorPoint)));
+    check_hresult(static_cast<const IDragUI &>(static_cast<const D &>(*this))->abi_SetContentFromSoftwareBitmapWithAnchorPoint(get(softwareBitmap), get(anchorPoint)));
 }
 
 template <typename D> void impl_IDragUI<D>::SetContentFromDataPackage() const
 {
-    check_hresult(shim()->abi_SetContentFromDataPackage());
+    check_hresult(static_cast<const IDragUI &>(static_cast<const D &>(*this))->abi_SetContentFromDataPackage());
 }
 
 template <typename D> hstring impl_IDragUIOverride<D>::Caption() const
 {
     hstring value;
-    check_hresult(shim()->get_Caption(put(value)));
+    check_hresult(static_cast<const IDragUIOverride &>(static_cast<const D &>(*this))->get_Caption(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDragUIOverride<D>::Caption(hstring_ref value) const
 {
-    check_hresult(shim()->put_Caption(get(value)));
+    check_hresult(static_cast<const IDragUIOverride &>(static_cast<const D &>(*this))->put_Caption(get(value)));
 }
 
 template <typename D> bool impl_IDragUIOverride<D>::IsContentVisible() const
 {
     bool value {};
-    check_hresult(shim()->get_IsContentVisible(&value));
+    check_hresult(static_cast<const IDragUIOverride &>(static_cast<const D &>(*this))->get_IsContentVisible(&value));
     return value;
 }
 
 template <typename D> void impl_IDragUIOverride<D>::IsContentVisible(bool value) const
 {
-    check_hresult(shim()->put_IsContentVisible(value));
+    check_hresult(static_cast<const IDragUIOverride &>(static_cast<const D &>(*this))->put_IsContentVisible(value));
 }
 
 template <typename D> bool impl_IDragUIOverride<D>::IsCaptionVisible() const
 {
     bool value {};
-    check_hresult(shim()->get_IsCaptionVisible(&value));
+    check_hresult(static_cast<const IDragUIOverride &>(static_cast<const D &>(*this))->get_IsCaptionVisible(&value));
     return value;
 }
 
 template <typename D> void impl_IDragUIOverride<D>::IsCaptionVisible(bool value) const
 {
-    check_hresult(shim()->put_IsCaptionVisible(value));
+    check_hresult(static_cast<const IDragUIOverride &>(static_cast<const D &>(*this))->put_IsCaptionVisible(value));
 }
 
 template <typename D> bool impl_IDragUIOverride<D>::IsGlyphVisible() const
 {
     bool value {};
-    check_hresult(shim()->get_IsGlyphVisible(&value));
+    check_hresult(static_cast<const IDragUIOverride &>(static_cast<const D &>(*this))->get_IsGlyphVisible(&value));
     return value;
 }
 
 template <typename D> void impl_IDragUIOverride<D>::IsGlyphVisible(bool value) const
 {
-    check_hresult(shim()->put_IsGlyphVisible(value));
+    check_hresult(static_cast<const IDragUIOverride &>(static_cast<const D &>(*this))->put_IsGlyphVisible(value));
 }
 
 template <typename D> void impl_IDragUIOverride<D>::Clear() const
 {
-    check_hresult(shim()->abi_Clear());
+    check_hresult(static_cast<const IDragUIOverride &>(static_cast<const D &>(*this))->abi_Clear());
 }
 
 template <typename D> void impl_IDragUIOverride<D>::SetContentFromBitmapImage(const Windows::UI::Xaml::Media::Imaging::BitmapImage & bitmapImage) const
 {
-    check_hresult(shim()->abi_SetContentFromBitmapImage(get(bitmapImage)));
+    check_hresult(static_cast<const IDragUIOverride &>(static_cast<const D &>(*this))->abi_SetContentFromBitmapImage(get(bitmapImage)));
 }
 
 template <typename D> void impl_IDragUIOverride<D>::SetContentFromBitmapImage(const Windows::UI::Xaml::Media::Imaging::BitmapImage & bitmapImage, const Windows::Foundation::Point & anchorPoint) const
 {
-    check_hresult(shim()->abi_SetContentFromBitmapImageWithAnchorPoint(get(bitmapImage), get(anchorPoint)));
+    check_hresult(static_cast<const IDragUIOverride &>(static_cast<const D &>(*this))->abi_SetContentFromBitmapImageWithAnchorPoint(get(bitmapImage), get(anchorPoint)));
 }
 
 template <typename D> void impl_IDragUIOverride<D>::SetContentFromSoftwareBitmap(const Windows::Graphics::Imaging::SoftwareBitmap & softwareBitmap) const
 {
-    check_hresult(shim()->abi_SetContentFromSoftwareBitmap(get(softwareBitmap)));
+    check_hresult(static_cast<const IDragUIOverride &>(static_cast<const D &>(*this))->abi_SetContentFromSoftwareBitmap(get(softwareBitmap)));
 }
 
 template <typename D> void impl_IDragUIOverride<D>::SetContentFromSoftwareBitmap(const Windows::Graphics::Imaging::SoftwareBitmap & softwareBitmap, const Windows::Foundation::Point & anchorPoint) const
 {
-    check_hresult(shim()->abi_SetContentFromSoftwareBitmapWithAnchorPoint(get(softwareBitmap), get(anchorPoint)));
+    check_hresult(static_cast<const IDragUIOverride &>(static_cast<const D &>(*this))->abi_SetContentFromSoftwareBitmapWithAnchorPoint(get(softwareBitmap), get(anchorPoint)));
 }
 
 template <typename D> double impl_IElementSoundPlayerStatics<D>::Volume() const
 {
     double value {};
-    check_hresult(shim()->get_Volume(&value));
+    check_hresult(static_cast<const IElementSoundPlayerStatics &>(static_cast<const D &>(*this))->get_Volume(&value));
     return value;
 }
 
 template <typename D> void impl_IElementSoundPlayerStatics<D>::Volume(double value) const
 {
-    check_hresult(shim()->put_Volume(value));
+    check_hresult(static_cast<const IElementSoundPlayerStatics &>(static_cast<const D &>(*this))->put_Volume(value));
 }
 
 template <typename D> Windows::UI::Xaml::ElementSoundPlayerState impl_IElementSoundPlayerStatics<D>::State() const
 {
     Windows::UI::Xaml::ElementSoundPlayerState value {};
-    check_hresult(shim()->get_State(&value));
+    check_hresult(static_cast<const IElementSoundPlayerStatics &>(static_cast<const D &>(*this))->get_State(&value));
     return value;
 }
 
 template <typename D> void impl_IElementSoundPlayerStatics<D>::State(Windows::UI::Xaml::ElementSoundPlayerState value) const
 {
-    check_hresult(shim()->put_State(value));
+    check_hresult(static_cast<const IElementSoundPlayerStatics &>(static_cast<const D &>(*this))->put_State(value));
 }
 
 template <typename D> void impl_IElementSoundPlayerStatics<D>::Play(Windows::UI::Xaml::ElementSoundKind sound) const
 {
-    check_hresult(shim()->abi_Play(sound));
+    check_hresult(static_cast<const IElementSoundPlayerStatics &>(static_cast<const D &>(*this))->abi_Play(sound));
 }
 
 template <typename D> Windows::IInspectable impl_IPropertyMetadata<D>::DefaultValue() const
 {
     Windows::IInspectable value;
-    check_hresult(shim()->get_DefaultValue(put(value)));
+    check_hresult(static_cast<const IPropertyMetadata &>(static_cast<const D &>(*this))->get_DefaultValue(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::CreateDefaultValueCallback impl_IPropertyMetadata<D>::CreateDefaultValueCallback() const
 {
     Windows::UI::Xaml::CreateDefaultValueCallback value {};
-    check_hresult(shim()->get_CreateDefaultValueCallback(put(value)));
+    check_hresult(static_cast<const IPropertyMetadata &>(static_cast<const D &>(*this))->get_CreateDefaultValueCallback(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::PropertyMetadata impl_IPropertyMetadataStatics<D>::Create(const Windows::IInspectable & defaultValue) const
 {
     Windows::UI::Xaml::PropertyMetadata returnValue { nullptr };
-    check_hresult(shim()->abi_CreateWithDefaultValue(get(defaultValue), put(returnValue)));
+    check_hresult(static_cast<const IPropertyMetadataStatics &>(static_cast<const D &>(*this))->abi_CreateWithDefaultValue(get(defaultValue), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::PropertyMetadata impl_IPropertyMetadataStatics<D>::Create(const Windows::IInspectable & defaultValue, const Windows::UI::Xaml::PropertyChangedCallback & propertyChangedCallback) const
 {
     Windows::UI::Xaml::PropertyMetadata returnValue { nullptr };
-    check_hresult(shim()->abi_CreateWithDefaultValueAndCallback(get(defaultValue), get(propertyChangedCallback), put(returnValue)));
+    check_hresult(static_cast<const IPropertyMetadataStatics &>(static_cast<const D &>(*this))->abi_CreateWithDefaultValueAndCallback(get(defaultValue), get(propertyChangedCallback), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::PropertyMetadata impl_IPropertyMetadataStatics<D>::Create(const Windows::UI::Xaml::CreateDefaultValueCallback & createDefaultValueCallback) const
 {
     Windows::UI::Xaml::PropertyMetadata returnValue { nullptr };
-    check_hresult(shim()->abi_CreateWithFactory(get(createDefaultValueCallback), put(returnValue)));
+    check_hresult(static_cast<const IPropertyMetadataStatics &>(static_cast<const D &>(*this))->abi_CreateWithFactory(get(createDefaultValueCallback), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::PropertyMetadata impl_IPropertyMetadataStatics<D>::Create(const Windows::UI::Xaml::CreateDefaultValueCallback & createDefaultValueCallback, const Windows::UI::Xaml::PropertyChangedCallback & propertyChangedCallback) const
 {
     Windows::UI::Xaml::PropertyMetadata returnValue { nullptr };
-    check_hresult(shim()->abi_CreateWithFactoryAndCallback(get(createDefaultValueCallback), get(propertyChangedCallback), put(returnValue)));
+    check_hresult(static_cast<const IPropertyMetadataStatics &>(static_cast<const D &>(*this))->abi_CreateWithFactoryAndCallback(get(createDefaultValueCallback), get(propertyChangedCallback), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::PropertyMetadata impl_IPropertyMetadataFactory<D>::CreateInstanceWithDefaultValue(const Windows::IInspectable & defaultValue, const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::PropertyMetadata instance { nullptr };
-    check_hresult(shim()->abi_CreateInstanceWithDefaultValue(get(defaultValue), get(outer), put(inner), put(instance)));
+    check_hresult(static_cast<const IPropertyMetadataFactory &>(static_cast<const D &>(*this))->abi_CreateInstanceWithDefaultValue(get(defaultValue), get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::UI::Xaml::PropertyMetadata impl_IPropertyMetadataFactory<D>::CreateInstanceWithDefaultValueAndCallback(const Windows::IInspectable & defaultValue, const Windows::UI::Xaml::PropertyChangedCallback & propertyChangedCallback, const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::PropertyMetadata instance { nullptr };
-    check_hresult(shim()->abi_CreateInstanceWithDefaultValueAndCallback(get(defaultValue), get(propertyChangedCallback), get(outer), put(inner), put(instance)));
+    check_hresult(static_cast<const IPropertyMetadataFactory &>(static_cast<const D &>(*this))->abi_CreateInstanceWithDefaultValueAndCallback(get(defaultValue), get(propertyChangedCallback), get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::IInspectable impl_IRoutedEventArgs<D>::OriginalSource() const
 {
     Windows::IInspectable value;
-    check_hresult(shim()->get_OriginalSource(put(value)));
+    check_hresult(static_cast<const IRoutedEventArgs &>(static_cast<const D &>(*this))->get_OriginalSource(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::RoutedEventArgs impl_IRoutedEventArgsFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::RoutedEventArgs instance { nullptr };
-    check_hresult(shim()->abi_CreateInstance(get(outer), put(inner), put(instance)));
+    check_hresult(static_cast<const IRoutedEventArgsFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> bool impl_ISetterBaseCollection<D>::IsSealed() const
 {
     bool value {};
-    check_hresult(shim()->get_IsSealed(&value));
+    check_hresult(static_cast<const ISetterBaseCollection &>(static_cast<const D &>(*this))->get_IsSealed(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::PropertyPath impl_ITargetPropertyPath<D>::Path() const
 {
     Windows::UI::Xaml::PropertyPath value { nullptr };
-    check_hresult(shim()->get_Path(put(value)));
+    check_hresult(static_cast<const ITargetPropertyPath &>(static_cast<const D &>(*this))->get_Path(put(value)));
     return value;
 }
 
 template <typename D> void impl_ITargetPropertyPath<D>::Path(const Windows::UI::Xaml::PropertyPath & value) const
 {
-    check_hresult(shim()->put_Path(get(value)));
+    check_hresult(static_cast<const ITargetPropertyPath &>(static_cast<const D &>(*this))->put_Path(get(value)));
 }
 
 template <typename D> Windows::IInspectable impl_ITargetPropertyPath<D>::Target() const
 {
     Windows::IInspectable value;
-    check_hresult(shim()->get_Target(put(value)));
+    check_hresult(static_cast<const ITargetPropertyPath &>(static_cast<const D &>(*this))->get_Target(put(value)));
     return value;
 }
 
 template <typename D> void impl_ITargetPropertyPath<D>::Target(const Windows::IInspectable & value) const
 {
-    check_hresult(shim()->put_Target(get(value)));
+    check_hresult(static_cast<const ITargetPropertyPath &>(static_cast<const D &>(*this))->put_Target(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::TargetPropertyPath impl_ITargetPropertyPathFactory<D>::CreateInstance(const Windows::UI::Xaml::DependencyProperty & targetProperty) const
 {
     Windows::UI::Xaml::TargetPropertyPath instance { nullptr };
-    check_hresult(shim()->abi_CreateInstance(get(targetProperty), put(instance)));
+    check_hresult(static_cast<const ITargetPropertyPathFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(targetProperty), put(instance)));
     return instance;
 }
 
 template <typename D> HRESULT impl_IUnhandledExceptionEventArgs<D>::Exception() const
 {
     HRESULT value {};
-    check_hresult(shim()->get_Exception(&value));
+    check_hresult(static_cast<const IUnhandledExceptionEventArgs &>(static_cast<const D &>(*this))->get_Exception(&value));
     return value;
 }
 
 template <typename D> hstring impl_IUnhandledExceptionEventArgs<D>::Message() const
 {
     hstring value;
-    check_hresult(shim()->get_Message(put(value)));
+    check_hresult(static_cast<const IUnhandledExceptionEventArgs &>(static_cast<const D &>(*this))->get_Message(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IUnhandledExceptionEventArgs<D>::Handled() const
 {
     bool value {};
-    check_hresult(shim()->get_Handled(&value));
+    check_hresult(static_cast<const IUnhandledExceptionEventArgs &>(static_cast<const D &>(*this))->get_Handled(&value));
     return value;
 }
 
 template <typename D> void impl_IUnhandledExceptionEventArgs<D>::Handled(bool value) const
 {
-    check_hresult(shim()->put_Handled(value));
+    check_hresult(static_cast<const IUnhandledExceptionEventArgs &>(static_cast<const D &>(*this))->put_Handled(value));
 }
 
 template <typename D> Windows::UI::Xaml::VisualState impl_IVisualStateChangedEventArgs<D>::OldState() const
 {
     Windows::UI::Xaml::VisualState value { nullptr };
-    check_hresult(shim()->get_OldState(put(value)));
+    check_hresult(static_cast<const IVisualStateChangedEventArgs &>(static_cast<const D &>(*this))->get_OldState(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVisualStateChangedEventArgs<D>::OldState(const Windows::UI::Xaml::VisualState & value) const
 {
-    check_hresult(shim()->put_OldState(get(value)));
+    check_hresult(static_cast<const IVisualStateChangedEventArgs &>(static_cast<const D &>(*this))->put_OldState(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::VisualState impl_IVisualStateChangedEventArgs<D>::NewState() const
 {
     Windows::UI::Xaml::VisualState value { nullptr };
-    check_hresult(shim()->get_NewState(put(value)));
+    check_hresult(static_cast<const IVisualStateChangedEventArgs &>(static_cast<const D &>(*this))->get_NewState(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVisualStateChangedEventArgs<D>::NewState(const Windows::UI::Xaml::VisualState & value) const
 {
-    check_hresult(shim()->put_NewState(get(value)));
+    check_hresult(static_cast<const IVisualStateChangedEventArgs &>(static_cast<const D &>(*this))->put_NewState(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Control impl_IVisualStateChangedEventArgs<D>::Control() const
 {
     Windows::UI::Xaml::Controls::Control value { nullptr };
-    check_hresult(shim()->get_Control(put(value)));
+    check_hresult(static_cast<const IVisualStateChangedEventArgs &>(static_cast<const D &>(*this))->get_Control(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVisualStateChangedEventArgs<D>::Control(const Windows::UI::Xaml::Controls::Control & value) const
 {
-    check_hresult(shim()->put_Control(get(value)));
+    check_hresult(static_cast<const IVisualStateChangedEventArgs &>(static_cast<const D &>(*this))->put_Control(get(value)));
 }
 
 template <typename D> Windows::Foundation::Rect impl_IWindow<D>::Bounds() const
 {
     Windows::Foundation::Rect value {};
-    check_hresult(shim()->get_Bounds(put(value)));
+    check_hresult(static_cast<const IWindow &>(static_cast<const D &>(*this))->get_Bounds(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IWindow<D>::Visible() const
 {
     bool value {};
-    check_hresult(shim()->get_Visible(&value));
+    check_hresult(static_cast<const IWindow &>(static_cast<const D &>(*this))->get_Visible(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::UIElement impl_IWindow<D>::Content() const
 {
     Windows::UI::Xaml::UIElement value { nullptr };
-    check_hresult(shim()->get_Content(put(value)));
+    check_hresult(static_cast<const IWindow &>(static_cast<const D &>(*this))->get_Content(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWindow<D>::Content(const Windows::UI::Xaml::UIElement & value) const
 {
-    check_hresult(shim()->put_Content(get(value)));
+    check_hresult(static_cast<const IWindow &>(static_cast<const D &>(*this))->put_Content(get(value)));
 }
 
 template <typename D> Windows::UI::Core::CoreWindow impl_IWindow<D>::CoreWindow() const
 {
     Windows::UI::Core::CoreWindow value { nullptr };
-    check_hresult(shim()->get_CoreWindow(put(value)));
+    check_hresult(static_cast<const IWindow &>(static_cast<const D &>(*this))->get_CoreWindow(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Core::CoreDispatcher impl_IWindow<D>::Dispatcher() const
 {
     Windows::UI::Core::CoreDispatcher value { nullptr };
-    check_hresult(shim()->get_Dispatcher(put(value)));
+    check_hresult(static_cast<const IWindow &>(static_cast<const D &>(*this))->get_Dispatcher(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IWindow<D>::Activated(const Windows::UI::Xaml::WindowActivatedEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_Activated(get(value), &token));
+    check_hresult(static_cast<const IWindow &>(static_cast<const D &>(*this))->add_Activated(get(value), &token));
     return token;
 }
 
@@ -9203,13 +9203,13 @@ template <typename D> event_revoker<IWindow> impl_IWindow<D>::Activated(auto_rev
 
 template <typename D> void impl_IWindow<D>::Activated(event_token token) const
 {
-    check_hresult(shim()->remove_Activated(token));
+    check_hresult(static_cast<const IWindow &>(static_cast<const D &>(*this))->remove_Activated(token));
 }
 
 template <typename D> event_token impl_IWindow<D>::Closed(const Windows::UI::Xaml::WindowClosedEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_Closed(get(value), &token));
+    check_hresult(static_cast<const IWindow &>(static_cast<const D &>(*this))->add_Closed(get(value), &token));
     return token;
 }
 
@@ -9220,13 +9220,13 @@ template <typename D> event_revoker<IWindow> impl_IWindow<D>::Closed(auto_revoke
 
 template <typename D> void impl_IWindow<D>::Closed(event_token token) const
 {
-    check_hresult(shim()->remove_Closed(token));
+    check_hresult(static_cast<const IWindow &>(static_cast<const D &>(*this))->remove_Closed(token));
 }
 
 template <typename D> event_token impl_IWindow<D>::SizeChanged(const Windows::UI::Xaml::WindowSizeChangedEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_SizeChanged(get(value), &token));
+    check_hresult(static_cast<const IWindow &>(static_cast<const D &>(*this))->add_SizeChanged(get(value), &token));
     return token;
 }
 
@@ -9237,13 +9237,13 @@ template <typename D> event_revoker<IWindow> impl_IWindow<D>::SizeChanged(auto_r
 
 template <typename D> void impl_IWindow<D>::SizeChanged(event_token token) const
 {
-    check_hresult(shim()->remove_SizeChanged(token));
+    check_hresult(static_cast<const IWindow &>(static_cast<const D &>(*this))->remove_SizeChanged(token));
 }
 
 template <typename D> event_token impl_IWindow<D>::VisibilityChanged(const Windows::UI::Xaml::WindowVisibilityChangedEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_VisibilityChanged(get(value), &token));
+    check_hresult(static_cast<const IWindow &>(static_cast<const D &>(*this))->add_VisibilityChanged(get(value), &token));
     return token;
 }
 
@@ -9254,543 +9254,543 @@ template <typename D> event_revoker<IWindow> impl_IWindow<D>::VisibilityChanged(
 
 template <typename D> void impl_IWindow<D>::VisibilityChanged(event_token token) const
 {
-    check_hresult(shim()->remove_VisibilityChanged(token));
+    check_hresult(static_cast<const IWindow &>(static_cast<const D &>(*this))->remove_VisibilityChanged(token));
 }
 
 template <typename D> void impl_IWindow<D>::Activate() const
 {
-    check_hresult(shim()->abi_Activate());
+    check_hresult(static_cast<const IWindow &>(static_cast<const D &>(*this))->abi_Activate());
 }
 
 template <typename D> void impl_IWindow<D>::Close() const
 {
-    check_hresult(shim()->abi_Close());
+    check_hresult(static_cast<const IWindow &>(static_cast<const D &>(*this))->abi_Close());
 }
 
 template <typename D> Windows::UI::Xaml::Window impl_IWindowStatics<D>::Current() const
 {
     Windows::UI::Xaml::Window value { nullptr };
-    check_hresult(shim()->get_Current(put(value)));
+    check_hresult(static_cast<const IWindowStatics &>(static_cast<const D &>(*this))->get_Current(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWindow2<D>::SetTitleBar(const Windows::UI::Xaml::UIElement & value) const
 {
-    check_hresult(shim()->abi_SetTitleBar(get(value)));
+    check_hresult(static_cast<const IWindow2 &>(static_cast<const D &>(*this))->abi_SetTitleBar(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::Window impl_IWindowCreatedEventArgs<D>::Window() const
 {
     Windows::UI::Xaml::Window value { nullptr };
-    check_hresult(shim()->get_Window(put(value)));
+    check_hresult(static_cast<const IWindowCreatedEventArgs &>(static_cast<const D &>(*this))->get_Window(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyObjectCollection impl_IDependencyObjectCollectionFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::DependencyObjectCollection instance { nullptr };
-    check_hresult(shim()->abi_CreateInstance(get(outer), put(inner), put(instance)));
+    check_hresult(static_cast<const IDependencyObjectCollectionFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> bool impl_IDragEventArgs<D>::Handled() const
 {
     bool value {};
-    check_hresult(shim()->get_Handled(&value));
+    check_hresult(static_cast<const IDragEventArgs &>(static_cast<const D &>(*this))->get_Handled(&value));
     return value;
 }
 
 template <typename D> void impl_IDragEventArgs<D>::Handled(bool value) const
 {
-    check_hresult(shim()->put_Handled(value));
+    check_hresult(static_cast<const IDragEventArgs &>(static_cast<const D &>(*this))->put_Handled(value));
 }
 
 template <typename D> Windows::ApplicationModel::DataTransfer::DataPackage impl_IDragEventArgs<D>::Data() const
 {
     Windows::ApplicationModel::DataTransfer::DataPackage value { nullptr };
-    check_hresult(shim()->get_Data(put(value)));
+    check_hresult(static_cast<const IDragEventArgs &>(static_cast<const D &>(*this))->get_Data(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDragEventArgs<D>::Data(const Windows::ApplicationModel::DataTransfer::DataPackage & value) const
 {
-    check_hresult(shim()->put_Data(get(value)));
+    check_hresult(static_cast<const IDragEventArgs &>(static_cast<const D &>(*this))->put_Data(get(value)));
 }
 
 template <typename D> Windows::Foundation::Point impl_IDragEventArgs<D>::GetPosition(const Windows::UI::Xaml::UIElement & relativeTo) const
 {
     Windows::Foundation::Point returnValue {};
-    check_hresult(shim()->abi_GetPosition(get(relativeTo), put(returnValue)));
+    check_hresult(static_cast<const IDragEventArgs &>(static_cast<const D &>(*this))->abi_GetPosition(get(relativeTo), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::ApplicationModel::DataTransfer::DataPackageView impl_IDragEventArgs2<D>::DataView() const
 {
     Windows::ApplicationModel::DataTransfer::DataPackageView value { nullptr };
-    check_hresult(shim()->get_DataView(put(value)));
+    check_hresult(static_cast<const IDragEventArgs2 &>(static_cast<const D &>(*this))->get_DataView(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DragUIOverride impl_IDragEventArgs2<D>::DragUIOverride() const
 {
     Windows::UI::Xaml::DragUIOverride value { nullptr };
-    check_hresult(shim()->get_DragUIOverride(put(value)));
+    check_hresult(static_cast<const IDragEventArgs2 &>(static_cast<const D &>(*this))->get_DragUIOverride(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::DataTransfer::DragDrop::DragDropModifiers impl_IDragEventArgs2<D>::Modifiers() const
 {
     Windows::ApplicationModel::DataTransfer::DragDrop::DragDropModifiers value {};
-    check_hresult(shim()->get_Modifiers(&value));
+    check_hresult(static_cast<const IDragEventArgs2 &>(static_cast<const D &>(*this))->get_Modifiers(&value));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::DataTransfer::DataPackageOperation impl_IDragEventArgs2<D>::AcceptedOperation() const
 {
     Windows::ApplicationModel::DataTransfer::DataPackageOperation value {};
-    check_hresult(shim()->get_AcceptedOperation(&value));
+    check_hresult(static_cast<const IDragEventArgs2 &>(static_cast<const D &>(*this))->get_AcceptedOperation(&value));
     return value;
 }
 
 template <typename D> void impl_IDragEventArgs2<D>::AcceptedOperation(Windows::ApplicationModel::DataTransfer::DataPackageOperation value) const
 {
-    check_hresult(shim()->put_AcceptedOperation(value));
+    check_hresult(static_cast<const IDragEventArgs2 &>(static_cast<const D &>(*this))->put_AcceptedOperation(value));
 }
 
 template <typename D> Windows::UI::Xaml::DragOperationDeferral impl_IDragEventArgs2<D>::GetDeferral() const
 {
     Windows::UI::Xaml::DragOperationDeferral returnValue { nullptr };
-    check_hresult(shim()->abi_GetDeferral(put(returnValue)));
+    check_hresult(static_cast<const IDragEventArgs2 &>(static_cast<const D &>(*this))->abi_GetDeferral(put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::ApplicationModel::DataTransfer::DataPackageOperation impl_IDragEventArgs3<D>::AllowedOperations() const
 {
     Windows::ApplicationModel::DataTransfer::DataPackageOperation value {};
-    check_hresult(shim()->get_AllowedOperations(&value));
+    check_hresult(static_cast<const IDragEventArgs3 &>(static_cast<const D &>(*this))->get_AllowedOperations(&value));
     return value;
 }
 
 template <typename D> bool impl_IDragStartingEventArgs<D>::Cancel() const
 {
     bool value {};
-    check_hresult(shim()->get_Cancel(&value));
+    check_hresult(static_cast<const IDragStartingEventArgs &>(static_cast<const D &>(*this))->get_Cancel(&value));
     return value;
 }
 
 template <typename D> void impl_IDragStartingEventArgs<D>::Cancel(bool value) const
 {
-    check_hresult(shim()->put_Cancel(value));
+    check_hresult(static_cast<const IDragStartingEventArgs &>(static_cast<const D &>(*this))->put_Cancel(value));
 }
 
 template <typename D> Windows::ApplicationModel::DataTransfer::DataPackage impl_IDragStartingEventArgs<D>::Data() const
 {
     Windows::ApplicationModel::DataTransfer::DataPackage value { nullptr };
-    check_hresult(shim()->get_Data(put(value)));
+    check_hresult(static_cast<const IDragStartingEventArgs &>(static_cast<const D &>(*this))->get_Data(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DragUI impl_IDragStartingEventArgs<D>::DragUI() const
 {
     Windows::UI::Xaml::DragUI value { nullptr };
-    check_hresult(shim()->get_DragUI(put(value)));
+    check_hresult(static_cast<const IDragStartingEventArgs &>(static_cast<const D &>(*this))->get_DragUI(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DragOperationDeferral impl_IDragStartingEventArgs<D>::GetDeferral() const
 {
     Windows::UI::Xaml::DragOperationDeferral returnValue { nullptr };
-    check_hresult(shim()->abi_GetDeferral(put(returnValue)));
+    check_hresult(static_cast<const IDragStartingEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::Point impl_IDragStartingEventArgs<D>::GetPosition(const Windows::UI::Xaml::UIElement & relativeTo) const
 {
     Windows::Foundation::Point returnValue {};
-    check_hresult(shim()->abi_GetPosition(get(relativeTo), put(returnValue)));
+    check_hresult(static_cast<const IDragStartingEventArgs &>(static_cast<const D &>(*this))->abi_GetPosition(get(relativeTo), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::ApplicationModel::DataTransfer::DataPackageOperation impl_IDragStartingEventArgs2<D>::AllowedOperations() const
 {
     Windows::ApplicationModel::DataTransfer::DataPackageOperation value {};
-    check_hresult(shim()->get_AllowedOperations(&value));
+    check_hresult(static_cast<const IDragStartingEventArgs2 &>(static_cast<const D &>(*this))->get_AllowedOperations(&value));
     return value;
 }
 
 template <typename D> void impl_IDragStartingEventArgs2<D>::AllowedOperations(Windows::ApplicationModel::DataTransfer::DataPackageOperation value) const
 {
-    check_hresult(shim()->put_AllowedOperations(value));
+    check_hresult(static_cast<const IDragStartingEventArgs2 &>(static_cast<const D &>(*this))->put_AllowedOperations(value));
 }
 
 template <typename D> Windows::ApplicationModel::DataTransfer::DataPackageOperation impl_IDropCompletedEventArgs<D>::DropResult() const
 {
     Windows::ApplicationModel::DataTransfer::DataPackageOperation value {};
-    check_hresult(shim()->get_DropResult(&value));
+    check_hresult(static_cast<const IDropCompletedEventArgs &>(static_cast<const D &>(*this))->get_DropResult(&value));
     return value;
 }
 
 template <typename D> hstring impl_IExceptionRoutedEventArgs<D>::ErrorMessage() const
 {
     hstring value;
-    check_hresult(shim()->get_ErrorMessage(put(value)));
+    check_hresult(static_cast<const IExceptionRoutedEventArgs &>(static_cast<const D &>(*this))->get_ErrorMessage(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::FrameworkTemplate impl_IFrameworkTemplateFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::FrameworkTemplate instance { nullptr };
-    check_hresult(shim()->abi_CreateInstance(get(outer), put(inner), put(instance)));
+    check_hresult(static_cast<const IFrameworkTemplateFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> hstring impl_IPropertyPath<D>::Path() const
 {
     hstring value;
-    check_hresult(shim()->get_Path(put(value)));
+    check_hresult(static_cast<const IPropertyPath &>(static_cast<const D &>(*this))->get_Path(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::PropertyPath impl_IPropertyPathFactory<D>::CreateInstance(hstring_ref path) const
 {
     Windows::UI::Xaml::PropertyPath instance { nullptr };
-    check_hresult(shim()->abi_CreateInstance(get(path), put(instance)));
+    check_hresult(static_cast<const IPropertyPathFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(path), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::Foundation::Uri impl_IResourceDictionary<D>::Source() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(shim()->get_Source(put(value)));
+    check_hresult(static_cast<const IResourceDictionary &>(static_cast<const D &>(*this))->get_Source(put(value)));
     return value;
 }
 
 template <typename D> void impl_IResourceDictionary<D>::Source(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(shim()->put_Source(get(value)));
+    check_hresult(static_cast<const IResourceDictionary &>(static_cast<const D &>(*this))->put_Source(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::UI::Xaml::ResourceDictionary> impl_IResourceDictionary<D>::MergedDictionaries() const
 {
     Windows::Foundation::Collections::IVector<Windows::UI::Xaml::ResourceDictionary> value;
-    check_hresult(shim()->get_MergedDictionaries(put(value)));
+    check_hresult(static_cast<const IResourceDictionary &>(static_cast<const D &>(*this))->get_MergedDictionaries(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IMap<Windows::IInspectable, Windows::IInspectable> impl_IResourceDictionary<D>::ThemeDictionaries() const
 {
     Windows::Foundation::Collections::IMap<Windows::IInspectable, Windows::IInspectable> value;
-    check_hresult(shim()->get_ThemeDictionaries(put(value)));
+    check_hresult(static_cast<const IResourceDictionary &>(static_cast<const D &>(*this))->get_ThemeDictionaries(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::ResourceDictionary impl_IResourceDictionaryFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::ResourceDictionary instance { nullptr };
-    check_hresult(shim()->abi_CreateInstance(get(outer), put(inner), put(instance)));
+    check_hresult(static_cast<const IResourceDictionaryFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> bool impl_ISetterBase<D>::IsSealed() const
 {
     bool value {};
-    check_hresult(shim()->get_IsSealed(&value));
+    check_hresult(static_cast<const ISetterBase &>(static_cast<const D &>(*this))->get_IsSealed(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Size impl_ISizeChangedEventArgs<D>::PreviousSize() const
 {
     Windows::Foundation::Size value {};
-    check_hresult(shim()->get_PreviousSize(put(value)));
+    check_hresult(static_cast<const ISizeChangedEventArgs &>(static_cast<const D &>(*this))->get_PreviousSize(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Size impl_ISizeChangedEventArgs<D>::NewSize() const
 {
     Windows::Foundation::Size value {};
-    check_hresult(shim()->get_NewSize(put(value)));
+    check_hresult(static_cast<const ISizeChangedEventArgs &>(static_cast<const D &>(*this))->get_NewSize(put(value)));
     return value;
 }
 
 template <typename D> void impl_IStateTriggerBaseProtected<D>::SetActive(bool IsActive) const
 {
-    check_hresult(shim()->abi_SetActive(IsActive));
+    check_hresult(static_cast<const IStateTriggerBaseProtected &>(static_cast<const D &>(*this))->abi_SetActive(IsActive));
 }
 
 template <typename D> Windows::UI::Xaml::StateTriggerBase impl_IStateTriggerBaseFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::StateTriggerBase instance { nullptr };
-    check_hresult(shim()->abi_CreateInstance(get(outer), put(inner), put(instance)));
+    check_hresult(static_cast<const IStateTriggerBaseFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> bool impl_IStyle<D>::IsSealed() const
 {
     bool value {};
-    check_hresult(shim()->get_IsSealed(&value));
+    check_hresult(static_cast<const IStyle &>(static_cast<const D &>(*this))->get_IsSealed(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::SetterBaseCollection impl_IStyle<D>::Setters() const
 {
     Windows::UI::Xaml::SetterBaseCollection value { nullptr };
-    check_hresult(shim()->get_Setters(put(value)));
+    check_hresult(static_cast<const IStyle &>(static_cast<const D &>(*this))->get_Setters(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Interop::TypeName impl_IStyle<D>::TargetType() const
 {
     Windows::UI::Xaml::Interop::TypeName value {};
-    check_hresult(shim()->get_TargetType(put(value)));
+    check_hresult(static_cast<const IStyle &>(static_cast<const D &>(*this))->get_TargetType(put(value)));
     return value;
 }
 
 template <typename D> void impl_IStyle<D>::TargetType(const Windows::UI::Xaml::Interop::TypeName & value) const
 {
-    check_hresult(shim()->put_TargetType(get(value)));
+    check_hresult(static_cast<const IStyle &>(static_cast<const D &>(*this))->put_TargetType(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::Style impl_IStyle<D>::BasedOn() const
 {
     Windows::UI::Xaml::Style value { nullptr };
-    check_hresult(shim()->get_BasedOn(put(value)));
+    check_hresult(static_cast<const IStyle &>(static_cast<const D &>(*this))->get_BasedOn(put(value)));
     return value;
 }
 
 template <typename D> void impl_IStyle<D>::BasedOn(const Windows::UI::Xaml::Style & value) const
 {
-    check_hresult(shim()->put_BasedOn(get(value)));
+    check_hresult(static_cast<const IStyle &>(static_cast<const D &>(*this))->put_BasedOn(get(value)));
 }
 
 template <typename D> void impl_IStyle<D>::Seal() const
 {
-    check_hresult(shim()->abi_Seal());
+    check_hresult(static_cast<const IStyle &>(static_cast<const D &>(*this))->abi_Seal());
 }
 
 template <typename D> Windows::UI::Xaml::Style impl_IStyleFactory<D>::CreateInstance(const Windows::UI::Xaml::Interop::TypeName & targetType) const
 {
     Windows::UI::Xaml::Style instance { nullptr };
-    check_hresult(shim()->abi_CreateInstance(get(targetType), put(instance)));
+    check_hresult(static_cast<const IStyleFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(targetType), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::Foundation::Size impl_IUIElement<D>::DesiredSize() const
 {
     Windows::Foundation::Size value {};
-    check_hresult(shim()->get_DesiredSize(put(value)));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->get_DesiredSize(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IUIElement<D>::AllowDrop() const
 {
     bool value {};
-    check_hresult(shim()->get_AllowDrop(&value));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->get_AllowDrop(&value));
     return value;
 }
 
 template <typename D> void impl_IUIElement<D>::AllowDrop(bool value) const
 {
-    check_hresult(shim()->put_AllowDrop(value));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->put_AllowDrop(value));
 }
 
 template <typename D> double impl_IUIElement<D>::Opacity() const
 {
     double value {};
-    check_hresult(shim()->get_Opacity(&value));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->get_Opacity(&value));
     return value;
 }
 
 template <typename D> void impl_IUIElement<D>::Opacity(double value) const
 {
-    check_hresult(shim()->put_Opacity(value));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->put_Opacity(value));
 }
 
 template <typename D> Windows::UI::Xaml::Media::RectangleGeometry impl_IUIElement<D>::Clip() const
 {
     Windows::UI::Xaml::Media::RectangleGeometry value { nullptr };
-    check_hresult(shim()->get_Clip(put(value)));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->get_Clip(put(value)));
     return value;
 }
 
 template <typename D> void impl_IUIElement<D>::Clip(const Windows::UI::Xaml::Media::RectangleGeometry & value) const
 {
-    check_hresult(shim()->put_Clip(get(value)));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->put_Clip(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::Media::Transform impl_IUIElement<D>::RenderTransform() const
 {
     Windows::UI::Xaml::Media::Transform value { nullptr };
-    check_hresult(shim()->get_RenderTransform(put(value)));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->get_RenderTransform(put(value)));
     return value;
 }
 
 template <typename D> void impl_IUIElement<D>::RenderTransform(const Windows::UI::Xaml::Media::Transform & value) const
 {
-    check_hresult(shim()->put_RenderTransform(get(value)));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->put_RenderTransform(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::Media::Projection impl_IUIElement<D>::Projection() const
 {
     Windows::UI::Xaml::Media::Projection value { nullptr };
-    check_hresult(shim()->get_Projection(put(value)));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->get_Projection(put(value)));
     return value;
 }
 
 template <typename D> void impl_IUIElement<D>::Projection(const Windows::UI::Xaml::Media::Projection & value) const
 {
-    check_hresult(shim()->put_Projection(get(value)));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->put_Projection(get(value)));
 }
 
 template <typename D> Windows::Foundation::Point impl_IUIElement<D>::RenderTransformOrigin() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(shim()->get_RenderTransformOrigin(put(value)));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->get_RenderTransformOrigin(put(value)));
     return value;
 }
 
 template <typename D> void impl_IUIElement<D>::RenderTransformOrigin(const Windows::Foundation::Point & value) const
 {
-    check_hresult(shim()->put_RenderTransformOrigin(get(value)));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->put_RenderTransformOrigin(get(value)));
 }
 
 template <typename D> bool impl_IUIElement<D>::IsHitTestVisible() const
 {
     bool value {};
-    check_hresult(shim()->get_IsHitTestVisible(&value));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->get_IsHitTestVisible(&value));
     return value;
 }
 
 template <typename D> void impl_IUIElement<D>::IsHitTestVisible(bool value) const
 {
-    check_hresult(shim()->put_IsHitTestVisible(value));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->put_IsHitTestVisible(value));
 }
 
 template <typename D> Windows::UI::Xaml::Visibility impl_IUIElement<D>::Visibility() const
 {
     Windows::UI::Xaml::Visibility value {};
-    check_hresult(shim()->get_Visibility(&value));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->get_Visibility(&value));
     return value;
 }
 
 template <typename D> void impl_IUIElement<D>::Visibility(Windows::UI::Xaml::Visibility value) const
 {
-    check_hresult(shim()->put_Visibility(value));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->put_Visibility(value));
 }
 
 template <typename D> Windows::Foundation::Size impl_IUIElement<D>::RenderSize() const
 {
     Windows::Foundation::Size value {};
-    check_hresult(shim()->get_RenderSize(put(value)));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->get_RenderSize(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IUIElement<D>::UseLayoutRounding() const
 {
     bool value {};
-    check_hresult(shim()->get_UseLayoutRounding(&value));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->get_UseLayoutRounding(&value));
     return value;
 }
 
 template <typename D> void impl_IUIElement<D>::UseLayoutRounding(bool value) const
 {
-    check_hresult(shim()->put_UseLayoutRounding(value));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->put_UseLayoutRounding(value));
 }
 
 template <typename D> Windows::UI::Xaml::Media::Animation::TransitionCollection impl_IUIElement<D>::Transitions() const
 {
     Windows::UI::Xaml::Media::Animation::TransitionCollection value { nullptr };
-    check_hresult(shim()->get_Transitions(put(value)));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->get_Transitions(put(value)));
     return value;
 }
 
 template <typename D> void impl_IUIElement<D>::Transitions(const Windows::UI::Xaml::Media::Animation::TransitionCollection & value) const
 {
-    check_hresult(shim()->put_Transitions(get(value)));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->put_Transitions(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::Media::CacheMode impl_IUIElement<D>::CacheMode() const
 {
     Windows::UI::Xaml::Media::CacheMode value { nullptr };
-    check_hresult(shim()->get_CacheMode(put(value)));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->get_CacheMode(put(value)));
     return value;
 }
 
 template <typename D> void impl_IUIElement<D>::CacheMode(const Windows::UI::Xaml::Media::CacheMode & value) const
 {
-    check_hresult(shim()->put_CacheMode(get(value)));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->put_CacheMode(get(value)));
 }
 
 template <typename D> bool impl_IUIElement<D>::IsTapEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_IsTapEnabled(&value));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->get_IsTapEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IUIElement<D>::IsTapEnabled(bool value) const
 {
-    check_hresult(shim()->put_IsTapEnabled(value));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->put_IsTapEnabled(value));
 }
 
 template <typename D> bool impl_IUIElement<D>::IsDoubleTapEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_IsDoubleTapEnabled(&value));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->get_IsDoubleTapEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IUIElement<D>::IsDoubleTapEnabled(bool value) const
 {
-    check_hresult(shim()->put_IsDoubleTapEnabled(value));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->put_IsDoubleTapEnabled(value));
 }
 
 template <typename D> bool impl_IUIElement<D>::IsRightTapEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_IsRightTapEnabled(&value));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->get_IsRightTapEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IUIElement<D>::IsRightTapEnabled(bool value) const
 {
-    check_hresult(shim()->put_IsRightTapEnabled(value));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->put_IsRightTapEnabled(value));
 }
 
 template <typename D> bool impl_IUIElement<D>::IsHoldingEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_IsHoldingEnabled(&value));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->get_IsHoldingEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IUIElement<D>::IsHoldingEnabled(bool value) const
 {
-    check_hresult(shim()->put_IsHoldingEnabled(value));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->put_IsHoldingEnabled(value));
 }
 
 template <typename D> Windows::UI::Xaml::Input::ManipulationModes impl_IUIElement<D>::ManipulationMode() const
 {
     Windows::UI::Xaml::Input::ManipulationModes value {};
-    check_hresult(shim()->get_ManipulationMode(&value));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->get_ManipulationMode(&value));
     return value;
 }
 
 template <typename D> void impl_IUIElement<D>::ManipulationMode(Windows::UI::Xaml::Input::ManipulationModes value) const
 {
-    check_hresult(shim()->put_ManipulationMode(value));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->put_ManipulationMode(value));
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Input::Pointer> impl_IUIElement<D>::PointerCaptures() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Input::Pointer> value;
-    check_hresult(shim()->get_PointerCaptures(put(value)));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->get_PointerCaptures(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IUIElement<D>::KeyUp(const Windows::UI::Xaml::Input::KeyEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_KeyUp(get(value), &token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->add_KeyUp(get(value), &token));
     return token;
 }
 
@@ -9801,13 +9801,13 @@ template <typename D> event_revoker<IUIElement> impl_IUIElement<D>::KeyUp(auto_r
 
 template <typename D> void impl_IUIElement<D>::KeyUp(event_token token) const
 {
-    check_hresult(shim()->remove_KeyUp(token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->remove_KeyUp(token));
 }
 
 template <typename D> event_token impl_IUIElement<D>::KeyDown(const Windows::UI::Xaml::Input::KeyEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_KeyDown(get(value), &token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->add_KeyDown(get(value), &token));
     return token;
 }
 
@@ -9818,13 +9818,13 @@ template <typename D> event_revoker<IUIElement> impl_IUIElement<D>::KeyDown(auto
 
 template <typename D> void impl_IUIElement<D>::KeyDown(event_token token) const
 {
-    check_hresult(shim()->remove_KeyDown(token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->remove_KeyDown(token));
 }
 
 template <typename D> event_token impl_IUIElement<D>::GotFocus(const Windows::UI::Xaml::RoutedEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_GotFocus(get(value), &token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->add_GotFocus(get(value), &token));
     return token;
 }
 
@@ -9835,13 +9835,13 @@ template <typename D> event_revoker<IUIElement> impl_IUIElement<D>::GotFocus(aut
 
 template <typename D> void impl_IUIElement<D>::GotFocus(event_token token) const
 {
-    check_hresult(shim()->remove_GotFocus(token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->remove_GotFocus(token));
 }
 
 template <typename D> event_token impl_IUIElement<D>::LostFocus(const Windows::UI::Xaml::RoutedEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_LostFocus(get(value), &token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->add_LostFocus(get(value), &token));
     return token;
 }
 
@@ -9852,13 +9852,13 @@ template <typename D> event_revoker<IUIElement> impl_IUIElement<D>::LostFocus(au
 
 template <typename D> void impl_IUIElement<D>::LostFocus(event_token token) const
 {
-    check_hresult(shim()->remove_LostFocus(token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->remove_LostFocus(token));
 }
 
 template <typename D> event_token impl_IUIElement<D>::DragEnter(const Windows::UI::Xaml::DragEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_DragEnter(get(value), &token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->add_DragEnter(get(value), &token));
     return token;
 }
 
@@ -9869,13 +9869,13 @@ template <typename D> event_revoker<IUIElement> impl_IUIElement<D>::DragEnter(au
 
 template <typename D> void impl_IUIElement<D>::DragEnter(event_token token) const
 {
-    check_hresult(shim()->remove_DragEnter(token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->remove_DragEnter(token));
 }
 
 template <typename D> event_token impl_IUIElement<D>::DragLeave(const Windows::UI::Xaml::DragEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_DragLeave(get(value), &token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->add_DragLeave(get(value), &token));
     return token;
 }
 
@@ -9886,13 +9886,13 @@ template <typename D> event_revoker<IUIElement> impl_IUIElement<D>::DragLeave(au
 
 template <typename D> void impl_IUIElement<D>::DragLeave(event_token token) const
 {
-    check_hresult(shim()->remove_DragLeave(token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->remove_DragLeave(token));
 }
 
 template <typename D> event_token impl_IUIElement<D>::DragOver(const Windows::UI::Xaml::DragEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_DragOver(get(value), &token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->add_DragOver(get(value), &token));
     return token;
 }
 
@@ -9903,13 +9903,13 @@ template <typename D> event_revoker<IUIElement> impl_IUIElement<D>::DragOver(aut
 
 template <typename D> void impl_IUIElement<D>::DragOver(event_token token) const
 {
-    check_hresult(shim()->remove_DragOver(token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->remove_DragOver(token));
 }
 
 template <typename D> event_token impl_IUIElement<D>::Drop(const Windows::UI::Xaml::DragEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_Drop(get(value), &token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->add_Drop(get(value), &token));
     return token;
 }
 
@@ -9920,13 +9920,13 @@ template <typename D> event_revoker<IUIElement> impl_IUIElement<D>::Drop(auto_re
 
 template <typename D> void impl_IUIElement<D>::Drop(event_token token) const
 {
-    check_hresult(shim()->remove_Drop(token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->remove_Drop(token));
 }
 
 template <typename D> event_token impl_IUIElement<D>::PointerPressed(const Windows::UI::Xaml::Input::PointerEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_PointerPressed(get(value), &token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->add_PointerPressed(get(value), &token));
     return token;
 }
 
@@ -9937,13 +9937,13 @@ template <typename D> event_revoker<IUIElement> impl_IUIElement<D>::PointerPress
 
 template <typename D> void impl_IUIElement<D>::PointerPressed(event_token token) const
 {
-    check_hresult(shim()->remove_PointerPressed(token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->remove_PointerPressed(token));
 }
 
 template <typename D> event_token impl_IUIElement<D>::PointerMoved(const Windows::UI::Xaml::Input::PointerEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_PointerMoved(get(value), &token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->add_PointerMoved(get(value), &token));
     return token;
 }
 
@@ -9954,13 +9954,13 @@ template <typename D> event_revoker<IUIElement> impl_IUIElement<D>::PointerMoved
 
 template <typename D> void impl_IUIElement<D>::PointerMoved(event_token token) const
 {
-    check_hresult(shim()->remove_PointerMoved(token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->remove_PointerMoved(token));
 }
 
 template <typename D> event_token impl_IUIElement<D>::PointerReleased(const Windows::UI::Xaml::Input::PointerEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_PointerReleased(get(value), &token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->add_PointerReleased(get(value), &token));
     return token;
 }
 
@@ -9971,13 +9971,13 @@ template <typename D> event_revoker<IUIElement> impl_IUIElement<D>::PointerRelea
 
 template <typename D> void impl_IUIElement<D>::PointerReleased(event_token token) const
 {
-    check_hresult(shim()->remove_PointerReleased(token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->remove_PointerReleased(token));
 }
 
 template <typename D> event_token impl_IUIElement<D>::PointerEntered(const Windows::UI::Xaml::Input::PointerEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_PointerEntered(get(value), &token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->add_PointerEntered(get(value), &token));
     return token;
 }
 
@@ -9988,13 +9988,13 @@ template <typename D> event_revoker<IUIElement> impl_IUIElement<D>::PointerEnter
 
 template <typename D> void impl_IUIElement<D>::PointerEntered(event_token token) const
 {
-    check_hresult(shim()->remove_PointerEntered(token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->remove_PointerEntered(token));
 }
 
 template <typename D> event_token impl_IUIElement<D>::PointerExited(const Windows::UI::Xaml::Input::PointerEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_PointerExited(get(value), &token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->add_PointerExited(get(value), &token));
     return token;
 }
 
@@ -10005,13 +10005,13 @@ template <typename D> event_revoker<IUIElement> impl_IUIElement<D>::PointerExite
 
 template <typename D> void impl_IUIElement<D>::PointerExited(event_token token) const
 {
-    check_hresult(shim()->remove_PointerExited(token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->remove_PointerExited(token));
 }
 
 template <typename D> event_token impl_IUIElement<D>::PointerCaptureLost(const Windows::UI::Xaml::Input::PointerEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_PointerCaptureLost(get(value), &token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->add_PointerCaptureLost(get(value), &token));
     return token;
 }
 
@@ -10022,13 +10022,13 @@ template <typename D> event_revoker<IUIElement> impl_IUIElement<D>::PointerCaptu
 
 template <typename D> void impl_IUIElement<D>::PointerCaptureLost(event_token token) const
 {
-    check_hresult(shim()->remove_PointerCaptureLost(token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->remove_PointerCaptureLost(token));
 }
 
 template <typename D> event_token impl_IUIElement<D>::PointerCanceled(const Windows::UI::Xaml::Input::PointerEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_PointerCanceled(get(value), &token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->add_PointerCanceled(get(value), &token));
     return token;
 }
 
@@ -10039,13 +10039,13 @@ template <typename D> event_revoker<IUIElement> impl_IUIElement<D>::PointerCance
 
 template <typename D> void impl_IUIElement<D>::PointerCanceled(event_token token) const
 {
-    check_hresult(shim()->remove_PointerCanceled(token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->remove_PointerCanceled(token));
 }
 
 template <typename D> event_token impl_IUIElement<D>::PointerWheelChanged(const Windows::UI::Xaml::Input::PointerEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_PointerWheelChanged(get(value), &token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->add_PointerWheelChanged(get(value), &token));
     return token;
 }
 
@@ -10056,13 +10056,13 @@ template <typename D> event_revoker<IUIElement> impl_IUIElement<D>::PointerWheel
 
 template <typename D> void impl_IUIElement<D>::PointerWheelChanged(event_token token) const
 {
-    check_hresult(shim()->remove_PointerWheelChanged(token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->remove_PointerWheelChanged(token));
 }
 
 template <typename D> event_token impl_IUIElement<D>::Tapped(const Windows::UI::Xaml::Input::TappedEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_Tapped(get(value), &token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->add_Tapped(get(value), &token));
     return token;
 }
 
@@ -10073,13 +10073,13 @@ template <typename D> event_revoker<IUIElement> impl_IUIElement<D>::Tapped(auto_
 
 template <typename D> void impl_IUIElement<D>::Tapped(event_token token) const
 {
-    check_hresult(shim()->remove_Tapped(token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->remove_Tapped(token));
 }
 
 template <typename D> event_token impl_IUIElement<D>::DoubleTapped(const Windows::UI::Xaml::Input::DoubleTappedEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_DoubleTapped(get(value), &token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->add_DoubleTapped(get(value), &token));
     return token;
 }
 
@@ -10090,13 +10090,13 @@ template <typename D> event_revoker<IUIElement> impl_IUIElement<D>::DoubleTapped
 
 template <typename D> void impl_IUIElement<D>::DoubleTapped(event_token token) const
 {
-    check_hresult(shim()->remove_DoubleTapped(token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->remove_DoubleTapped(token));
 }
 
 template <typename D> event_token impl_IUIElement<D>::Holding(const Windows::UI::Xaml::Input::HoldingEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_Holding(get(value), &token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->add_Holding(get(value), &token));
     return token;
 }
 
@@ -10107,13 +10107,13 @@ template <typename D> event_revoker<IUIElement> impl_IUIElement<D>::Holding(auto
 
 template <typename D> void impl_IUIElement<D>::Holding(event_token token) const
 {
-    check_hresult(shim()->remove_Holding(token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->remove_Holding(token));
 }
 
 template <typename D> event_token impl_IUIElement<D>::RightTapped(const Windows::UI::Xaml::Input::RightTappedEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_RightTapped(get(value), &token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->add_RightTapped(get(value), &token));
     return token;
 }
 
@@ -10124,13 +10124,13 @@ template <typename D> event_revoker<IUIElement> impl_IUIElement<D>::RightTapped(
 
 template <typename D> void impl_IUIElement<D>::RightTapped(event_token token) const
 {
-    check_hresult(shim()->remove_RightTapped(token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->remove_RightTapped(token));
 }
 
 template <typename D> event_token impl_IUIElement<D>::ManipulationStarting(const Windows::UI::Xaml::Input::ManipulationStartingEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_ManipulationStarting(get(value), &token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->add_ManipulationStarting(get(value), &token));
     return token;
 }
 
@@ -10141,13 +10141,13 @@ template <typename D> event_revoker<IUIElement> impl_IUIElement<D>::Manipulation
 
 template <typename D> void impl_IUIElement<D>::ManipulationStarting(event_token token) const
 {
-    check_hresult(shim()->remove_ManipulationStarting(token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->remove_ManipulationStarting(token));
 }
 
 template <typename D> event_token impl_IUIElement<D>::ManipulationInertiaStarting(const Windows::UI::Xaml::Input::ManipulationInertiaStartingEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_ManipulationInertiaStarting(get(value), &token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->add_ManipulationInertiaStarting(get(value), &token));
     return token;
 }
 
@@ -10158,13 +10158,13 @@ template <typename D> event_revoker<IUIElement> impl_IUIElement<D>::Manipulation
 
 template <typename D> void impl_IUIElement<D>::ManipulationInertiaStarting(event_token token) const
 {
-    check_hresult(shim()->remove_ManipulationInertiaStarting(token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->remove_ManipulationInertiaStarting(token));
 }
 
 template <typename D> event_token impl_IUIElement<D>::ManipulationStarted(const Windows::UI::Xaml::Input::ManipulationStartedEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_ManipulationStarted(get(value), &token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->add_ManipulationStarted(get(value), &token));
     return token;
 }
 
@@ -10175,13 +10175,13 @@ template <typename D> event_revoker<IUIElement> impl_IUIElement<D>::Manipulation
 
 template <typename D> void impl_IUIElement<D>::ManipulationStarted(event_token token) const
 {
-    check_hresult(shim()->remove_ManipulationStarted(token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->remove_ManipulationStarted(token));
 }
 
 template <typename D> event_token impl_IUIElement<D>::ManipulationDelta(const Windows::UI::Xaml::Input::ManipulationDeltaEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_ManipulationDelta(get(value), &token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->add_ManipulationDelta(get(value), &token));
     return token;
 }
 
@@ -10192,13 +10192,13 @@ template <typename D> event_revoker<IUIElement> impl_IUIElement<D>::Manipulation
 
 template <typename D> void impl_IUIElement<D>::ManipulationDelta(event_token token) const
 {
-    check_hresult(shim()->remove_ManipulationDelta(token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->remove_ManipulationDelta(token));
 }
 
 template <typename D> event_token impl_IUIElement<D>::ManipulationCompleted(const Windows::UI::Xaml::Input::ManipulationCompletedEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_ManipulationCompleted(get(value), &token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->add_ManipulationCompleted(get(value), &token));
     return token;
 }
 
@@ -10209,421 +10209,421 @@ template <typename D> event_revoker<IUIElement> impl_IUIElement<D>::Manipulation
 
 template <typename D> void impl_IUIElement<D>::ManipulationCompleted(event_token token) const
 {
-    check_hresult(shim()->remove_ManipulationCompleted(token));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->remove_ManipulationCompleted(token));
 }
 
 template <typename D> void impl_IUIElement<D>::Measure(const Windows::Foundation::Size & availableSize) const
 {
-    check_hresult(shim()->abi_Measure(get(availableSize)));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->abi_Measure(get(availableSize)));
 }
 
 template <typename D> void impl_IUIElement<D>::Arrange(const Windows::Foundation::Rect & finalRect) const
 {
-    check_hresult(shim()->abi_Arrange(get(finalRect)));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->abi_Arrange(get(finalRect)));
 }
 
 template <typename D> bool impl_IUIElement<D>::CapturePointer(const Windows::UI::Xaml::Input::Pointer & value) const
 {
     bool returnValue {};
-    check_hresult(shim()->abi_CapturePointer(get(value), &returnValue));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->abi_CapturePointer(get(value), &returnValue));
     return returnValue;
 }
 
 template <typename D> void impl_IUIElement<D>::ReleasePointerCapture(const Windows::UI::Xaml::Input::Pointer & value) const
 {
-    check_hresult(shim()->abi_ReleasePointerCapture(get(value)));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->abi_ReleasePointerCapture(get(value)));
 }
 
 template <typename D> void impl_IUIElement<D>::ReleasePointerCaptures() const
 {
-    check_hresult(shim()->abi_ReleasePointerCaptures());
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->abi_ReleasePointerCaptures());
 }
 
 template <typename D> void impl_IUIElement<D>::AddHandler(const Windows::UI::Xaml::RoutedEvent & routedEvent, const Windows::IInspectable & handler, bool handledEventsToo) const
 {
-    check_hresult(shim()->abi_AddHandler(get(routedEvent), get(handler), handledEventsToo));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->abi_AddHandler(get(routedEvent), get(handler), handledEventsToo));
 }
 
 template <typename D> void impl_IUIElement<D>::RemoveHandler(const Windows::UI::Xaml::RoutedEvent & routedEvent, const Windows::IInspectable & handler) const
 {
-    check_hresult(shim()->abi_RemoveHandler(get(routedEvent), get(handler)));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->abi_RemoveHandler(get(routedEvent), get(handler)));
 }
 
 template <typename D> Windows::UI::Xaml::Media::GeneralTransform impl_IUIElement<D>::TransformToVisual(const Windows::UI::Xaml::UIElement & visual) const
 {
     Windows::UI::Xaml::Media::GeneralTransform returnValue { nullptr };
-    check_hresult(shim()->abi_TransformToVisual(get(visual), put(returnValue)));
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->abi_TransformToVisual(get(visual), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> void impl_IUIElement<D>::InvalidateMeasure() const
 {
-    check_hresult(shim()->abi_InvalidateMeasure());
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->abi_InvalidateMeasure());
 }
 
 template <typename D> void impl_IUIElement<D>::InvalidateArrange() const
 {
-    check_hresult(shim()->abi_InvalidateArrange());
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->abi_InvalidateArrange());
 }
 
 template <typename D> void impl_IUIElement<D>::UpdateLayout() const
 {
-    check_hresult(shim()->abi_UpdateLayout());
+    check_hresult(static_cast<const IUIElement &>(static_cast<const D &>(*this))->abi_UpdateLayout());
 }
 
 template <typename D> Windows::UI::Xaml::Automation::Peers::AutomationPeer impl_IUIElementOverrides<D>::OnCreateAutomationPeer() const
 {
     Windows::UI::Xaml::Automation::Peers::AutomationPeer returnValue { nullptr };
-    check_hresult(shim()->abi_OnCreateAutomationPeer(put(returnValue)));
+    check_hresult(static_cast<const IUIElementOverrides &>(static_cast<const D &>(*this))->abi_OnCreateAutomationPeer(put(returnValue)));
     return returnValue;
 }
 
 template <typename D> void impl_IUIElementOverrides<D>::OnDisconnectVisualChildren() const
 {
-    check_hresult(shim()->abi_OnDisconnectVisualChildren());
+    check_hresult(static_cast<const IUIElementOverrides &>(static_cast<const D &>(*this))->abi_OnDisconnectVisualChildren());
 }
 
 template <typename D> Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IIterable<Windows::Foundation::Point>> impl_IUIElementOverrides<D>::FindSubElementsForTouchTargeting(const Windows::Foundation::Point & point, const Windows::Foundation::Rect & boundingRect) const
 {
     Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IIterable<Windows::Foundation::Point>> returnValue;
-    check_hresult(shim()->abi_FindSubElementsForTouchTargeting(get(point), get(boundingRect), put(returnValue)));
+    check_hresult(static_cast<const IUIElementOverrides &>(static_cast<const D &>(*this))->abi_FindSubElementsForTouchTargeting(get(point), get(boundingRect), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::RoutedEvent impl_IUIElementStatics<D>::KeyDownEvent() const
 {
     Windows::UI::Xaml::RoutedEvent value { nullptr };
-    check_hresult(shim()->get_KeyDownEvent(put(value)));
+    check_hresult(static_cast<const IUIElementStatics &>(static_cast<const D &>(*this))->get_KeyDownEvent(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::RoutedEvent impl_IUIElementStatics<D>::KeyUpEvent() const
 {
     Windows::UI::Xaml::RoutedEvent value { nullptr };
-    check_hresult(shim()->get_KeyUpEvent(put(value)));
+    check_hresult(static_cast<const IUIElementStatics &>(static_cast<const D &>(*this))->get_KeyUpEvent(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::RoutedEvent impl_IUIElementStatics<D>::PointerEnteredEvent() const
 {
     Windows::UI::Xaml::RoutedEvent value { nullptr };
-    check_hresult(shim()->get_PointerEnteredEvent(put(value)));
+    check_hresult(static_cast<const IUIElementStatics &>(static_cast<const D &>(*this))->get_PointerEnteredEvent(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::RoutedEvent impl_IUIElementStatics<D>::PointerPressedEvent() const
 {
     Windows::UI::Xaml::RoutedEvent value { nullptr };
-    check_hresult(shim()->get_PointerPressedEvent(put(value)));
+    check_hresult(static_cast<const IUIElementStatics &>(static_cast<const D &>(*this))->get_PointerPressedEvent(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::RoutedEvent impl_IUIElementStatics<D>::PointerMovedEvent() const
 {
     Windows::UI::Xaml::RoutedEvent value { nullptr };
-    check_hresult(shim()->get_PointerMovedEvent(put(value)));
+    check_hresult(static_cast<const IUIElementStatics &>(static_cast<const D &>(*this))->get_PointerMovedEvent(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::RoutedEvent impl_IUIElementStatics<D>::PointerReleasedEvent() const
 {
     Windows::UI::Xaml::RoutedEvent value { nullptr };
-    check_hresult(shim()->get_PointerReleasedEvent(put(value)));
+    check_hresult(static_cast<const IUIElementStatics &>(static_cast<const D &>(*this))->get_PointerReleasedEvent(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::RoutedEvent impl_IUIElementStatics<D>::PointerExitedEvent() const
 {
     Windows::UI::Xaml::RoutedEvent value { nullptr };
-    check_hresult(shim()->get_PointerExitedEvent(put(value)));
+    check_hresult(static_cast<const IUIElementStatics &>(static_cast<const D &>(*this))->get_PointerExitedEvent(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::RoutedEvent impl_IUIElementStatics<D>::PointerCaptureLostEvent() const
 {
     Windows::UI::Xaml::RoutedEvent value { nullptr };
-    check_hresult(shim()->get_PointerCaptureLostEvent(put(value)));
+    check_hresult(static_cast<const IUIElementStatics &>(static_cast<const D &>(*this))->get_PointerCaptureLostEvent(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::RoutedEvent impl_IUIElementStatics<D>::PointerCanceledEvent() const
 {
     Windows::UI::Xaml::RoutedEvent value { nullptr };
-    check_hresult(shim()->get_PointerCanceledEvent(put(value)));
+    check_hresult(static_cast<const IUIElementStatics &>(static_cast<const D &>(*this))->get_PointerCanceledEvent(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::RoutedEvent impl_IUIElementStatics<D>::PointerWheelChangedEvent() const
 {
     Windows::UI::Xaml::RoutedEvent value { nullptr };
-    check_hresult(shim()->get_PointerWheelChangedEvent(put(value)));
+    check_hresult(static_cast<const IUIElementStatics &>(static_cast<const D &>(*this))->get_PointerWheelChangedEvent(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::RoutedEvent impl_IUIElementStatics<D>::TappedEvent() const
 {
     Windows::UI::Xaml::RoutedEvent value { nullptr };
-    check_hresult(shim()->get_TappedEvent(put(value)));
+    check_hresult(static_cast<const IUIElementStatics &>(static_cast<const D &>(*this))->get_TappedEvent(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::RoutedEvent impl_IUIElementStatics<D>::DoubleTappedEvent() const
 {
     Windows::UI::Xaml::RoutedEvent value { nullptr };
-    check_hresult(shim()->get_DoubleTappedEvent(put(value)));
+    check_hresult(static_cast<const IUIElementStatics &>(static_cast<const D &>(*this))->get_DoubleTappedEvent(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::RoutedEvent impl_IUIElementStatics<D>::HoldingEvent() const
 {
     Windows::UI::Xaml::RoutedEvent value { nullptr };
-    check_hresult(shim()->get_HoldingEvent(put(value)));
+    check_hresult(static_cast<const IUIElementStatics &>(static_cast<const D &>(*this))->get_HoldingEvent(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::RoutedEvent impl_IUIElementStatics<D>::RightTappedEvent() const
 {
     Windows::UI::Xaml::RoutedEvent value { nullptr };
-    check_hresult(shim()->get_RightTappedEvent(put(value)));
+    check_hresult(static_cast<const IUIElementStatics &>(static_cast<const D &>(*this))->get_RightTappedEvent(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::RoutedEvent impl_IUIElementStatics<D>::ManipulationStartingEvent() const
 {
     Windows::UI::Xaml::RoutedEvent value { nullptr };
-    check_hresult(shim()->get_ManipulationStartingEvent(put(value)));
+    check_hresult(static_cast<const IUIElementStatics &>(static_cast<const D &>(*this))->get_ManipulationStartingEvent(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::RoutedEvent impl_IUIElementStatics<D>::ManipulationInertiaStartingEvent() const
 {
     Windows::UI::Xaml::RoutedEvent value { nullptr };
-    check_hresult(shim()->get_ManipulationInertiaStartingEvent(put(value)));
+    check_hresult(static_cast<const IUIElementStatics &>(static_cast<const D &>(*this))->get_ManipulationInertiaStartingEvent(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::RoutedEvent impl_IUIElementStatics<D>::ManipulationStartedEvent() const
 {
     Windows::UI::Xaml::RoutedEvent value { nullptr };
-    check_hresult(shim()->get_ManipulationStartedEvent(put(value)));
+    check_hresult(static_cast<const IUIElementStatics &>(static_cast<const D &>(*this))->get_ManipulationStartedEvent(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::RoutedEvent impl_IUIElementStatics<D>::ManipulationDeltaEvent() const
 {
     Windows::UI::Xaml::RoutedEvent value { nullptr };
-    check_hresult(shim()->get_ManipulationDeltaEvent(put(value)));
+    check_hresult(static_cast<const IUIElementStatics &>(static_cast<const D &>(*this))->get_ManipulationDeltaEvent(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::RoutedEvent impl_IUIElementStatics<D>::ManipulationCompletedEvent() const
 {
     Windows::UI::Xaml::RoutedEvent value { nullptr };
-    check_hresult(shim()->get_ManipulationCompletedEvent(put(value)));
+    check_hresult(static_cast<const IUIElementStatics &>(static_cast<const D &>(*this))->get_ManipulationCompletedEvent(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::RoutedEvent impl_IUIElementStatics<D>::DragEnterEvent() const
 {
     Windows::UI::Xaml::RoutedEvent value { nullptr };
-    check_hresult(shim()->get_DragEnterEvent(put(value)));
+    check_hresult(static_cast<const IUIElementStatics &>(static_cast<const D &>(*this))->get_DragEnterEvent(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::RoutedEvent impl_IUIElementStatics<D>::DragLeaveEvent() const
 {
     Windows::UI::Xaml::RoutedEvent value { nullptr };
-    check_hresult(shim()->get_DragLeaveEvent(put(value)));
+    check_hresult(static_cast<const IUIElementStatics &>(static_cast<const D &>(*this))->get_DragLeaveEvent(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::RoutedEvent impl_IUIElementStatics<D>::DragOverEvent() const
 {
     Windows::UI::Xaml::RoutedEvent value { nullptr };
-    check_hresult(shim()->get_DragOverEvent(put(value)));
+    check_hresult(static_cast<const IUIElementStatics &>(static_cast<const D &>(*this))->get_DragOverEvent(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::RoutedEvent impl_IUIElementStatics<D>::DropEvent() const
 {
     Windows::UI::Xaml::RoutedEvent value { nullptr };
-    check_hresult(shim()->get_DropEvent(put(value)));
+    check_hresult(static_cast<const IUIElementStatics &>(static_cast<const D &>(*this))->get_DropEvent(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IUIElementStatics<D>::AllowDropProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_AllowDropProperty(put(value)));
+    check_hresult(static_cast<const IUIElementStatics &>(static_cast<const D &>(*this))->get_AllowDropProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IUIElementStatics<D>::OpacityProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_OpacityProperty(put(value)));
+    check_hresult(static_cast<const IUIElementStatics &>(static_cast<const D &>(*this))->get_OpacityProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IUIElementStatics<D>::ClipProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_ClipProperty(put(value)));
+    check_hresult(static_cast<const IUIElementStatics &>(static_cast<const D &>(*this))->get_ClipProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IUIElementStatics<D>::RenderTransformProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_RenderTransformProperty(put(value)));
+    check_hresult(static_cast<const IUIElementStatics &>(static_cast<const D &>(*this))->get_RenderTransformProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IUIElementStatics<D>::ProjectionProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_ProjectionProperty(put(value)));
+    check_hresult(static_cast<const IUIElementStatics &>(static_cast<const D &>(*this))->get_ProjectionProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IUIElementStatics<D>::RenderTransformOriginProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_RenderTransformOriginProperty(put(value)));
+    check_hresult(static_cast<const IUIElementStatics &>(static_cast<const D &>(*this))->get_RenderTransformOriginProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IUIElementStatics<D>::IsHitTestVisibleProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_IsHitTestVisibleProperty(put(value)));
+    check_hresult(static_cast<const IUIElementStatics &>(static_cast<const D &>(*this))->get_IsHitTestVisibleProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IUIElementStatics<D>::VisibilityProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_VisibilityProperty(put(value)));
+    check_hresult(static_cast<const IUIElementStatics &>(static_cast<const D &>(*this))->get_VisibilityProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IUIElementStatics<D>::UseLayoutRoundingProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_UseLayoutRoundingProperty(put(value)));
+    check_hresult(static_cast<const IUIElementStatics &>(static_cast<const D &>(*this))->get_UseLayoutRoundingProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IUIElementStatics<D>::TransitionsProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_TransitionsProperty(put(value)));
+    check_hresult(static_cast<const IUIElementStatics &>(static_cast<const D &>(*this))->get_TransitionsProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IUIElementStatics<D>::CacheModeProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_CacheModeProperty(put(value)));
+    check_hresult(static_cast<const IUIElementStatics &>(static_cast<const D &>(*this))->get_CacheModeProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IUIElementStatics<D>::IsTapEnabledProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_IsTapEnabledProperty(put(value)));
+    check_hresult(static_cast<const IUIElementStatics &>(static_cast<const D &>(*this))->get_IsTapEnabledProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IUIElementStatics<D>::IsDoubleTapEnabledProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_IsDoubleTapEnabledProperty(put(value)));
+    check_hresult(static_cast<const IUIElementStatics &>(static_cast<const D &>(*this))->get_IsDoubleTapEnabledProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IUIElementStatics<D>::IsRightTapEnabledProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_IsRightTapEnabledProperty(put(value)));
+    check_hresult(static_cast<const IUIElementStatics &>(static_cast<const D &>(*this))->get_IsRightTapEnabledProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IUIElementStatics<D>::IsHoldingEnabledProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_IsHoldingEnabledProperty(put(value)));
+    check_hresult(static_cast<const IUIElementStatics &>(static_cast<const D &>(*this))->get_IsHoldingEnabledProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IUIElementStatics<D>::ManipulationModeProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_ManipulationModeProperty(put(value)));
+    check_hresult(static_cast<const IUIElementStatics &>(static_cast<const D &>(*this))->get_ManipulationModeProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IUIElementStatics<D>::PointerCapturesProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_PointerCapturesProperty(put(value)));
+    check_hresult(static_cast<const IUIElementStatics &>(static_cast<const D &>(*this))->get_PointerCapturesProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Media::ElementCompositeMode impl_IUIElement2<D>::CompositeMode() const
 {
     Windows::UI::Xaml::Media::ElementCompositeMode value {};
-    check_hresult(shim()->get_CompositeMode(&value));
+    check_hresult(static_cast<const IUIElement2 &>(static_cast<const D &>(*this))->get_CompositeMode(&value));
     return value;
 }
 
 template <typename D> void impl_IUIElement2<D>::CompositeMode(Windows::UI::Xaml::Media::ElementCompositeMode value) const
 {
-    check_hresult(shim()->put_CompositeMode(value));
+    check_hresult(static_cast<const IUIElement2 &>(static_cast<const D &>(*this))->put_CompositeMode(value));
 }
 
 template <typename D> bool impl_IUIElement2<D>::CancelDirectManipulations() const
 {
     bool returnValue {};
-    check_hresult(shim()->abi_CancelDirectManipulations(&returnValue));
+    check_hresult(static_cast<const IUIElement2 &>(static_cast<const D &>(*this))->abi_CancelDirectManipulations(&returnValue));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IUIElementStatics2<D>::CompositeModeProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_CompositeModeProperty(put(value)));
+    check_hresult(static_cast<const IUIElementStatics2 &>(static_cast<const D &>(*this))->get_CompositeModeProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Media::Media3D::Transform3D impl_IUIElement3<D>::Transform3D() const
 {
     Windows::UI::Xaml::Media::Media3D::Transform3D value { nullptr };
-    check_hresult(shim()->get_Transform3D(put(value)));
+    check_hresult(static_cast<const IUIElement3 &>(static_cast<const D &>(*this))->get_Transform3D(put(value)));
     return value;
 }
 
 template <typename D> void impl_IUIElement3<D>::Transform3D(const Windows::UI::Xaml::Media::Media3D::Transform3D & value) const
 {
-    check_hresult(shim()->put_Transform3D(get(value)));
+    check_hresult(static_cast<const IUIElement3 &>(static_cast<const D &>(*this))->put_Transform3D(get(value)));
 }
 
 template <typename D> bool impl_IUIElement3<D>::CanDrag() const
 {
     bool value {};
-    check_hresult(shim()->get_CanDrag(&value));
+    check_hresult(static_cast<const IUIElement3 &>(static_cast<const D &>(*this))->get_CanDrag(&value));
     return value;
 }
 
 template <typename D> void impl_IUIElement3<D>::CanDrag(bool value) const
 {
-    check_hresult(shim()->put_CanDrag(value));
+    check_hresult(static_cast<const IUIElement3 &>(static_cast<const D &>(*this))->put_CanDrag(value));
 }
 
 template <typename D> event_token impl_IUIElement3<D>::DragStarting(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::DragStartingEventArgs> & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_DragStarting(get(value), &token));
+    check_hresult(static_cast<const IUIElement3 &>(static_cast<const D &>(*this))->add_DragStarting(get(value), &token));
     return token;
 }
 
@@ -10634,13 +10634,13 @@ template <typename D> event_revoker<IUIElement3> impl_IUIElement3<D>::DragStarti
 
 template <typename D> void impl_IUIElement3<D>::DragStarting(event_token token) const
 {
-    check_hresult(shim()->remove_DragStarting(token));
+    check_hresult(static_cast<const IUIElement3 &>(static_cast<const D &>(*this))->remove_DragStarting(token));
 }
 
 template <typename D> event_token impl_IUIElement3<D>::DropCompleted(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::DropCompletedEventArgs> & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_DropCompleted(get(value), &token));
+    check_hresult(static_cast<const IUIElement3 &>(static_cast<const D &>(*this))->add_DropCompleted(get(value), &token));
     return token;
 }
 
@@ -10651,101 +10651,101 @@ template <typename D> event_revoker<IUIElement3> impl_IUIElement3<D>::DropComple
 
 template <typename D> void impl_IUIElement3<D>::DropCompleted(event_token token) const
 {
-    check_hresult(shim()->remove_DropCompleted(token));
+    check_hresult(static_cast<const IUIElement3 &>(static_cast<const D &>(*this))->remove_DropCompleted(token));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::DataTransfer::DataPackageOperation> impl_IUIElement3<D>::StartDragAsync(const Windows::UI::Input::PointerPoint & pointerPoint) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::DataTransfer::DataPackageOperation> returnValue;
-    check_hresult(shim()->abi_StartDragAsync(get(pointerPoint), put(returnValue)));
+    check_hresult(static_cast<const IUIElement3 &>(static_cast<const D &>(*this))->abi_StartDragAsync(get(pointerPoint), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IUIElementStatics3<D>::Transform3DProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_Transform3DProperty(put(value)));
+    check_hresult(static_cast<const IUIElementStatics3 &>(static_cast<const D &>(*this))->get_Transform3DProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IUIElementStatics3<D>::CanDragProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_CanDragProperty(put(value)));
+    check_hresult(static_cast<const IUIElementStatics3 &>(static_cast<const D &>(*this))->get_CanDragProperty(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IUIElementStatics3<D>::TryStartDirectManipulation(const Windows::UI::Xaml::Input::Pointer & value) const
 {
     bool returnValue {};
-    check_hresult(shim()->abi_TryStartDirectManipulation(get(value), &returnValue));
+    check_hresult(static_cast<const IUIElementStatics3 &>(static_cast<const D &>(*this))->abi_TryStartDirectManipulation(get(value), &returnValue));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::Controls::Primitives::FlyoutBase impl_IUIElement4<D>::ContextFlyout() const
 {
     Windows::UI::Xaml::Controls::Primitives::FlyoutBase value { nullptr };
-    check_hresult(shim()->get_ContextFlyout(put(value)));
+    check_hresult(static_cast<const IUIElement4 &>(static_cast<const D &>(*this))->get_ContextFlyout(put(value)));
     return value;
 }
 
 template <typename D> void impl_IUIElement4<D>::ContextFlyout(const Windows::UI::Xaml::Controls::Primitives::FlyoutBase & value) const
 {
-    check_hresult(shim()->put_ContextFlyout(get(value)));
+    check_hresult(static_cast<const IUIElement4 &>(static_cast<const D &>(*this))->put_ContextFlyout(get(value)));
 }
 
 template <typename D> bool impl_IUIElement4<D>::ExitDisplayModeOnAccessKeyInvoked() const
 {
     bool value {};
-    check_hresult(shim()->get_ExitDisplayModeOnAccessKeyInvoked(&value));
+    check_hresult(static_cast<const IUIElement4 &>(static_cast<const D &>(*this))->get_ExitDisplayModeOnAccessKeyInvoked(&value));
     return value;
 }
 
 template <typename D> void impl_IUIElement4<D>::ExitDisplayModeOnAccessKeyInvoked(bool value) const
 {
-    check_hresult(shim()->put_ExitDisplayModeOnAccessKeyInvoked(value));
+    check_hresult(static_cast<const IUIElement4 &>(static_cast<const D &>(*this))->put_ExitDisplayModeOnAccessKeyInvoked(value));
 }
 
 template <typename D> bool impl_IUIElement4<D>::IsAccessKeyScope() const
 {
     bool value {};
-    check_hresult(shim()->get_IsAccessKeyScope(&value));
+    check_hresult(static_cast<const IUIElement4 &>(static_cast<const D &>(*this))->get_IsAccessKeyScope(&value));
     return value;
 }
 
 template <typename D> void impl_IUIElement4<D>::IsAccessKeyScope(bool value) const
 {
-    check_hresult(shim()->put_IsAccessKeyScope(value));
+    check_hresult(static_cast<const IUIElement4 &>(static_cast<const D &>(*this))->put_IsAccessKeyScope(value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyObject impl_IUIElement4<D>::AccessKeyScopeOwner() const
 {
     Windows::UI::Xaml::DependencyObject value { nullptr };
-    check_hresult(shim()->get_AccessKeyScopeOwner(put(value)));
+    check_hresult(static_cast<const IUIElement4 &>(static_cast<const D &>(*this))->get_AccessKeyScopeOwner(put(value)));
     return value;
 }
 
 template <typename D> void impl_IUIElement4<D>::AccessKeyScopeOwner(const Windows::UI::Xaml::DependencyObject & value) const
 {
-    check_hresult(shim()->put_AccessKeyScopeOwner(get(value)));
+    check_hresult(static_cast<const IUIElement4 &>(static_cast<const D &>(*this))->put_AccessKeyScopeOwner(get(value)));
 }
 
 template <typename D> hstring impl_IUIElement4<D>::AccessKey() const
 {
     hstring value;
-    check_hresult(shim()->get_AccessKey(put(value)));
+    check_hresult(static_cast<const IUIElement4 &>(static_cast<const D &>(*this))->get_AccessKey(put(value)));
     return value;
 }
 
 template <typename D> void impl_IUIElement4<D>::AccessKey(hstring_ref value) const
 {
-    check_hresult(shim()->put_AccessKey(get(value)));
+    check_hresult(static_cast<const IUIElement4 &>(static_cast<const D &>(*this))->put_AccessKey(get(value)));
 }
 
 template <typename D> event_token impl_IUIElement4<D>::ContextRequested(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::ContextRequestedEventArgs> & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_ContextRequested(get(value), &token));
+    check_hresult(static_cast<const IUIElement4 &>(static_cast<const D &>(*this))->add_ContextRequested(get(value), &token));
     return token;
 }
 
@@ -10756,13 +10756,13 @@ template <typename D> event_revoker<IUIElement4> impl_IUIElement4<D>::ContextReq
 
 template <typename D> void impl_IUIElement4<D>::ContextRequested(event_token token) const
 {
-    check_hresult(shim()->remove_ContextRequested(token));
+    check_hresult(static_cast<const IUIElement4 &>(static_cast<const D &>(*this))->remove_ContextRequested(token));
 }
 
 template <typename D> event_token impl_IUIElement4<D>::ContextCanceled(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::RoutedEventArgs> & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_ContextCanceled(get(value), &token));
+    check_hresult(static_cast<const IUIElement4 &>(static_cast<const D &>(*this))->add_ContextCanceled(get(value), &token));
     return token;
 }
 
@@ -10773,13 +10773,13 @@ template <typename D> event_revoker<IUIElement4> impl_IUIElement4<D>::ContextCan
 
 template <typename D> void impl_IUIElement4<D>::ContextCanceled(event_token token) const
 {
-    check_hresult(shim()->remove_ContextCanceled(token));
+    check_hresult(static_cast<const IUIElement4 &>(static_cast<const D &>(*this))->remove_ContextCanceled(token));
 }
 
 template <typename D> event_token impl_IUIElement4<D>::AccessKeyDisplayRequested(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::AccessKeyDisplayRequestedEventArgs> & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_AccessKeyDisplayRequested(get(value), &token));
+    check_hresult(static_cast<const IUIElement4 &>(static_cast<const D &>(*this))->add_AccessKeyDisplayRequested(get(value), &token));
     return token;
 }
 
@@ -10790,13 +10790,13 @@ template <typename D> event_revoker<IUIElement4> impl_IUIElement4<D>::AccessKeyD
 
 template <typename D> void impl_IUIElement4<D>::AccessKeyDisplayRequested(event_token token) const
 {
-    check_hresult(shim()->remove_AccessKeyDisplayRequested(token));
+    check_hresult(static_cast<const IUIElement4 &>(static_cast<const D &>(*this))->remove_AccessKeyDisplayRequested(token));
 }
 
 template <typename D> event_token impl_IUIElement4<D>::AccessKeyDisplayDismissed(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::AccessKeyDisplayDismissedEventArgs> & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_AccessKeyDisplayDismissed(get(value), &token));
+    check_hresult(static_cast<const IUIElement4 &>(static_cast<const D &>(*this))->add_AccessKeyDisplayDismissed(get(value), &token));
     return token;
 }
 
@@ -10807,13 +10807,13 @@ template <typename D> event_revoker<IUIElement4> impl_IUIElement4<D>::AccessKeyD
 
 template <typename D> void impl_IUIElement4<D>::AccessKeyDisplayDismissed(event_token token) const
 {
-    check_hresult(shim()->remove_AccessKeyDisplayDismissed(token));
+    check_hresult(static_cast<const IUIElement4 &>(static_cast<const D &>(*this))->remove_AccessKeyDisplayDismissed(token));
 }
 
 template <typename D> event_token impl_IUIElement4<D>::AccessKeyInvoked(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::AccessKeyInvokedEventArgs> & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_AccessKeyInvoked(get(value), &token));
+    check_hresult(static_cast<const IUIElement4 &>(static_cast<const D &>(*this))->add_AccessKeyInvoked(get(value), &token));
     return token;
 }
 
@@ -10824,109 +10824,109 @@ template <typename D> event_revoker<IUIElement4> impl_IUIElement4<D>::AccessKeyI
 
 template <typename D> void impl_IUIElement4<D>::AccessKeyInvoked(event_token token) const
 {
-    check_hresult(shim()->remove_AccessKeyInvoked(token));
+    check_hresult(static_cast<const IUIElement4 &>(static_cast<const D &>(*this))->remove_AccessKeyInvoked(token));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IUIElementStatics4<D>::ContextFlyoutProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_ContextFlyoutProperty(put(value)));
+    check_hresult(static_cast<const IUIElementStatics4 &>(static_cast<const D &>(*this))->get_ContextFlyoutProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IUIElementStatics4<D>::ExitDisplayModeOnAccessKeyInvokedProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_ExitDisplayModeOnAccessKeyInvokedProperty(put(value)));
+    check_hresult(static_cast<const IUIElementStatics4 &>(static_cast<const D &>(*this))->get_ExitDisplayModeOnAccessKeyInvokedProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IUIElementStatics4<D>::IsAccessKeyScopeProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_IsAccessKeyScopeProperty(put(value)));
+    check_hresult(static_cast<const IUIElementStatics4 &>(static_cast<const D &>(*this))->get_IsAccessKeyScopeProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IUIElementStatics4<D>::AccessKeyScopeOwnerProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_AccessKeyScopeOwnerProperty(put(value)));
+    check_hresult(static_cast<const IUIElementStatics4 &>(static_cast<const D &>(*this))->get_AccessKeyScopeOwnerProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IUIElementStatics4<D>::AccessKeyProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_AccessKeyProperty(put(value)));
+    check_hresult(static_cast<const IUIElementStatics4 &>(static_cast<const D &>(*this))->get_AccessKeyProperty(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IVisualState<D>::Name() const
 {
     hstring value;
-    check_hresult(shim()->get_Name(put(value)));
+    check_hresult(static_cast<const IVisualState &>(static_cast<const D &>(*this))->get_Name(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Media::Animation::Storyboard impl_IVisualState<D>::Storyboard() const
 {
     Windows::UI::Xaml::Media::Animation::Storyboard value { nullptr };
-    check_hresult(shim()->get_Storyboard(put(value)));
+    check_hresult(static_cast<const IVisualState &>(static_cast<const D &>(*this))->get_Storyboard(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVisualState<D>::Storyboard(const Windows::UI::Xaml::Media::Animation::Storyboard & value) const
 {
-    check_hresult(shim()->put_Storyboard(get(value)));
+    check_hresult(static_cast<const IVisualState &>(static_cast<const D &>(*this))->put_Storyboard(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::SetterBaseCollection impl_IVisualState2<D>::Setters() const
 {
     Windows::UI::Xaml::SetterBaseCollection value { nullptr };
-    check_hresult(shim()->get_Setters(put(value)));
+    check_hresult(static_cast<const IVisualState2 &>(static_cast<const D &>(*this))->get_Setters(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::UI::Xaml::StateTriggerBase> impl_IVisualState2<D>::StateTriggers() const
 {
     Windows::Foundation::Collections::IVector<Windows::UI::Xaml::StateTriggerBase> value;
-    check_hresult(shim()->get_StateTriggers(put(value)));
+    check_hresult(static_cast<const IVisualState2 &>(static_cast<const D &>(*this))->get_StateTriggers(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IVisualStateGroup<D>::Name() const
 {
     hstring value;
-    check_hresult(shim()->get_Name(put(value)));
+    check_hresult(static_cast<const IVisualStateGroup &>(static_cast<const D &>(*this))->get_Name(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::UI::Xaml::VisualTransition> impl_IVisualStateGroup<D>::Transitions() const
 {
     Windows::Foundation::Collections::IVector<Windows::UI::Xaml::VisualTransition> value;
-    check_hresult(shim()->get_Transitions(put(value)));
+    check_hresult(static_cast<const IVisualStateGroup &>(static_cast<const D &>(*this))->get_Transitions(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::UI::Xaml::VisualState> impl_IVisualStateGroup<D>::States() const
 {
     Windows::Foundation::Collections::IVector<Windows::UI::Xaml::VisualState> value;
-    check_hresult(shim()->get_States(put(value)));
+    check_hresult(static_cast<const IVisualStateGroup &>(static_cast<const D &>(*this))->get_States(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::VisualState impl_IVisualStateGroup<D>::CurrentState() const
 {
     Windows::UI::Xaml::VisualState value { nullptr };
-    check_hresult(shim()->get_CurrentState(put(value)));
+    check_hresult(static_cast<const IVisualStateGroup &>(static_cast<const D &>(*this))->get_CurrentState(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IVisualStateGroup<D>::CurrentStateChanged(const Windows::UI::Xaml::VisualStateChangedEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_CurrentStateChanged(get(value), &token));
+    check_hresult(static_cast<const IVisualStateGroup &>(static_cast<const D &>(*this))->add_CurrentStateChanged(get(value), &token));
     return token;
 }
 
@@ -10937,13 +10937,13 @@ template <typename D> event_revoker<IVisualStateGroup> impl_IVisualStateGroup<D>
 
 template <typename D> void impl_IVisualStateGroup<D>::CurrentStateChanged(event_token token) const
 {
-    check_hresult(shim()->remove_CurrentStateChanged(token));
+    check_hresult(static_cast<const IVisualStateGroup &>(static_cast<const D &>(*this))->remove_CurrentStateChanged(token));
 }
 
 template <typename D> event_token impl_IVisualStateGroup<D>::CurrentStateChanging(const Windows::UI::Xaml::VisualStateChangedEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_CurrentStateChanging(get(value), &token));
+    check_hresult(static_cast<const IVisualStateGroup &>(static_cast<const D &>(*this))->add_CurrentStateChanging(get(value), &token));
     return token;
 }
 
@@ -10954,428 +10954,428 @@ template <typename D> event_revoker<IVisualStateGroup> impl_IVisualStateGroup<D>
 
 template <typename D> void impl_IVisualStateGroup<D>::CurrentStateChanging(event_token token) const
 {
-    check_hresult(shim()->remove_CurrentStateChanging(token));
+    check_hresult(static_cast<const IVisualStateGroup &>(static_cast<const D &>(*this))->remove_CurrentStateChanging(token));
 }
 
 template <typename D> bool impl_IVisualStateManagerOverrides<D>::GoToStateCore(const Windows::UI::Xaml::Controls::Control & control, const Windows::UI::Xaml::FrameworkElement & templateRoot, hstring_ref stateName, const Windows::UI::Xaml::VisualStateGroup & group, const Windows::UI::Xaml::VisualState & state, bool useTransitions) const
 {
     bool returnValue {};
-    check_hresult(shim()->abi_GoToStateCore(get(control), get(templateRoot), get(stateName), get(group), get(state), useTransitions, &returnValue));
+    check_hresult(static_cast<const IVisualStateManagerOverrides &>(static_cast<const D &>(*this))->abi_GoToStateCore(get(control), get(templateRoot), get(stateName), get(group), get(state), useTransitions, &returnValue));
     return returnValue;
 }
 
 template <typename D> void impl_IVisualStateManagerProtected<D>::RaiseCurrentStateChanging(const Windows::UI::Xaml::VisualStateGroup & stateGroup, const Windows::UI::Xaml::VisualState & oldState, const Windows::UI::Xaml::VisualState & newState, const Windows::UI::Xaml::Controls::Control & control) const
 {
-    check_hresult(shim()->abi_RaiseCurrentStateChanging(get(stateGroup), get(oldState), get(newState), get(control)));
+    check_hresult(static_cast<const IVisualStateManagerProtected &>(static_cast<const D &>(*this))->abi_RaiseCurrentStateChanging(get(stateGroup), get(oldState), get(newState), get(control)));
 }
 
 template <typename D> void impl_IVisualStateManagerProtected<D>::RaiseCurrentStateChanged(const Windows::UI::Xaml::VisualStateGroup & stateGroup, const Windows::UI::Xaml::VisualState & oldState, const Windows::UI::Xaml::VisualState & newState, const Windows::UI::Xaml::Controls::Control & control) const
 {
-    check_hresult(shim()->abi_RaiseCurrentStateChanged(get(stateGroup), get(oldState), get(newState), get(control)));
+    check_hresult(static_cast<const IVisualStateManagerProtected &>(static_cast<const D &>(*this))->abi_RaiseCurrentStateChanged(get(stateGroup), get(oldState), get(newState), get(control)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::UI::Xaml::VisualStateGroup> impl_IVisualStateManagerStatics<D>::GetVisualStateGroups(const Windows::UI::Xaml::FrameworkElement & obj) const
 {
     Windows::Foundation::Collections::IVector<Windows::UI::Xaml::VisualStateGroup> value;
-    check_hresult(shim()->abi_GetVisualStateGroups(get(obj), put(value)));
+    check_hresult(static_cast<const IVisualStateManagerStatics &>(static_cast<const D &>(*this))->abi_GetVisualStateGroups(get(obj), put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IVisualStateManagerStatics<D>::CustomVisualStateManagerProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_CustomVisualStateManagerProperty(put(value)));
+    check_hresult(static_cast<const IVisualStateManagerStatics &>(static_cast<const D &>(*this))->get_CustomVisualStateManagerProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::VisualStateManager impl_IVisualStateManagerStatics<D>::GetCustomVisualStateManager(const Windows::UI::Xaml::FrameworkElement & obj) const
 {
     Windows::UI::Xaml::VisualStateManager value { nullptr };
-    check_hresult(shim()->abi_GetCustomVisualStateManager(get(obj), put(value)));
+    check_hresult(static_cast<const IVisualStateManagerStatics &>(static_cast<const D &>(*this))->abi_GetCustomVisualStateManager(get(obj), put(value)));
     return value;
 }
 
 template <typename D> void impl_IVisualStateManagerStatics<D>::SetCustomVisualStateManager(const Windows::UI::Xaml::FrameworkElement & obj, const Windows::UI::Xaml::VisualStateManager & value) const
 {
-    check_hresult(shim()->abi_SetCustomVisualStateManager(get(obj), get(value)));
+    check_hresult(static_cast<const IVisualStateManagerStatics &>(static_cast<const D &>(*this))->abi_SetCustomVisualStateManager(get(obj), get(value)));
 }
 
 template <typename D> bool impl_IVisualStateManagerStatics<D>::GoToState(const Windows::UI::Xaml::Controls::Control & control, hstring_ref stateName, bool useTransitions) const
 {
     bool returnValue {};
-    check_hresult(shim()->abi_GoToState(get(control), get(stateName), useTransitions, &returnValue));
+    check_hresult(static_cast<const IVisualStateManagerStatics &>(static_cast<const D &>(*this))->abi_GoToState(get(control), get(stateName), useTransitions, &returnValue));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::VisualStateManager impl_IVisualStateManagerFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::VisualStateManager instance { nullptr };
-    check_hresult(shim()->abi_CreateInstance(get(outer), put(inner), put(instance)));
+    check_hresult(static_cast<const IVisualStateManagerFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::UI::Xaml::Duration impl_IVisualTransition<D>::GeneratedDuration() const
 {
     Windows::UI::Xaml::Duration value {};
-    check_hresult(shim()->get_GeneratedDuration(put(value)));
+    check_hresult(static_cast<const IVisualTransition &>(static_cast<const D &>(*this))->get_GeneratedDuration(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVisualTransition<D>::GeneratedDuration(const Windows::UI::Xaml::Duration & value) const
 {
-    check_hresult(shim()->put_GeneratedDuration(get(value)));
+    check_hresult(static_cast<const IVisualTransition &>(static_cast<const D &>(*this))->put_GeneratedDuration(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::Media::Animation::EasingFunctionBase impl_IVisualTransition<D>::GeneratedEasingFunction() const
 {
     Windows::UI::Xaml::Media::Animation::EasingFunctionBase value { nullptr };
-    check_hresult(shim()->get_GeneratedEasingFunction(put(value)));
+    check_hresult(static_cast<const IVisualTransition &>(static_cast<const D &>(*this))->get_GeneratedEasingFunction(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVisualTransition<D>::GeneratedEasingFunction(const Windows::UI::Xaml::Media::Animation::EasingFunctionBase & value) const
 {
-    check_hresult(shim()->put_GeneratedEasingFunction(get(value)));
+    check_hresult(static_cast<const IVisualTransition &>(static_cast<const D &>(*this))->put_GeneratedEasingFunction(get(value)));
 }
 
 template <typename D> hstring impl_IVisualTransition<D>::To() const
 {
     hstring value;
-    check_hresult(shim()->get_To(put(value)));
+    check_hresult(static_cast<const IVisualTransition &>(static_cast<const D &>(*this))->get_To(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVisualTransition<D>::To(hstring_ref value) const
 {
-    check_hresult(shim()->put_To(get(value)));
+    check_hresult(static_cast<const IVisualTransition &>(static_cast<const D &>(*this))->put_To(get(value)));
 }
 
 template <typename D> hstring impl_IVisualTransition<D>::From() const
 {
     hstring value;
-    check_hresult(shim()->get_From(put(value)));
+    check_hresult(static_cast<const IVisualTransition &>(static_cast<const D &>(*this))->get_From(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVisualTransition<D>::From(hstring_ref value) const
 {
-    check_hresult(shim()->put_From(get(value)));
+    check_hresult(static_cast<const IVisualTransition &>(static_cast<const D &>(*this))->put_From(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::Media::Animation::Storyboard impl_IVisualTransition<D>::Storyboard() const
 {
     Windows::UI::Xaml::Media::Animation::Storyboard value { nullptr };
-    check_hresult(shim()->get_Storyboard(put(value)));
+    check_hresult(static_cast<const IVisualTransition &>(static_cast<const D &>(*this))->get_Storyboard(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVisualTransition<D>::Storyboard(const Windows::UI::Xaml::Media::Animation::Storyboard & value) const
 {
-    check_hresult(shim()->put_Storyboard(get(value)));
+    check_hresult(static_cast<const IVisualTransition &>(static_cast<const D &>(*this))->put_Storyboard(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::VisualTransition impl_IVisualTransitionFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::VisualTransition instance { nullptr };
-    check_hresult(shim()->abi_CreateInstance(get(outer), put(inner), put(instance)));
+    check_hresult(static_cast<const IVisualTransitionFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> double impl_IAdaptiveTrigger<D>::MinWindowWidth() const
 {
     double value {};
-    check_hresult(shim()->get_MinWindowWidth(&value));
+    check_hresult(static_cast<const IAdaptiveTrigger &>(static_cast<const D &>(*this))->get_MinWindowWidth(&value));
     return value;
 }
 
 template <typename D> void impl_IAdaptiveTrigger<D>::MinWindowWidth(double value) const
 {
-    check_hresult(shim()->put_MinWindowWidth(value));
+    check_hresult(static_cast<const IAdaptiveTrigger &>(static_cast<const D &>(*this))->put_MinWindowWidth(value));
 }
 
 template <typename D> double impl_IAdaptiveTrigger<D>::MinWindowHeight() const
 {
     double value {};
-    check_hresult(shim()->get_MinWindowHeight(&value));
+    check_hresult(static_cast<const IAdaptiveTrigger &>(static_cast<const D &>(*this))->get_MinWindowHeight(&value));
     return value;
 }
 
 template <typename D> void impl_IAdaptiveTrigger<D>::MinWindowHeight(double value) const
 {
-    check_hresult(shim()->put_MinWindowHeight(value));
+    check_hresult(static_cast<const IAdaptiveTrigger &>(static_cast<const D &>(*this))->put_MinWindowHeight(value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IAdaptiveTriggerStatics<D>::MinWindowWidthProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_MinWindowWidthProperty(put(value)));
+    check_hresult(static_cast<const IAdaptiveTriggerStatics &>(static_cast<const D &>(*this))->get_MinWindowWidthProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IAdaptiveTriggerStatics<D>::MinWindowHeightProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_MinWindowHeightProperty(put(value)));
+    check_hresult(static_cast<const IAdaptiveTriggerStatics &>(static_cast<const D &>(*this))->get_MinWindowHeightProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::AdaptiveTrigger impl_IAdaptiveTriggerFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::AdaptiveTrigger instance { nullptr };
-    check_hresult(shim()->abi_CreateInstance(get(outer), put(inner), put(instance)));
+    check_hresult(static_cast<const IAdaptiveTriggerFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::UI::Xaml::RoutedEvent impl_IEventTrigger<D>::RoutedEvent() const
 {
     Windows::UI::Xaml::RoutedEvent value { nullptr };
-    check_hresult(shim()->get_RoutedEvent(put(value)));
+    check_hresult(static_cast<const IEventTrigger &>(static_cast<const D &>(*this))->get_RoutedEvent(put(value)));
     return value;
 }
 
 template <typename D> void impl_IEventTrigger<D>::RoutedEvent(const Windows::UI::Xaml::RoutedEvent & value) const
 {
-    check_hresult(shim()->put_RoutedEvent(get(value)));
+    check_hresult(static_cast<const IEventTrigger &>(static_cast<const D &>(*this))->put_RoutedEvent(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::TriggerActionCollection impl_IEventTrigger<D>::Actions() const
 {
     Windows::UI::Xaml::TriggerActionCollection value { nullptr };
-    check_hresult(shim()->get_Actions(put(value)));
+    check_hresult(static_cast<const IEventTrigger &>(static_cast<const D &>(*this))->get_Actions(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::TriggerCollection impl_IFrameworkElement<D>::Triggers() const
 {
     Windows::UI::Xaml::TriggerCollection value { nullptr };
-    check_hresult(shim()->get_Triggers(put(value)));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->get_Triggers(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::ResourceDictionary impl_IFrameworkElement<D>::Resources() const
 {
     Windows::UI::Xaml::ResourceDictionary value { nullptr };
-    check_hresult(shim()->get_Resources(put(value)));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->get_Resources(put(value)));
     return value;
 }
 
 template <typename D> void impl_IFrameworkElement<D>::Resources(const Windows::UI::Xaml::ResourceDictionary & value) const
 {
-    check_hresult(shim()->put_Resources(get(value)));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->put_Resources(get(value)));
 }
 
 template <typename D> Windows::IInspectable impl_IFrameworkElement<D>::Tag() const
 {
     Windows::IInspectable value;
-    check_hresult(shim()->get_Tag(put(value)));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->get_Tag(put(value)));
     return value;
 }
 
 template <typename D> void impl_IFrameworkElement<D>::Tag(const Windows::IInspectable & value) const
 {
-    check_hresult(shim()->put_Tag(get(value)));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->put_Tag(get(value)));
 }
 
 template <typename D> hstring impl_IFrameworkElement<D>::Language() const
 {
     hstring value;
-    check_hresult(shim()->get_Language(put(value)));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->get_Language(put(value)));
     return value;
 }
 
 template <typename D> void impl_IFrameworkElement<D>::Language(hstring_ref value) const
 {
-    check_hresult(shim()->put_Language(get(value)));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->put_Language(get(value)));
 }
 
 template <typename D> double impl_IFrameworkElement<D>::ActualWidth() const
 {
     double value {};
-    check_hresult(shim()->get_ActualWidth(&value));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->get_ActualWidth(&value));
     return value;
 }
 
 template <typename D> double impl_IFrameworkElement<D>::ActualHeight() const
 {
     double value {};
-    check_hresult(shim()->get_ActualHeight(&value));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->get_ActualHeight(&value));
     return value;
 }
 
 template <typename D> double impl_IFrameworkElement<D>::Width() const
 {
     double value {};
-    check_hresult(shim()->get_Width(&value));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->get_Width(&value));
     return value;
 }
 
 template <typename D> void impl_IFrameworkElement<D>::Width(double value) const
 {
-    check_hresult(shim()->put_Width(value));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->put_Width(value));
 }
 
 template <typename D> double impl_IFrameworkElement<D>::Height() const
 {
     double value {};
-    check_hresult(shim()->get_Height(&value));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->get_Height(&value));
     return value;
 }
 
 template <typename D> void impl_IFrameworkElement<D>::Height(double value) const
 {
-    check_hresult(shim()->put_Height(value));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->put_Height(value));
 }
 
 template <typename D> double impl_IFrameworkElement<D>::MinWidth() const
 {
     double value {};
-    check_hresult(shim()->get_MinWidth(&value));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->get_MinWidth(&value));
     return value;
 }
 
 template <typename D> void impl_IFrameworkElement<D>::MinWidth(double value) const
 {
-    check_hresult(shim()->put_MinWidth(value));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->put_MinWidth(value));
 }
 
 template <typename D> double impl_IFrameworkElement<D>::MaxWidth() const
 {
     double value {};
-    check_hresult(shim()->get_MaxWidth(&value));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->get_MaxWidth(&value));
     return value;
 }
 
 template <typename D> void impl_IFrameworkElement<D>::MaxWidth(double value) const
 {
-    check_hresult(shim()->put_MaxWidth(value));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->put_MaxWidth(value));
 }
 
 template <typename D> double impl_IFrameworkElement<D>::MinHeight() const
 {
     double value {};
-    check_hresult(shim()->get_MinHeight(&value));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->get_MinHeight(&value));
     return value;
 }
 
 template <typename D> void impl_IFrameworkElement<D>::MinHeight(double value) const
 {
-    check_hresult(shim()->put_MinHeight(value));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->put_MinHeight(value));
 }
 
 template <typename D> double impl_IFrameworkElement<D>::MaxHeight() const
 {
     double value {};
-    check_hresult(shim()->get_MaxHeight(&value));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->get_MaxHeight(&value));
     return value;
 }
 
 template <typename D> void impl_IFrameworkElement<D>::MaxHeight(double value) const
 {
-    check_hresult(shim()->put_MaxHeight(value));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->put_MaxHeight(value));
 }
 
 template <typename D> Windows::UI::Xaml::HorizontalAlignment impl_IFrameworkElement<D>::HorizontalAlignment() const
 {
     Windows::UI::Xaml::HorizontalAlignment value {};
-    check_hresult(shim()->get_HorizontalAlignment(&value));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->get_HorizontalAlignment(&value));
     return value;
 }
 
 template <typename D> void impl_IFrameworkElement<D>::HorizontalAlignment(Windows::UI::Xaml::HorizontalAlignment value) const
 {
-    check_hresult(shim()->put_HorizontalAlignment(value));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->put_HorizontalAlignment(value));
 }
 
 template <typename D> Windows::UI::Xaml::VerticalAlignment impl_IFrameworkElement<D>::VerticalAlignment() const
 {
     Windows::UI::Xaml::VerticalAlignment value {};
-    check_hresult(shim()->get_VerticalAlignment(&value));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->get_VerticalAlignment(&value));
     return value;
 }
 
 template <typename D> void impl_IFrameworkElement<D>::VerticalAlignment(Windows::UI::Xaml::VerticalAlignment value) const
 {
-    check_hresult(shim()->put_VerticalAlignment(value));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->put_VerticalAlignment(value));
 }
 
 template <typename D> Windows::UI::Xaml::Thickness impl_IFrameworkElement<D>::Margin() const
 {
     Windows::UI::Xaml::Thickness value {};
-    check_hresult(shim()->get_Margin(put(value)));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->get_Margin(put(value)));
     return value;
 }
 
 template <typename D> void impl_IFrameworkElement<D>::Margin(const Windows::UI::Xaml::Thickness & value) const
 {
-    check_hresult(shim()->put_Margin(get(value)));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->put_Margin(get(value)));
 }
 
 template <typename D> hstring impl_IFrameworkElement<D>::Name() const
 {
     hstring value;
-    check_hresult(shim()->get_Name(put(value)));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->get_Name(put(value)));
     return value;
 }
 
 template <typename D> void impl_IFrameworkElement<D>::Name(hstring_ref value) const
 {
-    check_hresult(shim()->put_Name(get(value)));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->put_Name(get(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_IFrameworkElement<D>::BaseUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(shim()->get_BaseUri(put(value)));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->get_BaseUri(put(value)));
     return value;
 }
 
 template <typename D> Windows::IInspectable impl_IFrameworkElement<D>::DataContext() const
 {
     Windows::IInspectable value;
-    check_hresult(shim()->get_DataContext(put(value)));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->get_DataContext(put(value)));
     return value;
 }
 
 template <typename D> void impl_IFrameworkElement<D>::DataContext(const Windows::IInspectable & value) const
 {
-    check_hresult(shim()->put_DataContext(get(value)));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->put_DataContext(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::Style impl_IFrameworkElement<D>::Style() const
 {
     Windows::UI::Xaml::Style value { nullptr };
-    check_hresult(shim()->get_Style(put(value)));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->get_Style(put(value)));
     return value;
 }
 
 template <typename D> void impl_IFrameworkElement<D>::Style(const Windows::UI::Xaml::Style & value) const
 {
-    check_hresult(shim()->put_Style(get(value)));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->put_Style(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyObject impl_IFrameworkElement<D>::Parent() const
 {
     Windows::UI::Xaml::DependencyObject value { nullptr };
-    check_hresult(shim()->get_Parent(put(value)));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->get_Parent(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::FlowDirection impl_IFrameworkElement<D>::FlowDirection() const
 {
     Windows::UI::Xaml::FlowDirection value {};
-    check_hresult(shim()->get_FlowDirection(&value));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->get_FlowDirection(&value));
     return value;
 }
 
 template <typename D> void impl_IFrameworkElement<D>::FlowDirection(Windows::UI::Xaml::FlowDirection value) const
 {
-    check_hresult(shim()->put_FlowDirection(value));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->put_FlowDirection(value));
 }
 
 template <typename D> event_token impl_IFrameworkElement<D>::Loaded(const Windows::UI::Xaml::RoutedEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_Loaded(get(value), &token));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->add_Loaded(get(value), &token));
     return token;
 }
 
@@ -11386,13 +11386,13 @@ template <typename D> event_revoker<IFrameworkElement> impl_IFrameworkElement<D>
 
 template <typename D> void impl_IFrameworkElement<D>::Loaded(event_token token) const
 {
-    check_hresult(shim()->remove_Loaded(token));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->remove_Loaded(token));
 }
 
 template <typename D> event_token impl_IFrameworkElement<D>::Unloaded(const Windows::UI::Xaml::RoutedEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_Unloaded(get(value), &token));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->add_Unloaded(get(value), &token));
     return token;
 }
 
@@ -11403,13 +11403,13 @@ template <typename D> event_revoker<IFrameworkElement> impl_IFrameworkElement<D>
 
 template <typename D> void impl_IFrameworkElement<D>::Unloaded(event_token token) const
 {
-    check_hresult(shim()->remove_Unloaded(token));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->remove_Unloaded(token));
 }
 
 template <typename D> event_token impl_IFrameworkElement<D>::SizeChanged(const Windows::UI::Xaml::SizeChangedEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_SizeChanged(get(value), &token));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->add_SizeChanged(get(value), &token));
     return token;
 }
 
@@ -11420,13 +11420,13 @@ template <typename D> event_revoker<IFrameworkElement> impl_IFrameworkElement<D>
 
 template <typename D> void impl_IFrameworkElement<D>::SizeChanged(event_token token) const
 {
-    check_hresult(shim()->remove_SizeChanged(token));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->remove_SizeChanged(token));
 }
 
 template <typename D> event_token impl_IFrameworkElement<D>::LayoutUpdated(const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_LayoutUpdated(get(value), &token));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->add_LayoutUpdated(get(value), &token));
     return token;
 }
 
@@ -11437,182 +11437,182 @@ template <typename D> event_revoker<IFrameworkElement> impl_IFrameworkElement<D>
 
 template <typename D> void impl_IFrameworkElement<D>::LayoutUpdated(event_token token) const
 {
-    check_hresult(shim()->remove_LayoutUpdated(token));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->remove_LayoutUpdated(token));
 }
 
 template <typename D> Windows::IInspectable impl_IFrameworkElement<D>::FindName(hstring_ref name) const
 {
     Windows::IInspectable returnValue;
-    check_hresult(shim()->abi_FindName(get(name), put(returnValue)));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->abi_FindName(get(name), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> void impl_IFrameworkElement<D>::SetBinding(const Windows::UI::Xaml::DependencyProperty & dp, const Windows::UI::Xaml::Data::BindingBase & binding) const
 {
-    check_hresult(shim()->abi_SetBinding(get(dp), get(binding)));
+    check_hresult(static_cast<const IFrameworkElement &>(static_cast<const D &>(*this))->abi_SetBinding(get(dp), get(binding)));
 }
 
 template <typename D> Windows::Foundation::Size impl_IFrameworkElementOverrides<D>::MeasureOverride(const Windows::Foundation::Size & availableSize) const
 {
     Windows::Foundation::Size returnValue {};
-    check_hresult(shim()->abi_MeasureOverride(get(availableSize), put(returnValue)));
+    check_hresult(static_cast<const IFrameworkElementOverrides &>(static_cast<const D &>(*this))->abi_MeasureOverride(get(availableSize), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::Size impl_IFrameworkElementOverrides<D>::ArrangeOverride(const Windows::Foundation::Size & finalSize) const
 {
     Windows::Foundation::Size returnValue {};
-    check_hresult(shim()->abi_ArrangeOverride(get(finalSize), put(returnValue)));
+    check_hresult(static_cast<const IFrameworkElementOverrides &>(static_cast<const D &>(*this))->abi_ArrangeOverride(get(finalSize), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> void impl_IFrameworkElementOverrides<D>::OnApplyTemplate() const
 {
-    check_hresult(shim()->abi_OnApplyTemplate());
+    check_hresult(static_cast<const IFrameworkElementOverrides &>(static_cast<const D &>(*this))->abi_OnApplyTemplate());
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IFrameworkElementStatics<D>::TagProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_TagProperty(put(value)));
+    check_hresult(static_cast<const IFrameworkElementStatics &>(static_cast<const D &>(*this))->get_TagProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IFrameworkElementStatics<D>::LanguageProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_LanguageProperty(put(value)));
+    check_hresult(static_cast<const IFrameworkElementStatics &>(static_cast<const D &>(*this))->get_LanguageProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IFrameworkElementStatics<D>::ActualWidthProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_ActualWidthProperty(put(value)));
+    check_hresult(static_cast<const IFrameworkElementStatics &>(static_cast<const D &>(*this))->get_ActualWidthProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IFrameworkElementStatics<D>::ActualHeightProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_ActualHeightProperty(put(value)));
+    check_hresult(static_cast<const IFrameworkElementStatics &>(static_cast<const D &>(*this))->get_ActualHeightProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IFrameworkElementStatics<D>::WidthProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_WidthProperty(put(value)));
+    check_hresult(static_cast<const IFrameworkElementStatics &>(static_cast<const D &>(*this))->get_WidthProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IFrameworkElementStatics<D>::HeightProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_HeightProperty(put(value)));
+    check_hresult(static_cast<const IFrameworkElementStatics &>(static_cast<const D &>(*this))->get_HeightProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IFrameworkElementStatics<D>::MinWidthProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_MinWidthProperty(put(value)));
+    check_hresult(static_cast<const IFrameworkElementStatics &>(static_cast<const D &>(*this))->get_MinWidthProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IFrameworkElementStatics<D>::MaxWidthProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_MaxWidthProperty(put(value)));
+    check_hresult(static_cast<const IFrameworkElementStatics &>(static_cast<const D &>(*this))->get_MaxWidthProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IFrameworkElementStatics<D>::MinHeightProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_MinHeightProperty(put(value)));
+    check_hresult(static_cast<const IFrameworkElementStatics &>(static_cast<const D &>(*this))->get_MinHeightProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IFrameworkElementStatics<D>::MaxHeightProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_MaxHeightProperty(put(value)));
+    check_hresult(static_cast<const IFrameworkElementStatics &>(static_cast<const D &>(*this))->get_MaxHeightProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IFrameworkElementStatics<D>::HorizontalAlignmentProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_HorizontalAlignmentProperty(put(value)));
+    check_hresult(static_cast<const IFrameworkElementStatics &>(static_cast<const D &>(*this))->get_HorizontalAlignmentProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IFrameworkElementStatics<D>::VerticalAlignmentProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_VerticalAlignmentProperty(put(value)));
+    check_hresult(static_cast<const IFrameworkElementStatics &>(static_cast<const D &>(*this))->get_VerticalAlignmentProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IFrameworkElementStatics<D>::MarginProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_MarginProperty(put(value)));
+    check_hresult(static_cast<const IFrameworkElementStatics &>(static_cast<const D &>(*this))->get_MarginProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IFrameworkElementStatics<D>::NameProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_NameProperty(put(value)));
+    check_hresult(static_cast<const IFrameworkElementStatics &>(static_cast<const D &>(*this))->get_NameProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IFrameworkElementStatics<D>::DataContextProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_DataContextProperty(put(value)));
+    check_hresult(static_cast<const IFrameworkElementStatics &>(static_cast<const D &>(*this))->get_DataContextProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IFrameworkElementStatics<D>::StyleProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_StyleProperty(put(value)));
+    check_hresult(static_cast<const IFrameworkElementStatics &>(static_cast<const D &>(*this))->get_StyleProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IFrameworkElementStatics<D>::FlowDirectionProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_FlowDirectionProperty(put(value)));
+    check_hresult(static_cast<const IFrameworkElementStatics &>(static_cast<const D &>(*this))->get_FlowDirectionProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::FrameworkElement impl_IFrameworkElementFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::FrameworkElement instance { nullptr };
-    check_hresult(shim()->abi_CreateInstance(get(outer), put(inner), put(instance)));
+    check_hresult(static_cast<const IFrameworkElementFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::UI::Xaml::ElementTheme impl_IFrameworkElement2<D>::RequestedTheme() const
 {
     Windows::UI::Xaml::ElementTheme value {};
-    check_hresult(shim()->get_RequestedTheme(&value));
+    check_hresult(static_cast<const IFrameworkElement2 &>(static_cast<const D &>(*this))->get_RequestedTheme(&value));
     return value;
 }
 
 template <typename D> void impl_IFrameworkElement2<D>::RequestedTheme(Windows::UI::Xaml::ElementTheme value) const
 {
-    check_hresult(shim()->put_RequestedTheme(value));
+    check_hresult(static_cast<const IFrameworkElement2 &>(static_cast<const D &>(*this))->put_RequestedTheme(value));
 }
 
 template <typename D> event_token impl_IFrameworkElement2<D>::DataContextChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::FrameworkElement, Windows::UI::Xaml::DataContextChangedEventArgs> & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_DataContextChanged(get(value), &token));
+    check_hresult(static_cast<const IFrameworkElement2 &>(static_cast<const D &>(*this))->add_DataContextChanged(get(value), &token));
     return token;
 }
 
@@ -11623,34 +11623,34 @@ template <typename D> event_revoker<IFrameworkElement2> impl_IFrameworkElement2<
 
 template <typename D> void impl_IFrameworkElement2<D>::DataContextChanged(event_token token) const
 {
-    check_hresult(shim()->remove_DataContextChanged(token));
+    check_hresult(static_cast<const IFrameworkElement2 &>(static_cast<const D &>(*this))->remove_DataContextChanged(token));
 }
 
 template <typename D> Windows::UI::Xaml::Data::BindingExpression impl_IFrameworkElement2<D>::GetBindingExpression(const Windows::UI::Xaml::DependencyProperty & dp) const
 {
     Windows::UI::Xaml::Data::BindingExpression returnValue { nullptr };
-    check_hresult(shim()->abi_GetBindingExpression(get(dp), put(returnValue)));
+    check_hresult(static_cast<const IFrameworkElement2 &>(static_cast<const D &>(*this))->abi_GetBindingExpression(get(dp), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> bool impl_IFrameworkElementOverrides2<D>::GoToElementStateCore(hstring_ref stateName, bool useTransitions) const
 {
     bool returnValue {};
-    check_hresult(shim()->abi_GoToElementStateCore(get(stateName), useTransitions, &returnValue));
+    check_hresult(static_cast<const IFrameworkElementOverrides2 &>(static_cast<const D &>(*this))->abi_GoToElementStateCore(get(stateName), useTransitions, &returnValue));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IFrameworkElementStatics2<D>::RequestedThemeProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_RequestedThemeProperty(put(value)));
+    check_hresult(static_cast<const IFrameworkElementStatics2 &>(static_cast<const D &>(*this))->get_RequestedThemeProperty(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IFrameworkElement3<D>::Loading(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::FrameworkElement, Windows::IInspectable> & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_Loading(get(value), &token));
+    check_hresult(static_cast<const IFrameworkElement3 &>(static_cast<const D &>(*this))->add_Loading(get(value), &token));
     return token;
 }
 
@@ -11661,307 +11661,307 @@ template <typename D> event_revoker<IFrameworkElement3> impl_IFrameworkElement3<
 
 template <typename D> void impl_IFrameworkElement3<D>::Loading(event_token token) const
 {
-    check_hresult(shim()->remove_Loading(token));
+    check_hresult(static_cast<const IFrameworkElement3 &>(static_cast<const D &>(*this))->remove_Loading(token));
 }
 
 template <typename D> bool impl_IFrameworkElement4<D>::AllowFocusOnInteraction() const
 {
     bool value {};
-    check_hresult(shim()->get_AllowFocusOnInteraction(&value));
+    check_hresult(static_cast<const IFrameworkElement4 &>(static_cast<const D &>(*this))->get_AllowFocusOnInteraction(&value));
     return value;
 }
 
 template <typename D> void impl_IFrameworkElement4<D>::AllowFocusOnInteraction(bool value) const
 {
-    check_hresult(shim()->put_AllowFocusOnInteraction(value));
+    check_hresult(static_cast<const IFrameworkElement4 &>(static_cast<const D &>(*this))->put_AllowFocusOnInteraction(value));
 }
 
 template <typename D> Windows::UI::Xaml::Thickness impl_IFrameworkElement4<D>::FocusVisualMargin() const
 {
     Windows::UI::Xaml::Thickness value {};
-    check_hresult(shim()->get_FocusVisualMargin(put(value)));
+    check_hresult(static_cast<const IFrameworkElement4 &>(static_cast<const D &>(*this))->get_FocusVisualMargin(put(value)));
     return value;
 }
 
 template <typename D> void impl_IFrameworkElement4<D>::FocusVisualMargin(const Windows::UI::Xaml::Thickness & value) const
 {
-    check_hresult(shim()->put_FocusVisualMargin(get(value)));
+    check_hresult(static_cast<const IFrameworkElement4 &>(static_cast<const D &>(*this))->put_FocusVisualMargin(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::Thickness impl_IFrameworkElement4<D>::FocusVisualSecondaryThickness() const
 {
     Windows::UI::Xaml::Thickness value {};
-    check_hresult(shim()->get_FocusVisualSecondaryThickness(put(value)));
+    check_hresult(static_cast<const IFrameworkElement4 &>(static_cast<const D &>(*this))->get_FocusVisualSecondaryThickness(put(value)));
     return value;
 }
 
 template <typename D> void impl_IFrameworkElement4<D>::FocusVisualSecondaryThickness(const Windows::UI::Xaml::Thickness & value) const
 {
-    check_hresult(shim()->put_FocusVisualSecondaryThickness(get(value)));
+    check_hresult(static_cast<const IFrameworkElement4 &>(static_cast<const D &>(*this))->put_FocusVisualSecondaryThickness(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::Thickness impl_IFrameworkElement4<D>::FocusVisualPrimaryThickness() const
 {
     Windows::UI::Xaml::Thickness value {};
-    check_hresult(shim()->get_FocusVisualPrimaryThickness(put(value)));
+    check_hresult(static_cast<const IFrameworkElement4 &>(static_cast<const D &>(*this))->get_FocusVisualPrimaryThickness(put(value)));
     return value;
 }
 
 template <typename D> void impl_IFrameworkElement4<D>::FocusVisualPrimaryThickness(const Windows::UI::Xaml::Thickness & value) const
 {
-    check_hresult(shim()->put_FocusVisualPrimaryThickness(get(value)));
+    check_hresult(static_cast<const IFrameworkElement4 &>(static_cast<const D &>(*this))->put_FocusVisualPrimaryThickness(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::Media::Brush impl_IFrameworkElement4<D>::FocusVisualSecondaryBrush() const
 {
     Windows::UI::Xaml::Media::Brush value { nullptr };
-    check_hresult(shim()->get_FocusVisualSecondaryBrush(put(value)));
+    check_hresult(static_cast<const IFrameworkElement4 &>(static_cast<const D &>(*this))->get_FocusVisualSecondaryBrush(put(value)));
     return value;
 }
 
 template <typename D> void impl_IFrameworkElement4<D>::FocusVisualSecondaryBrush(const Windows::UI::Xaml::Media::Brush & value) const
 {
-    check_hresult(shim()->put_FocusVisualSecondaryBrush(get(value)));
+    check_hresult(static_cast<const IFrameworkElement4 &>(static_cast<const D &>(*this))->put_FocusVisualSecondaryBrush(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::Media::Brush impl_IFrameworkElement4<D>::FocusVisualPrimaryBrush() const
 {
     Windows::UI::Xaml::Media::Brush value { nullptr };
-    check_hresult(shim()->get_FocusVisualPrimaryBrush(put(value)));
+    check_hresult(static_cast<const IFrameworkElement4 &>(static_cast<const D &>(*this))->get_FocusVisualPrimaryBrush(put(value)));
     return value;
 }
 
 template <typename D> void impl_IFrameworkElement4<D>::FocusVisualPrimaryBrush(const Windows::UI::Xaml::Media::Brush & value) const
 {
-    check_hresult(shim()->put_FocusVisualPrimaryBrush(get(value)));
+    check_hresult(static_cast<const IFrameworkElement4 &>(static_cast<const D &>(*this))->put_FocusVisualPrimaryBrush(get(value)));
 }
 
 template <typename D> bool impl_IFrameworkElement4<D>::AllowFocusWhenDisabled() const
 {
     bool value {};
-    check_hresult(shim()->get_AllowFocusWhenDisabled(&value));
+    check_hresult(static_cast<const IFrameworkElement4 &>(static_cast<const D &>(*this))->get_AllowFocusWhenDisabled(&value));
     return value;
 }
 
 template <typename D> void impl_IFrameworkElement4<D>::AllowFocusWhenDisabled(bool value) const
 {
-    check_hresult(shim()->put_AllowFocusWhenDisabled(value));
+    check_hresult(static_cast<const IFrameworkElement4 &>(static_cast<const D &>(*this))->put_AllowFocusWhenDisabled(value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IFrameworkElementStatics4<D>::AllowFocusOnInteractionProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_AllowFocusOnInteractionProperty(put(value)));
+    check_hresult(static_cast<const IFrameworkElementStatics4 &>(static_cast<const D &>(*this))->get_AllowFocusOnInteractionProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IFrameworkElementStatics4<D>::FocusVisualMarginProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_FocusVisualMarginProperty(put(value)));
+    check_hresult(static_cast<const IFrameworkElementStatics4 &>(static_cast<const D &>(*this))->get_FocusVisualMarginProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IFrameworkElementStatics4<D>::FocusVisualSecondaryThicknessProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_FocusVisualSecondaryThicknessProperty(put(value)));
+    check_hresult(static_cast<const IFrameworkElementStatics4 &>(static_cast<const D &>(*this))->get_FocusVisualSecondaryThicknessProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IFrameworkElementStatics4<D>::FocusVisualPrimaryThicknessProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_FocusVisualPrimaryThicknessProperty(put(value)));
+    check_hresult(static_cast<const IFrameworkElementStatics4 &>(static_cast<const D &>(*this))->get_FocusVisualPrimaryThicknessProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IFrameworkElementStatics4<D>::FocusVisualSecondaryBrushProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_FocusVisualSecondaryBrushProperty(put(value)));
+    check_hresult(static_cast<const IFrameworkElementStatics4 &>(static_cast<const D &>(*this))->get_FocusVisualSecondaryBrushProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IFrameworkElementStatics4<D>::FocusVisualPrimaryBrushProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_FocusVisualPrimaryBrushProperty(put(value)));
+    check_hresult(static_cast<const IFrameworkElementStatics4 &>(static_cast<const D &>(*this))->get_FocusVisualPrimaryBrushProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IFrameworkElementStatics4<D>::AllowFocusWhenDisabledProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_AllowFocusWhenDisabledProperty(put(value)));
+    check_hresult(static_cast<const IFrameworkElementStatics4 &>(static_cast<const D &>(*this))->get_AllowFocusWhenDisabledProperty(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaFailedRoutedEventArgs<D>::ErrorTrace() const
 {
     hstring value;
-    check_hresult(shim()->get_ErrorTrace(put(value)));
+    check_hresult(static_cast<const IMediaFailedRoutedEventArgs &>(static_cast<const D &>(*this))->get_ErrorTrace(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ISetter<D>::Property() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_Property(put(value)));
+    check_hresult(static_cast<const ISetter &>(static_cast<const D &>(*this))->get_Property(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISetter<D>::Property(const Windows::UI::Xaml::DependencyProperty & value) const
 {
-    check_hresult(shim()->put_Property(get(value)));
+    check_hresult(static_cast<const ISetter &>(static_cast<const D &>(*this))->put_Property(get(value)));
 }
 
 template <typename D> Windows::IInspectable impl_ISetter<D>::Value() const
 {
     Windows::IInspectable value;
-    check_hresult(shim()->get_Value(put(value)));
+    check_hresult(static_cast<const ISetter &>(static_cast<const D &>(*this))->get_Value(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISetter<D>::Value(const Windows::IInspectable & value) const
 {
-    check_hresult(shim()->put_Value(get(value)));
+    check_hresult(static_cast<const ISetter &>(static_cast<const D &>(*this))->put_Value(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::Setter impl_ISetterFactory<D>::CreateInstance(const Windows::UI::Xaml::DependencyProperty & targetProperty, const Windows::IInspectable & value) const
 {
     Windows::UI::Xaml::Setter instance { nullptr };
-    check_hresult(shim()->abi_CreateInstance(get(targetProperty), get(value), put(instance)));
+    check_hresult(static_cast<const ISetterFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(targetProperty), get(value), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::UI::Xaml::TargetPropertyPath impl_ISetter2<D>::Target() const
 {
     Windows::UI::Xaml::TargetPropertyPath value { nullptr };
-    check_hresult(shim()->get_Target(put(value)));
+    check_hresult(static_cast<const ISetter2 &>(static_cast<const D &>(*this))->get_Target(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISetter2<D>::Target(const Windows::UI::Xaml::TargetPropertyPath & value) const
 {
-    check_hresult(shim()->put_Target(get(value)));
+    check_hresult(static_cast<const ISetter2 &>(static_cast<const D &>(*this))->put_Target(get(value)));
 }
 
 template <typename D> bool impl_IStateTrigger<D>::IsActive() const
 {
     bool value {};
-    check_hresult(shim()->get_IsActive(&value));
+    check_hresult(static_cast<const IStateTrigger &>(static_cast<const D &>(*this))->get_IsActive(&value));
     return value;
 }
 
 template <typename D> void impl_IStateTrigger<D>::IsActive(bool value) const
 {
-    check_hresult(shim()->put_IsActive(value));
+    check_hresult(static_cast<const IStateTrigger &>(static_cast<const D &>(*this))->put_IsActive(value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IStateTriggerStatics<D>::IsActiveProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_IsActiveProperty(put(value)));
+    check_hresult(static_cast<const IStateTriggerStatics &>(static_cast<const D &>(*this))->get_IsActiveProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::GridLength impl_IGridLengthHelperStatics<D>::Auto() const
 {
     Windows::UI::Xaml::GridLength value {};
-    check_hresult(shim()->get_Auto(put(value)));
+    check_hresult(static_cast<const IGridLengthHelperStatics &>(static_cast<const D &>(*this))->get_Auto(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::GridLength impl_IGridLengthHelperStatics<D>::FromPixels(double pixels) const
 {
     Windows::UI::Xaml::GridLength returnValue {};
-    check_hresult(shim()->abi_FromPixels(pixels, put(returnValue)));
+    check_hresult(static_cast<const IGridLengthHelperStatics &>(static_cast<const D &>(*this))->abi_FromPixels(pixels, put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::GridLength impl_IGridLengthHelperStatics<D>::FromValueAndType(double value, Windows::UI::Xaml::GridUnitType type) const
 {
     Windows::UI::Xaml::GridLength returnValue {};
-    check_hresult(shim()->abi_FromValueAndType(value, type, put(returnValue)));
+    check_hresult(static_cast<const IGridLengthHelperStatics &>(static_cast<const D &>(*this))->abi_FromValueAndType(value, type, put(returnValue)));
     return returnValue;
 }
 
 template <typename D> bool impl_IGridLengthHelperStatics<D>::GetIsAbsolute(const Windows::UI::Xaml::GridLength & target) const
 {
     bool value {};
-    check_hresult(shim()->abi_GetIsAbsolute(get(target), &value));
+    check_hresult(static_cast<const IGridLengthHelperStatics &>(static_cast<const D &>(*this))->abi_GetIsAbsolute(get(target), &value));
     return value;
 }
 
 template <typename D> bool impl_IGridLengthHelperStatics<D>::GetIsAuto(const Windows::UI::Xaml::GridLength & target) const
 {
     bool value {};
-    check_hresult(shim()->abi_GetIsAuto(get(target), &value));
+    check_hresult(static_cast<const IGridLengthHelperStatics &>(static_cast<const D &>(*this))->abi_GetIsAuto(get(target), &value));
     return value;
 }
 
 template <typename D> bool impl_IGridLengthHelperStatics<D>::GetIsStar(const Windows::UI::Xaml::GridLength & target) const
 {
     bool value {};
-    check_hresult(shim()->abi_GetIsStar(get(target), &value));
+    check_hresult(static_cast<const IGridLengthHelperStatics &>(static_cast<const D &>(*this))->abi_GetIsStar(get(target), &value));
     return value;
 }
 
 template <typename D> bool impl_IGridLengthHelperStatics<D>::Equals(const Windows::UI::Xaml::GridLength & target, const Windows::UI::Xaml::GridLength & value) const
 {
     bool returnValue {};
-    check_hresult(shim()->abi_Equals(get(target), get(value), &returnValue));
+    check_hresult(static_cast<const IGridLengthHelperStatics &>(static_cast<const D &>(*this))->abi_Equals(get(target), get(value), &returnValue));
     return returnValue;
 }
 
 template <typename D> hstring impl_IBindingFailedEventArgs<D>::Message() const
 {
     hstring value;
-    check_hresult(shim()->get_Message(put(value)));
+    check_hresult(static_cast<const IBindingFailedEventArgs &>(static_cast<const D &>(*this))->get_Message(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IDebugSettings<D>::EnableFrameRateCounter() const
 {
     bool value {};
-    check_hresult(shim()->get_EnableFrameRateCounter(&value));
+    check_hresult(static_cast<const IDebugSettings &>(static_cast<const D &>(*this))->get_EnableFrameRateCounter(&value));
     return value;
 }
 
 template <typename D> void impl_IDebugSettings<D>::EnableFrameRateCounter(bool value) const
 {
-    check_hresult(shim()->put_EnableFrameRateCounter(value));
+    check_hresult(static_cast<const IDebugSettings &>(static_cast<const D &>(*this))->put_EnableFrameRateCounter(value));
 }
 
 template <typename D> bool impl_IDebugSettings<D>::IsBindingTracingEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_IsBindingTracingEnabled(&value));
+    check_hresult(static_cast<const IDebugSettings &>(static_cast<const D &>(*this))->get_IsBindingTracingEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IDebugSettings<D>::IsBindingTracingEnabled(bool value) const
 {
-    check_hresult(shim()->put_IsBindingTracingEnabled(value));
+    check_hresult(static_cast<const IDebugSettings &>(static_cast<const D &>(*this))->put_IsBindingTracingEnabled(value));
 }
 
 template <typename D> bool impl_IDebugSettings<D>::IsOverdrawHeatMapEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_IsOverdrawHeatMapEnabled(&value));
+    check_hresult(static_cast<const IDebugSettings &>(static_cast<const D &>(*this))->get_IsOverdrawHeatMapEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IDebugSettings<D>::IsOverdrawHeatMapEnabled(bool value) const
 {
-    check_hresult(shim()->put_IsOverdrawHeatMapEnabled(value));
+    check_hresult(static_cast<const IDebugSettings &>(static_cast<const D &>(*this))->put_IsOverdrawHeatMapEnabled(value));
 }
 
 template <typename D> event_token impl_IDebugSettings<D>::BindingFailed(const Windows::UI::Xaml::BindingFailedEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_BindingFailed(get(value), &token));
+    check_hresult(static_cast<const IDebugSettings &>(static_cast<const D &>(*this))->add_BindingFailed(get(value), &token));
     return token;
 }
 
@@ -11972,68 +11972,68 @@ template <typename D> event_revoker<IDebugSettings> impl_IDebugSettings<D>::Bind
 
 template <typename D> void impl_IDebugSettings<D>::BindingFailed(event_token token) const
 {
-    check_hresult(shim()->remove_BindingFailed(token));
+    check_hresult(static_cast<const IDebugSettings &>(static_cast<const D &>(*this))->remove_BindingFailed(token));
 }
 
 template <typename D> bool impl_IDebugSettings2<D>::EnableRedrawRegions() const
 {
     bool value {};
-    check_hresult(shim()->get_EnableRedrawRegions(&value));
+    check_hresult(static_cast<const IDebugSettings2 &>(static_cast<const D &>(*this))->get_EnableRedrawRegions(&value));
     return value;
 }
 
 template <typename D> void impl_IDebugSettings2<D>::EnableRedrawRegions(bool value) const
 {
-    check_hresult(shim()->put_EnableRedrawRegions(value));
+    check_hresult(static_cast<const IDebugSettings2 &>(static_cast<const D &>(*this))->put_EnableRedrawRegions(value));
 }
 
 template <typename D> bool impl_IDebugSettings3<D>::IsTextPerformanceVisualizationEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_IsTextPerformanceVisualizationEnabled(&value));
+    check_hresult(static_cast<const IDebugSettings3 &>(static_cast<const D &>(*this))->get_IsTextPerformanceVisualizationEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IDebugSettings3<D>::IsTextPerformanceVisualizationEnabled(bool value) const
 {
-    check_hresult(shim()->put_IsTextPerformanceVisualizationEnabled(value));
+    check_hresult(static_cast<const IDebugSettings3 &>(static_cast<const D &>(*this))->put_IsTextPerformanceVisualizationEnabled(value));
 }
 
 template <typename D> Windows::UI::Xaml::ResourceDictionary impl_IApplication<D>::Resources() const
 {
     Windows::UI::Xaml::ResourceDictionary value { nullptr };
-    check_hresult(shim()->get_Resources(put(value)));
+    check_hresult(static_cast<const IApplication &>(static_cast<const D &>(*this))->get_Resources(put(value)));
     return value;
 }
 
 template <typename D> void impl_IApplication<D>::Resources(const Windows::UI::Xaml::ResourceDictionary & value) const
 {
-    check_hresult(shim()->put_Resources(get(value)));
+    check_hresult(static_cast<const IApplication &>(static_cast<const D &>(*this))->put_Resources(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::DebugSettings impl_IApplication<D>::DebugSettings() const
 {
     Windows::UI::Xaml::DebugSettings value { nullptr };
-    check_hresult(shim()->get_DebugSettings(put(value)));
+    check_hresult(static_cast<const IApplication &>(static_cast<const D &>(*this))->get_DebugSettings(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::ApplicationTheme impl_IApplication<D>::RequestedTheme() const
 {
     Windows::UI::Xaml::ApplicationTheme value {};
-    check_hresult(shim()->get_RequestedTheme(&value));
+    check_hresult(static_cast<const IApplication &>(static_cast<const D &>(*this))->get_RequestedTheme(&value));
     return value;
 }
 
 template <typename D> void impl_IApplication<D>::RequestedTheme(Windows::UI::Xaml::ApplicationTheme value) const
 {
-    check_hresult(shim()->put_RequestedTheme(value));
+    check_hresult(static_cast<const IApplication &>(static_cast<const D &>(*this))->put_RequestedTheme(value));
 }
 
 template <typename D> event_token impl_IApplication<D>::UnhandledException(const Windows::UI::Xaml::UnhandledExceptionEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_UnhandledException(get(value), &token));
+    check_hresult(static_cast<const IApplication &>(static_cast<const D &>(*this))->add_UnhandledException(get(value), &token));
     return token;
 }
 
@@ -12044,13 +12044,13 @@ template <typename D> event_revoker<IApplication> impl_IApplication<D>::Unhandle
 
 template <typename D> void impl_IApplication<D>::UnhandledException(event_token token) const
 {
-    check_hresult(shim()->remove_UnhandledException(token));
+    check_hresult(static_cast<const IApplication &>(static_cast<const D &>(*this))->remove_UnhandledException(token));
 }
 
 template <typename D> event_token impl_IApplication<D>::Suspending(const Windows::UI::Xaml::SuspendingEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_Suspending(get(value), &token));
+    check_hresult(static_cast<const IApplication &>(static_cast<const D &>(*this))->add_Suspending(get(value), &token));
     return token;
 }
 
@@ -12061,13 +12061,13 @@ template <typename D> event_revoker<IApplication> impl_IApplication<D>::Suspendi
 
 template <typename D> void impl_IApplication<D>::Suspending(event_token token) const
 {
-    check_hresult(shim()->remove_Suspending(token));
+    check_hresult(static_cast<const IApplication &>(static_cast<const D &>(*this))->remove_Suspending(token));
 }
 
 template <typename D> event_token impl_IApplication<D>::Resuming(const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_Resuming(get(value), &token));
+    check_hresult(static_cast<const IApplication &>(static_cast<const D &>(*this))->add_Resuming(get(value), &token));
     return token;
 }
 
@@ -12078,116 +12078,116 @@ template <typename D> event_revoker<IApplication> impl_IApplication<D>::Resuming
 
 template <typename D> void impl_IApplication<D>::Resuming(event_token token) const
 {
-    check_hresult(shim()->remove_Resuming(token));
+    check_hresult(static_cast<const IApplication &>(static_cast<const D &>(*this))->remove_Resuming(token));
 }
 
 template <typename D> void impl_IApplication<D>::Exit() const
 {
-    check_hresult(shim()->abi_Exit());
+    check_hresult(static_cast<const IApplication &>(static_cast<const D &>(*this))->abi_Exit());
 }
 
 template <typename D> void impl_IApplicationOverrides<D>::OnActivated(const Windows::ApplicationModel::Activation::IActivatedEventArgs & args) const
 {
-    check_hresult(shim()->abi_OnActivated(get(args)));
+    check_hresult(static_cast<const IApplicationOverrides &>(static_cast<const D &>(*this))->abi_OnActivated(get(args)));
 }
 
 template <typename D> void impl_IApplicationOverrides<D>::OnLaunched(const Windows::ApplicationModel::Activation::LaunchActivatedEventArgs & args) const
 {
-    check_hresult(shim()->abi_OnLaunched(get(args)));
+    check_hresult(static_cast<const IApplicationOverrides &>(static_cast<const D &>(*this))->abi_OnLaunched(get(args)));
 }
 
 template <typename D> void impl_IApplicationOverrides<D>::OnFileActivated(const Windows::ApplicationModel::Activation::FileActivatedEventArgs & args) const
 {
-    check_hresult(shim()->abi_OnFileActivated(get(args)));
+    check_hresult(static_cast<const IApplicationOverrides &>(static_cast<const D &>(*this))->abi_OnFileActivated(get(args)));
 }
 
 template <typename D> void impl_IApplicationOverrides<D>::OnSearchActivated(const Windows::ApplicationModel::Activation::SearchActivatedEventArgs & args) const
 {
-    check_hresult(shim()->abi_OnSearchActivated(get(args)));
+    check_hresult(static_cast<const IApplicationOverrides &>(static_cast<const D &>(*this))->abi_OnSearchActivated(get(args)));
 }
 
 template <typename D> void impl_IApplicationOverrides<D>::OnShareTargetActivated(const Windows::ApplicationModel::Activation::ShareTargetActivatedEventArgs & args) const
 {
-    check_hresult(shim()->abi_OnShareTargetActivated(get(args)));
+    check_hresult(static_cast<const IApplicationOverrides &>(static_cast<const D &>(*this))->abi_OnShareTargetActivated(get(args)));
 }
 
 template <typename D> void impl_IApplicationOverrides<D>::OnFileOpenPickerActivated(const Windows::ApplicationModel::Activation::FileOpenPickerActivatedEventArgs & args) const
 {
-    check_hresult(shim()->abi_OnFileOpenPickerActivated(get(args)));
+    check_hresult(static_cast<const IApplicationOverrides &>(static_cast<const D &>(*this))->abi_OnFileOpenPickerActivated(get(args)));
 }
 
 template <typename D> void impl_IApplicationOverrides<D>::OnFileSavePickerActivated(const Windows::ApplicationModel::Activation::FileSavePickerActivatedEventArgs & args) const
 {
-    check_hresult(shim()->abi_OnFileSavePickerActivated(get(args)));
+    check_hresult(static_cast<const IApplicationOverrides &>(static_cast<const D &>(*this))->abi_OnFileSavePickerActivated(get(args)));
 }
 
 template <typename D> void impl_IApplicationOverrides<D>::OnCachedFileUpdaterActivated(const Windows::ApplicationModel::Activation::CachedFileUpdaterActivatedEventArgs & args) const
 {
-    check_hresult(shim()->abi_OnCachedFileUpdaterActivated(get(args)));
+    check_hresult(static_cast<const IApplicationOverrides &>(static_cast<const D &>(*this))->abi_OnCachedFileUpdaterActivated(get(args)));
 }
 
 template <typename D> void impl_IApplicationOverrides<D>::OnWindowCreated(const Windows::UI::Xaml::WindowCreatedEventArgs & args) const
 {
-    check_hresult(shim()->abi_OnWindowCreated(get(args)));
+    check_hresult(static_cast<const IApplicationOverrides &>(static_cast<const D &>(*this))->abi_OnWindowCreated(get(args)));
 }
 
 template <typename D> Windows::UI::Xaml::Application impl_IApplicationStatics<D>::Current() const
 {
     Windows::UI::Xaml::Application value { nullptr };
-    check_hresult(shim()->get_Current(put(value)));
+    check_hresult(static_cast<const IApplicationStatics &>(static_cast<const D &>(*this))->get_Current(put(value)));
     return value;
 }
 
 template <typename D> void impl_IApplicationStatics<D>::Start(const Windows::UI::Xaml::ApplicationInitializationCallback & callback) const
 {
-    check_hresult(shim()->abi_Start(get(callback)));
+    check_hresult(static_cast<const IApplicationStatics &>(static_cast<const D &>(*this))->abi_Start(get(callback)));
 }
 
 template <typename D> void impl_IApplicationStatics<D>::LoadComponent(const Windows::IInspectable & component, const Windows::Foundation::Uri & resourceLocator) const
 {
-    check_hresult(shim()->abi_LoadComponent(get(component), get(resourceLocator)));
+    check_hresult(static_cast<const IApplicationStatics &>(static_cast<const D &>(*this))->abi_LoadComponent(get(component), get(resourceLocator)));
 }
 
 template <typename D> void impl_IApplicationStatics<D>::LoadComponent(const Windows::IInspectable & component, const Windows::Foundation::Uri & resourceLocator, Windows::UI::Xaml::Controls::Primitives::ComponentResourceLocation componentResourceLocation) const
 {
-    check_hresult(shim()->abi_LoadComponentWithResourceLocation(get(component), get(resourceLocator), componentResourceLocation));
+    check_hresult(static_cast<const IApplicationStatics &>(static_cast<const D &>(*this))->abi_LoadComponentWithResourceLocation(get(component), get(resourceLocator), componentResourceLocation));
 }
 
 template <typename D> Windows::UI::Xaml::Application impl_IApplicationFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::Application instance { nullptr };
-    check_hresult(shim()->abi_CreateInstance(get(outer), put(inner), put(instance)));
+    check_hresult(static_cast<const IApplicationFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::UI::Xaml::FocusVisualKind impl_IApplication2<D>::FocusVisualKind() const
 {
     Windows::UI::Xaml::FocusVisualKind value {};
-    check_hresult(shim()->get_FocusVisualKind(&value));
+    check_hresult(static_cast<const IApplication2 &>(static_cast<const D &>(*this))->get_FocusVisualKind(&value));
     return value;
 }
 
 template <typename D> void impl_IApplication2<D>::FocusVisualKind(Windows::UI::Xaml::FocusVisualKind value) const
 {
-    check_hresult(shim()->put_FocusVisualKind(value));
+    check_hresult(static_cast<const IApplication2 &>(static_cast<const D &>(*this))->put_FocusVisualKind(value));
 }
 
 template <typename D> Windows::UI::Xaml::ApplicationRequiresPointerMode impl_IApplication2<D>::RequiresPointerMode() const
 {
     Windows::UI::Xaml::ApplicationRequiresPointerMode value {};
-    check_hresult(shim()->get_RequiresPointerMode(&value));
+    check_hresult(static_cast<const IApplication2 &>(static_cast<const D &>(*this))->get_RequiresPointerMode(&value));
     return value;
 }
 
 template <typename D> void impl_IApplication2<D>::RequiresPointerMode(Windows::UI::Xaml::ApplicationRequiresPointerMode value) const
 {
-    check_hresult(shim()->put_RequiresPointerMode(value));
+    check_hresult(static_cast<const IApplication2 &>(static_cast<const D &>(*this))->put_RequiresPointerMode(value));
 }
 
 template <typename D> event_token impl_IApplication2<D>::LeavingBackground(const Windows::UI::Xaml::LeavingBackgroundEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_LeavingBackground(get(value), &token));
+    check_hresult(static_cast<const IApplication2 &>(static_cast<const D &>(*this))->add_LeavingBackground(get(value), &token));
     return token;
 }
 
@@ -12198,13 +12198,13 @@ template <typename D> event_revoker<IApplication2> impl_IApplication2<D>::Leavin
 
 template <typename D> void impl_IApplication2<D>::LeavingBackground(event_token token) const
 {
-    check_hresult(shim()->remove_LeavingBackground(token));
+    check_hresult(static_cast<const IApplication2 &>(static_cast<const D &>(*this))->remove_LeavingBackground(token));
 }
 
 template <typename D> event_token impl_IApplication2<D>::EnteredBackground(const Windows::UI::Xaml::EnteredBackgroundEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_EnteredBackground(get(value), &token));
+    check_hresult(static_cast<const IApplication2 &>(static_cast<const D &>(*this))->add_EnteredBackground(get(value), &token));
     return token;
 }
 
@@ -12215,144 +12215,144 @@ template <typename D> event_revoker<IApplication2> impl_IApplication2<D>::Entere
 
 template <typename D> void impl_IApplication2<D>::EnteredBackground(event_token token) const
 {
-    check_hresult(shim()->remove_EnteredBackground(token));
+    check_hresult(static_cast<const IApplication2 &>(static_cast<const D &>(*this))->remove_EnteredBackground(token));
 }
 
 template <typename D> void impl_IApplicationOverrides2<D>::OnBackgroundActivated(const Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs & args) const
 {
-    check_hresult(shim()->abi_OnBackgroundActivated(get(args)));
+    check_hresult(static_cast<const IApplicationOverrides2 &>(static_cast<const D &>(*this))->abi_OnBackgroundActivated(get(args)));
 }
 
 template <typename D> Windows::Foundation::Point impl_IPointHelperStatics<D>::FromCoordinates(float x, float y) const
 {
     Windows::Foundation::Point returnValue {};
-    check_hresult(shim()->abi_FromCoordinates(x, y, put(returnValue)));
+    check_hresult(static_cast<const IPointHelperStatics &>(static_cast<const D &>(*this))->abi_FromCoordinates(x, y, put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::Rect impl_IRectHelperStatics<D>::Empty() const
 {
     Windows::Foundation::Rect value {};
-    check_hresult(shim()->get_Empty(put(value)));
+    check_hresult(static_cast<const IRectHelperStatics &>(static_cast<const D &>(*this))->get_Empty(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Rect impl_IRectHelperStatics<D>::FromCoordinatesAndDimensions(float x, float y, float width, float height) const
 {
     Windows::Foundation::Rect returnValue {};
-    check_hresult(shim()->abi_FromCoordinatesAndDimensions(x, y, width, height, put(returnValue)));
+    check_hresult(static_cast<const IRectHelperStatics &>(static_cast<const D &>(*this))->abi_FromCoordinatesAndDimensions(x, y, width, height, put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::Rect impl_IRectHelperStatics<D>::FromPoints(const Windows::Foundation::Point & point1, const Windows::Foundation::Point & point2) const
 {
     Windows::Foundation::Rect returnValue {};
-    check_hresult(shim()->abi_FromPoints(get(point1), get(point2), put(returnValue)));
+    check_hresult(static_cast<const IRectHelperStatics &>(static_cast<const D &>(*this))->abi_FromPoints(get(point1), get(point2), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::Rect impl_IRectHelperStatics<D>::FromLocationAndSize(const Windows::Foundation::Point & location, const Windows::Foundation::Size & size) const
 {
     Windows::Foundation::Rect returnValue {};
-    check_hresult(shim()->abi_FromLocationAndSize(get(location), get(size), put(returnValue)));
+    check_hresult(static_cast<const IRectHelperStatics &>(static_cast<const D &>(*this))->abi_FromLocationAndSize(get(location), get(size), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> bool impl_IRectHelperStatics<D>::GetIsEmpty(const Windows::Foundation::Rect & target) const
 {
     bool value {};
-    check_hresult(shim()->abi_GetIsEmpty(get(target), &value));
+    check_hresult(static_cast<const IRectHelperStatics &>(static_cast<const D &>(*this))->abi_GetIsEmpty(get(target), &value));
     return value;
 }
 
 template <typename D> float impl_IRectHelperStatics<D>::GetBottom(const Windows::Foundation::Rect & target) const
 {
     float value {};
-    check_hresult(shim()->abi_GetBottom(get(target), &value));
+    check_hresult(static_cast<const IRectHelperStatics &>(static_cast<const D &>(*this))->abi_GetBottom(get(target), &value));
     return value;
 }
 
 template <typename D> float impl_IRectHelperStatics<D>::GetLeft(const Windows::Foundation::Rect & target) const
 {
     float value {};
-    check_hresult(shim()->abi_GetLeft(get(target), &value));
+    check_hresult(static_cast<const IRectHelperStatics &>(static_cast<const D &>(*this))->abi_GetLeft(get(target), &value));
     return value;
 }
 
 template <typename D> float impl_IRectHelperStatics<D>::GetRight(const Windows::Foundation::Rect & target) const
 {
     float value {};
-    check_hresult(shim()->abi_GetRight(get(target), &value));
+    check_hresult(static_cast<const IRectHelperStatics &>(static_cast<const D &>(*this))->abi_GetRight(get(target), &value));
     return value;
 }
 
 template <typename D> float impl_IRectHelperStatics<D>::GetTop(const Windows::Foundation::Rect & target) const
 {
     float value {};
-    check_hresult(shim()->abi_GetTop(get(target), &value));
+    check_hresult(static_cast<const IRectHelperStatics &>(static_cast<const D &>(*this))->abi_GetTop(get(target), &value));
     return value;
 }
 
 template <typename D> bool impl_IRectHelperStatics<D>::Contains(const Windows::Foundation::Rect & target, const Windows::Foundation::Point & point) const
 {
     bool returnValue {};
-    check_hresult(shim()->abi_Contains(get(target), get(point), &returnValue));
+    check_hresult(static_cast<const IRectHelperStatics &>(static_cast<const D &>(*this))->abi_Contains(get(target), get(point), &returnValue));
     return returnValue;
 }
 
 template <typename D> bool impl_IRectHelperStatics<D>::Equals(const Windows::Foundation::Rect & target, const Windows::Foundation::Rect & value) const
 {
     bool returnValue {};
-    check_hresult(shim()->abi_Equals(get(target), get(value), &returnValue));
+    check_hresult(static_cast<const IRectHelperStatics &>(static_cast<const D &>(*this))->abi_Equals(get(target), get(value), &returnValue));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::Rect impl_IRectHelperStatics<D>::Intersect(const Windows::Foundation::Rect & target, const Windows::Foundation::Rect & rect) const
 {
     Windows::Foundation::Rect returnValue {};
-    check_hresult(shim()->abi_Intersect(get(target), get(rect), put(returnValue)));
+    check_hresult(static_cast<const IRectHelperStatics &>(static_cast<const D &>(*this))->abi_Intersect(get(target), get(rect), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::Rect impl_IRectHelperStatics<D>::Union(const Windows::Foundation::Rect & target, const Windows::Foundation::Point & point) const
 {
     Windows::Foundation::Rect returnValue {};
-    check_hresult(shim()->abi_UnionWithPoint(get(target), get(point), put(returnValue)));
+    check_hresult(static_cast<const IRectHelperStatics &>(static_cast<const D &>(*this))->abi_UnionWithPoint(get(target), get(point), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::Rect impl_IRectHelperStatics<D>::Union(const Windows::Foundation::Rect & target, const Windows::Foundation::Rect & rect) const
 {
     Windows::Foundation::Rect returnValue {};
-    check_hresult(shim()->abi_UnionWithRect(get(target), get(rect), put(returnValue)));
+    check_hresult(static_cast<const IRectHelperStatics &>(static_cast<const D &>(*this))->abi_UnionWithRect(get(target), get(rect), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::Size impl_ISizeHelperStatics<D>::Empty() const
 {
     Windows::Foundation::Size value {};
-    check_hresult(shim()->get_Empty(put(value)));
+    check_hresult(static_cast<const ISizeHelperStatics &>(static_cast<const D &>(*this))->get_Empty(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Size impl_ISizeHelperStatics<D>::FromDimensions(float width, float height) const
 {
     Windows::Foundation::Size returnValue {};
-    check_hresult(shim()->abi_FromDimensions(width, height, put(returnValue)));
+    check_hresult(static_cast<const ISizeHelperStatics &>(static_cast<const D &>(*this))->abi_FromDimensions(width, height, put(returnValue)));
     return returnValue;
 }
 
 template <typename D> bool impl_ISizeHelperStatics<D>::GetIsEmpty(const Windows::Foundation::Size & target) const
 {
     bool value {};
-    check_hresult(shim()->abi_GetIsEmpty(get(target), &value));
+    check_hresult(static_cast<const ISizeHelperStatics &>(static_cast<const D &>(*this))->abi_GetIsEmpty(get(target), &value));
     return value;
 }
 
 template <typename D> bool impl_ISizeHelperStatics<D>::Equals(const Windows::Foundation::Size & target, const Windows::Foundation::Size & value) const
 {
     bool returnValue {};
-    check_hresult(shim()->abi_Equals(get(target), get(value), &returnValue));
+    check_hresult(static_cast<const ISizeHelperStatics &>(static_cast<const D &>(*this))->abi_Equals(get(target), get(value), &returnValue));
     return returnValue;
 }
 

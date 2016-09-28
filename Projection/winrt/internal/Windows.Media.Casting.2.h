@@ -121,12 +121,8 @@ template <> struct __declspec(uuid("7828da61-dea4-5485-b27a-8f78e0472402")) __de
 namespace Windows::Media::Casting {
 
 template <typename D>
-class WINRT_EBO impl_ICastingConnection
+struct WINRT_EBO impl_ICastingConnection
 {
-    auto shim() const { return impl::shim<D, ICastingConnection>(this); }
-
-public:
-
     Windows::Media::Casting::CastingConnectionState State() const;
     Windows::Media::Casting::CastingDevice Device() const;
     Windows::Media::Casting::CastingSource Source() const;
@@ -144,23 +140,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICastingConnectionErrorOccurredEventArgs
+struct WINRT_EBO impl_ICastingConnectionErrorOccurredEventArgs
 {
-    auto shim() const { return impl::shim<D, ICastingConnectionErrorOccurredEventArgs>(this); }
-
-public:
-
     Windows::Media::Casting::CastingConnectionErrorStatus ErrorStatus() const;
     hstring Message() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICastingDevice
+struct WINRT_EBO impl_ICastingDevice
 {
-    auto shim() const { return impl::shim<D, ICastingDevice>(this); }
-
-public:
-
     hstring Id() const;
     hstring FriendlyName() const;
     Windows::Storage::Streams::IRandomAccessStreamWithContentType Icon() const;
@@ -169,12 +157,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICastingDevicePicker
+struct WINRT_EBO impl_ICastingDevicePicker
 {
-    auto shim() const { return impl::shim<D, ICastingDevicePicker>(this); }
-
-public:
-
     Windows::Media::Casting::CastingDevicePickerFilter Filter() const;
     Windows::Devices::Enumeration::DevicePickerAppearance Appearance() const;
     event_token CastingDeviceSelected(const Windows::Foundation::TypedEventHandler<Windows::Media::Casting::CastingDevicePicker, Windows::Media::Casting::CastingDeviceSelectedEventArgs> & handler) const;
@@ -191,12 +175,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICastingDevicePickerFilter
+struct WINRT_EBO impl_ICastingDevicePickerFilter
 {
-    auto shim() const { return impl::shim<D, ICastingDevicePickerFilter>(this); }
-
-public:
-
     bool SupportsAudio() const;
     void SupportsAudio(bool value) const;
     bool SupportsVideo() const;
@@ -207,22 +187,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICastingDeviceSelectedEventArgs
+struct WINRT_EBO impl_ICastingDeviceSelectedEventArgs
 {
-    auto shim() const { return impl::shim<D, ICastingDeviceSelectedEventArgs>(this); }
-
-public:
-
     Windows::Media::Casting::CastingDevice SelectedCastingDevice() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICastingDeviceStatics
+struct WINRT_EBO impl_ICastingDeviceStatics
 {
-    auto shim() const { return impl::shim<D, ICastingDeviceStatics>(this); }
-
-public:
-
     hstring GetDeviceSelector(Windows::Media::Casting::CastingPlaybackTypes type) const;
     Windows::Foundation::IAsyncOperation<hstring> GetDeviceSelectorFromCastingSourceAsync(const Windows::Media::Casting::CastingSource & castingSource) const;
     Windows::Foundation::IAsyncOperation<Windows::Media::Casting::CastingDevice> FromIdAsync(hstring_ref value) const;
@@ -230,12 +202,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICastingSource
+struct WINRT_EBO impl_ICastingSource
 {
-    auto shim() const { return impl::shim<D, ICastingSource>(this); }
-
-public:
-
     Windows::Foundation::Uri PreferredSourceUri() const;
     void PreferredSourceUri(const Windows::Foundation::Uri & value) const;
 };

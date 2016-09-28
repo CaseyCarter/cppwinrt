@@ -1274,329 +1274,329 @@ namespace Windows::UI::Text::Core {
 template <typename D> Windows::UI::Text::Core::CoreTextRange impl_ICoreTextTextRequest<D>::Range() const
 {
     Windows::UI::Text::Core::CoreTextRange value {};
-    check_hresult(shim()->get_Range(put(value)));
+    check_hresult(static_cast<const ICoreTextTextRequest &>(static_cast<const D &>(*this))->get_Range(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICoreTextTextRequest<D>::Text() const
 {
     hstring value;
-    check_hresult(shim()->get_Text(put(value)));
+    check_hresult(static_cast<const ICoreTextTextRequest &>(static_cast<const D &>(*this))->get_Text(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICoreTextTextRequest<D>::Text(hstring_ref value) const
 {
-    check_hresult(shim()->put_Text(get(value)));
+    check_hresult(static_cast<const ICoreTextTextRequest &>(static_cast<const D &>(*this))->put_Text(get(value)));
 }
 
 template <typename D> bool impl_ICoreTextTextRequest<D>::IsCanceled() const
 {
     bool value {};
-    check_hresult(shim()->get_IsCanceled(&value));
+    check_hresult(static_cast<const ICoreTextTextRequest &>(static_cast<const D &>(*this))->get_IsCanceled(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_ICoreTextTextRequest<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(shim()->abi_GetDeferral(put(value)));
+    check_hresult(static_cast<const ICoreTextTextRequest &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Text::Core::CoreTextTextRequest impl_ICoreTextTextRequestedEventArgs<D>::Request() const
 {
     Windows::UI::Text::Core::CoreTextTextRequest value { nullptr };
-    check_hresult(shim()->get_Request(put(value)));
+    check_hresult(static_cast<const ICoreTextTextRequestedEventArgs &>(static_cast<const D &>(*this))->get_Request(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Text::Core::CoreTextRange impl_ICoreTextSelectionRequest<D>::Selection() const
 {
     Windows::UI::Text::Core::CoreTextRange value {};
-    check_hresult(shim()->get_Selection(put(value)));
+    check_hresult(static_cast<const ICoreTextSelectionRequest &>(static_cast<const D &>(*this))->get_Selection(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICoreTextSelectionRequest<D>::Selection(const Windows::UI::Text::Core::CoreTextRange & value) const
 {
-    check_hresult(shim()->put_Selection(get(value)));
+    check_hresult(static_cast<const ICoreTextSelectionRequest &>(static_cast<const D &>(*this))->put_Selection(get(value)));
 }
 
 template <typename D> bool impl_ICoreTextSelectionRequest<D>::IsCanceled() const
 {
     bool value {};
-    check_hresult(shim()->get_IsCanceled(&value));
+    check_hresult(static_cast<const ICoreTextSelectionRequest &>(static_cast<const D &>(*this))->get_IsCanceled(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_ICoreTextSelectionRequest<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(shim()->abi_GetDeferral(put(value)));
+    check_hresult(static_cast<const ICoreTextSelectionRequest &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Text::Core::CoreTextSelectionRequest impl_ICoreTextSelectionRequestedEventArgs<D>::Request() const
 {
     Windows::UI::Text::Core::CoreTextSelectionRequest value { nullptr };
-    check_hresult(shim()->get_Request(put(value)));
+    check_hresult(static_cast<const ICoreTextSelectionRequestedEventArgs &>(static_cast<const D &>(*this))->get_Request(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Rect impl_ICoreTextLayoutBounds<D>::TextBounds() const
 {
     Windows::Foundation::Rect value {};
-    check_hresult(shim()->get_TextBounds(put(value)));
+    check_hresult(static_cast<const ICoreTextLayoutBounds &>(static_cast<const D &>(*this))->get_TextBounds(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICoreTextLayoutBounds<D>::TextBounds(const Windows::Foundation::Rect & value) const
 {
-    check_hresult(shim()->put_TextBounds(get(value)));
+    check_hresult(static_cast<const ICoreTextLayoutBounds &>(static_cast<const D &>(*this))->put_TextBounds(get(value)));
 }
 
 template <typename D> Windows::Foundation::Rect impl_ICoreTextLayoutBounds<D>::ControlBounds() const
 {
     Windows::Foundation::Rect value {};
-    check_hresult(shim()->get_ControlBounds(put(value)));
+    check_hresult(static_cast<const ICoreTextLayoutBounds &>(static_cast<const D &>(*this))->get_ControlBounds(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICoreTextLayoutBounds<D>::ControlBounds(const Windows::Foundation::Rect & value) const
 {
-    check_hresult(shim()->put_ControlBounds(get(value)));
+    check_hresult(static_cast<const ICoreTextLayoutBounds &>(static_cast<const D &>(*this))->put_ControlBounds(get(value)));
 }
 
 template <typename D> Windows::UI::Text::Core::CoreTextRange impl_ICoreTextLayoutRequest<D>::Range() const
 {
     Windows::UI::Text::Core::CoreTextRange value {};
-    check_hresult(shim()->get_Range(put(value)));
+    check_hresult(static_cast<const ICoreTextLayoutRequest &>(static_cast<const D &>(*this))->get_Range(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Text::Core::CoreTextLayoutBounds impl_ICoreTextLayoutRequest<D>::LayoutBounds() const
 {
     Windows::UI::Text::Core::CoreTextLayoutBounds value { nullptr };
-    check_hresult(shim()->get_LayoutBounds(put(value)));
+    check_hresult(static_cast<const ICoreTextLayoutRequest &>(static_cast<const D &>(*this))->get_LayoutBounds(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ICoreTextLayoutRequest<D>::IsCanceled() const
 {
     bool value {};
-    check_hresult(shim()->get_IsCanceled(&value));
+    check_hresult(static_cast<const ICoreTextLayoutRequest &>(static_cast<const D &>(*this))->get_IsCanceled(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_ICoreTextLayoutRequest<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(shim()->abi_GetDeferral(put(value)));
+    check_hresult(static_cast<const ICoreTextLayoutRequest &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Text::Core::CoreTextLayoutRequest impl_ICoreTextLayoutRequestedEventArgs<D>::Request() const
 {
     Windows::UI::Text::Core::CoreTextLayoutRequest value { nullptr };
-    check_hresult(shim()->get_Request(put(value)));
+    check_hresult(static_cast<const ICoreTextLayoutRequestedEventArgs &>(static_cast<const D &>(*this))->get_Request(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Text::Core::CoreTextRange impl_ICoreTextTextUpdatingEventArgs<D>::Range() const
 {
     Windows::UI::Text::Core::CoreTextRange value {};
-    check_hresult(shim()->get_Range(put(value)));
+    check_hresult(static_cast<const ICoreTextTextUpdatingEventArgs &>(static_cast<const D &>(*this))->get_Range(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICoreTextTextUpdatingEventArgs<D>::Text() const
 {
     hstring value;
-    check_hresult(shim()->get_Text(put(value)));
+    check_hresult(static_cast<const ICoreTextTextUpdatingEventArgs &>(static_cast<const D &>(*this))->get_Text(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Text::Core::CoreTextRange impl_ICoreTextTextUpdatingEventArgs<D>::NewSelection() const
 {
     Windows::UI::Text::Core::CoreTextRange value {};
-    check_hresult(shim()->get_NewSelection(put(value)));
+    check_hresult(static_cast<const ICoreTextTextUpdatingEventArgs &>(static_cast<const D &>(*this))->get_NewSelection(put(value)));
     return value;
 }
 
 template <typename D> Windows::Globalization::Language impl_ICoreTextTextUpdatingEventArgs<D>::InputLanguage() const
 {
     Windows::Globalization::Language value { nullptr };
-    check_hresult(shim()->get_InputLanguage(put(value)));
+    check_hresult(static_cast<const ICoreTextTextUpdatingEventArgs &>(static_cast<const D &>(*this))->get_InputLanguage(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Text::Core::CoreTextTextUpdatingResult impl_ICoreTextTextUpdatingEventArgs<D>::Result() const
 {
     Windows::UI::Text::Core::CoreTextTextUpdatingResult value {};
-    check_hresult(shim()->get_Result(&value));
+    check_hresult(static_cast<const ICoreTextTextUpdatingEventArgs &>(static_cast<const D &>(*this))->get_Result(&value));
     return value;
 }
 
 template <typename D> void impl_ICoreTextTextUpdatingEventArgs<D>::Result(Windows::UI::Text::Core::CoreTextTextUpdatingResult value) const
 {
-    check_hresult(shim()->put_Result(value));
+    check_hresult(static_cast<const ICoreTextTextUpdatingEventArgs &>(static_cast<const D &>(*this))->put_Result(value));
 }
 
 template <typename D> bool impl_ICoreTextTextUpdatingEventArgs<D>::IsCanceled() const
 {
     bool value {};
-    check_hresult(shim()->get_IsCanceled(&value));
+    check_hresult(static_cast<const ICoreTextTextUpdatingEventArgs &>(static_cast<const D &>(*this))->get_IsCanceled(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_ICoreTextTextUpdatingEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(shim()->abi_GetDeferral(put(value)));
+    check_hresult(static_cast<const ICoreTextTextUpdatingEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Text::Core::CoreTextRange impl_ICoreTextSelectionUpdatingEventArgs<D>::Selection() const
 {
     Windows::UI::Text::Core::CoreTextRange value {};
-    check_hresult(shim()->get_Selection(put(value)));
+    check_hresult(static_cast<const ICoreTextSelectionUpdatingEventArgs &>(static_cast<const D &>(*this))->get_Selection(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Text::Core::CoreTextSelectionUpdatingResult impl_ICoreTextSelectionUpdatingEventArgs<D>::Result() const
 {
     Windows::UI::Text::Core::CoreTextSelectionUpdatingResult value {};
-    check_hresult(shim()->get_Result(&value));
+    check_hresult(static_cast<const ICoreTextSelectionUpdatingEventArgs &>(static_cast<const D &>(*this))->get_Result(&value));
     return value;
 }
 
 template <typename D> void impl_ICoreTextSelectionUpdatingEventArgs<D>::Result(Windows::UI::Text::Core::CoreTextSelectionUpdatingResult value) const
 {
-    check_hresult(shim()->put_Result(value));
+    check_hresult(static_cast<const ICoreTextSelectionUpdatingEventArgs &>(static_cast<const D &>(*this))->put_Result(value));
 }
 
 template <typename D> bool impl_ICoreTextSelectionUpdatingEventArgs<D>::IsCanceled() const
 {
     bool value {};
-    check_hresult(shim()->get_IsCanceled(&value));
+    check_hresult(static_cast<const ICoreTextSelectionUpdatingEventArgs &>(static_cast<const D &>(*this))->get_IsCanceled(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_ICoreTextSelectionUpdatingEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(shim()->abi_GetDeferral(put(value)));
+    check_hresult(static_cast<const ICoreTextSelectionUpdatingEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Text::Core::CoreTextRange impl_ICoreTextFormatUpdatingEventArgs<D>::Range() const
 {
     Windows::UI::Text::Core::CoreTextRange value {};
-    check_hresult(shim()->get_Range(put(value)));
+    check_hresult(static_cast<const ICoreTextFormatUpdatingEventArgs &>(static_cast<const D &>(*this))->get_Range(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<winrt::Windows::UI::ViewManagement::UIElementType> impl_ICoreTextFormatUpdatingEventArgs<D>::TextColor() const
 {
     Windows::Foundation::IReference<winrt::Windows::UI::ViewManagement::UIElementType> value;
-    check_hresult(shim()->get_TextColor(put(value)));
+    check_hresult(static_cast<const ICoreTextFormatUpdatingEventArgs &>(static_cast<const D &>(*this))->get_TextColor(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<winrt::Windows::UI::ViewManagement::UIElementType> impl_ICoreTextFormatUpdatingEventArgs<D>::BackgroundColor() const
 {
     Windows::Foundation::IReference<winrt::Windows::UI::ViewManagement::UIElementType> value;
-    check_hresult(shim()->get_BackgroundColor(put(value)));
+    check_hresult(static_cast<const ICoreTextFormatUpdatingEventArgs &>(static_cast<const D &>(*this))->get_BackgroundColor(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<winrt::Windows::UI::ViewManagement::UIElementType> impl_ICoreTextFormatUpdatingEventArgs<D>::UnderlineColor() const
 {
     Windows::Foundation::IReference<winrt::Windows::UI::ViewManagement::UIElementType> value;
-    check_hresult(shim()->get_UnderlineColor(put(value)));
+    check_hresult(static_cast<const ICoreTextFormatUpdatingEventArgs &>(static_cast<const D &>(*this))->get_UnderlineColor(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<winrt::Windows::UI::Text::UnderlineType> impl_ICoreTextFormatUpdatingEventArgs<D>::UnderlineType() const
 {
     Windows::Foundation::IReference<winrt::Windows::UI::Text::UnderlineType> value;
-    check_hresult(shim()->get_UnderlineType(put(value)));
+    check_hresult(static_cast<const ICoreTextFormatUpdatingEventArgs &>(static_cast<const D &>(*this))->get_UnderlineType(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Text::Core::CoreTextFormatUpdatingReason impl_ICoreTextFormatUpdatingEventArgs<D>::Reason() const
 {
     Windows::UI::Text::Core::CoreTextFormatUpdatingReason value {};
-    check_hresult(shim()->get_Reason(&value));
+    check_hresult(static_cast<const ICoreTextFormatUpdatingEventArgs &>(static_cast<const D &>(*this))->get_Reason(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Text::Core::CoreTextFormatUpdatingResult impl_ICoreTextFormatUpdatingEventArgs<D>::Result() const
 {
     Windows::UI::Text::Core::CoreTextFormatUpdatingResult value {};
-    check_hresult(shim()->get_Result(&value));
+    check_hresult(static_cast<const ICoreTextFormatUpdatingEventArgs &>(static_cast<const D &>(*this))->get_Result(&value));
     return value;
 }
 
 template <typename D> void impl_ICoreTextFormatUpdatingEventArgs<D>::Result(Windows::UI::Text::Core::CoreTextFormatUpdatingResult value) const
 {
-    check_hresult(shim()->put_Result(value));
+    check_hresult(static_cast<const ICoreTextFormatUpdatingEventArgs &>(static_cast<const D &>(*this))->put_Result(value));
 }
 
 template <typename D> bool impl_ICoreTextFormatUpdatingEventArgs<D>::IsCanceled() const
 {
     bool value {};
-    check_hresult(shim()->get_IsCanceled(&value));
+    check_hresult(static_cast<const ICoreTextFormatUpdatingEventArgs &>(static_cast<const D &>(*this))->get_IsCanceled(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_ICoreTextFormatUpdatingEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(shim()->abi_GetDeferral(put(value)));
+    check_hresult(static_cast<const ICoreTextFormatUpdatingEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ICoreTextCompositionStartedEventArgs<D>::IsCanceled() const
 {
     bool value {};
-    check_hresult(shim()->get_IsCanceled(&value));
+    check_hresult(static_cast<const ICoreTextCompositionStartedEventArgs &>(static_cast<const D &>(*this))->get_IsCanceled(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_ICoreTextCompositionStartedEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(shim()->abi_GetDeferral(put(value)));
+    check_hresult(static_cast<const ICoreTextCompositionStartedEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ICoreTextCompositionCompletedEventArgs<D>::IsCanceled() const
 {
     bool value {};
-    check_hresult(shim()->get_IsCanceled(&value));
+    check_hresult(static_cast<const ICoreTextCompositionCompletedEventArgs &>(static_cast<const D &>(*this))->get_IsCanceled(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::UI::Text::Core::CoreTextCompositionSegment> impl_ICoreTextCompositionCompletedEventArgs<D>::CompositionSegments() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::UI::Text::Core::CoreTextCompositionSegment> value;
-    check_hresult(shim()->get_CompositionSegments(put(value)));
+    check_hresult(static_cast<const ICoreTextCompositionCompletedEventArgs &>(static_cast<const D &>(*this))->get_CompositionSegments(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_ICoreTextCompositionCompletedEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(shim()->abi_GetDeferral(put(value)));
+    check_hresult(static_cast<const ICoreTextCompositionCompletedEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_ICoreTextEditContext2<D>::NotifyFocusLeaveCompleted(const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::IInspectable> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_NotifyFocusLeaveCompleted(get(handler), &cookie));
+    check_hresult(static_cast<const ICoreTextEditContext2 &>(static_cast<const D &>(*this))->add_NotifyFocusLeaveCompleted(get(handler), &cookie));
     return cookie;
 }
 
@@ -1607,61 +1607,61 @@ template <typename D> event_revoker<ICoreTextEditContext2> impl_ICoreTextEditCon
 
 template <typename D> void impl_ICoreTextEditContext2<D>::NotifyFocusLeaveCompleted(event_token cookie) const
 {
-    check_hresult(shim()->remove_NotifyFocusLeaveCompleted(cookie));
+    check_hresult(static_cast<const ICoreTextEditContext2 &>(static_cast<const D &>(*this))->remove_NotifyFocusLeaveCompleted(cookie));
 }
 
 template <typename D> hstring impl_ICoreTextEditContext<D>::Name() const
 {
     hstring value;
-    check_hresult(shim()->get_Name(put(value)));
+    check_hresult(static_cast<const ICoreTextEditContext &>(static_cast<const D &>(*this))->get_Name(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICoreTextEditContext<D>::Name(hstring_ref value) const
 {
-    check_hresult(shim()->put_Name(get(value)));
+    check_hresult(static_cast<const ICoreTextEditContext &>(static_cast<const D &>(*this))->put_Name(get(value)));
 }
 
 template <typename D> Windows::UI::Text::Core::CoreTextInputScope impl_ICoreTextEditContext<D>::InputScope() const
 {
     Windows::UI::Text::Core::CoreTextInputScope value {};
-    check_hresult(shim()->get_InputScope(&value));
+    check_hresult(static_cast<const ICoreTextEditContext &>(static_cast<const D &>(*this))->get_InputScope(&value));
     return value;
 }
 
 template <typename D> void impl_ICoreTextEditContext<D>::InputScope(Windows::UI::Text::Core::CoreTextInputScope value) const
 {
-    check_hresult(shim()->put_InputScope(value));
+    check_hresult(static_cast<const ICoreTextEditContext &>(static_cast<const D &>(*this))->put_InputScope(value));
 }
 
 template <typename D> bool impl_ICoreTextEditContext<D>::IsReadOnly() const
 {
     bool value {};
-    check_hresult(shim()->get_IsReadOnly(&value));
+    check_hresult(static_cast<const ICoreTextEditContext &>(static_cast<const D &>(*this))->get_IsReadOnly(&value));
     return value;
 }
 
 template <typename D> void impl_ICoreTextEditContext<D>::IsReadOnly(bool value) const
 {
-    check_hresult(shim()->put_IsReadOnly(value));
+    check_hresult(static_cast<const ICoreTextEditContext &>(static_cast<const D &>(*this))->put_IsReadOnly(value));
 }
 
 template <typename D> Windows::UI::Text::Core::CoreTextInputPaneDisplayPolicy impl_ICoreTextEditContext<D>::InputPaneDisplayPolicy() const
 {
     Windows::UI::Text::Core::CoreTextInputPaneDisplayPolicy value {};
-    check_hresult(shim()->get_InputPaneDisplayPolicy(&value));
+    check_hresult(static_cast<const ICoreTextEditContext &>(static_cast<const D &>(*this))->get_InputPaneDisplayPolicy(&value));
     return value;
 }
 
 template <typename D> void impl_ICoreTextEditContext<D>::InputPaneDisplayPolicy(Windows::UI::Text::Core::CoreTextInputPaneDisplayPolicy value) const
 {
-    check_hresult(shim()->put_InputPaneDisplayPolicy(value));
+    check_hresult(static_cast<const ICoreTextEditContext &>(static_cast<const D &>(*this))->put_InputPaneDisplayPolicy(value));
 }
 
 template <typename D> event_token impl_ICoreTextEditContext<D>::TextRequested(const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextTextRequestedEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_TextRequested(get(handler), &cookie));
+    check_hresult(static_cast<const ICoreTextEditContext &>(static_cast<const D &>(*this))->add_TextRequested(get(handler), &cookie));
     return cookie;
 }
 
@@ -1672,13 +1672,13 @@ template <typename D> event_revoker<ICoreTextEditContext> impl_ICoreTextEditCont
 
 template <typename D> void impl_ICoreTextEditContext<D>::TextRequested(event_token cookie) const
 {
-    check_hresult(shim()->remove_TextRequested(cookie));
+    check_hresult(static_cast<const ICoreTextEditContext &>(static_cast<const D &>(*this))->remove_TextRequested(cookie));
 }
 
 template <typename D> event_token impl_ICoreTextEditContext<D>::SelectionRequested(const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextSelectionRequestedEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_SelectionRequested(get(handler), &cookie));
+    check_hresult(static_cast<const ICoreTextEditContext &>(static_cast<const D &>(*this))->add_SelectionRequested(get(handler), &cookie));
     return cookie;
 }
 
@@ -1689,13 +1689,13 @@ template <typename D> event_revoker<ICoreTextEditContext> impl_ICoreTextEditCont
 
 template <typename D> void impl_ICoreTextEditContext<D>::SelectionRequested(event_token cookie) const
 {
-    check_hresult(shim()->remove_SelectionRequested(cookie));
+    check_hresult(static_cast<const ICoreTextEditContext &>(static_cast<const D &>(*this))->remove_SelectionRequested(cookie));
 }
 
 template <typename D> event_token impl_ICoreTextEditContext<D>::LayoutRequested(const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextLayoutRequestedEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_LayoutRequested(get(handler), &cookie));
+    check_hresult(static_cast<const ICoreTextEditContext &>(static_cast<const D &>(*this))->add_LayoutRequested(get(handler), &cookie));
     return cookie;
 }
 
@@ -1706,13 +1706,13 @@ template <typename D> event_revoker<ICoreTextEditContext> impl_ICoreTextEditCont
 
 template <typename D> void impl_ICoreTextEditContext<D>::LayoutRequested(event_token cookie) const
 {
-    check_hresult(shim()->remove_LayoutRequested(cookie));
+    check_hresult(static_cast<const ICoreTextEditContext &>(static_cast<const D &>(*this))->remove_LayoutRequested(cookie));
 }
 
 template <typename D> event_token impl_ICoreTextEditContext<D>::TextUpdating(const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextTextUpdatingEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_TextUpdating(get(handler), &cookie));
+    check_hresult(static_cast<const ICoreTextEditContext &>(static_cast<const D &>(*this))->add_TextUpdating(get(handler), &cookie));
     return cookie;
 }
 
@@ -1723,13 +1723,13 @@ template <typename D> event_revoker<ICoreTextEditContext> impl_ICoreTextEditCont
 
 template <typename D> void impl_ICoreTextEditContext<D>::TextUpdating(event_token cookie) const
 {
-    check_hresult(shim()->remove_TextUpdating(cookie));
+    check_hresult(static_cast<const ICoreTextEditContext &>(static_cast<const D &>(*this))->remove_TextUpdating(cookie));
 }
 
 template <typename D> event_token impl_ICoreTextEditContext<D>::SelectionUpdating(const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextSelectionUpdatingEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_SelectionUpdating(get(handler), &cookie));
+    check_hresult(static_cast<const ICoreTextEditContext &>(static_cast<const D &>(*this))->add_SelectionUpdating(get(handler), &cookie));
     return cookie;
 }
 
@@ -1740,13 +1740,13 @@ template <typename D> event_revoker<ICoreTextEditContext> impl_ICoreTextEditCont
 
 template <typename D> void impl_ICoreTextEditContext<D>::SelectionUpdating(event_token cookie) const
 {
-    check_hresult(shim()->remove_SelectionUpdating(cookie));
+    check_hresult(static_cast<const ICoreTextEditContext &>(static_cast<const D &>(*this))->remove_SelectionUpdating(cookie));
 }
 
 template <typename D> event_token impl_ICoreTextEditContext<D>::FormatUpdating(const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextFormatUpdatingEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_FormatUpdating(get(handler), &cookie));
+    check_hresult(static_cast<const ICoreTextEditContext &>(static_cast<const D &>(*this))->add_FormatUpdating(get(handler), &cookie));
     return cookie;
 }
 
@@ -1757,13 +1757,13 @@ template <typename D> event_revoker<ICoreTextEditContext> impl_ICoreTextEditCont
 
 template <typename D> void impl_ICoreTextEditContext<D>::FormatUpdating(event_token cookie) const
 {
-    check_hresult(shim()->remove_FormatUpdating(cookie));
+    check_hresult(static_cast<const ICoreTextEditContext &>(static_cast<const D &>(*this))->remove_FormatUpdating(cookie));
 }
 
 template <typename D> event_token impl_ICoreTextEditContext<D>::CompositionStarted(const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextCompositionStartedEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_CompositionStarted(get(handler), &cookie));
+    check_hresult(static_cast<const ICoreTextEditContext &>(static_cast<const D &>(*this))->add_CompositionStarted(get(handler), &cookie));
     return cookie;
 }
 
@@ -1774,13 +1774,13 @@ template <typename D> event_revoker<ICoreTextEditContext> impl_ICoreTextEditCont
 
 template <typename D> void impl_ICoreTextEditContext<D>::CompositionStarted(event_token cookie) const
 {
-    check_hresult(shim()->remove_CompositionStarted(cookie));
+    check_hresult(static_cast<const ICoreTextEditContext &>(static_cast<const D &>(*this))->remove_CompositionStarted(cookie));
 }
 
 template <typename D> event_token impl_ICoreTextEditContext<D>::CompositionCompleted(const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::UI::Text::Core::CoreTextCompositionCompletedEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_CompositionCompleted(get(handler), &cookie));
+    check_hresult(static_cast<const ICoreTextEditContext &>(static_cast<const D &>(*this))->add_CompositionCompleted(get(handler), &cookie));
     return cookie;
 }
 
@@ -1791,13 +1791,13 @@ template <typename D> event_revoker<ICoreTextEditContext> impl_ICoreTextEditCont
 
 template <typename D> void impl_ICoreTextEditContext<D>::CompositionCompleted(event_token cookie) const
 {
-    check_hresult(shim()->remove_CompositionCompleted(cookie));
+    check_hresult(static_cast<const ICoreTextEditContext &>(static_cast<const D &>(*this))->remove_CompositionCompleted(cookie));
 }
 
 template <typename D> event_token impl_ICoreTextEditContext<D>::FocusRemoved(const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::IInspectable> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_FocusRemoved(get(handler), &cookie));
+    check_hresult(static_cast<const ICoreTextEditContext &>(static_cast<const D &>(*this))->add_FocusRemoved(get(handler), &cookie));
     return cookie;
 }
 
@@ -1808,45 +1808,45 @@ template <typename D> event_revoker<ICoreTextEditContext> impl_ICoreTextEditCont
 
 template <typename D> void impl_ICoreTextEditContext<D>::FocusRemoved(event_token cookie) const
 {
-    check_hresult(shim()->remove_FocusRemoved(cookie));
+    check_hresult(static_cast<const ICoreTextEditContext &>(static_cast<const D &>(*this))->remove_FocusRemoved(cookie));
 }
 
 template <typename D> void impl_ICoreTextEditContext<D>::NotifyFocusEnter() const
 {
-    check_hresult(shim()->abi_NotifyFocusEnter());
+    check_hresult(static_cast<const ICoreTextEditContext &>(static_cast<const D &>(*this))->abi_NotifyFocusEnter());
 }
 
 template <typename D> void impl_ICoreTextEditContext<D>::NotifyFocusLeave() const
 {
-    check_hresult(shim()->abi_NotifyFocusLeave());
+    check_hresult(static_cast<const ICoreTextEditContext &>(static_cast<const D &>(*this))->abi_NotifyFocusLeave());
 }
 
 template <typename D> void impl_ICoreTextEditContext<D>::NotifyTextChanged(const Windows::UI::Text::Core::CoreTextRange & modifiedRange, int32_t newLength, const Windows::UI::Text::Core::CoreTextRange & newSelection) const
 {
-    check_hresult(shim()->abi_NotifyTextChanged(get(modifiedRange), newLength, get(newSelection)));
+    check_hresult(static_cast<const ICoreTextEditContext &>(static_cast<const D &>(*this))->abi_NotifyTextChanged(get(modifiedRange), newLength, get(newSelection)));
 }
 
 template <typename D> void impl_ICoreTextEditContext<D>::NotifySelectionChanged(const Windows::UI::Text::Core::CoreTextRange & selection) const
 {
-    check_hresult(shim()->abi_NotifySelectionChanged(get(selection)));
+    check_hresult(static_cast<const ICoreTextEditContext &>(static_cast<const D &>(*this))->abi_NotifySelectionChanged(get(selection)));
 }
 
 template <typename D> void impl_ICoreTextEditContext<D>::NotifyLayoutChanged() const
 {
-    check_hresult(shim()->abi_NotifyLayoutChanged());
+    check_hresult(static_cast<const ICoreTextEditContext &>(static_cast<const D &>(*this))->abi_NotifyLayoutChanged());
 }
 
 template <typename D> Windows::Globalization::Language impl_ICoreTextServicesManager<D>::InputLanguage() const
 {
     Windows::Globalization::Language value { nullptr };
-    check_hresult(shim()->get_InputLanguage(put(value)));
+    check_hresult(static_cast<const ICoreTextServicesManager &>(static_cast<const D &>(*this))->get_InputLanguage(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_ICoreTextServicesManager<D>::InputLanguageChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextServicesManager, Windows::IInspectable> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_InputLanguageChanged(get(handler), &cookie));
+    check_hresult(static_cast<const ICoreTextServicesManager &>(static_cast<const D &>(*this))->add_InputLanguageChanged(get(handler), &cookie));
     return cookie;
 }
 
@@ -1857,41 +1857,41 @@ template <typename D> event_revoker<ICoreTextServicesManager> impl_ICoreTextServ
 
 template <typename D> void impl_ICoreTextServicesManager<D>::InputLanguageChanged(event_token cookie) const
 {
-    check_hresult(shim()->remove_InputLanguageChanged(cookie));
+    check_hresult(static_cast<const ICoreTextServicesManager &>(static_cast<const D &>(*this))->remove_InputLanguageChanged(cookie));
 }
 
 template <typename D> Windows::UI::Text::Core::CoreTextEditContext impl_ICoreTextServicesManager<D>::CreateEditContext() const
 {
     Windows::UI::Text::Core::CoreTextEditContext value { nullptr };
-    check_hresult(shim()->abi_CreateEditContext(put(value)));
+    check_hresult(static_cast<const ICoreTextServicesManager &>(static_cast<const D &>(*this))->abi_CreateEditContext(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Text::Core::CoreTextServicesManager impl_ICoreTextServicesManagerStatics<D>::GetForCurrentView() const
 {
     Windows::UI::Text::Core::CoreTextServicesManager value { nullptr };
-    check_hresult(shim()->abi_GetForCurrentView(put(value)));
+    check_hresult(static_cast<const ICoreTextServicesManagerStatics &>(static_cast<const D &>(*this))->abi_GetForCurrentView(put(value)));
     return value;
 }
 
 template <typename D> wchar_t impl_ICoreTextServicesStatics<D>::HiddenCharacter() const
 {
     wchar_t value {};
-    check_hresult(shim()->get_HiddenCharacter(&value));
+    check_hresult(static_cast<const ICoreTextServicesStatics &>(static_cast<const D &>(*this))->get_HiddenCharacter(&value));
     return value;
 }
 
 template <typename D> hstring impl_ICoreTextCompositionSegment<D>::PreconversionString() const
 {
     hstring value;
-    check_hresult(shim()->get_PreconversionString(put(value)));
+    check_hresult(static_cast<const ICoreTextCompositionSegment &>(static_cast<const D &>(*this))->get_PreconversionString(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Text::Core::CoreTextRange impl_ICoreTextCompositionSegment<D>::Range() const
 {
     Windows::UI::Text::Core::CoreTextRange value {};
-    check_hresult(shim()->get_Range(put(value)));
+    check_hresult(static_cast<const ICoreTextCompositionSegment &>(static_cast<const D &>(*this))->get_Range(put(value)));
     return value;
 }
 

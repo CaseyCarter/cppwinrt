@@ -161,12 +161,8 @@ template <> struct __declspec(uuid("9156b79f-c54a-5277-8f8b-d2cc43c7e004")) __de
 namespace Windows::Devices::Bluetooth {
 
 template <typename D>
-class WINRT_EBO impl_IBluetoothClassOfDevice
+struct WINRT_EBO impl_IBluetoothClassOfDevice
 {
-    auto shim() const { return impl::shim<D, IBluetoothClassOfDevice>(this); }
-
-public:
-
     uint32_t RawValue() const;
     Windows::Devices::Bluetooth::BluetoothMajorClass MajorClass() const;
     Windows::Devices::Bluetooth::BluetoothMinorClass MinorClass() const;
@@ -174,23 +170,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBluetoothClassOfDeviceStatics
+struct WINRT_EBO impl_IBluetoothClassOfDeviceStatics
 {
-    auto shim() const { return impl::shim<D, IBluetoothClassOfDeviceStatics>(this); }
-
-public:
-
     Windows::Devices::Bluetooth::BluetoothClassOfDevice FromRawValue(uint32_t rawValue) const;
     Windows::Devices::Bluetooth::BluetoothClassOfDevice FromParts(Windows::Devices::Bluetooth::BluetoothMajorClass majorClass, Windows::Devices::Bluetooth::BluetoothMinorClass minorClass, Windows::Devices::Bluetooth::BluetoothServiceCapabilities serviceCapabilities) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBluetoothDevice
+struct WINRT_EBO impl_IBluetoothDevice
 {
-    auto shim() const { return impl::shim<D, IBluetoothDevice>(this); }
-
-public:
-
     hstring DeviceId() const;
     Windows::Networking::HostName HostName() const;
     hstring Name() const;
@@ -214,22 +202,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBluetoothDevice2
+struct WINRT_EBO impl_IBluetoothDevice2
 {
-    auto shim() const { return impl::shim<D, IBluetoothDevice2>(this); }
-
-public:
-
     Windows::Devices::Enumeration::DeviceInformation DeviceInformation() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBluetoothDevice3
+struct WINRT_EBO impl_IBluetoothDevice3
 {
-    auto shim() const { return impl::shim<D, IBluetoothDevice3>(this); }
-
-public:
-
     Windows::Devices::Enumeration::DeviceAccessInformation DeviceAccessInformation() const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Enumeration::DeviceAccessStatus> RequestAccessAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceServicesResult> GetRfcommServicesAsync() const;
@@ -239,12 +219,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBluetoothDeviceStatics
+struct WINRT_EBO impl_IBluetoothDeviceStatics
 {
-    auto shim() const { return impl::shim<D, IBluetoothDeviceStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothDevice> FromIdAsync(hstring_ref deviceId) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothDevice> FromHostNameAsync(const Windows::Networking::HostName & hostName) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothDevice> FromBluetoothAddressAsync(uint64_t address) const;
@@ -252,12 +228,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBluetoothDeviceStatics2
+struct WINRT_EBO impl_IBluetoothDeviceStatics2
 {
-    auto shim() const { return impl::shim<D, IBluetoothDeviceStatics2>(this); }
-
-public:
-
     hstring GetDeviceSelectorFromPairingState(bool pairingState) const;
     hstring GetDeviceSelectorFromConnectionStatus(Windows::Devices::Bluetooth::BluetoothConnectionStatus connectionStatus) const;
     hstring GetDeviceSelectorFromDeviceName(hstring_ref deviceName) const;
@@ -266,24 +238,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBluetoothLEAppearance
+struct WINRT_EBO impl_IBluetoothLEAppearance
 {
-    auto shim() const { return impl::shim<D, IBluetoothLEAppearance>(this); }
-
-public:
-
     uint16_t RawValue() const;
     uint16_t Category() const;
     uint16_t SubCategory() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBluetoothLEAppearanceCategoriesStatics
+struct WINRT_EBO impl_IBluetoothLEAppearanceCategoriesStatics
 {
-    auto shim() const { return impl::shim<D, IBluetoothLEAppearanceCategoriesStatics>(this); }
-
-public:
-
     uint16_t Uncategorized() const;
     uint16_t Phone() const;
     uint16_t Computer() const;
@@ -309,23 +273,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBluetoothLEAppearanceStatics
+struct WINRT_EBO impl_IBluetoothLEAppearanceStatics
 {
-    auto shim() const { return impl::shim<D, IBluetoothLEAppearanceStatics>(this); }
-
-public:
-
     Windows::Devices::Bluetooth::BluetoothLEAppearance FromRawValue(uint16_t rawValue) const;
     Windows::Devices::Bluetooth::BluetoothLEAppearance FromParts(uint16_t appearanceCategory, uint16_t appearanceSubCategory) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBluetoothLEAppearanceSubcategoriesStatics
+struct WINRT_EBO impl_IBluetoothLEAppearanceSubcategoriesStatics
 {
-    auto shim() const { return impl::shim<D, IBluetoothLEAppearanceSubcategoriesStatics>(this); }
-
-public:
-
     uint16_t Generic() const;
     uint16_t SportsWatch() const;
     uint16_t ThermometerEar() const;
@@ -357,12 +313,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBluetoothLEDevice
+struct WINRT_EBO impl_IBluetoothLEDevice
 {
-    auto shim() const { return impl::shim<D, IBluetoothLEDevice>(this); }
-
-public:
-
     hstring DeviceId() const;
     hstring Name() const;
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> GattServices() const;
@@ -384,36 +336,24 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBluetoothLEDevice2
+struct WINRT_EBO impl_IBluetoothLEDevice2
 {
-    auto shim() const { return impl::shim<D, IBluetoothLEDevice2>(this); }
-
-public:
-
     Windows::Devices::Enumeration::DeviceInformation DeviceInformation() const;
     Windows::Devices::Bluetooth::BluetoothLEAppearance Appearance() const;
     Windows::Devices::Bluetooth::BluetoothAddressType BluetoothAddressType() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBluetoothLEDeviceStatics
+struct WINRT_EBO impl_IBluetoothLEDeviceStatics
 {
-    auto shim() const { return impl::shim<D, IBluetoothLEDeviceStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> FromIdAsync(hstring_ref deviceId) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::BluetoothLEDevice> FromBluetoothAddressAsync(uint64_t bluetoothAddress) const;
     hstring GetDeviceSelector() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBluetoothLEDeviceStatics2
+struct WINRT_EBO impl_IBluetoothLEDeviceStatics2
 {
-    auto shim() const { return impl::shim<D, IBluetoothLEDeviceStatics2>(this); }
-
-public:
-
     hstring GetDeviceSelectorFromPairingState(bool pairingState) const;
     hstring GetDeviceSelectorFromConnectionStatus(Windows::Devices::Bluetooth::BluetoothConnectionStatus connectionStatus) const;
     hstring GetDeviceSelectorFromDeviceName(hstring_ref deviceName) const;
@@ -424,12 +364,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBluetoothSignalStrengthFilter
+struct WINRT_EBO impl_IBluetoothSignalStrengthFilter
 {
-    auto shim() const { return impl::shim<D, IBluetoothSignalStrengthFilter>(this); }
-
-public:
-
     Windows::Foundation::IReference<int16_t> InRangeThresholdInDBm() const;
     void InRangeThresholdInDBm(const Windows::Foundation::IReference<int16_t> & value) const;
     Windows::Foundation::IReference<int16_t> OutOfRangeThresholdInDBm() const;

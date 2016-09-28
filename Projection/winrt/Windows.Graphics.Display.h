@@ -625,26 +625,26 @@ namespace Windows::Graphics::Display {
 template <typename D> Windows::Graphics::Display::DisplayInformation impl_IDisplayInformationStatics<D>::GetForCurrentView() const
 {
     Windows::Graphics::Display::DisplayInformation current { nullptr };
-    check_hresult(shim()->abi_GetForCurrentView(put(current)));
+    check_hresult(static_cast<const IDisplayInformationStatics &>(static_cast<const D &>(*this))->abi_GetForCurrentView(put(current)));
     return current;
 }
 
 template <typename D> Windows::Graphics::Display::DisplayOrientations impl_IDisplayInformationStatics<D>::AutoRotationPreferences() const
 {
     Windows::Graphics::Display::DisplayOrientations value {};
-    check_hresult(shim()->get_AutoRotationPreferences(&value));
+    check_hresult(static_cast<const IDisplayInformationStatics &>(static_cast<const D &>(*this))->get_AutoRotationPreferences(&value));
     return value;
 }
 
 template <typename D> void impl_IDisplayInformationStatics<D>::AutoRotationPreferences(Windows::Graphics::Display::DisplayOrientations value) const
 {
-    check_hresult(shim()->put_AutoRotationPreferences(value));
+    check_hresult(static_cast<const IDisplayInformationStatics &>(static_cast<const D &>(*this))->put_AutoRotationPreferences(value));
 }
 
 template <typename D> event_token impl_IDisplayInformationStatics<D>::DisplayContentsInvalidated(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_DisplayContentsInvalidated(get(handler), &token));
+    check_hresult(static_cast<const IDisplayInformationStatics &>(static_cast<const D &>(*this))->add_DisplayContentsInvalidated(get(handler), &token));
     return token;
 }
 
@@ -655,27 +655,27 @@ template <typename D> event_revoker<IDisplayInformationStatics> impl_IDisplayInf
 
 template <typename D> void impl_IDisplayInformationStatics<D>::DisplayContentsInvalidated(event_token token) const
 {
-    check_hresult(shim()->remove_DisplayContentsInvalidated(token));
+    check_hresult(static_cast<const IDisplayInformationStatics &>(static_cast<const D &>(*this))->remove_DisplayContentsInvalidated(token));
 }
 
 template <typename D> Windows::Graphics::Display::DisplayOrientations impl_IDisplayInformation<D>::CurrentOrientation() const
 {
     Windows::Graphics::Display::DisplayOrientations value {};
-    check_hresult(shim()->get_CurrentOrientation(&value));
+    check_hresult(static_cast<const IDisplayInformation &>(static_cast<const D &>(*this))->get_CurrentOrientation(&value));
     return value;
 }
 
 template <typename D> Windows::Graphics::Display::DisplayOrientations impl_IDisplayInformation<D>::NativeOrientation() const
 {
     Windows::Graphics::Display::DisplayOrientations value {};
-    check_hresult(shim()->get_NativeOrientation(&value));
+    check_hresult(static_cast<const IDisplayInformation &>(static_cast<const D &>(*this))->get_NativeOrientation(&value));
     return value;
 }
 
 template <typename D> event_token impl_IDisplayInformation<D>::OrientationChanged(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_OrientationChanged(get(handler), &token));
+    check_hresult(static_cast<const IDisplayInformation &>(static_cast<const D &>(*this))->add_OrientationChanged(get(handler), &token));
     return token;
 }
 
@@ -686,41 +686,41 @@ template <typename D> event_revoker<IDisplayInformation> impl_IDisplayInformatio
 
 template <typename D> void impl_IDisplayInformation<D>::OrientationChanged(event_token token) const
 {
-    check_hresult(shim()->remove_OrientationChanged(token));
+    check_hresult(static_cast<const IDisplayInformation &>(static_cast<const D &>(*this))->remove_OrientationChanged(token));
 }
 
 template <typename D> Windows::Graphics::Display::ResolutionScale impl_IDisplayInformation<D>::ResolutionScale() const
 {
     Windows::Graphics::Display::ResolutionScale value {};
-    check_hresult(shim()->get_ResolutionScale(&value));
+    check_hresult(static_cast<const IDisplayInformation &>(static_cast<const D &>(*this))->get_ResolutionScale(&value));
     return value;
 }
 
 template <typename D> float impl_IDisplayInformation<D>::LogicalDpi() const
 {
     float value {};
-    check_hresult(shim()->get_LogicalDpi(&value));
+    check_hresult(static_cast<const IDisplayInformation &>(static_cast<const D &>(*this))->get_LogicalDpi(&value));
     return value;
 }
 
 template <typename D> float impl_IDisplayInformation<D>::RawDpiX() const
 {
     float value {};
-    check_hresult(shim()->get_RawDpiX(&value));
+    check_hresult(static_cast<const IDisplayInformation &>(static_cast<const D &>(*this))->get_RawDpiX(&value));
     return value;
 }
 
 template <typename D> float impl_IDisplayInformation<D>::RawDpiY() const
 {
     float value {};
-    check_hresult(shim()->get_RawDpiY(&value));
+    check_hresult(static_cast<const IDisplayInformation &>(static_cast<const D &>(*this))->get_RawDpiY(&value));
     return value;
 }
 
 template <typename D> event_token impl_IDisplayInformation<D>::DpiChanged(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_DpiChanged(get(handler), &token));
+    check_hresult(static_cast<const IDisplayInformation &>(static_cast<const D &>(*this))->add_DpiChanged(get(handler), &token));
     return token;
 }
 
@@ -731,20 +731,20 @@ template <typename D> event_revoker<IDisplayInformation> impl_IDisplayInformatio
 
 template <typename D> void impl_IDisplayInformation<D>::DpiChanged(event_token token) const
 {
-    check_hresult(shim()->remove_DpiChanged(token));
+    check_hresult(static_cast<const IDisplayInformation &>(static_cast<const D &>(*this))->remove_DpiChanged(token));
 }
 
 template <typename D> bool impl_IDisplayInformation<D>::StereoEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_StereoEnabled(&value));
+    check_hresult(static_cast<const IDisplayInformation &>(static_cast<const D &>(*this))->get_StereoEnabled(&value));
     return value;
 }
 
 template <typename D> event_token impl_IDisplayInformation<D>::StereoEnabledChanged(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_StereoEnabledChanged(get(handler), &token));
+    check_hresult(static_cast<const IDisplayInformation &>(static_cast<const D &>(*this))->add_StereoEnabledChanged(get(handler), &token));
     return token;
 }
 
@@ -755,20 +755,20 @@ template <typename D> event_revoker<IDisplayInformation> impl_IDisplayInformatio
 
 template <typename D> void impl_IDisplayInformation<D>::StereoEnabledChanged(event_token token) const
 {
-    check_hresult(shim()->remove_StereoEnabledChanged(token));
+    check_hresult(static_cast<const IDisplayInformation &>(static_cast<const D &>(*this))->remove_StereoEnabledChanged(token));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> impl_IDisplayInformation<D>::GetColorProfileAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> asyncInfo;
-    check_hresult(shim()->abi_GetColorProfileAsync(put(asyncInfo)));
+    check_hresult(static_cast<const IDisplayInformation &>(static_cast<const D &>(*this))->abi_GetColorProfileAsync(put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> event_token impl_IDisplayInformation<D>::ColorProfileChanged(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_ColorProfileChanged(get(handler), &token));
+    check_hresult(static_cast<const IDisplayInformation &>(static_cast<const D &>(*this))->add_ColorProfileChanged(get(handler), &token));
     return token;
 }
 
@@ -779,67 +779,67 @@ template <typename D> event_revoker<IDisplayInformation> impl_IDisplayInformatio
 
 template <typename D> void impl_IDisplayInformation<D>::ColorProfileChanged(event_token token) const
 {
-    check_hresult(shim()->remove_ColorProfileChanged(token));
+    check_hresult(static_cast<const IDisplayInformation &>(static_cast<const D &>(*this))->remove_ColorProfileChanged(token));
 }
 
 template <typename D> double impl_IDisplayInformation2<D>::RawPixelsPerViewPixel() const
 {
     double value {};
-    check_hresult(shim()->get_RawPixelsPerViewPixel(&value));
+    check_hresult(static_cast<const IDisplayInformation2 &>(static_cast<const D &>(*this))->get_RawPixelsPerViewPixel(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<double> impl_IDisplayInformation3<D>::DiagonalSizeInInches() const
 {
     Windows::Foundation::IReference<double> value;
-    check_hresult(shim()->get_DiagonalSizeInInches(put(value)));
+    check_hresult(static_cast<const IDisplayInformation3 &>(static_cast<const D &>(*this))->get_DiagonalSizeInInches(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IDisplayInformation4<D>::ScreenWidthInRawPixels() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_ScreenWidthInRawPixels(&value));
+    check_hresult(static_cast<const IDisplayInformation4 &>(static_cast<const D &>(*this))->get_ScreenWidthInRawPixels(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IDisplayInformation4<D>::ScreenHeightInRawPixels() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_ScreenHeightInRawPixels(&value));
+    check_hresult(static_cast<const IDisplayInformation4 &>(static_cast<const D &>(*this))->get_ScreenHeightInRawPixels(&value));
     return value;
 }
 
 template <typename D> Windows::Graphics::Display::DisplayOrientations impl_IDisplayPropertiesStatics<D>::CurrentOrientation() const
 {
     Windows::Graphics::Display::DisplayOrientations value {};
-    check_hresult(shim()->get_CurrentOrientation(&value));
+    check_hresult(static_cast<const IDisplayPropertiesStatics &>(static_cast<const D &>(*this))->get_CurrentOrientation(&value));
     return value;
 }
 
 template <typename D> Windows::Graphics::Display::DisplayOrientations impl_IDisplayPropertiesStatics<D>::NativeOrientation() const
 {
     Windows::Graphics::Display::DisplayOrientations value {};
-    check_hresult(shim()->get_NativeOrientation(&value));
+    check_hresult(static_cast<const IDisplayPropertiesStatics &>(static_cast<const D &>(*this))->get_NativeOrientation(&value));
     return value;
 }
 
 template <typename D> Windows::Graphics::Display::DisplayOrientations impl_IDisplayPropertiesStatics<D>::AutoRotationPreferences() const
 {
     Windows::Graphics::Display::DisplayOrientations value {};
-    check_hresult(shim()->get_AutoRotationPreferences(&value));
+    check_hresult(static_cast<const IDisplayPropertiesStatics &>(static_cast<const D &>(*this))->get_AutoRotationPreferences(&value));
     return value;
 }
 
 template <typename D> void impl_IDisplayPropertiesStatics<D>::AutoRotationPreferences(Windows::Graphics::Display::DisplayOrientations value) const
 {
-    check_hresult(shim()->put_AutoRotationPreferences(value));
+    check_hresult(static_cast<const IDisplayPropertiesStatics &>(static_cast<const D &>(*this))->put_AutoRotationPreferences(value));
 }
 
 template <typename D> event_token impl_IDisplayPropertiesStatics<D>::OrientationChanged(const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_OrientationChanged(get(handler), &token));
+    check_hresult(static_cast<const IDisplayPropertiesStatics &>(static_cast<const D &>(*this))->add_OrientationChanged(get(handler), &token));
     return token;
 }
 
@@ -850,27 +850,27 @@ template <typename D> event_revoker<IDisplayPropertiesStatics> impl_IDisplayProp
 
 template <typename D> void impl_IDisplayPropertiesStatics<D>::OrientationChanged(event_token token) const
 {
-    check_hresult(shim()->remove_OrientationChanged(token));
+    check_hresult(static_cast<const IDisplayPropertiesStatics &>(static_cast<const D &>(*this))->remove_OrientationChanged(token));
 }
 
 template <typename D> Windows::Graphics::Display::ResolutionScale impl_IDisplayPropertiesStatics<D>::ResolutionScale() const
 {
     Windows::Graphics::Display::ResolutionScale value {};
-    check_hresult(shim()->get_ResolutionScale(&value));
+    check_hresult(static_cast<const IDisplayPropertiesStatics &>(static_cast<const D &>(*this))->get_ResolutionScale(&value));
     return value;
 }
 
 template <typename D> float impl_IDisplayPropertiesStatics<D>::LogicalDpi() const
 {
     float value {};
-    check_hresult(shim()->get_LogicalDpi(&value));
+    check_hresult(static_cast<const IDisplayPropertiesStatics &>(static_cast<const D &>(*this))->get_LogicalDpi(&value));
     return value;
 }
 
 template <typename D> event_token impl_IDisplayPropertiesStatics<D>::LogicalDpiChanged(const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_LogicalDpiChanged(get(handler), &token));
+    check_hresult(static_cast<const IDisplayPropertiesStatics &>(static_cast<const D &>(*this))->add_LogicalDpiChanged(get(handler), &token));
     return token;
 }
 
@@ -881,20 +881,20 @@ template <typename D> event_revoker<IDisplayPropertiesStatics> impl_IDisplayProp
 
 template <typename D> void impl_IDisplayPropertiesStatics<D>::LogicalDpiChanged(event_token token) const
 {
-    check_hresult(shim()->remove_LogicalDpiChanged(token));
+    check_hresult(static_cast<const IDisplayPropertiesStatics &>(static_cast<const D &>(*this))->remove_LogicalDpiChanged(token));
 }
 
 template <typename D> bool impl_IDisplayPropertiesStatics<D>::StereoEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_StereoEnabled(&value));
+    check_hresult(static_cast<const IDisplayPropertiesStatics &>(static_cast<const D &>(*this))->get_StereoEnabled(&value));
     return value;
 }
 
 template <typename D> event_token impl_IDisplayPropertiesStatics<D>::StereoEnabledChanged(const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_StereoEnabledChanged(get(handler), &token));
+    check_hresult(static_cast<const IDisplayPropertiesStatics &>(static_cast<const D &>(*this))->add_StereoEnabledChanged(get(handler), &token));
     return token;
 }
 
@@ -905,20 +905,20 @@ template <typename D> event_revoker<IDisplayPropertiesStatics> impl_IDisplayProp
 
 template <typename D> void impl_IDisplayPropertiesStatics<D>::StereoEnabledChanged(event_token token) const
 {
-    check_hresult(shim()->remove_StereoEnabledChanged(token));
+    check_hresult(static_cast<const IDisplayPropertiesStatics &>(static_cast<const D &>(*this))->remove_StereoEnabledChanged(token));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> impl_IDisplayPropertiesStatics<D>::GetColorProfileAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> asyncInfo;
-    check_hresult(shim()->abi_GetColorProfileAsync(put(asyncInfo)));
+    check_hresult(static_cast<const IDisplayPropertiesStatics &>(static_cast<const D &>(*this))->abi_GetColorProfileAsync(put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> event_token impl_IDisplayPropertiesStatics<D>::ColorProfileChanged(const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_ColorProfileChanged(get(handler), &token));
+    check_hresult(static_cast<const IDisplayPropertiesStatics &>(static_cast<const D &>(*this))->add_ColorProfileChanged(get(handler), &token));
     return token;
 }
 
@@ -929,13 +929,13 @@ template <typename D> event_revoker<IDisplayPropertiesStatics> impl_IDisplayProp
 
 template <typename D> void impl_IDisplayPropertiesStatics<D>::ColorProfileChanged(event_token token) const
 {
-    check_hresult(shim()->remove_ColorProfileChanged(token));
+    check_hresult(static_cast<const IDisplayPropertiesStatics &>(static_cast<const D &>(*this))->remove_ColorProfileChanged(token));
 }
 
 template <typename D> event_token impl_IDisplayPropertiesStatics<D>::DisplayContentsInvalidated(const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_DisplayContentsInvalidated(get(handler), &token));
+    check_hresult(static_cast<const IDisplayPropertiesStatics &>(static_cast<const D &>(*this))->add_DisplayContentsInvalidated(get(handler), &token));
     return token;
 }
 
@@ -946,7 +946,7 @@ template <typename D> event_revoker<IDisplayPropertiesStatics> impl_IDisplayProp
 
 template <typename D> void impl_IDisplayPropertiesStatics<D>::DisplayContentsInvalidated(event_token token) const
 {
-    check_hresult(shim()->remove_DisplayContentsInvalidated(token));
+    check_hresult(static_cast<const IDisplayPropertiesStatics &>(static_cast<const D &>(*this))->remove_DisplayContentsInvalidated(token));
 }
 
 inline Windows::Graphics::Display::DisplayInformation DisplayInformation::GetForCurrentView()

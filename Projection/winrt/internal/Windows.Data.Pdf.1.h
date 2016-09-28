@@ -80,11 +80,11 @@ template <> struct traits<Windows::Data::Pdf::PdfPageRenderOptions> { using defa
 
 namespace Windows::Data::Pdf {
 
-template <typename T> class impl_IPdfDocument;
-template <typename T> class impl_IPdfDocumentStatics;
-template <typename T> class impl_IPdfPage;
-template <typename T> class impl_IPdfPageDimensions;
-template <typename T> class impl_IPdfPageRenderOptions;
+template <typename T> struct impl_IPdfDocument;
+template <typename T> struct impl_IPdfDocumentStatics;
+template <typename T> struct impl_IPdfPage;
+template <typename T> struct impl_IPdfPageDimensions;
+template <typename T> struct impl_IPdfPageRenderOptions;
 
 }
 
@@ -123,28 +123,24 @@ template <> struct traits<Windows::Data::Pdf::IPdfPageRenderOptions>
 template <> struct traits<Windows::Data::Pdf::PdfDocument>
 {
     using abi = ABI::Windows::Data::Pdf::PdfDocument;
-    using default_interface = Windows::Data::Pdf::IPdfDocument;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Data.Pdf.PdfDocument"; }
 };
 
 template <> struct traits<Windows::Data::Pdf::PdfPage>
 {
     using abi = ABI::Windows::Data::Pdf::PdfPage;
-    using default_interface = Windows::Data::Pdf::IPdfPage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Data.Pdf.PdfPage"; }
 };
 
 template <> struct traits<Windows::Data::Pdf::PdfPageDimensions>
 {
     using abi = ABI::Windows::Data::Pdf::PdfPageDimensions;
-    using default_interface = Windows::Data::Pdf::IPdfPageDimensions;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Data.Pdf.PdfPageDimensions"; }
 };
 
 template <> struct traits<Windows::Data::Pdf::PdfPageRenderOptions>
 {
     using abi = ABI::Windows::Data::Pdf::PdfPageRenderOptions;
-    using default_interface = Windows::Data::Pdf::IPdfPageRenderOptions;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Data.Pdf.PdfPageRenderOptions"; }
 };
 

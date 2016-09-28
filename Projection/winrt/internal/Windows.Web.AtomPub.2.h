@@ -166,12 +166,8 @@ template <> struct __declspec(uuid("f1c031c8-90bf-5cae-adf6-155b4aedfb60")) __de
 namespace Windows::Web::AtomPub {
 
 template <typename D>
-class WINRT_EBO impl_IAtomPubClient
+struct WINRT_EBO impl_IAtomPubClient
 {
-    auto shim() const { return impl::shim<D, IAtomPubClient>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::AtomPub::ServiceDocument, Windows::Web::Syndication::RetrievalProgress> RetrieveServiceDocumentAsync(const Windows::Foundation::Uri & uri) const;
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Storage::Streams::IInputStream, Windows::Web::Syndication::RetrievalProgress> RetrieveMediaResourceAsync(const Windows::Foundation::Uri & uri) const;
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Syndication::SyndicationItem, Windows::Web::Syndication::RetrievalProgress> RetrieveResourceAsync(const Windows::Foundation::Uri & uri) const;
@@ -186,22 +182,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAtomPubClientFactory
+struct WINRT_EBO impl_IAtomPubClientFactory
 {
-    auto shim() const { return impl::shim<D, IAtomPubClientFactory>(this); }
-
-public:
-
     Windows::Web::AtomPub::AtomPubClient CreateAtomPubClientWithCredentials(const Windows::Security::Credentials::PasswordCredential & serverCredential) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IResourceCollection
+struct WINRT_EBO impl_IResourceCollection
 {
-    auto shim() const { return impl::shim<D, IResourceCollection>(this); }
-
-public:
-
     Windows::Web::Syndication::ISyndicationText Title() const;
     Windows::Foundation::Uri Uri() const;
     Windows::Foundation::Collections::IVectorView<Windows::Web::Syndication::SyndicationCategory> Categories() const;
@@ -209,22 +197,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IServiceDocument
+struct WINRT_EBO impl_IServiceDocument
 {
-    auto shim() const { return impl::shim<D, IServiceDocument>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Web::AtomPub::Workspace> Workspaces() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWorkspace
+struct WINRT_EBO impl_IWorkspace
 {
-    auto shim() const { return impl::shim<D, IWorkspace>(this); }
-
-public:
-
     Windows::Web::Syndication::ISyndicationText Title() const;
     Windows::Foundation::Collections::IVectorView<Windows::Web::AtomPub::ResourceCollection> Collections() const;
 };

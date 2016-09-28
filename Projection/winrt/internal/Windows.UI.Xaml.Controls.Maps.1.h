@@ -681,70 +681,70 @@ template <> struct traits<Windows::UI::Xaml::Controls::Maps::StreetsidePanorama>
 
 namespace Windows::UI::Xaml::Controls::Maps {
 
-template <typename T> class impl_ICustomMapTileDataSource;
-template <typename T> class impl_ICustomMapTileDataSourceFactory;
-template <typename T> class impl_IHttpMapTileDataSource;
-template <typename T> class impl_IHttpMapTileDataSourceFactory;
-template <typename T> class impl_ILocalMapTileDataSource;
-template <typename T> class impl_ILocalMapTileDataSourceFactory;
-template <typename T> class impl_IMapActualCameraChangedEventArgs;
-template <typename T> class impl_IMapActualCameraChangedEventArgs2;
-template <typename T> class impl_IMapActualCameraChangingEventArgs;
-template <typename T> class impl_IMapActualCameraChangingEventArgs2;
-template <typename T> class impl_IMapCamera;
-template <typename T> class impl_IMapCameraFactory;
-template <typename T> class impl_IMapControl;
-template <typename T> class impl_IMapControl2;
-template <typename T> class impl_IMapControl3;
-template <typename T> class impl_IMapControl4;
-template <typename T> class impl_IMapControlStatics;
-template <typename T> class impl_IMapControlStatics2;
-template <typename T> class impl_IMapControlStatics4;
-template <typename T> class impl_IMapCustomExperience;
-template <typename T> class impl_IMapCustomExperienceChangedEventArgs;
-template <typename T> class impl_IMapCustomExperienceFactory;
-template <typename T> class impl_IMapElement;
-template <typename T> class impl_IMapElement2;
-template <typename T> class impl_IMapElementClickEventArgs;
-template <typename T> class impl_IMapElementFactory;
-template <typename T> class impl_IMapElementPointerEnteredEventArgs;
-template <typename T> class impl_IMapElementPointerExitedEventArgs;
-template <typename T> class impl_IMapElementStatics;
-template <typename T> class impl_IMapElementStatics2;
-template <typename T> class impl_IMapIcon;
-template <typename T> class impl_IMapIcon2;
-template <typename T> class impl_IMapIconStatics;
-template <typename T> class impl_IMapIconStatics2;
-template <typename T> class impl_IMapInputEventArgs;
-template <typename T> class impl_IMapItemsControl;
-template <typename T> class impl_IMapItemsControlStatics;
-template <typename T> class impl_IMapPolygon;
-template <typename T> class impl_IMapPolygon2;
-template <typename T> class impl_IMapPolygonStatics;
-template <typename T> class impl_IMapPolyline;
-template <typename T> class impl_IMapPolylineStatics;
-template <typename T> class impl_IMapRightTappedEventArgs;
-template <typename T> class impl_IMapRouteView;
-template <typename T> class impl_IMapRouteViewFactory;
-template <typename T> class impl_IMapScene;
-template <typename T> class impl_IMapSceneStatics;
-template <typename T> class impl_IMapTargetCameraChangedEventArgs;
-template <typename T> class impl_IMapTargetCameraChangedEventArgs2;
-template <typename T> class impl_IMapTileBitmapRequest;
-template <typename T> class impl_IMapTileBitmapRequestDeferral;
-template <typename T> class impl_IMapTileBitmapRequestedEventArgs;
-template <typename T> class impl_IMapTileDataSource;
-template <typename T> class impl_IMapTileDataSourceFactory;
-template <typename T> class impl_IMapTileSource;
-template <typename T> class impl_IMapTileSourceFactory;
-template <typename T> class impl_IMapTileSourceStatics;
-template <typename T> class impl_IMapTileUriRequest;
-template <typename T> class impl_IMapTileUriRequestDeferral;
-template <typename T> class impl_IMapTileUriRequestedEventArgs;
-template <typename T> class impl_IStreetsideExperience;
-template <typename T> class impl_IStreetsideExperienceFactory;
-template <typename T> class impl_IStreetsidePanorama;
-template <typename T> class impl_IStreetsidePanoramaStatics;
+template <typename T> struct impl_ICustomMapTileDataSource;
+template <typename T> struct impl_ICustomMapTileDataSourceFactory;
+template <typename T> struct impl_IHttpMapTileDataSource;
+template <typename T> struct impl_IHttpMapTileDataSourceFactory;
+template <typename T> struct impl_ILocalMapTileDataSource;
+template <typename T> struct impl_ILocalMapTileDataSourceFactory;
+template <typename T> struct impl_IMapActualCameraChangedEventArgs;
+template <typename T> struct impl_IMapActualCameraChangedEventArgs2;
+template <typename T> struct impl_IMapActualCameraChangingEventArgs;
+template <typename T> struct impl_IMapActualCameraChangingEventArgs2;
+template <typename T> struct impl_IMapCamera;
+template <typename T> struct impl_IMapCameraFactory;
+template <typename T> struct impl_IMapControl;
+template <typename T> struct impl_IMapControl2;
+template <typename T> struct impl_IMapControl3;
+template <typename T> struct impl_IMapControl4;
+template <typename T> struct impl_IMapControlStatics;
+template <typename T> struct impl_IMapControlStatics2;
+template <typename T> struct impl_IMapControlStatics4;
+template <typename T> struct impl_IMapCustomExperience;
+template <typename T> struct impl_IMapCustomExperienceChangedEventArgs;
+template <typename T> struct impl_IMapCustomExperienceFactory;
+template <typename T> struct impl_IMapElement;
+template <typename T> struct impl_IMapElement2;
+template <typename T> struct impl_IMapElementClickEventArgs;
+template <typename T> struct impl_IMapElementFactory;
+template <typename T> struct impl_IMapElementPointerEnteredEventArgs;
+template <typename T> struct impl_IMapElementPointerExitedEventArgs;
+template <typename T> struct impl_IMapElementStatics;
+template <typename T> struct impl_IMapElementStatics2;
+template <typename T> struct impl_IMapIcon;
+template <typename T> struct impl_IMapIcon2;
+template <typename T> struct impl_IMapIconStatics;
+template <typename T> struct impl_IMapIconStatics2;
+template <typename T> struct impl_IMapInputEventArgs;
+template <typename T> struct impl_IMapItemsControl;
+template <typename T> struct impl_IMapItemsControlStatics;
+template <typename T> struct impl_IMapPolygon;
+template <typename T> struct impl_IMapPolygon2;
+template <typename T> struct impl_IMapPolygonStatics;
+template <typename T> struct impl_IMapPolyline;
+template <typename T> struct impl_IMapPolylineStatics;
+template <typename T> struct impl_IMapRightTappedEventArgs;
+template <typename T> struct impl_IMapRouteView;
+template <typename T> struct impl_IMapRouteViewFactory;
+template <typename T> struct impl_IMapScene;
+template <typename T> struct impl_IMapSceneStatics;
+template <typename T> struct impl_IMapTargetCameraChangedEventArgs;
+template <typename T> struct impl_IMapTargetCameraChangedEventArgs2;
+template <typename T> struct impl_IMapTileBitmapRequest;
+template <typename T> struct impl_IMapTileBitmapRequestDeferral;
+template <typename T> struct impl_IMapTileBitmapRequestedEventArgs;
+template <typename T> struct impl_IMapTileDataSource;
+template <typename T> struct impl_IMapTileDataSourceFactory;
+template <typename T> struct impl_IMapTileSource;
+template <typename T> struct impl_IMapTileSourceFactory;
+template <typename T> struct impl_IMapTileSourceStatics;
+template <typename T> struct impl_IMapTileUriRequest;
+template <typename T> struct impl_IMapTileUriRequestDeferral;
+template <typename T> struct impl_IMapTileUriRequestedEventArgs;
+template <typename T> struct impl_IStreetsideExperience;
+template <typename T> struct impl_IStreetsideExperienceFactory;
+template <typename T> struct impl_IStreetsidePanorama;
+template <typename T> struct impl_IStreetsidePanoramaStatics;
 
 }
 
@@ -1137,224 +1137,192 @@ template <> struct traits<Windows::UI::Xaml::Controls::Maps::IStreetsidePanorama
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::CustomMapTileDataSource>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Maps::CustomMapTileDataSource;
-    using default_interface = Windows::UI::Xaml::Controls::Maps::ICustomMapTileDataSource;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Maps.CustomMapTileDataSource"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::HttpMapTileDataSource>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Maps::HttpMapTileDataSource;
-    using default_interface = Windows::UI::Xaml::Controls::Maps::IHttpMapTileDataSource;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::LocalMapTileDataSource>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Maps::LocalMapTileDataSource;
-    using default_interface = Windows::UI::Xaml::Controls::Maps::ILocalMapTileDataSource;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapActualCameraChangedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Maps::MapActualCameraChangedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::Maps::IMapActualCameraChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Maps.MapActualCameraChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapActualCameraChangingEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Maps::MapActualCameraChangingEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::Maps::IMapActualCameraChangingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Maps.MapActualCameraChangingEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapCamera>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Maps::MapCamera;
-    using default_interface = Windows::UI::Xaml::Controls::Maps::IMapCamera;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Maps.MapCamera"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapControl>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Maps::MapControl;
-    using default_interface = Windows::UI::Xaml::Controls::Maps::IMapControl;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Maps.MapControl"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapCustomExperience>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Maps::MapCustomExperience;
-    using default_interface = Windows::UI::Xaml::Controls::Maps::IMapCustomExperience;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Maps.MapCustomExperience"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapCustomExperienceChangedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Maps::MapCustomExperienceChangedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::Maps::IMapCustomExperienceChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Maps.MapCustomExperienceChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapElement>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Maps::MapElement;
-    using default_interface = Windows::UI::Xaml::Controls::Maps::IMapElement;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Maps.MapElement"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapElementClickEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Maps::MapElementClickEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::Maps::IMapElementClickEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Maps.MapElementClickEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapElementPointerEnteredEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Maps::MapElementPointerEnteredEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::Maps::IMapElementPointerEnteredEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Maps.MapElementPointerEnteredEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapElementPointerExitedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Maps::MapElementPointerExitedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::Maps::IMapElementPointerExitedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Maps.MapElementPointerExitedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapIcon>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Maps::MapIcon;
-    using default_interface = Windows::UI::Xaml::Controls::Maps::IMapIcon;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Maps.MapIcon"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapInputEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Maps::MapInputEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::Maps::IMapInputEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Maps.MapInputEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapItemsControl>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Maps::MapItemsControl;
-    using default_interface = Windows::UI::Xaml::Controls::Maps::IMapItemsControl;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Maps.MapItemsControl"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapPolygon>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Maps::MapPolygon;
-    using default_interface = Windows::UI::Xaml::Controls::Maps::IMapPolygon;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Maps.MapPolygon"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapPolyline>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Maps::MapPolyline;
-    using default_interface = Windows::UI::Xaml::Controls::Maps::IMapPolyline;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Maps.MapPolyline"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapRightTappedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Maps::MapRightTappedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::Maps::IMapRightTappedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Maps.MapRightTappedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapRouteView>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Maps::MapRouteView;
-    using default_interface = Windows::UI::Xaml::Controls::Maps::IMapRouteView;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Maps.MapRouteView"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapScene>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Maps::MapScene;
-    using default_interface = Windows::UI::Xaml::Controls::Maps::IMapScene;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Maps.MapScene"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapTargetCameraChangedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Maps::MapTargetCameraChangedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::Maps::IMapTargetCameraChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Maps.MapTargetCameraChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapTileBitmapRequest>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Maps::MapTileBitmapRequest;
-    using default_interface = Windows::UI::Xaml::Controls::Maps::IMapTileBitmapRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequest"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapTileBitmapRequestDeferral>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Maps::MapTileBitmapRequestDeferral;
-    using default_interface = Windows::UI::Xaml::Controls::Maps::IMapTileBitmapRequestDeferral;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequestDeferral"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapTileBitmapRequestedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Maps::MapTileBitmapRequestedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::Maps::IMapTileBitmapRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequestedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapTileDataSource>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Maps::MapTileDataSource;
-    using default_interface = Windows::UI::Xaml::Controls::Maps::IMapTileDataSource;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Maps.MapTileDataSource"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapTileSource>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Maps::MapTileSource;
-    using default_interface = Windows::UI::Xaml::Controls::Maps::IMapTileSource;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Maps.MapTileSource"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapTileUriRequest>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Maps::MapTileUriRequest;
-    using default_interface = Windows::UI::Xaml::Controls::Maps::IMapTileUriRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Maps.MapTileUriRequest"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapTileUriRequestDeferral>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Maps::MapTileUriRequestDeferral;
-    using default_interface = Windows::UI::Xaml::Controls::Maps::IMapTileUriRequestDeferral;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Maps.MapTileUriRequestDeferral"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::MapTileUriRequestedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Maps::MapTileUriRequestedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::Maps::IMapTileUriRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Maps.MapTileUriRequestedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::StreetsideExperience>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Maps::StreetsideExperience;
-    using default_interface = Windows::UI::Xaml::Controls::Maps::IStreetsideExperience;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Maps.StreetsideExperience"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Maps::StreetsidePanorama>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Maps::StreetsidePanorama;
-    using default_interface = Windows::UI::Xaml::Controls::Maps::IStreetsidePanorama;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Maps.StreetsidePanorama"; }
 };
 

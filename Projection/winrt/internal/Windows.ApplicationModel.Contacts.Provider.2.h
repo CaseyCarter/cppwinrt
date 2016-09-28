@@ -65,12 +65,8 @@ template <> struct __declspec(uuid("39d6abda-a00a-5777-8611-82d7c326c18d")) __de
 namespace Windows::ApplicationModel::Contacts::Provider {
 
 template <typename D>
-class WINRT_EBO impl_IContactPickerUI
+struct WINRT_EBO impl_IContactPickerUI
 {
-    auto shim() const { return impl::shim<D, IContactPickerUI>(this); }
-
-public:
-
     Windows::ApplicationModel::Contacts::Provider::AddContactResult AddContact(hstring_ref id, const Windows::ApplicationModel::Contacts::Contact & contact) const;
     void RemoveContact(hstring_ref id) const;
     bool ContainsContact(hstring_ref id) const;
@@ -83,23 +79,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactPickerUI2
+struct WINRT_EBO impl_IContactPickerUI2
 {
-    auto shim() const { return impl::shim<D, IContactPickerUI2>(this); }
-
-public:
-
     Windows::ApplicationModel::Contacts::Provider::AddContactResult AddContact(const Windows::ApplicationModel::Contacts::Contact & contact) const;
     Windows::Foundation::Collections::IVector<winrt::Windows::ApplicationModel::Contacts::ContactFieldType> DesiredFieldsWithContactFieldType() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactRemovedEventArgs
+struct WINRT_EBO impl_IContactRemovedEventArgs
 {
-    auto shim() const { return impl::shim<D, IContactRemovedEventArgs>(this); }
-
-public:
-
     hstring Id() const;
 };
 

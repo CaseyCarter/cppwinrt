@@ -39,8 +39,8 @@ template <> struct traits<Windows::Devices::Radios::Radio> { using default_inter
 
 namespace Windows::Devices::Radios {
 
-template <typename T> class impl_IRadio;
-template <typename T> class impl_IRadioStatics;
+template <typename T> struct impl_IRadio;
+template <typename T> struct impl_IRadioStatics;
 
 }
 
@@ -61,7 +61,6 @@ template <> struct traits<Windows::Devices::Radios::IRadioStatics>
 template <> struct traits<Windows::Devices::Radios::Radio>
 {
     using abi = ABI::Windows::Devices::Radios::Radio;
-    using default_interface = Windows::Devices::Radios::IRadio;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Radios.Radio"; }
 };
 

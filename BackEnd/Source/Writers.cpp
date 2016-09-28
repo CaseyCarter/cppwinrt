@@ -1178,7 +1178,6 @@ void WriteInterfaceTraits(Output & out)
                   Settings::ClassName,
                   Settings::Namespace,
                   Settings::ClassName,
-                  Settings::ClassDefaultInterface,
                   Settings::ClassDotName);
         }
     });
@@ -1271,11 +1270,10 @@ void WriteAbiInterfaces(Output & out)
 
 void WriteInterfacesMethodDefinitions(Output & out)
 {
-    Settings::MethodShim = "shim()";
-
     GetInterfaceMethodDefinitions([&]
     {
         out.WriteNamespace(Settings::Namespace);
+        Settings::MethodShim = "static_cast<const " + Settings::InterfaceName + " &>(static_cast<const D &>(*this))";
 
         Write(out,
               Strings::WriteInterfacesMethodDefinition,
@@ -1311,7 +1309,6 @@ void WriteInterfaceConsumers(Output & out)
 
         Write(out,
               Strings::WriteInterfaceConsumer,
-              Settings::InterfaceName,
               Settings::InterfaceName,
               Bind(WriteInterfaceMethodDeclarations));
     });

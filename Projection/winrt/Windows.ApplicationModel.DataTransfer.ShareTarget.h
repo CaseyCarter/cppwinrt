@@ -273,105 +273,105 @@ namespace Windows::ApplicationModel::DataTransfer::ShareTarget {
 template <typename D> hstring impl_IQuickLink<D>::Title() const
 {
     hstring value;
-    check_hresult(shim()->get_Title(put(value)));
+    check_hresult(static_cast<const IQuickLink &>(static_cast<const D &>(*this))->get_Title(put(value)));
     return value;
 }
 
 template <typename D> void impl_IQuickLink<D>::Title(hstring_ref value) const
 {
-    check_hresult(shim()->put_Title(get(value)));
+    check_hresult(static_cast<const IQuickLink &>(static_cast<const D &>(*this))->put_Title(get(value)));
 }
 
 template <typename D> Windows::Storage::Streams::RandomAccessStreamReference impl_IQuickLink<D>::Thumbnail() const
 {
     Windows::Storage::Streams::RandomAccessStreamReference value { nullptr };
-    check_hresult(shim()->get_Thumbnail(put(value)));
+    check_hresult(static_cast<const IQuickLink &>(static_cast<const D &>(*this))->get_Thumbnail(put(value)));
     return value;
 }
 
 template <typename D> void impl_IQuickLink<D>::Thumbnail(const Windows::Storage::Streams::RandomAccessStreamReference & value) const
 {
-    check_hresult(shim()->put_Thumbnail(get(value)));
+    check_hresult(static_cast<const IQuickLink &>(static_cast<const D &>(*this))->put_Thumbnail(get(value)));
 }
 
 template <typename D> hstring impl_IQuickLink<D>::Id() const
 {
     hstring value;
-    check_hresult(shim()->get_Id(put(value)));
+    check_hresult(static_cast<const IQuickLink &>(static_cast<const D &>(*this))->get_Id(put(value)));
     return value;
 }
 
 template <typename D> void impl_IQuickLink<D>::Id(hstring_ref value) const
 {
-    check_hresult(shim()->put_Id(get(value)));
+    check_hresult(static_cast<const IQuickLink &>(static_cast<const D &>(*this))->put_Id(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IQuickLink<D>::SupportedDataFormats() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(shim()->get_SupportedDataFormats(put(value)));
+    check_hresult(static_cast<const IQuickLink &>(static_cast<const D &>(*this))->get_SupportedDataFormats(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IQuickLink<D>::SupportedFileTypes() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(shim()->get_SupportedFileTypes(put(value)));
+    check_hresult(static_cast<const IQuickLink &>(static_cast<const D &>(*this))->get_SupportedFileTypes(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::DataTransfer::DataPackageView impl_IShareOperation<D>::Data() const
 {
     Windows::ApplicationModel::DataTransfer::DataPackageView value { nullptr };
-    check_hresult(shim()->get_Data(put(value)));
+    check_hresult(static_cast<const IShareOperation &>(static_cast<const D &>(*this))->get_Data(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IShareOperation<D>::QuickLinkId() const
 {
     hstring value;
-    check_hresult(shim()->get_QuickLinkId(put(value)));
+    check_hresult(static_cast<const IShareOperation &>(static_cast<const D &>(*this))->get_QuickLinkId(put(value)));
     return value;
 }
 
 template <typename D> void impl_IShareOperation<D>::RemoveThisQuickLink() const
 {
-    check_hresult(shim()->abi_RemoveThisQuickLink());
+    check_hresult(static_cast<const IShareOperation &>(static_cast<const D &>(*this))->abi_RemoveThisQuickLink());
 }
 
 template <typename D> void impl_IShareOperation<D>::ReportStarted() const
 {
-    check_hresult(shim()->abi_ReportStarted());
+    check_hresult(static_cast<const IShareOperation &>(static_cast<const D &>(*this))->abi_ReportStarted());
 }
 
 template <typename D> void impl_IShareOperation<D>::ReportDataRetrieved() const
 {
-    check_hresult(shim()->abi_ReportDataRetrieved());
+    check_hresult(static_cast<const IShareOperation &>(static_cast<const D &>(*this))->abi_ReportDataRetrieved());
 }
 
 template <typename D> void impl_IShareOperation<D>::ReportSubmittedBackgroundTask() const
 {
-    check_hresult(shim()->abi_ReportSubmittedBackgroundTask());
+    check_hresult(static_cast<const IShareOperation &>(static_cast<const D &>(*this))->abi_ReportSubmittedBackgroundTask());
 }
 
 template <typename D> void impl_IShareOperation<D>::ReportCompleted(const Windows::ApplicationModel::DataTransfer::ShareTarget::QuickLink & quicklink) const
 {
-    check_hresult(shim()->abi_ReportCompletedWithQuickLink(get(quicklink)));
+    check_hresult(static_cast<const IShareOperation &>(static_cast<const D &>(*this))->abi_ReportCompletedWithQuickLink(get(quicklink)));
 }
 
 template <typename D> void impl_IShareOperation<D>::ReportCompleted() const
 {
-    check_hresult(shim()->abi_ReportCompleted());
+    check_hresult(static_cast<const IShareOperation &>(static_cast<const D &>(*this))->abi_ReportCompleted());
 }
 
 template <typename D> void impl_IShareOperation<D>::ReportError(hstring_ref value) const
 {
-    check_hresult(shim()->abi_ReportError(get(value)));
+    check_hresult(static_cast<const IShareOperation &>(static_cast<const D &>(*this))->abi_ReportError(get(value)));
 }
 
 template <typename D> void impl_IShareOperation2<D>::DismissUI() const
 {
-    check_hresult(shim()->abi_DismissUI());
+    check_hresult(static_cast<const IShareOperation2 &>(static_cast<const D &>(*this))->abi_DismissUI());
 }
 
 inline QuickLink::QuickLink() :

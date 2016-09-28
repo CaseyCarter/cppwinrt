@@ -62,9 +62,9 @@ template <> struct traits<Windows::Storage::BulkAccess::FolderInformation> { usi
 
 namespace Windows::Storage::BulkAccess {
 
-template <typename T> class impl_IFileInformationFactory;
-template <typename T> class impl_IFileInformationFactoryFactory;
-template <typename T> class impl_IStorageItemInformation;
+template <typename T> struct impl_IFileInformationFactory;
+template <typename T> struct impl_IFileInformationFactoryFactory;
+template <typename T> struct impl_IStorageItemInformation;
 
 }
 
@@ -91,21 +91,18 @@ template <> struct traits<Windows::Storage::BulkAccess::IStorageItemInformation>
 template <> struct traits<Windows::Storage::BulkAccess::FileInformation>
 {
     using abi = ABI::Windows::Storage::BulkAccess::FileInformation;
-    using default_interface = Windows::Storage::BulkAccess::IStorageItemInformation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.BulkAccess.FileInformation"; }
 };
 
 template <> struct traits<Windows::Storage::BulkAccess::FileInformationFactory>
 {
     using abi = ABI::Windows::Storage::BulkAccess::FileInformationFactory;
-    using default_interface = Windows::Storage::BulkAccess::IFileInformationFactory;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.BulkAccess.FileInformationFactory"; }
 };
 
 template <> struct traits<Windows::Storage::BulkAccess::FolderInformation>
 {
     using abi = ABI::Windows::Storage::BulkAccess::FolderInformation;
-    using default_interface = Windows::Storage::BulkAccess::IStorageItemInformation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.BulkAccess.FolderInformation"; }
 };
 

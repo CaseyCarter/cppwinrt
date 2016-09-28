@@ -165,12 +165,8 @@ template <> struct __declspec(uuid("0e3d7f70-4e8c-5260-a7e5-786e05bded99")) __de
 namespace Windows::Web::Syndication {
 
 template <typename D>
-class WINRT_EBO impl_ISyndicationAttribute
+struct WINRT_EBO impl_ISyndicationAttribute
 {
-    auto shim() const { return impl::shim<D, ISyndicationAttribute>(this); }
-
-public:
-
     hstring Name() const;
     void Name(hstring_ref value) const;
     hstring Namespace() const;
@@ -180,22 +176,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISyndicationAttributeFactory
+struct WINRT_EBO impl_ISyndicationAttributeFactory
 {
-    auto shim() const { return impl::shim<D, ISyndicationAttributeFactory>(this); }
-
-public:
-
     Windows::Web::Syndication::SyndicationAttribute CreateSyndicationAttribute(hstring_ref attributeName, hstring_ref attributeNamespace, hstring_ref attributeValue) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISyndicationCategory
+struct WINRT_EBO impl_ISyndicationCategory
 {
-    auto shim() const { return impl::shim<D, ISyndicationCategory>(this); }
-
-public:
-
     hstring Label() const;
     void Label(hstring_ref value) const;
     hstring Scheme() const;
@@ -205,23 +193,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISyndicationCategoryFactory
+struct WINRT_EBO impl_ISyndicationCategoryFactory
 {
-    auto shim() const { return impl::shim<D, ISyndicationCategoryFactory>(this); }
-
-public:
-
     Windows::Web::Syndication::SyndicationCategory CreateSyndicationCategory(hstring_ref term) const;
     Windows::Web::Syndication::SyndicationCategory CreateSyndicationCategoryEx(hstring_ref term, hstring_ref scheme, hstring_ref label) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISyndicationClient
+struct WINRT_EBO impl_ISyndicationClient
 {
-    auto shim() const { return impl::shim<D, ISyndicationClient>(this); }
-
-public:
-
     Windows::Security::Credentials::PasswordCredential ServerCredential() const;
     void ServerCredential(const Windows::Security::Credentials::PasswordCredential & value) const;
     Windows::Security::Credentials::PasswordCredential ProxyCredential() const;
@@ -237,54 +217,34 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISyndicationClientFactory
+struct WINRT_EBO impl_ISyndicationClientFactory
 {
-    auto shim() const { return impl::shim<D, ISyndicationClientFactory>(this); }
-
-public:
-
     Windows::Web::Syndication::SyndicationClient CreateSyndicationClient(const Windows::Security::Credentials::PasswordCredential & serverCredential) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISyndicationContent
+struct WINRT_EBO impl_ISyndicationContent
 {
-    auto shim() const { return impl::shim<D, ISyndicationContent>(this); }
-
-public:
-
     Windows::Foundation::Uri SourceUri() const;
     void SourceUri(const Windows::Foundation::Uri & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISyndicationContentFactory
+struct WINRT_EBO impl_ISyndicationContentFactory
 {
-    auto shim() const { return impl::shim<D, ISyndicationContentFactory>(this); }
-
-public:
-
     Windows::Web::Syndication::SyndicationContent CreateSyndicationContent(hstring_ref text, Windows::Web::Syndication::SyndicationTextType type) const;
     Windows::Web::Syndication::SyndicationContent CreateSyndicationContentWithSourceUri(const Windows::Foundation::Uri & sourceUri) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISyndicationErrorStatics
+struct WINRT_EBO impl_ISyndicationErrorStatics
 {
-    auto shim() const { return impl::shim<D, ISyndicationErrorStatics>(this); }
-
-public:
-
     Windows::Web::Syndication::SyndicationErrorStatus GetStatus(int32_t hresult) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISyndicationFeed
+struct WINRT_EBO impl_ISyndicationFeed
 {
-    auto shim() const { return impl::shim<D, ISyndicationFeed>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationPerson> Authors() const;
     Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationCategory> Categories() const;
     Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationPerson> Contributors() const;
@@ -316,22 +276,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISyndicationFeedFactory
+struct WINRT_EBO impl_ISyndicationFeedFactory
 {
-    auto shim() const { return impl::shim<D, ISyndicationFeedFactory>(this); }
-
-public:
-
     Windows::Web::Syndication::SyndicationFeed CreateSyndicationFeed(hstring_ref title, hstring_ref subtitle, const Windows::Foundation::Uri & uri) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISyndicationGenerator
+struct WINRT_EBO impl_ISyndicationGenerator
 {
-    auto shim() const { return impl::shim<D, ISyndicationGenerator>(this); }
-
-public:
-
     hstring Text() const;
     void Text(hstring_ref value) const;
     Windows::Foundation::Uri Uri() const;
@@ -341,22 +293,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISyndicationGeneratorFactory
+struct WINRT_EBO impl_ISyndicationGeneratorFactory
 {
-    auto shim() const { return impl::shim<D, ISyndicationGeneratorFactory>(this); }
-
-public:
-
     Windows::Web::Syndication::SyndicationGenerator CreateSyndicationGenerator(hstring_ref text) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISyndicationItem
+struct WINRT_EBO impl_ISyndicationItem
 {
-    auto shim() const { return impl::shim<D, ISyndicationItem>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationPerson> Authors() const;
     Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationCategory> Categories() const;
     Windows::Foundation::Collections::IVector<Windows::Web::Syndication::SyndicationPerson> Contributors() const;
@@ -388,22 +332,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISyndicationItemFactory
+struct WINRT_EBO impl_ISyndicationItemFactory
 {
-    auto shim() const { return impl::shim<D, ISyndicationItemFactory>(this); }
-
-public:
-
     Windows::Web::Syndication::SyndicationItem CreateSyndicationItem(hstring_ref title, const Windows::Web::Syndication::SyndicationContent & content, const Windows::Foundation::Uri & uri) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISyndicationLink
+struct WINRT_EBO impl_ISyndicationLink
 {
-    auto shim() const { return impl::shim<D, ISyndicationLink>(this); }
-
-public:
-
     uint32_t Length() const;
     void Length(uint32_t value) const;
     hstring MediaType() const;
@@ -419,23 +355,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISyndicationLinkFactory
+struct WINRT_EBO impl_ISyndicationLinkFactory
 {
-    auto shim() const { return impl::shim<D, ISyndicationLinkFactory>(this); }
-
-public:
-
     Windows::Web::Syndication::SyndicationLink CreateSyndicationLink(const Windows::Foundation::Uri & uri) const;
     Windows::Web::Syndication::SyndicationLink CreateSyndicationLinkEx(const Windows::Foundation::Uri & uri, hstring_ref relationship, hstring_ref title, hstring_ref mediaType, uint32_t length) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISyndicationNode
+struct WINRT_EBO impl_ISyndicationNode
 {
-    auto shim() const { return impl::shim<D, ISyndicationNode>(this); }
-
-public:
-
     hstring NodeName() const;
     void NodeName(hstring_ref value) const;
     hstring NodeNamespace() const;
@@ -452,22 +380,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISyndicationNodeFactory
+struct WINRT_EBO impl_ISyndicationNodeFactory
 {
-    auto shim() const { return impl::shim<D, ISyndicationNodeFactory>(this); }
-
-public:
-
     Windows::Web::Syndication::SyndicationNode CreateSyndicationNode(hstring_ref nodeName, hstring_ref nodeNamespace, hstring_ref nodeValue) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISyndicationPerson
+struct WINRT_EBO impl_ISyndicationPerson
 {
-    auto shim() const { return impl::shim<D, ISyndicationPerson>(this); }
-
-public:
-
     hstring Email() const;
     void Email(hstring_ref value) const;
     hstring Name() const;
@@ -477,23 +397,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISyndicationPersonFactory
+struct WINRT_EBO impl_ISyndicationPersonFactory
 {
-    auto shim() const { return impl::shim<D, ISyndicationPersonFactory>(this); }
-
-public:
-
     Windows::Web::Syndication::SyndicationPerson CreateSyndicationPerson(hstring_ref name) const;
     Windows::Web::Syndication::SyndicationPerson CreateSyndicationPersonEx(hstring_ref name, hstring_ref email, const Windows::Foundation::Uri & uri) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISyndicationText
+struct WINRT_EBO impl_ISyndicationText
 {
-    auto shim() const { return impl::shim<D, ISyndicationText>(this); }
-
-public:
-
     hstring Text() const;
     void Text(hstring_ref value) const;
     hstring Type() const;
@@ -503,12 +415,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISyndicationTextFactory
+struct WINRT_EBO impl_ISyndicationTextFactory
 {
-    auto shim() const { return impl::shim<D, ISyndicationTextFactory>(this); }
-
-public:
-
     Windows::Web::Syndication::SyndicationText CreateSyndicationText(hstring_ref text) const;
     Windows::Web::Syndication::SyndicationText CreateSyndicationTextEx(hstring_ref text, Windows::Web::Syndication::SyndicationTextType type) const;
 };

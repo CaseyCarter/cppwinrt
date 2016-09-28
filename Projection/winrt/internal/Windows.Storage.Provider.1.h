@@ -74,13 +74,13 @@ template <> struct traits<Windows::Storage::Provider::FileUpdateRequestedEventAr
 
 namespace Windows::Storage::Provider {
 
-template <typename T> class impl_ICachedFileUpdaterStatics;
-template <typename T> class impl_ICachedFileUpdaterUI;
-template <typename T> class impl_ICachedFileUpdaterUI2;
-template <typename T> class impl_IFileUpdateRequest;
-template <typename T> class impl_IFileUpdateRequest2;
-template <typename T> class impl_IFileUpdateRequestDeferral;
-template <typename T> class impl_IFileUpdateRequestedEventArgs;
+template <typename T> struct impl_ICachedFileUpdaterStatics;
+template <typename T> struct impl_ICachedFileUpdaterUI;
+template <typename T> struct impl_ICachedFileUpdaterUI2;
+template <typename T> struct impl_IFileUpdateRequest;
+template <typename T> struct impl_IFileUpdateRequest2;
+template <typename T> struct impl_IFileUpdateRequestDeferral;
+template <typename T> struct impl_IFileUpdateRequestedEventArgs;
 
 }
 
@@ -136,28 +136,24 @@ template <> struct traits<Windows::Storage::Provider::CachedFileUpdater>
 template <> struct traits<Windows::Storage::Provider::CachedFileUpdaterUI>
 {
     using abi = ABI::Windows::Storage::Provider::CachedFileUpdaterUI;
-    using default_interface = Windows::Storage::Provider::ICachedFileUpdaterUI;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Provider.CachedFileUpdaterUI"; }
 };
 
 template <> struct traits<Windows::Storage::Provider::FileUpdateRequest>
 {
     using abi = ABI::Windows::Storage::Provider::FileUpdateRequest;
-    using default_interface = Windows::Storage::Provider::IFileUpdateRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Provider.FileUpdateRequest"; }
 };
 
 template <> struct traits<Windows::Storage::Provider::FileUpdateRequestDeferral>
 {
     using abi = ABI::Windows::Storage::Provider::FileUpdateRequestDeferral;
-    using default_interface = Windows::Storage::Provider::IFileUpdateRequestDeferral;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Provider.FileUpdateRequestDeferral"; }
 };
 
 template <> struct traits<Windows::Storage::Provider::FileUpdateRequestedEventArgs>
 {
     using abi = ABI::Windows::Storage::Provider::FileUpdateRequestedEventArgs;
-    using default_interface = Windows::Storage::Provider::IFileUpdateRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Provider.FileUpdateRequestedEventArgs"; }
 };
 

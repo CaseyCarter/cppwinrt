@@ -1198,180 +1198,180 @@ namespace Windows::Devices::Bluetooth::Advertisement {
 template <typename D> Windows::Foundation::IReference<winrt::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFlags> impl_IBluetoothLEAdvertisement<D>::Flags() const
 {
     Windows::Foundation::IReference<winrt::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFlags> value;
-    check_hresult(shim()->get_Flags(put(value)));
+    check_hresult(static_cast<const IBluetoothLEAdvertisement &>(static_cast<const D &>(*this))->get_Flags(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBluetoothLEAdvertisement<D>::Flags(const Windows::Foundation::IReference<winrt::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFlags> & value) const
 {
-    check_hresult(shim()->put_Flags(get(value)));
+    check_hresult(static_cast<const IBluetoothLEAdvertisement &>(static_cast<const D &>(*this))->put_Flags(get(value)));
 }
 
 template <typename D> hstring impl_IBluetoothLEAdvertisement<D>::LocalName() const
 {
     hstring value;
-    check_hresult(shim()->get_LocalName(put(value)));
+    check_hresult(static_cast<const IBluetoothLEAdvertisement &>(static_cast<const D &>(*this))->get_LocalName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBluetoothLEAdvertisement<D>::LocalName(hstring_ref value) const
 {
-    check_hresult(shim()->put_LocalName(get(value)));
+    check_hresult(static_cast<const IBluetoothLEAdvertisement &>(static_cast<const D &>(*this))->put_LocalName(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<GUID> impl_IBluetoothLEAdvertisement<D>::ServiceUuids() const
 {
     Windows::Foundation::Collections::IVector<GUID> value;
-    check_hresult(shim()->get_ServiceUuids(put(value)));
+    check_hresult(static_cast<const IBluetoothLEAdvertisement &>(static_cast<const D &>(*this))->get_ServiceUuids(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Devices::Bluetooth::Advertisement::BluetoothLEManufacturerData> impl_IBluetoothLEAdvertisement<D>::ManufacturerData() const
 {
     Windows::Foundation::Collections::IVector<Windows::Devices::Bluetooth::Advertisement::BluetoothLEManufacturerData> value;
-    check_hresult(shim()->get_ManufacturerData(put(value)));
+    check_hresult(static_cast<const IBluetoothLEAdvertisement &>(static_cast<const D &>(*this))->get_ManufacturerData(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementDataSection> impl_IBluetoothLEAdvertisement<D>::DataSections() const
 {
     Windows::Foundation::Collections::IVector<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementDataSection> value;
-    check_hresult(shim()->get_DataSections(put(value)));
+    check_hresult(static_cast<const IBluetoothLEAdvertisement &>(static_cast<const D &>(*this))->get_DataSections(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::Advertisement::BluetoothLEManufacturerData> impl_IBluetoothLEAdvertisement<D>::GetManufacturerDataByCompanyId(uint16_t companyId) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::Advertisement::BluetoothLEManufacturerData> dataList;
-    check_hresult(shim()->abi_GetManufacturerDataByCompanyId(companyId, put(dataList)));
+    check_hresult(static_cast<const IBluetoothLEAdvertisement &>(static_cast<const D &>(*this))->abi_GetManufacturerDataByCompanyId(companyId, put(dataList)));
     return dataList;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementDataSection> impl_IBluetoothLEAdvertisement<D>::GetSectionsByType(uint8_t type) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementDataSection> sectionList;
-    check_hresult(shim()->abi_GetSectionsByType(type, put(sectionList)));
+    check_hresult(static_cast<const IBluetoothLEAdvertisement &>(static_cast<const D &>(*this))->abi_GetSectionsByType(type, put(sectionList)));
     return sectionList;
 }
 
 template <typename D> Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisement impl_IBluetoothLEAdvertisementFilter<D>::Advertisement() const
 {
     Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisement value { nullptr };
-    check_hresult(shim()->get_Advertisement(put(value)));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementFilter &>(static_cast<const D &>(*this))->get_Advertisement(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBluetoothLEAdvertisementFilter<D>::Advertisement(const Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisement & value) const
 {
-    check_hresult(shim()->put_Advertisement(get(value)));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementFilter &>(static_cast<const D &>(*this))->put_Advertisement(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementBytePattern> impl_IBluetoothLEAdvertisementFilter<D>::BytePatterns() const
 {
     Windows::Foundation::Collections::IVector<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementBytePattern> value;
-    check_hresult(shim()->get_BytePatterns(put(value)));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementFilter &>(static_cast<const D &>(*this))->get_BytePatterns(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Bluetooth::BluetoothError impl_IBluetoothLEAdvertisementWatcherStoppedEventArgs<D>::Error() const
 {
     Windows::Devices::Bluetooth::BluetoothError value {};
-    check_hresult(shim()->get_Error(&value));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementWatcherStoppedEventArgs &>(static_cast<const D &>(*this))->get_Error(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcher impl_IBluetoothLEAdvertisementWatcherFactory<D>::Create(const Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFilter & advertisementFilter) const
 {
     Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcher value { nullptr };
-    check_hresult(shim()->abi_Create(get(advertisementFilter), put(value)));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementWatcherFactory &>(static_cast<const D &>(*this))->abi_Create(get(advertisementFilter), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IBluetoothLEAdvertisementWatcher<D>::MinSamplingInterval() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_MinSamplingInterval(put(value)));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementWatcher &>(static_cast<const D &>(*this))->get_MinSamplingInterval(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IBluetoothLEAdvertisementWatcher<D>::MaxSamplingInterval() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_MaxSamplingInterval(put(value)));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementWatcher &>(static_cast<const D &>(*this))->get_MaxSamplingInterval(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IBluetoothLEAdvertisementWatcher<D>::MinOutOfRangeTimeout() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_MinOutOfRangeTimeout(put(value)));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementWatcher &>(static_cast<const D &>(*this))->get_MinOutOfRangeTimeout(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IBluetoothLEAdvertisementWatcher<D>::MaxOutOfRangeTimeout() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_MaxOutOfRangeTimeout(put(value)));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementWatcher &>(static_cast<const D &>(*this))->get_MaxOutOfRangeTimeout(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcherStatus impl_IBluetoothLEAdvertisementWatcher<D>::Status() const
 {
     Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcherStatus value {};
-    check_hresult(shim()->get_Status(&value));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementWatcher &>(static_cast<const D &>(*this))->get_Status(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Bluetooth::Advertisement::BluetoothLEScanningMode impl_IBluetoothLEAdvertisementWatcher<D>::ScanningMode() const
 {
     Windows::Devices::Bluetooth::Advertisement::BluetoothLEScanningMode value {};
-    check_hresult(shim()->get_ScanningMode(&value));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementWatcher &>(static_cast<const D &>(*this))->get_ScanningMode(&value));
     return value;
 }
 
 template <typename D> void impl_IBluetoothLEAdvertisementWatcher<D>::ScanningMode(Windows::Devices::Bluetooth::Advertisement::BluetoothLEScanningMode value) const
 {
-    check_hresult(shim()->put_ScanningMode(value));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementWatcher &>(static_cast<const D &>(*this))->put_ScanningMode(value));
 }
 
 template <typename D> Windows::Devices::Bluetooth::BluetoothSignalStrengthFilter impl_IBluetoothLEAdvertisementWatcher<D>::SignalStrengthFilter() const
 {
     Windows::Devices::Bluetooth::BluetoothSignalStrengthFilter value { nullptr };
-    check_hresult(shim()->get_SignalStrengthFilter(put(value)));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementWatcher &>(static_cast<const D &>(*this))->get_SignalStrengthFilter(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBluetoothLEAdvertisementWatcher<D>::SignalStrengthFilter(const Windows::Devices::Bluetooth::BluetoothSignalStrengthFilter & value) const
 {
-    check_hresult(shim()->put_SignalStrengthFilter(get(value)));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementWatcher &>(static_cast<const D &>(*this))->put_SignalStrengthFilter(get(value)));
 }
 
 template <typename D> Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFilter impl_IBluetoothLEAdvertisementWatcher<D>::AdvertisementFilter() const
 {
     Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFilter value { nullptr };
-    check_hresult(shim()->get_AdvertisementFilter(put(value)));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementWatcher &>(static_cast<const D &>(*this))->get_AdvertisementFilter(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBluetoothLEAdvertisementWatcher<D>::AdvertisementFilter(const Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFilter & value) const
 {
-    check_hresult(shim()->put_AdvertisementFilter(get(value)));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementWatcher &>(static_cast<const D &>(*this))->put_AdvertisementFilter(get(value)));
 }
 
 template <typename D> void impl_IBluetoothLEAdvertisementWatcher<D>::Start() const
 {
-    check_hresult(shim()->abi_Start());
+    check_hresult(static_cast<const IBluetoothLEAdvertisementWatcher &>(static_cast<const D &>(*this))->abi_Start());
 }
 
 template <typename D> void impl_IBluetoothLEAdvertisementWatcher<D>::Stop() const
 {
-    check_hresult(shim()->abi_Stop());
+    check_hresult(static_cast<const IBluetoothLEAdvertisementWatcher &>(static_cast<const D &>(*this))->abi_Stop());
 }
 
 template <typename D> event_token impl_IBluetoothLEAdvertisementWatcher<D>::Received(const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcher, Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementReceivedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_Received(get(handler), &token));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementWatcher &>(static_cast<const D &>(*this))->add_Received(get(handler), &token));
     return token;
 }
 
@@ -1382,13 +1382,13 @@ template <typename D> event_revoker<IBluetoothLEAdvertisementWatcher> impl_IBlue
 
 template <typename D> void impl_IBluetoothLEAdvertisementWatcher<D>::Received(event_token token) const
 {
-    check_hresult(shim()->remove_Received(token));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementWatcher &>(static_cast<const D &>(*this))->remove_Received(token));
 }
 
 template <typename D> event_token impl_IBluetoothLEAdvertisementWatcher<D>::Stopped(const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcher, Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcherStoppedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_Stopped(get(handler), &token));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementWatcher &>(static_cast<const D &>(*this))->add_Stopped(get(handler), &token));
     return token;
 }
 
@@ -1399,352 +1399,352 @@ template <typename D> event_revoker<IBluetoothLEAdvertisementWatcher> impl_IBlue
 
 template <typename D> void impl_IBluetoothLEAdvertisementWatcher<D>::Stopped(event_token token) const
 {
-    check_hresult(shim()->remove_Stopped(token));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementWatcher &>(static_cast<const D &>(*this))->remove_Stopped(token));
 }
 
 template <typename D> int16_t impl_IBluetoothLEAdvertisementReceivedEventArgs<D>::RawSignalStrengthInDBm() const
 {
     int16_t value {};
-    check_hresult(shim()->get_RawSignalStrengthInDBm(&value));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementReceivedEventArgs &>(static_cast<const D &>(*this))->get_RawSignalStrengthInDBm(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IBluetoothLEAdvertisementReceivedEventArgs<D>::BluetoothAddress() const
 {
     uint64_t value {};
-    check_hresult(shim()->get_BluetoothAddress(&value));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementReceivedEventArgs &>(static_cast<const D &>(*this))->get_BluetoothAddress(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementType impl_IBluetoothLEAdvertisementReceivedEventArgs<D>::AdvertisementType() const
 {
     Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementType value {};
-    check_hresult(shim()->get_AdvertisementType(&value));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementReceivedEventArgs &>(static_cast<const D &>(*this))->get_AdvertisementType(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IBluetoothLEAdvertisementReceivedEventArgs<D>::Timestamp() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->get_Timestamp(put(value)));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementReceivedEventArgs &>(static_cast<const D &>(*this))->get_Timestamp(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisement impl_IBluetoothLEAdvertisementReceivedEventArgs<D>::Advertisement() const
 {
     Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisement value { nullptr };
-    check_hresult(shim()->get_Advertisement(put(value)));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementReceivedEventArgs &>(static_cast<const D &>(*this))->get_Advertisement(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementDataSection impl_IBluetoothLEAdvertisementDataSectionFactory<D>::Create(uint8_t dataType, const Windows::Storage::Streams::IBuffer & data) const
 {
     Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementDataSection value { nullptr };
-    check_hresult(shim()->abi_Create(dataType, get(data), put(value)));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementDataSectionFactory &>(static_cast<const D &>(*this))->abi_Create(dataType, get(data), put(value)));
     return value;
 }
 
 template <typename D> uint8_t impl_IBluetoothLEAdvertisementDataSection<D>::DataType() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_DataType(&value));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementDataSection &>(static_cast<const D &>(*this))->get_DataType(&value));
     return value;
 }
 
 template <typename D> void impl_IBluetoothLEAdvertisementDataSection<D>::DataType(uint8_t value) const
 {
-    check_hresult(shim()->put_DataType(value));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementDataSection &>(static_cast<const D &>(*this))->put_DataType(value));
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IBluetoothLEAdvertisementDataSection<D>::Data() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(shim()->get_Data(put(value)));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementDataSection &>(static_cast<const D &>(*this))->get_Data(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBluetoothLEAdvertisementDataSection<D>::Data(const Windows::Storage::Streams::IBuffer & value) const
 {
-    check_hresult(shim()->put_Data(get(value)));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementDataSection &>(static_cast<const D &>(*this))->put_Data(get(value)));
 }
 
 template <typename D> Windows::Devices::Bluetooth::Advertisement::BluetoothLEManufacturerData impl_IBluetoothLEManufacturerDataFactory<D>::Create(uint16_t companyId, const Windows::Storage::Streams::IBuffer & data) const
 {
     Windows::Devices::Bluetooth::Advertisement::BluetoothLEManufacturerData value { nullptr };
-    check_hresult(shim()->abi_Create(companyId, get(data), put(value)));
+    check_hresult(static_cast<const IBluetoothLEManufacturerDataFactory &>(static_cast<const D &>(*this))->abi_Create(companyId, get(data), put(value)));
     return value;
 }
 
 template <typename D> uint16_t impl_IBluetoothLEManufacturerData<D>::CompanyId() const
 {
     uint16_t value {};
-    check_hresult(shim()->get_CompanyId(&value));
+    check_hresult(static_cast<const IBluetoothLEManufacturerData &>(static_cast<const D &>(*this))->get_CompanyId(&value));
     return value;
 }
 
 template <typename D> void impl_IBluetoothLEManufacturerData<D>::CompanyId(uint16_t value) const
 {
-    check_hresult(shim()->put_CompanyId(value));
+    check_hresult(static_cast<const IBluetoothLEManufacturerData &>(static_cast<const D &>(*this))->put_CompanyId(value));
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IBluetoothLEManufacturerData<D>::Data() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(shim()->get_Data(put(value)));
+    check_hresult(static_cast<const IBluetoothLEManufacturerData &>(static_cast<const D &>(*this))->get_Data(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBluetoothLEManufacturerData<D>::Data(const Windows::Storage::Streams::IBuffer & value) const
 {
-    check_hresult(shim()->put_Data(get(value)));
+    check_hresult(static_cast<const IBluetoothLEManufacturerData &>(static_cast<const D &>(*this))->put_Data(get(value)));
 }
 
 template <typename D> Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementBytePattern impl_IBluetoothLEAdvertisementBytePatternFactory<D>::Create(uint8_t dataType, int16_t offset, const Windows::Storage::Streams::IBuffer & data) const
 {
     Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementBytePattern value { nullptr };
-    check_hresult(shim()->abi_Create(dataType, offset, get(data), put(value)));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementBytePatternFactory &>(static_cast<const D &>(*this))->abi_Create(dataType, offset, get(data), put(value)));
     return value;
 }
 
 template <typename D> uint8_t impl_IBluetoothLEAdvertisementBytePattern<D>::DataType() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_DataType(&value));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementBytePattern &>(static_cast<const D &>(*this))->get_DataType(&value));
     return value;
 }
 
 template <typename D> void impl_IBluetoothLEAdvertisementBytePattern<D>::DataType(uint8_t value) const
 {
-    check_hresult(shim()->put_DataType(value));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementBytePattern &>(static_cast<const D &>(*this))->put_DataType(value));
 }
 
 template <typename D> int16_t impl_IBluetoothLEAdvertisementBytePattern<D>::Offset() const
 {
     int16_t value {};
-    check_hresult(shim()->get_Offset(&value));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementBytePattern &>(static_cast<const D &>(*this))->get_Offset(&value));
     return value;
 }
 
 template <typename D> void impl_IBluetoothLEAdvertisementBytePattern<D>::Offset(int16_t value) const
 {
-    check_hresult(shim()->put_Offset(value));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementBytePattern &>(static_cast<const D &>(*this))->put_Offset(value));
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IBluetoothLEAdvertisementBytePattern<D>::Data() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(shim()->get_Data(put(value)));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementBytePattern &>(static_cast<const D &>(*this))->get_Data(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBluetoothLEAdvertisementBytePattern<D>::Data(const Windows::Storage::Streams::IBuffer & value) const
 {
-    check_hresult(shim()->put_Data(get(value)));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementBytePattern &>(static_cast<const D &>(*this))->put_Data(get(value)));
 }
 
 template <typename D> uint8_t impl_IBluetoothLEAdvertisementDataTypesStatics<D>::Flags() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_Flags(&value));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementDataTypesStatics &>(static_cast<const D &>(*this))->get_Flags(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IBluetoothLEAdvertisementDataTypesStatics<D>::IncompleteService16BitUuids() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_IncompleteService16BitUuids(&value));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementDataTypesStatics &>(static_cast<const D &>(*this))->get_IncompleteService16BitUuids(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IBluetoothLEAdvertisementDataTypesStatics<D>::CompleteService16BitUuids() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_CompleteService16BitUuids(&value));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementDataTypesStatics &>(static_cast<const D &>(*this))->get_CompleteService16BitUuids(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IBluetoothLEAdvertisementDataTypesStatics<D>::IncompleteService32BitUuids() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_IncompleteService32BitUuids(&value));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementDataTypesStatics &>(static_cast<const D &>(*this))->get_IncompleteService32BitUuids(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IBluetoothLEAdvertisementDataTypesStatics<D>::CompleteService32BitUuids() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_CompleteService32BitUuids(&value));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementDataTypesStatics &>(static_cast<const D &>(*this))->get_CompleteService32BitUuids(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IBluetoothLEAdvertisementDataTypesStatics<D>::IncompleteService128BitUuids() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_IncompleteService128BitUuids(&value));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementDataTypesStatics &>(static_cast<const D &>(*this))->get_IncompleteService128BitUuids(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IBluetoothLEAdvertisementDataTypesStatics<D>::CompleteService128BitUuids() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_CompleteService128BitUuids(&value));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementDataTypesStatics &>(static_cast<const D &>(*this))->get_CompleteService128BitUuids(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IBluetoothLEAdvertisementDataTypesStatics<D>::ShortenedLocalName() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_ShortenedLocalName(&value));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementDataTypesStatics &>(static_cast<const D &>(*this))->get_ShortenedLocalName(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IBluetoothLEAdvertisementDataTypesStatics<D>::CompleteLocalName() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_CompleteLocalName(&value));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementDataTypesStatics &>(static_cast<const D &>(*this))->get_CompleteLocalName(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IBluetoothLEAdvertisementDataTypesStatics<D>::TxPowerLevel() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_TxPowerLevel(&value));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementDataTypesStatics &>(static_cast<const D &>(*this))->get_TxPowerLevel(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IBluetoothLEAdvertisementDataTypesStatics<D>::SlaveConnectionIntervalRange() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_SlaveConnectionIntervalRange(&value));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementDataTypesStatics &>(static_cast<const D &>(*this))->get_SlaveConnectionIntervalRange(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IBluetoothLEAdvertisementDataTypesStatics<D>::ServiceSolicitation16BitUuids() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_ServiceSolicitation16BitUuids(&value));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementDataTypesStatics &>(static_cast<const D &>(*this))->get_ServiceSolicitation16BitUuids(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IBluetoothLEAdvertisementDataTypesStatics<D>::ServiceSolicitation32BitUuids() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_ServiceSolicitation32BitUuids(&value));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementDataTypesStatics &>(static_cast<const D &>(*this))->get_ServiceSolicitation32BitUuids(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IBluetoothLEAdvertisementDataTypesStatics<D>::ServiceSolicitation128BitUuids() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_ServiceSolicitation128BitUuids(&value));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementDataTypesStatics &>(static_cast<const D &>(*this))->get_ServiceSolicitation128BitUuids(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IBluetoothLEAdvertisementDataTypesStatics<D>::ServiceData16BitUuids() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_ServiceData16BitUuids(&value));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementDataTypesStatics &>(static_cast<const D &>(*this))->get_ServiceData16BitUuids(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IBluetoothLEAdvertisementDataTypesStatics<D>::ServiceData32BitUuids() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_ServiceData32BitUuids(&value));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementDataTypesStatics &>(static_cast<const D &>(*this))->get_ServiceData32BitUuids(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IBluetoothLEAdvertisementDataTypesStatics<D>::ServiceData128BitUuids() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_ServiceData128BitUuids(&value));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementDataTypesStatics &>(static_cast<const D &>(*this))->get_ServiceData128BitUuids(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IBluetoothLEAdvertisementDataTypesStatics<D>::PublicTargetAddress() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_PublicTargetAddress(&value));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementDataTypesStatics &>(static_cast<const D &>(*this))->get_PublicTargetAddress(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IBluetoothLEAdvertisementDataTypesStatics<D>::RandomTargetAddress() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_RandomTargetAddress(&value));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementDataTypesStatics &>(static_cast<const D &>(*this))->get_RandomTargetAddress(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IBluetoothLEAdvertisementDataTypesStatics<D>::Appearance() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_Appearance(&value));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementDataTypesStatics &>(static_cast<const D &>(*this))->get_Appearance(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IBluetoothLEAdvertisementDataTypesStatics<D>::AdvertisingInterval() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_AdvertisingInterval(&value));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementDataTypesStatics &>(static_cast<const D &>(*this))->get_AdvertisingInterval(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IBluetoothLEAdvertisementDataTypesStatics<D>::ManufacturerSpecificData() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_ManufacturerSpecificData(&value));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementDataTypesStatics &>(static_cast<const D &>(*this))->get_ManufacturerSpecificData(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisherStatus impl_IBluetoothLEAdvertisementPublisherStatusChangedEventArgs<D>::Status() const
 {
     Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisherStatus value {};
-    check_hresult(shim()->get_Status(&value));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementPublisherStatusChangedEventArgs &>(static_cast<const D &>(*this))->get_Status(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Bluetooth::BluetoothError impl_IBluetoothLEAdvertisementPublisherStatusChangedEventArgs<D>::Error() const
 {
     Windows::Devices::Bluetooth::BluetoothError value {};
-    check_hresult(shim()->get_Error(&value));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementPublisherStatusChangedEventArgs &>(static_cast<const D &>(*this))->get_Error(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisher impl_IBluetoothLEAdvertisementPublisherFactory<D>::Create(const Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisement & advertisement) const
 {
     Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisher value { nullptr };
-    check_hresult(shim()->abi_Create(get(advertisement), put(value)));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementPublisherFactory &>(static_cast<const D &>(*this))->abi_Create(get(advertisement), put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisherStatus impl_IBluetoothLEAdvertisementPublisher<D>::Status() const
 {
     Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisherStatus value {};
-    check_hresult(shim()->get_Status(&value));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementPublisher &>(static_cast<const D &>(*this))->get_Status(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisement impl_IBluetoothLEAdvertisementPublisher<D>::Advertisement() const
 {
     Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisement value { nullptr };
-    check_hresult(shim()->get_Advertisement(put(value)));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementPublisher &>(static_cast<const D &>(*this))->get_Advertisement(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBluetoothLEAdvertisementPublisher<D>::Start() const
 {
-    check_hresult(shim()->abi_Start());
+    check_hresult(static_cast<const IBluetoothLEAdvertisementPublisher &>(static_cast<const D &>(*this))->abi_Start());
 }
 
 template <typename D> void impl_IBluetoothLEAdvertisementPublisher<D>::Stop() const
 {
-    check_hresult(shim()->abi_Stop());
+    check_hresult(static_cast<const IBluetoothLEAdvertisementPublisher &>(static_cast<const D &>(*this))->abi_Stop());
 }
 
 template <typename D> event_token impl_IBluetoothLEAdvertisementPublisher<D>::StatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisher, Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisherStatusChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_StatusChanged(get(handler), &token));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementPublisher &>(static_cast<const D &>(*this))->add_StatusChanged(get(handler), &token));
     return token;
 }
 
@@ -1755,7 +1755,7 @@ template <typename D> event_revoker<IBluetoothLEAdvertisementPublisher> impl_IBl
 
 template <typename D> void impl_IBluetoothLEAdvertisementPublisher<D>::StatusChanged(event_token token) const
 {
-    check_hresult(shim()->remove_StatusChanged(token));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementPublisher &>(static_cast<const D &>(*this))->remove_StatusChanged(token));
 }
 
 inline BluetoothLEAdvertisement::BluetoothLEAdvertisement() :

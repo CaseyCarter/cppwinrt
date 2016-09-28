@@ -307,12 +307,8 @@ template <> struct __declspec(uuid("05eb86f1-7140-5517-b88d-cbaebe57e6b1")) __de
 namespace Windows::UI::Xaml::Controls::Maps {
 
 template <typename D>
-class WINRT_EBO impl_ICustomMapTileDataSource
+struct WINRT_EBO impl_ICustomMapTileDataSource
 {
-    auto shim() const { return impl::shim<D, ICustomMapTileDataSource>(this); }
-
-public:
-
     event_token BitmapRequested(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::CustomMapTileDataSource, Windows::UI::Xaml::Controls::Maps::MapTileBitmapRequestedEventArgs> & value) const;
     using BitmapRequested_revoker = event_revoker<ICustomMapTileDataSource>;
     BitmapRequested_revoker BitmapRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::CustomMapTileDataSource, Windows::UI::Xaml::Controls::Maps::MapTileBitmapRequestedEventArgs> & value) const;
@@ -320,22 +316,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICustomMapTileDataSourceFactory
+struct WINRT_EBO impl_ICustomMapTileDataSourceFactory
 {
-    auto shim() const { return impl::shim<D, ICustomMapTileDataSourceFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Controls::Maps::CustomMapTileDataSource CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpMapTileDataSource
+struct WINRT_EBO impl_IHttpMapTileDataSource
 {
-    auto shim() const { return impl::shim<D, IHttpMapTileDataSource>(this); }
-
-public:
-
     hstring UriFormatString() const;
     void UriFormatString(hstring_ref value) const;
     Windows::Foundation::Collections::IMap<hstring, hstring> AdditionalRequestHeaders() const;
@@ -348,23 +336,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpMapTileDataSourceFactory
+struct WINRT_EBO impl_IHttpMapTileDataSourceFactory
 {
-    auto shim() const { return impl::shim<D, IHttpMapTileDataSourceFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Controls::Maps::HttpMapTileDataSource CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
     Windows::UI::Xaml::Controls::Maps::HttpMapTileDataSource CreateInstanceWithUriFormatString(hstring_ref uriFormatString, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILocalMapTileDataSource
+struct WINRT_EBO impl_ILocalMapTileDataSource
 {
-    auto shim() const { return impl::shim<D, ILocalMapTileDataSource>(this); }
-
-public:
-
     hstring UriFormatString() const;
     void UriFormatString(hstring_ref value) const;
     event_token UriRequested(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::LocalMapTileDataSource, Windows::UI::Xaml::Controls::Maps::MapTileUriRequestedEventArgs> & value) const;
@@ -374,63 +354,39 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ILocalMapTileDataSourceFactory
+struct WINRT_EBO impl_ILocalMapTileDataSourceFactory
 {
-    auto shim() const { return impl::shim<D, ILocalMapTileDataSourceFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Controls::Maps::LocalMapTileDataSource CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
     Windows::UI::Xaml::Controls::Maps::LocalMapTileDataSource CreateInstanceWithUriFormatString(hstring_ref uriFormatString, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapActualCameraChangedEventArgs
+struct WINRT_EBO impl_IMapActualCameraChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMapActualCameraChangedEventArgs>(this); }
-
-public:
-
     Windows::UI::Xaml::Controls::Maps::MapCamera Camera() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapActualCameraChangedEventArgs2
+struct WINRT_EBO impl_IMapActualCameraChangedEventArgs2
 {
-    auto shim() const { return impl::shim<D, IMapActualCameraChangedEventArgs2>(this); }
-
-public:
-
     Windows::UI::Xaml::Controls::Maps::MapCameraChangeReason ChangeReason() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapActualCameraChangingEventArgs
+struct WINRT_EBO impl_IMapActualCameraChangingEventArgs
 {
-    auto shim() const { return impl::shim<D, IMapActualCameraChangingEventArgs>(this); }
-
-public:
-
     Windows::UI::Xaml::Controls::Maps::MapCamera Camera() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapActualCameraChangingEventArgs2
+struct WINRT_EBO impl_IMapActualCameraChangingEventArgs2
 {
-    auto shim() const { return impl::shim<D, IMapActualCameraChangingEventArgs2>(this); }
-
-public:
-
     Windows::UI::Xaml::Controls::Maps::MapCameraChangeReason ChangeReason() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapCamera
+struct WINRT_EBO impl_IMapCamera
 {
-    auto shim() const { return impl::shim<D, IMapCamera>(this); }
-
-public:
-
     Windows::Devices::Geolocation::Geopoint Location() const;
     void Location(const Windows::Devices::Geolocation::Geopoint & value) const;
     double Heading() const;
@@ -444,12 +400,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapCameraFactory
+struct WINRT_EBO impl_IMapCameraFactory
 {
-    auto shim() const { return impl::shim<D, IMapCameraFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Controls::Maps::MapCamera CreateInstanceWithLocation(const Windows::Devices::Geolocation::Geopoint & location) const;
     Windows::UI::Xaml::Controls::Maps::MapCamera CreateInstanceWithLocationAndHeading(const Windows::Devices::Geolocation::Geopoint & location, double headingInDegrees) const;
     Windows::UI::Xaml::Controls::Maps::MapCamera CreateInstanceWithLocationHeadingAndPitch(const Windows::Devices::Geolocation::Geopoint & location, double headingInDegrees, double pitchInDegrees) const;
@@ -457,12 +409,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapControl
+struct WINRT_EBO impl_IMapControl
 {
-    auto shim() const { return impl::shim<D, IMapControl>(this); }
-
-public:
-
     Windows::Devices::Geolocation::Geopoint Center() const;
     void Center(const Windows::Devices::Geolocation::Geopoint & value) const;
     Windows::Foundation::Collections::IVector<Windows::UI::Xaml::DependencyObject> Children() const;
@@ -543,12 +491,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapControl2
+struct WINRT_EBO impl_IMapControl2
 {
-    auto shim() const { return impl::shim<D, IMapControl2>(this); }
-
-public:
-
     bool BusinessLandmarksVisible() const;
     void BusinessLandmarksVisible(bool value) const;
     bool TransitFeaturesVisible() const;
@@ -615,12 +559,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapControl3
+struct WINRT_EBO impl_IMapControl3
 {
-    auto shim() const { return impl::shim<D, IMapControl3>(this); }
-
-public:
-
     event_token MapRightTapped(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::UI::Xaml::Controls::Maps::MapRightTappedEventArgs> & value) const;
     using MapRightTapped_revoker = event_revoker<IMapControl3>;
     MapRightTapped_revoker MapRightTapped(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapControl, Windows::UI::Xaml::Controls::Maps::MapRightTappedEventArgs> & value) const;
@@ -628,12 +568,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapControl4
+struct WINRT_EBO impl_IMapControl4
 {
-    auto shim() const { return impl::shim<D, IMapControl4>(this); }
-
-public:
-
     bool BusinessLandmarksEnabled() const;
     void BusinessLandmarksEnabled(bool value) const;
     bool TransitFeaturesEnabled() const;
@@ -642,12 +578,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapControlStatics
+struct WINRT_EBO impl_IMapControlStatics
 {
-    auto shim() const { return impl::shim<D, IMapControlStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty CenterProperty() const;
     Windows::UI::Xaml::DependencyProperty ChildrenProperty() const;
     Windows::UI::Xaml::DependencyProperty ColorSchemeProperty() const;
@@ -675,12 +607,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapControlStatics2
+struct WINRT_EBO impl_IMapControlStatics2
 {
-    auto shim() const { return impl::shim<D, IMapControlStatics2>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty BusinessLandmarksVisibleProperty() const;
     Windows::UI::Xaml::DependencyProperty TransitFeaturesVisibleProperty() const;
     Windows::UI::Xaml::DependencyProperty PanInteractionModeProperty() const;
@@ -693,51 +621,31 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapControlStatics4
+struct WINRT_EBO impl_IMapControlStatics4
 {
-    auto shim() const { return impl::shim<D, IMapControlStatics4>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty BusinessLandmarksEnabledProperty() const;
     Windows::UI::Xaml::DependencyProperty TransitFeaturesEnabledProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapCustomExperience
+struct WINRT_EBO impl_IMapCustomExperience
 {
-    auto shim() const { return impl::shim<D, IMapCustomExperience>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapCustomExperienceChangedEventArgs
+struct WINRT_EBO impl_IMapCustomExperienceChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMapCustomExperienceChangedEventArgs>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapCustomExperienceFactory
+struct WINRT_EBO impl_IMapCustomExperienceFactory
 {
-    auto shim() const { return impl::shim<D, IMapCustomExperienceFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Controls::Maps::MapCustomExperience CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapElement
+struct WINRT_EBO impl_IMapElement
 {
-    auto shim() const { return impl::shim<D, IMapElement>(this); }
-
-public:
-
     int32_t ZIndex() const;
     void ZIndex(int32_t value) const;
     bool Visible() const;
@@ -745,90 +653,58 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapElement2
+struct WINRT_EBO impl_IMapElement2
 {
-    auto shim() const { return impl::shim<D, IMapElement2>(this); }
-
-public:
-
     int32_t MapTabIndex() const;
     void MapTabIndex(int32_t value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapElementClickEventArgs
+struct WINRT_EBO impl_IMapElementClickEventArgs
 {
-    auto shim() const { return impl::shim<D, IMapElementClickEventArgs>(this); }
-
-public:
-
     Windows::Foundation::Point Position() const;
     Windows::Devices::Geolocation::Geopoint Location() const;
     Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Controls::Maps::MapElement> MapElements() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapElementFactory
+struct WINRT_EBO impl_IMapElementFactory
 {
-    auto shim() const { return impl::shim<D, IMapElementFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Controls::Maps::MapElement CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapElementPointerEnteredEventArgs
+struct WINRT_EBO impl_IMapElementPointerEnteredEventArgs
 {
-    auto shim() const { return impl::shim<D, IMapElementPointerEnteredEventArgs>(this); }
-
-public:
-
     Windows::Foundation::Point Position() const;
     Windows::Devices::Geolocation::Geopoint Location() const;
     Windows::UI::Xaml::Controls::Maps::MapElement MapElement() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapElementPointerExitedEventArgs
+struct WINRT_EBO impl_IMapElementPointerExitedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMapElementPointerExitedEventArgs>(this); }
-
-public:
-
     Windows::Foundation::Point Position() const;
     Windows::Devices::Geolocation::Geopoint Location() const;
     Windows::UI::Xaml::Controls::Maps::MapElement MapElement() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapElementStatics
+struct WINRT_EBO impl_IMapElementStatics
 {
-    auto shim() const { return impl::shim<D, IMapElementStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty ZIndexProperty() const;
     Windows::UI::Xaml::DependencyProperty VisibleProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapElementStatics2
+struct WINRT_EBO impl_IMapElementStatics2
 {
-    auto shim() const { return impl::shim<D, IMapElementStatics2>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty MapTabIndexProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapIcon
+struct WINRT_EBO impl_IMapIcon
 {
-    auto shim() const { return impl::shim<D, IMapIcon>(this); }
-
-public:
-
     Windows::Devices::Geolocation::Geopoint Location() const;
     void Location(const Windows::Devices::Geolocation::Geopoint & value) const;
     hstring Title() const;
@@ -840,56 +716,36 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapIcon2
+struct WINRT_EBO impl_IMapIcon2
 {
-    auto shim() const { return impl::shim<D, IMapIcon2>(this); }
-
-public:
-
     Windows::UI::Xaml::Controls::Maps::MapElementCollisionBehavior CollisionBehaviorDesired() const;
     void CollisionBehaviorDesired(Windows::UI::Xaml::Controls::Maps::MapElementCollisionBehavior value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapIconStatics
+struct WINRT_EBO impl_IMapIconStatics
 {
-    auto shim() const { return impl::shim<D, IMapIconStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty LocationProperty() const;
     Windows::UI::Xaml::DependencyProperty TitleProperty() const;
     Windows::UI::Xaml::DependencyProperty NormalizedAnchorPointProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapIconStatics2
+struct WINRT_EBO impl_IMapIconStatics2
 {
-    auto shim() const { return impl::shim<D, IMapIconStatics2>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty CollisionBehaviorDesiredProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapInputEventArgs
+struct WINRT_EBO impl_IMapInputEventArgs
 {
-    auto shim() const { return impl::shim<D, IMapInputEventArgs>(this); }
-
-public:
-
     Windows::Foundation::Point Position() const;
     Windows::Devices::Geolocation::Geopoint Location() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapItemsControl
+struct WINRT_EBO impl_IMapItemsControl
 {
-    auto shim() const { return impl::shim<D, IMapItemsControl>(this); }
-
-public:
-
     Windows::IInspectable ItemsSource() const;
     void ItemsSource(const Windows::IInspectable & value) const;
     Windows::Foundation::Collections::IVector<Windows::UI::Xaml::DependencyObject> Items() const;
@@ -898,24 +754,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapItemsControlStatics
+struct WINRT_EBO impl_IMapItemsControlStatics
 {
-    auto shim() const { return impl::shim<D, IMapItemsControlStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty ItemsSourceProperty() const;
     Windows::UI::Xaml::DependencyProperty ItemsProperty() const;
     Windows::UI::Xaml::DependencyProperty ItemTemplateProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapPolygon
+struct WINRT_EBO impl_IMapPolygon
 {
-    auto shim() const { return impl::shim<D, IMapPolygon>(this); }
-
-public:
-
     Windows::Devices::Geolocation::Geopath Path() const;
     void Path(const Windows::Devices::Geolocation::Geopath & value) const;
     Windows::UI::Color StrokeColor() const;
@@ -929,34 +777,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapPolygon2
+struct WINRT_EBO impl_IMapPolygon2
 {
-    auto shim() const { return impl::shim<D, IMapPolygon2>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<Windows::Devices::Geolocation::Geopath> Paths() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapPolygonStatics
+struct WINRT_EBO impl_IMapPolygonStatics
 {
-    auto shim() const { return impl::shim<D, IMapPolygonStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty PathProperty() const;
     Windows::UI::Xaml::DependencyProperty StrokeThicknessProperty() const;
     Windows::UI::Xaml::DependencyProperty StrokeDashedProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapPolyline
+struct WINRT_EBO impl_IMapPolyline
 {
-    auto shim() const { return impl::shim<D, IMapPolyline>(this); }
-
-public:
-
     Windows::Devices::Geolocation::Geopath Path() const;
     void Path(const Windows::Devices::Geolocation::Geopath & value) const;
     Windows::UI::Color StrokeColor() const;
@@ -968,34 +804,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapPolylineStatics
+struct WINRT_EBO impl_IMapPolylineStatics
 {
-    auto shim() const { return impl::shim<D, IMapPolylineStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty PathProperty() const;
     Windows::UI::Xaml::DependencyProperty StrokeDashedProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapRightTappedEventArgs
+struct WINRT_EBO impl_IMapRightTappedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMapRightTappedEventArgs>(this); }
-
-public:
-
     Windows::Foundation::Point Position() const;
     Windows::Devices::Geolocation::Geopoint Location() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapRouteView
+struct WINRT_EBO impl_IMapRouteView
 {
-    auto shim() const { return impl::shim<D, IMapRouteView>(this); }
-
-public:
-
     Windows::UI::Color RouteColor() const;
     void RouteColor(const Windows::UI::Color & value) const;
     Windows::UI::Color OutlineColor() const;
@@ -1004,22 +828,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapRouteViewFactory
+struct WINRT_EBO impl_IMapRouteViewFactory
 {
-    auto shim() const { return impl::shim<D, IMapRouteViewFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Controls::Maps::MapRouteView CreateInstanceWithMapRoute(const Windows::Services::Maps::MapRoute & route, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapScene
+struct WINRT_EBO impl_IMapScene
 {
-    auto shim() const { return impl::shim<D, IMapScene>(this); }
-
-public:
-
     Windows::UI::Xaml::Controls::Maps::MapCamera TargetCamera() const;
     event_token TargetCameraChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Maps::MapScene, Windows::UI::Xaml::Controls::Maps::MapTargetCameraChangedEventArgs> & value) const;
     using TargetCameraChanged_revoker = event_revoker<IMapScene>;
@@ -1028,12 +844,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapSceneStatics
+struct WINRT_EBO impl_IMapSceneStatics
 {
-    auto shim() const { return impl::shim<D, IMapSceneStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::Controls::Maps::MapScene CreateFromBoundingBox(const Windows::Devices::Geolocation::GeoboundingBox & bounds) const;
     Windows::UI::Xaml::Controls::Maps::MapScene CreateFromBoundingBox(const Windows::Devices::Geolocation::GeoboundingBox & bounds, double headingInDegrees, double pitchInDegrees) const;
     Windows::UI::Xaml::Controls::Maps::MapScene CreateFromCamera(const Windows::UI::Xaml::Controls::Maps::MapCamera & camera) const;
@@ -1046,54 +858,34 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapTargetCameraChangedEventArgs
+struct WINRT_EBO impl_IMapTargetCameraChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMapTargetCameraChangedEventArgs>(this); }
-
-public:
-
     Windows::UI::Xaml::Controls::Maps::MapCamera Camera() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapTargetCameraChangedEventArgs2
+struct WINRT_EBO impl_IMapTargetCameraChangedEventArgs2
 {
-    auto shim() const { return impl::shim<D, IMapTargetCameraChangedEventArgs2>(this); }
-
-public:
-
     Windows::UI::Xaml::Controls::Maps::MapCameraChangeReason ChangeReason() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapTileBitmapRequest
+struct WINRT_EBO impl_IMapTileBitmapRequest
 {
-    auto shim() const { return impl::shim<D, IMapTileBitmapRequest>(this); }
-
-public:
-
     Windows::Storage::Streams::IRandomAccessStreamReference PixelData() const;
     void PixelData(const Windows::Storage::Streams::IRandomAccessStreamReference & value) const;
     Windows::UI::Xaml::Controls::Maps::MapTileBitmapRequestDeferral GetDeferral() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapTileBitmapRequestDeferral
+struct WINRT_EBO impl_IMapTileBitmapRequestDeferral
 {
-    auto shim() const { return impl::shim<D, IMapTileBitmapRequestDeferral>(this); }
-
-public:
-
     void Complete() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapTileBitmapRequestedEventArgs
+struct WINRT_EBO impl_IMapTileBitmapRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMapTileBitmapRequestedEventArgs>(this); }
-
-public:
-
     int32_t X() const;
     int32_t Y() const;
     int32_t ZoomLevel() const;
@@ -1101,31 +893,19 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapTileDataSource
+struct WINRT_EBO impl_IMapTileDataSource
 {
-    auto shim() const { return impl::shim<D, IMapTileDataSource>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapTileDataSourceFactory
+struct WINRT_EBO impl_IMapTileDataSourceFactory
 {
-    auto shim() const { return impl::shim<D, IMapTileDataSourceFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Controls::Maps::MapTileDataSource CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapTileSource
+struct WINRT_EBO impl_IMapTileSource
 {
-    auto shim() const { return impl::shim<D, IMapTileSource>(this); }
-
-public:
-
     Windows::UI::Xaml::Controls::Maps::MapTileDataSource DataSource() const;
     void DataSource(const Windows::UI::Xaml::Controls::Maps::MapTileDataSource & value) const;
     Windows::UI::Xaml::Controls::Maps::MapTileLayer Layer() const;
@@ -1151,12 +931,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapTileSourceFactory
+struct WINRT_EBO impl_IMapTileSourceFactory
 {
-    auto shim() const { return impl::shim<D, IMapTileSourceFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Controls::Maps::MapTileSource CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
     Windows::UI::Xaml::Controls::Maps::MapTileSource CreateInstanceWithDataSource(const Windows::UI::Xaml::Controls::Maps::MapTileDataSource & dataSource, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
     Windows::UI::Xaml::Controls::Maps::MapTileSource CreateInstanceWithDataSourceAndZoomRange(const Windows::UI::Xaml::Controls::Maps::MapTileDataSource & dataSource, const Windows::UI::Xaml::Controls::Maps::MapZoomLevelRange & zoomLevelRange, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
@@ -1165,12 +941,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapTileSourceStatics
+struct WINRT_EBO impl_IMapTileSourceStatics
 {
-    auto shim() const { return impl::shim<D, IMapTileSourceStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty DataSourceProperty() const;
     Windows::UI::Xaml::DependencyProperty LayerProperty() const;
     Windows::UI::Xaml::DependencyProperty ZoomLevelRangeProperty() const;
@@ -1185,34 +957,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapTileUriRequest
+struct WINRT_EBO impl_IMapTileUriRequest
 {
-    auto shim() const { return impl::shim<D, IMapTileUriRequest>(this); }
-
-public:
-
     Windows::Foundation::Uri Uri() const;
     void Uri(const Windows::Foundation::Uri & value) const;
     Windows::UI::Xaml::Controls::Maps::MapTileUriRequestDeferral GetDeferral() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapTileUriRequestDeferral
+struct WINRT_EBO impl_IMapTileUriRequestDeferral
 {
-    auto shim() const { return impl::shim<D, IMapTileUriRequestDeferral>(this); }
-
-public:
-
     void Complete() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapTileUriRequestedEventArgs
+struct WINRT_EBO impl_IMapTileUriRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMapTileUriRequestedEventArgs>(this); }
-
-public:
-
     int32_t X() const;
     int32_t Y() const;
     int32_t ZoomLevel() const;
@@ -1220,12 +980,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStreetsideExperience
+struct WINRT_EBO impl_IStreetsideExperience
 {
-    auto shim() const { return impl::shim<D, IStreetsideExperience>(this); }
-
-public:
-
     bool AddressTextVisible() const;
     void AddressTextVisible(bool value) const;
     bool CursorVisible() const;
@@ -1241,33 +997,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStreetsideExperienceFactory
+struct WINRT_EBO impl_IStreetsideExperienceFactory
 {
-    auto shim() const { return impl::shim<D, IStreetsideExperienceFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Controls::Maps::StreetsideExperience CreateInstanceWithPanorama(const Windows::UI::Xaml::Controls::Maps::StreetsidePanorama & panorama) const;
     Windows::UI::Xaml::Controls::Maps::StreetsideExperience CreateInstanceWithPanoramaHeadingPitchAndFieldOfView(const Windows::UI::Xaml::Controls::Maps::StreetsidePanorama & panorama, double headingInDegrees, double pitchInDegrees, double fieldOfViewInDegrees) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStreetsidePanorama
+struct WINRT_EBO impl_IStreetsidePanorama
 {
-    auto shim() const { return impl::shim<D, IStreetsidePanorama>(this); }
-
-public:
-
     Windows::Devices::Geolocation::Geopoint Location() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStreetsidePanoramaStatics
+struct WINRT_EBO impl_IStreetsidePanoramaStatics
 {
-    auto shim() const { return impl::shim<D, IStreetsidePanoramaStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::UI::Xaml::Controls::Maps::StreetsidePanorama> FindNearbyAsync(const Windows::Devices::Geolocation::Geopoint & location) const;
     Windows::Foundation::IAsyncOperation<Windows::UI::Xaml::Controls::Maps::StreetsidePanorama> FindNearbyAsync(const Windows::Devices::Geolocation::Geopoint & location, double radiusInMeters) const;
 };

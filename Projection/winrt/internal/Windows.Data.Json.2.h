@@ -61,12 +61,8 @@ template <> struct __declspec(uuid("f948eac5-33eb-50f5-b5af-e7cecf0e4501")) __de
 namespace Windows::Data::Json {
 
 template <typename D>
-class WINRT_EBO impl_IJsonArray
+struct WINRT_EBO impl_IJsonArray
 {
-    auto shim() const { return impl::shim<D, IJsonArray>(this); }
-
-public:
-
     Windows::Data::Json::JsonObject GetObjectAt(uint32_t index) const;
     Windows::Data::Json::JsonArray GetArrayAt(uint32_t index) const;
     hstring GetStringAt(uint32_t index) const;
@@ -75,33 +71,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IJsonArrayStatics
+struct WINRT_EBO impl_IJsonArrayStatics
 {
-    auto shim() const { return impl::shim<D, IJsonArrayStatics>(this); }
-
-public:
-
     Windows::Data::Json::JsonArray Parse(hstring_ref input) const;
     bool TryParse(hstring_ref input, Windows::Data::Json::JsonArray & result) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IJsonErrorStatics2
+struct WINRT_EBO impl_IJsonErrorStatics2
 {
-    auto shim() const { return impl::shim<D, IJsonErrorStatics2>(this); }
-
-public:
-
     Windows::Data::Json::JsonErrorStatus GetJsonStatus(int32_t hresult) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IJsonObject
+struct WINRT_EBO impl_IJsonObject
 {
-    auto shim() const { return impl::shim<D, IJsonObject>(this); }
-
-public:
-
     Windows::Data::Json::JsonValue GetNamedValue(hstring_ref name) const;
     void SetNamedValue(hstring_ref name, const Windows::Data::Json::IJsonValue & value) const;
     Windows::Data::Json::JsonObject GetNamedObject(hstring_ref name) const;
@@ -112,23 +96,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IJsonObjectStatics
+struct WINRT_EBO impl_IJsonObjectStatics
 {
-    auto shim() const { return impl::shim<D, IJsonObjectStatics>(this); }
-
-public:
-
     Windows::Data::Json::JsonObject Parse(hstring_ref input) const;
     bool TryParse(hstring_ref input, Windows::Data::Json::JsonObject & result) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IJsonObjectWithDefaultValues
+struct WINRT_EBO impl_IJsonObjectWithDefaultValues
 {
-    auto shim() const { return impl::shim<D, IJsonObjectWithDefaultValues>(this); }
-
-public:
-
     Windows::Data::Json::JsonValue GetNamedValue(hstring_ref name, const Windows::Data::Json::JsonValue & defaultValue) const;
     Windows::Data::Json::JsonObject GetNamedObject(hstring_ref name, const Windows::Data::Json::JsonObject & defaultValue) const;
     hstring GetNamedString(hstring_ref name, hstring_ref defaultValue) const;
@@ -138,12 +114,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IJsonValue
+struct WINRT_EBO impl_IJsonValue
 {
-    auto shim() const { return impl::shim<D, IJsonValue>(this); }
-
-public:
-
     Windows::Data::Json::JsonValueType ValueType() const;
     hstring Stringify() const;
     hstring GetString() const;
@@ -154,12 +126,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IJsonValueStatics
+struct WINRT_EBO impl_IJsonValueStatics
 {
-    auto shim() const { return impl::shim<D, IJsonValueStatics>(this); }
-
-public:
-
     Windows::Data::Json::JsonValue Parse(hstring_ref input) const;
     bool TryParse(hstring_ref input, Windows::Data::Json::JsonValue & result) const;
     Windows::Data::Json::JsonValue CreateBooleanValue(bool input) const;
@@ -168,12 +136,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IJsonValueStatics2
+struct WINRT_EBO impl_IJsonValueStatics2
 {
-    auto shim() const { return impl::shim<D, IJsonValueStatics2>(this); }
-
-public:
-
     Windows::Data::Json::JsonValue CreateNullValue() const;
 };
 

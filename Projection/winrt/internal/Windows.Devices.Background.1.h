@@ -35,8 +35,8 @@ template <> struct traits<Windows::Devices::Background::DeviceUseDetails> { usin
 
 namespace Windows::Devices::Background {
 
-template <typename T> class impl_IDeviceServicingDetails;
-template <typename T> class impl_IDeviceUseDetails;
+template <typename T> struct impl_IDeviceServicingDetails;
+template <typename T> struct impl_IDeviceUseDetails;
 
 }
 
@@ -57,14 +57,12 @@ template <> struct traits<Windows::Devices::Background::IDeviceUseDetails>
 template <> struct traits<Windows::Devices::Background::DeviceServicingDetails>
 {
     using abi = ABI::Windows::Devices::Background::DeviceServicingDetails;
-    using default_interface = Windows::Devices::Background::IDeviceServicingDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Background.DeviceServicingDetails"; }
 };
 
 template <> struct traits<Windows::Devices::Background::DeviceUseDetails>
 {
     using abi = ABI::Windows::Devices::Background::DeviceUseDetails;
-    using default_interface = Windows::Devices::Background::IDeviceUseDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Background.DeviceUseDetails"; }
 };
 

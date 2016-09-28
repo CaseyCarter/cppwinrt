@@ -35,33 +35,21 @@ template <> struct __declspec(uuid("3dddecf4-1d39-58e8-83b1-dbed541c7f35")) __de
 namespace Windows::Devices::Printers {
 
 template <typename D>
-class WINRT_EBO impl_IPrint3DDevice
+struct WINRT_EBO impl_IPrint3DDevice
 {
-    auto shim() const { return impl::shim<D, IPrint3DDevice>(this); }
-
-public:
-
     Windows::Devices::Printers::PrintSchema PrintSchema() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrint3DDeviceStatics
+struct WINRT_EBO impl_IPrint3DDeviceStatics
 {
-    auto shim() const { return impl::shim<D, IPrint3DDeviceStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Devices::Printers::Print3DDevice> FromIdAsync(hstring_ref deviceId) const;
     hstring GetDeviceSelector() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrintSchema
+struct WINRT_EBO impl_IPrintSchema
 {
-    auto shim() const { return impl::shim<D, IPrintSchema>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamWithContentType> GetDefaultPrintTicketAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamWithContentType> GetCapabilitiesAsync(const Windows::Storage::Streams::IRandomAccessStreamWithContentType & constrainTicket) const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamWithContentType> MergeAndValidateWithDefaultPrintTicketAsync(const Windows::Storage::Streams::IRandomAccessStreamWithContentType & deltaTicket) const;

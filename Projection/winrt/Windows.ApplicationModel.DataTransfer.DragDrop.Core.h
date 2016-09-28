@@ -508,186 +508,186 @@ namespace Windows::ApplicationModel::DataTransfer::DragDrop::Core {
 template <typename D> Windows::ApplicationModel::DataTransfer::DataPackageView impl_ICoreDragInfo<D>::Data() const
 {
     Windows::ApplicationModel::DataTransfer::DataPackageView value { nullptr };
-    check_hresult(shim()->get_Data(put(value)));
+    check_hresult(static_cast<const ICoreDragInfo &>(static_cast<const D &>(*this))->get_Data(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::DataTransfer::DragDrop::DragDropModifiers impl_ICoreDragInfo<D>::Modifiers() const
 {
     Windows::ApplicationModel::DataTransfer::DragDrop::DragDropModifiers value {};
-    check_hresult(shim()->get_Modifiers(&value));
+    check_hresult(static_cast<const ICoreDragInfo &>(static_cast<const D &>(*this))->get_Modifiers(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Point impl_ICoreDragInfo<D>::Position() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(shim()->get_Position(put(value)));
+    check_hresult(static_cast<const ICoreDragInfo &>(static_cast<const D &>(*this))->get_Position(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::DataTransfer::DataPackageOperation impl_ICoreDragInfo2<D>::AllowedOperations() const
 {
     Windows::ApplicationModel::DataTransfer::DataPackageOperation value {};
-    check_hresult(shim()->get_AllowedOperations(&value));
+    check_hresult(static_cast<const ICoreDragInfo2 &>(static_cast<const D &>(*this))->get_AllowedOperations(&value));
     return value;
 }
 
 template <typename D> void impl_ICoreDragUIOverride<D>::SetContentFromSoftwareBitmap(const Windows::Graphics::Imaging::SoftwareBitmap & softwareBitmap) const
 {
-    check_hresult(shim()->abi_SetContentFromSoftwareBitmap(get(softwareBitmap)));
+    check_hresult(static_cast<const ICoreDragUIOverride &>(static_cast<const D &>(*this))->abi_SetContentFromSoftwareBitmap(get(softwareBitmap)));
 }
 
 template <typename D> void impl_ICoreDragUIOverride<D>::SetContentFromSoftwareBitmap(const Windows::Graphics::Imaging::SoftwareBitmap & softwareBitmap, const Windows::Foundation::Point & anchorPoint) const
 {
-    check_hresult(shim()->abi_SetContentFromSoftwareBitmapWithAnchorPoint(get(softwareBitmap), get(anchorPoint)));
+    check_hresult(static_cast<const ICoreDragUIOverride &>(static_cast<const D &>(*this))->abi_SetContentFromSoftwareBitmapWithAnchorPoint(get(softwareBitmap), get(anchorPoint)));
 }
 
 template <typename D> bool impl_ICoreDragUIOverride<D>::IsContentVisible() const
 {
     bool value {};
-    check_hresult(shim()->get_IsContentVisible(&value));
+    check_hresult(static_cast<const ICoreDragUIOverride &>(static_cast<const D &>(*this))->get_IsContentVisible(&value));
     return value;
 }
 
 template <typename D> void impl_ICoreDragUIOverride<D>::IsContentVisible(bool value) const
 {
-    check_hresult(shim()->put_IsContentVisible(value));
+    check_hresult(static_cast<const ICoreDragUIOverride &>(static_cast<const D &>(*this))->put_IsContentVisible(value));
 }
 
 template <typename D> hstring impl_ICoreDragUIOverride<D>::Caption() const
 {
     hstring value;
-    check_hresult(shim()->get_Caption(put(value)));
+    check_hresult(static_cast<const ICoreDragUIOverride &>(static_cast<const D &>(*this))->get_Caption(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICoreDragUIOverride<D>::Caption(hstring_ref value) const
 {
-    check_hresult(shim()->put_Caption(get(value)));
+    check_hresult(static_cast<const ICoreDragUIOverride &>(static_cast<const D &>(*this))->put_Caption(get(value)));
 }
 
 template <typename D> bool impl_ICoreDragUIOverride<D>::IsCaptionVisible() const
 {
     bool value {};
-    check_hresult(shim()->get_IsCaptionVisible(&value));
+    check_hresult(static_cast<const ICoreDragUIOverride &>(static_cast<const D &>(*this))->get_IsCaptionVisible(&value));
     return value;
 }
 
 template <typename D> void impl_ICoreDragUIOverride<D>::IsCaptionVisible(bool value) const
 {
-    check_hresult(shim()->put_IsCaptionVisible(value));
+    check_hresult(static_cast<const ICoreDragUIOverride &>(static_cast<const D &>(*this))->put_IsCaptionVisible(value));
 }
 
 template <typename D> bool impl_ICoreDragUIOverride<D>::IsGlyphVisible() const
 {
     bool value {};
-    check_hresult(shim()->get_IsGlyphVisible(&value));
+    check_hresult(static_cast<const ICoreDragUIOverride &>(static_cast<const D &>(*this))->get_IsGlyphVisible(&value));
     return value;
 }
 
 template <typename D> void impl_ICoreDragUIOverride<D>::IsGlyphVisible(bool value) const
 {
-    check_hresult(shim()->put_IsGlyphVisible(value));
+    check_hresult(static_cast<const ICoreDragUIOverride &>(static_cast<const D &>(*this))->put_IsGlyphVisible(value));
 }
 
 template <typename D> void impl_ICoreDragUIOverride<D>::Clear() const
 {
-    check_hresult(shim()->abi_Clear());
+    check_hresult(static_cast<const ICoreDragUIOverride &>(static_cast<const D &>(*this))->abi_Clear());
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::DataTransfer::DataPackageOperation> impl_ICoreDropOperationTarget<D>::EnterAsync(const Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragInfo & dragInfo, const Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragUIOverride & dragUIOverride) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::DataTransfer::DataPackageOperation> returnValue;
-    check_hresult(shim()->abi_EnterAsync(get(dragInfo), get(dragUIOverride), put(returnValue)));
+    check_hresult(static_cast<const ICoreDropOperationTarget &>(static_cast<const D &>(*this))->abi_EnterAsync(get(dragInfo), get(dragUIOverride), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::DataTransfer::DataPackageOperation> impl_ICoreDropOperationTarget<D>::OverAsync(const Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragInfo & dragInfo, const Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragUIOverride & dragUIOverride) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::DataTransfer::DataPackageOperation> returnValue;
-    check_hresult(shim()->abi_OverAsync(get(dragInfo), get(dragUIOverride), put(returnValue)));
+    check_hresult(static_cast<const ICoreDropOperationTarget &>(static_cast<const D &>(*this))->abi_OverAsync(get(dragInfo), get(dragUIOverride), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_ICoreDropOperationTarget<D>::LeaveAsync(const Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragInfo & dragInfo) const
 {
     Windows::Foundation::IAsyncAction returnValue;
-    check_hresult(shim()->abi_LeaveAsync(get(dragInfo), put(returnValue)));
+    check_hresult(static_cast<const ICoreDropOperationTarget &>(static_cast<const D &>(*this))->abi_LeaveAsync(get(dragInfo), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::DataTransfer::DataPackageOperation> impl_ICoreDropOperationTarget<D>::DropAsync(const Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragInfo & dragInfo) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::DataTransfer::DataPackageOperation> returnValue;
-    check_hresult(shim()->abi_DropAsync(get(dragInfo), put(returnValue)));
+    check_hresult(static_cast<const ICoreDropOperationTarget &>(static_cast<const D &>(*this))->abi_DropAsync(get(dragInfo), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::ApplicationModel::DataTransfer::DataPackage impl_ICoreDragOperation<D>::Data() const
 {
     Windows::ApplicationModel::DataTransfer::DataPackage value { nullptr };
-    check_hresult(shim()->get_Data(put(value)));
+    check_hresult(static_cast<const ICoreDragOperation &>(static_cast<const D &>(*this))->get_Data(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICoreDragOperation<D>::SetPointerId(uint32_t pointerId) const
 {
-    check_hresult(shim()->abi_SetPointerId(pointerId));
+    check_hresult(static_cast<const ICoreDragOperation &>(static_cast<const D &>(*this))->abi_SetPointerId(pointerId));
 }
 
 template <typename D> void impl_ICoreDragOperation<D>::SetDragUIContentFromSoftwareBitmap(const Windows::Graphics::Imaging::SoftwareBitmap & softwareBitmap) const
 {
-    check_hresult(shim()->abi_SetDragUIContentFromSoftwareBitmap(get(softwareBitmap)));
+    check_hresult(static_cast<const ICoreDragOperation &>(static_cast<const D &>(*this))->abi_SetDragUIContentFromSoftwareBitmap(get(softwareBitmap)));
 }
 
 template <typename D> void impl_ICoreDragOperation<D>::SetDragUIContentFromSoftwareBitmap(const Windows::Graphics::Imaging::SoftwareBitmap & softwareBitmap, const Windows::Foundation::Point & anchorPoint) const
 {
-    check_hresult(shim()->abi_SetDragUIContentFromSoftwareBitmapWithAnchorPoint(get(softwareBitmap), get(anchorPoint)));
+    check_hresult(static_cast<const ICoreDragOperation &>(static_cast<const D &>(*this))->abi_SetDragUIContentFromSoftwareBitmapWithAnchorPoint(get(softwareBitmap), get(anchorPoint)));
 }
 
 template <typename D> Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragUIContentMode impl_ICoreDragOperation<D>::DragUIContentMode() const
 {
     Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragUIContentMode value {};
-    check_hresult(shim()->get_DragUIContentMode(&value));
+    check_hresult(static_cast<const ICoreDragOperation &>(static_cast<const D &>(*this))->get_DragUIContentMode(&value));
     return value;
 }
 
 template <typename D> void impl_ICoreDragOperation<D>::DragUIContentMode(Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragUIContentMode value) const
 {
-    check_hresult(shim()->put_DragUIContentMode(value));
+    check_hresult(static_cast<const ICoreDragOperation &>(static_cast<const D &>(*this))->put_DragUIContentMode(value));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::DataTransfer::DataPackageOperation> impl_ICoreDragOperation<D>::StartAsync() const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::DataTransfer::DataPackageOperation> value;
-    check_hresult(shim()->abi_StartAsync(put(value)));
+    check_hresult(static_cast<const ICoreDragOperation &>(static_cast<const D &>(*this))->abi_StartAsync(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::DataTransfer::DataPackageOperation impl_ICoreDragOperation2<D>::AllowedOperations() const
 {
     Windows::ApplicationModel::DataTransfer::DataPackageOperation value {};
-    check_hresult(shim()->get_AllowedOperations(&value));
+    check_hresult(static_cast<const ICoreDragOperation2 &>(static_cast<const D &>(*this))->get_AllowedOperations(&value));
     return value;
 }
 
 template <typename D> void impl_ICoreDragOperation2<D>::AllowedOperations(Windows::ApplicationModel::DataTransfer::DataPackageOperation value) const
 {
-    check_hresult(shim()->put_AllowedOperations(value));
+    check_hresult(static_cast<const ICoreDragOperation2 &>(static_cast<const D &>(*this))->put_AllowedOperations(value));
 }
 
 template <typename D> Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragDropManager impl_ICoreDragDropManagerStatics<D>::GetForCurrentView() const
 {
     Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragDropManager value { nullptr };
-    check_hresult(shim()->abi_GetForCurrentView(put(value)));
+    check_hresult(static_cast<const ICoreDragDropManagerStatics &>(static_cast<const D &>(*this))->abi_GetForCurrentView(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_ICoreDragDropManager<D>::TargetRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragDropManager, Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDropOperationTargetRequestedEventArgs> & value) const
 {
     event_token returnValue {};
-    check_hresult(shim()->add_TargetRequested(get(value), &returnValue));
+    check_hresult(static_cast<const ICoreDragDropManager &>(static_cast<const D &>(*this))->add_TargetRequested(get(value), &returnValue));
     return returnValue;
 }
 
@@ -698,24 +698,24 @@ template <typename D> event_revoker<ICoreDragDropManager> impl_ICoreDragDropMana
 
 template <typename D> void impl_ICoreDragDropManager<D>::TargetRequested(event_token value) const
 {
-    check_hresult(shim()->remove_TargetRequested(value));
+    check_hresult(static_cast<const ICoreDragDropManager &>(static_cast<const D &>(*this))->remove_TargetRequested(value));
 }
 
 template <typename D> bool impl_ICoreDragDropManager<D>::AreConcurrentOperationsEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_AreConcurrentOperationsEnabled(&value));
+    check_hresult(static_cast<const ICoreDragDropManager &>(static_cast<const D &>(*this))->get_AreConcurrentOperationsEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_ICoreDragDropManager<D>::AreConcurrentOperationsEnabled(bool value) const
 {
-    check_hresult(shim()->put_AreConcurrentOperationsEnabled(value));
+    check_hresult(static_cast<const ICoreDragDropManager &>(static_cast<const D &>(*this))->put_AreConcurrentOperationsEnabled(value));
 }
 
 template <typename D> void impl_ICoreDropOperationTargetRequestedEventArgs<D>::SetTarget(const Windows::ApplicationModel::DataTransfer::DragDrop::Core::ICoreDropOperationTarget & target) const
 {
-    check_hresult(shim()->abi_SetTarget(get(target)));
+    check_hresult(static_cast<const ICoreDropOperationTargetRequestedEventArgs &>(static_cast<const D &>(*this))->abi_SetTarget(get(target)));
 }
 
 inline Windows::ApplicationModel::DataTransfer::DragDrop::Core::CoreDragDropManager CoreDragDropManager::GetForCurrentView()

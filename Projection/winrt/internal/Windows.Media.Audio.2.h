@@ -197,32 +197,20 @@ template <> struct __declspec(uuid("6f76d148-023e-565a-9f09-4ad4a32ad74f")) __de
 namespace Windows::Media::Audio {
 
 template <typename D>
-class WINRT_EBO impl_IAudioDeviceInputNode
+struct WINRT_EBO impl_IAudioDeviceInputNode
 {
-    auto shim() const { return impl::shim<D, IAudioDeviceInputNode>(this); }
-
-public:
-
     Windows::Devices::Enumeration::DeviceInformation Device() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioDeviceOutputNode
+struct WINRT_EBO impl_IAudioDeviceOutputNode
 {
-    auto shim() const { return impl::shim<D, IAudioDeviceOutputNode>(this); }
-
-public:
-
     Windows::Devices::Enumeration::DeviceInformation Device() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioFileInputNode
+struct WINRT_EBO impl_IAudioFileInputNode
 {
-    auto shim() const { return impl::shim<D, IAudioFileInputNode>(this); }
-
-public:
-
     void PlaybackSpeedFactor(double value) const;
     double PlaybackSpeedFactor() const;
     Windows::Foundation::TimeSpan Position() const;
@@ -242,34 +230,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioFileOutputNode
+struct WINRT_EBO impl_IAudioFileOutputNode
 {
-    auto shim() const { return impl::shim<D, IAudioFileOutputNode>(this); }
-
-public:
-
     Windows::Storage::IStorageFile File() const;
     Windows::Media::MediaProperties::MediaEncodingProfile FileEncodingProfile() const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::Media::Transcoding::TranscodeFailureReason> FinalizeAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioFrameCompletedEventArgs
+struct WINRT_EBO impl_IAudioFrameCompletedEventArgs
 {
-    auto shim() const { return impl::shim<D, IAudioFrameCompletedEventArgs>(this); }
-
-public:
-
     Windows::Media::AudioFrame Frame() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioFrameInputNode
+struct WINRT_EBO impl_IAudioFrameInputNode
 {
-    auto shim() const { return impl::shim<D, IAudioFrameInputNode>(this); }
-
-public:
-
     void PlaybackSpeedFactor(double value) const;
     double PlaybackSpeedFactor() const;
     void AddFrame(const Windows::Media::AudioFrame & frame) const;
@@ -286,22 +262,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioFrameOutputNode
+struct WINRT_EBO impl_IAudioFrameOutputNode
 {
-    auto shim() const { return impl::shim<D, IAudioFrameOutputNode>(this); }
-
-public:
-
     Windows::Media::AudioFrame GetFrame() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioGraph
+struct WINRT_EBO impl_IAudioGraph
 {
-    auto shim() const { return impl::shim<D, IAudioGraph>(this); }
-
-public:
-
     Windows::Media::Audio::AudioFrameInputNode CreateFrameInputNode() const;
     Windows::Media::Audio::AudioFrameInputNode CreateFrameInputNode(const Windows::Media::MediaProperties::AudioEncodingProperties & encodingProperties) const;
     Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioDeviceInputNodeResult> CreateDeviceInputNodeAsync(Windows::Media::Capture::MediaCategory category) const;
@@ -339,12 +307,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioGraph2
+struct WINRT_EBO impl_IAudioGraph2
 {
-    auto shim() const { return impl::shim<D, IAudioGraph2>(this); }
-
-public:
-
     Windows::Media::Audio::AudioFrameInputNode CreateFrameInputNode(const Windows::Media::MediaProperties::AudioEncodingProperties & encodingProperties, const Windows::Media::Audio::AudioNodeEmitter & emitter) const;
     Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioDeviceInputNodeResult> CreateDeviceInputNodeAsync(Windows::Media::Capture::MediaCategory category, const Windows::Media::MediaProperties::AudioEncodingProperties & encodingProperties, const Windows::Devices::Enumeration::DeviceInformation & device, const Windows::Media::Audio::AudioNodeEmitter & emitter) const;
     Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioFileInputNodeResult> CreateFileInputNodeAsync(const Windows::Storage::IStorageFile & file, const Windows::Media::Audio::AudioNodeEmitter & emitter) const;
@@ -353,24 +317,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioGraphConnection
+struct WINRT_EBO impl_IAudioGraphConnection
 {
-    auto shim() const { return impl::shim<D, IAudioGraphConnection>(this); }
-
-public:
-
     Windows::Media::Audio::IAudioNode Destination() const;
     void Gain(double value) const;
     double Gain() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioGraphSettings
+struct WINRT_EBO impl_IAudioGraphSettings
 {
-    auto shim() const { return impl::shim<D, IAudioGraphSettings>(this); }
-
-public:
-
     Windows::Media::MediaProperties::AudioEncodingProperties EncodingProperties() const;
     void EncodingProperties(const Windows::Media::MediaProperties::AudioEncodingProperties & value) const;
     Windows::Devices::Enumeration::DeviceInformation PrimaryRenderDevice() const;
@@ -386,42 +342,26 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioGraphSettingsFactory
+struct WINRT_EBO impl_IAudioGraphSettingsFactory
 {
-    auto shim() const { return impl::shim<D, IAudioGraphSettingsFactory>(this); }
-
-public:
-
     Windows::Media::Audio::AudioGraphSettings Create(Windows::Media::Render::AudioRenderCategory audioRenderCategory) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioGraphStatics
+struct WINRT_EBO impl_IAudioGraphStatics
 {
-    auto shim() const { return impl::shim<D, IAudioGraphStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioGraphResult> CreateAsync(const Windows::Media::Audio::AudioGraphSettings & settings) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioGraphUnrecoverableErrorOccurredEventArgs
+struct WINRT_EBO impl_IAudioGraphUnrecoverableErrorOccurredEventArgs
 {
-    auto shim() const { return impl::shim<D, IAudioGraphUnrecoverableErrorOccurredEventArgs>(this); }
-
-public:
-
     Windows::Media::Audio::AudioGraphUnrecoverableError Error() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioInputNode
+struct WINRT_EBO impl_IAudioInputNode
 {
-    auto shim() const { return impl::shim<D, IAudioInputNode>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Media::Audio::AudioGraphConnection> OutgoingConnections() const;
     void AddOutgoingConnection(const Windows::Media::Audio::IAudioNode & destination) const;
     void AddOutgoingConnection(const Windows::Media::Audio::IAudioNode & destination, double gain) const;
@@ -429,22 +369,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioInputNode2
+struct WINRT_EBO impl_IAudioInputNode2
 {
-    auto shim() const { return impl::shim<D, IAudioInputNode2>(this); }
-
-public:
-
     Windows::Media::Audio::AudioNodeEmitter Emitter() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioNode
+struct WINRT_EBO impl_IAudioNode
 {
-    auto shim() const { return impl::shim<D, IAudioNode>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<Windows::Media::Effects::IAudioEffectDefinition> EffectDefinitions() const;
     void OutgoingGain(double value) const;
     double OutgoingGain() const;
@@ -459,12 +391,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioNodeEmitter
+struct WINRT_EBO impl_IAudioNodeEmitter
 {
-    auto shim() const { return impl::shim<D, IAudioNodeEmitter>(this); }
-
-public:
-
     Windows::Foundation::Numerics::float3 Position() const;
     void Position(const Windows::Foundation::Numerics::float3 & value) const;
     Windows::Foundation::Numerics::float3 Direction() const;
@@ -483,35 +411,23 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioNodeEmitter2
+struct WINRT_EBO impl_IAudioNodeEmitter2
 {
-    auto shim() const { return impl::shim<D, IAudioNodeEmitter2>(this); }
-
-public:
-
     Windows::Media::Audio::SpatialAudioModel SpatialAudioModel() const;
     void SpatialAudioModel(Windows::Media::Audio::SpatialAudioModel value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioNodeEmitterConeProperties
+struct WINRT_EBO impl_IAudioNodeEmitterConeProperties
 {
-    auto shim() const { return impl::shim<D, IAudioNodeEmitterConeProperties>(this); }
-
-public:
-
     double InnerAngle() const;
     double OuterAngle() const;
     double OuterAngleGain() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioNodeEmitterDecayModel
+struct WINRT_EBO impl_IAudioNodeEmitterDecayModel
 {
-    auto shim() const { return impl::shim<D, IAudioNodeEmitterDecayModel>(this); }
-
-public:
-
     Windows::Media::Audio::AudioNodeEmitterDecayKind Kind() const;
     double MinGain() const;
     double MaxGain() const;
@@ -519,66 +435,42 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioNodeEmitterDecayModelStatics
+struct WINRT_EBO impl_IAudioNodeEmitterDecayModelStatics
 {
-    auto shim() const { return impl::shim<D, IAudioNodeEmitterDecayModelStatics>(this); }
-
-public:
-
     Windows::Media::Audio::AudioNodeEmitterDecayModel CreateNatural(double minGain, double maxGain, double unityGainDistance, double cutoffDistance) const;
     Windows::Media::Audio::AudioNodeEmitterDecayModel CreateCustom(double minGain, double maxGain) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioNodeEmitterFactory
+struct WINRT_EBO impl_IAudioNodeEmitterFactory
 {
-    auto shim() const { return impl::shim<D, IAudioNodeEmitterFactory>(this); }
-
-public:
-
     Windows::Media::Audio::AudioNodeEmitter CreateAudioNodeEmitter(const Windows::Media::Audio::AudioNodeEmitterShape & shape, const Windows::Media::Audio::AudioNodeEmitterDecayModel & decayModel, Windows::Media::Audio::AudioNodeEmitterSettings settings) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioNodeEmitterNaturalDecayModelProperties
+struct WINRT_EBO impl_IAudioNodeEmitterNaturalDecayModelProperties
 {
-    auto shim() const { return impl::shim<D, IAudioNodeEmitterNaturalDecayModelProperties>(this); }
-
-public:
-
     double UnityGainDistance() const;
     double CutoffDistance() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioNodeEmitterShape
+struct WINRT_EBO impl_IAudioNodeEmitterShape
 {
-    auto shim() const { return impl::shim<D, IAudioNodeEmitterShape>(this); }
-
-public:
-
     Windows::Media::Audio::AudioNodeEmitterShapeKind Kind() const;
     Windows::Media::Audio::AudioNodeEmitterConeProperties ConeProperties() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioNodeEmitterShapeStatics
+struct WINRT_EBO impl_IAudioNodeEmitterShapeStatics
 {
-    auto shim() const { return impl::shim<D, IAudioNodeEmitterShapeStatics>(this); }
-
-public:
-
     Windows::Media::Audio::AudioNodeEmitterShape CreateCone(double innerAngle, double outerAngle, double outerAngleGain) const;
     Windows::Media::Audio::AudioNodeEmitterShape CreateOmnidirectional() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioNodeListener
+struct WINRT_EBO impl_IAudioNodeListener
 {
-    auto shim() const { return impl::shim<D, IAudioNodeListener>(this); }
-
-public:
-
     Windows::Foundation::Numerics::float3 Position() const;
     void Position(const Windows::Foundation::Numerics::float3 & value) const;
     Windows::Foundation::Numerics::quaternion Orientation() const;
@@ -590,78 +482,50 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioNodeWithListener
+struct WINRT_EBO impl_IAudioNodeWithListener
 {
-    auto shim() const { return impl::shim<D, IAudioNodeWithListener>(this); }
-
-public:
-
     void Listener(const Windows::Media::Audio::AudioNodeListener & value) const;
     Windows::Media::Audio::AudioNodeListener Listener() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICreateAudioDeviceInputNodeResult
+struct WINRT_EBO impl_ICreateAudioDeviceInputNodeResult
 {
-    auto shim() const { return impl::shim<D, ICreateAudioDeviceInputNodeResult>(this); }
-
-public:
-
     Windows::Media::Audio::AudioDeviceNodeCreationStatus Status() const;
     Windows::Media::Audio::AudioDeviceInputNode DeviceInputNode() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICreateAudioDeviceOutputNodeResult
+struct WINRT_EBO impl_ICreateAudioDeviceOutputNodeResult
 {
-    auto shim() const { return impl::shim<D, ICreateAudioDeviceOutputNodeResult>(this); }
-
-public:
-
     Windows::Media::Audio::AudioDeviceNodeCreationStatus Status() const;
     Windows::Media::Audio::AudioDeviceOutputNode DeviceOutputNode() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICreateAudioFileInputNodeResult
+struct WINRT_EBO impl_ICreateAudioFileInputNodeResult
 {
-    auto shim() const { return impl::shim<D, ICreateAudioFileInputNodeResult>(this); }
-
-public:
-
     Windows::Media::Audio::AudioFileNodeCreationStatus Status() const;
     Windows::Media::Audio::AudioFileInputNode FileInputNode() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICreateAudioFileOutputNodeResult
+struct WINRT_EBO impl_ICreateAudioFileOutputNodeResult
 {
-    auto shim() const { return impl::shim<D, ICreateAudioFileOutputNodeResult>(this); }
-
-public:
-
     Windows::Media::Audio::AudioFileNodeCreationStatus Status() const;
     Windows::Media::Audio::AudioFileOutputNode FileOutputNode() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICreateAudioGraphResult
+struct WINRT_EBO impl_ICreateAudioGraphResult
 {
-    auto shim() const { return impl::shim<D, ICreateAudioGraphResult>(this); }
-
-public:
-
     Windows::Media::Audio::AudioGraphCreationStatus Status() const;
     Windows::Media::Audio::AudioGraph Graph() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEchoEffectDefinition
+struct WINRT_EBO impl_IEchoEffectDefinition
 {
-    auto shim() const { return impl::shim<D, IEchoEffectDefinition>(this); }
-
-public:
-
     void WetDryMix(double value) const;
     double WetDryMix() const;
     void Feedback(double value) const;
@@ -671,22 +535,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IEchoEffectDefinitionFactory
+struct WINRT_EBO impl_IEchoEffectDefinitionFactory
 {
-    auto shim() const { return impl::shim<D, IEchoEffectDefinitionFactory>(this); }
-
-public:
-
     Windows::Media::Audio::EchoEffectDefinition Create(const Windows::Media::Audio::AudioGraph & audioGraph) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEqualizerBand
+struct WINRT_EBO impl_IEqualizerBand
 {
-    auto shim() const { return impl::shim<D, IEqualizerBand>(this); }
-
-public:
-
     double Bandwidth() const;
     void Bandwidth(double value) const;
     double FrequencyCenter() const;
@@ -696,42 +552,26 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IEqualizerEffectDefinition
+struct WINRT_EBO impl_IEqualizerEffectDefinition
 {
-    auto shim() const { return impl::shim<D, IEqualizerEffectDefinition>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Media::Audio::EqualizerBand> Bands() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEqualizerEffectDefinitionFactory
+struct WINRT_EBO impl_IEqualizerEffectDefinitionFactory
 {
-    auto shim() const { return impl::shim<D, IEqualizerEffectDefinitionFactory>(this); }
-
-public:
-
     Windows::Media::Audio::EqualizerEffectDefinition Create(const Windows::Media::Audio::AudioGraph & audioGraph) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFrameInputNodeQuantumStartedEventArgs
+struct WINRT_EBO impl_IFrameInputNodeQuantumStartedEventArgs
 {
-    auto shim() const { return impl::shim<D, IFrameInputNodeQuantumStartedEventArgs>(this); }
-
-public:
-
     int32_t RequiredSamples() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILimiterEffectDefinition
+struct WINRT_EBO impl_ILimiterEffectDefinition
 {
-    auto shim() const { return impl::shim<D, ILimiterEffectDefinition>(this); }
-
-public:
-
     void Release(uint32_t value) const;
     uint32_t Release() const;
     void Loudness(uint32_t value) const;
@@ -739,22 +579,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ILimiterEffectDefinitionFactory
+struct WINRT_EBO impl_ILimiterEffectDefinitionFactory
 {
-    auto shim() const { return impl::shim<D, ILimiterEffectDefinitionFactory>(this); }
-
-public:
-
     Windows::Media::Audio::LimiterEffectDefinition Create(const Windows::Media::Audio::AudioGraph & audioGraph) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IReverbEffectDefinition
+struct WINRT_EBO impl_IReverbEffectDefinition
 {
-    auto shim() const { return impl::shim<D, IReverbEffectDefinition>(this); }
-
-public:
-
     void WetDryMix(double value) const;
     double WetDryMix() const;
     void ReflectionsDelay(uint32_t value) const;
@@ -804,12 +636,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IReverbEffectDefinitionFactory
+struct WINRT_EBO impl_IReverbEffectDefinitionFactory
 {
-    auto shim() const { return impl::shim<D, IReverbEffectDefinitionFactory>(this); }
-
-public:
-
     Windows::Media::Audio::ReverbEffectDefinition Create(const Windows::Media::Audio::AudioGraph & audioGraph) const;
 };
 

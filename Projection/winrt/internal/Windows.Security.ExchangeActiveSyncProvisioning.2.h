@@ -10,12 +10,8 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::Security::ExchangeActiveSyncProvisioning {
 
 template <typename D>
-class WINRT_EBO impl_IEasClientDeviceInformation
+struct WINRT_EBO impl_IEasClientDeviceInformation
 {
-    auto shim() const { return impl::shim<D, IEasClientDeviceInformation>(this); }
-
-public:
-
     GUID Id() const;
     hstring OperatingSystem() const;
     hstring FriendlyName() const;
@@ -25,12 +21,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IEasClientDeviceInformation2
+struct WINRT_EBO impl_IEasClientDeviceInformation2
 {
-    auto shim() const { return impl::shim<D, IEasClientDeviceInformation2>(this); }
-
-public:
-
     hstring SystemHardwareVersion() const;
     hstring SystemFirmwareVersion() const;
 };

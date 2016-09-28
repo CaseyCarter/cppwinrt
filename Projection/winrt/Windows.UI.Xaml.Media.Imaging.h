@@ -910,177 +910,177 @@ namespace Windows::UI::Xaml::Media::Imaging {
 template <typename D> int32_t impl_IDownloadProgressEventArgs<D>::Progress() const
 {
     int32_t value {};
-    check_hresult(shim()->get_Progress(&value));
+    check_hresult(static_cast<const IDownloadProgressEventArgs &>(static_cast<const D &>(*this))->get_Progress(&value));
     return value;
 }
 
 template <typename D> void impl_IDownloadProgressEventArgs<D>::Progress(int32_t value) const
 {
-    check_hresult(shim()->put_Progress(value));
+    check_hresult(static_cast<const IDownloadProgressEventArgs &>(static_cast<const D &>(*this))->put_Progress(value));
 }
 
 template <typename D> int32_t impl_IBitmapSource<D>::PixelWidth() const
 {
     int32_t value {};
-    check_hresult(shim()->get_PixelWidth(&value));
+    check_hresult(static_cast<const IBitmapSource &>(static_cast<const D &>(*this))->get_PixelWidth(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IBitmapSource<D>::PixelHeight() const
 {
     int32_t value {};
-    check_hresult(shim()->get_PixelHeight(&value));
+    check_hresult(static_cast<const IBitmapSource &>(static_cast<const D &>(*this))->get_PixelHeight(&value));
     return value;
 }
 
 template <typename D> void impl_IBitmapSource<D>::SetSource(const Windows::Storage::Streams::IRandomAccessStream & streamSource) const
 {
-    check_hresult(shim()->abi_SetSource(get(streamSource)));
+    check_hresult(static_cast<const IBitmapSource &>(static_cast<const D &>(*this))->abi_SetSource(get(streamSource)));
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IBitmapSource<D>::SetSourceAsync(const Windows::Storage::Streams::IRandomAccessStream & streamSource) const
 {
     Windows::Foundation::IAsyncAction returnValue;
-    check_hresult(shim()->abi_SetSourceAsync(get(streamSource), put(returnValue)));
+    check_hresult(static_cast<const IBitmapSource &>(static_cast<const D &>(*this))->abi_SetSourceAsync(get(streamSource), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IBitmapSourceStatics<D>::PixelWidthProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_PixelWidthProperty(put(value)));
+    check_hresult(static_cast<const IBitmapSourceStatics &>(static_cast<const D &>(*this))->get_PixelWidthProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IBitmapSourceStatics<D>::PixelHeightProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_PixelHeightProperty(put(value)));
+    check_hresult(static_cast<const IBitmapSourceStatics &>(static_cast<const D &>(*this))->get_PixelHeightProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Media::Imaging::BitmapSource impl_IBitmapSourceFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::Media::Imaging::BitmapSource instance { nullptr };
-    check_hresult(shim()->abi_CreateInstance(get(outer), put(inner), put(instance)));
+    check_hresult(static_cast<const IBitmapSourceFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> int32_t impl_IRenderTargetBitmap<D>::PixelWidth() const
 {
     int32_t value {};
-    check_hresult(shim()->get_PixelWidth(&value));
+    check_hresult(static_cast<const IRenderTargetBitmap &>(static_cast<const D &>(*this))->get_PixelWidth(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IRenderTargetBitmap<D>::PixelHeight() const
 {
     int32_t value {};
-    check_hresult(shim()->get_PixelHeight(&value));
+    check_hresult(static_cast<const IRenderTargetBitmap &>(static_cast<const D &>(*this))->get_PixelHeight(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IRenderTargetBitmap<D>::RenderAsync(const Windows::UI::Xaml::UIElement & element) const
 {
     Windows::Foundation::IAsyncAction returnValue;
-    check_hresult(shim()->abi_RenderAsync(get(element), put(returnValue)));
+    check_hresult(static_cast<const IRenderTargetBitmap &>(static_cast<const D &>(*this))->abi_RenderAsync(get(element), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IRenderTargetBitmap<D>::RenderAsync(const Windows::UI::Xaml::UIElement & element, int32_t scaledWidth, int32_t scaledHeight) const
 {
     Windows::Foundation::IAsyncAction returnValue;
-    check_hresult(shim()->abi_RenderToSizeAsync(get(element), scaledWidth, scaledHeight, put(returnValue)));
+    check_hresult(static_cast<const IRenderTargetBitmap &>(static_cast<const D &>(*this))->abi_RenderToSizeAsync(get(element), scaledWidth, scaledHeight, put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> impl_IRenderTargetBitmap<D>::GetPixelsAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> returnValue;
-    check_hresult(shim()->abi_GetPixelsAsync(put(returnValue)));
+    check_hresult(static_cast<const IRenderTargetBitmap &>(static_cast<const D &>(*this))->abi_GetPixelsAsync(put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRenderTargetBitmapStatics<D>::PixelWidthProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_PixelWidthProperty(put(value)));
+    check_hresult(static_cast<const IRenderTargetBitmapStatics &>(static_cast<const D &>(*this))->get_PixelWidthProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRenderTargetBitmapStatics<D>::PixelHeightProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_PixelHeightProperty(put(value)));
+    check_hresult(static_cast<const IRenderTargetBitmapStatics &>(static_cast<const D &>(*this))->get_PixelHeightProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Media::Imaging::SurfaceImageSource impl_ISurfaceImageSourceFactory<D>::CreateInstanceWithDimensions(int32_t pixelWidth, int32_t pixelHeight, const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::Media::Imaging::SurfaceImageSource instance { nullptr };
-    check_hresult(shim()->abi_CreateInstanceWithDimensions(pixelWidth, pixelHeight, get(outer), put(inner), put(instance)));
+    check_hresult(static_cast<const ISurfaceImageSourceFactory &>(static_cast<const D &>(*this))->abi_CreateInstanceWithDimensions(pixelWidth, pixelHeight, get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::UI::Xaml::Media::Imaging::SurfaceImageSource impl_ISurfaceImageSourceFactory<D>::CreateInstanceWithDimensionsAndOpacity(int32_t pixelWidth, int32_t pixelHeight, bool isOpaque, const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::Media::Imaging::SurfaceImageSource instance { nullptr };
-    check_hresult(shim()->abi_CreateInstanceWithDimensionsAndOpacity(pixelWidth, pixelHeight, isOpaque, get(outer), put(inner), put(instance)));
+    check_hresult(static_cast<const ISurfaceImageSourceFactory &>(static_cast<const D &>(*this))->abi_CreateInstanceWithDimensionsAndOpacity(pixelWidth, pixelHeight, isOpaque, get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::UI::Xaml::Media::Imaging::BitmapCreateOptions impl_IBitmapImage<D>::CreateOptions() const
 {
     Windows::UI::Xaml::Media::Imaging::BitmapCreateOptions value {};
-    check_hresult(shim()->get_CreateOptions(&value));
+    check_hresult(static_cast<const IBitmapImage &>(static_cast<const D &>(*this))->get_CreateOptions(&value));
     return value;
 }
 
 template <typename D> void impl_IBitmapImage<D>::CreateOptions(Windows::UI::Xaml::Media::Imaging::BitmapCreateOptions value) const
 {
-    check_hresult(shim()->put_CreateOptions(value));
+    check_hresult(static_cast<const IBitmapImage &>(static_cast<const D &>(*this))->put_CreateOptions(value));
 }
 
 template <typename D> Windows::Foundation::Uri impl_IBitmapImage<D>::UriSource() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(shim()->get_UriSource(put(value)));
+    check_hresult(static_cast<const IBitmapImage &>(static_cast<const D &>(*this))->get_UriSource(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBitmapImage<D>::UriSource(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(shim()->put_UriSource(get(value)));
+    check_hresult(static_cast<const IBitmapImage &>(static_cast<const D &>(*this))->put_UriSource(get(value)));
 }
 
 template <typename D> int32_t impl_IBitmapImage<D>::DecodePixelWidth() const
 {
     int32_t value {};
-    check_hresult(shim()->get_DecodePixelWidth(&value));
+    check_hresult(static_cast<const IBitmapImage &>(static_cast<const D &>(*this))->get_DecodePixelWidth(&value));
     return value;
 }
 
 template <typename D> void impl_IBitmapImage<D>::DecodePixelWidth(int32_t value) const
 {
-    check_hresult(shim()->put_DecodePixelWidth(value));
+    check_hresult(static_cast<const IBitmapImage &>(static_cast<const D &>(*this))->put_DecodePixelWidth(value));
 }
 
 template <typename D> int32_t impl_IBitmapImage<D>::DecodePixelHeight() const
 {
     int32_t value {};
-    check_hresult(shim()->get_DecodePixelHeight(&value));
+    check_hresult(static_cast<const IBitmapImage &>(static_cast<const D &>(*this))->get_DecodePixelHeight(&value));
     return value;
 }
 
 template <typename D> void impl_IBitmapImage<D>::DecodePixelHeight(int32_t value) const
 {
-    check_hresult(shim()->put_DecodePixelHeight(value));
+    check_hresult(static_cast<const IBitmapImage &>(static_cast<const D &>(*this))->put_DecodePixelHeight(value));
 }
 
 template <typename D> event_token impl_IBitmapImage<D>::DownloadProgress(const Windows::UI::Xaml::Media::Imaging::DownloadProgressEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_DownloadProgress(get(value), &token));
+    check_hresult(static_cast<const IBitmapImage &>(static_cast<const D &>(*this))->add_DownloadProgress(get(value), &token));
     return token;
 }
 
@@ -1091,13 +1091,13 @@ template <typename D> event_revoker<IBitmapImage> impl_IBitmapImage<D>::Download
 
 template <typename D> void impl_IBitmapImage<D>::DownloadProgress(event_token token) const
 {
-    check_hresult(shim()->remove_DownloadProgress(token));
+    check_hresult(static_cast<const IBitmapImage &>(static_cast<const D &>(*this))->remove_DownloadProgress(token));
 }
 
 template <typename D> event_token impl_IBitmapImage<D>::ImageOpened(const Windows::UI::Xaml::RoutedEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_ImageOpened(get(value), &token));
+    check_hresult(static_cast<const IBitmapImage &>(static_cast<const D &>(*this))->add_ImageOpened(get(value), &token));
     return token;
 }
 
@@ -1108,13 +1108,13 @@ template <typename D> event_revoker<IBitmapImage> impl_IBitmapImage<D>::ImageOpe
 
 template <typename D> void impl_IBitmapImage<D>::ImageOpened(event_token token) const
 {
-    check_hresult(shim()->remove_ImageOpened(token));
+    check_hresult(static_cast<const IBitmapImage &>(static_cast<const D &>(*this))->remove_ImageOpened(token));
 }
 
 template <typename D> event_token impl_IBitmapImage<D>::ImageFailed(const Windows::UI::Xaml::ExceptionRoutedEventHandler & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_ImageFailed(get(value), &token));
+    check_hresult(static_cast<const IBitmapImage &>(static_cast<const D &>(*this))->add_ImageFailed(get(value), &token));
     return token;
 }
 
@@ -1125,169 +1125,169 @@ template <typename D> event_revoker<IBitmapImage> impl_IBitmapImage<D>::ImageFai
 
 template <typename D> void impl_IBitmapImage<D>::ImageFailed(event_token token) const
 {
-    check_hresult(shim()->remove_ImageFailed(token));
+    check_hresult(static_cast<const IBitmapImage &>(static_cast<const D &>(*this))->remove_ImageFailed(token));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IBitmapImageStatics<D>::CreateOptionsProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_CreateOptionsProperty(put(value)));
+    check_hresult(static_cast<const IBitmapImageStatics &>(static_cast<const D &>(*this))->get_CreateOptionsProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IBitmapImageStatics<D>::UriSourceProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_UriSourceProperty(put(value)));
+    check_hresult(static_cast<const IBitmapImageStatics &>(static_cast<const D &>(*this))->get_UriSourceProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IBitmapImageStatics<D>::DecodePixelWidthProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_DecodePixelWidthProperty(put(value)));
+    check_hresult(static_cast<const IBitmapImageStatics &>(static_cast<const D &>(*this))->get_DecodePixelWidthProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IBitmapImageStatics<D>::DecodePixelHeightProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_DecodePixelHeightProperty(put(value)));
+    check_hresult(static_cast<const IBitmapImageStatics &>(static_cast<const D &>(*this))->get_DecodePixelHeightProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Media::Imaging::BitmapImage impl_IBitmapImageFactory<D>::CreateInstanceWithUriSource(const Windows::Foundation::Uri & uriSource) const
 {
     Windows::UI::Xaml::Media::Imaging::BitmapImage instance { nullptr };
-    check_hresult(shim()->abi_CreateInstanceWithUriSource(get(uriSource), put(instance)));
+    check_hresult(static_cast<const IBitmapImageFactory &>(static_cast<const D &>(*this))->abi_CreateInstanceWithUriSource(get(uriSource), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::UI::Xaml::Media::Imaging::DecodePixelType impl_IBitmapImage2<D>::DecodePixelType() const
 {
     Windows::UI::Xaml::Media::Imaging::DecodePixelType value {};
-    check_hresult(shim()->get_DecodePixelType(&value));
+    check_hresult(static_cast<const IBitmapImage2 &>(static_cast<const D &>(*this))->get_DecodePixelType(&value));
     return value;
 }
 
 template <typename D> void impl_IBitmapImage2<D>::DecodePixelType(Windows::UI::Xaml::Media::Imaging::DecodePixelType value) const
 {
-    check_hresult(shim()->put_DecodePixelType(value));
+    check_hresult(static_cast<const IBitmapImage2 &>(static_cast<const D &>(*this))->put_DecodePixelType(value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IBitmapImageStatics2<D>::DecodePixelTypeProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_DecodePixelTypeProperty(put(value)));
+    check_hresult(static_cast<const IBitmapImageStatics2 &>(static_cast<const D &>(*this))->get_DecodePixelTypeProperty(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IBitmapImage3<D>::IsAnimatedBitmap() const
 {
     bool value {};
-    check_hresult(shim()->get_IsAnimatedBitmap(&value));
+    check_hresult(static_cast<const IBitmapImage3 &>(static_cast<const D &>(*this))->get_IsAnimatedBitmap(&value));
     return value;
 }
 
 template <typename D> bool impl_IBitmapImage3<D>::IsPlaying() const
 {
     bool value {};
-    check_hresult(shim()->get_IsPlaying(&value));
+    check_hresult(static_cast<const IBitmapImage3 &>(static_cast<const D &>(*this))->get_IsPlaying(&value));
     return value;
 }
 
 template <typename D> bool impl_IBitmapImage3<D>::AutoPlay() const
 {
     bool value {};
-    check_hresult(shim()->get_AutoPlay(&value));
+    check_hresult(static_cast<const IBitmapImage3 &>(static_cast<const D &>(*this))->get_AutoPlay(&value));
     return value;
 }
 
 template <typename D> void impl_IBitmapImage3<D>::AutoPlay(bool value) const
 {
-    check_hresult(shim()->put_AutoPlay(value));
+    check_hresult(static_cast<const IBitmapImage3 &>(static_cast<const D &>(*this))->put_AutoPlay(value));
 }
 
 template <typename D> void impl_IBitmapImage3<D>::Play() const
 {
-    check_hresult(shim()->abi_Play());
+    check_hresult(static_cast<const IBitmapImage3 &>(static_cast<const D &>(*this))->abi_Play());
 }
 
 template <typename D> void impl_IBitmapImage3<D>::Stop() const
 {
-    check_hresult(shim()->abi_Stop());
+    check_hresult(static_cast<const IBitmapImage3 &>(static_cast<const D &>(*this))->abi_Stop());
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IBitmapImageStatics3<D>::IsAnimatedBitmapProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_IsAnimatedBitmapProperty(put(value)));
+    check_hresult(static_cast<const IBitmapImageStatics3 &>(static_cast<const D &>(*this))->get_IsAnimatedBitmapProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IBitmapImageStatics3<D>::IsPlayingProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_IsPlayingProperty(put(value)));
+    check_hresult(static_cast<const IBitmapImageStatics3 &>(static_cast<const D &>(*this))->get_IsPlayingProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IBitmapImageStatics3<D>::AutoPlayProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_AutoPlayProperty(put(value)));
+    check_hresult(static_cast<const IBitmapImageStatics3 &>(static_cast<const D &>(*this))->get_AutoPlayProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Media::Imaging::VirtualSurfaceImageSource impl_IVirtualSurfaceImageSourceFactory<D>::CreateInstanceWithDimensions(int32_t pixelWidth, int32_t pixelHeight) const
 {
     Windows::UI::Xaml::Media::Imaging::VirtualSurfaceImageSource instance { nullptr };
-    check_hresult(shim()->abi_CreateInstanceWithDimensions(pixelWidth, pixelHeight, put(instance)));
+    check_hresult(static_cast<const IVirtualSurfaceImageSourceFactory &>(static_cast<const D &>(*this))->abi_CreateInstanceWithDimensions(pixelWidth, pixelHeight, put(instance)));
     return instance;
 }
 
 template <typename D> Windows::UI::Xaml::Media::Imaging::VirtualSurfaceImageSource impl_IVirtualSurfaceImageSourceFactory<D>::CreateInstanceWithDimensionsAndOpacity(int32_t pixelWidth, int32_t pixelHeight, bool isOpaque) const
 {
     Windows::UI::Xaml::Media::Imaging::VirtualSurfaceImageSource instance { nullptr };
-    check_hresult(shim()->abi_CreateInstanceWithDimensionsAndOpacity(pixelWidth, pixelHeight, isOpaque, put(instance)));
+    check_hresult(static_cast<const IVirtualSurfaceImageSourceFactory &>(static_cast<const D &>(*this))->abi_CreateInstanceWithDimensionsAndOpacity(pixelWidth, pixelHeight, isOpaque, put(instance)));
     return instance;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IWriteableBitmap<D>::PixelBuffer() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(shim()->get_PixelBuffer(put(value)));
+    check_hresult(static_cast<const IWriteableBitmap &>(static_cast<const D &>(*this))->get_PixelBuffer(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWriteableBitmap<D>::Invalidate() const
 {
-    check_hresult(shim()->abi_Invalidate());
+    check_hresult(static_cast<const IWriteableBitmap &>(static_cast<const D &>(*this))->abi_Invalidate());
 }
 
 template <typename D> Windows::UI::Xaml::Media::Imaging::WriteableBitmap impl_IWriteableBitmapFactory<D>::CreateInstanceWithDimensions(int32_t pixelWidth, int32_t pixelHeight) const
 {
     Windows::UI::Xaml::Media::Imaging::WriteableBitmap instance { nullptr };
-    check_hresult(shim()->abi_CreateInstanceWithDimensions(pixelWidth, pixelHeight, put(instance)));
+    check_hresult(static_cast<const IWriteableBitmapFactory &>(static_cast<const D &>(*this))->abi_CreateInstanceWithDimensions(pixelWidth, pixelHeight, put(instance)));
     return instance;
 }
 
 template <typename D> void impl_IXamlRenderingBackgroundTaskOverrides<D>::OnRun(const Windows::ApplicationModel::Background::IBackgroundTaskInstance & taskInstance) const
 {
-    check_hresult(shim()->abi_OnRun(get(taskInstance)));
+    check_hresult(static_cast<const IXamlRenderingBackgroundTaskOverrides &>(static_cast<const D &>(*this))->abi_OnRun(get(taskInstance)));
 }
 
 template <typename D> Windows::UI::Xaml::Media::Imaging::XamlRenderingBackgroundTask impl_IXamlRenderingBackgroundTaskFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::Media::Imaging::XamlRenderingBackgroundTask instance { nullptr };
-    check_hresult(shim()->abi_CreateInstance(get(outer), put(inner), put(instance)));
+    check_hresult(static_cast<const IXamlRenderingBackgroundTaskFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_ISoftwareBitmapSource<D>::SetBitmapAsync(const Windows::Graphics::Imaging::SoftwareBitmap & softwareBitmap) const
 {
     Windows::Foundation::IAsyncAction returnValue;
-    check_hresult(shim()->abi_SetBitmapAsync(get(softwareBitmap), put(returnValue)));
+    check_hresult(static_cast<const ISoftwareBitmapSource &>(static_cast<const D &>(*this))->abi_SetBitmapAsync(get(softwareBitmap), put(returnValue)));
     return returnValue;
 }
 

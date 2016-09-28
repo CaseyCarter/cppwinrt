@@ -92,23 +92,15 @@ template <> struct __declspec(uuid("85924e77-fc46-5a0d-bdaf-463c4f86c172")) __de
 namespace Windows::UI::Composition {
 
 template <typename D>
-class WINRT_EBO impl_IAmbientLight
+struct WINRT_EBO impl_IAmbientLight
 {
-    auto shim() const { return impl::shim<D, IAmbientLight>(this); }
-
-public:
-
     Windows::UI::Color Color() const;
     void Color(const Windows::UI::Color & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IColorKeyFrameAnimation
+struct WINRT_EBO impl_IColorKeyFrameAnimation
 {
-    auto shim() const { return impl::shim<D, IColorKeyFrameAnimation>(this); }
-
-public:
-
     Windows::UI::Composition::CompositionColorSpace InterpolationColorSpace() const;
     void InterpolationColorSpace(Windows::UI::Composition::CompositionColorSpace value) const;
     void InsertKeyFrame(float normalizedProgressKey, const Windows::UI::Color & value) const;
@@ -116,12 +108,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositionAnimation
+struct WINRT_EBO impl_ICompositionAnimation
 {
-    auto shim() const { return impl::shim<D, ICompositionAnimation>(this); }
-
-public:
-
     void ClearAllParameters() const;
     void ClearParameter(hstring_ref key) const;
     void SetColorParameter(hstring_ref key, const Windows::UI::Color & value) const;
@@ -136,42 +124,26 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositionAnimation2
+struct WINRT_EBO impl_ICompositionAnimation2
 {
-    auto shim() const { return impl::shim<D, ICompositionAnimation2>(this); }
-
-public:
-
     void SetBooleanParameter(hstring_ref key, bool value) const;
     hstring Target() const;
     void Target(hstring_ref value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositionAnimationBase
+struct WINRT_EBO impl_ICompositionAnimationBase
 {
-    auto shim() const { return impl::shim<D, ICompositionAnimationBase>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositionAnimationFactory
+struct WINRT_EBO impl_ICompositionAnimationFactory
 {
-    auto shim() const { return impl::shim<D, ICompositionAnimationFactory>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositionAnimationGroup
+struct WINRT_EBO impl_ICompositionAnimationGroup
 {
-    auto shim() const { return impl::shim<D, ICompositionAnimationGroup>(this); }
-
-public:
-
     int32_t Count() const;
     void Add(const Windows::UI::Composition::CompositionAnimation & value) const;
     void Remove(const Windows::UI::Composition::CompositionAnimation & value) const;
@@ -179,57 +151,33 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositionBackdropBrush
+struct WINRT_EBO impl_ICompositionBackdropBrush
 {
-    auto shim() const { return impl::shim<D, ICompositionBackdropBrush>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositionBatchCompletedEventArgs
+struct WINRT_EBO impl_ICompositionBatchCompletedEventArgs
 {
-    auto shim() const { return impl::shim<D, ICompositionBatchCompletedEventArgs>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositionBrush
+struct WINRT_EBO impl_ICompositionBrush
 {
-    auto shim() const { return impl::shim<D, ICompositionBrush>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositionBrushFactory
+struct WINRT_EBO impl_ICompositionBrushFactory
 {
-    auto shim() const { return impl::shim<D, ICompositionBrushFactory>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositionClip
+struct WINRT_EBO impl_ICompositionClip
 {
-    auto shim() const { return impl::shim<D, ICompositionClip>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositionClip2
+struct WINRT_EBO impl_ICompositionClip2
 {
-    auto shim() const { return impl::shim<D, ICompositionClip2>(this); }
-
-public:
-
     Windows::Foundation::Numerics::float2 AnchorPoint() const;
     void AnchorPoint(const Windows::Foundation::Numerics::float2 & value) const;
     Windows::Foundation::Numerics::float2 CenterPoint() const;
@@ -247,32 +195,20 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositionClipFactory
+struct WINRT_EBO impl_ICompositionClipFactory
 {
-    auto shim() const { return impl::shim<D, ICompositionClipFactory>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositionColorBrush
+struct WINRT_EBO impl_ICompositionColorBrush
 {
-    auto shim() const { return impl::shim<D, ICompositionColorBrush>(this); }
-
-public:
-
     Windows::UI::Color Color() const;
     void Color(const Windows::UI::Color & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositionCommitBatch
+struct WINRT_EBO impl_ICompositionCommitBatch
 {
-    auto shim() const { return impl::shim<D, ICompositionCommitBatch>(this); }
-
-public:
-
     bool IsActive() const;
     bool IsEnded() const;
     event_token Completed(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> & handler) const;
@@ -282,85 +218,53 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositionDrawingSurface
+struct WINRT_EBO impl_ICompositionDrawingSurface
 {
-    auto shim() const { return impl::shim<D, ICompositionDrawingSurface>(this); }
-
-public:
-
     Windows::Graphics::DirectX::DirectXAlphaMode AlphaMode() const;
     Windows::Graphics::DirectX::DirectXPixelFormat PixelFormat() const;
     Windows::Foundation::Size Size() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositionEasingFunction
+struct WINRT_EBO impl_ICompositionEasingFunction
 {
-    auto shim() const { return impl::shim<D, ICompositionEasingFunction>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositionEasingFunctionFactory
+struct WINRT_EBO impl_ICompositionEasingFunctionFactory
 {
-    auto shim() const { return impl::shim<D, ICompositionEasingFunctionFactory>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositionEffectBrush
+struct WINRT_EBO impl_ICompositionEffectBrush
 {
-    auto shim() const { return impl::shim<D, ICompositionEffectBrush>(this); }
-
-public:
-
     Windows::UI::Composition::CompositionBrush GetSourceParameter(hstring_ref name) const;
     void SetSourceParameter(hstring_ref name, const Windows::UI::Composition::CompositionBrush & source) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositionEffectFactory
+struct WINRT_EBO impl_ICompositionEffectFactory
 {
-    auto shim() const { return impl::shim<D, ICompositionEffectFactory>(this); }
-
-public:
-
     Windows::UI::Composition::CompositionEffectBrush CreateBrush() const;
     HRESULT ExtendedError() const;
     Windows::UI::Composition::CompositionEffectFactoryLoadStatus LoadStatus() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositionEffectSourceParameter
+struct WINRT_EBO impl_ICompositionEffectSourceParameter
 {
-    auto shim() const { return impl::shim<D, ICompositionEffectSourceParameter>(this); }
-
-public:
-
     hstring Name() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositionEffectSourceParameterFactory
+struct WINRT_EBO impl_ICompositionEffectSourceParameterFactory
 {
-    auto shim() const { return impl::shim<D, ICompositionEffectSourceParameterFactory>(this); }
-
-public:
-
     Windows::UI::Composition::CompositionEffectSourceParameter Create(hstring_ref name) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositionGraphicsDevice
+struct WINRT_EBO impl_ICompositionGraphicsDevice
 {
-    auto shim() const { return impl::shim<D, ICompositionGraphicsDevice>(this); }
-
-public:
-
     Windows::UI::Composition::CompositionDrawingSurface CreateDrawingSurface(const Windows::Foundation::Size & sizePixels, Windows::Graphics::DirectX::DirectXPixelFormat pixelFormat, Windows::Graphics::DirectX::DirectXAlphaMode alphaMode) const;
     event_token RenderingDeviceReplaced(const Windows::Foundation::TypedEventHandler<Windows::UI::Composition::CompositionGraphicsDevice, Windows::UI::Composition::RenderingDeviceReplacedEventArgs> & handler) const;
     using RenderingDeviceReplaced_revoker = event_revoker<ICompositionGraphicsDevice>;
@@ -369,31 +273,19 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositionLight
+struct WINRT_EBO impl_ICompositionLight
 {
-    auto shim() const { return impl::shim<D, ICompositionLight>(this); }
-
-public:
-
     Windows::UI::Composition::VisualUnorderedCollection Targets() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositionLightFactory
+struct WINRT_EBO impl_ICompositionLightFactory
 {
-    auto shim() const { return impl::shim<D, ICompositionLightFactory>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositionMaskBrush
+struct WINRT_EBO impl_ICompositionMaskBrush
 {
-    auto shim() const { return impl::shim<D, ICompositionMaskBrush>(this); }
-
-public:
-
     Windows::UI::Composition::CompositionBrush Mask() const;
     void Mask(const Windows::UI::Composition::CompositionBrush & value) const;
     Windows::UI::Composition::CompositionBrush Source() const;
@@ -401,12 +293,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositionNineGridBrush
+struct WINRT_EBO impl_ICompositionNineGridBrush
 {
-    auto shim() const { return impl::shim<D, ICompositionNineGridBrush>(this); }
-
-public:
-
     float BottomInset() const;
     void BottomInset(float value) const;
     float BottomInsetScale() const;
@@ -434,12 +322,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositionObject
+struct WINRT_EBO impl_ICompositionObject
 {
-    auto shim() const { return impl::shim<D, ICompositionObject>(this); }
-
-public:
-
     Windows::UI::Composition::Compositor Compositor() const;
     Windows::UI::Core::CoreDispatcher Dispatcher() const;
     Windows::UI::Composition::CompositionPropertySet Properties() const;
@@ -448,12 +332,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositionObject2
+struct WINRT_EBO impl_ICompositionObject2
 {
-    auto shim() const { return impl::shim<D, ICompositionObject2>(this); }
-
-public:
-
     hstring Comment() const;
     void Comment(hstring_ref value) const;
     Windows::UI::Composition::ImplicitAnimationCollection ImplicitAnimations() const;
@@ -463,21 +343,13 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositionObjectFactory
+struct WINRT_EBO impl_ICompositionObjectFactory
 {
-    auto shim() const { return impl::shim<D, ICompositionObjectFactory>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositionPropertySet
+struct WINRT_EBO impl_ICompositionPropertySet
 {
-    auto shim() const { return impl::shim<D, ICompositionPropertySet>(this); }
-
-public:
-
     void InsertColor(hstring_ref propertyName, const Windows::UI::Color & value) const;
     void InsertMatrix3x2(hstring_ref propertyName, const Windows::Foundation::Numerics::float3x2 & value) const;
     void InsertMatrix4x4(hstring_ref propertyName, const Windows::Foundation::Numerics::float4x4 & value) const;
@@ -497,23 +369,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositionPropertySet2
+struct WINRT_EBO impl_ICompositionPropertySet2
 {
-    auto shim() const { return impl::shim<D, ICompositionPropertySet2>(this); }
-
-public:
-
     void InsertBoolean(hstring_ref propertyName, bool value) const;
     Windows::UI::Composition::CompositionGetValueStatus TryGetBoolean(hstring_ref propertyName, bool & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositionScopedBatch
+struct WINRT_EBO impl_ICompositionScopedBatch
 {
-    auto shim() const { return impl::shim<D, ICompositionScopedBatch>(this); }
-
-public:
-
     bool IsActive() const;
     bool IsEnded() const;
     void End() const;
@@ -526,39 +390,23 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositionShadow
+struct WINRT_EBO impl_ICompositionShadow
 {
-    auto shim() const { return impl::shim<D, ICompositionShadow>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositionShadowFactory
+struct WINRT_EBO impl_ICompositionShadowFactory
 {
-    auto shim() const { return impl::shim<D, ICompositionShadowFactory>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositionSurface
+struct WINRT_EBO impl_ICompositionSurface
 {
-    auto shim() const { return impl::shim<D, ICompositionSurface>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositionSurfaceBrush
+struct WINRT_EBO impl_ICompositionSurfaceBrush
 {
-    auto shim() const { return impl::shim<D, ICompositionSurfaceBrush>(this); }
-
-public:
-
     Windows::UI::Composition::CompositionBitmapInterpolationMode BitmapInterpolationMode() const;
     void BitmapInterpolationMode(Windows::UI::Composition::CompositionBitmapInterpolationMode value) const;
     float HorizontalAlignmentRatio() const;
@@ -572,12 +420,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositionSurfaceBrush2
+struct WINRT_EBO impl_ICompositionSurfaceBrush2
 {
-    auto shim() const { return impl::shim<D, ICompositionSurfaceBrush2>(this); }
-
-public:
-
     Windows::Foundation::Numerics::float2 AnchorPoint() const;
     void AnchorPoint(const Windows::Foundation::Numerics::float2 & value) const;
     Windows::Foundation::Numerics::float2 CenterPoint() const;
@@ -595,23 +439,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositionTarget
+struct WINRT_EBO impl_ICompositionTarget
 {
-    auto shim() const { return impl::shim<D, ICompositionTarget>(this); }
-
-public:
-
     Windows::UI::Composition::Visual Root() const;
     void Root(const Windows::UI::Composition::Visual & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositor
+struct WINRT_EBO impl_ICompositor
 {
-    auto shim() const { return impl::shim<D, ICompositor>(this); }
-
-public:
-
     Windows::UI::Composition::ColorKeyFrameAnimation CreateColorKeyFrameAnimation() const;
     Windows::UI::Composition::CompositionColorBrush CreateColorBrush() const;
     Windows::UI::Composition::CompositionColorBrush CreateColorBrush(const Windows::UI::Color & color) const;
@@ -639,12 +475,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositor2
+struct WINRT_EBO impl_ICompositor2
 {
-    auto shim() const { return impl::shim<D, ICompositor2>(this); }
-
-public:
-
     Windows::UI::Composition::AmbientLight CreateAmbientLight() const;
     Windows::UI::Composition::CompositionAnimationGroup CreateAnimationGroup() const;
     Windows::UI::Composition::CompositionBackdropBrush CreateBackdropBrush() const;
@@ -661,42 +493,26 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IContainerVisual
+struct WINRT_EBO impl_IContainerVisual
 {
-    auto shim() const { return impl::shim<D, IContainerVisual>(this); }
-
-public:
-
     Windows::UI::Composition::VisualCollection Children() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IContainerVisualFactory
+struct WINRT_EBO impl_IContainerVisualFactory
 {
-    auto shim() const { return impl::shim<D, IContainerVisualFactory>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ICubicBezierEasingFunction
+struct WINRT_EBO impl_ICubicBezierEasingFunction
 {
-    auto shim() const { return impl::shim<D, ICubicBezierEasingFunction>(this); }
-
-public:
-
     Windows::Foundation::Numerics::float2 ControlPoint1() const;
     Windows::Foundation::Numerics::float2 ControlPoint2() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDistantLight
+struct WINRT_EBO impl_IDistantLight
 {
-    auto shim() const { return impl::shim<D, IDistantLight>(this); }
-
-public:
-
     Windows::UI::Color Color() const;
     void Color(const Windows::UI::Color & value) const;
     Windows::UI::Composition::Visual CoordinateSpace() const;
@@ -706,12 +522,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDropShadow
+struct WINRT_EBO impl_IDropShadow
 {
-    auto shim() const { return impl::shim<D, IDropShadow>(this); }
-
-public:
-
     float BlurRadius() const;
     void BlurRadius(float value) const;
     Windows::UI::Color Color() const;
@@ -725,32 +537,20 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IExpressionAnimation
+struct WINRT_EBO impl_IExpressionAnimation
 {
-    auto shim() const { return impl::shim<D, IExpressionAnimation>(this); }
-
-public:
-
     hstring Expression() const;
     void Expression(hstring_ref value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IImplicitAnimationCollection
+struct WINRT_EBO impl_IImplicitAnimationCollection
 {
-    auto shim() const { return impl::shim<D, IImplicitAnimationCollection>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IInsetClip
+struct WINRT_EBO impl_IInsetClip
 {
-    auto shim() const { return impl::shim<D, IInsetClip>(this); }
-
-public:
-
     float BottomInset() const;
     void BottomInset(float value) const;
     float LeftInset() const;
@@ -762,12 +562,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IKeyFrameAnimation
+struct WINRT_EBO impl_IKeyFrameAnimation
 {
-    auto shim() const { return impl::shim<D, IKeyFrameAnimation>(this); }
-
-public:
-
     Windows::Foundation::TimeSpan DelayTime() const;
     void DelayTime(const Windows::Foundation::TimeSpan & value) const;
     Windows::Foundation::TimeSpan Duration() const;
@@ -784,52 +580,32 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IKeyFrameAnimation2
+struct WINRT_EBO impl_IKeyFrameAnimation2
 {
-    auto shim() const { return impl::shim<D, IKeyFrameAnimation2>(this); }
-
-public:
-
     Windows::UI::Composition::AnimationDirection Direction() const;
     void Direction(Windows::UI::Composition::AnimationDirection value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IKeyFrameAnimationFactory
+struct WINRT_EBO impl_IKeyFrameAnimationFactory
 {
-    auto shim() const { return impl::shim<D, IKeyFrameAnimationFactory>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ILayerVisual
+struct WINRT_EBO impl_ILayerVisual
 {
-    auto shim() const { return impl::shim<D, ILayerVisual>(this); }
-
-public:
-
     Windows::UI::Composition::CompositionEffectBrush Effect() const;
     void Effect(const Windows::UI::Composition::CompositionEffectBrush & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILinearEasingFunction
+struct WINRT_EBO impl_ILinearEasingFunction
 {
-    auto shim() const { return impl::shim<D, ILinearEasingFunction>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IPointLight
+struct WINRT_EBO impl_IPointLight
 {
-    auto shim() const { return impl::shim<D, IPointLight>(this); }
-
-public:
-
     Windows::UI::Color Color() const;
     void Color(const Windows::UI::Color & value) const;
     float ConstantAttenuation() const;
@@ -845,44 +621,28 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IQuaternionKeyFrameAnimation
+struct WINRT_EBO impl_IQuaternionKeyFrameAnimation
 {
-    auto shim() const { return impl::shim<D, IQuaternionKeyFrameAnimation>(this); }
-
-public:
-
     void InsertKeyFrame(float normalizedProgressKey, const Windows::Foundation::Numerics::quaternion & value) const;
     void InsertKeyFrame(float normalizedProgressKey, const Windows::Foundation::Numerics::quaternion & value, const Windows::UI::Composition::CompositionEasingFunction & easingFunction) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRenderingDeviceReplacedEventArgs
+struct WINRT_EBO impl_IRenderingDeviceReplacedEventArgs
 {
-    auto shim() const { return impl::shim<D, IRenderingDeviceReplacedEventArgs>(this); }
-
-public:
-
     Windows::UI::Composition::CompositionGraphicsDevice GraphicsDevice() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IScalarKeyFrameAnimation
+struct WINRT_EBO impl_IScalarKeyFrameAnimation
 {
-    auto shim() const { return impl::shim<D, IScalarKeyFrameAnimation>(this); }
-
-public:
-
     void InsertKeyFrame(float normalizedProgressKey, float value) const;
     void InsertKeyFrame(float normalizedProgressKey, float value, const Windows::UI::Composition::CompositionEasingFunction & easingFunction) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpotLight
+struct WINRT_EBO impl_ISpotLight
 {
-    auto shim() const { return impl::shim<D, ISpotLight>(this); }
-
-public:
-
     float ConstantAttenuation() const;
     void ConstantAttenuation(float value) const;
     Windows::UI::Composition::Visual CoordinateSpace() const;
@@ -910,34 +670,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpriteVisual
+struct WINRT_EBO impl_ISpriteVisual
 {
-    auto shim() const { return impl::shim<D, ISpriteVisual>(this); }
-
-public:
-
     Windows::UI::Composition::CompositionBrush Brush() const;
     void Brush(const Windows::UI::Composition::CompositionBrush & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpriteVisual2
+struct WINRT_EBO impl_ISpriteVisual2
 {
-    auto shim() const { return impl::shim<D, ISpriteVisual2>(this); }
-
-public:
-
     Windows::UI::Composition::CompositionShadow Shadow() const;
     void Shadow(const Windows::UI::Composition::CompositionShadow & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStepEasingFunction
+struct WINRT_EBO impl_IStepEasingFunction
 {
-    auto shim() const { return impl::shim<D, IStepEasingFunction>(this); }
-
-public:
-
     int32_t FinalStep() const;
     void FinalStep(int32_t value) const;
     int32_t InitialStep() const;
@@ -951,45 +699,29 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVector2KeyFrameAnimation
+struct WINRT_EBO impl_IVector2KeyFrameAnimation
 {
-    auto shim() const { return impl::shim<D, IVector2KeyFrameAnimation>(this); }
-
-public:
-
     void InsertKeyFrame(float normalizedProgressKey, const Windows::Foundation::Numerics::float2 & value) const;
     void InsertKeyFrame(float normalizedProgressKey, const Windows::Foundation::Numerics::float2 & value, const Windows::UI::Composition::CompositionEasingFunction & easingFunction) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVector3KeyFrameAnimation
+struct WINRT_EBO impl_IVector3KeyFrameAnimation
 {
-    auto shim() const { return impl::shim<D, IVector3KeyFrameAnimation>(this); }
-
-public:
-
     void InsertKeyFrame(float normalizedProgressKey, const Windows::Foundation::Numerics::float3 & value) const;
     void InsertKeyFrame(float normalizedProgressKey, const Windows::Foundation::Numerics::float3 & value, const Windows::UI::Composition::CompositionEasingFunction & easingFunction) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVector4KeyFrameAnimation
+struct WINRT_EBO impl_IVector4KeyFrameAnimation
 {
-    auto shim() const { return impl::shim<D, IVector4KeyFrameAnimation>(this); }
-
-public:
-
     void InsertKeyFrame(float normalizedProgressKey, const Windows::Foundation::Numerics::float4 & value) const;
     void InsertKeyFrame(float normalizedProgressKey, const Windows::Foundation::Numerics::float4 & value, const Windows::UI::Composition::CompositionEasingFunction & easingFunction) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVisual
+struct WINRT_EBO impl_IVisual
 {
-    auto shim() const { return impl::shim<D, IVisual>(this); }
-
-public:
-
     Windows::Foundation::Numerics::float2 AnchorPoint() const;
     void AnchorPoint(const Windows::Foundation::Numerics::float2 & value) const;
     Windows::UI::Composition::CompositionBackfaceVisibility BackfaceVisibility() const;
@@ -1026,12 +758,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVisualCollection
+struct WINRT_EBO impl_IVisualCollection
 {
-    auto shim() const { return impl::shim<D, IVisualCollection>(this); }
-
-public:
-
     int32_t Count() const;
     void InsertAbove(const Windows::UI::Composition::Visual & newChild, const Windows::UI::Composition::Visual & sibling) const;
     void InsertAtBottom(const Windows::UI::Composition::Visual & newChild) const;
@@ -1042,21 +770,13 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVisualFactory
+struct WINRT_EBO impl_IVisualFactory
 {
-    auto shim() const { return impl::shim<D, IVisualFactory>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IVisualUnorderedCollection
+struct WINRT_EBO impl_IVisualUnorderedCollection
 {
-    auto shim() const { return impl::shim<D, IVisualUnorderedCollection>(this); }
-
-public:
-
     int32_t Count() const;
     void Add(const Windows::UI::Composition::Visual & newVisual) const;
     void Remove(const Windows::UI::Composition::Visual & visual) const;

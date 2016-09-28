@@ -466,212 +466,212 @@ namespace Windows::Data::Pdf {
 template <typename D> Windows::Foundation::Rect impl_IPdfPageDimensions<D>::MediaBox() const
 {
     Windows::Foundation::Rect value {};
-    check_hresult(shim()->get_MediaBox(put(value)));
+    check_hresult(static_cast<const IPdfPageDimensions &>(static_cast<const D &>(*this))->get_MediaBox(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Rect impl_IPdfPageDimensions<D>::CropBox() const
 {
     Windows::Foundation::Rect value {};
-    check_hresult(shim()->get_CropBox(put(value)));
+    check_hresult(static_cast<const IPdfPageDimensions &>(static_cast<const D &>(*this))->get_CropBox(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Rect impl_IPdfPageDimensions<D>::BleedBox() const
 {
     Windows::Foundation::Rect value {};
-    check_hresult(shim()->get_BleedBox(put(value)));
+    check_hresult(static_cast<const IPdfPageDimensions &>(static_cast<const D &>(*this))->get_BleedBox(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Rect impl_IPdfPageDimensions<D>::TrimBox() const
 {
     Windows::Foundation::Rect value {};
-    check_hresult(shim()->get_TrimBox(put(value)));
+    check_hresult(static_cast<const IPdfPageDimensions &>(static_cast<const D &>(*this))->get_TrimBox(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Rect impl_IPdfPageDimensions<D>::ArtBox() const
 {
     Windows::Foundation::Rect value {};
-    check_hresult(shim()->get_ArtBox(put(value)));
+    check_hresult(static_cast<const IPdfPageDimensions &>(static_cast<const D &>(*this))->get_ArtBox(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Rect impl_IPdfPageRenderOptions<D>::SourceRect() const
 {
     Windows::Foundation::Rect value {};
-    check_hresult(shim()->get_SourceRect(put(value)));
+    check_hresult(static_cast<const IPdfPageRenderOptions &>(static_cast<const D &>(*this))->get_SourceRect(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPdfPageRenderOptions<D>::SourceRect(const Windows::Foundation::Rect & value) const
 {
-    check_hresult(shim()->put_SourceRect(get(value)));
+    check_hresult(static_cast<const IPdfPageRenderOptions &>(static_cast<const D &>(*this))->put_SourceRect(get(value)));
 }
 
 template <typename D> uint32_t impl_IPdfPageRenderOptions<D>::DestinationWidth() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_DestinationWidth(&value));
+    check_hresult(static_cast<const IPdfPageRenderOptions &>(static_cast<const D &>(*this))->get_DestinationWidth(&value));
     return value;
 }
 
 template <typename D> void impl_IPdfPageRenderOptions<D>::DestinationWidth(uint32_t value) const
 {
-    check_hresult(shim()->put_DestinationWidth(value));
+    check_hresult(static_cast<const IPdfPageRenderOptions &>(static_cast<const D &>(*this))->put_DestinationWidth(value));
 }
 
 template <typename D> uint32_t impl_IPdfPageRenderOptions<D>::DestinationHeight() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_DestinationHeight(&value));
+    check_hresult(static_cast<const IPdfPageRenderOptions &>(static_cast<const D &>(*this))->get_DestinationHeight(&value));
     return value;
 }
 
 template <typename D> void impl_IPdfPageRenderOptions<D>::DestinationHeight(uint32_t value) const
 {
-    check_hresult(shim()->put_DestinationHeight(value));
+    check_hresult(static_cast<const IPdfPageRenderOptions &>(static_cast<const D &>(*this))->put_DestinationHeight(value));
 }
 
 template <typename D> Windows::UI::Color impl_IPdfPageRenderOptions<D>::BackgroundColor() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_BackgroundColor(put(value)));
+    check_hresult(static_cast<const IPdfPageRenderOptions &>(static_cast<const D &>(*this))->get_BackgroundColor(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPdfPageRenderOptions<D>::BackgroundColor(const Windows::UI::Color & value) const
 {
-    check_hresult(shim()->put_BackgroundColor(get(value)));
+    check_hresult(static_cast<const IPdfPageRenderOptions &>(static_cast<const D &>(*this))->put_BackgroundColor(get(value)));
 }
 
 template <typename D> bool impl_IPdfPageRenderOptions<D>::IsIgnoringHighContrast() const
 {
     bool value {};
-    check_hresult(shim()->get_IsIgnoringHighContrast(&value));
+    check_hresult(static_cast<const IPdfPageRenderOptions &>(static_cast<const D &>(*this))->get_IsIgnoringHighContrast(&value));
     return value;
 }
 
 template <typename D> void impl_IPdfPageRenderOptions<D>::IsIgnoringHighContrast(bool value) const
 {
-    check_hresult(shim()->put_IsIgnoringHighContrast(value));
+    check_hresult(static_cast<const IPdfPageRenderOptions &>(static_cast<const D &>(*this))->put_IsIgnoringHighContrast(value));
 }
 
 template <typename D> GUID impl_IPdfPageRenderOptions<D>::BitmapEncoderId() const
 {
     GUID value {};
-    check_hresult(shim()->get_BitmapEncoderId(&value));
+    check_hresult(static_cast<const IPdfPageRenderOptions &>(static_cast<const D &>(*this))->get_BitmapEncoderId(&value));
     return value;
 }
 
 template <typename D> void impl_IPdfPageRenderOptions<D>::BitmapEncoderId(GUID value) const
 {
-    check_hresult(shim()->put_BitmapEncoderId(value));
+    check_hresult(static_cast<const IPdfPageRenderOptions &>(static_cast<const D &>(*this))->put_BitmapEncoderId(value));
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IPdfPage<D>::RenderToStreamAsync(const Windows::Storage::Streams::IRandomAccessStream & outputStream) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(shim()->abi_RenderToStreamAsync(get(outputStream), put(asyncInfo)));
+    check_hresult(static_cast<const IPdfPage &>(static_cast<const D &>(*this))->abi_RenderToStreamAsync(get(outputStream), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IPdfPage<D>::RenderToStreamAsync(const Windows::Storage::Streams::IRandomAccessStream & outputStream, const Windows::Data::Pdf::PdfPageRenderOptions & options) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(shim()->abi_RenderWithOptionsToStreamAsync(get(outputStream), get(options), put(asyncInfo)));
+    check_hresult(static_cast<const IPdfPage &>(static_cast<const D &>(*this))->abi_RenderWithOptionsToStreamAsync(get(outputStream), get(options), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IPdfPage<D>::PreparePageAsync() const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(shim()->abi_PreparePageAsync(put(asyncInfo)));
+    check_hresult(static_cast<const IPdfPage &>(static_cast<const D &>(*this))->abi_PreparePageAsync(put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> uint32_t impl_IPdfPage<D>::Index() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_Index(&value));
+    check_hresult(static_cast<const IPdfPage &>(static_cast<const D &>(*this))->get_Index(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Size impl_IPdfPage<D>::Size() const
 {
     Windows::Foundation::Size value {};
-    check_hresult(shim()->get_Size(put(value)));
+    check_hresult(static_cast<const IPdfPage &>(static_cast<const D &>(*this))->get_Size(put(value)));
     return value;
 }
 
 template <typename D> Windows::Data::Pdf::PdfPageDimensions impl_IPdfPage<D>::Dimensions() const
 {
     Windows::Data::Pdf::PdfPageDimensions value { nullptr };
-    check_hresult(shim()->get_Dimensions(put(value)));
+    check_hresult(static_cast<const IPdfPage &>(static_cast<const D &>(*this))->get_Dimensions(put(value)));
     return value;
 }
 
 template <typename D> Windows::Data::Pdf::PdfPageRotation impl_IPdfPage<D>::Rotation() const
 {
     Windows::Data::Pdf::PdfPageRotation value {};
-    check_hresult(shim()->get_Rotation(&value));
+    check_hresult(static_cast<const IPdfPage &>(static_cast<const D &>(*this))->get_Rotation(&value));
     return value;
 }
 
 template <typename D> float impl_IPdfPage<D>::PreferredZoom() const
 {
     float value {};
-    check_hresult(shim()->get_PreferredZoom(&value));
+    check_hresult(static_cast<const IPdfPage &>(static_cast<const D &>(*this))->get_PreferredZoom(&value));
     return value;
 }
 
 template <typename D> Windows::Data::Pdf::PdfPage impl_IPdfDocument<D>::GetPage(uint32_t pageIndex) const
 {
     Windows::Data::Pdf::PdfPage pdfPage { nullptr };
-    check_hresult(shim()->abi_GetPage(pageIndex, put(pdfPage)));
+    check_hresult(static_cast<const IPdfDocument &>(static_cast<const D &>(*this))->abi_GetPage(pageIndex, put(pdfPage)));
     return pdfPage;
 }
 
 template <typename D> uint32_t impl_IPdfDocument<D>::PageCount() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_PageCount(&value));
+    check_hresult(static_cast<const IPdfDocument &>(static_cast<const D &>(*this))->get_PageCount(&value));
     return value;
 }
 
 template <typename D> bool impl_IPdfDocument<D>::IsPasswordProtected() const
 {
     bool value {};
-    check_hresult(shim()->get_IsPasswordProtected(&value));
+    check_hresult(static_cast<const IPdfDocument &>(static_cast<const D &>(*this))->get_IsPasswordProtected(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument> impl_IPdfDocumentStatics<D>::LoadFromFileAsync(const Windows::Storage::IStorageFile & file) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument> asyncInfo;
-    check_hresult(shim()->abi_LoadFromFileAsync(get(file), put(asyncInfo)));
+    check_hresult(static_cast<const IPdfDocumentStatics &>(static_cast<const D &>(*this))->abi_LoadFromFileAsync(get(file), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument> impl_IPdfDocumentStatics<D>::LoadFromFileAsync(const Windows::Storage::IStorageFile & file, hstring_ref password) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument> asyncInfo;
-    check_hresult(shim()->abi_LoadFromFileWithPasswordAsync(get(file), get(password), put(asyncInfo)));
+    check_hresult(static_cast<const IPdfDocumentStatics &>(static_cast<const D &>(*this))->abi_LoadFromFileWithPasswordAsync(get(file), get(password), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument> impl_IPdfDocumentStatics<D>::LoadFromStreamAsync(const Windows::Storage::Streams::IRandomAccessStream & inputStream) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument> asyncInfo;
-    check_hresult(shim()->abi_LoadFromStreamAsync(get(inputStream), put(asyncInfo)));
+    check_hresult(static_cast<const IPdfDocumentStatics &>(static_cast<const D &>(*this))->abi_LoadFromStreamAsync(get(inputStream), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument> impl_IPdfDocumentStatics<D>::LoadFromStreamAsync(const Windows::Storage::Streams::IRandomAccessStream & inputStream, hstring_ref password) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument> asyncInfo;
-    check_hresult(shim()->abi_LoadFromStreamWithPasswordAsync(get(inputStream), get(password), put(asyncInfo)));
+    check_hresult(static_cast<const IPdfDocumentStatics &>(static_cast<const D &>(*this))->abi_LoadFromStreamWithPasswordAsync(get(inputStream), get(password), put(asyncInfo)));
     return asyncInfo;
 }
 

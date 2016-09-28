@@ -118,14 +118,14 @@ template <> struct traits<Windows::UI::Xaml::Interop::NotifyCollectionChangedEve
 
 namespace Windows::UI::Xaml::Interop {
 
-template <typename T> class impl_IBindableIterable;
-template <typename T> class impl_IBindableIterator;
-template <typename T> class impl_IBindableObservableVector;
-template <typename T> class impl_IBindableVector;
-template <typename T> class impl_IBindableVectorView;
-template <typename T> class impl_INotifyCollectionChanged;
-template <typename T> class impl_INotifyCollectionChangedEventArgs;
-template <typename T> class impl_INotifyCollectionChangedEventArgsFactory;
+template <typename T> struct impl_IBindableIterable;
+template <typename T> struct impl_IBindableIterator;
+template <typename T> struct impl_IBindableObservableVector;
+template <typename T> struct impl_IBindableVector;
+template <typename T> struct impl_IBindableVectorView;
+template <typename T> struct impl_INotifyCollectionChanged;
+template <typename T> struct impl_INotifyCollectionChangedEventArgs;
+template <typename T> struct impl_INotifyCollectionChangedEventArgsFactory;
 template <typename T> struct impl_BindableVectorChangedEventHandler;
 template <typename T> struct impl_NotifyCollectionChangedEventHandler;
 
@@ -194,7 +194,6 @@ template <> struct traits<Windows::UI::Xaml::Interop::NotifyCollectionChangedEve
 template <> struct traits<Windows::UI::Xaml::Interop::NotifyCollectionChangedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Interop::NotifyCollectionChangedEventArgs;
-    using default_interface = Windows::UI::Xaml::Interop::INotifyCollectionChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Interop.NotifyCollectionChangedEventArgs"; }
 };
 

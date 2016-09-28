@@ -326,31 +326,31 @@ template <> struct traits<Windows::Services::Store::StoreVideo> { using default_
 
 namespace Windows::Services::Store {
 
-template <typename T> class impl_IStoreAcquireLicenseResult;
-template <typename T> class impl_IStoreAppLicense;
-template <typename T> class impl_IStoreAvailability;
-template <typename T> class impl_IStoreCollectionData;
-template <typename T> class impl_IStoreConsumableResult;
-template <typename T> class impl_IStoreContext;
-template <typename T> class impl_IStoreContextStatics;
-template <typename T> class impl_IStoreImage;
-template <typename T> class impl_IStoreLicense;
-template <typename T> class impl_IStorePackageLicense;
-template <typename T> class impl_IStorePackageUpdate;
-template <typename T> class impl_IStorePackageUpdateResult;
-template <typename T> class impl_IStorePrice;
-template <typename T> class impl_IStoreProduct;
-template <typename T> class impl_IStoreProductPagedQueryResult;
-template <typename T> class impl_IStoreProductQueryResult;
-template <typename T> class impl_IStoreProductResult;
-template <typename T> class impl_IStorePurchaseProperties;
-template <typename T> class impl_IStorePurchasePropertiesFactory;
-template <typename T> class impl_IStorePurchaseResult;
-template <typename T> class impl_IStoreRequestHelperStatics;
-template <typename T> class impl_IStoreSendRequestResult;
-template <typename T> class impl_IStoreSku;
-template <typename T> class impl_IStoreSubscriptionInfo;
-template <typename T> class impl_IStoreVideo;
+template <typename T> struct impl_IStoreAcquireLicenseResult;
+template <typename T> struct impl_IStoreAppLicense;
+template <typename T> struct impl_IStoreAvailability;
+template <typename T> struct impl_IStoreCollectionData;
+template <typename T> struct impl_IStoreConsumableResult;
+template <typename T> struct impl_IStoreContext;
+template <typename T> struct impl_IStoreContextStatics;
+template <typename T> struct impl_IStoreImage;
+template <typename T> struct impl_IStoreLicense;
+template <typename T> struct impl_IStorePackageLicense;
+template <typename T> struct impl_IStorePackageUpdate;
+template <typename T> struct impl_IStorePackageUpdateResult;
+template <typename T> struct impl_IStorePrice;
+template <typename T> struct impl_IStoreProduct;
+template <typename T> struct impl_IStoreProductPagedQueryResult;
+template <typename T> struct impl_IStoreProductQueryResult;
+template <typename T> struct impl_IStoreProductResult;
+template <typename T> struct impl_IStorePurchaseProperties;
+template <typename T> struct impl_IStorePurchasePropertiesFactory;
+template <typename T> struct impl_IStorePurchaseResult;
+template <typename T> struct impl_IStoreRequestHelperStatics;
+template <typename T> struct impl_IStoreSendRequestResult;
+template <typename T> struct impl_IStoreSku;
+template <typename T> struct impl_IStoreSubscriptionInfo;
+template <typename T> struct impl_IStoreVideo;
 
 }
 
@@ -509,126 +509,108 @@ template <> struct traits<Windows::Services::Store::IStoreVideo>
 template <> struct traits<Windows::Services::Store::StoreAcquireLicenseResult>
 {
     using abi = ABI::Windows::Services::Store::StoreAcquireLicenseResult;
-    using default_interface = Windows::Services::Store::IStoreAcquireLicenseResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Services.Store.StoreAcquireLicenseResult"; }
 };
 
 template <> struct traits<Windows::Services::Store::StoreAppLicense>
 {
     using abi = ABI::Windows::Services::Store::StoreAppLicense;
-    using default_interface = Windows::Services::Store::IStoreAppLicense;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Services.Store.StoreAppLicense"; }
 };
 
 template <> struct traits<Windows::Services::Store::StoreAvailability>
 {
     using abi = ABI::Windows::Services::Store::StoreAvailability;
-    using default_interface = Windows::Services::Store::IStoreAvailability;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Services.Store.StoreAvailability"; }
 };
 
 template <> struct traits<Windows::Services::Store::StoreCollectionData>
 {
     using abi = ABI::Windows::Services::Store::StoreCollectionData;
-    using default_interface = Windows::Services::Store::IStoreCollectionData;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Services.Store.StoreCollectionData"; }
 };
 
 template <> struct traits<Windows::Services::Store::StoreConsumableResult>
 {
     using abi = ABI::Windows::Services::Store::StoreConsumableResult;
-    using default_interface = Windows::Services::Store::IStoreConsumableResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Services.Store.StoreConsumableResult"; }
 };
 
 template <> struct traits<Windows::Services::Store::StoreContext>
 {
     using abi = ABI::Windows::Services::Store::StoreContext;
-    using default_interface = Windows::Services::Store::IStoreContext;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Services.Store.StoreContext"; }
 };
 
 template <> struct traits<Windows::Services::Store::StoreImage>
 {
     using abi = ABI::Windows::Services::Store::StoreImage;
-    using default_interface = Windows::Services::Store::IStoreImage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Services.Store.StoreImage"; }
 };
 
 template <> struct traits<Windows::Services::Store::StoreLicense>
 {
     using abi = ABI::Windows::Services::Store::StoreLicense;
-    using default_interface = Windows::Services::Store::IStoreLicense;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Services.Store.StoreLicense"; }
 };
 
 template <> struct traits<Windows::Services::Store::StorePackageLicense>
 {
     using abi = ABI::Windows::Services::Store::StorePackageLicense;
-    using default_interface = Windows::Services::Store::IStorePackageLicense;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Services.Store.StorePackageLicense"; }
 };
 
 template <> struct traits<Windows::Services::Store::StorePackageUpdate>
 {
     using abi = ABI::Windows::Services::Store::StorePackageUpdate;
-    using default_interface = Windows::Services::Store::IStorePackageUpdate;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Services.Store.StorePackageUpdate"; }
 };
 
 template <> struct traits<Windows::Services::Store::StorePackageUpdateResult>
 {
     using abi = ABI::Windows::Services::Store::StorePackageUpdateResult;
-    using default_interface = Windows::Services::Store::IStorePackageUpdateResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Services.Store.StorePackageUpdateResult"; }
 };
 
 template <> struct traits<Windows::Services::Store::StorePrice>
 {
     using abi = ABI::Windows::Services::Store::StorePrice;
-    using default_interface = Windows::Services::Store::IStorePrice;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Services.Store.StorePrice"; }
 };
 
 template <> struct traits<Windows::Services::Store::StoreProduct>
 {
     using abi = ABI::Windows::Services::Store::StoreProduct;
-    using default_interface = Windows::Services::Store::IStoreProduct;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Services.Store.StoreProduct"; }
 };
 
 template <> struct traits<Windows::Services::Store::StoreProductPagedQueryResult>
 {
     using abi = ABI::Windows::Services::Store::StoreProductPagedQueryResult;
-    using default_interface = Windows::Services::Store::IStoreProductPagedQueryResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Services.Store.StoreProductPagedQueryResult"; }
 };
 
 template <> struct traits<Windows::Services::Store::StoreProductQueryResult>
 {
     using abi = ABI::Windows::Services::Store::StoreProductQueryResult;
-    using default_interface = Windows::Services::Store::IStoreProductQueryResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Services.Store.StoreProductQueryResult"; }
 };
 
 template <> struct traits<Windows::Services::Store::StoreProductResult>
 {
     using abi = ABI::Windows::Services::Store::StoreProductResult;
-    using default_interface = Windows::Services::Store::IStoreProductResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Services.Store.StoreProductResult"; }
 };
 
 template <> struct traits<Windows::Services::Store::StorePurchaseProperties>
 {
     using abi = ABI::Windows::Services::Store::StorePurchaseProperties;
-    using default_interface = Windows::Services::Store::IStorePurchaseProperties;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Services.Store.StorePurchaseProperties"; }
 };
 
 template <> struct traits<Windows::Services::Store::StorePurchaseResult>
 {
     using abi = ABI::Windows::Services::Store::StorePurchaseResult;
-    using default_interface = Windows::Services::Store::IStorePurchaseResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Services.Store.StorePurchaseResult"; }
 };
 
@@ -640,28 +622,24 @@ template <> struct traits<Windows::Services::Store::StoreRequestHelper>
 template <> struct traits<Windows::Services::Store::StoreSendRequestResult>
 {
     using abi = ABI::Windows::Services::Store::StoreSendRequestResult;
-    using default_interface = Windows::Services::Store::IStoreSendRequestResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Services.Store.StoreSendRequestResult"; }
 };
 
 template <> struct traits<Windows::Services::Store::StoreSku>
 {
     using abi = ABI::Windows::Services::Store::StoreSku;
-    using default_interface = Windows::Services::Store::IStoreSku;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Services.Store.StoreSku"; }
 };
 
 template <> struct traits<Windows::Services::Store::StoreSubscriptionInfo>
 {
     using abi = ABI::Windows::Services::Store::StoreSubscriptionInfo;
-    using default_interface = Windows::Services::Store::IStoreSubscriptionInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Services.Store.StoreSubscriptionInfo"; }
 };
 
 template <> struct traits<Windows::Services::Store::StoreVideo>
 {
     using abi = ABI::Windows::Services::Store::StoreVideo;
-    using default_interface = Windows::Services::Store::IStoreVideo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Services.Store.StoreVideo"; }
 };
 

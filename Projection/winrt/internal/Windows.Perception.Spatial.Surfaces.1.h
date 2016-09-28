@@ -92,13 +92,13 @@ template <> struct traits<Windows::Perception::Spatial::Surfaces::SpatialSurface
 
 namespace Windows::Perception::Spatial::Surfaces {
 
-template <typename T> class impl_ISpatialSurfaceInfo;
-template <typename T> class impl_ISpatialSurfaceMesh;
-template <typename T> class impl_ISpatialSurfaceMeshBuffer;
-template <typename T> class impl_ISpatialSurfaceMeshOptions;
-template <typename T> class impl_ISpatialSurfaceMeshOptionsStatics;
-template <typename T> class impl_ISpatialSurfaceObserver;
-template <typename T> class impl_ISpatialSurfaceObserverStatics;
+template <typename T> struct impl_ISpatialSurfaceInfo;
+template <typename T> struct impl_ISpatialSurfaceMesh;
+template <typename T> struct impl_ISpatialSurfaceMeshBuffer;
+template <typename T> struct impl_ISpatialSurfaceMeshOptions;
+template <typename T> struct impl_ISpatialSurfaceMeshOptionsStatics;
+template <typename T> struct impl_ISpatialSurfaceObserver;
+template <typename T> struct impl_ISpatialSurfaceObserverStatics;
 
 }
 
@@ -149,35 +149,30 @@ template <> struct traits<Windows::Perception::Spatial::Surfaces::ISpatialSurfac
 template <> struct traits<Windows::Perception::Spatial::Surfaces::SpatialSurfaceInfo>
 {
     using abi = ABI::Windows::Perception::Spatial::Surfaces::SpatialSurfaceInfo;
-    using default_interface = Windows::Perception::Spatial::Surfaces::ISpatialSurfaceInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Perception.Spatial.Surfaces.SpatialSurfaceInfo"; }
 };
 
 template <> struct traits<Windows::Perception::Spatial::Surfaces::SpatialSurfaceMesh>
 {
     using abi = ABI::Windows::Perception::Spatial::Surfaces::SpatialSurfaceMesh;
-    using default_interface = Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMesh;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Perception.Spatial.Surfaces.SpatialSurfaceMesh"; }
 };
 
 template <> struct traits<Windows::Perception::Spatial::Surfaces::SpatialSurfaceMeshBuffer>
 {
     using abi = ABI::Windows::Perception::Spatial::Surfaces::SpatialSurfaceMeshBuffer;
-    using default_interface = Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshBuffer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Perception.Spatial.Surfaces.SpatialSurfaceMeshBuffer"; }
 };
 
 template <> struct traits<Windows::Perception::Spatial::Surfaces::SpatialSurfaceMeshOptions>
 {
     using abi = ABI::Windows::Perception::Spatial::Surfaces::SpatialSurfaceMeshOptions;
-    using default_interface = Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshOptions;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Perception.Spatial.Surfaces.SpatialSurfaceMeshOptions"; }
 };
 
 template <> struct traits<Windows::Perception::Spatial::Surfaces::SpatialSurfaceObserver>
 {
     using abi = ABI::Windows::Perception::Spatial::Surfaces::SpatialSurfaceObserver;
-    using default_interface = Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserver;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Perception.Spatial.Surfaces.SpatialSurfaceObserver"; }
 };
 

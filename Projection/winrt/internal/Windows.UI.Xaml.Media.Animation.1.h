@@ -1112,148 +1112,148 @@ template <> struct traits<Windows::UI::Xaml::Media::Animation::TransitionCollect
 
 namespace Windows::UI::Xaml::Media::Animation {
 
-template <typename T> class impl_IAddDeleteThemeTransition;
-template <typename T> class impl_IBackEase;
-template <typename T> class impl_IBackEaseStatics;
-template <typename T> class impl_IBeginStoryboard;
-template <typename T> class impl_IBeginStoryboardStatics;
-template <typename T> class impl_IBounceEase;
-template <typename T> class impl_IBounceEaseStatics;
-template <typename T> class impl_ICircleEase;
-template <typename T> class impl_IColorAnimation;
-template <typename T> class impl_IColorAnimationStatics;
-template <typename T> class impl_IColorAnimationUsingKeyFrames;
-template <typename T> class impl_IColorAnimationUsingKeyFramesStatics;
-template <typename T> class impl_IColorKeyFrame;
-template <typename T> class impl_IColorKeyFrameFactory;
-template <typename T> class impl_IColorKeyFrameStatics;
-template <typename T> class impl_ICommonNavigationTransitionInfo;
-template <typename T> class impl_ICommonNavigationTransitionInfoStatics;
-template <typename T> class impl_IConnectedAnimation;
-template <typename T> class impl_IConnectedAnimationService;
-template <typename T> class impl_IConnectedAnimationServiceStatics;
-template <typename T> class impl_IContentThemeTransition;
-template <typename T> class impl_IContentThemeTransitionStatics;
-template <typename T> class impl_IContinuumNavigationTransitionInfo;
-template <typename T> class impl_IContinuumNavigationTransitionInfoStatics;
-template <typename T> class impl_ICubicEase;
-template <typename T> class impl_IDiscreteColorKeyFrame;
-template <typename T> class impl_IDiscreteDoubleKeyFrame;
-template <typename T> class impl_IDiscreteObjectKeyFrame;
-template <typename T> class impl_IDiscretePointKeyFrame;
-template <typename T> class impl_IDoubleAnimation;
-template <typename T> class impl_IDoubleAnimationStatics;
-template <typename T> class impl_IDoubleAnimationUsingKeyFrames;
-template <typename T> class impl_IDoubleAnimationUsingKeyFramesStatics;
-template <typename T> class impl_IDoubleKeyFrame;
-template <typename T> class impl_IDoubleKeyFrameFactory;
-template <typename T> class impl_IDoubleKeyFrameStatics;
-template <typename T> class impl_IDragItemThemeAnimation;
-template <typename T> class impl_IDragItemThemeAnimationStatics;
-template <typename T> class impl_IDragOverThemeAnimation;
-template <typename T> class impl_IDragOverThemeAnimationStatics;
-template <typename T> class impl_IDrillInNavigationTransitionInfo;
-template <typename T> class impl_IDrillInThemeAnimation;
-template <typename T> class impl_IDrillInThemeAnimationStatics;
-template <typename T> class impl_IDrillOutThemeAnimation;
-template <typename T> class impl_IDrillOutThemeAnimationStatics;
-template <typename T> class impl_IDropTargetItemThemeAnimation;
-template <typename T> class impl_IDropTargetItemThemeAnimationStatics;
-template <typename T> class impl_IEasingColorKeyFrame;
-template <typename T> class impl_IEasingColorKeyFrameStatics;
-template <typename T> class impl_IEasingDoubleKeyFrame;
-template <typename T> class impl_IEasingDoubleKeyFrameStatics;
-template <typename T> class impl_IEasingFunctionBase;
-template <typename T> class impl_IEasingFunctionBaseFactory;
-template <typename T> class impl_IEasingFunctionBaseStatics;
-template <typename T> class impl_IEasingPointKeyFrame;
-template <typename T> class impl_IEasingPointKeyFrameStatics;
-template <typename T> class impl_IEdgeUIThemeTransition;
-template <typename T> class impl_IEdgeUIThemeTransitionStatics;
-template <typename T> class impl_IElasticEase;
-template <typename T> class impl_IElasticEaseStatics;
-template <typename T> class impl_IEntranceNavigationTransitionInfo;
-template <typename T> class impl_IEntranceNavigationTransitionInfoStatics;
-template <typename T> class impl_IEntranceThemeTransition;
-template <typename T> class impl_IEntranceThemeTransitionStatics;
-template <typename T> class impl_IExponentialEase;
-template <typename T> class impl_IExponentialEaseStatics;
-template <typename T> class impl_IFadeInThemeAnimation;
-template <typename T> class impl_IFadeInThemeAnimationStatics;
-template <typename T> class impl_IFadeOutThemeAnimation;
-template <typename T> class impl_IFadeOutThemeAnimationStatics;
-template <typename T> class impl_IKeySpline;
-template <typename T> class impl_IKeyTimeHelper;
-template <typename T> class impl_IKeyTimeHelperStatics;
-template <typename T> class impl_ILinearColorKeyFrame;
-template <typename T> class impl_ILinearDoubleKeyFrame;
-template <typename T> class impl_ILinearPointKeyFrame;
-template <typename T> class impl_INavigationThemeTransition;
-template <typename T> class impl_INavigationThemeTransitionStatics;
-template <typename T> class impl_INavigationTransitionInfo;
-template <typename T> class impl_INavigationTransitionInfoFactory;
-template <typename T> class impl_INavigationTransitionInfoOverrides;
-template <typename T> class impl_IObjectAnimationUsingKeyFrames;
-template <typename T> class impl_IObjectAnimationUsingKeyFramesStatics;
-template <typename T> class impl_IObjectKeyFrame;
-template <typename T> class impl_IObjectKeyFrameFactory;
-template <typename T> class impl_IObjectKeyFrameStatics;
-template <typename T> class impl_IPaneThemeTransition;
-template <typename T> class impl_IPaneThemeTransitionStatics;
-template <typename T> class impl_IPointAnimation;
-template <typename T> class impl_IPointAnimationStatics;
-template <typename T> class impl_IPointAnimationUsingKeyFrames;
-template <typename T> class impl_IPointAnimationUsingKeyFramesStatics;
-template <typename T> class impl_IPointKeyFrame;
-template <typename T> class impl_IPointKeyFrameFactory;
-template <typename T> class impl_IPointKeyFrameStatics;
-template <typename T> class impl_IPointerDownThemeAnimation;
-template <typename T> class impl_IPointerDownThemeAnimationStatics;
-template <typename T> class impl_IPointerUpThemeAnimation;
-template <typename T> class impl_IPointerUpThemeAnimationStatics;
-template <typename T> class impl_IPopInThemeAnimation;
-template <typename T> class impl_IPopInThemeAnimationStatics;
-template <typename T> class impl_IPopOutThemeAnimation;
-template <typename T> class impl_IPopOutThemeAnimationStatics;
-template <typename T> class impl_IPopupThemeTransition;
-template <typename T> class impl_IPopupThemeTransitionStatics;
-template <typename T> class impl_IPowerEase;
-template <typename T> class impl_IPowerEaseStatics;
-template <typename T> class impl_IQuadraticEase;
-template <typename T> class impl_IQuarticEase;
-template <typename T> class impl_IQuinticEase;
-template <typename T> class impl_IReorderThemeTransition;
-template <typename T> class impl_IRepeatBehaviorHelper;
-template <typename T> class impl_IRepeatBehaviorHelperStatics;
-template <typename T> class impl_IRepositionThemeAnimation;
-template <typename T> class impl_IRepositionThemeAnimationStatics;
-template <typename T> class impl_IRepositionThemeTransition;
-template <typename T> class impl_IRepositionThemeTransition2;
-template <typename T> class impl_IRepositionThemeTransitionStatics2;
-template <typename T> class impl_ISineEase;
-template <typename T> class impl_ISlideNavigationTransitionInfo;
-template <typename T> class impl_ISplineColorKeyFrame;
-template <typename T> class impl_ISplineColorKeyFrameStatics;
-template <typename T> class impl_ISplineDoubleKeyFrame;
-template <typename T> class impl_ISplineDoubleKeyFrameStatics;
-template <typename T> class impl_ISplinePointKeyFrame;
-template <typename T> class impl_ISplinePointKeyFrameStatics;
-template <typename T> class impl_ISplitCloseThemeAnimation;
-template <typename T> class impl_ISplitCloseThemeAnimationStatics;
-template <typename T> class impl_ISplitOpenThemeAnimation;
-template <typename T> class impl_ISplitOpenThemeAnimationStatics;
-template <typename T> class impl_IStoryboard;
-template <typename T> class impl_IStoryboardStatics;
-template <typename T> class impl_ISuppressNavigationTransitionInfo;
-template <typename T> class impl_ISwipeBackThemeAnimation;
-template <typename T> class impl_ISwipeBackThemeAnimationStatics;
-template <typename T> class impl_ISwipeHintThemeAnimation;
-template <typename T> class impl_ISwipeHintThemeAnimationStatics;
-template <typename T> class impl_ITimeline;
-template <typename T> class impl_ITimelineFactory;
-template <typename T> class impl_ITimelineStatics;
-template <typename T> class impl_ITransition;
-template <typename T> class impl_ITransitionFactory;
+template <typename T> struct impl_IAddDeleteThemeTransition;
+template <typename T> struct impl_IBackEase;
+template <typename T> struct impl_IBackEaseStatics;
+template <typename T> struct impl_IBeginStoryboard;
+template <typename T> struct impl_IBeginStoryboardStatics;
+template <typename T> struct impl_IBounceEase;
+template <typename T> struct impl_IBounceEaseStatics;
+template <typename T> struct impl_ICircleEase;
+template <typename T> struct impl_IColorAnimation;
+template <typename T> struct impl_IColorAnimationStatics;
+template <typename T> struct impl_IColorAnimationUsingKeyFrames;
+template <typename T> struct impl_IColorAnimationUsingKeyFramesStatics;
+template <typename T> struct impl_IColorKeyFrame;
+template <typename T> struct impl_IColorKeyFrameFactory;
+template <typename T> struct impl_IColorKeyFrameStatics;
+template <typename T> struct impl_ICommonNavigationTransitionInfo;
+template <typename T> struct impl_ICommonNavigationTransitionInfoStatics;
+template <typename T> struct impl_IConnectedAnimation;
+template <typename T> struct impl_IConnectedAnimationService;
+template <typename T> struct impl_IConnectedAnimationServiceStatics;
+template <typename T> struct impl_IContentThemeTransition;
+template <typename T> struct impl_IContentThemeTransitionStatics;
+template <typename T> struct impl_IContinuumNavigationTransitionInfo;
+template <typename T> struct impl_IContinuumNavigationTransitionInfoStatics;
+template <typename T> struct impl_ICubicEase;
+template <typename T> struct impl_IDiscreteColorKeyFrame;
+template <typename T> struct impl_IDiscreteDoubleKeyFrame;
+template <typename T> struct impl_IDiscreteObjectKeyFrame;
+template <typename T> struct impl_IDiscretePointKeyFrame;
+template <typename T> struct impl_IDoubleAnimation;
+template <typename T> struct impl_IDoubleAnimationStatics;
+template <typename T> struct impl_IDoubleAnimationUsingKeyFrames;
+template <typename T> struct impl_IDoubleAnimationUsingKeyFramesStatics;
+template <typename T> struct impl_IDoubleKeyFrame;
+template <typename T> struct impl_IDoubleKeyFrameFactory;
+template <typename T> struct impl_IDoubleKeyFrameStatics;
+template <typename T> struct impl_IDragItemThemeAnimation;
+template <typename T> struct impl_IDragItemThemeAnimationStatics;
+template <typename T> struct impl_IDragOverThemeAnimation;
+template <typename T> struct impl_IDragOverThemeAnimationStatics;
+template <typename T> struct impl_IDrillInNavigationTransitionInfo;
+template <typename T> struct impl_IDrillInThemeAnimation;
+template <typename T> struct impl_IDrillInThemeAnimationStatics;
+template <typename T> struct impl_IDrillOutThemeAnimation;
+template <typename T> struct impl_IDrillOutThemeAnimationStatics;
+template <typename T> struct impl_IDropTargetItemThemeAnimation;
+template <typename T> struct impl_IDropTargetItemThemeAnimationStatics;
+template <typename T> struct impl_IEasingColorKeyFrame;
+template <typename T> struct impl_IEasingColorKeyFrameStatics;
+template <typename T> struct impl_IEasingDoubleKeyFrame;
+template <typename T> struct impl_IEasingDoubleKeyFrameStatics;
+template <typename T> struct impl_IEasingFunctionBase;
+template <typename T> struct impl_IEasingFunctionBaseFactory;
+template <typename T> struct impl_IEasingFunctionBaseStatics;
+template <typename T> struct impl_IEasingPointKeyFrame;
+template <typename T> struct impl_IEasingPointKeyFrameStatics;
+template <typename T> struct impl_IEdgeUIThemeTransition;
+template <typename T> struct impl_IEdgeUIThemeTransitionStatics;
+template <typename T> struct impl_IElasticEase;
+template <typename T> struct impl_IElasticEaseStatics;
+template <typename T> struct impl_IEntranceNavigationTransitionInfo;
+template <typename T> struct impl_IEntranceNavigationTransitionInfoStatics;
+template <typename T> struct impl_IEntranceThemeTransition;
+template <typename T> struct impl_IEntranceThemeTransitionStatics;
+template <typename T> struct impl_IExponentialEase;
+template <typename T> struct impl_IExponentialEaseStatics;
+template <typename T> struct impl_IFadeInThemeAnimation;
+template <typename T> struct impl_IFadeInThemeAnimationStatics;
+template <typename T> struct impl_IFadeOutThemeAnimation;
+template <typename T> struct impl_IFadeOutThemeAnimationStatics;
+template <typename T> struct impl_IKeySpline;
+template <typename T> struct impl_IKeyTimeHelper;
+template <typename T> struct impl_IKeyTimeHelperStatics;
+template <typename T> struct impl_ILinearColorKeyFrame;
+template <typename T> struct impl_ILinearDoubleKeyFrame;
+template <typename T> struct impl_ILinearPointKeyFrame;
+template <typename T> struct impl_INavigationThemeTransition;
+template <typename T> struct impl_INavigationThemeTransitionStatics;
+template <typename T> struct impl_INavigationTransitionInfo;
+template <typename T> struct impl_INavigationTransitionInfoFactory;
+template <typename T> struct impl_INavigationTransitionInfoOverrides;
+template <typename T> struct impl_IObjectAnimationUsingKeyFrames;
+template <typename T> struct impl_IObjectAnimationUsingKeyFramesStatics;
+template <typename T> struct impl_IObjectKeyFrame;
+template <typename T> struct impl_IObjectKeyFrameFactory;
+template <typename T> struct impl_IObjectKeyFrameStatics;
+template <typename T> struct impl_IPaneThemeTransition;
+template <typename T> struct impl_IPaneThemeTransitionStatics;
+template <typename T> struct impl_IPointAnimation;
+template <typename T> struct impl_IPointAnimationStatics;
+template <typename T> struct impl_IPointAnimationUsingKeyFrames;
+template <typename T> struct impl_IPointAnimationUsingKeyFramesStatics;
+template <typename T> struct impl_IPointKeyFrame;
+template <typename T> struct impl_IPointKeyFrameFactory;
+template <typename T> struct impl_IPointKeyFrameStatics;
+template <typename T> struct impl_IPointerDownThemeAnimation;
+template <typename T> struct impl_IPointerDownThemeAnimationStatics;
+template <typename T> struct impl_IPointerUpThemeAnimation;
+template <typename T> struct impl_IPointerUpThemeAnimationStatics;
+template <typename T> struct impl_IPopInThemeAnimation;
+template <typename T> struct impl_IPopInThemeAnimationStatics;
+template <typename T> struct impl_IPopOutThemeAnimation;
+template <typename T> struct impl_IPopOutThemeAnimationStatics;
+template <typename T> struct impl_IPopupThemeTransition;
+template <typename T> struct impl_IPopupThemeTransitionStatics;
+template <typename T> struct impl_IPowerEase;
+template <typename T> struct impl_IPowerEaseStatics;
+template <typename T> struct impl_IQuadraticEase;
+template <typename T> struct impl_IQuarticEase;
+template <typename T> struct impl_IQuinticEase;
+template <typename T> struct impl_IReorderThemeTransition;
+template <typename T> struct impl_IRepeatBehaviorHelper;
+template <typename T> struct impl_IRepeatBehaviorHelperStatics;
+template <typename T> struct impl_IRepositionThemeAnimation;
+template <typename T> struct impl_IRepositionThemeAnimationStatics;
+template <typename T> struct impl_IRepositionThemeTransition;
+template <typename T> struct impl_IRepositionThemeTransition2;
+template <typename T> struct impl_IRepositionThemeTransitionStatics2;
+template <typename T> struct impl_ISineEase;
+template <typename T> struct impl_ISlideNavigationTransitionInfo;
+template <typename T> struct impl_ISplineColorKeyFrame;
+template <typename T> struct impl_ISplineColorKeyFrameStatics;
+template <typename T> struct impl_ISplineDoubleKeyFrame;
+template <typename T> struct impl_ISplineDoubleKeyFrameStatics;
+template <typename T> struct impl_ISplinePointKeyFrame;
+template <typename T> struct impl_ISplinePointKeyFrameStatics;
+template <typename T> struct impl_ISplitCloseThemeAnimation;
+template <typename T> struct impl_ISplitCloseThemeAnimationStatics;
+template <typename T> struct impl_ISplitOpenThemeAnimation;
+template <typename T> struct impl_ISplitOpenThemeAnimationStatics;
+template <typename T> struct impl_IStoryboard;
+template <typename T> struct impl_IStoryboardStatics;
+template <typename T> struct impl_ISuppressNavigationTransitionInfo;
+template <typename T> struct impl_ISwipeBackThemeAnimation;
+template <typename T> struct impl_ISwipeBackThemeAnimationStatics;
+template <typename T> struct impl_ISwipeHintThemeAnimation;
+template <typename T> struct impl_ISwipeHintThemeAnimationStatics;
+template <typename T> struct impl_ITimeline;
+template <typename T> struct impl_ITimelineFactory;
+template <typename T> struct impl_ITimelineStatics;
+template <typename T> struct impl_ITransition;
+template <typename T> struct impl_ITransitionFactory;
 
 }
 
@@ -2114,581 +2114,498 @@ template <> struct traits<Windows::UI::Xaml::Media::Animation::ITransitionFactor
 template <> struct traits<Windows::UI::Xaml::Media::Animation::AddDeleteThemeTransition>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::AddDeleteThemeTransition;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IAddDeleteThemeTransition;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.AddDeleteThemeTransition"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::BackEase>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::BackEase;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IBackEase;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.BackEase"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::BeginStoryboard>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::BeginStoryboard;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IBeginStoryboard;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.BeginStoryboard"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::BounceEase>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::BounceEase;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IBounceEase;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.BounceEase"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::CircleEase>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::CircleEase;
-    using default_interface = Windows::UI::Xaml::Media::Animation::ICircleEase;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.CircleEase"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::ColorAnimation>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::ColorAnimation;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IColorAnimation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.ColorAnimation"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::ColorAnimationUsingKeyFrames>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::ColorAnimationUsingKeyFrames;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IColorAnimationUsingKeyFrames;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.ColorAnimationUsingKeyFrames"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::ColorKeyFrame>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::ColorKeyFrame;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IColorKeyFrame;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.ColorKeyFrame"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::ColorKeyFrameCollection>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::ColorKeyFrameCollection;
-    using default_interface = Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::Animation::ColorKeyFrame>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.ColorKeyFrameCollection"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::CommonNavigationTransitionInfo>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::CommonNavigationTransitionInfo;
-    using default_interface = Windows::UI::Xaml::Media::Animation::ICommonNavigationTransitionInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.CommonNavigationTransitionInfo"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::ConnectedAnimation>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::ConnectedAnimation;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IConnectedAnimation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.ConnectedAnimation"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::ConnectedAnimationService>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::ConnectedAnimationService;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IConnectedAnimationService;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.ConnectedAnimationService"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::ContentThemeTransition>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::ContentThemeTransition;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IContentThemeTransition;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.ContentThemeTransition"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::ContinuumNavigationTransitionInfo>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::ContinuumNavigationTransitionInfo;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IContinuumNavigationTransitionInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.ContinuumNavigationTransitionInfo"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::CubicEase>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::CubicEase;
-    using default_interface = Windows::UI::Xaml::Media::Animation::ICubicEase;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.CubicEase"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::DiscreteColorKeyFrame>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::DiscreteColorKeyFrame;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IDiscreteColorKeyFrame;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.DiscreteColorKeyFrame"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::DiscreteDoubleKeyFrame>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::DiscreteDoubleKeyFrame;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IDiscreteDoubleKeyFrame;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.DiscreteDoubleKeyFrame"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::DiscreteObjectKeyFrame>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::DiscreteObjectKeyFrame;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IDiscreteObjectKeyFrame;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.DiscreteObjectKeyFrame"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::DiscretePointKeyFrame>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::DiscretePointKeyFrame;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IDiscretePointKeyFrame;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.DiscretePointKeyFrame"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::DoubleAnimation>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::DoubleAnimation;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IDoubleAnimation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.DoubleAnimation"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::DoubleAnimationUsingKeyFrames>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::DoubleAnimationUsingKeyFrames;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IDoubleAnimationUsingKeyFrames;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.DoubleAnimationUsingKeyFrames"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::DoubleKeyFrame>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::DoubleKeyFrame;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IDoubleKeyFrame;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.DoubleKeyFrame"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::DoubleKeyFrameCollection>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::DoubleKeyFrameCollection;
-    using default_interface = Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::Animation::DoubleKeyFrame>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.DoubleKeyFrameCollection"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::DragItemThemeAnimation>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::DragItemThemeAnimation;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IDragItemThemeAnimation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.DragItemThemeAnimation"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::DragOverThemeAnimation>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::DragOverThemeAnimation;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IDragOverThemeAnimation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.DragOverThemeAnimation"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::DrillInNavigationTransitionInfo>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::DrillInNavigationTransitionInfo;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IDrillInNavigationTransitionInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.DrillInNavigationTransitionInfo"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::DrillInThemeAnimation>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::DrillInThemeAnimation;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IDrillInThemeAnimation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.DrillInThemeAnimation"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::DrillOutThemeAnimation>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::DrillOutThemeAnimation;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IDrillOutThemeAnimation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.DrillOutThemeAnimation"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::DropTargetItemThemeAnimation>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::DropTargetItemThemeAnimation;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IDropTargetItemThemeAnimation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.DropTargetItemThemeAnimation"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::EasingColorKeyFrame>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::EasingColorKeyFrame;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IEasingColorKeyFrame;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.EasingColorKeyFrame"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::EasingDoubleKeyFrame>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::EasingDoubleKeyFrame;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IEasingDoubleKeyFrame;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.EasingDoubleKeyFrame"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::EasingFunctionBase>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::EasingFunctionBase;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IEasingFunctionBase;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.EasingFunctionBase"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::EasingPointKeyFrame>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::EasingPointKeyFrame;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IEasingPointKeyFrame;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.EasingPointKeyFrame"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::EdgeUIThemeTransition>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::EdgeUIThemeTransition;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IEdgeUIThemeTransition;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::ElasticEase>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::ElasticEase;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IElasticEase;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.ElasticEase"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::EntranceNavigationTransitionInfo>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::EntranceNavigationTransitionInfo;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IEntranceNavigationTransitionInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.EntranceNavigationTransitionInfo"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::EntranceThemeTransition>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::EntranceThemeTransition;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IEntranceThemeTransition;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.EntranceThemeTransition"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::ExponentialEase>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::ExponentialEase;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IExponentialEase;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.ExponentialEase"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::FadeInThemeAnimation>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::FadeInThemeAnimation;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IFadeInThemeAnimation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::FadeOutThemeAnimation>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::FadeOutThemeAnimation;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IFadeOutThemeAnimation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::KeySpline>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::KeySpline;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IKeySpline;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.KeySpline"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::KeyTimeHelper>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::KeyTimeHelper;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IKeyTimeHelper;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.KeyTimeHelper"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::LinearColorKeyFrame>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::LinearColorKeyFrame;
-    using default_interface = Windows::UI::Xaml::Media::Animation::ILinearColorKeyFrame;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.LinearColorKeyFrame"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::LinearDoubleKeyFrame>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::LinearDoubleKeyFrame;
-    using default_interface = Windows::UI::Xaml::Media::Animation::ILinearDoubleKeyFrame;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.LinearDoubleKeyFrame"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::LinearPointKeyFrame>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::LinearPointKeyFrame;
-    using default_interface = Windows::UI::Xaml::Media::Animation::ILinearPointKeyFrame;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.LinearPointKeyFrame"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::NavigationThemeTransition>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::NavigationThemeTransition;
-    using default_interface = Windows::UI::Xaml::Media::Animation::INavigationThemeTransition;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.NavigationThemeTransition"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo;
-    using default_interface = Windows::UI::Xaml::Media::Animation::INavigationTransitionInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.NavigationTransitionInfo"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::ObjectAnimationUsingKeyFrames>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::ObjectAnimationUsingKeyFrames;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IObjectAnimationUsingKeyFrames;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::ObjectKeyFrame>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::ObjectKeyFrame;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IObjectKeyFrame;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.ObjectKeyFrame"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::ObjectKeyFrameCollection>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::ObjectKeyFrameCollection;
-    using default_interface = Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::Animation::ObjectKeyFrame>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.ObjectKeyFrameCollection"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::PaneThemeTransition>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::PaneThemeTransition;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IPaneThemeTransition;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.PaneThemeTransition"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::PointAnimation>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::PointAnimation;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IPointAnimation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.PointAnimation"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::PointAnimationUsingKeyFrames>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::PointAnimationUsingKeyFrames;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IPointAnimationUsingKeyFrames;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.PointAnimationUsingKeyFrames"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::PointKeyFrame>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::PointKeyFrame;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IPointKeyFrame;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.PointKeyFrame"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::PointKeyFrameCollection>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::PointKeyFrameCollection;
-    using default_interface = Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::Animation::PointKeyFrame>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.PointKeyFrameCollection"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::PointerDownThemeAnimation>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::PointerDownThemeAnimation;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IPointerDownThemeAnimation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.PointerDownThemeAnimation"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::PointerUpThemeAnimation>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::PointerUpThemeAnimation;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IPointerUpThemeAnimation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.PointerUpThemeAnimation"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::PopInThemeAnimation>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::PopInThemeAnimation;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IPopInThemeAnimation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.PopInThemeAnimation"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::PopOutThemeAnimation>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::PopOutThemeAnimation;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IPopOutThemeAnimation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.PopOutThemeAnimation"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::PopupThemeTransition>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::PopupThemeTransition;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IPopupThemeTransition;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.PopupThemeTransition"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::PowerEase>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::PowerEase;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IPowerEase;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.PowerEase"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::QuadraticEase>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::QuadraticEase;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IQuadraticEase;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.QuadraticEase"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::QuarticEase>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::QuarticEase;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IQuarticEase;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.QuarticEase"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::QuinticEase>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::QuinticEase;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IQuinticEase;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.QuinticEase"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::ReorderThemeTransition>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::ReorderThemeTransition;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IReorderThemeTransition;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.ReorderThemeTransition"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::RepeatBehaviorHelper>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::RepeatBehaviorHelper;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IRepeatBehaviorHelper;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.RepeatBehaviorHelper"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::RepositionThemeAnimation>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::RepositionThemeAnimation;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IRepositionThemeAnimation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.RepositionThemeAnimation"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::RepositionThemeTransition>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::RepositionThemeTransition;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IRepositionThemeTransition;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.RepositionThemeTransition"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::SineEase>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::SineEase;
-    using default_interface = Windows::UI::Xaml::Media::Animation::ISineEase;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.SineEase"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::SlideNavigationTransitionInfo>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::SlideNavigationTransitionInfo;
-    using default_interface = Windows::UI::Xaml::Media::Animation::ISlideNavigationTransitionInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.SlideNavigationTransitionInfo"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::SplineColorKeyFrame>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::SplineColorKeyFrame;
-    using default_interface = Windows::UI::Xaml::Media::Animation::ISplineColorKeyFrame;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.SplineColorKeyFrame"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::SplineDoubleKeyFrame>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::SplineDoubleKeyFrame;
-    using default_interface = Windows::UI::Xaml::Media::Animation::ISplineDoubleKeyFrame;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.SplineDoubleKeyFrame"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::SplinePointKeyFrame>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::SplinePointKeyFrame;
-    using default_interface = Windows::UI::Xaml::Media::Animation::ISplinePointKeyFrame;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.SplinePointKeyFrame"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::SplitCloseThemeAnimation>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::SplitCloseThemeAnimation;
-    using default_interface = Windows::UI::Xaml::Media::Animation::ISplitCloseThemeAnimation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.SplitCloseThemeAnimation"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::SplitOpenThemeAnimation>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::SplitOpenThemeAnimation;
-    using default_interface = Windows::UI::Xaml::Media::Animation::ISplitOpenThemeAnimation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.SplitOpenThemeAnimation"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::Storyboard>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::Storyboard;
-    using default_interface = Windows::UI::Xaml::Media::Animation::IStoryboard;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.Storyboard"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::SuppressNavigationTransitionInfo>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::SuppressNavigationTransitionInfo;
-    using default_interface = Windows::UI::Xaml::Media::Animation::ISuppressNavigationTransitionInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.SuppressNavigationTransitionInfo"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::SwipeBackThemeAnimation>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::SwipeBackThemeAnimation;
-    using default_interface = Windows::UI::Xaml::Media::Animation::ISwipeBackThemeAnimation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.SwipeBackThemeAnimation"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::SwipeHintThemeAnimation>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::SwipeHintThemeAnimation;
-    using default_interface = Windows::UI::Xaml::Media::Animation::ISwipeHintThemeAnimation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.SwipeHintThemeAnimation"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::Timeline>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::Timeline;
-    using default_interface = Windows::UI::Xaml::Media::Animation::ITimeline;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.Timeline"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::TimelineCollection>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::TimelineCollection;
-    using default_interface = Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::Animation::Timeline>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.TimelineCollection"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::Transition>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::Transition;
-    using default_interface = Windows::UI::Xaml::Media::Animation::ITransition;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.Transition"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Animation::TransitionCollection>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Animation::TransitionCollection;
-    using default_interface = Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::Animation::Transition>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Animation.TransitionCollection"; }
 };
 

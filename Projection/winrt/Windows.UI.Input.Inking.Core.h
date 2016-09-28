@@ -461,7 +461,7 @@ namespace Windows::UI::Input::Inking::Core {
 template <typename D> event_token impl_ICoreInkIndependentInputSource<D>::PointerEntering(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_PointerEntering(get(handler), &cookie));
+    check_hresult(static_cast<const ICoreInkIndependentInputSource &>(static_cast<const D &>(*this))->add_PointerEntering(get(handler), &cookie));
     return cookie;
 }
 
@@ -472,13 +472,13 @@ template <typename D> event_revoker<ICoreInkIndependentInputSource> impl_ICoreIn
 
 template <typename D> void impl_ICoreInkIndependentInputSource<D>::PointerEntering(event_token cookie) const
 {
-    check_hresult(shim()->remove_PointerEntering(cookie));
+    check_hresult(static_cast<const ICoreInkIndependentInputSource &>(static_cast<const D &>(*this))->remove_PointerEntering(cookie));
 }
 
 template <typename D> event_token impl_ICoreInkIndependentInputSource<D>::PointerHovering(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_PointerHovering(get(handler), &cookie));
+    check_hresult(static_cast<const ICoreInkIndependentInputSource &>(static_cast<const D &>(*this))->add_PointerHovering(get(handler), &cookie));
     return cookie;
 }
 
@@ -489,13 +489,13 @@ template <typename D> event_revoker<ICoreInkIndependentInputSource> impl_ICoreIn
 
 template <typename D> void impl_ICoreInkIndependentInputSource<D>::PointerHovering(event_token cookie) const
 {
-    check_hresult(shim()->remove_PointerHovering(cookie));
+    check_hresult(static_cast<const ICoreInkIndependentInputSource &>(static_cast<const D &>(*this))->remove_PointerHovering(cookie));
 }
 
 template <typename D> event_token impl_ICoreInkIndependentInputSource<D>::PointerExiting(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_PointerExiting(get(handler), &cookie));
+    check_hresult(static_cast<const ICoreInkIndependentInputSource &>(static_cast<const D &>(*this))->add_PointerExiting(get(handler), &cookie));
     return cookie;
 }
 
@@ -506,13 +506,13 @@ template <typename D> event_revoker<ICoreInkIndependentInputSource> impl_ICoreIn
 
 template <typename D> void impl_ICoreInkIndependentInputSource<D>::PointerExiting(event_token cookie) const
 {
-    check_hresult(shim()->remove_PointerExiting(cookie));
+    check_hresult(static_cast<const ICoreInkIndependentInputSource &>(static_cast<const D &>(*this))->remove_PointerExiting(cookie));
 }
 
 template <typename D> event_token impl_ICoreInkIndependentInputSource<D>::PointerPressing(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_PointerPressing(get(handler), &cookie));
+    check_hresult(static_cast<const ICoreInkIndependentInputSource &>(static_cast<const D &>(*this))->add_PointerPressing(get(handler), &cookie));
     return cookie;
 }
 
@@ -523,13 +523,13 @@ template <typename D> event_revoker<ICoreInkIndependentInputSource> impl_ICoreIn
 
 template <typename D> void impl_ICoreInkIndependentInputSource<D>::PointerPressing(event_token cookie) const
 {
-    check_hresult(shim()->remove_PointerPressing(cookie));
+    check_hresult(static_cast<const ICoreInkIndependentInputSource &>(static_cast<const D &>(*this))->remove_PointerPressing(cookie));
 }
 
 template <typename D> event_token impl_ICoreInkIndependentInputSource<D>::PointerMoving(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_PointerMoving(get(handler), &cookie));
+    check_hresult(static_cast<const ICoreInkIndependentInputSource &>(static_cast<const D &>(*this))->add_PointerMoving(get(handler), &cookie));
     return cookie;
 }
 
@@ -540,13 +540,13 @@ template <typename D> event_revoker<ICoreInkIndependentInputSource> impl_ICoreIn
 
 template <typename D> void impl_ICoreInkIndependentInputSource<D>::PointerMoving(event_token cookie) const
 {
-    check_hresult(shim()->remove_PointerMoving(cookie));
+    check_hresult(static_cast<const ICoreInkIndependentInputSource &>(static_cast<const D &>(*this))->remove_PointerMoving(cookie));
 }
 
 template <typename D> event_token impl_ICoreInkIndependentInputSource<D>::PointerReleasing(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_PointerReleasing(get(handler), &cookie));
+    check_hresult(static_cast<const ICoreInkIndependentInputSource &>(static_cast<const D &>(*this))->add_PointerReleasing(get(handler), &cookie));
     return cookie;
 }
 
@@ -557,13 +557,13 @@ template <typename D> event_revoker<ICoreInkIndependentInputSource> impl_ICoreIn
 
 template <typename D> void impl_ICoreInkIndependentInputSource<D>::PointerReleasing(event_token cookie) const
 {
-    check_hresult(shim()->remove_PointerReleasing(cookie));
+    check_hresult(static_cast<const ICoreInkIndependentInputSource &>(static_cast<const D &>(*this))->remove_PointerReleasing(cookie));
 }
 
 template <typename D> event_token impl_ICoreInkIndependentInputSource<D>::PointerLost(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_PointerLost(get(handler), &cookie));
+    check_hresult(static_cast<const ICoreInkIndependentInputSource &>(static_cast<const D &>(*this))->add_PointerLost(get(handler), &cookie));
     return cookie;
 }
 
@@ -574,53 +574,53 @@ template <typename D> event_revoker<ICoreInkIndependentInputSource> impl_ICoreIn
 
 template <typename D> void impl_ICoreInkIndependentInputSource<D>::PointerLost(event_token cookie) const
 {
-    check_hresult(shim()->remove_PointerLost(cookie));
+    check_hresult(static_cast<const ICoreInkIndependentInputSource &>(static_cast<const D &>(*this))->remove_PointerLost(cookie));
 }
 
 template <typename D> Windows::UI::Input::Inking::InkPresenter impl_ICoreInkIndependentInputSource<D>::InkPresenter() const
 {
     Windows::UI::Input::Inking::InkPresenter value { nullptr };
-    check_hresult(shim()->get_InkPresenter(put(value)));
+    check_hresult(static_cast<const ICoreInkIndependentInputSource &>(static_cast<const D &>(*this))->get_InkPresenter(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource impl_ICoreInkIndependentInputSourceStatics<D>::Create(const Windows::UI::Input::Inking::InkPresenter & inkPresenter) const
 {
     Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource inkIndependentInputSource { nullptr };
-    check_hresult(shim()->abi_Create(get(inkPresenter), put(inkIndependentInputSource)));
+    check_hresult(static_cast<const ICoreInkIndependentInputSourceStatics &>(static_cast<const D &>(*this))->abi_Create(get(inkPresenter), put(inkIndependentInputSource)));
     return inkIndependentInputSource;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::UI::Input::Inking::InkPoint> impl_ICoreWetStrokeUpdateEventArgs<D>::NewInkPoints() const
 {
     Windows::Foundation::Collections::IVector<Windows::UI::Input::Inking::InkPoint> value;
-    check_hresult(shim()->get_NewInkPoints(put(value)));
+    check_hresult(static_cast<const ICoreWetStrokeUpdateEventArgs &>(static_cast<const D &>(*this))->get_NewInkPoints(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_ICoreWetStrokeUpdateEventArgs<D>::PointerId() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_PointerId(&value));
+    check_hresult(static_cast<const ICoreWetStrokeUpdateEventArgs &>(static_cast<const D &>(*this))->get_PointerId(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Inking::Core::CoreWetStrokeDisposition impl_ICoreWetStrokeUpdateEventArgs<D>::Disposition() const
 {
     Windows::UI::Input::Inking::Core::CoreWetStrokeDisposition value {};
-    check_hresult(shim()->get_Disposition(&value));
+    check_hresult(static_cast<const ICoreWetStrokeUpdateEventArgs &>(static_cast<const D &>(*this))->get_Disposition(&value));
     return value;
 }
 
 template <typename D> void impl_ICoreWetStrokeUpdateEventArgs<D>::Disposition(Windows::UI::Input::Inking::Core::CoreWetStrokeDisposition value) const
 {
-    check_hresult(shim()->put_Disposition(value));
+    check_hresult(static_cast<const ICoreWetStrokeUpdateEventArgs &>(static_cast<const D &>(*this))->put_Disposition(value));
 }
 
 template <typename D> event_token impl_ICoreWetStrokeUpdateSource<D>::WetStrokeStarting(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource, Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_WetStrokeStarting(get(handler), &cookie));
+    check_hresult(static_cast<const ICoreWetStrokeUpdateSource &>(static_cast<const D &>(*this))->add_WetStrokeStarting(get(handler), &cookie));
     return cookie;
 }
 
@@ -631,13 +631,13 @@ template <typename D> event_revoker<ICoreWetStrokeUpdateSource> impl_ICoreWetStr
 
 template <typename D> void impl_ICoreWetStrokeUpdateSource<D>::WetStrokeStarting(event_token cookie) const
 {
-    check_hresult(shim()->remove_WetStrokeStarting(cookie));
+    check_hresult(static_cast<const ICoreWetStrokeUpdateSource &>(static_cast<const D &>(*this))->remove_WetStrokeStarting(cookie));
 }
 
 template <typename D> event_token impl_ICoreWetStrokeUpdateSource<D>::WetStrokeContinuing(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource, Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_WetStrokeContinuing(get(handler), &cookie));
+    check_hresult(static_cast<const ICoreWetStrokeUpdateSource &>(static_cast<const D &>(*this))->add_WetStrokeContinuing(get(handler), &cookie));
     return cookie;
 }
 
@@ -648,13 +648,13 @@ template <typename D> event_revoker<ICoreWetStrokeUpdateSource> impl_ICoreWetStr
 
 template <typename D> void impl_ICoreWetStrokeUpdateSource<D>::WetStrokeContinuing(event_token cookie) const
 {
-    check_hresult(shim()->remove_WetStrokeContinuing(cookie));
+    check_hresult(static_cast<const ICoreWetStrokeUpdateSource &>(static_cast<const D &>(*this))->remove_WetStrokeContinuing(cookie));
 }
 
 template <typename D> event_token impl_ICoreWetStrokeUpdateSource<D>::WetStrokeStopping(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource, Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_WetStrokeStopping(get(handler), &cookie));
+    check_hresult(static_cast<const ICoreWetStrokeUpdateSource &>(static_cast<const D &>(*this))->add_WetStrokeStopping(get(handler), &cookie));
     return cookie;
 }
 
@@ -665,13 +665,13 @@ template <typename D> event_revoker<ICoreWetStrokeUpdateSource> impl_ICoreWetStr
 
 template <typename D> void impl_ICoreWetStrokeUpdateSource<D>::WetStrokeStopping(event_token cookie) const
 {
-    check_hresult(shim()->remove_WetStrokeStopping(cookie));
+    check_hresult(static_cast<const ICoreWetStrokeUpdateSource &>(static_cast<const D &>(*this))->remove_WetStrokeStopping(cookie));
 }
 
 template <typename D> event_token impl_ICoreWetStrokeUpdateSource<D>::WetStrokeCompleted(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource, Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_WetStrokeCompleted(get(handler), &cookie));
+    check_hresult(static_cast<const ICoreWetStrokeUpdateSource &>(static_cast<const D &>(*this))->add_WetStrokeCompleted(get(handler), &cookie));
     return cookie;
 }
 
@@ -682,13 +682,13 @@ template <typename D> event_revoker<ICoreWetStrokeUpdateSource> impl_ICoreWetStr
 
 template <typename D> void impl_ICoreWetStrokeUpdateSource<D>::WetStrokeCompleted(event_token cookie) const
 {
-    check_hresult(shim()->remove_WetStrokeCompleted(cookie));
+    check_hresult(static_cast<const ICoreWetStrokeUpdateSource &>(static_cast<const D &>(*this))->remove_WetStrokeCompleted(cookie));
 }
 
 template <typename D> event_token impl_ICoreWetStrokeUpdateSource<D>::WetStrokeCanceled(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource, Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_WetStrokeCanceled(get(handler), &cookie));
+    check_hresult(static_cast<const ICoreWetStrokeUpdateSource &>(static_cast<const D &>(*this))->add_WetStrokeCanceled(get(handler), &cookie));
     return cookie;
 }
 
@@ -699,20 +699,20 @@ template <typename D> event_revoker<ICoreWetStrokeUpdateSource> impl_ICoreWetStr
 
 template <typename D> void impl_ICoreWetStrokeUpdateSource<D>::WetStrokeCanceled(event_token cookie) const
 {
-    check_hresult(shim()->remove_WetStrokeCanceled(cookie));
+    check_hresult(static_cast<const ICoreWetStrokeUpdateSource &>(static_cast<const D &>(*this))->remove_WetStrokeCanceled(cookie));
 }
 
 template <typename D> Windows::UI::Input::Inking::InkPresenter impl_ICoreWetStrokeUpdateSource<D>::InkPresenter() const
 {
     Windows::UI::Input::Inking::InkPresenter value { nullptr };
-    check_hresult(shim()->get_InkPresenter(put(value)));
+    check_hresult(static_cast<const ICoreWetStrokeUpdateSource &>(static_cast<const D &>(*this))->get_InkPresenter(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource impl_ICoreWetStrokeUpdateSourceStatics<D>::Create(const Windows::UI::Input::Inking::InkPresenter & inkPresenter) const
 {
     Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource WetStrokeUpdateSource { nullptr };
-    check_hresult(shim()->abi_Create(get(inkPresenter), put(WetStrokeUpdateSource)));
+    check_hresult(static_cast<const ICoreWetStrokeUpdateSourceStatics &>(static_cast<const D &>(*this))->abi_Create(get(inkPresenter), put(WetStrokeUpdateSource)));
     return WetStrokeUpdateSource;
 }
 

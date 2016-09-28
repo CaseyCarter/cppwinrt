@@ -65,11 +65,11 @@ template <> struct traits<Windows::Media::ContentRestrictions::RatedContentRestr
 
 namespace Windows::Media::ContentRestrictions {
 
-template <typename T> class impl_IContentRestrictionsBrowsePolicy;
-template <typename T> class impl_IRatedContentDescription;
-template <typename T> class impl_IRatedContentDescriptionFactory;
-template <typename T> class impl_IRatedContentRestrictions;
-template <typename T> class impl_IRatedContentRestrictionsFactory;
+template <typename T> struct impl_IContentRestrictionsBrowsePolicy;
+template <typename T> struct impl_IRatedContentDescription;
+template <typename T> struct impl_IRatedContentDescriptionFactory;
+template <typename T> struct impl_IRatedContentRestrictions;
+template <typename T> struct impl_IRatedContentRestrictionsFactory;
 
 }
 
@@ -108,21 +108,18 @@ template <> struct traits<Windows::Media::ContentRestrictions::IRatedContentRest
 template <> struct traits<Windows::Media::ContentRestrictions::ContentRestrictionsBrowsePolicy>
 {
     using abi = ABI::Windows::Media::ContentRestrictions::ContentRestrictionsBrowsePolicy;
-    using default_interface = Windows::Media::ContentRestrictions::IContentRestrictionsBrowsePolicy;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.ContentRestrictions.ContentRestrictionsBrowsePolicy"; }
 };
 
 template <> struct traits<Windows::Media::ContentRestrictions::RatedContentDescription>
 {
     using abi = ABI::Windows::Media::ContentRestrictions::RatedContentDescription;
-    using default_interface = Windows::Media::ContentRestrictions::IRatedContentDescription;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.ContentRestrictions.RatedContentDescription"; }
 };
 
 template <> struct traits<Windows::Media::ContentRestrictions::RatedContentRestrictions>
 {
     using abi = ABI::Windows::Media::ContentRestrictions::RatedContentRestrictions;
-    using default_interface = Windows::Media::ContentRestrictions::IRatedContentRestrictions;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.ContentRestrictions.RatedContentRestrictions"; }
 };
 

@@ -52,21 +52,13 @@ template <> struct __declspec(uuid("46617d87-2cd2-5e31-9a30-ea86f8aa7ca1")) __de
 namespace Windows::UI::Composition::Interactions {
 
 template <typename D>
-class WINRT_EBO impl_ICompositionInteractionSource
+struct WINRT_EBO impl_ICompositionInteractionSource
 {
-    auto shim() const { return impl::shim<D, ICompositionInteractionSource>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositionInteractionSourceCollection
+struct WINRT_EBO impl_ICompositionInteractionSourceCollection
 {
-    auto shim() const { return impl::shim<D, ICompositionInteractionSourceCollection>(this); }
-
-public:
-
     int32_t Count() const;
     void Add(const Windows::UI::Composition::Interactions::ICompositionInteractionSource & value) const;
     void Remove(const Windows::UI::Composition::Interactions::ICompositionInteractionSource & value) const;
@@ -74,12 +66,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IInteractionTracker
+struct WINRT_EBO impl_IInteractionTracker
 {
-    auto shim() const { return impl::shim<D, IInteractionTracker>(this); }
-
-public:
-
     Windows::UI::Composition::Interactions::CompositionInteractionSourceCollection InteractionSources() const;
     bool IsPositionRoundingSuggested() const;
     Windows::Foundation::Numerics::float3 MaxPosition() const;
@@ -116,50 +104,30 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IInteractionTrackerCustomAnimationStateEnteredArgs
+struct WINRT_EBO impl_IInteractionTrackerCustomAnimationStateEnteredArgs
 {
-    auto shim() const { return impl::shim<D, IInteractionTrackerCustomAnimationStateEnteredArgs>(this); }
-
-public:
-
     int32_t RequestId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInteractionTrackerIdleStateEnteredArgs
+struct WINRT_EBO impl_IInteractionTrackerIdleStateEnteredArgs
 {
-    auto shim() const { return impl::shim<D, IInteractionTrackerIdleStateEnteredArgs>(this); }
-
-public:
-
     int32_t RequestId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInteractionTrackerInertiaModifier
+struct WINRT_EBO impl_IInteractionTrackerInertiaModifier
 {
-    auto shim() const { return impl::shim<D, IInteractionTrackerInertiaModifier>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IInteractionTrackerInertiaModifierFactory
+struct WINRT_EBO impl_IInteractionTrackerInertiaModifierFactory
 {
-    auto shim() const { return impl::shim<D, IInteractionTrackerInertiaModifierFactory>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IInteractionTrackerInertiaMotion
+struct WINRT_EBO impl_IInteractionTrackerInertiaMotion
 {
-    auto shim() const { return impl::shim<D, IInteractionTrackerInertiaMotion>(this); }
-
-public:
-
     Windows::UI::Composition::ExpressionAnimation Condition() const;
     void Condition(const Windows::UI::Composition::ExpressionAnimation & value) const;
     Windows::UI::Composition::ExpressionAnimation Motion() const;
@@ -167,22 +135,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IInteractionTrackerInertiaMotionStatics
+struct WINRT_EBO impl_IInteractionTrackerInertiaMotionStatics
 {
-    auto shim() const { return impl::shim<D, IInteractionTrackerInertiaMotionStatics>(this); }
-
-public:
-
     Windows::UI::Composition::Interactions::InteractionTrackerInertiaMotion Create(const Windows::UI::Composition::Compositor & compositor) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInteractionTrackerInertiaRestingValue
+struct WINRT_EBO impl_IInteractionTrackerInertiaRestingValue
 {
-    auto shim() const { return impl::shim<D, IInteractionTrackerInertiaRestingValue>(this); }
-
-public:
-
     Windows::UI::Composition::ExpressionAnimation Condition() const;
     void Condition(const Windows::UI::Composition::ExpressionAnimation & value) const;
     Windows::UI::Composition::ExpressionAnimation RestingValue() const;
@@ -190,22 +150,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IInteractionTrackerInertiaRestingValueStatics
+struct WINRT_EBO impl_IInteractionTrackerInertiaRestingValueStatics
 {
-    auto shim() const { return impl::shim<D, IInteractionTrackerInertiaRestingValueStatics>(this); }
-
-public:
-
     Windows::UI::Composition::Interactions::InteractionTrackerInertiaRestingValue Create(const Windows::UI::Composition::Compositor & compositor) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInteractionTrackerInertiaStateEnteredArgs
+struct WINRT_EBO impl_IInteractionTrackerInertiaStateEnteredArgs
 {
-    auto shim() const { return impl::shim<D, IInteractionTrackerInertiaStateEnteredArgs>(this); }
-
-public:
-
     Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> ModifiedRestingPosition() const;
     Windows::Foundation::IReference<float> ModifiedRestingScale() const;
     Windows::Foundation::Numerics::float3 NaturalRestingPosition() const;
@@ -216,22 +168,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IInteractionTrackerInteractingStateEnteredArgs
+struct WINRT_EBO impl_IInteractionTrackerInteractingStateEnteredArgs
 {
-    auto shim() const { return impl::shim<D, IInteractionTrackerInteractingStateEnteredArgs>(this); }
-
-public:
-
     int32_t RequestId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInteractionTrackerOwner
+struct WINRT_EBO impl_IInteractionTrackerOwner
 {
-    auto shim() const { return impl::shim<D, IInteractionTrackerOwner>(this); }
-
-public:
-
     void CustomAnimationStateEntered(const Windows::UI::Composition::Interactions::InteractionTracker & sender, const Windows::UI::Composition::Interactions::InteractionTrackerCustomAnimationStateEnteredArgs & args) const;
     void IdleStateEntered(const Windows::UI::Composition::Interactions::InteractionTracker & sender, const Windows::UI::Composition::Interactions::InteractionTrackerIdleStateEnteredArgs & args) const;
     void InertiaStateEntered(const Windows::UI::Composition::Interactions::InteractionTracker & sender, const Windows::UI::Composition::Interactions::InteractionTrackerInertiaStateEnteredArgs & args) const;
@@ -241,45 +185,29 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IInteractionTrackerRequestIgnoredArgs
+struct WINRT_EBO impl_IInteractionTrackerRequestIgnoredArgs
 {
-    auto shim() const { return impl::shim<D, IInteractionTrackerRequestIgnoredArgs>(this); }
-
-public:
-
     int32_t RequestId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInteractionTrackerStatics
+struct WINRT_EBO impl_IInteractionTrackerStatics
 {
-    auto shim() const { return impl::shim<D, IInteractionTrackerStatics>(this); }
-
-public:
-
     Windows::UI::Composition::Interactions::InteractionTracker Create(const Windows::UI::Composition::Compositor & compositor) const;
     Windows::UI::Composition::Interactions::InteractionTracker CreateWithOwner(const Windows::UI::Composition::Compositor & compositor, const Windows::UI::Composition::Interactions::IInteractionTrackerOwner & owner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInteractionTrackerValuesChangedArgs
+struct WINRT_EBO impl_IInteractionTrackerValuesChangedArgs
 {
-    auto shim() const { return impl::shim<D, IInteractionTrackerValuesChangedArgs>(this); }
-
-public:
-
     Windows::Foundation::Numerics::float3 Position() const;
     int32_t RequestId() const;
     float Scale() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVisualInteractionSource
+struct WINRT_EBO impl_IVisualInteractionSource
 {
-    auto shim() const { return impl::shim<D, IVisualInteractionSource>(this); }
-
-public:
-
     bool IsPositionXRailsEnabled() const;
     void IsPositionXRailsEnabled(bool value) const;
     bool IsPositionYRailsEnabled() const;
@@ -303,12 +231,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVisualInteractionSourceStatics
+struct WINRT_EBO impl_IVisualInteractionSourceStatics
 {
-    auto shim() const { return impl::shim<D, IVisualInteractionSourceStatics>(this); }
-
-public:
-
     Windows::UI::Composition::Interactions::VisualInteractionSource Create(const Windows::UI::Composition::Visual & source) const;
 };
 

@@ -11,12 +11,8 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::UI::Xaml::Media::Media3D {
 
 template <typename D>
-class WINRT_EBO impl_ICompositeTransform3D
+struct WINRT_EBO impl_ICompositeTransform3D
 {
-    auto shim() const { return impl::shim<D, ICompositeTransform3D>(this); }
-
-public:
-
     double CenterX() const;
     void CenterX(double value) const;
     double CenterY() const;
@@ -44,12 +40,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositeTransform3DStatics
+struct WINRT_EBO impl_ICompositeTransform3DStatics
 {
-    auto shim() const { return impl::shim<D, ICompositeTransform3DStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty CenterXProperty() const;
     Windows::UI::Xaml::DependencyProperty CenterYProperty() const;
     Windows::UI::Xaml::DependencyProperty CenterZProperty() const;
@@ -65,21 +57,13 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMatrix3DHelper
+struct WINRT_EBO impl_IMatrix3DHelper
 {
-    auto shim() const { return impl::shim<D, IMatrix3DHelper>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IMatrix3DHelperStatics
+struct WINRT_EBO impl_IMatrix3DHelperStatics
 {
-    auto shim() const { return impl::shim<D, IMatrix3DHelperStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Media3D::Matrix3D Identity() const;
     Windows::UI::Xaml::Media::Media3D::Matrix3D Multiply(const Windows::UI::Xaml::Media::Media3D::Matrix3D & matrix1, const Windows::UI::Xaml::Media::Media3D::Matrix3D & matrix2) const;
     Windows::UI::Xaml::Media::Media3D::Matrix3D FromElements(double m11, double m12, double m13, double m14, double m21, double m22, double m23, double m24, double m31, double m32, double m33, double m34, double offsetX, double offsetY, double offsetZ, double m44) const;
@@ -89,12 +73,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerspectiveTransform3D
+struct WINRT_EBO impl_IPerspectiveTransform3D
 {
-    auto shim() const { return impl::shim<D, IPerspectiveTransform3D>(this); }
-
-public:
-
     double Depth() const;
     void Depth(double value) const;
     double OffsetX() const;
@@ -104,33 +84,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerspectiveTransform3DStatics
+struct WINRT_EBO impl_IPerspectiveTransform3DStatics
 {
-    auto shim() const { return impl::shim<D, IPerspectiveTransform3DStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty DepthProperty() const;
     Windows::UI::Xaml::DependencyProperty OffsetXProperty() const;
     Windows::UI::Xaml::DependencyProperty OffsetYProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITransform3D
+struct WINRT_EBO impl_ITransform3D
 {
-    auto shim() const { return impl::shim<D, ITransform3D>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ITransform3DFactory
+struct WINRT_EBO impl_ITransform3DFactory
 {
-    auto shim() const { return impl::shim<D, ITransform3DFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Media3D::Transform3D CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 

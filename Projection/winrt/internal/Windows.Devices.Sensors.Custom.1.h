@@ -53,10 +53,10 @@ template <> struct traits<Windows::Devices::Sensors::Custom::CustomSensorReading
 
 namespace Windows::Devices::Sensors::Custom {
 
-template <typename T> class impl_ICustomSensor;
-template <typename T> class impl_ICustomSensorReading;
-template <typename T> class impl_ICustomSensorReadingChangedEventArgs;
-template <typename T> class impl_ICustomSensorStatics;
+template <typename T> struct impl_ICustomSensor;
+template <typename T> struct impl_ICustomSensorReading;
+template <typename T> struct impl_ICustomSensorReadingChangedEventArgs;
+template <typename T> struct impl_ICustomSensorStatics;
 
 }
 
@@ -89,21 +89,18 @@ template <> struct traits<Windows::Devices::Sensors::Custom::ICustomSensorStatic
 template <> struct traits<Windows::Devices::Sensors::Custom::CustomSensor>
 {
     using abi = ABI::Windows::Devices::Sensors::Custom::CustomSensor;
-    using default_interface = Windows::Devices::Sensors::Custom::ICustomSensor;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.Custom.CustomSensor"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::Custom::CustomSensorReading>
 {
     using abi = ABI::Windows::Devices::Sensors::Custom::CustomSensorReading;
-    using default_interface = Windows::Devices::Sensors::Custom::ICustomSensorReading;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.Custom.CustomSensorReading"; }
 };
 
 template <> struct traits<Windows::Devices::Sensors::Custom::CustomSensorReadingChangedEventArgs>
 {
     using abi = ABI::Windows::Devices::Sensors::Custom::CustomSensorReadingChangedEventArgs;
-    using default_interface = Windows::Devices::Sensors::Custom::ICustomSensorReadingChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Sensors.Custom.CustomSensorReadingChangedEventArgs"; }
 };
 

@@ -46,9 +46,9 @@ template <> struct traits<Windows::Security::Authentication::Web::WebAuthenticat
 
 namespace Windows::Security::Authentication::Web {
 
-template <typename T> class impl_IWebAuthenticationBrokerStatics;
-template <typename T> class impl_IWebAuthenticationBrokerStatics2;
-template <typename T> class impl_IWebAuthenticationResult;
+template <typename T> struct impl_IWebAuthenticationBrokerStatics;
+template <typename T> struct impl_IWebAuthenticationBrokerStatics2;
+template <typename T> struct impl_IWebAuthenticationResult;
 
 }
 
@@ -80,7 +80,6 @@ template <> struct traits<Windows::Security::Authentication::Web::WebAuthenticat
 template <> struct traits<Windows::Security::Authentication::Web::WebAuthenticationResult>
 {
     using abi = ABI::Windows::Security::Authentication::Web::WebAuthenticationResult;
-    using default_interface = Windows::Security::Authentication::Web::IWebAuthenticationResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Authentication.Web.WebAuthenticationResult"; }
 };
 

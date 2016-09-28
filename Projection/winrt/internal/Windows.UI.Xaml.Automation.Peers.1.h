@@ -973,173 +973,173 @@ template <> struct traits<Windows::UI::Xaml::Automation::Peers::ToggleSwitchAuto
 
 namespace Windows::UI::Xaml::Automation::Peers {
 
-template <typename T> class impl_IAppBarAutomationPeer;
-template <typename T> class impl_IAppBarAutomationPeerFactory;
-template <typename T> class impl_IAppBarButtonAutomationPeer;
-template <typename T> class impl_IAppBarButtonAutomationPeerFactory;
-template <typename T> class impl_IAppBarToggleButtonAutomationPeer;
-template <typename T> class impl_IAppBarToggleButtonAutomationPeerFactory;
-template <typename T> class impl_IAutoSuggestBoxAutomationPeer;
-template <typename T> class impl_IAutoSuggestBoxAutomationPeerFactory;
-template <typename T> class impl_IAutomationPeer;
-template <typename T> class impl_IAutomationPeer2;
-template <typename T> class impl_IAutomationPeer3;
-template <typename T> class impl_IAutomationPeer4;
-template <typename T> class impl_IAutomationPeer5;
-template <typename T> class impl_IAutomationPeerAnnotation;
-template <typename T> class impl_IAutomationPeerAnnotationFactory;
-template <typename T> class impl_IAutomationPeerAnnotationStatics;
-template <typename T> class impl_IAutomationPeerFactory;
-template <typename T> class impl_IAutomationPeerOverrides;
-template <typename T> class impl_IAutomationPeerOverrides2;
-template <typename T> class impl_IAutomationPeerOverrides3;
-template <typename T> class impl_IAutomationPeerOverrides4;
-template <typename T> class impl_IAutomationPeerOverrides5;
-template <typename T> class impl_IAutomationPeerProtected;
-template <typename T> class impl_IAutomationPeerStatics;
-template <typename T> class impl_IAutomationPeerStatics3;
-template <typename T> class impl_IButtonAutomationPeer;
-template <typename T> class impl_IButtonAutomationPeerFactory;
-template <typename T> class impl_IButtonBaseAutomationPeer;
-template <typename T> class impl_IButtonBaseAutomationPeerFactory;
-template <typename T> class impl_ICaptureElementAutomationPeer;
-template <typename T> class impl_ICaptureElementAutomationPeerFactory;
-template <typename T> class impl_ICheckBoxAutomationPeer;
-template <typename T> class impl_ICheckBoxAutomationPeerFactory;
-template <typename T> class impl_IComboBoxAutomationPeer;
-template <typename T> class impl_IComboBoxAutomationPeerFactory;
-template <typename T> class impl_IComboBoxItemAutomationPeer;
-template <typename T> class impl_IComboBoxItemAutomationPeerFactory;
-template <typename T> class impl_IComboBoxItemDataAutomationPeer;
-template <typename T> class impl_IComboBoxItemDataAutomationPeerFactory;
-template <typename T> class impl_IDatePickerAutomationPeer;
-template <typename T> class impl_IDatePickerAutomationPeerFactory;
-template <typename T> class impl_IDatePickerFlyoutPresenterAutomationPeer;
-template <typename T> class impl_IFlipViewAutomationPeer;
-template <typename T> class impl_IFlipViewAutomationPeerFactory;
-template <typename T> class impl_IFlipViewItemAutomationPeer;
-template <typename T> class impl_IFlipViewItemAutomationPeerFactory;
-template <typename T> class impl_IFlipViewItemDataAutomationPeer;
-template <typename T> class impl_IFlipViewItemDataAutomationPeerFactory;
-template <typename T> class impl_IFlyoutPresenterAutomationPeer;
-template <typename T> class impl_IFlyoutPresenterAutomationPeerFactory;
-template <typename T> class impl_IFrameworkElementAutomationPeer;
-template <typename T> class impl_IFrameworkElementAutomationPeerFactory;
-template <typename T> class impl_IFrameworkElementAutomationPeerStatics;
-template <typename T> class impl_IGridViewAutomationPeer;
-template <typename T> class impl_IGridViewAutomationPeerFactory;
-template <typename T> class impl_IGridViewHeaderItemAutomationPeer;
-template <typename T> class impl_IGridViewHeaderItemAutomationPeerFactory;
-template <typename T> class impl_IGridViewItemAutomationPeer;
-template <typename T> class impl_IGridViewItemAutomationPeerFactory;
-template <typename T> class impl_IGridViewItemDataAutomationPeer;
-template <typename T> class impl_IGridViewItemDataAutomationPeerFactory;
-template <typename T> class impl_IGroupItemAutomationPeer;
-template <typename T> class impl_IGroupItemAutomationPeerFactory;
-template <typename T> class impl_IHubAutomationPeer;
-template <typename T> class impl_IHubAutomationPeerFactory;
-template <typename T> class impl_IHubSectionAutomationPeer;
-template <typename T> class impl_IHubSectionAutomationPeerFactory;
-template <typename T> class impl_IHyperlinkButtonAutomationPeer;
-template <typename T> class impl_IHyperlinkButtonAutomationPeerFactory;
-template <typename T> class impl_IImageAutomationPeer;
-template <typename T> class impl_IImageAutomationPeerFactory;
-template <typename T> class impl_IInkToolbarAutomationPeer;
-template <typename T> class impl_IItemAutomationPeer;
-template <typename T> class impl_IItemAutomationPeerFactory;
-template <typename T> class impl_IItemsControlAutomationPeer;
-template <typename T> class impl_IItemsControlAutomationPeer2;
-template <typename T> class impl_IItemsControlAutomationPeerFactory;
-template <typename T> class impl_IItemsControlAutomationPeerOverrides2;
-template <typename T> class impl_IListBoxAutomationPeer;
-template <typename T> class impl_IListBoxAutomationPeerFactory;
-template <typename T> class impl_IListBoxItemAutomationPeer;
-template <typename T> class impl_IListBoxItemAutomationPeerFactory;
-template <typename T> class impl_IListBoxItemDataAutomationPeer;
-template <typename T> class impl_IListBoxItemDataAutomationPeerFactory;
-template <typename T> class impl_IListPickerFlyoutPresenterAutomationPeer;
-template <typename T> class impl_IListViewAutomationPeer;
-template <typename T> class impl_IListViewAutomationPeerFactory;
-template <typename T> class impl_IListViewBaseAutomationPeer;
-template <typename T> class impl_IListViewBaseAutomationPeerFactory;
-template <typename T> class impl_IListViewBaseHeaderItemAutomationPeer;
-template <typename T> class impl_IListViewBaseHeaderItemAutomationPeerFactory;
-template <typename T> class impl_IListViewHeaderItemAutomationPeer;
-template <typename T> class impl_IListViewHeaderItemAutomationPeerFactory;
-template <typename T> class impl_IListViewItemAutomationPeer;
-template <typename T> class impl_IListViewItemAutomationPeerFactory;
-template <typename T> class impl_IListViewItemDataAutomationPeer;
-template <typename T> class impl_IListViewItemDataAutomationPeerFactory;
-template <typename T> class impl_ILoopingSelectorAutomationPeer;
-template <typename T> class impl_ILoopingSelectorItemAutomationPeer;
-template <typename T> class impl_ILoopingSelectorItemDataAutomationPeer;
-template <typename T> class impl_IMapControlAutomationPeer;
-template <typename T> class impl_IMediaElementAutomationPeer;
-template <typename T> class impl_IMediaElementAutomationPeerFactory;
-template <typename T> class impl_IMediaPlayerElementAutomationPeer;
-template <typename T> class impl_IMediaPlayerElementAutomationPeerFactory;
-template <typename T> class impl_IMediaTransportControlsAutomationPeer;
-template <typename T> class impl_IMediaTransportControlsAutomationPeerFactory;
-template <typename T> class impl_IMenuFlyoutItemAutomationPeer;
-template <typename T> class impl_IMenuFlyoutItemAutomationPeerFactory;
-template <typename T> class impl_IMenuFlyoutPresenterAutomationPeer;
-template <typename T> class impl_IMenuFlyoutPresenterAutomationPeerFactory;
-template <typename T> class impl_IPasswordBoxAutomationPeer;
-template <typename T> class impl_IPasswordBoxAutomationPeerFactory;
-template <typename T> class impl_IPickerFlyoutPresenterAutomationPeer;
-template <typename T> class impl_IPivotAutomationPeer;
-template <typename T> class impl_IPivotAutomationPeerFactory;
-template <typename T> class impl_IPivotItemAutomationPeer;
-template <typename T> class impl_IPivotItemAutomationPeerFactory;
-template <typename T> class impl_IPivotItemDataAutomationPeer;
-template <typename T> class impl_IPivotItemDataAutomationPeerFactory;
-template <typename T> class impl_IProgressBarAutomationPeer;
-template <typename T> class impl_IProgressBarAutomationPeerFactory;
-template <typename T> class impl_IProgressRingAutomationPeer;
-template <typename T> class impl_IProgressRingAutomationPeerFactory;
-template <typename T> class impl_IRadioButtonAutomationPeer;
-template <typename T> class impl_IRadioButtonAutomationPeerFactory;
-template <typename T> class impl_IRangeBaseAutomationPeer;
-template <typename T> class impl_IRangeBaseAutomationPeerFactory;
-template <typename T> class impl_IRepeatButtonAutomationPeer;
-template <typename T> class impl_IRepeatButtonAutomationPeerFactory;
-template <typename T> class impl_IRichEditBoxAutomationPeer;
-template <typename T> class impl_IRichEditBoxAutomationPeerFactory;
-template <typename T> class impl_IRichTextBlockAutomationPeer;
-template <typename T> class impl_IRichTextBlockAutomationPeerFactory;
-template <typename T> class impl_IRichTextBlockOverflowAutomationPeer;
-template <typename T> class impl_IRichTextBlockOverflowAutomationPeerFactory;
-template <typename T> class impl_IScrollBarAutomationPeer;
-template <typename T> class impl_IScrollBarAutomationPeerFactory;
-template <typename T> class impl_IScrollViewerAutomationPeer;
-template <typename T> class impl_IScrollViewerAutomationPeerFactory;
-template <typename T> class impl_ISearchBoxAutomationPeer;
-template <typename T> class impl_ISearchBoxAutomationPeerFactory;
-template <typename T> class impl_ISelectorAutomationPeer;
-template <typename T> class impl_ISelectorAutomationPeerFactory;
-template <typename T> class impl_ISelectorItemAutomationPeer;
-template <typename T> class impl_ISelectorItemAutomationPeerFactory;
-template <typename T> class impl_ISemanticZoomAutomationPeer;
-template <typename T> class impl_ISemanticZoomAutomationPeerFactory;
-template <typename T> class impl_ISettingsFlyoutAutomationPeer;
-template <typename T> class impl_ISettingsFlyoutAutomationPeerFactory;
-template <typename T> class impl_ISliderAutomationPeer;
-template <typename T> class impl_ISliderAutomationPeerFactory;
-template <typename T> class impl_ITextBlockAutomationPeer;
-template <typename T> class impl_ITextBlockAutomationPeerFactory;
-template <typename T> class impl_ITextBoxAutomationPeer;
-template <typename T> class impl_ITextBoxAutomationPeerFactory;
-template <typename T> class impl_IThumbAutomationPeer;
-template <typename T> class impl_IThumbAutomationPeerFactory;
-template <typename T> class impl_ITimePickerAutomationPeer;
-template <typename T> class impl_ITimePickerAutomationPeerFactory;
-template <typename T> class impl_ITimePickerFlyoutPresenterAutomationPeer;
-template <typename T> class impl_IToggleButtonAutomationPeer;
-template <typename T> class impl_IToggleButtonAutomationPeerFactory;
-template <typename T> class impl_IToggleMenuFlyoutItemAutomationPeer;
-template <typename T> class impl_IToggleMenuFlyoutItemAutomationPeerFactory;
-template <typename T> class impl_IToggleSwitchAutomationPeer;
-template <typename T> class impl_IToggleSwitchAutomationPeerFactory;
+template <typename T> struct impl_IAppBarAutomationPeer;
+template <typename T> struct impl_IAppBarAutomationPeerFactory;
+template <typename T> struct impl_IAppBarButtonAutomationPeer;
+template <typename T> struct impl_IAppBarButtonAutomationPeerFactory;
+template <typename T> struct impl_IAppBarToggleButtonAutomationPeer;
+template <typename T> struct impl_IAppBarToggleButtonAutomationPeerFactory;
+template <typename T> struct impl_IAutoSuggestBoxAutomationPeer;
+template <typename T> struct impl_IAutoSuggestBoxAutomationPeerFactory;
+template <typename T> struct impl_IAutomationPeer;
+template <typename T> struct impl_IAutomationPeer2;
+template <typename T> struct impl_IAutomationPeer3;
+template <typename T> struct impl_IAutomationPeer4;
+template <typename T> struct impl_IAutomationPeer5;
+template <typename T> struct impl_IAutomationPeerAnnotation;
+template <typename T> struct impl_IAutomationPeerAnnotationFactory;
+template <typename T> struct impl_IAutomationPeerAnnotationStatics;
+template <typename T> struct impl_IAutomationPeerFactory;
+template <typename T> struct impl_IAutomationPeerOverrides;
+template <typename T> struct impl_IAutomationPeerOverrides2;
+template <typename T> struct impl_IAutomationPeerOverrides3;
+template <typename T> struct impl_IAutomationPeerOverrides4;
+template <typename T> struct impl_IAutomationPeerOverrides5;
+template <typename T> struct impl_IAutomationPeerProtected;
+template <typename T> struct impl_IAutomationPeerStatics;
+template <typename T> struct impl_IAutomationPeerStatics3;
+template <typename T> struct impl_IButtonAutomationPeer;
+template <typename T> struct impl_IButtonAutomationPeerFactory;
+template <typename T> struct impl_IButtonBaseAutomationPeer;
+template <typename T> struct impl_IButtonBaseAutomationPeerFactory;
+template <typename T> struct impl_ICaptureElementAutomationPeer;
+template <typename T> struct impl_ICaptureElementAutomationPeerFactory;
+template <typename T> struct impl_ICheckBoxAutomationPeer;
+template <typename T> struct impl_ICheckBoxAutomationPeerFactory;
+template <typename T> struct impl_IComboBoxAutomationPeer;
+template <typename T> struct impl_IComboBoxAutomationPeerFactory;
+template <typename T> struct impl_IComboBoxItemAutomationPeer;
+template <typename T> struct impl_IComboBoxItemAutomationPeerFactory;
+template <typename T> struct impl_IComboBoxItemDataAutomationPeer;
+template <typename T> struct impl_IComboBoxItemDataAutomationPeerFactory;
+template <typename T> struct impl_IDatePickerAutomationPeer;
+template <typename T> struct impl_IDatePickerAutomationPeerFactory;
+template <typename T> struct impl_IDatePickerFlyoutPresenterAutomationPeer;
+template <typename T> struct impl_IFlipViewAutomationPeer;
+template <typename T> struct impl_IFlipViewAutomationPeerFactory;
+template <typename T> struct impl_IFlipViewItemAutomationPeer;
+template <typename T> struct impl_IFlipViewItemAutomationPeerFactory;
+template <typename T> struct impl_IFlipViewItemDataAutomationPeer;
+template <typename T> struct impl_IFlipViewItemDataAutomationPeerFactory;
+template <typename T> struct impl_IFlyoutPresenterAutomationPeer;
+template <typename T> struct impl_IFlyoutPresenterAutomationPeerFactory;
+template <typename T> struct impl_IFrameworkElementAutomationPeer;
+template <typename T> struct impl_IFrameworkElementAutomationPeerFactory;
+template <typename T> struct impl_IFrameworkElementAutomationPeerStatics;
+template <typename T> struct impl_IGridViewAutomationPeer;
+template <typename T> struct impl_IGridViewAutomationPeerFactory;
+template <typename T> struct impl_IGridViewHeaderItemAutomationPeer;
+template <typename T> struct impl_IGridViewHeaderItemAutomationPeerFactory;
+template <typename T> struct impl_IGridViewItemAutomationPeer;
+template <typename T> struct impl_IGridViewItemAutomationPeerFactory;
+template <typename T> struct impl_IGridViewItemDataAutomationPeer;
+template <typename T> struct impl_IGridViewItemDataAutomationPeerFactory;
+template <typename T> struct impl_IGroupItemAutomationPeer;
+template <typename T> struct impl_IGroupItemAutomationPeerFactory;
+template <typename T> struct impl_IHubAutomationPeer;
+template <typename T> struct impl_IHubAutomationPeerFactory;
+template <typename T> struct impl_IHubSectionAutomationPeer;
+template <typename T> struct impl_IHubSectionAutomationPeerFactory;
+template <typename T> struct impl_IHyperlinkButtonAutomationPeer;
+template <typename T> struct impl_IHyperlinkButtonAutomationPeerFactory;
+template <typename T> struct impl_IImageAutomationPeer;
+template <typename T> struct impl_IImageAutomationPeerFactory;
+template <typename T> struct impl_IInkToolbarAutomationPeer;
+template <typename T> struct impl_IItemAutomationPeer;
+template <typename T> struct impl_IItemAutomationPeerFactory;
+template <typename T> struct impl_IItemsControlAutomationPeer;
+template <typename T> struct impl_IItemsControlAutomationPeer2;
+template <typename T> struct impl_IItemsControlAutomationPeerFactory;
+template <typename T> struct impl_IItemsControlAutomationPeerOverrides2;
+template <typename T> struct impl_IListBoxAutomationPeer;
+template <typename T> struct impl_IListBoxAutomationPeerFactory;
+template <typename T> struct impl_IListBoxItemAutomationPeer;
+template <typename T> struct impl_IListBoxItemAutomationPeerFactory;
+template <typename T> struct impl_IListBoxItemDataAutomationPeer;
+template <typename T> struct impl_IListBoxItemDataAutomationPeerFactory;
+template <typename T> struct impl_IListPickerFlyoutPresenterAutomationPeer;
+template <typename T> struct impl_IListViewAutomationPeer;
+template <typename T> struct impl_IListViewAutomationPeerFactory;
+template <typename T> struct impl_IListViewBaseAutomationPeer;
+template <typename T> struct impl_IListViewBaseAutomationPeerFactory;
+template <typename T> struct impl_IListViewBaseHeaderItemAutomationPeer;
+template <typename T> struct impl_IListViewBaseHeaderItemAutomationPeerFactory;
+template <typename T> struct impl_IListViewHeaderItemAutomationPeer;
+template <typename T> struct impl_IListViewHeaderItemAutomationPeerFactory;
+template <typename T> struct impl_IListViewItemAutomationPeer;
+template <typename T> struct impl_IListViewItemAutomationPeerFactory;
+template <typename T> struct impl_IListViewItemDataAutomationPeer;
+template <typename T> struct impl_IListViewItemDataAutomationPeerFactory;
+template <typename T> struct impl_ILoopingSelectorAutomationPeer;
+template <typename T> struct impl_ILoopingSelectorItemAutomationPeer;
+template <typename T> struct impl_ILoopingSelectorItemDataAutomationPeer;
+template <typename T> struct impl_IMapControlAutomationPeer;
+template <typename T> struct impl_IMediaElementAutomationPeer;
+template <typename T> struct impl_IMediaElementAutomationPeerFactory;
+template <typename T> struct impl_IMediaPlayerElementAutomationPeer;
+template <typename T> struct impl_IMediaPlayerElementAutomationPeerFactory;
+template <typename T> struct impl_IMediaTransportControlsAutomationPeer;
+template <typename T> struct impl_IMediaTransportControlsAutomationPeerFactory;
+template <typename T> struct impl_IMenuFlyoutItemAutomationPeer;
+template <typename T> struct impl_IMenuFlyoutItemAutomationPeerFactory;
+template <typename T> struct impl_IMenuFlyoutPresenterAutomationPeer;
+template <typename T> struct impl_IMenuFlyoutPresenterAutomationPeerFactory;
+template <typename T> struct impl_IPasswordBoxAutomationPeer;
+template <typename T> struct impl_IPasswordBoxAutomationPeerFactory;
+template <typename T> struct impl_IPickerFlyoutPresenterAutomationPeer;
+template <typename T> struct impl_IPivotAutomationPeer;
+template <typename T> struct impl_IPivotAutomationPeerFactory;
+template <typename T> struct impl_IPivotItemAutomationPeer;
+template <typename T> struct impl_IPivotItemAutomationPeerFactory;
+template <typename T> struct impl_IPivotItemDataAutomationPeer;
+template <typename T> struct impl_IPivotItemDataAutomationPeerFactory;
+template <typename T> struct impl_IProgressBarAutomationPeer;
+template <typename T> struct impl_IProgressBarAutomationPeerFactory;
+template <typename T> struct impl_IProgressRingAutomationPeer;
+template <typename T> struct impl_IProgressRingAutomationPeerFactory;
+template <typename T> struct impl_IRadioButtonAutomationPeer;
+template <typename T> struct impl_IRadioButtonAutomationPeerFactory;
+template <typename T> struct impl_IRangeBaseAutomationPeer;
+template <typename T> struct impl_IRangeBaseAutomationPeerFactory;
+template <typename T> struct impl_IRepeatButtonAutomationPeer;
+template <typename T> struct impl_IRepeatButtonAutomationPeerFactory;
+template <typename T> struct impl_IRichEditBoxAutomationPeer;
+template <typename T> struct impl_IRichEditBoxAutomationPeerFactory;
+template <typename T> struct impl_IRichTextBlockAutomationPeer;
+template <typename T> struct impl_IRichTextBlockAutomationPeerFactory;
+template <typename T> struct impl_IRichTextBlockOverflowAutomationPeer;
+template <typename T> struct impl_IRichTextBlockOverflowAutomationPeerFactory;
+template <typename T> struct impl_IScrollBarAutomationPeer;
+template <typename T> struct impl_IScrollBarAutomationPeerFactory;
+template <typename T> struct impl_IScrollViewerAutomationPeer;
+template <typename T> struct impl_IScrollViewerAutomationPeerFactory;
+template <typename T> struct impl_ISearchBoxAutomationPeer;
+template <typename T> struct impl_ISearchBoxAutomationPeerFactory;
+template <typename T> struct impl_ISelectorAutomationPeer;
+template <typename T> struct impl_ISelectorAutomationPeerFactory;
+template <typename T> struct impl_ISelectorItemAutomationPeer;
+template <typename T> struct impl_ISelectorItemAutomationPeerFactory;
+template <typename T> struct impl_ISemanticZoomAutomationPeer;
+template <typename T> struct impl_ISemanticZoomAutomationPeerFactory;
+template <typename T> struct impl_ISettingsFlyoutAutomationPeer;
+template <typename T> struct impl_ISettingsFlyoutAutomationPeerFactory;
+template <typename T> struct impl_ISliderAutomationPeer;
+template <typename T> struct impl_ISliderAutomationPeerFactory;
+template <typename T> struct impl_ITextBlockAutomationPeer;
+template <typename T> struct impl_ITextBlockAutomationPeerFactory;
+template <typename T> struct impl_ITextBoxAutomationPeer;
+template <typename T> struct impl_ITextBoxAutomationPeerFactory;
+template <typename T> struct impl_IThumbAutomationPeer;
+template <typename T> struct impl_IThumbAutomationPeerFactory;
+template <typename T> struct impl_ITimePickerAutomationPeer;
+template <typename T> struct impl_ITimePickerAutomationPeerFactory;
+template <typename T> struct impl_ITimePickerFlyoutPresenterAutomationPeer;
+template <typename T> struct impl_IToggleButtonAutomationPeer;
+template <typename T> struct impl_IToggleButtonAutomationPeerFactory;
+template <typename T> struct impl_IToggleMenuFlyoutItemAutomationPeer;
+template <typename T> struct impl_IToggleMenuFlyoutItemAutomationPeerFactory;
+template <typename T> struct impl_IToggleSwitchAutomationPeer;
+template <typename T> struct impl_IToggleSwitchAutomationPeerFactory;
 
 }
 
@@ -2150,560 +2150,480 @@ template <> struct traits<Windows::UI::Xaml::Automation::Peers::IToggleSwitchAut
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::AppBarAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::AppBarAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IAppBarAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.AppBarAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::AppBarButtonAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::AppBarButtonAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IAppBarButtonAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.AppBarButtonAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::AppBarToggleButtonAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::AppBarToggleButtonAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IAppBarToggleButtonAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.AppBarToggleButtonAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::AutoSuggestBoxAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::AutoSuggestBoxAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IAutoSuggestBoxAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.AutoSuggestBoxAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::AutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::AutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.AutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::AutomationPeerAnnotation>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::AutomationPeerAnnotation;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IAutomationPeerAnnotation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.AutomationPeerAnnotation"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::ButtonAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::ButtonAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IButtonAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.ButtonAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::ButtonBaseAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::ButtonBaseAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IButtonBaseAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.ButtonBaseAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::CaptureElementAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::CaptureElementAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::ICaptureElementAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.CaptureElementAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::CheckBoxAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::CheckBoxAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::ICheckBoxAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.CheckBoxAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::ComboBoxAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::ComboBoxAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IComboBoxAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.ComboBoxAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::ComboBoxItemAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::ComboBoxItemAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IComboBoxItemAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.ComboBoxItemAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::ComboBoxItemDataAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::ComboBoxItemDataAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IComboBoxItemDataAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.ComboBoxItemDataAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::DatePickerAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::DatePickerAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IDatePickerAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.DatePickerAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::DatePickerFlyoutPresenterAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::DatePickerFlyoutPresenterAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IDatePickerFlyoutPresenterAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.DatePickerFlyoutPresenterAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::FlipViewAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::FlipViewAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IFlipViewAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.FlipViewAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::FlipViewItemAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::FlipViewItemAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IFlipViewItemAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.FlipViewItemAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::FlipViewItemDataAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::FlipViewItemDataAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IFlipViewItemDataAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.FlipViewItemDataAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::FlyoutPresenterAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::FlyoutPresenterAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IFlyoutPresenterAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.FlyoutPresenterAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::FrameworkElementAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::FrameworkElementAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IFrameworkElementAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::GridViewAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::GridViewAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IGridViewAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.GridViewAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::GridViewHeaderItemAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::GridViewHeaderItemAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IGridViewHeaderItemAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.GridViewHeaderItemAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::GridViewItemAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::GridViewItemAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IGridViewItemAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.GridViewItemAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::GridViewItemDataAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::GridViewItemDataAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IGridViewItemDataAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.GridViewItemDataAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::GroupItemAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::GroupItemAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IGroupItemAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.GroupItemAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::HubAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::HubAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IHubAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.HubAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::HubSectionAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::HubSectionAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IHubSectionAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.HubSectionAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::HyperlinkButtonAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::HyperlinkButtonAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IHyperlinkButtonAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.HyperlinkButtonAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::ImageAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::ImageAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IImageAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.ImageAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::InkToolbarAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::InkToolbarAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IInkToolbarAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.InkToolbarAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::ItemAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::ItemAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IItemAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.ItemAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::ItemsControlAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::ItemsControlAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IItemsControlAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.ItemsControlAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::ListBoxAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::ListBoxAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IListBoxAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.ListBoxAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::ListBoxItemAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::ListBoxItemAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IListBoxItemAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.ListBoxItemAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::ListBoxItemDataAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::ListBoxItemDataAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IListBoxItemDataAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.ListBoxItemDataAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::ListPickerFlyoutPresenterAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::ListPickerFlyoutPresenterAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IListPickerFlyoutPresenterAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.ListPickerFlyoutPresenterAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::ListViewAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::ListViewAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IListViewAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.ListViewAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::ListViewBaseAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::ListViewBaseAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IListViewBaseAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.ListViewBaseAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::ListViewBaseHeaderItemAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::ListViewBaseHeaderItemAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IListViewBaseHeaderItemAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.ListViewBaseHeaderItemAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::ListViewHeaderItemAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::ListViewHeaderItemAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IListViewHeaderItemAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.ListViewHeaderItemAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::ListViewItemAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::ListViewItemAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IListViewItemAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.ListViewItemAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::ListViewItemDataAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::ListViewItemDataAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IListViewItemDataAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.ListViewItemDataAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::LoopingSelectorAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::LoopingSelectorAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::ILoopingSelectorAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.LoopingSelectorAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::LoopingSelectorItemAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::LoopingSelectorItemAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::ILoopingSelectorItemAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.LoopingSelectorItemAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::LoopingSelectorItemDataAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::LoopingSelectorItemDataAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::ILoopingSelectorItemDataAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.LoopingSelectorItemDataAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::MapControlAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::MapControlAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IMapControlAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.MapControlAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::MediaElementAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::MediaElementAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IMediaElementAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.MediaElementAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::MediaPlayerElementAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::MediaPlayerElementAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IMediaPlayerElementAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.MediaPlayerElementAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::MediaTransportControlsAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::MediaTransportControlsAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IMediaTransportControlsAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.MediaTransportControlsAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::MenuFlyoutItemAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::MenuFlyoutItemAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IMenuFlyoutItemAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.MenuFlyoutItemAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::MenuFlyoutPresenterAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::MenuFlyoutPresenterAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IMenuFlyoutPresenterAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.MenuFlyoutPresenterAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::PasswordBoxAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::PasswordBoxAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IPasswordBoxAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.PasswordBoxAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::PickerFlyoutPresenterAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::PickerFlyoutPresenterAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IPickerFlyoutPresenterAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.PickerFlyoutPresenterAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::PivotAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::PivotAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IPivotAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.PivotAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::PivotItemAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::PivotItemAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IPivotItemAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.PivotItemAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::PivotItemDataAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::PivotItemDataAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IPivotItemDataAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.PivotItemDataAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::ProgressBarAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::ProgressBarAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IProgressBarAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.ProgressBarAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::ProgressRingAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::ProgressRingAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IProgressRingAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.ProgressRingAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::RadioButtonAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::RadioButtonAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IRadioButtonAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.RadioButtonAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::RangeBaseAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::RangeBaseAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IRangeBaseAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.RangeBaseAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::RepeatButtonAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::RepeatButtonAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IRepeatButtonAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.RepeatButtonAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::RichEditBoxAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::RichEditBoxAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IRichEditBoxAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.RichEditBoxAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::RichTextBlockAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::RichTextBlockAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IRichTextBlockAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.RichTextBlockAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::RichTextBlockOverflowAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::RichTextBlockOverflowAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IRichTextBlockOverflowAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.RichTextBlockOverflowAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::ScrollBarAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::ScrollBarAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IScrollBarAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.ScrollBarAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::ScrollViewerAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::ScrollViewerAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IScrollViewerAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.ScrollViewerAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::SearchBoxAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::SearchBoxAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::ISearchBoxAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.SearchBoxAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::SelectorAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::SelectorAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::ISelectorAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.SelectorAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::SelectorItemAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::SelectorItemAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::ISelectorItemAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.SelectorItemAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::SemanticZoomAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::SemanticZoomAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::ISemanticZoomAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.SemanticZoomAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::SettingsFlyoutAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::SettingsFlyoutAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::ISettingsFlyoutAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.SettingsFlyoutAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::SliderAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::SliderAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::ISliderAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.SliderAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::TextBlockAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::TextBlockAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::ITextBlockAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.TextBlockAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::TextBoxAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::TextBoxAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::ITextBoxAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.TextBoxAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::ThumbAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::ThumbAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IThumbAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.ThumbAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::TimePickerAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::TimePickerAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::ITimePickerAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.TimePickerAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::TimePickerFlyoutPresenterAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::TimePickerFlyoutPresenterAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::ITimePickerFlyoutPresenterAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.TimePickerFlyoutPresenterAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::ToggleButtonAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::ToggleButtonAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IToggleButtonAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.ToggleButtonAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::ToggleMenuFlyoutItemAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::ToggleMenuFlyoutItemAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IToggleMenuFlyoutItemAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.ToggleMenuFlyoutItemAutomationPeer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::Peers::ToggleSwitchAutomationPeer>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::Peers::ToggleSwitchAutomationPeer;
-    using default_interface = Windows::UI::Xaml::Automation::Peers::IToggleSwitchAutomationPeer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.Peers.ToggleSwitchAutomationPeer"; }
 };
 

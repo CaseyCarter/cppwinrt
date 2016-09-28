@@ -276,14 +276,14 @@ template <> struct traits<Windows::UI::Text::FontWeights> { using default_interf
 
 namespace Windows::UI::Text {
 
-template <typename T> class impl_IFontWeights;
-template <typename T> class impl_IFontWeightsStatics;
-template <typename T> class impl_ITextCharacterFormat;
-template <typename T> class impl_ITextConstantsStatics;
-template <typename T> class impl_ITextDocument;
-template <typename T> class impl_ITextParagraphFormat;
-template <typename T> class impl_ITextRange;
-template <typename T> class impl_ITextSelection;
+template <typename T> struct impl_IFontWeights;
+template <typename T> struct impl_IFontWeightsStatics;
+template <typename T> struct impl_ITextCharacterFormat;
+template <typename T> struct impl_ITextConstantsStatics;
+template <typename T> struct impl_ITextDocument;
+template <typename T> struct impl_ITextParagraphFormat;
+template <typename T> struct impl_ITextRange;
+template <typename T> struct impl_ITextSelection;
 
 }
 
@@ -340,7 +340,6 @@ template <> struct traits<Windows::UI::Text::ITextSelection>
 template <> struct traits<Windows::UI::Text::FontWeights>
 {
     using abi = ABI::Windows::UI::Text::FontWeights;
-    using default_interface = Windows::UI::Text::IFontWeights;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Text.FontWeights"; }
 };
 

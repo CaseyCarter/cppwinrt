@@ -115,22 +115,14 @@ template <> struct __declspec(uuid("b0a53153-2015-58b3-9dd0-bdf291b856b2")) __de
 namespace Windows::Media::FaceAnalysis {
 
 template <typename D>
-class WINRT_EBO impl_IDetectedFace
+struct WINRT_EBO impl_IDetectedFace
 {
-    auto shim() const { return impl::shim<D, IDetectedFace>(this); }
-
-public:
-
     Windows::Graphics::Imaging::BitmapBounds FaceBox() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFaceDetector
+struct WINRT_EBO impl_IFaceDetector
 {
-    auto shim() const { return impl::shim<D, IFaceDetector>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::Media::FaceAnalysis::DetectedFace>> DetectFacesAsync(const Windows::Graphics::Imaging::SoftwareBitmap & image) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::Media::FaceAnalysis::DetectedFace>> DetectFacesAsync(const Windows::Graphics::Imaging::SoftwareBitmap & image, const Windows::Graphics::Imaging::BitmapBounds & searchArea) const;
     Windows::Graphics::Imaging::BitmapSize MinDetectableFaceSize() const;
@@ -140,12 +132,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IFaceDetectorStatics
+struct WINRT_EBO impl_IFaceDetectorStatics
 {
-    auto shim() const { return impl::shim<D, IFaceDetectorStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Media::FaceAnalysis::FaceDetector> CreateAsync() const;
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Graphics::Imaging::BitmapPixelFormat> GetSupportedBitmapPixelFormats() const;
     bool IsBitmapPixelFormatSupported(Windows::Graphics::Imaging::BitmapPixelFormat bitmapPixelFormat) const;
@@ -153,12 +141,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IFaceTracker
+struct WINRT_EBO impl_IFaceTracker
 {
-    auto shim() const { return impl::shim<D, IFaceTracker>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::Media::FaceAnalysis::DetectedFace>> ProcessNextFrameAsync(const Windows::Media::VideoFrame & videoFrame) const;
     Windows::Graphics::Imaging::BitmapSize MinDetectableFaceSize() const;
     void MinDetectableFaceSize(const Windows::Graphics::Imaging::BitmapSize & value) const;
@@ -167,12 +151,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IFaceTrackerStatics
+struct WINRT_EBO impl_IFaceTrackerStatics
 {
-    auto shim() const { return impl::shim<D, IFaceTrackerStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Media::FaceAnalysis::FaceTracker> CreateAsync() const;
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Graphics::Imaging::BitmapPixelFormat> GetSupportedBitmapPixelFormats() const;
     bool IsBitmapPixelFormatSupported(Windows::Graphics::Imaging::BitmapPixelFormat bitmapPixelFormat) const;

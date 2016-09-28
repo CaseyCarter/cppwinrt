@@ -445,56 +445,56 @@ template <> struct traits<Windows::UI::Notifications::UserNotificationChangedEve
 
 namespace Windows::UI::Notifications {
 
-template <typename T> class impl_IAdaptiveNotificationContent;
-template <typename T> class impl_IAdaptiveNotificationText;
-template <typename T> class impl_IBadgeNotification;
-template <typename T> class impl_IBadgeNotificationFactory;
-template <typename T> class impl_IBadgeUpdateManagerForUser;
-template <typename T> class impl_IBadgeUpdateManagerStatics;
-template <typename T> class impl_IBadgeUpdateManagerStatics2;
-template <typename T> class impl_IBadgeUpdater;
-template <typename T> class impl_IKnownAdaptiveNotificationHintsStatics;
-template <typename T> class impl_IKnownAdaptiveNotificationTextStylesStatics;
-template <typename T> class impl_IKnownNotificationBindingsStatics;
-template <typename T> class impl_INotification;
-template <typename T> class impl_INotificationBinding;
-template <typename T> class impl_INotificationVisual;
-template <typename T> class impl_IScheduledTileNotification;
-template <typename T> class impl_IScheduledTileNotificationFactory;
-template <typename T> class impl_IScheduledToastNotification;
-template <typename T> class impl_IScheduledToastNotification2;
-template <typename T> class impl_IScheduledToastNotification3;
-template <typename T> class impl_IScheduledToastNotificationFactory;
-template <typename T> class impl_IShownTileNotification;
-template <typename T> class impl_ITileFlyoutNotification;
-template <typename T> class impl_ITileFlyoutNotificationFactory;
-template <typename T> class impl_ITileFlyoutUpdateManagerStatics;
-template <typename T> class impl_ITileFlyoutUpdater;
-template <typename T> class impl_ITileNotification;
-template <typename T> class impl_ITileNotificationFactory;
-template <typename T> class impl_ITileUpdateManagerForUser;
-template <typename T> class impl_ITileUpdateManagerStatics;
-template <typename T> class impl_ITileUpdateManagerStatics2;
-template <typename T> class impl_ITileUpdater;
-template <typename T> class impl_ITileUpdater2;
-template <typename T> class impl_IToastActivatedEventArgs;
-template <typename T> class impl_IToastDismissedEventArgs;
-template <typename T> class impl_IToastFailedEventArgs;
-template <typename T> class impl_IToastNotification;
-template <typename T> class impl_IToastNotification2;
-template <typename T> class impl_IToastNotification3;
-template <typename T> class impl_IToastNotificationActionTriggerDetail;
-template <typename T> class impl_IToastNotificationFactory;
-template <typename T> class impl_IToastNotificationHistory;
-template <typename T> class impl_IToastNotificationHistory2;
-template <typename T> class impl_IToastNotificationHistoryChangedTriggerDetail;
-template <typename T> class impl_IToastNotificationManagerForUser;
-template <typename T> class impl_IToastNotificationManagerStatics;
-template <typename T> class impl_IToastNotificationManagerStatics2;
-template <typename T> class impl_IToastNotificationManagerStatics4;
-template <typename T> class impl_IToastNotifier;
-template <typename T> class impl_IUserNotification;
-template <typename T> class impl_IUserNotificationChangedEventArgs;
+template <typename T> struct impl_IAdaptiveNotificationContent;
+template <typename T> struct impl_IAdaptiveNotificationText;
+template <typename T> struct impl_IBadgeNotification;
+template <typename T> struct impl_IBadgeNotificationFactory;
+template <typename T> struct impl_IBadgeUpdateManagerForUser;
+template <typename T> struct impl_IBadgeUpdateManagerStatics;
+template <typename T> struct impl_IBadgeUpdateManagerStatics2;
+template <typename T> struct impl_IBadgeUpdater;
+template <typename T> struct impl_IKnownAdaptiveNotificationHintsStatics;
+template <typename T> struct impl_IKnownAdaptiveNotificationTextStylesStatics;
+template <typename T> struct impl_IKnownNotificationBindingsStatics;
+template <typename T> struct impl_INotification;
+template <typename T> struct impl_INotificationBinding;
+template <typename T> struct impl_INotificationVisual;
+template <typename T> struct impl_IScheduledTileNotification;
+template <typename T> struct impl_IScheduledTileNotificationFactory;
+template <typename T> struct impl_IScheduledToastNotification;
+template <typename T> struct impl_IScheduledToastNotification2;
+template <typename T> struct impl_IScheduledToastNotification3;
+template <typename T> struct impl_IScheduledToastNotificationFactory;
+template <typename T> struct impl_IShownTileNotification;
+template <typename T> struct impl_ITileFlyoutNotification;
+template <typename T> struct impl_ITileFlyoutNotificationFactory;
+template <typename T> struct impl_ITileFlyoutUpdateManagerStatics;
+template <typename T> struct impl_ITileFlyoutUpdater;
+template <typename T> struct impl_ITileNotification;
+template <typename T> struct impl_ITileNotificationFactory;
+template <typename T> struct impl_ITileUpdateManagerForUser;
+template <typename T> struct impl_ITileUpdateManagerStatics;
+template <typename T> struct impl_ITileUpdateManagerStatics2;
+template <typename T> struct impl_ITileUpdater;
+template <typename T> struct impl_ITileUpdater2;
+template <typename T> struct impl_IToastActivatedEventArgs;
+template <typename T> struct impl_IToastDismissedEventArgs;
+template <typename T> struct impl_IToastFailedEventArgs;
+template <typename T> struct impl_IToastNotification;
+template <typename T> struct impl_IToastNotification2;
+template <typename T> struct impl_IToastNotification3;
+template <typename T> struct impl_IToastNotificationActionTriggerDetail;
+template <typename T> struct impl_IToastNotificationFactory;
+template <typename T> struct impl_IToastNotificationHistory;
+template <typename T> struct impl_IToastNotificationHistory2;
+template <typename T> struct impl_IToastNotificationHistoryChangedTriggerDetail;
+template <typename T> struct impl_IToastNotificationManagerForUser;
+template <typename T> struct impl_IToastNotificationManagerStatics;
+template <typename T> struct impl_IToastNotificationManagerStatics2;
+template <typename T> struct impl_IToastNotificationManagerStatics4;
+template <typename T> struct impl_IToastNotifier;
+template <typename T> struct impl_IUserNotification;
+template <typename T> struct impl_IUserNotificationChangedEventArgs;
 
 }
 
@@ -803,14 +803,12 @@ template <> struct traits<Windows::UI::Notifications::IUserNotificationChangedEv
 template <> struct traits<Windows::UI::Notifications::AdaptiveNotificationText>
 {
     using abi = ABI::Windows::UI::Notifications::AdaptiveNotificationText;
-    using default_interface = Windows::UI::Notifications::IAdaptiveNotificationText;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Notifications.AdaptiveNotificationText"; }
 };
 
 template <> struct traits<Windows::UI::Notifications::BadgeNotification>
 {
     using abi = ABI::Windows::UI::Notifications::BadgeNotification;
-    using default_interface = Windows::UI::Notifications::IBadgeNotification;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Notifications.BadgeNotification"; }
 };
 
@@ -822,14 +820,12 @@ template <> struct traits<Windows::UI::Notifications::BadgeUpdateManager>
 template <> struct traits<Windows::UI::Notifications::BadgeUpdateManagerForUser>
 {
     using abi = ABI::Windows::UI::Notifications::BadgeUpdateManagerForUser;
-    using default_interface = Windows::UI::Notifications::IBadgeUpdateManagerForUser;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Notifications.BadgeUpdateManagerForUser"; }
 };
 
 template <> struct traits<Windows::UI::Notifications::BadgeUpdater>
 {
     using abi = ABI::Windows::UI::Notifications::BadgeUpdater;
-    using default_interface = Windows::UI::Notifications::IBadgeUpdater;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Notifications.BadgeUpdater"; }
 };
 
@@ -851,49 +847,42 @@ template <> struct traits<Windows::UI::Notifications::KnownNotificationBindings>
 template <> struct traits<Windows::UI::Notifications::Notification>
 {
     using abi = ABI::Windows::UI::Notifications::Notification;
-    using default_interface = Windows::UI::Notifications::INotification;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Notifications.Notification"; }
 };
 
 template <> struct traits<Windows::UI::Notifications::NotificationBinding>
 {
     using abi = ABI::Windows::UI::Notifications::NotificationBinding;
-    using default_interface = Windows::UI::Notifications::INotificationBinding;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Notifications.NotificationBinding"; }
 };
 
 template <> struct traits<Windows::UI::Notifications::NotificationVisual>
 {
     using abi = ABI::Windows::UI::Notifications::NotificationVisual;
-    using default_interface = Windows::UI::Notifications::INotificationVisual;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Notifications.NotificationVisual"; }
 };
 
 template <> struct traits<Windows::UI::Notifications::ScheduledTileNotification>
 {
     using abi = ABI::Windows::UI::Notifications::ScheduledTileNotification;
-    using default_interface = Windows::UI::Notifications::IScheduledTileNotification;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Notifications.ScheduledTileNotification"; }
 };
 
 template <> struct traits<Windows::UI::Notifications::ScheduledToastNotification>
 {
     using abi = ABI::Windows::UI::Notifications::ScheduledToastNotification;
-    using default_interface = Windows::UI::Notifications::IScheduledToastNotification;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Notifications.ScheduledToastNotification"; }
 };
 
 template <> struct traits<Windows::UI::Notifications::ShownTileNotification>
 {
     using abi = ABI::Windows::UI::Notifications::ShownTileNotification;
-    using default_interface = Windows::UI::Notifications::IShownTileNotification;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Notifications.ShownTileNotification"; }
 };
 
 template <> struct traits<Windows::UI::Notifications::TileFlyoutNotification>
 {
     using abi = ABI::Windows::UI::Notifications::TileFlyoutNotification;
-    using default_interface = Windows::UI::Notifications::ITileFlyoutNotification;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Notifications.TileFlyoutNotification"; }
 };
 
@@ -905,14 +894,12 @@ template <> struct traits<Windows::UI::Notifications::TileFlyoutUpdateManager>
 template <> struct traits<Windows::UI::Notifications::TileFlyoutUpdater>
 {
     using abi = ABI::Windows::UI::Notifications::TileFlyoutUpdater;
-    using default_interface = Windows::UI::Notifications::ITileFlyoutUpdater;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Notifications.TileFlyoutUpdater"; }
 };
 
 template <> struct traits<Windows::UI::Notifications::TileNotification>
 {
     using abi = ABI::Windows::UI::Notifications::TileNotification;
-    using default_interface = Windows::UI::Notifications::ITileNotification;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Notifications.TileNotification"; }
 };
 
@@ -924,63 +911,54 @@ template <> struct traits<Windows::UI::Notifications::TileUpdateManager>
 template <> struct traits<Windows::UI::Notifications::TileUpdateManagerForUser>
 {
     using abi = ABI::Windows::UI::Notifications::TileUpdateManagerForUser;
-    using default_interface = Windows::UI::Notifications::ITileUpdateManagerForUser;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Notifications.TileUpdateManagerForUser"; }
 };
 
 template <> struct traits<Windows::UI::Notifications::TileUpdater>
 {
     using abi = ABI::Windows::UI::Notifications::TileUpdater;
-    using default_interface = Windows::UI::Notifications::ITileUpdater;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Notifications.TileUpdater"; }
 };
 
 template <> struct traits<Windows::UI::Notifications::ToastActivatedEventArgs>
 {
     using abi = ABI::Windows::UI::Notifications::ToastActivatedEventArgs;
-    using default_interface = Windows::UI::Notifications::IToastActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Notifications.ToastActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Notifications::ToastDismissedEventArgs>
 {
     using abi = ABI::Windows::UI::Notifications::ToastDismissedEventArgs;
-    using default_interface = Windows::UI::Notifications::IToastDismissedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Notifications.ToastDismissedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Notifications::ToastFailedEventArgs>
 {
     using abi = ABI::Windows::UI::Notifications::ToastFailedEventArgs;
-    using default_interface = Windows::UI::Notifications::IToastFailedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Notifications.ToastFailedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Notifications::ToastNotification>
 {
     using abi = ABI::Windows::UI::Notifications::ToastNotification;
-    using default_interface = Windows::UI::Notifications::IToastNotification;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Notifications.ToastNotification"; }
 };
 
 template <> struct traits<Windows::UI::Notifications::ToastNotificationActionTriggerDetail>
 {
     using abi = ABI::Windows::UI::Notifications::ToastNotificationActionTriggerDetail;
-    using default_interface = Windows::UI::Notifications::IToastNotificationActionTriggerDetail;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Notifications.ToastNotificationActionTriggerDetail"; }
 };
 
 template <> struct traits<Windows::UI::Notifications::ToastNotificationHistory>
 {
     using abi = ABI::Windows::UI::Notifications::ToastNotificationHistory;
-    using default_interface = Windows::UI::Notifications::IToastNotificationHistory;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Notifications.ToastNotificationHistory"; }
 };
 
 template <> struct traits<Windows::UI::Notifications::ToastNotificationHistoryChangedTriggerDetail>
 {
     using abi = ABI::Windows::UI::Notifications::ToastNotificationHistoryChangedTriggerDetail;
-    using default_interface = Windows::UI::Notifications::IToastNotificationHistoryChangedTriggerDetail;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Notifications.ToastNotificationHistoryChangedTriggerDetail"; }
 };
 
@@ -992,28 +970,24 @@ template <> struct traits<Windows::UI::Notifications::ToastNotificationManager>
 template <> struct traits<Windows::UI::Notifications::ToastNotificationManagerForUser>
 {
     using abi = ABI::Windows::UI::Notifications::ToastNotificationManagerForUser;
-    using default_interface = Windows::UI::Notifications::IToastNotificationManagerForUser;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Notifications.ToastNotificationManagerForUser"; }
 };
 
 template <> struct traits<Windows::UI::Notifications::ToastNotifier>
 {
     using abi = ABI::Windows::UI::Notifications::ToastNotifier;
-    using default_interface = Windows::UI::Notifications::IToastNotifier;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Notifications.ToastNotifier"; }
 };
 
 template <> struct traits<Windows::UI::Notifications::UserNotification>
 {
     using abi = ABI::Windows::UI::Notifications::UserNotification;
-    using default_interface = Windows::UI::Notifications::IUserNotification;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Notifications.UserNotification"; }
 };
 
 template <> struct traits<Windows::UI::Notifications::UserNotificationChangedEventArgs>
 {
     using abi = ABI::Windows::UI::Notifications::UserNotificationChangedEventArgs;
-    using default_interface = Windows::UI::Notifications::IUserNotificationChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Notifications.UserNotificationChangedEventArgs"; }
 };
 

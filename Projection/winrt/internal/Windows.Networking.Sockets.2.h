@@ -192,12 +192,8 @@ template <> struct __declspec(uuid("20d6faab-3b8e-5a1f-8397-b01cb219a18d")) __de
 namespace Windows::Networking::Sockets {
 
 template <typename D>
-class WINRT_EBO impl_IDatagramSocket
+struct WINRT_EBO impl_IDatagramSocket
 {
-    auto shim() const { return impl::shim<D, IDatagramSocket>(this); }
-
-public:
-
     Windows::Networking::Sockets::DatagramSocketControl Control() const;
     Windows::Networking::Sockets::DatagramSocketInformation Information() const;
     Windows::Storage::Streams::IOutputStream OutputStream() const;
@@ -215,22 +211,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDatagramSocket2
+struct WINRT_EBO impl_IDatagramSocket2
 {
-    auto shim() const { return impl::shim<D, IDatagramSocket2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction BindServiceNameAsync(hstring_ref localServiceName, const Windows::Networking::Connectivity::NetworkAdapter & adapter) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDatagramSocket3
+struct WINRT_EBO impl_IDatagramSocket3
 {
-    auto shim() const { return impl::shim<D, IDatagramSocket3>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction CancelIOAsync() const;
     void EnableTransferOwnership(GUID taskId) const;
     void EnableTransferOwnership(GUID taskId, Windows::Networking::Sockets::SocketActivityConnectedStandbyAction connectedStandbyAction) const;
@@ -240,12 +228,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDatagramSocketControl
+struct WINRT_EBO impl_IDatagramSocketControl
 {
-    auto shim() const { return impl::shim<D, IDatagramSocketControl>(this); }
-
-public:
-
     Windows::Networking::Sockets::SocketQualityOfService QualityOfService() const;
     void QualityOfService(Windows::Networking::Sockets::SocketQualityOfService value) const;
     uint8_t OutboundUnicastHopLimit() const;
@@ -253,12 +237,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDatagramSocketControl2
+struct WINRT_EBO impl_IDatagramSocketControl2
 {
-    auto shim() const { return impl::shim<D, IDatagramSocketControl2>(this); }
-
-public:
-
     uint32_t InboundBufferSizeInBytes() const;
     void InboundBufferSizeInBytes(uint32_t value) const;
     bool DontFragment() const;
@@ -266,23 +246,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDatagramSocketControl3
+struct WINRT_EBO impl_IDatagramSocketControl3
 {
-    auto shim() const { return impl::shim<D, IDatagramSocketControl3>(this); }
-
-public:
-
     bool MulticastOnly() const;
     void MulticastOnly(bool value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDatagramSocketInformation
+struct WINRT_EBO impl_IDatagramSocketInformation
 {
-    auto shim() const { return impl::shim<D, IDatagramSocketInformation>(this); }
-
-public:
-
     Windows::Networking::HostName LocalAddress() const;
     hstring LocalPort() const;
     Windows::Networking::HostName RemoteAddress() const;
@@ -290,12 +262,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDatagramSocketMessageReceivedEventArgs
+struct WINRT_EBO impl_IDatagramSocketMessageReceivedEventArgs
 {
-    auto shim() const { return impl::shim<D, IDatagramSocketMessageReceivedEventArgs>(this); }
-
-public:
-
     Windows::Networking::HostName RemoteAddress() const;
     hstring RemotePort() const;
     Windows::Networking::HostName LocalAddress() const;
@@ -304,23 +272,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDatagramSocketStatics
+struct WINRT_EBO impl_IDatagramSocketStatics
 {
-    auto shim() const { return impl::shim<D, IDatagramSocketStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> GetEndpointPairsAsync(const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> GetEndpointPairsAsync(const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName, Windows::Networking::HostNameSortOptions sortOptions) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMessageWebSocket
+struct WINRT_EBO impl_IMessageWebSocket
 {
-    auto shim() const { return impl::shim<D, IMessageWebSocket>(this); }
-
-public:
-
     Windows::Networking::Sockets::MessageWebSocketControl Control() const;
     Windows::Networking::Sockets::MessageWebSocketInformation Information() const;
     event_token MessageReceived(const Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::MessageWebSocket, Windows::Networking::Sockets::MessageWebSocketMessageReceivedEventArgs> & eventHandler) const;
@@ -330,12 +290,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMessageWebSocket2
+struct WINRT_EBO impl_IMessageWebSocket2
 {
-    auto shim() const { return impl::shim<D, IMessageWebSocket2>(this); }
-
-public:
-
     event_token ServerCustomValidationRequested(const Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::MessageWebSocket, Windows::Networking::Sockets::WebSocketServerCustomValidationRequestedEventArgs> & eventHandler) const;
     using ServerCustomValidationRequested_revoker = event_revoker<IMessageWebSocket2>;
     ServerCustomValidationRequested_revoker ServerCustomValidationRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::MessageWebSocket, Windows::Networking::Sockets::WebSocketServerCustomValidationRequestedEventArgs> & eventHandler) const;
@@ -343,12 +299,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMessageWebSocketControl
+struct WINRT_EBO impl_IMessageWebSocketControl
 {
-    auto shim() const { return impl::shim<D, IMessageWebSocketControl>(this); }
-
-public:
-
     uint32_t MaxMessageSize() const;
     void MaxMessageSize(uint32_t value) const;
     Windows::Networking::Sockets::SocketMessageType MessageType() const;
@@ -356,44 +308,28 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMessageWebSocketMessageReceivedEventArgs
+struct WINRT_EBO impl_IMessageWebSocketMessageReceivedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMessageWebSocketMessageReceivedEventArgs>(this); }
-
-public:
-
     Windows::Networking::Sockets::SocketMessageType MessageType() const;
     Windows::Storage::Streams::DataReader GetDataReader() const;
     Windows::Storage::Streams::IInputStream GetDataStream() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISocketActivityContext
+struct WINRT_EBO impl_ISocketActivityContext
 {
-    auto shim() const { return impl::shim<D, ISocketActivityContext>(this); }
-
-public:
-
     Windows::Storage::Streams::IBuffer Data() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISocketActivityContextFactory
+struct WINRT_EBO impl_ISocketActivityContextFactory
 {
-    auto shim() const { return impl::shim<D, ISocketActivityContextFactory>(this); }
-
-public:
-
     Windows::Networking::Sockets::SocketActivityContext Create(const Windows::Storage::Streams::IBuffer & data) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISocketActivityInformation
+struct WINRT_EBO impl_ISocketActivityInformation
 {
-    auto shim() const { return impl::shim<D, ISocketActivityInformation>(this); }
-
-public:
-
     GUID TaskId() const;
     hstring Id() const;
     Windows::Networking::Sockets::SocketActivityKind SocketKind() const;
@@ -404,43 +340,27 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISocketActivityInformationStatics
+struct WINRT_EBO impl_ISocketActivityInformationStatics
 {
-    auto shim() const { return impl::shim<D, ISocketActivityInformationStatics>(this); }
-
-public:
-
     Windows::Foundation::Collections::IMapView<hstring, Windows::Networking::Sockets::SocketActivityInformation> AllSockets() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISocketActivityTriggerDetails
+struct WINRT_EBO impl_ISocketActivityTriggerDetails
 {
-    auto shim() const { return impl::shim<D, ISocketActivityTriggerDetails>(this); }
-
-public:
-
     Windows::Networking::Sockets::SocketActivityTriggerReason Reason() const;
     Windows::Networking::Sockets::SocketActivityInformation SocketInformation() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISocketErrorStatics
+struct WINRT_EBO impl_ISocketErrorStatics
 {
-    auto shim() const { return impl::shim<D, ISocketErrorStatics>(this); }
-
-public:
-
     Windows::Networking::Sockets::SocketErrorStatus GetStatus(int32_t hresult) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStreamSocket
+struct WINRT_EBO impl_IStreamSocket
 {
-    auto shim() const { return impl::shim<D, IStreamSocket>(this); }
-
-public:
-
     Windows::Networking::Sockets::StreamSocketControl Control() const;
     Windows::Networking::Sockets::StreamSocketInformation Information() const;
     Windows::Storage::Streams::IInputStream InputStream() const;
@@ -453,22 +373,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStreamSocket2
+struct WINRT_EBO impl_IStreamSocket2
 {
-    auto shim() const { return impl::shim<D, IStreamSocket2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction ConnectAsync(const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel, const Windows::Networking::Connectivity::NetworkAdapter & adapter) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStreamSocket3
+struct WINRT_EBO impl_IStreamSocket3
 {
-    auto shim() const { return impl::shim<D, IStreamSocket3>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction CancelIOAsync() const;
     void EnableTransferOwnership(GUID taskId) const;
     void EnableTransferOwnership(GUID taskId, Windows::Networking::Sockets::SocketActivityConnectedStandbyAction connectedStandbyAction) const;
@@ -478,12 +390,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStreamSocketControl
+struct WINRT_EBO impl_IStreamSocketControl
 {
-    auto shim() const { return impl::shim<D, IStreamSocketControl>(this); }
-
-public:
-
     bool NoDelay() const;
     void NoDelay(bool value) const;
     bool KeepAlive() const;
@@ -497,22 +405,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStreamSocketControl2
+struct WINRT_EBO impl_IStreamSocketControl2
 {
-    auto shim() const { return impl::shim<D, IStreamSocketControl2>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<winrt::Windows::Security::Cryptography::Certificates::ChainValidationResult> IgnorableServerCertificateErrors() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStreamSocketControl3
+struct WINRT_EBO impl_IStreamSocketControl3
 {
-    auto shim() const { return impl::shim<D, IStreamSocketControl3>(this); }
-
-public:
-
     bool SerializeConnectionAttempts() const;
     void SerializeConnectionAttempts(bool value) const;
     Windows::Security::Cryptography::Certificates::Certificate ClientCertificate() const;
@@ -520,12 +420,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStreamSocketInformation
+struct WINRT_EBO impl_IStreamSocketInformation
 {
-    auto shim() const { return impl::shim<D, IStreamSocketInformation>(this); }
-
-public:
-
     Windows::Networking::HostName LocalAddress() const;
     hstring LocalPort() const;
     Windows::Networking::HostName RemoteHostName() const;
@@ -539,12 +435,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStreamSocketInformation2
+struct WINRT_EBO impl_IStreamSocketInformation2
 {
-    auto shim() const { return impl::shim<D, IStreamSocketInformation2>(this); }
-
-public:
-
     Windows::Networking::Sockets::SocketSslErrorSeverity ServerCertificateErrorSeverity() const;
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Security::Cryptography::Certificates::ChainValidationResult> ServerCertificateErrors() const;
     Windows::Security::Cryptography::Certificates::Certificate ServerCertificate() const;
@@ -552,12 +444,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStreamSocketListener
+struct WINRT_EBO impl_IStreamSocketListener
 {
-    auto shim() const { return impl::shim<D, IStreamSocketListener>(this); }
-
-public:
-
     Windows::Networking::Sockets::StreamSocketListenerControl Control() const;
     Windows::Networking::Sockets::StreamSocketListenerInformation Information() const;
     Windows::Foundation::IAsyncAction BindServiceNameAsync(hstring_ref localServiceName) const;
@@ -569,23 +457,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStreamSocketListener2
+struct WINRT_EBO impl_IStreamSocketListener2
 {
-    auto shim() const { return impl::shim<D, IStreamSocketListener2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction BindServiceNameAsync(hstring_ref localServiceName, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel) const;
     Windows::Foundation::IAsyncAction BindServiceNameAsync(hstring_ref localServiceName, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel, const Windows::Networking::Connectivity::NetworkAdapter & adapter) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStreamSocketListener3
+struct WINRT_EBO impl_IStreamSocketListener3
 {
-    auto shim() const { return impl::shim<D, IStreamSocketListener3>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction CancelIOAsync() const;
     void EnableTransferOwnership(GUID taskId) const;
     void EnableTransferOwnership(GUID taskId, Windows::Networking::Sockets::SocketActivityConnectedStandbyAction connectedStandbyAction) const;
@@ -594,33 +474,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStreamSocketListenerConnectionReceivedEventArgs
+struct WINRT_EBO impl_IStreamSocketListenerConnectionReceivedEventArgs
 {
-    auto shim() const { return impl::shim<D, IStreamSocketListenerConnectionReceivedEventArgs>(this); }
-
-public:
-
     Windows::Networking::Sockets::StreamSocket Socket() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStreamSocketListenerControl
+struct WINRT_EBO impl_IStreamSocketListenerControl
 {
-    auto shim() const { return impl::shim<D, IStreamSocketListenerControl>(this); }
-
-public:
-
     Windows::Networking::Sockets::SocketQualityOfService QualityOfService() const;
     void QualityOfService(Windows::Networking::Sockets::SocketQualityOfService value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStreamSocketListenerControl2
+struct WINRT_EBO impl_IStreamSocketListenerControl2
 {
-    auto shim() const { return impl::shim<D, IStreamSocketListenerControl2>(this); }
-
-public:
-
     bool NoDelay() const;
     void NoDelay(bool value) const;
     bool KeepAlive() const;
@@ -632,45 +500,29 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStreamSocketListenerInformation
+struct WINRT_EBO impl_IStreamSocketListenerInformation
 {
-    auto shim() const { return impl::shim<D, IStreamSocketListenerInformation>(this); }
-
-public:
-
     hstring LocalPort() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStreamSocketStatics
+struct WINRT_EBO impl_IStreamSocketStatics
 {
-    auto shim() const { return impl::shim<D, IStreamSocketStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> GetEndpointPairsAsync(const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> GetEndpointPairsAsync(const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName, Windows::Networking::HostNameSortOptions sortOptions) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStreamWebSocket
+struct WINRT_EBO impl_IStreamWebSocket
 {
-    auto shim() const { return impl::shim<D, IStreamWebSocket>(this); }
-
-public:
-
     Windows::Networking::Sockets::StreamWebSocketControl Control() const;
     Windows::Networking::Sockets::StreamWebSocketInformation Information() const;
     Windows::Storage::Streams::IInputStream InputStream() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStreamWebSocket2
+struct WINRT_EBO impl_IStreamWebSocket2
 {
-    auto shim() const { return impl::shim<D, IStreamWebSocket2>(this); }
-
-public:
-
     event_token ServerCustomValidationRequested(const Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::StreamWebSocket, Windows::Networking::Sockets::WebSocketServerCustomValidationRequestedEventArgs> & eventHandler) const;
     using ServerCustomValidationRequested_revoker = event_revoker<IStreamWebSocket2>;
     ServerCustomValidationRequested_revoker ServerCustomValidationRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::StreamWebSocket, Windows::Networking::Sockets::WebSocketServerCustomValidationRequestedEventArgs> & eventHandler) const;
@@ -678,23 +530,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStreamWebSocketControl
+struct WINRT_EBO impl_IStreamWebSocketControl
 {
-    auto shim() const { return impl::shim<D, IStreamWebSocketControl>(this); }
-
-public:
-
     bool NoDelay() const;
     void NoDelay(bool value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebSocket
+struct WINRT_EBO impl_IWebSocket
 {
-    auto shim() const { return impl::shim<D, IWebSocket>(this); }
-
-public:
-
     Windows::Storage::Streams::IOutputStream OutputStream() const;
     Windows::Foundation::IAsyncAction ConnectAsync(const Windows::Foundation::Uri & uri) const;
     void SetRequestHeader(hstring_ref headerName, hstring_ref headerValue) const;
@@ -706,23 +550,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebSocketClosedEventArgs
+struct WINRT_EBO impl_IWebSocketClosedEventArgs
 {
-    auto shim() const { return impl::shim<D, IWebSocketClosedEventArgs>(this); }
-
-public:
-
     uint16_t Code() const;
     hstring Reason() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebSocketControl
+struct WINRT_EBO impl_IWebSocketControl
 {
-    auto shim() const { return impl::shim<D, IWebSocketControl>(this); }
-
-public:
-
     uint32_t OutboundBufferSizeInBytes() const;
     void OutboundBufferSizeInBytes(uint32_t value) const;
     Windows::Security::Credentials::PasswordCredential ServerCredential() const;
@@ -733,44 +569,28 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebSocketControl2
+struct WINRT_EBO impl_IWebSocketControl2
 {
-    auto shim() const { return impl::shim<D, IWebSocketControl2>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<winrt::Windows::Security::Cryptography::Certificates::ChainValidationResult> IgnorableServerCertificateErrors() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebSocketErrorStatics
+struct WINRT_EBO impl_IWebSocketErrorStatics
 {
-    auto shim() const { return impl::shim<D, IWebSocketErrorStatics>(this); }
-
-public:
-
     Windows::Web::WebErrorStatus GetStatus(int32_t hresult) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebSocketInformation
+struct WINRT_EBO impl_IWebSocketInformation
 {
-    auto shim() const { return impl::shim<D, IWebSocketInformation>(this); }
-
-public:
-
     Windows::Networking::HostName LocalAddress() const;
     Windows::Networking::Sockets::BandwidthStatistics BandwidthStatistics() const;
     hstring Protocol() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebSocketInformation2
+struct WINRT_EBO impl_IWebSocketInformation2
 {
-    auto shim() const { return impl::shim<D, IWebSocketInformation2>(this); }
-
-public:
-
     Windows::Security::Cryptography::Certificates::Certificate ServerCertificate() const;
     Windows::Networking::Sockets::SocketSslErrorSeverity ServerCertificateErrorSeverity() const;
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Security::Cryptography::Certificates::ChainValidationResult> ServerCertificateErrors() const;
@@ -778,12 +598,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebSocketServerCustomValidationRequestedEventArgs
+struct WINRT_EBO impl_IWebSocketServerCustomValidationRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, IWebSocketServerCustomValidationRequestedEventArgs>(this); }
-
-public:
-
     Windows::Security::Cryptography::Certificates::Certificate ServerCertificate() const;
     Windows::Networking::Sockets::SocketSslErrorSeverity ServerCertificateErrorSeverity() const;
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Security::Cryptography::Certificates::ChainValidationResult> ServerCertificateErrors() const;

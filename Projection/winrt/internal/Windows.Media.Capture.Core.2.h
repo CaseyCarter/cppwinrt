@@ -30,12 +30,8 @@ template <> struct __declspec(uuid("2210a640-0e7b-5e8f-a617-2cbb10314a5a")) __de
 namespace Windows::Media::Capture::Core {
 
 template <typename D>
-class WINRT_EBO impl_IVariablePhotoCapturedEventArgs
+struct WINRT_EBO impl_IVariablePhotoCapturedEventArgs
 {
-    auto shim() const { return impl::shim<D, IVariablePhotoCapturedEventArgs>(this); }
-
-public:
-
     Windows::Media::Capture::CapturedFrame Frame() const;
     Windows::Foundation::TimeSpan CaptureTimeOffset() const;
     Windows::Foundation::IReference<uint32_t> UsedFrameControllerIndex() const;
@@ -43,12 +39,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVariablePhotoSequenceCapture
+struct WINRT_EBO impl_IVariablePhotoSequenceCapture
 {
-    auto shim() const { return impl::shim<D, IVariablePhotoSequenceCapture>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction StartAsync() const;
     Windows::Foundation::IAsyncAction StopAsync() const;
     Windows::Foundation::IAsyncAction FinishAsync() const;
@@ -63,12 +55,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVariablePhotoSequenceCapture2
+struct WINRT_EBO impl_IVariablePhotoSequenceCapture2
 {
-    auto shim() const { return impl::shim<D, IVariablePhotoSequenceCapture2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction UpdateSettingsAsync() const;
 };
 

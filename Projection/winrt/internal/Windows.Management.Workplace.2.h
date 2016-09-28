@@ -10,12 +10,8 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::Management::Workplace {
 
 template <typename D>
-class WINRT_EBO impl_IMdmAllowPolicyStatics
+struct WINRT_EBO impl_IMdmAllowPolicyStatics
 {
-    auto shim() const { return impl::shim<D, IMdmAllowPolicyStatics>(this); }
-
-public:
-
     bool IsBrowserAllowed() const;
     bool IsCameraAllowed() const;
     bool IsMicrosoftAccountAllowed() const;
@@ -23,12 +19,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMdmPolicyStatics2
+struct WINRT_EBO impl_IMdmPolicyStatics2
 {
-    auto shim() const { return impl::shim<D, IMdmPolicyStatics2>(this); }
-
-public:
-
     Windows::Management::Workplace::MessagingSyncPolicy GetMessagingSyncPolicy() const;
 };
 

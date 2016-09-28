@@ -70,11 +70,11 @@ template <> struct traits<Windows::Devices::Geolocation::Geofencing::GeofenceSta
 
 namespace Windows::Devices::Geolocation::Geofencing {
 
-template <typename T> class impl_IGeofence;
-template <typename T> class impl_IGeofenceFactory;
-template <typename T> class impl_IGeofenceMonitor;
-template <typename T> class impl_IGeofenceMonitorStatics;
-template <typename T> class impl_IGeofenceStateChangeReport;
+template <typename T> struct impl_IGeofence;
+template <typename T> struct impl_IGeofenceFactory;
+template <typename T> struct impl_IGeofenceMonitor;
+template <typename T> struct impl_IGeofenceMonitorStatics;
+template <typename T> struct impl_IGeofenceStateChangeReport;
 
 }
 
@@ -113,21 +113,18 @@ template <> struct traits<Windows::Devices::Geolocation::Geofencing::IGeofenceSt
 template <> struct traits<Windows::Devices::Geolocation::Geofencing::Geofence>
 {
     using abi = ABI::Windows::Devices::Geolocation::Geofencing::Geofence;
-    using default_interface = Windows::Devices::Geolocation::Geofencing::IGeofence;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Geolocation.Geofencing.Geofence"; }
 };
 
 template <> struct traits<Windows::Devices::Geolocation::Geofencing::GeofenceMonitor>
 {
     using abi = ABI::Windows::Devices::Geolocation::Geofencing::GeofenceMonitor;
-    using default_interface = Windows::Devices::Geolocation::Geofencing::IGeofenceMonitor;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Geolocation.Geofencing.GeofenceMonitor"; }
 };
 
 template <> struct traits<Windows::Devices::Geolocation::Geofencing::GeofenceStateChangeReport>
 {
     using abi = ABI::Windows::Devices::Geolocation::Geofencing::GeofenceStateChangeReport;
-    using default_interface = Windows::Devices::Geolocation::Geofencing::IGeofenceStateChangeReport;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Geolocation.Geofencing.GeofenceStateChangeReport"; }
 };
 

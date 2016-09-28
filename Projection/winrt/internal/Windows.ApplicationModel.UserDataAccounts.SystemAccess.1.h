@@ -133,10 +133,10 @@ template <> struct traits<Windows::ApplicationModel::UserDataAccounts::SystemAcc
 
 namespace Windows::ApplicationModel::UserDataAccounts::SystemAccess {
 
-template <typename T> class impl_IDeviceAccountConfiguration;
-template <typename T> class impl_IDeviceAccountConfiguration2;
-template <typename T> class impl_IUserDataAccountSystemAccessManagerStatics;
-template <typename T> class impl_IUserDataAccountSystemAccessManagerStatics2;
+template <typename T> struct impl_IDeviceAccountConfiguration;
+template <typename T> struct impl_IDeviceAccountConfiguration2;
+template <typename T> struct impl_IUserDataAccountSystemAccessManagerStatics;
+template <typename T> struct impl_IUserDataAccountSystemAccessManagerStatics2;
 
 }
 
@@ -169,7 +169,6 @@ template <> struct traits<Windows::ApplicationModel::UserDataAccounts::SystemAcc
 template <> struct traits<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration>
 {
     using abi = ABI::Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration;
-    using default_interface = Windows::ApplicationModel::UserDataAccounts::SystemAccess::IDeviceAccountConfiguration;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.UserDataAccounts.SystemAccess.DeviceAccountConfiguration"; }
 };
 

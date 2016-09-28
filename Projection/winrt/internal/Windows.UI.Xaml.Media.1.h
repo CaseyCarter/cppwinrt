@@ -814,104 +814,104 @@ template <> struct traits<Windows::UI::Xaml::Media::VisualTreeHelper> { using de
 
 namespace Windows::UI::Xaml::Media {
 
-template <typename T> class impl_IArcSegment;
-template <typename T> class impl_IArcSegmentStatics;
-template <typename T> class impl_IBezierSegment;
-template <typename T> class impl_IBezierSegmentStatics;
-template <typename T> class impl_IBitmapCache;
-template <typename T> class impl_IBrush;
-template <typename T> class impl_IBrushFactory;
-template <typename T> class impl_IBrushStatics;
-template <typename T> class impl_ICacheMode;
-template <typename T> class impl_ICacheModeFactory;
-template <typename T> class impl_ICompositeTransform;
-template <typename T> class impl_ICompositeTransformStatics;
-template <typename T> class impl_ICompositionTarget;
-template <typename T> class impl_ICompositionTargetStatics;
-template <typename T> class impl_IEllipseGeometry;
-template <typename T> class impl_IEllipseGeometryStatics;
-template <typename T> class impl_IFontFamily;
-template <typename T> class impl_IFontFamilyFactory;
-template <typename T> class impl_IFontFamilyStatics2;
-template <typename T> class impl_IGeneralTransform;
-template <typename T> class impl_IGeneralTransformFactory;
-template <typename T> class impl_IGeneralTransformOverrides;
-template <typename T> class impl_IGeometry;
-template <typename T> class impl_IGeometryFactory;
-template <typename T> class impl_IGeometryGroup;
-template <typename T> class impl_IGeometryGroupStatics;
-template <typename T> class impl_IGeometryStatics;
-template <typename T> class impl_IGradientBrush;
-template <typename T> class impl_IGradientBrushFactory;
-template <typename T> class impl_IGradientBrushStatics;
-template <typename T> class impl_IGradientStop;
-template <typename T> class impl_IGradientStopStatics;
-template <typename T> class impl_IImageBrush;
-template <typename T> class impl_IImageBrushStatics;
-template <typename T> class impl_IImageSource;
-template <typename T> class impl_IImageSourceFactory;
-template <typename T> class impl_ILineGeometry;
-template <typename T> class impl_ILineGeometryStatics;
-template <typename T> class impl_ILineSegment;
-template <typename T> class impl_ILineSegmentStatics;
-template <typename T> class impl_ILinearGradientBrush;
-template <typename T> class impl_ILinearGradientBrushFactory;
-template <typename T> class impl_ILinearGradientBrushStatics;
-template <typename T> class impl_IMatrix3DProjection;
-template <typename T> class impl_IMatrix3DProjectionStatics;
-template <typename T> class impl_IMatrixHelper;
-template <typename T> class impl_IMatrixHelperStatics;
-template <typename T> class impl_IMatrixTransform;
-template <typename T> class impl_IMatrixTransformStatics;
-template <typename T> class impl_IMediaTransportControlsThumbnailRequestedEventArgs;
-template <typename T> class impl_IPartialMediaFailureDetectedEventArgs;
-template <typename T> class impl_IPartialMediaFailureDetectedEventArgs2;
-template <typename T> class impl_IPathFigure;
-template <typename T> class impl_IPathFigureStatics;
-template <typename T> class impl_IPathGeometry;
-template <typename T> class impl_IPathGeometryStatics;
-template <typename T> class impl_IPathSegment;
-template <typename T> class impl_IPathSegmentFactory;
-template <typename T> class impl_IPlaneProjection;
-template <typename T> class impl_IPlaneProjectionStatics;
-template <typename T> class impl_IPolyBezierSegment;
-template <typename T> class impl_IPolyBezierSegmentStatics;
-template <typename T> class impl_IPolyLineSegment;
-template <typename T> class impl_IPolyLineSegmentStatics;
-template <typename T> class impl_IPolyQuadraticBezierSegment;
-template <typename T> class impl_IPolyQuadraticBezierSegmentStatics;
-template <typename T> class impl_IProjection;
-template <typename T> class impl_IProjectionFactory;
-template <typename T> class impl_IQuadraticBezierSegment;
-template <typename T> class impl_IQuadraticBezierSegmentStatics;
-template <typename T> class impl_IRateChangedRoutedEventArgs;
-template <typename T> class impl_IRectangleGeometry;
-template <typename T> class impl_IRectangleGeometryStatics;
-template <typename T> class impl_IRenderingEventArgs;
-template <typename T> class impl_IRotateTransform;
-template <typename T> class impl_IRotateTransformStatics;
-template <typename T> class impl_IScaleTransform;
-template <typename T> class impl_IScaleTransformStatics;
-template <typename T> class impl_ISkewTransform;
-template <typename T> class impl_ISkewTransformStatics;
-template <typename T> class impl_ISolidColorBrush;
-template <typename T> class impl_ISolidColorBrushFactory;
-template <typename T> class impl_ISolidColorBrushStatics;
-template <typename T> class impl_ITileBrush;
-template <typename T> class impl_ITileBrushFactory;
-template <typename T> class impl_ITileBrushStatics;
-template <typename T> class impl_ITimelineMarker;
-template <typename T> class impl_ITimelineMarkerRoutedEventArgs;
-template <typename T> class impl_ITimelineMarkerStatics;
-template <typename T> class impl_ITransform;
-template <typename T> class impl_ITransformFactory;
-template <typename T> class impl_ITransformGroup;
-template <typename T> class impl_ITransformGroupStatics;
-template <typename T> class impl_ITranslateTransform;
-template <typename T> class impl_ITranslateTransformStatics;
-template <typename T> class impl_IVisualTreeHelper;
-template <typename T> class impl_IVisualTreeHelperStatics;
-template <typename T> class impl_IVisualTreeHelperStatics2;
+template <typename T> struct impl_IArcSegment;
+template <typename T> struct impl_IArcSegmentStatics;
+template <typename T> struct impl_IBezierSegment;
+template <typename T> struct impl_IBezierSegmentStatics;
+template <typename T> struct impl_IBitmapCache;
+template <typename T> struct impl_IBrush;
+template <typename T> struct impl_IBrushFactory;
+template <typename T> struct impl_IBrushStatics;
+template <typename T> struct impl_ICacheMode;
+template <typename T> struct impl_ICacheModeFactory;
+template <typename T> struct impl_ICompositeTransform;
+template <typename T> struct impl_ICompositeTransformStatics;
+template <typename T> struct impl_ICompositionTarget;
+template <typename T> struct impl_ICompositionTargetStatics;
+template <typename T> struct impl_IEllipseGeometry;
+template <typename T> struct impl_IEllipseGeometryStatics;
+template <typename T> struct impl_IFontFamily;
+template <typename T> struct impl_IFontFamilyFactory;
+template <typename T> struct impl_IFontFamilyStatics2;
+template <typename T> struct impl_IGeneralTransform;
+template <typename T> struct impl_IGeneralTransformFactory;
+template <typename T> struct impl_IGeneralTransformOverrides;
+template <typename T> struct impl_IGeometry;
+template <typename T> struct impl_IGeometryFactory;
+template <typename T> struct impl_IGeometryGroup;
+template <typename T> struct impl_IGeometryGroupStatics;
+template <typename T> struct impl_IGeometryStatics;
+template <typename T> struct impl_IGradientBrush;
+template <typename T> struct impl_IGradientBrushFactory;
+template <typename T> struct impl_IGradientBrushStatics;
+template <typename T> struct impl_IGradientStop;
+template <typename T> struct impl_IGradientStopStatics;
+template <typename T> struct impl_IImageBrush;
+template <typename T> struct impl_IImageBrushStatics;
+template <typename T> struct impl_IImageSource;
+template <typename T> struct impl_IImageSourceFactory;
+template <typename T> struct impl_ILineGeometry;
+template <typename T> struct impl_ILineGeometryStatics;
+template <typename T> struct impl_ILineSegment;
+template <typename T> struct impl_ILineSegmentStatics;
+template <typename T> struct impl_ILinearGradientBrush;
+template <typename T> struct impl_ILinearGradientBrushFactory;
+template <typename T> struct impl_ILinearGradientBrushStatics;
+template <typename T> struct impl_IMatrix3DProjection;
+template <typename T> struct impl_IMatrix3DProjectionStatics;
+template <typename T> struct impl_IMatrixHelper;
+template <typename T> struct impl_IMatrixHelperStatics;
+template <typename T> struct impl_IMatrixTransform;
+template <typename T> struct impl_IMatrixTransformStatics;
+template <typename T> struct impl_IMediaTransportControlsThumbnailRequestedEventArgs;
+template <typename T> struct impl_IPartialMediaFailureDetectedEventArgs;
+template <typename T> struct impl_IPartialMediaFailureDetectedEventArgs2;
+template <typename T> struct impl_IPathFigure;
+template <typename T> struct impl_IPathFigureStatics;
+template <typename T> struct impl_IPathGeometry;
+template <typename T> struct impl_IPathGeometryStatics;
+template <typename T> struct impl_IPathSegment;
+template <typename T> struct impl_IPathSegmentFactory;
+template <typename T> struct impl_IPlaneProjection;
+template <typename T> struct impl_IPlaneProjectionStatics;
+template <typename T> struct impl_IPolyBezierSegment;
+template <typename T> struct impl_IPolyBezierSegmentStatics;
+template <typename T> struct impl_IPolyLineSegment;
+template <typename T> struct impl_IPolyLineSegmentStatics;
+template <typename T> struct impl_IPolyQuadraticBezierSegment;
+template <typename T> struct impl_IPolyQuadraticBezierSegmentStatics;
+template <typename T> struct impl_IProjection;
+template <typename T> struct impl_IProjectionFactory;
+template <typename T> struct impl_IQuadraticBezierSegment;
+template <typename T> struct impl_IQuadraticBezierSegmentStatics;
+template <typename T> struct impl_IRateChangedRoutedEventArgs;
+template <typename T> struct impl_IRectangleGeometry;
+template <typename T> struct impl_IRectangleGeometryStatics;
+template <typename T> struct impl_IRenderingEventArgs;
+template <typename T> struct impl_IRotateTransform;
+template <typename T> struct impl_IRotateTransformStatics;
+template <typename T> struct impl_IScaleTransform;
+template <typename T> struct impl_IScaleTransformStatics;
+template <typename T> struct impl_ISkewTransform;
+template <typename T> struct impl_ISkewTransformStatics;
+template <typename T> struct impl_ISolidColorBrush;
+template <typename T> struct impl_ISolidColorBrushFactory;
+template <typename T> struct impl_ISolidColorBrushStatics;
+template <typename T> struct impl_ITileBrush;
+template <typename T> struct impl_ITileBrushFactory;
+template <typename T> struct impl_ITileBrushStatics;
+template <typename T> struct impl_ITimelineMarker;
+template <typename T> struct impl_ITimelineMarkerRoutedEventArgs;
+template <typename T> struct impl_ITimelineMarkerStatics;
+template <typename T> struct impl_ITransform;
+template <typename T> struct impl_ITransformFactory;
+template <typename T> struct impl_ITransformGroup;
+template <typename T> struct impl_ITransformGroupStatics;
+template <typename T> struct impl_ITranslateTransform;
+template <typename T> struct impl_ITranslateTransformStatics;
+template <typename T> struct impl_IVisualTreeHelper;
+template <typename T> struct impl_IVisualTreeHelperStatics;
+template <typename T> struct impl_IVisualTreeHelperStatics2;
 template <typename T> struct impl_RateChangedRoutedEventHandler;
 template <typename T> struct impl_TimelineMarkerRoutedEventHandler;
 
@@ -1520,392 +1520,336 @@ template <> struct traits<Windows::UI::Xaml::Media::TimelineMarkerRoutedEventHan
 template <> struct traits<Windows::UI::Xaml::Media::ArcSegment>
 {
     using abi = ABI::Windows::UI::Xaml::Media::ArcSegment;
-    using default_interface = Windows::UI::Xaml::Media::IArcSegment;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.ArcSegment"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::BezierSegment>
 {
     using abi = ABI::Windows::UI::Xaml::Media::BezierSegment;
-    using default_interface = Windows::UI::Xaml::Media::IBezierSegment;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.BezierSegment"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::BitmapCache>
 {
     using abi = ABI::Windows::UI::Xaml::Media::BitmapCache;
-    using default_interface = Windows::UI::Xaml::Media::IBitmapCache;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.BitmapCache"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Brush>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Brush;
-    using default_interface = Windows::UI::Xaml::Media::IBrush;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Brush"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::BrushCollection>
 {
     using abi = ABI::Windows::UI::Xaml::Media::BrushCollection;
-    using default_interface = Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::Brush>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.BrushCollection"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::CacheMode>
 {
     using abi = ABI::Windows::UI::Xaml::Media::CacheMode;
-    using default_interface = Windows::UI::Xaml::Media::ICacheMode;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.CacheMode"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::CompositeTransform>
 {
     using abi = ABI::Windows::UI::Xaml::Media::CompositeTransform;
-    using default_interface = Windows::UI::Xaml::Media::ICompositeTransform;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.CompositeTransform"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::CompositionTarget>
 {
     using abi = ABI::Windows::UI::Xaml::Media::CompositionTarget;
-    using default_interface = Windows::UI::Xaml::Media::ICompositionTarget;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.CompositionTarget"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::DoubleCollection>
 {
     using abi = ABI::Windows::UI::Xaml::Media::DoubleCollection;
-    using default_interface = Windows::Foundation::Collections::IVector<double>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.DoubleCollection"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::EllipseGeometry>
 {
     using abi = ABI::Windows::UI::Xaml::Media::EllipseGeometry;
-    using default_interface = Windows::UI::Xaml::Media::IEllipseGeometry;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.EllipseGeometry"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::FontFamily>
 {
     using abi = ABI::Windows::UI::Xaml::Media::FontFamily;
-    using default_interface = Windows::UI::Xaml::Media::IFontFamily;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.FontFamily"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::GeneralTransform>
 {
     using abi = ABI::Windows::UI::Xaml::Media::GeneralTransform;
-    using default_interface = Windows::UI::Xaml::Media::IGeneralTransform;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.GeneralTransform"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Geometry>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Geometry;
-    using default_interface = Windows::UI::Xaml::Media::IGeometry;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Geometry"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::GeometryCollection>
 {
     using abi = ABI::Windows::UI::Xaml::Media::GeometryCollection;
-    using default_interface = Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::Geometry>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.GeometryCollection"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::GeometryGroup>
 {
     using abi = ABI::Windows::UI::Xaml::Media::GeometryGroup;
-    using default_interface = Windows::UI::Xaml::Media::IGeometryGroup;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.GeometryGroup"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::GradientBrush>
 {
     using abi = ABI::Windows::UI::Xaml::Media::GradientBrush;
-    using default_interface = Windows::UI::Xaml::Media::IGradientBrush;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.GradientBrush"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::GradientStop>
 {
     using abi = ABI::Windows::UI::Xaml::Media::GradientStop;
-    using default_interface = Windows::UI::Xaml::Media::IGradientStop;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.GradientStop"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::GradientStopCollection>
 {
     using abi = ABI::Windows::UI::Xaml::Media::GradientStopCollection;
-    using default_interface = Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::GradientStop>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.GradientStopCollection"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::ImageBrush>
 {
     using abi = ABI::Windows::UI::Xaml::Media::ImageBrush;
-    using default_interface = Windows::UI::Xaml::Media::IImageBrush;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.ImageBrush"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::ImageSource>
 {
     using abi = ABI::Windows::UI::Xaml::Media::ImageSource;
-    using default_interface = Windows::UI::Xaml::Media::IImageSource;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.ImageSource"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::LineGeometry>
 {
     using abi = ABI::Windows::UI::Xaml::Media::LineGeometry;
-    using default_interface = Windows::UI::Xaml::Media::ILineGeometry;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.LineGeometry"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::LineSegment>
 {
     using abi = ABI::Windows::UI::Xaml::Media::LineSegment;
-    using default_interface = Windows::UI::Xaml::Media::ILineSegment;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.LineSegment"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::LinearGradientBrush>
 {
     using abi = ABI::Windows::UI::Xaml::Media::LinearGradientBrush;
-    using default_interface = Windows::UI::Xaml::Media::ILinearGradientBrush;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.LinearGradientBrush"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Matrix3DProjection>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Matrix3DProjection;
-    using default_interface = Windows::UI::Xaml::Media::IMatrix3DProjection;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Matrix3DProjection"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::MatrixHelper>
 {
     using abi = ABI::Windows::UI::Xaml::Media::MatrixHelper;
-    using default_interface = Windows::UI::Xaml::Media::IMatrixHelper;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.MatrixHelper"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::MatrixTransform>
 {
     using abi = ABI::Windows::UI::Xaml::Media::MatrixTransform;
-    using default_interface = Windows::UI::Xaml::Media::IMatrixTransform;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.MatrixTransform"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::MediaTransportControlsThumbnailRequestedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Media::MediaTransportControlsThumbnailRequestedEventArgs;
-    using default_interface = Windows::UI::Xaml::Media::IMediaTransportControlsThumbnailRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.MediaTransportControlsThumbnailRequestedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::PartialMediaFailureDetectedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Media::PartialMediaFailureDetectedEventArgs;
-    using default_interface = Windows::UI::Xaml::Media::IPartialMediaFailureDetectedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.PartialMediaFailureDetectedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::PathFigure>
 {
     using abi = ABI::Windows::UI::Xaml::Media::PathFigure;
-    using default_interface = Windows::UI::Xaml::Media::IPathFigure;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.PathFigure"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::PathFigureCollection>
 {
     using abi = ABI::Windows::UI::Xaml::Media::PathFigureCollection;
-    using default_interface = Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::PathFigure>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.PathFigureCollection"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::PathGeometry>
 {
     using abi = ABI::Windows::UI::Xaml::Media::PathGeometry;
-    using default_interface = Windows::UI::Xaml::Media::IPathGeometry;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.PathGeometry"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::PathSegment>
 {
     using abi = ABI::Windows::UI::Xaml::Media::PathSegment;
-    using default_interface = Windows::UI::Xaml::Media::IPathSegment;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.PathSegment"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::PathSegmentCollection>
 {
     using abi = ABI::Windows::UI::Xaml::Media::PathSegmentCollection;
-    using default_interface = Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::PathSegment>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.PathSegmentCollection"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::PlaneProjection>
 {
     using abi = ABI::Windows::UI::Xaml::Media::PlaneProjection;
-    using default_interface = Windows::UI::Xaml::Media::IPlaneProjection;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.PlaneProjection"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::PointCollection>
 {
     using abi = ABI::Windows::UI::Xaml::Media::PointCollection;
-    using default_interface = Windows::Foundation::Collections::IVector<Windows::Foundation::Point>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.PointCollection"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::PolyBezierSegment>
 {
     using abi = ABI::Windows::UI::Xaml::Media::PolyBezierSegment;
-    using default_interface = Windows::UI::Xaml::Media::IPolyBezierSegment;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.PolyBezierSegment"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::PolyLineSegment>
 {
     using abi = ABI::Windows::UI::Xaml::Media::PolyLineSegment;
-    using default_interface = Windows::UI::Xaml::Media::IPolyLineSegment;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.PolyLineSegment"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::PolyQuadraticBezierSegment>
 {
     using abi = ABI::Windows::UI::Xaml::Media::PolyQuadraticBezierSegment;
-    using default_interface = Windows::UI::Xaml::Media::IPolyQuadraticBezierSegment;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.PolyQuadraticBezierSegment"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Projection>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Projection;
-    using default_interface = Windows::UI::Xaml::Media::IProjection;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Projection"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::QuadraticBezierSegment>
 {
     using abi = ABI::Windows::UI::Xaml::Media::QuadraticBezierSegment;
-    using default_interface = Windows::UI::Xaml::Media::IQuadraticBezierSegment;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.QuadraticBezierSegment"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::RateChangedRoutedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Media::RateChangedRoutedEventArgs;
-    using default_interface = Windows::UI::Xaml::Media::IRateChangedRoutedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.RateChangedRoutedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::RectangleGeometry>
 {
     using abi = ABI::Windows::UI::Xaml::Media::RectangleGeometry;
-    using default_interface = Windows::UI::Xaml::Media::IRectangleGeometry;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.RectangleGeometry"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::RenderingEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Media::RenderingEventArgs;
-    using default_interface = Windows::UI::Xaml::Media::IRenderingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.RenderingEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::RotateTransform>
 {
     using abi = ABI::Windows::UI::Xaml::Media::RotateTransform;
-    using default_interface = Windows::UI::Xaml::Media::IRotateTransform;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.RotateTransform"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::ScaleTransform>
 {
     using abi = ABI::Windows::UI::Xaml::Media::ScaleTransform;
-    using default_interface = Windows::UI::Xaml::Media::IScaleTransform;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.ScaleTransform"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::SkewTransform>
 {
     using abi = ABI::Windows::UI::Xaml::Media::SkewTransform;
-    using default_interface = Windows::UI::Xaml::Media::ISkewTransform;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.SkewTransform"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::SolidColorBrush>
 {
     using abi = ABI::Windows::UI::Xaml::Media::SolidColorBrush;
-    using default_interface = Windows::UI::Xaml::Media::ISolidColorBrush;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.SolidColorBrush"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::TileBrush>
 {
     using abi = ABI::Windows::UI::Xaml::Media::TileBrush;
-    using default_interface = Windows::UI::Xaml::Media::ITileBrush;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.TileBrush"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::TimelineMarker>
 {
     using abi = ABI::Windows::UI::Xaml::Media::TimelineMarker;
-    using default_interface = Windows::UI::Xaml::Media::ITimelineMarker;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.TimelineMarker"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::TimelineMarkerCollection>
 {
     using abi = ABI::Windows::UI::Xaml::Media::TimelineMarkerCollection;
-    using default_interface = Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::TimelineMarker>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.TimelineMarkerCollection"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::TimelineMarkerRoutedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Media::TimelineMarkerRoutedEventArgs;
-    using default_interface = Windows::UI::Xaml::Media::ITimelineMarkerRoutedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.TimelineMarkerRoutedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Transform>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Transform;
-    using default_interface = Windows::UI::Xaml::Media::ITransform;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Transform"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::TransformCollection>
 {
     using abi = ABI::Windows::UI::Xaml::Media::TransformCollection;
-    using default_interface = Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::Transform>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.TransformCollection"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::TransformGroup>
 {
     using abi = ABI::Windows::UI::Xaml::Media::TransformGroup;
-    using default_interface = Windows::UI::Xaml::Media::ITransformGroup;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.TransformGroup"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::TranslateTransform>
 {
     using abi = ABI::Windows::UI::Xaml::Media::TranslateTransform;
-    using default_interface = Windows::UI::Xaml::Media::ITranslateTransform;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.TranslateTransform"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::VisualTreeHelper>
 {
     using abi = ABI::Windows::UI::Xaml::Media::VisualTreeHelper;
-    using default_interface = Windows::UI::Xaml::Media::IVisualTreeHelper;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.VisualTreeHelper"; }
 };
 

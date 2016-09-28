@@ -312,116 +312,116 @@ namespace Windows::Media::ContentRestrictions {
 template <typename D> hstring impl_IRatedContentDescription<D>::Id() const
 {
     hstring value;
-    check_hresult(shim()->get_Id(put(value)));
+    check_hresult(static_cast<const IRatedContentDescription &>(static_cast<const D &>(*this))->get_Id(put(value)));
     return value;
 }
 
 template <typename D> void impl_IRatedContentDescription<D>::Id(hstring_ref value) const
 {
-    check_hresult(shim()->put_Id(get(value)));
+    check_hresult(static_cast<const IRatedContentDescription &>(static_cast<const D &>(*this))->put_Id(get(value)));
 }
 
 template <typename D> hstring impl_IRatedContentDescription<D>::Title() const
 {
     hstring value;
-    check_hresult(shim()->get_Title(put(value)));
+    check_hresult(static_cast<const IRatedContentDescription &>(static_cast<const D &>(*this))->get_Title(put(value)));
     return value;
 }
 
 template <typename D> void impl_IRatedContentDescription<D>::Title(hstring_ref value) const
 {
-    check_hresult(shim()->put_Title(get(value)));
+    check_hresult(static_cast<const IRatedContentDescription &>(static_cast<const D &>(*this))->put_Title(get(value)));
 }
 
 template <typename D> Windows::Storage::Streams::IRandomAccessStreamReference impl_IRatedContentDescription<D>::Image() const
 {
     Windows::Storage::Streams::IRandomAccessStreamReference value;
-    check_hresult(shim()->get_Image(put(value)));
+    check_hresult(static_cast<const IRatedContentDescription &>(static_cast<const D &>(*this))->get_Image(put(value)));
     return value;
 }
 
 template <typename D> void impl_IRatedContentDescription<D>::Image(const Windows::Storage::Streams::IRandomAccessStreamReference & value) const
 {
-    check_hresult(shim()->put_Image(get(value)));
+    check_hresult(static_cast<const IRatedContentDescription &>(static_cast<const D &>(*this))->put_Image(get(value)));
 }
 
 template <typename D> Windows::Media::ContentRestrictions::RatedContentCategory impl_IRatedContentDescription<D>::Category() const
 {
     Windows::Media::ContentRestrictions::RatedContentCategory value {};
-    check_hresult(shim()->get_Category(&value));
+    check_hresult(static_cast<const IRatedContentDescription &>(static_cast<const D &>(*this))->get_Category(&value));
     return value;
 }
 
 template <typename D> void impl_IRatedContentDescription<D>::Category(Windows::Media::ContentRestrictions::RatedContentCategory value) const
 {
-    check_hresult(shim()->put_Category(value));
+    check_hresult(static_cast<const IRatedContentDescription &>(static_cast<const D &>(*this))->put_Category(value));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IRatedContentDescription<D>::Ratings() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(shim()->get_Ratings(put(value)));
+    check_hresult(static_cast<const IRatedContentDescription &>(static_cast<const D &>(*this))->get_Ratings(put(value)));
     return value;
 }
 
 template <typename D> void impl_IRatedContentDescription<D>::Ratings(const Windows::Foundation::Collections::IVector<hstring> & value) const
 {
-    check_hresult(shim()->put_Ratings(get(value)));
+    check_hresult(static_cast<const IRatedContentDescription &>(static_cast<const D &>(*this))->put_Ratings(get(value)));
 }
 
 template <typename D> Windows::Media::ContentRestrictions::RatedContentDescription impl_IRatedContentDescriptionFactory<D>::Create(hstring_ref id, hstring_ref title, Windows::Media::ContentRestrictions::RatedContentCategory category) const
 {
     Windows::Media::ContentRestrictions::RatedContentDescription RatedContentDescription { nullptr };
-    check_hresult(shim()->abi_Create(get(id), get(title), category, put(RatedContentDescription)));
+    check_hresult(static_cast<const IRatedContentDescriptionFactory &>(static_cast<const D &>(*this))->abi_Create(get(id), get(title), category, put(RatedContentDescription)));
     return RatedContentDescription;
 }
 
 template <typename D> hstring impl_IContentRestrictionsBrowsePolicy<D>::GeographicRegion() const
 {
     hstring value;
-    check_hresult(shim()->get_GeographicRegion(put(value)));
+    check_hresult(static_cast<const IContentRestrictionsBrowsePolicy &>(static_cast<const D &>(*this))->get_GeographicRegion(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<uint32_t> impl_IContentRestrictionsBrowsePolicy<D>::MaxBrowsableAgeRating() const
 {
     Windows::Foundation::IReference<uint32_t> value;
-    check_hresult(shim()->get_MaxBrowsableAgeRating(put(value)));
+    check_hresult(static_cast<const IContentRestrictionsBrowsePolicy &>(static_cast<const D &>(*this))->get_MaxBrowsableAgeRating(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<uint32_t> impl_IContentRestrictionsBrowsePolicy<D>::PreferredAgeRating() const
 {
     Windows::Foundation::IReference<uint32_t> value;
-    check_hresult(shim()->get_PreferredAgeRating(put(value)));
+    check_hresult(static_cast<const IContentRestrictionsBrowsePolicy &>(static_cast<const D &>(*this))->get_PreferredAgeRating(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::ContentRestrictions::ContentRestrictionsBrowsePolicy> impl_IRatedContentRestrictions<D>::GetBrowsePolicyAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::ContentRestrictions::ContentRestrictionsBrowsePolicy> operation;
-    check_hresult(shim()->abi_GetBrowsePolicyAsync(put(operation)));
+    check_hresult(static_cast<const IRatedContentRestrictions &>(static_cast<const D &>(*this))->abi_GetBrowsePolicyAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Media::ContentRestrictions::ContentAccessRestrictionLevel> impl_IRatedContentRestrictions<D>::GetRestrictionLevelAsync(const Windows::Media::ContentRestrictions::RatedContentDescription & RatedContentDescription) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Media::ContentRestrictions::ContentAccessRestrictionLevel> operation;
-    check_hresult(shim()->abi_GetRestrictionLevelAsync(get(RatedContentDescription), put(operation)));
+    check_hresult(static_cast<const IRatedContentRestrictions &>(static_cast<const D &>(*this))->abi_GetRestrictionLevelAsync(get(RatedContentDescription), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IRatedContentRestrictions<D>::RequestContentAccessAsync(const Windows::Media::ContentRestrictions::RatedContentDescription & RatedContentDescription) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(shim()->abi_RequestContentAccessAsync(get(RatedContentDescription), put(operation)));
+    check_hresult(static_cast<const IRatedContentRestrictions &>(static_cast<const D &>(*this))->abi_RequestContentAccessAsync(get(RatedContentDescription), put(operation)));
     return operation;
 }
 
 template <typename D> event_token impl_IRatedContentRestrictions<D>::RestrictionsChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_RestrictionsChanged(get(handler), &token));
+    check_hresult(static_cast<const IRatedContentRestrictions &>(static_cast<const D &>(*this))->add_RestrictionsChanged(get(handler), &token));
     return token;
 }
 
@@ -432,13 +432,13 @@ template <typename D> event_revoker<IRatedContentRestrictions> impl_IRatedConten
 
 template <typename D> void impl_IRatedContentRestrictions<D>::RestrictionsChanged(event_token token) const
 {
-    check_hresult(shim()->remove_RestrictionsChanged(token));
+    check_hresult(static_cast<const IRatedContentRestrictions &>(static_cast<const D &>(*this))->remove_RestrictionsChanged(token));
 }
 
 template <typename D> Windows::Media::ContentRestrictions::RatedContentRestrictions impl_IRatedContentRestrictionsFactory<D>::CreateWithMaxAgeRating(uint32_t maxAgeRating) const
 {
     Windows::Media::ContentRestrictions::RatedContentRestrictions ratedContentRestrictions { nullptr };
-    check_hresult(shim()->abi_CreateWithMaxAgeRating(maxAgeRating, put(ratedContentRestrictions)));
+    check_hresult(static_cast<const IRatedContentRestrictionsFactory &>(static_cast<const D &>(*this))->abi_CreateWithMaxAgeRating(maxAgeRating, put(ratedContentRestrictions)));
     return ratedContentRestrictions;
 }
 

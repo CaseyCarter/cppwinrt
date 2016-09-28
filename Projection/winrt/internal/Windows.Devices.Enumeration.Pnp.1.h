@@ -67,10 +67,10 @@ template <> struct traits<Windows::Devices::Enumeration::Pnp::PnpObjectWatcher> 
 
 namespace Windows::Devices::Enumeration::Pnp {
 
-template <typename T> class impl_IPnpObject;
-template <typename T> class impl_IPnpObjectStatics;
-template <typename T> class impl_IPnpObjectUpdate;
-template <typename T> class impl_IPnpObjectWatcher;
+template <typename T> struct impl_IPnpObject;
+template <typename T> struct impl_IPnpObjectStatics;
+template <typename T> struct impl_IPnpObjectUpdate;
+template <typename T> struct impl_IPnpObjectWatcher;
 
 }
 
@@ -103,28 +103,24 @@ template <> struct traits<Windows::Devices::Enumeration::Pnp::IPnpObjectWatcher>
 template <> struct traits<Windows::Devices::Enumeration::Pnp::PnpObject>
 {
     using abi = ABI::Windows::Devices::Enumeration::Pnp::PnpObject;
-    using default_interface = Windows::Devices::Enumeration::Pnp::IPnpObject;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Enumeration.Pnp.PnpObject"; }
 };
 
 template <> struct traits<Windows::Devices::Enumeration::Pnp::PnpObjectCollection>
 {
     using abi = ABI::Windows::Devices::Enumeration::Pnp::PnpObjectCollection;
-    using default_interface = Windows::Foundation::Collections::IVectorView<Windows::Devices::Enumeration::Pnp::PnpObject>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Enumeration.Pnp.PnpObjectCollection"; }
 };
 
 template <> struct traits<Windows::Devices::Enumeration::Pnp::PnpObjectUpdate>
 {
     using abi = ABI::Windows::Devices::Enumeration::Pnp::PnpObjectUpdate;
-    using default_interface = Windows::Devices::Enumeration::Pnp::IPnpObjectUpdate;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Enumeration.Pnp.PnpObjectUpdate"; }
 };
 
 template <> struct traits<Windows::Devices::Enumeration::Pnp::PnpObjectWatcher>
 {
     using abi = ABI::Windows::Devices::Enumeration::Pnp::PnpObjectWatcher;
-    using default_interface = Windows::Devices::Enumeration::Pnp::IPnpObjectWatcher;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Enumeration.Pnp.PnpObjectWatcher"; }
 };
 

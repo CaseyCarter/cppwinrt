@@ -31,22 +31,14 @@ template <> struct __declspec(uuid("873c5c7a-c638-5a33-9b03-215c72471663")) __de
 namespace Windows::ApplicationModel::ExtendedExecution {
 
 template <typename D>
-class WINRT_EBO impl_IExtendedExecutionRevokedEventArgs
+struct WINRT_EBO impl_IExtendedExecutionRevokedEventArgs
 {
-    auto shim() const { return impl::shim<D, IExtendedExecutionRevokedEventArgs>(this); }
-
-public:
-
     Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionRevokedReason Reason() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IExtendedExecutionSession
+struct WINRT_EBO impl_IExtendedExecutionSession
 {
-    auto shim() const { return impl::shim<D, IExtendedExecutionSession>(this); }
-
-public:
-
     Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionReason Reason() const;
     void Reason(Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionReason value) const;
     hstring Description() const;

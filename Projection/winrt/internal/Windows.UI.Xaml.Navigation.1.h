@@ -106,14 +106,14 @@ template <> struct traits<Windows::UI::Xaml::Navigation::PageStackEntry> { using
 
 namespace Windows::UI::Xaml::Navigation {
 
-template <typename T> class impl_INavigatingCancelEventArgs;
-template <typename T> class impl_INavigatingCancelEventArgs2;
-template <typename T> class impl_INavigationEventArgs;
-template <typename T> class impl_INavigationEventArgs2;
-template <typename T> class impl_INavigationFailedEventArgs;
-template <typename T> class impl_IPageStackEntry;
-template <typename T> class impl_IPageStackEntryFactory;
-template <typename T> class impl_IPageStackEntryStatics;
+template <typename T> struct impl_INavigatingCancelEventArgs;
+template <typename T> struct impl_INavigatingCancelEventArgs2;
+template <typename T> struct impl_INavigationEventArgs;
+template <typename T> struct impl_INavigationEventArgs2;
+template <typename T> struct impl_INavigationFailedEventArgs;
+template <typename T> struct impl_IPageStackEntry;
+template <typename T> struct impl_IPageStackEntryFactory;
+template <typename T> struct impl_IPageStackEntryStatics;
 template <typename T> struct impl_LoadCompletedEventHandler;
 template <typename T> struct impl_NavigatedEventHandler;
 template <typename T> struct impl_NavigatingCancelEventHandler;
@@ -200,28 +200,24 @@ template <> struct traits<Windows::UI::Xaml::Navigation::NavigationStoppedEventH
 template <> struct traits<Windows::UI::Xaml::Navigation::NavigatingCancelEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Navigation::NavigatingCancelEventArgs;
-    using default_interface = Windows::UI::Xaml::Navigation::INavigatingCancelEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Navigation.NavigatingCancelEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Navigation::NavigationEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Navigation::NavigationEventArgs;
-    using default_interface = Windows::UI::Xaml::Navigation::INavigationEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Navigation.NavigationEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Navigation::NavigationFailedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Navigation::NavigationFailedEventArgs;
-    using default_interface = Windows::UI::Xaml::Navigation::INavigationFailedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Navigation.NavigationFailedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Navigation::PageStackEntry>
 {
     using abi = ABI::Windows::UI::Xaml::Navigation::PageStackEntry;
-    using default_interface = Windows::UI::Xaml::Navigation::IPageStackEntry;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Navigation.PageStackEntry"; }
 };
 

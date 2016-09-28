@@ -68,10 +68,10 @@ template <> struct traits<Windows::Globalization::DateTimeFormatting::DateTimeFo
 
 namespace Windows::Globalization::DateTimeFormatting {
 
-template <typename T> class impl_IDateTimeFormatter;
-template <typename T> class impl_IDateTimeFormatter2;
-template <typename T> class impl_IDateTimeFormatterFactory;
-template <typename T> class impl_IDateTimeFormatterStatics;
+template <typename T> struct impl_IDateTimeFormatter;
+template <typename T> struct impl_IDateTimeFormatter2;
+template <typename T> struct impl_IDateTimeFormatterFactory;
+template <typename T> struct impl_IDateTimeFormatterStatics;
 
 }
 
@@ -104,7 +104,6 @@ template <> struct traits<Windows::Globalization::DateTimeFormatting::IDateTimeF
 template <> struct traits<Windows::Globalization::DateTimeFormatting::DateTimeFormatter>
 {
     using abi = ABI::Windows::Globalization::DateTimeFormatting::DateTimeFormatter;
-    using default_interface = Windows::Globalization::DateTimeFormatting::IDateTimeFormatter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Globalization.DateTimeFormatting.DateTimeFormatter"; }
 };
 

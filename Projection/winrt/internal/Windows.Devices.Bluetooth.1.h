@@ -223,22 +223,22 @@ template <> struct traits<Windows::Devices::Bluetooth::BluetoothSignalStrengthFi
 
 namespace Windows::Devices::Bluetooth {
 
-template <typename T> class impl_IBluetoothClassOfDevice;
-template <typename T> class impl_IBluetoothClassOfDeviceStatics;
-template <typename T> class impl_IBluetoothDevice;
-template <typename T> class impl_IBluetoothDevice2;
-template <typename T> class impl_IBluetoothDevice3;
-template <typename T> class impl_IBluetoothDeviceStatics;
-template <typename T> class impl_IBluetoothDeviceStatics2;
-template <typename T> class impl_IBluetoothLEAppearance;
-template <typename T> class impl_IBluetoothLEAppearanceCategoriesStatics;
-template <typename T> class impl_IBluetoothLEAppearanceStatics;
-template <typename T> class impl_IBluetoothLEAppearanceSubcategoriesStatics;
-template <typename T> class impl_IBluetoothLEDevice;
-template <typename T> class impl_IBluetoothLEDevice2;
-template <typename T> class impl_IBluetoothLEDeviceStatics;
-template <typename T> class impl_IBluetoothLEDeviceStatics2;
-template <typename T> class impl_IBluetoothSignalStrengthFilter;
+template <typename T> struct impl_IBluetoothClassOfDevice;
+template <typename T> struct impl_IBluetoothClassOfDeviceStatics;
+template <typename T> struct impl_IBluetoothDevice;
+template <typename T> struct impl_IBluetoothDevice2;
+template <typename T> struct impl_IBluetoothDevice3;
+template <typename T> struct impl_IBluetoothDeviceStatics;
+template <typename T> struct impl_IBluetoothDeviceStatics2;
+template <typename T> struct impl_IBluetoothLEAppearance;
+template <typename T> struct impl_IBluetoothLEAppearanceCategoriesStatics;
+template <typename T> struct impl_IBluetoothLEAppearanceStatics;
+template <typename T> struct impl_IBluetoothLEAppearanceSubcategoriesStatics;
+template <typename T> struct impl_IBluetoothLEDevice;
+template <typename T> struct impl_IBluetoothLEDevice2;
+template <typename T> struct impl_IBluetoothLEDeviceStatics;
+template <typename T> struct impl_IBluetoothLEDeviceStatics2;
+template <typename T> struct impl_IBluetoothSignalStrengthFilter;
 
 }
 
@@ -343,21 +343,18 @@ template <> struct traits<Windows::Devices::Bluetooth::IBluetoothSignalStrengthF
 template <> struct traits<Windows::Devices::Bluetooth::BluetoothClassOfDevice>
 {
     using abi = ABI::Windows::Devices::Bluetooth::BluetoothClassOfDevice;
-    using default_interface = Windows::Devices::Bluetooth::IBluetoothClassOfDevice;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.BluetoothClassOfDevice"; }
 };
 
 template <> struct traits<Windows::Devices::Bluetooth::BluetoothDevice>
 {
     using abi = ABI::Windows::Devices::Bluetooth::BluetoothDevice;
-    using default_interface = Windows::Devices::Bluetooth::IBluetoothDevice;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.BluetoothDevice"; }
 };
 
 template <> struct traits<Windows::Devices::Bluetooth::BluetoothLEAppearance>
 {
     using abi = ABI::Windows::Devices::Bluetooth::BluetoothLEAppearance;
-    using default_interface = Windows::Devices::Bluetooth::IBluetoothLEAppearance;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.BluetoothLEAppearance"; }
 };
 
@@ -374,14 +371,12 @@ template <> struct traits<Windows::Devices::Bluetooth::BluetoothLEAppearanceSubc
 template <> struct traits<Windows::Devices::Bluetooth::BluetoothLEDevice>
 {
     using abi = ABI::Windows::Devices::Bluetooth::BluetoothLEDevice;
-    using default_interface = Windows::Devices::Bluetooth::IBluetoothLEDevice;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.BluetoothLEDevice"; }
 };
 
 template <> struct traits<Windows::Devices::Bluetooth::BluetoothSignalStrengthFilter>
 {
     using abi = ABI::Windows::Devices::Bluetooth::BluetoothSignalStrengthFilter;
-    using default_interface = Windows::Devices::Bluetooth::IBluetoothSignalStrengthFilter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.BluetoothSignalStrengthFilter"; }
 };
 

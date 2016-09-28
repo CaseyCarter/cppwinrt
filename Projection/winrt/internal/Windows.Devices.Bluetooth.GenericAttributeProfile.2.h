@@ -161,12 +161,8 @@ template <> struct __declspec(uuid("e3c56728-7f2d-5a0d-ad38-030d39c60f9f")) __de
 namespace Windows::Devices::Bluetooth::GenericAttributeProfile {
 
 template <typename D>
-class WINRT_EBO impl_IGattCharacteristic
+struct WINRT_EBO impl_IGattCharacteristic
 {
-    auto shim() const { return impl::shim<D, IGattCharacteristic>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptor> GetDescriptors(GUID descriptorUuid) const;
     Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicProperties CharacteristicProperties() const;
     Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel ProtectionLevel() const;
@@ -188,33 +184,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IGattCharacteristic2
+struct WINRT_EBO impl_IGattCharacteristic2
 {
-    auto shim() const { return impl::shim<D, IGattCharacteristic2>(this); }
-
-public:
-
     Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService Service() const;
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptor> GetAllDescriptors() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGattCharacteristicStatics
+struct WINRT_EBO impl_IGattCharacteristicStatics
 {
-    auto shim() const { return impl::shim<D, IGattCharacteristicStatics>(this); }
-
-public:
-
     GUID ConvertShortIdToUuid(uint16_t shortId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGattCharacteristicUuidsStatics
+struct WINRT_EBO impl_IGattCharacteristicUuidsStatics
 {
-    auto shim() const { return impl::shim<D, IGattCharacteristicUuidsStatics>(this); }
-
-public:
-
     GUID BatteryLevel() const;
     GUID BloodPressureFeature() const;
     GUID BloodPressureMeasurement() const;
@@ -239,12 +223,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IGattCharacteristicUuidsStatics2
+struct WINRT_EBO impl_IGattCharacteristicUuidsStatics2
 {
-    auto shim() const { return impl::shim<D, IGattCharacteristicUuidsStatics2>(this); }
-
-public:
-
     GUID AlertCategoryId() const;
     GUID AlertCategoryIdBitMask() const;
     GUID AlertLevel() const;
@@ -308,12 +288,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IGattDescriptor
+struct WINRT_EBO impl_IGattDescriptor
 {
-    auto shim() const { return impl::shim<D, IGattDescriptor>(this); }
-
-public:
-
     Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel ProtectionLevel() const;
     void ProtectionLevel(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel value) const;
     GUID Uuid() const;
@@ -324,22 +300,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IGattDescriptorStatics
+struct WINRT_EBO impl_IGattDescriptorStatics
 {
-    auto shim() const { return impl::shim<D, IGattDescriptorStatics>(this); }
-
-public:
-
     GUID ConvertShortIdToUuid(uint16_t shortId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGattDescriptorUuidsStatics
+struct WINRT_EBO impl_IGattDescriptorUuidsStatics
 {
-    auto shim() const { return impl::shim<D, IGattDescriptorUuidsStatics>(this); }
-
-public:
-
     GUID CharacteristicAggregateFormat() const;
     GUID CharacteristicExtendedProperties() const;
     GUID CharacteristicPresentationFormat() const;
@@ -349,12 +317,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IGattDeviceService
+struct WINRT_EBO impl_IGattDeviceService
 {
-    auto shim() const { return impl::shim<D, IGattDeviceService>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic> GetCharacteristics(GUID characteristicUuid) const;
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> GetIncludedServices(GUID serviceUuid) const;
     hstring DeviceId() const;
@@ -363,12 +327,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IGattDeviceService2
+struct WINRT_EBO impl_IGattDeviceService2
 {
-    auto shim() const { return impl::shim<D, IGattDeviceService2>(this); }
-
-public:
-
     Windows::Devices::Bluetooth::BluetoothLEDevice Device() const;
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> ParentServices() const;
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic> GetAllCharacteristics() const;
@@ -376,12 +336,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IGattDeviceServiceStatics
+struct WINRT_EBO impl_IGattDeviceServiceStatics
 {
-    auto shim() const { return impl::shim<D, IGattDeviceServiceStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> FromIdAsync(hstring_ref deviceId) const;
     hstring GetDeviceSelectorFromUuid(GUID serviceUuid) const;
     hstring GetDeviceSelectorFromShortId(uint16_t serviceShortId) const;
@@ -389,12 +345,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IGattPresentationFormat
+struct WINRT_EBO impl_IGattPresentationFormat
 {
-    auto shim() const { return impl::shim<D, IGattPresentationFormat>(this); }
-
-public:
-
     uint8_t FormatType() const;
     int32_t Exponent() const;
     uint16_t Unit() const;
@@ -403,22 +355,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IGattPresentationFormatStatics
+struct WINRT_EBO impl_IGattPresentationFormatStatics
 {
-    auto shim() const { return impl::shim<D, IGattPresentationFormatStatics>(this); }
-
-public:
-
     uint8_t BluetoothSigAssignedNumbers() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGattPresentationFormatTypesStatics
+struct WINRT_EBO impl_IGattPresentationFormatTypesStatics
 {
-    auto shim() const { return impl::shim<D, IGattPresentationFormatTypesStatics>(this); }
-
-public:
-
     uint8_t Boolean() const;
     uint8_t Bit2() const;
     uint8_t Nibble() const;
@@ -449,45 +393,29 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IGattReadClientCharacteristicConfigurationDescriptorResult
+struct WINRT_EBO impl_IGattReadClientCharacteristicConfigurationDescriptorResult
 {
-    auto shim() const { return impl::shim<D, IGattReadClientCharacteristicConfigurationDescriptorResult>(this); }
-
-public:
-
     Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus Status() const;
     Windows::Devices::Bluetooth::GenericAttributeProfile::GattClientCharacteristicConfigurationDescriptorValue ClientCharacteristicConfigurationDescriptor() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGattReadResult
+struct WINRT_EBO impl_IGattReadResult
 {
-    auto shim() const { return impl::shim<D, IGattReadResult>(this); }
-
-public:
-
     Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus Status() const;
     Windows::Storage::Streams::IBuffer Value() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGattReliableWriteTransaction
+struct WINRT_EBO impl_IGattReliableWriteTransaction
 {
-    auto shim() const { return impl::shim<D, IGattReliableWriteTransaction>(this); }
-
-public:
-
     void WriteValue(const Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic & characteristic, const Windows::Storage::Streams::IBuffer & value) const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus> CommitAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGattServiceUuidsStatics
+struct WINRT_EBO impl_IGattServiceUuidsStatics
 {
-    auto shim() const { return impl::shim<D, IGattServiceUuidsStatics>(this); }
-
-public:
-
     GUID Battery() const;
     GUID BloodPressure() const;
     GUID CyclingSpeedAndCadence() const;
@@ -500,12 +428,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IGattServiceUuidsStatics2
+struct WINRT_EBO impl_IGattServiceUuidsStatics2
 {
-    auto shim() const { return impl::shim<D, IGattServiceUuidsStatics2>(this); }
-
-public:
-
     GUID AlertNotification() const;
     GUID CurrentTime() const;
     GUID CyclingPower() const;
@@ -522,12 +446,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IGattValueChangedEventArgs
+struct WINRT_EBO impl_IGattValueChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IGattValueChangedEventArgs>(this); }
-
-public:
-
     Windows::Storage::Streams::IBuffer CharacteristicValue() const;
     Windows::Foundation::DateTime Timestamp() const;
 };

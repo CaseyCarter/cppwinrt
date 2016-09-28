@@ -71,23 +71,15 @@ template <> struct __declspec(uuid("19344a58-a5c1-5168-803e-632771628143")) __de
 namespace Windows::Media::Protection {
 
 template <typename D>
-class WINRT_EBO impl_IComponentLoadFailedEventArgs
+struct WINRT_EBO impl_IComponentLoadFailedEventArgs
 {
-    auto shim() const { return impl::shim<D, IComponentLoadFailedEventArgs>(this); }
-
-public:
-
     Windows::Media::Protection::RevocationAndRenewalInformation Information() const;
     Windows::Media::Protection::MediaProtectionServiceCompletion Completion() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHdcpSession
+struct WINRT_EBO impl_IHdcpSession
 {
-    auto shim() const { return impl::shim<D, IHdcpSession>(this); }
-
-public:
-
     bool IsEffectiveProtectionAtLeast(Windows::Media::Protection::HdcpProtection protection) const;
     Windows::Foundation::IReference<winrt::Windows::Media::Protection::HdcpProtection> GetEffectiveProtection() const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::Media::Protection::HdcpSetProtectionResult> SetDesiredMinProtectionAsync(Windows::Media::Protection::HdcpProtection protection) const;
@@ -98,12 +90,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaProtectionManager
+struct WINRT_EBO impl_IMediaProtectionManager
 {
-    auto shim() const { return impl::shim<D, IMediaProtectionManager>(this); }
-
-public:
-
     event_token ServiceRequested(const Windows::Media::Protection::ServiceRequestedEventHandler & handler) const;
     using ServiceRequested_revoker = event_revoker<IMediaProtectionManager>;
     ServiceRequested_revoker ServiceRequested(auto_revoke_t, const Windows::Media::Protection::ServiceRequestedEventHandler & handler) const;
@@ -120,73 +108,45 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaProtectionPMPServer
+struct WINRT_EBO impl_IMediaProtectionPMPServer
 {
-    auto shim() const { return impl::shim<D, IMediaProtectionPMPServer>(this); }
-
-public:
-
     Windows::Foundation::Collections::IPropertySet Properties() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaProtectionPMPServerFactory
+struct WINRT_EBO impl_IMediaProtectionPMPServerFactory
 {
-    auto shim() const { return impl::shim<D, IMediaProtectionPMPServerFactory>(this); }
-
-public:
-
     Windows::Media::Protection::MediaProtectionPMPServer CreatePMPServer(const Windows::Foundation::Collections::IPropertySet & pProperties) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaProtectionServiceCompletion
+struct WINRT_EBO impl_IMediaProtectionServiceCompletion
 {
-    auto shim() const { return impl::shim<D, IMediaProtectionServiceCompletion>(this); }
-
-public:
-
     void Complete(bool success) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaProtectionServiceRequest
+struct WINRT_EBO impl_IMediaProtectionServiceRequest
 {
-    auto shim() const { return impl::shim<D, IMediaProtectionServiceRequest>(this); }
-
-public:
-
     GUID ProtectionSystem() const;
     GUID Type() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IProtectionCapabilities
+struct WINRT_EBO impl_IProtectionCapabilities
 {
-    auto shim() const { return impl::shim<D, IProtectionCapabilities>(this); }
-
-public:
-
     Windows::Media::Protection::ProtectionCapabilityResult IsTypeSupported(hstring_ref type, hstring_ref keySystem) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRevocationAndRenewalInformation
+struct WINRT_EBO impl_IRevocationAndRenewalInformation
 {
-    auto shim() const { return impl::shim<D, IRevocationAndRenewalInformation>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<Windows::Media::Protection::RevocationAndRenewalItem> Items() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRevocationAndRenewalItem
+struct WINRT_EBO impl_IRevocationAndRenewalItem
 {
-    auto shim() const { return impl::shim<D, IRevocationAndRenewalItem>(this); }
-
-public:
-
     Windows::Media::Protection::RevocationAndRenewalReasons Reasons() const;
     hstring HeaderHash() const;
     hstring PublicKeyHash() const;
@@ -195,23 +155,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IServiceRequestedEventArgs
+struct WINRT_EBO impl_IServiceRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, IServiceRequestedEventArgs>(this); }
-
-public:
-
     Windows::Media::Protection::IMediaProtectionServiceRequest Request() const;
     Windows::Media::Protection::MediaProtectionServiceCompletion Completion() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IServiceRequestedEventArgs2
+struct WINRT_EBO impl_IServiceRequestedEventArgs2
 {
-    auto shim() const { return impl::shim<D, IServiceRequestedEventArgs2>(this); }
-
-public:
-
     Windows::Media::Playback::MediaPlaybackItem MediaPlaybackItem() const;
 };
 

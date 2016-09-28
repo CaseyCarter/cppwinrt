@@ -115,12 +115,8 @@ template <> struct __declspec(uuid("5db5fa32-707c-5849-a06b-91c8eb9d10e8")) __de
 namespace Windows::Devices::Enumeration::Pnp {
 
 template <typename D>
-class WINRT_EBO impl_IPnpObject
+struct WINRT_EBO impl_IPnpObject
 {
-    auto shim() const { return impl::shim<D, IPnpObject>(this); }
-
-public:
-
     Windows::Devices::Enumeration::Pnp::PnpObjectType Type() const;
     hstring Id() const;
     Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> Properties() const;
@@ -128,12 +124,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPnpObjectStatics
+struct WINRT_EBO impl_IPnpObjectStatics
 {
-    auto shim() const { return impl::shim<D, IPnpObjectStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::Pnp::PnpObject> CreateFromIdAsync(Windows::Devices::Enumeration::Pnp::PnpObjectType type, hstring_ref id, const Windows::Foundation::Collections::IIterable<hstring> & requestedProperties) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::Pnp::PnpObjectCollection> FindAllAsync(Windows::Devices::Enumeration::Pnp::PnpObjectType type, const Windows::Foundation::Collections::IIterable<hstring> & requestedProperties) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::Pnp::PnpObjectCollection> FindAllAsync(Windows::Devices::Enumeration::Pnp::PnpObjectType type, const Windows::Foundation::Collections::IIterable<hstring> & requestedProperties, hstring_ref aqsFilter) const;
@@ -142,24 +134,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPnpObjectUpdate
+struct WINRT_EBO impl_IPnpObjectUpdate
 {
-    auto shim() const { return impl::shim<D, IPnpObjectUpdate>(this); }
-
-public:
-
     Windows::Devices::Enumeration::Pnp::PnpObjectType Type() const;
     hstring Id() const;
     Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> Properties() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPnpObjectWatcher
+struct WINRT_EBO impl_IPnpObjectWatcher
 {
-    auto shim() const { return impl::shim<D, IPnpObjectWatcher>(this); }
-
-public:
-
     event_token Added(const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::Pnp::PnpObjectWatcher, Windows::Devices::Enumeration::Pnp::PnpObject> & handler) const;
     using Added_revoker = event_revoker<IPnpObjectWatcher>;
     Added_revoker Added(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::Pnp::PnpObjectWatcher, Windows::Devices::Enumeration::Pnp::PnpObject> & handler) const;

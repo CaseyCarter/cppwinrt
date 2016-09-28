@@ -71,12 +71,8 @@ template <> struct __declspec(uuid("c2dd082f-8cb4-51d6-b91b-7e2377780cee")) __de
 namespace Windows::UI::Xaml::Documents {
 
 template <typename D>
-class WINRT_EBO impl_IBlock
+struct WINRT_EBO impl_IBlock
 {
-    auto shim() const { return impl::shim<D, IBlock>(this); }
-
-public:
-
     Windows::UI::Xaml::TextAlignment TextAlignment() const;
     void TextAlignment(Windows::UI::Xaml::TextAlignment value) const;
     double LineHeight() const;
@@ -88,22 +84,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBlockFactory
+struct WINRT_EBO impl_IBlockFactory
 {
-    auto shim() const { return impl::shim<D, IBlockFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Documents::Block CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBlockStatics
+struct WINRT_EBO impl_IBlockStatics
 {
-    auto shim() const { return impl::shim<D, IBlockStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty TextAlignmentProperty() const;
     Windows::UI::Xaml::DependencyProperty LineHeightProperty() const;
     Windows::UI::Xaml::DependencyProperty LineStackingStrategyProperty() const;
@@ -111,21 +99,13 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBold
+struct WINRT_EBO impl_IBold
 {
-    auto shim() const { return impl::shim<D, IBold>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IGlyphs
+struct WINRT_EBO impl_IGlyphs
 {
-    auto shim() const { return impl::shim<D, IGlyphs>(this); }
-
-public:
-
     hstring UnicodeString() const;
     void UnicodeString(hstring_ref value) const;
     hstring Indices() const;
@@ -145,12 +125,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IGlyphs2
+struct WINRT_EBO impl_IGlyphs2
 {
-    auto shim() const { return impl::shim<D, IGlyphs2>(this); }
-
-public:
-
     bool IsColorFontEnabled() const;
     void IsColorFontEnabled(bool value) const;
     int32_t ColorFontPaletteIndex() const;
@@ -158,12 +134,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IGlyphsStatics
+struct WINRT_EBO impl_IGlyphsStatics
 {
-    auto shim() const { return impl::shim<D, IGlyphsStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty UnicodeStringProperty() const;
     Windows::UI::Xaml::DependencyProperty IndicesProperty() const;
     Windows::UI::Xaml::DependencyProperty FontUriProperty() const;
@@ -175,23 +147,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IGlyphsStatics2
+struct WINRT_EBO impl_IGlyphsStatics2
 {
-    auto shim() const { return impl::shim<D, IGlyphsStatics2>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty IsColorFontEnabledProperty() const;
     Windows::UI::Xaml::DependencyProperty ColorFontPaletteIndexProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHyperlink
+struct WINRT_EBO impl_IHyperlink
 {
-    auto shim() const { return impl::shim<D, IHyperlink>(this); }
-
-public:
-
     Windows::Foundation::Uri NavigateUri() const;
     void NavigateUri(const Windows::Foundation::Uri & value) const;
     event_token Click(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::Hyperlink, Windows::UI::Xaml::Documents::HyperlinkClickEventArgs> & value) const;
@@ -201,23 +165,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHyperlink2
+struct WINRT_EBO impl_IHyperlink2
 {
-    auto shim() const { return impl::shim<D, IHyperlink2>(this); }
-
-public:
-
     Windows::UI::Xaml::Documents::UnderlineStyle UnderlineStyle() const;
     void UnderlineStyle(Windows::UI::Xaml::Documents::UnderlineStyle value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHyperlink3
+struct WINRT_EBO impl_IHyperlink3
 {
-    auto shim() const { return impl::shim<D, IHyperlink3>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyObject XYFocusLeft() const;
     void XYFocusLeft(const Windows::UI::Xaml::DependencyObject & value) const;
     Windows::UI::Xaml::DependencyObject XYFocusRight() const;
@@ -231,41 +187,25 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHyperlinkClickEventArgs
+struct WINRT_EBO impl_IHyperlinkClickEventArgs
 {
-    auto shim() const { return impl::shim<D, IHyperlinkClickEventArgs>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IHyperlinkStatics
+struct WINRT_EBO impl_IHyperlinkStatics
 {
-    auto shim() const { return impl::shim<D, IHyperlinkStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty NavigateUriProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHyperlinkStatics2
+struct WINRT_EBO impl_IHyperlinkStatics2
 {
-    auto shim() const { return impl::shim<D, IHyperlinkStatics2>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty UnderlineStyleProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHyperlinkStatics3
+struct WINRT_EBO impl_IHyperlinkStatics3
 {
-    auto shim() const { return impl::shim<D, IHyperlinkStatics3>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty XYFocusLeftProperty() const;
     Windows::UI::Xaml::DependencyProperty XYFocusRightProperty() const;
     Windows::UI::Xaml::DependencyProperty XYFocusUpProperty() const;
@@ -274,82 +214,50 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IInline
+struct WINRT_EBO impl_IInline
 {
-    auto shim() const { return impl::shim<D, IInline>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IInlineFactory
+struct WINRT_EBO impl_IInlineFactory
 {
-    auto shim() const { return impl::shim<D, IInlineFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Documents::Inline CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInlineUIContainer
+struct WINRT_EBO impl_IInlineUIContainer
 {
-    auto shim() const { return impl::shim<D, IInlineUIContainer>(this); }
-
-public:
-
     Windows::UI::Xaml::UIElement Child() const;
     void Child(const Windows::UI::Xaml::UIElement & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IItalic
+struct WINRT_EBO impl_IItalic
 {
-    auto shim() const { return impl::shim<D, IItalic>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ILineBreak
+struct WINRT_EBO impl_ILineBreak
 {
-    auto shim() const { return impl::shim<D, ILineBreak>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IParagraph
+struct WINRT_EBO impl_IParagraph
 {
-    auto shim() const { return impl::shim<D, IParagraph>(this); }
-
-public:
-
     Windows::UI::Xaml::Documents::InlineCollection Inlines() const;
     double TextIndent() const;
     void TextIndent(double value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IParagraphStatics
+struct WINRT_EBO impl_IParagraphStatics
 {
-    auto shim() const { return impl::shim<D, IParagraphStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty TextIndentProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRun
+struct WINRT_EBO impl_IRun
 {
-    auto shim() const { return impl::shim<D, IRun>(this); }
-
-public:
-
     hstring Text() const;
     void Text(hstring_ref value) const;
     Windows::UI::Xaml::FlowDirection FlowDirection() const;
@@ -357,43 +265,27 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IRunStatics
+struct WINRT_EBO impl_IRunStatics
 {
-    auto shim() const { return impl::shim<D, IRunStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty FlowDirectionProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpan
+struct WINRT_EBO impl_ISpan
 {
-    auto shim() const { return impl::shim<D, ISpan>(this); }
-
-public:
-
     Windows::UI::Xaml::Documents::InlineCollection Inlines() const;
     void Inlines(const Windows::UI::Xaml::Documents::InlineCollection & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpanFactory
+struct WINRT_EBO impl_ISpanFactory
 {
-    auto shim() const { return impl::shim<D, ISpanFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Documents::Span CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITextElement
+struct WINRT_EBO impl_ITextElement
 {
-    auto shim() const { return impl::shim<D, ITextElement>(this); }
-
-public:
-
     hstring Name() const;
     double FontSize() const;
     void FontSize(double value) const;
@@ -419,23 +311,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ITextElement2
+struct WINRT_EBO impl_ITextElement2
 {
-    auto shim() const { return impl::shim<D, ITextElement2>(this); }
-
-public:
-
     bool IsTextScaleFactorEnabled() const;
     void IsTextScaleFactorEnabled(bool value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITextElement3
+struct WINRT_EBO impl_ITextElement3
 {
-    auto shim() const { return impl::shim<D, ITextElement3>(this); }
-
-public:
-
     bool AllowFocusOnInteraction() const;
     void AllowFocusOnInteraction(bool value) const;
     hstring AccessKey() const;
@@ -445,31 +329,19 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ITextElementFactory
+struct WINRT_EBO impl_ITextElementFactory
 {
-    auto shim() const { return impl::shim<D, ITextElementFactory>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ITextElementOverrides
+struct WINRT_EBO impl_ITextElementOverrides
 {
-    auto shim() const { return impl::shim<D, ITextElementOverrides>(this); }
-
-public:
-
     void OnDisconnectVisualChildren() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITextElementStatics
+struct WINRT_EBO impl_ITextElementStatics
 {
-    auto shim() const { return impl::shim<D, ITextElementStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty FontSizeProperty() const;
     Windows::UI::Xaml::DependencyProperty FontFamilyProperty() const;
     Windows::UI::Xaml::DependencyProperty FontWeightProperty() const;
@@ -481,34 +353,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ITextElementStatics2
+struct WINRT_EBO impl_ITextElementStatics2
 {
-    auto shim() const { return impl::shim<D, ITextElementStatics2>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty IsTextScaleFactorEnabledProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITextElementStatics3
+struct WINRT_EBO impl_ITextElementStatics3
 {
-    auto shim() const { return impl::shim<D, ITextElementStatics3>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty AllowFocusOnInteractionProperty() const;
     Windows::UI::Xaml::DependencyProperty AccessKeyProperty() const;
     Windows::UI::Xaml::DependencyProperty ExitDisplayModeOnAccessKeyInvokedProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITextPointer
+struct WINRT_EBO impl_ITextPointer
 {
-    auto shim() const { return impl::shim<D, ITextPointer>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyObject Parent() const;
     Windows::UI::Xaml::FrameworkElement VisualParent() const;
     Windows::UI::Xaml::Documents::LogicalDirection LogicalDirection() const;
@@ -518,21 +378,13 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ITypography
+struct WINRT_EBO impl_ITypography
 {
-    auto shim() const { return impl::shim<D, ITypography>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ITypographyStatics
+struct WINRT_EBO impl_ITypographyStatics
 {
-    auto shim() const { return impl::shim<D, ITypographyStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty AnnotationAlternatesProperty() const;
     int32_t GetAnnotationAlternates(const Windows::UI::Xaml::DependencyObject & element) const;
     void SetAnnotationAlternates(const Windows::UI::Xaml::DependencyObject & element, int32_t value) const;
@@ -665,12 +517,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUnderline
+struct WINRT_EBO impl_IUnderline
 {
-    auto shim() const { return impl::shim<D, IUnderline>(this); }
-
-public:
-
 };
 
 struct IBlock :

@@ -464,205 +464,205 @@ namespace Windows::Security::Credentials::UI {
 
 template <typename D> void impl_ICredentialPickerOptions<D>::Caption(hstring_ref value) const
 {
-    check_hresult(shim()->put_Caption(get(value)));
+    check_hresult(static_cast<const ICredentialPickerOptions &>(static_cast<const D &>(*this))->put_Caption(get(value)));
 }
 
 template <typename D> hstring impl_ICredentialPickerOptions<D>::Caption() const
 {
     hstring value;
-    check_hresult(shim()->get_Caption(put(value)));
+    check_hresult(static_cast<const ICredentialPickerOptions &>(static_cast<const D &>(*this))->get_Caption(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICredentialPickerOptions<D>::Message(hstring_ref value) const
 {
-    check_hresult(shim()->put_Message(get(value)));
+    check_hresult(static_cast<const ICredentialPickerOptions &>(static_cast<const D &>(*this))->put_Message(get(value)));
 }
 
 template <typename D> hstring impl_ICredentialPickerOptions<D>::Message() const
 {
     hstring value;
-    check_hresult(shim()->get_Message(put(value)));
+    check_hresult(static_cast<const ICredentialPickerOptions &>(static_cast<const D &>(*this))->get_Message(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICredentialPickerOptions<D>::ErrorCode(uint32_t value) const
 {
-    check_hresult(shim()->put_ErrorCode(value));
+    check_hresult(static_cast<const ICredentialPickerOptions &>(static_cast<const D &>(*this))->put_ErrorCode(value));
 }
 
 template <typename D> uint32_t impl_ICredentialPickerOptions<D>::ErrorCode() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_ErrorCode(&value));
+    check_hresult(static_cast<const ICredentialPickerOptions &>(static_cast<const D &>(*this))->get_ErrorCode(&value));
     return value;
 }
 
 template <typename D> void impl_ICredentialPickerOptions<D>::TargetName(hstring_ref value) const
 {
-    check_hresult(shim()->put_TargetName(get(value)));
+    check_hresult(static_cast<const ICredentialPickerOptions &>(static_cast<const D &>(*this))->put_TargetName(get(value)));
 }
 
 template <typename D> hstring impl_ICredentialPickerOptions<D>::TargetName() const
 {
     hstring value;
-    check_hresult(shim()->get_TargetName(put(value)));
+    check_hresult(static_cast<const ICredentialPickerOptions &>(static_cast<const D &>(*this))->get_TargetName(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICredentialPickerOptions<D>::AuthenticationProtocol(Windows::Security::Credentials::UI::AuthenticationProtocol value) const
 {
-    check_hresult(shim()->put_AuthenticationProtocol(value));
+    check_hresult(static_cast<const ICredentialPickerOptions &>(static_cast<const D &>(*this))->put_AuthenticationProtocol(value));
 }
 
 template <typename D> Windows::Security::Credentials::UI::AuthenticationProtocol impl_ICredentialPickerOptions<D>::AuthenticationProtocol() const
 {
     Windows::Security::Credentials::UI::AuthenticationProtocol value {};
-    check_hresult(shim()->get_AuthenticationProtocol(&value));
+    check_hresult(static_cast<const ICredentialPickerOptions &>(static_cast<const D &>(*this))->get_AuthenticationProtocol(&value));
     return value;
 }
 
 template <typename D> void impl_ICredentialPickerOptions<D>::CustomAuthenticationProtocol(hstring_ref value) const
 {
-    check_hresult(shim()->put_CustomAuthenticationProtocol(get(value)));
+    check_hresult(static_cast<const ICredentialPickerOptions &>(static_cast<const D &>(*this))->put_CustomAuthenticationProtocol(get(value)));
 }
 
 template <typename D> hstring impl_ICredentialPickerOptions<D>::CustomAuthenticationProtocol() const
 {
     hstring value;
-    check_hresult(shim()->get_CustomAuthenticationProtocol(put(value)));
+    check_hresult(static_cast<const ICredentialPickerOptions &>(static_cast<const D &>(*this))->get_CustomAuthenticationProtocol(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICredentialPickerOptions<D>::PreviousCredential(const Windows::Storage::Streams::IBuffer & value) const
 {
-    check_hresult(shim()->put_PreviousCredential(get(value)));
+    check_hresult(static_cast<const ICredentialPickerOptions &>(static_cast<const D &>(*this))->put_PreviousCredential(get(value)));
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_ICredentialPickerOptions<D>::PreviousCredential() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(shim()->get_PreviousCredential(put(value)));
+    check_hresult(static_cast<const ICredentialPickerOptions &>(static_cast<const D &>(*this))->get_PreviousCredential(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICredentialPickerOptions<D>::AlwaysDisplayDialog(bool value) const
 {
-    check_hresult(shim()->put_AlwaysDisplayDialog(value));
+    check_hresult(static_cast<const ICredentialPickerOptions &>(static_cast<const D &>(*this))->put_AlwaysDisplayDialog(value));
 }
 
 template <typename D> bool impl_ICredentialPickerOptions<D>::AlwaysDisplayDialog() const
 {
     bool value {};
-    check_hresult(shim()->get_AlwaysDisplayDialog(&value));
+    check_hresult(static_cast<const ICredentialPickerOptions &>(static_cast<const D &>(*this))->get_AlwaysDisplayDialog(&value));
     return value;
 }
 
 template <typename D> void impl_ICredentialPickerOptions<D>::CallerSavesCredential(bool value) const
 {
-    check_hresult(shim()->put_CallerSavesCredential(value));
+    check_hresult(static_cast<const ICredentialPickerOptions &>(static_cast<const D &>(*this))->put_CallerSavesCredential(value));
 }
 
 template <typename D> bool impl_ICredentialPickerOptions<D>::CallerSavesCredential() const
 {
     bool value {};
-    check_hresult(shim()->get_CallerSavesCredential(&value));
+    check_hresult(static_cast<const ICredentialPickerOptions &>(static_cast<const D &>(*this))->get_CallerSavesCredential(&value));
     return value;
 }
 
 template <typename D> void impl_ICredentialPickerOptions<D>::CredentialSaveOption(Windows::Security::Credentials::UI::CredentialSaveOption value) const
 {
-    check_hresult(shim()->put_CredentialSaveOption(value));
+    check_hresult(static_cast<const ICredentialPickerOptions &>(static_cast<const D &>(*this))->put_CredentialSaveOption(value));
 }
 
 template <typename D> Windows::Security::Credentials::UI::CredentialSaveOption impl_ICredentialPickerOptions<D>::CredentialSaveOption() const
 {
     Windows::Security::Credentials::UI::CredentialSaveOption value {};
-    check_hresult(shim()->get_CredentialSaveOption(&value));
+    check_hresult(static_cast<const ICredentialPickerOptions &>(static_cast<const D &>(*this))->get_CredentialSaveOption(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> impl_ICredentialPickerStatics<D>::PickAsync(const Windows::Security::Credentials::UI::CredentialPickerOptions & options) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> operation;
-    check_hresult(shim()->abi_PickWithOptionsAsync(get(options), put(operation)));
+    check_hresult(static_cast<const ICredentialPickerStatics &>(static_cast<const D &>(*this))->abi_PickWithOptionsAsync(get(options), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> impl_ICredentialPickerStatics<D>::PickAsync(hstring_ref targetName, hstring_ref message) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> operation;
-    check_hresult(shim()->abi_PickWithMessageAsync(get(targetName), get(message), put(operation)));
+    check_hresult(static_cast<const ICredentialPickerStatics &>(static_cast<const D &>(*this))->abi_PickWithMessageAsync(get(targetName), get(message), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> impl_ICredentialPickerStatics<D>::PickAsync(hstring_ref targetName, hstring_ref message, hstring_ref caption) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> operation;
-    check_hresult(shim()->abi_PickWithCaptionAsync(get(targetName), get(message), get(caption), put(operation)));
+    check_hresult(static_cast<const ICredentialPickerStatics &>(static_cast<const D &>(*this))->abi_PickWithCaptionAsync(get(targetName), get(message), get(caption), put(operation)));
     return operation;
 }
 
 template <typename D> uint32_t impl_ICredentialPickerResults<D>::ErrorCode() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_ErrorCode(&value));
+    check_hresult(static_cast<const ICredentialPickerResults &>(static_cast<const D &>(*this))->get_ErrorCode(&value));
     return value;
 }
 
 template <typename D> Windows::Security::Credentials::UI::CredentialSaveOption impl_ICredentialPickerResults<D>::CredentialSaveOption() const
 {
     Windows::Security::Credentials::UI::CredentialSaveOption value {};
-    check_hresult(shim()->get_CredentialSaveOption(&value));
+    check_hresult(static_cast<const ICredentialPickerResults &>(static_cast<const D &>(*this))->get_CredentialSaveOption(&value));
     return value;
 }
 
 template <typename D> bool impl_ICredentialPickerResults<D>::CredentialSaved() const
 {
     bool value {};
-    check_hresult(shim()->get_CredentialSaved(&value));
+    check_hresult(static_cast<const ICredentialPickerResults &>(static_cast<const D &>(*this))->get_CredentialSaved(&value));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_ICredentialPickerResults<D>::Credential() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(shim()->get_Credential(put(value)));
+    check_hresult(static_cast<const ICredentialPickerResults &>(static_cast<const D &>(*this))->get_Credential(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICredentialPickerResults<D>::CredentialDomainName() const
 {
     hstring value;
-    check_hresult(shim()->get_CredentialDomainName(put(value)));
+    check_hresult(static_cast<const ICredentialPickerResults &>(static_cast<const D &>(*this))->get_CredentialDomainName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICredentialPickerResults<D>::CredentialUserName() const
 {
     hstring value;
-    check_hresult(shim()->get_CredentialUserName(put(value)));
+    check_hresult(static_cast<const ICredentialPickerResults &>(static_cast<const D &>(*this))->get_CredentialUserName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICredentialPickerResults<D>::CredentialPassword() const
 {
     hstring value;
-    check_hresult(shim()->get_CredentialPassword(put(value)));
+    check_hresult(static_cast<const ICredentialPickerResults &>(static_cast<const D &>(*this))->get_CredentialPassword(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Credentials::UI::UserConsentVerifierAvailability> impl_IUserConsentVerifierStatics<D>::CheckAvailabilityAsync() const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Credentials::UI::UserConsentVerifierAvailability> result;
-    check_hresult(shim()->abi_CheckAvailabilityAsync(put(result)));
+    check_hresult(static_cast<const IUserConsentVerifierStatics &>(static_cast<const D &>(*this))->abi_CheckAvailabilityAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Credentials::UI::UserConsentVerificationResult> impl_IUserConsentVerifierStatics<D>::RequestVerificationAsync(hstring_ref message) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Credentials::UI::UserConsentVerificationResult> result;
-    check_hresult(shim()->abi_RequestVerificationAsync(get(message), put(result)));
+    check_hresult(static_cast<const IUserConsentVerifierStatics &>(static_cast<const D &>(*this))->abi_RequestVerificationAsync(get(message), put(result)));
     return result;
 }
 

@@ -25,22 +25,14 @@ template <> struct __declspec(uuid("45fdd443-c0b9-57b0-a84f-7d876edc3149")) __de
 namespace Windows::Storage::Provider {
 
 template <typename D>
-class WINRT_EBO impl_ICachedFileUpdaterStatics
+struct WINRT_EBO impl_ICachedFileUpdaterStatics
 {
-    auto shim() const { return impl::shim<D, ICachedFileUpdaterStatics>(this); }
-
-public:
-
     void SetUpdateInformation(const Windows::Storage::IStorageFile & file, hstring_ref contentId, Windows::Storage::Provider::ReadActivationMode readMode, Windows::Storage::Provider::WriteActivationMode writeMode, Windows::Storage::Provider::CachedFileOptions options) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICachedFileUpdaterUI
+struct WINRT_EBO impl_ICachedFileUpdaterUI
 {
-    auto shim() const { return impl::shim<D, ICachedFileUpdaterUI>(this); }
-
-public:
-
     hstring Title() const;
     void Title(hstring_ref value) const;
     Windows::Storage::Provider::CachedFileTarget UpdateTarget() const;
@@ -56,23 +48,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICachedFileUpdaterUI2
+struct WINRT_EBO impl_ICachedFileUpdaterUI2
 {
-    auto shim() const { return impl::shim<D, ICachedFileUpdaterUI2>(this); }
-
-public:
-
     Windows::Storage::Provider::FileUpdateRequest UpdateRequest() const;
     Windows::Storage::Provider::FileUpdateRequestDeferral GetDeferral() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFileUpdateRequest
+struct WINRT_EBO impl_IFileUpdateRequest
 {
-    auto shim() const { return impl::shim<D, IFileUpdateRequest>(this); }
-
-public:
-
     hstring ContentId() const;
     Windows::Storage::StorageFile File() const;
     Windows::Storage::Provider::FileUpdateStatus Status() const;
@@ -82,33 +66,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IFileUpdateRequest2
+struct WINRT_EBO impl_IFileUpdateRequest2
 {
-    auto shim() const { return impl::shim<D, IFileUpdateRequest2>(this); }
-
-public:
-
     hstring UserInputNeededMessage() const;
     void UserInputNeededMessage(hstring_ref value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFileUpdateRequestDeferral
+struct WINRT_EBO impl_IFileUpdateRequestDeferral
 {
-    auto shim() const { return impl::shim<D, IFileUpdateRequestDeferral>(this); }
-
-public:
-
     void Complete() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFileUpdateRequestedEventArgs
+struct WINRT_EBO impl_IFileUpdateRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, IFileUpdateRequestedEventArgs>(this); }
-
-public:
-
     Windows::Storage::Provider::FileUpdateRequest Request() const;
 };
 

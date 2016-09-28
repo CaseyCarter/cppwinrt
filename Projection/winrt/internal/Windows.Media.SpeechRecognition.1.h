@@ -223,31 +223,31 @@ template <> struct traits<Windows::Media::SpeechRecognition::SpeechRecognizerUIO
 
 namespace Windows::Media::SpeechRecognition {
 
-template <typename T> class impl_ISpeechContinuousRecognitionCompletedEventArgs;
-template <typename T> class impl_ISpeechContinuousRecognitionResultGeneratedEventArgs;
-template <typename T> class impl_ISpeechContinuousRecognitionSession;
-template <typename T> class impl_ISpeechRecognitionCompilationResult;
-template <typename T> class impl_ISpeechRecognitionConstraint;
-template <typename T> class impl_ISpeechRecognitionGrammarFileConstraint;
-template <typename T> class impl_ISpeechRecognitionGrammarFileConstraintFactory;
-template <typename T> class impl_ISpeechRecognitionHypothesis;
-template <typename T> class impl_ISpeechRecognitionHypothesisGeneratedEventArgs;
-template <typename T> class impl_ISpeechRecognitionListConstraint;
-template <typename T> class impl_ISpeechRecognitionListConstraintFactory;
-template <typename T> class impl_ISpeechRecognitionQualityDegradingEventArgs;
-template <typename T> class impl_ISpeechRecognitionResult;
-template <typename T> class impl_ISpeechRecognitionResult2;
-template <typename T> class impl_ISpeechRecognitionSemanticInterpretation;
-template <typename T> class impl_ISpeechRecognitionTopicConstraint;
-template <typename T> class impl_ISpeechRecognitionTopicConstraintFactory;
-template <typename T> class impl_ISpeechRecognitionVoiceCommandDefinitionConstraint;
-template <typename T> class impl_ISpeechRecognizer;
-template <typename T> class impl_ISpeechRecognizer2;
-template <typename T> class impl_ISpeechRecognizerFactory;
-template <typename T> class impl_ISpeechRecognizerStateChangedEventArgs;
-template <typename T> class impl_ISpeechRecognizerStatics;
-template <typename T> class impl_ISpeechRecognizerTimeouts;
-template <typename T> class impl_ISpeechRecognizerUIOptions;
+template <typename T> struct impl_ISpeechContinuousRecognitionCompletedEventArgs;
+template <typename T> struct impl_ISpeechContinuousRecognitionResultGeneratedEventArgs;
+template <typename T> struct impl_ISpeechContinuousRecognitionSession;
+template <typename T> struct impl_ISpeechRecognitionCompilationResult;
+template <typename T> struct impl_ISpeechRecognitionConstraint;
+template <typename T> struct impl_ISpeechRecognitionGrammarFileConstraint;
+template <typename T> struct impl_ISpeechRecognitionGrammarFileConstraintFactory;
+template <typename T> struct impl_ISpeechRecognitionHypothesis;
+template <typename T> struct impl_ISpeechRecognitionHypothesisGeneratedEventArgs;
+template <typename T> struct impl_ISpeechRecognitionListConstraint;
+template <typename T> struct impl_ISpeechRecognitionListConstraintFactory;
+template <typename T> struct impl_ISpeechRecognitionQualityDegradingEventArgs;
+template <typename T> struct impl_ISpeechRecognitionResult;
+template <typename T> struct impl_ISpeechRecognitionResult2;
+template <typename T> struct impl_ISpeechRecognitionSemanticInterpretation;
+template <typename T> struct impl_ISpeechRecognitionTopicConstraint;
+template <typename T> struct impl_ISpeechRecognitionTopicConstraintFactory;
+template <typename T> struct impl_ISpeechRecognitionVoiceCommandDefinitionConstraint;
+template <typename T> struct impl_ISpeechRecognizer;
+template <typename T> struct impl_ISpeechRecognizer2;
+template <typename T> struct impl_ISpeechRecognizerFactory;
+template <typename T> struct impl_ISpeechRecognizerStateChangedEventArgs;
+template <typename T> struct impl_ISpeechRecognizerStatics;
+template <typename T> struct impl_ISpeechRecognizerTimeouts;
+template <typename T> struct impl_ISpeechRecognizerUIOptions;
 
 }
 
@@ -406,119 +406,102 @@ template <> struct traits<Windows::Media::SpeechRecognition::ISpeechRecognizerUI
 template <> struct traits<Windows::Media::SpeechRecognition::SpeechContinuousRecognitionCompletedEventArgs>
 {
     using abi = ABI::Windows::Media::SpeechRecognition::SpeechContinuousRecognitionCompletedEventArgs;
-    using default_interface = Windows::Media::SpeechRecognition::ISpeechContinuousRecognitionCompletedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.SpeechRecognition.SpeechContinuousRecognitionCompletedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::SpeechRecognition::SpeechContinuousRecognitionResultGeneratedEventArgs>
 {
     using abi = ABI::Windows::Media::SpeechRecognition::SpeechContinuousRecognitionResultGeneratedEventArgs;
-    using default_interface = Windows::Media::SpeechRecognition::ISpeechContinuousRecognitionResultGeneratedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.SpeechRecognition.SpeechContinuousRecognitionResultGeneratedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::SpeechRecognition::SpeechContinuousRecognitionSession>
 {
     using abi = ABI::Windows::Media::SpeechRecognition::SpeechContinuousRecognitionSession;
-    using default_interface = Windows::Media::SpeechRecognition::ISpeechContinuousRecognitionSession;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession"; }
 };
 
 template <> struct traits<Windows::Media::SpeechRecognition::SpeechRecognitionCompilationResult>
 {
     using abi = ABI::Windows::Media::SpeechRecognition::SpeechRecognitionCompilationResult;
-    using default_interface = Windows::Media::SpeechRecognition::ISpeechRecognitionCompilationResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.SpeechRecognition.SpeechRecognitionCompilationResult"; }
 };
 
 template <> struct traits<Windows::Media::SpeechRecognition::SpeechRecognitionGrammarFileConstraint>
 {
     using abi = ABI::Windows::Media::SpeechRecognition::SpeechRecognitionGrammarFileConstraint;
-    using default_interface = Windows::Media::SpeechRecognition::ISpeechRecognitionGrammarFileConstraint;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint"; }
 };
 
 template <> struct traits<Windows::Media::SpeechRecognition::SpeechRecognitionHypothesis>
 {
     using abi = ABI::Windows::Media::SpeechRecognition::SpeechRecognitionHypothesis;
-    using default_interface = Windows::Media::SpeechRecognition::ISpeechRecognitionHypothesis;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.SpeechRecognition.SpeechRecognitionHypothesis"; }
 };
 
 template <> struct traits<Windows::Media::SpeechRecognition::SpeechRecognitionHypothesisGeneratedEventArgs>
 {
     using abi = ABI::Windows::Media::SpeechRecognition::SpeechRecognitionHypothesisGeneratedEventArgs;
-    using default_interface = Windows::Media::SpeechRecognition::ISpeechRecognitionHypothesisGeneratedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.SpeechRecognition.SpeechRecognitionHypothesisGeneratedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::SpeechRecognition::SpeechRecognitionListConstraint>
 {
     using abi = ABI::Windows::Media::SpeechRecognition::SpeechRecognitionListConstraint;
-    using default_interface = Windows::Media::SpeechRecognition::ISpeechRecognitionListConstraint;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint"; }
 };
 
 template <> struct traits<Windows::Media::SpeechRecognition::SpeechRecognitionQualityDegradingEventArgs>
 {
     using abi = ABI::Windows::Media::SpeechRecognition::SpeechRecognitionQualityDegradingEventArgs;
-    using default_interface = Windows::Media::SpeechRecognition::ISpeechRecognitionQualityDegradingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.SpeechRecognition.SpeechRecognitionQualityDegradingEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::SpeechRecognition::SpeechRecognitionResult>
 {
     using abi = ABI::Windows::Media::SpeechRecognition::SpeechRecognitionResult;
-    using default_interface = Windows::Media::SpeechRecognition::ISpeechRecognitionResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.SpeechRecognition.SpeechRecognitionResult"; }
 };
 
 template <> struct traits<Windows::Media::SpeechRecognition::SpeechRecognitionSemanticInterpretation>
 {
     using abi = ABI::Windows::Media::SpeechRecognition::SpeechRecognitionSemanticInterpretation;
-    using default_interface = Windows::Media::SpeechRecognition::ISpeechRecognitionSemanticInterpretation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.SpeechRecognition.SpeechRecognitionSemanticInterpretation"; }
 };
 
 template <> struct traits<Windows::Media::SpeechRecognition::SpeechRecognitionTopicConstraint>
 {
     using abi = ABI::Windows::Media::SpeechRecognition::SpeechRecognitionTopicConstraint;
-    using default_interface = Windows::Media::SpeechRecognition::ISpeechRecognitionTopicConstraint;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint"; }
 };
 
 template <> struct traits<Windows::Media::SpeechRecognition::SpeechRecognitionVoiceCommandDefinitionConstraint>
 {
     using abi = ABI::Windows::Media::SpeechRecognition::SpeechRecognitionVoiceCommandDefinitionConstraint;
-    using default_interface = Windows::Media::SpeechRecognition::ISpeechRecognitionVoiceCommandDefinitionConstraint;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.SpeechRecognition.SpeechRecognitionVoiceCommandDefinitionConstraint"; }
 };
 
 template <> struct traits<Windows::Media::SpeechRecognition::SpeechRecognizer>
 {
     using abi = ABI::Windows::Media::SpeechRecognition::SpeechRecognizer;
-    using default_interface = Windows::Media::SpeechRecognition::ISpeechRecognizer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.SpeechRecognition.SpeechRecognizer"; }
 };
 
 template <> struct traits<Windows::Media::SpeechRecognition::SpeechRecognizerStateChangedEventArgs>
 {
     using abi = ABI::Windows::Media::SpeechRecognition::SpeechRecognizerStateChangedEventArgs;
-    using default_interface = Windows::Media::SpeechRecognition::ISpeechRecognizerStateChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.SpeechRecognition.SpeechRecognizerStateChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::SpeechRecognition::SpeechRecognizerTimeouts>
 {
     using abi = ABI::Windows::Media::SpeechRecognition::SpeechRecognizerTimeouts;
-    using default_interface = Windows::Media::SpeechRecognition::ISpeechRecognizerTimeouts;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.SpeechRecognition.SpeechRecognizerTimeouts"; }
 };
 
 template <> struct traits<Windows::Media::SpeechRecognition::SpeechRecognizerUIOptions>
 {
     using abi = ABI::Windows::Media::SpeechRecognition::SpeechRecognizerUIOptions;
-    using default_interface = Windows::Media::SpeechRecognition::ISpeechRecognizerUIOptions;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.SpeechRecognition.SpeechRecognizerUIOptions"; }
 };
 

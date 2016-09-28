@@ -413,47 +413,47 @@ template <> struct traits<Windows::UI::Core::WindowSizeChangedEventArgs> { using
 
 namespace Windows::UI::Core {
 
-template <typename T> class impl_IAcceleratorKeyEventArgs;
-template <typename T> class impl_IAcceleratorKeyEventArgs2;
-template <typename T> class impl_IAutomationProviderRequestedEventArgs;
-template <typename T> class impl_IBackRequestedEventArgs;
-template <typename T> class impl_ICharacterReceivedEventArgs;
-template <typename T> class impl_IClosestInteractiveBoundsRequestedEventArgs;
-template <typename T> class impl_ICoreAcceleratorKeys;
-template <typename T> class impl_ICoreClosestInteractiveBoundsRequested;
-template <typename T> class impl_ICoreComponentFocusable;
-template <typename T> class impl_ICoreCursor;
-template <typename T> class impl_ICoreCursorFactory;
-template <typename T> class impl_ICoreDispatcher;
-template <typename T> class impl_ICoreDispatcher2;
-template <typename T> class impl_ICoreDispatcherWithTaskPriority;
-template <typename T> class impl_ICoreInputSourceBase;
-template <typename T> class impl_ICoreKeyboardInputSource;
-template <typename T> class impl_ICoreKeyboardInputSource2;
-template <typename T> class impl_ICorePointerInputSource;
-template <typename T> class impl_ICorePointerRedirector;
-template <typename T> class impl_ICoreTouchHitTesting;
-template <typename T> class impl_ICoreWindow;
-template <typename T> class impl_ICoreWindow2;
-template <typename T> class impl_ICoreWindow3;
-template <typename T> class impl_ICoreWindowEventArgs;
-template <typename T> class impl_ICoreWindowResizeManager;
-template <typename T> class impl_ICoreWindowResizeManagerLayoutCapability;
-template <typename T> class impl_ICoreWindowResizeManagerStatics;
-template <typename T> class impl_ICoreWindowStatic;
-template <typename T> class impl_IIdleDispatchedHandlerArgs;
-template <typename T> class impl_IInitializeWithCoreWindow;
-template <typename T> class impl_IInputEnabledEventArgs;
-template <typename T> class impl_IKeyEventArgs;
-template <typename T> class impl_IKeyEventArgs2;
-template <typename T> class impl_IPointerEventArgs;
-template <typename T> class impl_ISystemNavigationManager;
-template <typename T> class impl_ISystemNavigationManager2;
-template <typename T> class impl_ISystemNavigationManagerStatics;
-template <typename T> class impl_ITouchHitTestingEventArgs;
-template <typename T> class impl_IVisibilityChangedEventArgs;
-template <typename T> class impl_IWindowActivatedEventArgs;
-template <typename T> class impl_IWindowSizeChangedEventArgs;
+template <typename T> struct impl_IAcceleratorKeyEventArgs;
+template <typename T> struct impl_IAcceleratorKeyEventArgs2;
+template <typename T> struct impl_IAutomationProviderRequestedEventArgs;
+template <typename T> struct impl_IBackRequestedEventArgs;
+template <typename T> struct impl_ICharacterReceivedEventArgs;
+template <typename T> struct impl_IClosestInteractiveBoundsRequestedEventArgs;
+template <typename T> struct impl_ICoreAcceleratorKeys;
+template <typename T> struct impl_ICoreClosestInteractiveBoundsRequested;
+template <typename T> struct impl_ICoreComponentFocusable;
+template <typename T> struct impl_ICoreCursor;
+template <typename T> struct impl_ICoreCursorFactory;
+template <typename T> struct impl_ICoreDispatcher;
+template <typename T> struct impl_ICoreDispatcher2;
+template <typename T> struct impl_ICoreDispatcherWithTaskPriority;
+template <typename T> struct impl_ICoreInputSourceBase;
+template <typename T> struct impl_ICoreKeyboardInputSource;
+template <typename T> struct impl_ICoreKeyboardInputSource2;
+template <typename T> struct impl_ICorePointerInputSource;
+template <typename T> struct impl_ICorePointerRedirector;
+template <typename T> struct impl_ICoreTouchHitTesting;
+template <typename T> struct impl_ICoreWindow;
+template <typename T> struct impl_ICoreWindow2;
+template <typename T> struct impl_ICoreWindow3;
+template <typename T> struct impl_ICoreWindowEventArgs;
+template <typename T> struct impl_ICoreWindowResizeManager;
+template <typename T> struct impl_ICoreWindowResizeManagerLayoutCapability;
+template <typename T> struct impl_ICoreWindowResizeManagerStatics;
+template <typename T> struct impl_ICoreWindowStatic;
+template <typename T> struct impl_IIdleDispatchedHandlerArgs;
+template <typename T> struct impl_IInitializeWithCoreWindow;
+template <typename T> struct impl_IInputEnabledEventArgs;
+template <typename T> struct impl_IKeyEventArgs;
+template <typename T> struct impl_IKeyEventArgs2;
+template <typename T> struct impl_IPointerEventArgs;
+template <typename T> struct impl_ISystemNavigationManager;
+template <typename T> struct impl_ISystemNavigationManager2;
+template <typename T> struct impl_ISystemNavigationManagerStatics;
+template <typename T> struct impl_ITouchHitTestingEventArgs;
+template <typename T> struct impl_IVisibilityChangedEventArgs;
+template <typename T> struct impl_IWindowActivatedEventArgs;
+template <typename T> struct impl_IWindowSizeChangedEventArgs;
 template <typename T> struct impl_DispatchedHandler;
 template <typename T> struct impl_IdleDispatchedHandler;
 
@@ -720,154 +720,132 @@ template <> struct traits<Windows::UI::Core::IdleDispatchedHandler>
 template <> struct traits<Windows::UI::Core::AcceleratorKeyEventArgs>
 {
     using abi = ABI::Windows::UI::Core::AcceleratorKeyEventArgs;
-    using default_interface = Windows::UI::Core::IAcceleratorKeyEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Core.AcceleratorKeyEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Core::AutomationProviderRequestedEventArgs>
 {
     using abi = ABI::Windows::UI::Core::AutomationProviderRequestedEventArgs;
-    using default_interface = Windows::UI::Core::IAutomationProviderRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Core.AutomationProviderRequestedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Core::BackRequestedEventArgs>
 {
     using abi = ABI::Windows::UI::Core::BackRequestedEventArgs;
-    using default_interface = Windows::UI::Core::IBackRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Core.BackRequestedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Core::CharacterReceivedEventArgs>
 {
     using abi = ABI::Windows::UI::Core::CharacterReceivedEventArgs;
-    using default_interface = Windows::UI::Core::ICharacterReceivedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Core.CharacterReceivedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Core::ClosestInteractiveBoundsRequestedEventArgs>
 {
     using abi = ABI::Windows::UI::Core::ClosestInteractiveBoundsRequestedEventArgs;
-    using default_interface = Windows::UI::Core::IClosestInteractiveBoundsRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Core.ClosestInteractiveBoundsRequestedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Core::CoreAcceleratorKeys>
 {
     using abi = ABI::Windows::UI::Core::CoreAcceleratorKeys;
-    using default_interface = Windows::UI::Core::ICoreAcceleratorKeys;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Core.CoreAcceleratorKeys"; }
 };
 
 template <> struct traits<Windows::UI::Core::CoreComponentInputSource>
 {
     using abi = ABI::Windows::UI::Core::CoreComponentInputSource;
-    using default_interface = Windows::UI::Core::ICoreInputSourceBase;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Core.CoreComponentInputSource"; }
 };
 
 template <> struct traits<Windows::UI::Core::CoreCursor>
 {
     using abi = ABI::Windows::UI::Core::CoreCursor;
-    using default_interface = Windows::UI::Core::ICoreCursor;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Core.CoreCursor"; }
 };
 
 template <> struct traits<Windows::UI::Core::CoreDispatcher>
 {
     using abi = ABI::Windows::UI::Core::CoreDispatcher;
-    using default_interface = Windows::UI::Core::ICoreDispatcher;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Core.CoreDispatcher"; }
 };
 
 template <> struct traits<Windows::UI::Core::CoreIndependentInputSource>
 {
     using abi = ABI::Windows::UI::Core::CoreIndependentInputSource;
-    using default_interface = Windows::UI::Core::ICoreInputSourceBase;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Core.CoreIndependentInputSource"; }
 };
 
 template <> struct traits<Windows::UI::Core::CoreWindow>
 {
     using abi = ABI::Windows::UI::Core::CoreWindow;
-    using default_interface = Windows::UI::Core::ICoreWindow;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Core.CoreWindow"; }
 };
 
 template <> struct traits<Windows::UI::Core::CoreWindowEventArgs>
 {
     using abi = ABI::Windows::UI::Core::CoreWindowEventArgs;
-    using default_interface = Windows::UI::Core::ICoreWindowEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Core.CoreWindowEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Core::CoreWindowResizeManager>
 {
     using abi = ABI::Windows::UI::Core::CoreWindowResizeManager;
-    using default_interface = Windows::UI::Core::ICoreWindowResizeManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Core.CoreWindowResizeManager"; }
 };
 
 template <> struct traits<Windows::UI::Core::IdleDispatchedHandlerArgs>
 {
     using abi = ABI::Windows::UI::Core::IdleDispatchedHandlerArgs;
-    using default_interface = Windows::UI::Core::IIdleDispatchedHandlerArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Core.IdleDispatchedHandlerArgs"; }
 };
 
 template <> struct traits<Windows::UI::Core::InputEnabledEventArgs>
 {
     using abi = ABI::Windows::UI::Core::InputEnabledEventArgs;
-    using default_interface = Windows::UI::Core::IInputEnabledEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Core.InputEnabledEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Core::KeyEventArgs>
 {
     using abi = ABI::Windows::UI::Core::KeyEventArgs;
-    using default_interface = Windows::UI::Core::IKeyEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Core.KeyEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Core::PointerEventArgs>
 {
     using abi = ABI::Windows::UI::Core::PointerEventArgs;
-    using default_interface = Windows::UI::Core::IPointerEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Core.PointerEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Core::SystemNavigationManager>
 {
     using abi = ABI::Windows::UI::Core::SystemNavigationManager;
-    using default_interface = Windows::UI::Core::ISystemNavigationManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Core.SystemNavigationManager"; }
 };
 
 template <> struct traits<Windows::UI::Core::TouchHitTestingEventArgs>
 {
     using abi = ABI::Windows::UI::Core::TouchHitTestingEventArgs;
-    using default_interface = Windows::UI::Core::ITouchHitTestingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Core.TouchHitTestingEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Core::VisibilityChangedEventArgs>
 {
     using abi = ABI::Windows::UI::Core::VisibilityChangedEventArgs;
-    using default_interface = Windows::UI::Core::IVisibilityChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Core.VisibilityChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Core::WindowActivatedEventArgs>
 {
     using abi = ABI::Windows::UI::Core::WindowActivatedEventArgs;
-    using default_interface = Windows::UI::Core::IWindowActivatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Core.WindowActivatedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Core::WindowSizeChangedEventArgs>
 {
     using abi = ABI::Windows::UI::Core::WindowSizeChangedEventArgs;
-    using default_interface = Windows::UI::Core::IWindowSizeChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Core.WindowSizeChangedEventArgs"; }
 };
 

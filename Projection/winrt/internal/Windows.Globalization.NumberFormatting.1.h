@@ -159,24 +159,24 @@ template <> struct traits<Windows::Globalization::NumberFormatting::SignificantD
 
 namespace Windows::Globalization::NumberFormatting {
 
-template <typename T> class impl_ICurrencyFormatter;
-template <typename T> class impl_ICurrencyFormatter2;
-template <typename T> class impl_ICurrencyFormatterFactory;
-template <typename T> class impl_IDecimalFormatterFactory;
-template <typename T> class impl_IIncrementNumberRounder;
-template <typename T> class impl_INumberFormatter;
-template <typename T> class impl_INumberFormatter2;
-template <typename T> class impl_INumberFormatterOptions;
-template <typename T> class impl_INumberParser;
-template <typename T> class impl_INumberRounder;
-template <typename T> class impl_INumberRounderOption;
-template <typename T> class impl_INumeralSystemTranslator;
-template <typename T> class impl_INumeralSystemTranslatorFactory;
-template <typename T> class impl_IPercentFormatterFactory;
-template <typename T> class impl_IPermilleFormatterFactory;
-template <typename T> class impl_ISignedZeroOption;
-template <typename T> class impl_ISignificantDigitsNumberRounder;
-template <typename T> class impl_ISignificantDigitsOption;
+template <typename T> struct impl_ICurrencyFormatter;
+template <typename T> struct impl_ICurrencyFormatter2;
+template <typename T> struct impl_ICurrencyFormatterFactory;
+template <typename T> struct impl_IDecimalFormatterFactory;
+template <typename T> struct impl_IIncrementNumberRounder;
+template <typename T> struct impl_INumberFormatter;
+template <typename T> struct impl_INumberFormatter2;
+template <typename T> struct impl_INumberFormatterOptions;
+template <typename T> struct impl_INumberParser;
+template <typename T> struct impl_INumberRounder;
+template <typename T> struct impl_INumberRounderOption;
+template <typename T> struct impl_INumeralSystemTranslator;
+template <typename T> struct impl_INumeralSystemTranslatorFactory;
+template <typename T> struct impl_IPercentFormatterFactory;
+template <typename T> struct impl_IPermilleFormatterFactory;
+template <typename T> struct impl_ISignedZeroOption;
+template <typename T> struct impl_ISignificantDigitsNumberRounder;
+template <typename T> struct impl_ISignificantDigitsOption;
 
 }
 
@@ -293,49 +293,42 @@ template <> struct traits<Windows::Globalization::NumberFormatting::ISignificant
 template <> struct traits<Windows::Globalization::NumberFormatting::CurrencyFormatter>
 {
     using abi = ABI::Windows::Globalization::NumberFormatting::CurrencyFormatter;
-    using default_interface = Windows::Globalization::NumberFormatting::ICurrencyFormatter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Globalization.NumberFormatting.CurrencyFormatter"; }
 };
 
 template <> struct traits<Windows::Globalization::NumberFormatting::DecimalFormatter>
 {
     using abi = ABI::Windows::Globalization::NumberFormatting::DecimalFormatter;
-    using default_interface = Windows::Globalization::NumberFormatting::INumberFormatter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Globalization.NumberFormatting.DecimalFormatter"; }
 };
 
 template <> struct traits<Windows::Globalization::NumberFormatting::IncrementNumberRounder>
 {
     using abi = ABI::Windows::Globalization::NumberFormatting::IncrementNumberRounder;
-    using default_interface = Windows::Globalization::NumberFormatting::INumberRounder;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Globalization.NumberFormatting.IncrementNumberRounder"; }
 };
 
 template <> struct traits<Windows::Globalization::NumberFormatting::NumeralSystemTranslator>
 {
     using abi = ABI::Windows::Globalization::NumberFormatting::NumeralSystemTranslator;
-    using default_interface = Windows::Globalization::NumberFormatting::INumeralSystemTranslator;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Globalization.NumberFormatting.NumeralSystemTranslator"; }
 };
 
 template <> struct traits<Windows::Globalization::NumberFormatting::PercentFormatter>
 {
     using abi = ABI::Windows::Globalization::NumberFormatting::PercentFormatter;
-    using default_interface = Windows::Globalization::NumberFormatting::INumberFormatter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Globalization.NumberFormatting.PercentFormatter"; }
 };
 
 template <> struct traits<Windows::Globalization::NumberFormatting::PermilleFormatter>
 {
     using abi = ABI::Windows::Globalization::NumberFormatting::PermilleFormatter;
-    using default_interface = Windows::Globalization::NumberFormatting::INumberFormatter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Globalization.NumberFormatting.PermilleFormatter"; }
 };
 
 template <> struct traits<Windows::Globalization::NumberFormatting::SignificantDigitsNumberRounder>
 {
     using abi = ABI::Windows::Globalization::NumberFormatting::SignificantDigitsNumberRounder;
-    using default_interface = Windows::Globalization::NumberFormatting::INumberRounder;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Globalization.NumberFormatting.SignificantDigitsNumberRounder"; }
 };
 

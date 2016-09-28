@@ -94,14 +94,14 @@ template <> struct traits<Windows::ApplicationModel::AppExtensions::AppExtension
 
 namespace Windows::ApplicationModel::AppExtensions {
 
-template <typename T> class impl_IAppExtension;
-template <typename T> class impl_IAppExtensionCatalog;
-template <typename T> class impl_IAppExtensionCatalogStatics;
-template <typename T> class impl_IAppExtensionPackageInstalledEventArgs;
-template <typename T> class impl_IAppExtensionPackageStatusChangedEventArgs;
-template <typename T> class impl_IAppExtensionPackageUninstallingEventArgs;
-template <typename T> class impl_IAppExtensionPackageUpdatedEventArgs;
-template <typename T> class impl_IAppExtensionPackageUpdatingEventArgs;
+template <typename T> struct impl_IAppExtension;
+template <typename T> struct impl_IAppExtensionCatalog;
+template <typename T> struct impl_IAppExtensionCatalogStatics;
+template <typename T> struct impl_IAppExtensionPackageInstalledEventArgs;
+template <typename T> struct impl_IAppExtensionPackageStatusChangedEventArgs;
+template <typename T> struct impl_IAppExtensionPackageUninstallingEventArgs;
+template <typename T> struct impl_IAppExtensionPackageUpdatedEventArgs;
+template <typename T> struct impl_IAppExtensionPackageUpdatingEventArgs;
 
 }
 
@@ -158,49 +158,42 @@ template <> struct traits<Windows::ApplicationModel::AppExtensions::IAppExtensio
 template <> struct traits<Windows::ApplicationModel::AppExtensions::AppExtension>
 {
     using abi = ABI::Windows::ApplicationModel::AppExtensions::AppExtension;
-    using default_interface = Windows::ApplicationModel::AppExtensions::IAppExtension;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.AppExtensions.AppExtension"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::AppExtensions::AppExtensionCatalog>
 {
     using abi = ABI::Windows::ApplicationModel::AppExtensions::AppExtensionCatalog;
-    using default_interface = Windows::ApplicationModel::AppExtensions::IAppExtensionCatalog;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.AppExtensions.AppExtensionCatalog"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::AppExtensions::AppExtensionPackageInstalledEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::AppExtensions::AppExtensionPackageInstalledEventArgs;
-    using default_interface = Windows::ApplicationModel::AppExtensions::IAppExtensionPackageInstalledEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.AppExtensions.AppExtensionPackageInstalledEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::AppExtensions::AppExtensionPackageStatusChangedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::AppExtensions::AppExtensionPackageStatusChangedEventArgs;
-    using default_interface = Windows::ApplicationModel::AppExtensions::IAppExtensionPackageStatusChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.AppExtensions.AppExtensionPackageStatusChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::AppExtensions::AppExtensionPackageUninstallingEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::AppExtensions::AppExtensionPackageUninstallingEventArgs;
-    using default_interface = Windows::ApplicationModel::AppExtensions::IAppExtensionPackageUninstallingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.AppExtensions.AppExtensionPackageUninstallingEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::AppExtensions::AppExtensionPackageUpdatedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::AppExtensions::AppExtensionPackageUpdatedEventArgs;
-    using default_interface = Windows::ApplicationModel::AppExtensions::IAppExtensionPackageUpdatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.AppExtensions.AppExtensionPackageUpdatedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::AppExtensions::AppExtensionPackageUpdatingEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::AppExtensions::AppExtensionPackageUpdatingEventArgs;
-    using default_interface = Windows::ApplicationModel::AppExtensions::IAppExtensionPackageUpdatingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.AppExtensions.AppExtensionPackageUpdatingEventArgs"; }
 };
 

@@ -33,7 +33,7 @@ namespace ABI {
 
 namespace Windows::Foundation::Metadata {
 
-template <typename T> class impl_IApiInformationStatics;
+template <typename T> struct impl_IApiInformationStatics;
 
 }
 

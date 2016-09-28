@@ -2839,822 +2839,822 @@ namespace Windows::UI::Notifications {
 template <typename D> hstring impl_IShownTileNotification<D>::Arguments() const
 {
     hstring value;
-    check_hresult(shim()->get_Arguments(put(value)));
+    check_hresult(static_cast<const IShownTileNotification &>(static_cast<const D &>(*this))->get_Arguments(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Notifications::UserNotificationChangedKind impl_IUserNotificationChangedEventArgs<D>::ChangeKind() const
 {
     Windows::UI::Notifications::UserNotificationChangedKind value {};
-    check_hresult(shim()->get_ChangeKind(&value));
+    check_hresult(static_cast<const IUserNotificationChangedEventArgs &>(static_cast<const D &>(*this))->get_ChangeKind(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IUserNotificationChangedEventArgs<D>::UserNotificationId() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_UserNotificationId(&value));
+    check_hresult(static_cast<const IUserNotificationChangedEventArgs &>(static_cast<const D &>(*this))->get_UserNotificationId(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Notifications::Notification impl_IUserNotification<D>::Notification() const
 {
     Windows::UI::Notifications::Notification value { nullptr };
-    check_hresult(shim()->get_Notification(put(value)));
+    check_hresult(static_cast<const IUserNotification &>(static_cast<const D &>(*this))->get_Notification(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::AppInfo impl_IUserNotification<D>::AppInfo() const
 {
     Windows::ApplicationModel::AppInfo value { nullptr };
-    check_hresult(shim()->get_AppInfo(put(value)));
+    check_hresult(static_cast<const IUserNotification &>(static_cast<const D &>(*this))->get_AppInfo(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IUserNotification<D>::Id() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_Id(&value));
+    check_hresult(static_cast<const IUserNotification &>(static_cast<const D &>(*this))->get_Id(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IUserNotification<D>::CreationTime() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->get_CreationTime(put(value)));
+    check_hresult(static_cast<const IUserNotification &>(static_cast<const D &>(*this))->get_CreationTime(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INotificationVisual<D>::Language() const
 {
     hstring value;
-    check_hresult(shim()->get_Language(put(value)));
+    check_hresult(static_cast<const INotificationVisual &>(static_cast<const D &>(*this))->get_Language(put(value)));
     return value;
 }
 
 template <typename D> void impl_INotificationVisual<D>::Language(hstring_ref value) const
 {
-    check_hresult(shim()->put_Language(get(value)));
+    check_hresult(static_cast<const INotificationVisual &>(static_cast<const D &>(*this))->put_Language(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::UI::Notifications::NotificationBinding> impl_INotificationVisual<D>::Bindings() const
 {
     Windows::Foundation::Collections::IVector<Windows::UI::Notifications::NotificationBinding> result;
-    check_hresult(shim()->get_Bindings(put(result)));
+    check_hresult(static_cast<const INotificationVisual &>(static_cast<const D &>(*this))->get_Bindings(put(result)));
     return result;
 }
 
 template <typename D> Windows::UI::Notifications::NotificationBinding impl_INotificationVisual<D>::GetBinding(hstring_ref templateName) const
 {
     Windows::UI::Notifications::NotificationBinding result { nullptr };
-    check_hresult(shim()->abi_GetBinding(get(templateName), put(result)));
+    check_hresult(static_cast<const INotificationVisual &>(static_cast<const D &>(*this))->abi_GetBinding(get(templateName), put(result)));
     return result;
 }
 
 template <typename D> Windows::UI::Notifications::AdaptiveNotificationContentKind impl_IAdaptiveNotificationContent<D>::Kind() const
 {
     Windows::UI::Notifications::AdaptiveNotificationContentKind value {};
-    check_hresult(shim()->get_Kind(&value));
+    check_hresult(static_cast<const IAdaptiveNotificationContent &>(static_cast<const D &>(*this))->get_Kind(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IMap<hstring, hstring> impl_IAdaptiveNotificationContent<D>::Hints() const
 {
     Windows::Foundation::Collections::IMap<hstring, hstring> value;
-    check_hresult(shim()->get_Hints(put(value)));
+    check_hresult(static_cast<const IAdaptiveNotificationContent &>(static_cast<const D &>(*this))->get_Hints(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_INotificationBinding<D>::Template() const
 {
     hstring value;
-    check_hresult(shim()->get_Template(put(value)));
+    check_hresult(static_cast<const INotificationBinding &>(static_cast<const D &>(*this))->get_Template(put(value)));
     return value;
 }
 
 template <typename D> void impl_INotificationBinding<D>::Template(hstring_ref value) const
 {
-    check_hresult(shim()->put_Template(get(value)));
+    check_hresult(static_cast<const INotificationBinding &>(static_cast<const D &>(*this))->put_Template(get(value)));
 }
 
 template <typename D> hstring impl_INotificationBinding<D>::Language() const
 {
     hstring value;
-    check_hresult(shim()->get_Language(put(value)));
+    check_hresult(static_cast<const INotificationBinding &>(static_cast<const D &>(*this))->get_Language(put(value)));
     return value;
 }
 
 template <typename D> void impl_INotificationBinding<D>::Language(hstring_ref value) const
 {
-    check_hresult(shim()->put_Language(get(value)));
+    check_hresult(static_cast<const INotificationBinding &>(static_cast<const D &>(*this))->put_Language(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IMap<hstring, hstring> impl_INotificationBinding<D>::Hints() const
 {
     Windows::Foundation::Collections::IMap<hstring, hstring> value;
-    check_hresult(shim()->get_Hints(put(value)));
+    check_hresult(static_cast<const INotificationBinding &>(static_cast<const D &>(*this))->get_Hints(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::AdaptiveNotificationText> impl_INotificationBinding<D>::GetTextElements() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::AdaptiveNotificationText> result;
-    check_hresult(shim()->abi_GetTextElements(put(result)));
+    check_hresult(static_cast<const INotificationBinding &>(static_cast<const D &>(*this))->abi_GetTextElements(put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IKnownNotificationBindingsStatics<D>::ToastGeneric() const
 {
     hstring value;
-    check_hresult(shim()->get_ToastGeneric(put(value)));
+    check_hresult(static_cast<const IKnownNotificationBindingsStatics &>(static_cast<const D &>(*this))->get_ToastGeneric(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownAdaptiveNotificationHintsStatics<D>::Style() const
 {
     hstring value;
-    check_hresult(shim()->get_Style(put(value)));
+    check_hresult(static_cast<const IKnownAdaptiveNotificationHintsStatics &>(static_cast<const D &>(*this))->get_Style(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownAdaptiveNotificationHintsStatics<D>::Wrap() const
 {
     hstring value;
-    check_hresult(shim()->get_Wrap(put(value)));
+    check_hresult(static_cast<const IKnownAdaptiveNotificationHintsStatics &>(static_cast<const D &>(*this))->get_Wrap(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownAdaptiveNotificationHintsStatics<D>::MaxLines() const
 {
     hstring value;
-    check_hresult(shim()->get_MaxLines(put(value)));
+    check_hresult(static_cast<const IKnownAdaptiveNotificationHintsStatics &>(static_cast<const D &>(*this))->get_MaxLines(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownAdaptiveNotificationHintsStatics<D>::MinLines() const
 {
     hstring value;
-    check_hresult(shim()->get_MinLines(put(value)));
+    check_hresult(static_cast<const IKnownAdaptiveNotificationHintsStatics &>(static_cast<const D &>(*this))->get_MinLines(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownAdaptiveNotificationHintsStatics<D>::TextStacking() const
 {
     hstring value;
-    check_hresult(shim()->get_TextStacking(put(value)));
+    check_hresult(static_cast<const IKnownAdaptiveNotificationHintsStatics &>(static_cast<const D &>(*this))->get_TextStacking(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownAdaptiveNotificationHintsStatics<D>::Align() const
 {
     hstring value;
-    check_hresult(shim()->get_Align(put(value)));
+    check_hresult(static_cast<const IKnownAdaptiveNotificationHintsStatics &>(static_cast<const D &>(*this))->get_Align(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownAdaptiveNotificationTextStylesStatics<D>::Caption() const
 {
     hstring value;
-    check_hresult(shim()->get_Caption(put(value)));
+    check_hresult(static_cast<const IKnownAdaptiveNotificationTextStylesStatics &>(static_cast<const D &>(*this))->get_Caption(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownAdaptiveNotificationTextStylesStatics<D>::Body() const
 {
     hstring value;
-    check_hresult(shim()->get_Body(put(value)));
+    check_hresult(static_cast<const IKnownAdaptiveNotificationTextStylesStatics &>(static_cast<const D &>(*this))->get_Body(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownAdaptiveNotificationTextStylesStatics<D>::Base() const
 {
     hstring value;
-    check_hresult(shim()->get_Base(put(value)));
+    check_hresult(static_cast<const IKnownAdaptiveNotificationTextStylesStatics &>(static_cast<const D &>(*this))->get_Base(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownAdaptiveNotificationTextStylesStatics<D>::Subtitle() const
 {
     hstring value;
-    check_hresult(shim()->get_Subtitle(put(value)));
+    check_hresult(static_cast<const IKnownAdaptiveNotificationTextStylesStatics &>(static_cast<const D &>(*this))->get_Subtitle(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownAdaptiveNotificationTextStylesStatics<D>::Title() const
 {
     hstring value;
-    check_hresult(shim()->get_Title(put(value)));
+    check_hresult(static_cast<const IKnownAdaptiveNotificationTextStylesStatics &>(static_cast<const D &>(*this))->get_Title(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownAdaptiveNotificationTextStylesStatics<D>::Subheader() const
 {
     hstring value;
-    check_hresult(shim()->get_Subheader(put(value)));
+    check_hresult(static_cast<const IKnownAdaptiveNotificationTextStylesStatics &>(static_cast<const D &>(*this))->get_Subheader(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownAdaptiveNotificationTextStylesStatics<D>::Header() const
 {
     hstring value;
-    check_hresult(shim()->get_Header(put(value)));
+    check_hresult(static_cast<const IKnownAdaptiveNotificationTextStylesStatics &>(static_cast<const D &>(*this))->get_Header(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownAdaptiveNotificationTextStylesStatics<D>::TitleNumeral() const
 {
     hstring value;
-    check_hresult(shim()->get_TitleNumeral(put(value)));
+    check_hresult(static_cast<const IKnownAdaptiveNotificationTextStylesStatics &>(static_cast<const D &>(*this))->get_TitleNumeral(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownAdaptiveNotificationTextStylesStatics<D>::SubheaderNumeral() const
 {
     hstring value;
-    check_hresult(shim()->get_SubheaderNumeral(put(value)));
+    check_hresult(static_cast<const IKnownAdaptiveNotificationTextStylesStatics &>(static_cast<const D &>(*this))->get_SubheaderNumeral(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownAdaptiveNotificationTextStylesStatics<D>::HeaderNumeral() const
 {
     hstring value;
-    check_hresult(shim()->get_HeaderNumeral(put(value)));
+    check_hresult(static_cast<const IKnownAdaptiveNotificationTextStylesStatics &>(static_cast<const D &>(*this))->get_HeaderNumeral(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownAdaptiveNotificationTextStylesStatics<D>::CaptionSubtle() const
 {
     hstring value;
-    check_hresult(shim()->get_CaptionSubtle(put(value)));
+    check_hresult(static_cast<const IKnownAdaptiveNotificationTextStylesStatics &>(static_cast<const D &>(*this))->get_CaptionSubtle(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownAdaptiveNotificationTextStylesStatics<D>::BodySubtle() const
 {
     hstring value;
-    check_hresult(shim()->get_BodySubtle(put(value)));
+    check_hresult(static_cast<const IKnownAdaptiveNotificationTextStylesStatics &>(static_cast<const D &>(*this))->get_BodySubtle(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownAdaptiveNotificationTextStylesStatics<D>::BaseSubtle() const
 {
     hstring value;
-    check_hresult(shim()->get_BaseSubtle(put(value)));
+    check_hresult(static_cast<const IKnownAdaptiveNotificationTextStylesStatics &>(static_cast<const D &>(*this))->get_BaseSubtle(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownAdaptiveNotificationTextStylesStatics<D>::SubtitleSubtle() const
 {
     hstring value;
-    check_hresult(shim()->get_SubtitleSubtle(put(value)));
+    check_hresult(static_cast<const IKnownAdaptiveNotificationTextStylesStatics &>(static_cast<const D &>(*this))->get_SubtitleSubtle(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownAdaptiveNotificationTextStylesStatics<D>::TitleSubtle() const
 {
     hstring value;
-    check_hresult(shim()->get_TitleSubtle(put(value)));
+    check_hresult(static_cast<const IKnownAdaptiveNotificationTextStylesStatics &>(static_cast<const D &>(*this))->get_TitleSubtle(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownAdaptiveNotificationTextStylesStatics<D>::SubheaderSubtle() const
 {
     hstring value;
-    check_hresult(shim()->get_SubheaderSubtle(put(value)));
+    check_hresult(static_cast<const IKnownAdaptiveNotificationTextStylesStatics &>(static_cast<const D &>(*this))->get_SubheaderSubtle(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownAdaptiveNotificationTextStylesStatics<D>::SubheaderNumeralSubtle() const
 {
     hstring value;
-    check_hresult(shim()->get_SubheaderNumeralSubtle(put(value)));
+    check_hresult(static_cast<const IKnownAdaptiveNotificationTextStylesStatics &>(static_cast<const D &>(*this))->get_SubheaderNumeralSubtle(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownAdaptiveNotificationTextStylesStatics<D>::HeaderSubtle() const
 {
     hstring value;
-    check_hresult(shim()->get_HeaderSubtle(put(value)));
+    check_hresult(static_cast<const IKnownAdaptiveNotificationTextStylesStatics &>(static_cast<const D &>(*this))->get_HeaderSubtle(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownAdaptiveNotificationTextStylesStatics<D>::HeaderNumeralSubtle() const
 {
     hstring value;
-    check_hresult(shim()->get_HeaderNumeralSubtle(put(value)));
+    check_hresult(static_cast<const IKnownAdaptiveNotificationTextStylesStatics &>(static_cast<const D &>(*this))->get_HeaderNumeralSubtle(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAdaptiveNotificationText<D>::Text() const
 {
     hstring value;
-    check_hresult(shim()->get_Text(put(value)));
+    check_hresult(static_cast<const IAdaptiveNotificationText &>(static_cast<const D &>(*this))->get_Text(put(value)));
     return value;
 }
 
 template <typename D> void impl_IAdaptiveNotificationText<D>::Text(hstring_ref value) const
 {
-    check_hresult(shim()->put_Text(get(value)));
+    check_hresult(static_cast<const IAdaptiveNotificationText &>(static_cast<const D &>(*this))->put_Text(get(value)));
 }
 
 template <typename D> hstring impl_IAdaptiveNotificationText<D>::Language() const
 {
     hstring value;
-    check_hresult(shim()->get_Language(put(value)));
+    check_hresult(static_cast<const IAdaptiveNotificationText &>(static_cast<const D &>(*this))->get_Language(put(value)));
     return value;
 }
 
 template <typename D> void impl_IAdaptiveNotificationText<D>::Language(hstring_ref value) const
 {
-    check_hresult(shim()->put_Language(get(value)));
+    check_hresult(static_cast<const IAdaptiveNotificationText &>(static_cast<const D &>(*this))->put_Language(get(value)));
 }
 
 template <typename D> Windows::UI::Notifications::ToastDismissalReason impl_IToastDismissedEventArgs<D>::Reason() const
 {
     Windows::UI::Notifications::ToastDismissalReason value {};
-    check_hresult(shim()->get_Reason(&value));
+    check_hresult(static_cast<const IToastDismissedEventArgs &>(static_cast<const D &>(*this))->get_Reason(&value));
     return value;
 }
 
 template <typename D> HRESULT impl_IToastFailedEventArgs<D>::ErrorCode() const
 {
     HRESULT value {};
-    check_hresult(shim()->get_ErrorCode(&value));
+    check_hresult(static_cast<const IToastFailedEventArgs &>(static_cast<const D &>(*this))->get_ErrorCode(&value));
     return value;
 }
 
 template <typename D> hstring impl_IToastActivatedEventArgs<D>::Arguments() const
 {
     hstring value;
-    check_hresult(shim()->get_Arguments(put(value)));
+    check_hresult(static_cast<const IToastActivatedEventArgs &>(static_cast<const D &>(*this))->get_Arguments(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Notifications::TileUpdater impl_ITileUpdateManagerStatics<D>::CreateTileUpdaterForApplication() const
 {
     Windows::UI::Notifications::TileUpdater updater { nullptr };
-    check_hresult(shim()->abi_CreateTileUpdaterForApplication(put(updater)));
+    check_hresult(static_cast<const ITileUpdateManagerStatics &>(static_cast<const D &>(*this))->abi_CreateTileUpdaterForApplication(put(updater)));
     return updater;
 }
 
 template <typename D> Windows::UI::Notifications::TileUpdater impl_ITileUpdateManagerStatics<D>::CreateTileUpdaterForApplication(hstring_ref applicationId) const
 {
     Windows::UI::Notifications::TileUpdater updater { nullptr };
-    check_hresult(shim()->abi_CreateTileUpdaterForApplicationWithId(get(applicationId), put(updater)));
+    check_hresult(static_cast<const ITileUpdateManagerStatics &>(static_cast<const D &>(*this))->abi_CreateTileUpdaterForApplicationWithId(get(applicationId), put(updater)));
     return updater;
 }
 
 template <typename D> Windows::UI::Notifications::TileUpdater impl_ITileUpdateManagerStatics<D>::CreateTileUpdaterForSecondaryTile(hstring_ref tileId) const
 {
     Windows::UI::Notifications::TileUpdater updater { nullptr };
-    check_hresult(shim()->abi_CreateTileUpdaterForSecondaryTile(get(tileId), put(updater)));
+    check_hresult(static_cast<const ITileUpdateManagerStatics &>(static_cast<const D &>(*this))->abi_CreateTileUpdaterForSecondaryTile(get(tileId), put(updater)));
     return updater;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlDocument impl_ITileUpdateManagerStatics<D>::GetTemplateContent(Windows::UI::Notifications::TileTemplateType type) const
 {
     Windows::Data::Xml::Dom::XmlDocument content { nullptr };
-    check_hresult(shim()->abi_GetTemplateContent(type, put(content)));
+    check_hresult(static_cast<const ITileUpdateManagerStatics &>(static_cast<const D &>(*this))->abi_GetTemplateContent(type, put(content)));
     return content;
 }
 
 template <typename D> Windows::UI::Notifications::TileUpdateManagerForUser impl_ITileUpdateManagerStatics2<D>::GetForUser(const Windows::System::User & user) const
 {
     Windows::UI::Notifications::TileUpdateManagerForUser result { nullptr };
-    check_hresult(shim()->abi_GetForUser(get(user), put(result)));
+    check_hresult(static_cast<const ITileUpdateManagerStatics2 &>(static_cast<const D &>(*this))->abi_GetForUser(get(user), put(result)));
     return result;
 }
 
 template <typename D> Windows::UI::Notifications::TileUpdater impl_ITileUpdateManagerForUser<D>::CreateTileUpdaterForApplicationForUser() const
 {
     Windows::UI::Notifications::TileUpdater updater { nullptr };
-    check_hresult(shim()->abi_CreateTileUpdaterForApplication(put(updater)));
+    check_hresult(static_cast<const ITileUpdateManagerForUser &>(static_cast<const D &>(*this))->abi_CreateTileUpdaterForApplication(put(updater)));
     return updater;
 }
 
 template <typename D> Windows::UI::Notifications::TileUpdater impl_ITileUpdateManagerForUser<D>::CreateTileUpdaterForApplication(hstring_ref applicationId) const
 {
     Windows::UI::Notifications::TileUpdater updater { nullptr };
-    check_hresult(shim()->abi_CreateTileUpdaterForApplicationWithId(get(applicationId), put(updater)));
+    check_hresult(static_cast<const ITileUpdateManagerForUser &>(static_cast<const D &>(*this))->abi_CreateTileUpdaterForApplicationWithId(get(applicationId), put(updater)));
     return updater;
 }
 
 template <typename D> Windows::UI::Notifications::TileUpdater impl_ITileUpdateManagerForUser<D>::CreateTileUpdaterForSecondaryTile(hstring_ref tileId) const
 {
     Windows::UI::Notifications::TileUpdater updater { nullptr };
-    check_hresult(shim()->abi_CreateTileUpdaterForSecondaryTile(get(tileId), put(updater)));
+    check_hresult(static_cast<const ITileUpdateManagerForUser &>(static_cast<const D &>(*this))->abi_CreateTileUpdaterForSecondaryTile(get(tileId), put(updater)));
     return updater;
 }
 
 template <typename D> Windows::System::User impl_ITileUpdateManagerForUser<D>::User() const
 {
     Windows::System::User value { nullptr };
-    check_hresult(shim()->get_User(put(value)));
+    check_hresult(static_cast<const ITileUpdateManagerForUser &>(static_cast<const D &>(*this))->get_User(put(value)));
     return value;
 }
 
 template <typename D> void impl_ITileUpdater<D>::Update(const Windows::UI::Notifications::TileNotification & notification) const
 {
-    check_hresult(shim()->abi_Update(get(notification)));
+    check_hresult(static_cast<const ITileUpdater &>(static_cast<const D &>(*this))->abi_Update(get(notification)));
 }
 
 template <typename D> void impl_ITileUpdater<D>::Clear() const
 {
-    check_hresult(shim()->abi_Clear());
+    check_hresult(static_cast<const ITileUpdater &>(static_cast<const D &>(*this))->abi_Clear());
 }
 
 template <typename D> void impl_ITileUpdater<D>::EnableNotificationQueue(bool enable) const
 {
-    check_hresult(shim()->abi_EnableNotificationQueue(enable));
+    check_hresult(static_cast<const ITileUpdater &>(static_cast<const D &>(*this))->abi_EnableNotificationQueue(enable));
 }
 
 template <typename D> Windows::UI::Notifications::NotificationSetting impl_ITileUpdater<D>::Setting() const
 {
     Windows::UI::Notifications::NotificationSetting value {};
-    check_hresult(shim()->get_Setting(&value));
+    check_hresult(static_cast<const ITileUpdater &>(static_cast<const D &>(*this))->get_Setting(&value));
     return value;
 }
 
 template <typename D> void impl_ITileUpdater<D>::AddToSchedule(const Windows::UI::Notifications::ScheduledTileNotification & scheduledTile) const
 {
-    check_hresult(shim()->abi_AddToSchedule(get(scheduledTile)));
+    check_hresult(static_cast<const ITileUpdater &>(static_cast<const D &>(*this))->abi_AddToSchedule(get(scheduledTile)));
 }
 
 template <typename D> void impl_ITileUpdater<D>::RemoveFromSchedule(const Windows::UI::Notifications::ScheduledTileNotification & scheduledTile) const
 {
-    check_hresult(shim()->abi_RemoveFromSchedule(get(scheduledTile)));
+    check_hresult(static_cast<const ITileUpdater &>(static_cast<const D &>(*this))->abi_RemoveFromSchedule(get(scheduledTile)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::ScheduledTileNotification> impl_ITileUpdater<D>::GetScheduledTileNotifications() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::ScheduledTileNotification> scheduledTiles;
-    check_hresult(shim()->abi_GetScheduledTileNotifications(put(scheduledTiles)));
+    check_hresult(static_cast<const ITileUpdater &>(static_cast<const D &>(*this))->abi_GetScheduledTileNotifications(put(scheduledTiles)));
     return scheduledTiles;
 }
 
 template <typename D> void impl_ITileUpdater<D>::StartPeriodicUpdate(const Windows::Foundation::Uri & tileContent, Windows::UI::Notifications::PeriodicUpdateRecurrence requestedInterval) const
 {
-    check_hresult(shim()->abi_StartPeriodicUpdate(get(tileContent), requestedInterval));
+    check_hresult(static_cast<const ITileUpdater &>(static_cast<const D &>(*this))->abi_StartPeriodicUpdate(get(tileContent), requestedInterval));
 }
 
 template <typename D> void impl_ITileUpdater<D>::StartPeriodicUpdate(const Windows::Foundation::Uri & tileContent, const Windows::Foundation::DateTime & startTime, Windows::UI::Notifications::PeriodicUpdateRecurrence requestedInterval) const
 {
-    check_hresult(shim()->abi_StartPeriodicUpdateAtTime(get(tileContent), get(startTime), requestedInterval));
+    check_hresult(static_cast<const ITileUpdater &>(static_cast<const D &>(*this))->abi_StartPeriodicUpdateAtTime(get(tileContent), get(startTime), requestedInterval));
 }
 
 template <typename D> void impl_ITileUpdater<D>::StopPeriodicUpdate() const
 {
-    check_hresult(shim()->abi_StopPeriodicUpdate());
+    check_hresult(static_cast<const ITileUpdater &>(static_cast<const D &>(*this))->abi_StopPeriodicUpdate());
 }
 
 template <typename D> void impl_ITileUpdater<D>::StartPeriodicUpdateBatch(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> & tileContents, Windows::UI::Notifications::PeriodicUpdateRecurrence requestedInterval) const
 {
-    check_hresult(shim()->abi_StartPeriodicUpdateBatch(get(tileContents), requestedInterval));
+    check_hresult(static_cast<const ITileUpdater &>(static_cast<const D &>(*this))->abi_StartPeriodicUpdateBatch(get(tileContents), requestedInterval));
 }
 
 template <typename D> void impl_ITileUpdater<D>::StartPeriodicUpdateBatch(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> & tileContents, const Windows::Foundation::DateTime & startTime, Windows::UI::Notifications::PeriodicUpdateRecurrence requestedInterval) const
 {
-    check_hresult(shim()->abi_StartPeriodicUpdateBatchAtTime(get(tileContents), get(startTime), requestedInterval));
+    check_hresult(static_cast<const ITileUpdater &>(static_cast<const D &>(*this))->abi_StartPeriodicUpdateBatchAtTime(get(tileContents), get(startTime), requestedInterval));
 }
 
 template <typename D> void impl_ITileUpdater2<D>::EnableNotificationQueueForSquare150x150(bool enable) const
 {
-    check_hresult(shim()->abi_EnableNotificationQueueForSquare150x150(enable));
+    check_hresult(static_cast<const ITileUpdater2 &>(static_cast<const D &>(*this))->abi_EnableNotificationQueueForSquare150x150(enable));
 }
 
 template <typename D> void impl_ITileUpdater2<D>::EnableNotificationQueueForWide310x150(bool enable) const
 {
-    check_hresult(shim()->abi_EnableNotificationQueueForWide310x150(enable));
+    check_hresult(static_cast<const ITileUpdater2 &>(static_cast<const D &>(*this))->abi_EnableNotificationQueueForWide310x150(enable));
 }
 
 template <typename D> void impl_ITileUpdater2<D>::EnableNotificationQueueForSquare310x310(bool enable) const
 {
-    check_hresult(shim()->abi_EnableNotificationQueueForSquare310x310(enable));
+    check_hresult(static_cast<const ITileUpdater2 &>(static_cast<const D &>(*this))->abi_EnableNotificationQueueForSquare310x310(enable));
 }
 
 template <typename D> Windows::UI::Notifications::TileFlyoutUpdater impl_ITileFlyoutUpdateManagerStatics<D>::CreateTileFlyoutUpdaterForApplication() const
 {
     Windows::UI::Notifications::TileFlyoutUpdater updater { nullptr };
-    check_hresult(shim()->abi_CreateTileFlyoutUpdaterForApplication(put(updater)));
+    check_hresult(static_cast<const ITileFlyoutUpdateManagerStatics &>(static_cast<const D &>(*this))->abi_CreateTileFlyoutUpdaterForApplication(put(updater)));
     return updater;
 }
 
 template <typename D> Windows::UI::Notifications::TileFlyoutUpdater impl_ITileFlyoutUpdateManagerStatics<D>::CreateTileFlyoutUpdaterForApplication(hstring_ref applicationId) const
 {
     Windows::UI::Notifications::TileFlyoutUpdater updater { nullptr };
-    check_hresult(shim()->abi_CreateTileFlyoutUpdaterForApplicationWithId(get(applicationId), put(updater)));
+    check_hresult(static_cast<const ITileFlyoutUpdateManagerStatics &>(static_cast<const D &>(*this))->abi_CreateTileFlyoutUpdaterForApplicationWithId(get(applicationId), put(updater)));
     return updater;
 }
 
 template <typename D> Windows::UI::Notifications::TileFlyoutUpdater impl_ITileFlyoutUpdateManagerStatics<D>::CreateTileFlyoutUpdaterForSecondaryTile(hstring_ref tileId) const
 {
     Windows::UI::Notifications::TileFlyoutUpdater updater { nullptr };
-    check_hresult(shim()->abi_CreateTileFlyoutUpdaterForSecondaryTile(get(tileId), put(updater)));
+    check_hresult(static_cast<const ITileFlyoutUpdateManagerStatics &>(static_cast<const D &>(*this))->abi_CreateTileFlyoutUpdaterForSecondaryTile(get(tileId), put(updater)));
     return updater;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlDocument impl_ITileFlyoutUpdateManagerStatics<D>::GetTemplateContent(Windows::UI::Notifications::TileFlyoutTemplateType type) const
 {
     Windows::Data::Xml::Dom::XmlDocument content { nullptr };
-    check_hresult(shim()->abi_GetTemplateContent(type, put(content)));
+    check_hresult(static_cast<const ITileFlyoutUpdateManagerStatics &>(static_cast<const D &>(*this))->abi_GetTemplateContent(type, put(content)));
     return content;
 }
 
 template <typename D> void impl_ITileFlyoutUpdater<D>::Update(const Windows::UI::Notifications::TileFlyoutNotification & notification) const
 {
-    check_hresult(shim()->abi_Update(get(notification)));
+    check_hresult(static_cast<const ITileFlyoutUpdater &>(static_cast<const D &>(*this))->abi_Update(get(notification)));
 }
 
 template <typename D> void impl_ITileFlyoutUpdater<D>::Clear() const
 {
-    check_hresult(shim()->abi_Clear());
+    check_hresult(static_cast<const ITileFlyoutUpdater &>(static_cast<const D &>(*this))->abi_Clear());
 }
 
 template <typename D> void impl_ITileFlyoutUpdater<D>::StartPeriodicUpdate(const Windows::Foundation::Uri & tileFlyoutContent, Windows::UI::Notifications::PeriodicUpdateRecurrence requestedInterval) const
 {
-    check_hresult(shim()->abi_StartPeriodicUpdate(get(tileFlyoutContent), requestedInterval));
+    check_hresult(static_cast<const ITileFlyoutUpdater &>(static_cast<const D &>(*this))->abi_StartPeriodicUpdate(get(tileFlyoutContent), requestedInterval));
 }
 
 template <typename D> void impl_ITileFlyoutUpdater<D>::StartPeriodicUpdate(const Windows::Foundation::Uri & tileFlyoutContent, const Windows::Foundation::DateTime & startTime, Windows::UI::Notifications::PeriodicUpdateRecurrence requestedInterval) const
 {
-    check_hresult(shim()->abi_StartPeriodicUpdateAtTime(get(tileFlyoutContent), get(startTime), requestedInterval));
+    check_hresult(static_cast<const ITileFlyoutUpdater &>(static_cast<const D &>(*this))->abi_StartPeriodicUpdateAtTime(get(tileFlyoutContent), get(startTime), requestedInterval));
 }
 
 template <typename D> void impl_ITileFlyoutUpdater<D>::StopPeriodicUpdate() const
 {
-    check_hresult(shim()->abi_StopPeriodicUpdate());
+    check_hresult(static_cast<const ITileFlyoutUpdater &>(static_cast<const D &>(*this))->abi_StopPeriodicUpdate());
 }
 
 template <typename D> Windows::UI::Notifications::NotificationSetting impl_ITileFlyoutUpdater<D>::Setting() const
 {
     Windows::UI::Notifications::NotificationSetting value {};
-    check_hresult(shim()->get_Setting(&value));
+    check_hresult(static_cast<const ITileFlyoutUpdater &>(static_cast<const D &>(*this))->get_Setting(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Notifications::BadgeUpdater impl_IBadgeUpdateManagerStatics<D>::CreateBadgeUpdaterForApplication() const
 {
     Windows::UI::Notifications::BadgeUpdater updater { nullptr };
-    check_hresult(shim()->abi_CreateBadgeUpdaterForApplication(put(updater)));
+    check_hresult(static_cast<const IBadgeUpdateManagerStatics &>(static_cast<const D &>(*this))->abi_CreateBadgeUpdaterForApplication(put(updater)));
     return updater;
 }
 
 template <typename D> Windows::UI::Notifications::BadgeUpdater impl_IBadgeUpdateManagerStatics<D>::CreateBadgeUpdaterForApplication(hstring_ref applicationId) const
 {
     Windows::UI::Notifications::BadgeUpdater updater { nullptr };
-    check_hresult(shim()->abi_CreateBadgeUpdaterForApplicationWithId(get(applicationId), put(updater)));
+    check_hresult(static_cast<const IBadgeUpdateManagerStatics &>(static_cast<const D &>(*this))->abi_CreateBadgeUpdaterForApplicationWithId(get(applicationId), put(updater)));
     return updater;
 }
 
 template <typename D> Windows::UI::Notifications::BadgeUpdater impl_IBadgeUpdateManagerStatics<D>::CreateBadgeUpdaterForSecondaryTile(hstring_ref tileId) const
 {
     Windows::UI::Notifications::BadgeUpdater updater { nullptr };
-    check_hresult(shim()->abi_CreateBadgeUpdaterForSecondaryTile(get(tileId), put(updater)));
+    check_hresult(static_cast<const IBadgeUpdateManagerStatics &>(static_cast<const D &>(*this))->abi_CreateBadgeUpdaterForSecondaryTile(get(tileId), put(updater)));
     return updater;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlDocument impl_IBadgeUpdateManagerStatics<D>::GetTemplateContent(Windows::UI::Notifications::BadgeTemplateType type) const
 {
     Windows::Data::Xml::Dom::XmlDocument content { nullptr };
-    check_hresult(shim()->abi_GetTemplateContent(type, put(content)));
+    check_hresult(static_cast<const IBadgeUpdateManagerStatics &>(static_cast<const D &>(*this))->abi_GetTemplateContent(type, put(content)));
     return content;
 }
 
 template <typename D> Windows::UI::Notifications::BadgeUpdateManagerForUser impl_IBadgeUpdateManagerStatics2<D>::GetForUser(const Windows::System::User & user) const
 {
     Windows::UI::Notifications::BadgeUpdateManagerForUser result { nullptr };
-    check_hresult(shim()->abi_GetForUser(get(user), put(result)));
+    check_hresult(static_cast<const IBadgeUpdateManagerStatics2 &>(static_cast<const D &>(*this))->abi_GetForUser(get(user), put(result)));
     return result;
 }
 
 template <typename D> Windows::UI::Notifications::BadgeUpdater impl_IBadgeUpdateManagerForUser<D>::CreateBadgeUpdaterForApplication() const
 {
     Windows::UI::Notifications::BadgeUpdater result { nullptr };
-    check_hresult(shim()->abi_CreateBadgeUpdaterForApplication(put(result)));
+    check_hresult(static_cast<const IBadgeUpdateManagerForUser &>(static_cast<const D &>(*this))->abi_CreateBadgeUpdaterForApplication(put(result)));
     return result;
 }
 
 template <typename D> Windows::UI::Notifications::BadgeUpdater impl_IBadgeUpdateManagerForUser<D>::CreateBadgeUpdaterForApplication(hstring_ref applicationId) const
 {
     Windows::UI::Notifications::BadgeUpdater result { nullptr };
-    check_hresult(shim()->abi_CreateBadgeUpdaterForApplicationWithId(get(applicationId), put(result)));
+    check_hresult(static_cast<const IBadgeUpdateManagerForUser &>(static_cast<const D &>(*this))->abi_CreateBadgeUpdaterForApplicationWithId(get(applicationId), put(result)));
     return result;
 }
 
 template <typename D> Windows::UI::Notifications::BadgeUpdater impl_IBadgeUpdateManagerForUser<D>::CreateBadgeUpdaterForSecondaryTile(hstring_ref tileId) const
 {
     Windows::UI::Notifications::BadgeUpdater result { nullptr };
-    check_hresult(shim()->abi_CreateBadgeUpdaterForSecondaryTile(get(tileId), put(result)));
+    check_hresult(static_cast<const IBadgeUpdateManagerForUser &>(static_cast<const D &>(*this))->abi_CreateBadgeUpdaterForSecondaryTile(get(tileId), put(result)));
     return result;
 }
 
 template <typename D> Windows::System::User impl_IBadgeUpdateManagerForUser<D>::User() const
 {
     Windows::System::User value { nullptr };
-    check_hresult(shim()->get_User(put(value)));
+    check_hresult(static_cast<const IBadgeUpdateManagerForUser &>(static_cast<const D &>(*this))->get_User(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBadgeUpdater<D>::Update(const Windows::UI::Notifications::BadgeNotification & notification) const
 {
-    check_hresult(shim()->abi_Update(get(notification)));
+    check_hresult(static_cast<const IBadgeUpdater &>(static_cast<const D &>(*this))->abi_Update(get(notification)));
 }
 
 template <typename D> void impl_IBadgeUpdater<D>::Clear() const
 {
-    check_hresult(shim()->abi_Clear());
+    check_hresult(static_cast<const IBadgeUpdater &>(static_cast<const D &>(*this))->abi_Clear());
 }
 
 template <typename D> void impl_IBadgeUpdater<D>::StartPeriodicUpdate(const Windows::Foundation::Uri & badgeContent, Windows::UI::Notifications::PeriodicUpdateRecurrence requestedInterval) const
 {
-    check_hresult(shim()->abi_StartPeriodicUpdate(get(badgeContent), requestedInterval));
+    check_hresult(static_cast<const IBadgeUpdater &>(static_cast<const D &>(*this))->abi_StartPeriodicUpdate(get(badgeContent), requestedInterval));
 }
 
 template <typename D> void impl_IBadgeUpdater<D>::StartPeriodicUpdate(const Windows::Foundation::Uri & badgeContent, const Windows::Foundation::DateTime & startTime, Windows::UI::Notifications::PeriodicUpdateRecurrence requestedInterval) const
 {
-    check_hresult(shim()->abi_StartPeriodicUpdateAtTime(get(badgeContent), get(startTime), requestedInterval));
+    check_hresult(static_cast<const IBadgeUpdater &>(static_cast<const D &>(*this))->abi_StartPeriodicUpdateAtTime(get(badgeContent), get(startTime), requestedInterval));
 }
 
 template <typename D> void impl_IBadgeUpdater<D>::StopPeriodicUpdate() const
 {
-    check_hresult(shim()->abi_StopPeriodicUpdate());
+    check_hresult(static_cast<const IBadgeUpdater &>(static_cast<const D &>(*this))->abi_StopPeriodicUpdate());
 }
 
 template <typename D> Windows::UI::Notifications::ToastNotifier impl_IToastNotificationManagerStatics<D>::CreateToastNotifier() const
 {
     Windows::UI::Notifications::ToastNotifier notifier { nullptr };
-    check_hresult(shim()->abi_CreateToastNotifier(put(notifier)));
+    check_hresult(static_cast<const IToastNotificationManagerStatics &>(static_cast<const D &>(*this))->abi_CreateToastNotifier(put(notifier)));
     return notifier;
 }
 
 template <typename D> Windows::UI::Notifications::ToastNotifier impl_IToastNotificationManagerStatics<D>::CreateToastNotifier(hstring_ref applicationId) const
 {
     Windows::UI::Notifications::ToastNotifier notifier { nullptr };
-    check_hresult(shim()->abi_CreateToastNotifierWithId(get(applicationId), put(notifier)));
+    check_hresult(static_cast<const IToastNotificationManagerStatics &>(static_cast<const D &>(*this))->abi_CreateToastNotifierWithId(get(applicationId), put(notifier)));
     return notifier;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlDocument impl_IToastNotificationManagerStatics<D>::GetTemplateContent(Windows::UI::Notifications::ToastTemplateType type) const
 {
     Windows::Data::Xml::Dom::XmlDocument content { nullptr };
-    check_hresult(shim()->abi_GetTemplateContent(type, put(content)));
+    check_hresult(static_cast<const IToastNotificationManagerStatics &>(static_cast<const D &>(*this))->abi_GetTemplateContent(type, put(content)));
     return content;
 }
 
 template <typename D> void impl_IToastNotifier<D>::Show(const Windows::UI::Notifications::ToastNotification & notification) const
 {
-    check_hresult(shim()->abi_Show(get(notification)));
+    check_hresult(static_cast<const IToastNotifier &>(static_cast<const D &>(*this))->abi_Show(get(notification)));
 }
 
 template <typename D> void impl_IToastNotifier<D>::Hide(const Windows::UI::Notifications::ToastNotification & notification) const
 {
-    check_hresult(shim()->abi_Hide(get(notification)));
+    check_hresult(static_cast<const IToastNotifier &>(static_cast<const D &>(*this))->abi_Hide(get(notification)));
 }
 
 template <typename D> Windows::UI::Notifications::NotificationSetting impl_IToastNotifier<D>::Setting() const
 {
     Windows::UI::Notifications::NotificationSetting value {};
-    check_hresult(shim()->get_Setting(&value));
+    check_hresult(static_cast<const IToastNotifier &>(static_cast<const D &>(*this))->get_Setting(&value));
     return value;
 }
 
 template <typename D> void impl_IToastNotifier<D>::AddToSchedule(const Windows::UI::Notifications::ScheduledToastNotification & scheduledToast) const
 {
-    check_hresult(shim()->abi_AddToSchedule(get(scheduledToast)));
+    check_hresult(static_cast<const IToastNotifier &>(static_cast<const D &>(*this))->abi_AddToSchedule(get(scheduledToast)));
 }
 
 template <typename D> void impl_IToastNotifier<D>::RemoveFromSchedule(const Windows::UI::Notifications::ScheduledToastNotification & scheduledToast) const
 {
-    check_hresult(shim()->abi_RemoveFromSchedule(get(scheduledToast)));
+    check_hresult(static_cast<const IToastNotifier &>(static_cast<const D &>(*this))->abi_RemoveFromSchedule(get(scheduledToast)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::ScheduledToastNotification> impl_IToastNotifier<D>::GetScheduledToastNotifications() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::ScheduledToastNotification> scheduledToasts;
-    check_hresult(shim()->abi_GetScheduledToastNotifications(put(scheduledToasts)));
+    check_hresult(static_cast<const IToastNotifier &>(static_cast<const D &>(*this))->abi_GetScheduledToastNotifications(put(scheduledToasts)));
     return scheduledToasts;
 }
 
 template <typename D> Windows::UI::Notifications::TileNotification impl_ITileNotificationFactory<D>::CreateTileNotification(const Windows::Data::Xml::Dom::XmlDocument & content) const
 {
     Windows::UI::Notifications::TileNotification notification { nullptr };
-    check_hresult(shim()->abi_CreateTileNotification(get(content), put(notification)));
+    check_hresult(static_cast<const ITileNotificationFactory &>(static_cast<const D &>(*this))->abi_CreateTileNotification(get(content), put(notification)));
     return notification;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlDocument impl_ITileNotification<D>::Content() const
 {
     Windows::Data::Xml::Dom::XmlDocument value { nullptr };
-    check_hresult(shim()->get_Content(put(value)));
+    check_hresult(static_cast<const ITileNotification &>(static_cast<const D &>(*this))->get_Content(put(value)));
     return value;
 }
 
 template <typename D> void impl_ITileNotification<D>::ExpirationTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
 {
-    check_hresult(shim()->put_ExpirationTime(get(value)));
+    check_hresult(static_cast<const ITileNotification &>(static_cast<const D &>(*this))->put_ExpirationTime(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateTime> impl_ITileNotification<D>::ExpirationTime() const
 {
     Windows::Foundation::IReference<Windows::Foundation::DateTime> value;
-    check_hresult(shim()->get_ExpirationTime(put(value)));
+    check_hresult(static_cast<const ITileNotification &>(static_cast<const D &>(*this))->get_ExpirationTime(put(value)));
     return value;
 }
 
 template <typename D> void impl_ITileNotification<D>::Tag(hstring_ref value) const
 {
-    check_hresult(shim()->put_Tag(get(value)));
+    check_hresult(static_cast<const ITileNotification &>(static_cast<const D &>(*this))->put_Tag(get(value)));
 }
 
 template <typename D> hstring impl_ITileNotification<D>::Tag() const
 {
     hstring value;
-    check_hresult(shim()->get_Tag(put(value)));
+    check_hresult(static_cast<const ITileNotification &>(static_cast<const D &>(*this))->get_Tag(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Notifications::TileFlyoutNotification impl_ITileFlyoutNotificationFactory<D>::CreateTileFlyoutNotification(const Windows::Data::Xml::Dom::XmlDocument & content) const
 {
     Windows::UI::Notifications::TileFlyoutNotification notification { nullptr };
-    check_hresult(shim()->abi_CreateTileFlyoutNotification(get(content), put(notification)));
+    check_hresult(static_cast<const ITileFlyoutNotificationFactory &>(static_cast<const D &>(*this))->abi_CreateTileFlyoutNotification(get(content), put(notification)));
     return notification;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlDocument impl_ITileFlyoutNotification<D>::Content() const
 {
     Windows::Data::Xml::Dom::XmlDocument value { nullptr };
-    check_hresult(shim()->get_Content(put(value)));
+    check_hresult(static_cast<const ITileFlyoutNotification &>(static_cast<const D &>(*this))->get_Content(put(value)));
     return value;
 }
 
 template <typename D> void impl_ITileFlyoutNotification<D>::ExpirationTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
 {
-    check_hresult(shim()->put_ExpirationTime(get(value)));
+    check_hresult(static_cast<const ITileFlyoutNotification &>(static_cast<const D &>(*this))->put_ExpirationTime(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateTime> impl_ITileFlyoutNotification<D>::ExpirationTime() const
 {
     Windows::Foundation::IReference<Windows::Foundation::DateTime> value;
-    check_hresult(shim()->get_ExpirationTime(put(value)));
+    check_hresult(static_cast<const ITileFlyoutNotification &>(static_cast<const D &>(*this))->get_ExpirationTime(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Notifications::BadgeNotification impl_IBadgeNotificationFactory<D>::CreateBadgeNotification(const Windows::Data::Xml::Dom::XmlDocument & content) const
 {
     Windows::UI::Notifications::BadgeNotification notification { nullptr };
-    check_hresult(shim()->abi_CreateBadgeNotification(get(content), put(notification)));
+    check_hresult(static_cast<const IBadgeNotificationFactory &>(static_cast<const D &>(*this))->abi_CreateBadgeNotification(get(content), put(notification)));
     return notification;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlDocument impl_IBadgeNotification<D>::Content() const
 {
     Windows::Data::Xml::Dom::XmlDocument value { nullptr };
-    check_hresult(shim()->get_Content(put(value)));
+    check_hresult(static_cast<const IBadgeNotification &>(static_cast<const D &>(*this))->get_Content(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBadgeNotification<D>::ExpirationTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
 {
-    check_hresult(shim()->put_ExpirationTime(get(value)));
+    check_hresult(static_cast<const IBadgeNotification &>(static_cast<const D &>(*this))->put_ExpirationTime(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateTime> impl_IBadgeNotification<D>::ExpirationTime() const
 {
     Windows::Foundation::IReference<Windows::Foundation::DateTime> value;
-    check_hresult(shim()->get_ExpirationTime(put(value)));
+    check_hresult(static_cast<const IBadgeNotification &>(static_cast<const D &>(*this))->get_ExpirationTime(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Notifications::ToastNotification impl_IToastNotificationFactory<D>::CreateToastNotification(const Windows::Data::Xml::Dom::XmlDocument & content) const
 {
     Windows::UI::Notifications::ToastNotification notification { nullptr };
-    check_hresult(shim()->abi_CreateToastNotification(get(content), put(notification)));
+    check_hresult(static_cast<const IToastNotificationFactory &>(static_cast<const D &>(*this))->abi_CreateToastNotification(get(content), put(notification)));
     return notification;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlDocument impl_IToastNotification<D>::Content() const
 {
     Windows::Data::Xml::Dom::XmlDocument value { nullptr };
-    check_hresult(shim()->get_Content(put(value)));
+    check_hresult(static_cast<const IToastNotification &>(static_cast<const D &>(*this))->get_Content(put(value)));
     return value;
 }
 
 template <typename D> void impl_IToastNotification<D>::ExpirationTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
 {
-    check_hresult(shim()->put_ExpirationTime(get(value)));
+    check_hresult(static_cast<const IToastNotification &>(static_cast<const D &>(*this))->put_ExpirationTime(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateTime> impl_IToastNotification<D>::ExpirationTime() const
 {
     Windows::Foundation::IReference<Windows::Foundation::DateTime> value;
-    check_hresult(shim()->get_ExpirationTime(put(value)));
+    check_hresult(static_cast<const IToastNotification &>(static_cast<const D &>(*this))->get_ExpirationTime(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IToastNotification<D>::Dismissed(const Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::ToastNotification, Windows::UI::Notifications::ToastDismissedEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_Dismissed(get(handler), &cookie));
+    check_hresult(static_cast<const IToastNotification &>(static_cast<const D &>(*this))->add_Dismissed(get(handler), &cookie));
     return cookie;
 }
 
@@ -3665,13 +3665,13 @@ template <typename D> event_revoker<IToastNotification> impl_IToastNotification<
 
 template <typename D> void impl_IToastNotification<D>::Dismissed(event_token cookie) const
 {
-    check_hresult(shim()->remove_Dismissed(cookie));
+    check_hresult(static_cast<const IToastNotification &>(static_cast<const D &>(*this))->remove_Dismissed(cookie));
 }
 
 template <typename D> event_token impl_IToastNotification<D>::Activated(const Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::ToastNotification, Windows::IInspectable> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_Activated(get(handler), &cookie));
+    check_hresult(static_cast<const IToastNotification &>(static_cast<const D &>(*this))->add_Activated(get(handler), &cookie));
     return cookie;
 }
 
@@ -3682,13 +3682,13 @@ template <typename D> event_revoker<IToastNotification> impl_IToastNotification<
 
 template <typename D> void impl_IToastNotification<D>::Activated(event_token cookie) const
 {
-    check_hresult(shim()->remove_Activated(cookie));
+    check_hresult(static_cast<const IToastNotification &>(static_cast<const D &>(*this))->remove_Activated(cookie));
 }
 
 template <typename D> event_token impl_IToastNotification<D>::Failed(const Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::ToastNotification, Windows::UI::Notifications::ToastFailedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_Failed(get(handler), &token));
+    check_hresult(static_cast<const IToastNotification &>(static_cast<const D &>(*this))->add_Failed(get(handler), &token));
     return token;
 }
 
@@ -3699,378 +3699,378 @@ template <typename D> event_revoker<IToastNotification> impl_IToastNotification<
 
 template <typename D> void impl_IToastNotification<D>::Failed(event_token token) const
 {
-    check_hresult(shim()->remove_Failed(token));
+    check_hresult(static_cast<const IToastNotification &>(static_cast<const D &>(*this))->remove_Failed(token));
 }
 
 template <typename D> void impl_IToastNotification2<D>::Tag(hstring_ref value) const
 {
-    check_hresult(shim()->put_Tag(get(value)));
+    check_hresult(static_cast<const IToastNotification2 &>(static_cast<const D &>(*this))->put_Tag(get(value)));
 }
 
 template <typename D> hstring impl_IToastNotification2<D>::Tag() const
 {
     hstring value;
-    check_hresult(shim()->get_Tag(put(value)));
+    check_hresult(static_cast<const IToastNotification2 &>(static_cast<const D &>(*this))->get_Tag(put(value)));
     return value;
 }
 
 template <typename D> void impl_IToastNotification2<D>::Group(hstring_ref value) const
 {
-    check_hresult(shim()->put_Group(get(value)));
+    check_hresult(static_cast<const IToastNotification2 &>(static_cast<const D &>(*this))->put_Group(get(value)));
 }
 
 template <typename D> hstring impl_IToastNotification2<D>::Group() const
 {
     hstring value;
-    check_hresult(shim()->get_Group(put(value)));
+    check_hresult(static_cast<const IToastNotification2 &>(static_cast<const D &>(*this))->get_Group(put(value)));
     return value;
 }
 
 template <typename D> void impl_IToastNotification2<D>::SuppressPopup(bool value) const
 {
-    check_hresult(shim()->put_SuppressPopup(value));
+    check_hresult(static_cast<const IToastNotification2 &>(static_cast<const D &>(*this))->put_SuppressPopup(value));
 }
 
 template <typename D> bool impl_IToastNotification2<D>::SuppressPopup() const
 {
     bool value {};
-    check_hresult(shim()->get_SuppressPopup(&value));
+    check_hresult(static_cast<const IToastNotification2 &>(static_cast<const D &>(*this))->get_SuppressPopup(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateTime> impl_INotification<D>::ExpirationTime() const
 {
     Windows::Foundation::IReference<Windows::Foundation::DateTime> value;
-    check_hresult(shim()->get_ExpirationTime(put(value)));
+    check_hresult(static_cast<const INotification &>(static_cast<const D &>(*this))->get_ExpirationTime(put(value)));
     return value;
 }
 
 template <typename D> void impl_INotification<D>::ExpirationTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
 {
-    check_hresult(shim()->put_ExpirationTime(get(value)));
+    check_hresult(static_cast<const INotification &>(static_cast<const D &>(*this))->put_ExpirationTime(get(value)));
 }
 
 template <typename D> Windows::UI::Notifications::NotificationVisual impl_INotification<D>::Visual() const
 {
     Windows::UI::Notifications::NotificationVisual value { nullptr };
-    check_hresult(shim()->get_Visual(put(value)));
+    check_hresult(static_cast<const INotification &>(static_cast<const D &>(*this))->get_Visual(put(value)));
     return value;
 }
 
 template <typename D> void impl_INotification<D>::Visual(const Windows::UI::Notifications::NotificationVisual & value) const
 {
-    check_hresult(shim()->put_Visual(get(value)));
+    check_hresult(static_cast<const INotification &>(static_cast<const D &>(*this))->put_Visual(get(value)));
 }
 
 template <typename D> Windows::UI::Notifications::NotificationMirroring impl_IToastNotification3<D>::NotificationMirroring() const
 {
     Windows::UI::Notifications::NotificationMirroring value {};
-    check_hresult(shim()->get_NotificationMirroring(&value));
+    check_hresult(static_cast<const IToastNotification3 &>(static_cast<const D &>(*this))->get_NotificationMirroring(&value));
     return value;
 }
 
 template <typename D> void impl_IToastNotification3<D>::NotificationMirroring(Windows::UI::Notifications::NotificationMirroring value) const
 {
-    check_hresult(shim()->put_NotificationMirroring(value));
+    check_hresult(static_cast<const IToastNotification3 &>(static_cast<const D &>(*this))->put_NotificationMirroring(value));
 }
 
 template <typename D> hstring impl_IToastNotification3<D>::RemoteId() const
 {
     hstring value;
-    check_hresult(shim()->get_RemoteId(put(value)));
+    check_hresult(static_cast<const IToastNotification3 &>(static_cast<const D &>(*this))->get_RemoteId(put(value)));
     return value;
 }
 
 template <typename D> void impl_IToastNotification3<D>::RemoteId(hstring_ref value) const
 {
-    check_hresult(shim()->put_RemoteId(get(value)));
+    check_hresult(static_cast<const IToastNotification3 &>(static_cast<const D &>(*this))->put_RemoteId(get(value)));
 }
 
 template <typename D> Windows::UI::Notifications::ScheduledToastNotification impl_IScheduledToastNotificationFactory<D>::CreateScheduledToastNotification(const Windows::Data::Xml::Dom::XmlDocument & content, const Windows::Foundation::DateTime & deliveryTime) const
 {
     Windows::UI::Notifications::ScheduledToastNotification notification { nullptr };
-    check_hresult(shim()->abi_CreateScheduledToastNotification(get(content), get(deliveryTime), put(notification)));
+    check_hresult(static_cast<const IScheduledToastNotificationFactory &>(static_cast<const D &>(*this))->abi_CreateScheduledToastNotification(get(content), get(deliveryTime), put(notification)));
     return notification;
 }
 
 template <typename D> Windows::UI::Notifications::ScheduledToastNotification impl_IScheduledToastNotificationFactory<D>::CreateScheduledToastNotificationRecurring(const Windows::Data::Xml::Dom::XmlDocument & content, const Windows::Foundation::DateTime & deliveryTime, const Windows::Foundation::TimeSpan & snoozeInterval, uint32_t maximumSnoozeCount) const
 {
     Windows::UI::Notifications::ScheduledToastNotification notification { nullptr };
-    check_hresult(shim()->abi_CreateScheduledToastNotificationRecurring(get(content), get(deliveryTime), get(snoozeInterval), maximumSnoozeCount, put(notification)));
+    check_hresult(static_cast<const IScheduledToastNotificationFactory &>(static_cast<const D &>(*this))->abi_CreateScheduledToastNotificationRecurring(get(content), get(deliveryTime), get(snoozeInterval), maximumSnoozeCount, put(notification)));
     return notification;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlDocument impl_IScheduledToastNotification<D>::Content() const
 {
     Windows::Data::Xml::Dom::XmlDocument value { nullptr };
-    check_hresult(shim()->get_Content(put(value)));
+    check_hresult(static_cast<const IScheduledToastNotification &>(static_cast<const D &>(*this))->get_Content(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IScheduledToastNotification<D>::DeliveryTime() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->get_DeliveryTime(put(value)));
+    check_hresult(static_cast<const IScheduledToastNotification &>(static_cast<const D &>(*this))->get_DeliveryTime(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeSpan> impl_IScheduledToastNotification<D>::SnoozeInterval() const
 {
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> value;
-    check_hresult(shim()->get_SnoozeInterval(put(value)));
+    check_hresult(static_cast<const IScheduledToastNotification &>(static_cast<const D &>(*this))->get_SnoozeInterval(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IScheduledToastNotification<D>::MaximumSnoozeCount() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_MaximumSnoozeCount(&value));
+    check_hresult(static_cast<const IScheduledToastNotification &>(static_cast<const D &>(*this))->get_MaximumSnoozeCount(&value));
     return value;
 }
 
 template <typename D> void impl_IScheduledToastNotification<D>::Id(hstring_ref value) const
 {
-    check_hresult(shim()->put_Id(get(value)));
+    check_hresult(static_cast<const IScheduledToastNotification &>(static_cast<const D &>(*this))->put_Id(get(value)));
 }
 
 template <typename D> hstring impl_IScheduledToastNotification<D>::Id() const
 {
     hstring value;
-    check_hresult(shim()->get_Id(put(value)));
+    check_hresult(static_cast<const IScheduledToastNotification &>(static_cast<const D &>(*this))->get_Id(put(value)));
     return value;
 }
 
 template <typename D> void impl_IScheduledToastNotification2<D>::Tag(hstring_ref value) const
 {
-    check_hresult(shim()->put_Tag(get(value)));
+    check_hresult(static_cast<const IScheduledToastNotification2 &>(static_cast<const D &>(*this))->put_Tag(get(value)));
 }
 
 template <typename D> hstring impl_IScheduledToastNotification2<D>::Tag() const
 {
     hstring value;
-    check_hresult(shim()->get_Tag(put(value)));
+    check_hresult(static_cast<const IScheduledToastNotification2 &>(static_cast<const D &>(*this))->get_Tag(put(value)));
     return value;
 }
 
 template <typename D> void impl_IScheduledToastNotification2<D>::Group(hstring_ref value) const
 {
-    check_hresult(shim()->put_Group(get(value)));
+    check_hresult(static_cast<const IScheduledToastNotification2 &>(static_cast<const D &>(*this))->put_Group(get(value)));
 }
 
 template <typename D> hstring impl_IScheduledToastNotification2<D>::Group() const
 {
     hstring value;
-    check_hresult(shim()->get_Group(put(value)));
+    check_hresult(static_cast<const IScheduledToastNotification2 &>(static_cast<const D &>(*this))->get_Group(put(value)));
     return value;
 }
 
 template <typename D> void impl_IScheduledToastNotification2<D>::SuppressPopup(bool value) const
 {
-    check_hresult(shim()->put_SuppressPopup(value));
+    check_hresult(static_cast<const IScheduledToastNotification2 &>(static_cast<const D &>(*this))->put_SuppressPopup(value));
 }
 
 template <typename D> bool impl_IScheduledToastNotification2<D>::SuppressPopup() const
 {
     bool value {};
-    check_hresult(shim()->get_SuppressPopup(&value));
+    check_hresult(static_cast<const IScheduledToastNotification2 &>(static_cast<const D &>(*this))->get_SuppressPopup(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Notifications::NotificationMirroring impl_IScheduledToastNotification3<D>::NotificationMirroring() const
 {
     Windows::UI::Notifications::NotificationMirroring value {};
-    check_hresult(shim()->get_NotificationMirroring(&value));
+    check_hresult(static_cast<const IScheduledToastNotification3 &>(static_cast<const D &>(*this))->get_NotificationMirroring(&value));
     return value;
 }
 
 template <typename D> void impl_IScheduledToastNotification3<D>::NotificationMirroring(Windows::UI::Notifications::NotificationMirroring value) const
 {
-    check_hresult(shim()->put_NotificationMirroring(value));
+    check_hresult(static_cast<const IScheduledToastNotification3 &>(static_cast<const D &>(*this))->put_NotificationMirroring(value));
 }
 
 template <typename D> hstring impl_IScheduledToastNotification3<D>::RemoteId() const
 {
     hstring value;
-    check_hresult(shim()->get_RemoteId(put(value)));
+    check_hresult(static_cast<const IScheduledToastNotification3 &>(static_cast<const D &>(*this))->get_RemoteId(put(value)));
     return value;
 }
 
 template <typename D> void impl_IScheduledToastNotification3<D>::RemoteId(hstring_ref value) const
 {
-    check_hresult(shim()->put_RemoteId(get(value)));
+    check_hresult(static_cast<const IScheduledToastNotification3 &>(static_cast<const D &>(*this))->put_RemoteId(get(value)));
 }
 
 template <typename D> Windows::UI::Notifications::ScheduledTileNotification impl_IScheduledTileNotificationFactory<D>::CreateScheduledTileNotification(const Windows::Data::Xml::Dom::XmlDocument & content, const Windows::Foundation::DateTime & deliveryTime) const
 {
     Windows::UI::Notifications::ScheduledTileNotification notification { nullptr };
-    check_hresult(shim()->abi_CreateScheduledTileNotification(get(content), get(deliveryTime), put(notification)));
+    check_hresult(static_cast<const IScheduledTileNotificationFactory &>(static_cast<const D &>(*this))->abi_CreateScheduledTileNotification(get(content), get(deliveryTime), put(notification)));
     return notification;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlDocument impl_IScheduledTileNotification<D>::Content() const
 {
     Windows::Data::Xml::Dom::XmlDocument value { nullptr };
-    check_hresult(shim()->get_Content(put(value)));
+    check_hresult(static_cast<const IScheduledTileNotification &>(static_cast<const D &>(*this))->get_Content(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IScheduledTileNotification<D>::DeliveryTime() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->get_DeliveryTime(put(value)));
+    check_hresult(static_cast<const IScheduledTileNotification &>(static_cast<const D &>(*this))->get_DeliveryTime(put(value)));
     return value;
 }
 
 template <typename D> void impl_IScheduledTileNotification<D>::ExpirationTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
 {
-    check_hresult(shim()->put_ExpirationTime(get(value)));
+    check_hresult(static_cast<const IScheduledTileNotification &>(static_cast<const D &>(*this))->put_ExpirationTime(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateTime> impl_IScheduledTileNotification<D>::ExpirationTime() const
 {
     Windows::Foundation::IReference<Windows::Foundation::DateTime> value;
-    check_hresult(shim()->get_ExpirationTime(put(value)));
+    check_hresult(static_cast<const IScheduledTileNotification &>(static_cast<const D &>(*this))->get_ExpirationTime(put(value)));
     return value;
 }
 
 template <typename D> void impl_IScheduledTileNotification<D>::Tag(hstring_ref value) const
 {
-    check_hresult(shim()->put_Tag(get(value)));
+    check_hresult(static_cast<const IScheduledTileNotification &>(static_cast<const D &>(*this))->put_Tag(get(value)));
 }
 
 template <typename D> hstring impl_IScheduledTileNotification<D>::Tag() const
 {
     hstring value;
-    check_hresult(shim()->get_Tag(put(value)));
+    check_hresult(static_cast<const IScheduledTileNotification &>(static_cast<const D &>(*this))->get_Tag(put(value)));
     return value;
 }
 
 template <typename D> void impl_IScheduledTileNotification<D>::Id(hstring_ref value) const
 {
-    check_hresult(shim()->put_Id(get(value)));
+    check_hresult(static_cast<const IScheduledTileNotification &>(static_cast<const D &>(*this))->put_Id(get(value)));
 }
 
 template <typename D> hstring impl_IScheduledTileNotification<D>::Id() const
 {
     hstring value;
-    check_hresult(shim()->get_Id(put(value)));
+    check_hresult(static_cast<const IScheduledTileNotification &>(static_cast<const D &>(*this))->get_Id(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Notifications::ToastNotificationHistory impl_IToastNotificationManagerStatics2<D>::History() const
 {
     Windows::UI::Notifications::ToastNotificationHistory value { nullptr };
-    check_hresult(shim()->get_History(put(value)));
+    check_hresult(static_cast<const IToastNotificationManagerStatics2 &>(static_cast<const D &>(*this))->get_History(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Notifications::ToastNotificationManagerForUser impl_IToastNotificationManagerStatics4<D>::GetForUser(const Windows::System::User & user) const
 {
     Windows::UI::Notifications::ToastNotificationManagerForUser result { nullptr };
-    check_hresult(shim()->abi_GetForUser(get(user), put(result)));
+    check_hresult(static_cast<const IToastNotificationManagerStatics4 &>(static_cast<const D &>(*this))->abi_GetForUser(get(user), put(result)));
     return result;
 }
 
 template <typename D> void impl_IToastNotificationManagerStatics4<D>::ConfigureNotificationMirroring(Windows::UI::Notifications::NotificationMirroring value) const
 {
-    check_hresult(shim()->abi_ConfigureNotificationMirroring(value));
+    check_hresult(static_cast<const IToastNotificationManagerStatics4 &>(static_cast<const D &>(*this))->abi_ConfigureNotificationMirroring(value));
 }
 
 template <typename D> Windows::UI::Notifications::ToastNotifier impl_IToastNotificationManagerForUser<D>::CreateToastNotifier() const
 {
     Windows::UI::Notifications::ToastNotifier result { nullptr };
-    check_hresult(shim()->abi_CreateToastNotifier(put(result)));
+    check_hresult(static_cast<const IToastNotificationManagerForUser &>(static_cast<const D &>(*this))->abi_CreateToastNotifier(put(result)));
     return result;
 }
 
 template <typename D> Windows::UI::Notifications::ToastNotifier impl_IToastNotificationManagerForUser<D>::CreateToastNotifier(hstring_ref applicationId) const
 {
     Windows::UI::Notifications::ToastNotifier result { nullptr };
-    check_hresult(shim()->abi_CreateToastNotifierWithId(get(applicationId), put(result)));
+    check_hresult(static_cast<const IToastNotificationManagerForUser &>(static_cast<const D &>(*this))->abi_CreateToastNotifierWithId(get(applicationId), put(result)));
     return result;
 }
 
 template <typename D> Windows::UI::Notifications::ToastNotificationHistory impl_IToastNotificationManagerForUser<D>::History() const
 {
     Windows::UI::Notifications::ToastNotificationHistory value { nullptr };
-    check_hresult(shim()->get_History(put(value)));
+    check_hresult(static_cast<const IToastNotificationManagerForUser &>(static_cast<const D &>(*this))->get_History(put(value)));
     return value;
 }
 
 template <typename D> Windows::System::User impl_IToastNotificationManagerForUser<D>::User() const
 {
     Windows::System::User value { nullptr };
-    check_hresult(shim()->get_User(put(value)));
+    check_hresult(static_cast<const IToastNotificationManagerForUser &>(static_cast<const D &>(*this))->get_User(put(value)));
     return value;
 }
 
 template <typename D> void impl_IToastNotificationHistory<D>::RemoveGroup(hstring_ref group) const
 {
-    check_hresult(shim()->abi_RemoveGroup(get(group)));
+    check_hresult(static_cast<const IToastNotificationHistory &>(static_cast<const D &>(*this))->abi_RemoveGroup(get(group)));
 }
 
 template <typename D> void impl_IToastNotificationHistory<D>::RemoveGroup(hstring_ref group, hstring_ref applicationId) const
 {
-    check_hresult(shim()->abi_RemoveGroupWithId(get(group), get(applicationId)));
+    check_hresult(static_cast<const IToastNotificationHistory &>(static_cast<const D &>(*this))->abi_RemoveGroupWithId(get(group), get(applicationId)));
 }
 
 template <typename D> void impl_IToastNotificationHistory<D>::Remove(hstring_ref tag, hstring_ref group, hstring_ref applicationId) const
 {
-    check_hresult(shim()->abi_RemoveGroupedTagWithId(get(tag), get(group), get(applicationId)));
+    check_hresult(static_cast<const IToastNotificationHistory &>(static_cast<const D &>(*this))->abi_RemoveGroupedTagWithId(get(tag), get(group), get(applicationId)));
 }
 
 template <typename D> void impl_IToastNotificationHistory<D>::Remove(hstring_ref tag, hstring_ref group) const
 {
-    check_hresult(shim()->abi_RemoveGroupedTag(get(tag), get(group)));
+    check_hresult(static_cast<const IToastNotificationHistory &>(static_cast<const D &>(*this))->abi_RemoveGroupedTag(get(tag), get(group)));
 }
 
 template <typename D> void impl_IToastNotificationHistory<D>::Remove(hstring_ref tag) const
 {
-    check_hresult(shim()->abi_Remove(get(tag)));
+    check_hresult(static_cast<const IToastNotificationHistory &>(static_cast<const D &>(*this))->abi_Remove(get(tag)));
 }
 
 template <typename D> void impl_IToastNotificationHistory<D>::Clear() const
 {
-    check_hresult(shim()->abi_Clear());
+    check_hresult(static_cast<const IToastNotificationHistory &>(static_cast<const D &>(*this))->abi_Clear());
 }
 
 template <typename D> void impl_IToastNotificationHistory<D>::Clear(hstring_ref applicationId) const
 {
-    check_hresult(shim()->abi_ClearWithId(get(applicationId)));
+    check_hresult(static_cast<const IToastNotificationHistory &>(static_cast<const D &>(*this))->abi_ClearWithId(get(applicationId)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::ToastNotification> impl_IToastNotificationHistory2<D>::GetHistory() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::ToastNotification> toasts;
-    check_hresult(shim()->abi_GetHistory(put(toasts)));
+    check_hresult(static_cast<const IToastNotificationHistory2 &>(static_cast<const D &>(*this))->abi_GetHistory(put(toasts)));
     return toasts;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::ToastNotification> impl_IToastNotificationHistory2<D>::GetHistory(hstring_ref applicationId) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::ToastNotification> toasts;
-    check_hresult(shim()->abi_GetHistoryWithId(get(applicationId), put(toasts)));
+    check_hresult(static_cast<const IToastNotificationHistory2 &>(static_cast<const D &>(*this))->abi_GetHistoryWithId(get(applicationId), put(toasts)));
     return toasts;
 }
 
 template <typename D> Windows::UI::Notifications::ToastHistoryChangedType impl_IToastNotificationHistoryChangedTriggerDetail<D>::ChangeType() const
 {
     Windows::UI::Notifications::ToastHistoryChangedType value {};
-    check_hresult(shim()->get_ChangeType(&value));
+    check_hresult(static_cast<const IToastNotificationHistoryChangedTriggerDetail &>(static_cast<const D &>(*this))->get_ChangeType(&value));
     return value;
 }
 
 template <typename D> hstring impl_IToastNotificationActionTriggerDetail<D>::Argument() const
 {
     hstring argument;
-    check_hresult(shim()->get_Argument(put(argument)));
+    check_hresult(static_cast<const IToastNotificationActionTriggerDetail &>(static_cast<const D &>(*this))->get_Argument(put(argument)));
     return argument;
 }
 
 template <typename D> Windows::Foundation::Collections::ValueSet impl_IToastNotificationActionTriggerDetail<D>::UserInput() const
 {
     Windows::Foundation::Collections::ValueSet inputs { nullptr };
-    check_hresult(shim()->get_UserInput(put(inputs)));
+    check_hresult(static_cast<const IToastNotificationActionTriggerDetail &>(static_cast<const D &>(*this))->get_UserInput(put(inputs)));
     return inputs;
 }
 

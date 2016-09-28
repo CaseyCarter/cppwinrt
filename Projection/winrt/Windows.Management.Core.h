@@ -39,7 +39,7 @@ namespace Windows::Management::Core {
 template <typename D> Windows::Storage::ApplicationData impl_IApplicationDataManagerStatics<D>::CreateForPackageFamily(hstring_ref packageFamilyName) const
 {
     Windows::Storage::ApplicationData applicationData { nullptr };
-    check_hresult(shim()->abi_CreateForPackageFamily(get(packageFamilyName), put(applicationData)));
+    check_hresult(static_cast<const IApplicationDataManagerStatics &>(static_cast<const D &>(*this))->abi_CreateForPackageFamily(get(packageFamilyName), put(applicationData)));
     return applicationData;
 }
 

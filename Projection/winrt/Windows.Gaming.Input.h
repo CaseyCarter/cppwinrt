@@ -697,7 +697,7 @@ namespace Windows::Gaming::Input {
 template <typename D> event_token impl_IGameController<D>::HeadsetConnected(const Windows::Foundation::TypedEventHandler<Windows::Gaming::Input::IGameController, Windows::Gaming::Input::Headset> & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_HeadsetConnected(get(value), &token));
+    check_hresult(static_cast<const IGameController &>(static_cast<const D &>(*this))->add_HeadsetConnected(get(value), &token));
     return token;
 }
 
@@ -708,13 +708,13 @@ template <typename D> event_revoker<IGameController> impl_IGameController<D>::He
 
 template <typename D> void impl_IGameController<D>::HeadsetConnected(event_token token) const
 {
-    check_hresult(shim()->remove_HeadsetConnected(token));
+    check_hresult(static_cast<const IGameController &>(static_cast<const D &>(*this))->remove_HeadsetConnected(token));
 }
 
 template <typename D> event_token impl_IGameController<D>::HeadsetDisconnected(const Windows::Foundation::TypedEventHandler<Windows::Gaming::Input::IGameController, Windows::Gaming::Input::Headset> & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_HeadsetDisconnected(get(value), &token));
+    check_hresult(static_cast<const IGameController &>(static_cast<const D &>(*this))->add_HeadsetDisconnected(get(value), &token));
     return token;
 }
 
@@ -725,13 +725,13 @@ template <typename D> event_revoker<IGameController> impl_IGameController<D>::He
 
 template <typename D> void impl_IGameController<D>::HeadsetDisconnected(event_token token) const
 {
-    check_hresult(shim()->remove_HeadsetDisconnected(token));
+    check_hresult(static_cast<const IGameController &>(static_cast<const D &>(*this))->remove_HeadsetDisconnected(token));
 }
 
 template <typename D> event_token impl_IGameController<D>::UserChanged(const Windows::Foundation::TypedEventHandler<Windows::Gaming::Input::IGameController, Windows::System::UserChangedEventArgs> & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_UserChanged(get(value), &token));
+    check_hresult(static_cast<const IGameController &>(static_cast<const D &>(*this))->add_UserChanged(get(value), &token));
     return token;
 }
 
@@ -742,48 +742,48 @@ template <typename D> event_revoker<IGameController> impl_IGameController<D>::Us
 
 template <typename D> void impl_IGameController<D>::UserChanged(event_token token) const
 {
-    check_hresult(shim()->remove_UserChanged(token));
+    check_hresult(static_cast<const IGameController &>(static_cast<const D &>(*this))->remove_UserChanged(token));
 }
 
 template <typename D> Windows::Gaming::Input::Headset impl_IGameController<D>::Headset() const
 {
     Windows::Gaming::Input::Headset value { nullptr };
-    check_hresult(shim()->get_Headset(put(value)));
+    check_hresult(static_cast<const IGameController &>(static_cast<const D &>(*this))->get_Headset(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IGameController<D>::IsWireless() const
 {
     bool value {};
-    check_hresult(shim()->get_IsWireless(&value));
+    check_hresult(static_cast<const IGameController &>(static_cast<const D &>(*this))->get_IsWireless(&value));
     return value;
 }
 
 template <typename D> Windows::System::User impl_IGameController<D>::User() const
 {
     Windows::System::User value { nullptr };
-    check_hresult(shim()->get_User(put(value)));
+    check_hresult(static_cast<const IGameController &>(static_cast<const D &>(*this))->get_User(put(value)));
     return value;
 }
 
 template <typename D> Windows::Gaming::Input::GameControllerButtonLabel impl_IArcadeStick<D>::GetButtonLabel(Windows::Gaming::Input::ArcadeStickButtons button) const
 {
     Windows::Gaming::Input::GameControllerButtonLabel value {};
-    check_hresult(shim()->abi_GetButtonLabel(button, &value));
+    check_hresult(static_cast<const IArcadeStick &>(static_cast<const D &>(*this))->abi_GetButtonLabel(button, &value));
     return value;
 }
 
 template <typename D> Windows::Gaming::Input::ArcadeStickReading impl_IArcadeStick<D>::GetCurrentReading() const
 {
     Windows::Gaming::Input::ArcadeStickReading value {};
-    check_hresult(shim()->abi_GetCurrentReading(put(value)));
+    check_hresult(static_cast<const IArcadeStick &>(static_cast<const D &>(*this))->abi_GetCurrentReading(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IArcadeStickStatics<D>::ArcadeStickAdded(const Windows::Foundation::EventHandler<Windows::Gaming::Input::ArcadeStick> & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_ArcadeStickAdded(get(value), &token));
+    check_hresult(static_cast<const IArcadeStickStatics &>(static_cast<const D &>(*this))->add_ArcadeStickAdded(get(value), &token));
     return token;
 }
 
@@ -794,13 +794,13 @@ template <typename D> event_revoker<IArcadeStickStatics> impl_IArcadeStickStatic
 
 template <typename D> void impl_IArcadeStickStatics<D>::ArcadeStickAdded(event_token token) const
 {
-    check_hresult(shim()->remove_ArcadeStickAdded(token));
+    check_hresult(static_cast<const IArcadeStickStatics &>(static_cast<const D &>(*this))->remove_ArcadeStickAdded(token));
 }
 
 template <typename D> event_token impl_IArcadeStickStatics<D>::ArcadeStickRemoved(const Windows::Foundation::EventHandler<Windows::Gaming::Input::ArcadeStick> & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_ArcadeStickRemoved(get(value), &token));
+    check_hresult(static_cast<const IArcadeStickStatics &>(static_cast<const D &>(*this))->add_ArcadeStickRemoved(get(value), &token));
     return token;
 }
 
@@ -811,46 +811,46 @@ template <typename D> event_revoker<IArcadeStickStatics> impl_IArcadeStickStatic
 
 template <typename D> void impl_IArcadeStickStatics<D>::ArcadeStickRemoved(event_token token) const
 {
-    check_hresult(shim()->remove_ArcadeStickRemoved(token));
+    check_hresult(static_cast<const IArcadeStickStatics &>(static_cast<const D &>(*this))->remove_ArcadeStickRemoved(token));
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Gaming::Input::ArcadeStick> impl_IArcadeStickStatics<D>::ArcadeSticks() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Gaming::Input::ArcadeStick> value;
-    check_hresult(shim()->get_ArcadeSticks(put(value)));
+    check_hresult(static_cast<const IArcadeStickStatics &>(static_cast<const D &>(*this))->get_ArcadeSticks(put(value)));
     return value;
 }
 
 template <typename D> Windows::Gaming::Input::GamepadVibration impl_IGamepad<D>::Vibration() const
 {
     Windows::Gaming::Input::GamepadVibration value {};
-    check_hresult(shim()->get_Vibration(put(value)));
+    check_hresult(static_cast<const IGamepad &>(static_cast<const D &>(*this))->get_Vibration(put(value)));
     return value;
 }
 
 template <typename D> void impl_IGamepad<D>::Vibration(const Windows::Gaming::Input::GamepadVibration & value) const
 {
-    check_hresult(shim()->put_Vibration(get(value)));
+    check_hresult(static_cast<const IGamepad &>(static_cast<const D &>(*this))->put_Vibration(get(value)));
 }
 
 template <typename D> Windows::Gaming::Input::GamepadReading impl_IGamepad<D>::GetCurrentReading() const
 {
     Windows::Gaming::Input::GamepadReading value {};
-    check_hresult(shim()->abi_GetCurrentReading(put(value)));
+    check_hresult(static_cast<const IGamepad &>(static_cast<const D &>(*this))->abi_GetCurrentReading(put(value)));
     return value;
 }
 
 template <typename D> Windows::Gaming::Input::GameControllerButtonLabel impl_IGamepad2<D>::GetButtonLabel(Windows::Gaming::Input::GamepadButtons button) const
 {
     Windows::Gaming::Input::GameControllerButtonLabel value {};
-    check_hresult(shim()->abi_GetButtonLabel(button, &value));
+    check_hresult(static_cast<const IGamepad2 &>(static_cast<const D &>(*this))->abi_GetButtonLabel(button, &value));
     return value;
 }
 
 template <typename D> event_token impl_IGamepadStatics<D>::GamepadAdded(const Windows::Foundation::EventHandler<Windows::Gaming::Input::Gamepad> & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_GamepadAdded(get(value), &token));
+    check_hresult(static_cast<const IGamepadStatics &>(static_cast<const D &>(*this))->add_GamepadAdded(get(value), &token));
     return token;
 }
 
@@ -861,13 +861,13 @@ template <typename D> event_revoker<IGamepadStatics> impl_IGamepadStatics<D>::Ga
 
 template <typename D> void impl_IGamepadStatics<D>::GamepadAdded(event_token token) const
 {
-    check_hresult(shim()->remove_GamepadAdded(token));
+    check_hresult(static_cast<const IGamepadStatics &>(static_cast<const D &>(*this))->remove_GamepadAdded(token));
 }
 
 template <typename D> event_token impl_IGamepadStatics<D>::GamepadRemoved(const Windows::Foundation::EventHandler<Windows::Gaming::Input::Gamepad> & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_GamepadRemoved(get(value), &token));
+    check_hresult(static_cast<const IGamepadStatics &>(static_cast<const D &>(*this))->add_GamepadRemoved(get(value), &token));
     return token;
 }
 
@@ -878,90 +878,90 @@ template <typename D> event_revoker<IGamepadStatics> impl_IGamepadStatics<D>::Ga
 
 template <typename D> void impl_IGamepadStatics<D>::GamepadRemoved(event_token token) const
 {
-    check_hresult(shim()->remove_GamepadRemoved(token));
+    check_hresult(static_cast<const IGamepadStatics &>(static_cast<const D &>(*this))->remove_GamepadRemoved(token));
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Gaming::Input::Gamepad> impl_IGamepadStatics<D>::Gamepads() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Gaming::Input::Gamepad> value;
-    check_hresult(shim()->get_Gamepads(put(value)));
+    check_hresult(static_cast<const IGamepadStatics &>(static_cast<const D &>(*this))->get_Gamepads(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IHeadset<D>::CaptureDeviceId() const
 {
     hstring value;
-    check_hresult(shim()->get_CaptureDeviceId(put(value)));
+    check_hresult(static_cast<const IHeadset &>(static_cast<const D &>(*this))->get_CaptureDeviceId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IHeadset<D>::RenderDeviceId() const
 {
     hstring value;
-    check_hresult(shim()->get_RenderDeviceId(put(value)));
+    check_hresult(static_cast<const IHeadset &>(static_cast<const D &>(*this))->get_RenderDeviceId(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IRacingWheel<D>::HasClutch() const
 {
     bool value {};
-    check_hresult(shim()->get_HasClutch(&value));
+    check_hresult(static_cast<const IRacingWheel &>(static_cast<const D &>(*this))->get_HasClutch(&value));
     return value;
 }
 
 template <typename D> bool impl_IRacingWheel<D>::HasHandbrake() const
 {
     bool value {};
-    check_hresult(shim()->get_HasHandbrake(&value));
+    check_hresult(static_cast<const IRacingWheel &>(static_cast<const D &>(*this))->get_HasHandbrake(&value));
     return value;
 }
 
 template <typename D> bool impl_IRacingWheel<D>::HasPatternShifter() const
 {
     bool value {};
-    check_hresult(shim()->get_HasPatternShifter(&value));
+    check_hresult(static_cast<const IRacingWheel &>(static_cast<const D &>(*this))->get_HasPatternShifter(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IRacingWheel<D>::MaxPatternShifterGear() const
 {
     int32_t value {};
-    check_hresult(shim()->get_MaxPatternShifterGear(&value));
+    check_hresult(static_cast<const IRacingWheel &>(static_cast<const D &>(*this))->get_MaxPatternShifterGear(&value));
     return value;
 }
 
 template <typename D> double impl_IRacingWheel<D>::MaxWheelAngle() const
 {
     double value {};
-    check_hresult(shim()->get_MaxWheelAngle(&value));
+    check_hresult(static_cast<const IRacingWheel &>(static_cast<const D &>(*this))->get_MaxWheelAngle(&value));
     return value;
 }
 
 template <typename D> Windows::Gaming::Input::ForceFeedback::ForceFeedbackMotor impl_IRacingWheel<D>::WheelMotor() const
 {
     Windows::Gaming::Input::ForceFeedback::ForceFeedbackMotor value { nullptr };
-    check_hresult(shim()->get_WheelMotor(put(value)));
+    check_hresult(static_cast<const IRacingWheel &>(static_cast<const D &>(*this))->get_WheelMotor(put(value)));
     return value;
 }
 
 template <typename D> Windows::Gaming::Input::GameControllerButtonLabel impl_IRacingWheel<D>::GetButtonLabel(Windows::Gaming::Input::RacingWheelButtons button) const
 {
     Windows::Gaming::Input::GameControllerButtonLabel value {};
-    check_hresult(shim()->abi_GetButtonLabel(button, &value));
+    check_hresult(static_cast<const IRacingWheel &>(static_cast<const D &>(*this))->abi_GetButtonLabel(button, &value));
     return value;
 }
 
 template <typename D> Windows::Gaming::Input::RacingWheelReading impl_IRacingWheel<D>::GetCurrentReading() const
 {
     Windows::Gaming::Input::RacingWheelReading value {};
-    check_hresult(shim()->abi_GetCurrentReading(put(value)));
+    check_hresult(static_cast<const IRacingWheel &>(static_cast<const D &>(*this))->abi_GetCurrentReading(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IRacingWheelStatics<D>::RacingWheelAdded(const Windows::Foundation::EventHandler<Windows::Gaming::Input::RacingWheel> & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_RacingWheelAdded(get(value), &token));
+    check_hresult(static_cast<const IRacingWheelStatics &>(static_cast<const D &>(*this))->add_RacingWheelAdded(get(value), &token));
     return token;
 }
 
@@ -972,13 +972,13 @@ template <typename D> event_revoker<IRacingWheelStatics> impl_IRacingWheelStatic
 
 template <typename D> void impl_IRacingWheelStatics<D>::RacingWheelAdded(event_token token) const
 {
-    check_hresult(shim()->remove_RacingWheelAdded(token));
+    check_hresult(static_cast<const IRacingWheelStatics &>(static_cast<const D &>(*this))->remove_RacingWheelAdded(token));
 }
 
 template <typename D> event_token impl_IRacingWheelStatics<D>::RacingWheelRemoved(const Windows::Foundation::EventHandler<Windows::Gaming::Input::RacingWheel> & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_RacingWheelRemoved(get(value), &token));
+    check_hresult(static_cast<const IRacingWheelStatics &>(static_cast<const D &>(*this))->add_RacingWheelRemoved(get(value), &token));
     return token;
 }
 
@@ -989,41 +989,41 @@ template <typename D> event_revoker<IRacingWheelStatics> impl_IRacingWheelStatic
 
 template <typename D> void impl_IRacingWheelStatics<D>::RacingWheelRemoved(event_token token) const
 {
-    check_hresult(shim()->remove_RacingWheelRemoved(token));
+    check_hresult(static_cast<const IRacingWheelStatics &>(static_cast<const D &>(*this))->remove_RacingWheelRemoved(token));
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Gaming::Input::RacingWheel> impl_IRacingWheelStatics<D>::RacingWheels() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Gaming::Input::RacingWheel> value;
-    check_hresult(shim()->get_RacingWheels(put(value)));
+    check_hresult(static_cast<const IRacingWheelStatics &>(static_cast<const D &>(*this))->get_RacingWheels(put(value)));
     return value;
 }
 
 template <typename D> Windows::Gaming::Input::UINavigationReading impl_IUINavigationController<D>::GetCurrentReading() const
 {
     Windows::Gaming::Input::UINavigationReading value {};
-    check_hresult(shim()->abi_GetCurrentReading(put(value)));
+    check_hresult(static_cast<const IUINavigationController &>(static_cast<const D &>(*this))->abi_GetCurrentReading(put(value)));
     return value;
 }
 
 template <typename D> Windows::Gaming::Input::GameControllerButtonLabel impl_IUINavigationController<D>::GetOptionalButtonLabel(Windows::Gaming::Input::OptionalUINavigationButtons button) const
 {
     Windows::Gaming::Input::GameControllerButtonLabel value {};
-    check_hresult(shim()->abi_GetOptionalButtonLabel(button, &value));
+    check_hresult(static_cast<const IUINavigationController &>(static_cast<const D &>(*this))->abi_GetOptionalButtonLabel(button, &value));
     return value;
 }
 
 template <typename D> Windows::Gaming::Input::GameControllerButtonLabel impl_IUINavigationController<D>::GetRequiredButtonLabel(Windows::Gaming::Input::RequiredUINavigationButtons button) const
 {
     Windows::Gaming::Input::GameControllerButtonLabel value {};
-    check_hresult(shim()->abi_GetRequiredButtonLabel(button, &value));
+    check_hresult(static_cast<const IUINavigationController &>(static_cast<const D &>(*this))->abi_GetRequiredButtonLabel(button, &value));
     return value;
 }
 
 template <typename D> event_token impl_IUINavigationControllerStatics<D>::UINavigationControllerAdded(const Windows::Foundation::EventHandler<Windows::Gaming::Input::UINavigationController> & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_UINavigationControllerAdded(get(value), &token));
+    check_hresult(static_cast<const IUINavigationControllerStatics &>(static_cast<const D &>(*this))->add_UINavigationControllerAdded(get(value), &token));
     return token;
 }
 
@@ -1034,13 +1034,13 @@ template <typename D> event_revoker<IUINavigationControllerStatics> impl_IUINavi
 
 template <typename D> void impl_IUINavigationControllerStatics<D>::UINavigationControllerAdded(event_token token) const
 {
-    check_hresult(shim()->remove_UINavigationControllerAdded(token));
+    check_hresult(static_cast<const IUINavigationControllerStatics &>(static_cast<const D &>(*this))->remove_UINavigationControllerAdded(token));
 }
 
 template <typename D> event_token impl_IUINavigationControllerStatics<D>::UINavigationControllerRemoved(const Windows::Foundation::EventHandler<Windows::Gaming::Input::UINavigationController> & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_UINavigationControllerRemoved(get(value), &token));
+    check_hresult(static_cast<const IUINavigationControllerStatics &>(static_cast<const D &>(*this))->add_UINavigationControllerRemoved(get(value), &token));
     return token;
 }
 
@@ -1051,13 +1051,13 @@ template <typename D> event_revoker<IUINavigationControllerStatics> impl_IUINavi
 
 template <typename D> void impl_IUINavigationControllerStatics<D>::UINavigationControllerRemoved(event_token token) const
 {
-    check_hresult(shim()->remove_UINavigationControllerRemoved(token));
+    check_hresult(static_cast<const IUINavigationControllerStatics &>(static_cast<const D &>(*this))->remove_UINavigationControllerRemoved(token));
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Gaming::Input::UINavigationController> impl_IUINavigationControllerStatics<D>::UINavigationControllers() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Gaming::Input::UINavigationController> value;
-    check_hresult(shim()->get_UINavigationControllers(put(value)));
+    check_hresult(static_cast<const IUINavigationControllerStatics &>(static_cast<const D &>(*this))->get_UINavigationControllers(put(value)));
     return value;
 }
 

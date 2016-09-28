@@ -16,18 +16,9 @@ namespace Windows::Foundation {
 template <typename T> struct IReference;
 
 template <typename D, typename T>
-class impl_IReference
+struct impl_IReference
 {
-    auto shim() const { return impl::shim<D, IReference<T>>(this); }
-
-public:
-
-    T Value() const
-    {
-        T result {};
-        check_hresult(shim()->get_Value(put(result)));
-        return result;
-    }
+    T Value() const;
 };
 
 }
@@ -70,5 +61,13 @@ struct WINRT_EBO IReference :
     IReference(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IReference>(m_ptr); }
 };
+
+template <typename D, typename T>
+T impl_IReference<D, T>::Value() const
+{
+    T result{};
+    check_hresult(static_cast<const IReference<T> &>(static_cast<const D &>(*this))->get_Value(put(result)));
+    return result;
+}
 
 }

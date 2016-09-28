@@ -147,17 +147,17 @@ template <> struct traits<Windows::Devices::WiFiDirect::Services::WiFiDirectServ
 
 namespace Windows::Devices::WiFiDirect::Services {
 
-template <typename T> class impl_IWiFiDirectService;
-template <typename T> class impl_IWiFiDirectServiceAdvertiser;
-template <typename T> class impl_IWiFiDirectServiceAdvertiserFactory;
-template <typename T> class impl_IWiFiDirectServiceAutoAcceptSessionConnectedEventArgs;
-template <typename T> class impl_IWiFiDirectServiceProvisioningInfo;
-template <typename T> class impl_IWiFiDirectServiceRemotePortAddedEventArgs;
-template <typename T> class impl_IWiFiDirectServiceSession;
-template <typename T> class impl_IWiFiDirectServiceSessionDeferredEventArgs;
-template <typename T> class impl_IWiFiDirectServiceSessionRequest;
-template <typename T> class impl_IWiFiDirectServiceSessionRequestedEventArgs;
-template <typename T> class impl_IWiFiDirectServiceStatics;
+template <typename T> struct impl_IWiFiDirectService;
+template <typename T> struct impl_IWiFiDirectServiceAdvertiser;
+template <typename T> struct impl_IWiFiDirectServiceAdvertiserFactory;
+template <typename T> struct impl_IWiFiDirectServiceAutoAcceptSessionConnectedEventArgs;
+template <typename T> struct impl_IWiFiDirectServiceProvisioningInfo;
+template <typename T> struct impl_IWiFiDirectServiceRemotePortAddedEventArgs;
+template <typename T> struct impl_IWiFiDirectServiceSession;
+template <typename T> struct impl_IWiFiDirectServiceSessionDeferredEventArgs;
+template <typename T> struct impl_IWiFiDirectServiceSessionRequest;
+template <typename T> struct impl_IWiFiDirectServiceSessionRequestedEventArgs;
+template <typename T> struct impl_IWiFiDirectServiceStatics;
 
 }
 
@@ -232,63 +232,54 @@ template <> struct traits<Windows::Devices::WiFiDirect::Services::IWiFiDirectSer
 template <> struct traits<Windows::Devices::WiFiDirect::Services::WiFiDirectService>
 {
     using abi = ABI::Windows::Devices::WiFiDirect::Services::WiFiDirectService;
-    using default_interface = Windows::Devices::WiFiDirect::Services::IWiFiDirectService;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.WiFiDirect.Services.WiFiDirectService"; }
 };
 
 template <> struct traits<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceAdvertiser>
 {
     using abi = ABI::Windows::Devices::WiFiDirect::Services::WiFiDirectServiceAdvertiser;
-    using default_interface = Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceAdvertiser;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAdvertiser"; }
 };
 
 template <> struct traits<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceAutoAcceptSessionConnectedEventArgs>
 {
     using abi = ABI::Windows::Devices::WiFiDirect::Services::WiFiDirectServiceAutoAcceptSessionConnectedEventArgs;
-    using default_interface = Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceAutoAcceptSessionConnectedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.WiFiDirect.Services.WiFiDirectServiceAutoAcceptSessionConnectedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceProvisioningInfo>
 {
     using abi = ABI::Windows::Devices::WiFiDirect::Services::WiFiDirectServiceProvisioningInfo;
-    using default_interface = Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceProvisioningInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.WiFiDirect.Services.WiFiDirectServiceProvisioningInfo"; }
 };
 
 template <> struct traits<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceRemotePortAddedEventArgs>
 {
     using abi = ABI::Windows::Devices::WiFiDirect::Services::WiFiDirectServiceRemotePortAddedEventArgs;
-    using default_interface = Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceRemotePortAddedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.WiFiDirect.Services.WiFiDirectServiceRemotePortAddedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSession>
 {
     using abi = ABI::Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSession;
-    using default_interface = Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceSession;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSession"; }
 };
 
 template <> struct traits<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSessionDeferredEventArgs>
 {
     using abi = ABI::Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSessionDeferredEventArgs;
-    using default_interface = Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceSessionDeferredEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSessionDeferredEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSessionRequest>
 {
     using abi = ABI::Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSessionRequest;
-    using default_interface = Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceSessionRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSessionRequest"; }
 };
 
 template <> struct traits<Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSessionRequestedEventArgs>
 {
     using abi = ABI::Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSessionRequestedEventArgs;
-    using default_interface = Windows::Devices::WiFiDirect::Services::IWiFiDirectServiceSessionRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.WiFiDirect.Services.WiFiDirectServiceSessionRequestedEventArgs"; }
 };
 

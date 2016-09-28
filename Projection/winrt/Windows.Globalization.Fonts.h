@@ -264,119 +264,119 @@ namespace Windows::Globalization::Fonts {
 template <typename D> Windows::Globalization::Fonts::LanguageFont impl_ILanguageFontGroup<D>::UITextFont() const
 {
     Windows::Globalization::Fonts::LanguageFont value { nullptr };
-    check_hresult(shim()->get_UITextFont(put(value)));
+    check_hresult(static_cast<const ILanguageFontGroup &>(static_cast<const D &>(*this))->get_UITextFont(put(value)));
     return value;
 }
 
 template <typename D> Windows::Globalization::Fonts::LanguageFont impl_ILanguageFontGroup<D>::UIHeadingFont() const
 {
     Windows::Globalization::Fonts::LanguageFont value { nullptr };
-    check_hresult(shim()->get_UIHeadingFont(put(value)));
+    check_hresult(static_cast<const ILanguageFontGroup &>(static_cast<const D &>(*this))->get_UIHeadingFont(put(value)));
     return value;
 }
 
 template <typename D> Windows::Globalization::Fonts::LanguageFont impl_ILanguageFontGroup<D>::UITitleFont() const
 {
     Windows::Globalization::Fonts::LanguageFont value { nullptr };
-    check_hresult(shim()->get_UITitleFont(put(value)));
+    check_hresult(static_cast<const ILanguageFontGroup &>(static_cast<const D &>(*this))->get_UITitleFont(put(value)));
     return value;
 }
 
 template <typename D> Windows::Globalization::Fonts::LanguageFont impl_ILanguageFontGroup<D>::UICaptionFont() const
 {
     Windows::Globalization::Fonts::LanguageFont value { nullptr };
-    check_hresult(shim()->get_UICaptionFont(put(value)));
+    check_hresult(static_cast<const ILanguageFontGroup &>(static_cast<const D &>(*this))->get_UICaptionFont(put(value)));
     return value;
 }
 
 template <typename D> Windows::Globalization::Fonts::LanguageFont impl_ILanguageFontGroup<D>::UINotificationHeadingFont() const
 {
     Windows::Globalization::Fonts::LanguageFont value { nullptr };
-    check_hresult(shim()->get_UINotificationHeadingFont(put(value)));
+    check_hresult(static_cast<const ILanguageFontGroup &>(static_cast<const D &>(*this))->get_UINotificationHeadingFont(put(value)));
     return value;
 }
 
 template <typename D> Windows::Globalization::Fonts::LanguageFont impl_ILanguageFontGroup<D>::TraditionalDocumentFont() const
 {
     Windows::Globalization::Fonts::LanguageFont value { nullptr };
-    check_hresult(shim()->get_TraditionalDocumentFont(put(value)));
+    check_hresult(static_cast<const ILanguageFontGroup &>(static_cast<const D &>(*this))->get_TraditionalDocumentFont(put(value)));
     return value;
 }
 
 template <typename D> Windows::Globalization::Fonts::LanguageFont impl_ILanguageFontGroup<D>::ModernDocumentFont() const
 {
     Windows::Globalization::Fonts::LanguageFont value { nullptr };
-    check_hresult(shim()->get_ModernDocumentFont(put(value)));
+    check_hresult(static_cast<const ILanguageFontGroup &>(static_cast<const D &>(*this))->get_ModernDocumentFont(put(value)));
     return value;
 }
 
 template <typename D> Windows::Globalization::Fonts::LanguageFont impl_ILanguageFontGroup<D>::DocumentHeadingFont() const
 {
     Windows::Globalization::Fonts::LanguageFont value { nullptr };
-    check_hresult(shim()->get_DocumentHeadingFont(put(value)));
+    check_hresult(static_cast<const ILanguageFontGroup &>(static_cast<const D &>(*this))->get_DocumentHeadingFont(put(value)));
     return value;
 }
 
 template <typename D> Windows::Globalization::Fonts::LanguageFont impl_ILanguageFontGroup<D>::FixedWidthTextFont() const
 {
     Windows::Globalization::Fonts::LanguageFont value { nullptr };
-    check_hresult(shim()->get_FixedWidthTextFont(put(value)));
+    check_hresult(static_cast<const ILanguageFontGroup &>(static_cast<const D &>(*this))->get_FixedWidthTextFont(put(value)));
     return value;
 }
 
 template <typename D> Windows::Globalization::Fonts::LanguageFont impl_ILanguageFontGroup<D>::DocumentAlternate1Font() const
 {
     Windows::Globalization::Fonts::LanguageFont value { nullptr };
-    check_hresult(shim()->get_DocumentAlternate1Font(put(value)));
+    check_hresult(static_cast<const ILanguageFontGroup &>(static_cast<const D &>(*this))->get_DocumentAlternate1Font(put(value)));
     return value;
 }
 
 template <typename D> Windows::Globalization::Fonts::LanguageFont impl_ILanguageFontGroup<D>::DocumentAlternate2Font() const
 {
     Windows::Globalization::Fonts::LanguageFont value { nullptr };
-    check_hresult(shim()->get_DocumentAlternate2Font(put(value)));
+    check_hresult(static_cast<const ILanguageFontGroup &>(static_cast<const D &>(*this))->get_DocumentAlternate2Font(put(value)));
     return value;
 }
 
 template <typename D> Windows::Globalization::Fonts::LanguageFontGroup impl_ILanguageFontGroupFactory<D>::CreateLanguageFontGroup(hstring_ref languageTag) const
 {
     Windows::Globalization::Fonts::LanguageFontGroup recommendedFonts { nullptr };
-    check_hresult(shim()->abi_CreateLanguageFontGroup(get(languageTag), put(recommendedFonts)));
+    check_hresult(static_cast<const ILanguageFontGroupFactory &>(static_cast<const D &>(*this))->abi_CreateLanguageFontGroup(get(languageTag), put(recommendedFonts)));
     return recommendedFonts;
 }
 
 template <typename D> hstring impl_ILanguageFont<D>::FontFamily() const
 {
     hstring value;
-    check_hresult(shim()->get_FontFamily(put(value)));
+    check_hresult(static_cast<const ILanguageFont &>(static_cast<const D &>(*this))->get_FontFamily(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Text::FontWeight impl_ILanguageFont<D>::FontWeight() const
 {
     Windows::UI::Text::FontWeight weight {};
-    check_hresult(shim()->get_FontWeight(put(weight)));
+    check_hresult(static_cast<const ILanguageFont &>(static_cast<const D &>(*this))->get_FontWeight(put(weight)));
     return weight;
 }
 
 template <typename D> Windows::UI::Text::FontStretch impl_ILanguageFont<D>::FontStretch() const
 {
     Windows::UI::Text::FontStretch stretch {};
-    check_hresult(shim()->get_FontStretch(&stretch));
+    check_hresult(static_cast<const ILanguageFont &>(static_cast<const D &>(*this))->get_FontStretch(&stretch));
     return stretch;
 }
 
 template <typename D> Windows::UI::Text::FontStyle impl_ILanguageFont<D>::FontStyle() const
 {
     Windows::UI::Text::FontStyle style {};
-    check_hresult(shim()->get_FontStyle(&style));
+    check_hresult(static_cast<const ILanguageFont &>(static_cast<const D &>(*this))->get_FontStyle(&style));
     return style;
 }
 
 template <typename D> double impl_ILanguageFont<D>::ScaleFactor() const
 {
     double scale {};
-    check_hresult(shim()->get_ScaleFactor(&scale));
+    check_hresult(static_cast<const ILanguageFont &>(static_cast<const D &>(*this))->get_ScaleFactor(&scale));
     return scale;
 }
 

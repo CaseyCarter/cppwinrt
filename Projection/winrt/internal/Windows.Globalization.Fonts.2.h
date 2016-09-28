@@ -10,12 +10,8 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::Globalization::Fonts {
 
 template <typename D>
-class WINRT_EBO impl_ILanguageFont
+struct WINRT_EBO impl_ILanguageFont
 {
-    auto shim() const { return impl::shim<D, ILanguageFont>(this); }
-
-public:
-
     hstring FontFamily() const;
     Windows::UI::Text::FontWeight FontWeight() const;
     Windows::UI::Text::FontStretch FontStretch() const;
@@ -24,12 +20,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ILanguageFontGroup
+struct WINRT_EBO impl_ILanguageFontGroup
 {
-    auto shim() const { return impl::shim<D, ILanguageFontGroup>(this); }
-
-public:
-
     Windows::Globalization::Fonts::LanguageFont UITextFont() const;
     Windows::Globalization::Fonts::LanguageFont UIHeadingFont() const;
     Windows::Globalization::Fonts::LanguageFont UITitleFont() const;
@@ -44,12 +36,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ILanguageFontGroupFactory
+struct WINRT_EBO impl_ILanguageFontGroupFactory
 {
-    auto shim() const { return impl::shim<D, ILanguageFontGroupFactory>(this); }
-
-public:
-
     Windows::Globalization::Fonts::LanguageFontGroup CreateLanguageFontGroup(hstring_ref languageTag) const;
 };
 

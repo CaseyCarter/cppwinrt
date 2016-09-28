@@ -112,15 +112,15 @@ template <> struct traits<Windows::Storage::Pickers::FolderPicker> { using defau
 
 namespace Windows::Storage::Pickers {
 
-template <typename T> class impl_IFileOpenPicker;
-template <typename T> class impl_IFileOpenPicker2;
-template <typename T> class impl_IFileOpenPickerStatics;
-template <typename T> class impl_IFileOpenPickerWithOperationId;
-template <typename T> class impl_IFileSavePicker;
-template <typename T> class impl_IFileSavePicker2;
-template <typename T> class impl_IFileSavePicker3;
-template <typename T> class impl_IFolderPicker;
-template <typename T> class impl_IFolderPicker2;
+template <typename T> struct impl_IFileOpenPicker;
+template <typename T> struct impl_IFileOpenPicker2;
+template <typename T> struct impl_IFileOpenPickerStatics;
+template <typename T> struct impl_IFileOpenPickerWithOperationId;
+template <typename T> struct impl_IFileSavePicker;
+template <typename T> struct impl_IFileSavePicker2;
+template <typename T> struct impl_IFileSavePicker3;
+template <typename T> struct impl_IFolderPicker;
+template <typename T> struct impl_IFolderPicker2;
 
 }
 
@@ -183,42 +183,36 @@ template <> struct traits<Windows::Storage::Pickers::IFolderPicker2>
 template <> struct traits<Windows::Storage::Pickers::FileExtensionVector>
 {
     using abi = ABI::Windows::Storage::Pickers::FileExtensionVector;
-    using default_interface = Windows::Foundation::Collections::IVector<hstring>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Pickers.FileExtensionVector"; }
 };
 
 template <> struct traits<Windows::Storage::Pickers::FileOpenPicker>
 {
     using abi = ABI::Windows::Storage::Pickers::FileOpenPicker;
-    using default_interface = Windows::Storage::Pickers::IFileOpenPicker;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Pickers.FileOpenPicker"; }
 };
 
 template <> struct traits<Windows::Storage::Pickers::FilePickerFileTypesOrderedMap>
 {
     using abi = ABI::Windows::Storage::Pickers::FilePickerFileTypesOrderedMap;
-    using default_interface = Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::Collections::IVector<hstring>>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Pickers.FilePickerFileTypesOrderedMap"; }
 };
 
 template <> struct traits<Windows::Storage::Pickers::FilePickerSelectedFilesArray>
 {
     using abi = ABI::Windows::Storage::Pickers::FilePickerSelectedFilesArray;
-    using default_interface = Windows::Foundation::Collections::IVectorView<Windows::Storage::StorageFile>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Pickers.FilePickerSelectedFilesArray"; }
 };
 
 template <> struct traits<Windows::Storage::Pickers::FileSavePicker>
 {
     using abi = ABI::Windows::Storage::Pickers::FileSavePicker;
-    using default_interface = Windows::Storage::Pickers::IFileSavePicker;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Pickers.FileSavePicker"; }
 };
 
 template <> struct traits<Windows::Storage::Pickers::FolderPicker>
 {
     using abi = ABI::Windows::Storage::Pickers::FolderPicker;
-    using default_interface = Windows::Storage::Pickers::IFolderPicker;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.Pickers.FolderPicker"; }
 };
 

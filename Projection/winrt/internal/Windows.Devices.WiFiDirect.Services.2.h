@@ -156,12 +156,8 @@ template <> struct __declspec(uuid("94cb9568-040a-5186-a3c9-52680ee17984")) __de
 namespace Windows::Devices::WiFiDirect::Services {
 
 template <typename D>
-class WINRT_EBO impl_IWiFiDirectService
+struct WINRT_EBO impl_IWiFiDirectService
 {
-    auto shim() const { return impl::shim<D, IWiFiDirectService>(this); }
-
-public:
-
     Windows::Storage::Streams::IBuffer RemoteServiceInfo() const;
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Devices::WiFiDirect::Services::WiFiDirectServiceConfigurationMethod> SupportedConfigurationMethods() const;
     bool PreferGroupOwnerMode() const;
@@ -179,12 +175,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IWiFiDirectServiceAdvertiser
+struct WINRT_EBO impl_IWiFiDirectServiceAdvertiser
 {
-    auto shim() const { return impl::shim<D, IWiFiDirectServiceAdvertiser>(this); }
-
-public:
-
     hstring ServiceName() const;
     Windows::Foundation::Collections::IVector<hstring> ServiceNamePrefixes() const;
     Windows::Storage::Streams::IBuffer ServiceInfo() const;
@@ -221,55 +213,35 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IWiFiDirectServiceAdvertiserFactory
+struct WINRT_EBO impl_IWiFiDirectServiceAdvertiserFactory
 {
-    auto shim() const { return impl::shim<D, IWiFiDirectServiceAdvertiserFactory>(this); }
-
-public:
-
     Windows::Devices::WiFiDirect::Services::WiFiDirectServiceAdvertiser CreateWiFiDirectServiceAdvertiser(hstring_ref serviceName) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWiFiDirectServiceAutoAcceptSessionConnectedEventArgs
+struct WINRT_EBO impl_IWiFiDirectServiceAutoAcceptSessionConnectedEventArgs
 {
-    auto shim() const { return impl::shim<D, IWiFiDirectServiceAutoAcceptSessionConnectedEventArgs>(this); }
-
-public:
-
     Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSession Session() const;
     Windows::Storage::Streams::IBuffer SessionInfo() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWiFiDirectServiceProvisioningInfo
+struct WINRT_EBO impl_IWiFiDirectServiceProvisioningInfo
 {
-    auto shim() const { return impl::shim<D, IWiFiDirectServiceProvisioningInfo>(this); }
-
-public:
-
     Windows::Devices::WiFiDirect::Services::WiFiDirectServiceConfigurationMethod SelectedConfigurationMethod() const;
     bool IsGroupFormationNeeded() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWiFiDirectServiceRemotePortAddedEventArgs
+struct WINRT_EBO impl_IWiFiDirectServiceRemotePortAddedEventArgs
 {
-    auto shim() const { return impl::shim<D, IWiFiDirectServiceRemotePortAddedEventArgs>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair> EndpointPairs() const;
     Windows::Devices::WiFiDirect::Services::WiFiDirectServiceIPProtocol Protocol() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWiFiDirectServiceSession
+struct WINRT_EBO impl_IWiFiDirectServiceSession
 {
-    auto shim() const { return impl::shim<D, IWiFiDirectServiceSession>(this); }
-
-public:
-
     hstring ServiceName() const;
     Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSessionStatus Status() const;
     Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSessionErrorStatus ErrorStatus() const;
@@ -291,44 +263,28 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IWiFiDirectServiceSessionDeferredEventArgs
+struct WINRT_EBO impl_IWiFiDirectServiceSessionDeferredEventArgs
 {
-    auto shim() const { return impl::shim<D, IWiFiDirectServiceSessionDeferredEventArgs>(this); }
-
-public:
-
     Windows::Storage::Streams::IBuffer DeferredSessionInfo() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWiFiDirectServiceSessionRequest
+struct WINRT_EBO impl_IWiFiDirectServiceSessionRequest
 {
-    auto shim() const { return impl::shim<D, IWiFiDirectServiceSessionRequest>(this); }
-
-public:
-
     Windows::Devices::Enumeration::DeviceInformation DeviceInformation() const;
     Windows::Devices::WiFiDirect::Services::WiFiDirectServiceProvisioningInfo ProvisioningInfo() const;
     Windows::Storage::Streams::IBuffer SessionInfo() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWiFiDirectServiceSessionRequestedEventArgs
+struct WINRT_EBO impl_IWiFiDirectServiceSessionRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, IWiFiDirectServiceSessionRequestedEventArgs>(this); }
-
-public:
-
     Windows::Devices::WiFiDirect::Services::WiFiDirectServiceSessionRequest GetSessionRequest() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWiFiDirectServiceStatics
+struct WINRT_EBO impl_IWiFiDirectServiceStatics
 {
-    auto shim() const { return impl::shim<D, IWiFiDirectServiceStatics>(this); }
-
-public:
-
     hstring GetSelector(hstring_ref serviceName) const;
     hstring GetSelector(hstring_ref serviceName, const Windows::Storage::Streams::IBuffer & serviceInfoFilter) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::Services::WiFiDirectService> FromIdAsync(hstring_ref deviceId) const;

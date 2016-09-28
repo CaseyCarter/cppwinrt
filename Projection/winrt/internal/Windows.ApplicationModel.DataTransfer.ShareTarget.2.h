@@ -35,12 +35,8 @@ template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __de
 namespace Windows::ApplicationModel::DataTransfer::ShareTarget {
 
 template <typename D>
-class WINRT_EBO impl_IQuickLink
+struct WINRT_EBO impl_IQuickLink
 {
-    auto shim() const { return impl::shim<D, IQuickLink>(this); }
-
-public:
-
     hstring Title() const;
     void Title(hstring_ref value) const;
     Windows::Storage::Streams::RandomAccessStreamReference Thumbnail() const;
@@ -52,12 +48,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IShareOperation
+struct WINRT_EBO impl_IShareOperation
 {
-    auto shim() const { return impl::shim<D, IShareOperation>(this); }
-
-public:
-
     Windows::ApplicationModel::DataTransfer::DataPackageView Data() const;
     hstring QuickLinkId() const;
     void RemoveThisQuickLink() const;
@@ -70,12 +62,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IShareOperation2
+struct WINRT_EBO impl_IShareOperation2
 {
-    auto shim() const { return impl::shim<D, IShareOperation2>(this); }
-
-public:
-
     void DismissUI() const;
 };
 

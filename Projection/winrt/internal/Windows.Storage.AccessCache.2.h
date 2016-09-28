@@ -80,33 +80,21 @@ template <> struct __declspec(uuid("d1a0a6c4-889d-519b-8508-26241b329b7e")) __de
 namespace Windows::Storage::AccessCache {
 
 template <typename D>
-class WINRT_EBO impl_IItemRemovedEventArgs
+struct WINRT_EBO impl_IItemRemovedEventArgs
 {
-    auto shim() const { return impl::shim<D, IItemRemovedEventArgs>(this); }
-
-public:
-
     Windows::Storage::AccessCache::AccessListEntry RemovedEntry() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorageApplicationPermissionsStatics
+struct WINRT_EBO impl_IStorageApplicationPermissionsStatics
 {
-    auto shim() const { return impl::shim<D, IStorageApplicationPermissionsStatics>(this); }
-
-public:
-
     Windows::Storage::AccessCache::StorageItemAccessList FutureAccessList() const;
     Windows::Storage::AccessCache::StorageItemMostRecentlyUsedList MostRecentlyUsedList() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorageItemAccessList
+struct WINRT_EBO impl_IStorageItemAccessList
 {
-    auto shim() const { return impl::shim<D, IStorageItemAccessList>(this); }
-
-public:
-
     hstring Add(const Windows::Storage::IStorageItem & file) const;
     hstring Add(const Windows::Storage::IStorageItem & file, hstring_ref metadata) const;
     void AddOrReplace(hstring_ref token, const Windows::Storage::IStorageItem & file) const;
@@ -126,12 +114,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorageItemMostRecentlyUsedList
+struct WINRT_EBO impl_IStorageItemMostRecentlyUsedList
 {
-    auto shim() const { return impl::shim<D, IStorageItemMostRecentlyUsedList>(this); }
-
-public:
-
     event_token ItemRemoved(const Windows::Foundation::TypedEventHandler<Windows::Storage::AccessCache::StorageItemMostRecentlyUsedList, Windows::Storage::AccessCache::ItemRemovedEventArgs> & handler) const;
     using ItemRemoved_revoker = event_revoker<IStorageItemMostRecentlyUsedList>;
     ItemRemoved_revoker ItemRemoved(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Storage::AccessCache::StorageItemMostRecentlyUsedList, Windows::Storage::AccessCache::ItemRemovedEventArgs> & handler) const;
@@ -139,12 +123,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorageItemMostRecentlyUsedList2
+struct WINRT_EBO impl_IStorageItemMostRecentlyUsedList2
 {
-    auto shim() const { return impl::shim<D, IStorageItemMostRecentlyUsedList2>(this); }
-
-public:
-
     hstring Add(const Windows::Storage::IStorageItem & file, hstring_ref metadata, Windows::Storage::AccessCache::RecentStorageItemVisibility visibility) const;
     void AddOrReplace(hstring_ref token, const Windows::Storage::IStorageItem & file, hstring_ref metadata, Windows::Storage::AccessCache::RecentStorageItemVisibility visibility) const;
 };

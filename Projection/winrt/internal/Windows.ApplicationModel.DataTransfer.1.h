@@ -274,34 +274,34 @@ template <> struct traits<Windows::ApplicationModel::DataTransfer::TargetApplica
 
 namespace Windows::ApplicationModel::DataTransfer {
 
-template <typename T> class impl_IClipboardStatics;
-template <typename T> class impl_IDataPackage;
-template <typename T> class impl_IDataPackage2;
-template <typename T> class impl_IDataPackagePropertySet;
-template <typename T> class impl_IDataPackagePropertySet2;
-template <typename T> class impl_IDataPackagePropertySet3;
-template <typename T> class impl_IDataPackagePropertySetView;
-template <typename T> class impl_IDataPackagePropertySetView2;
-template <typename T> class impl_IDataPackagePropertySetView3;
-template <typename T> class impl_IDataPackageView;
-template <typename T> class impl_IDataPackageView2;
-template <typename T> class impl_IDataPackageView3;
-template <typename T> class impl_IDataPackageView4;
-template <typename T> class impl_IDataProviderDeferral;
-template <typename T> class impl_IDataProviderRequest;
-template <typename T> class impl_IDataRequest;
-template <typename T> class impl_IDataRequestDeferral;
-template <typename T> class impl_IDataRequestedEventArgs;
-template <typename T> class impl_IDataTransferManager;
-template <typename T> class impl_IDataTransferManagerStatics;
-template <typename T> class impl_IDataTransferManagerStatics2;
-template <typename T> class impl_IHtmlFormatHelperStatics;
-template <typename T> class impl_IOperationCompletedEventArgs;
-template <typename T> class impl_IOperationCompletedEventArgs2;
-template <typename T> class impl_ISharedStorageAccessManagerStatics;
-template <typename T> class impl_IStandardDataFormatsStatics;
-template <typename T> class impl_IStandardDataFormatsStatics2;
-template <typename T> class impl_ITargetApplicationChosenEventArgs;
+template <typename T> struct impl_IClipboardStatics;
+template <typename T> struct impl_IDataPackage;
+template <typename T> struct impl_IDataPackage2;
+template <typename T> struct impl_IDataPackagePropertySet;
+template <typename T> struct impl_IDataPackagePropertySet2;
+template <typename T> struct impl_IDataPackagePropertySet3;
+template <typename T> struct impl_IDataPackagePropertySetView;
+template <typename T> struct impl_IDataPackagePropertySetView2;
+template <typename T> struct impl_IDataPackagePropertySetView3;
+template <typename T> struct impl_IDataPackageView;
+template <typename T> struct impl_IDataPackageView2;
+template <typename T> struct impl_IDataPackageView3;
+template <typename T> struct impl_IDataPackageView4;
+template <typename T> struct impl_IDataProviderDeferral;
+template <typename T> struct impl_IDataProviderRequest;
+template <typename T> struct impl_IDataRequest;
+template <typename T> struct impl_IDataRequestDeferral;
+template <typename T> struct impl_IDataRequestedEventArgs;
+template <typename T> struct impl_IDataTransferManager;
+template <typename T> struct impl_IDataTransferManagerStatics;
+template <typename T> struct impl_IDataTransferManagerStatics2;
+template <typename T> struct impl_IHtmlFormatHelperStatics;
+template <typename T> struct impl_IOperationCompletedEventArgs;
+template <typename T> struct impl_IOperationCompletedEventArgs2;
+template <typename T> struct impl_ISharedStorageAccessManagerStatics;
+template <typename T> struct impl_IStandardDataFormatsStatics;
+template <typename T> struct impl_IStandardDataFormatsStatics2;
+template <typename T> struct impl_ITargetApplicationChosenEventArgs;
 template <typename T> struct impl_DataProviderHandler;
 
 }
@@ -489,70 +489,60 @@ template <> struct traits<Windows::ApplicationModel::DataTransfer::Clipboard>
 template <> struct traits<Windows::ApplicationModel::DataTransfer::DataPackage>
 {
     using abi = ABI::Windows::ApplicationModel::DataTransfer::DataPackage;
-    using default_interface = Windows::ApplicationModel::DataTransfer::IDataPackage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.DataTransfer.DataPackage"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::DataTransfer::DataPackagePropertySet>
 {
     using abi = ABI::Windows::ApplicationModel::DataTransfer::DataPackagePropertySet;
-    using default_interface = Windows::ApplicationModel::DataTransfer::IDataPackagePropertySet;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.DataTransfer.DataPackagePropertySet"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::DataTransfer::DataPackagePropertySetView>
 {
     using abi = ABI::Windows::ApplicationModel::DataTransfer::DataPackagePropertySetView;
-    using default_interface = Windows::ApplicationModel::DataTransfer::IDataPackagePropertySetView;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.DataTransfer.DataPackagePropertySetView"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::DataTransfer::DataPackageView>
 {
     using abi = ABI::Windows::ApplicationModel::DataTransfer::DataPackageView;
-    using default_interface = Windows::ApplicationModel::DataTransfer::IDataPackageView;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.DataTransfer.DataPackageView"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::DataTransfer::DataProviderDeferral>
 {
     using abi = ABI::Windows::ApplicationModel::DataTransfer::DataProviderDeferral;
-    using default_interface = Windows::ApplicationModel::DataTransfer::IDataProviderDeferral;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.DataTransfer.DataProviderDeferral"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::DataTransfer::DataProviderRequest>
 {
     using abi = ABI::Windows::ApplicationModel::DataTransfer::DataProviderRequest;
-    using default_interface = Windows::ApplicationModel::DataTransfer::IDataProviderRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.DataTransfer.DataProviderRequest"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::DataTransfer::DataRequest>
 {
     using abi = ABI::Windows::ApplicationModel::DataTransfer::DataRequest;
-    using default_interface = Windows::ApplicationModel::DataTransfer::IDataRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.DataTransfer.DataRequest"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::DataTransfer::DataRequestDeferral>
 {
     using abi = ABI::Windows::ApplicationModel::DataTransfer::DataRequestDeferral;
-    using default_interface = Windows::ApplicationModel::DataTransfer::IDataRequestDeferral;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.DataTransfer.DataRequestDeferral"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::DataTransfer::DataRequestedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::DataTransfer::DataRequestedEventArgs;
-    using default_interface = Windows::ApplicationModel::DataTransfer::IDataRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.DataTransfer.DataRequestedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::DataTransfer::DataTransferManager>
 {
     using abi = ABI::Windows::ApplicationModel::DataTransfer::DataTransferManager;
-    using default_interface = Windows::ApplicationModel::DataTransfer::IDataTransferManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.DataTransfer.DataTransferManager"; }
 };
 
@@ -564,7 +554,6 @@ template <> struct traits<Windows::ApplicationModel::DataTransfer::HtmlFormatHel
 template <> struct traits<Windows::ApplicationModel::DataTransfer::OperationCompletedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::DataTransfer::OperationCompletedEventArgs;
-    using default_interface = Windows::ApplicationModel::DataTransfer::IOperationCompletedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.DataTransfer.OperationCompletedEventArgs"; }
 };
 
@@ -581,7 +570,6 @@ template <> struct traits<Windows::ApplicationModel::DataTransfer::StandardDataF
 template <> struct traits<Windows::ApplicationModel::DataTransfer::TargetApplicationChosenEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::DataTransfer::TargetApplicationChosenEventArgs;
-    using default_interface = Windows::ApplicationModel::DataTransfer::ITargetApplicationChosenEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.DataTransfer.TargetApplicationChosenEventArgs"; }
 };
 

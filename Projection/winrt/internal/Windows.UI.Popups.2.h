@@ -60,12 +60,8 @@ template <> struct __declspec(uuid("dd33fd5b-a24d-5a44-91fe-dd6441770103")) __de
 namespace Windows::UI::Popups {
 
 template <typename D>
-class WINRT_EBO impl_IMessageDialog
+struct WINRT_EBO impl_IMessageDialog
 {
-    auto shim() const { return impl::shim<D, IMessageDialog>(this); }
-
-public:
-
     hstring Title() const;
     void Title(hstring_ref value) const;
     Windows::Foundation::Collections::IVector<Windows::UI::Popups::IUICommand> Commands() const;
@@ -81,23 +77,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMessageDialogFactory
+struct WINRT_EBO impl_IMessageDialogFactory
 {
-    auto shim() const { return impl::shim<D, IMessageDialogFactory>(this); }
-
-public:
-
     Windows::UI::Popups::MessageDialog Create(hstring_ref content) const;
     Windows::UI::Popups::MessageDialog CreateWithTitle(hstring_ref content, hstring_ref title) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPopupMenu
+struct WINRT_EBO impl_IPopupMenu
 {
-    auto shim() const { return impl::shim<D, IPopupMenu>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<Windows::UI::Popups::IUICommand> Commands() const;
     Windows::Foundation::IAsyncOperation<Windows::UI::Popups::IUICommand> ShowAsync(const Windows::Foundation::Point & invocationPoint) const;
     Windows::Foundation::IAsyncOperation<Windows::UI::Popups::IUICommand> ShowForSelectionAsync(const Windows::Foundation::Rect & selection) const;
@@ -105,12 +93,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUICommand
+struct WINRT_EBO impl_IUICommand
 {
-    auto shim() const { return impl::shim<D, IUICommand>(this); }
-
-public:
-
     hstring Label() const;
     void Label(hstring_ref value) const;
     Windows::UI::Popups::UICommandInvokedHandler Invoked() const;
@@ -120,12 +104,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUICommandFactory
+struct WINRT_EBO impl_IUICommandFactory
 {
-    auto shim() const { return impl::shim<D, IUICommandFactory>(this); }
-
-public:
-
     Windows::UI::Popups::UICommand Create(hstring_ref label) const;
     Windows::UI::Popups::UICommand CreateWithHandler(hstring_ref label, const Windows::UI::Popups::UICommandInvokedHandler & action) const;
     Windows::UI::Popups::UICommand CreateWithHandlerAndId(hstring_ref label, const Windows::UI::Popups::UICommandInvokedHandler & action, const Windows::IInspectable & commandId) const;

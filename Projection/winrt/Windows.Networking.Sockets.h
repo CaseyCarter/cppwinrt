@@ -2574,331 +2574,331 @@ namespace Windows::Networking::Sockets {
 template <typename D> GUID impl_ISocketActivityInformation<D>::TaskId() const
 {
     GUID value {};
-    check_hresult(shim()->get_TaskId(&value));
+    check_hresult(static_cast<const ISocketActivityInformation &>(static_cast<const D &>(*this))->get_TaskId(&value));
     return value;
 }
 
 template <typename D> hstring impl_ISocketActivityInformation<D>::Id() const
 {
     hstring value;
-    check_hresult(shim()->get_Id(put(value)));
+    check_hresult(static_cast<const ISocketActivityInformation &>(static_cast<const D &>(*this))->get_Id(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Sockets::SocketActivityKind impl_ISocketActivityInformation<D>::SocketKind() const
 {
     Windows::Networking::Sockets::SocketActivityKind value {};
-    check_hresult(shim()->get_SocketKind(&value));
+    check_hresult(static_cast<const ISocketActivityInformation &>(static_cast<const D &>(*this))->get_SocketKind(&value));
     return value;
 }
 
 template <typename D> Windows::Networking::Sockets::SocketActivityContext impl_ISocketActivityInformation<D>::Context() const
 {
     Windows::Networking::Sockets::SocketActivityContext value { nullptr };
-    check_hresult(shim()->get_Context(put(value)));
+    check_hresult(static_cast<const ISocketActivityInformation &>(static_cast<const D &>(*this))->get_Context(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Sockets::DatagramSocket impl_ISocketActivityInformation<D>::DatagramSocket() const
 {
     Windows::Networking::Sockets::DatagramSocket value { nullptr };
-    check_hresult(shim()->get_DatagramSocket(put(value)));
+    check_hresult(static_cast<const ISocketActivityInformation &>(static_cast<const D &>(*this))->get_DatagramSocket(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Sockets::StreamSocket impl_ISocketActivityInformation<D>::StreamSocket() const
 {
     Windows::Networking::Sockets::StreamSocket value { nullptr };
-    check_hresult(shim()->get_StreamSocket(put(value)));
+    check_hresult(static_cast<const ISocketActivityInformation &>(static_cast<const D &>(*this))->get_StreamSocket(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Sockets::StreamSocketListener impl_ISocketActivityInformation<D>::StreamSocketListener() const
 {
     Windows::Networking::Sockets::StreamSocketListener value { nullptr };
-    check_hresult(shim()->get_StreamSocketListener(put(value)));
+    check_hresult(static_cast<const ISocketActivityInformation &>(static_cast<const D &>(*this))->get_StreamSocketListener(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Sockets::SocketActivityTriggerReason impl_ISocketActivityTriggerDetails<D>::Reason() const
 {
     Windows::Networking::Sockets::SocketActivityTriggerReason value {};
-    check_hresult(shim()->get_Reason(&value));
+    check_hresult(static_cast<const ISocketActivityTriggerDetails &>(static_cast<const D &>(*this))->get_Reason(&value));
     return value;
 }
 
 template <typename D> Windows::Networking::Sockets::SocketActivityInformation impl_ISocketActivityTriggerDetails<D>::SocketInformation() const
 {
     Windows::Networking::Sockets::SocketActivityInformation value { nullptr };
-    check_hresult(shim()->get_SocketInformation(put(value)));
+    check_hresult(static_cast<const ISocketActivityTriggerDetails &>(static_cast<const D &>(*this))->get_SocketInformation(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IMapView<hstring, Windows::Networking::Sockets::SocketActivityInformation> impl_ISocketActivityInformationStatics<D>::AllSockets() const
 {
     Windows::Foundation::Collections::IMapView<hstring, Windows::Networking::Sockets::SocketActivityInformation> sockets;
-    check_hresult(shim()->get_AllSockets(put(sockets)));
+    check_hresult(static_cast<const ISocketActivityInformationStatics &>(static_cast<const D &>(*this))->get_AllSockets(put(sockets)));
     return sockets;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_ISocketActivityContext<D>::Data() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(shim()->get_Data(put(value)));
+    check_hresult(static_cast<const ISocketActivityContext &>(static_cast<const D &>(*this))->get_Data(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Sockets::SocketActivityContext impl_ISocketActivityContextFactory<D>::Create(const Windows::Storage::Streams::IBuffer & data) const
 {
     Windows::Networking::Sockets::SocketActivityContext context { nullptr };
-    check_hresult(shim()->abi_Create(get(data), put(context)));
+    check_hresult(static_cast<const ISocketActivityContextFactory &>(static_cast<const D &>(*this))->abi_Create(get(data), put(context)));
     return context;
 }
 
 template <typename D> Windows::Networking::HostName impl_IDatagramSocketMessageReceivedEventArgs<D>::RemoteAddress() const
 {
     Windows::Networking::HostName value { nullptr };
-    check_hresult(shim()->get_RemoteAddress(put(value)));
+    check_hresult(static_cast<const IDatagramSocketMessageReceivedEventArgs &>(static_cast<const D &>(*this))->get_RemoteAddress(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IDatagramSocketMessageReceivedEventArgs<D>::RemotePort() const
 {
     hstring value;
-    check_hresult(shim()->get_RemotePort(put(value)));
+    check_hresult(static_cast<const IDatagramSocketMessageReceivedEventArgs &>(static_cast<const D &>(*this))->get_RemotePort(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::HostName impl_IDatagramSocketMessageReceivedEventArgs<D>::LocalAddress() const
 {
     Windows::Networking::HostName value { nullptr };
-    check_hresult(shim()->get_LocalAddress(put(value)));
+    check_hresult(static_cast<const IDatagramSocketMessageReceivedEventArgs &>(static_cast<const D &>(*this))->get_LocalAddress(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::DataReader impl_IDatagramSocketMessageReceivedEventArgs<D>::GetDataReader() const
 {
     Windows::Storage::Streams::DataReader dataReader { nullptr };
-    check_hresult(shim()->abi_GetDataReader(put(dataReader)));
+    check_hresult(static_cast<const IDatagramSocketMessageReceivedEventArgs &>(static_cast<const D &>(*this))->abi_GetDataReader(put(dataReader)));
     return dataReader;
 }
 
 template <typename D> Windows::Storage::Streams::IInputStream impl_IDatagramSocketMessageReceivedEventArgs<D>::GetDataStream() const
 {
     Windows::Storage::Streams::IInputStream inputStream;
-    check_hresult(shim()->abi_GetDataStream(put(inputStream)));
+    check_hresult(static_cast<const IDatagramSocketMessageReceivedEventArgs &>(static_cast<const D &>(*this))->abi_GetDataStream(put(inputStream)));
     return inputStream;
 }
 
 template <typename D> Windows::Networking::Sockets::SocketMessageType impl_IMessageWebSocketMessageReceivedEventArgs<D>::MessageType() const
 {
     Windows::Networking::Sockets::SocketMessageType value {};
-    check_hresult(shim()->get_MessageType(&value));
+    check_hresult(static_cast<const IMessageWebSocketMessageReceivedEventArgs &>(static_cast<const D &>(*this))->get_MessageType(&value));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::DataReader impl_IMessageWebSocketMessageReceivedEventArgs<D>::GetDataReader() const
 {
     Windows::Storage::Streams::DataReader dataReader { nullptr };
-    check_hresult(shim()->abi_GetDataReader(put(dataReader)));
+    check_hresult(static_cast<const IMessageWebSocketMessageReceivedEventArgs &>(static_cast<const D &>(*this))->abi_GetDataReader(put(dataReader)));
     return dataReader;
 }
 
 template <typename D> Windows::Storage::Streams::IInputStream impl_IMessageWebSocketMessageReceivedEventArgs<D>::GetDataStream() const
 {
     Windows::Storage::Streams::IInputStream inputStream;
-    check_hresult(shim()->abi_GetDataStream(put(inputStream)));
+    check_hresult(static_cast<const IMessageWebSocketMessageReceivedEventArgs &>(static_cast<const D &>(*this))->abi_GetDataStream(put(inputStream)));
     return inputStream;
 }
 
 template <typename D> uint16_t impl_IWebSocketClosedEventArgs<D>::Code() const
 {
     uint16_t value {};
-    check_hresult(shim()->get_Code(&value));
+    check_hresult(static_cast<const IWebSocketClosedEventArgs &>(static_cast<const D &>(*this))->get_Code(&value));
     return value;
 }
 
 template <typename D> hstring impl_IWebSocketClosedEventArgs<D>::Reason() const
 {
     hstring value;
-    check_hresult(shim()->get_Reason(put(value)));
+    check_hresult(static_cast<const IWebSocketClosedEventArgs &>(static_cast<const D &>(*this))->get_Reason(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::HostName impl_IDatagramSocketInformation<D>::LocalAddress() const
 {
     Windows::Networking::HostName value { nullptr };
-    check_hresult(shim()->get_LocalAddress(put(value)));
+    check_hresult(static_cast<const IDatagramSocketInformation &>(static_cast<const D &>(*this))->get_LocalAddress(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IDatagramSocketInformation<D>::LocalPort() const
 {
     hstring value;
-    check_hresult(shim()->get_LocalPort(put(value)));
+    check_hresult(static_cast<const IDatagramSocketInformation &>(static_cast<const D &>(*this))->get_LocalPort(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::HostName impl_IDatagramSocketInformation<D>::RemoteAddress() const
 {
     Windows::Networking::HostName value { nullptr };
-    check_hresult(shim()->get_RemoteAddress(put(value)));
+    check_hresult(static_cast<const IDatagramSocketInformation &>(static_cast<const D &>(*this))->get_RemoteAddress(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IDatagramSocketInformation<D>::RemotePort() const
 {
     hstring value;
-    check_hresult(shim()->get_RemotePort(put(value)));
+    check_hresult(static_cast<const IDatagramSocketInformation &>(static_cast<const D &>(*this))->get_RemotePort(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Sockets::SocketQualityOfService impl_IDatagramSocketControl<D>::QualityOfService() const
 {
     Windows::Networking::Sockets::SocketQualityOfService value {};
-    check_hresult(shim()->get_QualityOfService(&value));
+    check_hresult(static_cast<const IDatagramSocketControl &>(static_cast<const D &>(*this))->get_QualityOfService(&value));
     return value;
 }
 
 template <typename D> void impl_IDatagramSocketControl<D>::QualityOfService(Windows::Networking::Sockets::SocketQualityOfService value) const
 {
-    check_hresult(shim()->put_QualityOfService(value));
+    check_hresult(static_cast<const IDatagramSocketControl &>(static_cast<const D &>(*this))->put_QualityOfService(value));
 }
 
 template <typename D> uint8_t impl_IDatagramSocketControl<D>::OutboundUnicastHopLimit() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_OutboundUnicastHopLimit(&value));
+    check_hresult(static_cast<const IDatagramSocketControl &>(static_cast<const D &>(*this))->get_OutboundUnicastHopLimit(&value));
     return value;
 }
 
 template <typename D> void impl_IDatagramSocketControl<D>::OutboundUnicastHopLimit(uint8_t value) const
 {
-    check_hresult(shim()->put_OutboundUnicastHopLimit(value));
+    check_hresult(static_cast<const IDatagramSocketControl &>(static_cast<const D &>(*this))->put_OutboundUnicastHopLimit(value));
 }
 
 template <typename D> uint32_t impl_IDatagramSocketControl2<D>::InboundBufferSizeInBytes() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_InboundBufferSizeInBytes(&value));
+    check_hresult(static_cast<const IDatagramSocketControl2 &>(static_cast<const D &>(*this))->get_InboundBufferSizeInBytes(&value));
     return value;
 }
 
 template <typename D> void impl_IDatagramSocketControl2<D>::InboundBufferSizeInBytes(uint32_t value) const
 {
-    check_hresult(shim()->put_InboundBufferSizeInBytes(value));
+    check_hresult(static_cast<const IDatagramSocketControl2 &>(static_cast<const D &>(*this))->put_InboundBufferSizeInBytes(value));
 }
 
 template <typename D> bool impl_IDatagramSocketControl2<D>::DontFragment() const
 {
     bool value {};
-    check_hresult(shim()->get_DontFragment(&value));
+    check_hresult(static_cast<const IDatagramSocketControl2 &>(static_cast<const D &>(*this))->get_DontFragment(&value));
     return value;
 }
 
 template <typename D> void impl_IDatagramSocketControl2<D>::DontFragment(bool value) const
 {
-    check_hresult(shim()->put_DontFragment(value));
+    check_hresult(static_cast<const IDatagramSocketControl2 &>(static_cast<const D &>(*this))->put_DontFragment(value));
 }
 
 template <typename D> bool impl_IDatagramSocketControl3<D>::MulticastOnly() const
 {
     bool value {};
-    check_hresult(shim()->get_MulticastOnly(&value));
+    check_hresult(static_cast<const IDatagramSocketControl3 &>(static_cast<const D &>(*this))->get_MulticastOnly(&value));
     return value;
 }
 
 template <typename D> void impl_IDatagramSocketControl3<D>::MulticastOnly(bool value) const
 {
-    check_hresult(shim()->put_MulticastOnly(value));
+    check_hresult(static_cast<const IDatagramSocketControl3 &>(static_cast<const D &>(*this))->put_MulticastOnly(value));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> impl_IDatagramSocketStatics<D>::GetEndpointPairsAsync(const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> operation;
-    check_hresult(shim()->abi_GetEndpointPairsAsync(get(remoteHostName), get(remoteServiceName), put(operation)));
+    check_hresult(static_cast<const IDatagramSocketStatics &>(static_cast<const D &>(*this))->abi_GetEndpointPairsAsync(get(remoteHostName), get(remoteServiceName), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> impl_IDatagramSocketStatics<D>::GetEndpointPairsAsync(const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName, Windows::Networking::HostNameSortOptions sortOptions) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> operation;
-    check_hresult(shim()->abi_GetEndpointPairsWithSortOptionsAsync(get(remoteHostName), get(remoteServiceName), sortOptions, put(operation)));
+    check_hresult(static_cast<const IDatagramSocketStatics &>(static_cast<const D &>(*this))->abi_GetEndpointPairsWithSortOptionsAsync(get(remoteHostName), get(remoteServiceName), sortOptions, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Networking::Sockets::DatagramSocketControl impl_IDatagramSocket<D>::Control() const
 {
     Windows::Networking::Sockets::DatagramSocketControl value { nullptr };
-    check_hresult(shim()->get_Control(put(value)));
+    check_hresult(static_cast<const IDatagramSocket &>(static_cast<const D &>(*this))->get_Control(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Sockets::DatagramSocketInformation impl_IDatagramSocket<D>::Information() const
 {
     Windows::Networking::Sockets::DatagramSocketInformation value { nullptr };
-    check_hresult(shim()->get_Information(put(value)));
+    check_hresult(static_cast<const IDatagramSocket &>(static_cast<const D &>(*this))->get_Information(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IOutputStream impl_IDatagramSocket<D>::OutputStream() const
 {
     Windows::Storage::Streams::IOutputStream value;
-    check_hresult(shim()->get_OutputStream(put(value)));
+    check_hresult(static_cast<const IDatagramSocket &>(static_cast<const D &>(*this))->get_OutputStream(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IDatagramSocket<D>::ConnectAsync(const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_ConnectAsync(get(remoteHostName), get(remoteServiceName), put(operation)));
+    check_hresult(static_cast<const IDatagramSocket &>(static_cast<const D &>(*this))->abi_ConnectAsync(get(remoteHostName), get(remoteServiceName), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IDatagramSocket<D>::ConnectAsync(const Windows::Networking::EndpointPair & endpointPair) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_ConnectWithEndpointPairAsync(get(endpointPair), put(operation)));
+    check_hresult(static_cast<const IDatagramSocket &>(static_cast<const D &>(*this))->abi_ConnectWithEndpointPairAsync(get(endpointPair), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IDatagramSocket<D>::BindServiceNameAsync(hstring_ref localServiceName) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_BindServiceNameAsync(get(localServiceName), put(operation)));
+    check_hresult(static_cast<const IDatagramSocket &>(static_cast<const D &>(*this))->abi_BindServiceNameAsync(get(localServiceName), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IDatagramSocket<D>::BindEndpointAsync(const Windows::Networking::HostName & localHostName, hstring_ref localServiceName) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_BindEndpointAsync(get(localHostName), get(localServiceName), put(operation)));
+    check_hresult(static_cast<const IDatagramSocket &>(static_cast<const D &>(*this))->abi_BindEndpointAsync(get(localHostName), get(localServiceName), put(operation)));
     return operation;
 }
 
 template <typename D> void impl_IDatagramSocket<D>::JoinMulticastGroup(const Windows::Networking::HostName & host) const
 {
-    check_hresult(shim()->abi_JoinMulticastGroup(get(host)));
+    check_hresult(static_cast<const IDatagramSocket &>(static_cast<const D &>(*this))->abi_JoinMulticastGroup(get(host)));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IOutputStream> impl_IDatagramSocket<D>::GetOutputStreamAsync(const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IOutputStream> value;
-    check_hresult(shim()->abi_GetOutputStreamAsync(get(remoteHostName), get(remoteServiceName), put(value)));
+    check_hresult(static_cast<const IDatagramSocket &>(static_cast<const D &>(*this))->abi_GetOutputStreamAsync(get(remoteHostName), get(remoteServiceName), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IOutputStream> impl_IDatagramSocket<D>::GetOutputStreamAsync(const Windows::Networking::EndpointPair & endpointPair) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IOutputStream> value;
-    check_hresult(shim()->abi_GetOutputStreamWithEndpointPairAsync(get(endpointPair), put(value)));
+    check_hresult(static_cast<const IDatagramSocket &>(static_cast<const D &>(*this))->abi_GetOutputStreamWithEndpointPairAsync(get(endpointPair), put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IDatagramSocket<D>::MessageReceived(const Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::DatagramSocket, Windows::Networking::Sockets::DatagramSocketMessageReceivedEventArgs> & eventHandler) const
 {
     event_token eventCookie {};
-    check_hresult(shim()->add_MessageReceived(get(eventHandler), &eventCookie));
+    check_hresult(static_cast<const IDatagramSocket &>(static_cast<const D &>(*this))->add_MessageReceived(get(eventHandler), &eventCookie));
     return eventCookie;
 }
 
@@ -2909,459 +2909,459 @@ template <typename D> event_revoker<IDatagramSocket> impl_IDatagramSocket<D>::Me
 
 template <typename D> void impl_IDatagramSocket<D>::MessageReceived(event_token eventCookie) const
 {
-    check_hresult(shim()->remove_MessageReceived(eventCookie));
+    check_hresult(static_cast<const IDatagramSocket &>(static_cast<const D &>(*this))->remove_MessageReceived(eventCookie));
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IDatagramSocket2<D>::BindServiceNameAsync(hstring_ref localServiceName, const Windows::Networking::Connectivity::NetworkAdapter & adapter) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_BindServiceNameAndAdapterAsync(get(localServiceName), get(adapter), put(operation)));
+    check_hresult(static_cast<const IDatagramSocket2 &>(static_cast<const D &>(*this))->abi_BindServiceNameAndAdapterAsync(get(localServiceName), get(adapter), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IDatagramSocket3<D>::CancelIOAsync() const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_CancelIOAsync(put(operation)));
+    check_hresult(static_cast<const IDatagramSocket3 &>(static_cast<const D &>(*this))->abi_CancelIOAsync(put(operation)));
     return operation;
 }
 
 template <typename D> void impl_IDatagramSocket3<D>::EnableTransferOwnership(GUID taskId) const
 {
-    check_hresult(shim()->abi_EnableTransferOwnership(taskId));
+    check_hresult(static_cast<const IDatagramSocket3 &>(static_cast<const D &>(*this))->abi_EnableTransferOwnership(taskId));
 }
 
 template <typename D> void impl_IDatagramSocket3<D>::EnableTransferOwnership(GUID taskId, Windows::Networking::Sockets::SocketActivityConnectedStandbyAction connectedStandbyAction) const
 {
-    check_hresult(shim()->abi_EnableTransferOwnershipWithConnectedStandbyAction(taskId, connectedStandbyAction));
+    check_hresult(static_cast<const IDatagramSocket3 &>(static_cast<const D &>(*this))->abi_EnableTransferOwnershipWithConnectedStandbyAction(taskId, connectedStandbyAction));
 }
 
 template <typename D> void impl_IDatagramSocket3<D>::TransferOwnership(hstring_ref socketId) const
 {
-    check_hresult(shim()->abi_TransferOwnership(get(socketId)));
+    check_hresult(static_cast<const IDatagramSocket3 &>(static_cast<const D &>(*this))->abi_TransferOwnership(get(socketId)));
 }
 
 template <typename D> void impl_IDatagramSocket3<D>::TransferOwnership(hstring_ref socketId, const Windows::Networking::Sockets::SocketActivityContext & data) const
 {
-    check_hresult(shim()->abi_TransferOwnershipWithContext(get(socketId), get(data)));
+    check_hresult(static_cast<const IDatagramSocket3 &>(static_cast<const D &>(*this))->abi_TransferOwnershipWithContext(get(socketId), get(data)));
 }
 
 template <typename D> void impl_IDatagramSocket3<D>::TransferOwnership(hstring_ref socketId, const Windows::Networking::Sockets::SocketActivityContext & data, const Windows::Foundation::TimeSpan & keepAliveTime) const
 {
-    check_hresult(shim()->abi_TransferOwnershipWithContextAndKeepAliveTime(get(socketId), get(data), get(keepAliveTime)));
+    check_hresult(static_cast<const IDatagramSocket3 &>(static_cast<const D &>(*this))->abi_TransferOwnershipWithContextAndKeepAliveTime(get(socketId), get(data), get(keepAliveTime)));
 }
 
 template <typename D> Windows::Networking::HostName impl_IStreamSocketInformation<D>::LocalAddress() const
 {
     Windows::Networking::HostName value { nullptr };
-    check_hresult(shim()->get_LocalAddress(put(value)));
+    check_hresult(static_cast<const IStreamSocketInformation &>(static_cast<const D &>(*this))->get_LocalAddress(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStreamSocketInformation<D>::LocalPort() const
 {
     hstring value;
-    check_hresult(shim()->get_LocalPort(put(value)));
+    check_hresult(static_cast<const IStreamSocketInformation &>(static_cast<const D &>(*this))->get_LocalPort(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::HostName impl_IStreamSocketInformation<D>::RemoteHostName() const
 {
     Windows::Networking::HostName value { nullptr };
-    check_hresult(shim()->get_RemoteHostName(put(value)));
+    check_hresult(static_cast<const IStreamSocketInformation &>(static_cast<const D &>(*this))->get_RemoteHostName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::HostName impl_IStreamSocketInformation<D>::RemoteAddress() const
 {
     Windows::Networking::HostName value { nullptr };
-    check_hresult(shim()->get_RemoteAddress(put(value)));
+    check_hresult(static_cast<const IStreamSocketInformation &>(static_cast<const D &>(*this))->get_RemoteAddress(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStreamSocketInformation<D>::RemoteServiceName() const
 {
     hstring value;
-    check_hresult(shim()->get_RemoteServiceName(put(value)));
+    check_hresult(static_cast<const IStreamSocketInformation &>(static_cast<const D &>(*this))->get_RemoteServiceName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStreamSocketInformation<D>::RemotePort() const
 {
     hstring value;
-    check_hresult(shim()->get_RemotePort(put(value)));
+    check_hresult(static_cast<const IStreamSocketInformation &>(static_cast<const D &>(*this))->get_RemotePort(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Sockets::RoundTripTimeStatistics impl_IStreamSocketInformation<D>::RoundTripTimeStatistics() const
 {
     Windows::Networking::Sockets::RoundTripTimeStatistics value {};
-    check_hresult(shim()->get_RoundTripTimeStatistics(put(value)));
+    check_hresult(static_cast<const IStreamSocketInformation &>(static_cast<const D &>(*this))->get_RoundTripTimeStatistics(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Sockets::BandwidthStatistics impl_IStreamSocketInformation<D>::BandwidthStatistics() const
 {
     Windows::Networking::Sockets::BandwidthStatistics value {};
-    check_hresult(shim()->get_BandwidthStatistics(put(value)));
+    check_hresult(static_cast<const IStreamSocketInformation &>(static_cast<const D &>(*this))->get_BandwidthStatistics(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Sockets::SocketProtectionLevel impl_IStreamSocketInformation<D>::ProtectionLevel() const
 {
     Windows::Networking::Sockets::SocketProtectionLevel value {};
-    check_hresult(shim()->get_ProtectionLevel(&value));
+    check_hresult(static_cast<const IStreamSocketInformation &>(static_cast<const D &>(*this))->get_ProtectionLevel(&value));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IStreamSocketInformation<D>::SessionKey() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(shim()->get_SessionKey(put(value)));
+    check_hresult(static_cast<const IStreamSocketInformation &>(static_cast<const D &>(*this))->get_SessionKey(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Sockets::SocketSslErrorSeverity impl_IStreamSocketInformation2<D>::ServerCertificateErrorSeverity() const
 {
     Windows::Networking::Sockets::SocketSslErrorSeverity value {};
-    check_hresult(shim()->get_ServerCertificateErrorSeverity(&value));
+    check_hresult(static_cast<const IStreamSocketInformation2 &>(static_cast<const D &>(*this))->get_ServerCertificateErrorSeverity(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<winrt::Windows::Security::Cryptography::Certificates::ChainValidationResult> impl_IStreamSocketInformation2<D>::ServerCertificateErrors() const
 {
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Security::Cryptography::Certificates::ChainValidationResult> value;
-    check_hresult(shim()->get_ServerCertificateErrors(put(value)));
+    check_hresult(static_cast<const IStreamSocketInformation2 &>(static_cast<const D &>(*this))->get_ServerCertificateErrors(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::Certificate impl_IStreamSocketInformation2<D>::ServerCertificate() const
 {
     Windows::Security::Cryptography::Certificates::Certificate value { nullptr };
-    check_hresult(shim()->get_ServerCertificate(put(value)));
+    check_hresult(static_cast<const IStreamSocketInformation2 &>(static_cast<const D &>(*this))->get_ServerCertificate(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> impl_IStreamSocketInformation2<D>::ServerIntermediateCertificates() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> value;
-    check_hresult(shim()->get_ServerIntermediateCertificates(put(value)));
+    check_hresult(static_cast<const IStreamSocketInformation2 &>(static_cast<const D &>(*this))->get_ServerIntermediateCertificates(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IStreamSocketControl<D>::NoDelay() const
 {
     bool value {};
-    check_hresult(shim()->get_NoDelay(&value));
+    check_hresult(static_cast<const IStreamSocketControl &>(static_cast<const D &>(*this))->get_NoDelay(&value));
     return value;
 }
 
 template <typename D> void impl_IStreamSocketControl<D>::NoDelay(bool value) const
 {
-    check_hresult(shim()->put_NoDelay(value));
+    check_hresult(static_cast<const IStreamSocketControl &>(static_cast<const D &>(*this))->put_NoDelay(value));
 }
 
 template <typename D> bool impl_IStreamSocketControl<D>::KeepAlive() const
 {
     bool value {};
-    check_hresult(shim()->get_KeepAlive(&value));
+    check_hresult(static_cast<const IStreamSocketControl &>(static_cast<const D &>(*this))->get_KeepAlive(&value));
     return value;
 }
 
 template <typename D> void impl_IStreamSocketControl<D>::KeepAlive(bool value) const
 {
-    check_hresult(shim()->put_KeepAlive(value));
+    check_hresult(static_cast<const IStreamSocketControl &>(static_cast<const D &>(*this))->put_KeepAlive(value));
 }
 
 template <typename D> uint32_t impl_IStreamSocketControl<D>::OutboundBufferSizeInBytes() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_OutboundBufferSizeInBytes(&value));
+    check_hresult(static_cast<const IStreamSocketControl &>(static_cast<const D &>(*this))->get_OutboundBufferSizeInBytes(&value));
     return value;
 }
 
 template <typename D> void impl_IStreamSocketControl<D>::OutboundBufferSizeInBytes(uint32_t value) const
 {
-    check_hresult(shim()->put_OutboundBufferSizeInBytes(value));
+    check_hresult(static_cast<const IStreamSocketControl &>(static_cast<const D &>(*this))->put_OutboundBufferSizeInBytes(value));
 }
 
 template <typename D> Windows::Networking::Sockets::SocketQualityOfService impl_IStreamSocketControl<D>::QualityOfService() const
 {
     Windows::Networking::Sockets::SocketQualityOfService value {};
-    check_hresult(shim()->get_QualityOfService(&value));
+    check_hresult(static_cast<const IStreamSocketControl &>(static_cast<const D &>(*this))->get_QualityOfService(&value));
     return value;
 }
 
 template <typename D> void impl_IStreamSocketControl<D>::QualityOfService(Windows::Networking::Sockets::SocketQualityOfService value) const
 {
-    check_hresult(shim()->put_QualityOfService(value));
+    check_hresult(static_cast<const IStreamSocketControl &>(static_cast<const D &>(*this))->put_QualityOfService(value));
 }
 
 template <typename D> uint8_t impl_IStreamSocketControl<D>::OutboundUnicastHopLimit() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_OutboundUnicastHopLimit(&value));
+    check_hresult(static_cast<const IStreamSocketControl &>(static_cast<const D &>(*this))->get_OutboundUnicastHopLimit(&value));
     return value;
 }
 
 template <typename D> void impl_IStreamSocketControl<D>::OutboundUnicastHopLimit(uint8_t value) const
 {
-    check_hresult(shim()->put_OutboundUnicastHopLimit(value));
+    check_hresult(static_cast<const IStreamSocketControl &>(static_cast<const D &>(*this))->put_OutboundUnicastHopLimit(value));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<winrt::Windows::Security::Cryptography::Certificates::ChainValidationResult> impl_IStreamSocketControl2<D>::IgnorableServerCertificateErrors() const
 {
     Windows::Foundation::Collections::IVector<winrt::Windows::Security::Cryptography::Certificates::ChainValidationResult> value;
-    check_hresult(shim()->get_IgnorableServerCertificateErrors(put(value)));
+    check_hresult(static_cast<const IStreamSocketControl2 &>(static_cast<const D &>(*this))->get_IgnorableServerCertificateErrors(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IStreamSocketControl3<D>::SerializeConnectionAttempts() const
 {
     bool value {};
-    check_hresult(shim()->get_SerializeConnectionAttempts(&value));
+    check_hresult(static_cast<const IStreamSocketControl3 &>(static_cast<const D &>(*this))->get_SerializeConnectionAttempts(&value));
     return value;
 }
 
 template <typename D> void impl_IStreamSocketControl3<D>::SerializeConnectionAttempts(bool value) const
 {
-    check_hresult(shim()->put_SerializeConnectionAttempts(value));
+    check_hresult(static_cast<const IStreamSocketControl3 &>(static_cast<const D &>(*this))->put_SerializeConnectionAttempts(value));
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::Certificate impl_IStreamSocketControl3<D>::ClientCertificate() const
 {
     Windows::Security::Cryptography::Certificates::Certificate value { nullptr };
-    check_hresult(shim()->get_ClientCertificate(put(value)));
+    check_hresult(static_cast<const IStreamSocketControl3 &>(static_cast<const D &>(*this))->get_ClientCertificate(put(value)));
     return value;
 }
 
 template <typename D> void impl_IStreamSocketControl3<D>::ClientCertificate(const Windows::Security::Cryptography::Certificates::Certificate & value) const
 {
-    check_hresult(shim()->put_ClientCertificate(get(value)));
+    check_hresult(static_cast<const IStreamSocketControl3 &>(static_cast<const D &>(*this))->put_ClientCertificate(get(value)));
 }
 
 template <typename D> Windows::Networking::Sockets::StreamSocketControl impl_IStreamSocket<D>::Control() const
 {
     Windows::Networking::Sockets::StreamSocketControl value { nullptr };
-    check_hresult(shim()->get_Control(put(value)));
+    check_hresult(static_cast<const IStreamSocket &>(static_cast<const D &>(*this))->get_Control(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Sockets::StreamSocketInformation impl_IStreamSocket<D>::Information() const
 {
     Windows::Networking::Sockets::StreamSocketInformation value { nullptr };
-    check_hresult(shim()->get_Information(put(value)));
+    check_hresult(static_cast<const IStreamSocket &>(static_cast<const D &>(*this))->get_Information(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IInputStream impl_IStreamSocket<D>::InputStream() const
 {
     Windows::Storage::Streams::IInputStream value;
-    check_hresult(shim()->get_InputStream(put(value)));
+    check_hresult(static_cast<const IStreamSocket &>(static_cast<const D &>(*this))->get_InputStream(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IOutputStream impl_IStreamSocket<D>::OutputStream() const
 {
     Windows::Storage::Streams::IOutputStream value;
-    check_hresult(shim()->get_OutputStream(put(value)));
+    check_hresult(static_cast<const IStreamSocket &>(static_cast<const D &>(*this))->get_OutputStream(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IStreamSocket<D>::ConnectAsync(const Windows::Networking::EndpointPair & endpointPair) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_ConnectWithEndpointPairAsync(get(endpointPair), put(operation)));
+    check_hresult(static_cast<const IStreamSocket &>(static_cast<const D &>(*this))->abi_ConnectWithEndpointPairAsync(get(endpointPair), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IStreamSocket<D>::ConnectAsync(const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_ConnectAsync(get(remoteHostName), get(remoteServiceName), put(operation)));
+    check_hresult(static_cast<const IStreamSocket &>(static_cast<const D &>(*this))->abi_ConnectAsync(get(remoteHostName), get(remoteServiceName), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IStreamSocket<D>::ConnectAsync(const Windows::Networking::EndpointPair & endpointPair, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_ConnectWithEndpointPairAndProtectionLevelAsync(get(endpointPair), protectionLevel, put(operation)));
+    check_hresult(static_cast<const IStreamSocket &>(static_cast<const D &>(*this))->abi_ConnectWithEndpointPairAndProtectionLevelAsync(get(endpointPair), protectionLevel, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IStreamSocket<D>::ConnectAsync(const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_ConnectWithProtectionLevelAsync(get(remoteHostName), get(remoteServiceName), protectionLevel, put(operation)));
+    check_hresult(static_cast<const IStreamSocket &>(static_cast<const D &>(*this))->abi_ConnectWithProtectionLevelAsync(get(remoteHostName), get(remoteServiceName), protectionLevel, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IStreamSocket<D>::UpgradeToSslAsync(Windows::Networking::Sockets::SocketProtectionLevel protectionLevel, const Windows::Networking::HostName & validationHostName) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_UpgradeToSslAsync(protectionLevel, get(validationHostName), put(operation)));
+    check_hresult(static_cast<const IStreamSocket &>(static_cast<const D &>(*this))->abi_UpgradeToSslAsync(protectionLevel, get(validationHostName), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IStreamSocket2<D>::ConnectAsync(const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel, const Windows::Networking::Connectivity::NetworkAdapter & adapter) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_ConnectWithProtectionLevelAndAdapterAsync(get(remoteHostName), get(remoteServiceName), protectionLevel, get(adapter), put(operation)));
+    check_hresult(static_cast<const IStreamSocket2 &>(static_cast<const D &>(*this))->abi_ConnectWithProtectionLevelAndAdapterAsync(get(remoteHostName), get(remoteServiceName), protectionLevel, get(adapter), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IStreamSocket3<D>::CancelIOAsync() const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_CancelIOAsync(put(operation)));
+    check_hresult(static_cast<const IStreamSocket3 &>(static_cast<const D &>(*this))->abi_CancelIOAsync(put(operation)));
     return operation;
 }
 
 template <typename D> void impl_IStreamSocket3<D>::EnableTransferOwnership(GUID taskId) const
 {
-    check_hresult(shim()->abi_EnableTransferOwnership(taskId));
+    check_hresult(static_cast<const IStreamSocket3 &>(static_cast<const D &>(*this))->abi_EnableTransferOwnership(taskId));
 }
 
 template <typename D> void impl_IStreamSocket3<D>::EnableTransferOwnership(GUID taskId, Windows::Networking::Sockets::SocketActivityConnectedStandbyAction connectedStandbyAction) const
 {
-    check_hresult(shim()->abi_EnableTransferOwnershipWithConnectedStandbyAction(taskId, connectedStandbyAction));
+    check_hresult(static_cast<const IStreamSocket3 &>(static_cast<const D &>(*this))->abi_EnableTransferOwnershipWithConnectedStandbyAction(taskId, connectedStandbyAction));
 }
 
 template <typename D> void impl_IStreamSocket3<D>::TransferOwnership(hstring_ref socketId) const
 {
-    check_hresult(shim()->abi_TransferOwnership(get(socketId)));
+    check_hresult(static_cast<const IStreamSocket3 &>(static_cast<const D &>(*this))->abi_TransferOwnership(get(socketId)));
 }
 
 template <typename D> void impl_IStreamSocket3<D>::TransferOwnership(hstring_ref socketId, const Windows::Networking::Sockets::SocketActivityContext & data) const
 {
-    check_hresult(shim()->abi_TransferOwnershipWithContext(get(socketId), get(data)));
+    check_hresult(static_cast<const IStreamSocket3 &>(static_cast<const D &>(*this))->abi_TransferOwnershipWithContext(get(socketId), get(data)));
 }
 
 template <typename D> void impl_IStreamSocket3<D>::TransferOwnership(hstring_ref socketId, const Windows::Networking::Sockets::SocketActivityContext & data, const Windows::Foundation::TimeSpan & keepAliveTime) const
 {
-    check_hresult(shim()->abi_TransferOwnershipWithContextAndKeepAliveTime(get(socketId), get(data), get(keepAliveTime)));
+    check_hresult(static_cast<const IStreamSocket3 &>(static_cast<const D &>(*this))->abi_TransferOwnershipWithContextAndKeepAliveTime(get(socketId), get(data), get(keepAliveTime)));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> impl_IStreamSocketStatics<D>::GetEndpointPairsAsync(const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> operation;
-    check_hresult(shim()->abi_GetEndpointPairsAsync(get(remoteHostName), get(remoteServiceName), put(operation)));
+    check_hresult(static_cast<const IStreamSocketStatics &>(static_cast<const D &>(*this))->abi_GetEndpointPairsAsync(get(remoteHostName), get(remoteServiceName), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> impl_IStreamSocketStatics<D>::GetEndpointPairsAsync(const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName, Windows::Networking::HostNameSortOptions sortOptions) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair>> operation;
-    check_hresult(shim()->abi_GetEndpointPairsWithSortOptionsAsync(get(remoteHostName), get(remoteServiceName), sortOptions, put(operation)));
+    check_hresult(static_cast<const IStreamSocketStatics &>(static_cast<const D &>(*this))->abi_GetEndpointPairsWithSortOptionsAsync(get(remoteHostName), get(remoteServiceName), sortOptions, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Networking::Sockets::SocketQualityOfService impl_IStreamSocketListenerControl<D>::QualityOfService() const
 {
     Windows::Networking::Sockets::SocketQualityOfService value {};
-    check_hresult(shim()->get_QualityOfService(&value));
+    check_hresult(static_cast<const IStreamSocketListenerControl &>(static_cast<const D &>(*this))->get_QualityOfService(&value));
     return value;
 }
 
 template <typename D> void impl_IStreamSocketListenerControl<D>::QualityOfService(Windows::Networking::Sockets::SocketQualityOfService value) const
 {
-    check_hresult(shim()->put_QualityOfService(value));
+    check_hresult(static_cast<const IStreamSocketListenerControl &>(static_cast<const D &>(*this))->put_QualityOfService(value));
 }
 
 template <typename D> bool impl_IStreamSocketListenerControl2<D>::NoDelay() const
 {
     bool value {};
-    check_hresult(shim()->get_NoDelay(&value));
+    check_hresult(static_cast<const IStreamSocketListenerControl2 &>(static_cast<const D &>(*this))->get_NoDelay(&value));
     return value;
 }
 
 template <typename D> void impl_IStreamSocketListenerControl2<D>::NoDelay(bool value) const
 {
-    check_hresult(shim()->put_NoDelay(value));
+    check_hresult(static_cast<const IStreamSocketListenerControl2 &>(static_cast<const D &>(*this))->put_NoDelay(value));
 }
 
 template <typename D> bool impl_IStreamSocketListenerControl2<D>::KeepAlive() const
 {
     bool value {};
-    check_hresult(shim()->get_KeepAlive(&value));
+    check_hresult(static_cast<const IStreamSocketListenerControl2 &>(static_cast<const D &>(*this))->get_KeepAlive(&value));
     return value;
 }
 
 template <typename D> void impl_IStreamSocketListenerControl2<D>::KeepAlive(bool value) const
 {
-    check_hresult(shim()->put_KeepAlive(value));
+    check_hresult(static_cast<const IStreamSocketListenerControl2 &>(static_cast<const D &>(*this))->put_KeepAlive(value));
 }
 
 template <typename D> uint32_t impl_IStreamSocketListenerControl2<D>::OutboundBufferSizeInBytes() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_OutboundBufferSizeInBytes(&value));
+    check_hresult(static_cast<const IStreamSocketListenerControl2 &>(static_cast<const D &>(*this))->get_OutboundBufferSizeInBytes(&value));
     return value;
 }
 
 template <typename D> void impl_IStreamSocketListenerControl2<D>::OutboundBufferSizeInBytes(uint32_t value) const
 {
-    check_hresult(shim()->put_OutboundBufferSizeInBytes(value));
+    check_hresult(static_cast<const IStreamSocketListenerControl2 &>(static_cast<const D &>(*this))->put_OutboundBufferSizeInBytes(value));
 }
 
 template <typename D> uint8_t impl_IStreamSocketListenerControl2<D>::OutboundUnicastHopLimit() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_OutboundUnicastHopLimit(&value));
+    check_hresult(static_cast<const IStreamSocketListenerControl2 &>(static_cast<const D &>(*this))->get_OutboundUnicastHopLimit(&value));
     return value;
 }
 
 template <typename D> void impl_IStreamSocketListenerControl2<D>::OutboundUnicastHopLimit(uint8_t value) const
 {
-    check_hresult(shim()->put_OutboundUnicastHopLimit(value));
+    check_hresult(static_cast<const IStreamSocketListenerControl2 &>(static_cast<const D &>(*this))->put_OutboundUnicastHopLimit(value));
 }
 
 template <typename D> hstring impl_IStreamSocketListenerInformation<D>::LocalPort() const
 {
     hstring value;
-    check_hresult(shim()->get_LocalPort(put(value)));
+    check_hresult(static_cast<const IStreamSocketListenerInformation &>(static_cast<const D &>(*this))->get_LocalPort(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Sockets::StreamSocket impl_IStreamSocketListenerConnectionReceivedEventArgs<D>::Socket() const
 {
     Windows::Networking::Sockets::StreamSocket value { nullptr };
-    check_hresult(shim()->get_Socket(put(value)));
+    check_hresult(static_cast<const IStreamSocketListenerConnectionReceivedEventArgs &>(static_cast<const D &>(*this))->get_Socket(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Sockets::StreamSocketListenerControl impl_IStreamSocketListener<D>::Control() const
 {
     Windows::Networking::Sockets::StreamSocketListenerControl value { nullptr };
-    check_hresult(shim()->get_Control(put(value)));
+    check_hresult(static_cast<const IStreamSocketListener &>(static_cast<const D &>(*this))->get_Control(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Sockets::StreamSocketListenerInformation impl_IStreamSocketListener<D>::Information() const
 {
     Windows::Networking::Sockets::StreamSocketListenerInformation value { nullptr };
-    check_hresult(shim()->get_Information(put(value)));
+    check_hresult(static_cast<const IStreamSocketListener &>(static_cast<const D &>(*this))->get_Information(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IStreamSocketListener<D>::BindServiceNameAsync(hstring_ref localServiceName) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_BindServiceNameAsync(get(localServiceName), put(operation)));
+    check_hresult(static_cast<const IStreamSocketListener &>(static_cast<const D &>(*this))->abi_BindServiceNameAsync(get(localServiceName), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IStreamSocketListener<D>::BindEndpointAsync(const Windows::Networking::HostName & localHostName, hstring_ref localServiceName) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_BindEndpointAsync(get(localHostName), get(localServiceName), put(operation)));
+    check_hresult(static_cast<const IStreamSocketListener &>(static_cast<const D &>(*this))->abi_BindEndpointAsync(get(localHostName), get(localServiceName), put(operation)));
     return operation;
 }
 
 template <typename D> event_token impl_IStreamSocketListener<D>::ConnectionReceived(const Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::StreamSocketListener, Windows::Networking::Sockets::StreamSocketListenerConnectionReceivedEventArgs> & eventHandler) const
 {
     event_token eventCookie {};
-    check_hresult(shim()->add_ConnectionReceived(get(eventHandler), &eventCookie));
+    check_hresult(static_cast<const IStreamSocketListener &>(static_cast<const D &>(*this))->add_ConnectionReceived(get(eventHandler), &eventCookie));
     return eventCookie;
 }
 
@@ -3372,212 +3372,212 @@ template <typename D> event_revoker<IStreamSocketListener> impl_IStreamSocketLis
 
 template <typename D> void impl_IStreamSocketListener<D>::ConnectionReceived(event_token eventCookie) const
 {
-    check_hresult(shim()->remove_ConnectionReceived(eventCookie));
+    check_hresult(static_cast<const IStreamSocketListener &>(static_cast<const D &>(*this))->remove_ConnectionReceived(eventCookie));
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IStreamSocketListener2<D>::BindServiceNameAsync(hstring_ref localServiceName, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_BindServiceNameWithProtectionLevelAsync(get(localServiceName), protectionLevel, put(operation)));
+    check_hresult(static_cast<const IStreamSocketListener2 &>(static_cast<const D &>(*this))->abi_BindServiceNameWithProtectionLevelAsync(get(localServiceName), protectionLevel, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IStreamSocketListener2<D>::BindServiceNameAsync(hstring_ref localServiceName, Windows::Networking::Sockets::SocketProtectionLevel protectionLevel, const Windows::Networking::Connectivity::NetworkAdapter & adapter) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_BindServiceNameWithProtectionLevelAndAdapterAsync(get(localServiceName), protectionLevel, get(adapter), put(operation)));
+    check_hresult(static_cast<const IStreamSocketListener2 &>(static_cast<const D &>(*this))->abi_BindServiceNameWithProtectionLevelAndAdapterAsync(get(localServiceName), protectionLevel, get(adapter), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IStreamSocketListener3<D>::CancelIOAsync() const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_CancelIOAsync(put(operation)));
+    check_hresult(static_cast<const IStreamSocketListener3 &>(static_cast<const D &>(*this))->abi_CancelIOAsync(put(operation)));
     return operation;
 }
 
 template <typename D> void impl_IStreamSocketListener3<D>::EnableTransferOwnership(GUID taskId) const
 {
-    check_hresult(shim()->abi_EnableTransferOwnership(taskId));
+    check_hresult(static_cast<const IStreamSocketListener3 &>(static_cast<const D &>(*this))->abi_EnableTransferOwnership(taskId));
 }
 
 template <typename D> void impl_IStreamSocketListener3<D>::EnableTransferOwnership(GUID taskId, Windows::Networking::Sockets::SocketActivityConnectedStandbyAction connectedStandbyAction) const
 {
-    check_hresult(shim()->abi_EnableTransferOwnershipWithConnectedStandbyAction(taskId, connectedStandbyAction));
+    check_hresult(static_cast<const IStreamSocketListener3 &>(static_cast<const D &>(*this))->abi_EnableTransferOwnershipWithConnectedStandbyAction(taskId, connectedStandbyAction));
 }
 
 template <typename D> void impl_IStreamSocketListener3<D>::TransferOwnership(hstring_ref socketId) const
 {
-    check_hresult(shim()->abi_TransferOwnership(get(socketId)));
+    check_hresult(static_cast<const IStreamSocketListener3 &>(static_cast<const D &>(*this))->abi_TransferOwnership(get(socketId)));
 }
 
 template <typename D> void impl_IStreamSocketListener3<D>::TransferOwnership(hstring_ref socketId, const Windows::Networking::Sockets::SocketActivityContext & data) const
 {
-    check_hresult(shim()->abi_TransferOwnershipWithContext(get(socketId), get(data)));
+    check_hresult(static_cast<const IStreamSocketListener3 &>(static_cast<const D &>(*this))->abi_TransferOwnershipWithContext(get(socketId), get(data)));
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::Certificate impl_IWebSocketServerCustomValidationRequestedEventArgs<D>::ServerCertificate() const
 {
     Windows::Security::Cryptography::Certificates::Certificate value { nullptr };
-    check_hresult(shim()->get_ServerCertificate(put(value)));
+    check_hresult(static_cast<const IWebSocketServerCustomValidationRequestedEventArgs &>(static_cast<const D &>(*this))->get_ServerCertificate(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Sockets::SocketSslErrorSeverity impl_IWebSocketServerCustomValidationRequestedEventArgs<D>::ServerCertificateErrorSeverity() const
 {
     Windows::Networking::Sockets::SocketSslErrorSeverity value {};
-    check_hresult(shim()->get_ServerCertificateErrorSeverity(&value));
+    check_hresult(static_cast<const IWebSocketServerCustomValidationRequestedEventArgs &>(static_cast<const D &>(*this))->get_ServerCertificateErrorSeverity(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<winrt::Windows::Security::Cryptography::Certificates::ChainValidationResult> impl_IWebSocketServerCustomValidationRequestedEventArgs<D>::ServerCertificateErrors() const
 {
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Security::Cryptography::Certificates::ChainValidationResult> value;
-    check_hresult(shim()->get_ServerCertificateErrors(put(value)));
+    check_hresult(static_cast<const IWebSocketServerCustomValidationRequestedEventArgs &>(static_cast<const D &>(*this))->get_ServerCertificateErrors(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> impl_IWebSocketServerCustomValidationRequestedEventArgs<D>::ServerIntermediateCertificates() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> value;
-    check_hresult(shim()->get_ServerIntermediateCertificates(put(value)));
+    check_hresult(static_cast<const IWebSocketServerCustomValidationRequestedEventArgs &>(static_cast<const D &>(*this))->get_ServerIntermediateCertificates(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWebSocketServerCustomValidationRequestedEventArgs<D>::Reject() const
 {
-    check_hresult(shim()->abi_Reject());
+    check_hresult(static_cast<const IWebSocketServerCustomValidationRequestedEventArgs &>(static_cast<const D &>(*this))->abi_Reject());
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IWebSocketServerCustomValidationRequestedEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral result { nullptr };
-    check_hresult(shim()->abi_GetDeferral(put(result)));
+    check_hresult(static_cast<const IWebSocketServerCustomValidationRequestedEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(result)));
     return result;
 }
 
 template <typename D> uint32_t impl_IWebSocketControl<D>::OutboundBufferSizeInBytes() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_OutboundBufferSizeInBytes(&value));
+    check_hresult(static_cast<const IWebSocketControl &>(static_cast<const D &>(*this))->get_OutboundBufferSizeInBytes(&value));
     return value;
 }
 
 template <typename D> void impl_IWebSocketControl<D>::OutboundBufferSizeInBytes(uint32_t value) const
 {
-    check_hresult(shim()->put_OutboundBufferSizeInBytes(value));
+    check_hresult(static_cast<const IWebSocketControl &>(static_cast<const D &>(*this))->put_OutboundBufferSizeInBytes(value));
 }
 
 template <typename D> Windows::Security::Credentials::PasswordCredential impl_IWebSocketControl<D>::ServerCredential() const
 {
     Windows::Security::Credentials::PasswordCredential value { nullptr };
-    check_hresult(shim()->get_ServerCredential(put(value)));
+    check_hresult(static_cast<const IWebSocketControl &>(static_cast<const D &>(*this))->get_ServerCredential(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWebSocketControl<D>::ServerCredential(const Windows::Security::Credentials::PasswordCredential & value) const
 {
-    check_hresult(shim()->put_ServerCredential(get(value)));
+    check_hresult(static_cast<const IWebSocketControl &>(static_cast<const D &>(*this))->put_ServerCredential(get(value)));
 }
 
 template <typename D> Windows::Security::Credentials::PasswordCredential impl_IWebSocketControl<D>::ProxyCredential() const
 {
     Windows::Security::Credentials::PasswordCredential value { nullptr };
-    check_hresult(shim()->get_ProxyCredential(put(value)));
+    check_hresult(static_cast<const IWebSocketControl &>(static_cast<const D &>(*this))->get_ProxyCredential(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWebSocketControl<D>::ProxyCredential(const Windows::Security::Credentials::PasswordCredential & value) const
 {
-    check_hresult(shim()->put_ProxyCredential(get(value)));
+    check_hresult(static_cast<const IWebSocketControl &>(static_cast<const D &>(*this))->put_ProxyCredential(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IWebSocketControl<D>::SupportedProtocols() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(shim()->get_SupportedProtocols(put(value)));
+    check_hresult(static_cast<const IWebSocketControl &>(static_cast<const D &>(*this))->get_SupportedProtocols(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<winrt::Windows::Security::Cryptography::Certificates::ChainValidationResult> impl_IWebSocketControl2<D>::IgnorableServerCertificateErrors() const
 {
     Windows::Foundation::Collections::IVector<winrt::Windows::Security::Cryptography::Certificates::ChainValidationResult> value;
-    check_hresult(shim()->get_IgnorableServerCertificateErrors(put(value)));
+    check_hresult(static_cast<const IWebSocketControl2 &>(static_cast<const D &>(*this))->get_IgnorableServerCertificateErrors(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::HostName impl_IWebSocketInformation<D>::LocalAddress() const
 {
     Windows::Networking::HostName value { nullptr };
-    check_hresult(shim()->get_LocalAddress(put(value)));
+    check_hresult(static_cast<const IWebSocketInformation &>(static_cast<const D &>(*this))->get_LocalAddress(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Sockets::BandwidthStatistics impl_IWebSocketInformation<D>::BandwidthStatistics() const
 {
     Windows::Networking::Sockets::BandwidthStatistics value {};
-    check_hresult(shim()->get_BandwidthStatistics(put(value)));
+    check_hresult(static_cast<const IWebSocketInformation &>(static_cast<const D &>(*this))->get_BandwidthStatistics(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IWebSocketInformation<D>::Protocol() const
 {
     hstring value;
-    check_hresult(shim()->get_Protocol(put(value)));
+    check_hresult(static_cast<const IWebSocketInformation &>(static_cast<const D &>(*this))->get_Protocol(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::Certificate impl_IWebSocketInformation2<D>::ServerCertificate() const
 {
     Windows::Security::Cryptography::Certificates::Certificate value { nullptr };
-    check_hresult(shim()->get_ServerCertificate(put(value)));
+    check_hresult(static_cast<const IWebSocketInformation2 &>(static_cast<const D &>(*this))->get_ServerCertificate(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Sockets::SocketSslErrorSeverity impl_IWebSocketInformation2<D>::ServerCertificateErrorSeverity() const
 {
     Windows::Networking::Sockets::SocketSslErrorSeverity value {};
-    check_hresult(shim()->get_ServerCertificateErrorSeverity(&value));
+    check_hresult(static_cast<const IWebSocketInformation2 &>(static_cast<const D &>(*this))->get_ServerCertificateErrorSeverity(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<winrt::Windows::Security::Cryptography::Certificates::ChainValidationResult> impl_IWebSocketInformation2<D>::ServerCertificateErrors() const
 {
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Security::Cryptography::Certificates::ChainValidationResult> value;
-    check_hresult(shim()->get_ServerCertificateErrors(put(value)));
+    check_hresult(static_cast<const IWebSocketInformation2 &>(static_cast<const D &>(*this))->get_ServerCertificateErrors(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> impl_IWebSocketInformation2<D>::ServerIntermediateCertificates() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> value;
-    check_hresult(shim()->get_ServerIntermediateCertificates(put(value)));
+    check_hresult(static_cast<const IWebSocketInformation2 &>(static_cast<const D &>(*this))->get_ServerIntermediateCertificates(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IOutputStream impl_IWebSocket<D>::OutputStream() const
 {
     Windows::Storage::Streams::IOutputStream value;
-    check_hresult(shim()->get_OutputStream(put(value)));
+    check_hresult(static_cast<const IWebSocket &>(static_cast<const D &>(*this))->get_OutputStream(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IWebSocket<D>::ConnectAsync(const Windows::Foundation::Uri & uri) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_ConnectAsync(get(uri), put(operation)));
+    check_hresult(static_cast<const IWebSocket &>(static_cast<const D &>(*this))->abi_ConnectAsync(get(uri), put(operation)));
     return operation;
 }
 
 template <typename D> void impl_IWebSocket<D>::SetRequestHeader(hstring_ref headerName, hstring_ref headerValue) const
 {
-    check_hresult(shim()->abi_SetRequestHeader(get(headerName), get(headerValue)));
+    check_hresult(static_cast<const IWebSocket &>(static_cast<const D &>(*this))->abi_SetRequestHeader(get(headerName), get(headerValue)));
 }
 
 template <typename D> event_token impl_IWebSocket<D>::Closed(const Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::IWebSocket, Windows::Networking::Sockets::WebSocketClosedEventArgs> & eventHandler) const
 {
     event_token eventCookie {};
-    check_hresult(shim()->add_Closed(get(eventHandler), &eventCookie));
+    check_hresult(static_cast<const IWebSocket &>(static_cast<const D &>(*this))->add_Closed(get(eventHandler), &eventCookie));
     return eventCookie;
 }
 
@@ -3588,56 +3588,56 @@ template <typename D> event_revoker<IWebSocket> impl_IWebSocket<D>::Closed(auto_
 
 template <typename D> void impl_IWebSocket<D>::Closed(event_token eventCookie) const
 {
-    check_hresult(shim()->remove_Closed(eventCookie));
+    check_hresult(static_cast<const IWebSocket &>(static_cast<const D &>(*this))->remove_Closed(eventCookie));
 }
 
 template <typename D> void impl_IWebSocket<D>::Close(uint16_t code, hstring_ref reason) const
 {
-    check_hresult(shim()->abi_CloseWithStatus(code, get(reason)));
+    check_hresult(static_cast<const IWebSocket &>(static_cast<const D &>(*this))->abi_CloseWithStatus(code, get(reason)));
 }
 
 template <typename D> uint32_t impl_IMessageWebSocketControl<D>::MaxMessageSize() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_MaxMessageSize(&value));
+    check_hresult(static_cast<const IMessageWebSocketControl &>(static_cast<const D &>(*this))->get_MaxMessageSize(&value));
     return value;
 }
 
 template <typename D> void impl_IMessageWebSocketControl<D>::MaxMessageSize(uint32_t value) const
 {
-    check_hresult(shim()->put_MaxMessageSize(value));
+    check_hresult(static_cast<const IMessageWebSocketControl &>(static_cast<const D &>(*this))->put_MaxMessageSize(value));
 }
 
 template <typename D> Windows::Networking::Sockets::SocketMessageType impl_IMessageWebSocketControl<D>::MessageType() const
 {
     Windows::Networking::Sockets::SocketMessageType value {};
-    check_hresult(shim()->get_MessageType(&value));
+    check_hresult(static_cast<const IMessageWebSocketControl &>(static_cast<const D &>(*this))->get_MessageType(&value));
     return value;
 }
 
 template <typename D> void impl_IMessageWebSocketControl<D>::MessageType(Windows::Networking::Sockets::SocketMessageType value) const
 {
-    check_hresult(shim()->put_MessageType(value));
+    check_hresult(static_cast<const IMessageWebSocketControl &>(static_cast<const D &>(*this))->put_MessageType(value));
 }
 
 template <typename D> Windows::Networking::Sockets::MessageWebSocketControl impl_IMessageWebSocket<D>::Control() const
 {
     Windows::Networking::Sockets::MessageWebSocketControl value { nullptr };
-    check_hresult(shim()->get_Control(put(value)));
+    check_hresult(static_cast<const IMessageWebSocket &>(static_cast<const D &>(*this))->get_Control(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Sockets::MessageWebSocketInformation impl_IMessageWebSocket<D>::Information() const
 {
     Windows::Networking::Sockets::MessageWebSocketInformation value { nullptr };
-    check_hresult(shim()->get_Information(put(value)));
+    check_hresult(static_cast<const IMessageWebSocket &>(static_cast<const D &>(*this))->get_Information(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IMessageWebSocket<D>::MessageReceived(const Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::MessageWebSocket, Windows::Networking::Sockets::MessageWebSocketMessageReceivedEventArgs> & eventHandler) const
 {
     event_token eventCookie {};
-    check_hresult(shim()->add_MessageReceived(get(eventHandler), &eventCookie));
+    check_hresult(static_cast<const IMessageWebSocket &>(static_cast<const D &>(*this))->add_MessageReceived(get(eventHandler), &eventCookie));
     return eventCookie;
 }
 
@@ -3648,13 +3648,13 @@ template <typename D> event_revoker<IMessageWebSocket> impl_IMessageWebSocket<D>
 
 template <typename D> void impl_IMessageWebSocket<D>::MessageReceived(event_token eventCookie) const
 {
-    check_hresult(shim()->remove_MessageReceived(eventCookie));
+    check_hresult(static_cast<const IMessageWebSocket &>(static_cast<const D &>(*this))->remove_MessageReceived(eventCookie));
 }
 
 template <typename D> event_token impl_IMessageWebSocket2<D>::ServerCustomValidationRequested(const Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::MessageWebSocket, Windows::Networking::Sockets::WebSocketServerCustomValidationRequestedEventArgs> & eventHandler) const
 {
     event_token eventCookie {};
-    check_hresult(shim()->add_ServerCustomValidationRequested(get(eventHandler), &eventCookie));
+    check_hresult(static_cast<const IMessageWebSocket2 &>(static_cast<const D &>(*this))->add_ServerCustomValidationRequested(get(eventHandler), &eventCookie));
     return eventCookie;
 }
 
@@ -3665,46 +3665,46 @@ template <typename D> event_revoker<IMessageWebSocket2> impl_IMessageWebSocket2<
 
 template <typename D> void impl_IMessageWebSocket2<D>::ServerCustomValidationRequested(event_token eventCookie) const
 {
-    check_hresult(shim()->remove_ServerCustomValidationRequested(eventCookie));
+    check_hresult(static_cast<const IMessageWebSocket2 &>(static_cast<const D &>(*this))->remove_ServerCustomValidationRequested(eventCookie));
 }
 
 template <typename D> bool impl_IStreamWebSocketControl<D>::NoDelay() const
 {
     bool value {};
-    check_hresult(shim()->get_NoDelay(&value));
+    check_hresult(static_cast<const IStreamWebSocketControl &>(static_cast<const D &>(*this))->get_NoDelay(&value));
     return value;
 }
 
 template <typename D> void impl_IStreamWebSocketControl<D>::NoDelay(bool value) const
 {
-    check_hresult(shim()->put_NoDelay(value));
+    check_hresult(static_cast<const IStreamWebSocketControl &>(static_cast<const D &>(*this))->put_NoDelay(value));
 }
 
 template <typename D> Windows::Networking::Sockets::StreamWebSocketControl impl_IStreamWebSocket<D>::Control() const
 {
     Windows::Networking::Sockets::StreamWebSocketControl value { nullptr };
-    check_hresult(shim()->get_Control(put(value)));
+    check_hresult(static_cast<const IStreamWebSocket &>(static_cast<const D &>(*this))->get_Control(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Sockets::StreamWebSocketInformation impl_IStreamWebSocket<D>::Information() const
 {
     Windows::Networking::Sockets::StreamWebSocketInformation value { nullptr };
-    check_hresult(shim()->get_Information(put(value)));
+    check_hresult(static_cast<const IStreamWebSocket &>(static_cast<const D &>(*this))->get_Information(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IInputStream impl_IStreamWebSocket<D>::InputStream() const
 {
     Windows::Storage::Streams::IInputStream value;
-    check_hresult(shim()->get_InputStream(put(value)));
+    check_hresult(static_cast<const IStreamWebSocket &>(static_cast<const D &>(*this))->get_InputStream(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IStreamWebSocket2<D>::ServerCustomValidationRequested(const Windows::Foundation::TypedEventHandler<Windows::Networking::Sockets::StreamWebSocket, Windows::Networking::Sockets::WebSocketServerCustomValidationRequestedEventArgs> & eventHandler) const
 {
     event_token eventCookie {};
-    check_hresult(shim()->add_ServerCustomValidationRequested(get(eventHandler), &eventCookie));
+    check_hresult(static_cast<const IStreamWebSocket2 &>(static_cast<const D &>(*this))->add_ServerCustomValidationRequested(get(eventHandler), &eventCookie));
     return eventCookie;
 }
 
@@ -3715,20 +3715,20 @@ template <typename D> event_revoker<IStreamWebSocket2> impl_IStreamWebSocket2<D>
 
 template <typename D> void impl_IStreamWebSocket2<D>::ServerCustomValidationRequested(event_token eventCookie) const
 {
-    check_hresult(shim()->remove_ServerCustomValidationRequested(eventCookie));
+    check_hresult(static_cast<const IStreamWebSocket2 &>(static_cast<const D &>(*this))->remove_ServerCustomValidationRequested(eventCookie));
 }
 
 template <typename D> Windows::Networking::Sockets::SocketErrorStatus impl_ISocketErrorStatics<D>::GetStatus(int32_t hresult) const
 {
     Windows::Networking::Sockets::SocketErrorStatus status {};
-    check_hresult(shim()->abi_GetStatus(hresult, &status));
+    check_hresult(static_cast<const ISocketErrorStatics &>(static_cast<const D &>(*this))->abi_GetStatus(hresult, &status));
     return status;
 }
 
 template <typename D> Windows::Web::WebErrorStatus impl_IWebSocketErrorStatics<D>::GetStatus(int32_t hresult) const
 {
     Windows::Web::WebErrorStatus status {};
-    check_hresult(shim()->abi_GetStatus(hresult, &status));
+    check_hresult(static_cast<const IWebSocketErrorStatics &>(static_cast<const D &>(*this))->abi_GetStatus(hresult, &status));
     return status;
 }
 

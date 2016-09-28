@@ -1809,413 +1809,413 @@ namespace Windows::Networking::Connectivity {
 template <typename D> uint64_t impl_IDataUsage<D>::BytesSent() const
 {
     uint64_t value {};
-    check_hresult(shim()->get_BytesSent(&value));
+    check_hresult(static_cast<const IDataUsage &>(static_cast<const D &>(*this))->get_BytesSent(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IDataUsage<D>::BytesReceived() const
 {
     uint64_t value {};
-    check_hresult(shim()->get_BytesReceived(&value));
+    check_hresult(static_cast<const IDataUsage &>(static_cast<const D &>(*this))->get_BytesReceived(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IDataPlanUsage<D>::MegabytesUsed() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_MegabytesUsed(&value));
+    check_hresult(static_cast<const IDataPlanUsage &>(static_cast<const D &>(*this))->get_MegabytesUsed(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IDataPlanUsage<D>::LastSyncTime() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->get_LastSyncTime(put(value)));
+    check_hresult(static_cast<const IDataPlanUsage &>(static_cast<const D &>(*this))->get_LastSyncTime(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Connectivity::DataPlanUsage impl_IDataPlanStatus<D>::DataPlanUsage() const
 {
     Windows::Networking::Connectivity::DataPlanUsage value { nullptr };
-    check_hresult(shim()->get_DataPlanUsage(put(value)));
+    check_hresult(static_cast<const IDataPlanStatus &>(static_cast<const D &>(*this))->get_DataPlanUsage(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<uint32_t> impl_IDataPlanStatus<D>::DataLimitInMegabytes() const
 {
     Windows::Foundation::IReference<uint32_t> value;
-    check_hresult(shim()->get_DataLimitInMegabytes(put(value)));
+    check_hresult(static_cast<const IDataPlanStatus &>(static_cast<const D &>(*this))->get_DataLimitInMegabytes(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<uint64_t> impl_IDataPlanStatus<D>::InboundBitsPerSecond() const
 {
     Windows::Foundation::IReference<uint64_t> value;
-    check_hresult(shim()->get_InboundBitsPerSecond(put(value)));
+    check_hresult(static_cast<const IDataPlanStatus &>(static_cast<const D &>(*this))->get_InboundBitsPerSecond(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<uint64_t> impl_IDataPlanStatus<D>::OutboundBitsPerSecond() const
 {
     Windows::Foundation::IReference<uint64_t> value;
-    check_hresult(shim()->get_OutboundBitsPerSecond(put(value)));
+    check_hresult(static_cast<const IDataPlanStatus &>(static_cast<const D &>(*this))->get_OutboundBitsPerSecond(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateTime> impl_IDataPlanStatus<D>::NextBillingCycle() const
 {
     Windows::Foundation::IReference<Windows::Foundation::DateTime> value;
-    check_hresult(shim()->get_NextBillingCycle(put(value)));
+    check_hresult(static_cast<const IDataPlanStatus &>(static_cast<const D &>(*this))->get_NextBillingCycle(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<uint32_t> impl_IDataPlanStatus<D>::MaxTransferSizeInMegabytes() const
 {
     Windows::Foundation::IReference<uint32_t> value;
-    check_hresult(shim()->get_MaxTransferSizeInMegabytes(put(value)));
+    check_hresult(static_cast<const IDataPlanStatus &>(static_cast<const D &>(*this))->get_MaxTransferSizeInMegabytes(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Connectivity::NetworkCostType impl_IConnectionCost<D>::NetworkCostType() const
 {
     Windows::Networking::Connectivity::NetworkCostType value {};
-    check_hresult(shim()->get_NetworkCostType(&value));
+    check_hresult(static_cast<const IConnectionCost &>(static_cast<const D &>(*this))->get_NetworkCostType(&value));
     return value;
 }
 
 template <typename D> bool impl_IConnectionCost<D>::Roaming() const
 {
     bool value {};
-    check_hresult(shim()->get_Roaming(&value));
+    check_hresult(static_cast<const IConnectionCost &>(static_cast<const D &>(*this))->get_Roaming(&value));
     return value;
 }
 
 template <typename D> bool impl_IConnectionCost<D>::OverDataLimit() const
 {
     bool value {};
-    check_hresult(shim()->get_OverDataLimit(&value));
+    check_hresult(static_cast<const IConnectionCost &>(static_cast<const D &>(*this))->get_OverDataLimit(&value));
     return value;
 }
 
 template <typename D> bool impl_IConnectionCost<D>::ApproachingDataLimit() const
 {
     bool value {};
-    check_hresult(shim()->get_ApproachingDataLimit(&value));
+    check_hresult(static_cast<const IConnectionCost &>(static_cast<const D &>(*this))->get_ApproachingDataLimit(&value));
     return value;
 }
 
 template <typename D> bool impl_IConnectionCost2<D>::BackgroundDataUsageRestricted() const
 {
     bool value {};
-    check_hresult(shim()->get_BackgroundDataUsageRestricted(&value));
+    check_hresult(static_cast<const IConnectionCost2 &>(static_cast<const D &>(*this))->get_BackgroundDataUsageRestricted(&value));
     return value;
 }
 
 template <typename D> Windows::Networking::Connectivity::NetworkAuthenticationType impl_INetworkSecuritySettings<D>::NetworkAuthenticationType() const
 {
     Windows::Networking::Connectivity::NetworkAuthenticationType value {};
-    check_hresult(shim()->get_NetworkAuthenticationType(&value));
+    check_hresult(static_cast<const INetworkSecuritySettings &>(static_cast<const D &>(*this))->get_NetworkAuthenticationType(&value));
     return value;
 }
 
 template <typename D> Windows::Networking::Connectivity::NetworkEncryptionType impl_INetworkSecuritySettings<D>::NetworkEncryptionType() const
 {
     Windows::Networking::Connectivity::NetworkEncryptionType value {};
-    check_hresult(shim()->get_NetworkEncryptionType(&value));
+    check_hresult(static_cast<const INetworkSecuritySettings &>(static_cast<const D &>(*this))->get_NetworkEncryptionType(&value));
     return value;
 }
 
 template <typename D> hstring impl_IConnectionProfile<D>::ProfileName() const
 {
     hstring value;
-    check_hresult(shim()->get_ProfileName(put(value)));
+    check_hresult(static_cast<const IConnectionProfile &>(static_cast<const D &>(*this))->get_ProfileName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Connectivity::NetworkConnectivityLevel impl_IConnectionProfile<D>::GetNetworkConnectivityLevel() const
 {
     Windows::Networking::Connectivity::NetworkConnectivityLevel value {};
-    check_hresult(shim()->abi_GetNetworkConnectivityLevel(&value));
+    check_hresult(static_cast<const IConnectionProfile &>(static_cast<const D &>(*this))->abi_GetNetworkConnectivityLevel(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_IConnectionProfile<D>::GetNetworkNames() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(shim()->abi_GetNetworkNames(put(value)));
+    check_hresult(static_cast<const IConnectionProfile &>(static_cast<const D &>(*this))->abi_GetNetworkNames(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Connectivity::ConnectionCost impl_IConnectionProfile<D>::GetConnectionCost() const
 {
     Windows::Networking::Connectivity::ConnectionCost value { nullptr };
-    check_hresult(shim()->abi_GetConnectionCost(put(value)));
+    check_hresult(static_cast<const IConnectionProfile &>(static_cast<const D &>(*this))->abi_GetConnectionCost(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Connectivity::DataPlanStatus impl_IConnectionProfile<D>::GetDataPlanStatus() const
 {
     Windows::Networking::Connectivity::DataPlanStatus value { nullptr };
-    check_hresult(shim()->abi_GetDataPlanStatus(put(value)));
+    check_hresult(static_cast<const IConnectionProfile &>(static_cast<const D &>(*this))->abi_GetDataPlanStatus(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Connectivity::NetworkAdapter impl_IConnectionProfile<D>::NetworkAdapter() const
 {
     Windows::Networking::Connectivity::NetworkAdapter value { nullptr };
-    check_hresult(shim()->get_NetworkAdapter(put(value)));
+    check_hresult(static_cast<const IConnectionProfile &>(static_cast<const D &>(*this))->get_NetworkAdapter(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Connectivity::DataUsage impl_IConnectionProfile<D>::GetLocalUsage(const Windows::Foundation::DateTime & StartTime, const Windows::Foundation::DateTime & EndTime) const
 {
     Windows::Networking::Connectivity::DataUsage value { nullptr };
-    check_hresult(shim()->abi_GetLocalUsage(get(StartTime), get(EndTime), put(value)));
+    check_hresult(static_cast<const IConnectionProfile &>(static_cast<const D &>(*this))->abi_GetLocalUsage(get(StartTime), get(EndTime), put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Connectivity::DataUsage impl_IConnectionProfile<D>::GetLocalUsage(const Windows::Foundation::DateTime & StartTime, const Windows::Foundation::DateTime & EndTime, Windows::Networking::Connectivity::RoamingStates States) const
 {
     Windows::Networking::Connectivity::DataUsage value { nullptr };
-    check_hresult(shim()->abi_GetLocalUsagePerRoamingStates(get(StartTime), get(EndTime), States, put(value)));
+    check_hresult(static_cast<const IConnectionProfile &>(static_cast<const D &>(*this))->abi_GetLocalUsagePerRoamingStates(get(StartTime), get(EndTime), States, put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Connectivity::NetworkSecuritySettings impl_IConnectionProfile<D>::NetworkSecuritySettings() const
 {
     Windows::Networking::Connectivity::NetworkSecuritySettings value { nullptr };
-    check_hresult(shim()->get_NetworkSecuritySettings(put(value)));
+    check_hresult(static_cast<const IConnectionProfile &>(static_cast<const D &>(*this))->get_NetworkSecuritySettings(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IWlanConnectionProfileDetails<D>::GetConnectedSsid() const
 {
     hstring value;
-    check_hresult(shim()->abi_GetConnectedSsid(put(value)));
+    check_hresult(static_cast<const IWlanConnectionProfileDetails &>(static_cast<const D &>(*this))->abi_GetConnectedSsid(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IConnectivityInterval<D>::StartTime() const
 {
     Windows::Foundation::DateTime startTime {};
-    check_hresult(shim()->get_StartTime(put(startTime)));
+    check_hresult(static_cast<const IConnectivityInterval &>(static_cast<const D &>(*this))->get_StartTime(put(startTime)));
     return startTime;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IConnectivityInterval<D>::ConnectionDuration() const
 {
     Windows::Foundation::TimeSpan duration {};
-    check_hresult(shim()->get_ConnectionDuration(put(duration)));
+    check_hresult(static_cast<const IConnectivityInterval &>(static_cast<const D &>(*this))->get_ConnectionDuration(put(duration)));
     return duration;
 }
 
 template <typename D> uint64_t impl_INetworkUsage<D>::BytesSent() const
 {
     uint64_t value {};
-    check_hresult(shim()->get_BytesSent(&value));
+    check_hresult(static_cast<const INetworkUsage &>(static_cast<const D &>(*this))->get_BytesSent(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_INetworkUsage<D>::BytesReceived() const
 {
     uint64_t value {};
-    check_hresult(shim()->get_BytesReceived(&value));
+    check_hresult(static_cast<const INetworkUsage &>(static_cast<const D &>(*this))->get_BytesReceived(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_INetworkUsage<D>::ConnectionDuration() const
 {
     Windows::Foundation::TimeSpan duration {};
-    check_hresult(shim()->get_ConnectionDuration(put(duration)));
+    check_hresult(static_cast<const INetworkUsage &>(static_cast<const D &>(*this))->get_ConnectionDuration(put(duration)));
     return duration;
 }
 
 template <typename D> uint64_t impl_IAttributedNetworkUsage<D>::BytesSent() const
 {
     uint64_t value {};
-    check_hresult(shim()->get_BytesSent(&value));
+    check_hresult(static_cast<const IAttributedNetworkUsage &>(static_cast<const D &>(*this))->get_BytesSent(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IAttributedNetworkUsage<D>::BytesReceived() const
 {
     uint64_t value {};
-    check_hresult(shim()->get_BytesReceived(&value));
+    check_hresult(static_cast<const IAttributedNetworkUsage &>(static_cast<const D &>(*this))->get_BytesReceived(&value));
     return value;
 }
 
 template <typename D> hstring impl_IAttributedNetworkUsage<D>::AttributionId() const
 {
     hstring value;
-    check_hresult(shim()->get_AttributionId(put(value)));
+    check_hresult(static_cast<const IAttributedNetworkUsage &>(static_cast<const D &>(*this))->get_AttributionId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAttributedNetworkUsage<D>::AttributionName() const
 {
     hstring value;
-    check_hresult(shim()->get_AttributionName(put(value)));
+    check_hresult(static_cast<const IAttributedNetworkUsage &>(static_cast<const D &>(*this))->get_AttributionName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IRandomAccessStreamReference impl_IAttributedNetworkUsage<D>::AttributionThumbnail() const
 {
     Windows::Storage::Streams::IRandomAccessStreamReference value;
-    check_hresult(shim()->get_AttributionThumbnail(put(value)));
+    check_hresult(static_cast<const IAttributedNetworkUsage &>(static_cast<const D &>(*this))->get_AttributionThumbnail(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IConnectionProfile2<D>::IsWwanConnectionProfile() const
 {
     bool value {};
-    check_hresult(shim()->get_IsWwanConnectionProfile(&value));
+    check_hresult(static_cast<const IConnectionProfile2 &>(static_cast<const D &>(*this))->get_IsWwanConnectionProfile(&value));
     return value;
 }
 
 template <typename D> bool impl_IConnectionProfile2<D>::IsWlanConnectionProfile() const
 {
     bool value {};
-    check_hresult(shim()->get_IsWlanConnectionProfile(&value));
+    check_hresult(static_cast<const IConnectionProfile2 &>(static_cast<const D &>(*this))->get_IsWlanConnectionProfile(&value));
     return value;
 }
 
 template <typename D> Windows::Networking::Connectivity::WwanConnectionProfileDetails impl_IConnectionProfile2<D>::WwanConnectionProfileDetails() const
 {
     Windows::Networking::Connectivity::WwanConnectionProfileDetails value { nullptr };
-    check_hresult(shim()->get_WwanConnectionProfileDetails(put(value)));
+    check_hresult(static_cast<const IConnectionProfile2 &>(static_cast<const D &>(*this))->get_WwanConnectionProfileDetails(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Connectivity::WlanConnectionProfileDetails impl_IConnectionProfile2<D>::WlanConnectionProfileDetails() const
 {
     Windows::Networking::Connectivity::WlanConnectionProfileDetails value { nullptr };
-    check_hresult(shim()->get_WlanConnectionProfileDetails(put(value)));
+    check_hresult(static_cast<const IConnectionProfile2 &>(static_cast<const D &>(*this))->get_WlanConnectionProfileDetails(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<GUID> impl_IConnectionProfile2<D>::ServiceProviderGuid() const
 {
     Windows::Foundation::IReference<GUID> value;
-    check_hresult(shim()->get_ServiceProviderGuid(put(value)));
+    check_hresult(static_cast<const IConnectionProfile2 &>(static_cast<const D &>(*this))->get_ServiceProviderGuid(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<uint8_t> impl_IConnectionProfile2<D>::GetSignalBars() const
 {
     Windows::Foundation::IReference<uint8_t> value;
-    check_hresult(shim()->abi_GetSignalBars(put(value)));
+    check_hresult(static_cast<const IConnectionProfile2 &>(static_cast<const D &>(*this))->abi_GetSignalBars(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Connectivity::DomainConnectivityLevel impl_IConnectionProfile2<D>::GetDomainConnectivityLevel() const
 {
     Windows::Networking::Connectivity::DomainConnectivityLevel value {};
-    check_hresult(shim()->abi_GetDomainConnectivityLevel(&value));
+    check_hresult(static_cast<const IConnectionProfile2 &>(static_cast<const D &>(*this))->abi_GetDomainConnectivityLevel(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::Connectivity::NetworkUsage>> impl_IConnectionProfile2<D>::GetNetworkUsageAsync(const Windows::Foundation::DateTime & startTime, const Windows::Foundation::DateTime & endTime, Windows::Networking::Connectivity::DataUsageGranularity granularity, const Windows::Networking::Connectivity::NetworkUsageStates & states) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::Connectivity::NetworkUsage>> value;
-    check_hresult(shim()->abi_GetNetworkUsageAsync(get(startTime), get(endTime), granularity, get(states), put(value)));
+    check_hresult(static_cast<const IConnectionProfile2 &>(static_cast<const D &>(*this))->abi_GetNetworkUsageAsync(get(startTime), get(endTime), granularity, get(states), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::Connectivity::ConnectivityInterval>> impl_IConnectionProfile2<D>::GetConnectivityIntervalsAsync(const Windows::Foundation::DateTime & startTime, const Windows::Foundation::DateTime & endTime, const Windows::Networking::Connectivity::NetworkUsageStates & states) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::Connectivity::ConnectivityInterval>> value;
-    check_hresult(shim()->abi_GetConnectivityIntervalsAsync(get(startTime), get(endTime), get(states), put(value)));
+    check_hresult(static_cast<const IConnectionProfile2 &>(static_cast<const D &>(*this))->abi_GetConnectivityIntervalsAsync(get(startTime), get(endTime), get(states), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::Connectivity::AttributedNetworkUsage>> impl_IConnectionProfile3<D>::GetAttributedNetworkUsageAsync(const Windows::Foundation::DateTime & startTime, const Windows::Foundation::DateTime & endTime, const Windows::Networking::Connectivity::NetworkUsageStates & states) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::Connectivity::AttributedNetworkUsage>> value;
-    check_hresult(shim()->abi_GetAttributedNetworkUsageAsync(get(startTime), get(endTime), get(states), put(value)));
+    check_hresult(static_cast<const IConnectionProfile3 &>(static_cast<const D &>(*this))->abi_GetAttributedNetworkUsageAsync(get(startTime), get(endTime), get(states), put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_ILanIdentifierData<D>::Type() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_Type(&value));
+    check_hresult(static_cast<const ILanIdentifierData &>(static_cast<const D &>(*this))->get_Type(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<uint8_t> impl_ILanIdentifierData<D>::Value() const
 {
     Windows::Foundation::Collections::IVectorView<uint8_t> value;
-    check_hresult(shim()->get_Value(put(value)));
+    check_hresult(static_cast<const ILanIdentifierData &>(static_cast<const D &>(*this))->get_Value(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Connectivity::LanIdentifierData impl_ILanIdentifier<D>::InfrastructureId() const
 {
     Windows::Networking::Connectivity::LanIdentifierData value { nullptr };
-    check_hresult(shim()->get_InfrastructureId(put(value)));
+    check_hresult(static_cast<const ILanIdentifier &>(static_cast<const D &>(*this))->get_InfrastructureId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Connectivity::LanIdentifierData impl_ILanIdentifier<D>::PortId() const
 {
     Windows::Networking::Connectivity::LanIdentifierData value { nullptr };
-    check_hresult(shim()->get_PortId(put(value)));
+    check_hresult(static_cast<const ILanIdentifier &>(static_cast<const D &>(*this))->get_PortId(put(value)));
     return value;
 }
 
 template <typename D> GUID impl_ILanIdentifier<D>::NetworkAdapterId() const
 {
     GUID value {};
-    check_hresult(shim()->get_NetworkAdapterId(&value));
+    check_hresult(static_cast<const ILanIdentifier &>(static_cast<const D &>(*this))->get_NetworkAdapterId(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Networking::Connectivity::ConnectionProfile> impl_INetworkInformationStatics<D>::GetConnectionProfiles() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Networking::Connectivity::ConnectionProfile> value;
-    check_hresult(shim()->abi_GetConnectionProfiles(put(value)));
+    check_hresult(static_cast<const INetworkInformationStatics &>(static_cast<const D &>(*this))->abi_GetConnectionProfiles(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Connectivity::ConnectionProfile impl_INetworkInformationStatics<D>::GetInternetConnectionProfile() const
 {
     Windows::Networking::Connectivity::ConnectionProfile value { nullptr };
-    check_hresult(shim()->abi_GetInternetConnectionProfile(put(value)));
+    check_hresult(static_cast<const INetworkInformationStatics &>(static_cast<const D &>(*this))->abi_GetInternetConnectionProfile(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Networking::Connectivity::LanIdentifier> impl_INetworkInformationStatics<D>::GetLanIdentifiers() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Networking::Connectivity::LanIdentifier> value;
-    check_hresult(shim()->abi_GetLanIdentifiers(put(value)));
+    check_hresult(static_cast<const INetworkInformationStatics &>(static_cast<const D &>(*this))->abi_GetLanIdentifiers(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> impl_INetworkInformationStatics<D>::GetHostNames() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> value;
-    check_hresult(shim()->abi_GetHostNames(put(value)));
+    check_hresult(static_cast<const INetworkInformationStatics &>(static_cast<const D &>(*this))->abi_GetHostNames(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::Connectivity::ProxyConfiguration> impl_INetworkInformationStatics<D>::GetProxyConfigurationAsync(const Windows::Foundation::Uri & uri) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::Connectivity::ProxyConfiguration> value;
-    check_hresult(shim()->abi_GetProxyConfigurationAsync(get(uri), put(value)));
+    check_hresult(static_cast<const INetworkInformationStatics &>(static_cast<const D &>(*this))->abi_GetProxyConfigurationAsync(get(uri), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair> impl_INetworkInformationStatics<D>::GetSortedEndpointPairs(const Windows::Foundation::Collections::IIterable<Windows::Networking::EndpointPair> & destinationList, Windows::Networking::HostNameSortOptions sortOptions) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair> value;
-    check_hresult(shim()->abi_GetSortedEndpointPairs(get(destinationList), sortOptions, put(value)));
+    check_hresult(static_cast<const INetworkInformationStatics &>(static_cast<const D &>(*this))->abi_GetSortedEndpointPairs(get(destinationList), sortOptions, put(value)));
     return value;
 }
 
 template <typename D> event_token impl_INetworkInformationStatics<D>::NetworkStatusChanged(const Windows::Networking::Connectivity::NetworkStatusChangedEventHandler & networkStatusHandler) const
 {
     event_token eventCookie {};
-    check_hresult(shim()->add_NetworkStatusChanged(get(networkStatusHandler), &eventCookie));
+    check_hresult(static_cast<const INetworkInformationStatics &>(static_cast<const D &>(*this))->add_NetworkStatusChanged(get(networkStatusHandler), &eventCookie));
     return eventCookie;
 }
 
@@ -2226,408 +2226,408 @@ template <typename D> event_revoker<INetworkInformationStatics> impl_INetworkInf
 
 template <typename D> void impl_INetworkInformationStatics<D>::NetworkStatusChanged(event_token eventCookie) const
 {
-    check_hresult(shim()->remove_NetworkStatusChanged(eventCookie));
+    check_hresult(static_cast<const INetworkInformationStatics &>(static_cast<const D &>(*this))->remove_NetworkStatusChanged(eventCookie));
 }
 
 template <typename D> void impl_IConnectionProfileFilter<D>::IsConnected(bool value) const
 {
-    check_hresult(shim()->put_IsConnected(value));
+    check_hresult(static_cast<const IConnectionProfileFilter &>(static_cast<const D &>(*this))->put_IsConnected(value));
 }
 
 template <typename D> bool impl_IConnectionProfileFilter<D>::IsConnected() const
 {
     bool value {};
-    check_hresult(shim()->get_IsConnected(&value));
+    check_hresult(static_cast<const IConnectionProfileFilter &>(static_cast<const D &>(*this))->get_IsConnected(&value));
     return value;
 }
 
 template <typename D> void impl_IConnectionProfileFilter<D>::IsWwanConnectionProfile(bool value) const
 {
-    check_hresult(shim()->put_IsWwanConnectionProfile(value));
+    check_hresult(static_cast<const IConnectionProfileFilter &>(static_cast<const D &>(*this))->put_IsWwanConnectionProfile(value));
 }
 
 template <typename D> bool impl_IConnectionProfileFilter<D>::IsWwanConnectionProfile() const
 {
     bool value {};
-    check_hresult(shim()->get_IsWwanConnectionProfile(&value));
+    check_hresult(static_cast<const IConnectionProfileFilter &>(static_cast<const D &>(*this))->get_IsWwanConnectionProfile(&value));
     return value;
 }
 
 template <typename D> void impl_IConnectionProfileFilter<D>::IsWlanConnectionProfile(bool value) const
 {
-    check_hresult(shim()->put_IsWlanConnectionProfile(value));
+    check_hresult(static_cast<const IConnectionProfileFilter &>(static_cast<const D &>(*this))->put_IsWlanConnectionProfile(value));
 }
 
 template <typename D> bool impl_IConnectionProfileFilter<D>::IsWlanConnectionProfile() const
 {
     bool value {};
-    check_hresult(shim()->get_IsWlanConnectionProfile(&value));
+    check_hresult(static_cast<const IConnectionProfileFilter &>(static_cast<const D &>(*this))->get_IsWlanConnectionProfile(&value));
     return value;
 }
 
 template <typename D> void impl_IConnectionProfileFilter<D>::NetworkCostType(Windows::Networking::Connectivity::NetworkCostType value) const
 {
-    check_hresult(shim()->put_NetworkCostType(value));
+    check_hresult(static_cast<const IConnectionProfileFilter &>(static_cast<const D &>(*this))->put_NetworkCostType(value));
 }
 
 template <typename D> Windows::Networking::Connectivity::NetworkCostType impl_IConnectionProfileFilter<D>::NetworkCostType() const
 {
     Windows::Networking::Connectivity::NetworkCostType value {};
-    check_hresult(shim()->get_NetworkCostType(&value));
+    check_hresult(static_cast<const IConnectionProfileFilter &>(static_cast<const D &>(*this))->get_NetworkCostType(&value));
     return value;
 }
 
 template <typename D> void impl_IConnectionProfileFilter<D>::ServiceProviderGuid(const Windows::Foundation::IReference<GUID> & value) const
 {
-    check_hresult(shim()->put_ServiceProviderGuid(get(value)));
+    check_hresult(static_cast<const IConnectionProfileFilter &>(static_cast<const D &>(*this))->put_ServiceProviderGuid(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<GUID> impl_IConnectionProfileFilter<D>::ServiceProviderGuid() const
 {
     Windows::Foundation::IReference<GUID> value;
-    check_hresult(shim()->get_ServiceProviderGuid(put(value)));
+    check_hresult(static_cast<const IConnectionProfileFilter &>(static_cast<const D &>(*this))->get_ServiceProviderGuid(put(value)));
     return value;
 }
 
 template <typename D> void impl_IConnectionProfileFilter2<D>::IsRoaming(const Windows::Foundation::IReference<bool> & value) const
 {
-    check_hresult(shim()->put_IsRoaming(get(value)));
+    check_hresult(static_cast<const IConnectionProfileFilter2 &>(static_cast<const D &>(*this))->put_IsRoaming(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<bool> impl_IConnectionProfileFilter2<D>::IsRoaming() const
 {
     Windows::Foundation::IReference<bool> value;
-    check_hresult(shim()->get_IsRoaming(put(value)));
+    check_hresult(static_cast<const IConnectionProfileFilter2 &>(static_cast<const D &>(*this))->get_IsRoaming(put(value)));
     return value;
 }
 
 template <typename D> void impl_IConnectionProfileFilter2<D>::IsOverDataLimit(const Windows::Foundation::IReference<bool> & value) const
 {
-    check_hresult(shim()->put_IsOverDataLimit(get(value)));
+    check_hresult(static_cast<const IConnectionProfileFilter2 &>(static_cast<const D &>(*this))->put_IsOverDataLimit(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<bool> impl_IConnectionProfileFilter2<D>::IsOverDataLimit() const
 {
     Windows::Foundation::IReference<bool> value;
-    check_hresult(shim()->get_IsOverDataLimit(put(value)));
+    check_hresult(static_cast<const IConnectionProfileFilter2 &>(static_cast<const D &>(*this))->get_IsOverDataLimit(put(value)));
     return value;
 }
 
 template <typename D> void impl_IConnectionProfileFilter2<D>::IsBackgroundDataUsageRestricted(const Windows::Foundation::IReference<bool> & value) const
 {
-    check_hresult(shim()->put_IsBackgroundDataUsageRestricted(get(value)));
+    check_hresult(static_cast<const IConnectionProfileFilter2 &>(static_cast<const D &>(*this))->put_IsBackgroundDataUsageRestricted(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<bool> impl_IConnectionProfileFilter2<D>::IsBackgroundDataUsageRestricted() const
 {
     Windows::Foundation::IReference<bool> value;
-    check_hresult(shim()->get_IsBackgroundDataUsageRestricted(put(value)));
+    check_hresult(static_cast<const IConnectionProfileFilter2 &>(static_cast<const D &>(*this))->get_IsBackgroundDataUsageRestricted(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IConnectionProfileFilter2<D>::RawData() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(shim()->get_RawData(put(value)));
+    check_hresult(static_cast<const IConnectionProfileFilter2 &>(static_cast<const D &>(*this))->get_RawData(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::Connectivity::ConnectionProfile>> impl_INetworkInformationStatics2<D>::FindConnectionProfilesAsync(const Windows::Networking::Connectivity::ConnectionProfileFilter & pProfileFilter) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::Connectivity::ConnectionProfile>> value;
-    check_hresult(shim()->abi_FindConnectionProfilesAsync(get(pProfileFilter), put(value)));
+    check_hresult(static_cast<const INetworkInformationStatics2 &>(static_cast<const D &>(*this))->abi_FindConnectionProfilesAsync(get(pProfileFilter), put(value)));
     return value;
 }
 
 template <typename D> GUID impl_INetworkItem<D>::NetworkId() const
 {
     GUID value {};
-    check_hresult(shim()->get_NetworkId(&value));
+    check_hresult(static_cast<const INetworkItem &>(static_cast<const D &>(*this))->get_NetworkId(&value));
     return value;
 }
 
 template <typename D> Windows::Networking::Connectivity::NetworkTypes impl_INetworkItem<D>::GetNetworkTypes() const
 {
     Windows::Networking::Connectivity::NetworkTypes value {};
-    check_hresult(shim()->abi_GetNetworkTypes(&value));
+    check_hresult(static_cast<const INetworkItem &>(static_cast<const D &>(*this))->abi_GetNetworkTypes(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_INetworkAdapter<D>::OutboundMaxBitsPerSecond() const
 {
     uint64_t value {};
-    check_hresult(shim()->get_OutboundMaxBitsPerSecond(&value));
+    check_hresult(static_cast<const INetworkAdapter &>(static_cast<const D &>(*this))->get_OutboundMaxBitsPerSecond(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_INetworkAdapter<D>::InboundMaxBitsPerSecond() const
 {
     uint64_t value {};
-    check_hresult(shim()->get_InboundMaxBitsPerSecond(&value));
+    check_hresult(static_cast<const INetworkAdapter &>(static_cast<const D &>(*this))->get_InboundMaxBitsPerSecond(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_INetworkAdapter<D>::IanaInterfaceType() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_IanaInterfaceType(&value));
+    check_hresult(static_cast<const INetworkAdapter &>(static_cast<const D &>(*this))->get_IanaInterfaceType(&value));
     return value;
 }
 
 template <typename D> Windows::Networking::Connectivity::NetworkItem impl_INetworkAdapter<D>::NetworkItem() const
 {
     Windows::Networking::Connectivity::NetworkItem value { nullptr };
-    check_hresult(shim()->get_NetworkItem(put(value)));
+    check_hresult(static_cast<const INetworkAdapter &>(static_cast<const D &>(*this))->get_NetworkItem(put(value)));
     return value;
 }
 
 template <typename D> GUID impl_INetworkAdapter<D>::NetworkAdapterId() const
 {
     GUID value {};
-    check_hresult(shim()->get_NetworkAdapterId(&value));
+    check_hresult(static_cast<const INetworkAdapter &>(static_cast<const D &>(*this))->get_NetworkAdapterId(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::Connectivity::ConnectionProfile> impl_INetworkAdapter<D>::GetConnectedProfileAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::Connectivity::ConnectionProfile> value;
-    check_hresult(shim()->abi_GetConnectedProfileAsync(put(value)));
+    check_hresult(static_cast<const INetworkAdapter &>(static_cast<const D &>(*this))->abi_GetConnectedProfileAsync(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Connectivity::NetworkAdapter impl_IIPInformation<D>::NetworkAdapter() const
 {
     Windows::Networking::Connectivity::NetworkAdapter value { nullptr };
-    check_hresult(shim()->get_NetworkAdapter(put(value)));
+    check_hresult(static_cast<const IIPInformation &>(static_cast<const D &>(*this))->get_NetworkAdapter(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<uint8_t> impl_IIPInformation<D>::PrefixLength() const
 {
     Windows::Foundation::IReference<uint8_t> value;
-    check_hresult(shim()->get_PrefixLength(put(value)));
+    check_hresult(static_cast<const IIPInformation &>(static_cast<const D &>(*this))->get_PrefixLength(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Foundation::Uri> impl_IProxyConfiguration<D>::ProxyUris() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Foundation::Uri> value;
-    check_hresult(shim()->get_ProxyUris(put(value)));
+    check_hresult(static_cast<const IProxyConfiguration &>(static_cast<const D &>(*this))->get_ProxyUris(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IProxyConfiguration<D>::CanConnectDirectly() const
 {
     bool value {};
-    check_hresult(shim()->get_CanConnectDirectly(&value));
+    check_hresult(static_cast<const IProxyConfiguration &>(static_cast<const D &>(*this))->get_CanConnectDirectly(&value));
     return value;
 }
 
 template <typename D> Windows::Networking::Connectivity::ConnectionProfile impl_IConnectionSession<D>::ConnectionProfile() const
 {
     Windows::Networking::Connectivity::ConnectionProfile value { nullptr };
-    check_hresult(shim()->get_ConnectionProfile(put(value)));
+    check_hresult(static_cast<const IConnectionSession &>(static_cast<const D &>(*this))->get_ConnectionProfile(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Connectivity::ConnectionProfile impl_IRoutePolicy<D>::ConnectionProfile() const
 {
     Windows::Networking::Connectivity::ConnectionProfile value { nullptr };
-    check_hresult(shim()->get_ConnectionProfile(put(value)));
+    check_hresult(static_cast<const IRoutePolicy &>(static_cast<const D &>(*this))->get_ConnectionProfile(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::HostName impl_IRoutePolicy<D>::HostName() const
 {
     Windows::Networking::HostName value { nullptr };
-    check_hresult(shim()->get_HostName(put(value)));
+    check_hresult(static_cast<const IRoutePolicy &>(static_cast<const D &>(*this))->get_HostName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::DomainNameType impl_IRoutePolicy<D>::HostNameType() const
 {
     Windows::Networking::DomainNameType value {};
-    check_hresult(shim()->get_HostNameType(&value));
+    check_hresult(static_cast<const IRoutePolicy &>(static_cast<const D &>(*this))->get_HostNameType(&value));
     return value;
 }
 
 template <typename D> Windows::Networking::Connectivity::RoutePolicy impl_IRoutePolicyFactory<D>::CreateRoutePolicy(const Windows::Networking::Connectivity::ConnectionProfile & connectionProfile, const Windows::Networking::HostName & hostName, Windows::Networking::DomainNameType type) const
 {
     Windows::Networking::Connectivity::RoutePolicy routePolicy { nullptr };
-    check_hresult(shim()->abi_CreateRoutePolicy(get(connectionProfile), get(hostName), type, put(routePolicy)));
+    check_hresult(static_cast<const IRoutePolicyFactory &>(static_cast<const D &>(*this))->abi_CreateRoutePolicy(get(connectionProfile), get(hostName), type, put(routePolicy)));
     return routePolicy;
 }
 
 template <typename D> hstring impl_ICellularApnContext<D>::ProviderId() const
 {
     hstring value;
-    check_hresult(shim()->get_ProviderId(put(value)));
+    check_hresult(static_cast<const ICellularApnContext &>(static_cast<const D &>(*this))->get_ProviderId(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICellularApnContext<D>::ProviderId(hstring_ref value) const
 {
-    check_hresult(shim()->put_ProviderId(get(value)));
+    check_hresult(static_cast<const ICellularApnContext &>(static_cast<const D &>(*this))->put_ProviderId(get(value)));
 }
 
 template <typename D> hstring impl_ICellularApnContext<D>::AccessPointName() const
 {
     hstring value;
-    check_hresult(shim()->get_AccessPointName(put(value)));
+    check_hresult(static_cast<const ICellularApnContext &>(static_cast<const D &>(*this))->get_AccessPointName(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICellularApnContext<D>::AccessPointName(hstring_ref value) const
 {
-    check_hresult(shim()->put_AccessPointName(get(value)));
+    check_hresult(static_cast<const ICellularApnContext &>(static_cast<const D &>(*this))->put_AccessPointName(get(value)));
 }
 
 template <typename D> hstring impl_ICellularApnContext<D>::UserName() const
 {
     hstring value;
-    check_hresult(shim()->get_UserName(put(value)));
+    check_hresult(static_cast<const ICellularApnContext &>(static_cast<const D &>(*this))->get_UserName(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICellularApnContext<D>::UserName(hstring_ref value) const
 {
-    check_hresult(shim()->put_UserName(get(value)));
+    check_hresult(static_cast<const ICellularApnContext &>(static_cast<const D &>(*this))->put_UserName(get(value)));
 }
 
 template <typename D> hstring impl_ICellularApnContext<D>::Password() const
 {
     hstring value;
-    check_hresult(shim()->get_Password(put(value)));
+    check_hresult(static_cast<const ICellularApnContext &>(static_cast<const D &>(*this))->get_Password(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICellularApnContext<D>::Password(hstring_ref value) const
 {
-    check_hresult(shim()->put_Password(get(value)));
+    check_hresult(static_cast<const ICellularApnContext &>(static_cast<const D &>(*this))->put_Password(get(value)));
 }
 
 template <typename D> bool impl_ICellularApnContext<D>::IsCompressionEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_IsCompressionEnabled(&value));
+    check_hresult(static_cast<const ICellularApnContext &>(static_cast<const D &>(*this))->get_IsCompressionEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_ICellularApnContext<D>::IsCompressionEnabled(bool value) const
 {
-    check_hresult(shim()->put_IsCompressionEnabled(value));
+    check_hresult(static_cast<const ICellularApnContext &>(static_cast<const D &>(*this))->put_IsCompressionEnabled(value));
 }
 
 template <typename D> Windows::Networking::Connectivity::CellularApnAuthenticationType impl_ICellularApnContext<D>::AuthenticationType() const
 {
     Windows::Networking::Connectivity::CellularApnAuthenticationType value {};
-    check_hresult(shim()->get_AuthenticationType(&value));
+    check_hresult(static_cast<const ICellularApnContext &>(static_cast<const D &>(*this))->get_AuthenticationType(&value));
     return value;
 }
 
 template <typename D> void impl_ICellularApnContext<D>::AuthenticationType(Windows::Networking::Connectivity::CellularApnAuthenticationType value) const
 {
-    check_hresult(shim()->put_AuthenticationType(value));
+    check_hresult(static_cast<const ICellularApnContext &>(static_cast<const D &>(*this))->put_AuthenticationType(value));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::Connectivity::ConnectionSession> impl_IConnectivityManagerStatics<D>::AcquireConnectionAsync(const Windows::Networking::Connectivity::CellularApnContext & cellularApnContext) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::Connectivity::ConnectionSession> operation;
-    check_hresult(shim()->abi_AcquireConnectionAsync(get(cellularApnContext), put(operation)));
+    check_hresult(static_cast<const IConnectivityManagerStatics &>(static_cast<const D &>(*this))->abi_AcquireConnectionAsync(get(cellularApnContext), put(operation)));
     return operation;
 }
 
 template <typename D> void impl_IConnectivityManagerStatics<D>::AddHttpRoutePolicy(const Windows::Networking::Connectivity::RoutePolicy & routePolicy) const
 {
-    check_hresult(shim()->abi_AddHttpRoutePolicy(get(routePolicy)));
+    check_hresult(static_cast<const IConnectivityManagerStatics &>(static_cast<const D &>(*this))->abi_AddHttpRoutePolicy(get(routePolicy)));
 }
 
 template <typename D> void impl_IConnectivityManagerStatics<D>::RemoveHttpRoutePolicy(const Windows::Networking::Connectivity::RoutePolicy & routePolicy) const
 {
-    check_hresult(shim()->abi_RemoveHttpRoutePolicy(get(routePolicy)));
+    check_hresult(static_cast<const IConnectivityManagerStatics &>(static_cast<const D &>(*this))->abi_RemoveHttpRoutePolicy(get(routePolicy)));
 }
 
 template <typename D> bool impl_INetworkStateChangeEventDetails<D>::HasNewInternetConnectionProfile() const
 {
     bool value {};
-    check_hresult(shim()->get_HasNewInternetConnectionProfile(&value));
+    check_hresult(static_cast<const INetworkStateChangeEventDetails &>(static_cast<const D &>(*this))->get_HasNewInternetConnectionProfile(&value));
     return value;
 }
 
 template <typename D> bool impl_INetworkStateChangeEventDetails<D>::HasNewConnectionCost() const
 {
     bool value {};
-    check_hresult(shim()->get_HasNewConnectionCost(&value));
+    check_hresult(static_cast<const INetworkStateChangeEventDetails &>(static_cast<const D &>(*this))->get_HasNewConnectionCost(&value));
     return value;
 }
 
 template <typename D> bool impl_INetworkStateChangeEventDetails<D>::HasNewNetworkConnectivityLevel() const
 {
     bool value {};
-    check_hresult(shim()->get_HasNewNetworkConnectivityLevel(&value));
+    check_hresult(static_cast<const INetworkStateChangeEventDetails &>(static_cast<const D &>(*this))->get_HasNewNetworkConnectivityLevel(&value));
     return value;
 }
 
 template <typename D> bool impl_INetworkStateChangeEventDetails<D>::HasNewDomainConnectivityLevel() const
 {
     bool value {};
-    check_hresult(shim()->get_HasNewDomainConnectivityLevel(&value));
+    check_hresult(static_cast<const INetworkStateChangeEventDetails &>(static_cast<const D &>(*this))->get_HasNewDomainConnectivityLevel(&value));
     return value;
 }
 
 template <typename D> bool impl_INetworkStateChangeEventDetails<D>::HasNewHostNameList() const
 {
     bool value {};
-    check_hresult(shim()->get_HasNewHostNameList(&value));
+    check_hresult(static_cast<const INetworkStateChangeEventDetails &>(static_cast<const D &>(*this))->get_HasNewHostNameList(&value));
     return value;
 }
 
 template <typename D> bool impl_INetworkStateChangeEventDetails<D>::HasNewWwanRegistrationState() const
 {
     bool value {};
-    check_hresult(shim()->get_HasNewWwanRegistrationState(&value));
+    check_hresult(static_cast<const INetworkStateChangeEventDetails &>(static_cast<const D &>(*this))->get_HasNewWwanRegistrationState(&value));
     return value;
 }
 
 template <typename D> bool impl_INetworkStateChangeEventDetails2<D>::HasNewTetheringOperationalState() const
 {
     bool value {};
-    check_hresult(shim()->get_HasNewTetheringOperationalState(&value));
+    check_hresult(static_cast<const INetworkStateChangeEventDetails2 &>(static_cast<const D &>(*this))->get_HasNewTetheringOperationalState(&value));
     return value;
 }
 
 template <typename D> bool impl_INetworkStateChangeEventDetails2<D>::HasNewTetheringClientCount() const
 {
     bool value {};
-    check_hresult(shim()->get_HasNewTetheringClientCount(&value));
+    check_hresult(static_cast<const INetworkStateChangeEventDetails2 &>(static_cast<const D &>(*this))->get_HasNewTetheringClientCount(&value));
     return value;
 }
 
 template <typename D> hstring impl_IWwanConnectionProfileDetails<D>::HomeProviderId() const
 {
     hstring value;
-    check_hresult(shim()->get_HomeProviderId(put(value)));
+    check_hresult(static_cast<const IWwanConnectionProfileDetails &>(static_cast<const D &>(*this))->get_HomeProviderId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IWwanConnectionProfileDetails<D>::AccessPointName() const
 {
     hstring value;
-    check_hresult(shim()->get_AccessPointName(put(value)));
+    check_hresult(static_cast<const IWwanConnectionProfileDetails &>(static_cast<const D &>(*this))->get_AccessPointName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Connectivity::WwanNetworkRegistrationState impl_IWwanConnectionProfileDetails<D>::GetNetworkRegistrationState() const
 {
     Windows::Networking::Connectivity::WwanNetworkRegistrationState value {};
-    check_hresult(shim()->abi_GetNetworkRegistrationState(&value));
+    check_hresult(static_cast<const IWwanConnectionProfileDetails &>(static_cast<const D &>(*this))->abi_GetNetworkRegistrationState(&value));
     return value;
 }
 
 template <typename D> Windows::Networking::Connectivity::WwanDataClass impl_IWwanConnectionProfileDetails<D>::GetCurrentDataClass() const
 {
     Windows::Networking::Connectivity::WwanDataClass value {};
-    check_hresult(shim()->abi_GetCurrentDataClass(&value));
+    check_hresult(static_cast<const IWwanConnectionProfileDetails &>(static_cast<const D &>(*this))->abi_GetCurrentDataClass(&value));
     return value;
 }
 

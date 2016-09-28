@@ -833,324 +833,324 @@ namespace Windows::Devices::Perception::Provider {
 template <typename D> hstring impl_IKnownPerceptionFrameKindStatics<D>::Color() const
 {
     hstring value;
-    check_hresult(shim()->get_Color(put(value)));
+    check_hresult(static_cast<const IKnownPerceptionFrameKindStatics &>(static_cast<const D &>(*this))->get_Color(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionFrameKindStatics<D>::Depth() const
 {
     hstring value;
-    check_hresult(shim()->get_Depth(put(value)));
+    check_hresult(static_cast<const IKnownPerceptionFrameKindStatics &>(static_cast<const D &>(*this))->get_Depth(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownPerceptionFrameKindStatics<D>::Infrared() const
 {
     hstring value;
-    check_hresult(shim()->get_Infrared(put(value)));
+    check_hresult(static_cast<const IKnownPerceptionFrameKindStatics &>(static_cast<const D &>(*this))->get_Infrared(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPerceptionFrameProviderManagerServiceStatics<D>::RegisterFrameProviderInfo(const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager & manager, const Windows::Devices::Perception::Provider::PerceptionFrameProviderInfo & frameProviderInfo) const
 {
-    check_hresult(shim()->abi_RegisterFrameProviderInfo(get(manager), get(frameProviderInfo)));
+    check_hresult(static_cast<const IPerceptionFrameProviderManagerServiceStatics &>(static_cast<const D &>(*this))->abi_RegisterFrameProviderInfo(get(manager), get(frameProviderInfo)));
 }
 
 template <typename D> void impl_IPerceptionFrameProviderManagerServiceStatics<D>::UnregisterFrameProviderInfo(const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager & manager, const Windows::Devices::Perception::Provider::PerceptionFrameProviderInfo & frameProviderInfo) const
 {
-    check_hresult(shim()->abi_UnregisterFrameProviderInfo(get(manager), get(frameProviderInfo)));
+    check_hresult(static_cast<const IPerceptionFrameProviderManagerServiceStatics &>(static_cast<const D &>(*this))->abi_UnregisterFrameProviderInfo(get(manager), get(frameProviderInfo)));
 }
 
 template <typename D> void impl_IPerceptionFrameProviderManagerServiceStatics<D>::RegisterFaceAuthenticationGroup(const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager & manager, const Windows::Devices::Perception::Provider::PerceptionFaceAuthenticationGroup & faceAuthenticationGroup) const
 {
-    check_hresult(shim()->abi_RegisterFaceAuthenticationGroup(get(manager), get(faceAuthenticationGroup)));
+    check_hresult(static_cast<const IPerceptionFrameProviderManagerServiceStatics &>(static_cast<const D &>(*this))->abi_RegisterFaceAuthenticationGroup(get(manager), get(faceAuthenticationGroup)));
 }
 
 template <typename D> void impl_IPerceptionFrameProviderManagerServiceStatics<D>::UnregisterFaceAuthenticationGroup(const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager & manager, const Windows::Devices::Perception::Provider::PerceptionFaceAuthenticationGroup & faceAuthenticationGroup) const
 {
-    check_hresult(shim()->abi_UnregisterFaceAuthenticationGroup(get(manager), get(faceAuthenticationGroup)));
+    check_hresult(static_cast<const IPerceptionFrameProviderManagerServiceStatics &>(static_cast<const D &>(*this))->abi_UnregisterFaceAuthenticationGroup(get(manager), get(faceAuthenticationGroup)));
 }
 
 template <typename D> void impl_IPerceptionFrameProviderManagerServiceStatics<D>::RegisterControlGroup(const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager & manager, const Windows::Devices::Perception::Provider::PerceptionControlGroup & controlGroup) const
 {
-    check_hresult(shim()->abi_RegisterControlGroup(get(manager), get(controlGroup)));
+    check_hresult(static_cast<const IPerceptionFrameProviderManagerServiceStatics &>(static_cast<const D &>(*this))->abi_RegisterControlGroup(get(manager), get(controlGroup)));
 }
 
 template <typename D> void impl_IPerceptionFrameProviderManagerServiceStatics<D>::UnregisterControlGroup(const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager & manager, const Windows::Devices::Perception::Provider::PerceptionControlGroup & controlGroup) const
 {
-    check_hresult(shim()->abi_UnregisterControlGroup(get(manager), get(controlGroup)));
+    check_hresult(static_cast<const IPerceptionFrameProviderManagerServiceStatics &>(static_cast<const D &>(*this))->abi_UnregisterControlGroup(get(manager), get(controlGroup)));
 }
 
 template <typename D> void impl_IPerceptionFrameProviderManagerServiceStatics<D>::RegisterCorrelationGroup(const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager & manager, const Windows::Devices::Perception::Provider::PerceptionCorrelationGroup & correlationGroup) const
 {
-    check_hresult(shim()->abi_RegisterCorrelationGroup(get(manager), get(correlationGroup)));
+    check_hresult(static_cast<const IPerceptionFrameProviderManagerServiceStatics &>(static_cast<const D &>(*this))->abi_RegisterCorrelationGroup(get(manager), get(correlationGroup)));
 }
 
 template <typename D> void impl_IPerceptionFrameProviderManagerServiceStatics<D>::UnregisterCorrelationGroup(const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager & manager, const Windows::Devices::Perception::Provider::PerceptionCorrelationGroup & correlationGroup) const
 {
-    check_hresult(shim()->abi_UnregisterCorrelationGroup(get(manager), get(correlationGroup)));
+    check_hresult(static_cast<const IPerceptionFrameProviderManagerServiceStatics &>(static_cast<const D &>(*this))->abi_UnregisterCorrelationGroup(get(manager), get(correlationGroup)));
 }
 
 template <typename D> void impl_IPerceptionFrameProviderManagerServiceStatics<D>::UpdateAvailabilityForProvider(const Windows::Devices::Perception::Provider::IPerceptionFrameProvider & provider, bool available) const
 {
-    check_hresult(shim()->abi_UpdateAvailabilityForProvider(get(provider), available));
+    check_hresult(static_cast<const IPerceptionFrameProviderManagerServiceStatics &>(static_cast<const D &>(*this))->abi_UpdateAvailabilityForProvider(get(provider), available));
 }
 
 template <typename D> void impl_IPerceptionFrameProviderManagerServiceStatics<D>::PublishFrameForProvider(const Windows::Devices::Perception::Provider::IPerceptionFrameProvider & provider, const Windows::Devices::Perception::Provider::PerceptionFrame & frame) const
 {
-    check_hresult(shim()->abi_PublishFrameForProvider(get(provider), get(frame)));
+    check_hresult(static_cast<const IPerceptionFrameProviderManagerServiceStatics &>(static_cast<const D &>(*this))->abi_PublishFrameForProvider(get(provider), get(frame)));
 }
 
 template <typename D> hstring impl_IPerceptionFrameProviderInfo<D>::Id() const
 {
     hstring value;
-    check_hresult(shim()->get_Id(put(value)));
+    check_hresult(static_cast<const IPerceptionFrameProviderInfo &>(static_cast<const D &>(*this))->get_Id(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPerceptionFrameProviderInfo<D>::Id(hstring_ref value) const
 {
-    check_hresult(shim()->put_Id(get(value)));
+    check_hresult(static_cast<const IPerceptionFrameProviderInfo &>(static_cast<const D &>(*this))->put_Id(get(value)));
 }
 
 template <typename D> hstring impl_IPerceptionFrameProviderInfo<D>::DisplayName() const
 {
     hstring value;
-    check_hresult(shim()->get_DisplayName(put(value)));
+    check_hresult(static_cast<const IPerceptionFrameProviderInfo &>(static_cast<const D &>(*this))->get_DisplayName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPerceptionFrameProviderInfo<D>::DisplayName(hstring_ref value) const
 {
-    check_hresult(shim()->put_DisplayName(get(value)));
+    check_hresult(static_cast<const IPerceptionFrameProviderInfo &>(static_cast<const D &>(*this))->put_DisplayName(get(value)));
 }
 
 template <typename D> hstring impl_IPerceptionFrameProviderInfo<D>::DeviceKind() const
 {
     hstring value;
-    check_hresult(shim()->get_DeviceKind(put(value)));
+    check_hresult(static_cast<const IPerceptionFrameProviderInfo &>(static_cast<const D &>(*this))->get_DeviceKind(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPerceptionFrameProviderInfo<D>::DeviceKind(hstring_ref value) const
 {
-    check_hresult(shim()->put_DeviceKind(get(value)));
+    check_hresult(static_cast<const IPerceptionFrameProviderInfo &>(static_cast<const D &>(*this))->put_DeviceKind(get(value)));
 }
 
 template <typename D> hstring impl_IPerceptionFrameProviderInfo<D>::FrameKind() const
 {
     hstring value;
-    check_hresult(shim()->get_FrameKind(put(value)));
+    check_hresult(static_cast<const IPerceptionFrameProviderInfo &>(static_cast<const D &>(*this))->get_FrameKind(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPerceptionFrameProviderInfo<D>::FrameKind(hstring_ref value) const
 {
-    check_hresult(shim()->put_FrameKind(get(value)));
+    check_hresult(static_cast<const IPerceptionFrameProviderInfo &>(static_cast<const D &>(*this))->put_FrameKind(get(value)));
 }
 
 template <typename D> bool impl_IPerceptionFrameProviderInfo<D>::Hidden() const
 {
     bool value {};
-    check_hresult(shim()->get_Hidden(&value));
+    check_hresult(static_cast<const IPerceptionFrameProviderInfo &>(static_cast<const D &>(*this))->get_Hidden(&value));
     return value;
 }
 
 template <typename D> void impl_IPerceptionFrameProviderInfo<D>::Hidden(bool value) const
 {
-    check_hresult(shim()->put_Hidden(value));
+    check_hresult(static_cast<const IPerceptionFrameProviderInfo &>(static_cast<const D &>(*this))->put_Hidden(value));
 }
 
 template <typename D> Windows::Devices::Perception::Provider::PerceptionControlGroup impl_IPerceptionControlGroupFactory<D>::Create(const Windows::Foundation::Collections::IIterable<hstring> & ids) const
 {
     Windows::Devices::Perception::Provider::PerceptionControlGroup result { nullptr };
-    check_hresult(shim()->abi_Create(get(ids), put(result)));
+    check_hresult(static_cast<const IPerceptionControlGroupFactory &>(static_cast<const D &>(*this))->abi_Create(get(ids), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_IPerceptionControlGroup<D>::FrameProviderIds() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(shim()->get_FrameProviderIds(put(value)));
+    check_hresult(static_cast<const IPerceptionControlGroup &>(static_cast<const D &>(*this))->get_FrameProviderIds(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Perception::Provider::PerceptionFaceAuthenticationGroup impl_IPerceptionFaceAuthenticationGroupFactory<D>::Create(const Windows::Foundation::Collections::IIterable<hstring> & ids, const Windows::Devices::Perception::Provider::PerceptionStartFaceAuthenticationHandler & startHandler, const Windows::Devices::Perception::Provider::PerceptionStopFaceAuthenticationHandler & stopHandler) const
 {
     Windows::Devices::Perception::Provider::PerceptionFaceAuthenticationGroup result { nullptr };
-    check_hresult(shim()->abi_Create(get(ids), get(startHandler), get(stopHandler), put(result)));
+    check_hresult(static_cast<const IPerceptionFaceAuthenticationGroupFactory &>(static_cast<const D &>(*this))->abi_Create(get(ids), get(startHandler), get(stopHandler), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_IPerceptionFaceAuthenticationGroup<D>::FrameProviderIds() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(shim()->get_FrameProviderIds(put(value)));
+    check_hresult(static_cast<const IPerceptionFaceAuthenticationGroup &>(static_cast<const D &>(*this))->get_FrameProviderIds(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Perception::Provider::PerceptionCorrelation impl_IPerceptionCorrelationFactory<D>::Create(hstring_ref targetId, const Windows::Foundation::Numerics::float3 & position, const Windows::Foundation::Numerics::quaternion & orientation) const
 {
     Windows::Devices::Perception::Provider::PerceptionCorrelation result { nullptr };
-    check_hresult(shim()->abi_Create(get(targetId), get(position), get(orientation), put(result)));
+    check_hresult(static_cast<const IPerceptionCorrelationFactory &>(static_cast<const D &>(*this))->abi_Create(get(targetId), get(position), get(orientation), put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IPerceptionCorrelation<D>::TargetId() const
 {
     hstring value;
-    check_hresult(shim()->get_TargetId(put(value)));
+    check_hresult(static_cast<const IPerceptionCorrelation &>(static_cast<const D &>(*this))->get_TargetId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Numerics::float3 impl_IPerceptionCorrelation<D>::Position() const
 {
     Windows::Foundation::Numerics::float3 value {};
-    check_hresult(shim()->get_Position(put(value)));
+    check_hresult(static_cast<const IPerceptionCorrelation &>(static_cast<const D &>(*this))->get_Position(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Numerics::quaternion impl_IPerceptionCorrelation<D>::Orientation() const
 {
     Windows::Foundation::Numerics::quaternion value {};
-    check_hresult(shim()->get_Orientation(put(value)));
+    check_hresult(static_cast<const IPerceptionCorrelation &>(static_cast<const D &>(*this))->get_Orientation(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Perception::Provider::PerceptionCorrelationGroup impl_IPerceptionCorrelationGroupFactory<D>::Create(const Windows::Foundation::Collections::IIterable<Windows::Devices::Perception::Provider::PerceptionCorrelation> & relativeLocations) const
 {
     Windows::Devices::Perception::Provider::PerceptionCorrelationGroup result { nullptr };
-    check_hresult(shim()->abi_Create(get(relativeLocations), put(result)));
+    check_hresult(static_cast<const IPerceptionCorrelationGroupFactory &>(static_cast<const D &>(*this))->abi_Create(get(relativeLocations), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::Provider::PerceptionCorrelation> impl_IPerceptionCorrelationGroup<D>::RelativeLocations() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::Provider::PerceptionCorrelation> value;
-    check_hresult(shim()->get_RelativeLocations(put(value)));
+    check_hresult(static_cast<const IPerceptionCorrelationGroup &>(static_cast<const D &>(*this))->get_RelativeLocations(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IPerceptionFrame<D>::RelativeTime() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_RelativeTime(put(value)));
+    check_hresult(static_cast<const IPerceptionFrame &>(static_cast<const D &>(*this))->get_RelativeTime(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPerceptionFrame<D>::RelativeTime(const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(shim()->put_RelativeTime(get(value)));
+    check_hresult(static_cast<const IPerceptionFrame &>(static_cast<const D &>(*this))->put_RelativeTime(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::ValueSet impl_IPerceptionFrame<D>::Properties() const
 {
     Windows::Foundation::Collections::ValueSet value { nullptr };
-    check_hresult(shim()->get_Properties(put(value)));
+    check_hresult(static_cast<const IPerceptionFrame &>(static_cast<const D &>(*this))->get_Properties(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IMemoryBuffer impl_IPerceptionFrame<D>::FrameData() const
 {
     Windows::Foundation::IMemoryBuffer value;
-    check_hresult(shim()->get_FrameData(put(value)));
+    check_hresult(static_cast<const IPerceptionFrame &>(static_cast<const D &>(*this))->get_FrameData(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Perception::Provider::PerceptionVideoFrameAllocator impl_IPerceptionVideoFrameAllocatorFactory<D>::Create(uint32_t maxOutstandingFrameCountForWrite, Windows::Graphics::Imaging::BitmapPixelFormat format, const Windows::Foundation::Size & resolution, Windows::Graphics::Imaging::BitmapAlphaMode alpha) const
 {
     Windows::Devices::Perception::Provider::PerceptionVideoFrameAllocator result { nullptr };
-    check_hresult(shim()->abi_Create(maxOutstandingFrameCountForWrite, format, get(resolution), alpha, put(result)));
+    check_hresult(static_cast<const IPerceptionVideoFrameAllocatorFactory &>(static_cast<const D &>(*this))->abi_Create(maxOutstandingFrameCountForWrite, format, get(resolution), alpha, put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IPerceptionPropertyChangeRequest<D>::Name() const
 {
     hstring value;
-    check_hresult(shim()->get_Name(put(value)));
+    check_hresult(static_cast<const IPerceptionPropertyChangeRequest &>(static_cast<const D &>(*this))->get_Name(put(value)));
     return value;
 }
 
 template <typename D> Windows::IInspectable impl_IPerceptionPropertyChangeRequest<D>::Value() const
 {
     Windows::IInspectable value;
-    check_hresult(shim()->get_Value(put(value)));
+    check_hresult(static_cast<const IPerceptionPropertyChangeRequest &>(static_cast<const D &>(*this))->get_Value(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeStatus impl_IPerceptionPropertyChangeRequest<D>::Status() const
 {
     Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeStatus value {};
-    check_hresult(shim()->get_Status(&value));
+    check_hresult(static_cast<const IPerceptionPropertyChangeRequest &>(static_cast<const D &>(*this))->get_Status(&value));
     return value;
 }
 
 template <typename D> void impl_IPerceptionPropertyChangeRequest<D>::Status(Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeStatus value) const
 {
-    check_hresult(shim()->put_Status(value));
+    check_hresult(static_cast<const IPerceptionPropertyChangeRequest &>(static_cast<const D &>(*this))->put_Status(value));
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IPerceptionPropertyChangeRequest<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral result { nullptr };
-    check_hresult(shim()->abi_GetDeferral(put(result)));
+    check_hresult(static_cast<const IPerceptionPropertyChangeRequest &>(static_cast<const D &>(*this))->abi_GetDeferral(put(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::Perception::Provider::IPerceptionFrameProvider impl_IPerceptionFrameProviderManager<D>::GetFrameProvider(const Windows::Devices::Perception::Provider::PerceptionFrameProviderInfo & frameProviderInfo) const
 {
     Windows::Devices::Perception::Provider::IPerceptionFrameProvider result;
-    check_hresult(shim()->abi_GetFrameProvider(get(frameProviderInfo), put(result)));
+    check_hresult(static_cast<const IPerceptionFrameProviderManager &>(static_cast<const D &>(*this))->abi_GetFrameProvider(get(frameProviderInfo), put(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::Perception::Provider::PerceptionFrameProviderInfo impl_IPerceptionFrameProvider<D>::FrameProviderInfo() const
 {
     Windows::Devices::Perception::Provider::PerceptionFrameProviderInfo result { nullptr };
-    check_hresult(shim()->get_FrameProviderInfo(put(result)));
+    check_hresult(static_cast<const IPerceptionFrameProvider &>(static_cast<const D &>(*this))->get_FrameProviderInfo(put(result)));
     return result;
 }
 
 template <typename D> bool impl_IPerceptionFrameProvider<D>::Available() const
 {
     bool value {};
-    check_hresult(shim()->get_Available(&value));
+    check_hresult(static_cast<const IPerceptionFrameProvider &>(static_cast<const D &>(*this))->get_Available(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IPropertySet impl_IPerceptionFrameProvider<D>::Properties() const
 {
     Windows::Foundation::Collections::IPropertySet value;
-    check_hresult(shim()->get_Properties(put(value)));
+    check_hresult(static_cast<const IPerceptionFrameProvider &>(static_cast<const D &>(*this))->get_Properties(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPerceptionFrameProvider<D>::Start() const
 {
-    check_hresult(shim()->abi_Start());
+    check_hresult(static_cast<const IPerceptionFrameProvider &>(static_cast<const D &>(*this))->abi_Start());
 }
 
 template <typename D> void impl_IPerceptionFrameProvider<D>::Stop() const
 {
-    check_hresult(shim()->abi_Stop());
+    check_hresult(static_cast<const IPerceptionFrameProvider &>(static_cast<const D &>(*this))->abi_Stop());
 }
 
 template <typename D> void impl_IPerceptionFrameProvider<D>::SetProperty(const Windows::Devices::Perception::Provider::PerceptionPropertyChangeRequest & value) const
 {
-    check_hresult(shim()->abi_SetProperty(get(value)));
+    check_hresult(static_cast<const IPerceptionFrameProvider &>(static_cast<const D &>(*this))->abi_SetProperty(get(value)));
 }
 
 template <typename D> Windows::Devices::Perception::Provider::PerceptionFrame impl_IPerceptionVideoFrameAllocator<D>::AllocateFrame() const
 {
     Windows::Devices::Perception::Provider::PerceptionFrame value { nullptr };
-    check_hresult(shim()->abi_AllocateFrame(put(value)));
+    check_hresult(static_cast<const IPerceptionVideoFrameAllocator &>(static_cast<const D &>(*this))->abi_AllocateFrame(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Perception::Provider::PerceptionFrame impl_IPerceptionVideoFrameAllocator<D>::CopyFromVideoFrame(const Windows::Media::VideoFrame & frame) const
 {
     Windows::Devices::Perception::Provider::PerceptionFrame value { nullptr };
-    check_hresult(shim()->abi_CopyFromVideoFrame(get(frame), put(value)));
+    check_hresult(static_cast<const IPerceptionVideoFrameAllocator &>(static_cast<const D &>(*this))->abi_CopyFromVideoFrame(get(frame), put(value)));
     return value;
 }
 

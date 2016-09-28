@@ -70,12 +70,8 @@ template <> struct __declspec(uuid("b2afd154-8db0-5bb2-ad7a-684afd479264")) __de
 namespace Windows::Graphics::Holographic {
 
 template <typename D>
-class WINRT_EBO impl_IHolographicCamera
+struct WINRT_EBO impl_IHolographicCamera
 {
-    auto shim() const { return impl::shim<D, IHolographicCamera>(this); }
-
-public:
-
     Windows::Foundation::Size RenderTargetSize() const;
     double ViewportScaleFactor() const;
     void ViewportScaleFactor(double value) const;
@@ -86,12 +82,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHolographicCameraPose
+struct WINRT_EBO impl_IHolographicCameraPose
 {
-    auto shim() const { return impl::shim<D, IHolographicCameraPose>(this); }
-
-public:
-
     Windows::Graphics::Holographic::HolographicCamera HolographicCamera() const;
     Windows::Foundation::Rect Viewport() const;
     Windows::Foundation::IReference<Windows::Graphics::Holographic::HolographicStereoTransform> TryGetViewTransform(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const;
@@ -103,12 +95,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHolographicCameraRenderingParameters
+struct WINRT_EBO impl_IHolographicCameraRenderingParameters
 {
-    auto shim() const { return impl::shim<D, IHolographicCameraRenderingParameters>(this); }
-
-public:
-
     void SetFocusPoint(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem, const Windows::Foundation::Numerics::float3 & position) const;
     void SetFocusPoint(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem, const Windows::Foundation::Numerics::float3 & position, const Windows::Foundation::Numerics::float3 & normal) const;
     void SetFocusPoint(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem, const Windows::Foundation::Numerics::float3 & position, const Windows::Foundation::Numerics::float3 & normal, const Windows::Foundation::Numerics::float3 & linearVelocity) const;
@@ -117,12 +105,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHolographicFrame
+struct WINRT_EBO impl_IHolographicFrame
 {
-    auto shim() const { return impl::shim<D, IHolographicFrame>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Graphics::Holographic::HolographicCamera> AddedCameras() const;
     Windows::Foundation::Collections::IVectorView<Windows::Graphics::Holographic::HolographicCamera> RemovedCameras() const;
     Windows::Graphics::Holographic::HolographicCameraRenderingParameters GetRenderingParameters(const Windows::Graphics::Holographic::HolographicCameraPose & cameraPose) const;
@@ -135,23 +119,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHolographicFramePrediction
+struct WINRT_EBO impl_IHolographicFramePrediction
 {
-    auto shim() const { return impl::shim<D, IHolographicFramePrediction>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Graphics::Holographic::HolographicCameraPose> CameraPoses() const;
     Windows::Perception::PerceptionTimestamp Timestamp() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHolographicSpace
+struct WINRT_EBO impl_IHolographicSpace
 {
-    auto shim() const { return impl::shim<D, IHolographicSpace>(this); }
-
-public:
-
     Windows::Graphics::Holographic::HolographicAdapterId PrimaryAdapterId() const;
     void SetDirect3D11Device(const Windows::Graphics::DirectX::Direct3D11::IDirect3DDevice & value) const;
     event_token CameraAdded(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Holographic::HolographicSpace, Windows::Graphics::Holographic::HolographicSpaceCameraAddedEventArgs> & handler) const;
@@ -166,33 +142,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHolographicSpaceCameraAddedEventArgs
+struct WINRT_EBO impl_IHolographicSpaceCameraAddedEventArgs
 {
-    auto shim() const { return impl::shim<D, IHolographicSpaceCameraAddedEventArgs>(this); }
-
-public:
-
     Windows::Graphics::Holographic::HolographicCamera Camera() const;
     Windows::Foundation::Deferral GetDeferral() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHolographicSpaceCameraRemovedEventArgs
+struct WINRT_EBO impl_IHolographicSpaceCameraRemovedEventArgs
 {
-    auto shim() const { return impl::shim<D, IHolographicSpaceCameraRemovedEventArgs>(this); }
-
-public:
-
     Windows::Graphics::Holographic::HolographicCamera Camera() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHolographicSpaceStatics
+struct WINRT_EBO impl_IHolographicSpaceStatics
 {
-    auto shim() const { return impl::shim<D, IHolographicSpaceStatics>(this); }
-
-public:
-
     Windows::Graphics::Holographic::HolographicSpace CreateForCoreWindow(const Windows::UI::Core::CoreWindow & window) const;
 };
 

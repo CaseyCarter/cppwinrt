@@ -511,73 +511,73 @@ namespace Windows::Storage::Pickers::Provider {
 template <typename D> hstring impl_IFileRemovedEventArgs<D>::Id() const
 {
     hstring value;
-    check_hresult(shim()->get_Id(put(value)));
+    check_hresult(static_cast<const IFileRemovedEventArgs &>(static_cast<const D &>(*this))->get_Id(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Pickers::Provider::AddFileResult impl_IFileOpenPickerUI<D>::AddFile(hstring_ref id, const Windows::Storage::IStorageFile & file) const
 {
     Windows::Storage::Pickers::Provider::AddFileResult addResult {};
-    check_hresult(shim()->abi_AddFile(get(id), get(file), &addResult));
+    check_hresult(static_cast<const IFileOpenPickerUI &>(static_cast<const D &>(*this))->abi_AddFile(get(id), get(file), &addResult));
     return addResult;
 }
 
 template <typename D> void impl_IFileOpenPickerUI<D>::RemoveFile(hstring_ref id) const
 {
-    check_hresult(shim()->abi_RemoveFile(get(id)));
+    check_hresult(static_cast<const IFileOpenPickerUI &>(static_cast<const D &>(*this))->abi_RemoveFile(get(id)));
 }
 
 template <typename D> bool impl_IFileOpenPickerUI<D>::ContainsFile(hstring_ref id) const
 {
     bool isContained {};
-    check_hresult(shim()->abi_ContainsFile(get(id), &isContained));
+    check_hresult(static_cast<const IFileOpenPickerUI &>(static_cast<const D &>(*this))->abi_ContainsFile(get(id), &isContained));
     return isContained;
 }
 
 template <typename D> bool impl_IFileOpenPickerUI<D>::CanAddFile(const Windows::Storage::IStorageFile & file) const
 {
     bool canAdd {};
-    check_hresult(shim()->abi_CanAddFile(get(file), &canAdd));
+    check_hresult(static_cast<const IFileOpenPickerUI &>(static_cast<const D &>(*this))->abi_CanAddFile(get(file), &canAdd));
     return canAdd;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_IFileOpenPickerUI<D>::AllowedFileTypes() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(shim()->get_AllowedFileTypes(put(value)));
+    check_hresult(static_cast<const IFileOpenPickerUI &>(static_cast<const D &>(*this))->get_AllowedFileTypes(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Pickers::Provider::FileSelectionMode impl_IFileOpenPickerUI<D>::SelectionMode() const
 {
     Windows::Storage::Pickers::Provider::FileSelectionMode value {};
-    check_hresult(shim()->get_SelectionMode(&value));
+    check_hresult(static_cast<const IFileOpenPickerUI &>(static_cast<const D &>(*this))->get_SelectionMode(&value));
     return value;
 }
 
 template <typename D> hstring impl_IFileOpenPickerUI<D>::SettingsIdentifier() const
 {
     hstring value;
-    check_hresult(shim()->get_SettingsIdentifier(put(value)));
+    check_hresult(static_cast<const IFileOpenPickerUI &>(static_cast<const D &>(*this))->get_SettingsIdentifier(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IFileOpenPickerUI<D>::Title() const
 {
     hstring value;
-    check_hresult(shim()->get_Title(put(value)));
+    check_hresult(static_cast<const IFileOpenPickerUI &>(static_cast<const D &>(*this))->get_Title(put(value)));
     return value;
 }
 
 template <typename D> void impl_IFileOpenPickerUI<D>::Title(hstring_ref value) const
 {
-    check_hresult(shim()->put_Title(get(value)));
+    check_hresult(static_cast<const IFileOpenPickerUI &>(static_cast<const D &>(*this))->put_Title(get(value)));
 }
 
 template <typename D> event_token impl_IFileOpenPickerUI<D>::FileRemoved(const Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileOpenPickerUI, Windows::Storage::Pickers::Provider::FileRemovedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_FileRemoved(get(handler), &token));
+    check_hresult(static_cast<const IFileOpenPickerUI &>(static_cast<const D &>(*this))->add_FileRemoved(get(handler), &token));
     return token;
 }
 
@@ -588,13 +588,13 @@ template <typename D> event_revoker<IFileOpenPickerUI> impl_IFileOpenPickerUI<D>
 
 template <typename D> void impl_IFileOpenPickerUI<D>::FileRemoved(event_token token) const
 {
-    check_hresult(shim()->remove_FileRemoved(token));
+    check_hresult(static_cast<const IFileOpenPickerUI &>(static_cast<const D &>(*this))->remove_FileRemoved(token));
 }
 
 template <typename D> event_token impl_IFileOpenPickerUI<D>::Closing(const Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileOpenPickerUI, Windows::Storage::Pickers::Provider::PickerClosingEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_Closing(get(handler), &token));
+    check_hresult(static_cast<const IFileOpenPickerUI &>(static_cast<const D &>(*this))->add_Closing(get(handler), &token));
     return token;
 }
 
@@ -605,86 +605,86 @@ template <typename D> event_revoker<IFileOpenPickerUI> impl_IFileOpenPickerUI<D>
 
 template <typename D> void impl_IFileOpenPickerUI<D>::Closing(event_token token) const
 {
-    check_hresult(shim()->remove_Closing(token));
+    check_hresult(static_cast<const IFileOpenPickerUI &>(static_cast<const D &>(*this))->remove_Closing(token));
 }
 
 template <typename D> Windows::Storage::Pickers::Provider::PickerClosingOperation impl_IPickerClosingEventArgs<D>::ClosingOperation() const
 {
     Windows::Storage::Pickers::Provider::PickerClosingOperation value { nullptr };
-    check_hresult(shim()->get_ClosingOperation(put(value)));
+    check_hresult(static_cast<const IPickerClosingEventArgs &>(static_cast<const D &>(*this))->get_ClosingOperation(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IPickerClosingEventArgs<D>::IsCanceled() const
 {
     bool value {};
-    check_hresult(shim()->get_IsCanceled(&value));
+    check_hresult(static_cast<const IPickerClosingEventArgs &>(static_cast<const D &>(*this))->get_IsCanceled(&value));
     return value;
 }
 
 template <typename D> Windows::Storage::Pickers::Provider::PickerClosingDeferral impl_IPickerClosingOperation<D>::GetDeferral() const
 {
     Windows::Storage::Pickers::Provider::PickerClosingDeferral value { nullptr };
-    check_hresult(shim()->abi_GetDeferral(put(value)));
+    check_hresult(static_cast<const IPickerClosingOperation &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IPickerClosingOperation<D>::Deadline() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->get_Deadline(put(value)));
+    check_hresult(static_cast<const IPickerClosingOperation &>(static_cast<const D &>(*this))->get_Deadline(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPickerClosingDeferral<D>::Complete() const
 {
-    check_hresult(shim()->abi_Complete());
+    check_hresult(static_cast<const IPickerClosingDeferral &>(static_cast<const D &>(*this))->abi_Complete());
 }
 
 template <typename D> hstring impl_IFileSavePickerUI<D>::Title() const
 {
     hstring value;
-    check_hresult(shim()->get_Title(put(value)));
+    check_hresult(static_cast<const IFileSavePickerUI &>(static_cast<const D &>(*this))->get_Title(put(value)));
     return value;
 }
 
 template <typename D> void impl_IFileSavePickerUI<D>::Title(hstring_ref value) const
 {
-    check_hresult(shim()->put_Title(get(value)));
+    check_hresult(static_cast<const IFileSavePickerUI &>(static_cast<const D &>(*this))->put_Title(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_IFileSavePickerUI<D>::AllowedFileTypes() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(shim()->get_AllowedFileTypes(put(value)));
+    check_hresult(static_cast<const IFileSavePickerUI &>(static_cast<const D &>(*this))->get_AllowedFileTypes(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IFileSavePickerUI<D>::SettingsIdentifier() const
 {
     hstring value;
-    check_hresult(shim()->get_SettingsIdentifier(put(value)));
+    check_hresult(static_cast<const IFileSavePickerUI &>(static_cast<const D &>(*this))->get_SettingsIdentifier(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IFileSavePickerUI<D>::FileName() const
 {
     hstring value;
-    check_hresult(shim()->get_FileName(put(value)));
+    check_hresult(static_cast<const IFileSavePickerUI &>(static_cast<const D &>(*this))->get_FileName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Pickers::Provider::SetFileNameResult impl_IFileSavePickerUI<D>::TrySetFileName(hstring_ref value) const
 {
     Windows::Storage::Pickers::Provider::SetFileNameResult result {};
-    check_hresult(shim()->abi_TrySetFileName(get(value), &result));
+    check_hresult(static_cast<const IFileSavePickerUI &>(static_cast<const D &>(*this))->abi_TrySetFileName(get(value), &result));
     return result;
 }
 
 template <typename D> event_token impl_IFileSavePickerUI<D>::FileNameChanged(const Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileSavePickerUI, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_FileNameChanged(get(handler), &token));
+    check_hresult(static_cast<const IFileSavePickerUI &>(static_cast<const D &>(*this))->add_FileNameChanged(get(handler), &token));
     return token;
 }
 
@@ -695,13 +695,13 @@ template <typename D> event_revoker<IFileSavePickerUI> impl_IFileSavePickerUI<D>
 
 template <typename D> void impl_IFileSavePickerUI<D>::FileNameChanged(event_token token) const
 {
-    check_hresult(shim()->remove_FileNameChanged(token));
+    check_hresult(static_cast<const IFileSavePickerUI &>(static_cast<const D &>(*this))->remove_FileNameChanged(token));
 }
 
 template <typename D> event_token impl_IFileSavePickerUI<D>::TargetFileRequested(const Windows::Foundation::TypedEventHandler<Windows::Storage::Pickers::Provider::FileSavePickerUI, Windows::Storage::Pickers::Provider::TargetFileRequestedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_TargetFileRequested(get(handler), &token));
+    check_hresult(static_cast<const IFileSavePickerUI &>(static_cast<const D &>(*this))->add_TargetFileRequested(get(handler), &token));
     return token;
 }
 
@@ -712,38 +712,38 @@ template <typename D> event_revoker<IFileSavePickerUI> impl_IFileSavePickerUI<D>
 
 template <typename D> void impl_IFileSavePickerUI<D>::TargetFileRequested(event_token token) const
 {
-    check_hresult(shim()->remove_TargetFileRequested(token));
+    check_hresult(static_cast<const IFileSavePickerUI &>(static_cast<const D &>(*this))->remove_TargetFileRequested(token));
 }
 
 template <typename D> Windows::Storage::Pickers::Provider::TargetFileRequest impl_ITargetFileRequestedEventArgs<D>::Request() const
 {
     Windows::Storage::Pickers::Provider::TargetFileRequest value { nullptr };
-    check_hresult(shim()->get_Request(put(value)));
+    check_hresult(static_cast<const ITargetFileRequestedEventArgs &>(static_cast<const D &>(*this))->get_Request(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::IStorageFile impl_ITargetFileRequest<D>::TargetFile() const
 {
     Windows::Storage::IStorageFile value;
-    check_hresult(shim()->get_TargetFile(put(value)));
+    check_hresult(static_cast<const ITargetFileRequest &>(static_cast<const D &>(*this))->get_TargetFile(put(value)));
     return value;
 }
 
 template <typename D> void impl_ITargetFileRequest<D>::TargetFile(const Windows::Storage::IStorageFile & value) const
 {
-    check_hresult(shim()->put_TargetFile(get(value)));
+    check_hresult(static_cast<const ITargetFileRequest &>(static_cast<const D &>(*this))->put_TargetFile(get(value)));
 }
 
 template <typename D> Windows::Storage::Pickers::Provider::TargetFileRequestDeferral impl_ITargetFileRequest<D>::GetDeferral() const
 {
     Windows::Storage::Pickers::Provider::TargetFileRequestDeferral value { nullptr };
-    check_hresult(shim()->abi_GetDeferral(put(value)));
+    check_hresult(static_cast<const ITargetFileRequest &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> void impl_ITargetFileRequestDeferral<D>::Complete() const
 {
-    check_hresult(shim()->abi_Complete());
+    check_hresult(static_cast<const ITargetFileRequestDeferral &>(static_cast<const D &>(*this))->abi_Complete());
 }
 
 }

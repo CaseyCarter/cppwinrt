@@ -198,22 +198,22 @@ template <> struct traits<Windows::ApplicationModel::Calls::VoipPhoneCall> { usi
 
 namespace Windows::ApplicationModel::Calls {
 
-template <typename T> class impl_ICallAnswerEventArgs;
-template <typename T> class impl_ICallRejectEventArgs;
-template <typename T> class impl_ICallStateChangeEventArgs;
-template <typename T> class impl_IMuteChangeEventArgs;
-template <typename T> class impl_IPhoneCallHistoryEntry;
-template <typename T> class impl_IPhoneCallHistoryEntryAddress;
-template <typename T> class impl_IPhoneCallHistoryEntryAddressFactory;
-template <typename T> class impl_IPhoneCallHistoryEntryQueryOptions;
-template <typename T> class impl_IPhoneCallHistoryEntryReader;
-template <typename T> class impl_IPhoneCallHistoryManagerForUser;
-template <typename T> class impl_IPhoneCallHistoryManagerStatics;
-template <typename T> class impl_IPhoneCallHistoryManagerStatics2;
-template <typename T> class impl_IPhoneCallHistoryStore;
-template <typename T> class impl_IVoipCallCoordinator;
-template <typename T> class impl_IVoipCallCoordinatorStatics;
-template <typename T> class impl_IVoipPhoneCall;
+template <typename T> struct impl_ICallAnswerEventArgs;
+template <typename T> struct impl_ICallRejectEventArgs;
+template <typename T> struct impl_ICallStateChangeEventArgs;
+template <typename T> struct impl_IMuteChangeEventArgs;
+template <typename T> struct impl_IPhoneCallHistoryEntry;
+template <typename T> struct impl_IPhoneCallHistoryEntryAddress;
+template <typename T> struct impl_IPhoneCallHistoryEntryAddressFactory;
+template <typename T> struct impl_IPhoneCallHistoryEntryQueryOptions;
+template <typename T> struct impl_IPhoneCallHistoryEntryReader;
+template <typename T> struct impl_IPhoneCallHistoryManagerForUser;
+template <typename T> struct impl_IPhoneCallHistoryManagerStatics;
+template <typename T> struct impl_IPhoneCallHistoryManagerStatics2;
+template <typename T> struct impl_IPhoneCallHistoryStore;
+template <typename T> struct impl_IVoipCallCoordinator;
+template <typename T> struct impl_IVoipCallCoordinatorStatics;
+template <typename T> struct impl_IVoipPhoneCall;
 
 }
 
@@ -318,56 +318,48 @@ template <> struct traits<Windows::ApplicationModel::Calls::IVoipPhoneCall>
 template <> struct traits<Windows::ApplicationModel::Calls::CallAnswerEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Calls::CallAnswerEventArgs;
-    using default_interface = Windows::ApplicationModel::Calls::ICallAnswerEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Calls.CallAnswerEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Calls::CallRejectEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Calls::CallRejectEventArgs;
-    using default_interface = Windows::ApplicationModel::Calls::ICallRejectEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Calls.CallRejectEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Calls::CallStateChangeEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Calls::CallStateChangeEventArgs;
-    using default_interface = Windows::ApplicationModel::Calls::ICallStateChangeEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Calls.CallStateChangeEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Calls::MuteChangeEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Calls::MuteChangeEventArgs;
-    using default_interface = Windows::ApplicationModel::Calls::IMuteChangeEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Calls.MuteChangeEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Calls::PhoneCallHistoryEntry>
 {
     using abi = ABI::Windows::ApplicationModel::Calls::PhoneCallHistoryEntry;
-    using default_interface = Windows::ApplicationModel::Calls::IPhoneCallHistoryEntry;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Calls.PhoneCallHistoryEntry"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Calls::PhoneCallHistoryEntryAddress>
 {
     using abi = ABI::Windows::ApplicationModel::Calls::PhoneCallHistoryEntryAddress;
-    using default_interface = Windows::ApplicationModel::Calls::IPhoneCallHistoryEntryAddress;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Calls.PhoneCallHistoryEntryAddress"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Calls::PhoneCallHistoryEntryQueryOptions>
 {
     using abi = ABI::Windows::ApplicationModel::Calls::PhoneCallHistoryEntryQueryOptions;
-    using default_interface = Windows::ApplicationModel::Calls::IPhoneCallHistoryEntryQueryOptions;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Calls.PhoneCallHistoryEntryQueryOptions"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Calls::PhoneCallHistoryEntryReader>
 {
     using abi = ABI::Windows::ApplicationModel::Calls::PhoneCallHistoryEntryReader;
-    using default_interface = Windows::ApplicationModel::Calls::IPhoneCallHistoryEntryReader;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Calls.PhoneCallHistoryEntryReader"; }
 };
 
@@ -379,28 +371,24 @@ template <> struct traits<Windows::ApplicationModel::Calls::PhoneCallHistoryMana
 template <> struct traits<Windows::ApplicationModel::Calls::PhoneCallHistoryManagerForUser>
 {
     using abi = ABI::Windows::ApplicationModel::Calls::PhoneCallHistoryManagerForUser;
-    using default_interface = Windows::ApplicationModel::Calls::IPhoneCallHistoryManagerForUser;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Calls.PhoneCallHistoryManagerForUser"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Calls::PhoneCallHistoryStore>
 {
     using abi = ABI::Windows::ApplicationModel::Calls::PhoneCallHistoryStore;
-    using default_interface = Windows::ApplicationModel::Calls::IPhoneCallHistoryStore;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Calls.PhoneCallHistoryStore"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Calls::VoipCallCoordinator>
 {
     using abi = ABI::Windows::ApplicationModel::Calls::VoipCallCoordinator;
-    using default_interface = Windows::ApplicationModel::Calls::IVoipCallCoordinator;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Calls.VoipCallCoordinator"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Calls::VoipPhoneCall>
 {
     using abi = ABI::Windows::ApplicationModel::Calls::VoipPhoneCall;
-    using default_interface = Windows::ApplicationModel::Calls::IVoipPhoneCall;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Calls.VoipPhoneCall"; }
 };
 

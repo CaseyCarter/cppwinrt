@@ -71,12 +71,8 @@ template <> struct __declspec(uuid("ee427f2e-7d37-558f-9718-9cbcbff40c94")) __de
 namespace Windows::Devices::Gpio {
 
 template <typename D>
-class WINRT_EBO impl_IGpioController
+struct WINRT_EBO impl_IGpioController
 {
-    auto shim() const { return impl::shim<D, IGpioController>(this); }
-
-public:
-
     int32_t PinCount() const;
     Windows::Devices::Gpio::GpioPin OpenPin(int32_t pinNumber) const;
     Windows::Devices::Gpio::GpioPin OpenPin(int32_t pinNumber, Windows::Devices::Gpio::GpioSharingMode sharingMode) const;
@@ -84,33 +80,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IGpioControllerStatics
+struct WINRT_EBO impl_IGpioControllerStatics
 {
-    auto shim() const { return impl::shim<D, IGpioControllerStatics>(this); }
-
-public:
-
     Windows::Devices::Gpio::GpioController GetDefault() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGpioControllerStatics2
+struct WINRT_EBO impl_IGpioControllerStatics2
 {
-    auto shim() const { return impl::shim<D, IGpioControllerStatics2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Gpio::GpioController>> GetControllersAsync(const Windows::Devices::Gpio::Provider::IGpioProvider & provider) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Gpio::GpioController> GetDefaultAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGpioPin
+struct WINRT_EBO impl_IGpioPin
 {
-    auto shim() const { return impl::shim<D, IGpioPin>(this); }
-
-public:
-
     event_token ValueChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Gpio::GpioPin, Windows::Devices::Gpio::GpioPinValueChangedEventArgs> & handler) const;
     using ValueChanged_revoker = event_revoker<IGpioPin>;
     ValueChanged_revoker ValueChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Gpio::GpioPin, Windows::Devices::Gpio::GpioPinValueChangedEventArgs> & handler) const;
@@ -127,12 +111,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IGpioPinValueChangedEventArgs
+struct WINRT_EBO impl_IGpioPinValueChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IGpioPinValueChangedEventArgs>(this); }
-
-public:
-
     Windows::Devices::Gpio::GpioPinEdge Edge() const;
 };
 

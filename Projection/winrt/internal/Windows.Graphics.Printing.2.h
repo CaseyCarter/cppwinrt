@@ -81,21 +81,13 @@ template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __de
 namespace Windows::Graphics::Printing {
 
 template <typename D>
-class WINRT_EBO impl_IPrintDocumentSource
+struct WINRT_EBO impl_IPrintDocumentSource
 {
-    auto shim() const { return impl::shim<D, IPrintDocumentSource>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrintManager
+struct WINRT_EBO impl_IPrintManager
 {
-    auto shim() const { return impl::shim<D, IPrintManager>(this); }
-
-public:
-
     event_token PrintTaskRequested(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintManager, Windows::Graphics::Printing::PrintTaskRequestedEventArgs> & eventHandler) const;
     using PrintTaskRequested_revoker = event_revoker<IPrintManager>;
     PrintTaskRequested_revoker PrintTaskRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::PrintManager, Windows::Graphics::Printing::PrintTaskRequestedEventArgs> & eventHandler) const;
@@ -103,33 +95,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrintManagerStatic
+struct WINRT_EBO impl_IPrintManagerStatic
 {
-    auto shim() const { return impl::shim<D, IPrintManagerStatic>(this); }
-
-public:
-
     Windows::Graphics::Printing::PrintManager GetForCurrentView() const;
     Windows::Foundation::IAsyncOperation<bool> ShowPrintUIAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrintManagerStatic2
+struct WINRT_EBO impl_IPrintManagerStatic2
 {
-    auto shim() const { return impl::shim<D, IPrintManagerStatic2>(this); }
-
-public:
-
     bool IsSupported() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrintPageInfo
+struct WINRT_EBO impl_IPrintPageInfo
 {
-    auto shim() const { return impl::shim<D, IPrintPageInfo>(this); }
-
-public:
-
     void MediaSize(Windows::Graphics::Printing::PrintMediaSize value) const;
     Windows::Graphics::Printing::PrintMediaSize MediaSize() const;
     void PageSize(const Windows::Foundation::Size & value) const;
@@ -143,12 +123,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrintTask
+struct WINRT_EBO impl_IPrintTask
 {
-    auto shim() const { return impl::shim<D, IPrintTask>(this); }
-
-public:
-
     Windows::ApplicationModel::DataTransfer::DataPackagePropertySet Properties() const;
     Windows::Graphics::Printing::IPrintDocumentSource Source() const;
     Windows::Graphics::Printing::PrintTaskOptions Options() const;
@@ -171,55 +147,35 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrintTask2
+struct WINRT_EBO impl_IPrintTask2
 {
-    auto shim() const { return impl::shim<D, IPrintTask2>(this); }
-
-public:
-
     void IsPreviewEnabled(bool value) const;
     bool IsPreviewEnabled() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrintTaskCompletedEventArgs
+struct WINRT_EBO impl_IPrintTaskCompletedEventArgs
 {
-    auto shim() const { return impl::shim<D, IPrintTaskCompletedEventArgs>(this); }
-
-public:
-
     Windows::Graphics::Printing::PrintTaskCompletion Completion() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrintTaskOptions
+struct WINRT_EBO impl_IPrintTaskOptions
 {
-    auto shim() const { return impl::shim<D, IPrintTaskOptions>(this); }
-
-public:
-
     void Bordering(Windows::Graphics::Printing::PrintBordering value) const;
     Windows::Graphics::Printing::PrintBordering Bordering() const;
     Windows::Storage::Streams::IRandomAccessStream GetPagePrintTicket(const Windows::Graphics::Printing::PrintPageInfo & printPageInfo) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrintTaskOptionsCore
+struct WINRT_EBO impl_IPrintTaskOptionsCore
 {
-    auto shim() const { return impl::shim<D, IPrintTaskOptionsCore>(this); }
-
-public:
-
     Windows::Graphics::Printing::PrintPageDescription GetPageDescription(uint32_t jobPageNumber) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrintTaskOptionsCoreProperties
+struct WINRT_EBO impl_IPrintTaskOptionsCoreProperties
 {
-    auto shim() const { return impl::shim<D, IPrintTaskOptionsCoreProperties>(this); }
-
-public:
-
     void MediaSize(Windows::Graphics::Printing::PrintMediaSize value) const;
     Windows::Graphics::Printing::PrintMediaSize MediaSize() const;
     void MediaType(Windows::Graphics::Printing::PrintMediaType value) const;
@@ -247,86 +203,54 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrintTaskOptionsCoreUIConfiguration
+struct WINRT_EBO impl_IPrintTaskOptionsCoreUIConfiguration
 {
-    auto shim() const { return impl::shim<D, IPrintTaskOptionsCoreUIConfiguration>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<hstring> DisplayedOptions() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrintTaskProgressingEventArgs
+struct WINRT_EBO impl_IPrintTaskProgressingEventArgs
 {
-    auto shim() const { return impl::shim<D, IPrintTaskProgressingEventArgs>(this); }
-
-public:
-
     uint32_t DocumentPageCount() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrintTaskRequest
+struct WINRT_EBO impl_IPrintTaskRequest
 {
-    auto shim() const { return impl::shim<D, IPrintTaskRequest>(this); }
-
-public:
-
     Windows::Foundation::DateTime Deadline() const;
     Windows::Graphics::Printing::PrintTask CreatePrintTask(hstring_ref title, const Windows::Graphics::Printing::PrintTaskSourceRequestedHandler & handler) const;
     Windows::Graphics::Printing::PrintTaskRequestedDeferral GetDeferral() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrintTaskRequestedDeferral
+struct WINRT_EBO impl_IPrintTaskRequestedDeferral
 {
-    auto shim() const { return impl::shim<D, IPrintTaskRequestedDeferral>(this); }
-
-public:
-
     void Complete() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrintTaskRequestedEventArgs
+struct WINRT_EBO impl_IPrintTaskRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, IPrintTaskRequestedEventArgs>(this); }
-
-public:
-
     Windows::Graphics::Printing::PrintTaskRequest Request() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrintTaskSourceRequestedArgs
+struct WINRT_EBO impl_IPrintTaskSourceRequestedArgs
 {
-    auto shim() const { return impl::shim<D, IPrintTaskSourceRequestedArgs>(this); }
-
-public:
-
     Windows::Foundation::DateTime Deadline() const;
     void SetSource(const Windows::Graphics::Printing::IPrintDocumentSource & source) const;
     Windows::Graphics::Printing::PrintTaskSourceRequestedDeferral GetDeferral() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrintTaskSourceRequestedDeferral
+struct WINRT_EBO impl_IPrintTaskSourceRequestedDeferral
 {
-    auto shim() const { return impl::shim<D, IPrintTaskSourceRequestedDeferral>(this); }
-
-public:
-
     void Complete() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrintTaskTargetDeviceSupport
+struct WINRT_EBO impl_IPrintTaskTargetDeviceSupport
 {
-    auto shim() const { return impl::shim<D, IPrintTaskTargetDeviceSupport>(this); }
-
-public:
-
     void IsPrinterTargetEnabled(bool value) const;
     bool IsPrinterTargetEnabled() const;
     void Is3DManufacturingTargetEnabled(bool value) const;
@@ -334,12 +258,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStandardPrintTaskOptionsStatic
+struct WINRT_EBO impl_IStandardPrintTaskOptionsStatic
 {
-    auto shim() const { return impl::shim<D, IStandardPrintTaskOptionsStatic>(this); }
-
-public:
-
     hstring MediaSize() const;
     hstring MediaType() const;
     hstring Orientation() const;
@@ -356,12 +276,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStandardPrintTaskOptionsStatic2
+struct WINRT_EBO impl_IStandardPrintTaskOptionsStatic2
 {
-    auto shim() const { return impl::shim<D, IStandardPrintTaskOptionsStatic2>(this); }
-
-public:
-
     hstring Bordering() const;
 };
 

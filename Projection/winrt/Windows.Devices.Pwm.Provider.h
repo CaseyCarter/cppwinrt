@@ -170,67 +170,67 @@ namespace Windows::Devices::Pwm::Provider {
 template <typename D> int32_t impl_IPwmControllerProvider<D>::PinCount() const
 {
     int32_t value {};
-    check_hresult(shim()->get_PinCount(&value));
+    check_hresult(static_cast<const IPwmControllerProvider &>(static_cast<const D &>(*this))->get_PinCount(&value));
     return value;
 }
 
 template <typename D> double impl_IPwmControllerProvider<D>::ActualFrequency() const
 {
     double value {};
-    check_hresult(shim()->get_ActualFrequency(&value));
+    check_hresult(static_cast<const IPwmControllerProvider &>(static_cast<const D &>(*this))->get_ActualFrequency(&value));
     return value;
 }
 
 template <typename D> double impl_IPwmControllerProvider<D>::SetDesiredFrequency(double frequency) const
 {
     double value {};
-    check_hresult(shim()->abi_SetDesiredFrequency(frequency, &value));
+    check_hresult(static_cast<const IPwmControllerProvider &>(static_cast<const D &>(*this))->abi_SetDesiredFrequency(frequency, &value));
     return value;
 }
 
 template <typename D> double impl_IPwmControllerProvider<D>::MaxFrequency() const
 {
     double value {};
-    check_hresult(shim()->get_MaxFrequency(&value));
+    check_hresult(static_cast<const IPwmControllerProvider &>(static_cast<const D &>(*this))->get_MaxFrequency(&value));
     return value;
 }
 
 template <typename D> double impl_IPwmControllerProvider<D>::MinFrequency() const
 {
     double value {};
-    check_hresult(shim()->get_MinFrequency(&value));
+    check_hresult(static_cast<const IPwmControllerProvider &>(static_cast<const D &>(*this))->get_MinFrequency(&value));
     return value;
 }
 
 template <typename D> void impl_IPwmControllerProvider<D>::AcquirePin(int32_t pin) const
 {
-    check_hresult(shim()->abi_AcquirePin(pin));
+    check_hresult(static_cast<const IPwmControllerProvider &>(static_cast<const D &>(*this))->abi_AcquirePin(pin));
 }
 
 template <typename D> void impl_IPwmControllerProvider<D>::ReleasePin(int32_t pin) const
 {
-    check_hresult(shim()->abi_ReleasePin(pin));
+    check_hresult(static_cast<const IPwmControllerProvider &>(static_cast<const D &>(*this))->abi_ReleasePin(pin));
 }
 
 template <typename D> void impl_IPwmControllerProvider<D>::EnablePin(int32_t pin) const
 {
-    check_hresult(shim()->abi_EnablePin(pin));
+    check_hresult(static_cast<const IPwmControllerProvider &>(static_cast<const D &>(*this))->abi_EnablePin(pin));
 }
 
 template <typename D> void impl_IPwmControllerProvider<D>::DisablePin(int32_t pin) const
 {
-    check_hresult(shim()->abi_DisablePin(pin));
+    check_hresult(static_cast<const IPwmControllerProvider &>(static_cast<const D &>(*this))->abi_DisablePin(pin));
 }
 
 template <typename D> void impl_IPwmControllerProvider<D>::SetPulseParameters(int32_t pin, double dutyCycle, bool invertPolarity) const
 {
-    check_hresult(shim()->abi_SetPulseParameters(pin, dutyCycle, invertPolarity));
+    check_hresult(static_cast<const IPwmControllerProvider &>(static_cast<const D &>(*this))->abi_SetPulseParameters(pin, dutyCycle, invertPolarity));
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Pwm::Provider::IPwmControllerProvider> impl_IPwmProvider<D>::GetControllers() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Pwm::Provider::IPwmControllerProvider> result;
-    check_hresult(shim()->abi_GetControllers(put(result)));
+    check_hresult(static_cast<const IPwmProvider &>(static_cast<const D &>(*this))->abi_GetControllers(put(result)));
     return result;
 }
 

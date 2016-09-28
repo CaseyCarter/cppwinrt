@@ -165,17 +165,17 @@ template <> struct traits<Windows::Networking::Proximity::TriggeredConnectionSta
 
 namespace Windows::Networking::Proximity {
 
-template <typename T> class impl_IConnectionRequestedEventArgs;
-template <typename T> class impl_IPeerFinderStatics;
-template <typename T> class impl_IPeerFinderStatics2;
-template <typename T> class impl_IPeerInformation;
-template <typename T> class impl_IPeerInformation3;
-template <typename T> class impl_IPeerInformationWithHostAndService;
-template <typename T> class impl_IPeerWatcher;
-template <typename T> class impl_IProximityDevice;
-template <typename T> class impl_IProximityDeviceStatics;
-template <typename T> class impl_IProximityMessage;
-template <typename T> class impl_ITriggeredConnectionStateChangedEventArgs;
+template <typename T> struct impl_IConnectionRequestedEventArgs;
+template <typename T> struct impl_IPeerFinderStatics;
+template <typename T> struct impl_IPeerFinderStatics2;
+template <typename T> struct impl_IPeerInformation;
+template <typename T> struct impl_IPeerInformation3;
+template <typename T> struct impl_IPeerInformationWithHostAndService;
+template <typename T> struct impl_IPeerWatcher;
+template <typename T> struct impl_IProximityDevice;
+template <typename T> struct impl_IProximityDeviceStatics;
+template <typename T> struct impl_IProximityMessage;
+template <typename T> struct impl_ITriggeredConnectionStateChangedEventArgs;
 template <typename T> struct impl_DeviceArrivedEventHandler;
 template <typename T> struct impl_DeviceDepartedEventHandler;
 template <typename T> struct impl_MessageReceivedHandler;
@@ -274,7 +274,6 @@ template <> struct traits<Windows::Networking::Proximity::MessageTransmittedHand
 template <> struct traits<Windows::Networking::Proximity::ConnectionRequestedEventArgs>
 {
     using abi = ABI::Windows::Networking::Proximity::ConnectionRequestedEventArgs;
-    using default_interface = Windows::Networking::Proximity::IConnectionRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Proximity.ConnectionRequestedEventArgs"; }
 };
 
@@ -286,35 +285,30 @@ template <> struct traits<Windows::Networking::Proximity::PeerFinder>
 template <> struct traits<Windows::Networking::Proximity::PeerInformation>
 {
     using abi = ABI::Windows::Networking::Proximity::PeerInformation;
-    using default_interface = Windows::Networking::Proximity::IPeerInformation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Proximity.PeerInformation"; }
 };
 
 template <> struct traits<Windows::Networking::Proximity::PeerWatcher>
 {
     using abi = ABI::Windows::Networking::Proximity::PeerWatcher;
-    using default_interface = Windows::Networking::Proximity::IPeerWatcher;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Proximity.PeerWatcher"; }
 };
 
 template <> struct traits<Windows::Networking::Proximity::ProximityDevice>
 {
     using abi = ABI::Windows::Networking::Proximity::ProximityDevice;
-    using default_interface = Windows::Networking::Proximity::IProximityDevice;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Proximity.ProximityDevice"; }
 };
 
 template <> struct traits<Windows::Networking::Proximity::ProximityMessage>
 {
     using abi = ABI::Windows::Networking::Proximity::ProximityMessage;
-    using default_interface = Windows::Networking::Proximity::IProximityMessage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Proximity.ProximityMessage"; }
 };
 
 template <> struct traits<Windows::Networking::Proximity::TriggeredConnectionStateChangedEventArgs>
 {
     using abi = ABI::Windows::Networking::Proximity::TriggeredConnectionStateChangedEventArgs;
-    using default_interface = Windows::Networking::Proximity::ITriggeredConnectionStateChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Proximity.TriggeredConnectionStateChangedEventArgs"; }
 };
 

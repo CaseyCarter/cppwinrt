@@ -415,56 +415,56 @@ template <> struct traits<Windows::Media::Protection::PlayReady::PlayReadySoapMe
 
 namespace Windows::Media::Protection::PlayReady {
 
-template <typename T> class impl_INDClient;
-template <typename T> class impl_INDClientFactory;
-template <typename T> class impl_INDClosedCaptionDataReceivedEventArgs;
-template <typename T> class impl_INDCustomData;
-template <typename T> class impl_INDCustomDataFactory;
-template <typename T> class impl_INDDownloadEngine;
-template <typename T> class impl_INDDownloadEngineNotifier;
-template <typename T> class impl_INDLicenseFetchCompletedEventArgs;
-template <typename T> class impl_INDLicenseFetchDescriptor;
-template <typename T> class impl_INDLicenseFetchDescriptorFactory;
-template <typename T> class impl_INDLicenseFetchResult;
-template <typename T> class impl_INDMessenger;
-template <typename T> class impl_INDProximityDetectionCompletedEventArgs;
-template <typename T> class impl_INDRegistrationCompletedEventArgs;
-template <typename T> class impl_INDSendResult;
-template <typename T> class impl_INDStartResult;
-template <typename T> class impl_INDStorageFileHelper;
-template <typename T> class impl_INDStreamParser;
-template <typename T> class impl_INDStreamParserNotifier;
-template <typename T> class impl_INDTCPMessengerFactory;
-template <typename T> class impl_INDTransmitterProperties;
-template <typename T> class impl_IPlayReadyContentHeader;
-template <typename T> class impl_IPlayReadyContentHeader2;
-template <typename T> class impl_IPlayReadyContentHeaderFactory;
-template <typename T> class impl_IPlayReadyContentHeaderFactory2;
-template <typename T> class impl_IPlayReadyContentResolver;
-template <typename T> class impl_IPlayReadyDomain;
-template <typename T> class impl_IPlayReadyDomainIterableFactory;
-template <typename T> class impl_IPlayReadyDomainJoinServiceRequest;
-template <typename T> class impl_IPlayReadyDomainLeaveServiceRequest;
-template <typename T> class impl_IPlayReadyITADataGenerator;
-template <typename T> class impl_IPlayReadyIndividualizationServiceRequest;
-template <typename T> class impl_IPlayReadyLicense;
-template <typename T> class impl_IPlayReadyLicenseAcquisitionServiceRequest;
-template <typename T> class impl_IPlayReadyLicenseAcquisitionServiceRequest2;
-template <typename T> class impl_IPlayReadyLicenseIterableFactory;
-template <typename T> class impl_IPlayReadyLicenseManagement;
-template <typename T> class impl_IPlayReadyLicenseSession;
-template <typename T> class impl_IPlayReadyLicenseSessionFactory;
-template <typename T> class impl_IPlayReadyMeteringReportServiceRequest;
-template <typename T> class impl_IPlayReadyRevocationServiceRequest;
-template <typename T> class impl_IPlayReadySecureStopIterableFactory;
-template <typename T> class impl_IPlayReadySecureStopServiceRequest;
-template <typename T> class impl_IPlayReadySecureStopServiceRequestFactory;
-template <typename T> class impl_IPlayReadyServiceRequest;
-template <typename T> class impl_IPlayReadySoapMessage;
-template <typename T> class impl_IPlayReadyStatics;
-template <typename T> class impl_IPlayReadyStatics2;
-template <typename T> class impl_IPlayReadyStatics3;
-template <typename T> class impl_IPlayReadyStatics4;
+template <typename T> struct impl_INDClient;
+template <typename T> struct impl_INDClientFactory;
+template <typename T> struct impl_INDClosedCaptionDataReceivedEventArgs;
+template <typename T> struct impl_INDCustomData;
+template <typename T> struct impl_INDCustomDataFactory;
+template <typename T> struct impl_INDDownloadEngine;
+template <typename T> struct impl_INDDownloadEngineNotifier;
+template <typename T> struct impl_INDLicenseFetchCompletedEventArgs;
+template <typename T> struct impl_INDLicenseFetchDescriptor;
+template <typename T> struct impl_INDLicenseFetchDescriptorFactory;
+template <typename T> struct impl_INDLicenseFetchResult;
+template <typename T> struct impl_INDMessenger;
+template <typename T> struct impl_INDProximityDetectionCompletedEventArgs;
+template <typename T> struct impl_INDRegistrationCompletedEventArgs;
+template <typename T> struct impl_INDSendResult;
+template <typename T> struct impl_INDStartResult;
+template <typename T> struct impl_INDStorageFileHelper;
+template <typename T> struct impl_INDStreamParser;
+template <typename T> struct impl_INDStreamParserNotifier;
+template <typename T> struct impl_INDTCPMessengerFactory;
+template <typename T> struct impl_INDTransmitterProperties;
+template <typename T> struct impl_IPlayReadyContentHeader;
+template <typename T> struct impl_IPlayReadyContentHeader2;
+template <typename T> struct impl_IPlayReadyContentHeaderFactory;
+template <typename T> struct impl_IPlayReadyContentHeaderFactory2;
+template <typename T> struct impl_IPlayReadyContentResolver;
+template <typename T> struct impl_IPlayReadyDomain;
+template <typename T> struct impl_IPlayReadyDomainIterableFactory;
+template <typename T> struct impl_IPlayReadyDomainJoinServiceRequest;
+template <typename T> struct impl_IPlayReadyDomainLeaveServiceRequest;
+template <typename T> struct impl_IPlayReadyITADataGenerator;
+template <typename T> struct impl_IPlayReadyIndividualizationServiceRequest;
+template <typename T> struct impl_IPlayReadyLicense;
+template <typename T> struct impl_IPlayReadyLicenseAcquisitionServiceRequest;
+template <typename T> struct impl_IPlayReadyLicenseAcquisitionServiceRequest2;
+template <typename T> struct impl_IPlayReadyLicenseIterableFactory;
+template <typename T> struct impl_IPlayReadyLicenseManagement;
+template <typename T> struct impl_IPlayReadyLicenseSession;
+template <typename T> struct impl_IPlayReadyLicenseSessionFactory;
+template <typename T> struct impl_IPlayReadyMeteringReportServiceRequest;
+template <typename T> struct impl_IPlayReadyRevocationServiceRequest;
+template <typename T> struct impl_IPlayReadySecureStopIterableFactory;
+template <typename T> struct impl_IPlayReadySecureStopServiceRequest;
+template <typename T> struct impl_IPlayReadySecureStopServiceRequestFactory;
+template <typename T> struct impl_IPlayReadyServiceRequest;
+template <typename T> struct impl_IPlayReadySoapMessage;
+template <typename T> struct impl_IPlayReadyStatics;
+template <typename T> struct impl_IPlayReadyStatics2;
+template <typename T> struct impl_IPlayReadyStatics3;
+template <typename T> struct impl_IPlayReadyStatics4;
 
 }
 
@@ -773,56 +773,48 @@ template <> struct traits<Windows::Media::Protection::PlayReady::IPlayReadyStati
 template <> struct traits<Windows::Media::Protection::PlayReady::NDClient>
 {
     using abi = ABI::Windows::Media::Protection::PlayReady::NDClient;
-    using default_interface = Windows::Media::Protection::PlayReady::INDClient;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Protection.PlayReady.NDClient"; }
 };
 
 template <> struct traits<Windows::Media::Protection::PlayReady::NDCustomData>
 {
     using abi = ABI::Windows::Media::Protection::PlayReady::NDCustomData;
-    using default_interface = Windows::Media::Protection::PlayReady::INDCustomData;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Protection.PlayReady.NDCustomData"; }
 };
 
 template <> struct traits<Windows::Media::Protection::PlayReady::NDDownloadEngineNotifier>
 {
     using abi = ABI::Windows::Media::Protection::PlayReady::NDDownloadEngineNotifier;
-    using default_interface = Windows::Media::Protection::PlayReady::INDDownloadEngineNotifier;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Protection.PlayReady.NDDownloadEngineNotifier"; }
 };
 
 template <> struct traits<Windows::Media::Protection::PlayReady::NDLicenseFetchDescriptor>
 {
     using abi = ABI::Windows::Media::Protection::PlayReady::NDLicenseFetchDescriptor;
-    using default_interface = Windows::Media::Protection::PlayReady::INDLicenseFetchDescriptor;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Protection.PlayReady.NDLicenseFetchDescriptor"; }
 };
 
 template <> struct traits<Windows::Media::Protection::PlayReady::NDStorageFileHelper>
 {
     using abi = ABI::Windows::Media::Protection::PlayReady::NDStorageFileHelper;
-    using default_interface = Windows::Media::Protection::PlayReady::INDStorageFileHelper;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Protection.PlayReady.NDStorageFileHelper"; }
 };
 
 template <> struct traits<Windows::Media::Protection::PlayReady::NDStreamParserNotifier>
 {
     using abi = ABI::Windows::Media::Protection::PlayReady::NDStreamParserNotifier;
-    using default_interface = Windows::Media::Protection::PlayReady::INDStreamParserNotifier;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Protection.PlayReady.NDStreamParserNotifier"; }
 };
 
 template <> struct traits<Windows::Media::Protection::PlayReady::NDTCPMessenger>
 {
     using abi = ABI::Windows::Media::Protection::PlayReady::NDTCPMessenger;
-    using default_interface = Windows::Media::Protection::PlayReady::INDMessenger;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Protection.PlayReady.NDTCPMessenger"; }
 };
 
 template <> struct traits<Windows::Media::Protection::PlayReady::PlayReadyContentHeader>
 {
     using abi = ABI::Windows::Media::Protection::PlayReady::PlayReadyContentHeader;
-    using default_interface = Windows::Media::Protection::PlayReady::IPlayReadyContentHeader;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Protection.PlayReady.PlayReadyContentHeader"; }
 };
 
@@ -834,77 +826,66 @@ template <> struct traits<Windows::Media::Protection::PlayReady::PlayReadyConten
 template <> struct traits<Windows::Media::Protection::PlayReady::PlayReadyDomain>
 {
     using abi = ABI::Windows::Media::Protection::PlayReady::PlayReadyDomain;
-    using default_interface = Windows::Media::Protection::PlayReady::IPlayReadyDomain;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Protection.PlayReady.PlayReadyDomain"; }
 };
 
 template <> struct traits<Windows::Media::Protection::PlayReady::PlayReadyDomainIterable>
 {
     using abi = ABI::Windows::Media::Protection::PlayReady::PlayReadyDomainIterable;
-    using default_interface = Windows::Foundation::Collections::IIterable<Windows::Media::Protection::PlayReady::IPlayReadyDomain>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Protection.PlayReady.PlayReadyDomainIterable"; }
 };
 
 template <> struct traits<Windows::Media::Protection::PlayReady::PlayReadyDomainIterator>
 {
     using abi = ABI::Windows::Media::Protection::PlayReady::PlayReadyDomainIterator;
-    using default_interface = Windows::Foundation::Collections::IIterator<Windows::Media::Protection::PlayReady::IPlayReadyDomain>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Protection.PlayReady.PlayReadyDomainIterator"; }
 };
 
 template <> struct traits<Windows::Media::Protection::PlayReady::PlayReadyDomainJoinServiceRequest>
 {
     using abi = ABI::Windows::Media::Protection::PlayReady::PlayReadyDomainJoinServiceRequest;
-    using default_interface = Windows::Media::Protection::PlayReady::IPlayReadyDomainJoinServiceRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Protection.PlayReady.PlayReadyDomainJoinServiceRequest"; }
 };
 
 template <> struct traits<Windows::Media::Protection::PlayReady::PlayReadyDomainLeaveServiceRequest>
 {
     using abi = ABI::Windows::Media::Protection::PlayReady::PlayReadyDomainLeaveServiceRequest;
-    using default_interface = Windows::Media::Protection::PlayReady::IPlayReadyDomainLeaveServiceRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Protection.PlayReady.PlayReadyDomainLeaveServiceRequest"; }
 };
 
 template <> struct traits<Windows::Media::Protection::PlayReady::PlayReadyITADataGenerator>
 {
     using abi = ABI::Windows::Media::Protection::PlayReady::PlayReadyITADataGenerator;
-    using default_interface = Windows::Media::Protection::PlayReady::IPlayReadyITADataGenerator;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Protection.PlayReady.PlayReadyITADataGenerator"; }
 };
 
 template <> struct traits<Windows::Media::Protection::PlayReady::PlayReadyIndividualizationServiceRequest>
 {
     using abi = ABI::Windows::Media::Protection::PlayReady::PlayReadyIndividualizationServiceRequest;
-    using default_interface = Windows::Media::Protection::PlayReady::IPlayReadyIndividualizationServiceRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Protection.PlayReady.PlayReadyIndividualizationServiceRequest"; }
 };
 
 template <> struct traits<Windows::Media::Protection::PlayReady::PlayReadyLicense>
 {
     using abi = ABI::Windows::Media::Protection::PlayReady::PlayReadyLicense;
-    using default_interface = Windows::Media::Protection::PlayReady::IPlayReadyLicense;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Protection.PlayReady.PlayReadyLicense"; }
 };
 
 template <> struct traits<Windows::Media::Protection::PlayReady::PlayReadyLicenseAcquisitionServiceRequest>
 {
     using abi = ABI::Windows::Media::Protection::PlayReady::PlayReadyLicenseAcquisitionServiceRequest;
-    using default_interface = Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Protection.PlayReady.PlayReadyLicenseAcquisitionServiceRequest"; }
 };
 
 template <> struct traits<Windows::Media::Protection::PlayReady::PlayReadyLicenseIterable>
 {
     using abi = ABI::Windows::Media::Protection::PlayReady::PlayReadyLicenseIterable;
-    using default_interface = Windows::Foundation::Collections::IIterable<Windows::Media::Protection::PlayReady::IPlayReadyLicense>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Protection.PlayReady.PlayReadyLicenseIterable"; }
 };
 
 template <> struct traits<Windows::Media::Protection::PlayReady::PlayReadyLicenseIterator>
 {
     using abi = ABI::Windows::Media::Protection::PlayReady::PlayReadyLicenseIterator;
-    using default_interface = Windows::Foundation::Collections::IIterator<Windows::Media::Protection::PlayReady::IPlayReadyLicense>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Protection.PlayReady.PlayReadyLicenseIterator"; }
 };
 
@@ -916,49 +897,42 @@ template <> struct traits<Windows::Media::Protection::PlayReady::PlayReadyLicens
 template <> struct traits<Windows::Media::Protection::PlayReady::PlayReadyLicenseSession>
 {
     using abi = ABI::Windows::Media::Protection::PlayReady::PlayReadyLicenseSession;
-    using default_interface = Windows::Media::Protection::PlayReady::IPlayReadyLicenseSession;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Protection.PlayReady.PlayReadyLicenseSession"; }
 };
 
 template <> struct traits<Windows::Media::Protection::PlayReady::PlayReadyMeteringReportServiceRequest>
 {
     using abi = ABI::Windows::Media::Protection::PlayReady::PlayReadyMeteringReportServiceRequest;
-    using default_interface = Windows::Media::Protection::PlayReady::IPlayReadyMeteringReportServiceRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Protection.PlayReady.PlayReadyMeteringReportServiceRequest"; }
 };
 
 template <> struct traits<Windows::Media::Protection::PlayReady::PlayReadyRevocationServiceRequest>
 {
     using abi = ABI::Windows::Media::Protection::PlayReady::PlayReadyRevocationServiceRequest;
-    using default_interface = Windows::Media::Protection::PlayReady::IPlayReadyRevocationServiceRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Protection.PlayReady.PlayReadyRevocationServiceRequest"; }
 };
 
 template <> struct traits<Windows::Media::Protection::PlayReady::PlayReadySecureStopIterable>
 {
     using abi = ABI::Windows::Media::Protection::PlayReady::PlayReadySecureStopIterable;
-    using default_interface = Windows::Foundation::Collections::IIterable<Windows::Media::Protection::PlayReady::IPlayReadySecureStopServiceRequest>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Protection.PlayReady.PlayReadySecureStopIterable"; }
 };
 
 template <> struct traits<Windows::Media::Protection::PlayReady::PlayReadySecureStopIterator>
 {
     using abi = ABI::Windows::Media::Protection::PlayReady::PlayReadySecureStopIterator;
-    using default_interface = Windows::Foundation::Collections::IIterator<Windows::Media::Protection::PlayReady::IPlayReadySecureStopServiceRequest>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Protection.PlayReady.PlayReadySecureStopIterator"; }
 };
 
 template <> struct traits<Windows::Media::Protection::PlayReady::PlayReadySecureStopServiceRequest>
 {
     using abi = ABI::Windows::Media::Protection::PlayReady::PlayReadySecureStopServiceRequest;
-    using default_interface = Windows::Media::Protection::PlayReady::IPlayReadySecureStopServiceRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Protection.PlayReady.PlayReadySecureStopServiceRequest"; }
 };
 
 template <> struct traits<Windows::Media::Protection::PlayReady::PlayReadySoapMessage>
 {
     using abi = ABI::Windows::Media::Protection::PlayReady::PlayReadySoapMessage;
-    using default_interface = Windows::Media::Protection::PlayReady::IPlayReadySoapMessage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Protection.PlayReady.PlayReadySoapMessage"; }
 };
 

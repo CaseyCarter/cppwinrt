@@ -166,67 +166,43 @@ template <> struct __declspec(uuid("f0f57411-7786-5174-8752-4c5e834b6da2")) __de
 namespace Windows::UI::Core {
 
 template <typename D>
-class WINRT_EBO impl_IAcceleratorKeyEventArgs
+struct WINRT_EBO impl_IAcceleratorKeyEventArgs
 {
-    auto shim() const { return impl::shim<D, IAcceleratorKeyEventArgs>(this); }
-
-public:
-
     Windows::UI::Core::CoreAcceleratorKeyEventType EventType() const;
     Windows::System::VirtualKey VirtualKey() const;
     Windows::UI::Core::CorePhysicalKeyStatus KeyStatus() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAcceleratorKeyEventArgs2
+struct WINRT_EBO impl_IAcceleratorKeyEventArgs2
 {
-    auto shim() const { return impl::shim<D, IAcceleratorKeyEventArgs2>(this); }
-
-public:
-
     hstring DeviceId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAutomationProviderRequestedEventArgs
+struct WINRT_EBO impl_IAutomationProviderRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, IAutomationProviderRequestedEventArgs>(this); }
-
-public:
-
     Windows::IInspectable AutomationProvider() const;
     void AutomationProvider(const Windows::IInspectable & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackRequestedEventArgs
+struct WINRT_EBO impl_IBackRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, IBackRequestedEventArgs>(this); }
-
-public:
-
     bool Handled() const;
     void Handled(bool value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICharacterReceivedEventArgs
+struct WINRT_EBO impl_ICharacterReceivedEventArgs
 {
-    auto shim() const { return impl::shim<D, ICharacterReceivedEventArgs>(this); }
-
-public:
-
     uint32_t KeyCode() const;
     Windows::UI::Core::CorePhysicalKeyStatus KeyStatus() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IClosestInteractiveBoundsRequestedEventArgs
+struct WINRT_EBO impl_IClosestInteractiveBoundsRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, IClosestInteractiveBoundsRequestedEventArgs>(this); }
-
-public:
-
     Windows::Foundation::Point PointerPosition() const;
     Windows::Foundation::Rect SearchBounds() const;
     Windows::Foundation::Rect ClosestInteractiveBounds() const;
@@ -234,12 +210,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreAcceleratorKeys
+struct WINRT_EBO impl_ICoreAcceleratorKeys
 {
-    auto shim() const { return impl::shim<D, ICoreAcceleratorKeys>(this); }
-
-public:
-
     event_token AcceleratorKeyActivated(const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreDispatcher, Windows::UI::Core::AcceleratorKeyEventArgs> & handler) const;
     using AcceleratorKeyActivated_revoker = event_revoker<ICoreAcceleratorKeys>;
     AcceleratorKeyActivated_revoker AcceleratorKeyActivated(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreDispatcher, Windows::UI::Core::AcceleratorKeyEventArgs> & handler) const;
@@ -247,12 +219,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreClosestInteractiveBoundsRequested
+struct WINRT_EBO impl_ICoreClosestInteractiveBoundsRequested
 {
-    auto shim() const { return impl::shim<D, ICoreClosestInteractiveBoundsRequested>(this); }
-
-public:
-
     event_token ClosestInteractiveBoundsRequested(const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreComponentInputSource, Windows::UI::Core::ClosestInteractiveBoundsRequestedEventArgs> & handler) const;
     using ClosestInteractiveBoundsRequested_revoker = event_revoker<ICoreClosestInteractiveBoundsRequested>;
     ClosestInteractiveBoundsRequested_revoker ClosestInteractiveBoundsRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreComponentInputSource, Windows::UI::Core::ClosestInteractiveBoundsRequestedEventArgs> & handler) const;
@@ -260,12 +228,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreComponentFocusable
+struct WINRT_EBO impl_ICoreComponentFocusable
 {
-    auto shim() const { return impl::shim<D, ICoreComponentFocusable>(this); }
-
-public:
-
     bool HasFocus() const;
     event_token GotFocus(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::CoreWindowEventArgs> & handler) const;
     using GotFocus_revoker = event_revoker<ICoreComponentFocusable>;
@@ -278,33 +242,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreCursor
+struct WINRT_EBO impl_ICoreCursor
 {
-    auto shim() const { return impl::shim<D, ICoreCursor>(this); }
-
-public:
-
     uint32_t Id() const;
     Windows::UI::Core::CoreCursorType Type() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreCursorFactory
+struct WINRT_EBO impl_ICoreCursorFactory
 {
-    auto shim() const { return impl::shim<D, ICoreCursorFactory>(this); }
-
-public:
-
     Windows::UI::Core::CoreCursor CreateCursor(Windows::UI::Core::CoreCursorType type, uint32_t id) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreDispatcher
+struct WINRT_EBO impl_ICoreDispatcher
 {
-    auto shim() const { return impl::shim<D, ICoreDispatcher>(this); }
-
-public:
-
     bool HasThreadAccess() const;
     void ProcessEvents(Windows::UI::Core::CoreProcessEventsOption options) const;
     Windows::Foundation::IAsyncAction RunAsync(Windows::UI::Core::CoreDispatcherPriority priority, const Windows::UI::Core::DispatchedHandler & agileCallback) const;
@@ -312,23 +264,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreDispatcher2
+struct WINRT_EBO impl_ICoreDispatcher2
 {
-    auto shim() const { return impl::shim<D, ICoreDispatcher2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<bool> TryRunAsync(Windows::UI::Core::CoreDispatcherPriority priority, const Windows::UI::Core::DispatchedHandler & agileCallback) const;
     Windows::Foundation::IAsyncOperation<bool> TryRunIdleAsync(const Windows::UI::Core::IdleDispatchedHandler & agileCallback) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreDispatcherWithTaskPriority
+struct WINRT_EBO impl_ICoreDispatcherWithTaskPriority
 {
-    auto shim() const { return impl::shim<D, ICoreDispatcherWithTaskPriority>(this); }
-
-public:
-
     Windows::UI::Core::CoreDispatcherPriority CurrentPriority() const;
     void CurrentPriority(Windows::UI::Core::CoreDispatcherPriority value) const;
     bool ShouldYield() const;
@@ -337,12 +281,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreInputSourceBase
+struct WINRT_EBO impl_ICoreInputSourceBase
 {
-    auto shim() const { return impl::shim<D, ICoreInputSourceBase>(this); }
-
-public:
-
     Windows::UI::Core::CoreDispatcher Dispatcher() const;
     bool IsInputEnabled() const;
     void IsInputEnabled(bool value) const;
@@ -353,12 +293,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreKeyboardInputSource
+struct WINRT_EBO impl_ICoreKeyboardInputSource
 {
-    auto shim() const { return impl::shim<D, ICoreKeyboardInputSource>(this); }
-
-public:
-
     Windows::UI::Core::CoreVirtualKeyStates GetCurrentKeyState(Windows::System::VirtualKey virtualKey) const;
     event_token CharacterReceived(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::CharacterReceivedEventArgs> & handler) const;
     using CharacterReceived_revoker = event_revoker<ICoreKeyboardInputSource>;
@@ -375,22 +311,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreKeyboardInputSource2
+struct WINRT_EBO impl_ICoreKeyboardInputSource2
 {
-    auto shim() const { return impl::shim<D, ICoreKeyboardInputSource2>(this); }
-
-public:
-
     hstring GetCurrentKeyEventDeviceId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICorePointerInputSource
+struct WINRT_EBO impl_ICorePointerInputSource
 {
-    auto shim() const { return impl::shim<D, ICorePointerInputSource>(this); }
-
-public:
-
     void ReleasePointerCapture() const;
     void SetPointerCapture() const;
     bool HasCapture() const;
@@ -428,12 +356,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICorePointerRedirector
+struct WINRT_EBO impl_ICorePointerRedirector
 {
-    auto shim() const { return impl::shim<D, ICorePointerRedirector>(this); }
-
-public:
-
     event_token PointerRoutedAway(const Windows::Foundation::TypedEventHandler<Windows::UI::Core::ICorePointerRedirector, Windows::UI::Core::PointerEventArgs> & handler) const;
     using PointerRoutedAway_revoker = event_revoker<ICorePointerRedirector>;
     PointerRoutedAway_revoker PointerRoutedAway(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Core::ICorePointerRedirector, Windows::UI::Core::PointerEventArgs> & handler) const;
@@ -449,12 +373,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreTouchHitTesting
+struct WINRT_EBO impl_ICoreTouchHitTesting
 {
-    auto shim() const { return impl::shim<D, ICoreTouchHitTesting>(this); }
-
-public:
-
     event_token TouchHitTesting(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::TouchHitTestingEventArgs> & handler) const;
     using TouchHitTesting_revoker = event_revoker<ICoreTouchHitTesting>;
     TouchHitTesting_revoker TouchHitTesting(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Core::TouchHitTestingEventArgs> & handler) const;
@@ -462,12 +382,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreWindow
+struct WINRT_EBO impl_ICoreWindow
 {
-    auto shim() const { return impl::shim<D, ICoreWindow>(this); }
-
-public:
-
     Windows::IInspectable AutomationHostProvider() const;
     Windows::Foundation::Rect Bounds() const;
     Windows::Foundation::Collections::IPropertySet CustomProperties() const;
@@ -557,22 +473,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreWindow2
+struct WINRT_EBO impl_ICoreWindow2
 {
-    auto shim() const { return impl::shim<D, ICoreWindow2>(this); }
-
-public:
-
     void PointerPosition(const Windows::Foundation::Point & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreWindow3
+struct WINRT_EBO impl_ICoreWindow3
 {
-    auto shim() const { return impl::shim<D, ICoreWindow3>(this); }
-
-public:
-
     event_token ClosestInteractiveBoundsRequested(const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::ClosestInteractiveBoundsRequestedEventArgs> & handler) const;
     using ClosestInteractiveBoundsRequested_revoker = event_revoker<ICoreWindow3>;
     ClosestInteractiveBoundsRequested_revoker ClosestInteractiveBoundsRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Core::CoreWindow, Windows::UI::Core::ClosestInteractiveBoundsRequestedEventArgs> & handler) const;
@@ -581,127 +489,79 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreWindowEventArgs
+struct WINRT_EBO impl_ICoreWindowEventArgs
 {
-    auto shim() const { return impl::shim<D, ICoreWindowEventArgs>(this); }
-
-public:
-
     bool Handled() const;
     void Handled(bool value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreWindowResizeManager
+struct WINRT_EBO impl_ICoreWindowResizeManager
 {
-    auto shim() const { return impl::shim<D, ICoreWindowResizeManager>(this); }
-
-public:
-
     void NotifyLayoutCompleted() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreWindowResizeManagerLayoutCapability
+struct WINRT_EBO impl_ICoreWindowResizeManagerLayoutCapability
 {
-    auto shim() const { return impl::shim<D, ICoreWindowResizeManagerLayoutCapability>(this); }
-
-public:
-
     void ShouldWaitForLayoutCompletion(bool value) const;
     bool ShouldWaitForLayoutCompletion() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreWindowResizeManagerStatics
+struct WINRT_EBO impl_ICoreWindowResizeManagerStatics
 {
-    auto shim() const { return impl::shim<D, ICoreWindowResizeManagerStatics>(this); }
-
-public:
-
     Windows::UI::Core::CoreWindowResizeManager GetForCurrentView() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreWindowStatic
+struct WINRT_EBO impl_ICoreWindowStatic
 {
-    auto shim() const { return impl::shim<D, ICoreWindowStatic>(this); }
-
-public:
-
     Windows::UI::Core::CoreWindow GetForCurrentThread() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IIdleDispatchedHandlerArgs
+struct WINRT_EBO impl_IIdleDispatchedHandlerArgs
 {
-    auto shim() const { return impl::shim<D, IIdleDispatchedHandlerArgs>(this); }
-
-public:
-
     bool IsDispatcherIdle() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInitializeWithCoreWindow
+struct WINRT_EBO impl_IInitializeWithCoreWindow
 {
-    auto shim() const { return impl::shim<D, IInitializeWithCoreWindow>(this); }
-
-public:
-
     void Initialize(const Windows::UI::Core::CoreWindow & window) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInputEnabledEventArgs
+struct WINRT_EBO impl_IInputEnabledEventArgs
 {
-    auto shim() const { return impl::shim<D, IInputEnabledEventArgs>(this); }
-
-public:
-
     bool InputEnabled() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IKeyEventArgs
+struct WINRT_EBO impl_IKeyEventArgs
 {
-    auto shim() const { return impl::shim<D, IKeyEventArgs>(this); }
-
-public:
-
     Windows::System::VirtualKey VirtualKey() const;
     Windows::UI::Core::CorePhysicalKeyStatus KeyStatus() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IKeyEventArgs2
+struct WINRT_EBO impl_IKeyEventArgs2
 {
-    auto shim() const { return impl::shim<D, IKeyEventArgs2>(this); }
-
-public:
-
     hstring DeviceId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPointerEventArgs
+struct WINRT_EBO impl_IPointerEventArgs
 {
-    auto shim() const { return impl::shim<D, IPointerEventArgs>(this); }
-
-public:
-
     Windows::UI::Input::PointerPoint CurrentPoint() const;
     Windows::System::VirtualKeyModifiers KeyModifiers() const;
     Windows::Foundation::Collections::IVector<Windows::UI::Input::PointerPoint> GetIntermediatePoints() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISystemNavigationManager
+struct WINRT_EBO impl_ISystemNavigationManager
 {
-    auto shim() const { return impl::shim<D, ISystemNavigationManager>(this); }
-
-public:
-
     event_token BackRequested(const Windows::Foundation::EventHandler<Windows::UI::Core::BackRequestedEventArgs> & handler) const;
     using BackRequested_revoker = event_revoker<ISystemNavigationManager>;
     BackRequested_revoker BackRequested(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::UI::Core::BackRequestedEventArgs> & handler) const;
@@ -709,33 +569,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISystemNavigationManager2
+struct WINRT_EBO impl_ISystemNavigationManager2
 {
-    auto shim() const { return impl::shim<D, ISystemNavigationManager2>(this); }
-
-public:
-
     Windows::UI::Core::AppViewBackButtonVisibility AppViewBackButtonVisibility() const;
     void AppViewBackButtonVisibility(Windows::UI::Core::AppViewBackButtonVisibility value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISystemNavigationManagerStatics
+struct WINRT_EBO impl_ISystemNavigationManagerStatics
 {
-    auto shim() const { return impl::shim<D, ISystemNavigationManagerStatics>(this); }
-
-public:
-
     Windows::UI::Core::SystemNavigationManager GetForCurrentView() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITouchHitTestingEventArgs
+struct WINRT_EBO impl_ITouchHitTestingEventArgs
 {
-    auto shim() const { return impl::shim<D, ITouchHitTestingEventArgs>(this); }
-
-public:
-
     Windows::UI::Core::CoreProximityEvaluation ProximityEvaluation() const;
     void ProximityEvaluation(const Windows::UI::Core::CoreProximityEvaluation & value) const;
     Windows::Foundation::Point Point() const;
@@ -745,32 +593,20 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVisibilityChangedEventArgs
+struct WINRT_EBO impl_IVisibilityChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IVisibilityChangedEventArgs>(this); }
-
-public:
-
     bool Visible() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWindowActivatedEventArgs
+struct WINRT_EBO impl_IWindowActivatedEventArgs
 {
-    auto shim() const { return impl::shim<D, IWindowActivatedEventArgs>(this); }
-
-public:
-
     Windows::UI::Core::CoreWindowActivationState WindowActivationState() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWindowSizeChangedEventArgs
+struct WINRT_EBO impl_IWindowSizeChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IWindowSizeChangedEventArgs>(this); }
-
-public:
-
     Windows::Foundation::Size Size() const;
 };
 

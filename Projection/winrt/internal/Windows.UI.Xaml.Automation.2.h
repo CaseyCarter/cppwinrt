@@ -76,21 +76,13 @@ template <> struct __declspec(uuid("a4b8a26c-9009-5394-98c8-98107e80db61")) __de
 namespace Windows::UI::Xaml::Automation {
 
 template <typename D>
-class WINRT_EBO impl_IAnnotationPatternIdentifiers
+struct WINRT_EBO impl_IAnnotationPatternIdentifiers
 {
-    auto shim() const { return impl::shim<D, IAnnotationPatternIdentifiers>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IAnnotationPatternIdentifiersStatics
+struct WINRT_EBO impl_IAnnotationPatternIdentifiersStatics
 {
-    auto shim() const { return impl::shim<D, IAnnotationPatternIdentifiersStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::AutomationProperty AnnotationTypeIdProperty() const;
     Windows::UI::Xaml::Automation::AutomationProperty AnnotationTypeNameProperty() const;
     Windows::UI::Xaml::Automation::AutomationProperty AuthorProperty() const;
@@ -99,12 +91,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAutomationAnnotation
+struct WINRT_EBO impl_IAutomationAnnotation
 {
-    auto shim() const { return impl::shim<D, IAutomationAnnotation>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::AnnotationType Type() const;
     void Type(Windows::UI::Xaml::Automation::AnnotationType value) const;
     Windows::UI::Xaml::UIElement Element() const;
@@ -112,43 +100,27 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAutomationAnnotationFactory
+struct WINRT_EBO impl_IAutomationAnnotationFactory
 {
-    auto shim() const { return impl::shim<D, IAutomationAnnotationFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::AutomationAnnotation CreateInstance(Windows::UI::Xaml::Automation::AnnotationType type) const;
     Windows::UI::Xaml::Automation::AutomationAnnotation CreateWithElementParameter(Windows::UI::Xaml::Automation::AnnotationType type, const Windows::UI::Xaml::UIElement & element) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAutomationAnnotationStatics
+struct WINRT_EBO impl_IAutomationAnnotationStatics
 {
-    auto shim() const { return impl::shim<D, IAutomationAnnotationStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty TypeProperty() const;
     Windows::UI::Xaml::DependencyProperty ElementProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAutomationElementIdentifiers
+struct WINRT_EBO impl_IAutomationElementIdentifiers
 {
-    auto shim() const { return impl::shim<D, IAutomationElementIdentifiers>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IAutomationElementIdentifiersStatics
+struct WINRT_EBO impl_IAutomationElementIdentifiersStatics
 {
-    auto shim() const { return impl::shim<D, IAutomationElementIdentifiersStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::AutomationProperty AcceleratorKeyProperty() const;
     Windows::UI::Xaml::Automation::AutomationProperty AccessKeyProperty() const;
     Windows::UI::Xaml::Automation::AutomationProperty AutomationIdProperty() const;
@@ -175,22 +147,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAutomationElementIdentifiersStatics2
+struct WINRT_EBO impl_IAutomationElementIdentifiersStatics2
 {
-    auto shim() const { return impl::shim<D, IAutomationElementIdentifiersStatics2>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::AutomationProperty ControlledPeersProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAutomationElementIdentifiersStatics3
+struct WINRT_EBO impl_IAutomationElementIdentifiersStatics3
 {
-    auto shim() const { return impl::shim<D, IAutomationElementIdentifiersStatics3>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::AutomationProperty PositionInSetProperty() const;
     Windows::UI::Xaml::Automation::AutomationProperty SizeOfSetProperty() const;
     Windows::UI::Xaml::Automation::AutomationProperty LevelProperty() const;
@@ -198,23 +162,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAutomationElementIdentifiersStatics4
+struct WINRT_EBO impl_IAutomationElementIdentifiersStatics4
 {
-    auto shim() const { return impl::shim<D, IAutomationElementIdentifiersStatics4>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::AutomationProperty LandmarkTypeProperty() const;
     Windows::UI::Xaml::Automation::AutomationProperty LocalizedLandmarkTypeProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAutomationElementIdentifiersStatics5
+struct WINRT_EBO impl_IAutomationElementIdentifiersStatics5
 {
-    auto shim() const { return impl::shim<D, IAutomationElementIdentifiersStatics5>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::AutomationProperty IsPeripheralProperty() const;
     Windows::UI::Xaml::Automation::AutomationProperty IsDataValidForFormProperty() const;
     Windows::UI::Xaml::Automation::AutomationProperty FullDescriptionProperty() const;
@@ -224,21 +180,13 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAutomationProperties
+struct WINRT_EBO impl_IAutomationProperties
 {
-    auto shim() const { return impl::shim<D, IAutomationProperties>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IAutomationPropertiesStatics
+struct WINRT_EBO impl_IAutomationPropertiesStatics
 {
-    auto shim() const { return impl::shim<D, IAutomationPropertiesStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty AcceleratorKeyProperty() const;
     hstring GetAcceleratorKey(const Windows::UI::Xaml::DependencyObject & element) const;
     void SetAcceleratorKey(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const;
@@ -272,12 +220,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAutomationPropertiesStatics2
+struct WINRT_EBO impl_IAutomationPropertiesStatics2
 {
-    auto shim() const { return impl::shim<D, IAutomationPropertiesStatics2>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty AccessibilityViewProperty() const;
     Windows::UI::Xaml::Automation::Peers::AccessibilityView GetAccessibilityView(const Windows::UI::Xaml::DependencyObject & element) const;
     void SetAccessibilityView(const Windows::UI::Xaml::DependencyObject & element, Windows::UI::Xaml::Automation::Peers::AccessibilityView value) const;
@@ -286,12 +230,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAutomationPropertiesStatics3
+struct WINRT_EBO impl_IAutomationPropertiesStatics3
 {
-    auto shim() const { return impl::shim<D, IAutomationPropertiesStatics3>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty PositionInSetProperty() const;
     int32_t GetPositionInSet(const Windows::UI::Xaml::DependencyObject & element) const;
     void SetPositionInSet(const Windows::UI::Xaml::DependencyObject & element, int32_t value) const;
@@ -306,12 +246,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAutomationPropertiesStatics4
+struct WINRT_EBO impl_IAutomationPropertiesStatics4
 {
-    auto shim() const { return impl::shim<D, IAutomationPropertiesStatics4>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty LandmarkTypeProperty() const;
     Windows::UI::Xaml::Automation::Peers::AutomationLandmarkType GetLandmarkType(const Windows::UI::Xaml::DependencyObject & element) const;
     void SetLandmarkType(const Windows::UI::Xaml::DependencyObject & element, Windows::UI::Xaml::Automation::Peers::AutomationLandmarkType value) const;
@@ -321,12 +257,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAutomationPropertiesStatics5
+struct WINRT_EBO impl_IAutomationPropertiesStatics5
 {
-    auto shim() const { return impl::shim<D, IAutomationPropertiesStatics5>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty IsPeripheralProperty() const;
     bool GetIsPeripheral(const Windows::UI::Xaml::DependencyObject & element) const;
     void SetIsPeripheral(const Windows::UI::Xaml::DependencyObject & element, bool value) const;
@@ -348,49 +280,29 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAutomationProperty
+struct WINRT_EBO impl_IAutomationProperty
 {
-    auto shim() const { return impl::shim<D, IAutomationProperty>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IDockPatternIdentifiers
+struct WINRT_EBO impl_IDockPatternIdentifiers
 {
-    auto shim() const { return impl::shim<D, IDockPatternIdentifiers>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IDockPatternIdentifiersStatics
+struct WINRT_EBO impl_IDockPatternIdentifiersStatics
 {
-    auto shim() const { return impl::shim<D, IDockPatternIdentifiersStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::AutomationProperty DockPositionProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDragPatternIdentifiers
+struct WINRT_EBO impl_IDragPatternIdentifiers
 {
-    auto shim() const { return impl::shim<D, IDragPatternIdentifiers>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IDragPatternIdentifiersStatics
+struct WINRT_EBO impl_IDragPatternIdentifiersStatics
 {
-    auto shim() const { return impl::shim<D, IDragPatternIdentifiersStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::AutomationProperty DropEffectProperty() const;
     Windows::UI::Xaml::Automation::AutomationProperty DropEffectsProperty() const;
     Windows::UI::Xaml::Automation::AutomationProperty GrabbedItemsProperty() const;
@@ -398,60 +310,36 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDropTargetPatternIdentifiers
+struct WINRT_EBO impl_IDropTargetPatternIdentifiers
 {
-    auto shim() const { return impl::shim<D, IDropTargetPatternIdentifiers>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IDropTargetPatternIdentifiersStatics
+struct WINRT_EBO impl_IDropTargetPatternIdentifiersStatics
 {
-    auto shim() const { return impl::shim<D, IDropTargetPatternIdentifiersStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::AutomationProperty DropTargetEffectProperty() const;
     Windows::UI::Xaml::Automation::AutomationProperty DropTargetEffectsProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IExpandCollapsePatternIdentifiers
+struct WINRT_EBO impl_IExpandCollapsePatternIdentifiers
 {
-    auto shim() const { return impl::shim<D, IExpandCollapsePatternIdentifiers>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IExpandCollapsePatternIdentifiersStatics
+struct WINRT_EBO impl_IExpandCollapsePatternIdentifiersStatics
 {
-    auto shim() const { return impl::shim<D, IExpandCollapsePatternIdentifiersStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::AutomationProperty ExpandCollapseStateProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGridItemPatternIdentifiers
+struct WINRT_EBO impl_IGridItemPatternIdentifiers
 {
-    auto shim() const { return impl::shim<D, IGridItemPatternIdentifiers>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IGridItemPatternIdentifiersStatics
+struct WINRT_EBO impl_IGridItemPatternIdentifiersStatics
 {
-    auto shim() const { return impl::shim<D, IGridItemPatternIdentifiersStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::AutomationProperty ColumnProperty() const;
     Windows::UI::Xaml::Automation::AutomationProperty ColumnSpanProperty() const;
     Windows::UI::Xaml::Automation::AutomationProperty ContainingGridProperty() const;
@@ -460,61 +348,37 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IGridPatternIdentifiers
+struct WINRT_EBO impl_IGridPatternIdentifiers
 {
-    auto shim() const { return impl::shim<D, IGridPatternIdentifiers>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IGridPatternIdentifiersStatics
+struct WINRT_EBO impl_IGridPatternIdentifiersStatics
 {
-    auto shim() const { return impl::shim<D, IGridPatternIdentifiersStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::AutomationProperty ColumnCountProperty() const;
     Windows::UI::Xaml::Automation::AutomationProperty RowCountProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMultipleViewPatternIdentifiers
+struct WINRT_EBO impl_IMultipleViewPatternIdentifiers
 {
-    auto shim() const { return impl::shim<D, IMultipleViewPatternIdentifiers>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IMultipleViewPatternIdentifiersStatics
+struct WINRT_EBO impl_IMultipleViewPatternIdentifiersStatics
 {
-    auto shim() const { return impl::shim<D, IMultipleViewPatternIdentifiersStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::AutomationProperty CurrentViewProperty() const;
     Windows::UI::Xaml::Automation::AutomationProperty SupportedViewsProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRangeValuePatternIdentifiers
+struct WINRT_EBO impl_IRangeValuePatternIdentifiers
 {
-    auto shim() const { return impl::shim<D, IRangeValuePatternIdentifiers>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IRangeValuePatternIdentifiersStatics
+struct WINRT_EBO impl_IRangeValuePatternIdentifiersStatics
 {
-    auto shim() const { return impl::shim<D, IRangeValuePatternIdentifiersStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::AutomationProperty IsReadOnlyProperty() const;
     Windows::UI::Xaml::Automation::AutomationProperty LargeChangeProperty() const;
     Windows::UI::Xaml::Automation::AutomationProperty MaximumProperty() const;
@@ -524,21 +388,13 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IScrollPatternIdentifiers
+struct WINRT_EBO impl_IScrollPatternIdentifiers
 {
-    auto shim() const { return impl::shim<D, IScrollPatternIdentifiers>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IScrollPatternIdentifiersStatics
+struct WINRT_EBO impl_IScrollPatternIdentifiersStatics
 {
-    auto shim() const { return impl::shim<D, IScrollPatternIdentifiersStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::AutomationProperty HorizontallyScrollableProperty() const;
     Windows::UI::Xaml::Automation::AutomationProperty HorizontalScrollPercentProperty() const;
     Windows::UI::Xaml::Automation::AutomationProperty HorizontalViewSizeProperty() const;
@@ -549,81 +405,49 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISelectionItemPatternIdentifiers
+struct WINRT_EBO impl_ISelectionItemPatternIdentifiers
 {
-    auto shim() const { return impl::shim<D, ISelectionItemPatternIdentifiers>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ISelectionItemPatternIdentifiersStatics
+struct WINRT_EBO impl_ISelectionItemPatternIdentifiersStatics
 {
-    auto shim() const { return impl::shim<D, ISelectionItemPatternIdentifiersStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::AutomationProperty IsSelectedProperty() const;
     Windows::UI::Xaml::Automation::AutomationProperty SelectionContainerProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISelectionPatternIdentifiers
+struct WINRT_EBO impl_ISelectionPatternIdentifiers
 {
-    auto shim() const { return impl::shim<D, ISelectionPatternIdentifiers>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ISelectionPatternIdentifiersStatics
+struct WINRT_EBO impl_ISelectionPatternIdentifiersStatics
 {
-    auto shim() const { return impl::shim<D, ISelectionPatternIdentifiersStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::AutomationProperty CanSelectMultipleProperty() const;
     Windows::UI::Xaml::Automation::AutomationProperty IsSelectionRequiredProperty() const;
     Windows::UI::Xaml::Automation::AutomationProperty SelectionProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpreadsheetItemPatternIdentifiers
+struct WINRT_EBO impl_ISpreadsheetItemPatternIdentifiers
 {
-    auto shim() const { return impl::shim<D, ISpreadsheetItemPatternIdentifiers>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpreadsheetItemPatternIdentifiersStatics
+struct WINRT_EBO impl_ISpreadsheetItemPatternIdentifiersStatics
 {
-    auto shim() const { return impl::shim<D, ISpreadsheetItemPatternIdentifiersStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::AutomationProperty FormulaProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStylesPatternIdentifiers
+struct WINRT_EBO impl_IStylesPatternIdentifiers
 {
-    auto shim() const { return impl::shim<D, IStylesPatternIdentifiers>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IStylesPatternIdentifiersStatics
+struct WINRT_EBO impl_IStylesPatternIdentifiersStatics
 {
-    auto shim() const { return impl::shim<D, IStylesPatternIdentifiersStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::AutomationProperty ExtendedPropertiesProperty() const;
     Windows::UI::Xaml::Automation::AutomationProperty FillColorProperty() const;
     Windows::UI::Xaml::Automation::AutomationProperty FillPatternColorProperty() const;
@@ -634,81 +458,49 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ITableItemPatternIdentifiers
+struct WINRT_EBO impl_ITableItemPatternIdentifiers
 {
-    auto shim() const { return impl::shim<D, ITableItemPatternIdentifiers>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ITableItemPatternIdentifiersStatics
+struct WINRT_EBO impl_ITableItemPatternIdentifiersStatics
 {
-    auto shim() const { return impl::shim<D, ITableItemPatternIdentifiersStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::AutomationProperty ColumnHeaderItemsProperty() const;
     Windows::UI::Xaml::Automation::AutomationProperty RowHeaderItemsProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITablePatternIdentifiers
+struct WINRT_EBO impl_ITablePatternIdentifiers
 {
-    auto shim() const { return impl::shim<D, ITablePatternIdentifiers>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ITablePatternIdentifiersStatics
+struct WINRT_EBO impl_ITablePatternIdentifiersStatics
 {
-    auto shim() const { return impl::shim<D, ITablePatternIdentifiersStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::AutomationProperty ColumnHeadersProperty() const;
     Windows::UI::Xaml::Automation::AutomationProperty RowHeadersProperty() const;
     Windows::UI::Xaml::Automation::AutomationProperty RowOrColumnMajorProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITogglePatternIdentifiers
+struct WINRT_EBO impl_ITogglePatternIdentifiers
 {
-    auto shim() const { return impl::shim<D, ITogglePatternIdentifiers>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ITogglePatternIdentifiersStatics
+struct WINRT_EBO impl_ITogglePatternIdentifiersStatics
 {
-    auto shim() const { return impl::shim<D, ITogglePatternIdentifiersStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::AutomationProperty ToggleStateProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITransformPattern2Identifiers
+struct WINRT_EBO impl_ITransformPattern2Identifiers
 {
-    auto shim() const { return impl::shim<D, ITransformPattern2Identifiers>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ITransformPattern2IdentifiersStatics
+struct WINRT_EBO impl_ITransformPattern2IdentifiersStatics
 {
-    auto shim() const { return impl::shim<D, ITransformPattern2IdentifiersStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::AutomationProperty CanZoomProperty() const;
     Windows::UI::Xaml::Automation::AutomationProperty ZoomLevelProperty() const;
     Windows::UI::Xaml::Automation::AutomationProperty MaxZoomProperty() const;
@@ -716,62 +508,38 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ITransformPatternIdentifiers
+struct WINRT_EBO impl_ITransformPatternIdentifiers
 {
-    auto shim() const { return impl::shim<D, ITransformPatternIdentifiers>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ITransformPatternIdentifiersStatics
+struct WINRT_EBO impl_ITransformPatternIdentifiersStatics
 {
-    auto shim() const { return impl::shim<D, ITransformPatternIdentifiersStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::AutomationProperty CanMoveProperty() const;
     Windows::UI::Xaml::Automation::AutomationProperty CanResizeProperty() const;
     Windows::UI::Xaml::Automation::AutomationProperty CanRotateProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IValuePatternIdentifiers
+struct WINRT_EBO impl_IValuePatternIdentifiers
 {
-    auto shim() const { return impl::shim<D, IValuePatternIdentifiers>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IValuePatternIdentifiersStatics
+struct WINRT_EBO impl_IValuePatternIdentifiersStatics
 {
-    auto shim() const { return impl::shim<D, IValuePatternIdentifiersStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::AutomationProperty IsReadOnlyProperty() const;
     Windows::UI::Xaml::Automation::AutomationProperty ValueProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWindowPatternIdentifiers
+struct WINRT_EBO impl_IWindowPatternIdentifiers
 {
-    auto shim() const { return impl::shim<D, IWindowPatternIdentifiers>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IWindowPatternIdentifiersStatics
+struct WINRT_EBO impl_IWindowPatternIdentifiersStatics
 {
-    auto shim() const { return impl::shim<D, IWindowPatternIdentifiersStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::AutomationProperty CanMaximizeProperty() const;
     Windows::UI::Xaml::Automation::AutomationProperty CanMinimizeProperty() const;
     Windows::UI::Xaml::Automation::AutomationProperty IsModalProperty() const;

@@ -558,226 +558,226 @@ namespace Windows::Web::Http::Filters {
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress> impl_IHttpFilter<D>::SendRequestAsync(const Windows::Web::Http::HttpRequestMessage & request) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress> operation;
-    check_hresult(shim()->abi_SendRequestAsync(get(request), put(operation)));
+    check_hresult(static_cast<const IHttpFilter &>(static_cast<const D &>(*this))->abi_SendRequestAsync(get(request), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Web::Http::Filters::HttpCacheReadBehavior impl_IHttpCacheControl<D>::ReadBehavior() const
 {
     Windows::Web::Http::Filters::HttpCacheReadBehavior value {};
-    check_hresult(shim()->get_ReadBehavior(&value));
+    check_hresult(static_cast<const IHttpCacheControl &>(static_cast<const D &>(*this))->get_ReadBehavior(&value));
     return value;
 }
 
 template <typename D> void impl_IHttpCacheControl<D>::ReadBehavior(Windows::Web::Http::Filters::HttpCacheReadBehavior value) const
 {
-    check_hresult(shim()->put_ReadBehavior(value));
+    check_hresult(static_cast<const IHttpCacheControl &>(static_cast<const D &>(*this))->put_ReadBehavior(value));
 }
 
 template <typename D> Windows::Web::Http::Filters::HttpCacheWriteBehavior impl_IHttpCacheControl<D>::WriteBehavior() const
 {
     Windows::Web::Http::Filters::HttpCacheWriteBehavior value {};
-    check_hresult(shim()->get_WriteBehavior(&value));
+    check_hresult(static_cast<const IHttpCacheControl &>(static_cast<const D &>(*this))->get_WriteBehavior(&value));
     return value;
 }
 
 template <typename D> void impl_IHttpCacheControl<D>::WriteBehavior(Windows::Web::Http::Filters::HttpCacheWriteBehavior value) const
 {
-    check_hresult(shim()->put_WriteBehavior(value));
+    check_hresult(static_cast<const IHttpCacheControl &>(static_cast<const D &>(*this))->put_WriteBehavior(value));
 }
 
 template <typename D> Windows::Web::Http::HttpRequestMessage impl_IHttpServerCustomValidationRequestedEventArgs<D>::RequestMessage() const
 {
     Windows::Web::Http::HttpRequestMessage value { nullptr };
-    check_hresult(shim()->get_RequestMessage(put(value)));
+    check_hresult(static_cast<const IHttpServerCustomValidationRequestedEventArgs &>(static_cast<const D &>(*this))->get_RequestMessage(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::Certificate impl_IHttpServerCustomValidationRequestedEventArgs<D>::ServerCertificate() const
 {
     Windows::Security::Cryptography::Certificates::Certificate value { nullptr };
-    check_hresult(shim()->get_ServerCertificate(put(value)));
+    check_hresult(static_cast<const IHttpServerCustomValidationRequestedEventArgs &>(static_cast<const D &>(*this))->get_ServerCertificate(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::Sockets::SocketSslErrorSeverity impl_IHttpServerCustomValidationRequestedEventArgs<D>::ServerCertificateErrorSeverity() const
 {
     Windows::Networking::Sockets::SocketSslErrorSeverity value {};
-    check_hresult(shim()->get_ServerCertificateErrorSeverity(&value));
+    check_hresult(static_cast<const IHttpServerCustomValidationRequestedEventArgs &>(static_cast<const D &>(*this))->get_ServerCertificateErrorSeverity(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<winrt::Windows::Security::Cryptography::Certificates::ChainValidationResult> impl_IHttpServerCustomValidationRequestedEventArgs<D>::ServerCertificateErrors() const
 {
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Security::Cryptography::Certificates::ChainValidationResult> value;
-    check_hresult(shim()->get_ServerCertificateErrors(put(value)));
+    check_hresult(static_cast<const IHttpServerCustomValidationRequestedEventArgs &>(static_cast<const D &>(*this))->get_ServerCertificateErrors(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> impl_IHttpServerCustomValidationRequestedEventArgs<D>::ServerIntermediateCertificates() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> value;
-    check_hresult(shim()->get_ServerIntermediateCertificates(put(value)));
+    check_hresult(static_cast<const IHttpServerCustomValidationRequestedEventArgs &>(static_cast<const D &>(*this))->get_ServerIntermediateCertificates(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpServerCustomValidationRequestedEventArgs<D>::Reject() const
 {
-    check_hresult(shim()->abi_Reject());
+    check_hresult(static_cast<const IHttpServerCustomValidationRequestedEventArgs &>(static_cast<const D &>(*this))->abi_Reject());
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IHttpServerCustomValidationRequestedEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral result { nullptr };
-    check_hresult(shim()->abi_GetDeferral(put(result)));
+    check_hresult(static_cast<const IHttpServerCustomValidationRequestedEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(result)));
     return result;
 }
 
 template <typename D> bool impl_IHttpBaseProtocolFilter<D>::AllowAutoRedirect() const
 {
     bool value {};
-    check_hresult(shim()->get_AllowAutoRedirect(&value));
+    check_hresult(static_cast<const IHttpBaseProtocolFilter &>(static_cast<const D &>(*this))->get_AllowAutoRedirect(&value));
     return value;
 }
 
 template <typename D> void impl_IHttpBaseProtocolFilter<D>::AllowAutoRedirect(bool value) const
 {
-    check_hresult(shim()->put_AllowAutoRedirect(value));
+    check_hresult(static_cast<const IHttpBaseProtocolFilter &>(static_cast<const D &>(*this))->put_AllowAutoRedirect(value));
 }
 
 template <typename D> bool impl_IHttpBaseProtocolFilter<D>::AllowUI() const
 {
     bool value {};
-    check_hresult(shim()->get_AllowUI(&value));
+    check_hresult(static_cast<const IHttpBaseProtocolFilter &>(static_cast<const D &>(*this))->get_AllowUI(&value));
     return value;
 }
 
 template <typename D> void impl_IHttpBaseProtocolFilter<D>::AllowUI(bool value) const
 {
-    check_hresult(shim()->put_AllowUI(value));
+    check_hresult(static_cast<const IHttpBaseProtocolFilter &>(static_cast<const D &>(*this))->put_AllowUI(value));
 }
 
 template <typename D> bool impl_IHttpBaseProtocolFilter<D>::AutomaticDecompression() const
 {
     bool value {};
-    check_hresult(shim()->get_AutomaticDecompression(&value));
+    check_hresult(static_cast<const IHttpBaseProtocolFilter &>(static_cast<const D &>(*this))->get_AutomaticDecompression(&value));
     return value;
 }
 
 template <typename D> void impl_IHttpBaseProtocolFilter<D>::AutomaticDecompression(bool value) const
 {
-    check_hresult(shim()->put_AutomaticDecompression(value));
+    check_hresult(static_cast<const IHttpBaseProtocolFilter &>(static_cast<const D &>(*this))->put_AutomaticDecompression(value));
 }
 
 template <typename D> Windows::Web::Http::Filters::HttpCacheControl impl_IHttpBaseProtocolFilter<D>::CacheControl() const
 {
     Windows::Web::Http::Filters::HttpCacheControl value { nullptr };
-    check_hresult(shim()->get_CacheControl(put(value)));
+    check_hresult(static_cast<const IHttpBaseProtocolFilter &>(static_cast<const D &>(*this))->get_CacheControl(put(value)));
     return value;
 }
 
 template <typename D> Windows::Web::Http::HttpCookieManager impl_IHttpBaseProtocolFilter<D>::CookieManager() const
 {
     Windows::Web::Http::HttpCookieManager value { nullptr };
-    check_hresult(shim()->get_CookieManager(put(value)));
+    check_hresult(static_cast<const IHttpBaseProtocolFilter &>(static_cast<const D &>(*this))->get_CookieManager(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::Certificate impl_IHttpBaseProtocolFilter<D>::ClientCertificate() const
 {
     Windows::Security::Cryptography::Certificates::Certificate value { nullptr };
-    check_hresult(shim()->get_ClientCertificate(put(value)));
+    check_hresult(static_cast<const IHttpBaseProtocolFilter &>(static_cast<const D &>(*this))->get_ClientCertificate(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpBaseProtocolFilter<D>::ClientCertificate(const Windows::Security::Cryptography::Certificates::Certificate & value) const
 {
-    check_hresult(shim()->put_ClientCertificate(get(value)));
+    check_hresult(static_cast<const IHttpBaseProtocolFilter &>(static_cast<const D &>(*this))->put_ClientCertificate(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<winrt::Windows::Security::Cryptography::Certificates::ChainValidationResult> impl_IHttpBaseProtocolFilter<D>::IgnorableServerCertificateErrors() const
 {
     Windows::Foundation::Collections::IVector<winrt::Windows::Security::Cryptography::Certificates::ChainValidationResult> value;
-    check_hresult(shim()->get_IgnorableServerCertificateErrors(put(value)));
+    check_hresult(static_cast<const IHttpBaseProtocolFilter &>(static_cast<const D &>(*this))->get_IgnorableServerCertificateErrors(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IHttpBaseProtocolFilter<D>::MaxConnectionsPerServer() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_MaxConnectionsPerServer(&value));
+    check_hresult(static_cast<const IHttpBaseProtocolFilter &>(static_cast<const D &>(*this))->get_MaxConnectionsPerServer(&value));
     return value;
 }
 
 template <typename D> void impl_IHttpBaseProtocolFilter<D>::MaxConnectionsPerServer(uint32_t value) const
 {
-    check_hresult(shim()->put_MaxConnectionsPerServer(value));
+    check_hresult(static_cast<const IHttpBaseProtocolFilter &>(static_cast<const D &>(*this))->put_MaxConnectionsPerServer(value));
 }
 
 template <typename D> Windows::Security::Credentials::PasswordCredential impl_IHttpBaseProtocolFilter<D>::ProxyCredential() const
 {
     Windows::Security::Credentials::PasswordCredential value { nullptr };
-    check_hresult(shim()->get_ProxyCredential(put(value)));
+    check_hresult(static_cast<const IHttpBaseProtocolFilter &>(static_cast<const D &>(*this))->get_ProxyCredential(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpBaseProtocolFilter<D>::ProxyCredential(const Windows::Security::Credentials::PasswordCredential & value) const
 {
-    check_hresult(shim()->put_ProxyCredential(get(value)));
+    check_hresult(static_cast<const IHttpBaseProtocolFilter &>(static_cast<const D &>(*this))->put_ProxyCredential(get(value)));
 }
 
 template <typename D> Windows::Security::Credentials::PasswordCredential impl_IHttpBaseProtocolFilter<D>::ServerCredential() const
 {
     Windows::Security::Credentials::PasswordCredential value { nullptr };
-    check_hresult(shim()->get_ServerCredential(put(value)));
+    check_hresult(static_cast<const IHttpBaseProtocolFilter &>(static_cast<const D &>(*this))->get_ServerCredential(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpBaseProtocolFilter<D>::ServerCredential(const Windows::Security::Credentials::PasswordCredential & value) const
 {
-    check_hresult(shim()->put_ServerCredential(get(value)));
+    check_hresult(static_cast<const IHttpBaseProtocolFilter &>(static_cast<const D &>(*this))->put_ServerCredential(get(value)));
 }
 
 template <typename D> bool impl_IHttpBaseProtocolFilter<D>::UseProxy() const
 {
     bool value {};
-    check_hresult(shim()->get_UseProxy(&value));
+    check_hresult(static_cast<const IHttpBaseProtocolFilter &>(static_cast<const D &>(*this))->get_UseProxy(&value));
     return value;
 }
 
 template <typename D> void impl_IHttpBaseProtocolFilter<D>::UseProxy(bool value) const
 {
-    check_hresult(shim()->put_UseProxy(value));
+    check_hresult(static_cast<const IHttpBaseProtocolFilter &>(static_cast<const D &>(*this))->put_UseProxy(value));
 }
 
 template <typename D> Windows::Web::Http::HttpVersion impl_IHttpBaseProtocolFilter2<D>::MaxVersion() const
 {
     Windows::Web::Http::HttpVersion value {};
-    check_hresult(shim()->get_MaxVersion(&value));
+    check_hresult(static_cast<const IHttpBaseProtocolFilter2 &>(static_cast<const D &>(*this))->get_MaxVersion(&value));
     return value;
 }
 
 template <typename D> void impl_IHttpBaseProtocolFilter2<D>::MaxVersion(Windows::Web::Http::HttpVersion value) const
 {
-    check_hresult(shim()->put_MaxVersion(value));
+    check_hresult(static_cast<const IHttpBaseProtocolFilter2 &>(static_cast<const D &>(*this))->put_MaxVersion(value));
 }
 
 template <typename D> Windows::Web::Http::Filters::HttpCookieUsageBehavior impl_IHttpBaseProtocolFilter3<D>::CookieUsageBehavior() const
 {
     Windows::Web::Http::Filters::HttpCookieUsageBehavior value {};
-    check_hresult(shim()->get_CookieUsageBehavior(&value));
+    check_hresult(static_cast<const IHttpBaseProtocolFilter3 &>(static_cast<const D &>(*this))->get_CookieUsageBehavior(&value));
     return value;
 }
 
 template <typename D> void impl_IHttpBaseProtocolFilter3<D>::CookieUsageBehavior(Windows::Web::Http::Filters::HttpCookieUsageBehavior value) const
 {
-    check_hresult(shim()->put_CookieUsageBehavior(value));
+    check_hresult(static_cast<const IHttpBaseProtocolFilter3 &>(static_cast<const D &>(*this))->put_CookieUsageBehavior(value));
 }
 
 template <typename D> event_token impl_IHttpBaseProtocolFilter4<D>::ServerCustomValidationRequested(const Windows::Foundation::TypedEventHandler<Windows::Web::Http::Filters::HttpBaseProtocolFilter, Windows::Web::Http::Filters::HttpServerCustomValidationRequestedEventArgs> & eventHandler) const
 {
     event_token eventCookie {};
-    check_hresult(shim()->add_ServerCustomValidationRequested(get(eventHandler), &eventCookie));
+    check_hresult(static_cast<const IHttpBaseProtocolFilter4 &>(static_cast<const D &>(*this))->add_ServerCustomValidationRequested(get(eventHandler), &eventCookie));
     return eventCookie;
 }
 
@@ -788,12 +788,12 @@ template <typename D> event_revoker<IHttpBaseProtocolFilter4> impl_IHttpBaseProt
 
 template <typename D> void impl_IHttpBaseProtocolFilter4<D>::ServerCustomValidationRequested(event_token eventCookie) const
 {
-    check_hresult(shim()->remove_ServerCustomValidationRequested(eventCookie));
+    check_hresult(static_cast<const IHttpBaseProtocolFilter4 &>(static_cast<const D &>(*this))->remove_ServerCustomValidationRequested(eventCookie));
 }
 
 template <typename D> void impl_IHttpBaseProtocolFilter4<D>::ClearAuthenticationCache() const
 {
-    check_hresult(shim()->abi_ClearAuthenticationCache());
+    check_hresult(static_cast<const IHttpBaseProtocolFilter4 &>(static_cast<const D &>(*this))->abi_ClearAuthenticationCache());
 }
 
 inline HttpBaseProtocolFilter::HttpBaseProtocolFilter() :

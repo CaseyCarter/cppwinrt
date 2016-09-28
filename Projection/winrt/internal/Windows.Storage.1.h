@@ -463,55 +463,55 @@ template <> struct traits<Windows::Storage::SystemVideoProperties> { using defau
 
 namespace Windows::Storage {
 
-template <typename T> class impl_IApplicationData;
-template <typename T> class impl_IApplicationData2;
-template <typename T> class impl_IApplicationData3;
-template <typename T> class impl_IApplicationDataContainer;
-template <typename T> class impl_IApplicationDataStatics;
-template <typename T> class impl_IApplicationDataStatics2;
-template <typename T> class impl_ICachedFileManagerStatics;
-template <typename T> class impl_IDownloadsFolderStatics;
-template <typename T> class impl_IDownloadsFolderStatics2;
-template <typename T> class impl_IFileIOStatics;
-template <typename T> class impl_IKnownFoldersCameraRollStatics;
-template <typename T> class impl_IKnownFoldersPlaylistsStatics;
-template <typename T> class impl_IKnownFoldersSavedPicturesStatics;
-template <typename T> class impl_IKnownFoldersStatics;
-template <typename T> class impl_IKnownFoldersStatics2;
-template <typename T> class impl_IKnownFoldersStatics3;
-template <typename T> class impl_IPathIOStatics;
-template <typename T> class impl_ISetVersionDeferral;
-template <typename T> class impl_ISetVersionRequest;
-template <typename T> class impl_IStorageFile;
-template <typename T> class impl_IStorageFile2;
-template <typename T> class impl_IStorageFilePropertiesWithAvailability;
-template <typename T> class impl_IStorageFileStatics;
-template <typename T> class impl_IStorageFolder;
-template <typename T> class impl_IStorageFolder2;
-template <typename T> class impl_IStorageFolderStatics;
-template <typename T> class impl_IStorageItem;
-template <typename T> class impl_IStorageItem2;
-template <typename T> class impl_IStorageItemProperties;
-template <typename T> class impl_IStorageItemProperties2;
-template <typename T> class impl_IStorageItemPropertiesWithProvider;
-template <typename T> class impl_IStorageLibrary;
-template <typename T> class impl_IStorageLibrary2;
-template <typename T> class impl_IStorageLibraryChange;
-template <typename T> class impl_IStorageLibraryChangeReader;
-template <typename T> class impl_IStorageLibraryChangeTracker;
-template <typename T> class impl_IStorageLibraryStatics;
-template <typename T> class impl_IStorageLibraryStatics2;
-template <typename T> class impl_IStorageProvider;
-template <typename T> class impl_IStorageStreamTransaction;
-template <typename T> class impl_IStreamedFileDataRequest;
-template <typename T> class impl_ISystemAudioProperties;
-template <typename T> class impl_ISystemGPSProperties;
-template <typename T> class impl_ISystemImageProperties;
-template <typename T> class impl_ISystemMediaProperties;
-template <typename T> class impl_ISystemMusicProperties;
-template <typename T> class impl_ISystemPhotoProperties;
-template <typename T> class impl_ISystemProperties;
-template <typename T> class impl_ISystemVideoProperties;
+template <typename T> struct impl_IApplicationData;
+template <typename T> struct impl_IApplicationData2;
+template <typename T> struct impl_IApplicationData3;
+template <typename T> struct impl_IApplicationDataContainer;
+template <typename T> struct impl_IApplicationDataStatics;
+template <typename T> struct impl_IApplicationDataStatics2;
+template <typename T> struct impl_ICachedFileManagerStatics;
+template <typename T> struct impl_IDownloadsFolderStatics;
+template <typename T> struct impl_IDownloadsFolderStatics2;
+template <typename T> struct impl_IFileIOStatics;
+template <typename T> struct impl_IKnownFoldersCameraRollStatics;
+template <typename T> struct impl_IKnownFoldersPlaylistsStatics;
+template <typename T> struct impl_IKnownFoldersSavedPicturesStatics;
+template <typename T> struct impl_IKnownFoldersStatics;
+template <typename T> struct impl_IKnownFoldersStatics2;
+template <typename T> struct impl_IKnownFoldersStatics3;
+template <typename T> struct impl_IPathIOStatics;
+template <typename T> struct impl_ISetVersionDeferral;
+template <typename T> struct impl_ISetVersionRequest;
+template <typename T> struct impl_IStorageFile;
+template <typename T> struct impl_IStorageFile2;
+template <typename T> struct impl_IStorageFilePropertiesWithAvailability;
+template <typename T> struct impl_IStorageFileStatics;
+template <typename T> struct impl_IStorageFolder;
+template <typename T> struct impl_IStorageFolder2;
+template <typename T> struct impl_IStorageFolderStatics;
+template <typename T> struct impl_IStorageItem;
+template <typename T> struct impl_IStorageItem2;
+template <typename T> struct impl_IStorageItemProperties;
+template <typename T> struct impl_IStorageItemProperties2;
+template <typename T> struct impl_IStorageItemPropertiesWithProvider;
+template <typename T> struct impl_IStorageLibrary;
+template <typename T> struct impl_IStorageLibrary2;
+template <typename T> struct impl_IStorageLibraryChange;
+template <typename T> struct impl_IStorageLibraryChangeReader;
+template <typename T> struct impl_IStorageLibraryChangeTracker;
+template <typename T> struct impl_IStorageLibraryStatics;
+template <typename T> struct impl_IStorageLibraryStatics2;
+template <typename T> struct impl_IStorageProvider;
+template <typename T> struct impl_IStorageStreamTransaction;
+template <typename T> struct impl_IStreamedFileDataRequest;
+template <typename T> struct impl_ISystemAudioProperties;
+template <typename T> struct impl_ISystemGPSProperties;
+template <typename T> struct impl_ISystemImageProperties;
+template <typename T> struct impl_ISystemMediaProperties;
+template <typename T> struct impl_ISystemMusicProperties;
+template <typename T> struct impl_ISystemPhotoProperties;
+template <typename T> struct impl_ISystemProperties;
+template <typename T> struct impl_ISystemVideoProperties;
 template <typename T> struct impl_ApplicationDataSetVersionHandler;
 template <typename T> struct impl_StreamedFileDataRequestedHandler;
 
@@ -826,28 +826,24 @@ template <> struct traits<Windows::Storage::StreamedFileDataRequestedHandler>
 template <> struct traits<Windows::Storage::ApplicationData>
 {
     using abi = ABI::Windows::Storage::ApplicationData;
-    using default_interface = Windows::Storage::IApplicationData;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.ApplicationData"; }
 };
 
 template <> struct traits<Windows::Storage::ApplicationDataCompositeValue>
 {
     using abi = ABI::Windows::Storage::ApplicationDataCompositeValue;
-    using default_interface = Windows::Foundation::Collections::IPropertySet;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.ApplicationDataCompositeValue"; }
 };
 
 template <> struct traits<Windows::Storage::ApplicationDataContainer>
 {
     using abi = ABI::Windows::Storage::ApplicationDataContainer;
-    using default_interface = Windows::Storage::IApplicationDataContainer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.ApplicationDataContainer"; }
 };
 
 template <> struct traits<Windows::Storage::ApplicationDataContainerSettings>
 {
     using abi = ABI::Windows::Storage::ApplicationDataContainerSettings;
-    using default_interface = Windows::Foundation::Collections::IPropertySet;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.ApplicationDataContainerSettings"; }
 };
 
@@ -879,119 +875,102 @@ template <> struct traits<Windows::Storage::PathIO>
 template <> struct traits<Windows::Storage::SetVersionDeferral>
 {
     using abi = ABI::Windows::Storage::SetVersionDeferral;
-    using default_interface = Windows::Storage::ISetVersionDeferral;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.SetVersionDeferral"; }
 };
 
 template <> struct traits<Windows::Storage::SetVersionRequest>
 {
     using abi = ABI::Windows::Storage::SetVersionRequest;
-    using default_interface = Windows::Storage::ISetVersionRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.SetVersionRequest"; }
 };
 
 template <> struct traits<Windows::Storage::StorageFile>
 {
     using abi = ABI::Windows::Storage::StorageFile;
-    using default_interface = Windows::Storage::IStorageFile;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.StorageFile"; }
 };
 
 template <> struct traits<Windows::Storage::StorageFolder>
 {
     using abi = ABI::Windows::Storage::StorageFolder;
-    using default_interface = Windows::Storage::IStorageFolder;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.StorageFolder"; }
 };
 
 template <> struct traits<Windows::Storage::StorageLibrary>
 {
     using abi = ABI::Windows::Storage::StorageLibrary;
-    using default_interface = Windows::Storage::IStorageLibrary;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.StorageLibrary"; }
 };
 
 template <> struct traits<Windows::Storage::StorageLibraryChange>
 {
     using abi = ABI::Windows::Storage::StorageLibraryChange;
-    using default_interface = Windows::Storage::IStorageLibraryChange;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.StorageLibraryChange"; }
 };
 
 template <> struct traits<Windows::Storage::StorageLibraryChangeReader>
 {
     using abi = ABI::Windows::Storage::StorageLibraryChangeReader;
-    using default_interface = Windows::Storage::IStorageLibraryChangeReader;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.StorageLibraryChangeReader"; }
 };
 
 template <> struct traits<Windows::Storage::StorageLibraryChangeTracker>
 {
     using abi = ABI::Windows::Storage::StorageLibraryChangeTracker;
-    using default_interface = Windows::Storage::IStorageLibraryChangeTracker;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.StorageLibraryChangeTracker"; }
 };
 
 template <> struct traits<Windows::Storage::StorageProvider>
 {
     using abi = ABI::Windows::Storage::StorageProvider;
-    using default_interface = Windows::Storage::IStorageProvider;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.StorageProvider"; }
 };
 
 template <> struct traits<Windows::Storage::StorageStreamTransaction>
 {
     using abi = ABI::Windows::Storage::StorageStreamTransaction;
-    using default_interface = Windows::Storage::IStorageStreamTransaction;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.StorageStreamTransaction"; }
 };
 
 template <> struct traits<Windows::Storage::StreamedFileDataRequest>
 {
     using abi = ABI::Windows::Storage::StreamedFileDataRequest;
-    using default_interface = Windows::Storage::Streams::IOutputStream;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.StreamedFileDataRequest"; }
 };
 
 template <> struct traits<Windows::Storage::SystemAudioProperties>
 {
     using abi = ABI::Windows::Storage::SystemAudioProperties;
-    using default_interface = Windows::Storage::ISystemAudioProperties;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.SystemAudioProperties"; }
 };
 
 template <> struct traits<Windows::Storage::SystemGPSProperties>
 {
     using abi = ABI::Windows::Storage::SystemGPSProperties;
-    using default_interface = Windows::Storage::ISystemGPSProperties;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.SystemGPSProperties"; }
 };
 
 template <> struct traits<Windows::Storage::SystemImageProperties>
 {
     using abi = ABI::Windows::Storage::SystemImageProperties;
-    using default_interface = Windows::Storage::ISystemImageProperties;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.SystemImageProperties"; }
 };
 
 template <> struct traits<Windows::Storage::SystemMediaProperties>
 {
     using abi = ABI::Windows::Storage::SystemMediaProperties;
-    using default_interface = Windows::Storage::ISystemMediaProperties;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.SystemMediaProperties"; }
 };
 
 template <> struct traits<Windows::Storage::SystemMusicProperties>
 {
     using abi = ABI::Windows::Storage::SystemMusicProperties;
-    using default_interface = Windows::Storage::ISystemMusicProperties;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.SystemMusicProperties"; }
 };
 
 template <> struct traits<Windows::Storage::SystemPhotoProperties>
 {
     using abi = ABI::Windows::Storage::SystemPhotoProperties;
-    using default_interface = Windows::Storage::ISystemPhotoProperties;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.SystemPhotoProperties"; }
 };
 
@@ -1003,7 +982,6 @@ template <> struct traits<Windows::Storage::SystemProperties>
 template <> struct traits<Windows::Storage::SystemVideoProperties>
 {
     using abi = ABI::Windows::Storage::SystemVideoProperties;
-    using default_interface = Windows::Storage::ISystemVideoProperties;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.SystemVideoProperties"; }
 };
 

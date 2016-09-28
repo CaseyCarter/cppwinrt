@@ -35,71 +35,43 @@ template <> struct __declspec(uuid("92cd0a46-2266-5cd6-9293-e111299f2793")) __de
 namespace Windows::UI::Xaml::Markup {
 
 template <typename D>
-class WINRT_EBO impl_IComponentConnector
+struct WINRT_EBO impl_IComponentConnector
 {
-    auto shim() const { return impl::shim<D, IComponentConnector>(this); }
-
-public:
-
     void Connect(int32_t connectionId, const Windows::IInspectable & target) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IComponentConnector2
+struct WINRT_EBO impl_IComponentConnector2
 {
-    auto shim() const { return impl::shim<D, IComponentConnector2>(this); }
-
-public:
-
     Windows::UI::Xaml::Markup::IComponentConnector GetBindingConnector(int32_t connectionId, const Windows::IInspectable & target) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDataTemplateComponent
+struct WINRT_EBO impl_IDataTemplateComponent
 {
-    auto shim() const { return impl::shim<D, IDataTemplateComponent>(this); }
-
-public:
-
     void Recycle() const;
     void ProcessBindings(const Windows::IInspectable & item, int32_t itemIndex, int32_t phase, int32_t & nextPhase) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IXamlBinaryWriter
+struct WINRT_EBO impl_IXamlBinaryWriter
 {
-    auto shim() const { return impl::shim<D, IXamlBinaryWriter>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IXamlBinaryWriterStatics
+struct WINRT_EBO impl_IXamlBinaryWriterStatics
 {
-    auto shim() const { return impl::shim<D, IXamlBinaryWriterStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::Markup::XamlBinaryWriterErrorInformation Write(const Windows::Foundation::Collections::IVector<Windows::Storage::Streams::IRandomAccessStream> & inputStreams, const Windows::Foundation::Collections::IVector<Windows::Storage::Streams::IRandomAccessStream> & outputStreams, const Windows::UI::Xaml::Markup::IXamlMetadataProvider & xamlMetadataProvider) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IXamlBindingHelper
+struct WINRT_EBO impl_IXamlBindingHelper
 {
-    auto shim() const { return impl::shim<D, IXamlBindingHelper>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IXamlBindingHelperStatics
+struct WINRT_EBO impl_IXamlBindingHelperStatics
 {
-    auto shim() const { return impl::shim<D, IXamlBindingHelperStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty DataTemplateComponentProperty() const;
     Windows::UI::Xaml::Markup::IDataTemplateComponent GetDataTemplateComponent(const Windows::UI::Xaml::DependencyObject & element) const;
     void SetDataTemplateComponent(const Windows::UI::Xaml::DependencyObject & element, const Windows::UI::Xaml::Markup::IDataTemplateComponent & value) const;
@@ -126,12 +98,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IXamlMember
+struct WINRT_EBO impl_IXamlMember
 {
-    auto shim() const { return impl::shim<D, IXamlMember>(this); }
-
-public:
-
     bool IsAttachable() const;
     bool IsDependencyProperty() const;
     bool IsReadOnly() const;
@@ -143,44 +111,28 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IXamlMetadataProvider
+struct WINRT_EBO impl_IXamlMetadataProvider
 {
-    auto shim() const { return impl::shim<D, IXamlMetadataProvider>(this); }
-
-public:
-
     Windows::UI::Xaml::Markup::IXamlType GetXamlType(const Windows::UI::Xaml::Interop::TypeName & type) const;
     Windows::UI::Xaml::Markup::IXamlType GetXamlType(hstring_ref fullName) const;
     com_array<Windows::UI::Xaml::Markup::XmlnsDefinition> GetXmlnsDefinitions() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IXamlReader
+struct WINRT_EBO impl_IXamlReader
 {
-    auto shim() const { return impl::shim<D, IXamlReader>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IXamlReaderStatics
+struct WINRT_EBO impl_IXamlReaderStatics
 {
-    auto shim() const { return impl::shim<D, IXamlReaderStatics>(this); }
-
-public:
-
     Windows::IInspectable Load(hstring_ref xaml) const;
     Windows::IInspectable LoadWithInitialTemplateValidation(hstring_ref xaml) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IXamlType
+struct WINRT_EBO impl_IXamlType
 {
-    auto shim() const { return impl::shim<D, IXamlType>(this); }
-
-public:
-
     Windows::UI::Xaml::Markup::IXamlType BaseType() const;
     Windows::UI::Xaml::Markup::IXamlMember ContentProperty() const;
     hstring FullName() const;

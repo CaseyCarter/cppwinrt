@@ -228,27 +228,27 @@ template <> struct traits<Windows::Graphics::Printing::PrintTaskSourceRequestedD
 
 namespace Windows::Graphics::Printing {
 
-template <typename T> class impl_IPrintDocumentSource;
-template <typename T> class impl_IPrintManager;
-template <typename T> class impl_IPrintManagerStatic;
-template <typename T> class impl_IPrintManagerStatic2;
-template <typename T> class impl_IPrintPageInfo;
-template <typename T> class impl_IPrintTask;
-template <typename T> class impl_IPrintTask2;
-template <typename T> class impl_IPrintTaskCompletedEventArgs;
-template <typename T> class impl_IPrintTaskOptions;
-template <typename T> class impl_IPrintTaskOptionsCore;
-template <typename T> class impl_IPrintTaskOptionsCoreProperties;
-template <typename T> class impl_IPrintTaskOptionsCoreUIConfiguration;
-template <typename T> class impl_IPrintTaskProgressingEventArgs;
-template <typename T> class impl_IPrintTaskRequest;
-template <typename T> class impl_IPrintTaskRequestedDeferral;
-template <typename T> class impl_IPrintTaskRequestedEventArgs;
-template <typename T> class impl_IPrintTaskSourceRequestedArgs;
-template <typename T> class impl_IPrintTaskSourceRequestedDeferral;
-template <typename T> class impl_IPrintTaskTargetDeviceSupport;
-template <typename T> class impl_IStandardPrintTaskOptionsStatic;
-template <typename T> class impl_IStandardPrintTaskOptionsStatic2;
+template <typename T> struct impl_IPrintDocumentSource;
+template <typename T> struct impl_IPrintManager;
+template <typename T> struct impl_IPrintManagerStatic;
+template <typename T> struct impl_IPrintManagerStatic2;
+template <typename T> struct impl_IPrintPageInfo;
+template <typename T> struct impl_IPrintTask;
+template <typename T> struct impl_IPrintTask2;
+template <typename T> struct impl_IPrintTaskCompletedEventArgs;
+template <typename T> struct impl_IPrintTaskOptions;
+template <typename T> struct impl_IPrintTaskOptionsCore;
+template <typename T> struct impl_IPrintTaskOptionsCoreProperties;
+template <typename T> struct impl_IPrintTaskOptionsCoreUIConfiguration;
+template <typename T> struct impl_IPrintTaskProgressingEventArgs;
+template <typename T> struct impl_IPrintTaskRequest;
+template <typename T> struct impl_IPrintTaskRequestedDeferral;
+template <typename T> struct impl_IPrintTaskRequestedEventArgs;
+template <typename T> struct impl_IPrintTaskSourceRequestedArgs;
+template <typename T> struct impl_IPrintTaskSourceRequestedDeferral;
+template <typename T> struct impl_IPrintTaskTargetDeviceSupport;
+template <typename T> struct impl_IStandardPrintTaskOptionsStatic;
+template <typename T> struct impl_IStandardPrintTaskOptionsStatic2;
 template <typename T> struct impl_PrintTaskSourceRequestedHandler;
 
 }
@@ -389,77 +389,66 @@ template <> struct traits<Windows::Graphics::Printing::PrintTaskSourceRequestedH
 template <> struct traits<Windows::Graphics::Printing::PrintManager>
 {
     using abi = ABI::Windows::Graphics::Printing::PrintManager;
-    using default_interface = Windows::Graphics::Printing::IPrintManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing.PrintManager"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing::PrintPageInfo>
 {
     using abi = ABI::Windows::Graphics::Printing::PrintPageInfo;
-    using default_interface = Windows::Graphics::Printing::IPrintPageInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing.PrintPageInfo"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing::PrintTask>
 {
     using abi = ABI::Windows::Graphics::Printing::PrintTask;
-    using default_interface = Windows::Graphics::Printing::IPrintTask;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing.PrintTask"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing::PrintTaskCompletedEventArgs>
 {
     using abi = ABI::Windows::Graphics::Printing::PrintTaskCompletedEventArgs;
-    using default_interface = Windows::Graphics::Printing::IPrintTaskCompletedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing.PrintTaskCompletedEventArgs"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing::PrintTaskOptions>
 {
     using abi = ABI::Windows::Graphics::Printing::PrintTaskOptions;
-    using default_interface = Windows::Graphics::Printing::IPrintTaskOptionsCore;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing.PrintTaskOptions"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing::PrintTaskProgressingEventArgs>
 {
     using abi = ABI::Windows::Graphics::Printing::PrintTaskProgressingEventArgs;
-    using default_interface = Windows::Graphics::Printing::IPrintTaskProgressingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing.PrintTaskProgressingEventArgs"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing::PrintTaskRequest>
 {
     using abi = ABI::Windows::Graphics::Printing::PrintTaskRequest;
-    using default_interface = Windows::Graphics::Printing::IPrintTaskRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing.PrintTaskRequest"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing::PrintTaskRequestedDeferral>
 {
     using abi = ABI::Windows::Graphics::Printing::PrintTaskRequestedDeferral;
-    using default_interface = Windows::Graphics::Printing::IPrintTaskRequestedDeferral;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing.PrintTaskRequestedDeferral"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing::PrintTaskRequestedEventArgs>
 {
     using abi = ABI::Windows::Graphics::Printing::PrintTaskRequestedEventArgs;
-    using default_interface = Windows::Graphics::Printing::IPrintTaskRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing.PrintTaskRequestedEventArgs"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing::PrintTaskSourceRequestedArgs>
 {
     using abi = ABI::Windows::Graphics::Printing::PrintTaskSourceRequestedArgs;
-    using default_interface = Windows::Graphics::Printing::IPrintTaskSourceRequestedArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing.PrintTaskSourceRequestedArgs"; }
 };
 
 template <> struct traits<Windows::Graphics::Printing::PrintTaskSourceRequestedDeferral>
 {
     using abi = ABI::Windows::Graphics::Printing::PrintTaskSourceRequestedDeferral;
-    using default_interface = Windows::Graphics::Printing::IPrintTaskSourceRequestedDeferral;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Printing.PrintTaskSourceRequestedDeferral"; }
 };
 

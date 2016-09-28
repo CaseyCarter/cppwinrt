@@ -1154,407 +1154,407 @@ namespace Windows::Devices::Geolocation {
 template <typename D> Windows::Devices::Geolocation::GeoshapeType impl_IGeoshape<D>::GeoshapeType() const
 {
     Windows::Devices::Geolocation::GeoshapeType value {};
-    check_hresult(shim()->get_GeoshapeType(&value));
+    check_hresult(static_cast<const IGeoshape &>(static_cast<const D &>(*this))->get_GeoshapeType(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IGeoshape<D>::SpatialReferenceId() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_SpatialReferenceId(&value));
+    check_hresult(static_cast<const IGeoshape &>(static_cast<const D &>(*this))->get_SpatialReferenceId(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::AltitudeReferenceSystem impl_IGeoshape<D>::AltitudeReferenceSystem() const
 {
     Windows::Devices::Geolocation::AltitudeReferenceSystem value {};
-    check_hresult(shim()->get_AltitudeReferenceSystem(&value));
+    check_hresult(static_cast<const IGeoshape &>(static_cast<const D &>(*this))->get_AltitudeReferenceSystem(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::BasicGeoposition impl_IGeopoint<D>::Position() const
 {
     Windows::Devices::Geolocation::BasicGeoposition value {};
-    check_hresult(shim()->get_Position(put(value)));
+    check_hresult(static_cast<const IGeopoint &>(static_cast<const D &>(*this))->get_Position(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geopoint impl_IGeopointFactory<D>::Create(const Windows::Devices::Geolocation::BasicGeoposition & position) const
 {
     Windows::Devices::Geolocation::Geopoint value { nullptr };
-    check_hresult(shim()->abi_Create(get(position), put(value)));
+    check_hresult(static_cast<const IGeopointFactory &>(static_cast<const D &>(*this))->abi_Create(get(position), put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geopoint impl_IGeopointFactory<D>::CreateWithAltitudeReferenceSystem(const Windows::Devices::Geolocation::BasicGeoposition & position, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem) const
 {
     Windows::Devices::Geolocation::Geopoint value { nullptr };
-    check_hresult(shim()->abi_CreateWithAltitudeReferenceSystem(get(position), altitudeReferenceSystem, put(value)));
+    check_hresult(static_cast<const IGeopointFactory &>(static_cast<const D &>(*this))->abi_CreateWithAltitudeReferenceSystem(get(position), altitudeReferenceSystem, put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geopoint impl_IGeopointFactory<D>::CreateWithAltitudeReferenceSystemAndSpatialReferenceId(const Windows::Devices::Geolocation::BasicGeoposition & position, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, uint32_t spatialReferenceId) const
 {
     Windows::Devices::Geolocation::Geopoint value { nullptr };
-    check_hresult(shim()->abi_CreateWithAltitudeReferenceSystemAndSpatialReferenceId(get(position), altitudeReferenceSystem, spatialReferenceId, put(value)));
+    check_hresult(static_cast<const IGeopointFactory &>(static_cast<const D &>(*this))->abi_CreateWithAltitudeReferenceSystemAndSpatialReferenceId(get(position), altitudeReferenceSystem, spatialReferenceId, put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Geolocation::BasicGeoposition> impl_IGeopath<D>::Positions() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Geolocation::BasicGeoposition> value;
-    check_hresult(shim()->get_Positions(put(value)));
+    check_hresult(static_cast<const IGeopath &>(static_cast<const D &>(*this))->get_Positions(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geopath impl_IGeopathFactory<D>::Create(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions) const
 {
     Windows::Devices::Geolocation::Geopath value { nullptr };
-    check_hresult(shim()->abi_Create(get(positions), put(value)));
+    check_hresult(static_cast<const IGeopathFactory &>(static_cast<const D &>(*this))->abi_Create(get(positions), put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geopath impl_IGeopathFactory<D>::CreateWithAltitudeReference(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem) const
 {
     Windows::Devices::Geolocation::Geopath value { nullptr };
-    check_hresult(shim()->abi_CreateWithAltitudeReference(get(positions), altitudeReferenceSystem, put(value)));
+    check_hresult(static_cast<const IGeopathFactory &>(static_cast<const D &>(*this))->abi_CreateWithAltitudeReference(get(positions), altitudeReferenceSystem, put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geopath impl_IGeopathFactory<D>::CreateWithAltitudeReferenceAndSpatialReference(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, uint32_t spatialReferenceId) const
 {
     Windows::Devices::Geolocation::Geopath value { nullptr };
-    check_hresult(shim()->abi_CreateWithAltitudeReferenceAndSpatialReference(get(positions), altitudeReferenceSystem, spatialReferenceId, put(value)));
+    check_hresult(static_cast<const IGeopathFactory &>(static_cast<const D &>(*this))->abi_CreateWithAltitudeReferenceAndSpatialReference(get(positions), altitudeReferenceSystem, spatialReferenceId, put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::BasicGeoposition impl_IGeoboundingBox<D>::NorthwestCorner() const
 {
     Windows::Devices::Geolocation::BasicGeoposition value {};
-    check_hresult(shim()->get_NorthwestCorner(put(value)));
+    check_hresult(static_cast<const IGeoboundingBox &>(static_cast<const D &>(*this))->get_NorthwestCorner(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::BasicGeoposition impl_IGeoboundingBox<D>::SoutheastCorner() const
 {
     Windows::Devices::Geolocation::BasicGeoposition value {};
-    check_hresult(shim()->get_SoutheastCorner(put(value)));
+    check_hresult(static_cast<const IGeoboundingBox &>(static_cast<const D &>(*this))->get_SoutheastCorner(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::BasicGeoposition impl_IGeoboundingBox<D>::Center() const
 {
     Windows::Devices::Geolocation::BasicGeoposition value {};
-    check_hresult(shim()->get_Center(put(value)));
+    check_hresult(static_cast<const IGeoboundingBox &>(static_cast<const D &>(*this))->get_Center(put(value)));
     return value;
 }
 
 template <typename D> double impl_IGeoboundingBox<D>::MinAltitude() const
 {
     double value {};
-    check_hresult(shim()->get_MinAltitude(&value));
+    check_hresult(static_cast<const IGeoboundingBox &>(static_cast<const D &>(*this))->get_MinAltitude(&value));
     return value;
 }
 
 template <typename D> double impl_IGeoboundingBox<D>::MaxAltitude() const
 {
     double value {};
-    check_hresult(shim()->get_MaxAltitude(&value));
+    check_hresult(static_cast<const IGeoboundingBox &>(static_cast<const D &>(*this))->get_MaxAltitude(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::GeoboundingBox impl_IGeoboundingBoxFactory<D>::Create(const Windows::Devices::Geolocation::BasicGeoposition & northwestCorner, const Windows::Devices::Geolocation::BasicGeoposition & southeastCorner) const
 {
     Windows::Devices::Geolocation::GeoboundingBox value { nullptr };
-    check_hresult(shim()->abi_Create(get(northwestCorner), get(southeastCorner), put(value)));
+    check_hresult(static_cast<const IGeoboundingBoxFactory &>(static_cast<const D &>(*this))->abi_Create(get(northwestCorner), get(southeastCorner), put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::GeoboundingBox impl_IGeoboundingBoxFactory<D>::CreateWithAltitudeReference(const Windows::Devices::Geolocation::BasicGeoposition & northwestCorner, const Windows::Devices::Geolocation::BasicGeoposition & southeastCorner, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem) const
 {
     Windows::Devices::Geolocation::GeoboundingBox value { nullptr };
-    check_hresult(shim()->abi_CreateWithAltitudeReference(get(northwestCorner), get(southeastCorner), altitudeReferenceSystem, put(value)));
+    check_hresult(static_cast<const IGeoboundingBoxFactory &>(static_cast<const D &>(*this))->abi_CreateWithAltitudeReference(get(northwestCorner), get(southeastCorner), altitudeReferenceSystem, put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::GeoboundingBox impl_IGeoboundingBoxFactory<D>::CreateWithAltitudeReferenceAndSpatialReference(const Windows::Devices::Geolocation::BasicGeoposition & northwestCorner, const Windows::Devices::Geolocation::BasicGeoposition & southeastCorner, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, uint32_t spatialReferenceId) const
 {
     Windows::Devices::Geolocation::GeoboundingBox value { nullptr };
-    check_hresult(shim()->abi_CreateWithAltitudeReferenceAndSpatialReference(get(northwestCorner), get(southeastCorner), altitudeReferenceSystem, spatialReferenceId, put(value)));
+    check_hresult(static_cast<const IGeoboundingBoxFactory &>(static_cast<const D &>(*this))->abi_CreateWithAltitudeReferenceAndSpatialReference(get(northwestCorner), get(southeastCorner), altitudeReferenceSystem, spatialReferenceId, put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::GeoboundingBox impl_IGeoboundingBoxStatics<D>::TryCompute(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions) const
 {
     Windows::Devices::Geolocation::GeoboundingBox value { nullptr };
-    check_hresult(shim()->abi_TryCompute(get(positions), put(value)));
+    check_hresult(static_cast<const IGeoboundingBoxStatics &>(static_cast<const D &>(*this))->abi_TryCompute(get(positions), put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::GeoboundingBox impl_IGeoboundingBoxStatics<D>::TryCompute(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeRefSystem) const
 {
     Windows::Devices::Geolocation::GeoboundingBox value { nullptr };
-    check_hresult(shim()->abi_TryComputeWithAltitudeReference(get(positions), altitudeRefSystem, put(value)));
+    check_hresult(static_cast<const IGeoboundingBoxStatics &>(static_cast<const D &>(*this))->abi_TryComputeWithAltitudeReference(get(positions), altitudeRefSystem, put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::GeoboundingBox impl_IGeoboundingBoxStatics<D>::TryCompute(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::BasicGeoposition> & positions, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeRefSystem, uint32_t spatialReferenceId) const
 {
     Windows::Devices::Geolocation::GeoboundingBox value { nullptr };
-    check_hresult(shim()->abi_TryComputeWithAltitudeReferenceAndSpatialReference(get(positions), altitudeRefSystem, spatialReferenceId, put(value)));
+    check_hresult(static_cast<const IGeoboundingBoxStatics &>(static_cast<const D &>(*this))->abi_TryComputeWithAltitudeReferenceAndSpatialReference(get(positions), altitudeRefSystem, spatialReferenceId, put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<double> impl_IGeocoordinateSatelliteData<D>::PositionDilutionOfPrecision() const
 {
     Windows::Foundation::IReference<double> ppValue;
-    check_hresult(shim()->get_PositionDilutionOfPrecision(put(ppValue)));
+    check_hresult(static_cast<const IGeocoordinateSatelliteData &>(static_cast<const D &>(*this))->get_PositionDilutionOfPrecision(put(ppValue)));
     return ppValue;
 }
 
 template <typename D> Windows::Foundation::IReference<double> impl_IGeocoordinateSatelliteData<D>::HorizontalDilutionOfPrecision() const
 {
     Windows::Foundation::IReference<double> ppValue;
-    check_hresult(shim()->get_HorizontalDilutionOfPrecision(put(ppValue)));
+    check_hresult(static_cast<const IGeocoordinateSatelliteData &>(static_cast<const D &>(*this))->get_HorizontalDilutionOfPrecision(put(ppValue)));
     return ppValue;
 }
 
 template <typename D> Windows::Foundation::IReference<double> impl_IGeocoordinateSatelliteData<D>::VerticalDilutionOfPrecision() const
 {
     Windows::Foundation::IReference<double> ppValue;
-    check_hresult(shim()->get_VerticalDilutionOfPrecision(put(ppValue)));
+    check_hresult(static_cast<const IGeocoordinateSatelliteData &>(static_cast<const D &>(*this))->get_VerticalDilutionOfPrecision(put(ppValue)));
     return ppValue;
 }
 
 template <typename D> hstring impl_IVenueData<D>::Id() const
 {
     hstring value;
-    check_hresult(shim()->get_Id(put(value)));
+    check_hresult(static_cast<const IVenueData &>(static_cast<const D &>(*this))->get_Id(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IVenueData<D>::Level() const
 {
     hstring value;
-    check_hresult(shim()->get_Level(put(value)));
+    check_hresult(static_cast<const IVenueData &>(static_cast<const D &>(*this))->get_Level(put(value)));
     return value;
 }
 
 template <typename D> double impl_IGeocoordinate<D>::Latitude() const
 {
     double value {};
-    check_hresult(shim()->get_Latitude(&value));
+    check_hresult(static_cast<const IGeocoordinate &>(static_cast<const D &>(*this))->get_Latitude(&value));
     return value;
 }
 
 template <typename D> double impl_IGeocoordinate<D>::Longitude() const
 {
     double value {};
-    check_hresult(shim()->get_Longitude(&value));
+    check_hresult(static_cast<const IGeocoordinate &>(static_cast<const D &>(*this))->get_Longitude(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<double> impl_IGeocoordinate<D>::Altitude() const
 {
     Windows::Foundation::IReference<double> value;
-    check_hresult(shim()->get_Altitude(put(value)));
+    check_hresult(static_cast<const IGeocoordinate &>(static_cast<const D &>(*this))->get_Altitude(put(value)));
     return value;
 }
 
 template <typename D> double impl_IGeocoordinate<D>::Accuracy() const
 {
     double value {};
-    check_hresult(shim()->get_Accuracy(&value));
+    check_hresult(static_cast<const IGeocoordinate &>(static_cast<const D &>(*this))->get_Accuracy(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<double> impl_IGeocoordinate<D>::AltitudeAccuracy() const
 {
     Windows::Foundation::IReference<double> value;
-    check_hresult(shim()->get_AltitudeAccuracy(put(value)));
+    check_hresult(static_cast<const IGeocoordinate &>(static_cast<const D &>(*this))->get_AltitudeAccuracy(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<double> impl_IGeocoordinate<D>::Heading() const
 {
     Windows::Foundation::IReference<double> value;
-    check_hresult(shim()->get_Heading(put(value)));
+    check_hresult(static_cast<const IGeocoordinate &>(static_cast<const D &>(*this))->get_Heading(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<double> impl_IGeocoordinate<D>::Speed() const
 {
     Windows::Foundation::IReference<double> value;
-    check_hresult(shim()->get_Speed(put(value)));
+    check_hresult(static_cast<const IGeocoordinate &>(static_cast<const D &>(*this))->get_Speed(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IGeocoordinate<D>::Timestamp() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->get_Timestamp(put(value)));
+    check_hresult(static_cast<const IGeocoordinate &>(static_cast<const D &>(*this))->get_Timestamp(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::PositionSource impl_IGeocoordinateWithPositionData<D>::PositionSource() const
 {
     Windows::Devices::Geolocation::PositionSource pValue {};
-    check_hresult(shim()->get_PositionSource(&pValue));
+    check_hresult(static_cast<const IGeocoordinateWithPositionData &>(static_cast<const D &>(*this))->get_PositionSource(&pValue));
     return pValue;
 }
 
 template <typename D> Windows::Devices::Geolocation::GeocoordinateSatelliteData impl_IGeocoordinateWithPositionData<D>::SatelliteData() const
 {
     Windows::Devices::Geolocation::GeocoordinateSatelliteData ppValue { nullptr };
-    check_hresult(shim()->get_SatelliteData(put(ppValue)));
+    check_hresult(static_cast<const IGeocoordinateWithPositionData &>(static_cast<const D &>(*this))->get_SatelliteData(put(ppValue)));
     return ppValue;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geopoint impl_IGeocoordinateWithPoint<D>::Point() const
 {
     Windows::Devices::Geolocation::Geopoint value { nullptr };
-    check_hresult(shim()->get_Point(put(value)));
+    check_hresult(static_cast<const IGeocoordinateWithPoint &>(static_cast<const D &>(*this))->get_Point(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateTime> impl_IGeocoordinateWithPositionSourceTimestamp<D>::PositionSourceTimestamp() const
 {
     Windows::Foundation::IReference<Windows::Foundation::DateTime> value;
-    check_hresult(shim()->get_PositionSourceTimestamp(put(value)));
+    check_hresult(static_cast<const IGeocoordinateWithPositionSourceTimestamp &>(static_cast<const D &>(*this))->get_PositionSourceTimestamp(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geocoordinate impl_IGeoposition<D>::Coordinate() const
 {
     Windows::Devices::Geolocation::Geocoordinate value { nullptr };
-    check_hresult(shim()->get_Coordinate(put(value)));
+    check_hresult(static_cast<const IGeoposition &>(static_cast<const D &>(*this))->get_Coordinate(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::CivicAddress impl_IGeoposition<D>::CivicAddress() const
 {
     Windows::Devices::Geolocation::CivicAddress value { nullptr };
-    check_hresult(shim()->get_CivicAddress(put(value)));
+    check_hresult(static_cast<const IGeoposition &>(static_cast<const D &>(*this))->get_CivicAddress(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::VenueData impl_IGeoposition2<D>::VenueData() const
 {
     Windows::Devices::Geolocation::VenueData value { nullptr };
-    check_hresult(shim()->get_VenueData(put(value)));
+    check_hresult(static_cast<const IGeoposition2 &>(static_cast<const D &>(*this))->get_VenueData(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICivicAddress<D>::Country() const
 {
     hstring value;
-    check_hresult(shim()->get_Country(put(value)));
+    check_hresult(static_cast<const ICivicAddress &>(static_cast<const D &>(*this))->get_Country(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICivicAddress<D>::State() const
 {
     hstring value;
-    check_hresult(shim()->get_State(put(value)));
+    check_hresult(static_cast<const ICivicAddress &>(static_cast<const D &>(*this))->get_State(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICivicAddress<D>::City() const
 {
     hstring value;
-    check_hresult(shim()->get_City(put(value)));
+    check_hresult(static_cast<const ICivicAddress &>(static_cast<const D &>(*this))->get_City(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICivicAddress<D>::PostalCode() const
 {
     hstring value;
-    check_hresult(shim()->get_PostalCode(put(value)));
+    check_hresult(static_cast<const ICivicAddress &>(static_cast<const D &>(*this))->get_PostalCode(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_ICivicAddress<D>::Timestamp() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->get_Timestamp(put(value)));
+    check_hresult(static_cast<const ICivicAddress &>(static_cast<const D &>(*this))->get_Timestamp(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geoposition impl_IPositionChangedEventArgs<D>::Position() const
 {
     Windows::Devices::Geolocation::Geoposition value { nullptr };
-    check_hresult(shim()->get_Position(put(value)));
+    check_hresult(static_cast<const IPositionChangedEventArgs &>(static_cast<const D &>(*this))->get_Position(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::PositionStatus impl_IStatusChangedEventArgs<D>::Status() const
 {
     Windows::Devices::Geolocation::PositionStatus value {};
-    check_hresult(shim()->get_Status(&value));
+    check_hresult(static_cast<const IStatusChangedEventArgs &>(static_cast<const D &>(*this))->get_Status(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::PositionAccuracy impl_IGeolocator<D>::DesiredAccuracy() const
 {
     Windows::Devices::Geolocation::PositionAccuracy value {};
-    check_hresult(shim()->get_DesiredAccuracy(&value));
+    check_hresult(static_cast<const IGeolocator &>(static_cast<const D &>(*this))->get_DesiredAccuracy(&value));
     return value;
 }
 
 template <typename D> void impl_IGeolocator<D>::DesiredAccuracy(Windows::Devices::Geolocation::PositionAccuracy value) const
 {
-    check_hresult(shim()->put_DesiredAccuracy(value));
+    check_hresult(static_cast<const IGeolocator &>(static_cast<const D &>(*this))->put_DesiredAccuracy(value));
 }
 
 template <typename D> double impl_IGeolocator<D>::MovementThreshold() const
 {
     double value {};
-    check_hresult(shim()->get_MovementThreshold(&value));
+    check_hresult(static_cast<const IGeolocator &>(static_cast<const D &>(*this))->get_MovementThreshold(&value));
     return value;
 }
 
 template <typename D> void impl_IGeolocator<D>::MovementThreshold(double value) const
 {
-    check_hresult(shim()->put_MovementThreshold(value));
+    check_hresult(static_cast<const IGeolocator &>(static_cast<const D &>(*this))->put_MovementThreshold(value));
 }
 
 template <typename D> uint32_t impl_IGeolocator<D>::ReportInterval() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_ReportInterval(&value));
+    check_hresult(static_cast<const IGeolocator &>(static_cast<const D &>(*this))->get_ReportInterval(&value));
     return value;
 }
 
 template <typename D> void impl_IGeolocator<D>::ReportInterval(uint32_t value) const
 {
-    check_hresult(shim()->put_ReportInterval(value));
+    check_hresult(static_cast<const IGeolocator &>(static_cast<const D &>(*this))->put_ReportInterval(value));
 }
 
 template <typename D> Windows::Devices::Geolocation::PositionStatus impl_IGeolocator<D>::LocationStatus() const
 {
     Windows::Devices::Geolocation::PositionStatus value {};
-    check_hresult(shim()->get_LocationStatus(&value));
+    check_hresult(static_cast<const IGeolocator &>(static_cast<const D &>(*this))->get_LocationStatus(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Geolocation::Geoposition> impl_IGeolocator<D>::GetGeopositionAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Geolocation::Geoposition> value;
-    check_hresult(shim()->abi_GetGeopositionAsync(put(value)));
+    check_hresult(static_cast<const IGeolocator &>(static_cast<const D &>(*this))->abi_GetGeopositionAsync(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Geolocation::Geoposition> impl_IGeolocator<D>::GetGeopositionAsync(const Windows::Foundation::TimeSpan & maximumAge, const Windows::Foundation::TimeSpan & timeout) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Geolocation::Geoposition> value;
-    check_hresult(shim()->abi_GetGeopositionAsyncWithAgeAndTimeout(get(maximumAge), get(timeout), put(value)));
+    check_hresult(static_cast<const IGeolocator &>(static_cast<const D &>(*this))->abi_GetGeopositionAsyncWithAgeAndTimeout(get(maximumAge), get(timeout), put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IGeolocator<D>::PositionChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geolocator, Windows::Devices::Geolocation::PositionChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_PositionChanged(get(handler), &token));
+    check_hresult(static_cast<const IGeolocator &>(static_cast<const D &>(*this))->add_PositionChanged(get(handler), &token));
     return token;
 }
 
@@ -1565,13 +1565,13 @@ template <typename D> event_revoker<IGeolocator> impl_IGeolocator<D>::PositionCh
 
 template <typename D> void impl_IGeolocator<D>::PositionChanged(event_token token) const
 {
-    check_hresult(shim()->remove_PositionChanged(token));
+    check_hresult(static_cast<const IGeolocator &>(static_cast<const D &>(*this))->remove_PositionChanged(token));
 }
 
 template <typename D> event_token impl_IGeolocator<D>::StatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geolocator, Windows::Devices::Geolocation::StatusChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_StatusChanged(get(handler), &token));
+    check_hresult(static_cast<const IGeolocator &>(static_cast<const D &>(*this))->add_StatusChanged(get(handler), &token));
     return token;
 }
 
@@ -1582,98 +1582,98 @@ template <typename D> event_revoker<IGeolocator> impl_IGeolocator<D>::StatusChan
 
 template <typename D> void impl_IGeolocator<D>::StatusChanged(event_token token) const
 {
-    check_hresult(shim()->remove_StatusChanged(token));
+    check_hresult(static_cast<const IGeolocator &>(static_cast<const D &>(*this))->remove_StatusChanged(token));
 }
 
 template <typename D> Windows::Foundation::IReference<uint32_t> impl_IGeolocatorWithScalarAccuracy<D>::DesiredAccuracyInMeters() const
 {
     Windows::Foundation::IReference<uint32_t> value;
-    check_hresult(shim()->get_DesiredAccuracyInMeters(put(value)));
+    check_hresult(static_cast<const IGeolocatorWithScalarAccuracy &>(static_cast<const D &>(*this))->get_DesiredAccuracyInMeters(put(value)));
     return value;
 }
 
 template <typename D> void impl_IGeolocatorWithScalarAccuracy<D>::DesiredAccuracyInMeters(const Windows::Foundation::IReference<uint32_t> & value) const
 {
-    check_hresult(shim()->put_DesiredAccuracyInMeters(get(value)));
+    check_hresult(static_cast<const IGeolocatorWithScalarAccuracy &>(static_cast<const D &>(*this))->put_DesiredAccuracyInMeters(get(value)));
 }
 
 template <typename D> void impl_IGeolocator2<D>::AllowFallbackToConsentlessPositions() const
 {
-    check_hresult(shim()->abi_AllowFallbackToConsentlessPositions());
+    check_hresult(static_cast<const IGeolocator2 &>(static_cast<const D &>(*this))->abi_AllowFallbackToConsentlessPositions());
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Geolocation::GeolocationAccessStatus> impl_IGeolocatorStatics<D>::RequestAccessAsync() const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Geolocation::GeolocationAccessStatus> result;
-    check_hresult(shim()->abi_RequestAccessAsync(put(result)));
+    check_hresult(static_cast<const IGeolocatorStatics &>(static_cast<const D &>(*this))->abi_RequestAccessAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Geolocation::Geoposition>> impl_IGeolocatorStatics<D>::GetGeopositionHistoryAsync(const Windows::Foundation::DateTime & startTime) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Geolocation::Geoposition>> result;
-    check_hresult(shim()->abi_GetGeopositionHistoryAsync(get(startTime), put(result)));
+    check_hresult(static_cast<const IGeolocatorStatics &>(static_cast<const D &>(*this))->abi_GetGeopositionHistoryAsync(get(startTime), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Geolocation::Geoposition>> impl_IGeolocatorStatics<D>::GetGeopositionHistoryAsync(const Windows::Foundation::DateTime & startTime, const Windows::Foundation::TimeSpan & duration) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Geolocation::Geoposition>> result;
-    check_hresult(shim()->abi_GetGeopositionHistoryWithDurationAsync(get(startTime), get(duration), put(result)));
+    check_hresult(static_cast<const IGeolocatorStatics &>(static_cast<const D &>(*this))->abi_GetGeopositionHistoryWithDurationAsync(get(startTime), get(duration), put(result)));
     return result;
 }
 
 template <typename D> bool impl_IGeolocatorStatics2<D>::IsDefaultGeopositionRecommended() const
 {
     bool value {};
-    check_hresult(shim()->get_IsDefaultGeopositionRecommended(&value));
+    check_hresult(static_cast<const IGeolocatorStatics2 &>(static_cast<const D &>(*this))->get_IsDefaultGeopositionRecommended(&value));
     return value;
 }
 
 template <typename D> void impl_IGeolocatorStatics2<D>::DefaultGeoposition(const Windows::Foundation::IReference<Windows::Devices::Geolocation::BasicGeoposition> & value) const
 {
-    check_hresult(shim()->put_DefaultGeoposition(get(value)));
+    check_hresult(static_cast<const IGeolocatorStatics2 &>(static_cast<const D &>(*this))->put_DefaultGeoposition(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Devices::Geolocation::BasicGeoposition> impl_IGeolocatorStatics2<D>::DefaultGeoposition() const
 {
     Windows::Foundation::IReference<Windows::Devices::Geolocation::BasicGeoposition> value;
-    check_hresult(shim()->get_DefaultGeoposition(put(value)));
+    check_hresult(static_cast<const IGeolocatorStatics2 &>(static_cast<const D &>(*this))->get_DefaultGeoposition(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::BasicGeoposition impl_IGeocircle<D>::Center() const
 {
     Windows::Devices::Geolocation::BasicGeoposition value {};
-    check_hresult(shim()->get_Center(put(value)));
+    check_hresult(static_cast<const IGeocircle &>(static_cast<const D &>(*this))->get_Center(put(value)));
     return value;
 }
 
 template <typename D> double impl_IGeocircle<D>::Radius() const
 {
     double value {};
-    check_hresult(shim()->get_Radius(&value));
+    check_hresult(static_cast<const IGeocircle &>(static_cast<const D &>(*this))->get_Radius(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geocircle impl_IGeocircleFactory<D>::Create(const Windows::Devices::Geolocation::BasicGeoposition & position, double radius) const
 {
     Windows::Devices::Geolocation::Geocircle value { nullptr };
-    check_hresult(shim()->abi_Create(get(position), radius, put(value)));
+    check_hresult(static_cast<const IGeocircleFactory &>(static_cast<const D &>(*this))->abi_Create(get(position), radius, put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geocircle impl_IGeocircleFactory<D>::CreateWithAltitudeReferenceSystem(const Windows::Devices::Geolocation::BasicGeoposition & position, double radius, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem) const
 {
     Windows::Devices::Geolocation::Geocircle value { nullptr };
-    check_hresult(shim()->abi_CreateWithAltitudeReferenceSystem(get(position), radius, altitudeReferenceSystem, put(value)));
+    check_hresult(static_cast<const IGeocircleFactory &>(static_cast<const D &>(*this))->abi_CreateWithAltitudeReferenceSystem(get(position), radius, altitudeReferenceSystem, put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geocircle impl_IGeocircleFactory<D>::CreateWithAltitudeReferenceSystemAndSpatialReferenceId(const Windows::Devices::Geolocation::BasicGeoposition & position, double radius, Windows::Devices::Geolocation::AltitudeReferenceSystem altitudeReferenceSystem, uint32_t spatialReferenceId) const
 {
     Windows::Devices::Geolocation::Geocircle value { nullptr };
-    check_hresult(shim()->abi_CreateWithAltitudeReferenceSystemAndSpatialReferenceId(get(position), radius, altitudeReferenceSystem, spatialReferenceId, put(value)));
+    check_hresult(static_cast<const IGeocircleFactory &>(static_cast<const D &>(*this))->abi_CreateWithAltitudeReferenceSystemAndSpatialReferenceId(get(position), radius, altitudeReferenceSystem, spatialReferenceId, put(value)));
     return value;
 }
 

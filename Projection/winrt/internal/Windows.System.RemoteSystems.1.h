@@ -128,22 +128,22 @@ template <> struct traits<Windows::System::RemoteSystems::RemoteSystemWatcher> {
 
 namespace Windows::System::RemoteSystems {
 
-template <typename T> class impl_IRemoteSystem;
-template <typename T> class impl_IRemoteSystemAddedEventArgs;
-template <typename T> class impl_IRemoteSystemConnectionRequest;
-template <typename T> class impl_IRemoteSystemConnectionRequestFactory;
-template <typename T> class impl_IRemoteSystemDiscoveryTypeFilter;
-template <typename T> class impl_IRemoteSystemDiscoveryTypeFilterFactory;
-template <typename T> class impl_IRemoteSystemFilter;
-template <typename T> class impl_IRemoteSystemKindFilter;
-template <typename T> class impl_IRemoteSystemKindFilterFactory;
-template <typename T> class impl_IRemoteSystemKindStatics;
-template <typename T> class impl_IRemoteSystemRemovedEventArgs;
-template <typename T> class impl_IRemoteSystemStatics;
-template <typename T> class impl_IRemoteSystemStatusTypeFilter;
-template <typename T> class impl_IRemoteSystemStatusTypeFilterFactory;
-template <typename T> class impl_IRemoteSystemUpdatedEventArgs;
-template <typename T> class impl_IRemoteSystemWatcher;
+template <typename T> struct impl_IRemoteSystem;
+template <typename T> struct impl_IRemoteSystemAddedEventArgs;
+template <typename T> struct impl_IRemoteSystemConnectionRequest;
+template <typename T> struct impl_IRemoteSystemConnectionRequestFactory;
+template <typename T> struct impl_IRemoteSystemDiscoveryTypeFilter;
+template <typename T> struct impl_IRemoteSystemDiscoveryTypeFilterFactory;
+template <typename T> struct impl_IRemoteSystemFilter;
+template <typename T> struct impl_IRemoteSystemKindFilter;
+template <typename T> struct impl_IRemoteSystemKindFilterFactory;
+template <typename T> struct impl_IRemoteSystemKindStatics;
+template <typename T> struct impl_IRemoteSystemRemovedEventArgs;
+template <typename T> struct impl_IRemoteSystemStatics;
+template <typename T> struct impl_IRemoteSystemStatusTypeFilter;
+template <typename T> struct impl_IRemoteSystemStatusTypeFilterFactory;
+template <typename T> struct impl_IRemoteSystemUpdatedEventArgs;
+template <typename T> struct impl_IRemoteSystemWatcher;
 
 }
 
@@ -248,35 +248,30 @@ template <> struct traits<Windows::System::RemoteSystems::IRemoteSystemWatcher>
 template <> struct traits<Windows::System::RemoteSystems::RemoteSystem>
 {
     using abi = ABI::Windows::System::RemoteSystems::RemoteSystem;
-    using default_interface = Windows::System::RemoteSystems::IRemoteSystem;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.RemoteSystems.RemoteSystem"; }
 };
 
 template <> struct traits<Windows::System::RemoteSystems::RemoteSystemAddedEventArgs>
 {
     using abi = ABI::Windows::System::RemoteSystems::RemoteSystemAddedEventArgs;
-    using default_interface = Windows::System::RemoteSystems::IRemoteSystemAddedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.RemoteSystems.RemoteSystemAddedEventArgs"; }
 };
 
 template <> struct traits<Windows::System::RemoteSystems::RemoteSystemConnectionRequest>
 {
     using abi = ABI::Windows::System::RemoteSystems::RemoteSystemConnectionRequest;
-    using default_interface = Windows::System::RemoteSystems::IRemoteSystemConnectionRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.RemoteSystems.RemoteSystemConnectionRequest"; }
 };
 
 template <> struct traits<Windows::System::RemoteSystems::RemoteSystemDiscoveryTypeFilter>
 {
     using abi = ABI::Windows::System::RemoteSystems::RemoteSystemDiscoveryTypeFilter;
-    using default_interface = Windows::System::RemoteSystems::IRemoteSystemDiscoveryTypeFilter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.RemoteSystems.RemoteSystemDiscoveryTypeFilter"; }
 };
 
 template <> struct traits<Windows::System::RemoteSystems::RemoteSystemKindFilter>
 {
     using abi = ABI::Windows::System::RemoteSystems::RemoteSystemKindFilter;
-    using default_interface = Windows::System::RemoteSystems::IRemoteSystemKindFilter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.RemoteSystems.RemoteSystemKindFilter"; }
 };
 
@@ -288,28 +283,24 @@ template <> struct traits<Windows::System::RemoteSystems::RemoteSystemKinds>
 template <> struct traits<Windows::System::RemoteSystems::RemoteSystemRemovedEventArgs>
 {
     using abi = ABI::Windows::System::RemoteSystems::RemoteSystemRemovedEventArgs;
-    using default_interface = Windows::System::RemoteSystems::IRemoteSystemRemovedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.RemoteSystems.RemoteSystemRemovedEventArgs"; }
 };
 
 template <> struct traits<Windows::System::RemoteSystems::RemoteSystemStatusTypeFilter>
 {
     using abi = ABI::Windows::System::RemoteSystems::RemoteSystemStatusTypeFilter;
-    using default_interface = Windows::System::RemoteSystems::IRemoteSystemStatusTypeFilter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.RemoteSystems.RemoteSystemStatusTypeFilter"; }
 };
 
 template <> struct traits<Windows::System::RemoteSystems::RemoteSystemUpdatedEventArgs>
 {
     using abi = ABI::Windows::System::RemoteSystems::RemoteSystemUpdatedEventArgs;
-    using default_interface = Windows::System::RemoteSystems::IRemoteSystemUpdatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.RemoteSystems.RemoteSystemUpdatedEventArgs"; }
 };
 
 template <> struct traits<Windows::System::RemoteSystems::RemoteSystemWatcher>
 {
     using abi = ABI::Windows::System::RemoteSystems::RemoteSystemWatcher;
-    using default_interface = Windows::System::RemoteSystems::IRemoteSystemWatcher;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.RemoteSystems.RemoteSystemWatcher"; }
 };
 

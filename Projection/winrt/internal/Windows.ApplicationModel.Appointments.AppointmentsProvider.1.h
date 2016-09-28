@@ -70,11 +70,11 @@ template <> struct traits<Windows::ApplicationModel::Appointments::AppointmentsP
 
 namespace Windows::ApplicationModel::Appointments::AppointmentsProvider {
 
-template <typename T> class impl_IAddAppointmentOperation;
-template <typename T> class impl_IAppointmentsProviderLaunchActionVerbsStatics;
-template <typename T> class impl_IAppointmentsProviderLaunchActionVerbsStatics2;
-template <typename T> class impl_IRemoveAppointmentOperation;
-template <typename T> class impl_IReplaceAppointmentOperation;
+template <typename T> struct impl_IAddAppointmentOperation;
+template <typename T> struct impl_IAppointmentsProviderLaunchActionVerbsStatics;
+template <typename T> struct impl_IAppointmentsProviderLaunchActionVerbsStatics2;
+template <typename T> struct impl_IRemoveAppointmentOperation;
+template <typename T> struct impl_IReplaceAppointmentOperation;
 
 }
 
@@ -113,7 +113,6 @@ template <> struct traits<Windows::ApplicationModel::Appointments::AppointmentsP
 template <> struct traits<Windows::ApplicationModel::Appointments::AppointmentsProvider::AddAppointmentOperation>
 {
     using abi = ABI::Windows::ApplicationModel::Appointments::AppointmentsProvider::AddAppointmentOperation;
-    using default_interface = Windows::ApplicationModel::Appointments::AppointmentsProvider::IAddAppointmentOperation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Appointments.AppointmentsProvider.AddAppointmentOperation"; }
 };
 
@@ -125,14 +124,12 @@ template <> struct traits<Windows::ApplicationModel::Appointments::AppointmentsP
 template <> struct traits<Windows::ApplicationModel::Appointments::AppointmentsProvider::RemoveAppointmentOperation>
 {
     using abi = ABI::Windows::ApplicationModel::Appointments::AppointmentsProvider::RemoveAppointmentOperation;
-    using default_interface = Windows::ApplicationModel::Appointments::AppointmentsProvider::IRemoveAppointmentOperation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Appointments.AppointmentsProvider.RemoveAppointmentOperation"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Appointments::AppointmentsProvider::ReplaceAppointmentOperation>
 {
     using abi = ABI::Windows::ApplicationModel::Appointments::AppointmentsProvider::ReplaceAppointmentOperation;
-    using default_interface = Windows::ApplicationModel::Appointments::AppointmentsProvider::IReplaceAppointmentOperation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Appointments.AppointmentsProvider.ReplaceAppointmentOperation"; }
 };
 

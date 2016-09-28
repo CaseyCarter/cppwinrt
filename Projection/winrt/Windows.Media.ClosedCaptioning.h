@@ -178,84 +178,84 @@ namespace Windows::Media::ClosedCaptioning {
 template <typename D> Windows::Media::ClosedCaptioning::ClosedCaptionColor impl_IClosedCaptionPropertiesStatics<D>::FontColor() const
 {
     Windows::Media::ClosedCaptioning::ClosedCaptionColor value {};
-    check_hresult(shim()->get_FontColor(&value));
+    check_hresult(static_cast<const IClosedCaptionPropertiesStatics &>(static_cast<const D &>(*this))->get_FontColor(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IClosedCaptionPropertiesStatics<D>::ComputedFontColor() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_ComputedFontColor(put(value)));
+    check_hresult(static_cast<const IClosedCaptionPropertiesStatics &>(static_cast<const D &>(*this))->get_ComputedFontColor(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::ClosedCaptioning::ClosedCaptionOpacity impl_IClosedCaptionPropertiesStatics<D>::FontOpacity() const
 {
     Windows::Media::ClosedCaptioning::ClosedCaptionOpacity value {};
-    check_hresult(shim()->get_FontOpacity(&value));
+    check_hresult(static_cast<const IClosedCaptionPropertiesStatics &>(static_cast<const D &>(*this))->get_FontOpacity(&value));
     return value;
 }
 
 template <typename D> Windows::Media::ClosedCaptioning::ClosedCaptionSize impl_IClosedCaptionPropertiesStatics<D>::FontSize() const
 {
     Windows::Media::ClosedCaptioning::ClosedCaptionSize value {};
-    check_hresult(shim()->get_FontSize(&value));
+    check_hresult(static_cast<const IClosedCaptionPropertiesStatics &>(static_cast<const D &>(*this))->get_FontSize(&value));
     return value;
 }
 
 template <typename D> Windows::Media::ClosedCaptioning::ClosedCaptionStyle impl_IClosedCaptionPropertiesStatics<D>::FontStyle() const
 {
     Windows::Media::ClosedCaptioning::ClosedCaptionStyle value {};
-    check_hresult(shim()->get_FontStyle(&value));
+    check_hresult(static_cast<const IClosedCaptionPropertiesStatics &>(static_cast<const D &>(*this))->get_FontStyle(&value));
     return value;
 }
 
 template <typename D> Windows::Media::ClosedCaptioning::ClosedCaptionEdgeEffect impl_IClosedCaptionPropertiesStatics<D>::FontEffect() const
 {
     Windows::Media::ClosedCaptioning::ClosedCaptionEdgeEffect value {};
-    check_hresult(shim()->get_FontEffect(&value));
+    check_hresult(static_cast<const IClosedCaptionPropertiesStatics &>(static_cast<const D &>(*this))->get_FontEffect(&value));
     return value;
 }
 
 template <typename D> Windows::Media::ClosedCaptioning::ClosedCaptionColor impl_IClosedCaptionPropertiesStatics<D>::BackgroundColor() const
 {
     Windows::Media::ClosedCaptioning::ClosedCaptionColor value {};
-    check_hresult(shim()->get_BackgroundColor(&value));
+    check_hresult(static_cast<const IClosedCaptionPropertiesStatics &>(static_cast<const D &>(*this))->get_BackgroundColor(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IClosedCaptionPropertiesStatics<D>::ComputedBackgroundColor() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_ComputedBackgroundColor(put(value)));
+    check_hresult(static_cast<const IClosedCaptionPropertiesStatics &>(static_cast<const D &>(*this))->get_ComputedBackgroundColor(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::ClosedCaptioning::ClosedCaptionOpacity impl_IClosedCaptionPropertiesStatics<D>::BackgroundOpacity() const
 {
     Windows::Media::ClosedCaptioning::ClosedCaptionOpacity value {};
-    check_hresult(shim()->get_BackgroundOpacity(&value));
+    check_hresult(static_cast<const IClosedCaptionPropertiesStatics &>(static_cast<const D &>(*this))->get_BackgroundOpacity(&value));
     return value;
 }
 
 template <typename D> Windows::Media::ClosedCaptioning::ClosedCaptionColor impl_IClosedCaptionPropertiesStatics<D>::RegionColor() const
 {
     Windows::Media::ClosedCaptioning::ClosedCaptionColor value {};
-    check_hresult(shim()->get_RegionColor(&value));
+    check_hresult(static_cast<const IClosedCaptionPropertiesStatics &>(static_cast<const D &>(*this))->get_RegionColor(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IClosedCaptionPropertiesStatics<D>::ComputedRegionColor() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_ComputedRegionColor(put(value)));
+    check_hresult(static_cast<const IClosedCaptionPropertiesStatics &>(static_cast<const D &>(*this))->get_ComputedRegionColor(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::ClosedCaptioning::ClosedCaptionOpacity impl_IClosedCaptionPropertiesStatics<D>::RegionOpacity() const
 {
     Windows::Media::ClosedCaptioning::ClosedCaptionOpacity value {};
-    check_hresult(shim()->get_RegionOpacity(&value));
+    check_hresult(static_cast<const IClosedCaptionPropertiesStatics &>(static_cast<const D &>(*this))->get_RegionOpacity(&value));
     return value;
 }
 

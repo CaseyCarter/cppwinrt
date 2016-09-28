@@ -5469,556 +5469,556 @@ template <> struct traits<Windows::UI::Xaml::Controls::WrapGrid> { using default
 
 namespace Windows::UI::Xaml::Controls {
 
-template <typename T> class impl_IAppBar;
-template <typename T> class impl_IAppBar2;
-template <typename T> class impl_IAppBar3;
-template <typename T> class impl_IAppBar4;
-template <typename T> class impl_IAppBarButton;
-template <typename T> class impl_IAppBarButton3;
-template <typename T> class impl_IAppBarButtonFactory;
-template <typename T> class impl_IAppBarButtonStatics;
-template <typename T> class impl_IAppBarButtonStatics3;
-template <typename T> class impl_IAppBarFactory;
-template <typename T> class impl_IAppBarOverrides;
-template <typename T> class impl_IAppBarOverrides3;
-template <typename T> class impl_IAppBarSeparator;
-template <typename T> class impl_IAppBarSeparatorFactory;
-template <typename T> class impl_IAppBarSeparatorStatics;
-template <typename T> class impl_IAppBarSeparatorStatics3;
-template <typename T> class impl_IAppBarStatics;
-template <typename T> class impl_IAppBarStatics2;
-template <typename T> class impl_IAppBarStatics4;
-template <typename T> class impl_IAppBarToggleButton;
-template <typename T> class impl_IAppBarToggleButton3;
-template <typename T> class impl_IAppBarToggleButtonFactory;
-template <typename T> class impl_IAppBarToggleButtonStatics;
-template <typename T> class impl_IAppBarToggleButtonStatics3;
-template <typename T> class impl_IAutoSuggestBox;
-template <typename T> class impl_IAutoSuggestBox2;
-template <typename T> class impl_IAutoSuggestBox3;
-template <typename T> class impl_IAutoSuggestBoxQuerySubmittedEventArgs;
-template <typename T> class impl_IAutoSuggestBoxStatics;
-template <typename T> class impl_IAutoSuggestBoxStatics2;
-template <typename T> class impl_IAutoSuggestBoxStatics3;
-template <typename T> class impl_IAutoSuggestBoxSuggestionChosenEventArgs;
-template <typename T> class impl_IAutoSuggestBoxTextChangedEventArgs;
-template <typename T> class impl_IAutoSuggestBoxTextChangedEventArgsStatics;
-template <typename T> class impl_IBackClickEventArgs;
-template <typename T> class impl_IBitmapIcon;
-template <typename T> class impl_IBitmapIconFactory;
-template <typename T> class impl_IBitmapIconStatics;
-template <typename T> class impl_IBorder;
-template <typename T> class impl_IBorderStatics;
-template <typename T> class impl_IButton;
-template <typename T> class impl_IButtonFactory;
-template <typename T> class impl_IButtonStaticsWithFlyout;
-template <typename T> class impl_IButtonWithFlyout;
-template <typename T> class impl_ICalendarDatePicker;
-template <typename T> class impl_ICalendarDatePicker2;
-template <typename T> class impl_ICalendarDatePickerDateChangedEventArgs;
-template <typename T> class impl_ICalendarDatePickerFactory;
-template <typename T> class impl_ICalendarDatePickerStatics;
-template <typename T> class impl_ICalendarDatePickerStatics2;
-template <typename T> class impl_ICalendarView;
-template <typename T> class impl_ICalendarViewDayItem;
-template <typename T> class impl_ICalendarViewDayItemChangingEventArgs;
-template <typename T> class impl_ICalendarViewDayItemFactory;
-template <typename T> class impl_ICalendarViewDayItemStatics;
-template <typename T> class impl_ICalendarViewFactory;
-template <typename T> class impl_ICalendarViewSelectedDatesChangedEventArgs;
-template <typename T> class impl_ICalendarViewStatics;
-template <typename T> class impl_ICandidateWindowBoundsChangedEventArgs;
-template <typename T> class impl_ICanvas;
-template <typename T> class impl_ICanvasFactory;
-template <typename T> class impl_ICanvasStatics;
-template <typename T> class impl_ICaptureElement;
-template <typename T> class impl_ICaptureElementStatics;
-template <typename T> class impl_ICheckBox;
-template <typename T> class impl_ICheckBoxFactory;
-template <typename T> class impl_IChoosingGroupHeaderContainerEventArgs;
-template <typename T> class impl_IChoosingItemContainerEventArgs;
-template <typename T> class impl_ICleanUpVirtualizedItemEventArgs;
-template <typename T> class impl_IColumnDefinition;
-template <typename T> class impl_IColumnDefinitionStatics;
-template <typename T> class impl_IComboBox;
-template <typename T> class impl_IComboBox2;
-template <typename T> class impl_IComboBox3;
-template <typename T> class impl_IComboBoxFactory;
-template <typename T> class impl_IComboBoxItem;
-template <typename T> class impl_IComboBoxItemFactory;
-template <typename T> class impl_IComboBoxOverrides;
-template <typename T> class impl_IComboBoxStatics;
-template <typename T> class impl_IComboBoxStatics2;
-template <typename T> class impl_IComboBoxStatics3;
-template <typename T> class impl_ICommandBar;
-template <typename T> class impl_ICommandBar2;
-template <typename T> class impl_ICommandBar3;
-template <typename T> class impl_ICommandBarElement;
-template <typename T> class impl_ICommandBarElement2;
-template <typename T> class impl_ICommandBarFactory;
-template <typename T> class impl_ICommandBarOverflowPresenter;
-template <typename T> class impl_ICommandBarOverflowPresenterFactory;
-template <typename T> class impl_ICommandBarStatics;
-template <typename T> class impl_ICommandBarStatics2;
-template <typename T> class impl_ICommandBarStatics3;
-template <typename T> class impl_IContainerContentChangingEventArgs;
-template <typename T> class impl_IContentControl;
-template <typename T> class impl_IContentControl2;
-template <typename T> class impl_IContentControlFactory;
-template <typename T> class impl_IContentControlOverrides;
-template <typename T> class impl_IContentControlStatics;
-template <typename T> class impl_IContentDialog;
-template <typename T> class impl_IContentDialogButtonClickDeferral;
-template <typename T> class impl_IContentDialogButtonClickEventArgs;
-template <typename T> class impl_IContentDialogClosedEventArgs;
-template <typename T> class impl_IContentDialogClosingDeferral;
-template <typename T> class impl_IContentDialogClosingEventArgs;
-template <typename T> class impl_IContentDialogFactory;
-template <typename T> class impl_IContentDialogOpenedEventArgs;
-template <typename T> class impl_IContentDialogStatics;
-template <typename T> class impl_IContentPresenter;
-template <typename T> class impl_IContentPresenter2;
-template <typename T> class impl_IContentPresenter3;
-template <typename T> class impl_IContentPresenter4;
-template <typename T> class impl_IContentPresenterFactory;
-template <typename T> class impl_IContentPresenterOverrides;
-template <typename T> class impl_IContentPresenterStatics;
-template <typename T> class impl_IContentPresenterStatics2;
-template <typename T> class impl_IContentPresenterStatics3;
-template <typename T> class impl_IContentPresenterStatics4;
-template <typename T> class impl_IContextMenuEventArgs;
-template <typename T> class impl_IControl;
-template <typename T> class impl_IControl2;
-template <typename T> class impl_IControl3;
-template <typename T> class impl_IControl4;
-template <typename T> class impl_IControlFactory;
-template <typename T> class impl_IControlOverrides;
-template <typename T> class impl_IControlProtected;
-template <typename T> class impl_IControlStatics;
-template <typename T> class impl_IControlStatics2;
-template <typename T> class impl_IControlStatics3;
-template <typename T> class impl_IControlStatics4;
-template <typename T> class impl_IControlTemplate;
-template <typename T> class impl_IDataTemplateSelector;
-template <typename T> class impl_IDataTemplateSelector2;
-template <typename T> class impl_IDataTemplateSelectorFactory;
-template <typename T> class impl_IDataTemplateSelectorOverrides;
-template <typename T> class impl_IDataTemplateSelectorOverrides2;
-template <typename T> class impl_IDatePickedEventArgs;
-template <typename T> class impl_IDatePicker;
-template <typename T> class impl_IDatePicker2;
-template <typename T> class impl_IDatePickerFactory;
-template <typename T> class impl_IDatePickerFlyout;
-template <typename T> class impl_IDatePickerFlyout2;
-template <typename T> class impl_IDatePickerFlyoutItem;
-template <typename T> class impl_IDatePickerFlyoutItemStatics;
-template <typename T> class impl_IDatePickerFlyoutPresenter;
-template <typename T> class impl_IDatePickerFlyoutStatics;
-template <typename T> class impl_IDatePickerFlyoutStatics2;
-template <typename T> class impl_IDatePickerStatics;
-template <typename T> class impl_IDatePickerStatics2;
-template <typename T> class impl_IDatePickerValueChangedEventArgs;
-template <typename T> class impl_IDragItemsCompletedEventArgs;
-template <typename T> class impl_IDragItemsStartingEventArgs;
-template <typename T> class impl_IDynamicOverflowItemsChangingEventArgs;
-template <typename T> class impl_IFlipView;
-template <typename T> class impl_IFlipView2;
-template <typename T> class impl_IFlipViewFactory;
-template <typename T> class impl_IFlipViewItem;
-template <typename T> class impl_IFlipViewItemFactory;
-template <typename T> class impl_IFlipViewStatics2;
-template <typename T> class impl_IFlyout;
-template <typename T> class impl_IFlyoutFactory;
-template <typename T> class impl_IFlyoutPresenter;
-template <typename T> class impl_IFlyoutPresenterFactory;
-template <typename T> class impl_IFlyoutStatics;
-template <typename T> class impl_IFocusDisengagedEventArgs;
-template <typename T> class impl_IFocusEngagedEventArgs;
-template <typename T> class impl_IFontIcon;
-template <typename T> class impl_IFontIcon2;
-template <typename T> class impl_IFontIcon3;
-template <typename T> class impl_IFontIconFactory;
-template <typename T> class impl_IFontIconStatics;
-template <typename T> class impl_IFontIconStatics2;
-template <typename T> class impl_IFontIconStatics3;
-template <typename T> class impl_IFrame;
-template <typename T> class impl_IFrame2;
-template <typename T> class impl_IFrame3;
-template <typename T> class impl_IFrameFactory;
-template <typename T> class impl_IFrameStatics;
-template <typename T> class impl_IFrameStatics2;
-template <typename T> class impl_IGrid;
-template <typename T> class impl_IGrid2;
-template <typename T> class impl_IGridFactory;
-template <typename T> class impl_IGridStatics;
-template <typename T> class impl_IGridStatics2;
-template <typename T> class impl_IGridView;
-template <typename T> class impl_IGridViewFactory;
-template <typename T> class impl_IGridViewHeaderItem;
-template <typename T> class impl_IGridViewHeaderItemFactory;
-template <typename T> class impl_IGridViewItem;
-template <typename T> class impl_IGridViewItemFactory;
-template <typename T> class impl_IGroupItem;
-template <typename T> class impl_IGroupItemFactory;
-template <typename T> class impl_IGroupStyle;
-template <typename T> class impl_IGroupStyle2;
-template <typename T> class impl_IGroupStyleFactory;
-template <typename T> class impl_IGroupStyleSelector;
-template <typename T> class impl_IGroupStyleSelectorFactory;
-template <typename T> class impl_IGroupStyleSelectorOverrides;
-template <typename T> class impl_IHub;
-template <typename T> class impl_IHubFactory;
-template <typename T> class impl_IHubSection;
-template <typename T> class impl_IHubSectionFactory;
-template <typename T> class impl_IHubSectionHeaderClickEventArgs;
-template <typename T> class impl_IHubSectionStatics;
-template <typename T> class impl_IHubStatics;
-template <typename T> class impl_IHyperlinkButton;
-template <typename T> class impl_IHyperlinkButtonFactory;
-template <typename T> class impl_IHyperlinkButtonStatics;
-template <typename T> class impl_IIconElement;
-template <typename T> class impl_IIconElementFactory;
-template <typename T> class impl_IIconElementStatics;
-template <typename T> class impl_IImage;
-template <typename T> class impl_IImage2;
-template <typename T> class impl_IImage3;
-template <typename T> class impl_IImageStatics;
-template <typename T> class impl_IInkCanvas;
-template <typename T> class impl_IInkCanvasFactory;
-template <typename T> class impl_IInkToolbar;
-template <typename T> class impl_IInkToolbarBallpointPenButton;
-template <typename T> class impl_IInkToolbarBallpointPenButtonFactory;
-template <typename T> class impl_IInkToolbarCustomPen;
-template <typename T> class impl_IInkToolbarCustomPenButton;
-template <typename T> class impl_IInkToolbarCustomPenButtonFactory;
-template <typename T> class impl_IInkToolbarCustomPenButtonStatics;
-template <typename T> class impl_IInkToolbarCustomPenFactory;
-template <typename T> class impl_IInkToolbarCustomPenOverrides;
-template <typename T> class impl_IInkToolbarCustomToggleButton;
-template <typename T> class impl_IInkToolbarCustomToggleButtonFactory;
-template <typename T> class impl_IInkToolbarCustomToolButton;
-template <typename T> class impl_IInkToolbarCustomToolButtonFactory;
-template <typename T> class impl_IInkToolbarCustomToolButtonStatics;
-template <typename T> class impl_IInkToolbarEraserButton;
-template <typename T> class impl_IInkToolbarEraserButtonFactory;
-template <typename T> class impl_IInkToolbarFactory;
-template <typename T> class impl_IInkToolbarHighlighterButton;
-template <typename T> class impl_IInkToolbarHighlighterButtonFactory;
-template <typename T> class impl_IInkToolbarPenButton;
-template <typename T> class impl_IInkToolbarPenButtonFactory;
-template <typename T> class impl_IInkToolbarPenButtonStatics;
-template <typename T> class impl_IInkToolbarPenConfigurationControl;
-template <typename T> class impl_IInkToolbarPenConfigurationControlFactory;
-template <typename T> class impl_IInkToolbarPenConfigurationControlStatics;
-template <typename T> class impl_IInkToolbarPencilButton;
-template <typename T> class impl_IInkToolbarPencilButtonFactory;
-template <typename T> class impl_IInkToolbarRulerButton;
-template <typename T> class impl_IInkToolbarRulerButtonFactory;
-template <typename T> class impl_IInkToolbarRulerButtonStatics;
-template <typename T> class impl_IInkToolbarStatics;
-template <typename T> class impl_IInkToolbarToggleButton;
-template <typename T> class impl_IInkToolbarToggleButtonFactory;
-template <typename T> class impl_IInkToolbarToolButton;
-template <typename T> class impl_IInkToolbarToolButtonFactory;
-template <typename T> class impl_IInkToolbarToolButtonStatics;
-template <typename T> class impl_IInsertionPanel;
-template <typename T> class impl_IItemClickEventArgs;
-template <typename T> class impl_IItemContainerGenerator;
-template <typename T> class impl_IItemContainerMapping;
-template <typename T> class impl_IItemsControl;
-template <typename T> class impl_IItemsControl2;
-template <typename T> class impl_IItemsControl3;
-template <typename T> class impl_IItemsControlFactory;
-template <typename T> class impl_IItemsControlOverrides;
-template <typename T> class impl_IItemsControlStatics;
-template <typename T> class impl_IItemsPanelTemplate;
-template <typename T> class impl_IItemsPickedEventArgs;
-template <typename T> class impl_IItemsPresenter;
-template <typename T> class impl_IItemsPresenter2;
-template <typename T> class impl_IItemsPresenterStatics;
-template <typename T> class impl_IItemsPresenterStatics2;
-template <typename T> class impl_IItemsStackPanel;
-template <typename T> class impl_IItemsStackPanel2;
-template <typename T> class impl_IItemsStackPanelStatics;
-template <typename T> class impl_IItemsStackPanelStatics2;
-template <typename T> class impl_IItemsWrapGrid;
-template <typename T> class impl_IItemsWrapGrid2;
-template <typename T> class impl_IItemsWrapGridStatics;
-template <typename T> class impl_IItemsWrapGridStatics2;
-template <typename T> class impl_IListBox;
-template <typename T> class impl_IListBox2;
-template <typename T> class impl_IListBoxFactory;
-template <typename T> class impl_IListBoxItem;
-template <typename T> class impl_IListBoxItemFactory;
-template <typename T> class impl_IListBoxStatics;
-template <typename T> class impl_IListBoxStatics2;
-template <typename T> class impl_IListPickerFlyout;
-template <typename T> class impl_IListPickerFlyoutPresenter;
-template <typename T> class impl_IListPickerFlyoutStatics;
-template <typename T> class impl_IListView;
-template <typename T> class impl_IListViewBase;
-template <typename T> class impl_IListViewBase2;
-template <typename T> class impl_IListViewBase3;
-template <typename T> class impl_IListViewBase4;
-template <typename T> class impl_IListViewBase5;
-template <typename T> class impl_IListViewBaseFactory;
-template <typename T> class impl_IListViewBaseHeaderItem;
-template <typename T> class impl_IListViewBaseHeaderItemFactory;
-template <typename T> class impl_IListViewBaseStatics;
-template <typename T> class impl_IListViewBaseStatics2;
-template <typename T> class impl_IListViewBaseStatics3;
-template <typename T> class impl_IListViewBaseStatics4;
-template <typename T> class impl_IListViewBaseStatics5;
-template <typename T> class impl_IListViewFactory;
-template <typename T> class impl_IListViewHeaderItem;
-template <typename T> class impl_IListViewHeaderItemFactory;
-template <typename T> class impl_IListViewItem;
-template <typename T> class impl_IListViewItemFactory;
-template <typename T> class impl_IListViewPersistenceHelper;
-template <typename T> class impl_IListViewPersistenceHelperStatics;
-template <typename T> class impl_IMediaElement;
-template <typename T> class impl_IMediaElement2;
-template <typename T> class impl_IMediaElement3;
-template <typename T> class impl_IMediaElementStatics;
-template <typename T> class impl_IMediaElementStatics2;
-template <typename T> class impl_IMediaPlayerElement;
-template <typename T> class impl_IMediaPlayerElementFactory;
-template <typename T> class impl_IMediaPlayerElementStatics;
-template <typename T> class impl_IMediaPlayerPresenter;
-template <typename T> class impl_IMediaPlayerPresenterFactory;
-template <typename T> class impl_IMediaPlayerPresenterStatics;
-template <typename T> class impl_IMediaTransportControls;
-template <typename T> class impl_IMediaTransportControls2;
-template <typename T> class impl_IMediaTransportControlsFactory;
-template <typename T> class impl_IMediaTransportControlsHelper;
-template <typename T> class impl_IMediaTransportControlsHelperStatics;
-template <typename T> class impl_IMediaTransportControlsStatics;
-template <typename T> class impl_IMediaTransportControlsStatics2;
-template <typename T> class impl_IMenuFlyout;
-template <typename T> class impl_IMenuFlyout2;
-template <typename T> class impl_IMenuFlyoutFactory;
-template <typename T> class impl_IMenuFlyoutItem;
-template <typename T> class impl_IMenuFlyoutItemBase;
-template <typename T> class impl_IMenuFlyoutItemBaseFactory;
-template <typename T> class impl_IMenuFlyoutItemFactory;
-template <typename T> class impl_IMenuFlyoutItemStatics;
-template <typename T> class impl_IMenuFlyoutPresenter;
-template <typename T> class impl_IMenuFlyoutPresenter2;
-template <typename T> class impl_IMenuFlyoutPresenterFactory;
-template <typename T> class impl_IMenuFlyoutSeparator;
-template <typename T> class impl_IMenuFlyoutSeparatorFactory;
-template <typename T> class impl_IMenuFlyoutStatics;
-template <typename T> class impl_IMenuFlyoutSubItem;
-template <typename T> class impl_IMenuFlyoutSubItemStatics;
-template <typename T> class impl_INavigate;
-template <typename T> class impl_INotifyEventArgs;
-template <typename T> class impl_INotifyEventArgs2;
-template <typename T> class impl_IPage;
-template <typename T> class impl_IPageFactory;
-template <typename T> class impl_IPageOverrides;
-template <typename T> class impl_IPageStatics;
-template <typename T> class impl_IPanel;
-template <typename T> class impl_IPanelFactory;
-template <typename T> class impl_IPanelStatics;
-template <typename T> class impl_IPasswordBox;
-template <typename T> class impl_IPasswordBox2;
-template <typename T> class impl_IPasswordBox3;
-template <typename T> class impl_IPasswordBoxStatics;
-template <typename T> class impl_IPasswordBoxStatics2;
-template <typename T> class impl_IPasswordBoxStatics3;
-template <typename T> class impl_IPathIcon;
-template <typename T> class impl_IPathIconFactory;
-template <typename T> class impl_IPathIconStatics;
-template <typename T> class impl_IPickerConfirmedEventArgs;
-template <typename T> class impl_IPickerFlyout;
-template <typename T> class impl_IPickerFlyoutPresenter;
-template <typename T> class impl_IPickerFlyoutStatics;
-template <typename T> class impl_IPivot;
-template <typename T> class impl_IPivot2;
-template <typename T> class impl_IPivot3;
-template <typename T> class impl_IPivotFactory;
-template <typename T> class impl_IPivotItem;
-template <typename T> class impl_IPivotItemEventArgs;
-template <typename T> class impl_IPivotItemFactory;
-template <typename T> class impl_IPivotItemStatics;
-template <typename T> class impl_IPivotStatics;
-template <typename T> class impl_IPivotStatics2;
-template <typename T> class impl_IPivotStatics3;
-template <typename T> class impl_IProgressBar;
-template <typename T> class impl_IProgressBarFactory;
-template <typename T> class impl_IProgressBarStatics;
-template <typename T> class impl_IProgressRing;
-template <typename T> class impl_IProgressRingStatics;
-template <typename T> class impl_IRadioButton;
-template <typename T> class impl_IRadioButtonFactory;
-template <typename T> class impl_IRadioButtonStatics;
-template <typename T> class impl_IRelativePanel;
-template <typename T> class impl_IRelativePanelFactory;
-template <typename T> class impl_IRelativePanelStatics;
-template <typename T> class impl_IRichEditBox;
-template <typename T> class impl_IRichEditBox2;
-template <typename T> class impl_IRichEditBox3;
-template <typename T> class impl_IRichEditBox4;
-template <typename T> class impl_IRichEditBoxFactory;
-template <typename T> class impl_IRichEditBoxStatics;
-template <typename T> class impl_IRichEditBoxStatics2;
-template <typename T> class impl_IRichEditBoxStatics3;
-template <typename T> class impl_IRichEditBoxStatics4;
-template <typename T> class impl_IRichEditBoxTextChangingEventArgs;
-template <typename T> class impl_IRichTextBlock;
-template <typename T> class impl_IRichTextBlock2;
-template <typename T> class impl_IRichTextBlock3;
-template <typename T> class impl_IRichTextBlockOverflow;
-template <typename T> class impl_IRichTextBlockOverflow2;
-template <typename T> class impl_IRichTextBlockOverflowStatics;
-template <typename T> class impl_IRichTextBlockOverflowStatics2;
-template <typename T> class impl_IRichTextBlockStatics;
-template <typename T> class impl_IRichTextBlockStatics2;
-template <typename T> class impl_IRichTextBlockStatics3;
-template <typename T> class impl_IRowDefinition;
-template <typename T> class impl_IRowDefinitionStatics;
-template <typename T> class impl_IScrollContentPresenter;
-template <typename T> class impl_IScrollViewer;
-template <typename T> class impl_IScrollViewer2;
-template <typename T> class impl_IScrollViewer3;
-template <typename T> class impl_IScrollViewerStatics;
-template <typename T> class impl_IScrollViewerStatics2;
-template <typename T> class impl_IScrollViewerView;
-template <typename T> class impl_IScrollViewerViewChangedEventArgs;
-template <typename T> class impl_IScrollViewerViewChangingEventArgs;
-template <typename T> class impl_ISearchBox;
-template <typename T> class impl_ISearchBoxFactory;
-template <typename T> class impl_ISearchBoxQueryChangedEventArgs;
-template <typename T> class impl_ISearchBoxQuerySubmittedEventArgs;
-template <typename T> class impl_ISearchBoxResultSuggestionChosenEventArgs;
-template <typename T> class impl_ISearchBoxStatics;
-template <typename T> class impl_ISearchBoxSuggestionsRequestedEventArgs;
-template <typename T> class impl_ISectionsInViewChangedEventArgs;
-template <typename T> class impl_ISectionsInViewChangedEventArgsFactory;
-template <typename T> class impl_ISelectionChangedEventArgs;
-template <typename T> class impl_ISelectionChangedEventArgsFactory;
-template <typename T> class impl_ISemanticZoom;
-template <typename T> class impl_ISemanticZoomInformation;
-template <typename T> class impl_ISemanticZoomLocation;
-template <typename T> class impl_ISemanticZoomStatics;
-template <typename T> class impl_ISemanticZoomViewChangedEventArgs;
-template <typename T> class impl_ISettingsFlyout;
-template <typename T> class impl_ISettingsFlyoutFactory;
-template <typename T> class impl_ISettingsFlyoutStatics;
-template <typename T> class impl_ISlider;
-template <typename T> class impl_ISlider2;
-template <typename T> class impl_ISliderFactory;
-template <typename T> class impl_ISliderStatics;
-template <typename T> class impl_ISliderStatics2;
-template <typename T> class impl_ISplitView;
-template <typename T> class impl_ISplitView2;
-template <typename T> class impl_ISplitViewFactory;
-template <typename T> class impl_ISplitViewPaneClosingEventArgs;
-template <typename T> class impl_ISplitViewStatics;
-template <typename T> class impl_ISplitViewStatics2;
-template <typename T> class impl_IStackPanel;
-template <typename T> class impl_IStackPanel2;
-template <typename T> class impl_IStackPanelFactory;
-template <typename T> class impl_IStackPanelStatics;
-template <typename T> class impl_IStackPanelStatics2;
-template <typename T> class impl_IStyleSelector;
-template <typename T> class impl_IStyleSelectorFactory;
-template <typename T> class impl_IStyleSelectorOverrides;
-template <typename T> class impl_ISwapChainBackgroundPanel;
-template <typename T> class impl_ISwapChainBackgroundPanel2;
-template <typename T> class impl_ISwapChainBackgroundPanelFactory;
-template <typename T> class impl_ISwapChainPanel;
-template <typename T> class impl_ISwapChainPanelFactory;
-template <typename T> class impl_ISwapChainPanelStatics;
-template <typename T> class impl_ISymbolIcon;
-template <typename T> class impl_ISymbolIconFactory;
-template <typename T> class impl_ISymbolIconStatics;
-template <typename T> class impl_ITextBlock;
-template <typename T> class impl_ITextBlock2;
-template <typename T> class impl_ITextBlock3;
-template <typename T> class impl_ITextBlock4;
-template <typename T> class impl_ITextBlockStatics;
-template <typename T> class impl_ITextBlockStatics2;
-template <typename T> class impl_ITextBlockStatics3;
-template <typename T> class impl_ITextBox;
-template <typename T> class impl_ITextBox2;
-template <typename T> class impl_ITextBox3;
-template <typename T> class impl_ITextBox4;
-template <typename T> class impl_ITextBoxFactory;
-template <typename T> class impl_ITextBoxStatics;
-template <typename T> class impl_ITextBoxStatics2;
-template <typename T> class impl_ITextBoxStatics3;
-template <typename T> class impl_ITextBoxTextChangingEventArgs;
-template <typename T> class impl_ITextChangedEventArgs;
-template <typename T> class impl_ITextCompositionChangedEventArgs;
-template <typename T> class impl_ITextCompositionEndedEventArgs;
-template <typename T> class impl_ITextCompositionStartedEventArgs;
-template <typename T> class impl_ITextControlPasteEventArgs;
-template <typename T> class impl_ITimePickedEventArgs;
-template <typename T> class impl_ITimePicker;
-template <typename T> class impl_ITimePicker2;
-template <typename T> class impl_ITimePickerFactory;
-template <typename T> class impl_ITimePickerFlyout;
-template <typename T> class impl_ITimePickerFlyoutPresenter;
-template <typename T> class impl_ITimePickerFlyoutStatics;
-template <typename T> class impl_ITimePickerStatics;
-template <typename T> class impl_ITimePickerStatics2;
-template <typename T> class impl_ITimePickerValueChangedEventArgs;
-template <typename T> class impl_IToggleMenuFlyoutItem;
-template <typename T> class impl_IToggleMenuFlyoutItemFactory;
-template <typename T> class impl_IToggleMenuFlyoutItemStatics;
-template <typename T> class impl_IToggleSwitch;
-template <typename T> class impl_IToggleSwitchOverrides;
-template <typename T> class impl_IToggleSwitchStatics;
-template <typename T> class impl_IToolTip;
-template <typename T> class impl_IToolTipFactory;
-template <typename T> class impl_IToolTipService;
-template <typename T> class impl_IToolTipServiceStatics;
-template <typename T> class impl_IToolTipStatics;
-template <typename T> class impl_IUIElementCollection;
-template <typename T> class impl_IUserControl;
-template <typename T> class impl_IUserControlFactory;
-template <typename T> class impl_IUserControlStatics;
-template <typename T> class impl_IVariableSizedWrapGrid;
-template <typename T> class impl_IVariableSizedWrapGridStatics;
-template <typename T> class impl_IViewbox;
-template <typename T> class impl_IViewboxStatics;
-template <typename T> class impl_IVirtualizingPanel;
-template <typename T> class impl_IVirtualizingPanelFactory;
-template <typename T> class impl_IVirtualizingPanelOverrides;
-template <typename T> class impl_IVirtualizingPanelProtected;
-template <typename T> class impl_IVirtualizingStackPanel;
-template <typename T> class impl_IVirtualizingStackPanelOverrides;
-template <typename T> class impl_IVirtualizingStackPanelStatics;
-template <typename T> class impl_IWebView;
-template <typename T> class impl_IWebView2;
-template <typename T> class impl_IWebView3;
-template <typename T> class impl_IWebView4;
-template <typename T> class impl_IWebView5;
-template <typename T> class impl_IWebViewBrush;
-template <typename T> class impl_IWebViewBrushStatics;
-template <typename T> class impl_IWebViewContentLoadingEventArgs;
-template <typename T> class impl_IWebViewDOMContentLoadedEventArgs;
-template <typename T> class impl_IWebViewDeferredPermissionRequest;
-template <typename T> class impl_IWebViewFactory4;
-template <typename T> class impl_IWebViewLongRunningScriptDetectedEventArgs;
-template <typename T> class impl_IWebViewNavigationCompletedEventArgs;
-template <typename T> class impl_IWebViewNavigationFailedEventArgs;
-template <typename T> class impl_IWebViewNavigationStartingEventArgs;
-template <typename T> class impl_IWebViewNewWindowRequestedEventArgs;
-template <typename T> class impl_IWebViewPermissionRequest;
-template <typename T> class impl_IWebViewPermissionRequestedEventArgs;
-template <typename T> class impl_IWebViewSettings;
-template <typename T> class impl_IWebViewStatics;
-template <typename T> class impl_IWebViewStatics2;
-template <typename T> class impl_IWebViewStatics3;
-template <typename T> class impl_IWebViewStatics4;
-template <typename T> class impl_IWebViewStatics5;
-template <typename T> class impl_IWebViewUnsupportedUriSchemeIdentifiedEventArgs;
-template <typename T> class impl_IWebViewUnviewableContentIdentifiedEventArgs;
-template <typename T> class impl_IWebViewUnviewableContentIdentifiedEventArgs2;
-template <typename T> class impl_IWrapGrid;
-template <typename T> class impl_IWrapGridStatics;
+template <typename T> struct impl_IAppBar;
+template <typename T> struct impl_IAppBar2;
+template <typename T> struct impl_IAppBar3;
+template <typename T> struct impl_IAppBar4;
+template <typename T> struct impl_IAppBarButton;
+template <typename T> struct impl_IAppBarButton3;
+template <typename T> struct impl_IAppBarButtonFactory;
+template <typename T> struct impl_IAppBarButtonStatics;
+template <typename T> struct impl_IAppBarButtonStatics3;
+template <typename T> struct impl_IAppBarFactory;
+template <typename T> struct impl_IAppBarOverrides;
+template <typename T> struct impl_IAppBarOverrides3;
+template <typename T> struct impl_IAppBarSeparator;
+template <typename T> struct impl_IAppBarSeparatorFactory;
+template <typename T> struct impl_IAppBarSeparatorStatics;
+template <typename T> struct impl_IAppBarSeparatorStatics3;
+template <typename T> struct impl_IAppBarStatics;
+template <typename T> struct impl_IAppBarStatics2;
+template <typename T> struct impl_IAppBarStatics4;
+template <typename T> struct impl_IAppBarToggleButton;
+template <typename T> struct impl_IAppBarToggleButton3;
+template <typename T> struct impl_IAppBarToggleButtonFactory;
+template <typename T> struct impl_IAppBarToggleButtonStatics;
+template <typename T> struct impl_IAppBarToggleButtonStatics3;
+template <typename T> struct impl_IAutoSuggestBox;
+template <typename T> struct impl_IAutoSuggestBox2;
+template <typename T> struct impl_IAutoSuggestBox3;
+template <typename T> struct impl_IAutoSuggestBoxQuerySubmittedEventArgs;
+template <typename T> struct impl_IAutoSuggestBoxStatics;
+template <typename T> struct impl_IAutoSuggestBoxStatics2;
+template <typename T> struct impl_IAutoSuggestBoxStatics3;
+template <typename T> struct impl_IAutoSuggestBoxSuggestionChosenEventArgs;
+template <typename T> struct impl_IAutoSuggestBoxTextChangedEventArgs;
+template <typename T> struct impl_IAutoSuggestBoxTextChangedEventArgsStatics;
+template <typename T> struct impl_IBackClickEventArgs;
+template <typename T> struct impl_IBitmapIcon;
+template <typename T> struct impl_IBitmapIconFactory;
+template <typename T> struct impl_IBitmapIconStatics;
+template <typename T> struct impl_IBorder;
+template <typename T> struct impl_IBorderStatics;
+template <typename T> struct impl_IButton;
+template <typename T> struct impl_IButtonFactory;
+template <typename T> struct impl_IButtonStaticsWithFlyout;
+template <typename T> struct impl_IButtonWithFlyout;
+template <typename T> struct impl_ICalendarDatePicker;
+template <typename T> struct impl_ICalendarDatePicker2;
+template <typename T> struct impl_ICalendarDatePickerDateChangedEventArgs;
+template <typename T> struct impl_ICalendarDatePickerFactory;
+template <typename T> struct impl_ICalendarDatePickerStatics;
+template <typename T> struct impl_ICalendarDatePickerStatics2;
+template <typename T> struct impl_ICalendarView;
+template <typename T> struct impl_ICalendarViewDayItem;
+template <typename T> struct impl_ICalendarViewDayItemChangingEventArgs;
+template <typename T> struct impl_ICalendarViewDayItemFactory;
+template <typename T> struct impl_ICalendarViewDayItemStatics;
+template <typename T> struct impl_ICalendarViewFactory;
+template <typename T> struct impl_ICalendarViewSelectedDatesChangedEventArgs;
+template <typename T> struct impl_ICalendarViewStatics;
+template <typename T> struct impl_ICandidateWindowBoundsChangedEventArgs;
+template <typename T> struct impl_ICanvas;
+template <typename T> struct impl_ICanvasFactory;
+template <typename T> struct impl_ICanvasStatics;
+template <typename T> struct impl_ICaptureElement;
+template <typename T> struct impl_ICaptureElementStatics;
+template <typename T> struct impl_ICheckBox;
+template <typename T> struct impl_ICheckBoxFactory;
+template <typename T> struct impl_IChoosingGroupHeaderContainerEventArgs;
+template <typename T> struct impl_IChoosingItemContainerEventArgs;
+template <typename T> struct impl_ICleanUpVirtualizedItemEventArgs;
+template <typename T> struct impl_IColumnDefinition;
+template <typename T> struct impl_IColumnDefinitionStatics;
+template <typename T> struct impl_IComboBox;
+template <typename T> struct impl_IComboBox2;
+template <typename T> struct impl_IComboBox3;
+template <typename T> struct impl_IComboBoxFactory;
+template <typename T> struct impl_IComboBoxItem;
+template <typename T> struct impl_IComboBoxItemFactory;
+template <typename T> struct impl_IComboBoxOverrides;
+template <typename T> struct impl_IComboBoxStatics;
+template <typename T> struct impl_IComboBoxStatics2;
+template <typename T> struct impl_IComboBoxStatics3;
+template <typename T> struct impl_ICommandBar;
+template <typename T> struct impl_ICommandBar2;
+template <typename T> struct impl_ICommandBar3;
+template <typename T> struct impl_ICommandBarElement;
+template <typename T> struct impl_ICommandBarElement2;
+template <typename T> struct impl_ICommandBarFactory;
+template <typename T> struct impl_ICommandBarOverflowPresenter;
+template <typename T> struct impl_ICommandBarOverflowPresenterFactory;
+template <typename T> struct impl_ICommandBarStatics;
+template <typename T> struct impl_ICommandBarStatics2;
+template <typename T> struct impl_ICommandBarStatics3;
+template <typename T> struct impl_IContainerContentChangingEventArgs;
+template <typename T> struct impl_IContentControl;
+template <typename T> struct impl_IContentControl2;
+template <typename T> struct impl_IContentControlFactory;
+template <typename T> struct impl_IContentControlOverrides;
+template <typename T> struct impl_IContentControlStatics;
+template <typename T> struct impl_IContentDialog;
+template <typename T> struct impl_IContentDialogButtonClickDeferral;
+template <typename T> struct impl_IContentDialogButtonClickEventArgs;
+template <typename T> struct impl_IContentDialogClosedEventArgs;
+template <typename T> struct impl_IContentDialogClosingDeferral;
+template <typename T> struct impl_IContentDialogClosingEventArgs;
+template <typename T> struct impl_IContentDialogFactory;
+template <typename T> struct impl_IContentDialogOpenedEventArgs;
+template <typename T> struct impl_IContentDialogStatics;
+template <typename T> struct impl_IContentPresenter;
+template <typename T> struct impl_IContentPresenter2;
+template <typename T> struct impl_IContentPresenter3;
+template <typename T> struct impl_IContentPresenter4;
+template <typename T> struct impl_IContentPresenterFactory;
+template <typename T> struct impl_IContentPresenterOverrides;
+template <typename T> struct impl_IContentPresenterStatics;
+template <typename T> struct impl_IContentPresenterStatics2;
+template <typename T> struct impl_IContentPresenterStatics3;
+template <typename T> struct impl_IContentPresenterStatics4;
+template <typename T> struct impl_IContextMenuEventArgs;
+template <typename T> struct impl_IControl;
+template <typename T> struct impl_IControl2;
+template <typename T> struct impl_IControl3;
+template <typename T> struct impl_IControl4;
+template <typename T> struct impl_IControlFactory;
+template <typename T> struct impl_IControlOverrides;
+template <typename T> struct impl_IControlProtected;
+template <typename T> struct impl_IControlStatics;
+template <typename T> struct impl_IControlStatics2;
+template <typename T> struct impl_IControlStatics3;
+template <typename T> struct impl_IControlStatics4;
+template <typename T> struct impl_IControlTemplate;
+template <typename T> struct impl_IDataTemplateSelector;
+template <typename T> struct impl_IDataTemplateSelector2;
+template <typename T> struct impl_IDataTemplateSelectorFactory;
+template <typename T> struct impl_IDataTemplateSelectorOverrides;
+template <typename T> struct impl_IDataTemplateSelectorOverrides2;
+template <typename T> struct impl_IDatePickedEventArgs;
+template <typename T> struct impl_IDatePicker;
+template <typename T> struct impl_IDatePicker2;
+template <typename T> struct impl_IDatePickerFactory;
+template <typename T> struct impl_IDatePickerFlyout;
+template <typename T> struct impl_IDatePickerFlyout2;
+template <typename T> struct impl_IDatePickerFlyoutItem;
+template <typename T> struct impl_IDatePickerFlyoutItemStatics;
+template <typename T> struct impl_IDatePickerFlyoutPresenter;
+template <typename T> struct impl_IDatePickerFlyoutStatics;
+template <typename T> struct impl_IDatePickerFlyoutStatics2;
+template <typename T> struct impl_IDatePickerStatics;
+template <typename T> struct impl_IDatePickerStatics2;
+template <typename T> struct impl_IDatePickerValueChangedEventArgs;
+template <typename T> struct impl_IDragItemsCompletedEventArgs;
+template <typename T> struct impl_IDragItemsStartingEventArgs;
+template <typename T> struct impl_IDynamicOverflowItemsChangingEventArgs;
+template <typename T> struct impl_IFlipView;
+template <typename T> struct impl_IFlipView2;
+template <typename T> struct impl_IFlipViewFactory;
+template <typename T> struct impl_IFlipViewItem;
+template <typename T> struct impl_IFlipViewItemFactory;
+template <typename T> struct impl_IFlipViewStatics2;
+template <typename T> struct impl_IFlyout;
+template <typename T> struct impl_IFlyoutFactory;
+template <typename T> struct impl_IFlyoutPresenter;
+template <typename T> struct impl_IFlyoutPresenterFactory;
+template <typename T> struct impl_IFlyoutStatics;
+template <typename T> struct impl_IFocusDisengagedEventArgs;
+template <typename T> struct impl_IFocusEngagedEventArgs;
+template <typename T> struct impl_IFontIcon;
+template <typename T> struct impl_IFontIcon2;
+template <typename T> struct impl_IFontIcon3;
+template <typename T> struct impl_IFontIconFactory;
+template <typename T> struct impl_IFontIconStatics;
+template <typename T> struct impl_IFontIconStatics2;
+template <typename T> struct impl_IFontIconStatics3;
+template <typename T> struct impl_IFrame;
+template <typename T> struct impl_IFrame2;
+template <typename T> struct impl_IFrame3;
+template <typename T> struct impl_IFrameFactory;
+template <typename T> struct impl_IFrameStatics;
+template <typename T> struct impl_IFrameStatics2;
+template <typename T> struct impl_IGrid;
+template <typename T> struct impl_IGrid2;
+template <typename T> struct impl_IGridFactory;
+template <typename T> struct impl_IGridStatics;
+template <typename T> struct impl_IGridStatics2;
+template <typename T> struct impl_IGridView;
+template <typename T> struct impl_IGridViewFactory;
+template <typename T> struct impl_IGridViewHeaderItem;
+template <typename T> struct impl_IGridViewHeaderItemFactory;
+template <typename T> struct impl_IGridViewItem;
+template <typename T> struct impl_IGridViewItemFactory;
+template <typename T> struct impl_IGroupItem;
+template <typename T> struct impl_IGroupItemFactory;
+template <typename T> struct impl_IGroupStyle;
+template <typename T> struct impl_IGroupStyle2;
+template <typename T> struct impl_IGroupStyleFactory;
+template <typename T> struct impl_IGroupStyleSelector;
+template <typename T> struct impl_IGroupStyleSelectorFactory;
+template <typename T> struct impl_IGroupStyleSelectorOverrides;
+template <typename T> struct impl_IHub;
+template <typename T> struct impl_IHubFactory;
+template <typename T> struct impl_IHubSection;
+template <typename T> struct impl_IHubSectionFactory;
+template <typename T> struct impl_IHubSectionHeaderClickEventArgs;
+template <typename T> struct impl_IHubSectionStatics;
+template <typename T> struct impl_IHubStatics;
+template <typename T> struct impl_IHyperlinkButton;
+template <typename T> struct impl_IHyperlinkButtonFactory;
+template <typename T> struct impl_IHyperlinkButtonStatics;
+template <typename T> struct impl_IIconElement;
+template <typename T> struct impl_IIconElementFactory;
+template <typename T> struct impl_IIconElementStatics;
+template <typename T> struct impl_IImage;
+template <typename T> struct impl_IImage2;
+template <typename T> struct impl_IImage3;
+template <typename T> struct impl_IImageStatics;
+template <typename T> struct impl_IInkCanvas;
+template <typename T> struct impl_IInkCanvasFactory;
+template <typename T> struct impl_IInkToolbar;
+template <typename T> struct impl_IInkToolbarBallpointPenButton;
+template <typename T> struct impl_IInkToolbarBallpointPenButtonFactory;
+template <typename T> struct impl_IInkToolbarCustomPen;
+template <typename T> struct impl_IInkToolbarCustomPenButton;
+template <typename T> struct impl_IInkToolbarCustomPenButtonFactory;
+template <typename T> struct impl_IInkToolbarCustomPenButtonStatics;
+template <typename T> struct impl_IInkToolbarCustomPenFactory;
+template <typename T> struct impl_IInkToolbarCustomPenOverrides;
+template <typename T> struct impl_IInkToolbarCustomToggleButton;
+template <typename T> struct impl_IInkToolbarCustomToggleButtonFactory;
+template <typename T> struct impl_IInkToolbarCustomToolButton;
+template <typename T> struct impl_IInkToolbarCustomToolButtonFactory;
+template <typename T> struct impl_IInkToolbarCustomToolButtonStatics;
+template <typename T> struct impl_IInkToolbarEraserButton;
+template <typename T> struct impl_IInkToolbarEraserButtonFactory;
+template <typename T> struct impl_IInkToolbarFactory;
+template <typename T> struct impl_IInkToolbarHighlighterButton;
+template <typename T> struct impl_IInkToolbarHighlighterButtonFactory;
+template <typename T> struct impl_IInkToolbarPenButton;
+template <typename T> struct impl_IInkToolbarPenButtonFactory;
+template <typename T> struct impl_IInkToolbarPenButtonStatics;
+template <typename T> struct impl_IInkToolbarPenConfigurationControl;
+template <typename T> struct impl_IInkToolbarPenConfigurationControlFactory;
+template <typename T> struct impl_IInkToolbarPenConfigurationControlStatics;
+template <typename T> struct impl_IInkToolbarPencilButton;
+template <typename T> struct impl_IInkToolbarPencilButtonFactory;
+template <typename T> struct impl_IInkToolbarRulerButton;
+template <typename T> struct impl_IInkToolbarRulerButtonFactory;
+template <typename T> struct impl_IInkToolbarRulerButtonStatics;
+template <typename T> struct impl_IInkToolbarStatics;
+template <typename T> struct impl_IInkToolbarToggleButton;
+template <typename T> struct impl_IInkToolbarToggleButtonFactory;
+template <typename T> struct impl_IInkToolbarToolButton;
+template <typename T> struct impl_IInkToolbarToolButtonFactory;
+template <typename T> struct impl_IInkToolbarToolButtonStatics;
+template <typename T> struct impl_IInsertionPanel;
+template <typename T> struct impl_IItemClickEventArgs;
+template <typename T> struct impl_IItemContainerGenerator;
+template <typename T> struct impl_IItemContainerMapping;
+template <typename T> struct impl_IItemsControl;
+template <typename T> struct impl_IItemsControl2;
+template <typename T> struct impl_IItemsControl3;
+template <typename T> struct impl_IItemsControlFactory;
+template <typename T> struct impl_IItemsControlOverrides;
+template <typename T> struct impl_IItemsControlStatics;
+template <typename T> struct impl_IItemsPanelTemplate;
+template <typename T> struct impl_IItemsPickedEventArgs;
+template <typename T> struct impl_IItemsPresenter;
+template <typename T> struct impl_IItemsPresenter2;
+template <typename T> struct impl_IItemsPresenterStatics;
+template <typename T> struct impl_IItemsPresenterStatics2;
+template <typename T> struct impl_IItemsStackPanel;
+template <typename T> struct impl_IItemsStackPanel2;
+template <typename T> struct impl_IItemsStackPanelStatics;
+template <typename T> struct impl_IItemsStackPanelStatics2;
+template <typename T> struct impl_IItemsWrapGrid;
+template <typename T> struct impl_IItemsWrapGrid2;
+template <typename T> struct impl_IItemsWrapGridStatics;
+template <typename T> struct impl_IItemsWrapGridStatics2;
+template <typename T> struct impl_IListBox;
+template <typename T> struct impl_IListBox2;
+template <typename T> struct impl_IListBoxFactory;
+template <typename T> struct impl_IListBoxItem;
+template <typename T> struct impl_IListBoxItemFactory;
+template <typename T> struct impl_IListBoxStatics;
+template <typename T> struct impl_IListBoxStatics2;
+template <typename T> struct impl_IListPickerFlyout;
+template <typename T> struct impl_IListPickerFlyoutPresenter;
+template <typename T> struct impl_IListPickerFlyoutStatics;
+template <typename T> struct impl_IListView;
+template <typename T> struct impl_IListViewBase;
+template <typename T> struct impl_IListViewBase2;
+template <typename T> struct impl_IListViewBase3;
+template <typename T> struct impl_IListViewBase4;
+template <typename T> struct impl_IListViewBase5;
+template <typename T> struct impl_IListViewBaseFactory;
+template <typename T> struct impl_IListViewBaseHeaderItem;
+template <typename T> struct impl_IListViewBaseHeaderItemFactory;
+template <typename T> struct impl_IListViewBaseStatics;
+template <typename T> struct impl_IListViewBaseStatics2;
+template <typename T> struct impl_IListViewBaseStatics3;
+template <typename T> struct impl_IListViewBaseStatics4;
+template <typename T> struct impl_IListViewBaseStatics5;
+template <typename T> struct impl_IListViewFactory;
+template <typename T> struct impl_IListViewHeaderItem;
+template <typename T> struct impl_IListViewHeaderItemFactory;
+template <typename T> struct impl_IListViewItem;
+template <typename T> struct impl_IListViewItemFactory;
+template <typename T> struct impl_IListViewPersistenceHelper;
+template <typename T> struct impl_IListViewPersistenceHelperStatics;
+template <typename T> struct impl_IMediaElement;
+template <typename T> struct impl_IMediaElement2;
+template <typename T> struct impl_IMediaElement3;
+template <typename T> struct impl_IMediaElementStatics;
+template <typename T> struct impl_IMediaElementStatics2;
+template <typename T> struct impl_IMediaPlayerElement;
+template <typename T> struct impl_IMediaPlayerElementFactory;
+template <typename T> struct impl_IMediaPlayerElementStatics;
+template <typename T> struct impl_IMediaPlayerPresenter;
+template <typename T> struct impl_IMediaPlayerPresenterFactory;
+template <typename T> struct impl_IMediaPlayerPresenterStatics;
+template <typename T> struct impl_IMediaTransportControls;
+template <typename T> struct impl_IMediaTransportControls2;
+template <typename T> struct impl_IMediaTransportControlsFactory;
+template <typename T> struct impl_IMediaTransportControlsHelper;
+template <typename T> struct impl_IMediaTransportControlsHelperStatics;
+template <typename T> struct impl_IMediaTransportControlsStatics;
+template <typename T> struct impl_IMediaTransportControlsStatics2;
+template <typename T> struct impl_IMenuFlyout;
+template <typename T> struct impl_IMenuFlyout2;
+template <typename T> struct impl_IMenuFlyoutFactory;
+template <typename T> struct impl_IMenuFlyoutItem;
+template <typename T> struct impl_IMenuFlyoutItemBase;
+template <typename T> struct impl_IMenuFlyoutItemBaseFactory;
+template <typename T> struct impl_IMenuFlyoutItemFactory;
+template <typename T> struct impl_IMenuFlyoutItemStatics;
+template <typename T> struct impl_IMenuFlyoutPresenter;
+template <typename T> struct impl_IMenuFlyoutPresenter2;
+template <typename T> struct impl_IMenuFlyoutPresenterFactory;
+template <typename T> struct impl_IMenuFlyoutSeparator;
+template <typename T> struct impl_IMenuFlyoutSeparatorFactory;
+template <typename T> struct impl_IMenuFlyoutStatics;
+template <typename T> struct impl_IMenuFlyoutSubItem;
+template <typename T> struct impl_IMenuFlyoutSubItemStatics;
+template <typename T> struct impl_INavigate;
+template <typename T> struct impl_INotifyEventArgs;
+template <typename T> struct impl_INotifyEventArgs2;
+template <typename T> struct impl_IPage;
+template <typename T> struct impl_IPageFactory;
+template <typename T> struct impl_IPageOverrides;
+template <typename T> struct impl_IPageStatics;
+template <typename T> struct impl_IPanel;
+template <typename T> struct impl_IPanelFactory;
+template <typename T> struct impl_IPanelStatics;
+template <typename T> struct impl_IPasswordBox;
+template <typename T> struct impl_IPasswordBox2;
+template <typename T> struct impl_IPasswordBox3;
+template <typename T> struct impl_IPasswordBoxStatics;
+template <typename T> struct impl_IPasswordBoxStatics2;
+template <typename T> struct impl_IPasswordBoxStatics3;
+template <typename T> struct impl_IPathIcon;
+template <typename T> struct impl_IPathIconFactory;
+template <typename T> struct impl_IPathIconStatics;
+template <typename T> struct impl_IPickerConfirmedEventArgs;
+template <typename T> struct impl_IPickerFlyout;
+template <typename T> struct impl_IPickerFlyoutPresenter;
+template <typename T> struct impl_IPickerFlyoutStatics;
+template <typename T> struct impl_IPivot;
+template <typename T> struct impl_IPivot2;
+template <typename T> struct impl_IPivot3;
+template <typename T> struct impl_IPivotFactory;
+template <typename T> struct impl_IPivotItem;
+template <typename T> struct impl_IPivotItemEventArgs;
+template <typename T> struct impl_IPivotItemFactory;
+template <typename T> struct impl_IPivotItemStatics;
+template <typename T> struct impl_IPivotStatics;
+template <typename T> struct impl_IPivotStatics2;
+template <typename T> struct impl_IPivotStatics3;
+template <typename T> struct impl_IProgressBar;
+template <typename T> struct impl_IProgressBarFactory;
+template <typename T> struct impl_IProgressBarStatics;
+template <typename T> struct impl_IProgressRing;
+template <typename T> struct impl_IProgressRingStatics;
+template <typename T> struct impl_IRadioButton;
+template <typename T> struct impl_IRadioButtonFactory;
+template <typename T> struct impl_IRadioButtonStatics;
+template <typename T> struct impl_IRelativePanel;
+template <typename T> struct impl_IRelativePanelFactory;
+template <typename T> struct impl_IRelativePanelStatics;
+template <typename T> struct impl_IRichEditBox;
+template <typename T> struct impl_IRichEditBox2;
+template <typename T> struct impl_IRichEditBox3;
+template <typename T> struct impl_IRichEditBox4;
+template <typename T> struct impl_IRichEditBoxFactory;
+template <typename T> struct impl_IRichEditBoxStatics;
+template <typename T> struct impl_IRichEditBoxStatics2;
+template <typename T> struct impl_IRichEditBoxStatics3;
+template <typename T> struct impl_IRichEditBoxStatics4;
+template <typename T> struct impl_IRichEditBoxTextChangingEventArgs;
+template <typename T> struct impl_IRichTextBlock;
+template <typename T> struct impl_IRichTextBlock2;
+template <typename T> struct impl_IRichTextBlock3;
+template <typename T> struct impl_IRichTextBlockOverflow;
+template <typename T> struct impl_IRichTextBlockOverflow2;
+template <typename T> struct impl_IRichTextBlockOverflowStatics;
+template <typename T> struct impl_IRichTextBlockOverflowStatics2;
+template <typename T> struct impl_IRichTextBlockStatics;
+template <typename T> struct impl_IRichTextBlockStatics2;
+template <typename T> struct impl_IRichTextBlockStatics3;
+template <typename T> struct impl_IRowDefinition;
+template <typename T> struct impl_IRowDefinitionStatics;
+template <typename T> struct impl_IScrollContentPresenter;
+template <typename T> struct impl_IScrollViewer;
+template <typename T> struct impl_IScrollViewer2;
+template <typename T> struct impl_IScrollViewer3;
+template <typename T> struct impl_IScrollViewerStatics;
+template <typename T> struct impl_IScrollViewerStatics2;
+template <typename T> struct impl_IScrollViewerView;
+template <typename T> struct impl_IScrollViewerViewChangedEventArgs;
+template <typename T> struct impl_IScrollViewerViewChangingEventArgs;
+template <typename T> struct impl_ISearchBox;
+template <typename T> struct impl_ISearchBoxFactory;
+template <typename T> struct impl_ISearchBoxQueryChangedEventArgs;
+template <typename T> struct impl_ISearchBoxQuerySubmittedEventArgs;
+template <typename T> struct impl_ISearchBoxResultSuggestionChosenEventArgs;
+template <typename T> struct impl_ISearchBoxStatics;
+template <typename T> struct impl_ISearchBoxSuggestionsRequestedEventArgs;
+template <typename T> struct impl_ISectionsInViewChangedEventArgs;
+template <typename T> struct impl_ISectionsInViewChangedEventArgsFactory;
+template <typename T> struct impl_ISelectionChangedEventArgs;
+template <typename T> struct impl_ISelectionChangedEventArgsFactory;
+template <typename T> struct impl_ISemanticZoom;
+template <typename T> struct impl_ISemanticZoomInformation;
+template <typename T> struct impl_ISemanticZoomLocation;
+template <typename T> struct impl_ISemanticZoomStatics;
+template <typename T> struct impl_ISemanticZoomViewChangedEventArgs;
+template <typename T> struct impl_ISettingsFlyout;
+template <typename T> struct impl_ISettingsFlyoutFactory;
+template <typename T> struct impl_ISettingsFlyoutStatics;
+template <typename T> struct impl_ISlider;
+template <typename T> struct impl_ISlider2;
+template <typename T> struct impl_ISliderFactory;
+template <typename T> struct impl_ISliderStatics;
+template <typename T> struct impl_ISliderStatics2;
+template <typename T> struct impl_ISplitView;
+template <typename T> struct impl_ISplitView2;
+template <typename T> struct impl_ISplitViewFactory;
+template <typename T> struct impl_ISplitViewPaneClosingEventArgs;
+template <typename T> struct impl_ISplitViewStatics;
+template <typename T> struct impl_ISplitViewStatics2;
+template <typename T> struct impl_IStackPanel;
+template <typename T> struct impl_IStackPanel2;
+template <typename T> struct impl_IStackPanelFactory;
+template <typename T> struct impl_IStackPanelStatics;
+template <typename T> struct impl_IStackPanelStatics2;
+template <typename T> struct impl_IStyleSelector;
+template <typename T> struct impl_IStyleSelectorFactory;
+template <typename T> struct impl_IStyleSelectorOverrides;
+template <typename T> struct impl_ISwapChainBackgroundPanel;
+template <typename T> struct impl_ISwapChainBackgroundPanel2;
+template <typename T> struct impl_ISwapChainBackgroundPanelFactory;
+template <typename T> struct impl_ISwapChainPanel;
+template <typename T> struct impl_ISwapChainPanelFactory;
+template <typename T> struct impl_ISwapChainPanelStatics;
+template <typename T> struct impl_ISymbolIcon;
+template <typename T> struct impl_ISymbolIconFactory;
+template <typename T> struct impl_ISymbolIconStatics;
+template <typename T> struct impl_ITextBlock;
+template <typename T> struct impl_ITextBlock2;
+template <typename T> struct impl_ITextBlock3;
+template <typename T> struct impl_ITextBlock4;
+template <typename T> struct impl_ITextBlockStatics;
+template <typename T> struct impl_ITextBlockStatics2;
+template <typename T> struct impl_ITextBlockStatics3;
+template <typename T> struct impl_ITextBox;
+template <typename T> struct impl_ITextBox2;
+template <typename T> struct impl_ITextBox3;
+template <typename T> struct impl_ITextBox4;
+template <typename T> struct impl_ITextBoxFactory;
+template <typename T> struct impl_ITextBoxStatics;
+template <typename T> struct impl_ITextBoxStatics2;
+template <typename T> struct impl_ITextBoxStatics3;
+template <typename T> struct impl_ITextBoxTextChangingEventArgs;
+template <typename T> struct impl_ITextChangedEventArgs;
+template <typename T> struct impl_ITextCompositionChangedEventArgs;
+template <typename T> struct impl_ITextCompositionEndedEventArgs;
+template <typename T> struct impl_ITextCompositionStartedEventArgs;
+template <typename T> struct impl_ITextControlPasteEventArgs;
+template <typename T> struct impl_ITimePickedEventArgs;
+template <typename T> struct impl_ITimePicker;
+template <typename T> struct impl_ITimePicker2;
+template <typename T> struct impl_ITimePickerFactory;
+template <typename T> struct impl_ITimePickerFlyout;
+template <typename T> struct impl_ITimePickerFlyoutPresenter;
+template <typename T> struct impl_ITimePickerFlyoutStatics;
+template <typename T> struct impl_ITimePickerStatics;
+template <typename T> struct impl_ITimePickerStatics2;
+template <typename T> struct impl_ITimePickerValueChangedEventArgs;
+template <typename T> struct impl_IToggleMenuFlyoutItem;
+template <typename T> struct impl_IToggleMenuFlyoutItemFactory;
+template <typename T> struct impl_IToggleMenuFlyoutItemStatics;
+template <typename T> struct impl_IToggleSwitch;
+template <typename T> struct impl_IToggleSwitchOverrides;
+template <typename T> struct impl_IToggleSwitchStatics;
+template <typename T> struct impl_IToolTip;
+template <typename T> struct impl_IToolTipFactory;
+template <typename T> struct impl_IToolTipService;
+template <typename T> struct impl_IToolTipServiceStatics;
+template <typename T> struct impl_IToolTipStatics;
+template <typename T> struct impl_IUIElementCollection;
+template <typename T> struct impl_IUserControl;
+template <typename T> struct impl_IUserControlFactory;
+template <typename T> struct impl_IUserControlStatics;
+template <typename T> struct impl_IVariableSizedWrapGrid;
+template <typename T> struct impl_IVariableSizedWrapGridStatics;
+template <typename T> struct impl_IViewbox;
+template <typename T> struct impl_IViewboxStatics;
+template <typename T> struct impl_IVirtualizingPanel;
+template <typename T> struct impl_IVirtualizingPanelFactory;
+template <typename T> struct impl_IVirtualizingPanelOverrides;
+template <typename T> struct impl_IVirtualizingPanelProtected;
+template <typename T> struct impl_IVirtualizingStackPanel;
+template <typename T> struct impl_IVirtualizingStackPanelOverrides;
+template <typename T> struct impl_IVirtualizingStackPanelStatics;
+template <typename T> struct impl_IWebView;
+template <typename T> struct impl_IWebView2;
+template <typename T> struct impl_IWebView3;
+template <typename T> struct impl_IWebView4;
+template <typename T> struct impl_IWebView5;
+template <typename T> struct impl_IWebViewBrush;
+template <typename T> struct impl_IWebViewBrushStatics;
+template <typename T> struct impl_IWebViewContentLoadingEventArgs;
+template <typename T> struct impl_IWebViewDOMContentLoadedEventArgs;
+template <typename T> struct impl_IWebViewDeferredPermissionRequest;
+template <typename T> struct impl_IWebViewFactory4;
+template <typename T> struct impl_IWebViewLongRunningScriptDetectedEventArgs;
+template <typename T> struct impl_IWebViewNavigationCompletedEventArgs;
+template <typename T> struct impl_IWebViewNavigationFailedEventArgs;
+template <typename T> struct impl_IWebViewNavigationStartingEventArgs;
+template <typename T> struct impl_IWebViewNewWindowRequestedEventArgs;
+template <typename T> struct impl_IWebViewPermissionRequest;
+template <typename T> struct impl_IWebViewPermissionRequestedEventArgs;
+template <typename T> struct impl_IWebViewSettings;
+template <typename T> struct impl_IWebViewStatics;
+template <typename T> struct impl_IWebViewStatics2;
+template <typename T> struct impl_IWebViewStatics3;
+template <typename T> struct impl_IWebViewStatics4;
+template <typename T> struct impl_IWebViewStatics5;
+template <typename T> struct impl_IWebViewUnsupportedUriSchemeIdentifiedEventArgs;
+template <typename T> struct impl_IWebViewUnviewableContentIdentifiedEventArgs;
+template <typename T> struct impl_IWebViewUnviewableContentIdentifiedEventArgs2;
+template <typename T> struct impl_IWrapGrid;
+template <typename T> struct impl_IWrapGridStatics;
 template <typename T> struct impl_BackClickEventHandler;
 template <typename T> struct impl_CalendarViewDayItemChangingEventHandler;
 template <typename T> struct impl_CleanUpVirtualizedItemEventHandler;
@@ -9423,1435 +9423,1230 @@ template <> struct traits<Windows::UI::Xaml::Controls::WebViewNavigationFailedEv
 template <> struct traits<Windows::UI::Xaml::Controls::AppBar>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::AppBar;
-    using default_interface = Windows::UI::Xaml::Controls::IAppBar;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.AppBar"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::AppBarButton>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::AppBarButton;
-    using default_interface = Windows::UI::Xaml::Controls::IAppBarButton;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.AppBarButton"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::AppBarSeparator>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::AppBarSeparator;
-    using default_interface = Windows::UI::Xaml::Controls::IAppBarSeparator;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.AppBarSeparator"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::AppBarToggleButton>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::AppBarToggleButton;
-    using default_interface = Windows::UI::Xaml::Controls::IAppBarToggleButton;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.AppBarToggleButton"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::AutoSuggestBox>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::AutoSuggestBox;
-    using default_interface = Windows::UI::Xaml::Controls::IAutoSuggestBox;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.AutoSuggestBox"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::AutoSuggestBoxQuerySubmittedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::AutoSuggestBoxQuerySubmittedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::IAutoSuggestBoxQuerySubmittedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.AutoSuggestBoxQuerySubmittedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::AutoSuggestBoxSuggestionChosenEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::AutoSuggestBoxSuggestionChosenEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::IAutoSuggestBoxSuggestionChosenEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.AutoSuggestBoxSuggestionChosenEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::AutoSuggestBoxTextChangedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::AutoSuggestBoxTextChangedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::IAutoSuggestBoxTextChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.AutoSuggestBoxTextChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::BackClickEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::BackClickEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::IBackClickEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.BackClickEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::BitmapIcon>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::BitmapIcon;
-    using default_interface = Windows::UI::Xaml::Controls::IBitmapIcon;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.BitmapIcon"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Border>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Border;
-    using default_interface = Windows::UI::Xaml::Controls::IBorder;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Border"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Button>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Button;
-    using default_interface = Windows::UI::Xaml::Controls::IButton;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Button"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::CalendarDatePicker>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::CalendarDatePicker;
-    using default_interface = Windows::UI::Xaml::Controls::ICalendarDatePicker;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.CalendarDatePicker"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::CalendarDatePickerDateChangedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::CalendarDatePickerDateChangedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::ICalendarDatePickerDateChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.CalendarDatePickerDateChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::CalendarView>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::CalendarView;
-    using default_interface = Windows::UI::Xaml::Controls::ICalendarView;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.CalendarView"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::CalendarViewDayItem>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::CalendarViewDayItem;
-    using default_interface = Windows::UI::Xaml::Controls::ICalendarViewDayItem;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.CalendarViewDayItem"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::CalendarViewDayItemChangingEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::CalendarViewDayItemChangingEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::ICalendarViewDayItemChangingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.CalendarViewDayItemChangingEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::CalendarViewSelectedDatesChangedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::CalendarViewSelectedDatesChangedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::ICalendarViewSelectedDatesChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.CalendarViewSelectedDatesChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::CandidateWindowBoundsChangedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::CandidateWindowBoundsChangedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::ICandidateWindowBoundsChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.CandidateWindowBoundsChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Canvas>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Canvas;
-    using default_interface = Windows::UI::Xaml::Controls::ICanvas;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Canvas"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::CaptureElement>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::CaptureElement;
-    using default_interface = Windows::UI::Xaml::Controls::ICaptureElement;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.CaptureElement"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::CheckBox>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::CheckBox;
-    using default_interface = Windows::UI::Xaml::Controls::ICheckBox;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.CheckBox"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ChoosingGroupHeaderContainerEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ChoosingGroupHeaderContainerEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::IChoosingGroupHeaderContainerEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ChoosingGroupHeaderContainerEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ChoosingItemContainerEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ChoosingItemContainerEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::IChoosingItemContainerEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ChoosingItemContainerEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::CleanUpVirtualizedItemEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::CleanUpVirtualizedItemEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::ICleanUpVirtualizedItemEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.CleanUpVirtualizedItemEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ColumnDefinition>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ColumnDefinition;
-    using default_interface = Windows::UI::Xaml::Controls::IColumnDefinition;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ColumnDefinition"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ColumnDefinitionCollection>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ColumnDefinitionCollection;
-    using default_interface = Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Controls::ColumnDefinition>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ColumnDefinitionCollection"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ComboBox>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ComboBox;
-    using default_interface = Windows::UI::Xaml::Controls::IComboBox;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ComboBox"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ComboBoxItem>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ComboBoxItem;
-    using default_interface = Windows::UI::Xaml::Controls::IComboBoxItem;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ComboBoxItem"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::CommandBar>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::CommandBar;
-    using default_interface = Windows::UI::Xaml::Controls::ICommandBar;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.CommandBar"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::CommandBarOverflowPresenter>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::CommandBarOverflowPresenter;
-    using default_interface = Windows::UI::Xaml::Controls::ICommandBarOverflowPresenter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.CommandBarOverflowPresenter"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ContainerContentChangingEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ContainerContentChangingEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::IContainerContentChangingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ContainerContentChangingEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ContentControl>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ContentControl;
-    using default_interface = Windows::UI::Xaml::Controls::IContentControl;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ContentControl"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ContentDialog>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ContentDialog;
-    using default_interface = Windows::UI::Xaml::Controls::IContentDialog;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ContentDialog"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ContentDialogButtonClickDeferral>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ContentDialogButtonClickDeferral;
-    using default_interface = Windows::UI::Xaml::Controls::IContentDialogButtonClickDeferral;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ContentDialogButtonClickDeferral"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ContentDialogButtonClickEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ContentDialogButtonClickEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::IContentDialogButtonClickEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ContentDialogButtonClickEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ContentDialogClosedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ContentDialogClosedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::IContentDialogClosedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ContentDialogClosedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ContentDialogClosingDeferral>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ContentDialogClosingDeferral;
-    using default_interface = Windows::UI::Xaml::Controls::IContentDialogClosingDeferral;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ContentDialogClosingDeferral"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ContentDialogClosingEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ContentDialogClosingEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::IContentDialogClosingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ContentDialogClosingEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ContentDialogOpenedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ContentDialogOpenedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::IContentDialogOpenedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ContentDialogOpenedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ContentPresenter>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ContentPresenter;
-    using default_interface = Windows::UI::Xaml::Controls::IContentPresenter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ContentPresenter"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ContextMenuEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ContextMenuEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::IContextMenuEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ContextMenuEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Control>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Control;
-    using default_interface = Windows::UI::Xaml::Controls::IControl;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Control"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ControlTemplate>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ControlTemplate;
-    using default_interface = Windows::UI::Xaml::Controls::IControlTemplate;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ControlTemplate"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::DataTemplateSelector>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::DataTemplateSelector;
-    using default_interface = Windows::UI::Xaml::Controls::IDataTemplateSelector;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.DataTemplateSelector"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::DatePickedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::DatePickedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::IDatePickedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.DatePickedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::DatePicker>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::DatePicker;
-    using default_interface = Windows::UI::Xaml::Controls::IDatePicker;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.DatePicker"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::DatePickerFlyout>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::DatePickerFlyout;
-    using default_interface = Windows::UI::Xaml::Controls::IDatePickerFlyout;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.DatePickerFlyout"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::DatePickerFlyoutItem>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::DatePickerFlyoutItem;
-    using default_interface = Windows::UI::Xaml::Controls::IDatePickerFlyoutItem;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.DatePickerFlyoutItem"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::DatePickerFlyoutPresenter>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::DatePickerFlyoutPresenter;
-    using default_interface = Windows::UI::Xaml::Controls::IDatePickerFlyoutPresenter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.DatePickerFlyoutPresenter"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::DatePickerValueChangedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::DatePickerValueChangedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::IDatePickerValueChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.DatePickerValueChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::DragItemsCompletedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::DragItemsCompletedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::IDragItemsCompletedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.DragItemsCompletedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::DragItemsStartingEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::DragItemsStartingEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::IDragItemsStartingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.DragItemsStartingEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::DynamicOverflowItemsChangingEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::DynamicOverflowItemsChangingEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::IDynamicOverflowItemsChangingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.DynamicOverflowItemsChangingEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::FlipView>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::FlipView;
-    using default_interface = Windows::UI::Xaml::Controls::IFlipView;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.FlipView"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::FlipViewItem>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::FlipViewItem;
-    using default_interface = Windows::UI::Xaml::Controls::IFlipViewItem;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.FlipViewItem"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Flyout>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Flyout;
-    using default_interface = Windows::UI::Xaml::Controls::IFlyout;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Flyout"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::FlyoutPresenter>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::FlyoutPresenter;
-    using default_interface = Windows::UI::Xaml::Controls::IFlyoutPresenter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.FlyoutPresenter"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::FocusDisengagedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::FocusDisengagedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::IFocusDisengagedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.FocusDisengagedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::FocusEngagedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::FocusEngagedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::IFocusEngagedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.FocusEngagedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::FontIcon>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::FontIcon;
-    using default_interface = Windows::UI::Xaml::Controls::IFontIcon;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.FontIcon"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Frame>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Frame;
-    using default_interface = Windows::UI::Xaml::Controls::IFrame;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Frame"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Grid>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Grid;
-    using default_interface = Windows::UI::Xaml::Controls::IGrid;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Grid"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::GridView>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::GridView;
-    using default_interface = Windows::UI::Xaml::Controls::IGridView;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.GridView"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::GridViewHeaderItem>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::GridViewHeaderItem;
-    using default_interface = Windows::UI::Xaml::Controls::IGridViewHeaderItem;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.GridViewHeaderItem"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::GridViewItem>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::GridViewItem;
-    using default_interface = Windows::UI::Xaml::Controls::IGridViewItem;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.GridViewItem"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::GroupItem>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::GroupItem;
-    using default_interface = Windows::UI::Xaml::Controls::IGroupItem;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.GroupItem"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::GroupStyle>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::GroupStyle;
-    using default_interface = Windows::UI::Xaml::Controls::IGroupStyle;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.GroupStyle"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::GroupStyleSelector>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::GroupStyleSelector;
-    using default_interface = Windows::UI::Xaml::Controls::IGroupStyleSelector;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.GroupStyleSelector"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Hub>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Hub;
-    using default_interface = Windows::UI::Xaml::Controls::IHub;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Hub"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::HubSection>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::HubSection;
-    using default_interface = Windows::UI::Xaml::Controls::IHubSection;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.HubSection"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::HubSectionCollection>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::HubSectionCollection;
-    using default_interface = Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Controls::HubSection>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.HubSectionCollection"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::HubSectionHeaderClickEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::HubSectionHeaderClickEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::IHubSectionHeaderClickEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.HubSectionHeaderClickEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::HyperlinkButton>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::HyperlinkButton;
-    using default_interface = Windows::UI::Xaml::Controls::IHyperlinkButton;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.HyperlinkButton"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::IconElement>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::IconElement;
-    using default_interface = Windows::UI::Xaml::Controls::IIconElement;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.IconElement"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Image>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Image;
-    using default_interface = Windows::UI::Xaml::Controls::IImage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Image"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::InkCanvas>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::InkCanvas;
-    using default_interface = Windows::UI::Xaml::Controls::IInkCanvas;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.InkCanvas"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::InkToolbar>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::InkToolbar;
-    using default_interface = Windows::UI::Xaml::Controls::IInkToolbar;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.InkToolbar"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::InkToolbarBallpointPenButton>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::InkToolbarBallpointPenButton;
-    using default_interface = Windows::UI::Xaml::Controls::IInkToolbarBallpointPenButton;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.InkToolbarBallpointPenButton"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::InkToolbarCustomPen>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::InkToolbarCustomPen;
-    using default_interface = Windows::UI::Xaml::Controls::IInkToolbarCustomPen;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.InkToolbarCustomPen"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::InkToolbarCustomPenButton>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::InkToolbarCustomPenButton;
-    using default_interface = Windows::UI::Xaml::Controls::IInkToolbarCustomPenButton;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.InkToolbarCustomPenButton"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::InkToolbarCustomToggleButton>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::InkToolbarCustomToggleButton;
-    using default_interface = Windows::UI::Xaml::Controls::IInkToolbarCustomToggleButton;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.InkToolbarCustomToggleButton"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::InkToolbarCustomToolButton>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::InkToolbarCustomToolButton;
-    using default_interface = Windows::UI::Xaml::Controls::IInkToolbarCustomToolButton;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.InkToolbarCustomToolButton"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::InkToolbarEraserButton>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::InkToolbarEraserButton;
-    using default_interface = Windows::UI::Xaml::Controls::IInkToolbarEraserButton;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.InkToolbarEraserButton"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::InkToolbarHighlighterButton>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::InkToolbarHighlighterButton;
-    using default_interface = Windows::UI::Xaml::Controls::IInkToolbarHighlighterButton;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.InkToolbarHighlighterButton"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::InkToolbarPenButton>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::InkToolbarPenButton;
-    using default_interface = Windows::UI::Xaml::Controls::IInkToolbarPenButton;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.InkToolbarPenButton"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::InkToolbarPenConfigurationControl>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::InkToolbarPenConfigurationControl;
-    using default_interface = Windows::UI::Xaml::Controls::IInkToolbarPenConfigurationControl;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.InkToolbarPenConfigurationControl"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::InkToolbarPencilButton>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::InkToolbarPencilButton;
-    using default_interface = Windows::UI::Xaml::Controls::IInkToolbarPencilButton;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.InkToolbarPencilButton"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::InkToolbarRulerButton>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::InkToolbarRulerButton;
-    using default_interface = Windows::UI::Xaml::Controls::IInkToolbarRulerButton;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.InkToolbarRulerButton"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::InkToolbarToggleButton>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::InkToolbarToggleButton;
-    using default_interface = Windows::UI::Xaml::Controls::IInkToolbarToggleButton;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.InkToolbarToggleButton"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::InkToolbarToolButton>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::InkToolbarToolButton;
-    using default_interface = Windows::UI::Xaml::Controls::IInkToolbarToolButton;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.InkToolbarToolButton"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ItemClickEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ItemClickEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::IItemClickEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ItemClickEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ItemCollection>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ItemCollection;
-    using default_interface = Windows::Foundation::Collections::IObservableVector<Windows::IInspectable>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ItemCollection"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ItemContainerGenerator>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ItemContainerGenerator;
-    using default_interface = Windows::UI::Xaml::Controls::IItemContainerGenerator;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ItemContainerGenerator"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ItemsControl>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ItemsControl;
-    using default_interface = Windows::UI::Xaml::Controls::IItemsControl;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ItemsControl"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ItemsPanelTemplate>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ItemsPanelTemplate;
-    using default_interface = Windows::UI::Xaml::Controls::IItemsPanelTemplate;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ItemsPanelTemplate"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ItemsPickedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ItemsPickedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::IItemsPickedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ItemsPickedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ItemsPresenter>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ItemsPresenter;
-    using default_interface = Windows::UI::Xaml::Controls::IItemsPresenter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ItemsPresenter"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ItemsStackPanel>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ItemsStackPanel;
-    using default_interface = Windows::UI::Xaml::Controls::IItemsStackPanel;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ItemsStackPanel"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ItemsWrapGrid>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ItemsWrapGrid;
-    using default_interface = Windows::UI::Xaml::Controls::IItemsWrapGrid;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ItemsWrapGrid"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ListBox>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ListBox;
-    using default_interface = Windows::UI::Xaml::Controls::IListBox;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ListBox"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ListBoxItem>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ListBoxItem;
-    using default_interface = Windows::UI::Xaml::Controls::IListBoxItem;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ListBoxItem"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ListPickerFlyout>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ListPickerFlyout;
-    using default_interface = Windows::UI::Xaml::Controls::IListPickerFlyout;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ListPickerFlyout"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ListPickerFlyoutPresenter>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ListPickerFlyoutPresenter;
-    using default_interface = Windows::UI::Xaml::Controls::IListPickerFlyoutPresenter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ListPickerFlyoutPresenter"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ListView>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ListView;
-    using default_interface = Windows::UI::Xaml::Controls::IListView;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ListView"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ListViewBase>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ListViewBase;
-    using default_interface = Windows::UI::Xaml::Controls::IListViewBase;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ListViewBase"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ListViewBaseHeaderItem>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ListViewBaseHeaderItem;
-    using default_interface = Windows::UI::Xaml::Controls::IListViewBaseHeaderItem;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ListViewBaseHeaderItem"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ListViewHeaderItem>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ListViewHeaderItem;
-    using default_interface = Windows::UI::Xaml::Controls::IListViewHeaderItem;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ListViewHeaderItem"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ListViewItem>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ListViewItem;
-    using default_interface = Windows::UI::Xaml::Controls::IListViewItem;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ListViewItem"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ListViewPersistenceHelper>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ListViewPersistenceHelper;
-    using default_interface = Windows::UI::Xaml::Controls::IListViewPersistenceHelper;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ListViewPersistenceHelper"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::MediaElement>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::MediaElement;
-    using default_interface = Windows::UI::Xaml::Controls::IMediaElement;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.MediaElement"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::MediaPlayerElement>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::MediaPlayerElement;
-    using default_interface = Windows::UI::Xaml::Controls::IMediaPlayerElement;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.MediaPlayerElement"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::MediaPlayerPresenter>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::MediaPlayerPresenter;
-    using default_interface = Windows::UI::Xaml::Controls::IMediaPlayerPresenter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.MediaPlayerPresenter"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::MediaTransportControls>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::MediaTransportControls;
-    using default_interface = Windows::UI::Xaml::Controls::IMediaTransportControls;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.MediaTransportControls"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::MediaTransportControlsHelper>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::MediaTransportControlsHelper;
-    using default_interface = Windows::UI::Xaml::Controls::IMediaTransportControlsHelper;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.MediaTransportControlsHelper"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::MenuFlyout>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::MenuFlyout;
-    using default_interface = Windows::UI::Xaml::Controls::IMenuFlyout;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.MenuFlyout"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::MenuFlyoutItem>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::MenuFlyoutItem;
-    using default_interface = Windows::UI::Xaml::Controls::IMenuFlyoutItem;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.MenuFlyoutItem"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::MenuFlyoutItemBase>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::MenuFlyoutItemBase;
-    using default_interface = Windows::UI::Xaml::Controls::IMenuFlyoutItemBase;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.MenuFlyoutItemBase"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::MenuFlyoutPresenter>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::MenuFlyoutPresenter;
-    using default_interface = Windows::UI::Xaml::Controls::IMenuFlyoutPresenter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.MenuFlyoutPresenter"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::MenuFlyoutSeparator>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::MenuFlyoutSeparator;
-    using default_interface = Windows::UI::Xaml::Controls::IMenuFlyoutSeparator;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.MenuFlyoutSeparator"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::MenuFlyoutSubItem>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::MenuFlyoutSubItem;
-    using default_interface = Windows::UI::Xaml::Controls::IMenuFlyoutSubItem;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.MenuFlyoutSubItem"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::NotifyEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::NotifyEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::INotifyEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.NotifyEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Page>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Page;
-    using default_interface = Windows::UI::Xaml::Controls::IPage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Page"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Panel>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Panel;
-    using default_interface = Windows::UI::Xaml::Controls::IPanel;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Panel"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::PasswordBox>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::PasswordBox;
-    using default_interface = Windows::UI::Xaml::Controls::IPasswordBox;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.PasswordBox"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::PathIcon>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::PathIcon;
-    using default_interface = Windows::UI::Xaml::Controls::IPathIcon;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.PathIcon"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::PickerConfirmedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::PickerConfirmedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::IPickerConfirmedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.PickerConfirmedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::PickerFlyout>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::PickerFlyout;
-    using default_interface = Windows::UI::Xaml::Controls::IPickerFlyout;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.PickerFlyout"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::PickerFlyoutPresenter>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::PickerFlyoutPresenter;
-    using default_interface = Windows::UI::Xaml::Controls::IPickerFlyoutPresenter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.PickerFlyoutPresenter"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Pivot>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Pivot;
-    using default_interface = Windows::UI::Xaml::Controls::IPivot;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Pivot"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::PivotItem>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::PivotItem;
-    using default_interface = Windows::UI::Xaml::Controls::IPivotItem;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.PivotItem"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::PivotItemEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::PivotItemEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::IPivotItemEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.PivotItemEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ProgressBar>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ProgressBar;
-    using default_interface = Windows::UI::Xaml::Controls::IProgressBar;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ProgressBar"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ProgressRing>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ProgressRing;
-    using default_interface = Windows::UI::Xaml::Controls::IProgressRing;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ProgressRing"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::RadioButton>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::RadioButton;
-    using default_interface = Windows::UI::Xaml::Controls::IRadioButton;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.RadioButton"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::RelativePanel>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::RelativePanel;
-    using default_interface = Windows::UI::Xaml::Controls::IRelativePanel;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.RelativePanel"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::RichEditBox>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::RichEditBox;
-    using default_interface = Windows::UI::Xaml::Controls::IRichEditBox;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.RichEditBox"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::RichEditBoxTextChangingEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::RichEditBoxTextChangingEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::IRichEditBoxTextChangingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.RichEditBoxTextChangingEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::RichTextBlock>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::RichTextBlock;
-    using default_interface = Windows::UI::Xaml::Controls::IRichTextBlock;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.RichTextBlock"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::RichTextBlockOverflow>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::RichTextBlockOverflow;
-    using default_interface = Windows::UI::Xaml::Controls::IRichTextBlockOverflow;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.RichTextBlockOverflow"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::RowDefinition>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::RowDefinition;
-    using default_interface = Windows::UI::Xaml::Controls::IRowDefinition;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.RowDefinition"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::RowDefinitionCollection>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::RowDefinitionCollection;
-    using default_interface = Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Controls::RowDefinition>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.RowDefinitionCollection"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ScrollContentPresenter>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ScrollContentPresenter;
-    using default_interface = Windows::UI::Xaml::Controls::IScrollContentPresenter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ScrollContentPresenter"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ScrollViewer>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ScrollViewer;
-    using default_interface = Windows::UI::Xaml::Controls::IScrollViewer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ScrollViewer"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ScrollViewerView>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ScrollViewerView;
-    using default_interface = Windows::UI::Xaml::Controls::IScrollViewerView;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ScrollViewerView"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ScrollViewerViewChangedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ScrollViewerViewChangedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::IScrollViewerViewChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ScrollViewerViewChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ScrollViewerViewChangingEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ScrollViewerViewChangingEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::IScrollViewerViewChangingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ScrollViewerViewChangingEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::SearchBox>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::SearchBox;
-    using default_interface = Windows::UI::Xaml::Controls::ISearchBox;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.SearchBox"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::SearchBoxQueryChangedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::SearchBoxQueryChangedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::ISearchBoxQueryChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.SearchBoxQueryChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::SearchBoxQuerySubmittedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::SearchBoxQuerySubmittedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::ISearchBoxQuerySubmittedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.SearchBoxQuerySubmittedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::SearchBoxResultSuggestionChosenEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::SearchBoxResultSuggestionChosenEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::ISearchBoxResultSuggestionChosenEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.SearchBoxResultSuggestionChosenEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::SearchBoxSuggestionsRequestedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::SearchBoxSuggestionsRequestedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::ISearchBoxSuggestionsRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.SearchBoxSuggestionsRequestedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::SectionsInViewChangedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::SectionsInViewChangedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::ISectionsInViewChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.SectionsInViewChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::SelectionChangedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::SelectionChangedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::ISelectionChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.SelectionChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::SemanticZoom>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::SemanticZoom;
-    using default_interface = Windows::UI::Xaml::Controls::ISemanticZoom;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.SemanticZoom"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::SemanticZoomLocation>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::SemanticZoomLocation;
-    using default_interface = Windows::UI::Xaml::Controls::ISemanticZoomLocation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.SemanticZoomLocation"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::SemanticZoomViewChangedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::SemanticZoomViewChangedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::ISemanticZoomViewChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.SemanticZoomViewChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::SettingsFlyout>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::SettingsFlyout;
-    using default_interface = Windows::UI::Xaml::Controls::ISettingsFlyout;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.SettingsFlyout"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Slider>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Slider;
-    using default_interface = Windows::UI::Xaml::Controls::ISlider;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Slider"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::SplitView>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::SplitView;
-    using default_interface = Windows::UI::Xaml::Controls::ISplitView;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.SplitView"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::SplitViewPaneClosingEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::SplitViewPaneClosingEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::ISplitViewPaneClosingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.SplitViewPaneClosingEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::StackPanel>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::StackPanel;
-    using default_interface = Windows::UI::Xaml::Controls::IStackPanel;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.StackPanel"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::StyleSelector>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::StyleSelector;
-    using default_interface = Windows::UI::Xaml::Controls::IStyleSelector;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.StyleSelector"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::SwapChainBackgroundPanel>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::SwapChainBackgroundPanel;
-    using default_interface = Windows::UI::Xaml::Controls::ISwapChainBackgroundPanel;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.SwapChainBackgroundPanel"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::SwapChainPanel>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::SwapChainPanel;
-    using default_interface = Windows::UI::Xaml::Controls::ISwapChainPanel;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.SwapChainPanel"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::SymbolIcon>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::SymbolIcon;
-    using default_interface = Windows::UI::Xaml::Controls::ISymbolIcon;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.SymbolIcon"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::TextBlock>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::TextBlock;
-    using default_interface = Windows::UI::Xaml::Controls::ITextBlock;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.TextBlock"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::TextBox>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::TextBox;
-    using default_interface = Windows::UI::Xaml::Controls::ITextBox;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.TextBox"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::TextBoxTextChangingEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::TextBoxTextChangingEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::ITextBoxTextChangingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.TextBoxTextChangingEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::TextChangedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::TextChangedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::ITextChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.TextChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::TextCompositionChangedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::TextCompositionChangedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::ITextCompositionChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.TextCompositionChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::TextCompositionEndedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::TextCompositionEndedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::ITextCompositionEndedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.TextCompositionEndedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::TextCompositionStartedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::TextCompositionStartedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::ITextCompositionStartedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.TextCompositionStartedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::TextControlPasteEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::TextControlPasteEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::ITextControlPasteEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.TextControlPasteEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::TimePickedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::TimePickedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::ITimePickedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.TimePickedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::TimePicker>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::TimePicker;
-    using default_interface = Windows::UI::Xaml::Controls::ITimePicker;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.TimePicker"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::TimePickerFlyout>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::TimePickerFlyout;
-    using default_interface = Windows::UI::Xaml::Controls::ITimePickerFlyout;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.TimePickerFlyout"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::TimePickerFlyoutPresenter>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::TimePickerFlyoutPresenter;
-    using default_interface = Windows::UI::Xaml::Controls::ITimePickerFlyoutPresenter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.TimePickerFlyoutPresenter"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::TimePickerValueChangedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::TimePickerValueChangedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::ITimePickerValueChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.TimePickerValueChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ToggleMenuFlyoutItem>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ToggleMenuFlyoutItem;
-    using default_interface = Windows::UI::Xaml::Controls::IToggleMenuFlyoutItem;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ToggleMenuFlyoutItem"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ToggleSwitch>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ToggleSwitch;
-    using default_interface = Windows::UI::Xaml::Controls::IToggleSwitch;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ToggleSwitch"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ToolTip>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ToolTip;
-    using default_interface = Windows::UI::Xaml::Controls::IToolTip;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ToolTip"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::ToolTipService>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::ToolTipService;
-    using default_interface = Windows::UI::Xaml::Controls::IToolTipService;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.ToolTipService"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::UIElementCollection>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::UIElementCollection;
-    using default_interface = Windows::Foundation::Collections::IVector<Windows::UI::Xaml::UIElement>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.UIElementCollection"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::UserControl>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::UserControl;
-    using default_interface = Windows::UI::Xaml::Controls::IUserControl;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.UserControl"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::VariableSizedWrapGrid>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::VariableSizedWrapGrid;
-    using default_interface = Windows::UI::Xaml::Controls::IVariableSizedWrapGrid;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.VariableSizedWrapGrid"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Viewbox>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Viewbox;
-    using default_interface = Windows::UI::Xaml::Controls::IViewbox;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Viewbox"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::VirtualizingPanel>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::VirtualizingPanel;
-    using default_interface = Windows::UI::Xaml::Controls::IVirtualizingPanel;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.VirtualizingPanel"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::VirtualizingStackPanel>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::VirtualizingStackPanel;
-    using default_interface = Windows::UI::Xaml::Controls::IVirtualizingStackPanel;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.VirtualizingStackPanel"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::WebView>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::WebView;
-    using default_interface = Windows::UI::Xaml::Controls::IWebView;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.WebView"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::WebViewBrush>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::WebViewBrush;
-    using default_interface = Windows::UI::Xaml::Controls::IWebViewBrush;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.WebViewBrush"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::WebViewContentLoadingEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::WebViewContentLoadingEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::IWebViewContentLoadingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.WebViewContentLoadingEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::WebViewDOMContentLoadedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::WebViewDOMContentLoadedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::IWebViewDOMContentLoadedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.WebViewDOMContentLoadedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::WebViewDeferredPermissionRequest>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::WebViewDeferredPermissionRequest;
-    using default_interface = Windows::UI::Xaml::Controls::IWebViewDeferredPermissionRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.WebViewDeferredPermissionRequest"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::WebViewLongRunningScriptDetectedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::WebViewLongRunningScriptDetectedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::IWebViewLongRunningScriptDetectedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.WebViewLongRunningScriptDetectedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::WebViewNavigationCompletedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::WebViewNavigationCompletedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::IWebViewNavigationCompletedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.WebViewNavigationCompletedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::WebViewNavigationFailedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::WebViewNavigationFailedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::IWebViewNavigationFailedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.WebViewNavigationFailedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::WebViewNavigationStartingEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::WebViewNavigationStartingEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::IWebViewNavigationStartingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.WebViewNavigationStartingEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::WebViewNewWindowRequestedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::WebViewNewWindowRequestedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::IWebViewNewWindowRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.WebViewNewWindowRequestedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::WebViewPermissionRequest>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::WebViewPermissionRequest;
-    using default_interface = Windows::UI::Xaml::Controls::IWebViewPermissionRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.WebViewPermissionRequest"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::WebViewPermissionRequestedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::WebViewPermissionRequestedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::IWebViewPermissionRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.WebViewPermissionRequestedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::WebViewSettings>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::WebViewSettings;
-    using default_interface = Windows::UI::Xaml::Controls::IWebViewSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.WebViewSettings"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::WebViewUnsupportedUriSchemeIdentifiedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::WebViewUnsupportedUriSchemeIdentifiedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::IWebViewUnsupportedUriSchemeIdentifiedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.WebViewUnsupportedUriSchemeIdentifiedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::WebViewUnviewableContentIdentifiedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::WebViewUnviewableContentIdentifiedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::IWebViewUnviewableContentIdentifiedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.WebViewUnviewableContentIdentifiedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::WrapGrid>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::WrapGrid;
-    using default_interface = Windows::UI::Xaml::Controls::IWrapGrid;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.WrapGrid"; }
 };
 

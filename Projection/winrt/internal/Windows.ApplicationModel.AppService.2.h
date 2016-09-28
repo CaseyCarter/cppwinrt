@@ -101,32 +101,20 @@ template <> struct __declspec(uuid("07f25b6f-f054-5649-a5ce-b348ddc618b6")) __de
 namespace Windows::ApplicationModel::AppService {
 
 template <typename D>
-class WINRT_EBO impl_IAppServiceCatalogStatics
+struct WINRT_EBO impl_IAppServiceCatalogStatics
 {
-    auto shim() const { return impl::shim<D, IAppServiceCatalogStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> FindAppServiceProvidersAsync(hstring_ref appServiceName) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppServiceClosedEventArgs
+struct WINRT_EBO impl_IAppServiceClosedEventArgs
 {
-    auto shim() const { return impl::shim<D, IAppServiceClosedEventArgs>(this); }
-
-public:
-
     Windows::ApplicationModel::AppService::AppServiceClosedStatus Status() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppServiceConnection
+struct WINRT_EBO impl_IAppServiceConnection
 {
-    auto shim() const { return impl::shim<D, IAppServiceConnection>(this); }
-
-public:
-
     hstring AppServiceName() const;
     void AppServiceName(hstring_ref value) const;
     hstring PackageFamilyName() const;
@@ -144,79 +132,51 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppServiceConnection2
+struct WINRT_EBO impl_IAppServiceConnection2
 {
-    auto shim() const { return impl::shim<D, IAppServiceConnection2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::AppService::AppServiceConnectionStatus> OpenRemoteAsync(const Windows::System::RemoteSystems::RemoteSystemConnectionRequest & remoteSystemConnectionRequest) const;
     Windows::System::User User() const;
     void User(const Windows::System::User & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppServiceDeferral
+struct WINRT_EBO impl_IAppServiceDeferral
 {
-    auto shim() const { return impl::shim<D, IAppServiceDeferral>(this); }
-
-public:
-
     void Complete() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppServiceRequest
+struct WINRT_EBO impl_IAppServiceRequest
 {
-    auto shim() const { return impl::shim<D, IAppServiceRequest>(this); }
-
-public:
-
     Windows::Foundation::Collections::ValueSet Message() const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::AppService::AppServiceResponseStatus> SendResponseAsync(const Windows::Foundation::Collections::ValueSet & message) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppServiceRequestReceivedEventArgs
+struct WINRT_EBO impl_IAppServiceRequestReceivedEventArgs
 {
-    auto shim() const { return impl::shim<D, IAppServiceRequestReceivedEventArgs>(this); }
-
-public:
-
     Windows::ApplicationModel::AppService::AppServiceRequest Request() const;
     Windows::ApplicationModel::AppService::AppServiceDeferral GetDeferral() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppServiceResponse
+struct WINRT_EBO impl_IAppServiceResponse
 {
-    auto shim() const { return impl::shim<D, IAppServiceResponse>(this); }
-
-public:
-
     Windows::Foundation::Collections::ValueSet Message() const;
     Windows::ApplicationModel::AppService::AppServiceResponseStatus Status() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppServiceTriggerDetails
+struct WINRT_EBO impl_IAppServiceTriggerDetails
 {
-    auto shim() const { return impl::shim<D, IAppServiceTriggerDetails>(this); }
-
-public:
-
     hstring Name() const;
     hstring CallerPackageFamilyName() const;
     Windows::ApplicationModel::AppService::AppServiceConnection AppServiceConnection() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppServiceTriggerDetails2
+struct WINRT_EBO impl_IAppServiceTriggerDetails2
 {
-    auto shim() const { return impl::shim<D, IAppServiceTriggerDetails2>(this); }
-
-public:
-
     bool IsRemoteSystemConnection() const;
 };
 

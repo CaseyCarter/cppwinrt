@@ -439,47 +439,47 @@ template <> struct traits<Windows::Devices::Perception::PerceptionVideoProfile> 
 
 namespace Windows::Devices::Perception {
 
-template <typename T> class impl_IKnownCameraIntrinsicsPropertiesStatics;
-template <typename T> class impl_IKnownPerceptionColorFrameSourcePropertiesStatics;
-template <typename T> class impl_IKnownPerceptionDepthFrameSourcePropertiesStatics;
-template <typename T> class impl_IKnownPerceptionFrameSourcePropertiesStatics;
-template <typename T> class impl_IKnownPerceptionFrameSourcePropertiesStatics2;
-template <typename T> class impl_IKnownPerceptionInfraredFrameSourcePropertiesStatics;
-template <typename T> class impl_IKnownPerceptionVideoFrameSourcePropertiesStatics;
-template <typename T> class impl_IKnownPerceptionVideoProfilePropertiesStatics;
-template <typename T> class impl_IPerceptionColorFrame;
-template <typename T> class impl_IPerceptionColorFrameArrivedEventArgs;
-template <typename T> class impl_IPerceptionColorFrameReader;
-template <typename T> class impl_IPerceptionColorFrameSource;
-template <typename T> class impl_IPerceptionColorFrameSource2;
-template <typename T> class impl_IPerceptionColorFrameSourceAddedEventArgs;
-template <typename T> class impl_IPerceptionColorFrameSourceRemovedEventArgs;
-template <typename T> class impl_IPerceptionColorFrameSourceStatics;
-template <typename T> class impl_IPerceptionColorFrameSourceWatcher;
-template <typename T> class impl_IPerceptionControlSession;
-template <typename T> class impl_IPerceptionDepthCorrelatedCameraIntrinsics;
-template <typename T> class impl_IPerceptionDepthCorrelatedCoordinateMapper;
-template <typename T> class impl_IPerceptionDepthFrame;
-template <typename T> class impl_IPerceptionDepthFrameArrivedEventArgs;
-template <typename T> class impl_IPerceptionDepthFrameReader;
-template <typename T> class impl_IPerceptionDepthFrameSource;
-template <typename T> class impl_IPerceptionDepthFrameSource2;
-template <typename T> class impl_IPerceptionDepthFrameSourceAddedEventArgs;
-template <typename T> class impl_IPerceptionDepthFrameSourceRemovedEventArgs;
-template <typename T> class impl_IPerceptionDepthFrameSourceStatics;
-template <typename T> class impl_IPerceptionDepthFrameSourceWatcher;
-template <typename T> class impl_IPerceptionFrameSourcePropertiesChangedEventArgs;
-template <typename T> class impl_IPerceptionFrameSourcePropertyChangeResult;
-template <typename T> class impl_IPerceptionInfraredFrame;
-template <typename T> class impl_IPerceptionInfraredFrameArrivedEventArgs;
-template <typename T> class impl_IPerceptionInfraredFrameReader;
-template <typename T> class impl_IPerceptionInfraredFrameSource;
-template <typename T> class impl_IPerceptionInfraredFrameSource2;
-template <typename T> class impl_IPerceptionInfraredFrameSourceAddedEventArgs;
-template <typename T> class impl_IPerceptionInfraredFrameSourceRemovedEventArgs;
-template <typename T> class impl_IPerceptionInfraredFrameSourceStatics;
-template <typename T> class impl_IPerceptionInfraredFrameSourceWatcher;
-template <typename T> class impl_IPerceptionVideoProfile;
+template <typename T> struct impl_IKnownCameraIntrinsicsPropertiesStatics;
+template <typename T> struct impl_IKnownPerceptionColorFrameSourcePropertiesStatics;
+template <typename T> struct impl_IKnownPerceptionDepthFrameSourcePropertiesStatics;
+template <typename T> struct impl_IKnownPerceptionFrameSourcePropertiesStatics;
+template <typename T> struct impl_IKnownPerceptionFrameSourcePropertiesStatics2;
+template <typename T> struct impl_IKnownPerceptionInfraredFrameSourcePropertiesStatics;
+template <typename T> struct impl_IKnownPerceptionVideoFrameSourcePropertiesStatics;
+template <typename T> struct impl_IKnownPerceptionVideoProfilePropertiesStatics;
+template <typename T> struct impl_IPerceptionColorFrame;
+template <typename T> struct impl_IPerceptionColorFrameArrivedEventArgs;
+template <typename T> struct impl_IPerceptionColorFrameReader;
+template <typename T> struct impl_IPerceptionColorFrameSource;
+template <typename T> struct impl_IPerceptionColorFrameSource2;
+template <typename T> struct impl_IPerceptionColorFrameSourceAddedEventArgs;
+template <typename T> struct impl_IPerceptionColorFrameSourceRemovedEventArgs;
+template <typename T> struct impl_IPerceptionColorFrameSourceStatics;
+template <typename T> struct impl_IPerceptionColorFrameSourceWatcher;
+template <typename T> struct impl_IPerceptionControlSession;
+template <typename T> struct impl_IPerceptionDepthCorrelatedCameraIntrinsics;
+template <typename T> struct impl_IPerceptionDepthCorrelatedCoordinateMapper;
+template <typename T> struct impl_IPerceptionDepthFrame;
+template <typename T> struct impl_IPerceptionDepthFrameArrivedEventArgs;
+template <typename T> struct impl_IPerceptionDepthFrameReader;
+template <typename T> struct impl_IPerceptionDepthFrameSource;
+template <typename T> struct impl_IPerceptionDepthFrameSource2;
+template <typename T> struct impl_IPerceptionDepthFrameSourceAddedEventArgs;
+template <typename T> struct impl_IPerceptionDepthFrameSourceRemovedEventArgs;
+template <typename T> struct impl_IPerceptionDepthFrameSourceStatics;
+template <typename T> struct impl_IPerceptionDepthFrameSourceWatcher;
+template <typename T> struct impl_IPerceptionFrameSourcePropertiesChangedEventArgs;
+template <typename T> struct impl_IPerceptionFrameSourcePropertyChangeResult;
+template <typename T> struct impl_IPerceptionInfraredFrame;
+template <typename T> struct impl_IPerceptionInfraredFrameArrivedEventArgs;
+template <typename T> struct impl_IPerceptionInfraredFrameReader;
+template <typename T> struct impl_IPerceptionInfraredFrameSource;
+template <typename T> struct impl_IPerceptionInfraredFrameSource2;
+template <typename T> struct impl_IPerceptionInfraredFrameSourceAddedEventArgs;
+template <typename T> struct impl_IPerceptionInfraredFrameSourceRemovedEventArgs;
+template <typename T> struct impl_IPerceptionInfraredFrameSourceStatics;
+template <typename T> struct impl_IPerceptionInfraredFrameSourceWatcher;
+template <typename T> struct impl_IPerceptionVideoProfile;
 
 }
 
@@ -769,189 +769,162 @@ template <> struct traits<Windows::Devices::Perception::KnownPerceptionVideoProf
 template <> struct traits<Windows::Devices::Perception::PerceptionColorFrame>
 {
     using abi = ABI::Windows::Devices::Perception::PerceptionColorFrame;
-    using default_interface = Windows::Devices::Perception::IPerceptionColorFrame;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.PerceptionColorFrame"; }
 };
 
 template <> struct traits<Windows::Devices::Perception::PerceptionColorFrameArrivedEventArgs>
 {
     using abi = ABI::Windows::Devices::Perception::PerceptionColorFrameArrivedEventArgs;
-    using default_interface = Windows::Devices::Perception::IPerceptionColorFrameArrivedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.PerceptionColorFrameArrivedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::Perception::PerceptionColorFrameReader>
 {
     using abi = ABI::Windows::Devices::Perception::PerceptionColorFrameReader;
-    using default_interface = Windows::Devices::Perception::IPerceptionColorFrameReader;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.PerceptionColorFrameReader"; }
 };
 
 template <> struct traits<Windows::Devices::Perception::PerceptionColorFrameSource>
 {
     using abi = ABI::Windows::Devices::Perception::PerceptionColorFrameSource;
-    using default_interface = Windows::Devices::Perception::IPerceptionColorFrameSource;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.PerceptionColorFrameSource"; }
 };
 
 template <> struct traits<Windows::Devices::Perception::PerceptionColorFrameSourceAddedEventArgs>
 {
     using abi = ABI::Windows::Devices::Perception::PerceptionColorFrameSourceAddedEventArgs;
-    using default_interface = Windows::Devices::Perception::IPerceptionColorFrameSourceAddedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.PerceptionColorFrameSourceAddedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::Perception::PerceptionColorFrameSourceRemovedEventArgs>
 {
     using abi = ABI::Windows::Devices::Perception::PerceptionColorFrameSourceRemovedEventArgs;
-    using default_interface = Windows::Devices::Perception::IPerceptionColorFrameSourceRemovedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.PerceptionColorFrameSourceRemovedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher>
 {
     using abi = ABI::Windows::Devices::Perception::PerceptionColorFrameSourceWatcher;
-    using default_interface = Windows::Devices::Perception::IPerceptionColorFrameSourceWatcher;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.PerceptionColorFrameSourceWatcher"; }
 };
 
 template <> struct traits<Windows::Devices::Perception::PerceptionControlSession>
 {
     using abi = ABI::Windows::Devices::Perception::PerceptionControlSession;
-    using default_interface = Windows::Devices::Perception::IPerceptionControlSession;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.PerceptionControlSession"; }
 };
 
 template <> struct traits<Windows::Devices::Perception::PerceptionDepthCorrelatedCameraIntrinsics>
 {
     using abi = ABI::Windows::Devices::Perception::PerceptionDepthCorrelatedCameraIntrinsics;
-    using default_interface = Windows::Devices::Perception::IPerceptionDepthCorrelatedCameraIntrinsics;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.PerceptionDepthCorrelatedCameraIntrinsics"; }
 };
 
 template <> struct traits<Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper>
 {
     using abi = ABI::Windows::Devices::Perception::PerceptionDepthCorrelatedCoordinateMapper;
-    using default_interface = Windows::Devices::Perception::IPerceptionDepthCorrelatedCoordinateMapper;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.PerceptionDepthCorrelatedCoordinateMapper"; }
 };
 
 template <> struct traits<Windows::Devices::Perception::PerceptionDepthFrame>
 {
     using abi = ABI::Windows::Devices::Perception::PerceptionDepthFrame;
-    using default_interface = Windows::Devices::Perception::IPerceptionDepthFrame;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.PerceptionDepthFrame"; }
 };
 
 template <> struct traits<Windows::Devices::Perception::PerceptionDepthFrameArrivedEventArgs>
 {
     using abi = ABI::Windows::Devices::Perception::PerceptionDepthFrameArrivedEventArgs;
-    using default_interface = Windows::Devices::Perception::IPerceptionDepthFrameArrivedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.PerceptionDepthFrameArrivedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::Perception::PerceptionDepthFrameReader>
 {
     using abi = ABI::Windows::Devices::Perception::PerceptionDepthFrameReader;
-    using default_interface = Windows::Devices::Perception::IPerceptionDepthFrameReader;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.PerceptionDepthFrameReader"; }
 };
 
 template <> struct traits<Windows::Devices::Perception::PerceptionDepthFrameSource>
 {
     using abi = ABI::Windows::Devices::Perception::PerceptionDepthFrameSource;
-    using default_interface = Windows::Devices::Perception::IPerceptionDepthFrameSource;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.PerceptionDepthFrameSource"; }
 };
 
 template <> struct traits<Windows::Devices::Perception::PerceptionDepthFrameSourceAddedEventArgs>
 {
     using abi = ABI::Windows::Devices::Perception::PerceptionDepthFrameSourceAddedEventArgs;
-    using default_interface = Windows::Devices::Perception::IPerceptionDepthFrameSourceAddedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.PerceptionDepthFrameSourceAddedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::Perception::PerceptionDepthFrameSourceRemovedEventArgs>
 {
     using abi = ABI::Windows::Devices::Perception::PerceptionDepthFrameSourceRemovedEventArgs;
-    using default_interface = Windows::Devices::Perception::IPerceptionDepthFrameSourceRemovedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.PerceptionDepthFrameSourceRemovedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher>
 {
     using abi = ABI::Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher;
-    using default_interface = Windows::Devices::Perception::IPerceptionDepthFrameSourceWatcher;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.PerceptionDepthFrameSourceWatcher"; }
 };
 
 template <> struct traits<Windows::Devices::Perception::PerceptionFrameSourcePropertiesChangedEventArgs>
 {
     using abi = ABI::Windows::Devices::Perception::PerceptionFrameSourcePropertiesChangedEventArgs;
-    using default_interface = Windows::Devices::Perception::IPerceptionFrameSourcePropertiesChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.PerceptionFrameSourcePropertiesChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult>
 {
     using abi = ABI::Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeResult;
-    using default_interface = Windows::Devices::Perception::IPerceptionFrameSourcePropertyChangeResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.PerceptionFrameSourcePropertyChangeResult"; }
 };
 
 template <> struct traits<Windows::Devices::Perception::PerceptionInfraredFrame>
 {
     using abi = ABI::Windows::Devices::Perception::PerceptionInfraredFrame;
-    using default_interface = Windows::Devices::Perception::IPerceptionInfraredFrame;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.PerceptionInfraredFrame"; }
 };
 
 template <> struct traits<Windows::Devices::Perception::PerceptionInfraredFrameArrivedEventArgs>
 {
     using abi = ABI::Windows::Devices::Perception::PerceptionInfraredFrameArrivedEventArgs;
-    using default_interface = Windows::Devices::Perception::IPerceptionInfraredFrameArrivedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.PerceptionInfraredFrameArrivedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::Perception::PerceptionInfraredFrameReader>
 {
     using abi = ABI::Windows::Devices::Perception::PerceptionInfraredFrameReader;
-    using default_interface = Windows::Devices::Perception::IPerceptionInfraredFrameReader;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.PerceptionInfraredFrameReader"; }
 };
 
 template <> struct traits<Windows::Devices::Perception::PerceptionInfraredFrameSource>
 {
     using abi = ABI::Windows::Devices::Perception::PerceptionInfraredFrameSource;
-    using default_interface = Windows::Devices::Perception::IPerceptionInfraredFrameSource;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.PerceptionInfraredFrameSource"; }
 };
 
 template <> struct traits<Windows::Devices::Perception::PerceptionInfraredFrameSourceAddedEventArgs>
 {
     using abi = ABI::Windows::Devices::Perception::PerceptionInfraredFrameSourceAddedEventArgs;
-    using default_interface = Windows::Devices::Perception::IPerceptionInfraredFrameSourceAddedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.PerceptionInfraredFrameSourceAddedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::Perception::PerceptionInfraredFrameSourceRemovedEventArgs>
 {
     using abi = ABI::Windows::Devices::Perception::PerceptionInfraredFrameSourceRemovedEventArgs;
-    using default_interface = Windows::Devices::Perception::IPerceptionInfraredFrameSourceRemovedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.PerceptionInfraredFrameSourceRemovedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher>
 {
     using abi = ABI::Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher;
-    using default_interface = Windows::Devices::Perception::IPerceptionInfraredFrameSourceWatcher;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.PerceptionInfraredFrameSourceWatcher"; }
 };
 
 template <> struct traits<Windows::Devices::Perception::PerceptionVideoProfile>
 {
     using abi = ABI::Windows::Devices::Perception::PerceptionVideoProfile;
-    using default_interface = Windows::Devices::Perception::IPerceptionVideoProfile;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.PerceptionVideoProfile"; }
 };
 

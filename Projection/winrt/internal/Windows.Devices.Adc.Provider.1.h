@@ -39,8 +39,8 @@ namespace ABI {
 
 namespace Windows::Devices::Adc::Provider {
 
-template <typename T> class impl_IAdcControllerProvider;
-template <typename T> class impl_IAdcProvider;
+template <typename T> struct impl_IAdcControllerProvider;
+template <typename T> struct impl_IAdcProvider;
 
 }
 

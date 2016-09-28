@@ -197,10 +197,10 @@ template <> struct traits<Windows::UI::Colors> { using default_interface = Windo
 
 namespace Windows::UI {
 
-template <typename T> class impl_IColorHelper;
-template <typename T> class impl_IColorHelperStatics;
-template <typename T> class impl_IColors;
-template <typename T> class impl_IColorsStatics;
+template <typename T> struct impl_IColorHelper;
+template <typename T> struct impl_IColorHelperStatics;
+template <typename T> struct impl_IColors;
+template <typename T> struct impl_IColorsStatics;
 
 }
 
@@ -233,14 +233,12 @@ template <> struct traits<Windows::UI::IColorsStatics>
 template <> struct traits<Windows::UI::ColorHelper>
 {
     using abi = ABI::Windows::UI::ColorHelper;
-    using default_interface = Windows::UI::IColorHelper;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.ColorHelper"; }
 };
 
 template <> struct traits<Windows::UI::Colors>
 {
     using abi = ABI::Windows::UI::Colors;
-    using default_interface = Windows::UI::IColors;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Colors"; }
 };
 

@@ -284,70 +284,70 @@ namespace Windows::System::Profile {
 template <typename D> Windows::System::Profile::AnalyticsVersionInfo impl_IAnalyticsInfoStatics<D>::VersionInfo() const
 {
     Windows::System::Profile::AnalyticsVersionInfo value { nullptr };
-    check_hresult(shim()->get_VersionInfo(put(value)));
+    check_hresult(static_cast<const IAnalyticsInfoStatics &>(static_cast<const D &>(*this))->get_VersionInfo(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAnalyticsInfoStatics<D>::DeviceForm() const
 {
     hstring value;
-    check_hresult(shim()->get_DeviceForm(put(value)));
+    check_hresult(static_cast<const IAnalyticsInfoStatics &>(static_cast<const D &>(*this))->get_DeviceForm(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAnalyticsVersionInfo<D>::DeviceFamily() const
 {
     hstring value;
-    check_hresult(shim()->get_DeviceFamily(put(value)));
+    check_hresult(static_cast<const IAnalyticsVersionInfo &>(static_cast<const D &>(*this))->get_DeviceFamily(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAnalyticsVersionInfo<D>::DeviceFamilyVersion() const
 {
     hstring value;
-    check_hresult(shim()->get_DeviceFamilyVersion(put(value)));
+    check_hresult(static_cast<const IAnalyticsVersionInfo &>(static_cast<const D &>(*this))->get_DeviceFamilyVersion(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_ISystemIdentificationInfo<D>::Id() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(shim()->get_Id(put(value)));
+    check_hresult(static_cast<const ISystemIdentificationInfo &>(static_cast<const D &>(*this))->get_Id(put(value)));
     return value;
 }
 
 template <typename D> Windows::System::Profile::SystemIdentificationSource impl_ISystemIdentificationInfo<D>::Source() const
 {
     Windows::System::Profile::SystemIdentificationSource value {};
-    check_hresult(shim()->get_Source(&value));
+    check_hresult(static_cast<const ISystemIdentificationInfo &>(static_cast<const D &>(*this))->get_Source(&value));
     return value;
 }
 
 template <typename D> Windows::System::Profile::SystemIdentificationInfo impl_ISystemIdentificationStatics<D>::GetSystemIdForPublisher() const
 {
     Windows::System::Profile::SystemIdentificationInfo result { nullptr };
-    check_hresult(shim()->abi_GetSystemIdForPublisher(put(result)));
+    check_hresult(static_cast<const ISystemIdentificationStatics &>(static_cast<const D &>(*this))->abi_GetSystemIdForPublisher(put(result)));
     return result;
 }
 
 template <typename D> Windows::System::Profile::SystemIdentificationInfo impl_ISystemIdentificationStatics<D>::GetSystemIdForUser(const Windows::System::User & user) const
 {
     Windows::System::Profile::SystemIdentificationInfo result { nullptr };
-    check_hresult(shim()->abi_GetSystemIdForUser(get(user), put(result)));
+    check_hresult(static_cast<const ISystemIdentificationStatics &>(static_cast<const D &>(*this))->abi_GetSystemIdForUser(get(user), put(result)));
     return result;
 }
 
 template <typename D> Windows::System::Profile::PlatformDataCollectionLevel impl_IPlatformDiagnosticsAndUsageDataSettingsStatics<D>::CollectionLevel() const
 {
     Windows::System::Profile::PlatformDataCollectionLevel value {};
-    check_hresult(shim()->get_CollectionLevel(&value));
+    check_hresult(static_cast<const IPlatformDiagnosticsAndUsageDataSettingsStatics &>(static_cast<const D &>(*this))->get_CollectionLevel(&value));
     return value;
 }
 
 template <typename D> event_token impl_IPlatformDiagnosticsAndUsageDataSettingsStatics<D>::CollectionLevelChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_CollectionLevelChanged(get(handler), &token));
+    check_hresult(static_cast<const IPlatformDiagnosticsAndUsageDataSettingsStatics &>(static_cast<const D &>(*this))->add_CollectionLevelChanged(get(handler), &token));
     return token;
 }
 
@@ -358,48 +358,48 @@ template <typename D> event_revoker<IPlatformDiagnosticsAndUsageDataSettingsStat
 
 template <typename D> void impl_IPlatformDiagnosticsAndUsageDataSettingsStatics<D>::CollectionLevelChanged(event_token token) const
 {
-    check_hresult(shim()->remove_CollectionLevelChanged(token));
+    check_hresult(static_cast<const IPlatformDiagnosticsAndUsageDataSettingsStatics &>(static_cast<const D &>(*this))->remove_CollectionLevelChanged(token));
 }
 
 template <typename D> bool impl_IPlatformDiagnosticsAndUsageDataSettingsStatics<D>::CanCollectDiagnostics(Windows::System::Profile::PlatformDataCollectionLevel level) const
 {
     bool result {};
-    check_hresult(shim()->abi_CanCollectDiagnostics(level, &result));
+    check_hresult(static_cast<const IPlatformDiagnosticsAndUsageDataSettingsStatics &>(static_cast<const D &>(*this))->abi_CanCollectDiagnostics(level, &result));
     return result;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IHardwareToken<D>::Id() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(shim()->get_Id(put(value)));
+    check_hresult(static_cast<const IHardwareToken &>(static_cast<const D &>(*this))->get_Id(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IHardwareToken<D>::Signature() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(shim()->get_Signature(put(value)));
+    check_hresult(static_cast<const IHardwareToken &>(static_cast<const D &>(*this))->get_Signature(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IHardwareToken<D>::Certificate() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(shim()->get_Certificate(put(value)));
+    check_hresult(static_cast<const IHardwareToken &>(static_cast<const D &>(*this))->get_Certificate(put(value)));
     return value;
 }
 
 template <typename D> Windows::System::Profile::HardwareToken impl_IHardwareIdentificationStatics<D>::GetPackageSpecificToken(const Windows::Storage::Streams::IBuffer & nonce) const
 {
     Windows::System::Profile::HardwareToken packageSpecificHardwareToken { nullptr };
-    check_hresult(shim()->abi_GetPackageSpecificToken(get(nonce), put(packageSpecificHardwareToken)));
+    check_hresult(static_cast<const IHardwareIdentificationStatics &>(static_cast<const D &>(*this))->abi_GetPackageSpecificToken(get(nonce), put(packageSpecificHardwareToken)));
     return packageSpecificHardwareToken;
 }
 
 template <typename D> bool impl_ISharedModeSettingsStatics<D>::IsEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_IsEnabled(&value));
+    check_hresult(static_cast<const ISharedModeSettingsStatics &>(static_cast<const D &>(*this))->get_IsEnabled(&value));
     return value;
 }
 

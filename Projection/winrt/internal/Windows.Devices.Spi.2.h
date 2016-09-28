@@ -101,12 +101,8 @@ template <> struct __declspec(uuid("c8afc9cb-6807-57ec-84c9-9f3dbc003450")) __de
 namespace Windows::Devices::Spi {
 
 template <typename D>
-class WINRT_EBO impl_ISpiBusInfo
+struct WINRT_EBO impl_ISpiBusInfo
 {
-    auto shim() const { return impl::shim<D, ISpiBusInfo>(this); }
-
-public:
-
     int32_t ChipSelectLineCount() const;
     int32_t MinClockFrequency() const;
     int32_t MaxClockFrequency() const;
@@ -114,12 +110,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpiConnectionSettings
+struct WINRT_EBO impl_ISpiConnectionSettings
 {
-    auto shim() const { return impl::shim<D, ISpiConnectionSettings>(this); }
-
-public:
-
     int32_t ChipSelectLine() const;
     void ChipSelectLine(int32_t value) const;
     Windows::Devices::Spi::SpiMode Mode() const;
@@ -133,43 +125,27 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpiConnectionSettingsFactory
+struct WINRT_EBO impl_ISpiConnectionSettingsFactory
 {
-    auto shim() const { return impl::shim<D, ISpiConnectionSettingsFactory>(this); }
-
-public:
-
     Windows::Devices::Spi::SpiConnectionSettings Create(int32_t chipSelectLine) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpiController
+struct WINRT_EBO impl_ISpiController
 {
-    auto shim() const { return impl::shim<D, ISpiController>(this); }
-
-public:
-
     Windows::Devices::Spi::SpiDevice GetDevice(const Windows::Devices::Spi::SpiConnectionSettings & settings) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpiControllerStatics
+struct WINRT_EBO impl_ISpiControllerStatics
 {
-    auto shim() const { return impl::shim<D, ISpiControllerStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Devices::Spi::SpiController> GetDefaultAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Spi::SpiController>> GetControllersAsync(const Windows::Devices::Spi::Provider::ISpiProvider & provider) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpiDevice
+struct WINRT_EBO impl_ISpiDevice
 {
-    auto shim() const { return impl::shim<D, ISpiDevice>(this); }
-
-public:
-
     hstring DeviceId() const;
     Windows::Devices::Spi::SpiConnectionSettings ConnectionSettings() const;
     void Write(array_ref<const uint8_t> buffer) const;
@@ -179,12 +155,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpiDeviceStatics
+struct WINRT_EBO impl_ISpiDeviceStatics
 {
-    auto shim() const { return impl::shim<D, ISpiDeviceStatics>(this); }
-
-public:
-
     hstring GetDeviceSelector() const;
     hstring GetDeviceSelector(hstring_ref friendlyName) const;
     Windows::Devices::Spi::SpiBusInfo GetBusInfo(hstring_ref busId) const;

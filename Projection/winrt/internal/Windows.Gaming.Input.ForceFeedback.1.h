@@ -87,14 +87,14 @@ template <> struct traits<Windows::Gaming::Input::ForceFeedback::RampForceEffect
 
 namespace Windows::Gaming::Input::ForceFeedback {
 
-template <typename T> class impl_IConditionForceEffect;
-template <typename T> class impl_IConditionForceEffectFactory;
-template <typename T> class impl_IConstantForceEffect;
-template <typename T> class impl_IForceFeedbackEffect;
-template <typename T> class impl_IForceFeedbackMotor;
-template <typename T> class impl_IPeriodicForceEffect;
-template <typename T> class impl_IPeriodicForceEffectFactory;
-template <typename T> class impl_IRampForceEffect;
+template <typename T> struct impl_IConditionForceEffect;
+template <typename T> struct impl_IConditionForceEffectFactory;
+template <typename T> struct impl_IConstantForceEffect;
+template <typename T> struct impl_IForceFeedbackEffect;
+template <typename T> struct impl_IForceFeedbackMotor;
+template <typename T> struct impl_IPeriodicForceEffect;
+template <typename T> struct impl_IPeriodicForceEffectFactory;
+template <typename T> struct impl_IRampForceEffect;
 
 }
 
@@ -151,35 +151,30 @@ template <> struct traits<Windows::Gaming::Input::ForceFeedback::IRampForceEffec
 template <> struct traits<Windows::Gaming::Input::ForceFeedback::ConditionForceEffect>
 {
     using abi = ABI::Windows::Gaming::Input::ForceFeedback::ConditionForceEffect;
-    using default_interface = Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Gaming.Input.ForceFeedback.ConditionForceEffect"; }
 };
 
 template <> struct traits<Windows::Gaming::Input::ForceFeedback::ConstantForceEffect>
 {
     using abi = ABI::Windows::Gaming::Input::ForceFeedback::ConstantForceEffect;
-    using default_interface = Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Gaming.Input.ForceFeedback.ConstantForceEffect"; }
 };
 
 template <> struct traits<Windows::Gaming::Input::ForceFeedback::ForceFeedbackMotor>
 {
     using abi = ABI::Windows::Gaming::Input::ForceFeedback::ForceFeedbackMotor;
-    using default_interface = Windows::Gaming::Input::ForceFeedback::IForceFeedbackMotor;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Gaming.Input.ForceFeedback.ForceFeedbackMotor"; }
 };
 
 template <> struct traits<Windows::Gaming::Input::ForceFeedback::PeriodicForceEffect>
 {
     using abi = ABI::Windows::Gaming::Input::ForceFeedback::PeriodicForceEffect;
-    using default_interface = Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Gaming.Input.ForceFeedback.PeriodicForceEffect"; }
 };
 
 template <> struct traits<Windows::Gaming::Input::ForceFeedback::RampForceEffect>
 {
     using abi = ABI::Windows::Gaming::Input::ForceFeedback::RampForceEffect;
-    using default_interface = Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Gaming.Input.ForceFeedback.RampForceEffect"; }
 };
 

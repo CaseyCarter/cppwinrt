@@ -71,10 +71,10 @@ template <> struct traits<Windows::Security::Credentials::UI::CredentialPickerRe
 
 namespace Windows::Security::Credentials::UI {
 
-template <typename T> class impl_ICredentialPickerOptions;
-template <typename T> class impl_ICredentialPickerResults;
-template <typename T> class impl_ICredentialPickerStatics;
-template <typename T> class impl_IUserConsentVerifierStatics;
+template <typename T> struct impl_ICredentialPickerOptions;
+template <typename T> struct impl_ICredentialPickerResults;
+template <typename T> struct impl_ICredentialPickerStatics;
+template <typename T> struct impl_IUserConsentVerifierStatics;
 
 }
 
@@ -112,14 +112,12 @@ template <> struct traits<Windows::Security::Credentials::UI::CredentialPicker>
 template <> struct traits<Windows::Security::Credentials::UI::CredentialPickerOptions>
 {
     using abi = ABI::Windows::Security::Credentials::UI::CredentialPickerOptions;
-    using default_interface = Windows::Security::Credentials::UI::ICredentialPickerOptions;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Credentials.UI.CredentialPickerOptions"; }
 };
 
 template <> struct traits<Windows::Security::Credentials::UI::CredentialPickerResults>
 {
     using abi = ABI::Windows::Security::Credentials::UI::CredentialPickerResults;
-    using default_interface = Windows::Security::Credentials::UI::ICredentialPickerResults;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Credentials.UI.CredentialPickerResults"; }
 };
 

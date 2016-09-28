@@ -156,12 +156,8 @@ template <> struct __declspec(uuid("868f060d-e0d4-571b-b2f7-431d6984a513")) __de
 namespace Windows::Devices::HumanInterfaceDevice {
 
 template <typename D>
-class WINRT_EBO impl_IHidBooleanControl
+struct WINRT_EBO impl_IHidBooleanControl
 {
-    auto shim() const { return impl::shim<D, IHidBooleanControl>(this); }
-
-public:
-
     uint32_t Id() const;
     uint16_t UsagePage() const;
     uint16_t UsageId() const;
@@ -171,12 +167,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHidBooleanControlDescription
+struct WINRT_EBO impl_IHidBooleanControlDescription
 {
-    auto shim() const { return impl::shim<D, IHidBooleanControlDescription>(this); }
-
-public:
-
     uint32_t Id() const;
     uint16_t ReportId() const;
     Windows::Devices::HumanInterfaceDevice::HidReportType ReportType() const;
@@ -186,22 +178,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHidBooleanControlDescription2
+struct WINRT_EBO impl_IHidBooleanControlDescription2
 {
-    auto shim() const { return impl::shim<D, IHidBooleanControlDescription2>(this); }
-
-public:
-
     bool IsAbsolute() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHidCollection
+struct WINRT_EBO impl_IHidCollection
 {
-    auto shim() const { return impl::shim<D, IHidCollection>(this); }
-
-public:
-
     uint32_t Id() const;
     Windows::Devices::HumanInterfaceDevice::HidCollectionType Type() const;
     uint32_t UsagePage() const;
@@ -209,12 +193,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHidDevice
+struct WINRT_EBO impl_IHidDevice
 {
-    auto shim() const { return impl::shim<D, IHidDevice>(this); }
-
-public:
-
     uint16_t VendorId() const;
     uint16_t ProductId() const;
     uint16_t Version() const;
@@ -239,24 +219,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHidDeviceStatics
+struct WINRT_EBO impl_IHidDeviceStatics
 {
-    auto shim() const { return impl::shim<D, IHidDeviceStatics>(this); }
-
-public:
-
     hstring GetDeviceSelector(uint16_t usagePage, uint16_t usageId) const;
     hstring GetDeviceSelector(uint16_t usagePage, uint16_t usageId, uint16_t vendorId, uint16_t productId) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidDevice> FromIdAsync(hstring_ref deviceId, Windows::Storage::FileAccessMode accessMode) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHidFeatureReport
+struct WINRT_EBO impl_IHidFeatureReport
 {
-    auto shim() const { return impl::shim<D, IHidFeatureReport>(this); }
-
-public:
-
     uint16_t Id() const;
     Windows::Storage::Streams::IBuffer Data() const;
     void Data(const Windows::Storage::Streams::IBuffer & value) const;
@@ -267,12 +239,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHidInputReport
+struct WINRT_EBO impl_IHidInputReport
 {
-    auto shim() const { return impl::shim<D, IHidInputReport>(this); }
-
-public:
-
     uint16_t Id() const;
     Windows::Storage::Streams::IBuffer Data() const;
     Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidBooleanControl> ActivatedBooleanControls() const;
@@ -284,22 +252,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHidInputReportReceivedEventArgs
+struct WINRT_EBO impl_IHidInputReportReceivedEventArgs
 {
-    auto shim() const { return impl::shim<D, IHidInputReportReceivedEventArgs>(this); }
-
-public:
-
     Windows::Devices::HumanInterfaceDevice::HidInputReport Report() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHidNumericControl
+struct WINRT_EBO impl_IHidNumericControl
 {
-    auto shim() const { return impl::shim<D, IHidNumericControl>(this); }
-
-public:
-
     uint32_t Id() const;
     bool IsGrouped() const;
     uint16_t UsagePage() const;
@@ -312,12 +272,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHidNumericControlDescription
+struct WINRT_EBO impl_IHidNumericControlDescription
 {
-    auto shim() const { return impl::shim<D, IHidNumericControlDescription>(this); }
-
-public:
-
     uint32_t Id() const;
     uint16_t ReportId() const;
     Windows::Devices::HumanInterfaceDevice::HidReportType ReportType() const;
@@ -337,12 +293,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHidOutputReport
+struct WINRT_EBO impl_IHidOutputReport
 {
-    auto shim() const { return impl::shim<D, IHidOutputReport>(this); }
-
-public:
-
     uint16_t Id() const;
     Windows::Storage::Streams::IBuffer Data() const;
     void Data(const Windows::Storage::Streams::IBuffer & value) const;

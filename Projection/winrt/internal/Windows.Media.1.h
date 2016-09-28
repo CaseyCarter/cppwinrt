@@ -318,37 +318,37 @@ template <> struct traits<Windows::Media::VideoFrame> { using default_interface 
 
 namespace Windows::Media {
 
-template <typename T> class impl_IAudioBuffer;
-template <typename T> class impl_IAudioFrame;
-template <typename T> class impl_IAudioFrameFactory;
-template <typename T> class impl_IAutoRepeatModeChangeRequestedEventArgs;
-template <typename T> class impl_IImageDisplayProperties;
-template <typename T> class impl_IMediaExtension;
-template <typename T> class impl_IMediaExtensionManager;
-template <typename T> class impl_IMediaFrame;
-template <typename T> class impl_IMediaMarker;
-template <typename T> class impl_IMediaMarkerTypesStatics;
-template <typename T> class impl_IMediaMarkers;
-template <typename T> class impl_IMediaProcessingTriggerDetails;
-template <typename T> class impl_IMediaTimelineController;
-template <typename T> class impl_IMusicDisplayProperties;
-template <typename T> class impl_IMusicDisplayProperties2;
-template <typename T> class impl_IMusicDisplayProperties3;
-template <typename T> class impl_IPlaybackPositionChangeRequestedEventArgs;
-template <typename T> class impl_IPlaybackRateChangeRequestedEventArgs;
-template <typename T> class impl_IShuffleEnabledChangeRequestedEventArgs;
-template <typename T> class impl_ISystemMediaTransportControls;
-template <typename T> class impl_ISystemMediaTransportControls2;
-template <typename T> class impl_ISystemMediaTransportControlsButtonPressedEventArgs;
-template <typename T> class impl_ISystemMediaTransportControlsDisplayUpdater;
-template <typename T> class impl_ISystemMediaTransportControlsPropertyChangedEventArgs;
-template <typename T> class impl_ISystemMediaTransportControlsStatics;
-template <typename T> class impl_ISystemMediaTransportControlsTimelineProperties;
-template <typename T> class impl_IVideoDisplayProperties;
-template <typename T> class impl_IVideoDisplayProperties2;
-template <typename T> class impl_IVideoEffectsStatics;
-template <typename T> class impl_IVideoFrame;
-template <typename T> class impl_IVideoFrameFactory;
+template <typename T> struct impl_IAudioBuffer;
+template <typename T> struct impl_IAudioFrame;
+template <typename T> struct impl_IAudioFrameFactory;
+template <typename T> struct impl_IAutoRepeatModeChangeRequestedEventArgs;
+template <typename T> struct impl_IImageDisplayProperties;
+template <typename T> struct impl_IMediaExtension;
+template <typename T> struct impl_IMediaExtensionManager;
+template <typename T> struct impl_IMediaFrame;
+template <typename T> struct impl_IMediaMarker;
+template <typename T> struct impl_IMediaMarkerTypesStatics;
+template <typename T> struct impl_IMediaMarkers;
+template <typename T> struct impl_IMediaProcessingTriggerDetails;
+template <typename T> struct impl_IMediaTimelineController;
+template <typename T> struct impl_IMusicDisplayProperties;
+template <typename T> struct impl_IMusicDisplayProperties2;
+template <typename T> struct impl_IMusicDisplayProperties3;
+template <typename T> struct impl_IPlaybackPositionChangeRequestedEventArgs;
+template <typename T> struct impl_IPlaybackRateChangeRequestedEventArgs;
+template <typename T> struct impl_IShuffleEnabledChangeRequestedEventArgs;
+template <typename T> struct impl_ISystemMediaTransportControls;
+template <typename T> struct impl_ISystemMediaTransportControls2;
+template <typename T> struct impl_ISystemMediaTransportControlsButtonPressedEventArgs;
+template <typename T> struct impl_ISystemMediaTransportControlsDisplayUpdater;
+template <typename T> struct impl_ISystemMediaTransportControlsPropertyChangedEventArgs;
+template <typename T> struct impl_ISystemMediaTransportControlsStatics;
+template <typename T> struct impl_ISystemMediaTransportControlsTimelineProperties;
+template <typename T> struct impl_IVideoDisplayProperties;
+template <typename T> struct impl_IVideoDisplayProperties2;
+template <typename T> struct impl_IVideoEffectsStatics;
+template <typename T> struct impl_IVideoFrame;
+template <typename T> struct impl_IVideoFrameFactory;
 
 }
 
@@ -543,35 +543,30 @@ template <> struct traits<Windows::Media::IVideoFrameFactory>
 template <> struct traits<Windows::Media::AudioBuffer>
 {
     using abi = ABI::Windows::Media::AudioBuffer;
-    using default_interface = Windows::Media::IAudioBuffer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.AudioBuffer"; }
 };
 
 template <> struct traits<Windows::Media::AudioFrame>
 {
     using abi = ABI::Windows::Media::AudioFrame;
-    using default_interface = Windows::Media::IAudioFrame;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.AudioFrame"; }
 };
 
 template <> struct traits<Windows::Media::AutoRepeatModeChangeRequestedEventArgs>
 {
     using abi = ABI::Windows::Media::AutoRepeatModeChangeRequestedEventArgs;
-    using default_interface = Windows::Media::IAutoRepeatModeChangeRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.AutoRepeatModeChangeRequestedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::ImageDisplayProperties>
 {
     using abi = ABI::Windows::Media::ImageDisplayProperties;
-    using default_interface = Windows::Media::IImageDisplayProperties;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.ImageDisplayProperties"; }
 };
 
 template <> struct traits<Windows::Media::MediaExtensionManager>
 {
     using abi = ABI::Windows::Media::MediaExtensionManager;
-    using default_interface = Windows::Media::IMediaExtensionManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.MediaExtensionManager"; }
 };
 
@@ -583,84 +578,72 @@ template <> struct traits<Windows::Media::MediaMarkerTypes>
 template <> struct traits<Windows::Media::MediaProcessingTriggerDetails>
 {
     using abi = ABI::Windows::Media::MediaProcessingTriggerDetails;
-    using default_interface = Windows::Media::IMediaProcessingTriggerDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.MediaProcessingTriggerDetails"; }
 };
 
 template <> struct traits<Windows::Media::MediaTimelineController>
 {
     using abi = ABI::Windows::Media::MediaTimelineController;
-    using default_interface = Windows::Media::IMediaTimelineController;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.MediaTimelineController"; }
 };
 
 template <> struct traits<Windows::Media::MusicDisplayProperties>
 {
     using abi = ABI::Windows::Media::MusicDisplayProperties;
-    using default_interface = Windows::Media::IMusicDisplayProperties;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.MusicDisplayProperties"; }
 };
 
 template <> struct traits<Windows::Media::PlaybackPositionChangeRequestedEventArgs>
 {
     using abi = ABI::Windows::Media::PlaybackPositionChangeRequestedEventArgs;
-    using default_interface = Windows::Media::IPlaybackPositionChangeRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.PlaybackPositionChangeRequestedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::PlaybackRateChangeRequestedEventArgs>
 {
     using abi = ABI::Windows::Media::PlaybackRateChangeRequestedEventArgs;
-    using default_interface = Windows::Media::IPlaybackRateChangeRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.PlaybackRateChangeRequestedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::ShuffleEnabledChangeRequestedEventArgs>
 {
     using abi = ABI::Windows::Media::ShuffleEnabledChangeRequestedEventArgs;
-    using default_interface = Windows::Media::IShuffleEnabledChangeRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.ShuffleEnabledChangeRequestedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::SystemMediaTransportControls>
 {
     using abi = ABI::Windows::Media::SystemMediaTransportControls;
-    using default_interface = Windows::Media::ISystemMediaTransportControls;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.SystemMediaTransportControls"; }
 };
 
 template <> struct traits<Windows::Media::SystemMediaTransportControlsButtonPressedEventArgs>
 {
     using abi = ABI::Windows::Media::SystemMediaTransportControlsButtonPressedEventArgs;
-    using default_interface = Windows::Media::ISystemMediaTransportControlsButtonPressedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.SystemMediaTransportControlsButtonPressedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::SystemMediaTransportControlsDisplayUpdater>
 {
     using abi = ABI::Windows::Media::SystemMediaTransportControlsDisplayUpdater;
-    using default_interface = Windows::Media::ISystemMediaTransportControlsDisplayUpdater;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.SystemMediaTransportControlsDisplayUpdater"; }
 };
 
 template <> struct traits<Windows::Media::SystemMediaTransportControlsPropertyChangedEventArgs>
 {
     using abi = ABI::Windows::Media::SystemMediaTransportControlsPropertyChangedEventArgs;
-    using default_interface = Windows::Media::ISystemMediaTransportControlsPropertyChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.SystemMediaTransportControlsPropertyChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::SystemMediaTransportControlsTimelineProperties>
 {
     using abi = ABI::Windows::Media::SystemMediaTransportControlsTimelineProperties;
-    using default_interface = Windows::Media::ISystemMediaTransportControlsTimelineProperties;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.SystemMediaTransportControlsTimelineProperties"; }
 };
 
 template <> struct traits<Windows::Media::VideoDisplayProperties>
 {
     using abi = ABI::Windows::Media::VideoDisplayProperties;
-    using default_interface = Windows::Media::IVideoDisplayProperties;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.VideoDisplayProperties"; }
 };
 
@@ -672,7 +655,6 @@ template <> struct traits<Windows::Media::VideoEffects>
 template <> struct traits<Windows::Media::VideoFrame>
 {
     using abi = ABI::Windows::Media::VideoFrame;
-    using default_interface = Windows::Media::IVideoFrame;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.VideoFrame"; }
 };
 

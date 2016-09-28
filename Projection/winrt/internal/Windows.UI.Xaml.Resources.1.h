@@ -40,10 +40,10 @@ template <> struct traits<Windows::UI::Xaml::Resources::CustomXamlResourceLoader
 
 namespace Windows::UI::Xaml::Resources {
 
-template <typename T> class impl_ICustomXamlResourceLoader;
-template <typename T> class impl_ICustomXamlResourceLoaderFactory;
-template <typename T> class impl_ICustomXamlResourceLoaderOverrides;
-template <typename T> class impl_ICustomXamlResourceLoaderStatics;
+template <typename T> struct impl_ICustomXamlResourceLoader;
+template <typename T> struct impl_ICustomXamlResourceLoaderFactory;
+template <typename T> struct impl_ICustomXamlResourceLoaderOverrides;
+template <typename T> struct impl_ICustomXamlResourceLoaderStatics;
 
 }
 
@@ -76,7 +76,6 @@ template <> struct traits<Windows::UI::Xaml::Resources::ICustomXamlResourceLoade
 template <> struct traits<Windows::UI::Xaml::Resources::CustomXamlResourceLoader>
 {
     using abi = ABI::Windows::UI::Xaml::Resources::CustomXamlResourceLoader;
-    using default_interface = Windows::UI::Xaml::Resources::ICustomXamlResourceLoader;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Resources.CustomXamlResourceLoader"; }
 };
 

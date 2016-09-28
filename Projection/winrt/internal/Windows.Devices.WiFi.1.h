@@ -75,11 +75,11 @@ template <> struct traits<Windows::Devices::WiFi::WiFiNetworkReport> { using def
 
 namespace Windows::Devices::WiFi {
 
-template <typename T> class impl_IWiFiAdapter;
-template <typename T> class impl_IWiFiAdapterStatics;
-template <typename T> class impl_IWiFiAvailableNetwork;
-template <typename T> class impl_IWiFiConnectionResult;
-template <typename T> class impl_IWiFiNetworkReport;
+template <typename T> struct impl_IWiFiAdapter;
+template <typename T> struct impl_IWiFiAdapterStatics;
+template <typename T> struct impl_IWiFiAvailableNetwork;
+template <typename T> struct impl_IWiFiConnectionResult;
+template <typename T> struct impl_IWiFiNetworkReport;
 
 }
 
@@ -118,28 +118,24 @@ template <> struct traits<Windows::Devices::WiFi::IWiFiNetworkReport>
 template <> struct traits<Windows::Devices::WiFi::WiFiAdapter>
 {
     using abi = ABI::Windows::Devices::WiFi::WiFiAdapter;
-    using default_interface = Windows::Devices::WiFi::IWiFiAdapter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.WiFi.WiFiAdapter"; }
 };
 
 template <> struct traits<Windows::Devices::WiFi::WiFiAvailableNetwork>
 {
     using abi = ABI::Windows::Devices::WiFi::WiFiAvailableNetwork;
-    using default_interface = Windows::Devices::WiFi::IWiFiAvailableNetwork;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.WiFi.WiFiAvailableNetwork"; }
 };
 
 template <> struct traits<Windows::Devices::WiFi::WiFiConnectionResult>
 {
     using abi = ABI::Windows::Devices::WiFi::WiFiConnectionResult;
-    using default_interface = Windows::Devices::WiFi::IWiFiConnectionResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.WiFi.WiFiConnectionResult"; }
 };
 
 template <> struct traits<Windows::Devices::WiFi::WiFiNetworkReport>
 {
     using abi = ABI::Windows::Devices::WiFi::WiFiNetworkReport;
-    using default_interface = Windows::Devices::WiFi::IWiFiNetworkReport;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.WiFi.WiFiNetworkReport"; }
 };
 

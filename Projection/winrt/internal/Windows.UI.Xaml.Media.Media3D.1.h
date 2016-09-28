@@ -138,14 +138,14 @@ template <> struct traits<Windows::UI::Xaml::Media::Media3D::Transform3D> { usin
 
 namespace Windows::UI::Xaml::Media::Media3D {
 
-template <typename T> class impl_ICompositeTransform3D;
-template <typename T> class impl_ICompositeTransform3DStatics;
-template <typename T> class impl_IMatrix3DHelper;
-template <typename T> class impl_IMatrix3DHelperStatics;
-template <typename T> class impl_IPerspectiveTransform3D;
-template <typename T> class impl_IPerspectiveTransform3DStatics;
-template <typename T> class impl_ITransform3D;
-template <typename T> class impl_ITransform3DFactory;
+template <typename T> struct impl_ICompositeTransform3D;
+template <typename T> struct impl_ICompositeTransform3DStatics;
+template <typename T> struct impl_IMatrix3DHelper;
+template <typename T> struct impl_IMatrix3DHelperStatics;
+template <typename T> struct impl_IPerspectiveTransform3D;
+template <typename T> struct impl_IPerspectiveTransform3DStatics;
+template <typename T> struct impl_ITransform3D;
+template <typename T> struct impl_ITransform3DFactory;
 
 }
 
@@ -202,28 +202,24 @@ template <> struct traits<Windows::UI::Xaml::Media::Media3D::ITransform3DFactory
 template <> struct traits<Windows::UI::Xaml::Media::Media3D::CompositeTransform3D>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Media3D::CompositeTransform3D;
-    using default_interface = Windows::UI::Xaml::Media::Media3D::ICompositeTransform3D;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Media3D.CompositeTransform3D"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Media3D::Matrix3DHelper>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Media3D::Matrix3DHelper;
-    using default_interface = Windows::UI::Xaml::Media::Media3D::IMatrix3DHelper;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Media3D.Matrix3DHelper"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Media3D::PerspectiveTransform3D>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Media3D::PerspectiveTransform3D;
-    using default_interface = Windows::UI::Xaml::Media::Media3D::IPerspectiveTransform3D;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Media3D.PerspectiveTransform3D"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Media::Media3D::Transform3D>
 {
     using abi = ABI::Windows::UI::Xaml::Media::Media3D::Transform3D;
-    using default_interface = Windows::UI::Xaml::Media::Media3D::ITransform3D;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Media.Media3D.Transform3D"; }
 };
 

@@ -111,17 +111,17 @@ template <> struct traits<Windows::Devices::Bluetooth::Rfcomm::RfcommServiceProv
 
 namespace Windows::Devices::Bluetooth::Rfcomm {
 
-template <typename T> class impl_IRfcommDeviceService;
-template <typename T> class impl_IRfcommDeviceService2;
-template <typename T> class impl_IRfcommDeviceService3;
-template <typename T> class impl_IRfcommDeviceServiceStatics;
-template <typename T> class impl_IRfcommDeviceServiceStatics2;
-template <typename T> class impl_IRfcommDeviceServicesResult;
-template <typename T> class impl_IRfcommServiceId;
-template <typename T> class impl_IRfcommServiceIdStatics;
-template <typename T> class impl_IRfcommServiceProvider;
-template <typename T> class impl_IRfcommServiceProvider2;
-template <typename T> class impl_IRfcommServiceProviderStatics;
+template <typename T> struct impl_IRfcommDeviceService;
+template <typename T> struct impl_IRfcommDeviceService2;
+template <typename T> struct impl_IRfcommDeviceService3;
+template <typename T> struct impl_IRfcommDeviceServiceStatics;
+template <typename T> struct impl_IRfcommDeviceServiceStatics2;
+template <typename T> struct impl_IRfcommDeviceServicesResult;
+template <typename T> struct impl_IRfcommServiceId;
+template <typename T> struct impl_IRfcommServiceIdStatics;
+template <typename T> struct impl_IRfcommServiceProvider;
+template <typename T> struct impl_IRfcommServiceProvider2;
+template <typename T> struct impl_IRfcommServiceProviderStatics;
 
 }
 
@@ -196,28 +196,24 @@ template <> struct traits<Windows::Devices::Bluetooth::Rfcomm::IRfcommServicePro
 template <> struct traits<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceService>
 {
     using abi = ABI::Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceService;
-    using default_interface = Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceService;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService"; }
 };
 
 template <> struct traits<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceServicesResult>
 {
     using abi = ABI::Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceServicesResult;
-    using default_interface = Windows::Devices::Bluetooth::Rfcomm::IRfcommDeviceServicesResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceServicesResult"; }
 };
 
 template <> struct traits<Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId>
 {
     using abi = ABI::Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId;
-    using default_interface = Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceId;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.Rfcomm.RfcommServiceId"; }
 };
 
 template <> struct traits<Windows::Devices::Bluetooth::Rfcomm::RfcommServiceProvider>
 {
     using abi = ABI::Windows::Devices::Bluetooth::Rfcomm::RfcommServiceProvider;
-    using default_interface = Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceProvider;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.Rfcomm.RfcommServiceProvider"; }
 };
 

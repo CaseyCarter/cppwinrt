@@ -3282,1423 +3282,1423 @@ namespace Windows::Web::Http::Headers {
 template <typename D> Windows::Web::Http::Headers::HttpContentDispositionHeaderValue impl_IHttpContentHeaderCollection<D>::ContentDisposition() const
 {
     Windows::Web::Http::Headers::HttpContentDispositionHeaderValue value { nullptr };
-    check_hresult(shim()->get_ContentDisposition(put(value)));
+    check_hresult(static_cast<const IHttpContentHeaderCollection &>(static_cast<const D &>(*this))->get_ContentDisposition(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpContentHeaderCollection<D>::ContentDisposition(const Windows::Web::Http::Headers::HttpContentDispositionHeaderValue & value) const
 {
-    check_hresult(shim()->put_ContentDisposition(get(value)));
+    check_hresult(static_cast<const IHttpContentHeaderCollection &>(static_cast<const D &>(*this))->put_ContentDisposition(get(value)));
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpContentCodingHeaderValueCollection impl_IHttpContentHeaderCollection<D>::ContentEncoding() const
 {
     Windows::Web::Http::Headers::HttpContentCodingHeaderValueCollection value { nullptr };
-    check_hresult(shim()->get_ContentEncoding(put(value)));
+    check_hresult(static_cast<const IHttpContentHeaderCollection &>(static_cast<const D &>(*this))->get_ContentEncoding(put(value)));
     return value;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpLanguageHeaderValueCollection impl_IHttpContentHeaderCollection<D>::ContentLanguage() const
 {
     Windows::Web::Http::Headers::HttpLanguageHeaderValueCollection value { nullptr };
-    check_hresult(shim()->get_ContentLanguage(put(value)));
+    check_hresult(static_cast<const IHttpContentHeaderCollection &>(static_cast<const D &>(*this))->get_ContentLanguage(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<uint64_t> impl_IHttpContentHeaderCollection<D>::ContentLength() const
 {
     Windows::Foundation::IReference<uint64_t> value;
-    check_hresult(shim()->get_ContentLength(put(value)));
+    check_hresult(static_cast<const IHttpContentHeaderCollection &>(static_cast<const D &>(*this))->get_ContentLength(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpContentHeaderCollection<D>::ContentLength(const Windows::Foundation::IReference<uint64_t> & value) const
 {
-    check_hresult(shim()->put_ContentLength(get(value)));
+    check_hresult(static_cast<const IHttpContentHeaderCollection &>(static_cast<const D &>(*this))->put_ContentLength(get(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_IHttpContentHeaderCollection<D>::ContentLocation() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(shim()->get_ContentLocation(put(value)));
+    check_hresult(static_cast<const IHttpContentHeaderCollection &>(static_cast<const D &>(*this))->get_ContentLocation(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpContentHeaderCollection<D>::ContentLocation(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(shim()->put_ContentLocation(get(value)));
+    check_hresult(static_cast<const IHttpContentHeaderCollection &>(static_cast<const D &>(*this))->put_ContentLocation(get(value)));
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IHttpContentHeaderCollection<D>::ContentMD5() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(shim()->get_ContentMD5(put(value)));
+    check_hresult(static_cast<const IHttpContentHeaderCollection &>(static_cast<const D &>(*this))->get_ContentMD5(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpContentHeaderCollection<D>::ContentMD5(const Windows::Storage::Streams::IBuffer & value) const
 {
-    check_hresult(shim()->put_ContentMD5(get(value)));
+    check_hresult(static_cast<const IHttpContentHeaderCollection &>(static_cast<const D &>(*this))->put_ContentMD5(get(value)));
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpContentRangeHeaderValue impl_IHttpContentHeaderCollection<D>::ContentRange() const
 {
     Windows::Web::Http::Headers::HttpContentRangeHeaderValue value { nullptr };
-    check_hresult(shim()->get_ContentRange(put(value)));
+    check_hresult(static_cast<const IHttpContentHeaderCollection &>(static_cast<const D &>(*this))->get_ContentRange(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpContentHeaderCollection<D>::ContentRange(const Windows::Web::Http::Headers::HttpContentRangeHeaderValue & value) const
 {
-    check_hresult(shim()->put_ContentRange(get(value)));
+    check_hresult(static_cast<const IHttpContentHeaderCollection &>(static_cast<const D &>(*this))->put_ContentRange(get(value)));
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpMediaTypeHeaderValue impl_IHttpContentHeaderCollection<D>::ContentType() const
 {
     Windows::Web::Http::Headers::HttpMediaTypeHeaderValue value { nullptr };
-    check_hresult(shim()->get_ContentType(put(value)));
+    check_hresult(static_cast<const IHttpContentHeaderCollection &>(static_cast<const D &>(*this))->get_ContentType(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpContentHeaderCollection<D>::ContentType(const Windows::Web::Http::Headers::HttpMediaTypeHeaderValue & value) const
 {
-    check_hresult(shim()->put_ContentType(get(value)));
+    check_hresult(static_cast<const IHttpContentHeaderCollection &>(static_cast<const D &>(*this))->put_ContentType(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateTime> impl_IHttpContentHeaderCollection<D>::Expires() const
 {
     Windows::Foundation::IReference<Windows::Foundation::DateTime> value;
-    check_hresult(shim()->get_Expires(put(value)));
+    check_hresult(static_cast<const IHttpContentHeaderCollection &>(static_cast<const D &>(*this))->get_Expires(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpContentHeaderCollection<D>::Expires(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
 {
-    check_hresult(shim()->put_Expires(get(value)));
+    check_hresult(static_cast<const IHttpContentHeaderCollection &>(static_cast<const D &>(*this))->put_Expires(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateTime> impl_IHttpContentHeaderCollection<D>::LastModified() const
 {
     Windows::Foundation::IReference<Windows::Foundation::DateTime> value;
-    check_hresult(shim()->get_LastModified(put(value)));
+    check_hresult(static_cast<const IHttpContentHeaderCollection &>(static_cast<const D &>(*this))->get_LastModified(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpContentHeaderCollection<D>::LastModified(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
 {
-    check_hresult(shim()->put_LastModified(get(value)));
+    check_hresult(static_cast<const IHttpContentHeaderCollection &>(static_cast<const D &>(*this))->put_LastModified(get(value)));
 }
 
 template <typename D> void impl_IHttpContentHeaderCollection<D>::Append(hstring_ref name, hstring_ref value) const
 {
-    check_hresult(shim()->abi_Append(get(name), get(value)));
+    check_hresult(static_cast<const IHttpContentHeaderCollection &>(static_cast<const D &>(*this))->abi_Append(get(name), get(value)));
 }
 
 template <typename D> bool impl_IHttpContentHeaderCollection<D>::TryAppendWithoutValidation(hstring_ref name, hstring_ref value) const
 {
     bool succeeded {};
-    check_hresult(shim()->abi_TryAppendWithoutValidation(get(name), get(value), &succeeded));
+    check_hresult(static_cast<const IHttpContentHeaderCollection &>(static_cast<const D &>(*this))->abi_TryAppendWithoutValidation(get(name), get(value), &succeeded));
     return succeeded;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValueCollection impl_IHttpRequestHeaderCollection<D>::Accept() const
 {
     Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValueCollection value { nullptr };
-    check_hresult(shim()->get_Accept(put(value)));
+    check_hresult(static_cast<const IHttpRequestHeaderCollection &>(static_cast<const D &>(*this))->get_Accept(put(value)));
     return value;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValueCollection impl_IHttpRequestHeaderCollection<D>::AcceptEncoding() const
 {
     Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValueCollection value { nullptr };
-    check_hresult(shim()->get_AcceptEncoding(put(value)));
+    check_hresult(static_cast<const IHttpRequestHeaderCollection &>(static_cast<const D &>(*this))->get_AcceptEncoding(put(value)));
     return value;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValueCollection impl_IHttpRequestHeaderCollection<D>::AcceptLanguage() const
 {
     Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValueCollection value { nullptr };
-    check_hresult(shim()->get_AcceptLanguage(put(value)));
+    check_hresult(static_cast<const IHttpRequestHeaderCollection &>(static_cast<const D &>(*this))->get_AcceptLanguage(put(value)));
     return value;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpCredentialsHeaderValue impl_IHttpRequestHeaderCollection<D>::Authorization() const
 {
     Windows::Web::Http::Headers::HttpCredentialsHeaderValue value { nullptr };
-    check_hresult(shim()->get_Authorization(put(value)));
+    check_hresult(static_cast<const IHttpRequestHeaderCollection &>(static_cast<const D &>(*this))->get_Authorization(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpRequestHeaderCollection<D>::Authorization(const Windows::Web::Http::Headers::HttpCredentialsHeaderValue & value) const
 {
-    check_hresult(shim()->put_Authorization(get(value)));
+    check_hresult(static_cast<const IHttpRequestHeaderCollection &>(static_cast<const D &>(*this))->put_Authorization(get(value)));
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpCacheDirectiveHeaderValueCollection impl_IHttpRequestHeaderCollection<D>::CacheControl() const
 {
     Windows::Web::Http::Headers::HttpCacheDirectiveHeaderValueCollection value { nullptr };
-    check_hresult(shim()->get_CacheControl(put(value)));
+    check_hresult(static_cast<const IHttpRequestHeaderCollection &>(static_cast<const D &>(*this))->get_CacheControl(put(value)));
     return value;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpConnectionOptionHeaderValueCollection impl_IHttpRequestHeaderCollection<D>::Connection() const
 {
     Windows::Web::Http::Headers::HttpConnectionOptionHeaderValueCollection value { nullptr };
-    check_hresult(shim()->get_Connection(put(value)));
+    check_hresult(static_cast<const IHttpRequestHeaderCollection &>(static_cast<const D &>(*this))->get_Connection(put(value)));
     return value;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpCookiePairHeaderValueCollection impl_IHttpRequestHeaderCollection<D>::Cookie() const
 {
     Windows::Web::Http::Headers::HttpCookiePairHeaderValueCollection value { nullptr };
-    check_hresult(shim()->get_Cookie(put(value)));
+    check_hresult(static_cast<const IHttpRequestHeaderCollection &>(static_cast<const D &>(*this))->get_Cookie(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateTime> impl_IHttpRequestHeaderCollection<D>::Date() const
 {
     Windows::Foundation::IReference<Windows::Foundation::DateTime> value;
-    check_hresult(shim()->get_Date(put(value)));
+    check_hresult(static_cast<const IHttpRequestHeaderCollection &>(static_cast<const D &>(*this))->get_Date(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpRequestHeaderCollection<D>::Date(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
 {
-    check_hresult(shim()->put_Date(get(value)));
+    check_hresult(static_cast<const IHttpRequestHeaderCollection &>(static_cast<const D &>(*this))->put_Date(get(value)));
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpExpectationHeaderValueCollection impl_IHttpRequestHeaderCollection<D>::Expect() const
 {
     Windows::Web::Http::Headers::HttpExpectationHeaderValueCollection value { nullptr };
-    check_hresult(shim()->get_Expect(put(value)));
+    check_hresult(static_cast<const IHttpRequestHeaderCollection &>(static_cast<const D &>(*this))->get_Expect(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IHttpRequestHeaderCollection<D>::From() const
 {
     hstring value;
-    check_hresult(shim()->get_From(put(value)));
+    check_hresult(static_cast<const IHttpRequestHeaderCollection &>(static_cast<const D &>(*this))->get_From(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpRequestHeaderCollection<D>::From(hstring_ref value) const
 {
-    check_hresult(shim()->put_From(get(value)));
+    check_hresult(static_cast<const IHttpRequestHeaderCollection &>(static_cast<const D &>(*this))->put_From(get(value)));
 }
 
 template <typename D> Windows::Networking::HostName impl_IHttpRequestHeaderCollection<D>::Host() const
 {
     Windows::Networking::HostName value { nullptr };
-    check_hresult(shim()->get_Host(put(value)));
+    check_hresult(static_cast<const IHttpRequestHeaderCollection &>(static_cast<const D &>(*this))->get_Host(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpRequestHeaderCollection<D>::Host(const Windows::Networking::HostName & value) const
 {
-    check_hresult(shim()->put_Host(get(value)));
+    check_hresult(static_cast<const IHttpRequestHeaderCollection &>(static_cast<const D &>(*this))->put_Host(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateTime> impl_IHttpRequestHeaderCollection<D>::IfModifiedSince() const
 {
     Windows::Foundation::IReference<Windows::Foundation::DateTime> value;
-    check_hresult(shim()->get_IfModifiedSince(put(value)));
+    check_hresult(static_cast<const IHttpRequestHeaderCollection &>(static_cast<const D &>(*this))->get_IfModifiedSince(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpRequestHeaderCollection<D>::IfModifiedSince(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
 {
-    check_hresult(shim()->put_IfModifiedSince(get(value)));
+    check_hresult(static_cast<const IHttpRequestHeaderCollection &>(static_cast<const D &>(*this))->put_IfModifiedSince(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateTime> impl_IHttpRequestHeaderCollection<D>::IfUnmodifiedSince() const
 {
     Windows::Foundation::IReference<Windows::Foundation::DateTime> value;
-    check_hresult(shim()->get_IfUnmodifiedSince(put(value)));
+    check_hresult(static_cast<const IHttpRequestHeaderCollection &>(static_cast<const D &>(*this))->get_IfUnmodifiedSince(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpRequestHeaderCollection<D>::IfUnmodifiedSince(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
 {
-    check_hresult(shim()->put_IfUnmodifiedSince(get(value)));
+    check_hresult(static_cast<const IHttpRequestHeaderCollection &>(static_cast<const D &>(*this))->put_IfUnmodifiedSince(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<uint32_t> impl_IHttpRequestHeaderCollection<D>::MaxForwards() const
 {
     Windows::Foundation::IReference<uint32_t> value;
-    check_hresult(shim()->get_MaxForwards(put(value)));
+    check_hresult(static_cast<const IHttpRequestHeaderCollection &>(static_cast<const D &>(*this))->get_MaxForwards(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpRequestHeaderCollection<D>::MaxForwards(const Windows::Foundation::IReference<uint32_t> & value) const
 {
-    check_hresult(shim()->put_MaxForwards(get(value)));
+    check_hresult(static_cast<const IHttpRequestHeaderCollection &>(static_cast<const D &>(*this))->put_MaxForwards(get(value)));
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpCredentialsHeaderValue impl_IHttpRequestHeaderCollection<D>::ProxyAuthorization() const
 {
     Windows::Web::Http::Headers::HttpCredentialsHeaderValue value { nullptr };
-    check_hresult(shim()->get_ProxyAuthorization(put(value)));
+    check_hresult(static_cast<const IHttpRequestHeaderCollection &>(static_cast<const D &>(*this))->get_ProxyAuthorization(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpRequestHeaderCollection<D>::ProxyAuthorization(const Windows::Web::Http::Headers::HttpCredentialsHeaderValue & value) const
 {
-    check_hresult(shim()->put_ProxyAuthorization(get(value)));
+    check_hresult(static_cast<const IHttpRequestHeaderCollection &>(static_cast<const D &>(*this))->put_ProxyAuthorization(get(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_IHttpRequestHeaderCollection<D>::Referer() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(shim()->get_Referer(put(value)));
+    check_hresult(static_cast<const IHttpRequestHeaderCollection &>(static_cast<const D &>(*this))->get_Referer(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpRequestHeaderCollection<D>::Referer(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(shim()->put_Referer(get(value)));
+    check_hresult(static_cast<const IHttpRequestHeaderCollection &>(static_cast<const D &>(*this))->put_Referer(get(value)));
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpTransferCodingHeaderValueCollection impl_IHttpRequestHeaderCollection<D>::TransferEncoding() const
 {
     Windows::Web::Http::Headers::HttpTransferCodingHeaderValueCollection value { nullptr };
-    check_hresult(shim()->get_TransferEncoding(put(value)));
+    check_hresult(static_cast<const IHttpRequestHeaderCollection &>(static_cast<const D &>(*this))->get_TransferEncoding(put(value)));
     return value;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpProductInfoHeaderValueCollection impl_IHttpRequestHeaderCollection<D>::UserAgent() const
 {
     Windows::Web::Http::Headers::HttpProductInfoHeaderValueCollection value { nullptr };
-    check_hresult(shim()->get_UserAgent(put(value)));
+    check_hresult(static_cast<const IHttpRequestHeaderCollection &>(static_cast<const D &>(*this))->get_UserAgent(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpRequestHeaderCollection<D>::Append(hstring_ref name, hstring_ref value) const
 {
-    check_hresult(shim()->abi_Append(get(name), get(value)));
+    check_hresult(static_cast<const IHttpRequestHeaderCollection &>(static_cast<const D &>(*this))->abi_Append(get(name), get(value)));
 }
 
 template <typename D> bool impl_IHttpRequestHeaderCollection<D>::TryAppendWithoutValidation(hstring_ref name, hstring_ref value) const
 {
     bool succeeded {};
-    check_hresult(shim()->abi_TryAppendWithoutValidation(get(name), get(value), &succeeded));
+    check_hresult(static_cast<const IHttpRequestHeaderCollection &>(static_cast<const D &>(*this))->abi_TryAppendWithoutValidation(get(name), get(value), &succeeded));
     return succeeded;
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeSpan> impl_IHttpResponseHeaderCollection<D>::Age() const
 {
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> value;
-    check_hresult(shim()->get_Age(put(value)));
+    check_hresult(static_cast<const IHttpResponseHeaderCollection &>(static_cast<const D &>(*this))->get_Age(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpResponseHeaderCollection<D>::Age(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const
 {
-    check_hresult(shim()->put_Age(get(value)));
+    check_hresult(static_cast<const IHttpResponseHeaderCollection &>(static_cast<const D &>(*this))->put_Age(get(value)));
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpMethodHeaderValueCollection impl_IHttpResponseHeaderCollection<D>::Allow() const
 {
     Windows::Web::Http::Headers::HttpMethodHeaderValueCollection value { nullptr };
-    check_hresult(shim()->get_Allow(put(value)));
+    check_hresult(static_cast<const IHttpResponseHeaderCollection &>(static_cast<const D &>(*this))->get_Allow(put(value)));
     return value;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpCacheDirectiveHeaderValueCollection impl_IHttpResponseHeaderCollection<D>::CacheControl() const
 {
     Windows::Web::Http::Headers::HttpCacheDirectiveHeaderValueCollection value { nullptr };
-    check_hresult(shim()->get_CacheControl(put(value)));
+    check_hresult(static_cast<const IHttpResponseHeaderCollection &>(static_cast<const D &>(*this))->get_CacheControl(put(value)));
     return value;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpConnectionOptionHeaderValueCollection impl_IHttpResponseHeaderCollection<D>::Connection() const
 {
     Windows::Web::Http::Headers::HttpConnectionOptionHeaderValueCollection value { nullptr };
-    check_hresult(shim()->get_Connection(put(value)));
+    check_hresult(static_cast<const IHttpResponseHeaderCollection &>(static_cast<const D &>(*this))->get_Connection(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateTime> impl_IHttpResponseHeaderCollection<D>::Date() const
 {
     Windows::Foundation::IReference<Windows::Foundation::DateTime> value;
-    check_hresult(shim()->get_Date(put(value)));
+    check_hresult(static_cast<const IHttpResponseHeaderCollection &>(static_cast<const D &>(*this))->get_Date(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpResponseHeaderCollection<D>::Date(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
 {
-    check_hresult(shim()->put_Date(get(value)));
+    check_hresult(static_cast<const IHttpResponseHeaderCollection &>(static_cast<const D &>(*this))->put_Date(get(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_IHttpResponseHeaderCollection<D>::Location() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(shim()->get_Location(put(value)));
+    check_hresult(static_cast<const IHttpResponseHeaderCollection &>(static_cast<const D &>(*this))->get_Location(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpResponseHeaderCollection<D>::Location(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(shim()->put_Location(get(value)));
+    check_hresult(static_cast<const IHttpResponseHeaderCollection &>(static_cast<const D &>(*this))->put_Location(get(value)));
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpChallengeHeaderValueCollection impl_IHttpResponseHeaderCollection<D>::ProxyAuthenticate() const
 {
     Windows::Web::Http::Headers::HttpChallengeHeaderValueCollection value { nullptr };
-    check_hresult(shim()->get_ProxyAuthenticate(put(value)));
+    check_hresult(static_cast<const IHttpResponseHeaderCollection &>(static_cast<const D &>(*this))->get_ProxyAuthenticate(put(value)));
     return value;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue impl_IHttpResponseHeaderCollection<D>::RetryAfter() const
 {
     Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue value { nullptr };
-    check_hresult(shim()->get_RetryAfter(put(value)));
+    check_hresult(static_cast<const IHttpResponseHeaderCollection &>(static_cast<const D &>(*this))->get_RetryAfter(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpResponseHeaderCollection<D>::RetryAfter(const Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue & value) const
 {
-    check_hresult(shim()->put_RetryAfter(get(value)));
+    check_hresult(static_cast<const IHttpResponseHeaderCollection &>(static_cast<const D &>(*this))->put_RetryAfter(get(value)));
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpTransferCodingHeaderValueCollection impl_IHttpResponseHeaderCollection<D>::TransferEncoding() const
 {
     Windows::Web::Http::Headers::HttpTransferCodingHeaderValueCollection value { nullptr };
-    check_hresult(shim()->get_TransferEncoding(put(value)));
+    check_hresult(static_cast<const IHttpResponseHeaderCollection &>(static_cast<const D &>(*this))->get_TransferEncoding(put(value)));
     return value;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpChallengeHeaderValueCollection impl_IHttpResponseHeaderCollection<D>::WwwAuthenticate() const
 {
     Windows::Web::Http::Headers::HttpChallengeHeaderValueCollection value { nullptr };
-    check_hresult(shim()->get_WwwAuthenticate(put(value)));
+    check_hresult(static_cast<const IHttpResponseHeaderCollection &>(static_cast<const D &>(*this))->get_WwwAuthenticate(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpResponseHeaderCollection<D>::Append(hstring_ref name, hstring_ref value) const
 {
-    check_hresult(shim()->abi_Append(get(name), get(value)));
+    check_hresult(static_cast<const IHttpResponseHeaderCollection &>(static_cast<const D &>(*this))->abi_Append(get(name), get(value)));
 }
 
 template <typename D> bool impl_IHttpResponseHeaderCollection<D>::TryAppendWithoutValidation(hstring_ref name, hstring_ref value) const
 {
     bool succeeded {};
-    check_hresult(shim()->abi_TryAppendWithoutValidation(get(name), get(value), &succeeded));
+    check_hresult(static_cast<const IHttpResponseHeaderCollection &>(static_cast<const D &>(*this))->abi_TryAppendWithoutValidation(get(name), get(value), &succeeded));
     return succeeded;
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeSpan> impl_IHttpCacheDirectiveHeaderValueCollection<D>::MaxAge() const
 {
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> value;
-    check_hresult(shim()->get_MaxAge(put(value)));
+    check_hresult(static_cast<const IHttpCacheDirectiveHeaderValueCollection &>(static_cast<const D &>(*this))->get_MaxAge(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpCacheDirectiveHeaderValueCollection<D>::MaxAge(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const
 {
-    check_hresult(shim()->put_MaxAge(get(value)));
+    check_hresult(static_cast<const IHttpCacheDirectiveHeaderValueCollection &>(static_cast<const D &>(*this))->put_MaxAge(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeSpan> impl_IHttpCacheDirectiveHeaderValueCollection<D>::MaxStale() const
 {
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> value;
-    check_hresult(shim()->get_MaxStale(put(value)));
+    check_hresult(static_cast<const IHttpCacheDirectiveHeaderValueCollection &>(static_cast<const D &>(*this))->get_MaxStale(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpCacheDirectiveHeaderValueCollection<D>::MaxStale(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const
 {
-    check_hresult(shim()->put_MaxStale(get(value)));
+    check_hresult(static_cast<const IHttpCacheDirectiveHeaderValueCollection &>(static_cast<const D &>(*this))->put_MaxStale(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeSpan> impl_IHttpCacheDirectiveHeaderValueCollection<D>::MinFresh() const
 {
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> value;
-    check_hresult(shim()->get_MinFresh(put(value)));
+    check_hresult(static_cast<const IHttpCacheDirectiveHeaderValueCollection &>(static_cast<const D &>(*this))->get_MinFresh(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpCacheDirectiveHeaderValueCollection<D>::MinFresh(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const
 {
-    check_hresult(shim()->put_MinFresh(get(value)));
+    check_hresult(static_cast<const IHttpCacheDirectiveHeaderValueCollection &>(static_cast<const D &>(*this))->put_MinFresh(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeSpan> impl_IHttpCacheDirectiveHeaderValueCollection<D>::SharedMaxAge() const
 {
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> value;
-    check_hresult(shim()->get_SharedMaxAge(put(value)));
+    check_hresult(static_cast<const IHttpCacheDirectiveHeaderValueCollection &>(static_cast<const D &>(*this))->get_SharedMaxAge(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpCacheDirectiveHeaderValueCollection<D>::SharedMaxAge(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const
 {
-    check_hresult(shim()->put_SharedMaxAge(get(value)));
+    check_hresult(static_cast<const IHttpCacheDirectiveHeaderValueCollection &>(static_cast<const D &>(*this))->put_SharedMaxAge(get(value)));
 }
 
 template <typename D> void impl_IHttpCacheDirectiveHeaderValueCollection<D>::ParseAdd(hstring_ref input) const
 {
-    check_hresult(shim()->abi_ParseAdd(get(input)));
+    check_hresult(static_cast<const IHttpCacheDirectiveHeaderValueCollection &>(static_cast<const D &>(*this))->abi_ParseAdd(get(input)));
 }
 
 template <typename D> bool impl_IHttpCacheDirectiveHeaderValueCollection<D>::TryParseAdd(hstring_ref input) const
 {
     bool succeeded {};
-    check_hresult(shim()->abi_TryParseAdd(get(input), &succeeded));
+    check_hresult(static_cast<const IHttpCacheDirectiveHeaderValueCollection &>(static_cast<const D &>(*this))->abi_TryParseAdd(get(input), &succeeded));
     return succeeded;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpChallengeHeaderValue impl_IHttpChallengeHeaderValueStatics<D>::Parse(hstring_ref input) const
 {
     Windows::Web::Http::Headers::HttpChallengeHeaderValue challengeHeaderValue { nullptr };
-    check_hresult(shim()->abi_Parse(get(input), put(challengeHeaderValue)));
+    check_hresult(static_cast<const IHttpChallengeHeaderValueStatics &>(static_cast<const D &>(*this))->abi_Parse(get(input), put(challengeHeaderValue)));
     return challengeHeaderValue;
 }
 
 template <typename D> bool impl_IHttpChallengeHeaderValueStatics<D>::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpChallengeHeaderValue & challengeHeaderValue) const
 {
     bool succeeded {};
-    check_hresult(shim()->abi_TryParse(get(input), put(challengeHeaderValue), &succeeded));
+    check_hresult(static_cast<const IHttpChallengeHeaderValueStatics &>(static_cast<const D &>(*this))->abi_TryParse(get(input), put(challengeHeaderValue), &succeeded));
     return succeeded;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpChallengeHeaderValue impl_IHttpChallengeHeaderValueFactory<D>::CreateFromScheme(hstring_ref scheme) const
 {
     Windows::Web::Http::Headers::HttpChallengeHeaderValue challengeHeaderValue { nullptr };
-    check_hresult(shim()->abi_CreateFromScheme(get(scheme), put(challengeHeaderValue)));
+    check_hresult(static_cast<const IHttpChallengeHeaderValueFactory &>(static_cast<const D &>(*this))->abi_CreateFromScheme(get(scheme), put(challengeHeaderValue)));
     return challengeHeaderValue;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpChallengeHeaderValue impl_IHttpChallengeHeaderValueFactory<D>::CreateFromSchemeWithToken(hstring_ref scheme, hstring_ref token) const
 {
     Windows::Web::Http::Headers::HttpChallengeHeaderValue challengeHeaderValue { nullptr };
-    check_hresult(shim()->abi_CreateFromSchemeWithToken(get(scheme), get(token), put(challengeHeaderValue)));
+    check_hresult(static_cast<const IHttpChallengeHeaderValueFactory &>(static_cast<const D &>(*this))->abi_CreateFromSchemeWithToken(get(scheme), get(token), put(challengeHeaderValue)));
     return challengeHeaderValue;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpNameValueHeaderValue> impl_IHttpChallengeHeaderValue<D>::Parameters() const
 {
     Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpNameValueHeaderValue> value;
-    check_hresult(shim()->get_Parameters(put(value)));
+    check_hresult(static_cast<const IHttpChallengeHeaderValue &>(static_cast<const D &>(*this))->get_Parameters(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IHttpChallengeHeaderValue<D>::Scheme() const
 {
     hstring value;
-    check_hresult(shim()->get_Scheme(put(value)));
+    check_hresult(static_cast<const IHttpChallengeHeaderValue &>(static_cast<const D &>(*this))->get_Scheme(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IHttpChallengeHeaderValue<D>::Token() const
 {
     hstring value;
-    check_hresult(shim()->get_Token(put(value)));
+    check_hresult(static_cast<const IHttpChallengeHeaderValue &>(static_cast<const D &>(*this))->get_Token(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpChallengeHeaderValueCollection<D>::ParseAdd(hstring_ref input) const
 {
-    check_hresult(shim()->abi_ParseAdd(get(input)));
+    check_hresult(static_cast<const IHttpChallengeHeaderValueCollection &>(static_cast<const D &>(*this))->abi_ParseAdd(get(input)));
 }
 
 template <typename D> bool impl_IHttpChallengeHeaderValueCollection<D>::TryParseAdd(hstring_ref input) const
 {
     bool succeeded {};
-    check_hresult(shim()->abi_TryParseAdd(get(input), &succeeded));
+    check_hresult(static_cast<const IHttpChallengeHeaderValueCollection &>(static_cast<const D &>(*this))->abi_TryParseAdd(get(input), &succeeded));
     return succeeded;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpCredentialsHeaderValue impl_IHttpCredentialsHeaderValueStatics<D>::Parse(hstring_ref input) const
 {
     Windows::Web::Http::Headers::HttpCredentialsHeaderValue credentialsHeaderValue { nullptr };
-    check_hresult(shim()->abi_Parse(get(input), put(credentialsHeaderValue)));
+    check_hresult(static_cast<const IHttpCredentialsHeaderValueStatics &>(static_cast<const D &>(*this))->abi_Parse(get(input), put(credentialsHeaderValue)));
     return credentialsHeaderValue;
 }
 
 template <typename D> bool impl_IHttpCredentialsHeaderValueStatics<D>::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpCredentialsHeaderValue & credentialsHeaderValue) const
 {
     bool succeeded {};
-    check_hresult(shim()->abi_TryParse(get(input), put(credentialsHeaderValue), &succeeded));
+    check_hresult(static_cast<const IHttpCredentialsHeaderValueStatics &>(static_cast<const D &>(*this))->abi_TryParse(get(input), put(credentialsHeaderValue), &succeeded));
     return succeeded;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpCredentialsHeaderValue impl_IHttpCredentialsHeaderValueFactory<D>::CreateFromScheme(hstring_ref scheme) const
 {
     Windows::Web::Http::Headers::HttpCredentialsHeaderValue credentialsHeaderValue { nullptr };
-    check_hresult(shim()->abi_CreateFromScheme(get(scheme), put(credentialsHeaderValue)));
+    check_hresult(static_cast<const IHttpCredentialsHeaderValueFactory &>(static_cast<const D &>(*this))->abi_CreateFromScheme(get(scheme), put(credentialsHeaderValue)));
     return credentialsHeaderValue;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpCredentialsHeaderValue impl_IHttpCredentialsHeaderValueFactory<D>::CreateFromSchemeWithToken(hstring_ref scheme, hstring_ref token) const
 {
     Windows::Web::Http::Headers::HttpCredentialsHeaderValue credentialsHeaderValue { nullptr };
-    check_hresult(shim()->abi_CreateFromSchemeWithToken(get(scheme), get(token), put(credentialsHeaderValue)));
+    check_hresult(static_cast<const IHttpCredentialsHeaderValueFactory &>(static_cast<const D &>(*this))->abi_CreateFromSchemeWithToken(get(scheme), get(token), put(credentialsHeaderValue)));
     return credentialsHeaderValue;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpNameValueHeaderValue> impl_IHttpCredentialsHeaderValue<D>::Parameters() const
 {
     Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpNameValueHeaderValue> value;
-    check_hresult(shim()->get_Parameters(put(value)));
+    check_hresult(static_cast<const IHttpCredentialsHeaderValue &>(static_cast<const D &>(*this))->get_Parameters(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IHttpCredentialsHeaderValue<D>::Scheme() const
 {
     hstring value;
-    check_hresult(shim()->get_Scheme(put(value)));
+    check_hresult(static_cast<const IHttpCredentialsHeaderValue &>(static_cast<const D &>(*this))->get_Scheme(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IHttpCredentialsHeaderValue<D>::Token() const
 {
     hstring value;
-    check_hresult(shim()->get_Token(put(value)));
+    check_hresult(static_cast<const IHttpCredentialsHeaderValue &>(static_cast<const D &>(*this))->get_Token(put(value)));
     return value;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue impl_IHttpConnectionOptionHeaderValueStatics<D>::Parse(hstring_ref input) const
 {
     Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue connectionOptionHeaderValue { nullptr };
-    check_hresult(shim()->abi_Parse(get(input), put(connectionOptionHeaderValue)));
+    check_hresult(static_cast<const IHttpConnectionOptionHeaderValueStatics &>(static_cast<const D &>(*this))->abi_Parse(get(input), put(connectionOptionHeaderValue)));
     return connectionOptionHeaderValue;
 }
 
 template <typename D> bool impl_IHttpConnectionOptionHeaderValueStatics<D>::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue & connectionOptionHeaderValue) const
 {
     bool succeeded {};
-    check_hresult(shim()->abi_TryParse(get(input), put(connectionOptionHeaderValue), &succeeded));
+    check_hresult(static_cast<const IHttpConnectionOptionHeaderValueStatics &>(static_cast<const D &>(*this))->abi_TryParse(get(input), put(connectionOptionHeaderValue), &succeeded));
     return succeeded;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue impl_IHttpConnectionOptionHeaderValueFactory<D>::Create(hstring_ref token) const
 {
     Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue connectionOptionHeaderValue { nullptr };
-    check_hresult(shim()->abi_Create(get(token), put(connectionOptionHeaderValue)));
+    check_hresult(static_cast<const IHttpConnectionOptionHeaderValueFactory &>(static_cast<const D &>(*this))->abi_Create(get(token), put(connectionOptionHeaderValue)));
     return connectionOptionHeaderValue;
 }
 
 template <typename D> hstring impl_IHttpConnectionOptionHeaderValue<D>::Token() const
 {
     hstring value;
-    check_hresult(shim()->get_Token(put(value)));
+    check_hresult(static_cast<const IHttpConnectionOptionHeaderValue &>(static_cast<const D &>(*this))->get_Token(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpConnectionOptionHeaderValueCollection<D>::ParseAdd(hstring_ref input) const
 {
-    check_hresult(shim()->abi_ParseAdd(get(input)));
+    check_hresult(static_cast<const IHttpConnectionOptionHeaderValueCollection &>(static_cast<const D &>(*this))->abi_ParseAdd(get(input)));
 }
 
 template <typename D> bool impl_IHttpConnectionOptionHeaderValueCollection<D>::TryParseAdd(hstring_ref input) const
 {
     bool succeeded {};
-    check_hresult(shim()->abi_TryParseAdd(get(input), &succeeded));
+    check_hresult(static_cast<const IHttpConnectionOptionHeaderValueCollection &>(static_cast<const D &>(*this))->abi_TryParseAdd(get(input), &succeeded));
     return succeeded;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpContentCodingHeaderValue impl_IHttpContentCodingHeaderValueStatics<D>::Parse(hstring_ref input) const
 {
     Windows::Web::Http::Headers::HttpContentCodingHeaderValue contentCodingHeaderValue { nullptr };
-    check_hresult(shim()->abi_Parse(get(input), put(contentCodingHeaderValue)));
+    check_hresult(static_cast<const IHttpContentCodingHeaderValueStatics &>(static_cast<const D &>(*this))->abi_Parse(get(input), put(contentCodingHeaderValue)));
     return contentCodingHeaderValue;
 }
 
 template <typename D> bool impl_IHttpContentCodingHeaderValueStatics<D>::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpContentCodingHeaderValue & contentCodingHeaderValue) const
 {
     bool succeeded {};
-    check_hresult(shim()->abi_TryParse(get(input), put(contentCodingHeaderValue), &succeeded));
+    check_hresult(static_cast<const IHttpContentCodingHeaderValueStatics &>(static_cast<const D &>(*this))->abi_TryParse(get(input), put(contentCodingHeaderValue), &succeeded));
     return succeeded;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpContentCodingHeaderValue impl_IHttpContentCodingHeaderValueFactory<D>::Create(hstring_ref contentCoding) const
 {
     Windows::Web::Http::Headers::HttpContentCodingHeaderValue contentCodingHeaderValue { nullptr };
-    check_hresult(shim()->abi_Create(get(contentCoding), put(contentCodingHeaderValue)));
+    check_hresult(static_cast<const IHttpContentCodingHeaderValueFactory &>(static_cast<const D &>(*this))->abi_Create(get(contentCoding), put(contentCodingHeaderValue)));
     return contentCodingHeaderValue;
 }
 
 template <typename D> hstring impl_IHttpContentCodingHeaderValue<D>::ContentCoding() const
 {
     hstring value;
-    check_hresult(shim()->get_ContentCoding(put(value)));
+    check_hresult(static_cast<const IHttpContentCodingHeaderValue &>(static_cast<const D &>(*this))->get_ContentCoding(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpContentCodingHeaderValueCollection<D>::ParseAdd(hstring_ref input) const
 {
-    check_hresult(shim()->abi_ParseAdd(get(input)));
+    check_hresult(static_cast<const IHttpContentCodingHeaderValueCollection &>(static_cast<const D &>(*this))->abi_ParseAdd(get(input)));
 }
 
 template <typename D> bool impl_IHttpContentCodingHeaderValueCollection<D>::TryParseAdd(hstring_ref input) const
 {
     bool succeeded {};
-    check_hresult(shim()->abi_TryParseAdd(get(input), &succeeded));
+    check_hresult(static_cast<const IHttpContentCodingHeaderValueCollection &>(static_cast<const D &>(*this))->abi_TryParseAdd(get(input), &succeeded));
     return succeeded;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpContentDispositionHeaderValue impl_IHttpContentDispositionHeaderValueStatics<D>::Parse(hstring_ref input) const
 {
     Windows::Web::Http::Headers::HttpContentDispositionHeaderValue contentDispositionHeaderValue { nullptr };
-    check_hresult(shim()->abi_Parse(get(input), put(contentDispositionHeaderValue)));
+    check_hresult(static_cast<const IHttpContentDispositionHeaderValueStatics &>(static_cast<const D &>(*this))->abi_Parse(get(input), put(contentDispositionHeaderValue)));
     return contentDispositionHeaderValue;
 }
 
 template <typename D> bool impl_IHttpContentDispositionHeaderValueStatics<D>::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpContentDispositionHeaderValue & contentDispositionHeaderValue) const
 {
     bool succeeded {};
-    check_hresult(shim()->abi_TryParse(get(input), put(contentDispositionHeaderValue), &succeeded));
+    check_hresult(static_cast<const IHttpContentDispositionHeaderValueStatics &>(static_cast<const D &>(*this))->abi_TryParse(get(input), put(contentDispositionHeaderValue), &succeeded));
     return succeeded;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpContentDispositionHeaderValue impl_IHttpContentDispositionHeaderValueFactory<D>::Create(hstring_ref dispositionType) const
 {
     Windows::Web::Http::Headers::HttpContentDispositionHeaderValue contentDispositionHeaderValue { nullptr };
-    check_hresult(shim()->abi_Create(get(dispositionType), put(contentDispositionHeaderValue)));
+    check_hresult(static_cast<const IHttpContentDispositionHeaderValueFactory &>(static_cast<const D &>(*this))->abi_Create(get(dispositionType), put(contentDispositionHeaderValue)));
     return contentDispositionHeaderValue;
 }
 
 template <typename D> hstring impl_IHttpContentDispositionHeaderValue<D>::DispositionType() const
 {
     hstring value;
-    check_hresult(shim()->get_DispositionType(put(value)));
+    check_hresult(static_cast<const IHttpContentDispositionHeaderValue &>(static_cast<const D &>(*this))->get_DispositionType(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpContentDispositionHeaderValue<D>::DispositionType(hstring_ref value) const
 {
-    check_hresult(shim()->put_DispositionType(get(value)));
+    check_hresult(static_cast<const IHttpContentDispositionHeaderValue &>(static_cast<const D &>(*this))->put_DispositionType(get(value)));
 }
 
 template <typename D> hstring impl_IHttpContentDispositionHeaderValue<D>::FileName() const
 {
     hstring value;
-    check_hresult(shim()->get_FileName(put(value)));
+    check_hresult(static_cast<const IHttpContentDispositionHeaderValue &>(static_cast<const D &>(*this))->get_FileName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpContentDispositionHeaderValue<D>::FileName(hstring_ref value) const
 {
-    check_hresult(shim()->put_FileName(get(value)));
+    check_hresult(static_cast<const IHttpContentDispositionHeaderValue &>(static_cast<const D &>(*this))->put_FileName(get(value)));
 }
 
 template <typename D> hstring impl_IHttpContentDispositionHeaderValue<D>::FileNameStar() const
 {
     hstring value;
-    check_hresult(shim()->get_FileNameStar(put(value)));
+    check_hresult(static_cast<const IHttpContentDispositionHeaderValue &>(static_cast<const D &>(*this))->get_FileNameStar(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpContentDispositionHeaderValue<D>::FileNameStar(hstring_ref value) const
 {
-    check_hresult(shim()->put_FileNameStar(get(value)));
+    check_hresult(static_cast<const IHttpContentDispositionHeaderValue &>(static_cast<const D &>(*this))->put_FileNameStar(get(value)));
 }
 
 template <typename D> hstring impl_IHttpContentDispositionHeaderValue<D>::Name() const
 {
     hstring value;
-    check_hresult(shim()->get_Name(put(value)));
+    check_hresult(static_cast<const IHttpContentDispositionHeaderValue &>(static_cast<const D &>(*this))->get_Name(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpContentDispositionHeaderValue<D>::Name(hstring_ref value) const
 {
-    check_hresult(shim()->put_Name(get(value)));
+    check_hresult(static_cast<const IHttpContentDispositionHeaderValue &>(static_cast<const D &>(*this))->put_Name(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpNameValueHeaderValue> impl_IHttpContentDispositionHeaderValue<D>::Parameters() const
 {
     Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpNameValueHeaderValue> value;
-    check_hresult(shim()->get_Parameters(put(value)));
+    check_hresult(static_cast<const IHttpContentDispositionHeaderValue &>(static_cast<const D &>(*this))->get_Parameters(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<uint64_t> impl_IHttpContentDispositionHeaderValue<D>::Size() const
 {
     Windows::Foundation::IReference<uint64_t> value;
-    check_hresult(shim()->get_Size(put(value)));
+    check_hresult(static_cast<const IHttpContentDispositionHeaderValue &>(static_cast<const D &>(*this))->get_Size(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpContentDispositionHeaderValue<D>::Size(const Windows::Foundation::IReference<uint64_t> & value) const
 {
-    check_hresult(shim()->put_Size(get(value)));
+    check_hresult(static_cast<const IHttpContentDispositionHeaderValue &>(static_cast<const D &>(*this))->put_Size(get(value)));
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpContentRangeHeaderValue impl_IHttpContentRangeHeaderValueStatics<D>::Parse(hstring_ref input) const
 {
     Windows::Web::Http::Headers::HttpContentRangeHeaderValue contentRangeHeaderValue { nullptr };
-    check_hresult(shim()->abi_Parse(get(input), put(contentRangeHeaderValue)));
+    check_hresult(static_cast<const IHttpContentRangeHeaderValueStatics &>(static_cast<const D &>(*this))->abi_Parse(get(input), put(contentRangeHeaderValue)));
     return contentRangeHeaderValue;
 }
 
 template <typename D> bool impl_IHttpContentRangeHeaderValueStatics<D>::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpContentRangeHeaderValue & contentRangeHeaderValue) const
 {
     bool succeeded {};
-    check_hresult(shim()->abi_TryParse(get(input), put(contentRangeHeaderValue), &succeeded));
+    check_hresult(static_cast<const IHttpContentRangeHeaderValueStatics &>(static_cast<const D &>(*this))->abi_TryParse(get(input), put(contentRangeHeaderValue), &succeeded));
     return succeeded;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpContentRangeHeaderValue impl_IHttpContentRangeHeaderValueFactory<D>::CreateFromLength(uint64_t length) const
 {
     Windows::Web::Http::Headers::HttpContentRangeHeaderValue contentRangeHeaderValue { nullptr };
-    check_hresult(shim()->abi_CreateFromLength(length, put(contentRangeHeaderValue)));
+    check_hresult(static_cast<const IHttpContentRangeHeaderValueFactory &>(static_cast<const D &>(*this))->abi_CreateFromLength(length, put(contentRangeHeaderValue)));
     return contentRangeHeaderValue;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpContentRangeHeaderValue impl_IHttpContentRangeHeaderValueFactory<D>::CreateFromRange(uint64_t from, uint64_t to) const
 {
     Windows::Web::Http::Headers::HttpContentRangeHeaderValue contentRangeHeaderValue { nullptr };
-    check_hresult(shim()->abi_CreateFromRange(from, to, put(contentRangeHeaderValue)));
+    check_hresult(static_cast<const IHttpContentRangeHeaderValueFactory &>(static_cast<const D &>(*this))->abi_CreateFromRange(from, to, put(contentRangeHeaderValue)));
     return contentRangeHeaderValue;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpContentRangeHeaderValue impl_IHttpContentRangeHeaderValueFactory<D>::CreateFromRangeWithLength(uint64_t from, uint64_t to, uint64_t length) const
 {
     Windows::Web::Http::Headers::HttpContentRangeHeaderValue contentRangeHeaderValue { nullptr };
-    check_hresult(shim()->abi_CreateFromRangeWithLength(from, to, length, put(contentRangeHeaderValue)));
+    check_hresult(static_cast<const IHttpContentRangeHeaderValueFactory &>(static_cast<const D &>(*this))->abi_CreateFromRangeWithLength(from, to, length, put(contentRangeHeaderValue)));
     return contentRangeHeaderValue;
 }
 
 template <typename D> Windows::Foundation::IReference<uint64_t> impl_IHttpContentRangeHeaderValue<D>::FirstBytePosition() const
 {
     Windows::Foundation::IReference<uint64_t> value;
-    check_hresult(shim()->get_FirstBytePosition(put(value)));
+    check_hresult(static_cast<const IHttpContentRangeHeaderValue &>(static_cast<const D &>(*this))->get_FirstBytePosition(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<uint64_t> impl_IHttpContentRangeHeaderValue<D>::LastBytePosition() const
 {
     Windows::Foundation::IReference<uint64_t> value;
-    check_hresult(shim()->get_LastBytePosition(put(value)));
+    check_hresult(static_cast<const IHttpContentRangeHeaderValue &>(static_cast<const D &>(*this))->get_LastBytePosition(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<uint64_t> impl_IHttpContentRangeHeaderValue<D>::Length() const
 {
     Windows::Foundation::IReference<uint64_t> value;
-    check_hresult(shim()->get_Length(put(value)));
+    check_hresult(static_cast<const IHttpContentRangeHeaderValue &>(static_cast<const D &>(*this))->get_Length(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IHttpContentRangeHeaderValue<D>::Unit() const
 {
     hstring value;
-    check_hresult(shim()->get_Unit(put(value)));
+    check_hresult(static_cast<const IHttpContentRangeHeaderValue &>(static_cast<const D &>(*this))->get_Unit(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpContentRangeHeaderValue<D>::Unit(hstring_ref value) const
 {
-    check_hresult(shim()->put_Unit(get(value)));
+    check_hresult(static_cast<const IHttpContentRangeHeaderValue &>(static_cast<const D &>(*this))->put_Unit(get(value)));
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpCookiePairHeaderValue impl_IHttpCookiePairHeaderValueStatics<D>::Parse(hstring_ref input) const
 {
     Windows::Web::Http::Headers::HttpCookiePairHeaderValue cookiePairHeaderValue { nullptr };
-    check_hresult(shim()->abi_Parse(get(input), put(cookiePairHeaderValue)));
+    check_hresult(static_cast<const IHttpCookiePairHeaderValueStatics &>(static_cast<const D &>(*this))->abi_Parse(get(input), put(cookiePairHeaderValue)));
     return cookiePairHeaderValue;
 }
 
 template <typename D> bool impl_IHttpCookiePairHeaderValueStatics<D>::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpCookiePairHeaderValue & cookiePairHeaderValue) const
 {
     bool succeeded {};
-    check_hresult(shim()->abi_TryParse(get(input), put(cookiePairHeaderValue), &succeeded));
+    check_hresult(static_cast<const IHttpCookiePairHeaderValueStatics &>(static_cast<const D &>(*this))->abi_TryParse(get(input), put(cookiePairHeaderValue), &succeeded));
     return succeeded;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpCookiePairHeaderValue impl_IHttpCookiePairHeaderValueFactory<D>::CreateFromName(hstring_ref name) const
 {
     Windows::Web::Http::Headers::HttpCookiePairHeaderValue cookiePairHeaderValue { nullptr };
-    check_hresult(shim()->abi_CreateFromName(get(name), put(cookiePairHeaderValue)));
+    check_hresult(static_cast<const IHttpCookiePairHeaderValueFactory &>(static_cast<const D &>(*this))->abi_CreateFromName(get(name), put(cookiePairHeaderValue)));
     return cookiePairHeaderValue;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpCookiePairHeaderValue impl_IHttpCookiePairHeaderValueFactory<D>::CreateFromNameWithValue(hstring_ref name, hstring_ref value) const
 {
     Windows::Web::Http::Headers::HttpCookiePairHeaderValue cookiePairHeaderValue { nullptr };
-    check_hresult(shim()->abi_CreateFromNameWithValue(get(name), get(value), put(cookiePairHeaderValue)));
+    check_hresult(static_cast<const IHttpCookiePairHeaderValueFactory &>(static_cast<const D &>(*this))->abi_CreateFromNameWithValue(get(name), get(value), put(cookiePairHeaderValue)));
     return cookiePairHeaderValue;
 }
 
 template <typename D> hstring impl_IHttpCookiePairHeaderValue<D>::Name() const
 {
     hstring value;
-    check_hresult(shim()->get_Name(put(value)));
+    check_hresult(static_cast<const IHttpCookiePairHeaderValue &>(static_cast<const D &>(*this))->get_Name(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IHttpCookiePairHeaderValue<D>::Value() const
 {
     hstring value;
-    check_hresult(shim()->get_Value(put(value)));
+    check_hresult(static_cast<const IHttpCookiePairHeaderValue &>(static_cast<const D &>(*this))->get_Value(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpCookiePairHeaderValue<D>::Value(hstring_ref value) const
 {
-    check_hresult(shim()->put_Value(get(value)));
+    check_hresult(static_cast<const IHttpCookiePairHeaderValue &>(static_cast<const D &>(*this))->put_Value(get(value)));
 }
 
 template <typename D> void impl_IHttpCookiePairHeaderValueCollection<D>::ParseAdd(hstring_ref input) const
 {
-    check_hresult(shim()->abi_ParseAdd(get(input)));
+    check_hresult(static_cast<const IHttpCookiePairHeaderValueCollection &>(static_cast<const D &>(*this))->abi_ParseAdd(get(input)));
 }
 
 template <typename D> bool impl_IHttpCookiePairHeaderValueCollection<D>::TryParseAdd(hstring_ref input) const
 {
     bool succeeded {};
-    check_hresult(shim()->abi_TryParseAdd(get(input), &succeeded));
+    check_hresult(static_cast<const IHttpCookiePairHeaderValueCollection &>(static_cast<const D &>(*this))->abi_TryParseAdd(get(input), &succeeded));
     return succeeded;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue impl_IHttpDateOrDeltaHeaderValueStatics<D>::Parse(hstring_ref input) const
 {
     Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue dateOrDeltaHeaderValue { nullptr };
-    check_hresult(shim()->abi_Parse(get(input), put(dateOrDeltaHeaderValue)));
+    check_hresult(static_cast<const IHttpDateOrDeltaHeaderValueStatics &>(static_cast<const D &>(*this))->abi_Parse(get(input), put(dateOrDeltaHeaderValue)));
     return dateOrDeltaHeaderValue;
 }
 
 template <typename D> bool impl_IHttpDateOrDeltaHeaderValueStatics<D>::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue & dateOrDeltaHeaderValue) const
 {
     bool succeeded {};
-    check_hresult(shim()->abi_TryParse(get(input), put(dateOrDeltaHeaderValue), &succeeded));
+    check_hresult(static_cast<const IHttpDateOrDeltaHeaderValueStatics &>(static_cast<const D &>(*this))->abi_TryParse(get(input), put(dateOrDeltaHeaderValue), &succeeded));
     return succeeded;
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateTime> impl_IHttpDateOrDeltaHeaderValue<D>::Date() const
 {
     Windows::Foundation::IReference<Windows::Foundation::DateTime> value;
-    check_hresult(shim()->get_Date(put(value)));
+    check_hresult(static_cast<const IHttpDateOrDeltaHeaderValue &>(static_cast<const D &>(*this))->get_Date(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeSpan> impl_IHttpDateOrDeltaHeaderValue<D>::Delta() const
 {
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> value;
-    check_hresult(shim()->get_Delta(put(value)));
+    check_hresult(static_cast<const IHttpDateOrDeltaHeaderValue &>(static_cast<const D &>(*this))->get_Delta(put(value)));
     return value;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpExpectationHeaderValue impl_IHttpExpectationHeaderValueStatics<D>::Parse(hstring_ref input) const
 {
     Windows::Web::Http::Headers::HttpExpectationHeaderValue expectationHeaderValue { nullptr };
-    check_hresult(shim()->abi_Parse(get(input), put(expectationHeaderValue)));
+    check_hresult(static_cast<const IHttpExpectationHeaderValueStatics &>(static_cast<const D &>(*this))->abi_Parse(get(input), put(expectationHeaderValue)));
     return expectationHeaderValue;
 }
 
 template <typename D> bool impl_IHttpExpectationHeaderValueStatics<D>::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpExpectationHeaderValue & expectationHeaderValue) const
 {
     bool succeeded {};
-    check_hresult(shim()->abi_TryParse(get(input), put(expectationHeaderValue), &succeeded));
+    check_hresult(static_cast<const IHttpExpectationHeaderValueStatics &>(static_cast<const D &>(*this))->abi_TryParse(get(input), put(expectationHeaderValue), &succeeded));
     return succeeded;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpExpectationHeaderValue impl_IHttpExpectationHeaderValueFactory<D>::CreateFromName(hstring_ref name) const
 {
     Windows::Web::Http::Headers::HttpExpectationHeaderValue expectationHeaderValue { nullptr };
-    check_hresult(shim()->abi_CreateFromName(get(name), put(expectationHeaderValue)));
+    check_hresult(static_cast<const IHttpExpectationHeaderValueFactory &>(static_cast<const D &>(*this))->abi_CreateFromName(get(name), put(expectationHeaderValue)));
     return expectationHeaderValue;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpExpectationHeaderValue impl_IHttpExpectationHeaderValueFactory<D>::CreateFromNameWithValue(hstring_ref name, hstring_ref value) const
 {
     Windows::Web::Http::Headers::HttpExpectationHeaderValue expectationHeaderValue { nullptr };
-    check_hresult(shim()->abi_CreateFromNameWithValue(get(name), get(value), put(expectationHeaderValue)));
+    check_hresult(static_cast<const IHttpExpectationHeaderValueFactory &>(static_cast<const D &>(*this))->abi_CreateFromNameWithValue(get(name), get(value), put(expectationHeaderValue)));
     return expectationHeaderValue;
 }
 
 template <typename D> hstring impl_IHttpExpectationHeaderValue<D>::Name() const
 {
     hstring value;
-    check_hresult(shim()->get_Name(put(value)));
+    check_hresult(static_cast<const IHttpExpectationHeaderValue &>(static_cast<const D &>(*this))->get_Name(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IHttpExpectationHeaderValue<D>::Value() const
 {
     hstring value;
-    check_hresult(shim()->get_Value(put(value)));
+    check_hresult(static_cast<const IHttpExpectationHeaderValue &>(static_cast<const D &>(*this))->get_Value(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpExpectationHeaderValue<D>::Value(hstring_ref value) const
 {
-    check_hresult(shim()->put_Value(get(value)));
+    check_hresult(static_cast<const IHttpExpectationHeaderValue &>(static_cast<const D &>(*this))->put_Value(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpNameValueHeaderValue> impl_IHttpExpectationHeaderValue<D>::Parameters() const
 {
     Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpNameValueHeaderValue> value;
-    check_hresult(shim()->get_Parameters(put(value)));
+    check_hresult(static_cast<const IHttpExpectationHeaderValue &>(static_cast<const D &>(*this))->get_Parameters(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpExpectationHeaderValueCollection<D>::ParseAdd(hstring_ref input) const
 {
-    check_hresult(shim()->abi_ParseAdd(get(input)));
+    check_hresult(static_cast<const IHttpExpectationHeaderValueCollection &>(static_cast<const D &>(*this))->abi_ParseAdd(get(input)));
 }
 
 template <typename D> bool impl_IHttpExpectationHeaderValueCollection<D>::TryParseAdd(hstring_ref input) const
 {
     bool succeeded {};
-    check_hresult(shim()->abi_TryParseAdd(get(input), &succeeded));
+    check_hresult(static_cast<const IHttpExpectationHeaderValueCollection &>(static_cast<const D &>(*this))->abi_TryParseAdd(get(input), &succeeded));
     return succeeded;
 }
 
 template <typename D> void impl_IHttpLanguageHeaderValueCollection<D>::ParseAdd(hstring_ref input) const
 {
-    check_hresult(shim()->abi_ParseAdd(get(input)));
+    check_hresult(static_cast<const IHttpLanguageHeaderValueCollection &>(static_cast<const D &>(*this))->abi_ParseAdd(get(input)));
 }
 
 template <typename D> bool impl_IHttpLanguageHeaderValueCollection<D>::TryParseAdd(hstring_ref input) const
 {
     bool succeeded {};
-    check_hresult(shim()->abi_TryParseAdd(get(input), &succeeded));
+    check_hresult(static_cast<const IHttpLanguageHeaderValueCollection &>(static_cast<const D &>(*this))->abi_TryParseAdd(get(input), &succeeded));
     return succeeded;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue impl_IHttpLanguageRangeWithQualityHeaderValueStatics<D>::Parse(hstring_ref input) const
 {
     Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue languageRangeWithQualityHeaderValue { nullptr };
-    check_hresult(shim()->abi_Parse(get(input), put(languageRangeWithQualityHeaderValue)));
+    check_hresult(static_cast<const IHttpLanguageRangeWithQualityHeaderValueStatics &>(static_cast<const D &>(*this))->abi_Parse(get(input), put(languageRangeWithQualityHeaderValue)));
     return languageRangeWithQualityHeaderValue;
 }
 
 template <typename D> bool impl_IHttpLanguageRangeWithQualityHeaderValueStatics<D>::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue & languageRangeWithQualityHeaderValue) const
 {
     bool succeeded {};
-    check_hresult(shim()->abi_TryParse(get(input), put(languageRangeWithQualityHeaderValue), &succeeded));
+    check_hresult(static_cast<const IHttpLanguageRangeWithQualityHeaderValueStatics &>(static_cast<const D &>(*this))->abi_TryParse(get(input), put(languageRangeWithQualityHeaderValue), &succeeded));
     return succeeded;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue impl_IHttpLanguageRangeWithQualityHeaderValueFactory<D>::CreateFromLanguageRange(hstring_ref languageRange) const
 {
     Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue languageRangeWithQualityHeaderValue { nullptr };
-    check_hresult(shim()->abi_CreateFromLanguageRange(get(languageRange), put(languageRangeWithQualityHeaderValue)));
+    check_hresult(static_cast<const IHttpLanguageRangeWithQualityHeaderValueFactory &>(static_cast<const D &>(*this))->abi_CreateFromLanguageRange(get(languageRange), put(languageRangeWithQualityHeaderValue)));
     return languageRangeWithQualityHeaderValue;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue impl_IHttpLanguageRangeWithQualityHeaderValueFactory<D>::CreateFromLanguageRangeWithQuality(hstring_ref languageRange, double quality) const
 {
     Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue languageRangeWithQualityHeaderValue { nullptr };
-    check_hresult(shim()->abi_CreateFromLanguageRangeWithQuality(get(languageRange), quality, put(languageRangeWithQualityHeaderValue)));
+    check_hresult(static_cast<const IHttpLanguageRangeWithQualityHeaderValueFactory &>(static_cast<const D &>(*this))->abi_CreateFromLanguageRangeWithQuality(get(languageRange), quality, put(languageRangeWithQualityHeaderValue)));
     return languageRangeWithQualityHeaderValue;
 }
 
 template <typename D> hstring impl_IHttpLanguageRangeWithQualityHeaderValue<D>::LanguageRange() const
 {
     hstring languageRange;
-    check_hresult(shim()->get_LanguageRange(put(languageRange)));
+    check_hresult(static_cast<const IHttpLanguageRangeWithQualityHeaderValue &>(static_cast<const D &>(*this))->get_LanguageRange(put(languageRange)));
     return languageRange;
 }
 
 template <typename D> Windows::Foundation::IReference<double> impl_IHttpLanguageRangeWithQualityHeaderValue<D>::Quality() const
 {
     Windows::Foundation::IReference<double> value;
-    check_hresult(shim()->get_Quality(put(value)));
+    check_hresult(static_cast<const IHttpLanguageRangeWithQualityHeaderValue &>(static_cast<const D &>(*this))->get_Quality(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpLanguageRangeWithQualityHeaderValueCollection<D>::ParseAdd(hstring_ref input) const
 {
-    check_hresult(shim()->abi_ParseAdd(get(input)));
+    check_hresult(static_cast<const IHttpLanguageRangeWithQualityHeaderValueCollection &>(static_cast<const D &>(*this))->abi_ParseAdd(get(input)));
 }
 
 template <typename D> bool impl_IHttpLanguageRangeWithQualityHeaderValueCollection<D>::TryParseAdd(hstring_ref input) const
 {
     bool succeeded {};
-    check_hresult(shim()->abi_TryParseAdd(get(input), &succeeded));
+    check_hresult(static_cast<const IHttpLanguageRangeWithQualityHeaderValueCollection &>(static_cast<const D &>(*this))->abi_TryParseAdd(get(input), &succeeded));
     return succeeded;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpMediaTypeHeaderValue impl_IHttpMediaTypeHeaderValueStatics<D>::Parse(hstring_ref input) const
 {
     Windows::Web::Http::Headers::HttpMediaTypeHeaderValue mediaTypeHeaderValue { nullptr };
-    check_hresult(shim()->abi_Parse(get(input), put(mediaTypeHeaderValue)));
+    check_hresult(static_cast<const IHttpMediaTypeHeaderValueStatics &>(static_cast<const D &>(*this))->abi_Parse(get(input), put(mediaTypeHeaderValue)));
     return mediaTypeHeaderValue;
 }
 
 template <typename D> bool impl_IHttpMediaTypeHeaderValueStatics<D>::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpMediaTypeHeaderValue & mediaTypeHeaderValue) const
 {
     bool succeeded {};
-    check_hresult(shim()->abi_TryParse(get(input), put(mediaTypeHeaderValue), &succeeded));
+    check_hresult(static_cast<const IHttpMediaTypeHeaderValueStatics &>(static_cast<const D &>(*this))->abi_TryParse(get(input), put(mediaTypeHeaderValue), &succeeded));
     return succeeded;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpMediaTypeHeaderValue impl_IHttpMediaTypeHeaderValueFactory<D>::Create(hstring_ref mediaType) const
 {
     Windows::Web::Http::Headers::HttpMediaTypeHeaderValue mediaTypeHeaderValue { nullptr };
-    check_hresult(shim()->abi_Create(get(mediaType), put(mediaTypeHeaderValue)));
+    check_hresult(static_cast<const IHttpMediaTypeHeaderValueFactory &>(static_cast<const D &>(*this))->abi_Create(get(mediaType), put(mediaTypeHeaderValue)));
     return mediaTypeHeaderValue;
 }
 
 template <typename D> hstring impl_IHttpMediaTypeHeaderValue<D>::CharSet() const
 {
     hstring value;
-    check_hresult(shim()->get_CharSet(put(value)));
+    check_hresult(static_cast<const IHttpMediaTypeHeaderValue &>(static_cast<const D &>(*this))->get_CharSet(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpMediaTypeHeaderValue<D>::CharSet(hstring_ref value) const
 {
-    check_hresult(shim()->put_CharSet(get(value)));
+    check_hresult(static_cast<const IHttpMediaTypeHeaderValue &>(static_cast<const D &>(*this))->put_CharSet(get(value)));
 }
 
 template <typename D> hstring impl_IHttpMediaTypeHeaderValue<D>::MediaType() const
 {
     hstring value;
-    check_hresult(shim()->get_MediaType(put(value)));
+    check_hresult(static_cast<const IHttpMediaTypeHeaderValue &>(static_cast<const D &>(*this))->get_MediaType(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpMediaTypeHeaderValue<D>::MediaType(hstring_ref value) const
 {
-    check_hresult(shim()->put_MediaType(get(value)));
+    check_hresult(static_cast<const IHttpMediaTypeHeaderValue &>(static_cast<const D &>(*this))->put_MediaType(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpNameValueHeaderValue> impl_IHttpMediaTypeHeaderValue<D>::Parameters() const
 {
     Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpNameValueHeaderValue> value;
-    check_hresult(shim()->get_Parameters(put(value)));
+    check_hresult(static_cast<const IHttpMediaTypeHeaderValue &>(static_cast<const D &>(*this))->get_Parameters(put(value)));
     return value;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue impl_IHttpMediaTypeWithQualityHeaderValueStatics<D>::Parse(hstring_ref input) const
 {
     Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue mediaTypeWithQualityHeaderValue { nullptr };
-    check_hresult(shim()->abi_Parse(get(input), put(mediaTypeWithQualityHeaderValue)));
+    check_hresult(static_cast<const IHttpMediaTypeWithQualityHeaderValueStatics &>(static_cast<const D &>(*this))->abi_Parse(get(input), put(mediaTypeWithQualityHeaderValue)));
     return mediaTypeWithQualityHeaderValue;
 }
 
 template <typename D> bool impl_IHttpMediaTypeWithQualityHeaderValueStatics<D>::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue & mediaTypeWithQualityHeaderValue) const
 {
     bool succeeded {};
-    check_hresult(shim()->abi_TryParse(get(input), put(mediaTypeWithQualityHeaderValue), &succeeded));
+    check_hresult(static_cast<const IHttpMediaTypeWithQualityHeaderValueStatics &>(static_cast<const D &>(*this))->abi_TryParse(get(input), put(mediaTypeWithQualityHeaderValue), &succeeded));
     return succeeded;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue impl_IHttpMediaTypeWithQualityHeaderValueFactory<D>::CreateFromMediaType(hstring_ref mediaType) const
 {
     Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue mediaTypeWithQualityHeaderValue { nullptr };
-    check_hresult(shim()->abi_CreateFromMediaType(get(mediaType), put(mediaTypeWithQualityHeaderValue)));
+    check_hresult(static_cast<const IHttpMediaTypeWithQualityHeaderValueFactory &>(static_cast<const D &>(*this))->abi_CreateFromMediaType(get(mediaType), put(mediaTypeWithQualityHeaderValue)));
     return mediaTypeWithQualityHeaderValue;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue impl_IHttpMediaTypeWithQualityHeaderValueFactory<D>::CreateFromMediaTypeWithQuality(hstring_ref mediaType, double quality) const
 {
     Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue mediaTypeWithQualityHeaderValue { nullptr };
-    check_hresult(shim()->abi_CreateFromMediaTypeWithQuality(get(mediaType), quality, put(mediaTypeWithQualityHeaderValue)));
+    check_hresult(static_cast<const IHttpMediaTypeWithQualityHeaderValueFactory &>(static_cast<const D &>(*this))->abi_CreateFromMediaTypeWithQuality(get(mediaType), quality, put(mediaTypeWithQualityHeaderValue)));
     return mediaTypeWithQualityHeaderValue;
 }
 
 template <typename D> hstring impl_IHttpMediaTypeWithQualityHeaderValue<D>::CharSet() const
 {
     hstring value;
-    check_hresult(shim()->get_CharSet(put(value)));
+    check_hresult(static_cast<const IHttpMediaTypeWithQualityHeaderValue &>(static_cast<const D &>(*this))->get_CharSet(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpMediaTypeWithQualityHeaderValue<D>::CharSet(hstring_ref value) const
 {
-    check_hresult(shim()->put_CharSet(get(value)));
+    check_hresult(static_cast<const IHttpMediaTypeWithQualityHeaderValue &>(static_cast<const D &>(*this))->put_CharSet(get(value)));
 }
 
 template <typename D> hstring impl_IHttpMediaTypeWithQualityHeaderValue<D>::MediaType() const
 {
     hstring value;
-    check_hresult(shim()->get_MediaType(put(value)));
+    check_hresult(static_cast<const IHttpMediaTypeWithQualityHeaderValue &>(static_cast<const D &>(*this))->get_MediaType(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpMediaTypeWithQualityHeaderValue<D>::MediaType(hstring_ref value) const
 {
-    check_hresult(shim()->put_MediaType(get(value)));
+    check_hresult(static_cast<const IHttpMediaTypeWithQualityHeaderValue &>(static_cast<const D &>(*this))->put_MediaType(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpNameValueHeaderValue> impl_IHttpMediaTypeWithQualityHeaderValue<D>::Parameters() const
 {
     Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpNameValueHeaderValue> value;
-    check_hresult(shim()->get_Parameters(put(value)));
+    check_hresult(static_cast<const IHttpMediaTypeWithQualityHeaderValue &>(static_cast<const D &>(*this))->get_Parameters(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<double> impl_IHttpMediaTypeWithQualityHeaderValue<D>::Quality() const
 {
     Windows::Foundation::IReference<double> value;
-    check_hresult(shim()->get_Quality(put(value)));
+    check_hresult(static_cast<const IHttpMediaTypeWithQualityHeaderValue &>(static_cast<const D &>(*this))->get_Quality(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpMediaTypeWithQualityHeaderValue<D>::Quality(const Windows::Foundation::IReference<double> & value) const
 {
-    check_hresult(shim()->put_Quality(get(value)));
+    check_hresult(static_cast<const IHttpMediaTypeWithQualityHeaderValue &>(static_cast<const D &>(*this))->put_Quality(get(value)));
 }
 
 template <typename D> void impl_IHttpMediaTypeWithQualityHeaderValueCollection<D>::ParseAdd(hstring_ref input) const
 {
-    check_hresult(shim()->abi_ParseAdd(get(input)));
+    check_hresult(static_cast<const IHttpMediaTypeWithQualityHeaderValueCollection &>(static_cast<const D &>(*this))->abi_ParseAdd(get(input)));
 }
 
 template <typename D> bool impl_IHttpMediaTypeWithQualityHeaderValueCollection<D>::TryParseAdd(hstring_ref input) const
 {
     bool succeeded {};
-    check_hresult(shim()->abi_TryParseAdd(get(input), &succeeded));
+    check_hresult(static_cast<const IHttpMediaTypeWithQualityHeaderValueCollection &>(static_cast<const D &>(*this))->abi_TryParseAdd(get(input), &succeeded));
     return succeeded;
 }
 
 template <typename D> void impl_IHttpMethodHeaderValueCollection<D>::ParseAdd(hstring_ref input) const
 {
-    check_hresult(shim()->abi_ParseAdd(get(input)));
+    check_hresult(static_cast<const IHttpMethodHeaderValueCollection &>(static_cast<const D &>(*this))->abi_ParseAdd(get(input)));
 }
 
 template <typename D> bool impl_IHttpMethodHeaderValueCollection<D>::TryParseAdd(hstring_ref input) const
 {
     bool succeeded {};
-    check_hresult(shim()->abi_TryParseAdd(get(input), &succeeded));
+    check_hresult(static_cast<const IHttpMethodHeaderValueCollection &>(static_cast<const D &>(*this))->abi_TryParseAdd(get(input), &succeeded));
     return succeeded;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpNameValueHeaderValue impl_IHttpNameValueHeaderValueStatics<D>::Parse(hstring_ref input) const
 {
     Windows::Web::Http::Headers::HttpNameValueHeaderValue nameValueHeaderValue { nullptr };
-    check_hresult(shim()->abi_Parse(get(input), put(nameValueHeaderValue)));
+    check_hresult(static_cast<const IHttpNameValueHeaderValueStatics &>(static_cast<const D &>(*this))->abi_Parse(get(input), put(nameValueHeaderValue)));
     return nameValueHeaderValue;
 }
 
 template <typename D> bool impl_IHttpNameValueHeaderValueStatics<D>::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpNameValueHeaderValue & nameValueHeaderValue) const
 {
     bool succeeded {};
-    check_hresult(shim()->abi_TryParse(get(input), put(nameValueHeaderValue), &succeeded));
+    check_hresult(static_cast<const IHttpNameValueHeaderValueStatics &>(static_cast<const D &>(*this))->abi_TryParse(get(input), put(nameValueHeaderValue), &succeeded));
     return succeeded;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpNameValueHeaderValue impl_IHttpNameValueHeaderValueFactory<D>::CreateFromName(hstring_ref name) const
 {
     Windows::Web::Http::Headers::HttpNameValueHeaderValue nameValueHeaderValue { nullptr };
-    check_hresult(shim()->abi_CreateFromName(get(name), put(nameValueHeaderValue)));
+    check_hresult(static_cast<const IHttpNameValueHeaderValueFactory &>(static_cast<const D &>(*this))->abi_CreateFromName(get(name), put(nameValueHeaderValue)));
     return nameValueHeaderValue;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpNameValueHeaderValue impl_IHttpNameValueHeaderValueFactory<D>::CreateFromNameWithValue(hstring_ref name, hstring_ref value) const
 {
     Windows::Web::Http::Headers::HttpNameValueHeaderValue nameValueHeaderValue { nullptr };
-    check_hresult(shim()->abi_CreateFromNameWithValue(get(name), get(value), put(nameValueHeaderValue)));
+    check_hresult(static_cast<const IHttpNameValueHeaderValueFactory &>(static_cast<const D &>(*this))->abi_CreateFromNameWithValue(get(name), get(value), put(nameValueHeaderValue)));
     return nameValueHeaderValue;
 }
 
 template <typename D> hstring impl_IHttpNameValueHeaderValue<D>::Name() const
 {
     hstring value;
-    check_hresult(shim()->get_Name(put(value)));
+    check_hresult(static_cast<const IHttpNameValueHeaderValue &>(static_cast<const D &>(*this))->get_Name(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IHttpNameValueHeaderValue<D>::Value() const
 {
     hstring value;
-    check_hresult(shim()->get_Value(put(value)));
+    check_hresult(static_cast<const IHttpNameValueHeaderValue &>(static_cast<const D &>(*this))->get_Value(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpNameValueHeaderValue<D>::Value(hstring_ref value) const
 {
-    check_hresult(shim()->put_Value(get(value)));
+    check_hresult(static_cast<const IHttpNameValueHeaderValue &>(static_cast<const D &>(*this))->put_Value(get(value)));
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpProductHeaderValue impl_IHttpProductHeaderValueStatics<D>::Parse(hstring_ref input) const
 {
     Windows::Web::Http::Headers::HttpProductHeaderValue productHeaderValue { nullptr };
-    check_hresult(shim()->abi_Parse(get(input), put(productHeaderValue)));
+    check_hresult(static_cast<const IHttpProductHeaderValueStatics &>(static_cast<const D &>(*this))->abi_Parse(get(input), put(productHeaderValue)));
     return productHeaderValue;
 }
 
 template <typename D> bool impl_IHttpProductHeaderValueStatics<D>::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpProductHeaderValue & productHeaderValue) const
 {
     bool succeeded {};
-    check_hresult(shim()->abi_TryParse(get(input), put(productHeaderValue), &succeeded));
+    check_hresult(static_cast<const IHttpProductHeaderValueStatics &>(static_cast<const D &>(*this))->abi_TryParse(get(input), put(productHeaderValue), &succeeded));
     return succeeded;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpProductHeaderValue impl_IHttpProductHeaderValueFactory<D>::CreateFromName(hstring_ref productName) const
 {
     Windows::Web::Http::Headers::HttpProductHeaderValue productHeaderValue { nullptr };
-    check_hresult(shim()->abi_CreateFromName(get(productName), put(productHeaderValue)));
+    check_hresult(static_cast<const IHttpProductHeaderValueFactory &>(static_cast<const D &>(*this))->abi_CreateFromName(get(productName), put(productHeaderValue)));
     return productHeaderValue;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpProductHeaderValue impl_IHttpProductHeaderValueFactory<D>::CreateFromNameWithVersion(hstring_ref productName, hstring_ref productVersion) const
 {
     Windows::Web::Http::Headers::HttpProductHeaderValue productHeaderValue { nullptr };
-    check_hresult(shim()->abi_CreateFromNameWithVersion(get(productName), get(productVersion), put(productHeaderValue)));
+    check_hresult(static_cast<const IHttpProductHeaderValueFactory &>(static_cast<const D &>(*this))->abi_CreateFromNameWithVersion(get(productName), get(productVersion), put(productHeaderValue)));
     return productHeaderValue;
 }
 
 template <typename D> hstring impl_IHttpProductHeaderValue<D>::Name() const
 {
     hstring value;
-    check_hresult(shim()->get_Name(put(value)));
+    check_hresult(static_cast<const IHttpProductHeaderValue &>(static_cast<const D &>(*this))->get_Name(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IHttpProductHeaderValue<D>::Version() const
 {
     hstring value;
-    check_hresult(shim()->get_Version(put(value)));
+    check_hresult(static_cast<const IHttpProductHeaderValue &>(static_cast<const D &>(*this))->get_Version(put(value)));
     return value;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpProductInfoHeaderValue impl_IHttpProductInfoHeaderValueStatics<D>::Parse(hstring_ref input) const
 {
     Windows::Web::Http::Headers::HttpProductInfoHeaderValue productInfoHeaderValue { nullptr };
-    check_hresult(shim()->abi_Parse(get(input), put(productInfoHeaderValue)));
+    check_hresult(static_cast<const IHttpProductInfoHeaderValueStatics &>(static_cast<const D &>(*this))->abi_Parse(get(input), put(productInfoHeaderValue)));
     return productInfoHeaderValue;
 }
 
 template <typename D> bool impl_IHttpProductInfoHeaderValueStatics<D>::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpProductInfoHeaderValue & productInfoHeaderValue) const
 {
     bool succeeded {};
-    check_hresult(shim()->abi_TryParse(get(input), put(productInfoHeaderValue), &succeeded));
+    check_hresult(static_cast<const IHttpProductInfoHeaderValueStatics &>(static_cast<const D &>(*this))->abi_TryParse(get(input), put(productInfoHeaderValue), &succeeded));
     return succeeded;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpProductInfoHeaderValue impl_IHttpProductInfoHeaderValueFactory<D>::CreateFromComment(hstring_ref productComment) const
 {
     Windows::Web::Http::Headers::HttpProductInfoHeaderValue productInfoHeaderValue { nullptr };
-    check_hresult(shim()->abi_CreateFromComment(get(productComment), put(productInfoHeaderValue)));
+    check_hresult(static_cast<const IHttpProductInfoHeaderValueFactory &>(static_cast<const D &>(*this))->abi_CreateFromComment(get(productComment), put(productInfoHeaderValue)));
     return productInfoHeaderValue;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpProductInfoHeaderValue impl_IHttpProductInfoHeaderValueFactory<D>::CreateFromNameWithVersion(hstring_ref productName, hstring_ref productVersion) const
 {
     Windows::Web::Http::Headers::HttpProductInfoHeaderValue productInfoHeaderValue { nullptr };
-    check_hresult(shim()->abi_CreateFromNameWithVersion(get(productName), get(productVersion), put(productInfoHeaderValue)));
+    check_hresult(static_cast<const IHttpProductInfoHeaderValueFactory &>(static_cast<const D &>(*this))->abi_CreateFromNameWithVersion(get(productName), get(productVersion), put(productInfoHeaderValue)));
     return productInfoHeaderValue;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpProductHeaderValue impl_IHttpProductInfoHeaderValue<D>::Product() const
 {
     Windows::Web::Http::Headers::HttpProductHeaderValue value { nullptr };
-    check_hresult(shim()->get_Product(put(value)));
+    check_hresult(static_cast<const IHttpProductInfoHeaderValue &>(static_cast<const D &>(*this))->get_Product(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IHttpProductInfoHeaderValue<D>::Comment() const
 {
     hstring value;
-    check_hresult(shim()->get_Comment(put(value)));
+    check_hresult(static_cast<const IHttpProductInfoHeaderValue &>(static_cast<const D &>(*this))->get_Comment(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpProductInfoHeaderValueCollection<D>::ParseAdd(hstring_ref input) const
 {
-    check_hresult(shim()->abi_ParseAdd(get(input)));
+    check_hresult(static_cast<const IHttpProductInfoHeaderValueCollection &>(static_cast<const D &>(*this))->abi_ParseAdd(get(input)));
 }
 
 template <typename D> bool impl_IHttpProductInfoHeaderValueCollection<D>::TryParseAdd(hstring_ref input) const
 {
     bool succeeded {};
-    check_hresult(shim()->abi_TryParseAdd(get(input), &succeeded));
+    check_hresult(static_cast<const IHttpProductInfoHeaderValueCollection &>(static_cast<const D &>(*this))->abi_TryParseAdd(get(input), &succeeded));
     return succeeded;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue impl_IHttpContentCodingWithQualityHeaderValueStatics<D>::Parse(hstring_ref input) const
 {
     Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue contentCodingWithQualityHeaderValue { nullptr };
-    check_hresult(shim()->abi_Parse(get(input), put(contentCodingWithQualityHeaderValue)));
+    check_hresult(static_cast<const IHttpContentCodingWithQualityHeaderValueStatics &>(static_cast<const D &>(*this))->abi_Parse(get(input), put(contentCodingWithQualityHeaderValue)));
     return contentCodingWithQualityHeaderValue;
 }
 
 template <typename D> bool impl_IHttpContentCodingWithQualityHeaderValueStatics<D>::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue & contentCodingWithQualityHeaderValue) const
 {
     bool succeeded {};
-    check_hresult(shim()->abi_TryParse(get(input), put(contentCodingWithQualityHeaderValue), &succeeded));
+    check_hresult(static_cast<const IHttpContentCodingWithQualityHeaderValueStatics &>(static_cast<const D &>(*this))->abi_TryParse(get(input), put(contentCodingWithQualityHeaderValue), &succeeded));
     return succeeded;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue impl_IHttpContentCodingWithQualityHeaderValueFactory<D>::CreateFromValue(hstring_ref contentCoding) const
 {
     Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue contentCodingWithQualityHeaderValue { nullptr };
-    check_hresult(shim()->abi_CreateFromValue(get(contentCoding), put(contentCodingWithQualityHeaderValue)));
+    check_hresult(static_cast<const IHttpContentCodingWithQualityHeaderValueFactory &>(static_cast<const D &>(*this))->abi_CreateFromValue(get(contentCoding), put(contentCodingWithQualityHeaderValue)));
     return contentCodingWithQualityHeaderValue;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue impl_IHttpContentCodingWithQualityHeaderValueFactory<D>::CreateFromValueWithQuality(hstring_ref contentCoding, double quality) const
 {
     Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue contentCodingWithQualityHeaderValue { nullptr };
-    check_hresult(shim()->abi_CreateFromValueWithQuality(get(contentCoding), quality, put(contentCodingWithQualityHeaderValue)));
+    check_hresult(static_cast<const IHttpContentCodingWithQualityHeaderValueFactory &>(static_cast<const D &>(*this))->abi_CreateFromValueWithQuality(get(contentCoding), quality, put(contentCodingWithQualityHeaderValue)));
     return contentCodingWithQualityHeaderValue;
 }
 
 template <typename D> hstring impl_IHttpContentCodingWithQualityHeaderValue<D>::ContentCoding() const
 {
     hstring value;
-    check_hresult(shim()->get_ContentCoding(put(value)));
+    check_hresult(static_cast<const IHttpContentCodingWithQualityHeaderValue &>(static_cast<const D &>(*this))->get_ContentCoding(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<double> impl_IHttpContentCodingWithQualityHeaderValue<D>::Quality() const
 {
     Windows::Foundation::IReference<double> value;
-    check_hresult(shim()->get_Quality(put(value)));
+    check_hresult(static_cast<const IHttpContentCodingWithQualityHeaderValue &>(static_cast<const D &>(*this))->get_Quality(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpContentCodingWithQualityHeaderValueCollection<D>::ParseAdd(hstring_ref input) const
 {
-    check_hresult(shim()->abi_ParseAdd(get(input)));
+    check_hresult(static_cast<const IHttpContentCodingWithQualityHeaderValueCollection &>(static_cast<const D &>(*this))->abi_ParseAdd(get(input)));
 }
 
 template <typename D> bool impl_IHttpContentCodingWithQualityHeaderValueCollection<D>::TryParseAdd(hstring_ref input) const
 {
     bool succeeded {};
-    check_hresult(shim()->abi_TryParseAdd(get(input), &succeeded));
+    check_hresult(static_cast<const IHttpContentCodingWithQualityHeaderValueCollection &>(static_cast<const D &>(*this))->abi_TryParseAdd(get(input), &succeeded));
     return succeeded;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpTransferCodingHeaderValue impl_IHttpTransferCodingHeaderValueStatics<D>::Parse(hstring_ref input) const
 {
     Windows::Web::Http::Headers::HttpTransferCodingHeaderValue transferCodingHeaderValue { nullptr };
-    check_hresult(shim()->abi_Parse(get(input), put(transferCodingHeaderValue)));
+    check_hresult(static_cast<const IHttpTransferCodingHeaderValueStatics &>(static_cast<const D &>(*this))->abi_Parse(get(input), put(transferCodingHeaderValue)));
     return transferCodingHeaderValue;
 }
 
 template <typename D> bool impl_IHttpTransferCodingHeaderValueStatics<D>::TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpTransferCodingHeaderValue & transferCodingHeaderValue) const
 {
     bool succeeded {};
-    check_hresult(shim()->abi_TryParse(get(input), put(transferCodingHeaderValue), &succeeded));
+    check_hresult(static_cast<const IHttpTransferCodingHeaderValueStatics &>(static_cast<const D &>(*this))->abi_TryParse(get(input), put(transferCodingHeaderValue), &succeeded));
     return succeeded;
 }
 
 template <typename D> Windows::Web::Http::Headers::HttpTransferCodingHeaderValue impl_IHttpTransferCodingHeaderValueFactory<D>::Create(hstring_ref input) const
 {
     Windows::Web::Http::Headers::HttpTransferCodingHeaderValue transferCodingHeaderValue { nullptr };
-    check_hresult(shim()->abi_Create(get(input), put(transferCodingHeaderValue)));
+    check_hresult(static_cast<const IHttpTransferCodingHeaderValueFactory &>(static_cast<const D &>(*this))->abi_Create(get(input), put(transferCodingHeaderValue)));
     return transferCodingHeaderValue;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpNameValueHeaderValue> impl_IHttpTransferCodingHeaderValue<D>::Parameters() const
 {
     Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpNameValueHeaderValue> value;
-    check_hresult(shim()->get_Parameters(put(value)));
+    check_hresult(static_cast<const IHttpTransferCodingHeaderValue &>(static_cast<const D &>(*this))->get_Parameters(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IHttpTransferCodingHeaderValue<D>::Value() const
 {
     hstring value;
-    check_hresult(shim()->get_Value(put(value)));
+    check_hresult(static_cast<const IHttpTransferCodingHeaderValue &>(static_cast<const D &>(*this))->get_Value(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHttpTransferCodingHeaderValueCollection<D>::ParseAdd(hstring_ref input) const
 {
-    check_hresult(shim()->abi_ParseAdd(get(input)));
+    check_hresult(static_cast<const IHttpTransferCodingHeaderValueCollection &>(static_cast<const D &>(*this))->abi_ParseAdd(get(input)));
 }
 
 template <typename D> bool impl_IHttpTransferCodingHeaderValueCollection<D>::TryParseAdd(hstring_ref input) const
 {
     bool succeeded {};
-    check_hresult(shim()->abi_TryParseAdd(get(input), &succeeded));
+    check_hresult(static_cast<const IHttpTransferCodingHeaderValueCollection &>(static_cast<const D &>(*this))->abi_TryParseAdd(get(input), &succeeded));
     return succeeded;
 }
 

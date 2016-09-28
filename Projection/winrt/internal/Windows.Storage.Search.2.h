@@ -370,12 +370,8 @@ template <> struct __declspec(uuid("f819a276-b3f5-54d4-b8fd-c9adb7f700e3")) __de
 namespace Windows::Storage::Search {
 
 template <typename D>
-class WINRT_EBO impl_IContentIndexer
+struct WINRT_EBO impl_IContentIndexer
 {
-    auto shim() const { return impl::shim<D, IContentIndexer>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction AddAsync(const Windows::Storage::Search::IIndexableContent & indexableContent) const;
     Windows::Foundation::IAsyncAction UpdateAsync(const Windows::Storage::Search::IIndexableContent & indexableContent) const;
     Windows::Foundation::IAsyncAction DeleteAsync(hstring_ref contentId) const;
@@ -386,12 +382,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IContentIndexerQuery
+struct WINRT_EBO impl_IContentIndexerQuery
 {
-    auto shim() const { return impl::shim<D, IContentIndexerQuery>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<uint32_t> GetCountAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable>>> GetPropertiesAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable>>> GetPropertiesAsync(uint32_t startIndex, uint32_t maxItems) const;
@@ -401,35 +393,23 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IContentIndexerQueryOperations
+struct WINRT_EBO impl_IContentIndexerQueryOperations
 {
-    auto shim() const { return impl::shim<D, IContentIndexerQueryOperations>(this); }
-
-public:
-
     Windows::Storage::Search::ContentIndexerQuery CreateQuery(hstring_ref searchFilter, const Windows::Foundation::Collections::IIterable<hstring> & propertiesToRetrieve, const Windows::Foundation::Collections::IIterable<Windows::Storage::Search::SortEntry> & sortOrder, hstring_ref searchFilterLanguage) const;
     Windows::Storage::Search::ContentIndexerQuery CreateQuery(hstring_ref searchFilter, const Windows::Foundation::Collections::IIterable<hstring> & propertiesToRetrieve, const Windows::Foundation::Collections::IIterable<Windows::Storage::Search::SortEntry> & sortOrder) const;
     Windows::Storage::Search::ContentIndexerQuery CreateQuery(hstring_ref searchFilter, const Windows::Foundation::Collections::IIterable<hstring> & propertiesToRetrieve) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IContentIndexerStatics
+struct WINRT_EBO impl_IContentIndexerStatics
 {
-    auto shim() const { return impl::shim<D, IContentIndexerStatics>(this); }
-
-public:
-
     Windows::Storage::Search::ContentIndexer GetIndexer(hstring_ref indexName) const;
     Windows::Storage::Search::ContentIndexer GetIndexer() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IIndexableContent
+struct WINRT_EBO impl_IIndexableContent
 {
-    auto shim() const { return impl::shim<D, IIndexableContent>(this); }
-
-public:
-
     hstring Id() const;
     void Id(hstring_ref value) const;
     Windows::Foundation::Collections::IMap<hstring, Windows::IInspectable> Properties() const;
@@ -440,12 +420,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IQueryOptions
+struct WINRT_EBO impl_IQueryOptions
 {
-    auto shim() const { return impl::shim<D, IQueryOptions>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<hstring> FileTypeFilter() const;
     Windows::Storage::Search::FolderDepth FolderDepth() const;
     void FolderDepth(Windows::Storage::Search::FolderDepth value) const;
@@ -467,54 +443,34 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IQueryOptionsFactory
+struct WINRT_EBO impl_IQueryOptionsFactory
 {
-    auto shim() const { return impl::shim<D, IQueryOptionsFactory>(this); }
-
-public:
-
     Windows::Storage::Search::QueryOptions CreateCommonFileQuery(Windows::Storage::Search::CommonFileQuery query, const Windows::Foundation::Collections::IIterable<hstring> & fileTypeFilter) const;
     Windows::Storage::Search::QueryOptions CreateCommonFolderQuery(Windows::Storage::Search::CommonFolderQuery query) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IQueryOptionsWithProviderFilter
+struct WINRT_EBO impl_IQueryOptionsWithProviderFilter
 {
-    auto shim() const { return impl::shim<D, IQueryOptionsWithProviderFilter>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<hstring> StorageProviderIdFilter() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorageFileQueryResult
+struct WINRT_EBO impl_IStorageFileQueryResult
 {
-    auto shim() const { return impl::shim<D, IStorageFileQueryResult>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::StorageFile>> GetFilesAsync(uint32_t startIndex, uint32_t maxNumberOfItems) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::StorageFile>> GetFilesAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorageFileQueryResult2
+struct WINRT_EBO impl_IStorageFileQueryResult2
 {
-    auto shim() const { return impl::shim<D, IStorageFileQueryResult2>(this); }
-
-public:
-
     Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextSegment>> GetMatchingPropertiesWithRanges(const Windows::Storage::StorageFile & file) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorageFolderQueryOperations
+struct WINRT_EBO impl_IStorageFolderQueryOperations
 {
-    auto shim() const { return impl::shim<D, IStorageFolderQueryOperations>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<winrt::Windows::Storage::Search::IndexedState> GetIndexedStateAsync() const;
     Windows::Storage::Search::StorageFileQueryResult CreateFileQuery() const;
     Windows::Storage::Search::StorageFileQueryResult CreateFileQuery(Windows::Storage::Search::CommonFileQuery query) const;
@@ -535,45 +491,29 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorageFolderQueryResult
+struct WINRT_EBO impl_IStorageFolderQueryResult
 {
-    auto shim() const { return impl::shim<D, IStorageFolderQueryResult>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::StorageFolder>> GetFoldersAsync(uint32_t startIndex, uint32_t maxNumberOfItems) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::StorageFolder>> GetFoldersAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorageItemQueryResult
+struct WINRT_EBO impl_IStorageItemQueryResult
 {
-    auto shim() const { return impl::shim<D, IStorageItemQueryResult>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::IStorageItem>> GetItemsAsync(uint32_t startIndex, uint32_t maxNumberOfItems) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::IStorageItem>> GetItemsAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorageLibraryContentChangedTriggerDetails
+struct WINRT_EBO impl_IStorageLibraryContentChangedTriggerDetails
 {
-    auto shim() const { return impl::shim<D, IStorageLibraryContentChangedTriggerDetails>(this); }
-
-public:
-
     Windows::Storage::StorageFolder Folder() const;
     Windows::Storage::Search::StorageItemQueryResult CreateModifiedSinceQuery(const Windows::Foundation::DateTime & lastQueryTime) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorageQueryResultBase
+struct WINRT_EBO impl_IStorageQueryResultBase
 {
-    auto shim() const { return impl::shim<D, IStorageQueryResultBase>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<uint32_t> GetItemCountAsync() const;
     Windows::Storage::StorageFolder Folder() const;
     event_token ContentsChanged(const Windows::Foundation::TypedEventHandler<Windows::Storage::Search::IStorageQueryResultBase, Windows::IInspectable> & handler) const;
@@ -590,12 +530,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IValueAndLanguage
+struct WINRT_EBO impl_IValueAndLanguage
 {
-    auto shim() const { return impl::shim<D, IValueAndLanguage>(this); }
-
-public:
-
     hstring Language() const;
     void Language(hstring_ref value) const;
     Windows::IInspectable Value() const;

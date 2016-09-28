@@ -11,21 +11,13 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::UI::Xaml::Shapes {
 
 template <typename D>
-class WINRT_EBO impl_IEllipse
+struct WINRT_EBO impl_IEllipse
 {
-    auto shim() const { return impl::shim<D, IEllipse>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ILine
+struct WINRT_EBO impl_ILine
 {
-    auto shim() const { return impl::shim<D, ILine>(this); }
-
-public:
-
     double X1() const;
     void X1(double value) const;
     double Y1() const;
@@ -37,12 +29,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ILineStatics
+struct WINRT_EBO impl_ILineStatics
 {
-    auto shim() const { return impl::shim<D, ILineStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty X1Property() const;
     Windows::UI::Xaml::DependencyProperty Y1Property() const;
     Windows::UI::Xaml::DependencyProperty X2Property() const;
@@ -50,43 +38,27 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPath
+struct WINRT_EBO impl_IPath
 {
-    auto shim() const { return impl::shim<D, IPath>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Geometry Data() const;
     void Data(const Windows::UI::Xaml::Media::Geometry & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPathFactory
+struct WINRT_EBO impl_IPathFactory
 {
-    auto shim() const { return impl::shim<D, IPathFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Shapes::Path CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPathStatics
+struct WINRT_EBO impl_IPathStatics
 {
-    auto shim() const { return impl::shim<D, IPathStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty DataProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPolygon
+struct WINRT_EBO impl_IPolygon
 {
-    auto shim() const { return impl::shim<D, IPolygon>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::FillRule FillRule() const;
     void FillRule(Windows::UI::Xaml::Media::FillRule value) const;
     Windows::UI::Xaml::Media::PointCollection Points() const;
@@ -94,23 +66,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPolygonStatics
+struct WINRT_EBO impl_IPolygonStatics
 {
-    auto shim() const { return impl::shim<D, IPolygonStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty FillRuleProperty() const;
     Windows::UI::Xaml::DependencyProperty PointsProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPolyline
+struct WINRT_EBO impl_IPolyline
 {
-    auto shim() const { return impl::shim<D, IPolyline>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::FillRule FillRule() const;
     void FillRule(Windows::UI::Xaml::Media::FillRule value) const;
     Windows::UI::Xaml::Media::PointCollection Points() const;
@@ -118,23 +82,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPolylineStatics
+struct WINRT_EBO impl_IPolylineStatics
 {
-    auto shim() const { return impl::shim<D, IPolylineStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty FillRuleProperty() const;
     Windows::UI::Xaml::DependencyProperty PointsProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRectangle
+struct WINRT_EBO impl_IRectangle
 {
-    auto shim() const { return impl::shim<D, IRectangle>(this); }
-
-public:
-
     double RadiusX() const;
     void RadiusX(double value) const;
     double RadiusY() const;
@@ -142,23 +98,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IRectangleStatics
+struct WINRT_EBO impl_IRectangleStatics
 {
-    auto shim() const { return impl::shim<D, IRectangleStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty RadiusXProperty() const;
     Windows::UI::Xaml::DependencyProperty RadiusYProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IShape
+struct WINRT_EBO impl_IShape
 {
-    auto shim() const { return impl::shim<D, IShape>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Brush Fill() const;
     void Fill(const Windows::UI::Xaml::Media::Brush & value) const;
     Windows::UI::Xaml::Media::Brush Stroke() const;
@@ -185,32 +133,20 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IShape2
+struct WINRT_EBO impl_IShape2
 {
-    auto shim() const { return impl::shim<D, IShape2>(this); }
-
-public:
-
     Windows::UI::Composition::CompositionBrush GetAlphaMask() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IShapeFactory
+struct WINRT_EBO impl_IShapeFactory
 {
-    auto shim() const { return impl::shim<D, IShapeFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Shapes::Shape CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IShapeStatics
+struct WINRT_EBO impl_IShapeStatics
 {
-    auto shim() const { return impl::shim<D, IShapeStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty FillProperty() const;
     Windows::UI::Xaml::DependencyProperty StrokeProperty() const;
     Windows::UI::Xaml::DependencyProperty StrokeMiterLimitProperty() const;

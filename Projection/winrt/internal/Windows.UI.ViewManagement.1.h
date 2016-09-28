@@ -286,36 +286,36 @@ template <> struct traits<Windows::UI::ViewManagement::UIViewSettings> { using d
 
 namespace Windows::UI::ViewManagement {
 
-template <typename T> class impl_IAccessibilitySettings;
-template <typename T> class impl_IActivationViewSwitcher;
-template <typename T> class impl_IApplicationView;
-template <typename T> class impl_IApplicationView2;
-template <typename T> class impl_IApplicationView3;
-template <typename T> class impl_IApplicationViewConsolidatedEventArgs;
-template <typename T> class impl_IApplicationViewFullscreenStatics;
-template <typename T> class impl_IApplicationViewInteropStatics;
-template <typename T> class impl_IApplicationViewScaling;
-template <typename T> class impl_IApplicationViewScalingStatics;
-template <typename T> class impl_IApplicationViewStatics;
-template <typename T> class impl_IApplicationViewStatics2;
-template <typename T> class impl_IApplicationViewStatics3;
-template <typename T> class impl_IApplicationViewSwitcherStatics;
-template <typename T> class impl_IApplicationViewSwitcherStatics2;
-template <typename T> class impl_IApplicationViewTitleBar;
-template <typename T> class impl_IApplicationViewTransferContext;
-template <typename T> class impl_IApplicationViewTransferContextStatics;
-template <typename T> class impl_IInputPane;
-template <typename T> class impl_IInputPane2;
-template <typename T> class impl_IInputPaneControl;
-template <typename T> class impl_IInputPaneStatics;
-template <typename T> class impl_IInputPaneVisibilityEventArgs;
-template <typename T> class impl_IProjectionManagerStatics;
-template <typename T> class impl_IProjectionManagerStatics2;
-template <typename T> class impl_IUISettings;
-template <typename T> class impl_IUISettings2;
-template <typename T> class impl_IUISettings3;
-template <typename T> class impl_IUIViewSettings;
-template <typename T> class impl_IUIViewSettingsStatics;
+template <typename T> struct impl_IAccessibilitySettings;
+template <typename T> struct impl_IActivationViewSwitcher;
+template <typename T> struct impl_IApplicationView;
+template <typename T> struct impl_IApplicationView2;
+template <typename T> struct impl_IApplicationView3;
+template <typename T> struct impl_IApplicationViewConsolidatedEventArgs;
+template <typename T> struct impl_IApplicationViewFullscreenStatics;
+template <typename T> struct impl_IApplicationViewInteropStatics;
+template <typename T> struct impl_IApplicationViewScaling;
+template <typename T> struct impl_IApplicationViewScalingStatics;
+template <typename T> struct impl_IApplicationViewStatics;
+template <typename T> struct impl_IApplicationViewStatics2;
+template <typename T> struct impl_IApplicationViewStatics3;
+template <typename T> struct impl_IApplicationViewSwitcherStatics;
+template <typename T> struct impl_IApplicationViewSwitcherStatics2;
+template <typename T> struct impl_IApplicationViewTitleBar;
+template <typename T> struct impl_IApplicationViewTransferContext;
+template <typename T> struct impl_IApplicationViewTransferContextStatics;
+template <typename T> struct impl_IInputPane;
+template <typename T> struct impl_IInputPane2;
+template <typename T> struct impl_IInputPaneControl;
+template <typename T> struct impl_IInputPaneStatics;
+template <typename T> struct impl_IInputPaneVisibilityEventArgs;
+template <typename T> struct impl_IProjectionManagerStatics;
+template <typename T> struct impl_IProjectionManagerStatics2;
+template <typename T> struct impl_IUISettings;
+template <typename T> struct impl_IUISettings2;
+template <typename T> struct impl_IUISettings3;
+template <typename T> struct impl_IUIViewSettings;
+template <typename T> struct impl_IUIViewSettingsStatics;
 
 }
 
@@ -504,35 +504,30 @@ template <> struct traits<Windows::UI::ViewManagement::IUIViewSettingsStatics>
 template <> struct traits<Windows::UI::ViewManagement::AccessibilitySettings>
 {
     using abi = ABI::Windows::UI::ViewManagement::AccessibilitySettings;
-    using default_interface = Windows::UI::ViewManagement::IAccessibilitySettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.ViewManagement.AccessibilitySettings"; }
 };
 
 template <> struct traits<Windows::UI::ViewManagement::ActivationViewSwitcher>
 {
     using abi = ABI::Windows::UI::ViewManagement::ActivationViewSwitcher;
-    using default_interface = Windows::UI::ViewManagement::IActivationViewSwitcher;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.ViewManagement.ActivationViewSwitcher"; }
 };
 
 template <> struct traits<Windows::UI::ViewManagement::ApplicationView>
 {
     using abi = ABI::Windows::UI::ViewManagement::ApplicationView;
-    using default_interface = Windows::UI::ViewManagement::IApplicationView;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.ViewManagement.ApplicationView"; }
 };
 
 template <> struct traits<Windows::UI::ViewManagement::ApplicationViewConsolidatedEventArgs>
 {
     using abi = ABI::Windows::UI::ViewManagement::ApplicationViewConsolidatedEventArgs;
-    using default_interface = Windows::UI::ViewManagement::IApplicationViewConsolidatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.ViewManagement.ApplicationViewConsolidatedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::ViewManagement::ApplicationViewScaling>
 {
     using abi = ABI::Windows::UI::ViewManagement::ApplicationViewScaling;
-    using default_interface = Windows::UI::ViewManagement::IApplicationViewScaling;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.ViewManagement.ApplicationViewScaling"; }
 };
 
@@ -544,28 +539,24 @@ template <> struct traits<Windows::UI::ViewManagement::ApplicationViewSwitcher>
 template <> struct traits<Windows::UI::ViewManagement::ApplicationViewTitleBar>
 {
     using abi = ABI::Windows::UI::ViewManagement::ApplicationViewTitleBar;
-    using default_interface = Windows::UI::ViewManagement::IApplicationViewTitleBar;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.ViewManagement.ApplicationViewTitleBar"; }
 };
 
 template <> struct traits<Windows::UI::ViewManagement::ApplicationViewTransferContext>
 {
     using abi = ABI::Windows::UI::ViewManagement::ApplicationViewTransferContext;
-    using default_interface = Windows::UI::ViewManagement::IApplicationViewTransferContext;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.ViewManagement.ApplicationViewTransferContext"; }
 };
 
 template <> struct traits<Windows::UI::ViewManagement::InputPane>
 {
     using abi = ABI::Windows::UI::ViewManagement::InputPane;
-    using default_interface = Windows::UI::ViewManagement::IInputPane;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.ViewManagement.InputPane"; }
 };
 
 template <> struct traits<Windows::UI::ViewManagement::InputPaneVisibilityEventArgs>
 {
     using abi = ABI::Windows::UI::ViewManagement::InputPaneVisibilityEventArgs;
-    using default_interface = Windows::UI::ViewManagement::IInputPaneVisibilityEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.ViewManagement.InputPaneVisibilityEventArgs"; }
 };
 
@@ -577,14 +568,12 @@ template <> struct traits<Windows::UI::ViewManagement::ProjectionManager>
 template <> struct traits<Windows::UI::ViewManagement::UISettings>
 {
     using abi = ABI::Windows::UI::ViewManagement::UISettings;
-    using default_interface = Windows::UI::ViewManagement::IUISettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.ViewManagement.UISettings"; }
 };
 
 template <> struct traits<Windows::UI::ViewManagement::UIViewSettings>
 {
     using abi = ABI::Windows::UI::ViewManagement::UIViewSettings;
-    using default_interface = Windows::UI::ViewManagement::IUIViewSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.ViewManagement.UIViewSettings"; }
 };
 

@@ -78,13 +78,13 @@ template <> struct traits<Windows::ApplicationModel::Search::SearchSuggestionsRe
 
 namespace Windows::ApplicationModel::Search {
 
-template <typename T> class impl_ILocalContentSuggestionSettings;
-template <typename T> class impl_ISearchPaneQueryLinguisticDetails;
-template <typename T> class impl_ISearchQueryLinguisticDetails;
-template <typename T> class impl_ISearchQueryLinguisticDetailsFactory;
-template <typename T> class impl_ISearchSuggestionCollection;
-template <typename T> class impl_ISearchSuggestionsRequest;
-template <typename T> class impl_ISearchSuggestionsRequestDeferral;
+template <typename T> struct impl_ILocalContentSuggestionSettings;
+template <typename T> struct impl_ISearchPaneQueryLinguisticDetails;
+template <typename T> struct impl_ISearchQueryLinguisticDetails;
+template <typename T> struct impl_ISearchQueryLinguisticDetailsFactory;
+template <typename T> struct impl_ISearchSuggestionCollection;
+template <typename T> struct impl_ISearchSuggestionsRequest;
+template <typename T> struct impl_ISearchSuggestionsRequestDeferral;
 
 }
 
@@ -135,42 +135,36 @@ template <> struct traits<Windows::ApplicationModel::Search::ISearchSuggestionsR
 template <> struct traits<Windows::ApplicationModel::Search::LocalContentSuggestionSettings>
 {
     using abi = ABI::Windows::ApplicationModel::Search::LocalContentSuggestionSettings;
-    using default_interface = Windows::ApplicationModel::Search::ILocalContentSuggestionSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Search.LocalContentSuggestionSettings"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Search::SearchPaneQueryLinguisticDetails>
 {
     using abi = ABI::Windows::ApplicationModel::Search::SearchPaneQueryLinguisticDetails;
-    using default_interface = Windows::ApplicationModel::Search::ISearchPaneQueryLinguisticDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Search.SearchPaneQueryLinguisticDetails"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Search::SearchQueryLinguisticDetails>
 {
     using abi = ABI::Windows::ApplicationModel::Search::SearchQueryLinguisticDetails;
-    using default_interface = Windows::ApplicationModel::Search::ISearchQueryLinguisticDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Search.SearchQueryLinguisticDetails"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Search::SearchSuggestionCollection>
 {
     using abi = ABI::Windows::ApplicationModel::Search::SearchSuggestionCollection;
-    using default_interface = Windows::ApplicationModel::Search::ISearchSuggestionCollection;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Search.SearchSuggestionCollection"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Search::SearchSuggestionsRequest>
 {
     using abi = ABI::Windows::ApplicationModel::Search::SearchSuggestionsRequest;
-    using default_interface = Windows::ApplicationModel::Search::ISearchSuggestionsRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Search.SearchSuggestionsRequest"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Search::SearchSuggestionsRequestDeferral>
 {
     using abi = ABI::Windows::ApplicationModel::Search::SearchSuggestionsRequestDeferral;
-    using default_interface = Windows::ApplicationModel::Search::ISearchSuggestionsRequestDeferral;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Search.SearchSuggestionsRequestDeferral"; }
 };
 

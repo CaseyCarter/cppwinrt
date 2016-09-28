@@ -54,10 +54,10 @@ template <> struct traits<Windows::System::Threading::Core::SignalNotifier> { us
 
 namespace Windows::System::Threading::Core {
 
-template <typename T> class impl_IPreallocatedWorkItem;
-template <typename T> class impl_IPreallocatedWorkItemFactory;
-template <typename T> class impl_ISignalNotifier;
-template <typename T> class impl_ISignalNotifierStatics;
+template <typename T> struct impl_IPreallocatedWorkItem;
+template <typename T> struct impl_IPreallocatedWorkItemFactory;
+template <typename T> struct impl_ISignalNotifier;
+template <typename T> struct impl_ISignalNotifierStatics;
 template <typename T> struct impl_SignalHandler;
 
 }
@@ -96,14 +96,12 @@ template <> struct traits<Windows::System::Threading::Core::SignalHandler>
 template <> struct traits<Windows::System::Threading::Core::PreallocatedWorkItem>
 {
     using abi = ABI::Windows::System::Threading::Core::PreallocatedWorkItem;
-    using default_interface = Windows::System::Threading::Core::IPreallocatedWorkItem;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.Threading.Core.PreallocatedWorkItem"; }
 };
 
 template <> struct traits<Windows::System::Threading::Core::SignalNotifier>
 {
     using abi = ABI::Windows::System::Threading::Core::SignalNotifier;
-    using default_interface = Windows::System::Threading::Core::ISignalNotifier;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.Threading.Core.SignalNotifier"; }
 };
 

@@ -92,14 +92,14 @@ template <> struct traits<Windows::System::Diagnostics::ProcessMemoryUsageReport
 
 namespace Windows::System::Diagnostics {
 
-template <typename T> class impl_IProcessCpuUsage;
-template <typename T> class impl_IProcessCpuUsageReport;
-template <typename T> class impl_IProcessDiagnosticInfo;
-template <typename T> class impl_IProcessDiagnosticInfoStatics;
-template <typename T> class impl_IProcessDiskUsage;
-template <typename T> class impl_IProcessDiskUsageReport;
-template <typename T> class impl_IProcessMemoryUsage;
-template <typename T> class impl_IProcessMemoryUsageReport;
+template <typename T> struct impl_IProcessCpuUsage;
+template <typename T> struct impl_IProcessCpuUsageReport;
+template <typename T> struct impl_IProcessDiagnosticInfo;
+template <typename T> struct impl_IProcessDiagnosticInfoStatics;
+template <typename T> struct impl_IProcessDiskUsage;
+template <typename T> struct impl_IProcessDiskUsageReport;
+template <typename T> struct impl_IProcessMemoryUsage;
+template <typename T> struct impl_IProcessMemoryUsageReport;
 
 }
 
@@ -156,49 +156,42 @@ template <> struct traits<Windows::System::Diagnostics::IProcessMemoryUsageRepor
 template <> struct traits<Windows::System::Diagnostics::ProcessCpuUsage>
 {
     using abi = ABI::Windows::System::Diagnostics::ProcessCpuUsage;
-    using default_interface = Windows::System::Diagnostics::IProcessCpuUsage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.Diagnostics.ProcessCpuUsage"; }
 };
 
 template <> struct traits<Windows::System::Diagnostics::ProcessCpuUsageReport>
 {
     using abi = ABI::Windows::System::Diagnostics::ProcessCpuUsageReport;
-    using default_interface = Windows::System::Diagnostics::IProcessCpuUsageReport;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.Diagnostics.ProcessCpuUsageReport"; }
 };
 
 template <> struct traits<Windows::System::Diagnostics::ProcessDiagnosticInfo>
 {
     using abi = ABI::Windows::System::Diagnostics::ProcessDiagnosticInfo;
-    using default_interface = Windows::System::Diagnostics::IProcessDiagnosticInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.Diagnostics.ProcessDiagnosticInfo"; }
 };
 
 template <> struct traits<Windows::System::Diagnostics::ProcessDiskUsage>
 {
     using abi = ABI::Windows::System::Diagnostics::ProcessDiskUsage;
-    using default_interface = Windows::System::Diagnostics::IProcessDiskUsage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.Diagnostics.ProcessDiskUsage"; }
 };
 
 template <> struct traits<Windows::System::Diagnostics::ProcessDiskUsageReport>
 {
     using abi = ABI::Windows::System::Diagnostics::ProcessDiskUsageReport;
-    using default_interface = Windows::System::Diagnostics::IProcessDiskUsageReport;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.Diagnostics.ProcessDiskUsageReport"; }
 };
 
 template <> struct traits<Windows::System::Diagnostics::ProcessMemoryUsage>
 {
     using abi = ABI::Windows::System::Diagnostics::ProcessMemoryUsage;
-    using default_interface = Windows::System::Diagnostics::IProcessMemoryUsage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.Diagnostics.ProcessMemoryUsage"; }
 };
 
 template <> struct traits<Windows::System::Diagnostics::ProcessMemoryUsageReport>
 {
     using abi = ABI::Windows::System::Diagnostics::ProcessMemoryUsageReport;
-    using default_interface = Windows::System::Diagnostics::IProcessMemoryUsageReport;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.Diagnostics.ProcessMemoryUsageReport"; }
 };
 

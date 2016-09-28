@@ -174,75 +174,75 @@ namespace Windows::Security::Cryptography {
 template <typename D> bool impl_ICryptographicBufferStatics<D>::Compare(const Windows::Storage::Streams::IBuffer & object1, const Windows::Storage::Streams::IBuffer & object2) const
 {
     bool isEqual {};
-    check_hresult(shim()->abi_Compare(get(object1), get(object2), &isEqual));
+    check_hresult(static_cast<const ICryptographicBufferStatics &>(static_cast<const D &>(*this))->abi_Compare(get(object1), get(object2), &isEqual));
     return isEqual;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_ICryptographicBufferStatics<D>::GenerateRandom(uint32_t length) const
 {
     Windows::Storage::Streams::IBuffer buffer;
-    check_hresult(shim()->abi_GenerateRandom(length, put(buffer)));
+    check_hresult(static_cast<const ICryptographicBufferStatics &>(static_cast<const D &>(*this))->abi_GenerateRandom(length, put(buffer)));
     return buffer;
 }
 
 template <typename D> uint32_t impl_ICryptographicBufferStatics<D>::GenerateRandomNumber() const
 {
     uint32_t value {};
-    check_hresult(shim()->abi_GenerateRandomNumber(&value));
+    check_hresult(static_cast<const ICryptographicBufferStatics &>(static_cast<const D &>(*this))->abi_GenerateRandomNumber(&value));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_ICryptographicBufferStatics<D>::CreateFromByteArray(array_ref<const uint8_t> value) const
 {
     Windows::Storage::Streams::IBuffer buffer;
-    check_hresult(shim()->abi_CreateFromByteArray(value.size(), get(value), put(buffer)));
+    check_hresult(static_cast<const ICryptographicBufferStatics &>(static_cast<const D &>(*this))->abi_CreateFromByteArray(value.size(), get(value), put(buffer)));
     return buffer;
 }
 
 template <typename D> void impl_ICryptographicBufferStatics<D>::CopyToByteArray(const Windows::Storage::Streams::IBuffer & buffer, com_array<uint8_t> & value) const
 {
-    check_hresult(shim()->abi_CopyToByteArray(get(buffer), put_size(value), put(value)));
+    check_hresult(static_cast<const ICryptographicBufferStatics &>(static_cast<const D &>(*this))->abi_CopyToByteArray(get(buffer), put_size(value), put(value)));
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_ICryptographicBufferStatics<D>::DecodeFromHexString(hstring_ref value) const
 {
     Windows::Storage::Streams::IBuffer buffer;
-    check_hresult(shim()->abi_DecodeFromHexString(get(value), put(buffer)));
+    check_hresult(static_cast<const ICryptographicBufferStatics &>(static_cast<const D &>(*this))->abi_DecodeFromHexString(get(value), put(buffer)));
     return buffer;
 }
 
 template <typename D> hstring impl_ICryptographicBufferStatics<D>::EncodeToHexString(const Windows::Storage::Streams::IBuffer & buffer) const
 {
     hstring value;
-    check_hresult(shim()->abi_EncodeToHexString(get(buffer), put(value)));
+    check_hresult(static_cast<const ICryptographicBufferStatics &>(static_cast<const D &>(*this))->abi_EncodeToHexString(get(buffer), put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_ICryptographicBufferStatics<D>::DecodeFromBase64String(hstring_ref value) const
 {
     Windows::Storage::Streams::IBuffer buffer;
-    check_hresult(shim()->abi_DecodeFromBase64String(get(value), put(buffer)));
+    check_hresult(static_cast<const ICryptographicBufferStatics &>(static_cast<const D &>(*this))->abi_DecodeFromBase64String(get(value), put(buffer)));
     return buffer;
 }
 
 template <typename D> hstring impl_ICryptographicBufferStatics<D>::EncodeToBase64String(const Windows::Storage::Streams::IBuffer & buffer) const
 {
     hstring value;
-    check_hresult(shim()->abi_EncodeToBase64String(get(buffer), put(value)));
+    check_hresult(static_cast<const ICryptographicBufferStatics &>(static_cast<const D &>(*this))->abi_EncodeToBase64String(get(buffer), put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_ICryptographicBufferStatics<D>::ConvertStringToBinary(hstring_ref value, Windows::Security::Cryptography::BinaryStringEncoding encoding) const
 {
     Windows::Storage::Streams::IBuffer buffer;
-    check_hresult(shim()->abi_ConvertStringToBinary(get(value), encoding, put(buffer)));
+    check_hresult(static_cast<const ICryptographicBufferStatics &>(static_cast<const D &>(*this))->abi_ConvertStringToBinary(get(value), encoding, put(buffer)));
     return buffer;
 }
 
 template <typename D> hstring impl_ICryptographicBufferStatics<D>::ConvertBinaryToString(Windows::Security::Cryptography::BinaryStringEncoding encoding, const Windows::Storage::Streams::IBuffer & buffer) const
 {
     hstring value;
-    check_hresult(shim()->abi_ConvertBinaryToString(encoding, get(buffer), put(value)));
+    check_hresult(static_cast<const ICryptographicBufferStatics &>(static_cast<const D &>(*this))->abi_ConvertBinaryToString(encoding, get(buffer), put(value)));
     return value;
 }
 

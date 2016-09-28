@@ -91,26 +91,26 @@ namespace Windows::UI::Xaml::Resources {
 template <typename D> Windows::IInspectable impl_ICustomXamlResourceLoaderOverrides<D>::GetResource(hstring_ref resourceId, hstring_ref objectType, hstring_ref propertyName, hstring_ref propertyType) const
 {
     Windows::IInspectable returnValue;
-    check_hresult(shim()->abi_GetResource(get(resourceId), get(objectType), get(propertyName), get(propertyType), put(returnValue)));
+    check_hresult(static_cast<const ICustomXamlResourceLoaderOverrides &>(static_cast<const D &>(*this))->abi_GetResource(get(resourceId), get(objectType), get(propertyName), get(propertyType), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::Resources::CustomXamlResourceLoader impl_ICustomXamlResourceLoaderStatics<D>::Current() const
 {
     Windows::UI::Xaml::Resources::CustomXamlResourceLoader value { nullptr };
-    check_hresult(shim()->get_Current(put(value)));
+    check_hresult(static_cast<const ICustomXamlResourceLoaderStatics &>(static_cast<const D &>(*this))->get_Current(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICustomXamlResourceLoaderStatics<D>::Current(const Windows::UI::Xaml::Resources::CustomXamlResourceLoader & value) const
 {
-    check_hresult(shim()->put_Current(get(value)));
+    check_hresult(static_cast<const ICustomXamlResourceLoaderStatics &>(static_cast<const D &>(*this))->put_Current(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::Resources::CustomXamlResourceLoader impl_ICustomXamlResourceLoaderFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::Resources::CustomXamlResourceLoader instance { nullptr };
-    check_hresult(shim()->abi_CreateInstance(get(outer), put(inner), put(instance)));
+    check_hresult(static_cast<const ICustomXamlResourceLoaderFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(outer), put(inner), put(instance)));
     return instance;
 }
 

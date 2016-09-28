@@ -99,11 +99,11 @@ template <> struct traits<Windows::Storage::AccessCache::StorageItemMostRecently
 
 namespace Windows::Storage::AccessCache {
 
-template <typename T> class impl_IItemRemovedEventArgs;
-template <typename T> class impl_IStorageApplicationPermissionsStatics;
-template <typename T> class impl_IStorageItemAccessList;
-template <typename T> class impl_IStorageItemMostRecentlyUsedList;
-template <typename T> class impl_IStorageItemMostRecentlyUsedList2;
+template <typename T> struct impl_IItemRemovedEventArgs;
+template <typename T> struct impl_IStorageApplicationPermissionsStatics;
+template <typename T> struct impl_IStorageItemAccessList;
+template <typename T> struct impl_IStorageItemMostRecentlyUsedList;
+template <typename T> struct impl_IStorageItemMostRecentlyUsedList2;
 
 }
 
@@ -142,14 +142,12 @@ template <> struct traits<Windows::Storage::AccessCache::IStorageItemMostRecentl
 template <> struct traits<Windows::Storage::AccessCache::AccessListEntryView>
 {
     using abi = ABI::Windows::Storage::AccessCache::AccessListEntryView;
-    using default_interface = Windows::Foundation::Collections::IVectorView<Windows::Storage::AccessCache::AccessListEntry>;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.AccessCache.AccessListEntryView"; }
 };
 
 template <> struct traits<Windows::Storage::AccessCache::ItemRemovedEventArgs>
 {
     using abi = ABI::Windows::Storage::AccessCache::ItemRemovedEventArgs;
-    using default_interface = Windows::Storage::AccessCache::IItemRemovedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.AccessCache.ItemRemovedEventArgs"; }
 };
 
@@ -161,14 +159,12 @@ template <> struct traits<Windows::Storage::AccessCache::StorageApplicationPermi
 template <> struct traits<Windows::Storage::AccessCache::StorageItemAccessList>
 {
     using abi = ABI::Windows::Storage::AccessCache::StorageItemAccessList;
-    using default_interface = Windows::Storage::AccessCache::IStorageItemAccessList;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.AccessCache.StorageItemAccessList"; }
 };
 
 template <> struct traits<Windows::Storage::AccessCache::StorageItemMostRecentlyUsedList>
 {
     using abi = ABI::Windows::Storage::AccessCache::StorageItemMostRecentlyUsedList;
-    using default_interface = Windows::Storage::AccessCache::IStorageItemMostRecentlyUsedList;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Storage.AccessCache.StorageItemMostRecentlyUsedList"; }
 };
 

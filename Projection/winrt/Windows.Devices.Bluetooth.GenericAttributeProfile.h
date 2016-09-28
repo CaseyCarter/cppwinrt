@@ -2599,138 +2599,138 @@ namespace Windows::Devices::Bluetooth::GenericAttributeProfile {
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> impl_IGattDeviceServiceStatics<D>::FromIdAsync(hstring_ref deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> gattDeviceService;
-    check_hresult(shim()->abi_FromIdAsync(get(deviceId), put(gattDeviceService)));
+    check_hresult(static_cast<const IGattDeviceServiceStatics &>(static_cast<const D &>(*this))->abi_FromIdAsync(get(deviceId), put(gattDeviceService)));
     return gattDeviceService;
 }
 
 template <typename D> hstring impl_IGattDeviceServiceStatics<D>::GetDeviceSelectorFromUuid(GUID serviceUuid) const
 {
     hstring selector;
-    check_hresult(shim()->abi_GetDeviceSelectorFromUuid(serviceUuid, put(selector)));
+    check_hresult(static_cast<const IGattDeviceServiceStatics &>(static_cast<const D &>(*this))->abi_GetDeviceSelectorFromUuid(serviceUuid, put(selector)));
     return selector;
 }
 
 template <typename D> hstring impl_IGattDeviceServiceStatics<D>::GetDeviceSelectorFromShortId(uint16_t serviceShortId) const
 {
     hstring selector;
-    check_hresult(shim()->abi_GetDeviceSelectorFromShortId(serviceShortId, put(selector)));
+    check_hresult(static_cast<const IGattDeviceServiceStatics &>(static_cast<const D &>(*this))->abi_GetDeviceSelectorFromShortId(serviceShortId, put(selector)));
     return selector;
 }
 
 template <typename D> GUID impl_IGattDeviceServiceStatics<D>::ConvertShortIdToUuid(uint16_t shortId) const
 {
     GUID serviceUuid {};
-    check_hresult(shim()->abi_ConvertShortIdToUuid(shortId, &serviceUuid));
+    check_hresult(static_cast<const IGattDeviceServiceStatics &>(static_cast<const D &>(*this))->abi_ConvertShortIdToUuid(shortId, &serviceUuid));
     return serviceUuid;
 }
 
 template <typename D> GUID impl_IGattCharacteristicStatics<D>::ConvertShortIdToUuid(uint16_t shortId) const
 {
     GUID characteristicUuid {};
-    check_hresult(shim()->abi_ConvertShortIdToUuid(shortId, &characteristicUuid));
+    check_hresult(static_cast<const IGattCharacteristicStatics &>(static_cast<const D &>(*this))->abi_ConvertShortIdToUuid(shortId, &characteristicUuid));
     return characteristicUuid;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptor> impl_IGattCharacteristic<D>::GetDescriptors(GUID descriptorUuid) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptor> value;
-    check_hresult(shim()->abi_GetDescriptors(descriptorUuid, put(value)));
+    check_hresult(static_cast<const IGattCharacteristic &>(static_cast<const D &>(*this))->abi_GetDescriptors(descriptorUuid, put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicProperties impl_IGattCharacteristic<D>::CharacteristicProperties() const
 {
     Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicProperties value {};
-    check_hresult(shim()->get_CharacteristicProperties(&value));
+    check_hresult(static_cast<const IGattCharacteristic &>(static_cast<const D &>(*this))->get_CharacteristicProperties(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel impl_IGattCharacteristic<D>::ProtectionLevel() const
 {
     Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel value {};
-    check_hresult(shim()->get_ProtectionLevel(&value));
+    check_hresult(static_cast<const IGattCharacteristic &>(static_cast<const D &>(*this))->get_ProtectionLevel(&value));
     return value;
 }
 
 template <typename D> void impl_IGattCharacteristic<D>::ProtectionLevel(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel value) const
 {
-    check_hresult(shim()->put_ProtectionLevel(value));
+    check_hresult(static_cast<const IGattCharacteristic &>(static_cast<const D &>(*this))->put_ProtectionLevel(value));
 }
 
 template <typename D> hstring impl_IGattCharacteristic<D>::UserDescription() const
 {
     hstring value;
-    check_hresult(shim()->get_UserDescription(put(value)));
+    check_hresult(static_cast<const IGattCharacteristic &>(static_cast<const D &>(*this))->get_UserDescription(put(value)));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristic<D>::Uuid() const
 {
     GUID value {};
-    check_hresult(shim()->get_Uuid(&value));
+    check_hresult(static_cast<const IGattCharacteristic &>(static_cast<const D &>(*this))->get_Uuid(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IGattCharacteristic<D>::AttributeHandle() const
 {
     uint16_t value {};
-    check_hresult(shim()->get_AttributeHandle(&value));
+    check_hresult(static_cast<const IGattCharacteristic &>(static_cast<const D &>(*this))->get_AttributeHandle(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattPresentationFormat> impl_IGattCharacteristic<D>::PresentationFormats() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattPresentationFormat> value;
-    check_hresult(shim()->get_PresentationFormats(put(value)));
+    check_hresult(static_cast<const IGattCharacteristic &>(static_cast<const D &>(*this))->get_PresentationFormats(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadResult> impl_IGattCharacteristic<D>::ReadValueAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadResult> value;
-    check_hresult(shim()->abi_ReadValueAsync(put(value)));
+    check_hresult(static_cast<const IGattCharacteristic &>(static_cast<const D &>(*this))->abi_ReadValueAsync(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadResult> impl_IGattCharacteristic<D>::ReadValueAsync(Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadResult> value;
-    check_hresult(shim()->abi_ReadValueWithCacheModeAsync(cacheMode, put(value)));
+    check_hresult(static_cast<const IGattCharacteristic &>(static_cast<const D &>(*this))->abi_ReadValueWithCacheModeAsync(cacheMode, put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus> impl_IGattCharacteristic<D>::WriteValueAsync(const Windows::Storage::Streams::IBuffer & value) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus> asyncOp;
-    check_hresult(shim()->abi_WriteValueAsync(get(value), put(asyncOp)));
+    check_hresult(static_cast<const IGattCharacteristic &>(static_cast<const D &>(*this))->abi_WriteValueAsync(get(value), put(asyncOp)));
     return asyncOp;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus> impl_IGattCharacteristic<D>::WriteValueAsync(const Windows::Storage::Streams::IBuffer & value, Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteOption writeOption) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus> asyncOp;
-    check_hresult(shim()->abi_WriteValueWithOptionAsync(get(value), writeOption, put(asyncOp)));
+    check_hresult(static_cast<const IGattCharacteristic &>(static_cast<const D &>(*this))->abi_WriteValueWithOptionAsync(get(value), writeOption, put(asyncOp)));
     return asyncOp;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadClientCharacteristicConfigurationDescriptorResult> impl_IGattCharacteristic<D>::ReadClientCharacteristicConfigurationDescriptorAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadClientCharacteristicConfigurationDescriptorResult> asyncOp;
-    check_hresult(shim()->abi_ReadClientCharacteristicConfigurationDescriptorAsync(put(asyncOp)));
+    check_hresult(static_cast<const IGattCharacteristic &>(static_cast<const D &>(*this))->abi_ReadClientCharacteristicConfigurationDescriptorAsync(put(asyncOp)));
     return asyncOp;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus> impl_IGattCharacteristic<D>::WriteClientCharacteristicConfigurationDescriptorAsync(Windows::Devices::Bluetooth::GenericAttributeProfile::GattClientCharacteristicConfigurationDescriptorValue clientCharacteristicConfigurationDescriptorValue) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus> asyncOp;
-    check_hresult(shim()->abi_WriteClientCharacteristicConfigurationDescriptorAsync(clientCharacteristicConfigurationDescriptorValue, put(asyncOp)));
+    check_hresult(static_cast<const IGattCharacteristic &>(static_cast<const D &>(*this))->abi_WriteClientCharacteristicConfigurationDescriptorAsync(clientCharacteristicConfigurationDescriptorValue, put(asyncOp)));
     return asyncOp;
 }
 
 template <typename D> event_token impl_IGattCharacteristic<D>::ValueChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic, Windows::Devices::Bluetooth::GenericAttributeProfile::GattValueChangedEventArgs> & valueChangedHandler) const
 {
     event_token valueChangedEventCookie {};
-    check_hresult(shim()->add_ValueChanged(get(valueChangedHandler), &valueChangedEventCookie));
+    check_hresult(static_cast<const IGattCharacteristic &>(static_cast<const D &>(*this))->add_ValueChanged(get(valueChangedHandler), &valueChangedEventCookie));
     return valueChangedEventCookie;
 }
 
@@ -2741,1185 +2741,1185 @@ template <typename D> event_revoker<IGattCharacteristic> impl_IGattCharacteristi
 
 template <typename D> void impl_IGattCharacteristic<D>::ValueChanged(event_token valueChangedEventCookie) const
 {
-    check_hresult(shim()->remove_ValueChanged(valueChangedEventCookie));
+    check_hresult(static_cast<const IGattCharacteristic &>(static_cast<const D &>(*this))->remove_ValueChanged(valueChangedEventCookie));
 }
 
 template <typename D> Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService impl_IGattCharacteristic2<D>::Service() const
 {
     Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService value { nullptr };
-    check_hresult(shim()->get_Service(put(value)));
+    check_hresult(static_cast<const IGattCharacteristic2 &>(static_cast<const D &>(*this))->get_Service(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptor> impl_IGattCharacteristic2<D>::GetAllDescriptors() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptor> descriptors;
-    check_hresult(shim()->abi_GetAllDescriptors(put(descriptors)));
+    check_hresult(static_cast<const IGattCharacteristic2 &>(static_cast<const D &>(*this))->abi_GetAllDescriptors(put(descriptors)));
     return descriptors;
 }
 
 template <typename D> GUID impl_IGattDescriptorStatics<D>::ConvertShortIdToUuid(uint16_t shortId) const
 {
     GUID descriptorUuid {};
-    check_hresult(shim()->abi_ConvertShortIdToUuid(shortId, &descriptorUuid));
+    check_hresult(static_cast<const IGattDescriptorStatics &>(static_cast<const D &>(*this))->abi_ConvertShortIdToUuid(shortId, &descriptorUuid));
     return descriptorUuid;
 }
 
 template <typename D> Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel impl_IGattDescriptor<D>::ProtectionLevel() const
 {
     Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel value {};
-    check_hresult(shim()->get_ProtectionLevel(&value));
+    check_hresult(static_cast<const IGattDescriptor &>(static_cast<const D &>(*this))->get_ProtectionLevel(&value));
     return value;
 }
 
 template <typename D> void impl_IGattDescriptor<D>::ProtectionLevel(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel value) const
 {
-    check_hresult(shim()->put_ProtectionLevel(value));
+    check_hresult(static_cast<const IGattDescriptor &>(static_cast<const D &>(*this))->put_ProtectionLevel(value));
 }
 
 template <typename D> GUID impl_IGattDescriptor<D>::Uuid() const
 {
     GUID value {};
-    check_hresult(shim()->get_Uuid(&value));
+    check_hresult(static_cast<const IGattDescriptor &>(static_cast<const D &>(*this))->get_Uuid(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IGattDescriptor<D>::AttributeHandle() const
 {
     uint16_t value {};
-    check_hresult(shim()->get_AttributeHandle(&value));
+    check_hresult(static_cast<const IGattDescriptor &>(static_cast<const D &>(*this))->get_AttributeHandle(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadResult> impl_IGattDescriptor<D>::ReadValueAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadResult> value;
-    check_hresult(shim()->abi_ReadValueAsync(put(value)));
+    check_hresult(static_cast<const IGattDescriptor &>(static_cast<const D &>(*this))->abi_ReadValueAsync(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadResult> impl_IGattDescriptor<D>::ReadValueAsync(Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadResult> value;
-    check_hresult(shim()->abi_ReadValueWithCacheModeAsync(cacheMode, put(value)));
+    check_hresult(static_cast<const IGattDescriptor &>(static_cast<const D &>(*this))->abi_ReadValueWithCacheModeAsync(cacheMode, put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus> impl_IGattDescriptor<D>::WriteValueAsync(const Windows::Storage::Streams::IBuffer & value) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus> action;
-    check_hresult(shim()->abi_WriteValueAsync(get(value), put(action)));
+    check_hresult(static_cast<const IGattDescriptor &>(static_cast<const D &>(*this))->abi_WriteValueAsync(get(value), put(action)));
     return action;
 }
 
 template <typename D> uint8_t impl_IGattPresentationFormatStatics<D>::BluetoothSigAssignedNumbers() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_BluetoothSigAssignedNumbers(&value));
+    check_hresult(static_cast<const IGattPresentationFormatStatics &>(static_cast<const D &>(*this))->get_BluetoothSigAssignedNumbers(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IGattPresentationFormatTypesStatics<D>::Boolean() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_Boolean(&value));
+    check_hresult(static_cast<const IGattPresentationFormatTypesStatics &>(static_cast<const D &>(*this))->get_Boolean(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IGattPresentationFormatTypesStatics<D>::Bit2() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_Bit2(&value));
+    check_hresult(static_cast<const IGattPresentationFormatTypesStatics &>(static_cast<const D &>(*this))->get_Bit2(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IGattPresentationFormatTypesStatics<D>::Nibble() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_Nibble(&value));
+    check_hresult(static_cast<const IGattPresentationFormatTypesStatics &>(static_cast<const D &>(*this))->get_Nibble(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IGattPresentationFormatTypesStatics<D>::UInt8() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_UInt8(&value));
+    check_hresult(static_cast<const IGattPresentationFormatTypesStatics &>(static_cast<const D &>(*this))->get_UInt8(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IGattPresentationFormatTypesStatics<D>::UInt12() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_UInt12(&value));
+    check_hresult(static_cast<const IGattPresentationFormatTypesStatics &>(static_cast<const D &>(*this))->get_UInt12(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IGattPresentationFormatTypesStatics<D>::UInt16() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_UInt16(&value));
+    check_hresult(static_cast<const IGattPresentationFormatTypesStatics &>(static_cast<const D &>(*this))->get_UInt16(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IGattPresentationFormatTypesStatics<D>::UInt24() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_UInt24(&value));
+    check_hresult(static_cast<const IGattPresentationFormatTypesStatics &>(static_cast<const D &>(*this))->get_UInt24(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IGattPresentationFormatTypesStatics<D>::UInt32() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_UInt32(&value));
+    check_hresult(static_cast<const IGattPresentationFormatTypesStatics &>(static_cast<const D &>(*this))->get_UInt32(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IGattPresentationFormatTypesStatics<D>::UInt48() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_UInt48(&value));
+    check_hresult(static_cast<const IGattPresentationFormatTypesStatics &>(static_cast<const D &>(*this))->get_UInt48(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IGattPresentationFormatTypesStatics<D>::UInt64() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_UInt64(&value));
+    check_hresult(static_cast<const IGattPresentationFormatTypesStatics &>(static_cast<const D &>(*this))->get_UInt64(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IGattPresentationFormatTypesStatics<D>::UInt128() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_UInt128(&value));
+    check_hresult(static_cast<const IGattPresentationFormatTypesStatics &>(static_cast<const D &>(*this))->get_UInt128(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IGattPresentationFormatTypesStatics<D>::SInt8() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_SInt8(&value));
+    check_hresult(static_cast<const IGattPresentationFormatTypesStatics &>(static_cast<const D &>(*this))->get_SInt8(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IGattPresentationFormatTypesStatics<D>::SInt12() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_SInt12(&value));
+    check_hresult(static_cast<const IGattPresentationFormatTypesStatics &>(static_cast<const D &>(*this))->get_SInt12(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IGattPresentationFormatTypesStatics<D>::SInt16() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_SInt16(&value));
+    check_hresult(static_cast<const IGattPresentationFormatTypesStatics &>(static_cast<const D &>(*this))->get_SInt16(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IGattPresentationFormatTypesStatics<D>::SInt24() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_SInt24(&value));
+    check_hresult(static_cast<const IGattPresentationFormatTypesStatics &>(static_cast<const D &>(*this))->get_SInt24(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IGattPresentationFormatTypesStatics<D>::SInt32() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_SInt32(&value));
+    check_hresult(static_cast<const IGattPresentationFormatTypesStatics &>(static_cast<const D &>(*this))->get_SInt32(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IGattPresentationFormatTypesStatics<D>::SInt48() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_SInt48(&value));
+    check_hresult(static_cast<const IGattPresentationFormatTypesStatics &>(static_cast<const D &>(*this))->get_SInt48(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IGattPresentationFormatTypesStatics<D>::SInt64() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_SInt64(&value));
+    check_hresult(static_cast<const IGattPresentationFormatTypesStatics &>(static_cast<const D &>(*this))->get_SInt64(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IGattPresentationFormatTypesStatics<D>::SInt128() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_SInt128(&value));
+    check_hresult(static_cast<const IGattPresentationFormatTypesStatics &>(static_cast<const D &>(*this))->get_SInt128(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IGattPresentationFormatTypesStatics<D>::Float32() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_Float32(&value));
+    check_hresult(static_cast<const IGattPresentationFormatTypesStatics &>(static_cast<const D &>(*this))->get_Float32(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IGattPresentationFormatTypesStatics<D>::Float64() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_Float64(&value));
+    check_hresult(static_cast<const IGattPresentationFormatTypesStatics &>(static_cast<const D &>(*this))->get_Float64(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IGattPresentationFormatTypesStatics<D>::SFloat() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_SFloat(&value));
+    check_hresult(static_cast<const IGattPresentationFormatTypesStatics &>(static_cast<const D &>(*this))->get_SFloat(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IGattPresentationFormatTypesStatics<D>::Float() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_Float(&value));
+    check_hresult(static_cast<const IGattPresentationFormatTypesStatics &>(static_cast<const D &>(*this))->get_Float(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IGattPresentationFormatTypesStatics<D>::DUInt16() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_DUInt16(&value));
+    check_hresult(static_cast<const IGattPresentationFormatTypesStatics &>(static_cast<const D &>(*this))->get_DUInt16(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IGattPresentationFormatTypesStatics<D>::Utf8() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_Utf8(&value));
+    check_hresult(static_cast<const IGattPresentationFormatTypesStatics &>(static_cast<const D &>(*this))->get_Utf8(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IGattPresentationFormatTypesStatics<D>::Utf16() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_Utf16(&value));
+    check_hresult(static_cast<const IGattPresentationFormatTypesStatics &>(static_cast<const D &>(*this))->get_Utf16(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IGattPresentationFormatTypesStatics<D>::Struct() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_Struct(&value));
+    check_hresult(static_cast<const IGattPresentationFormatTypesStatics &>(static_cast<const D &>(*this))->get_Struct(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IGattPresentationFormat<D>::FormatType() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_FormatType(&value));
+    check_hresult(static_cast<const IGattPresentationFormat &>(static_cast<const D &>(*this))->get_FormatType(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IGattPresentationFormat<D>::Exponent() const
 {
     int32_t value {};
-    check_hresult(shim()->get_Exponent(&value));
+    check_hresult(static_cast<const IGattPresentationFormat &>(static_cast<const D &>(*this))->get_Exponent(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IGattPresentationFormat<D>::Unit() const
 {
     uint16_t value {};
-    check_hresult(shim()->get_Unit(&value));
+    check_hresult(static_cast<const IGattPresentationFormat &>(static_cast<const D &>(*this))->get_Unit(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IGattPresentationFormat<D>::Namespace() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_Namespace(&value));
+    check_hresult(static_cast<const IGattPresentationFormat &>(static_cast<const D &>(*this))->get_Namespace(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IGattPresentationFormat<D>::Description() const
 {
     uint16_t value {};
-    check_hresult(shim()->get_Description(&value));
+    check_hresult(static_cast<const IGattPresentationFormat &>(static_cast<const D &>(*this))->get_Description(&value));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IGattValueChangedEventArgs<D>::CharacteristicValue() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(shim()->get_CharacteristicValue(put(value)));
+    check_hresult(static_cast<const IGattValueChangedEventArgs &>(static_cast<const D &>(*this))->get_CharacteristicValue(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IGattValueChangedEventArgs<D>::Timestamp() const
 {
     Windows::Foundation::DateTime timestamp {};
-    check_hresult(shim()->get_Timestamp(put(timestamp)));
+    check_hresult(static_cast<const IGattValueChangedEventArgs &>(static_cast<const D &>(*this))->get_Timestamp(put(timestamp)));
     return timestamp;
 }
 
 template <typename D> GUID impl_IGattServiceUuidsStatics<D>::Battery() const
 {
     GUID value {};
-    check_hresult(shim()->get_Battery(&value));
+    check_hresult(static_cast<const IGattServiceUuidsStatics &>(static_cast<const D &>(*this))->get_Battery(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattServiceUuidsStatics<D>::BloodPressure() const
 {
     GUID value {};
-    check_hresult(shim()->get_BloodPressure(&value));
+    check_hresult(static_cast<const IGattServiceUuidsStatics &>(static_cast<const D &>(*this))->get_BloodPressure(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattServiceUuidsStatics<D>::CyclingSpeedAndCadence() const
 {
     GUID value {};
-    check_hresult(shim()->get_CyclingSpeedAndCadence(&value));
+    check_hresult(static_cast<const IGattServiceUuidsStatics &>(static_cast<const D &>(*this))->get_CyclingSpeedAndCadence(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattServiceUuidsStatics<D>::GenericAccess() const
 {
     GUID value {};
-    check_hresult(shim()->get_GenericAccess(&value));
+    check_hresult(static_cast<const IGattServiceUuidsStatics &>(static_cast<const D &>(*this))->get_GenericAccess(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattServiceUuidsStatics<D>::GenericAttribute() const
 {
     GUID value {};
-    check_hresult(shim()->get_GenericAttribute(&value));
+    check_hresult(static_cast<const IGattServiceUuidsStatics &>(static_cast<const D &>(*this))->get_GenericAttribute(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattServiceUuidsStatics<D>::Glucose() const
 {
     GUID value {};
-    check_hresult(shim()->get_Glucose(&value));
+    check_hresult(static_cast<const IGattServiceUuidsStatics &>(static_cast<const D &>(*this))->get_Glucose(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattServiceUuidsStatics<D>::HealthThermometer() const
 {
     GUID value {};
-    check_hresult(shim()->get_HealthThermometer(&value));
+    check_hresult(static_cast<const IGattServiceUuidsStatics &>(static_cast<const D &>(*this))->get_HealthThermometer(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattServiceUuidsStatics<D>::HeartRate() const
 {
     GUID value {};
-    check_hresult(shim()->get_HeartRate(&value));
+    check_hresult(static_cast<const IGattServiceUuidsStatics &>(static_cast<const D &>(*this))->get_HeartRate(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattServiceUuidsStatics<D>::RunningSpeedAndCadence() const
 {
     GUID value {};
-    check_hresult(shim()->get_RunningSpeedAndCadence(&value));
+    check_hresult(static_cast<const IGattServiceUuidsStatics &>(static_cast<const D &>(*this))->get_RunningSpeedAndCadence(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattServiceUuidsStatics2<D>::AlertNotification() const
 {
     GUID value {};
-    check_hresult(shim()->get_AlertNotification(&value));
+    check_hresult(static_cast<const IGattServiceUuidsStatics2 &>(static_cast<const D &>(*this))->get_AlertNotification(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattServiceUuidsStatics2<D>::CurrentTime() const
 {
     GUID value {};
-    check_hresult(shim()->get_CurrentTime(&value));
+    check_hresult(static_cast<const IGattServiceUuidsStatics2 &>(static_cast<const D &>(*this))->get_CurrentTime(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattServiceUuidsStatics2<D>::CyclingPower() const
 {
     GUID value {};
-    check_hresult(shim()->get_CyclingPower(&value));
+    check_hresult(static_cast<const IGattServiceUuidsStatics2 &>(static_cast<const D &>(*this))->get_CyclingPower(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattServiceUuidsStatics2<D>::DeviceInformation() const
 {
     GUID value {};
-    check_hresult(shim()->get_DeviceInformation(&value));
+    check_hresult(static_cast<const IGattServiceUuidsStatics2 &>(static_cast<const D &>(*this))->get_DeviceInformation(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattServiceUuidsStatics2<D>::HumanInterfaceDevice() const
 {
     GUID value {};
-    check_hresult(shim()->get_HumanInterfaceDevice(&value));
+    check_hresult(static_cast<const IGattServiceUuidsStatics2 &>(static_cast<const D &>(*this))->get_HumanInterfaceDevice(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattServiceUuidsStatics2<D>::ImmediateAlert() const
 {
     GUID value {};
-    check_hresult(shim()->get_ImmediateAlert(&value));
+    check_hresult(static_cast<const IGattServiceUuidsStatics2 &>(static_cast<const D &>(*this))->get_ImmediateAlert(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattServiceUuidsStatics2<D>::LinkLoss() const
 {
     GUID value {};
-    check_hresult(shim()->get_LinkLoss(&value));
+    check_hresult(static_cast<const IGattServiceUuidsStatics2 &>(static_cast<const D &>(*this))->get_LinkLoss(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattServiceUuidsStatics2<D>::LocationAndNavigation() const
 {
     GUID value {};
-    check_hresult(shim()->get_LocationAndNavigation(&value));
+    check_hresult(static_cast<const IGattServiceUuidsStatics2 &>(static_cast<const D &>(*this))->get_LocationAndNavigation(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattServiceUuidsStatics2<D>::NextDstChange() const
 {
     GUID value {};
-    check_hresult(shim()->get_NextDstChange(&value));
+    check_hresult(static_cast<const IGattServiceUuidsStatics2 &>(static_cast<const D &>(*this))->get_NextDstChange(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattServiceUuidsStatics2<D>::PhoneAlertStatus() const
 {
     GUID value {};
-    check_hresult(shim()->get_PhoneAlertStatus(&value));
+    check_hresult(static_cast<const IGattServiceUuidsStatics2 &>(static_cast<const D &>(*this))->get_PhoneAlertStatus(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattServiceUuidsStatics2<D>::ReferenceTimeUpdate() const
 {
     GUID value {};
-    check_hresult(shim()->get_ReferenceTimeUpdate(&value));
+    check_hresult(static_cast<const IGattServiceUuidsStatics2 &>(static_cast<const D &>(*this))->get_ReferenceTimeUpdate(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattServiceUuidsStatics2<D>::ScanParameters() const
 {
     GUID value {};
-    check_hresult(shim()->get_ScanParameters(&value));
+    check_hresult(static_cast<const IGattServiceUuidsStatics2 &>(static_cast<const D &>(*this))->get_ScanParameters(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattServiceUuidsStatics2<D>::TxPower() const
 {
     GUID value {};
-    check_hresult(shim()->get_TxPower(&value));
+    check_hresult(static_cast<const IGattServiceUuidsStatics2 &>(static_cast<const D &>(*this))->get_TxPower(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics<D>::BatteryLevel() const
 {
     GUID value {};
-    check_hresult(shim()->get_BatteryLevel(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics &>(static_cast<const D &>(*this))->get_BatteryLevel(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics<D>::BloodPressureFeature() const
 {
     GUID value {};
-    check_hresult(shim()->get_BloodPressureFeature(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics &>(static_cast<const D &>(*this))->get_BloodPressureFeature(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics<D>::BloodPressureMeasurement() const
 {
     GUID value {};
-    check_hresult(shim()->get_BloodPressureMeasurement(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics &>(static_cast<const D &>(*this))->get_BloodPressureMeasurement(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics<D>::BodySensorLocation() const
 {
     GUID value {};
-    check_hresult(shim()->get_BodySensorLocation(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics &>(static_cast<const D &>(*this))->get_BodySensorLocation(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics<D>::CscFeature() const
 {
     GUID value {};
-    check_hresult(shim()->get_CscFeature(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics &>(static_cast<const D &>(*this))->get_CscFeature(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics<D>::CscMeasurement() const
 {
     GUID value {};
-    check_hresult(shim()->get_CscMeasurement(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics &>(static_cast<const D &>(*this))->get_CscMeasurement(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics<D>::GlucoseFeature() const
 {
     GUID value {};
-    check_hresult(shim()->get_GlucoseFeature(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics &>(static_cast<const D &>(*this))->get_GlucoseFeature(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics<D>::GlucoseMeasurement() const
 {
     GUID value {};
-    check_hresult(shim()->get_GlucoseMeasurement(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics &>(static_cast<const D &>(*this))->get_GlucoseMeasurement(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics<D>::GlucoseMeasurementContext() const
 {
     GUID value {};
-    check_hresult(shim()->get_GlucoseMeasurementContext(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics &>(static_cast<const D &>(*this))->get_GlucoseMeasurementContext(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics<D>::HeartRateControlPoint() const
 {
     GUID value {};
-    check_hresult(shim()->get_HeartRateControlPoint(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics &>(static_cast<const D &>(*this))->get_HeartRateControlPoint(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics<D>::HeartRateMeasurement() const
 {
     GUID value {};
-    check_hresult(shim()->get_HeartRateMeasurement(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics &>(static_cast<const D &>(*this))->get_HeartRateMeasurement(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics<D>::IntermediateCuffPressure() const
 {
     GUID value {};
-    check_hresult(shim()->get_IntermediateCuffPressure(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics &>(static_cast<const D &>(*this))->get_IntermediateCuffPressure(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics<D>::IntermediateTemperature() const
 {
     GUID value {};
-    check_hresult(shim()->get_IntermediateTemperature(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics &>(static_cast<const D &>(*this))->get_IntermediateTemperature(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics<D>::MeasurementInterval() const
 {
     GUID value {};
-    check_hresult(shim()->get_MeasurementInterval(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics &>(static_cast<const D &>(*this))->get_MeasurementInterval(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics<D>::RecordAccessControlPoint() const
 {
     GUID value {};
-    check_hresult(shim()->get_RecordAccessControlPoint(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics &>(static_cast<const D &>(*this))->get_RecordAccessControlPoint(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics<D>::RscFeature() const
 {
     GUID value {};
-    check_hresult(shim()->get_RscFeature(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics &>(static_cast<const D &>(*this))->get_RscFeature(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics<D>::RscMeasurement() const
 {
     GUID value {};
-    check_hresult(shim()->get_RscMeasurement(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics &>(static_cast<const D &>(*this))->get_RscMeasurement(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics<D>::SCControlPoint() const
 {
     GUID value {};
-    check_hresult(shim()->get_SCControlPoint(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics &>(static_cast<const D &>(*this))->get_SCControlPoint(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics<D>::SensorLocation() const
 {
     GUID value {};
-    check_hresult(shim()->get_SensorLocation(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics &>(static_cast<const D &>(*this))->get_SensorLocation(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics<D>::TemperatureMeasurement() const
 {
     GUID value {};
-    check_hresult(shim()->get_TemperatureMeasurement(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics &>(static_cast<const D &>(*this))->get_TemperatureMeasurement(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics<D>::TemperatureType() const
 {
     GUID value {};
-    check_hresult(shim()->get_TemperatureType(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics &>(static_cast<const D &>(*this))->get_TemperatureType(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::AlertCategoryId() const
 {
     GUID value {};
-    check_hresult(shim()->get_AlertCategoryId(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_AlertCategoryId(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::AlertCategoryIdBitMask() const
 {
     GUID value {};
-    check_hresult(shim()->get_AlertCategoryIdBitMask(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_AlertCategoryIdBitMask(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::AlertLevel() const
 {
     GUID value {};
-    check_hresult(shim()->get_AlertLevel(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_AlertLevel(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::AlertNotificationControlPoint() const
 {
     GUID value {};
-    check_hresult(shim()->get_AlertNotificationControlPoint(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_AlertNotificationControlPoint(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::AlertStatus() const
 {
     GUID value {};
-    check_hresult(shim()->get_AlertStatus(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_AlertStatus(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::GapAppearance() const
 {
     GUID value {};
-    check_hresult(shim()->get_GapAppearance(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_GapAppearance(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::BootKeyboardInputReport() const
 {
     GUID value {};
-    check_hresult(shim()->get_BootKeyboardInputReport(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_BootKeyboardInputReport(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::BootKeyboardOutputReport() const
 {
     GUID value {};
-    check_hresult(shim()->get_BootKeyboardOutputReport(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_BootKeyboardOutputReport(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::BootMouseInputReport() const
 {
     GUID value {};
-    check_hresult(shim()->get_BootMouseInputReport(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_BootMouseInputReport(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::CurrentTime() const
 {
     GUID value {};
-    check_hresult(shim()->get_CurrentTime(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_CurrentTime(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::CyclingPowerControlPoint() const
 {
     GUID value {};
-    check_hresult(shim()->get_CyclingPowerControlPoint(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_CyclingPowerControlPoint(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::CyclingPowerFeature() const
 {
     GUID value {};
-    check_hresult(shim()->get_CyclingPowerFeature(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_CyclingPowerFeature(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::CyclingPowerMeasurement() const
 {
     GUID value {};
-    check_hresult(shim()->get_CyclingPowerMeasurement(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_CyclingPowerMeasurement(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::CyclingPowerVector() const
 {
     GUID value {};
-    check_hresult(shim()->get_CyclingPowerVector(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_CyclingPowerVector(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::DateTime() const
 {
     GUID value {};
-    check_hresult(shim()->get_DateTime(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_DateTime(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::DayDateTime() const
 {
     GUID value {};
-    check_hresult(shim()->get_DayDateTime(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_DayDateTime(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::DayOfWeek() const
 {
     GUID value {};
-    check_hresult(shim()->get_DayOfWeek(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_DayOfWeek(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::GapDeviceName() const
 {
     GUID value {};
-    check_hresult(shim()->get_GapDeviceName(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_GapDeviceName(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::DstOffset() const
 {
     GUID value {};
-    check_hresult(shim()->get_DstOffset(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_DstOffset(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::ExactTime256() const
 {
     GUID value {};
-    check_hresult(shim()->get_ExactTime256(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_ExactTime256(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::FirmwareRevisionString() const
 {
     GUID value {};
-    check_hresult(shim()->get_FirmwareRevisionString(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_FirmwareRevisionString(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::HardwareRevisionString() const
 {
     GUID value {};
-    check_hresult(shim()->get_HardwareRevisionString(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_HardwareRevisionString(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::HidControlPoint() const
 {
     GUID value {};
-    check_hresult(shim()->get_HidControlPoint(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_HidControlPoint(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::HidInformation() const
 {
     GUID value {};
-    check_hresult(shim()->get_HidInformation(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_HidInformation(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::Ieee1107320601RegulatoryCertificationDataList() const
 {
     GUID value {};
-    check_hresult(shim()->get_Ieee1107320601RegulatoryCertificationDataList(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_Ieee1107320601RegulatoryCertificationDataList(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::LnControlPoint() const
 {
     GUID value {};
-    check_hresult(shim()->get_LnControlPoint(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_LnControlPoint(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::LnFeature() const
 {
     GUID value {};
-    check_hresult(shim()->get_LnFeature(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_LnFeature(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::LocalTimeInformation() const
 {
     GUID value {};
-    check_hresult(shim()->get_LocalTimeInformation(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_LocalTimeInformation(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::LocationAndSpeed() const
 {
     GUID value {};
-    check_hresult(shim()->get_LocationAndSpeed(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_LocationAndSpeed(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::ManufacturerNameString() const
 {
     GUID value {};
-    check_hresult(shim()->get_ManufacturerNameString(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_ManufacturerNameString(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::ModelNumberString() const
 {
     GUID value {};
-    check_hresult(shim()->get_ModelNumberString(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_ModelNumberString(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::Navigation() const
 {
     GUID value {};
-    check_hresult(shim()->get_Navigation(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_Navigation(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::NewAlert() const
 {
     GUID value {};
-    check_hresult(shim()->get_NewAlert(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_NewAlert(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::GapPeripheralPreferredConnectionParameters() const
 {
     GUID value {};
-    check_hresult(shim()->get_GapPeripheralPreferredConnectionParameters(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_GapPeripheralPreferredConnectionParameters(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::GapPeripheralPrivacyFlag() const
 {
     GUID value {};
-    check_hresult(shim()->get_GapPeripheralPrivacyFlag(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_GapPeripheralPrivacyFlag(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::PnpId() const
 {
     GUID value {};
-    check_hresult(shim()->get_PnpId(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_PnpId(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::PositionQuality() const
 {
     GUID value {};
-    check_hresult(shim()->get_PositionQuality(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_PositionQuality(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::ProtocolMode() const
 {
     GUID value {};
-    check_hresult(shim()->get_ProtocolMode(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_ProtocolMode(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::GapReconnectionAddress() const
 {
     GUID value {};
-    check_hresult(shim()->get_GapReconnectionAddress(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_GapReconnectionAddress(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::ReferenceTimeInformation() const
 {
     GUID value {};
-    check_hresult(shim()->get_ReferenceTimeInformation(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_ReferenceTimeInformation(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::Report() const
 {
     GUID value {};
-    check_hresult(shim()->get_Report(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_Report(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::ReportMap() const
 {
     GUID value {};
-    check_hresult(shim()->get_ReportMap(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_ReportMap(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::RingerControlPoint() const
 {
     GUID value {};
-    check_hresult(shim()->get_RingerControlPoint(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_RingerControlPoint(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::RingerSetting() const
 {
     GUID value {};
-    check_hresult(shim()->get_RingerSetting(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_RingerSetting(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::ScanIntervalWindow() const
 {
     GUID value {};
-    check_hresult(shim()->get_ScanIntervalWindow(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_ScanIntervalWindow(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::ScanRefresh() const
 {
     GUID value {};
-    check_hresult(shim()->get_ScanRefresh(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_ScanRefresh(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::SerialNumberString() const
 {
     GUID value {};
-    check_hresult(shim()->get_SerialNumberString(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_SerialNumberString(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::GattServiceChanged() const
 {
     GUID value {};
-    check_hresult(shim()->get_GattServiceChanged(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_GattServiceChanged(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::SoftwareRevisionString() const
 {
     GUID value {};
-    check_hresult(shim()->get_SoftwareRevisionString(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_SoftwareRevisionString(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::SupportedNewAlertCategory() const
 {
     GUID value {};
-    check_hresult(shim()->get_SupportedNewAlertCategory(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_SupportedNewAlertCategory(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::SupportUnreadAlertCategory() const
 {
     GUID value {};
-    check_hresult(shim()->get_SupportUnreadAlertCategory(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_SupportUnreadAlertCategory(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::SystemId() const
 {
     GUID value {};
-    check_hresult(shim()->get_SystemId(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_SystemId(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::TimeAccuracy() const
 {
     GUID value {};
-    check_hresult(shim()->get_TimeAccuracy(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_TimeAccuracy(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::TimeSource() const
 {
     GUID value {};
-    check_hresult(shim()->get_TimeSource(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_TimeSource(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::TimeUpdateControlPoint() const
 {
     GUID value {};
-    check_hresult(shim()->get_TimeUpdateControlPoint(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_TimeUpdateControlPoint(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::TimeUpdateState() const
 {
     GUID value {};
-    check_hresult(shim()->get_TimeUpdateState(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_TimeUpdateState(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::TimeWithDst() const
 {
     GUID value {};
-    check_hresult(shim()->get_TimeWithDst(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_TimeWithDst(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::TimeZone() const
 {
     GUID value {};
-    check_hresult(shim()->get_TimeZone(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_TimeZone(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::TxPowerLevel() const
 {
     GUID value {};
-    check_hresult(shim()->get_TxPowerLevel(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_TxPowerLevel(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattCharacteristicUuidsStatics2<D>::UnreadAlertStatus() const
 {
     GUID value {};
-    check_hresult(shim()->get_UnreadAlertStatus(&value));
+    check_hresult(static_cast<const IGattCharacteristicUuidsStatics2 &>(static_cast<const D &>(*this))->get_UnreadAlertStatus(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattDescriptorUuidsStatics<D>::CharacteristicAggregateFormat() const
 {
     GUID value {};
-    check_hresult(shim()->get_CharacteristicAggregateFormat(&value));
+    check_hresult(static_cast<const IGattDescriptorUuidsStatics &>(static_cast<const D &>(*this))->get_CharacteristicAggregateFormat(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattDescriptorUuidsStatics<D>::CharacteristicExtendedProperties() const
 {
     GUID value {};
-    check_hresult(shim()->get_CharacteristicExtendedProperties(&value));
+    check_hresult(static_cast<const IGattDescriptorUuidsStatics &>(static_cast<const D &>(*this))->get_CharacteristicExtendedProperties(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattDescriptorUuidsStatics<D>::CharacteristicPresentationFormat() const
 {
     GUID value {};
-    check_hresult(shim()->get_CharacteristicPresentationFormat(&value));
+    check_hresult(static_cast<const IGattDescriptorUuidsStatics &>(static_cast<const D &>(*this))->get_CharacteristicPresentationFormat(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattDescriptorUuidsStatics<D>::CharacteristicUserDescription() const
 {
     GUID value {};
-    check_hresult(shim()->get_CharacteristicUserDescription(&value));
+    check_hresult(static_cast<const IGattDescriptorUuidsStatics &>(static_cast<const D &>(*this))->get_CharacteristicUserDescription(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattDescriptorUuidsStatics<D>::ClientCharacteristicConfiguration() const
 {
     GUID value {};
-    check_hresult(shim()->get_ClientCharacteristicConfiguration(&value));
+    check_hresult(static_cast<const IGattDescriptorUuidsStatics &>(static_cast<const D &>(*this))->get_ClientCharacteristicConfiguration(&value));
     return value;
 }
 
 template <typename D> GUID impl_IGattDescriptorUuidsStatics<D>::ServerCharacteristicConfiguration() const
 {
     GUID value {};
-    check_hresult(shim()->get_ServerCharacteristicConfiguration(&value));
+    check_hresult(static_cast<const IGattDescriptorUuidsStatics &>(static_cast<const D &>(*this))->get_ServerCharacteristicConfiguration(&value));
     return value;
 }
 
 template <typename D> void impl_IGattReliableWriteTransaction<D>::WriteValue(const Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic & characteristic, const Windows::Storage::Streams::IBuffer & value) const
 {
-    check_hresult(shim()->abi_WriteValue(get(characteristic), get(value)));
+    check_hresult(static_cast<const IGattReliableWriteTransaction &>(static_cast<const D &>(*this))->abi_WriteValue(get(characteristic), get(value)));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus> impl_IGattReliableWriteTransaction<D>::CommitAsync() const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus> asyncOp;
-    check_hresult(shim()->abi_CommitAsync(put(asyncOp)));
+    check_hresult(static_cast<const IGattReliableWriteTransaction &>(static_cast<const D &>(*this))->abi_CommitAsync(put(asyncOp)));
     return asyncOp;
 }
 
 template <typename D> Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus impl_IGattReadResult<D>::Status() const
 {
     Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus value {};
-    check_hresult(shim()->get_Status(&value));
+    check_hresult(static_cast<const IGattReadResult &>(static_cast<const D &>(*this))->get_Status(&value));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IGattReadResult<D>::Value() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(shim()->get_Value(put(value)));
+    check_hresult(static_cast<const IGattReadResult &>(static_cast<const D &>(*this))->get_Value(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus impl_IGattReadClientCharacteristicConfigurationDescriptorResult<D>::Status() const
 {
     Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus value {};
-    check_hresult(shim()->get_Status(&value));
+    check_hresult(static_cast<const IGattReadClientCharacteristicConfigurationDescriptorResult &>(static_cast<const D &>(*this))->get_Status(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Bluetooth::GenericAttributeProfile::GattClientCharacteristicConfigurationDescriptorValue impl_IGattReadClientCharacteristicConfigurationDescriptorResult<D>::ClientCharacteristicConfigurationDescriptor() const
 {
     Windows::Devices::Bluetooth::GenericAttributeProfile::GattClientCharacteristicConfigurationDescriptorValue value {};
-    check_hresult(shim()->get_ClientCharacteristicConfigurationDescriptor(&value));
+    check_hresult(static_cast<const IGattReadClientCharacteristicConfigurationDescriptorResult &>(static_cast<const D &>(*this))->get_ClientCharacteristicConfigurationDescriptor(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic> impl_IGattDeviceService<D>::GetCharacteristics(GUID characteristicUuid) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic> value;
-    check_hresult(shim()->abi_GetCharacteristics(characteristicUuid, put(value)));
+    check_hresult(static_cast<const IGattDeviceService &>(static_cast<const D &>(*this))->abi_GetCharacteristics(characteristicUuid, put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> impl_IGattDeviceService<D>::GetIncludedServices(GUID serviceUuid) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> value;
-    check_hresult(shim()->abi_GetIncludedServices(serviceUuid, put(value)));
+    check_hresult(static_cast<const IGattDeviceService &>(static_cast<const D &>(*this))->abi_GetIncludedServices(serviceUuid, put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IGattDeviceService<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(shim()->get_DeviceId(put(value)));
+    check_hresult(static_cast<const IGattDeviceService &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> GUID impl_IGattDeviceService<D>::Uuid() const
 {
     GUID value {};
-    check_hresult(shim()->get_Uuid(&value));
+    check_hresult(static_cast<const IGattDeviceService &>(static_cast<const D &>(*this))->get_Uuid(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IGattDeviceService<D>::AttributeHandle() const
 {
     uint16_t value {};
-    check_hresult(shim()->get_AttributeHandle(&value));
+    check_hresult(static_cast<const IGattDeviceService &>(static_cast<const D &>(*this))->get_AttributeHandle(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Bluetooth::BluetoothLEDevice impl_IGattDeviceService2<D>::Device() const
 {
     Windows::Devices::Bluetooth::BluetoothLEDevice value { nullptr };
-    check_hresult(shim()->get_Device(put(value)));
+    check_hresult(static_cast<const IGattDeviceService2 &>(static_cast<const D &>(*this))->get_Device(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> impl_IGattDeviceService2<D>::ParentServices() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> value;
-    check_hresult(shim()->get_ParentServices(put(value)));
+    check_hresult(static_cast<const IGattDeviceService2 &>(static_cast<const D &>(*this))->get_ParentServices(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic> impl_IGattDeviceService2<D>::GetAllCharacteristics() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic> characteristics;
-    check_hresult(shim()->abi_GetAllCharacteristics(put(characteristics)));
+    check_hresult(static_cast<const IGattDeviceService2 &>(static_cast<const D &>(*this))->abi_GetAllCharacteristics(put(characteristics)));
     return characteristics;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> impl_IGattDeviceService2<D>::GetAllIncludedServices() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> includedServices;
-    check_hresult(shim()->abi_GetAllIncludedServices(put(includedServices)));
+    check_hresult(static_cast<const IGattDeviceService2 &>(static_cast<const D &>(*this))->abi_GetAllIncludedServices(put(includedServices)));
     return includedServices;
 }
 

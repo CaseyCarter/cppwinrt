@@ -80,10 +80,10 @@ template <> struct traits<Windows::Devices::SerialCommunication::SerialDevice> {
 
 namespace Windows::Devices::SerialCommunication {
 
-template <typename T> class impl_IErrorReceivedEventArgs;
-template <typename T> class impl_IPinChangedEventArgs;
-template <typename T> class impl_ISerialDevice;
-template <typename T> class impl_ISerialDeviceStatics;
+template <typename T> struct impl_IErrorReceivedEventArgs;
+template <typename T> struct impl_IPinChangedEventArgs;
+template <typename T> struct impl_ISerialDevice;
+template <typename T> struct impl_ISerialDeviceStatics;
 
 }
 
@@ -116,21 +116,18 @@ template <> struct traits<Windows::Devices::SerialCommunication::ISerialDeviceSt
 template <> struct traits<Windows::Devices::SerialCommunication::ErrorReceivedEventArgs>
 {
     using abi = ABI::Windows::Devices::SerialCommunication::ErrorReceivedEventArgs;
-    using default_interface = Windows::Devices::SerialCommunication::IErrorReceivedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.SerialCommunication.ErrorReceivedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::SerialCommunication::PinChangedEventArgs>
 {
     using abi = ABI::Windows::Devices::SerialCommunication::PinChangedEventArgs;
-    using default_interface = Windows::Devices::SerialCommunication::IPinChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.SerialCommunication.PinChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::SerialCommunication::SerialDevice>
 {
     using abi = ABI::Windows::Devices::SerialCommunication::SerialDevice;
-    using default_interface = Windows::Devices::SerialCommunication::ISerialDevice;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.SerialCommunication.SerialDevice"; }
 };
 

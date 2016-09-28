@@ -182,22 +182,22 @@ template <> struct traits<Windows::Devices::Bluetooth::Advertisement::BluetoothL
 
 namespace Windows::Devices::Bluetooth::Advertisement {
 
-template <typename T> class impl_IBluetoothLEAdvertisement;
-template <typename T> class impl_IBluetoothLEAdvertisementBytePattern;
-template <typename T> class impl_IBluetoothLEAdvertisementBytePatternFactory;
-template <typename T> class impl_IBluetoothLEAdvertisementDataSection;
-template <typename T> class impl_IBluetoothLEAdvertisementDataSectionFactory;
-template <typename T> class impl_IBluetoothLEAdvertisementDataTypesStatics;
-template <typename T> class impl_IBluetoothLEAdvertisementFilter;
-template <typename T> class impl_IBluetoothLEAdvertisementPublisher;
-template <typename T> class impl_IBluetoothLEAdvertisementPublisherFactory;
-template <typename T> class impl_IBluetoothLEAdvertisementPublisherStatusChangedEventArgs;
-template <typename T> class impl_IBluetoothLEAdvertisementReceivedEventArgs;
-template <typename T> class impl_IBluetoothLEAdvertisementWatcher;
-template <typename T> class impl_IBluetoothLEAdvertisementWatcherFactory;
-template <typename T> class impl_IBluetoothLEAdvertisementWatcherStoppedEventArgs;
-template <typename T> class impl_IBluetoothLEManufacturerData;
-template <typename T> class impl_IBluetoothLEManufacturerDataFactory;
+template <typename T> struct impl_IBluetoothLEAdvertisement;
+template <typename T> struct impl_IBluetoothLEAdvertisementBytePattern;
+template <typename T> struct impl_IBluetoothLEAdvertisementBytePatternFactory;
+template <typename T> struct impl_IBluetoothLEAdvertisementDataSection;
+template <typename T> struct impl_IBluetoothLEAdvertisementDataSectionFactory;
+template <typename T> struct impl_IBluetoothLEAdvertisementDataTypesStatics;
+template <typename T> struct impl_IBluetoothLEAdvertisementFilter;
+template <typename T> struct impl_IBluetoothLEAdvertisementPublisher;
+template <typename T> struct impl_IBluetoothLEAdvertisementPublisherFactory;
+template <typename T> struct impl_IBluetoothLEAdvertisementPublisherStatusChangedEventArgs;
+template <typename T> struct impl_IBluetoothLEAdvertisementReceivedEventArgs;
+template <typename T> struct impl_IBluetoothLEAdvertisementWatcher;
+template <typename T> struct impl_IBluetoothLEAdvertisementWatcherFactory;
+template <typename T> struct impl_IBluetoothLEAdvertisementWatcherStoppedEventArgs;
+template <typename T> struct impl_IBluetoothLEManufacturerData;
+template <typename T> struct impl_IBluetoothLEManufacturerDataFactory;
 
 }
 
@@ -302,21 +302,18 @@ template <> struct traits<Windows::Devices::Bluetooth::Advertisement::IBluetooth
 template <> struct traits<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisement>
 {
     using abi = ABI::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisement;
-    using default_interface = Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisement;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisement"; }
 };
 
 template <> struct traits<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementBytePattern>
 {
     using abi = ABI::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementBytePattern;
-    using default_interface = Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementBytePattern;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementBytePattern"; }
 };
 
 template <> struct traits<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementDataSection>
 {
     using abi = ABI::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementDataSection;
-    using default_interface = Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementDataSection;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementDataSection"; }
 };
 
@@ -328,49 +325,42 @@ template <> struct traits<Windows::Devices::Bluetooth::Advertisement::BluetoothL
 template <> struct traits<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFilter>
 {
     using abi = ABI::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFilter;
-    using default_interface = Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementFilter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementFilter"; }
 };
 
 template <> struct traits<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisher>
 {
     using abi = ABI::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisher;
-    using default_interface = Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementPublisher;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPublisher"; }
 };
 
 template <> struct traits<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisherStatusChangedEventArgs>
 {
     using abi = ABI::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisherStatusChangedEventArgs;
-    using default_interface = Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementPublisherStatusChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementPublisherStatusChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementReceivedEventArgs>
 {
     using abi = ABI::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementReceivedEventArgs;
-    using default_interface = Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementReceivedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementReceivedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcher>
 {
     using abi = ABI::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcher;
-    using default_interface = Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementWatcher;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcher"; }
 };
 
 template <> struct traits<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcherStoppedEventArgs>
 {
     using abi = ABI::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcherStoppedEventArgs;
-    using default_interface = Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisementWatcherStoppedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcherStoppedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::Bluetooth::Advertisement::BluetoothLEManufacturerData>
 {
     using abi = ABI::Windows::Devices::Bluetooth::Advertisement::BluetoothLEManufacturerData;
-    using default_interface = Windows::Devices::Bluetooth::Advertisement::IBluetoothLEManufacturerData;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Bluetooth.Advertisement.BluetoothLEManufacturerData"; }
 };
 

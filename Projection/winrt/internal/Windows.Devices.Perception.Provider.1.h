@@ -163,23 +163,23 @@ template <> struct traits<Windows::Devices::Perception::Provider::PerceptionVide
 
 namespace Windows::Devices::Perception::Provider {
 
-template <typename T> class impl_IKnownPerceptionFrameKindStatics;
-template <typename T> class impl_IPerceptionControlGroup;
-template <typename T> class impl_IPerceptionControlGroupFactory;
-template <typename T> class impl_IPerceptionCorrelation;
-template <typename T> class impl_IPerceptionCorrelationFactory;
-template <typename T> class impl_IPerceptionCorrelationGroup;
-template <typename T> class impl_IPerceptionCorrelationGroupFactory;
-template <typename T> class impl_IPerceptionFaceAuthenticationGroup;
-template <typename T> class impl_IPerceptionFaceAuthenticationGroupFactory;
-template <typename T> class impl_IPerceptionFrame;
-template <typename T> class impl_IPerceptionFrameProvider;
-template <typename T> class impl_IPerceptionFrameProviderInfo;
-template <typename T> class impl_IPerceptionFrameProviderManager;
-template <typename T> class impl_IPerceptionFrameProviderManagerServiceStatics;
-template <typename T> class impl_IPerceptionPropertyChangeRequest;
-template <typename T> class impl_IPerceptionVideoFrameAllocator;
-template <typename T> class impl_IPerceptionVideoFrameAllocatorFactory;
+template <typename T> struct impl_IKnownPerceptionFrameKindStatics;
+template <typename T> struct impl_IPerceptionControlGroup;
+template <typename T> struct impl_IPerceptionControlGroupFactory;
+template <typename T> struct impl_IPerceptionCorrelation;
+template <typename T> struct impl_IPerceptionCorrelationFactory;
+template <typename T> struct impl_IPerceptionCorrelationGroup;
+template <typename T> struct impl_IPerceptionCorrelationGroupFactory;
+template <typename T> struct impl_IPerceptionFaceAuthenticationGroup;
+template <typename T> struct impl_IPerceptionFaceAuthenticationGroupFactory;
+template <typename T> struct impl_IPerceptionFrame;
+template <typename T> struct impl_IPerceptionFrameProvider;
+template <typename T> struct impl_IPerceptionFrameProviderInfo;
+template <typename T> struct impl_IPerceptionFrameProviderManager;
+template <typename T> struct impl_IPerceptionFrameProviderManagerServiceStatics;
+template <typename T> struct impl_IPerceptionPropertyChangeRequest;
+template <typename T> struct impl_IPerceptionVideoFrameAllocator;
+template <typename T> struct impl_IPerceptionVideoFrameAllocatorFactory;
 template <typename T> struct impl_PerceptionStartFaceAuthenticationHandler;
 template <typename T> struct impl_PerceptionStopFaceAuthenticationHandler;
 
@@ -307,42 +307,36 @@ template <> struct traits<Windows::Devices::Perception::Provider::KnownPerceptio
 template <> struct traits<Windows::Devices::Perception::Provider::PerceptionControlGroup>
 {
     using abi = ABI::Windows::Devices::Perception::Provider::PerceptionControlGroup;
-    using default_interface = Windows::Devices::Perception::Provider::IPerceptionControlGroup;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.Provider.PerceptionControlGroup"; }
 };
 
 template <> struct traits<Windows::Devices::Perception::Provider::PerceptionCorrelation>
 {
     using abi = ABI::Windows::Devices::Perception::Provider::PerceptionCorrelation;
-    using default_interface = Windows::Devices::Perception::Provider::IPerceptionCorrelation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.Provider.PerceptionCorrelation"; }
 };
 
 template <> struct traits<Windows::Devices::Perception::Provider::PerceptionCorrelationGroup>
 {
     using abi = ABI::Windows::Devices::Perception::Provider::PerceptionCorrelationGroup;
-    using default_interface = Windows::Devices::Perception::Provider::IPerceptionCorrelationGroup;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.Provider.PerceptionCorrelationGroup"; }
 };
 
 template <> struct traits<Windows::Devices::Perception::Provider::PerceptionFaceAuthenticationGroup>
 {
     using abi = ABI::Windows::Devices::Perception::Provider::PerceptionFaceAuthenticationGroup;
-    using default_interface = Windows::Devices::Perception::Provider::IPerceptionFaceAuthenticationGroup;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.Provider.PerceptionFaceAuthenticationGroup"; }
 };
 
 template <> struct traits<Windows::Devices::Perception::Provider::PerceptionFrame>
 {
     using abi = ABI::Windows::Devices::Perception::Provider::PerceptionFrame;
-    using default_interface = Windows::Devices::Perception::Provider::IPerceptionFrame;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.Provider.PerceptionFrame"; }
 };
 
 template <> struct traits<Windows::Devices::Perception::Provider::PerceptionFrameProviderInfo>
 {
     using abi = ABI::Windows::Devices::Perception::Provider::PerceptionFrameProviderInfo;
-    using default_interface = Windows::Devices::Perception::Provider::IPerceptionFrameProviderInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.Provider.PerceptionFrameProviderInfo"; }
 };
 
@@ -354,14 +348,12 @@ template <> struct traits<Windows::Devices::Perception::Provider::PerceptionFram
 template <> struct traits<Windows::Devices::Perception::Provider::PerceptionPropertyChangeRequest>
 {
     using abi = ABI::Windows::Devices::Perception::Provider::PerceptionPropertyChangeRequest;
-    using default_interface = Windows::Devices::Perception::Provider::IPerceptionPropertyChangeRequest;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.Provider.PerceptionPropertyChangeRequest"; }
 };
 
 template <> struct traits<Windows::Devices::Perception::Provider::PerceptionVideoFrameAllocator>
 {
     using abi = ABI::Windows::Devices::Perception::Provider::PerceptionVideoFrameAllocator;
-    using default_interface = Windows::Devices::Perception::Provider::IPerceptionVideoFrameAllocator;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Perception.Provider.PerceptionVideoFrameAllocator"; }
 };
 

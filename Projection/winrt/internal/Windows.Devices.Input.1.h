@@ -114,15 +114,15 @@ template <> struct traits<Windows::Devices::Input::TouchCapabilities> { using de
 
 namespace Windows::Devices::Input {
 
-template <typename T> class impl_IKeyboardCapabilities;
-template <typename T> class impl_IMouseCapabilities;
-template <typename T> class impl_IMouseDevice;
-template <typename T> class impl_IMouseDeviceStatics;
-template <typename T> class impl_IMouseEventArgs;
-template <typename T> class impl_IPointerDevice;
-template <typename T> class impl_IPointerDevice2;
-template <typename T> class impl_IPointerDeviceStatics;
-template <typename T> class impl_ITouchCapabilities;
+template <typename T> struct impl_IKeyboardCapabilities;
+template <typename T> struct impl_IMouseCapabilities;
+template <typename T> struct impl_IMouseDevice;
+template <typename T> struct impl_IMouseDeviceStatics;
+template <typename T> struct impl_IMouseEventArgs;
+template <typename T> struct impl_IPointerDevice;
+template <typename T> struct impl_IPointerDevice2;
+template <typename T> struct impl_IPointerDeviceStatics;
+template <typename T> struct impl_ITouchCapabilities;
 
 }
 
@@ -185,42 +185,36 @@ template <> struct traits<Windows::Devices::Input::ITouchCapabilities>
 template <> struct traits<Windows::Devices::Input::KeyboardCapabilities>
 {
     using abi = ABI::Windows::Devices::Input::KeyboardCapabilities;
-    using default_interface = Windows::Devices::Input::IKeyboardCapabilities;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Input.KeyboardCapabilities"; }
 };
 
 template <> struct traits<Windows::Devices::Input::MouseCapabilities>
 {
     using abi = ABI::Windows::Devices::Input::MouseCapabilities;
-    using default_interface = Windows::Devices::Input::IMouseCapabilities;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Input.MouseCapabilities"; }
 };
 
 template <> struct traits<Windows::Devices::Input::MouseDevice>
 {
     using abi = ABI::Windows::Devices::Input::MouseDevice;
-    using default_interface = Windows::Devices::Input::IMouseDevice;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Input.MouseDevice"; }
 };
 
 template <> struct traits<Windows::Devices::Input::MouseEventArgs>
 {
     using abi = ABI::Windows::Devices::Input::MouseEventArgs;
-    using default_interface = Windows::Devices::Input::IMouseEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Input.MouseEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::Input::PointerDevice>
 {
     using abi = ABI::Windows::Devices::Input::PointerDevice;
-    using default_interface = Windows::Devices::Input::IPointerDevice;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Input.PointerDevice"; }
 };
 
 template <> struct traits<Windows::Devices::Input::TouchCapabilities>
 {
     using abi = ABI::Windows::Devices::Input::TouchCapabilities;
-    using default_interface = Windows::Devices::Input::ITouchCapabilities;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.Input.TouchCapabilities"; }
 };
 

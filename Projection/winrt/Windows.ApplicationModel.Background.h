@@ -1893,85 +1893,85 @@ namespace Windows::ApplicationModel::Background {
 template <typename D> Windows::Foundation::Collections::ValueSet impl_IApplicationTriggerDetails<D>::Arguments() const
 {
     Windows::Foundation::Collections::ValueSet value { nullptr };
-    check_hresult(shim()->get_Arguments(put(value)));
+    check_hresult(static_cast<const IApplicationTriggerDetails &>(static_cast<const D &>(*this))->get_Arguments(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::BackgroundAccessStatus> impl_IBackgroundExecutionManagerStatics<D>::RequestAccessAsync() const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::BackgroundAccessStatus> operation;
-    check_hresult(shim()->abi_RequestAccessAsync(put(operation)));
+    check_hresult(static_cast<const IBackgroundExecutionManagerStatics &>(static_cast<const D &>(*this))->abi_RequestAccessAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::BackgroundAccessStatus> impl_IBackgroundExecutionManagerStatics<D>::RequestAccessAsync(hstring_ref applicationId) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::BackgroundAccessStatus> operation;
-    check_hresult(shim()->abi_RequestAccessForApplicationAsync(get(applicationId), put(operation)));
+    check_hresult(static_cast<const IBackgroundExecutionManagerStatics &>(static_cast<const D &>(*this))->abi_RequestAccessForApplicationAsync(get(applicationId), put(operation)));
     return operation;
 }
 
 template <typename D> void impl_IBackgroundExecutionManagerStatics<D>::RemoveAccess() const
 {
-    check_hresult(shim()->abi_RemoveAccess());
+    check_hresult(static_cast<const IBackgroundExecutionManagerStatics &>(static_cast<const D &>(*this))->abi_RemoveAccess());
 }
 
 template <typename D> void impl_IBackgroundExecutionManagerStatics<D>::RemoveAccess(hstring_ref applicationId) const
 {
-    check_hresult(shim()->abi_RemoveAccessForApplication(get(applicationId)));
+    check_hresult(static_cast<const IBackgroundExecutionManagerStatics &>(static_cast<const D &>(*this))->abi_RemoveAccessForApplication(get(applicationId)));
 }
 
 template <typename D> Windows::ApplicationModel::Background::BackgroundAccessStatus impl_IBackgroundExecutionManagerStatics<D>::GetAccessStatus() const
 {
     Windows::ApplicationModel::Background::BackgroundAccessStatus status {};
-    check_hresult(shim()->abi_GetAccessStatus(&status));
+    check_hresult(static_cast<const IBackgroundExecutionManagerStatics &>(static_cast<const D &>(*this))->abi_GetAccessStatus(&status));
     return status;
 }
 
 template <typename D> Windows::ApplicationModel::Background::BackgroundAccessStatus impl_IBackgroundExecutionManagerStatics<D>::GetAccessStatus(hstring_ref applicationId) const
 {
     Windows::ApplicationModel::Background::BackgroundAccessStatus status {};
-    check_hresult(shim()->abi_GetAccessStatusForApplication(get(applicationId), &status));
+    check_hresult(static_cast<const IBackgroundExecutionManagerStatics &>(static_cast<const D &>(*this))->abi_GetAccessStatusForApplication(get(applicationId), &status));
     return status;
 }
 
 template <typename D> GUID impl_IBackgroundTaskInstance<D>::InstanceId() const
 {
     GUID value {};
-    check_hresult(shim()->get_InstanceId(&value));
+    check_hresult(static_cast<const IBackgroundTaskInstance &>(static_cast<const D &>(*this))->get_InstanceId(&value));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Background::BackgroundTaskRegistration impl_IBackgroundTaskInstance<D>::Task() const
 {
     Windows::ApplicationModel::Background::BackgroundTaskRegistration task { nullptr };
-    check_hresult(shim()->get_Task(put(task)));
+    check_hresult(static_cast<const IBackgroundTaskInstance &>(static_cast<const D &>(*this))->get_Task(put(task)));
     return task;
 }
 
 template <typename D> uint32_t impl_IBackgroundTaskInstance<D>::Progress() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_Progress(&value));
+    check_hresult(static_cast<const IBackgroundTaskInstance &>(static_cast<const D &>(*this))->get_Progress(&value));
     return value;
 }
 
 template <typename D> void impl_IBackgroundTaskInstance<D>::Progress(uint32_t value) const
 {
-    check_hresult(shim()->put_Progress(value));
+    check_hresult(static_cast<const IBackgroundTaskInstance &>(static_cast<const D &>(*this))->put_Progress(value));
 }
 
 template <typename D> Windows::IInspectable impl_IBackgroundTaskInstance<D>::TriggerDetails() const
 {
     Windows::IInspectable triggerDetails;
-    check_hresult(shim()->get_TriggerDetails(put(triggerDetails)));
+    check_hresult(static_cast<const IBackgroundTaskInstance &>(static_cast<const D &>(*this))->get_TriggerDetails(put(triggerDetails)));
     return triggerDetails;
 }
 
 template <typename D> event_token impl_IBackgroundTaskInstance<D>::Canceled(const Windows::ApplicationModel::Background::BackgroundTaskCanceledEventHandler & cancelHandler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_Canceled(get(cancelHandler), &cookie));
+    check_hresult(static_cast<const IBackgroundTaskInstance &>(static_cast<const D &>(*this))->add_Canceled(get(cancelHandler), &cookie));
     return cookie;
 }
 
@@ -1982,72 +1982,72 @@ template <typename D> event_revoker<IBackgroundTaskInstance> impl_IBackgroundTas
 
 template <typename D> void impl_IBackgroundTaskInstance<D>::Canceled(event_token cookie) const
 {
-    check_hresult(shim()->remove_Canceled(cookie));
+    check_hresult(static_cast<const IBackgroundTaskInstance &>(static_cast<const D &>(*this))->remove_Canceled(cookie));
 }
 
 template <typename D> uint32_t impl_IBackgroundTaskInstance<D>::SuspendedCount() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_SuspendedCount(&value));
+    check_hresult(static_cast<const IBackgroundTaskInstance &>(static_cast<const D &>(*this))->get_SuspendedCount(&value));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Background::BackgroundTaskDeferral impl_IBackgroundTaskInstance<D>::GetDeferral() const
 {
     Windows::ApplicationModel::Background::BackgroundTaskDeferral deferral { nullptr };
-    check_hresult(shim()->abi_GetDeferral(put(deferral)));
+    check_hresult(static_cast<const IBackgroundTaskInstance &>(static_cast<const D &>(*this))->abi_GetDeferral(put(deferral)));
     return deferral;
 }
 
 template <typename D> Windows::ApplicationModel::Background::BackgroundWorkCostValue impl_IBackgroundWorkCostStatics<D>::CurrentBackgroundWorkCost() const
 {
     Windows::ApplicationModel::Background::BackgroundWorkCostValue value {};
-    check_hresult(shim()->get_CurrentBackgroundWorkCost(&value));
+    check_hresult(static_cast<const IBackgroundWorkCostStatics &>(static_cast<const D &>(*this))->get_CurrentBackgroundWorkCost(&value));
     return value;
 }
 
 template <typename D> void impl_IBackgroundTaskDeferral<D>::Complete() const
 {
-    check_hresult(shim()->abi_Complete());
+    check_hresult(static_cast<const IBackgroundTaskDeferral &>(static_cast<const D &>(*this))->abi_Complete());
 }
 
 template <typename D> uint32_t impl_IBackgroundTaskInstance2<D>::GetThrottleCount(Windows::ApplicationModel::Background::BackgroundTaskThrottleCounter counter) const
 {
     uint32_t value {};
-    check_hresult(shim()->abi_GetThrottleCount(counter, &value));
+    check_hresult(static_cast<const IBackgroundTaskInstance2 &>(static_cast<const D &>(*this))->abi_GetThrottleCount(counter, &value));
     return value;
 }
 
 template <typename D> Windows::System::User impl_IBackgroundTaskInstance4<D>::User() const
 {
     Windows::System::User value { nullptr };
-    check_hresult(shim()->get_User(put(value)));
+    check_hresult(static_cast<const IBackgroundTaskInstance4 &>(static_cast<const D &>(*this))->get_User(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBackgroundTask<D>::Run(const Windows::ApplicationModel::Background::IBackgroundTaskInstance & taskInstance) const
 {
-    check_hresult(shim()->abi_Run(get(taskInstance)));
+    check_hresult(static_cast<const IBackgroundTask &>(static_cast<const D &>(*this))->abi_Run(get(taskInstance)));
 }
 
 template <typename D> GUID impl_IBackgroundTaskRegistration<D>::TaskId() const
 {
     GUID value {};
-    check_hresult(shim()->get_TaskId(&value));
+    check_hresult(static_cast<const IBackgroundTaskRegistration &>(static_cast<const D &>(*this))->get_TaskId(&value));
     return value;
 }
 
 template <typename D> hstring impl_IBackgroundTaskRegistration<D>::Name() const
 {
     hstring value;
-    check_hresult(shim()->get_Name(put(value)));
+    check_hresult(static_cast<const IBackgroundTaskRegistration &>(static_cast<const D &>(*this))->get_Name(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IBackgroundTaskRegistration<D>::Progress(const Windows::ApplicationModel::Background::BackgroundTaskProgressEventHandler & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_Progress(get(handler), &cookie));
+    check_hresult(static_cast<const IBackgroundTaskRegistration &>(static_cast<const D &>(*this))->add_Progress(get(handler), &cookie));
     return cookie;
 }
 
@@ -2058,13 +2058,13 @@ template <typename D> event_revoker<IBackgroundTaskRegistration> impl_IBackgroun
 
 template <typename D> void impl_IBackgroundTaskRegistration<D>::Progress(event_token cookie) const
 {
-    check_hresult(shim()->remove_Progress(cookie));
+    check_hresult(static_cast<const IBackgroundTaskRegistration &>(static_cast<const D &>(*this))->remove_Progress(cookie));
 }
 
 template <typename D> event_token impl_IBackgroundTaskRegistration<D>::Completed(const Windows::ApplicationModel::Background::BackgroundTaskCompletedEventHandler & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_Completed(get(handler), &cookie));
+    check_hresult(static_cast<const IBackgroundTaskRegistration &>(static_cast<const D &>(*this))->add_Completed(get(handler), &cookie));
     return cookie;
 }
 
@@ -2075,587 +2075,587 @@ template <typename D> event_revoker<IBackgroundTaskRegistration> impl_IBackgroun
 
 template <typename D> void impl_IBackgroundTaskRegistration<D>::Completed(event_token cookie) const
 {
-    check_hresult(shim()->remove_Completed(cookie));
+    check_hresult(static_cast<const IBackgroundTaskRegistration &>(static_cast<const D &>(*this))->remove_Completed(cookie));
 }
 
 template <typename D> void impl_IBackgroundTaskRegistration<D>::Unregister(bool cancelTask) const
 {
-    check_hresult(shim()->abi_Unregister(cancelTask));
+    check_hresult(static_cast<const IBackgroundTaskRegistration &>(static_cast<const D &>(*this))->abi_Unregister(cancelTask));
 }
 
 template <typename D> Windows::ApplicationModel::Background::IBackgroundTrigger impl_IBackgroundTaskRegistration2<D>::Trigger() const
 {
     Windows::ApplicationModel::Background::IBackgroundTrigger value;
-    check_hresult(shim()->get_Trigger(put(value)));
+    check_hresult(static_cast<const IBackgroundTaskRegistration2 &>(static_cast<const D &>(*this))->get_Trigger(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::ApplicationTriggerResult> impl_IApplicationTrigger<D>::RequestAsync() const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::ApplicationTriggerResult> result;
-    check_hresult(shim()->abi_RequestAsync(put(result)));
+    check_hresult(static_cast<const IApplicationTrigger &>(static_cast<const D &>(*this))->abi_RequestAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::ApplicationTriggerResult> impl_IApplicationTrigger<D>::RequestAsync(const Windows::Foundation::Collections::ValueSet & arguments) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::ApplicationTriggerResult> result;
-    check_hresult(shim()->abi_RequestAsyncWithArguments(get(arguments), put(result)));
+    check_hresult(static_cast<const IApplicationTrigger &>(static_cast<const D &>(*this))->abi_RequestAsyncWithArguments(get(arguments), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::MediaProcessingTriggerResult> impl_IMediaProcessingTrigger<D>::RequestAsync() const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::MediaProcessingTriggerResult> result;
-    check_hresult(shim()->abi_RequestAsync(put(result)));
+    check_hresult(static_cast<const IMediaProcessingTrigger &>(static_cast<const D &>(*this))->abi_RequestAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::MediaProcessingTriggerResult> impl_IMediaProcessingTrigger<D>::RequestAsync(const Windows::Foundation::Collections::ValueSet & arguments) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::MediaProcessingTriggerResult> result;
-    check_hresult(shim()->abi_RequestAsyncWithArguments(get(arguments), put(result)));
+    check_hresult(static_cast<const IMediaProcessingTrigger &>(static_cast<const D &>(*this))->abi_RequestAsyncWithArguments(get(arguments), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Collections::IMapView<GUID, Windows::ApplicationModel::Background::IBackgroundTaskRegistration> impl_IBackgroundTaskRegistrationStatics<D>::AllTasks() const
 {
     Windows::Foundation::Collections::IMapView<GUID, Windows::ApplicationModel::Background::IBackgroundTaskRegistration> tasks;
-    check_hresult(shim()->get_AllTasks(put(tasks)));
+    check_hresult(static_cast<const IBackgroundTaskRegistrationStatics &>(static_cast<const D &>(*this))->get_AllTasks(put(tasks)));
     return tasks;
 }
 
 template <typename D> void impl_IBackgroundTaskBuilder<D>::TaskEntryPoint(hstring_ref value) const
 {
-    check_hresult(shim()->put_TaskEntryPoint(get(value)));
+    check_hresult(static_cast<const IBackgroundTaskBuilder &>(static_cast<const D &>(*this))->put_TaskEntryPoint(get(value)));
 }
 
 template <typename D> hstring impl_IBackgroundTaskBuilder<D>::TaskEntryPoint() const
 {
     hstring value;
-    check_hresult(shim()->get_TaskEntryPoint(put(value)));
+    check_hresult(static_cast<const IBackgroundTaskBuilder &>(static_cast<const D &>(*this))->get_TaskEntryPoint(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBackgroundTaskBuilder<D>::SetTrigger(const Windows::ApplicationModel::Background::IBackgroundTrigger & trigger) const
 {
-    check_hresult(shim()->abi_SetTrigger(get(trigger)));
+    check_hresult(static_cast<const IBackgroundTaskBuilder &>(static_cast<const D &>(*this))->abi_SetTrigger(get(trigger)));
 }
 
 template <typename D> void impl_IBackgroundTaskBuilder<D>::AddCondition(const Windows::ApplicationModel::Background::IBackgroundCondition & condition) const
 {
-    check_hresult(shim()->abi_AddCondition(get(condition)));
+    check_hresult(static_cast<const IBackgroundTaskBuilder &>(static_cast<const D &>(*this))->abi_AddCondition(get(condition)));
 }
 
 template <typename D> void impl_IBackgroundTaskBuilder<D>::Name(hstring_ref value) const
 {
-    check_hresult(shim()->put_Name(get(value)));
+    check_hresult(static_cast<const IBackgroundTaskBuilder &>(static_cast<const D &>(*this))->put_Name(get(value)));
 }
 
 template <typename D> hstring impl_IBackgroundTaskBuilder<D>::Name() const
 {
     hstring value;
-    check_hresult(shim()->get_Name(put(value)));
+    check_hresult(static_cast<const IBackgroundTaskBuilder &>(static_cast<const D &>(*this))->get_Name(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Background::BackgroundTaskRegistration impl_IBackgroundTaskBuilder<D>::Register() const
 {
     Windows::ApplicationModel::Background::BackgroundTaskRegistration task { nullptr };
-    check_hresult(shim()->abi_Register(put(task)));
+    check_hresult(static_cast<const IBackgroundTaskBuilder &>(static_cast<const D &>(*this))->abi_Register(put(task)));
     return task;
 }
 
 template <typename D> void impl_IBackgroundTaskBuilder2<D>::CancelOnConditionLoss(bool value) const
 {
-    check_hresult(shim()->put_CancelOnConditionLoss(value));
+    check_hresult(static_cast<const IBackgroundTaskBuilder2 &>(static_cast<const D &>(*this))->put_CancelOnConditionLoss(value));
 }
 
 template <typename D> bool impl_IBackgroundTaskBuilder2<D>::CancelOnConditionLoss() const
 {
     bool value {};
-    check_hresult(shim()->get_CancelOnConditionLoss(&value));
+    check_hresult(static_cast<const IBackgroundTaskBuilder2 &>(static_cast<const D &>(*this))->get_CancelOnConditionLoss(&value));
     return value;
 }
 
 template <typename D> void impl_IBackgroundTaskBuilder3<D>::IsNetworkRequested(bool value) const
 {
-    check_hresult(shim()->put_IsNetworkRequested(value));
+    check_hresult(static_cast<const IBackgroundTaskBuilder3 &>(static_cast<const D &>(*this))->put_IsNetworkRequested(value));
 }
 
 template <typename D> bool impl_IBackgroundTaskBuilder3<D>::IsNetworkRequested() const
 {
     bool value {};
-    check_hresult(shim()->get_IsNetworkRequested(&value));
+    check_hresult(static_cast<const IBackgroundTaskBuilder3 &>(static_cast<const D &>(*this))->get_IsNetworkRequested(&value));
     return value;
 }
 
 template <typename D> GUID impl_IBackgroundTaskCompletedEventArgs<D>::InstanceId() const
 {
     GUID value {};
-    check_hresult(shim()->get_InstanceId(&value));
+    check_hresult(static_cast<const IBackgroundTaskCompletedEventArgs &>(static_cast<const D &>(*this))->get_InstanceId(&value));
     return value;
 }
 
 template <typename D> void impl_IBackgroundTaskCompletedEventArgs<D>::CheckResult() const
 {
-    check_hresult(shim()->abi_CheckResult());
+    check_hresult(static_cast<const IBackgroundTaskCompletedEventArgs &>(static_cast<const D &>(*this))->abi_CheckResult());
 }
 
 template <typename D> GUID impl_IBackgroundTaskProgressEventArgs<D>::InstanceId() const
 {
     GUID value {};
-    check_hresult(shim()->get_InstanceId(&value));
+    check_hresult(static_cast<const IBackgroundTaskProgressEventArgs &>(static_cast<const D &>(*this))->get_InstanceId(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IBackgroundTaskProgressEventArgs<D>::Progress() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_Progress(&value));
+    check_hresult(static_cast<const IBackgroundTaskProgressEventArgs &>(static_cast<const D &>(*this))->get_Progress(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IContentPrefetchTrigger<D>::WaitInterval() const
 {
     Windows::Foundation::TimeSpan waitInterval {};
-    check_hresult(shim()->get_WaitInterval(put(waitInterval)));
+    check_hresult(static_cast<const IContentPrefetchTrigger &>(static_cast<const D &>(*this))->get_WaitInterval(put(waitInterval)));
     return waitInterval;
 }
 
 template <typename D> Windows::ApplicationModel::Background::ContentPrefetchTrigger impl_IContentPrefetchTriggerFactory<D>::Create(const Windows::Foundation::TimeSpan & waitInterval) const
 {
     Windows::ApplicationModel::Background::ContentPrefetchTrigger trigger { nullptr };
-    check_hresult(shim()->abi_Create(get(waitInterval), put(trigger)));
+    check_hresult(static_cast<const IContentPrefetchTriggerFactory &>(static_cast<const D &>(*this))->abi_Create(get(waitInterval), put(trigger)));
     return trigger;
 }
 
 template <typename D> Windows::ApplicationModel::Background::SmsMessageReceivedTrigger impl_ISmsMessageReceivedTriggerFactory<D>::Create(const Windows::Devices::Sms::SmsFilterRules & filterRules) const
 {
     Windows::ApplicationModel::Background::SmsMessageReceivedTrigger value { nullptr };
-    check_hresult(shim()->abi_Create(get(filterRules), put(value)));
+    check_hresult(static_cast<const ISmsMessageReceivedTriggerFactory &>(static_cast<const D &>(*this))->abi_Create(get(filterRules), put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Background::StorageLibraryContentChangedTrigger impl_IStorageLibraryContentChangedTriggerStatics<D>::Create(const Windows::Storage::StorageLibrary & storageLibrary) const
 {
     Windows::ApplicationModel::Background::StorageLibraryContentChangedTrigger result { nullptr };
-    check_hresult(shim()->abi_Create(get(storageLibrary), put(result)));
+    check_hresult(static_cast<const IStorageLibraryContentChangedTriggerStatics &>(static_cast<const D &>(*this))->abi_Create(get(storageLibrary), put(result)));
     return result;
 }
 
 template <typename D> Windows::ApplicationModel::Background::StorageLibraryContentChangedTrigger impl_IStorageLibraryContentChangedTriggerStatics<D>::CreateFromLibraries(const Windows::Foundation::Collections::IIterable<Windows::Storage::StorageLibrary> & storageLibraries) const
 {
     Windows::ApplicationModel::Background::StorageLibraryContentChangedTrigger result { nullptr };
-    check_hresult(shim()->abi_CreateFromLibraries(get(storageLibraries), put(result)));
+    check_hresult(static_cast<const IStorageLibraryContentChangedTriggerStatics &>(static_cast<const D &>(*this))->abi_CreateFromLibraries(get(storageLibraries), put(result)));
     return result;
 }
 
 template <typename D> bool impl_ISystemTrigger<D>::OneShot() const
 {
     bool oneShot {};
-    check_hresult(shim()->get_OneShot(&oneShot));
+    check_hresult(static_cast<const ISystemTrigger &>(static_cast<const D &>(*this))->get_OneShot(&oneShot));
     return oneShot;
 }
 
 template <typename D> Windows::ApplicationModel::Background::SystemTriggerType impl_ISystemTrigger<D>::TriggerType() const
 {
     Windows::ApplicationModel::Background::SystemTriggerType triggerType {};
-    check_hresult(shim()->get_TriggerType(&triggerType));
+    check_hresult(static_cast<const ISystemTrigger &>(static_cast<const D &>(*this))->get_TriggerType(&triggerType));
     return triggerType;
 }
 
 template <typename D> Windows::ApplicationModel::Background::SystemTrigger impl_ISystemTriggerFactory<D>::Create(Windows::ApplicationModel::Background::SystemTriggerType triggerType, bool oneShot) const
 {
     Windows::ApplicationModel::Background::SystemTrigger trigger { nullptr };
-    check_hresult(shim()->abi_Create(triggerType, oneShot, put(trigger)));
+    check_hresult(static_cast<const ISystemTriggerFactory &>(static_cast<const D &>(*this))->abi_Create(triggerType, oneShot, put(trigger)));
     return trigger;
 }
 
 template <typename D> Windows::ApplicationModel::Background::SystemConditionType impl_ISystemCondition<D>::ConditionType() const
 {
     Windows::ApplicationModel::Background::SystemConditionType conditionType {};
-    check_hresult(shim()->get_ConditionType(&conditionType));
+    check_hresult(static_cast<const ISystemCondition &>(static_cast<const D &>(*this))->get_ConditionType(&conditionType));
     return conditionType;
 }
 
 template <typename D> Windows::ApplicationModel::Background::SystemCondition impl_ISystemConditionFactory<D>::Create(Windows::ApplicationModel::Background::SystemConditionType conditionType) const
 {
     Windows::ApplicationModel::Background::SystemCondition condition { nullptr };
-    check_hresult(shim()->abi_Create(conditionType, put(condition)));
+    check_hresult(static_cast<const ISystemConditionFactory &>(static_cast<const D &>(*this))->abi_Create(conditionType, put(condition)));
     return condition;
 }
 
 template <typename D> hstring impl_INetworkOperatorNotificationTrigger<D>::NetworkAccountId() const
 {
     hstring value;
-    check_hresult(shim()->get_NetworkAccountId(put(value)));
+    check_hresult(static_cast<const INetworkOperatorNotificationTrigger &>(static_cast<const D &>(*this))->get_NetworkAccountId(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Background::NetworkOperatorNotificationTrigger impl_INetworkOperatorNotificationTriggerFactory<D>::Create(hstring_ref networkAccountId) const
 {
     Windows::ApplicationModel::Background::NetworkOperatorNotificationTrigger trigger { nullptr };
-    check_hresult(shim()->abi_Create(get(networkAccountId), put(trigger)));
+    check_hresult(static_cast<const INetworkOperatorNotificationTriggerFactory &>(static_cast<const D &>(*this))->abi_Create(get(networkAccountId), put(trigger)));
     return trigger;
 }
 
 template <typename D> hstring impl_IDeviceManufacturerNotificationTrigger<D>::TriggerQualifier() const
 {
     hstring value;
-    check_hresult(shim()->get_TriggerQualifier(put(value)));
+    check_hresult(static_cast<const IDeviceManufacturerNotificationTrigger &>(static_cast<const D &>(*this))->get_TriggerQualifier(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IDeviceManufacturerNotificationTrigger<D>::OneShot() const
 {
     bool oneShot {};
-    check_hresult(shim()->get_OneShot(&oneShot));
+    check_hresult(static_cast<const IDeviceManufacturerNotificationTrigger &>(static_cast<const D &>(*this))->get_OneShot(&oneShot));
     return oneShot;
 }
 
 template <typename D> Windows::ApplicationModel::Background::DeviceManufacturerNotificationTrigger impl_IDeviceManufacturerNotificationTriggerFactory<D>::Create(hstring_ref triggerQualifier, bool oneShot) const
 {
     Windows::ApplicationModel::Background::DeviceManufacturerNotificationTrigger trigger { nullptr };
-    check_hresult(shim()->abi_Create(get(triggerQualifier), oneShot, put(trigger)));
+    check_hresult(static_cast<const IDeviceManufacturerNotificationTriggerFactory &>(static_cast<const D &>(*this))->abi_Create(get(triggerQualifier), oneShot, put(trigger)));
     return trigger;
 }
 
 template <typename D> Windows::Storage::Provider::CachedFileTarget impl_ICachedFileUpdaterTriggerDetails<D>::UpdateTarget() const
 {
     Windows::Storage::Provider::CachedFileTarget value {};
-    check_hresult(shim()->get_UpdateTarget(&value));
+    check_hresult(static_cast<const ICachedFileUpdaterTriggerDetails &>(static_cast<const D &>(*this))->get_UpdateTarget(&value));
     return value;
 }
 
 template <typename D> Windows::Storage::Provider::FileUpdateRequest impl_ICachedFileUpdaterTriggerDetails<D>::UpdateRequest() const
 {
     Windows::Storage::Provider::FileUpdateRequest value { nullptr };
-    check_hresult(shim()->get_UpdateRequest(put(value)));
+    check_hresult(static_cast<const ICachedFileUpdaterTriggerDetails &>(static_cast<const D &>(*this))->get_UpdateRequest(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ICachedFileUpdaterTriggerDetails<D>::CanRequestUserInput() const
 {
     bool value {};
-    check_hresult(shim()->get_CanRequestUserInput(&value));
+    check_hresult(static_cast<const ICachedFileUpdaterTriggerDetails &>(static_cast<const D &>(*this))->get_CanRequestUserInput(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_ITimeTrigger<D>::FreshnessTime() const
 {
     uint32_t freshnessTime {};
-    check_hresult(shim()->get_FreshnessTime(&freshnessTime));
+    check_hresult(static_cast<const ITimeTrigger &>(static_cast<const D &>(*this))->get_FreshnessTime(&freshnessTime));
     return freshnessTime;
 }
 
 template <typename D> bool impl_ITimeTrigger<D>::OneShot() const
 {
     bool oneShot {};
-    check_hresult(shim()->get_OneShot(&oneShot));
+    check_hresult(static_cast<const ITimeTrigger &>(static_cast<const D &>(*this))->get_OneShot(&oneShot));
     return oneShot;
 }
 
 template <typename D> Windows::ApplicationModel::Background::TimeTrigger impl_ITimeTriggerFactory<D>::Create(uint32_t freshnessTime, bool oneShot) const
 {
     Windows::ApplicationModel::Background::TimeTrigger trigger { nullptr };
-    check_hresult(shim()->abi_Create(freshnessTime, oneShot, put(trigger)));
+    check_hresult(static_cast<const ITimeTriggerFactory &>(static_cast<const D &>(*this))->abi_Create(freshnessTime, oneShot, put(trigger)));
     return trigger;
 }
 
 template <typename D> uint32_t impl_IMaintenanceTrigger<D>::FreshnessTime() const
 {
     uint32_t freshnessTime {};
-    check_hresult(shim()->get_FreshnessTime(&freshnessTime));
+    check_hresult(static_cast<const IMaintenanceTrigger &>(static_cast<const D &>(*this))->get_FreshnessTime(&freshnessTime));
     return freshnessTime;
 }
 
 template <typename D> bool impl_IMaintenanceTrigger<D>::OneShot() const
 {
     bool oneShot {};
-    check_hresult(shim()->get_OneShot(&oneShot));
+    check_hresult(static_cast<const IMaintenanceTrigger &>(static_cast<const D &>(*this))->get_OneShot(&oneShot));
     return oneShot;
 }
 
 template <typename D> Windows::ApplicationModel::Background::MaintenanceTrigger impl_IMaintenanceTriggerFactory<D>::Create(uint32_t freshnessTime, bool oneShot) const
 {
     Windows::ApplicationModel::Background::MaintenanceTrigger trigger { nullptr };
-    check_hresult(shim()->abi_Create(freshnessTime, oneShot, put(trigger)));
+    check_hresult(static_cast<const IMaintenanceTriggerFactory &>(static_cast<const D &>(*this))->abi_Create(freshnessTime, oneShot, put(trigger)));
     return trigger;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> impl_IDeviceUseTrigger<D>::RequestAsync(hstring_ref deviceId) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> result;
-    check_hresult(shim()->abi_RequestAsyncSimple(get(deviceId), put(result)));
+    check_hresult(static_cast<const IDeviceUseTrigger &>(static_cast<const D &>(*this))->abi_RequestAsyncSimple(get(deviceId), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> impl_IDeviceUseTrigger<D>::RequestAsync(hstring_ref deviceId, hstring_ref arguments) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> result;
-    check_hresult(shim()->abi_RequestAsyncWithArguments(get(deviceId), get(arguments), put(result)));
+    check_hresult(static_cast<const IDeviceUseTrigger &>(static_cast<const D &>(*this))->abi_RequestAsyncWithArguments(get(deviceId), get(arguments), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> impl_IDeviceServicingTrigger<D>::RequestAsync(hstring_ref deviceId, const Windows::Foundation::TimeSpan & expectedDuration) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> result;
-    check_hresult(shim()->abi_RequestAsyncSimple(get(deviceId), get(expectedDuration), put(result)));
+    check_hresult(static_cast<const IDeviceServicingTrigger &>(static_cast<const D &>(*this))->abi_RequestAsyncSimple(get(deviceId), get(expectedDuration), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> impl_IDeviceServicingTrigger<D>::RequestAsync(hstring_ref deviceId, const Windows::Foundation::TimeSpan & expectedDuration, hstring_ref arguments) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> result;
-    check_hresult(shim()->abi_RequestAsyncWithArguments(get(deviceId), get(expectedDuration), get(arguments), put(result)));
+    check_hresult(static_cast<const IDeviceServicingTrigger &>(static_cast<const D &>(*this))->abi_RequestAsyncWithArguments(get(deviceId), get(expectedDuration), get(arguments), put(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::Bluetooth::Background::RfcommInboundConnectionInformation impl_IRfcommConnectionTrigger<D>::InboundConnection() const
 {
     Windows::Devices::Bluetooth::Background::RfcommInboundConnectionInformation value { nullptr };
-    check_hresult(shim()->get_InboundConnection(put(value)));
+    check_hresult(static_cast<const IRfcommConnectionTrigger &>(static_cast<const D &>(*this))->get_InboundConnection(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Bluetooth::Background::RfcommOutboundConnectionInformation impl_IRfcommConnectionTrigger<D>::OutboundConnection() const
 {
     Windows::Devices::Bluetooth::Background::RfcommOutboundConnectionInformation value { nullptr };
-    check_hresult(shim()->get_OutboundConnection(put(value)));
+    check_hresult(static_cast<const IRfcommConnectionTrigger &>(static_cast<const D &>(*this))->get_OutboundConnection(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IRfcommConnectionTrigger<D>::AllowMultipleConnections() const
 {
     bool value {};
-    check_hresult(shim()->get_AllowMultipleConnections(&value));
+    check_hresult(static_cast<const IRfcommConnectionTrigger &>(static_cast<const D &>(*this))->get_AllowMultipleConnections(&value));
     return value;
 }
 
 template <typename D> void impl_IRfcommConnectionTrigger<D>::AllowMultipleConnections(bool value) const
 {
-    check_hresult(shim()->put_AllowMultipleConnections(value));
+    check_hresult(static_cast<const IRfcommConnectionTrigger &>(static_cast<const D &>(*this))->put_AllowMultipleConnections(value));
 }
 
 template <typename D> Windows::Networking::Sockets::SocketProtectionLevel impl_IRfcommConnectionTrigger<D>::ProtectionLevel() const
 {
     Windows::Networking::Sockets::SocketProtectionLevel value {};
-    check_hresult(shim()->get_ProtectionLevel(&value));
+    check_hresult(static_cast<const IRfcommConnectionTrigger &>(static_cast<const D &>(*this))->get_ProtectionLevel(&value));
     return value;
 }
 
 template <typename D> void impl_IRfcommConnectionTrigger<D>::ProtectionLevel(Windows::Networking::Sockets::SocketProtectionLevel value) const
 {
-    check_hresult(shim()->put_ProtectionLevel(value));
+    check_hresult(static_cast<const IRfcommConnectionTrigger &>(static_cast<const D &>(*this))->put_ProtectionLevel(value));
 }
 
 template <typename D> Windows::Networking::HostName impl_IRfcommConnectionTrigger<D>::RemoteHostName() const
 {
     Windows::Networking::HostName value { nullptr };
-    check_hresult(shim()->get_RemoteHostName(put(value)));
+    check_hresult(static_cast<const IRfcommConnectionTrigger &>(static_cast<const D &>(*this))->get_RemoteHostName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IRfcommConnectionTrigger<D>::RemoteHostName(const Windows::Networking::HostName & value) const
 {
-    check_hresult(shim()->put_RemoteHostName(get(value)));
+    check_hresult(static_cast<const IRfcommConnectionTrigger &>(static_cast<const D &>(*this))->put_RemoteHostName(get(value)));
 }
 
 template <typename D> hstring impl_IDeviceConnectionChangeTrigger<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(shim()->get_DeviceId(put(value)));
+    check_hresult(static_cast<const IDeviceConnectionChangeTrigger &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IDeviceConnectionChangeTrigger<D>::CanMaintainConnection() const
 {
     bool value {};
-    check_hresult(shim()->get_CanMaintainConnection(&value));
+    check_hresult(static_cast<const IDeviceConnectionChangeTrigger &>(static_cast<const D &>(*this))->get_CanMaintainConnection(&value));
     return value;
 }
 
 template <typename D> bool impl_IDeviceConnectionChangeTrigger<D>::MaintainConnection() const
 {
     bool value {};
-    check_hresult(shim()->get_MaintainConnection(&value));
+    check_hresult(static_cast<const IDeviceConnectionChangeTrigger &>(static_cast<const D &>(*this))->get_MaintainConnection(&value));
     return value;
 }
 
 template <typename D> void impl_IDeviceConnectionChangeTrigger<D>::MaintainConnection(bool value) const
 {
-    check_hresult(shim()->put_MaintainConnection(value));
+    check_hresult(static_cast<const IDeviceConnectionChangeTrigger &>(static_cast<const D &>(*this))->put_MaintainConnection(value));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::DeviceConnectionChangeTrigger> impl_IDeviceConnectionChangeTriggerStatics<D>::FromIdAsync(hstring_ref deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::DeviceConnectionChangeTrigger> deviceChangeTrigger;
-    check_hresult(shim()->abi_FromIdAsync(get(deviceId), put(deviceChangeTrigger)));
+    check_hresult(static_cast<const IDeviceConnectionChangeTriggerStatics &>(static_cast<const D &>(*this))->abi_FromIdAsync(get(deviceId), put(deviceChangeTrigger)));
     return deviceChangeTrigger;
 }
 
 template <typename D> Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic impl_IGattCharacteristicNotificationTrigger<D>::Characteristic() const
 {
     Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic value { nullptr };
-    check_hresult(shim()->get_Characteristic(put(value)));
+    check_hresult(static_cast<const IGattCharacteristicNotificationTrigger &>(static_cast<const D &>(*this))->get_Characteristic(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Background::GattCharacteristicNotificationTrigger impl_IGattCharacteristicNotificationTriggerFactory<D>::Create(const Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic & characteristic) const
 {
     Windows::ApplicationModel::Background::GattCharacteristicNotificationTrigger gattCharacteristicNotificationTrigger { nullptr };
-    check_hresult(shim()->abi_Create(get(characteristic), put(gattCharacteristicNotificationTrigger)));
+    check_hresult(static_cast<const IGattCharacteristicNotificationTriggerFactory &>(static_cast<const D &>(*this))->abi_Create(get(characteristic), put(gattCharacteristicNotificationTrigger)));
     return gattCharacteristicNotificationTrigger;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IBluetoothLEAdvertisementWatcherTrigger<D>::MinSamplingInterval() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_MinSamplingInterval(put(value)));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementWatcherTrigger &>(static_cast<const D &>(*this))->get_MinSamplingInterval(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IBluetoothLEAdvertisementWatcherTrigger<D>::MaxSamplingInterval() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_MaxSamplingInterval(put(value)));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementWatcherTrigger &>(static_cast<const D &>(*this))->get_MaxSamplingInterval(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IBluetoothLEAdvertisementWatcherTrigger<D>::MinOutOfRangeTimeout() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_MinOutOfRangeTimeout(put(value)));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementWatcherTrigger &>(static_cast<const D &>(*this))->get_MinOutOfRangeTimeout(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IBluetoothLEAdvertisementWatcherTrigger<D>::MaxOutOfRangeTimeout() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_MaxOutOfRangeTimeout(put(value)));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementWatcherTrigger &>(static_cast<const D &>(*this))->get_MaxOutOfRangeTimeout(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Bluetooth::BluetoothSignalStrengthFilter impl_IBluetoothLEAdvertisementWatcherTrigger<D>::SignalStrengthFilter() const
 {
     Windows::Devices::Bluetooth::BluetoothSignalStrengthFilter value { nullptr };
-    check_hresult(shim()->get_SignalStrengthFilter(put(value)));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementWatcherTrigger &>(static_cast<const D &>(*this))->get_SignalStrengthFilter(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBluetoothLEAdvertisementWatcherTrigger<D>::SignalStrengthFilter(const Windows::Devices::Bluetooth::BluetoothSignalStrengthFilter & value) const
 {
-    check_hresult(shim()->put_SignalStrengthFilter(get(value)));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementWatcherTrigger &>(static_cast<const D &>(*this))->put_SignalStrengthFilter(get(value)));
 }
 
 template <typename D> Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFilter impl_IBluetoothLEAdvertisementWatcherTrigger<D>::AdvertisementFilter() const
 {
     Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFilter value { nullptr };
-    check_hresult(shim()->get_AdvertisementFilter(put(value)));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementWatcherTrigger &>(static_cast<const D &>(*this))->get_AdvertisementFilter(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBluetoothLEAdvertisementWatcherTrigger<D>::AdvertisementFilter(const Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFilter & value) const
 {
-    check_hresult(shim()->put_AdvertisementFilter(get(value)));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementWatcherTrigger &>(static_cast<const D &>(*this))->put_AdvertisementFilter(get(value)));
 }
 
 template <typename D> Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisement impl_IBluetoothLEAdvertisementPublisherTrigger<D>::Advertisement() const
 {
     Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisement value { nullptr };
-    check_hresult(shim()->get_Advertisement(put(value)));
+    check_hresult(static_cast<const IBluetoothLEAdvertisementPublisherTrigger &>(static_cast<const D &>(*this))->get_Advertisement(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Background::LocationTriggerType impl_ILocationTrigger<D>::TriggerType() const
 {
     Windows::ApplicationModel::Background::LocationTriggerType triggerType {};
-    check_hresult(shim()->get_TriggerType(&triggerType));
+    check_hresult(static_cast<const ILocationTrigger &>(static_cast<const D &>(*this))->get_TriggerType(&triggerType));
     return triggerType;
 }
 
 template <typename D> Windows::ApplicationModel::Background::LocationTrigger impl_ILocationTriggerFactory<D>::Create(Windows::ApplicationModel::Background::LocationTriggerType triggerType) const
 {
     Windows::ApplicationModel::Background::LocationTrigger locationTrigger { nullptr };
-    check_hresult(shim()->abi_Create(triggerType, put(locationTrigger)));
+    check_hresult(static_cast<const ILocationTriggerFactory &>(static_cast<const D &>(*this))->abi_Create(triggerType, put(locationTrigger)));
     return locationTrigger;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<winrt::Windows::Devices::Sensors::ActivityType> impl_IActivitySensorTrigger<D>::SubscribedActivities() const
 {
     Windows::Foundation::Collections::IVector<winrt::Windows::Devices::Sensors::ActivityType> value;
-    check_hresult(shim()->get_SubscribedActivities(put(value)));
+    check_hresult(static_cast<const IActivitySensorTrigger &>(static_cast<const D &>(*this))->get_SubscribedActivities(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IActivitySensorTrigger<D>::ReportInterval() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_ReportInterval(&value));
+    check_hresult(static_cast<const IActivitySensorTrigger &>(static_cast<const D &>(*this))->get_ReportInterval(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<winrt::Windows::Devices::Sensors::ActivityType> impl_IActivitySensorTrigger<D>::SupportedActivities() const
 {
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Devices::Sensors::ActivityType> value;
-    check_hresult(shim()->get_SupportedActivities(put(value)));
+    check_hresult(static_cast<const IActivitySensorTrigger &>(static_cast<const D &>(*this))->get_SupportedActivities(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IActivitySensorTrigger<D>::MinimumReportInterval() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_MinimumReportInterval(&value));
+    check_hresult(static_cast<const IActivitySensorTrigger &>(static_cast<const D &>(*this))->get_MinimumReportInterval(&value));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Background::ActivitySensorTrigger impl_IActivitySensorTriggerFactory<D>::Create(uint32_t reportIntervalInMilliseconds) const
 {
     Windows::ApplicationModel::Background::ActivitySensorTrigger activityTrigger { nullptr };
-    check_hresult(shim()->abi_Create(reportIntervalInMilliseconds, put(activityTrigger)));
+    check_hresult(static_cast<const IActivitySensorTriggerFactory &>(static_cast<const D &>(*this))->abi_Create(reportIntervalInMilliseconds, put(activityTrigger)));
     return activityTrigger;
 }
 
 template <typename D> Windows::ApplicationModel::Background::SensorDataThresholdTrigger impl_ISensorDataThresholdTriggerFactory<D>::Create(const Windows::Devices::Sensors::ISensorDataThreshold & threshold) const
 {
     Windows::ApplicationModel::Background::SensorDataThresholdTrigger trigger { nullptr };
-    check_hresult(shim()->abi_Create(get(threshold), put(trigger)));
+    check_hresult(static_cast<const ISensorDataThresholdTriggerFactory &>(static_cast<const D &>(*this))->abi_Create(get(threshold), put(trigger)));
     return trigger;
 }
 
 template <typename D> bool impl_ISocketActivityTrigger<D>::IsWakeFromLowPowerSupported() const
 {
     bool value {};
-    check_hresult(shim()->get_IsWakeFromLowPowerSupported(&value));
+    check_hresult(static_cast<const ISocketActivityTrigger &>(static_cast<const D &>(*this))->get_IsWakeFromLowPowerSupported(&value));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Background::PushNotificationTrigger impl_IPushNotificationTriggerFactory<D>::Create(hstring_ref applicationId) const
 {
     Windows::ApplicationModel::Background::PushNotificationTrigger trigger { nullptr };
-    check_hresult(shim()->abi_Create(get(applicationId), put(trigger)));
+    check_hresult(static_cast<const IPushNotificationTriggerFactory &>(static_cast<const D &>(*this))->abi_Create(get(applicationId), put(trigger)));
     return trigger;
 }
 
 template <typename D> Windows::ApplicationModel::Background::ToastNotificationHistoryChangedTrigger impl_IToastNotificationHistoryChangedTriggerFactory<D>::Create(hstring_ref applicationId) const
 {
     Windows::ApplicationModel::Background::ToastNotificationHistoryChangedTrigger trigger { nullptr };
-    check_hresult(shim()->abi_Create(get(applicationId), put(trigger)));
+    check_hresult(static_cast<const IToastNotificationHistoryChangedTriggerFactory &>(static_cast<const D &>(*this))->abi_Create(get(applicationId), put(trigger)));
     return trigger;
 }
 
 template <typename D> Windows::ApplicationModel::Background::ToastNotificationActionTrigger impl_IToastNotificationActionTriggerFactory<D>::Create(hstring_ref applicationId) const
 {
     Windows::ApplicationModel::Background::ToastNotificationActionTrigger trigger { nullptr };
-    check_hresult(shim()->abi_Create(get(applicationId), put(trigger)));
+    check_hresult(static_cast<const IToastNotificationActionTriggerFactory &>(static_cast<const D &>(*this))->abi_Create(get(applicationId), put(trigger)));
     return trigger;
 }
 
 template <typename D> Windows::ApplicationModel::Background::UserNotificationChangedTrigger impl_IUserNotificationChangedTriggerFactory<D>::Create(Windows::UI::Notifications::NotificationKinds notificationKinds) const
 {
     Windows::ApplicationModel::Background::UserNotificationChangedTrigger trigger { nullptr };
-    check_hresult(shim()->abi_Create(notificationKinds, put(trigger)));
+    check_hresult(static_cast<const IUserNotificationChangedTriggerFactory &>(static_cast<const D &>(*this))->abi_Create(notificationKinds, put(trigger)));
     return trigger;
 }
 

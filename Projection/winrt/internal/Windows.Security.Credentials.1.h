@@ -144,21 +144,21 @@ template <> struct traits<Windows::Security::Credentials::WebAccountProvider> { 
 
 namespace Windows::Security::Credentials {
 
-template <typename T> class impl_ICredentialFactory;
-template <typename T> class impl_IKeyCredential;
-template <typename T> class impl_IKeyCredentialAttestationResult;
-template <typename T> class impl_IKeyCredentialManagerStatics;
-template <typename T> class impl_IKeyCredentialOperationResult;
-template <typename T> class impl_IKeyCredentialRetrievalResult;
-template <typename T> class impl_IPasswordCredential;
-template <typename T> class impl_IPasswordVault;
-template <typename T> class impl_IWebAccount;
-template <typename T> class impl_IWebAccount2;
-template <typename T> class impl_IWebAccountFactory;
-template <typename T> class impl_IWebAccountProvider;
-template <typename T> class impl_IWebAccountProvider2;
-template <typename T> class impl_IWebAccountProvider3;
-template <typename T> class impl_IWebAccountProviderFactory;
+template <typename T> struct impl_ICredentialFactory;
+template <typename T> struct impl_IKeyCredential;
+template <typename T> struct impl_IKeyCredentialAttestationResult;
+template <typename T> struct impl_IKeyCredentialManagerStatics;
+template <typename T> struct impl_IKeyCredentialOperationResult;
+template <typename T> struct impl_IKeyCredentialRetrievalResult;
+template <typename T> struct impl_IPasswordCredential;
+template <typename T> struct impl_IPasswordVault;
+template <typename T> struct impl_IWebAccount;
+template <typename T> struct impl_IWebAccount2;
+template <typename T> struct impl_IWebAccountFactory;
+template <typename T> struct impl_IWebAccountProvider;
+template <typename T> struct impl_IWebAccountProvider2;
+template <typename T> struct impl_IWebAccountProvider3;
+template <typename T> struct impl_IWebAccountProviderFactory;
 
 }
 
@@ -257,14 +257,12 @@ template <> struct traits<Windows::Security::Credentials::IWebAccountProviderFac
 template <> struct traits<Windows::Security::Credentials::KeyCredential>
 {
     using abi = ABI::Windows::Security::Credentials::KeyCredential;
-    using default_interface = Windows::Security::Credentials::IKeyCredential;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Credentials.KeyCredential"; }
 };
 
 template <> struct traits<Windows::Security::Credentials::KeyCredentialAttestationResult>
 {
     using abi = ABI::Windows::Security::Credentials::KeyCredentialAttestationResult;
-    using default_interface = Windows::Security::Credentials::IKeyCredentialAttestationResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Credentials.KeyCredentialAttestationResult"; }
 };
 
@@ -276,49 +274,42 @@ template <> struct traits<Windows::Security::Credentials::KeyCredentialManager>
 template <> struct traits<Windows::Security::Credentials::KeyCredentialOperationResult>
 {
     using abi = ABI::Windows::Security::Credentials::KeyCredentialOperationResult;
-    using default_interface = Windows::Security::Credentials::IKeyCredentialOperationResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Credentials.KeyCredentialOperationResult"; }
 };
 
 template <> struct traits<Windows::Security::Credentials::KeyCredentialRetrievalResult>
 {
     using abi = ABI::Windows::Security::Credentials::KeyCredentialRetrievalResult;
-    using default_interface = Windows::Security::Credentials::IKeyCredentialRetrievalResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Credentials.KeyCredentialRetrievalResult"; }
 };
 
 template <> struct traits<Windows::Security::Credentials::PasswordCredential>
 {
     using abi = ABI::Windows::Security::Credentials::PasswordCredential;
-    using default_interface = Windows::Security::Credentials::IPasswordCredential;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Credentials.PasswordCredential"; }
 };
 
 template <> struct traits<Windows::Security::Credentials::PasswordCredentialPropertyStore>
 {
     using abi = ABI::Windows::Security::Credentials::PasswordCredentialPropertyStore;
-    using default_interface = Windows::Foundation::Collections::IPropertySet;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Credentials.PasswordCredentialPropertyStore"; }
 };
 
 template <> struct traits<Windows::Security::Credentials::PasswordVault>
 {
     using abi = ABI::Windows::Security::Credentials::PasswordVault;
-    using default_interface = Windows::Security::Credentials::IPasswordVault;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Credentials.PasswordVault"; }
 };
 
 template <> struct traits<Windows::Security::Credentials::WebAccount>
 {
     using abi = ABI::Windows::Security::Credentials::WebAccount;
-    using default_interface = Windows::Security::Credentials::IWebAccount;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Credentials.WebAccount"; }
 };
 
 template <> struct traits<Windows::Security::Credentials::WebAccountProvider>
 {
     using abi = ABI::Windows::Security::Credentials::WebAccountProvider;
-    using default_interface = Windows::Security::Credentials::IWebAccountProvider;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Security.Credentials.WebAccountProvider"; }
 };
 

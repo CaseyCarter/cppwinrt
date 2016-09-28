@@ -451,49 +451,49 @@ template <> struct traits<Windows::Media::Audio::ReverbEffectDefinition> { using
 
 namespace Windows::Media::Audio {
 
-template <typename T> class impl_IAudioDeviceInputNode;
-template <typename T> class impl_IAudioDeviceOutputNode;
-template <typename T> class impl_IAudioFileInputNode;
-template <typename T> class impl_IAudioFileOutputNode;
-template <typename T> class impl_IAudioFrameCompletedEventArgs;
-template <typename T> class impl_IAudioFrameInputNode;
-template <typename T> class impl_IAudioFrameOutputNode;
-template <typename T> class impl_IAudioGraph;
-template <typename T> class impl_IAudioGraph2;
-template <typename T> class impl_IAudioGraphConnection;
-template <typename T> class impl_IAudioGraphSettings;
-template <typename T> class impl_IAudioGraphSettingsFactory;
-template <typename T> class impl_IAudioGraphStatics;
-template <typename T> class impl_IAudioGraphUnrecoverableErrorOccurredEventArgs;
-template <typename T> class impl_IAudioInputNode;
-template <typename T> class impl_IAudioInputNode2;
-template <typename T> class impl_IAudioNode;
-template <typename T> class impl_IAudioNodeEmitter;
-template <typename T> class impl_IAudioNodeEmitter2;
-template <typename T> class impl_IAudioNodeEmitterConeProperties;
-template <typename T> class impl_IAudioNodeEmitterDecayModel;
-template <typename T> class impl_IAudioNodeEmitterDecayModelStatics;
-template <typename T> class impl_IAudioNodeEmitterFactory;
-template <typename T> class impl_IAudioNodeEmitterNaturalDecayModelProperties;
-template <typename T> class impl_IAudioNodeEmitterShape;
-template <typename T> class impl_IAudioNodeEmitterShapeStatics;
-template <typename T> class impl_IAudioNodeListener;
-template <typename T> class impl_IAudioNodeWithListener;
-template <typename T> class impl_ICreateAudioDeviceInputNodeResult;
-template <typename T> class impl_ICreateAudioDeviceOutputNodeResult;
-template <typename T> class impl_ICreateAudioFileInputNodeResult;
-template <typename T> class impl_ICreateAudioFileOutputNodeResult;
-template <typename T> class impl_ICreateAudioGraphResult;
-template <typename T> class impl_IEchoEffectDefinition;
-template <typename T> class impl_IEchoEffectDefinitionFactory;
-template <typename T> class impl_IEqualizerBand;
-template <typename T> class impl_IEqualizerEffectDefinition;
-template <typename T> class impl_IEqualizerEffectDefinitionFactory;
-template <typename T> class impl_IFrameInputNodeQuantumStartedEventArgs;
-template <typename T> class impl_ILimiterEffectDefinition;
-template <typename T> class impl_ILimiterEffectDefinitionFactory;
-template <typename T> class impl_IReverbEffectDefinition;
-template <typename T> class impl_IReverbEffectDefinitionFactory;
+template <typename T> struct impl_IAudioDeviceInputNode;
+template <typename T> struct impl_IAudioDeviceOutputNode;
+template <typename T> struct impl_IAudioFileInputNode;
+template <typename T> struct impl_IAudioFileOutputNode;
+template <typename T> struct impl_IAudioFrameCompletedEventArgs;
+template <typename T> struct impl_IAudioFrameInputNode;
+template <typename T> struct impl_IAudioFrameOutputNode;
+template <typename T> struct impl_IAudioGraph;
+template <typename T> struct impl_IAudioGraph2;
+template <typename T> struct impl_IAudioGraphConnection;
+template <typename T> struct impl_IAudioGraphSettings;
+template <typename T> struct impl_IAudioGraphSettingsFactory;
+template <typename T> struct impl_IAudioGraphStatics;
+template <typename T> struct impl_IAudioGraphUnrecoverableErrorOccurredEventArgs;
+template <typename T> struct impl_IAudioInputNode;
+template <typename T> struct impl_IAudioInputNode2;
+template <typename T> struct impl_IAudioNode;
+template <typename T> struct impl_IAudioNodeEmitter;
+template <typename T> struct impl_IAudioNodeEmitter2;
+template <typename T> struct impl_IAudioNodeEmitterConeProperties;
+template <typename T> struct impl_IAudioNodeEmitterDecayModel;
+template <typename T> struct impl_IAudioNodeEmitterDecayModelStatics;
+template <typename T> struct impl_IAudioNodeEmitterFactory;
+template <typename T> struct impl_IAudioNodeEmitterNaturalDecayModelProperties;
+template <typename T> struct impl_IAudioNodeEmitterShape;
+template <typename T> struct impl_IAudioNodeEmitterShapeStatics;
+template <typename T> struct impl_IAudioNodeListener;
+template <typename T> struct impl_IAudioNodeWithListener;
+template <typename T> struct impl_ICreateAudioDeviceInputNodeResult;
+template <typename T> struct impl_ICreateAudioDeviceOutputNodeResult;
+template <typename T> struct impl_ICreateAudioFileInputNodeResult;
+template <typename T> struct impl_ICreateAudioFileOutputNodeResult;
+template <typename T> struct impl_ICreateAudioGraphResult;
+template <typename T> struct impl_IEchoEffectDefinition;
+template <typename T> struct impl_IEchoEffectDefinitionFactory;
+template <typename T> struct impl_IEqualizerBand;
+template <typename T> struct impl_IEqualizerEffectDefinition;
+template <typename T> struct impl_IEqualizerEffectDefinitionFactory;
+template <typename T> struct impl_IFrameInputNodeQuantumStartedEventArgs;
+template <typename T> struct impl_ILimiterEffectDefinition;
+template <typename T> struct impl_ILimiterEffectDefinitionFactory;
+template <typename T> struct impl_IReverbEffectDefinition;
+template <typename T> struct impl_IReverbEffectDefinitionFactory;
 
 }
 
@@ -760,210 +760,180 @@ template <> struct traits<Windows::Media::Audio::IReverbEffectDefinitionFactory>
 template <> struct traits<Windows::Media::Audio::AudioDeviceInputNode>
 {
     using abi = ABI::Windows::Media::Audio::AudioDeviceInputNode;
-    using default_interface = Windows::Media::Audio::IAudioDeviceInputNode;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Audio.AudioDeviceInputNode"; }
 };
 
 template <> struct traits<Windows::Media::Audio::AudioDeviceOutputNode>
 {
     using abi = ABI::Windows::Media::Audio::AudioDeviceOutputNode;
-    using default_interface = Windows::Media::Audio::IAudioDeviceOutputNode;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Audio.AudioDeviceOutputNode"; }
 };
 
 template <> struct traits<Windows::Media::Audio::AudioFileInputNode>
 {
     using abi = ABI::Windows::Media::Audio::AudioFileInputNode;
-    using default_interface = Windows::Media::Audio::IAudioFileInputNode;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Audio.AudioFileInputNode"; }
 };
 
 template <> struct traits<Windows::Media::Audio::AudioFileOutputNode>
 {
     using abi = ABI::Windows::Media::Audio::AudioFileOutputNode;
-    using default_interface = Windows::Media::Audio::IAudioFileOutputNode;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Audio.AudioFileOutputNode"; }
 };
 
 template <> struct traits<Windows::Media::Audio::AudioFrameCompletedEventArgs>
 {
     using abi = ABI::Windows::Media::Audio::AudioFrameCompletedEventArgs;
-    using default_interface = Windows::Media::Audio::IAudioFrameCompletedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Audio.AudioFrameCompletedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Audio::AudioFrameInputNode>
 {
     using abi = ABI::Windows::Media::Audio::AudioFrameInputNode;
-    using default_interface = Windows::Media::Audio::IAudioFrameInputNode;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Audio.AudioFrameInputNode"; }
 };
 
 template <> struct traits<Windows::Media::Audio::AudioFrameOutputNode>
 {
     using abi = ABI::Windows::Media::Audio::AudioFrameOutputNode;
-    using default_interface = Windows::Media::Audio::IAudioFrameOutputNode;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Audio.AudioFrameOutputNode"; }
 };
 
 template <> struct traits<Windows::Media::Audio::AudioGraph>
 {
     using abi = ABI::Windows::Media::Audio::AudioGraph;
-    using default_interface = Windows::Media::Audio::IAudioGraph;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Audio.AudioGraph"; }
 };
 
 template <> struct traits<Windows::Media::Audio::AudioGraphBatchUpdater>
 {
     using abi = ABI::Windows::Media::Audio::AudioGraphBatchUpdater;
-    using default_interface = Windows::Foundation::IClosable;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Audio.AudioGraphBatchUpdater"; }
 };
 
 template <> struct traits<Windows::Media::Audio::AudioGraphConnection>
 {
     using abi = ABI::Windows::Media::Audio::AudioGraphConnection;
-    using default_interface = Windows::Media::Audio::IAudioGraphConnection;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Audio.AudioGraphConnection"; }
 };
 
 template <> struct traits<Windows::Media::Audio::AudioGraphSettings>
 {
     using abi = ABI::Windows::Media::Audio::AudioGraphSettings;
-    using default_interface = Windows::Media::Audio::IAudioGraphSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Audio.AudioGraphSettings"; }
 };
 
 template <> struct traits<Windows::Media::Audio::AudioGraphUnrecoverableErrorOccurredEventArgs>
 {
     using abi = ABI::Windows::Media::Audio::AudioGraphUnrecoverableErrorOccurredEventArgs;
-    using default_interface = Windows::Media::Audio::IAudioGraphUnrecoverableErrorOccurredEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Audio.AudioGraphUnrecoverableErrorOccurredEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Audio::AudioNodeEmitter>
 {
     using abi = ABI::Windows::Media::Audio::AudioNodeEmitter;
-    using default_interface = Windows::Media::Audio::IAudioNodeEmitter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Audio.AudioNodeEmitter"; }
 };
 
 template <> struct traits<Windows::Media::Audio::AudioNodeEmitterConeProperties>
 {
     using abi = ABI::Windows::Media::Audio::AudioNodeEmitterConeProperties;
-    using default_interface = Windows::Media::Audio::IAudioNodeEmitterConeProperties;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Audio.AudioNodeEmitterConeProperties"; }
 };
 
 template <> struct traits<Windows::Media::Audio::AudioNodeEmitterDecayModel>
 {
     using abi = ABI::Windows::Media::Audio::AudioNodeEmitterDecayModel;
-    using default_interface = Windows::Media::Audio::IAudioNodeEmitterDecayModel;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Audio.AudioNodeEmitterDecayModel"; }
 };
 
 template <> struct traits<Windows::Media::Audio::AudioNodeEmitterNaturalDecayModelProperties>
 {
     using abi = ABI::Windows::Media::Audio::AudioNodeEmitterNaturalDecayModelProperties;
-    using default_interface = Windows::Media::Audio::IAudioNodeEmitterNaturalDecayModelProperties;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Audio.AudioNodeEmitterNaturalDecayModelProperties"; }
 };
 
 template <> struct traits<Windows::Media::Audio::AudioNodeEmitterShape>
 {
     using abi = ABI::Windows::Media::Audio::AudioNodeEmitterShape;
-    using default_interface = Windows::Media::Audio::IAudioNodeEmitterShape;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Audio.AudioNodeEmitterShape"; }
 };
 
 template <> struct traits<Windows::Media::Audio::AudioNodeListener>
 {
     using abi = ABI::Windows::Media::Audio::AudioNodeListener;
-    using default_interface = Windows::Media::Audio::IAudioNodeListener;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Audio.AudioNodeListener"; }
 };
 
 template <> struct traits<Windows::Media::Audio::AudioSubmixNode>
 {
     using abi = ABI::Windows::Media::Audio::AudioSubmixNode;
-    using default_interface = Windows::Media::Audio::IAudioInputNode;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Audio.AudioSubmixNode"; }
 };
 
 template <> struct traits<Windows::Media::Audio::CreateAudioDeviceInputNodeResult>
 {
     using abi = ABI::Windows::Media::Audio::CreateAudioDeviceInputNodeResult;
-    using default_interface = Windows::Media::Audio::ICreateAudioDeviceInputNodeResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Audio.CreateAudioDeviceInputNodeResult"; }
 };
 
 template <> struct traits<Windows::Media::Audio::CreateAudioDeviceOutputNodeResult>
 {
     using abi = ABI::Windows::Media::Audio::CreateAudioDeviceOutputNodeResult;
-    using default_interface = Windows::Media::Audio::ICreateAudioDeviceOutputNodeResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Audio.CreateAudioDeviceOutputNodeResult"; }
 };
 
 template <> struct traits<Windows::Media::Audio::CreateAudioFileInputNodeResult>
 {
     using abi = ABI::Windows::Media::Audio::CreateAudioFileInputNodeResult;
-    using default_interface = Windows::Media::Audio::ICreateAudioFileInputNodeResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Audio.CreateAudioFileInputNodeResult"; }
 };
 
 template <> struct traits<Windows::Media::Audio::CreateAudioFileOutputNodeResult>
 {
     using abi = ABI::Windows::Media::Audio::CreateAudioFileOutputNodeResult;
-    using default_interface = Windows::Media::Audio::ICreateAudioFileOutputNodeResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Audio.CreateAudioFileOutputNodeResult"; }
 };
 
 template <> struct traits<Windows::Media::Audio::CreateAudioGraphResult>
 {
     using abi = ABI::Windows::Media::Audio::CreateAudioGraphResult;
-    using default_interface = Windows::Media::Audio::ICreateAudioGraphResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Audio.CreateAudioGraphResult"; }
 };
 
 template <> struct traits<Windows::Media::Audio::EchoEffectDefinition>
 {
     using abi = ABI::Windows::Media::Audio::EchoEffectDefinition;
-    using default_interface = Windows::Media::Audio::IEchoEffectDefinition;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Audio.EchoEffectDefinition"; }
 };
 
 template <> struct traits<Windows::Media::Audio::EqualizerBand>
 {
     using abi = ABI::Windows::Media::Audio::EqualizerBand;
-    using default_interface = Windows::Media::Audio::IEqualizerBand;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Audio.EqualizerBand"; }
 };
 
 template <> struct traits<Windows::Media::Audio::EqualizerEffectDefinition>
 {
     using abi = ABI::Windows::Media::Audio::EqualizerEffectDefinition;
-    using default_interface = Windows::Media::Audio::IEqualizerEffectDefinition;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Audio.EqualizerEffectDefinition"; }
 };
 
 template <> struct traits<Windows::Media::Audio::FrameInputNodeQuantumStartedEventArgs>
 {
     using abi = ABI::Windows::Media::Audio::FrameInputNodeQuantumStartedEventArgs;
-    using default_interface = Windows::Media::Audio::IFrameInputNodeQuantumStartedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Audio.FrameInputNodeQuantumStartedEventArgs"; }
 };
 
 template <> struct traits<Windows::Media::Audio::LimiterEffectDefinition>
 {
     using abi = ABI::Windows::Media::Audio::LimiterEffectDefinition;
-    using default_interface = Windows::Media::Audio::ILimiterEffectDefinition;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Audio.LimiterEffectDefinition"; }
 };
 
 template <> struct traits<Windows::Media::Audio::ReverbEffectDefinition>
 {
     using abi = ABI::Windows::Media::Audio::ReverbEffectDefinition;
-    using default_interface = Windows::Media::Audio::IReverbEffectDefinition;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Audio.ReverbEffectDefinition"; }
 };
 

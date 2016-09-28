@@ -1709,743 +1709,743 @@ namespace Windows::Foundation {
 
 template <typename D> void impl_IClosable<D>::Close() const
 {
-    check_hresult(shim()->abi_Close());
+    check_hresult(static_cast<const IClosable &>(static_cast<const D &>(*this))->abi_Close());
 }
 
 template <typename D> Windows::Foundation::PropertyType impl_IPropertyValue<D>::Type() const
 {
     Windows::Foundation::PropertyType value {};
-    check_hresult(shim()->get_Type(&value));
+    check_hresult(static_cast<const IPropertyValue &>(static_cast<const D &>(*this))->get_Type(&value));
     return value;
 }
 
 template <typename D> bool impl_IPropertyValue<D>::IsNumericScalar() const
 {
     bool value {};
-    check_hresult(shim()->get_IsNumericScalar(&value));
+    check_hresult(static_cast<const IPropertyValue &>(static_cast<const D &>(*this))->get_IsNumericScalar(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IPropertyValue<D>::GetUInt8() const
 {
     uint8_t value {};
-    check_hresult(shim()->abi_GetUInt8(&value));
+    check_hresult(static_cast<const IPropertyValue &>(static_cast<const D &>(*this))->abi_GetUInt8(&value));
     return value;
 }
 
 template <typename D> int16_t impl_IPropertyValue<D>::GetInt16() const
 {
     int16_t value {};
-    check_hresult(shim()->abi_GetInt16(&value));
+    check_hresult(static_cast<const IPropertyValue &>(static_cast<const D &>(*this))->abi_GetInt16(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IPropertyValue<D>::GetUInt16() const
 {
     uint16_t value {};
-    check_hresult(shim()->abi_GetUInt16(&value));
+    check_hresult(static_cast<const IPropertyValue &>(static_cast<const D &>(*this))->abi_GetUInt16(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IPropertyValue<D>::GetInt32() const
 {
     int32_t value {};
-    check_hresult(shim()->abi_GetInt32(&value));
+    check_hresult(static_cast<const IPropertyValue &>(static_cast<const D &>(*this))->abi_GetInt32(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IPropertyValue<D>::GetUInt32() const
 {
     uint32_t value {};
-    check_hresult(shim()->abi_GetUInt32(&value));
+    check_hresult(static_cast<const IPropertyValue &>(static_cast<const D &>(*this))->abi_GetUInt32(&value));
     return value;
 }
 
 template <typename D> int64_t impl_IPropertyValue<D>::GetInt64() const
 {
     int64_t value {};
-    check_hresult(shim()->abi_GetInt64(&value));
+    check_hresult(static_cast<const IPropertyValue &>(static_cast<const D &>(*this))->abi_GetInt64(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IPropertyValue<D>::GetUInt64() const
 {
     uint64_t value {};
-    check_hresult(shim()->abi_GetUInt64(&value));
+    check_hresult(static_cast<const IPropertyValue &>(static_cast<const D &>(*this))->abi_GetUInt64(&value));
     return value;
 }
 
 template <typename D> float impl_IPropertyValue<D>::GetSingle() const
 {
     float value {};
-    check_hresult(shim()->abi_GetSingle(&value));
+    check_hresult(static_cast<const IPropertyValue &>(static_cast<const D &>(*this))->abi_GetSingle(&value));
     return value;
 }
 
 template <typename D> double impl_IPropertyValue<D>::GetDouble() const
 {
     double value {};
-    check_hresult(shim()->abi_GetDouble(&value));
+    check_hresult(static_cast<const IPropertyValue &>(static_cast<const D &>(*this))->abi_GetDouble(&value));
     return value;
 }
 
 template <typename D> wchar_t impl_IPropertyValue<D>::GetChar16() const
 {
     wchar_t value {};
-    check_hresult(shim()->abi_GetChar16(&value));
+    check_hresult(static_cast<const IPropertyValue &>(static_cast<const D &>(*this))->abi_GetChar16(&value));
     return value;
 }
 
 template <typename D> bool impl_IPropertyValue<D>::GetBoolean() const
 {
     bool value {};
-    check_hresult(shim()->abi_GetBoolean(&value));
+    check_hresult(static_cast<const IPropertyValue &>(static_cast<const D &>(*this))->abi_GetBoolean(&value));
     return value;
 }
 
 template <typename D> hstring impl_IPropertyValue<D>::GetString() const
 {
     hstring value;
-    check_hresult(shim()->abi_GetString(put(value)));
+    check_hresult(static_cast<const IPropertyValue &>(static_cast<const D &>(*this))->abi_GetString(put(value)));
     return value;
 }
 
 template <typename D> GUID impl_IPropertyValue<D>::GetGuid() const
 {
     GUID value {};
-    check_hresult(shim()->abi_GetGuid(&value));
+    check_hresult(static_cast<const IPropertyValue &>(static_cast<const D &>(*this))->abi_GetGuid(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IPropertyValue<D>::GetDateTime() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->abi_GetDateTime(put(value)));
+    check_hresult(static_cast<const IPropertyValue &>(static_cast<const D &>(*this))->abi_GetDateTime(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IPropertyValue<D>::GetTimeSpan() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->abi_GetTimeSpan(put(value)));
+    check_hresult(static_cast<const IPropertyValue &>(static_cast<const D &>(*this))->abi_GetTimeSpan(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Point impl_IPropertyValue<D>::GetPoint() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(shim()->abi_GetPoint(put(value)));
+    check_hresult(static_cast<const IPropertyValue &>(static_cast<const D &>(*this))->abi_GetPoint(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Size impl_IPropertyValue<D>::GetSize() const
 {
     Windows::Foundation::Size value {};
-    check_hresult(shim()->abi_GetSize(put(value)));
+    check_hresult(static_cast<const IPropertyValue &>(static_cast<const D &>(*this))->abi_GetSize(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Rect impl_IPropertyValue<D>::GetRect() const
 {
     Windows::Foundation::Rect value {};
-    check_hresult(shim()->abi_GetRect(put(value)));
+    check_hresult(static_cast<const IPropertyValue &>(static_cast<const D &>(*this))->abi_GetRect(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPropertyValue<D>::GetUInt8Array(com_array<uint8_t> & value) const
 {
-    check_hresult(shim()->abi_GetUInt8Array(put_size(value), put(value)));
+    check_hresult(static_cast<const IPropertyValue &>(static_cast<const D &>(*this))->abi_GetUInt8Array(put_size(value), put(value)));
 }
 
 template <typename D> void impl_IPropertyValue<D>::GetInt16Array(com_array<int16_t> & value) const
 {
-    check_hresult(shim()->abi_GetInt16Array(put_size(value), put(value)));
+    check_hresult(static_cast<const IPropertyValue &>(static_cast<const D &>(*this))->abi_GetInt16Array(put_size(value), put(value)));
 }
 
 template <typename D> void impl_IPropertyValue<D>::GetUInt16Array(com_array<uint16_t> & value) const
 {
-    check_hresult(shim()->abi_GetUInt16Array(put_size(value), put(value)));
+    check_hresult(static_cast<const IPropertyValue &>(static_cast<const D &>(*this))->abi_GetUInt16Array(put_size(value), put(value)));
 }
 
 template <typename D> void impl_IPropertyValue<D>::GetInt32Array(com_array<int32_t> & value) const
 {
-    check_hresult(shim()->abi_GetInt32Array(put_size(value), put(value)));
+    check_hresult(static_cast<const IPropertyValue &>(static_cast<const D &>(*this))->abi_GetInt32Array(put_size(value), put(value)));
 }
 
 template <typename D> void impl_IPropertyValue<D>::GetUInt32Array(com_array<uint32_t> & value) const
 {
-    check_hresult(shim()->abi_GetUInt32Array(put_size(value), put(value)));
+    check_hresult(static_cast<const IPropertyValue &>(static_cast<const D &>(*this))->abi_GetUInt32Array(put_size(value), put(value)));
 }
 
 template <typename D> void impl_IPropertyValue<D>::GetInt64Array(com_array<int64_t> & value) const
 {
-    check_hresult(shim()->abi_GetInt64Array(put_size(value), put(value)));
+    check_hresult(static_cast<const IPropertyValue &>(static_cast<const D &>(*this))->abi_GetInt64Array(put_size(value), put(value)));
 }
 
 template <typename D> void impl_IPropertyValue<D>::GetUInt64Array(com_array<uint64_t> & value) const
 {
-    check_hresult(shim()->abi_GetUInt64Array(put_size(value), put(value)));
+    check_hresult(static_cast<const IPropertyValue &>(static_cast<const D &>(*this))->abi_GetUInt64Array(put_size(value), put(value)));
 }
 
 template <typename D> void impl_IPropertyValue<D>::GetSingleArray(com_array<float> & value) const
 {
-    check_hresult(shim()->abi_GetSingleArray(put_size(value), put(value)));
+    check_hresult(static_cast<const IPropertyValue &>(static_cast<const D &>(*this))->abi_GetSingleArray(put_size(value), put(value)));
 }
 
 template <typename D> void impl_IPropertyValue<D>::GetDoubleArray(com_array<double> & value) const
 {
-    check_hresult(shim()->abi_GetDoubleArray(put_size(value), put(value)));
+    check_hresult(static_cast<const IPropertyValue &>(static_cast<const D &>(*this))->abi_GetDoubleArray(put_size(value), put(value)));
 }
 
 template <typename D> void impl_IPropertyValue<D>::GetChar16Array(com_array<wchar_t> & value) const
 {
-    check_hresult(shim()->abi_GetChar16Array(put_size(value), put(value)));
+    check_hresult(static_cast<const IPropertyValue &>(static_cast<const D &>(*this))->abi_GetChar16Array(put_size(value), put(value)));
 }
 
 template <typename D> void impl_IPropertyValue<D>::GetBooleanArray(com_array<bool> & value) const
 {
-    check_hresult(shim()->abi_GetBooleanArray(put_size(value), put(value)));
+    check_hresult(static_cast<const IPropertyValue &>(static_cast<const D &>(*this))->abi_GetBooleanArray(put_size(value), put(value)));
 }
 
 template <typename D> void impl_IPropertyValue<D>::GetStringArray(com_array<hstring> & value) const
 {
-    check_hresult(shim()->abi_GetStringArray(put_size(value), put(value)));
+    check_hresult(static_cast<const IPropertyValue &>(static_cast<const D &>(*this))->abi_GetStringArray(put_size(value), put(value)));
 }
 
 template <typename D> void impl_IPropertyValue<D>::GetInspectableArray(com_array<Windows::IInspectable> & value) const
 {
-    check_hresult(shim()->abi_GetInspectableArray(put_size(value), put(value)));
+    check_hresult(static_cast<const IPropertyValue &>(static_cast<const D &>(*this))->abi_GetInspectableArray(put_size(value), put(value)));
 }
 
 template <typename D> void impl_IPropertyValue<D>::GetGuidArray(com_array<GUID> & value) const
 {
-    check_hresult(shim()->abi_GetGuidArray(put_size(value), put(value)));
+    check_hresult(static_cast<const IPropertyValue &>(static_cast<const D &>(*this))->abi_GetGuidArray(put_size(value), put(value)));
 }
 
 template <typename D> void impl_IPropertyValue<D>::GetDateTimeArray(com_array<Windows::Foundation::DateTime> & value) const
 {
-    check_hresult(shim()->abi_GetDateTimeArray(put_size(value), put(value)));
+    check_hresult(static_cast<const IPropertyValue &>(static_cast<const D &>(*this))->abi_GetDateTimeArray(put_size(value), put(value)));
 }
 
 template <typename D> void impl_IPropertyValue<D>::GetTimeSpanArray(com_array<Windows::Foundation::TimeSpan> & value) const
 {
-    check_hresult(shim()->abi_GetTimeSpanArray(put_size(value), put(value)));
+    check_hresult(static_cast<const IPropertyValue &>(static_cast<const D &>(*this))->abi_GetTimeSpanArray(put_size(value), put(value)));
 }
 
 template <typename D> void impl_IPropertyValue<D>::GetPointArray(com_array<Windows::Foundation::Point> & value) const
 {
-    check_hresult(shim()->abi_GetPointArray(put_size(value), put(value)));
+    check_hresult(static_cast<const IPropertyValue &>(static_cast<const D &>(*this))->abi_GetPointArray(put_size(value), put(value)));
 }
 
 template <typename D> void impl_IPropertyValue<D>::GetSizeArray(com_array<Windows::Foundation::Size> & value) const
 {
-    check_hresult(shim()->abi_GetSizeArray(put_size(value), put(value)));
+    check_hresult(static_cast<const IPropertyValue &>(static_cast<const D &>(*this))->abi_GetSizeArray(put_size(value), put(value)));
 }
 
 template <typename D> void impl_IPropertyValue<D>::GetRectArray(com_array<Windows::Foundation::Rect> & value) const
 {
-    check_hresult(shim()->abi_GetRectArray(put_size(value), put(value)));
+    check_hresult(static_cast<const IPropertyValue &>(static_cast<const D &>(*this))->abi_GetRectArray(put_size(value), put(value)));
 }
 
 template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateEmpty() const
 {
     Windows::IInspectable propertyValue;
-    check_hresult(shim()->abi_CreateEmpty(put(propertyValue)));
+    check_hresult(static_cast<const IPropertyValueStatics &>(static_cast<const D &>(*this))->abi_CreateEmpty(put(propertyValue)));
     return propertyValue;
 }
 
 template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateUInt8(uint8_t value) const
 {
     Windows::IInspectable propertyValue;
-    check_hresult(shim()->abi_CreateUInt8(value, put(propertyValue)));
+    check_hresult(static_cast<const IPropertyValueStatics &>(static_cast<const D &>(*this))->abi_CreateUInt8(value, put(propertyValue)));
     return propertyValue;
 }
 
 template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateInt16(int16_t value) const
 {
     Windows::IInspectable propertyValue;
-    check_hresult(shim()->abi_CreateInt16(value, put(propertyValue)));
+    check_hresult(static_cast<const IPropertyValueStatics &>(static_cast<const D &>(*this))->abi_CreateInt16(value, put(propertyValue)));
     return propertyValue;
 }
 
 template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateUInt16(uint16_t value) const
 {
     Windows::IInspectable propertyValue;
-    check_hresult(shim()->abi_CreateUInt16(value, put(propertyValue)));
+    check_hresult(static_cast<const IPropertyValueStatics &>(static_cast<const D &>(*this))->abi_CreateUInt16(value, put(propertyValue)));
     return propertyValue;
 }
 
 template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateInt32(int32_t value) const
 {
     Windows::IInspectable propertyValue;
-    check_hresult(shim()->abi_CreateInt32(value, put(propertyValue)));
+    check_hresult(static_cast<const IPropertyValueStatics &>(static_cast<const D &>(*this))->abi_CreateInt32(value, put(propertyValue)));
     return propertyValue;
 }
 
 template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateUInt32(uint32_t value) const
 {
     Windows::IInspectable propertyValue;
-    check_hresult(shim()->abi_CreateUInt32(value, put(propertyValue)));
+    check_hresult(static_cast<const IPropertyValueStatics &>(static_cast<const D &>(*this))->abi_CreateUInt32(value, put(propertyValue)));
     return propertyValue;
 }
 
 template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateInt64(int64_t value) const
 {
     Windows::IInspectable propertyValue;
-    check_hresult(shim()->abi_CreateInt64(value, put(propertyValue)));
+    check_hresult(static_cast<const IPropertyValueStatics &>(static_cast<const D &>(*this))->abi_CreateInt64(value, put(propertyValue)));
     return propertyValue;
 }
 
 template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateUInt64(uint64_t value) const
 {
     Windows::IInspectable propertyValue;
-    check_hresult(shim()->abi_CreateUInt64(value, put(propertyValue)));
+    check_hresult(static_cast<const IPropertyValueStatics &>(static_cast<const D &>(*this))->abi_CreateUInt64(value, put(propertyValue)));
     return propertyValue;
 }
 
 template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateSingle(float value) const
 {
     Windows::IInspectable propertyValue;
-    check_hresult(shim()->abi_CreateSingle(value, put(propertyValue)));
+    check_hresult(static_cast<const IPropertyValueStatics &>(static_cast<const D &>(*this))->abi_CreateSingle(value, put(propertyValue)));
     return propertyValue;
 }
 
 template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateDouble(double value) const
 {
     Windows::IInspectable propertyValue;
-    check_hresult(shim()->abi_CreateDouble(value, put(propertyValue)));
+    check_hresult(static_cast<const IPropertyValueStatics &>(static_cast<const D &>(*this))->abi_CreateDouble(value, put(propertyValue)));
     return propertyValue;
 }
 
 template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateChar16(wchar_t value) const
 {
     Windows::IInspectable propertyValue;
-    check_hresult(shim()->abi_CreateChar16(value, put(propertyValue)));
+    check_hresult(static_cast<const IPropertyValueStatics &>(static_cast<const D &>(*this))->abi_CreateChar16(value, put(propertyValue)));
     return propertyValue;
 }
 
 template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateBoolean(bool value) const
 {
     Windows::IInspectable propertyValue;
-    check_hresult(shim()->abi_CreateBoolean(value, put(propertyValue)));
+    check_hresult(static_cast<const IPropertyValueStatics &>(static_cast<const D &>(*this))->abi_CreateBoolean(value, put(propertyValue)));
     return propertyValue;
 }
 
 template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateString(hstring_ref value) const
 {
     Windows::IInspectable propertyValue;
-    check_hresult(shim()->abi_CreateString(get(value), put(propertyValue)));
+    check_hresult(static_cast<const IPropertyValueStatics &>(static_cast<const D &>(*this))->abi_CreateString(get(value), put(propertyValue)));
     return propertyValue;
 }
 
 template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateInspectable(const Windows::IInspectable & value) const
 {
     Windows::IInspectable propertyValue;
-    check_hresult(shim()->abi_CreateInspectable(get(value), put(propertyValue)));
+    check_hresult(static_cast<const IPropertyValueStatics &>(static_cast<const D &>(*this))->abi_CreateInspectable(get(value), put(propertyValue)));
     return propertyValue;
 }
 
 template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateGuid(GUID value) const
 {
     Windows::IInspectable propertyValue;
-    check_hresult(shim()->abi_CreateGuid(value, put(propertyValue)));
+    check_hresult(static_cast<const IPropertyValueStatics &>(static_cast<const D &>(*this))->abi_CreateGuid(value, put(propertyValue)));
     return propertyValue;
 }
 
 template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateDateTime(const Windows::Foundation::DateTime & value) const
 {
     Windows::IInspectable propertyValue;
-    check_hresult(shim()->abi_CreateDateTime(get(value), put(propertyValue)));
+    check_hresult(static_cast<const IPropertyValueStatics &>(static_cast<const D &>(*this))->abi_CreateDateTime(get(value), put(propertyValue)));
     return propertyValue;
 }
 
 template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateTimeSpan(const Windows::Foundation::TimeSpan & value) const
 {
     Windows::IInspectable propertyValue;
-    check_hresult(shim()->abi_CreateTimeSpan(get(value), put(propertyValue)));
+    check_hresult(static_cast<const IPropertyValueStatics &>(static_cast<const D &>(*this))->abi_CreateTimeSpan(get(value), put(propertyValue)));
     return propertyValue;
 }
 
 template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreatePoint(const Windows::Foundation::Point & value) const
 {
     Windows::IInspectable propertyValue;
-    check_hresult(shim()->abi_CreatePoint(get(value), put(propertyValue)));
+    check_hresult(static_cast<const IPropertyValueStatics &>(static_cast<const D &>(*this))->abi_CreatePoint(get(value), put(propertyValue)));
     return propertyValue;
 }
 
 template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateSize(const Windows::Foundation::Size & value) const
 {
     Windows::IInspectable propertyValue;
-    check_hresult(shim()->abi_CreateSize(get(value), put(propertyValue)));
+    check_hresult(static_cast<const IPropertyValueStatics &>(static_cast<const D &>(*this))->abi_CreateSize(get(value), put(propertyValue)));
     return propertyValue;
 }
 
 template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateRect(const Windows::Foundation::Rect & value) const
 {
     Windows::IInspectable propertyValue;
-    check_hresult(shim()->abi_CreateRect(get(value), put(propertyValue)));
+    check_hresult(static_cast<const IPropertyValueStatics &>(static_cast<const D &>(*this))->abi_CreateRect(get(value), put(propertyValue)));
     return propertyValue;
 }
 
 template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateUInt8Array(array_ref<const uint8_t> value) const
 {
     Windows::IInspectable propertyValue;
-    check_hresult(shim()->abi_CreateUInt8Array(value.size(), get(value), put(propertyValue)));
+    check_hresult(static_cast<const IPropertyValueStatics &>(static_cast<const D &>(*this))->abi_CreateUInt8Array(value.size(), get(value), put(propertyValue)));
     return propertyValue;
 }
 
 template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateInt16Array(array_ref<const int16_t> value) const
 {
     Windows::IInspectable propertyValue;
-    check_hresult(shim()->abi_CreateInt16Array(value.size(), get(value), put(propertyValue)));
+    check_hresult(static_cast<const IPropertyValueStatics &>(static_cast<const D &>(*this))->abi_CreateInt16Array(value.size(), get(value), put(propertyValue)));
     return propertyValue;
 }
 
 template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateUInt16Array(array_ref<const uint16_t> value) const
 {
     Windows::IInspectable propertyValue;
-    check_hresult(shim()->abi_CreateUInt16Array(value.size(), get(value), put(propertyValue)));
+    check_hresult(static_cast<const IPropertyValueStatics &>(static_cast<const D &>(*this))->abi_CreateUInt16Array(value.size(), get(value), put(propertyValue)));
     return propertyValue;
 }
 
 template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateInt32Array(array_ref<const int32_t> value) const
 {
     Windows::IInspectable propertyValue;
-    check_hresult(shim()->abi_CreateInt32Array(value.size(), get(value), put(propertyValue)));
+    check_hresult(static_cast<const IPropertyValueStatics &>(static_cast<const D &>(*this))->abi_CreateInt32Array(value.size(), get(value), put(propertyValue)));
     return propertyValue;
 }
 
 template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateUInt32Array(array_ref<const uint32_t> value) const
 {
     Windows::IInspectable propertyValue;
-    check_hresult(shim()->abi_CreateUInt32Array(value.size(), get(value), put(propertyValue)));
+    check_hresult(static_cast<const IPropertyValueStatics &>(static_cast<const D &>(*this))->abi_CreateUInt32Array(value.size(), get(value), put(propertyValue)));
     return propertyValue;
 }
 
 template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateInt64Array(array_ref<const int64_t> value) const
 {
     Windows::IInspectable propertyValue;
-    check_hresult(shim()->abi_CreateInt64Array(value.size(), get(value), put(propertyValue)));
+    check_hresult(static_cast<const IPropertyValueStatics &>(static_cast<const D &>(*this))->abi_CreateInt64Array(value.size(), get(value), put(propertyValue)));
     return propertyValue;
 }
 
 template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateUInt64Array(array_ref<const uint64_t> value) const
 {
     Windows::IInspectable propertyValue;
-    check_hresult(shim()->abi_CreateUInt64Array(value.size(), get(value), put(propertyValue)));
+    check_hresult(static_cast<const IPropertyValueStatics &>(static_cast<const D &>(*this))->abi_CreateUInt64Array(value.size(), get(value), put(propertyValue)));
     return propertyValue;
 }
 
 template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateSingleArray(array_ref<const float> value) const
 {
     Windows::IInspectable propertyValue;
-    check_hresult(shim()->abi_CreateSingleArray(value.size(), get(value), put(propertyValue)));
+    check_hresult(static_cast<const IPropertyValueStatics &>(static_cast<const D &>(*this))->abi_CreateSingleArray(value.size(), get(value), put(propertyValue)));
     return propertyValue;
 }
 
 template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateDoubleArray(array_ref<const double> value) const
 {
     Windows::IInspectable propertyValue;
-    check_hresult(shim()->abi_CreateDoubleArray(value.size(), get(value), put(propertyValue)));
+    check_hresult(static_cast<const IPropertyValueStatics &>(static_cast<const D &>(*this))->abi_CreateDoubleArray(value.size(), get(value), put(propertyValue)));
     return propertyValue;
 }
 
 template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateChar16Array(array_ref<const wchar_t> value) const
 {
     Windows::IInspectable propertyValue;
-    check_hresult(shim()->abi_CreateChar16Array(value.size(), get(value), put(propertyValue)));
+    check_hresult(static_cast<const IPropertyValueStatics &>(static_cast<const D &>(*this))->abi_CreateChar16Array(value.size(), get(value), put(propertyValue)));
     return propertyValue;
 }
 
 template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateBooleanArray(array_ref<const bool> value) const
 {
     Windows::IInspectable propertyValue;
-    check_hresult(shim()->abi_CreateBooleanArray(value.size(), get(value), put(propertyValue)));
+    check_hresult(static_cast<const IPropertyValueStatics &>(static_cast<const D &>(*this))->abi_CreateBooleanArray(value.size(), get(value), put(propertyValue)));
     return propertyValue;
 }
 
 template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateStringArray(array_ref<const hstring> value) const
 {
     Windows::IInspectable propertyValue;
-    check_hresult(shim()->abi_CreateStringArray(value.size(), get(value), put(propertyValue)));
+    check_hresult(static_cast<const IPropertyValueStatics &>(static_cast<const D &>(*this))->abi_CreateStringArray(value.size(), get(value), put(propertyValue)));
     return propertyValue;
 }
 
 template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateInspectableArray(array_ref<const Windows::IInspectable> value) const
 {
     Windows::IInspectable propertyValue;
-    check_hresult(shim()->abi_CreateInspectableArray(value.size(), get(value), put(propertyValue)));
+    check_hresult(static_cast<const IPropertyValueStatics &>(static_cast<const D &>(*this))->abi_CreateInspectableArray(value.size(), get(value), put(propertyValue)));
     return propertyValue;
 }
 
 template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateGuidArray(array_ref<const GUID> value) const
 {
     Windows::IInspectable propertyValue;
-    check_hresult(shim()->abi_CreateGuidArray(value.size(), get(value), put(propertyValue)));
+    check_hresult(static_cast<const IPropertyValueStatics &>(static_cast<const D &>(*this))->abi_CreateGuidArray(value.size(), get(value), put(propertyValue)));
     return propertyValue;
 }
 
 template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateDateTimeArray(array_ref<const Windows::Foundation::DateTime> value) const
 {
     Windows::IInspectable propertyValue;
-    check_hresult(shim()->abi_CreateDateTimeArray(value.size(), get(value), put(propertyValue)));
+    check_hresult(static_cast<const IPropertyValueStatics &>(static_cast<const D &>(*this))->abi_CreateDateTimeArray(value.size(), get(value), put(propertyValue)));
     return propertyValue;
 }
 
 template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateTimeSpanArray(array_ref<const Windows::Foundation::TimeSpan> value) const
 {
     Windows::IInspectable propertyValue;
-    check_hresult(shim()->abi_CreateTimeSpanArray(value.size(), get(value), put(propertyValue)));
+    check_hresult(static_cast<const IPropertyValueStatics &>(static_cast<const D &>(*this))->abi_CreateTimeSpanArray(value.size(), get(value), put(propertyValue)));
     return propertyValue;
 }
 
 template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreatePointArray(array_ref<const Windows::Foundation::Point> value) const
 {
     Windows::IInspectable propertyValue;
-    check_hresult(shim()->abi_CreatePointArray(value.size(), get(value), put(propertyValue)));
+    check_hresult(static_cast<const IPropertyValueStatics &>(static_cast<const D &>(*this))->abi_CreatePointArray(value.size(), get(value), put(propertyValue)));
     return propertyValue;
 }
 
 template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateSizeArray(array_ref<const Windows::Foundation::Size> value) const
 {
     Windows::IInspectable propertyValue;
-    check_hresult(shim()->abi_CreateSizeArray(value.size(), get(value), put(propertyValue)));
+    check_hresult(static_cast<const IPropertyValueStatics &>(static_cast<const D &>(*this))->abi_CreateSizeArray(value.size(), get(value), put(propertyValue)));
     return propertyValue;
 }
 
 template <typename D> Windows::IInspectable impl_IPropertyValueStatics<D>::CreateRectArray(array_ref<const Windows::Foundation::Rect> value) const
 {
     Windows::IInspectable propertyValue;
-    check_hresult(shim()->abi_CreateRectArray(value.size(), get(value), put(propertyValue)));
+    check_hresult(static_cast<const IPropertyValueStatics &>(static_cast<const D &>(*this))->abi_CreateRectArray(value.size(), get(value), put(propertyValue)));
     return propertyValue;
 }
 
 template <typename D> hstring impl_IStringable<D>::ToString() const
 {
     hstring value;
-    check_hresult(shim()->abi_ToString(put(value)));
+    check_hresult(static_cast<const IStringable &>(static_cast<const D &>(*this))->abi_ToString(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDeferral<D>::Complete() const
 {
-    check_hresult(shim()->abi_Complete());
+    check_hresult(static_cast<const IDeferral &>(static_cast<const D &>(*this))->abi_Complete());
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IDeferralFactory<D>::Create(const Windows::Foundation::DeferralCompletedHandler & handler) const
 {
     Windows::Foundation::Deferral result { nullptr };
-    check_hresult(shim()->abi_Create(get(handler), put(result)));
+    check_hresult(static_cast<const IDeferralFactory &>(static_cast<const D &>(*this))->abi_Create(get(handler), put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IUriRuntimeClass<D>::AbsoluteUri() const
 {
     hstring value;
-    check_hresult(shim()->get_AbsoluteUri(put(value)));
+    check_hresult(static_cast<const IUriRuntimeClass &>(static_cast<const D &>(*this))->get_AbsoluteUri(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IUriRuntimeClass<D>::DisplayUri() const
 {
     hstring value;
-    check_hresult(shim()->get_DisplayUri(put(value)));
+    check_hresult(static_cast<const IUriRuntimeClass &>(static_cast<const D &>(*this))->get_DisplayUri(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IUriRuntimeClass<D>::Domain() const
 {
     hstring value;
-    check_hresult(shim()->get_Domain(put(value)));
+    check_hresult(static_cast<const IUriRuntimeClass &>(static_cast<const D &>(*this))->get_Domain(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IUriRuntimeClass<D>::Extension() const
 {
     hstring value;
-    check_hresult(shim()->get_Extension(put(value)));
+    check_hresult(static_cast<const IUriRuntimeClass &>(static_cast<const D &>(*this))->get_Extension(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IUriRuntimeClass<D>::Fragment() const
 {
     hstring value;
-    check_hresult(shim()->get_Fragment(put(value)));
+    check_hresult(static_cast<const IUriRuntimeClass &>(static_cast<const D &>(*this))->get_Fragment(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IUriRuntimeClass<D>::Host() const
 {
     hstring value;
-    check_hresult(shim()->get_Host(put(value)));
+    check_hresult(static_cast<const IUriRuntimeClass &>(static_cast<const D &>(*this))->get_Host(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IUriRuntimeClass<D>::Password() const
 {
     hstring value;
-    check_hresult(shim()->get_Password(put(value)));
+    check_hresult(static_cast<const IUriRuntimeClass &>(static_cast<const D &>(*this))->get_Password(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IUriRuntimeClass<D>::Path() const
 {
     hstring value;
-    check_hresult(shim()->get_Path(put(value)));
+    check_hresult(static_cast<const IUriRuntimeClass &>(static_cast<const D &>(*this))->get_Path(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IUriRuntimeClass<D>::Query() const
 {
     hstring value;
-    check_hresult(shim()->get_Query(put(value)));
+    check_hresult(static_cast<const IUriRuntimeClass &>(static_cast<const D &>(*this))->get_Query(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::WwwFormUrlDecoder impl_IUriRuntimeClass<D>::QueryParsed() const
 {
     Windows::Foundation::WwwFormUrlDecoder ppWwwFormUrlDecoder { nullptr };
-    check_hresult(shim()->get_QueryParsed(put(ppWwwFormUrlDecoder)));
+    check_hresult(static_cast<const IUriRuntimeClass &>(static_cast<const D &>(*this))->get_QueryParsed(put(ppWwwFormUrlDecoder)));
     return ppWwwFormUrlDecoder;
 }
 
 template <typename D> hstring impl_IUriRuntimeClass<D>::RawUri() const
 {
     hstring value;
-    check_hresult(shim()->get_RawUri(put(value)));
+    check_hresult(static_cast<const IUriRuntimeClass &>(static_cast<const D &>(*this))->get_RawUri(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IUriRuntimeClass<D>::SchemeName() const
 {
     hstring value;
-    check_hresult(shim()->get_SchemeName(put(value)));
+    check_hresult(static_cast<const IUriRuntimeClass &>(static_cast<const D &>(*this))->get_SchemeName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IUriRuntimeClass<D>::UserName() const
 {
     hstring value;
-    check_hresult(shim()->get_UserName(put(value)));
+    check_hresult(static_cast<const IUriRuntimeClass &>(static_cast<const D &>(*this))->get_UserName(put(value)));
     return value;
 }
 
 template <typename D> int32_t impl_IUriRuntimeClass<D>::Port() const
 {
     int32_t value {};
-    check_hresult(shim()->get_Port(&value));
+    check_hresult(static_cast<const IUriRuntimeClass &>(static_cast<const D &>(*this))->get_Port(&value));
     return value;
 }
 
 template <typename D> bool impl_IUriRuntimeClass<D>::Suspicious() const
 {
     bool value {};
-    check_hresult(shim()->get_Suspicious(&value));
+    check_hresult(static_cast<const IUriRuntimeClass &>(static_cast<const D &>(*this))->get_Suspicious(&value));
     return value;
 }
 
 template <typename D> bool impl_IUriRuntimeClass<D>::Equals(const Windows::Foundation::Uri & pUri) const
 {
     bool value {};
-    check_hresult(shim()->abi_Equals(get(pUri), &value));
+    check_hresult(static_cast<const IUriRuntimeClass &>(static_cast<const D &>(*this))->abi_Equals(get(pUri), &value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Uri impl_IUriRuntimeClass<D>::CombineUri(hstring_ref relativeUri) const
 {
     Windows::Foundation::Uri instance { nullptr };
-    check_hresult(shim()->abi_CombineUri(get(relativeUri), put(instance)));
+    check_hresult(static_cast<const IUriRuntimeClass &>(static_cast<const D &>(*this))->abi_CombineUri(get(relativeUri), put(instance)));
     return instance;
 }
 
 template <typename D> hstring impl_IUriRuntimeClassWithAbsoluteCanonicalUri<D>::AbsoluteCanonicalUri() const
 {
     hstring value;
-    check_hresult(shim()->get_AbsoluteCanonicalUri(put(value)));
+    check_hresult(static_cast<const IUriRuntimeClassWithAbsoluteCanonicalUri &>(static_cast<const D &>(*this))->get_AbsoluteCanonicalUri(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IUriRuntimeClassWithAbsoluteCanonicalUri<D>::DisplayIri() const
 {
     hstring value;
-    check_hresult(shim()->get_DisplayIri(put(value)));
+    check_hresult(static_cast<const IUriRuntimeClassWithAbsoluteCanonicalUri &>(static_cast<const D &>(*this))->get_DisplayIri(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IUriEscapeStatics<D>::UnescapeComponent(hstring_ref toUnescape) const
 {
     hstring value;
-    check_hresult(shim()->abi_UnescapeComponent(get(toUnescape), put(value)));
+    check_hresult(static_cast<const IUriEscapeStatics &>(static_cast<const D &>(*this))->abi_UnescapeComponent(get(toUnescape), put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IUriEscapeStatics<D>::EscapeComponent(hstring_ref toEscape) const
 {
     hstring value;
-    check_hresult(shim()->abi_EscapeComponent(get(toEscape), put(value)));
+    check_hresult(static_cast<const IUriEscapeStatics &>(static_cast<const D &>(*this))->abi_EscapeComponent(get(toEscape), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Uri impl_IUriRuntimeClassFactory<D>::CreateUri(hstring_ref uri) const
 {
     Windows::Foundation::Uri instance { nullptr };
-    check_hresult(shim()->abi_CreateUri(get(uri), put(instance)));
+    check_hresult(static_cast<const IUriRuntimeClassFactory &>(static_cast<const D &>(*this))->abi_CreateUri(get(uri), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::Foundation::Uri impl_IUriRuntimeClassFactory<D>::CreateWithRelativeUri(hstring_ref baseUri, hstring_ref relativeUri) const
 {
     Windows::Foundation::Uri instance { nullptr };
-    check_hresult(shim()->abi_CreateWithRelativeUri(get(baseUri), get(relativeUri), put(instance)));
+    check_hresult(static_cast<const IUriRuntimeClassFactory &>(static_cast<const D &>(*this))->abi_CreateWithRelativeUri(get(baseUri), get(relativeUri), put(instance)));
     return instance;
 }
 
 template <typename D> hstring impl_IWwwFormUrlDecoderEntry<D>::Name() const
 {
     hstring value;
-    check_hresult(shim()->get_Name(put(value)));
+    check_hresult(static_cast<const IWwwFormUrlDecoderEntry &>(static_cast<const D &>(*this))->get_Name(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IWwwFormUrlDecoderEntry<D>::Value() const
 {
     hstring value;
-    check_hresult(shim()->get_Value(put(value)));
+    check_hresult(static_cast<const IWwwFormUrlDecoderEntry &>(static_cast<const D &>(*this))->get_Value(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IWwwFormUrlDecoderRuntimeClass<D>::GetFirstValueByName(hstring_ref name) const
 {
     hstring phstrValue;
-    check_hresult(shim()->abi_GetFirstValueByName(get(name), put(phstrValue)));
+    check_hresult(static_cast<const IWwwFormUrlDecoderRuntimeClass &>(static_cast<const D &>(*this))->abi_GetFirstValueByName(get(name), put(phstrValue)));
     return phstrValue;
 }
 
 template <typename D> Windows::Foundation::WwwFormUrlDecoder impl_IWwwFormUrlDecoderRuntimeClassFactory<D>::CreateWwwFormUrlDecoder(hstring_ref query) const
 {
     Windows::Foundation::WwwFormUrlDecoder instance { nullptr };
-    check_hresult(shim()->abi_CreateWwwFormUrlDecoder(get(query), put(instance)));
+    check_hresult(static_cast<const IWwwFormUrlDecoderRuntimeClassFactory &>(static_cast<const D &>(*this))->abi_CreateWwwFormUrlDecoder(get(query), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::IInspectable impl_IGetActivationFactory<D>::GetActivationFactory(hstring_ref activatableClassId) const
 {
     Windows::IInspectable factory;
-    check_hresult(shim()->abi_GetActivationFactory(get(activatableClassId), put(factory)));
+    check_hresult(static_cast<const IGetActivationFactory &>(static_cast<const D &>(*this))->abi_GetActivationFactory(get(activatableClassId), put(factory)));
     return factory;
 }
 
 template <typename D> uint32_t impl_IMemoryBufferReference<D>::Capacity() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_Capacity(&value));
+    check_hresult(static_cast<const IMemoryBufferReference &>(static_cast<const D &>(*this))->get_Capacity(&value));
     return value;
 }
 
 template <typename D> event_token impl_IMemoryBufferReference<D>::Closed(const Windows::Foundation::TypedEventHandler<Windows::Foundation::IMemoryBufferReference, Windows::IInspectable> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_Closed(get(handler), &cookie));
+    check_hresult(static_cast<const IMemoryBufferReference &>(static_cast<const D &>(*this))->add_Closed(get(handler), &cookie));
     return cookie;
 }
 
@@ -2456,20 +2456,20 @@ template <typename D> event_revoker<IMemoryBufferReference> impl_IMemoryBufferRe
 
 template <typename D> void impl_IMemoryBufferReference<D>::Closed(event_token cookie) const
 {
-    check_hresult(shim()->remove_Closed(cookie));
+    check_hresult(static_cast<const IMemoryBufferReference &>(static_cast<const D &>(*this))->remove_Closed(cookie));
 }
 
 template <typename D> Windows::Foundation::IMemoryBufferReference impl_IMemoryBuffer<D>::CreateReference() const
 {
     Windows::Foundation::IMemoryBufferReference reference;
-    check_hresult(shim()->abi_CreateReference(put(reference)));
+    check_hresult(static_cast<const IMemoryBuffer &>(static_cast<const D &>(*this))->abi_CreateReference(put(reference)));
     return reference;
 }
 
 template <typename D> Windows::Foundation::MemoryBuffer impl_IMemoryBufferFactory<D>::Create(uint32_t capacity) const
 {
     Windows::Foundation::MemoryBuffer value { nullptr };
-    check_hresult(shim()->abi_Create(capacity, put(value)));
+    check_hresult(static_cast<const IMemoryBufferFactory &>(static_cast<const D &>(*this))->abi_Create(capacity, put(value)));
     return value;
 }
 

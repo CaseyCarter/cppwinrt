@@ -10,12 +10,8 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::System::Display {
 
 template <typename D>
-class WINRT_EBO impl_IDisplayRequest
+struct WINRT_EBO impl_IDisplayRequest
 {
-    auto shim() const { return impl::shim<D, IDisplayRequest>(this); }
-
-public:
-
     void RequestActive() const;
     void RequestRelease() const;
 };

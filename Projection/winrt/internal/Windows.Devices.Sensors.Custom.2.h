@@ -60,12 +60,8 @@ template <> struct __declspec(uuid("5db5fa32-707c-5849-a06b-91c8eb9d10e8")) __de
 namespace Windows::Devices::Sensors::Custom {
 
 template <typename D>
-class WINRT_EBO impl_ICustomSensor
+struct WINRT_EBO impl_ICustomSensor
 {
-    auto shim() const { return impl::shim<D, ICustomSensor>(this); }
-
-public:
-
     Windows::Devices::Sensors::Custom::CustomSensorReading GetCurrentReading() const;
     uint32_t MinimumReportInterval() const;
     void ReportInterval(uint32_t value) const;
@@ -78,33 +74,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICustomSensorReading
+struct WINRT_EBO impl_ICustomSensorReading
 {
-    auto shim() const { return impl::shim<D, ICustomSensorReading>(this); }
-
-public:
-
     Windows::Foundation::DateTime Timestamp() const;
     Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> Properties() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICustomSensorReadingChangedEventArgs
+struct WINRT_EBO impl_ICustomSensorReadingChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, ICustomSensorReadingChangedEventArgs>(this); }
-
-public:
-
     Windows::Devices::Sensors::Custom::CustomSensorReading Reading() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICustomSensorStatics
+struct WINRT_EBO impl_ICustomSensorStatics
 {
-    auto shim() const { return impl::shim<D, ICustomSensorStatics>(this); }
-
-public:
-
     hstring GetDeviceSelector(GUID interfaceId) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::Custom::CustomSensor> FromIdAsync(hstring_ref sensorId) const;
 };

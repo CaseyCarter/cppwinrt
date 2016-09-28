@@ -10,12 +10,8 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::Security::Cryptography {
 
 template <typename D>
-class WINRT_EBO impl_ICryptographicBufferStatics
+struct WINRT_EBO impl_ICryptographicBufferStatics
 {
-    auto shim() const { return impl::shim<D, ICryptographicBufferStatics>(this); }
-
-public:
-
     bool Compare(const Windows::Storage::Streams::IBuffer & object1, const Windows::Storage::Streams::IBuffer & object2) const;
     Windows::Storage::Streams::IBuffer GenerateRandom(uint32_t length) const;
     uint32_t GenerateRandomNumber() const;

@@ -65,12 +65,8 @@ template <> struct __declspec(uuid("cded76fd-7841-52a0-a771-76cd751d13cd")) __de
 namespace Windows::Security::Authentication::OnlineId {
 
 template <typename D>
-class WINRT_EBO impl_IOnlineIdAuthenticator
+struct WINRT_EBO impl_IOnlineIdAuthenticator
 {
-    auto shim() const { return impl::shim<D, IOnlineIdAuthenticator>(this); }
-
-public:
-
     Windows::Security::Authentication::OnlineId::UserAuthenticationOperation AuthenticateUserAsync(const Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest & request) const;
     Windows::Security::Authentication::OnlineId::UserAuthenticationOperation AuthenticateUserAsync(const Windows::Foundation::Collections::IIterable<Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest> & requests, Windows::Security::Authentication::OnlineId::CredentialPromptType credentialPromptType) const;
     Windows::Security::Authentication::OnlineId::SignOutUserOperation SignOutUserAsync() const;
@@ -81,46 +77,30 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IOnlineIdServiceTicket
+struct WINRT_EBO impl_IOnlineIdServiceTicket
 {
-    auto shim() const { return impl::shim<D, IOnlineIdServiceTicket>(this); }
-
-public:
-
     hstring Value() const;
     Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest Request() const;
     int32_t ErrorCode() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IOnlineIdServiceTicketRequest
+struct WINRT_EBO impl_IOnlineIdServiceTicketRequest
 {
-    auto shim() const { return impl::shim<D, IOnlineIdServiceTicketRequest>(this); }
-
-public:
-
     hstring Service() const;
     hstring Policy() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IOnlineIdServiceTicketRequestFactory
+struct WINRT_EBO impl_IOnlineIdServiceTicketRequestFactory
 {
-    auto shim() const { return impl::shim<D, IOnlineIdServiceTicketRequestFactory>(this); }
-
-public:
-
     Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest CreateOnlineIdServiceTicketRequest(hstring_ref service, hstring_ref policy) const;
     Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest CreateOnlineIdServiceTicketRequestAdvanced(hstring_ref service) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUserIdentity
+struct WINRT_EBO impl_IUserIdentity
 {
-    auto shim() const { return impl::shim<D, IUserIdentity>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Security::Authentication::OnlineId::OnlineIdServiceTicket> Tickets() const;
     hstring Id() const;
     hstring SafeCustomerId() const;

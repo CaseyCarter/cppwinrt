@@ -3654,1521 +3654,1521 @@ namespace Windows::UI::Xaml::Documents {
 template <typename D> Windows::UI::Xaml::DependencyObject impl_ITextPointer<D>::Parent() const
 {
     Windows::UI::Xaml::DependencyObject value { nullptr };
-    check_hresult(shim()->get_Parent(put(value)));
+    check_hresult(static_cast<const ITextPointer &>(static_cast<const D &>(*this))->get_Parent(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::FrameworkElement impl_ITextPointer<D>::VisualParent() const
 {
     Windows::UI::Xaml::FrameworkElement value { nullptr };
-    check_hresult(shim()->get_VisualParent(put(value)));
+    check_hresult(static_cast<const ITextPointer &>(static_cast<const D &>(*this))->get_VisualParent(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Documents::LogicalDirection impl_ITextPointer<D>::LogicalDirection() const
 {
     Windows::UI::Xaml::Documents::LogicalDirection value {};
-    check_hresult(shim()->get_LogicalDirection(&value));
+    check_hresult(static_cast<const ITextPointer &>(static_cast<const D &>(*this))->get_LogicalDirection(&value));
     return value;
 }
 
 template <typename D> int32_t impl_ITextPointer<D>::Offset() const
 {
     int32_t value {};
-    check_hresult(shim()->get_Offset(&value));
+    check_hresult(static_cast<const ITextPointer &>(static_cast<const D &>(*this))->get_Offset(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Rect impl_ITextPointer<D>::GetCharacterRect(Windows::UI::Xaml::Documents::LogicalDirection direction) const
 {
     Windows::Foundation::Rect returnValue {};
-    check_hresult(shim()->abi_GetCharacterRect(direction, put(returnValue)));
+    check_hresult(static_cast<const ITextPointer &>(static_cast<const D &>(*this))->abi_GetCharacterRect(direction, put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::Documents::TextPointer impl_ITextPointer<D>::GetPositionAtOffset(int32_t offset, Windows::UI::Xaml::Documents::LogicalDirection direction) const
 {
     Windows::UI::Xaml::Documents::TextPointer returnValue { nullptr };
-    check_hresult(shim()->abi_GetPositionAtOffset(offset, direction, put(returnValue)));
+    check_hresult(static_cast<const ITextPointer &>(static_cast<const D &>(*this))->abi_GetPositionAtOffset(offset, direction, put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::AnnotationAlternatesProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_AnnotationAlternatesProperty(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_AnnotationAlternatesProperty(put(value)));
     return value;
 }
 
 template <typename D> int32_t impl_ITypographyStatics<D>::GetAnnotationAlternates(const Windows::UI::Xaml::DependencyObject & element) const
 {
     int32_t value {};
-    check_hresult(shim()->abi_GetAnnotationAlternates(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetAnnotationAlternates(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetAnnotationAlternates(const Windows::UI::Xaml::DependencyObject & element, int32_t value) const
 {
-    check_hresult(shim()->abi_SetAnnotationAlternates(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetAnnotationAlternates(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::EastAsianExpertFormsProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_EastAsianExpertFormsProperty(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_EastAsianExpertFormsProperty(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ITypographyStatics<D>::GetEastAsianExpertForms(const Windows::UI::Xaml::DependencyObject & element) const
 {
     bool value {};
-    check_hresult(shim()->abi_GetEastAsianExpertForms(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetEastAsianExpertForms(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetEastAsianExpertForms(const Windows::UI::Xaml::DependencyObject & element, bool value) const
 {
-    check_hresult(shim()->abi_SetEastAsianExpertForms(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetEastAsianExpertForms(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::EastAsianLanguageProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_EastAsianLanguageProperty(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_EastAsianLanguageProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::FontEastAsianLanguage impl_ITypographyStatics<D>::GetEastAsianLanguage(const Windows::UI::Xaml::DependencyObject & element) const
 {
     Windows::UI::Xaml::FontEastAsianLanguage value {};
-    check_hresult(shim()->abi_GetEastAsianLanguage(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetEastAsianLanguage(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetEastAsianLanguage(const Windows::UI::Xaml::DependencyObject & element, Windows::UI::Xaml::FontEastAsianLanguage value) const
 {
-    check_hresult(shim()->abi_SetEastAsianLanguage(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetEastAsianLanguage(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::EastAsianWidthsProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_EastAsianWidthsProperty(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_EastAsianWidthsProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::FontEastAsianWidths impl_ITypographyStatics<D>::GetEastAsianWidths(const Windows::UI::Xaml::DependencyObject & element) const
 {
     Windows::UI::Xaml::FontEastAsianWidths value {};
-    check_hresult(shim()->abi_GetEastAsianWidths(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetEastAsianWidths(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetEastAsianWidths(const Windows::UI::Xaml::DependencyObject & element, Windows::UI::Xaml::FontEastAsianWidths value) const
 {
-    check_hresult(shim()->abi_SetEastAsianWidths(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetEastAsianWidths(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::StandardLigaturesProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_StandardLigaturesProperty(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_StandardLigaturesProperty(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ITypographyStatics<D>::GetStandardLigatures(const Windows::UI::Xaml::DependencyObject & element) const
 {
     bool value {};
-    check_hresult(shim()->abi_GetStandardLigatures(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetStandardLigatures(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetStandardLigatures(const Windows::UI::Xaml::DependencyObject & element, bool value) const
 {
-    check_hresult(shim()->abi_SetStandardLigatures(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetStandardLigatures(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::ContextualLigaturesProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_ContextualLigaturesProperty(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_ContextualLigaturesProperty(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ITypographyStatics<D>::GetContextualLigatures(const Windows::UI::Xaml::DependencyObject & element) const
 {
     bool value {};
-    check_hresult(shim()->abi_GetContextualLigatures(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetContextualLigatures(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetContextualLigatures(const Windows::UI::Xaml::DependencyObject & element, bool value) const
 {
-    check_hresult(shim()->abi_SetContextualLigatures(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetContextualLigatures(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::DiscretionaryLigaturesProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_DiscretionaryLigaturesProperty(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_DiscretionaryLigaturesProperty(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ITypographyStatics<D>::GetDiscretionaryLigatures(const Windows::UI::Xaml::DependencyObject & element) const
 {
     bool value {};
-    check_hresult(shim()->abi_GetDiscretionaryLigatures(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetDiscretionaryLigatures(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetDiscretionaryLigatures(const Windows::UI::Xaml::DependencyObject & element, bool value) const
 {
-    check_hresult(shim()->abi_SetDiscretionaryLigatures(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetDiscretionaryLigatures(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::HistoricalLigaturesProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_HistoricalLigaturesProperty(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_HistoricalLigaturesProperty(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ITypographyStatics<D>::GetHistoricalLigatures(const Windows::UI::Xaml::DependencyObject & element) const
 {
     bool value {};
-    check_hresult(shim()->abi_GetHistoricalLigatures(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetHistoricalLigatures(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetHistoricalLigatures(const Windows::UI::Xaml::DependencyObject & element, bool value) const
 {
-    check_hresult(shim()->abi_SetHistoricalLigatures(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetHistoricalLigatures(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::StandardSwashesProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_StandardSwashesProperty(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_StandardSwashesProperty(put(value)));
     return value;
 }
 
 template <typename D> int32_t impl_ITypographyStatics<D>::GetStandardSwashes(const Windows::UI::Xaml::DependencyObject & element) const
 {
     int32_t value {};
-    check_hresult(shim()->abi_GetStandardSwashes(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetStandardSwashes(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetStandardSwashes(const Windows::UI::Xaml::DependencyObject & element, int32_t value) const
 {
-    check_hresult(shim()->abi_SetStandardSwashes(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetStandardSwashes(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::ContextualSwashesProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_ContextualSwashesProperty(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_ContextualSwashesProperty(put(value)));
     return value;
 }
 
 template <typename D> int32_t impl_ITypographyStatics<D>::GetContextualSwashes(const Windows::UI::Xaml::DependencyObject & element) const
 {
     int32_t value {};
-    check_hresult(shim()->abi_GetContextualSwashes(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetContextualSwashes(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetContextualSwashes(const Windows::UI::Xaml::DependencyObject & element, int32_t value) const
 {
-    check_hresult(shim()->abi_SetContextualSwashes(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetContextualSwashes(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::ContextualAlternatesProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_ContextualAlternatesProperty(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_ContextualAlternatesProperty(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ITypographyStatics<D>::GetContextualAlternates(const Windows::UI::Xaml::DependencyObject & element) const
 {
     bool value {};
-    check_hresult(shim()->abi_GetContextualAlternates(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetContextualAlternates(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetContextualAlternates(const Windows::UI::Xaml::DependencyObject & element, bool value) const
 {
-    check_hresult(shim()->abi_SetContextualAlternates(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetContextualAlternates(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::StylisticAlternatesProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_StylisticAlternatesProperty(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_StylisticAlternatesProperty(put(value)));
     return value;
 }
 
 template <typename D> int32_t impl_ITypographyStatics<D>::GetStylisticAlternates(const Windows::UI::Xaml::DependencyObject & element) const
 {
     int32_t value {};
-    check_hresult(shim()->abi_GetStylisticAlternates(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetStylisticAlternates(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetStylisticAlternates(const Windows::UI::Xaml::DependencyObject & element, int32_t value) const
 {
-    check_hresult(shim()->abi_SetStylisticAlternates(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetStylisticAlternates(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::StylisticSet1Property() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_StylisticSet1Property(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_StylisticSet1Property(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ITypographyStatics<D>::GetStylisticSet1(const Windows::UI::Xaml::DependencyObject & element) const
 {
     bool value {};
-    check_hresult(shim()->abi_GetStylisticSet1(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetStylisticSet1(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetStylisticSet1(const Windows::UI::Xaml::DependencyObject & element, bool value) const
 {
-    check_hresult(shim()->abi_SetStylisticSet1(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetStylisticSet1(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::StylisticSet2Property() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_StylisticSet2Property(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_StylisticSet2Property(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ITypographyStatics<D>::GetStylisticSet2(const Windows::UI::Xaml::DependencyObject & element) const
 {
     bool value {};
-    check_hresult(shim()->abi_GetStylisticSet2(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetStylisticSet2(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetStylisticSet2(const Windows::UI::Xaml::DependencyObject & element, bool value) const
 {
-    check_hresult(shim()->abi_SetStylisticSet2(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetStylisticSet2(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::StylisticSet3Property() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_StylisticSet3Property(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_StylisticSet3Property(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ITypographyStatics<D>::GetStylisticSet3(const Windows::UI::Xaml::DependencyObject & element) const
 {
     bool value {};
-    check_hresult(shim()->abi_GetStylisticSet3(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetStylisticSet3(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetStylisticSet3(const Windows::UI::Xaml::DependencyObject & element, bool value) const
 {
-    check_hresult(shim()->abi_SetStylisticSet3(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetStylisticSet3(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::StylisticSet4Property() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_StylisticSet4Property(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_StylisticSet4Property(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ITypographyStatics<D>::GetStylisticSet4(const Windows::UI::Xaml::DependencyObject & element) const
 {
     bool value {};
-    check_hresult(shim()->abi_GetStylisticSet4(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetStylisticSet4(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetStylisticSet4(const Windows::UI::Xaml::DependencyObject & element, bool value) const
 {
-    check_hresult(shim()->abi_SetStylisticSet4(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetStylisticSet4(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::StylisticSet5Property() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_StylisticSet5Property(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_StylisticSet5Property(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ITypographyStatics<D>::GetStylisticSet5(const Windows::UI::Xaml::DependencyObject & element) const
 {
     bool value {};
-    check_hresult(shim()->abi_GetStylisticSet5(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetStylisticSet5(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetStylisticSet5(const Windows::UI::Xaml::DependencyObject & element, bool value) const
 {
-    check_hresult(shim()->abi_SetStylisticSet5(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetStylisticSet5(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::StylisticSet6Property() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_StylisticSet6Property(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_StylisticSet6Property(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ITypographyStatics<D>::GetStylisticSet6(const Windows::UI::Xaml::DependencyObject & element) const
 {
     bool value {};
-    check_hresult(shim()->abi_GetStylisticSet6(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetStylisticSet6(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetStylisticSet6(const Windows::UI::Xaml::DependencyObject & element, bool value) const
 {
-    check_hresult(shim()->abi_SetStylisticSet6(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetStylisticSet6(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::StylisticSet7Property() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_StylisticSet7Property(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_StylisticSet7Property(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ITypographyStatics<D>::GetStylisticSet7(const Windows::UI::Xaml::DependencyObject & element) const
 {
     bool value {};
-    check_hresult(shim()->abi_GetStylisticSet7(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetStylisticSet7(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetStylisticSet7(const Windows::UI::Xaml::DependencyObject & element, bool value) const
 {
-    check_hresult(shim()->abi_SetStylisticSet7(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetStylisticSet7(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::StylisticSet8Property() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_StylisticSet8Property(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_StylisticSet8Property(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ITypographyStatics<D>::GetStylisticSet8(const Windows::UI::Xaml::DependencyObject & element) const
 {
     bool value {};
-    check_hresult(shim()->abi_GetStylisticSet8(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetStylisticSet8(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetStylisticSet8(const Windows::UI::Xaml::DependencyObject & element, bool value) const
 {
-    check_hresult(shim()->abi_SetStylisticSet8(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetStylisticSet8(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::StylisticSet9Property() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_StylisticSet9Property(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_StylisticSet9Property(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ITypographyStatics<D>::GetStylisticSet9(const Windows::UI::Xaml::DependencyObject & element) const
 {
     bool value {};
-    check_hresult(shim()->abi_GetStylisticSet9(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetStylisticSet9(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetStylisticSet9(const Windows::UI::Xaml::DependencyObject & element, bool value) const
 {
-    check_hresult(shim()->abi_SetStylisticSet9(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetStylisticSet9(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::StylisticSet10Property() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_StylisticSet10Property(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_StylisticSet10Property(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ITypographyStatics<D>::GetStylisticSet10(const Windows::UI::Xaml::DependencyObject & element) const
 {
     bool value {};
-    check_hresult(shim()->abi_GetStylisticSet10(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetStylisticSet10(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetStylisticSet10(const Windows::UI::Xaml::DependencyObject & element, bool value) const
 {
-    check_hresult(shim()->abi_SetStylisticSet10(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetStylisticSet10(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::StylisticSet11Property() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_StylisticSet11Property(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_StylisticSet11Property(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ITypographyStatics<D>::GetStylisticSet11(const Windows::UI::Xaml::DependencyObject & element) const
 {
     bool value {};
-    check_hresult(shim()->abi_GetStylisticSet11(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetStylisticSet11(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetStylisticSet11(const Windows::UI::Xaml::DependencyObject & element, bool value) const
 {
-    check_hresult(shim()->abi_SetStylisticSet11(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetStylisticSet11(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::StylisticSet12Property() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_StylisticSet12Property(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_StylisticSet12Property(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ITypographyStatics<D>::GetStylisticSet12(const Windows::UI::Xaml::DependencyObject & element) const
 {
     bool value {};
-    check_hresult(shim()->abi_GetStylisticSet12(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetStylisticSet12(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetStylisticSet12(const Windows::UI::Xaml::DependencyObject & element, bool value) const
 {
-    check_hresult(shim()->abi_SetStylisticSet12(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetStylisticSet12(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::StylisticSet13Property() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_StylisticSet13Property(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_StylisticSet13Property(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ITypographyStatics<D>::GetStylisticSet13(const Windows::UI::Xaml::DependencyObject & element) const
 {
     bool value {};
-    check_hresult(shim()->abi_GetStylisticSet13(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetStylisticSet13(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetStylisticSet13(const Windows::UI::Xaml::DependencyObject & element, bool value) const
 {
-    check_hresult(shim()->abi_SetStylisticSet13(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetStylisticSet13(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::StylisticSet14Property() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_StylisticSet14Property(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_StylisticSet14Property(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ITypographyStatics<D>::GetStylisticSet14(const Windows::UI::Xaml::DependencyObject & element) const
 {
     bool value {};
-    check_hresult(shim()->abi_GetStylisticSet14(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetStylisticSet14(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetStylisticSet14(const Windows::UI::Xaml::DependencyObject & element, bool value) const
 {
-    check_hresult(shim()->abi_SetStylisticSet14(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetStylisticSet14(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::StylisticSet15Property() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_StylisticSet15Property(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_StylisticSet15Property(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ITypographyStatics<D>::GetStylisticSet15(const Windows::UI::Xaml::DependencyObject & element) const
 {
     bool value {};
-    check_hresult(shim()->abi_GetStylisticSet15(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetStylisticSet15(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetStylisticSet15(const Windows::UI::Xaml::DependencyObject & element, bool value) const
 {
-    check_hresult(shim()->abi_SetStylisticSet15(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetStylisticSet15(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::StylisticSet16Property() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_StylisticSet16Property(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_StylisticSet16Property(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ITypographyStatics<D>::GetStylisticSet16(const Windows::UI::Xaml::DependencyObject & element) const
 {
     bool value {};
-    check_hresult(shim()->abi_GetStylisticSet16(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetStylisticSet16(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetStylisticSet16(const Windows::UI::Xaml::DependencyObject & element, bool value) const
 {
-    check_hresult(shim()->abi_SetStylisticSet16(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetStylisticSet16(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::StylisticSet17Property() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_StylisticSet17Property(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_StylisticSet17Property(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ITypographyStatics<D>::GetStylisticSet17(const Windows::UI::Xaml::DependencyObject & element) const
 {
     bool value {};
-    check_hresult(shim()->abi_GetStylisticSet17(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetStylisticSet17(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetStylisticSet17(const Windows::UI::Xaml::DependencyObject & element, bool value) const
 {
-    check_hresult(shim()->abi_SetStylisticSet17(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetStylisticSet17(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::StylisticSet18Property() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_StylisticSet18Property(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_StylisticSet18Property(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ITypographyStatics<D>::GetStylisticSet18(const Windows::UI::Xaml::DependencyObject & element) const
 {
     bool value {};
-    check_hresult(shim()->abi_GetStylisticSet18(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetStylisticSet18(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetStylisticSet18(const Windows::UI::Xaml::DependencyObject & element, bool value) const
 {
-    check_hresult(shim()->abi_SetStylisticSet18(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetStylisticSet18(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::StylisticSet19Property() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_StylisticSet19Property(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_StylisticSet19Property(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ITypographyStatics<D>::GetStylisticSet19(const Windows::UI::Xaml::DependencyObject & element) const
 {
     bool value {};
-    check_hresult(shim()->abi_GetStylisticSet19(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetStylisticSet19(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetStylisticSet19(const Windows::UI::Xaml::DependencyObject & element, bool value) const
 {
-    check_hresult(shim()->abi_SetStylisticSet19(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetStylisticSet19(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::StylisticSet20Property() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_StylisticSet20Property(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_StylisticSet20Property(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ITypographyStatics<D>::GetStylisticSet20(const Windows::UI::Xaml::DependencyObject & element) const
 {
     bool value {};
-    check_hresult(shim()->abi_GetStylisticSet20(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetStylisticSet20(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetStylisticSet20(const Windows::UI::Xaml::DependencyObject & element, bool value) const
 {
-    check_hresult(shim()->abi_SetStylisticSet20(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetStylisticSet20(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::CapitalsProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_CapitalsProperty(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_CapitalsProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::FontCapitals impl_ITypographyStatics<D>::GetCapitals(const Windows::UI::Xaml::DependencyObject & element) const
 {
     Windows::UI::Xaml::FontCapitals value {};
-    check_hresult(shim()->abi_GetCapitals(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetCapitals(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetCapitals(const Windows::UI::Xaml::DependencyObject & element, Windows::UI::Xaml::FontCapitals value) const
 {
-    check_hresult(shim()->abi_SetCapitals(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetCapitals(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::CapitalSpacingProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_CapitalSpacingProperty(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_CapitalSpacingProperty(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ITypographyStatics<D>::GetCapitalSpacing(const Windows::UI::Xaml::DependencyObject & element) const
 {
     bool value {};
-    check_hresult(shim()->abi_GetCapitalSpacing(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetCapitalSpacing(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetCapitalSpacing(const Windows::UI::Xaml::DependencyObject & element, bool value) const
 {
-    check_hresult(shim()->abi_SetCapitalSpacing(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetCapitalSpacing(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::KerningProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_KerningProperty(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_KerningProperty(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ITypographyStatics<D>::GetKerning(const Windows::UI::Xaml::DependencyObject & element) const
 {
     bool value {};
-    check_hresult(shim()->abi_GetKerning(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetKerning(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetKerning(const Windows::UI::Xaml::DependencyObject & element, bool value) const
 {
-    check_hresult(shim()->abi_SetKerning(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetKerning(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::CaseSensitiveFormsProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_CaseSensitiveFormsProperty(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_CaseSensitiveFormsProperty(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ITypographyStatics<D>::GetCaseSensitiveForms(const Windows::UI::Xaml::DependencyObject & element) const
 {
     bool value {};
-    check_hresult(shim()->abi_GetCaseSensitiveForms(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetCaseSensitiveForms(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetCaseSensitiveForms(const Windows::UI::Xaml::DependencyObject & element, bool value) const
 {
-    check_hresult(shim()->abi_SetCaseSensitiveForms(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetCaseSensitiveForms(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::HistoricalFormsProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_HistoricalFormsProperty(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_HistoricalFormsProperty(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ITypographyStatics<D>::GetHistoricalForms(const Windows::UI::Xaml::DependencyObject & element) const
 {
     bool value {};
-    check_hresult(shim()->abi_GetHistoricalForms(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetHistoricalForms(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetHistoricalForms(const Windows::UI::Xaml::DependencyObject & element, bool value) const
 {
-    check_hresult(shim()->abi_SetHistoricalForms(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetHistoricalForms(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::FractionProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_FractionProperty(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_FractionProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::FontFraction impl_ITypographyStatics<D>::GetFraction(const Windows::UI::Xaml::DependencyObject & element) const
 {
     Windows::UI::Xaml::FontFraction value {};
-    check_hresult(shim()->abi_GetFraction(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetFraction(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetFraction(const Windows::UI::Xaml::DependencyObject & element, Windows::UI::Xaml::FontFraction value) const
 {
-    check_hresult(shim()->abi_SetFraction(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetFraction(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::NumeralStyleProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_NumeralStyleProperty(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_NumeralStyleProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::FontNumeralStyle impl_ITypographyStatics<D>::GetNumeralStyle(const Windows::UI::Xaml::DependencyObject & element) const
 {
     Windows::UI::Xaml::FontNumeralStyle value {};
-    check_hresult(shim()->abi_GetNumeralStyle(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetNumeralStyle(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetNumeralStyle(const Windows::UI::Xaml::DependencyObject & element, Windows::UI::Xaml::FontNumeralStyle value) const
 {
-    check_hresult(shim()->abi_SetNumeralStyle(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetNumeralStyle(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::NumeralAlignmentProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_NumeralAlignmentProperty(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_NumeralAlignmentProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::FontNumeralAlignment impl_ITypographyStatics<D>::GetNumeralAlignment(const Windows::UI::Xaml::DependencyObject & element) const
 {
     Windows::UI::Xaml::FontNumeralAlignment value {};
-    check_hresult(shim()->abi_GetNumeralAlignment(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetNumeralAlignment(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetNumeralAlignment(const Windows::UI::Xaml::DependencyObject & element, Windows::UI::Xaml::FontNumeralAlignment value) const
 {
-    check_hresult(shim()->abi_SetNumeralAlignment(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetNumeralAlignment(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::SlashedZeroProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_SlashedZeroProperty(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_SlashedZeroProperty(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ITypographyStatics<D>::GetSlashedZero(const Windows::UI::Xaml::DependencyObject & element) const
 {
     bool value {};
-    check_hresult(shim()->abi_GetSlashedZero(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetSlashedZero(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetSlashedZero(const Windows::UI::Xaml::DependencyObject & element, bool value) const
 {
-    check_hresult(shim()->abi_SetSlashedZero(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetSlashedZero(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::MathematicalGreekProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_MathematicalGreekProperty(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_MathematicalGreekProperty(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ITypographyStatics<D>::GetMathematicalGreek(const Windows::UI::Xaml::DependencyObject & element) const
 {
     bool value {};
-    check_hresult(shim()->abi_GetMathematicalGreek(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetMathematicalGreek(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetMathematicalGreek(const Windows::UI::Xaml::DependencyObject & element, bool value) const
 {
-    check_hresult(shim()->abi_SetMathematicalGreek(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetMathematicalGreek(get(element), value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITypographyStatics<D>::VariantsProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_VariantsProperty(put(value)));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->get_VariantsProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::FontVariants impl_ITypographyStatics<D>::GetVariants(const Windows::UI::Xaml::DependencyObject & element) const
 {
     Windows::UI::Xaml::FontVariants value {};
-    check_hresult(shim()->abi_GetVariants(get(element), &value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_GetVariants(get(element), &value));
     return value;
 }
 
 template <typename D> void impl_ITypographyStatics<D>::SetVariants(const Windows::UI::Xaml::DependencyObject & element, Windows::UI::Xaml::FontVariants value) const
 {
-    check_hresult(shim()->abi_SetVariants(get(element), value));
+    check_hresult(static_cast<const ITypographyStatics &>(static_cast<const D &>(*this))->abi_SetVariants(get(element), value));
 }
 
 template <typename D> hstring impl_ITextElement<D>::Name() const
 {
     hstring value;
-    check_hresult(shim()->get_Name(put(value)));
+    check_hresult(static_cast<const ITextElement &>(static_cast<const D &>(*this))->get_Name(put(value)));
     return value;
 }
 
 template <typename D> double impl_ITextElement<D>::FontSize() const
 {
     double value {};
-    check_hresult(shim()->get_FontSize(&value));
+    check_hresult(static_cast<const ITextElement &>(static_cast<const D &>(*this))->get_FontSize(&value));
     return value;
 }
 
 template <typename D> void impl_ITextElement<D>::FontSize(double value) const
 {
-    check_hresult(shim()->put_FontSize(value));
+    check_hresult(static_cast<const ITextElement &>(static_cast<const D &>(*this))->put_FontSize(value));
 }
 
 template <typename D> Windows::UI::Xaml::Media::FontFamily impl_ITextElement<D>::FontFamily() const
 {
     Windows::UI::Xaml::Media::FontFamily value { nullptr };
-    check_hresult(shim()->get_FontFamily(put(value)));
+    check_hresult(static_cast<const ITextElement &>(static_cast<const D &>(*this))->get_FontFamily(put(value)));
     return value;
 }
 
 template <typename D> void impl_ITextElement<D>::FontFamily(const Windows::UI::Xaml::Media::FontFamily & value) const
 {
-    check_hresult(shim()->put_FontFamily(get(value)));
+    check_hresult(static_cast<const ITextElement &>(static_cast<const D &>(*this))->put_FontFamily(get(value)));
 }
 
 template <typename D> Windows::UI::Text::FontWeight impl_ITextElement<D>::FontWeight() const
 {
     Windows::UI::Text::FontWeight value {};
-    check_hresult(shim()->get_FontWeight(put(value)));
+    check_hresult(static_cast<const ITextElement &>(static_cast<const D &>(*this))->get_FontWeight(put(value)));
     return value;
 }
 
 template <typename D> void impl_ITextElement<D>::FontWeight(const Windows::UI::Text::FontWeight & value) const
 {
-    check_hresult(shim()->put_FontWeight(get(value)));
+    check_hresult(static_cast<const ITextElement &>(static_cast<const D &>(*this))->put_FontWeight(get(value)));
 }
 
 template <typename D> Windows::UI::Text::FontStyle impl_ITextElement<D>::FontStyle() const
 {
     Windows::UI::Text::FontStyle value {};
-    check_hresult(shim()->get_FontStyle(&value));
+    check_hresult(static_cast<const ITextElement &>(static_cast<const D &>(*this))->get_FontStyle(&value));
     return value;
 }
 
 template <typename D> void impl_ITextElement<D>::FontStyle(Windows::UI::Text::FontStyle value) const
 {
-    check_hresult(shim()->put_FontStyle(value));
+    check_hresult(static_cast<const ITextElement &>(static_cast<const D &>(*this))->put_FontStyle(value));
 }
 
 template <typename D> Windows::UI::Text::FontStretch impl_ITextElement<D>::FontStretch() const
 {
     Windows::UI::Text::FontStretch value {};
-    check_hresult(shim()->get_FontStretch(&value));
+    check_hresult(static_cast<const ITextElement &>(static_cast<const D &>(*this))->get_FontStretch(&value));
     return value;
 }
 
 template <typename D> void impl_ITextElement<D>::FontStretch(Windows::UI::Text::FontStretch value) const
 {
-    check_hresult(shim()->put_FontStretch(value));
+    check_hresult(static_cast<const ITextElement &>(static_cast<const D &>(*this))->put_FontStretch(value));
 }
 
 template <typename D> int32_t impl_ITextElement<D>::CharacterSpacing() const
 {
     int32_t value {};
-    check_hresult(shim()->get_CharacterSpacing(&value));
+    check_hresult(static_cast<const ITextElement &>(static_cast<const D &>(*this))->get_CharacterSpacing(&value));
     return value;
 }
 
 template <typename D> void impl_ITextElement<D>::CharacterSpacing(int32_t value) const
 {
-    check_hresult(shim()->put_CharacterSpacing(value));
+    check_hresult(static_cast<const ITextElement &>(static_cast<const D &>(*this))->put_CharacterSpacing(value));
 }
 
 template <typename D> Windows::UI::Xaml::Media::Brush impl_ITextElement<D>::Foreground() const
 {
     Windows::UI::Xaml::Media::Brush value { nullptr };
-    check_hresult(shim()->get_Foreground(put(value)));
+    check_hresult(static_cast<const ITextElement &>(static_cast<const D &>(*this))->get_Foreground(put(value)));
     return value;
 }
 
 template <typename D> void impl_ITextElement<D>::Foreground(const Windows::UI::Xaml::Media::Brush & value) const
 {
-    check_hresult(shim()->put_Foreground(get(value)));
+    check_hresult(static_cast<const ITextElement &>(static_cast<const D &>(*this))->put_Foreground(get(value)));
 }
 
 template <typename D> hstring impl_ITextElement<D>::Language() const
 {
     hstring value;
-    check_hresult(shim()->get_Language(put(value)));
+    check_hresult(static_cast<const ITextElement &>(static_cast<const D &>(*this))->get_Language(put(value)));
     return value;
 }
 
 template <typename D> void impl_ITextElement<D>::Language(hstring_ref value) const
 {
-    check_hresult(shim()->put_Language(get(value)));
+    check_hresult(static_cast<const ITextElement &>(static_cast<const D &>(*this))->put_Language(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::Documents::TextPointer impl_ITextElement<D>::ContentStart() const
 {
     Windows::UI::Xaml::Documents::TextPointer value { nullptr };
-    check_hresult(shim()->get_ContentStart(put(value)));
+    check_hresult(static_cast<const ITextElement &>(static_cast<const D &>(*this))->get_ContentStart(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Documents::TextPointer impl_ITextElement<D>::ContentEnd() const
 {
     Windows::UI::Xaml::Documents::TextPointer value { nullptr };
-    check_hresult(shim()->get_ContentEnd(put(value)));
+    check_hresult(static_cast<const ITextElement &>(static_cast<const D &>(*this))->get_ContentEnd(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Documents::TextPointer impl_ITextElement<D>::ElementStart() const
 {
     Windows::UI::Xaml::Documents::TextPointer value { nullptr };
-    check_hresult(shim()->get_ElementStart(put(value)));
+    check_hresult(static_cast<const ITextElement &>(static_cast<const D &>(*this))->get_ElementStart(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Documents::TextPointer impl_ITextElement<D>::ElementEnd() const
 {
     Windows::UI::Xaml::Documents::TextPointer value { nullptr };
-    check_hresult(shim()->get_ElementEnd(put(value)));
+    check_hresult(static_cast<const ITextElement &>(static_cast<const D &>(*this))->get_ElementEnd(put(value)));
     return value;
 }
 
 template <typename D> Windows::IInspectable impl_ITextElement<D>::FindName(hstring_ref name) const
 {
     Windows::IInspectable returnValue;
-    check_hresult(shim()->abi_FindName(get(name), put(returnValue)));
+    check_hresult(static_cast<const ITextElement &>(static_cast<const D &>(*this))->abi_FindName(get(name), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> void impl_ITextElementOverrides<D>::OnDisconnectVisualChildren() const
 {
-    check_hresult(shim()->abi_OnDisconnectVisualChildren());
+    check_hresult(static_cast<const ITextElementOverrides &>(static_cast<const D &>(*this))->abi_OnDisconnectVisualChildren());
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITextElementStatics<D>::FontSizeProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_FontSizeProperty(put(value)));
+    check_hresult(static_cast<const ITextElementStatics &>(static_cast<const D &>(*this))->get_FontSizeProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITextElementStatics<D>::FontFamilyProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_FontFamilyProperty(put(value)));
+    check_hresult(static_cast<const ITextElementStatics &>(static_cast<const D &>(*this))->get_FontFamilyProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITextElementStatics<D>::FontWeightProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_FontWeightProperty(put(value)));
+    check_hresult(static_cast<const ITextElementStatics &>(static_cast<const D &>(*this))->get_FontWeightProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITextElementStatics<D>::FontStyleProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_FontStyleProperty(put(value)));
+    check_hresult(static_cast<const ITextElementStatics &>(static_cast<const D &>(*this))->get_FontStyleProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITextElementStatics<D>::FontStretchProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_FontStretchProperty(put(value)));
+    check_hresult(static_cast<const ITextElementStatics &>(static_cast<const D &>(*this))->get_FontStretchProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITextElementStatics<D>::CharacterSpacingProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_CharacterSpacingProperty(put(value)));
+    check_hresult(static_cast<const ITextElementStatics &>(static_cast<const D &>(*this))->get_CharacterSpacingProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITextElementStatics<D>::ForegroundProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_ForegroundProperty(put(value)));
+    check_hresult(static_cast<const ITextElementStatics &>(static_cast<const D &>(*this))->get_ForegroundProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITextElementStatics<D>::LanguageProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_LanguageProperty(put(value)));
+    check_hresult(static_cast<const ITextElementStatics &>(static_cast<const D &>(*this))->get_LanguageProperty(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ITextElement2<D>::IsTextScaleFactorEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_IsTextScaleFactorEnabled(&value));
+    check_hresult(static_cast<const ITextElement2 &>(static_cast<const D &>(*this))->get_IsTextScaleFactorEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_ITextElement2<D>::IsTextScaleFactorEnabled(bool value) const
 {
-    check_hresult(shim()->put_IsTextScaleFactorEnabled(value));
+    check_hresult(static_cast<const ITextElement2 &>(static_cast<const D &>(*this))->put_IsTextScaleFactorEnabled(value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITextElementStatics2<D>::IsTextScaleFactorEnabledProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_IsTextScaleFactorEnabledProperty(put(value)));
+    check_hresult(static_cast<const ITextElementStatics2 &>(static_cast<const D &>(*this))->get_IsTextScaleFactorEnabledProperty(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ITextElement3<D>::AllowFocusOnInteraction() const
 {
     bool value {};
-    check_hresult(shim()->get_AllowFocusOnInteraction(&value));
+    check_hresult(static_cast<const ITextElement3 &>(static_cast<const D &>(*this))->get_AllowFocusOnInteraction(&value));
     return value;
 }
 
 template <typename D> void impl_ITextElement3<D>::AllowFocusOnInteraction(bool value) const
 {
-    check_hresult(shim()->put_AllowFocusOnInteraction(value));
+    check_hresult(static_cast<const ITextElement3 &>(static_cast<const D &>(*this))->put_AllowFocusOnInteraction(value));
 }
 
 template <typename D> hstring impl_ITextElement3<D>::AccessKey() const
 {
     hstring value;
-    check_hresult(shim()->get_AccessKey(put(value)));
+    check_hresult(static_cast<const ITextElement3 &>(static_cast<const D &>(*this))->get_AccessKey(put(value)));
     return value;
 }
 
 template <typename D> void impl_ITextElement3<D>::AccessKey(hstring_ref value) const
 {
-    check_hresult(shim()->put_AccessKey(get(value)));
+    check_hresult(static_cast<const ITextElement3 &>(static_cast<const D &>(*this))->put_AccessKey(get(value)));
 }
 
 template <typename D> bool impl_ITextElement3<D>::ExitDisplayModeOnAccessKeyInvoked() const
 {
     bool value {};
-    check_hresult(shim()->get_ExitDisplayModeOnAccessKeyInvoked(&value));
+    check_hresult(static_cast<const ITextElement3 &>(static_cast<const D &>(*this))->get_ExitDisplayModeOnAccessKeyInvoked(&value));
     return value;
 }
 
 template <typename D> void impl_ITextElement3<D>::ExitDisplayModeOnAccessKeyInvoked(bool value) const
 {
-    check_hresult(shim()->put_ExitDisplayModeOnAccessKeyInvoked(value));
+    check_hresult(static_cast<const ITextElement3 &>(static_cast<const D &>(*this))->put_ExitDisplayModeOnAccessKeyInvoked(value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITextElementStatics3<D>::AllowFocusOnInteractionProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_AllowFocusOnInteractionProperty(put(value)));
+    check_hresult(static_cast<const ITextElementStatics3 &>(static_cast<const D &>(*this))->get_AllowFocusOnInteractionProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITextElementStatics3<D>::AccessKeyProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_AccessKeyProperty(put(value)));
+    check_hresult(static_cast<const ITextElementStatics3 &>(static_cast<const D &>(*this))->get_AccessKeyProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ITextElementStatics3<D>::ExitDisplayModeOnAccessKeyInvokedProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_ExitDisplayModeOnAccessKeyInvokedProperty(put(value)));
+    check_hresult(static_cast<const ITextElementStatics3 &>(static_cast<const D &>(*this))->get_ExitDisplayModeOnAccessKeyInvokedProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::TextAlignment impl_IBlock<D>::TextAlignment() const
 {
     Windows::UI::Xaml::TextAlignment value {};
-    check_hresult(shim()->get_TextAlignment(&value));
+    check_hresult(static_cast<const IBlock &>(static_cast<const D &>(*this))->get_TextAlignment(&value));
     return value;
 }
 
 template <typename D> void impl_IBlock<D>::TextAlignment(Windows::UI::Xaml::TextAlignment value) const
 {
-    check_hresult(shim()->put_TextAlignment(value));
+    check_hresult(static_cast<const IBlock &>(static_cast<const D &>(*this))->put_TextAlignment(value));
 }
 
 template <typename D> double impl_IBlock<D>::LineHeight() const
 {
     double value {};
-    check_hresult(shim()->get_LineHeight(&value));
+    check_hresult(static_cast<const IBlock &>(static_cast<const D &>(*this))->get_LineHeight(&value));
     return value;
 }
 
 template <typename D> void impl_IBlock<D>::LineHeight(double value) const
 {
-    check_hresult(shim()->put_LineHeight(value));
+    check_hresult(static_cast<const IBlock &>(static_cast<const D &>(*this))->put_LineHeight(value));
 }
 
 template <typename D> Windows::UI::Xaml::LineStackingStrategy impl_IBlock<D>::LineStackingStrategy() const
 {
     Windows::UI::Xaml::LineStackingStrategy value {};
-    check_hresult(shim()->get_LineStackingStrategy(&value));
+    check_hresult(static_cast<const IBlock &>(static_cast<const D &>(*this))->get_LineStackingStrategy(&value));
     return value;
 }
 
 template <typename D> void impl_IBlock<D>::LineStackingStrategy(Windows::UI::Xaml::LineStackingStrategy value) const
 {
-    check_hresult(shim()->put_LineStackingStrategy(value));
+    check_hresult(static_cast<const IBlock &>(static_cast<const D &>(*this))->put_LineStackingStrategy(value));
 }
 
 template <typename D> Windows::UI::Xaml::Thickness impl_IBlock<D>::Margin() const
 {
     Windows::UI::Xaml::Thickness value {};
-    check_hresult(shim()->get_Margin(put(value)));
+    check_hresult(static_cast<const IBlock &>(static_cast<const D &>(*this))->get_Margin(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBlock<D>::Margin(const Windows::UI::Xaml::Thickness & value) const
 {
-    check_hresult(shim()->put_Margin(get(value)));
+    check_hresult(static_cast<const IBlock &>(static_cast<const D &>(*this))->put_Margin(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IBlockStatics<D>::TextAlignmentProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_TextAlignmentProperty(put(value)));
+    check_hresult(static_cast<const IBlockStatics &>(static_cast<const D &>(*this))->get_TextAlignmentProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IBlockStatics<D>::LineHeightProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_LineHeightProperty(put(value)));
+    check_hresult(static_cast<const IBlockStatics &>(static_cast<const D &>(*this))->get_LineHeightProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IBlockStatics<D>::LineStackingStrategyProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_LineStackingStrategyProperty(put(value)));
+    check_hresult(static_cast<const IBlockStatics &>(static_cast<const D &>(*this))->get_LineStackingStrategyProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IBlockStatics<D>::MarginProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_MarginProperty(put(value)));
+    check_hresult(static_cast<const IBlockStatics &>(static_cast<const D &>(*this))->get_MarginProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Documents::Block impl_IBlockFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::Documents::Block instance { nullptr };
-    check_hresult(shim()->abi_CreateInstance(get(outer), put(inner), put(instance)));
+    check_hresult(static_cast<const IBlockFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::UI::Xaml::Documents::Inline impl_IInlineFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::Documents::Inline instance { nullptr };
-    check_hresult(shim()->abi_CreateInstance(get(outer), put(inner), put(instance)));
+    check_hresult(static_cast<const IInlineFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::UI::Xaml::UIElement impl_IInlineUIContainer<D>::Child() const
 {
     Windows::UI::Xaml::UIElement value { nullptr };
-    check_hresult(shim()->get_Child(put(value)));
+    check_hresult(static_cast<const IInlineUIContainer &>(static_cast<const D &>(*this))->get_Child(put(value)));
     return value;
 }
 
 template <typename D> void impl_IInlineUIContainer<D>::Child(const Windows::UI::Xaml::UIElement & value) const
 {
-    check_hresult(shim()->put_Child(get(value)));
+    check_hresult(static_cast<const IInlineUIContainer &>(static_cast<const D &>(*this))->put_Child(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::Documents::InlineCollection impl_IParagraph<D>::Inlines() const
 {
     Windows::UI::Xaml::Documents::InlineCollection value { nullptr };
-    check_hresult(shim()->get_Inlines(put(value)));
+    check_hresult(static_cast<const IParagraph &>(static_cast<const D &>(*this))->get_Inlines(put(value)));
     return value;
 }
 
 template <typename D> double impl_IParagraph<D>::TextIndent() const
 {
     double value {};
-    check_hresult(shim()->get_TextIndent(&value));
+    check_hresult(static_cast<const IParagraph &>(static_cast<const D &>(*this))->get_TextIndent(&value));
     return value;
 }
 
 template <typename D> void impl_IParagraph<D>::TextIndent(double value) const
 {
-    check_hresult(shim()->put_TextIndent(value));
+    check_hresult(static_cast<const IParagraph &>(static_cast<const D &>(*this))->put_TextIndent(value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IParagraphStatics<D>::TextIndentProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_TextIndentProperty(put(value)));
+    check_hresult(static_cast<const IParagraphStatics &>(static_cast<const D &>(*this))->get_TextIndentProperty(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IRun<D>::Text() const
 {
     hstring value;
-    check_hresult(shim()->get_Text(put(value)));
+    check_hresult(static_cast<const IRun &>(static_cast<const D &>(*this))->get_Text(put(value)));
     return value;
 }
 
 template <typename D> void impl_IRun<D>::Text(hstring_ref value) const
 {
-    check_hresult(shim()->put_Text(get(value)));
+    check_hresult(static_cast<const IRun &>(static_cast<const D &>(*this))->put_Text(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::FlowDirection impl_IRun<D>::FlowDirection() const
 {
     Windows::UI::Xaml::FlowDirection value {};
-    check_hresult(shim()->get_FlowDirection(&value));
+    check_hresult(static_cast<const IRun &>(static_cast<const D &>(*this))->get_FlowDirection(&value));
     return value;
 }
 
 template <typename D> void impl_IRun<D>::FlowDirection(Windows::UI::Xaml::FlowDirection value) const
 {
-    check_hresult(shim()->put_FlowDirection(value));
+    check_hresult(static_cast<const IRun &>(static_cast<const D &>(*this))->put_FlowDirection(value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IRunStatics<D>::FlowDirectionProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_FlowDirectionProperty(put(value)));
+    check_hresult(static_cast<const IRunStatics &>(static_cast<const D &>(*this))->get_FlowDirectionProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Documents::InlineCollection impl_ISpan<D>::Inlines() const
 {
     Windows::UI::Xaml::Documents::InlineCollection value { nullptr };
-    check_hresult(shim()->get_Inlines(put(value)));
+    check_hresult(static_cast<const ISpan &>(static_cast<const D &>(*this))->get_Inlines(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISpan<D>::Inlines(const Windows::UI::Xaml::Documents::InlineCollection & value) const
 {
-    check_hresult(shim()->put_Inlines(get(value)));
+    check_hresult(static_cast<const ISpan &>(static_cast<const D &>(*this))->put_Inlines(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::Documents::Span impl_ISpanFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::Documents::Span instance { nullptr };
-    check_hresult(shim()->abi_CreateInstance(get(outer), put(inner), put(instance)));
+    check_hresult(static_cast<const ISpanFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> hstring impl_IGlyphs<D>::UnicodeString() const
 {
     hstring value;
-    check_hresult(shim()->get_UnicodeString(put(value)));
+    check_hresult(static_cast<const IGlyphs &>(static_cast<const D &>(*this))->get_UnicodeString(put(value)));
     return value;
 }
 
 template <typename D> void impl_IGlyphs<D>::UnicodeString(hstring_ref value) const
 {
-    check_hresult(shim()->put_UnicodeString(get(value)));
+    check_hresult(static_cast<const IGlyphs &>(static_cast<const D &>(*this))->put_UnicodeString(get(value)));
 }
 
 template <typename D> hstring impl_IGlyphs<D>::Indices() const
 {
     hstring value;
-    check_hresult(shim()->get_Indices(put(value)));
+    check_hresult(static_cast<const IGlyphs &>(static_cast<const D &>(*this))->get_Indices(put(value)));
     return value;
 }
 
 template <typename D> void impl_IGlyphs<D>::Indices(hstring_ref value) const
 {
-    check_hresult(shim()->put_Indices(get(value)));
+    check_hresult(static_cast<const IGlyphs &>(static_cast<const D &>(*this))->put_Indices(get(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_IGlyphs<D>::FontUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(shim()->get_FontUri(put(value)));
+    check_hresult(static_cast<const IGlyphs &>(static_cast<const D &>(*this))->get_FontUri(put(value)));
     return value;
 }
 
 template <typename D> void impl_IGlyphs<D>::FontUri(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(shim()->put_FontUri(get(value)));
+    check_hresult(static_cast<const IGlyphs &>(static_cast<const D &>(*this))->put_FontUri(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::Media::StyleSimulations impl_IGlyphs<D>::StyleSimulations() const
 {
     Windows::UI::Xaml::Media::StyleSimulations value {};
-    check_hresult(shim()->get_StyleSimulations(&value));
+    check_hresult(static_cast<const IGlyphs &>(static_cast<const D &>(*this))->get_StyleSimulations(&value));
     return value;
 }
 
 template <typename D> void impl_IGlyphs<D>::StyleSimulations(Windows::UI::Xaml::Media::StyleSimulations value) const
 {
-    check_hresult(shim()->put_StyleSimulations(value));
+    check_hresult(static_cast<const IGlyphs &>(static_cast<const D &>(*this))->put_StyleSimulations(value));
 }
 
 template <typename D> double impl_IGlyphs<D>::FontRenderingEmSize() const
 {
     double value {};
-    check_hresult(shim()->get_FontRenderingEmSize(&value));
+    check_hresult(static_cast<const IGlyphs &>(static_cast<const D &>(*this))->get_FontRenderingEmSize(&value));
     return value;
 }
 
 template <typename D> void impl_IGlyphs<D>::FontRenderingEmSize(double value) const
 {
-    check_hresult(shim()->put_FontRenderingEmSize(value));
+    check_hresult(static_cast<const IGlyphs &>(static_cast<const D &>(*this))->put_FontRenderingEmSize(value));
 }
 
 template <typename D> double impl_IGlyphs<D>::OriginX() const
 {
     double value {};
-    check_hresult(shim()->get_OriginX(&value));
+    check_hresult(static_cast<const IGlyphs &>(static_cast<const D &>(*this))->get_OriginX(&value));
     return value;
 }
 
 template <typename D> void impl_IGlyphs<D>::OriginX(double value) const
 {
-    check_hresult(shim()->put_OriginX(value));
+    check_hresult(static_cast<const IGlyphs &>(static_cast<const D &>(*this))->put_OriginX(value));
 }
 
 template <typename D> double impl_IGlyphs<D>::OriginY() const
 {
     double value {};
-    check_hresult(shim()->get_OriginY(&value));
+    check_hresult(static_cast<const IGlyphs &>(static_cast<const D &>(*this))->get_OriginY(&value));
     return value;
 }
 
 template <typename D> void impl_IGlyphs<D>::OriginY(double value) const
 {
-    check_hresult(shim()->put_OriginY(value));
+    check_hresult(static_cast<const IGlyphs &>(static_cast<const D &>(*this))->put_OriginY(value));
 }
 
 template <typename D> Windows::UI::Xaml::Media::Brush impl_IGlyphs<D>::Fill() const
 {
     Windows::UI::Xaml::Media::Brush value { nullptr };
-    check_hresult(shim()->get_Fill(put(value)));
+    check_hresult(static_cast<const IGlyphs &>(static_cast<const D &>(*this))->get_Fill(put(value)));
     return value;
 }
 
 template <typename D> void impl_IGlyphs<D>::Fill(const Windows::UI::Xaml::Media::Brush & value) const
 {
-    check_hresult(shim()->put_Fill(get(value)));
+    check_hresult(static_cast<const IGlyphs &>(static_cast<const D &>(*this))->put_Fill(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IGlyphsStatics<D>::UnicodeStringProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_UnicodeStringProperty(put(value)));
+    check_hresult(static_cast<const IGlyphsStatics &>(static_cast<const D &>(*this))->get_UnicodeStringProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IGlyphsStatics<D>::IndicesProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_IndicesProperty(put(value)));
+    check_hresult(static_cast<const IGlyphsStatics &>(static_cast<const D &>(*this))->get_IndicesProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IGlyphsStatics<D>::FontUriProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_FontUriProperty(put(value)));
+    check_hresult(static_cast<const IGlyphsStatics &>(static_cast<const D &>(*this))->get_FontUriProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IGlyphsStatics<D>::StyleSimulationsProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_StyleSimulationsProperty(put(value)));
+    check_hresult(static_cast<const IGlyphsStatics &>(static_cast<const D &>(*this))->get_StyleSimulationsProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IGlyphsStatics<D>::FontRenderingEmSizeProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_FontRenderingEmSizeProperty(put(value)));
+    check_hresult(static_cast<const IGlyphsStatics &>(static_cast<const D &>(*this))->get_FontRenderingEmSizeProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IGlyphsStatics<D>::OriginXProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_OriginXProperty(put(value)));
+    check_hresult(static_cast<const IGlyphsStatics &>(static_cast<const D &>(*this))->get_OriginXProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IGlyphsStatics<D>::OriginYProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_OriginYProperty(put(value)));
+    check_hresult(static_cast<const IGlyphsStatics &>(static_cast<const D &>(*this))->get_OriginYProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IGlyphsStatics<D>::FillProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_FillProperty(put(value)));
+    check_hresult(static_cast<const IGlyphsStatics &>(static_cast<const D &>(*this))->get_FillProperty(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IGlyphs2<D>::IsColorFontEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_IsColorFontEnabled(&value));
+    check_hresult(static_cast<const IGlyphs2 &>(static_cast<const D &>(*this))->get_IsColorFontEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IGlyphs2<D>::IsColorFontEnabled(bool value) const
 {
-    check_hresult(shim()->put_IsColorFontEnabled(value));
+    check_hresult(static_cast<const IGlyphs2 &>(static_cast<const D &>(*this))->put_IsColorFontEnabled(value));
 }
 
 template <typename D> int32_t impl_IGlyphs2<D>::ColorFontPaletteIndex() const
 {
     int32_t value {};
-    check_hresult(shim()->get_ColorFontPaletteIndex(&value));
+    check_hresult(static_cast<const IGlyphs2 &>(static_cast<const D &>(*this))->get_ColorFontPaletteIndex(&value));
     return value;
 }
 
 template <typename D> void impl_IGlyphs2<D>::ColorFontPaletteIndex(int32_t value) const
 {
-    check_hresult(shim()->put_ColorFontPaletteIndex(value));
+    check_hresult(static_cast<const IGlyphs2 &>(static_cast<const D &>(*this))->put_ColorFontPaletteIndex(value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IGlyphsStatics2<D>::IsColorFontEnabledProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_IsColorFontEnabledProperty(put(value)));
+    check_hresult(static_cast<const IGlyphsStatics2 &>(static_cast<const D &>(*this))->get_IsColorFontEnabledProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IGlyphsStatics2<D>::ColorFontPaletteIndexProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_ColorFontPaletteIndexProperty(put(value)));
+    check_hresult(static_cast<const IGlyphsStatics2 &>(static_cast<const D &>(*this))->get_ColorFontPaletteIndexProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Uri impl_IHyperlink<D>::NavigateUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(shim()->get_NavigateUri(put(value)));
+    check_hresult(static_cast<const IHyperlink &>(static_cast<const D &>(*this))->get_NavigateUri(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHyperlink<D>::NavigateUri(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(shim()->put_NavigateUri(get(value)));
+    check_hresult(static_cast<const IHyperlink &>(static_cast<const D &>(*this))->put_NavigateUri(get(value)));
 }
 
 template <typename D> event_token impl_IHyperlink<D>::Click(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Documents::Hyperlink, Windows::UI::Xaml::Documents::HyperlinkClickEventArgs> & value) const
 {
     event_token token {};
-    check_hresult(shim()->add_Click(get(value), &token));
+    check_hresult(static_cast<const IHyperlink &>(static_cast<const D &>(*this))->add_Click(get(value), &token));
     return token;
 }
 
@@ -5179,127 +5179,127 @@ template <typename D> event_revoker<IHyperlink> impl_IHyperlink<D>::Click(auto_r
 
 template <typename D> void impl_IHyperlink<D>::Click(event_token token) const
 {
-    check_hresult(shim()->remove_Click(token));
+    check_hresult(static_cast<const IHyperlink &>(static_cast<const D &>(*this))->remove_Click(token));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IHyperlinkStatics<D>::NavigateUriProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_NavigateUriProperty(put(value)));
+    check_hresult(static_cast<const IHyperlinkStatics &>(static_cast<const D &>(*this))->get_NavigateUriProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Documents::UnderlineStyle impl_IHyperlink2<D>::UnderlineStyle() const
 {
     Windows::UI::Xaml::Documents::UnderlineStyle value {};
-    check_hresult(shim()->get_UnderlineStyle(&value));
+    check_hresult(static_cast<const IHyperlink2 &>(static_cast<const D &>(*this))->get_UnderlineStyle(&value));
     return value;
 }
 
 template <typename D> void impl_IHyperlink2<D>::UnderlineStyle(Windows::UI::Xaml::Documents::UnderlineStyle value) const
 {
-    check_hresult(shim()->put_UnderlineStyle(value));
+    check_hresult(static_cast<const IHyperlink2 &>(static_cast<const D &>(*this))->put_UnderlineStyle(value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IHyperlinkStatics2<D>::UnderlineStyleProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_UnderlineStyleProperty(put(value)));
+    check_hresult(static_cast<const IHyperlinkStatics2 &>(static_cast<const D &>(*this))->get_UnderlineStyleProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyObject impl_IHyperlink3<D>::XYFocusLeft() const
 {
     Windows::UI::Xaml::DependencyObject value { nullptr };
-    check_hresult(shim()->get_XYFocusLeft(put(value)));
+    check_hresult(static_cast<const IHyperlink3 &>(static_cast<const D &>(*this))->get_XYFocusLeft(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHyperlink3<D>::XYFocusLeft(const Windows::UI::Xaml::DependencyObject & value) const
 {
-    check_hresult(shim()->put_XYFocusLeft(get(value)));
+    check_hresult(static_cast<const IHyperlink3 &>(static_cast<const D &>(*this))->put_XYFocusLeft(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyObject impl_IHyperlink3<D>::XYFocusRight() const
 {
     Windows::UI::Xaml::DependencyObject value { nullptr };
-    check_hresult(shim()->get_XYFocusRight(put(value)));
+    check_hresult(static_cast<const IHyperlink3 &>(static_cast<const D &>(*this))->get_XYFocusRight(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHyperlink3<D>::XYFocusRight(const Windows::UI::Xaml::DependencyObject & value) const
 {
-    check_hresult(shim()->put_XYFocusRight(get(value)));
+    check_hresult(static_cast<const IHyperlink3 &>(static_cast<const D &>(*this))->put_XYFocusRight(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyObject impl_IHyperlink3<D>::XYFocusUp() const
 {
     Windows::UI::Xaml::DependencyObject value { nullptr };
-    check_hresult(shim()->get_XYFocusUp(put(value)));
+    check_hresult(static_cast<const IHyperlink3 &>(static_cast<const D &>(*this))->get_XYFocusUp(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHyperlink3<D>::XYFocusUp(const Windows::UI::Xaml::DependencyObject & value) const
 {
-    check_hresult(shim()->put_XYFocusUp(get(value)));
+    check_hresult(static_cast<const IHyperlink3 &>(static_cast<const D &>(*this))->put_XYFocusUp(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyObject impl_IHyperlink3<D>::XYFocusDown() const
 {
     Windows::UI::Xaml::DependencyObject value { nullptr };
-    check_hresult(shim()->get_XYFocusDown(put(value)));
+    check_hresult(static_cast<const IHyperlink3 &>(static_cast<const D &>(*this))->get_XYFocusDown(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHyperlink3<D>::XYFocusDown(const Windows::UI::Xaml::DependencyObject & value) const
 {
-    check_hresult(shim()->put_XYFocusDown(get(value)));
+    check_hresult(static_cast<const IHyperlink3 &>(static_cast<const D &>(*this))->put_XYFocusDown(get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::ElementSoundMode impl_IHyperlink3<D>::ElementSoundMode() const
 {
     Windows::UI::Xaml::ElementSoundMode value {};
-    check_hresult(shim()->get_ElementSoundMode(&value));
+    check_hresult(static_cast<const IHyperlink3 &>(static_cast<const D &>(*this))->get_ElementSoundMode(&value));
     return value;
 }
 
 template <typename D> void impl_IHyperlink3<D>::ElementSoundMode(Windows::UI::Xaml::ElementSoundMode value) const
 {
-    check_hresult(shim()->put_ElementSoundMode(value));
+    check_hresult(static_cast<const IHyperlink3 &>(static_cast<const D &>(*this))->put_ElementSoundMode(value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IHyperlinkStatics3<D>::XYFocusLeftProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_XYFocusLeftProperty(put(value)));
+    check_hresult(static_cast<const IHyperlinkStatics3 &>(static_cast<const D &>(*this))->get_XYFocusLeftProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IHyperlinkStatics3<D>::XYFocusRightProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_XYFocusRightProperty(put(value)));
+    check_hresult(static_cast<const IHyperlinkStatics3 &>(static_cast<const D &>(*this))->get_XYFocusRightProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IHyperlinkStatics3<D>::XYFocusUpProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_XYFocusUpProperty(put(value)));
+    check_hresult(static_cast<const IHyperlinkStatics3 &>(static_cast<const D &>(*this))->get_XYFocusUpProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IHyperlinkStatics3<D>::XYFocusDownProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_XYFocusDownProperty(put(value)));
+    check_hresult(static_cast<const IHyperlinkStatics3 &>(static_cast<const D &>(*this))->get_XYFocusDownProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IHyperlinkStatics3<D>::ElementSoundModeProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_ElementSoundModeProperty(put(value)));
+    check_hresult(static_cast<const IHyperlinkStatics3 &>(static_cast<const D &>(*this))->get_ElementSoundModeProperty(put(value)));
     return value;
 }
 

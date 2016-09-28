@@ -132,12 +132,8 @@ template <> struct __declspec(uuid("c899ff9f-e6f5-5673-810c-04e2ff98704f")) __de
 namespace Windows::Devices::WiFiDirect {
 
 template <typename D>
-class WINRT_EBO impl_IWiFiDirectAdvertisement
+struct WINRT_EBO impl_IWiFiDirectAdvertisement
 {
-    auto shim() const { return impl::shim<D, IWiFiDirectAdvertisement>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<Windows::Devices::WiFiDirect::WiFiDirectInformationElement> InformationElements() const;
     void InformationElements(const Windows::Foundation::Collections::IVector<Windows::Devices::WiFiDirect::WiFiDirectInformationElement> & value) const;
     Windows::Devices::WiFiDirect::WiFiDirectAdvertisementListenStateDiscoverability ListenStateDiscoverability() const;
@@ -148,22 +144,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IWiFiDirectAdvertisement2
+struct WINRT_EBO impl_IWiFiDirectAdvertisement2
 {
-    auto shim() const { return impl::shim<D, IWiFiDirectAdvertisement2>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<winrt::Windows::Devices::WiFiDirect::WiFiDirectConfigurationMethod> SupportedConfigurationMethods() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWiFiDirectAdvertisementPublisher
+struct WINRT_EBO impl_IWiFiDirectAdvertisementPublisher
 {
-    auto shim() const { return impl::shim<D, IWiFiDirectAdvertisementPublisher>(this); }
-
-public:
-
     Windows::Devices::WiFiDirect::WiFiDirectAdvertisement Advertisement() const;
     Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisherStatus Status() const;
     event_token StatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisher, Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisherStatusChangedEventArgs> & handler) const;
@@ -175,23 +163,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IWiFiDirectAdvertisementPublisherStatusChangedEventArgs
+struct WINRT_EBO impl_IWiFiDirectAdvertisementPublisherStatusChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IWiFiDirectAdvertisementPublisherStatusChangedEventArgs>(this); }
-
-public:
-
     Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisherStatus Status() const;
     Windows::Devices::WiFiDirect::WiFiDirectError Error() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWiFiDirectConnectionListener
+struct WINRT_EBO impl_IWiFiDirectConnectionListener
 {
-    auto shim() const { return impl::shim<D, IWiFiDirectConnectionListener>(this); }
-
-public:
-
     event_token ConnectionRequested(const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectConnectionListener, Windows::Devices::WiFiDirect::WiFiDirectConnectionRequestedEventArgs> & handler) const;
     using ConnectionRequested_revoker = event_revoker<IWiFiDirectConnectionListener>;
     ConnectionRequested_revoker ConnectionRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectConnectionListener, Windows::Devices::WiFiDirect::WiFiDirectConnectionRequestedEventArgs> & handler) const;
@@ -199,65 +179,41 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IWiFiDirectConnectionParameters
+struct WINRT_EBO impl_IWiFiDirectConnectionParameters
 {
-    auto shim() const { return impl::shim<D, IWiFiDirectConnectionParameters>(this); }
-
-public:
-
     int16_t GroupOwnerIntent() const;
     void GroupOwnerIntent(int16_t value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWiFiDirectConnectionParameters2
+struct WINRT_EBO impl_IWiFiDirectConnectionParameters2
 {
-    auto shim() const { return impl::shim<D, IWiFiDirectConnectionParameters2>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<winrt::Windows::Devices::WiFiDirect::WiFiDirectConfigurationMethod> PreferenceOrderedConfigurationMethods() const;
     Windows::Devices::WiFiDirect::WiFiDirectPairingProcedure PreferredPairingProcedure() const;
     void PreferredPairingProcedure(Windows::Devices::WiFiDirect::WiFiDirectPairingProcedure value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWiFiDirectConnectionParametersStatics
+struct WINRT_EBO impl_IWiFiDirectConnectionParametersStatics
 {
-    auto shim() const { return impl::shim<D, IWiFiDirectConnectionParametersStatics>(this); }
-
-public:
-
     Windows::Devices::Enumeration::DevicePairingKinds GetDevicePairingKinds(Windows::Devices::WiFiDirect::WiFiDirectConfigurationMethod configurationMethod) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWiFiDirectConnectionRequest
+struct WINRT_EBO impl_IWiFiDirectConnectionRequest
 {
-    auto shim() const { return impl::shim<D, IWiFiDirectConnectionRequest>(this); }
-
-public:
-
     Windows::Devices::Enumeration::DeviceInformation DeviceInformation() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWiFiDirectConnectionRequestedEventArgs
+struct WINRT_EBO impl_IWiFiDirectConnectionRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, IWiFiDirectConnectionRequestedEventArgs>(this); }
-
-public:
-
     Windows::Devices::WiFiDirect::WiFiDirectConnectionRequest GetConnectionRequest() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWiFiDirectDevice
+struct WINRT_EBO impl_IWiFiDirectDevice
 {
-    auto shim() const { return impl::shim<D, IWiFiDirectDevice>(this); }
-
-public:
-
     Windows::Devices::WiFiDirect::WiFiDirectConnectionStatus ConnectionStatus() const;
     hstring DeviceId() const;
     event_token ConnectionStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectDevice, Windows::IInspectable> & handler) const;
@@ -268,34 +224,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IWiFiDirectDeviceStatics
+struct WINRT_EBO impl_IWiFiDirectDeviceStatics
 {
-    auto shim() const { return impl::shim<D, IWiFiDirectDeviceStatics>(this); }
-
-public:
-
     hstring GetDeviceSelector() const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::WiFiDirectDevice> FromIdAsync(hstring_ref deviceId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWiFiDirectDeviceStatics2
+struct WINRT_EBO impl_IWiFiDirectDeviceStatics2
 {
-    auto shim() const { return impl::shim<D, IWiFiDirectDeviceStatics2>(this); }
-
-public:
-
     hstring GetDeviceSelector(Windows::Devices::WiFiDirect::WiFiDirectDeviceSelectorType type) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::WiFiDirectDevice> FromIdAsync(hstring_ref deviceId, const Windows::Devices::WiFiDirect::WiFiDirectConnectionParameters & connectionParameters) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWiFiDirectInformationElement
+struct WINRT_EBO impl_IWiFiDirectInformationElement
 {
-    auto shim() const { return impl::shim<D, IWiFiDirectInformationElement>(this); }
-
-public:
-
     Windows::Storage::Streams::IBuffer Oui() const;
     void Oui(const Windows::Storage::Streams::IBuffer & value) const;
     uint8_t OuiType() const;
@@ -305,23 +249,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IWiFiDirectInformationElementStatics
+struct WINRT_EBO impl_IWiFiDirectInformationElementStatics
 {
-    auto shim() const { return impl::shim<D, IWiFiDirectInformationElementStatics>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<Windows::Devices::WiFiDirect::WiFiDirectInformationElement> CreateFromBuffer(const Windows::Storage::Streams::IBuffer & buffer) const;
     Windows::Foundation::Collections::IVector<Windows::Devices::WiFiDirect::WiFiDirectInformationElement> CreateFromDeviceInformation(const Windows::Devices::Enumeration::DeviceInformation & deviceInformation) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWiFiDirectLegacySettings
+struct WINRT_EBO impl_IWiFiDirectLegacySettings
 {
-    auto shim() const { return impl::shim<D, IWiFiDirectLegacySettings>(this); }
-
-public:
-
     bool IsEnabled() const;
     void IsEnabled(bool value) const;
     hstring Ssid() const;

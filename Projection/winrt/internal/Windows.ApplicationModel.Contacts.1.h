@@ -687,64 +687,64 @@ template <> struct traits<Windows::ApplicationModel::Contacts::FullContactCardOp
 
 namespace Windows::ApplicationModel::Contacts {
 
-template <typename T> class impl_IAggregateContactManager;
-template <typename T> class impl_IAggregateContactManager2;
-template <typename T> class impl_IContact;
-template <typename T> class impl_IContact2;
-template <typename T> class impl_IContact3;
-template <typename T> class impl_IContactAddress;
-template <typename T> class impl_IContactAnnotation;
-template <typename T> class impl_IContactAnnotationList;
-template <typename T> class impl_IContactAnnotationStore;
-template <typename T> class impl_IContactBatch;
-template <typename T> class impl_IContactCardDelayedDataLoader;
-template <typename T> class impl_IContactCardOptions;
-template <typename T> class impl_IContactCardOptions2;
-template <typename T> class impl_IContactChange;
-template <typename T> class impl_IContactChangeReader;
-template <typename T> class impl_IContactChangeTracker;
-template <typename T> class impl_IContactChangedDeferral;
-template <typename T> class impl_IContactChangedEventArgs;
-template <typename T> class impl_IContactConnectedServiceAccount;
-template <typename T> class impl_IContactDate;
-template <typename T> class impl_IContactEmail;
-template <typename T> class impl_IContactField;
-template <typename T> class impl_IContactFieldFactory;
-template <typename T> class impl_IContactInformation;
-template <typename T> class impl_IContactInstantMessageField;
-template <typename T> class impl_IContactInstantMessageFieldFactory;
-template <typename T> class impl_IContactJobInfo;
-template <typename T> class impl_IContactLaunchActionVerbsStatics;
-template <typename T> class impl_IContactList;
-template <typename T> class impl_IContactList2;
-template <typename T> class impl_IContactListSyncConstraints;
-template <typename T> class impl_IContactListSyncManager;
-template <typename T> class impl_IContactListSyncManager2;
-template <typename T> class impl_IContactLocationField;
-template <typename T> class impl_IContactLocationFieldFactory;
-template <typename T> class impl_IContactManagerForUser;
-template <typename T> class impl_IContactManagerStatics;
-template <typename T> class impl_IContactManagerStatics2;
-template <typename T> class impl_IContactManagerStatics3;
-template <typename T> class impl_IContactManagerStatics4;
-template <typename T> class impl_IContactMatchReason;
-template <typename T> class impl_IContactName;
-template <typename T> class impl_IContactPhone;
-template <typename T> class impl_IContactPicker;
-template <typename T> class impl_IContactPicker2;
-template <typename T> class impl_IContactQueryOptions;
-template <typename T> class impl_IContactQueryOptionsFactory;
-template <typename T> class impl_IContactQueryTextSearch;
-template <typename T> class impl_IContactReader;
-template <typename T> class impl_IContactSignificantOther;
-template <typename T> class impl_IContactSignificantOther2;
-template <typename T> class impl_IContactStore;
-template <typename T> class impl_IContactStore2;
-template <typename T> class impl_IContactStoreNotificationTriggerDetails;
-template <typename T> class impl_IContactWebsite;
-template <typename T> class impl_IContactWebsite2;
-template <typename T> class impl_IFullContactCardOptions;
-template <typename T> class impl_IKnownContactFieldStatics;
+template <typename T> struct impl_IAggregateContactManager;
+template <typename T> struct impl_IAggregateContactManager2;
+template <typename T> struct impl_IContact;
+template <typename T> struct impl_IContact2;
+template <typename T> struct impl_IContact3;
+template <typename T> struct impl_IContactAddress;
+template <typename T> struct impl_IContactAnnotation;
+template <typename T> struct impl_IContactAnnotationList;
+template <typename T> struct impl_IContactAnnotationStore;
+template <typename T> struct impl_IContactBatch;
+template <typename T> struct impl_IContactCardDelayedDataLoader;
+template <typename T> struct impl_IContactCardOptions;
+template <typename T> struct impl_IContactCardOptions2;
+template <typename T> struct impl_IContactChange;
+template <typename T> struct impl_IContactChangeReader;
+template <typename T> struct impl_IContactChangeTracker;
+template <typename T> struct impl_IContactChangedDeferral;
+template <typename T> struct impl_IContactChangedEventArgs;
+template <typename T> struct impl_IContactConnectedServiceAccount;
+template <typename T> struct impl_IContactDate;
+template <typename T> struct impl_IContactEmail;
+template <typename T> struct impl_IContactField;
+template <typename T> struct impl_IContactFieldFactory;
+template <typename T> struct impl_IContactInformation;
+template <typename T> struct impl_IContactInstantMessageField;
+template <typename T> struct impl_IContactInstantMessageFieldFactory;
+template <typename T> struct impl_IContactJobInfo;
+template <typename T> struct impl_IContactLaunchActionVerbsStatics;
+template <typename T> struct impl_IContactList;
+template <typename T> struct impl_IContactList2;
+template <typename T> struct impl_IContactListSyncConstraints;
+template <typename T> struct impl_IContactListSyncManager;
+template <typename T> struct impl_IContactListSyncManager2;
+template <typename T> struct impl_IContactLocationField;
+template <typename T> struct impl_IContactLocationFieldFactory;
+template <typename T> struct impl_IContactManagerForUser;
+template <typename T> struct impl_IContactManagerStatics;
+template <typename T> struct impl_IContactManagerStatics2;
+template <typename T> struct impl_IContactManagerStatics3;
+template <typename T> struct impl_IContactManagerStatics4;
+template <typename T> struct impl_IContactMatchReason;
+template <typename T> struct impl_IContactName;
+template <typename T> struct impl_IContactPhone;
+template <typename T> struct impl_IContactPicker;
+template <typename T> struct impl_IContactPicker2;
+template <typename T> struct impl_IContactQueryOptions;
+template <typename T> struct impl_IContactQueryOptionsFactory;
+template <typename T> struct impl_IContactQueryTextSearch;
+template <typename T> struct impl_IContactReader;
+template <typename T> struct impl_IContactSignificantOther;
+template <typename T> struct impl_IContactSignificantOther2;
+template <typename T> struct impl_IContactStore;
+template <typename T> struct impl_IContactStore2;
+template <typename T> struct impl_IContactStoreNotificationTriggerDetails;
+template <typename T> struct impl_IContactWebsite;
+template <typename T> struct impl_IContactWebsite2;
+template <typename T> struct impl_IFullContactCardOptions;
+template <typename T> struct impl_IKnownContactFieldStatics;
 
 }
 
@@ -1101,154 +1101,132 @@ template <> struct traits<Windows::ApplicationModel::Contacts::IKnownContactFiel
 template <> struct traits<Windows::ApplicationModel::Contacts::AggregateContactManager>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::AggregateContactManager;
-    using default_interface = Windows::ApplicationModel::Contacts::IAggregateContactManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.AggregateContactManager"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::Contact>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::Contact;
-    using default_interface = Windows::ApplicationModel::Contacts::IContact;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.Contact"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactAddress>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::ContactAddress;
-    using default_interface = Windows::ApplicationModel::Contacts::IContactAddress;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.ContactAddress"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactAnnotation>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::ContactAnnotation;
-    using default_interface = Windows::ApplicationModel::Contacts::IContactAnnotation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.ContactAnnotation"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactAnnotationList>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::ContactAnnotationList;
-    using default_interface = Windows::ApplicationModel::Contacts::IContactAnnotationList;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.ContactAnnotationList"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactAnnotationStore>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::ContactAnnotationStore;
-    using default_interface = Windows::ApplicationModel::Contacts::IContactAnnotationStore;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.ContactAnnotationStore"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactBatch>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::ContactBatch;
-    using default_interface = Windows::ApplicationModel::Contacts::IContactBatch;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.ContactBatch"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactCardDelayedDataLoader>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::ContactCardDelayedDataLoader;
-    using default_interface = Windows::ApplicationModel::Contacts::IContactCardDelayedDataLoader;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.ContactCardDelayedDataLoader"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactCardOptions>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::ContactCardOptions;
-    using default_interface = Windows::ApplicationModel::Contacts::IContactCardOptions;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.ContactCardOptions"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactChange>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::ContactChange;
-    using default_interface = Windows::ApplicationModel::Contacts::IContactChange;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.ContactChange"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactChangeReader>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::ContactChangeReader;
-    using default_interface = Windows::ApplicationModel::Contacts::IContactChangeReader;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.ContactChangeReader"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactChangeTracker>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::ContactChangeTracker;
-    using default_interface = Windows::ApplicationModel::Contacts::IContactChangeTracker;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.ContactChangeTracker"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactChangedDeferral>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::ContactChangedDeferral;
-    using default_interface = Windows::ApplicationModel::Contacts::IContactChangedDeferral;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.ContactChangedDeferral"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactChangedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::ContactChangedEventArgs;
-    using default_interface = Windows::ApplicationModel::Contacts::IContactChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.ContactChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactConnectedServiceAccount>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::ContactConnectedServiceAccount;
-    using default_interface = Windows::ApplicationModel::Contacts::IContactConnectedServiceAccount;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.ContactConnectedServiceAccount"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactDate>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::ContactDate;
-    using default_interface = Windows::ApplicationModel::Contacts::IContactDate;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.ContactDate"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactEmail>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::ContactEmail;
-    using default_interface = Windows::ApplicationModel::Contacts::IContactEmail;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.ContactEmail"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactField>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::ContactField;
-    using default_interface = Windows::ApplicationModel::Contacts::IContactField;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.ContactField"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactFieldFactory>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::ContactFieldFactory;
-    using default_interface = Windows::ApplicationModel::Contacts::IContactFieldFactory;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.ContactFieldFactory"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactInformation>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::ContactInformation;
-    using default_interface = Windows::ApplicationModel::Contacts::IContactInformation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.ContactInformation"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactInstantMessageField>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::ContactInstantMessageField;
-    using default_interface = Windows::ApplicationModel::Contacts::IContactInstantMessageField;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.ContactInstantMessageField"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactJobInfo>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::ContactJobInfo;
-    using default_interface = Windows::ApplicationModel::Contacts::IContactJobInfo;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.ContactJobInfo"; }
 };
 
@@ -1260,28 +1238,24 @@ template <> struct traits<Windows::ApplicationModel::Contacts::ContactLaunchActi
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactList>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::ContactList;
-    using default_interface = Windows::ApplicationModel::Contacts::IContactList;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.ContactList"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactListSyncConstraints>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::ContactListSyncConstraints;
-    using default_interface = Windows::ApplicationModel::Contacts::IContactListSyncConstraints;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.ContactListSyncConstraints"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactListSyncManager>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::ContactListSyncManager;
-    using default_interface = Windows::ApplicationModel::Contacts::IContactListSyncManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.ContactListSyncManager"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactLocationField>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::ContactLocationField;
-    using default_interface = Windows::ApplicationModel::Contacts::IContactLocationField;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.ContactLocationField"; }
 };
 
@@ -1293,84 +1267,72 @@ template <> struct traits<Windows::ApplicationModel::Contacts::ContactManager>
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactManagerForUser>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::ContactManagerForUser;
-    using default_interface = Windows::ApplicationModel::Contacts::IContactManagerForUser;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.ContactManagerForUser"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactMatchReason>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::ContactMatchReason;
-    using default_interface = Windows::ApplicationModel::Contacts::IContactMatchReason;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.ContactMatchReason"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactPhone>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::ContactPhone;
-    using default_interface = Windows::ApplicationModel::Contacts::IContactPhone;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.ContactPhone"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactPicker>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::ContactPicker;
-    using default_interface = Windows::ApplicationModel::Contacts::IContactPicker;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.ContactPicker"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactQueryOptions>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::ContactQueryOptions;
-    using default_interface = Windows::ApplicationModel::Contacts::IContactQueryOptions;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.ContactQueryOptions"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactQueryTextSearch>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::ContactQueryTextSearch;
-    using default_interface = Windows::ApplicationModel::Contacts::IContactQueryTextSearch;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.ContactQueryTextSearch"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactReader>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::ContactReader;
-    using default_interface = Windows::ApplicationModel::Contacts::IContactReader;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.ContactReader"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactSignificantOther>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::ContactSignificantOther;
-    using default_interface = Windows::ApplicationModel::Contacts::IContactSignificantOther;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.ContactSignificantOther"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactStore>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::ContactStore;
-    using default_interface = Windows::ApplicationModel::Contacts::IContactStore;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.ContactStore"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactStoreNotificationTriggerDetails>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::ContactStoreNotificationTriggerDetails;
-    using default_interface = Windows::ApplicationModel::Contacts::IContactStoreNotificationTriggerDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.ContactStoreNotificationTriggerDetails"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::ContactWebsite>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::ContactWebsite;
-    using default_interface = Windows::ApplicationModel::Contacts::IContactWebsite;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.ContactWebsite"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Contacts::FullContactCardOptions>
 {
     using abi = ABI::Windows::ApplicationModel::Contacts::FullContactCardOptions;
-    using default_interface = Windows::ApplicationModel::Contacts::IFullContactCardOptions;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Contacts.FullContactCardOptions"; }
 };
 

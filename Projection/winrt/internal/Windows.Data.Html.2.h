@@ -10,12 +10,8 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::Data::Html {
 
 template <typename D>
-class WINRT_EBO impl_IHtmlUtilities
+struct WINRT_EBO impl_IHtmlUtilities
 {
-    auto shim() const { return impl::shim<D, IHtmlUtilities>(this); }
-
-public:
-
     hstring ConvertToText(hstring_ref html) const;
 };
 

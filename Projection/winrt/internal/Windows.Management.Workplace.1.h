@@ -32,8 +32,8 @@ namespace ABI {
 
 namespace Windows::Management::Workplace {
 
-template <typename T> class impl_IMdmAllowPolicyStatics;
-template <typename T> class impl_IMdmPolicyStatics2;
+template <typename T> struct impl_IMdmAllowPolicyStatics;
+template <typename T> struct impl_IMdmPolicyStatics2;
 
 }
 

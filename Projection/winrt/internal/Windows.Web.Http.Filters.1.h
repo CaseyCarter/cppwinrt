@@ -97,13 +97,13 @@ template <> struct traits<Windows::Web::Http::Filters::HttpServerCustomValidatio
 
 namespace Windows::Web::Http::Filters {
 
-template <typename T> class impl_IHttpBaseProtocolFilter;
-template <typename T> class impl_IHttpBaseProtocolFilter2;
-template <typename T> class impl_IHttpBaseProtocolFilter3;
-template <typename T> class impl_IHttpBaseProtocolFilter4;
-template <typename T> class impl_IHttpCacheControl;
-template <typename T> class impl_IHttpFilter;
-template <typename T> class impl_IHttpServerCustomValidationRequestedEventArgs;
+template <typename T> struct impl_IHttpBaseProtocolFilter;
+template <typename T> struct impl_IHttpBaseProtocolFilter2;
+template <typename T> struct impl_IHttpBaseProtocolFilter3;
+template <typename T> struct impl_IHttpBaseProtocolFilter4;
+template <typename T> struct impl_IHttpCacheControl;
+template <typename T> struct impl_IHttpFilter;
+template <typename T> struct impl_IHttpServerCustomValidationRequestedEventArgs;
 
 }
 
@@ -154,21 +154,18 @@ template <> struct traits<Windows::Web::Http::Filters::IHttpServerCustomValidati
 template <> struct traits<Windows::Web::Http::Filters::HttpBaseProtocolFilter>
 {
     using abi = ABI::Windows::Web::Http::Filters::HttpBaseProtocolFilter;
-    using default_interface = Windows::Web::Http::Filters::IHttpBaseProtocolFilter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.Filters.HttpBaseProtocolFilter"; }
 };
 
 template <> struct traits<Windows::Web::Http::Filters::HttpCacheControl>
 {
     using abi = ABI::Windows::Web::Http::Filters::HttpCacheControl;
-    using default_interface = Windows::Web::Http::Filters::IHttpCacheControl;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.Filters.HttpCacheControl"; }
 };
 
 template <> struct traits<Windows::Web::Http::Filters::HttpServerCustomValidationRequestedEventArgs>
 {
     using abi = ABI::Windows::Web::Http::Filters::HttpServerCustomValidationRequestedEventArgs;
-    using default_interface = Windows::Web::Http::Filters::IHttpServerCustomValidationRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Web.Http.Filters.HttpServerCustomValidationRequestedEventArgs"; }
 };
 

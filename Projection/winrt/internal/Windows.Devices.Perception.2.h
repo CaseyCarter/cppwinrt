@@ -396,12 +396,8 @@ template <> struct __declspec(uuid("0a36a7af-da9e-553f-8dc5-e89d705bb40b")) __de
 namespace Windows::Devices::Perception {
 
 template <typename D>
-class WINRT_EBO impl_IKnownCameraIntrinsicsPropertiesStatics
+struct WINRT_EBO impl_IKnownCameraIntrinsicsPropertiesStatics
 {
-    auto shim() const { return impl::shim<D, IKnownCameraIntrinsicsPropertiesStatics>(this); }
-
-public:
-
     hstring FocalLength() const;
     hstring PrincipalPoint() const;
     hstring RadialDistortion() const;
@@ -409,35 +405,23 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IKnownPerceptionColorFrameSourcePropertiesStatics
+struct WINRT_EBO impl_IKnownPerceptionColorFrameSourcePropertiesStatics
 {
-    auto shim() const { return impl::shim<D, IKnownPerceptionColorFrameSourcePropertiesStatics>(this); }
-
-public:
-
     hstring Exposure() const;
     hstring AutoExposureEnabled() const;
     hstring ExposureCompensation() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IKnownPerceptionDepthFrameSourcePropertiesStatics
+struct WINRT_EBO impl_IKnownPerceptionDepthFrameSourcePropertiesStatics
 {
-    auto shim() const { return impl::shim<D, IKnownPerceptionDepthFrameSourcePropertiesStatics>(this); }
-
-public:
-
     hstring MinDepth() const;
     hstring MaxDepth() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IKnownPerceptionFrameSourcePropertiesStatics
+struct WINRT_EBO impl_IKnownPerceptionFrameSourcePropertiesStatics
 {
-    auto shim() const { return impl::shim<D, IKnownPerceptionFrameSourcePropertiesStatics>(this); }
-
-public:
-
     hstring Id() const;
     hstring PhysicalDeviceIds() const;
     hstring FrameKind() const;
@@ -446,22 +430,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IKnownPerceptionFrameSourcePropertiesStatics2
+struct WINRT_EBO impl_IKnownPerceptionFrameSourcePropertiesStatics2
 {
-    auto shim() const { return impl::shim<D, IKnownPerceptionFrameSourcePropertiesStatics2>(this); }
-
-public:
-
     hstring DeviceId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IKnownPerceptionInfraredFrameSourcePropertiesStatics
+struct WINRT_EBO impl_IKnownPerceptionInfraredFrameSourcePropertiesStatics
 {
-    auto shim() const { return impl::shim<D, IKnownPerceptionInfraredFrameSourcePropertiesStatics>(this); }
-
-public:
-
     hstring Exposure() const;
     hstring AutoExposureEnabled() const;
     hstring ExposureCompensation() const;
@@ -472,12 +448,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IKnownPerceptionVideoFrameSourcePropertiesStatics
+struct WINRT_EBO impl_IKnownPerceptionVideoFrameSourcePropertiesStatics
 {
-    auto shim() const { return impl::shim<D, IKnownPerceptionVideoFrameSourcePropertiesStatics>(this); }
-
-public:
-
     hstring VideoProfile() const;
     hstring SupportedVideoProfiles() const;
     hstring AvailableVideoProfiles() const;
@@ -486,12 +458,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IKnownPerceptionVideoProfilePropertiesStatics
+struct WINRT_EBO impl_IKnownPerceptionVideoProfilePropertiesStatics
 {
-    auto shim() const { return impl::shim<D, IKnownPerceptionVideoProfilePropertiesStatics>(this); }
-
-public:
-
     hstring BitmapPixelFormat() const;
     hstring BitmapAlphaMode() const;
     hstring Width() const;
@@ -500,33 +468,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionColorFrame
+struct WINRT_EBO impl_IPerceptionColorFrame
 {
-    auto shim() const { return impl::shim<D, IPerceptionColorFrame>(this); }
-
-public:
-
     Windows::Media::VideoFrame VideoFrame() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionColorFrameArrivedEventArgs
+struct WINRT_EBO impl_IPerceptionColorFrameArrivedEventArgs
 {
-    auto shim() const { return impl::shim<D, IPerceptionColorFrameArrivedEventArgs>(this); }
-
-public:
-
     Windows::Foundation::TimeSpan RelativeTime() const;
     Windows::Devices::Perception::PerceptionColorFrame TryOpenFrame() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionColorFrameReader
+struct WINRT_EBO impl_IPerceptionColorFrameReader
 {
-    auto shim() const { return impl::shim<D, IPerceptionColorFrameReader>(this); }
-
-public:
-
     event_token FrameArrived(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameReader, Windows::Devices::Perception::PerceptionColorFrameArrivedEventArgs> & handler) const;
     using FrameArrived_revoker = event_revoker<IPerceptionColorFrameReader>;
     FrameArrived_revoker FrameArrived(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameReader, Windows::Devices::Perception::PerceptionColorFrameArrivedEventArgs> & handler) const;
@@ -538,12 +494,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionColorFrameSource
+struct WINRT_EBO impl_IPerceptionColorFrameSource
 {
-    auto shim() const { return impl::shim<D, IPerceptionColorFrameSource>(this); }
-
-public:
-
     event_token AvailableChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::IInspectable> & handler) const;
     using AvailableChanged_revoker = event_revoker<IPerceptionColorFrameSource>;
     AvailableChanged_revoker AvailableChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSource, Windows::IInspectable> & handler) const;
@@ -586,42 +538,26 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionColorFrameSource2
+struct WINRT_EBO impl_IPerceptionColorFrameSource2
 {
-    auto shim() const { return impl::shim<D, IPerceptionColorFrameSource2>(this); }
-
-public:
-
     hstring DeviceId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionColorFrameSourceAddedEventArgs
+struct WINRT_EBO impl_IPerceptionColorFrameSourceAddedEventArgs
 {
-    auto shim() const { return impl::shim<D, IPerceptionColorFrameSourceAddedEventArgs>(this); }
-
-public:
-
     Windows::Devices::Perception::PerceptionColorFrameSource FrameSource() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionColorFrameSourceRemovedEventArgs
+struct WINRT_EBO impl_IPerceptionColorFrameSourceRemovedEventArgs
 {
-    auto shim() const { return impl::shim<D, IPerceptionColorFrameSourceRemovedEventArgs>(this); }
-
-public:
-
     Windows::Devices::Perception::PerceptionColorFrameSource FrameSource() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionColorFrameSourceStatics
+struct WINRT_EBO impl_IPerceptionColorFrameSourceStatics
 {
-    auto shim() const { return impl::shim<D, IPerceptionColorFrameSourceStatics>(this); }
-
-public:
-
     Windows::Devices::Perception::PerceptionColorFrameSourceWatcher CreateWatcher() const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionColorFrameSource>> FindAllAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionColorFrameSource> FromIdAsync(hstring_ref id) const;
@@ -629,12 +565,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionColorFrameSourceWatcher
+struct WINRT_EBO impl_IPerceptionColorFrameSourceWatcher
 {
-    auto shim() const { return impl::shim<D, IPerceptionColorFrameSourceWatcher>(this); }
-
-public:
-
     event_token SourceAdded(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::Devices::Perception::PerceptionColorFrameSourceAddedEventArgs> & handler) const;
     using SourceAdded_revoker = event_revoker<IPerceptionColorFrameSourceWatcher>;
     SourceAdded_revoker SourceAdded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionColorFrameSourceWatcher, Windows::Devices::Perception::PerceptionColorFrameSourceAddedEventArgs> & handler) const;
@@ -657,12 +589,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionControlSession
+struct WINRT_EBO impl_IPerceptionControlSession
 {
-    auto shim() const { return impl::shim<D, IPerceptionControlSession>(this); }
-
-public:
-
     event_token ControlLost(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionControlSession, Windows::IInspectable> & handler) const;
     using ControlLost_revoker = event_revoker<IPerceptionControlSession>;
     ControlLost_revoker ControlLost(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionControlSession, Windows::IInspectable> & handler) const;
@@ -671,12 +599,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionDepthCorrelatedCameraIntrinsics
+struct WINRT_EBO impl_IPerceptionDepthCorrelatedCameraIntrinsics
 {
-    auto shim() const { return impl::shim<D, IPerceptionDepthCorrelatedCameraIntrinsics>(this); }
-
-public:
-
     Windows::Foundation::Numerics::float3 UnprojectPixelAtCorrelatedDepth(const Windows::Foundation::Point & pixelCoordinate, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame) const;
     void UnprojectPixelsAtCorrelatedDepth(array_ref<const Windows::Foundation::Point> sourceCoordinates, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_ref<Windows::Foundation::Numerics::float3> results) const;
     Windows::Foundation::IAsyncAction UnprojectRegionPixelsAtCorrelatedDepthAsync(const Windows::Foundation::Rect & region, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_ref<Windows::Foundation::Numerics::float3> results) const;
@@ -684,12 +608,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionDepthCorrelatedCoordinateMapper
+struct WINRT_EBO impl_IPerceptionDepthCorrelatedCoordinateMapper
 {
-    auto shim() const { return impl::shim<D, IPerceptionDepthCorrelatedCoordinateMapper>(this); }
-
-public:
-
     Windows::Foundation::Point MapPixelToTarget(const Windows::Foundation::Point & sourcePixelCoordinate, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame) const;
     void MapPixelsToTarget(array_ref<const Windows::Foundation::Point> sourceCoordinates, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_ref<Windows::Foundation::Point> results) const;
     Windows::Foundation::IAsyncAction MapRegionOfPixelsToTargetAsync(const Windows::Foundation::Rect & region, const Windows::Devices::Perception::PerceptionDepthFrame & depthFrame, array_ref<Windows::Foundation::Point> targetCoordinates) const;
@@ -697,33 +617,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionDepthFrame
+struct WINRT_EBO impl_IPerceptionDepthFrame
 {
-    auto shim() const { return impl::shim<D, IPerceptionDepthFrame>(this); }
-
-public:
-
     Windows::Media::VideoFrame VideoFrame() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionDepthFrameArrivedEventArgs
+struct WINRT_EBO impl_IPerceptionDepthFrameArrivedEventArgs
 {
-    auto shim() const { return impl::shim<D, IPerceptionDepthFrameArrivedEventArgs>(this); }
-
-public:
-
     Windows::Foundation::TimeSpan RelativeTime() const;
     Windows::Devices::Perception::PerceptionDepthFrame TryOpenFrame() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionDepthFrameReader
+struct WINRT_EBO impl_IPerceptionDepthFrameReader
 {
-    auto shim() const { return impl::shim<D, IPerceptionDepthFrameReader>(this); }
-
-public:
-
     event_token FrameArrived(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameReader, Windows::Devices::Perception::PerceptionDepthFrameArrivedEventArgs> & handler) const;
     using FrameArrived_revoker = event_revoker<IPerceptionDepthFrameReader>;
     FrameArrived_revoker FrameArrived(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameReader, Windows::Devices::Perception::PerceptionDepthFrameArrivedEventArgs> & handler) const;
@@ -735,12 +643,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionDepthFrameSource
+struct WINRT_EBO impl_IPerceptionDepthFrameSource
 {
-    auto shim() const { return impl::shim<D, IPerceptionDepthFrameSource>(this); }
-
-public:
-
     event_token AvailableChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::IInspectable> & handler) const;
     using AvailableChanged_revoker = event_revoker<IPerceptionDepthFrameSource>;
     AvailableChanged_revoker AvailableChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSource, Windows::IInspectable> & handler) const;
@@ -783,42 +687,26 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionDepthFrameSource2
+struct WINRT_EBO impl_IPerceptionDepthFrameSource2
 {
-    auto shim() const { return impl::shim<D, IPerceptionDepthFrameSource2>(this); }
-
-public:
-
     hstring DeviceId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionDepthFrameSourceAddedEventArgs
+struct WINRT_EBO impl_IPerceptionDepthFrameSourceAddedEventArgs
 {
-    auto shim() const { return impl::shim<D, IPerceptionDepthFrameSourceAddedEventArgs>(this); }
-
-public:
-
     Windows::Devices::Perception::PerceptionDepthFrameSource FrameSource() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionDepthFrameSourceRemovedEventArgs
+struct WINRT_EBO impl_IPerceptionDepthFrameSourceRemovedEventArgs
 {
-    auto shim() const { return impl::shim<D, IPerceptionDepthFrameSourceRemovedEventArgs>(this); }
-
-public:
-
     Windows::Devices::Perception::PerceptionDepthFrameSource FrameSource() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionDepthFrameSourceStatics
+struct WINRT_EBO impl_IPerceptionDepthFrameSourceStatics
 {
-    auto shim() const { return impl::shim<D, IPerceptionDepthFrameSourceStatics>(this); }
-
-public:
-
     Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher CreateWatcher() const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionDepthFrameSource>> FindAllAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionDepthFrameSource> FromIdAsync(hstring_ref id) const;
@@ -826,12 +714,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionDepthFrameSourceWatcher
+struct WINRT_EBO impl_IPerceptionDepthFrameSourceWatcher
 {
-    auto shim() const { return impl::shim<D, IPerceptionDepthFrameSourceWatcher>(this); }
-
-public:
-
     event_token SourceAdded(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::Devices::Perception::PerceptionDepthFrameSourceAddedEventArgs> & handler) const;
     using SourceAdded_revoker = event_revoker<IPerceptionDepthFrameSourceWatcher>;
     SourceAdded_revoker SourceAdded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionDepthFrameSourceWatcher, Windows::Devices::Perception::PerceptionDepthFrameSourceAddedEventArgs> & handler) const;
@@ -854,55 +738,35 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionFrameSourcePropertiesChangedEventArgs
+struct WINRT_EBO impl_IPerceptionFrameSourcePropertiesChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IPerceptionFrameSourcePropertiesChangedEventArgs>(this); }
-
-public:
-
     Windows::Foundation::Collections::CollectionChange CollectionChange() const;
     hstring Key() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionFrameSourcePropertyChangeResult
+struct WINRT_EBO impl_IPerceptionFrameSourcePropertyChangeResult
 {
-    auto shim() const { return impl::shim<D, IPerceptionFrameSourcePropertyChangeResult>(this); }
-
-public:
-
     Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeStatus Status() const;
     Windows::IInspectable NewValue() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionInfraredFrame
+struct WINRT_EBO impl_IPerceptionInfraredFrame
 {
-    auto shim() const { return impl::shim<D, IPerceptionInfraredFrame>(this); }
-
-public:
-
     Windows::Media::VideoFrame VideoFrame() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionInfraredFrameArrivedEventArgs
+struct WINRT_EBO impl_IPerceptionInfraredFrameArrivedEventArgs
 {
-    auto shim() const { return impl::shim<D, IPerceptionInfraredFrameArrivedEventArgs>(this); }
-
-public:
-
     Windows::Foundation::TimeSpan RelativeTime() const;
     Windows::Devices::Perception::PerceptionInfraredFrame TryOpenFrame() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionInfraredFrameReader
+struct WINRT_EBO impl_IPerceptionInfraredFrameReader
 {
-    auto shim() const { return impl::shim<D, IPerceptionInfraredFrameReader>(this); }
-
-public:
-
     event_token FrameArrived(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameReader, Windows::Devices::Perception::PerceptionInfraredFrameArrivedEventArgs> & handler) const;
     using FrameArrived_revoker = event_revoker<IPerceptionInfraredFrameReader>;
     FrameArrived_revoker FrameArrived(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameReader, Windows::Devices::Perception::PerceptionInfraredFrameArrivedEventArgs> & handler) const;
@@ -914,12 +778,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionInfraredFrameSource
+struct WINRT_EBO impl_IPerceptionInfraredFrameSource
 {
-    auto shim() const { return impl::shim<D, IPerceptionInfraredFrameSource>(this); }
-
-public:
-
     event_token AvailableChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::IInspectable> & handler) const;
     using AvailableChanged_revoker = event_revoker<IPerceptionInfraredFrameSource>;
     AvailableChanged_revoker AvailableChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSource, Windows::IInspectable> & handler) const;
@@ -962,42 +822,26 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionInfraredFrameSource2
+struct WINRT_EBO impl_IPerceptionInfraredFrameSource2
 {
-    auto shim() const { return impl::shim<D, IPerceptionInfraredFrameSource2>(this); }
-
-public:
-
     hstring DeviceId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionInfraredFrameSourceAddedEventArgs
+struct WINRT_EBO impl_IPerceptionInfraredFrameSourceAddedEventArgs
 {
-    auto shim() const { return impl::shim<D, IPerceptionInfraredFrameSourceAddedEventArgs>(this); }
-
-public:
-
     Windows::Devices::Perception::PerceptionInfraredFrameSource FrameSource() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionInfraredFrameSourceRemovedEventArgs
+struct WINRT_EBO impl_IPerceptionInfraredFrameSourceRemovedEventArgs
 {
-    auto shim() const { return impl::shim<D, IPerceptionInfraredFrameSourceRemovedEventArgs>(this); }
-
-public:
-
     Windows::Devices::Perception::PerceptionInfraredFrameSource FrameSource() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionInfraredFrameSourceStatics
+struct WINRT_EBO impl_IPerceptionInfraredFrameSourceStatics
 {
-    auto shim() const { return impl::shim<D, IPerceptionInfraredFrameSourceStatics>(this); }
-
-public:
-
     Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher CreateWatcher() const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::PerceptionInfraredFrameSource>> FindAllAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Perception::PerceptionInfraredFrameSource> FromIdAsync(hstring_ref id) const;
@@ -1005,12 +849,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionInfraredFrameSourceWatcher
+struct WINRT_EBO impl_IPerceptionInfraredFrameSourceWatcher
 {
-    auto shim() const { return impl::shim<D, IPerceptionInfraredFrameSourceWatcher>(this); }
-
-public:
-
     event_token SourceAdded(const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::Devices::Perception::PerceptionInfraredFrameSourceAddedEventArgs> & handler) const;
     using SourceAdded_revoker = event_revoker<IPerceptionInfraredFrameSourceWatcher>;
     SourceAdded_revoker SourceAdded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Perception::PerceptionInfraredFrameSourceWatcher, Windows::Devices::Perception::PerceptionInfraredFrameSourceAddedEventArgs> & handler) const;
@@ -1033,12 +873,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionVideoProfile
+struct WINRT_EBO impl_IPerceptionVideoProfile
 {
-    auto shim() const { return impl::shim<D, IPerceptionVideoProfile>(this); }
-
-public:
-
     Windows::Graphics::Imaging::BitmapPixelFormat BitmapPixelFormat() const;
     Windows::Graphics::Imaging::BitmapAlphaMode BitmapAlphaMode() const;
     int32_t Width() const;

@@ -146,14 +146,14 @@ template <> struct traits<Windows::Management::Deployment::PackageVolume> { usin
 
 namespace Windows::Management::Deployment {
 
-template <typename T> class impl_IDeploymentResult;
-template <typename T> class impl_IPackageManager;
-template <typename T> class impl_IPackageManager2;
-template <typename T> class impl_IPackageManager3;
-template <typename T> class impl_IPackageManager4;
-template <typename T> class impl_IPackageUserInformation;
-template <typename T> class impl_IPackageVolume;
-template <typename T> class impl_IPackageVolume2;
+template <typename T> struct impl_IDeploymentResult;
+template <typename T> struct impl_IPackageManager;
+template <typename T> struct impl_IPackageManager2;
+template <typename T> struct impl_IPackageManager3;
+template <typename T> struct impl_IPackageManager4;
+template <typename T> struct impl_IPackageUserInformation;
+template <typename T> struct impl_IPackageVolume;
+template <typename T> struct impl_IPackageVolume2;
 
 }
 
@@ -210,28 +210,24 @@ template <> struct traits<Windows::Management::Deployment::IPackageVolume2>
 template <> struct traits<Windows::Management::Deployment::DeploymentResult>
 {
     using abi = ABI::Windows::Management::Deployment::DeploymentResult;
-    using default_interface = Windows::Management::Deployment::IDeploymentResult;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Management.Deployment.DeploymentResult"; }
 };
 
 template <> struct traits<Windows::Management::Deployment::PackageManager>
 {
     using abi = ABI::Windows::Management::Deployment::PackageManager;
-    using default_interface = Windows::Management::Deployment::IPackageManager;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Management.Deployment.PackageManager"; }
 };
 
 template <> struct traits<Windows::Management::Deployment::PackageUserInformation>
 {
     using abi = ABI::Windows::Management::Deployment::PackageUserInformation;
-    using default_interface = Windows::Management::Deployment::IPackageUserInformation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Management.Deployment.PackageUserInformation"; }
 };
 
 template <> struct traits<Windows::Management::Deployment::PackageVolume>
 {
     using abi = ABI::Windows::Management::Deployment::PackageVolume;
-    using default_interface = Windows::Management::Deployment::IPackageVolume;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Management.Deployment.PackageVolume"; }
 };
 

@@ -550,232 +550,232 @@ namespace Windows::Devices::SerialCommunication {
 template <typename D> hstring impl_ISerialDeviceStatics<D>::GetDeviceSelector() const
 {
     hstring value;
-    check_hresult(shim()->abi_GetDeviceSelector(put(value)));
+    check_hresult(static_cast<const ISerialDeviceStatics &>(static_cast<const D &>(*this))->abi_GetDeviceSelector(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISerialDeviceStatics<D>::GetDeviceSelector(hstring_ref portName) const
 {
     hstring result;
-    check_hresult(shim()->abi_GetDeviceSelectorFromPortName(get(portName), put(result)));
+    check_hresult(static_cast<const ISerialDeviceStatics &>(static_cast<const D &>(*this))->abi_GetDeviceSelectorFromPortName(get(portName), put(result)));
     return result;
 }
 
 template <typename D> hstring impl_ISerialDeviceStatics<D>::GetDeviceSelectorFromUsbVidPid(uint16_t vendorId, uint16_t productId) const
 {
     hstring result;
-    check_hresult(shim()->abi_GetDeviceSelectorFromUsbVidPid(vendorId, productId, put(result)));
+    check_hresult(static_cast<const ISerialDeviceStatics &>(static_cast<const D &>(*this))->abi_GetDeviceSelectorFromUsbVidPid(vendorId, productId, put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::SerialCommunication::SerialDevice> impl_ISerialDeviceStatics<D>::FromIdAsync(hstring_ref deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::SerialCommunication::SerialDevice> result;
-    check_hresult(shim()->abi_FromIdAsync(get(deviceId), put(result)));
+    check_hresult(static_cast<const ISerialDeviceStatics &>(static_cast<const D &>(*this))->abi_FromIdAsync(get(deviceId), put(result)));
     return result;
 }
 
 template <typename D> Windows::Devices::SerialCommunication::SerialError impl_IErrorReceivedEventArgs<D>::Error() const
 {
     Windows::Devices::SerialCommunication::SerialError value {};
-    check_hresult(shim()->get_Error(&value));
+    check_hresult(static_cast<const IErrorReceivedEventArgs &>(static_cast<const D &>(*this))->get_Error(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::SerialCommunication::SerialPinChange impl_IPinChangedEventArgs<D>::PinChange() const
 {
     Windows::Devices::SerialCommunication::SerialPinChange value {};
-    check_hresult(shim()->get_PinChange(&value));
+    check_hresult(static_cast<const IPinChangedEventArgs &>(static_cast<const D &>(*this))->get_PinChange(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_ISerialDevice<D>::BaudRate() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_BaudRate(&value));
+    check_hresult(static_cast<const ISerialDevice &>(static_cast<const D &>(*this))->get_BaudRate(&value));
     return value;
 }
 
 template <typename D> void impl_ISerialDevice<D>::BaudRate(uint32_t value) const
 {
-    check_hresult(shim()->put_BaudRate(value));
+    check_hresult(static_cast<const ISerialDevice &>(static_cast<const D &>(*this))->put_BaudRate(value));
 }
 
 template <typename D> bool impl_ISerialDevice<D>::BreakSignalState() const
 {
     bool value {};
-    check_hresult(shim()->get_BreakSignalState(&value));
+    check_hresult(static_cast<const ISerialDevice &>(static_cast<const D &>(*this))->get_BreakSignalState(&value));
     return value;
 }
 
 template <typename D> void impl_ISerialDevice<D>::BreakSignalState(bool value) const
 {
-    check_hresult(shim()->put_BreakSignalState(value));
+    check_hresult(static_cast<const ISerialDevice &>(static_cast<const D &>(*this))->put_BreakSignalState(value));
 }
 
 template <typename D> uint32_t impl_ISerialDevice<D>::BytesReceived() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_BytesReceived(&value));
+    check_hresult(static_cast<const ISerialDevice &>(static_cast<const D &>(*this))->get_BytesReceived(&value));
     return value;
 }
 
 template <typename D> bool impl_ISerialDevice<D>::CarrierDetectState() const
 {
     bool value {};
-    check_hresult(shim()->get_CarrierDetectState(&value));
+    check_hresult(static_cast<const ISerialDevice &>(static_cast<const D &>(*this))->get_CarrierDetectState(&value));
     return value;
 }
 
 template <typename D> bool impl_ISerialDevice<D>::ClearToSendState() const
 {
     bool value {};
-    check_hresult(shim()->get_ClearToSendState(&value));
+    check_hresult(static_cast<const ISerialDevice &>(static_cast<const D &>(*this))->get_ClearToSendState(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_ISerialDevice<D>::DataBits() const
 {
     uint16_t value {};
-    check_hresult(shim()->get_DataBits(&value));
+    check_hresult(static_cast<const ISerialDevice &>(static_cast<const D &>(*this))->get_DataBits(&value));
     return value;
 }
 
 template <typename D> void impl_ISerialDevice<D>::DataBits(uint16_t value) const
 {
-    check_hresult(shim()->put_DataBits(value));
+    check_hresult(static_cast<const ISerialDevice &>(static_cast<const D &>(*this))->put_DataBits(value));
 }
 
 template <typename D> bool impl_ISerialDevice<D>::DataSetReadyState() const
 {
     bool value {};
-    check_hresult(shim()->get_DataSetReadyState(&value));
+    check_hresult(static_cast<const ISerialDevice &>(static_cast<const D &>(*this))->get_DataSetReadyState(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::SerialCommunication::SerialHandshake impl_ISerialDevice<D>::Handshake() const
 {
     Windows::Devices::SerialCommunication::SerialHandshake value {};
-    check_hresult(shim()->get_Handshake(&value));
+    check_hresult(static_cast<const ISerialDevice &>(static_cast<const D &>(*this))->get_Handshake(&value));
     return value;
 }
 
 template <typename D> void impl_ISerialDevice<D>::Handshake(Windows::Devices::SerialCommunication::SerialHandshake value) const
 {
-    check_hresult(shim()->put_Handshake(value));
+    check_hresult(static_cast<const ISerialDevice &>(static_cast<const D &>(*this))->put_Handshake(value));
 }
 
 template <typename D> bool impl_ISerialDevice<D>::IsDataTerminalReadyEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_IsDataTerminalReadyEnabled(&value));
+    check_hresult(static_cast<const ISerialDevice &>(static_cast<const D &>(*this))->get_IsDataTerminalReadyEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_ISerialDevice<D>::IsDataTerminalReadyEnabled(bool value) const
 {
-    check_hresult(shim()->put_IsDataTerminalReadyEnabled(value));
+    check_hresult(static_cast<const ISerialDevice &>(static_cast<const D &>(*this))->put_IsDataTerminalReadyEnabled(value));
 }
 
 template <typename D> bool impl_ISerialDevice<D>::IsRequestToSendEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_IsRequestToSendEnabled(&value));
+    check_hresult(static_cast<const ISerialDevice &>(static_cast<const D &>(*this))->get_IsRequestToSendEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_ISerialDevice<D>::IsRequestToSendEnabled(bool value) const
 {
-    check_hresult(shim()->put_IsRequestToSendEnabled(value));
+    check_hresult(static_cast<const ISerialDevice &>(static_cast<const D &>(*this))->put_IsRequestToSendEnabled(value));
 }
 
 template <typename D> Windows::Devices::SerialCommunication::SerialParity impl_ISerialDevice<D>::Parity() const
 {
     Windows::Devices::SerialCommunication::SerialParity value {};
-    check_hresult(shim()->get_Parity(&value));
+    check_hresult(static_cast<const ISerialDevice &>(static_cast<const D &>(*this))->get_Parity(&value));
     return value;
 }
 
 template <typename D> void impl_ISerialDevice<D>::Parity(Windows::Devices::SerialCommunication::SerialParity value) const
 {
-    check_hresult(shim()->put_Parity(value));
+    check_hresult(static_cast<const ISerialDevice &>(static_cast<const D &>(*this))->put_Parity(value));
 }
 
 template <typename D> hstring impl_ISerialDevice<D>::PortName() const
 {
     hstring value;
-    check_hresult(shim()->get_PortName(put(value)));
+    check_hresult(static_cast<const ISerialDevice &>(static_cast<const D &>(*this))->get_PortName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_ISerialDevice<D>::ReadTimeout() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_ReadTimeout(put(value)));
+    check_hresult(static_cast<const ISerialDevice &>(static_cast<const D &>(*this))->get_ReadTimeout(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISerialDevice<D>::ReadTimeout(const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(shim()->put_ReadTimeout(get(value)));
+    check_hresult(static_cast<const ISerialDevice &>(static_cast<const D &>(*this))->put_ReadTimeout(get(value)));
 }
 
 template <typename D> Windows::Devices::SerialCommunication::SerialStopBitCount impl_ISerialDevice<D>::StopBits() const
 {
     Windows::Devices::SerialCommunication::SerialStopBitCount value {};
-    check_hresult(shim()->get_StopBits(&value));
+    check_hresult(static_cast<const ISerialDevice &>(static_cast<const D &>(*this))->get_StopBits(&value));
     return value;
 }
 
 template <typename D> void impl_ISerialDevice<D>::StopBits(Windows::Devices::SerialCommunication::SerialStopBitCount value) const
 {
-    check_hresult(shim()->put_StopBits(value));
+    check_hresult(static_cast<const ISerialDevice &>(static_cast<const D &>(*this))->put_StopBits(value));
 }
 
 template <typename D> uint16_t impl_ISerialDevice<D>::UsbVendorId() const
 {
     uint16_t value {};
-    check_hresult(shim()->get_UsbVendorId(&value));
+    check_hresult(static_cast<const ISerialDevice &>(static_cast<const D &>(*this))->get_UsbVendorId(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_ISerialDevice<D>::UsbProductId() const
 {
     uint16_t value {};
-    check_hresult(shim()->get_UsbProductId(&value));
+    check_hresult(static_cast<const ISerialDevice &>(static_cast<const D &>(*this))->get_UsbProductId(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_ISerialDevice<D>::WriteTimeout() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_WriteTimeout(put(value)));
+    check_hresult(static_cast<const ISerialDevice &>(static_cast<const D &>(*this))->get_WriteTimeout(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISerialDevice<D>::WriteTimeout(const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(shim()->put_WriteTimeout(get(value)));
+    check_hresult(static_cast<const ISerialDevice &>(static_cast<const D &>(*this))->put_WriteTimeout(get(value)));
 }
 
 template <typename D> Windows::Storage::Streams::IInputStream impl_ISerialDevice<D>::InputStream() const
 {
     Windows::Storage::Streams::IInputStream value;
-    check_hresult(shim()->get_InputStream(put(value)));
+    check_hresult(static_cast<const ISerialDevice &>(static_cast<const D &>(*this))->get_InputStream(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IOutputStream impl_ISerialDevice<D>::OutputStream() const
 {
     Windows::Storage::Streams::IOutputStream value;
-    check_hresult(shim()->get_OutputStream(put(value)));
+    check_hresult(static_cast<const ISerialDevice &>(static_cast<const D &>(*this))->get_OutputStream(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_ISerialDevice<D>::ErrorReceived(const Windows::Foundation::TypedEventHandler<Windows::Devices::SerialCommunication::SerialDevice, Windows::Devices::SerialCommunication::ErrorReceivedEventArgs> & reportHandler) const
 {
     event_token token {};
-    check_hresult(shim()->add_ErrorReceived(get(reportHandler), &token));
+    check_hresult(static_cast<const ISerialDevice &>(static_cast<const D &>(*this))->add_ErrorReceived(get(reportHandler), &token));
     return token;
 }
 
@@ -786,13 +786,13 @@ template <typename D> event_revoker<ISerialDevice> impl_ISerialDevice<D>::ErrorR
 
 template <typename D> void impl_ISerialDevice<D>::ErrorReceived(event_token token) const
 {
-    check_hresult(shim()->remove_ErrorReceived(token));
+    check_hresult(static_cast<const ISerialDevice &>(static_cast<const D &>(*this))->remove_ErrorReceived(token));
 }
 
 template <typename D> event_token impl_ISerialDevice<D>::PinChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::SerialCommunication::SerialDevice, Windows::Devices::SerialCommunication::PinChangedEventArgs> & reportHandler) const
 {
     event_token token {};
-    check_hresult(shim()->add_PinChanged(get(reportHandler), &token));
+    check_hresult(static_cast<const ISerialDevice &>(static_cast<const D &>(*this))->add_PinChanged(get(reportHandler), &token));
     return token;
 }
 
@@ -803,7 +803,7 @@ template <typename D> event_revoker<ISerialDevice> impl_ISerialDevice<D>::PinCha
 
 template <typename D> void impl_ISerialDevice<D>::PinChanged(event_token token) const
 {
-    check_hresult(shim()->remove_PinChanged(token));
+    check_hresult(static_cast<const ISerialDevice &>(static_cast<const D &>(*this))->remove_PinChanged(token));
 }
 
 inline hstring SerialDevice::GetDeviceSelector()

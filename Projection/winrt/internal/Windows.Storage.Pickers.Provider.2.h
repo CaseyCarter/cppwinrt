@@ -60,12 +60,8 @@ template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __de
 namespace Windows::Storage::Pickers::Provider {
 
 template <typename D>
-class WINRT_EBO impl_IFileOpenPickerUI
+struct WINRT_EBO impl_IFileOpenPickerUI
 {
-    auto shim() const { return impl::shim<D, IFileOpenPickerUI>(this); }
-
-public:
-
     Windows::Storage::Pickers::Provider::AddFileResult AddFile(hstring_ref id, const Windows::Storage::IStorageFile & file) const;
     void RemoveFile(hstring_ref id) const;
     bool ContainsFile(hstring_ref id) const;
@@ -86,22 +82,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IFileRemovedEventArgs
+struct WINRT_EBO impl_IFileRemovedEventArgs
 {
-    auto shim() const { return impl::shim<D, IFileRemovedEventArgs>(this); }
-
-public:
-
     hstring Id() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFileSavePickerUI
+struct WINRT_EBO impl_IFileSavePickerUI
 {
-    auto shim() const { return impl::shim<D, IFileSavePickerUI>(this); }
-
-public:
-
     hstring Title() const;
     void Title(hstring_ref value) const;
     Windows::Foundation::Collections::IVectorView<hstring> AllowedFileTypes() const;
@@ -119,66 +107,42 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPickerClosingDeferral
+struct WINRT_EBO impl_IPickerClosingDeferral
 {
-    auto shim() const { return impl::shim<D, IPickerClosingDeferral>(this); }
-
-public:
-
     void Complete() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPickerClosingEventArgs
+struct WINRT_EBO impl_IPickerClosingEventArgs
 {
-    auto shim() const { return impl::shim<D, IPickerClosingEventArgs>(this); }
-
-public:
-
     Windows::Storage::Pickers::Provider::PickerClosingOperation ClosingOperation() const;
     bool IsCanceled() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPickerClosingOperation
+struct WINRT_EBO impl_IPickerClosingOperation
 {
-    auto shim() const { return impl::shim<D, IPickerClosingOperation>(this); }
-
-public:
-
     Windows::Storage::Pickers::Provider::PickerClosingDeferral GetDeferral() const;
     Windows::Foundation::DateTime Deadline() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITargetFileRequest
+struct WINRT_EBO impl_ITargetFileRequest
 {
-    auto shim() const { return impl::shim<D, ITargetFileRequest>(this); }
-
-public:
-
     Windows::Storage::IStorageFile TargetFile() const;
     void TargetFile(const Windows::Storage::IStorageFile & value) const;
     Windows::Storage::Pickers::Provider::TargetFileRequestDeferral GetDeferral() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITargetFileRequestDeferral
+struct WINRT_EBO impl_ITargetFileRequestDeferral
 {
-    auto shim() const { return impl::shim<D, ITargetFileRequestDeferral>(this); }
-
-public:
-
     void Complete() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITargetFileRequestedEventArgs
+struct WINRT_EBO impl_ITargetFileRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, ITargetFileRequestedEventArgs>(this); }
-
-public:
-
     Windows::Storage::Pickers::Provider::TargetFileRequest Request() const;
 };
 

@@ -58,9 +58,9 @@ template <> struct traits<Windows::System::Threading::ThreadPoolTimer> { using d
 
 namespace Windows::System::Threading {
 
-template <typename T> class impl_IThreadPoolStatics;
-template <typename T> class impl_IThreadPoolTimer;
-template <typename T> class impl_IThreadPoolTimerStatics;
+template <typename T> struct impl_IThreadPoolStatics;
+template <typename T> struct impl_IThreadPoolTimer;
+template <typename T> struct impl_IThreadPoolTimerStatics;
 template <typename T> struct impl_TimerDestroyedHandler;
 template <typename T> struct impl_TimerElapsedHandler;
 template <typename T> struct impl_WorkItemHandler;
@@ -110,7 +110,6 @@ template <> struct traits<Windows::System::Threading::ThreadPool>
 template <> struct traits<Windows::System::Threading::ThreadPoolTimer>
 {
     using abi = ABI::Windows::System::Threading::ThreadPoolTimer;
-    using default_interface = Windows::System::Threading::IThreadPoolTimer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.System.Threading.ThreadPoolTimer"; }
 };
 

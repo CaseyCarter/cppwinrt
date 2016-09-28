@@ -1011,101 +1011,101 @@ template <> struct traits<Windows::UI::Xaml::Controls::Primitives::ToolTipTempla
 
 namespace Windows::UI::Xaml::Controls::Primitives {
 
-template <typename T> class impl_IAppBarTemplateSettings;
-template <typename T> class impl_IButtonBase;
-template <typename T> class impl_IButtonBaseFactory;
-template <typename T> class impl_IButtonBaseStatics;
-template <typename T> class impl_ICalendarPanel;
-template <typename T> class impl_ICalendarViewTemplateSettings;
-template <typename T> class impl_ICarouselPanel;
-template <typename T> class impl_ICarouselPanelFactory;
-template <typename T> class impl_IComboBoxTemplateSettings;
-template <typename T> class impl_IComboBoxTemplateSettings2;
-template <typename T> class impl_ICommandBarTemplateSettings;
-template <typename T> class impl_ICommandBarTemplateSettings2;
-template <typename T> class impl_ICommandBarTemplateSettings3;
-template <typename T> class impl_IDragCompletedEventArgs;
-template <typename T> class impl_IDragCompletedEventArgsFactory;
-template <typename T> class impl_IDragDeltaEventArgs;
-template <typename T> class impl_IDragDeltaEventArgsFactory;
-template <typename T> class impl_IDragStartedEventArgs;
-template <typename T> class impl_IDragStartedEventArgsFactory;
-template <typename T> class impl_IFlyoutBase;
-template <typename T> class impl_IFlyoutBase2;
-template <typename T> class impl_IFlyoutBaseClosingEventArgs;
-template <typename T> class impl_IFlyoutBaseFactory;
-template <typename T> class impl_IFlyoutBaseOverrides;
-template <typename T> class impl_IFlyoutBaseStatics;
-template <typename T> class impl_IFlyoutBaseStatics2;
-template <typename T> class impl_IGeneratorPositionHelper;
-template <typename T> class impl_IGeneratorPositionHelperStatics;
-template <typename T> class impl_IGridViewItemPresenter;
-template <typename T> class impl_IGridViewItemPresenterFactory;
-template <typename T> class impl_IGridViewItemPresenterStatics;
-template <typename T> class impl_IGridViewItemTemplateSettings;
-template <typename T> class impl_IItemsChangedEventArgs;
-template <typename T> class impl_IJumpListItemBackgroundConverter;
-template <typename T> class impl_IJumpListItemBackgroundConverterStatics;
-template <typename T> class impl_IJumpListItemForegroundConverter;
-template <typename T> class impl_IJumpListItemForegroundConverterStatics;
-template <typename T> class impl_ILayoutInformation;
-template <typename T> class impl_ILayoutInformationStatics;
-template <typename T> class impl_IListViewItemPresenter;
-template <typename T> class impl_IListViewItemPresenter2;
-template <typename T> class impl_IListViewItemPresenterFactory;
-template <typename T> class impl_IListViewItemPresenterStatics;
-template <typename T> class impl_IListViewItemPresenterStatics2;
-template <typename T> class impl_IListViewItemTemplateSettings;
-template <typename T> class impl_ILoopingSelector;
-template <typename T> class impl_ILoopingSelectorItem;
-template <typename T> class impl_ILoopingSelectorPanel;
-template <typename T> class impl_ILoopingSelectorStatics;
-template <typename T> class impl_IMenuFlyoutPresenterTemplateSettings;
-template <typename T> class impl_IOrientedVirtualizingPanel;
-template <typename T> class impl_IOrientedVirtualizingPanelFactory;
-template <typename T> class impl_IPickerFlyoutBase;
-template <typename T> class impl_IPickerFlyoutBaseFactory;
-template <typename T> class impl_IPickerFlyoutBaseOverrides;
-template <typename T> class impl_IPickerFlyoutBaseStatics;
-template <typename T> class impl_IPivotHeaderItem;
-template <typename T> class impl_IPivotHeaderItemFactory;
-template <typename T> class impl_IPivotHeaderPanel;
-template <typename T> class impl_IPivotPanel;
-template <typename T> class impl_IPopup;
-template <typename T> class impl_IPopup2;
-template <typename T> class impl_IPopupStatics;
-template <typename T> class impl_IPopupStatics2;
-template <typename T> class impl_IProgressBarTemplateSettings;
-template <typename T> class impl_IProgressRingTemplateSettings;
-template <typename T> class impl_IRangeBase;
-template <typename T> class impl_IRangeBaseFactory;
-template <typename T> class impl_IRangeBaseOverrides;
-template <typename T> class impl_IRangeBaseStatics;
-template <typename T> class impl_IRangeBaseValueChangedEventArgs;
-template <typename T> class impl_IRepeatButton;
-template <typename T> class impl_IRepeatButtonStatics;
-template <typename T> class impl_IScrollBar;
-template <typename T> class impl_IScrollBarStatics;
-template <typename T> class impl_IScrollEventArgs;
-template <typename T> class impl_IScrollSnapPointsInfo;
-template <typename T> class impl_ISelector;
-template <typename T> class impl_ISelectorFactory;
-template <typename T> class impl_ISelectorItem;
-template <typename T> class impl_ISelectorItemFactory;
-template <typename T> class impl_ISelectorItemStatics;
-template <typename T> class impl_ISelectorStatics;
-template <typename T> class impl_ISettingsFlyoutTemplateSettings;
-template <typename T> class impl_ISplitViewTemplateSettings;
-template <typename T> class impl_IThumb;
-template <typename T> class impl_IThumbStatics;
-template <typename T> class impl_ITickBar;
-template <typename T> class impl_ITickBarStatics;
-template <typename T> class impl_IToggleButton;
-template <typename T> class impl_IToggleButtonFactory;
-template <typename T> class impl_IToggleButtonOverrides;
-template <typename T> class impl_IToggleButtonStatics;
-template <typename T> class impl_IToggleSwitchTemplateSettings;
-template <typename T> class impl_IToolTipTemplateSettings;
+template <typename T> struct impl_IAppBarTemplateSettings;
+template <typename T> struct impl_IButtonBase;
+template <typename T> struct impl_IButtonBaseFactory;
+template <typename T> struct impl_IButtonBaseStatics;
+template <typename T> struct impl_ICalendarPanel;
+template <typename T> struct impl_ICalendarViewTemplateSettings;
+template <typename T> struct impl_ICarouselPanel;
+template <typename T> struct impl_ICarouselPanelFactory;
+template <typename T> struct impl_IComboBoxTemplateSettings;
+template <typename T> struct impl_IComboBoxTemplateSettings2;
+template <typename T> struct impl_ICommandBarTemplateSettings;
+template <typename T> struct impl_ICommandBarTemplateSettings2;
+template <typename T> struct impl_ICommandBarTemplateSettings3;
+template <typename T> struct impl_IDragCompletedEventArgs;
+template <typename T> struct impl_IDragCompletedEventArgsFactory;
+template <typename T> struct impl_IDragDeltaEventArgs;
+template <typename T> struct impl_IDragDeltaEventArgsFactory;
+template <typename T> struct impl_IDragStartedEventArgs;
+template <typename T> struct impl_IDragStartedEventArgsFactory;
+template <typename T> struct impl_IFlyoutBase;
+template <typename T> struct impl_IFlyoutBase2;
+template <typename T> struct impl_IFlyoutBaseClosingEventArgs;
+template <typename T> struct impl_IFlyoutBaseFactory;
+template <typename T> struct impl_IFlyoutBaseOverrides;
+template <typename T> struct impl_IFlyoutBaseStatics;
+template <typename T> struct impl_IFlyoutBaseStatics2;
+template <typename T> struct impl_IGeneratorPositionHelper;
+template <typename T> struct impl_IGeneratorPositionHelperStatics;
+template <typename T> struct impl_IGridViewItemPresenter;
+template <typename T> struct impl_IGridViewItemPresenterFactory;
+template <typename T> struct impl_IGridViewItemPresenterStatics;
+template <typename T> struct impl_IGridViewItemTemplateSettings;
+template <typename T> struct impl_IItemsChangedEventArgs;
+template <typename T> struct impl_IJumpListItemBackgroundConverter;
+template <typename T> struct impl_IJumpListItemBackgroundConverterStatics;
+template <typename T> struct impl_IJumpListItemForegroundConverter;
+template <typename T> struct impl_IJumpListItemForegroundConverterStatics;
+template <typename T> struct impl_ILayoutInformation;
+template <typename T> struct impl_ILayoutInformationStatics;
+template <typename T> struct impl_IListViewItemPresenter;
+template <typename T> struct impl_IListViewItemPresenter2;
+template <typename T> struct impl_IListViewItemPresenterFactory;
+template <typename T> struct impl_IListViewItemPresenterStatics;
+template <typename T> struct impl_IListViewItemPresenterStatics2;
+template <typename T> struct impl_IListViewItemTemplateSettings;
+template <typename T> struct impl_ILoopingSelector;
+template <typename T> struct impl_ILoopingSelectorItem;
+template <typename T> struct impl_ILoopingSelectorPanel;
+template <typename T> struct impl_ILoopingSelectorStatics;
+template <typename T> struct impl_IMenuFlyoutPresenterTemplateSettings;
+template <typename T> struct impl_IOrientedVirtualizingPanel;
+template <typename T> struct impl_IOrientedVirtualizingPanelFactory;
+template <typename T> struct impl_IPickerFlyoutBase;
+template <typename T> struct impl_IPickerFlyoutBaseFactory;
+template <typename T> struct impl_IPickerFlyoutBaseOverrides;
+template <typename T> struct impl_IPickerFlyoutBaseStatics;
+template <typename T> struct impl_IPivotHeaderItem;
+template <typename T> struct impl_IPivotHeaderItemFactory;
+template <typename T> struct impl_IPivotHeaderPanel;
+template <typename T> struct impl_IPivotPanel;
+template <typename T> struct impl_IPopup;
+template <typename T> struct impl_IPopup2;
+template <typename T> struct impl_IPopupStatics;
+template <typename T> struct impl_IPopupStatics2;
+template <typename T> struct impl_IProgressBarTemplateSettings;
+template <typename T> struct impl_IProgressRingTemplateSettings;
+template <typename T> struct impl_IRangeBase;
+template <typename T> struct impl_IRangeBaseFactory;
+template <typename T> struct impl_IRangeBaseOverrides;
+template <typename T> struct impl_IRangeBaseStatics;
+template <typename T> struct impl_IRangeBaseValueChangedEventArgs;
+template <typename T> struct impl_IRepeatButton;
+template <typename T> struct impl_IRepeatButtonStatics;
+template <typename T> struct impl_IScrollBar;
+template <typename T> struct impl_IScrollBarStatics;
+template <typename T> struct impl_IScrollEventArgs;
+template <typename T> struct impl_IScrollSnapPointsInfo;
+template <typename T> struct impl_ISelector;
+template <typename T> struct impl_ISelectorFactory;
+template <typename T> struct impl_ISelectorItem;
+template <typename T> struct impl_ISelectorItemFactory;
+template <typename T> struct impl_ISelectorItemStatics;
+template <typename T> struct impl_ISelectorStatics;
+template <typename T> struct impl_ISettingsFlyoutTemplateSettings;
+template <typename T> struct impl_ISplitViewTemplateSettings;
+template <typename T> struct impl_IThumb;
+template <typename T> struct impl_IThumbStatics;
+template <typename T> struct impl_ITickBar;
+template <typename T> struct impl_ITickBarStatics;
+template <typename T> struct impl_IToggleButton;
+template <typename T> struct impl_IToggleButtonFactory;
+template <typename T> struct impl_IToggleButtonOverrides;
+template <typename T> struct impl_IToggleButtonStatics;
+template <typename T> struct impl_IToggleSwitchTemplateSettings;
+template <typename T> struct impl_IToolTipTemplateSettings;
 template <typename T> struct impl_DragCompletedEventHandler;
 template <typename T> struct impl_DragDeltaEventHandler;
 template <typename T> struct impl_DragStartedEventHandler;
@@ -1720,329 +1720,282 @@ template <> struct traits<Windows::UI::Xaml::Controls::Primitives::ScrollEventHa
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::AppBarTemplateSettings>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::AppBarTemplateSettings;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IAppBarTemplateSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.AppBarTemplateSettings"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::ButtonBase>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::ButtonBase;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IButtonBase;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.ButtonBase"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::CalendarPanel>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::CalendarPanel;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::ICalendarPanel;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.CalendarPanel"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::CalendarViewTemplateSettings>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::CalendarViewTemplateSettings;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::ICalendarViewTemplateSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.CalendarViewTemplateSettings"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::CarouselPanel>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::CarouselPanel;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::ICarouselPanel;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.CarouselPanel"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::ComboBoxTemplateSettings>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::ComboBoxTemplateSettings;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IComboBoxTemplateSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.ComboBoxTemplateSettings"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::CommandBarTemplateSettings>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::CommandBarTemplateSettings;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::ICommandBarTemplateSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.CommandBarTemplateSettings"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::DragCompletedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::DragCompletedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IDragCompletedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.DragCompletedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::DragDeltaEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::DragDeltaEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IDragDeltaEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.DragDeltaEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::DragStartedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::DragStartedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IDragStartedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.DragStartedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::FlyoutBase>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::FlyoutBase;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IFlyoutBase;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.FlyoutBase"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::FlyoutBaseClosingEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::FlyoutBaseClosingEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IFlyoutBaseClosingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.FlyoutBaseClosingEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::GeneratorPositionHelper>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::GeneratorPositionHelper;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IGeneratorPositionHelper;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.GeneratorPositionHelper"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::GridViewItemPresenter>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::GridViewItemPresenter;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IGridViewItemPresenter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.GridViewItemPresenter"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::GridViewItemTemplateSettings>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::GridViewItemTemplateSettings;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IGridViewItemTemplateSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.GridViewItemTemplateSettings"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::ItemsChangedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::ItemsChangedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IItemsChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.ItemsChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::JumpListItemBackgroundConverter>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::JumpListItemBackgroundConverter;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IJumpListItemBackgroundConverter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.JumpListItemBackgroundConverter"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::JumpListItemForegroundConverter>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::JumpListItemForegroundConverter;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IJumpListItemForegroundConverter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.JumpListItemForegroundConverter"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::LayoutInformation>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::LayoutInformation;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::ILayoutInformation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.LayoutInformation"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::ListViewItemPresenter>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::ListViewItemPresenter;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IListViewItemPresenter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.ListViewItemPresenter"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::ListViewItemTemplateSettings>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::ListViewItemTemplateSettings;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IListViewItemTemplateSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.ListViewItemTemplateSettings"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::LoopingSelector>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::LoopingSelector;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::ILoopingSelector;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.LoopingSelector"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::LoopingSelectorItem>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::LoopingSelectorItem;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::ILoopingSelectorItem;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.LoopingSelectorItem"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::LoopingSelectorPanel>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::LoopingSelectorPanel;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::ILoopingSelectorPanel;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.LoopingSelectorPanel"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::MenuFlyoutPresenterTemplateSettings>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::MenuFlyoutPresenterTemplateSettings;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IMenuFlyoutPresenterTemplateSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.MenuFlyoutPresenterTemplateSettings"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::OrientedVirtualizingPanel>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::OrientedVirtualizingPanel;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IOrientedVirtualizingPanel;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.OrientedVirtualizingPanel"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::PickerFlyoutBase>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::PickerFlyoutBase;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IPickerFlyoutBase;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.PickerFlyoutBase"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::PivotHeaderItem>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::PivotHeaderItem;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IPivotHeaderItem;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.PivotHeaderItem"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::PivotHeaderPanel>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::PivotHeaderPanel;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IPivotHeaderPanel;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.PivotHeaderPanel"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::PivotPanel>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::PivotPanel;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IPivotPanel;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.PivotPanel"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::Popup>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::Popup;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IPopup;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.Popup"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::ProgressBarTemplateSettings>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::ProgressBarTemplateSettings;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IProgressBarTemplateSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.ProgressBarTemplateSettings"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::ProgressRingTemplateSettings>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::ProgressRingTemplateSettings;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IProgressRingTemplateSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.ProgressRingTemplateSettings"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::RangeBase>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::RangeBase;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IRangeBase;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.RangeBase"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::RangeBaseValueChangedEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::RangeBaseValueChangedEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IRangeBaseValueChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.RangeBaseValueChangedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::RepeatButton>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::RepeatButton;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IRepeatButton;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.RepeatButton"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::ScrollBar>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::ScrollBar;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IScrollBar;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.ScrollBar"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::ScrollEventArgs>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::ScrollEventArgs;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IScrollEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.ScrollEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::Selector>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::Selector;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::ISelector;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.Selector"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::SelectorItem>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::SelectorItem;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::ISelectorItem;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.SelectorItem"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::SettingsFlyoutTemplateSettings>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::SettingsFlyoutTemplateSettings;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::ISettingsFlyoutTemplateSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.SettingsFlyoutTemplateSettings"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::SplitViewTemplateSettings>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::SplitViewTemplateSettings;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::ISplitViewTemplateSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.SplitViewTemplateSettings"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::Thumb>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::Thumb;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IThumb;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.Thumb"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::TickBar>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::TickBar;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::ITickBar;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.TickBar"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::ToggleButton>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::ToggleButton;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IToggleButton;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.ToggleButton"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::ToggleSwitchTemplateSettings>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::ToggleSwitchTemplateSettings;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IToggleSwitchTemplateSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.ToggleSwitchTemplateSettings"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Controls::Primitives::ToolTipTemplateSettings>
 {
     using abi = ABI::Windows::UI::Xaml::Controls::Primitives::ToolTipTemplateSettings;
-    using default_interface = Windows::UI::Xaml::Controls::Primitives::IToolTipTemplateSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Controls.Primitives.ToolTipTemplateSettings"; }
 };
 

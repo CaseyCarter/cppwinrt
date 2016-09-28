@@ -3106,49 +3106,49 @@ namespace Windows::Storage {
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageLibrary> impl_IStorageLibraryStatics<D>::GetLibraryAsync(Windows::Storage::KnownLibraryId libraryId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageLibrary> operation;
-    check_hresult(shim()->abi_GetLibraryAsync(libraryId, put(operation)));
+    check_hresult(static_cast<const IStorageLibraryStatics &>(static_cast<const D &>(*this))->abi_GetLibraryAsync(libraryId, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageLibrary> impl_IStorageLibraryStatics2<D>::GetLibraryForUserAsync(const Windows::System::User & user, Windows::Storage::KnownLibraryId libraryId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageLibrary> operation;
-    check_hresult(shim()->abi_GetLibraryForUserAsync(get(user), libraryId, put(operation)));
+    check_hresult(static_cast<const IStorageLibraryStatics2 &>(static_cast<const D &>(*this))->abi_GetLibraryForUserAsync(get(user), libraryId, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> impl_IStorageLibrary<D>::RequestAddFolderAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> operation;
-    check_hresult(shim()->abi_RequestAddFolderAsync(put(operation)));
+    check_hresult(static_cast<const IStorageLibrary &>(static_cast<const D &>(*this))->abi_RequestAddFolderAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IStorageLibrary<D>::RequestRemoveFolderAsync(const Windows::Storage::StorageFolder & folder) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(shim()->abi_RequestRemoveFolderAsync(get(folder), put(operation)));
+    check_hresult(static_cast<const IStorageLibrary &>(static_cast<const D &>(*this))->abi_RequestRemoveFolderAsync(get(folder), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::Collections::IObservableVector<Windows::Storage::StorageFolder> impl_IStorageLibrary<D>::Folders() const
 {
     Windows::Foundation::Collections::IObservableVector<Windows::Storage::StorageFolder> value;
-    check_hresult(shim()->get_Folders(put(value)));
+    check_hresult(static_cast<const IStorageLibrary &>(static_cast<const D &>(*this))->get_Folders(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::StorageFolder impl_IStorageLibrary<D>::SaveFolder() const
 {
     Windows::Storage::StorageFolder value { nullptr };
-    check_hresult(shim()->get_SaveFolder(put(value)));
+    check_hresult(static_cast<const IStorageLibrary &>(static_cast<const D &>(*this))->get_SaveFolder(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IStorageLibrary<D>::DefinitionChanged(const Windows::Foundation::TypedEventHandler<Windows::Storage::StorageLibrary, Windows::IInspectable> & handler) const
 {
     event_token eventCookie {};
-    check_hresult(shim()->add_DefinitionChanged(get(handler), &eventCookie));
+    check_hresult(static_cast<const IStorageLibrary &>(static_cast<const D &>(*this))->add_DefinitionChanged(get(handler), &eventCookie));
     return eventCookie;
 }
 
@@ -3159,1258 +3159,1258 @@ template <typename D> event_revoker<IStorageLibrary> impl_IStorageLibrary<D>::De
 
 template <typename D> void impl_IStorageLibrary<D>::DefinitionChanged(event_token eventCookie) const
 {
-    check_hresult(shim()->remove_DefinitionChanged(eventCookie));
+    check_hresult(static_cast<const IStorageLibrary &>(static_cast<const D &>(*this))->remove_DefinitionChanged(eventCookie));
 }
 
 template <typename D> Windows::Storage::StorageLibraryChangeTracker impl_IStorageLibrary2<D>::ChangeTracker() const
 {
     Windows::Storage::StorageLibraryChangeTracker value { nullptr };
-    check_hresult(shim()->get_ChangeTracker(put(value)));
+    check_hresult(static_cast<const IStorageLibrary2 &>(static_cast<const D &>(*this))->get_ChangeTracker(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::StorageFolder impl_IKnownFoldersStatics<D>::MusicLibrary() const
 {
     Windows::Storage::StorageFolder value { nullptr };
-    check_hresult(shim()->get_MusicLibrary(put(value)));
+    check_hresult(static_cast<const IKnownFoldersStatics &>(static_cast<const D &>(*this))->get_MusicLibrary(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::StorageFolder impl_IKnownFoldersStatics<D>::PicturesLibrary() const
 {
     Windows::Storage::StorageFolder value { nullptr };
-    check_hresult(shim()->get_PicturesLibrary(put(value)));
+    check_hresult(static_cast<const IKnownFoldersStatics &>(static_cast<const D &>(*this))->get_PicturesLibrary(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::StorageFolder impl_IKnownFoldersStatics<D>::VideosLibrary() const
 {
     Windows::Storage::StorageFolder value { nullptr };
-    check_hresult(shim()->get_VideosLibrary(put(value)));
+    check_hresult(static_cast<const IKnownFoldersStatics &>(static_cast<const D &>(*this))->get_VideosLibrary(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::StorageFolder impl_IKnownFoldersStatics<D>::DocumentsLibrary() const
 {
     Windows::Storage::StorageFolder value { nullptr };
-    check_hresult(shim()->get_DocumentsLibrary(put(value)));
+    check_hresult(static_cast<const IKnownFoldersStatics &>(static_cast<const D &>(*this))->get_DocumentsLibrary(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::StorageFolder impl_IKnownFoldersStatics<D>::HomeGroup() const
 {
     Windows::Storage::StorageFolder value { nullptr };
-    check_hresult(shim()->get_HomeGroup(put(value)));
+    check_hresult(static_cast<const IKnownFoldersStatics &>(static_cast<const D &>(*this))->get_HomeGroup(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::StorageFolder impl_IKnownFoldersStatics<D>::RemovableDevices() const
 {
     Windows::Storage::StorageFolder value { nullptr };
-    check_hresult(shim()->get_RemovableDevices(put(value)));
+    check_hresult(static_cast<const IKnownFoldersStatics &>(static_cast<const D &>(*this))->get_RemovableDevices(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::StorageFolder impl_IKnownFoldersStatics<D>::MediaServerDevices() const
 {
     Windows::Storage::StorageFolder value { nullptr };
-    check_hresult(shim()->get_MediaServerDevices(put(value)));
+    check_hresult(static_cast<const IKnownFoldersStatics &>(static_cast<const D &>(*this))->get_MediaServerDevices(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::StorageFolder impl_IKnownFoldersStatics2<D>::Objects3D() const
 {
     Windows::Storage::StorageFolder value { nullptr };
-    check_hresult(shim()->get_Objects3D(put(value)));
+    check_hresult(static_cast<const IKnownFoldersStatics2 &>(static_cast<const D &>(*this))->get_Objects3D(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::StorageFolder impl_IKnownFoldersStatics2<D>::AppCaptures() const
 {
     Windows::Storage::StorageFolder value { nullptr };
-    check_hresult(shim()->get_AppCaptures(put(value)));
+    check_hresult(static_cast<const IKnownFoldersStatics2 &>(static_cast<const D &>(*this))->get_AppCaptures(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::StorageFolder impl_IKnownFoldersStatics2<D>::RecordedCalls() const
 {
     Windows::Storage::StorageFolder value { nullptr };
-    check_hresult(shim()->get_RecordedCalls(put(value)));
+    check_hresult(static_cast<const IKnownFoldersStatics2 &>(static_cast<const D &>(*this))->get_RecordedCalls(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> impl_IKnownFoldersStatics3<D>::GetFolderForUserAsync(const Windows::System::User & user, Windows::Storage::KnownFolderId folderId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> operation;
-    check_hresult(shim()->abi_GetFolderForUserAsync(get(user), folderId, put(operation)));
+    check_hresult(static_cast<const IKnownFoldersStatics3 &>(static_cast<const D &>(*this))->abi_GetFolderForUserAsync(get(user), folderId, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Storage::StorageFolder impl_IKnownFoldersPlaylistsStatics<D>::Playlists() const
 {
     Windows::Storage::StorageFolder value { nullptr };
-    check_hresult(shim()->get_Playlists(put(value)));
+    check_hresult(static_cast<const IKnownFoldersPlaylistsStatics &>(static_cast<const D &>(*this))->get_Playlists(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::StorageFolder impl_IKnownFoldersCameraRollStatics<D>::CameraRoll() const
 {
     Windows::Storage::StorageFolder value { nullptr };
-    check_hresult(shim()->get_CameraRoll(put(value)));
+    check_hresult(static_cast<const IKnownFoldersCameraRollStatics &>(static_cast<const D &>(*this))->get_CameraRoll(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::StorageFolder impl_IKnownFoldersSavedPicturesStatics<D>::SavedPictures() const
 {
     Windows::Storage::StorageFolder value { nullptr };
-    check_hresult(shim()->get_SavedPictures(put(value)));
+    check_hresult(static_cast<const IKnownFoldersSavedPicturesStatics &>(static_cast<const D &>(*this))->get_SavedPictures(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IDownloadsFolderStatics<D>::CreateFileAsync(hstring_ref desiredName) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> operation;
-    check_hresult(shim()->abi_CreateFileAsync(get(desiredName), put(operation)));
+    check_hresult(static_cast<const IDownloadsFolderStatics &>(static_cast<const D &>(*this))->abi_CreateFileAsync(get(desiredName), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> impl_IDownloadsFolderStatics<D>::CreateFolderAsync(hstring_ref desiredName) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> operation;
-    check_hresult(shim()->abi_CreateFolderAsync(get(desiredName), put(operation)));
+    check_hresult(static_cast<const IDownloadsFolderStatics &>(static_cast<const D &>(*this))->abi_CreateFolderAsync(get(desiredName), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IDownloadsFolderStatics<D>::CreateFileAsync(hstring_ref desiredName, Windows::Storage::CreationCollisionOption option) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> operation;
-    check_hresult(shim()->abi_CreateFileWithCollisionOptionAsync(get(desiredName), option, put(operation)));
+    check_hresult(static_cast<const IDownloadsFolderStatics &>(static_cast<const D &>(*this))->abi_CreateFileWithCollisionOptionAsync(get(desiredName), option, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> impl_IDownloadsFolderStatics<D>::CreateFolderAsync(hstring_ref desiredName, Windows::Storage::CreationCollisionOption option) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> operation;
-    check_hresult(shim()->abi_CreateFolderWithCollisionOptionAsync(get(desiredName), option, put(operation)));
+    check_hresult(static_cast<const IDownloadsFolderStatics &>(static_cast<const D &>(*this))->abi_CreateFolderWithCollisionOptionAsync(get(desiredName), option, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IDownloadsFolderStatics2<D>::CreateFileForUserAsync(const Windows::System::User & user, hstring_ref desiredName) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> operation;
-    check_hresult(shim()->abi_CreateFileForUserAsync(get(user), get(desiredName), put(operation)));
+    check_hresult(static_cast<const IDownloadsFolderStatics2 &>(static_cast<const D &>(*this))->abi_CreateFileForUserAsync(get(user), get(desiredName), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> impl_IDownloadsFolderStatics2<D>::CreateFolderForUserAsync(const Windows::System::User & user, hstring_ref desiredName) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> operation;
-    check_hresult(shim()->abi_CreateFolderForUserAsync(get(user), get(desiredName), put(operation)));
+    check_hresult(static_cast<const IDownloadsFolderStatics2 &>(static_cast<const D &>(*this))->abi_CreateFolderForUserAsync(get(user), get(desiredName), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IDownloadsFolderStatics2<D>::CreateFileForUserAsync(const Windows::System::User & user, hstring_ref desiredName, Windows::Storage::CreationCollisionOption option) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> operation;
-    check_hresult(shim()->abi_CreateFileForUserWithCollisionOptionAsync(get(user), get(desiredName), option, put(operation)));
+    check_hresult(static_cast<const IDownloadsFolderStatics2 &>(static_cast<const D &>(*this))->abi_CreateFileForUserWithCollisionOptionAsync(get(user), get(desiredName), option, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> impl_IDownloadsFolderStatics2<D>::CreateFolderForUserAsync(const Windows::System::User & user, hstring_ref desiredName, Windows::Storage::CreationCollisionOption option) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> operation;
-    check_hresult(shim()->abi_CreateFolderForUserWithCollisionOptionAsync(get(user), get(desiredName), option, put(operation)));
+    check_hresult(static_cast<const IDownloadsFolderStatics2 &>(static_cast<const D &>(*this))->abi_CreateFolderForUserWithCollisionOptionAsync(get(user), get(desiredName), option, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Storage::StorageLibraryChangeType impl_IStorageLibraryChange<D>::ChangeType() const
 {
     Windows::Storage::StorageLibraryChangeType value {};
-    check_hresult(shim()->get_ChangeType(&value));
+    check_hresult(static_cast<const IStorageLibraryChange &>(static_cast<const D &>(*this))->get_ChangeType(&value));
     return value;
 }
 
 template <typename D> hstring impl_IStorageLibraryChange<D>::Path() const
 {
     hstring value;
-    check_hresult(shim()->get_Path(put(value)));
+    check_hresult(static_cast<const IStorageLibraryChange &>(static_cast<const D &>(*this))->get_Path(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStorageLibraryChange<D>::PreviousPath() const
 {
     hstring value;
-    check_hresult(shim()->get_PreviousPath(put(value)));
+    check_hresult(static_cast<const IStorageLibraryChange &>(static_cast<const D &>(*this))->get_PreviousPath(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IStorageLibraryChange<D>::IsOfType(Windows::Storage::StorageItemTypes type) const
 {
     bool value {};
-    check_hresult(shim()->abi_IsOfType(type, &value));
+    check_hresult(static_cast<const IStorageLibraryChange &>(static_cast<const D &>(*this))->abi_IsOfType(type, &value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::IStorageItem> impl_IStorageLibraryChange<D>::GetStorageItemAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::IStorageItem> operation;
-    check_hresult(shim()->abi_GetStorageItemAsync(put(operation)));
+    check_hresult(static_cast<const IStorageLibraryChange &>(static_cast<const D &>(*this))->abi_GetStorageItemAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IStorageItem<D>::RenameAsync(hstring_ref desiredName) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_RenameAsyncOverloadDefaultOptions(get(desiredName), put(operation)));
+    check_hresult(static_cast<const IStorageItem &>(static_cast<const D &>(*this))->abi_RenameAsyncOverloadDefaultOptions(get(desiredName), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IStorageItem<D>::RenameAsync(hstring_ref desiredName, Windows::Storage::NameCollisionOption option) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_RenameAsync(get(desiredName), option, put(operation)));
+    check_hresult(static_cast<const IStorageItem &>(static_cast<const D &>(*this))->abi_RenameAsync(get(desiredName), option, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IStorageItem<D>::DeleteAsync() const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_DeleteAsyncOverloadDefaultOptions(put(operation)));
+    check_hresult(static_cast<const IStorageItem &>(static_cast<const D &>(*this))->abi_DeleteAsyncOverloadDefaultOptions(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IStorageItem<D>::DeleteAsync(Windows::Storage::StorageDeleteOption option) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_DeleteAsync(option, put(operation)));
+    check_hresult(static_cast<const IStorageItem &>(static_cast<const D &>(*this))->abi_DeleteAsync(option, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::BasicProperties> impl_IStorageItem<D>::GetBasicPropertiesAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::BasicProperties> operation;
-    check_hresult(shim()->abi_GetBasicPropertiesAsync(put(operation)));
+    check_hresult(static_cast<const IStorageItem &>(static_cast<const D &>(*this))->abi_GetBasicPropertiesAsync(put(operation)));
     return operation;
 }
 
 template <typename D> hstring impl_IStorageItem<D>::Name() const
 {
     hstring value;
-    check_hresult(shim()->get_Name(put(value)));
+    check_hresult(static_cast<const IStorageItem &>(static_cast<const D &>(*this))->get_Name(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStorageItem<D>::Path() const
 {
     hstring value;
-    check_hresult(shim()->get_Path(put(value)));
+    check_hresult(static_cast<const IStorageItem &>(static_cast<const D &>(*this))->get_Path(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::FileAttributes impl_IStorageItem<D>::Attributes() const
 {
     Windows::Storage::FileAttributes value {};
-    check_hresult(shim()->get_Attributes(&value));
+    check_hresult(static_cast<const IStorageItem &>(static_cast<const D &>(*this))->get_Attributes(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IStorageItem<D>::DateCreated() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->get_DateCreated(put(value)));
+    check_hresult(static_cast<const IStorageItem &>(static_cast<const D &>(*this))->get_DateCreated(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IStorageItem<D>::IsOfType(Windows::Storage::StorageItemTypes type) const
 {
     bool value {};
-    check_hresult(shim()->abi_IsOfType(type, &value));
+    check_hresult(static_cast<const IStorageItem &>(static_cast<const D &>(*this))->abi_IsOfType(type, &value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::StorageLibraryChange>> impl_IStorageLibraryChangeReader<D>::ReadBatchAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::StorageLibraryChange>> operation;
-    check_hresult(shim()->abi_ReadBatchAsync(put(operation)));
+    check_hresult(static_cast<const IStorageLibraryChangeReader &>(static_cast<const D &>(*this))->abi_ReadBatchAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IStorageLibraryChangeReader<D>::AcceptChangesAsync() const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_AcceptChangesAsync(put(operation)));
+    check_hresult(static_cast<const IStorageLibraryChangeReader &>(static_cast<const D &>(*this))->abi_AcceptChangesAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Storage::StorageLibraryChangeReader impl_IStorageLibraryChangeTracker<D>::GetChangeReader() const
 {
     Windows::Storage::StorageLibraryChangeReader value { nullptr };
-    check_hresult(shim()->abi_GetChangeReader(put(value)));
+    check_hresult(static_cast<const IStorageLibraryChangeTracker &>(static_cast<const D &>(*this))->abi_GetChangeReader(put(value)));
     return value;
 }
 
 template <typename D> void impl_IStorageLibraryChangeTracker<D>::Enable() const
 {
-    check_hresult(shim()->abi_Enable());
+    check_hresult(static_cast<const IStorageLibraryChangeTracker &>(static_cast<const D &>(*this))->abi_Enable());
 }
 
 template <typename D> void impl_IStorageLibraryChangeTracker<D>::Reset() const
 {
-    check_hresult(shim()->abi_Reset());
+    check_hresult(static_cast<const IStorageLibraryChangeTracker &>(static_cast<const D &>(*this))->abi_Reset());
 }
 
 template <typename D> void impl_IStreamedFileDataRequest<D>::FailAndClose(Windows::Storage::StreamedFileFailureMode failureMode) const
 {
-    check_hresult(shim()->abi_FailAndClose(failureMode));
+    check_hresult(static_cast<const IStreamedFileDataRequest &>(static_cast<const D &>(*this))->abi_FailAndClose(failureMode));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IStorageFileStatics<D>::GetFileFromPathAsync(hstring_ref path) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> operation;
-    check_hresult(shim()->abi_GetFileFromPathAsync(get(path), put(operation)));
+    check_hresult(static_cast<const IStorageFileStatics &>(static_cast<const D &>(*this))->abi_GetFileFromPathAsync(get(path), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IStorageFileStatics<D>::GetFileFromApplicationUriAsync(const Windows::Foundation::Uri & uri) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> operation;
-    check_hresult(shim()->abi_GetFileFromApplicationUriAsync(get(uri), put(operation)));
+    check_hresult(static_cast<const IStorageFileStatics &>(static_cast<const D &>(*this))->abi_GetFileFromApplicationUriAsync(get(uri), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IStorageFileStatics<D>::CreateStreamedFileAsync(hstring_ref displayNameWithExtension, const Windows::Storage::StreamedFileDataRequestedHandler & dataRequested, const Windows::Storage::Streams::IRandomAccessStreamReference & thumbnail) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> operation;
-    check_hresult(shim()->abi_CreateStreamedFileAsync(get(displayNameWithExtension), get(dataRequested), get(thumbnail), put(operation)));
+    check_hresult(static_cast<const IStorageFileStatics &>(static_cast<const D &>(*this))->abi_CreateStreamedFileAsync(get(displayNameWithExtension), get(dataRequested), get(thumbnail), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IStorageFileStatics<D>::ReplaceWithStreamedFileAsync(const Windows::Storage::IStorageFile & fileToReplace, const Windows::Storage::StreamedFileDataRequestedHandler & dataRequested, const Windows::Storage::Streams::IRandomAccessStreamReference & thumbnail) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> operation;
-    check_hresult(shim()->abi_ReplaceWithStreamedFileAsync(get(fileToReplace), get(dataRequested), get(thumbnail), put(operation)));
+    check_hresult(static_cast<const IStorageFileStatics &>(static_cast<const D &>(*this))->abi_ReplaceWithStreamedFileAsync(get(fileToReplace), get(dataRequested), get(thumbnail), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IStorageFileStatics<D>::CreateStreamedFileFromUriAsync(hstring_ref displayNameWithExtension, const Windows::Foundation::Uri & uri, const Windows::Storage::Streams::IRandomAccessStreamReference & thumbnail) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> operation;
-    check_hresult(shim()->abi_CreateStreamedFileFromUriAsync(get(displayNameWithExtension), get(uri), get(thumbnail), put(operation)));
+    check_hresult(static_cast<const IStorageFileStatics &>(static_cast<const D &>(*this))->abi_CreateStreamedFileFromUriAsync(get(displayNameWithExtension), get(uri), get(thumbnail), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IStorageFileStatics<D>::ReplaceWithStreamedFileFromUriAsync(const Windows::Storage::IStorageFile & fileToReplace, const Windows::Foundation::Uri & uri, const Windows::Storage::Streams::IRandomAccessStreamReference & thumbnail) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> operation;
-    check_hresult(shim()->abi_ReplaceWithStreamedFileFromUriAsync(get(fileToReplace), get(uri), get(thumbnail), put(operation)));
+    check_hresult(static_cast<const IStorageFileStatics &>(static_cast<const D &>(*this))->abi_ReplaceWithStreamedFileFromUriAsync(get(fileToReplace), get(uri), get(thumbnail), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IStorageFolder<D>::CreateFileAsync(hstring_ref desiredName) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> operation;
-    check_hresult(shim()->abi_CreateFileAsyncOverloadDefaultOptions(get(desiredName), put(operation)));
+    check_hresult(static_cast<const IStorageFolder &>(static_cast<const D &>(*this))->abi_CreateFileAsyncOverloadDefaultOptions(get(desiredName), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IStorageFolder<D>::CreateFileAsync(hstring_ref desiredName, Windows::Storage::CreationCollisionOption options) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> operation;
-    check_hresult(shim()->abi_CreateFileAsync(get(desiredName), options, put(operation)));
+    check_hresult(static_cast<const IStorageFolder &>(static_cast<const D &>(*this))->abi_CreateFileAsync(get(desiredName), options, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> impl_IStorageFolder<D>::CreateFolderAsync(hstring_ref desiredName) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> operation;
-    check_hresult(shim()->abi_CreateFolderAsyncOverloadDefaultOptions(get(desiredName), put(operation)));
+    check_hresult(static_cast<const IStorageFolder &>(static_cast<const D &>(*this))->abi_CreateFolderAsyncOverloadDefaultOptions(get(desiredName), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> impl_IStorageFolder<D>::CreateFolderAsync(hstring_ref desiredName, Windows::Storage::CreationCollisionOption options) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> operation;
-    check_hresult(shim()->abi_CreateFolderAsync(get(desiredName), options, put(operation)));
+    check_hresult(static_cast<const IStorageFolder &>(static_cast<const D &>(*this))->abi_CreateFolderAsync(get(desiredName), options, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IStorageFolder<D>::GetFileAsync(hstring_ref name) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> operation;
-    check_hresult(shim()->abi_GetFileAsync(get(name), put(operation)));
+    check_hresult(static_cast<const IStorageFolder &>(static_cast<const D &>(*this))->abi_GetFileAsync(get(name), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> impl_IStorageFolder<D>::GetFolderAsync(hstring_ref name) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> operation;
-    check_hresult(shim()->abi_GetFolderAsync(get(name), put(operation)));
+    check_hresult(static_cast<const IStorageFolder &>(static_cast<const D &>(*this))->abi_GetFolderAsync(get(name), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::IStorageItem> impl_IStorageFolder<D>::GetItemAsync(hstring_ref name) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::IStorageItem> operation;
-    check_hresult(shim()->abi_GetItemAsync(get(name), put(operation)));
+    check_hresult(static_cast<const IStorageFolder &>(static_cast<const D &>(*this))->abi_GetItemAsync(get(name), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::StorageFile>> impl_IStorageFolder<D>::GetFilesAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::StorageFile>> operation;
-    check_hresult(shim()->abi_GetFilesAsyncOverloadDefaultOptionsStartAndCount(put(operation)));
+    check_hresult(static_cast<const IStorageFolder &>(static_cast<const D &>(*this))->abi_GetFilesAsyncOverloadDefaultOptionsStartAndCount(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::StorageFolder>> impl_IStorageFolder<D>::GetFoldersAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::StorageFolder>> operation;
-    check_hresult(shim()->abi_GetFoldersAsyncOverloadDefaultOptionsStartAndCount(put(operation)));
+    check_hresult(static_cast<const IStorageFolder &>(static_cast<const D &>(*this))->abi_GetFoldersAsyncOverloadDefaultOptionsStartAndCount(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::IStorageItem>> impl_IStorageFolder<D>::GetItemsAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::IStorageItem>> operation;
-    check_hresult(shim()->abi_GetItemsAsyncOverloadDefaultStartAndCount(put(operation)));
+    check_hresult(static_cast<const IStorageFolder &>(static_cast<const D &>(*this))->abi_GetItemsAsyncOverloadDefaultStartAndCount(put(operation)));
     return operation;
 }
 
 template <typename D> hstring impl_IStorageFile<D>::FileType() const
 {
     hstring value;
-    check_hresult(shim()->get_FileType(put(value)));
+    check_hresult(static_cast<const IStorageFile &>(static_cast<const D &>(*this))->get_FileType(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStorageFile<D>::ContentType() const
 {
     hstring value;
-    check_hresult(shim()->get_ContentType(put(value)));
+    check_hresult(static_cast<const IStorageFile &>(static_cast<const D &>(*this))->get_ContentType(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> impl_IStorageFile<D>::OpenAsync(Windows::Storage::FileAccessMode accessMode) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> operation;
-    check_hresult(shim()->abi_OpenAsync(accessMode, put(operation)));
+    check_hresult(static_cast<const IStorageFile &>(static_cast<const D &>(*this))->abi_OpenAsync(accessMode, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageStreamTransaction> impl_IStorageFile<D>::OpenTransactedWriteAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageStreamTransaction> operation;
-    check_hresult(shim()->abi_OpenTransactedWriteAsync(put(operation)));
+    check_hresult(static_cast<const IStorageFile &>(static_cast<const D &>(*this))->abi_OpenTransactedWriteAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IStorageFile<D>::CopyAsync(const Windows::Storage::IStorageFolder & destinationFolder) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> operation;
-    check_hresult(shim()->abi_CopyOverloadDefaultNameAndOptions(get(destinationFolder), put(operation)));
+    check_hresult(static_cast<const IStorageFile &>(static_cast<const D &>(*this))->abi_CopyOverloadDefaultNameAndOptions(get(destinationFolder), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IStorageFile<D>::CopyAsync(const Windows::Storage::IStorageFolder & destinationFolder, hstring_ref desiredNewName) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> operation;
-    check_hresult(shim()->abi_CopyOverloadDefaultOptions(get(destinationFolder), get(desiredNewName), put(operation)));
+    check_hresult(static_cast<const IStorageFile &>(static_cast<const D &>(*this))->abi_CopyOverloadDefaultOptions(get(destinationFolder), get(desiredNewName), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_IStorageFile<D>::CopyAsync(const Windows::Storage::IStorageFolder & destinationFolder, hstring_ref desiredNewName, Windows::Storage::NameCollisionOption option) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> operation;
-    check_hresult(shim()->abi_CopyOverload(get(destinationFolder), get(desiredNewName), option, put(operation)));
+    check_hresult(static_cast<const IStorageFile &>(static_cast<const D &>(*this))->abi_CopyOverload(get(destinationFolder), get(desiredNewName), option, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IStorageFile<D>::CopyAndReplaceAsync(const Windows::Storage::IStorageFile & fileToReplace) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_CopyAndReplaceAsync(get(fileToReplace), put(operation)));
+    check_hresult(static_cast<const IStorageFile &>(static_cast<const D &>(*this))->abi_CopyAndReplaceAsync(get(fileToReplace), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IStorageFile<D>::MoveAsync(const Windows::Storage::IStorageFolder & destinationFolder) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_MoveOverloadDefaultNameAndOptions(get(destinationFolder), put(operation)));
+    check_hresult(static_cast<const IStorageFile &>(static_cast<const D &>(*this))->abi_MoveOverloadDefaultNameAndOptions(get(destinationFolder), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IStorageFile<D>::MoveAsync(const Windows::Storage::IStorageFolder & destinationFolder, hstring_ref desiredNewName) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_MoveOverloadDefaultOptions(get(destinationFolder), get(desiredNewName), put(operation)));
+    check_hresult(static_cast<const IStorageFile &>(static_cast<const D &>(*this))->abi_MoveOverloadDefaultOptions(get(destinationFolder), get(desiredNewName), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IStorageFile<D>::MoveAsync(const Windows::Storage::IStorageFolder & destinationFolder, hstring_ref desiredNewName, Windows::Storage::NameCollisionOption option) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_MoveOverload(get(destinationFolder), get(desiredNewName), option, put(operation)));
+    check_hresult(static_cast<const IStorageFile &>(static_cast<const D &>(*this))->abi_MoveOverload(get(destinationFolder), get(desiredNewName), option, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IStorageFile<D>::MoveAndReplaceAsync(const Windows::Storage::IStorageFile & fileToReplace) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_MoveAndReplaceAsync(get(fileToReplace), put(operation)));
+    check_hresult(static_cast<const IStorageFile &>(static_cast<const D &>(*this))->abi_MoveAndReplaceAsync(get(fileToReplace), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> impl_IStorageFolderStatics<D>::GetFolderFromPathAsync(hstring_ref path) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> operation;
-    check_hresult(shim()->abi_GetFolderFromPathAsync(get(path), put(operation)));
+    check_hresult(static_cast<const IStorageFolderStatics &>(static_cast<const D &>(*this))->abi_GetFolderFromPathAsync(get(path), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> impl_IStorageItem2<D>::GetParentAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> operation;
-    check_hresult(shim()->abi_GetParentAsync(put(operation)));
+    check_hresult(static_cast<const IStorageItem2 &>(static_cast<const D &>(*this))->abi_GetParentAsync(put(operation)));
     return operation;
 }
 
 template <typename D> bool impl_IStorageItem2<D>::IsEqual(const Windows::Storage::IStorageItem & item) const
 {
     bool value {};
-    check_hresult(shim()->abi_IsEqual(get(item), &value));
+    check_hresult(static_cast<const IStorageItem2 &>(static_cast<const D &>(*this))->abi_IsEqual(get(item), &value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::StorageItemThumbnail> impl_IStorageItemProperties<D>::GetThumbnailAsync(Windows::Storage::FileProperties::ThumbnailMode mode) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::StorageItemThumbnail> operation;
-    check_hresult(shim()->abi_GetThumbnailAsyncOverloadDefaultSizeDefaultOptions(mode, put(operation)));
+    check_hresult(static_cast<const IStorageItemProperties &>(static_cast<const D &>(*this))->abi_GetThumbnailAsyncOverloadDefaultSizeDefaultOptions(mode, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::StorageItemThumbnail> impl_IStorageItemProperties<D>::GetThumbnailAsync(Windows::Storage::FileProperties::ThumbnailMode mode, uint32_t requestedSize) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::StorageItemThumbnail> operation;
-    check_hresult(shim()->abi_GetThumbnailAsyncOverloadDefaultOptions(mode, requestedSize, put(operation)));
+    check_hresult(static_cast<const IStorageItemProperties &>(static_cast<const D &>(*this))->abi_GetThumbnailAsyncOverloadDefaultOptions(mode, requestedSize, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::StorageItemThumbnail> impl_IStorageItemProperties<D>::GetThumbnailAsync(Windows::Storage::FileProperties::ThumbnailMode mode, uint32_t requestedSize, Windows::Storage::FileProperties::ThumbnailOptions options) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::StorageItemThumbnail> operation;
-    check_hresult(shim()->abi_GetThumbnailAsync(mode, requestedSize, options, put(operation)));
+    check_hresult(static_cast<const IStorageItemProperties &>(static_cast<const D &>(*this))->abi_GetThumbnailAsync(mode, requestedSize, options, put(operation)));
     return operation;
 }
 
 template <typename D> hstring impl_IStorageItemProperties<D>::DisplayName() const
 {
     hstring value;
-    check_hresult(shim()->get_DisplayName(put(value)));
+    check_hresult(static_cast<const IStorageItemProperties &>(static_cast<const D &>(*this))->get_DisplayName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStorageItemProperties<D>::DisplayType() const
 {
     hstring value;
-    check_hresult(shim()->get_DisplayType(put(value)));
+    check_hresult(static_cast<const IStorageItemProperties &>(static_cast<const D &>(*this))->get_DisplayType(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStorageItemProperties<D>::FolderRelativeId() const
 {
     hstring value;
-    check_hresult(shim()->get_FolderRelativeId(put(value)));
+    check_hresult(static_cast<const IStorageItemProperties &>(static_cast<const D &>(*this))->get_FolderRelativeId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::FileProperties::StorageItemContentProperties impl_IStorageItemProperties<D>::Properties() const
 {
     Windows::Storage::FileProperties::StorageItemContentProperties value { nullptr };
-    check_hresult(shim()->get_Properties(put(value)));
+    check_hresult(static_cast<const IStorageItemProperties &>(static_cast<const D &>(*this))->get_Properties(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::StorageItemThumbnail> impl_IStorageItemProperties2<D>::GetScaledImageAsThumbnailAsync(Windows::Storage::FileProperties::ThumbnailMode mode) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::StorageItemThumbnail> operation;
-    check_hresult(shim()->abi_GetScaledImageAsThumbnailAsyncOverloadDefaultSizeDefaultOptions(mode, put(operation)));
+    check_hresult(static_cast<const IStorageItemProperties2 &>(static_cast<const D &>(*this))->abi_GetScaledImageAsThumbnailAsyncOverloadDefaultSizeDefaultOptions(mode, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::StorageItemThumbnail> impl_IStorageItemProperties2<D>::GetScaledImageAsThumbnailAsync(Windows::Storage::FileProperties::ThumbnailMode mode, uint32_t requestedSize) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::StorageItemThumbnail> operation;
-    check_hresult(shim()->abi_GetScaledImageAsThumbnailAsyncOverloadDefaultOptions(mode, requestedSize, put(operation)));
+    check_hresult(static_cast<const IStorageItemProperties2 &>(static_cast<const D &>(*this))->abi_GetScaledImageAsThumbnailAsyncOverloadDefaultOptions(mode, requestedSize, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::StorageItemThumbnail> impl_IStorageItemProperties2<D>::GetScaledImageAsThumbnailAsync(Windows::Storage::FileProperties::ThumbnailMode mode, uint32_t requestedSize, Windows::Storage::FileProperties::ThumbnailOptions options) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::StorageItemThumbnail> operation;
-    check_hresult(shim()->abi_GetScaledImageAsThumbnailAsync(mode, requestedSize, options, put(operation)));
+    check_hresult(static_cast<const IStorageItemProperties2 &>(static_cast<const D &>(*this))->abi_GetScaledImageAsThumbnailAsync(mode, requestedSize, options, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Storage::StorageProvider impl_IStorageItemPropertiesWithProvider<D>::Provider() const
 {
     Windows::Storage::StorageProvider value { nullptr };
-    check_hresult(shim()->get_Provider(put(value)));
+    check_hresult(static_cast<const IStorageItemPropertiesWithProvider &>(static_cast<const D &>(*this))->get_Provider(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IStorageFilePropertiesWithAvailability<D>::IsAvailable() const
 {
     bool value {};
-    check_hresult(shim()->get_IsAvailable(&value));
+    check_hresult(static_cast<const IStorageFilePropertiesWithAvailability &>(static_cast<const D &>(*this))->get_IsAvailable(&value));
     return value;
 }
 
 template <typename D> hstring impl_IStorageProvider<D>::Id() const
 {
     hstring value;
-    check_hresult(shim()->get_Id(put(value)));
+    check_hresult(static_cast<const IStorageProvider &>(static_cast<const D &>(*this))->get_Id(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStorageProvider<D>::DisplayName() const
 {
     hstring value;
-    check_hresult(shim()->get_DisplayName(put(value)));
+    check_hresult(static_cast<const IStorageProvider &>(static_cast<const D &>(*this))->get_DisplayName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::IStorageItem> impl_IStorageFolder2<D>::TryGetItemAsync(hstring_ref name) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::IStorageItem> operation;
-    check_hresult(shim()->abi_TryGetItemAsync(get(name), put(operation)));
+    check_hresult(static_cast<const IStorageFolder2 &>(static_cast<const D &>(*this))->abi_TryGetItemAsync(get(name), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> impl_IStorageFile2<D>::OpenAsync(Windows::Storage::FileAccessMode accessMode, Windows::Storage::StorageOpenOptions options) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> operation;
-    check_hresult(shim()->abi_OpenWithOptionsAsync(accessMode, options, put(operation)));
+    check_hresult(static_cast<const IStorageFile2 &>(static_cast<const D &>(*this))->abi_OpenWithOptionsAsync(accessMode, options, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageStreamTransaction> impl_IStorageFile2<D>::OpenTransactedWriteAsync(Windows::Storage::StorageOpenOptions options) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageStreamTransaction> operation;
-    check_hresult(shim()->abi_OpenTransactedWriteWithOptionsAsync(options, put(operation)));
+    check_hresult(static_cast<const IStorageFile2 &>(static_cast<const D &>(*this))->abi_OpenTransactedWriteWithOptionsAsync(options, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IFileIOStatics<D>::ReadTextAsync(const Windows::Storage::IStorageFile & file) const
 {
     Windows::Foundation::IAsyncOperation<hstring> textOperation;
-    check_hresult(shim()->abi_ReadTextAsync(get(file), put(textOperation)));
+    check_hresult(static_cast<const IFileIOStatics &>(static_cast<const D &>(*this))->abi_ReadTextAsync(get(file), put(textOperation)));
     return textOperation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IFileIOStatics<D>::ReadTextAsync(const Windows::Storage::IStorageFile & file, Windows::Storage::Streams::UnicodeEncoding encoding) const
 {
     Windows::Foundation::IAsyncOperation<hstring> textOperation;
-    check_hresult(shim()->abi_ReadTextWithEncodingAsync(get(file), encoding, put(textOperation)));
+    check_hresult(static_cast<const IFileIOStatics &>(static_cast<const D &>(*this))->abi_ReadTextWithEncodingAsync(get(file), encoding, put(textOperation)));
     return textOperation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IFileIOStatics<D>::WriteTextAsync(const Windows::Storage::IStorageFile & file, hstring_ref contents) const
 {
     Windows::Foundation::IAsyncAction textOperation;
-    check_hresult(shim()->abi_WriteTextAsync(get(file), get(contents), put(textOperation)));
+    check_hresult(static_cast<const IFileIOStatics &>(static_cast<const D &>(*this))->abi_WriteTextAsync(get(file), get(contents), put(textOperation)));
     return textOperation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IFileIOStatics<D>::WriteTextAsync(const Windows::Storage::IStorageFile & file, hstring_ref contents, Windows::Storage::Streams::UnicodeEncoding encoding) const
 {
     Windows::Foundation::IAsyncAction textOperation;
-    check_hresult(shim()->abi_WriteTextWithEncodingAsync(get(file), get(contents), encoding, put(textOperation)));
+    check_hresult(static_cast<const IFileIOStatics &>(static_cast<const D &>(*this))->abi_WriteTextWithEncodingAsync(get(file), get(contents), encoding, put(textOperation)));
     return textOperation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IFileIOStatics<D>::AppendTextAsync(const Windows::Storage::IStorageFile & file, hstring_ref contents) const
 {
     Windows::Foundation::IAsyncAction textOperation;
-    check_hresult(shim()->abi_AppendTextAsync(get(file), get(contents), put(textOperation)));
+    check_hresult(static_cast<const IFileIOStatics &>(static_cast<const D &>(*this))->abi_AppendTextAsync(get(file), get(contents), put(textOperation)));
     return textOperation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IFileIOStatics<D>::AppendTextAsync(const Windows::Storage::IStorageFile & file, hstring_ref contents, Windows::Storage::Streams::UnicodeEncoding encoding) const
 {
     Windows::Foundation::IAsyncAction textOperation;
-    check_hresult(shim()->abi_AppendTextWithEncodingAsync(get(file), get(contents), encoding, put(textOperation)));
+    check_hresult(static_cast<const IFileIOStatics &>(static_cast<const D &>(*this))->abi_AppendTextWithEncodingAsync(get(file), get(contents), encoding, put(textOperation)));
     return textOperation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<hstring>> impl_IFileIOStatics<D>::ReadLinesAsync(const Windows::Storage::IStorageFile & file) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<hstring>> linesOperation;
-    check_hresult(shim()->abi_ReadLinesAsync(get(file), put(linesOperation)));
+    check_hresult(static_cast<const IFileIOStatics &>(static_cast<const D &>(*this))->abi_ReadLinesAsync(get(file), put(linesOperation)));
     return linesOperation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<hstring>> impl_IFileIOStatics<D>::ReadLinesAsync(const Windows::Storage::IStorageFile & file, Windows::Storage::Streams::UnicodeEncoding encoding) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<hstring>> linesOperation;
-    check_hresult(shim()->abi_ReadLinesWithEncodingAsync(get(file), encoding, put(linesOperation)));
+    check_hresult(static_cast<const IFileIOStatics &>(static_cast<const D &>(*this))->abi_ReadLinesWithEncodingAsync(get(file), encoding, put(linesOperation)));
     return linesOperation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IFileIOStatics<D>::WriteLinesAsync(const Windows::Storage::IStorageFile & file, const Windows::Foundation::Collections::IIterable<hstring> & lines) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_WriteLinesAsync(get(file), get(lines), put(operation)));
+    check_hresult(static_cast<const IFileIOStatics &>(static_cast<const D &>(*this))->abi_WriteLinesAsync(get(file), get(lines), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IFileIOStatics<D>::WriteLinesAsync(const Windows::Storage::IStorageFile & file, const Windows::Foundation::Collections::IIterable<hstring> & lines, Windows::Storage::Streams::UnicodeEncoding encoding) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_WriteLinesWithEncodingAsync(get(file), get(lines), encoding, put(operation)));
+    check_hresult(static_cast<const IFileIOStatics &>(static_cast<const D &>(*this))->abi_WriteLinesWithEncodingAsync(get(file), get(lines), encoding, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IFileIOStatics<D>::AppendLinesAsync(const Windows::Storage::IStorageFile & file, const Windows::Foundation::Collections::IIterable<hstring> & lines) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_AppendLinesAsync(get(file), get(lines), put(operation)));
+    check_hresult(static_cast<const IFileIOStatics &>(static_cast<const D &>(*this))->abi_AppendLinesAsync(get(file), get(lines), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IFileIOStatics<D>::AppendLinesAsync(const Windows::Storage::IStorageFile & file, const Windows::Foundation::Collections::IIterable<hstring> & lines, Windows::Storage::Streams::UnicodeEncoding encoding) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_AppendLinesWithEncodingAsync(get(file), get(lines), encoding, put(operation)));
+    check_hresult(static_cast<const IFileIOStatics &>(static_cast<const D &>(*this))->abi_AppendLinesWithEncodingAsync(get(file), get(lines), encoding, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> impl_IFileIOStatics<D>::ReadBufferAsync(const Windows::Storage::IStorageFile & file) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> operation;
-    check_hresult(shim()->abi_ReadBufferAsync(get(file), put(operation)));
+    check_hresult(static_cast<const IFileIOStatics &>(static_cast<const D &>(*this))->abi_ReadBufferAsync(get(file), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IFileIOStatics<D>::WriteBufferAsync(const Windows::Storage::IStorageFile & file, const Windows::Storage::Streams::IBuffer & buffer) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_WriteBufferAsync(get(file), get(buffer), put(operation)));
+    check_hresult(static_cast<const IFileIOStatics &>(static_cast<const D &>(*this))->abi_WriteBufferAsync(get(file), get(buffer), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IFileIOStatics<D>::WriteBytesAsync(const Windows::Storage::IStorageFile & file, array_ref<const uint8_t> buffer) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_WriteBytesAsync(get(file), buffer.size(), get(buffer), put(operation)));
+    check_hresult(static_cast<const IFileIOStatics &>(static_cast<const D &>(*this))->abi_WriteBytesAsync(get(file), buffer.size(), get(buffer), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IPathIOStatics<D>::ReadTextAsync(hstring_ref absolutePath) const
 {
     Windows::Foundation::IAsyncOperation<hstring> textOperation;
-    check_hresult(shim()->abi_ReadTextAsync(get(absolutePath), put(textOperation)));
+    check_hresult(static_cast<const IPathIOStatics &>(static_cast<const D &>(*this))->abi_ReadTextAsync(get(absolutePath), put(textOperation)));
     return textOperation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IPathIOStatics<D>::ReadTextAsync(hstring_ref absolutePath, Windows::Storage::Streams::UnicodeEncoding encoding) const
 {
     Windows::Foundation::IAsyncOperation<hstring> textOperation;
-    check_hresult(shim()->abi_ReadTextWithEncodingAsync(get(absolutePath), encoding, put(textOperation)));
+    check_hresult(static_cast<const IPathIOStatics &>(static_cast<const D &>(*this))->abi_ReadTextWithEncodingAsync(get(absolutePath), encoding, put(textOperation)));
     return textOperation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IPathIOStatics<D>::WriteTextAsync(hstring_ref absolutePath, hstring_ref contents) const
 {
     Windows::Foundation::IAsyncAction textOperation;
-    check_hresult(shim()->abi_WriteTextAsync(get(absolutePath), get(contents), put(textOperation)));
+    check_hresult(static_cast<const IPathIOStatics &>(static_cast<const D &>(*this))->abi_WriteTextAsync(get(absolutePath), get(contents), put(textOperation)));
     return textOperation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IPathIOStatics<D>::WriteTextAsync(hstring_ref absolutePath, hstring_ref contents, Windows::Storage::Streams::UnicodeEncoding encoding) const
 {
     Windows::Foundation::IAsyncAction textOperation;
-    check_hresult(shim()->abi_WriteTextWithEncodingAsync(get(absolutePath), get(contents), encoding, put(textOperation)));
+    check_hresult(static_cast<const IPathIOStatics &>(static_cast<const D &>(*this))->abi_WriteTextWithEncodingAsync(get(absolutePath), get(contents), encoding, put(textOperation)));
     return textOperation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IPathIOStatics<D>::AppendTextAsync(hstring_ref absolutePath, hstring_ref contents) const
 {
     Windows::Foundation::IAsyncAction textOperation;
-    check_hresult(shim()->abi_AppendTextAsync(get(absolutePath), get(contents), put(textOperation)));
+    check_hresult(static_cast<const IPathIOStatics &>(static_cast<const D &>(*this))->abi_AppendTextAsync(get(absolutePath), get(contents), put(textOperation)));
     return textOperation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IPathIOStatics<D>::AppendTextAsync(hstring_ref absolutePath, hstring_ref contents, Windows::Storage::Streams::UnicodeEncoding encoding) const
 {
     Windows::Foundation::IAsyncAction textOperation;
-    check_hresult(shim()->abi_AppendTextWithEncodingAsync(get(absolutePath), get(contents), encoding, put(textOperation)));
+    check_hresult(static_cast<const IPathIOStatics &>(static_cast<const D &>(*this))->abi_AppendTextWithEncodingAsync(get(absolutePath), get(contents), encoding, put(textOperation)));
     return textOperation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<hstring>> impl_IPathIOStatics<D>::ReadLinesAsync(hstring_ref absolutePath) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<hstring>> linesOperation;
-    check_hresult(shim()->abi_ReadLinesAsync(get(absolutePath), put(linesOperation)));
+    check_hresult(static_cast<const IPathIOStatics &>(static_cast<const D &>(*this))->abi_ReadLinesAsync(get(absolutePath), put(linesOperation)));
     return linesOperation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<hstring>> impl_IPathIOStatics<D>::ReadLinesAsync(hstring_ref absolutePath, Windows::Storage::Streams::UnicodeEncoding encoding) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<hstring>> linesOperation;
-    check_hresult(shim()->abi_ReadLinesWithEncodingAsync(get(absolutePath), encoding, put(linesOperation)));
+    check_hresult(static_cast<const IPathIOStatics &>(static_cast<const D &>(*this))->abi_ReadLinesWithEncodingAsync(get(absolutePath), encoding, put(linesOperation)));
     return linesOperation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IPathIOStatics<D>::WriteLinesAsync(hstring_ref absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_WriteLinesAsync(get(absolutePath), get(lines), put(operation)));
+    check_hresult(static_cast<const IPathIOStatics &>(static_cast<const D &>(*this))->abi_WriteLinesAsync(get(absolutePath), get(lines), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IPathIOStatics<D>::WriteLinesAsync(hstring_ref absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines, Windows::Storage::Streams::UnicodeEncoding encoding) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_WriteLinesWithEncodingAsync(get(absolutePath), get(lines), encoding, put(operation)));
+    check_hresult(static_cast<const IPathIOStatics &>(static_cast<const D &>(*this))->abi_WriteLinesWithEncodingAsync(get(absolutePath), get(lines), encoding, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IPathIOStatics<D>::AppendLinesAsync(hstring_ref absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_AppendLinesAsync(get(absolutePath), get(lines), put(operation)));
+    check_hresult(static_cast<const IPathIOStatics &>(static_cast<const D &>(*this))->abi_AppendLinesAsync(get(absolutePath), get(lines), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IPathIOStatics<D>::AppendLinesAsync(hstring_ref absolutePath, const Windows::Foundation::Collections::IIterable<hstring> & lines, Windows::Storage::Streams::UnicodeEncoding encoding) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_AppendLinesWithEncodingAsync(get(absolutePath), get(lines), encoding, put(operation)));
+    check_hresult(static_cast<const IPathIOStatics &>(static_cast<const D &>(*this))->abi_AppendLinesWithEncodingAsync(get(absolutePath), get(lines), encoding, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> impl_IPathIOStatics<D>::ReadBufferAsync(hstring_ref absolutePath) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> operation;
-    check_hresult(shim()->abi_ReadBufferAsync(get(absolutePath), put(operation)));
+    check_hresult(static_cast<const IPathIOStatics &>(static_cast<const D &>(*this))->abi_ReadBufferAsync(get(absolutePath), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IPathIOStatics<D>::WriteBufferAsync(hstring_ref absolutePath, const Windows::Storage::Streams::IBuffer & buffer) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_WriteBufferAsync(get(absolutePath), get(buffer), put(operation)));
+    check_hresult(static_cast<const IPathIOStatics &>(static_cast<const D &>(*this))->abi_WriteBufferAsync(get(absolutePath), get(buffer), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IPathIOStatics<D>::WriteBytesAsync(hstring_ref absolutePath, array_ref<const uint8_t> buffer) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_WriteBytesAsync(get(absolutePath), buffer.size(), get(buffer), put(operation)));
+    check_hresult(static_cast<const IPathIOStatics &>(static_cast<const D &>(*this))->abi_WriteBytesAsync(get(absolutePath), buffer.size(), get(buffer), put(operation)));
     return operation;
 }
 
 template <typename D> void impl_ICachedFileManagerStatics<D>::DeferUpdates(const Windows::Storage::IStorageFile & file) const
 {
-    check_hresult(shim()->abi_DeferUpdates(get(file)));
+    check_hresult(static_cast<const ICachedFileManagerStatics &>(static_cast<const D &>(*this))->abi_DeferUpdates(get(file)));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Storage::Provider::FileUpdateStatus> impl_ICachedFileManagerStatics<D>::CompleteUpdatesAsync(const Windows::Storage::IStorageFile & file) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Storage::Provider::FileUpdateStatus> operation;
-    check_hresult(shim()->abi_CompleteUpdatesAsync(get(file), put(operation)));
+    check_hresult(static_cast<const ICachedFileManagerStatics &>(static_cast<const D &>(*this))->abi_CompleteUpdatesAsync(get(file), put(operation)));
     return operation;
 }
 
 template <typename D> hstring impl_ISystemAudioProperties<D>::EncodingBitrate() const
 {
     hstring value;
-    check_hresult(shim()->get_EncodingBitrate(put(value)));
+    check_hresult(static_cast<const ISystemAudioProperties &>(static_cast<const D &>(*this))->get_EncodingBitrate(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISystemGPSProperties<D>::LatitudeDecimal() const
 {
     hstring value;
-    check_hresult(shim()->get_LatitudeDecimal(put(value)));
+    check_hresult(static_cast<const ISystemGPSProperties &>(static_cast<const D &>(*this))->get_LatitudeDecimal(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISystemGPSProperties<D>::LongitudeDecimal() const
 {
     hstring value;
-    check_hresult(shim()->get_LongitudeDecimal(put(value)));
+    check_hresult(static_cast<const ISystemGPSProperties &>(static_cast<const D &>(*this))->get_LongitudeDecimal(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISystemImageProperties<D>::HorizontalSize() const
 {
     hstring value;
-    check_hresult(shim()->get_HorizontalSize(put(value)));
+    check_hresult(static_cast<const ISystemImageProperties &>(static_cast<const D &>(*this))->get_HorizontalSize(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISystemImageProperties<D>::VerticalSize() const
 {
     hstring value;
-    check_hresult(shim()->get_VerticalSize(put(value)));
+    check_hresult(static_cast<const ISystemImageProperties &>(static_cast<const D &>(*this))->get_VerticalSize(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISystemMediaProperties<D>::Duration() const
 {
     hstring value;
-    check_hresult(shim()->get_Duration(put(value)));
+    check_hresult(static_cast<const ISystemMediaProperties &>(static_cast<const D &>(*this))->get_Duration(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISystemMediaProperties<D>::Producer() const
 {
     hstring value;
-    check_hresult(shim()->get_Producer(put(value)));
+    check_hresult(static_cast<const ISystemMediaProperties &>(static_cast<const D &>(*this))->get_Producer(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISystemMediaProperties<D>::Publisher() const
 {
     hstring value;
-    check_hresult(shim()->get_Publisher(put(value)));
+    check_hresult(static_cast<const ISystemMediaProperties &>(static_cast<const D &>(*this))->get_Publisher(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISystemMediaProperties<D>::SubTitle() const
 {
     hstring value;
-    check_hresult(shim()->get_SubTitle(put(value)));
+    check_hresult(static_cast<const ISystemMediaProperties &>(static_cast<const D &>(*this))->get_SubTitle(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISystemMediaProperties<D>::Writer() const
 {
     hstring value;
-    check_hresult(shim()->get_Writer(put(value)));
+    check_hresult(static_cast<const ISystemMediaProperties &>(static_cast<const D &>(*this))->get_Writer(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISystemMediaProperties<D>::Year() const
 {
     hstring value;
-    check_hresult(shim()->get_Year(put(value)));
+    check_hresult(static_cast<const ISystemMediaProperties &>(static_cast<const D &>(*this))->get_Year(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISystemMusicProperties<D>::AlbumArtist() const
 {
     hstring value;
-    check_hresult(shim()->get_AlbumArtist(put(value)));
+    check_hresult(static_cast<const ISystemMusicProperties &>(static_cast<const D &>(*this))->get_AlbumArtist(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISystemMusicProperties<D>::AlbumTitle() const
 {
     hstring value;
-    check_hresult(shim()->get_AlbumTitle(put(value)));
+    check_hresult(static_cast<const ISystemMusicProperties &>(static_cast<const D &>(*this))->get_AlbumTitle(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISystemMusicProperties<D>::Artist() const
 {
     hstring value;
-    check_hresult(shim()->get_Artist(put(value)));
+    check_hresult(static_cast<const ISystemMusicProperties &>(static_cast<const D &>(*this))->get_Artist(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISystemMusicProperties<D>::Composer() const
 {
     hstring value;
-    check_hresult(shim()->get_Composer(put(value)));
+    check_hresult(static_cast<const ISystemMusicProperties &>(static_cast<const D &>(*this))->get_Composer(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISystemMusicProperties<D>::Conductor() const
 {
     hstring value;
-    check_hresult(shim()->get_Conductor(put(value)));
+    check_hresult(static_cast<const ISystemMusicProperties &>(static_cast<const D &>(*this))->get_Conductor(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISystemMusicProperties<D>::DisplayArtist() const
 {
     hstring value;
-    check_hresult(shim()->get_DisplayArtist(put(value)));
+    check_hresult(static_cast<const ISystemMusicProperties &>(static_cast<const D &>(*this))->get_DisplayArtist(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISystemMusicProperties<D>::Genre() const
 {
     hstring value;
-    check_hresult(shim()->get_Genre(put(value)));
+    check_hresult(static_cast<const ISystemMusicProperties &>(static_cast<const D &>(*this))->get_Genre(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISystemMusicProperties<D>::TrackNumber() const
 {
     hstring value;
-    check_hresult(shim()->get_TrackNumber(put(value)));
+    check_hresult(static_cast<const ISystemMusicProperties &>(static_cast<const D &>(*this))->get_TrackNumber(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISystemPhotoProperties<D>::CameraManufacturer() const
 {
     hstring value;
-    check_hresult(shim()->get_CameraManufacturer(put(value)));
+    check_hresult(static_cast<const ISystemPhotoProperties &>(static_cast<const D &>(*this))->get_CameraManufacturer(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISystemPhotoProperties<D>::CameraModel() const
 {
     hstring value;
-    check_hresult(shim()->get_CameraModel(put(value)));
+    check_hresult(static_cast<const ISystemPhotoProperties &>(static_cast<const D &>(*this))->get_CameraModel(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISystemPhotoProperties<D>::DateTaken() const
 {
     hstring value;
-    check_hresult(shim()->get_DateTaken(put(value)));
+    check_hresult(static_cast<const ISystemPhotoProperties &>(static_cast<const D &>(*this))->get_DateTaken(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISystemPhotoProperties<D>::Orientation() const
 {
     hstring value;
-    check_hresult(shim()->get_Orientation(put(value)));
+    check_hresult(static_cast<const ISystemPhotoProperties &>(static_cast<const D &>(*this))->get_Orientation(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISystemPhotoProperties<D>::PeopleNames() const
 {
     hstring value;
-    check_hresult(shim()->get_PeopleNames(put(value)));
+    check_hresult(static_cast<const ISystemPhotoProperties &>(static_cast<const D &>(*this))->get_PeopleNames(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISystemVideoProperties<D>::Director() const
 {
     hstring value;
-    check_hresult(shim()->get_Director(put(value)));
+    check_hresult(static_cast<const ISystemVideoProperties &>(static_cast<const D &>(*this))->get_Director(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISystemVideoProperties<D>::FrameHeight() const
 {
     hstring value;
-    check_hresult(shim()->get_FrameHeight(put(value)));
+    check_hresult(static_cast<const ISystemVideoProperties &>(static_cast<const D &>(*this))->get_FrameHeight(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISystemVideoProperties<D>::FrameWidth() const
 {
     hstring value;
-    check_hresult(shim()->get_FrameWidth(put(value)));
+    check_hresult(static_cast<const ISystemVideoProperties &>(static_cast<const D &>(*this))->get_FrameWidth(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISystemVideoProperties<D>::Orientation() const
 {
     hstring value;
-    check_hresult(shim()->get_Orientation(put(value)));
+    check_hresult(static_cast<const ISystemVideoProperties &>(static_cast<const D &>(*this))->get_Orientation(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISystemVideoProperties<D>::TotalBitrate() const
 {
     hstring value;
-    check_hresult(shim()->get_TotalBitrate(put(value)));
+    check_hresult(static_cast<const ISystemVideoProperties &>(static_cast<const D &>(*this))->get_TotalBitrate(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISystemProperties<D>::Author() const
 {
     hstring value;
-    check_hresult(shim()->get_Author(put(value)));
+    check_hresult(static_cast<const ISystemProperties &>(static_cast<const D &>(*this))->get_Author(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISystemProperties<D>::Comment() const
 {
     hstring value;
-    check_hresult(shim()->get_Comment(put(value)));
+    check_hresult(static_cast<const ISystemProperties &>(static_cast<const D &>(*this))->get_Comment(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISystemProperties<D>::ItemNameDisplay() const
 {
     hstring value;
-    check_hresult(shim()->get_ItemNameDisplay(put(value)));
+    check_hresult(static_cast<const ISystemProperties &>(static_cast<const D &>(*this))->get_ItemNameDisplay(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISystemProperties<D>::Keywords() const
 {
     hstring value;
-    check_hresult(shim()->get_Keywords(put(value)));
+    check_hresult(static_cast<const ISystemProperties &>(static_cast<const D &>(*this))->get_Keywords(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISystemProperties<D>::Rating() const
 {
     hstring value;
-    check_hresult(shim()->get_Rating(put(value)));
+    check_hresult(static_cast<const ISystemProperties &>(static_cast<const D &>(*this))->get_Rating(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISystemProperties<D>::Title() const
 {
     hstring value;
-    check_hresult(shim()->get_Title(put(value)));
+    check_hresult(static_cast<const ISystemProperties &>(static_cast<const D &>(*this))->get_Title(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::SystemAudioProperties impl_ISystemProperties<D>::Audio() const
 {
     Windows::Storage::SystemAudioProperties value { nullptr };
-    check_hresult(shim()->get_Audio(put(value)));
+    check_hresult(static_cast<const ISystemProperties &>(static_cast<const D &>(*this))->get_Audio(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::SystemGPSProperties impl_ISystemProperties<D>::GPS() const
 {
     Windows::Storage::SystemGPSProperties value { nullptr };
-    check_hresult(shim()->get_GPS(put(value)));
+    check_hresult(static_cast<const ISystemProperties &>(static_cast<const D &>(*this))->get_GPS(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::SystemMediaProperties impl_ISystemProperties<D>::Media() const
 {
     Windows::Storage::SystemMediaProperties value { nullptr };
-    check_hresult(shim()->get_Media(put(value)));
+    check_hresult(static_cast<const ISystemProperties &>(static_cast<const D &>(*this))->get_Media(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::SystemMusicProperties impl_ISystemProperties<D>::Music() const
 {
     Windows::Storage::SystemMusicProperties value { nullptr };
-    check_hresult(shim()->get_Music(put(value)));
+    check_hresult(static_cast<const ISystemProperties &>(static_cast<const D &>(*this))->get_Music(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::SystemPhotoProperties impl_ISystemProperties<D>::Photo() const
 {
     Windows::Storage::SystemPhotoProperties value { nullptr };
-    check_hresult(shim()->get_Photo(put(value)));
+    check_hresult(static_cast<const ISystemProperties &>(static_cast<const D &>(*this))->get_Photo(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::SystemVideoProperties impl_ISystemProperties<D>::Video() const
 {
     Windows::Storage::SystemVideoProperties value { nullptr };
-    check_hresult(shim()->get_Video(put(value)));
+    check_hresult(static_cast<const ISystemProperties &>(static_cast<const D &>(*this))->get_Video(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::SystemImageProperties impl_ISystemProperties<D>::Image() const
 {
     Windows::Storage::SystemImageProperties value { nullptr };
-    check_hresult(shim()->get_Image(put(value)));
+    check_hresult(static_cast<const ISystemProperties &>(static_cast<const D &>(*this))->get_Image(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IRandomAccessStream impl_IStorageStreamTransaction<D>::Stream() const
 {
     Windows::Storage::Streams::IRandomAccessStream value;
-    check_hresult(shim()->get_Stream(put(value)));
+    check_hresult(static_cast<const IStorageStreamTransaction &>(static_cast<const D &>(*this))->get_Stream(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IStorageStreamTransaction<D>::CommitAsync() const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_CommitAsync(put(operation)));
+    check_hresult(static_cast<const IStorageStreamTransaction &>(static_cast<const D &>(*this))->abi_CommitAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Storage::ApplicationData impl_IApplicationDataStatics<D>::Current() const
 {
     Windows::Storage::ApplicationData value { nullptr };
-    check_hresult(shim()->get_Current(put(value)));
+    check_hresult(static_cast<const IApplicationDataStatics &>(static_cast<const D &>(*this))->get_Current(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::ApplicationData> impl_IApplicationDataStatics2<D>::GetForUserAsync(const Windows::System::User & user) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::ApplicationData> getForUserOperation;
-    check_hresult(shim()->abi_GetForUserAsync(get(user), put(getForUserOperation)));
+    check_hresult(static_cast<const IApplicationDataStatics2 &>(static_cast<const D &>(*this))->abi_GetForUserAsync(get(user), put(getForUserOperation)));
     return getForUserOperation;
 }
 
 template <typename D> uint32_t impl_IApplicationData<D>::Version() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_Version(&value));
+    check_hresult(static_cast<const IApplicationData &>(static_cast<const D &>(*this))->get_Version(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IApplicationData<D>::SetVersionAsync(uint32_t desiredVersion, const Windows::Storage::ApplicationDataSetVersionHandler & handler) const
 {
     Windows::Foundation::IAsyncAction setVersionOperation;
-    check_hresult(shim()->abi_SetVersionAsync(desiredVersion, get(handler), put(setVersionOperation)));
+    check_hresult(static_cast<const IApplicationData &>(static_cast<const D &>(*this))->abi_SetVersionAsync(desiredVersion, get(handler), put(setVersionOperation)));
     return setVersionOperation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IApplicationData<D>::ClearAsync() const
 {
     Windows::Foundation::IAsyncAction clearOperation;
-    check_hresult(shim()->abi_ClearAllAsync(put(clearOperation)));
+    check_hresult(static_cast<const IApplicationData &>(static_cast<const D &>(*this))->abi_ClearAllAsync(put(clearOperation)));
     return clearOperation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IApplicationData<D>::ClearAsync(Windows::Storage::ApplicationDataLocality locality) const
 {
     Windows::Foundation::IAsyncAction clearOperation;
-    check_hresult(shim()->abi_ClearAsync(locality, put(clearOperation)));
+    check_hresult(static_cast<const IApplicationData &>(static_cast<const D &>(*this))->abi_ClearAsync(locality, put(clearOperation)));
     return clearOperation;
 }
 
 template <typename D> Windows::Storage::ApplicationDataContainer impl_IApplicationData<D>::LocalSettings() const
 {
     Windows::Storage::ApplicationDataContainer value { nullptr };
-    check_hresult(shim()->get_LocalSettings(put(value)));
+    check_hresult(static_cast<const IApplicationData &>(static_cast<const D &>(*this))->get_LocalSettings(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::ApplicationDataContainer impl_IApplicationData<D>::RoamingSettings() const
 {
     Windows::Storage::ApplicationDataContainer value { nullptr };
-    check_hresult(shim()->get_RoamingSettings(put(value)));
+    check_hresult(static_cast<const IApplicationData &>(static_cast<const D &>(*this))->get_RoamingSettings(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::StorageFolder impl_IApplicationData<D>::LocalFolder() const
 {
     Windows::Storage::StorageFolder value { nullptr };
-    check_hresult(shim()->get_LocalFolder(put(value)));
+    check_hresult(static_cast<const IApplicationData &>(static_cast<const D &>(*this))->get_LocalFolder(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::StorageFolder impl_IApplicationData<D>::RoamingFolder() const
 {
     Windows::Storage::StorageFolder value { nullptr };
-    check_hresult(shim()->get_RoamingFolder(put(value)));
+    check_hresult(static_cast<const IApplicationData &>(static_cast<const D &>(*this))->get_RoamingFolder(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::StorageFolder impl_IApplicationData<D>::TemporaryFolder() const
 {
     Windows::Storage::StorageFolder value { nullptr };
-    check_hresult(shim()->get_TemporaryFolder(put(value)));
+    check_hresult(static_cast<const IApplicationData &>(static_cast<const D &>(*this))->get_TemporaryFolder(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IApplicationData<D>::DataChanged(const Windows::Foundation::TypedEventHandler<Windows::Storage::ApplicationData, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_DataChanged(get(handler), &token));
+    check_hresult(static_cast<const IApplicationData &>(static_cast<const D &>(*this))->add_DataChanged(get(handler), &token));
     return token;
 }
 
@@ -4421,113 +4421,113 @@ template <typename D> event_revoker<IApplicationData> impl_IApplicationData<D>::
 
 template <typename D> void impl_IApplicationData<D>::DataChanged(event_token token) const
 {
-    check_hresult(shim()->remove_DataChanged(token));
+    check_hresult(static_cast<const IApplicationData &>(static_cast<const D &>(*this))->remove_DataChanged(token));
 }
 
 template <typename D> void impl_IApplicationData<D>::SignalDataChanged() const
 {
-    check_hresult(shim()->abi_SignalDataChanged());
+    check_hresult(static_cast<const IApplicationData &>(static_cast<const D &>(*this))->abi_SignalDataChanged());
 }
 
 template <typename D> uint64_t impl_IApplicationData<D>::RoamingStorageQuota() const
 {
     uint64_t value {};
-    check_hresult(shim()->get_RoamingStorageQuota(&value));
+    check_hresult(static_cast<const IApplicationData &>(static_cast<const D &>(*this))->get_RoamingStorageQuota(&value));
     return value;
 }
 
 template <typename D> Windows::Storage::StorageFolder impl_IApplicationData2<D>::LocalCacheFolder() const
 {
     Windows::Storage::StorageFolder value { nullptr };
-    check_hresult(shim()->get_LocalCacheFolder(put(value)));
+    check_hresult(static_cast<const IApplicationData2 &>(static_cast<const D &>(*this))->get_LocalCacheFolder(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::StorageFolder impl_IApplicationData3<D>::GetPublisherCacheFolder(hstring_ref folderName) const
 {
     Windows::Storage::StorageFolder value { nullptr };
-    check_hresult(shim()->abi_GetPublisherCacheFolder(get(folderName), put(value)));
+    check_hresult(static_cast<const IApplicationData3 &>(static_cast<const D &>(*this))->abi_GetPublisherCacheFolder(get(folderName), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IApplicationData3<D>::ClearPublisherCacheFolderAsync(hstring_ref folderName) const
 {
     Windows::Foundation::IAsyncAction clearOperation;
-    check_hresult(shim()->abi_ClearPublisherCacheFolderAsync(get(folderName), put(clearOperation)));
+    check_hresult(static_cast<const IApplicationData3 &>(static_cast<const D &>(*this))->abi_ClearPublisherCacheFolderAsync(get(folderName), put(clearOperation)));
     return clearOperation;
 }
 
 template <typename D> Windows::Storage::StorageFolder impl_IApplicationData3<D>::SharedLocalFolder() const
 {
     Windows::Storage::StorageFolder value { nullptr };
-    check_hresult(shim()->get_SharedLocalFolder(put(value)));
+    check_hresult(static_cast<const IApplicationData3 &>(static_cast<const D &>(*this))->get_SharedLocalFolder(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_ISetVersionRequest<D>::CurrentVersion() const
 {
     uint32_t currentVersion {};
-    check_hresult(shim()->get_CurrentVersion(&currentVersion));
+    check_hresult(static_cast<const ISetVersionRequest &>(static_cast<const D &>(*this))->get_CurrentVersion(&currentVersion));
     return currentVersion;
 }
 
 template <typename D> uint32_t impl_ISetVersionRequest<D>::DesiredVersion() const
 {
     uint32_t desiredVersion {};
-    check_hresult(shim()->get_DesiredVersion(&desiredVersion));
+    check_hresult(static_cast<const ISetVersionRequest &>(static_cast<const D &>(*this))->get_DesiredVersion(&desiredVersion));
     return desiredVersion;
 }
 
 template <typename D> Windows::Storage::SetVersionDeferral impl_ISetVersionRequest<D>::GetDeferral() const
 {
     Windows::Storage::SetVersionDeferral deferral { nullptr };
-    check_hresult(shim()->abi_GetDeferral(put(deferral)));
+    check_hresult(static_cast<const ISetVersionRequest &>(static_cast<const D &>(*this))->abi_GetDeferral(put(deferral)));
     return deferral;
 }
 
 template <typename D> void impl_ISetVersionDeferral<D>::Complete() const
 {
-    check_hresult(shim()->abi_Complete());
+    check_hresult(static_cast<const ISetVersionDeferral &>(static_cast<const D &>(*this))->abi_Complete());
 }
 
 template <typename D> hstring impl_IApplicationDataContainer<D>::Name() const
 {
     hstring value;
-    check_hresult(shim()->get_Name(put(value)));
+    check_hresult(static_cast<const IApplicationDataContainer &>(static_cast<const D &>(*this))->get_Name(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::ApplicationDataLocality impl_IApplicationDataContainer<D>::Locality() const
 {
     Windows::Storage::ApplicationDataLocality value {};
-    check_hresult(shim()->get_Locality(&value));
+    check_hresult(static_cast<const IApplicationDataContainer &>(static_cast<const D &>(*this))->get_Locality(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IPropertySet impl_IApplicationDataContainer<D>::Values() const
 {
     Windows::Foundation::Collections::IPropertySet value;
-    check_hresult(shim()->get_Values(put(value)));
+    check_hresult(static_cast<const IApplicationDataContainer &>(static_cast<const D &>(*this))->get_Values(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IMapView<hstring, Windows::Storage::ApplicationDataContainer> impl_IApplicationDataContainer<D>::Containers() const
 {
     Windows::Foundation::Collections::IMapView<hstring, Windows::Storage::ApplicationDataContainer> value;
-    check_hresult(shim()->get_Containers(put(value)));
+    check_hresult(static_cast<const IApplicationDataContainer &>(static_cast<const D &>(*this))->get_Containers(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::ApplicationDataContainer impl_IApplicationDataContainer<D>::CreateContainer(hstring_ref name, Windows::Storage::ApplicationDataCreateDisposition disposition) const
 {
     Windows::Storage::ApplicationDataContainer container { nullptr };
-    check_hresult(shim()->abi_CreateContainer(get(name), disposition, put(container)));
+    check_hresult(static_cast<const IApplicationDataContainer &>(static_cast<const D &>(*this))->abi_CreateContainer(get(name), disposition, put(container)));
     return container;
 }
 
 template <typename D> void impl_IApplicationDataContainer<D>::DeleteContainer(hstring_ref name) const
 {
-    check_hresult(shim()->abi_DeleteContainer(get(name)));
+    check_hresult(static_cast<const IApplicationDataContainer &>(static_cast<const D &>(*this))->abi_DeleteContainer(get(name)));
 }
 
 inline Windows::Storage::ApplicationData ApplicationData::Current()

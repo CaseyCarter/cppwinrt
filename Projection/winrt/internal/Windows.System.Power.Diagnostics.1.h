@@ -33,8 +33,8 @@ namespace ABI {
 
 namespace Windows::System::Power::Diagnostics {
 
-template <typename T> class impl_IBackgroundEnergyDiagnosticsStatics;
-template <typename T> class impl_IForegroundEnergyDiagnosticsStatics;
+template <typename T> struct impl_IBackgroundEnergyDiagnosticsStatics;
+template <typename T> struct impl_IForegroundEnergyDiagnosticsStatics;
 
 }
 

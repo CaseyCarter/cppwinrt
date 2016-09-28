@@ -46,12 +46,8 @@ template <> struct __declspec(uuid("e9e2ae03-42d6-5211-ab52-325e722e2611")) __de
 namespace Windows::Devices::Spi::Provider {
 
 template <typename D>
-class WINRT_EBO impl_IProviderSpiConnectionSettings
+struct WINRT_EBO impl_IProviderSpiConnectionSettings
 {
-    auto shim() const { return impl::shim<D, IProviderSpiConnectionSettings>(this); }
-
-public:
-
     int32_t ChipSelectLine() const;
     void ChipSelectLine(int32_t value) const;
     Windows::Devices::Spi::Provider::ProviderSpiMode Mode() const;
@@ -65,32 +61,20 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IProviderSpiConnectionSettingsFactory
+struct WINRT_EBO impl_IProviderSpiConnectionSettingsFactory
 {
-    auto shim() const { return impl::shim<D, IProviderSpiConnectionSettingsFactory>(this); }
-
-public:
-
     Windows::Devices::Spi::Provider::ProviderSpiConnectionSettings Create(int32_t chipSelectLine) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpiControllerProvider
+struct WINRT_EBO impl_ISpiControllerProvider
 {
-    auto shim() const { return impl::shim<D, ISpiControllerProvider>(this); }
-
-public:
-
     Windows::Devices::Spi::Provider::ISpiDeviceProvider GetDeviceProvider(const Windows::Devices::Spi::Provider::ProviderSpiConnectionSettings & settings) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpiDeviceProvider
+struct WINRT_EBO impl_ISpiDeviceProvider
 {
-    auto shim() const { return impl::shim<D, ISpiDeviceProvider>(this); }
-
-public:
-
     hstring DeviceId() const;
     Windows::Devices::Spi::Provider::ProviderSpiConnectionSettings ConnectionSettings() const;
     void Write(array_ref<const uint8_t> buffer) const;
@@ -100,12 +84,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpiProvider
+struct WINRT_EBO impl_ISpiProvider
 {
-    auto shim() const { return impl::shim<D, ISpiProvider>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Spi::Provider::ISpiControllerProvider>> GetControllersAsync() const;
 };
 

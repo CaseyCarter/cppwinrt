@@ -886,386 +886,386 @@ namespace Windows::Data::Text {
 template <typename D> Windows::Data::Text::SemanticTextQuery impl_ISemanticTextQueryFactory<D>::Create(hstring_ref aqsFilter) const
 {
     Windows::Data::Text::SemanticTextQuery result { nullptr };
-    check_hresult(shim()->abi_Create(get(aqsFilter), put(result)));
+    check_hresult(static_cast<const ISemanticTextQueryFactory &>(static_cast<const D &>(*this))->abi_Create(get(aqsFilter), put(result)));
     return result;
 }
 
 template <typename D> Windows::Data::Text::SemanticTextQuery impl_ISemanticTextQueryFactory<D>::CreateWithLanguage(hstring_ref aqsFilter, hstring_ref filterLanguage) const
 {
     Windows::Data::Text::SemanticTextQuery result { nullptr };
-    check_hresult(shim()->abi_CreateWithLanguage(get(aqsFilter), get(filterLanguage), put(result)));
+    check_hresult(static_cast<const ISemanticTextQueryFactory &>(static_cast<const D &>(*this))->abi_CreateWithLanguage(get(aqsFilter), get(filterLanguage), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextSegment> impl_ISemanticTextQuery<D>::Find(hstring_ref content) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextSegment> result;
-    check_hresult(shim()->abi_Find(get(content), put(result)));
+    check_hresult(static_cast<const ISemanticTextQuery &>(static_cast<const D &>(*this))->abi_Find(get(content), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextSegment> impl_ISemanticTextQuery<D>::FindInProperty(hstring_ref propertyContent, hstring_ref propertyName) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextSegment> result;
-    check_hresult(shim()->abi_FindInProperty(get(propertyContent), get(propertyName), put(result)));
+    check_hresult(static_cast<const ISemanticTextQuery &>(static_cast<const D &>(*this))->abi_FindInProperty(get(propertyContent), get(propertyName), put(result)));
     return result;
 }
 
 template <typename D> uint32_t impl_IUnicodeCharactersStatics<D>::GetCodepointFromSurrogatePair(uint32_t highSurrogate, uint32_t lowSurrogate) const
 {
     uint32_t codepoint {};
-    check_hresult(shim()->abi_GetCodepointFromSurrogatePair(highSurrogate, lowSurrogate, &codepoint));
+    check_hresult(static_cast<const IUnicodeCharactersStatics &>(static_cast<const D &>(*this))->abi_GetCodepointFromSurrogatePair(highSurrogate, lowSurrogate, &codepoint));
     return codepoint;
 }
 
 template <typename D> void impl_IUnicodeCharactersStatics<D>::GetSurrogatePairFromCodepoint(uint32_t codepoint, wchar_t & highSurrogate, wchar_t & lowSurrogate) const
 {
-    check_hresult(shim()->abi_GetSurrogatePairFromCodepoint(codepoint, &highSurrogate, &lowSurrogate));
+    check_hresult(static_cast<const IUnicodeCharactersStatics &>(static_cast<const D &>(*this))->abi_GetSurrogatePairFromCodepoint(codepoint, &highSurrogate, &lowSurrogate));
 }
 
 template <typename D> bool impl_IUnicodeCharactersStatics<D>::IsHighSurrogate(uint32_t codepoint) const
 {
     bool value {};
-    check_hresult(shim()->abi_IsHighSurrogate(codepoint, &value));
+    check_hresult(static_cast<const IUnicodeCharactersStatics &>(static_cast<const D &>(*this))->abi_IsHighSurrogate(codepoint, &value));
     return value;
 }
 
 template <typename D> bool impl_IUnicodeCharactersStatics<D>::IsLowSurrogate(uint32_t codepoint) const
 {
     bool value {};
-    check_hresult(shim()->abi_IsLowSurrogate(codepoint, &value));
+    check_hresult(static_cast<const IUnicodeCharactersStatics &>(static_cast<const D &>(*this))->abi_IsLowSurrogate(codepoint, &value));
     return value;
 }
 
 template <typename D> bool impl_IUnicodeCharactersStatics<D>::IsSupplementary(uint32_t codepoint) const
 {
     bool value {};
-    check_hresult(shim()->abi_IsSupplementary(codepoint, &value));
+    check_hresult(static_cast<const IUnicodeCharactersStatics &>(static_cast<const D &>(*this))->abi_IsSupplementary(codepoint, &value));
     return value;
 }
 
 template <typename D> bool impl_IUnicodeCharactersStatics<D>::IsNoncharacter(uint32_t codepoint) const
 {
     bool value {};
-    check_hresult(shim()->abi_IsNoncharacter(codepoint, &value));
+    check_hresult(static_cast<const IUnicodeCharactersStatics &>(static_cast<const D &>(*this))->abi_IsNoncharacter(codepoint, &value));
     return value;
 }
 
 template <typename D> bool impl_IUnicodeCharactersStatics<D>::IsWhitespace(uint32_t codepoint) const
 {
     bool value {};
-    check_hresult(shim()->abi_IsWhitespace(codepoint, &value));
+    check_hresult(static_cast<const IUnicodeCharactersStatics &>(static_cast<const D &>(*this))->abi_IsWhitespace(codepoint, &value));
     return value;
 }
 
 template <typename D> bool impl_IUnicodeCharactersStatics<D>::IsAlphabetic(uint32_t codepoint) const
 {
     bool value {};
-    check_hresult(shim()->abi_IsAlphabetic(codepoint, &value));
+    check_hresult(static_cast<const IUnicodeCharactersStatics &>(static_cast<const D &>(*this))->abi_IsAlphabetic(codepoint, &value));
     return value;
 }
 
 template <typename D> bool impl_IUnicodeCharactersStatics<D>::IsCased(uint32_t codepoint) const
 {
     bool value {};
-    check_hresult(shim()->abi_IsCased(codepoint, &value));
+    check_hresult(static_cast<const IUnicodeCharactersStatics &>(static_cast<const D &>(*this))->abi_IsCased(codepoint, &value));
     return value;
 }
 
 template <typename D> bool impl_IUnicodeCharactersStatics<D>::IsUppercase(uint32_t codepoint) const
 {
     bool value {};
-    check_hresult(shim()->abi_IsUppercase(codepoint, &value));
+    check_hresult(static_cast<const IUnicodeCharactersStatics &>(static_cast<const D &>(*this))->abi_IsUppercase(codepoint, &value));
     return value;
 }
 
 template <typename D> bool impl_IUnicodeCharactersStatics<D>::IsLowercase(uint32_t codepoint) const
 {
     bool value {};
-    check_hresult(shim()->abi_IsLowercase(codepoint, &value));
+    check_hresult(static_cast<const IUnicodeCharactersStatics &>(static_cast<const D &>(*this))->abi_IsLowercase(codepoint, &value));
     return value;
 }
 
 template <typename D> bool impl_IUnicodeCharactersStatics<D>::IsIdStart(uint32_t codepoint) const
 {
     bool value {};
-    check_hresult(shim()->abi_IsIdStart(codepoint, &value));
+    check_hresult(static_cast<const IUnicodeCharactersStatics &>(static_cast<const D &>(*this))->abi_IsIdStart(codepoint, &value));
     return value;
 }
 
 template <typename D> bool impl_IUnicodeCharactersStatics<D>::IsIdContinue(uint32_t codepoint) const
 {
     bool value {};
-    check_hresult(shim()->abi_IsIdContinue(codepoint, &value));
+    check_hresult(static_cast<const IUnicodeCharactersStatics &>(static_cast<const D &>(*this))->abi_IsIdContinue(codepoint, &value));
     return value;
 }
 
 template <typename D> bool impl_IUnicodeCharactersStatics<D>::IsGraphemeBase(uint32_t codepoint) const
 {
     bool value {};
-    check_hresult(shim()->abi_IsGraphemeBase(codepoint, &value));
+    check_hresult(static_cast<const IUnicodeCharactersStatics &>(static_cast<const D &>(*this))->abi_IsGraphemeBase(codepoint, &value));
     return value;
 }
 
 template <typename D> bool impl_IUnicodeCharactersStatics<D>::IsGraphemeExtend(uint32_t codepoint) const
 {
     bool value {};
-    check_hresult(shim()->abi_IsGraphemeExtend(codepoint, &value));
+    check_hresult(static_cast<const IUnicodeCharactersStatics &>(static_cast<const D &>(*this))->abi_IsGraphemeExtend(codepoint, &value));
     return value;
 }
 
 template <typename D> Windows::Data::Text::UnicodeNumericType impl_IUnicodeCharactersStatics<D>::GetNumericType(uint32_t codepoint) const
 {
     Windows::Data::Text::UnicodeNumericType value {};
-    check_hresult(shim()->abi_GetNumericType(codepoint, &value));
+    check_hresult(static_cast<const IUnicodeCharactersStatics &>(static_cast<const D &>(*this))->abi_GetNumericType(codepoint, &value));
     return value;
 }
 
 template <typename D> Windows::Data::Text::UnicodeGeneralCategory impl_IUnicodeCharactersStatics<D>::GetGeneralCategory(uint32_t codepoint) const
 {
     Windows::Data::Text::UnicodeGeneralCategory value {};
-    check_hresult(shim()->abi_GetGeneralCategory(codepoint, &value));
+    check_hresult(static_cast<const IUnicodeCharactersStatics &>(static_cast<const D &>(*this))->abi_GetGeneralCategory(codepoint, &value));
     return value;
 }
 
 template <typename D> Windows::Data::Text::TextSegment impl_IAlternateWordForm<D>::SourceTextSegment() const
 {
     Windows::Data::Text::TextSegment value {};
-    check_hresult(shim()->get_SourceTextSegment(put(value)));
+    check_hresult(static_cast<const IAlternateWordForm &>(static_cast<const D &>(*this))->get_SourceTextSegment(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAlternateWordForm<D>::AlternateText() const
 {
     hstring value;
-    check_hresult(shim()->get_AlternateText(put(value)));
+    check_hresult(static_cast<const IAlternateWordForm &>(static_cast<const D &>(*this))->get_AlternateText(put(value)));
     return value;
 }
 
 template <typename D> Windows::Data::Text::AlternateNormalizationFormat impl_IAlternateWordForm<D>::NormalizationFormat() const
 {
     Windows::Data::Text::AlternateNormalizationFormat value {};
-    check_hresult(shim()->get_NormalizationFormat(&value));
+    check_hresult(static_cast<const IAlternateWordForm &>(static_cast<const D &>(*this))->get_NormalizationFormat(&value));
     return value;
 }
 
 template <typename D> hstring impl_ISelectableWordSegment<D>::Text() const
 {
     hstring value;
-    check_hresult(shim()->get_Text(put(value)));
+    check_hresult(static_cast<const ISelectableWordSegment &>(static_cast<const D &>(*this))->get_Text(put(value)));
     return value;
 }
 
 template <typename D> Windows::Data::Text::TextSegment impl_ISelectableWordSegment<D>::SourceTextSegment() const
 {
     Windows::Data::Text::TextSegment value {};
-    check_hresult(shim()->get_SourceTextSegment(put(value)));
+    check_hresult(static_cast<const ISelectableWordSegment &>(static_cast<const D &>(*this))->get_SourceTextSegment(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IWordSegment<D>::Text() const
 {
     hstring value;
-    check_hresult(shim()->get_Text(put(value)));
+    check_hresult(static_cast<const IWordSegment &>(static_cast<const D &>(*this))->get_Text(put(value)));
     return value;
 }
 
 template <typename D> Windows::Data::Text::TextSegment impl_IWordSegment<D>::SourceTextSegment() const
 {
     Windows::Data::Text::TextSegment value {};
-    check_hresult(shim()->get_SourceTextSegment(put(value)));
+    check_hresult(static_cast<const IWordSegment &>(static_cast<const D &>(*this))->get_SourceTextSegment(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Data::Text::AlternateWordForm> impl_IWordSegment<D>::AlternateForms() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Data::Text::AlternateWordForm> value;
-    check_hresult(shim()->get_AlternateForms(put(value)));
+    check_hresult(static_cast<const IWordSegment &>(static_cast<const D &>(*this))->get_AlternateForms(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IWordsSegmenter<D>::ResolvedLanguage() const
 {
     hstring value;
-    check_hresult(shim()->get_ResolvedLanguage(put(value)));
+    check_hresult(static_cast<const IWordsSegmenter &>(static_cast<const D &>(*this))->get_ResolvedLanguage(put(value)));
     return value;
 }
 
 template <typename D> Windows::Data::Text::WordSegment impl_IWordsSegmenter<D>::GetTokenAt(hstring_ref text, uint32_t startIndex) const
 {
     Windows::Data::Text::WordSegment result { nullptr };
-    check_hresult(shim()->abi_GetTokenAt(get(text), startIndex, put(result)));
+    check_hresult(static_cast<const IWordsSegmenter &>(static_cast<const D &>(*this))->abi_GetTokenAt(get(text), startIndex, put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Data::Text::WordSegment> impl_IWordsSegmenter<D>::GetTokens(hstring_ref text) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Data::Text::WordSegment> result;
-    check_hresult(shim()->abi_GetTokens(get(text), put(result)));
+    check_hresult(static_cast<const IWordsSegmenter &>(static_cast<const D &>(*this))->abi_GetTokens(get(text), put(result)));
     return result;
 }
 
 template <typename D> void impl_IWordsSegmenter<D>::Tokenize(hstring_ref text, uint32_t startIndex, const Windows::Data::Text::WordSegmentsTokenizingHandler & handler) const
 {
-    check_hresult(shim()->abi_Tokenize(get(text), startIndex, get(handler)));
+    check_hresult(static_cast<const IWordsSegmenter &>(static_cast<const D &>(*this))->abi_Tokenize(get(text), startIndex, get(handler)));
 }
 
 template <typename D> Windows::Data::Text::WordsSegmenter impl_IWordsSegmenterFactory<D>::CreateWithLanguage(hstring_ref language) const
 {
     Windows::Data::Text::WordsSegmenter result { nullptr };
-    check_hresult(shim()->abi_CreateWithLanguage(get(language), put(result)));
+    check_hresult(static_cast<const IWordsSegmenterFactory &>(static_cast<const D &>(*this))->abi_CreateWithLanguage(get(language), put(result)));
     return result;
 }
 
 template <typename D> hstring impl_ISelectableWordsSegmenter<D>::ResolvedLanguage() const
 {
     hstring value;
-    check_hresult(shim()->get_ResolvedLanguage(put(value)));
+    check_hresult(static_cast<const ISelectableWordsSegmenter &>(static_cast<const D &>(*this))->get_ResolvedLanguage(put(value)));
     return value;
 }
 
 template <typename D> Windows::Data::Text::SelectableWordSegment impl_ISelectableWordsSegmenter<D>::GetTokenAt(hstring_ref text, uint32_t startIndex) const
 {
     Windows::Data::Text::SelectableWordSegment result { nullptr };
-    check_hresult(shim()->abi_GetTokenAt(get(text), startIndex, put(result)));
+    check_hresult(static_cast<const ISelectableWordsSegmenter &>(static_cast<const D &>(*this))->abi_GetTokenAt(get(text), startIndex, put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Data::Text::SelectableWordSegment> impl_ISelectableWordsSegmenter<D>::GetTokens(hstring_ref text) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Data::Text::SelectableWordSegment> result;
-    check_hresult(shim()->abi_GetTokens(get(text), put(result)));
+    check_hresult(static_cast<const ISelectableWordsSegmenter &>(static_cast<const D &>(*this))->abi_GetTokens(get(text), put(result)));
     return result;
 }
 
 template <typename D> void impl_ISelectableWordsSegmenter<D>::Tokenize(hstring_ref text, uint32_t startIndex, const Windows::Data::Text::SelectableWordSegmentsTokenizingHandler & handler) const
 {
-    check_hresult(shim()->abi_Tokenize(get(text), startIndex, get(handler)));
+    check_hresult(static_cast<const ISelectableWordsSegmenter &>(static_cast<const D &>(*this))->abi_Tokenize(get(text), startIndex, get(handler)));
 }
 
 template <typename D> Windows::Data::Text::SelectableWordsSegmenter impl_ISelectableWordsSegmenterFactory<D>::CreateWithLanguage(hstring_ref language) const
 {
     Windows::Data::Text::SelectableWordsSegmenter result { nullptr };
-    check_hresult(shim()->abi_CreateWithLanguage(get(language), put(result)));
+    check_hresult(static_cast<const ISelectableWordsSegmenterFactory &>(static_cast<const D &>(*this))->abi_CreateWithLanguage(get(language), put(result)));
     return result;
 }
 
 template <typename D> hstring impl_ITextPredictionGenerator<D>::ResolvedLanguage() const
 {
     hstring value;
-    check_hresult(shim()->get_ResolvedLanguage(put(value)));
+    check_hresult(static_cast<const ITextPredictionGenerator &>(static_cast<const D &>(*this))->get_ResolvedLanguage(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ITextPredictionGenerator<D>::LanguageAvailableButNotInstalled() const
 {
     bool value {};
-    check_hresult(shim()->get_LanguageAvailableButNotInstalled(&value));
+    check_hresult(static_cast<const ITextPredictionGenerator &>(static_cast<const D &>(*this))->get_LanguageAvailableButNotInstalled(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> impl_ITextPredictionGenerator<D>::GetCandidatesAsync(hstring_ref input) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> result;
-    check_hresult(shim()->abi_GetCandidatesAsync(get(input), put(result)));
+    check_hresult(static_cast<const ITextPredictionGenerator &>(static_cast<const D &>(*this))->abi_GetCandidatesAsync(get(input), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> impl_ITextPredictionGenerator<D>::GetCandidatesAsync(hstring_ref input, uint32_t maxCandidates) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> result;
-    check_hresult(shim()->abi_GetCandidatesWithMaxCountAsync(get(input), maxCandidates, put(result)));
+    check_hresult(static_cast<const ITextPredictionGenerator &>(static_cast<const D &>(*this))->abi_GetCandidatesWithMaxCountAsync(get(input), maxCandidates, put(result)));
     return result;
 }
 
 template <typename D> Windows::Data::Text::TextPredictionGenerator impl_ITextPredictionGeneratorFactory<D>::Create(hstring_ref languageTag) const
 {
     Windows::Data::Text::TextPredictionGenerator result { nullptr };
-    check_hresult(shim()->abi_Create(get(languageTag), put(result)));
+    check_hresult(static_cast<const ITextPredictionGeneratorFactory &>(static_cast<const D &>(*this))->abi_Create(get(languageTag), put(result)));
     return result;
 }
 
 template <typename D> hstring impl_ITextConversionGenerator<D>::ResolvedLanguage() const
 {
     hstring value;
-    check_hresult(shim()->get_ResolvedLanguage(put(value)));
+    check_hresult(static_cast<const ITextConversionGenerator &>(static_cast<const D &>(*this))->get_ResolvedLanguage(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ITextConversionGenerator<D>::LanguageAvailableButNotInstalled() const
 {
     bool value {};
-    check_hresult(shim()->get_LanguageAvailableButNotInstalled(&value));
+    check_hresult(static_cast<const ITextConversionGenerator &>(static_cast<const D &>(*this))->get_LanguageAvailableButNotInstalled(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> impl_ITextConversionGenerator<D>::GetCandidatesAsync(hstring_ref input) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> result;
-    check_hresult(shim()->abi_GetCandidatesAsync(get(input), put(result)));
+    check_hresult(static_cast<const ITextConversionGenerator &>(static_cast<const D &>(*this))->abi_GetCandidatesAsync(get(input), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> impl_ITextConversionGenerator<D>::GetCandidatesAsync(hstring_ref input, uint32_t maxCandidates) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> result;
-    check_hresult(shim()->abi_GetCandidatesWithMaxCountAsync(get(input), maxCandidates, put(result)));
+    check_hresult(static_cast<const ITextConversionGenerator &>(static_cast<const D &>(*this))->abi_GetCandidatesWithMaxCountAsync(get(input), maxCandidates, put(result)));
     return result;
 }
 
 template <typename D> Windows::Data::Text::TextConversionGenerator impl_ITextConversionGeneratorFactory<D>::Create(hstring_ref languageTag) const
 {
     Windows::Data::Text::TextConversionGenerator result { nullptr };
-    check_hresult(shim()->abi_Create(get(languageTag), put(result)));
+    check_hresult(static_cast<const ITextConversionGeneratorFactory &>(static_cast<const D &>(*this))->abi_Create(get(languageTag), put(result)));
     return result;
 }
 
 template <typename D> hstring impl_ITextReverseConversionGenerator<D>::ResolvedLanguage() const
 {
     hstring value;
-    check_hresult(shim()->get_ResolvedLanguage(put(value)));
+    check_hresult(static_cast<const ITextReverseConversionGenerator &>(static_cast<const D &>(*this))->get_ResolvedLanguage(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ITextReverseConversionGenerator<D>::LanguageAvailableButNotInstalled() const
 {
     bool value {};
-    check_hresult(shim()->get_LanguageAvailableButNotInstalled(&value));
+    check_hresult(static_cast<const ITextReverseConversionGenerator &>(static_cast<const D &>(*this))->get_LanguageAvailableButNotInstalled(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_ITextReverseConversionGenerator<D>::ConvertBackAsync(hstring_ref input) const
 {
     Windows::Foundation::IAsyncOperation<hstring> result;
-    check_hresult(shim()->abi_ConvertBackAsync(get(input), put(result)));
+    check_hresult(static_cast<const ITextReverseConversionGenerator &>(static_cast<const D &>(*this))->abi_ConvertBackAsync(get(input), put(result)));
     return result;
 }
 
 template <typename D> Windows::Data::Text::TextReverseConversionGenerator impl_ITextReverseConversionGeneratorFactory<D>::Create(hstring_ref languageTag) const
 {
     Windows::Data::Text::TextReverseConversionGenerator result { nullptr };
-    check_hresult(shim()->abi_Create(get(languageTag), put(result)));
+    check_hresult(static_cast<const ITextReverseConversionGeneratorFactory &>(static_cast<const D &>(*this))->abi_Create(get(languageTag), put(result)));
     return result;
 }
 
 template <typename D> hstring impl_ITextPhoneme<D>::DisplayText() const
 {
     hstring value;
-    check_hresult(shim()->get_DisplayText(put(value)));
+    check_hresult(static_cast<const ITextPhoneme &>(static_cast<const D &>(*this))->get_DisplayText(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ITextPhoneme<D>::ReadingText() const
 {
     hstring value;
-    check_hresult(shim()->get_ReadingText(put(value)));
+    check_hresult(static_cast<const ITextPhoneme &>(static_cast<const D &>(*this))->get_ReadingText(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextPhoneme>> impl_ITextReverseConversionGenerator2<D>::GetPhonemesAsync(hstring_ref input) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextPhoneme>> result;
-    check_hresult(shim()->abi_GetPhonemesAsync(get(input), put(result)));
+    check_hresult(static_cast<const ITextReverseConversionGenerator2 &>(static_cast<const D &>(*this))->abi_GetPhonemesAsync(get(input), put(result)));
     return result;
 }
 

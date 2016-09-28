@@ -81,12 +81,8 @@ template <> struct __declspec(uuid("3b9d7cb1-ae0b-56af-8ed5-6856b1e7cd5b")) __de
 namespace Windows::Devices::I2c {
 
 template <typename D>
-class WINRT_EBO impl_II2cConnectionSettings
+struct WINRT_EBO impl_II2cConnectionSettings
 {
-    auto shim() const { return impl::shim<D, II2cConnectionSettings>(this); }
-
-public:
-
     int32_t SlaveAddress() const;
     void SlaveAddress(int32_t value) const;
     Windows::Devices::I2c::I2cBusSpeed BusSpeed() const;
@@ -96,43 +92,27 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_II2cConnectionSettingsFactory
+struct WINRT_EBO impl_II2cConnectionSettingsFactory
 {
-    auto shim() const { return impl::shim<D, II2cConnectionSettingsFactory>(this); }
-
-public:
-
     Windows::Devices::I2c::I2cConnectionSettings Create(int32_t slaveAddress) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_II2cController
+struct WINRT_EBO impl_II2cController
 {
-    auto shim() const { return impl::shim<D, II2cController>(this); }
-
-public:
-
     Windows::Devices::I2c::I2cDevice GetDevice(const Windows::Devices::I2c::I2cConnectionSettings & settings) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_II2cControllerStatics
+struct WINRT_EBO impl_II2cControllerStatics
 {
-    auto shim() const { return impl::shim<D, II2cControllerStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::I2c::I2cController>> GetControllersAsync(const Windows::Devices::I2c::Provider::II2cProvider & provider) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::I2c::I2cController> GetDefaultAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_II2cDevice
+struct WINRT_EBO impl_II2cDevice
 {
-    auto shim() const { return impl::shim<D, II2cDevice>(this); }
-
-public:
-
     hstring DeviceId() const;
     Windows::Devices::I2c::I2cConnectionSettings ConnectionSettings() const;
     void Write(array_ref<const uint8_t> buffer) const;
@@ -144,12 +124,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_II2cDeviceStatics
+struct WINRT_EBO impl_II2cDeviceStatics
 {
-    auto shim() const { return impl::shim<D, II2cDeviceStatics>(this); }
-
-public:
-
     hstring GetDeviceSelector() const;
     hstring GetDeviceSelector(hstring_ref friendlyName) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::I2c::I2cDevice> FromIdAsync(hstring_ref deviceId, const Windows::Devices::I2c::I2cConnectionSettings & settings) const;

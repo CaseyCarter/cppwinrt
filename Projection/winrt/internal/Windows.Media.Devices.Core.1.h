@@ -195,25 +195,25 @@ template <> struct traits<Windows::Media::Devices::Core::VariablePhotoSequenceCo
 
 namespace Windows::Media::Devices::Core {
 
-template <typename T> class impl_ICameraIntrinsics;
-template <typename T> class impl_ICameraIntrinsics2;
-template <typename T> class impl_ICameraIntrinsicsFactory;
-template <typename T> class impl_IDepthCorrelatedCoordinateMapper;
-template <typename T> class impl_IFrameControlCapabilities;
-template <typename T> class impl_IFrameControlCapabilities2;
-template <typename T> class impl_IFrameController;
-template <typename T> class impl_IFrameController2;
-template <typename T> class impl_IFrameExposureCapabilities;
-template <typename T> class impl_IFrameExposureCompensationCapabilities;
-template <typename T> class impl_IFrameExposureCompensationControl;
-template <typename T> class impl_IFrameExposureControl;
-template <typename T> class impl_IFrameFlashCapabilities;
-template <typename T> class impl_IFrameFlashControl;
-template <typename T> class impl_IFrameFocusCapabilities;
-template <typename T> class impl_IFrameFocusControl;
-template <typename T> class impl_IFrameIsoSpeedCapabilities;
-template <typename T> class impl_IFrameIsoSpeedControl;
-template <typename T> class impl_IVariablePhotoSequenceController;
+template <typename T> struct impl_ICameraIntrinsics;
+template <typename T> struct impl_ICameraIntrinsics2;
+template <typename T> struct impl_ICameraIntrinsicsFactory;
+template <typename T> struct impl_IDepthCorrelatedCoordinateMapper;
+template <typename T> struct impl_IFrameControlCapabilities;
+template <typename T> struct impl_IFrameControlCapabilities2;
+template <typename T> struct impl_IFrameController;
+template <typename T> struct impl_IFrameController2;
+template <typename T> struct impl_IFrameExposureCapabilities;
+template <typename T> struct impl_IFrameExposureCompensationCapabilities;
+template <typename T> struct impl_IFrameExposureCompensationControl;
+template <typename T> struct impl_IFrameExposureControl;
+template <typename T> struct impl_IFrameFlashCapabilities;
+template <typename T> struct impl_IFrameFlashControl;
+template <typename T> struct impl_IFrameFocusCapabilities;
+template <typename T> struct impl_IFrameFocusControl;
+template <typename T> struct impl_IFrameIsoSpeedCapabilities;
+template <typename T> struct impl_IFrameIsoSpeedControl;
+template <typename T> struct impl_IVariablePhotoSequenceController;
 
 }
 
@@ -336,105 +336,90 @@ template <> struct traits<Windows::Media::Devices::Core::IVariablePhotoSequenceC
 template <> struct traits<Windows::Media::Devices::Core::CameraIntrinsics>
 {
     using abi = ABI::Windows::Media::Devices::Core::CameraIntrinsics;
-    using default_interface = Windows::Media::Devices::Core::ICameraIntrinsics;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.Core.CameraIntrinsics"; }
 };
 
 template <> struct traits<Windows::Media::Devices::Core::DepthCorrelatedCoordinateMapper>
 {
     using abi = ABI::Windows::Media::Devices::Core::DepthCorrelatedCoordinateMapper;
-    using default_interface = Windows::Media::Devices::Core::IDepthCorrelatedCoordinateMapper;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.Core.DepthCorrelatedCoordinateMapper"; }
 };
 
 template <> struct traits<Windows::Media::Devices::Core::FrameControlCapabilities>
 {
     using abi = ABI::Windows::Media::Devices::Core::FrameControlCapabilities;
-    using default_interface = Windows::Media::Devices::Core::IFrameControlCapabilities;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.Core.FrameControlCapabilities"; }
 };
 
 template <> struct traits<Windows::Media::Devices::Core::FrameController>
 {
     using abi = ABI::Windows::Media::Devices::Core::FrameController;
-    using default_interface = Windows::Media::Devices::Core::IFrameController;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.Core.FrameController"; }
 };
 
 template <> struct traits<Windows::Media::Devices::Core::FrameExposureCapabilities>
 {
     using abi = ABI::Windows::Media::Devices::Core::FrameExposureCapabilities;
-    using default_interface = Windows::Media::Devices::Core::IFrameExposureCapabilities;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.Core.FrameExposureCapabilities"; }
 };
 
 template <> struct traits<Windows::Media::Devices::Core::FrameExposureCompensationCapabilities>
 {
     using abi = ABI::Windows::Media::Devices::Core::FrameExposureCompensationCapabilities;
-    using default_interface = Windows::Media::Devices::Core::IFrameExposureCompensationCapabilities;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.Core.FrameExposureCompensationCapabilities"; }
 };
 
 template <> struct traits<Windows::Media::Devices::Core::FrameExposureCompensationControl>
 {
     using abi = ABI::Windows::Media::Devices::Core::FrameExposureCompensationControl;
-    using default_interface = Windows::Media::Devices::Core::IFrameExposureCompensationControl;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.Core.FrameExposureCompensationControl"; }
 };
 
 template <> struct traits<Windows::Media::Devices::Core::FrameExposureControl>
 {
     using abi = ABI::Windows::Media::Devices::Core::FrameExposureControl;
-    using default_interface = Windows::Media::Devices::Core::IFrameExposureControl;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.Core.FrameExposureControl"; }
 };
 
 template <> struct traits<Windows::Media::Devices::Core::FrameFlashCapabilities>
 {
     using abi = ABI::Windows::Media::Devices::Core::FrameFlashCapabilities;
-    using default_interface = Windows::Media::Devices::Core::IFrameFlashCapabilities;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.Core.FrameFlashCapabilities"; }
 };
 
 template <> struct traits<Windows::Media::Devices::Core::FrameFlashControl>
 {
     using abi = ABI::Windows::Media::Devices::Core::FrameFlashControl;
-    using default_interface = Windows::Media::Devices::Core::IFrameFlashControl;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.Core.FrameFlashControl"; }
 };
 
 template <> struct traits<Windows::Media::Devices::Core::FrameFocusCapabilities>
 {
     using abi = ABI::Windows::Media::Devices::Core::FrameFocusCapabilities;
-    using default_interface = Windows::Media::Devices::Core::IFrameFocusCapabilities;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.Core.FrameFocusCapabilities"; }
 };
 
 template <> struct traits<Windows::Media::Devices::Core::FrameFocusControl>
 {
     using abi = ABI::Windows::Media::Devices::Core::FrameFocusControl;
-    using default_interface = Windows::Media::Devices::Core::IFrameFocusControl;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.Core.FrameFocusControl"; }
 };
 
 template <> struct traits<Windows::Media::Devices::Core::FrameIsoSpeedCapabilities>
 {
     using abi = ABI::Windows::Media::Devices::Core::FrameIsoSpeedCapabilities;
-    using default_interface = Windows::Media::Devices::Core::IFrameIsoSpeedCapabilities;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.Core.FrameIsoSpeedCapabilities"; }
 };
 
 template <> struct traits<Windows::Media::Devices::Core::FrameIsoSpeedControl>
 {
     using abi = ABI::Windows::Media::Devices::Core::FrameIsoSpeedControl;
-    using default_interface = Windows::Media::Devices::Core::IFrameIsoSpeedControl;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.Core.FrameIsoSpeedControl"; }
 };
 
 template <> struct traits<Windows::Media::Devices::Core::VariablePhotoSequenceController>
 {
     using abi = ABI::Windows::Media::Devices::Core::VariablePhotoSequenceController;
-    using default_interface = Windows::Media::Devices::Core::IVariablePhotoSequenceController;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Media.Devices.Core.VariablePhotoSequenceController"; }
 };
 

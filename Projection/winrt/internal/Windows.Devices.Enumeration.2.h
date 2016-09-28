@@ -257,32 +257,20 @@ template <> struct __declspec(uuid("5db5fa32-707c-5849-a06b-91c8eb9d10e8")) __de
 namespace Windows::Devices::Enumeration {
 
 template <typename D>
-class WINRT_EBO impl_IDeviceAccessChangedEventArgs
+struct WINRT_EBO impl_IDeviceAccessChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IDeviceAccessChangedEventArgs>(this); }
-
-public:
-
     Windows::Devices::Enumeration::DeviceAccessStatus Status() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDeviceAccessChangedEventArgs2
+struct WINRT_EBO impl_IDeviceAccessChangedEventArgs2
 {
-    auto shim() const { return impl::shim<D, IDeviceAccessChangedEventArgs2>(this); }
-
-public:
-
     hstring Id() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDeviceAccessInformation
+struct WINRT_EBO impl_IDeviceAccessInformation
 {
-    auto shim() const { return impl::shim<D, IDeviceAccessInformation>(this); }
-
-public:
-
     event_token AccessChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceAccessInformation, Windows::Devices::Enumeration::DeviceAccessChangedEventArgs> & handler) const;
     using AccessChanged_revoker = event_revoker<IDeviceAccessInformation>;
     AccessChanged_revoker AccessChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceAccessInformation, Windows::Devices::Enumeration::DeviceAccessChangedEventArgs> & handler) const;
@@ -291,44 +279,28 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDeviceAccessInformationStatics
+struct WINRT_EBO impl_IDeviceAccessInformationStatics
 {
-    auto shim() const { return impl::shim<D, IDeviceAccessInformationStatics>(this); }
-
-public:
-
     Windows::Devices::Enumeration::DeviceAccessInformation CreateFromId(hstring_ref deviceId) const;
     Windows::Devices::Enumeration::DeviceAccessInformation CreateFromDeviceClassId(GUID deviceClassId) const;
     Windows::Devices::Enumeration::DeviceAccessInformation CreateFromDeviceClass(Windows::Devices::Enumeration::DeviceClass deviceClass) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDeviceConnectionChangeTriggerDetails
+struct WINRT_EBO impl_IDeviceConnectionChangeTriggerDetails
 {
-    auto shim() const { return impl::shim<D, IDeviceConnectionChangeTriggerDetails>(this); }
-
-public:
-
     hstring DeviceId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDeviceDisconnectButtonClickedEventArgs
+struct WINRT_EBO impl_IDeviceDisconnectButtonClickedEventArgs
 {
-    auto shim() const { return impl::shim<D, IDeviceDisconnectButtonClickedEventArgs>(this); }
-
-public:
-
     Windows::Devices::Enumeration::DeviceInformation Device() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDeviceInformation
+struct WINRT_EBO impl_IDeviceInformation
 {
-    auto shim() const { return impl::shim<D, IDeviceInformation>(this); }
-
-public:
-
     hstring Id() const;
     hstring Name() const;
     bool IsEnabled() const;
@@ -341,23 +313,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDeviceInformation2
+struct WINRT_EBO impl_IDeviceInformation2
 {
-    auto shim() const { return impl::shim<D, IDeviceInformation2>(this); }
-
-public:
-
     Windows::Devices::Enumeration::DeviceInformationKind Kind() const;
     Windows::Devices::Enumeration::DeviceInformationPairing Pairing() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDeviceInformationCustomPairing
+struct WINRT_EBO impl_IDeviceInformationCustomPairing
 {
-    auto shim() const { return impl::shim<D, IDeviceInformationCustomPairing>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DevicePairingResult> PairAsync(Windows::Devices::Enumeration::DevicePairingKinds pairingKindsSupported) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DevicePairingResult> PairAsync(Windows::Devices::Enumeration::DevicePairingKinds pairingKindsSupported, Windows::Devices::Enumeration::DevicePairingProtectionLevel minProtectionLevel) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DevicePairingResult> PairAsync(Windows::Devices::Enumeration::DevicePairingKinds pairingKindsSupported, Windows::Devices::Enumeration::DevicePairingProtectionLevel minProtectionLevel, const Windows::Devices::Enumeration::IDevicePairingSettings & devicePairingSettings) const;
@@ -368,12 +332,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDeviceInformationPairing
+struct WINRT_EBO impl_IDeviceInformationPairing
 {
-    auto shim() const { return impl::shim<D, IDeviceInformationPairing>(this); }
-
-public:
-
     bool IsPaired() const;
     bool CanPair() const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DevicePairingResult> PairAsync() const;
@@ -381,12 +341,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDeviceInformationPairing2
+struct WINRT_EBO impl_IDeviceInformationPairing2
 {
-    auto shim() const { return impl::shim<D, IDeviceInformationPairing2>(this); }
-
-public:
-
     Windows::Devices::Enumeration::DevicePairingProtectionLevel ProtectionLevel() const;
     Windows::Devices::Enumeration::DeviceInformationCustomPairing Custom() const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DevicePairingResult> PairAsync(Windows::Devices::Enumeration::DevicePairingProtectionLevel minProtectionLevel, const Windows::Devices::Enumeration::IDevicePairingSettings & devicePairingSettings) const;
@@ -394,22 +350,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDeviceInformationPairingStatics
+struct WINRT_EBO impl_IDeviceInformationPairingStatics
 {
-    auto shim() const { return impl::shim<D, IDeviceInformationPairingStatics>(this); }
-
-public:
-
     bool TryRegisterForAllInboundPairingRequests(Windows::Devices::Enumeration::DevicePairingKinds pairingKindsSupported) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDeviceInformationStatics
+struct WINRT_EBO impl_IDeviceInformationStatics
 {
-    auto shim() const { return impl::shim<D, IDeviceInformationStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> CreateFromIdAsync(hstring_ref deviceId) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> CreateFromIdAsync(hstring_ref deviceId, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync() const;
@@ -423,12 +371,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDeviceInformationStatics2
+struct WINRT_EBO impl_IDeviceInformationStatics2
 {
-    auto shim() const { return impl::shim<D, IDeviceInformationStatics2>(this); }
-
-public:
-
     hstring GetAqsFilterFromDeviceClass(Windows::Devices::Enumeration::DeviceClass deviceClass) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> CreateFromIdAsync(hstring_ref deviceId, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync(hstring_ref aqsFilter, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind) const;
@@ -436,33 +380,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDeviceInformationUpdate
+struct WINRT_EBO impl_IDeviceInformationUpdate
 {
-    auto shim() const { return impl::shim<D, IDeviceInformationUpdate>(this); }
-
-public:
-
     hstring Id() const;
     Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> Properties() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDeviceInformationUpdate2
+struct WINRT_EBO impl_IDeviceInformationUpdate2
 {
-    auto shim() const { return impl::shim<D, IDeviceInformationUpdate2>(this); }
-
-public:
-
     Windows::Devices::Enumeration::DeviceInformationKind Kind() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDevicePairingRequestedEventArgs
+struct WINRT_EBO impl_IDevicePairingRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, IDevicePairingRequestedEventArgs>(this); }
-
-public:
-
     Windows::Devices::Enumeration::DeviceInformation DeviceInformation() const;
     Windows::Devices::Enumeration::DevicePairingKinds PairingKind() const;
     hstring Pin() const;
@@ -472,32 +404,20 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDevicePairingResult
+struct WINRT_EBO impl_IDevicePairingResult
 {
-    auto shim() const { return impl::shim<D, IDevicePairingResult>(this); }
-
-public:
-
     Windows::Devices::Enumeration::DevicePairingResultStatus Status() const;
     Windows::Devices::Enumeration::DevicePairingProtectionLevel ProtectionLevelUsed() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDevicePairingSettings
+struct WINRT_EBO impl_IDevicePairingSettings
 {
-    auto shim() const { return impl::shim<D, IDevicePairingSettings>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IDevicePicker
+struct WINRT_EBO impl_IDevicePicker
 {
-    auto shim() const { return impl::shim<D, IDevicePicker>(this); }
-
-public:
-
     Windows::Devices::Enumeration::DevicePickerFilter Filter() const;
     Windows::Devices::Enumeration::DevicePickerAppearance Appearance() const;
     Windows::Foundation::Collections::IVector<hstring> RequestedProperties() const;
@@ -522,12 +442,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDevicePickerAppearance
+struct WINRT_EBO impl_IDevicePickerAppearance
 {
-    auto shim() const { return impl::shim<D, IDevicePickerAppearance>(this); }
-
-public:
-
     hstring Title() const;
     void Title(hstring_ref value) const;
     Windows::UI::Color ForegroundColor() const;
@@ -545,43 +461,27 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDevicePickerFilter
+struct WINRT_EBO impl_IDevicePickerFilter
 {
-    auto shim() const { return impl::shim<D, IDevicePickerFilter>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<winrt::Windows::Devices::Enumeration::DeviceClass> SupportedDeviceClasses() const;
     Windows::Foundation::Collections::IVector<hstring> SupportedDeviceSelectors() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDeviceSelectedEventArgs
+struct WINRT_EBO impl_IDeviceSelectedEventArgs
 {
-    auto shim() const { return impl::shim<D, IDeviceSelectedEventArgs>(this); }
-
-public:
-
     Windows::Devices::Enumeration::DeviceInformation SelectedDevice() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDeviceUnpairingResult
+struct WINRT_EBO impl_IDeviceUnpairingResult
 {
-    auto shim() const { return impl::shim<D, IDeviceUnpairingResult>(this); }
-
-public:
-
     Windows::Devices::Enumeration::DeviceUnpairingResultStatus Status() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDeviceWatcher
+struct WINRT_EBO impl_IDeviceWatcher
 {
-    auto shim() const { return impl::shim<D, IDeviceWatcher>(this); }
-
-public:
-
     event_token Added(const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformation> & handler) const;
     using Added_revoker = event_revoker<IDeviceWatcher>;
     Added_revoker Added(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformation> & handler) const;
@@ -608,56 +508,36 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDeviceWatcher2
+struct WINRT_EBO impl_IDeviceWatcher2
 {
-    auto shim() const { return impl::shim<D, IDeviceWatcher2>(this); }
-
-public:
-
     Windows::ApplicationModel::Background::DeviceWatcherTrigger GetBackgroundTrigger(const Windows::Foundation::Collections::IIterable<winrt::Windows::Devices::Enumeration::DeviceWatcherEventKind> & requestedEventKinds) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDeviceWatcherEvent
+struct WINRT_EBO impl_IDeviceWatcherEvent
 {
-    auto shim() const { return impl::shim<D, IDeviceWatcherEvent>(this); }
-
-public:
-
     Windows::Devices::Enumeration::DeviceWatcherEventKind Kind() const;
     Windows::Devices::Enumeration::DeviceInformation DeviceInformation() const;
     Windows::Devices::Enumeration::DeviceInformationUpdate DeviceInformationUpdate() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDeviceWatcherTriggerDetails
+struct WINRT_EBO impl_IDeviceWatcherTriggerDetails
 {
-    auto shim() const { return impl::shim<D, IDeviceWatcherTriggerDetails>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Enumeration::DeviceWatcherEvent> DeviceWatcherEvents() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEnclosureLocation
+struct WINRT_EBO impl_IEnclosureLocation
 {
-    auto shim() const { return impl::shim<D, IEnclosureLocation>(this); }
-
-public:
-
     bool InDock() const;
     bool InLid() const;
     Windows::Devices::Enumeration::Panel Panel() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEnclosureLocation2
+struct WINRT_EBO impl_IEnclosureLocation2
 {
-    auto shim() const { return impl::shim<D, IEnclosureLocation2>(this); }
-
-public:
-
     uint32_t RotationAngleInDegreesClockwise() const;
 };
 

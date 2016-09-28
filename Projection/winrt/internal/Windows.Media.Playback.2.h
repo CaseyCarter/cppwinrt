@@ -312,12 +312,8 @@ template <> struct __declspec(uuid("e1504f46-c4a6-5a29-8fc9-a934d12d7242")) __de
 namespace Windows::Media::Playback {
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundMediaPlayerStatics
+struct WINRT_EBO impl_IBackgroundMediaPlayerStatics
 {
-    auto shim() const { return impl::shim<D, IBackgroundMediaPlayerStatics>(this); }
-
-public:
-
     Windows::Media::Playback::MediaPlayer Current() const;
     event_token MessageReceivedFromBackground(const Windows::Foundation::EventHandler<Windows::Media::Playback::MediaPlayerDataReceivedEventArgs> & value) const;
     using MessageReceivedFromBackground_revoker = event_revoker<IBackgroundMediaPlayerStatics>;
@@ -334,23 +330,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICurrentMediaPlaybackItemChangedEventArgs
+struct WINRT_EBO impl_ICurrentMediaPlaybackItemChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, ICurrentMediaPlaybackItemChangedEventArgs>(this); }
-
-public:
-
     Windows::Media::Playback::MediaPlaybackItem NewItem() const;
     Windows::Media::Playback::MediaPlaybackItem OldItem() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaBreak
+struct WINRT_EBO impl_IMediaBreak
 {
-    auto shim() const { return impl::shim<D, IMediaBreak>(this); }
-
-public:
-
     Windows::Media::Playback::MediaPlaybackList PlaybackList() const;
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> PresentationPosition() const;
     Windows::Media::Playback::MediaBreakInsertionMethod InsertionMethod() const;
@@ -360,33 +348,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaBreakEndedEventArgs
+struct WINRT_EBO impl_IMediaBreakEndedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMediaBreakEndedEventArgs>(this); }
-
-public:
-
     Windows::Media::Playback::MediaBreak MediaBreak() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaBreakFactory
+struct WINRT_EBO impl_IMediaBreakFactory
 {
-    auto shim() const { return impl::shim<D, IMediaBreakFactory>(this); }
-
-public:
-
     Windows::Media::Playback::MediaBreak Create(Windows::Media::Playback::MediaBreakInsertionMethod insertionMethod) const;
     Windows::Media::Playback::MediaBreak CreateWithPresentationPosition(Windows::Media::Playback::MediaBreakInsertionMethod insertionMethod, const Windows::Foundation::TimeSpan & presentationPosition) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaBreakManager
+struct WINRT_EBO impl_IMediaBreakManager
 {
-    auto shim() const { return impl::shim<D, IMediaBreakManager>(this); }
-
-public:
-
     event_token BreaksSeekedOver(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaBreakManager, Windows::Media::Playback::MediaBreakSeekedOverEventArgs> & handler) const;
     using BreaksSeekedOver_revoker = event_revoker<IMediaBreakManager>;
     BreaksSeekedOver_revoker BreaksSeekedOver(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaBreakManager, Windows::Media::Playback::MediaBreakSeekedOverEventArgs> & handler) const;
@@ -410,12 +386,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaBreakSchedule
+struct WINRT_EBO impl_IMediaBreakSchedule
 {
-    auto shim() const { return impl::shim<D, IMediaBreakSchedule>(this); }
-
-public:
-
     event_token ScheduleChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaBreakSchedule, Windows::IInspectable> & handler) const;
     using ScheduleChanged_revoker = event_revoker<IMediaBreakSchedule>;
     ScheduleChanged_revoker ScheduleChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaBreakSchedule, Windows::IInspectable> & handler) const;
@@ -431,55 +403,35 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaBreakSeekedOverEventArgs
+struct WINRT_EBO impl_IMediaBreakSeekedOverEventArgs
 {
-    auto shim() const { return impl::shim<D, IMediaBreakSeekedOverEventArgs>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Media::Playback::MediaBreak> SeekedOverBreaks() const;
     Windows::Foundation::TimeSpan OldPosition() const;
     Windows::Foundation::TimeSpan NewPosition() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaBreakSkippedEventArgs
+struct WINRT_EBO impl_IMediaBreakSkippedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMediaBreakSkippedEventArgs>(this); }
-
-public:
-
     Windows::Media::Playback::MediaBreak MediaBreak() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaBreakStartedEventArgs
+struct WINRT_EBO impl_IMediaBreakStartedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMediaBreakStartedEventArgs>(this); }
-
-public:
-
     Windows::Media::Playback::MediaBreak MediaBreak() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaEnginePlaybackSource
+struct WINRT_EBO impl_IMediaEnginePlaybackSource
 {
-    auto shim() const { return impl::shim<D, IMediaEnginePlaybackSource>(this); }
-
-public:
-
     Windows::Media::Playback::MediaPlaybackItem CurrentItem() const;
     void SetPlaybackSource(const Windows::Media::Playback::IMediaPlaybackSource & source) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaItemDisplayProperties
+struct WINRT_EBO impl_IMediaItemDisplayProperties
 {
-    auto shim() const { return impl::shim<D, IMediaItemDisplayProperties>(this); }
-
-public:
-
     Windows::Media::MediaPlaybackType Type() const;
     void Type(Windows::Media::MediaPlaybackType value) const;
     Windows::Media::MusicDisplayProperties MusicProperties() const;
@@ -490,12 +442,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaPlaybackCommandManager
+struct WINRT_EBO impl_IMediaPlaybackCommandManager
 {
-    auto shim() const { return impl::shim<D, IMediaPlaybackCommandManager>(this); }
-
-public:
-
     bool IsEnabled() const;
     void IsEnabled(bool value) const;
     Windows::Media::Playback::MediaPlayer MediaPlayer() const;
@@ -552,12 +500,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs
+struct WINRT_EBO impl_IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs>(this); }
-
-public:
-
     bool Handled() const;
     void Handled(bool value) const;
     Windows::Media::MediaPlaybackAutoRepeatMode AutoRepeatMode() const;
@@ -565,12 +509,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaPlaybackCommandManagerCommandBehavior
+struct WINRT_EBO impl_IMediaPlaybackCommandManagerCommandBehavior
 {
-    auto shim() const { return impl::shim<D, IMediaPlaybackCommandManagerCommandBehavior>(this); }
-
-public:
-
     Windows::Media::Playback::MediaPlaybackCommandManager CommandManager() const;
     bool IsEnabled() const;
     Windows::Media::Playback::MediaCommandEnablingRule EnablingRule() const;
@@ -582,60 +522,40 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaPlaybackCommandManagerFastForwardReceivedEventArgs
+struct WINRT_EBO impl_IMediaPlaybackCommandManagerFastForwardReceivedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMediaPlaybackCommandManagerFastForwardReceivedEventArgs>(this); }
-
-public:
-
     bool Handled() const;
     void Handled(bool value) const;
     Windows::Foundation::Deferral GetDeferral() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaPlaybackCommandManagerNextReceivedEventArgs
+struct WINRT_EBO impl_IMediaPlaybackCommandManagerNextReceivedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMediaPlaybackCommandManagerNextReceivedEventArgs>(this); }
-
-public:
-
     bool Handled() const;
     void Handled(bool value) const;
     Windows::Foundation::Deferral GetDeferral() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaPlaybackCommandManagerPauseReceivedEventArgs
+struct WINRT_EBO impl_IMediaPlaybackCommandManagerPauseReceivedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMediaPlaybackCommandManagerPauseReceivedEventArgs>(this); }
-
-public:
-
     bool Handled() const;
     void Handled(bool value) const;
     Windows::Foundation::Deferral GetDeferral() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaPlaybackCommandManagerPlayReceivedEventArgs
+struct WINRT_EBO impl_IMediaPlaybackCommandManagerPlayReceivedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMediaPlaybackCommandManagerPlayReceivedEventArgs>(this); }
-
-public:
-
     bool Handled() const;
     void Handled(bool value) const;
     Windows::Foundation::Deferral GetDeferral() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaPlaybackCommandManagerPositionReceivedEventArgs
+struct WINRT_EBO impl_IMediaPlaybackCommandManagerPositionReceivedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMediaPlaybackCommandManagerPositionReceivedEventArgs>(this); }
-
-public:
-
     bool Handled() const;
     void Handled(bool value) const;
     Windows::Foundation::TimeSpan Position() const;
@@ -643,24 +563,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaPlaybackCommandManagerPreviousReceivedEventArgs
+struct WINRT_EBO impl_IMediaPlaybackCommandManagerPreviousReceivedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMediaPlaybackCommandManagerPreviousReceivedEventArgs>(this); }
-
-public:
-
     bool Handled() const;
     void Handled(bool value) const;
     Windows::Foundation::Deferral GetDeferral() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaPlaybackCommandManagerRateReceivedEventArgs
+struct WINRT_EBO impl_IMediaPlaybackCommandManagerRateReceivedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMediaPlaybackCommandManagerRateReceivedEventArgs>(this); }
-
-public:
-
     bool Handled() const;
     void Handled(bool value) const;
     double PlaybackRate() const;
@@ -668,24 +580,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaPlaybackCommandManagerRewindReceivedEventArgs
+struct WINRT_EBO impl_IMediaPlaybackCommandManagerRewindReceivedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMediaPlaybackCommandManagerRewindReceivedEventArgs>(this); }
-
-public:
-
     bool Handled() const;
     void Handled(bool value) const;
     Windows::Foundation::Deferral GetDeferral() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaPlaybackCommandManagerShuffleReceivedEventArgs
+struct WINRT_EBO impl_IMediaPlaybackCommandManagerShuffleReceivedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMediaPlaybackCommandManagerShuffleReceivedEventArgs>(this); }
-
-public:
-
     bool Handled() const;
     void Handled(bool value) const;
     bool IsShuffleRequested() const;
@@ -693,12 +597,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaPlaybackItem
+struct WINRT_EBO impl_IMediaPlaybackItem
 {
-    auto shim() const { return impl::shim<D, IMediaPlaybackItem>(this); }
-
-public:
-
     event_token AudioTracksChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackItem, Windows::Foundation::Collections::IVectorChangedEventArgs> & handler) const;
     using AudioTracksChanged_revoker = event_revoker<IMediaPlaybackItem>;
     AudioTracksChanged_revoker AudioTracksChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackItem, Windows::Foundation::Collections::IVectorChangedEventArgs> & handler) const;
@@ -718,12 +618,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaPlaybackItem2
+struct WINRT_EBO impl_IMediaPlaybackItem2
 {
-    auto shim() const { return impl::shim<D, IMediaPlaybackItem2>(this); }
-
-public:
-
     Windows::Media::Playback::MediaBreakSchedule BreakSchedule() const;
     Windows::Foundation::TimeSpan StartTime() const;
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> DurationLimit() const;
@@ -734,75 +630,47 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaPlaybackItemError
+struct WINRT_EBO impl_IMediaPlaybackItemError
 {
-    auto shim() const { return impl::shim<D, IMediaPlaybackItemError>(this); }
-
-public:
-
     Windows::Media::Playback::MediaPlaybackItemErrorCode ErrorCode() const;
     HRESULT ExtendedError() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaPlaybackItemFactory
+struct WINRT_EBO impl_IMediaPlaybackItemFactory
 {
-    auto shim() const { return impl::shim<D, IMediaPlaybackItemFactory>(this); }
-
-public:
-
     Windows::Media::Playback::MediaPlaybackItem Create(const Windows::Media::Core::MediaSource & source) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaPlaybackItemFactory2
+struct WINRT_EBO impl_IMediaPlaybackItemFactory2
 {
-    auto shim() const { return impl::shim<D, IMediaPlaybackItemFactory2>(this); }
-
-public:
-
     Windows::Media::Playback::MediaPlaybackItem CreateWithStartTime(const Windows::Media::Core::MediaSource & source, const Windows::Foundation::TimeSpan & startTime) const;
     Windows::Media::Playback::MediaPlaybackItem CreateWithStartTimeAndDurationLimit(const Windows::Media::Core::MediaSource & source, const Windows::Foundation::TimeSpan & startTime, const Windows::Foundation::TimeSpan & durationLimit) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaPlaybackItemFailedEventArgs
+struct WINRT_EBO impl_IMediaPlaybackItemFailedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMediaPlaybackItemFailedEventArgs>(this); }
-
-public:
-
     Windows::Media::Playback::MediaPlaybackItem Item() const;
     Windows::Media::Playback::MediaPlaybackItemError Error() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaPlaybackItemOpenedEventArgs
+struct WINRT_EBO impl_IMediaPlaybackItemOpenedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMediaPlaybackItemOpenedEventArgs>(this); }
-
-public:
-
     Windows::Media::Playback::MediaPlaybackItem Item() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaPlaybackItemStatics
+struct WINRT_EBO impl_IMediaPlaybackItemStatics
 {
-    auto shim() const { return impl::shim<D, IMediaPlaybackItemStatics>(this); }
-
-public:
-
     Windows::Media::Playback::MediaPlaybackItem FindFromMediaSource(const Windows::Media::Core::MediaSource & source) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaPlaybackList
+struct WINRT_EBO impl_IMediaPlaybackList
 {
-    auto shim() const { return impl::shim<D, IMediaPlaybackList>(this); }
-
-public:
-
     event_token ItemFailed(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackList, Windows::Media::Playback::MediaPlaybackItemFailedEventArgs> & handler) const;
     using ItemFailed_revoker = event_revoker<IMediaPlaybackList>;
     ItemFailed_revoker ItemFailed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackList, Windows::Media::Playback::MediaPlaybackItemFailedEventArgs> & handler) const;
@@ -828,12 +696,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaPlaybackList2
+struct WINRT_EBO impl_IMediaPlaybackList2
 {
-    auto shim() const { return impl::shim<D, IMediaPlaybackList2>(this); }
-
-public:
-
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> MaxPrefetchTime() const;
     void MaxPrefetchTime(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const;
     Windows::Media::Playback::MediaPlaybackItem StartingItem() const;
@@ -843,12 +707,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaPlaybackSession
+struct WINRT_EBO impl_IMediaPlaybackSession
 {
-    auto shim() const { return impl::shim<D, IMediaPlaybackSession>(this); }
-
-public:
-
     event_token PlaybackStateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const;
     using PlaybackStateChanged_revoker = event_revoker<IMediaPlaybackSession>;
     PlaybackStateChanged_revoker PlaybackStateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackSession, Windows::IInspectable> & value) const;
@@ -910,21 +770,13 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaPlaybackSource
+struct WINRT_EBO impl_IMediaPlaybackSource
 {
-    auto shim() const { return impl::shim<D, IMediaPlaybackSource>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaPlaybackTimedMetadataTrackList
+struct WINRT_EBO impl_IMediaPlaybackTimedMetadataTrackList
 {
-    auto shim() const { return impl::shim<D, IMediaPlaybackTimedMetadataTrackList>(this); }
-
-public:
-
     event_token PresentationModeChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackTimedMetadataTrackList, Windows::Media::Playback::TimedMetadataPresentationModeChangedEventArgs> & handler) const;
     using PresentationModeChanged_revoker = event_revoker<IMediaPlaybackTimedMetadataTrackList>;
     PresentationModeChanged_revoker PresentationModeChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlaybackTimedMetadataTrackList, Windows::Media::Playback::TimedMetadataPresentationModeChangedEventArgs> & handler) const;
@@ -934,12 +786,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaPlayer
+struct WINRT_EBO impl_IMediaPlayer
 {
-    auto shim() const { return impl::shim<D, IMediaPlayer>(this); }
-
-public:
-
     bool AutoPlay() const;
     void AutoPlay(bool value) const;
     Windows::Foundation::TimeSpan NaturalDuration() const;
@@ -1005,12 +853,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaPlayer2
+struct WINRT_EBO impl_IMediaPlayer2
 {
-    auto shim() const { return impl::shim<D, IMediaPlayer2>(this); }
-
-public:
-
     Windows::Media::SystemMediaTransportControls SystemMediaTransportControls() const;
     Windows::Media::Playback::MediaPlayerAudioCategory AudioCategory() const;
     void AudioCategory(Windows::Media::Playback::MediaPlayerAudioCategory value) const;
@@ -1019,12 +863,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaPlayer3
+struct WINRT_EBO impl_IMediaPlayer3
 {
-    auto shim() const { return impl::shim<D, IMediaPlayer3>(this); }
-
-public:
-
     event_token IsMutedChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const;
     using IsMutedChanged_revoker = event_revoker<IMediaPlayer3>;
     IsMutedChanged_revoker IsMutedChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Playback::MediaPlayer, Windows::IInspectable> & value) const;
@@ -1054,76 +894,48 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaPlayer4
+struct WINRT_EBO impl_IMediaPlayer4
 {
-    auto shim() const { return impl::shim<D, IMediaPlayer4>(this); }
-
-public:
-
     void SetSurfaceSize(const Windows::Foundation::Size & size) const;
     Windows::Media::Playback::MediaPlayerSurface GetSurface(const Windows::UI::Composition::Compositor & compositor) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaPlayerDataReceivedEventArgs
+struct WINRT_EBO impl_IMediaPlayerDataReceivedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMediaPlayerDataReceivedEventArgs>(this); }
-
-public:
-
     Windows::Foundation::Collections::ValueSet Data() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaPlayerEffects
+struct WINRT_EBO impl_IMediaPlayerEffects
 {
-    auto shim() const { return impl::shim<D, IMediaPlayerEffects>(this); }
-
-public:
-
     void AddAudioEffect(hstring_ref activatableClassId, bool effectOptional, const Windows::Foundation::Collections::IPropertySet & configuration) const;
     void RemoveAllEffects() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaPlayerEffects2
+struct WINRT_EBO impl_IMediaPlayerEffects2
 {
-    auto shim() const { return impl::shim<D, IMediaPlayerEffects2>(this); }
-
-public:
-
     void AddVideoEffect(hstring_ref activatableClassId, bool effectOptional, const Windows::Foundation::Collections::IPropertySet & effectConfiguration) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaPlayerFailedEventArgs
+struct WINRT_EBO impl_IMediaPlayerFailedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMediaPlayerFailedEventArgs>(this); }
-
-public:
-
     Windows::Media::Playback::MediaPlayerError Error() const;
     HRESULT ExtendedErrorCode() const;
     hstring ErrorMessage() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaPlayerRateChangedEventArgs
+struct WINRT_EBO impl_IMediaPlayerRateChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMediaPlayerRateChangedEventArgs>(this); }
-
-public:
-
     double NewRate() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaPlayerSource
+struct WINRT_EBO impl_IMediaPlayerSource
 {
-    auto shim() const { return impl::shim<D, IMediaPlayerSource>(this); }
-
-public:
-
     Windows::Media::Protection::MediaProtectionManager ProtectionManager() const;
     void ProtectionManager(const Windows::Media::Protection::MediaProtectionManager & value) const;
     void SetFileSource(const Windows::Storage::IStorageFile & file) const;
@@ -1132,80 +944,52 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaPlayerSource2
+struct WINRT_EBO impl_IMediaPlayerSource2
 {
-    auto shim() const { return impl::shim<D, IMediaPlayerSource2>(this); }
-
-public:
-
     Windows::Media::Playback::IMediaPlaybackSource Source() const;
     void Source(const Windows::Media::Playback::IMediaPlaybackSource & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaPlayerSurface
+struct WINRT_EBO impl_IMediaPlayerSurface
 {
-    auto shim() const { return impl::shim<D, IMediaPlayerSurface>(this); }
-
-public:
-
     Windows::UI::Composition::ICompositionSurface CompositionSurface() const;
     Windows::UI::Composition::Compositor Compositor() const;
     Windows::Media::Playback::MediaPlayer MediaPlayer() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlaybackMediaMarker
+struct WINRT_EBO impl_IPlaybackMediaMarker
 {
-    auto shim() const { return impl::shim<D, IPlaybackMediaMarker>(this); }
-
-public:
-
     Windows::Foundation::TimeSpan Time() const;
     hstring MediaMarkerType() const;
     hstring Text() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlaybackMediaMarkerFactory
+struct WINRT_EBO impl_IPlaybackMediaMarkerFactory
 {
-    auto shim() const { return impl::shim<D, IPlaybackMediaMarkerFactory>(this); }
-
-public:
-
     Windows::Media::Playback::PlaybackMediaMarker CreateFromTime(const Windows::Foundation::TimeSpan & value) const;
     Windows::Media::Playback::PlaybackMediaMarker Create(const Windows::Foundation::TimeSpan & value, hstring_ref mediaMarketType, hstring_ref text) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlaybackMediaMarkerReachedEventArgs
+struct WINRT_EBO impl_IPlaybackMediaMarkerReachedEventArgs
 {
-    auto shim() const { return impl::shim<D, IPlaybackMediaMarkerReachedEventArgs>(this); }
-
-public:
-
     Windows::Media::Playback::PlaybackMediaMarker PlaybackMediaMarker() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlaybackMediaMarkerSequence
+struct WINRT_EBO impl_IPlaybackMediaMarkerSequence
 {
-    auto shim() const { return impl::shim<D, IPlaybackMediaMarkerSequence>(this); }
-
-public:
-
     uint32_t Size() const;
     void Insert(const Windows::Media::Playback::PlaybackMediaMarker & value) const;
     void Clear() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITimedMetadataPresentationModeChangedEventArgs
+struct WINRT_EBO impl_ITimedMetadataPresentationModeChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, ITimedMetadataPresentationModeChangedEventArgs>(this); }
-
-public:
-
     Windows::Media::Core::TimedMetadataTrack Track() const;
     Windows::Media::Playback::TimedMetadataTrackPresentationMode OldPresentationMode() const;
     Windows::Media::Playback::TimedMetadataTrackPresentationMode NewPresentationMode() const;

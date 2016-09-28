@@ -70,12 +70,8 @@ template <> struct __declspec(uuid("4f25059a-0b9a-5f25-9b9e-4b9f1d22ff65")) __de
 namespace Windows::Media::MediaProperties {
 
 template <typename D>
-class WINRT_EBO impl_IAudioEncodingProperties
+struct WINRT_EBO impl_IAudioEncodingProperties
 {
-    auto shim() const { return impl::shim<D, IAudioEncodingProperties>(this); }
-
-public:
-
     void Bitrate(uint32_t value) const;
     uint32_t Bitrate() const;
     void ChannelCount(uint32_t value) const;
@@ -87,12 +83,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioEncodingPropertiesStatics
+struct WINRT_EBO impl_IAudioEncodingPropertiesStatics
 {
-    auto shim() const { return impl::shim<D, IAudioEncodingPropertiesStatics>(this); }
-
-public:
-
     Windows::Media::MediaProperties::AudioEncodingProperties CreateAac(uint32_t sampleRate, uint32_t channelCount, uint32_t bitrate) const;
     Windows::Media::MediaProperties::AudioEncodingProperties CreateAacAdts(uint32_t sampleRate, uint32_t channelCount, uint32_t bitrate) const;
     Windows::Media::MediaProperties::AudioEncodingProperties CreateMp3(uint32_t sampleRate, uint32_t channelCount, uint32_t bitrate) const;
@@ -101,32 +93,20 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioEncodingPropertiesWithFormatUserData
+struct WINRT_EBO impl_IAudioEncodingPropertiesWithFormatUserData
 {
-    auto shim() const { return impl::shim<D, IAudioEncodingPropertiesWithFormatUserData>(this); }
-
-public:
-
     void SetFormatUserData(array_ref<const uint8_t> value) const;
     void GetFormatUserData(com_array<uint8_t> & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IContainerEncodingProperties
+struct WINRT_EBO impl_IContainerEncodingProperties
 {
-    auto shim() const { return impl::shim<D, IContainerEncodingProperties>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IH264ProfileIdsStatics
+struct WINRT_EBO impl_IH264ProfileIdsStatics
 {
-    auto shim() const { return impl::shim<D, IH264ProfileIdsStatics>(this); }
-
-public:
-
     int32_t ConstrainedBaseline() const;
     int32_t Baseline() const;
     int32_t Extended() const;
@@ -140,12 +120,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IImageEncodingProperties
+struct WINRT_EBO impl_IImageEncodingProperties
 {
-    auto shim() const { return impl::shim<D, IImageEncodingProperties>(this); }
-
-public:
-
     void Width(uint32_t value) const;
     uint32_t Width() const;
     void Height(uint32_t value) const;
@@ -153,35 +129,23 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IImageEncodingPropertiesStatics
+struct WINRT_EBO impl_IImageEncodingPropertiesStatics
 {
-    auto shim() const { return impl::shim<D, IImageEncodingPropertiesStatics>(this); }
-
-public:
-
     Windows::Media::MediaProperties::ImageEncodingProperties CreateJpeg() const;
     Windows::Media::MediaProperties::ImageEncodingProperties CreatePng() const;
     Windows::Media::MediaProperties::ImageEncodingProperties CreateJpegXR() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IImageEncodingPropertiesStatics2
+struct WINRT_EBO impl_IImageEncodingPropertiesStatics2
 {
-    auto shim() const { return impl::shim<D, IImageEncodingPropertiesStatics2>(this); }
-
-public:
-
     Windows::Media::MediaProperties::ImageEncodingProperties CreateUncompressed(Windows::Media::MediaProperties::MediaPixelFormat format) const;
     Windows::Media::MediaProperties::ImageEncodingProperties CreateBmp() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaEncodingProfile
+struct WINRT_EBO impl_IMediaEncodingProfile
 {
-    auto shim() const { return impl::shim<D, IMediaEncodingProfile>(this); }
-
-public:
-
     void Audio(const Windows::Media::MediaProperties::AudioEncodingProperties & value) const;
     Windows::Media::MediaProperties::AudioEncodingProperties Audio() const;
     void Video(const Windows::Media::MediaProperties::VideoEncodingProperties & value) const;
@@ -191,12 +155,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaEncodingProfileStatics
+struct WINRT_EBO impl_IMediaEncodingProfileStatics
 {
-    auto shim() const { return impl::shim<D, IMediaEncodingProfileStatics>(this); }
-
-public:
-
     Windows::Media::MediaProperties::MediaEncodingProfile CreateM4a(Windows::Media::MediaProperties::AudioEncodingQuality quality) const;
     Windows::Media::MediaProperties::MediaEncodingProfile CreateMp3(Windows::Media::MediaProperties::AudioEncodingQuality quality) const;
     Windows::Media::MediaProperties::MediaEncodingProfile CreateWma(Windows::Media::MediaProperties::AudioEncodingQuality quality) const;
@@ -207,23 +167,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaEncodingProfileStatics2
+struct WINRT_EBO impl_IMediaEncodingProfileStatics2
 {
-    auto shim() const { return impl::shim<D, IMediaEncodingProfileStatics2>(this); }
-
-public:
-
     Windows::Media::MediaProperties::MediaEncodingProfile CreateWav(Windows::Media::MediaProperties::AudioEncodingQuality quality) const;
     Windows::Media::MediaProperties::MediaEncodingProfile CreateAvi(Windows::Media::MediaProperties::VideoEncodingQuality quality) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaEncodingProperties
+struct WINRT_EBO impl_IMediaEncodingProperties
 {
-    auto shim() const { return impl::shim<D, IMediaEncodingProperties>(this); }
-
-public:
-
     Windows::Media::MediaProperties::MediaPropertySet Properties() const;
     hstring Type() const;
     void Subtype(hstring_ref value) const;
@@ -231,12 +183,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaEncodingSubtypesStatics
+struct WINRT_EBO impl_IMediaEncodingSubtypesStatics
 {
-    auto shim() const { return impl::shim<D, IMediaEncodingSubtypesStatics>(this); }
-
-public:
-
     hstring Aac() const;
     hstring AacAdts() const;
     hstring Ac3() const;
@@ -280,12 +228,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaRatio
+struct WINRT_EBO impl_IMediaRatio
 {
-    auto shim() const { return impl::shim<D, IMediaRatio>(this); }
-
-public:
-
     void Numerator(uint32_t value) const;
     uint32_t Numerator() const;
     void Denominator(uint32_t value) const;
@@ -293,12 +237,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMpeg2ProfileIdsStatics
+struct WINRT_EBO impl_IMpeg2ProfileIdsStatics
 {
-    auto shim() const { return impl::shim<D, IMpeg2ProfileIdsStatics>(this); }
-
-public:
-
     int32_t Simple() const;
     int32_t Main() const;
     int32_t SignalNoiseRatioScalable() const;
@@ -307,12 +247,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVideoEncodingProperties
+struct WINRT_EBO impl_IVideoEncodingProperties
 {
-    auto shim() const { return impl::shim<D, IVideoEncodingProperties>(this); }
-
-public:
-
     void Bitrate(uint32_t value) const;
     uint32_t Bitrate() const;
     void Width(uint32_t value) const;
@@ -324,12 +260,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVideoEncodingProperties2
+struct WINRT_EBO impl_IVideoEncodingProperties2
 {
-    auto shim() const { return impl::shim<D, IVideoEncodingProperties2>(this); }
-
-public:
-
     void SetFormatUserData(array_ref<const uint8_t> value) const;
     void GetFormatUserData(com_array<uint8_t> & value) const;
     void ProfileId(int32_t value) const;
@@ -337,22 +269,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVideoEncodingProperties3
+struct WINRT_EBO impl_IVideoEncodingProperties3
 {
-    auto shim() const { return impl::shim<D, IVideoEncodingProperties3>(this); }
-
-public:
-
     Windows::Media::MediaProperties::StereoscopicVideoPackingMode StereoscopicVideoPackingMode() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVideoEncodingPropertiesStatics
+struct WINRT_EBO impl_IVideoEncodingPropertiesStatics
 {
-    auto shim() const { return impl::shim<D, IVideoEncodingPropertiesStatics>(this); }
-
-public:
-
     Windows::Media::MediaProperties::VideoEncodingProperties CreateH264() const;
     Windows::Media::MediaProperties::VideoEncodingProperties CreateMpeg2() const;
     Windows::Media::MediaProperties::VideoEncodingProperties CreateUncompressed(hstring_ref subtype, uint32_t width, uint32_t height) const;

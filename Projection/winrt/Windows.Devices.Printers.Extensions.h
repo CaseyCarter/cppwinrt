@@ -206,62 +206,62 @@ namespace Windows::Devices::Printers::Extensions {
 template <typename D> Windows::Devices::Printers::Extensions::Print3DWorkflowStatus impl_IPrint3DWorkflowPrintRequestedEventArgs<D>::Status() const
 {
     Windows::Devices::Printers::Extensions::Print3DWorkflowStatus value {};
-    check_hresult(shim()->get_Status(&value));
+    check_hresult(static_cast<const IPrint3DWorkflowPrintRequestedEventArgs &>(static_cast<const D &>(*this))->get_Status(&value));
     return value;
 }
 
 template <typename D> void impl_IPrint3DWorkflowPrintRequestedEventArgs<D>::SetExtendedStatus(Windows::Devices::Printers::Extensions::Print3DWorkflowDetail value) const
 {
-    check_hresult(shim()->abi_SetExtendedStatus(value));
+    check_hresult(static_cast<const IPrint3DWorkflowPrintRequestedEventArgs &>(static_cast<const D &>(*this))->abi_SetExtendedStatus(value));
 }
 
 template <typename D> void impl_IPrint3DWorkflowPrintRequestedEventArgs<D>::SetSource(const Windows::IInspectable & source) const
 {
-    check_hresult(shim()->abi_SetSource(get(source)));
+    check_hresult(static_cast<const IPrint3DWorkflowPrintRequestedEventArgs &>(static_cast<const D &>(*this))->abi_SetSource(get(source)));
 }
 
 template <typename D> void impl_IPrint3DWorkflowPrintRequestedEventArgs<D>::SetSourceChanged(bool value) const
 {
-    check_hresult(shim()->abi_SetSourceChanged(value));
+    check_hresult(static_cast<const IPrint3DWorkflowPrintRequestedEventArgs &>(static_cast<const D &>(*this))->abi_SetSourceChanged(value));
 }
 
 template <typename D> hstring impl_IPrint3DWorkflowPrinterChangedEventArgs<D>::NewDeviceId() const
 {
     hstring value;
-    check_hresult(shim()->get_NewDeviceId(put(value)));
+    check_hresult(static_cast<const IPrint3DWorkflowPrinterChangedEventArgs &>(static_cast<const D &>(*this))->get_NewDeviceId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPrint3DWorkflow<D>::DeviceID() const
 {
     hstring value;
-    check_hresult(shim()->get_DeviceID(put(value)));
+    check_hresult(static_cast<const IPrint3DWorkflow &>(static_cast<const D &>(*this))->get_DeviceID(put(value)));
     return value;
 }
 
 template <typename D> Windows::IInspectable impl_IPrint3DWorkflow<D>::GetPrintModelPackage() const
 {
     Windows::IInspectable printModelPackage;
-    check_hresult(shim()->abi_GetPrintModelPackage(put(printModelPackage)));
+    check_hresult(static_cast<const IPrint3DWorkflow &>(static_cast<const D &>(*this))->abi_GetPrintModelPackage(put(printModelPackage)));
     return printModelPackage;
 }
 
 template <typename D> bool impl_IPrint3DWorkflow<D>::IsPrintReady() const
 {
     bool value {};
-    check_hresult(shim()->get_IsPrintReady(&value));
+    check_hresult(static_cast<const IPrint3DWorkflow &>(static_cast<const D &>(*this))->get_IsPrintReady(&value));
     return value;
 }
 
 template <typename D> void impl_IPrint3DWorkflow<D>::IsPrintReady(bool value) const
 {
-    check_hresult(shim()->put_IsPrintReady(value));
+    check_hresult(static_cast<const IPrint3DWorkflow &>(static_cast<const D &>(*this))->put_IsPrintReady(value));
 }
 
 template <typename D> event_token impl_IPrint3DWorkflow<D>::PrintRequested(const Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::Print3DWorkflow, Windows::Devices::Printers::Extensions::Print3DWorkflowPrintRequestedEventArgs> & eventHandler) const
 {
     event_token eventCookie {};
-    check_hresult(shim()->add_PrintRequested(get(eventHandler), &eventCookie));
+    check_hresult(static_cast<const IPrint3DWorkflow &>(static_cast<const D &>(*this))->add_PrintRequested(get(eventHandler), &eventCookie));
     return eventCookie;
 }
 
@@ -272,13 +272,13 @@ template <typename D> event_revoker<IPrint3DWorkflow> impl_IPrint3DWorkflow<D>::
 
 template <typename D> void impl_IPrint3DWorkflow<D>::PrintRequested(event_token eventCookie) const
 {
-    check_hresult(shim()->remove_PrintRequested(eventCookie));
+    check_hresult(static_cast<const IPrint3DWorkflow &>(static_cast<const D &>(*this))->remove_PrintRequested(eventCookie));
 }
 
 template <typename D> event_token impl_IPrint3DWorkflow2<D>::PrinterChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::Print3DWorkflow, Windows::Devices::Printers::Extensions::Print3DWorkflowPrinterChangedEventArgs> & eventHandler) const
 {
     event_token eventCookie {};
-    check_hresult(shim()->add_PrinterChanged(get(eventHandler), &eventCookie));
+    check_hresult(static_cast<const IPrint3DWorkflow2 &>(static_cast<const D &>(*this))->add_PrinterChanged(get(eventHandler), &eventCookie));
     return eventCookie;
 }
 
@@ -289,7 +289,7 @@ template <typename D> event_revoker<IPrint3DWorkflow2> impl_IPrint3DWorkflow2<D>
 
 template <typename D> void impl_IPrint3DWorkflow2<D>::PrinterChanged(event_token eventCookie) const
 {
-    check_hresult(shim()->remove_PrinterChanged(eventCookie));
+    check_hresult(static_cast<const IPrint3DWorkflow2 &>(static_cast<const D &>(*this))->remove_PrinterChanged(eventCookie));
 }
 
 }

@@ -204,28 +204,28 @@ template <> struct traits<Windows::ApplicationModel::Store::UnfulfilledConsumabl
 
 namespace Windows::ApplicationModel::Store {
 
-template <typename T> class impl_ICurrentApp;
-template <typename T> class impl_ICurrentApp2Statics;
-template <typename T> class impl_ICurrentAppSimulator;
-template <typename T> class impl_ICurrentAppSimulatorStaticsWithFiltering;
-template <typename T> class impl_ICurrentAppSimulatorWithCampaignId;
-template <typename T> class impl_ICurrentAppSimulatorWithConsumables;
-template <typename T> class impl_ICurrentAppStaticsWithFiltering;
-template <typename T> class impl_ICurrentAppWithCampaignId;
-template <typename T> class impl_ICurrentAppWithConsumables;
-template <typename T> class impl_ILicenseInformation;
-template <typename T> class impl_IListingInformation;
-template <typename T> class impl_IListingInformation2;
-template <typename T> class impl_IProductLicense;
-template <typename T> class impl_IProductLicenseWithFulfillment;
-template <typename T> class impl_IProductListing;
-template <typename T> class impl_IProductListing2;
-template <typename T> class impl_IProductListingWithConsumables;
-template <typename T> class impl_IProductListingWithMetadata;
-template <typename T> class impl_IProductPurchaseDisplayProperties;
-template <typename T> class impl_IProductPurchaseDisplayPropertiesFactory;
-template <typename T> class impl_IPurchaseResults;
-template <typename T> class impl_IUnfulfilledConsumable;
+template <typename T> struct impl_ICurrentApp;
+template <typename T> struct impl_ICurrentApp2Statics;
+template <typename T> struct impl_ICurrentAppSimulator;
+template <typename T> struct impl_ICurrentAppSimulatorStaticsWithFiltering;
+template <typename T> struct impl_ICurrentAppSimulatorWithCampaignId;
+template <typename T> struct impl_ICurrentAppSimulatorWithConsumables;
+template <typename T> struct impl_ICurrentAppStaticsWithFiltering;
+template <typename T> struct impl_ICurrentAppWithCampaignId;
+template <typename T> struct impl_ICurrentAppWithConsumables;
+template <typename T> struct impl_ILicenseInformation;
+template <typename T> struct impl_IListingInformation;
+template <typename T> struct impl_IListingInformation2;
+template <typename T> struct impl_IProductLicense;
+template <typename T> struct impl_IProductLicenseWithFulfillment;
+template <typename T> struct impl_IProductListing;
+template <typename T> struct impl_IProductListing2;
+template <typename T> struct impl_IProductListingWithConsumables;
+template <typename T> struct impl_IProductListingWithMetadata;
+template <typename T> struct impl_IProductPurchaseDisplayProperties;
+template <typename T> struct impl_IProductPurchaseDisplayPropertiesFactory;
+template <typename T> struct impl_IPurchaseResults;
+template <typename T> struct impl_IUnfulfilledConsumable;
 template <typename T> struct impl_LicenseChangedEventHandler;
 
 }
@@ -382,49 +382,42 @@ template <> struct traits<Windows::ApplicationModel::Store::CurrentAppSimulator>
 template <> struct traits<Windows::ApplicationModel::Store::LicenseInformation>
 {
     using abi = ABI::Windows::ApplicationModel::Store::LicenseInformation;
-    using default_interface = Windows::ApplicationModel::Store::ILicenseInformation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Store.LicenseInformation"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Store::ListingInformation>
 {
     using abi = ABI::Windows::ApplicationModel::Store::ListingInformation;
-    using default_interface = Windows::ApplicationModel::Store::IListingInformation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Store.ListingInformation"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Store::ProductLicense>
 {
     using abi = ABI::Windows::ApplicationModel::Store::ProductLicense;
-    using default_interface = Windows::ApplicationModel::Store::IProductLicense;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Store.ProductLicense"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Store::ProductListing>
 {
     using abi = ABI::Windows::ApplicationModel::Store::ProductListing;
-    using default_interface = Windows::ApplicationModel::Store::IProductListing;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Store.ProductListing"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Store::ProductPurchaseDisplayProperties>
 {
     using abi = ABI::Windows::ApplicationModel::Store::ProductPurchaseDisplayProperties;
-    using default_interface = Windows::ApplicationModel::Store::IProductPurchaseDisplayProperties;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Store.ProductPurchaseDisplayProperties"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Store::PurchaseResults>
 {
     using abi = ABI::Windows::ApplicationModel::Store::PurchaseResults;
-    using default_interface = Windows::ApplicationModel::Store::IPurchaseResults;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Store.PurchaseResults"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Store::UnfulfilledConsumable>
 {
     using abi = ABI::Windows::ApplicationModel::Store::UnfulfilledConsumable;
-    using default_interface = Windows::ApplicationModel::Store::IUnfulfilledConsumable;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Store.UnfulfilledConsumable"; }
 };
 

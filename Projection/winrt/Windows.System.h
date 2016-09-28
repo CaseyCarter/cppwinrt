@@ -1984,84 +1984,84 @@ namespace Windows::System {
 template <typename D> uint64_t impl_IAppMemoryReport<D>::PrivateCommitUsage() const
 {
     uint64_t value {};
-    check_hresult(shim()->get_PrivateCommitUsage(&value));
+    check_hresult(static_cast<const IAppMemoryReport &>(static_cast<const D &>(*this))->get_PrivateCommitUsage(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IAppMemoryReport<D>::PeakPrivateCommitUsage() const
 {
     uint64_t value {};
-    check_hresult(shim()->get_PeakPrivateCommitUsage(&value));
+    check_hresult(static_cast<const IAppMemoryReport &>(static_cast<const D &>(*this))->get_PeakPrivateCommitUsage(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IAppMemoryReport<D>::TotalCommitUsage() const
 {
     uint64_t value {};
-    check_hresult(shim()->get_TotalCommitUsage(&value));
+    check_hresult(static_cast<const IAppMemoryReport &>(static_cast<const D &>(*this))->get_TotalCommitUsage(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IAppMemoryReport<D>::TotalCommitLimit() const
 {
     uint64_t value {};
-    check_hresult(shim()->get_TotalCommitLimit(&value));
+    check_hresult(static_cast<const IAppMemoryReport &>(static_cast<const D &>(*this))->get_TotalCommitLimit(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IProcessMemoryReport<D>::PrivateWorkingSetUsage() const
 {
     uint64_t value {};
-    check_hresult(shim()->get_PrivateWorkingSetUsage(&value));
+    check_hresult(static_cast<const IProcessMemoryReport &>(static_cast<const D &>(*this))->get_PrivateWorkingSetUsage(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IProcessMemoryReport<D>::TotalWorkingSetUsage() const
 {
     uint64_t value {};
-    check_hresult(shim()->get_TotalWorkingSetUsage(&value));
+    check_hresult(static_cast<const IProcessMemoryReport &>(static_cast<const D &>(*this))->get_TotalWorkingSetUsage(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IAppMemoryUsageLimitChangingEventArgs<D>::OldLimit() const
 {
     uint64_t value {};
-    check_hresult(shim()->get_OldLimit(&value));
+    check_hresult(static_cast<const IAppMemoryUsageLimitChangingEventArgs &>(static_cast<const D &>(*this))->get_OldLimit(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IAppMemoryUsageLimitChangingEventArgs<D>::NewLimit() const
 {
     uint64_t value {};
-    check_hresult(shim()->get_NewLimit(&value));
+    check_hresult(static_cast<const IAppMemoryUsageLimitChangingEventArgs &>(static_cast<const D &>(*this))->get_NewLimit(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IMemoryManagerStatics<D>::AppMemoryUsage() const
 {
     uint64_t value {};
-    check_hresult(shim()->get_AppMemoryUsage(&value));
+    check_hresult(static_cast<const IMemoryManagerStatics &>(static_cast<const D &>(*this))->get_AppMemoryUsage(&value));
     return value;
 }
 
 template <typename D> uint64_t impl_IMemoryManagerStatics<D>::AppMemoryUsageLimit() const
 {
     uint64_t value {};
-    check_hresult(shim()->get_AppMemoryUsageLimit(&value));
+    check_hresult(static_cast<const IMemoryManagerStatics &>(static_cast<const D &>(*this))->get_AppMemoryUsageLimit(&value));
     return value;
 }
 
 template <typename D> Windows::System::AppMemoryUsageLevel impl_IMemoryManagerStatics<D>::AppMemoryUsageLevel() const
 {
     Windows::System::AppMemoryUsageLevel value {};
-    check_hresult(shim()->get_AppMemoryUsageLevel(&value));
+    check_hresult(static_cast<const IMemoryManagerStatics &>(static_cast<const D &>(*this))->get_AppMemoryUsageLevel(&value));
     return value;
 }
 
 template <typename D> event_token impl_IMemoryManagerStatics<D>::AppMemoryUsageIncreased(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_AppMemoryUsageIncreased(get(handler), &token));
+    check_hresult(static_cast<const IMemoryManagerStatics &>(static_cast<const D &>(*this))->add_AppMemoryUsageIncreased(get(handler), &token));
     return token;
 }
 
@@ -2072,13 +2072,13 @@ template <typename D> event_revoker<IMemoryManagerStatics> impl_IMemoryManagerSt
 
 template <typename D> void impl_IMemoryManagerStatics<D>::AppMemoryUsageIncreased(event_token token) const
 {
-    check_hresult(shim()->remove_AppMemoryUsageIncreased(token));
+    check_hresult(static_cast<const IMemoryManagerStatics &>(static_cast<const D &>(*this))->remove_AppMemoryUsageIncreased(token));
 }
 
 template <typename D> event_token impl_IMemoryManagerStatics<D>::AppMemoryUsageDecreased(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_AppMemoryUsageDecreased(get(handler), &token));
+    check_hresult(static_cast<const IMemoryManagerStatics &>(static_cast<const D &>(*this))->add_AppMemoryUsageDecreased(get(handler), &token));
     return token;
 }
 
@@ -2089,13 +2089,13 @@ template <typename D> event_revoker<IMemoryManagerStatics> impl_IMemoryManagerSt
 
 template <typename D> void impl_IMemoryManagerStatics<D>::AppMemoryUsageDecreased(event_token token) const
 {
-    check_hresult(shim()->remove_AppMemoryUsageDecreased(token));
+    check_hresult(static_cast<const IMemoryManagerStatics &>(static_cast<const D &>(*this))->remove_AppMemoryUsageDecreased(token));
 }
 
 template <typename D> event_token impl_IMemoryManagerStatics<D>::AppMemoryUsageLimitChanging(const Windows::Foundation::EventHandler<Windows::System::AppMemoryUsageLimitChangingEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_AppMemoryUsageLimitChanging(get(handler), &token));
+    check_hresult(static_cast<const IMemoryManagerStatics &>(static_cast<const D &>(*this))->add_AppMemoryUsageLimitChanging(get(handler), &token));
     return token;
 }
 
@@ -2106,133 +2106,133 @@ template <typename D> event_revoker<IMemoryManagerStatics> impl_IMemoryManagerSt
 
 template <typename D> void impl_IMemoryManagerStatics<D>::AppMemoryUsageLimitChanging(event_token token) const
 {
-    check_hresult(shim()->remove_AppMemoryUsageLimitChanging(token));
+    check_hresult(static_cast<const IMemoryManagerStatics &>(static_cast<const D &>(*this))->remove_AppMemoryUsageLimitChanging(token));
 }
 
 template <typename D> Windows::System::AppMemoryReport impl_IMemoryManagerStatics2<D>::GetAppMemoryReport() const
 {
     Windows::System::AppMemoryReport memoryReport { nullptr };
-    check_hresult(shim()->abi_GetAppMemoryReport(put(memoryReport)));
+    check_hresult(static_cast<const IMemoryManagerStatics2 &>(static_cast<const D &>(*this))->abi_GetAppMemoryReport(put(memoryReport)));
     return memoryReport;
 }
 
 template <typename D> Windows::System::ProcessMemoryReport impl_IMemoryManagerStatics2<D>::GetProcessMemoryReport() const
 {
     Windows::System::ProcessMemoryReport memoryReport { nullptr };
-    check_hresult(shim()->abi_GetProcessMemoryReport(put(memoryReport)));
+    check_hresult(static_cast<const IMemoryManagerStatics2 &>(static_cast<const D &>(*this))->abi_GetProcessMemoryReport(put(memoryReport)));
     return memoryReport;
 }
 
 template <typename D> bool impl_IMemoryManagerStatics3<D>::TrySetAppMemoryUsageLimit(uint64_t value) const
 {
     bool result {};
-    check_hresult(shim()->abi_TrySetAppMemoryUsageLimit(value, &result));
+    check_hresult(static_cast<const IMemoryManagerStatics3 &>(static_cast<const D &>(*this))->abi_TrySetAppMemoryUsageLimit(value, &result));
     return result;
 }
 
 template <typename D> void impl_IProtocolForResultsOperation<D>::ReportCompleted(const Windows::Foundation::Collections::ValueSet & data) const
 {
-    check_hresult(shim()->abi_ReportCompleted(get(data)));
+    check_hresult(static_cast<const IProtocolForResultsOperation &>(static_cast<const D &>(*this))->abi_ReportCompleted(get(data)));
 }
 
 template <typename D> hstring impl_IUser<D>::NonRoamableId() const
 {
     hstring value;
-    check_hresult(shim()->get_NonRoamableId(put(value)));
+    check_hresult(static_cast<const IUser &>(static_cast<const D &>(*this))->get_NonRoamableId(put(value)));
     return value;
 }
 
 template <typename D> Windows::System::UserAuthenticationStatus impl_IUser<D>::AuthenticationStatus() const
 {
     Windows::System::UserAuthenticationStatus value {};
-    check_hresult(shim()->get_AuthenticationStatus(&value));
+    check_hresult(static_cast<const IUser &>(static_cast<const D &>(*this))->get_AuthenticationStatus(&value));
     return value;
 }
 
 template <typename D> Windows::System::UserType impl_IUser<D>::Type() const
 {
     Windows::System::UserType value {};
-    check_hresult(shim()->get_Type(&value));
+    check_hresult(static_cast<const IUser &>(static_cast<const D &>(*this))->get_Type(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::IInspectable> impl_IUser<D>::GetPropertyAsync(hstring_ref value) const
 {
     Windows::Foundation::IAsyncOperation<Windows::IInspectable> operation;
-    check_hresult(shim()->abi_GetPropertyAsync(get(value), put(operation)));
+    check_hresult(static_cast<const IUser &>(static_cast<const D &>(*this))->abi_GetPropertyAsync(get(value), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IPropertySet> impl_IUser<D>::GetPropertiesAsync(const Windows::Foundation::Collections::IVectorView<hstring> & values) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IPropertySet> operation;
-    check_hresult(shim()->abi_GetPropertiesAsync(get(values), put(operation)));
+    check_hresult(static_cast<const IUser &>(static_cast<const D &>(*this))->abi_GetPropertiesAsync(get(values), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamReference> impl_IUser<D>::GetPictureAsync(Windows::System::UserPictureSize desiredSize) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamReference> operation;
-    check_hresult(shim()->abi_GetPictureAsync(desiredSize, put(operation)));
+    check_hresult(static_cast<const IUser &>(static_cast<const D &>(*this))->abi_GetPictureAsync(desiredSize, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::System::UserWatcher impl_IUserStatics<D>::CreateWatcher() const
 {
     Windows::System::UserWatcher watcher { nullptr };
-    check_hresult(shim()->abi_CreateWatcher(put(watcher)));
+    check_hresult(static_cast<const IUserStatics &>(static_cast<const D &>(*this))->abi_CreateWatcher(put(watcher)));
     return watcher;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::System::User>> impl_IUserStatics<D>::FindAllAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::System::User>> operation;
-    check_hresult(shim()->abi_FindAllAsync(put(operation)));
+    check_hresult(static_cast<const IUserStatics &>(static_cast<const D &>(*this))->abi_FindAllAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::System::User>> impl_IUserStatics<D>::FindAllAsync(Windows::System::UserType type) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::System::User>> operation;
-    check_hresult(shim()->abi_FindAllAsyncByType(type, put(operation)));
+    check_hresult(static_cast<const IUserStatics &>(static_cast<const D &>(*this))->abi_FindAllAsyncByType(type, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::System::User>> impl_IUserStatics<D>::FindAllAsync(Windows::System::UserType type, Windows::System::UserAuthenticationStatus status) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::System::User>> operation;
-    check_hresult(shim()->abi_FindAllAsyncByTypeAndStatus(type, status, put(operation)));
+    check_hresult(static_cast<const IUserStatics &>(static_cast<const D &>(*this))->abi_FindAllAsyncByTypeAndStatus(type, status, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::System::User impl_IUserStatics<D>::GetFromId(hstring_ref nonRoamableId) const
 {
     Windows::System::User value { nullptr };
-    check_hresult(shim()->abi_GetFromId(get(nonRoamableId), put(value)));
+    check_hresult(static_cast<const IUserStatics &>(static_cast<const D &>(*this))->abi_GetFromId(get(nonRoamableId), put(value)));
     return value;
 }
 
 template <typename D> Windows::System::UserWatcherStatus impl_IUserWatcher<D>::Status() const
 {
     Windows::System::UserWatcherStatus value {};
-    check_hresult(shim()->get_Status(&value));
+    check_hresult(static_cast<const IUserWatcher &>(static_cast<const D &>(*this))->get_Status(&value));
     return value;
 }
 
 template <typename D> void impl_IUserWatcher<D>::Start() const
 {
-    check_hresult(shim()->abi_Start());
+    check_hresult(static_cast<const IUserWatcher &>(static_cast<const D &>(*this))->abi_Start());
 }
 
 template <typename D> void impl_IUserWatcher<D>::Stop() const
 {
-    check_hresult(shim()->abi_Stop());
+    check_hresult(static_cast<const IUserWatcher &>(static_cast<const D &>(*this))->abi_Stop());
 }
 
 template <typename D> event_token impl_IUserWatcher<D>::Added(const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::System::UserChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_Added(get(handler), &token));
+    check_hresult(static_cast<const IUserWatcher &>(static_cast<const D &>(*this))->add_Added(get(handler), &token));
     return token;
 }
 
@@ -2243,13 +2243,13 @@ template <typename D> event_revoker<IUserWatcher> impl_IUserWatcher<D>::Added(au
 
 template <typename D> void impl_IUserWatcher<D>::Added(event_token token) const
 {
-    check_hresult(shim()->remove_Added(token));
+    check_hresult(static_cast<const IUserWatcher &>(static_cast<const D &>(*this))->remove_Added(token));
 }
 
 template <typename D> event_token impl_IUserWatcher<D>::Removed(const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::System::UserChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_Removed(get(handler), &token));
+    check_hresult(static_cast<const IUserWatcher &>(static_cast<const D &>(*this))->add_Removed(get(handler), &token));
     return token;
 }
 
@@ -2260,13 +2260,13 @@ template <typename D> event_revoker<IUserWatcher> impl_IUserWatcher<D>::Removed(
 
 template <typename D> void impl_IUserWatcher<D>::Removed(event_token token) const
 {
-    check_hresult(shim()->remove_Removed(token));
+    check_hresult(static_cast<const IUserWatcher &>(static_cast<const D &>(*this))->remove_Removed(token));
 }
 
 template <typename D> event_token impl_IUserWatcher<D>::Updated(const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::System::UserChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_Updated(get(handler), &token));
+    check_hresult(static_cast<const IUserWatcher &>(static_cast<const D &>(*this))->add_Updated(get(handler), &token));
     return token;
 }
 
@@ -2277,13 +2277,13 @@ template <typename D> event_revoker<IUserWatcher> impl_IUserWatcher<D>::Updated(
 
 template <typename D> void impl_IUserWatcher<D>::Updated(event_token token) const
 {
-    check_hresult(shim()->remove_Updated(token));
+    check_hresult(static_cast<const IUserWatcher &>(static_cast<const D &>(*this))->remove_Updated(token));
 }
 
 template <typename D> event_token impl_IUserWatcher<D>::AuthenticationStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::System::UserChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_AuthenticationStatusChanged(get(handler), &token));
+    check_hresult(static_cast<const IUserWatcher &>(static_cast<const D &>(*this))->add_AuthenticationStatusChanged(get(handler), &token));
     return token;
 }
 
@@ -2294,13 +2294,13 @@ template <typename D> event_revoker<IUserWatcher> impl_IUserWatcher<D>::Authenti
 
 template <typename D> void impl_IUserWatcher<D>::AuthenticationStatusChanged(event_token token) const
 {
-    check_hresult(shim()->remove_AuthenticationStatusChanged(token));
+    check_hresult(static_cast<const IUserWatcher &>(static_cast<const D &>(*this))->remove_AuthenticationStatusChanged(token));
 }
 
 template <typename D> event_token impl_IUserWatcher<D>::AuthenticationStatusChanging(const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::System::UserAuthenticationStatusChangingEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_AuthenticationStatusChanging(get(handler), &token));
+    check_hresult(static_cast<const IUserWatcher &>(static_cast<const D &>(*this))->add_AuthenticationStatusChanging(get(handler), &token));
     return token;
 }
 
@@ -2311,13 +2311,13 @@ template <typename D> event_revoker<IUserWatcher> impl_IUserWatcher<D>::Authenti
 
 template <typename D> void impl_IUserWatcher<D>::AuthenticationStatusChanging(event_token token) const
 {
-    check_hresult(shim()->remove_AuthenticationStatusChanging(token));
+    check_hresult(static_cast<const IUserWatcher &>(static_cast<const D &>(*this))->remove_AuthenticationStatusChanging(token));
 }
 
 template <typename D> event_token impl_IUserWatcher<D>::EnumerationCompleted(const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_EnumerationCompleted(get(handler), &token));
+    check_hresult(static_cast<const IUserWatcher &>(static_cast<const D &>(*this))->add_EnumerationCompleted(get(handler), &token));
     return token;
 }
 
@@ -2328,13 +2328,13 @@ template <typename D> event_revoker<IUserWatcher> impl_IUserWatcher<D>::Enumerat
 
 template <typename D> void impl_IUserWatcher<D>::EnumerationCompleted(event_token token) const
 {
-    check_hresult(shim()->remove_EnumerationCompleted(token));
+    check_hresult(static_cast<const IUserWatcher &>(static_cast<const D &>(*this))->remove_EnumerationCompleted(token));
 }
 
 template <typename D> event_token impl_IUserWatcher<D>::Stopped(const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_Stopped(get(handler), &token));
+    check_hresult(static_cast<const IUserWatcher &>(static_cast<const D &>(*this))->add_Stopped(get(handler), &token));
     return token;
 }
 
@@ -2345,182 +2345,182 @@ template <typename D> event_revoker<IUserWatcher> impl_IUserWatcher<D>::Stopped(
 
 template <typename D> void impl_IUserWatcher<D>::Stopped(event_token token) const
 {
-    check_hresult(shim()->remove_Stopped(token));
+    check_hresult(static_cast<const IUserWatcher &>(static_cast<const D &>(*this))->remove_Stopped(token));
 }
 
 template <typename D> Windows::System::User impl_IUserChangedEventArgs<D>::User() const
 {
     Windows::System::User value { nullptr };
-    check_hresult(shim()->get_User(put(value)));
+    check_hresult(static_cast<const IUserChangedEventArgs &>(static_cast<const D &>(*this))->get_User(put(value)));
     return value;
 }
 
 template <typename D> void impl_IUserAuthenticationStatusChangeDeferral<D>::Complete() const
 {
-    check_hresult(shim()->abi_Complete());
+    check_hresult(static_cast<const IUserAuthenticationStatusChangeDeferral &>(static_cast<const D &>(*this))->abi_Complete());
 }
 
 template <typename D> Windows::System::UserAuthenticationStatusChangeDeferral impl_IUserAuthenticationStatusChangingEventArgs<D>::GetDeferral() const
 {
     Windows::System::UserAuthenticationStatusChangeDeferral deferral { nullptr };
-    check_hresult(shim()->abi_GetDeferral(put(deferral)));
+    check_hresult(static_cast<const IUserAuthenticationStatusChangingEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(deferral)));
     return deferral;
 }
 
 template <typename D> Windows::System::User impl_IUserAuthenticationStatusChangingEventArgs<D>::User() const
 {
     Windows::System::User value { nullptr };
-    check_hresult(shim()->get_User(put(value)));
+    check_hresult(static_cast<const IUserAuthenticationStatusChangingEventArgs &>(static_cast<const D &>(*this))->get_User(put(value)));
     return value;
 }
 
 template <typename D> Windows::System::UserAuthenticationStatus impl_IUserAuthenticationStatusChangingEventArgs<D>::NewStatus() const
 {
     Windows::System::UserAuthenticationStatus value {};
-    check_hresult(shim()->get_NewStatus(&value));
+    check_hresult(static_cast<const IUserAuthenticationStatusChangingEventArgs &>(static_cast<const D &>(*this))->get_NewStatus(&value));
     return value;
 }
 
 template <typename D> Windows::System::UserAuthenticationStatus impl_IUserAuthenticationStatusChangingEventArgs<D>::CurrentStatus() const
 {
     Windows::System::UserAuthenticationStatus value {};
-    check_hresult(shim()->get_CurrentStatus(&value));
+    check_hresult(static_cast<const IUserAuthenticationStatusChangingEventArgs &>(static_cast<const D &>(*this))->get_CurrentStatus(&value));
     return value;
 }
 
 template <typename D> hstring impl_IKnownUserPropertiesStatics<D>::DisplayName() const
 {
     hstring value;
-    check_hresult(shim()->get_DisplayName(put(value)));
+    check_hresult(static_cast<const IKnownUserPropertiesStatics &>(static_cast<const D &>(*this))->get_DisplayName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownUserPropertiesStatics<D>::FirstName() const
 {
     hstring value;
-    check_hresult(shim()->get_FirstName(put(value)));
+    check_hresult(static_cast<const IKnownUserPropertiesStatics &>(static_cast<const D &>(*this))->get_FirstName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownUserPropertiesStatics<D>::LastName() const
 {
     hstring value;
-    check_hresult(shim()->get_LastName(put(value)));
+    check_hresult(static_cast<const IKnownUserPropertiesStatics &>(static_cast<const D &>(*this))->get_LastName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownUserPropertiesStatics<D>::ProviderName() const
 {
     hstring value;
-    check_hresult(shim()->get_ProviderName(put(value)));
+    check_hresult(static_cast<const IKnownUserPropertiesStatics &>(static_cast<const D &>(*this))->get_ProviderName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownUserPropertiesStatics<D>::AccountName() const
 {
     hstring value;
-    check_hresult(shim()->get_AccountName(put(value)));
+    check_hresult(static_cast<const IKnownUserPropertiesStatics &>(static_cast<const D &>(*this))->get_AccountName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownUserPropertiesStatics<D>::GuestHost() const
 {
     hstring value;
-    check_hresult(shim()->get_GuestHost(put(value)));
+    check_hresult(static_cast<const IKnownUserPropertiesStatics &>(static_cast<const D &>(*this))->get_GuestHost(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownUserPropertiesStatics<D>::PrincipalName() const
 {
     hstring value;
-    check_hresult(shim()->get_PrincipalName(put(value)));
+    check_hresult(static_cast<const IKnownUserPropertiesStatics &>(static_cast<const D &>(*this))->get_PrincipalName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownUserPropertiesStatics<D>::DomainName() const
 {
     hstring value;
-    check_hresult(shim()->get_DomainName(put(value)));
+    check_hresult(static_cast<const IKnownUserPropertiesStatics &>(static_cast<const D &>(*this))->get_DomainName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownUserPropertiesStatics<D>::SessionInitiationProtocolUri() const
 {
     hstring value;
-    check_hresult(shim()->get_SessionInitiationProtocolUri(put(value)));
+    check_hresult(static_cast<const IKnownUserPropertiesStatics &>(static_cast<const D &>(*this))->get_SessionInitiationProtocolUri(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IUserPickerStatics<D>::IsSupported() const
 {
     bool value {};
-    check_hresult(shim()->abi_IsSupported(&value));
+    check_hresult(static_cast<const IUserPickerStatics &>(static_cast<const D &>(*this))->abi_IsSupported(&value));
     return value;
 }
 
 template <typename D> bool impl_IUserPicker<D>::AllowGuestAccounts() const
 {
     bool value {};
-    check_hresult(shim()->get_AllowGuestAccounts(&value));
+    check_hresult(static_cast<const IUserPicker &>(static_cast<const D &>(*this))->get_AllowGuestAccounts(&value));
     return value;
 }
 
 template <typename D> void impl_IUserPicker<D>::AllowGuestAccounts(bool value) const
 {
-    check_hresult(shim()->put_AllowGuestAccounts(value));
+    check_hresult(static_cast<const IUserPicker &>(static_cast<const D &>(*this))->put_AllowGuestAccounts(value));
 }
 
 template <typename D> Windows::System::User impl_IUserPicker<D>::SuggestedSelectedUser() const
 {
     Windows::System::User value { nullptr };
-    check_hresult(shim()->get_SuggestedSelectedUser(put(value)));
+    check_hresult(static_cast<const IUserPicker &>(static_cast<const D &>(*this))->get_SuggestedSelectedUser(put(value)));
     return value;
 }
 
 template <typename D> void impl_IUserPicker<D>::SuggestedSelectedUser(const Windows::System::User & value) const
 {
-    check_hresult(shim()->put_SuggestedSelectedUser(get(value)));
+    check_hresult(static_cast<const IUserPicker &>(static_cast<const D &>(*this))->put_SuggestedSelectedUser(get(value)));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::System::User> impl_IUserPicker<D>::PickSingleUserAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::System::User> pickSingleUserOperation;
-    check_hresult(shim()->abi_PickSingleUserAsync(put(pickSingleUserOperation)));
+    check_hresult(static_cast<const IUserPicker &>(static_cast<const D &>(*this))->abi_PickSingleUserAsync(put(pickSingleUserOperation)));
     return pickSingleUserOperation;
 }
 
 template <typename D> hstring impl_IUserDeviceAssociationChangedEventArgs<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(shim()->get_DeviceId(put(value)));
+    check_hresult(static_cast<const IUserDeviceAssociationChangedEventArgs &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> Windows::System::User impl_IUserDeviceAssociationChangedEventArgs<D>::NewUser() const
 {
     Windows::System::User value { nullptr };
-    check_hresult(shim()->get_NewUser(put(value)));
+    check_hresult(static_cast<const IUserDeviceAssociationChangedEventArgs &>(static_cast<const D &>(*this))->get_NewUser(put(value)));
     return value;
 }
 
 template <typename D> Windows::System::User impl_IUserDeviceAssociationChangedEventArgs<D>::OldUser() const
 {
     Windows::System::User value { nullptr };
-    check_hresult(shim()->get_OldUser(put(value)));
+    check_hresult(static_cast<const IUserDeviceAssociationChangedEventArgs &>(static_cast<const D &>(*this))->get_OldUser(put(value)));
     return value;
 }
 
 template <typename D> Windows::System::User impl_IUserDeviceAssociationStatics<D>::FindUserFromDeviceId(hstring_ref deviceId) const
 {
     Windows::System::User user { nullptr };
-    check_hresult(shim()->abi_FindUserFromDeviceId(get(deviceId), put(user)));
+    check_hresult(static_cast<const IUserDeviceAssociationStatics &>(static_cast<const D &>(*this))->abi_FindUserFromDeviceId(get(deviceId), put(user)));
     return user;
 }
 
 template <typename D> event_token impl_IUserDeviceAssociationStatics<D>::UserDeviceAssociationChanged(const Windows::Foundation::EventHandler<Windows::System::UserDeviceAssociationChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_UserDeviceAssociationChanged(get(handler), &token));
+    check_hresult(static_cast<const IUserDeviceAssociationStatics &>(static_cast<const D &>(*this))->add_UserDeviceAssociationChanged(get(handler), &token));
     return token;
 }
 
@@ -2531,398 +2531,398 @@ template <typename D> event_revoker<IUserDeviceAssociationStatics> impl_IUserDev
 
 template <typename D> void impl_IUserDeviceAssociationStatics<D>::UserDeviceAssociationChanged(event_token token) const
 {
-    check_hresult(shim()->remove_UserDeviceAssociationChanged(token));
+    check_hresult(static_cast<const IUserDeviceAssociationStatics &>(static_cast<const D &>(*this))->remove_UserDeviceAssociationChanged(token));
 }
 
 template <typename D> Windows::System::LaunchUriStatus impl_ILaunchUriResult<D>::Status() const
 {
     Windows::System::LaunchUriStatus value {};
-    check_hresult(shim()->get_Status(&value));
+    check_hresult(static_cast<const ILaunchUriResult &>(static_cast<const D &>(*this))->get_Status(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::ValueSet impl_ILaunchUriResult<D>::Result() const
 {
     Windows::Foundation::Collections::ValueSet value { nullptr };
-    check_hresult(shim()->get_Result(put(value)));
+    check_hresult(static_cast<const ILaunchUriResult &>(static_cast<const D &>(*this))->get_Result(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::Point> impl_ILauncherUIOptions<D>::InvocationPoint() const
 {
     Windows::Foundation::IReference<Windows::Foundation::Point> value;
-    check_hresult(shim()->get_InvocationPoint(put(value)));
+    check_hresult(static_cast<const ILauncherUIOptions &>(static_cast<const D &>(*this))->get_InvocationPoint(put(value)));
     return value;
 }
 
 template <typename D> void impl_ILauncherUIOptions<D>::InvocationPoint(const Windows::Foundation::IReference<Windows::Foundation::Point> & value) const
 {
-    check_hresult(shim()->put_InvocationPoint(get(value)));
+    check_hresult(static_cast<const ILauncherUIOptions &>(static_cast<const D &>(*this))->put_InvocationPoint(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::Rect> impl_ILauncherUIOptions<D>::SelectionRect() const
 {
     Windows::Foundation::IReference<Windows::Foundation::Rect> value;
-    check_hresult(shim()->get_SelectionRect(put(value)));
+    check_hresult(static_cast<const ILauncherUIOptions &>(static_cast<const D &>(*this))->get_SelectionRect(put(value)));
     return value;
 }
 
 template <typename D> void impl_ILauncherUIOptions<D>::SelectionRect(const Windows::Foundation::IReference<Windows::Foundation::Rect> & value) const
 {
-    check_hresult(shim()->put_SelectionRect(get(value)));
+    check_hresult(static_cast<const ILauncherUIOptions &>(static_cast<const D &>(*this))->put_SelectionRect(get(value)));
 }
 
 template <typename D> Windows::UI::Popups::Placement impl_ILauncherUIOptions<D>::PreferredPlacement() const
 {
     Windows::UI::Popups::Placement value {};
-    check_hresult(shim()->get_PreferredPlacement(&value));
+    check_hresult(static_cast<const ILauncherUIOptions &>(static_cast<const D &>(*this))->get_PreferredPlacement(&value));
     return value;
 }
 
 template <typename D> void impl_ILauncherUIOptions<D>::PreferredPlacement(Windows::UI::Popups::Placement value) const
 {
-    check_hresult(shim()->put_PreferredPlacement(value));
+    check_hresult(static_cast<const ILauncherUIOptions &>(static_cast<const D &>(*this))->put_PreferredPlacement(value));
 }
 
 template <typename D> bool impl_ILauncherOptions<D>::TreatAsUntrusted() const
 {
     bool value {};
-    check_hresult(shim()->get_TreatAsUntrusted(&value));
+    check_hresult(static_cast<const ILauncherOptions &>(static_cast<const D &>(*this))->get_TreatAsUntrusted(&value));
     return value;
 }
 
 template <typename D> void impl_ILauncherOptions<D>::TreatAsUntrusted(bool value) const
 {
-    check_hresult(shim()->put_TreatAsUntrusted(value));
+    check_hresult(static_cast<const ILauncherOptions &>(static_cast<const D &>(*this))->put_TreatAsUntrusted(value));
 }
 
 template <typename D> bool impl_ILauncherOptions<D>::DisplayApplicationPicker() const
 {
     bool value {};
-    check_hresult(shim()->get_DisplayApplicationPicker(&value));
+    check_hresult(static_cast<const ILauncherOptions &>(static_cast<const D &>(*this))->get_DisplayApplicationPicker(&value));
     return value;
 }
 
 template <typename D> void impl_ILauncherOptions<D>::DisplayApplicationPicker(bool value) const
 {
-    check_hresult(shim()->put_DisplayApplicationPicker(value));
+    check_hresult(static_cast<const ILauncherOptions &>(static_cast<const D &>(*this))->put_DisplayApplicationPicker(value));
 }
 
 template <typename D> Windows::System::LauncherUIOptions impl_ILauncherOptions<D>::UI() const
 {
     Windows::System::LauncherUIOptions value { nullptr };
-    check_hresult(shim()->get_UI(put(value)));
+    check_hresult(static_cast<const ILauncherOptions &>(static_cast<const D &>(*this))->get_UI(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ILauncherOptions<D>::PreferredApplicationPackageFamilyName() const
 {
     hstring value;
-    check_hresult(shim()->get_PreferredApplicationPackageFamilyName(put(value)));
+    check_hresult(static_cast<const ILauncherOptions &>(static_cast<const D &>(*this))->get_PreferredApplicationPackageFamilyName(put(value)));
     return value;
 }
 
 template <typename D> void impl_ILauncherOptions<D>::PreferredApplicationPackageFamilyName(hstring_ref value) const
 {
-    check_hresult(shim()->put_PreferredApplicationPackageFamilyName(get(value)));
+    check_hresult(static_cast<const ILauncherOptions &>(static_cast<const D &>(*this))->put_PreferredApplicationPackageFamilyName(get(value)));
 }
 
 template <typename D> hstring impl_ILauncherOptions<D>::PreferredApplicationDisplayName() const
 {
     hstring value;
-    check_hresult(shim()->get_PreferredApplicationDisplayName(put(value)));
+    check_hresult(static_cast<const ILauncherOptions &>(static_cast<const D &>(*this))->get_PreferredApplicationDisplayName(put(value)));
     return value;
 }
 
 template <typename D> void impl_ILauncherOptions<D>::PreferredApplicationDisplayName(hstring_ref value) const
 {
-    check_hresult(shim()->put_PreferredApplicationDisplayName(get(value)));
+    check_hresult(static_cast<const ILauncherOptions &>(static_cast<const D &>(*this))->put_PreferredApplicationDisplayName(get(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_ILauncherOptions<D>::FallbackUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(shim()->get_FallbackUri(put(value)));
+    check_hresult(static_cast<const ILauncherOptions &>(static_cast<const D &>(*this))->get_FallbackUri(put(value)));
     return value;
 }
 
 template <typename D> void impl_ILauncherOptions<D>::FallbackUri(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(shim()->put_FallbackUri(get(value)));
+    check_hresult(static_cast<const ILauncherOptions &>(static_cast<const D &>(*this))->put_FallbackUri(get(value)));
 }
 
 template <typename D> hstring impl_ILauncherOptions<D>::ContentType() const
 {
     hstring value;
-    check_hresult(shim()->get_ContentType(put(value)));
+    check_hresult(static_cast<const ILauncherOptions &>(static_cast<const D &>(*this))->get_ContentType(put(value)));
     return value;
 }
 
 template <typename D> void impl_ILauncherOptions<D>::ContentType(hstring_ref value) const
 {
-    check_hresult(shim()->put_ContentType(get(value)));
+    check_hresult(static_cast<const ILauncherOptions &>(static_cast<const D &>(*this))->put_ContentType(get(value)));
 }
 
 template <typename D> hstring impl_ILauncherOptions2<D>::TargetApplicationPackageFamilyName() const
 {
     hstring value;
-    check_hresult(shim()->get_TargetApplicationPackageFamilyName(put(value)));
+    check_hresult(static_cast<const ILauncherOptions2 &>(static_cast<const D &>(*this))->get_TargetApplicationPackageFamilyName(put(value)));
     return value;
 }
 
 template <typename D> void impl_ILauncherOptions2<D>::TargetApplicationPackageFamilyName(hstring_ref value) const
 {
-    check_hresult(shim()->put_TargetApplicationPackageFamilyName(get(value)));
+    check_hresult(static_cast<const ILauncherOptions2 &>(static_cast<const D &>(*this))->put_TargetApplicationPackageFamilyName(get(value)));
 }
 
 template <typename D> Windows::Storage::Search::StorageFileQueryResult impl_ILauncherOptions2<D>::NeighboringFilesQuery() const
 {
     Windows::Storage::Search::StorageFileQueryResult value { nullptr };
-    check_hresult(shim()->get_NeighboringFilesQuery(put(value)));
+    check_hresult(static_cast<const ILauncherOptions2 &>(static_cast<const D &>(*this))->get_NeighboringFilesQuery(put(value)));
     return value;
 }
 
 template <typename D> void impl_ILauncherOptions2<D>::NeighboringFilesQuery(const Windows::Storage::Search::StorageFileQueryResult & value) const
 {
-    check_hresult(shim()->put_NeighboringFilesQuery(get(value)));
+    check_hresult(static_cast<const ILauncherOptions2 &>(static_cast<const D &>(*this))->put_NeighboringFilesQuery(get(value)));
 }
 
 template <typename D> bool impl_ILauncherOptions3<D>::IgnoreAppUriHandlers() const
 {
     bool value {};
-    check_hresult(shim()->get_IgnoreAppUriHandlers(&value));
+    check_hresult(static_cast<const ILauncherOptions3 &>(static_cast<const D &>(*this))->get_IgnoreAppUriHandlers(&value));
     return value;
 }
 
 template <typename D> void impl_ILauncherOptions3<D>::IgnoreAppUriHandlers(bool value) const
 {
-    check_hresult(shim()->put_IgnoreAppUriHandlers(value));
+    check_hresult(static_cast<const ILauncherOptions3 &>(static_cast<const D &>(*this))->put_IgnoreAppUriHandlers(value));
 }
 
 template <typename D> Windows::UI::ViewManagement::ViewSizePreference impl_ILauncherViewOptions<D>::DesiredRemainingView() const
 {
     Windows::UI::ViewManagement::ViewSizePreference value {};
-    check_hresult(shim()->get_DesiredRemainingView(&value));
+    check_hresult(static_cast<const ILauncherViewOptions &>(static_cast<const D &>(*this))->get_DesiredRemainingView(&value));
     return value;
 }
 
 template <typename D> void impl_ILauncherViewOptions<D>::DesiredRemainingView(Windows::UI::ViewManagement::ViewSizePreference value) const
 {
-    check_hresult(shim()->put_DesiredRemainingView(value));
+    check_hresult(static_cast<const ILauncherViewOptions &>(static_cast<const D &>(*this))->put_DesiredRemainingView(value));
 }
 
 template <typename D> Windows::Foundation::Uri impl_IRemoteLauncherOptions<D>::FallbackUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(shim()->get_FallbackUri(put(value)));
+    check_hresult(static_cast<const IRemoteLauncherOptions &>(static_cast<const D &>(*this))->get_FallbackUri(put(value)));
     return value;
 }
 
 template <typename D> void impl_IRemoteLauncherOptions<D>::FallbackUri(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(shim()->put_FallbackUri(get(value)));
+    check_hresult(static_cast<const IRemoteLauncherOptions &>(static_cast<const D &>(*this))->put_FallbackUri(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IRemoteLauncherOptions<D>::PreferredAppIds() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(shim()->get_PreferredAppIds(put(value)));
+    check_hresult(static_cast<const IRemoteLauncherOptions &>(static_cast<const D &>(*this))->get_PreferredAppIds(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Storage::IStorageItem> impl_IFolderLauncherOptions<D>::ItemsToSelect() const
 {
     Windows::Foundation::Collections::IVector<Windows::Storage::IStorageItem> value;
-    check_hresult(shim()->get_ItemsToSelect(put(value)));
+    check_hresult(static_cast<const IFolderLauncherOptions &>(static_cast<const D &>(*this))->get_ItemsToSelect(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_ILauncherStatics<D>::LaunchFileAsync(const Windows::Storage::IStorageFile & file) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(shim()->abi_LaunchFileAsync(get(file), put(operation)));
+    check_hresult(static_cast<const ILauncherStatics &>(static_cast<const D &>(*this))->abi_LaunchFileAsync(get(file), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_ILauncherStatics<D>::LaunchFileAsync(const Windows::Storage::IStorageFile & file, const Windows::System::LauncherOptions & options) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(shim()->abi_LaunchFileWithOptionsAsync(get(file), get(options), put(operation)));
+    check_hresult(static_cast<const ILauncherStatics &>(static_cast<const D &>(*this))->abi_LaunchFileWithOptionsAsync(get(file), get(options), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_ILauncherStatics<D>::LaunchUriAsync(const Windows::Foundation::Uri & uri) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(shim()->abi_LaunchUriAsync(get(uri), put(operation)));
+    check_hresult(static_cast<const ILauncherStatics &>(static_cast<const D &>(*this))->abi_LaunchUriAsync(get(uri), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_ILauncherStatics<D>::LaunchUriAsync(const Windows::Foundation::Uri & uri, const Windows::System::LauncherOptions & options) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(shim()->abi_LaunchUriWithOptionsAsync(get(uri), get(options), put(operation)));
+    check_hresult(static_cast<const ILauncherStatics &>(static_cast<const D &>(*this))->abi_LaunchUriWithOptionsAsync(get(uri), get(options), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::System::LaunchUriResult> impl_ILauncherStatics2<D>::LaunchUriForResultsAsync(const Windows::Foundation::Uri & uri, const Windows::System::LauncherOptions & options) const
 {
     Windows::Foundation::IAsyncOperation<Windows::System::LaunchUriResult> operation;
-    check_hresult(shim()->abi_LaunchUriForResultsAsync(get(uri), get(options), put(operation)));
+    check_hresult(static_cast<const ILauncherStatics2 &>(static_cast<const D &>(*this))->abi_LaunchUriForResultsAsync(get(uri), get(options), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::System::LaunchUriResult> impl_ILauncherStatics2<D>::LaunchUriForResultsAsync(const Windows::Foundation::Uri & uri, const Windows::System::LauncherOptions & options, const Windows::Foundation::Collections::ValueSet & inputData) const
 {
     Windows::Foundation::IAsyncOperation<Windows::System::LaunchUriResult> operation;
-    check_hresult(shim()->abi_LaunchUriForResultsWithDataAsync(get(uri), get(options), get(inputData), put(operation)));
+    check_hresult(static_cast<const ILauncherStatics2 &>(static_cast<const D &>(*this))->abi_LaunchUriForResultsWithDataAsync(get(uri), get(options), get(inputData), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_ILauncherStatics2<D>::LaunchUriAsync(const Windows::Foundation::Uri & uri, const Windows::System::LauncherOptions & options, const Windows::Foundation::Collections::ValueSet & inputData) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(shim()->abi_LaunchUriWithDataAsync(get(uri), get(options), get(inputData), put(operation)));
+    check_hresult(static_cast<const ILauncherStatics2 &>(static_cast<const D &>(*this))->abi_LaunchUriWithDataAsync(get(uri), get(options), get(inputData), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> impl_ILauncherStatics2<D>::QueryUriSupportAsync(const Windows::Foundation::Uri & uri, Windows::System::LaunchQuerySupportType launchQuerySupportType) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> operation;
-    check_hresult(shim()->abi_QueryUriSupportAsync(get(uri), launchQuerySupportType, put(operation)));
+    check_hresult(static_cast<const ILauncherStatics2 &>(static_cast<const D &>(*this))->abi_QueryUriSupportAsync(get(uri), launchQuerySupportType, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> impl_ILauncherStatics2<D>::QueryUriSupportAsync(const Windows::Foundation::Uri & uri, Windows::System::LaunchQuerySupportType launchQuerySupportType, hstring_ref packageFamilyName) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> operation;
-    check_hresult(shim()->abi_QueryUriSupportWithPackageFamilyNameAsync(get(uri), launchQuerySupportType, get(packageFamilyName), put(operation)));
+    check_hresult(static_cast<const ILauncherStatics2 &>(static_cast<const D &>(*this))->abi_QueryUriSupportWithPackageFamilyNameAsync(get(uri), launchQuerySupportType, get(packageFamilyName), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> impl_ILauncherStatics2<D>::QueryFileSupportAsync(const Windows::Storage::StorageFile & file) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> operation;
-    check_hresult(shim()->abi_QueryFileSupportAsync(get(file), put(operation)));
+    check_hresult(static_cast<const ILauncherStatics2 &>(static_cast<const D &>(*this))->abi_QueryFileSupportAsync(get(file), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> impl_ILauncherStatics2<D>::QueryFileSupportAsync(const Windows::Storage::StorageFile & file, hstring_ref packageFamilyName) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> operation;
-    check_hresult(shim()->abi_QueryFileSupportWithPackageFamilyNameAsync(get(file), get(packageFamilyName), put(operation)));
+    check_hresult(static_cast<const ILauncherStatics2 &>(static_cast<const D &>(*this))->abi_QueryFileSupportWithPackageFamilyNameAsync(get(file), get(packageFamilyName), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> impl_ILauncherStatics2<D>::FindUriSchemeHandlersAsync(hstring_ref scheme) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> operation;
-    check_hresult(shim()->abi_FindUriSchemeHandlersAsync(get(scheme), put(operation)));
+    check_hresult(static_cast<const ILauncherStatics2 &>(static_cast<const D &>(*this))->abi_FindUriSchemeHandlersAsync(get(scheme), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> impl_ILauncherStatics2<D>::FindUriSchemeHandlersAsync(hstring_ref scheme, Windows::System::LaunchQuerySupportType launchQuerySupportType) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> operation;
-    check_hresult(shim()->abi_FindUriSchemeHandlersWithLaunchUriTypeAsync(get(scheme), launchQuerySupportType, put(operation)));
+    check_hresult(static_cast<const ILauncherStatics2 &>(static_cast<const D &>(*this))->abi_FindUriSchemeHandlersWithLaunchUriTypeAsync(get(scheme), launchQuerySupportType, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> impl_ILauncherStatics2<D>::FindFileHandlersAsync(hstring_ref extension) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> operation;
-    check_hresult(shim()->abi_FindFileHandlersAsync(get(extension), put(operation)));
+    check_hresult(static_cast<const ILauncherStatics2 &>(static_cast<const D &>(*this))->abi_FindFileHandlersAsync(get(extension), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_ILauncherStatics3<D>::LaunchFolderAsync(const Windows::Storage::IStorageFolder & folder) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(shim()->abi_LaunchFolderAsync(get(folder), put(operation)));
+    check_hresult(static_cast<const ILauncherStatics3 &>(static_cast<const D &>(*this))->abi_LaunchFolderAsync(get(folder), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_ILauncherStatics3<D>::LaunchFolderAsync(const Windows::Storage::IStorageFolder & folder, const Windows::System::FolderLauncherOptions & options) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(shim()->abi_LaunchFolderWithOptionsAsync(get(folder), get(options), put(operation)));
+    check_hresult(static_cast<const ILauncherStatics3 &>(static_cast<const D &>(*this))->abi_LaunchFolderWithOptionsAsync(get(folder), get(options), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> impl_ILauncherStatics4<D>::QueryAppUriSupportAsync(const Windows::Foundation::Uri & uri) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> operation;
-    check_hresult(shim()->abi_QueryAppUriSupportAsync(get(uri), put(operation)));
+    check_hresult(static_cast<const ILauncherStatics4 &>(static_cast<const D &>(*this))->abi_QueryAppUriSupportAsync(get(uri), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> impl_ILauncherStatics4<D>::QueryAppUriSupportAsync(const Windows::Foundation::Uri & uri, hstring_ref packageFamilyName) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> operation;
-    check_hresult(shim()->abi_QueryAppUriSupportWithPackageFamilyNameAsync(get(uri), get(packageFamilyName), put(operation)));
+    check_hresult(static_cast<const ILauncherStatics4 &>(static_cast<const D &>(*this))->abi_QueryAppUriSupportWithPackageFamilyNameAsync(get(uri), get(packageFamilyName), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> impl_ILauncherStatics4<D>::FindAppUriHandlersAsync(const Windows::Foundation::Uri & uri) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> operation;
-    check_hresult(shim()->abi_FindAppUriHandlersAsync(get(uri), put(operation)));
+    check_hresult(static_cast<const ILauncherStatics4 &>(static_cast<const D &>(*this))->abi_FindAppUriHandlersAsync(get(uri), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchUriStatus> impl_ILauncherStatics4<D>::LaunchUriForUserAsync(const Windows::System::User & user, const Windows::Foundation::Uri & uri) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchUriStatus> operation;
-    check_hresult(shim()->abi_LaunchUriForUserAsync(get(user), get(uri), put(operation)));
+    check_hresult(static_cast<const ILauncherStatics4 &>(static_cast<const D &>(*this))->abi_LaunchUriForUserAsync(get(user), get(uri), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchUriStatus> impl_ILauncherStatics4<D>::LaunchUriForUserAsync(const Windows::System::User & user, const Windows::Foundation::Uri & uri, const Windows::System::LauncherOptions & options) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchUriStatus> operation;
-    check_hresult(shim()->abi_LaunchUriWithOptionsForUserAsync(get(user), get(uri), get(options), put(operation)));
+    check_hresult(static_cast<const ILauncherStatics4 &>(static_cast<const D &>(*this))->abi_LaunchUriWithOptionsForUserAsync(get(user), get(uri), get(options), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchUriStatus> impl_ILauncherStatics4<D>::LaunchUriForUserAsync(const Windows::System::User & user, const Windows::Foundation::Uri & uri, const Windows::System::LauncherOptions & options, const Windows::Foundation::Collections::ValueSet & inputData) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchUriStatus> operation;
-    check_hresult(shim()->abi_LaunchUriWithDataForUserAsync(get(user), get(uri), get(options), get(inputData), put(operation)));
+    check_hresult(static_cast<const ILauncherStatics4 &>(static_cast<const D &>(*this))->abi_LaunchUriWithDataForUserAsync(get(user), get(uri), get(options), get(inputData), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::System::LaunchUriResult> impl_ILauncherStatics4<D>::LaunchUriForResultsForUserAsync(const Windows::System::User & user, const Windows::Foundation::Uri & uri, const Windows::System::LauncherOptions & options) const
 {
     Windows::Foundation::IAsyncOperation<Windows::System::LaunchUriResult> operation;
-    check_hresult(shim()->abi_LaunchUriForResultsForUserAsync(get(user), get(uri), get(options), put(operation)));
+    check_hresult(static_cast<const ILauncherStatics4 &>(static_cast<const D &>(*this))->abi_LaunchUriForResultsForUserAsync(get(user), get(uri), get(options), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::System::LaunchUriResult> impl_ILauncherStatics4<D>::LaunchUriForResultsForUserAsync(const Windows::System::User & user, const Windows::Foundation::Uri & uri, const Windows::System::LauncherOptions & options, const Windows::Foundation::Collections::ValueSet & inputData) const
 {
     Windows::Foundation::IAsyncOperation<Windows::System::LaunchUriResult> operation;
-    check_hresult(shim()->abi_LaunchUriForResultsWithDataForUserAsync(get(user), get(uri), get(options), get(inputData), put(operation)));
+    check_hresult(static_cast<const ILauncherStatics4 &>(static_cast<const D &>(*this))->abi_LaunchUriForResultsWithDataForUserAsync(get(user), get(uri), get(options), get(inputData), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::System::RemoteLaunchUriStatus> impl_IRemoteLauncherStatics<D>::LaunchUriAsync(const Windows::System::RemoteSystems::RemoteSystemConnectionRequest & remoteSystemConnectionRequest, const Windows::Foundation::Uri & uri) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::System::RemoteLaunchUriStatus> operation;
-    check_hresult(shim()->abi_LaunchUriAsync(get(remoteSystemConnectionRequest), get(uri), put(operation)));
+    check_hresult(static_cast<const IRemoteLauncherStatics &>(static_cast<const D &>(*this))->abi_LaunchUriAsync(get(remoteSystemConnectionRequest), get(uri), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::System::RemoteLaunchUriStatus> impl_IRemoteLauncherStatics<D>::LaunchUriAsync(const Windows::System::RemoteSystems::RemoteSystemConnectionRequest & remoteSystemConnectionRequest, const Windows::Foundation::Uri & uri, const Windows::System::RemoteLauncherOptions & options) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::System::RemoteLaunchUriStatus> operation;
-    check_hresult(shim()->abi_LaunchUriWithOptionsAsync(get(remoteSystemConnectionRequest), get(uri), get(options), put(operation)));
+    check_hresult(static_cast<const IRemoteLauncherStatics &>(static_cast<const D &>(*this))->abi_LaunchUriWithOptionsAsync(get(remoteSystemConnectionRequest), get(uri), get(options), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::System::RemoteLaunchUriStatus> impl_IRemoteLauncherStatics<D>::LaunchUriAsync(const Windows::System::RemoteSystems::RemoteSystemConnectionRequest & remoteSystemConnectionRequest, const Windows::Foundation::Uri & uri, const Windows::System::RemoteLauncherOptions & options, const Windows::Foundation::Collections::ValueSet & inputData) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::System::RemoteLaunchUriStatus> operation;
-    check_hresult(shim()->abi_LaunchUriWithDataAsync(get(remoteSystemConnectionRequest), get(uri), get(options), get(inputData), put(operation)));
+    check_hresult(static_cast<const IRemoteLauncherStatics &>(static_cast<const D &>(*this))->abi_LaunchUriWithDataAsync(get(remoteSystemConnectionRequest), get(uri), get(options), get(inputData), put(operation)));
     return operation;
 }
 

@@ -96,24 +96,16 @@ template <> struct __declspec(uuid("05eb86f1-7140-5517-b88d-cbaebe57e6b1")) __de
 namespace Windows::Networking::ServiceDiscovery::Dnssd {
 
 template <typename D>
-class WINRT_EBO impl_IDnssdRegistrationResult
+struct WINRT_EBO impl_IDnssdRegistrationResult
 {
-    auto shim() const { return impl::shim<D, IDnssdRegistrationResult>(this); }
-
-public:
-
     Windows::Networking::ServiceDiscovery::Dnssd::DnssdRegistrationStatus Status() const;
     Windows::Networking::HostName IPAddress() const;
     bool HasInstanceNameChanged() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDnssdServiceInstance
+struct WINRT_EBO impl_IDnssdServiceInstance
 {
-    auto shim() const { return impl::shim<D, IDnssdServiceInstance>(this); }
-
-public:
-
     hstring DnssdServiceInstanceName() const;
     void DnssdServiceInstanceName(hstring_ref value) const;
     Windows::Networking::HostName HostName() const;
@@ -132,22 +124,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDnssdServiceInstanceFactory
+struct WINRT_EBO impl_IDnssdServiceInstanceFactory
 {
-    auto shim() const { return impl::shim<D, IDnssdServiceInstanceFactory>(this); }
-
-public:
-
     Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceInstance Create(hstring_ref dnssdServiceInstanceName, const Windows::Networking::HostName & hostName, uint16_t port) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDnssdServiceWatcher
+struct WINRT_EBO impl_IDnssdServiceWatcher
 {
-    auto shim() const { return impl::shim<D, IDnssdServiceWatcher>(this); }
-
-public:
-
     event_token Added(const Windows::Foundation::TypedEventHandler<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceWatcher, Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceInstance> & handler) const;
     using Added_revoker = event_revoker<IDnssdServiceWatcher>;
     Added_revoker Added(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceWatcher, Windows::Networking::ServiceDiscovery::Dnssd::DnssdServiceInstance> & handler) const;

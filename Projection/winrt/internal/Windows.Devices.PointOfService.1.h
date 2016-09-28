@@ -746,62 +746,62 @@ template <> struct traits<Windows::Devices::PointOfService::UnifiedPosErrorData>
 
 namespace Windows::Devices::PointOfService {
 
-template <typename T> class impl_IBarcodeScanner;
-template <typename T> class impl_IBarcodeScanner2;
-template <typename T> class impl_IBarcodeScannerCapabilities;
-template <typename T> class impl_IBarcodeScannerCapabilities1;
-template <typename T> class impl_IBarcodeScannerDataReceivedEventArgs;
-template <typename T> class impl_IBarcodeScannerErrorOccurredEventArgs;
-template <typename T> class impl_IBarcodeScannerImagePreviewReceivedEventArgs;
-template <typename T> class impl_IBarcodeScannerReport;
-template <typename T> class impl_IBarcodeScannerStatics;
-template <typename T> class impl_IBarcodeScannerStatusUpdatedEventArgs;
-template <typename T> class impl_IBarcodeSymbologiesStatics;
-template <typename T> class impl_ICashDrawer;
-template <typename T> class impl_ICashDrawerCapabilities;
-template <typename T> class impl_ICashDrawerCloseAlarm;
-template <typename T> class impl_ICashDrawerEventSource;
-template <typename T> class impl_ICashDrawerEventSourceEventArgs;
-template <typename T> class impl_ICashDrawerStatics;
-template <typename T> class impl_ICashDrawerStatus;
-template <typename T> class impl_ICashDrawerStatusUpdatedEventArgs;
-template <typename T> class impl_IClaimedBarcodeScanner;
-template <typename T> class impl_IClaimedBarcodeScanner1;
-template <typename T> class impl_IClaimedCashDrawer;
-template <typename T> class impl_IClaimedJournalPrinter;
-template <typename T> class impl_IClaimedMagneticStripeReader;
-template <typename T> class impl_IClaimedPosPrinter;
-template <typename T> class impl_IClaimedReceiptPrinter;
-template <typename T> class impl_IClaimedSlipPrinter;
-template <typename T> class impl_ICommonClaimedPosPrinterStation;
-template <typename T> class impl_ICommonPosPrintStationCapabilities;
-template <typename T> class impl_ICommonReceiptSlipCapabilities;
-template <typename T> class impl_IJournalPrinterCapabilities;
-template <typename T> class impl_IMagneticStripeReader;
-template <typename T> class impl_IMagneticStripeReaderAamvaCardDataReceivedEventArgs;
-template <typename T> class impl_IMagneticStripeReaderBankCardDataReceivedEventArgs;
-template <typename T> class impl_IMagneticStripeReaderCapabilities;
-template <typename T> class impl_IMagneticStripeReaderCardTypesStatics;
-template <typename T> class impl_IMagneticStripeReaderEncryptionAlgorithmsStatics;
-template <typename T> class impl_IMagneticStripeReaderErrorOccurredEventArgs;
-template <typename T> class impl_IMagneticStripeReaderReport;
-template <typename T> class impl_IMagneticStripeReaderStatics;
-template <typename T> class impl_IMagneticStripeReaderStatusUpdatedEventArgs;
-template <typename T> class impl_IMagneticStripeReaderTrackData;
-template <typename T> class impl_IMagneticStripeReaderVendorSpecificCardDataReceivedEventArgs;
-template <typename T> class impl_IPosPrinter;
-template <typename T> class impl_IPosPrinterCapabilities;
-template <typename T> class impl_IPosPrinterCharacterSetIdsStatics;
-template <typename T> class impl_IPosPrinterJob;
-template <typename T> class impl_IPosPrinterReleaseDeviceRequestedEventArgs;
-template <typename T> class impl_IPosPrinterStatics;
-template <typename T> class impl_IPosPrinterStatus;
-template <typename T> class impl_IPosPrinterStatusUpdatedEventArgs;
-template <typename T> class impl_IReceiptOrSlipJob;
-template <typename T> class impl_IReceiptPrintJob;
-template <typename T> class impl_IReceiptPrinterCapabilities;
-template <typename T> class impl_ISlipPrinterCapabilities;
-template <typename T> class impl_IUnifiedPosErrorData;
+template <typename T> struct impl_IBarcodeScanner;
+template <typename T> struct impl_IBarcodeScanner2;
+template <typename T> struct impl_IBarcodeScannerCapabilities;
+template <typename T> struct impl_IBarcodeScannerCapabilities1;
+template <typename T> struct impl_IBarcodeScannerDataReceivedEventArgs;
+template <typename T> struct impl_IBarcodeScannerErrorOccurredEventArgs;
+template <typename T> struct impl_IBarcodeScannerImagePreviewReceivedEventArgs;
+template <typename T> struct impl_IBarcodeScannerReport;
+template <typename T> struct impl_IBarcodeScannerStatics;
+template <typename T> struct impl_IBarcodeScannerStatusUpdatedEventArgs;
+template <typename T> struct impl_IBarcodeSymbologiesStatics;
+template <typename T> struct impl_ICashDrawer;
+template <typename T> struct impl_ICashDrawerCapabilities;
+template <typename T> struct impl_ICashDrawerCloseAlarm;
+template <typename T> struct impl_ICashDrawerEventSource;
+template <typename T> struct impl_ICashDrawerEventSourceEventArgs;
+template <typename T> struct impl_ICashDrawerStatics;
+template <typename T> struct impl_ICashDrawerStatus;
+template <typename T> struct impl_ICashDrawerStatusUpdatedEventArgs;
+template <typename T> struct impl_IClaimedBarcodeScanner;
+template <typename T> struct impl_IClaimedBarcodeScanner1;
+template <typename T> struct impl_IClaimedCashDrawer;
+template <typename T> struct impl_IClaimedJournalPrinter;
+template <typename T> struct impl_IClaimedMagneticStripeReader;
+template <typename T> struct impl_IClaimedPosPrinter;
+template <typename T> struct impl_IClaimedReceiptPrinter;
+template <typename T> struct impl_IClaimedSlipPrinter;
+template <typename T> struct impl_ICommonClaimedPosPrinterStation;
+template <typename T> struct impl_ICommonPosPrintStationCapabilities;
+template <typename T> struct impl_ICommonReceiptSlipCapabilities;
+template <typename T> struct impl_IJournalPrinterCapabilities;
+template <typename T> struct impl_IMagneticStripeReader;
+template <typename T> struct impl_IMagneticStripeReaderAamvaCardDataReceivedEventArgs;
+template <typename T> struct impl_IMagneticStripeReaderBankCardDataReceivedEventArgs;
+template <typename T> struct impl_IMagneticStripeReaderCapabilities;
+template <typename T> struct impl_IMagneticStripeReaderCardTypesStatics;
+template <typename T> struct impl_IMagneticStripeReaderEncryptionAlgorithmsStatics;
+template <typename T> struct impl_IMagneticStripeReaderErrorOccurredEventArgs;
+template <typename T> struct impl_IMagneticStripeReaderReport;
+template <typename T> struct impl_IMagneticStripeReaderStatics;
+template <typename T> struct impl_IMagneticStripeReaderStatusUpdatedEventArgs;
+template <typename T> struct impl_IMagneticStripeReaderTrackData;
+template <typename T> struct impl_IMagneticStripeReaderVendorSpecificCardDataReceivedEventArgs;
+template <typename T> struct impl_IPosPrinter;
+template <typename T> struct impl_IPosPrinterCapabilities;
+template <typename T> struct impl_IPosPrinterCharacterSetIdsStatics;
+template <typename T> struct impl_IPosPrinterJob;
+template <typename T> struct impl_IPosPrinterReleaseDeviceRequestedEventArgs;
+template <typename T> struct impl_IPosPrinterStatics;
+template <typename T> struct impl_IPosPrinterStatus;
+template <typename T> struct impl_IPosPrinterStatusUpdatedEventArgs;
+template <typename T> struct impl_IReceiptOrSlipJob;
+template <typename T> struct impl_IReceiptPrintJob;
+template <typename T> struct impl_IReceiptPrinterCapabilities;
+template <typename T> struct impl_ISlipPrinterCapabilities;
+template <typename T> struct impl_IUnifiedPosErrorData;
 
 }
 
@@ -1146,49 +1146,42 @@ template <> struct traits<Windows::Devices::PointOfService::IUnifiedPosErrorData
 template <> struct traits<Windows::Devices::PointOfService::BarcodeScanner>
 {
     using abi = ABI::Windows::Devices::PointOfService::BarcodeScanner;
-    using default_interface = Windows::Devices::PointOfService::IBarcodeScanner;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.BarcodeScanner"; }
 };
 
 template <> struct traits<Windows::Devices::PointOfService::BarcodeScannerCapabilities>
 {
     using abi = ABI::Windows::Devices::PointOfService::BarcodeScannerCapabilities;
-    using default_interface = Windows::Devices::PointOfService::IBarcodeScannerCapabilities;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.BarcodeScannerCapabilities"; }
 };
 
 template <> struct traits<Windows::Devices::PointOfService::BarcodeScannerDataReceivedEventArgs>
 {
     using abi = ABI::Windows::Devices::PointOfService::BarcodeScannerDataReceivedEventArgs;
-    using default_interface = Windows::Devices::PointOfService::IBarcodeScannerDataReceivedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.BarcodeScannerDataReceivedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::PointOfService::BarcodeScannerErrorOccurredEventArgs>
 {
     using abi = ABI::Windows::Devices::PointOfService::BarcodeScannerErrorOccurredEventArgs;
-    using default_interface = Windows::Devices::PointOfService::IBarcodeScannerErrorOccurredEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.BarcodeScannerErrorOccurredEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::PointOfService::BarcodeScannerImagePreviewReceivedEventArgs>
 {
     using abi = ABI::Windows::Devices::PointOfService::BarcodeScannerImagePreviewReceivedEventArgs;
-    using default_interface = Windows::Devices::PointOfService::IBarcodeScannerImagePreviewReceivedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.BarcodeScannerImagePreviewReceivedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::PointOfService::BarcodeScannerReport>
 {
     using abi = ABI::Windows::Devices::PointOfService::BarcodeScannerReport;
-    using default_interface = Windows::Devices::PointOfService::IBarcodeScannerReport;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.BarcodeScannerReport"; }
 };
 
 template <> struct traits<Windows::Devices::PointOfService::BarcodeScannerStatusUpdatedEventArgs>
 {
     using abi = ABI::Windows::Devices::PointOfService::BarcodeScannerStatusUpdatedEventArgs;
-    using default_interface = Windows::Devices::PointOfService::IBarcodeScannerStatusUpdatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.BarcodeScannerStatusUpdatedEventArgs"; }
 };
 
@@ -1200,147 +1193,126 @@ template <> struct traits<Windows::Devices::PointOfService::BarcodeSymbologies>
 template <> struct traits<Windows::Devices::PointOfService::CashDrawer>
 {
     using abi = ABI::Windows::Devices::PointOfService::CashDrawer;
-    using default_interface = Windows::Devices::PointOfService::ICashDrawer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.CashDrawer"; }
 };
 
 template <> struct traits<Windows::Devices::PointOfService::CashDrawerCapabilities>
 {
     using abi = ABI::Windows::Devices::PointOfService::CashDrawerCapabilities;
-    using default_interface = Windows::Devices::PointOfService::ICashDrawerCapabilities;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.CashDrawerCapabilities"; }
 };
 
 template <> struct traits<Windows::Devices::PointOfService::CashDrawerCloseAlarm>
 {
     using abi = ABI::Windows::Devices::PointOfService::CashDrawerCloseAlarm;
-    using default_interface = Windows::Devices::PointOfService::ICashDrawerCloseAlarm;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.CashDrawerCloseAlarm"; }
 };
 
 template <> struct traits<Windows::Devices::PointOfService::CashDrawerClosedEventArgs>
 {
     using abi = ABI::Windows::Devices::PointOfService::CashDrawerClosedEventArgs;
-    using default_interface = Windows::Devices::PointOfService::ICashDrawerEventSourceEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.CashDrawerClosedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::PointOfService::CashDrawerEventSource>
 {
     using abi = ABI::Windows::Devices::PointOfService::CashDrawerEventSource;
-    using default_interface = Windows::Devices::PointOfService::ICashDrawerEventSource;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.CashDrawerEventSource"; }
 };
 
 template <> struct traits<Windows::Devices::PointOfService::CashDrawerOpenedEventArgs>
 {
     using abi = ABI::Windows::Devices::PointOfService::CashDrawerOpenedEventArgs;
-    using default_interface = Windows::Devices::PointOfService::ICashDrawerEventSourceEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.CashDrawerOpenedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::PointOfService::CashDrawerStatus>
 {
     using abi = ABI::Windows::Devices::PointOfService::CashDrawerStatus;
-    using default_interface = Windows::Devices::PointOfService::ICashDrawerStatus;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.CashDrawerStatus"; }
 };
 
 template <> struct traits<Windows::Devices::PointOfService::CashDrawerStatusUpdatedEventArgs>
 {
     using abi = ABI::Windows::Devices::PointOfService::CashDrawerStatusUpdatedEventArgs;
-    using default_interface = Windows::Devices::PointOfService::ICashDrawerStatusUpdatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.CashDrawerStatusUpdatedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::PointOfService::ClaimedBarcodeScanner>
 {
     using abi = ABI::Windows::Devices::PointOfService::ClaimedBarcodeScanner;
-    using default_interface = Windows::Devices::PointOfService::IClaimedBarcodeScanner;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.ClaimedBarcodeScanner"; }
 };
 
 template <> struct traits<Windows::Devices::PointOfService::ClaimedCashDrawer>
 {
     using abi = ABI::Windows::Devices::PointOfService::ClaimedCashDrawer;
-    using default_interface = Windows::Devices::PointOfService::IClaimedCashDrawer;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.ClaimedCashDrawer"; }
 };
 
 template <> struct traits<Windows::Devices::PointOfService::ClaimedJournalPrinter>
 {
     using abi = ABI::Windows::Devices::PointOfService::ClaimedJournalPrinter;
-    using default_interface = Windows::Devices::PointOfService::IClaimedJournalPrinter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.ClaimedJournalPrinter"; }
 };
 
 template <> struct traits<Windows::Devices::PointOfService::ClaimedMagneticStripeReader>
 {
     using abi = ABI::Windows::Devices::PointOfService::ClaimedMagneticStripeReader;
-    using default_interface = Windows::Devices::PointOfService::IClaimedMagneticStripeReader;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.ClaimedMagneticStripeReader"; }
 };
 
 template <> struct traits<Windows::Devices::PointOfService::ClaimedPosPrinter>
 {
     using abi = ABI::Windows::Devices::PointOfService::ClaimedPosPrinter;
-    using default_interface = Windows::Devices::PointOfService::IClaimedPosPrinter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.ClaimedPosPrinter"; }
 };
 
 template <> struct traits<Windows::Devices::PointOfService::ClaimedReceiptPrinter>
 {
     using abi = ABI::Windows::Devices::PointOfService::ClaimedReceiptPrinter;
-    using default_interface = Windows::Devices::PointOfService::IClaimedReceiptPrinter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.ClaimedReceiptPrinter"; }
 };
 
 template <> struct traits<Windows::Devices::PointOfService::ClaimedSlipPrinter>
 {
     using abi = ABI::Windows::Devices::PointOfService::ClaimedSlipPrinter;
-    using default_interface = Windows::Devices::PointOfService::IClaimedSlipPrinter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.ClaimedSlipPrinter"; }
 };
 
 template <> struct traits<Windows::Devices::PointOfService::JournalPrintJob>
 {
     using abi = ABI::Windows::Devices::PointOfService::JournalPrintJob;
-    using default_interface = Windows::Devices::PointOfService::IPosPrinterJob;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.JournalPrintJob"; }
 };
 
 template <> struct traits<Windows::Devices::PointOfService::JournalPrinterCapabilities>
 {
     using abi = ABI::Windows::Devices::PointOfService::JournalPrinterCapabilities;
-    using default_interface = Windows::Devices::PointOfService::IJournalPrinterCapabilities;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.JournalPrinterCapabilities"; }
 };
 
 template <> struct traits<Windows::Devices::PointOfService::MagneticStripeReader>
 {
     using abi = ABI::Windows::Devices::PointOfService::MagneticStripeReader;
-    using default_interface = Windows::Devices::PointOfService::IMagneticStripeReader;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.MagneticStripeReader"; }
 };
 
 template <> struct traits<Windows::Devices::PointOfService::MagneticStripeReaderAamvaCardDataReceivedEventArgs>
 {
     using abi = ABI::Windows::Devices::PointOfService::MagneticStripeReaderAamvaCardDataReceivedEventArgs;
-    using default_interface = Windows::Devices::PointOfService::IMagneticStripeReaderAamvaCardDataReceivedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.MagneticStripeReaderAamvaCardDataReceivedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::PointOfService::MagneticStripeReaderBankCardDataReceivedEventArgs>
 {
     using abi = ABI::Windows::Devices::PointOfService::MagneticStripeReaderBankCardDataReceivedEventArgs;
-    using default_interface = Windows::Devices::PointOfService::IMagneticStripeReaderBankCardDataReceivedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.MagneticStripeReaderBankCardDataReceivedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::PointOfService::MagneticStripeReaderCapabilities>
 {
     using abi = ABI::Windows::Devices::PointOfService::MagneticStripeReaderCapabilities;
-    using default_interface = Windows::Devices::PointOfService::IMagneticStripeReaderCapabilities;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.MagneticStripeReaderCapabilities"; }
 };
 
@@ -1357,49 +1329,42 @@ template <> struct traits<Windows::Devices::PointOfService::MagneticStripeReader
 template <> struct traits<Windows::Devices::PointOfService::MagneticStripeReaderErrorOccurredEventArgs>
 {
     using abi = ABI::Windows::Devices::PointOfService::MagneticStripeReaderErrorOccurredEventArgs;
-    using default_interface = Windows::Devices::PointOfService::IMagneticStripeReaderErrorOccurredEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.MagneticStripeReaderErrorOccurredEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::PointOfService::MagneticStripeReaderReport>
 {
     using abi = ABI::Windows::Devices::PointOfService::MagneticStripeReaderReport;
-    using default_interface = Windows::Devices::PointOfService::IMagneticStripeReaderReport;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.MagneticStripeReaderReport"; }
 };
 
 template <> struct traits<Windows::Devices::PointOfService::MagneticStripeReaderStatusUpdatedEventArgs>
 {
     using abi = ABI::Windows::Devices::PointOfService::MagneticStripeReaderStatusUpdatedEventArgs;
-    using default_interface = Windows::Devices::PointOfService::IMagneticStripeReaderStatusUpdatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.MagneticStripeReaderStatusUpdatedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::PointOfService::MagneticStripeReaderTrackData>
 {
     using abi = ABI::Windows::Devices::PointOfService::MagneticStripeReaderTrackData;
-    using default_interface = Windows::Devices::PointOfService::IMagneticStripeReaderTrackData;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.MagneticStripeReaderTrackData"; }
 };
 
 template <> struct traits<Windows::Devices::PointOfService::MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs>
 {
     using abi = ABI::Windows::Devices::PointOfService::MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs;
-    using default_interface = Windows::Devices::PointOfService::IMagneticStripeReaderVendorSpecificCardDataReceivedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::PointOfService::PosPrinter>
 {
     using abi = ABI::Windows::Devices::PointOfService::PosPrinter;
-    using default_interface = Windows::Devices::PointOfService::IPosPrinter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.PosPrinter"; }
 };
 
 template <> struct traits<Windows::Devices::PointOfService::PosPrinterCapabilities>
 {
     using abi = ABI::Windows::Devices::PointOfService::PosPrinterCapabilities;
-    using default_interface = Windows::Devices::PointOfService::IPosPrinterCapabilities;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.PosPrinterCapabilities"; }
 };
 
@@ -1411,56 +1376,48 @@ template <> struct traits<Windows::Devices::PointOfService::PosPrinterCharacterS
 template <> struct traits<Windows::Devices::PointOfService::PosPrinterReleaseDeviceRequestedEventArgs>
 {
     using abi = ABI::Windows::Devices::PointOfService::PosPrinterReleaseDeviceRequestedEventArgs;
-    using default_interface = Windows::Devices::PointOfService::IPosPrinterReleaseDeviceRequestedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.PosPrinterReleaseDeviceRequestedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::PointOfService::PosPrinterStatus>
 {
     using abi = ABI::Windows::Devices::PointOfService::PosPrinterStatus;
-    using default_interface = Windows::Devices::PointOfService::IPosPrinterStatus;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.PosPrinterStatus"; }
 };
 
 template <> struct traits<Windows::Devices::PointOfService::PosPrinterStatusUpdatedEventArgs>
 {
     using abi = ABI::Windows::Devices::PointOfService::PosPrinterStatusUpdatedEventArgs;
-    using default_interface = Windows::Devices::PointOfService::IPosPrinterStatusUpdatedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.PosPrinterStatusUpdatedEventArgs"; }
 };
 
 template <> struct traits<Windows::Devices::PointOfService::ReceiptPrintJob>
 {
     using abi = ABI::Windows::Devices::PointOfService::ReceiptPrintJob;
-    using default_interface = Windows::Devices::PointOfService::IReceiptPrintJob;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.ReceiptPrintJob"; }
 };
 
 template <> struct traits<Windows::Devices::PointOfService::ReceiptPrinterCapabilities>
 {
     using abi = ABI::Windows::Devices::PointOfService::ReceiptPrinterCapabilities;
-    using default_interface = Windows::Devices::PointOfService::IReceiptPrinterCapabilities;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.ReceiptPrinterCapabilities"; }
 };
 
 template <> struct traits<Windows::Devices::PointOfService::SlipPrintJob>
 {
     using abi = ABI::Windows::Devices::PointOfService::SlipPrintJob;
-    using default_interface = Windows::Devices::PointOfService::IReceiptOrSlipJob;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.SlipPrintJob"; }
 };
 
 template <> struct traits<Windows::Devices::PointOfService::SlipPrinterCapabilities>
 {
     using abi = ABI::Windows::Devices::PointOfService::SlipPrinterCapabilities;
-    using default_interface = Windows::Devices::PointOfService::ISlipPrinterCapabilities;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.SlipPrinterCapabilities"; }
 };
 
 template <> struct traits<Windows::Devices::PointOfService::UnifiedPosErrorData>
 {
     using abi = ABI::Windows::Devices::PointOfService::UnifiedPosErrorData;
-    using default_interface = Windows::Devices::PointOfService::IUnifiedPosErrorData;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.PointOfService.UnifiedPosErrorData"; }
 };
 

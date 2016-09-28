@@ -145,12 +145,8 @@ template <> struct __declspec(uuid("7e7946ef-f8f0-53fd-9613-7261cb35daf4")) __de
 namespace Windows::ApplicationModel::Store::Preview {
 
 template <typename D>
-class WINRT_EBO impl_IStoreConfigurationStatics
+struct WINRT_EBO impl_IStoreConfigurationStatics
 {
-    auto shim() const { return impl::shim<D, IStoreConfigurationStatics>(this); }
-
-public:
-
     void SetSystemConfiguration(hstring_ref catalogHardwareManufacturerId, hstring_ref catalogStoreContentModifierId, const Windows::Foundation::DateTime & systemConfigurationExpiration, hstring_ref catalogHardwareDescriptor) const;
     void SetMobileOperatorConfiguration(hstring_ref mobileOperatorId, uint32_t appDownloadLimitInMegabytes, uint32_t updateDownloadLimitInMegabytes) const;
     void SetStoreWebAccountId(hstring_ref webAccountId) const;
@@ -160,23 +156,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStoreConfigurationStatics2
+struct WINRT_EBO impl_IStoreConfigurationStatics2
 {
-    auto shim() const { return impl::shim<D, IStoreConfigurationStatics2>(this); }
-
-public:
-
     Windows::Foundation::IReference<uint32_t> PurchasePromptingPolicy() const;
     void PurchasePromptingPolicy(const Windows::Foundation::IReference<uint32_t> & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStoreConfigurationStatics3
+struct WINRT_EBO impl_IStoreConfigurationStatics3
 {
-    auto shim() const { return impl::shim<D, IStoreConfigurationStatics3>(this); }
-
-public:
-
     bool HasStoreWebAccount() const;
     bool HasStoreWebAccountForUser(const Windows::System::User & user) const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamReference> GetStoreLogDataAsync(Windows::ApplicationModel::Store::Preview::StoreLogOptions options) const;
@@ -187,12 +175,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStoreHardwareManufacturerInfo
+struct WINRT_EBO impl_IStoreHardwareManufacturerInfo
 {
-    auto shim() const { return impl::shim<D, IStoreHardwareManufacturerInfo>(this); }
-
-public:
-
     hstring HardwareManufacturerId() const;
     hstring StoreContentModifierId() const;
     hstring ModelName() const;
@@ -200,23 +184,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorePreview
+struct WINRT_EBO impl_IStorePreview
 {
-    auto shim() const { return impl::shim<D, IStorePreview>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::StorePreviewPurchaseResults> RequestProductPurchaseByProductIdAndSkuIdAsync(hstring_ref productId, hstring_ref skuId) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::StorePreviewProductInfo>> LoadAddOnProductInfosAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorePreviewProductInfo
+struct WINRT_EBO impl_IStorePreviewProductInfo
 {
-    auto shim() const { return impl::shim<D, IStorePreviewProductInfo>(this); }
-
-public:
-
     hstring ProductId() const;
     hstring ProductType() const;
     hstring Title() const;
@@ -225,22 +201,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorePreviewPurchaseResults
+struct WINRT_EBO impl_IStorePreviewPurchaseResults
 {
-    auto shim() const { return impl::shim<D, IStorePreviewPurchaseResults>(this); }
-
-public:
-
     Windows::ApplicationModel::Store::Preview::StorePreviewProductPurchaseStatus ProductPurchaseStatus() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStorePreviewSkuInfo
+struct WINRT_EBO impl_IStorePreviewSkuInfo
 {
-    auto shim() const { return impl::shim<D, IStorePreviewSkuInfo>(this); }
-
-public:
-
     hstring ProductId() const;
     hstring SkuId() const;
     hstring SkuType() const;

@@ -51,9 +51,9 @@ template <> struct traits<Windows::Globalization::Fonts::LanguageFontGroup> { us
 
 namespace Windows::Globalization::Fonts {
 
-template <typename T> class impl_ILanguageFont;
-template <typename T> class impl_ILanguageFontGroup;
-template <typename T> class impl_ILanguageFontGroupFactory;
+template <typename T> struct impl_ILanguageFont;
+template <typename T> struct impl_ILanguageFontGroup;
+template <typename T> struct impl_ILanguageFontGroupFactory;
 
 }
 
@@ -80,14 +80,12 @@ template <> struct traits<Windows::Globalization::Fonts::ILanguageFontGroupFacto
 template <> struct traits<Windows::Globalization::Fonts::LanguageFont>
 {
     using abi = ABI::Windows::Globalization::Fonts::LanguageFont;
-    using default_interface = Windows::Globalization::Fonts::ILanguageFont;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Globalization.Fonts.LanguageFont"; }
 };
 
 template <> struct traits<Windows::Globalization::Fonts::LanguageFontGroup>
 {
     using abi = ABI::Windows::Globalization::Fonts::LanguageFontGroup;
-    using default_interface = Windows::Globalization::Fonts::ILanguageFontGroup;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Globalization.Fonts.LanguageFontGroup"; }
 };
 

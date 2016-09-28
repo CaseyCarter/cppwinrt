@@ -857,361 +857,361 @@ namespace Windows::UI::Xaml::Markup {
 
 template <typename D> void impl_IComponentConnector<D>::Connect(int32_t connectionId, const Windows::IInspectable & target) const
 {
-    check_hresult(shim()->abi_Connect(connectionId, get(target)));
+    check_hresult(static_cast<const IComponentConnector &>(static_cast<const D &>(*this))->abi_Connect(connectionId, get(target)));
 }
 
 template <typename D> Windows::UI::Xaml::Markup::IComponentConnector impl_IComponentConnector2<D>::GetBindingConnector(int32_t connectionId, const Windows::IInspectable & target) const
 {
     Windows::UI::Xaml::Markup::IComponentConnector returnValue;
-    check_hresult(shim()->abi_GetBindingConnector(connectionId, get(target), put(returnValue)));
+    check_hresult(static_cast<const IComponentConnector2 &>(static_cast<const D &>(*this))->abi_GetBindingConnector(connectionId, get(target), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> bool impl_IXamlMember<D>::IsAttachable() const
 {
     bool value {};
-    check_hresult(shim()->get_IsAttachable(&value));
+    check_hresult(static_cast<const IXamlMember &>(static_cast<const D &>(*this))->get_IsAttachable(&value));
     return value;
 }
 
 template <typename D> bool impl_IXamlMember<D>::IsDependencyProperty() const
 {
     bool value {};
-    check_hresult(shim()->get_IsDependencyProperty(&value));
+    check_hresult(static_cast<const IXamlMember &>(static_cast<const D &>(*this))->get_IsDependencyProperty(&value));
     return value;
 }
 
 template <typename D> bool impl_IXamlMember<D>::IsReadOnly() const
 {
     bool value {};
-    check_hresult(shim()->get_IsReadOnly(&value));
+    check_hresult(static_cast<const IXamlMember &>(static_cast<const D &>(*this))->get_IsReadOnly(&value));
     return value;
 }
 
 template <typename D> hstring impl_IXamlMember<D>::Name() const
 {
     hstring value;
-    check_hresult(shim()->get_Name(put(value)));
+    check_hresult(static_cast<const IXamlMember &>(static_cast<const D &>(*this))->get_Name(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Markup::IXamlType impl_IXamlMember<D>::TargetType() const
 {
     Windows::UI::Xaml::Markup::IXamlType value;
-    check_hresult(shim()->get_TargetType(put(value)));
+    check_hresult(static_cast<const IXamlMember &>(static_cast<const D &>(*this))->get_TargetType(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Markup::IXamlType impl_IXamlMember<D>::Type() const
 {
     Windows::UI::Xaml::Markup::IXamlType value;
-    check_hresult(shim()->get_Type(put(value)));
+    check_hresult(static_cast<const IXamlMember &>(static_cast<const D &>(*this))->get_Type(put(value)));
     return value;
 }
 
 template <typename D> Windows::IInspectable impl_IXamlMember<D>::GetValue(const Windows::IInspectable & instance) const
 {
     Windows::IInspectable value;
-    check_hresult(shim()->abi_GetValue(get(instance), put(value)));
+    check_hresult(static_cast<const IXamlMember &>(static_cast<const D &>(*this))->abi_GetValue(get(instance), put(value)));
     return value;
 }
 
 template <typename D> void impl_IXamlMember<D>::SetValue(const Windows::IInspectable & instance, const Windows::IInspectable & value) const
 {
-    check_hresult(shim()->abi_SetValue(get(instance), get(value)));
+    check_hresult(static_cast<const IXamlMember &>(static_cast<const D &>(*this))->abi_SetValue(get(instance), get(value)));
 }
 
 template <typename D> Windows::UI::Xaml::Markup::IXamlType impl_IXamlType<D>::BaseType() const
 {
     Windows::UI::Xaml::Markup::IXamlType value;
-    check_hresult(shim()->get_BaseType(put(value)));
+    check_hresult(static_cast<const IXamlType &>(static_cast<const D &>(*this))->get_BaseType(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Markup::IXamlMember impl_IXamlType<D>::ContentProperty() const
 {
     Windows::UI::Xaml::Markup::IXamlMember value;
-    check_hresult(shim()->get_ContentProperty(put(value)));
+    check_hresult(static_cast<const IXamlType &>(static_cast<const D &>(*this))->get_ContentProperty(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IXamlType<D>::FullName() const
 {
     hstring value;
-    check_hresult(shim()->get_FullName(put(value)));
+    check_hresult(static_cast<const IXamlType &>(static_cast<const D &>(*this))->get_FullName(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IXamlType<D>::IsArray() const
 {
     bool value {};
-    check_hresult(shim()->get_IsArray(&value));
+    check_hresult(static_cast<const IXamlType &>(static_cast<const D &>(*this))->get_IsArray(&value));
     return value;
 }
 
 template <typename D> bool impl_IXamlType<D>::IsCollection() const
 {
     bool value {};
-    check_hresult(shim()->get_IsCollection(&value));
+    check_hresult(static_cast<const IXamlType &>(static_cast<const D &>(*this))->get_IsCollection(&value));
     return value;
 }
 
 template <typename D> bool impl_IXamlType<D>::IsConstructible() const
 {
     bool value {};
-    check_hresult(shim()->get_IsConstructible(&value));
+    check_hresult(static_cast<const IXamlType &>(static_cast<const D &>(*this))->get_IsConstructible(&value));
     return value;
 }
 
 template <typename D> bool impl_IXamlType<D>::IsDictionary() const
 {
     bool value {};
-    check_hresult(shim()->get_IsDictionary(&value));
+    check_hresult(static_cast<const IXamlType &>(static_cast<const D &>(*this))->get_IsDictionary(&value));
     return value;
 }
 
 template <typename D> bool impl_IXamlType<D>::IsMarkupExtension() const
 {
     bool value {};
-    check_hresult(shim()->get_IsMarkupExtension(&value));
+    check_hresult(static_cast<const IXamlType &>(static_cast<const D &>(*this))->get_IsMarkupExtension(&value));
     return value;
 }
 
 template <typename D> bool impl_IXamlType<D>::IsBindable() const
 {
     bool value {};
-    check_hresult(shim()->get_IsBindable(&value));
+    check_hresult(static_cast<const IXamlType &>(static_cast<const D &>(*this))->get_IsBindable(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Markup::IXamlType impl_IXamlType<D>::ItemType() const
 {
     Windows::UI::Xaml::Markup::IXamlType value;
-    check_hresult(shim()->get_ItemType(put(value)));
+    check_hresult(static_cast<const IXamlType &>(static_cast<const D &>(*this))->get_ItemType(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Markup::IXamlType impl_IXamlType<D>::KeyType() const
 {
     Windows::UI::Xaml::Markup::IXamlType value;
-    check_hresult(shim()->get_KeyType(put(value)));
+    check_hresult(static_cast<const IXamlType &>(static_cast<const D &>(*this))->get_KeyType(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Interop::TypeName impl_IXamlType<D>::UnderlyingType() const
 {
     Windows::UI::Xaml::Interop::TypeName value {};
-    check_hresult(shim()->get_UnderlyingType(put(value)));
+    check_hresult(static_cast<const IXamlType &>(static_cast<const D &>(*this))->get_UnderlyingType(put(value)));
     return value;
 }
 
 template <typename D> Windows::IInspectable impl_IXamlType<D>::ActivateInstance() const
 {
     Windows::IInspectable instance;
-    check_hresult(shim()->abi_ActivateInstance(put(instance)));
+    check_hresult(static_cast<const IXamlType &>(static_cast<const D &>(*this))->abi_ActivateInstance(put(instance)));
     return instance;
 }
 
 template <typename D> Windows::IInspectable impl_IXamlType<D>::CreateFromString(hstring_ref value) const
 {
     Windows::IInspectable instance;
-    check_hresult(shim()->abi_CreateFromString(get(value), put(instance)));
+    check_hresult(static_cast<const IXamlType &>(static_cast<const D &>(*this))->abi_CreateFromString(get(value), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::UI::Xaml::Markup::IXamlMember impl_IXamlType<D>::GetMember(hstring_ref name) const
 {
     Windows::UI::Xaml::Markup::IXamlMember xamlMember;
-    check_hresult(shim()->abi_GetMember(get(name), put(xamlMember)));
+    check_hresult(static_cast<const IXamlType &>(static_cast<const D &>(*this))->abi_GetMember(get(name), put(xamlMember)));
     return xamlMember;
 }
 
 template <typename D> void impl_IXamlType<D>::AddToVector(const Windows::IInspectable & instance, const Windows::IInspectable & value) const
 {
-    check_hresult(shim()->abi_AddToVector(get(instance), get(value)));
+    check_hresult(static_cast<const IXamlType &>(static_cast<const D &>(*this))->abi_AddToVector(get(instance), get(value)));
 }
 
 template <typename D> void impl_IXamlType<D>::AddToMap(const Windows::IInspectable & instance, const Windows::IInspectable & key, const Windows::IInspectable & value) const
 {
-    check_hresult(shim()->abi_AddToMap(get(instance), get(key), get(value)));
+    check_hresult(static_cast<const IXamlType &>(static_cast<const D &>(*this))->abi_AddToMap(get(instance), get(key), get(value)));
 }
 
 template <typename D> void impl_IXamlType<D>::RunInitializer() const
 {
-    check_hresult(shim()->abi_RunInitializer());
+    check_hresult(static_cast<const IXamlType &>(static_cast<const D &>(*this))->abi_RunInitializer());
 }
 
 template <typename D> Windows::UI::Xaml::Markup::IXamlType impl_IXamlMetadataProvider<D>::GetXamlType(const Windows::UI::Xaml::Interop::TypeName & type) const
 {
     Windows::UI::Xaml::Markup::IXamlType xamlType;
-    check_hresult(shim()->abi_GetXamlType(get(type), put(xamlType)));
+    check_hresult(static_cast<const IXamlMetadataProvider &>(static_cast<const D &>(*this))->abi_GetXamlType(get(type), put(xamlType)));
     return xamlType;
 }
 
 template <typename D> Windows::UI::Xaml::Markup::IXamlType impl_IXamlMetadataProvider<D>::GetXamlType(hstring_ref fullName) const
 {
     Windows::UI::Xaml::Markup::IXamlType xamlType;
-    check_hresult(shim()->abi_GetXamlTypeByFullName(get(fullName), put(xamlType)));
+    check_hresult(static_cast<const IXamlMetadataProvider &>(static_cast<const D &>(*this))->abi_GetXamlTypeByFullName(get(fullName), put(xamlType)));
     return xamlType;
 }
 
 template <typename D> com_array<Windows::UI::Xaml::Markup::XmlnsDefinition> impl_IXamlMetadataProvider<D>::GetXmlnsDefinitions() const
 {
     com_array<Windows::UI::Xaml::Markup::XmlnsDefinition> definitions {};
-    check_hresult(shim()->abi_GetXmlnsDefinitions(put_size(definitions), put(definitions)));
+    check_hresult(static_cast<const IXamlMetadataProvider &>(static_cast<const D &>(*this))->abi_GetXmlnsDefinitions(put_size(definitions), put(definitions)));
     return definitions;
 }
 
 template <typename D> Windows::UI::Xaml::Markup::XamlBinaryWriterErrorInformation impl_IXamlBinaryWriterStatics<D>::Write(const Windows::Foundation::Collections::IVector<Windows::Storage::Streams::IRandomAccessStream> & inputStreams, const Windows::Foundation::Collections::IVector<Windows::Storage::Streams::IRandomAccessStream> & outputStreams, const Windows::UI::Xaml::Markup::IXamlMetadataProvider & xamlMetadataProvider) const
 {
     Windows::UI::Xaml::Markup::XamlBinaryWriterErrorInformation returnValue {};
-    check_hresult(shim()->abi_Write(get(inputStreams), get(outputStreams), get(xamlMetadataProvider), put(returnValue)));
+    check_hresult(static_cast<const IXamlBinaryWriterStatics &>(static_cast<const D &>(*this))->abi_Write(get(inputStreams), get(outputStreams), get(xamlMetadataProvider), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::IInspectable impl_IXamlReaderStatics<D>::Load(hstring_ref xaml) const
 {
     Windows::IInspectable returnValue;
-    check_hresult(shim()->abi_Load(get(xaml), put(returnValue)));
+    check_hresult(static_cast<const IXamlReaderStatics &>(static_cast<const D &>(*this))->abi_Load(get(xaml), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::IInspectable impl_IXamlReaderStatics<D>::LoadWithInitialTemplateValidation(hstring_ref xaml) const
 {
     Windows::IInspectable returnValue;
-    check_hresult(shim()->abi_LoadWithInitialTemplateValidation(get(xaml), put(returnValue)));
+    check_hresult(static_cast<const IXamlReaderStatics &>(static_cast<const D &>(*this))->abi_LoadWithInitialTemplateValidation(get(xaml), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> void impl_IDataTemplateComponent<D>::Recycle() const
 {
-    check_hresult(shim()->abi_Recycle());
+    check_hresult(static_cast<const IDataTemplateComponent &>(static_cast<const D &>(*this))->abi_Recycle());
 }
 
 template <typename D> void impl_IDataTemplateComponent<D>::ProcessBindings(const Windows::IInspectable & item, int32_t itemIndex, int32_t phase, int32_t & nextPhase) const
 {
-    check_hresult(shim()->abi_ProcessBindings(get(item), itemIndex, phase, &nextPhase));
+    check_hresult(static_cast<const IDataTemplateComponent &>(static_cast<const D &>(*this))->abi_ProcessBindings(get(item), itemIndex, phase, &nextPhase));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IXamlBindingHelperStatics<D>::DataTemplateComponentProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_DataTemplateComponentProperty(put(value)));
+    check_hresult(static_cast<const IXamlBindingHelperStatics &>(static_cast<const D &>(*this))->get_DataTemplateComponentProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Markup::IDataTemplateComponent impl_IXamlBindingHelperStatics<D>::GetDataTemplateComponent(const Windows::UI::Xaml::DependencyObject & element) const
 {
     Windows::UI::Xaml::Markup::IDataTemplateComponent value;
-    check_hresult(shim()->abi_GetDataTemplateComponent(get(element), put(value)));
+    check_hresult(static_cast<const IXamlBindingHelperStatics &>(static_cast<const D &>(*this))->abi_GetDataTemplateComponent(get(element), put(value)));
     return value;
 }
 
 template <typename D> void impl_IXamlBindingHelperStatics<D>::SetDataTemplateComponent(const Windows::UI::Xaml::DependencyObject & element, const Windows::UI::Xaml::Markup::IDataTemplateComponent & value) const
 {
-    check_hresult(shim()->abi_SetDataTemplateComponent(get(element), get(value)));
+    check_hresult(static_cast<const IXamlBindingHelperStatics &>(static_cast<const D &>(*this))->abi_SetDataTemplateComponent(get(element), get(value)));
 }
 
 template <typename D> void impl_IXamlBindingHelperStatics<D>::SuspendRendering(const Windows::UI::Xaml::UIElement & target) const
 {
-    check_hresult(shim()->abi_SuspendRendering(get(target)));
+    check_hresult(static_cast<const IXamlBindingHelperStatics &>(static_cast<const D &>(*this))->abi_SuspendRendering(get(target)));
 }
 
 template <typename D> void impl_IXamlBindingHelperStatics<D>::ResumeRendering(const Windows::UI::Xaml::UIElement & target) const
 {
-    check_hresult(shim()->abi_ResumeRendering(get(target)));
+    check_hresult(static_cast<const IXamlBindingHelperStatics &>(static_cast<const D &>(*this))->abi_ResumeRendering(get(target)));
 }
 
 template <typename D> Windows::IInspectable impl_IXamlBindingHelperStatics<D>::ConvertValue(const Windows::UI::Xaml::Interop::TypeName & type, const Windows::IInspectable & value) const
 {
     Windows::IInspectable returnValue;
-    check_hresult(shim()->abi_ConvertValue(get(type), get(value), put(returnValue)));
+    check_hresult(static_cast<const IXamlBindingHelperStatics &>(static_cast<const D &>(*this))->abi_ConvertValue(get(type), get(value), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromString(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, hstring_ref value) const
 {
-    check_hresult(shim()->abi_SetPropertyFromString(get(dependencyObject), get(propertyToSet), get(value)));
+    check_hresult(static_cast<const IXamlBindingHelperStatics &>(static_cast<const D &>(*this))->abi_SetPropertyFromString(get(dependencyObject), get(propertyToSet), get(value)));
 }
 
 template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromBoolean(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, bool value) const
 {
-    check_hresult(shim()->abi_SetPropertyFromBoolean(get(dependencyObject), get(propertyToSet), value));
+    check_hresult(static_cast<const IXamlBindingHelperStatics &>(static_cast<const D &>(*this))->abi_SetPropertyFromBoolean(get(dependencyObject), get(propertyToSet), value));
 }
 
 template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromChar16(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, wchar_t value) const
 {
-    check_hresult(shim()->abi_SetPropertyFromChar16(get(dependencyObject), get(propertyToSet), value));
+    check_hresult(static_cast<const IXamlBindingHelperStatics &>(static_cast<const D &>(*this))->abi_SetPropertyFromChar16(get(dependencyObject), get(propertyToSet), value));
 }
 
 template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromDateTime(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::DateTime & value) const
 {
-    check_hresult(shim()->abi_SetPropertyFromDateTime(get(dependencyObject), get(propertyToSet), get(value)));
+    check_hresult(static_cast<const IXamlBindingHelperStatics &>(static_cast<const D &>(*this))->abi_SetPropertyFromDateTime(get(dependencyObject), get(propertyToSet), get(value)));
 }
 
 template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromDouble(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, double value) const
 {
-    check_hresult(shim()->abi_SetPropertyFromDouble(get(dependencyObject), get(propertyToSet), value));
+    check_hresult(static_cast<const IXamlBindingHelperStatics &>(static_cast<const D &>(*this))->abi_SetPropertyFromDouble(get(dependencyObject), get(propertyToSet), value));
 }
 
 template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromInt32(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, int32_t value) const
 {
-    check_hresult(shim()->abi_SetPropertyFromInt32(get(dependencyObject), get(propertyToSet), value));
+    check_hresult(static_cast<const IXamlBindingHelperStatics &>(static_cast<const D &>(*this))->abi_SetPropertyFromInt32(get(dependencyObject), get(propertyToSet), value));
 }
 
 template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromUInt32(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, uint32_t value) const
 {
-    check_hresult(shim()->abi_SetPropertyFromUInt32(get(dependencyObject), get(propertyToSet), value));
+    check_hresult(static_cast<const IXamlBindingHelperStatics &>(static_cast<const D &>(*this))->abi_SetPropertyFromUInt32(get(dependencyObject), get(propertyToSet), value));
 }
 
 template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromInt64(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, int64_t value) const
 {
-    check_hresult(shim()->abi_SetPropertyFromInt64(get(dependencyObject), get(propertyToSet), value));
+    check_hresult(static_cast<const IXamlBindingHelperStatics &>(static_cast<const D &>(*this))->abi_SetPropertyFromInt64(get(dependencyObject), get(propertyToSet), value));
 }
 
 template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromUInt64(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, uint64_t value) const
 {
-    check_hresult(shim()->abi_SetPropertyFromUInt64(get(dependencyObject), get(propertyToSet), value));
+    check_hresult(static_cast<const IXamlBindingHelperStatics &>(static_cast<const D &>(*this))->abi_SetPropertyFromUInt64(get(dependencyObject), get(propertyToSet), value));
 }
 
 template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromSingle(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, float value) const
 {
-    check_hresult(shim()->abi_SetPropertyFromSingle(get(dependencyObject), get(propertyToSet), value));
+    check_hresult(static_cast<const IXamlBindingHelperStatics &>(static_cast<const D &>(*this))->abi_SetPropertyFromSingle(get(dependencyObject), get(propertyToSet), value));
 }
 
 template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromPoint(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::Point & value) const
 {
-    check_hresult(shim()->abi_SetPropertyFromPoint(get(dependencyObject), get(propertyToSet), get(value)));
+    check_hresult(static_cast<const IXamlBindingHelperStatics &>(static_cast<const D &>(*this))->abi_SetPropertyFromPoint(get(dependencyObject), get(propertyToSet), get(value)));
 }
 
 template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromRect(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::Rect & value) const
 {
-    check_hresult(shim()->abi_SetPropertyFromRect(get(dependencyObject), get(propertyToSet), get(value)));
+    check_hresult(static_cast<const IXamlBindingHelperStatics &>(static_cast<const D &>(*this))->abi_SetPropertyFromRect(get(dependencyObject), get(propertyToSet), get(value)));
 }
 
 template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromSize(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::Size & value) const
 {
-    check_hresult(shim()->abi_SetPropertyFromSize(get(dependencyObject), get(propertyToSet), get(value)));
+    check_hresult(static_cast<const IXamlBindingHelperStatics &>(static_cast<const D &>(*this))->abi_SetPropertyFromSize(get(dependencyObject), get(propertyToSet), get(value)));
 }
 
 template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromTimeSpan(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(shim()->abi_SetPropertyFromTimeSpan(get(dependencyObject), get(propertyToSet), get(value)));
+    check_hresult(static_cast<const IXamlBindingHelperStatics &>(static_cast<const D &>(*this))->abi_SetPropertyFromTimeSpan(get(dependencyObject), get(propertyToSet), get(value)));
 }
 
 template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromByte(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, uint8_t value) const
 {
-    check_hresult(shim()->abi_SetPropertyFromByte(get(dependencyObject), get(propertyToSet), value));
+    check_hresult(static_cast<const IXamlBindingHelperStatics &>(static_cast<const D &>(*this))->abi_SetPropertyFromByte(get(dependencyObject), get(propertyToSet), value));
 }
 
 template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromUri(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::Uri & value) const
 {
-    check_hresult(shim()->abi_SetPropertyFromUri(get(dependencyObject), get(propertyToSet), get(value)));
+    check_hresult(static_cast<const IXamlBindingHelperStatics &>(static_cast<const D &>(*this))->abi_SetPropertyFromUri(get(dependencyObject), get(propertyToSet), get(value)));
 }
 
 template <typename D> void impl_IXamlBindingHelperStatics<D>::SetPropertyFromObject(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::IInspectable & value) const
 {
-    check_hresult(shim()->abi_SetPropertyFromObject(get(dependencyObject), get(propertyToSet), get(value)));
+    check_hresult(static_cast<const IXamlBindingHelperStatics &>(static_cast<const D &>(*this))->abi_SetPropertyFromObject(get(dependencyObject), get(propertyToSet), get(value)));
 }
 
 inline Windows::UI::Xaml::Markup::XamlBinaryWriterErrorInformation XamlBinaryWriter::Write(const Windows::Foundation::Collections::IVector<Windows::Storage::Streams::IRandomAccessStream> & inputStreams, const Windows::Foundation::Collections::IVector<Windows::Storage::Streams::IRandomAccessStream> & outputStreams, const Windows::UI::Xaml::Markup::IXamlMetadataProvider & xamlMetadataProvider)

@@ -136,15 +136,15 @@ template <> struct traits<Windows::Graphics::Holographic::HolographicSpaceCamera
 
 namespace Windows::Graphics::Holographic {
 
-template <typename T> class impl_IHolographicCamera;
-template <typename T> class impl_IHolographicCameraPose;
-template <typename T> class impl_IHolographicCameraRenderingParameters;
-template <typename T> class impl_IHolographicFrame;
-template <typename T> class impl_IHolographicFramePrediction;
-template <typename T> class impl_IHolographicSpace;
-template <typename T> class impl_IHolographicSpaceCameraAddedEventArgs;
-template <typename T> class impl_IHolographicSpaceCameraRemovedEventArgs;
-template <typename T> class impl_IHolographicSpaceStatics;
+template <typename T> struct impl_IHolographicCamera;
+template <typename T> struct impl_IHolographicCameraPose;
+template <typename T> struct impl_IHolographicCameraRenderingParameters;
+template <typename T> struct impl_IHolographicFrame;
+template <typename T> struct impl_IHolographicFramePrediction;
+template <typename T> struct impl_IHolographicSpace;
+template <typename T> struct impl_IHolographicSpaceCameraAddedEventArgs;
+template <typename T> struct impl_IHolographicSpaceCameraRemovedEventArgs;
+template <typename T> struct impl_IHolographicSpaceStatics;
 
 }
 
@@ -207,56 +207,48 @@ template <> struct traits<Windows::Graphics::Holographic::IHolographicSpaceStati
 template <> struct traits<Windows::Graphics::Holographic::HolographicCamera>
 {
     using abi = ABI::Windows::Graphics::Holographic::HolographicCamera;
-    using default_interface = Windows::Graphics::Holographic::IHolographicCamera;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Holographic.HolographicCamera"; }
 };
 
 template <> struct traits<Windows::Graphics::Holographic::HolographicCameraPose>
 {
     using abi = ABI::Windows::Graphics::Holographic::HolographicCameraPose;
-    using default_interface = Windows::Graphics::Holographic::IHolographicCameraPose;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Holographic.HolographicCameraPose"; }
 };
 
 template <> struct traits<Windows::Graphics::Holographic::HolographicCameraRenderingParameters>
 {
     using abi = ABI::Windows::Graphics::Holographic::HolographicCameraRenderingParameters;
-    using default_interface = Windows::Graphics::Holographic::IHolographicCameraRenderingParameters;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Holographic.HolographicCameraRenderingParameters"; }
 };
 
 template <> struct traits<Windows::Graphics::Holographic::HolographicFrame>
 {
     using abi = ABI::Windows::Graphics::Holographic::HolographicFrame;
-    using default_interface = Windows::Graphics::Holographic::IHolographicFrame;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Holographic.HolographicFrame"; }
 };
 
 template <> struct traits<Windows::Graphics::Holographic::HolographicFramePrediction>
 {
     using abi = ABI::Windows::Graphics::Holographic::HolographicFramePrediction;
-    using default_interface = Windows::Graphics::Holographic::IHolographicFramePrediction;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Holographic.HolographicFramePrediction"; }
 };
 
 template <> struct traits<Windows::Graphics::Holographic::HolographicSpace>
 {
     using abi = ABI::Windows::Graphics::Holographic::HolographicSpace;
-    using default_interface = Windows::Graphics::Holographic::IHolographicSpace;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Holographic.HolographicSpace"; }
 };
 
 template <> struct traits<Windows::Graphics::Holographic::HolographicSpaceCameraAddedEventArgs>
 {
     using abi = ABI::Windows::Graphics::Holographic::HolographicSpaceCameraAddedEventArgs;
-    using default_interface = Windows::Graphics::Holographic::IHolographicSpaceCameraAddedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Holographic.HolographicSpaceCameraAddedEventArgs"; }
 };
 
 template <> struct traits<Windows::Graphics::Holographic::HolographicSpaceCameraRemovedEventArgs>
 {
     using abi = ABI::Windows::Graphics::Holographic::HolographicSpaceCameraRemovedEventArgs;
-    using default_interface = Windows::Graphics::Holographic::IHolographicSpaceCameraRemovedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Graphics.Holographic.HolographicSpaceCameraRemovedEventArgs"; }
 };
 

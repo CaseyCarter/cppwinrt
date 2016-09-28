@@ -192,22 +192,22 @@ template <> struct traits<Windows::Perception::Spatial::SpatialStationaryFrameOf
 
 namespace Windows::Perception::Spatial {
 
-template <typename T> class impl_ISpatialAnchor;
-template <typename T> class impl_ISpatialAnchor2;
-template <typename T> class impl_ISpatialAnchorManagerStatics;
-template <typename T> class impl_ISpatialAnchorRawCoordinateSystemAdjustedEventArgs;
-template <typename T> class impl_ISpatialAnchorStatics;
-template <typename T> class impl_ISpatialAnchorStore;
-template <typename T> class impl_ISpatialAnchorTransferManagerStatics;
-template <typename T> class impl_ISpatialBoundingVolume;
-template <typename T> class impl_ISpatialBoundingVolumeStatics;
-template <typename T> class impl_ISpatialCoordinateSystem;
-template <typename T> class impl_ISpatialLocation;
-template <typename T> class impl_ISpatialLocator;
-template <typename T> class impl_ISpatialLocatorAttachedFrameOfReference;
-template <typename T> class impl_ISpatialLocatorPositionalTrackingDeactivatingEventArgs;
-template <typename T> class impl_ISpatialLocatorStatics;
-template <typename T> class impl_ISpatialStationaryFrameOfReference;
+template <typename T> struct impl_ISpatialAnchor;
+template <typename T> struct impl_ISpatialAnchor2;
+template <typename T> struct impl_ISpatialAnchorManagerStatics;
+template <typename T> struct impl_ISpatialAnchorRawCoordinateSystemAdjustedEventArgs;
+template <typename T> struct impl_ISpatialAnchorStatics;
+template <typename T> struct impl_ISpatialAnchorStore;
+template <typename T> struct impl_ISpatialAnchorTransferManagerStatics;
+template <typename T> struct impl_ISpatialBoundingVolume;
+template <typename T> struct impl_ISpatialBoundingVolumeStatics;
+template <typename T> struct impl_ISpatialCoordinateSystem;
+template <typename T> struct impl_ISpatialLocation;
+template <typename T> struct impl_ISpatialLocator;
+template <typename T> struct impl_ISpatialLocatorAttachedFrameOfReference;
+template <typename T> struct impl_ISpatialLocatorPositionalTrackingDeactivatingEventArgs;
+template <typename T> struct impl_ISpatialLocatorStatics;
+template <typename T> struct impl_ISpatialStationaryFrameOfReference;
 
 }
 
@@ -312,7 +312,6 @@ template <> struct traits<Windows::Perception::Spatial::ISpatialStationaryFrameO
 template <> struct traits<Windows::Perception::Spatial::SpatialAnchor>
 {
     using abi = ABI::Windows::Perception::Spatial::SpatialAnchor;
-    using default_interface = Windows::Perception::Spatial::ISpatialAnchor;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Perception.Spatial.SpatialAnchor"; }
 };
 
@@ -324,14 +323,12 @@ template <> struct traits<Windows::Perception::Spatial::SpatialAnchorManager>
 template <> struct traits<Windows::Perception::Spatial::SpatialAnchorRawCoordinateSystemAdjustedEventArgs>
 {
     using abi = ABI::Windows::Perception::Spatial::SpatialAnchorRawCoordinateSystemAdjustedEventArgs;
-    using default_interface = Windows::Perception::Spatial::ISpatialAnchorRawCoordinateSystemAdjustedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Perception.Spatial.SpatialAnchorRawCoordinateSystemAdjustedEventArgs"; }
 };
 
 template <> struct traits<Windows::Perception::Spatial::SpatialAnchorStore>
 {
     using abi = ABI::Windows::Perception::Spatial::SpatialAnchorStore;
-    using default_interface = Windows::Perception::Spatial::ISpatialAnchorStore;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Perception.Spatial.SpatialAnchorStore"; }
 };
 
@@ -343,49 +340,42 @@ template <> struct traits<Windows::Perception::Spatial::SpatialAnchorTransferMan
 template <> struct traits<Windows::Perception::Spatial::SpatialBoundingVolume>
 {
     using abi = ABI::Windows::Perception::Spatial::SpatialBoundingVolume;
-    using default_interface = Windows::Perception::Spatial::ISpatialBoundingVolume;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Perception.Spatial.SpatialBoundingVolume"; }
 };
 
 template <> struct traits<Windows::Perception::Spatial::SpatialCoordinateSystem>
 {
     using abi = ABI::Windows::Perception::Spatial::SpatialCoordinateSystem;
-    using default_interface = Windows::Perception::Spatial::ISpatialCoordinateSystem;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Perception.Spatial.SpatialCoordinateSystem"; }
 };
 
 template <> struct traits<Windows::Perception::Spatial::SpatialLocation>
 {
     using abi = ABI::Windows::Perception::Spatial::SpatialLocation;
-    using default_interface = Windows::Perception::Spatial::ISpatialLocation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Perception.Spatial.SpatialLocation"; }
 };
 
 template <> struct traits<Windows::Perception::Spatial::SpatialLocator>
 {
     using abi = ABI::Windows::Perception::Spatial::SpatialLocator;
-    using default_interface = Windows::Perception::Spatial::ISpatialLocator;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Perception.Spatial.SpatialLocator"; }
 };
 
 template <> struct traits<Windows::Perception::Spatial::SpatialLocatorAttachedFrameOfReference>
 {
     using abi = ABI::Windows::Perception::Spatial::SpatialLocatorAttachedFrameOfReference;
-    using default_interface = Windows::Perception::Spatial::ISpatialLocatorAttachedFrameOfReference;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Perception.Spatial.SpatialLocatorAttachedFrameOfReference"; }
 };
 
 template <> struct traits<Windows::Perception::Spatial::SpatialLocatorPositionalTrackingDeactivatingEventArgs>
 {
     using abi = ABI::Windows::Perception::Spatial::SpatialLocatorPositionalTrackingDeactivatingEventArgs;
-    using default_interface = Windows::Perception::Spatial::ISpatialLocatorPositionalTrackingDeactivatingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Perception.Spatial.SpatialLocatorPositionalTrackingDeactivatingEventArgs"; }
 };
 
 template <> struct traits<Windows::Perception::Spatial::SpatialStationaryFrameOfReference>
 {
     using abi = ABI::Windows::Perception::Spatial::SpatialStationaryFrameOfReference;
-    using default_interface = Windows::Perception::Spatial::ISpatialStationaryFrameOfReference;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Perception.Spatial.SpatialStationaryFrameOfReference"; }
 };
 

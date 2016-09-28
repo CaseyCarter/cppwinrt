@@ -10,32 +10,20 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::Data::Xml::Xsl {
 
 template <typename D>
-class WINRT_EBO impl_IXsltProcessor
+struct WINRT_EBO impl_IXsltProcessor
 {
-    auto shim() const { return impl::shim<D, IXsltProcessor>(this); }
-
-public:
-
     hstring TransformToString(const Windows::Data::Xml::Dom::IXmlNode & inputNode) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IXsltProcessor2
+struct WINRT_EBO impl_IXsltProcessor2
 {
-    auto shim() const { return impl::shim<D, IXsltProcessor2>(this); }
-
-public:
-
     Windows::Data::Xml::Dom::XmlDocument TransformToDocument(const Windows::Data::Xml::Dom::IXmlNode & inputNode) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IXsltProcessorFactory
+struct WINRT_EBO impl_IXsltProcessorFactory
 {
-    auto shim() const { return impl::shim<D, IXsltProcessorFactory>(this); }
-
-public:
-
     Windows::Data::Xml::Xsl::XsltProcessor CreateInstance(const Windows::Data::Xml::Dom::XmlDocument & document) const;
 };
 

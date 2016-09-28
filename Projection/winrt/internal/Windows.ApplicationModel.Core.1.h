@@ -165,24 +165,24 @@ template <> struct traits<Windows::ApplicationModel::Core::UnhandledErrorDetecte
 
 namespace Windows::ApplicationModel::Core {
 
-template <typename T> class impl_IAppListEntry;
-template <typename T> class impl_ICoreApplication;
-template <typename T> class impl_ICoreApplication2;
-template <typename T> class impl_ICoreApplicationExit;
-template <typename T> class impl_ICoreApplicationUnhandledError;
-template <typename T> class impl_ICoreApplicationUseCount;
-template <typename T> class impl_ICoreApplicationView;
-template <typename T> class impl_ICoreApplicationView2;
-template <typename T> class impl_ICoreApplicationView3;
-template <typename T> class impl_ICoreApplicationViewTitleBar;
-template <typename T> class impl_ICoreImmersiveApplication;
-template <typename T> class impl_ICoreImmersiveApplication2;
-template <typename T> class impl_ICoreImmersiveApplication3;
-template <typename T> class impl_IFrameworkView;
-template <typename T> class impl_IFrameworkViewSource;
-template <typename T> class impl_IHostedViewClosingEventArgs;
-template <typename T> class impl_IUnhandledError;
-template <typename T> class impl_IUnhandledErrorDetectedEventArgs;
+template <typename T> struct impl_IAppListEntry;
+template <typename T> struct impl_ICoreApplication;
+template <typename T> struct impl_ICoreApplication2;
+template <typename T> struct impl_ICoreApplicationExit;
+template <typename T> struct impl_ICoreApplicationUnhandledError;
+template <typename T> struct impl_ICoreApplicationUseCount;
+template <typename T> struct impl_ICoreApplicationView;
+template <typename T> struct impl_ICoreApplicationView2;
+template <typename T> struct impl_ICoreApplicationView3;
+template <typename T> struct impl_ICoreApplicationViewTitleBar;
+template <typename T> struct impl_ICoreImmersiveApplication;
+template <typename T> struct impl_ICoreImmersiveApplication2;
+template <typename T> struct impl_ICoreImmersiveApplication3;
+template <typename T> struct impl_IFrameworkView;
+template <typename T> struct impl_IFrameworkViewSource;
+template <typename T> struct impl_IHostedViewClosingEventArgs;
+template <typename T> struct impl_IUnhandledError;
+template <typename T> struct impl_IUnhandledErrorDetectedEventArgs;
 
 }
 
@@ -299,7 +299,6 @@ template <> struct traits<Windows::ApplicationModel::Core::IUnhandledErrorDetect
 template <> struct traits<Windows::ApplicationModel::Core::AppListEntry>
 {
     using abi = ABI::Windows::ApplicationModel::Core::AppListEntry;
-    using default_interface = Windows::ApplicationModel::Core::IAppListEntry;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Core.AppListEntry"; }
 };
 
@@ -311,35 +310,30 @@ template <> struct traits<Windows::ApplicationModel::Core::CoreApplication>
 template <> struct traits<Windows::ApplicationModel::Core::CoreApplicationView>
 {
     using abi = ABI::Windows::ApplicationModel::Core::CoreApplicationView;
-    using default_interface = Windows::ApplicationModel::Core::ICoreApplicationView;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Core.CoreApplicationView"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Core::CoreApplicationViewTitleBar>
 {
     using abi = ABI::Windows::ApplicationModel::Core::CoreApplicationViewTitleBar;
-    using default_interface = Windows::ApplicationModel::Core::ICoreApplicationViewTitleBar;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Core.CoreApplicationViewTitleBar"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Core::HostedViewClosingEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Core::HostedViewClosingEventArgs;
-    using default_interface = Windows::ApplicationModel::Core::IHostedViewClosingEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Core.HostedViewClosingEventArgs"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Core::UnhandledError>
 {
     using abi = ABI::Windows::ApplicationModel::Core::UnhandledError;
-    using default_interface = Windows::ApplicationModel::Core::IUnhandledError;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Core.UnhandledError"; }
 };
 
 template <> struct traits<Windows::ApplicationModel::Core::UnhandledErrorDetectedEventArgs>
 {
     using abi = ABI::Windows::ApplicationModel::Core::UnhandledErrorDetectedEventArgs;
-    using default_interface = Windows::ApplicationModel::Core::IUnhandledErrorDetectedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.ApplicationModel.Core.UnhandledErrorDetectedEventArgs"; }
 };
 

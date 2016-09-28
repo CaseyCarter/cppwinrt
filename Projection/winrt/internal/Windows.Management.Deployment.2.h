@@ -180,24 +180,16 @@ template <> struct __declspec(uuid("721241c2-0b83-594a-9b61-ce7f1492c415")) __de
 namespace Windows::Management::Deployment {
 
 template <typename D>
-class WINRT_EBO impl_IDeploymentResult
+struct WINRT_EBO impl_IDeploymentResult
 {
-    auto shim() const { return impl::shim<D, IDeploymentResult>(this); }
-
-public:
-
     hstring ErrorText() const;
     GUID ActivityId() const;
     HRESULT ExtendedErrorCode() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPackageManager
+struct WINRT_EBO impl_IPackageManager
 {
-    auto shim() const { return impl::shim<D, IPackageManager>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> AddPackageAsync(const Windows::Foundation::Uri & packageUri, const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> & dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions) const;
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> UpdatePackageAsync(const Windows::Foundation::Uri & packageUri, const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> & dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions) const;
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> RemovePackageAsync(hstring_ref packageFullName) const;
@@ -217,12 +209,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPackageManager2
+struct WINRT_EBO impl_IPackageManager2
 {
-    auto shim() const { return impl::shim<D, IPackageManager2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> RemovePackageAsync(hstring_ref packageFullName, Windows::Management::Deployment::RemovalOptions removalOptions) const;
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> StagePackageAsync(const Windows::Foundation::Uri & packageUri, const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> & dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions) const;
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> RegisterPackageByFullNameAsync(hstring_ref mainPackageFullName, const Windows::Foundation::Collections::IIterable<hstring> & dependencyPackageFullNames, Windows::Management::Deployment::DeploymentOptions deploymentOptions) const;
@@ -236,12 +224,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPackageManager3
+struct WINRT_EBO impl_IPackageManager3
 {
-    auto shim() const { return impl::shim<D, IPackageManager3>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Management::Deployment::PackageVolume> AddPackageVolumeAsync(hstring_ref packageStorePath) const;
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> AddPackageAsync(const Windows::Foundation::Uri & packageUri, const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> & dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, const Windows::Management::Deployment::PackageVolume & targetVolume) const;
     void ClearPackageStatus(hstring_ref packageFullName, Windows::Management::Deployment::PackageStatus status) const;
@@ -260,33 +244,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPackageManager4
+struct WINRT_EBO impl_IPackageManager4
 {
-    auto shim() const { return impl::shim<D, IPackageManager4>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Management::Deployment::PackageVolume>> GetPackageVolumesAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPackageUserInformation
+struct WINRT_EBO impl_IPackageUserInformation
 {
-    auto shim() const { return impl::shim<D, IPackageUserInformation>(this); }
-
-public:
-
     hstring UserSecurityId() const;
     Windows::Management::Deployment::PackageInstallState InstallState() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPackageVolume
+struct WINRT_EBO impl_IPackageVolume
 {
-    auto shim() const { return impl::shim<D, IPackageVolume>(this); }
-
-public:
-
     bool IsOffline() const;
     bool IsSystemVolume() const;
     hstring MountPoint() const;
@@ -310,12 +282,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPackageVolume2
+struct WINRT_EBO impl_IPackageVolume2
 {
-    auto shim() const { return impl::shim<D, IPackageVolume2>(this); }
-
-public:
-
     bool IsFullTrustPackageSupported() const;
     bool IsAppxInstallSupported() const;
     Windows::Foundation::IAsyncOperation<uint64_t> GetAvailableSpaceAsync() const;

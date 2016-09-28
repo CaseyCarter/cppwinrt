@@ -68,10 +68,10 @@ template <> struct traits<Windows::Devices::I2c::Provider::ProviderI2cConnection
 
 namespace Windows::Devices::I2c::Provider {
 
-template <typename T> class impl_II2cControllerProvider;
-template <typename T> class impl_II2cDeviceProvider;
-template <typename T> class impl_II2cProvider;
-template <typename T> class impl_IProviderI2cConnectionSettings;
+template <typename T> struct impl_II2cControllerProvider;
+template <typename T> struct impl_II2cDeviceProvider;
+template <typename T> struct impl_II2cProvider;
+template <typename T> struct impl_IProviderI2cConnectionSettings;
 
 }
 
@@ -104,7 +104,6 @@ template <> struct traits<Windows::Devices::I2c::Provider::IProviderI2cConnectio
 template <> struct traits<Windows::Devices::I2c::Provider::ProviderI2cConnectionSettings>
 {
     using abi = ABI::Windows::Devices::I2c::Provider::ProviderI2cConnectionSettings;
-    using default_interface = Windows::Devices::I2c::Provider::IProviderI2cConnectionSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Devices.I2c.Provider.ProviderI2cConnectionSettings"; }
 };
 

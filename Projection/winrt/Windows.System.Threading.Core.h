@@ -194,67 +194,67 @@ namespace Windows::System::Threading::Core {
 template <typename D> Windows::System::Threading::Core::SignalNotifier impl_ISignalNotifierStatics<D>::AttachToEvent(hstring_ref name, const Windows::System::Threading::Core::SignalHandler & handler) const
 {
     Windows::System::Threading::Core::SignalNotifier signalNotifier { nullptr };
-    check_hresult(shim()->abi_AttachToEvent(get(name), get(handler), put(signalNotifier)));
+    check_hresult(static_cast<const ISignalNotifierStatics &>(static_cast<const D &>(*this))->abi_AttachToEvent(get(name), get(handler), put(signalNotifier)));
     return signalNotifier;
 }
 
 template <typename D> Windows::System::Threading::Core::SignalNotifier impl_ISignalNotifierStatics<D>::AttachToEvent(hstring_ref name, const Windows::System::Threading::Core::SignalHandler & handler, const Windows::Foundation::TimeSpan & timeout) const
 {
     Windows::System::Threading::Core::SignalNotifier signalNotifier { nullptr };
-    check_hresult(shim()->abi_AttachToEventWithTimeout(get(name), get(handler), get(timeout), put(signalNotifier)));
+    check_hresult(static_cast<const ISignalNotifierStatics &>(static_cast<const D &>(*this))->abi_AttachToEventWithTimeout(get(name), get(handler), get(timeout), put(signalNotifier)));
     return signalNotifier;
 }
 
 template <typename D> Windows::System::Threading::Core::SignalNotifier impl_ISignalNotifierStatics<D>::AttachToSemaphore(hstring_ref name, const Windows::System::Threading::Core::SignalHandler & handler) const
 {
     Windows::System::Threading::Core::SignalNotifier signalNotifier { nullptr };
-    check_hresult(shim()->abi_AttachToSemaphore(get(name), get(handler), put(signalNotifier)));
+    check_hresult(static_cast<const ISignalNotifierStatics &>(static_cast<const D &>(*this))->abi_AttachToSemaphore(get(name), get(handler), put(signalNotifier)));
     return signalNotifier;
 }
 
 template <typename D> Windows::System::Threading::Core::SignalNotifier impl_ISignalNotifierStatics<D>::AttachToSemaphore(hstring_ref name, const Windows::System::Threading::Core::SignalHandler & handler, const Windows::Foundation::TimeSpan & timeout) const
 {
     Windows::System::Threading::Core::SignalNotifier signalNotifier { nullptr };
-    check_hresult(shim()->abi_AttachToSemaphoreWithTimeout(get(name), get(handler), get(timeout), put(signalNotifier)));
+    check_hresult(static_cast<const ISignalNotifierStatics &>(static_cast<const D &>(*this))->abi_AttachToSemaphoreWithTimeout(get(name), get(handler), get(timeout), put(signalNotifier)));
     return signalNotifier;
 }
 
 template <typename D> Windows::System::Threading::Core::PreallocatedWorkItem impl_IPreallocatedWorkItemFactory<D>::CreateWorkItem(const Windows::System::Threading::WorkItemHandler & handler) const
 {
     Windows::System::Threading::Core::PreallocatedWorkItem workItem { nullptr };
-    check_hresult(shim()->abi_CreateWorkItem(get(handler), put(workItem)));
+    check_hresult(static_cast<const IPreallocatedWorkItemFactory &>(static_cast<const D &>(*this))->abi_CreateWorkItem(get(handler), put(workItem)));
     return workItem;
 }
 
 template <typename D> Windows::System::Threading::Core::PreallocatedWorkItem impl_IPreallocatedWorkItemFactory<D>::CreateWorkItemWithPriority(const Windows::System::Threading::WorkItemHandler & handler, Windows::System::Threading::WorkItemPriority priority) const
 {
     Windows::System::Threading::Core::PreallocatedWorkItem WorkItem { nullptr };
-    check_hresult(shim()->abi_CreateWorkItemWithPriority(get(handler), priority, put(WorkItem)));
+    check_hresult(static_cast<const IPreallocatedWorkItemFactory &>(static_cast<const D &>(*this))->abi_CreateWorkItemWithPriority(get(handler), priority, put(WorkItem)));
     return WorkItem;
 }
 
 template <typename D> Windows::System::Threading::Core::PreallocatedWorkItem impl_IPreallocatedWorkItemFactory<D>::CreateWorkItemWithPriorityAndOptions(const Windows::System::Threading::WorkItemHandler & handler, Windows::System::Threading::WorkItemPriority priority, Windows::System::Threading::WorkItemOptions options) const
 {
     Windows::System::Threading::Core::PreallocatedWorkItem WorkItem { nullptr };
-    check_hresult(shim()->abi_CreateWorkItemWithPriorityAndOptions(get(handler), priority, options, put(WorkItem)));
+    check_hresult(static_cast<const IPreallocatedWorkItemFactory &>(static_cast<const D &>(*this))->abi_CreateWorkItemWithPriorityAndOptions(get(handler), priority, options, put(WorkItem)));
     return WorkItem;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IPreallocatedWorkItem<D>::RunAsync() const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_RunAsync(put(operation)));
+    check_hresult(static_cast<const IPreallocatedWorkItem &>(static_cast<const D &>(*this))->abi_RunAsync(put(operation)));
     return operation;
 }
 
 template <typename D> void impl_ISignalNotifier<D>::Enable() const
 {
-    check_hresult(shim()->abi_Enable());
+    check_hresult(static_cast<const ISignalNotifier &>(static_cast<const D &>(*this))->abi_Enable());
 }
 
 template <typename D> void impl_ISignalNotifier<D>::Terminate() const
 {
-    check_hresult(shim()->abi_Terminate());
+    check_hresult(static_cast<const ISignalNotifier &>(static_cast<const D &>(*this))->abi_Terminate());
 }
 
 inline PreallocatedWorkItem::PreallocatedWorkItem(const Windows::System::Threading::WorkItemHandler & handler) :

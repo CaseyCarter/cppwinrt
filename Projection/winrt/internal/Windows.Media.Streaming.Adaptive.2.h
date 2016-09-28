@@ -101,12 +101,8 @@ template <> struct __declspec(uuid("bd68cc00-724c-5a76-a437-1464ebdda4ac")) __de
 namespace Windows::Media::Streaming::Adaptive {
 
 template <typename D>
-class WINRT_EBO impl_IAdaptiveMediaSource
+struct WINRT_EBO impl_IAdaptiveMediaSource
 {
-    auto shim() const { return impl::shim<D, IAdaptiveMediaSource>(this); }
-
-public:
-
     bool IsLive() const;
     Windows::Foundation::TimeSpan DesiredLiveOffset() const;
     void DesiredLiveOffset(const Windows::Foundation::TimeSpan & value) const;
@@ -146,22 +142,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAdaptiveMediaSource2
+struct WINRT_EBO impl_IAdaptiveMediaSource2
 {
-    auto shim() const { return impl::shim<D, IAdaptiveMediaSource2>(this); }
-
-public:
-
     Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceAdvancedSettings AdvancedSettings() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAdaptiveMediaSourceAdvancedSettings
+struct WINRT_EBO impl_IAdaptiveMediaSourceAdvancedSettings
 {
-    auto shim() const { return impl::shim<D, IAdaptiveMediaSourceAdvancedSettings>(this); }
-
-public:
-
     bool AllSegmentsIndependent() const;
     void AllSegmentsIndependent(bool value) const;
     Windows::Foundation::IReference<double> DesiredBitrateHeadroomRatio() const;
@@ -171,35 +159,23 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAdaptiveMediaSourceCreationResult
+struct WINRT_EBO impl_IAdaptiveMediaSourceCreationResult
 {
-    auto shim() const { return impl::shim<D, IAdaptiveMediaSourceCreationResult>(this); }
-
-public:
-
     Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceCreationStatus Status() const;
     Windows::Media::Streaming::Adaptive::AdaptiveMediaSource MediaSource() const;
     Windows::Web::Http::HttpResponseMessage HttpResponseMessage() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAdaptiveMediaSourceDownloadBitrateChangedEventArgs
+struct WINRT_EBO impl_IAdaptiveMediaSourceDownloadBitrateChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IAdaptiveMediaSourceDownloadBitrateChangedEventArgs>(this); }
-
-public:
-
     uint32_t OldValue() const;
     uint32_t NewValue() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAdaptiveMediaSourceDownloadCompletedEventArgs
+struct WINRT_EBO impl_IAdaptiveMediaSourceDownloadCompletedEventArgs
 {
-    auto shim() const { return impl::shim<D, IAdaptiveMediaSourceDownloadCompletedEventArgs>(this); }
-
-public:
-
     Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceResourceType ResourceType() const;
     Windows::Foundation::Uri ResourceUri() const;
     Windows::Foundation::IReference<uint64_t> ResourceByteRangeOffset() const;
@@ -208,12 +184,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAdaptiveMediaSourceDownloadFailedEventArgs
+struct WINRT_EBO impl_IAdaptiveMediaSourceDownloadFailedEventArgs
 {
-    auto shim() const { return impl::shim<D, IAdaptiveMediaSourceDownloadFailedEventArgs>(this); }
-
-public:
-
     Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceResourceType ResourceType() const;
     Windows::Foundation::Uri ResourceUri() const;
     Windows::Foundation::IReference<uint64_t> ResourceByteRangeOffset() const;
@@ -222,22 +194,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAdaptiveMediaSourceDownloadRequestedDeferral
+struct WINRT_EBO impl_IAdaptiveMediaSourceDownloadRequestedDeferral
 {
-    auto shim() const { return impl::shim<D, IAdaptiveMediaSourceDownloadRequestedDeferral>(this); }
-
-public:
-
     void Complete() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAdaptiveMediaSourceDownloadRequestedEventArgs
+struct WINRT_EBO impl_IAdaptiveMediaSourceDownloadRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, IAdaptiveMediaSourceDownloadRequestedEventArgs>(this); }
-
-public:
-
     Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceResourceType ResourceType() const;
     Windows::Foundation::Uri ResourceUri() const;
     Windows::Foundation::IReference<uint64_t> ResourceByteRangeOffset() const;
@@ -247,12 +211,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAdaptiveMediaSourceDownloadResult
+struct WINRT_EBO impl_IAdaptiveMediaSourceDownloadResult
 {
-    auto shim() const { return impl::shim<D, IAdaptiveMediaSourceDownloadResult>(this); }
-
-public:
-
     Windows::Foundation::Uri ResourceUri() const;
     void ResourceUri(const Windows::Foundation::Uri & value) const;
     Windows::Storage::Streams::IInputStream InputStream() const;
@@ -266,12 +226,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAdaptiveMediaSourceDownloadResult2
+struct WINRT_EBO impl_IAdaptiveMediaSourceDownloadResult2
 {
-    auto shim() const { return impl::shim<D, IAdaptiveMediaSourceDownloadResult2>(this); }
-
-public:
-
     Windows::Foundation::IReference<uint64_t> ResourceByteRangeOffset() const;
     void ResourceByteRangeOffset(const Windows::Foundation::IReference<uint64_t> & value) const;
     Windows::Foundation::IReference<uint64_t> ResourceByteRangeLength() const;
@@ -279,24 +235,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAdaptiveMediaSourcePlaybackBitrateChangedEventArgs
+struct WINRT_EBO impl_IAdaptiveMediaSourcePlaybackBitrateChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IAdaptiveMediaSourcePlaybackBitrateChangedEventArgs>(this); }
-
-public:
-
     uint32_t OldValue() const;
     uint32_t NewValue() const;
     bool AudioOnly() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAdaptiveMediaSourceStatics
+struct WINRT_EBO impl_IAdaptiveMediaSourceStatics
 {
-    auto shim() const { return impl::shim<D, IAdaptiveMediaSourceStatics>(this); }
-
-public:
-
     bool IsContentTypeSupported(hstring_ref contentType) const;
     Windows::Foundation::IAsyncOperation<Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceCreationResult> CreateFromUriAsync(const Windows::Foundation::Uri & uri) const;
     Windows::Foundation::IAsyncOperation<Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceCreationResult> CreateFromUriAsync(const Windows::Foundation::Uri & uri, const Windows::Web::Http::HttpClient & httpClient) const;

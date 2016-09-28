@@ -463,64 +463,64 @@ template <> struct traits<Windows::UI::Xaml::Automation::WindowPatternIdentifier
 
 namespace Windows::UI::Xaml::Automation {
 
-template <typename T> class impl_IAnnotationPatternIdentifiers;
-template <typename T> class impl_IAnnotationPatternIdentifiersStatics;
-template <typename T> class impl_IAutomationAnnotation;
-template <typename T> class impl_IAutomationAnnotationFactory;
-template <typename T> class impl_IAutomationAnnotationStatics;
-template <typename T> class impl_IAutomationElementIdentifiers;
-template <typename T> class impl_IAutomationElementIdentifiersStatics;
-template <typename T> class impl_IAutomationElementIdentifiersStatics2;
-template <typename T> class impl_IAutomationElementIdentifiersStatics3;
-template <typename T> class impl_IAutomationElementIdentifiersStatics4;
-template <typename T> class impl_IAutomationElementIdentifiersStatics5;
-template <typename T> class impl_IAutomationProperties;
-template <typename T> class impl_IAutomationPropertiesStatics;
-template <typename T> class impl_IAutomationPropertiesStatics2;
-template <typename T> class impl_IAutomationPropertiesStatics3;
-template <typename T> class impl_IAutomationPropertiesStatics4;
-template <typename T> class impl_IAutomationPropertiesStatics5;
-template <typename T> class impl_IAutomationProperty;
-template <typename T> class impl_IDockPatternIdentifiers;
-template <typename T> class impl_IDockPatternIdentifiersStatics;
-template <typename T> class impl_IDragPatternIdentifiers;
-template <typename T> class impl_IDragPatternIdentifiersStatics;
-template <typename T> class impl_IDropTargetPatternIdentifiers;
-template <typename T> class impl_IDropTargetPatternIdentifiersStatics;
-template <typename T> class impl_IExpandCollapsePatternIdentifiers;
-template <typename T> class impl_IExpandCollapsePatternIdentifiersStatics;
-template <typename T> class impl_IGridItemPatternIdentifiers;
-template <typename T> class impl_IGridItemPatternIdentifiersStatics;
-template <typename T> class impl_IGridPatternIdentifiers;
-template <typename T> class impl_IGridPatternIdentifiersStatics;
-template <typename T> class impl_IMultipleViewPatternIdentifiers;
-template <typename T> class impl_IMultipleViewPatternIdentifiersStatics;
-template <typename T> class impl_IRangeValuePatternIdentifiers;
-template <typename T> class impl_IRangeValuePatternIdentifiersStatics;
-template <typename T> class impl_IScrollPatternIdentifiers;
-template <typename T> class impl_IScrollPatternIdentifiersStatics;
-template <typename T> class impl_ISelectionItemPatternIdentifiers;
-template <typename T> class impl_ISelectionItemPatternIdentifiersStatics;
-template <typename T> class impl_ISelectionPatternIdentifiers;
-template <typename T> class impl_ISelectionPatternIdentifiersStatics;
-template <typename T> class impl_ISpreadsheetItemPatternIdentifiers;
-template <typename T> class impl_ISpreadsheetItemPatternIdentifiersStatics;
-template <typename T> class impl_IStylesPatternIdentifiers;
-template <typename T> class impl_IStylesPatternIdentifiersStatics;
-template <typename T> class impl_ITableItemPatternIdentifiers;
-template <typename T> class impl_ITableItemPatternIdentifiersStatics;
-template <typename T> class impl_ITablePatternIdentifiers;
-template <typename T> class impl_ITablePatternIdentifiersStatics;
-template <typename T> class impl_ITogglePatternIdentifiers;
-template <typename T> class impl_ITogglePatternIdentifiersStatics;
-template <typename T> class impl_ITransformPattern2Identifiers;
-template <typename T> class impl_ITransformPattern2IdentifiersStatics;
-template <typename T> class impl_ITransformPatternIdentifiers;
-template <typename T> class impl_ITransformPatternIdentifiersStatics;
-template <typename T> class impl_IValuePatternIdentifiers;
-template <typename T> class impl_IValuePatternIdentifiersStatics;
-template <typename T> class impl_IWindowPatternIdentifiers;
-template <typename T> class impl_IWindowPatternIdentifiersStatics;
+template <typename T> struct impl_IAnnotationPatternIdentifiers;
+template <typename T> struct impl_IAnnotationPatternIdentifiersStatics;
+template <typename T> struct impl_IAutomationAnnotation;
+template <typename T> struct impl_IAutomationAnnotationFactory;
+template <typename T> struct impl_IAutomationAnnotationStatics;
+template <typename T> struct impl_IAutomationElementIdentifiers;
+template <typename T> struct impl_IAutomationElementIdentifiersStatics;
+template <typename T> struct impl_IAutomationElementIdentifiersStatics2;
+template <typename T> struct impl_IAutomationElementIdentifiersStatics3;
+template <typename T> struct impl_IAutomationElementIdentifiersStatics4;
+template <typename T> struct impl_IAutomationElementIdentifiersStatics5;
+template <typename T> struct impl_IAutomationProperties;
+template <typename T> struct impl_IAutomationPropertiesStatics;
+template <typename T> struct impl_IAutomationPropertiesStatics2;
+template <typename T> struct impl_IAutomationPropertiesStatics3;
+template <typename T> struct impl_IAutomationPropertiesStatics4;
+template <typename T> struct impl_IAutomationPropertiesStatics5;
+template <typename T> struct impl_IAutomationProperty;
+template <typename T> struct impl_IDockPatternIdentifiers;
+template <typename T> struct impl_IDockPatternIdentifiersStatics;
+template <typename T> struct impl_IDragPatternIdentifiers;
+template <typename T> struct impl_IDragPatternIdentifiersStatics;
+template <typename T> struct impl_IDropTargetPatternIdentifiers;
+template <typename T> struct impl_IDropTargetPatternIdentifiersStatics;
+template <typename T> struct impl_IExpandCollapsePatternIdentifiers;
+template <typename T> struct impl_IExpandCollapsePatternIdentifiersStatics;
+template <typename T> struct impl_IGridItemPatternIdentifiers;
+template <typename T> struct impl_IGridItemPatternIdentifiersStatics;
+template <typename T> struct impl_IGridPatternIdentifiers;
+template <typename T> struct impl_IGridPatternIdentifiersStatics;
+template <typename T> struct impl_IMultipleViewPatternIdentifiers;
+template <typename T> struct impl_IMultipleViewPatternIdentifiersStatics;
+template <typename T> struct impl_IRangeValuePatternIdentifiers;
+template <typename T> struct impl_IRangeValuePatternIdentifiersStatics;
+template <typename T> struct impl_IScrollPatternIdentifiers;
+template <typename T> struct impl_IScrollPatternIdentifiersStatics;
+template <typename T> struct impl_ISelectionItemPatternIdentifiers;
+template <typename T> struct impl_ISelectionItemPatternIdentifiersStatics;
+template <typename T> struct impl_ISelectionPatternIdentifiers;
+template <typename T> struct impl_ISelectionPatternIdentifiersStatics;
+template <typename T> struct impl_ISpreadsheetItemPatternIdentifiers;
+template <typename T> struct impl_ISpreadsheetItemPatternIdentifiersStatics;
+template <typename T> struct impl_IStylesPatternIdentifiers;
+template <typename T> struct impl_IStylesPatternIdentifiersStatics;
+template <typename T> struct impl_ITableItemPatternIdentifiers;
+template <typename T> struct impl_ITableItemPatternIdentifiersStatics;
+template <typename T> struct impl_ITablePatternIdentifiers;
+template <typename T> struct impl_ITablePatternIdentifiersStatics;
+template <typename T> struct impl_ITogglePatternIdentifiers;
+template <typename T> struct impl_ITogglePatternIdentifiersStatics;
+template <typename T> struct impl_ITransformPattern2Identifiers;
+template <typename T> struct impl_ITransformPattern2IdentifiersStatics;
+template <typename T> struct impl_ITransformPatternIdentifiers;
+template <typename T> struct impl_ITransformPatternIdentifiersStatics;
+template <typename T> struct impl_IValuePatternIdentifiers;
+template <typename T> struct impl_IValuePatternIdentifiersStatics;
+template <typename T> struct impl_IWindowPatternIdentifiers;
+template <typename T> struct impl_IWindowPatternIdentifiersStatics;
 
 }
 
@@ -877,175 +877,150 @@ template <> struct traits<Windows::UI::Xaml::Automation::IWindowPatternIdentifie
 template <> struct traits<Windows::UI::Xaml::Automation::AnnotationPatternIdentifiers>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::AnnotationPatternIdentifiers;
-    using default_interface = Windows::UI::Xaml::Automation::IAnnotationPatternIdentifiers;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.AnnotationPatternIdentifiers"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::AutomationAnnotation>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::AutomationAnnotation;
-    using default_interface = Windows::UI::Xaml::Automation::IAutomationAnnotation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.AutomationAnnotation"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::AutomationElementIdentifiers>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::AutomationElementIdentifiers;
-    using default_interface = Windows::UI::Xaml::Automation::IAutomationElementIdentifiers;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.AutomationElementIdentifiers"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::AutomationProperties>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::AutomationProperties;
-    using default_interface = Windows::UI::Xaml::Automation::IAutomationProperties;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.AutomationProperties"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::AutomationProperty>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::AutomationProperty;
-    using default_interface = Windows::UI::Xaml::Automation::IAutomationProperty;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.AutomationProperty"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::DockPatternIdentifiers>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::DockPatternIdentifiers;
-    using default_interface = Windows::UI::Xaml::Automation::IDockPatternIdentifiers;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.DockPatternIdentifiers"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::DragPatternIdentifiers>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::DragPatternIdentifiers;
-    using default_interface = Windows::UI::Xaml::Automation::IDragPatternIdentifiers;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.DragPatternIdentifiers"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::DropTargetPatternIdentifiers>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::DropTargetPatternIdentifiers;
-    using default_interface = Windows::UI::Xaml::Automation::IDropTargetPatternIdentifiers;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.DropTargetPatternIdentifiers"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::ExpandCollapsePatternIdentifiers>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::ExpandCollapsePatternIdentifiers;
-    using default_interface = Windows::UI::Xaml::Automation::IExpandCollapsePatternIdentifiers;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.ExpandCollapsePatternIdentifiers"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::GridItemPatternIdentifiers>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::GridItemPatternIdentifiers;
-    using default_interface = Windows::UI::Xaml::Automation::IGridItemPatternIdentifiers;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.GridItemPatternIdentifiers"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::GridPatternIdentifiers>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::GridPatternIdentifiers;
-    using default_interface = Windows::UI::Xaml::Automation::IGridPatternIdentifiers;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.GridPatternIdentifiers"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::MultipleViewPatternIdentifiers>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::MultipleViewPatternIdentifiers;
-    using default_interface = Windows::UI::Xaml::Automation::IMultipleViewPatternIdentifiers;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.MultipleViewPatternIdentifiers"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::RangeValuePatternIdentifiers>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::RangeValuePatternIdentifiers;
-    using default_interface = Windows::UI::Xaml::Automation::IRangeValuePatternIdentifiers;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.RangeValuePatternIdentifiers"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::ScrollPatternIdentifiers>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::ScrollPatternIdentifiers;
-    using default_interface = Windows::UI::Xaml::Automation::IScrollPatternIdentifiers;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.ScrollPatternIdentifiers"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::SelectionItemPatternIdentifiers>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::SelectionItemPatternIdentifiers;
-    using default_interface = Windows::UI::Xaml::Automation::ISelectionItemPatternIdentifiers;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.SelectionItemPatternIdentifiers"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::SelectionPatternIdentifiers>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::SelectionPatternIdentifiers;
-    using default_interface = Windows::UI::Xaml::Automation::ISelectionPatternIdentifiers;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.SelectionPatternIdentifiers"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::SpreadsheetItemPatternIdentifiers>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::SpreadsheetItemPatternIdentifiers;
-    using default_interface = Windows::UI::Xaml::Automation::ISpreadsheetItemPatternIdentifiers;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.SpreadsheetItemPatternIdentifiers"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::StylesPatternIdentifiers>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::StylesPatternIdentifiers;
-    using default_interface = Windows::UI::Xaml::Automation::IStylesPatternIdentifiers;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.StylesPatternIdentifiers"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::TableItemPatternIdentifiers>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::TableItemPatternIdentifiers;
-    using default_interface = Windows::UI::Xaml::Automation::ITableItemPatternIdentifiers;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.TableItemPatternIdentifiers"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::TablePatternIdentifiers>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::TablePatternIdentifiers;
-    using default_interface = Windows::UI::Xaml::Automation::ITablePatternIdentifiers;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.TablePatternIdentifiers"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::TogglePatternIdentifiers>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::TogglePatternIdentifiers;
-    using default_interface = Windows::UI::Xaml::Automation::ITogglePatternIdentifiers;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.TogglePatternIdentifiers"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::TransformPattern2Identifiers>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::TransformPattern2Identifiers;
-    using default_interface = Windows::UI::Xaml::Automation::ITransformPattern2Identifiers;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.TransformPattern2Identifiers"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::TransformPatternIdentifiers>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::TransformPatternIdentifiers;
-    using default_interface = Windows::UI::Xaml::Automation::ITransformPatternIdentifiers;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.TransformPatternIdentifiers"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::ValuePatternIdentifiers>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::ValuePatternIdentifiers;
-    using default_interface = Windows::UI::Xaml::Automation::IValuePatternIdentifiers;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.ValuePatternIdentifiers"; }
 };
 
 template <> struct traits<Windows::UI::Xaml::Automation::WindowPatternIdentifiers>
 {
     using abi = ABI::Windows::UI::Xaml::Automation::WindowPatternIdentifiers;
-    using default_interface = Windows::UI::Xaml::Automation::IWindowPatternIdentifiers;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Xaml.Automation.WindowPatternIdentifiers"; }
 };
 

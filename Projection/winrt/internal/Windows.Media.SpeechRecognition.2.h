@@ -171,32 +171,20 @@ template <> struct __declspec(uuid("a4cd6151-2cc1-56f1-9014-df6ba3410beb")) __de
 namespace Windows::Media::SpeechRecognition {
 
 template <typename D>
-class WINRT_EBO impl_ISpeechContinuousRecognitionCompletedEventArgs
+struct WINRT_EBO impl_ISpeechContinuousRecognitionCompletedEventArgs
 {
-    auto shim() const { return impl::shim<D, ISpeechContinuousRecognitionCompletedEventArgs>(this); }
-
-public:
-
     Windows::Media::SpeechRecognition::SpeechRecognitionResultStatus Status() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpeechContinuousRecognitionResultGeneratedEventArgs
+struct WINRT_EBO impl_ISpeechContinuousRecognitionResultGeneratedEventArgs
 {
-    auto shim() const { return impl::shim<D, ISpeechContinuousRecognitionResultGeneratedEventArgs>(this); }
-
-public:
-
     Windows::Media::SpeechRecognition::SpeechRecognitionResult Result() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpeechContinuousRecognitionSession
+struct WINRT_EBO impl_ISpeechContinuousRecognitionSession
 {
-    auto shim() const { return impl::shim<D, ISpeechContinuousRecognitionSession>(this); }
-
-public:
-
     Windows::Foundation::TimeSpan AutoStopSilenceTimeout() const;
     void AutoStopSilenceTimeout(const Windows::Foundation::TimeSpan & value) const;
     Windows::Foundation::IAsyncAction StartAsync() const;
@@ -216,22 +204,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpeechRecognitionCompilationResult
+struct WINRT_EBO impl_ISpeechRecognitionCompilationResult
 {
-    auto shim() const { return impl::shim<D, ISpeechRecognitionCompilationResult>(this); }
-
-public:
-
     Windows::Media::SpeechRecognition::SpeechRecognitionResultStatus Status() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpeechRecognitionConstraint
+struct WINRT_EBO impl_ISpeechRecognitionConstraint
 {
-    auto shim() const { return impl::shim<D, ISpeechRecognitionConstraint>(this); }
-
-public:
-
     bool IsEnabled() const;
     void IsEnabled(bool value) const;
     hstring Tag() const;
@@ -242,84 +222,52 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpeechRecognitionGrammarFileConstraint
+struct WINRT_EBO impl_ISpeechRecognitionGrammarFileConstraint
 {
-    auto shim() const { return impl::shim<D, ISpeechRecognitionGrammarFileConstraint>(this); }
-
-public:
-
     Windows::Storage::StorageFile GrammarFile() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpeechRecognitionGrammarFileConstraintFactory
+struct WINRT_EBO impl_ISpeechRecognitionGrammarFileConstraintFactory
 {
-    auto shim() const { return impl::shim<D, ISpeechRecognitionGrammarFileConstraintFactory>(this); }
-
-public:
-
     Windows::Media::SpeechRecognition::SpeechRecognitionGrammarFileConstraint Create(const Windows::Storage::StorageFile & file) const;
     Windows::Media::SpeechRecognition::SpeechRecognitionGrammarFileConstraint CreateWithTag(const Windows::Storage::StorageFile & file, hstring_ref tag) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpeechRecognitionHypothesis
+struct WINRT_EBO impl_ISpeechRecognitionHypothesis
 {
-    auto shim() const { return impl::shim<D, ISpeechRecognitionHypothesis>(this); }
-
-public:
-
     hstring Text() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpeechRecognitionHypothesisGeneratedEventArgs
+struct WINRT_EBO impl_ISpeechRecognitionHypothesisGeneratedEventArgs
 {
-    auto shim() const { return impl::shim<D, ISpeechRecognitionHypothesisGeneratedEventArgs>(this); }
-
-public:
-
     Windows::Media::SpeechRecognition::SpeechRecognitionHypothesis Hypothesis() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpeechRecognitionListConstraint
+struct WINRT_EBO impl_ISpeechRecognitionListConstraint
 {
-    auto shim() const { return impl::shim<D, ISpeechRecognitionListConstraint>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<hstring> Commands() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpeechRecognitionListConstraintFactory
+struct WINRT_EBO impl_ISpeechRecognitionListConstraintFactory
 {
-    auto shim() const { return impl::shim<D, ISpeechRecognitionListConstraintFactory>(this); }
-
-public:
-
     Windows::Media::SpeechRecognition::SpeechRecognitionListConstraint Create(const Windows::Foundation::Collections::IIterable<hstring> & commands) const;
     Windows::Media::SpeechRecognition::SpeechRecognitionListConstraint CreateWithTag(const Windows::Foundation::Collections::IIterable<hstring> & commands, hstring_ref tag) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpeechRecognitionQualityDegradingEventArgs
+struct WINRT_EBO impl_ISpeechRecognitionQualityDegradingEventArgs
 {
-    auto shim() const { return impl::shim<D, ISpeechRecognitionQualityDegradingEventArgs>(this); }
-
-public:
-
     Windows::Media::SpeechRecognition::SpeechRecognitionAudioProblem Problem() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpeechRecognitionResult
+struct WINRT_EBO impl_ISpeechRecognitionResult
 {
-    auto shim() const { return impl::shim<D, ISpeechRecognitionResult>(this); }
-
-public:
-
     Windows::Media::SpeechRecognition::SpeechRecognitionResultStatus Status() const;
     hstring Text() const;
     Windows::Media::SpeechRecognition::SpeechRecognitionConfidence Confidence() const;
@@ -331,64 +279,40 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpeechRecognitionResult2
+struct WINRT_EBO impl_ISpeechRecognitionResult2
 {
-    auto shim() const { return impl::shim<D, ISpeechRecognitionResult2>(this); }
-
-public:
-
     Windows::Foundation::DateTime PhraseStartTime() const;
     Windows::Foundation::TimeSpan PhraseDuration() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpeechRecognitionSemanticInterpretation
+struct WINRT_EBO impl_ISpeechRecognitionSemanticInterpretation
 {
-    auto shim() const { return impl::shim<D, ISpeechRecognitionSemanticInterpretation>(this); }
-
-public:
-
     Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::Collections::IVectorView<hstring>> Properties() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpeechRecognitionTopicConstraint
+struct WINRT_EBO impl_ISpeechRecognitionTopicConstraint
 {
-    auto shim() const { return impl::shim<D, ISpeechRecognitionTopicConstraint>(this); }
-
-public:
-
     Windows::Media::SpeechRecognition::SpeechRecognitionScenario Scenario() const;
     hstring TopicHint() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpeechRecognitionTopicConstraintFactory
+struct WINRT_EBO impl_ISpeechRecognitionTopicConstraintFactory
 {
-    auto shim() const { return impl::shim<D, ISpeechRecognitionTopicConstraintFactory>(this); }
-
-public:
-
     Windows::Media::SpeechRecognition::SpeechRecognitionTopicConstraint Create(Windows::Media::SpeechRecognition::SpeechRecognitionScenario scenario, hstring_ref topicHint) const;
     Windows::Media::SpeechRecognition::SpeechRecognitionTopicConstraint CreateWithTag(Windows::Media::SpeechRecognition::SpeechRecognitionScenario scenario, hstring_ref topicHint, hstring_ref tag) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpeechRecognitionVoiceCommandDefinitionConstraint
+struct WINRT_EBO impl_ISpeechRecognitionVoiceCommandDefinitionConstraint
 {
-    auto shim() const { return impl::shim<D, ISpeechRecognitionVoiceCommandDefinitionConstraint>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpeechRecognizer
+struct WINRT_EBO impl_ISpeechRecognizer
 {
-    auto shim() const { return impl::shim<D, ISpeechRecognizer>(this); }
-
-public:
-
     Windows::Globalization::Language CurrentLanguage() const;
     Windows::Foundation::Collections::IVector<Windows::Media::SpeechRecognition::ISpeechRecognitionConstraint> Constraints() const;
     Windows::Media::SpeechRecognition::SpeechRecognizerTimeouts Timeouts() const;
@@ -407,12 +331,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpeechRecognizer2
+struct WINRT_EBO impl_ISpeechRecognizer2
 {
-    auto shim() const { return impl::shim<D, ISpeechRecognizer2>(this); }
-
-public:
-
     Windows::Media::SpeechRecognition::SpeechContinuousRecognitionSession ContinuousRecognitionSession() const;
     Windows::Media::SpeechRecognition::SpeechRecognizerState State() const;
     Windows::Foundation::IAsyncAction StopRecognitionAsync() const;
@@ -423,44 +343,28 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpeechRecognizerFactory
+struct WINRT_EBO impl_ISpeechRecognizerFactory
 {
-    auto shim() const { return impl::shim<D, ISpeechRecognizerFactory>(this); }
-
-public:
-
     Windows::Media::SpeechRecognition::SpeechRecognizer Create(const Windows::Globalization::Language & language) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpeechRecognizerStateChangedEventArgs
+struct WINRT_EBO impl_ISpeechRecognizerStateChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, ISpeechRecognizerStateChangedEventArgs>(this); }
-
-public:
-
     Windows::Media::SpeechRecognition::SpeechRecognizerState State() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpeechRecognizerStatics
+struct WINRT_EBO impl_ISpeechRecognizerStatics
 {
-    auto shim() const { return impl::shim<D, ISpeechRecognizerStatics>(this); }
-
-public:
-
     Windows::Globalization::Language SystemSpeechLanguage() const;
     Windows::Foundation::Collections::IVectorView<Windows::Globalization::Language> SupportedTopicLanguages() const;
     Windows::Foundation::Collections::IVectorView<Windows::Globalization::Language> SupportedGrammarLanguages() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpeechRecognizerTimeouts
+struct WINRT_EBO impl_ISpeechRecognizerTimeouts
 {
-    auto shim() const { return impl::shim<D, ISpeechRecognizerTimeouts>(this); }
-
-public:
-
     Windows::Foundation::TimeSpan InitialSilenceTimeout() const;
     void InitialSilenceTimeout(const Windows::Foundation::TimeSpan & value) const;
     Windows::Foundation::TimeSpan EndSilenceTimeout() const;
@@ -470,12 +374,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISpeechRecognizerUIOptions
+struct WINRT_EBO impl_ISpeechRecognizerUIOptions
 {
-    auto shim() const { return impl::shim<D, ISpeechRecognizerUIOptions>(this); }
-
-public:
-
     hstring ExampleText() const;
     void ExampleText(hstring_ref value) const;
     hstring AudiblePrompt() const;

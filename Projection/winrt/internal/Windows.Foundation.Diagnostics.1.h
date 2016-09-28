@@ -319,29 +319,29 @@ template <> struct traits<Windows::Foundation::Diagnostics::TracingStatusChanged
 
 namespace Windows::Foundation::Diagnostics {
 
-template <typename T> class impl_IAsyncCausalityTracerStatics;
-template <typename T> class impl_IErrorDetails;
-template <typename T> class impl_IErrorDetailsStatics;
-template <typename T> class impl_IErrorReportingSettings;
-template <typename T> class impl_IFileLoggingSession;
-template <typename T> class impl_IFileLoggingSessionFactory;
-template <typename T> class impl_ILogFileGeneratedEventArgs;
-template <typename T> class impl_ILoggingActivity;
-template <typename T> class impl_ILoggingActivity2;
-template <typename T> class impl_ILoggingActivityFactory;
-template <typename T> class impl_ILoggingChannel;
-template <typename T> class impl_ILoggingChannel2;
-template <typename T> class impl_ILoggingChannelFactory;
-template <typename T> class impl_ILoggingChannelFactory2;
-template <typename T> class impl_ILoggingChannelOptions;
-template <typename T> class impl_ILoggingChannelOptionsFactory;
-template <typename T> class impl_ILoggingFields;
-template <typename T> class impl_ILoggingOptions;
-template <typename T> class impl_ILoggingOptionsFactory;
-template <typename T> class impl_ILoggingSession;
-template <typename T> class impl_ILoggingSessionFactory;
-template <typename T> class impl_ILoggingTarget;
-template <typename T> class impl_ITracingStatusChangedEventArgs;
+template <typename T> struct impl_IAsyncCausalityTracerStatics;
+template <typename T> struct impl_IErrorDetails;
+template <typename T> struct impl_IErrorDetailsStatics;
+template <typename T> struct impl_IErrorReportingSettings;
+template <typename T> struct impl_IFileLoggingSession;
+template <typename T> struct impl_IFileLoggingSessionFactory;
+template <typename T> struct impl_ILogFileGeneratedEventArgs;
+template <typename T> struct impl_ILoggingActivity;
+template <typename T> struct impl_ILoggingActivity2;
+template <typename T> struct impl_ILoggingActivityFactory;
+template <typename T> struct impl_ILoggingChannel;
+template <typename T> struct impl_ILoggingChannel2;
+template <typename T> struct impl_ILoggingChannelFactory;
+template <typename T> struct impl_ILoggingChannelFactory2;
+template <typename T> struct impl_ILoggingChannelOptions;
+template <typename T> struct impl_ILoggingChannelOptionsFactory;
+template <typename T> struct impl_ILoggingFields;
+template <typename T> struct impl_ILoggingOptions;
+template <typename T> struct impl_ILoggingOptionsFactory;
+template <typename T> struct impl_ILoggingSession;
+template <typename T> struct impl_ILoggingSessionFactory;
+template <typename T> struct impl_ILoggingTarget;
+template <typename T> struct impl_ITracingStatusChangedEventArgs;
 
 }
 
@@ -493,77 +493,66 @@ template <> struct traits<Windows::Foundation::Diagnostics::AsyncCausalityTracer
 template <> struct traits<Windows::Foundation::Diagnostics::ErrorDetails>
 {
     using abi = ABI::Windows::Foundation::Diagnostics::ErrorDetails;
-    using default_interface = Windows::Foundation::Diagnostics::IErrorDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Foundation.Diagnostics.ErrorDetails"; }
 };
 
 template <> struct traits<Windows::Foundation::Diagnostics::FileLoggingSession>
 {
     using abi = ABI::Windows::Foundation::Diagnostics::FileLoggingSession;
-    using default_interface = Windows::Foundation::Diagnostics::IFileLoggingSession;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Foundation.Diagnostics.FileLoggingSession"; }
 };
 
 template <> struct traits<Windows::Foundation::Diagnostics::LogFileGeneratedEventArgs>
 {
     using abi = ABI::Windows::Foundation::Diagnostics::LogFileGeneratedEventArgs;
-    using default_interface = Windows::Foundation::Diagnostics::ILogFileGeneratedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Foundation.Diagnostics.LogFileGeneratedEventArgs"; }
 };
 
 template <> struct traits<Windows::Foundation::Diagnostics::LoggingActivity>
 {
     using abi = ABI::Windows::Foundation::Diagnostics::LoggingActivity;
-    using default_interface = Windows::Foundation::Diagnostics::ILoggingActivity;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Foundation.Diagnostics.LoggingActivity"; }
 };
 
 template <> struct traits<Windows::Foundation::Diagnostics::LoggingChannel>
 {
     using abi = ABI::Windows::Foundation::Diagnostics::LoggingChannel;
-    using default_interface = Windows::Foundation::Diagnostics::ILoggingChannel;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Foundation.Diagnostics.LoggingChannel"; }
 };
 
 template <> struct traits<Windows::Foundation::Diagnostics::LoggingChannelOptions>
 {
     using abi = ABI::Windows::Foundation::Diagnostics::LoggingChannelOptions;
-    using default_interface = Windows::Foundation::Diagnostics::ILoggingChannelOptions;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Foundation.Diagnostics.LoggingChannelOptions"; }
 };
 
 template <> struct traits<Windows::Foundation::Diagnostics::LoggingFields>
 {
     using abi = ABI::Windows::Foundation::Diagnostics::LoggingFields;
-    using default_interface = Windows::Foundation::Diagnostics::ILoggingFields;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Foundation.Diagnostics.LoggingFields"; }
 };
 
 template <> struct traits<Windows::Foundation::Diagnostics::LoggingOptions>
 {
     using abi = ABI::Windows::Foundation::Diagnostics::LoggingOptions;
-    using default_interface = Windows::Foundation::Diagnostics::ILoggingOptions;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Foundation.Diagnostics.LoggingOptions"; }
 };
 
 template <> struct traits<Windows::Foundation::Diagnostics::LoggingSession>
 {
     using abi = ABI::Windows::Foundation::Diagnostics::LoggingSession;
-    using default_interface = Windows::Foundation::Diagnostics::ILoggingSession;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Foundation.Diagnostics.LoggingSession"; }
 };
 
 template <> struct traits<Windows::Foundation::Diagnostics::RuntimeBrokerErrorSettings>
 {
     using abi = ABI::Windows::Foundation::Diagnostics::RuntimeBrokerErrorSettings;
-    using default_interface = Windows::Foundation::Diagnostics::IErrorReportingSettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Foundation.Diagnostics.RuntimeBrokerErrorSettings"; }
 };
 
 template <> struct traits<Windows::Foundation::Diagnostics::TracingStatusChangedEventArgs>
 {
     using abi = ABI::Windows::Foundation::Diagnostics::TracingStatusChangedEventArgs;
-    using default_interface = Windows::Foundation::Diagnostics::ITracingStatusChangedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Foundation.Diagnostics.TracingStatusChangedEventArgs"; }
 };
 

@@ -2072,787 +2072,787 @@ namespace Windows::Services::Store {
 template <typename D> Windows::Foundation::Collections::IMapView<hstring, Windows::Services::Store::StoreProduct> impl_IStoreProductPagedQueryResult<D>::Products() const
 {
     Windows::Foundation::Collections::IMapView<hstring, Windows::Services::Store::StoreProduct> value;
-    check_hresult(shim()->get_Products(put(value)));
+    check_hresult(static_cast<const IStoreProductPagedQueryResult &>(static_cast<const D &>(*this))->get_Products(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IStoreProductPagedQueryResult<D>::HasMoreResults() const
 {
     bool value {};
-    check_hresult(shim()->get_HasMoreResults(&value));
+    check_hresult(static_cast<const IStoreProductPagedQueryResult &>(static_cast<const D &>(*this))->get_HasMoreResults(&value));
     return value;
 }
 
 template <typename D> HRESULT impl_IStoreProductPagedQueryResult<D>::ExtendedError() const
 {
     HRESULT value {};
-    check_hresult(shim()->get_ExtendedError(&value));
+    check_hresult(static_cast<const IStoreProductPagedQueryResult &>(static_cast<const D &>(*this))->get_ExtendedError(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductPagedQueryResult> impl_IStoreProductPagedQueryResult<D>::GetNextAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductPagedQueryResult> operation;
-    check_hresult(shim()->abi_GetNextAsync(put(operation)));
+    check_hresult(static_cast<const IStoreProductPagedQueryResult &>(static_cast<const D &>(*this))->abi_GetNextAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::Collections::IMapView<hstring, Windows::Services::Store::StoreProduct> impl_IStoreProductQueryResult<D>::Products() const
 {
     Windows::Foundation::Collections::IMapView<hstring, Windows::Services::Store::StoreProduct> value;
-    check_hresult(shim()->get_Products(put(value)));
+    check_hresult(static_cast<const IStoreProductQueryResult &>(static_cast<const D &>(*this))->get_Products(put(value)));
     return value;
 }
 
 template <typename D> HRESULT impl_IStoreProductQueryResult<D>::ExtendedError() const
 {
     HRESULT value {};
-    check_hresult(shim()->get_ExtendedError(&value));
+    check_hresult(static_cast<const IStoreProductQueryResult &>(static_cast<const D &>(*this))->get_ExtendedError(&value));
     return value;
 }
 
 template <typename D> Windows::Services::Store::StoreProduct impl_IStoreProductResult<D>::Product() const
 {
     Windows::Services::Store::StoreProduct value { nullptr };
-    check_hresult(shim()->get_Product(put(value)));
+    check_hresult(static_cast<const IStoreProductResult &>(static_cast<const D &>(*this))->get_Product(put(value)));
     return value;
 }
 
 template <typename D> HRESULT impl_IStoreProductResult<D>::ExtendedError() const
 {
     HRESULT value {};
-    check_hresult(shim()->get_ExtendedError(&value));
+    check_hresult(static_cast<const IStoreProductResult &>(static_cast<const D &>(*this))->get_ExtendedError(&value));
     return value;
 }
 
 template <typename D> hstring impl_IStorePurchaseProperties<D>::Name() const
 {
     hstring value;
-    check_hresult(shim()->get_Name(put(value)));
+    check_hresult(static_cast<const IStorePurchaseProperties &>(static_cast<const D &>(*this))->get_Name(put(value)));
     return value;
 }
 
 template <typename D> void impl_IStorePurchaseProperties<D>::Name(hstring_ref value) const
 {
-    check_hresult(shim()->put_Name(get(value)));
+    check_hresult(static_cast<const IStorePurchaseProperties &>(static_cast<const D &>(*this))->put_Name(get(value)));
 }
 
 template <typename D> hstring impl_IStorePurchaseProperties<D>::ExtendedJsonData() const
 {
     hstring value;
-    check_hresult(shim()->get_ExtendedJsonData(put(value)));
+    check_hresult(static_cast<const IStorePurchaseProperties &>(static_cast<const D &>(*this))->get_ExtendedJsonData(put(value)));
     return value;
 }
 
 template <typename D> void impl_IStorePurchaseProperties<D>::ExtendedJsonData(hstring_ref value) const
 {
-    check_hresult(shim()->put_ExtendedJsonData(get(value)));
+    check_hresult(static_cast<const IStorePurchaseProperties &>(static_cast<const D &>(*this))->put_ExtendedJsonData(get(value)));
 }
 
 template <typename D> Windows::Services::Store::StorePurchaseProperties impl_IStorePurchasePropertiesFactory<D>::Create(hstring_ref name) const
 {
     Windows::Services::Store::StorePurchaseProperties storePurchaseProperties { nullptr };
-    check_hresult(shim()->abi_Create(get(name), put(storePurchaseProperties)));
+    check_hresult(static_cast<const IStorePurchasePropertiesFactory &>(static_cast<const D &>(*this))->abi_Create(get(name), put(storePurchaseProperties)));
     return storePurchaseProperties;
 }
 
 template <typename D> bool impl_IStoreCollectionData<D>::IsTrial() const
 {
     bool value {};
-    check_hresult(shim()->get_IsTrial(&value));
+    check_hresult(static_cast<const IStoreCollectionData &>(static_cast<const D &>(*this))->get_IsTrial(&value));
     return value;
 }
 
 template <typename D> hstring impl_IStoreCollectionData<D>::CampaignId() const
 {
     hstring value;
-    check_hresult(shim()->get_CampaignId(put(value)));
+    check_hresult(static_cast<const IStoreCollectionData &>(static_cast<const D &>(*this))->get_CampaignId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStoreCollectionData<D>::DeveloperOfferId() const
 {
     hstring value;
-    check_hresult(shim()->get_DeveloperOfferId(put(value)));
+    check_hresult(static_cast<const IStoreCollectionData &>(static_cast<const D &>(*this))->get_DeveloperOfferId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IStoreCollectionData<D>::AcquiredDate() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->get_AcquiredDate(put(value)));
+    check_hresult(static_cast<const IStoreCollectionData &>(static_cast<const D &>(*this))->get_AcquiredDate(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IStoreCollectionData<D>::StartDate() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->get_StartDate(put(value)));
+    check_hresult(static_cast<const IStoreCollectionData &>(static_cast<const D &>(*this))->get_StartDate(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IStoreCollectionData<D>::EndDate() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->get_EndDate(put(value)));
+    check_hresult(static_cast<const IStoreCollectionData &>(static_cast<const D &>(*this))->get_EndDate(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IStoreCollectionData<D>::TrialTimeRemaining() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_TrialTimeRemaining(put(value)));
+    check_hresult(static_cast<const IStoreCollectionData &>(static_cast<const D &>(*this))->get_TrialTimeRemaining(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStoreCollectionData<D>::ExtendedJsonData() const
 {
     hstring value;
-    check_hresult(shim()->get_ExtendedJsonData(put(value)));
+    check_hresult(static_cast<const IStoreCollectionData &>(static_cast<const D &>(*this))->get_ExtendedJsonData(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStoreLicense<D>::SkuStoreId() const
 {
     hstring value;
-    check_hresult(shim()->get_SkuStoreId(put(value)));
+    check_hresult(static_cast<const IStoreLicense &>(static_cast<const D &>(*this))->get_SkuStoreId(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IStoreLicense<D>::IsActive() const
 {
     bool value {};
-    check_hresult(shim()->get_IsActive(&value));
+    check_hresult(static_cast<const IStoreLicense &>(static_cast<const D &>(*this))->get_IsActive(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IStoreLicense<D>::ExpirationDate() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->get_ExpirationDate(put(value)));
+    check_hresult(static_cast<const IStoreLicense &>(static_cast<const D &>(*this))->get_ExpirationDate(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStoreLicense<D>::ExtendedJsonData() const
 {
     hstring value;
-    check_hresult(shim()->get_ExtendedJsonData(put(value)));
+    check_hresult(static_cast<const IStoreLicense &>(static_cast<const D &>(*this))->get_ExtendedJsonData(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStoreLicense<D>::InAppOfferToken() const
 {
     hstring value;
-    check_hresult(shim()->get_InAppOfferToken(put(value)));
+    check_hresult(static_cast<const IStoreLicense &>(static_cast<const D &>(*this))->get_InAppOfferToken(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStoreAppLicense<D>::SkuStoreId() const
 {
     hstring value;
-    check_hresult(shim()->get_SkuStoreId(put(value)));
+    check_hresult(static_cast<const IStoreAppLicense &>(static_cast<const D &>(*this))->get_SkuStoreId(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IStoreAppLicense<D>::IsActive() const
 {
     bool value {};
-    check_hresult(shim()->get_IsActive(&value));
+    check_hresult(static_cast<const IStoreAppLicense &>(static_cast<const D &>(*this))->get_IsActive(&value));
     return value;
 }
 
 template <typename D> bool impl_IStoreAppLicense<D>::IsTrial() const
 {
     bool value {};
-    check_hresult(shim()->get_IsTrial(&value));
+    check_hresult(static_cast<const IStoreAppLicense &>(static_cast<const D &>(*this))->get_IsTrial(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IStoreAppLicense<D>::ExpirationDate() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->get_ExpirationDate(put(value)));
+    check_hresult(static_cast<const IStoreAppLicense &>(static_cast<const D &>(*this))->get_ExpirationDate(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStoreAppLicense<D>::ExtendedJsonData() const
 {
     hstring value;
-    check_hresult(shim()->get_ExtendedJsonData(put(value)));
+    check_hresult(static_cast<const IStoreAppLicense &>(static_cast<const D &>(*this))->get_ExtendedJsonData(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IMapView<hstring, Windows::Services::Store::StoreLicense> impl_IStoreAppLicense<D>::AddOnLicenses() const
 {
     Windows::Foundation::Collections::IMapView<hstring, Windows::Services::Store::StoreLicense> value;
-    check_hresult(shim()->get_AddOnLicenses(put(value)));
+    check_hresult(static_cast<const IStoreAppLicense &>(static_cast<const D &>(*this))->get_AddOnLicenses(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IStoreAppLicense<D>::TrialTimeRemaining() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_TrialTimeRemaining(put(value)));
+    check_hresult(static_cast<const IStoreAppLicense &>(static_cast<const D &>(*this))->get_TrialTimeRemaining(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IStoreAppLicense<D>::IsTrialOwnedByThisUser() const
 {
     bool value {};
-    check_hresult(shim()->get_IsTrialOwnedByThisUser(&value));
+    check_hresult(static_cast<const IStoreAppLicense &>(static_cast<const D &>(*this))->get_IsTrialOwnedByThisUser(&value));
     return value;
 }
 
 template <typename D> hstring impl_IStoreAppLicense<D>::TrialUniqueId() const
 {
     hstring value;
-    check_hresult(shim()->get_TrialUniqueId(put(value)));
+    check_hresult(static_cast<const IStoreAppLicense &>(static_cast<const D &>(*this))->get_TrialUniqueId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStoreSendRequestResult<D>::Response() const
 {
     hstring value;
-    check_hresult(shim()->get_Response(put(value)));
+    check_hresult(static_cast<const IStoreSendRequestResult &>(static_cast<const D &>(*this))->get_Response(put(value)));
     return value;
 }
 
 template <typename D> HRESULT impl_IStoreSendRequestResult<D>::ExtendedError() const
 {
     HRESULT value {};
-    check_hresult(shim()->get_ExtendedError(&value));
+    check_hresult(static_cast<const IStoreSendRequestResult &>(static_cast<const D &>(*this))->get_ExtendedError(&value));
     return value;
 }
 
 template <typename D> hstring impl_IStoreProduct<D>::StoreId() const
 {
     hstring value;
-    check_hresult(shim()->get_StoreId(put(value)));
+    check_hresult(static_cast<const IStoreProduct &>(static_cast<const D &>(*this))->get_StoreId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStoreProduct<D>::Language() const
 {
     hstring value;
-    check_hresult(shim()->get_Language(put(value)));
+    check_hresult(static_cast<const IStoreProduct &>(static_cast<const D &>(*this))->get_Language(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStoreProduct<D>::Title() const
 {
     hstring value;
-    check_hresult(shim()->get_Title(put(value)));
+    check_hresult(static_cast<const IStoreProduct &>(static_cast<const D &>(*this))->get_Title(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStoreProduct<D>::Description() const
 {
     hstring value;
-    check_hresult(shim()->get_Description(put(value)));
+    check_hresult(static_cast<const IStoreProduct &>(static_cast<const D &>(*this))->get_Description(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStoreProduct<D>::ProductKind() const
 {
     hstring value;
-    check_hresult(shim()->get_ProductKind(put(value)));
+    check_hresult(static_cast<const IStoreProduct &>(static_cast<const D &>(*this))->get_ProductKind(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IStoreProduct<D>::HasDigitalDownload() const
 {
     bool value {};
-    check_hresult(shim()->get_HasDigitalDownload(&value));
+    check_hresult(static_cast<const IStoreProduct &>(static_cast<const D &>(*this))->get_HasDigitalDownload(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_IStoreProduct<D>::Keywords() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(shim()->get_Keywords(put(value)));
+    check_hresult(static_cast<const IStoreProduct &>(static_cast<const D &>(*this))->get_Keywords(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Services::Store::StoreImage> impl_IStoreProduct<D>::Images() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Services::Store::StoreImage> value;
-    check_hresult(shim()->get_Images(put(value)));
+    check_hresult(static_cast<const IStoreProduct &>(static_cast<const D &>(*this))->get_Images(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Services::Store::StoreVideo> impl_IStoreProduct<D>::Videos() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Services::Store::StoreVideo> value;
-    check_hresult(shim()->get_Videos(put(value)));
+    check_hresult(static_cast<const IStoreProduct &>(static_cast<const D &>(*this))->get_Videos(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Services::Store::StoreSku> impl_IStoreProduct<D>::Skus() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Services::Store::StoreSku> value;
-    check_hresult(shim()->get_Skus(put(value)));
+    check_hresult(static_cast<const IStoreProduct &>(static_cast<const D &>(*this))->get_Skus(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IStoreProduct<D>::IsInUserCollection() const
 {
     bool value {};
-    check_hresult(shim()->get_IsInUserCollection(&value));
+    check_hresult(static_cast<const IStoreProduct &>(static_cast<const D &>(*this))->get_IsInUserCollection(&value));
     return value;
 }
 
 template <typename D> Windows::Services::Store::StorePrice impl_IStoreProduct<D>::Price() const
 {
     Windows::Services::Store::StorePrice value { nullptr };
-    check_hresult(shim()->get_Price(put(value)));
+    check_hresult(static_cast<const IStoreProduct &>(static_cast<const D &>(*this))->get_Price(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStoreProduct<D>::ExtendedJsonData() const
 {
     hstring value;
-    check_hresult(shim()->get_ExtendedJsonData(put(value)));
+    check_hresult(static_cast<const IStoreProduct &>(static_cast<const D &>(*this))->get_ExtendedJsonData(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Uri impl_IStoreProduct<D>::LinkUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(shim()->get_LinkUri(put(value)));
+    check_hresult(static_cast<const IStoreProduct &>(static_cast<const D &>(*this))->get_LinkUri(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IStoreProduct<D>::GetIsAnySkuInstalledAsync() const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(shim()->abi_GetIsAnySkuInstalledAsync(put(operation)));
+    check_hresult(static_cast<const IStoreProduct &>(static_cast<const D &>(*this))->abi_GetIsAnySkuInstalledAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Store::StorePurchaseResult> impl_IStoreProduct<D>::RequestPurchaseAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StorePurchaseResult> operation;
-    check_hresult(shim()->abi_RequestPurchaseAsync(put(operation)));
+    check_hresult(static_cast<const IStoreProduct &>(static_cast<const D &>(*this))->abi_RequestPurchaseAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Store::StorePurchaseResult> impl_IStoreProduct<D>::RequestPurchaseAsync(const Windows::Services::Store::StorePurchaseProperties & storePurchaseProperties) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StorePurchaseResult> operation;
-    check_hresult(shim()->abi_RequestPurchaseWithPurchasePropertiesAsync(get(storePurchaseProperties), put(operation)));
+    check_hresult(static_cast<const IStoreProduct &>(static_cast<const D &>(*this))->abi_RequestPurchaseWithPurchasePropertiesAsync(get(storePurchaseProperties), put(operation)));
     return operation;
 }
 
 template <typename D> hstring impl_IStoreProduct<D>::InAppOfferToken() const
 {
     hstring value;
-    check_hresult(shim()->get_InAppOfferToken(put(value)));
+    check_hresult(static_cast<const IStoreProduct &>(static_cast<const D &>(*this))->get_InAppOfferToken(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Uri impl_IStoreImage<D>::Uri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(shim()->get_Uri(put(value)));
+    check_hresult(static_cast<const IStoreImage &>(static_cast<const D &>(*this))->get_Uri(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStoreImage<D>::ImagePurposeTag() const
 {
     hstring value;
-    check_hresult(shim()->get_ImagePurposeTag(put(value)));
+    check_hresult(static_cast<const IStoreImage &>(static_cast<const D &>(*this))->get_ImagePurposeTag(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IStoreImage<D>::Width() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_Width(&value));
+    check_hresult(static_cast<const IStoreImage &>(static_cast<const D &>(*this))->get_Width(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IStoreImage<D>::Height() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_Height(&value));
+    check_hresult(static_cast<const IStoreImage &>(static_cast<const D &>(*this))->get_Height(&value));
     return value;
 }
 
 template <typename D> hstring impl_IStoreImage<D>::Caption() const
 {
     hstring value;
-    check_hresult(shim()->get_Caption(put(value)));
+    check_hresult(static_cast<const IStoreImage &>(static_cast<const D &>(*this))->get_Caption(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Uri impl_IStoreVideo<D>::Uri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(shim()->get_Uri(put(value)));
+    check_hresult(static_cast<const IStoreVideo &>(static_cast<const D &>(*this))->get_Uri(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStoreVideo<D>::VideoPurposeTag() const
 {
     hstring value;
-    check_hresult(shim()->get_VideoPurposeTag(put(value)));
+    check_hresult(static_cast<const IStoreVideo &>(static_cast<const D &>(*this))->get_VideoPurposeTag(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IStoreVideo<D>::Width() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_Width(&value));
+    check_hresult(static_cast<const IStoreVideo &>(static_cast<const D &>(*this))->get_Width(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IStoreVideo<D>::Height() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_Height(&value));
+    check_hresult(static_cast<const IStoreVideo &>(static_cast<const D &>(*this))->get_Height(&value));
     return value;
 }
 
 template <typename D> hstring impl_IStoreVideo<D>::Caption() const
 {
     hstring value;
-    check_hresult(shim()->get_Caption(put(value)));
+    check_hresult(static_cast<const IStoreVideo &>(static_cast<const D &>(*this))->get_Caption(put(value)));
     return value;
 }
 
 template <typename D> Windows::Services::Store::StoreImage impl_IStoreVideo<D>::PreviewImage() const
 {
     Windows::Services::Store::StoreImage value { nullptr };
-    check_hresult(shim()->get_PreviewImage(put(value)));
+    check_hresult(static_cast<const IStoreVideo &>(static_cast<const D &>(*this))->get_PreviewImage(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStoreSku<D>::StoreId() const
 {
     hstring value;
-    check_hresult(shim()->get_StoreId(put(value)));
+    check_hresult(static_cast<const IStoreSku &>(static_cast<const D &>(*this))->get_StoreId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStoreSku<D>::Language() const
 {
     hstring value;
-    check_hresult(shim()->get_Language(put(value)));
+    check_hresult(static_cast<const IStoreSku &>(static_cast<const D &>(*this))->get_Language(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStoreSku<D>::Title() const
 {
     hstring value;
-    check_hresult(shim()->get_Title(put(value)));
+    check_hresult(static_cast<const IStoreSku &>(static_cast<const D &>(*this))->get_Title(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStoreSku<D>::Description() const
 {
     hstring value;
-    check_hresult(shim()->get_Description(put(value)));
+    check_hresult(static_cast<const IStoreSku &>(static_cast<const D &>(*this))->get_Description(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IStoreSku<D>::IsTrial() const
 {
     bool value {};
-    check_hresult(shim()->get_IsTrial(&value));
+    check_hresult(static_cast<const IStoreSku &>(static_cast<const D &>(*this))->get_IsTrial(&value));
     return value;
 }
 
 template <typename D> hstring impl_IStoreSku<D>::CustomDeveloperData() const
 {
     hstring value;
-    check_hresult(shim()->get_CustomDeveloperData(put(value)));
+    check_hresult(static_cast<const IStoreSku &>(static_cast<const D &>(*this))->get_CustomDeveloperData(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Services::Store::StoreImage> impl_IStoreSku<D>::Images() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Services::Store::StoreImage> value;
-    check_hresult(shim()->get_Images(put(value)));
+    check_hresult(static_cast<const IStoreSku &>(static_cast<const D &>(*this))->get_Images(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Services::Store::StoreVideo> impl_IStoreSku<D>::Videos() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Services::Store::StoreVideo> value;
-    check_hresult(shim()->get_Videos(put(value)));
+    check_hresult(static_cast<const IStoreSku &>(static_cast<const D &>(*this))->get_Videos(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Services::Store::StoreAvailability> impl_IStoreSku<D>::Availabilities() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Services::Store::StoreAvailability> value;
-    check_hresult(shim()->get_Availabilities(put(value)));
+    check_hresult(static_cast<const IStoreSku &>(static_cast<const D &>(*this))->get_Availabilities(put(value)));
     return value;
 }
 
 template <typename D> Windows::Services::Store::StorePrice impl_IStoreSku<D>::Price() const
 {
     Windows::Services::Store::StorePrice value { nullptr };
-    check_hresult(shim()->get_Price(put(value)));
+    check_hresult(static_cast<const IStoreSku &>(static_cast<const D &>(*this))->get_Price(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStoreSku<D>::ExtendedJsonData() const
 {
     hstring value;
-    check_hresult(shim()->get_ExtendedJsonData(put(value)));
+    check_hresult(static_cast<const IStoreSku &>(static_cast<const D &>(*this))->get_ExtendedJsonData(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IStoreSku<D>::IsInUserCollection() const
 {
     bool value {};
-    check_hresult(shim()->get_IsInUserCollection(&value));
+    check_hresult(static_cast<const IStoreSku &>(static_cast<const D &>(*this))->get_IsInUserCollection(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_IStoreSku<D>::BundledSkus() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(shim()->get_BundledSkus(put(value)));
+    check_hresult(static_cast<const IStoreSku &>(static_cast<const D &>(*this))->get_BundledSkus(put(value)));
     return value;
 }
 
 template <typename D> Windows::Services::Store::StoreCollectionData impl_IStoreSku<D>::CollectionData() const
 {
     Windows::Services::Store::StoreCollectionData value { nullptr };
-    check_hresult(shim()->get_CollectionData(put(value)));
+    check_hresult(static_cast<const IStoreSku &>(static_cast<const D &>(*this))->get_CollectionData(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IStoreSku<D>::GetIsInstalledAsync() const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(shim()->abi_GetIsInstalledAsync(put(operation)));
+    check_hresult(static_cast<const IStoreSku &>(static_cast<const D &>(*this))->abi_GetIsInstalledAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Store::StorePurchaseResult> impl_IStoreSku<D>::RequestPurchaseAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StorePurchaseResult> operation;
-    check_hresult(shim()->abi_RequestPurchaseAsync(put(operation)));
+    check_hresult(static_cast<const IStoreSku &>(static_cast<const D &>(*this))->abi_RequestPurchaseAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Store::StorePurchaseResult> impl_IStoreSku<D>::RequestPurchaseAsync(const Windows::Services::Store::StorePurchaseProperties & storePurchaseProperties) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StorePurchaseResult> operation;
-    check_hresult(shim()->abi_RequestPurchaseWithPurchasePropertiesAsync(get(storePurchaseProperties), put(operation)));
+    check_hresult(static_cast<const IStoreSku &>(static_cast<const D &>(*this))->abi_RequestPurchaseWithPurchasePropertiesAsync(get(storePurchaseProperties), put(operation)));
     return operation;
 }
 
 template <typename D> bool impl_IStoreSku<D>::IsSubscription() const
 {
     bool value {};
-    check_hresult(shim()->get_IsSubscription(&value));
+    check_hresult(static_cast<const IStoreSku &>(static_cast<const D &>(*this))->get_IsSubscription(&value));
     return value;
 }
 
 template <typename D> Windows::Services::Store::StoreSubscriptionInfo impl_IStoreSku<D>::SubscriptionInfo() const
 {
     Windows::Services::Store::StoreSubscriptionInfo value { nullptr };
-    check_hresult(shim()->get_SubscriptionInfo(put(value)));
+    check_hresult(static_cast<const IStoreSku &>(static_cast<const D &>(*this))->get_SubscriptionInfo(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStoreAvailability<D>::StoreId() const
 {
     hstring value;
-    check_hresult(shim()->get_StoreId(put(value)));
+    check_hresult(static_cast<const IStoreAvailability &>(static_cast<const D &>(*this))->get_StoreId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IStoreAvailability<D>::EndDate() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->get_EndDate(put(value)));
+    check_hresult(static_cast<const IStoreAvailability &>(static_cast<const D &>(*this))->get_EndDate(put(value)));
     return value;
 }
 
 template <typename D> Windows::Services::Store::StorePrice impl_IStoreAvailability<D>::Price() const
 {
     Windows::Services::Store::StorePrice value { nullptr };
-    check_hresult(shim()->get_Price(put(value)));
+    check_hresult(static_cast<const IStoreAvailability &>(static_cast<const D &>(*this))->get_Price(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStoreAvailability<D>::ExtendedJsonData() const
 {
     hstring value;
-    check_hresult(shim()->get_ExtendedJsonData(put(value)));
+    check_hresult(static_cast<const IStoreAvailability &>(static_cast<const D &>(*this))->get_ExtendedJsonData(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Store::StorePurchaseResult> impl_IStoreAvailability<D>::RequestPurchaseAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StorePurchaseResult> operation;
-    check_hresult(shim()->abi_RequestPurchaseAsync(put(operation)));
+    check_hresult(static_cast<const IStoreAvailability &>(static_cast<const D &>(*this))->abi_RequestPurchaseAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Store::StorePurchaseResult> impl_IStoreAvailability<D>::RequestPurchaseAsync(const Windows::Services::Store::StorePurchaseProperties & storePurchaseProperties) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StorePurchaseResult> operation;
-    check_hresult(shim()->abi_RequestPurchaseWithPurchasePropertiesAsync(get(storePurchaseProperties), put(operation)));
+    check_hresult(static_cast<const IStoreAvailability &>(static_cast<const D &>(*this))->abi_RequestPurchaseWithPurchasePropertiesAsync(get(storePurchaseProperties), put(operation)));
     return operation;
 }
 
 template <typename D> hstring impl_IStorePrice<D>::FormattedBasePrice() const
 {
     hstring value;
-    check_hresult(shim()->get_FormattedBasePrice(put(value)));
+    check_hresult(static_cast<const IStorePrice &>(static_cast<const D &>(*this))->get_FormattedBasePrice(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStorePrice<D>::FormattedPrice() const
 {
     hstring value;
-    check_hresult(shim()->get_FormattedPrice(put(value)));
+    check_hresult(static_cast<const IStorePrice &>(static_cast<const D &>(*this))->get_FormattedPrice(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IStorePrice<D>::IsOnSale() const
 {
     bool value {};
-    check_hresult(shim()->get_IsOnSale(&value));
+    check_hresult(static_cast<const IStorePrice &>(static_cast<const D &>(*this))->get_IsOnSale(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IStorePrice<D>::SaleEndDate() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->get_SaleEndDate(put(value)));
+    check_hresult(static_cast<const IStorePrice &>(static_cast<const D &>(*this))->get_SaleEndDate(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStorePrice<D>::CurrencyCode() const
 {
     hstring value;
-    check_hresult(shim()->get_CurrencyCode(put(value)));
+    check_hresult(static_cast<const IStorePrice &>(static_cast<const D &>(*this))->get_CurrencyCode(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStorePrice<D>::FormattedRecurrencePrice() const
 {
     hstring value;
-    check_hresult(shim()->get_FormattedRecurrencePrice(put(value)));
+    check_hresult(static_cast<const IStorePrice &>(static_cast<const D &>(*this))->get_FormattedRecurrencePrice(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IStoreSubscriptionInfo<D>::BillingPeriod() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_BillingPeriod(&value));
+    check_hresult(static_cast<const IStoreSubscriptionInfo &>(static_cast<const D &>(*this))->get_BillingPeriod(&value));
     return value;
 }
 
 template <typename D> Windows::Services::Store::StoreDurationUnit impl_IStoreSubscriptionInfo<D>::BillingPeriodUnit() const
 {
     Windows::Services::Store::StoreDurationUnit value {};
-    check_hresult(shim()->get_BillingPeriodUnit(&value));
+    check_hresult(static_cast<const IStoreSubscriptionInfo &>(static_cast<const D &>(*this))->get_BillingPeriodUnit(&value));
     return value;
 }
 
 template <typename D> bool impl_IStoreSubscriptionInfo<D>::HasTrialPeriod() const
 {
     bool value {};
-    check_hresult(shim()->get_HasTrialPeriod(&value));
+    check_hresult(static_cast<const IStoreSubscriptionInfo &>(static_cast<const D &>(*this))->get_HasTrialPeriod(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IStoreSubscriptionInfo<D>::TrialPeriod() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_TrialPeriod(&value));
+    check_hresult(static_cast<const IStoreSubscriptionInfo &>(static_cast<const D &>(*this))->get_TrialPeriod(&value));
     return value;
 }
 
 template <typename D> Windows::Services::Store::StoreDurationUnit impl_IStoreSubscriptionInfo<D>::TrialPeriodUnit() const
 {
     Windows::Services::Store::StoreDurationUnit value {};
-    check_hresult(shim()->get_TrialPeriodUnit(&value));
+    check_hresult(static_cast<const IStoreSubscriptionInfo &>(static_cast<const D &>(*this))->get_TrialPeriodUnit(&value));
     return value;
 }
 
 template <typename D> Windows::Services::Store::StoreConsumableStatus impl_IStoreConsumableResult<D>::Status() const
 {
     Windows::Services::Store::StoreConsumableStatus value {};
-    check_hresult(shim()->get_Status(&value));
+    check_hresult(static_cast<const IStoreConsumableResult &>(static_cast<const D &>(*this))->get_Status(&value));
     return value;
 }
 
 template <typename D> GUID impl_IStoreConsumableResult<D>::TrackingId() const
 {
     GUID value {};
-    check_hresult(shim()->get_TrackingId(&value));
+    check_hresult(static_cast<const IStoreConsumableResult &>(static_cast<const D &>(*this))->get_TrackingId(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IStoreConsumableResult<D>::BalanceRemaining() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_BalanceRemaining(&value));
+    check_hresult(static_cast<const IStoreConsumableResult &>(static_cast<const D &>(*this))->get_BalanceRemaining(&value));
     return value;
 }
 
 template <typename D> HRESULT impl_IStoreConsumableResult<D>::ExtendedError() const
 {
     HRESULT value {};
-    check_hresult(shim()->get_ExtendedError(&value));
+    check_hresult(static_cast<const IStoreConsumableResult &>(static_cast<const D &>(*this))->get_ExtendedError(&value));
     return value;
 }
 
 template <typename D> Windows::Services::Store::StorePurchaseStatus impl_IStorePurchaseResult<D>::Status() const
 {
     Windows::Services::Store::StorePurchaseStatus value {};
-    check_hresult(shim()->get_Status(&value));
+    check_hresult(static_cast<const IStorePurchaseResult &>(static_cast<const D &>(*this))->get_Status(&value));
     return value;
 }
 
 template <typename D> HRESULT impl_IStorePurchaseResult<D>::ExtendedError() const
 {
     HRESULT value {};
-    check_hresult(shim()->get_ExtendedError(&value));
+    check_hresult(static_cast<const IStorePurchaseResult &>(static_cast<const D &>(*this))->get_ExtendedError(&value));
     return value;
 }
 
 template <typename D> Windows::Services::Store::StoreContext impl_IStoreContextStatics<D>::GetDefault() const
 {
     Windows::Services::Store::StoreContext value { nullptr };
-    check_hresult(shim()->abi_GetDefault(put(value)));
+    check_hresult(static_cast<const IStoreContextStatics &>(static_cast<const D &>(*this))->abi_GetDefault(put(value)));
     return value;
 }
 
 template <typename D> Windows::Services::Store::StoreContext impl_IStoreContextStatics<D>::GetForUser(const Windows::System::User & user) const
 {
     Windows::Services::Store::StoreContext value { nullptr };
-    check_hresult(shim()->abi_GetForUser(get(user), put(value)));
+    check_hresult(static_cast<const IStoreContextStatics &>(static_cast<const D &>(*this))->abi_GetForUser(get(user), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreSendRequestResult> impl_IStoreRequestHelperStatics<D>::SendRequestAsync(const Windows::Services::Store::StoreContext & context, uint32_t requestKind, hstring_ref parametersAsJson) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreSendRequestResult> operation;
-    check_hresult(shim()->abi_SendRequestAsync(get(context), requestKind, get(parametersAsJson), put(operation)));
+    check_hresult(static_cast<const IStoreRequestHelperStatics &>(static_cast<const D &>(*this))->abi_SendRequestAsync(get(context), requestKind, get(parametersAsJson), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::System::User impl_IStoreContext<D>::User() const
 {
     Windows::System::User value { nullptr };
-    check_hresult(shim()->get_User(put(value)));
+    check_hresult(static_cast<const IStoreContext &>(static_cast<const D &>(*this))->get_User(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IStoreContext<D>::OfflineLicensesChanged(const Windows::Foundation::TypedEventHandler<Windows::Services::Store::StoreContext, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_OfflineLicensesChanged(get(handler), &token));
+    check_hresult(static_cast<const IStoreContext &>(static_cast<const D &>(*this))->add_OfflineLicensesChanged(get(handler), &token));
     return token;
 }
 
@@ -2863,181 +2863,181 @@ template <typename D> event_revoker<IStoreContext> impl_IStoreContext<D>::Offlin
 
 template <typename D> void impl_IStoreContext<D>::OfflineLicensesChanged(event_token token) const
 {
-    check_hresult(shim()->remove_OfflineLicensesChanged(token));
+    check_hresult(static_cast<const IStoreContext &>(static_cast<const D &>(*this))->remove_OfflineLicensesChanged(token));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IStoreContext<D>::GetCustomerPurchaseIdAsync(hstring_ref serviceTicket, hstring_ref publisherUserId) const
 {
     Windows::Foundation::IAsyncOperation<hstring> operation;
-    check_hresult(shim()->abi_GetCustomerPurchaseIdAsync(get(serviceTicket), get(publisherUserId), put(operation)));
+    check_hresult(static_cast<const IStoreContext &>(static_cast<const D &>(*this))->abi_GetCustomerPurchaseIdAsync(get(serviceTicket), get(publisherUserId), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IStoreContext<D>::GetCustomerCollectionsIdAsync(hstring_ref serviceTicket, hstring_ref publisherUserId) const
 {
     Windows::Foundation::IAsyncOperation<hstring> operation;
-    check_hresult(shim()->abi_GetCustomerCollectionsIdAsync(get(serviceTicket), get(publisherUserId), put(operation)));
+    check_hresult(static_cast<const IStoreContext &>(static_cast<const D &>(*this))->abi_GetCustomerCollectionsIdAsync(get(serviceTicket), get(publisherUserId), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreAppLicense> impl_IStoreContext<D>::GetAppLicenseAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreAppLicense> operation;
-    check_hresult(shim()->abi_GetAppLicenseAsync(put(operation)));
+    check_hresult(static_cast<const IStoreContext &>(static_cast<const D &>(*this))->abi_GetAppLicenseAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductResult> impl_IStoreContext<D>::GetStoreProductForCurrentAppAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductResult> operation;
-    check_hresult(shim()->abi_GetStoreProductForCurrentAppAsync(put(operation)));
+    check_hresult(static_cast<const IStoreContext &>(static_cast<const D &>(*this))->abi_GetStoreProductForCurrentAppAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductQueryResult> impl_IStoreContext<D>::GetStoreProductsAsync(const Windows::Foundation::Collections::IIterable<hstring> & productKinds, const Windows::Foundation::Collections::IIterable<hstring> & storeIds) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductQueryResult> operation;
-    check_hresult(shim()->abi_GetStoreProductsAsync(get(productKinds), get(storeIds), put(operation)));
+    check_hresult(static_cast<const IStoreContext &>(static_cast<const D &>(*this))->abi_GetStoreProductsAsync(get(productKinds), get(storeIds), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductQueryResult> impl_IStoreContext<D>::GetAssociatedStoreProductsAsync(const Windows::Foundation::Collections::IIterable<hstring> & productKinds) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductQueryResult> operation;
-    check_hresult(shim()->abi_GetAssociatedStoreProductsAsync(get(productKinds), put(operation)));
+    check_hresult(static_cast<const IStoreContext &>(static_cast<const D &>(*this))->abi_GetAssociatedStoreProductsAsync(get(productKinds), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductPagedQueryResult> impl_IStoreContext<D>::GetAssociatedStoreProductsWithPagingAsync(const Windows::Foundation::Collections::IIterable<hstring> & productKinds, uint32_t maxItemsToRetrievePerPage) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductPagedQueryResult> operation;
-    check_hresult(shim()->abi_GetAssociatedStoreProductsWithPagingAsync(get(productKinds), maxItemsToRetrievePerPage, put(operation)));
+    check_hresult(static_cast<const IStoreContext &>(static_cast<const D &>(*this))->abi_GetAssociatedStoreProductsWithPagingAsync(get(productKinds), maxItemsToRetrievePerPage, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductQueryResult> impl_IStoreContext<D>::GetUserCollectionAsync(const Windows::Foundation::Collections::IIterable<hstring> & productKinds) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductQueryResult> operation;
-    check_hresult(shim()->abi_GetUserCollectionAsync(get(productKinds), put(operation)));
+    check_hresult(static_cast<const IStoreContext &>(static_cast<const D &>(*this))->abi_GetUserCollectionAsync(get(productKinds), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductPagedQueryResult> impl_IStoreContext<D>::GetUserCollectionWithPagingAsync(const Windows::Foundation::Collections::IIterable<hstring> & productKinds, uint32_t maxItemsToRetrievePerPage) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductPagedQueryResult> operation;
-    check_hresult(shim()->abi_GetUserCollectionWithPagingAsync(get(productKinds), maxItemsToRetrievePerPage, put(operation)));
+    check_hresult(static_cast<const IStoreContext &>(static_cast<const D &>(*this))->abi_GetUserCollectionWithPagingAsync(get(productKinds), maxItemsToRetrievePerPage, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreConsumableResult> impl_IStoreContext<D>::ReportConsumableFulfillmentAsync(hstring_ref productStoreId, uint32_t quantity, GUID trackingId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreConsumableResult> operation;
-    check_hresult(shim()->abi_ReportConsumableFulfillmentAsync(get(productStoreId), quantity, trackingId, put(operation)));
+    check_hresult(static_cast<const IStoreContext &>(static_cast<const D &>(*this))->abi_ReportConsumableFulfillmentAsync(get(productStoreId), quantity, trackingId, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreConsumableResult> impl_IStoreContext<D>::GetConsumableBalanceRemainingAsync(hstring_ref productStoreId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreConsumableResult> operation;
-    check_hresult(shim()->abi_GetConsumableBalanceRemainingAsync(get(productStoreId), put(operation)));
+    check_hresult(static_cast<const IStoreContext &>(static_cast<const D &>(*this))->abi_GetConsumableBalanceRemainingAsync(get(productStoreId), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreAcquireLicenseResult> impl_IStoreContext<D>::AcquireStoreLicenseForOptionalPackageAsync(const Windows::ApplicationModel::Package & optionalPackage) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreAcquireLicenseResult> operation;
-    check_hresult(shim()->abi_AcquireStoreLicenseForOptionalPackageAsync(get(optionalPackage), put(operation)));
+    check_hresult(static_cast<const IStoreContext &>(static_cast<const D &>(*this))->abi_AcquireStoreLicenseForOptionalPackageAsync(get(optionalPackage), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Store::StorePurchaseResult> impl_IStoreContext<D>::RequestPurchaseAsync(hstring_ref storeId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StorePurchaseResult> operation;
-    check_hresult(shim()->abi_RequestPurchaseAsync(get(storeId), put(operation)));
+    check_hresult(static_cast<const IStoreContext &>(static_cast<const D &>(*this))->abi_RequestPurchaseAsync(get(storeId), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Store::StorePurchaseResult> impl_IStoreContext<D>::RequestPurchaseAsync(hstring_ref storeId, const Windows::Services::Store::StorePurchaseProperties & storePurchaseProperties) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Store::StorePurchaseResult> operation;
-    check_hresult(shim()->abi_RequestPurchaseWithPurchasePropertiesAsync(get(storeId), get(storePurchaseProperties), put(operation)));
+    check_hresult(static_cast<const IStoreContext &>(static_cast<const D &>(*this))->abi_RequestPurchaseWithPurchasePropertiesAsync(get(storeId), get(storePurchaseProperties), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Services::Store::StorePackageUpdate>> impl_IStoreContext<D>::GetAppAndOptionalStorePackageUpdatesAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Services::Store::StorePackageUpdate>> operation;
-    check_hresult(shim()->abi_GetAppAndOptionalStorePackageUpdatesAsync(put(operation)));
+    check_hresult(static_cast<const IStoreContext &>(static_cast<const D &>(*this))->abi_GetAppAndOptionalStorePackageUpdatesAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Services::Store::StorePackageUpdateResult, Windows::Services::Store::StorePackageUpdateStatus> impl_IStoreContext<D>::RequestDownloadStorePackageUpdatesAsync(const Windows::Foundation::Collections::IIterable<Windows::Services::Store::StorePackageUpdate> & storePackageUpdates) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Services::Store::StorePackageUpdateResult, Windows::Services::Store::StorePackageUpdateStatus> operation;
-    check_hresult(shim()->abi_RequestDownloadStorePackageUpdatesAsync(get(storePackageUpdates), put(operation)));
+    check_hresult(static_cast<const IStoreContext &>(static_cast<const D &>(*this))->abi_RequestDownloadStorePackageUpdatesAsync(get(storePackageUpdates), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Services::Store::StorePackageUpdateResult, Windows::Services::Store::StorePackageUpdateStatus> impl_IStoreContext<D>::RequestDownloadAndInstallStorePackageUpdatesAsync(const Windows::Foundation::Collections::IIterable<Windows::Services::Store::StorePackageUpdate> & storePackageUpdates) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Services::Store::StorePackageUpdateResult, Windows::Services::Store::StorePackageUpdateStatus> operation;
-    check_hresult(shim()->abi_RequestDownloadAndInstallStorePackageUpdatesAsync(get(storePackageUpdates), put(operation)));
+    check_hresult(static_cast<const IStoreContext &>(static_cast<const D &>(*this))->abi_RequestDownloadAndInstallStorePackageUpdatesAsync(get(storePackageUpdates), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Services::Store::StorePackageUpdateResult, Windows::Services::Store::StorePackageUpdateStatus> impl_IStoreContext<D>::RequestDownloadAndInstallStorePackagesAsync(const Windows::Foundation::Collections::IIterable<hstring> & storeIds) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Services::Store::StorePackageUpdateResult, Windows::Services::Store::StorePackageUpdateStatus> operation;
-    check_hresult(shim()->abi_RequestDownloadAndInstallStorePackagesAsync(get(storeIds), put(operation)));
+    check_hresult(static_cast<const IStoreContext &>(static_cast<const D &>(*this))->abi_RequestDownloadAndInstallStorePackagesAsync(get(storeIds), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::ApplicationModel::Package impl_IStorePackageUpdate<D>::Package() const
 {
     Windows::ApplicationModel::Package value { nullptr };
-    check_hresult(shim()->get_Package(put(value)));
+    check_hresult(static_cast<const IStorePackageUpdate &>(static_cast<const D &>(*this))->get_Package(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IStorePackageUpdate<D>::Mandatory() const
 {
     bool value {};
-    check_hresult(shim()->get_Mandatory(&value));
+    check_hresult(static_cast<const IStorePackageUpdate &>(static_cast<const D &>(*this))->get_Mandatory(&value));
     return value;
 }
 
 template <typename D> Windows::Services::Store::StorePackageUpdateState impl_IStorePackageUpdateResult<D>::OverallState() const
 {
     Windows::Services::Store::StorePackageUpdateState value {};
-    check_hresult(shim()->get_OverallState(&value));
+    check_hresult(static_cast<const IStorePackageUpdateResult &>(static_cast<const D &>(*this))->get_OverallState(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Services::Store::StorePackageUpdateStatus> impl_IStorePackageUpdateResult<D>::StorePackageUpdateStatuses() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Services::Store::StorePackageUpdateStatus> value;
-    check_hresult(shim()->get_StorePackageUpdateStatuses(put(value)));
+    check_hresult(static_cast<const IStorePackageUpdateResult &>(static_cast<const D &>(*this))->get_StorePackageUpdateStatuses(put(value)));
     return value;
 }
 
 template <typename D> Windows::Services::Store::StorePackageLicense impl_IStoreAcquireLicenseResult<D>::StorePackageLicense() const
 {
     Windows::Services::Store::StorePackageLicense value { nullptr };
-    check_hresult(shim()->get_StorePackageLicense(put(value)));
+    check_hresult(static_cast<const IStoreAcquireLicenseResult &>(static_cast<const D &>(*this))->get_StorePackageLicense(put(value)));
     return value;
 }
 
 template <typename D> HRESULT impl_IStoreAcquireLicenseResult<D>::ExtendedError() const
 {
     HRESULT value {};
-    check_hresult(shim()->get_ExtendedError(&value));
+    check_hresult(static_cast<const IStoreAcquireLicenseResult &>(static_cast<const D &>(*this))->get_ExtendedError(&value));
     return value;
 }
 
 template <typename D> event_token impl_IStorePackageLicense<D>::LicenseLost(const Windows::Foundation::TypedEventHandler<Windows::Services::Store::StorePackageLicense, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_LicenseLost(get(handler), &token));
+    check_hresult(static_cast<const IStorePackageLicense &>(static_cast<const D &>(*this))->add_LicenseLost(get(handler), &token));
     return token;
 }
 
@@ -3048,26 +3048,26 @@ template <typename D> event_revoker<IStorePackageLicense> impl_IStorePackageLice
 
 template <typename D> void impl_IStorePackageLicense<D>::LicenseLost(event_token token) const
 {
-    check_hresult(shim()->remove_LicenseLost(token));
+    check_hresult(static_cast<const IStorePackageLicense &>(static_cast<const D &>(*this))->remove_LicenseLost(token));
 }
 
 template <typename D> Windows::ApplicationModel::Package impl_IStorePackageLicense<D>::Package() const
 {
     Windows::ApplicationModel::Package value { nullptr };
-    check_hresult(shim()->get_Package(put(value)));
+    check_hresult(static_cast<const IStorePackageLicense &>(static_cast<const D &>(*this))->get_Package(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IStorePackageLicense<D>::IsValid() const
 {
     bool value {};
-    check_hresult(shim()->get_IsValid(&value));
+    check_hresult(static_cast<const IStorePackageLicense &>(static_cast<const D &>(*this))->get_IsValid(&value));
     return value;
 }
 
 template <typename D> void impl_IStorePackageLicense<D>::ReleaseLicense() const
 {
-    check_hresult(shim()->abi_ReleaseLicense());
+    check_hresult(static_cast<const IStorePackageLicense &>(static_cast<const D &>(*this))->abi_ReleaseLicense());
 }
 
 inline Windows::Services::Store::StoreContext StoreContext::GetDefault()

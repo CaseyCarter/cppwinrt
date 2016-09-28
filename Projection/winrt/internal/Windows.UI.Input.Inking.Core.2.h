@@ -60,12 +60,8 @@ template <> struct __declspec(uuid("47415452-db79-567e-84d5-e9912330f944")) __de
 namespace Windows::UI::Input::Inking::Core {
 
 template <typename D>
-class WINRT_EBO impl_ICoreInkIndependentInputSource
+struct WINRT_EBO impl_ICoreInkIndependentInputSource
 {
-    auto shim() const { return impl::shim<D, ICoreInkIndependentInputSource>(this); }
-
-public:
-
     event_token PointerEntering(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs> & handler) const;
     using PointerEntering_revoker = event_revoker<ICoreInkIndependentInputSource>;
     PointerEntering_revoker PointerEntering(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource, Windows::UI::Core::PointerEventArgs> & handler) const;
@@ -98,22 +94,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreInkIndependentInputSourceStatics
+struct WINRT_EBO impl_ICoreInkIndependentInputSourceStatics
 {
-    auto shim() const { return impl::shim<D, ICoreInkIndependentInputSourceStatics>(this); }
-
-public:
-
     Windows::UI::Input::Inking::Core::CoreInkIndependentInputSource Create(const Windows::UI::Input::Inking::InkPresenter & inkPresenter) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreWetStrokeUpdateEventArgs
+struct WINRT_EBO impl_ICoreWetStrokeUpdateEventArgs
 {
-    auto shim() const { return impl::shim<D, ICoreWetStrokeUpdateEventArgs>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<Windows::UI::Input::Inking::InkPoint> NewInkPoints() const;
     uint32_t PointerId() const;
     Windows::UI::Input::Inking::Core::CoreWetStrokeDisposition Disposition() const;
@@ -121,12 +109,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreWetStrokeUpdateSource
+struct WINRT_EBO impl_ICoreWetStrokeUpdateSource
 {
-    auto shim() const { return impl::shim<D, ICoreWetStrokeUpdateSource>(this); }
-
-public:
-
     event_token WetStrokeStarting(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource, Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateEventArgs> & handler) const;
     using WetStrokeStarting_revoker = event_revoker<ICoreWetStrokeUpdateSource>;
     WetStrokeStarting_revoker WetStrokeStarting(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource, Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateEventArgs> & handler) const;
@@ -151,12 +135,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreWetStrokeUpdateSourceStatics
+struct WINRT_EBO impl_ICoreWetStrokeUpdateSourceStatics
 {
-    auto shim() const { return impl::shim<D, ICoreWetStrokeUpdateSourceStatics>(this); }
-
-public:
-
     Windows::UI::Input::Inking::Core::CoreWetStrokeUpdateSource Create(const Windows::UI::Input::Inking::InkPresenter & inkPresenter) const;
 };
 

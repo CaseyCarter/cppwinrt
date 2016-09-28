@@ -105,46 +105,30 @@ template <> struct __declspec(uuid("38372bd2-d3fe-5ad2-9d39-d166b68e78e7")) __de
 namespace Windows::UI::Text::Core {
 
 template <typename D>
-class WINRT_EBO impl_ICoreTextCompositionCompletedEventArgs
+struct WINRT_EBO impl_ICoreTextCompositionCompletedEventArgs
 {
-    auto shim() const { return impl::shim<D, ICoreTextCompositionCompletedEventArgs>(this); }
-
-public:
-
     bool IsCanceled() const;
     Windows::Foundation::Collections::IVectorView<Windows::UI::Text::Core::CoreTextCompositionSegment> CompositionSegments() const;
     Windows::Foundation::Deferral GetDeferral() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreTextCompositionSegment
+struct WINRT_EBO impl_ICoreTextCompositionSegment
 {
-    auto shim() const { return impl::shim<D, ICoreTextCompositionSegment>(this); }
-
-public:
-
     hstring PreconversionString() const;
     Windows::UI::Text::Core::CoreTextRange Range() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreTextCompositionStartedEventArgs
+struct WINRT_EBO impl_ICoreTextCompositionStartedEventArgs
 {
-    auto shim() const { return impl::shim<D, ICoreTextCompositionStartedEventArgs>(this); }
-
-public:
-
     bool IsCanceled() const;
     Windows::Foundation::Deferral GetDeferral() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreTextEditContext
+struct WINRT_EBO impl_ICoreTextEditContext
 {
-    auto shim() const { return impl::shim<D, ICoreTextEditContext>(this); }
-
-public:
-
     hstring Name() const;
     void Name(hstring_ref value) const;
     Windows::UI::Text::Core::CoreTextInputScope InputScope() const;
@@ -197,12 +181,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreTextEditContext2
+struct WINRT_EBO impl_ICoreTextEditContext2
 {
-    auto shim() const { return impl::shim<D, ICoreTextEditContext2>(this); }
-
-public:
-
     event_token NotifyFocusLeaveCompleted(const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::IInspectable> & handler) const;
     using NotifyFocusLeaveCompleted_revoker = event_revoker<ICoreTextEditContext2>;
     NotifyFocusLeaveCompleted_revoker NotifyFocusLeaveCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextEditContext, Windows::IInspectable> & handler) const;
@@ -210,12 +190,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreTextFormatUpdatingEventArgs
+struct WINRT_EBO impl_ICoreTextFormatUpdatingEventArgs
 {
-    auto shim() const { return impl::shim<D, ICoreTextFormatUpdatingEventArgs>(this); }
-
-public:
-
     Windows::UI::Text::Core::CoreTextRange Range() const;
     Windows::Foundation::IReference<winrt::Windows::UI::ViewManagement::UIElementType> TextColor() const;
     Windows::Foundation::IReference<winrt::Windows::UI::ViewManagement::UIElementType> BackgroundColor() const;
@@ -229,12 +205,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreTextLayoutBounds
+struct WINRT_EBO impl_ICoreTextLayoutBounds
 {
-    auto shim() const { return impl::shim<D, ICoreTextLayoutBounds>(this); }
-
-public:
-
     Windows::Foundation::Rect TextBounds() const;
     void TextBounds(const Windows::Foundation::Rect & value) const;
     Windows::Foundation::Rect ControlBounds() const;
@@ -242,12 +214,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreTextLayoutRequest
+struct WINRT_EBO impl_ICoreTextLayoutRequest
 {
-    auto shim() const { return impl::shim<D, ICoreTextLayoutRequest>(this); }
-
-public:
-
     Windows::UI::Text::Core::CoreTextRange Range() const;
     Windows::UI::Text::Core::CoreTextLayoutBounds LayoutBounds() const;
     bool IsCanceled() const;
@@ -255,22 +223,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreTextLayoutRequestedEventArgs
+struct WINRT_EBO impl_ICoreTextLayoutRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, ICoreTextLayoutRequestedEventArgs>(this); }
-
-public:
-
     Windows::UI::Text::Core::CoreTextLayoutRequest Request() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreTextSelectionRequest
+struct WINRT_EBO impl_ICoreTextSelectionRequest
 {
-    auto shim() const { return impl::shim<D, ICoreTextSelectionRequest>(this); }
-
-public:
-
     Windows::UI::Text::Core::CoreTextRange Selection() const;
     void Selection(const Windows::UI::Text::Core::CoreTextRange & value) const;
     bool IsCanceled() const;
@@ -278,22 +238,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreTextSelectionRequestedEventArgs
+struct WINRT_EBO impl_ICoreTextSelectionRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, ICoreTextSelectionRequestedEventArgs>(this); }
-
-public:
-
     Windows::UI::Text::Core::CoreTextSelectionRequest Request() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreTextSelectionUpdatingEventArgs
+struct WINRT_EBO impl_ICoreTextSelectionUpdatingEventArgs
 {
-    auto shim() const { return impl::shim<D, ICoreTextSelectionUpdatingEventArgs>(this); }
-
-public:
-
     Windows::UI::Text::Core::CoreTextRange Selection() const;
     Windows::UI::Text::Core::CoreTextSelectionUpdatingResult Result() const;
     void Result(Windows::UI::Text::Core::CoreTextSelectionUpdatingResult value) const;
@@ -302,12 +254,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreTextServicesManager
+struct WINRT_EBO impl_ICoreTextServicesManager
 {
-    auto shim() const { return impl::shim<D, ICoreTextServicesManager>(this); }
-
-public:
-
     Windows::Globalization::Language InputLanguage() const;
     event_token InputLanguageChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Text::Core::CoreTextServicesManager, Windows::IInspectable> & handler) const;
     using InputLanguageChanged_revoker = event_revoker<ICoreTextServicesManager>;
@@ -317,32 +265,20 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreTextServicesManagerStatics
+struct WINRT_EBO impl_ICoreTextServicesManagerStatics
 {
-    auto shim() const { return impl::shim<D, ICoreTextServicesManagerStatics>(this); }
-
-public:
-
     Windows::UI::Text::Core::CoreTextServicesManager GetForCurrentView() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreTextServicesStatics
+struct WINRT_EBO impl_ICoreTextServicesStatics
 {
-    auto shim() const { return impl::shim<D, ICoreTextServicesStatics>(this); }
-
-public:
-
     wchar_t HiddenCharacter() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreTextTextRequest
+struct WINRT_EBO impl_ICoreTextTextRequest
 {
-    auto shim() const { return impl::shim<D, ICoreTextTextRequest>(this); }
-
-public:
-
     Windows::UI::Text::Core::CoreTextRange Range() const;
     hstring Text() const;
     void Text(hstring_ref value) const;
@@ -351,22 +287,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreTextTextRequestedEventArgs
+struct WINRT_EBO impl_ICoreTextTextRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, ICoreTextTextRequestedEventArgs>(this); }
-
-public:
-
     Windows::UI::Text::Core::CoreTextTextRequest Request() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreTextTextUpdatingEventArgs
+struct WINRT_EBO impl_ICoreTextTextUpdatingEventArgs
 {
-    auto shim() const { return impl::shim<D, ICoreTextTextUpdatingEventArgs>(this); }
-
-public:
-
     Windows::UI::Text::Core::CoreTextRange Range() const;
     hstring Text() const;
     Windows::UI::Text::Core::CoreTextRange NewSelection() const;

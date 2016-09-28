@@ -314,37 +314,37 @@ template <> struct traits<Windows::Networking::Connectivity::WwanConnectionProfi
 
 namespace Windows::Networking::Connectivity {
 
-template <typename T> class impl_IAttributedNetworkUsage;
-template <typename T> class impl_ICellularApnContext;
-template <typename T> class impl_IConnectionCost;
-template <typename T> class impl_IConnectionCost2;
-template <typename T> class impl_IConnectionProfile;
-template <typename T> class impl_IConnectionProfile2;
-template <typename T> class impl_IConnectionProfile3;
-template <typename T> class impl_IConnectionProfileFilter;
-template <typename T> class impl_IConnectionProfileFilter2;
-template <typename T> class impl_IConnectionSession;
-template <typename T> class impl_IConnectivityInterval;
-template <typename T> class impl_IConnectivityManagerStatics;
-template <typename T> class impl_IDataPlanStatus;
-template <typename T> class impl_IDataPlanUsage;
-template <typename T> class impl_IDataUsage;
-template <typename T> class impl_IIPInformation;
-template <typename T> class impl_ILanIdentifier;
-template <typename T> class impl_ILanIdentifierData;
-template <typename T> class impl_INetworkAdapter;
-template <typename T> class impl_INetworkInformationStatics;
-template <typename T> class impl_INetworkInformationStatics2;
-template <typename T> class impl_INetworkItem;
-template <typename T> class impl_INetworkSecuritySettings;
-template <typename T> class impl_INetworkStateChangeEventDetails;
-template <typename T> class impl_INetworkStateChangeEventDetails2;
-template <typename T> class impl_INetworkUsage;
-template <typename T> class impl_IProxyConfiguration;
-template <typename T> class impl_IRoutePolicy;
-template <typename T> class impl_IRoutePolicyFactory;
-template <typename T> class impl_IWlanConnectionProfileDetails;
-template <typename T> class impl_IWwanConnectionProfileDetails;
+template <typename T> struct impl_IAttributedNetworkUsage;
+template <typename T> struct impl_ICellularApnContext;
+template <typename T> struct impl_IConnectionCost;
+template <typename T> struct impl_IConnectionCost2;
+template <typename T> struct impl_IConnectionProfile;
+template <typename T> struct impl_IConnectionProfile2;
+template <typename T> struct impl_IConnectionProfile3;
+template <typename T> struct impl_IConnectionProfileFilter;
+template <typename T> struct impl_IConnectionProfileFilter2;
+template <typename T> struct impl_IConnectionSession;
+template <typename T> struct impl_IConnectivityInterval;
+template <typename T> struct impl_IConnectivityManagerStatics;
+template <typename T> struct impl_IDataPlanStatus;
+template <typename T> struct impl_IDataPlanUsage;
+template <typename T> struct impl_IDataUsage;
+template <typename T> struct impl_IIPInformation;
+template <typename T> struct impl_ILanIdentifier;
+template <typename T> struct impl_ILanIdentifierData;
+template <typename T> struct impl_INetworkAdapter;
+template <typename T> struct impl_INetworkInformationStatics;
+template <typename T> struct impl_INetworkInformationStatics2;
+template <typename T> struct impl_INetworkItem;
+template <typename T> struct impl_INetworkSecuritySettings;
+template <typename T> struct impl_INetworkStateChangeEventDetails;
+template <typename T> struct impl_INetworkStateChangeEventDetails2;
+template <typename T> struct impl_INetworkUsage;
+template <typename T> struct impl_IProxyConfiguration;
+template <typename T> struct impl_IRoutePolicy;
+template <typename T> struct impl_IRoutePolicyFactory;
+template <typename T> struct impl_IWlanConnectionProfileDetails;
+template <typename T> struct impl_IWwanConnectionProfileDetails;
 template <typename T> struct impl_NetworkStatusChangedEventHandler;
 
 }
@@ -545,49 +545,42 @@ template <> struct traits<Windows::Networking::Connectivity::NetworkStatusChange
 template <> struct traits<Windows::Networking::Connectivity::AttributedNetworkUsage>
 {
     using abi = ABI::Windows::Networking::Connectivity::AttributedNetworkUsage;
-    using default_interface = Windows::Networking::Connectivity::IAttributedNetworkUsage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Connectivity.AttributedNetworkUsage"; }
 };
 
 template <> struct traits<Windows::Networking::Connectivity::CellularApnContext>
 {
     using abi = ABI::Windows::Networking::Connectivity::CellularApnContext;
-    using default_interface = Windows::Networking::Connectivity::ICellularApnContext;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Connectivity.CellularApnContext"; }
 };
 
 template <> struct traits<Windows::Networking::Connectivity::ConnectionCost>
 {
     using abi = ABI::Windows::Networking::Connectivity::ConnectionCost;
-    using default_interface = Windows::Networking::Connectivity::IConnectionCost;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Connectivity.ConnectionCost"; }
 };
 
 template <> struct traits<Windows::Networking::Connectivity::ConnectionProfile>
 {
     using abi = ABI::Windows::Networking::Connectivity::ConnectionProfile;
-    using default_interface = Windows::Networking::Connectivity::IConnectionProfile;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Connectivity.ConnectionProfile"; }
 };
 
 template <> struct traits<Windows::Networking::Connectivity::ConnectionProfileFilter>
 {
     using abi = ABI::Windows::Networking::Connectivity::ConnectionProfileFilter;
-    using default_interface = Windows::Networking::Connectivity::IConnectionProfileFilter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Connectivity.ConnectionProfileFilter"; }
 };
 
 template <> struct traits<Windows::Networking::Connectivity::ConnectionSession>
 {
     using abi = ABI::Windows::Networking::Connectivity::ConnectionSession;
-    using default_interface = Windows::Networking::Connectivity::IConnectionSession;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Connectivity.ConnectionSession"; }
 };
 
 template <> struct traits<Windows::Networking::Connectivity::ConnectivityInterval>
 {
     using abi = ABI::Windows::Networking::Connectivity::ConnectivityInterval;
-    using default_interface = Windows::Networking::Connectivity::IConnectivityInterval;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Connectivity.ConnectivityInterval"; }
 };
 
@@ -599,49 +592,42 @@ template <> struct traits<Windows::Networking::Connectivity::ConnectivityManager
 template <> struct traits<Windows::Networking::Connectivity::DataPlanStatus>
 {
     using abi = ABI::Windows::Networking::Connectivity::DataPlanStatus;
-    using default_interface = Windows::Networking::Connectivity::IDataPlanStatus;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Connectivity.DataPlanStatus"; }
 };
 
 template <> struct traits<Windows::Networking::Connectivity::DataPlanUsage>
 {
     using abi = ABI::Windows::Networking::Connectivity::DataPlanUsage;
-    using default_interface = Windows::Networking::Connectivity::IDataPlanUsage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Connectivity.DataPlanUsage"; }
 };
 
 template <> struct traits<Windows::Networking::Connectivity::DataUsage>
 {
     using abi = ABI::Windows::Networking::Connectivity::DataUsage;
-    using default_interface = Windows::Networking::Connectivity::IDataUsage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Connectivity.DataUsage"; }
 };
 
 template <> struct traits<Windows::Networking::Connectivity::IPInformation>
 {
     using abi = ABI::Windows::Networking::Connectivity::IPInformation;
-    using default_interface = Windows::Networking::Connectivity::IIPInformation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Connectivity.IPInformation"; }
 };
 
 template <> struct traits<Windows::Networking::Connectivity::LanIdentifier>
 {
     using abi = ABI::Windows::Networking::Connectivity::LanIdentifier;
-    using default_interface = Windows::Networking::Connectivity::ILanIdentifier;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Connectivity.LanIdentifier"; }
 };
 
 template <> struct traits<Windows::Networking::Connectivity::LanIdentifierData>
 {
     using abi = ABI::Windows::Networking::Connectivity::LanIdentifierData;
-    using default_interface = Windows::Networking::Connectivity::ILanIdentifierData;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Connectivity.LanIdentifierData"; }
 };
 
 template <> struct traits<Windows::Networking::Connectivity::NetworkAdapter>
 {
     using abi = ABI::Windows::Networking::Connectivity::NetworkAdapter;
-    using default_interface = Windows::Networking::Connectivity::INetworkAdapter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Connectivity.NetworkAdapter"; }
 };
 
@@ -653,56 +639,48 @@ template <> struct traits<Windows::Networking::Connectivity::NetworkInformation>
 template <> struct traits<Windows::Networking::Connectivity::NetworkItem>
 {
     using abi = ABI::Windows::Networking::Connectivity::NetworkItem;
-    using default_interface = Windows::Networking::Connectivity::INetworkItem;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Connectivity.NetworkItem"; }
 };
 
 template <> struct traits<Windows::Networking::Connectivity::NetworkSecuritySettings>
 {
     using abi = ABI::Windows::Networking::Connectivity::NetworkSecuritySettings;
-    using default_interface = Windows::Networking::Connectivity::INetworkSecuritySettings;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Connectivity.NetworkSecuritySettings"; }
 };
 
 template <> struct traits<Windows::Networking::Connectivity::NetworkStateChangeEventDetails>
 {
     using abi = ABI::Windows::Networking::Connectivity::NetworkStateChangeEventDetails;
-    using default_interface = Windows::Networking::Connectivity::INetworkStateChangeEventDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Connectivity.NetworkStateChangeEventDetails"; }
 };
 
 template <> struct traits<Windows::Networking::Connectivity::NetworkUsage>
 {
     using abi = ABI::Windows::Networking::Connectivity::NetworkUsage;
-    using default_interface = Windows::Networking::Connectivity::INetworkUsage;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Connectivity.NetworkUsage"; }
 };
 
 template <> struct traits<Windows::Networking::Connectivity::ProxyConfiguration>
 {
     using abi = ABI::Windows::Networking::Connectivity::ProxyConfiguration;
-    using default_interface = Windows::Networking::Connectivity::IProxyConfiguration;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Connectivity.ProxyConfiguration"; }
 };
 
 template <> struct traits<Windows::Networking::Connectivity::RoutePolicy>
 {
     using abi = ABI::Windows::Networking::Connectivity::RoutePolicy;
-    using default_interface = Windows::Networking::Connectivity::IRoutePolicy;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Connectivity.RoutePolicy"; }
 };
 
 template <> struct traits<Windows::Networking::Connectivity::WlanConnectionProfileDetails>
 {
     using abi = ABI::Windows::Networking::Connectivity::WlanConnectionProfileDetails;
-    using default_interface = Windows::Networking::Connectivity::IWlanConnectionProfileDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Connectivity.WlanConnectionProfileDetails"; }
 };
 
 template <> struct traits<Windows::Networking::Connectivity::WwanConnectionProfileDetails>
 {
     using abi = ABI::Windows::Networking::Connectivity::WwanConnectionProfileDetails;
-    using default_interface = Windows::Networking::Connectivity::IWwanConnectionProfileDetails;
     static constexpr const wchar_t * name() noexcept { return L"Windows.Networking.Connectivity.WwanConnectionProfileDetails"; }
 };
 

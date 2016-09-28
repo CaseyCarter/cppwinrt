@@ -317,14 +317,14 @@ namespace Windows::ApplicationModel::Contacts::DataProvider {
 template <typename D> Windows::ApplicationModel::Contacts::DataProvider::ContactDataProviderConnection impl_IContactDataProviderTriggerDetails<D>::Connection() const
 {
     Windows::ApplicationModel::Contacts::DataProvider::ContactDataProviderConnection value { nullptr };
-    check_hresult(shim()->get_Connection(put(value)));
+    check_hresult(static_cast<const IContactDataProviderTriggerDetails &>(static_cast<const D &>(*this))->get_Connection(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IContactDataProviderConnection<D>::SyncRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::DataProvider::ContactDataProviderConnection, Windows::ApplicationModel::Contacts::DataProvider::ContactListSyncManagerSyncRequestEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_SyncRequested(get(handler), &token));
+    check_hresult(static_cast<const IContactDataProviderConnection &>(static_cast<const D &>(*this))->add_SyncRequested(get(handler), &token));
     return token;
 }
 
@@ -335,13 +335,13 @@ template <typename D> event_revoker<IContactDataProviderConnection> impl_IContac
 
 template <typename D> void impl_IContactDataProviderConnection<D>::SyncRequested(event_token token) const
 {
-    check_hresult(shim()->remove_SyncRequested(token));
+    check_hresult(static_cast<const IContactDataProviderConnection &>(static_cast<const D &>(*this))->remove_SyncRequested(token));
 }
 
 template <typename D> event_token impl_IContactDataProviderConnection<D>::ServerSearchReadBatchRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::DataProvider::ContactDataProviderConnection, Windows::ApplicationModel::Contacts::DataProvider::ContactListServerSearchReadBatchRequestEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_ServerSearchReadBatchRequested(get(handler), &token));
+    check_hresult(static_cast<const IContactDataProviderConnection &>(static_cast<const D &>(*this))->add_ServerSearchReadBatchRequested(get(handler), &token));
     return token;
 }
 
@@ -352,109 +352,109 @@ template <typename D> event_revoker<IContactDataProviderConnection> impl_IContac
 
 template <typename D> void impl_IContactDataProviderConnection<D>::ServerSearchReadBatchRequested(event_token token) const
 {
-    check_hresult(shim()->remove_ServerSearchReadBatchRequested(token));
+    check_hresult(static_cast<const IContactDataProviderConnection &>(static_cast<const D &>(*this))->remove_ServerSearchReadBatchRequested(token));
 }
 
 template <typename D> void impl_IContactDataProviderConnection<D>::Start() const
 {
-    check_hresult(shim()->abi_Start());
+    check_hresult(static_cast<const IContactDataProviderConnection &>(static_cast<const D &>(*this))->abi_Start());
 }
 
 template <typename D> hstring impl_IContactListSyncManagerSyncRequest<D>::ContactListId() const
 {
     hstring value;
-    check_hresult(shim()->get_ContactListId(put(value)));
+    check_hresult(static_cast<const IContactListSyncManagerSyncRequest &>(static_cast<const D &>(*this))->get_ContactListId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IContactListSyncManagerSyncRequest<D>::ReportCompletedAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(shim()->abi_ReportCompletedAsync(put(result)));
+    check_hresult(static_cast<const IContactListSyncManagerSyncRequest &>(static_cast<const D &>(*this))->abi_ReportCompletedAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IContactListSyncManagerSyncRequest<D>::ReportFailedAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(shim()->abi_ReportFailedAsync(put(result)));
+    check_hresult(static_cast<const IContactListSyncManagerSyncRequest &>(static_cast<const D &>(*this))->abi_ReportFailedAsync(put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IContactListServerSearchReadBatchRequest<D>::SessionId() const
 {
     hstring value;
-    check_hresult(shim()->get_SessionId(put(value)));
+    check_hresult(static_cast<const IContactListServerSearchReadBatchRequest &>(static_cast<const D &>(*this))->get_SessionId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IContactListServerSearchReadBatchRequest<D>::ContactListId() const
 {
     hstring value;
-    check_hresult(shim()->get_ContactListId(put(value)));
+    check_hresult(static_cast<const IContactListServerSearchReadBatchRequest &>(static_cast<const D &>(*this))->get_ContactListId(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactQueryOptions impl_IContactListServerSearchReadBatchRequest<D>::Options() const
 {
     Windows::ApplicationModel::Contacts::ContactQueryOptions value { nullptr };
-    check_hresult(shim()->get_Options(put(value)));
+    check_hresult(static_cast<const IContactListServerSearchReadBatchRequest &>(static_cast<const D &>(*this))->get_Options(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IContactListServerSearchReadBatchRequest<D>::SuggestedBatchSize() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_SuggestedBatchSize(&value));
+    check_hresult(static_cast<const IContactListServerSearchReadBatchRequest &>(static_cast<const D &>(*this))->get_SuggestedBatchSize(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IContactListServerSearchReadBatchRequest<D>::SaveContactAsync(const Windows::ApplicationModel::Contacts::Contact & contact) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(shim()->abi_SaveContactAsync(get(contact), put(result)));
+    check_hresult(static_cast<const IContactListServerSearchReadBatchRequest &>(static_cast<const D &>(*this))->abi_SaveContactAsync(get(contact), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IContactListServerSearchReadBatchRequest<D>::ReportCompletedAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(shim()->abi_ReportCompletedAsync(put(result)));
+    check_hresult(static_cast<const IContactListServerSearchReadBatchRequest &>(static_cast<const D &>(*this))->abi_ReportCompletedAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IContactListServerSearchReadBatchRequest<D>::ReportFailedAsync(Windows::ApplicationModel::Contacts::ContactBatchStatus batchStatus) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(shim()->abi_ReportFailedAsync(batchStatus, put(result)));
+    check_hresult(static_cast<const IContactListServerSearchReadBatchRequest &>(static_cast<const D &>(*this))->abi_ReportFailedAsync(batchStatus, put(result)));
     return result;
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::DataProvider::ContactListSyncManagerSyncRequest impl_IContactListSyncManagerSyncRequestEventArgs<D>::Request() const
 {
     Windows::ApplicationModel::Contacts::DataProvider::ContactListSyncManagerSyncRequest value { nullptr };
-    check_hresult(shim()->get_Request(put(value)));
+    check_hresult(static_cast<const IContactListSyncManagerSyncRequestEventArgs &>(static_cast<const D &>(*this))->get_Request(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IContactListSyncManagerSyncRequestEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(shim()->abi_GetDeferral(put(value)));
+    check_hresult(static_cast<const IContactListSyncManagerSyncRequestEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::DataProvider::ContactListServerSearchReadBatchRequest impl_IContactListServerSearchReadBatchRequestEventArgs<D>::Request() const
 {
     Windows::ApplicationModel::Contacts::DataProvider::ContactListServerSearchReadBatchRequest value { nullptr };
-    check_hresult(shim()->get_Request(put(value)));
+    check_hresult(static_cast<const IContactListServerSearchReadBatchRequestEventArgs &>(static_cast<const D &>(*this))->get_Request(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IContactListServerSearchReadBatchRequestEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral value { nullptr };
-    check_hresult(shim()->abi_GetDeferral(put(value)));
+    check_hresult(static_cast<const IContactListServerSearchReadBatchRequestEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
     return value;
 }
 

@@ -111,12 +111,8 @@ template <> struct __declspec(uuid("67b64d17-4245-5d7c-bfb4-6b68dd525877")) __de
 namespace Windows::UI::ApplicationSettings {
 
 template <typename D>
-class WINRT_EBO impl_IAccountsSettingsPane
+struct WINRT_EBO impl_IAccountsSettingsPane
 {
-    auto shim() const { return impl::shim<D, IAccountsSettingsPane>(this); }
-
-public:
-
     event_token AccountCommandsRequested(const Windows::Foundation::TypedEventHandler<Windows::UI::ApplicationSettings::AccountsSettingsPane, Windows::UI::ApplicationSettings::AccountsSettingsPaneCommandsRequestedEventArgs> & handler) const;
     using AccountCommandsRequested_revoker = event_revoker<IAccountsSettingsPane>;
     AccountCommandsRequested_revoker AccountCommandsRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::ApplicationSettings::AccountsSettingsPane, Windows::UI::ApplicationSettings::AccountsSettingsPaneCommandsRequestedEventArgs> & handler) const;
@@ -124,12 +120,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAccountsSettingsPaneCommandsRequestedEventArgs
+struct WINRT_EBO impl_IAccountsSettingsPaneCommandsRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, IAccountsSettingsPaneCommandsRequestedEventArgs>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<Windows::UI::ApplicationSettings::WebAccountProviderCommand> WebAccountProviderCommands() const;
     Windows::Foundation::Collections::IVector<Windows::UI::ApplicationSettings::WebAccountCommand> WebAccountCommands() const;
     Windows::Foundation::Collections::IVector<Windows::UI::ApplicationSettings::CredentialCommand> CredentialCommands() const;
@@ -140,129 +132,81 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAccountsSettingsPaneEventDeferral
+struct WINRT_EBO impl_IAccountsSettingsPaneEventDeferral
 {
-    auto shim() const { return impl::shim<D, IAccountsSettingsPaneEventDeferral>(this); }
-
-public:
-
     void Complete() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAccountsSettingsPaneStatics
+struct WINRT_EBO impl_IAccountsSettingsPaneStatics
 {
-    auto shim() const { return impl::shim<D, IAccountsSettingsPaneStatics>(this); }
-
-public:
-
     Windows::UI::ApplicationSettings::AccountsSettingsPane GetForCurrentView() const;
     void Show() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAccountsSettingsPaneStatics2
+struct WINRT_EBO impl_IAccountsSettingsPaneStatics2
 {
-    auto shim() const { return impl::shim<D, IAccountsSettingsPaneStatics2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction ShowManageAccountsAsync() const;
     Windows::Foundation::IAsyncAction ShowAddAccountAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICredentialCommand
+struct WINRT_EBO impl_ICredentialCommand
 {
-    auto shim() const { return impl::shim<D, ICredentialCommand>(this); }
-
-public:
-
     Windows::Security::Credentials::PasswordCredential PasswordCredential() const;
     Windows::UI::ApplicationSettings::CredentialCommandCredentialDeletedHandler CredentialDeleted() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICredentialCommandFactory
+struct WINRT_EBO impl_ICredentialCommandFactory
 {
-    auto shim() const { return impl::shim<D, ICredentialCommandFactory>(this); }
-
-public:
-
     Windows::UI::ApplicationSettings::CredentialCommand CreateCredentialCommand(const Windows::Security::Credentials::PasswordCredential & passwordCredential) const;
     Windows::UI::ApplicationSettings::CredentialCommand CreateCredentialCommandWithHandler(const Windows::Security::Credentials::PasswordCredential & passwordCredential, const Windows::UI::ApplicationSettings::CredentialCommandCredentialDeletedHandler & deleted) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISettingsCommandFactory
+struct WINRT_EBO impl_ISettingsCommandFactory
 {
-    auto shim() const { return impl::shim<D, ISettingsCommandFactory>(this); }
-
-public:
-
     Windows::UI::ApplicationSettings::SettingsCommand CreateSettingsCommand(const Windows::IInspectable & settingsCommandId, hstring_ref label, const Windows::UI::Popups::UICommandInvokedHandler & handler) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISettingsCommandStatics
+struct WINRT_EBO impl_ISettingsCommandStatics
 {
-    auto shim() const { return impl::shim<D, ISettingsCommandStatics>(this); }
-
-public:
-
     Windows::UI::ApplicationSettings::SettingsCommand AccountsCommand() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebAccountCommand
+struct WINRT_EBO impl_IWebAccountCommand
 {
-    auto shim() const { return impl::shim<D, IWebAccountCommand>(this); }
-
-public:
-
     Windows::Security::Credentials::WebAccount WebAccount() const;
     Windows::UI::ApplicationSettings::WebAccountCommandInvokedHandler Invoked() const;
     Windows::UI::ApplicationSettings::SupportedWebAccountActions Actions() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebAccountCommandFactory
+struct WINRT_EBO impl_IWebAccountCommandFactory
 {
-    auto shim() const { return impl::shim<D, IWebAccountCommandFactory>(this); }
-
-public:
-
     Windows::UI::ApplicationSettings::WebAccountCommand CreateWebAccountCommand(const Windows::Security::Credentials::WebAccount & webAccount, const Windows::UI::ApplicationSettings::WebAccountCommandInvokedHandler & invoked, Windows::UI::ApplicationSettings::SupportedWebAccountActions actions) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebAccountInvokedArgs
+struct WINRT_EBO impl_IWebAccountInvokedArgs
 {
-    auto shim() const { return impl::shim<D, IWebAccountInvokedArgs>(this); }
-
-public:
-
     Windows::UI::ApplicationSettings::WebAccountAction Action() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebAccountProviderCommand
+struct WINRT_EBO impl_IWebAccountProviderCommand
 {
-    auto shim() const { return impl::shim<D, IWebAccountProviderCommand>(this); }
-
-public:
-
     Windows::Security::Credentials::WebAccountProvider WebAccountProvider() const;
     Windows::UI::ApplicationSettings::WebAccountProviderCommandInvokedHandler Invoked() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebAccountProviderCommandFactory
+struct WINRT_EBO impl_IWebAccountProviderCommandFactory
 {
-    auto shim() const { return impl::shim<D, IWebAccountProviderCommandFactory>(this); }
-
-public:
-
     Windows::UI::ApplicationSettings::WebAccountProviderCommand CreateWebAccountProviderCommand(const Windows::Security::Credentials::WebAccountProvider & webAccountProvider, const Windows::UI::ApplicationSettings::WebAccountProviderCommandInvokedHandler & invoked) const;
 };
 

@@ -331,82 +331,82 @@ namespace Windows::Networking::PushNotifications {
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> impl_IPushNotificationChannelManagerStatics<D>::CreatePushNotificationChannelForApplicationAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> operation;
-    check_hresult(shim()->abi_CreatePushNotificationChannelForApplicationAsync(put(operation)));
+    check_hresult(static_cast<const IPushNotificationChannelManagerStatics &>(static_cast<const D &>(*this))->abi_CreatePushNotificationChannelForApplicationAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> impl_IPushNotificationChannelManagerStatics<D>::CreatePushNotificationChannelForApplicationAsync(hstring_ref applicationId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> operation;
-    check_hresult(shim()->abi_CreatePushNotificationChannelForApplicationAsyncWithId(get(applicationId), put(operation)));
+    check_hresult(static_cast<const IPushNotificationChannelManagerStatics &>(static_cast<const D &>(*this))->abi_CreatePushNotificationChannelForApplicationAsyncWithId(get(applicationId), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> impl_IPushNotificationChannelManagerStatics<D>::CreatePushNotificationChannelForSecondaryTileAsync(hstring_ref tileId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> operation;
-    check_hresult(shim()->abi_CreatePushNotificationChannelForSecondaryTileAsync(get(tileId), put(operation)));
+    check_hresult(static_cast<const IPushNotificationChannelManagerStatics &>(static_cast<const D &>(*this))->abi_CreatePushNotificationChannelForSecondaryTileAsync(get(tileId), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Networking::PushNotifications::PushNotificationChannelManagerForUser impl_IPushNotificationChannelManagerStatics2<D>::GetForUser(const Windows::System::User & user) const
 {
     Windows::Networking::PushNotifications::PushNotificationChannelManagerForUser result { nullptr };
-    check_hresult(shim()->abi_GetForUser(get(user), put(result)));
+    check_hresult(static_cast<const IPushNotificationChannelManagerStatics2 &>(static_cast<const D &>(*this))->abi_GetForUser(get(user), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> impl_IPushNotificationChannelManagerForUser<D>::CreatePushNotificationChannelForApplicationAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> operation;
-    check_hresult(shim()->abi_CreatePushNotificationChannelForApplicationAsync(put(operation)));
+    check_hresult(static_cast<const IPushNotificationChannelManagerForUser &>(static_cast<const D &>(*this))->abi_CreatePushNotificationChannelForApplicationAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> impl_IPushNotificationChannelManagerForUser<D>::CreatePushNotificationChannelForApplicationAsync(hstring_ref applicationId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> operation;
-    check_hresult(shim()->abi_CreatePushNotificationChannelForApplicationAsyncWithId(get(applicationId), put(operation)));
+    check_hresult(static_cast<const IPushNotificationChannelManagerForUser &>(static_cast<const D &>(*this))->abi_CreatePushNotificationChannelForApplicationAsyncWithId(get(applicationId), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> impl_IPushNotificationChannelManagerForUser<D>::CreatePushNotificationChannelForSecondaryTileAsync(hstring_ref tileId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> operation;
-    check_hresult(shim()->abi_CreatePushNotificationChannelForSecondaryTileAsync(get(tileId), put(operation)));
+    check_hresult(static_cast<const IPushNotificationChannelManagerForUser &>(static_cast<const D &>(*this))->abi_CreatePushNotificationChannelForSecondaryTileAsync(get(tileId), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::System::User impl_IPushNotificationChannelManagerForUser<D>::User() const
 {
     Windows::System::User value { nullptr };
-    check_hresult(shim()->get_User(put(value)));
+    check_hresult(static_cast<const IPushNotificationChannelManagerForUser &>(static_cast<const D &>(*this))->get_User(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IPushNotificationChannel<D>::Uri() const
 {
     hstring value;
-    check_hresult(shim()->get_Uri(put(value)));
+    check_hresult(static_cast<const IPushNotificationChannel &>(static_cast<const D &>(*this))->get_Uri(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IPushNotificationChannel<D>::ExpirationTime() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->get_ExpirationTime(put(value)));
+    check_hresult(static_cast<const IPushNotificationChannel &>(static_cast<const D &>(*this))->get_ExpirationTime(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPushNotificationChannel<D>::Close() const
 {
-    check_hresult(shim()->abi_Close());
+    check_hresult(static_cast<const IPushNotificationChannel &>(static_cast<const D &>(*this))->abi_Close());
 }
 
 template <typename D> event_token impl_IPushNotificationChannel<D>::PushNotificationReceived(const Windows::Foundation::TypedEventHandler<Windows::Networking::PushNotifications::PushNotificationChannel, Windows::Networking::PushNotifications::PushNotificationReceivedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_PushNotificationReceived(get(handler), &token));
+    check_hresult(static_cast<const IPushNotificationChannel &>(static_cast<const D &>(*this))->add_PushNotificationReceived(get(handler), &token));
     return token;
 }
 
@@ -417,60 +417,60 @@ template <typename D> event_revoker<IPushNotificationChannel> impl_IPushNotifica
 
 template <typename D> void impl_IPushNotificationChannel<D>::PushNotificationReceived(event_token token) const
 {
-    check_hresult(shim()->remove_PushNotificationReceived(token));
+    check_hresult(static_cast<const IPushNotificationChannel &>(static_cast<const D &>(*this))->remove_PushNotificationReceived(token));
 }
 
 template <typename D> void impl_IPushNotificationReceivedEventArgs<D>::Cancel(bool value) const
 {
-    check_hresult(shim()->put_Cancel(value));
+    check_hresult(static_cast<const IPushNotificationReceivedEventArgs &>(static_cast<const D &>(*this))->put_Cancel(value));
 }
 
 template <typename D> bool impl_IPushNotificationReceivedEventArgs<D>::Cancel() const
 {
     bool value {};
-    check_hresult(shim()->get_Cancel(&value));
+    check_hresult(static_cast<const IPushNotificationReceivedEventArgs &>(static_cast<const D &>(*this))->get_Cancel(&value));
     return value;
 }
 
 template <typename D> Windows::Networking::PushNotifications::PushNotificationType impl_IPushNotificationReceivedEventArgs<D>::NotificationType() const
 {
     Windows::Networking::PushNotifications::PushNotificationType value {};
-    check_hresult(shim()->get_NotificationType(&value));
+    check_hresult(static_cast<const IPushNotificationReceivedEventArgs &>(static_cast<const D &>(*this))->get_NotificationType(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Notifications::ToastNotification impl_IPushNotificationReceivedEventArgs<D>::ToastNotification() const
 {
     Windows::UI::Notifications::ToastNotification value { nullptr };
-    check_hresult(shim()->get_ToastNotification(put(value)));
+    check_hresult(static_cast<const IPushNotificationReceivedEventArgs &>(static_cast<const D &>(*this))->get_ToastNotification(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Notifications::TileNotification impl_IPushNotificationReceivedEventArgs<D>::TileNotification() const
 {
     Windows::UI::Notifications::TileNotification value { nullptr };
-    check_hresult(shim()->get_TileNotification(put(value)));
+    check_hresult(static_cast<const IPushNotificationReceivedEventArgs &>(static_cast<const D &>(*this))->get_TileNotification(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Notifications::BadgeNotification impl_IPushNotificationReceivedEventArgs<D>::BadgeNotification() const
 {
     Windows::UI::Notifications::BadgeNotification value { nullptr };
-    check_hresult(shim()->get_BadgeNotification(put(value)));
+    check_hresult(static_cast<const IPushNotificationReceivedEventArgs &>(static_cast<const D &>(*this))->get_BadgeNotification(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::PushNotifications::RawNotification impl_IPushNotificationReceivedEventArgs<D>::RawNotification() const
 {
     Windows::Networking::PushNotifications::RawNotification value { nullptr };
-    check_hresult(shim()->get_RawNotification(put(value)));
+    check_hresult(static_cast<const IPushNotificationReceivedEventArgs &>(static_cast<const D &>(*this))->get_RawNotification(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IRawNotification<D>::Content() const
 {
     hstring value;
-    check_hresult(shim()->get_Content(put(value)));
+    check_hresult(static_cast<const IRawNotification &>(static_cast<const D &>(*this))->get_Content(put(value)));
     return value;
 }
 

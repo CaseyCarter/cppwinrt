@@ -691,76 +691,76 @@ template <> struct traits<Windows::UI::Composition::VisualUnorderedCollection> {
 
 namespace Windows::UI::Composition {
 
-template <typename T> class impl_IAmbientLight;
-template <typename T> class impl_IColorKeyFrameAnimation;
-template <typename T> class impl_ICompositionAnimation;
-template <typename T> class impl_ICompositionAnimation2;
-template <typename T> class impl_ICompositionAnimationBase;
-template <typename T> class impl_ICompositionAnimationFactory;
-template <typename T> class impl_ICompositionAnimationGroup;
-template <typename T> class impl_ICompositionBackdropBrush;
-template <typename T> class impl_ICompositionBatchCompletedEventArgs;
-template <typename T> class impl_ICompositionBrush;
-template <typename T> class impl_ICompositionBrushFactory;
-template <typename T> class impl_ICompositionClip;
-template <typename T> class impl_ICompositionClip2;
-template <typename T> class impl_ICompositionClipFactory;
-template <typename T> class impl_ICompositionColorBrush;
-template <typename T> class impl_ICompositionCommitBatch;
-template <typename T> class impl_ICompositionDrawingSurface;
-template <typename T> class impl_ICompositionEasingFunction;
-template <typename T> class impl_ICompositionEasingFunctionFactory;
-template <typename T> class impl_ICompositionEffectBrush;
-template <typename T> class impl_ICompositionEffectFactory;
-template <typename T> class impl_ICompositionEffectSourceParameter;
-template <typename T> class impl_ICompositionEffectSourceParameterFactory;
-template <typename T> class impl_ICompositionGraphicsDevice;
-template <typename T> class impl_ICompositionLight;
-template <typename T> class impl_ICompositionLightFactory;
-template <typename T> class impl_ICompositionMaskBrush;
-template <typename T> class impl_ICompositionNineGridBrush;
-template <typename T> class impl_ICompositionObject;
-template <typename T> class impl_ICompositionObject2;
-template <typename T> class impl_ICompositionObjectFactory;
-template <typename T> class impl_ICompositionPropertySet;
-template <typename T> class impl_ICompositionPropertySet2;
-template <typename T> class impl_ICompositionScopedBatch;
-template <typename T> class impl_ICompositionShadow;
-template <typename T> class impl_ICompositionShadowFactory;
-template <typename T> class impl_ICompositionSurface;
-template <typename T> class impl_ICompositionSurfaceBrush;
-template <typename T> class impl_ICompositionSurfaceBrush2;
-template <typename T> class impl_ICompositionTarget;
-template <typename T> class impl_ICompositor;
-template <typename T> class impl_ICompositor2;
-template <typename T> class impl_IContainerVisual;
-template <typename T> class impl_IContainerVisualFactory;
-template <typename T> class impl_ICubicBezierEasingFunction;
-template <typename T> class impl_IDistantLight;
-template <typename T> class impl_IDropShadow;
-template <typename T> class impl_IExpressionAnimation;
-template <typename T> class impl_IImplicitAnimationCollection;
-template <typename T> class impl_IInsetClip;
-template <typename T> class impl_IKeyFrameAnimation;
-template <typename T> class impl_IKeyFrameAnimation2;
-template <typename T> class impl_IKeyFrameAnimationFactory;
-template <typename T> class impl_ILayerVisual;
-template <typename T> class impl_ILinearEasingFunction;
-template <typename T> class impl_IPointLight;
-template <typename T> class impl_IQuaternionKeyFrameAnimation;
-template <typename T> class impl_IRenderingDeviceReplacedEventArgs;
-template <typename T> class impl_IScalarKeyFrameAnimation;
-template <typename T> class impl_ISpotLight;
-template <typename T> class impl_ISpriteVisual;
-template <typename T> class impl_ISpriteVisual2;
-template <typename T> class impl_IStepEasingFunction;
-template <typename T> class impl_IVector2KeyFrameAnimation;
-template <typename T> class impl_IVector3KeyFrameAnimation;
-template <typename T> class impl_IVector4KeyFrameAnimation;
-template <typename T> class impl_IVisual;
-template <typename T> class impl_IVisualCollection;
-template <typename T> class impl_IVisualFactory;
-template <typename T> class impl_IVisualUnorderedCollection;
+template <typename T> struct impl_IAmbientLight;
+template <typename T> struct impl_IColorKeyFrameAnimation;
+template <typename T> struct impl_ICompositionAnimation;
+template <typename T> struct impl_ICompositionAnimation2;
+template <typename T> struct impl_ICompositionAnimationBase;
+template <typename T> struct impl_ICompositionAnimationFactory;
+template <typename T> struct impl_ICompositionAnimationGroup;
+template <typename T> struct impl_ICompositionBackdropBrush;
+template <typename T> struct impl_ICompositionBatchCompletedEventArgs;
+template <typename T> struct impl_ICompositionBrush;
+template <typename T> struct impl_ICompositionBrushFactory;
+template <typename T> struct impl_ICompositionClip;
+template <typename T> struct impl_ICompositionClip2;
+template <typename T> struct impl_ICompositionClipFactory;
+template <typename T> struct impl_ICompositionColorBrush;
+template <typename T> struct impl_ICompositionCommitBatch;
+template <typename T> struct impl_ICompositionDrawingSurface;
+template <typename T> struct impl_ICompositionEasingFunction;
+template <typename T> struct impl_ICompositionEasingFunctionFactory;
+template <typename T> struct impl_ICompositionEffectBrush;
+template <typename T> struct impl_ICompositionEffectFactory;
+template <typename T> struct impl_ICompositionEffectSourceParameter;
+template <typename T> struct impl_ICompositionEffectSourceParameterFactory;
+template <typename T> struct impl_ICompositionGraphicsDevice;
+template <typename T> struct impl_ICompositionLight;
+template <typename T> struct impl_ICompositionLightFactory;
+template <typename T> struct impl_ICompositionMaskBrush;
+template <typename T> struct impl_ICompositionNineGridBrush;
+template <typename T> struct impl_ICompositionObject;
+template <typename T> struct impl_ICompositionObject2;
+template <typename T> struct impl_ICompositionObjectFactory;
+template <typename T> struct impl_ICompositionPropertySet;
+template <typename T> struct impl_ICompositionPropertySet2;
+template <typename T> struct impl_ICompositionScopedBatch;
+template <typename T> struct impl_ICompositionShadow;
+template <typename T> struct impl_ICompositionShadowFactory;
+template <typename T> struct impl_ICompositionSurface;
+template <typename T> struct impl_ICompositionSurfaceBrush;
+template <typename T> struct impl_ICompositionSurfaceBrush2;
+template <typename T> struct impl_ICompositionTarget;
+template <typename T> struct impl_ICompositor;
+template <typename T> struct impl_ICompositor2;
+template <typename T> struct impl_IContainerVisual;
+template <typename T> struct impl_IContainerVisualFactory;
+template <typename T> struct impl_ICubicBezierEasingFunction;
+template <typename T> struct impl_IDistantLight;
+template <typename T> struct impl_IDropShadow;
+template <typename T> struct impl_IExpressionAnimation;
+template <typename T> struct impl_IImplicitAnimationCollection;
+template <typename T> struct impl_IInsetClip;
+template <typename T> struct impl_IKeyFrameAnimation;
+template <typename T> struct impl_IKeyFrameAnimation2;
+template <typename T> struct impl_IKeyFrameAnimationFactory;
+template <typename T> struct impl_ILayerVisual;
+template <typename T> struct impl_ILinearEasingFunction;
+template <typename T> struct impl_IPointLight;
+template <typename T> struct impl_IQuaternionKeyFrameAnimation;
+template <typename T> struct impl_IRenderingDeviceReplacedEventArgs;
+template <typename T> struct impl_IScalarKeyFrameAnimation;
+template <typename T> struct impl_ISpotLight;
+template <typename T> struct impl_ISpriteVisual;
+template <typename T> struct impl_ISpriteVisual2;
+template <typename T> struct impl_IStepEasingFunction;
+template <typename T> struct impl_IVector2KeyFrameAnimation;
+template <typename T> struct impl_IVector3KeyFrameAnimation;
+template <typename T> struct impl_IVector4KeyFrameAnimation;
+template <typename T> struct impl_IVisual;
+template <typename T> struct impl_IVisualCollection;
+template <typename T> struct impl_IVisualFactory;
+template <typename T> struct impl_IVisualUnorderedCollection;
 
 }
 
@@ -1189,343 +1189,294 @@ template <> struct traits<Windows::UI::Composition::IVisualUnorderedCollection>
 template <> struct traits<Windows::UI::Composition::AmbientLight>
 {
     using abi = ABI::Windows::UI::Composition::AmbientLight;
-    using default_interface = Windows::UI::Composition::IAmbientLight;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.AmbientLight"; }
 };
 
 template <> struct traits<Windows::UI::Composition::ColorKeyFrameAnimation>
 {
     using abi = ABI::Windows::UI::Composition::ColorKeyFrameAnimation;
-    using default_interface = Windows::UI::Composition::IColorKeyFrameAnimation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.ColorKeyFrameAnimation"; }
 };
 
 template <> struct traits<Windows::UI::Composition::CompositionAnimation>
 {
     using abi = ABI::Windows::UI::Composition::CompositionAnimation;
-    using default_interface = Windows::UI::Composition::ICompositionAnimation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.CompositionAnimation"; }
 };
 
 template <> struct traits<Windows::UI::Composition::CompositionAnimationGroup>
 {
     using abi = ABI::Windows::UI::Composition::CompositionAnimationGroup;
-    using default_interface = Windows::UI::Composition::ICompositionAnimationGroup;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.CompositionAnimationGroup"; }
 };
 
 template <> struct traits<Windows::UI::Composition::CompositionBackdropBrush>
 {
     using abi = ABI::Windows::UI::Composition::CompositionBackdropBrush;
-    using default_interface = Windows::UI::Composition::ICompositionBackdropBrush;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.CompositionBackdropBrush"; }
 };
 
 template <> struct traits<Windows::UI::Composition::CompositionBatchCompletedEventArgs>
 {
     using abi = ABI::Windows::UI::Composition::CompositionBatchCompletedEventArgs;
-    using default_interface = Windows::UI::Composition::ICompositionBatchCompletedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.CompositionBatchCompletedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Composition::CompositionBrush>
 {
     using abi = ABI::Windows::UI::Composition::CompositionBrush;
-    using default_interface = Windows::UI::Composition::ICompositionBrush;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.CompositionBrush"; }
 };
 
 template <> struct traits<Windows::UI::Composition::CompositionClip>
 {
     using abi = ABI::Windows::UI::Composition::CompositionClip;
-    using default_interface = Windows::UI::Composition::ICompositionClip;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.CompositionClip"; }
 };
 
 template <> struct traits<Windows::UI::Composition::CompositionColorBrush>
 {
     using abi = ABI::Windows::UI::Composition::CompositionColorBrush;
-    using default_interface = Windows::UI::Composition::ICompositionColorBrush;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.CompositionColorBrush"; }
 };
 
 template <> struct traits<Windows::UI::Composition::CompositionCommitBatch>
 {
     using abi = ABI::Windows::UI::Composition::CompositionCommitBatch;
-    using default_interface = Windows::UI::Composition::ICompositionCommitBatch;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.CompositionCommitBatch"; }
 };
 
 template <> struct traits<Windows::UI::Composition::CompositionDrawingSurface>
 {
     using abi = ABI::Windows::UI::Composition::CompositionDrawingSurface;
-    using default_interface = Windows::UI::Composition::ICompositionDrawingSurface;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.CompositionDrawingSurface"; }
 };
 
 template <> struct traits<Windows::UI::Composition::CompositionEasingFunction>
 {
     using abi = ABI::Windows::UI::Composition::CompositionEasingFunction;
-    using default_interface = Windows::UI::Composition::ICompositionEasingFunction;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.CompositionEasingFunction"; }
 };
 
 template <> struct traits<Windows::UI::Composition::CompositionEffectBrush>
 {
     using abi = ABI::Windows::UI::Composition::CompositionEffectBrush;
-    using default_interface = Windows::UI::Composition::ICompositionEffectBrush;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.CompositionEffectBrush"; }
 };
 
 template <> struct traits<Windows::UI::Composition::CompositionEffectFactory>
 {
     using abi = ABI::Windows::UI::Composition::CompositionEffectFactory;
-    using default_interface = Windows::UI::Composition::ICompositionEffectFactory;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.CompositionEffectFactory"; }
 };
 
 template <> struct traits<Windows::UI::Composition::CompositionEffectSourceParameter>
 {
     using abi = ABI::Windows::UI::Composition::CompositionEffectSourceParameter;
-    using default_interface = Windows::UI::Composition::ICompositionEffectSourceParameter;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.CompositionEffectSourceParameter"; }
 };
 
 template <> struct traits<Windows::UI::Composition::CompositionGraphicsDevice>
 {
     using abi = ABI::Windows::UI::Composition::CompositionGraphicsDevice;
-    using default_interface = Windows::UI::Composition::ICompositionGraphicsDevice;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.CompositionGraphicsDevice"; }
 };
 
 template <> struct traits<Windows::UI::Composition::CompositionLight>
 {
     using abi = ABI::Windows::UI::Composition::CompositionLight;
-    using default_interface = Windows::UI::Composition::ICompositionLight;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.CompositionLight"; }
 };
 
 template <> struct traits<Windows::UI::Composition::CompositionMaskBrush>
 {
     using abi = ABI::Windows::UI::Composition::CompositionMaskBrush;
-    using default_interface = Windows::UI::Composition::ICompositionMaskBrush;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.CompositionMaskBrush"; }
 };
 
 template <> struct traits<Windows::UI::Composition::CompositionNineGridBrush>
 {
     using abi = ABI::Windows::UI::Composition::CompositionNineGridBrush;
-    using default_interface = Windows::UI::Composition::ICompositionNineGridBrush;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.CompositionNineGridBrush"; }
 };
 
 template <> struct traits<Windows::UI::Composition::CompositionObject>
 {
     using abi = ABI::Windows::UI::Composition::CompositionObject;
-    using default_interface = Windows::UI::Composition::ICompositionObject;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.CompositionObject"; }
 };
 
 template <> struct traits<Windows::UI::Composition::CompositionPropertySet>
 {
     using abi = ABI::Windows::UI::Composition::CompositionPropertySet;
-    using default_interface = Windows::UI::Composition::ICompositionPropertySet;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.CompositionPropertySet"; }
 };
 
 template <> struct traits<Windows::UI::Composition::CompositionScopedBatch>
 {
     using abi = ABI::Windows::UI::Composition::CompositionScopedBatch;
-    using default_interface = Windows::UI::Composition::ICompositionScopedBatch;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.CompositionScopedBatch"; }
 };
 
 template <> struct traits<Windows::UI::Composition::CompositionShadow>
 {
     using abi = ABI::Windows::UI::Composition::CompositionShadow;
-    using default_interface = Windows::UI::Composition::ICompositionShadow;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.CompositionShadow"; }
 };
 
 template <> struct traits<Windows::UI::Composition::CompositionSurfaceBrush>
 {
     using abi = ABI::Windows::UI::Composition::CompositionSurfaceBrush;
-    using default_interface = Windows::UI::Composition::ICompositionSurfaceBrush;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.CompositionSurfaceBrush"; }
 };
 
 template <> struct traits<Windows::UI::Composition::CompositionTarget>
 {
     using abi = ABI::Windows::UI::Composition::CompositionTarget;
-    using default_interface = Windows::UI::Composition::ICompositionTarget;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.CompositionTarget"; }
 };
 
 template <> struct traits<Windows::UI::Composition::Compositor>
 {
     using abi = ABI::Windows::UI::Composition::Compositor;
-    using default_interface = Windows::UI::Composition::ICompositor;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.Compositor"; }
 };
 
 template <> struct traits<Windows::UI::Composition::ContainerVisual>
 {
     using abi = ABI::Windows::UI::Composition::ContainerVisual;
-    using default_interface = Windows::UI::Composition::IContainerVisual;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.ContainerVisual"; }
 };
 
 template <> struct traits<Windows::UI::Composition::CubicBezierEasingFunction>
 {
     using abi = ABI::Windows::UI::Composition::CubicBezierEasingFunction;
-    using default_interface = Windows::UI::Composition::ICubicBezierEasingFunction;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.CubicBezierEasingFunction"; }
 };
 
 template <> struct traits<Windows::UI::Composition::DistantLight>
 {
     using abi = ABI::Windows::UI::Composition::DistantLight;
-    using default_interface = Windows::UI::Composition::IDistantLight;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.DistantLight"; }
 };
 
 template <> struct traits<Windows::UI::Composition::DropShadow>
 {
     using abi = ABI::Windows::UI::Composition::DropShadow;
-    using default_interface = Windows::UI::Composition::IDropShadow;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.DropShadow"; }
 };
 
 template <> struct traits<Windows::UI::Composition::ExpressionAnimation>
 {
     using abi = ABI::Windows::UI::Composition::ExpressionAnimation;
-    using default_interface = Windows::UI::Composition::IExpressionAnimation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.ExpressionAnimation"; }
 };
 
 template <> struct traits<Windows::UI::Composition::ImplicitAnimationCollection>
 {
     using abi = ABI::Windows::UI::Composition::ImplicitAnimationCollection;
-    using default_interface = Windows::UI::Composition::IImplicitAnimationCollection;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.ImplicitAnimationCollection"; }
 };
 
 template <> struct traits<Windows::UI::Composition::InsetClip>
 {
     using abi = ABI::Windows::UI::Composition::InsetClip;
-    using default_interface = Windows::UI::Composition::IInsetClip;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.InsetClip"; }
 };
 
 template <> struct traits<Windows::UI::Composition::KeyFrameAnimation>
 {
     using abi = ABI::Windows::UI::Composition::KeyFrameAnimation;
-    using default_interface = Windows::UI::Composition::IKeyFrameAnimation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.KeyFrameAnimation"; }
 };
 
 template <> struct traits<Windows::UI::Composition::LayerVisual>
 {
     using abi = ABI::Windows::UI::Composition::LayerVisual;
-    using default_interface = Windows::UI::Composition::ILayerVisual;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.LayerVisual"; }
 };
 
 template <> struct traits<Windows::UI::Composition::LinearEasingFunction>
 {
     using abi = ABI::Windows::UI::Composition::LinearEasingFunction;
-    using default_interface = Windows::UI::Composition::ILinearEasingFunction;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.LinearEasingFunction"; }
 };
 
 template <> struct traits<Windows::UI::Composition::PointLight>
 {
     using abi = ABI::Windows::UI::Composition::PointLight;
-    using default_interface = Windows::UI::Composition::IPointLight;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.PointLight"; }
 };
 
 template <> struct traits<Windows::UI::Composition::QuaternionKeyFrameAnimation>
 {
     using abi = ABI::Windows::UI::Composition::QuaternionKeyFrameAnimation;
-    using default_interface = Windows::UI::Composition::IQuaternionKeyFrameAnimation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.QuaternionKeyFrameAnimation"; }
 };
 
 template <> struct traits<Windows::UI::Composition::RenderingDeviceReplacedEventArgs>
 {
     using abi = ABI::Windows::UI::Composition::RenderingDeviceReplacedEventArgs;
-    using default_interface = Windows::UI::Composition::IRenderingDeviceReplacedEventArgs;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.RenderingDeviceReplacedEventArgs"; }
 };
 
 template <> struct traits<Windows::UI::Composition::ScalarKeyFrameAnimation>
 {
     using abi = ABI::Windows::UI::Composition::ScalarKeyFrameAnimation;
-    using default_interface = Windows::UI::Composition::IScalarKeyFrameAnimation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.ScalarKeyFrameAnimation"; }
 };
 
 template <> struct traits<Windows::UI::Composition::SpotLight>
 {
     using abi = ABI::Windows::UI::Composition::SpotLight;
-    using default_interface = Windows::UI::Composition::ISpotLight;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.SpotLight"; }
 };
 
 template <> struct traits<Windows::UI::Composition::SpriteVisual>
 {
     using abi = ABI::Windows::UI::Composition::SpriteVisual;
-    using default_interface = Windows::UI::Composition::ISpriteVisual;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.SpriteVisual"; }
 };
 
 template <> struct traits<Windows::UI::Composition::StepEasingFunction>
 {
     using abi = ABI::Windows::UI::Composition::StepEasingFunction;
-    using default_interface = Windows::UI::Composition::IStepEasingFunction;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.StepEasingFunction"; }
 };
 
 template <> struct traits<Windows::UI::Composition::Vector2KeyFrameAnimation>
 {
     using abi = ABI::Windows::UI::Composition::Vector2KeyFrameAnimation;
-    using default_interface = Windows::UI::Composition::IVector2KeyFrameAnimation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.Vector2KeyFrameAnimation"; }
 };
 
 template <> struct traits<Windows::UI::Composition::Vector3KeyFrameAnimation>
 {
     using abi = ABI::Windows::UI::Composition::Vector3KeyFrameAnimation;
-    using default_interface = Windows::UI::Composition::IVector3KeyFrameAnimation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.Vector3KeyFrameAnimation"; }
 };
 
 template <> struct traits<Windows::UI::Composition::Vector4KeyFrameAnimation>
 {
     using abi = ABI::Windows::UI::Composition::Vector4KeyFrameAnimation;
-    using default_interface = Windows::UI::Composition::IVector4KeyFrameAnimation;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.Vector4KeyFrameAnimation"; }
 };
 
 template <> struct traits<Windows::UI::Composition::Visual>
 {
     using abi = ABI::Windows::UI::Composition::Visual;
-    using default_interface = Windows::UI::Composition::IVisual;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.Visual"; }
 };
 
 template <> struct traits<Windows::UI::Composition::VisualCollection>
 {
     using abi = ABI::Windows::UI::Composition::VisualCollection;
-    using default_interface = Windows::UI::Composition::IVisualCollection;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.VisualCollection"; }
 };
 
 template <> struct traits<Windows::UI::Composition::VisualUnorderedCollection>
 {
     using abi = ABI::Windows::UI::Composition::VisualUnorderedCollection;
-    using default_interface = Windows::UI::Composition::IVisualUnorderedCollection;
     static constexpr const wchar_t * name() noexcept { return L"Windows.UI.Composition.VisualUnorderedCollection"; }
 };
 

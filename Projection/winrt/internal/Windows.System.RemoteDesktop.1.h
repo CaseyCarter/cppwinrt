@@ -24,7 +24,7 @@ namespace ABI {
 
 namespace Windows::System::RemoteDesktop {
 
-template <typename T> class impl_IInteractiveSessionStatics;
+template <typename T> struct impl_IInteractiveSessionStatics;
 
 }
 

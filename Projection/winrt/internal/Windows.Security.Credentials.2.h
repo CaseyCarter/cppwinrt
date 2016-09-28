@@ -186,22 +186,14 @@ template <> struct __declspec(uuid("05eb86f1-7140-5517-b88d-cbaebe57e6b1")) __de
 namespace Windows::Security::Credentials {
 
 template <typename D>
-class WINRT_EBO impl_ICredentialFactory
+struct WINRT_EBO impl_ICredentialFactory
 {
-    auto shim() const { return impl::shim<D, ICredentialFactory>(this); }
-
-public:
-
     Windows::Security::Credentials::PasswordCredential CreatePasswordCredential(hstring_ref resource, hstring_ref userName, hstring_ref password) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IKeyCredential
+struct WINRT_EBO impl_IKeyCredential
 {
-    auto shim() const { return impl::shim<D, IKeyCredential>(this); }
-
-public:
-
     hstring Name() const;
     Windows::Storage::Streams::IBuffer RetrievePublicKey() const;
     Windows::Storage::Streams::IBuffer RetrievePublicKey(Windows::Security::Cryptography::Core::CryptographicPublicKeyBlobType blobType) const;
@@ -210,24 +202,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IKeyCredentialAttestationResult
+struct WINRT_EBO impl_IKeyCredentialAttestationResult
 {
-    auto shim() const { return impl::shim<D, IKeyCredentialAttestationResult>(this); }
-
-public:
-
     Windows::Storage::Streams::IBuffer CertificateChainBuffer() const;
     Windows::Storage::Streams::IBuffer AttestationBuffer() const;
     Windows::Security::Credentials::KeyCredentialAttestationStatus Status() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IKeyCredentialManagerStatics
+struct WINRT_EBO impl_IKeyCredentialManagerStatics
 {
-    auto shim() const { return impl::shim<D, IKeyCredentialManagerStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<bool> IsSupportedAsync() const;
     Windows::Foundation::IAsyncAction RenewAttestationAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialRetrievalResult> RequestCreateAsync(hstring_ref name, Windows::Security::Credentials::KeyCredentialCreationOption option) const;
@@ -236,34 +220,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IKeyCredentialOperationResult
+struct WINRT_EBO impl_IKeyCredentialOperationResult
 {
-    auto shim() const { return impl::shim<D, IKeyCredentialOperationResult>(this); }
-
-public:
-
     Windows::Storage::Streams::IBuffer Result() const;
     Windows::Security::Credentials::KeyCredentialStatus Status() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IKeyCredentialRetrievalResult
+struct WINRT_EBO impl_IKeyCredentialRetrievalResult
 {
-    auto shim() const { return impl::shim<D, IKeyCredentialRetrievalResult>(this); }
-
-public:
-
     Windows::Security::Credentials::KeyCredential Credential() const;
     Windows::Security::Credentials::KeyCredentialStatus Status() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPasswordCredential
+struct WINRT_EBO impl_IPasswordCredential
 {
-    auto shim() const { return impl::shim<D, IPasswordCredential>(this); }
-
-public:
-
     hstring Resource() const;
     void Resource(hstring_ref resource) const;
     hstring UserName() const;
@@ -275,12 +247,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPasswordVault
+struct WINRT_EBO impl_IPasswordVault
 {
-    auto shim() const { return impl::shim<D, IPasswordVault>(this); }
-
-public:
-
     void Add(const Windows::Security::Credentials::PasswordCredential & credential) const;
     void Remove(const Windows::Security::Credentials::PasswordCredential & credential) const;
     Windows::Security::Credentials::PasswordCredential Retrieve(hstring_ref resource, hstring_ref userName) const;
@@ -290,24 +258,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebAccount
+struct WINRT_EBO impl_IWebAccount
 {
-    auto shim() const { return impl::shim<D, IWebAccount>(this); }
-
-public:
-
     Windows::Security::Credentials::WebAccountProvider WebAccountProvider() const;
     hstring UserName() const;
     Windows::Security::Credentials::WebAccountState State() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebAccount2
+struct WINRT_EBO impl_IWebAccount2
 {
-    auto shim() const { return impl::shim<D, IWebAccount2>(this); }
-
-public:
-
     hstring Id() const;
     Windows::Foundation::Collections::IMapView<hstring, hstring> Properties() const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> GetPictureAsync(Windows::Security::Credentials::WebAccountPictureSize desizedSize) const;
@@ -316,55 +276,35 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebAccountFactory
+struct WINRT_EBO impl_IWebAccountFactory
 {
-    auto shim() const { return impl::shim<D, IWebAccountFactory>(this); }
-
-public:
-
     Windows::Security::Credentials::WebAccount CreateWebAccount(const Windows::Security::Credentials::WebAccountProvider & webAccountProvider, hstring_ref userName, Windows::Security::Credentials::WebAccountState state) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebAccountProvider
+struct WINRT_EBO impl_IWebAccountProvider
 {
-    auto shim() const { return impl::shim<D, IWebAccountProvider>(this); }
-
-public:
-
     hstring Id() const;
     hstring DisplayName() const;
     Windows::Foundation::Uri IconUri() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebAccountProvider2
+struct WINRT_EBO impl_IWebAccountProvider2
 {
-    auto shim() const { return impl::shim<D, IWebAccountProvider2>(this); }
-
-public:
-
     hstring DisplayPurpose() const;
     hstring Authority() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebAccountProvider3
+struct WINRT_EBO impl_IWebAccountProvider3
 {
-    auto shim() const { return impl::shim<D, IWebAccountProvider3>(this); }
-
-public:
-
     Windows::System::User User() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebAccountProviderFactory
+struct WINRT_EBO impl_IWebAccountProviderFactory
 {
-    auto shim() const { return impl::shim<D, IWebAccountProviderFactory>(this); }
-
-public:
-
     Windows::Security::Credentials::WebAccountProvider CreateWebAccountProvider(hstring_ref id, hstring_ref displayName, const Windows::Foundation::Uri & iconUri) const;
 };
 
