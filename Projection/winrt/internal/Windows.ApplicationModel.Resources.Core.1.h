@@ -151,18 +151,18 @@ template <> struct traits<Windows::ApplicationModel::Resources::Core::ResourceQu
 
 namespace Windows::ApplicationModel::Resources::Core {
 
-template <typename T> class impl_INamedResource;
-template <typename T> class impl_IResourceCandidate;
-template <typename T> class impl_IResourceCandidate2;
-template <typename T> class impl_IResourceContext;
-template <typename T> class impl_IResourceContextStatics;
-template <typename T> class impl_IResourceContextStatics2;
-template <typename T> class impl_IResourceContextStatics3;
-template <typename T> class impl_IResourceManager;
-template <typename T> class impl_IResourceManager2;
-template <typename T> class impl_IResourceManagerStatics;
-template <typename T> class impl_IResourceMap;
-template <typename T> class impl_IResourceQualifier;
+template <typename T> struct impl_INamedResource;
+template <typename T> struct impl_IResourceCandidate;
+template <typename T> struct impl_IResourceCandidate2;
+template <typename T> struct impl_IResourceContext;
+template <typename T> struct impl_IResourceContextStatics;
+template <typename T> struct impl_IResourceContextStatics2;
+template <typename T> struct impl_IResourceContextStatics3;
+template <typename T> struct impl_IResourceManager;
+template <typename T> struct impl_IResourceManager2;
+template <typename T> struct impl_IResourceManagerStatics;
+template <typename T> struct impl_IResourceMap;
+template <typename T> struct impl_IResourceQualifier;
 
 }
 

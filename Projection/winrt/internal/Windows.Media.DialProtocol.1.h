@@ -98,15 +98,15 @@ template <> struct traits<Windows::Media::DialProtocol::DialDisconnectButtonClic
 
 namespace Windows::Media::DialProtocol {
 
-template <typename T> class impl_IDialApp;
-template <typename T> class impl_IDialAppStateDetails;
-template <typename T> class impl_IDialDevice;
-template <typename T> class impl_IDialDevice2;
-template <typename T> class impl_IDialDevicePicker;
-template <typename T> class impl_IDialDevicePickerFilter;
-template <typename T> class impl_IDialDeviceSelectedEventArgs;
-template <typename T> class impl_IDialDeviceStatics;
-template <typename T> class impl_IDialDisconnectButtonClickedEventArgs;
+template <typename T> struct impl_IDialApp;
+template <typename T> struct impl_IDialAppStateDetails;
+template <typename T> struct impl_IDialDevice;
+template <typename T> struct impl_IDialDevice2;
+template <typename T> struct impl_IDialDevicePicker;
+template <typename T> struct impl_IDialDevicePickerFilter;
+template <typename T> struct impl_IDialDeviceSelectedEventArgs;
+template <typename T> struct impl_IDialDeviceStatics;
+template <typename T> struct impl_IDialDisconnectButtonClickedEventArgs;
 
 }
 

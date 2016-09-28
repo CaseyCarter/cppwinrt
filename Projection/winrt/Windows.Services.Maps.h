@@ -1139,518 +1139,518 @@ namespace Windows::Services::Maps {
 template <typename D> uint32_t impl_IMapRouteDrivingOptions<D>::MaxAlternateRouteCount() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_MaxAlternateRouteCount(&value));
+    check_hresult(static_cast<const IMapRouteDrivingOptions &>(static_cast<const D &>(*this))->get_MaxAlternateRouteCount(&value));
     return value;
 }
 
 template <typename D> void impl_IMapRouteDrivingOptions<D>::MaxAlternateRouteCount(uint32_t value) const
 {
-    check_hresult(shim()->put_MaxAlternateRouteCount(value));
+    check_hresult(static_cast<const IMapRouteDrivingOptions &>(static_cast<const D &>(*this))->put_MaxAlternateRouteCount(value));
 }
 
 template <typename D> Windows::Foundation::IReference<double> impl_IMapRouteDrivingOptions<D>::InitialHeading() const
 {
     Windows::Foundation::IReference<double> value;
-    check_hresult(shim()->get_InitialHeading(put(value)));
+    check_hresult(static_cast<const IMapRouteDrivingOptions &>(static_cast<const D &>(*this))->get_InitialHeading(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMapRouteDrivingOptions<D>::InitialHeading(const Windows::Foundation::IReference<double> & value) const
 {
-    check_hresult(shim()->put_InitialHeading(get(value)));
+    check_hresult(static_cast<const IMapRouteDrivingOptions &>(static_cast<const D &>(*this))->put_InitialHeading(get(value)));
 }
 
 template <typename D> Windows::Services::Maps::MapRouteOptimization impl_IMapRouteDrivingOptions<D>::RouteOptimization() const
 {
     Windows::Services::Maps::MapRouteOptimization value {};
-    check_hresult(shim()->get_RouteOptimization(&value));
+    check_hresult(static_cast<const IMapRouteDrivingOptions &>(static_cast<const D &>(*this))->get_RouteOptimization(&value));
     return value;
 }
 
 template <typename D> void impl_IMapRouteDrivingOptions<D>::RouteOptimization(Windows::Services::Maps::MapRouteOptimization value) const
 {
-    check_hresult(shim()->put_RouteOptimization(value));
+    check_hresult(static_cast<const IMapRouteDrivingOptions &>(static_cast<const D &>(*this))->put_RouteOptimization(value));
 }
 
 template <typename D> Windows::Services::Maps::MapRouteRestrictions impl_IMapRouteDrivingOptions<D>::RouteRestrictions() const
 {
     Windows::Services::Maps::MapRouteRestrictions value {};
-    check_hresult(shim()->get_RouteRestrictions(&value));
+    check_hresult(static_cast<const IMapRouteDrivingOptions &>(static_cast<const D &>(*this))->get_RouteRestrictions(&value));
     return value;
 }
 
 template <typename D> void impl_IMapRouteDrivingOptions<D>::RouteRestrictions(Windows::Services::Maps::MapRouteRestrictions value) const
 {
-    check_hresult(shim()->put_RouteRestrictions(value));
+    check_hresult(static_cast<const IMapRouteDrivingOptions &>(static_cast<const D &>(*this))->put_RouteRestrictions(value));
 }
 
 template <typename D> hstring impl_IMapAddress<D>::BuildingName() const
 {
     hstring value;
-    check_hresult(shim()->get_BuildingName(put(value)));
+    check_hresult(static_cast<const IMapAddress &>(static_cast<const D &>(*this))->get_BuildingName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMapAddress<D>::BuildingFloor() const
 {
     hstring value;
-    check_hresult(shim()->get_BuildingFloor(put(value)));
+    check_hresult(static_cast<const IMapAddress &>(static_cast<const D &>(*this))->get_BuildingFloor(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMapAddress<D>::BuildingRoom() const
 {
     hstring value;
-    check_hresult(shim()->get_BuildingRoom(put(value)));
+    check_hresult(static_cast<const IMapAddress &>(static_cast<const D &>(*this))->get_BuildingRoom(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMapAddress<D>::BuildingWing() const
 {
     hstring value;
-    check_hresult(shim()->get_BuildingWing(put(value)));
+    check_hresult(static_cast<const IMapAddress &>(static_cast<const D &>(*this))->get_BuildingWing(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMapAddress<D>::StreetNumber() const
 {
     hstring value;
-    check_hresult(shim()->get_StreetNumber(put(value)));
+    check_hresult(static_cast<const IMapAddress &>(static_cast<const D &>(*this))->get_StreetNumber(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMapAddress<D>::Street() const
 {
     hstring value;
-    check_hresult(shim()->get_Street(put(value)));
+    check_hresult(static_cast<const IMapAddress &>(static_cast<const D &>(*this))->get_Street(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMapAddress<D>::Neighborhood() const
 {
     hstring value;
-    check_hresult(shim()->get_Neighborhood(put(value)));
+    check_hresult(static_cast<const IMapAddress &>(static_cast<const D &>(*this))->get_Neighborhood(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMapAddress<D>::District() const
 {
     hstring value;
-    check_hresult(shim()->get_District(put(value)));
+    check_hresult(static_cast<const IMapAddress &>(static_cast<const D &>(*this))->get_District(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMapAddress<D>::Town() const
 {
     hstring value;
-    check_hresult(shim()->get_Town(put(value)));
+    check_hresult(static_cast<const IMapAddress &>(static_cast<const D &>(*this))->get_Town(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMapAddress<D>::Region() const
 {
     hstring value;
-    check_hresult(shim()->get_Region(put(value)));
+    check_hresult(static_cast<const IMapAddress &>(static_cast<const D &>(*this))->get_Region(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMapAddress<D>::RegionCode() const
 {
     hstring value;
-    check_hresult(shim()->get_RegionCode(put(value)));
+    check_hresult(static_cast<const IMapAddress &>(static_cast<const D &>(*this))->get_RegionCode(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMapAddress<D>::Country() const
 {
     hstring value;
-    check_hresult(shim()->get_Country(put(value)));
+    check_hresult(static_cast<const IMapAddress &>(static_cast<const D &>(*this))->get_Country(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMapAddress<D>::CountryCode() const
 {
     hstring value;
-    check_hresult(shim()->get_CountryCode(put(value)));
+    check_hresult(static_cast<const IMapAddress &>(static_cast<const D &>(*this))->get_CountryCode(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMapAddress<D>::PostCode() const
 {
     hstring value;
-    check_hresult(shim()->get_PostCode(put(value)));
+    check_hresult(static_cast<const IMapAddress &>(static_cast<const D &>(*this))->get_PostCode(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMapAddress<D>::Continent() const
 {
     hstring value;
-    check_hresult(shim()->get_Continent(put(value)));
+    check_hresult(static_cast<const IMapAddress &>(static_cast<const D &>(*this))->get_Continent(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMapAddress2<D>::FormattedAddress() const
 {
     hstring value;
-    check_hresult(shim()->get_FormattedAddress(put(value)));
+    check_hresult(static_cast<const IMapAddress2 &>(static_cast<const D &>(*this))->get_FormattedAddress(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geopoint impl_IMapLocation<D>::Point() const
 {
     Windows::Devices::Geolocation::Geopoint value { nullptr };
-    check_hresult(shim()->get_Point(put(value)));
+    check_hresult(static_cast<const IMapLocation &>(static_cast<const D &>(*this))->get_Point(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMapLocation<D>::DisplayName() const
 {
     hstring value;
-    check_hresult(shim()->get_DisplayName(put(value)));
+    check_hresult(static_cast<const IMapLocation &>(static_cast<const D &>(*this))->get_DisplayName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMapLocation<D>::Description() const
 {
     hstring value;
-    check_hresult(shim()->get_Description(put(value)));
+    check_hresult(static_cast<const IMapLocation &>(static_cast<const D &>(*this))->get_Description(put(value)));
     return value;
 }
 
 template <typename D> Windows::Services::Maps::MapAddress impl_IMapLocation<D>::Address() const
 {
     Windows::Services::Maps::MapAddress value { nullptr };
-    check_hresult(shim()->get_Address(put(value)));
+    check_hresult(static_cast<const IMapLocation &>(static_cast<const D &>(*this))->get_Address(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Services::Maps::MapLocation> impl_IMapLocationFinderResult<D>::Locations() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Services::Maps::MapLocation> value;
-    check_hresult(shim()->get_Locations(put(value)));
+    check_hresult(static_cast<const IMapLocationFinderResult &>(static_cast<const D &>(*this))->get_Locations(put(value)));
     return value;
 }
 
 template <typename D> Windows::Services::Maps::MapLocationFinderStatus impl_IMapLocationFinderResult<D>::Status() const
 {
     Windows::Services::Maps::MapLocationFinderStatus value {};
-    check_hresult(shim()->get_Status(&value));
+    check_hresult(static_cast<const IMapLocationFinderResult &>(static_cast<const D &>(*this))->get_Status(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geopoint impl_IMapRouteManeuver<D>::StartingPoint() const
 {
     Windows::Devices::Geolocation::Geopoint value { nullptr };
-    check_hresult(shim()->get_StartingPoint(put(value)));
+    check_hresult(static_cast<const IMapRouteManeuver &>(static_cast<const D &>(*this))->get_StartingPoint(put(value)));
     return value;
 }
 
 template <typename D> double impl_IMapRouteManeuver<D>::LengthInMeters() const
 {
     double value {};
-    check_hresult(shim()->get_LengthInMeters(&value));
+    check_hresult(static_cast<const IMapRouteManeuver &>(static_cast<const D &>(*this))->get_LengthInMeters(&value));
     return value;
 }
 
 template <typename D> hstring impl_IMapRouteManeuver<D>::InstructionText() const
 {
     hstring value;
-    check_hresult(shim()->get_InstructionText(put(value)));
+    check_hresult(static_cast<const IMapRouteManeuver &>(static_cast<const D &>(*this))->get_InstructionText(put(value)));
     return value;
 }
 
 template <typename D> Windows::Services::Maps::MapRouteManeuverKind impl_IMapRouteManeuver<D>::Kind() const
 {
     Windows::Services::Maps::MapRouteManeuverKind value {};
-    check_hresult(shim()->get_Kind(&value));
+    check_hresult(static_cast<const IMapRouteManeuver &>(static_cast<const D &>(*this))->get_Kind(&value));
     return value;
 }
 
 template <typename D> hstring impl_IMapRouteManeuver<D>::ExitNumber() const
 {
     hstring value;
-    check_hresult(shim()->get_ExitNumber(put(value)));
+    check_hresult(static_cast<const IMapRouteManeuver &>(static_cast<const D &>(*this))->get_ExitNumber(put(value)));
     return value;
 }
 
 template <typename D> Windows::Services::Maps::MapManeuverNotices impl_IMapRouteManeuver<D>::ManeuverNotices() const
 {
     Windows::Services::Maps::MapManeuverNotices value {};
-    check_hresult(shim()->get_ManeuverNotices(&value));
+    check_hresult(static_cast<const IMapRouteManeuver &>(static_cast<const D &>(*this))->get_ManeuverNotices(&value));
     return value;
 }
 
 template <typename D> double impl_IMapRouteManeuver2<D>::StartHeading() const
 {
     double value {};
-    check_hresult(shim()->get_StartHeading(&value));
+    check_hresult(static_cast<const IMapRouteManeuver2 &>(static_cast<const D &>(*this))->get_StartHeading(&value));
     return value;
 }
 
 template <typename D> double impl_IMapRouteManeuver2<D>::EndHeading() const
 {
     double value {};
-    check_hresult(shim()->get_EndHeading(&value));
+    check_hresult(static_cast<const IMapRouteManeuver2 &>(static_cast<const D &>(*this))->get_EndHeading(&value));
     return value;
 }
 
 template <typename D> hstring impl_IMapRouteManeuver2<D>::StreetName() const
 {
     hstring value;
-    check_hresult(shim()->get_StreetName(put(value)));
+    check_hresult(static_cast<const IMapRouteManeuver2 &>(static_cast<const D &>(*this))->get_StreetName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::GeoboundingBox impl_IMapRouteLeg<D>::BoundingBox() const
 {
     Windows::Devices::Geolocation::GeoboundingBox value { nullptr };
-    check_hresult(shim()->get_BoundingBox(put(value)));
+    check_hresult(static_cast<const IMapRouteLeg &>(static_cast<const D &>(*this))->get_BoundingBox(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geopath impl_IMapRouteLeg<D>::Path() const
 {
     Windows::Devices::Geolocation::Geopath value { nullptr };
-    check_hresult(shim()->get_Path(put(value)));
+    check_hresult(static_cast<const IMapRouteLeg &>(static_cast<const D &>(*this))->get_Path(put(value)));
     return value;
 }
 
 template <typename D> double impl_IMapRouteLeg<D>::LengthInMeters() const
 {
     double value {};
-    check_hresult(shim()->get_LengthInMeters(&value));
+    check_hresult(static_cast<const IMapRouteLeg &>(static_cast<const D &>(*this))->get_LengthInMeters(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IMapRouteLeg<D>::EstimatedDuration() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_EstimatedDuration(put(value)));
+    check_hresult(static_cast<const IMapRouteLeg &>(static_cast<const D &>(*this))->get_EstimatedDuration(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Services::Maps::MapRouteManeuver> impl_IMapRouteLeg<D>::Maneuvers() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Services::Maps::MapRouteManeuver> value;
-    check_hresult(shim()->get_Maneuvers(put(value)));
+    check_hresult(static_cast<const IMapRouteLeg &>(static_cast<const D &>(*this))->get_Maneuvers(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::GeoboundingBox impl_IMapRoute<D>::BoundingBox() const
 {
     Windows::Devices::Geolocation::GeoboundingBox value { nullptr };
-    check_hresult(shim()->get_BoundingBox(put(value)));
+    check_hresult(static_cast<const IMapRoute &>(static_cast<const D &>(*this))->get_BoundingBox(put(value)));
     return value;
 }
 
 template <typename D> double impl_IMapRoute<D>::LengthInMeters() const
 {
     double value {};
-    check_hresult(shim()->get_LengthInMeters(&value));
+    check_hresult(static_cast<const IMapRoute &>(static_cast<const D &>(*this))->get_LengthInMeters(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IMapRoute<D>::EstimatedDuration() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_EstimatedDuration(put(value)));
+    check_hresult(static_cast<const IMapRoute &>(static_cast<const D &>(*this))->get_EstimatedDuration(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Geolocation::Geopath impl_IMapRoute<D>::Path() const
 {
     Windows::Devices::Geolocation::Geopath value { nullptr };
-    check_hresult(shim()->get_Path(put(value)));
+    check_hresult(static_cast<const IMapRoute &>(static_cast<const D &>(*this))->get_Path(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Services::Maps::MapRouteLeg> impl_IMapRoute<D>::Legs() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Services::Maps::MapRouteLeg> value;
-    check_hresult(shim()->get_Legs(put(value)));
+    check_hresult(static_cast<const IMapRoute &>(static_cast<const D &>(*this))->get_Legs(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IMapRoute<D>::IsTrafficBased() const
 {
     bool value {};
-    check_hresult(shim()->get_IsTrafficBased(&value));
+    check_hresult(static_cast<const IMapRoute &>(static_cast<const D &>(*this))->get_IsTrafficBased(&value));
     return value;
 }
 
 template <typename D> Windows::Services::Maps::MapRouteRestrictions impl_IMapRoute2<D>::ViolatedRestrictions() const
 {
     Windows::Services::Maps::MapRouteRestrictions value {};
-    check_hresult(shim()->get_ViolatedRestrictions(&value));
+    check_hresult(static_cast<const IMapRoute2 &>(static_cast<const D &>(*this))->get_ViolatedRestrictions(&value));
     return value;
 }
 
 template <typename D> bool impl_IMapRoute2<D>::HasBlockedRoads() const
 {
     bool value {};
-    check_hresult(shim()->get_HasBlockedRoads(&value));
+    check_hresult(static_cast<const IMapRoute2 &>(static_cast<const D &>(*this))->get_HasBlockedRoads(&value));
     return value;
 }
 
 template <typename D> Windows::Services::Maps::MapRoute impl_IMapRouteFinderResult<D>::Route() const
 {
     Windows::Services::Maps::MapRoute value { nullptr };
-    check_hresult(shim()->get_Route(put(value)));
+    check_hresult(static_cast<const IMapRouteFinderResult &>(static_cast<const D &>(*this))->get_Route(put(value)));
     return value;
 }
 
 template <typename D> Windows::Services::Maps::MapRouteFinderStatus impl_IMapRouteFinderResult<D>::Status() const
 {
     Windows::Services::Maps::MapRouteFinderStatus value {};
-    check_hresult(shim()->get_Status(&value));
+    check_hresult(static_cast<const IMapRouteFinderResult &>(static_cast<const D &>(*this))->get_Status(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Services::Maps::MapRoute> impl_IMapRouteFinderResult2<D>::AlternateRoutes() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Services::Maps::MapRoute> value;
-    check_hresult(shim()->get_AlternateRoutes(put(value)));
+    check_hresult(static_cast<const IMapRouteFinderResult2 &>(static_cast<const D &>(*this))->get_AlternateRoutes(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> impl_IMapLocationFinderStatics<D>::FindLocationsAtAsync(const Windows::Devices::Geolocation::Geopoint & queryPoint) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> result;
-    check_hresult(shim()->abi_FindLocationsAtAsync(get(queryPoint), put(result)));
+    check_hresult(static_cast<const IMapLocationFinderStatics &>(static_cast<const D &>(*this))->abi_FindLocationsAtAsync(get(queryPoint), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> impl_IMapLocationFinderStatics<D>::FindLocationsAsync(hstring_ref searchText, const Windows::Devices::Geolocation::Geopoint & referencePoint) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> result;
-    check_hresult(shim()->abi_FindLocationsAsync(get(searchText), get(referencePoint), put(result)));
+    check_hresult(static_cast<const IMapLocationFinderStatics &>(static_cast<const D &>(*this))->abi_FindLocationsAsync(get(searchText), get(referencePoint), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> impl_IMapLocationFinderStatics<D>::FindLocationsAsync(hstring_ref searchText, const Windows::Devices::Geolocation::Geopoint & referencePoint, uint32_t maxCount) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> result;
-    check_hresult(shim()->abi_FindLocationsWithMaxCountAsync(get(searchText), get(referencePoint), maxCount, put(result)));
+    check_hresult(static_cast<const IMapLocationFinderStatics &>(static_cast<const D &>(*this))->abi_FindLocationsWithMaxCountAsync(get(searchText), get(referencePoint), maxCount, put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> impl_IMapLocationFinderStatics2<D>::FindLocationsAtAsync(const Windows::Devices::Geolocation::Geopoint & queryPoint, Windows::Services::Maps::MapLocationDesiredAccuracy accuracy) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> result;
-    check_hresult(shim()->abi_FindLocationsAtWithAccuracyAsync(get(queryPoint), accuracy, put(result)));
+    check_hresult(static_cast<const IMapLocationFinderStatics2 &>(static_cast<const D &>(*this))->abi_FindLocationsAtWithAccuracyAsync(get(queryPoint), accuracy, put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> impl_IMapRouteFinderStatics<D>::GetDrivingRouteAsync(const Windows::Devices::Geolocation::Geopoint & startPoint, const Windows::Devices::Geolocation::Geopoint & endPoint) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> result;
-    check_hresult(shim()->abi_GetDrivingRouteAsync(get(startPoint), get(endPoint), put(result)));
+    check_hresult(static_cast<const IMapRouteFinderStatics &>(static_cast<const D &>(*this))->abi_GetDrivingRouteAsync(get(startPoint), get(endPoint), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> impl_IMapRouteFinderStatics<D>::GetDrivingRouteAsync(const Windows::Devices::Geolocation::Geopoint & startPoint, const Windows::Devices::Geolocation::Geopoint & endPoint, Windows::Services::Maps::MapRouteOptimization optimization) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> result;
-    check_hresult(shim()->abi_GetDrivingRouteWithOptimizationAsync(get(startPoint), get(endPoint), optimization, put(result)));
+    check_hresult(static_cast<const IMapRouteFinderStatics &>(static_cast<const D &>(*this))->abi_GetDrivingRouteWithOptimizationAsync(get(startPoint), get(endPoint), optimization, put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> impl_IMapRouteFinderStatics<D>::GetDrivingRouteAsync(const Windows::Devices::Geolocation::Geopoint & startPoint, const Windows::Devices::Geolocation::Geopoint & endPoint, Windows::Services::Maps::MapRouteOptimization optimization, Windows::Services::Maps::MapRouteRestrictions restrictions) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> result;
-    check_hresult(shim()->abi_GetDrivingRouteWithOptimizationAndRestrictionsAsync(get(startPoint), get(endPoint), optimization, restrictions, put(result)));
+    check_hresult(static_cast<const IMapRouteFinderStatics &>(static_cast<const D &>(*this))->abi_GetDrivingRouteWithOptimizationAndRestrictionsAsync(get(startPoint), get(endPoint), optimization, restrictions, put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> impl_IMapRouteFinderStatics<D>::GetDrivingRouteAsync(const Windows::Devices::Geolocation::Geopoint & startPoint, const Windows::Devices::Geolocation::Geopoint & endPoint, Windows::Services::Maps::MapRouteOptimization optimization, Windows::Services::Maps::MapRouteRestrictions restrictions, double headingInDegrees) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> result;
-    check_hresult(shim()->abi_GetDrivingRouteWithOptimizationRestrictionsAndHeadingAsync(get(startPoint), get(endPoint), optimization, restrictions, headingInDegrees, put(result)));
+    check_hresult(static_cast<const IMapRouteFinderStatics &>(static_cast<const D &>(*this))->abi_GetDrivingRouteWithOptimizationRestrictionsAndHeadingAsync(get(startPoint), get(endPoint), optimization, restrictions, headingInDegrees, put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> impl_IMapRouteFinderStatics<D>::GetDrivingRouteFromWaypointsAsync(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> & wayPoints) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> result;
-    check_hresult(shim()->abi_GetDrivingRouteFromWaypointsAsync(get(wayPoints), put(result)));
+    check_hresult(static_cast<const IMapRouteFinderStatics &>(static_cast<const D &>(*this))->abi_GetDrivingRouteFromWaypointsAsync(get(wayPoints), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> impl_IMapRouteFinderStatics<D>::GetDrivingRouteFromWaypointsAsync(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> & wayPoints, Windows::Services::Maps::MapRouteOptimization optimization) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> result;
-    check_hresult(shim()->abi_GetDrivingRouteFromWaypointsAndOptimizationAsync(get(wayPoints), optimization, put(result)));
+    check_hresult(static_cast<const IMapRouteFinderStatics &>(static_cast<const D &>(*this))->abi_GetDrivingRouteFromWaypointsAndOptimizationAsync(get(wayPoints), optimization, put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> impl_IMapRouteFinderStatics<D>::GetDrivingRouteFromWaypointsAsync(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> & wayPoints, Windows::Services::Maps::MapRouteOptimization optimization, Windows::Services::Maps::MapRouteRestrictions restrictions) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> result;
-    check_hresult(shim()->abi_GetDrivingRouteFromWaypointsOptimizationAndRestrictionsAsync(get(wayPoints), optimization, restrictions, put(result)));
+    check_hresult(static_cast<const IMapRouteFinderStatics &>(static_cast<const D &>(*this))->abi_GetDrivingRouteFromWaypointsOptimizationAndRestrictionsAsync(get(wayPoints), optimization, restrictions, put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> impl_IMapRouteFinderStatics<D>::GetDrivingRouteFromWaypointsAsync(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> & wayPoints, Windows::Services::Maps::MapRouteOptimization optimization, Windows::Services::Maps::MapRouteRestrictions restrictions, double headingInDegrees) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> result;
-    check_hresult(shim()->abi_GetDrivingRouteFromWaypointsOptimizationRestrictionsAndHeadingAsync(get(wayPoints), optimization, restrictions, headingInDegrees, put(result)));
+    check_hresult(static_cast<const IMapRouteFinderStatics &>(static_cast<const D &>(*this))->abi_GetDrivingRouteFromWaypointsOptimizationRestrictionsAndHeadingAsync(get(wayPoints), optimization, restrictions, headingInDegrees, put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> impl_IMapRouteFinderStatics<D>::GetWalkingRouteAsync(const Windows::Devices::Geolocation::Geopoint & startPoint, const Windows::Devices::Geolocation::Geopoint & endPoint) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> result;
-    check_hresult(shim()->abi_GetWalkingRouteAsync(get(startPoint), get(endPoint), put(result)));
+    check_hresult(static_cast<const IMapRouteFinderStatics &>(static_cast<const D &>(*this))->abi_GetWalkingRouteAsync(get(startPoint), get(endPoint), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> impl_IMapRouteFinderStatics<D>::GetWalkingRouteFromWaypointsAsync(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> & wayPoints) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> result;
-    check_hresult(shim()->abi_GetWalkingRouteFromWaypointsAsync(get(wayPoints), put(result)));
+    check_hresult(static_cast<const IMapRouteFinderStatics &>(static_cast<const D &>(*this))->abi_GetWalkingRouteFromWaypointsAsync(get(wayPoints), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> impl_IMapRouteFinderStatics2<D>::GetDrivingRouteAsync(const Windows::Devices::Geolocation::Geopoint & startPoint, const Windows::Devices::Geolocation::Geopoint & endPoint, const Windows::Services::Maps::MapRouteDrivingOptions & options) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> result;
-    check_hresult(shim()->abi_GetDrivingRouteWithOptionsAsync(get(startPoint), get(endPoint), get(options), put(result)));
+    check_hresult(static_cast<const IMapRouteFinderStatics2 &>(static_cast<const D &>(*this))->abi_GetDrivingRouteWithOptionsAsync(get(startPoint), get(endPoint), get(options), put(result)));
     return result;
 }
 
 template <typename D> void impl_IMapServiceStatics<D>::ServiceToken(hstring_ref value) const
 {
-    check_hresult(shim()->put_ServiceToken(get(value)));
+    check_hresult(static_cast<const IMapServiceStatics &>(static_cast<const D &>(*this))->put_ServiceToken(get(value)));
 }
 
 template <typename D> hstring impl_IMapServiceStatics<D>::ServiceToken() const
 {
     hstring value;
-    check_hresult(shim()->get_ServiceToken(put(value)));
+    check_hresult(static_cast<const IMapServiceStatics &>(static_cast<const D &>(*this))->get_ServiceToken(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMapManagerStatics<D>::ShowDownloadedMapsUI() const
 {
-    check_hresult(shim()->abi_ShowDownloadedMapsUI());
+    check_hresult(static_cast<const IMapManagerStatics &>(static_cast<const D &>(*this))->abi_ShowDownloadedMapsUI());
 }
 
 template <typename D> void impl_IMapManagerStatics<D>::ShowMapsUpdateUI() const
 {
-    check_hresult(shim()->abi_ShowMapsUpdateUI());
+    check_hresult(static_cast<const IMapManagerStatics &>(static_cast<const D &>(*this))->abi_ShowMapsUpdateUI());
 }
 
 template <typename D> hstring impl_IMapServiceStatics2<D>::WorldViewRegionCode() const
 {
     hstring value;
-    check_hresult(shim()->get_WorldViewRegionCode(put(value)));
+    check_hresult(static_cast<const IMapServiceStatics2 &>(static_cast<const D &>(*this))->get_WorldViewRegionCode(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMapServiceStatics3<D>::DataAttributions() const
 {
     hstring value;
-    check_hresult(shim()->get_DataAttributions(put(value)));
+    check_hresult(static_cast<const IMapServiceStatics3 &>(static_cast<const D &>(*this))->get_DataAttributions(put(value)));
     return value;
 }
 

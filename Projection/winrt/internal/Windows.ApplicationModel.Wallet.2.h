@@ -230,35 +230,23 @@ template <> struct __declspec(uuid("9302d49e-dda3-5971-b48a-dfdf02c572af")) __de
 namespace Windows::ApplicationModel::Wallet {
 
 template <typename D>
-class WINRT_EBO impl_IWalletBarcode
+struct WINRT_EBO impl_IWalletBarcode
 {
-    auto shim() const { return impl::shim<D, IWalletBarcode>(this); }
-
-public:
-
     Windows::ApplicationModel::Wallet::WalletBarcodeSymbology Symbology() const;
     hstring Value() const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamReference> GetImageAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWalletBarcodeFactory
+struct WINRT_EBO impl_IWalletBarcodeFactory
 {
-    auto shim() const { return impl::shim<D, IWalletBarcodeFactory>(this); }
-
-public:
-
     Windows::ApplicationModel::Wallet::WalletBarcode CreateWalletBarcode(Windows::ApplicationModel::Wallet::WalletBarcodeSymbology symbology, hstring_ref value) const;
     Windows::ApplicationModel::Wallet::WalletBarcode CreateCustomWalletBarcode(const Windows::Storage::Streams::IRandomAccessStreamReference & streamToBarcodeImage) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWalletItem
+struct WINRT_EBO impl_IWalletItem
 {
-    auto shim() const { return impl::shim<D, IWalletItem>(this); }
-
-public:
-
     hstring DisplayName() const;
     void DisplayName(hstring_ref value) const;
     hstring Id() const;
@@ -314,12 +302,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IWalletItemCustomProperty
+struct WINRT_EBO impl_IWalletItemCustomProperty
 {
-    auto shim() const { return impl::shim<D, IWalletItemCustomProperty>(this); }
-
-public:
-
     hstring Name() const;
     void Name(hstring_ref value) const;
     hstring Value() const;
@@ -333,32 +317,20 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IWalletItemCustomPropertyFactory
+struct WINRT_EBO impl_IWalletItemCustomPropertyFactory
 {
-    auto shim() const { return impl::shim<D, IWalletItemCustomPropertyFactory>(this); }
-
-public:
-
     Windows::ApplicationModel::Wallet::WalletItemCustomProperty CreateWalletItemCustomProperty(hstring_ref name, hstring_ref value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWalletItemFactory
+struct WINRT_EBO impl_IWalletItemFactory
 {
-    auto shim() const { return impl::shim<D, IWalletItemFactory>(this); }
-
-public:
-
     Windows::ApplicationModel::Wallet::WalletItem CreateWalletItem(Windows::ApplicationModel::Wallet::WalletItemKind kind, hstring_ref displayName) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWalletItemStore
+struct WINRT_EBO impl_IWalletItemStore
 {
-    auto shim() const { return impl::shim<D, IWalletItemStore>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction AddAsync(hstring_ref id, const Windows::ApplicationModel::Wallet::WalletItem & item) const;
     Windows::Foundation::IAsyncAction ClearAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Wallet::WalletItem> GetWalletItemAsync(hstring_ref id) const;
@@ -372,12 +344,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IWalletItemStore2
+struct WINRT_EBO impl_IWalletItemStore2
 {
-    auto shim() const { return impl::shim<D, IWalletItemStore2>(this); }
-
-public:
-
     event_token ItemsChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Wallet::WalletItemStore, Windows::IInspectable> & handler) const;
     using ItemsChanged_revoker = event_revoker<IWalletItemStore2>;
     ItemsChanged_revoker ItemsChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Wallet::WalletItemStore, Windows::IInspectable> & handler) const;
@@ -385,22 +353,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IWalletManagerStatics
+struct WINRT_EBO impl_IWalletManagerStatics
 {
-    auto shim() const { return impl::shim<D, IWalletManagerStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Wallet::WalletItemStore> RequestStoreAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWalletRelevantLocation
+struct WINRT_EBO impl_IWalletRelevantLocation
 {
-    auto shim() const { return impl::shim<D, IWalletRelevantLocation>(this); }
-
-public:
-
     Windows::Devices::Geolocation::BasicGeoposition Position() const;
     void Position(const Windows::Devices::Geolocation::BasicGeoposition & value) const;
     hstring DisplayMessage() const;
@@ -408,12 +368,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IWalletTransaction
+struct WINRT_EBO impl_IWalletTransaction
 {
-    auto shim() const { return impl::shim<D, IWalletTransaction>(this); }
-
-public:
-
     hstring Description() const;
     void Description(hstring_ref value) const;
     hstring DisplayAmount() const;
@@ -429,23 +385,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IWalletVerb
+struct WINRT_EBO impl_IWalletVerb
 {
-    auto shim() const { return impl::shim<D, IWalletVerb>(this); }
-
-public:
-
     hstring Name() const;
     void Name(hstring_ref value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWalletVerbFactory
+struct WINRT_EBO impl_IWalletVerbFactory
 {
-    auto shim() const { return impl::shim<D, IWalletVerbFactory>(this); }
-
-public:
-
     Windows::ApplicationModel::Wallet::WalletVerb CreateWalletVerb(hstring_ref name) const;
 };
 

@@ -46,106 +46,66 @@ template <> struct __declspec(uuid("c4db1093-d705-5503-8bce-68535cd42ffa")) __de
 namespace Windows::Devices::Perception::Provider {
 
 template <typename D>
-class WINRT_EBO impl_IKnownPerceptionFrameKindStatics
+struct WINRT_EBO impl_IKnownPerceptionFrameKindStatics
 {
-    auto shim() const { return impl::shim<D, IKnownPerceptionFrameKindStatics>(this); }
-
-public:
-
     hstring Color() const;
     hstring Depth() const;
     hstring Infrared() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionControlGroup
+struct WINRT_EBO impl_IPerceptionControlGroup
 {
-    auto shim() const { return impl::shim<D, IPerceptionControlGroup>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<hstring> FrameProviderIds() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionControlGroupFactory
+struct WINRT_EBO impl_IPerceptionControlGroupFactory
 {
-    auto shim() const { return impl::shim<D, IPerceptionControlGroupFactory>(this); }
-
-public:
-
     Windows::Devices::Perception::Provider::PerceptionControlGroup Create(const Windows::Foundation::Collections::IIterable<hstring> & ids) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionCorrelation
+struct WINRT_EBO impl_IPerceptionCorrelation
 {
-    auto shim() const { return impl::shim<D, IPerceptionCorrelation>(this); }
-
-public:
-
     hstring TargetId() const;
     Windows::Foundation::Numerics::float3 Position() const;
     Windows::Foundation::Numerics::quaternion Orientation() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionCorrelationFactory
+struct WINRT_EBO impl_IPerceptionCorrelationFactory
 {
-    auto shim() const { return impl::shim<D, IPerceptionCorrelationFactory>(this); }
-
-public:
-
     Windows::Devices::Perception::Provider::PerceptionCorrelation Create(hstring_ref targetId, const Windows::Foundation::Numerics::float3 & position, const Windows::Foundation::Numerics::quaternion & orientation) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionCorrelationGroup
+struct WINRT_EBO impl_IPerceptionCorrelationGroup
 {
-    auto shim() const { return impl::shim<D, IPerceptionCorrelationGroup>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::Provider::PerceptionCorrelation> RelativeLocations() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionCorrelationGroupFactory
+struct WINRT_EBO impl_IPerceptionCorrelationGroupFactory
 {
-    auto shim() const { return impl::shim<D, IPerceptionCorrelationGroupFactory>(this); }
-
-public:
-
     Windows::Devices::Perception::Provider::PerceptionCorrelationGroup Create(const Windows::Foundation::Collections::IIterable<Windows::Devices::Perception::Provider::PerceptionCorrelation> & relativeLocations) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionFaceAuthenticationGroup
+struct WINRT_EBO impl_IPerceptionFaceAuthenticationGroup
 {
-    auto shim() const { return impl::shim<D, IPerceptionFaceAuthenticationGroup>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<hstring> FrameProviderIds() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionFaceAuthenticationGroupFactory
+struct WINRT_EBO impl_IPerceptionFaceAuthenticationGroupFactory
 {
-    auto shim() const { return impl::shim<D, IPerceptionFaceAuthenticationGroupFactory>(this); }
-
-public:
-
     Windows::Devices::Perception::Provider::PerceptionFaceAuthenticationGroup Create(const Windows::Foundation::Collections::IIterable<hstring> & ids, const Windows::Devices::Perception::Provider::PerceptionStartFaceAuthenticationHandler & startHandler, const Windows::Devices::Perception::Provider::PerceptionStopFaceAuthenticationHandler & stopHandler) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionFrame
+struct WINRT_EBO impl_IPerceptionFrame
 {
-    auto shim() const { return impl::shim<D, IPerceptionFrame>(this); }
-
-public:
-
     Windows::Foundation::TimeSpan RelativeTime() const;
     void RelativeTime(const Windows::Foundation::TimeSpan & value) const;
     Windows::Foundation::Collections::ValueSet Properties() const;
@@ -153,12 +113,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionFrameProvider
+struct WINRT_EBO impl_IPerceptionFrameProvider
 {
-    auto shim() const { return impl::shim<D, IPerceptionFrameProvider>(this); }
-
-public:
-
     Windows::Devices::Perception::Provider::PerceptionFrameProviderInfo FrameProviderInfo() const;
     bool Available() const;
     Windows::Foundation::Collections::IPropertySet Properties() const;
@@ -168,12 +124,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionFrameProviderInfo
+struct WINRT_EBO impl_IPerceptionFrameProviderInfo
 {
-    auto shim() const { return impl::shim<D, IPerceptionFrameProviderInfo>(this); }
-
-public:
-
     hstring Id() const;
     void Id(hstring_ref value) const;
     hstring DisplayName() const;
@@ -187,22 +139,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionFrameProviderManager
+struct WINRT_EBO impl_IPerceptionFrameProviderManager
 {
-    auto shim() const { return impl::shim<D, IPerceptionFrameProviderManager>(this); }
-
-public:
-
     Windows::Devices::Perception::Provider::IPerceptionFrameProvider GetFrameProvider(const Windows::Devices::Perception::Provider::PerceptionFrameProviderInfo & frameProviderInfo) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionFrameProviderManagerServiceStatics
+struct WINRT_EBO impl_IPerceptionFrameProviderManagerServiceStatics
 {
-    auto shim() const { return impl::shim<D, IPerceptionFrameProviderManagerServiceStatics>(this); }
-
-public:
-
     void RegisterFrameProviderInfo(const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager & manager, const Windows::Devices::Perception::Provider::PerceptionFrameProviderInfo & frameProviderInfo) const;
     void UnregisterFrameProviderInfo(const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager & manager, const Windows::Devices::Perception::Provider::PerceptionFrameProviderInfo & frameProviderInfo) const;
     void RegisterFaceAuthenticationGroup(const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager & manager, const Windows::Devices::Perception::Provider::PerceptionFaceAuthenticationGroup & faceAuthenticationGroup) const;
@@ -216,12 +160,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionPropertyChangeRequest
+struct WINRT_EBO impl_IPerceptionPropertyChangeRequest
 {
-    auto shim() const { return impl::shim<D, IPerceptionPropertyChangeRequest>(this); }
-
-public:
-
     hstring Name() const;
     Windows::IInspectable Value() const;
     Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeStatus Status() const;
@@ -230,23 +170,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionVideoFrameAllocator
+struct WINRT_EBO impl_IPerceptionVideoFrameAllocator
 {
-    auto shim() const { return impl::shim<D, IPerceptionVideoFrameAllocator>(this); }
-
-public:
-
     Windows::Devices::Perception::Provider::PerceptionFrame AllocateFrame() const;
     Windows::Devices::Perception::Provider::PerceptionFrame CopyFromVideoFrame(const Windows::Media::VideoFrame & frame) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionVideoFrameAllocatorFactory
+struct WINRT_EBO impl_IPerceptionVideoFrameAllocatorFactory
 {
-    auto shim() const { return impl::shim<D, IPerceptionVideoFrameAllocatorFactory>(this); }
-
-public:
-
     Windows::Devices::Perception::Provider::PerceptionVideoFrameAllocator Create(uint32_t maxOutstandingFrameCountForWrite, Windows::Graphics::Imaging::BitmapPixelFormat format, const Windows::Foundation::Size & resolution, Windows::Graphics::Imaging::BitmapAlphaMode alpha) const;
 };
 

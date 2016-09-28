@@ -52,10 +52,10 @@ template <> struct traits<Windows::Devices::Printers::Extensions::Print3DWorkflo
 
 namespace Windows::Devices::Printers::Extensions {
 
-template <typename T> class impl_IPrint3DWorkflow;
-template <typename T> class impl_IPrint3DWorkflow2;
-template <typename T> class impl_IPrint3DWorkflowPrintRequestedEventArgs;
-template <typename T> class impl_IPrint3DWorkflowPrinterChangedEventArgs;
+template <typename T> struct impl_IPrint3DWorkflow;
+template <typename T> struct impl_IPrint3DWorkflow2;
+template <typename T> struct impl_IPrint3DWorkflowPrintRequestedEventArgs;
+template <typename T> struct impl_IPrint3DWorkflowPrinterChangedEventArgs;
 
 }
 

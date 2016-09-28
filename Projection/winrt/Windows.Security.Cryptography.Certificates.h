@@ -2775,1235 +2775,1235 @@ namespace Windows::Security::Cryptography::Certificates {
 template <typename D> hstring impl_ICertificateRequestProperties<D>::Subject() const
 {
     hstring value;
-    check_hresult(shim()->get_Subject(put(value)));
+    check_hresult(static_cast<const ICertificateRequestProperties &>(static_cast<const D &>(*this))->get_Subject(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICertificateRequestProperties<D>::Subject(hstring_ref value) const
 {
-    check_hresult(shim()->put_Subject(get(value)));
+    check_hresult(static_cast<const ICertificateRequestProperties &>(static_cast<const D &>(*this))->put_Subject(get(value)));
 }
 
 template <typename D> hstring impl_ICertificateRequestProperties<D>::KeyAlgorithmName() const
 {
     hstring value;
-    check_hresult(shim()->get_KeyAlgorithmName(put(value)));
+    check_hresult(static_cast<const ICertificateRequestProperties &>(static_cast<const D &>(*this))->get_KeyAlgorithmName(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICertificateRequestProperties<D>::KeyAlgorithmName(hstring_ref value) const
 {
-    check_hresult(shim()->put_KeyAlgorithmName(get(value)));
+    check_hresult(static_cast<const ICertificateRequestProperties &>(static_cast<const D &>(*this))->put_KeyAlgorithmName(get(value)));
 }
 
 template <typename D> uint32_t impl_ICertificateRequestProperties<D>::KeySize() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_KeySize(&value));
+    check_hresult(static_cast<const ICertificateRequestProperties &>(static_cast<const D &>(*this))->get_KeySize(&value));
     return value;
 }
 
 template <typename D> void impl_ICertificateRequestProperties<D>::KeySize(uint32_t value) const
 {
-    check_hresult(shim()->put_KeySize(value));
+    check_hresult(static_cast<const ICertificateRequestProperties &>(static_cast<const D &>(*this))->put_KeySize(value));
 }
 
 template <typename D> hstring impl_ICertificateRequestProperties<D>::FriendlyName() const
 {
     hstring value;
-    check_hresult(shim()->get_FriendlyName(put(value)));
+    check_hresult(static_cast<const ICertificateRequestProperties &>(static_cast<const D &>(*this))->get_FriendlyName(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICertificateRequestProperties<D>::FriendlyName(hstring_ref value) const
 {
-    check_hresult(shim()->put_FriendlyName(get(value)));
+    check_hresult(static_cast<const ICertificateRequestProperties &>(static_cast<const D &>(*this))->put_FriendlyName(get(value)));
 }
 
 template <typename D> hstring impl_ICertificateRequestProperties<D>::HashAlgorithmName() const
 {
     hstring value;
-    check_hresult(shim()->get_HashAlgorithmName(put(value)));
+    check_hresult(static_cast<const ICertificateRequestProperties &>(static_cast<const D &>(*this))->get_HashAlgorithmName(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICertificateRequestProperties<D>::HashAlgorithmName(hstring_ref value) const
 {
-    check_hresult(shim()->put_HashAlgorithmName(get(value)));
+    check_hresult(static_cast<const ICertificateRequestProperties &>(static_cast<const D &>(*this))->put_HashAlgorithmName(get(value)));
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::ExportOption impl_ICertificateRequestProperties<D>::Exportable() const
 {
     Windows::Security::Cryptography::Certificates::ExportOption value {};
-    check_hresult(shim()->get_Exportable(&value));
+    check_hresult(static_cast<const ICertificateRequestProperties &>(static_cast<const D &>(*this))->get_Exportable(&value));
     return value;
 }
 
 template <typename D> void impl_ICertificateRequestProperties<D>::Exportable(Windows::Security::Cryptography::Certificates::ExportOption value) const
 {
-    check_hresult(shim()->put_Exportable(value));
+    check_hresult(static_cast<const ICertificateRequestProperties &>(static_cast<const D &>(*this))->put_Exportable(value));
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::EnrollKeyUsages impl_ICertificateRequestProperties<D>::KeyUsages() const
 {
     Windows::Security::Cryptography::Certificates::EnrollKeyUsages value {};
-    check_hresult(shim()->get_KeyUsages(&value));
+    check_hresult(static_cast<const ICertificateRequestProperties &>(static_cast<const D &>(*this))->get_KeyUsages(&value));
     return value;
 }
 
 template <typename D> void impl_ICertificateRequestProperties<D>::KeyUsages(Windows::Security::Cryptography::Certificates::EnrollKeyUsages value) const
 {
-    check_hresult(shim()->put_KeyUsages(value));
+    check_hresult(static_cast<const ICertificateRequestProperties &>(static_cast<const D &>(*this))->put_KeyUsages(value));
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::KeyProtectionLevel impl_ICertificateRequestProperties<D>::KeyProtectionLevel() const
 {
     Windows::Security::Cryptography::Certificates::KeyProtectionLevel value {};
-    check_hresult(shim()->get_KeyProtectionLevel(&value));
+    check_hresult(static_cast<const ICertificateRequestProperties &>(static_cast<const D &>(*this))->get_KeyProtectionLevel(&value));
     return value;
 }
 
 template <typename D> void impl_ICertificateRequestProperties<D>::KeyProtectionLevel(Windows::Security::Cryptography::Certificates::KeyProtectionLevel value) const
 {
-    check_hresult(shim()->put_KeyProtectionLevel(value));
+    check_hresult(static_cast<const ICertificateRequestProperties &>(static_cast<const D &>(*this))->put_KeyProtectionLevel(value));
 }
 
 template <typename D> hstring impl_ICertificateRequestProperties<D>::KeyStorageProviderName() const
 {
     hstring value;
-    check_hresult(shim()->get_KeyStorageProviderName(put(value)));
+    check_hresult(static_cast<const ICertificateRequestProperties &>(static_cast<const D &>(*this))->get_KeyStorageProviderName(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICertificateRequestProperties<D>::KeyStorageProviderName(hstring_ref value) const
 {
-    check_hresult(shim()->put_KeyStorageProviderName(get(value)));
+    check_hresult(static_cast<const ICertificateRequestProperties &>(static_cast<const D &>(*this))->put_KeyStorageProviderName(get(value)));
 }
 
 template <typename D> hstring impl_ICertificateRequestProperties2<D>::SmartcardReaderName() const
 {
     hstring value;
-    check_hresult(shim()->get_SmartcardReaderName(put(value)));
+    check_hresult(static_cast<const ICertificateRequestProperties2 &>(static_cast<const D &>(*this))->get_SmartcardReaderName(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICertificateRequestProperties2<D>::SmartcardReaderName(hstring_ref value) const
 {
-    check_hresult(shim()->put_SmartcardReaderName(get(value)));
+    check_hresult(static_cast<const ICertificateRequestProperties2 &>(static_cast<const D &>(*this))->put_SmartcardReaderName(get(value)));
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::Certificate impl_ICertificateRequestProperties2<D>::SigningCertificate() const
 {
     Windows::Security::Cryptography::Certificates::Certificate value { nullptr };
-    check_hresult(shim()->get_SigningCertificate(put(value)));
+    check_hresult(static_cast<const ICertificateRequestProperties2 &>(static_cast<const D &>(*this))->get_SigningCertificate(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICertificateRequestProperties2<D>::SigningCertificate(const Windows::Security::Cryptography::Certificates::Certificate & value) const
 {
-    check_hresult(shim()->put_SigningCertificate(get(value)));
+    check_hresult(static_cast<const ICertificateRequestProperties2 &>(static_cast<const D &>(*this))->put_SigningCertificate(get(value)));
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::Certificate impl_ICertificateRequestProperties2<D>::AttestationCredentialCertificate() const
 {
     Windows::Security::Cryptography::Certificates::Certificate value { nullptr };
-    check_hresult(shim()->get_AttestationCredentialCertificate(put(value)));
+    check_hresult(static_cast<const ICertificateRequestProperties2 &>(static_cast<const D &>(*this))->get_AttestationCredentialCertificate(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICertificateRequestProperties2<D>::AttestationCredentialCertificate(const Windows::Security::Cryptography::Certificates::Certificate & value) const
 {
-    check_hresult(shim()->put_AttestationCredentialCertificate(get(value)));
+    check_hresult(static_cast<const ICertificateRequestProperties2 &>(static_cast<const D &>(*this))->put_AttestationCredentialCertificate(get(value)));
 }
 
 template <typename D> hstring impl_ICertificateRequestProperties3<D>::CurveName() const
 {
     hstring value;
-    check_hresult(shim()->get_CurveName(put(value)));
+    check_hresult(static_cast<const ICertificateRequestProperties3 &>(static_cast<const D &>(*this))->get_CurveName(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICertificateRequestProperties3<D>::CurveName(hstring_ref value) const
 {
-    check_hresult(shim()->put_CurveName(get(value)));
+    check_hresult(static_cast<const ICertificateRequestProperties3 &>(static_cast<const D &>(*this))->put_CurveName(get(value)));
 }
 
 template <typename D> com_array<uint8_t> impl_ICertificateRequestProperties3<D>::CurveParameters() const
 {
     com_array<uint8_t> value {};
-    check_hresult(shim()->get_CurveParameters(put_size(value), put(value)));
+    check_hresult(static_cast<const ICertificateRequestProperties3 &>(static_cast<const D &>(*this))->get_CurveParameters(put_size(value), put(value)));
     return value;
 }
 
 template <typename D> void impl_ICertificateRequestProperties3<D>::CurveParameters(array_ref<const uint8_t> value) const
 {
-    check_hresult(shim()->put_CurveParameters(value.size(), get(value)));
+    check_hresult(static_cast<const ICertificateRequestProperties3 &>(static_cast<const D &>(*this))->put_CurveParameters(value.size(), get(value)));
 }
 
 template <typename D> hstring impl_ICertificateRequestProperties3<D>::ContainerNamePrefix() const
 {
     hstring value;
-    check_hresult(shim()->get_ContainerNamePrefix(put(value)));
+    check_hresult(static_cast<const ICertificateRequestProperties3 &>(static_cast<const D &>(*this))->get_ContainerNamePrefix(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICertificateRequestProperties3<D>::ContainerNamePrefix(hstring_ref value) const
 {
-    check_hresult(shim()->put_ContainerNamePrefix(get(value)));
+    check_hresult(static_cast<const ICertificateRequestProperties3 &>(static_cast<const D &>(*this))->put_ContainerNamePrefix(get(value)));
 }
 
 template <typename D> hstring impl_ICertificateRequestProperties3<D>::ContainerName() const
 {
     hstring value;
-    check_hresult(shim()->get_ContainerName(put(value)));
+    check_hresult(static_cast<const ICertificateRequestProperties3 &>(static_cast<const D &>(*this))->get_ContainerName(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICertificateRequestProperties3<D>::ContainerName(hstring_ref value) const
 {
-    check_hresult(shim()->put_ContainerName(get(value)));
+    check_hresult(static_cast<const ICertificateRequestProperties3 &>(static_cast<const D &>(*this))->put_ContainerName(get(value)));
 }
 
 template <typename D> bool impl_ICertificateRequestProperties3<D>::UseExistingKey() const
 {
     bool value {};
-    check_hresult(shim()->get_UseExistingKey(&value));
+    check_hresult(static_cast<const ICertificateRequestProperties3 &>(static_cast<const D &>(*this))->get_UseExistingKey(&value));
     return value;
 }
 
 template <typename D> void impl_ICertificateRequestProperties3<D>::UseExistingKey(bool value) const
 {
-    check_hresult(shim()->put_UseExistingKey(value));
+    check_hresult(static_cast<const ICertificateRequestProperties3 &>(static_cast<const D &>(*this))->put_UseExistingKey(value));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_ICertificateEnrollmentManagerStatics<D>::CreateRequestAsync(const Windows::Security::Cryptography::Certificates::CertificateRequestProperties & request) const
 {
     Windows::Foundation::IAsyncOperation<hstring> value;
-    check_hresult(shim()->abi_CreateRequestAsync(get(request), put(value)));
+    check_hresult(static_cast<const ICertificateEnrollmentManagerStatics &>(static_cast<const D &>(*this))->abi_CreateRequestAsync(get(request), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_ICertificateEnrollmentManagerStatics<D>::InstallCertificateAsync(hstring_ref certificate, Windows::Security::Cryptography::Certificates::InstallOptions installOption) const
 {
     Windows::Foundation::IAsyncAction value;
-    check_hresult(shim()->abi_InstallCertificateAsync(get(certificate), installOption, put(value)));
+    check_hresult(static_cast<const ICertificateEnrollmentManagerStatics &>(static_cast<const D &>(*this))->abi_InstallCertificateAsync(get(certificate), installOption, put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_ICertificateEnrollmentManagerStatics<D>::ImportPfxDataAsync(hstring_ref pfxData, hstring_ref password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, hstring_ref friendlyName) const
 {
     Windows::Foundation::IAsyncAction value;
-    check_hresult(shim()->abi_ImportPfxDataAsync(get(pfxData), get(password), exportable, keyProtectionLevel, installOption, get(friendlyName), put(value)));
+    check_hresult(static_cast<const ICertificateEnrollmentManagerStatics &>(static_cast<const D &>(*this))->abi_ImportPfxDataAsync(get(pfxData), get(password), exportable, keyProtectionLevel, installOption, get(friendlyName), put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::UserCertificateEnrollmentManager impl_ICertificateEnrollmentManagerStatics2<D>::UserCertificateEnrollmentManager() const
 {
     Windows::Security::Cryptography::Certificates::UserCertificateEnrollmentManager value { nullptr };
-    check_hresult(shim()->get_UserCertificateEnrollmentManager(put(value)));
+    check_hresult(static_cast<const ICertificateEnrollmentManagerStatics2 &>(static_cast<const D &>(*this))->get_UserCertificateEnrollmentManager(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_ICertificateEnrollmentManagerStatics2<D>::ImportPfxDataAsync(hstring_ref pfxData, hstring_ref password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, hstring_ref friendlyName, hstring_ref keyStorageProvider) const
 {
     Windows::Foundation::IAsyncAction value;
-    check_hresult(shim()->abi_ImportPfxDataToKspAsync(get(pfxData), get(password), exportable, keyProtectionLevel, installOption, get(friendlyName), get(keyStorageProvider), put(value)));
+    check_hresult(static_cast<const ICertificateEnrollmentManagerStatics2 &>(static_cast<const D &>(*this))->abi_ImportPfxDataToKspAsync(get(pfxData), get(password), exportable, keyProtectionLevel, installOption, get(friendlyName), get(keyStorageProvider), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_ICertificateEnrollmentManagerStatics3<D>::ImportPfxDataAsync(hstring_ref pfxData, hstring_ref password, const Windows::Security::Cryptography::Certificates::PfxImportParameters & pfxImportParameters) const
 {
     Windows::Foundation::IAsyncAction value;
-    check_hresult(shim()->abi_ImportPfxDataToKspWithParametersAsync(get(pfxData), get(password), get(pfxImportParameters), put(value)));
+    check_hresult(static_cast<const ICertificateEnrollmentManagerStatics3 &>(static_cast<const D &>(*this))->abi_ImportPfxDataToKspWithParametersAsync(get(pfxData), get(password), get(pfxImportParameters), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IKeyAttestationHelperStatics<D>::DecryptTpmAttestationCredentialAsync(hstring_ref credential) const
 {
     Windows::Foundation::IAsyncOperation<hstring> value;
-    check_hresult(shim()->abi_DecryptTpmAttestationCredentialAsync(get(credential), put(value)));
+    check_hresult(static_cast<const IKeyAttestationHelperStatics &>(static_cast<const D &>(*this))->abi_DecryptTpmAttestationCredentialAsync(get(credential), put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyAttestationHelperStatics<D>::GetTpmAttestationCredentialId(hstring_ref credential) const
 {
     hstring value;
-    check_hresult(shim()->abi_GetTpmAttestationCredentialId(get(credential), put(value)));
+    check_hresult(static_cast<const IKeyAttestationHelperStatics &>(static_cast<const D &>(*this))->abi_GetTpmAttestationCredentialId(get(credential), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IKeyAttestationHelperStatics2<D>::DecryptTpmAttestationCredentialAsync(hstring_ref credential, hstring_ref containerName) const
 {
     Windows::Foundation::IAsyncOperation<hstring> value;
-    check_hresult(shim()->abi_DecryptTpmAttestationCredentialWithContainerNameAsync(get(credential), get(containerName), put(value)));
+    check_hresult(static_cast<const IKeyAttestationHelperStatics2 &>(static_cast<const D &>(*this))->abi_DecryptTpmAttestationCredentialWithContainerNameAsync(get(credential), get(containerName), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>> impl_ICertificateStoresStatics<D>::FindAllAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>> value;
-    check_hresult(shim()->abi_FindAllAsync(put(value)));
+    check_hresult(static_cast<const ICertificateStoresStatics &>(static_cast<const D &>(*this))->abi_FindAllAsync(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>> impl_ICertificateStoresStatics<D>::FindAllAsync(const Windows::Security::Cryptography::Certificates::CertificateQuery & query) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>> value;
-    check_hresult(shim()->abi_FindAllWithQueryAsync(get(query), put(value)));
+    check_hresult(static_cast<const ICertificateStoresStatics &>(static_cast<const D &>(*this))->abi_FindAllWithQueryAsync(get(query), put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::CertificateStore impl_ICertificateStoresStatics<D>::TrustedRootCertificationAuthorities() const
 {
     Windows::Security::Cryptography::Certificates::CertificateStore value { nullptr };
-    check_hresult(shim()->get_TrustedRootCertificationAuthorities(put(value)));
+    check_hresult(static_cast<const ICertificateStoresStatics &>(static_cast<const D &>(*this))->get_TrustedRootCertificationAuthorities(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::CertificateStore impl_ICertificateStoresStatics<D>::IntermediateCertificationAuthorities() const
 {
     Windows::Security::Cryptography::Certificates::CertificateStore value { nullptr };
-    check_hresult(shim()->get_IntermediateCertificationAuthorities(put(value)));
+    check_hresult(static_cast<const ICertificateStoresStatics &>(static_cast<const D &>(*this))->get_IntermediateCertificationAuthorities(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::CertificateStore impl_ICertificateStoresStatics<D>::GetStoreByName(hstring_ref storeName) const
 {
     Windows::Security::Cryptography::Certificates::CertificateStore value { nullptr };
-    check_hresult(shim()->abi_GetStoreByName(get(storeName), put(value)));
+    check_hresult(static_cast<const ICertificateStoresStatics &>(static_cast<const D &>(*this))->abi_GetStoreByName(get(storeName), put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::UserCertificateStore impl_ICertificateStoresStatics2<D>::GetUserStoreByName(hstring_ref storeName) const
 {
     Windows::Security::Cryptography::Certificates::UserCertificateStore result { nullptr };
-    check_hresult(shim()->abi_GetUserStoreByName(get(storeName), put(result)));
+    check_hresult(static_cast<const ICertificateStoresStatics2 &>(static_cast<const D &>(*this))->abi_GetUserStoreByName(get(storeName), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IUserCertificateEnrollmentManager<D>::CreateRequestAsync(const Windows::Security::Cryptography::Certificates::CertificateRequestProperties & request) const
 {
     Windows::Foundation::IAsyncOperation<hstring> value;
-    check_hresult(shim()->abi_CreateRequestAsync(get(request), put(value)));
+    check_hresult(static_cast<const IUserCertificateEnrollmentManager &>(static_cast<const D &>(*this))->abi_CreateRequestAsync(get(request), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IUserCertificateEnrollmentManager<D>::InstallCertificateAsync(hstring_ref certificate, Windows::Security::Cryptography::Certificates::InstallOptions installOption) const
 {
     Windows::Foundation::IAsyncAction value;
-    check_hresult(shim()->abi_InstallCertificateAsync(get(certificate), installOption, put(value)));
+    check_hresult(static_cast<const IUserCertificateEnrollmentManager &>(static_cast<const D &>(*this))->abi_InstallCertificateAsync(get(certificate), installOption, put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IUserCertificateEnrollmentManager<D>::ImportPfxDataAsync(hstring_ref pfxData, hstring_ref password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, hstring_ref friendlyName) const
 {
     Windows::Foundation::IAsyncAction value;
-    check_hresult(shim()->abi_ImportPfxDataAsync(get(pfxData), get(password), exportable, keyProtectionLevel, installOption, get(friendlyName), put(value)));
+    check_hresult(static_cast<const IUserCertificateEnrollmentManager &>(static_cast<const D &>(*this))->abi_ImportPfxDataAsync(get(pfxData), get(password), exportable, keyProtectionLevel, installOption, get(friendlyName), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IUserCertificateEnrollmentManager<D>::ImportPfxDataAsync(hstring_ref pfxData, hstring_ref password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, hstring_ref friendlyName, hstring_ref keyStorageProvider) const
 {
     Windows::Foundation::IAsyncAction value;
-    check_hresult(shim()->abi_ImportPfxDataToKspAsync(get(pfxData), get(password), exportable, keyProtectionLevel, installOption, get(friendlyName), get(keyStorageProvider), put(value)));
+    check_hresult(static_cast<const IUserCertificateEnrollmentManager &>(static_cast<const D &>(*this))->abi_ImportPfxDataToKspAsync(get(pfxData), get(password), exportable, keyProtectionLevel, installOption, get(friendlyName), get(keyStorageProvider), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IUserCertificateEnrollmentManager2<D>::ImportPfxDataAsync(hstring_ref pfxData, hstring_ref password, const Windows::Security::Cryptography::Certificates::PfxImportParameters & pfxImportParameters) const
 {
     Windows::Foundation::IAsyncAction value;
-    check_hresult(shim()->abi_ImportPfxDataToKspWithParametersAsync(get(pfxData), get(password), get(pfxImportParameters), put(value)));
+    check_hresult(static_cast<const IUserCertificateEnrollmentManager2 &>(static_cast<const D &>(*this))->abi_ImportPfxDataToKspWithParametersAsync(get(pfxData), get(password), get(pfxImportParameters), put(value)));
     return value;
 }
 
 template <typename D> void impl_ICertificateStore<D>::Add(const Windows::Security::Cryptography::Certificates::Certificate & certificate) const
 {
-    check_hresult(shim()->abi_Add(get(certificate)));
+    check_hresult(static_cast<const ICertificateStore &>(static_cast<const D &>(*this))->abi_Add(get(certificate)));
 }
 
 template <typename D> void impl_ICertificateStore<D>::Delete(const Windows::Security::Cryptography::Certificates::Certificate & certificate) const
 {
-    check_hresult(shim()->abi_Delete(get(certificate)));
+    check_hresult(static_cast<const ICertificateStore &>(static_cast<const D &>(*this))->abi_Delete(get(certificate)));
 }
 
 template <typename D> hstring impl_ICertificateStore2<D>::Name() const
 {
     hstring value;
-    check_hresult(shim()->get_Name(put(value)));
+    check_hresult(static_cast<const ICertificateStore2 &>(static_cast<const D &>(*this))->get_Name(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IUserCertificateStore<D>::RequestAddAsync(const Windows::Security::Cryptography::Certificates::Certificate & certificate) const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
-    check_hresult(shim()->abi_RequestAddAsync(get(certificate), put(result)));
+    check_hresult(static_cast<const IUserCertificateStore &>(static_cast<const D &>(*this))->abi_RequestAddAsync(get(certificate), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IUserCertificateStore<D>::RequestDeleteAsync(const Windows::Security::Cryptography::Certificates::Certificate & certificate) const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
-    check_hresult(shim()->abi_RequestDeleteAsync(get(certificate), put(result)));
+    check_hresult(static_cast<const IUserCertificateStore &>(static_cast<const D &>(*this))->abi_RequestDeleteAsync(get(certificate), put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IUserCertificateStore<D>::Name() const
 {
     hstring value;
-    check_hresult(shim()->get_Name(put(value)));
+    check_hresult(static_cast<const IUserCertificateStore &>(static_cast<const D &>(*this))->get_Name(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStandardCertificateStoreNamesStatics<D>::Personal() const
 {
     hstring value;
-    check_hresult(shim()->get_Personal(put(value)));
+    check_hresult(static_cast<const IStandardCertificateStoreNamesStatics &>(static_cast<const D &>(*this))->get_Personal(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStandardCertificateStoreNamesStatics<D>::TrustedRootCertificationAuthorities() const
 {
     hstring value;
-    check_hresult(shim()->get_TrustedRootCertificationAuthorities(put(value)));
+    check_hresult(static_cast<const IStandardCertificateStoreNamesStatics &>(static_cast<const D &>(*this))->get_TrustedRootCertificationAuthorities(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStandardCertificateStoreNamesStatics<D>::IntermediateCertificationAuthorities() const
 {
     hstring value;
-    check_hresult(shim()->get_IntermediateCertificationAuthorities(put(value)));
+    check_hresult(static_cast<const IStandardCertificateStoreNamesStatics &>(static_cast<const D &>(*this))->get_IntermediateCertificationAuthorities(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyAlgorithmNamesStatics<D>::Rsa() const
 {
     hstring value;
-    check_hresult(shim()->get_Rsa(put(value)));
+    check_hresult(static_cast<const IKeyAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_Rsa(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyAlgorithmNamesStatics<D>::Dsa() const
 {
     hstring value;
-    check_hresult(shim()->get_Dsa(put(value)));
+    check_hresult(static_cast<const IKeyAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_Dsa(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyAlgorithmNamesStatics<D>::Ecdh256() const
 {
     hstring value;
-    check_hresult(shim()->get_Ecdh256(put(value)));
+    check_hresult(static_cast<const IKeyAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_Ecdh256(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyAlgorithmNamesStatics<D>::Ecdh384() const
 {
     hstring value;
-    check_hresult(shim()->get_Ecdh384(put(value)));
+    check_hresult(static_cast<const IKeyAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_Ecdh384(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyAlgorithmNamesStatics<D>::Ecdh521() const
 {
     hstring value;
-    check_hresult(shim()->get_Ecdh521(put(value)));
+    check_hresult(static_cast<const IKeyAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_Ecdh521(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyAlgorithmNamesStatics<D>::Ecdsa256() const
 {
     hstring value;
-    check_hresult(shim()->get_Ecdsa256(put(value)));
+    check_hresult(static_cast<const IKeyAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_Ecdsa256(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyAlgorithmNamesStatics<D>::Ecdsa384() const
 {
     hstring value;
-    check_hresult(shim()->get_Ecdsa384(put(value)));
+    check_hresult(static_cast<const IKeyAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_Ecdsa384(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyAlgorithmNamesStatics<D>::Ecdsa521() const
 {
     hstring value;
-    check_hresult(shim()->get_Ecdsa521(put(value)));
+    check_hresult(static_cast<const IKeyAlgorithmNamesStatics &>(static_cast<const D &>(*this))->get_Ecdsa521(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyAlgorithmNamesStatics2<D>::Ecdsa() const
 {
     hstring value;
-    check_hresult(shim()->get_Ecdsa(put(value)));
+    check_hresult(static_cast<const IKeyAlgorithmNamesStatics2 &>(static_cast<const D &>(*this))->get_Ecdsa(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyAlgorithmNamesStatics2<D>::Ecdh() const
 {
     hstring value;
-    check_hresult(shim()->get_Ecdh(put(value)));
+    check_hresult(static_cast<const IKeyAlgorithmNamesStatics2 &>(static_cast<const D &>(*this))->get_Ecdh(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyStorageProviderNamesStatics<D>::SoftwareKeyStorageProvider() const
 {
     hstring value;
-    check_hresult(shim()->get_SoftwareKeyStorageProvider(put(value)));
+    check_hresult(static_cast<const IKeyStorageProviderNamesStatics &>(static_cast<const D &>(*this))->get_SoftwareKeyStorageProvider(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyStorageProviderNamesStatics<D>::SmartcardKeyStorageProvider() const
 {
     hstring value;
-    check_hresult(shim()->get_SmartcardKeyStorageProvider(put(value)));
+    check_hresult(static_cast<const IKeyStorageProviderNamesStatics &>(static_cast<const D &>(*this))->get_SmartcardKeyStorageProvider(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyStorageProviderNamesStatics<D>::PlatformKeyStorageProvider() const
 {
     hstring value;
-    check_hresult(shim()->get_PlatformKeyStorageProvider(put(value)));
+    check_hresult(static_cast<const IKeyStorageProviderNamesStatics &>(static_cast<const D &>(*this))->get_PlatformKeyStorageProvider(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKeyStorageProviderNamesStatics2<D>::PassportKeyStorageProvider() const
 {
     hstring value;
-    check_hresult(shim()->get_PassportKeyStorageProvider(put(value)));
+    check_hresult(static_cast<const IKeyStorageProviderNamesStatics2 &>(static_cast<const D &>(*this))->get_PassportKeyStorageProvider(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IChainBuildingParameters<D>::EnhancedKeyUsages() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(shim()->get_EnhancedKeyUsages(put(value)));
+    check_hresult(static_cast<const IChainBuildingParameters &>(static_cast<const D &>(*this))->get_EnhancedKeyUsages(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IChainBuildingParameters<D>::ValidationTimestamp() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->get_ValidationTimestamp(put(value)));
+    check_hresult(static_cast<const IChainBuildingParameters &>(static_cast<const D &>(*this))->get_ValidationTimestamp(put(value)));
     return value;
 }
 
 template <typename D> void impl_IChainBuildingParameters<D>::ValidationTimestamp(const Windows::Foundation::DateTime & value) const
 {
-    check_hresult(shim()->put_ValidationTimestamp(get(value)));
+    check_hresult(static_cast<const IChainBuildingParameters &>(static_cast<const D &>(*this))->put_ValidationTimestamp(get(value)));
 }
 
 template <typename D> bool impl_IChainBuildingParameters<D>::RevocationCheckEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_RevocationCheckEnabled(&value));
+    check_hresult(static_cast<const IChainBuildingParameters &>(static_cast<const D &>(*this))->get_RevocationCheckEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IChainBuildingParameters<D>::RevocationCheckEnabled(bool value) const
 {
-    check_hresult(shim()->put_RevocationCheckEnabled(value));
+    check_hresult(static_cast<const IChainBuildingParameters &>(static_cast<const D &>(*this))->put_RevocationCheckEnabled(value));
 }
 
 template <typename D> bool impl_IChainBuildingParameters<D>::NetworkRetrievalEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_NetworkRetrievalEnabled(&value));
+    check_hresult(static_cast<const IChainBuildingParameters &>(static_cast<const D &>(*this))->get_NetworkRetrievalEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IChainBuildingParameters<D>::NetworkRetrievalEnabled(bool value) const
 {
-    check_hresult(shim()->put_NetworkRetrievalEnabled(value));
+    check_hresult(static_cast<const IChainBuildingParameters &>(static_cast<const D &>(*this))->put_NetworkRetrievalEnabled(value));
 }
 
 template <typename D> bool impl_IChainBuildingParameters<D>::AuthorityInformationAccessEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_AuthorityInformationAccessEnabled(&value));
+    check_hresult(static_cast<const IChainBuildingParameters &>(static_cast<const D &>(*this))->get_AuthorityInformationAccessEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IChainBuildingParameters<D>::AuthorityInformationAccessEnabled(bool value) const
 {
-    check_hresult(shim()->put_AuthorityInformationAccessEnabled(value));
+    check_hresult(static_cast<const IChainBuildingParameters &>(static_cast<const D &>(*this))->put_AuthorityInformationAccessEnabled(value));
 }
 
 template <typename D> bool impl_IChainBuildingParameters<D>::CurrentTimeValidationEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_CurrentTimeValidationEnabled(&value));
+    check_hresult(static_cast<const IChainBuildingParameters &>(static_cast<const D &>(*this))->get_CurrentTimeValidationEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IChainBuildingParameters<D>::CurrentTimeValidationEnabled(bool value) const
 {
-    check_hresult(shim()->put_CurrentTimeValidationEnabled(value));
+    check_hresult(static_cast<const IChainBuildingParameters &>(static_cast<const D &>(*this))->put_CurrentTimeValidationEnabled(value));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Security::Cryptography::Certificates::Certificate> impl_IChainBuildingParameters<D>::ExclusiveTrustRoots() const
 {
     Windows::Foundation::Collections::IVector<Windows::Security::Cryptography::Certificates::Certificate> certificates;
-    check_hresult(shim()->get_ExclusiveTrustRoots(put(certificates)));
+    check_hresult(static_cast<const IChainBuildingParameters &>(static_cast<const D &>(*this))->get_ExclusiveTrustRoots(put(certificates)));
     return certificates;
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::CertificateChainPolicy impl_IChainValidationParameters<D>::CertificateChainPolicy() const
 {
     Windows::Security::Cryptography::Certificates::CertificateChainPolicy value {};
-    check_hresult(shim()->get_CertificateChainPolicy(&value));
+    check_hresult(static_cast<const IChainValidationParameters &>(static_cast<const D &>(*this))->get_CertificateChainPolicy(&value));
     return value;
 }
 
 template <typename D> void impl_IChainValidationParameters<D>::CertificateChainPolicy(Windows::Security::Cryptography::Certificates::CertificateChainPolicy value) const
 {
-    check_hresult(shim()->put_CertificateChainPolicy(value));
+    check_hresult(static_cast<const IChainValidationParameters &>(static_cast<const D &>(*this))->put_CertificateChainPolicy(value));
 }
 
 template <typename D> Windows::Networking::HostName impl_IChainValidationParameters<D>::ServerDnsName() const
 {
     Windows::Networking::HostName value { nullptr };
-    check_hresult(shim()->get_ServerDnsName(put(value)));
+    check_hresult(static_cast<const IChainValidationParameters &>(static_cast<const D &>(*this))->get_ServerDnsName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IChainValidationParameters<D>::ServerDnsName(const Windows::Networking::HostName & value) const
 {
-    check_hresult(shim()->put_ServerDnsName(get(value)));
+    check_hresult(static_cast<const IChainValidationParameters &>(static_cast<const D &>(*this))->put_ServerDnsName(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_ICertificateQuery<D>::EnhancedKeyUsages() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(shim()->get_EnhancedKeyUsages(put(value)));
+    check_hresult(static_cast<const ICertificateQuery &>(static_cast<const D &>(*this))->get_EnhancedKeyUsages(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICertificateQuery<D>::IssuerName() const
 {
     hstring value;
-    check_hresult(shim()->get_IssuerName(put(value)));
+    check_hresult(static_cast<const ICertificateQuery &>(static_cast<const D &>(*this))->get_IssuerName(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICertificateQuery<D>::IssuerName(hstring_ref value) const
 {
-    check_hresult(shim()->put_IssuerName(get(value)));
+    check_hresult(static_cast<const ICertificateQuery &>(static_cast<const D &>(*this))->put_IssuerName(get(value)));
 }
 
 template <typename D> hstring impl_ICertificateQuery<D>::FriendlyName() const
 {
     hstring value;
-    check_hresult(shim()->get_FriendlyName(put(value)));
+    check_hresult(static_cast<const ICertificateQuery &>(static_cast<const D &>(*this))->get_FriendlyName(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICertificateQuery<D>::FriendlyName(hstring_ref value) const
 {
-    check_hresult(shim()->put_FriendlyName(get(value)));
+    check_hresult(static_cast<const ICertificateQuery &>(static_cast<const D &>(*this))->put_FriendlyName(get(value)));
 }
 
 template <typename D> com_array<uint8_t> impl_ICertificateQuery<D>::Thumbprint() const
 {
     com_array<uint8_t> value {};
-    check_hresult(shim()->get_Thumbprint(put_size(value), put(value)));
+    check_hresult(static_cast<const ICertificateQuery &>(static_cast<const D &>(*this))->get_Thumbprint(put_size(value), put(value)));
     return value;
 }
 
 template <typename D> void impl_ICertificateQuery<D>::Thumbprint(array_ref<const uint8_t> value) const
 {
-    check_hresult(shim()->put_Thumbprint(value.size(), get(value)));
+    check_hresult(static_cast<const ICertificateQuery &>(static_cast<const D &>(*this))->put_Thumbprint(value.size(), get(value)));
 }
 
 template <typename D> bool impl_ICertificateQuery<D>::HardwareOnly() const
 {
     bool value {};
-    check_hresult(shim()->get_HardwareOnly(&value));
+    check_hresult(static_cast<const ICertificateQuery &>(static_cast<const D &>(*this))->get_HardwareOnly(&value));
     return value;
 }
 
 template <typename D> void impl_ICertificateQuery<D>::HardwareOnly(bool value) const
 {
-    check_hresult(shim()->put_HardwareOnly(value));
+    check_hresult(static_cast<const ICertificateQuery &>(static_cast<const D &>(*this))->put_HardwareOnly(value));
 }
 
 template <typename D> bool impl_ICertificateQuery2<D>::IncludeDuplicates() const
 {
     bool value {};
-    check_hresult(shim()->get_IncludeDuplicates(&value));
+    check_hresult(static_cast<const ICertificateQuery2 &>(static_cast<const D &>(*this))->get_IncludeDuplicates(&value));
     return value;
 }
 
 template <typename D> void impl_ICertificateQuery2<D>::IncludeDuplicates(bool value) const
 {
-    check_hresult(shim()->put_IncludeDuplicates(value));
+    check_hresult(static_cast<const ICertificateQuery2 &>(static_cast<const D &>(*this))->put_IncludeDuplicates(value));
 }
 
 template <typename D> bool impl_ICertificateQuery2<D>::IncludeExpiredCertificates() const
 {
     bool value {};
-    check_hresult(shim()->get_IncludeExpiredCertificates(&value));
+    check_hresult(static_cast<const ICertificateQuery2 &>(static_cast<const D &>(*this))->get_IncludeExpiredCertificates(&value));
     return value;
 }
 
 template <typename D> void impl_ICertificateQuery2<D>::IncludeExpiredCertificates(bool value) const
 {
-    check_hresult(shim()->put_IncludeExpiredCertificates(value));
+    check_hresult(static_cast<const ICertificateQuery2 &>(static_cast<const D &>(*this))->put_IncludeExpiredCertificates(value));
 }
 
 template <typename D> hstring impl_ICertificateQuery2<D>::StoreName() const
 {
     hstring value;
-    check_hresult(shim()->get_StoreName(put(value)));
+    check_hresult(static_cast<const ICertificateQuery2 &>(static_cast<const D &>(*this))->get_StoreName(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICertificateQuery2<D>::StoreName(hstring_ref value) const
 {
-    check_hresult(shim()->put_StoreName(get(value)));
+    check_hresult(static_cast<const ICertificateQuery2 &>(static_cast<const D &>(*this))->put_StoreName(get(value)));
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::ChainValidationResult impl_ICertificateChain<D>::Validate() const
 {
     Windows::Security::Cryptography::Certificates::ChainValidationResult status {};
-    check_hresult(shim()->abi_Validate(&status));
+    check_hresult(static_cast<const ICertificateChain &>(static_cast<const D &>(*this))->abi_Validate(&status));
     return status;
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::ChainValidationResult impl_ICertificateChain<D>::Validate(const Windows::Security::Cryptography::Certificates::ChainValidationParameters & parameter) const
 {
     Windows::Security::Cryptography::Certificates::ChainValidationResult status {};
-    check_hresult(shim()->abi_ValidateWithParameters(get(parameter), &status));
+    check_hresult(static_cast<const ICertificateChain &>(static_cast<const D &>(*this))->abi_ValidateWithParameters(get(parameter), &status));
     return status;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> impl_ICertificateChain<D>::GetCertificates(bool includeRoot) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> certificates;
-    check_hresult(shim()->abi_GetCertificates(includeRoot, put(certificates)));
+    check_hresult(static_cast<const ICertificateChain &>(static_cast<const D &>(*this))->abi_GetCertificates(includeRoot, put(certificates)));
     return certificates;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Certificates::CertificateChain> impl_ICertificate<D>::BuildChainAsync(const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> & certificates) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Certificates::CertificateChain> value;
-    check_hresult(shim()->abi_BuildChainAsync(get(certificates), put(value)));
+    check_hresult(static_cast<const ICertificate &>(static_cast<const D &>(*this))->abi_BuildChainAsync(get(certificates), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Certificates::CertificateChain> impl_ICertificate<D>::BuildChainAsync(const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> & certificates, const Windows::Security::Cryptography::Certificates::ChainBuildingParameters & parameters) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Certificates::CertificateChain> value;
-    check_hresult(shim()->abi_BuildChainWithParametersAsync(get(certificates), get(parameters), put(value)));
+    check_hresult(static_cast<const ICertificate &>(static_cast<const D &>(*this))->abi_BuildChainWithParametersAsync(get(certificates), get(parameters), put(value)));
     return value;
 }
 
 template <typename D> com_array<uint8_t> impl_ICertificate<D>::SerialNumber() const
 {
     com_array<uint8_t> value {};
-    check_hresult(shim()->get_SerialNumber(put_size(value), put(value)));
+    check_hresult(static_cast<const ICertificate &>(static_cast<const D &>(*this))->get_SerialNumber(put_size(value), put(value)));
     return value;
 }
 
 template <typename D> com_array<uint8_t> impl_ICertificate<D>::GetHashValue() const
 {
     com_array<uint8_t> value {};
-    check_hresult(shim()->abi_GetHashValue(put_size(value), put(value)));
+    check_hresult(static_cast<const ICertificate &>(static_cast<const D &>(*this))->abi_GetHashValue(put_size(value), put(value)));
     return value;
 }
 
 template <typename D> com_array<uint8_t> impl_ICertificate<D>::GetHashValue(hstring_ref hashAlgorithmName) const
 {
     com_array<uint8_t> value {};
-    check_hresult(shim()->abi_GetHashValueWithAlgorithm(get(hashAlgorithmName), put_size(value), put(value)));
+    check_hresult(static_cast<const ICertificate &>(static_cast<const D &>(*this))->abi_GetHashValueWithAlgorithm(get(hashAlgorithmName), put_size(value), put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_ICertificate<D>::GetCertificateBlob() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(shim()->abi_GetCertificateBlob(put(value)));
+    check_hresult(static_cast<const ICertificate &>(static_cast<const D &>(*this))->abi_GetCertificateBlob(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICertificate<D>::Subject() const
 {
     hstring value;
-    check_hresult(shim()->get_Subject(put(value)));
+    check_hresult(static_cast<const ICertificate &>(static_cast<const D &>(*this))->get_Subject(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICertificate<D>::Issuer() const
 {
     hstring value;
-    check_hresult(shim()->get_Issuer(put(value)));
+    check_hresult(static_cast<const ICertificate &>(static_cast<const D &>(*this))->get_Issuer(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ICertificate<D>::HasPrivateKey() const
 {
     bool value {};
-    check_hresult(shim()->get_HasPrivateKey(&value));
+    check_hresult(static_cast<const ICertificate &>(static_cast<const D &>(*this))->get_HasPrivateKey(&value));
     return value;
 }
 
 template <typename D> bool impl_ICertificate<D>::IsStronglyProtected() const
 {
     bool value {};
-    check_hresult(shim()->get_IsStronglyProtected(&value));
+    check_hresult(static_cast<const ICertificate &>(static_cast<const D &>(*this))->get_IsStronglyProtected(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_ICertificate<D>::ValidFrom() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->get_ValidFrom(put(value)));
+    check_hresult(static_cast<const ICertificate &>(static_cast<const D &>(*this))->get_ValidFrom(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_ICertificate<D>::ValidTo() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->get_ValidTo(put(value)));
+    check_hresult(static_cast<const ICertificate &>(static_cast<const D &>(*this))->get_ValidTo(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_ICertificate<D>::EnhancedKeyUsages() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(shim()->get_EnhancedKeyUsages(put(value)));
+    check_hresult(static_cast<const ICertificate &>(static_cast<const D &>(*this))->get_EnhancedKeyUsages(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICertificate<D>::FriendlyName(hstring_ref value) const
 {
-    check_hresult(shim()->put_FriendlyName(get(value)));
+    check_hresult(static_cast<const ICertificate &>(static_cast<const D &>(*this))->put_FriendlyName(get(value)));
 }
 
 template <typename D> hstring impl_ICertificate<D>::FriendlyName() const
 {
     hstring value;
-    check_hresult(shim()->get_FriendlyName(put(value)));
+    check_hresult(static_cast<const ICertificate &>(static_cast<const D &>(*this))->get_FriendlyName(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ICertificate2<D>::IsSecurityDeviceBound() const
 {
     bool value {};
-    check_hresult(shim()->get_IsSecurityDeviceBound(&value));
+    check_hresult(static_cast<const ICertificate2 &>(static_cast<const D &>(*this))->get_IsSecurityDeviceBound(&value));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::CertificateKeyUsages impl_ICertificate2<D>::KeyUsages() const
 {
     Windows::Security::Cryptography::Certificates::CertificateKeyUsages value { nullptr };
-    check_hresult(shim()->get_KeyUsages(put(value)));
+    check_hresult(static_cast<const ICertificate2 &>(static_cast<const D &>(*this))->get_KeyUsages(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICertificate2<D>::KeyAlgorithmName() const
 {
     hstring value;
-    check_hresult(shim()->get_KeyAlgorithmName(put(value)));
+    check_hresult(static_cast<const ICertificate2 &>(static_cast<const D &>(*this))->get_KeyAlgorithmName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICertificate2<D>::SignatureAlgorithmName() const
 {
     hstring value;
-    check_hresult(shim()->get_SignatureAlgorithmName(put(value)));
+    check_hresult(static_cast<const ICertificate2 &>(static_cast<const D &>(*this))->get_SignatureAlgorithmName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICertificate2<D>::SignatureHashAlgorithmName() const
 {
     hstring value;
-    check_hresult(shim()->get_SignatureHashAlgorithmName(put(value)));
+    check_hresult(static_cast<const ICertificate2 &>(static_cast<const D &>(*this))->get_SignatureHashAlgorithmName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::SubjectAlternativeNameInfo impl_ICertificate2<D>::SubjectAlternativeName() const
 {
     Windows::Security::Cryptography::Certificates::SubjectAlternativeNameInfo value { nullptr };
-    check_hresult(shim()->get_SubjectAlternativeName(put(value)));
+    check_hresult(static_cast<const ICertificate2 &>(static_cast<const D &>(*this))->get_SubjectAlternativeName(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ICertificate3<D>::IsPerUser() const
 {
     bool value {};
-    check_hresult(shim()->get_IsPerUser(&value));
+    check_hresult(static_cast<const ICertificate3 &>(static_cast<const D &>(*this))->get_IsPerUser(&value));
     return value;
 }
 
 template <typename D> hstring impl_ICertificate3<D>::StoreName() const
 {
     hstring value;
-    check_hresult(shim()->get_StoreName(put(value)));
+    check_hresult(static_cast<const ICertificate3 &>(static_cast<const D &>(*this))->get_StoreName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICertificate3<D>::KeyStorageProviderName() const
 {
     hstring value;
-    check_hresult(shim()->get_KeyStorageProviderName(put(value)));
+    check_hresult(static_cast<const ICertificate3 &>(static_cast<const D &>(*this))->get_KeyStorageProviderName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::Certificate impl_ICertificateFactory<D>::CreateCertificate(const Windows::Storage::Streams::IBuffer & certBlob) const
 {
     Windows::Security::Cryptography::Certificates::Certificate certificate { nullptr };
-    check_hresult(shim()->abi_CreateCertificate(get(certBlob), put(certificate)));
+    check_hresult(static_cast<const ICertificateFactory &>(static_cast<const D &>(*this))->abi_CreateCertificate(get(certBlob), put(certificate)));
     return certificate;
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::Certificate impl_ICmsTimestampInfo<D>::SigningCertificate() const
 {
     Windows::Security::Cryptography::Certificates::Certificate value { nullptr };
-    check_hresult(shim()->get_SigningCertificate(put(value)));
+    check_hresult(static_cast<const ICmsTimestampInfo &>(static_cast<const D &>(*this))->get_SigningCertificate(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> impl_ICmsTimestampInfo<D>::Certificates() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> value;
-    check_hresult(shim()->get_Certificates(put(value)));
+    check_hresult(static_cast<const ICmsTimestampInfo &>(static_cast<const D &>(*this))->get_Certificates(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_ICmsTimestampInfo<D>::Timestamp() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->get_Timestamp(put(value)));
+    check_hresult(static_cast<const ICmsTimestampInfo &>(static_cast<const D &>(*this))->get_Timestamp(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::Certificate impl_ICmsSignerInfo<D>::Certificate() const
 {
     Windows::Security::Cryptography::Certificates::Certificate value { nullptr };
-    check_hresult(shim()->get_Certificate(put(value)));
+    check_hresult(static_cast<const ICmsSignerInfo &>(static_cast<const D &>(*this))->get_Certificate(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICmsSignerInfo<D>::Certificate(const Windows::Security::Cryptography::Certificates::Certificate & value) const
 {
-    check_hresult(shim()->put_Certificate(get(value)));
+    check_hresult(static_cast<const ICmsSignerInfo &>(static_cast<const D &>(*this))->put_Certificate(get(value)));
 }
 
 template <typename D> hstring impl_ICmsSignerInfo<D>::HashAlgorithmName() const
 {
     hstring value;
-    check_hresult(shim()->get_HashAlgorithmName(put(value)));
+    check_hresult(static_cast<const ICmsSignerInfo &>(static_cast<const D &>(*this))->get_HashAlgorithmName(put(value)));
     return value;
 }
 
 template <typename D> void impl_ICmsSignerInfo<D>::HashAlgorithmName(hstring_ref value) const
 {
-    check_hresult(shim()->put_HashAlgorithmName(get(value)));
+    check_hresult(static_cast<const ICmsSignerInfo &>(static_cast<const D &>(*this))->put_HashAlgorithmName(get(value)));
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::CmsTimestampInfo impl_ICmsSignerInfo<D>::TimestampInfo() const
 {
     Windows::Security::Cryptography::Certificates::CmsTimestampInfo value { nullptr };
-    check_hresult(shim()->get_TimestampInfo(put(value)));
+    check_hresult(static_cast<const ICmsSignerInfo &>(static_cast<const D &>(*this))->get_TimestampInfo(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_ISubjectAlternativeNameInfo<D>::EmailName() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(shim()->get_EmailName(put(value)));
+    check_hresult(static_cast<const ISubjectAlternativeNameInfo &>(static_cast<const D &>(*this))->get_EmailName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_ISubjectAlternativeNameInfo<D>::IPAddress() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(shim()->get_IPAddress(put(value)));
+    check_hresult(static_cast<const ISubjectAlternativeNameInfo &>(static_cast<const D &>(*this))->get_IPAddress(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_ISubjectAlternativeNameInfo<D>::Url() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(shim()->get_Url(put(value)));
+    check_hresult(static_cast<const ISubjectAlternativeNameInfo &>(static_cast<const D &>(*this))->get_Url(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_ISubjectAlternativeNameInfo<D>::DnsName() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(shim()->get_DnsName(put(value)));
+    check_hresult(static_cast<const ISubjectAlternativeNameInfo &>(static_cast<const D &>(*this))->get_DnsName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_ISubjectAlternativeNameInfo<D>::DistinguishedName() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(shim()->get_DistinguishedName(put(value)));
+    check_hresult(static_cast<const ISubjectAlternativeNameInfo &>(static_cast<const D &>(*this))->get_DistinguishedName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_ISubjectAlternativeNameInfo<D>::PrincipalName() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(shim()->get_PrincipalName(put(value)));
+    check_hresult(static_cast<const ISubjectAlternativeNameInfo &>(static_cast<const D &>(*this))->get_PrincipalName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::ExportOption impl_IPfxImportParameters<D>::Exportable() const
 {
     Windows::Security::Cryptography::Certificates::ExportOption value {};
-    check_hresult(shim()->get_Exportable(&value));
+    check_hresult(static_cast<const IPfxImportParameters &>(static_cast<const D &>(*this))->get_Exportable(&value));
     return value;
 }
 
 template <typename D> void impl_IPfxImportParameters<D>::Exportable(Windows::Security::Cryptography::Certificates::ExportOption value) const
 {
-    check_hresult(shim()->put_Exportable(value));
+    check_hresult(static_cast<const IPfxImportParameters &>(static_cast<const D &>(*this))->put_Exportable(value));
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::KeyProtectionLevel impl_IPfxImportParameters<D>::KeyProtectionLevel() const
 {
     Windows::Security::Cryptography::Certificates::KeyProtectionLevel value {};
-    check_hresult(shim()->get_KeyProtectionLevel(&value));
+    check_hresult(static_cast<const IPfxImportParameters &>(static_cast<const D &>(*this))->get_KeyProtectionLevel(&value));
     return value;
 }
 
 template <typename D> void impl_IPfxImportParameters<D>::KeyProtectionLevel(Windows::Security::Cryptography::Certificates::KeyProtectionLevel value) const
 {
-    check_hresult(shim()->put_KeyProtectionLevel(value));
+    check_hresult(static_cast<const IPfxImportParameters &>(static_cast<const D &>(*this))->put_KeyProtectionLevel(value));
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::InstallOptions impl_IPfxImportParameters<D>::InstallOptions() const
 {
     Windows::Security::Cryptography::Certificates::InstallOptions value {};
-    check_hresult(shim()->get_InstallOptions(&value));
+    check_hresult(static_cast<const IPfxImportParameters &>(static_cast<const D &>(*this))->get_InstallOptions(&value));
     return value;
 }
 
 template <typename D> void impl_IPfxImportParameters<D>::InstallOptions(Windows::Security::Cryptography::Certificates::InstallOptions value) const
 {
-    check_hresult(shim()->put_InstallOptions(value));
+    check_hresult(static_cast<const IPfxImportParameters &>(static_cast<const D &>(*this))->put_InstallOptions(value));
 }
 
 template <typename D> hstring impl_IPfxImportParameters<D>::FriendlyName() const
 {
     hstring value;
-    check_hresult(shim()->get_FriendlyName(put(value)));
+    check_hresult(static_cast<const IPfxImportParameters &>(static_cast<const D &>(*this))->get_FriendlyName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPfxImportParameters<D>::FriendlyName(hstring_ref value) const
 {
-    check_hresult(shim()->put_FriendlyName(get(value)));
+    check_hresult(static_cast<const IPfxImportParameters &>(static_cast<const D &>(*this))->put_FriendlyName(get(value)));
 }
 
 template <typename D> hstring impl_IPfxImportParameters<D>::KeyStorageProviderName() const
 {
     hstring value;
-    check_hresult(shim()->get_KeyStorageProviderName(put(value)));
+    check_hresult(static_cast<const IPfxImportParameters &>(static_cast<const D &>(*this))->get_KeyStorageProviderName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPfxImportParameters<D>::KeyStorageProviderName(hstring_ref value) const
 {
-    check_hresult(shim()->put_KeyStorageProviderName(get(value)));
+    check_hresult(static_cast<const IPfxImportParameters &>(static_cast<const D &>(*this))->put_KeyStorageProviderName(get(value)));
 }
 
 template <typename D> hstring impl_IPfxImportParameters<D>::ContainerNamePrefix() const
 {
     hstring value;
-    check_hresult(shim()->get_ContainerNamePrefix(put(value)));
+    check_hresult(static_cast<const IPfxImportParameters &>(static_cast<const D &>(*this))->get_ContainerNamePrefix(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPfxImportParameters<D>::ContainerNamePrefix(hstring_ref value) const
 {
-    check_hresult(shim()->put_ContainerNamePrefix(get(value)));
+    check_hresult(static_cast<const IPfxImportParameters &>(static_cast<const D &>(*this))->put_ContainerNamePrefix(get(value)));
 }
 
 template <typename D> hstring impl_IPfxImportParameters<D>::ReaderName() const
 {
     hstring value;
-    check_hresult(shim()->get_ReaderName(put(value)));
+    check_hresult(static_cast<const IPfxImportParameters &>(static_cast<const D &>(*this))->get_ReaderName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPfxImportParameters<D>::ReaderName(hstring_ref value) const
 {
-    check_hresult(shim()->put_ReaderName(get(value)));
+    check_hresult(static_cast<const IPfxImportParameters &>(static_cast<const D &>(*this))->put_ReaderName(get(value)));
 }
 
 template <typename D> bool impl_ICertificateKeyUsages<D>::EncipherOnly() const
 {
     bool value {};
-    check_hresult(shim()->get_EncipherOnly(&value));
+    check_hresult(static_cast<const ICertificateKeyUsages &>(static_cast<const D &>(*this))->get_EncipherOnly(&value));
     return value;
 }
 
 template <typename D> void impl_ICertificateKeyUsages<D>::EncipherOnly(bool value) const
 {
-    check_hresult(shim()->put_EncipherOnly(value));
+    check_hresult(static_cast<const ICertificateKeyUsages &>(static_cast<const D &>(*this))->put_EncipherOnly(value));
 }
 
 template <typename D> bool impl_ICertificateKeyUsages<D>::CrlSign() const
 {
     bool value {};
-    check_hresult(shim()->get_CrlSign(&value));
+    check_hresult(static_cast<const ICertificateKeyUsages &>(static_cast<const D &>(*this))->get_CrlSign(&value));
     return value;
 }
 
 template <typename D> void impl_ICertificateKeyUsages<D>::CrlSign(bool value) const
 {
-    check_hresult(shim()->put_CrlSign(value));
+    check_hresult(static_cast<const ICertificateKeyUsages &>(static_cast<const D &>(*this))->put_CrlSign(value));
 }
 
 template <typename D> bool impl_ICertificateKeyUsages<D>::KeyCertificateSign() const
 {
     bool value {};
-    check_hresult(shim()->get_KeyCertificateSign(&value));
+    check_hresult(static_cast<const ICertificateKeyUsages &>(static_cast<const D &>(*this))->get_KeyCertificateSign(&value));
     return value;
 }
 
 template <typename D> void impl_ICertificateKeyUsages<D>::KeyCertificateSign(bool value) const
 {
-    check_hresult(shim()->put_KeyCertificateSign(value));
+    check_hresult(static_cast<const ICertificateKeyUsages &>(static_cast<const D &>(*this))->put_KeyCertificateSign(value));
 }
 
 template <typename D> bool impl_ICertificateKeyUsages<D>::KeyAgreement() const
 {
     bool value {};
-    check_hresult(shim()->get_KeyAgreement(&value));
+    check_hresult(static_cast<const ICertificateKeyUsages &>(static_cast<const D &>(*this))->get_KeyAgreement(&value));
     return value;
 }
 
 template <typename D> void impl_ICertificateKeyUsages<D>::KeyAgreement(bool value) const
 {
-    check_hresult(shim()->put_KeyAgreement(value));
+    check_hresult(static_cast<const ICertificateKeyUsages &>(static_cast<const D &>(*this))->put_KeyAgreement(value));
 }
 
 template <typename D> bool impl_ICertificateKeyUsages<D>::DataEncipherment() const
 {
     bool value {};
-    check_hresult(shim()->get_DataEncipherment(&value));
+    check_hresult(static_cast<const ICertificateKeyUsages &>(static_cast<const D &>(*this))->get_DataEncipherment(&value));
     return value;
 }
 
 template <typename D> void impl_ICertificateKeyUsages<D>::DataEncipherment(bool value) const
 {
-    check_hresult(shim()->put_DataEncipherment(value));
+    check_hresult(static_cast<const ICertificateKeyUsages &>(static_cast<const D &>(*this))->put_DataEncipherment(value));
 }
 
 template <typename D> bool impl_ICertificateKeyUsages<D>::KeyEncipherment() const
 {
     bool value {};
-    check_hresult(shim()->get_KeyEncipherment(&value));
+    check_hresult(static_cast<const ICertificateKeyUsages &>(static_cast<const D &>(*this))->get_KeyEncipherment(&value));
     return value;
 }
 
 template <typename D> void impl_ICertificateKeyUsages<D>::KeyEncipherment(bool value) const
 {
-    check_hresult(shim()->put_KeyEncipherment(value));
+    check_hresult(static_cast<const ICertificateKeyUsages &>(static_cast<const D &>(*this))->put_KeyEncipherment(value));
 }
 
 template <typename D> bool impl_ICertificateKeyUsages<D>::NonRepudiation() const
 {
     bool value {};
-    check_hresult(shim()->get_NonRepudiation(&value));
+    check_hresult(static_cast<const ICertificateKeyUsages &>(static_cast<const D &>(*this))->get_NonRepudiation(&value));
     return value;
 }
 
 template <typename D> void impl_ICertificateKeyUsages<D>::NonRepudiation(bool value) const
 {
-    check_hresult(shim()->put_NonRepudiation(value));
+    check_hresult(static_cast<const ICertificateKeyUsages &>(static_cast<const D &>(*this))->put_NonRepudiation(value));
 }
 
 template <typename D> bool impl_ICertificateKeyUsages<D>::DigitalSignature() const
 {
     bool value {};
-    check_hresult(shim()->get_DigitalSignature(&value));
+    check_hresult(static_cast<const ICertificateKeyUsages &>(static_cast<const D &>(*this))->get_DigitalSignature(&value));
     return value;
 }
 
 template <typename D> void impl_ICertificateKeyUsages<D>::DigitalSignature(bool value) const
 {
-    check_hresult(shim()->put_DigitalSignature(value));
+    check_hresult(static_cast<const ICertificateKeyUsages &>(static_cast<const D &>(*this))->put_DigitalSignature(value));
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> impl_ICmsAttachedSignature<D>::Certificates() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> value;
-    check_hresult(shim()->get_Certificates(put(value)));
+    check_hresult(static_cast<const ICmsAttachedSignature &>(static_cast<const D &>(*this))->get_Certificates(put(value)));
     return value;
 }
 
 template <typename D> com_array<uint8_t> impl_ICmsAttachedSignature<D>::Content() const
 {
     com_array<uint8_t> value {};
-    check_hresult(shim()->get_Content(put_size(value), put(value)));
+    check_hresult(static_cast<const ICmsAttachedSignature &>(static_cast<const D &>(*this))->get_Content(put_size(value), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::CmsSignerInfo> impl_ICmsAttachedSignature<D>::Signers() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::CmsSignerInfo> value;
-    check_hresult(shim()->get_Signers(put(value)));
+    check_hresult(static_cast<const ICmsAttachedSignature &>(static_cast<const D &>(*this))->get_Signers(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::SignatureValidationResult impl_ICmsAttachedSignature<D>::VerifySignature() const
 {
     Windows::Security::Cryptography::Certificates::SignatureValidationResult value {};
-    check_hresult(shim()->abi_VerifySignature(&value));
+    check_hresult(static_cast<const ICmsAttachedSignature &>(static_cast<const D &>(*this))->abi_VerifySignature(&value));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::CmsAttachedSignature impl_ICmsAttachedSignatureFactory<D>::CreateCmsAttachedSignature(const Windows::Storage::Streams::IBuffer & inputBlob) const
 {
     Windows::Security::Cryptography::Certificates::CmsAttachedSignature cmsSignedData { nullptr };
-    check_hresult(shim()->abi_CreateCmsAttachedSignature(get(inputBlob), put(cmsSignedData)));
+    check_hresult(static_cast<const ICmsAttachedSignatureFactory &>(static_cast<const D &>(*this))->abi_CreateCmsAttachedSignature(get(inputBlob), put(cmsSignedData)));
     return cmsSignedData;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> impl_ICmsAttachedSignatureStatics<D>::GenerateSignatureAsync(const Windows::Storage::Streams::IBuffer & data, const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::CmsSignerInfo> & signers, const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> & certificates) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> outputBlob;
-    check_hresult(shim()->abi_GenerateSignatureAsync(get(data), get(signers), get(certificates), put(outputBlob)));
+    check_hresult(static_cast<const ICmsAttachedSignatureStatics &>(static_cast<const D &>(*this))->abi_GenerateSignatureAsync(get(data), get(signers), get(certificates), put(outputBlob)));
     return outputBlob;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> impl_ICmsDetachedSignature<D>::Certificates() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> value;
-    check_hresult(shim()->get_Certificates(put(value)));
+    check_hresult(static_cast<const ICmsDetachedSignature &>(static_cast<const D &>(*this))->get_Certificates(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::CmsSignerInfo> impl_ICmsDetachedSignature<D>::Signers() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::CmsSignerInfo> value;
-    check_hresult(shim()->get_Signers(put(value)));
+    check_hresult(static_cast<const ICmsDetachedSignature &>(static_cast<const D &>(*this))->get_Signers(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Cryptography::Certificates::SignatureValidationResult> impl_ICmsDetachedSignature<D>::VerifySignatureAsync(const Windows::Storage::Streams::IInputStream & data) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Cryptography::Certificates::SignatureValidationResult> value;
-    check_hresult(shim()->abi_VerifySignatureAsync(get(data), put(value)));
+    check_hresult(static_cast<const ICmsDetachedSignature &>(static_cast<const D &>(*this))->abi_VerifySignatureAsync(get(data), put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Cryptography::Certificates::CmsDetachedSignature impl_ICmsDetachedSignatureFactory<D>::CreateCmsDetachedSignature(const Windows::Storage::Streams::IBuffer & inputBlob) const
 {
     Windows::Security::Cryptography::Certificates::CmsDetachedSignature cmsSignedData { nullptr };
-    check_hresult(shim()->abi_CreateCmsDetachedSignature(get(inputBlob), put(cmsSignedData)));
+    check_hresult(static_cast<const ICmsDetachedSignatureFactory &>(static_cast<const D &>(*this))->abi_CreateCmsDetachedSignature(get(inputBlob), put(cmsSignedData)));
     return cmsSignedData;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> impl_ICmsDetachedSignatureStatics<D>::GenerateSignatureAsync(const Windows::Storage::Streams::IInputStream & data, const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::CmsSignerInfo> & signers, const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> & certificates) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> outputBlob;
-    check_hresult(shim()->abi_GenerateSignatureAsync(get(data), get(signers), get(certificates), put(outputBlob)));
+    check_hresult(static_cast<const ICmsDetachedSignatureStatics &>(static_cast<const D &>(*this))->abi_GenerateSignatureAsync(get(data), get(signers), get(certificates), put(outputBlob)));
     return outputBlob;
 }
 

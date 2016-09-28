@@ -55,10 +55,10 @@ template <> struct traits<Windows::Media::SpeechSynthesis::VoiceInformation> { u
 
 namespace Windows::Media::SpeechSynthesis {
 
-template <typename T> class impl_IInstalledVoicesStatic;
-template <typename T> class impl_ISpeechSynthesisStream;
-template <typename T> class impl_ISpeechSynthesizer;
-template <typename T> class impl_IVoiceInformation;
+template <typename T> struct impl_IInstalledVoicesStatic;
+template <typename T> struct impl_ISpeechSynthesisStream;
+template <typename T> struct impl_ISpeechSynthesizer;
+template <typename T> struct impl_IVoiceInformation;
 
 }
 

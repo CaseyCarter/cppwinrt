@@ -65,11 +65,11 @@ template <> struct traits<Windows::Media::ContentRestrictions::RatedContentRestr
 
 namespace Windows::Media::ContentRestrictions {
 
-template <typename T> class impl_IContentRestrictionsBrowsePolicy;
-template <typename T> class impl_IRatedContentDescription;
-template <typename T> class impl_IRatedContentDescriptionFactory;
-template <typename T> class impl_IRatedContentRestrictions;
-template <typename T> class impl_IRatedContentRestrictionsFactory;
+template <typename T> struct impl_IContentRestrictionsBrowsePolicy;
+template <typename T> struct impl_IRatedContentDescription;
+template <typename T> struct impl_IRatedContentDescriptionFactory;
+template <typename T> struct impl_IRatedContentRestrictions;
+template <typename T> struct impl_IRatedContentRestrictionsFactory;
 
 }
 

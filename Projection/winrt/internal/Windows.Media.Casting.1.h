@@ -104,14 +104,14 @@ template <> struct traits<Windows::Media::Casting::CastingSource> { using defaul
 
 namespace Windows::Media::Casting {
 
-template <typename T> class impl_ICastingConnection;
-template <typename T> class impl_ICastingConnectionErrorOccurredEventArgs;
-template <typename T> class impl_ICastingDevice;
-template <typename T> class impl_ICastingDevicePicker;
-template <typename T> class impl_ICastingDevicePickerFilter;
-template <typename T> class impl_ICastingDeviceSelectedEventArgs;
-template <typename T> class impl_ICastingDeviceStatics;
-template <typename T> class impl_ICastingSource;
+template <typename T> struct impl_ICastingConnection;
+template <typename T> struct impl_ICastingConnectionErrorOccurredEventArgs;
+template <typename T> struct impl_ICastingDevice;
+template <typename T> struct impl_ICastingDevicePicker;
+template <typename T> struct impl_ICastingDevicePickerFilter;
+template <typename T> struct impl_ICastingDeviceSelectedEventArgs;
+template <typename T> struct impl_ICastingDeviceStatics;
+template <typename T> struct impl_ICastingSource;
 
 }
 

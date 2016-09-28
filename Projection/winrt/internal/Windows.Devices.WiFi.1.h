@@ -75,11 +75,11 @@ template <> struct traits<Windows::Devices::WiFi::WiFiNetworkReport> { using def
 
 namespace Windows::Devices::WiFi {
 
-template <typename T> class impl_IWiFiAdapter;
-template <typename T> class impl_IWiFiAdapterStatics;
-template <typename T> class impl_IWiFiAvailableNetwork;
-template <typename T> class impl_IWiFiConnectionResult;
-template <typename T> class impl_IWiFiNetworkReport;
+template <typename T> struct impl_IWiFiAdapter;
+template <typename T> struct impl_IWiFiAdapterStatics;
+template <typename T> struct impl_IWiFiAvailableNetwork;
+template <typename T> struct impl_IWiFiConnectionResult;
+template <typename T> struct impl_IWiFiNetworkReport;
 
 }
 

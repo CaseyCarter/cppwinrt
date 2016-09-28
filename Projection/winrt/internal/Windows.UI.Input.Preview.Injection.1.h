@@ -134,12 +134,12 @@ template <> struct traits<Windows::UI::Input::Preview::Injection::InputInjector>
 
 namespace Windows::UI::Input::Preview::Injection {
 
-template <typename T> class impl_IInjectedInputKeyboardInfo;
-template <typename T> class impl_IInjectedInputMouseInfo;
-template <typename T> class impl_IInjectedInputPenInfo;
-template <typename T> class impl_IInjectedInputTouchInfo;
-template <typename T> class impl_IInputInjector;
-template <typename T> class impl_IInputInjectorStatics;
+template <typename T> struct impl_IInjectedInputKeyboardInfo;
+template <typename T> struct impl_IInjectedInputMouseInfo;
+template <typename T> struct impl_IInjectedInputPenInfo;
+template <typename T> struct impl_IInjectedInputTouchInfo;
+template <typename T> struct impl_IInputInjector;
+template <typename T> struct impl_IInputInjectorStatics;
 
 }
 

@@ -148,28 +148,28 @@ namespace Windows::UI::Notifications::Management {
 template <typename D> Windows::UI::Notifications::Management::UserNotificationListener impl_IUserNotificationListenerStatics<D>::Current() const
 {
     Windows::UI::Notifications::Management::UserNotificationListener result { nullptr };
-    check_hresult(shim()->get_Current(put(result)));
+    check_hresult(static_cast<const IUserNotificationListenerStatics &>(static_cast<const D &>(*this))->get_Current(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::UI::Notifications::Management::UserNotificationListenerAccessStatus> impl_IUserNotificationListener<D>::RequestAccessAsync() const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::UI::Notifications::Management::UserNotificationListenerAccessStatus> result;
-    check_hresult(shim()->abi_RequestAccessAsync(put(result)));
+    check_hresult(static_cast<const IUserNotificationListener &>(static_cast<const D &>(*this))->abi_RequestAccessAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::UI::Notifications::Management::UserNotificationListenerAccessStatus impl_IUserNotificationListener<D>::GetAccessStatus() const
 {
     Windows::UI::Notifications::Management::UserNotificationListenerAccessStatus accessStatus {};
-    check_hresult(shim()->abi_GetAccessStatus(&accessStatus));
+    check_hresult(static_cast<const IUserNotificationListener &>(static_cast<const D &>(*this))->abi_GetAccessStatus(&accessStatus));
     return accessStatus;
 }
 
 template <typename D> event_token impl_IUserNotificationListener<D>::NotificationChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::Management::UserNotificationListener, Windows::UI::Notifications::UserNotificationChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_NotificationChanged(get(handler), &token));
+    check_hresult(static_cast<const IUserNotificationListener &>(static_cast<const D &>(*this))->add_NotificationChanged(get(handler), &token));
     return token;
 }
 
@@ -180,31 +180,31 @@ template <typename D> event_revoker<IUserNotificationListener> impl_IUserNotific
 
 template <typename D> void impl_IUserNotificationListener<D>::NotificationChanged(event_token token) const
 {
-    check_hresult(shim()->remove_NotificationChanged(token));
+    check_hresult(static_cast<const IUserNotificationListener &>(static_cast<const D &>(*this))->remove_NotificationChanged(token));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::UserNotification>> impl_IUserNotificationListener<D>::GetNotificationsAsync(Windows::UI::Notifications::NotificationKinds kinds) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::UserNotification>> result;
-    check_hresult(shim()->abi_GetNotificationsAsync(kinds, put(result)));
+    check_hresult(static_cast<const IUserNotificationListener &>(static_cast<const D &>(*this))->abi_GetNotificationsAsync(kinds, put(result)));
     return result;
 }
 
 template <typename D> Windows::UI::Notifications::UserNotification impl_IUserNotificationListener<D>::GetNotification(uint32_t notificationId) const
 {
     Windows::UI::Notifications::UserNotification result { nullptr };
-    check_hresult(shim()->abi_GetNotification(notificationId, put(result)));
+    check_hresult(static_cast<const IUserNotificationListener &>(static_cast<const D &>(*this))->abi_GetNotification(notificationId, put(result)));
     return result;
 }
 
 template <typename D> void impl_IUserNotificationListener<D>::ClearNotifications() const
 {
-    check_hresult(shim()->abi_ClearNotifications());
+    check_hresult(static_cast<const IUserNotificationListener &>(static_cast<const D &>(*this))->abi_ClearNotifications());
 }
 
 template <typename D> void impl_IUserNotificationListener<D>::RemoveNotification(uint32_t notificationId) const
 {
-    check_hresult(shim()->abi_RemoveNotification(notificationId));
+    check_hresult(static_cast<const IUserNotificationListener &>(static_cast<const D &>(*this))->abi_RemoveNotification(notificationId));
 }
 
 inline Windows::UI::Notifications::Management::UserNotificationListener UserNotificationListener::Current()

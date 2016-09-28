@@ -35,7 +35,7 @@ namespace ABI {
 
 namespace Windows::Security::Cryptography {
 
-template <typename T> class impl_ICryptographicBufferStatics;
+template <typename T> struct impl_ICryptographicBufferStatics;
 
 }
 

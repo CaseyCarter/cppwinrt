@@ -80,10 +80,10 @@ template <> struct traits<Windows::Devices::SerialCommunication::SerialDevice> {
 
 namespace Windows::Devices::SerialCommunication {
 
-template <typename T> class impl_IErrorReceivedEventArgs;
-template <typename T> class impl_IPinChangedEventArgs;
-template <typename T> class impl_ISerialDevice;
-template <typename T> class impl_ISerialDeviceStatics;
+template <typename T> struct impl_IErrorReceivedEventArgs;
+template <typename T> struct impl_IPinChangedEventArgs;
+template <typename T> struct impl_ISerialDevice;
+template <typename T> struct impl_ISerialDeviceStatics;
 
 }
 

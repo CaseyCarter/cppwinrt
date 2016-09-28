@@ -30,23 +30,15 @@ template <> struct __declspec(uuid("57e89bbc-9220-5df2-844b-ddfe6605db5f")) __de
 namespace Windows::Globalization::Collation {
 
 template <typename D>
-class WINRT_EBO impl_ICharacterGrouping
+struct WINRT_EBO impl_ICharacterGrouping
 {
-    auto shim() const { return impl::shim<D, ICharacterGrouping>(this); }
-
-public:
-
     hstring First() const;
     hstring Label() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICharacterGroupings
+struct WINRT_EBO impl_ICharacterGroupings
 {
-    auto shim() const { return impl::shim<D, ICharacterGroupings>(this); }
-
-public:
-
     hstring Lookup(hstring_ref text) const;
 };
 

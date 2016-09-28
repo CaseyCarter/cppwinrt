@@ -231,12 +231,8 @@ template <> struct __declspec(uuid("54735271-a3db-5e42-85be-4ff85432364b")) __de
 namespace Windows::UI::Xaml::Media {
 
 template <typename D>
-class WINRT_EBO impl_IArcSegment
+struct WINRT_EBO impl_IArcSegment
 {
-    auto shim() const { return impl::shim<D, IArcSegment>(this); }
-
-public:
-
     Windows::Foundation::Point Point() const;
     void Point(const Windows::Foundation::Point & value) const;
     Windows::Foundation::Size Size() const;
@@ -250,12 +246,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IArcSegmentStatics
+struct WINRT_EBO impl_IArcSegmentStatics
 {
-    auto shim() const { return impl::shim<D, IArcSegmentStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty PointProperty() const;
     Windows::UI::Xaml::DependencyProperty SizeProperty() const;
     Windows::UI::Xaml::DependencyProperty RotationAngleProperty() const;
@@ -264,12 +256,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBezierSegment
+struct WINRT_EBO impl_IBezierSegment
 {
-    auto shim() const { return impl::shim<D, IBezierSegment>(this); }
-
-public:
-
     Windows::Foundation::Point Point1() const;
     void Point1(const Windows::Foundation::Point & value) const;
     Windows::Foundation::Point Point2() const;
@@ -279,33 +267,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBezierSegmentStatics
+struct WINRT_EBO impl_IBezierSegmentStatics
 {
-    auto shim() const { return impl::shim<D, IBezierSegmentStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty Point1Property() const;
     Windows::UI::Xaml::DependencyProperty Point2Property() const;
     Windows::UI::Xaml::DependencyProperty Point3Property() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBitmapCache
+struct WINRT_EBO impl_IBitmapCache
 {
-    auto shim() const { return impl::shim<D, IBitmapCache>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IBrush
+struct WINRT_EBO impl_IBrush
 {
-    auto shim() const { return impl::shim<D, IBrush>(this); }
-
-public:
-
     double Opacity() const;
     void Opacity(double value) const;
     Windows::UI::Xaml::Media::Transform Transform() const;
@@ -315,53 +291,33 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBrushFactory
+struct WINRT_EBO impl_IBrushFactory
 {
-    auto shim() const { return impl::shim<D, IBrushFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Brush CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBrushStatics
+struct WINRT_EBO impl_IBrushStatics
 {
-    auto shim() const { return impl::shim<D, IBrushStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty OpacityProperty() const;
     Windows::UI::Xaml::DependencyProperty TransformProperty() const;
     Windows::UI::Xaml::DependencyProperty RelativeTransformProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICacheMode
+struct WINRT_EBO impl_ICacheMode
 {
-    auto shim() const { return impl::shim<D, ICacheMode>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ICacheModeFactory
+struct WINRT_EBO impl_ICacheModeFactory
 {
-    auto shim() const { return impl::shim<D, ICacheModeFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::CacheMode CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositeTransform
+struct WINRT_EBO impl_ICompositeTransform
 {
-    auto shim() const { return impl::shim<D, ICompositeTransform>(this); }
-
-public:
-
     double CenterX() const;
     void CenterX(double value) const;
     double CenterY() const;
@@ -383,12 +339,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositeTransformStatics
+struct WINRT_EBO impl_ICompositeTransformStatics
 {
-    auto shim() const { return impl::shim<D, ICompositeTransformStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty CenterXProperty() const;
     Windows::UI::Xaml::DependencyProperty CenterYProperty() const;
     Windows::UI::Xaml::DependencyProperty ScaleXProperty() const;
@@ -401,21 +353,13 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositionTarget
+struct WINRT_EBO impl_ICompositionTarget
 {
-    auto shim() const { return impl::shim<D, ICompositionTarget>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompositionTargetStatics
+struct WINRT_EBO impl_ICompositionTargetStatics
 {
-    auto shim() const { return impl::shim<D, ICompositionTargetStatics>(this); }
-
-public:
-
     event_token Rendering(const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
     using Rendering_revoker = event_revoker<ICompositionTargetStatics>;
     Rendering_revoker Rendering(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
@@ -427,12 +371,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IEllipseGeometry
+struct WINRT_EBO impl_IEllipseGeometry
 {
-    auto shim() const { return impl::shim<D, IEllipseGeometry>(this); }
-
-public:
-
     Windows::Foundation::Point Center() const;
     void Center(const Windows::Foundation::Point & value) const;
     double RadiusX() const;
@@ -442,54 +382,34 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IEllipseGeometryStatics
+struct WINRT_EBO impl_IEllipseGeometryStatics
 {
-    auto shim() const { return impl::shim<D, IEllipseGeometryStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty CenterProperty() const;
     Windows::UI::Xaml::DependencyProperty RadiusXProperty() const;
     Windows::UI::Xaml::DependencyProperty RadiusYProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFontFamily
+struct WINRT_EBO impl_IFontFamily
 {
-    auto shim() const { return impl::shim<D, IFontFamily>(this); }
-
-public:
-
     hstring Source() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFontFamilyFactory
+struct WINRT_EBO impl_IFontFamilyFactory
 {
-    auto shim() const { return impl::shim<D, IFontFamilyFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::FontFamily CreateInstanceWithName(hstring_ref familyName, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFontFamilyStatics2
+struct WINRT_EBO impl_IFontFamilyStatics2
 {
-    auto shim() const { return impl::shim<D, IFontFamilyStatics2>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::FontFamily XamlAutoFontFamily() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGeneralTransform
+struct WINRT_EBO impl_IGeneralTransform
 {
-    auto shim() const { return impl::shim<D, IGeneralTransform>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::GeneralTransform Inverse() const;
     Windows::Foundation::Point TransformPoint(const Windows::Foundation::Point & point) const;
     bool TryTransform(const Windows::Foundation::Point & inPoint, Windows::Foundation::Point & outPoint) const;
@@ -497,55 +417,35 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IGeneralTransformFactory
+struct WINRT_EBO impl_IGeneralTransformFactory
 {
-    auto shim() const { return impl::shim<D, IGeneralTransformFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::GeneralTransform CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGeneralTransformOverrides
+struct WINRT_EBO impl_IGeneralTransformOverrides
 {
-    auto shim() const { return impl::shim<D, IGeneralTransformOverrides>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::GeneralTransform InverseCore() const;
     bool TryTransformCore(const Windows::Foundation::Point & inPoint, Windows::Foundation::Point & outPoint) const;
     Windows::Foundation::Rect TransformBoundsCore(const Windows::Foundation::Rect & rect) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGeometry
+struct WINRT_EBO impl_IGeometry
 {
-    auto shim() const { return impl::shim<D, IGeometry>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Transform Transform() const;
     void Transform(const Windows::UI::Xaml::Media::Transform & value) const;
     Windows::Foundation::Rect Bounds() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGeometryFactory
+struct WINRT_EBO impl_IGeometryFactory
 {
-    auto shim() const { return impl::shim<D, IGeometryFactory>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IGeometryGroup
+struct WINRT_EBO impl_IGeometryGroup
 {
-    auto shim() const { return impl::shim<D, IGeometryGroup>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::FillRule FillRule() const;
     void FillRule(Windows::UI::Xaml::Media::FillRule value) const;
     Windows::UI::Xaml::Media::GeometryCollection Children() const;
@@ -553,35 +453,23 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IGeometryGroupStatics
+struct WINRT_EBO impl_IGeometryGroupStatics
 {
-    auto shim() const { return impl::shim<D, IGeometryGroupStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty FillRuleProperty() const;
     Windows::UI::Xaml::DependencyProperty ChildrenProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGeometryStatics
+struct WINRT_EBO impl_IGeometryStatics
 {
-    auto shim() const { return impl::shim<D, IGeometryStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Geometry Empty() const;
     double StandardFlatteningTolerance() const;
     Windows::UI::Xaml::DependencyProperty TransformProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGradientBrush
+struct WINRT_EBO impl_IGradientBrush
 {
-    auto shim() const { return impl::shim<D, IGradientBrush>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::GradientSpreadMethod SpreadMethod() const;
     void SpreadMethod(Windows::UI::Xaml::Media::GradientSpreadMethod value) const;
     Windows::UI::Xaml::Media::BrushMappingMode MappingMode() const;
@@ -593,22 +481,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IGradientBrushFactory
+struct WINRT_EBO impl_IGradientBrushFactory
 {
-    auto shim() const { return impl::shim<D, IGradientBrushFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::GradientBrush CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGradientBrushStatics
+struct WINRT_EBO impl_IGradientBrushStatics
 {
-    auto shim() const { return impl::shim<D, IGradientBrushStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty SpreadMethodProperty() const;
     Windows::UI::Xaml::DependencyProperty MappingModeProperty() const;
     Windows::UI::Xaml::DependencyProperty ColorInterpolationModeProperty() const;
@@ -616,12 +496,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IGradientStop
+struct WINRT_EBO impl_IGradientStop
 {
-    auto shim() const { return impl::shim<D, IGradientStop>(this); }
-
-public:
-
     Windows::UI::Color Color() const;
     void Color(const Windows::UI::Color & value) const;
     double Offset() const;
@@ -629,23 +505,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IGradientStopStatics
+struct WINRT_EBO impl_IGradientStopStatics
 {
-    auto shim() const { return impl::shim<D, IGradientStopStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty ColorProperty() const;
     Windows::UI::Xaml::DependencyProperty OffsetProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IImageBrush
+struct WINRT_EBO impl_IImageBrush
 {
-    auto shim() const { return impl::shim<D, IImageBrush>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::ImageSource ImageSource() const;
     void ImageSource(const Windows::UI::Xaml::Media::ImageSource & value) const;
     event_token ImageFailed(const Windows::UI::Xaml::ExceptionRoutedEventHandler & value) const;
@@ -659,40 +527,24 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IImageBrushStatics
+struct WINRT_EBO impl_IImageBrushStatics
 {
-    auto shim() const { return impl::shim<D, IImageBrushStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty ImageSourceProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IImageSource
+struct WINRT_EBO impl_IImageSource
 {
-    auto shim() const { return impl::shim<D, IImageSource>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IImageSourceFactory
+struct WINRT_EBO impl_IImageSourceFactory
 {
-    auto shim() const { return impl::shim<D, IImageSourceFactory>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ILineGeometry
+struct WINRT_EBO impl_ILineGeometry
 {
-    auto shim() const { return impl::shim<D, ILineGeometry>(this); }
-
-public:
-
     Windows::Foundation::Point StartPoint() const;
     void StartPoint(const Windows::Foundation::Point & value) const;
     Windows::Foundation::Point EndPoint() const;
@@ -700,44 +552,28 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ILineGeometryStatics
+struct WINRT_EBO impl_ILineGeometryStatics
 {
-    auto shim() const { return impl::shim<D, ILineGeometryStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty StartPointProperty() const;
     Windows::UI::Xaml::DependencyProperty EndPointProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILineSegment
+struct WINRT_EBO impl_ILineSegment
 {
-    auto shim() const { return impl::shim<D, ILineSegment>(this); }
-
-public:
-
     Windows::Foundation::Point Point() const;
     void Point(const Windows::Foundation::Point & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILineSegmentStatics
+struct WINRT_EBO impl_ILineSegmentStatics
 {
-    auto shim() const { return impl::shim<D, ILineSegmentStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty PointProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILinearGradientBrush
+struct WINRT_EBO impl_ILinearGradientBrush
 {
-    auto shim() const { return impl::shim<D, ILinearGradientBrush>(this); }
-
-public:
-
     Windows::Foundation::Point StartPoint() const;
     void StartPoint(const Windows::Foundation::Point & value) const;
     Windows::Foundation::Point EndPoint() const;
@@ -745,63 +581,39 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ILinearGradientBrushFactory
+struct WINRT_EBO impl_ILinearGradientBrushFactory
 {
-    auto shim() const { return impl::shim<D, ILinearGradientBrushFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::LinearGradientBrush CreateInstanceWithGradientStopCollectionAndAngle(const Windows::UI::Xaml::Media::GradientStopCollection & gradientStopCollection, double angle) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILinearGradientBrushStatics
+struct WINRT_EBO impl_ILinearGradientBrushStatics
 {
-    auto shim() const { return impl::shim<D, ILinearGradientBrushStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty StartPointProperty() const;
     Windows::UI::Xaml::DependencyProperty EndPointProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMatrix3DProjection
+struct WINRT_EBO impl_IMatrix3DProjection
 {
-    auto shim() const { return impl::shim<D, IMatrix3DProjection>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Media3D::Matrix3D ProjectionMatrix() const;
     void ProjectionMatrix(const Windows::UI::Xaml::Media::Media3D::Matrix3D & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMatrix3DProjectionStatics
+struct WINRT_EBO impl_IMatrix3DProjectionStatics
 {
-    auto shim() const { return impl::shim<D, IMatrix3DProjectionStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty ProjectionMatrixProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMatrixHelper
+struct WINRT_EBO impl_IMatrixHelper
 {
-    auto shim() const { return impl::shim<D, IMatrixHelper>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IMatrixHelperStatics
+struct WINRT_EBO impl_IMatrixHelperStatics
 {
-    auto shim() const { return impl::shim<D, IMatrixHelperStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Matrix Identity() const;
     Windows::UI::Xaml::Media::Matrix FromElements(double m11, double m12, double m21, double m22, double offsetX, double offsetY) const;
     bool GetIsIdentity(const Windows::UI::Xaml::Media::Matrix & target) const;
@@ -809,64 +621,40 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMatrixTransform
+struct WINRT_EBO impl_IMatrixTransform
 {
-    auto shim() const { return impl::shim<D, IMatrixTransform>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Matrix Matrix() const;
     void Matrix(const Windows::UI::Xaml::Media::Matrix & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMatrixTransformStatics
+struct WINRT_EBO impl_IMatrixTransformStatics
 {
-    auto shim() const { return impl::shim<D, IMatrixTransformStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty MatrixProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaTransportControlsThumbnailRequestedEventArgs
+struct WINRT_EBO impl_IMediaTransportControlsThumbnailRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMediaTransportControlsThumbnailRequestedEventArgs>(this); }
-
-public:
-
     void SetThumbnailImage(const Windows::Storage::Streams::IInputStream & source) const;
     Windows::Foundation::Deferral GetDeferral() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPartialMediaFailureDetectedEventArgs
+struct WINRT_EBO impl_IPartialMediaFailureDetectedEventArgs
 {
-    auto shim() const { return impl::shim<D, IPartialMediaFailureDetectedEventArgs>(this); }
-
-public:
-
     Windows::Media::Playback::FailedMediaStreamKind StreamKind() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPartialMediaFailureDetectedEventArgs2
+struct WINRT_EBO impl_IPartialMediaFailureDetectedEventArgs2
 {
-    auto shim() const { return impl::shim<D, IPartialMediaFailureDetectedEventArgs2>(this); }
-
-public:
-
     HRESULT ExtendedError() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPathFigure
+struct WINRT_EBO impl_IPathFigure
 {
-    auto shim() const { return impl::shim<D, IPathFigure>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::PathSegmentCollection Segments() const;
     void Segments(const Windows::UI::Xaml::Media::PathSegmentCollection & value) const;
     Windows::Foundation::Point StartPoint() const;
@@ -878,12 +666,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPathFigureStatics
+struct WINRT_EBO impl_IPathFigureStatics
 {
-    auto shim() const { return impl::shim<D, IPathFigureStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty SegmentsProperty() const;
     Windows::UI::Xaml::DependencyProperty StartPointProperty() const;
     Windows::UI::Xaml::DependencyProperty IsClosedProperty() const;
@@ -891,12 +675,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPathGeometry
+struct WINRT_EBO impl_IPathGeometry
 {
-    auto shim() const { return impl::shim<D, IPathGeometry>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::FillRule FillRule() const;
     void FillRule(Windows::UI::Xaml::Media::FillRule value) const;
     Windows::UI::Xaml::Media::PathFigureCollection Figures() const;
@@ -904,41 +684,25 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPathGeometryStatics
+struct WINRT_EBO impl_IPathGeometryStatics
 {
-    auto shim() const { return impl::shim<D, IPathGeometryStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty FillRuleProperty() const;
     Windows::UI::Xaml::DependencyProperty FiguresProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPathSegment
+struct WINRT_EBO impl_IPathSegment
 {
-    auto shim() const { return impl::shim<D, IPathSegment>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IPathSegmentFactory
+struct WINRT_EBO impl_IPathSegmentFactory
 {
-    auto shim() const { return impl::shim<D, IPathSegmentFactory>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlaneProjection
+struct WINRT_EBO impl_IPlaneProjection
 {
-    auto shim() const { return impl::shim<D, IPlaneProjection>(this); }
-
-public:
-
     double LocalOffsetX() const;
     void LocalOffsetX(double value) const;
     double LocalOffsetY() const;
@@ -967,12 +731,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlaneProjectionStatics
+struct WINRT_EBO impl_IPlaneProjectionStatics
 {
-    auto shim() const { return impl::shim<D, IPlaneProjectionStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty LocalOffsetXProperty() const;
     Windows::UI::Xaml::DependencyProperty LocalOffsetYProperty() const;
     Windows::UI::Xaml::DependencyProperty LocalOffsetZProperty() const;
@@ -989,94 +749,58 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPolyBezierSegment
+struct WINRT_EBO impl_IPolyBezierSegment
 {
-    auto shim() const { return impl::shim<D, IPolyBezierSegment>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::PointCollection Points() const;
     void Points(const Windows::UI::Xaml::Media::PointCollection & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPolyBezierSegmentStatics
+struct WINRT_EBO impl_IPolyBezierSegmentStatics
 {
-    auto shim() const { return impl::shim<D, IPolyBezierSegmentStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty PointsProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPolyLineSegment
+struct WINRT_EBO impl_IPolyLineSegment
 {
-    auto shim() const { return impl::shim<D, IPolyLineSegment>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::PointCollection Points() const;
     void Points(const Windows::UI::Xaml::Media::PointCollection & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPolyLineSegmentStatics
+struct WINRT_EBO impl_IPolyLineSegmentStatics
 {
-    auto shim() const { return impl::shim<D, IPolyLineSegmentStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty PointsProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPolyQuadraticBezierSegment
+struct WINRT_EBO impl_IPolyQuadraticBezierSegment
 {
-    auto shim() const { return impl::shim<D, IPolyQuadraticBezierSegment>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::PointCollection Points() const;
     void Points(const Windows::UI::Xaml::Media::PointCollection & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPolyQuadraticBezierSegmentStatics
+struct WINRT_EBO impl_IPolyQuadraticBezierSegmentStatics
 {
-    auto shim() const { return impl::shim<D, IPolyQuadraticBezierSegmentStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty PointsProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IProjection
+struct WINRT_EBO impl_IProjection
 {
-    auto shim() const { return impl::shim<D, IProjection>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IProjectionFactory
+struct WINRT_EBO impl_IProjectionFactory
 {
-    auto shim() const { return impl::shim<D, IProjectionFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Projection CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IQuadraticBezierSegment
+struct WINRT_EBO impl_IQuadraticBezierSegment
 {
-    auto shim() const { return impl::shim<D, IQuadraticBezierSegment>(this); }
-
-public:
-
     Windows::Foundation::Point Point1() const;
     void Point1(const Windows::Foundation::Point & value) const;
     Windows::Foundation::Point Point2() const;
@@ -1084,63 +808,39 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IQuadraticBezierSegmentStatics
+struct WINRT_EBO impl_IQuadraticBezierSegmentStatics
 {
-    auto shim() const { return impl::shim<D, IQuadraticBezierSegmentStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty Point1Property() const;
     Windows::UI::Xaml::DependencyProperty Point2Property() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRateChangedRoutedEventArgs
+struct WINRT_EBO impl_IRateChangedRoutedEventArgs
 {
-    auto shim() const { return impl::shim<D, IRateChangedRoutedEventArgs>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IRectangleGeometry
+struct WINRT_EBO impl_IRectangleGeometry
 {
-    auto shim() const { return impl::shim<D, IRectangleGeometry>(this); }
-
-public:
-
     Windows::Foundation::Rect Rect() const;
     void Rect(const Windows::Foundation::Rect & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRectangleGeometryStatics
+struct WINRT_EBO impl_IRectangleGeometryStatics
 {
-    auto shim() const { return impl::shim<D, IRectangleGeometryStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty RectProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRenderingEventArgs
+struct WINRT_EBO impl_IRenderingEventArgs
 {
-    auto shim() const { return impl::shim<D, IRenderingEventArgs>(this); }
-
-public:
-
     Windows::Foundation::TimeSpan RenderingTime() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRotateTransform
+struct WINRT_EBO impl_IRotateTransform
 {
-    auto shim() const { return impl::shim<D, IRotateTransform>(this); }
-
-public:
-
     double CenterX() const;
     void CenterX(double value) const;
     double CenterY() const;
@@ -1150,24 +850,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IRotateTransformStatics
+struct WINRT_EBO impl_IRotateTransformStatics
 {
-    auto shim() const { return impl::shim<D, IRotateTransformStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty CenterXProperty() const;
     Windows::UI::Xaml::DependencyProperty CenterYProperty() const;
     Windows::UI::Xaml::DependencyProperty AngleProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IScaleTransform
+struct WINRT_EBO impl_IScaleTransform
 {
-    auto shim() const { return impl::shim<D, IScaleTransform>(this); }
-
-public:
-
     double CenterX() const;
     void CenterX(double value) const;
     double CenterY() const;
@@ -1179,12 +871,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IScaleTransformStatics
+struct WINRT_EBO impl_IScaleTransformStatics
 {
-    auto shim() const { return impl::shim<D, IScaleTransformStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty CenterXProperty() const;
     Windows::UI::Xaml::DependencyProperty CenterYProperty() const;
     Windows::UI::Xaml::DependencyProperty ScaleXProperty() const;
@@ -1192,12 +880,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISkewTransform
+struct WINRT_EBO impl_ISkewTransform
 {
-    auto shim() const { return impl::shim<D, ISkewTransform>(this); }
-
-public:
-
     double CenterX() const;
     void CenterX(double value) const;
     double CenterY() const;
@@ -1209,12 +893,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISkewTransformStatics
+struct WINRT_EBO impl_ISkewTransformStatics
 {
-    auto shim() const { return impl::shim<D, ISkewTransformStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty CenterXProperty() const;
     Windows::UI::Xaml::DependencyProperty CenterYProperty() const;
     Windows::UI::Xaml::DependencyProperty AngleXProperty() const;
@@ -1222,43 +902,27 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISolidColorBrush
+struct WINRT_EBO impl_ISolidColorBrush
 {
-    auto shim() const { return impl::shim<D, ISolidColorBrush>(this); }
-
-public:
-
     Windows::UI::Color Color() const;
     void Color(const Windows::UI::Color & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISolidColorBrushFactory
+struct WINRT_EBO impl_ISolidColorBrushFactory
 {
-    auto shim() const { return impl::shim<D, ISolidColorBrushFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::SolidColorBrush CreateInstanceWithColor(const Windows::UI::Color & color) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISolidColorBrushStatics
+struct WINRT_EBO impl_ISolidColorBrushStatics
 {
-    auto shim() const { return impl::shim<D, ISolidColorBrushStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty ColorProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITileBrush
+struct WINRT_EBO impl_ITileBrush
 {
-    auto shim() const { return impl::shim<D, ITileBrush>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::AlignmentX AlignmentX() const;
     void AlignmentX(Windows::UI::Xaml::Media::AlignmentX value) const;
     Windows::UI::Xaml::Media::AlignmentY AlignmentY() const;
@@ -1268,34 +932,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ITileBrushFactory
+struct WINRT_EBO impl_ITileBrushFactory
 {
-    auto shim() const { return impl::shim<D, ITileBrushFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::TileBrush CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITileBrushStatics
+struct WINRT_EBO impl_ITileBrushStatics
 {
-    auto shim() const { return impl::shim<D, ITileBrushStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty AlignmentXProperty() const;
     Windows::UI::Xaml::DependencyProperty AlignmentYProperty() const;
     Windows::UI::Xaml::DependencyProperty StretchProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITimelineMarker
+struct WINRT_EBO impl_ITimelineMarker
 {
-    auto shim() const { return impl::shim<D, ITimelineMarker>(this); }
-
-public:
-
     Windows::Foundation::TimeSpan Time() const;
     void Time(const Windows::Foundation::TimeSpan & value) const;
     hstring Type() const;
@@ -1305,75 +957,47 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ITimelineMarkerRoutedEventArgs
+struct WINRT_EBO impl_ITimelineMarkerRoutedEventArgs
 {
-    auto shim() const { return impl::shim<D, ITimelineMarkerRoutedEventArgs>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::TimelineMarker Marker() const;
     void Marker(const Windows::UI::Xaml::Media::TimelineMarker & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITimelineMarkerStatics
+struct WINRT_EBO impl_ITimelineMarkerStatics
 {
-    auto shim() const { return impl::shim<D, ITimelineMarkerStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty TimeProperty() const;
     Windows::UI::Xaml::DependencyProperty TypeProperty() const;
     Windows::UI::Xaml::DependencyProperty TextProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITransform
+struct WINRT_EBO impl_ITransform
 {
-    auto shim() const { return impl::shim<D, ITransform>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ITransformFactory
+struct WINRT_EBO impl_ITransformFactory
 {
-    auto shim() const { return impl::shim<D, ITransformFactory>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ITransformGroup
+struct WINRT_EBO impl_ITransformGroup
 {
-    auto shim() const { return impl::shim<D, ITransformGroup>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::TransformCollection Children() const;
     void Children(const Windows::UI::Xaml::Media::TransformCollection & value) const;
     Windows::UI::Xaml::Media::Matrix Value() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITransformGroupStatics
+struct WINRT_EBO impl_ITransformGroupStatics
 {
-    auto shim() const { return impl::shim<D, ITransformGroupStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty ChildrenProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITranslateTransform
+struct WINRT_EBO impl_ITranslateTransform
 {
-    auto shim() const { return impl::shim<D, ITranslateTransform>(this); }
-
-public:
-
     double X() const;
     void X(double value) const;
     double Y() const;
@@ -1381,32 +1005,20 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ITranslateTransformStatics
+struct WINRT_EBO impl_ITranslateTransformStatics
 {
-    auto shim() const { return impl::shim<D, ITranslateTransformStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty XProperty() const;
     Windows::UI::Xaml::DependencyProperty YProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVisualTreeHelper
+struct WINRT_EBO impl_IVisualTreeHelper
 {
-    auto shim() const { return impl::shim<D, IVisualTreeHelper>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IVisualTreeHelperStatics
+struct WINRT_EBO impl_IVisualTreeHelperStatics
 {
-    auto shim() const { return impl::shim<D, IVisualTreeHelperStatics>(this); }
-
-public:
-
     Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement> FindElementsInHostCoordinates(const Windows::Foundation::Point & intersectingPoint, const Windows::UI::Xaml::UIElement & subtree) const;
     Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement> FindElementsInHostCoordinates(const Windows::Foundation::Rect & intersectingRect, const Windows::UI::Xaml::UIElement & subtree) const;
     Windows::Foundation::Collections::IIterable<Windows::UI::Xaml::UIElement> FindElementsInHostCoordinates(const Windows::Foundation::Point & intersectingPoint, const Windows::UI::Xaml::UIElement & subtree, bool includeAllElements) const;
@@ -1418,12 +1030,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVisualTreeHelperStatics2
+struct WINRT_EBO impl_IVisualTreeHelperStatics2
 {
-    auto shim() const { return impl::shim<D, IVisualTreeHelperStatics2>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Controls::Primitives::Popup> GetOpenPopups(const Windows::UI::Xaml::Window & window) const;
 };
 

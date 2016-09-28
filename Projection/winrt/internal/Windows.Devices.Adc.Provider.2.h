@@ -30,12 +30,8 @@ template <> struct __declspec(uuid("30047155-1f71-5223-8482-e5159d0137d0")) __de
 namespace Windows::Devices::Adc::Provider {
 
 template <typename D>
-class WINRT_EBO impl_IAdcControllerProvider
+struct WINRT_EBO impl_IAdcControllerProvider
 {
-    auto shim() const { return impl::shim<D, IAdcControllerProvider>(this); }
-
-public:
-
     int32_t ChannelCount() const;
     int32_t ResolutionInBits() const;
     int32_t MinValue() const;
@@ -49,12 +45,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAdcProvider
+struct WINRT_EBO impl_IAdcProvider
 {
-    auto shim() const { return impl::shim<D, IAdcProvider>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Adc::Provider::IAdcControllerProvider> GetControllers() const;
 };
 

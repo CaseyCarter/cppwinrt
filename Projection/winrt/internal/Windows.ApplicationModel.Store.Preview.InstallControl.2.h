@@ -90,12 +90,8 @@ template <> struct __declspec(uuid("f92bfe4e-cf96-54cf-ab89-388ca004b5a9")) __de
 namespace Windows::ApplicationModel::Store::Preview::InstallControl {
 
 template <typename D>
-class WINRT_EBO impl_IAppInstallItem
+struct WINRT_EBO impl_IAppInstallItem
 {
-    auto shim() const { return impl::shim<D, IAppInstallItem>(this); }
-
-public:
-
     hstring ProductId() const;
     hstring PackageFamilyName() const;
     Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallType InstallType() const;
@@ -115,24 +111,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppInstallItem2
+struct WINRT_EBO impl_IAppInstallItem2
 {
-    auto shim() const { return impl::shim<D, IAppInstallItem2>(this); }
-
-public:
-
     void Cancel(hstring_ref correlationVector) const;
     void Pause(hstring_ref correlationVector) const;
     void Restart(hstring_ref correlationVector) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppInstallManager
+struct WINRT_EBO impl_IAppInstallManager
 {
-    auto shim() const { return impl::shim<D, IAppInstallManager>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> AppInstallItems() const;
     void Cancel(hstring_ref productId) const;
     void Pause(hstring_ref productId) const;
@@ -159,12 +147,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppInstallManager2
+struct WINRT_EBO impl_IAppInstallManager2
 {
-    auto shim() const { return impl::shim<D, IAppInstallManager2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> StartAppInstallAsync(hstring_ref productId, hstring_ref skuId, bool repair, bool forceUseOfNonRemovableStorage, hstring_ref catalogId, hstring_ref bundleId, hstring_ref correlationVector) const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> UpdateAppByPackageFamilyNameAsync(hstring_ref packageFamilyName, hstring_ref correlationVector) const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> SearchForUpdatesAsync(hstring_ref productId, hstring_ref skuId, hstring_ref catalogId, hstring_ref correlationVector) const;
@@ -176,12 +160,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppInstallManager3
+struct WINRT_EBO impl_IAppInstallManager3
 {
-    auto shim() const { return impl::shim<D, IAppInstallManager3>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>> StartProductInstallAsync(hstring_ref productId, hstring_ref catalogId, hstring_ref flightId, hstring_ref clientId, bool repair, bool forceUseOfNonRemovableStorage, hstring_ref correlationVector, const Windows::Management::Deployment::PackageVolume & targetVolume) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>> StartProductInstallForUserAsync(const Windows::System::User & user, hstring_ref productId, hstring_ref catalogId, hstring_ref flightId, hstring_ref clientId, bool repair, bool forceUseOfNonRemovableStorage, hstring_ref correlationVector, const Windows::Management::Deployment::PackageVolume & targetVolume) const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> UpdateAppByPackageFamilyNameForUserAsync(const Windows::System::User & user, hstring_ref packageFamilyName, hstring_ref correlationVector) const;
@@ -193,22 +173,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppInstallManagerItemEventArgs
+struct WINRT_EBO impl_IAppInstallManagerItemEventArgs
 {
-    auto shim() const { return impl::shim<D, IAppInstallManagerItemEventArgs>(this); }
-
-public:
-
     Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem Item() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppInstallStatus
+struct WINRT_EBO impl_IAppInstallStatus
 {
-    auto shim() const { return impl::shim<D, IAppInstallStatus>(this); }
-
-public:
-
     Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallState InstallState() const;
     uint64_t DownloadSizeInBytes() const;
     uint64_t BytesDownloaded() const;
@@ -217,12 +189,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppInstallStatus2
+struct WINRT_EBO impl_IAppInstallStatus2
 {
-    auto shim() const { return impl::shim<D, IAppInstallStatus2>(this); }
-
-public:
-
     Windows::System::User User() const;
     bool ReadyForLaunch() const;
 };

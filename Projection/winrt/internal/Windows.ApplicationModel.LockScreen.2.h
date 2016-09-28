@@ -85,12 +85,8 @@ template <> struct __declspec(uuid("6e82dedc-b74e-503a-b00b-9c6f47f12a0f")) __de
 namespace Windows::ApplicationModel::LockScreen {
 
 template <typename D>
-class WINRT_EBO impl_ILockApplicationHost
+struct WINRT_EBO impl_ILockApplicationHost
 {
-    auto shim() const { return impl::shim<D, ILockApplicationHost>(this); }
-
-public:
-
     void RequestUnlock() const;
     event_token Unlocking(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockApplicationHost, Windows::ApplicationModel::LockScreen::LockScreenUnlockingEventArgs> & handler) const;
     using Unlocking_revoker = event_revoker<ILockApplicationHost>;
@@ -99,22 +95,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ILockApplicationHostStatics
+struct WINRT_EBO impl_ILockApplicationHostStatics
 {
-    auto shim() const { return impl::shim<D, ILockApplicationHostStatics>(this); }
-
-public:
-
     Windows::ApplicationModel::LockScreen::LockApplicationHost GetForCurrentView() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILockScreenBadge
+struct WINRT_EBO impl_ILockScreenBadge
 {
-    auto shim() const { return impl::shim<D, ILockScreenBadge>(this); }
-
-public:
-
     Windows::Storage::Streams::IRandomAccessStream Logo() const;
     Windows::Storage::Streams::IRandomAccessStream Glyph() const;
     Windows::Foundation::IReference<uint32_t> Number() const;
@@ -123,12 +111,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ILockScreenInfo
+struct WINRT_EBO impl_ILockScreenInfo
 {
-    auto shim() const { return impl::shim<D, ILockScreenInfo>(this); }
-
-public:
-
     event_token LockScreenImageChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::IInspectable> & handler) const;
     using LockScreenImageChanged_revoker = event_revoker<ILockScreenInfo>;
     LockScreenImageChanged_revoker LockScreenImageChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::IInspectable> & handler) const;
@@ -152,22 +136,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ILockScreenUnlockingDeferral
+struct WINRT_EBO impl_ILockScreenUnlockingDeferral
 {
-    auto shim() const { return impl::shim<D, ILockScreenUnlockingDeferral>(this); }
-
-public:
-
     void Complete() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILockScreenUnlockingEventArgs
+struct WINRT_EBO impl_ILockScreenUnlockingEventArgs
 {
-    auto shim() const { return impl::shim<D, ILockScreenUnlockingEventArgs>(this); }
-
-public:
-
     Windows::ApplicationModel::LockScreen::LockScreenUnlockingDeferral GetDeferral() const;
     Windows::Foundation::DateTime Deadline() const;
 };

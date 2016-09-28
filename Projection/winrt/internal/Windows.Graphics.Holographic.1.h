@@ -136,15 +136,15 @@ template <> struct traits<Windows::Graphics::Holographic::HolographicSpaceCamera
 
 namespace Windows::Graphics::Holographic {
 
-template <typename T> class impl_IHolographicCamera;
-template <typename T> class impl_IHolographicCameraPose;
-template <typename T> class impl_IHolographicCameraRenderingParameters;
-template <typename T> class impl_IHolographicFrame;
-template <typename T> class impl_IHolographicFramePrediction;
-template <typename T> class impl_IHolographicSpace;
-template <typename T> class impl_IHolographicSpaceCameraAddedEventArgs;
-template <typename T> class impl_IHolographicSpaceCameraRemovedEventArgs;
-template <typename T> class impl_IHolographicSpaceStatics;
+template <typename T> struct impl_IHolographicCamera;
+template <typename T> struct impl_IHolographicCameraPose;
+template <typename T> struct impl_IHolographicCameraRenderingParameters;
+template <typename T> struct impl_IHolographicFrame;
+template <typename T> struct impl_IHolographicFramePrediction;
+template <typename T> struct impl_IHolographicSpace;
+template <typename T> struct impl_IHolographicSpaceCameraAddedEventArgs;
+template <typename T> struct impl_IHolographicSpaceCameraRemovedEventArgs;
+template <typename T> struct impl_IHolographicSpaceStatics;
 
 }
 

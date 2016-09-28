@@ -67,11 +67,11 @@ template <> struct traits<Windows::Media::FaceAnalysis::FaceTracker> { using def
 
 namespace Windows::Media::FaceAnalysis {
 
-template <typename T> class impl_IDetectedFace;
-template <typename T> class impl_IFaceDetector;
-template <typename T> class impl_IFaceDetectorStatics;
-template <typename T> class impl_IFaceTracker;
-template <typename T> class impl_IFaceTrackerStatics;
+template <typename T> struct impl_IDetectedFace;
+template <typename T> struct impl_IFaceDetector;
+template <typename T> struct impl_IFaceDetectorStatics;
+template <typename T> struct impl_IFaceTracker;
+template <typename T> struct impl_IFaceTrackerStatics;
 
 }
 

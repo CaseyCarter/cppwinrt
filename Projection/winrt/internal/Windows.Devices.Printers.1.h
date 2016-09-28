@@ -42,9 +42,9 @@ template <> struct traits<Windows::Devices::Printers::PrintSchema> { using defau
 
 namespace Windows::Devices::Printers {
 
-template <typename T> class impl_IPrint3DDevice;
-template <typename T> class impl_IPrint3DDeviceStatics;
-template <typename T> class impl_IPrintSchema;
+template <typename T> struct impl_IPrint3DDevice;
+template <typename T> struct impl_IPrint3DDeviceStatics;
+template <typename T> struct impl_IPrintSchema;
 
 }
 

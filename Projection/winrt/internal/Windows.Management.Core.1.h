@@ -30,8 +30,8 @@ template <> struct traits<Windows::Management::Core::ApplicationDataManager> { u
 
 namespace Windows::Management::Core {
 
-template <typename T> class impl_IApplicationDataManager;
-template <typename T> class impl_IApplicationDataManagerStatics;
+template <typename T> struct impl_IApplicationDataManager;
+template <typename T> struct impl_IApplicationDataManagerStatics;
 
 }
 

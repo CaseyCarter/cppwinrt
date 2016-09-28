@@ -51,55 +51,35 @@ template <> struct __declspec(uuid("5d716335-d087-516f-ad0a-63f61cbcf342")) __de
 namespace Windows::Devices::Midi {
 
 template <typename D>
-class WINRT_EBO impl_IMidiChannelPressureMessage
+struct WINRT_EBO impl_IMidiChannelPressureMessage
 {
-    auto shim() const { return impl::shim<D, IMidiChannelPressureMessage>(this); }
-
-public:
-
     uint8_t Channel() const;
     uint8_t Pressure() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMidiChannelPressureMessageFactory
+struct WINRT_EBO impl_IMidiChannelPressureMessageFactory
 {
-    auto shim() const { return impl::shim<D, IMidiChannelPressureMessageFactory>(this); }
-
-public:
-
     Windows::Devices::Midi::MidiChannelPressureMessage CreateMidiChannelPressureMessage(uint8_t channel, uint8_t pressure) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMidiControlChangeMessage
+struct WINRT_EBO impl_IMidiControlChangeMessage
 {
-    auto shim() const { return impl::shim<D, IMidiControlChangeMessage>(this); }
-
-public:
-
     uint8_t Channel() const;
     uint8_t Controller() const;
     uint8_t ControlValue() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMidiControlChangeMessageFactory
+struct WINRT_EBO impl_IMidiControlChangeMessageFactory
 {
-    auto shim() const { return impl::shim<D, IMidiControlChangeMessageFactory>(this); }
-
-public:
-
     Windows::Devices::Midi::MidiControlChangeMessage CreateMidiControlChangeMessage(uint8_t channel, uint8_t controller, uint8_t controlValue) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMidiInPort
+struct WINRT_EBO impl_IMidiInPort
 {
-    auto shim() const { return impl::shim<D, IMidiInPort>(this); }
-
-public:
-
     event_token MessageReceived(const Windows::Foundation::TypedEventHandler<Windows::Devices::Midi::MidiInPort, Windows::Devices::Midi::MidiMessageReceivedEventArgs> & handler) const;
     using MessageReceived_revoker = event_revoker<IMidiInPort>;
     MessageReceived_revoker MessageReceived(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Midi::MidiInPort, Windows::Devices::Midi::MidiMessageReceivedEventArgs> & handler) const;
@@ -108,261 +88,165 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMidiInPortStatics
+struct WINRT_EBO impl_IMidiInPortStatics
 {
-    auto shim() const { return impl::shim<D, IMidiInPortStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::MidiInPort> FromIdAsync(hstring_ref deviceId) const;
     hstring GetDeviceSelector() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMidiMessage
+struct WINRT_EBO impl_IMidiMessage
 {
-    auto shim() const { return impl::shim<D, IMidiMessage>(this); }
-
-public:
-
     Windows::Foundation::TimeSpan Timestamp() const;
     Windows::Storage::Streams::IBuffer RawData() const;
     Windows::Devices::Midi::MidiMessageType Type() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMidiMessageReceivedEventArgs
+struct WINRT_EBO impl_IMidiMessageReceivedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMidiMessageReceivedEventArgs>(this); }
-
-public:
-
     Windows::Devices::Midi::IMidiMessage Message() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMidiNoteOffMessage
+struct WINRT_EBO impl_IMidiNoteOffMessage
 {
-    auto shim() const { return impl::shim<D, IMidiNoteOffMessage>(this); }
-
-public:
-
     uint8_t Channel() const;
     uint8_t Note() const;
     uint8_t Velocity() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMidiNoteOffMessageFactory
+struct WINRT_EBO impl_IMidiNoteOffMessageFactory
 {
-    auto shim() const { return impl::shim<D, IMidiNoteOffMessageFactory>(this); }
-
-public:
-
     Windows::Devices::Midi::MidiNoteOffMessage CreateMidiNoteOffMessage(uint8_t channel, uint8_t note, uint8_t velocity) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMidiNoteOnMessage
+struct WINRT_EBO impl_IMidiNoteOnMessage
 {
-    auto shim() const { return impl::shim<D, IMidiNoteOnMessage>(this); }
-
-public:
-
     uint8_t Channel() const;
     uint8_t Note() const;
     uint8_t Velocity() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMidiNoteOnMessageFactory
+struct WINRT_EBO impl_IMidiNoteOnMessageFactory
 {
-    auto shim() const { return impl::shim<D, IMidiNoteOnMessageFactory>(this); }
-
-public:
-
     Windows::Devices::Midi::MidiNoteOnMessage CreateMidiNoteOnMessage(uint8_t channel, uint8_t note, uint8_t velocity) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMidiOutPort
+struct WINRT_EBO impl_IMidiOutPort
 {
-    auto shim() const { return impl::shim<D, IMidiOutPort>(this); }
-
-public:
-
     void SendMessage(const Windows::Devices::Midi::IMidiMessage & midiMessage) const;
     void SendBuffer(const Windows::Storage::Streams::IBuffer & midiData) const;
     hstring DeviceId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMidiOutPortStatics
+struct WINRT_EBO impl_IMidiOutPortStatics
 {
-    auto shim() const { return impl::shim<D, IMidiOutPortStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::IMidiOutPort> FromIdAsync(hstring_ref deviceId) const;
     hstring GetDeviceSelector() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMidiPitchBendChangeMessage
+struct WINRT_EBO impl_IMidiPitchBendChangeMessage
 {
-    auto shim() const { return impl::shim<D, IMidiPitchBendChangeMessage>(this); }
-
-public:
-
     uint8_t Channel() const;
     uint16_t Bend() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMidiPitchBendChangeMessageFactory
+struct WINRT_EBO impl_IMidiPitchBendChangeMessageFactory
 {
-    auto shim() const { return impl::shim<D, IMidiPitchBendChangeMessageFactory>(this); }
-
-public:
-
     Windows::Devices::Midi::MidiPitchBendChangeMessage CreateMidiPitchBendChangeMessage(uint8_t channel, uint16_t bend) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMidiPolyphonicKeyPressureMessage
+struct WINRT_EBO impl_IMidiPolyphonicKeyPressureMessage
 {
-    auto shim() const { return impl::shim<D, IMidiPolyphonicKeyPressureMessage>(this); }
-
-public:
-
     uint8_t Channel() const;
     uint8_t Note() const;
     uint8_t Pressure() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMidiPolyphonicKeyPressureMessageFactory
+struct WINRT_EBO impl_IMidiPolyphonicKeyPressureMessageFactory
 {
-    auto shim() const { return impl::shim<D, IMidiPolyphonicKeyPressureMessageFactory>(this); }
-
-public:
-
     Windows::Devices::Midi::MidiPolyphonicKeyPressureMessage CreateMidiPolyphonicKeyPressureMessage(uint8_t channel, uint8_t note, uint8_t pressure) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMidiProgramChangeMessage
+struct WINRT_EBO impl_IMidiProgramChangeMessage
 {
-    auto shim() const { return impl::shim<D, IMidiProgramChangeMessage>(this); }
-
-public:
-
     uint8_t Channel() const;
     uint8_t Program() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMidiProgramChangeMessageFactory
+struct WINRT_EBO impl_IMidiProgramChangeMessageFactory
 {
-    auto shim() const { return impl::shim<D, IMidiProgramChangeMessageFactory>(this); }
-
-public:
-
     Windows::Devices::Midi::MidiProgramChangeMessage CreateMidiProgramChangeMessage(uint8_t channel, uint8_t program) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMidiSongPositionPointerMessage
+struct WINRT_EBO impl_IMidiSongPositionPointerMessage
 {
-    auto shim() const { return impl::shim<D, IMidiSongPositionPointerMessage>(this); }
-
-public:
-
     uint16_t Beats() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMidiSongPositionPointerMessageFactory
+struct WINRT_EBO impl_IMidiSongPositionPointerMessageFactory
 {
-    auto shim() const { return impl::shim<D, IMidiSongPositionPointerMessageFactory>(this); }
-
-public:
-
     Windows::Devices::Midi::MidiSongPositionPointerMessage CreateMidiSongPositionPointerMessage(uint16_t beats) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMidiSongSelectMessage
+struct WINRT_EBO impl_IMidiSongSelectMessage
 {
-    auto shim() const { return impl::shim<D, IMidiSongSelectMessage>(this); }
-
-public:
-
     uint8_t Song() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMidiSongSelectMessageFactory
+struct WINRT_EBO impl_IMidiSongSelectMessageFactory
 {
-    auto shim() const { return impl::shim<D, IMidiSongSelectMessageFactory>(this); }
-
-public:
-
     Windows::Devices::Midi::MidiSongSelectMessage CreateMidiSongSelectMessage(uint8_t song) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMidiSynthesizer
+struct WINRT_EBO impl_IMidiSynthesizer
 {
-    auto shim() const { return impl::shim<D, IMidiSynthesizer>(this); }
-
-public:
-
     Windows::Devices::Enumeration::DeviceInformation AudioDevice() const;
     double Volume() const;
     void Volume(double value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMidiSynthesizerStatics
+struct WINRT_EBO impl_IMidiSynthesizerStatics
 {
-    auto shim() const { return impl::shim<D, IMidiSynthesizerStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::MidiSynthesizer> CreateAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::MidiSynthesizer> CreateAsync(const Windows::Devices::Enumeration::DeviceInformation & audioDevice) const;
     bool IsSynthesizer(const Windows::Devices::Enumeration::DeviceInformation & midiDevice) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMidiSystemExclusiveMessageFactory
+struct WINRT_EBO impl_IMidiSystemExclusiveMessageFactory
 {
-    auto shim() const { return impl::shim<D, IMidiSystemExclusiveMessageFactory>(this); }
-
-public:
-
     Windows::Devices::Midi::MidiSystemExclusiveMessage CreateMidiSystemExclusiveMessage(const Windows::Storage::Streams::IBuffer & rawData) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMidiTimeCodeMessage
+struct WINRT_EBO impl_IMidiTimeCodeMessage
 {
-    auto shim() const { return impl::shim<D, IMidiTimeCodeMessage>(this); }
-
-public:
-
     uint8_t FrameType() const;
     uint8_t Values() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMidiTimeCodeMessageFactory
+struct WINRT_EBO impl_IMidiTimeCodeMessageFactory
 {
-    auto shim() const { return impl::shim<D, IMidiTimeCodeMessageFactory>(this); }
-
-public:
-
     Windows::Devices::Midi::MidiTimeCodeMessage CreateMidiTimeCodeMessage(uint8_t frameType, uint8_t values) const;
 };
 

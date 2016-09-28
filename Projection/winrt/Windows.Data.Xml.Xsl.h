@@ -71,21 +71,21 @@ namespace Windows::Data::Xml::Xsl {
 template <typename D> hstring impl_IXsltProcessor<D>::TransformToString(const Windows::Data::Xml::Dom::IXmlNode & inputNode) const
 {
     hstring output;
-    check_hresult(shim()->abi_TransformToString(get(inputNode), put(output)));
+    check_hresult(static_cast<const IXsltProcessor &>(static_cast<const D &>(*this))->abi_TransformToString(get(inputNode), put(output)));
     return output;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlDocument impl_IXsltProcessor2<D>::TransformToDocument(const Windows::Data::Xml::Dom::IXmlNode & inputNode) const
 {
     Windows::Data::Xml::Dom::XmlDocument output { nullptr };
-    check_hresult(shim()->abi_TransformToDocument(get(inputNode), put(output)));
+    check_hresult(static_cast<const IXsltProcessor2 &>(static_cast<const D &>(*this))->abi_TransformToDocument(get(inputNode), put(output)));
     return output;
 }
 
 template <typename D> Windows::Data::Xml::Xsl::XsltProcessor impl_IXsltProcessorFactory<D>::CreateInstance(const Windows::Data::Xml::Dom::XmlDocument & document) const
 {
     Windows::Data::Xml::Xsl::XsltProcessor xsltProcessor { nullptr };
-    check_hresult(shim()->abi_CreateInstance(get(document), put(xsltProcessor)));
+    check_hresult(static_cast<const IXsltProcessorFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(document), put(xsltProcessor)));
     return xsltProcessor;
 }
 

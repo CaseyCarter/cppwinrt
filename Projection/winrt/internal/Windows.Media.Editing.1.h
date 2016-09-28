@@ -161,19 +161,19 @@ template <> struct traits<Windows::Media::Editing::MediaOverlayLayer> { using de
 
 namespace Windows::Media::Editing {
 
-template <typename T> class impl_IBackgroundAudioTrack;
-template <typename T> class impl_IBackgroundAudioTrackStatics;
-template <typename T> class impl_IEmbeddedAudioTrack;
-template <typename T> class impl_IMediaClip;
-template <typename T> class impl_IMediaClipStatics;
-template <typename T> class impl_IMediaClipStatics2;
-template <typename T> class impl_IMediaComposition;
-template <typename T> class impl_IMediaComposition2;
-template <typename T> class impl_IMediaCompositionStatics;
-template <typename T> class impl_IMediaOverlay;
-template <typename T> class impl_IMediaOverlayFactory;
-template <typename T> class impl_IMediaOverlayLayer;
-template <typename T> class impl_IMediaOverlayLayerFactory;
+template <typename T> struct impl_IBackgroundAudioTrack;
+template <typename T> struct impl_IBackgroundAudioTrackStatics;
+template <typename T> struct impl_IEmbeddedAudioTrack;
+template <typename T> struct impl_IMediaClip;
+template <typename T> struct impl_IMediaClipStatics;
+template <typename T> struct impl_IMediaClipStatics2;
+template <typename T> struct impl_IMediaComposition;
+template <typename T> struct impl_IMediaComposition2;
+template <typename T> struct impl_IMediaCompositionStatics;
+template <typename T> struct impl_IMediaOverlay;
+template <typename T> struct impl_IMediaOverlayFactory;
+template <typename T> struct impl_IMediaOverlayLayer;
+template <typename T> struct impl_IMediaOverlayLayerFactory;
 
 }
 

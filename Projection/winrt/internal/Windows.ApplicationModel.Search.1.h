@@ -78,13 +78,13 @@ template <> struct traits<Windows::ApplicationModel::Search::SearchSuggestionsRe
 
 namespace Windows::ApplicationModel::Search {
 
-template <typename T> class impl_ILocalContentSuggestionSettings;
-template <typename T> class impl_ISearchPaneQueryLinguisticDetails;
-template <typename T> class impl_ISearchQueryLinguisticDetails;
-template <typename T> class impl_ISearchQueryLinguisticDetailsFactory;
-template <typename T> class impl_ISearchSuggestionCollection;
-template <typename T> class impl_ISearchSuggestionsRequest;
-template <typename T> class impl_ISearchSuggestionsRequestDeferral;
+template <typename T> struct impl_ILocalContentSuggestionSettings;
+template <typename T> struct impl_ISearchPaneQueryLinguisticDetails;
+template <typename T> struct impl_ISearchQueryLinguisticDetails;
+template <typename T> struct impl_ISearchQueryLinguisticDetailsFactory;
+template <typename T> struct impl_ISearchSuggestionCollection;
+template <typename T> struct impl_ISearchSuggestionsRequest;
+template <typename T> struct impl_ISearchSuggestionsRequestDeferral;
 
 }
 

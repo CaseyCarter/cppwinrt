@@ -215,12 +215,8 @@ template <> struct __declspec(uuid("dc12096d-7e54-54a2-ab99-280f30f0ff81")) __de
 namespace Windows::ApplicationModel::UserDataAccounts {
 
 template <typename D>
-class WINRT_EBO impl_IUserDataAccount
+struct WINRT_EBO impl_IUserDataAccount
 {
-    auto shim() const { return impl::shim<D, IUserDataAccount>(this); }
-
-public:
-
     hstring Id() const;
     hstring UserDisplayName() const;
     void UserDisplayName(hstring_ref value) const;
@@ -238,46 +234,30 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUserDataAccount2
+struct WINRT_EBO impl_IUserDataAccount2
 {
-    auto shim() const { return impl::shim<D, IUserDataAccount2>(this); }
-
-public:
-
     hstring EnterpriseId() const;
     bool IsProtectedUnderLock() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUserDataAccount3
+struct WINRT_EBO impl_IUserDataAccount3
 {
-    auto shim() const { return impl::shim<D, IUserDataAccount3>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<hstring> ExplictReadAccessPackageFamilyNames() const;
     hstring DisplayName() const;
     void DisplayName(hstring_ref value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUserDataAccountManagerForUser
+struct WINRT_EBO impl_IUserDataAccountManagerForUser
 {
-    auto shim() const { return impl::shim<D, IUserDataAccountManagerForUser>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccountStore> RequestStoreAsync(Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreAccessType storeAccessType) const;
     Windows::System::User User() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUserDataAccountManagerStatics
+struct WINRT_EBO impl_IUserDataAccountManagerStatics
 {
-    auto shim() const { return impl::shim<D, IUserDataAccountManagerStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccountStore> RequestStoreAsync(Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreAccessType storeAccessType) const;
     Windows::Foundation::IAsyncOperation<hstring> ShowAddAccountAsync(Windows::ApplicationModel::UserDataAccounts::UserDataAccountContentKinds contentKinds) const;
     Windows::Foundation::IAsyncAction ShowAccountSettingsAsync(hstring_ref id) const;
@@ -285,34 +265,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUserDataAccountManagerStatics2
+struct WINRT_EBO impl_IUserDataAccountManagerStatics2
 {
-    auto shim() const { return impl::shim<D, IUserDataAccountManagerStatics2>(this); }
-
-public:
-
     Windows::ApplicationModel::UserDataAccounts::UserDataAccountManagerForUser GetForUser(const Windows::System::User & user) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUserDataAccountStore
+struct WINRT_EBO impl_IUserDataAccountStore
 {
-    auto shim() const { return impl::shim<D, IUserDataAccountStore>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::UserDataAccounts::UserDataAccount>> FindAccountsAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccount> GetAccountAsync(hstring_ref id) const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccount> CreateAccountAsync(hstring_ref userDisplayName) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUserDataAccountStore2
+struct WINRT_EBO impl_IUserDataAccountStore2
 {
-    auto shim() const { return impl::shim<D, IUserDataAccountStore2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::UserDataAccount> CreateAccountAsync(hstring_ref userDisplayName, hstring_ref packageRelativeAppId) const;
     event_token StoreChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::UserDataAccounts::UserDataAccountStore, Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreChangedEventArgs> & handler) const;
     using StoreChanged_revoker = event_revoker<IUserDataAccountStore2>;
@@ -321,12 +289,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUserDataAccountStoreChangedEventArgs
+struct WINRT_EBO impl_IUserDataAccountStoreChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IUserDataAccountStoreChangedEventArgs>(this); }
-
-public:
-
     Windows::Foundation::Deferral GetDeferral() const;
 };
 

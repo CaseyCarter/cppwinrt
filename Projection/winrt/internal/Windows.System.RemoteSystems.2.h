@@ -110,12 +110,8 @@ template <> struct __declspec(uuid("543a221d-ef39-57f5-9741-b052dbc29249")) __de
 namespace Windows::System::RemoteSystems {
 
 template <typename D>
-class WINRT_EBO impl_IRemoteSystem
+struct WINRT_EBO impl_IRemoteSystem
 {
-    auto shim() const { return impl::shim<D, IRemoteSystem>(this); }
-
-public:
-
     hstring DisplayName() const;
     hstring Id() const;
     hstring Kind() const;
@@ -124,91 +120,55 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IRemoteSystemAddedEventArgs
+struct WINRT_EBO impl_IRemoteSystemAddedEventArgs
 {
-    auto shim() const { return impl::shim<D, IRemoteSystemAddedEventArgs>(this); }
-
-public:
-
     Windows::System::RemoteSystems::RemoteSystem RemoteSystem() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRemoteSystemConnectionRequest
+struct WINRT_EBO impl_IRemoteSystemConnectionRequest
 {
-    auto shim() const { return impl::shim<D, IRemoteSystemConnectionRequest>(this); }
-
-public:
-
     Windows::System::RemoteSystems::RemoteSystem RemoteSystem() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRemoteSystemConnectionRequestFactory
+struct WINRT_EBO impl_IRemoteSystemConnectionRequestFactory
 {
-    auto shim() const { return impl::shim<D, IRemoteSystemConnectionRequestFactory>(this); }
-
-public:
-
     Windows::System::RemoteSystems::RemoteSystemConnectionRequest Create(const Windows::System::RemoteSystems::RemoteSystem & remoteSystem) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRemoteSystemDiscoveryTypeFilter
+struct WINRT_EBO impl_IRemoteSystemDiscoveryTypeFilter
 {
-    auto shim() const { return impl::shim<D, IRemoteSystemDiscoveryTypeFilter>(this); }
-
-public:
-
     Windows::System::RemoteSystems::RemoteSystemDiscoveryType RemoteSystemDiscoveryType() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRemoteSystemDiscoveryTypeFilterFactory
+struct WINRT_EBO impl_IRemoteSystemDiscoveryTypeFilterFactory
 {
-    auto shim() const { return impl::shim<D, IRemoteSystemDiscoveryTypeFilterFactory>(this); }
-
-public:
-
     Windows::System::RemoteSystems::RemoteSystemDiscoveryTypeFilter Create(Windows::System::RemoteSystems::RemoteSystemDiscoveryType discoveryType) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRemoteSystemFilter
+struct WINRT_EBO impl_IRemoteSystemFilter
 {
-    auto shim() const { return impl::shim<D, IRemoteSystemFilter>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IRemoteSystemKindFilter
+struct WINRT_EBO impl_IRemoteSystemKindFilter
 {
-    auto shim() const { return impl::shim<D, IRemoteSystemKindFilter>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<hstring> RemoteSystemKinds() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRemoteSystemKindFilterFactory
+struct WINRT_EBO impl_IRemoteSystemKindFilterFactory
 {
-    auto shim() const { return impl::shim<D, IRemoteSystemKindFilterFactory>(this); }
-
-public:
-
     Windows::System::RemoteSystems::RemoteSystemKindFilter Create(const Windows::Foundation::Collections::IIterable<hstring> & remoteSystemKinds) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRemoteSystemKindStatics
+struct WINRT_EBO impl_IRemoteSystemKindStatics
 {
-    auto shim() const { return impl::shim<D, IRemoteSystemKindStatics>(this); }
-
-public:
-
     hstring Phone() const;
     hstring Hub() const;
     hstring Holographic() const;
@@ -217,22 +177,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IRemoteSystemRemovedEventArgs
+struct WINRT_EBO impl_IRemoteSystemRemovedEventArgs
 {
-    auto shim() const { return impl::shim<D, IRemoteSystemRemovedEventArgs>(this); }
-
-public:
-
     hstring RemoteSystemId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRemoteSystemStatics
+struct WINRT_EBO impl_IRemoteSystemStatics
 {
-    auto shim() const { return impl::shim<D, IRemoteSystemStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::System::RemoteSystems::RemoteSystem> FindByHostNameAsync(const Windows::Networking::HostName & hostName) const;
     Windows::System::RemoteSystems::RemoteSystemWatcher CreateWatcher() const;
     Windows::System::RemoteSystems::RemoteSystemWatcher CreateWatcher(const Windows::Foundation::Collections::IIterable<Windows::System::RemoteSystems::IRemoteSystemFilter> & filters) const;
@@ -240,42 +192,26 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IRemoteSystemStatusTypeFilter
+struct WINRT_EBO impl_IRemoteSystemStatusTypeFilter
 {
-    auto shim() const { return impl::shim<D, IRemoteSystemStatusTypeFilter>(this); }
-
-public:
-
     Windows::System::RemoteSystems::RemoteSystemStatusType RemoteSystemStatusType() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRemoteSystemStatusTypeFilterFactory
+struct WINRT_EBO impl_IRemoteSystemStatusTypeFilterFactory
 {
-    auto shim() const { return impl::shim<D, IRemoteSystemStatusTypeFilterFactory>(this); }
-
-public:
-
     Windows::System::RemoteSystems::RemoteSystemStatusTypeFilter Create(Windows::System::RemoteSystems::RemoteSystemStatusType remoteSystemStatusType) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRemoteSystemUpdatedEventArgs
+struct WINRT_EBO impl_IRemoteSystemUpdatedEventArgs
 {
-    auto shim() const { return impl::shim<D, IRemoteSystemUpdatedEventArgs>(this); }
-
-public:
-
     Windows::System::RemoteSystems::RemoteSystem RemoteSystem() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRemoteSystemWatcher
+struct WINRT_EBO impl_IRemoteSystemWatcher
 {
-    auto shim() const { return impl::shim<D, IRemoteSystemWatcher>(this); }
-
-public:
-
     void Start() const;
     void Stop() const;
     event_token RemoteSystemAdded(const Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemWatcher, Windows::System::RemoteSystems::RemoteSystemAddedEventArgs> & handler) const;

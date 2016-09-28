@@ -248,23 +248,23 @@ template <> struct traits<Windows::Devices::Sms::SmsWapMessage> { using default_
 
 namespace Windows::Devices::Sms {
 
-template <typename T> class impl_ISmsAppMessage;
-template <typename T> class impl_ISmsBroadcastMessage;
-template <typename T> class impl_ISmsDevice2;
-template <typename T> class impl_ISmsDevice2Statics;
-template <typename T> class impl_ISmsFilterRule;
-template <typename T> class impl_ISmsFilterRuleFactory;
-template <typename T> class impl_ISmsFilterRules;
-template <typename T> class impl_ISmsFilterRulesFactory;
-template <typename T> class impl_ISmsMessageBase;
-template <typename T> class impl_ISmsMessageReceivedTriggerDetails;
-template <typename T> class impl_ISmsMessageRegistration;
-template <typename T> class impl_ISmsMessageRegistrationStatics;
-template <typename T> class impl_ISmsSendMessageResult;
-template <typename T> class impl_ISmsStatusMessage;
-template <typename T> class impl_ISmsTextMessage2;
-template <typename T> class impl_ISmsVoicemailMessage;
-template <typename T> class impl_ISmsWapMessage;
+template <typename T> struct impl_ISmsAppMessage;
+template <typename T> struct impl_ISmsBroadcastMessage;
+template <typename T> struct impl_ISmsDevice2;
+template <typename T> struct impl_ISmsDevice2Statics;
+template <typename T> struct impl_ISmsFilterRule;
+template <typename T> struct impl_ISmsFilterRuleFactory;
+template <typename T> struct impl_ISmsFilterRules;
+template <typename T> struct impl_ISmsFilterRulesFactory;
+template <typename T> struct impl_ISmsMessageBase;
+template <typename T> struct impl_ISmsMessageReceivedTriggerDetails;
+template <typename T> struct impl_ISmsMessageRegistration;
+template <typename T> struct impl_ISmsMessageRegistrationStatics;
+template <typename T> struct impl_ISmsSendMessageResult;
+template <typename T> struct impl_ISmsStatusMessage;
+template <typename T> struct impl_ISmsTextMessage2;
+template <typename T> struct impl_ISmsVoicemailMessage;
+template <typename T> struct impl_ISmsWapMessage;
 
 }
 

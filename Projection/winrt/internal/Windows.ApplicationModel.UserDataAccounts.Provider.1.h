@@ -56,11 +56,11 @@ template <> struct traits<Windows::ApplicationModel::UserDataAccounts::Provider:
 
 namespace Windows::ApplicationModel::UserDataAccounts::Provider {
 
-template <typename T> class impl_IUserDataAccountPartnerAccountInfo;
-template <typename T> class impl_IUserDataAccountProviderAddAccountOperation;
-template <typename T> class impl_IUserDataAccountProviderOperation;
-template <typename T> class impl_IUserDataAccountProviderResolveErrorsOperation;
-template <typename T> class impl_IUserDataAccountProviderSettingsOperation;
+template <typename T> struct impl_IUserDataAccountPartnerAccountInfo;
+template <typename T> struct impl_IUserDataAccountProviderAddAccountOperation;
+template <typename T> struct impl_IUserDataAccountProviderOperation;
+template <typename T> struct impl_IUserDataAccountProviderResolveErrorsOperation;
+template <typename T> struct impl_IUserDataAccountProviderSettingsOperation;
 
 }
 

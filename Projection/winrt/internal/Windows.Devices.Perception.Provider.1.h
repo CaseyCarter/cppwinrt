@@ -163,23 +163,23 @@ template <> struct traits<Windows::Devices::Perception::Provider::PerceptionVide
 
 namespace Windows::Devices::Perception::Provider {
 
-template <typename T> class impl_IKnownPerceptionFrameKindStatics;
-template <typename T> class impl_IPerceptionControlGroup;
-template <typename T> class impl_IPerceptionControlGroupFactory;
-template <typename T> class impl_IPerceptionCorrelation;
-template <typename T> class impl_IPerceptionCorrelationFactory;
-template <typename T> class impl_IPerceptionCorrelationGroup;
-template <typename T> class impl_IPerceptionCorrelationGroupFactory;
-template <typename T> class impl_IPerceptionFaceAuthenticationGroup;
-template <typename T> class impl_IPerceptionFaceAuthenticationGroupFactory;
-template <typename T> class impl_IPerceptionFrame;
-template <typename T> class impl_IPerceptionFrameProvider;
-template <typename T> class impl_IPerceptionFrameProviderInfo;
-template <typename T> class impl_IPerceptionFrameProviderManager;
-template <typename T> class impl_IPerceptionFrameProviderManagerServiceStatics;
-template <typename T> class impl_IPerceptionPropertyChangeRequest;
-template <typename T> class impl_IPerceptionVideoFrameAllocator;
-template <typename T> class impl_IPerceptionVideoFrameAllocatorFactory;
+template <typename T> struct impl_IKnownPerceptionFrameKindStatics;
+template <typename T> struct impl_IPerceptionControlGroup;
+template <typename T> struct impl_IPerceptionControlGroupFactory;
+template <typename T> struct impl_IPerceptionCorrelation;
+template <typename T> struct impl_IPerceptionCorrelationFactory;
+template <typename T> struct impl_IPerceptionCorrelationGroup;
+template <typename T> struct impl_IPerceptionCorrelationGroupFactory;
+template <typename T> struct impl_IPerceptionFaceAuthenticationGroup;
+template <typename T> struct impl_IPerceptionFaceAuthenticationGroupFactory;
+template <typename T> struct impl_IPerceptionFrame;
+template <typename T> struct impl_IPerceptionFrameProvider;
+template <typename T> struct impl_IPerceptionFrameProviderInfo;
+template <typename T> struct impl_IPerceptionFrameProviderManager;
+template <typename T> struct impl_IPerceptionFrameProviderManagerServiceStatics;
+template <typename T> struct impl_IPerceptionPropertyChangeRequest;
+template <typename T> struct impl_IPerceptionVideoFrameAllocator;
+template <typename T> struct impl_IPerceptionVideoFrameAllocatorFactory;
 template <typename T> struct impl_PerceptionStartFaceAuthenticationHandler;
 template <typename T> struct impl_PerceptionStopFaceAuthenticationHandler;
 

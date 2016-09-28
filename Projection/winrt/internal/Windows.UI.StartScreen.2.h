@@ -140,12 +140,8 @@ template <> struct __declspec(uuid("b9d6d973-a089-550a-83b7-f659ea0dea04")) __de
 namespace Windows::UI::StartScreen {
 
 template <typename D>
-class WINRT_EBO impl_IJumpList
+struct WINRT_EBO impl_IJumpList
 {
-    auto shim() const { return impl::shim<D, IJumpList>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<Windows::UI::StartScreen::JumpListItem> Items() const;
     Windows::UI::StartScreen::JumpListSystemGroupKind SystemGroupKind() const;
     void SystemGroupKind(Windows::UI::StartScreen::JumpListSystemGroupKind value) const;
@@ -153,12 +149,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IJumpListItem
+struct WINRT_EBO impl_IJumpListItem
 {
-    auto shim() const { return impl::shim<D, IJumpListItem>(this); }
-
-public:
-
     Windows::UI::StartScreen::JumpListItemKind Kind() const;
     hstring Arguments() const;
     bool RemovedByUser() const;
@@ -173,34 +165,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IJumpListItemStatics
+struct WINRT_EBO impl_IJumpListItemStatics
 {
-    auto shim() const { return impl::shim<D, IJumpListItemStatics>(this); }
-
-public:
-
     Windows::UI::StartScreen::JumpListItem CreateWithArguments(hstring_ref arguments, hstring_ref displayName) const;
     Windows::UI::StartScreen::JumpListItem CreateSeparator() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IJumpListStatics
+struct WINRT_EBO impl_IJumpListStatics
 {
-    auto shim() const { return impl::shim<D, IJumpListStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::UI::StartScreen::JumpList> LoadCurrentAsync() const;
     bool IsSupported() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISecondaryTile
+struct WINRT_EBO impl_ISecondaryTile
 {
-    auto shim() const { return impl::shim<D, ISecondaryTile>(this); }
-
-public:
-
     void TileId(hstring_ref value) const;
     hstring TileId() const;
     void Arguments(hstring_ref value) const;
@@ -237,12 +217,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISecondaryTile2
+struct WINRT_EBO impl_ISecondaryTile2
 {
-    auto shim() const { return impl::shim<D, ISecondaryTile2>(this); }
-
-public:
-
     void PhoneticName(hstring_ref value) const;
     hstring PhoneticName() const;
     Windows::UI::StartScreen::SecondaryTileVisualElements VisualElements() const;
@@ -255,34 +231,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISecondaryTileFactory
+struct WINRT_EBO impl_ISecondaryTileFactory
 {
-    auto shim() const { return impl::shim<D, ISecondaryTileFactory>(this); }
-
-public:
-
     Windows::UI::StartScreen::SecondaryTile CreateTile(hstring_ref tileId, hstring_ref shortName, hstring_ref displayName, hstring_ref arguments, Windows::UI::StartScreen::TileOptions tileOptions, const Windows::Foundation::Uri & logoReference) const;
     Windows::UI::StartScreen::SecondaryTile CreateWideTile(hstring_ref tileId, hstring_ref shortName, hstring_ref displayName, hstring_ref arguments, Windows::UI::StartScreen::TileOptions tileOptions, const Windows::Foundation::Uri & logoReference, const Windows::Foundation::Uri & wideLogoReference) const;
     Windows::UI::StartScreen::SecondaryTile CreateWithId(hstring_ref tileId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISecondaryTileFactory2
+struct WINRT_EBO impl_ISecondaryTileFactory2
 {
-    auto shim() const { return impl::shim<D, ISecondaryTileFactory2>(this); }
-
-public:
-
     Windows::UI::StartScreen::SecondaryTile CreateMinimalTile(hstring_ref tileId, hstring_ref displayName, hstring_ref arguments, const Windows::Foundation::Uri & square150x150Logo, Windows::UI::StartScreen::TileSize desiredSize) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISecondaryTileStatics
+struct WINRT_EBO impl_ISecondaryTileStatics
 {
-    auto shim() const { return impl::shim<D, ISecondaryTileStatics>(this); }
-
-public:
-
     bool Exists(hstring_ref tileId) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::StartScreen::SecondaryTile>> FindAllAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::StartScreen::SecondaryTile>> FindAllAsync(hstring_ref applicationId) const;
@@ -290,12 +254,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISecondaryTileVisualElements
+struct WINRT_EBO impl_ISecondaryTileVisualElements
 {
-    auto shim() const { return impl::shim<D, ISecondaryTileVisualElements>(this); }
-
-public:
-
     void Square30x30Logo(const Windows::Foundation::Uri & value) const;
     Windows::Foundation::Uri Square30x30Logo() const;
     void Square70x70Logo(const Windows::Foundation::Uri & value) const;
@@ -319,34 +279,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISecondaryTileVisualElements2
+struct WINRT_EBO impl_ISecondaryTileVisualElements2
 {
-    auto shim() const { return impl::shim<D, ISecondaryTileVisualElements2>(this); }
-
-public:
-
     void Square71x71Logo(const Windows::Foundation::Uri & value) const;
     Windows::Foundation::Uri Square71x71Logo() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISecondaryTileVisualElements3
+struct WINRT_EBO impl_ISecondaryTileVisualElements3
 {
-    auto shim() const { return impl::shim<D, ISecondaryTileVisualElements3>(this); }
-
-public:
-
     void Square44x44Logo(const Windows::Foundation::Uri & value) const;
     Windows::Foundation::Uri Square44x44Logo() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVisualElementsRequest
+struct WINRT_EBO impl_IVisualElementsRequest
 {
-    auto shim() const { return impl::shim<D, IVisualElementsRequest>(this); }
-
-public:
-
     Windows::UI::StartScreen::SecondaryTileVisualElements VisualElements() const;
     Windows::Foundation::Collections::IVectorView<Windows::UI::StartScreen::SecondaryTileVisualElements> AlternateVisualElements() const;
     Windows::Foundation::DateTime Deadline() const;
@@ -354,22 +302,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVisualElementsRequestDeferral
+struct WINRT_EBO impl_IVisualElementsRequestDeferral
 {
-    auto shim() const { return impl::shim<D, IVisualElementsRequestDeferral>(this); }
-
-public:
-
     void Complete() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVisualElementsRequestedEventArgs
+struct WINRT_EBO impl_IVisualElementsRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, IVisualElementsRequestedEventArgs>(this); }
-
-public:
-
     Windows::UI::StartScreen::VisualElementsRequest Request() const;
 };
 

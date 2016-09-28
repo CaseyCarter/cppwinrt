@@ -10,24 +10,16 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::Devices::Background {
 
 template <typename D>
-class WINRT_EBO impl_IDeviceServicingDetails
+struct WINRT_EBO impl_IDeviceServicingDetails
 {
-    auto shim() const { return impl::shim<D, IDeviceServicingDetails>(this); }
-
-public:
-
     hstring DeviceId() const;
     hstring Arguments() const;
     Windows::Foundation::TimeSpan ExpectedDuration() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDeviceUseDetails
+struct WINRT_EBO impl_IDeviceUseDetails
 {
-    auto shim() const { return impl::shim<D, IDeviceUseDetails>(this); }
-
-public:
-
     hstring DeviceId() const;
     hstring Arguments() const;
 };

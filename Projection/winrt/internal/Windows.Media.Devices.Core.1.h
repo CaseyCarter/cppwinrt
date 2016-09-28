@@ -195,25 +195,25 @@ template <> struct traits<Windows::Media::Devices::Core::VariablePhotoSequenceCo
 
 namespace Windows::Media::Devices::Core {
 
-template <typename T> class impl_ICameraIntrinsics;
-template <typename T> class impl_ICameraIntrinsics2;
-template <typename T> class impl_ICameraIntrinsicsFactory;
-template <typename T> class impl_IDepthCorrelatedCoordinateMapper;
-template <typename T> class impl_IFrameControlCapabilities;
-template <typename T> class impl_IFrameControlCapabilities2;
-template <typename T> class impl_IFrameController;
-template <typename T> class impl_IFrameController2;
-template <typename T> class impl_IFrameExposureCapabilities;
-template <typename T> class impl_IFrameExposureCompensationCapabilities;
-template <typename T> class impl_IFrameExposureCompensationControl;
-template <typename T> class impl_IFrameExposureControl;
-template <typename T> class impl_IFrameFlashCapabilities;
-template <typename T> class impl_IFrameFlashControl;
-template <typename T> class impl_IFrameFocusCapabilities;
-template <typename T> class impl_IFrameFocusControl;
-template <typename T> class impl_IFrameIsoSpeedCapabilities;
-template <typename T> class impl_IFrameIsoSpeedControl;
-template <typename T> class impl_IVariablePhotoSequenceController;
+template <typename T> struct impl_ICameraIntrinsics;
+template <typename T> struct impl_ICameraIntrinsics2;
+template <typename T> struct impl_ICameraIntrinsicsFactory;
+template <typename T> struct impl_IDepthCorrelatedCoordinateMapper;
+template <typename T> struct impl_IFrameControlCapabilities;
+template <typename T> struct impl_IFrameControlCapabilities2;
+template <typename T> struct impl_IFrameController;
+template <typename T> struct impl_IFrameController2;
+template <typename T> struct impl_IFrameExposureCapabilities;
+template <typename T> struct impl_IFrameExposureCompensationCapabilities;
+template <typename T> struct impl_IFrameExposureCompensationControl;
+template <typename T> struct impl_IFrameExposureControl;
+template <typename T> struct impl_IFrameFlashCapabilities;
+template <typename T> struct impl_IFrameFlashControl;
+template <typename T> struct impl_IFrameFocusCapabilities;
+template <typename T> struct impl_IFrameFocusControl;
+template <typename T> struct impl_IFrameIsoSpeedCapabilities;
+template <typename T> struct impl_IFrameIsoSpeedControl;
+template <typename T> struct impl_IVariablePhotoSequenceController;
 
 }
 

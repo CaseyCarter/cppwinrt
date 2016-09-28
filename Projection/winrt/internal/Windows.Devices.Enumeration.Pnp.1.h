@@ -67,10 +67,10 @@ template <> struct traits<Windows::Devices::Enumeration::Pnp::PnpObjectWatcher> 
 
 namespace Windows::Devices::Enumeration::Pnp {
 
-template <typename T> class impl_IPnpObject;
-template <typename T> class impl_IPnpObjectStatics;
-template <typename T> class impl_IPnpObjectUpdate;
-template <typename T> class impl_IPnpObjectWatcher;
+template <typename T> struct impl_IPnpObject;
+template <typename T> struct impl_IPnpObjectStatics;
+template <typename T> struct impl_IPnpObjectUpdate;
+template <typename T> struct impl_IPnpObjectWatcher;
 
 }
 

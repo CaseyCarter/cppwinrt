@@ -109,15 +109,15 @@ template <> struct traits<Windows::Gaming::Input::Custom::XusbGameControllerProv
 
 namespace Windows::Gaming::Input::Custom {
 
-template <typename T> class impl_ICustomGameControllerFactory;
-template <typename T> class impl_IGameControllerFactoryManagerStatics;
-template <typename T> class impl_IGameControllerInputSink;
-template <typename T> class impl_IGameControllerProvider;
-template <typename T> class impl_IGipFirmwareUpdateResult;
-template <typename T> class impl_IGipGameControllerInputSink;
-template <typename T> class impl_IGipGameControllerProvider;
-template <typename T> class impl_IXusbGameControllerInputSink;
-template <typename T> class impl_IXusbGameControllerProvider;
+template <typename T> struct impl_ICustomGameControllerFactory;
+template <typename T> struct impl_IGameControllerFactoryManagerStatics;
+template <typename T> struct impl_IGameControllerInputSink;
+template <typename T> struct impl_IGameControllerProvider;
+template <typename T> struct impl_IGipFirmwareUpdateResult;
+template <typename T> struct impl_IGipGameControllerInputSink;
+template <typename T> struct impl_IGipGameControllerProvider;
+template <typename T> struct impl_IXusbGameControllerInputSink;
+template <typename T> struct impl_IXusbGameControllerProvider;
 
 }
 

@@ -11,12 +11,8 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::UI::Xaml::Navigation {
 
 template <typename D>
-class WINRT_EBO impl_INavigatingCancelEventArgs
+struct WINRT_EBO impl_INavigatingCancelEventArgs
 {
-    auto shim() const { return impl::shim<D, INavigatingCancelEventArgs>(this); }
-
-public:
-
     bool Cancel() const;
     void Cancel(bool value) const;
     Windows::UI::Xaml::Navigation::NavigationMode NavigationMode() const;
@@ -24,23 +20,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_INavigatingCancelEventArgs2
+struct WINRT_EBO impl_INavigatingCancelEventArgs2
 {
-    auto shim() const { return impl::shim<D, INavigatingCancelEventArgs2>(this); }
-
-public:
-
     Windows::IInspectable Parameter() const;
     Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo NavigationTransitionInfo() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_INavigationEventArgs
+struct WINRT_EBO impl_INavigationEventArgs
 {
-    auto shim() const { return impl::shim<D, INavigationEventArgs>(this); }
-
-public:
-
     Windows::IInspectable Content() const;
     Windows::IInspectable Parameter() const;
     Windows::UI::Xaml::Interop::TypeName SourcePageType() const;
@@ -50,22 +38,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_INavigationEventArgs2
+struct WINRT_EBO impl_INavigationEventArgs2
 {
-    auto shim() const { return impl::shim<D, INavigationEventArgs2>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo NavigationTransitionInfo() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_INavigationFailedEventArgs
+struct WINRT_EBO impl_INavigationFailedEventArgs
 {
-    auto shim() const { return impl::shim<D, INavigationFailedEventArgs>(this); }
-
-public:
-
     HRESULT Exception() const;
     bool Handled() const;
     void Handled(bool value) const;
@@ -73,34 +53,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPageStackEntry
+struct WINRT_EBO impl_IPageStackEntry
 {
-    auto shim() const { return impl::shim<D, IPageStackEntry>(this); }
-
-public:
-
     Windows::UI::Xaml::Interop::TypeName SourcePageType() const;
     Windows::IInspectable Parameter() const;
     Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo NavigationTransitionInfo() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPageStackEntryFactory
+struct WINRT_EBO impl_IPageStackEntryFactory
 {
-    auto shim() const { return impl::shim<D, IPageStackEntryFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Navigation::PageStackEntry CreateInstance(const Windows::UI::Xaml::Interop::TypeName & sourcePageType, const Windows::IInspectable & parameter, const Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo & navigationTransitionInfo) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPageStackEntryStatics
+struct WINRT_EBO impl_IPageStackEntryStatics
 {
-    auto shim() const { return impl::shim<D, IPageStackEntryStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty SourcePageTypeProperty() const;
 };
 

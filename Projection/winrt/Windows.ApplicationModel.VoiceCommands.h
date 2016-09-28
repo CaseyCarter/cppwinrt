@@ -808,260 +808,260 @@ namespace Windows::ApplicationModel::VoiceCommands {
 template <typename D> Windows::Foundation::IAsyncAction impl_IVoiceCommandDefinitionManagerStatics<D>::InstallCommandDefinitionsFromStorageFileAsync(const Windows::Storage::StorageFile & file) const
 {
     Windows::Foundation::IAsyncAction installAction;
-    check_hresult(shim()->abi_InstallCommandDefinitionsFromStorageFileAsync(get(file), put(installAction)));
+    check_hresult(static_cast<const IVoiceCommandDefinitionManagerStatics &>(static_cast<const D &>(*this))->abi_InstallCommandDefinitionsFromStorageFileAsync(get(file), put(installAction)));
     return installAction;
 }
 
 template <typename D> Windows::Foundation::Collections::IMapView<hstring, Windows::ApplicationModel::VoiceCommands::VoiceCommandDefinition> impl_IVoiceCommandDefinitionManagerStatics<D>::InstalledCommandDefinitions() const
 {
     Windows::Foundation::Collections::IMapView<hstring, Windows::ApplicationModel::VoiceCommands::VoiceCommandDefinition> voiceCommandDefinitions;
-    check_hresult(shim()->get_InstalledCommandDefinitions(put(voiceCommandDefinitions)));
+    check_hresult(static_cast<const IVoiceCommandDefinitionManagerStatics &>(static_cast<const D &>(*this))->get_InstalledCommandDefinitions(put(voiceCommandDefinitions)));
     return voiceCommandDefinitions;
 }
 
 template <typename D> hstring impl_IVoiceCommandDefinition<D>::Language() const
 {
     hstring value;
-    check_hresult(shim()->get_Language(put(value)));
+    check_hresult(static_cast<const IVoiceCommandDefinition &>(static_cast<const D &>(*this))->get_Language(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IVoiceCommandDefinition<D>::Name() const
 {
     hstring value;
-    check_hresult(shim()->get_Name(put(value)));
+    check_hresult(static_cast<const IVoiceCommandDefinition &>(static_cast<const D &>(*this))->get_Name(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IVoiceCommandDefinition<D>::SetPhraseListAsync(hstring_ref phraseListName, const Windows::Foundation::Collections::IIterable<hstring> & phraseList) const
 {
     Windows::Foundation::IAsyncAction updateAction;
-    check_hresult(shim()->abi_SetPhraseListAsync(get(phraseListName), get(phraseList), put(updateAction)));
+    check_hresult(static_cast<const IVoiceCommandDefinition &>(static_cast<const D &>(*this))->abi_SetPhraseListAsync(get(phraseListName), get(phraseList), put(updateAction)));
     return updateAction;
 }
 
 template <typename D> hstring impl_IVoiceCommandContentTile<D>::Title() const
 {
     hstring value;
-    check_hresult(shim()->get_Title(put(value)));
+    check_hresult(static_cast<const IVoiceCommandContentTile &>(static_cast<const D &>(*this))->get_Title(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVoiceCommandContentTile<D>::Title(hstring_ref value) const
 {
-    check_hresult(shim()->put_Title(get(value)));
+    check_hresult(static_cast<const IVoiceCommandContentTile &>(static_cast<const D &>(*this))->put_Title(get(value)));
 }
 
 template <typename D> hstring impl_IVoiceCommandContentTile<D>::TextLine1() const
 {
     hstring value;
-    check_hresult(shim()->get_TextLine1(put(value)));
+    check_hresult(static_cast<const IVoiceCommandContentTile &>(static_cast<const D &>(*this))->get_TextLine1(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVoiceCommandContentTile<D>::TextLine1(hstring_ref value) const
 {
-    check_hresult(shim()->put_TextLine1(get(value)));
+    check_hresult(static_cast<const IVoiceCommandContentTile &>(static_cast<const D &>(*this))->put_TextLine1(get(value)));
 }
 
 template <typename D> hstring impl_IVoiceCommandContentTile<D>::TextLine2() const
 {
     hstring value;
-    check_hresult(shim()->get_TextLine2(put(value)));
+    check_hresult(static_cast<const IVoiceCommandContentTile &>(static_cast<const D &>(*this))->get_TextLine2(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVoiceCommandContentTile<D>::TextLine2(hstring_ref value) const
 {
-    check_hresult(shim()->put_TextLine2(get(value)));
+    check_hresult(static_cast<const IVoiceCommandContentTile &>(static_cast<const D &>(*this))->put_TextLine2(get(value)));
 }
 
 template <typename D> hstring impl_IVoiceCommandContentTile<D>::TextLine3() const
 {
     hstring value;
-    check_hresult(shim()->get_TextLine3(put(value)));
+    check_hresult(static_cast<const IVoiceCommandContentTile &>(static_cast<const D &>(*this))->get_TextLine3(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVoiceCommandContentTile<D>::TextLine3(hstring_ref value) const
 {
-    check_hresult(shim()->put_TextLine3(get(value)));
+    check_hresult(static_cast<const IVoiceCommandContentTile &>(static_cast<const D &>(*this))->put_TextLine3(get(value)));
 }
 
 template <typename D> Windows::Storage::IStorageFile impl_IVoiceCommandContentTile<D>::Image() const
 {
     Windows::Storage::IStorageFile value;
-    check_hresult(shim()->get_Image(put(value)));
+    check_hresult(static_cast<const IVoiceCommandContentTile &>(static_cast<const D &>(*this))->get_Image(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVoiceCommandContentTile<D>::Image(const Windows::Storage::IStorageFile & value) const
 {
-    check_hresult(shim()->put_Image(get(value)));
+    check_hresult(static_cast<const IVoiceCommandContentTile &>(static_cast<const D &>(*this))->put_Image(get(value)));
 }
 
 template <typename D> Windows::IInspectable impl_IVoiceCommandContentTile<D>::AppContext() const
 {
     Windows::IInspectable value;
-    check_hresult(shim()->get_AppContext(put(value)));
+    check_hresult(static_cast<const IVoiceCommandContentTile &>(static_cast<const D &>(*this))->get_AppContext(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVoiceCommandContentTile<D>::AppContext(const Windows::IInspectable & value) const
 {
-    check_hresult(shim()->put_AppContext(get(value)));
+    check_hresult(static_cast<const IVoiceCommandContentTile &>(static_cast<const D &>(*this))->put_AppContext(get(value)));
 }
 
 template <typename D> hstring impl_IVoiceCommandContentTile<D>::AppLaunchArgument() const
 {
     hstring value;
-    check_hresult(shim()->get_AppLaunchArgument(put(value)));
+    check_hresult(static_cast<const IVoiceCommandContentTile &>(static_cast<const D &>(*this))->get_AppLaunchArgument(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVoiceCommandContentTile<D>::AppLaunchArgument(hstring_ref value) const
 {
-    check_hresult(shim()->put_AppLaunchArgument(get(value)));
+    check_hresult(static_cast<const IVoiceCommandContentTile &>(static_cast<const D &>(*this))->put_AppLaunchArgument(get(value)));
 }
 
 template <typename D> Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTileType impl_IVoiceCommandContentTile<D>::ContentTileType() const
 {
     Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTileType value {};
-    check_hresult(shim()->get_ContentTileType(&value));
+    check_hresult(static_cast<const IVoiceCommandContentTile &>(static_cast<const D &>(*this))->get_ContentTileType(&value));
     return value;
 }
 
 template <typename D> void impl_IVoiceCommandContentTile<D>::ContentTileType(Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTileType value) const
 {
-    check_hresult(shim()->put_ContentTileType(value));
+    check_hresult(static_cast<const IVoiceCommandContentTile &>(static_cast<const D &>(*this))->put_ContentTileType(value));
 }
 
 template <typename D> hstring impl_IVoiceCommandUserMessage<D>::DisplayMessage() const
 {
     hstring value;
-    check_hresult(shim()->get_DisplayMessage(put(value)));
+    check_hresult(static_cast<const IVoiceCommandUserMessage &>(static_cast<const D &>(*this))->get_DisplayMessage(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVoiceCommandUserMessage<D>::DisplayMessage(hstring_ref value) const
 {
-    check_hresult(shim()->put_DisplayMessage(get(value)));
+    check_hresult(static_cast<const IVoiceCommandUserMessage &>(static_cast<const D &>(*this))->put_DisplayMessage(get(value)));
 }
 
 template <typename D> hstring impl_IVoiceCommandUserMessage<D>::SpokenMessage() const
 {
     hstring value;
-    check_hresult(shim()->get_SpokenMessage(put(value)));
+    check_hresult(static_cast<const IVoiceCommandUserMessage &>(static_cast<const D &>(*this))->get_SpokenMessage(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVoiceCommandUserMessage<D>::SpokenMessage(hstring_ref value) const
 {
-    check_hresult(shim()->put_SpokenMessage(get(value)));
+    check_hresult(static_cast<const IVoiceCommandUserMessage &>(static_cast<const D &>(*this))->put_SpokenMessage(get(value)));
 }
 
 template <typename D> hstring impl_IVoiceCommand<D>::CommandName() const
 {
     hstring value;
-    check_hresult(shim()->get_CommandName(put(value)));
+    check_hresult(static_cast<const IVoiceCommand &>(static_cast<const D &>(*this))->get_CommandName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::Collections::IVectorView<hstring>> impl_IVoiceCommand<D>::Properties() const
 {
     Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::Collections::IVectorView<hstring>> value;
-    check_hresult(shim()->get_Properties(put(value)));
+    check_hresult(static_cast<const IVoiceCommand &>(static_cast<const D &>(*this))->get_Properties(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::SpeechRecognition::SpeechRecognitionResult impl_IVoiceCommand<D>::SpeechRecognitionResult() const
 {
     Windows::Media::SpeechRecognition::SpeechRecognitionResult value { nullptr };
-    check_hresult(shim()->get_SpeechRecognitionResult(put(value)));
+    check_hresult(static_cast<const IVoiceCommand &>(static_cast<const D &>(*this))->get_SpeechRecognitionResult(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::VoiceCommands::VoiceCommandCompletionReason impl_IVoiceCommandCompletedEventArgs<D>::Reason() const
 {
     Windows::ApplicationModel::VoiceCommands::VoiceCommandCompletionReason value {};
-    check_hresult(shim()->get_Reason(&value));
+    check_hresult(static_cast<const IVoiceCommandCompletedEventArgs &>(static_cast<const D &>(*this))->get_Reason(&value));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTile impl_IVoiceCommandDisambiguationResult<D>::SelectedItem() const
 {
     Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTile value { nullptr };
-    check_hresult(shim()->get_SelectedItem(put(value)));
+    check_hresult(static_cast<const IVoiceCommandDisambiguationResult &>(static_cast<const D &>(*this))->get_SelectedItem(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IVoiceCommandConfirmationResult<D>::Confirmed() const
 {
     bool value {};
-    check_hresult(shim()->get_Confirmed(&value));
+    check_hresult(static_cast<const IVoiceCommandConfirmationResult &>(static_cast<const D &>(*this))->get_Confirmed(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::VoiceCommands::VoiceCommand> impl_IVoiceCommandServiceConnection<D>::GetVoiceCommandAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::VoiceCommands::VoiceCommand> operation;
-    check_hresult(shim()->abi_GetVoiceCommandAsync(put(operation)));
+    check_hresult(static_cast<const IVoiceCommandServiceConnection &>(static_cast<const D &>(*this))->abi_GetVoiceCommandAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::VoiceCommands::VoiceCommandConfirmationResult> impl_IVoiceCommandServiceConnection<D>::RequestConfirmationAsync(const Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse & response) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::VoiceCommands::VoiceCommandConfirmationResult> operation;
-    check_hresult(shim()->abi_RequestConfirmationAsync(get(response), put(operation)));
+    check_hresult(static_cast<const IVoiceCommandServiceConnection &>(static_cast<const D &>(*this))->abi_RequestConfirmationAsync(get(response), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::VoiceCommands::VoiceCommandDisambiguationResult> impl_IVoiceCommandServiceConnection<D>::RequestDisambiguationAsync(const Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse & response) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::VoiceCommands::VoiceCommandDisambiguationResult> operation;
-    check_hresult(shim()->abi_RequestDisambiguationAsync(get(response), put(operation)));
+    check_hresult(static_cast<const IVoiceCommandServiceConnection &>(static_cast<const D &>(*this))->abi_RequestDisambiguationAsync(get(response), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IVoiceCommandServiceConnection<D>::ReportProgressAsync(const Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse & response) const
 {
     Windows::Foundation::IAsyncAction action;
-    check_hresult(shim()->abi_ReportProgressAsync(get(response), put(action)));
+    check_hresult(static_cast<const IVoiceCommandServiceConnection &>(static_cast<const D &>(*this))->abi_ReportProgressAsync(get(response), put(action)));
     return action;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IVoiceCommandServiceConnection<D>::ReportSuccessAsync(const Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse & response) const
 {
     Windows::Foundation::IAsyncAction action;
-    check_hresult(shim()->abi_ReportSuccessAsync(get(response), put(action)));
+    check_hresult(static_cast<const IVoiceCommandServiceConnection &>(static_cast<const D &>(*this))->abi_ReportSuccessAsync(get(response), put(action)));
     return action;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IVoiceCommandServiceConnection<D>::ReportFailureAsync(const Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse & response) const
 {
     Windows::Foundation::IAsyncAction action;
-    check_hresult(shim()->abi_ReportFailureAsync(get(response), put(action)));
+    check_hresult(static_cast<const IVoiceCommandServiceConnection &>(static_cast<const D &>(*this))->abi_ReportFailureAsync(get(response), put(action)));
     return action;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IVoiceCommandServiceConnection<D>::RequestAppLaunchAsync(const Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse & response) const
 {
     Windows::Foundation::IAsyncAction action;
-    check_hresult(shim()->abi_RequestAppLaunchAsync(get(response), put(action)));
+    check_hresult(static_cast<const IVoiceCommandServiceConnection &>(static_cast<const D &>(*this))->abi_RequestAppLaunchAsync(get(response), put(action)));
     return action;
 }
 
 template <typename D> Windows::Globalization::Language impl_IVoiceCommandServiceConnection<D>::Language() const
 {
     Windows::Globalization::Language language { nullptr };
-    check_hresult(shim()->get_Language(put(language)));
+    check_hresult(static_cast<const IVoiceCommandServiceConnection &>(static_cast<const D &>(*this))->get_Language(put(language)));
     return language;
 }
 
 template <typename D> event_token impl_IVoiceCommandServiceConnection<D>::VoiceCommandCompleted(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::VoiceCommands::VoiceCommandServiceConnection, Windows::ApplicationModel::VoiceCommands::VoiceCommandCompletedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_VoiceCommandCompleted(get(handler), &token));
+    check_hresult(static_cast<const IVoiceCommandServiceConnection &>(static_cast<const D &>(*this))->add_VoiceCommandCompleted(get(handler), &token));
     return token;
 }
 
@@ -1072,91 +1072,91 @@ template <typename D> event_revoker<IVoiceCommandServiceConnection> impl_IVoiceC
 
 template <typename D> void impl_IVoiceCommandServiceConnection<D>::VoiceCommandCompleted(event_token token) const
 {
-    check_hresult(shim()->remove_VoiceCommandCompleted(token));
+    check_hresult(static_cast<const IVoiceCommandServiceConnection &>(static_cast<const D &>(*this))->remove_VoiceCommandCompleted(token));
 }
 
 template <typename D> Windows::ApplicationModel::VoiceCommands::VoiceCommandServiceConnection impl_IVoiceCommandServiceConnectionStatics<D>::FromAppServiceTriggerDetails(const Windows::ApplicationModel::AppService::AppServiceTriggerDetails & triggerDetails) const
 {
     Windows::ApplicationModel::VoiceCommands::VoiceCommandServiceConnection value { nullptr };
-    check_hresult(shim()->abi_FromAppServiceTriggerDetails(get(triggerDetails), put(value)));
+    check_hresult(static_cast<const IVoiceCommandServiceConnectionStatics &>(static_cast<const D &>(*this))->abi_FromAppServiceTriggerDetails(get(triggerDetails), put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IVoiceCommandResponseStatics<D>::MaxSupportedVoiceCommandContentTiles() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_MaxSupportedVoiceCommandContentTiles(&value));
+    check_hresult(static_cast<const IVoiceCommandResponseStatics &>(static_cast<const D &>(*this))->get_MaxSupportedVoiceCommandContentTiles(&value));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse impl_IVoiceCommandResponseStatics<D>::CreateResponse(const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage & userMessage) const
 {
     Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse response { nullptr };
-    check_hresult(shim()->abi_CreateResponse(get(userMessage), put(response)));
+    check_hresult(static_cast<const IVoiceCommandResponseStatics &>(static_cast<const D &>(*this))->abi_CreateResponse(get(userMessage), put(response)));
     return response;
 }
 
 template <typename D> Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse impl_IVoiceCommandResponseStatics<D>::CreateResponse(const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage & message, const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTile> & contentTiles) const
 {
     Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse response { nullptr };
-    check_hresult(shim()->abi_CreateResponseWithTiles(get(message), get(contentTiles), put(response)));
+    check_hresult(static_cast<const IVoiceCommandResponseStatics &>(static_cast<const D &>(*this))->abi_CreateResponseWithTiles(get(message), get(contentTiles), put(response)));
     return response;
 }
 
 template <typename D> Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse impl_IVoiceCommandResponseStatics<D>::CreateResponseForPrompt(const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage & message, const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage & repeatMessage) const
 {
     Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse response { nullptr };
-    check_hresult(shim()->abi_CreateResponseForPrompt(get(message), get(repeatMessage), put(response)));
+    check_hresult(static_cast<const IVoiceCommandResponseStatics &>(static_cast<const D &>(*this))->abi_CreateResponseForPrompt(get(message), get(repeatMessage), put(response)));
     return response;
 }
 
 template <typename D> Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse impl_IVoiceCommandResponseStatics<D>::CreateResponseForPrompt(const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage & message, const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage & repeatMessage, const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTile> & contentTiles) const
 {
     Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse response { nullptr };
-    check_hresult(shim()->abi_CreateResponseForPromptWithTiles(get(message), get(repeatMessage), get(contentTiles), put(response)));
+    check_hresult(static_cast<const IVoiceCommandResponseStatics &>(static_cast<const D &>(*this))->abi_CreateResponseForPromptWithTiles(get(message), get(repeatMessage), get(contentTiles), put(response)));
     return response;
 }
 
 template <typename D> Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage impl_IVoiceCommandResponse<D>::Message() const
 {
     Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage value { nullptr };
-    check_hresult(shim()->get_Message(put(value)));
+    check_hresult(static_cast<const IVoiceCommandResponse &>(static_cast<const D &>(*this))->get_Message(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVoiceCommandResponse<D>::Message(const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage & value) const
 {
-    check_hresult(shim()->put_Message(get(value)));
+    check_hresult(static_cast<const IVoiceCommandResponse &>(static_cast<const D &>(*this))->put_Message(get(value)));
 }
 
 template <typename D> Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage impl_IVoiceCommandResponse<D>::RepeatMessage() const
 {
     Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage value { nullptr };
-    check_hresult(shim()->get_RepeatMessage(put(value)));
+    check_hresult(static_cast<const IVoiceCommandResponse &>(static_cast<const D &>(*this))->get_RepeatMessage(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVoiceCommandResponse<D>::RepeatMessage(const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage & value) const
 {
-    check_hresult(shim()->put_RepeatMessage(get(value)));
+    check_hresult(static_cast<const IVoiceCommandResponse &>(static_cast<const D &>(*this))->put_RepeatMessage(get(value)));
 }
 
 template <typename D> hstring impl_IVoiceCommandResponse<D>::AppLaunchArgument() const
 {
     hstring value;
-    check_hresult(shim()->get_AppLaunchArgument(put(value)));
+    check_hresult(static_cast<const IVoiceCommandResponse &>(static_cast<const D &>(*this))->get_AppLaunchArgument(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVoiceCommandResponse<D>::AppLaunchArgument(hstring_ref value) const
 {
-    check_hresult(shim()->put_AppLaunchArgument(get(value)));
+    check_hresult(static_cast<const IVoiceCommandResponse &>(static_cast<const D &>(*this))->put_AppLaunchArgument(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTile> impl_IVoiceCommandResponse<D>::VoiceCommandContentTiles() const
 {
     Windows::Foundation::Collections::IVector<Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTile> value;
-    check_hresult(shim()->get_VoiceCommandContentTiles(put(value)));
+    check_hresult(static_cast<const IVoiceCommandResponse &>(static_cast<const D &>(*this))->get_VoiceCommandContentTiles(put(value)));
     return value;
 }
 

@@ -70,11 +70,11 @@ template <> struct traits<Windows::Devices::Geolocation::Geofencing::GeofenceSta
 
 namespace Windows::Devices::Geolocation::Geofencing {
 
-template <typename T> class impl_IGeofence;
-template <typename T> class impl_IGeofenceFactory;
-template <typename T> class impl_IGeofenceMonitor;
-template <typename T> class impl_IGeofenceMonitorStatics;
-template <typename T> class impl_IGeofenceStateChangeReport;
+template <typename T> struct impl_IGeofence;
+template <typename T> struct impl_IGeofenceFactory;
+template <typename T> struct impl_IGeofenceMonitor;
+template <typename T> struct impl_IGeofenceMonitorStatics;
+template <typename T> struct impl_IGeofenceStateChangeReport;
 
 }
 

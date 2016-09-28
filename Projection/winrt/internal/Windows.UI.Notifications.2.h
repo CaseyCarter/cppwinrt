@@ -175,23 +175,15 @@ template <> struct __declspec(uuid("05eb86f1-7140-5517-b88d-cbaebe57e6b1")) __de
 namespace Windows::UI::Notifications {
 
 template <typename D>
-class WINRT_EBO impl_IAdaptiveNotificationContent
+struct WINRT_EBO impl_IAdaptiveNotificationContent
 {
-    auto shim() const { return impl::shim<D, IAdaptiveNotificationContent>(this); }
-
-public:
-
     Windows::UI::Notifications::AdaptiveNotificationContentKind Kind() const;
     Windows::Foundation::Collections::IMap<hstring, hstring> Hints() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAdaptiveNotificationText
+struct WINRT_EBO impl_IAdaptiveNotificationText
 {
-    auto shim() const { return impl::shim<D, IAdaptiveNotificationText>(this); }
-
-public:
-
     hstring Text() const;
     void Text(hstring_ref value) const;
     hstring Language() const;
@@ -199,34 +191,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBadgeNotification
+struct WINRT_EBO impl_IBadgeNotification
 {
-    auto shim() const { return impl::shim<D, IBadgeNotification>(this); }
-
-public:
-
     Windows::Data::Xml::Dom::XmlDocument Content() const;
     void ExpirationTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> ExpirationTime() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBadgeNotificationFactory
+struct WINRT_EBO impl_IBadgeNotificationFactory
 {
-    auto shim() const { return impl::shim<D, IBadgeNotificationFactory>(this); }
-
-public:
-
     Windows::UI::Notifications::BadgeNotification CreateBadgeNotification(const Windows::Data::Xml::Dom::XmlDocument & content) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBadgeUpdateManagerForUser
+struct WINRT_EBO impl_IBadgeUpdateManagerForUser
 {
-    auto shim() const { return impl::shim<D, IBadgeUpdateManagerForUser>(this); }
-
-public:
-
     Windows::UI::Notifications::BadgeUpdater CreateBadgeUpdaterForApplication() const;
     Windows::UI::Notifications::BadgeUpdater CreateBadgeUpdaterForApplication(hstring_ref applicationId) const;
     Windows::UI::Notifications::BadgeUpdater CreateBadgeUpdaterForSecondaryTile(hstring_ref tileId) const;
@@ -234,12 +214,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBadgeUpdateManagerStatics
+struct WINRT_EBO impl_IBadgeUpdateManagerStatics
 {
-    auto shim() const { return impl::shim<D, IBadgeUpdateManagerStatics>(this); }
-
-public:
-
     Windows::UI::Notifications::BadgeUpdater CreateBadgeUpdaterForApplication() const;
     Windows::UI::Notifications::BadgeUpdater CreateBadgeUpdaterForApplication(hstring_ref applicationId) const;
     Windows::UI::Notifications::BadgeUpdater CreateBadgeUpdaterForSecondaryTile(hstring_ref tileId) const;
@@ -247,22 +223,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBadgeUpdateManagerStatics2
+struct WINRT_EBO impl_IBadgeUpdateManagerStatics2
 {
-    auto shim() const { return impl::shim<D, IBadgeUpdateManagerStatics2>(this); }
-
-public:
-
     Windows::UI::Notifications::BadgeUpdateManagerForUser GetForUser(const Windows::System::User & user) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBadgeUpdater
+struct WINRT_EBO impl_IBadgeUpdater
 {
-    auto shim() const { return impl::shim<D, IBadgeUpdater>(this); }
-
-public:
-
     void Update(const Windows::UI::Notifications::BadgeNotification & notification) const;
     void Clear() const;
     void StartPeriodicUpdate(const Windows::Foundation::Uri & badgeContent, Windows::UI::Notifications::PeriodicUpdateRecurrence requestedInterval) const;
@@ -271,12 +239,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IKnownAdaptiveNotificationHintsStatics
+struct WINRT_EBO impl_IKnownAdaptiveNotificationHintsStatics
 {
-    auto shim() const { return impl::shim<D, IKnownAdaptiveNotificationHintsStatics>(this); }
-
-public:
-
     hstring Style() const;
     hstring Wrap() const;
     hstring MaxLines() const;
@@ -286,12 +250,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IKnownAdaptiveNotificationTextStylesStatics
+struct WINRT_EBO impl_IKnownAdaptiveNotificationTextStylesStatics
 {
-    auto shim() const { return impl::shim<D, IKnownAdaptiveNotificationTextStylesStatics>(this); }
-
-public:
-
     hstring Caption() const;
     hstring Body() const;
     hstring Base() const;
@@ -314,22 +274,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IKnownNotificationBindingsStatics
+struct WINRT_EBO impl_IKnownNotificationBindingsStatics
 {
-    auto shim() const { return impl::shim<D, IKnownNotificationBindingsStatics>(this); }
-
-public:
-
     hstring ToastGeneric() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_INotification
+struct WINRT_EBO impl_INotification
 {
-    auto shim() const { return impl::shim<D, INotification>(this); }
-
-public:
-
     Windows::Foundation::IReference<Windows::Foundation::DateTime> ExpirationTime() const;
     void ExpirationTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
     Windows::UI::Notifications::NotificationVisual Visual() const;
@@ -337,12 +289,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_INotificationBinding
+struct WINRT_EBO impl_INotificationBinding
 {
-    auto shim() const { return impl::shim<D, INotificationBinding>(this); }
-
-public:
-
     hstring Template() const;
     void Template(hstring_ref value) const;
     hstring Language() const;
@@ -352,12 +300,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_INotificationVisual
+struct WINRT_EBO impl_INotificationVisual
 {
-    auto shim() const { return impl::shim<D, INotificationVisual>(this); }
-
-public:
-
     hstring Language() const;
     void Language(hstring_ref value) const;
     Windows::Foundation::Collections::IVector<Windows::UI::Notifications::NotificationBinding> Bindings() const;
@@ -365,12 +309,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IScheduledTileNotification
+struct WINRT_EBO impl_IScheduledTileNotification
 {
-    auto shim() const { return impl::shim<D, IScheduledTileNotification>(this); }
-
-public:
-
     Windows::Data::Xml::Dom::XmlDocument Content() const;
     Windows::Foundation::DateTime DeliveryTime() const;
     void ExpirationTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
@@ -382,22 +322,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IScheduledTileNotificationFactory
+struct WINRT_EBO impl_IScheduledTileNotificationFactory
 {
-    auto shim() const { return impl::shim<D, IScheduledTileNotificationFactory>(this); }
-
-public:
-
     Windows::UI::Notifications::ScheduledTileNotification CreateScheduledTileNotification(const Windows::Data::Xml::Dom::XmlDocument & content, const Windows::Foundation::DateTime & deliveryTime) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IScheduledToastNotification
+struct WINRT_EBO impl_IScheduledToastNotification
 {
-    auto shim() const { return impl::shim<D, IScheduledToastNotification>(this); }
-
-public:
-
     Windows::Data::Xml::Dom::XmlDocument Content() const;
     Windows::Foundation::DateTime DeliveryTime() const;
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> SnoozeInterval() const;
@@ -407,12 +339,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IScheduledToastNotification2
+struct WINRT_EBO impl_IScheduledToastNotification2
 {
-    auto shim() const { return impl::shim<D, IScheduledToastNotification2>(this); }
-
-public:
-
     void Tag(hstring_ref value) const;
     hstring Tag() const;
     void Group(hstring_ref value) const;
@@ -422,12 +350,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IScheduledToastNotification3
+struct WINRT_EBO impl_IScheduledToastNotification3
 {
-    auto shim() const { return impl::shim<D, IScheduledToastNotification3>(this); }
-
-public:
-
     Windows::UI::Notifications::NotificationMirroring NotificationMirroring() const;
     void NotificationMirroring(Windows::UI::Notifications::NotificationMirroring value) const;
     hstring RemoteId() const;
@@ -435,55 +359,35 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IScheduledToastNotificationFactory
+struct WINRT_EBO impl_IScheduledToastNotificationFactory
 {
-    auto shim() const { return impl::shim<D, IScheduledToastNotificationFactory>(this); }
-
-public:
-
     Windows::UI::Notifications::ScheduledToastNotification CreateScheduledToastNotification(const Windows::Data::Xml::Dom::XmlDocument & content, const Windows::Foundation::DateTime & deliveryTime) const;
     Windows::UI::Notifications::ScheduledToastNotification CreateScheduledToastNotificationRecurring(const Windows::Data::Xml::Dom::XmlDocument & content, const Windows::Foundation::DateTime & deliveryTime, const Windows::Foundation::TimeSpan & snoozeInterval, uint32_t maximumSnoozeCount) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IShownTileNotification
+struct WINRT_EBO impl_IShownTileNotification
 {
-    auto shim() const { return impl::shim<D, IShownTileNotification>(this); }
-
-public:
-
     hstring Arguments() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITileFlyoutNotification
+struct WINRT_EBO impl_ITileFlyoutNotification
 {
-    auto shim() const { return impl::shim<D, ITileFlyoutNotification>(this); }
-
-public:
-
     Windows::Data::Xml::Dom::XmlDocument Content() const;
     void ExpirationTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> ExpirationTime() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITileFlyoutNotificationFactory
+struct WINRT_EBO impl_ITileFlyoutNotificationFactory
 {
-    auto shim() const { return impl::shim<D, ITileFlyoutNotificationFactory>(this); }
-
-public:
-
     Windows::UI::Notifications::TileFlyoutNotification CreateTileFlyoutNotification(const Windows::Data::Xml::Dom::XmlDocument & content) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITileFlyoutUpdateManagerStatics
+struct WINRT_EBO impl_ITileFlyoutUpdateManagerStatics
 {
-    auto shim() const { return impl::shim<D, ITileFlyoutUpdateManagerStatics>(this); }
-
-public:
-
     Windows::UI::Notifications::TileFlyoutUpdater CreateTileFlyoutUpdaterForApplication() const;
     Windows::UI::Notifications::TileFlyoutUpdater CreateTileFlyoutUpdaterForApplication(hstring_ref applicationId) const;
     Windows::UI::Notifications::TileFlyoutUpdater CreateTileFlyoutUpdaterForSecondaryTile(hstring_ref tileId) const;
@@ -491,12 +395,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ITileFlyoutUpdater
+struct WINRT_EBO impl_ITileFlyoutUpdater
 {
-    auto shim() const { return impl::shim<D, ITileFlyoutUpdater>(this); }
-
-public:
-
     void Update(const Windows::UI::Notifications::TileFlyoutNotification & notification) const;
     void Clear() const;
     void StartPeriodicUpdate(const Windows::Foundation::Uri & tileFlyoutContent, Windows::UI::Notifications::PeriodicUpdateRecurrence requestedInterval) const;
@@ -506,12 +406,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ITileNotification
+struct WINRT_EBO impl_ITileNotification
 {
-    auto shim() const { return impl::shim<D, ITileNotification>(this); }
-
-public:
-
     Windows::Data::Xml::Dom::XmlDocument Content() const;
     void ExpirationTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> ExpirationTime() const;
@@ -520,22 +416,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ITileNotificationFactory
+struct WINRT_EBO impl_ITileNotificationFactory
 {
-    auto shim() const { return impl::shim<D, ITileNotificationFactory>(this); }
-
-public:
-
     Windows::UI::Notifications::TileNotification CreateTileNotification(const Windows::Data::Xml::Dom::XmlDocument & content) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITileUpdateManagerForUser
+struct WINRT_EBO impl_ITileUpdateManagerForUser
 {
-    auto shim() const { return impl::shim<D, ITileUpdateManagerForUser>(this); }
-
-public:
-
     Windows::UI::Notifications::TileUpdater CreateTileUpdaterForApplicationForUser() const;
     Windows::UI::Notifications::TileUpdater CreateTileUpdaterForApplication(hstring_ref applicationId) const;
     Windows::UI::Notifications::TileUpdater CreateTileUpdaterForSecondaryTile(hstring_ref tileId) const;
@@ -543,12 +431,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ITileUpdateManagerStatics
+struct WINRT_EBO impl_ITileUpdateManagerStatics
 {
-    auto shim() const { return impl::shim<D, ITileUpdateManagerStatics>(this); }
-
-public:
-
     Windows::UI::Notifications::TileUpdater CreateTileUpdaterForApplication() const;
     Windows::UI::Notifications::TileUpdater CreateTileUpdaterForApplication(hstring_ref applicationId) const;
     Windows::UI::Notifications::TileUpdater CreateTileUpdaterForSecondaryTile(hstring_ref tileId) const;
@@ -556,22 +440,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ITileUpdateManagerStatics2
+struct WINRT_EBO impl_ITileUpdateManagerStatics2
 {
-    auto shim() const { return impl::shim<D, ITileUpdateManagerStatics2>(this); }
-
-public:
-
     Windows::UI::Notifications::TileUpdateManagerForUser GetForUser(const Windows::System::User & user) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITileUpdater
+struct WINRT_EBO impl_ITileUpdater
 {
-    auto shim() const { return impl::shim<D, ITileUpdater>(this); }
-
-public:
-
     void Update(const Windows::UI::Notifications::TileNotification & notification) const;
     void Clear() const;
     void EnableNotificationQueue(bool enable) const;
@@ -587,54 +463,34 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ITileUpdater2
+struct WINRT_EBO impl_ITileUpdater2
 {
-    auto shim() const { return impl::shim<D, ITileUpdater2>(this); }
-
-public:
-
     void EnableNotificationQueueForSquare150x150(bool enable) const;
     void EnableNotificationQueueForWide310x150(bool enable) const;
     void EnableNotificationQueueForSquare310x310(bool enable) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IToastActivatedEventArgs
+struct WINRT_EBO impl_IToastActivatedEventArgs
 {
-    auto shim() const { return impl::shim<D, IToastActivatedEventArgs>(this); }
-
-public:
-
     hstring Arguments() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IToastDismissedEventArgs
+struct WINRT_EBO impl_IToastDismissedEventArgs
 {
-    auto shim() const { return impl::shim<D, IToastDismissedEventArgs>(this); }
-
-public:
-
     Windows::UI::Notifications::ToastDismissalReason Reason() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IToastFailedEventArgs
+struct WINRT_EBO impl_IToastFailedEventArgs
 {
-    auto shim() const { return impl::shim<D, IToastFailedEventArgs>(this); }
-
-public:
-
     HRESULT ErrorCode() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IToastNotification
+struct WINRT_EBO impl_IToastNotification
 {
-    auto shim() const { return impl::shim<D, IToastNotification>(this); }
-
-public:
-
     Windows::Data::Xml::Dom::XmlDocument Content() const;
     void ExpirationTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> ExpirationTime() const;
@@ -653,12 +509,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IToastNotification2
+struct WINRT_EBO impl_IToastNotification2
 {
-    auto shim() const { return impl::shim<D, IToastNotification2>(this); }
-
-public:
-
     void Tag(hstring_ref value) const;
     hstring Tag() const;
     void Group(hstring_ref value) const;
@@ -668,12 +520,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IToastNotification3
+struct WINRT_EBO impl_IToastNotification3
 {
-    auto shim() const { return impl::shim<D, IToastNotification3>(this); }
-
-public:
-
     Windows::UI::Notifications::NotificationMirroring NotificationMirroring() const;
     void NotificationMirroring(Windows::UI::Notifications::NotificationMirroring value) const;
     hstring RemoteId() const;
@@ -681,33 +529,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IToastNotificationActionTriggerDetail
+struct WINRT_EBO impl_IToastNotificationActionTriggerDetail
 {
-    auto shim() const { return impl::shim<D, IToastNotificationActionTriggerDetail>(this); }
-
-public:
-
     hstring Argument() const;
     Windows::Foundation::Collections::ValueSet UserInput() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IToastNotificationFactory
+struct WINRT_EBO impl_IToastNotificationFactory
 {
-    auto shim() const { return impl::shim<D, IToastNotificationFactory>(this); }
-
-public:
-
     Windows::UI::Notifications::ToastNotification CreateToastNotification(const Windows::Data::Xml::Dom::XmlDocument & content) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IToastNotificationHistory
+struct WINRT_EBO impl_IToastNotificationHistory
 {
-    auto shim() const { return impl::shim<D, IToastNotificationHistory>(this); }
-
-public:
-
     void RemoveGroup(hstring_ref group) const;
     void RemoveGroup(hstring_ref group, hstring_ref applicationId) const;
     void Remove(hstring_ref tag, hstring_ref group, hstring_ref applicationId) const;
@@ -718,33 +554,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IToastNotificationHistory2
+struct WINRT_EBO impl_IToastNotificationHistory2
 {
-    auto shim() const { return impl::shim<D, IToastNotificationHistory2>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::ToastNotification> GetHistory() const;
     Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::ToastNotification> GetHistory(hstring_ref applicationId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IToastNotificationHistoryChangedTriggerDetail
+struct WINRT_EBO impl_IToastNotificationHistoryChangedTriggerDetail
 {
-    auto shim() const { return impl::shim<D, IToastNotificationHistoryChangedTriggerDetail>(this); }
-
-public:
-
     Windows::UI::Notifications::ToastHistoryChangedType ChangeType() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IToastNotificationManagerForUser
+struct WINRT_EBO impl_IToastNotificationManagerForUser
 {
-    auto shim() const { return impl::shim<D, IToastNotificationManagerForUser>(this); }
-
-public:
-
     Windows::UI::Notifications::ToastNotifier CreateToastNotifier() const;
     Windows::UI::Notifications::ToastNotifier CreateToastNotifier(hstring_ref applicationId) const;
     Windows::UI::Notifications::ToastNotificationHistory History() const;
@@ -752,45 +576,29 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IToastNotificationManagerStatics
+struct WINRT_EBO impl_IToastNotificationManagerStatics
 {
-    auto shim() const { return impl::shim<D, IToastNotificationManagerStatics>(this); }
-
-public:
-
     Windows::UI::Notifications::ToastNotifier CreateToastNotifier() const;
     Windows::UI::Notifications::ToastNotifier CreateToastNotifier(hstring_ref applicationId) const;
     Windows::Data::Xml::Dom::XmlDocument GetTemplateContent(Windows::UI::Notifications::ToastTemplateType type) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IToastNotificationManagerStatics2
+struct WINRT_EBO impl_IToastNotificationManagerStatics2
 {
-    auto shim() const { return impl::shim<D, IToastNotificationManagerStatics2>(this); }
-
-public:
-
     Windows::UI::Notifications::ToastNotificationHistory History() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IToastNotificationManagerStatics4
+struct WINRT_EBO impl_IToastNotificationManagerStatics4
 {
-    auto shim() const { return impl::shim<D, IToastNotificationManagerStatics4>(this); }
-
-public:
-
     Windows::UI::Notifications::ToastNotificationManagerForUser GetForUser(const Windows::System::User & user) const;
     void ConfigureNotificationMirroring(Windows::UI::Notifications::NotificationMirroring value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IToastNotifier
+struct WINRT_EBO impl_IToastNotifier
 {
-    auto shim() const { return impl::shim<D, IToastNotifier>(this); }
-
-public:
-
     void Show(const Windows::UI::Notifications::ToastNotification & notification) const;
     void Hide(const Windows::UI::Notifications::ToastNotification & notification) const;
     Windows::UI::Notifications::NotificationSetting Setting() const;
@@ -800,12 +608,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUserNotification
+struct WINRT_EBO impl_IUserNotification
 {
-    auto shim() const { return impl::shim<D, IUserNotification>(this); }
-
-public:
-
     Windows::UI::Notifications::Notification Notification() const;
     Windows::ApplicationModel::AppInfo AppInfo() const;
     uint32_t Id() const;
@@ -813,12 +617,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUserNotificationChangedEventArgs
+struct WINRT_EBO impl_IUserNotificationChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IUserNotificationChangedEventArgs>(this); }
-
-public:
-
     Windows::UI::Notifications::UserNotificationChangedKind ChangeKind() const;
     uint32_t UserNotificationId() const;
 };

@@ -40,8 +40,8 @@ template <> struct traits<Windows::UI::Notifications::Management::UserNotificati
 
 namespace Windows::UI::Notifications::Management {
 
-template <typename T> class impl_IUserNotificationListener;
-template <typename T> class impl_IUserNotificationListenerStatics;
+template <typename T> struct impl_IUserNotificationListener;
+template <typename T> struct impl_IUserNotificationListenerStatics;
 
 }
 

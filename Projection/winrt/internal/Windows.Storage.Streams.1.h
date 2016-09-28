@@ -186,23 +186,23 @@ template <> struct traits<Windows::Storage::Streams::RandomAccessStreamReference
 
 namespace Windows::Storage::Streams {
 
-template <typename T> class impl_IBuffer;
-template <typename T> class impl_IBufferFactory;
-template <typename T> class impl_IBufferStatics;
-template <typename T> class impl_IContentTypeProvider;
-template <typename T> class impl_IDataReader;
-template <typename T> class impl_IDataReaderFactory;
-template <typename T> class impl_IDataReaderStatics;
-template <typename T> class impl_IDataWriter;
-template <typename T> class impl_IDataWriterFactory;
-template <typename T> class impl_IInputStream;
-template <typename T> class impl_IInputStreamReference;
-template <typename T> class impl_IOutputStream;
-template <typename T> class impl_IRandomAccessStream;
-template <typename T> class impl_IRandomAccessStreamReference;
-template <typename T> class impl_IRandomAccessStreamReferenceStatics;
-template <typename T> class impl_IRandomAccessStreamStatics;
-template <typename T> class impl_IRandomAccessStreamWithContentType;
+template <typename T> struct impl_IBuffer;
+template <typename T> struct impl_IBufferFactory;
+template <typename T> struct impl_IBufferStatics;
+template <typename T> struct impl_IContentTypeProvider;
+template <typename T> struct impl_IDataReader;
+template <typename T> struct impl_IDataReaderFactory;
+template <typename T> struct impl_IDataReaderStatics;
+template <typename T> struct impl_IDataWriter;
+template <typename T> struct impl_IDataWriterFactory;
+template <typename T> struct impl_IInputStream;
+template <typename T> struct impl_IInputStreamReference;
+template <typename T> struct impl_IOutputStream;
+template <typename T> struct impl_IRandomAccessStream;
+template <typename T> struct impl_IRandomAccessStreamReference;
+template <typename T> struct impl_IRandomAccessStreamReferenceStatics;
+template <typename T> struct impl_IRandomAccessStreamStatics;
+template <typename T> struct impl_IRandomAccessStreamWithContentType;
 
 }
 

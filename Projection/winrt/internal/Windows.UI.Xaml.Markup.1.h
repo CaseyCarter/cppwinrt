@@ -172,18 +172,18 @@ template <> struct traits<Windows::UI::Xaml::Markup::XamlReader> { using default
 
 namespace Windows::UI::Xaml::Markup {
 
-template <typename T> class impl_IComponentConnector;
-template <typename T> class impl_IComponentConnector2;
-template <typename T> class impl_IDataTemplateComponent;
-template <typename T> class impl_IXamlBinaryWriter;
-template <typename T> class impl_IXamlBinaryWriterStatics;
-template <typename T> class impl_IXamlBindingHelper;
-template <typename T> class impl_IXamlBindingHelperStatics;
-template <typename T> class impl_IXamlMember;
-template <typename T> class impl_IXamlMetadataProvider;
-template <typename T> class impl_IXamlReader;
-template <typename T> class impl_IXamlReaderStatics;
-template <typename T> class impl_IXamlType;
+template <typename T> struct impl_IComponentConnector;
+template <typename T> struct impl_IComponentConnector2;
+template <typename T> struct impl_IDataTemplateComponent;
+template <typename T> struct impl_IXamlBinaryWriter;
+template <typename T> struct impl_IXamlBinaryWriterStatics;
+template <typename T> struct impl_IXamlBindingHelper;
+template <typename T> struct impl_IXamlBindingHelperStatics;
+template <typename T> struct impl_IXamlMember;
+template <typename T> struct impl_IXamlMetadataProvider;
+template <typename T> struct impl_IXamlReader;
+template <typename T> struct impl_IXamlReaderStatics;
+template <typename T> struct impl_IXamlType;
 
 }
 

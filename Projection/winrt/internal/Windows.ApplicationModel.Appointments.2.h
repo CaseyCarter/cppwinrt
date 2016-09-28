@@ -340,12 +340,8 @@ template <> struct __declspec(uuid("7c7899be-5f2e-5bf3-ade5-ad98b772c7cd")) __de
 namespace Windows::ApplicationModel::Appointments {
 
 template <typename D>
-class WINRT_EBO impl_IAppointment
+struct WINRT_EBO impl_IAppointment
 {
-    auto shim() const { return impl::shim<D, IAppointment>(this); }
-
-public:
-
     Windows::Foundation::DateTime StartTime() const;
     void StartTime(const Windows::Foundation::DateTime & value) const;
     Windows::Foundation::TimeSpan Duration() const;
@@ -374,12 +370,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointment2
+struct WINRT_EBO impl_IAppointment2
 {
-    auto shim() const { return impl::shim<D, IAppointment2>(this); }
-
-public:
-
     hstring LocalId() const;
     hstring CalendarId() const;
     hstring RoamingId() const;
@@ -403,12 +395,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointment3
+struct WINRT_EBO impl_IAppointment3
 {
-    auto shim() const { return impl::shim<D, IAppointment3>(this); }
-
-public:
-
     uint64_t ChangeNumber() const;
     uint64_t RemoteChangeNumber() const;
     void RemoteChangeNumber(uint64_t value) const;
@@ -417,12 +405,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentCalendar
+struct WINRT_EBO impl_IAppointmentCalendar
 {
-    auto shim() const { return impl::shim<D, IAppointmentCalendar>(this); }
-
-public:
-
     Windows::UI::Color DisplayColor() const;
     hstring DisplayName() const;
     void DisplayName(hstring_ref value) const;
@@ -452,12 +436,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentCalendar2
+struct WINRT_EBO impl_IAppointmentCalendar2
 {
-    auto shim() const { return impl::shim<D, IAppointmentCalendar2>(this); }
-
-public:
-
     Windows::ApplicationModel::Appointments::AppointmentCalendarSyncManager SyncManager() const;
     hstring RemoteId() const;
     void RemoteId(hstring_ref value) const;
@@ -486,22 +466,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentCalendar3
+struct WINRT_EBO impl_IAppointmentCalendar3
 {
-    auto shim() const { return impl::shim<D, IAppointmentCalendar3>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction RegisterSyncManagerAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentCalendarSyncManager
+struct WINRT_EBO impl_IAppointmentCalendarSyncManager
 {
-    auto shim() const { return impl::shim<D, IAppointmentCalendarSyncManager>(this); }
-
-public:
-
     Windows::ApplicationModel::Appointments::AppointmentCalendarSyncStatus Status() const;
     Windows::Foundation::DateTime LastSuccessfulSyncTime() const;
     Windows::Foundation::DateTime LastAttemptedSyncTime() const;
@@ -513,47 +485,31 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentCalendarSyncManager2
+struct WINRT_EBO impl_IAppointmentCalendarSyncManager2
 {
-    auto shim() const { return impl::shim<D, IAppointmentCalendarSyncManager2>(this); }
-
-public:
-
     void Status(Windows::ApplicationModel::Appointments::AppointmentCalendarSyncStatus value) const;
     void LastSuccessfulSyncTime(const Windows::Foundation::DateTime & value) const;
     void LastAttemptedSyncTime(const Windows::Foundation::DateTime & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentConflictResult
+struct WINRT_EBO impl_IAppointmentConflictResult
 {
-    auto shim() const { return impl::shim<D, IAppointmentConflictResult>(this); }
-
-public:
-
     Windows::ApplicationModel::Appointments::AppointmentConflictType Type() const;
     Windows::Foundation::DateTime Date() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentException
+struct WINRT_EBO impl_IAppointmentException
 {
-    auto shim() const { return impl::shim<D, IAppointmentException>(this); }
-
-public:
-
     Windows::ApplicationModel::Appointments::Appointment Appointment() const;
     Windows::Foundation::Collections::IVectorView<hstring> ExceptionProperties() const;
     bool IsDeleted() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentInvitee
+struct WINRT_EBO impl_IAppointmentInvitee
 {
-    auto shim() const { return impl::shim<D, IAppointmentInvitee>(this); }
-
-public:
-
     Windows::ApplicationModel::Appointments::AppointmentParticipantRole Role() const;
     void Role(Windows::ApplicationModel::Appointments::AppointmentParticipantRole value) const;
     Windows::ApplicationModel::Appointments::AppointmentParticipantResponse Response() const;
@@ -561,12 +517,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentManagerForUser
+struct WINRT_EBO impl_IAppointmentManagerForUser
 {
-    auto shim() const { return impl::shim<D, IAppointmentManagerForUser>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<hstring> ShowAddAppointmentAsync(const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection) const;
     Windows::Foundation::IAsyncOperation<hstring> ShowAddAppointmentAsync(const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement) const;
     Windows::Foundation::IAsyncOperation<hstring> ShowReplaceAppointmentAsync(hstring_ref appointmentId, const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection) const;
@@ -584,12 +536,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentManagerStatics
+struct WINRT_EBO impl_IAppointmentManagerStatics
 {
-    auto shim() const { return impl::shim<D, IAppointmentManagerStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<hstring> ShowAddAppointmentAsync(const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection) const;
     Windows::Foundation::IAsyncOperation<hstring> ShowAddAppointmentAsync(const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement) const;
     Windows::Foundation::IAsyncOperation<hstring> ShowReplaceAppointmentAsync(hstring_ref appointmentId, const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection) const;
@@ -602,12 +550,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentManagerStatics2
+struct WINRT_EBO impl_IAppointmentManagerStatics2
 {
-    auto shim() const { return impl::shim<D, IAppointmentManagerStatics2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction ShowAppointmentDetailsAsync(hstring_ref appointmentId) const;
     Windows::Foundation::IAsyncAction ShowAppointmentDetailsAsync(hstring_ref appointmentId, const Windows::Foundation::DateTime & instanceStartDate) const;
     Windows::Foundation::IAsyncOperation<hstring> ShowEditNewAppointmentAsync(const Windows::ApplicationModel::Appointments::Appointment & appointment) const;
@@ -615,22 +559,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentManagerStatics3
+struct WINRT_EBO impl_IAppointmentManagerStatics3
 {
-    auto shim() const { return impl::shim<D, IAppointmentManagerStatics3>(this); }
-
-public:
-
     Windows::ApplicationModel::Appointments::AppointmentManagerForUser GetForUser(const Windows::System::User & user) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentParticipant
+struct WINRT_EBO impl_IAppointmentParticipant
 {
-    auto shim() const { return impl::shim<D, IAppointmentParticipant>(this); }
-
-public:
-
     hstring DisplayName() const;
     void DisplayName(hstring_ref value) const;
     hstring Address() const;
@@ -638,12 +574,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentPropertiesStatics
+struct WINRT_EBO impl_IAppointmentPropertiesStatics
 {
-    auto shim() const { return impl::shim<D, IAppointmentPropertiesStatics>(this); }
-
-public:
-
     hstring Subject() const;
     hstring Location() const;
     hstring StartTime() const;
@@ -670,24 +602,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentPropertiesStatics2
+struct WINRT_EBO impl_IAppointmentPropertiesStatics2
 {
-    auto shim() const { return impl::shim<D, IAppointmentPropertiesStatics2>(this); }
-
-public:
-
     hstring ChangeNumber() const;
     hstring RemoteChangeNumber() const;
     hstring DetailsKind() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentRecurrence
+struct WINRT_EBO impl_IAppointmentRecurrence
 {
-    auto shim() const { return impl::shim<D, IAppointmentRecurrence>(this); }
-
-public:
-
     Windows::ApplicationModel::Appointments::AppointmentRecurrenceUnit Unit() const;
     void Unit(Windows::ApplicationModel::Appointments::AppointmentRecurrenceUnit value) const;
     Windows::Foundation::IReference<uint32_t> Occurrences() const;
@@ -707,34 +631,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentRecurrence2
+struct WINRT_EBO impl_IAppointmentRecurrence2
 {
-    auto shim() const { return impl::shim<D, IAppointmentRecurrence2>(this); }
-
-public:
-
     Windows::ApplicationModel::Appointments::RecurrenceType RecurrenceType() const;
     hstring TimeZone() const;
     void TimeZone(hstring_ref value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentRecurrence3
+struct WINRT_EBO impl_IAppointmentRecurrence3
 {
-    auto shim() const { return impl::shim<D, IAppointmentRecurrence3>(this); }
-
-public:
-
     hstring CalendarIdentifier() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentStore
+struct WINRT_EBO impl_IAppointmentStore
 {
-    auto shim() const { return impl::shim<D, IAppointmentStore>(this); }
-
-public:
-
     Windows::ApplicationModel::Appointments::AppointmentStoreChangeTracker ChangeTracker() const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::AppointmentCalendar> CreateAppointmentCalendarAsync(hstring_ref name) const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::AppointmentCalendar> GetAppointmentCalendarAsync(hstring_ref calendarId) const;
@@ -759,12 +671,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentStore2
+struct WINRT_EBO impl_IAppointmentStore2
 {
-    auto shim() const { return impl::shim<D, IAppointmentStore2>(this); }
-
-public:
-
     event_token StoreChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Appointments::AppointmentStore, Windows::ApplicationModel::Appointments::AppointmentStoreChangedEventArgs> & pHandler) const;
     using StoreChanged_revoker = event_revoker<IAppointmentStore2>;
     StoreChanged_revoker StoreChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Appointments::AppointmentStore, Windows::ApplicationModel::Appointments::AppointmentStoreChangedEventArgs> & pHandler) const;
@@ -773,86 +681,54 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentStoreChange
+struct WINRT_EBO impl_IAppointmentStoreChange
 {
-    auto shim() const { return impl::shim<D, IAppointmentStoreChange>(this); }
-
-public:
-
     Windows::ApplicationModel::Appointments::Appointment Appointment() const;
     Windows::ApplicationModel::Appointments::AppointmentStoreChangeType ChangeType() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentStoreChange2
+struct WINRT_EBO impl_IAppointmentStoreChange2
 {
-    auto shim() const { return impl::shim<D, IAppointmentStoreChange2>(this); }
-
-public:
-
     Windows::ApplicationModel::Appointments::AppointmentCalendar AppointmentCalendar() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentStoreChangeReader
+struct WINRT_EBO impl_IAppointmentStoreChangeReader
 {
-    auto shim() const { return impl::shim<D, IAppointmentStoreChangeReader>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Appointments::AppointmentStoreChange>> ReadBatchAsync() const;
     void AcceptChanges() const;
     void AcceptChangesThrough(const Windows::ApplicationModel::Appointments::AppointmentStoreChange & lastChangeToAccept) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentStoreChangeTracker
+struct WINRT_EBO impl_IAppointmentStoreChangeTracker
 {
-    auto shim() const { return impl::shim<D, IAppointmentStoreChangeTracker>(this); }
-
-public:
-
     Windows::ApplicationModel::Appointments::AppointmentStoreChangeReader GetChangeReader() const;
     void Enable() const;
     void Reset() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentStoreChangedDeferral
+struct WINRT_EBO impl_IAppointmentStoreChangedDeferral
 {
-    auto shim() const { return impl::shim<D, IAppointmentStoreChangedDeferral>(this); }
-
-public:
-
     void Complete() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentStoreChangedEventArgs
+struct WINRT_EBO impl_IAppointmentStoreChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IAppointmentStoreChangedEventArgs>(this); }
-
-public:
-
     Windows::ApplicationModel::Appointments::AppointmentStoreChangedDeferral GetDeferral() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentStoreNotificationTriggerDetails
+struct WINRT_EBO impl_IAppointmentStoreNotificationTriggerDetails
 {
-    auto shim() const { return impl::shim<D, IAppointmentStoreNotificationTriggerDetails>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IFindAppointmentsOptions
+struct WINRT_EBO impl_IFindAppointmentsOptions
 {
-    auto shim() const { return impl::shim<D, IFindAppointmentsOptions>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<hstring> CalendarIds() const;
     Windows::Foundation::Collections::IVector<hstring> FetchProperties() const;
     bool IncludeHidden() const;

@@ -10,23 +10,15 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::Perception {
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionTimestamp
+struct WINRT_EBO impl_IPerceptionTimestamp
 {
-    auto shim() const { return impl::shim<D, IPerceptionTimestamp>(this); }
-
-public:
-
     Windows::Foundation::DateTime TargetTime() const;
     Windows::Foundation::TimeSpan PredictionAmount() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPerceptionTimestampHelperStatics
+struct WINRT_EBO impl_IPerceptionTimestampHelperStatics
 {
-    auto shim() const { return impl::shim<D, IPerceptionTimestampHelperStatics>(this); }
-
-public:
-
     Windows::Perception::PerceptionTimestamp FromHistoricalTargetTime(const Windows::Foundation::DateTime & targetTime) const;
 };
 

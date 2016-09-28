@@ -39,8 +39,8 @@ template <> struct traits<Windows::Devices::Radios::Radio> { using default_inter
 
 namespace Windows::Devices::Radios {
 
-template <typename T> class impl_IRadio;
-template <typename T> class impl_IRadioStatics;
+template <typename T> struct impl_IRadio;
+template <typename T> struct impl_IRadioStatics;
 
 }
 

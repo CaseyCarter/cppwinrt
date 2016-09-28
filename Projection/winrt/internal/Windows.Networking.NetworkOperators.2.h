@@ -441,12 +441,8 @@ template <> struct __declspec(uuid("9385bd8f-5e14-557a-a7f1-63f33d9ecacf")) __de
 namespace Windows::Networking::NetworkOperators {
 
 template <typename D>
-class WINRT_EBO impl_IHotspotAuthenticationContext
+struct WINRT_EBO impl_IHotspotAuthenticationContext
 {
-    auto shim() const { return impl::shim<D, IHotspotAuthenticationContext>(this); }
-
-public:
-
     com_array<uint8_t> WirelessNetworkId() const;
     Windows::Networking::Connectivity::NetworkAdapter NetworkAdapter() const;
     Windows::Foundation::Uri RedirectMessageUrl() const;
@@ -459,42 +455,26 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHotspotAuthenticationContext2
+struct WINRT_EBO impl_IHotspotAuthenticationContext2
 {
-    auto shim() const { return impl::shim<D, IHotspotAuthenticationContext2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::HotspotCredentialsAuthenticationResult> IssueCredentialsAsync(hstring_ref userName, hstring_ref password, hstring_ref extraParameters, bool markAsManualConnectOnFailure) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHotspotAuthenticationContextStatics
+struct WINRT_EBO impl_IHotspotAuthenticationContextStatics
 {
-    auto shim() const { return impl::shim<D, IHotspotAuthenticationContextStatics>(this); }
-
-public:
-
     bool TryGetAuthenticationContext(hstring_ref evenToken, Windows::Networking::NetworkOperators::HotspotAuthenticationContext & context) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHotspotAuthenticationEventDetails
+struct WINRT_EBO impl_IHotspotAuthenticationEventDetails
 {
-    auto shim() const { return impl::shim<D, IHotspotAuthenticationEventDetails>(this); }
-
-public:
-
     hstring EventToken() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHotspotCredentialsAuthenticationResult
+struct WINRT_EBO impl_IHotspotCredentialsAuthenticationResult
 {
-    auto shim() const { return impl::shim<D, IHotspotCredentialsAuthenticationResult>(this); }
-
-public:
-
     bool HasNetworkErrorOccurred() const;
     Windows::Networking::NetworkOperators::HotspotAuthenticationResponseCode ResponseCode() const;
     Windows::Foundation::Uri LogoffUrl() const;
@@ -502,36 +482,24 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IKnownCSimFilePathsStatics
+struct WINRT_EBO impl_IKnownCSimFilePathsStatics
 {
-    auto shim() const { return impl::shim<D, IKnownCSimFilePathsStatics>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<uint32_t> EFSpn() const;
     Windows::Foundation::Collections::IVectorView<uint32_t> Gid1() const;
     Windows::Foundation::Collections::IVectorView<uint32_t> Gid2() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IKnownRuimFilePathsStatics
+struct WINRT_EBO impl_IKnownRuimFilePathsStatics
 {
-    auto shim() const { return impl::shim<D, IKnownRuimFilePathsStatics>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<uint32_t> EFSpn() const;
     Windows::Foundation::Collections::IVectorView<uint32_t> Gid1() const;
     Windows::Foundation::Collections::IVectorView<uint32_t> Gid2() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IKnownSimFilePathsStatics
+struct WINRT_EBO impl_IKnownSimFilePathsStatics
 {
-    auto shim() const { return impl::shim<D, IKnownSimFilePathsStatics>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<uint32_t> EFOns() const;
     Windows::Foundation::Collections::IVectorView<uint32_t> EFSpn() const;
     Windows::Foundation::Collections::IVectorView<uint32_t> Gid1() const;
@@ -539,12 +507,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IKnownUSimFilePathsStatics
+struct WINRT_EBO impl_IKnownUSimFilePathsStatics
 {
-    auto shim() const { return impl::shim<D, IKnownUSimFilePathsStatics>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<uint32_t> EFSpn() const;
     Windows::Foundation::Collections::IVectorView<uint32_t> EFOpl() const;
     Windows::Foundation::Collections::IVectorView<uint32_t> EFPnn() const;
@@ -553,12 +517,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMobileBroadbandAccount
+struct WINRT_EBO impl_IMobileBroadbandAccount
 {
-    auto shim() const { return impl::shim<D, IMobileBroadbandAccount>(this); }
-
-public:
-
     hstring NetworkAccountId() const;
     GUID ServiceProviderGuid() const;
     hstring ServiceProviderName() const;
@@ -567,55 +527,35 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMobileBroadbandAccount2
+struct WINRT_EBO impl_IMobileBroadbandAccount2
 {
-    auto shim() const { return impl::shim<D, IMobileBroadbandAccount2>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Networking::Connectivity::ConnectionProfile> GetConnectionProfiles() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMobileBroadbandAccountEventArgs
+struct WINRT_EBO impl_IMobileBroadbandAccountEventArgs
 {
-    auto shim() const { return impl::shim<D, IMobileBroadbandAccountEventArgs>(this); }
-
-public:
-
     hstring NetworkAccountId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMobileBroadbandAccountStatics
+struct WINRT_EBO impl_IMobileBroadbandAccountStatics
 {
-    auto shim() const { return impl::shim<D, IMobileBroadbandAccountStatics>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<hstring> AvailableNetworkAccountIds() const;
     Windows::Networking::NetworkOperators::MobileBroadbandAccount CreateFromNetworkAccountId(hstring_ref networkAccountId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMobileBroadbandAccountUpdatedEventArgs
+struct WINRT_EBO impl_IMobileBroadbandAccountUpdatedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMobileBroadbandAccountUpdatedEventArgs>(this); }
-
-public:
-
     hstring NetworkAccountId() const;
     bool HasDeviceInformationChanged() const;
     bool HasNetworkChanged() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMobileBroadbandAccountWatcher
+struct WINRT_EBO impl_IMobileBroadbandAccountWatcher
 {
-    auto shim() const { return impl::shim<D, IMobileBroadbandAccountWatcher>(this); }
-
-public:
-
     event_token AccountAdded(const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountEventArgs> & handler) const;
     using AccountAdded_revoker = event_revoker<IMobileBroadbandAccountWatcher>;
     AccountAdded_revoker AccountAdded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandAccountWatcher, Windows::Networking::NetworkOperators::MobileBroadbandAccountEventArgs> & handler) const;
@@ -642,12 +582,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMobileBroadbandDeviceInformation
+struct WINRT_EBO impl_IMobileBroadbandDeviceInformation
 {
-    auto shim() const { return impl::shim<D, IMobileBroadbandDeviceInformation>(this); }
-
-public:
-
     Windows::Networking::NetworkOperators::NetworkDeviceStatus NetworkDeviceStatus() const;
     hstring Manufacturer() const;
     hstring Model() const;
@@ -665,24 +601,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMobileBroadbandDeviceInformation2
+struct WINRT_EBO impl_IMobileBroadbandDeviceInformation2
 {
-    auto shim() const { return impl::shim<D, IMobileBroadbandDeviceInformation2>(this); }
-
-public:
-
     Windows::Networking::NetworkOperators::MobileBroadbandPinManager PinManager() const;
     hstring Revision() const;
     hstring SerialNumber() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMobileBroadbandDeviceService
+struct WINRT_EBO impl_IMobileBroadbandDeviceService
 {
-    auto shim() const { return impl::shim<D, IMobileBroadbandDeviceService>(this); }
-
-public:
-
     GUID DeviceServiceId() const;
     Windows::Foundation::Collections::IVectorView<uint32_t> SupportedCommands() const;
     Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataSession OpenDataSession() const;
@@ -690,45 +618,29 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMobileBroadbandDeviceServiceCommandResult
+struct WINRT_EBO impl_IMobileBroadbandDeviceServiceCommandResult
 {
-    auto shim() const { return impl::shim<D, IMobileBroadbandDeviceServiceCommandResult>(this); }
-
-public:
-
     uint32_t StatusCode() const;
     Windows::Storage::Streams::IBuffer ResponseData() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMobileBroadbandDeviceServiceCommandSession
+struct WINRT_EBO impl_IMobileBroadbandDeviceServiceCommandSession
 {
-    auto shim() const { return impl::shim<D, IMobileBroadbandDeviceServiceCommandSession>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceCommandResult> SendQueryCommandAsync(uint32_t commandId, const Windows::Storage::Streams::IBuffer & data) const;
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceCommandResult> SendSetCommandAsync(uint32_t commandId, const Windows::Storage::Streams::IBuffer & data) const;
     void CloseSession() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMobileBroadbandDeviceServiceDataReceivedEventArgs
+struct WINRT_EBO impl_IMobileBroadbandDeviceServiceDataReceivedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMobileBroadbandDeviceServiceDataReceivedEventArgs>(this); }
-
-public:
-
     Windows::Storage::Streams::IBuffer ReceivedData() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMobileBroadbandDeviceServiceDataSession
+struct WINRT_EBO impl_IMobileBroadbandDeviceServiceDataSession
 {
-    auto shim() const { return impl::shim<D, IMobileBroadbandDeviceServiceDataSession>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction WriteDataAsync(const Windows::Storage::Streams::IBuffer & value) const;
     void CloseSession() const;
     event_token DataReceived(const Windows::Foundation::TypedEventHandler<Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataSession, Windows::Networking::NetworkOperators::MobileBroadbandDeviceServiceDataReceivedEventArgs> & eventHandler) const;
@@ -738,36 +650,24 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMobileBroadbandDeviceServiceInformation
+struct WINRT_EBO impl_IMobileBroadbandDeviceServiceInformation
 {
-    auto shim() const { return impl::shim<D, IMobileBroadbandDeviceServiceInformation>(this); }
-
-public:
-
     GUID DeviceServiceId() const;
     bool IsDataReadSupported() const;
     bool IsDataWriteSupported() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMobileBroadbandDeviceServiceTriggerDetails
+struct WINRT_EBO impl_IMobileBroadbandDeviceServiceTriggerDetails
 {
-    auto shim() const { return impl::shim<D, IMobileBroadbandDeviceServiceTriggerDetails>(this); }
-
-public:
-
     hstring DeviceId() const;
     GUID DeviceServiceId() const;
     Windows::Storage::Streams::IBuffer ReceivedData() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMobileBroadbandModem
+struct WINRT_EBO impl_IMobileBroadbandModem
 {
-    auto shim() const { return impl::shim<D, IMobileBroadbandModem>(this); }
-
-public:
-
     Windows::Networking::NetworkOperators::MobileBroadbandAccount CurrentAccount() const;
     Windows::Networking::NetworkOperators::MobileBroadbandDeviceInformation DeviceInformation() const;
     uint32_t MaxDeviceServiceCommandSizeInBytes() const;
@@ -781,36 +681,24 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMobileBroadbandModemConfiguration
+struct WINRT_EBO impl_IMobileBroadbandModemConfiguration
 {
-    auto shim() const { return impl::shim<D, IMobileBroadbandModemConfiguration>(this); }
-
-public:
-
     Windows::Networking::NetworkOperators::MobileBroadbandUicc Uicc() const;
     hstring HomeProviderId() const;
     hstring HomeProviderName() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMobileBroadbandModemStatics
+struct WINRT_EBO impl_IMobileBroadbandModemStatics
 {
-    auto shim() const { return impl::shim<D, IMobileBroadbandModemStatics>(this); }
-
-public:
-
     hstring GetDeviceSelector() const;
     Windows::Networking::NetworkOperators::MobileBroadbandModem FromId(hstring_ref deviceId) const;
     Windows::Networking::NetworkOperators::MobileBroadbandModem GetDefault() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMobileBroadbandNetwork
+struct WINRT_EBO impl_IMobileBroadbandNetwork
 {
-    auto shim() const { return impl::shim<D, IMobileBroadbandNetwork>(this); }
-
-public:
-
     Windows::Networking::Connectivity::NetworkAdapter NetworkAdapter() const;
     Windows::Networking::NetworkOperators::NetworkRegistrationState NetworkRegistrationState() const;
     uint32_t RegistrationNetworkError() const;
@@ -824,44 +712,28 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMobileBroadbandNetwork2
+struct WINRT_EBO impl_IMobileBroadbandNetwork2
 {
-    auto shim() const { return impl::shim<D, IMobileBroadbandNetwork2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<bool> GetVoiceCallSupportAsync() const;
     Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandUiccApp> RegistrationUiccApps() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMobileBroadbandNetworkRegistrationStateChange
+struct WINRT_EBO impl_IMobileBroadbandNetworkRegistrationStateChange
 {
-    auto shim() const { return impl::shim<D, IMobileBroadbandNetworkRegistrationStateChange>(this); }
-
-public:
-
     hstring DeviceId() const;
     Windows::Networking::NetworkOperators::MobileBroadbandNetwork Network() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMobileBroadbandNetworkRegistrationStateChangeTriggerDetails
+struct WINRT_EBO impl_IMobileBroadbandNetworkRegistrationStateChangeTriggerDetails
 {
-    auto shim() const { return impl::shim<D, IMobileBroadbandNetworkRegistrationStateChangeTriggerDetails>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandNetworkRegistrationStateChange> NetworkRegistrationStateChanges() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMobileBroadbandPin
+struct WINRT_EBO impl_IMobileBroadbandPin
 {
-    auto shim() const { return impl::shim<D, IMobileBroadbandPin>(this); }
-
-public:
-
     Windows::Networking::NetworkOperators::MobileBroadbandPinType Type() const;
     Windows::Networking::NetworkOperators::MobileBroadbandPinLockState LockState() const;
     Windows::Networking::NetworkOperators::MobileBroadbandPinFormat Format() const;
@@ -877,88 +749,56 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMobileBroadbandPinLockStateChange
+struct WINRT_EBO impl_IMobileBroadbandPinLockStateChange
 {
-    auto shim() const { return impl::shim<D, IMobileBroadbandPinLockStateChange>(this); }
-
-public:
-
     hstring DeviceId() const;
     Windows::Networking::NetworkOperators::MobileBroadbandPinType PinType() const;
     Windows::Networking::NetworkOperators::MobileBroadbandPinLockState PinLockState() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMobileBroadbandPinLockStateChangeTriggerDetails
+struct WINRT_EBO impl_IMobileBroadbandPinLockStateChangeTriggerDetails
 {
-    auto shim() const { return impl::shim<D, IMobileBroadbandPinLockStateChangeTriggerDetails>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandPinLockStateChange> PinLockStateChanges() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMobileBroadbandPinManager
+struct WINRT_EBO impl_IMobileBroadbandPinManager
 {
-    auto shim() const { return impl::shim<D, IMobileBroadbandPinManager>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Networking::NetworkOperators::MobileBroadbandPinType> SupportedPins() const;
     Windows::Networking::NetworkOperators::MobileBroadbandPin GetPin(Windows::Networking::NetworkOperators::MobileBroadbandPinType pinType) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMobileBroadbandPinOperationResult
+struct WINRT_EBO impl_IMobileBroadbandPinOperationResult
 {
-    auto shim() const { return impl::shim<D, IMobileBroadbandPinOperationResult>(this); }
-
-public:
-
     bool IsSuccessful() const;
     uint32_t AttemptsRemaining() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMobileBroadbandRadioStateChange
+struct WINRT_EBO impl_IMobileBroadbandRadioStateChange
 {
-    auto shim() const { return impl::shim<D, IMobileBroadbandRadioStateChange>(this); }
-
-public:
-
     hstring DeviceId() const;
     Windows::Networking::NetworkOperators::MobileBroadbandRadioState RadioState() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMobileBroadbandRadioStateChangeTriggerDetails
+struct WINRT_EBO impl_IMobileBroadbandRadioStateChangeTriggerDetails
 {
-    auto shim() const { return impl::shim<D, IMobileBroadbandRadioStateChangeTriggerDetails>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandRadioStateChange> RadioStateChanges() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMobileBroadbandUicc
+struct WINRT_EBO impl_IMobileBroadbandUicc
 {
-    auto shim() const { return impl::shim<D, IMobileBroadbandUicc>(this); }
-
-public:
-
     hstring SimIccId() const;
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppsResult> GetUiccAppsAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMobileBroadbandUiccApp
+struct WINRT_EBO impl_IMobileBroadbandUiccApp
 {
-    auto shim() const { return impl::shim<D, IMobileBroadbandUiccApp>(this); }
-
-public:
-
     Windows::Storage::Streams::IBuffer Id() const;
     Windows::Networking::NetworkOperators::UiccAppKind Kind() const;
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::MobileBroadbandUiccAppRecordDetailsResult> GetRecordDetailsAsync(const Windows::Foundation::Collections::IIterable<uint32_t> & uiccFilePath) const;
@@ -966,23 +806,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMobileBroadbandUiccAppReadRecordResult
+struct WINRT_EBO impl_IMobileBroadbandUiccAppReadRecordResult
 {
-    auto shim() const { return impl::shim<D, IMobileBroadbandUiccAppReadRecordResult>(this); }
-
-public:
-
     Windows::Networking::NetworkOperators::MobileBroadbandUiccAppOperationStatus Status() const;
     Windows::Storage::Streams::IBuffer Data() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMobileBroadbandUiccAppRecordDetailsResult
+struct WINRT_EBO impl_IMobileBroadbandUiccAppRecordDetailsResult
 {
-    auto shim() const { return impl::shim<D, IMobileBroadbandUiccAppRecordDetailsResult>(this); }
-
-public:
-
     Windows::Networking::NetworkOperators::MobileBroadbandUiccAppOperationStatus Status() const;
     Windows::Networking::NetworkOperators::UiccAppRecordKind Kind() const;
     int32_t RecordCount() const;
@@ -992,23 +824,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMobileBroadbandUiccAppsResult
+struct WINRT_EBO impl_IMobileBroadbandUiccAppsResult
 {
-    auto shim() const { return impl::shim<D, IMobileBroadbandUiccAppsResult>(this); }
-
-public:
-
     Windows::Networking::NetworkOperators::MobileBroadbandUiccAppOperationStatus Status() const;
     Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::MobileBroadbandUiccApp> UiccApps() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_INetworkOperatorTetheringAccessPointConfiguration
+struct WINRT_EBO impl_INetworkOperatorTetheringAccessPointConfiguration
 {
-    auto shim() const { return impl::shim<D, INetworkOperatorTetheringAccessPointConfiguration>(this); }
-
-public:
-
     hstring Ssid() const;
     void Ssid(hstring_ref value) const;
     hstring Passphrase() const;
@@ -1016,33 +840,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_INetworkOperatorTetheringClient
+struct WINRT_EBO impl_INetworkOperatorTetheringClient
 {
-    auto shim() const { return impl::shim<D, INetworkOperatorTetheringClient>(this); }
-
-public:
-
     hstring MacAddress() const;
     Windows::Foundation::Collections::IVectorView<Windows::Networking::HostName> HostNames() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_INetworkOperatorTetheringClientManager
+struct WINRT_EBO impl_INetworkOperatorTetheringClientManager
 {
-    auto shim() const { return impl::shim<D, INetworkOperatorTetheringClientManager>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Networking::NetworkOperators::NetworkOperatorTetheringClient> GetTetheringClients() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_INetworkOperatorTetheringManager
+struct WINRT_EBO impl_INetworkOperatorTetheringManager
 {
-    auto shim() const { return impl::shim<D, INetworkOperatorTetheringManager>(this); }
-
-public:
-
     uint32_t MaxClientCount() const;
     uint32_t ClientCount() const;
     Windows::Networking::NetworkOperators::TetheringOperationalState TetheringOperationalState() const;
@@ -1053,98 +865,62 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_INetworkOperatorTetheringManagerStatics
+struct WINRT_EBO impl_INetworkOperatorTetheringManagerStatics
 {
-    auto shim() const { return impl::shim<D, INetworkOperatorTetheringManagerStatics>(this); }
-
-public:
-
     Windows::Networking::NetworkOperators::TetheringCapability GetTetheringCapability(hstring_ref networkAccountId) const;
     Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager CreateFromNetworkAccountId(hstring_ref networkAccountId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_INetworkOperatorTetheringManagerStatics2
+struct WINRT_EBO impl_INetworkOperatorTetheringManagerStatics2
 {
-    auto shim() const { return impl::shim<D, INetworkOperatorTetheringManagerStatics2>(this); }
-
-public:
-
     Windows::Networking::NetworkOperators::TetheringCapability GetTetheringCapabilityFromConnectionProfile(const Windows::Networking::Connectivity::ConnectionProfile & profile) const;
     Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager CreateFromConnectionProfile(const Windows::Networking::Connectivity::ConnectionProfile & profile) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_INetworkOperatorTetheringManagerStatics3
+struct WINRT_EBO impl_INetworkOperatorTetheringManagerStatics3
 {
-    auto shim() const { return impl::shim<D, INetworkOperatorTetheringManagerStatics3>(this); }
-
-public:
-
     Windows::Networking::NetworkOperators::NetworkOperatorTetheringManager CreateFromConnectionProfile(const Windows::Networking::Connectivity::ConnectionProfile & profile, const Windows::Networking::Connectivity::NetworkAdapter & adapter) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_INetworkOperatorTetheringOperationResult
+struct WINRT_EBO impl_INetworkOperatorTetheringOperationResult
 {
-    auto shim() const { return impl::shim<D, INetworkOperatorTetheringOperationResult>(this); }
-
-public:
-
     Windows::Networking::NetworkOperators::TetheringOperationStatus Status() const;
     hstring AdditionalErrorMessage() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IProvisionFromXmlDocumentResults
+struct WINRT_EBO impl_IProvisionFromXmlDocumentResults
 {
-    auto shim() const { return impl::shim<D, IProvisionFromXmlDocumentResults>(this); }
-
-public:
-
     bool AllElementsProvisioned() const;
     hstring ProvisionResultsXml() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IProvisionedProfile
+struct WINRT_EBO impl_IProvisionedProfile
 {
-    auto shim() const { return impl::shim<D, IProvisionedProfile>(this); }
-
-public:
-
     void UpdateCost(Windows::Networking::Connectivity::NetworkCostType value) const;
     void UpdateUsage(const Windows::Networking::NetworkOperators::ProfileUsage & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IProvisioningAgent
+struct WINRT_EBO impl_IProvisioningAgent
 {
-    auto shim() const { return impl::shim<D, IProvisioningAgent>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::ProvisionFromXmlDocumentResults> ProvisionFromXmlDocumentAsync(hstring_ref provisioningXmlDocument) const;
     Windows::Networking::NetworkOperators::ProvisionedProfile GetProvisionedProfile(Windows::Networking::NetworkOperators::ProfileMediaType mediaType, hstring_ref profileName) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IProvisioningAgentStaticMethods
+struct WINRT_EBO impl_IProvisioningAgentStaticMethods
 {
-    auto shim() const { return impl::shim<D, IProvisioningAgentStaticMethods>(this); }
-
-public:
-
     Windows::Networking::NetworkOperators::ProvisioningAgent CreateFromNetworkAccountId(hstring_ref networkAccountId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUssdMessage
+struct WINRT_EBO impl_IUssdMessage
 {
-    auto shim() const { return impl::shim<D, IUssdMessage>(this); }
-
-public:
-
     uint8_t DataCodingScheme() const;
     void DataCodingScheme(uint8_t value) const;
     com_array<uint8_t> GetPayload() const;
@@ -1154,44 +930,28 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUssdMessageFactory
+struct WINRT_EBO impl_IUssdMessageFactory
 {
-    auto shim() const { return impl::shim<D, IUssdMessageFactory>(this); }
-
-public:
-
     Windows::Networking::NetworkOperators::UssdMessage CreateMessage(hstring_ref messageText) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUssdReply
+struct WINRT_EBO impl_IUssdReply
 {
-    auto shim() const { return impl::shim<D, IUssdReply>(this); }
-
-public:
-
     Windows::Networking::NetworkOperators::UssdResultCode ResultCode() const;
     Windows::Networking::NetworkOperators::UssdMessage Message() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUssdSession
+struct WINRT_EBO impl_IUssdSession
 {
-    auto shim() const { return impl::shim<D, IUssdSession>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Networking::NetworkOperators::UssdReply> SendMessageAndGetReplyAsync(const Windows::Networking::NetworkOperators::UssdMessage & message) const;
     void Close() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUssdSessionStatics
+struct WINRT_EBO impl_IUssdSessionStatics
 {
-    auto shim() const { return impl::shim<D, IUssdSessionStatics>(this); }
-
-public:
-
     Windows::Networking::NetworkOperators::UssdSession CreateFromNetworkAccountId(hstring_ref networkAccountId) const;
     Windows::Networking::NetworkOperators::UssdSession CreateFromNetworkInterfaceId(hstring_ref networkInterfaceId) const;
 };

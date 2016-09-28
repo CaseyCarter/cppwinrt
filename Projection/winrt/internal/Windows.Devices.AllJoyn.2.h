@@ -310,12 +310,8 @@ template <> struct __declspec(uuid("05eb86f1-7140-5517-b88d-cbaebe57e6b1")) __de
 namespace Windows::Devices::AllJoyn {
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynAboutData
+struct WINRT_EBO impl_IAllJoynAboutData
 {
-    auto shim() const { return impl::shim<D, IAllJoynAboutData>(this); }
-
-public:
-
     bool IsEnabled() const;
     void IsEnabled(bool value) const;
     hstring DefaultAppName() const;
@@ -340,12 +336,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynAboutDataView
+struct WINRT_EBO impl_IAllJoynAboutDataView
 {
-    auto shim() const { return impl::shim<D, IAllJoynAboutDataView>(this); }
-
-public:
-
     int32_t Status() const;
     Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> Properties() const;
     hstring AJSoftwareVersion() const;
@@ -365,33 +357,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynAboutDataViewStatics
+struct WINRT_EBO impl_IAllJoynAboutDataViewStatics
 {
-    auto shim() const { return impl::shim<D, IAllJoynAboutDataViewStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> GetDataBySessionPortAsync(hstring_ref uniqueName, const Windows::Devices::AllJoyn::AllJoynBusAttachment & busAttachment, uint16_t sessionPort) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> GetDataBySessionPortAsync(hstring_ref uniqueName, const Windows::Devices::AllJoyn::AllJoynBusAttachment & busAttachment, uint16_t sessionPort, const Windows::Globalization::Language & language) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynAcceptSessionJoiner
+struct WINRT_EBO impl_IAllJoynAcceptSessionJoiner
 {
-    auto shim() const { return impl::shim<D, IAllJoynAcceptSessionJoiner>(this); }
-
-public:
-
     void Accept() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynAcceptSessionJoinerEventArgs
+struct WINRT_EBO impl_IAllJoynAcceptSessionJoinerEventArgs
 {
-    auto shim() const { return impl::shim<D, IAllJoynAcceptSessionJoinerEventArgs>(this); }
-
-public:
-
     hstring UniqueName() const;
     uint16_t SessionPort() const;
     Windows::Devices::AllJoyn::AllJoynTrafficType TrafficType() const;
@@ -401,34 +381,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynAcceptSessionJoinerEventArgsFactory
+struct WINRT_EBO impl_IAllJoynAcceptSessionJoinerEventArgsFactory
 {
-    auto shim() const { return impl::shim<D, IAllJoynAcceptSessionJoinerEventArgsFactory>(this); }
-
-public:
-
     Windows::Devices::AllJoyn::AllJoynAcceptSessionJoinerEventArgs Create(hstring_ref uniqueName, uint16_t sessionPort, Windows::Devices::AllJoyn::AllJoynTrafficType trafficType, uint8_t proximity, const Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoiner & acceptSessionJoiner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynAuthenticationCompleteEventArgs
+struct WINRT_EBO impl_IAllJoynAuthenticationCompleteEventArgs
 {
-    auto shim() const { return impl::shim<D, IAllJoynAuthenticationCompleteEventArgs>(this); }
-
-public:
-
     Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism AuthenticationMechanism() const;
     hstring PeerUniqueName() const;
     bool Succeeded() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynBusAttachment
+struct WINRT_EBO impl_IAllJoynBusAttachment
 {
-    auto shim() const { return impl::shim<D, IAllJoynBusAttachment>(this); }
-
-public:
-
     Windows::Devices::AllJoyn::AllJoynAboutData AboutData() const;
     hstring ConnectionSpecification() const;
     Windows::Devices::AllJoyn::AllJoynBusAttachmentState State() const;
@@ -456,12 +424,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynBusAttachment2
+struct WINRT_EBO impl_IAllJoynBusAttachment2
 {
-    auto shim() const { return impl::shim<D, IAllJoynBusAttachment2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> GetAboutDataAsync(const Windows::Devices::AllJoyn::AllJoynServiceInfo & serviceInfo) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> GetAboutDataAsync(const Windows::Devices::AllJoyn::AllJoynServiceInfo & serviceInfo, const Windows::Globalization::Language & language) const;
     event_token AcceptSessionJoinerRequested(const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAcceptSessionJoinerEventArgs> & handler) const;
@@ -475,44 +439,28 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynBusAttachmentFactory
+struct WINRT_EBO impl_IAllJoynBusAttachmentFactory
 {
-    auto shim() const { return impl::shim<D, IAllJoynBusAttachmentFactory>(this); }
-
-public:
-
     Windows::Devices::AllJoyn::AllJoynBusAttachment Create(hstring_ref connectionSpecification) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynBusAttachmentStateChangedEventArgs
+struct WINRT_EBO impl_IAllJoynBusAttachmentStateChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IAllJoynBusAttachmentStateChangedEventArgs>(this); }
-
-public:
-
     Windows::Devices::AllJoyn::AllJoynBusAttachmentState State() const;
     int32_t Status() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynBusAttachmentStatics
+struct WINRT_EBO impl_IAllJoynBusAttachmentStatics
 {
-    auto shim() const { return impl::shim<D, IAllJoynBusAttachmentStatics>(this); }
-
-public:
-
     Windows::Devices::AllJoyn::AllJoynBusAttachment GetDefault() const;
     Windows::Devices::Enumeration::DeviceWatcher GetWatcher(const Windows::Foundation::Collections::IIterable<hstring> & requiredInterfaces) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynBusObject
+struct WINRT_EBO impl_IAllJoynBusObject
 {
-    auto shim() const { return impl::shim<D, IAllJoynBusObject>(this); }
-
-public:
-
     void Start() const;
     void Stop() const;
     void AddProducer(const Windows::Devices::AllJoyn::IAllJoynProducer & producer) const;
@@ -525,43 +473,27 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynBusObjectFactory
+struct WINRT_EBO impl_IAllJoynBusObjectFactory
 {
-    auto shim() const { return impl::shim<D, IAllJoynBusObjectFactory>(this); }
-
-public:
-
     Windows::Devices::AllJoyn::AllJoynBusObject Create(hstring_ref objectPath) const;
     Windows::Devices::AllJoyn::AllJoynBusObject CreateWithBusAttachment(hstring_ref objectPath, const Windows::Devices::AllJoyn::AllJoynBusAttachment & busAttachment) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynBusObjectStoppedEventArgs
+struct WINRT_EBO impl_IAllJoynBusObjectStoppedEventArgs
 {
-    auto shim() const { return impl::shim<D, IAllJoynBusObjectStoppedEventArgs>(this); }
-
-public:
-
     int32_t Status() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynBusObjectStoppedEventArgsFactory
+struct WINRT_EBO impl_IAllJoynBusObjectStoppedEventArgsFactory
 {
-    auto shim() const { return impl::shim<D, IAllJoynBusObjectStoppedEventArgsFactory>(this); }
-
-public:
-
     Windows::Devices::AllJoyn::AllJoynBusObjectStoppedEventArgs Create(int32_t status) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynCredentials
+struct WINRT_EBO impl_IAllJoynCredentials
 {
-    auto shim() const { return impl::shim<D, IAllJoynCredentials>(this); }
-
-public:
-
     Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism AuthenticationMechanism() const;
     Windows::Security::Cryptography::Certificates::Certificate Certificate() const;
     void Certificate(const Windows::Security::Cryptography::Certificates::Certificate & value) const;
@@ -572,12 +504,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynCredentialsRequestedEventArgs
+struct WINRT_EBO impl_IAllJoynCredentialsRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, IAllJoynCredentialsRequestedEventArgs>(this); }
-
-public:
-
     uint16_t AttemptCount() const;
     Windows::Devices::AllJoyn::AllJoynCredentials Credentials() const;
     hstring PeerUniqueName() const;
@@ -586,12 +514,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynCredentialsVerificationRequestedEventArgs
+struct WINRT_EBO impl_IAllJoynCredentialsVerificationRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, IAllJoynCredentialsVerificationRequestedEventArgs>(this); }
-
-public:
-
     Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism AuthenticationMechanism() const;
     hstring PeerUniqueName() const;
     Windows::Security::Cryptography::Certificates::Certificate PeerCertificate() const;
@@ -603,114 +527,70 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynMessageInfo
+struct WINRT_EBO impl_IAllJoynMessageInfo
 {
-    auto shim() const { return impl::shim<D, IAllJoynMessageInfo>(this); }
-
-public:
-
     hstring SenderUniqueName() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynMessageInfoFactory
+struct WINRT_EBO impl_IAllJoynMessageInfoFactory
 {
-    auto shim() const { return impl::shim<D, IAllJoynMessageInfoFactory>(this); }
-
-public:
-
     Windows::Devices::AllJoyn::AllJoynMessageInfo Create(hstring_ref senderUniqueName) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynProducer
+struct WINRT_EBO impl_IAllJoynProducer
 {
-    auto shim() const { return impl::shim<D, IAllJoynProducer>(this); }
-
-public:
-
     void SetBusObject(const Windows::Devices::AllJoyn::AllJoynBusObject & busObject) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynProducerStoppedEventArgs
+struct WINRT_EBO impl_IAllJoynProducerStoppedEventArgs
 {
-    auto shim() const { return impl::shim<D, IAllJoynProducerStoppedEventArgs>(this); }
-
-public:
-
     int32_t Status() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynProducerStoppedEventArgsFactory
+struct WINRT_EBO impl_IAllJoynProducerStoppedEventArgsFactory
 {
-    auto shim() const { return impl::shim<D, IAllJoynProducerStoppedEventArgsFactory>(this); }
-
-public:
-
     Windows::Devices::AllJoyn::AllJoynProducerStoppedEventArgs Create(int32_t status) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynServiceInfo
+struct WINRT_EBO impl_IAllJoynServiceInfo
 {
-    auto shim() const { return impl::shim<D, IAllJoynServiceInfo>(this); }
-
-public:
-
     hstring UniqueName() const;
     hstring ObjectPath() const;
     uint16_t SessionPort() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynServiceInfoFactory
+struct WINRT_EBO impl_IAllJoynServiceInfoFactory
 {
-    auto shim() const { return impl::shim<D, IAllJoynServiceInfoFactory>(this); }
-
-public:
-
     Windows::Devices::AllJoyn::AllJoynServiceInfo Create(hstring_ref uniqueName, hstring_ref objectPath, uint16_t sessionPort) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynServiceInfoRemovedEventArgs
+struct WINRT_EBO impl_IAllJoynServiceInfoRemovedEventArgs
 {
-    auto shim() const { return impl::shim<D, IAllJoynServiceInfoRemovedEventArgs>(this); }
-
-public:
-
     hstring UniqueName() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynServiceInfoRemovedEventArgsFactory
+struct WINRT_EBO impl_IAllJoynServiceInfoRemovedEventArgsFactory
 {
-    auto shim() const { return impl::shim<D, IAllJoynServiceInfoRemovedEventArgsFactory>(this); }
-
-public:
-
     Windows::Devices::AllJoyn::AllJoynServiceInfoRemovedEventArgs Create(hstring_ref uniqueName) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynServiceInfoStatics
+struct WINRT_EBO impl_IAllJoynServiceInfoStatics
 {
-    auto shim() const { return impl::shim<D, IAllJoynServiceInfoStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynServiceInfo> FromIdAsync(hstring_ref deviceId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynSession
+struct WINRT_EBO impl_IAllJoynSession
 {
-    auto shim() const { return impl::shim<D, IAllJoynSession>(this); }
-
-public:
-
     int32_t Id() const;
     int32_t Status() const;
     Windows::Foundation::IAsyncOperation<int32_t> RemoveMemberAsync(hstring_ref uniqueName) const;
@@ -729,103 +609,63 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynSessionJoinedEventArgs
+struct WINRT_EBO impl_IAllJoynSessionJoinedEventArgs
 {
-    auto shim() const { return impl::shim<D, IAllJoynSessionJoinedEventArgs>(this); }
-
-public:
-
     Windows::Devices::AllJoyn::AllJoynSession Session() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynSessionJoinedEventArgsFactory
+struct WINRT_EBO impl_IAllJoynSessionJoinedEventArgsFactory
 {
-    auto shim() const { return impl::shim<D, IAllJoynSessionJoinedEventArgsFactory>(this); }
-
-public:
-
     Windows::Devices::AllJoyn::AllJoynSessionJoinedEventArgs Create(const Windows::Devices::AllJoyn::AllJoynSession & session) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynSessionLostEventArgs
+struct WINRT_EBO impl_IAllJoynSessionLostEventArgs
 {
-    auto shim() const { return impl::shim<D, IAllJoynSessionLostEventArgs>(this); }
-
-public:
-
     Windows::Devices::AllJoyn::AllJoynSessionLostReason Reason() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynSessionLostEventArgsFactory
+struct WINRT_EBO impl_IAllJoynSessionLostEventArgsFactory
 {
-    auto shim() const { return impl::shim<D, IAllJoynSessionLostEventArgsFactory>(this); }
-
-public:
-
     Windows::Devices::AllJoyn::AllJoynSessionLostEventArgs Create(Windows::Devices::AllJoyn::AllJoynSessionLostReason reason) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynSessionMemberAddedEventArgs
+struct WINRT_EBO impl_IAllJoynSessionMemberAddedEventArgs
 {
-    auto shim() const { return impl::shim<D, IAllJoynSessionMemberAddedEventArgs>(this); }
-
-public:
-
     hstring UniqueName() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynSessionMemberAddedEventArgsFactory
+struct WINRT_EBO impl_IAllJoynSessionMemberAddedEventArgsFactory
 {
-    auto shim() const { return impl::shim<D, IAllJoynSessionMemberAddedEventArgsFactory>(this); }
-
-public:
-
     Windows::Devices::AllJoyn::AllJoynSessionMemberAddedEventArgs Create(hstring_ref uniqueName) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynSessionMemberRemovedEventArgs
+struct WINRT_EBO impl_IAllJoynSessionMemberRemovedEventArgs
 {
-    auto shim() const { return impl::shim<D, IAllJoynSessionMemberRemovedEventArgs>(this); }
-
-public:
-
     hstring UniqueName() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynSessionMemberRemovedEventArgsFactory
+struct WINRT_EBO impl_IAllJoynSessionMemberRemovedEventArgsFactory
 {
-    auto shim() const { return impl::shim<D, IAllJoynSessionMemberRemovedEventArgsFactory>(this); }
-
-public:
-
     Windows::Devices::AllJoyn::AllJoynSessionMemberRemovedEventArgs Create(hstring_ref uniqueName) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynSessionStatics
+struct WINRT_EBO impl_IAllJoynSessionStatics
 {
-    auto shim() const { return impl::shim<D, IAllJoynSessionStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynSession> GetFromServiceInfoAsync(const Windows::Devices::AllJoyn::AllJoynServiceInfo & serviceInfo) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynSession> GetFromServiceInfoAsync(const Windows::Devices::AllJoyn::AllJoynServiceInfo & serviceInfo, const Windows::Devices::AllJoyn::AllJoynBusAttachment & busAttachment) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynStatusStatics
+struct WINRT_EBO impl_IAllJoynStatusStatics
 {
-    auto shim() const { return impl::shim<D, IAllJoynStatusStatics>(this); }
-
-public:
-
     int32_t Ok() const;
     int32_t Fail() const;
     int32_t OperationTimedOut() const;
@@ -847,22 +687,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynWatcherStoppedEventArgs
+struct WINRT_EBO impl_IAllJoynWatcherStoppedEventArgs
 {
-    auto shim() const { return impl::shim<D, IAllJoynWatcherStoppedEventArgs>(this); }
-
-public:
-
     int32_t Status() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAllJoynWatcherStoppedEventArgsFactory
+struct WINRT_EBO impl_IAllJoynWatcherStoppedEventArgsFactory
 {
-    auto shim() const { return impl::shim<D, IAllJoynWatcherStoppedEventArgsFactory>(this); }
-
-public:
-
     Windows::Devices::AllJoyn::AllJoynWatcherStoppedEventArgs Create(int32_t status) const;
 };
 

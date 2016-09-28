@@ -58,9 +58,9 @@ template <> struct traits<Windows::System::Threading::ThreadPoolTimer> { using d
 
 namespace Windows::System::Threading {
 
-template <typename T> class impl_IThreadPoolStatics;
-template <typename T> class impl_IThreadPoolTimer;
-template <typename T> class impl_IThreadPoolTimerStatics;
+template <typename T> struct impl_IThreadPoolStatics;
+template <typename T> struct impl_IThreadPoolTimer;
+template <typename T> struct impl_IThreadPoolTimerStatics;
 template <typename T> struct impl_TimerDestroyedHandler;
 template <typename T> struct impl_TimerElapsedHandler;
 template <typename T> struct impl_WorkItemHandler;

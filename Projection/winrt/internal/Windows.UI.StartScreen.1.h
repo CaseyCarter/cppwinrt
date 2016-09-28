@@ -188,21 +188,21 @@ template <> struct traits<Windows::UI::StartScreen::VisualElementsRequestedEvent
 
 namespace Windows::UI::StartScreen {
 
-template <typename T> class impl_IJumpList;
-template <typename T> class impl_IJumpListItem;
-template <typename T> class impl_IJumpListItemStatics;
-template <typename T> class impl_IJumpListStatics;
-template <typename T> class impl_ISecondaryTile;
-template <typename T> class impl_ISecondaryTile2;
-template <typename T> class impl_ISecondaryTileFactory;
-template <typename T> class impl_ISecondaryTileFactory2;
-template <typename T> class impl_ISecondaryTileStatics;
-template <typename T> class impl_ISecondaryTileVisualElements;
-template <typename T> class impl_ISecondaryTileVisualElements2;
-template <typename T> class impl_ISecondaryTileVisualElements3;
-template <typename T> class impl_IVisualElementsRequest;
-template <typename T> class impl_IVisualElementsRequestDeferral;
-template <typename T> class impl_IVisualElementsRequestedEventArgs;
+template <typename T> struct impl_IJumpList;
+template <typename T> struct impl_IJumpListItem;
+template <typename T> struct impl_IJumpListItemStatics;
+template <typename T> struct impl_IJumpListStatics;
+template <typename T> struct impl_ISecondaryTile;
+template <typename T> struct impl_ISecondaryTile2;
+template <typename T> struct impl_ISecondaryTileFactory;
+template <typename T> struct impl_ISecondaryTileFactory2;
+template <typename T> struct impl_ISecondaryTileStatics;
+template <typename T> struct impl_ISecondaryTileVisualElements;
+template <typename T> struct impl_ISecondaryTileVisualElements2;
+template <typename T> struct impl_ISecondaryTileVisualElements3;
+template <typename T> struct impl_IVisualElementsRequest;
+template <typename T> struct impl_IVisualElementsRequestDeferral;
+template <typename T> struct impl_IVisualElementsRequestedEventArgs;
 
 }
 

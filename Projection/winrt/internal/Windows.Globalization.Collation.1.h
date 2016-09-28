@@ -33,8 +33,8 @@ template <> struct traits<Windows::Globalization::Collation::CharacterGroupings>
 
 namespace Windows::Globalization::Collation {
 
-template <typename T> class impl_ICharacterGrouping;
-template <typename T> class impl_ICharacterGroupings;
+template <typename T> struct impl_ICharacterGrouping;
+template <typename T> struct impl_ICharacterGroupings;
 
 }
 

@@ -341,152 +341,152 @@ namespace Windows::Security::Authentication::OnlineId {
 template <typename D> hstring impl_IOnlineIdServiceTicketRequest<D>::Service() const
 {
     hstring value;
-    check_hresult(shim()->get_Service(put(value)));
+    check_hresult(static_cast<const IOnlineIdServiceTicketRequest &>(static_cast<const D &>(*this))->get_Service(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IOnlineIdServiceTicketRequest<D>::Policy() const
 {
     hstring value;
-    check_hresult(shim()->get_Policy(put(value)));
+    check_hresult(static_cast<const IOnlineIdServiceTicketRequest &>(static_cast<const D &>(*this))->get_Policy(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest impl_IOnlineIdServiceTicketRequestFactory<D>::CreateOnlineIdServiceTicketRequest(hstring_ref service, hstring_ref policy) const
 {
     Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest onlineIdServiceTicketRequest { nullptr };
-    check_hresult(shim()->abi_CreateOnlineIdServiceTicketRequest(get(service), get(policy), put(onlineIdServiceTicketRequest)));
+    check_hresult(static_cast<const IOnlineIdServiceTicketRequestFactory &>(static_cast<const D &>(*this))->abi_CreateOnlineIdServiceTicketRequest(get(service), get(policy), put(onlineIdServiceTicketRequest)));
     return onlineIdServiceTicketRequest;
 }
 
 template <typename D> Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest impl_IOnlineIdServiceTicketRequestFactory<D>::CreateOnlineIdServiceTicketRequestAdvanced(hstring_ref service) const
 {
     Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest onlineIdServiceTicketRequest { nullptr };
-    check_hresult(shim()->abi_CreateOnlineIdServiceTicketRequestAdvanced(get(service), put(onlineIdServiceTicketRequest)));
+    check_hresult(static_cast<const IOnlineIdServiceTicketRequestFactory &>(static_cast<const D &>(*this))->abi_CreateOnlineIdServiceTicketRequestAdvanced(get(service), put(onlineIdServiceTicketRequest)));
     return onlineIdServiceTicketRequest;
 }
 
 template <typename D> hstring impl_IOnlineIdServiceTicket<D>::Value() const
 {
     hstring value;
-    check_hresult(shim()->get_Value(put(value)));
+    check_hresult(static_cast<const IOnlineIdServiceTicket &>(static_cast<const D &>(*this))->get_Value(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest impl_IOnlineIdServiceTicket<D>::Request() const
 {
     Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest value { nullptr };
-    check_hresult(shim()->get_Request(put(value)));
+    check_hresult(static_cast<const IOnlineIdServiceTicket &>(static_cast<const D &>(*this))->get_Request(put(value)));
     return value;
 }
 
 template <typename D> int32_t impl_IOnlineIdServiceTicket<D>::ErrorCode() const
 {
     int32_t value {};
-    check_hresult(shim()->get_ErrorCode(&value));
+    check_hresult(static_cast<const IOnlineIdServiceTicket &>(static_cast<const D &>(*this))->get_ErrorCode(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Security::Authentication::OnlineId::OnlineIdServiceTicket> impl_IUserIdentity<D>::Tickets() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Security::Authentication::OnlineId::OnlineIdServiceTicket> value;
-    check_hresult(shim()->get_Tickets(put(value)));
+    check_hresult(static_cast<const IUserIdentity &>(static_cast<const D &>(*this))->get_Tickets(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IUserIdentity<D>::Id() const
 {
     hstring value;
-    check_hresult(shim()->get_Id(put(value)));
+    check_hresult(static_cast<const IUserIdentity &>(static_cast<const D &>(*this))->get_Id(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IUserIdentity<D>::SafeCustomerId() const
 {
     hstring value;
-    check_hresult(shim()->get_SafeCustomerId(put(value)));
+    check_hresult(static_cast<const IUserIdentity &>(static_cast<const D &>(*this))->get_SafeCustomerId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IUserIdentity<D>::SignInName() const
 {
     hstring value;
-    check_hresult(shim()->get_SignInName(put(value)));
+    check_hresult(static_cast<const IUserIdentity &>(static_cast<const D &>(*this))->get_SignInName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IUserIdentity<D>::FirstName() const
 {
     hstring value;
-    check_hresult(shim()->get_FirstName(put(value)));
+    check_hresult(static_cast<const IUserIdentity &>(static_cast<const D &>(*this))->get_FirstName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IUserIdentity<D>::LastName() const
 {
     hstring value;
-    check_hresult(shim()->get_LastName(put(value)));
+    check_hresult(static_cast<const IUserIdentity &>(static_cast<const D &>(*this))->get_LastName(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IUserIdentity<D>::IsBetaAccount() const
 {
     bool value {};
-    check_hresult(shim()->get_IsBetaAccount(&value));
+    check_hresult(static_cast<const IUserIdentity &>(static_cast<const D &>(*this))->get_IsBetaAccount(&value));
     return value;
 }
 
 template <typename D> bool impl_IUserIdentity<D>::IsConfirmedPC() const
 {
     bool value {};
-    check_hresult(shim()->get_IsConfirmedPC(&value));
+    check_hresult(static_cast<const IUserIdentity &>(static_cast<const D &>(*this))->get_IsConfirmedPC(&value));
     return value;
 }
 
 template <typename D> Windows::Security::Authentication::OnlineId::UserAuthenticationOperation impl_IOnlineIdAuthenticator<D>::AuthenticateUserAsync(const Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest & request) const
 {
     Windows::Security::Authentication::OnlineId::UserAuthenticationOperation authenticationOperation { nullptr };
-    check_hresult(shim()->abi_AuthenticateUserAsync(get(request), put(authenticationOperation)));
+    check_hresult(static_cast<const IOnlineIdAuthenticator &>(static_cast<const D &>(*this))->abi_AuthenticateUserAsync(get(request), put(authenticationOperation)));
     return authenticationOperation;
 }
 
 template <typename D> Windows::Security::Authentication::OnlineId::UserAuthenticationOperation impl_IOnlineIdAuthenticator<D>::AuthenticateUserAsync(const Windows::Foundation::Collections::IIterable<Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest> & requests, Windows::Security::Authentication::OnlineId::CredentialPromptType credentialPromptType) const
 {
     Windows::Security::Authentication::OnlineId::UserAuthenticationOperation authenticationOperation { nullptr };
-    check_hresult(shim()->abi_AuthenticateUserAsyncAdvanced(get(requests), credentialPromptType, put(authenticationOperation)));
+    check_hresult(static_cast<const IOnlineIdAuthenticator &>(static_cast<const D &>(*this))->abi_AuthenticateUserAsyncAdvanced(get(requests), credentialPromptType, put(authenticationOperation)));
     return authenticationOperation;
 }
 
 template <typename D> Windows::Security::Authentication::OnlineId::SignOutUserOperation impl_IOnlineIdAuthenticator<D>::SignOutUserAsync() const
 {
     Windows::Security::Authentication::OnlineId::SignOutUserOperation signOutUserOperation { nullptr };
-    check_hresult(shim()->abi_SignOutUserAsync(put(signOutUserOperation)));
+    check_hresult(static_cast<const IOnlineIdAuthenticator &>(static_cast<const D &>(*this))->abi_SignOutUserAsync(put(signOutUserOperation)));
     return signOutUserOperation;
 }
 
 template <typename D> void impl_IOnlineIdAuthenticator<D>::ApplicationId(GUID value) const
 {
-    check_hresult(shim()->put_ApplicationId(value));
+    check_hresult(static_cast<const IOnlineIdAuthenticator &>(static_cast<const D &>(*this))->put_ApplicationId(value));
 }
 
 template <typename D> GUID impl_IOnlineIdAuthenticator<D>::ApplicationId() const
 {
     GUID value {};
-    check_hresult(shim()->get_ApplicationId(&value));
+    check_hresult(static_cast<const IOnlineIdAuthenticator &>(static_cast<const D &>(*this))->get_ApplicationId(&value));
     return value;
 }
 
 template <typename D> bool impl_IOnlineIdAuthenticator<D>::CanSignOut() const
 {
     bool value {};
-    check_hresult(shim()->get_CanSignOut(&value));
+    check_hresult(static_cast<const IOnlineIdAuthenticator &>(static_cast<const D &>(*this))->get_CanSignOut(&value));
     return value;
 }
 
 template <typename D> hstring impl_IOnlineIdAuthenticator<D>::AuthenticatedSafeCustomerId() const
 {
     hstring value;
-    check_hresult(shim()->get_AuthenticatedSafeCustomerId(put(value)));
+    check_hresult(static_cast<const IOnlineIdAuthenticator &>(static_cast<const D &>(*this))->get_AuthenticatedSafeCustomerId(put(value)));
     return value;
 }
 

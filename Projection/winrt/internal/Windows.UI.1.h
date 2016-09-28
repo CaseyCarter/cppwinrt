@@ -197,10 +197,10 @@ template <> struct traits<Windows::UI::Colors> { using default_interface = Windo
 
 namespace Windows::UI {
 
-template <typename T> class impl_IColorHelper;
-template <typename T> class impl_IColorHelperStatics;
-template <typename T> class impl_IColors;
-template <typename T> class impl_IColorsStatics;
+template <typename T> struct impl_IColorHelper;
+template <typename T> struct impl_IColorHelperStatics;
+template <typename T> struct impl_IColors;
+template <typename T> struct impl_IColorsStatics;
 
 }
 

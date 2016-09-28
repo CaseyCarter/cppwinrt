@@ -36,32 +36,20 @@ template <> struct __declspec(uuid("84a34b33-06fc-5e63-8ee2-eab4ff69acb7")) __de
 namespace Windows::Devices::SerialCommunication {
 
 template <typename D>
-class WINRT_EBO impl_IErrorReceivedEventArgs
+struct WINRT_EBO impl_IErrorReceivedEventArgs
 {
-    auto shim() const { return impl::shim<D, IErrorReceivedEventArgs>(this); }
-
-public:
-
     Windows::Devices::SerialCommunication::SerialError Error() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPinChangedEventArgs
+struct WINRT_EBO impl_IPinChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IPinChangedEventArgs>(this); }
-
-public:
-
     Windows::Devices::SerialCommunication::SerialPinChange PinChange() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISerialDevice
+struct WINRT_EBO impl_ISerialDevice
 {
-    auto shim() const { return impl::shim<D, ISerialDevice>(this); }
-
-public:
-
     uint32_t BaudRate() const;
     void BaudRate(uint32_t value) const;
     bool BreakSignalState() const;
@@ -102,12 +90,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISerialDeviceStatics
+struct WINRT_EBO impl_ISerialDeviceStatics
 {
-    auto shim() const { return impl::shim<D, ISerialDeviceStatics>(this); }
-
-public:
-
     hstring GetDeviceSelector() const;
     hstring GetDeviceSelector(hstring_ref portName) const;
     hstring GetDeviceSelectorFromUsbVidPid(uint16_t vendorId, uint16_t productId) const;

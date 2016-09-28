@@ -138,14 +138,14 @@ template <> struct traits<Windows::UI::Xaml::Media::Media3D::Transform3D> { usin
 
 namespace Windows::UI::Xaml::Media::Media3D {
 
-template <typename T> class impl_ICompositeTransform3D;
-template <typename T> class impl_ICompositeTransform3DStatics;
-template <typename T> class impl_IMatrix3DHelper;
-template <typename T> class impl_IMatrix3DHelperStatics;
-template <typename T> class impl_IPerspectiveTransform3D;
-template <typename T> class impl_IPerspectiveTransform3DStatics;
-template <typename T> class impl_ITransform3D;
-template <typename T> class impl_ITransform3DFactory;
+template <typename T> struct impl_ICompositeTransform3D;
+template <typename T> struct impl_ICompositeTransform3DStatics;
+template <typename T> struct impl_IMatrix3DHelper;
+template <typename T> struct impl_IMatrix3DHelperStatics;
+template <typename T> struct impl_IPerspectiveTransform3D;
+template <typename T> struct impl_IPerspectiveTransform3DStatics;
+template <typename T> struct impl_ITransform3D;
+template <typename T> struct impl_ITransform3DFactory;
 
 }
 

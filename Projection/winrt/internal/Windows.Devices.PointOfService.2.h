@@ -371,12 +371,8 @@ template <> struct __declspec(uuid("55772f29-da64-5c87-871c-074337a84573")) __de
 namespace Windows::Devices::PointOfService {
 
 template <typename D>
-class WINRT_EBO impl_IBarcodeScanner
+struct WINRT_EBO impl_IBarcodeScanner
 {
-    auto shim() const { return impl::shim<D, IBarcodeScanner>(this); }
-
-public:
-
     hstring DeviceId() const;
     Windows::Devices::PointOfService::BarcodeScannerCapabilities Capabilities() const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::ClaimedBarcodeScanner> ClaimScannerAsync() const;
@@ -393,22 +389,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBarcodeScanner2
+struct WINRT_EBO impl_IBarcodeScanner2
 {
-    auto shim() const { return impl::shim<D, IBarcodeScanner2>(this); }
-
-public:
-
     hstring VideoDeviceId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBarcodeScannerCapabilities
+struct WINRT_EBO impl_IBarcodeScannerCapabilities
 {
-    auto shim() const { return impl::shim<D, IBarcodeScannerCapabilities>(this); }
-
-public:
-
     Windows::Devices::PointOfService::UnifiedPosPowerReportingType PowerReportingType() const;
     bool IsStatisticsReportingSupported() const;
     bool IsStatisticsUpdatingSupported() const;
@@ -416,89 +404,57 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBarcodeScannerCapabilities1
+struct WINRT_EBO impl_IBarcodeScannerCapabilities1
 {
-    auto shim() const { return impl::shim<D, IBarcodeScannerCapabilities1>(this); }
-
-public:
-
     bool IsSoftwareTriggerSupported() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBarcodeScannerDataReceivedEventArgs
+struct WINRT_EBO impl_IBarcodeScannerDataReceivedEventArgs
 {
-    auto shim() const { return impl::shim<D, IBarcodeScannerDataReceivedEventArgs>(this); }
-
-public:
-
     Windows::Devices::PointOfService::BarcodeScannerReport Report() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBarcodeScannerErrorOccurredEventArgs
+struct WINRT_EBO impl_IBarcodeScannerErrorOccurredEventArgs
 {
-    auto shim() const { return impl::shim<D, IBarcodeScannerErrorOccurredEventArgs>(this); }
-
-public:
-
     Windows::Devices::PointOfService::BarcodeScannerReport PartialInputData() const;
     bool IsRetriable() const;
     Windows::Devices::PointOfService::UnifiedPosErrorData ErrorData() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBarcodeScannerImagePreviewReceivedEventArgs
+struct WINRT_EBO impl_IBarcodeScannerImagePreviewReceivedEventArgs
 {
-    auto shim() const { return impl::shim<D, IBarcodeScannerImagePreviewReceivedEventArgs>(this); }
-
-public:
-
     Windows::Storage::Streams::IRandomAccessStreamWithContentType Preview() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBarcodeScannerReport
+struct WINRT_EBO impl_IBarcodeScannerReport
 {
-    auto shim() const { return impl::shim<D, IBarcodeScannerReport>(this); }
-
-public:
-
     uint32_t ScanDataType() const;
     Windows::Storage::Streams::IBuffer ScanData() const;
     Windows::Storage::Streams::IBuffer ScanDataLabel() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBarcodeScannerStatics
+struct WINRT_EBO impl_IBarcodeScannerStatics
 {
-    auto shim() const { return impl::shim<D, IBarcodeScannerStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::BarcodeScanner> GetDefaultAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::BarcodeScanner> FromIdAsync(hstring_ref deviceId) const;
     hstring GetDeviceSelector() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBarcodeScannerStatusUpdatedEventArgs
+struct WINRT_EBO impl_IBarcodeScannerStatusUpdatedEventArgs
 {
-    auto shim() const { return impl::shim<D, IBarcodeScannerStatusUpdatedEventArgs>(this); }
-
-public:
-
     Windows::Devices::PointOfService::BarcodeScannerStatus Status() const;
     uint32_t ExtendedStatus() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBarcodeSymbologiesStatics
+struct WINRT_EBO impl_IBarcodeSymbologiesStatics
 {
-    auto shim() const { return impl::shim<D, IBarcodeSymbologiesStatics>(this); }
-
-public:
-
     uint32_t Unknown() const;
     uint32_t Ean8() const;
     uint32_t Ean8Add2() const;
@@ -596,12 +552,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICashDrawer
+struct WINRT_EBO impl_ICashDrawer
 {
-    auto shim() const { return impl::shim<D, ICashDrawer>(this); }
-
-public:
-
     hstring DeviceId() const;
     Windows::Devices::PointOfService::CashDrawerCapabilities Capabilities() const;
     Windows::Devices::PointOfService::CashDrawerStatus Status() const;
@@ -617,12 +569,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICashDrawerCapabilities
+struct WINRT_EBO impl_ICashDrawerCapabilities
 {
-    auto shim() const { return impl::shim<D, ICashDrawerCapabilities>(this); }
-
-public:
-
     Windows::Devices::PointOfService::UnifiedPosPowerReportingType PowerReportingType() const;
     bool IsStatisticsReportingSupported() const;
     bool IsStatisticsUpdatingSupported() const;
@@ -632,12 +580,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICashDrawerCloseAlarm
+struct WINRT_EBO impl_ICashDrawerCloseAlarm
 {
-    auto shim() const { return impl::shim<D, ICashDrawerCloseAlarm>(this); }
-
-public:
-
     void AlarmTimeout(const Windows::Foundation::TimeSpan & value) const;
     Windows::Foundation::TimeSpan AlarmTimeout() const;
     void BeepFrequency(uint32_t value) const;
@@ -654,12 +598,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICashDrawerEventSource
+struct WINRT_EBO impl_ICashDrawerEventSource
 {
-    auto shim() const { return impl::shim<D, ICashDrawerEventSource>(this); }
-
-public:
-
     event_token DrawerClosed(const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::CashDrawerEventSource, Windows::Devices::PointOfService::CashDrawerClosedEventArgs> & handler) const;
     using DrawerClosed_revoker = event_revoker<ICashDrawerEventSource>;
     DrawerClosed_revoker DrawerClosed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::PointOfService::CashDrawerEventSource, Windows::Devices::PointOfService::CashDrawerClosedEventArgs> & handler) const;
@@ -671,55 +611,35 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICashDrawerEventSourceEventArgs
+struct WINRT_EBO impl_ICashDrawerEventSourceEventArgs
 {
-    auto shim() const { return impl::shim<D, ICashDrawerEventSourceEventArgs>(this); }
-
-public:
-
     Windows::Devices::PointOfService::CashDrawer CashDrawer() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICashDrawerStatics
+struct WINRT_EBO impl_ICashDrawerStatics
 {
-    auto shim() const { return impl::shim<D, ICashDrawerStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::CashDrawer> GetDefaultAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::CashDrawer> FromIdAsync(hstring_ref deviceId) const;
     hstring GetDeviceSelector() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICashDrawerStatus
+struct WINRT_EBO impl_ICashDrawerStatus
 {
-    auto shim() const { return impl::shim<D, ICashDrawerStatus>(this); }
-
-public:
-
     Windows::Devices::PointOfService::CashDrawerStatusKind StatusKind() const;
     uint32_t ExtendedStatus() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICashDrawerStatusUpdatedEventArgs
+struct WINRT_EBO impl_ICashDrawerStatusUpdatedEventArgs
 {
-    auto shim() const { return impl::shim<D, ICashDrawerStatusUpdatedEventArgs>(this); }
-
-public:
-
     Windows::Devices::PointOfService::CashDrawerStatus Status() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IClaimedBarcodeScanner
+struct WINRT_EBO impl_IClaimedBarcodeScanner
 {
-    auto shim() const { return impl::shim<D, IClaimedBarcodeScanner>(this); }
-
-public:
-
     hstring DeviceId() const;
     bool IsEnabled() const;
     void IsDisabledOnDataReceived(bool value) const;
@@ -760,23 +680,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IClaimedBarcodeScanner1
+struct WINRT_EBO impl_IClaimedBarcodeScanner1
 {
-    auto shim() const { return impl::shim<D, IClaimedBarcodeScanner1>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction StartSoftwareTriggerAsync() const;
     Windows::Foundation::IAsyncAction StopSoftwareTriggerAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IClaimedCashDrawer
+struct WINRT_EBO impl_IClaimedCashDrawer
 {
-    auto shim() const { return impl::shim<D, IClaimedCashDrawer>(this); }
-
-public:
-
     hstring DeviceId() const;
     bool IsEnabled() const;
     bool IsDrawerOpen() const;
@@ -794,22 +706,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IClaimedJournalPrinter
+struct WINRT_EBO impl_IClaimedJournalPrinter
 {
-    auto shim() const { return impl::shim<D, IClaimedJournalPrinter>(this); }
-
-public:
-
     Windows::Devices::PointOfService::JournalPrintJob CreateJob() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IClaimedMagneticStripeReader
+struct WINRT_EBO impl_IClaimedMagneticStripeReader
 {
-    auto shim() const { return impl::shim<D, IClaimedMagneticStripeReader>(this); }
-
-public:
-
     hstring DeviceId() const;
     bool IsEnabled() const;
     void IsDisabledOnDataReceived(bool value) const;
@@ -856,12 +760,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IClaimedPosPrinter
+struct WINRT_EBO impl_IClaimedPosPrinter
 {
-    auto shim() const { return impl::shim<D, IClaimedPosPrinter>(this); }
-
-public:
-
     hstring DeviceId() const;
     bool IsEnabled() const;
     void CharacterSet(uint32_t value) const;
@@ -886,12 +786,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IClaimedReceiptPrinter
+struct WINRT_EBO impl_IClaimedReceiptPrinter
 {
-    auto shim() const { return impl::shim<D, IClaimedReceiptPrinter>(this); }
-
-public:
-
     uint32_t SidewaysMaxLines() const;
     uint32_t SidewaysMaxChars() const;
     uint32_t LinesToPaperCut() const;
@@ -901,12 +797,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IClaimedSlipPrinter
+struct WINRT_EBO impl_IClaimedSlipPrinter
 {
-    auto shim() const { return impl::shim<D, IClaimedSlipPrinter>(this); }
-
-public:
-
     uint32_t SidewaysMaxLines() const;
     uint32_t SidewaysMaxChars() const;
     uint32_t MaxLines() const;
@@ -923,12 +815,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICommonClaimedPosPrinterStation
+struct WINRT_EBO impl_ICommonClaimedPosPrinterStation
 {
-    auto shim() const { return impl::shim<D, ICommonClaimedPosPrinterStation>(this); }
-
-public:
-
     void CharactersPerLine(uint32_t value) const;
     uint32_t CharactersPerLine() const;
     void LineHeight(uint32_t value) const;
@@ -951,12 +839,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICommonPosPrintStationCapabilities
+struct WINRT_EBO impl_ICommonPosPrintStationCapabilities
 {
-    auto shim() const { return impl::shim<D, ICommonPosPrintStationCapabilities>(this); }
-
-public:
-
     bool IsPrinterPresent() const;
     bool IsDualColorSupported() const;
     Windows::Devices::PointOfService::PosPrinterColorCapabilities ColorCartridgeCapabilities() const;
@@ -973,12 +857,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICommonReceiptSlipCapabilities
+struct WINRT_EBO impl_ICommonReceiptSlipCapabilities
 {
-    auto shim() const { return impl::shim<D, ICommonReceiptSlipCapabilities>(this); }
-
-public:
-
     bool IsBarcodeSupported() const;
     bool IsBitmapSupported() const;
     bool IsLeft90RotationSupported() const;
@@ -991,21 +871,13 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IJournalPrinterCapabilities
+struct WINRT_EBO impl_IJournalPrinterCapabilities
 {
-    auto shim() const { return impl::shim<D, IJournalPrinterCapabilities>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IMagneticStripeReader
+struct WINRT_EBO impl_IMagneticStripeReader
 {
-    auto shim() const { return impl::shim<D, IMagneticStripeReader>(this); }
-
-public:
-
     hstring DeviceId() const;
     Windows::Devices::PointOfService::MagneticStripeReaderCapabilities Capabilities() const;
     com_array<uint32_t> SupportedCardTypes() const;
@@ -1021,12 +893,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMagneticStripeReaderAamvaCardDataReceivedEventArgs
+struct WINRT_EBO impl_IMagneticStripeReaderAamvaCardDataReceivedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMagneticStripeReaderAamvaCardDataReceivedEventArgs>(this); }
-
-public:
-
     Windows::Devices::PointOfService::MagneticStripeReaderReport Report() const;
     hstring LicenseNumber() const;
     hstring ExpirationDate() const;
@@ -1049,12 +917,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMagneticStripeReaderBankCardDataReceivedEventArgs
+struct WINRT_EBO impl_IMagneticStripeReaderBankCardDataReceivedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMagneticStripeReaderBankCardDataReceivedEventArgs>(this); }
-
-public:
-
     Windows::Devices::PointOfService::MagneticStripeReaderReport Report() const;
     hstring AccountNumber() const;
     hstring ExpirationDate() const;
@@ -1067,12 +931,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMagneticStripeReaderCapabilities
+struct WINRT_EBO impl_IMagneticStripeReaderCapabilities
 {
-    auto shim() const { return impl::shim<D, IMagneticStripeReaderCapabilities>(this); }
-
-public:
-
     hstring CardAuthentication() const;
     uint32_t SupportedEncryptionAlgorithms() const;
     Windows::Devices::PointOfService::MagneticStripeReaderAuthenticationLevel AuthenticationLevel() const;
@@ -1087,12 +947,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMagneticStripeReaderCardTypesStatics
+struct WINRT_EBO impl_IMagneticStripeReaderCardTypesStatics
 {
-    auto shim() const { return impl::shim<D, IMagneticStripeReaderCardTypesStatics>(this); }
-
-public:
-
     uint32_t Unknown() const;
     uint32_t Bank() const;
     uint32_t Aamva() const;
@@ -1100,24 +956,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMagneticStripeReaderEncryptionAlgorithmsStatics
+struct WINRT_EBO impl_IMagneticStripeReaderEncryptionAlgorithmsStatics
 {
-    auto shim() const { return impl::shim<D, IMagneticStripeReaderEncryptionAlgorithmsStatics>(this); }
-
-public:
-
     uint32_t None() const;
     uint32_t TripleDesDukpt() const;
     uint32_t ExtendedBase() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMagneticStripeReaderErrorOccurredEventArgs
+struct WINRT_EBO impl_IMagneticStripeReaderErrorOccurredEventArgs
 {
-    auto shim() const { return impl::shim<D, IMagneticStripeReaderErrorOccurredEventArgs>(this); }
-
-public:
-
     Windows::Devices::PointOfService::MagneticStripeReaderTrackErrorType Track1Status() const;
     Windows::Devices::PointOfService::MagneticStripeReaderTrackErrorType Track2Status() const;
     Windows::Devices::PointOfService::MagneticStripeReaderTrackErrorType Track3Status() const;
@@ -1127,12 +975,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMagneticStripeReaderReport
+struct WINRT_EBO impl_IMagneticStripeReaderReport
 {
-    auto shim() const { return impl::shim<D, IMagneticStripeReaderReport>(this); }
-
-public:
-
     uint32_t CardType() const;
     Windows::Devices::PointOfService::MagneticStripeReaderTrackData Track1() const;
     Windows::Devices::PointOfService::MagneticStripeReaderTrackData Track2() const;
@@ -1145,57 +989,37 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMagneticStripeReaderStatics
+struct WINRT_EBO impl_IMagneticStripeReaderStatics
 {
-    auto shim() const { return impl::shim<D, IMagneticStripeReaderStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::MagneticStripeReader> GetDefaultAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::MagneticStripeReader> FromIdAsync(hstring_ref deviceId) const;
     hstring GetDeviceSelector() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMagneticStripeReaderStatusUpdatedEventArgs
+struct WINRT_EBO impl_IMagneticStripeReaderStatusUpdatedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMagneticStripeReaderStatusUpdatedEventArgs>(this); }
-
-public:
-
     Windows::Devices::PointOfService::MagneticStripeReaderStatus Status() const;
     uint32_t ExtendedStatus() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMagneticStripeReaderTrackData
+struct WINRT_EBO impl_IMagneticStripeReaderTrackData
 {
-    auto shim() const { return impl::shim<D, IMagneticStripeReaderTrackData>(this); }
-
-public:
-
     Windows::Storage::Streams::IBuffer Data() const;
     Windows::Storage::Streams::IBuffer DiscretionaryData() const;
     Windows::Storage::Streams::IBuffer EncryptedData() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMagneticStripeReaderVendorSpecificCardDataReceivedEventArgs
+struct WINRT_EBO impl_IMagneticStripeReaderVendorSpecificCardDataReceivedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMagneticStripeReaderVendorSpecificCardDataReceivedEventArgs>(this); }
-
-public:
-
     Windows::Devices::PointOfService::MagneticStripeReaderReport Report() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPosPrinter
+struct WINRT_EBO impl_IPosPrinter
 {
-    auto shim() const { return impl::shim<D, IPosPrinter>(this); }
-
-public:
-
     hstring DeviceId() const;
     Windows::Devices::PointOfService::PosPrinterCapabilities Capabilities() const;
     Windows::Foundation::Collections::IVectorView<uint32_t> SupportedCharacterSets() const;
@@ -1211,12 +1035,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPosPrinterCapabilities
+struct WINRT_EBO impl_IPosPrinterCapabilities
 {
-    auto shim() const { return impl::shim<D, IPosPrinterCapabilities>(this); }
-
-public:
-
     Windows::Devices::PointOfService::UnifiedPosPowerReportingType PowerReportingType() const;
     bool IsStatisticsReportingSupported() const;
     bool IsStatisticsUpdatingSupported() const;
@@ -1230,24 +1050,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPosPrinterCharacterSetIdsStatics
+struct WINRT_EBO impl_IPosPrinterCharacterSetIdsStatics
 {
-    auto shim() const { return impl::shim<D, IPosPrinterCharacterSetIdsStatics>(this); }
-
-public:
-
     uint32_t Utf16LE() const;
     uint32_t Ascii() const;
     uint32_t Ansi() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPosPrinterJob
+struct WINRT_EBO impl_IPosPrinterJob
 {
-    auto shim() const { return impl::shim<D, IPosPrinterJob>(this); }
-
-public:
-
     void Print(hstring_ref data) const;
     void PrintLine(hstring_ref data) const;
     void PrintLine() const;
@@ -1255,54 +1067,34 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPosPrinterReleaseDeviceRequestedEventArgs
+struct WINRT_EBO impl_IPosPrinterReleaseDeviceRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, IPosPrinterReleaseDeviceRequestedEventArgs>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IPosPrinterStatics
+struct WINRT_EBO impl_IPosPrinterStatics
 {
-    auto shim() const { return impl::shim<D, IPosPrinterStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::PosPrinter> GetDefaultAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::PointOfService::PosPrinter> FromIdAsync(hstring_ref deviceId) const;
     hstring GetDeviceSelector() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPosPrinterStatus
+struct WINRT_EBO impl_IPosPrinterStatus
 {
-    auto shim() const { return impl::shim<D, IPosPrinterStatus>(this); }
-
-public:
-
     Windows::Devices::PointOfService::PosPrinterStatusKind StatusKind() const;
     uint32_t ExtendedStatus() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPosPrinterStatusUpdatedEventArgs
+struct WINRT_EBO impl_IPosPrinterStatusUpdatedEventArgs
 {
-    auto shim() const { return impl::shim<D, IPosPrinterStatusUpdatedEventArgs>(this); }
-
-public:
-
     Windows::Devices::PointOfService::PosPrinterStatus Status() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IReceiptOrSlipJob
+struct WINRT_EBO impl_IReceiptOrSlipJob
 {
-    auto shim() const { return impl::shim<D, IReceiptOrSlipJob>(this); }
-
-public:
-
     void SetBarcodeRotation(Windows::Devices::PointOfService::PosPrinterRotation value) const;
     void SetPrintRotation(Windows::Devices::PointOfService::PosPrinterRotation value, bool includeBitmaps) const;
     void SetPrintArea(const Windows::Foundation::Rect & value) const;
@@ -1321,47 +1113,31 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IReceiptPrintJob
+struct WINRT_EBO impl_IReceiptPrintJob
 {
-    auto shim() const { return impl::shim<D, IReceiptPrintJob>(this); }
-
-public:
-
     void MarkFeed(Windows::Devices::PointOfService::PosPrinterMarkFeedKind kind) const;
     void CutPaper(double percentage) const;
     void CutPaper() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IReceiptPrinterCapabilities
+struct WINRT_EBO impl_IReceiptPrinterCapabilities
 {
-    auto shim() const { return impl::shim<D, IReceiptPrinterCapabilities>(this); }
-
-public:
-
     bool CanCutPaper() const;
     bool IsStampSupported() const;
     Windows::Devices::PointOfService::PosPrinterMarkFeedCapabilities MarkFeedCapabilities() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISlipPrinterCapabilities
+struct WINRT_EBO impl_ISlipPrinterCapabilities
 {
-    auto shim() const { return impl::shim<D, ISlipPrinterCapabilities>(this); }
-
-public:
-
     bool IsFullLengthSupported() const;
     bool IsBothSidesPrintingSupported() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUnifiedPosErrorData
+struct WINRT_EBO impl_IUnifiedPosErrorData
 {
-    auto shim() const { return impl::shim<D, IUnifiedPosErrorData>(this); }
-
-public:
-
     hstring Message() const;
     Windows::Devices::PointOfService::UnifiedPosErrorSeverity Severity() const;
     Windows::Devices::PointOfService::UnifiedPosErrorReason Reason() const;

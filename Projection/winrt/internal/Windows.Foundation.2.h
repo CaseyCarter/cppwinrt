@@ -45,72 +45,44 @@ template <> struct __declspec(uuid("32e54295-373c-50cb-80a1-468a990ca780")) __de
 namespace Windows::Foundation {
 
 template <typename D>
-class WINRT_EBO impl_IClosable
+struct WINRT_EBO impl_IClosable
 {
-    auto shim() const { return impl::shim<D, IClosable>(this); }
-
-public:
-
     void Close() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDeferral
+struct WINRT_EBO impl_IDeferral
 {
-    auto shim() const { return impl::shim<D, IDeferral>(this); }
-
-public:
-
     void Complete() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDeferralFactory
+struct WINRT_EBO impl_IDeferralFactory
 {
-    auto shim() const { return impl::shim<D, IDeferralFactory>(this); }
-
-public:
-
     Windows::Foundation::Deferral Create(const Windows::Foundation::DeferralCompletedHandler & handler) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGetActivationFactory
+struct WINRT_EBO impl_IGetActivationFactory
 {
-    auto shim() const { return impl::shim<D, IGetActivationFactory>(this); }
-
-public:
-
     Windows::IInspectable GetActivationFactory(hstring_ref activatableClassId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMemoryBuffer
+struct WINRT_EBO impl_IMemoryBuffer
 {
-    auto shim() const { return impl::shim<D, IMemoryBuffer>(this); }
-
-public:
-
     Windows::Foundation::IMemoryBufferReference CreateReference() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMemoryBufferFactory
+struct WINRT_EBO impl_IMemoryBufferFactory
 {
-    auto shim() const { return impl::shim<D, IMemoryBufferFactory>(this); }
-
-public:
-
     Windows::Foundation::MemoryBuffer Create(uint32_t capacity) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMemoryBufferReference
+struct WINRT_EBO impl_IMemoryBufferReference
 {
-    auto shim() const { return impl::shim<D, IMemoryBufferReference>(this); }
-
-public:
-
     uint32_t Capacity() const;
     event_token Closed(const Windows::Foundation::TypedEventHandler<Windows::Foundation::IMemoryBufferReference, Windows::IInspectable> & handler) const;
     using Closed_revoker = event_revoker<IMemoryBufferReference>;
@@ -119,12 +91,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPropertyValue
+struct WINRT_EBO impl_IPropertyValue
 {
-    auto shim() const { return impl::shim<D, IPropertyValue>(this); }
-
-public:
-
     Windows::Foundation::PropertyType Type() const;
     bool IsNumericScalar() const;
     uint8_t GetUInt8() const;
@@ -167,12 +135,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPropertyValueStatics
+struct WINRT_EBO impl_IPropertyValueStatics
 {
-    auto shim() const { return impl::shim<D, IPropertyValueStatics>(this); }
-
-public:
-
     Windows::IInspectable CreateEmpty() const;
     Windows::IInspectable CreateUInt8(uint8_t value) const;
     Windows::IInspectable CreateInt16(int16_t value) const;
@@ -215,33 +179,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStringable
+struct WINRT_EBO impl_IStringable
 {
-    auto shim() const { return impl::shim<D, IStringable>(this); }
-
-public:
-
     hstring ToString() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUriEscapeStatics
+struct WINRT_EBO impl_IUriEscapeStatics
 {
-    auto shim() const { return impl::shim<D, IUriEscapeStatics>(this); }
-
-public:
-
     hstring UnescapeComponent(hstring_ref toUnescape) const;
     hstring EscapeComponent(hstring_ref toEscape) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUriRuntimeClass
+struct WINRT_EBO impl_IUriRuntimeClass
 {
-    auto shim() const { return impl::shim<D, IUriRuntimeClass>(this); }
-
-public:
-
     hstring AbsoluteUri() const;
     hstring DisplayUri() const;
     hstring Domain() const;
@@ -262,55 +214,35 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUriRuntimeClassFactory
+struct WINRT_EBO impl_IUriRuntimeClassFactory
 {
-    auto shim() const { return impl::shim<D, IUriRuntimeClassFactory>(this); }
-
-public:
-
     Windows::Foundation::Uri CreateUri(hstring_ref uri) const;
     Windows::Foundation::Uri CreateWithRelativeUri(hstring_ref baseUri, hstring_ref relativeUri) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUriRuntimeClassWithAbsoluteCanonicalUri
+struct WINRT_EBO impl_IUriRuntimeClassWithAbsoluteCanonicalUri
 {
-    auto shim() const { return impl::shim<D, IUriRuntimeClassWithAbsoluteCanonicalUri>(this); }
-
-public:
-
     hstring AbsoluteCanonicalUri() const;
     hstring DisplayIri() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWwwFormUrlDecoderEntry
+struct WINRT_EBO impl_IWwwFormUrlDecoderEntry
 {
-    auto shim() const { return impl::shim<D, IWwwFormUrlDecoderEntry>(this); }
-
-public:
-
     hstring Name() const;
     hstring Value() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWwwFormUrlDecoderRuntimeClass
+struct WINRT_EBO impl_IWwwFormUrlDecoderRuntimeClass
 {
-    auto shim() const { return impl::shim<D, IWwwFormUrlDecoderRuntimeClass>(this); }
-
-public:
-
     hstring GetFirstValueByName(hstring_ref name) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWwwFormUrlDecoderRuntimeClassFactory
+struct WINRT_EBO impl_IWwwFormUrlDecoderRuntimeClassFactory
 {
-    auto shim() const { return impl::shim<D, IWwwFormUrlDecoderRuntimeClassFactory>(this); }
-
-public:
-
     Windows::Foundation::WwwFormUrlDecoder CreateWwwFormUrlDecoder(hstring_ref query) const;
 };
 

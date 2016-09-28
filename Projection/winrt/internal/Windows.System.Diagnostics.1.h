@@ -92,14 +92,14 @@ template <> struct traits<Windows::System::Diagnostics::ProcessMemoryUsageReport
 
 namespace Windows::System::Diagnostics {
 
-template <typename T> class impl_IProcessCpuUsage;
-template <typename T> class impl_IProcessCpuUsageReport;
-template <typename T> class impl_IProcessDiagnosticInfo;
-template <typename T> class impl_IProcessDiagnosticInfoStatics;
-template <typename T> class impl_IProcessDiskUsage;
-template <typename T> class impl_IProcessDiskUsageReport;
-template <typename T> class impl_IProcessMemoryUsage;
-template <typename T> class impl_IProcessMemoryUsageReport;
+template <typename T> struct impl_IProcessCpuUsage;
+template <typename T> struct impl_IProcessCpuUsageReport;
+template <typename T> struct impl_IProcessDiagnosticInfo;
+template <typename T> struct impl_IProcessDiagnosticInfoStatics;
+template <typename T> struct impl_IProcessDiskUsage;
+template <typename T> struct impl_IProcessDiskUsageReport;
+template <typename T> struct impl_IProcessMemoryUsage;
+template <typename T> struct impl_IProcessMemoryUsageReport;
 
 }
 

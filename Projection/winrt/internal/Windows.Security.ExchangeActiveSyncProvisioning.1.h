@@ -36,8 +36,8 @@ template <> struct traits<Windows::Security::ExchangeActiveSyncProvisioning::Eas
 
 namespace Windows::Security::ExchangeActiveSyncProvisioning {
 
-template <typename T> class impl_IEasClientDeviceInformation;
-template <typename T> class impl_IEasClientDeviceInformation2;
+template <typename T> struct impl_IEasClientDeviceInformation;
+template <typename T> struct impl_IEasClientDeviceInformation2;
 
 }
 

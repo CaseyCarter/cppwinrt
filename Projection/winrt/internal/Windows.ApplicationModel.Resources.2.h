@@ -10,52 +10,32 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::ApplicationModel::Resources {
 
 template <typename D>
-class WINRT_EBO impl_IResourceLoader
+struct WINRT_EBO impl_IResourceLoader
 {
-    auto shim() const { return impl::shim<D, IResourceLoader>(this); }
-
-public:
-
     hstring GetString(hstring_ref resource) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IResourceLoader2
+struct WINRT_EBO impl_IResourceLoader2
 {
-    auto shim() const { return impl::shim<D, IResourceLoader2>(this); }
-
-public:
-
     hstring GetStringForUri(const Windows::Foundation::Uri & uri) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IResourceLoaderFactory
+struct WINRT_EBO impl_IResourceLoaderFactory
 {
-    auto shim() const { return impl::shim<D, IResourceLoaderFactory>(this); }
-
-public:
-
     Windows::ApplicationModel::Resources::ResourceLoader CreateResourceLoaderByName(hstring_ref name) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IResourceLoaderStatics
+struct WINRT_EBO impl_IResourceLoaderStatics
 {
-    auto shim() const { return impl::shim<D, IResourceLoaderStatics>(this); }
-
-public:
-
     hstring GetStringForReference(const Windows::Foundation::Uri & uri) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IResourceLoaderStatics2
+struct WINRT_EBO impl_IResourceLoaderStatics2
 {
-    auto shim() const { return impl::shim<D, IResourceLoaderStatics2>(this); }
-
-public:
-
     Windows::ApplicationModel::Resources::ResourceLoader GetForCurrentView() const;
     Windows::ApplicationModel::Resources::ResourceLoader GetForCurrentView(hstring_ref name) const;
     Windows::ApplicationModel::Resources::ResourceLoader GetForViewIndependentUse() const;

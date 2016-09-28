@@ -480,205 +480,205 @@ namespace Windows::Perception::Spatial::Surfaces {
 template <typename D> Windows::Graphics::DirectX::DirectXPixelFormat impl_ISpatialSurfaceMeshBuffer<D>::Format() const
 {
     Windows::Graphics::DirectX::DirectXPixelFormat value {};
-    check_hresult(shim()->get_Format(&value));
+    check_hresult(static_cast<const ISpatialSurfaceMeshBuffer &>(static_cast<const D &>(*this))->get_Format(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_ISpatialSurfaceMeshBuffer<D>::Stride() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_Stride(&value));
+    check_hresult(static_cast<const ISpatialSurfaceMeshBuffer &>(static_cast<const D &>(*this))->get_Stride(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_ISpatialSurfaceMeshBuffer<D>::ElementCount() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_ElementCount(&value));
+    check_hresult(static_cast<const ISpatialSurfaceMeshBuffer &>(static_cast<const D &>(*this))->get_ElementCount(&value));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_ISpatialSurfaceMeshBuffer<D>::Data() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(shim()->get_Data(put(value)));
+    check_hresult(static_cast<const ISpatialSurfaceMeshBuffer &>(static_cast<const D &>(*this))->get_Data(put(value)));
     return value;
 }
 
 template <typename D> Windows::Perception::Spatial::Surfaces::SpatialSurfaceInfo impl_ISpatialSurfaceMesh<D>::SurfaceInfo() const
 {
     Windows::Perception::Spatial::Surfaces::SpatialSurfaceInfo value { nullptr };
-    check_hresult(shim()->get_SurfaceInfo(put(value)));
+    check_hresult(static_cast<const ISpatialSurfaceMesh &>(static_cast<const D &>(*this))->get_SurfaceInfo(put(value)));
     return value;
 }
 
 template <typename D> Windows::Perception::Spatial::SpatialCoordinateSystem impl_ISpatialSurfaceMesh<D>::CoordinateSystem() const
 {
     Windows::Perception::Spatial::SpatialCoordinateSystem value { nullptr };
-    check_hresult(shim()->get_CoordinateSystem(put(value)));
+    check_hresult(static_cast<const ISpatialSurfaceMesh &>(static_cast<const D &>(*this))->get_CoordinateSystem(put(value)));
     return value;
 }
 
 template <typename D> Windows::Perception::Spatial::Surfaces::SpatialSurfaceMeshBuffer impl_ISpatialSurfaceMesh<D>::TriangleIndices() const
 {
     Windows::Perception::Spatial::Surfaces::SpatialSurfaceMeshBuffer value { nullptr };
-    check_hresult(shim()->get_TriangleIndices(put(value)));
+    check_hresult(static_cast<const ISpatialSurfaceMesh &>(static_cast<const D &>(*this))->get_TriangleIndices(put(value)));
     return value;
 }
 
 template <typename D> Windows::Perception::Spatial::Surfaces::SpatialSurfaceMeshBuffer impl_ISpatialSurfaceMesh<D>::VertexPositions() const
 {
     Windows::Perception::Spatial::Surfaces::SpatialSurfaceMeshBuffer value { nullptr };
-    check_hresult(shim()->get_VertexPositions(put(value)));
+    check_hresult(static_cast<const ISpatialSurfaceMesh &>(static_cast<const D &>(*this))->get_VertexPositions(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Numerics::float3 impl_ISpatialSurfaceMesh<D>::VertexPositionScale() const
 {
     Windows::Foundation::Numerics::float3 value {};
-    check_hresult(shim()->get_VertexPositionScale(put(value)));
+    check_hresult(static_cast<const ISpatialSurfaceMesh &>(static_cast<const D &>(*this))->get_VertexPositionScale(put(value)));
     return value;
 }
 
 template <typename D> Windows::Perception::Spatial::Surfaces::SpatialSurfaceMeshBuffer impl_ISpatialSurfaceMesh<D>::VertexNormals() const
 {
     Windows::Perception::Spatial::Surfaces::SpatialSurfaceMeshBuffer value { nullptr };
-    check_hresult(shim()->get_VertexNormals(put(value)));
+    check_hresult(static_cast<const ISpatialSurfaceMesh &>(static_cast<const D &>(*this))->get_VertexNormals(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<winrt::Windows::Graphics::DirectX::DirectXPixelFormat> impl_ISpatialSurfaceMeshOptionsStatics<D>::SupportedVertexPositionFormats() const
 {
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Graphics::DirectX::DirectXPixelFormat> value;
-    check_hresult(shim()->get_SupportedVertexPositionFormats(put(value)));
+    check_hresult(static_cast<const ISpatialSurfaceMeshOptionsStatics &>(static_cast<const D &>(*this))->get_SupportedVertexPositionFormats(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<winrt::Windows::Graphics::DirectX::DirectXPixelFormat> impl_ISpatialSurfaceMeshOptionsStatics<D>::SupportedTriangleIndexFormats() const
 {
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Graphics::DirectX::DirectXPixelFormat> value;
-    check_hresult(shim()->get_SupportedTriangleIndexFormats(put(value)));
+    check_hresult(static_cast<const ISpatialSurfaceMeshOptionsStatics &>(static_cast<const D &>(*this))->get_SupportedTriangleIndexFormats(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<winrt::Windows::Graphics::DirectX::DirectXPixelFormat> impl_ISpatialSurfaceMeshOptionsStatics<D>::SupportedVertexNormalFormats() const
 {
     Windows::Foundation::Collections::IVectorView<winrt::Windows::Graphics::DirectX::DirectXPixelFormat> value;
-    check_hresult(shim()->get_SupportedVertexNormalFormats(put(value)));
+    check_hresult(static_cast<const ISpatialSurfaceMeshOptionsStatics &>(static_cast<const D &>(*this))->get_SupportedVertexNormalFormats(put(value)));
     return value;
 }
 
 template <typename D> Windows::Graphics::DirectX::DirectXPixelFormat impl_ISpatialSurfaceMeshOptions<D>::VertexPositionFormat() const
 {
     Windows::Graphics::DirectX::DirectXPixelFormat value {};
-    check_hresult(shim()->get_VertexPositionFormat(&value));
+    check_hresult(static_cast<const ISpatialSurfaceMeshOptions &>(static_cast<const D &>(*this))->get_VertexPositionFormat(&value));
     return value;
 }
 
 template <typename D> void impl_ISpatialSurfaceMeshOptions<D>::VertexPositionFormat(Windows::Graphics::DirectX::DirectXPixelFormat value) const
 {
-    check_hresult(shim()->put_VertexPositionFormat(value));
+    check_hresult(static_cast<const ISpatialSurfaceMeshOptions &>(static_cast<const D &>(*this))->put_VertexPositionFormat(value));
 }
 
 template <typename D> Windows::Graphics::DirectX::DirectXPixelFormat impl_ISpatialSurfaceMeshOptions<D>::TriangleIndexFormat() const
 {
     Windows::Graphics::DirectX::DirectXPixelFormat value {};
-    check_hresult(shim()->get_TriangleIndexFormat(&value));
+    check_hresult(static_cast<const ISpatialSurfaceMeshOptions &>(static_cast<const D &>(*this))->get_TriangleIndexFormat(&value));
     return value;
 }
 
 template <typename D> void impl_ISpatialSurfaceMeshOptions<D>::TriangleIndexFormat(Windows::Graphics::DirectX::DirectXPixelFormat value) const
 {
-    check_hresult(shim()->put_TriangleIndexFormat(value));
+    check_hresult(static_cast<const ISpatialSurfaceMeshOptions &>(static_cast<const D &>(*this))->put_TriangleIndexFormat(value));
 }
 
 template <typename D> Windows::Graphics::DirectX::DirectXPixelFormat impl_ISpatialSurfaceMeshOptions<D>::VertexNormalFormat() const
 {
     Windows::Graphics::DirectX::DirectXPixelFormat value {};
-    check_hresult(shim()->get_VertexNormalFormat(&value));
+    check_hresult(static_cast<const ISpatialSurfaceMeshOptions &>(static_cast<const D &>(*this))->get_VertexNormalFormat(&value));
     return value;
 }
 
 template <typename D> void impl_ISpatialSurfaceMeshOptions<D>::VertexNormalFormat(Windows::Graphics::DirectX::DirectXPixelFormat value) const
 {
-    check_hresult(shim()->put_VertexNormalFormat(value));
+    check_hresult(static_cast<const ISpatialSurfaceMeshOptions &>(static_cast<const D &>(*this))->put_VertexNormalFormat(value));
 }
 
 template <typename D> bool impl_ISpatialSurfaceMeshOptions<D>::IncludeVertexNormals() const
 {
     bool value {};
-    check_hresult(shim()->get_IncludeVertexNormals(&value));
+    check_hresult(static_cast<const ISpatialSurfaceMeshOptions &>(static_cast<const D &>(*this))->get_IncludeVertexNormals(&value));
     return value;
 }
 
 template <typename D> void impl_ISpatialSurfaceMeshOptions<D>::IncludeVertexNormals(bool value) const
 {
-    check_hresult(shim()->put_IncludeVertexNormals(value));
+    check_hresult(static_cast<const ISpatialSurfaceMeshOptions &>(static_cast<const D &>(*this))->put_IncludeVertexNormals(value));
 }
 
 template <typename D> GUID impl_ISpatialSurfaceInfo<D>::Id() const
 {
     GUID value {};
-    check_hresult(shim()->get_Id(&value));
+    check_hresult(static_cast<const ISpatialSurfaceInfo &>(static_cast<const D &>(*this))->get_Id(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_ISpatialSurfaceInfo<D>::UpdateTime() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->get_UpdateTime(put(value)));
+    check_hresult(static_cast<const ISpatialSurfaceInfo &>(static_cast<const D &>(*this))->get_UpdateTime(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Perception::Spatial::SpatialBoundingOrientedBox> impl_ISpatialSurfaceInfo<D>::TryGetBounds(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const
 {
     Windows::Foundation::IReference<Windows::Perception::Spatial::SpatialBoundingOrientedBox> value;
-    check_hresult(shim()->abi_TryGetBounds(get(coordinateSystem), put(value)));
+    check_hresult(static_cast<const ISpatialSurfaceInfo &>(static_cast<const D &>(*this))->abi_TryGetBounds(get(coordinateSystem), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::Surfaces::SpatialSurfaceMesh> impl_ISpatialSurfaceInfo<D>::TryComputeLatestMeshAsync(double maxTrianglesPerCubicMeter) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::Surfaces::SpatialSurfaceMesh> value;
-    check_hresult(shim()->abi_TryComputeLatestMeshAsync(maxTrianglesPerCubicMeter, put(value)));
+    check_hresult(static_cast<const ISpatialSurfaceInfo &>(static_cast<const D &>(*this))->abi_TryComputeLatestMeshAsync(maxTrianglesPerCubicMeter, put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::Surfaces::SpatialSurfaceMesh> impl_ISpatialSurfaceInfo<D>::TryComputeLatestMeshAsync(double maxTrianglesPerCubicMeter, const Windows::Perception::Spatial::Surfaces::SpatialSurfaceMeshOptions & options) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::Surfaces::SpatialSurfaceMesh> value;
-    check_hresult(shim()->abi_TryComputeLatestMeshWithOptionsAsync(maxTrianglesPerCubicMeter, get(options), put(value)));
+    check_hresult(static_cast<const ISpatialSurfaceInfo &>(static_cast<const D &>(*this))->abi_TryComputeLatestMeshWithOptionsAsync(maxTrianglesPerCubicMeter, get(options), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Perception::Spatial::SpatialPerceptionAccessStatus> impl_ISpatialSurfaceObserverStatics<D>::RequestAccessAsync() const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Perception::Spatial::SpatialPerceptionAccessStatus> result;
-    check_hresult(shim()->abi_RequestAccessAsync(put(result)));
+    check_hresult(static_cast<const ISpatialSurfaceObserverStatics &>(static_cast<const D &>(*this))->abi_RequestAccessAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Collections::IMapView<GUID, Windows::Perception::Spatial::Surfaces::SpatialSurfaceInfo> impl_ISpatialSurfaceObserver<D>::GetObservedSurfaces() const
 {
     Windows::Foundation::Collections::IMapView<GUID, Windows::Perception::Spatial::Surfaces::SpatialSurfaceInfo> value;
-    check_hresult(shim()->abi_GetObservedSurfaces(put(value)));
+    check_hresult(static_cast<const ISpatialSurfaceObserver &>(static_cast<const D &>(*this))->abi_GetObservedSurfaces(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISpatialSurfaceObserver<D>::SetBoundingVolume(const Windows::Perception::Spatial::SpatialBoundingVolume & bounds) const
 {
-    check_hresult(shim()->abi_SetBoundingVolume(get(bounds)));
+    check_hresult(static_cast<const ISpatialSurfaceObserver &>(static_cast<const D &>(*this))->abi_SetBoundingVolume(get(bounds)));
 }
 
 template <typename D> void impl_ISpatialSurfaceObserver<D>::SetBoundingVolumes(const Windows::Foundation::Collections::IIterable<Windows::Perception::Spatial::SpatialBoundingVolume> & bounds) const
 {
-    check_hresult(shim()->abi_SetBoundingVolumes(get(bounds)));
+    check_hresult(static_cast<const ISpatialSurfaceObserver &>(static_cast<const D &>(*this))->abi_SetBoundingVolumes(get(bounds)));
 }
 
 template <typename D> event_token impl_ISpatialSurfaceObserver<D>::ObservedSurfacesChanged(const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::Surfaces::SpatialSurfaceObserver, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_ObservedSurfacesChanged(get(handler), &token));
+    check_hresult(static_cast<const ISpatialSurfaceObserver &>(static_cast<const D &>(*this))->add_ObservedSurfacesChanged(get(handler), &token));
     return token;
 }
 
@@ -689,7 +689,7 @@ template <typename D> event_revoker<ISpatialSurfaceObserver> impl_ISpatialSurfac
 
 template <typename D> void impl_ISpatialSurfaceObserver<D>::ObservedSurfacesChanged(event_token token) const
 {
-    check_hresult(shim()->remove_ObservedSurfacesChanged(token));
+    check_hresult(static_cast<const ISpatialSurfaceObserver &>(static_cast<const D &>(*this))->remove_ObservedSurfacesChanged(token));
 }
 
 inline SpatialSurfaceMeshOptions::SpatialSurfaceMeshOptions() :

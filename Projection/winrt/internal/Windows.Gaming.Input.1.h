@@ -180,17 +180,17 @@ template <> struct traits<Windows::Gaming::Input::UINavigationController> { usin
 
 namespace Windows::Gaming::Input {
 
-template <typename T> class impl_IArcadeStick;
-template <typename T> class impl_IArcadeStickStatics;
-template <typename T> class impl_IGameController;
-template <typename T> class impl_IGamepad;
-template <typename T> class impl_IGamepad2;
-template <typename T> class impl_IGamepadStatics;
-template <typename T> class impl_IHeadset;
-template <typename T> class impl_IRacingWheel;
-template <typename T> class impl_IRacingWheelStatics;
-template <typename T> class impl_IUINavigationController;
-template <typename T> class impl_IUINavigationControllerStatics;
+template <typename T> struct impl_IArcadeStick;
+template <typename T> struct impl_IArcadeStickStatics;
+template <typename T> struct impl_IGameController;
+template <typename T> struct impl_IGamepad;
+template <typename T> struct impl_IGamepad2;
+template <typename T> struct impl_IGamepadStatics;
+template <typename T> struct impl_IHeadset;
+template <typename T> struct impl_IRacingWheel;
+template <typename T> struct impl_IRacingWheelStatics;
+template <typename T> struct impl_IUINavigationController;
+template <typename T> struct impl_IUINavigationControllerStatics;
 
 }
 

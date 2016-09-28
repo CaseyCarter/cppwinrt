@@ -282,36 +282,36 @@ template <> struct traits<Windows::Devices::Enumeration::EnclosureLocation> { us
 
 namespace Windows::Devices::Enumeration {
 
-template <typename T> class impl_IDeviceAccessChangedEventArgs;
-template <typename T> class impl_IDeviceAccessChangedEventArgs2;
-template <typename T> class impl_IDeviceAccessInformation;
-template <typename T> class impl_IDeviceAccessInformationStatics;
-template <typename T> class impl_IDeviceConnectionChangeTriggerDetails;
-template <typename T> class impl_IDeviceDisconnectButtonClickedEventArgs;
-template <typename T> class impl_IDeviceInformation;
-template <typename T> class impl_IDeviceInformation2;
-template <typename T> class impl_IDeviceInformationCustomPairing;
-template <typename T> class impl_IDeviceInformationPairing;
-template <typename T> class impl_IDeviceInformationPairing2;
-template <typename T> class impl_IDeviceInformationPairingStatics;
-template <typename T> class impl_IDeviceInformationStatics;
-template <typename T> class impl_IDeviceInformationStatics2;
-template <typename T> class impl_IDeviceInformationUpdate;
-template <typename T> class impl_IDeviceInformationUpdate2;
-template <typename T> class impl_IDevicePairingRequestedEventArgs;
-template <typename T> class impl_IDevicePairingResult;
-template <typename T> class impl_IDevicePairingSettings;
-template <typename T> class impl_IDevicePicker;
-template <typename T> class impl_IDevicePickerAppearance;
-template <typename T> class impl_IDevicePickerFilter;
-template <typename T> class impl_IDeviceSelectedEventArgs;
-template <typename T> class impl_IDeviceUnpairingResult;
-template <typename T> class impl_IDeviceWatcher;
-template <typename T> class impl_IDeviceWatcher2;
-template <typename T> class impl_IDeviceWatcherEvent;
-template <typename T> class impl_IDeviceWatcherTriggerDetails;
-template <typename T> class impl_IEnclosureLocation;
-template <typename T> class impl_IEnclosureLocation2;
+template <typename T> struct impl_IDeviceAccessChangedEventArgs;
+template <typename T> struct impl_IDeviceAccessChangedEventArgs2;
+template <typename T> struct impl_IDeviceAccessInformation;
+template <typename T> struct impl_IDeviceAccessInformationStatics;
+template <typename T> struct impl_IDeviceConnectionChangeTriggerDetails;
+template <typename T> struct impl_IDeviceDisconnectButtonClickedEventArgs;
+template <typename T> struct impl_IDeviceInformation;
+template <typename T> struct impl_IDeviceInformation2;
+template <typename T> struct impl_IDeviceInformationCustomPairing;
+template <typename T> struct impl_IDeviceInformationPairing;
+template <typename T> struct impl_IDeviceInformationPairing2;
+template <typename T> struct impl_IDeviceInformationPairingStatics;
+template <typename T> struct impl_IDeviceInformationStatics;
+template <typename T> struct impl_IDeviceInformationStatics2;
+template <typename T> struct impl_IDeviceInformationUpdate;
+template <typename T> struct impl_IDeviceInformationUpdate2;
+template <typename T> struct impl_IDevicePairingRequestedEventArgs;
+template <typename T> struct impl_IDevicePairingResult;
+template <typename T> struct impl_IDevicePairingSettings;
+template <typename T> struct impl_IDevicePicker;
+template <typename T> struct impl_IDevicePickerAppearance;
+template <typename T> struct impl_IDevicePickerFilter;
+template <typename T> struct impl_IDeviceSelectedEventArgs;
+template <typename T> struct impl_IDeviceUnpairingResult;
+template <typename T> struct impl_IDeviceWatcher;
+template <typename T> struct impl_IDeviceWatcher2;
+template <typename T> struct impl_IDeviceWatcherEvent;
+template <typename T> struct impl_IDeviceWatcherTriggerDetails;
+template <typename T> struct impl_IEnclosureLocation;
+template <typename T> struct impl_IEnclosureLocation2;
 
 }
 

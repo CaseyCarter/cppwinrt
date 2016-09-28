@@ -96,14 +96,14 @@ template <> struct traits<Windows::ApplicationModel::Store::Preview::StorePrevie
 
 namespace Windows::ApplicationModel::Store::Preview {
 
-template <typename T> class impl_IStoreConfigurationStatics;
-template <typename T> class impl_IStoreConfigurationStatics2;
-template <typename T> class impl_IStoreConfigurationStatics3;
-template <typename T> class impl_IStoreHardwareManufacturerInfo;
-template <typename T> class impl_IStorePreview;
-template <typename T> class impl_IStorePreviewProductInfo;
-template <typename T> class impl_IStorePreviewPurchaseResults;
-template <typename T> class impl_IStorePreviewSkuInfo;
+template <typename T> struct impl_IStoreConfigurationStatics;
+template <typename T> struct impl_IStoreConfigurationStatics2;
+template <typename T> struct impl_IStoreConfigurationStatics3;
+template <typename T> struct impl_IStoreHardwareManufacturerInfo;
+template <typename T> struct impl_IStorePreview;
+template <typename T> struct impl_IStorePreviewProductInfo;
+template <typename T> struct impl_IStorePreviewPurchaseResults;
+template <typename T> struct impl_IStorePreviewSkuInfo;
 
 }
 

@@ -246,29 +246,29 @@ template <> struct traits<Windows::Data::Xml::Dom::XmlText> { using default_inte
 
 namespace Windows::Data::Xml::Dom {
 
-template <typename T> class impl_IDtdEntity;
-template <typename T> class impl_IDtdNotation;
-template <typename T> class impl_IXmlAttribute;
-template <typename T> class impl_IXmlCDataSection;
-template <typename T> class impl_IXmlCharacterData;
-template <typename T> class impl_IXmlComment;
-template <typename T> class impl_IXmlDocument;
-template <typename T> class impl_IXmlDocumentFragment;
-template <typename T> class impl_IXmlDocumentIO;
-template <typename T> class impl_IXmlDocumentIO2;
-template <typename T> class impl_IXmlDocumentStatics;
-template <typename T> class impl_IXmlDocumentType;
-template <typename T> class impl_IXmlDomImplementation;
-template <typename T> class impl_IXmlElement;
-template <typename T> class impl_IXmlEntityReference;
-template <typename T> class impl_IXmlLoadSettings;
-template <typename T> class impl_IXmlNamedNodeMap;
-template <typename T> class impl_IXmlNode;
-template <typename T> class impl_IXmlNodeList;
-template <typename T> class impl_IXmlNodeSelector;
-template <typename T> class impl_IXmlNodeSerializer;
-template <typename T> class impl_IXmlProcessingInstruction;
-template <typename T> class impl_IXmlText;
+template <typename T> struct impl_IDtdEntity;
+template <typename T> struct impl_IDtdNotation;
+template <typename T> struct impl_IXmlAttribute;
+template <typename T> struct impl_IXmlCDataSection;
+template <typename T> struct impl_IXmlCharacterData;
+template <typename T> struct impl_IXmlComment;
+template <typename T> struct impl_IXmlDocument;
+template <typename T> struct impl_IXmlDocumentFragment;
+template <typename T> struct impl_IXmlDocumentIO;
+template <typename T> struct impl_IXmlDocumentIO2;
+template <typename T> struct impl_IXmlDocumentStatics;
+template <typename T> struct impl_IXmlDocumentType;
+template <typename T> struct impl_IXmlDomImplementation;
+template <typename T> struct impl_IXmlElement;
+template <typename T> struct impl_IXmlEntityReference;
+template <typename T> struct impl_IXmlLoadSettings;
+template <typename T> struct impl_IXmlNamedNodeMap;
+template <typename T> struct impl_IXmlNode;
+template <typename T> struct impl_IXmlNodeList;
+template <typename T> struct impl_IXmlNodeSelector;
+template <typename T> struct impl_IXmlNodeSerializer;
+template <typename T> struct impl_IXmlProcessingInstruction;
+template <typename T> struct impl_IXmlText;
 
 }
 

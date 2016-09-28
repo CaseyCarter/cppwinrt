@@ -62,11 +62,11 @@ template <> struct traits<Windows::Globalization::PhoneNumberFormatting::PhoneNu
 
 namespace Windows::Globalization::PhoneNumberFormatting {
 
-template <typename T> class impl_IPhoneNumberFormatter;
-template <typename T> class impl_IPhoneNumberFormatterStatics;
-template <typename T> class impl_IPhoneNumberInfo;
-template <typename T> class impl_IPhoneNumberInfoFactory;
-template <typename T> class impl_IPhoneNumberInfoStatics;
+template <typename T> struct impl_IPhoneNumberFormatter;
+template <typename T> struct impl_IPhoneNumberFormatterStatics;
+template <typename T> struct impl_IPhoneNumberInfo;
+template <typename T> struct impl_IPhoneNumberInfoFactory;
+template <typename T> struct impl_IPhoneNumberInfoStatics;
 
 }
 

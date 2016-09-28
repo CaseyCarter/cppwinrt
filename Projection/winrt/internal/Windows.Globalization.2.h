@@ -30,12 +30,8 @@ template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __de
 namespace Windows::Globalization {
 
 template <typename D>
-class WINRT_EBO impl_IApplicationLanguagesStatics
+struct WINRT_EBO impl_IApplicationLanguagesStatics
 {
-    auto shim() const { return impl::shim<D, IApplicationLanguagesStatics>(this); }
-
-public:
-
     hstring PrimaryLanguageOverride() const;
     void PrimaryLanguageOverride(hstring_ref value) const;
     Windows::Foundation::Collections::IVectorView<hstring> Languages() const;
@@ -43,12 +39,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICalendar
+struct WINRT_EBO impl_ICalendar
 {
-    auto shim() const { return impl::shim<D, ICalendar>(this); }
-
-public:
-
     Windows::Globalization::Calendar Clone() const;
     void SetToMin() const;
     void SetToMax() const;
@@ -150,33 +142,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICalendarFactory
+struct WINRT_EBO impl_ICalendarFactory
 {
-    auto shim() const { return impl::shim<D, ICalendarFactory>(this); }
-
-public:
-
     Windows::Globalization::Calendar CreateCalendarDefaultCalendarAndClock(const Windows::Foundation::Collections::IIterable<hstring> & languages) const;
     Windows::Globalization::Calendar CreateCalendar(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref calendar, hstring_ref clock) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICalendarFactory2
+struct WINRT_EBO impl_ICalendarFactory2
 {
-    auto shim() const { return impl::shim<D, ICalendarFactory2>(this); }
-
-public:
-
     Windows::Globalization::Calendar CreateCalendarWithTimeZone(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref calendar, hstring_ref clock, hstring_ref timeZoneId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICalendarIdentifiersStatics
+struct WINRT_EBO impl_ICalendarIdentifiersStatics
 {
-    auto shim() const { return impl::shim<D, ICalendarIdentifiersStatics>(this); }
-
-public:
-
     hstring Gregorian() const;
     hstring Hebrew() const;
     hstring Hijri() const;
@@ -189,22 +169,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICalendarIdentifiersStatics2
+struct WINRT_EBO impl_ICalendarIdentifiersStatics2
 {
-    auto shim() const { return impl::shim<D, ICalendarIdentifiersStatics2>(this); }
-
-public:
-
     hstring Persian() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICalendarIdentifiersStatics3
+struct WINRT_EBO impl_ICalendarIdentifiersStatics3
 {
-    auto shim() const { return impl::shim<D, ICalendarIdentifiersStatics3>(this); }
-
-public:
-
     hstring ChineseLunar() const;
     hstring JapaneseLunar() const;
     hstring KoreanLunar() const;
@@ -213,23 +185,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IClockIdentifiersStatics
+struct WINRT_EBO impl_IClockIdentifiersStatics
 {
-    auto shim() const { return impl::shim<D, IClockIdentifiersStatics>(this); }
-
-public:
-
     hstring TwelveHour() const;
     hstring TwentyFourHour() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICurrencyIdentifiersStatics
+struct WINRT_EBO impl_ICurrencyIdentifiersStatics
 {
-    auto shim() const { return impl::shim<D, ICurrencyIdentifiersStatics>(this); }
-
-public:
-
     hstring AED() const;
     hstring AFN() const;
     hstring ALL() const;
@@ -390,12 +354,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IGeographicRegion
+struct WINRT_EBO impl_IGeographicRegion
 {
-    auto shim() const { return impl::shim<D, IGeographicRegion>(this); }
-
-public:
-
     hstring Code() const;
     hstring CodeTwoLetter() const;
     hstring CodeThreeLetter() const;
@@ -406,32 +366,20 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IGeographicRegionFactory
+struct WINRT_EBO impl_IGeographicRegionFactory
 {
-    auto shim() const { return impl::shim<D, IGeographicRegionFactory>(this); }
-
-public:
-
     Windows::Globalization::GeographicRegion CreateGeographicRegion(hstring_ref geographicRegionCode) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGeographicRegionStatics
+struct WINRT_EBO impl_IGeographicRegionStatics
 {
-    auto shim() const { return impl::shim<D, IGeographicRegionStatics>(this); }
-
-public:
-
     bool IsSupported(hstring_ref geographicRegionCode) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILanguage
+struct WINRT_EBO impl_ILanguage
 {
-    auto shim() const { return impl::shim<D, ILanguage>(this); }
-
-public:
-
     hstring LanguageTag() const;
     hstring DisplayName() const;
     hstring NativeName() const;
@@ -439,53 +387,33 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ILanguageExtensionSubtags
+struct WINRT_EBO impl_ILanguageExtensionSubtags
 {
-    auto shim() const { return impl::shim<D, ILanguageExtensionSubtags>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<hstring> GetExtensionSubtags(hstring_ref singleton) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILanguageFactory
+struct WINRT_EBO impl_ILanguageFactory
 {
-    auto shim() const { return impl::shim<D, ILanguageFactory>(this); }
-
-public:
-
     Windows::Globalization::Language CreateLanguage(hstring_ref languageTag) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILanguageStatics
+struct WINRT_EBO impl_ILanguageStatics
 {
-    auto shim() const { return impl::shim<D, ILanguageStatics>(this); }
-
-public:
-
     bool IsWellFormed(hstring_ref languageTag) const;
     hstring CurrentInputMethodLanguageTag() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILanguageStatics2
+struct WINRT_EBO impl_ILanguageStatics2
 {
-    auto shim() const { return impl::shim<D, ILanguageStatics2>(this); }
-
-public:
-
     bool TrySetInputMethodLanguageTag(hstring_ref languageTag) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_INumeralSystemIdentifiersStatics
+struct WINRT_EBO impl_INumeralSystemIdentifiersStatics
 {
-    auto shim() const { return impl::shim<D, INumeralSystemIdentifiersStatics>(this); }
-
-public:
-
     hstring Arab() const;
     hstring ArabExt() const;
     hstring Bali() const;
@@ -525,12 +453,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_INumeralSystemIdentifiersStatics2
+struct WINRT_EBO impl_INumeralSystemIdentifiersStatics2
 {
-    auto shim() const { return impl::shim<D, INumeralSystemIdentifiersStatics2>(this); }
-
-public:
-
     hstring Brah() const;
     hstring Osma() const;
     hstring MathBold() const;
@@ -546,12 +470,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ITimeZoneOnCalendar
+struct WINRT_EBO impl_ITimeZoneOnCalendar
 {
-    auto shim() const { return impl::shim<D, ITimeZoneOnCalendar>(this); }
-
-public:
-
     hstring GetTimeZone() const;
     void ChangeTimeZone(hstring_ref timeZoneId) const;
     hstring TimeZoneAsString() const;

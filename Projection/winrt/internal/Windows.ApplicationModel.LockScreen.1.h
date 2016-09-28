@@ -76,12 +76,12 @@ template <> struct traits<Windows::ApplicationModel::LockScreen::LockScreenUnloc
 
 namespace Windows::ApplicationModel::LockScreen {
 
-template <typename T> class impl_ILockApplicationHost;
-template <typename T> class impl_ILockApplicationHostStatics;
-template <typename T> class impl_ILockScreenBadge;
-template <typename T> class impl_ILockScreenInfo;
-template <typename T> class impl_ILockScreenUnlockingDeferral;
-template <typename T> class impl_ILockScreenUnlockingEventArgs;
+template <typename T> struct impl_ILockApplicationHost;
+template <typename T> struct impl_ILockApplicationHostStatics;
+template <typename T> struct impl_ILockScreenBadge;
+template <typename T> struct impl_ILockScreenInfo;
+template <typename T> struct impl_ILockScreenUnlockingDeferral;
+template <typename T> struct impl_ILockScreenUnlockingEventArgs;
 
 }
 

@@ -164,19 +164,19 @@ template <> struct traits<Windows::Media::Streaming::Adaptive::AdaptiveMediaSour
 
 namespace Windows::Media::Streaming::Adaptive {
 
-template <typename T> class impl_IAdaptiveMediaSource;
-template <typename T> class impl_IAdaptiveMediaSource2;
-template <typename T> class impl_IAdaptiveMediaSourceAdvancedSettings;
-template <typename T> class impl_IAdaptiveMediaSourceCreationResult;
-template <typename T> class impl_IAdaptiveMediaSourceDownloadBitrateChangedEventArgs;
-template <typename T> class impl_IAdaptiveMediaSourceDownloadCompletedEventArgs;
-template <typename T> class impl_IAdaptiveMediaSourceDownloadFailedEventArgs;
-template <typename T> class impl_IAdaptiveMediaSourceDownloadRequestedDeferral;
-template <typename T> class impl_IAdaptiveMediaSourceDownloadRequestedEventArgs;
-template <typename T> class impl_IAdaptiveMediaSourceDownloadResult;
-template <typename T> class impl_IAdaptiveMediaSourceDownloadResult2;
-template <typename T> class impl_IAdaptiveMediaSourcePlaybackBitrateChangedEventArgs;
-template <typename T> class impl_IAdaptiveMediaSourceStatics;
+template <typename T> struct impl_IAdaptiveMediaSource;
+template <typename T> struct impl_IAdaptiveMediaSource2;
+template <typename T> struct impl_IAdaptiveMediaSourceAdvancedSettings;
+template <typename T> struct impl_IAdaptiveMediaSourceCreationResult;
+template <typename T> struct impl_IAdaptiveMediaSourceDownloadBitrateChangedEventArgs;
+template <typename T> struct impl_IAdaptiveMediaSourceDownloadCompletedEventArgs;
+template <typename T> struct impl_IAdaptiveMediaSourceDownloadFailedEventArgs;
+template <typename T> struct impl_IAdaptiveMediaSourceDownloadRequestedDeferral;
+template <typename T> struct impl_IAdaptiveMediaSourceDownloadRequestedEventArgs;
+template <typename T> struct impl_IAdaptiveMediaSourceDownloadResult;
+template <typename T> struct impl_IAdaptiveMediaSourceDownloadResult2;
+template <typename T> struct impl_IAdaptiveMediaSourcePlaybackBitrateChangedEventArgs;
+template <typename T> struct impl_IAdaptiveMediaSourceStatics;
 
 }
 

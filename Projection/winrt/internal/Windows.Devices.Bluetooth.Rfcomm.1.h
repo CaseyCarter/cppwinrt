@@ -111,17 +111,17 @@ template <> struct traits<Windows::Devices::Bluetooth::Rfcomm::RfcommServiceProv
 
 namespace Windows::Devices::Bluetooth::Rfcomm {
 
-template <typename T> class impl_IRfcommDeviceService;
-template <typename T> class impl_IRfcommDeviceService2;
-template <typename T> class impl_IRfcommDeviceService3;
-template <typename T> class impl_IRfcommDeviceServiceStatics;
-template <typename T> class impl_IRfcommDeviceServiceStatics2;
-template <typename T> class impl_IRfcommDeviceServicesResult;
-template <typename T> class impl_IRfcommServiceId;
-template <typename T> class impl_IRfcommServiceIdStatics;
-template <typename T> class impl_IRfcommServiceProvider;
-template <typename T> class impl_IRfcommServiceProvider2;
-template <typename T> class impl_IRfcommServiceProviderStatics;
+template <typename T> struct impl_IRfcommDeviceService;
+template <typename T> struct impl_IRfcommDeviceService2;
+template <typename T> struct impl_IRfcommDeviceService3;
+template <typename T> struct impl_IRfcommDeviceServiceStatics;
+template <typename T> struct impl_IRfcommDeviceServiceStatics2;
+template <typename T> struct impl_IRfcommDeviceServicesResult;
+template <typename T> struct impl_IRfcommServiceId;
+template <typename T> struct impl_IRfcommServiceIdStatics;
+template <typename T> struct impl_IRfcommServiceProvider;
+template <typename T> struct impl_IRfcommServiceProvider2;
+template <typename T> struct impl_IRfcommServiceProviderStatics;
 
 }
 

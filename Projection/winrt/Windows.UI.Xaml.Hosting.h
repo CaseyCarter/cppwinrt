@@ -83,26 +83,26 @@ namespace Windows::UI::Xaml::Hosting {
 template <typename D> Windows::UI::Composition::Visual impl_IElementCompositionPreviewStatics<D>::GetElementVisual(const Windows::UI::Xaml::UIElement & element) const
 {
     Windows::UI::Composition::Visual result { nullptr };
-    check_hresult(shim()->abi_GetElementVisual(get(element), put(result)));
+    check_hresult(static_cast<const IElementCompositionPreviewStatics &>(static_cast<const D &>(*this))->abi_GetElementVisual(get(element), put(result)));
     return result;
 }
 
 template <typename D> Windows::UI::Composition::Visual impl_IElementCompositionPreviewStatics<D>::GetElementChildVisual(const Windows::UI::Xaml::UIElement & element) const
 {
     Windows::UI::Composition::Visual result { nullptr };
-    check_hresult(shim()->abi_GetElementChildVisual(get(element), put(result)));
+    check_hresult(static_cast<const IElementCompositionPreviewStatics &>(static_cast<const D &>(*this))->abi_GetElementChildVisual(get(element), put(result)));
     return result;
 }
 
 template <typename D> void impl_IElementCompositionPreviewStatics<D>::SetElementChildVisual(const Windows::UI::Xaml::UIElement & element, const Windows::UI::Composition::Visual & visual) const
 {
-    check_hresult(shim()->abi_SetElementChildVisual(get(element), get(visual)));
+    check_hresult(static_cast<const IElementCompositionPreviewStatics &>(static_cast<const D &>(*this))->abi_SetElementChildVisual(get(element), get(visual)));
 }
 
 template <typename D> Windows::UI::Composition::CompositionPropertySet impl_IElementCompositionPreviewStatics<D>::GetScrollViewerManipulationPropertySet(const Windows::UI::Xaml::Controls::ScrollViewer & scrollViewer) const
 {
     Windows::UI::Composition::CompositionPropertySet result { nullptr };
-    check_hresult(shim()->abi_GetScrollViewerManipulationPropertySet(get(scrollViewer), put(result)));
+    check_hresult(static_cast<const IElementCompositionPreviewStatics &>(static_cast<const D &>(*this))->abi_GetScrollViewerManipulationPropertySet(get(scrollViewer), put(result)));
     return result;
 }
 

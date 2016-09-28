@@ -26,7 +26,7 @@ template <> struct traits<Windows::System::Display::DisplayRequest> { using defa
 
 namespace Windows::System::Display {
 
-template <typename T> class impl_IDisplayRequest;
+template <typename T> struct impl_IDisplayRequest;
 
 }
 

@@ -55,56 +55,36 @@ template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __de
 namespace Windows::Globalization::NumberFormatting {
 
 template <typename D>
-class WINRT_EBO impl_ICurrencyFormatter
+struct WINRT_EBO impl_ICurrencyFormatter
 {
-    auto shim() const { return impl::shim<D, ICurrencyFormatter>(this); }
-
-public:
-
     hstring Currency() const;
     void Currency(hstring_ref value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICurrencyFormatter2
+struct WINRT_EBO impl_ICurrencyFormatter2
 {
-    auto shim() const { return impl::shim<D, ICurrencyFormatter2>(this); }
-
-public:
-
     Windows::Globalization::NumberFormatting::CurrencyFormatterMode Mode() const;
     void Mode(Windows::Globalization::NumberFormatting::CurrencyFormatterMode value) const;
     void ApplyRoundingForCurrency(Windows::Globalization::NumberFormatting::RoundingAlgorithm roundingAlgorithm) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICurrencyFormatterFactory
+struct WINRT_EBO impl_ICurrencyFormatterFactory
 {
-    auto shim() const { return impl::shim<D, ICurrencyFormatterFactory>(this); }
-
-public:
-
     Windows::Globalization::NumberFormatting::CurrencyFormatter CreateCurrencyFormatterCode(hstring_ref currencyCode) const;
     Windows::Globalization::NumberFormatting::CurrencyFormatter CreateCurrencyFormatterCodeContext(hstring_ref currencyCode, const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref geographicRegion) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDecimalFormatterFactory
+struct WINRT_EBO impl_IDecimalFormatterFactory
 {
-    auto shim() const { return impl::shim<D, IDecimalFormatterFactory>(this); }
-
-public:
-
     Windows::Globalization::NumberFormatting::DecimalFormatter CreateDecimalFormatter(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref geographicRegion) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IIncrementNumberRounder
+struct WINRT_EBO impl_IIncrementNumberRounder
 {
-    auto shim() const { return impl::shim<D, IIncrementNumberRounder>(this); }
-
-public:
-
     Windows::Globalization::NumberFormatting::RoundingAlgorithm RoundingAlgorithm() const;
     void RoundingAlgorithm(Windows::Globalization::NumberFormatting::RoundingAlgorithm value) const;
     double Increment() const;
@@ -112,36 +92,24 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_INumberFormatter
+struct WINRT_EBO impl_INumberFormatter
 {
-    auto shim() const { return impl::shim<D, INumberFormatter>(this); }
-
-public:
-
     hstring Format(int64_t value) const;
     hstring Format(uint64_t value) const;
     hstring Format(double value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_INumberFormatter2
+struct WINRT_EBO impl_INumberFormatter2
 {
-    auto shim() const { return impl::shim<D, INumberFormatter2>(this); }
-
-public:
-
     hstring FormatInt(int64_t value) const;
     hstring FormatUInt(uint64_t value) const;
     hstring FormatDouble(double value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_INumberFormatterOptions
+struct WINRT_EBO impl_INumberFormatterOptions
 {
-    auto shim() const { return impl::shim<D, INumberFormatterOptions>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<hstring> Languages() const;
     hstring GeographicRegion() const;
     int32_t IntegerDigits() const;
@@ -159,24 +127,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_INumberParser
+struct WINRT_EBO impl_INumberParser
 {
-    auto shim() const { return impl::shim<D, INumberParser>(this); }
-
-public:
-
     Windows::Foundation::IReference<int64_t> ParseInt(hstring_ref text) const;
     Windows::Foundation::IReference<uint64_t> ParseUInt(hstring_ref text) const;
     Windows::Foundation::IReference<double> ParseDouble(hstring_ref text) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_INumberRounder
+struct WINRT_EBO impl_INumberRounder
 {
-    auto shim() const { return impl::shim<D, INumberRounder>(this); }
-
-public:
-
     int32_t RoundInt32(int32_t value) const;
     uint32_t RoundUInt32(uint32_t value) const;
     int64_t RoundInt64(int64_t value) const;
@@ -186,23 +146,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_INumberRounderOption
+struct WINRT_EBO impl_INumberRounderOption
 {
-    auto shim() const { return impl::shim<D, INumberRounderOption>(this); }
-
-public:
-
     Windows::Globalization::NumberFormatting::INumberRounder NumberRounder() const;
     void NumberRounder(const Windows::Globalization::NumberFormatting::INumberRounder & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_INumeralSystemTranslator
+struct WINRT_EBO impl_INumeralSystemTranslator
 {
-    auto shim() const { return impl::shim<D, INumeralSystemTranslator>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<hstring> Languages() const;
     hstring ResolvedLanguage() const;
     hstring NumeralSystem() const;
@@ -211,53 +163,33 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_INumeralSystemTranslatorFactory
+struct WINRT_EBO impl_INumeralSystemTranslatorFactory
 {
-    auto shim() const { return impl::shim<D, INumeralSystemTranslatorFactory>(this); }
-
-public:
-
     Windows::Globalization::NumberFormatting::NumeralSystemTranslator Create(const Windows::Foundation::Collections::IIterable<hstring> & languages) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPercentFormatterFactory
+struct WINRT_EBO impl_IPercentFormatterFactory
 {
-    auto shim() const { return impl::shim<D, IPercentFormatterFactory>(this); }
-
-public:
-
     Windows::Globalization::NumberFormatting::PercentFormatter CreatePercentFormatter(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref geographicRegion) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPermilleFormatterFactory
+struct WINRT_EBO impl_IPermilleFormatterFactory
 {
-    auto shim() const { return impl::shim<D, IPermilleFormatterFactory>(this); }
-
-public:
-
     Windows::Globalization::NumberFormatting::PermilleFormatter CreatePermilleFormatter(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref geographicRegion) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISignedZeroOption
+struct WINRT_EBO impl_ISignedZeroOption
 {
-    auto shim() const { return impl::shim<D, ISignedZeroOption>(this); }
-
-public:
-
     bool IsZeroSigned() const;
     void IsZeroSigned(bool value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISignificantDigitsNumberRounder
+struct WINRT_EBO impl_ISignificantDigitsNumberRounder
 {
-    auto shim() const { return impl::shim<D, ISignificantDigitsNumberRounder>(this); }
-
-public:
-
     Windows::Globalization::NumberFormatting::RoundingAlgorithm RoundingAlgorithm() const;
     void RoundingAlgorithm(Windows::Globalization::NumberFormatting::RoundingAlgorithm value) const;
     uint32_t SignificantDigits() const;
@@ -265,12 +197,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISignificantDigitsOption
+struct WINRT_EBO impl_ISignificantDigitsOption
 {
-    auto shim() const { return impl::shim<D, ISignificantDigitsOption>(this); }
-
-public:
-
     int32_t SignificantDigits() const;
     void SignificantDigits(int32_t value) const;
 };

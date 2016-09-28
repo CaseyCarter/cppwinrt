@@ -128,22 +128,22 @@ template <> struct traits<Windows::System::RemoteSystems::RemoteSystemWatcher> {
 
 namespace Windows::System::RemoteSystems {
 
-template <typename T> class impl_IRemoteSystem;
-template <typename T> class impl_IRemoteSystemAddedEventArgs;
-template <typename T> class impl_IRemoteSystemConnectionRequest;
-template <typename T> class impl_IRemoteSystemConnectionRequestFactory;
-template <typename T> class impl_IRemoteSystemDiscoveryTypeFilter;
-template <typename T> class impl_IRemoteSystemDiscoveryTypeFilterFactory;
-template <typename T> class impl_IRemoteSystemFilter;
-template <typename T> class impl_IRemoteSystemKindFilter;
-template <typename T> class impl_IRemoteSystemKindFilterFactory;
-template <typename T> class impl_IRemoteSystemKindStatics;
-template <typename T> class impl_IRemoteSystemRemovedEventArgs;
-template <typename T> class impl_IRemoteSystemStatics;
-template <typename T> class impl_IRemoteSystemStatusTypeFilter;
-template <typename T> class impl_IRemoteSystemStatusTypeFilterFactory;
-template <typename T> class impl_IRemoteSystemUpdatedEventArgs;
-template <typename T> class impl_IRemoteSystemWatcher;
+template <typename T> struct impl_IRemoteSystem;
+template <typename T> struct impl_IRemoteSystemAddedEventArgs;
+template <typename T> struct impl_IRemoteSystemConnectionRequest;
+template <typename T> struct impl_IRemoteSystemConnectionRequestFactory;
+template <typename T> struct impl_IRemoteSystemDiscoveryTypeFilter;
+template <typename T> struct impl_IRemoteSystemDiscoveryTypeFilterFactory;
+template <typename T> struct impl_IRemoteSystemFilter;
+template <typename T> struct impl_IRemoteSystemKindFilter;
+template <typename T> struct impl_IRemoteSystemKindFilterFactory;
+template <typename T> struct impl_IRemoteSystemKindStatics;
+template <typename T> struct impl_IRemoteSystemRemovedEventArgs;
+template <typename T> struct impl_IRemoteSystemStatics;
+template <typename T> struct impl_IRemoteSystemStatusTypeFilter;
+template <typename T> struct impl_IRemoteSystemStatusTypeFilterFactory;
+template <typename T> struct impl_IRemoteSystemUpdatedEventArgs;
+template <typename T> struct impl_IRemoteSystemWatcher;
 
 }
 

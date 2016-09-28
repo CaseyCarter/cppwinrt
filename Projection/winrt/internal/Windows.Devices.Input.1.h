@@ -114,15 +114,15 @@ template <> struct traits<Windows::Devices::Input::TouchCapabilities> { using de
 
 namespace Windows::Devices::Input {
 
-template <typename T> class impl_IKeyboardCapabilities;
-template <typename T> class impl_IMouseCapabilities;
-template <typename T> class impl_IMouseDevice;
-template <typename T> class impl_IMouseDeviceStatics;
-template <typename T> class impl_IMouseEventArgs;
-template <typename T> class impl_IPointerDevice;
-template <typename T> class impl_IPointerDevice2;
-template <typename T> class impl_IPointerDeviceStatics;
-template <typename T> class impl_ITouchCapabilities;
+template <typename T> struct impl_IKeyboardCapabilities;
+template <typename T> struct impl_IMouseCapabilities;
+template <typename T> struct impl_IMouseDevice;
+template <typename T> struct impl_IMouseDeviceStatics;
+template <typename T> struct impl_IMouseEventArgs;
+template <typename T> struct impl_IPointerDevice;
+template <typename T> struct impl_IPointerDevice2;
+template <typename T> struct impl_IPointerDeviceStatics;
+template <typename T> struct impl_ITouchCapabilities;
 
 }
 

@@ -175,52 +175,32 @@ template <> struct __declspec(uuid("1ef6a805-fd84-5756-a180-353dd72db275")) __de
 namespace Windows::ApplicationModel::Calls {
 
 template <typename D>
-class WINRT_EBO impl_ICallAnswerEventArgs
+struct WINRT_EBO impl_ICallAnswerEventArgs
 {
-    auto shim() const { return impl::shim<D, ICallAnswerEventArgs>(this); }
-
-public:
-
     Windows::ApplicationModel::Calls::VoipPhoneCallMedia AcceptedMedia() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICallRejectEventArgs
+struct WINRT_EBO impl_ICallRejectEventArgs
 {
-    auto shim() const { return impl::shim<D, ICallRejectEventArgs>(this); }
-
-public:
-
     Windows::ApplicationModel::Calls::VoipPhoneCallRejectReason RejectReason() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICallStateChangeEventArgs
+struct WINRT_EBO impl_ICallStateChangeEventArgs
 {
-    auto shim() const { return impl::shim<D, ICallStateChangeEventArgs>(this); }
-
-public:
-
     Windows::ApplicationModel::Calls::VoipPhoneCallState State() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMuteChangeEventArgs
+struct WINRT_EBO impl_IMuteChangeEventArgs
 {
-    auto shim() const { return impl::shim<D, IMuteChangeEventArgs>(this); }
-
-public:
-
     bool Muted() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPhoneCallHistoryEntry
+struct WINRT_EBO impl_IPhoneCallHistoryEntry
 {
-    auto shim() const { return impl::shim<D, IPhoneCallHistoryEntry>(this); }
-
-public:
-
     hstring Id() const;
     Windows::ApplicationModel::Calls::PhoneCallHistoryEntryAddress Address() const;
     void Address(const Windows::ApplicationModel::Calls::PhoneCallHistoryEntryAddress & value) const;
@@ -258,12 +238,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPhoneCallHistoryEntryAddress
+struct WINRT_EBO impl_IPhoneCallHistoryEntryAddress
 {
-    auto shim() const { return impl::shim<D, IPhoneCallHistoryEntryAddress>(this); }
-
-public:
-
     hstring ContactId() const;
     void ContactId(hstring_ref value) const;
     hstring DisplayName() const;
@@ -275,75 +251,47 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPhoneCallHistoryEntryAddressFactory
+struct WINRT_EBO impl_IPhoneCallHistoryEntryAddressFactory
 {
-    auto shim() const { return impl::shim<D, IPhoneCallHistoryEntryAddressFactory>(this); }
-
-public:
-
     Windows::ApplicationModel::Calls::PhoneCallHistoryEntryAddress Create(hstring_ref rawAddress, Windows::ApplicationModel::Calls::PhoneCallHistoryEntryRawAddressKind rawAddressKind) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPhoneCallHistoryEntryQueryOptions
+struct WINRT_EBO impl_IPhoneCallHistoryEntryQueryOptions
 {
-    auto shim() const { return impl::shim<D, IPhoneCallHistoryEntryQueryOptions>(this); }
-
-public:
-
     Windows::ApplicationModel::Calls::PhoneCallHistoryEntryQueryDesiredMedia DesiredMedia() const;
     void DesiredMedia(Windows::ApplicationModel::Calls::PhoneCallHistoryEntryQueryDesiredMedia value) const;
     Windows::Foundation::Collections::IVector<hstring> SourceIds() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPhoneCallHistoryEntryReader
+struct WINRT_EBO impl_IPhoneCallHistoryEntryReader
 {
-    auto shim() const { return impl::shim<D, IPhoneCallHistoryEntryReader>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Calls::PhoneCallHistoryEntry>> ReadBatchAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPhoneCallHistoryManagerForUser
+struct WINRT_EBO impl_IPhoneCallHistoryManagerForUser
 {
-    auto shim() const { return impl::shim<D, IPhoneCallHistoryManagerForUser>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Calls::PhoneCallHistoryStore> RequestStoreAsync(Windows::ApplicationModel::Calls::PhoneCallHistoryStoreAccessType accessType) const;
     Windows::System::User User() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPhoneCallHistoryManagerStatics
+struct WINRT_EBO impl_IPhoneCallHistoryManagerStatics
 {
-    auto shim() const { return impl::shim<D, IPhoneCallHistoryManagerStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Calls::PhoneCallHistoryStore> RequestStoreAsync(Windows::ApplicationModel::Calls::PhoneCallHistoryStoreAccessType accessType) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPhoneCallHistoryManagerStatics2
+struct WINRT_EBO impl_IPhoneCallHistoryManagerStatics2
 {
-    auto shim() const { return impl::shim<D, IPhoneCallHistoryManagerStatics2>(this); }
-
-public:
-
     Windows::ApplicationModel::Calls::PhoneCallHistoryManagerForUser GetForUser(const Windows::System::User & user) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPhoneCallHistoryStore
+struct WINRT_EBO impl_IPhoneCallHistoryStore
 {
-    auto shim() const { return impl::shim<D, IPhoneCallHistoryStore>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Calls::PhoneCallHistoryEntry> GetEntryAsync(hstring_ref callHistoryEntryId) const;
     Windows::ApplicationModel::Calls::PhoneCallHistoryEntryReader GetEntryReader() const;
     Windows::ApplicationModel::Calls::PhoneCallHistoryEntryReader GetEntryReader(const Windows::ApplicationModel::Calls::PhoneCallHistoryEntryQueryOptions & queryOptions) const;
@@ -359,12 +307,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVoipCallCoordinator
+struct WINRT_EBO impl_IVoipCallCoordinator
 {
-    auto shim() const { return impl::shim<D, IVoipCallCoordinator>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Calls::VoipPhoneCallResourceReservationStatus> ReserveCallResourcesAsync(hstring_ref taskEntryPoint) const;
     event_token MuteStateChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Calls::VoipCallCoordinator, Windows::ApplicationModel::Calls::MuteChangeEventArgs> & muteChangeHandler) const;
     using MuteStateChanged_revoker = event_revoker<IVoipCallCoordinator>;
@@ -381,22 +325,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVoipCallCoordinatorStatics
+struct WINRT_EBO impl_IVoipCallCoordinatorStatics
 {
-    auto shim() const { return impl::shim<D, IVoipCallCoordinatorStatics>(this); }
-
-public:
-
     Windows::ApplicationModel::Calls::VoipCallCoordinator GetDefault() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVoipPhoneCall
+struct WINRT_EBO impl_IVoipPhoneCall
 {
-    auto shim() const { return impl::shim<D, IVoipPhoneCall>(this); }
-
-public:
-
     event_token EndRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Calls::VoipPhoneCall, Windows::ApplicationModel::Calls::CallStateChangeEventArgs> & handler) const;
     using EndRequested_revoker = event_revoker<IVoipPhoneCall>;
     EndRequested_revoker EndRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Calls::VoipPhoneCall, Windows::ApplicationModel::Calls::CallStateChangeEventArgs> & handler) const;

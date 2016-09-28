@@ -13,18 +13,9 @@ namespace Windows::Foundation {
 struct IActivationFactory;
 
 template <typename D>
-class WINRT_EBO impl_IActivationFactory
+struct WINRT_EBO impl_IActivationFactory
 {
-    auto shim() const { return impl::shim<D, IActivationFactory>(this); }
-
-public:
-
-    IInspectable ActivateInstance() const
-    {
-        IInspectable instance;
-        check_hresult(shim()->abi_ActivateInstance(put(instance)));
-        return instance;
-    }
+    IInspectable ActivateInstance() const;
 };
 
 }
@@ -92,6 +83,14 @@ struct IActivationFactory :
     IActivationFactory(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IActivationFactory>(m_ptr); }
 };
+
+template <typename D>
+IInspectable impl_IActivationFactory<D>::ActivateInstance() const
+{
+    IInspectable instance;
+    check_hresult(static_cast<const IActivationFactory &>(static_cast<const D &>(*this))->abi_ActivateInstance(put(instance)));
+    return instance;
+}
 
 }
 

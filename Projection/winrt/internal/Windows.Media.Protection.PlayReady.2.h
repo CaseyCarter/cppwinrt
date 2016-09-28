@@ -186,12 +186,8 @@ template <> struct __declspec(uuid("f72fdf87-9055-58d8-96ab-2cc04d06ccd7")) __de
 namespace Windows::Media::Protection::PlayReady {
 
 template <typename D>
-class WINRT_EBO impl_INDClient
+struct WINRT_EBO impl_INDClient
 {
-    auto shim() const { return impl::shim<D, INDClient>(this); }
-
-public:
-
     event_token RegistrationCompleted(const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDRegistrationCompletedEventArgs> & handler) const;
     using RegistrationCompleted_revoker = event_revoker<INDClient>;
     RegistrationCompleted_revoker RegistrationCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::PlayReady::NDClient, Windows::Media::Protection::PlayReady::INDRegistrationCompletedEventArgs> & handler) const;
@@ -219,55 +215,35 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_INDClientFactory
+struct WINRT_EBO impl_INDClientFactory
 {
-    auto shim() const { return impl::shim<D, INDClientFactory>(this); }
-
-public:
-
     Windows::Media::Protection::PlayReady::NDClient CreateInstance(const Windows::Media::Protection::PlayReady::INDDownloadEngine & downloadEngine, const Windows::Media::Protection::PlayReady::INDStreamParser & streamParser, const Windows::Media::Protection::PlayReady::INDMessenger & pMessenger) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_INDClosedCaptionDataReceivedEventArgs
+struct WINRT_EBO impl_INDClosedCaptionDataReceivedEventArgs
 {
-    auto shim() const { return impl::shim<D, INDClosedCaptionDataReceivedEventArgs>(this); }
-
-public:
-
     Windows::Media::Protection::PlayReady::NDClosedCaptionFormat ClosedCaptionDataFormat() const;
     int64_t PresentationTimestamp() const;
     com_array<uint8_t> ClosedCaptionData() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_INDCustomData
+struct WINRT_EBO impl_INDCustomData
 {
-    auto shim() const { return impl::shim<D, INDCustomData>(this); }
-
-public:
-
     com_array<uint8_t> CustomDataTypeID() const;
     com_array<uint8_t> CustomData() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_INDCustomDataFactory
+struct WINRT_EBO impl_INDCustomDataFactory
 {
-    auto shim() const { return impl::shim<D, INDCustomDataFactory>(this); }
-
-public:
-
     Windows::Media::Protection::PlayReady::NDCustomData CreateInstance(array_ref<const uint8_t> customDataTypeIDBytes, array_ref<const uint8_t> customDataBytes) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_INDDownloadEngine
+struct WINRT_EBO impl_INDDownloadEngine
 {
-    auto shim() const { return impl::shim<D, INDDownloadEngine>(this); }
-
-public:
-
     void Open(const Windows::Foundation::Uri & uri, array_ref<const uint8_t> sessionIDBytes) const;
     void Pause() const;
     void Resume() const;
@@ -280,12 +256,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_INDDownloadEngineNotifier
+struct WINRT_EBO impl_INDDownloadEngineNotifier
 {
-    auto shim() const { return impl::shim<D, INDDownloadEngineNotifier>(this); }
-
-public:
-
     void OnStreamOpened() const;
     void OnPlayReadyObjectReceived(array_ref<const uint8_t> dataBytes) const;
     void OnContentIDReceived(const Windows::Media::Protection::PlayReady::INDLicenseFetchDescriptor & licenseFetchDescriptor) const;
@@ -295,22 +267,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_INDLicenseFetchCompletedEventArgs
+struct WINRT_EBO impl_INDLicenseFetchCompletedEventArgs
 {
-    auto shim() const { return impl::shim<D, INDLicenseFetchCompletedEventArgs>(this); }
-
-public:
-
     Windows::Media::Protection::PlayReady::INDCustomData ResponseCustomData() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_INDLicenseFetchDescriptor
+struct WINRT_EBO impl_INDLicenseFetchDescriptor
 {
-    auto shim() const { return impl::shim<D, INDLicenseFetchDescriptor>(this); }
-
-public:
-
     Windows::Media::Protection::PlayReady::NDContentIDType ContentIDType() const;
     com_array<uint8_t> ContentID() const;
     Windows::Media::Protection::PlayReady::INDCustomData LicenseFetchChallengeCustomData() const;
@@ -318,32 +282,20 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_INDLicenseFetchDescriptorFactory
+struct WINRT_EBO impl_INDLicenseFetchDescriptorFactory
 {
-    auto shim() const { return impl::shim<D, INDLicenseFetchDescriptorFactory>(this); }
-
-public:
-
     Windows::Media::Protection::PlayReady::NDLicenseFetchDescriptor CreateInstance(Windows::Media::Protection::PlayReady::NDContentIDType contentIDType, array_ref<const uint8_t> contentIDBytes, const Windows::Media::Protection::PlayReady::INDCustomData & licenseFetchChallengeCustomData) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_INDLicenseFetchResult
+struct WINRT_EBO impl_INDLicenseFetchResult
 {
-    auto shim() const { return impl::shim<D, INDLicenseFetchResult>(this); }
-
-public:
-
     Windows::Media::Protection::PlayReady::INDCustomData ResponseCustomData() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_INDMessenger
+struct WINRT_EBO impl_INDMessenger
 {
-    auto shim() const { return impl::shim<D, INDMessenger>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Media::Protection::PlayReady::INDSendResult> SendRegistrationRequestAsync(array_ref<const uint8_t> sessionIDBytes, array_ref<const uint8_t> challengeDataBytes) const;
     Windows::Foundation::IAsyncOperation<Windows::Media::Protection::PlayReady::INDSendResult> SendProximityDetectionStartAsync(Windows::Media::Protection::PlayReady::NDProximityDetectionType pdType, array_ref<const uint8_t> transmitterChannelBytes, array_ref<const uint8_t> sessionIDBytes, array_ref<const uint8_t> challengeDataBytes) const;
     Windows::Foundation::IAsyncOperation<Windows::Media::Protection::PlayReady::INDSendResult> SendProximityDetectionResponseAsync(Windows::Media::Protection::PlayReady::NDProximityDetectionType pdType, array_ref<const uint8_t> transmitterChannelBytes, array_ref<const uint8_t> sessionIDBytes, array_ref<const uint8_t> responseDataBytes) const;
@@ -351,22 +303,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_INDProximityDetectionCompletedEventArgs
+struct WINRT_EBO impl_INDProximityDetectionCompletedEventArgs
 {
-    auto shim() const { return impl::shim<D, INDProximityDetectionCompletedEventArgs>(this); }
-
-public:
-
     uint32_t ProximityDetectionRetryCount() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_INDRegistrationCompletedEventArgs
+struct WINRT_EBO impl_INDRegistrationCompletedEventArgs
 {
-    auto shim() const { return impl::shim<D, INDRegistrationCompletedEventArgs>(this); }
-
-public:
-
     Windows::Media::Protection::PlayReady::INDCustomData ResponseCustomData() const;
     Windows::Media::Protection::PlayReady::INDTransmitterProperties TransmitterProperties() const;
     bool TransmitterCertificateAccepted() const;
@@ -374,42 +318,26 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_INDSendResult
+struct WINRT_EBO impl_INDSendResult
 {
-    auto shim() const { return impl::shim<D, INDSendResult>(this); }
-
-public:
-
     com_array<uint8_t> Response() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_INDStartResult
+struct WINRT_EBO impl_INDStartResult
 {
-    auto shim() const { return impl::shim<D, INDStartResult>(this); }
-
-public:
-
     Windows::Media::Core::MediaStreamSource MediaStreamSource() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_INDStorageFileHelper
+struct WINRT_EBO impl_INDStorageFileHelper
 {
-    auto shim() const { return impl::shim<D, INDStorageFileHelper>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<hstring> GetFileURLs(const Windows::Storage::IStorageFile & file) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_INDStreamParser
+struct WINRT_EBO impl_INDStreamParser
 {
-    auto shim() const { return impl::shim<D, INDStreamParser>(this); }
-
-public:
-
     void ParseData(array_ref<const uint8_t> dataBytes) const;
     uint32_t GetStreamInformation(const Windows::Media::Core::IMediaStreamDescriptor & descriptor, Windows::Media::Protection::PlayReady::NDMediaStreamType & streamType) const;
     void BeginOfStream() const;
@@ -418,12 +346,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_INDStreamParserNotifier
+struct WINRT_EBO impl_INDStreamParserNotifier
 {
-    auto shim() const { return impl::shim<D, INDStreamParserNotifier>(this); }
-
-public:
-
     void OnContentIDReceived(const Windows::Media::Protection::PlayReady::INDLicenseFetchDescriptor & licenseFetchDescriptor) const;
     void OnMediaStreamDescriptorCreated(const Windows::Foundation::Collections::IVector<Windows::Media::Core::AudioStreamDescriptor> & audioStreamDescriptors, const Windows::Foundation::Collections::IVector<Windows::Media::Core::VideoStreamDescriptor> & videoStreamDescriptors) const;
     void OnSampleParsed(uint32_t streamID, Windows::Media::Protection::PlayReady::NDMediaStreamType streamType, const Windows::Media::Core::MediaStreamSample & streamSample, int64_t pts, Windows::Media::Protection::PlayReady::NDClosedCaptionFormat ccFormat, array_ref<const uint8_t> ccDataBytes) const;
@@ -431,22 +355,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_INDTCPMessengerFactory
+struct WINRT_EBO impl_INDTCPMessengerFactory
 {
-    auto shim() const { return impl::shim<D, INDTCPMessengerFactory>(this); }
-
-public:
-
     Windows::Media::Protection::PlayReady::NDTCPMessenger CreateInstance(hstring_ref remoteHostName, uint32_t remoteHostPort) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_INDTransmitterProperties
+struct WINRT_EBO impl_INDTransmitterProperties
 {
-    auto shim() const { return impl::shim<D, INDTransmitterProperties>(this); }
-
-public:
-
     Windows::Media::Protection::PlayReady::NDCertificateType CertificateType() const;
     Windows::Media::Protection::PlayReady::NDCertificatePlatformID PlatformIdentifier() const;
     com_array<Windows::Media::Protection::PlayReady::NDCertificateFeature> SupportedFeatures() const;
@@ -461,12 +377,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayReadyContentHeader
+struct WINRT_EBO impl_IPlayReadyContentHeader
 {
-    auto shim() const { return impl::shim<D, IPlayReadyContentHeader>(this); }
-
-public:
-
     GUID KeyId() const;
     hstring KeyIdString() const;
     Windows::Foundation::Uri LicenseAcquisitionUrl() const;
@@ -480,55 +392,35 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayReadyContentHeader2
+struct WINRT_EBO impl_IPlayReadyContentHeader2
 {
-    auto shim() const { return impl::shim<D, IPlayReadyContentHeader2>(this); }
-
-public:
-
     com_array<GUID> KeyIds() const;
     com_array<hstring> KeyIdStrings() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayReadyContentHeaderFactory
+struct WINRT_EBO impl_IPlayReadyContentHeaderFactory
 {
-    auto shim() const { return impl::shim<D, IPlayReadyContentHeaderFactory>(this); }
-
-public:
-
     Windows::Media::Protection::PlayReady::PlayReadyContentHeader CreateInstanceFromWindowsMediaDrmHeader(array_ref<const uint8_t> headerBytes, const Windows::Foundation::Uri & licenseAcquisitionUrl, const Windows::Foundation::Uri & licenseAcquisitionUserInterfaceUrl, hstring_ref customAttributes, GUID domainServiceId) const;
     Windows::Media::Protection::PlayReady::PlayReadyContentHeader CreateInstanceFromComponents(GUID contentKeyId, hstring_ref contentKeyIdString, Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm contentEncryptionAlgorithm, const Windows::Foundation::Uri & licenseAcquisitionUrl, const Windows::Foundation::Uri & licenseAcquisitionUserInterfaceUrl, hstring_ref customAttributes, GUID domainServiceId) const;
     Windows::Media::Protection::PlayReady::PlayReadyContentHeader CreateInstanceFromPlayReadyHeader(array_ref<const uint8_t> headerBytes) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayReadyContentHeaderFactory2
+struct WINRT_EBO impl_IPlayReadyContentHeaderFactory2
 {
-    auto shim() const { return impl::shim<D, IPlayReadyContentHeaderFactory2>(this); }
-
-public:
-
     Windows::Media::Protection::PlayReady::PlayReadyContentHeader CreateInstanceFromComponents2(uint32_t dwFlags, array_ref<const GUID> contentKeyIds, array_ref<const hstring> contentKeyIdStrings, Windows::Media::Protection::PlayReady::PlayReadyEncryptionAlgorithm contentEncryptionAlgorithm, const Windows::Foundation::Uri & licenseAcquisitionUrl, const Windows::Foundation::Uri & licenseAcquisitionUserInterfaceUrl, hstring_ref customAttributes, GUID domainServiceId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayReadyContentResolver
+struct WINRT_EBO impl_IPlayReadyContentResolver
 {
-    auto shim() const { return impl::shim<D, IPlayReadyContentResolver>(this); }
-
-public:
-
     Windows::Media::Protection::PlayReady::IPlayReadyServiceRequest ServiceRequest(const Windows::Media::Protection::PlayReady::PlayReadyContentHeader & contentHeader) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayReadyDomain
+struct WINRT_EBO impl_IPlayReadyDomain
 {
-    auto shim() const { return impl::shim<D, IPlayReadyDomain>(this); }
-
-public:
-
     GUID AccountId() const;
     GUID ServiceId() const;
     uint32_t Revision() const;
@@ -537,22 +429,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayReadyDomainIterableFactory
+struct WINRT_EBO impl_IPlayReadyDomainIterableFactory
 {
-    auto shim() const { return impl::shim<D, IPlayReadyDomainIterableFactory>(this); }
-
-public:
-
     Windows::Media::Protection::PlayReady::PlayReadyDomainIterable CreateInstance(GUID domainAccountId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayReadyDomainJoinServiceRequest
+struct WINRT_EBO impl_IPlayReadyDomainJoinServiceRequest
 {
-    auto shim() const { return impl::shim<D, IPlayReadyDomainJoinServiceRequest>(this); }
-
-public:
-
     GUID DomainAccountId() const;
     void DomainAccountId(GUID value) const;
     hstring DomainFriendlyName() const;
@@ -562,12 +446,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayReadyDomainLeaveServiceRequest
+struct WINRT_EBO impl_IPlayReadyDomainLeaveServiceRequest
 {
-    auto shim() const { return impl::shim<D, IPlayReadyDomainLeaveServiceRequest>(this); }
-
-public:
-
     GUID DomainAccountId() const;
     void DomainAccountId(GUID value) const;
     GUID DomainServiceId() const;
@@ -575,31 +455,19 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayReadyITADataGenerator
+struct WINRT_EBO impl_IPlayReadyITADataGenerator
 {
-    auto shim() const { return impl::shim<D, IPlayReadyITADataGenerator>(this); }
-
-public:
-
     com_array<uint8_t> GenerateData(GUID guidCPSystemId, uint32_t countOfStreams, const Windows::Foundation::Collections::IPropertySet & configuration, Windows::Media::Protection::PlayReady::PlayReadyITADataFormat format) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayReadyIndividualizationServiceRequest
+struct WINRT_EBO impl_IPlayReadyIndividualizationServiceRequest
 {
-    auto shim() const { return impl::shim<D, IPlayReadyIndividualizationServiceRequest>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayReadyLicense
+struct WINRT_EBO impl_IPlayReadyLicense
 {
-    auto shim() const { return impl::shim<D, IPlayReadyLicense>(this); }
-
-public:
-
     bool FullyEvaluated() const;
     bool UsableForPlay() const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> ExpirationDate() const;
@@ -610,12 +478,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayReadyLicenseAcquisitionServiceRequest
+struct WINRT_EBO impl_IPlayReadyLicenseAcquisitionServiceRequest
 {
-    auto shim() const { return impl::shim<D, IPlayReadyLicenseAcquisitionServiceRequest>(this); }
-
-public:
-
     Windows::Media::Protection::PlayReady::PlayReadyContentHeader ContentHeader() const;
     void ContentHeader(const Windows::Media::Protection::PlayReady::PlayReadyContentHeader & value) const;
     GUID DomainServiceId() const;
@@ -623,93 +487,57 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayReadyLicenseAcquisitionServiceRequest2
+struct WINRT_EBO impl_IPlayReadyLicenseAcquisitionServiceRequest2
 {
-    auto shim() const { return impl::shim<D, IPlayReadyLicenseAcquisitionServiceRequest2>(this); }
-
-public:
-
     GUID SessionId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayReadyLicenseIterableFactory
+struct WINRT_EBO impl_IPlayReadyLicenseIterableFactory
 {
-    auto shim() const { return impl::shim<D, IPlayReadyLicenseIterableFactory>(this); }
-
-public:
-
     Windows::Media::Protection::PlayReady::PlayReadyLicenseIterable CreateInstance(const Windows::Media::Protection::PlayReady::PlayReadyContentHeader & contentHeader, bool fullyEvaluated) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayReadyLicenseManagement
+struct WINRT_EBO impl_IPlayReadyLicenseManagement
 {
-    auto shim() const { return impl::shim<D, IPlayReadyLicenseManagement>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction DeleteLicenses(const Windows::Media::Protection::PlayReady::PlayReadyContentHeader & contentHeader) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayReadyLicenseSession
+struct WINRT_EBO impl_IPlayReadyLicenseSession
 {
-    auto shim() const { return impl::shim<D, IPlayReadyLicenseSession>(this); }
-
-public:
-
     Windows::Media::Protection::PlayReady::IPlayReadyLicenseAcquisitionServiceRequest CreateLAServiceRequest() const;
     void ConfigureMediaProtectionManager(const Windows::Media::Protection::MediaProtectionManager & mpm) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayReadyLicenseSessionFactory
+struct WINRT_EBO impl_IPlayReadyLicenseSessionFactory
 {
-    auto shim() const { return impl::shim<D, IPlayReadyLicenseSessionFactory>(this); }
-
-public:
-
     Windows::Media::Protection::PlayReady::PlayReadyLicenseSession CreateInstance(const Windows::Foundation::Collections::IPropertySet & configuration) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayReadyMeteringReportServiceRequest
+struct WINRT_EBO impl_IPlayReadyMeteringReportServiceRequest
 {
-    auto shim() const { return impl::shim<D, IPlayReadyMeteringReportServiceRequest>(this); }
-
-public:
-
     com_array<uint8_t> MeteringCertificate() const;
     void MeteringCertificate(array_ref<const uint8_t> meteringCertBytes) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayReadyRevocationServiceRequest
+struct WINRT_EBO impl_IPlayReadyRevocationServiceRequest
 {
-    auto shim() const { return impl::shim<D, IPlayReadyRevocationServiceRequest>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayReadySecureStopIterableFactory
+struct WINRT_EBO impl_IPlayReadySecureStopIterableFactory
 {
-    auto shim() const { return impl::shim<D, IPlayReadySecureStopIterableFactory>(this); }
-
-public:
-
     Windows::Media::Protection::PlayReady::PlayReadySecureStopIterable CreateInstance(array_ref<const uint8_t> publisherCertBytes) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayReadySecureStopServiceRequest
+struct WINRT_EBO impl_IPlayReadySecureStopServiceRequest
 {
-    auto shim() const { return impl::shim<D, IPlayReadySecureStopServiceRequest>(this); }
-
-public:
-
     GUID SessionID() const;
     Windows::Foundation::DateTime StartTime() const;
     Windows::Foundation::DateTime UpdateTime() const;
@@ -718,23 +546,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayReadySecureStopServiceRequestFactory
+struct WINRT_EBO impl_IPlayReadySecureStopServiceRequestFactory
 {
-    auto shim() const { return impl::shim<D, IPlayReadySecureStopServiceRequestFactory>(this); }
-
-public:
-
     Windows::Media::Protection::PlayReady::PlayReadySecureStopServiceRequest CreateInstance(array_ref<const uint8_t> publisherCertBytes) const;
     Windows::Media::Protection::PlayReady::PlayReadySecureStopServiceRequest CreateInstanceFromSessionID(GUID sessionID, array_ref<const uint8_t> publisherCertBytes) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayReadyServiceRequest
+struct WINRT_EBO impl_IPlayReadyServiceRequest
 {
-    auto shim() const { return impl::shim<D, IPlayReadyServiceRequest>(this); }
-
-public:
-
     Windows::Foundation::Uri Uri() const;
     void Uri(const Windows::Foundation::Uri & value) const;
     hstring ResponseCustomData() const;
@@ -747,24 +567,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayReadySoapMessage
+struct WINRT_EBO impl_IPlayReadySoapMessage
 {
-    auto shim() const { return impl::shim<D, IPlayReadySoapMessage>(this); }
-
-public:
-
     com_array<uint8_t> GetMessageBody() const;
     Windows::Foundation::Collections::IPropertySet MessageHeaders() const;
     Windows::Foundation::Uri Uri() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayReadyStatics
+struct WINRT_EBO impl_IPlayReadyStatics
 {
-    auto shim() const { return impl::shim<D, IPlayReadyStatics>(this); }
-
-public:
-
     GUID DomainJoinServiceRequestType() const;
     GUID DomainLeaveServiceRequestType() const;
     GUID IndividualizationServiceRequestType() const;
@@ -776,33 +588,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayReadyStatics2
+struct WINRT_EBO impl_IPlayReadyStatics2
 {
-    auto shim() const { return impl::shim<D, IPlayReadyStatics2>(this); }
-
-public:
-
     uint32_t PlayReadyCertificateSecurityLevel() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayReadyStatics3
+struct WINRT_EBO impl_IPlayReadyStatics3
 {
-    auto shim() const { return impl::shim<D, IPlayReadyStatics3>(this); }
-
-public:
-
     GUID SecureStopServiceRequestType() const;
     bool CheckSupportedHardware(Windows::Media::Protection::PlayReady::PlayReadyHardwareDRMFeatures hwdrmFeature) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayReadyStatics4
+struct WINRT_EBO impl_IPlayReadyStatics4
 {
-    auto shim() const { return impl::shim<D, IPlayReadyStatics4>(this); }
-
-public:
-
     hstring InputTrustAuthorityToCreate() const;
     GUID ProtectionSystemId() const;
 };

@@ -78,12 +78,12 @@ template <> struct traits<Windows::Security::Authentication::Identity::Core::Mic
 
 namespace Windows::Security::Authentication::Identity::Core {
 
-template <typename T> class impl_IMicrosoftAccountMultiFactorAuthenticationManager;
-template <typename T> class impl_IMicrosoftAccountMultiFactorAuthenticatorStatics;
-template <typename T> class impl_IMicrosoftAccountMultiFactorGetSessionsResult;
-template <typename T> class impl_IMicrosoftAccountMultiFactorOneTimeCodedInfo;
-template <typename T> class impl_IMicrosoftAccountMultiFactorSessionInfo;
-template <typename T> class impl_IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo;
+template <typename T> struct impl_IMicrosoftAccountMultiFactorAuthenticationManager;
+template <typename T> struct impl_IMicrosoftAccountMultiFactorAuthenticatorStatics;
+template <typename T> struct impl_IMicrosoftAccountMultiFactorGetSessionsResult;
+template <typename T> struct impl_IMicrosoftAccountMultiFactorOneTimeCodedInfo;
+template <typename T> struct impl_IMicrosoftAccountMultiFactorSessionInfo;
+template <typename T> struct impl_IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo;
 
 }
 

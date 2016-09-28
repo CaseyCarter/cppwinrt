@@ -71,10 +71,10 @@ template <> struct traits<Windows::Security::Credentials::UI::CredentialPickerRe
 
 namespace Windows::Security::Credentials::UI {
 
-template <typename T> class impl_ICredentialPickerOptions;
-template <typename T> class impl_ICredentialPickerResults;
-template <typename T> class impl_ICredentialPickerStatics;
-template <typename T> class impl_IUserConsentVerifierStatics;
+template <typename T> struct impl_ICredentialPickerOptions;
+template <typename T> struct impl_ICredentialPickerResults;
+template <typename T> struct impl_ICredentialPickerStatics;
+template <typename T> struct impl_IUserConsentVerifierStatics;
 
 }
 

@@ -37,8 +37,8 @@ template <> struct traits<Windows::Security::Cryptography::DataProtection::DataP
 
 namespace Windows::Security::Cryptography::DataProtection {
 
-template <typename T> class impl_IDataProtectionProvider;
-template <typename T> class impl_IDataProtectionProviderFactory;
+template <typename T> struct impl_IDataProtectionProvider;
+template <typename T> struct impl_IDataProtectionProviderFactory;
 
 }
 

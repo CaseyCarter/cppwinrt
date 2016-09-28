@@ -312,138 +312,138 @@ namespace Windows::Globalization::PhoneNumberFormatting {
 template <typename D> int32_t impl_IPhoneNumberInfo<D>::CountryCode() const
 {
     int32_t value {};
-    check_hresult(shim()->get_CountryCode(&value));
+    check_hresult(static_cast<const IPhoneNumberInfo &>(static_cast<const D &>(*this))->get_CountryCode(&value));
     return value;
 }
 
 template <typename D> hstring impl_IPhoneNumberInfo<D>::PhoneNumber() const
 {
     hstring value;
-    check_hresult(shim()->get_PhoneNumber(put(value)));
+    check_hresult(static_cast<const IPhoneNumberInfo &>(static_cast<const D &>(*this))->get_PhoneNumber(put(value)));
     return value;
 }
 
 template <typename D> int32_t impl_IPhoneNumberInfo<D>::GetLengthOfGeographicalAreaCode() const
 {
     int32_t result {};
-    check_hresult(shim()->abi_GetLengthOfGeographicalAreaCode(&result));
+    check_hresult(static_cast<const IPhoneNumberInfo &>(static_cast<const D &>(*this))->abi_GetLengthOfGeographicalAreaCode(&result));
     return result;
 }
 
 template <typename D> hstring impl_IPhoneNumberInfo<D>::GetNationalSignificantNumber() const
 {
     hstring result;
-    check_hresult(shim()->abi_GetNationalSignificantNumber(put(result)));
+    check_hresult(static_cast<const IPhoneNumberInfo &>(static_cast<const D &>(*this))->abi_GetNationalSignificantNumber(put(result)));
     return result;
 }
 
 template <typename D> int32_t impl_IPhoneNumberInfo<D>::GetLengthOfNationalDestinationCode() const
 {
     int32_t result {};
-    check_hresult(shim()->abi_GetLengthOfNationalDestinationCode(&result));
+    check_hresult(static_cast<const IPhoneNumberInfo &>(static_cast<const D &>(*this))->abi_GetLengthOfNationalDestinationCode(&result));
     return result;
 }
 
 template <typename D> Windows::Globalization::PhoneNumberFormatting::PredictedPhoneNumberKind impl_IPhoneNumberInfo<D>::PredictNumberKind() const
 {
     Windows::Globalization::PhoneNumberFormatting::PredictedPhoneNumberKind result {};
-    check_hresult(shim()->abi_PredictNumberKind(&result));
+    check_hresult(static_cast<const IPhoneNumberInfo &>(static_cast<const D &>(*this))->abi_PredictNumberKind(&result));
     return result;
 }
 
 template <typename D> hstring impl_IPhoneNumberInfo<D>::GetGeographicRegionCode() const
 {
     hstring result;
-    check_hresult(shim()->abi_GetGeographicRegionCode(put(result)));
+    check_hresult(static_cast<const IPhoneNumberInfo &>(static_cast<const D &>(*this))->abi_GetGeographicRegionCode(put(result)));
     return result;
 }
 
 template <typename D> Windows::Globalization::PhoneNumberFormatting::PhoneNumberMatchResult impl_IPhoneNumberInfo<D>::CheckNumberMatch(const Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo & otherNumber) const
 {
     Windows::Globalization::PhoneNumberFormatting::PhoneNumberMatchResult result {};
-    check_hresult(shim()->abi_CheckNumberMatch(get(otherNumber), &result));
+    check_hresult(static_cast<const IPhoneNumberInfo &>(static_cast<const D &>(*this))->abi_CheckNumberMatch(get(otherNumber), &result));
     return result;
 }
 
 template <typename D> hstring impl_IPhoneNumberFormatter<D>::Format(const Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo & number) const
 {
     hstring result;
-    check_hresult(shim()->abi_Format(get(number), put(result)));
+    check_hresult(static_cast<const IPhoneNumberFormatter &>(static_cast<const D &>(*this))->abi_Format(get(number), put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IPhoneNumberFormatter<D>::Format(const Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo & number, Windows::Globalization::PhoneNumberFormatting::PhoneNumberFormat numberFormat) const
 {
     hstring result;
-    check_hresult(shim()->abi_FormatWithOutputFormat(get(number), numberFormat, put(result)));
+    check_hresult(static_cast<const IPhoneNumberFormatter &>(static_cast<const D &>(*this))->abi_FormatWithOutputFormat(get(number), numberFormat, put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IPhoneNumberFormatter<D>::FormatPartialString(hstring_ref number) const
 {
     hstring result;
-    check_hresult(shim()->abi_FormatPartialString(get(number), put(result)));
+    check_hresult(static_cast<const IPhoneNumberFormatter &>(static_cast<const D &>(*this))->abi_FormatPartialString(get(number), put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IPhoneNumberFormatter<D>::FormatString(hstring_ref number) const
 {
     hstring result;
-    check_hresult(shim()->abi_FormatString(get(number), put(result)));
+    check_hresult(static_cast<const IPhoneNumberFormatter &>(static_cast<const D &>(*this))->abi_FormatString(get(number), put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IPhoneNumberFormatter<D>::FormatStringWithLeftToRightMarkers(hstring_ref number) const
 {
     hstring result;
-    check_hresult(shim()->abi_FormatStringWithLeftToRightMarkers(get(number), put(result)));
+    check_hresult(static_cast<const IPhoneNumberFormatter &>(static_cast<const D &>(*this))->abi_FormatStringWithLeftToRightMarkers(get(number), put(result)));
     return result;
 }
 
 template <typename D> Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo impl_IPhoneNumberInfoFactory<D>::Create(hstring_ref number) const
 {
     Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo result { nullptr };
-    check_hresult(shim()->abi_Create(get(number), put(result)));
+    check_hresult(static_cast<const IPhoneNumberInfoFactory &>(static_cast<const D &>(*this))->abi_Create(get(number), put(result)));
     return result;
 }
 
 template <typename D> Windows::Globalization::PhoneNumberFormatting::PhoneNumberParseResult impl_IPhoneNumberInfoStatics<D>::TryParse(hstring_ref input, Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo & phoneNumber) const
 {
     Windows::Globalization::PhoneNumberFormatting::PhoneNumberParseResult result {};
-    check_hresult(shim()->abi_TryParse(get(input), put(phoneNumber), &result));
+    check_hresult(static_cast<const IPhoneNumberInfoStatics &>(static_cast<const D &>(*this))->abi_TryParse(get(input), put(phoneNumber), &result));
     return result;
 }
 
 template <typename D> Windows::Globalization::PhoneNumberFormatting::PhoneNumberParseResult impl_IPhoneNumberInfoStatics<D>::TryParse(hstring_ref input, hstring_ref regionCode, Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo & phoneNumber) const
 {
     Windows::Globalization::PhoneNumberFormatting::PhoneNumberParseResult result {};
-    check_hresult(shim()->abi_TryParseWithRegion(get(input), get(regionCode), put(phoneNumber), &result));
+    check_hresult(static_cast<const IPhoneNumberInfoStatics &>(static_cast<const D &>(*this))->abi_TryParseWithRegion(get(input), get(regionCode), put(phoneNumber), &result));
     return result;
 }
 
 template <typename D> void impl_IPhoneNumberFormatterStatics<D>::TryCreate(hstring_ref regionCode, Windows::Globalization::PhoneNumberFormatting::PhoneNumberFormatter & phoneNumber) const
 {
-    check_hresult(shim()->abi_TryCreate(get(regionCode), put(phoneNumber)));
+    check_hresult(static_cast<const IPhoneNumberFormatterStatics &>(static_cast<const D &>(*this))->abi_TryCreate(get(regionCode), put(phoneNumber)));
 }
 
 template <typename D> int32_t impl_IPhoneNumberFormatterStatics<D>::GetCountryCodeForRegion(hstring_ref regionCode) const
 {
     int32_t result {};
-    check_hresult(shim()->abi_GetCountryCodeForRegion(get(regionCode), &result));
+    check_hresult(static_cast<const IPhoneNumberFormatterStatics &>(static_cast<const D &>(*this))->abi_GetCountryCodeForRegion(get(regionCode), &result));
     return result;
 }
 
 template <typename D> hstring impl_IPhoneNumberFormatterStatics<D>::GetNationalDirectDialingPrefixForRegion(hstring_ref regionCode, bool stripNonDigit) const
 {
     hstring result;
-    check_hresult(shim()->abi_GetNationalDirectDialingPrefixForRegion(get(regionCode), stripNonDigit, put(result)));
+    check_hresult(static_cast<const IPhoneNumberFormatterStatics &>(static_cast<const D &>(*this))->abi_GetNationalDirectDialingPrefixForRegion(get(regionCode), stripNonDigit, put(result)));
     return result;
 }
 
 template <typename D> hstring impl_IPhoneNumberFormatterStatics<D>::WrapWithLeftToRightMarkers(hstring_ref number) const
 {
     hstring result;
-    check_hresult(shim()->abi_WrapWithLeftToRightMarkers(get(number), put(result)));
+    check_hresult(static_cast<const IPhoneNumberFormatterStatics &>(static_cast<const D &>(*this))->abi_WrapWithLeftToRightMarkers(get(number), put(result)));
     return result;
 }
 

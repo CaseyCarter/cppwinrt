@@ -41,8 +41,8 @@ template <> struct traits<Windows::ApplicationModel::ExtendedExecution::Extended
 
 namespace Windows::ApplicationModel::ExtendedExecution {
 
-template <typename T> class impl_IExtendedExecutionRevokedEventArgs;
-template <typename T> class impl_IExtendedExecutionSession;
+template <typename T> struct impl_IExtendedExecutionRevokedEventArgs;
+template <typename T> struct impl_IExtendedExecutionSession;
 
 }
 

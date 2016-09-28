@@ -65,12 +65,8 @@ template <> struct __declspec(uuid("04ca4378-f594-5de6-a555-304f62cb4faf")) __de
 namespace Windows::Security::Cryptography::Core {
 
 template <typename D>
-class WINRT_EBO impl_IAsymmetricAlgorithmNamesStatics
+struct WINRT_EBO impl_IAsymmetricAlgorithmNamesStatics
 {
-    auto shim() const { return impl::shim<D, IAsymmetricAlgorithmNamesStatics>(this); }
-
-public:
-
     hstring RsaPkcs1() const;
     hstring RsaOaepSha1() const;
     hstring RsaOaepSha256() const;
@@ -92,24 +88,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAsymmetricAlgorithmNamesStatics2
+struct WINRT_EBO impl_IAsymmetricAlgorithmNamesStatics2
 {
-    auto shim() const { return impl::shim<D, IAsymmetricAlgorithmNamesStatics2>(this); }
-
-public:
-
     hstring EcdsaSha256() const;
     hstring EcdsaSha384() const;
     hstring EcdsaSha512() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAsymmetricKeyAlgorithmProvider
+struct WINRT_EBO impl_IAsymmetricKeyAlgorithmProvider
 {
-    auto shim() const { return impl::shim<D, IAsymmetricKeyAlgorithmProvider>(this); }
-
-public:
-
     hstring AlgorithmName() const;
     Windows::Security::Cryptography::Core::CryptographicKey CreateKeyPair(uint32_t keySize) const;
     Windows::Security::Cryptography::Core::CryptographicKey ImportKeyPair(const Windows::Storage::Streams::IBuffer & keyBlob) const;
@@ -119,33 +107,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAsymmetricKeyAlgorithmProvider2
+struct WINRT_EBO impl_IAsymmetricKeyAlgorithmProvider2
 {
-    auto shim() const { return impl::shim<D, IAsymmetricKeyAlgorithmProvider2>(this); }
-
-public:
-
     Windows::Security::Cryptography::Core::CryptographicKey CreateKeyPairWithCurveName(hstring_ref curveName) const;
     Windows::Security::Cryptography::Core::CryptographicKey CreateKeyPairWithCurveParameters(array_ref<const uint8_t> parameters) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAsymmetricKeyAlgorithmProviderStatics
+struct WINRT_EBO impl_IAsymmetricKeyAlgorithmProviderStatics
 {
-    auto shim() const { return impl::shim<D, IAsymmetricKeyAlgorithmProviderStatics>(this); }
-
-public:
-
     Windows::Security::Cryptography::Core::AsymmetricKeyAlgorithmProvider OpenAlgorithm(hstring_ref algorithm) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICryptographicEngineStatics
+struct WINRT_EBO impl_ICryptographicEngineStatics
 {
-    auto shim() const { return impl::shim<D, ICryptographicEngineStatics>(this); }
-
-public:
-
     Windows::Storage::Streams::IBuffer Encrypt(const Windows::Security::Cryptography::Core::CryptographicKey & key, const Windows::Storage::Streams::IBuffer & data, const Windows::Storage::Streams::IBuffer & iv) const;
     Windows::Storage::Streams::IBuffer Decrypt(const Windows::Security::Cryptography::Core::CryptographicKey & key, const Windows::Storage::Streams::IBuffer & data, const Windows::Storage::Streams::IBuffer & iv) const;
     Windows::Security::Cryptography::Core::EncryptedAndAuthenticatedData EncryptAndAuthenticate(const Windows::Security::Cryptography::Core::CryptographicKey & key, const Windows::Storage::Streams::IBuffer & data, const Windows::Storage::Streams::IBuffer & nonce, const Windows::Storage::Streams::IBuffer & authenticatedData) const;
@@ -156,12 +132,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICryptographicEngineStatics2
+struct WINRT_EBO impl_ICryptographicEngineStatics2
 {
-    auto shim() const { return impl::shim<D, ICryptographicEngineStatics2>(this); }
-
-public:
-
     Windows::Storage::Streams::IBuffer SignHashedData(const Windows::Security::Cryptography::Core::CryptographicKey & key, const Windows::Storage::Streams::IBuffer & data) const;
     bool VerifySignatureWithHashInput(const Windows::Security::Cryptography::Core::CryptographicKey & key, const Windows::Storage::Streams::IBuffer & data, const Windows::Storage::Streams::IBuffer & signature) const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> DecryptAsync(const Windows::Security::Cryptography::Core::CryptographicKey & key, const Windows::Storage::Streams::IBuffer & data, const Windows::Storage::Streams::IBuffer & iv) const;
@@ -170,12 +142,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICryptographicKey
+struct WINRT_EBO impl_ICryptographicKey
 {
-    auto shim() const { return impl::shim<D, ICryptographicKey>(this); }
-
-public:
-
     uint32_t KeySize() const;
     Windows::Storage::Streams::IBuffer Export() const;
     Windows::Storage::Streams::IBuffer Export(Windows::Security::Cryptography::Core::CryptographicPrivateKeyBlobType BlobType) const;
@@ -184,12 +152,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IEccCurveNamesStatics
+struct WINRT_EBO impl_IEccCurveNamesStatics
 {
-    auto shim() const { return impl::shim<D, IEccCurveNamesStatics>(this); }
-
-public:
-
     hstring BrainpoolP160r1() const;
     hstring BrainpoolP160t1() const;
     hstring BrainpoolP192r1() const;
@@ -239,23 +203,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IEncryptedAndAuthenticatedData
+struct WINRT_EBO impl_IEncryptedAndAuthenticatedData
 {
-    auto shim() const { return impl::shim<D, IEncryptedAndAuthenticatedData>(this); }
-
-public:
-
     Windows::Storage::Streams::IBuffer EncryptedData() const;
     Windows::Storage::Streams::IBuffer AuthenticationTag() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHashAlgorithmNamesStatics
+struct WINRT_EBO impl_IHashAlgorithmNamesStatics
 {
-    auto shim() const { return impl::shim<D, IHashAlgorithmNamesStatics>(this); }
-
-public:
-
     hstring Md5() const;
     hstring Sha1() const;
     hstring Sha256() const;
@@ -264,12 +220,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHashAlgorithmProvider
+struct WINRT_EBO impl_IHashAlgorithmProvider
 {
-    auto shim() const { return impl::shim<D, IHashAlgorithmProvider>(this); }
-
-public:
-
     hstring AlgorithmName() const;
     uint32_t HashLength() const;
     Windows::Storage::Streams::IBuffer HashData(const Windows::Storage::Streams::IBuffer & data) const;
@@ -277,33 +229,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHashAlgorithmProviderStatics
+struct WINRT_EBO impl_IHashAlgorithmProviderStatics
 {
-    auto shim() const { return impl::shim<D, IHashAlgorithmProviderStatics>(this); }
-
-public:
-
     Windows::Security::Cryptography::Core::HashAlgorithmProvider OpenAlgorithm(hstring_ref algorithm) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHashComputation
+struct WINRT_EBO impl_IHashComputation
 {
-    auto shim() const { return impl::shim<D, IHashComputation>(this); }
-
-public:
-
     void Append(const Windows::Storage::Streams::IBuffer & data) const;
     Windows::Storage::Streams::IBuffer GetValueAndReset() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IKeyDerivationAlgorithmNamesStatics
+struct WINRT_EBO impl_IKeyDerivationAlgorithmNamesStatics
 {
-    auto shim() const { return impl::shim<D, IKeyDerivationAlgorithmNamesStatics>(this); }
-
-public:
-
     hstring Pbkdf2Md5() const;
     hstring Pbkdf2Sha1() const;
     hstring Pbkdf2Sha256() const;
@@ -322,12 +262,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IKeyDerivationAlgorithmNamesStatics2
+struct WINRT_EBO impl_IKeyDerivationAlgorithmNamesStatics2
 {
-    auto shim() const { return impl::shim<D, IKeyDerivationAlgorithmNamesStatics2>(this); }
-
-public:
-
     hstring CapiKdfMd5() const;
     hstring CapiKdfSha1() const;
     hstring CapiKdfSha256() const;
@@ -336,78 +272,50 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IKeyDerivationAlgorithmProvider
+struct WINRT_EBO impl_IKeyDerivationAlgorithmProvider
 {
-    auto shim() const { return impl::shim<D, IKeyDerivationAlgorithmProvider>(this); }
-
-public:
-
     hstring AlgorithmName() const;
     Windows::Security::Cryptography::Core::CryptographicKey CreateKey(const Windows::Storage::Streams::IBuffer & keyMaterial) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IKeyDerivationAlgorithmProviderStatics
+struct WINRT_EBO impl_IKeyDerivationAlgorithmProviderStatics
 {
-    auto shim() const { return impl::shim<D, IKeyDerivationAlgorithmProviderStatics>(this); }
-
-public:
-
     Windows::Security::Cryptography::Core::KeyDerivationAlgorithmProvider OpenAlgorithm(hstring_ref algorithm) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IKeyDerivationParameters
+struct WINRT_EBO impl_IKeyDerivationParameters
 {
-    auto shim() const { return impl::shim<D, IKeyDerivationParameters>(this); }
-
-public:
-
     Windows::Storage::Streams::IBuffer KdfGenericBinary() const;
     void KdfGenericBinary(const Windows::Storage::Streams::IBuffer & value) const;
     uint32_t IterationCount() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IKeyDerivationParameters2
+struct WINRT_EBO impl_IKeyDerivationParameters2
 {
-    auto shim() const { return impl::shim<D, IKeyDerivationParameters2>(this); }
-
-public:
-
     Windows::Security::Cryptography::Core::Capi1KdfTargetAlgorithm Capi1KdfTargetAlgorithm() const;
     void Capi1KdfTargetAlgorithm(Windows::Security::Cryptography::Core::Capi1KdfTargetAlgorithm value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IKeyDerivationParametersStatics
+struct WINRT_EBO impl_IKeyDerivationParametersStatics
 {
-    auto shim() const { return impl::shim<D, IKeyDerivationParametersStatics>(this); }
-
-public:
-
     Windows::Security::Cryptography::Core::KeyDerivationParameters BuildForPbkdf2(const Windows::Storage::Streams::IBuffer & pbkdf2Salt, uint32_t iterationCount) const;
     Windows::Security::Cryptography::Core::KeyDerivationParameters BuildForSP800108(const Windows::Storage::Streams::IBuffer & label, const Windows::Storage::Streams::IBuffer & context) const;
     Windows::Security::Cryptography::Core::KeyDerivationParameters BuildForSP80056a(const Windows::Storage::Streams::IBuffer & algorithmId, const Windows::Storage::Streams::IBuffer & partyUInfo, const Windows::Storage::Streams::IBuffer & partyVInfo, const Windows::Storage::Streams::IBuffer & suppPubInfo, const Windows::Storage::Streams::IBuffer & suppPrivInfo) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IKeyDerivationParametersStatics2
+struct WINRT_EBO impl_IKeyDerivationParametersStatics2
 {
-    auto shim() const { return impl::shim<D, IKeyDerivationParametersStatics2>(this); }
-
-public:
-
     Windows::Security::Cryptography::Core::KeyDerivationParameters BuildForCapi1Kdf(Windows::Security::Cryptography::Core::Capi1KdfTargetAlgorithm capi1KdfTargetAlgorithm) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMacAlgorithmNamesStatics
+struct WINRT_EBO impl_IMacAlgorithmNamesStatics
 {
-    auto shim() const { return impl::shim<D, IMacAlgorithmNamesStatics>(this); }
-
-public:
-
     hstring HmacMd5() const;
     hstring HmacSha1() const;
     hstring HmacSha256() const;
@@ -417,55 +325,35 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMacAlgorithmProvider
+struct WINRT_EBO impl_IMacAlgorithmProvider
 {
-    auto shim() const { return impl::shim<D, IMacAlgorithmProvider>(this); }
-
-public:
-
     hstring AlgorithmName() const;
     uint32_t MacLength() const;
     Windows::Security::Cryptography::Core::CryptographicKey CreateKey(const Windows::Storage::Streams::IBuffer & keyMaterial) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMacAlgorithmProvider2
+struct WINRT_EBO impl_IMacAlgorithmProvider2
 {
-    auto shim() const { return impl::shim<D, IMacAlgorithmProvider2>(this); }
-
-public:
-
     Windows::Security::Cryptography::Core::CryptographicHash CreateHash(const Windows::Storage::Streams::IBuffer & keyMaterial) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMacAlgorithmProviderStatics
+struct WINRT_EBO impl_IMacAlgorithmProviderStatics
 {
-    auto shim() const { return impl::shim<D, IMacAlgorithmProviderStatics>(this); }
-
-public:
-
     Windows::Security::Cryptography::Core::MacAlgorithmProvider OpenAlgorithm(hstring_ref algorithm) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPersistedKeyProviderStatics
+struct WINRT_EBO impl_IPersistedKeyProviderStatics
 {
-    auto shim() const { return impl::shim<D, IPersistedKeyProviderStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Core::CryptographicKey> OpenKeyPairFromCertificateAsync(const Windows::Security::Cryptography::Certificates::Certificate & certificate, hstring_ref hashAlgorithmName, Windows::Security::Cryptography::Core::CryptographicPadding padding) const;
     Windows::Security::Cryptography::Core::CryptographicKey OpenPublicKeyFromCertificate(const Windows::Security::Cryptography::Certificates::Certificate & certificate, hstring_ref hashAlgorithmName, Windows::Security::Cryptography::Core::CryptographicPadding padding) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISymmetricAlgorithmNamesStatics
+struct WINRT_EBO impl_ISymmetricAlgorithmNamesStatics
 {
-    auto shim() const { return impl::shim<D, ISymmetricAlgorithmNamesStatics>(this); }
-
-public:
-
     hstring DesCbc() const;
     hstring DesEcb() const;
     hstring TripleDesCbc() const;
@@ -488,24 +376,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISymmetricKeyAlgorithmProvider
+struct WINRT_EBO impl_ISymmetricKeyAlgorithmProvider
 {
-    auto shim() const { return impl::shim<D, ISymmetricKeyAlgorithmProvider>(this); }
-
-public:
-
     hstring AlgorithmName() const;
     uint32_t BlockLength() const;
     Windows::Security::Cryptography::Core::CryptographicKey CreateSymmetricKey(const Windows::Storage::Streams::IBuffer & keyMaterial) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISymmetricKeyAlgorithmProviderStatics
+struct WINRT_EBO impl_ISymmetricKeyAlgorithmProviderStatics
 {
-    auto shim() const { return impl::shim<D, ISymmetricKeyAlgorithmProviderStatics>(this); }
-
-public:
-
     Windows::Security::Cryptography::Core::SymmetricKeyAlgorithmProvider OpenAlgorithm(hstring_ref algorithm) const;
 };
 

@@ -145,44 +145,28 @@ template <> struct __declspec(uuid("a4cd6151-2cc1-56f1-9014-df6ba3410beb")) __de
 namespace Windows::ApplicationModel::VoiceCommands {
 
 template <typename D>
-class WINRT_EBO impl_IVoiceCommand
+struct WINRT_EBO impl_IVoiceCommand
 {
-    auto shim() const { return impl::shim<D, IVoiceCommand>(this); }
-
-public:
-
     hstring CommandName() const;
     Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::Collections::IVectorView<hstring>> Properties() const;
     Windows::Media::SpeechRecognition::SpeechRecognitionResult SpeechRecognitionResult() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVoiceCommandCompletedEventArgs
+struct WINRT_EBO impl_IVoiceCommandCompletedEventArgs
 {
-    auto shim() const { return impl::shim<D, IVoiceCommandCompletedEventArgs>(this); }
-
-public:
-
     Windows::ApplicationModel::VoiceCommands::VoiceCommandCompletionReason Reason() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVoiceCommandConfirmationResult
+struct WINRT_EBO impl_IVoiceCommandConfirmationResult
 {
-    auto shim() const { return impl::shim<D, IVoiceCommandConfirmationResult>(this); }
-
-public:
-
     bool Confirmed() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVoiceCommandContentTile
+struct WINRT_EBO impl_IVoiceCommandContentTile
 {
-    auto shim() const { return impl::shim<D, IVoiceCommandContentTile>(this); }
-
-public:
-
     hstring Title() const;
     void Title(hstring_ref value) const;
     hstring TextLine1() const;
@@ -202,45 +186,29 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVoiceCommandDefinition
+struct WINRT_EBO impl_IVoiceCommandDefinition
 {
-    auto shim() const { return impl::shim<D, IVoiceCommandDefinition>(this); }
-
-public:
-
     hstring Language() const;
     hstring Name() const;
     Windows::Foundation::IAsyncAction SetPhraseListAsync(hstring_ref phraseListName, const Windows::Foundation::Collections::IIterable<hstring> & phraseList) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVoiceCommandDefinitionManagerStatics
+struct WINRT_EBO impl_IVoiceCommandDefinitionManagerStatics
 {
-    auto shim() const { return impl::shim<D, IVoiceCommandDefinitionManagerStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction InstallCommandDefinitionsFromStorageFileAsync(const Windows::Storage::StorageFile & file) const;
     Windows::Foundation::Collections::IMapView<hstring, Windows::ApplicationModel::VoiceCommands::VoiceCommandDefinition> InstalledCommandDefinitions() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVoiceCommandDisambiguationResult
+struct WINRT_EBO impl_IVoiceCommandDisambiguationResult
 {
-    auto shim() const { return impl::shim<D, IVoiceCommandDisambiguationResult>(this); }
-
-public:
-
     Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTile SelectedItem() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVoiceCommandResponse
+struct WINRT_EBO impl_IVoiceCommandResponse
 {
-    auto shim() const { return impl::shim<D, IVoiceCommandResponse>(this); }
-
-public:
-
     Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage Message() const;
     void Message(const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage & value) const;
     Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage RepeatMessage() const;
@@ -251,12 +219,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVoiceCommandResponseStatics
+struct WINRT_EBO impl_IVoiceCommandResponseStatics
 {
-    auto shim() const { return impl::shim<D, IVoiceCommandResponseStatics>(this); }
-
-public:
-
     uint32_t MaxSupportedVoiceCommandContentTiles() const;
     Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse CreateResponse(const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage & userMessage) const;
     Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse CreateResponse(const Windows::ApplicationModel::VoiceCommands::VoiceCommandUserMessage & message, const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::VoiceCommands::VoiceCommandContentTile> & contentTiles) const;
@@ -265,12 +229,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVoiceCommandServiceConnection
+struct WINRT_EBO impl_IVoiceCommandServiceConnection
 {
-    auto shim() const { return impl::shim<D, IVoiceCommandServiceConnection>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::VoiceCommands::VoiceCommand> GetVoiceCommandAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::VoiceCommands::VoiceCommandConfirmationResult> RequestConfirmationAsync(const Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse & response) const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::VoiceCommands::VoiceCommandDisambiguationResult> RequestDisambiguationAsync(const Windows::ApplicationModel::VoiceCommands::VoiceCommandResponse & response) const;
@@ -286,22 +246,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVoiceCommandServiceConnectionStatics
+struct WINRT_EBO impl_IVoiceCommandServiceConnectionStatics
 {
-    auto shim() const { return impl::shim<D, IVoiceCommandServiceConnectionStatics>(this); }
-
-public:
-
     Windows::ApplicationModel::VoiceCommands::VoiceCommandServiceConnection FromAppServiceTriggerDetails(const Windows::ApplicationModel::AppService::AppServiceTriggerDetails & triggerDetails) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVoiceCommandUserMessage
+struct WINRT_EBO impl_IVoiceCommandUserMessage
 {
-    auto shim() const { return impl::shim<D, IVoiceCommandUserMessage>(this); }
-
-public:
-
     hstring DisplayMessage() const;
     void DisplayMessage(hstring_ref value) const;
     hstring SpokenMessage() const;

@@ -518,183 +518,183 @@ namespace Windows::UI::ApplicationSettings {
 template <typename D> Windows::UI::ApplicationSettings::SettingsCommand impl_ISettingsCommandFactory<D>::CreateSettingsCommand(const Windows::IInspectable & settingsCommandId, hstring_ref label, const Windows::UI::Popups::UICommandInvokedHandler & handler) const
 {
     Windows::UI::ApplicationSettings::SettingsCommand instance { nullptr };
-    check_hresult(shim()->abi_CreateSettingsCommand(get(settingsCommandId), get(label), get(handler), put(instance)));
+    check_hresult(static_cast<const ISettingsCommandFactory &>(static_cast<const D &>(*this))->abi_CreateSettingsCommand(get(settingsCommandId), get(label), get(handler), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::UI::ApplicationSettings::SettingsCommand impl_ISettingsCommandStatics<D>::AccountsCommand() const
 {
     Windows::UI::ApplicationSettings::SettingsCommand value { nullptr };
-    check_hresult(shim()->get_AccountsCommand(put(value)));
+    check_hresult(static_cast<const ISettingsCommandStatics &>(static_cast<const D &>(*this))->get_AccountsCommand(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::ApplicationSettings::WebAccountProviderCommand impl_IWebAccountProviderCommandFactory<D>::CreateWebAccountProviderCommand(const Windows::Security::Credentials::WebAccountProvider & webAccountProvider, const Windows::UI::ApplicationSettings::WebAccountProviderCommandInvokedHandler & invoked) const
 {
     Windows::UI::ApplicationSettings::WebAccountProviderCommand instance { nullptr };
-    check_hresult(shim()->abi_CreateWebAccountProviderCommand(get(webAccountProvider), get(invoked), put(instance)));
+    check_hresult(static_cast<const IWebAccountProviderCommandFactory &>(static_cast<const D &>(*this))->abi_CreateWebAccountProviderCommand(get(webAccountProvider), get(invoked), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::Security::Credentials::WebAccountProvider impl_IWebAccountProviderCommand<D>::WebAccountProvider() const
 {
     Windows::Security::Credentials::WebAccountProvider value { nullptr };
-    check_hresult(shim()->get_WebAccountProvider(put(value)));
+    check_hresult(static_cast<const IWebAccountProviderCommand &>(static_cast<const D &>(*this))->get_WebAccountProvider(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::ApplicationSettings::WebAccountProviderCommandInvokedHandler impl_IWebAccountProviderCommand<D>::Invoked() const
 {
     Windows::UI::ApplicationSettings::WebAccountProviderCommandInvokedHandler value {};
-    check_hresult(shim()->get_Invoked(put(value)));
+    check_hresult(static_cast<const IWebAccountProviderCommand &>(static_cast<const D &>(*this))->get_Invoked(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::ApplicationSettings::WebAccountAction impl_IWebAccountInvokedArgs<D>::Action() const
 {
     Windows::UI::ApplicationSettings::WebAccountAction action {};
-    check_hresult(shim()->get_Action(&action));
+    check_hresult(static_cast<const IWebAccountInvokedArgs &>(static_cast<const D &>(*this))->get_Action(&action));
     return action;
 }
 
 template <typename D> Windows::UI::ApplicationSettings::WebAccountCommand impl_IWebAccountCommandFactory<D>::CreateWebAccountCommand(const Windows::Security::Credentials::WebAccount & webAccount, const Windows::UI::ApplicationSettings::WebAccountCommandInvokedHandler & invoked, Windows::UI::ApplicationSettings::SupportedWebAccountActions actions) const
 {
     Windows::UI::ApplicationSettings::WebAccountCommand instance { nullptr };
-    check_hresult(shim()->abi_CreateWebAccountCommand(get(webAccount), get(invoked), actions, put(instance)));
+    check_hresult(static_cast<const IWebAccountCommandFactory &>(static_cast<const D &>(*this))->abi_CreateWebAccountCommand(get(webAccount), get(invoked), actions, put(instance)));
     return instance;
 }
 
 template <typename D> Windows::Security::Credentials::WebAccount impl_IWebAccountCommand<D>::WebAccount() const
 {
     Windows::Security::Credentials::WebAccount value { nullptr };
-    check_hresult(shim()->get_WebAccount(put(value)));
+    check_hresult(static_cast<const IWebAccountCommand &>(static_cast<const D &>(*this))->get_WebAccount(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::ApplicationSettings::WebAccountCommandInvokedHandler impl_IWebAccountCommand<D>::Invoked() const
 {
     Windows::UI::ApplicationSettings::WebAccountCommandInvokedHandler value {};
-    check_hresult(shim()->get_Invoked(put(value)));
+    check_hresult(static_cast<const IWebAccountCommand &>(static_cast<const D &>(*this))->get_Invoked(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::ApplicationSettings::SupportedWebAccountActions impl_IWebAccountCommand<D>::Actions() const
 {
     Windows::UI::ApplicationSettings::SupportedWebAccountActions value {};
-    check_hresult(shim()->get_Actions(&value));
+    check_hresult(static_cast<const IWebAccountCommand &>(static_cast<const D &>(*this))->get_Actions(&value));
     return value;
 }
 
 template <typename D> Windows::UI::ApplicationSettings::CredentialCommand impl_ICredentialCommandFactory<D>::CreateCredentialCommand(const Windows::Security::Credentials::PasswordCredential & passwordCredential) const
 {
     Windows::UI::ApplicationSettings::CredentialCommand instance { nullptr };
-    check_hresult(shim()->abi_CreateCredentialCommand(get(passwordCredential), put(instance)));
+    check_hresult(static_cast<const ICredentialCommandFactory &>(static_cast<const D &>(*this))->abi_CreateCredentialCommand(get(passwordCredential), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::UI::ApplicationSettings::CredentialCommand impl_ICredentialCommandFactory<D>::CreateCredentialCommandWithHandler(const Windows::Security::Credentials::PasswordCredential & passwordCredential, const Windows::UI::ApplicationSettings::CredentialCommandCredentialDeletedHandler & deleted) const
 {
     Windows::UI::ApplicationSettings::CredentialCommand instance { nullptr };
-    check_hresult(shim()->abi_CreateCredentialCommandWithHandler(get(passwordCredential), get(deleted), put(instance)));
+    check_hresult(static_cast<const ICredentialCommandFactory &>(static_cast<const D &>(*this))->abi_CreateCredentialCommandWithHandler(get(passwordCredential), get(deleted), put(instance)));
     return instance;
 }
 
 template <typename D> Windows::Security::Credentials::PasswordCredential impl_ICredentialCommand<D>::PasswordCredential() const
 {
     Windows::Security::Credentials::PasswordCredential value { nullptr };
-    check_hresult(shim()->get_PasswordCredential(put(value)));
+    check_hresult(static_cast<const ICredentialCommand &>(static_cast<const D &>(*this))->get_PasswordCredential(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::ApplicationSettings::CredentialCommandCredentialDeletedHandler impl_ICredentialCommand<D>::CredentialDeleted() const
 {
     Windows::UI::ApplicationSettings::CredentialCommandCredentialDeletedHandler value {};
-    check_hresult(shim()->get_CredentialDeleted(put(value)));
+    check_hresult(static_cast<const ICredentialCommand &>(static_cast<const D &>(*this))->get_CredentialDeleted(put(value)));
     return value;
 }
 
 template <typename D> void impl_IAccountsSettingsPaneEventDeferral<D>::Complete() const
 {
-    check_hresult(shim()->abi_Complete());
+    check_hresult(static_cast<const IAccountsSettingsPaneEventDeferral &>(static_cast<const D &>(*this))->abi_Complete());
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::UI::ApplicationSettings::WebAccountProviderCommand> impl_IAccountsSettingsPaneCommandsRequestedEventArgs<D>::WebAccountProviderCommands() const
 {
     Windows::Foundation::Collections::IVector<Windows::UI::ApplicationSettings::WebAccountProviderCommand> value;
-    check_hresult(shim()->get_WebAccountProviderCommands(put(value)));
+    check_hresult(static_cast<const IAccountsSettingsPaneCommandsRequestedEventArgs &>(static_cast<const D &>(*this))->get_WebAccountProviderCommands(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::UI::ApplicationSettings::WebAccountCommand> impl_IAccountsSettingsPaneCommandsRequestedEventArgs<D>::WebAccountCommands() const
 {
     Windows::Foundation::Collections::IVector<Windows::UI::ApplicationSettings::WebAccountCommand> value;
-    check_hresult(shim()->get_WebAccountCommands(put(value)));
+    check_hresult(static_cast<const IAccountsSettingsPaneCommandsRequestedEventArgs &>(static_cast<const D &>(*this))->get_WebAccountCommands(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::UI::ApplicationSettings::CredentialCommand> impl_IAccountsSettingsPaneCommandsRequestedEventArgs<D>::CredentialCommands() const
 {
     Windows::Foundation::Collections::IVector<Windows::UI::ApplicationSettings::CredentialCommand> value;
-    check_hresult(shim()->get_CredentialCommands(put(value)));
+    check_hresult(static_cast<const IAccountsSettingsPaneCommandsRequestedEventArgs &>(static_cast<const D &>(*this))->get_CredentialCommands(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::UI::ApplicationSettings::SettingsCommand> impl_IAccountsSettingsPaneCommandsRequestedEventArgs<D>::Commands() const
 {
     Windows::Foundation::Collections::IVector<Windows::UI::ApplicationSettings::SettingsCommand> value;
-    check_hresult(shim()->get_Commands(put(value)));
+    check_hresult(static_cast<const IAccountsSettingsPaneCommandsRequestedEventArgs &>(static_cast<const D &>(*this))->get_Commands(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAccountsSettingsPaneCommandsRequestedEventArgs<D>::HeaderText() const
 {
     hstring value;
-    check_hresult(shim()->get_HeaderText(put(value)));
+    check_hresult(static_cast<const IAccountsSettingsPaneCommandsRequestedEventArgs &>(static_cast<const D &>(*this))->get_HeaderText(put(value)));
     return value;
 }
 
 template <typename D> void impl_IAccountsSettingsPaneCommandsRequestedEventArgs<D>::HeaderText(hstring_ref value) const
 {
-    check_hresult(shim()->put_HeaderText(get(value)));
+    check_hresult(static_cast<const IAccountsSettingsPaneCommandsRequestedEventArgs &>(static_cast<const D &>(*this))->put_HeaderText(get(value)));
 }
 
 template <typename D> Windows::UI::ApplicationSettings::AccountsSettingsPaneEventDeferral impl_IAccountsSettingsPaneCommandsRequestedEventArgs<D>::GetDeferral() const
 {
     Windows::UI::ApplicationSettings::AccountsSettingsPaneEventDeferral deferral { nullptr };
-    check_hresult(shim()->abi_GetDeferral(put(deferral)));
+    check_hresult(static_cast<const IAccountsSettingsPaneCommandsRequestedEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(deferral)));
     return deferral;
 }
 
 template <typename D> Windows::UI::ApplicationSettings::AccountsSettingsPane impl_IAccountsSettingsPaneStatics<D>::GetForCurrentView() const
 {
     Windows::UI::ApplicationSettings::AccountsSettingsPane current { nullptr };
-    check_hresult(shim()->abi_GetForCurrentView(put(current)));
+    check_hresult(static_cast<const IAccountsSettingsPaneStatics &>(static_cast<const D &>(*this))->abi_GetForCurrentView(put(current)));
     return current;
 }
 
 template <typename D> void impl_IAccountsSettingsPaneStatics<D>::Show() const
 {
-    check_hresult(shim()->abi_Show());
+    check_hresult(static_cast<const IAccountsSettingsPaneStatics &>(static_cast<const D &>(*this))->abi_Show());
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IAccountsSettingsPaneStatics2<D>::ShowManageAccountsAsync() const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(shim()->abi_ShowManageAccountsAsync(put(asyncInfo)));
+    check_hresult(static_cast<const IAccountsSettingsPaneStatics2 &>(static_cast<const D &>(*this))->abi_ShowManageAccountsAsync(put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IAccountsSettingsPaneStatics2<D>::ShowAddAccountAsync() const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(shim()->abi_ShowAddAccountAsync(put(asyncInfo)));
+    check_hresult(static_cast<const IAccountsSettingsPaneStatics2 &>(static_cast<const D &>(*this))->abi_ShowAddAccountAsync(put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> event_token impl_IAccountsSettingsPane<D>::AccountCommandsRequested(const Windows::Foundation::TypedEventHandler<Windows::UI::ApplicationSettings::AccountsSettingsPane, Windows::UI::ApplicationSettings::AccountsSettingsPaneCommandsRequestedEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_AccountCommandsRequested(get(handler), &cookie));
+    check_hresult(static_cast<const IAccountsSettingsPane &>(static_cast<const D &>(*this))->add_AccountCommandsRequested(get(handler), &cookie));
     return cookie;
 }
 
@@ -705,7 +705,7 @@ template <typename D> event_revoker<IAccountsSettingsPane> impl_IAccountsSetting
 
 template <typename D> void impl_IAccountsSettingsPane<D>::AccountCommandsRequested(event_token cookie) const
 {
-    check_hresult(shim()->remove_AccountCommandsRequested(cookie));
+    check_hresult(static_cast<const IAccountsSettingsPane &>(static_cast<const D &>(*this))->remove_AccountCommandsRequested(cookie));
 }
 
 inline Windows::UI::ApplicationSettings::AccountsSettingsPane AccountsSettingsPane::GetForCurrentView()

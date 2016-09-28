@@ -72,12 +72,12 @@ template <> struct traits<Windows::Networking::PushNotifications::RawNotificatio
 
 namespace Windows::Networking::PushNotifications {
 
-template <typename T> class impl_IPushNotificationChannel;
-template <typename T> class impl_IPushNotificationChannelManagerForUser;
-template <typename T> class impl_IPushNotificationChannelManagerStatics;
-template <typename T> class impl_IPushNotificationChannelManagerStatics2;
-template <typename T> class impl_IPushNotificationReceivedEventArgs;
-template <typename T> class impl_IRawNotification;
+template <typename T> struct impl_IPushNotificationChannel;
+template <typename T> struct impl_IPushNotificationChannelManagerForUser;
+template <typename T> struct impl_IPushNotificationChannelManagerStatics;
+template <typename T> struct impl_IPushNotificationChannelManagerStatics2;
+template <typename T> struct impl_IPushNotificationReceivedEventArgs;
+template <typename T> struct impl_IRawNotification;
 
 }
 

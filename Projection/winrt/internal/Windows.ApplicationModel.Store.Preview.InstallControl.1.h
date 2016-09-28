@@ -117,14 +117,14 @@ template <> struct traits<Windows::ApplicationModel::Store::Preview::InstallCont
 
 namespace Windows::ApplicationModel::Store::Preview::InstallControl {
 
-template <typename T> class impl_IAppInstallItem;
-template <typename T> class impl_IAppInstallItem2;
-template <typename T> class impl_IAppInstallManager;
-template <typename T> class impl_IAppInstallManager2;
-template <typename T> class impl_IAppInstallManager3;
-template <typename T> class impl_IAppInstallManagerItemEventArgs;
-template <typename T> class impl_IAppInstallStatus;
-template <typename T> class impl_IAppInstallStatus2;
+template <typename T> struct impl_IAppInstallItem;
+template <typename T> struct impl_IAppInstallItem2;
+template <typename T> struct impl_IAppInstallManager;
+template <typename T> struct impl_IAppInstallManager2;
+template <typename T> struct impl_IAppInstallManager3;
+template <typename T> struct impl_IAppInstallManagerItemEventArgs;
+template <typename T> struct impl_IAppInstallStatus;
+template <typename T> struct impl_IAppInstallStatus2;
 
 }
 

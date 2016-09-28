@@ -35,12 +35,8 @@ template <> struct __declspec(uuid("97f82115-3822-507b-82e6-2777b336e98e")) __de
 namespace Windows::Devices::Power {
 
 template <typename D>
-class WINRT_EBO impl_IBattery
+struct WINRT_EBO impl_IBattery
 {
-    auto shim() const { return impl::shim<D, IBattery>(this); }
-
-public:
-
     hstring DeviceId() const;
     Windows::Devices::Power::BatteryReport GetReport() const;
     event_token ReportUpdated(const Windows::Foundation::TypedEventHandler<Windows::Devices::Power::Battery, Windows::IInspectable> & handler) const;
@@ -50,12 +46,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBatteryReport
+struct WINRT_EBO impl_IBatteryReport
 {
-    auto shim() const { return impl::shim<D, IBatteryReport>(this); }
-
-public:
-
     Windows::Foundation::IReference<int32_t> ChargeRateInMilliwatts() const;
     Windows::Foundation::IReference<int32_t> DesignCapacityInMilliwattHours() const;
     Windows::Foundation::IReference<int32_t> FullChargeCapacityInMilliwattHours() const;
@@ -64,12 +56,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBatteryStatics
+struct WINRT_EBO impl_IBatteryStatics
 {
-    auto shim() const { return impl::shim<D, IBatteryStatics>(this); }
-
-public:
-
     Windows::Devices::Power::Battery AggregateBattery() const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Power::Battery> FromIdAsync(hstring_ref deviceId) const;
     hstring GetDeviceSelector() const;

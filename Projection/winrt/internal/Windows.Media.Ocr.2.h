@@ -95,23 +95,15 @@ template <> struct __declspec(uuid("989c1371-444a-5e7e-b197-9eaaf9d2829a")) __de
 namespace Windows::Media::Ocr {
 
 template <typename D>
-class WINRT_EBO impl_IOcrEngine
+struct WINRT_EBO impl_IOcrEngine
 {
-    auto shim() const { return impl::shim<D, IOcrEngine>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Media::Ocr::OcrResult> RecognizeAsync(const Windows::Graphics::Imaging::SoftwareBitmap & bitmap) const;
     Windows::Globalization::Language RecognizerLanguage() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IOcrEngineStatics
+struct WINRT_EBO impl_IOcrEngineStatics
 {
-    auto shim() const { return impl::shim<D, IOcrEngineStatics>(this); }
-
-public:
-
     uint32_t MaxImageDimension() const;
     Windows::Foundation::Collections::IVectorView<Windows::Globalization::Language> AvailableRecognizerLanguages() const;
     bool IsLanguageSupported(const Windows::Globalization::Language & language) const;
@@ -120,35 +112,23 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IOcrLine
+struct WINRT_EBO impl_IOcrLine
 {
-    auto shim() const { return impl::shim<D, IOcrLine>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Media::Ocr::OcrWord> Words() const;
     hstring Text() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IOcrResult
+struct WINRT_EBO impl_IOcrResult
 {
-    auto shim() const { return impl::shim<D, IOcrResult>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Media::Ocr::OcrLine> Lines() const;
     Windows::Foundation::IReference<double> TextAngle() const;
     hstring Text() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IOcrWord
+struct WINRT_EBO impl_IOcrWord
 {
-    auto shim() const { return impl::shim<D, IOcrWord>(this); }
-
-public:
-
     Windows::Foundation::Rect BoundingRect() const;
     hstring Text() const;
 };

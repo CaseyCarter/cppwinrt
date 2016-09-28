@@ -135,12 +135,8 @@ template <> struct __declspec(uuid("88225b39-8be9-5c03-9714-8f1642d8a43f")) __de
 namespace Windows::Services::Maps {
 
 template <typename D>
-class WINRT_EBO impl_IMapAddress
+struct WINRT_EBO impl_IMapAddress
 {
-    auto shim() const { return impl::shim<D, IMapAddress>(this); }
-
-public:
-
     hstring BuildingName() const;
     hstring BuildingFloor() const;
     hstring BuildingRoom() const;
@@ -159,22 +155,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapAddress2
+struct WINRT_EBO impl_IMapAddress2
 {
-    auto shim() const { return impl::shim<D, IMapAddress2>(this); }
-
-public:
-
     hstring FormattedAddress() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapLocation
+struct WINRT_EBO impl_IMapLocation
 {
-    auto shim() const { return impl::shim<D, IMapLocation>(this); }
-
-public:
-
     Windows::Devices::Geolocation::Geopoint Point() const;
     hstring DisplayName() const;
     hstring Description() const;
@@ -182,56 +170,36 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapLocationFinderResult
+struct WINRT_EBO impl_IMapLocationFinderResult
 {
-    auto shim() const { return impl::shim<D, IMapLocationFinderResult>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Services::Maps::MapLocation> Locations() const;
     Windows::Services::Maps::MapLocationFinderStatus Status() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapLocationFinderStatics
+struct WINRT_EBO impl_IMapLocationFinderStatics
 {
-    auto shim() const { return impl::shim<D, IMapLocationFinderStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> FindLocationsAtAsync(const Windows::Devices::Geolocation::Geopoint & queryPoint) const;
     Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> FindLocationsAsync(hstring_ref searchText, const Windows::Devices::Geolocation::Geopoint & referencePoint) const;
     Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> FindLocationsAsync(hstring_ref searchText, const Windows::Devices::Geolocation::Geopoint & referencePoint, uint32_t maxCount) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapLocationFinderStatics2
+struct WINRT_EBO impl_IMapLocationFinderStatics2
 {
-    auto shim() const { return impl::shim<D, IMapLocationFinderStatics2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> FindLocationsAtAsync(const Windows::Devices::Geolocation::Geopoint & queryPoint, Windows::Services::Maps::MapLocationDesiredAccuracy accuracy) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapManagerStatics
+struct WINRT_EBO impl_IMapManagerStatics
 {
-    auto shim() const { return impl::shim<D, IMapManagerStatics>(this); }
-
-public:
-
     void ShowDownloadedMapsUI() const;
     void ShowMapsUpdateUI() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapRoute
+struct WINRT_EBO impl_IMapRoute
 {
-    auto shim() const { return impl::shim<D, IMapRoute>(this); }
-
-public:
-
     Windows::Devices::Geolocation::GeoboundingBox BoundingBox() const;
     double LengthInMeters() const;
     Windows::Foundation::TimeSpan EstimatedDuration() const;
@@ -241,23 +209,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapRoute2
+struct WINRT_EBO impl_IMapRoute2
 {
-    auto shim() const { return impl::shim<D, IMapRoute2>(this); }
-
-public:
-
     Windows::Services::Maps::MapRouteRestrictions ViolatedRestrictions() const;
     bool HasBlockedRoads() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapRouteDrivingOptions
+struct WINRT_EBO impl_IMapRouteDrivingOptions
 {
-    auto shim() const { return impl::shim<D, IMapRouteDrivingOptions>(this); }
-
-public:
-
     uint32_t MaxAlternateRouteCount() const;
     void MaxAlternateRouteCount(uint32_t value) const;
     Windows::Foundation::IReference<double> InitialHeading() const;
@@ -269,33 +229,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapRouteFinderResult
+struct WINRT_EBO impl_IMapRouteFinderResult
 {
-    auto shim() const { return impl::shim<D, IMapRouteFinderResult>(this); }
-
-public:
-
     Windows::Services::Maps::MapRoute Route() const;
     Windows::Services::Maps::MapRouteFinderStatus Status() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapRouteFinderResult2
+struct WINRT_EBO impl_IMapRouteFinderResult2
 {
-    auto shim() const { return impl::shim<D, IMapRouteFinderResult2>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Services::Maps::MapRoute> AlternateRoutes() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapRouteFinderStatics
+struct WINRT_EBO impl_IMapRouteFinderStatics
 {
-    auto shim() const { return impl::shim<D, IMapRouteFinderStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> GetDrivingRouteAsync(const Windows::Devices::Geolocation::Geopoint & startPoint, const Windows::Devices::Geolocation::Geopoint & endPoint) const;
     Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> GetDrivingRouteAsync(const Windows::Devices::Geolocation::Geopoint & startPoint, const Windows::Devices::Geolocation::Geopoint & endPoint, Windows::Services::Maps::MapRouteOptimization optimization) const;
     Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> GetDrivingRouteAsync(const Windows::Devices::Geolocation::Geopoint & startPoint, const Windows::Devices::Geolocation::Geopoint & endPoint, Windows::Services::Maps::MapRouteOptimization optimization, Windows::Services::Maps::MapRouteRestrictions restrictions) const;
@@ -309,22 +257,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapRouteFinderStatics2
+struct WINRT_EBO impl_IMapRouteFinderStatics2
 {
-    auto shim() const { return impl::shim<D, IMapRouteFinderStatics2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> GetDrivingRouteAsync(const Windows::Devices::Geolocation::Geopoint & startPoint, const Windows::Devices::Geolocation::Geopoint & endPoint, const Windows::Services::Maps::MapRouteDrivingOptions & options) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapRouteLeg
+struct WINRT_EBO impl_IMapRouteLeg
 {
-    auto shim() const { return impl::shim<D, IMapRouteLeg>(this); }
-
-public:
-
     Windows::Devices::Geolocation::GeoboundingBox BoundingBox() const;
     Windows::Devices::Geolocation::Geopath Path() const;
     double LengthInMeters() const;
@@ -333,12 +273,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapRouteManeuver
+struct WINRT_EBO impl_IMapRouteManeuver
 {
-    auto shim() const { return impl::shim<D, IMapRouteManeuver>(this); }
-
-public:
-
     Windows::Devices::Geolocation::Geopoint StartingPoint() const;
     double LengthInMeters() const;
     hstring InstructionText() const;
@@ -348,45 +284,29 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapRouteManeuver2
+struct WINRT_EBO impl_IMapRouteManeuver2
 {
-    auto shim() const { return impl::shim<D, IMapRouteManeuver2>(this); }
-
-public:
-
     double StartHeading() const;
     double EndHeading() const;
     hstring StreetName() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapServiceStatics
+struct WINRT_EBO impl_IMapServiceStatics
 {
-    auto shim() const { return impl::shim<D, IMapServiceStatics>(this); }
-
-public:
-
     void ServiceToken(hstring_ref value) const;
     hstring ServiceToken() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapServiceStatics2
+struct WINRT_EBO impl_IMapServiceStatics2
 {
-    auto shim() const { return impl::shim<D, IMapServiceStatics2>(this); }
-
-public:
-
     hstring WorldViewRegionCode() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapServiceStatics3
+struct WINRT_EBO impl_IMapServiceStatics3
 {
-    auto shim() const { return impl::shim<D, IMapServiceStatics3>(this); }
-
-public:
-
     hstring DataAttributions() const;
 };
 

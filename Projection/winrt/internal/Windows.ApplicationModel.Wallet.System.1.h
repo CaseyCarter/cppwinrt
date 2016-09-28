@@ -45,9 +45,9 @@ template <> struct traits<Windows::ApplicationModel::Wallet::System::WalletItemS
 
 namespace Windows::ApplicationModel::Wallet::System {
 
-template <typename T> class impl_IWalletItemSystemStore;
-template <typename T> class impl_IWalletItemSystemStore2;
-template <typename T> class impl_IWalletManagerSystemStatics;
+template <typename T> struct impl_IWalletItemSystemStore;
+template <typename T> struct impl_IWalletItemSystemStore2;
+template <typename T> struct impl_IWalletManagerSystemStatics;
 
 }
 

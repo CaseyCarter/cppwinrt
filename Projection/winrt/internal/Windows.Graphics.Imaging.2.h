@@ -182,23 +182,15 @@ template <> struct __declspec(uuid("2ad3fb0c-0656-5302-b504-3153be845161")) __de
 namespace Windows::Graphics::Imaging {
 
 template <typename D>
-class WINRT_EBO impl_IBitmapBuffer
+struct WINRT_EBO impl_IBitmapBuffer
 {
-    auto shim() const { return impl::shim<D, IBitmapBuffer>(this); }
-
-public:
-
     int32_t GetPlaneCount() const;
     Windows::Graphics::Imaging::BitmapPlaneDescription GetPlaneDescription(int32_t index) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBitmapCodecInformation
+struct WINRT_EBO impl_IBitmapCodecInformation
 {
-    auto shim() const { return impl::shim<D, IBitmapCodecInformation>(this); }
-
-public:
-
     GUID CodecId() const;
     Windows::Foundation::Collections::IVectorView<hstring> FileExtensions() const;
     hstring FriendlyName() const;
@@ -206,12 +198,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBitmapDecoder
+struct WINRT_EBO impl_IBitmapDecoder
 {
-    auto shim() const { return impl::shim<D, IBitmapDecoder>(this); }
-
-public:
-
     Windows::Graphics::Imaging::BitmapPropertiesView BitmapContainerProperties() const;
     Windows::Graphics::Imaging::BitmapCodecInformation DecoderInformation() const;
     uint32_t FrameCount() const;
@@ -220,12 +208,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBitmapDecoderStatics
+struct WINRT_EBO impl_IBitmapDecoderStatics
 {
-    auto shim() const { return impl::shim<D, IBitmapDecoderStatics>(this); }
-
-public:
-
     GUID BmpDecoderId() const;
     GUID JpegDecoderId() const;
     GUID PngDecoderId() const;
@@ -239,12 +223,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBitmapEncoder
+struct WINRT_EBO impl_IBitmapEncoder
 {
-    auto shim() const { return impl::shim<D, IBitmapEncoder>(this); }
-
-public:
-
     Windows::Graphics::Imaging::BitmapCodecInformation EncoderInformation() const;
     Windows::Graphics::Imaging::BitmapProperties BitmapProperties() const;
     Windows::Graphics::Imaging::BitmapProperties BitmapContainerProperties() const;
@@ -262,12 +242,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBitmapEncoderStatics
+struct WINRT_EBO impl_IBitmapEncoderStatics
 {
-    auto shim() const { return impl::shim<D, IBitmapEncoderStatics>(this); }
-
-public:
-
     GUID BmpEncoderId() const;
     GUID JpegEncoderId() const;
     GUID PngEncoderId() const;
@@ -282,22 +258,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBitmapEncoderWithSoftwareBitmap
+struct WINRT_EBO impl_IBitmapEncoderWithSoftwareBitmap
 {
-    auto shim() const { return impl::shim<D, IBitmapEncoderWithSoftwareBitmap>(this); }
-
-public:
-
     void SetSoftwareBitmap(const Windows::Graphics::Imaging::SoftwareBitmap & bitmap) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBitmapFrame
+struct WINRT_EBO impl_IBitmapFrame
 {
-    auto shim() const { return impl::shim<D, IBitmapFrame>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::ImageStream> GetThumbnailAsync() const;
     Windows::Graphics::Imaging::BitmapPropertiesView BitmapProperties() const;
     Windows::Graphics::Imaging::BitmapPixelFormat BitmapPixelFormat() const;
@@ -313,44 +281,28 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBitmapFrameWithSoftwareBitmap
+struct WINRT_EBO impl_IBitmapFrameWithSoftwareBitmap
 {
-    auto shim() const { return impl::shim<D, IBitmapFrameWithSoftwareBitmap>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::SoftwareBitmap> GetSoftwareBitmapAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::SoftwareBitmap> GetSoftwareBitmapAsync(Windows::Graphics::Imaging::BitmapPixelFormat pixelFormat, Windows::Graphics::Imaging::BitmapAlphaMode alphaMode) const;
     Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::SoftwareBitmap> GetSoftwareBitmapAsync(Windows::Graphics::Imaging::BitmapPixelFormat pixelFormat, Windows::Graphics::Imaging::BitmapAlphaMode alphaMode, const Windows::Graphics::Imaging::BitmapTransform & transform, Windows::Graphics::Imaging::ExifOrientationMode exifOrientationMode, Windows::Graphics::Imaging::ColorManagementMode colorManagementMode) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBitmapProperties
+struct WINRT_EBO impl_IBitmapProperties
 {
-    auto shim() const { return impl::shim<D, IBitmapProperties>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction SetPropertiesAsync(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Graphics::Imaging::BitmapTypedValue>> & propertiesToSet) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBitmapPropertiesView
+struct WINRT_EBO impl_IBitmapPropertiesView
 {
-    auto shim() const { return impl::shim<D, IBitmapPropertiesView>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Graphics::Imaging::BitmapPropertySet> GetPropertiesAsync(const Windows::Foundation::Collections::IIterable<hstring> & propertiesToRetrieve) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBitmapTransform
+struct WINRT_EBO impl_IBitmapTransform
 {
-    auto shim() const { return impl::shim<D, IBitmapTransform>(this); }
-
-public:
-
     uint32_t ScaledWidth() const;
     void ScaledWidth(uint32_t value) const;
     uint32_t ScaledHeight() const;
@@ -366,43 +318,27 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBitmapTypedValue
+struct WINRT_EBO impl_IBitmapTypedValue
 {
-    auto shim() const { return impl::shim<D, IBitmapTypedValue>(this); }
-
-public:
-
     Windows::IInspectable Value() const;
     Windows::Foundation::PropertyType Type() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBitmapTypedValueFactory
+struct WINRT_EBO impl_IBitmapTypedValueFactory
 {
-    auto shim() const { return impl::shim<D, IBitmapTypedValueFactory>(this); }
-
-public:
-
     Windows::Graphics::Imaging::BitmapTypedValue Create(const Windows::IInspectable & value, Windows::Foundation::PropertyType type) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPixelDataProvider
+struct WINRT_EBO impl_IPixelDataProvider
 {
-    auto shim() const { return impl::shim<D, IPixelDataProvider>(this); }
-
-public:
-
     com_array<uint8_t> DetachPixelData() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISoftwareBitmap
+struct WINRT_EBO impl_ISoftwareBitmap
 {
-    auto shim() const { return impl::shim<D, ISoftwareBitmap>(this); }
-
-public:
-
     Windows::Graphics::Imaging::BitmapPixelFormat BitmapPixelFormat() const;
     Windows::Graphics::Imaging::BitmapAlphaMode BitmapAlphaMode() const;
     int32_t PixelWidth() const;
@@ -420,23 +356,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISoftwareBitmapFactory
+struct WINRT_EBO impl_ISoftwareBitmapFactory
 {
-    auto shim() const { return impl::shim<D, ISoftwareBitmapFactory>(this); }
-
-public:
-
     Windows::Graphics::Imaging::SoftwareBitmap Create(Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height) const;
     Windows::Graphics::Imaging::SoftwareBitmap CreateWithAlpha(Windows::Graphics::Imaging::BitmapPixelFormat format, int32_t width, int32_t height, Windows::Graphics::Imaging::BitmapAlphaMode alpha) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISoftwareBitmapStatics
+struct WINRT_EBO impl_ISoftwareBitmapStatics
 {
-    auto shim() const { return impl::shim<D, ISoftwareBitmapStatics>(this); }
-
-public:
-
     Windows::Graphics::Imaging::SoftwareBitmap Copy(const Windows::Graphics::Imaging::SoftwareBitmap & source) const;
     Windows::Graphics::Imaging::SoftwareBitmap Convert(const Windows::Graphics::Imaging::SoftwareBitmap & source, Windows::Graphics::Imaging::BitmapPixelFormat format) const;
     Windows::Graphics::Imaging::SoftwareBitmap Convert(const Windows::Graphics::Imaging::SoftwareBitmap & source, Windows::Graphics::Imaging::BitmapPixelFormat format, Windows::Graphics::Imaging::BitmapAlphaMode alpha) const;

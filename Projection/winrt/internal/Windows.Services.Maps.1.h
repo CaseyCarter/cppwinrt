@@ -188,26 +188,26 @@ template <> struct traits<Windows::Services::Maps::MapRouteManeuver> { using def
 
 namespace Windows::Services::Maps {
 
-template <typename T> class impl_IMapAddress;
-template <typename T> class impl_IMapAddress2;
-template <typename T> class impl_IMapLocation;
-template <typename T> class impl_IMapLocationFinderResult;
-template <typename T> class impl_IMapLocationFinderStatics;
-template <typename T> class impl_IMapLocationFinderStatics2;
-template <typename T> class impl_IMapManagerStatics;
-template <typename T> class impl_IMapRoute;
-template <typename T> class impl_IMapRoute2;
-template <typename T> class impl_IMapRouteDrivingOptions;
-template <typename T> class impl_IMapRouteFinderResult;
-template <typename T> class impl_IMapRouteFinderResult2;
-template <typename T> class impl_IMapRouteFinderStatics;
-template <typename T> class impl_IMapRouteFinderStatics2;
-template <typename T> class impl_IMapRouteLeg;
-template <typename T> class impl_IMapRouteManeuver;
-template <typename T> class impl_IMapRouteManeuver2;
-template <typename T> class impl_IMapServiceStatics;
-template <typename T> class impl_IMapServiceStatics2;
-template <typename T> class impl_IMapServiceStatics3;
+template <typename T> struct impl_IMapAddress;
+template <typename T> struct impl_IMapAddress2;
+template <typename T> struct impl_IMapLocation;
+template <typename T> struct impl_IMapLocationFinderResult;
+template <typename T> struct impl_IMapLocationFinderStatics;
+template <typename T> struct impl_IMapLocationFinderStatics2;
+template <typename T> struct impl_IMapManagerStatics;
+template <typename T> struct impl_IMapRoute;
+template <typename T> struct impl_IMapRoute2;
+template <typename T> struct impl_IMapRouteDrivingOptions;
+template <typename T> struct impl_IMapRouteFinderResult;
+template <typename T> struct impl_IMapRouteFinderResult2;
+template <typename T> struct impl_IMapRouteFinderStatics;
+template <typename T> struct impl_IMapRouteFinderStatics2;
+template <typename T> struct impl_IMapRouteLeg;
+template <typename T> struct impl_IMapRouteManeuver;
+template <typename T> struct impl_IMapRouteManeuver2;
+template <typename T> struct impl_IMapServiceStatics;
+template <typename T> struct impl_IMapServiceStatics2;
+template <typename T> struct impl_IMapServiceStatics3;
 
 }
 

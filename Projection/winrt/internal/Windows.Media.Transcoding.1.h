@@ -61,9 +61,9 @@ template <> struct traits<Windows::Media::Transcoding::PrepareTranscodeResult> {
 
 namespace Windows::Media::Transcoding {
 
-template <typename T> class impl_IMediaTranscoder;
-template <typename T> class impl_IMediaTranscoder2;
-template <typename T> class impl_IPrepareTranscodeResult;
+template <typename T> struct impl_IMediaTranscoder;
+template <typename T> struct impl_IMediaTranscoder2;
+template <typename T> struct impl_IPrepareTranscodeResult;
 
 }
 

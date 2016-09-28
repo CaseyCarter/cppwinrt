@@ -100,15 +100,15 @@ template <> struct traits<Windows::ApplicationModel::UserDataAccounts::UserDataA
 
 namespace Windows::ApplicationModel::UserDataAccounts {
 
-template <typename T> class impl_IUserDataAccount;
-template <typename T> class impl_IUserDataAccount2;
-template <typename T> class impl_IUserDataAccount3;
-template <typename T> class impl_IUserDataAccountManagerForUser;
-template <typename T> class impl_IUserDataAccountManagerStatics;
-template <typename T> class impl_IUserDataAccountManagerStatics2;
-template <typename T> class impl_IUserDataAccountStore;
-template <typename T> class impl_IUserDataAccountStore2;
-template <typename T> class impl_IUserDataAccountStoreChangedEventArgs;
+template <typename T> struct impl_IUserDataAccount;
+template <typename T> struct impl_IUserDataAccount2;
+template <typename T> struct impl_IUserDataAccount3;
+template <typename T> struct impl_IUserDataAccountManagerForUser;
+template <typename T> struct impl_IUserDataAccountManagerStatics;
+template <typename T> struct impl_IUserDataAccountManagerStatics2;
+template <typename T> struct impl_IUserDataAccountStore;
+template <typename T> struct impl_IUserDataAccountStore2;
+template <typename T> struct impl_IUserDataAccountStoreChangedEventArgs;
 
 }
 

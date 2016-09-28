@@ -35,7 +35,7 @@ template <> struct traits<Windows::UI::Composition::Effects::SceneLightingEffect
 
 namespace Windows::UI::Composition::Effects {
 
-template <typename T> class impl_ISceneLightingEffect;
+template <typename T> struct impl_ISceneLightingEffect;
 
 }
 

@@ -102,15 +102,15 @@ template <> struct traits<Windows::Storage::Pickers::Provider::TargetFileRequest
 
 namespace Windows::Storage::Pickers::Provider {
 
-template <typename T> class impl_IFileOpenPickerUI;
-template <typename T> class impl_IFileRemovedEventArgs;
-template <typename T> class impl_IFileSavePickerUI;
-template <typename T> class impl_IPickerClosingDeferral;
-template <typename T> class impl_IPickerClosingEventArgs;
-template <typename T> class impl_IPickerClosingOperation;
-template <typename T> class impl_ITargetFileRequest;
-template <typename T> class impl_ITargetFileRequestDeferral;
-template <typename T> class impl_ITargetFileRequestedEventArgs;
+template <typename T> struct impl_IFileOpenPickerUI;
+template <typename T> struct impl_IFileRemovedEventArgs;
+template <typename T> struct impl_IFileSavePickerUI;
+template <typename T> struct impl_IPickerClosingDeferral;
+template <typename T> struct impl_IPickerClosingEventArgs;
+template <typename T> struct impl_IPickerClosingOperation;
+template <typename T> struct impl_ITargetFileRequest;
+template <typename T> struct impl_ITargetFileRequestDeferral;
+template <typename T> struct impl_ITargetFileRequestedEventArgs;
 
 }
 

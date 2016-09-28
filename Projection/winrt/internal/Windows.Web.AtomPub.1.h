@@ -70,11 +70,11 @@ template <> struct traits<Windows::Web::AtomPub::Workspace> { using default_inte
 
 namespace Windows::Web::AtomPub {
 
-template <typename T> class impl_IAtomPubClient;
-template <typename T> class impl_IAtomPubClientFactory;
-template <typename T> class impl_IResourceCollection;
-template <typename T> class impl_IServiceDocument;
-template <typename T> class impl_IWorkspace;
+template <typename T> struct impl_IAtomPubClient;
+template <typename T> struct impl_IAtomPubClientFactory;
+template <typename T> struct impl_IResourceCollection;
+template <typename T> struct impl_IServiceDocument;
+template <typename T> struct impl_IWorkspace;
 
 }
 

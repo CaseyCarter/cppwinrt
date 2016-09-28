@@ -10,21 +10,13 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::UI::Xaml::Hosting {
 
 template <typename D>
-class WINRT_EBO impl_IElementCompositionPreview
+struct WINRT_EBO impl_IElementCompositionPreview
 {
-    auto shim() const { return impl::shim<D, IElementCompositionPreview>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IElementCompositionPreviewStatics
+struct WINRT_EBO impl_IElementCompositionPreviewStatics
 {
-    auto shim() const { return impl::shim<D, IElementCompositionPreviewStatics>(this); }
-
-public:
-
     Windows::UI::Composition::Visual GetElementVisual(const Windows::UI::Xaml::UIElement & element) const;
     Windows::UI::Composition::Visual GetElementChildVisual(const Windows::UI::Xaml::UIElement & element) const;
     void SetElementChildVisual(const Windows::UI::Xaml::UIElement & element, const Windows::UI::Composition::Visual & visual) const;

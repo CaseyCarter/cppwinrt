@@ -352,12 +352,8 @@ template <> struct __declspec(uuid("377f6162-6e4d-574e-bf01-77f4fd021d0e")) __de
 namespace Windows::UI::Xaml {
 
 template <typename D>
-class WINRT_EBO impl_IAdaptiveTrigger
+struct WINRT_EBO impl_IAdaptiveTrigger
 {
-    auto shim() const { return impl::shim<D, IAdaptiveTrigger>(this); }
-
-public:
-
     double MinWindowWidth() const;
     void MinWindowWidth(double value) const;
     double MinWindowHeight() const;
@@ -365,33 +361,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAdaptiveTriggerFactory
+struct WINRT_EBO impl_IAdaptiveTriggerFactory
 {
-    auto shim() const { return impl::shim<D, IAdaptiveTriggerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::AdaptiveTrigger CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAdaptiveTriggerStatics
+struct WINRT_EBO impl_IAdaptiveTriggerStatics
 {
-    auto shim() const { return impl::shim<D, IAdaptiveTriggerStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty MinWindowWidthProperty() const;
     Windows::UI::Xaml::DependencyProperty MinWindowHeightProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IApplication
+struct WINRT_EBO impl_IApplication
 {
-    auto shim() const { return impl::shim<D, IApplication>(this); }
-
-public:
-
     Windows::UI::Xaml::ResourceDictionary Resources() const;
     void Resources(const Windows::UI::Xaml::ResourceDictionary & value) const;
     Windows::UI::Xaml::DebugSettings DebugSettings() const;
@@ -413,12 +397,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IApplication2
+struct WINRT_EBO impl_IApplication2
 {
-    auto shim() const { return impl::shim<D, IApplication2>(this); }
-
-public:
-
     Windows::UI::Xaml::FocusVisualKind FocusVisualKind() const;
     void FocusVisualKind(Windows::UI::Xaml::FocusVisualKind value) const;
     Windows::UI::Xaml::ApplicationRequiresPointerMode RequiresPointerMode() const;
@@ -434,31 +414,19 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IApplicationFactory
+struct WINRT_EBO impl_IApplicationFactory
 {
-    auto shim() const { return impl::shim<D, IApplicationFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Application CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IApplicationInitializationCallbackParams
+struct WINRT_EBO impl_IApplicationInitializationCallbackParams
 {
-    auto shim() const { return impl::shim<D, IApplicationInitializationCallbackParams>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IApplicationOverrides
+struct WINRT_EBO impl_IApplicationOverrides
 {
-    auto shim() const { return impl::shim<D, IApplicationOverrides>(this); }
-
-public:
-
     void OnActivated(const Windows::ApplicationModel::Activation::IActivatedEventArgs & args) const;
     void OnLaunched(const Windows::ApplicationModel::Activation::LaunchActivatedEventArgs & args) const;
     void OnFileActivated(const Windows::ApplicationModel::Activation::FileActivatedEventArgs & args) const;
@@ -471,22 +439,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IApplicationOverrides2
+struct WINRT_EBO impl_IApplicationOverrides2
 {
-    auto shim() const { return impl::shim<D, IApplicationOverrides2>(this); }
-
-public:
-
     void OnBackgroundActivated(const Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs & args) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IApplicationStatics
+struct WINRT_EBO impl_IApplicationStatics
 {
-    auto shim() const { return impl::shim<D, IApplicationStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::Application Current() const;
     void Start(const Windows::UI::Xaml::ApplicationInitializationCallback & callback) const;
     void LoadComponent(const Windows::IInspectable & component, const Windows::Foundation::Uri & resourceLocator) const;
@@ -494,120 +454,76 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBindingFailedEventArgs
+struct WINRT_EBO impl_IBindingFailedEventArgs
 {
-    auto shim() const { return impl::shim<D, IBindingFailedEventArgs>(this); }
-
-public:
-
     hstring Message() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICornerRadiusHelper
+struct WINRT_EBO impl_ICornerRadiusHelper
 {
-    auto shim() const { return impl::shim<D, ICornerRadiusHelper>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ICornerRadiusHelperStatics
+struct WINRT_EBO impl_ICornerRadiusHelperStatics
 {
-    auto shim() const { return impl::shim<D, ICornerRadiusHelperStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::CornerRadius FromRadii(double topLeft, double topRight, double bottomRight, double bottomLeft) const;
     Windows::UI::Xaml::CornerRadius FromUniformRadius(double uniformRadius) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDataContextChangedEventArgs
+struct WINRT_EBO impl_IDataContextChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IDataContextChangedEventArgs>(this); }
-
-public:
-
     Windows::IInspectable NewValue() const;
     bool Handled() const;
     void Handled(bool value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDataTemplate
+struct WINRT_EBO impl_IDataTemplate
 {
-    auto shim() const { return impl::shim<D, IDataTemplate>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyObject LoadContent() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDataTemplateExtension
+struct WINRT_EBO impl_IDataTemplateExtension
 {
-    auto shim() const { return impl::shim<D, IDataTemplateExtension>(this); }
-
-public:
-
     void ResetTemplate() const;
     bool ProcessBinding(uint32_t phase) const;
     int32_t ProcessBindings(const Windows::UI::Xaml::Controls::ContainerContentChangingEventArgs & arg) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDataTemplateFactory
+struct WINRT_EBO impl_IDataTemplateFactory
 {
-    auto shim() const { return impl::shim<D, IDataTemplateFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::DataTemplate CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDataTemplateKey
+struct WINRT_EBO impl_IDataTemplateKey
 {
-    auto shim() const { return impl::shim<D, IDataTemplateKey>(this); }
-
-public:
-
     Windows::IInspectable DataType() const;
     void DataType(const Windows::IInspectable & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDataTemplateKeyFactory
+struct WINRT_EBO impl_IDataTemplateKeyFactory
 {
-    auto shim() const { return impl::shim<D, IDataTemplateKeyFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::DataTemplateKey CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
     Windows::UI::Xaml::DataTemplateKey CreateInstanceWithType(const Windows::IInspectable & dataType, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDataTemplateStatics2
+struct WINRT_EBO impl_IDataTemplateStatics2
 {
-    auto shim() const { return impl::shim<D, IDataTemplateStatics2>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty ExtensionInstanceProperty() const;
     Windows::UI::Xaml::IDataTemplateExtension GetExtensionInstance(const Windows::UI::Xaml::FrameworkElement & element) const;
     void SetExtensionInstance(const Windows::UI::Xaml::FrameworkElement & element, const Windows::UI::Xaml::IDataTemplateExtension & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDebugSettings
+struct WINRT_EBO impl_IDebugSettings
 {
-    auto shim() const { return impl::shim<D, IDebugSettings>(this); }
-
-public:
-
     bool EnableFrameRateCounter() const;
     void EnableFrameRateCounter(bool value) const;
     bool IsBindingTracingEnabled() const;
@@ -621,34 +537,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDebugSettings2
+struct WINRT_EBO impl_IDebugSettings2
 {
-    auto shim() const { return impl::shim<D, IDebugSettings2>(this); }
-
-public:
-
     bool EnableRedrawRegions() const;
     void EnableRedrawRegions(bool value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDebugSettings3
+struct WINRT_EBO impl_IDebugSettings3
 {
-    auto shim() const { return impl::shim<D, IDebugSettings3>(this); }
-
-public:
-
     bool IsTextPerformanceVisualizationEnabled() const;
     void IsTextPerformanceVisualizationEnabled(bool value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDependencyObject
+struct WINRT_EBO impl_IDependencyObject
 {
-    auto shim() const { return impl::shim<D, IDependencyObject>(this); }
-
-public:
-
     Windows::IInspectable GetValue(const Windows::UI::Xaml::DependencyProperty & dp) const;
     void SetValue(const Windows::UI::Xaml::DependencyProperty & dp, const Windows::IInspectable & value) const;
     void ClearValue(const Windows::UI::Xaml::DependencyProperty & dp) const;
@@ -658,77 +562,49 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDependencyObject2
+struct WINRT_EBO impl_IDependencyObject2
 {
-    auto shim() const { return impl::shim<D, IDependencyObject2>(this); }
-
-public:
-
     int64_t RegisterPropertyChangedCallback(const Windows::UI::Xaml::DependencyProperty & dp, const Windows::UI::Xaml::DependencyPropertyChangedCallback & callback) const;
     void UnregisterPropertyChangedCallback(const Windows::UI::Xaml::DependencyProperty & dp, int64_t token) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDependencyObjectCollectionFactory
+struct WINRT_EBO impl_IDependencyObjectCollectionFactory
 {
-    auto shim() const { return impl::shim<D, IDependencyObjectCollectionFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyObjectCollection CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDependencyObjectFactory
+struct WINRT_EBO impl_IDependencyObjectFactory
 {
-    auto shim() const { return impl::shim<D, IDependencyObjectFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyObject CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDependencyProperty
+struct WINRT_EBO impl_IDependencyProperty
 {
-    auto shim() const { return impl::shim<D, IDependencyProperty>(this); }
-
-public:
-
     Windows::UI::Xaml::PropertyMetadata GetMetadata(const Windows::UI::Xaml::Interop::TypeName & forType) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDependencyPropertyChangedEventArgs
+struct WINRT_EBO impl_IDependencyPropertyChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IDependencyPropertyChangedEventArgs>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty Property() const;
     Windows::IInspectable OldValue() const;
     Windows::IInspectable NewValue() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDependencyPropertyStatics
+struct WINRT_EBO impl_IDependencyPropertyStatics
 {
-    auto shim() const { return impl::shim<D, IDependencyPropertyStatics>(this); }
-
-public:
-
     Windows::IInspectable UnsetValue() const;
     Windows::UI::Xaml::DependencyProperty Register(hstring_ref name, const Windows::UI::Xaml::Interop::TypeName & propertyType, const Windows::UI::Xaml::Interop::TypeName & ownerType, const Windows::UI::Xaml::PropertyMetadata & typeMetadata) const;
     Windows::UI::Xaml::DependencyProperty RegisterAttached(hstring_ref name, const Windows::UI::Xaml::Interop::TypeName & propertyType, const Windows::UI::Xaml::Interop::TypeName & ownerType, const Windows::UI::Xaml::PropertyMetadata & defaultMetadata) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDispatcherTimer
+struct WINRT_EBO impl_IDispatcherTimer
 {
-    auto shim() const { return impl::shim<D, IDispatcherTimer>(this); }
-
-public:
-
     Windows::Foundation::TimeSpan Interval() const;
     void Interval(const Windows::Foundation::TimeSpan & value) const;
     bool IsEnabled() const;
@@ -741,22 +617,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDispatcherTimerFactory
+struct WINRT_EBO impl_IDispatcherTimerFactory
 {
-    auto shim() const { return impl::shim<D, IDispatcherTimerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::DispatcherTimer CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDragEventArgs
+struct WINRT_EBO impl_IDragEventArgs
 {
-    auto shim() const { return impl::shim<D, IDragEventArgs>(this); }
-
-public:
-
     bool Handled() const;
     void Handled(bool value) const;
     Windows::ApplicationModel::DataTransfer::DataPackage Data() const;
@@ -765,12 +633,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDragEventArgs2
+struct WINRT_EBO impl_IDragEventArgs2
 {
-    auto shim() const { return impl::shim<D, IDragEventArgs2>(this); }
-
-public:
-
     Windows::ApplicationModel::DataTransfer::DataPackageView DataView() const;
     Windows::UI::Xaml::DragUIOverride DragUIOverride() const;
     Windows::ApplicationModel::DataTransfer::DragDrop::DragDropModifiers Modifiers() const;
@@ -780,32 +644,20 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDragEventArgs3
+struct WINRT_EBO impl_IDragEventArgs3
 {
-    auto shim() const { return impl::shim<D, IDragEventArgs3>(this); }
-
-public:
-
     Windows::ApplicationModel::DataTransfer::DataPackageOperation AllowedOperations() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDragOperationDeferral
+struct WINRT_EBO impl_IDragOperationDeferral
 {
-    auto shim() const { return impl::shim<D, IDragOperationDeferral>(this); }
-
-public:
-
     void Complete() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDragStartingEventArgs
+struct WINRT_EBO impl_IDragStartingEventArgs
 {
-    auto shim() const { return impl::shim<D, IDragStartingEventArgs>(this); }
-
-public:
-
     bool Cancel() const;
     void Cancel(bool value) const;
     Windows::ApplicationModel::DataTransfer::DataPackage Data() const;
@@ -815,23 +667,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDragStartingEventArgs2
+struct WINRT_EBO impl_IDragStartingEventArgs2
 {
-    auto shim() const { return impl::shim<D, IDragStartingEventArgs2>(this); }
-
-public:
-
     Windows::ApplicationModel::DataTransfer::DataPackageOperation AllowedOperations() const;
     void AllowedOperations(Windows::ApplicationModel::DataTransfer::DataPackageOperation value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDragUI
+struct WINRT_EBO impl_IDragUI
 {
-    auto shim() const { return impl::shim<D, IDragUI>(this); }
-
-public:
-
     void SetContentFromBitmapImage(const Windows::UI::Xaml::Media::Imaging::BitmapImage & bitmapImage) const;
     void SetContentFromBitmapImage(const Windows::UI::Xaml::Media::Imaging::BitmapImage & bitmapImage, const Windows::Foundation::Point & anchorPoint) const;
     void SetContentFromSoftwareBitmap(const Windows::Graphics::Imaging::SoftwareBitmap & softwareBitmap) const;
@@ -840,12 +684,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDragUIOverride
+struct WINRT_EBO impl_IDragUIOverride
 {
-    auto shim() const { return impl::shim<D, IDragUIOverride>(this); }
-
-public:
-
     hstring Caption() const;
     void Caption(hstring_ref value) const;
     bool IsContentVisible() const;
@@ -862,31 +702,19 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDropCompletedEventArgs
+struct WINRT_EBO impl_IDropCompletedEventArgs
 {
-    auto shim() const { return impl::shim<D, IDropCompletedEventArgs>(this); }
-
-public:
-
     Windows::ApplicationModel::DataTransfer::DataPackageOperation DropResult() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDurationHelper
+struct WINRT_EBO impl_IDurationHelper
 {
-    auto shim() const { return impl::shim<D, IDurationHelper>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IDurationHelperStatics
+struct WINRT_EBO impl_IDurationHelperStatics
 {
-    auto shim() const { return impl::shim<D, IDurationHelperStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::Duration Automatic() const;
     Windows::UI::Xaml::Duration Forever() const;
     int32_t Compare(const Windows::UI::Xaml::Duration & duration1, const Windows::UI::Xaml::Duration & duration2) const;
@@ -898,21 +726,13 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IElementSoundPlayer
+struct WINRT_EBO impl_IElementSoundPlayer
 {
-    auto shim() const { return impl::shim<D, IElementSoundPlayer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IElementSoundPlayerStatics
+struct WINRT_EBO impl_IElementSoundPlayerStatics
 {
-    auto shim() const { return impl::shim<D, IElementSoundPlayerStatics>(this); }
-
-public:
-
     double Volume() const;
     void Volume(double value) const;
     Windows::UI::Xaml::ElementSoundPlayerState State() const;
@@ -921,43 +741,27 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IEventTrigger
+struct WINRT_EBO impl_IEventTrigger
 {
-    auto shim() const { return impl::shim<D, IEventTrigger>(this); }
-
-public:
-
     Windows::UI::Xaml::RoutedEvent RoutedEvent() const;
     void RoutedEvent(const Windows::UI::Xaml::RoutedEvent & value) const;
     Windows::UI::Xaml::TriggerActionCollection Actions() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IExceptionRoutedEventArgs
+struct WINRT_EBO impl_IExceptionRoutedEventArgs
 {
-    auto shim() const { return impl::shim<D, IExceptionRoutedEventArgs>(this); }
-
-public:
-
     hstring ErrorMessage() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IExceptionRoutedEventArgsFactory
+struct WINRT_EBO impl_IExceptionRoutedEventArgsFactory
 {
-    auto shim() const { return impl::shim<D, IExceptionRoutedEventArgsFactory>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IFrameworkElement
+struct WINRT_EBO impl_IFrameworkElement
 {
-    auto shim() const { return impl::shim<D, IFrameworkElement>(this); }
-
-public:
-
     Windows::UI::Xaml::TriggerCollection Triggers() const;
     Windows::UI::Xaml::ResourceDictionary Resources() const;
     void Resources(const Windows::UI::Xaml::ResourceDictionary & value) const;
@@ -1016,12 +820,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IFrameworkElement2
+struct WINRT_EBO impl_IFrameworkElement2
 {
-    auto shim() const { return impl::shim<D, IFrameworkElement2>(this); }
-
-public:
-
     Windows::UI::Xaml::ElementTheme RequestedTheme() const;
     void RequestedTheme(Windows::UI::Xaml::ElementTheme value) const;
     event_token DataContextChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::FrameworkElement, Windows::UI::Xaml::DataContextChangedEventArgs> & value) const;
@@ -1032,12 +832,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IFrameworkElement3
+struct WINRT_EBO impl_IFrameworkElement3
 {
-    auto shim() const { return impl::shim<D, IFrameworkElement3>(this); }
-
-public:
-
     event_token Loading(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::FrameworkElement, Windows::IInspectable> & value) const;
     using Loading_revoker = event_revoker<IFrameworkElement3>;
     Loading_revoker Loading(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::FrameworkElement, Windows::IInspectable> & value) const;
@@ -1045,12 +841,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IFrameworkElement4
+struct WINRT_EBO impl_IFrameworkElement4
 {
-    auto shim() const { return impl::shim<D, IFrameworkElement4>(this); }
-
-public:
-
     bool AllowFocusOnInteraction() const;
     void AllowFocusOnInteraction(bool value) const;
     Windows::UI::Xaml::Thickness FocusVisualMargin() const;
@@ -1068,44 +860,28 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IFrameworkElementFactory
+struct WINRT_EBO impl_IFrameworkElementFactory
 {
-    auto shim() const { return impl::shim<D, IFrameworkElementFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::FrameworkElement CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFrameworkElementOverrides
+struct WINRT_EBO impl_IFrameworkElementOverrides
 {
-    auto shim() const { return impl::shim<D, IFrameworkElementOverrides>(this); }
-
-public:
-
     Windows::Foundation::Size MeasureOverride(const Windows::Foundation::Size & availableSize) const;
     Windows::Foundation::Size ArrangeOverride(const Windows::Foundation::Size & finalSize) const;
     void OnApplyTemplate() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFrameworkElementOverrides2
+struct WINRT_EBO impl_IFrameworkElementOverrides2
 {
-    auto shim() const { return impl::shim<D, IFrameworkElementOverrides2>(this); }
-
-public:
-
     bool GoToElementStateCore(hstring_ref stateName, bool useTransitions) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFrameworkElementStatics
+struct WINRT_EBO impl_IFrameworkElementStatics
 {
-    auto shim() const { return impl::shim<D, IFrameworkElementStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty TagProperty() const;
     Windows::UI::Xaml::DependencyProperty LanguageProperty() const;
     Windows::UI::Xaml::DependencyProperty ActualWidthProperty() const;
@@ -1126,22 +902,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IFrameworkElementStatics2
+struct WINRT_EBO impl_IFrameworkElementStatics2
 {
-    auto shim() const { return impl::shim<D, IFrameworkElementStatics2>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty RequestedThemeProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFrameworkElementStatics4
+struct WINRT_EBO impl_IFrameworkElementStatics4
 {
-    auto shim() const { return impl::shim<D, IFrameworkElementStatics4>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty AllowFocusOnInteractionProperty() const;
     Windows::UI::Xaml::DependencyProperty FocusVisualMarginProperty() const;
     Windows::UI::Xaml::DependencyProperty FocusVisualSecondaryThicknessProperty() const;
@@ -1152,58 +920,34 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IFrameworkTemplate
+struct WINRT_EBO impl_IFrameworkTemplate
 {
-    auto shim() const { return impl::shim<D, IFrameworkTemplate>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IFrameworkTemplateFactory
+struct WINRT_EBO impl_IFrameworkTemplateFactory
 {
-    auto shim() const { return impl::shim<D, IFrameworkTemplateFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::FrameworkTemplate CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFrameworkView
+struct WINRT_EBO impl_IFrameworkView
 {
-    auto shim() const { return impl::shim<D, IFrameworkView>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IFrameworkViewSource
+struct WINRT_EBO impl_IFrameworkViewSource
 {
-    auto shim() const { return impl::shim<D, IFrameworkViewSource>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IGridLengthHelper
+struct WINRT_EBO impl_IGridLengthHelper
 {
-    auto shim() const { return impl::shim<D, IGridLengthHelper>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IGridLengthHelperStatics
+struct WINRT_EBO impl_IGridLengthHelperStatics
 {
-    auto shim() const { return impl::shim<D, IGridLengthHelperStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::GridLength Auto() const;
     Windows::UI::Xaml::GridLength FromPixels(double pixels) const;
     Windows::UI::Xaml::GridLength FromValueAndType(double value, Windows::UI::Xaml::GridUnitType type) const;
@@ -1214,63 +958,39 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaFailedRoutedEventArgs
+struct WINRT_EBO impl_IMediaFailedRoutedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMediaFailedRoutedEventArgs>(this); }
-
-public:
-
     hstring ErrorTrace() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPointHelper
+struct WINRT_EBO impl_IPointHelper
 {
-    auto shim() const { return impl::shim<D, IPointHelper>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IPointHelperStatics
+struct WINRT_EBO impl_IPointHelperStatics
 {
-    auto shim() const { return impl::shim<D, IPointHelperStatics>(this); }
-
-public:
-
     Windows::Foundation::Point FromCoordinates(float x, float y) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPropertyMetadata
+struct WINRT_EBO impl_IPropertyMetadata
 {
-    auto shim() const { return impl::shim<D, IPropertyMetadata>(this); }
-
-public:
-
     Windows::IInspectable DefaultValue() const;
     Windows::UI::Xaml::CreateDefaultValueCallback CreateDefaultValueCallback() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPropertyMetadataFactory
+struct WINRT_EBO impl_IPropertyMetadataFactory
 {
-    auto shim() const { return impl::shim<D, IPropertyMetadataFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::PropertyMetadata CreateInstanceWithDefaultValue(const Windows::IInspectable & defaultValue, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
     Windows::UI::Xaml::PropertyMetadata CreateInstanceWithDefaultValueAndCallback(const Windows::IInspectable & defaultValue, const Windows::UI::Xaml::PropertyChangedCallback & propertyChangedCallback, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPropertyMetadataStatics
+struct WINRT_EBO impl_IPropertyMetadataStatics
 {
-    auto shim() const { return impl::shim<D, IPropertyMetadataStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::PropertyMetadata Create(const Windows::IInspectable & defaultValue) const;
     Windows::UI::Xaml::PropertyMetadata Create(const Windows::IInspectable & defaultValue, const Windows::UI::Xaml::PropertyChangedCallback & propertyChangedCallback) const;
     Windows::UI::Xaml::PropertyMetadata Create(const Windows::UI::Xaml::CreateDefaultValueCallback & createDefaultValueCallback) const;
@@ -1278,41 +998,25 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPropertyPath
+struct WINRT_EBO impl_IPropertyPath
 {
-    auto shim() const { return impl::shim<D, IPropertyPath>(this); }
-
-public:
-
     hstring Path() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPropertyPathFactory
+struct WINRT_EBO impl_IPropertyPathFactory
 {
-    auto shim() const { return impl::shim<D, IPropertyPathFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::PropertyPath CreateInstance(hstring_ref path) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRectHelper
+struct WINRT_EBO impl_IRectHelper
 {
-    auto shim() const { return impl::shim<D, IRectHelper>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IRectHelperStatics
+struct WINRT_EBO impl_IRectHelperStatics
 {
-    auto shim() const { return impl::shim<D, IRectHelperStatics>(this); }
-
-public:
-
     Windows::Foundation::Rect Empty() const;
     Windows::Foundation::Rect FromCoordinatesAndDimensions(float x, float y, float width, float height) const;
     Windows::Foundation::Rect FromPoints(const Windows::Foundation::Point & point1, const Windows::Foundation::Point & point2) const;
@@ -1330,12 +1034,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IResourceDictionary
+struct WINRT_EBO impl_IResourceDictionary
 {
-    auto shim() const { return impl::shim<D, IResourceDictionary>(this); }
-
-public:
-
     Windows::Foundation::Uri Source() const;
     void Source(const Windows::Foundation::Uri & value) const;
     Windows::Foundation::Collections::IVector<Windows::UI::Xaml::ResourceDictionary> MergedDictionaries() const;
@@ -1343,51 +1043,31 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IResourceDictionaryFactory
+struct WINRT_EBO impl_IResourceDictionaryFactory
 {
-    auto shim() const { return impl::shim<D, IResourceDictionaryFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::ResourceDictionary CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRoutedEvent
+struct WINRT_EBO impl_IRoutedEvent
 {
-    auto shim() const { return impl::shim<D, IRoutedEvent>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IRoutedEventArgs
+struct WINRT_EBO impl_IRoutedEventArgs
 {
-    auto shim() const { return impl::shim<D, IRoutedEventArgs>(this); }
-
-public:
-
     Windows::IInspectable OriginalSource() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRoutedEventArgsFactory
+struct WINRT_EBO impl_IRoutedEventArgsFactory
 {
-    auto shim() const { return impl::shim<D, IRoutedEventArgsFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::RoutedEventArgs CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISetter
+struct WINRT_EBO impl_ISetter
 {
-    auto shim() const { return impl::shim<D, ISetter>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty Property() const;
     void Property(const Windows::UI::Xaml::DependencyProperty & value) const;
     Windows::IInspectable Value() const;
@@ -1395,82 +1075,50 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISetter2
+struct WINRT_EBO impl_ISetter2
 {
-    auto shim() const { return impl::shim<D, ISetter2>(this); }
-
-public:
-
     Windows::UI::Xaml::TargetPropertyPath Target() const;
     void Target(const Windows::UI::Xaml::TargetPropertyPath & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISetterBase
+struct WINRT_EBO impl_ISetterBase
 {
-    auto shim() const { return impl::shim<D, ISetterBase>(this); }
-
-public:
-
     bool IsSealed() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISetterBaseCollection
+struct WINRT_EBO impl_ISetterBaseCollection
 {
-    auto shim() const { return impl::shim<D, ISetterBaseCollection>(this); }
-
-public:
-
     bool IsSealed() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISetterBaseFactory
+struct WINRT_EBO impl_ISetterBaseFactory
 {
-    auto shim() const { return impl::shim<D, ISetterBaseFactory>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ISetterFactory
+struct WINRT_EBO impl_ISetterFactory
 {
-    auto shim() const { return impl::shim<D, ISetterFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Setter CreateInstance(const Windows::UI::Xaml::DependencyProperty & targetProperty, const Windows::IInspectable & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISizeChangedEventArgs
+struct WINRT_EBO impl_ISizeChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, ISizeChangedEventArgs>(this); }
-
-public:
-
     Windows::Foundation::Size PreviousSize() const;
     Windows::Foundation::Size NewSize() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISizeHelper
+struct WINRT_EBO impl_ISizeHelper
 {
-    auto shim() const { return impl::shim<D, ISizeHelper>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ISizeHelperStatics
+struct WINRT_EBO impl_ISizeHelperStatics
 {
-    auto shim() const { return impl::shim<D, ISizeHelperStatics>(this); }
-
-public:
-
     Windows::Foundation::Size Empty() const;
     Windows::Foundation::Size FromDimensions(float width, float height) const;
     bool GetIsEmpty(const Windows::Foundation::Size & target) const;
@@ -1478,62 +1126,38 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStateTrigger
+struct WINRT_EBO impl_IStateTrigger
 {
-    auto shim() const { return impl::shim<D, IStateTrigger>(this); }
-
-public:
-
     bool IsActive() const;
     void IsActive(bool value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStateTriggerBase
+struct WINRT_EBO impl_IStateTriggerBase
 {
-    auto shim() const { return impl::shim<D, IStateTriggerBase>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IStateTriggerBaseFactory
+struct WINRT_EBO impl_IStateTriggerBaseFactory
 {
-    auto shim() const { return impl::shim<D, IStateTriggerBaseFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::StateTriggerBase CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStateTriggerBaseProtected
+struct WINRT_EBO impl_IStateTriggerBaseProtected
 {
-    auto shim() const { return impl::shim<D, IStateTriggerBaseProtected>(this); }
-
-public:
-
     void SetActive(bool IsActive) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStateTriggerStatics
+struct WINRT_EBO impl_IStateTriggerStatics
 {
-    auto shim() const { return impl::shim<D, IStateTriggerStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty IsActiveProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IStyle
+struct WINRT_EBO impl_IStyle
 {
-    auto shim() const { return impl::shim<D, IStyle>(this); }
-
-public:
-
     bool IsSealed() const;
     Windows::UI::Xaml::SetterBaseCollection Setters() const;
     Windows::UI::Xaml::Interop::TypeName TargetType() const;
@@ -1544,22 +1168,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStyleFactory
+struct WINRT_EBO impl_IStyleFactory
 {
-    auto shim() const { return impl::shim<D, IStyleFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Style CreateInstance(const Windows::UI::Xaml::Interop::TypeName & targetType) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITargetPropertyPath
+struct WINRT_EBO impl_ITargetPropertyPath
 {
-    auto shim() const { return impl::shim<D, ITargetPropertyPath>(this); }
-
-public:
-
     Windows::UI::Xaml::PropertyPath Path() const;
     void Path(const Windows::UI::Xaml::PropertyPath & value) const;
     Windows::IInspectable Target() const;
@@ -1567,78 +1183,46 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ITargetPropertyPathFactory
+struct WINRT_EBO impl_ITargetPropertyPathFactory
 {
-    auto shim() const { return impl::shim<D, ITargetPropertyPathFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::TargetPropertyPath CreateInstance(const Windows::UI::Xaml::DependencyProperty & targetProperty) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IThicknessHelper
+struct WINRT_EBO impl_IThicknessHelper
 {
-    auto shim() const { return impl::shim<D, IThicknessHelper>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IThicknessHelperStatics
+struct WINRT_EBO impl_IThicknessHelperStatics
 {
-    auto shim() const { return impl::shim<D, IThicknessHelperStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::Thickness FromLengths(double left, double top, double right, double bottom) const;
     Windows::UI::Xaml::Thickness FromUniformLength(double uniformLength) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITriggerAction
+struct WINRT_EBO impl_ITriggerAction
 {
-    auto shim() const { return impl::shim<D, ITriggerAction>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ITriggerActionFactory
+struct WINRT_EBO impl_ITriggerActionFactory
 {
-    auto shim() const { return impl::shim<D, ITriggerActionFactory>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ITriggerBase
+struct WINRT_EBO impl_ITriggerBase
 {
-    auto shim() const { return impl::shim<D, ITriggerBase>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ITriggerBaseFactory
+struct WINRT_EBO impl_ITriggerBaseFactory
 {
-    auto shim() const { return impl::shim<D, ITriggerBaseFactory>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IUIElement
+struct WINRT_EBO impl_IUIElement
 {
-    auto shim() const { return impl::shim<D, IUIElement>(this); }
-
-public:
-
     Windows::Foundation::Size DesiredSize() const;
     bool AllowDrop() const;
     void AllowDrop(bool value) const;
@@ -1788,24 +1372,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUIElement2
+struct WINRT_EBO impl_IUIElement2
 {
-    auto shim() const { return impl::shim<D, IUIElement2>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::ElementCompositeMode CompositeMode() const;
     void CompositeMode(Windows::UI::Xaml::Media::ElementCompositeMode value) const;
     bool CancelDirectManipulations() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUIElement3
+struct WINRT_EBO impl_IUIElement3
 {
-    auto shim() const { return impl::shim<D, IUIElement3>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Media3D::Transform3D Transform3D() const;
     void Transform3D(const Windows::UI::Xaml::Media::Media3D::Transform3D & value) const;
     bool CanDrag() const;
@@ -1822,12 +1398,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUIElement4
+struct WINRT_EBO impl_IUIElement4
 {
-    auto shim() const { return impl::shim<D, IUIElement4>(this); }
-
-public:
-
     Windows::UI::Xaml::Controls::Primitives::FlyoutBase ContextFlyout() const;
     void ContextFlyout(const Windows::UI::Xaml::Controls::Primitives::FlyoutBase & value) const;
     bool ExitDisplayModeOnAccessKeyInvoked() const;
@@ -1861,33 +1433,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUIElementFactory
+struct WINRT_EBO impl_IUIElementFactory
 {
-    auto shim() const { return impl::shim<D, IUIElementFactory>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IUIElementOverrides
+struct WINRT_EBO impl_IUIElementOverrides
 {
-    auto shim() const { return impl::shim<D, IUIElementOverrides>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::AutomationPeer OnCreateAutomationPeer() const;
     void OnDisconnectVisualChildren() const;
     Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IIterable<Windows::Foundation::Point>> FindSubElementsForTouchTargeting(const Windows::Foundation::Point & point, const Windows::Foundation::Rect & boundingRect) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUIElementStatics
+struct WINRT_EBO impl_IUIElementStatics
 {
-    auto shim() const { return impl::shim<D, IUIElementStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::RoutedEvent KeyDownEvent() const;
     Windows::UI::Xaml::RoutedEvent KeyUpEvent() const;
     Windows::UI::Xaml::RoutedEvent PointerEnteredEvent() const;
@@ -1931,34 +1491,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUIElementStatics2
+struct WINRT_EBO impl_IUIElementStatics2
 {
-    auto shim() const { return impl::shim<D, IUIElementStatics2>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty CompositeModeProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUIElementStatics3
+struct WINRT_EBO impl_IUIElementStatics3
 {
-    auto shim() const { return impl::shim<D, IUIElementStatics3>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty Transform3DProperty() const;
     Windows::UI::Xaml::DependencyProperty CanDragProperty() const;
     bool TryStartDirectManipulation(const Windows::UI::Xaml::Input::Pointer & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUIElementStatics4
+struct WINRT_EBO impl_IUIElementStatics4
 {
-    auto shim() const { return impl::shim<D, IUIElementStatics4>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty ContextFlyoutProperty() const;
     Windows::UI::Xaml::DependencyProperty ExitDisplayModeOnAccessKeyInvokedProperty() const;
     Windows::UI::Xaml::DependencyProperty IsAccessKeyScopeProperty() const;
@@ -1967,12 +1515,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUnhandledExceptionEventArgs
+struct WINRT_EBO impl_IUnhandledExceptionEventArgs
 {
-    auto shim() const { return impl::shim<D, IUnhandledExceptionEventArgs>(this); }
-
-public:
-
     HRESULT Exception() const;
     hstring Message() const;
     bool Handled() const;
@@ -1980,35 +1524,23 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVisualState
+struct WINRT_EBO impl_IVisualState
 {
-    auto shim() const { return impl::shim<D, IVisualState>(this); }
-
-public:
-
     hstring Name() const;
     Windows::UI::Xaml::Media::Animation::Storyboard Storyboard() const;
     void Storyboard(const Windows::UI::Xaml::Media::Animation::Storyboard & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVisualState2
+struct WINRT_EBO impl_IVisualState2
 {
-    auto shim() const { return impl::shim<D, IVisualState2>(this); }
-
-public:
-
     Windows::UI::Xaml::SetterBaseCollection Setters() const;
     Windows::Foundation::Collections::IVector<Windows::UI::Xaml::StateTriggerBase> StateTriggers() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVisualStateChangedEventArgs
+struct WINRT_EBO impl_IVisualStateChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IVisualStateChangedEventArgs>(this); }
-
-public:
-
     Windows::UI::Xaml::VisualState OldState() const;
     void OldState(const Windows::UI::Xaml::VisualState & value) const;
     Windows::UI::Xaml::VisualState NewState() const;
@@ -2018,12 +1550,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVisualStateGroup
+struct WINRT_EBO impl_IVisualStateGroup
 {
-    auto shim() const { return impl::shim<D, IVisualStateGroup>(this); }
-
-public:
-
     hstring Name() const;
     Windows::Foundation::Collections::IVector<Windows::UI::Xaml::VisualTransition> Transitions() const;
     Windows::Foundation::Collections::IVector<Windows::UI::Xaml::VisualState> States() const;
@@ -2039,52 +1567,32 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVisualStateManager
+struct WINRT_EBO impl_IVisualStateManager
 {
-    auto shim() const { return impl::shim<D, IVisualStateManager>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IVisualStateManagerFactory
+struct WINRT_EBO impl_IVisualStateManagerFactory
 {
-    auto shim() const { return impl::shim<D, IVisualStateManagerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::VisualStateManager CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVisualStateManagerOverrides
+struct WINRT_EBO impl_IVisualStateManagerOverrides
 {
-    auto shim() const { return impl::shim<D, IVisualStateManagerOverrides>(this); }
-
-public:
-
     bool GoToStateCore(const Windows::UI::Xaml::Controls::Control & control, const Windows::UI::Xaml::FrameworkElement & templateRoot, hstring_ref stateName, const Windows::UI::Xaml::VisualStateGroup & group, const Windows::UI::Xaml::VisualState & state, bool useTransitions) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVisualStateManagerProtected
+struct WINRT_EBO impl_IVisualStateManagerProtected
 {
-    auto shim() const { return impl::shim<D, IVisualStateManagerProtected>(this); }
-
-public:
-
     void RaiseCurrentStateChanging(const Windows::UI::Xaml::VisualStateGroup & stateGroup, const Windows::UI::Xaml::VisualState & oldState, const Windows::UI::Xaml::VisualState & newState, const Windows::UI::Xaml::Controls::Control & control) const;
     void RaiseCurrentStateChanged(const Windows::UI::Xaml::VisualStateGroup & stateGroup, const Windows::UI::Xaml::VisualState & oldState, const Windows::UI::Xaml::VisualState & newState, const Windows::UI::Xaml::Controls::Control & control) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVisualStateManagerStatics
+struct WINRT_EBO impl_IVisualStateManagerStatics
 {
-    auto shim() const { return impl::shim<D, IVisualStateManagerStatics>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<Windows::UI::Xaml::VisualStateGroup> GetVisualStateGroups(const Windows::UI::Xaml::FrameworkElement & obj) const;
     Windows::UI::Xaml::DependencyProperty CustomVisualStateManagerProperty() const;
     Windows::UI::Xaml::VisualStateManager GetCustomVisualStateManager(const Windows::UI::Xaml::FrameworkElement & obj) const;
@@ -2093,12 +1601,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVisualTransition
+struct WINRT_EBO impl_IVisualTransition
 {
-    auto shim() const { return impl::shim<D, IVisualTransition>(this); }
-
-public:
-
     Windows::UI::Xaml::Duration GeneratedDuration() const;
     void GeneratedDuration(const Windows::UI::Xaml::Duration & value) const;
     Windows::UI::Xaml::Media::Animation::EasingFunctionBase GeneratedEasingFunction() const;
@@ -2112,22 +1616,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVisualTransitionFactory
+struct WINRT_EBO impl_IVisualTransitionFactory
 {
-    auto shim() const { return impl::shim<D, IVisualTransitionFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::VisualTransition CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWindow
+struct WINRT_EBO impl_IWindow
 {
-    auto shim() const { return impl::shim<D, IWindow>(this); }
-
-public:
-
     Windows::Foundation::Rect Bounds() const;
     bool Visible() const;
     Windows::UI::Xaml::UIElement Content() const;
@@ -2155,32 +1651,20 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IWindow2
+struct WINRT_EBO impl_IWindow2
 {
-    auto shim() const { return impl::shim<D, IWindow2>(this); }
-
-public:
-
     void SetTitleBar(const Windows::UI::Xaml::UIElement & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWindowCreatedEventArgs
+struct WINRT_EBO impl_IWindowCreatedEventArgs
 {
-    auto shim() const { return impl::shim<D, IWindowCreatedEventArgs>(this); }
-
-public:
-
     Windows::UI::Xaml::Window Window() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWindowStatics
+struct WINRT_EBO impl_IWindowStatics
 {
-    auto shim() const { return impl::shim<D, IWindowStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::Window Current() const;
 };
 

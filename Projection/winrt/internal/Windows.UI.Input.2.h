@@ -186,36 +186,24 @@ template <> struct __declspec(uuid("3fbc1858-a43e-54dc-b0e2-8b098bddacf6")) __de
 namespace Windows::UI::Input {
 
 template <typename D>
-class WINRT_EBO impl_ICrossSlidingEventArgs
+struct WINRT_EBO impl_ICrossSlidingEventArgs
 {
-    auto shim() const { return impl::shim<D, ICrossSlidingEventArgs>(this); }
-
-public:
-
     Windows::Devices::Input::PointerDeviceType PointerDeviceType() const;
     Windows::Foundation::Point Position() const;
     Windows::UI::Input::CrossSlidingState CrossSlidingState() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDraggingEventArgs
+struct WINRT_EBO impl_IDraggingEventArgs
 {
-    auto shim() const { return impl::shim<D, IDraggingEventArgs>(this); }
-
-public:
-
     Windows::Devices::Input::PointerDeviceType PointerDeviceType() const;
     Windows::Foundation::Point Position() const;
     Windows::UI::Input::DraggingState DraggingState() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEdgeGesture
+struct WINRT_EBO impl_IEdgeGesture
 {
-    auto shim() const { return impl::shim<D, IEdgeGesture>(this); }
-
-public:
-
     event_token Starting(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::EdgeGesture, Windows::UI::Input::EdgeGestureEventArgs> & handler) const;
     using Starting_revoker = event_revoker<IEdgeGesture>;
     Starting_revoker Starting(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Input::EdgeGesture, Windows::UI::Input::EdgeGestureEventArgs> & handler) const;
@@ -231,32 +219,20 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IEdgeGestureEventArgs
+struct WINRT_EBO impl_IEdgeGestureEventArgs
 {
-    auto shim() const { return impl::shim<D, IEdgeGestureEventArgs>(this); }
-
-public:
-
     Windows::UI::Input::EdgeGestureKind Kind() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEdgeGestureStatics
+struct WINRT_EBO impl_IEdgeGestureStatics
 {
-    auto shim() const { return impl::shim<D, IEdgeGestureStatics>(this); }
-
-public:
-
     Windows::UI::Input::EdgeGesture GetForCurrentView() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGestureRecognizer
+struct WINRT_EBO impl_IGestureRecognizer
 {
-    auto shim() const { return impl::shim<D, IGestureRecognizer>(this); }
-
-public:
-
     Windows::UI::Input::GestureSettings GestureSettings() const;
     void GestureSettings(Windows::UI::Input::GestureSettings value) const;
     bool IsInertial() const;
@@ -336,24 +312,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHoldingEventArgs
+struct WINRT_EBO impl_IHoldingEventArgs
 {
-    auto shim() const { return impl::shim<D, IHoldingEventArgs>(this); }
-
-public:
-
     Windows::Devices::Input::PointerDeviceType PointerDeviceType() const;
     Windows::Foundation::Point Position() const;
     Windows::UI::Input::HoldingState HoldingState() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IKeyboardDeliveryInterceptor
+struct WINRT_EBO impl_IKeyboardDeliveryInterceptor
 {
-    auto shim() const { return impl::shim<D, IKeyboardDeliveryInterceptor>(this); }
-
-public:
-
     bool IsInterceptionEnabledWhenInForeground() const;
     void IsInterceptionEnabledWhenInForeground(bool value) const;
     event_token KeyDown(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::KeyboardDeliveryInterceptor, Windows::UI::Core::KeyEventArgs> & handler) const;
@@ -367,22 +335,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IKeyboardDeliveryInterceptorStatics
+struct WINRT_EBO impl_IKeyboardDeliveryInterceptorStatics
 {
-    auto shim() const { return impl::shim<D, IKeyboardDeliveryInterceptorStatics>(this); }
-
-public:
-
     Windows::UI::Input::KeyboardDeliveryInterceptor GetForCurrentView() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IManipulationCompletedEventArgs
+struct WINRT_EBO impl_IManipulationCompletedEventArgs
 {
-    auto shim() const { return impl::shim<D, IManipulationCompletedEventArgs>(this); }
-
-public:
-
     Windows::Devices::Input::PointerDeviceType PointerDeviceType() const;
     Windows::Foundation::Point Position() const;
     Windows::UI::Input::ManipulationDelta Cumulative() const;
@@ -390,12 +350,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IManipulationInertiaStartingEventArgs
+struct WINRT_EBO impl_IManipulationInertiaStartingEventArgs
 {
-    auto shim() const { return impl::shim<D, IManipulationInertiaStartingEventArgs>(this); }
-
-public:
-
     Windows::Devices::Input::PointerDeviceType PointerDeviceType() const;
     Windows::Foundation::Point Position() const;
     Windows::UI::Input::ManipulationDelta Delta() const;
@@ -404,24 +360,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IManipulationStartedEventArgs
+struct WINRT_EBO impl_IManipulationStartedEventArgs
 {
-    auto shim() const { return impl::shim<D, IManipulationStartedEventArgs>(this); }
-
-public:
-
     Windows::Devices::Input::PointerDeviceType PointerDeviceType() const;
     Windows::Foundation::Point Position() const;
     Windows::UI::Input::ManipulationDelta Cumulative() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IManipulationUpdatedEventArgs
+struct WINRT_EBO impl_IManipulationUpdatedEventArgs
 {
-    auto shim() const { return impl::shim<D, IManipulationUpdatedEventArgs>(this); }
-
-public:
-
     Windows::Devices::Input::PointerDeviceType PointerDeviceType() const;
     Windows::Foundation::Point Position() const;
     Windows::UI::Input::ManipulationDelta Delta() const;
@@ -430,12 +378,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMouseWheelParameters
+struct WINRT_EBO impl_IMouseWheelParameters
 {
-    auto shim() const { return impl::shim<D, IMouseWheelParameters>(this); }
-
-public:
-
     Windows::Foundation::Point CharTranslation() const;
     void CharTranslation(const Windows::Foundation::Point & value) const;
     float DeltaScale() const;
@@ -447,12 +391,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPointerPoint
+struct WINRT_EBO impl_IPointerPoint
 {
-    auto shim() const { return impl::shim<D, IPointerPoint>(this); }
-
-public:
-
     Windows::Devices::Input::PointerDevice PointerDevice() const;
     Windows::Foundation::Point Position() const;
     Windows::Foundation::Point RawPosition() const;
@@ -464,12 +404,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPointerPointProperties
+struct WINRT_EBO impl_IPointerPointProperties
 {
-    auto shim() const { return impl::shim<D, IPointerPointProperties>(this); }
-
-public:
-
     float Pressure() const;
     bool IsInverted() const;
     bool IsEraser() const;
@@ -497,22 +433,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPointerPointProperties2
+struct WINRT_EBO impl_IPointerPointProperties2
 {
-    auto shim() const { return impl::shim<D, IPointerPointProperties2>(this); }
-
-public:
-
     Windows::Foundation::IReference<float> ZDistance() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPointerPointStatics
+struct WINRT_EBO impl_IPointerPointStatics
 {
-    auto shim() const { return impl::shim<D, IPointerPointStatics>(this); }
-
-public:
-
     Windows::UI::Input::PointerPoint GetCurrentPoint(uint32_t pointerId) const;
     Windows::Foundation::Collections::IVector<Windows::UI::Input::PointerPoint> GetIntermediatePoints(uint32_t pointerId) const;
     Windows::UI::Input::PointerPoint GetCurrentPoint(uint32_t pointerId, const Windows::UI::Input::IPointerPointTransform & transform) const;
@@ -520,24 +448,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPointerPointTransform
+struct WINRT_EBO impl_IPointerPointTransform
 {
-    auto shim() const { return impl::shim<D, IPointerPointTransform>(this); }
-
-public:
-
     Windows::UI::Input::IPointerPointTransform Inverse() const;
     bool TryTransform(const Windows::Foundation::Point & inPoint, Windows::Foundation::Point & outPoint) const;
     Windows::Foundation::Rect TransformBounds(const Windows::Foundation::Rect & rect) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPointerVisualizationSettings
+struct WINRT_EBO impl_IPointerVisualizationSettings
 {
-    auto shim() const { return impl::shim<D, IPointerVisualizationSettings>(this); }
-
-public:
-
     void IsContactFeedbackEnabled(bool value) const;
     bool IsContactFeedbackEnabled() const;
     void IsBarrelButtonFeedbackEnabled(bool value) const;
@@ -545,22 +465,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPointerVisualizationSettingsStatics
+struct WINRT_EBO impl_IPointerVisualizationSettingsStatics
 {
-    auto shim() const { return impl::shim<D, IPointerVisualizationSettingsStatics>(this); }
-
-public:
-
     Windows::UI::Input::PointerVisualizationSettings GetForCurrentView() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRadialController
+struct WINRT_EBO impl_IRadialController
 {
-    auto shim() const { return impl::shim<D, IRadialController>(this); }
-
-public:
-
     Windows::UI::Input::RadialControllerMenu Menu() const;
     double RotationResolutionInDegrees() const;
     void RotationResolutionInDegrees(double value) const;
@@ -597,54 +509,34 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IRadialControllerButtonClickedEventArgs
+struct WINRT_EBO impl_IRadialControllerButtonClickedEventArgs
 {
-    auto shim() const { return impl::shim<D, IRadialControllerButtonClickedEventArgs>(this); }
-
-public:
-
     Windows::UI::Input::RadialControllerScreenContact Contact() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRadialControllerConfiguration
+struct WINRT_EBO impl_IRadialControllerConfiguration
 {
-    auto shim() const { return impl::shim<D, IRadialControllerConfiguration>(this); }
-
-public:
-
     void SetDefaultMenuItems(const Windows::Foundation::Collections::IIterable<winrt::Windows::UI::Input::RadialControllerSystemMenuItemKind> & buttons) const;
     void ResetToDefaultMenuItems() const;
     bool TrySelectDefaultMenuItem(Windows::UI::Input::RadialControllerSystemMenuItemKind type) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRadialControllerConfigurationStatics
+struct WINRT_EBO impl_IRadialControllerConfigurationStatics
 {
-    auto shim() const { return impl::shim<D, IRadialControllerConfigurationStatics>(this); }
-
-public:
-
     Windows::UI::Input::RadialControllerConfiguration GetForCurrentView() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRadialControllerControlAcquiredEventArgs
+struct WINRT_EBO impl_IRadialControllerControlAcquiredEventArgs
 {
-    auto shim() const { return impl::shim<D, IRadialControllerControlAcquiredEventArgs>(this); }
-
-public:
-
     Windows::UI::Input::RadialControllerScreenContact Contact() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRadialControllerMenu
+struct WINRT_EBO impl_IRadialControllerMenu
 {
-    auto shim() const { return impl::shim<D, IRadialControllerMenu>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<Windows::UI::Input::RadialControllerMenuItem> Items() const;
     bool IsEnabled() const;
     void IsEnabled(bool value) const;
@@ -654,12 +546,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IRadialControllerMenuItem
+struct WINRT_EBO impl_IRadialControllerMenuItem
 {
-    auto shim() const { return impl::shim<D, IRadialControllerMenuItem>(this); }
-
-public:
-
     hstring DisplayText() const;
     Windows::IInspectable Tag() const;
     void Tag(const Windows::IInspectable & value) const;
@@ -670,87 +558,55 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IRadialControllerMenuItemStatics
+struct WINRT_EBO impl_IRadialControllerMenuItemStatics
 {
-    auto shim() const { return impl::shim<D, IRadialControllerMenuItemStatics>(this); }
-
-public:
-
     Windows::UI::Input::RadialControllerMenuItem CreateFromIcon(hstring_ref displayText, const Windows::Storage::Streams::RandomAccessStreamReference & icon) const;
     Windows::UI::Input::RadialControllerMenuItem CreateFromKnownIcon(hstring_ref displayText, Windows::UI::Input::RadialControllerMenuKnownIcon value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRadialControllerRotationChangedEventArgs
+struct WINRT_EBO impl_IRadialControllerRotationChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IRadialControllerRotationChangedEventArgs>(this); }
-
-public:
-
     double RotationDeltaInDegrees() const;
     Windows::UI::Input::RadialControllerScreenContact Contact() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRadialControllerScreenContact
+struct WINRT_EBO impl_IRadialControllerScreenContact
 {
-    auto shim() const { return impl::shim<D, IRadialControllerScreenContact>(this); }
-
-public:
-
     Windows::Foundation::Rect Bounds() const;
     Windows::Foundation::Point Position() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRadialControllerScreenContactContinuedEventArgs
+struct WINRT_EBO impl_IRadialControllerScreenContactContinuedEventArgs
 {
-    auto shim() const { return impl::shim<D, IRadialControllerScreenContactContinuedEventArgs>(this); }
-
-public:
-
     Windows::UI::Input::RadialControllerScreenContact Contact() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRadialControllerScreenContactStartedEventArgs
+struct WINRT_EBO impl_IRadialControllerScreenContactStartedEventArgs
 {
-    auto shim() const { return impl::shim<D, IRadialControllerScreenContactStartedEventArgs>(this); }
-
-public:
-
     Windows::UI::Input::RadialControllerScreenContact Contact() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRadialControllerStatics
+struct WINRT_EBO impl_IRadialControllerStatics
 {
-    auto shim() const { return impl::shim<D, IRadialControllerStatics>(this); }
-
-public:
-
     bool IsSupported() const;
     Windows::UI::Input::RadialController CreateForCurrentView() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRightTappedEventArgs
+struct WINRT_EBO impl_IRightTappedEventArgs
 {
-    auto shim() const { return impl::shim<D, IRightTappedEventArgs>(this); }
-
-public:
-
     Windows::Devices::Input::PointerDeviceType PointerDeviceType() const;
     Windows::Foundation::Point Position() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITappedEventArgs
+struct WINRT_EBO impl_ITappedEventArgs
 {
-    auto shim() const { return impl::shim<D, ITappedEventArgs>(this); }
-
-public:
-
     Windows::Devices::Input::PointerDeviceType PointerDeviceType() const;
     Windows::Foundation::Point Position() const;
     uint32_t TapCount() const;

@@ -20,56 +20,36 @@ template <> struct __declspec(uuid("c50898f6-c536-5f47-8583-8b2c2438a13b")) __de
 namespace Windows::System::Profile {
 
 template <typename D>
-class WINRT_EBO impl_IAnalyticsInfoStatics
+struct WINRT_EBO impl_IAnalyticsInfoStatics
 {
-    auto shim() const { return impl::shim<D, IAnalyticsInfoStatics>(this); }
-
-public:
-
     Windows::System::Profile::AnalyticsVersionInfo VersionInfo() const;
     hstring DeviceForm() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAnalyticsVersionInfo
+struct WINRT_EBO impl_IAnalyticsVersionInfo
 {
-    auto shim() const { return impl::shim<D, IAnalyticsVersionInfo>(this); }
-
-public:
-
     hstring DeviceFamily() const;
     hstring DeviceFamilyVersion() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHardwareIdentificationStatics
+struct WINRT_EBO impl_IHardwareIdentificationStatics
 {
-    auto shim() const { return impl::shim<D, IHardwareIdentificationStatics>(this); }
-
-public:
-
     Windows::System::Profile::HardwareToken GetPackageSpecificToken(const Windows::Storage::Streams::IBuffer & nonce) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHardwareToken
+struct WINRT_EBO impl_IHardwareToken
 {
-    auto shim() const { return impl::shim<D, IHardwareToken>(this); }
-
-public:
-
     Windows::Storage::Streams::IBuffer Id() const;
     Windows::Storage::Streams::IBuffer Signature() const;
     Windows::Storage::Streams::IBuffer Certificate() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlatformDiagnosticsAndUsageDataSettingsStatics
+struct WINRT_EBO impl_IPlatformDiagnosticsAndUsageDataSettingsStatics
 {
-    auto shim() const { return impl::shim<D, IPlatformDiagnosticsAndUsageDataSettingsStatics>(this); }
-
-public:
-
     Windows::System::Profile::PlatformDataCollectionLevel CollectionLevel() const;
     event_token CollectionLevelChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const;
     using CollectionLevelChanged_revoker = event_revoker<IPlatformDiagnosticsAndUsageDataSettingsStatics>;
@@ -79,33 +59,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISharedModeSettingsStatics
+struct WINRT_EBO impl_ISharedModeSettingsStatics
 {
-    auto shim() const { return impl::shim<D, ISharedModeSettingsStatics>(this); }
-
-public:
-
     bool IsEnabled() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISystemIdentificationInfo
+struct WINRT_EBO impl_ISystemIdentificationInfo
 {
-    auto shim() const { return impl::shim<D, ISystemIdentificationInfo>(this); }
-
-public:
-
     Windows::Storage::Streams::IBuffer Id() const;
     Windows::System::Profile::SystemIdentificationSource Source() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISystemIdentificationStatics
+struct WINRT_EBO impl_ISystemIdentificationStatics
 {
-    auto shim() const { return impl::shim<D, ISystemIdentificationStatics>(this); }
-
-public:
-
     Windows::System::Profile::SystemIdentificationInfo GetSystemIdForPublisher() const;
     Windows::System::Profile::SystemIdentificationInfo GetSystemIdForUser(const Windows::System::User & user) const;
 };

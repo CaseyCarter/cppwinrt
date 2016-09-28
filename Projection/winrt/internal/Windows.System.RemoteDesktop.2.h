@@ -10,12 +10,8 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::System::RemoteDesktop {
 
 template <typename D>
-class WINRT_EBO impl_IInteractiveSessionStatics
+struct WINRT_EBO impl_IInteractiveSessionStatics
 {
-    auto shim() const { return impl::shim<D, IInteractiveSessionStatics>(this); }
-
-public:
-
     bool IsRemote() const;
 };
 

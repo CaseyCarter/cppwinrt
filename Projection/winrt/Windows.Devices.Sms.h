@@ -1784,610 +1784,610 @@ namespace Windows::Devices::Sms {
 template <typename D> Windows::Devices::Sms::SmsMessageType impl_ISmsMessageBase<D>::MessageType() const
 {
     Windows::Devices::Sms::SmsMessageType value {};
-    check_hresult(shim()->get_MessageType(&value));
+    check_hresult(static_cast<const ISmsMessageBase &>(static_cast<const D &>(*this))->get_MessageType(&value));
     return value;
 }
 
 template <typename D> hstring impl_ISmsMessageBase<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(shim()->get_DeviceId(put(value)));
+    check_hresult(static_cast<const ISmsMessageBase &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Sms::CellularClass impl_ISmsMessageBase<D>::CellularClass() const
 {
     Windows::Devices::Sms::CellularClass value {};
-    check_hresult(shim()->get_CellularClass(&value));
+    check_hresult(static_cast<const ISmsMessageBase &>(static_cast<const D &>(*this))->get_CellularClass(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Sms::SmsMessageClass impl_ISmsMessageBase<D>::MessageClass() const
 {
     Windows::Devices::Sms::SmsMessageClass value {};
-    check_hresult(shim()->get_MessageClass(&value));
+    check_hresult(static_cast<const ISmsMessageBase &>(static_cast<const D &>(*this))->get_MessageClass(&value));
     return value;
 }
 
 template <typename D> hstring impl_ISmsMessageBase<D>::SimIccId() const
 {
     hstring value;
-    check_hresult(shim()->get_SimIccId(put(value)));
+    check_hresult(static_cast<const ISmsMessageBase &>(static_cast<const D &>(*this))->get_SimIccId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_ISmsTextMessage2<D>::Timestamp() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->get_Timestamp(put(value)));
+    check_hresult(static_cast<const ISmsTextMessage2 &>(static_cast<const D &>(*this))->get_Timestamp(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISmsTextMessage2<D>::To() const
 {
     hstring value;
-    check_hresult(shim()->get_To(put(value)));
+    check_hresult(static_cast<const ISmsTextMessage2 &>(static_cast<const D &>(*this))->get_To(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISmsTextMessage2<D>::To(hstring_ref value) const
 {
-    check_hresult(shim()->put_To(get(value)));
+    check_hresult(static_cast<const ISmsTextMessage2 &>(static_cast<const D &>(*this))->put_To(get(value)));
 }
 
 template <typename D> hstring impl_ISmsTextMessage2<D>::From() const
 {
     hstring value;
-    check_hresult(shim()->get_From(put(value)));
+    check_hresult(static_cast<const ISmsTextMessage2 &>(static_cast<const D &>(*this))->get_From(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISmsTextMessage2<D>::Body() const
 {
     hstring value;
-    check_hresult(shim()->get_Body(put(value)));
+    check_hresult(static_cast<const ISmsTextMessage2 &>(static_cast<const D &>(*this))->get_Body(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISmsTextMessage2<D>::Body(hstring_ref value) const
 {
-    check_hresult(shim()->put_Body(get(value)));
+    check_hresult(static_cast<const ISmsTextMessage2 &>(static_cast<const D &>(*this))->put_Body(get(value)));
 }
 
 template <typename D> Windows::Devices::Sms::SmsEncoding impl_ISmsTextMessage2<D>::Encoding() const
 {
     Windows::Devices::Sms::SmsEncoding value {};
-    check_hresult(shim()->get_Encoding(&value));
+    check_hresult(static_cast<const ISmsTextMessage2 &>(static_cast<const D &>(*this))->get_Encoding(&value));
     return value;
 }
 
 template <typename D> void impl_ISmsTextMessage2<D>::Encoding(Windows::Devices::Sms::SmsEncoding value) const
 {
-    check_hresult(shim()->put_Encoding(value));
+    check_hresult(static_cast<const ISmsTextMessage2 &>(static_cast<const D &>(*this))->put_Encoding(value));
 }
 
 template <typename D> hstring impl_ISmsTextMessage2<D>::CallbackNumber() const
 {
     hstring value;
-    check_hresult(shim()->get_CallbackNumber(put(value)));
+    check_hresult(static_cast<const ISmsTextMessage2 &>(static_cast<const D &>(*this))->get_CallbackNumber(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISmsTextMessage2<D>::CallbackNumber(hstring_ref value) const
 {
-    check_hresult(shim()->put_CallbackNumber(get(value)));
+    check_hresult(static_cast<const ISmsTextMessage2 &>(static_cast<const D &>(*this))->put_CallbackNumber(get(value)));
 }
 
 template <typename D> bool impl_ISmsTextMessage2<D>::IsDeliveryNotificationEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_IsDeliveryNotificationEnabled(&value));
+    check_hresult(static_cast<const ISmsTextMessage2 &>(static_cast<const D &>(*this))->get_IsDeliveryNotificationEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_ISmsTextMessage2<D>::IsDeliveryNotificationEnabled(bool value) const
 {
-    check_hresult(shim()->put_IsDeliveryNotificationEnabled(value));
+    check_hresult(static_cast<const ISmsTextMessage2 &>(static_cast<const D &>(*this))->put_IsDeliveryNotificationEnabled(value));
 }
 
 template <typename D> int32_t impl_ISmsTextMessage2<D>::RetryAttemptCount() const
 {
     int32_t value {};
-    check_hresult(shim()->get_RetryAttemptCount(&value));
+    check_hresult(static_cast<const ISmsTextMessage2 &>(static_cast<const D &>(*this))->get_RetryAttemptCount(&value));
     return value;
 }
 
 template <typename D> void impl_ISmsTextMessage2<D>::RetryAttemptCount(int32_t value) const
 {
-    check_hresult(shim()->put_RetryAttemptCount(value));
+    check_hresult(static_cast<const ISmsTextMessage2 &>(static_cast<const D &>(*this))->put_RetryAttemptCount(value));
 }
 
 template <typename D> int32_t impl_ISmsTextMessage2<D>::TeleserviceId() const
 {
     int32_t value {};
-    check_hresult(shim()->get_TeleserviceId(&value));
+    check_hresult(static_cast<const ISmsTextMessage2 &>(static_cast<const D &>(*this))->get_TeleserviceId(&value));
     return value;
 }
 
 template <typename D> int32_t impl_ISmsTextMessage2<D>::ProtocolId() const
 {
     int32_t value {};
-    check_hresult(shim()->get_ProtocolId(&value));
+    check_hresult(static_cast<const ISmsTextMessage2 &>(static_cast<const D &>(*this))->get_ProtocolId(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_ISmsWapMessage<D>::Timestamp() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->get_Timestamp(put(value)));
+    check_hresult(static_cast<const ISmsWapMessage &>(static_cast<const D &>(*this))->get_Timestamp(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISmsWapMessage<D>::To() const
 {
     hstring value;
-    check_hresult(shim()->get_To(put(value)));
+    check_hresult(static_cast<const ISmsWapMessage &>(static_cast<const D &>(*this))->get_To(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISmsWapMessage<D>::From() const
 {
     hstring value;
-    check_hresult(shim()->get_From(put(value)));
+    check_hresult(static_cast<const ISmsWapMessage &>(static_cast<const D &>(*this))->get_From(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISmsWapMessage<D>::ApplicationId() const
 {
     hstring value;
-    check_hresult(shim()->get_ApplicationId(put(value)));
+    check_hresult(static_cast<const ISmsWapMessage &>(static_cast<const D &>(*this))->get_ApplicationId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISmsWapMessage<D>::ContentType() const
 {
     hstring value;
-    check_hresult(shim()->get_ContentType(put(value)));
+    check_hresult(static_cast<const ISmsWapMessage &>(static_cast<const D &>(*this))->get_ContentType(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_ISmsWapMessage<D>::BinaryBody() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(shim()->get_BinaryBody(put(value)));
+    check_hresult(static_cast<const ISmsWapMessage &>(static_cast<const D &>(*this))->get_BinaryBody(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IMap<hstring, hstring> impl_ISmsWapMessage<D>::Headers() const
 {
     Windows::Foundation::Collections::IMap<hstring, hstring> value;
-    check_hresult(shim()->get_Headers(put(value)));
+    check_hresult(static_cast<const ISmsWapMessage &>(static_cast<const D &>(*this))->get_Headers(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_ISmsAppMessage<D>::Timestamp() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->get_Timestamp(put(value)));
+    check_hresult(static_cast<const ISmsAppMessage &>(static_cast<const D &>(*this))->get_Timestamp(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISmsAppMessage<D>::To() const
 {
     hstring value;
-    check_hresult(shim()->get_To(put(value)));
+    check_hresult(static_cast<const ISmsAppMessage &>(static_cast<const D &>(*this))->get_To(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISmsAppMessage<D>::To(hstring_ref value) const
 {
-    check_hresult(shim()->put_To(get(value)));
+    check_hresult(static_cast<const ISmsAppMessage &>(static_cast<const D &>(*this))->put_To(get(value)));
 }
 
 template <typename D> hstring impl_ISmsAppMessage<D>::From() const
 {
     hstring value;
-    check_hresult(shim()->get_From(put(value)));
+    check_hresult(static_cast<const ISmsAppMessage &>(static_cast<const D &>(*this))->get_From(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISmsAppMessage<D>::Body() const
 {
     hstring value;
-    check_hresult(shim()->get_Body(put(value)));
+    check_hresult(static_cast<const ISmsAppMessage &>(static_cast<const D &>(*this))->get_Body(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISmsAppMessage<D>::Body(hstring_ref value) const
 {
-    check_hresult(shim()->put_Body(get(value)));
+    check_hresult(static_cast<const ISmsAppMessage &>(static_cast<const D &>(*this))->put_Body(get(value)));
 }
 
 template <typename D> hstring impl_ISmsAppMessage<D>::CallbackNumber() const
 {
     hstring value;
-    check_hresult(shim()->get_CallbackNumber(put(value)));
+    check_hresult(static_cast<const ISmsAppMessage &>(static_cast<const D &>(*this))->get_CallbackNumber(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISmsAppMessage<D>::CallbackNumber(hstring_ref value) const
 {
-    check_hresult(shim()->put_CallbackNumber(get(value)));
+    check_hresult(static_cast<const ISmsAppMessage &>(static_cast<const D &>(*this))->put_CallbackNumber(get(value)));
 }
 
 template <typename D> bool impl_ISmsAppMessage<D>::IsDeliveryNotificationEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_IsDeliveryNotificationEnabled(&value));
+    check_hresult(static_cast<const ISmsAppMessage &>(static_cast<const D &>(*this))->get_IsDeliveryNotificationEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_ISmsAppMessage<D>::IsDeliveryNotificationEnabled(bool value) const
 {
-    check_hresult(shim()->put_IsDeliveryNotificationEnabled(value));
+    check_hresult(static_cast<const ISmsAppMessage &>(static_cast<const D &>(*this))->put_IsDeliveryNotificationEnabled(value));
 }
 
 template <typename D> int32_t impl_ISmsAppMessage<D>::RetryAttemptCount() const
 {
     int32_t value {};
-    check_hresult(shim()->get_RetryAttemptCount(&value));
+    check_hresult(static_cast<const ISmsAppMessage &>(static_cast<const D &>(*this))->get_RetryAttemptCount(&value));
     return value;
 }
 
 template <typename D> void impl_ISmsAppMessage<D>::RetryAttemptCount(int32_t value) const
 {
-    check_hresult(shim()->put_RetryAttemptCount(value));
+    check_hresult(static_cast<const ISmsAppMessage &>(static_cast<const D &>(*this))->put_RetryAttemptCount(value));
 }
 
 template <typename D> Windows::Devices::Sms::SmsEncoding impl_ISmsAppMessage<D>::Encoding() const
 {
     Windows::Devices::Sms::SmsEncoding value {};
-    check_hresult(shim()->get_Encoding(&value));
+    check_hresult(static_cast<const ISmsAppMessage &>(static_cast<const D &>(*this))->get_Encoding(&value));
     return value;
 }
 
 template <typename D> void impl_ISmsAppMessage<D>::Encoding(Windows::Devices::Sms::SmsEncoding value) const
 {
-    check_hresult(shim()->put_Encoding(value));
+    check_hresult(static_cast<const ISmsAppMessage &>(static_cast<const D &>(*this))->put_Encoding(value));
 }
 
 template <typename D> int32_t impl_ISmsAppMessage<D>::PortNumber() const
 {
     int32_t value {};
-    check_hresult(shim()->get_PortNumber(&value));
+    check_hresult(static_cast<const ISmsAppMessage &>(static_cast<const D &>(*this))->get_PortNumber(&value));
     return value;
 }
 
 template <typename D> void impl_ISmsAppMessage<D>::PortNumber(int32_t value) const
 {
-    check_hresult(shim()->put_PortNumber(value));
+    check_hresult(static_cast<const ISmsAppMessage &>(static_cast<const D &>(*this))->put_PortNumber(value));
 }
 
 template <typename D> int32_t impl_ISmsAppMessage<D>::TeleserviceId() const
 {
     int32_t value {};
-    check_hresult(shim()->get_TeleserviceId(&value));
+    check_hresult(static_cast<const ISmsAppMessage &>(static_cast<const D &>(*this))->get_TeleserviceId(&value));
     return value;
 }
 
 template <typename D> void impl_ISmsAppMessage<D>::TeleserviceId(int32_t value) const
 {
-    check_hresult(shim()->put_TeleserviceId(value));
+    check_hresult(static_cast<const ISmsAppMessage &>(static_cast<const D &>(*this))->put_TeleserviceId(value));
 }
 
 template <typename D> int32_t impl_ISmsAppMessage<D>::ProtocolId() const
 {
     int32_t value {};
-    check_hresult(shim()->get_ProtocolId(&value));
+    check_hresult(static_cast<const ISmsAppMessage &>(static_cast<const D &>(*this))->get_ProtocolId(&value));
     return value;
 }
 
 template <typename D> void impl_ISmsAppMessage<D>::ProtocolId(int32_t value) const
 {
-    check_hresult(shim()->put_ProtocolId(value));
+    check_hresult(static_cast<const ISmsAppMessage &>(static_cast<const D &>(*this))->put_ProtocolId(value));
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_ISmsAppMessage<D>::BinaryBody() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(shim()->get_BinaryBody(put(value)));
+    check_hresult(static_cast<const ISmsAppMessage &>(static_cast<const D &>(*this))->get_BinaryBody(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISmsAppMessage<D>::BinaryBody(const Windows::Storage::Streams::IBuffer & value) const
 {
-    check_hresult(shim()->put_BinaryBody(get(value)));
+    check_hresult(static_cast<const ISmsAppMessage &>(static_cast<const D &>(*this))->put_BinaryBody(get(value)));
 }
 
 template <typename D> Windows::Foundation::DateTime impl_ISmsBroadcastMessage<D>::Timestamp() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->get_Timestamp(put(value)));
+    check_hresult(static_cast<const ISmsBroadcastMessage &>(static_cast<const D &>(*this))->get_Timestamp(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISmsBroadcastMessage<D>::To() const
 {
     hstring value;
-    check_hresult(shim()->get_To(put(value)));
+    check_hresult(static_cast<const ISmsBroadcastMessage &>(static_cast<const D &>(*this))->get_To(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISmsBroadcastMessage<D>::Body() const
 {
     hstring value;
-    check_hresult(shim()->get_Body(put(value)));
+    check_hresult(static_cast<const ISmsBroadcastMessage &>(static_cast<const D &>(*this))->get_Body(put(value)));
     return value;
 }
 
 template <typename D> int32_t impl_ISmsBroadcastMessage<D>::Channel() const
 {
     int32_t value {};
-    check_hresult(shim()->get_Channel(&value));
+    check_hresult(static_cast<const ISmsBroadcastMessage &>(static_cast<const D &>(*this))->get_Channel(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Sms::SmsGeographicalScope impl_ISmsBroadcastMessage<D>::GeographicalScope() const
 {
     Windows::Devices::Sms::SmsGeographicalScope value {};
-    check_hresult(shim()->get_GeographicalScope(&value));
+    check_hresult(static_cast<const ISmsBroadcastMessage &>(static_cast<const D &>(*this))->get_GeographicalScope(&value));
     return value;
 }
 
 template <typename D> int32_t impl_ISmsBroadcastMessage<D>::MessageCode() const
 {
     int32_t value {};
-    check_hresult(shim()->get_MessageCode(&value));
+    check_hresult(static_cast<const ISmsBroadcastMessage &>(static_cast<const D &>(*this))->get_MessageCode(&value));
     return value;
 }
 
 template <typename D> int32_t impl_ISmsBroadcastMessage<D>::UpdateNumber() const
 {
     int32_t value {};
-    check_hresult(shim()->get_UpdateNumber(&value));
+    check_hresult(static_cast<const ISmsBroadcastMessage &>(static_cast<const D &>(*this))->get_UpdateNumber(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Sms::SmsBroadcastType impl_ISmsBroadcastMessage<D>::BroadcastType() const
 {
     Windows::Devices::Sms::SmsBroadcastType value {};
-    check_hresult(shim()->get_BroadcastType(&value));
+    check_hresult(static_cast<const ISmsBroadcastMessage &>(static_cast<const D &>(*this))->get_BroadcastType(&value));
     return value;
 }
 
 template <typename D> bool impl_ISmsBroadcastMessage<D>::IsEmergencyAlert() const
 {
     bool value {};
-    check_hresult(shim()->get_IsEmergencyAlert(&value));
+    check_hresult(static_cast<const ISmsBroadcastMessage &>(static_cast<const D &>(*this))->get_IsEmergencyAlert(&value));
     return value;
 }
 
 template <typename D> bool impl_ISmsBroadcastMessage<D>::IsUserPopupRequested() const
 {
     bool value {};
-    check_hresult(shim()->get_IsUserPopupRequested(&value));
+    check_hresult(static_cast<const ISmsBroadcastMessage &>(static_cast<const D &>(*this))->get_IsUserPopupRequested(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_ISmsVoicemailMessage<D>::Timestamp() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->get_Timestamp(put(value)));
+    check_hresult(static_cast<const ISmsVoicemailMessage &>(static_cast<const D &>(*this))->get_Timestamp(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISmsVoicemailMessage<D>::To() const
 {
     hstring value;
-    check_hresult(shim()->get_To(put(value)));
+    check_hresult(static_cast<const ISmsVoicemailMessage &>(static_cast<const D &>(*this))->get_To(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISmsVoicemailMessage<D>::Body() const
 {
     hstring value;
-    check_hresult(shim()->get_Body(put(value)));
+    check_hresult(static_cast<const ISmsVoicemailMessage &>(static_cast<const D &>(*this))->get_Body(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<int32_t> impl_ISmsVoicemailMessage<D>::MessageCount() const
 {
     Windows::Foundation::IReference<int32_t> value;
-    check_hresult(shim()->get_MessageCount(put(value)));
+    check_hresult(static_cast<const ISmsVoicemailMessage &>(static_cast<const D &>(*this))->get_MessageCount(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISmsStatusMessage<D>::To() const
 {
     hstring value;
-    check_hresult(shim()->get_To(put(value)));
+    check_hresult(static_cast<const ISmsStatusMessage &>(static_cast<const D &>(*this))->get_To(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISmsStatusMessage<D>::From() const
 {
     hstring value;
-    check_hresult(shim()->get_From(put(value)));
+    check_hresult(static_cast<const ISmsStatusMessage &>(static_cast<const D &>(*this))->get_From(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISmsStatusMessage<D>::Body() const
 {
     hstring value;
-    check_hresult(shim()->get_Body(put(value)));
+    check_hresult(static_cast<const ISmsStatusMessage &>(static_cast<const D &>(*this))->get_Body(put(value)));
     return value;
 }
 
 template <typename D> int32_t impl_ISmsStatusMessage<D>::Status() const
 {
     int32_t value {};
-    check_hresult(shim()->get_Status(&value));
+    check_hresult(static_cast<const ISmsStatusMessage &>(static_cast<const D &>(*this))->get_Status(&value));
     return value;
 }
 
 template <typename D> int32_t impl_ISmsStatusMessage<D>::MessageReferenceNumber() const
 {
     int32_t value {};
-    check_hresult(shim()->get_MessageReferenceNumber(&value));
+    check_hresult(static_cast<const ISmsStatusMessage &>(static_cast<const D &>(*this))->get_MessageReferenceNumber(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_ISmsStatusMessage<D>::ServiceCenterTimestamp() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->get_ServiceCenterTimestamp(put(value)));
+    check_hresult(static_cast<const ISmsStatusMessage &>(static_cast<const D &>(*this))->get_ServiceCenterTimestamp(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_ISmsStatusMessage<D>::DischargeTime() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->get_DischargeTime(put(value)));
+    check_hresult(static_cast<const ISmsStatusMessage &>(static_cast<const D &>(*this))->get_DischargeTime(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ISmsSendMessageResult<D>::IsSuccessful() const
 {
     bool value {};
-    check_hresult(shim()->get_IsSuccessful(&value));
+    check_hresult(static_cast<const ISmsSendMessageResult &>(static_cast<const D &>(*this))->get_IsSuccessful(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<int32_t> impl_ISmsSendMessageResult<D>::MessageReferenceNumbers() const
 {
     Windows::Foundation::Collections::IVectorView<int32_t> value;
-    check_hresult(shim()->get_MessageReferenceNumbers(put(value)));
+    check_hresult(static_cast<const ISmsSendMessageResult &>(static_cast<const D &>(*this))->get_MessageReferenceNumbers(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Sms::CellularClass impl_ISmsSendMessageResult<D>::CellularClass() const
 {
     Windows::Devices::Sms::CellularClass value {};
-    check_hresult(shim()->get_CellularClass(&value));
+    check_hresult(static_cast<const ISmsSendMessageResult &>(static_cast<const D &>(*this))->get_CellularClass(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Sms::SmsModemErrorCode impl_ISmsSendMessageResult<D>::ModemErrorCode() const
 {
     Windows::Devices::Sms::SmsModemErrorCode value {};
-    check_hresult(shim()->get_ModemErrorCode(&value));
+    check_hresult(static_cast<const ISmsSendMessageResult &>(static_cast<const D &>(*this))->get_ModemErrorCode(&value));
     return value;
 }
 
 template <typename D> bool impl_ISmsSendMessageResult<D>::IsErrorTransient() const
 {
     bool value {};
-    check_hresult(shim()->get_IsErrorTransient(&value));
+    check_hresult(static_cast<const ISmsSendMessageResult &>(static_cast<const D &>(*this))->get_IsErrorTransient(&value));
     return value;
 }
 
 template <typename D> int32_t impl_ISmsSendMessageResult<D>::NetworkCauseCode() const
 {
     int32_t value {};
-    check_hresult(shim()->get_NetworkCauseCode(&value));
+    check_hresult(static_cast<const ISmsSendMessageResult &>(static_cast<const D &>(*this))->get_NetworkCauseCode(&value));
     return value;
 }
 
 template <typename D> int32_t impl_ISmsSendMessageResult<D>::TransportFailureCause() const
 {
     int32_t value {};
-    check_hresult(shim()->get_TransportFailureCause(&value));
+    check_hresult(static_cast<const ISmsSendMessageResult &>(static_cast<const D &>(*this))->get_TransportFailureCause(&value));
     return value;
 }
 
 template <typename D> hstring impl_ISmsDevice2Statics<D>::GetDeviceSelector() const
 {
     hstring value;
-    check_hresult(shim()->abi_GetDeviceSelector(put(value)));
+    check_hresult(static_cast<const ISmsDevice2Statics &>(static_cast<const D &>(*this))->abi_GetDeviceSelector(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Sms::SmsDevice2 impl_ISmsDevice2Statics<D>::FromId(hstring_ref deviceId) const
 {
     Windows::Devices::Sms::SmsDevice2 value { nullptr };
-    check_hresult(shim()->abi_FromId(get(deviceId), put(value)));
+    check_hresult(static_cast<const ISmsDevice2Statics &>(static_cast<const D &>(*this))->abi_FromId(get(deviceId), put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Sms::SmsDevice2 impl_ISmsDevice2Statics<D>::GetDefault() const
 {
     Windows::Devices::Sms::SmsDevice2 value { nullptr };
-    check_hresult(shim()->abi_GetDefault(put(value)));
+    check_hresult(static_cast<const ISmsDevice2Statics &>(static_cast<const D &>(*this))->abi_GetDefault(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Sms::SmsDevice2 impl_ISmsDevice2Statics<D>::FromParentId(hstring_ref parentDeviceId) const
 {
     Windows::Devices::Sms::SmsDevice2 value { nullptr };
-    check_hresult(shim()->abi_FromParentId(get(parentDeviceId), put(value)));
+    check_hresult(static_cast<const ISmsDevice2Statics &>(static_cast<const D &>(*this))->abi_FromParentId(get(parentDeviceId), put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISmsDevice2<D>::SmscAddress() const
 {
     hstring value;
-    check_hresult(shim()->get_SmscAddress(put(value)));
+    check_hresult(static_cast<const ISmsDevice2 &>(static_cast<const D &>(*this))->get_SmscAddress(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISmsDevice2<D>::SmscAddress(hstring_ref value) const
 {
-    check_hresult(shim()->put_SmscAddress(get(value)));
+    check_hresult(static_cast<const ISmsDevice2 &>(static_cast<const D &>(*this))->put_SmscAddress(get(value)));
 }
 
 template <typename D> hstring impl_ISmsDevice2<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(shim()->get_DeviceId(put(value)));
+    check_hresult(static_cast<const ISmsDevice2 &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISmsDevice2<D>::ParentDeviceId() const
 {
     hstring value;
-    check_hresult(shim()->get_ParentDeviceId(put(value)));
+    check_hresult(static_cast<const ISmsDevice2 &>(static_cast<const D &>(*this))->get_ParentDeviceId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISmsDevice2<D>::AccountPhoneNumber() const
 {
     hstring value;
-    check_hresult(shim()->get_AccountPhoneNumber(put(value)));
+    check_hresult(static_cast<const ISmsDevice2 &>(static_cast<const D &>(*this))->get_AccountPhoneNumber(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Sms::CellularClass impl_ISmsDevice2<D>::CellularClass() const
 {
     Windows::Devices::Sms::CellularClass value {};
-    check_hresult(shim()->get_CellularClass(&value));
+    check_hresult(static_cast<const ISmsDevice2 &>(static_cast<const D &>(*this))->get_CellularClass(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Sms::SmsDeviceStatus impl_ISmsDevice2<D>::DeviceStatus() const
 {
     Windows::Devices::Sms::SmsDeviceStatus value {};
-    check_hresult(shim()->get_DeviceStatus(&value));
+    check_hresult(static_cast<const ISmsDevice2 &>(static_cast<const D &>(*this))->get_DeviceStatus(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Sms::SmsEncodedLength impl_ISmsDevice2<D>::CalculateLength(const Windows::Devices::Sms::ISmsMessageBase & message) const
 {
     Windows::Devices::Sms::SmsEncodedLength value {};
-    check_hresult(shim()->abi_CalculateLength(get(message), put(value)));
+    check_hresult(static_cast<const ISmsDevice2 &>(static_cast<const D &>(*this))->abi_CalculateLength(get(message), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Sms::SmsSendMessageResult> impl_ISmsDevice2<D>::SendMessageAndGetResultAsync(const Windows::Devices::Sms::ISmsMessageBase & message) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Sms::SmsSendMessageResult> asyncInfo;
-    check_hresult(shim()->abi_SendMessageAndGetResultAsync(get(message), put(asyncInfo)));
+    check_hresult(static_cast<const ISmsDevice2 &>(static_cast<const D &>(*this))->abi_SendMessageAndGetResultAsync(get(message), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> event_token impl_ISmsDevice2<D>::DeviceStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Sms::SmsDevice2, Windows::IInspectable> & eventHandler) const
 {
     event_token eventCookie {};
-    check_hresult(shim()->add_DeviceStatusChanged(get(eventHandler), &eventCookie));
+    check_hresult(static_cast<const ISmsDevice2 &>(static_cast<const D &>(*this))->add_DeviceStatusChanged(get(eventHandler), &eventCookie));
     return eventCookie;
 }
 
@@ -2398,222 +2398,222 @@ template <typename D> event_revoker<ISmsDevice2> impl_ISmsDevice2<D>::DeviceStat
 
 template <typename D> void impl_ISmsDevice2<D>::DeviceStatusChanged(event_token eventCookie) const
 {
-    check_hresult(shim()->remove_DeviceStatusChanged(eventCookie));
+    check_hresult(static_cast<const ISmsDevice2 &>(static_cast<const D &>(*this))->remove_DeviceStatusChanged(eventCookie));
 }
 
 template <typename D> Windows::Devices::Sms::SmsMessageType impl_ISmsMessageReceivedTriggerDetails<D>::MessageType() const
 {
     Windows::Devices::Sms::SmsMessageType value {};
-    check_hresult(shim()->get_MessageType(&value));
+    check_hresult(static_cast<const ISmsMessageReceivedTriggerDetails &>(static_cast<const D &>(*this))->get_MessageType(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Sms::SmsTextMessage2 impl_ISmsMessageReceivedTriggerDetails<D>::TextMessage() const
 {
     Windows::Devices::Sms::SmsTextMessage2 value { nullptr };
-    check_hresult(shim()->get_TextMessage(put(value)));
+    check_hresult(static_cast<const ISmsMessageReceivedTriggerDetails &>(static_cast<const D &>(*this))->get_TextMessage(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Sms::SmsWapMessage impl_ISmsMessageReceivedTriggerDetails<D>::WapMessage() const
 {
     Windows::Devices::Sms::SmsWapMessage value { nullptr };
-    check_hresult(shim()->get_WapMessage(put(value)));
+    check_hresult(static_cast<const ISmsMessageReceivedTriggerDetails &>(static_cast<const D &>(*this))->get_WapMessage(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Sms::SmsAppMessage impl_ISmsMessageReceivedTriggerDetails<D>::AppMessage() const
 {
     Windows::Devices::Sms::SmsAppMessage value { nullptr };
-    check_hresult(shim()->get_AppMessage(put(value)));
+    check_hresult(static_cast<const ISmsMessageReceivedTriggerDetails &>(static_cast<const D &>(*this))->get_AppMessage(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Sms::SmsBroadcastMessage impl_ISmsMessageReceivedTriggerDetails<D>::BroadcastMessage() const
 {
     Windows::Devices::Sms::SmsBroadcastMessage value { nullptr };
-    check_hresult(shim()->get_BroadcastMessage(put(value)));
+    check_hresult(static_cast<const ISmsMessageReceivedTriggerDetails &>(static_cast<const D &>(*this))->get_BroadcastMessage(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Sms::SmsVoicemailMessage impl_ISmsMessageReceivedTriggerDetails<D>::VoicemailMessage() const
 {
     Windows::Devices::Sms::SmsVoicemailMessage value { nullptr };
-    check_hresult(shim()->get_VoicemailMessage(put(value)));
+    check_hresult(static_cast<const ISmsMessageReceivedTriggerDetails &>(static_cast<const D &>(*this))->get_VoicemailMessage(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Sms::SmsStatusMessage impl_ISmsMessageReceivedTriggerDetails<D>::StatusMessage() const
 {
     Windows::Devices::Sms::SmsStatusMessage value { nullptr };
-    check_hresult(shim()->get_StatusMessage(put(value)));
+    check_hresult(static_cast<const ISmsMessageReceivedTriggerDetails &>(static_cast<const D &>(*this))->get_StatusMessage(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISmsMessageReceivedTriggerDetails<D>::Drop() const
 {
-    check_hresult(shim()->abi_Drop());
+    check_hresult(static_cast<const ISmsMessageReceivedTriggerDetails &>(static_cast<const D &>(*this))->abi_Drop());
 }
 
 template <typename D> void impl_ISmsMessageReceivedTriggerDetails<D>::Accept() const
 {
-    check_hresult(shim()->abi_Accept());
+    check_hresult(static_cast<const ISmsMessageReceivedTriggerDetails &>(static_cast<const D &>(*this))->abi_Accept());
 }
 
 template <typename D> Windows::Devices::Sms::SmsMessageType impl_ISmsFilterRule<D>::MessageType() const
 {
     Windows::Devices::Sms::SmsMessageType value {};
-    check_hresult(shim()->get_MessageType(&value));
+    check_hresult(static_cast<const ISmsFilterRule &>(static_cast<const D &>(*this))->get_MessageType(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_ISmsFilterRule<D>::ImsiPrefixes() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(shim()->get_ImsiPrefixes(put(value)));
+    check_hresult(static_cast<const ISmsFilterRule &>(static_cast<const D &>(*this))->get_ImsiPrefixes(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_ISmsFilterRule<D>::DeviceIds() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(shim()->get_DeviceIds(put(value)));
+    check_hresult(static_cast<const ISmsFilterRule &>(static_cast<const D &>(*this))->get_DeviceIds(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_ISmsFilterRule<D>::SenderNumbers() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(shim()->get_SenderNumbers(put(value)));
+    check_hresult(static_cast<const ISmsFilterRule &>(static_cast<const D &>(*this))->get_SenderNumbers(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_ISmsFilterRule<D>::TextMessagePrefixes() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(shim()->get_TextMessagePrefixes(put(value)));
+    check_hresult(static_cast<const ISmsFilterRule &>(static_cast<const D &>(*this))->get_TextMessagePrefixes(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<int32_t> impl_ISmsFilterRule<D>::PortNumbers() const
 {
     Windows::Foundation::Collections::IVector<int32_t> value;
-    check_hresult(shim()->get_PortNumbers(put(value)));
+    check_hresult(static_cast<const ISmsFilterRule &>(static_cast<const D &>(*this))->get_PortNumbers(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Sms::CellularClass impl_ISmsFilterRule<D>::CellularClass() const
 {
     Windows::Devices::Sms::CellularClass value {};
-    check_hresult(shim()->get_CellularClass(&value));
+    check_hresult(static_cast<const ISmsFilterRule &>(static_cast<const D &>(*this))->get_CellularClass(&value));
     return value;
 }
 
 template <typename D> void impl_ISmsFilterRule<D>::CellularClass(Windows::Devices::Sms::CellularClass value) const
 {
-    check_hresult(shim()->put_CellularClass(value));
+    check_hresult(static_cast<const ISmsFilterRule &>(static_cast<const D &>(*this))->put_CellularClass(value));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<int32_t> impl_ISmsFilterRule<D>::ProtocolIds() const
 {
     Windows::Foundation::Collections::IVector<int32_t> value;
-    check_hresult(shim()->get_ProtocolIds(put(value)));
+    check_hresult(static_cast<const ISmsFilterRule &>(static_cast<const D &>(*this))->get_ProtocolIds(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<int32_t> impl_ISmsFilterRule<D>::TeleserviceIds() const
 {
     Windows::Foundation::Collections::IVector<int32_t> value;
-    check_hresult(shim()->get_TeleserviceIds(put(value)));
+    check_hresult(static_cast<const ISmsFilterRule &>(static_cast<const D &>(*this))->get_TeleserviceIds(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_ISmsFilterRule<D>::WapApplicationIds() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(shim()->get_WapApplicationIds(put(value)));
+    check_hresult(static_cast<const ISmsFilterRule &>(static_cast<const D &>(*this))->get_WapApplicationIds(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_ISmsFilterRule<D>::WapContentTypes() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(shim()->get_WapContentTypes(put(value)));
+    check_hresult(static_cast<const ISmsFilterRule &>(static_cast<const D &>(*this))->get_WapContentTypes(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<winrt::Windows::Devices::Sms::SmsBroadcastType> impl_ISmsFilterRule<D>::BroadcastTypes() const
 {
     Windows::Foundation::Collections::IVector<winrt::Windows::Devices::Sms::SmsBroadcastType> value;
-    check_hresult(shim()->get_BroadcastTypes(put(value)));
+    check_hresult(static_cast<const ISmsFilterRule &>(static_cast<const D &>(*this))->get_BroadcastTypes(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<int32_t> impl_ISmsFilterRule<D>::BroadcastChannels() const
 {
     Windows::Foundation::Collections::IVector<int32_t> value;
-    check_hresult(shim()->get_BroadcastChannels(put(value)));
+    check_hresult(static_cast<const ISmsFilterRule &>(static_cast<const D &>(*this))->get_BroadcastChannels(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Sms::SmsFilterRule impl_ISmsFilterRuleFactory<D>::CreateFilterRule(Windows::Devices::Sms::SmsMessageType messageType) const
 {
     Windows::Devices::Sms::SmsFilterRule value { nullptr };
-    check_hresult(shim()->abi_CreateFilterRule(messageType, put(value)));
+    check_hresult(static_cast<const ISmsFilterRuleFactory &>(static_cast<const D &>(*this))->abi_CreateFilterRule(messageType, put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Sms::SmsFilterActionType impl_ISmsFilterRules<D>::ActionType() const
 {
     Windows::Devices::Sms::SmsFilterActionType value {};
-    check_hresult(shim()->get_ActionType(&value));
+    check_hresult(static_cast<const ISmsFilterRules &>(static_cast<const D &>(*this))->get_ActionType(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Devices::Sms::SmsFilterRule> impl_ISmsFilterRules<D>::Rules() const
 {
     Windows::Foundation::Collections::IVector<Windows::Devices::Sms::SmsFilterRule> value;
-    check_hresult(shim()->get_Rules(put(value)));
+    check_hresult(static_cast<const ISmsFilterRules &>(static_cast<const D &>(*this))->get_Rules(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Sms::SmsFilterRules impl_ISmsFilterRulesFactory<D>::CreateFilterRules(Windows::Devices::Sms::SmsFilterActionType actionType) const
 {
     Windows::Devices::Sms::SmsFilterRules value { nullptr };
-    check_hresult(shim()->abi_CreateFilterRules(actionType, put(value)));
+    check_hresult(static_cast<const ISmsFilterRulesFactory &>(static_cast<const D &>(*this))->abi_CreateFilterRules(actionType, put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Sms::SmsMessageRegistration> impl_ISmsMessageRegistrationStatics<D>::AllRegistrations() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Sms::SmsMessageRegistration> value;
-    check_hresult(shim()->get_AllRegistrations(put(value)));
+    check_hresult(static_cast<const ISmsMessageRegistrationStatics &>(static_cast<const D &>(*this))->get_AllRegistrations(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Sms::SmsMessageRegistration impl_ISmsMessageRegistrationStatics<D>::Register(hstring_ref id, const Windows::Devices::Sms::SmsFilterRules & filterRules) const
 {
     Windows::Devices::Sms::SmsMessageRegistration value { nullptr };
-    check_hresult(shim()->abi_Register(get(id), get(filterRules), put(value)));
+    check_hresult(static_cast<const ISmsMessageRegistrationStatics &>(static_cast<const D &>(*this))->abi_Register(get(id), get(filterRules), put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISmsMessageRegistration<D>::Id() const
 {
     hstring value;
-    check_hresult(shim()->get_Id(put(value)));
+    check_hresult(static_cast<const ISmsMessageRegistration &>(static_cast<const D &>(*this))->get_Id(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISmsMessageRegistration<D>::Unregister() const
 {
-    check_hresult(shim()->abi_Unregister());
+    check_hresult(static_cast<const ISmsMessageRegistration &>(static_cast<const D &>(*this))->abi_Unregister());
 }
 
 template <typename D> event_token impl_ISmsMessageRegistration<D>::MessageReceived(const Windows::Foundation::TypedEventHandler<Windows::Devices::Sms::SmsMessageRegistration, Windows::Devices::Sms::SmsMessageReceivedTriggerDetails> & eventHandler) const
 {
     event_token eventCookie {};
-    check_hresult(shim()->add_MessageReceived(get(eventHandler), &eventCookie));
+    check_hresult(static_cast<const ISmsMessageRegistration &>(static_cast<const D &>(*this))->add_MessageReceived(get(eventHandler), &eventCookie));
     return eventCookie;
 }
 
@@ -2624,7 +2624,7 @@ template <typename D> event_revoker<ISmsMessageRegistration> impl_ISmsMessageReg
 
 template <typename D> void impl_ISmsMessageRegistration<D>::MessageReceived(event_token eventCookie) const
 {
-    check_hresult(shim()->remove_MessageReceived(eventCookie));
+    check_hresult(static_cast<const ISmsMessageRegistration &>(static_cast<const D &>(*this))->remove_MessageReceived(eventCookie));
 }
 
 inline SmsAppMessage::SmsAppMessage() :

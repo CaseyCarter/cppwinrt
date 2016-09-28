@@ -11,43 +11,27 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::UI::Xaml::Printing {
 
 template <typename D>
-class WINRT_EBO impl_IAddPagesEventArgs
+struct WINRT_EBO impl_IAddPagesEventArgs
 {
-    auto shim() const { return impl::shim<D, IAddPagesEventArgs>(this); }
-
-public:
-
     Windows::Graphics::Printing::PrintTaskOptions PrintTaskOptions() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGetPreviewPageEventArgs
+struct WINRT_EBO impl_IGetPreviewPageEventArgs
 {
-    auto shim() const { return impl::shim<D, IGetPreviewPageEventArgs>(this); }
-
-public:
-
     int32_t PageNumber() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPaginateEventArgs
+struct WINRT_EBO impl_IPaginateEventArgs
 {
-    auto shim() const { return impl::shim<D, IPaginateEventArgs>(this); }
-
-public:
-
     Windows::Graphics::Printing::PrintTaskOptions PrintTaskOptions() const;
     int32_t CurrentPreviewPageNumber() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrintDocument
+struct WINRT_EBO impl_IPrintDocument
 {
-    auto shim() const { return impl::shim<D, IPrintDocument>(this); }
-
-public:
-
     Windows::Graphics::Printing::IPrintDocumentSource DocumentSource() const;
     event_token Paginate(const Windows::UI::Xaml::Printing::PaginateEventHandler & value) const;
     using Paginate_revoker = event_revoker<IPrintDocument>;
@@ -69,22 +53,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrintDocumentFactory
+struct WINRT_EBO impl_IPrintDocumentFactory
 {
-    auto shim() const { return impl::shim<D, IPrintDocumentFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Printing::PrintDocument CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrintDocumentStatics
+struct WINRT_EBO impl_IPrintDocumentStatics
 {
-    auto shim() const { return impl::shim<D, IPrintDocumentStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty DocumentSourceProperty() const;
 };
 

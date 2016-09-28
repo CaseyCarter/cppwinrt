@@ -10,40 +10,24 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::UI {
 
 template <typename D>
-class WINRT_EBO impl_IColorHelper
+struct WINRT_EBO impl_IColorHelper
 {
-    auto shim() const { return impl::shim<D, IColorHelper>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IColorHelperStatics
+struct WINRT_EBO impl_IColorHelperStatics
 {
-    auto shim() const { return impl::shim<D, IColorHelperStatics>(this); }
-
-public:
-
     Windows::UI::Color FromArgb(uint8_t a, uint8_t r, uint8_t g, uint8_t b) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IColors
+struct WINRT_EBO impl_IColors
 {
-    auto shim() const { return impl::shim<D, IColors>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IColorsStatics
+struct WINRT_EBO impl_IColorsStatics
 {
-    auto shim() const { return impl::shim<D, IColorsStatics>(this); }
-
-public:
-
     Windows::UI::Color AliceBlue() const;
     Windows::UI::Color AntiqueWhite() const;
     Windows::UI::Color Aqua() const;

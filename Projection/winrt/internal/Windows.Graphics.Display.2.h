@@ -35,12 +35,8 @@ template <> struct __declspec(uuid("398c4183-793d-5b00-819b-4aef92485e94")) __de
 namespace Windows::Graphics::Display {
 
 template <typename D>
-class WINRT_EBO impl_IDisplayInformation
+struct WINRT_EBO impl_IDisplayInformation
 {
-    auto shim() const { return impl::shim<D, IDisplayInformation>(this); }
-
-public:
-
     Windows::Graphics::Display::DisplayOrientations CurrentOrientation() const;
     Windows::Graphics::Display::DisplayOrientations NativeOrientation() const;
     event_token OrientationChanged(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> & handler) const;
@@ -68,43 +64,27 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDisplayInformation2
+struct WINRT_EBO impl_IDisplayInformation2
 {
-    auto shim() const { return impl::shim<D, IDisplayInformation2>(this); }
-
-public:
-
     double RawPixelsPerViewPixel() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDisplayInformation3
+struct WINRT_EBO impl_IDisplayInformation3
 {
-    auto shim() const { return impl::shim<D, IDisplayInformation3>(this); }
-
-public:
-
     Windows::Foundation::IReference<double> DiagonalSizeInInches() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDisplayInformation4
+struct WINRT_EBO impl_IDisplayInformation4
 {
-    auto shim() const { return impl::shim<D, IDisplayInformation4>(this); }
-
-public:
-
     uint32_t ScreenWidthInRawPixels() const;
     uint32_t ScreenHeightInRawPixels() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDisplayInformationStatics
+struct WINRT_EBO impl_IDisplayInformationStatics
 {
-    auto shim() const { return impl::shim<D, IDisplayInformationStatics>(this); }
-
-public:
-
     Windows::Graphics::Display::DisplayInformation GetForCurrentView() const;
     Windows::Graphics::Display::DisplayOrientations AutoRotationPreferences() const;
     void AutoRotationPreferences(Windows::Graphics::Display::DisplayOrientations value) const;
@@ -115,12 +95,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDisplayPropertiesStatics
+struct WINRT_EBO impl_IDisplayPropertiesStatics
 {
-    auto shim() const { return impl::shim<D, IDisplayPropertiesStatics>(this); }
-
-public:
-
     Windows::Graphics::Display::DisplayOrientations CurrentOrientation() const;
     Windows::Graphics::Display::DisplayOrientations NativeOrientation() const;
     Windows::Graphics::Display::DisplayOrientations AutoRotationPreferences() const;

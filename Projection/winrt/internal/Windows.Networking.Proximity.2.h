@@ -140,22 +140,14 @@ template <> struct __declspec(uuid("ecf90f2c-e3f4-5b62-a066-8b9c818fd41a")) __de
 namespace Windows::Networking::Proximity {
 
 template <typename D>
-class WINRT_EBO impl_IConnectionRequestedEventArgs
+struct WINRT_EBO impl_IConnectionRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, IConnectionRequestedEventArgs>(this); }
-
-public:
-
     Windows::Networking::Proximity::PeerInformation PeerInformation() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPeerFinderStatics
+struct WINRT_EBO impl_IPeerFinderStatics
 {
-    auto shim() const { return impl::shim<D, IPeerFinderStatics>(this); }
-
-public:
-
     bool AllowBluetooth() const;
     void AllowBluetooth(bool value) const;
     bool AllowInfrastructure() const;
@@ -182,12 +174,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPeerFinderStatics2
+struct WINRT_EBO impl_IPeerFinderStatics2
 {
-    auto shim() const { return impl::shim<D, IPeerFinderStatics2>(this); }
-
-public:
-
     Windows::Networking::Proximity::PeerRole Role() const;
     void Role(Windows::Networking::Proximity::PeerRole value) const;
     Windows::Storage::Streams::IBuffer DiscoveryData() const;
@@ -196,44 +184,28 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPeerInformation
+struct WINRT_EBO impl_IPeerInformation
 {
-    auto shim() const { return impl::shim<D, IPeerInformation>(this); }
-
-public:
-
     hstring DisplayName() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPeerInformation3
+struct WINRT_EBO impl_IPeerInformation3
 {
-    auto shim() const { return impl::shim<D, IPeerInformation3>(this); }
-
-public:
-
     hstring Id() const;
     Windows::Storage::Streams::IBuffer DiscoveryData() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPeerInformationWithHostAndService
+struct WINRT_EBO impl_IPeerInformationWithHostAndService
 {
-    auto shim() const { return impl::shim<D, IPeerInformationWithHostAndService>(this); }
-
-public:
-
     Windows::Networking::HostName HostName() const;
     hstring ServiceName() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPeerWatcher
+struct WINRT_EBO impl_IPeerWatcher
 {
-    auto shim() const { return impl::shim<D, IPeerWatcher>(this); }
-
-public:
-
     event_token Added(const Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::Networking::Proximity::PeerInformation> & handler) const;
     using Added_revoker = event_revoker<IPeerWatcher>;
     Added_revoker Added(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Networking::Proximity::PeerWatcher, Windows::Networking::Proximity::PeerInformation> & handler) const;
@@ -260,12 +232,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IProximityDevice
+struct WINRT_EBO impl_IProximityDevice
 {
-    auto shim() const { return impl::shim<D, IProximityDevice>(this); }
-
-public:
-
     int64_t SubscribeForMessage(hstring_ref messageType, const Windows::Networking::Proximity::MessageReceivedHandler & messageReceivedHandler) const;
     int64_t PublishMessage(hstring_ref messageType, hstring_ref message) const;
     int64_t PublishMessage(hstring_ref messageType, hstring_ref message, const Windows::Networking::Proximity::MessageTransmittedHandler & messageTransmittedHandler) const;
@@ -289,24 +257,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IProximityDeviceStatics
+struct WINRT_EBO impl_IProximityDeviceStatics
 {
-    auto shim() const { return impl::shim<D, IProximityDeviceStatics>(this); }
-
-public:
-
     hstring GetDeviceSelector() const;
     Windows::Networking::Proximity::ProximityDevice GetDefault() const;
     Windows::Networking::Proximity::ProximityDevice FromId(hstring_ref deviceId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IProximityMessage
+struct WINRT_EBO impl_IProximityMessage
 {
-    auto shim() const { return impl::shim<D, IProximityMessage>(this); }
-
-public:
-
     hstring MessageType() const;
     int64_t SubscriptionId() const;
     Windows::Storage::Streams::IBuffer Data() const;
@@ -314,12 +274,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ITriggeredConnectionStateChangedEventArgs
+struct WINRT_EBO impl_ITriggeredConnectionStateChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, ITriggeredConnectionStateChangedEventArgs>(this); }
-
-public:
-
     Windows::Networking::Proximity::TriggeredConnectState State() const;
     uint32_t Id() const;
     Windows::Networking::Sockets::StreamSocket Socket() const;

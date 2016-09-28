@@ -326,12 +326,8 @@ template <> struct __declspec(uuid("c523d9dd-4ea6-5115-80e9-4e7ad4769798")) __de
 namespace Windows::Networking::Connectivity {
 
 template <typename D>
-class WINRT_EBO impl_IAttributedNetworkUsage
+struct WINRT_EBO impl_IAttributedNetworkUsage
 {
-    auto shim() const { return impl::shim<D, IAttributedNetworkUsage>(this); }
-
-public:
-
     uint64_t BytesSent() const;
     uint64_t BytesReceived() const;
     hstring AttributionId() const;
@@ -340,12 +336,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICellularApnContext
+struct WINRT_EBO impl_ICellularApnContext
 {
-    auto shim() const { return impl::shim<D, ICellularApnContext>(this); }
-
-public:
-
     hstring ProviderId() const;
     void ProviderId(hstring_ref value) const;
     hstring AccessPointName() const;
@@ -361,12 +353,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IConnectionCost
+struct WINRT_EBO impl_IConnectionCost
 {
-    auto shim() const { return impl::shim<D, IConnectionCost>(this); }
-
-public:
-
     Windows::Networking::Connectivity::NetworkCostType NetworkCostType() const;
     bool Roaming() const;
     bool OverDataLimit() const;
@@ -374,22 +362,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IConnectionCost2
+struct WINRT_EBO impl_IConnectionCost2
 {
-    auto shim() const { return impl::shim<D, IConnectionCost2>(this); }
-
-public:
-
     bool BackgroundDataUsageRestricted() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IConnectionProfile
+struct WINRT_EBO impl_IConnectionProfile
 {
-    auto shim() const { return impl::shim<D, IConnectionProfile>(this); }
-
-public:
-
     hstring ProfileName() const;
     Windows::Networking::Connectivity::NetworkConnectivityLevel GetNetworkConnectivityLevel() const;
     Windows::Foundation::Collections::IVectorView<hstring> GetNetworkNames() const;
@@ -402,12 +382,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IConnectionProfile2
+struct WINRT_EBO impl_IConnectionProfile2
 {
-    auto shim() const { return impl::shim<D, IConnectionProfile2>(this); }
-
-public:
-
     bool IsWwanConnectionProfile() const;
     bool IsWlanConnectionProfile() const;
     Windows::Networking::Connectivity::WwanConnectionProfileDetails WwanConnectionProfileDetails() const;
@@ -420,22 +396,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IConnectionProfile3
+struct WINRT_EBO impl_IConnectionProfile3
 {
-    auto shim() const { return impl::shim<D, IConnectionProfile3>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::Connectivity::AttributedNetworkUsage>> GetAttributedNetworkUsageAsync(const Windows::Foundation::DateTime & startTime, const Windows::Foundation::DateTime & endTime, const Windows::Networking::Connectivity::NetworkUsageStates & states) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IConnectionProfileFilter
+struct WINRT_EBO impl_IConnectionProfileFilter
 {
-    auto shim() const { return impl::shim<D, IConnectionProfileFilter>(this); }
-
-public:
-
     void IsConnected(bool value) const;
     bool IsConnected() const;
     void IsWwanConnectionProfile(bool value) const;
@@ -449,12 +417,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IConnectionProfileFilter2
+struct WINRT_EBO impl_IConnectionProfileFilter2
 {
-    auto shim() const { return impl::shim<D, IConnectionProfileFilter2>(this); }
-
-public:
-
     void IsRoaming(const Windows::Foundation::IReference<bool> & value) const;
     Windows::Foundation::IReference<bool> IsRoaming() const;
     void IsOverDataLimit(const Windows::Foundation::IReference<bool> & value) const;
@@ -465,45 +429,29 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IConnectionSession
+struct WINRT_EBO impl_IConnectionSession
 {
-    auto shim() const { return impl::shim<D, IConnectionSession>(this); }
-
-public:
-
     Windows::Networking::Connectivity::ConnectionProfile ConnectionProfile() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IConnectivityInterval
+struct WINRT_EBO impl_IConnectivityInterval
 {
-    auto shim() const { return impl::shim<D, IConnectivityInterval>(this); }
-
-public:
-
     Windows::Foundation::DateTime StartTime() const;
     Windows::Foundation::TimeSpan ConnectionDuration() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IConnectivityManagerStatics
+struct WINRT_EBO impl_IConnectivityManagerStatics
 {
-    auto shim() const { return impl::shim<D, IConnectivityManagerStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Networking::Connectivity::ConnectionSession> AcquireConnectionAsync(const Windows::Networking::Connectivity::CellularApnContext & cellularApnContext) const;
     void AddHttpRoutePolicy(const Windows::Networking::Connectivity::RoutePolicy & routePolicy) const;
     void RemoveHttpRoutePolicy(const Windows::Networking::Connectivity::RoutePolicy & routePolicy) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDataPlanStatus
+struct WINRT_EBO impl_IDataPlanStatus
 {
-    auto shim() const { return impl::shim<D, IDataPlanStatus>(this); }
-
-public:
-
     Windows::Networking::Connectivity::DataPlanUsage DataPlanUsage() const;
     Windows::Foundation::IReference<uint32_t> DataLimitInMegabytes() const;
     Windows::Foundation::IReference<uint64_t> InboundBitsPerSecond() const;
@@ -513,68 +461,44 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDataPlanUsage
+struct WINRT_EBO impl_IDataPlanUsage
 {
-    auto shim() const { return impl::shim<D, IDataPlanUsage>(this); }
-
-public:
-
     uint32_t MegabytesUsed() const;
     Windows::Foundation::DateTime LastSyncTime() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDataUsage
+struct WINRT_EBO impl_IDataUsage
 {
-    auto shim() const { return impl::shim<D, IDataUsage>(this); }
-
-public:
-
     uint64_t BytesSent() const;
     uint64_t BytesReceived() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IIPInformation
+struct WINRT_EBO impl_IIPInformation
 {
-    auto shim() const { return impl::shim<D, IIPInformation>(this); }
-
-public:
-
     Windows::Networking::Connectivity::NetworkAdapter NetworkAdapter() const;
     Windows::Foundation::IReference<uint8_t> PrefixLength() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILanIdentifier
+struct WINRT_EBO impl_ILanIdentifier
 {
-    auto shim() const { return impl::shim<D, ILanIdentifier>(this); }
-
-public:
-
     Windows::Networking::Connectivity::LanIdentifierData InfrastructureId() const;
     Windows::Networking::Connectivity::LanIdentifierData PortId() const;
     GUID NetworkAdapterId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILanIdentifierData
+struct WINRT_EBO impl_ILanIdentifierData
 {
-    auto shim() const { return impl::shim<D, ILanIdentifierData>(this); }
-
-public:
-
     uint32_t Type() const;
     Windows::Foundation::Collections::IVectorView<uint8_t> Value() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_INetworkAdapter
+struct WINRT_EBO impl_INetworkAdapter
 {
-    auto shim() const { return impl::shim<D, INetworkAdapter>(this); }
-
-public:
-
     uint64_t OutboundMaxBitsPerSecond() const;
     uint64_t InboundMaxBitsPerSecond() const;
     uint32_t IanaInterfaceType() const;
@@ -584,12 +508,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_INetworkInformationStatics
+struct WINRT_EBO impl_INetworkInformationStatics
 {
-    auto shim() const { return impl::shim<D, INetworkInformationStatics>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Networking::Connectivity::ConnectionProfile> GetConnectionProfiles() const;
     Windows::Networking::Connectivity::ConnectionProfile GetInternetConnectionProfile() const;
     Windows::Foundation::Collections::IVectorView<Windows::Networking::Connectivity::LanIdentifier> GetLanIdentifiers() const;
@@ -603,44 +523,28 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_INetworkInformationStatics2
+struct WINRT_EBO impl_INetworkInformationStatics2
 {
-    auto shim() const { return impl::shim<D, INetworkInformationStatics2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::Connectivity::ConnectionProfile>> FindConnectionProfilesAsync(const Windows::Networking::Connectivity::ConnectionProfileFilter & pProfileFilter) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_INetworkItem
+struct WINRT_EBO impl_INetworkItem
 {
-    auto shim() const { return impl::shim<D, INetworkItem>(this); }
-
-public:
-
     GUID NetworkId() const;
     Windows::Networking::Connectivity::NetworkTypes GetNetworkTypes() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_INetworkSecuritySettings
+struct WINRT_EBO impl_INetworkSecuritySettings
 {
-    auto shim() const { return impl::shim<D, INetworkSecuritySettings>(this); }
-
-public:
-
     Windows::Networking::Connectivity::NetworkAuthenticationType NetworkAuthenticationType() const;
     Windows::Networking::Connectivity::NetworkEncryptionType NetworkEncryptionType() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_INetworkStateChangeEventDetails
+struct WINRT_EBO impl_INetworkStateChangeEventDetails
 {
-    auto shim() const { return impl::shim<D, INetworkStateChangeEventDetails>(this); }
-
-public:
-
     bool HasNewInternetConnectionProfile() const;
     bool HasNewConnectionCost() const;
     bool HasNewNetworkConnectivityLevel() const;
@@ -650,78 +554,50 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_INetworkStateChangeEventDetails2
+struct WINRT_EBO impl_INetworkStateChangeEventDetails2
 {
-    auto shim() const { return impl::shim<D, INetworkStateChangeEventDetails2>(this); }
-
-public:
-
     bool HasNewTetheringOperationalState() const;
     bool HasNewTetheringClientCount() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_INetworkUsage
+struct WINRT_EBO impl_INetworkUsage
 {
-    auto shim() const { return impl::shim<D, INetworkUsage>(this); }
-
-public:
-
     uint64_t BytesSent() const;
     uint64_t BytesReceived() const;
     Windows::Foundation::TimeSpan ConnectionDuration() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IProxyConfiguration
+struct WINRT_EBO impl_IProxyConfiguration
 {
-    auto shim() const { return impl::shim<D, IProxyConfiguration>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Foundation::Uri> ProxyUris() const;
     bool CanConnectDirectly() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRoutePolicy
+struct WINRT_EBO impl_IRoutePolicy
 {
-    auto shim() const { return impl::shim<D, IRoutePolicy>(this); }
-
-public:
-
     Windows::Networking::Connectivity::ConnectionProfile ConnectionProfile() const;
     Windows::Networking::HostName HostName() const;
     Windows::Networking::DomainNameType HostNameType() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRoutePolicyFactory
+struct WINRT_EBO impl_IRoutePolicyFactory
 {
-    auto shim() const { return impl::shim<D, IRoutePolicyFactory>(this); }
-
-public:
-
     Windows::Networking::Connectivity::RoutePolicy CreateRoutePolicy(const Windows::Networking::Connectivity::ConnectionProfile & connectionProfile, const Windows::Networking::HostName & hostName, Windows::Networking::DomainNameType type) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWlanConnectionProfileDetails
+struct WINRT_EBO impl_IWlanConnectionProfileDetails
 {
-    auto shim() const { return impl::shim<D, IWlanConnectionProfileDetails>(this); }
-
-public:
-
     hstring GetConnectedSsid() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWwanConnectionProfileDetails
+struct WINRT_EBO impl_IWwanConnectionProfileDetails
 {
-    auto shim() const { return impl::shim<D, IWwanConnectionProfileDetails>(this); }
-
-public:
-
     hstring HomeProviderId() const;
     hstring AccessPointName() const;
     Windows::Networking::Connectivity::WwanNetworkRegistrationState GetNetworkRegistrationState() const;

@@ -75,12 +75,8 @@ template <> struct __declspec(uuid("9e42ed08-45b3-5643-b5c7-b216f5781594")) __de
 namespace Windows::UI::Notifications::Management {
 
 template <typename D>
-class WINRT_EBO impl_IUserNotificationListener
+struct WINRT_EBO impl_IUserNotificationListener
 {
-    auto shim() const { return impl::shim<D, IUserNotificationListener>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<winrt::Windows::UI::Notifications::Management::UserNotificationListenerAccessStatus> RequestAccessAsync() const;
     Windows::UI::Notifications::Management::UserNotificationListenerAccessStatus GetAccessStatus() const;
     event_token NotificationChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::Management::UserNotificationListener, Windows::UI::Notifications::UserNotificationChangedEventArgs> & handler) const;
@@ -94,12 +90,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUserNotificationListenerStatics
+struct WINRT_EBO impl_IUserNotificationListenerStatics
 {
-    auto shim() const { return impl::shim<D, IUserNotificationListenerStatics>(this); }
-
-public:
-
     Windows::UI::Notifications::Management::UserNotificationListener Current() const;
 };
 

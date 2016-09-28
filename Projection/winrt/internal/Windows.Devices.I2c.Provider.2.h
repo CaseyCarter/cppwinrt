@@ -46,22 +46,14 @@ template <> struct __declspec(uuid("771e22ed-da9e-50be-b730-a3bada6bfb25")) __de
 namespace Windows::Devices::I2c::Provider {
 
 template <typename D>
-class WINRT_EBO impl_II2cControllerProvider
+struct WINRT_EBO impl_II2cControllerProvider
 {
-    auto shim() const { return impl::shim<D, II2cControllerProvider>(this); }
-
-public:
-
     Windows::Devices::I2c::Provider::II2cDeviceProvider GetDeviceProvider(const Windows::Devices::I2c::Provider::ProviderI2cConnectionSettings & settings) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_II2cDeviceProvider
+struct WINRT_EBO impl_II2cDeviceProvider
 {
-    auto shim() const { return impl::shim<D, II2cDeviceProvider>(this); }
-
-public:
-
     hstring DeviceId() const;
     void Write(array_ref<const uint8_t> buffer) const;
     Windows::Devices::I2c::Provider::ProviderI2cTransferResult WritePartial(array_ref<const uint8_t> buffer) const;
@@ -72,22 +64,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_II2cProvider
+struct WINRT_EBO impl_II2cProvider
 {
-    auto shim() const { return impl::shim<D, II2cProvider>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::I2c::Provider::II2cControllerProvider>> GetControllersAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IProviderI2cConnectionSettings
+struct WINRT_EBO impl_IProviderI2cConnectionSettings
 {
-    auto shim() const { return impl::shim<D, IProviderI2cConnectionSettings>(this); }
-
-public:
-
     int32_t SlaveAddress() const;
     void SlaveAddress(int32_t value) const;
     Windows::Devices::I2c::Provider::ProviderI2cBusSpeed BusSpeed() const;

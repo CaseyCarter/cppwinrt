@@ -36,9 +36,9 @@ template <> struct traits<Windows::Data::Xml::Xsl::XsltProcessor> { using defaul
 
 namespace Windows::Data::Xml::Xsl {
 
-template <typename T> class impl_IXsltProcessor;
-template <typename T> class impl_IXsltProcessor2;
-template <typename T> class impl_IXsltProcessorFactory;
+template <typename T> struct impl_IXsltProcessor;
+template <typename T> struct impl_IXsltProcessor2;
+template <typename T> struct impl_IXsltProcessorFactory;
 
 }
 

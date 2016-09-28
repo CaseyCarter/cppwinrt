@@ -185,24 +185,24 @@ template <> struct traits<Windows::Data::Text::WordsSegmenter> { using default_i
 
 namespace Windows::Data::Text {
 
-template <typename T> class impl_IAlternateWordForm;
-template <typename T> class impl_ISelectableWordSegment;
-template <typename T> class impl_ISelectableWordsSegmenter;
-template <typename T> class impl_ISelectableWordsSegmenterFactory;
-template <typename T> class impl_ISemanticTextQuery;
-template <typename T> class impl_ISemanticTextQueryFactory;
-template <typename T> class impl_ITextConversionGenerator;
-template <typename T> class impl_ITextConversionGeneratorFactory;
-template <typename T> class impl_ITextPhoneme;
-template <typename T> class impl_ITextPredictionGenerator;
-template <typename T> class impl_ITextPredictionGeneratorFactory;
-template <typename T> class impl_ITextReverseConversionGenerator;
-template <typename T> class impl_ITextReverseConversionGenerator2;
-template <typename T> class impl_ITextReverseConversionGeneratorFactory;
-template <typename T> class impl_IUnicodeCharactersStatics;
-template <typename T> class impl_IWordSegment;
-template <typename T> class impl_IWordsSegmenter;
-template <typename T> class impl_IWordsSegmenterFactory;
+template <typename T> struct impl_IAlternateWordForm;
+template <typename T> struct impl_ISelectableWordSegment;
+template <typename T> struct impl_ISelectableWordsSegmenter;
+template <typename T> struct impl_ISelectableWordsSegmenterFactory;
+template <typename T> struct impl_ISemanticTextQuery;
+template <typename T> struct impl_ISemanticTextQueryFactory;
+template <typename T> struct impl_ITextConversionGenerator;
+template <typename T> struct impl_ITextConversionGeneratorFactory;
+template <typename T> struct impl_ITextPhoneme;
+template <typename T> struct impl_ITextPredictionGenerator;
+template <typename T> struct impl_ITextPredictionGeneratorFactory;
+template <typename T> struct impl_ITextReverseConversionGenerator;
+template <typename T> struct impl_ITextReverseConversionGenerator2;
+template <typename T> struct impl_ITextReverseConversionGeneratorFactory;
+template <typename T> struct impl_IUnicodeCharactersStatics;
+template <typename T> struct impl_IWordSegment;
+template <typename T> struct impl_IWordsSegmenter;
+template <typename T> struct impl_IWordsSegmenterFactory;
 template <typename T> struct impl_SelectableWordSegmentsTokenizingHandler;
 template <typename T> struct impl_WordSegmentsTokenizingHandler;
 

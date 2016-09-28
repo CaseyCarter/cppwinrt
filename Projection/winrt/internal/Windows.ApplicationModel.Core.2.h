@@ -100,23 +100,15 @@ template <> struct __declspec(uuid("32bc12d1-2653-5a41-a55e-88a12af2026a")) __de
 namespace Windows::ApplicationModel::Core {
 
 template <typename D>
-class WINRT_EBO impl_IAppListEntry
+struct WINRT_EBO impl_IAppListEntry
 {
-    auto shim() const { return impl::shim<D, IAppListEntry>(this); }
-
-public:
-
     Windows::ApplicationModel::AppDisplayInfo DisplayInfo() const;
     Windows::Foundation::IAsyncOperation<bool> LaunchAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreApplication
+struct WINRT_EBO impl_ICoreApplication
 {
-    auto shim() const { return impl::shim<D, ICoreApplication>(this); }
-
-public:
-
     hstring Id() const;
     event_token Suspending(const Windows::Foundation::EventHandler<Windows::ApplicationModel::SuspendingEventArgs> & handler) const;
     using Suspending_revoker = event_revoker<ICoreApplication>;
@@ -133,12 +125,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreApplication2
+struct WINRT_EBO impl_ICoreApplication2
 {
-    auto shim() const { return impl::shim<D, ICoreApplication2>(this); }
-
-public:
-
     event_token BackgroundActivated(const Windows::Foundation::EventHandler<Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs> & handler) const;
     using BackgroundActivated_revoker = event_revoker<ICoreApplication2>;
     BackgroundActivated_revoker BackgroundActivated(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs> & handler) const;
@@ -155,12 +143,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreApplicationExit
+struct WINRT_EBO impl_ICoreApplicationExit
 {
-    auto shim() const { return impl::shim<D, ICoreApplicationExit>(this); }
-
-public:
-
     void Exit() const;
     event_token Exiting(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const;
     using Exiting_revoker = event_revoker<ICoreApplicationExit>;
@@ -169,12 +153,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreApplicationUnhandledError
+struct WINRT_EBO impl_ICoreApplicationUnhandledError
 {
-    auto shim() const { return impl::shim<D, ICoreApplicationUnhandledError>(this); }
-
-public:
-
     event_token UnhandledErrorDetected(const Windows::Foundation::EventHandler<Windows::ApplicationModel::Core::UnhandledErrorDetectedEventArgs> & handler) const;
     using UnhandledErrorDetected_revoker = event_revoker<ICoreApplicationUnhandledError>;
     UnhandledErrorDetected_revoker UnhandledErrorDetected(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::ApplicationModel::Core::UnhandledErrorDetectedEventArgs> & handler) const;
@@ -182,23 +162,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreApplicationUseCount
+struct WINRT_EBO impl_ICoreApplicationUseCount
 {
-    auto shim() const { return impl::shim<D, ICoreApplicationUseCount>(this); }
-
-public:
-
     void IncrementApplicationUseCount() const;
     void DecrementApplicationUseCount() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreApplicationView
+struct WINRT_EBO impl_ICoreApplicationView
 {
-    auto shim() const { return impl::shim<D, ICoreApplicationView>(this); }
-
-public:
-
     Windows::UI::Core::CoreWindow CoreWindow() const;
     event_token Activated(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Core::CoreApplicationView, Windows::ApplicationModel::Activation::IActivatedEventArgs> & handler) const;
     using Activated_revoker = event_revoker<ICoreApplicationView>;
@@ -209,22 +181,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreApplicationView2
+struct WINRT_EBO impl_ICoreApplicationView2
 {
-    auto shim() const { return impl::shim<D, ICoreApplicationView2>(this); }
-
-public:
-
     Windows::UI::Core::CoreDispatcher Dispatcher() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreApplicationView3
+struct WINRT_EBO impl_ICoreApplicationView3
 {
-    auto shim() const { return impl::shim<D, ICoreApplicationView3>(this); }
-
-public:
-
     bool IsComponent() const;
     Windows::ApplicationModel::Core::CoreApplicationViewTitleBar TitleBar() const;
     event_token HostedViewClosing(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Core::CoreApplicationView, Windows::ApplicationModel::Core::HostedViewClosingEventArgs> & handler) const;
@@ -234,12 +198,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreApplicationViewTitleBar
+struct WINRT_EBO impl_ICoreApplicationViewTitleBar
 {
-    auto shim() const { return impl::shim<D, ICoreApplicationViewTitleBar>(this); }
-
-public:
-
     void ExtendViewIntoTitleBar(bool value) const;
     bool ExtendViewIntoTitleBar() const;
     double SystemOverlayLeftInset() const;
@@ -257,44 +217,28 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreImmersiveApplication
+struct WINRT_EBO impl_ICoreImmersiveApplication
 {
-    auto shim() const { return impl::shim<D, ICoreImmersiveApplication>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Core::CoreApplicationView> Views() const;
     Windows::ApplicationModel::Core::CoreApplicationView CreateNewView(hstring_ref runtimeType, hstring_ref entryPoint) const;
     Windows::ApplicationModel::Core::CoreApplicationView MainView() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreImmersiveApplication2
+struct WINRT_EBO impl_ICoreImmersiveApplication2
 {
-    auto shim() const { return impl::shim<D, ICoreImmersiveApplication2>(this); }
-
-public:
-
     Windows::ApplicationModel::Core::CoreApplicationView CreateNewView() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICoreImmersiveApplication3
+struct WINRT_EBO impl_ICoreImmersiveApplication3
 {
-    auto shim() const { return impl::shim<D, ICoreImmersiveApplication3>(this); }
-
-public:
-
     Windows::ApplicationModel::Core::CoreApplicationView CreateNewView(const Windows::ApplicationModel::Core::IFrameworkViewSource & viewSource) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFrameworkView
+struct WINRT_EBO impl_IFrameworkView
 {
-    auto shim() const { return impl::shim<D, IFrameworkView>(this); }
-
-public:
-
     void Initialize(const Windows::ApplicationModel::Core::CoreApplicationView & applicationView) const;
     void SetWindow(const Windows::UI::Core::CoreWindow & window) const;
     void Load(hstring_ref entryPoint) const;
@@ -303,43 +247,27 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IFrameworkViewSource
+struct WINRT_EBO impl_IFrameworkViewSource
 {
-    auto shim() const { return impl::shim<D, IFrameworkViewSource>(this); }
-
-public:
-
     Windows::ApplicationModel::Core::IFrameworkView CreateView() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHostedViewClosingEventArgs
+struct WINRT_EBO impl_IHostedViewClosingEventArgs
 {
-    auto shim() const { return impl::shim<D, IHostedViewClosingEventArgs>(this); }
-
-public:
-
     Windows::Foundation::Deferral GetDeferral() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUnhandledError
+struct WINRT_EBO impl_IUnhandledError
 {
-    auto shim() const { return impl::shim<D, IUnhandledError>(this); }
-
-public:
-
     bool Handled() const;
     void Propagate() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUnhandledErrorDetectedEventArgs
+struct WINRT_EBO impl_IUnhandledErrorDetectedEventArgs
 {
-    auto shim() const { return impl::shim<D, IUnhandledErrorDetectedEventArgs>(this); }
-
-public:
-
     Windows::ApplicationModel::Core::UnhandledError UnhandledError() const;
 };
 

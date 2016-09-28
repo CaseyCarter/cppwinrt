@@ -85,393 +85,241 @@ template <> struct __declspec(uuid("1863baee-44f1-5e51-bcdf-a3cdab826a15")) __de
 namespace Windows::ApplicationModel::Activation {
 
 template <typename D>
-class WINRT_EBO impl_IActivatedEventArgs
+struct WINRT_EBO impl_IActivatedEventArgs
 {
-    auto shim() const { return impl::shim<D, IActivatedEventArgs>(this); }
-
-public:
-
     Windows::ApplicationModel::Activation::ActivationKind Kind() const;
     Windows::ApplicationModel::Activation::ApplicationExecutionState PreviousExecutionState() const;
     Windows::ApplicationModel::Activation::SplashScreen SplashScreen() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IActivatedEventArgsWithUser
+struct WINRT_EBO impl_IActivatedEventArgsWithUser
 {
-    auto shim() const { return impl::shim<D, IActivatedEventArgsWithUser>(this); }
-
-public:
-
     Windows::System::User User() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IApplicationViewActivatedEventArgs
+struct WINRT_EBO impl_IApplicationViewActivatedEventArgs
 {
-    auto shim() const { return impl::shim<D, IApplicationViewActivatedEventArgs>(this); }
-
-public:
-
     int32_t CurrentlyShownApplicationViewId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentsProviderActivatedEventArgs
+struct WINRT_EBO impl_IAppointmentsProviderActivatedEventArgs
 {
-    auto shim() const { return impl::shim<D, IAppointmentsProviderActivatedEventArgs>(this); }
-
-public:
-
     hstring Verb() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentsProviderAddAppointmentActivatedEventArgs
+struct WINRT_EBO impl_IAppointmentsProviderAddAppointmentActivatedEventArgs
 {
-    auto shim() const { return impl::shim<D, IAppointmentsProviderAddAppointmentActivatedEventArgs>(this); }
-
-public:
-
     Windows::ApplicationModel::Appointments::AppointmentsProvider::AddAppointmentOperation AddAppointmentOperation() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentsProviderRemoveAppointmentActivatedEventArgs
+struct WINRT_EBO impl_IAppointmentsProviderRemoveAppointmentActivatedEventArgs
 {
-    auto shim() const { return impl::shim<D, IAppointmentsProviderRemoveAppointmentActivatedEventArgs>(this); }
-
-public:
-
     Windows::ApplicationModel::Appointments::AppointmentsProvider::RemoveAppointmentOperation RemoveAppointmentOperation() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentsProviderReplaceAppointmentActivatedEventArgs
+struct WINRT_EBO impl_IAppointmentsProviderReplaceAppointmentActivatedEventArgs
 {
-    auto shim() const { return impl::shim<D, IAppointmentsProviderReplaceAppointmentActivatedEventArgs>(this); }
-
-public:
-
     Windows::ApplicationModel::Appointments::AppointmentsProvider::ReplaceAppointmentOperation ReplaceAppointmentOperation() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs
+struct WINRT_EBO impl_IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs
 {
-    auto shim() const { return impl::shim<D, IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs>(this); }
-
-public:
-
     Windows::Foundation::IReference<Windows::Foundation::DateTime> InstanceStartDate() const;
     hstring LocalId() const;
     hstring RoamingId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentsProviderShowTimeFrameActivatedEventArgs
+struct WINRT_EBO impl_IAppointmentsProviderShowTimeFrameActivatedEventArgs
 {
-    auto shim() const { return impl::shim<D, IAppointmentsProviderShowTimeFrameActivatedEventArgs>(this); }
-
-public:
-
     Windows::Foundation::DateTime TimeToShow() const;
     Windows::Foundation::TimeSpan Duration() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundActivatedEventArgs
+struct WINRT_EBO impl_IBackgroundActivatedEventArgs
 {
-    auto shim() const { return impl::shim<D, IBackgroundActivatedEventArgs>(this); }
-
-public:
-
     Windows::ApplicationModel::Background::IBackgroundTaskInstance TaskInstance() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICachedFileUpdaterActivatedEventArgs
+struct WINRT_EBO impl_ICachedFileUpdaterActivatedEventArgs
 {
-    auto shim() const { return impl::shim<D, ICachedFileUpdaterActivatedEventArgs>(this); }
-
-public:
-
     Windows::Storage::Provider::CachedFileUpdaterUI CachedFileUpdaterUI() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IContinuationActivatedEventArgs
+struct WINRT_EBO impl_IContinuationActivatedEventArgs
 {
-    auto shim() const { return impl::shim<D, IContinuationActivatedEventArgs>(this); }
-
-public:
-
     Windows::Foundation::Collections::ValueSet ContinuationData() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDeviceActivatedEventArgs
+struct WINRT_EBO impl_IDeviceActivatedEventArgs
 {
-    auto shim() const { return impl::shim<D, IDeviceActivatedEventArgs>(this); }
-
-public:
-
     hstring DeviceInformationId() const;
     hstring Verb() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDevicePairingActivatedEventArgs
+struct WINRT_EBO impl_IDevicePairingActivatedEventArgs
 {
-    auto shim() const { return impl::shim<D, IDevicePairingActivatedEventArgs>(this); }
-
-public:
-
     Windows::Devices::Enumeration::DeviceInformation DeviceInformation() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDialReceiverActivatedEventArgs
+struct WINRT_EBO impl_IDialReceiverActivatedEventArgs
 {
-    auto shim() const { return impl::shim<D, IDialReceiverActivatedEventArgs>(this); }
-
-public:
-
     hstring AppName() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFileActivatedEventArgs
+struct WINRT_EBO impl_IFileActivatedEventArgs
 {
-    auto shim() const { return impl::shim<D, IFileActivatedEventArgs>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Storage::IStorageItem> Files() const;
     hstring Verb() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFileActivatedEventArgsWithCallerPackageFamilyName
+struct WINRT_EBO impl_IFileActivatedEventArgsWithCallerPackageFamilyName
 {
-    auto shim() const { return impl::shim<D, IFileActivatedEventArgsWithCallerPackageFamilyName>(this); }
-
-public:
-
     hstring CallerPackageFamilyName() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFileActivatedEventArgsWithNeighboringFiles
+struct WINRT_EBO impl_IFileActivatedEventArgsWithNeighboringFiles
 {
-    auto shim() const { return impl::shim<D, IFileActivatedEventArgsWithNeighboringFiles>(this); }
-
-public:
-
     Windows::Storage::Search::StorageFileQueryResult NeighboringFilesQuery() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFileOpenPickerActivatedEventArgs
+struct WINRT_EBO impl_IFileOpenPickerActivatedEventArgs
 {
-    auto shim() const { return impl::shim<D, IFileOpenPickerActivatedEventArgs>(this); }
-
-public:
-
     Windows::Storage::Pickers::Provider::FileOpenPickerUI FileOpenPickerUI() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFileOpenPickerActivatedEventArgs2
+struct WINRT_EBO impl_IFileOpenPickerActivatedEventArgs2
 {
-    auto shim() const { return impl::shim<D, IFileOpenPickerActivatedEventArgs2>(this); }
-
-public:
-
     hstring CallerPackageFamilyName() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFileOpenPickerContinuationEventArgs
+struct WINRT_EBO impl_IFileOpenPickerContinuationEventArgs
 {
-    auto shim() const { return impl::shim<D, IFileOpenPickerContinuationEventArgs>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Storage::StorageFile> Files() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFileSavePickerActivatedEventArgs
+struct WINRT_EBO impl_IFileSavePickerActivatedEventArgs
 {
-    auto shim() const { return impl::shim<D, IFileSavePickerActivatedEventArgs>(this); }
-
-public:
-
     Windows::Storage::Pickers::Provider::FileSavePickerUI FileSavePickerUI() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFileSavePickerActivatedEventArgs2
+struct WINRT_EBO impl_IFileSavePickerActivatedEventArgs2
 {
-    auto shim() const { return impl::shim<D, IFileSavePickerActivatedEventArgs2>(this); }
-
-public:
-
     hstring CallerPackageFamilyName() const;
     hstring EnterpriseId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFileSavePickerContinuationEventArgs
+struct WINRT_EBO impl_IFileSavePickerContinuationEventArgs
 {
-    auto shim() const { return impl::shim<D, IFileSavePickerContinuationEventArgs>(this); }
-
-public:
-
     Windows::Storage::StorageFile File() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFolderPickerContinuationEventArgs
+struct WINRT_EBO impl_IFolderPickerContinuationEventArgs
 {
-    auto shim() const { return impl::shim<D, IFolderPickerContinuationEventArgs>(this); }
-
-public:
-
     Windows::Storage::StorageFolder Folder() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILaunchActivatedEventArgs
+struct WINRT_EBO impl_ILaunchActivatedEventArgs
 {
-    auto shim() const { return impl::shim<D, ILaunchActivatedEventArgs>(this); }
-
-public:
-
     hstring Arguments() const;
     hstring TileId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILaunchActivatedEventArgs2
+struct WINRT_EBO impl_ILaunchActivatedEventArgs2
 {
-    auto shim() const { return impl::shim<D, ILaunchActivatedEventArgs2>(this); }
-
-public:
-
     Windows::ApplicationModel::Activation::TileActivatedInfo TileActivatedInfo() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILockScreenActivatedEventArgs
+struct WINRT_EBO impl_ILockScreenActivatedEventArgs
 {
-    auto shim() const { return impl::shim<D, ILockScreenActivatedEventArgs>(this); }
-
-public:
-
     Windows::IInspectable Info() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPickerReturnedActivatedEventArgs
+struct WINRT_EBO impl_IPickerReturnedActivatedEventArgs
 {
-    auto shim() const { return impl::shim<D, IPickerReturnedActivatedEventArgs>(this); }
-
-public:
-
     hstring PickerOperationId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrelaunchActivatedEventArgs
+struct WINRT_EBO impl_IPrelaunchActivatedEventArgs
 {
-    auto shim() const { return impl::shim<D, IPrelaunchActivatedEventArgs>(this); }
-
-public:
-
     bool PrelaunchActivated() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IProtocolActivatedEventArgs
+struct WINRT_EBO impl_IProtocolActivatedEventArgs
 {
-    auto shim() const { return impl::shim<D, IProtocolActivatedEventArgs>(this); }
-
-public:
-
     Windows::Foundation::Uri Uri() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData
+struct WINRT_EBO impl_IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData
 {
-    auto shim() const { return impl::shim<D, IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData>(this); }
-
-public:
-
     hstring CallerPackageFamilyName() const;
     Windows::Foundation::Collections::ValueSet Data() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IProtocolForResultsActivatedEventArgs
+struct WINRT_EBO impl_IProtocolForResultsActivatedEventArgs
 {
-    auto shim() const { return impl::shim<D, IProtocolForResultsActivatedEventArgs>(this); }
-
-public:
-
     Windows::System::ProtocolForResultsOperation ProtocolForResultsOperation() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRestrictedLaunchActivatedEventArgs
+struct WINRT_EBO impl_IRestrictedLaunchActivatedEventArgs
 {
-    auto shim() const { return impl::shim<D, IRestrictedLaunchActivatedEventArgs>(this); }
-
-public:
-
     Windows::IInspectable SharedContext() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISearchActivatedEventArgs
+struct WINRT_EBO impl_ISearchActivatedEventArgs
 {
-    auto shim() const { return impl::shim<D, ISearchActivatedEventArgs>(this); }
-
-public:
-
     hstring QueryText() const;
     hstring Language() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISearchActivatedEventArgsWithLinguisticDetails
+struct WINRT_EBO impl_ISearchActivatedEventArgsWithLinguisticDetails
 {
-    auto shim() const { return impl::shim<D, ISearchActivatedEventArgsWithLinguisticDetails>(this); }
-
-public:
-
     Windows::ApplicationModel::Search::SearchPaneQueryLinguisticDetails LinguisticDetails() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IShareTargetActivatedEventArgs
+struct WINRT_EBO impl_IShareTargetActivatedEventArgs
 {
-    auto shim() const { return impl::shim<D, IShareTargetActivatedEventArgs>(this); }
-
-public:
-
     Windows::ApplicationModel::DataTransfer::ShareTarget::ShareOperation ShareOperation() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISplashScreen
+struct WINRT_EBO impl_ISplashScreen
 {
-    auto shim() const { return impl::shim<D, ISplashScreen>(this); }
-
-public:
-
     Windows::Foundation::Rect ImageLocation() const;
     event_token Dismissed(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Activation::SplashScreen, Windows::IInspectable> & handler) const;
     using Dismissed_revoker = event_revoker<ISplashScreen>;
@@ -480,73 +328,45 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ITileActivatedInfo
+struct WINRT_EBO impl_ITileActivatedInfo
 {
-    auto shim() const { return impl::shim<D, ITileActivatedInfo>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::ShownTileNotification> RecentlyShownNotifications() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IToastNotificationActivatedEventArgs
+struct WINRT_EBO impl_IToastNotificationActivatedEventArgs
 {
-    auto shim() const { return impl::shim<D, IToastNotificationActivatedEventArgs>(this); }
-
-public:
-
     hstring Argument() const;
     Windows::Foundation::Collections::ValueSet UserInput() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUserDataAccountProviderActivatedEventArgs
+struct WINRT_EBO impl_IUserDataAccountProviderActivatedEventArgs
 {
-    auto shim() const { return impl::shim<D, IUserDataAccountProviderActivatedEventArgs>(this); }
-
-public:
-
     Windows::ApplicationModel::UserDataAccounts::Provider::IUserDataAccountProviderOperation Operation() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IViewSwitcherProvider
+struct WINRT_EBO impl_IViewSwitcherProvider
 {
-    auto shim() const { return impl::shim<D, IViewSwitcherProvider>(this); }
-
-public:
-
     Windows::UI::ViewManagement::ActivationViewSwitcher ViewSwitcher() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVoiceCommandActivatedEventArgs
+struct WINRT_EBO impl_IVoiceCommandActivatedEventArgs
 {
-    auto shim() const { return impl::shim<D, IVoiceCommandActivatedEventArgs>(this); }
-
-public:
-
     Windows::Media::SpeechRecognition::SpeechRecognitionResult Result() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebAccountProviderActivatedEventArgs
+struct WINRT_EBO impl_IWebAccountProviderActivatedEventArgs
 {
-    auto shim() const { return impl::shim<D, IWebAccountProviderActivatedEventArgs>(this); }
-
-public:
-
     Windows::Security::Authentication::Web::Provider::IWebAccountProviderOperation Operation() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebAuthenticationBrokerContinuationEventArgs
+struct WINRT_EBO impl_IWebAuthenticationBrokerContinuationEventArgs
 {
-    auto shim() const { return impl::shim<D, IWebAuthenticationBrokerContinuationEventArgs>(this); }
-
-public:
-
     Windows::Security::Authentication::Web::WebAuthenticationResult WebAuthenticationResult() const;
 };
 

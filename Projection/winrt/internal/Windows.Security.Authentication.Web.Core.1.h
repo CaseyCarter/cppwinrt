@@ -124,19 +124,19 @@ template <> struct traits<Windows::Security::Authentication::Web::Core::WebToken
 
 namespace Windows::Security::Authentication::Web::Core {
 
-template <typename T> class impl_IWebAccountEventArgs;
-template <typename T> class impl_IWebAccountMonitor;
-template <typename T> class impl_IWebAuthenticationCoreManagerStatics;
-template <typename T> class impl_IWebAuthenticationCoreManagerStatics2;
-template <typename T> class impl_IWebAuthenticationCoreManagerStatics3;
-template <typename T> class impl_IWebProviderError;
-template <typename T> class impl_IWebProviderErrorFactory;
-template <typename T> class impl_IWebTokenRequest;
-template <typename T> class impl_IWebTokenRequest2;
-template <typename T> class impl_IWebTokenRequestFactory;
-template <typename T> class impl_IWebTokenRequestResult;
-template <typename T> class impl_IWebTokenResponse;
-template <typename T> class impl_IWebTokenResponseFactory;
+template <typename T> struct impl_IWebAccountEventArgs;
+template <typename T> struct impl_IWebAccountMonitor;
+template <typename T> struct impl_IWebAuthenticationCoreManagerStatics;
+template <typename T> struct impl_IWebAuthenticationCoreManagerStatics2;
+template <typename T> struct impl_IWebAuthenticationCoreManagerStatics3;
+template <typename T> struct impl_IWebProviderError;
+template <typename T> struct impl_IWebProviderErrorFactory;
+template <typename T> struct impl_IWebTokenRequest;
+template <typename T> struct impl_IWebTokenRequest2;
+template <typename T> struct impl_IWebTokenRequestFactory;
+template <typename T> struct impl_IWebTokenRequestResult;
+template <typename T> struct impl_IWebTokenResponse;
+template <typename T> struct impl_IWebTokenResponseFactory;
 
 }
 

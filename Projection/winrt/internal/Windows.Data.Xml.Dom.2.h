@@ -55,35 +55,23 @@ template <> struct __declspec(uuid("5eef7817-93dd-5c0b-9e5a-eb490408f3a9")) __de
 namespace Windows::Data::Xml::Dom {
 
 template <typename D>
-class WINRT_EBO impl_IDtdEntity
+struct WINRT_EBO impl_IDtdEntity
 {
-    auto shim() const { return impl::shim<D, IDtdEntity>(this); }
-
-public:
-
     Windows::IInspectable PublicId() const;
     Windows::IInspectable SystemId() const;
     Windows::IInspectable NotationName() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDtdNotation
+struct WINRT_EBO impl_IDtdNotation
 {
-    auto shim() const { return impl::shim<D, IDtdNotation>(this); }
-
-public:
-
     Windows::IInspectable PublicId() const;
     Windows::IInspectable SystemId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IXmlAttribute
+struct WINRT_EBO impl_IXmlAttribute
 {
-    auto shim() const { return impl::shim<D, IXmlAttribute>(this); }
-
-public:
-
     hstring Name() const;
     bool Specified() const;
     hstring Value() const;
@@ -91,21 +79,13 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IXmlCDataSection
+struct WINRT_EBO impl_IXmlCDataSection
 {
-    auto shim() const { return impl::shim<D, IXmlCDataSection>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IXmlCharacterData
+struct WINRT_EBO impl_IXmlCharacterData
 {
-    auto shim() const { return impl::shim<D, IXmlCharacterData>(this); }
-
-public:
-
     hstring Data() const;
     void Data(hstring_ref value) const;
     uint32_t Length() const;
@@ -117,21 +97,13 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IXmlComment
+struct WINRT_EBO impl_IXmlComment
 {
-    auto shim() const { return impl::shim<D, IXmlComment>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IXmlDocument
+struct WINRT_EBO impl_IXmlDocument
 {
-    auto shim() const { return impl::shim<D, IXmlDocument>(this); }
-
-public:
-
     Windows::Data::Xml::Dom::XmlDocumentType Doctype() const;
     Windows::Data::Xml::Dom::XmlDomImplementation Implementation() const;
     Windows::Data::Xml::Dom::XmlElement DocumentElement() const;
@@ -152,44 +124,28 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IXmlDocumentFragment
+struct WINRT_EBO impl_IXmlDocumentFragment
 {
-    auto shim() const { return impl::shim<D, IXmlDocumentFragment>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IXmlDocumentIO
+struct WINRT_EBO impl_IXmlDocumentIO
 {
-    auto shim() const { return impl::shim<D, IXmlDocumentIO>(this); }
-
-public:
-
     void LoadXml(hstring_ref xml) const;
     void LoadXml(hstring_ref xml, const Windows::Data::Xml::Dom::XmlLoadSettings & loadSettings) const;
     Windows::Foundation::IAsyncAction SaveToFileAsync(const Windows::Storage::IStorageFile & file) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IXmlDocumentIO2
+struct WINRT_EBO impl_IXmlDocumentIO2
 {
-    auto shim() const { return impl::shim<D, IXmlDocumentIO2>(this); }
-
-public:
-
     void LoadXmlFromBuffer(const Windows::Storage::Streams::IBuffer & buffer) const;
     void LoadXmlFromBuffer(const Windows::Storage::Streams::IBuffer & buffer, const Windows::Data::Xml::Dom::XmlLoadSettings & loadSettings) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IXmlDocumentStatics
+struct WINRT_EBO impl_IXmlDocumentStatics
 {
-    auto shim() const { return impl::shim<D, IXmlDocumentStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Data::Xml::Dom::XmlDocument> LoadFromUriAsync(const Windows::Foundation::Uri & uri) const;
     Windows::Foundation::IAsyncOperation<Windows::Data::Xml::Dom::XmlDocument> LoadFromUriAsync(const Windows::Foundation::Uri & uri, const Windows::Data::Xml::Dom::XmlLoadSettings & loadSettings) const;
     Windows::Foundation::IAsyncOperation<Windows::Data::Xml::Dom::XmlDocument> LoadFromFileAsync(const Windows::Storage::IStorageFile & file) const;
@@ -197,34 +153,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IXmlDocumentType
+struct WINRT_EBO impl_IXmlDocumentType
 {
-    auto shim() const { return impl::shim<D, IXmlDocumentType>(this); }
-
-public:
-
     hstring Name() const;
     Windows::Data::Xml::Dom::XmlNamedNodeMap Entities() const;
     Windows::Data::Xml::Dom::XmlNamedNodeMap Notations() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IXmlDomImplementation
+struct WINRT_EBO impl_IXmlDomImplementation
 {
-    auto shim() const { return impl::shim<D, IXmlDomImplementation>(this); }
-
-public:
-
     bool HasFeature(hstring_ref feature, const Windows::IInspectable & version) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IXmlElement
+struct WINRT_EBO impl_IXmlElement
 {
-    auto shim() const { return impl::shim<D, IXmlElement>(this); }
-
-public:
-
     hstring TagName() const;
     hstring GetAttribute(hstring_ref attributeName) const;
     void SetAttribute(hstring_ref attributeName, hstring_ref attributeValue) const;
@@ -241,21 +185,13 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IXmlEntityReference
+struct WINRT_EBO impl_IXmlEntityReference
 {
-    auto shim() const { return impl::shim<D, IXmlEntityReference>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IXmlLoadSettings
+struct WINRT_EBO impl_IXmlLoadSettings
 {
-    auto shim() const { return impl::shim<D, IXmlLoadSettings>(this); }
-
-public:
-
     uint32_t MaxElementDepth() const;
     void MaxElementDepth(uint32_t value) const;
     bool ProhibitDtd() const;
@@ -269,12 +205,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IXmlNamedNodeMap
+struct WINRT_EBO impl_IXmlNamedNodeMap
 {
-    auto shim() const { return impl::shim<D, IXmlNamedNodeMap>(this); }
-
-public:
-
     uint32_t Length() const;
     Windows::Data::Xml::Dom::IXmlNode Item(uint32_t index) const;
     Windows::Data::Xml::Dom::IXmlNode GetNamedItem(hstring_ref name) const;
@@ -286,12 +218,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IXmlNode
+struct WINRT_EBO impl_IXmlNode
 {
-    auto shim() const { return impl::shim<D, IXmlNode>(this); }
-
-public:
-
     Windows::IInspectable NodeValue() const;
     void NodeValue(const Windows::IInspectable & value) const;
     Windows::Data::Xml::Dom::NodeType NodeType() const;
@@ -318,23 +246,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IXmlNodeList
+struct WINRT_EBO impl_IXmlNodeList
 {
-    auto shim() const { return impl::shim<D, IXmlNodeList>(this); }
-
-public:
-
     uint32_t Length() const;
     Windows::Data::Xml::Dom::IXmlNode Item(uint32_t index) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IXmlNodeSelector
+struct WINRT_EBO impl_IXmlNodeSelector
 {
-    auto shim() const { return impl::shim<D, IXmlNodeSelector>(this); }
-
-public:
-
     Windows::Data::Xml::Dom::IXmlNode SelectSingleNode(hstring_ref xpath) const;
     Windows::Data::Xml::Dom::XmlNodeList SelectNodes(hstring_ref xpath) const;
     Windows::Data::Xml::Dom::IXmlNode SelectSingleNodeNS(hstring_ref xpath, const Windows::IInspectable & namespaces) const;
@@ -342,36 +262,24 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IXmlNodeSerializer
+struct WINRT_EBO impl_IXmlNodeSerializer
 {
-    auto shim() const { return impl::shim<D, IXmlNodeSerializer>(this); }
-
-public:
-
     hstring GetXml() const;
     hstring InnerText() const;
     void InnerText(hstring_ref value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IXmlProcessingInstruction
+struct WINRT_EBO impl_IXmlProcessingInstruction
 {
-    auto shim() const { return impl::shim<D, IXmlProcessingInstruction>(this); }
-
-public:
-
     hstring Target() const;
     hstring Data() const;
     void Data(hstring_ref value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IXmlText
+struct WINRT_EBO impl_IXmlText
 {
-    auto shim() const { return impl::shim<D, IXmlText>(this); }
-
-public:
-
     Windows::Data::Xml::Dom::IXmlText SplitText(uint32_t offset) const;
 };
 

@@ -120,12 +120,8 @@ template <> struct __declspec(uuid("81bc7d1b-7d06-555f-811b-42ec0fa71b55")) __de
 namespace Windows::Media::DialProtocol {
 
 template <typename D>
-class WINRT_EBO impl_IDialApp
+struct WINRT_EBO impl_IDialApp
 {
-    auto shim() const { return impl::shim<D, IDialApp>(this); }
-
-public:
-
     hstring AppName() const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::Media::DialProtocol::DialAppLaunchResult> RequestLaunchAsync(hstring_ref appArgument) const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::Media::DialProtocol::DialAppStopResult> StopAsync() const;
@@ -133,45 +129,29 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDialAppStateDetails
+struct WINRT_EBO impl_IDialAppStateDetails
 {
-    auto shim() const { return impl::shim<D, IDialAppStateDetails>(this); }
-
-public:
-
     Windows::Media::DialProtocol::DialAppState State() const;
     hstring FullXml() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDialDevice
+struct WINRT_EBO impl_IDialDevice
 {
-    auto shim() const { return impl::shim<D, IDialDevice>(this); }
-
-public:
-
     hstring Id() const;
     Windows::Media::DialProtocol::DialApp GetDialApp(hstring_ref appName) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDialDevice2
+struct WINRT_EBO impl_IDialDevice2
 {
-    auto shim() const { return impl::shim<D, IDialDevice2>(this); }
-
-public:
-
     hstring FriendlyName() const;
     Windows::Storage::Streams::IRandomAccessStreamReference Thumbnail() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDialDevicePicker
+struct WINRT_EBO impl_IDialDevicePicker
 {
-    auto shim() const { return impl::shim<D, IDialDevicePicker>(this); }
-
-public:
-
     Windows::Media::DialProtocol::DialDevicePickerFilter Filter() const;
     Windows::Devices::Enumeration::DevicePickerAppearance Appearance() const;
     event_token DialDeviceSelected(const Windows::Foundation::TypedEventHandler<Windows::Media::DialProtocol::DialDevicePicker, Windows::Media::DialProtocol::DialDeviceSelectedEventArgs> & handler) const;
@@ -195,44 +175,28 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDialDevicePickerFilter
+struct WINRT_EBO impl_IDialDevicePickerFilter
 {
-    auto shim() const { return impl::shim<D, IDialDevicePickerFilter>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<hstring> SupportedAppNames() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDialDeviceSelectedEventArgs
+struct WINRT_EBO impl_IDialDeviceSelectedEventArgs
 {
-    auto shim() const { return impl::shim<D, IDialDeviceSelectedEventArgs>(this); }
-
-public:
-
     Windows::Media::DialProtocol::DialDevice SelectedDialDevice() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDialDeviceStatics
+struct WINRT_EBO impl_IDialDeviceStatics
 {
-    auto shim() const { return impl::shim<D, IDialDeviceStatics>(this); }
-
-public:
-
     hstring GetDeviceSelector(hstring_ref appName) const;
     Windows::Foundation::IAsyncOperation<Windows::Media::DialProtocol::DialDevice> FromIdAsync(hstring_ref value) const;
     Windows::Foundation::IAsyncOperation<bool> DeviceInfoSupportsDialAsync(const Windows::Devices::Enumeration::DeviceInformation & device) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDialDisconnectButtonClickedEventArgs
+struct WINRT_EBO impl_IDialDisconnectButtonClickedEventArgs
 {
-    auto shim() const { return impl::shim<D, IDialDisconnectButtonClickedEventArgs>(this); }
-
-public:
-
     Windows::Media::DialProtocol::DialDevice Device() const;
 };
 

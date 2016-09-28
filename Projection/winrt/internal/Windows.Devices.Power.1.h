@@ -47,9 +47,9 @@ template <> struct traits<Windows::Devices::Power::BatteryReport> { using defaul
 
 namespace Windows::Devices::Power {
 
-template <typename T> class impl_IBattery;
-template <typename T> class impl_IBatteryReport;
-template <typename T> class impl_IBatteryStatics;
+template <typename T> struct impl_IBattery;
+template <typename T> struct impl_IBatteryReport;
+template <typename T> struct impl_IBatteryStatics;
 
 }
 

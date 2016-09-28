@@ -1472,628 +1472,628 @@ namespace Windows::Networking::BackgroundTransfer {
 
 template <typename D> void impl_IBackgroundTransferBase<D>::SetRequestHeader(hstring_ref headerName, hstring_ref headerValue) const
 {
-    check_hresult(shim()->abi_SetRequestHeader(get(headerName), get(headerValue)));
+    check_hresult(static_cast<const IBackgroundTransferBase &>(static_cast<const D &>(*this))->abi_SetRequestHeader(get(headerName), get(headerValue)));
 }
 
 template <typename D> Windows::Security::Credentials::PasswordCredential impl_IBackgroundTransferBase<D>::ServerCredential() const
 {
     Windows::Security::Credentials::PasswordCredential credential { nullptr };
-    check_hresult(shim()->get_ServerCredential(put(credential)));
+    check_hresult(static_cast<const IBackgroundTransferBase &>(static_cast<const D &>(*this))->get_ServerCredential(put(credential)));
     return credential;
 }
 
 template <typename D> void impl_IBackgroundTransferBase<D>::ServerCredential(const Windows::Security::Credentials::PasswordCredential & credential) const
 {
-    check_hresult(shim()->put_ServerCredential(get(credential)));
+    check_hresult(static_cast<const IBackgroundTransferBase &>(static_cast<const D &>(*this))->put_ServerCredential(get(credential)));
 }
 
 template <typename D> Windows::Security::Credentials::PasswordCredential impl_IBackgroundTransferBase<D>::ProxyCredential() const
 {
     Windows::Security::Credentials::PasswordCredential credential { nullptr };
-    check_hresult(shim()->get_ProxyCredential(put(credential)));
+    check_hresult(static_cast<const IBackgroundTransferBase &>(static_cast<const D &>(*this))->get_ProxyCredential(put(credential)));
     return credential;
 }
 
 template <typename D> void impl_IBackgroundTransferBase<D>::ProxyCredential(const Windows::Security::Credentials::PasswordCredential & credential) const
 {
-    check_hresult(shim()->put_ProxyCredential(get(credential)));
+    check_hresult(static_cast<const IBackgroundTransferBase &>(static_cast<const D &>(*this))->put_ProxyCredential(get(credential)));
 }
 
 template <typename D> hstring impl_IBackgroundTransferBase<D>::Method() const
 {
     hstring value;
-    check_hresult(shim()->get_Method(put(value)));
+    check_hresult(static_cast<const IBackgroundTransferBase &>(static_cast<const D &>(*this))->get_Method(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBackgroundTransferBase<D>::Method(hstring_ref value) const
 {
-    check_hresult(shim()->put_Method(get(value)));
+    check_hresult(static_cast<const IBackgroundTransferBase &>(static_cast<const D &>(*this))->put_Method(get(value)));
 }
 
 template <typename D> hstring impl_IBackgroundTransferBase<D>::Group() const
 {
     hstring value;
-    check_hresult(shim()->get_Group(put(value)));
+    check_hresult(static_cast<const IBackgroundTransferBase &>(static_cast<const D &>(*this))->get_Group(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBackgroundTransferBase<D>::Group(hstring_ref value) const
 {
-    check_hresult(shim()->put_Group(get(value)));
+    check_hresult(static_cast<const IBackgroundTransferBase &>(static_cast<const D &>(*this))->put_Group(get(value)));
 }
 
 template <typename D> Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy impl_IBackgroundTransferBase<D>::CostPolicy() const
 {
     Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy value {};
-    check_hresult(shim()->get_CostPolicy(&value));
+    check_hresult(static_cast<const IBackgroundTransferBase &>(static_cast<const D &>(*this))->get_CostPolicy(&value));
     return value;
 }
 
 template <typename D> void impl_IBackgroundTransferBase<D>::CostPolicy(Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy value) const
 {
-    check_hresult(shim()->put_CostPolicy(value));
+    check_hresult(static_cast<const IBackgroundTransferBase &>(static_cast<const D &>(*this))->put_CostPolicy(value));
 }
 
 template <typename D> bool impl_IUnconstrainedTransferRequestResult<D>::IsUnconstrained() const
 {
     bool value {};
-    check_hresult(shim()->get_IsUnconstrained(&value));
+    check_hresult(static_cast<const IUnconstrainedTransferRequestResult &>(static_cast<const D &>(*this))->get_IsUnconstrained(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult> impl_IBackgroundDownloaderUserConsent<D>::RequestUnconstrainedDownloadsAsync(const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::DownloadOperation> & operations) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult> operation;
-    check_hresult(shim()->abi_RequestUnconstrainedDownloadsAsync(get(operations), put(operation)));
+    check_hresult(static_cast<const IBackgroundDownloaderUserConsent &>(static_cast<const D &>(*this))->abi_RequestUnconstrainedDownloadsAsync(get(operations), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult> impl_IBackgroundUploaderUserConsent<D>::RequestUnconstrainedUploadsAsync(const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::UploadOperation> & operations) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult> operation;
-    check_hresult(shim()->abi_RequestUnconstrainedUploadsAsync(get(operations), put(operation)));
+    check_hresult(static_cast<const IBackgroundUploaderUserConsent &>(static_cast<const D &>(*this))->abi_RequestUnconstrainedUploadsAsync(get(operations), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Networking::BackgroundTransfer::DownloadOperation impl_IBackgroundDownloader<D>::CreateDownload(const Windows::Foundation::Uri & uri, const Windows::Storage::IStorageFile & resultFile) const
 {
     Windows::Networking::BackgroundTransfer::DownloadOperation operation { nullptr };
-    check_hresult(shim()->abi_CreateDownload(get(uri), get(resultFile), put(operation)));
+    check_hresult(static_cast<const IBackgroundDownloader &>(static_cast<const D &>(*this))->abi_CreateDownload(get(uri), get(resultFile), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Networking::BackgroundTransfer::DownloadOperation impl_IBackgroundDownloader<D>::CreateDownload(const Windows::Foundation::Uri & uri, const Windows::Storage::IStorageFile & resultFile, const Windows::Storage::IStorageFile & requestBodyFile) const
 {
     Windows::Networking::BackgroundTransfer::DownloadOperation operation { nullptr };
-    check_hresult(shim()->abi_CreateDownloadFromFile(get(uri), get(resultFile), get(requestBodyFile), put(operation)));
+    check_hresult(static_cast<const IBackgroundDownloader &>(static_cast<const D &>(*this))->abi_CreateDownloadFromFile(get(uri), get(resultFile), get(requestBodyFile), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::DownloadOperation> impl_IBackgroundDownloader<D>::CreateDownloadAsync(const Windows::Foundation::Uri & uri, const Windows::Storage::IStorageFile & resultFile, const Windows::Storage::Streams::IInputStream & requestBodyStream) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::DownloadOperation> operation;
-    check_hresult(shim()->abi_CreateDownloadAsync(get(uri), get(resultFile), get(requestBodyStream), put(operation)));
+    check_hresult(static_cast<const IBackgroundDownloader &>(static_cast<const D &>(*this))->abi_CreateDownloadAsync(get(uri), get(resultFile), get(requestBodyStream), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Networking::BackgroundTransfer::BackgroundTransferGroup impl_IBackgroundDownloader2<D>::TransferGroup() const
 {
     Windows::Networking::BackgroundTransfer::BackgroundTransferGroup value { nullptr };
-    check_hresult(shim()->get_TransferGroup(put(value)));
+    check_hresult(static_cast<const IBackgroundDownloader2 &>(static_cast<const D &>(*this))->get_TransferGroup(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBackgroundDownloader2<D>::TransferGroup(const Windows::Networking::BackgroundTransfer::BackgroundTransferGroup & value) const
 {
-    check_hresult(shim()->put_TransferGroup(get(value)));
+    check_hresult(static_cast<const IBackgroundDownloader2 &>(static_cast<const D &>(*this))->put_TransferGroup(get(value)));
 }
 
 template <typename D> Windows::UI::Notifications::ToastNotification impl_IBackgroundDownloader2<D>::SuccessToastNotification() const
 {
     Windows::UI::Notifications::ToastNotification value { nullptr };
-    check_hresult(shim()->get_SuccessToastNotification(put(value)));
+    check_hresult(static_cast<const IBackgroundDownloader2 &>(static_cast<const D &>(*this))->get_SuccessToastNotification(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBackgroundDownloader2<D>::SuccessToastNotification(const Windows::UI::Notifications::ToastNotification & value) const
 {
-    check_hresult(shim()->put_SuccessToastNotification(get(value)));
+    check_hresult(static_cast<const IBackgroundDownloader2 &>(static_cast<const D &>(*this))->put_SuccessToastNotification(get(value)));
 }
 
 template <typename D> Windows::UI::Notifications::ToastNotification impl_IBackgroundDownloader2<D>::FailureToastNotification() const
 {
     Windows::UI::Notifications::ToastNotification value { nullptr };
-    check_hresult(shim()->get_FailureToastNotification(put(value)));
+    check_hresult(static_cast<const IBackgroundDownloader2 &>(static_cast<const D &>(*this))->get_FailureToastNotification(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBackgroundDownloader2<D>::FailureToastNotification(const Windows::UI::Notifications::ToastNotification & value) const
 {
-    check_hresult(shim()->put_FailureToastNotification(get(value)));
+    check_hresult(static_cast<const IBackgroundDownloader2 &>(static_cast<const D &>(*this))->put_FailureToastNotification(get(value)));
 }
 
 template <typename D> Windows::UI::Notifications::TileNotification impl_IBackgroundDownloader2<D>::SuccessTileNotification() const
 {
     Windows::UI::Notifications::TileNotification value { nullptr };
-    check_hresult(shim()->get_SuccessTileNotification(put(value)));
+    check_hresult(static_cast<const IBackgroundDownloader2 &>(static_cast<const D &>(*this))->get_SuccessTileNotification(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBackgroundDownloader2<D>::SuccessTileNotification(const Windows::UI::Notifications::TileNotification & value) const
 {
-    check_hresult(shim()->put_SuccessTileNotification(get(value)));
+    check_hresult(static_cast<const IBackgroundDownloader2 &>(static_cast<const D &>(*this))->put_SuccessTileNotification(get(value)));
 }
 
 template <typename D> Windows::UI::Notifications::TileNotification impl_IBackgroundDownloader2<D>::FailureTileNotification() const
 {
     Windows::UI::Notifications::TileNotification value { nullptr };
-    check_hresult(shim()->get_FailureTileNotification(put(value)));
+    check_hresult(static_cast<const IBackgroundDownloader2 &>(static_cast<const D &>(*this))->get_FailureTileNotification(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBackgroundDownloader2<D>::FailureTileNotification(const Windows::UI::Notifications::TileNotification & value) const
 {
-    check_hresult(shim()->put_FailureTileNotification(get(value)));
+    check_hresult(static_cast<const IBackgroundDownloader2 &>(static_cast<const D &>(*this))->put_FailureTileNotification(get(value)));
 }
 
 template <typename D> Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroup impl_IBackgroundDownloader3<D>::CompletionGroup() const
 {
     Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroup value { nullptr };
-    check_hresult(shim()->get_CompletionGroup(put(value)));
+    check_hresult(static_cast<const IBackgroundDownloader3 &>(static_cast<const D &>(*this))->get_CompletionGroup(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::BackgroundTransfer::UploadOperation impl_IBackgroundUploader<D>::CreateUpload(const Windows::Foundation::Uri & uri, const Windows::Storage::IStorageFile & sourceFile) const
 {
     Windows::Networking::BackgroundTransfer::UploadOperation operation { nullptr };
-    check_hresult(shim()->abi_CreateUpload(get(uri), get(sourceFile), put(operation)));
+    check_hresult(static_cast<const IBackgroundUploader &>(static_cast<const D &>(*this))->abi_CreateUpload(get(uri), get(sourceFile), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation> impl_IBackgroundUploader<D>::CreateUploadFromStreamAsync(const Windows::Foundation::Uri & uri, const Windows::Storage::Streams::IInputStream & sourceStream) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation> operation;
-    check_hresult(shim()->abi_CreateUploadFromStreamAsync(get(uri), get(sourceStream), put(operation)));
+    check_hresult(static_cast<const IBackgroundUploader &>(static_cast<const D &>(*this))->abi_CreateUploadFromStreamAsync(get(uri), get(sourceStream), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation> impl_IBackgroundUploader<D>::CreateUploadAsync(const Windows::Foundation::Uri & uri, const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart> & parts) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation> operation;
-    check_hresult(shim()->abi_CreateUploadWithFormDataAndAutoBoundaryAsync(get(uri), get(parts), put(operation)));
+    check_hresult(static_cast<const IBackgroundUploader &>(static_cast<const D &>(*this))->abi_CreateUploadWithFormDataAndAutoBoundaryAsync(get(uri), get(parts), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation> impl_IBackgroundUploader<D>::CreateUploadAsync(const Windows::Foundation::Uri & uri, const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart> & parts, hstring_ref subType) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation> operation;
-    check_hresult(shim()->abi_CreateUploadWithSubTypeAsync(get(uri), get(parts), get(subType), put(operation)));
+    check_hresult(static_cast<const IBackgroundUploader &>(static_cast<const D &>(*this))->abi_CreateUploadWithSubTypeAsync(get(uri), get(parts), get(subType), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation> impl_IBackgroundUploader<D>::CreateUploadAsync(const Windows::Foundation::Uri & uri, const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart> & parts, hstring_ref subType, hstring_ref boundary) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation> operation;
-    check_hresult(shim()->abi_CreateUploadWithSubTypeAndBoundaryAsync(get(uri), get(parts), get(subType), get(boundary), put(operation)));
+    check_hresult(static_cast<const IBackgroundUploader &>(static_cast<const D &>(*this))->abi_CreateUploadWithSubTypeAndBoundaryAsync(get(uri), get(parts), get(subType), get(boundary), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Networking::BackgroundTransfer::BackgroundTransferGroup impl_IBackgroundUploader2<D>::TransferGroup() const
 {
     Windows::Networking::BackgroundTransfer::BackgroundTransferGroup value { nullptr };
-    check_hresult(shim()->get_TransferGroup(put(value)));
+    check_hresult(static_cast<const IBackgroundUploader2 &>(static_cast<const D &>(*this))->get_TransferGroup(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBackgroundUploader2<D>::TransferGroup(const Windows::Networking::BackgroundTransfer::BackgroundTransferGroup & value) const
 {
-    check_hresult(shim()->put_TransferGroup(get(value)));
+    check_hresult(static_cast<const IBackgroundUploader2 &>(static_cast<const D &>(*this))->put_TransferGroup(get(value)));
 }
 
 template <typename D> Windows::UI::Notifications::ToastNotification impl_IBackgroundUploader2<D>::SuccessToastNotification() const
 {
     Windows::UI::Notifications::ToastNotification value { nullptr };
-    check_hresult(shim()->get_SuccessToastNotification(put(value)));
+    check_hresult(static_cast<const IBackgroundUploader2 &>(static_cast<const D &>(*this))->get_SuccessToastNotification(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBackgroundUploader2<D>::SuccessToastNotification(const Windows::UI::Notifications::ToastNotification & value) const
 {
-    check_hresult(shim()->put_SuccessToastNotification(get(value)));
+    check_hresult(static_cast<const IBackgroundUploader2 &>(static_cast<const D &>(*this))->put_SuccessToastNotification(get(value)));
 }
 
 template <typename D> Windows::UI::Notifications::ToastNotification impl_IBackgroundUploader2<D>::FailureToastNotification() const
 {
     Windows::UI::Notifications::ToastNotification value { nullptr };
-    check_hresult(shim()->get_FailureToastNotification(put(value)));
+    check_hresult(static_cast<const IBackgroundUploader2 &>(static_cast<const D &>(*this))->get_FailureToastNotification(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBackgroundUploader2<D>::FailureToastNotification(const Windows::UI::Notifications::ToastNotification & value) const
 {
-    check_hresult(shim()->put_FailureToastNotification(get(value)));
+    check_hresult(static_cast<const IBackgroundUploader2 &>(static_cast<const D &>(*this))->put_FailureToastNotification(get(value)));
 }
 
 template <typename D> Windows::UI::Notifications::TileNotification impl_IBackgroundUploader2<D>::SuccessTileNotification() const
 {
     Windows::UI::Notifications::TileNotification value { nullptr };
-    check_hresult(shim()->get_SuccessTileNotification(put(value)));
+    check_hresult(static_cast<const IBackgroundUploader2 &>(static_cast<const D &>(*this))->get_SuccessTileNotification(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBackgroundUploader2<D>::SuccessTileNotification(const Windows::UI::Notifications::TileNotification & value) const
 {
-    check_hresult(shim()->put_SuccessTileNotification(get(value)));
+    check_hresult(static_cast<const IBackgroundUploader2 &>(static_cast<const D &>(*this))->put_SuccessTileNotification(get(value)));
 }
 
 template <typename D> Windows::UI::Notifications::TileNotification impl_IBackgroundUploader2<D>::FailureTileNotification() const
 {
     Windows::UI::Notifications::TileNotification value { nullptr };
-    check_hresult(shim()->get_FailureTileNotification(put(value)));
+    check_hresult(static_cast<const IBackgroundUploader2 &>(static_cast<const D &>(*this))->get_FailureTileNotification(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBackgroundUploader2<D>::FailureTileNotification(const Windows::UI::Notifications::TileNotification & value) const
 {
-    check_hresult(shim()->put_FailureTileNotification(get(value)));
+    check_hresult(static_cast<const IBackgroundUploader2 &>(static_cast<const D &>(*this))->put_FailureTileNotification(get(value)));
 }
 
 template <typename D> Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroup impl_IBackgroundUploader3<D>::CompletionGroup() const
 {
     Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroup value { nullptr };
-    check_hresult(shim()->get_CompletionGroup(put(value)));
+    check_hresult(static_cast<const IBackgroundUploader3 &>(static_cast<const D &>(*this))->get_CompletionGroup(put(value)));
     return value;
 }
 
 template <typename D> GUID impl_IBackgroundTransferOperation<D>::Guid() const
 {
     GUID value {};
-    check_hresult(shim()->get_Guid(&value));
+    check_hresult(static_cast<const IBackgroundTransferOperation &>(static_cast<const D &>(*this))->get_Guid(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Uri impl_IBackgroundTransferOperation<D>::RequestedUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(shim()->get_RequestedUri(put(value)));
+    check_hresult(static_cast<const IBackgroundTransferOperation &>(static_cast<const D &>(*this))->get_RequestedUri(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IBackgroundTransferOperation<D>::Method() const
 {
     hstring value;
-    check_hresult(shim()->get_Method(put(value)));
+    check_hresult(static_cast<const IBackgroundTransferOperation &>(static_cast<const D &>(*this))->get_Method(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IBackgroundTransferOperation<D>::Group() const
 {
     hstring value;
-    check_hresult(shim()->get_Group(put(value)));
+    check_hresult(static_cast<const IBackgroundTransferOperation &>(static_cast<const D &>(*this))->get_Group(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy impl_IBackgroundTransferOperation<D>::CostPolicy() const
 {
     Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy value {};
-    check_hresult(shim()->get_CostPolicy(&value));
+    check_hresult(static_cast<const IBackgroundTransferOperation &>(static_cast<const D &>(*this))->get_CostPolicy(&value));
     return value;
 }
 
 template <typename D> void impl_IBackgroundTransferOperation<D>::CostPolicy(Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy value) const
 {
-    check_hresult(shim()->put_CostPolicy(value));
+    check_hresult(static_cast<const IBackgroundTransferOperation &>(static_cast<const D &>(*this))->put_CostPolicy(value));
 }
 
 template <typename D> Windows::Storage::Streams::IInputStream impl_IBackgroundTransferOperation<D>::GetResultStreamAt(uint64_t position) const
 {
     Windows::Storage::Streams::IInputStream value;
-    check_hresult(shim()->abi_GetResultStreamAt(position, put(value)));
+    check_hresult(static_cast<const IBackgroundTransferOperation &>(static_cast<const D &>(*this))->abi_GetResultStreamAt(position, put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::BackgroundTransfer::ResponseInformation impl_IBackgroundTransferOperation<D>::GetResponseInformation() const
 {
     Windows::Networking::BackgroundTransfer::ResponseInformation value { nullptr };
-    check_hresult(shim()->abi_GetResponseInformation(put(value)));
+    check_hresult(static_cast<const IBackgroundTransferOperation &>(static_cast<const D &>(*this))->abi_GetResponseInformation(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::BackgroundTransfer::BackgroundTransferPriority impl_IBackgroundTransferOperationPriority<D>::Priority() const
 {
     Windows::Networking::BackgroundTransfer::BackgroundTransferPriority value {};
-    check_hresult(shim()->get_Priority(&value));
+    check_hresult(static_cast<const IBackgroundTransferOperationPriority &>(static_cast<const D &>(*this))->get_Priority(&value));
     return value;
 }
 
 template <typename D> void impl_IBackgroundTransferOperationPriority<D>::Priority(Windows::Networking::BackgroundTransfer::BackgroundTransferPriority value) const
 {
-    check_hresult(shim()->put_Priority(value));
+    check_hresult(static_cast<const IBackgroundTransferOperationPriority &>(static_cast<const D &>(*this))->put_Priority(value));
 }
 
 template <typename D> Windows::Storage::IStorageFile impl_IDownloadOperation<D>::ResultFile() const
 {
     Windows::Storage::IStorageFile value;
-    check_hresult(shim()->get_ResultFile(put(value)));
+    check_hresult(static_cast<const IDownloadOperation &>(static_cast<const D &>(*this))->get_ResultFile(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::BackgroundTransfer::BackgroundDownloadProgress impl_IDownloadOperation<D>::Progress() const
 {
     Windows::Networking::BackgroundTransfer::BackgroundDownloadProgress value {};
-    check_hresult(shim()->get_Progress(put(value)));
+    check_hresult(static_cast<const IDownloadOperation &>(static_cast<const D &>(*this))->get_Progress(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Networking::BackgroundTransfer::DownloadOperation, Windows::Networking::BackgroundTransfer::DownloadOperation> impl_IDownloadOperation<D>::StartAsync() const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Networking::BackgroundTransfer::DownloadOperation, Windows::Networking::BackgroundTransfer::DownloadOperation> operation;
-    check_hresult(shim()->abi_StartAsync(put(operation)));
+    check_hresult(static_cast<const IDownloadOperation &>(static_cast<const D &>(*this))->abi_StartAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Networking::BackgroundTransfer::DownloadOperation, Windows::Networking::BackgroundTransfer::DownloadOperation> impl_IDownloadOperation<D>::AttachAsync() const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Networking::BackgroundTransfer::DownloadOperation, Windows::Networking::BackgroundTransfer::DownloadOperation> operation;
-    check_hresult(shim()->abi_AttachAsync(put(operation)));
+    check_hresult(static_cast<const IDownloadOperation &>(static_cast<const D &>(*this))->abi_AttachAsync(put(operation)));
     return operation;
 }
 
 template <typename D> void impl_IDownloadOperation<D>::Pause() const
 {
-    check_hresult(shim()->abi_Pause());
+    check_hresult(static_cast<const IDownloadOperation &>(static_cast<const D &>(*this))->abi_Pause());
 }
 
 template <typename D> void impl_IDownloadOperation<D>::Resume() const
 {
-    check_hresult(shim()->abi_Resume());
+    check_hresult(static_cast<const IDownloadOperation &>(static_cast<const D &>(*this))->abi_Resume());
 }
 
 template <typename D> Windows::Networking::BackgroundTransfer::BackgroundTransferGroup impl_IDownloadOperation2<D>::TransferGroup() const
 {
     Windows::Networking::BackgroundTransfer::BackgroundTransferGroup value { nullptr };
-    check_hresult(shim()->get_TransferGroup(put(value)));
+    check_hresult(static_cast<const IDownloadOperation2 &>(static_cast<const D &>(*this))->get_TransferGroup(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::IStorageFile impl_IUploadOperation<D>::SourceFile() const
 {
     Windows::Storage::IStorageFile value;
-    check_hresult(shim()->get_SourceFile(put(value)));
+    check_hresult(static_cast<const IUploadOperation &>(static_cast<const D &>(*this))->get_SourceFile(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::BackgroundTransfer::BackgroundUploadProgress impl_IUploadOperation<D>::Progress() const
 {
     Windows::Networking::BackgroundTransfer::BackgroundUploadProgress value {};
-    check_hresult(shim()->get_Progress(put(value)));
+    check_hresult(static_cast<const IUploadOperation &>(static_cast<const D &>(*this))->get_Progress(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Networking::BackgroundTransfer::UploadOperation, Windows::Networking::BackgroundTransfer::UploadOperation> impl_IUploadOperation<D>::StartAsync() const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Networking::BackgroundTransfer::UploadOperation, Windows::Networking::BackgroundTransfer::UploadOperation> operation;
-    check_hresult(shim()->abi_StartAsync(put(operation)));
+    check_hresult(static_cast<const IUploadOperation &>(static_cast<const D &>(*this))->abi_StartAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Networking::BackgroundTransfer::UploadOperation, Windows::Networking::BackgroundTransfer::UploadOperation> impl_IUploadOperation<D>::AttachAsync() const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Networking::BackgroundTransfer::UploadOperation, Windows::Networking::BackgroundTransfer::UploadOperation> operation;
-    check_hresult(shim()->abi_AttachAsync(put(operation)));
+    check_hresult(static_cast<const IUploadOperation &>(static_cast<const D &>(*this))->abi_AttachAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Networking::BackgroundTransfer::BackgroundTransferGroup impl_IUploadOperation2<D>::TransferGroup() const
 {
     Windows::Networking::BackgroundTransfer::BackgroundTransferGroup value { nullptr };
-    check_hresult(shim()->get_TransferGroup(put(value)));
+    check_hresult(static_cast<const IUploadOperation2 &>(static_cast<const D &>(*this))->get_TransferGroup(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::BackgroundTransfer::BackgroundDownloader impl_IBackgroundDownloaderFactory<D>::CreateWithCompletionGroup(const Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroup & completionGroup) const
 {
     Windows::Networking::BackgroundTransfer::BackgroundDownloader backgroundDownloader { nullptr };
-    check_hresult(shim()->abi_CreateWithCompletionGroup(get(completionGroup), put(backgroundDownloader)));
+    check_hresult(static_cast<const IBackgroundDownloaderFactory &>(static_cast<const D &>(*this))->abi_CreateWithCompletionGroup(get(completionGroup), put(backgroundDownloader)));
     return backgroundDownloader;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>> impl_IBackgroundDownloaderStaticMethods<D>::GetCurrentDownloadsAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>> operation;
-    check_hresult(shim()->abi_GetCurrentDownloadsAsync(put(operation)));
+    check_hresult(static_cast<const IBackgroundDownloaderStaticMethods &>(static_cast<const D &>(*this))->abi_GetCurrentDownloadsAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>> impl_IBackgroundDownloaderStaticMethods<D>::GetCurrentDownloadsAsync(hstring_ref group) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>> operation;
-    check_hresult(shim()->abi_GetCurrentDownloadsForGroupAsync(get(group), put(operation)));
+    check_hresult(static_cast<const IBackgroundDownloaderStaticMethods &>(static_cast<const D &>(*this))->abi_GetCurrentDownloadsForGroupAsync(get(group), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>> impl_IBackgroundDownloaderStaticMethods2<D>::GetCurrentDownloadsForTransferGroupAsync(const Windows::Networking::BackgroundTransfer::BackgroundTransferGroup & group) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>> operation;
-    check_hresult(shim()->abi_GetCurrentDownloadsForTransferGroupAsync(get(group), put(operation)));
+    check_hresult(static_cast<const IBackgroundDownloaderStaticMethods2 &>(static_cast<const D &>(*this))->abi_GetCurrentDownloadsForTransferGroupAsync(get(group), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Networking::BackgroundTransfer::BackgroundUploader impl_IBackgroundUploaderFactory<D>::CreateWithCompletionGroup(const Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroup & completionGroup) const
 {
     Windows::Networking::BackgroundTransfer::BackgroundUploader backgroundUploader { nullptr };
-    check_hresult(shim()->abi_CreateWithCompletionGroup(get(completionGroup), put(backgroundUploader)));
+    check_hresult(static_cast<const IBackgroundUploaderFactory &>(static_cast<const D &>(*this))->abi_CreateWithCompletionGroup(get(completionGroup), put(backgroundUploader)));
     return backgroundUploader;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>> impl_IBackgroundUploaderStaticMethods<D>::GetCurrentUploadsAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>> operation;
-    check_hresult(shim()->abi_GetCurrentUploadsAsync(put(operation)));
+    check_hresult(static_cast<const IBackgroundUploaderStaticMethods &>(static_cast<const D &>(*this))->abi_GetCurrentUploadsAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>> impl_IBackgroundUploaderStaticMethods<D>::GetCurrentUploadsAsync(hstring_ref group) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>> operation;
-    check_hresult(shim()->abi_GetCurrentUploadsForGroupAsync(get(group), put(operation)));
+    check_hresult(static_cast<const IBackgroundUploaderStaticMethods &>(static_cast<const D &>(*this))->abi_GetCurrentUploadsForGroupAsync(get(group), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>> impl_IBackgroundUploaderStaticMethods2<D>::GetCurrentUploadsForTransferGroupAsync(const Windows::Networking::BackgroundTransfer::BackgroundTransferGroup & group) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>> operation;
-    check_hresult(shim()->abi_GetCurrentUploadsForTransferGroupAsync(get(group), put(operation)));
+    check_hresult(static_cast<const IBackgroundUploaderStaticMethods2 &>(static_cast<const D &>(*this))->abi_GetCurrentUploadsForTransferGroupAsync(get(group), put(operation)));
     return operation;
 }
 
 template <typename D> bool impl_IResponseInformation<D>::IsResumable() const
 {
     bool value {};
-    check_hresult(shim()->get_IsResumable(&value));
+    check_hresult(static_cast<const IResponseInformation &>(static_cast<const D &>(*this))->get_IsResumable(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Uri impl_IResponseInformation<D>::ActualUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(shim()->get_ActualUri(put(value)));
+    check_hresult(static_cast<const IResponseInformation &>(static_cast<const D &>(*this))->get_ActualUri(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IResponseInformation<D>::StatusCode() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_StatusCode(&value));
+    check_hresult(static_cast<const IResponseInformation &>(static_cast<const D &>(*this))->get_StatusCode(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IMapView<hstring, hstring> impl_IResponseInformation<D>::Headers() const
 {
     Windows::Foundation::Collections::IMapView<hstring, hstring> value;
-    check_hresult(shim()->get_Headers(put(value)));
+    check_hresult(static_cast<const IResponseInformation &>(static_cast<const D &>(*this))->get_Headers(put(value)));
     return value;
 }
 
 template <typename D> Windows::Web::WebErrorStatus impl_IBackgroundTransferErrorStaticMethods<D>::GetStatus(int32_t hresult) const
 {
     Windows::Web::WebErrorStatus status {};
-    check_hresult(shim()->abi_GetStatus(hresult, &status));
+    check_hresult(static_cast<const IBackgroundTransferErrorStaticMethods &>(static_cast<const D &>(*this))->abi_GetStatus(hresult, &status));
     return status;
 }
 
 template <typename D> void impl_IBackgroundTransferContentPart<D>::SetHeader(hstring_ref headerName, hstring_ref headerValue) const
 {
-    check_hresult(shim()->abi_SetHeader(get(headerName), get(headerValue)));
+    check_hresult(static_cast<const IBackgroundTransferContentPart &>(static_cast<const D &>(*this))->abi_SetHeader(get(headerName), get(headerValue)));
 }
 
 template <typename D> void impl_IBackgroundTransferContentPart<D>::SetText(hstring_ref value) const
 {
-    check_hresult(shim()->abi_SetText(get(value)));
+    check_hresult(static_cast<const IBackgroundTransferContentPart &>(static_cast<const D &>(*this))->abi_SetText(get(value)));
 }
 
 template <typename D> void impl_IBackgroundTransferContentPart<D>::SetFile(const Windows::Storage::IStorageFile & value) const
 {
-    check_hresult(shim()->abi_SetFile(get(value)));
+    check_hresult(static_cast<const IBackgroundTransferContentPart &>(static_cast<const D &>(*this))->abi_SetFile(get(value)));
 }
 
 template <typename D> Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart impl_IBackgroundTransferContentPartFactory<D>::CreateWithName(hstring_ref name) const
 {
     Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart value { nullptr };
-    check_hresult(shim()->abi_CreateWithName(get(name), put(value)));
+    check_hresult(static_cast<const IBackgroundTransferContentPartFactory &>(static_cast<const D &>(*this))->abi_CreateWithName(get(name), put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart impl_IBackgroundTransferContentPartFactory<D>::CreateWithNameAndFileName(hstring_ref name, hstring_ref fileName) const
 {
     Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart value { nullptr };
-    check_hresult(shim()->abi_CreateWithNameAndFileName(get(name), get(fileName), put(value)));
+    check_hresult(static_cast<const IBackgroundTransferContentPartFactory &>(static_cast<const D &>(*this))->abi_CreateWithNameAndFileName(get(name), get(fileName), put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IBackgroundTransferGroup<D>::Name() const
 {
     hstring value;
-    check_hresult(shim()->get_Name(put(value)));
+    check_hresult(static_cast<const IBackgroundTransferGroup &>(static_cast<const D &>(*this))->get_Name(put(value)));
     return value;
 }
 
 template <typename D> Windows::Networking::BackgroundTransfer::BackgroundTransferBehavior impl_IBackgroundTransferGroup<D>::TransferBehavior() const
 {
     Windows::Networking::BackgroundTransfer::BackgroundTransferBehavior value {};
-    check_hresult(shim()->get_TransferBehavior(&value));
+    check_hresult(static_cast<const IBackgroundTransferGroup &>(static_cast<const D &>(*this))->get_TransferBehavior(&value));
     return value;
 }
 
 template <typename D> void impl_IBackgroundTransferGroup<D>::TransferBehavior(Windows::Networking::BackgroundTransfer::BackgroundTransferBehavior value) const
 {
-    check_hresult(shim()->put_TransferBehavior(value));
+    check_hresult(static_cast<const IBackgroundTransferGroup &>(static_cast<const D &>(*this))->put_TransferBehavior(value));
 }
 
 template <typename D> Windows::Networking::BackgroundTransfer::BackgroundTransferGroup impl_IBackgroundTransferGroupStatics<D>::CreateGroup(hstring_ref name) const
 {
     Windows::Networking::BackgroundTransfer::BackgroundTransferGroup value { nullptr };
-    check_hresult(shim()->abi_CreateGroup(get(name), put(value)));
+    check_hresult(static_cast<const IBackgroundTransferGroupStatics &>(static_cast<const D &>(*this))->abi_CreateGroup(get(name), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateTime> impl_IContentPrefetcherTime<D>::LastSuccessfulPrefetchTime() const
 {
     Windows::Foundation::IReference<Windows::Foundation::DateTime> value;
-    check_hresult(shim()->get_LastSuccessfulPrefetchTime(put(value)));
+    check_hresult(static_cast<const IContentPrefetcherTime &>(static_cast<const D &>(*this))->get_LastSuccessfulPrefetchTime(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Foundation::Uri> impl_IContentPrefetcher<D>::ContentUris() const
 {
     Windows::Foundation::Collections::IVector<Windows::Foundation::Uri> value;
-    check_hresult(shim()->get_ContentUris(put(value)));
+    check_hresult(static_cast<const IContentPrefetcher &>(static_cast<const D &>(*this))->get_ContentUris(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContentPrefetcher<D>::IndirectContentUri(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(shim()->put_IndirectContentUri(get(value)));
+    check_hresult(static_cast<const IContentPrefetcher &>(static_cast<const D &>(*this))->put_IndirectContentUri(get(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_IContentPrefetcher<D>::IndirectContentUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(shim()->get_IndirectContentUri(put(value)));
+    check_hresult(static_cast<const IContentPrefetcher &>(static_cast<const D &>(*this))->get_IndirectContentUri(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Background::IBackgroundTrigger impl_IBackgroundTransferCompletionGroup<D>::Trigger() const
 {
     Windows::ApplicationModel::Background::IBackgroundTrigger value;
-    check_hresult(shim()->get_Trigger(put(value)));
+    check_hresult(static_cast<const IBackgroundTransferCompletionGroup &>(static_cast<const D &>(*this))->get_Trigger(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IBackgroundTransferCompletionGroup<D>::IsEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_IsEnabled(&value));
+    check_hresult(static_cast<const IBackgroundTransferCompletionGroup &>(static_cast<const D &>(*this))->get_IsEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IBackgroundTransferCompletionGroup<D>::Enable() const
 {
-    check_hresult(shim()->abi_Enable());
+    check_hresult(static_cast<const IBackgroundTransferCompletionGroup &>(static_cast<const D &>(*this))->abi_Enable());
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation> impl_IBackgroundTransferCompletionGroupTriggerDetails<D>::Downloads() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation> value;
-    check_hresult(shim()->get_Downloads(put(value)));
+    check_hresult(static_cast<const IBackgroundTransferCompletionGroupTriggerDetails &>(static_cast<const D &>(*this))->get_Downloads(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation> impl_IBackgroundTransferCompletionGroupTriggerDetails<D>::Uploads() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation> value;
-    check_hresult(shim()->get_Uploads(put(value)));
+    check_hresult(static_cast<const IBackgroundTransferCompletionGroupTriggerDetails &>(static_cast<const D &>(*this))->get_Uploads(put(value)));
     return value;
 }
 

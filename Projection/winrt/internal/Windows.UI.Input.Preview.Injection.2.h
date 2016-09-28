@@ -45,12 +45,8 @@ template <> struct __declspec(uuid("4bc92e92-d32e-597a-ae24-b38861c5fb08")) __de
 namespace Windows::UI::Input::Preview::Injection {
 
 template <typename D>
-class WINRT_EBO impl_IInjectedInputKeyboardInfo
+struct WINRT_EBO impl_IInjectedInputKeyboardInfo
 {
-    auto shim() const { return impl::shim<D, IInjectedInputKeyboardInfo>(this); }
-
-public:
-
     Windows::UI::Input::Preview::Injection::InjectedInputKeyOptions KeyOptions() const;
     void KeyOptions(Windows::UI::Input::Preview::Injection::InjectedInputKeyOptions value) const;
     uint16_t ScanCode() const;
@@ -60,12 +56,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IInjectedInputMouseInfo
+struct WINRT_EBO impl_IInjectedInputMouseInfo
 {
-    auto shim() const { return impl::shim<D, IInjectedInputMouseInfo>(this); }
-
-public:
-
     Windows::UI::Input::Preview::Injection::InjectedInputMouseOptions MouseOptions() const;
     void MouseOptions(Windows::UI::Input::Preview::Injection::InjectedInputMouseOptions value) const;
     uint32_t MouseData() const;
@@ -79,12 +71,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IInjectedInputPenInfo
+struct WINRT_EBO impl_IInjectedInputPenInfo
 {
-    auto shim() const { return impl::shim<D, IInjectedInputPenInfo>(this); }
-
-public:
-
     Windows::UI::Input::Preview::Injection::InjectedInputPointerInfo PointerInfo() const;
     void PointerInfo(const Windows::UI::Input::Preview::Injection::InjectedInputPointerInfo & value) const;
     Windows::UI::Input::Preview::Injection::InjectedInputPenButtons PenButtons() const;
@@ -102,12 +90,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IInjectedInputTouchInfo
+struct WINRT_EBO impl_IInjectedInputTouchInfo
 {
-    auto shim() const { return impl::shim<D, IInjectedInputTouchInfo>(this); }
-
-public:
-
     Windows::UI::Input::Preview::Injection::InjectedInputRectangle Contact() const;
     void Contact(const Windows::UI::Input::Preview::Injection::InjectedInputRectangle & value) const;
     int32_t Orientation() const;
@@ -121,12 +105,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IInputInjector
+struct WINRT_EBO impl_IInputInjector
 {
-    auto shim() const { return impl::shim<D, IInputInjector>(this); }
-
-public:
-
     void InjectKeyboardInput(const Windows::Foundation::Collections::IIterable<Windows::UI::Input::Preview::Injection::InjectedInputKeyboardInfo> & input) const;
     void InjectMouseInput(const Windows::Foundation::Collections::IIterable<Windows::UI::Input::Preview::Injection::InjectedInputMouseInfo> & input) const;
     void InitializeTouchInjection(Windows::UI::Input::Preview::Injection::InjectedInputVisualizationMode visualMode) const;
@@ -139,12 +119,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IInputInjectorStatics
+struct WINRT_EBO impl_IInputInjectorStatics
 {
-    auto shim() const { return impl::shim<D, IInputInjectorStatics>(this); }
-
-public:
-
     Windows::UI::Input::Preview::Injection::InputInjector TryCreate() const;
 };
 

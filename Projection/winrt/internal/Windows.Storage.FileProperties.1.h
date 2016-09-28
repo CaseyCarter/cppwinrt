@@ -155,15 +155,15 @@ template <> struct traits<Windows::Storage::FileProperties::VideoProperties> { u
 
 namespace Windows::Storage::FileProperties {
 
-template <typename T> class impl_IBasicProperties;
-template <typename T> class impl_IDocumentProperties;
-template <typename T> class impl_IGeotagHelperStatics;
-template <typename T> class impl_IImageProperties;
-template <typename T> class impl_IMusicProperties;
-template <typename T> class impl_IStorageItemContentProperties;
-template <typename T> class impl_IStorageItemExtraProperties;
-template <typename T> class impl_IThumbnailProperties;
-template <typename T> class impl_IVideoProperties;
+template <typename T> struct impl_IBasicProperties;
+template <typename T> struct impl_IDocumentProperties;
+template <typename T> struct impl_IGeotagHelperStatics;
+template <typename T> struct impl_IImageProperties;
+template <typename T> struct impl_IMusicProperties;
+template <typename T> struct impl_IStorageItemContentProperties;
+template <typename T> struct impl_IStorageItemExtraProperties;
+template <typename T> struct impl_IThumbnailProperties;
+template <typename T> struct impl_IVideoProperties;
 
 }
 

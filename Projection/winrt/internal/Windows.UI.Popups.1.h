@@ -78,11 +78,11 @@ template <> struct traits<Windows::UI::Popups::UICommandSeparator> { using defau
 
 namespace Windows::UI::Popups {
 
-template <typename T> class impl_IMessageDialog;
-template <typename T> class impl_IMessageDialogFactory;
-template <typename T> class impl_IPopupMenu;
-template <typename T> class impl_IUICommand;
-template <typename T> class impl_IUICommandFactory;
+template <typename T> struct impl_IMessageDialog;
+template <typename T> struct impl_IMessageDialogFactory;
+template <typename T> struct impl_IPopupMenu;
+template <typename T> struct impl_IUICommand;
+template <typename T> struct impl_IUICommandFactory;
 template <typename T> struct impl_UICommandInvokedHandler;
 
 }

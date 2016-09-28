@@ -215,22 +215,22 @@ template <> struct traits<Windows::Storage::Search::ValueAndLanguage> { using de
 
 namespace Windows::Storage::Search {
 
-template <typename T> class impl_IContentIndexer;
-template <typename T> class impl_IContentIndexerQuery;
-template <typename T> class impl_IContentIndexerQueryOperations;
-template <typename T> class impl_IContentIndexerStatics;
-template <typename T> class impl_IIndexableContent;
-template <typename T> class impl_IQueryOptions;
-template <typename T> class impl_IQueryOptionsFactory;
-template <typename T> class impl_IQueryOptionsWithProviderFilter;
-template <typename T> class impl_IStorageFileQueryResult;
-template <typename T> class impl_IStorageFileQueryResult2;
-template <typename T> class impl_IStorageFolderQueryOperations;
-template <typename T> class impl_IStorageFolderQueryResult;
-template <typename T> class impl_IStorageItemQueryResult;
-template <typename T> class impl_IStorageLibraryContentChangedTriggerDetails;
-template <typename T> class impl_IStorageQueryResultBase;
-template <typename T> class impl_IValueAndLanguage;
+template <typename T> struct impl_IContentIndexer;
+template <typename T> struct impl_IContentIndexerQuery;
+template <typename T> struct impl_IContentIndexerQueryOperations;
+template <typename T> struct impl_IContentIndexerStatics;
+template <typename T> struct impl_IIndexableContent;
+template <typename T> struct impl_IQueryOptions;
+template <typename T> struct impl_IQueryOptionsFactory;
+template <typename T> struct impl_IQueryOptionsWithProviderFilter;
+template <typename T> struct impl_IStorageFileQueryResult;
+template <typename T> struct impl_IStorageFileQueryResult2;
+template <typename T> struct impl_IStorageFolderQueryOperations;
+template <typename T> struct impl_IStorageFolderQueryResult;
+template <typename T> struct impl_IStorageItemQueryResult;
+template <typename T> struct impl_IStorageLibraryContentChangedTriggerDetails;
+template <typename T> struct impl_IStorageQueryResultBase;
+template <typename T> struct impl_IValueAndLanguage;
 
 }
 

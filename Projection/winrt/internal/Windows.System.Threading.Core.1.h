@@ -54,10 +54,10 @@ template <> struct traits<Windows::System::Threading::Core::SignalNotifier> { us
 
 namespace Windows::System::Threading::Core {
 
-template <typename T> class impl_IPreallocatedWorkItem;
-template <typename T> class impl_IPreallocatedWorkItemFactory;
-template <typename T> class impl_ISignalNotifier;
-template <typename T> class impl_ISignalNotifierStatics;
+template <typename T> struct impl_IPreallocatedWorkItem;
+template <typename T> struct impl_IPreallocatedWorkItemFactory;
+template <typename T> struct impl_ISignalNotifier;
+template <typename T> struct impl_ISignalNotifierStatics;
 template <typename T> struct impl_SignalHandler;
 
 }

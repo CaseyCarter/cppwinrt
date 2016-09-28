@@ -64,11 +64,11 @@ template <> struct traits<Windows::Devices::Gpio::GpioPinValueChangedEventArgs> 
 
 namespace Windows::Devices::Gpio {
 
-template <typename T> class impl_IGpioController;
-template <typename T> class impl_IGpioControllerStatics;
-template <typename T> class impl_IGpioControllerStatics2;
-template <typename T> class impl_IGpioPin;
-template <typename T> class impl_IGpioPinValueChangedEventArgs;
+template <typename T> struct impl_IGpioController;
+template <typename T> struct impl_IGpioControllerStatics;
+template <typename T> struct impl_IGpioControllerStatics2;
+template <typename T> struct impl_IGpioPin;
+template <typename T> struct impl_IGpioPinValueChangedEventArgs;
 
 }
 

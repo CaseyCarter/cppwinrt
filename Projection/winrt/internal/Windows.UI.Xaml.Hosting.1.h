@@ -35,8 +35,8 @@ template <> struct traits<Windows::UI::Xaml::Hosting::ElementCompositionPreview>
 
 namespace Windows::UI::Xaml::Hosting {
 
-template <typename T> class impl_IElementCompositionPreview;
-template <typename T> class impl_IElementCompositionPreviewStatics;
+template <typename T> struct impl_IElementCompositionPreview;
+template <typename T> struct impl_IElementCompositionPreviewStatics;
 
 }
 

@@ -82,12 +82,12 @@ template <> struct traits<Windows::UI::Xaml::Printing::PrintDocument> { using de
 
 namespace Windows::UI::Xaml::Printing {
 
-template <typename T> class impl_IAddPagesEventArgs;
-template <typename T> class impl_IGetPreviewPageEventArgs;
-template <typename T> class impl_IPaginateEventArgs;
-template <typename T> class impl_IPrintDocument;
-template <typename T> class impl_IPrintDocumentFactory;
-template <typename T> class impl_IPrintDocumentStatics;
+template <typename T> struct impl_IAddPagesEventArgs;
+template <typename T> struct impl_IGetPreviewPageEventArgs;
+template <typename T> struct impl_IPaginateEventArgs;
+template <typename T> struct impl_IPrintDocument;
+template <typename T> struct impl_IPrintDocumentFactory;
+template <typename T> struct impl_IPrintDocumentStatics;
 template <typename T> struct impl_AddPagesEventHandler;
 template <typename T> struct impl_GetPreviewPageEventHandler;
 template <typename T> struct impl_PaginateEventHandler;

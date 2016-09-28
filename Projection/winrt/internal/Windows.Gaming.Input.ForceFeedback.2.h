@@ -35,44 +35,28 @@ template <> struct __declspec(uuid("f8220a41-f738-51e8-89ba-76bbd66158cb")) __de
 namespace Windows::Gaming::Input::ForceFeedback {
 
 template <typename D>
-class WINRT_EBO impl_IConditionForceEffect
+struct WINRT_EBO impl_IConditionForceEffect
 {
-    auto shim() const { return impl::shim<D, IConditionForceEffect>(this); }
-
-public:
-
     Windows::Gaming::Input::ForceFeedback::ConditionForceEffectKind Kind() const;
     void SetParameters(const Windows::Foundation::Numerics::float3 & direction, float positiveCoefficient, float negativeCoefficient, float maxPositiveMagnitude, float maxNegativeMagnitude, float deadZone, float bias) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IConditionForceEffectFactory
+struct WINRT_EBO impl_IConditionForceEffectFactory
 {
-    auto shim() const { return impl::shim<D, IConditionForceEffectFactory>(this); }
-
-public:
-
     Windows::Gaming::Input::ForceFeedback::ConditionForceEffect CreateInstance(Windows::Gaming::Input::ForceFeedback::ConditionForceEffectKind effectKind) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IConstantForceEffect
+struct WINRT_EBO impl_IConstantForceEffect
 {
-    auto shim() const { return impl::shim<D, IConstantForceEffect>(this); }
-
-public:
-
     void SetParameters(const Windows::Foundation::Numerics::float3 & vector, const Windows::Foundation::TimeSpan & duration) const;
     void SetParametersWithEnvelope(const Windows::Foundation::Numerics::float3 & vector, float attackGain, float sustainGain, float releaseGain, const Windows::Foundation::TimeSpan & startDelay, const Windows::Foundation::TimeSpan & attackDuration, const Windows::Foundation::TimeSpan & sustainDuration, const Windows::Foundation::TimeSpan & releaseDuration, uint32_t repeatCount) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IForceFeedbackEffect
+struct WINRT_EBO impl_IForceFeedbackEffect
 {
-    auto shim() const { return impl::shim<D, IForceFeedbackEffect>(this); }
-
-public:
-
     double Gain() const;
     void Gain(double value) const;
     Windows::Gaming::Input::ForceFeedback::ForceFeedbackEffectState State() const;
@@ -81,12 +65,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IForceFeedbackMotor
+struct WINRT_EBO impl_IForceFeedbackMotor
 {
-    auto shim() const { return impl::shim<D, IForceFeedbackMotor>(this); }
-
-public:
-
     bool AreEffectsPaused() const;
     double MasterGain() const;
     void MasterGain(double value) const;
@@ -103,34 +83,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPeriodicForceEffect
+struct WINRT_EBO impl_IPeriodicForceEffect
 {
-    auto shim() const { return impl::shim<D, IPeriodicForceEffect>(this); }
-
-public:
-
     Windows::Gaming::Input::ForceFeedback::PeriodicForceEffectKind Kind() const;
     void SetParameters(const Windows::Foundation::Numerics::float3 & vector, float frequency, float phase, float bias, const Windows::Foundation::TimeSpan & duration) const;
     void SetParametersWithEnvelope(const Windows::Foundation::Numerics::float3 & vector, float frequency, float phase, float bias, float attackGain, float sustainGain, float releaseGain, const Windows::Foundation::TimeSpan & startDelay, const Windows::Foundation::TimeSpan & attackDuration, const Windows::Foundation::TimeSpan & sustainDuration, const Windows::Foundation::TimeSpan & releaseDuration, uint32_t repeatCount) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPeriodicForceEffectFactory
+struct WINRT_EBO impl_IPeriodicForceEffectFactory
 {
-    auto shim() const { return impl::shim<D, IPeriodicForceEffectFactory>(this); }
-
-public:
-
     Windows::Gaming::Input::ForceFeedback::PeriodicForceEffect CreateInstance(Windows::Gaming::Input::ForceFeedback::PeriodicForceEffectKind effectKind) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRampForceEffect
+struct WINRT_EBO impl_IRampForceEffect
 {
-    auto shim() const { return impl::shim<D, IRampForceEffect>(this); }
-
-public:
-
     void SetParameters(const Windows::Foundation::Numerics::float3 & startVector, const Windows::Foundation::Numerics::float3 & endVector, const Windows::Foundation::TimeSpan & duration) const;
     void SetParametersWithEnvelope(const Windows::Foundation::Numerics::float3 & startVector, const Windows::Foundation::Numerics::float3 & endVector, float attackGain, float sustainGain, float releaseGain, const Windows::Foundation::TimeSpan & startDelay, const Windows::Foundation::TimeSpan & attackDuration, const Windows::Foundation::TimeSpan & sustainDuration, const Windows::Foundation::TimeSpan & releaseDuration, uint32_t repeatCount) const;
 };

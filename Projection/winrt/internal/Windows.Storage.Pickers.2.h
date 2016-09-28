@@ -145,12 +145,8 @@ template <> struct __declspec(uuid("a11824c9-e458-502a-afd8-ce3ce0abd6fe")) __de
 namespace Windows::Storage::Pickers {
 
 template <typename D>
-class WINRT_EBO impl_IFileOpenPicker
+struct WINRT_EBO impl_IFileOpenPicker
 {
-    auto shim() const { return impl::shim<D, IFileOpenPicker>(this); }
-
-public:
-
     Windows::Storage::Pickers::PickerViewMode ViewMode() const;
     void ViewMode(Windows::Storage::Pickers::PickerViewMode value) const;
     hstring SettingsIdentifier() const;
@@ -165,44 +161,28 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IFileOpenPicker2
+struct WINRT_EBO impl_IFileOpenPicker2
 {
-    auto shim() const { return impl::shim<D, IFileOpenPicker2>(this); }
-
-public:
-
     Windows::Foundation::Collections::ValueSet ContinuationData() const;
     void PickSingleFileAndContinue() const;
     void PickMultipleFilesAndContinue() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFileOpenPickerStatics
+struct WINRT_EBO impl_IFileOpenPickerStatics
 {
-    auto shim() const { return impl::shim<D, IFileOpenPickerStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> ResumePickSingleFileAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFileOpenPickerWithOperationId
+struct WINRT_EBO impl_IFileOpenPickerWithOperationId
 {
-    auto shim() const { return impl::shim<D, IFileOpenPickerWithOperationId>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> PickSingleFileAsync(hstring_ref pickerOperationId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFileSavePicker
+struct WINRT_EBO impl_IFileSavePicker
 {
-    auto shim() const { return impl::shim<D, IFileSavePicker>(this); }
-
-public:
-
     hstring SettingsIdentifier() const;
     void SettingsIdentifier(hstring_ref value) const;
     Windows::Storage::Pickers::PickerLocationId SuggestedStartLocation() const;
@@ -220,34 +200,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IFileSavePicker2
+struct WINRT_EBO impl_IFileSavePicker2
 {
-    auto shim() const { return impl::shim<D, IFileSavePicker2>(this); }
-
-public:
-
     Windows::Foundation::Collections::ValueSet ContinuationData() const;
     void PickSaveFileAndContinue() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFileSavePicker3
+struct WINRT_EBO impl_IFileSavePicker3
 {
-    auto shim() const { return impl::shim<D, IFileSavePicker3>(this); }
-
-public:
-
     hstring EnterpriseId() const;
     void EnterpriseId(hstring_ref value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFolderPicker
+struct WINRT_EBO impl_IFolderPicker
 {
-    auto shim() const { return impl::shim<D, IFolderPicker>(this); }
-
-public:
-
     Windows::Storage::Pickers::PickerViewMode ViewMode() const;
     void ViewMode(Windows::Storage::Pickers::PickerViewMode value) const;
     hstring SettingsIdentifier() const;
@@ -261,12 +229,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IFolderPicker2
+struct WINRT_EBO impl_IFolderPicker2
 {
-    auto shim() const { return impl::shim<D, IFolderPicker2>(this); }
-
-public:
-
     Windows::Foundation::Collections::ValueSet ContinuationData() const;
     void PickFolderAndContinue() const;
 };

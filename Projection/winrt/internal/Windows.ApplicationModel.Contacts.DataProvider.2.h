@@ -25,12 +25,8 @@ template <> struct __declspec(uuid("baee1b2f-a5b6-5a03-ae59-fb18f3e025b7")) __de
 namespace Windows::ApplicationModel::Contacts::DataProvider {
 
 template <typename D>
-class WINRT_EBO impl_IContactDataProviderConnection
+struct WINRT_EBO impl_IContactDataProviderConnection
 {
-    auto shim() const { return impl::shim<D, IContactDataProviderConnection>(this); }
-
-public:
-
     event_token SyncRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::DataProvider::ContactDataProviderConnection, Windows::ApplicationModel::Contacts::DataProvider::ContactListSyncManagerSyncRequestEventArgs> & handler) const;
     using SyncRequested_revoker = event_revoker<IContactDataProviderConnection>;
     SyncRequested_revoker SyncRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::DataProvider::ContactDataProviderConnection, Windows::ApplicationModel::Contacts::DataProvider::ContactListSyncManagerSyncRequestEventArgs> & handler) const;
@@ -43,22 +39,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactDataProviderTriggerDetails
+struct WINRT_EBO impl_IContactDataProviderTriggerDetails
 {
-    auto shim() const { return impl::shim<D, IContactDataProviderTriggerDetails>(this); }
-
-public:
-
     Windows::ApplicationModel::Contacts::DataProvider::ContactDataProviderConnection Connection() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactListServerSearchReadBatchRequest
+struct WINRT_EBO impl_IContactListServerSearchReadBatchRequest
 {
-    auto shim() const { return impl::shim<D, IContactListServerSearchReadBatchRequest>(this); }
-
-public:
-
     hstring SessionId() const;
     hstring ContactListId() const;
     Windows::ApplicationModel::Contacts::ContactQueryOptions Options() const;
@@ -69,35 +57,23 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactListServerSearchReadBatchRequestEventArgs
+struct WINRT_EBO impl_IContactListServerSearchReadBatchRequestEventArgs
 {
-    auto shim() const { return impl::shim<D, IContactListServerSearchReadBatchRequestEventArgs>(this); }
-
-public:
-
     Windows::ApplicationModel::Contacts::DataProvider::ContactListServerSearchReadBatchRequest Request() const;
     Windows::Foundation::Deferral GetDeferral() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactListSyncManagerSyncRequest
+struct WINRT_EBO impl_IContactListSyncManagerSyncRequest
 {
-    auto shim() const { return impl::shim<D, IContactListSyncManagerSyncRequest>(this); }
-
-public:
-
     hstring ContactListId() const;
     Windows::Foundation::IAsyncAction ReportCompletedAsync() const;
     Windows::Foundation::IAsyncAction ReportFailedAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactListSyncManagerSyncRequestEventArgs
+struct WINRT_EBO impl_IContactListSyncManagerSyncRequestEventArgs
 {
-    auto shim() const { return impl::shim<D, IContactListSyncManagerSyncRequestEventArgs>(this); }
-
-public:
-
     Windows::ApplicationModel::Contacts::DataProvider::ContactListSyncManagerSyncRequest Request() const;
     Windows::Foundation::Deferral GetDeferral() const;
 };

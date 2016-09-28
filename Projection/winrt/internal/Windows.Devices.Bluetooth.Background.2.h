@@ -30,58 +30,38 @@ template <> struct __declspec(uuid("34f6412f-8314-5205-967c-db357c9a42a7")) __de
 namespace Windows::Devices::Bluetooth::Background {
 
 template <typename D>
-class WINRT_EBO impl_IBluetoothLEAdvertisementPublisherTriggerDetails
+struct WINRT_EBO impl_IBluetoothLEAdvertisementPublisherTriggerDetails
 {
-    auto shim() const { return impl::shim<D, IBluetoothLEAdvertisementPublisherTriggerDetails>(this); }
-
-public:
-
     Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisherStatus Status() const;
     Windows::Devices::Bluetooth::BluetoothError Error() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBluetoothLEAdvertisementWatcherTriggerDetails
+struct WINRT_EBO impl_IBluetoothLEAdvertisementWatcherTriggerDetails
 {
-    auto shim() const { return impl::shim<D, IBluetoothLEAdvertisementWatcherTriggerDetails>(this); }
-
-public:
-
     Windows::Devices::Bluetooth::BluetoothError Error() const;
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementReceivedEventArgs> Advertisements() const;
     Windows::Devices::Bluetooth::BluetoothSignalStrengthFilter SignalStrengthFilter() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGattCharacteristicNotificationTriggerDetails
+struct WINRT_EBO impl_IGattCharacteristicNotificationTriggerDetails
 {
-    auto shim() const { return impl::shim<D, IGattCharacteristicNotificationTriggerDetails>(this); }
-
-public:
-
     Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic Characteristic() const;
     Windows::Storage::Streams::IBuffer Value() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRfcommConnectionTriggerDetails
+struct WINRT_EBO impl_IRfcommConnectionTriggerDetails
 {
-    auto shim() const { return impl::shim<D, IRfcommConnectionTriggerDetails>(this); }
-
-public:
-
     Windows::Networking::Sockets::StreamSocket Socket() const;
     bool Incoming() const;
     Windows::Devices::Bluetooth::BluetoothDevice RemoteDevice() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRfcommInboundConnectionInformation
+struct WINRT_EBO impl_IRfcommInboundConnectionInformation
 {
-    auto shim() const { return impl::shim<D, IRfcommInboundConnectionInformation>(this); }
-
-public:
-
     Windows::Storage::Streams::IBuffer SdpRecord() const;
     void SdpRecord(const Windows::Storage::Streams::IBuffer & value) const;
     Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId LocalServiceId() const;
@@ -91,12 +71,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IRfcommOutboundConnectionInformation
+struct WINRT_EBO impl_IRfcommOutboundConnectionInformation
 {
-    auto shim() const { return impl::shim<D, IRfcommOutboundConnectionInformation>(this); }
-
-public:
-
     Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId RemoteServiceId() const;
     void RemoteServiceId(const Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId & value) const;
 };

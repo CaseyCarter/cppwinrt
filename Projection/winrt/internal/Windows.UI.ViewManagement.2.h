@@ -60,12 +60,8 @@ template <> struct __declspec(uuid("c1d3d1a2-ae17-5a5f-b5a2-bdcc8844889a")) __de
 namespace Windows::UI::ViewManagement {
 
 template <typename D>
-class WINRT_EBO impl_IAccessibilitySettings
+struct WINRT_EBO impl_IAccessibilitySettings
 {
-    auto shim() const { return impl::shim<D, IAccessibilitySettings>(this); }
-
-public:
-
     bool HighContrast() const;
     hstring HighContrastScheme() const;
     event_token HighContrastChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::AccessibilitySettings, Windows::IInspectable> & handler) const;
@@ -75,24 +71,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IActivationViewSwitcher
+struct WINRT_EBO impl_IActivationViewSwitcher
 {
-    auto shim() const { return impl::shim<D, IActivationViewSwitcher>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction ShowAsStandaloneAsync(int32_t viewId) const;
     Windows::Foundation::IAsyncAction ShowAsStandaloneAsync(int32_t viewId, Windows::UI::ViewManagement::ViewSizePreference sizePreference) const;
     bool IsViewPresentedOnActivationVirtualDesktop(int32_t viewId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IApplicationView
+struct WINRT_EBO impl_IApplicationView
 {
-    auto shim() const { return impl::shim<D, IApplicationView>(this); }
-
-public:
-
     Windows::UI::ViewManagement::ApplicationViewOrientation Orientation() const;
     bool AdjacentToLeftDisplayEdge() const;
     bool AdjacentToRightDisplayEdge() const;
@@ -110,12 +98,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IApplicationView2
+struct WINRT_EBO impl_IApplicationView2
 {
-    auto shim() const { return impl::shim<D, IApplicationView2>(this); }
-
-public:
-
     bool SuppressSystemOverlays() const;
     void SuppressSystemOverlays(bool value) const;
     Windows::Foundation::Rect VisibleBounds() const;
@@ -128,12 +112,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IApplicationView3
+struct WINRT_EBO impl_IApplicationView3
 {
-    auto shim() const { return impl::shim<D, IApplicationView3>(this); }
-
-public:
-
     Windows::UI::ViewManagement::ApplicationViewTitleBar TitleBar() const;
     Windows::UI::ViewManagement::FullScreenSystemOverlayMode FullScreenSystemOverlayMode() const;
     void FullScreenSystemOverlayMode(Windows::UI::ViewManagement::FullScreenSystemOverlayMode value) const;
@@ -146,85 +126,53 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IApplicationViewConsolidatedEventArgs
+struct WINRT_EBO impl_IApplicationViewConsolidatedEventArgs
 {
-    auto shim() const { return impl::shim<D, IApplicationViewConsolidatedEventArgs>(this); }
-
-public:
-
     bool IsUserInitiated() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IApplicationViewFullscreenStatics
+struct WINRT_EBO impl_IApplicationViewFullscreenStatics
 {
-    auto shim() const { return impl::shim<D, IApplicationViewFullscreenStatics>(this); }
-
-public:
-
     bool TryUnsnapToFullscreen() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IApplicationViewInteropStatics
+struct WINRT_EBO impl_IApplicationViewInteropStatics
 {
-    auto shim() const { return impl::shim<D, IApplicationViewInteropStatics>(this); }
-
-public:
-
     int32_t GetApplicationViewIdForWindow(const Windows::UI::Core::ICoreWindow & window) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IApplicationViewScaling
+struct WINRT_EBO impl_IApplicationViewScaling
 {
-    auto shim() const { return impl::shim<D, IApplicationViewScaling>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IApplicationViewScalingStatics
+struct WINRT_EBO impl_IApplicationViewScalingStatics
 {
-    auto shim() const { return impl::shim<D, IApplicationViewScalingStatics>(this); }
-
-public:
-
     bool DisableLayoutScaling() const;
     bool TrySetDisableLayoutScaling(bool disableLayoutScaling) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IApplicationViewStatics
+struct WINRT_EBO impl_IApplicationViewStatics
 {
-    auto shim() const { return impl::shim<D, IApplicationViewStatics>(this); }
-
-public:
-
     Windows::UI::ViewManagement::ApplicationViewState Value() const;
     bool TryUnsnap() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IApplicationViewStatics2
+struct WINRT_EBO impl_IApplicationViewStatics2
 {
-    auto shim() const { return impl::shim<D, IApplicationViewStatics2>(this); }
-
-public:
-
     Windows::UI::ViewManagement::ApplicationView GetForCurrentView() const;
     bool TerminateAppOnFinalViewClose() const;
     void TerminateAppOnFinalViewClose(bool value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IApplicationViewStatics3
+struct WINRT_EBO impl_IApplicationViewStatics3
 {
-    auto shim() const { return impl::shim<D, IApplicationViewStatics3>(this); }
-
-public:
-
     Windows::UI::ViewManagement::ApplicationViewWindowingMode PreferredLaunchWindowingMode() const;
     void PreferredLaunchWindowingMode(Windows::UI::ViewManagement::ApplicationViewWindowingMode value) const;
     Windows::Foundation::Size PreferredLaunchViewSize() const;
@@ -232,12 +180,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IApplicationViewSwitcherStatics
+struct WINRT_EBO impl_IApplicationViewSwitcherStatics
 {
-    auto shim() const { return impl::shim<D, IApplicationViewSwitcherStatics>(this); }
-
-public:
-
     void DisableShowingMainViewOnActivation() const;
     Windows::Foundation::IAsyncOperation<bool> TryShowAsStandaloneAsync(int32_t viewId) const;
     Windows::Foundation::IAsyncOperation<bool> TryShowAsStandaloneAsync(int32_t viewId, Windows::UI::ViewManagement::ViewSizePreference sizePreference) const;
@@ -249,22 +193,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IApplicationViewSwitcherStatics2
+struct WINRT_EBO impl_IApplicationViewSwitcherStatics2
 {
-    auto shim() const { return impl::shim<D, IApplicationViewSwitcherStatics2>(this); }
-
-public:
-
     void DisableSystemViewActivationPolicy() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IApplicationViewTitleBar
+struct WINRT_EBO impl_IApplicationViewTitleBar
 {
-    auto shim() const { return impl::shim<D, IApplicationViewTitleBar>(this); }
-
-public:
-
     void ForegroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const;
     Windows::Foundation::IReference<Windows::UI::Color> ForegroundColor() const;
     void BackgroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const;
@@ -292,33 +228,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IApplicationViewTransferContext
+struct WINRT_EBO impl_IApplicationViewTransferContext
 {
-    auto shim() const { return impl::shim<D, IApplicationViewTransferContext>(this); }
-
-public:
-
     int32_t ViewId() const;
     void ViewId(int32_t value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IApplicationViewTransferContextStatics
+struct WINRT_EBO impl_IApplicationViewTransferContextStatics
 {
-    auto shim() const { return impl::shim<D, IApplicationViewTransferContextStatics>(this); }
-
-public:
-
     hstring DataPackageFormatId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInputPane
+struct WINRT_EBO impl_IInputPane
 {
-    auto shim() const { return impl::shim<D, IInputPane>(this); }
-
-public:
-
     event_token Showing(const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::InputPane, Windows::UI::ViewManagement::InputPaneVisibilityEventArgs> & handler) const;
     using Showing_revoker = event_revoker<IInputPane>;
     Showing_revoker Showing(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::InputPane, Windows::UI::ViewManagement::InputPaneVisibilityEventArgs> & handler) const;
@@ -331,56 +255,36 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IInputPane2
+struct WINRT_EBO impl_IInputPane2
 {
-    auto shim() const { return impl::shim<D, IInputPane2>(this); }
-
-public:
-
     bool TryShow() const;
     bool TryHide() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInputPaneControl
+struct WINRT_EBO impl_IInputPaneControl
 {
-    auto shim() const { return impl::shim<D, IInputPaneControl>(this); }
-
-public:
-
     bool Visible() const;
     void Visible(bool value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInputPaneStatics
+struct WINRT_EBO impl_IInputPaneStatics
 {
-    auto shim() const { return impl::shim<D, IInputPaneStatics>(this); }
-
-public:
-
     Windows::UI::ViewManagement::InputPane GetForCurrentView() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInputPaneVisibilityEventArgs
+struct WINRT_EBO impl_IInputPaneVisibilityEventArgs
 {
-    auto shim() const { return impl::shim<D, IInputPaneVisibilityEventArgs>(this); }
-
-public:
-
     Windows::Foundation::Rect OccludedRect() const;
     void EnsuredFocusedElementInView(bool value) const;
     bool EnsuredFocusedElementInView() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IProjectionManagerStatics
+struct WINRT_EBO impl_IProjectionManagerStatics
 {
-    auto shim() const { return impl::shim<D, IProjectionManagerStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction StartProjectingAsync(int32_t projectionViewId, int32_t anchorViewId) const;
     Windows::Foundation::IAsyncAction SwapDisplaysForViewsAsync(int32_t projectionViewId, int32_t anchorViewId) const;
     Windows::Foundation::IAsyncAction StopProjectingAsync(int32_t projectionViewId, int32_t anchorViewId) const;
@@ -392,12 +296,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IProjectionManagerStatics2
+struct WINRT_EBO impl_IProjectionManagerStatics2
 {
-    auto shim() const { return impl::shim<D, IProjectionManagerStatics2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction StartProjectingAsync(int32_t projectionViewId, int32_t anchorViewId, const Windows::Devices::Enumeration::DeviceInformation & displayDeviceInfo) const;
     Windows::Foundation::IAsyncOperation<bool> RequestStartProjectingAsync(int32_t projectionViewId, int32_t anchorViewId, const Windows::Foundation::Rect & selection) const;
     Windows::Foundation::IAsyncOperation<bool> RequestStartProjectingAsync(int32_t projectionViewId, int32_t anchorViewId, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement prefferedPlacement) const;
@@ -405,12 +305,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUISettings
+struct WINRT_EBO impl_IUISettings
 {
-    auto shim() const { return impl::shim<D, IUISettings>(this); }
-
-public:
-
     Windows::UI::ViewManagement::HandPreference HandPreference() const;
     Windows::Foundation::Size CursorSize() const;
     Windows::Foundation::Size ScrollBarSize() const;
@@ -427,12 +323,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUISettings2
+struct WINRT_EBO impl_IUISettings2
 {
-    auto shim() const { return impl::shim<D, IUISettings2>(this); }
-
-public:
-
     double TextScaleFactor() const;
     event_token TextScaleFactorChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::IInspectable> & handler) const;
     using TextScaleFactorChanged_revoker = event_revoker<IUISettings2>;
@@ -441,12 +333,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUISettings3
+struct WINRT_EBO impl_IUISettings3
 {
-    auto shim() const { return impl::shim<D, IUISettings3>(this); }
-
-public:
-
     Windows::UI::Color GetColorValue(Windows::UI::ViewManagement::UIColorType desiredColor) const;
     event_token ColorValuesChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::IInspectable> & handler) const;
     using ColorValuesChanged_revoker = event_revoker<IUISettings3>;
@@ -455,22 +343,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUIViewSettings
+struct WINRT_EBO impl_IUIViewSettings
 {
-    auto shim() const { return impl::shim<D, IUIViewSettings>(this); }
-
-public:
-
     Windows::UI::ViewManagement::UserInteractionMode UserInteractionMode() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUIViewSettingsStatics
+struct WINRT_EBO impl_IUIViewSettingsStatics
 {
-    auto shim() const { return impl::shim<D, IUIViewSettingsStatics>(this); }
-
-public:
-
     Windows::UI::ViewManagement::UIViewSettings GetForCurrentView() const;
 };
 

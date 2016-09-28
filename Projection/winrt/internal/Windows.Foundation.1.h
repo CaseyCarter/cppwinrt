@@ -237,23 +237,23 @@ template <> struct traits<Windows::Foundation::WwwFormUrlDecoderEntry> { using d
 
 namespace Windows::Foundation {
 
-template <typename T> class impl_IClosable;
-template <typename T> class impl_IDeferral;
-template <typename T> class impl_IDeferralFactory;
-template <typename T> class impl_IGetActivationFactory;
-template <typename T> class impl_IMemoryBuffer;
-template <typename T> class impl_IMemoryBufferFactory;
-template <typename T> class impl_IMemoryBufferReference;
-template <typename T> class impl_IPropertyValue;
-template <typename T> class impl_IPropertyValueStatics;
-template <typename T> class impl_IStringable;
-template <typename T> class impl_IUriEscapeStatics;
-template <typename T> class impl_IUriRuntimeClass;
-template <typename T> class impl_IUriRuntimeClassFactory;
-template <typename T> class impl_IUriRuntimeClassWithAbsoluteCanonicalUri;
-template <typename T> class impl_IWwwFormUrlDecoderEntry;
-template <typename T> class impl_IWwwFormUrlDecoderRuntimeClass;
-template <typename T> class impl_IWwwFormUrlDecoderRuntimeClassFactory;
+template <typename T> struct impl_IClosable;
+template <typename T> struct impl_IDeferral;
+template <typename T> struct impl_IDeferralFactory;
+template <typename T> struct impl_IGetActivationFactory;
+template <typename T> struct impl_IMemoryBuffer;
+template <typename T> struct impl_IMemoryBufferFactory;
+template <typename T> struct impl_IMemoryBufferReference;
+template <typename T> struct impl_IPropertyValue;
+template <typename T> struct impl_IPropertyValueStatics;
+template <typename T> struct impl_IStringable;
+template <typename T> struct impl_IUriEscapeStatics;
+template <typename T> struct impl_IUriRuntimeClass;
+template <typename T> struct impl_IUriRuntimeClassFactory;
+template <typename T> struct impl_IUriRuntimeClassWithAbsoluteCanonicalUri;
+template <typename T> struct impl_IWwwFormUrlDecoderEntry;
+template <typename T> struct impl_IWwwFormUrlDecoderRuntimeClass;
+template <typename T> struct impl_IWwwFormUrlDecoderRuntimeClassFactory;
 template <typename T> struct impl_DeferralCompletedHandler;
 
 }

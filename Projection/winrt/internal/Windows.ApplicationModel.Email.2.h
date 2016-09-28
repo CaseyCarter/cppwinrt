@@ -595,12 +595,8 @@ template <> struct __declspec(uuid("ece9e82b-bbc1-5d32-b306-1e4d4501b68a")) __de
 namespace Windows::ApplicationModel::Email {
 
 template <typename D>
-class WINRT_EBO impl_IEmailAttachment
+struct WINRT_EBO impl_IEmailAttachment
 {
-    auto shim() const { return impl::shim<D, IEmailAttachment>(this); }
-
-public:
-
     hstring FileName() const;
     void FileName(hstring_ref value) const;
     Windows::Storage::Streams::IRandomAccessStreamReference Data() const;
@@ -608,12 +604,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailAttachment2
+struct WINRT_EBO impl_IEmailAttachment2
 {
-    auto shim() const { return impl::shim<D, IEmailAttachment2>(this); }
-
-public:
-
     hstring Id() const;
     hstring ContentId() const;
     void ContentId(hstring_ref value) const;
@@ -631,32 +623,20 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailAttachmentFactory
+struct WINRT_EBO impl_IEmailAttachmentFactory
 {
-    auto shim() const { return impl::shim<D, IEmailAttachmentFactory>(this); }
-
-public:
-
     Windows::ApplicationModel::Email::EmailAttachment Create(hstring_ref fileName, const Windows::Storage::Streams::IRandomAccessStreamReference & data) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailAttachmentFactory2
+struct WINRT_EBO impl_IEmailAttachmentFactory2
 {
-    auto shim() const { return impl::shim<D, IEmailAttachmentFactory2>(this); }
-
-public:
-
     Windows::ApplicationModel::Email::EmailAttachment Create(hstring_ref fileName, const Windows::Storage::Streams::IRandomAccessStreamReference & data, hstring_ref mimeType) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailConversation
+struct WINRT_EBO impl_IEmailConversation
 {
-    auto shim() const { return impl::shim<D, IEmailConversation>(this); }
-
-public:
-
     hstring Id() const;
     hstring MailboxId() const;
     Windows::ApplicationModel::Email::EmailFlagState FlagState() const;
@@ -675,33 +655,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailConversationBatch
+struct WINRT_EBO impl_IEmailConversationBatch
 {
-    auto shim() const { return impl::shim<D, IEmailConversationBatch>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailConversation> Conversations() const;
     Windows::ApplicationModel::Email::EmailBatchStatus Status() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailConversationReader
+struct WINRT_EBO impl_IEmailConversationReader
 {
-    auto shim() const { return impl::shim<D, IEmailConversationReader>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailConversationBatch> ReadBatchAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailFolder
+struct WINRT_EBO impl_IEmailFolder
 {
-    auto shim() const { return impl::shim<D, IEmailFolder>(this); }
-
-public:
-
     hstring Id() const;
     hstring RemoteId() const;
     void RemoteId(hstring_ref value) const;
@@ -730,12 +698,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailIrmInfo
+struct WINRT_EBO impl_IEmailIrmInfo
 {
-    auto shim() const { return impl::shim<D, IEmailIrmInfo>(this); }
-
-public:
-
     bool CanEdit() const;
     void CanEdit(bool value) const;
     bool CanExtractData() const;
@@ -763,22 +727,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailIrmInfoFactory
+struct WINRT_EBO impl_IEmailIrmInfoFactory
 {
-    auto shim() const { return impl::shim<D, IEmailIrmInfoFactory>(this); }
-
-public:
-
     Windows::ApplicationModel::Email::EmailIrmInfo Create(const Windows::Foundation::DateTime & expiration, const Windows::ApplicationModel::Email::EmailIrmTemplate & irmTemplate) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailIrmTemplate
+struct WINRT_EBO impl_IEmailIrmTemplate
 {
-    auto shim() const { return impl::shim<D, IEmailIrmTemplate>(this); }
-
-public:
-
     hstring Id() const;
     void Id(hstring_ref value) const;
     hstring Description() const;
@@ -788,22 +744,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailIrmTemplateFactory
+struct WINRT_EBO impl_IEmailIrmTemplateFactory
 {
-    auto shim() const { return impl::shim<D, IEmailIrmTemplateFactory>(this); }
-
-public:
-
     Windows::ApplicationModel::Email::EmailIrmTemplate Create(hstring_ref id, hstring_ref name, hstring_ref description) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailItemCounts
+struct WINRT_EBO impl_IEmailItemCounts
 {
-    auto shim() const { return impl::shim<D, IEmailItemCounts>(this); }
-
-public:
-
     uint32_t Flagged() const;
     uint32_t Important() const;
     uint32_t Total() const;
@@ -811,12 +759,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailMailbox
+struct WINRT_EBO impl_IEmailMailbox
 {
-    auto shim() const { return impl::shim<D, IEmailMailbox>(this); }
-
-public:
-
     Windows::ApplicationModel::Email::EmailMailboxCapabilities Capabilities() const;
     Windows::ApplicationModel::Email::EmailMailboxChangeTracker ChangeTracker() const;
     hstring DisplayName() const;
@@ -872,24 +816,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailMailbox2
+struct WINRT_EBO impl_IEmailMailbox2
 {
-    auto shim() const { return impl::shim<D, IEmailMailbox2>(this); }
-
-public:
-
     hstring LinkedMailboxId() const;
     hstring NetworkAccountId() const;
     hstring NetworkId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailMailbox3
+struct WINRT_EBO impl_IEmailMailbox3
 {
-    auto shim() const { return impl::shim<D, IEmailMailbox3>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailRecipientResolutionResult>> ResolveRecipientsAsync(const Windows::Foundation::Collections::IIterable<hstring> & recipients) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<winrt::Windows::ApplicationModel::Email::EmailCertificateValidationStatus>> ValidateCertificatesAsync(const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> & certificates) const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Email::EmailMailboxEmptyFolderStatus> TryEmptyFolderAsync(hstring_ref folderId) const;
@@ -898,33 +834,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailMailbox4
+struct WINRT_EBO impl_IEmailMailbox4
 {
-    auto shim() const { return impl::shim<D, IEmailMailbox4>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction RegisterSyncManagerAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailMailboxAction
+struct WINRT_EBO impl_IEmailMailboxAction
 {
-    auto shim() const { return impl::shim<D, IEmailMailboxAction>(this); }
-
-public:
-
     Windows::ApplicationModel::Email::EmailMailboxActionKind Kind() const;
     uint64_t ChangeNumber() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailMailboxAutoReply
+struct WINRT_EBO impl_IEmailMailboxAutoReply
 {
-    auto shim() const { return impl::shim<D, IEmailMailboxAutoReply>(this); }
-
-public:
-
     bool IsEnabled() const;
     void IsEnabled(bool value) const;
     hstring Response() const;
@@ -932,12 +856,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailMailboxAutoReplySettings
+struct WINRT_EBO impl_IEmailMailboxAutoReplySettings
 {
-    auto shim() const { return impl::shim<D, IEmailMailboxAutoReplySettings>(this); }
-
-public:
-
     bool IsEnabled() const;
     void IsEnabled(bool value) const;
     Windows::ApplicationModel::Email::EmailMailboxAutoReplyMessageResponseKind ResponseKind() const;
@@ -952,12 +872,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailMailboxCapabilities
+struct WINRT_EBO impl_IEmailMailboxCapabilities
 {
-    auto shim() const { return impl::shim<D, IEmailMailboxCapabilities>(this); }
-
-public:
-
     bool CanForwardMeetings() const;
     bool CanGetAndSetExternalAutoReplies() const;
     bool CanGetAndSetInternalAutoReplies() const;
@@ -969,12 +885,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailMailboxCapabilities2
+struct WINRT_EBO impl_IEmailMailboxCapabilities2
 {
-    auto shim() const { return impl::shim<D, IEmailMailboxCapabilities2>(this); }
-
-public:
-
     bool CanResolveRecipients() const;
     bool CanValidateCertificates() const;
     bool CanEmptyFolder() const;
@@ -984,12 +896,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailMailboxCapabilities3
+struct WINRT_EBO impl_IEmailMailboxCapabilities3
 {
-    auto shim() const { return impl::shim<D, IEmailMailboxCapabilities3>(this); }
-
-public:
-
     void CanForwardMeetings(bool value) const;
     void CanGetAndSetExternalAutoReplies(bool value) const;
     void CanGetAndSetInternalAutoReplies(bool value) const;
@@ -1007,12 +915,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailMailboxChange
+struct WINRT_EBO impl_IEmailMailboxChange
 {
-    auto shim() const { return impl::shim<D, IEmailMailboxChange>(this); }
-
-public:
-
     Windows::ApplicationModel::Email::EmailMailboxChangeType ChangeType() const;
     Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Email::EmailMailboxAction> MailboxActions() const;
     Windows::ApplicationModel::Email::EmailMessage Message() const;
@@ -1020,24 +924,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailMailboxChangeReader
+struct WINRT_EBO impl_IEmailMailboxChangeReader
 {
-    auto shim() const { return impl::shim<D, IEmailMailboxChangeReader>(this); }
-
-public:
-
     void AcceptChanges() const;
     void AcceptChangesThrough(const Windows::ApplicationModel::Email::EmailMailboxChange & lastChangeToAcknowledge) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailMailboxChange>> ReadBatchAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailMailboxChangeTracker
+struct WINRT_EBO impl_IEmailMailboxChangeTracker
 {
-    auto shim() const { return impl::shim<D, IEmailMailboxChangeTracker>(this); }
-
-public:
-
     bool IsTracking() const;
     void Enable() const;
     Windows::ApplicationModel::Email::EmailMailboxChangeReader GetChangeReader() const;
@@ -1045,43 +941,27 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailMailboxChangedDeferral
+struct WINRT_EBO impl_IEmailMailboxChangedDeferral
 {
-    auto shim() const { return impl::shim<D, IEmailMailboxChangedDeferral>(this); }
-
-public:
-
     void Complete() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailMailboxChangedEventArgs
+struct WINRT_EBO impl_IEmailMailboxChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IEmailMailboxChangedEventArgs>(this); }
-
-public:
-
     Windows::ApplicationModel::Email::EmailMailboxChangedDeferral GetDeferral() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailMailboxCreateFolderResult
+struct WINRT_EBO impl_IEmailMailboxCreateFolderResult
 {
-    auto shim() const { return impl::shim<D, IEmailMailboxCreateFolderResult>(this); }
-
-public:
-
     Windows::ApplicationModel::Email::EmailMailboxCreateFolderStatus Status() const;
     Windows::ApplicationModel::Email::EmailFolder Folder() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailMailboxPolicies
+struct WINRT_EBO impl_IEmailMailboxPolicies
 {
-    auto shim() const { return impl::shim<D, IEmailMailboxPolicies>(this); }
-
-public:
-
     Windows::ApplicationModel::Email::EmailMailboxAllowedSmimeEncryptionAlgorithmNegotiation AllowedSmimeEncryptionAlgorithmNegotiation() const;
     bool AllowSmimeSoftCertificates() const;
     Windows::Foundation::IReference<winrt::Windows::ApplicationModel::Email::EmailMailboxSmimeEncryptionAlgorithm> RequiredSmimeEncryptionAlgorithm() const;
@@ -1089,23 +969,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailMailboxPolicies2
+struct WINRT_EBO impl_IEmailMailboxPolicies2
 {
-    auto shim() const { return impl::shim<D, IEmailMailboxPolicies2>(this); }
-
-public:
-
     bool MustEncryptSmimeMessages() const;
     bool MustSignSmimeMessages() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailMailboxPolicies3
+struct WINRT_EBO impl_IEmailMailboxPolicies3
 {
-    auto shim() const { return impl::shim<D, IEmailMailboxPolicies3>(this); }
-
-public:
-
     void AllowedSmimeEncryptionAlgorithmNegotiation(Windows::ApplicationModel::Email::EmailMailboxAllowedSmimeEncryptionAlgorithmNegotiation value) const;
     void AllowSmimeSoftCertificates(bool value) const;
     void RequiredSmimeEncryptionAlgorithm(const Windows::Foundation::IReference<winrt::Windows::ApplicationModel::Email::EmailMailboxSmimeEncryptionAlgorithm> & value) const;
@@ -1115,12 +987,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailMailboxSyncManager
+struct WINRT_EBO impl_IEmailMailboxSyncManager
 {
-    auto shim() const { return impl::shim<D, IEmailMailboxSyncManager>(this); }
-
-public:
-
     Windows::ApplicationModel::Email::EmailMailboxSyncStatus Status() const;
     Windows::Foundation::DateTime LastSuccessfulSyncTime() const;
     Windows::Foundation::DateTime LastAttemptedSyncTime() const;
@@ -1132,66 +1000,42 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailMailboxSyncManager2
+struct WINRT_EBO impl_IEmailMailboxSyncManager2
 {
-    auto shim() const { return impl::shim<D, IEmailMailboxSyncManager2>(this); }
-
-public:
-
     void Status(Windows::ApplicationModel::Email::EmailMailboxSyncStatus value) const;
     void LastSuccessfulSyncTime(const Windows::Foundation::DateTime & value) const;
     void LastAttemptedSyncTime(const Windows::Foundation::DateTime & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailManagerForUser
+struct WINRT_EBO impl_IEmailManagerForUser
 {
-    auto shim() const { return impl::shim<D, IEmailManagerForUser>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction ShowComposeNewEmailAsync(const Windows::ApplicationModel::Email::EmailMessage & message) const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailStore> RequestStoreAsync(Windows::ApplicationModel::Email::EmailStoreAccessType accessType) const;
     Windows::System::User User() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailManagerStatics
+struct WINRT_EBO impl_IEmailManagerStatics
 {
-    auto shim() const { return impl::shim<D, IEmailManagerStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction ShowComposeNewEmailAsync(const Windows::ApplicationModel::Email::EmailMessage & message) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailManagerStatics2
+struct WINRT_EBO impl_IEmailManagerStatics2
 {
-    auto shim() const { return impl::shim<D, IEmailManagerStatics2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailStore> RequestStoreAsync(Windows::ApplicationModel::Email::EmailStoreAccessType accessType) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailManagerStatics3
+struct WINRT_EBO impl_IEmailManagerStatics3
 {
-    auto shim() const { return impl::shim<D, IEmailManagerStatics3>(this); }
-
-public:
-
     Windows::ApplicationModel::Email::EmailManagerForUser GetForUser(const Windows::System::User & user) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailMeetingInfo
+struct WINRT_EBO impl_IEmailMeetingInfo
 {
-    auto shim() const { return impl::shim<D, IEmailMeetingInfo>(this); }
-
-public:
-
     bool AllowNewTimeProposal() const;
     void AllowNewTimeProposal(bool value) const;
     hstring AppointmentRoamingId() const;
@@ -1221,22 +1065,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailMeetingInfo2
+struct WINRT_EBO impl_IEmailMeetingInfo2
 {
-    auto shim() const { return impl::shim<D, IEmailMeetingInfo2>(this); }
-
-public:
-
     bool IsReportedOutOfDateByServer() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailMessage
+struct WINRT_EBO impl_IEmailMessage
 {
-    auto shim() const { return impl::shim<D, IEmailMessage>(this); }
-
-public:
-
     hstring Subject() const;
     void Subject(hstring_ref value) const;
     hstring Body() const;
@@ -1248,12 +1084,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailMessage2
+struct WINRT_EBO impl_IEmailMessage2
 {
-    auto shim() const { return impl::shim<D, IEmailMessage2>(this); }
-
-public:
-
     hstring Id() const;
     hstring RemoteId() const;
     void RemoteId(hstring_ref value) const;
@@ -1302,12 +1134,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailMessage3
+struct WINRT_EBO impl_IEmailMessage3
 {
-    auto shim() const { return impl::shim<D, IEmailMessage3>(this); }
-
-public:
-
     Windows::Storage::Streams::IRandomAccessStreamReference SmimeData() const;
     void SmimeData(const Windows::Storage::Streams::IRandomAccessStreamReference & value) const;
     Windows::ApplicationModel::Email::EmailMessageSmimeKind SmimeKind() const;
@@ -1315,33 +1143,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailMessageBatch
+struct WINRT_EBO impl_IEmailMessageBatch
 {
-    auto shim() const { return impl::shim<D, IEmailMessageBatch>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailMessage> Messages() const;
     Windows::ApplicationModel::Email::EmailBatchStatus Status() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailMessageReader
+struct WINRT_EBO impl_IEmailMessageReader
 {
-    auto shim() const { return impl::shim<D, IEmailMessageReader>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMessageBatch> ReadBatchAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailQueryOptions
+struct WINRT_EBO impl_IEmailQueryOptions
 {
-    auto shim() const { return impl::shim<D, IEmailQueryOptions>(this); }
-
-public:
-
     Windows::ApplicationModel::Email::EmailQueryTextSearch TextSearch() const;
     Windows::ApplicationModel::Email::EmailQuerySortDirection SortDirection() const;
     void SortDirection(Windows::ApplicationModel::Email::EmailQuerySortDirection value) const;
@@ -1353,23 +1169,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailQueryOptionsFactory
+struct WINRT_EBO impl_IEmailQueryOptionsFactory
 {
-    auto shim() const { return impl::shim<D, IEmailQueryOptionsFactory>(this); }
-
-public:
-
     Windows::ApplicationModel::Email::EmailQueryOptions CreateWithText(hstring_ref text) const;
     Windows::ApplicationModel::Email::EmailQueryOptions CreateWithTextAndFields(hstring_ref text, Windows::ApplicationModel::Email::EmailQuerySearchFields fields) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailQueryTextSearch
+struct WINRT_EBO impl_IEmailQueryTextSearch
 {
-    auto shim() const { return impl::shim<D, IEmailQueryTextSearch>(this); }
-
-public:
-
     Windows::ApplicationModel::Email::EmailQuerySearchFields Fields() const;
     void Fields(Windows::ApplicationModel::Email::EmailQuerySearchFields value) const;
     Windows::ApplicationModel::Email::EmailQuerySearchScope SearchScope() const;
@@ -1379,12 +1187,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailRecipient
+struct WINRT_EBO impl_IEmailRecipient
 {
-    auto shim() const { return impl::shim<D, IEmailRecipient>(this); }
-
-public:
-
     hstring Name() const;
     void Name(hstring_ref value) const;
     hstring Address() const;
@@ -1392,45 +1196,29 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailRecipientFactory
+struct WINRT_EBO impl_IEmailRecipientFactory
 {
-    auto shim() const { return impl::shim<D, IEmailRecipientFactory>(this); }
-
-public:
-
     Windows::ApplicationModel::Email::EmailRecipient Create(hstring_ref address) const;
     Windows::ApplicationModel::Email::EmailRecipient CreateWithName(hstring_ref address, hstring_ref name) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailRecipientResolutionResult
+struct WINRT_EBO impl_IEmailRecipientResolutionResult
 {
-    auto shim() const { return impl::shim<D, IEmailRecipientResolutionResult>(this); }
-
-public:
-
     Windows::ApplicationModel::Email::EmailRecipientResolutionStatus Status() const;
     Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> PublicKeys() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailRecipientResolutionResult2
+struct WINRT_EBO impl_IEmailRecipientResolutionResult2
 {
-    auto shim() const { return impl::shim<D, IEmailRecipientResolutionResult2>(this); }
-
-public:
-
     void Status(Windows::ApplicationModel::Email::EmailRecipientResolutionStatus value) const;
     void SetPublicKeys(const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailStore
+struct WINRT_EBO impl_IEmailStore
 {
-    auto shim() const { return impl::shim<D, IEmailStore>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailMailbox>> FindMailboxesAsync() const;
     Windows::ApplicationModel::Email::EmailConversationReader GetConversationReader() const;
     Windows::ApplicationModel::Email::EmailConversationReader GetConversationReader(const Windows::ApplicationModel::Email::EmailQueryOptions & options) const;
@@ -1445,12 +1233,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmailStoreNotificationTriggerDetails
+struct WINRT_EBO impl_IEmailStoreNotificationTriggerDetails
 {
-    auto shim() const { return impl::shim<D, IEmailStoreNotificationTriggerDetails>(this); }
-
-public:
-
 };
 
 struct IEmailAttachment :

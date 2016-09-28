@@ -201,25 +201,25 @@ template <> struct traits<Windows::UI::Composition::Interactions::VisualInteract
 
 namespace Windows::UI::Composition::Interactions {
 
-template <typename T> class impl_ICompositionInteractionSource;
-template <typename T> class impl_ICompositionInteractionSourceCollection;
-template <typename T> class impl_IInteractionTracker;
-template <typename T> class impl_IInteractionTrackerCustomAnimationStateEnteredArgs;
-template <typename T> class impl_IInteractionTrackerIdleStateEnteredArgs;
-template <typename T> class impl_IInteractionTrackerInertiaModifier;
-template <typename T> class impl_IInteractionTrackerInertiaModifierFactory;
-template <typename T> class impl_IInteractionTrackerInertiaMotion;
-template <typename T> class impl_IInteractionTrackerInertiaMotionStatics;
-template <typename T> class impl_IInteractionTrackerInertiaRestingValue;
-template <typename T> class impl_IInteractionTrackerInertiaRestingValueStatics;
-template <typename T> class impl_IInteractionTrackerInertiaStateEnteredArgs;
-template <typename T> class impl_IInteractionTrackerInteractingStateEnteredArgs;
-template <typename T> class impl_IInteractionTrackerOwner;
-template <typename T> class impl_IInteractionTrackerRequestIgnoredArgs;
-template <typename T> class impl_IInteractionTrackerStatics;
-template <typename T> class impl_IInteractionTrackerValuesChangedArgs;
-template <typename T> class impl_IVisualInteractionSource;
-template <typename T> class impl_IVisualInteractionSourceStatics;
+template <typename T> struct impl_ICompositionInteractionSource;
+template <typename T> struct impl_ICompositionInteractionSourceCollection;
+template <typename T> struct impl_IInteractionTracker;
+template <typename T> struct impl_IInteractionTrackerCustomAnimationStateEnteredArgs;
+template <typename T> struct impl_IInteractionTrackerIdleStateEnteredArgs;
+template <typename T> struct impl_IInteractionTrackerInertiaModifier;
+template <typename T> struct impl_IInteractionTrackerInertiaModifierFactory;
+template <typename T> struct impl_IInteractionTrackerInertiaMotion;
+template <typename T> struct impl_IInteractionTrackerInertiaMotionStatics;
+template <typename T> struct impl_IInteractionTrackerInertiaRestingValue;
+template <typename T> struct impl_IInteractionTrackerInertiaRestingValueStatics;
+template <typename T> struct impl_IInteractionTrackerInertiaStateEnteredArgs;
+template <typename T> struct impl_IInteractionTrackerInteractingStateEnteredArgs;
+template <typename T> struct impl_IInteractionTrackerOwner;
+template <typename T> struct impl_IInteractionTrackerRequestIgnoredArgs;
+template <typename T> struct impl_IInteractionTrackerStatics;
+template <typename T> struct impl_IInteractionTrackerValuesChangedArgs;
+template <typename T> struct impl_IVisualInteractionSource;
+template <typename T> struct impl_IVisualInteractionSourceStatics;
 
 }
 

@@ -32,8 +32,8 @@ template <> struct traits<Windows::Perception::PerceptionTimestamp> { using defa
 
 namespace Windows::Perception {
 
-template <typename T> class impl_IPerceptionTimestamp;
-template <typename T> class impl_IPerceptionTimestampHelperStatics;
+template <typename T> struct impl_IPerceptionTimestamp;
+template <typename T> struct impl_IPerceptionTimestampHelperStatics;
 
 }
 

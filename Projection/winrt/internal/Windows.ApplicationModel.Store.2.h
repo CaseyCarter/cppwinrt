@@ -175,12 +175,8 @@ template <> struct __declspec(uuid("3a7d9a2f-2a82-59f8-bd7c-d691ca169863")) __de
 namespace Windows::ApplicationModel::Store {
 
 template <typename D>
-class WINRT_EBO impl_ICurrentApp
+struct WINRT_EBO impl_ICurrentApp
 {
-    auto shim() const { return impl::shim<D, ICurrentApp>(this); }
-
-public:
-
     Windows::ApplicationModel::Store::LicenseInformation LicenseInformation() const;
     Windows::Foundation::Uri LinkUri() const;
     GUID AppId() const;
@@ -192,23 +188,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICurrentApp2Statics
+struct WINRT_EBO impl_ICurrentApp2Statics
 {
-    auto shim() const { return impl::shim<D, ICurrentApp2Statics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<hstring> GetCustomerPurchaseIdAsync(hstring_ref serviceTicket, hstring_ref publisherUserId) const;
     Windows::Foundation::IAsyncOperation<hstring> GetCustomerCollectionsIdAsync(hstring_ref serviceTicket, hstring_ref publisherUserId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICurrentAppSimulator
+struct WINRT_EBO impl_ICurrentAppSimulator
 {
-    auto shim() const { return impl::shim<D, ICurrentAppSimulator>(this); }
-
-public:
-
     Windows::ApplicationModel::Store::LicenseInformation LicenseInformation() const;
     Windows::Foundation::Uri LinkUri() const;
     GUID AppId() const;
@@ -221,33 +209,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICurrentAppSimulatorStaticsWithFiltering
+struct WINRT_EBO impl_ICurrentAppSimulatorStaticsWithFiltering
 {
-    auto shim() const { return impl::shim<D, ICurrentAppSimulatorStaticsWithFiltering>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> LoadListingInformationByProductIdsAsync(const Windows::Foundation::Collections::IIterable<hstring> & productIds) const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> LoadListingInformationByKeywordsAsync(const Windows::Foundation::Collections::IIterable<hstring> & keywords) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICurrentAppSimulatorWithCampaignId
+struct WINRT_EBO impl_ICurrentAppSimulatorWithCampaignId
 {
-    auto shim() const { return impl::shim<D, ICurrentAppSimulatorWithCampaignId>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<hstring> GetAppPurchaseCampaignIdAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICurrentAppSimulatorWithConsumables
+struct WINRT_EBO impl_ICurrentAppSimulatorWithConsumables
 {
-    auto shim() const { return impl::shim<D, ICurrentAppSimulatorWithConsumables>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Store::FulfillmentResult> ReportConsumableFulfillmentAsync(hstring_ref productId, GUID transactionId) const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> RequestProductPurchaseAsync(hstring_ref productId) const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> RequestProductPurchaseAsync(hstring_ref productId, hstring_ref offerId, const Windows::ApplicationModel::Store::ProductPurchaseDisplayProperties & displayProperties) const;
@@ -255,34 +231,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICurrentAppStaticsWithFiltering
+struct WINRT_EBO impl_ICurrentAppStaticsWithFiltering
 {
-    auto shim() const { return impl::shim<D, ICurrentAppStaticsWithFiltering>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> LoadListingInformationByProductIdsAsync(const Windows::Foundation::Collections::IIterable<hstring> & productIds) const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> LoadListingInformationByKeywordsAsync(const Windows::Foundation::Collections::IIterable<hstring> & keywords) const;
     void ReportProductFulfillment(hstring_ref productId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICurrentAppWithCampaignId
+struct WINRT_EBO impl_ICurrentAppWithCampaignId
 {
-    auto shim() const { return impl::shim<D, ICurrentAppWithCampaignId>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<hstring> GetAppPurchaseCampaignIdAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICurrentAppWithConsumables
+struct WINRT_EBO impl_ICurrentAppWithConsumables
 {
-    auto shim() const { return impl::shim<D, ICurrentAppWithConsumables>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Store::FulfillmentResult> ReportConsumableFulfillmentAsync(hstring_ref productId, GUID transactionId) const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> RequestProductPurchaseAsync(hstring_ref productId) const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> RequestProductPurchaseAsync(hstring_ref productId, hstring_ref offerId, const Windows::ApplicationModel::Store::ProductPurchaseDisplayProperties & displayProperties) const;
@@ -290,12 +254,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ILicenseInformation
+struct WINRT_EBO impl_ILicenseInformation
 {
-    auto shim() const { return impl::shim<D, ILicenseInformation>(this); }
-
-public:
-
     Windows::Foundation::Collections::IMapView<hstring, Windows::ApplicationModel::Store::ProductLicense> ProductLicenses() const;
     bool IsActive() const;
     bool IsTrial() const;
@@ -307,12 +267,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IListingInformation
+struct WINRT_EBO impl_IListingInformation
 {
-    auto shim() const { return impl::shim<D, IListingInformation>(this); }
-
-public:
-
     hstring CurrentMarket() const;
     hstring Description() const;
     Windows::Foundation::Collections::IMapView<hstring, Windows::ApplicationModel::Store::ProductListing> ProductListings() const;
@@ -322,12 +278,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IListingInformation2
+struct WINRT_EBO impl_IListingInformation2
 {
-    auto shim() const { return impl::shim<D, IListingInformation2>(this); }
-
-public:
-
     hstring FormattedBasePrice() const;
     Windows::Foundation::DateTime SaleEndDate() const;
     bool IsOnSale() const;
@@ -335,46 +287,30 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IProductLicense
+struct WINRT_EBO impl_IProductLicense
 {
-    auto shim() const { return impl::shim<D, IProductLicense>(this); }
-
-public:
-
     hstring ProductId() const;
     bool IsActive() const;
     Windows::Foundation::DateTime ExpirationDate() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IProductLicenseWithFulfillment
+struct WINRT_EBO impl_IProductLicenseWithFulfillment
 {
-    auto shim() const { return impl::shim<D, IProductLicenseWithFulfillment>(this); }
-
-public:
-
     bool IsConsumable() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IProductListing
+struct WINRT_EBO impl_IProductListing
 {
-    auto shim() const { return impl::shim<D, IProductListing>(this); }
-
-public:
-
     hstring ProductId() const;
     hstring FormattedPrice() const;
     hstring Name() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IProductListing2
+struct WINRT_EBO impl_IProductListing2
 {
-    auto shim() const { return impl::shim<D, IProductListing2>(this); }
-
-public:
-
     hstring FormattedBasePrice() const;
     Windows::Foundation::DateTime SaleEndDate() const;
     bool IsOnSale() const;
@@ -382,22 +318,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IProductListingWithConsumables
+struct WINRT_EBO impl_IProductListingWithConsumables
 {
-    auto shim() const { return impl::shim<D, IProductListingWithConsumables>(this); }
-
-public:
-
     Windows::ApplicationModel::Store::ProductType ProductType() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IProductListingWithMetadata
+struct WINRT_EBO impl_IProductListingWithMetadata
 {
-    auto shim() const { return impl::shim<D, IProductListingWithMetadata>(this); }
-
-public:
-
     hstring Description() const;
     Windows::Foundation::Collections::IIterable<hstring> Keywords() const;
     Windows::ApplicationModel::Store::ProductType ProductType() const;
@@ -406,12 +334,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IProductPurchaseDisplayProperties
+struct WINRT_EBO impl_IProductPurchaseDisplayProperties
 {
-    auto shim() const { return impl::shim<D, IProductPurchaseDisplayProperties>(this); }
-
-public:
-
     hstring Name() const;
     void Name(hstring_ref value) const;
     hstring Description() const;
@@ -421,22 +345,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IProductPurchaseDisplayPropertiesFactory
+struct WINRT_EBO impl_IProductPurchaseDisplayPropertiesFactory
 {
-    auto shim() const { return impl::shim<D, IProductPurchaseDisplayPropertiesFactory>(this); }
-
-public:
-
     Windows::ApplicationModel::Store::ProductPurchaseDisplayProperties CreateProductPurchaseDisplayProperties(hstring_ref name) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPurchaseResults
+struct WINRT_EBO impl_IPurchaseResults
 {
-    auto shim() const { return impl::shim<D, IPurchaseResults>(this); }
-
-public:
-
     Windows::ApplicationModel::Store::ProductPurchaseStatus Status() const;
     GUID TransactionId() const;
     hstring ReceiptXml() const;
@@ -444,12 +360,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUnfulfilledConsumable
+struct WINRT_EBO impl_IUnfulfilledConsumable
 {
-    auto shim() const { return impl::shim<D, IUnfulfilledConsumable>(this); }
-
-public:
-
     hstring ProductId() const;
     GUID TransactionId() const;
     hstring OfferId() const;

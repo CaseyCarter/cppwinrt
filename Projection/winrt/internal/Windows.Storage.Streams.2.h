@@ -101,55 +101,35 @@ template <> struct __declspec(uuid("1e466dc5-840f-54f9-b877-5e3a9f4b6c74")) __de
 namespace Windows::Storage::Streams {
 
 template <typename D>
-class WINRT_EBO impl_IBuffer
+struct WINRT_EBO impl_IBuffer
 {
-    auto shim() const { return impl::shim<D, IBuffer>(this); }
-
-public:
-
     uint32_t Capacity() const;
     uint32_t Length() const;
     void Length(uint32_t value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBufferFactory
+struct WINRT_EBO impl_IBufferFactory
 {
-    auto shim() const { return impl::shim<D, IBufferFactory>(this); }
-
-public:
-
     Windows::Storage::Streams::Buffer Create(uint32_t capacity) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBufferStatics
+struct WINRT_EBO impl_IBufferStatics
 {
-    auto shim() const { return impl::shim<D, IBufferStatics>(this); }
-
-public:
-
     Windows::Storage::Streams::Buffer CreateCopyFromMemoryBuffer(const Windows::Foundation::IMemoryBuffer & input) const;
     Windows::Foundation::MemoryBuffer CreateMemoryBufferOverIBuffer(const Windows::Storage::Streams::IBuffer & input) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IContentTypeProvider
+struct WINRT_EBO impl_IContentTypeProvider
 {
-    auto shim() const { return impl::shim<D, IContentTypeProvider>(this); }
-
-public:
-
     hstring ContentType() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDataReader
+struct WINRT_EBO impl_IDataReader
 {
-    auto shim() const { return impl::shim<D, IDataReader>(this); }
-
-public:
-
     uint32_t UnconsumedBufferLength() const;
     Windows::Storage::Streams::UnicodeEncoding UnicodeEncoding() const;
     void UnicodeEncoding(Windows::Storage::Streams::UnicodeEncoding value) const;
@@ -179,32 +159,20 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDataReaderFactory
+struct WINRT_EBO impl_IDataReaderFactory
 {
-    auto shim() const { return impl::shim<D, IDataReaderFactory>(this); }
-
-public:
-
     Windows::Storage::Streams::DataReader CreateDataReader(const Windows::Storage::Streams::IInputStream & inputStream) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDataReaderStatics
+struct WINRT_EBO impl_IDataReaderStatics
 {
-    auto shim() const { return impl::shim<D, IDataReaderStatics>(this); }
-
-public:
-
     Windows::Storage::Streams::DataReader FromBuffer(const Windows::Storage::Streams::IBuffer & buffer) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDataWriter
+struct WINRT_EBO impl_IDataWriter
 {
-    auto shim() const { return impl::shim<D, IDataWriter>(this); }
-
-public:
-
     uint32_t UnstoredBufferLength() const;
     Windows::Storage::Streams::UnicodeEncoding UnicodeEncoding() const;
     void UnicodeEncoding(Windows::Storage::Streams::UnicodeEncoding value) const;
@@ -235,53 +203,33 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDataWriterFactory
+struct WINRT_EBO impl_IDataWriterFactory
 {
-    auto shim() const { return impl::shim<D, IDataWriterFactory>(this); }
-
-public:
-
     Windows::Storage::Streams::DataWriter CreateDataWriter(const Windows::Storage::Streams::IOutputStream & outputStream) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInputStream
+struct WINRT_EBO impl_IInputStream
 {
-    auto shim() const { return impl::shim<D, IInputStream>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Storage::Streams::IBuffer, uint32_t> ReadAsync(const Windows::Storage::Streams::IBuffer & buffer, uint32_t count, Windows::Storage::Streams::InputStreamOptions options) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInputStreamReference
+struct WINRT_EBO impl_IInputStreamReference
 {
-    auto shim() const { return impl::shim<D, IInputStreamReference>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IInputStream> OpenSequentialReadAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IOutputStream
+struct WINRT_EBO impl_IOutputStream
 {
-    auto shim() const { return impl::shim<D, IOutputStream>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperationWithProgress<uint32_t, uint32_t> WriteAsync(const Windows::Storage::Streams::IBuffer & buffer) const;
     Windows::Foundation::IAsyncOperation<bool> FlushAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRandomAccessStream
+struct WINRT_EBO impl_IRandomAccessStream
 {
-    auto shim() const { return impl::shim<D, IRandomAccessStream>(this); }
-
-public:
-
     uint64_t Size() const;
     void Size(uint64_t value) const;
     Windows::Storage::Streams::IInputStream GetInputStreamAt(uint64_t position) const;
@@ -294,46 +242,30 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IRandomAccessStreamReference
+struct WINRT_EBO impl_IRandomAccessStreamReference
 {
-    auto shim() const { return impl::shim<D, IRandomAccessStreamReference>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamWithContentType> OpenReadAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRandomAccessStreamReferenceStatics
+struct WINRT_EBO impl_IRandomAccessStreamReferenceStatics
 {
-    auto shim() const { return impl::shim<D, IRandomAccessStreamReferenceStatics>(this); }
-
-public:
-
     Windows::Storage::Streams::RandomAccessStreamReference CreateFromFile(const Windows::Storage::IStorageFile & file) const;
     Windows::Storage::Streams::RandomAccessStreamReference CreateFromUri(const Windows::Foundation::Uri & uri) const;
     Windows::Storage::Streams::RandomAccessStreamReference CreateFromStream(const Windows::Storage::Streams::IRandomAccessStream & stream) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRandomAccessStreamStatics
+struct WINRT_EBO impl_IRandomAccessStreamStatics
 {
-    auto shim() const { return impl::shim<D, IRandomAccessStreamStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t> CopyAsync(const Windows::Storage::Streams::IInputStream & source, const Windows::Storage::Streams::IOutputStream & destination) const;
     Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t> CopyAsync(const Windows::Storage::Streams::IInputStream & source, const Windows::Storage::Streams::IOutputStream & destination, uint64_t bytesToCopy) const;
     Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t> CopyAndCloseAsync(const Windows::Storage::Streams::IInputStream & source, const Windows::Storage::Streams::IOutputStream & destination) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRandomAccessStreamWithContentType
+struct WINRT_EBO impl_IRandomAccessStreamWithContentType
 {
-    auto shim() const { return impl::shim<D, IRandomAccessStreamWithContentType>(this); }
-
-public:
-
 };
 
 struct IBuffer :

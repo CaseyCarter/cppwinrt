@@ -137,18 +137,18 @@ template <> struct traits<Windows::ApplicationModel::VoiceCommands::VoiceCommand
 
 namespace Windows::ApplicationModel::VoiceCommands {
 
-template <typename T> class impl_IVoiceCommand;
-template <typename T> class impl_IVoiceCommandCompletedEventArgs;
-template <typename T> class impl_IVoiceCommandConfirmationResult;
-template <typename T> class impl_IVoiceCommandContentTile;
-template <typename T> class impl_IVoiceCommandDefinition;
-template <typename T> class impl_IVoiceCommandDefinitionManagerStatics;
-template <typename T> class impl_IVoiceCommandDisambiguationResult;
-template <typename T> class impl_IVoiceCommandResponse;
-template <typename T> class impl_IVoiceCommandResponseStatics;
-template <typename T> class impl_IVoiceCommandServiceConnection;
-template <typename T> class impl_IVoiceCommandServiceConnectionStatics;
-template <typename T> class impl_IVoiceCommandUserMessage;
+template <typename T> struct impl_IVoiceCommand;
+template <typename T> struct impl_IVoiceCommandCompletedEventArgs;
+template <typename T> struct impl_IVoiceCommandConfirmationResult;
+template <typename T> struct impl_IVoiceCommandContentTile;
+template <typename T> struct impl_IVoiceCommandDefinition;
+template <typename T> struct impl_IVoiceCommandDefinitionManagerStatics;
+template <typename T> struct impl_IVoiceCommandDisambiguationResult;
+template <typename T> struct impl_IVoiceCommandResponse;
+template <typename T> struct impl_IVoiceCommandResponseStatics;
+template <typename T> struct impl_IVoiceCommandServiceConnection;
+template <typename T> struct impl_IVoiceCommandServiceConnectionStatics;
+template <typename T> struct impl_IVoiceCommandUserMessage;
 
 }
 

@@ -140,23 +140,15 @@ template <> struct __declspec(uuid("8dea85a0-0204-57dd-abad-90e37c0ef240")) __de
 namespace Windows::Gaming::Input {
 
 template <typename D>
-class WINRT_EBO impl_IArcadeStick
+struct WINRT_EBO impl_IArcadeStick
 {
-    auto shim() const { return impl::shim<D, IArcadeStick>(this); }
-
-public:
-
     Windows::Gaming::Input::GameControllerButtonLabel GetButtonLabel(Windows::Gaming::Input::ArcadeStickButtons button) const;
     Windows::Gaming::Input::ArcadeStickReading GetCurrentReading() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IArcadeStickStatics
+struct WINRT_EBO impl_IArcadeStickStatics
 {
-    auto shim() const { return impl::shim<D, IArcadeStickStatics>(this); }
-
-public:
-
     event_token ArcadeStickAdded(const Windows::Foundation::EventHandler<Windows::Gaming::Input::ArcadeStick> & value) const;
     using ArcadeStickAdded_revoker = event_revoker<IArcadeStickStatics>;
     ArcadeStickAdded_revoker ArcadeStickAdded(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Gaming::Input::ArcadeStick> & value) const;
@@ -169,12 +161,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IGameController
+struct WINRT_EBO impl_IGameController
 {
-    auto shim() const { return impl::shim<D, IGameController>(this); }
-
-public:
-
     event_token HeadsetConnected(const Windows::Foundation::TypedEventHandler<Windows::Gaming::Input::IGameController, Windows::Gaming::Input::Headset> & value) const;
     using HeadsetConnected_revoker = event_revoker<IGameController>;
     HeadsetConnected_revoker HeadsetConnected(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Gaming::Input::IGameController, Windows::Gaming::Input::Headset> & value) const;
@@ -193,34 +181,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IGamepad
+struct WINRT_EBO impl_IGamepad
 {
-    auto shim() const { return impl::shim<D, IGamepad>(this); }
-
-public:
-
     Windows::Gaming::Input::GamepadVibration Vibration() const;
     void Vibration(const Windows::Gaming::Input::GamepadVibration & value) const;
     Windows::Gaming::Input::GamepadReading GetCurrentReading() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGamepad2
+struct WINRT_EBO impl_IGamepad2
 {
-    auto shim() const { return impl::shim<D, IGamepad2>(this); }
-
-public:
-
     Windows::Gaming::Input::GameControllerButtonLabel GetButtonLabel(Windows::Gaming::Input::GamepadButtons button) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGamepadStatics
+struct WINRT_EBO impl_IGamepadStatics
 {
-    auto shim() const { return impl::shim<D, IGamepadStatics>(this); }
-
-public:
-
     event_token GamepadAdded(const Windows::Foundation::EventHandler<Windows::Gaming::Input::Gamepad> & value) const;
     using GamepadAdded_revoker = event_revoker<IGamepadStatics>;
     GamepadAdded_revoker GamepadAdded(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Gaming::Input::Gamepad> & value) const;
@@ -233,23 +209,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHeadset
+struct WINRT_EBO impl_IHeadset
 {
-    auto shim() const { return impl::shim<D, IHeadset>(this); }
-
-public:
-
     hstring CaptureDeviceId() const;
     hstring RenderDeviceId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRacingWheel
+struct WINRT_EBO impl_IRacingWheel
 {
-    auto shim() const { return impl::shim<D, IRacingWheel>(this); }
-
-public:
-
     bool HasClutch() const;
     bool HasHandbrake() const;
     bool HasPatternShifter() const;
@@ -261,12 +229,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IRacingWheelStatics
+struct WINRT_EBO impl_IRacingWheelStatics
 {
-    auto shim() const { return impl::shim<D, IRacingWheelStatics>(this); }
-
-public:
-
     event_token RacingWheelAdded(const Windows::Foundation::EventHandler<Windows::Gaming::Input::RacingWheel> & value) const;
     using RacingWheelAdded_revoker = event_revoker<IRacingWheelStatics>;
     RacingWheelAdded_revoker RacingWheelAdded(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Gaming::Input::RacingWheel> & value) const;
@@ -279,24 +243,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUINavigationController
+struct WINRT_EBO impl_IUINavigationController
 {
-    auto shim() const { return impl::shim<D, IUINavigationController>(this); }
-
-public:
-
     Windows::Gaming::Input::UINavigationReading GetCurrentReading() const;
     Windows::Gaming::Input::GameControllerButtonLabel GetOptionalButtonLabel(Windows::Gaming::Input::OptionalUINavigationButtons button) const;
     Windows::Gaming::Input::GameControllerButtonLabel GetRequiredButtonLabel(Windows::Gaming::Input::RequiredUINavigationButtons button) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUINavigationControllerStatics
+struct WINRT_EBO impl_IUINavigationControllerStatics
 {
-    auto shim() const { return impl::shim<D, IUINavigationControllerStatics>(this); }
-
-public:
-
     event_token UINavigationControllerAdded(const Windows::Foundation::EventHandler<Windows::Gaming::Input::UINavigationController> & value) const;
     using UINavigationControllerAdded_revoker = event_revoker<IUINavigationControllerStatics>;
     UINavigationControllerAdded_revoker UINavigationControllerAdded(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::Gaming::Input::UINavigationController> & value) const;

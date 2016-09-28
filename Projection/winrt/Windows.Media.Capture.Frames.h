@@ -1019,133 +1019,133 @@ namespace Windows::Media::Capture::Frames {
 template <typename D> hstring impl_IMediaFrameSourceGroup<D>::Id() const
 {
     hstring value;
-    check_hresult(shim()->get_Id(put(value)));
+    check_hresult(static_cast<const IMediaFrameSourceGroup &>(static_cast<const D &>(*this))->get_Id(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaFrameSourceGroup<D>::DisplayName() const
 {
     hstring value;
-    check_hresult(shim()->get_DisplayName(put(value)));
+    check_hresult(static_cast<const IMediaFrameSourceGroup &>(static_cast<const D &>(*this))->get_DisplayName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::Frames::MediaFrameSourceInfo> impl_IMediaFrameSourceGroup<D>::SourceInfos() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::Frames::MediaFrameSourceInfo> value;
-    check_hresult(shim()->get_SourceInfos(put(value)));
+    check_hresult(static_cast<const IMediaFrameSourceGroup &>(static_cast<const D &>(*this))->get_SourceInfos(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::Frames::MediaFrameSourceGroup>> impl_IMediaFrameSourceGroupStatics<D>::FindAllAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::Frames::MediaFrameSourceGroup>> value;
-    check_hresult(shim()->abi_FindAllAsync(put(value)));
+    check_hresult(static_cast<const IMediaFrameSourceGroupStatics &>(static_cast<const D &>(*this))->abi_FindAllAsync(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Frames::MediaFrameSourceGroup> impl_IMediaFrameSourceGroupStatics<D>::FromIdAsync(hstring_ref id) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Frames::MediaFrameSourceGroup> value;
-    check_hresult(shim()->abi_FromIdAsync(get(id), put(value)));
+    check_hresult(static_cast<const IMediaFrameSourceGroupStatics &>(static_cast<const D &>(*this))->abi_FromIdAsync(get(id), put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaFrameSourceGroupStatics<D>::GetDeviceSelector() const
 {
     hstring value;
-    check_hresult(shim()->abi_GetDeviceSelector(put(value)));
+    check_hresult(static_cast<const IMediaFrameSourceGroupStatics &>(static_cast<const D &>(*this))->abi_GetDeviceSelector(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaFrameSourceInfo<D>::Id() const
 {
     hstring value;
-    check_hresult(shim()->get_Id(put(value)));
+    check_hresult(static_cast<const IMediaFrameSourceInfo &>(static_cast<const D &>(*this))->get_Id(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Capture::MediaStreamType impl_IMediaFrameSourceInfo<D>::MediaStreamType() const
 {
     Windows::Media::Capture::MediaStreamType value {};
-    check_hresult(shim()->get_MediaStreamType(&value));
+    check_hresult(static_cast<const IMediaFrameSourceInfo &>(static_cast<const D &>(*this))->get_MediaStreamType(&value));
     return value;
 }
 
 template <typename D> Windows::Media::Capture::Frames::MediaFrameSourceKind impl_IMediaFrameSourceInfo<D>::SourceKind() const
 {
     Windows::Media::Capture::Frames::MediaFrameSourceKind value {};
-    check_hresult(shim()->get_SourceKind(&value));
+    check_hresult(static_cast<const IMediaFrameSourceInfo &>(static_cast<const D &>(*this))->get_SourceKind(&value));
     return value;
 }
 
 template <typename D> Windows::Media::Capture::Frames::MediaFrameSourceGroup impl_IMediaFrameSourceInfo<D>::SourceGroup() const
 {
     Windows::Media::Capture::Frames::MediaFrameSourceGroup value { nullptr };
-    check_hresult(shim()->get_SourceGroup(put(value)));
+    check_hresult(static_cast<const IMediaFrameSourceInfo &>(static_cast<const D &>(*this))->get_SourceGroup(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Enumeration::DeviceInformation impl_IMediaFrameSourceInfo<D>::DeviceInformation() const
 {
     Windows::Devices::Enumeration::DeviceInformation value { nullptr };
-    check_hresult(shim()->get_DeviceInformation(put(value)));
+    check_hresult(static_cast<const IMediaFrameSourceInfo &>(static_cast<const D &>(*this))->get_DeviceInformation(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IMapView<GUID, Windows::IInspectable> impl_IMediaFrameSourceInfo<D>::Properties() const
 {
     Windows::Foundation::Collections::IMapView<GUID, Windows::IInspectable> value;
-    check_hresult(shim()->get_Properties(put(value)));
+    check_hresult(static_cast<const IMediaFrameSourceInfo &>(static_cast<const D &>(*this))->get_Properties(put(value)));
     return value;
 }
 
 template <typename D> Windows::Perception::Spatial::SpatialCoordinateSystem impl_IMediaFrameSourceInfo<D>::CoordinateSystem() const
 {
     Windows::Perception::Spatial::SpatialCoordinateSystem value { nullptr };
-    check_hresult(shim()->get_CoordinateSystem(put(value)));
+    check_hresult(static_cast<const IMediaFrameSourceInfo &>(static_cast<const D &>(*this))->get_CoordinateSystem(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Capture::Frames::MediaFrameSourceInfo impl_IMediaFrameSource<D>::Info() const
 {
     Windows::Media::Capture::Frames::MediaFrameSourceInfo value { nullptr };
-    check_hresult(shim()->get_Info(put(value)));
+    check_hresult(static_cast<const IMediaFrameSource &>(static_cast<const D &>(*this))->get_Info(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Capture::Frames::MediaFrameSourceController impl_IMediaFrameSource<D>::Controller() const
 {
     Windows::Media::Capture::Frames::MediaFrameSourceController value { nullptr };
-    check_hresult(shim()->get_Controller(put(value)));
+    check_hresult(static_cast<const IMediaFrameSource &>(static_cast<const D &>(*this))->get_Controller(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::Frames::MediaFrameFormat> impl_IMediaFrameSource<D>::SupportedFormats() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::Frames::MediaFrameFormat> value;
-    check_hresult(shim()->get_SupportedFormats(put(value)));
+    check_hresult(static_cast<const IMediaFrameSource &>(static_cast<const D &>(*this))->get_SupportedFormats(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Capture::Frames::MediaFrameFormat impl_IMediaFrameSource<D>::CurrentFormat() const
 {
     Windows::Media::Capture::Frames::MediaFrameFormat value { nullptr };
-    check_hresult(shim()->get_CurrentFormat(put(value)));
+    check_hresult(static_cast<const IMediaFrameSource &>(static_cast<const D &>(*this))->get_CurrentFormat(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IMediaFrameSource<D>::SetFormatAsync(const Windows::Media::Capture::Frames::MediaFrameFormat & format) const
 {
     Windows::Foundation::IAsyncAction value;
-    check_hresult(shim()->abi_SetFormatAsync(get(format), put(value)));
+    check_hresult(static_cast<const IMediaFrameSource &>(static_cast<const D &>(*this))->abi_SetFormatAsync(get(format), put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IMediaFrameSource<D>::FormatChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Frames::MediaFrameSource, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_FormatChanged(get(handler), &token));
+    check_hresult(static_cast<const IMediaFrameSource &>(static_cast<const D &>(*this))->add_FormatChanged(get(handler), &token));
     return token;
 }
 
@@ -1156,20 +1156,20 @@ template <typename D> event_revoker<IMediaFrameSource> impl_IMediaFrameSource<D>
 
 template <typename D> void impl_IMediaFrameSource<D>::FormatChanged(event_token token) const
 {
-    check_hresult(shim()->remove_FormatChanged(token));
+    check_hresult(static_cast<const IMediaFrameSource &>(static_cast<const D &>(*this))->remove_FormatChanged(token));
 }
 
 template <typename D> Windows::Media::Devices::Core::CameraIntrinsics impl_IMediaFrameSource<D>::TryGetCameraIntrinsics(const Windows::Media::Capture::Frames::MediaFrameFormat & format) const
 {
     Windows::Media::Devices::Core::CameraIntrinsics value { nullptr };
-    check_hresult(shim()->abi_TryGetCameraIntrinsics(get(format), put(value)));
+    check_hresult(static_cast<const IMediaFrameSource &>(static_cast<const D &>(*this))->abi_TryGetCameraIntrinsics(get(format), put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IMediaFrameReader<D>::FrameArrived(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Frames::MediaFrameReader, Windows::Media::Capture::Frames::MediaFrameArrivedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_FrameArrived(get(handler), &token));
+    check_hresult(static_cast<const IMediaFrameReader &>(static_cast<const D &>(*this))->add_FrameArrived(get(handler), &token));
     return token;
 }
 
@@ -1180,314 +1180,314 @@ template <typename D> event_revoker<IMediaFrameReader> impl_IMediaFrameReader<D>
 
 template <typename D> void impl_IMediaFrameReader<D>::FrameArrived(event_token token) const
 {
-    check_hresult(shim()->remove_FrameArrived(token));
+    check_hresult(static_cast<const IMediaFrameReader &>(static_cast<const D &>(*this))->remove_FrameArrived(token));
 }
 
 template <typename D> Windows::Media::Capture::Frames::MediaFrameReference impl_IMediaFrameReader<D>::TryAcquireLatestFrame() const
 {
     Windows::Media::Capture::Frames::MediaFrameReference value { nullptr };
-    check_hresult(shim()->abi_TryAcquireLatestFrame(put(value)));
+    check_hresult(static_cast<const IMediaFrameReader &>(static_cast<const D &>(*this))->abi_TryAcquireLatestFrame(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Media::Capture::Frames::MediaFrameReaderStartStatus> impl_IMediaFrameReader<D>::StartAsync() const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Media::Capture::Frames::MediaFrameReaderStartStatus> operation;
-    check_hresult(shim()->abi_StartAsync(put(operation)));
+    check_hresult(static_cast<const IMediaFrameReader &>(static_cast<const D &>(*this))->abi_StartAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IMediaFrameReader<D>::StopAsync() const
 {
     Windows::Foundation::IAsyncAction action;
-    check_hresult(shim()->abi_StopAsync(put(action)));
+    check_hresult(static_cast<const IMediaFrameReader &>(static_cast<const D &>(*this))->abi_StopAsync(put(action)));
     return action;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Frames::MediaFrameSourceGetPropertyResult> impl_IMediaFrameSourceController<D>::GetPropertyAsync(hstring_ref propertyId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Frames::MediaFrameSourceGetPropertyResult> value;
-    check_hresult(shim()->abi_GetPropertyAsync(get(propertyId), put(value)));
+    check_hresult(static_cast<const IMediaFrameSourceController &>(static_cast<const D &>(*this))->abi_GetPropertyAsync(get(propertyId), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Media::Capture::Frames::MediaFrameSourceSetPropertyStatus> impl_IMediaFrameSourceController<D>::SetPropertyAsync(hstring_ref propertyId, const Windows::IInspectable & propertyValue) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Media::Capture::Frames::MediaFrameSourceSetPropertyStatus> value;
-    check_hresult(shim()->abi_SetPropertyAsync(get(propertyId), get(propertyValue), put(value)));
+    check_hresult(static_cast<const IMediaFrameSourceController &>(static_cast<const D &>(*this))->abi_SetPropertyAsync(get(propertyId), get(propertyValue), put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::VideoDeviceController impl_IMediaFrameSourceController<D>::VideoDeviceController() const
 {
     Windows::Media::Devices::VideoDeviceController value { nullptr };
-    check_hresult(shim()->get_VideoDeviceController(put(value)));
+    check_hresult(static_cast<const IMediaFrameSourceController &>(static_cast<const D &>(*this))->get_VideoDeviceController(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Capture::Frames::MediaFrameSourceGetPropertyStatus impl_IMediaFrameSourceGetPropertyResult<D>::Status() const
 {
     Windows::Media::Capture::Frames::MediaFrameSourceGetPropertyStatus value {};
-    check_hresult(shim()->get_Status(&value));
+    check_hresult(static_cast<const IMediaFrameSourceGetPropertyResult &>(static_cast<const D &>(*this))->get_Status(&value));
     return value;
 }
 
 template <typename D> Windows::IInspectable impl_IMediaFrameSourceGetPropertyResult<D>::Value() const
 {
     Windows::IInspectable value;
-    check_hresult(shim()->get_Value(put(value)));
+    check_hresult(static_cast<const IMediaFrameSourceGetPropertyResult &>(static_cast<const D &>(*this))->get_Value(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaFrameFormat<D>::MajorType() const
 {
     hstring value;
-    check_hresult(shim()->get_MajorType(put(value)));
+    check_hresult(static_cast<const IMediaFrameFormat &>(static_cast<const D &>(*this))->get_MajorType(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaFrameFormat<D>::Subtype() const
 {
     hstring value;
-    check_hresult(shim()->get_Subtype(put(value)));
+    check_hresult(static_cast<const IMediaFrameFormat &>(static_cast<const D &>(*this))->get_Subtype(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::MediaProperties::MediaRatio impl_IMediaFrameFormat<D>::FrameRate() const
 {
     Windows::Media::MediaProperties::MediaRatio value { nullptr };
-    check_hresult(shim()->get_FrameRate(put(value)));
+    check_hresult(static_cast<const IMediaFrameFormat &>(static_cast<const D &>(*this))->get_FrameRate(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IMapView<GUID, Windows::IInspectable> impl_IMediaFrameFormat<D>::Properties() const
 {
     Windows::Foundation::Collections::IMapView<GUID, Windows::IInspectable> value;
-    check_hresult(shim()->get_Properties(put(value)));
+    check_hresult(static_cast<const IMediaFrameFormat &>(static_cast<const D &>(*this))->get_Properties(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Capture::Frames::VideoMediaFrameFormat impl_IMediaFrameFormat<D>::VideoFormat() const
 {
     Windows::Media::Capture::Frames::VideoMediaFrameFormat value { nullptr };
-    check_hresult(shim()->get_VideoFormat(put(value)));
+    check_hresult(static_cast<const IMediaFrameFormat &>(static_cast<const D &>(*this))->get_VideoFormat(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Capture::Frames::MediaFrameFormat impl_IVideoMediaFrameFormat<D>::MediaFrameFormat() const
 {
     Windows::Media::Capture::Frames::MediaFrameFormat value { nullptr };
-    check_hresult(shim()->get_MediaFrameFormat(put(value)));
+    check_hresult(static_cast<const IVideoMediaFrameFormat &>(static_cast<const D &>(*this))->get_MediaFrameFormat(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Capture::Frames::DepthMediaFrameFormat impl_IVideoMediaFrameFormat<D>::DepthFormat() const
 {
     Windows::Media::Capture::Frames::DepthMediaFrameFormat value { nullptr };
-    check_hresult(shim()->get_DepthFormat(put(value)));
+    check_hresult(static_cast<const IVideoMediaFrameFormat &>(static_cast<const D &>(*this))->get_DepthFormat(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IVideoMediaFrameFormat<D>::Width() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_Width(&value));
+    check_hresult(static_cast<const IVideoMediaFrameFormat &>(static_cast<const D &>(*this))->get_Width(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IVideoMediaFrameFormat<D>::Height() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_Height(&value));
+    check_hresult(static_cast<const IVideoMediaFrameFormat &>(static_cast<const D &>(*this))->get_Height(&value));
     return value;
 }
 
 template <typename D> Windows::Media::Capture::Frames::MediaFrameSourceKind impl_IMediaFrameReference<D>::SourceKind() const
 {
     Windows::Media::Capture::Frames::MediaFrameSourceKind value {};
-    check_hresult(shim()->get_SourceKind(&value));
+    check_hresult(static_cast<const IMediaFrameReference &>(static_cast<const D &>(*this))->get_SourceKind(&value));
     return value;
 }
 
 template <typename D> Windows::Media::Capture::Frames::MediaFrameFormat impl_IMediaFrameReference<D>::Format() const
 {
     Windows::Media::Capture::Frames::MediaFrameFormat value { nullptr };
-    check_hresult(shim()->get_Format(put(value)));
+    check_hresult(static_cast<const IMediaFrameReference &>(static_cast<const D &>(*this))->get_Format(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeSpan> impl_IMediaFrameReference<D>::SystemRelativeTime() const
 {
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> value;
-    check_hresult(shim()->get_SystemRelativeTime(put(value)));
+    check_hresult(static_cast<const IMediaFrameReference &>(static_cast<const D &>(*this))->get_SystemRelativeTime(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IMediaFrameReference<D>::Duration() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_Duration(put(value)));
+    check_hresult(static_cast<const IMediaFrameReference &>(static_cast<const D &>(*this))->get_Duration(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IMapView<GUID, Windows::IInspectable> impl_IMediaFrameReference<D>::Properties() const
 {
     Windows::Foundation::Collections::IMapView<GUID, Windows::IInspectable> value;
-    check_hresult(shim()->get_Properties(put(value)));
+    check_hresult(static_cast<const IMediaFrameReference &>(static_cast<const D &>(*this))->get_Properties(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Capture::Frames::BufferMediaFrame impl_IMediaFrameReference<D>::BufferMediaFrame() const
 {
     Windows::Media::Capture::Frames::BufferMediaFrame value { nullptr };
-    check_hresult(shim()->get_BufferMediaFrame(put(value)));
+    check_hresult(static_cast<const IMediaFrameReference &>(static_cast<const D &>(*this))->get_BufferMediaFrame(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Capture::Frames::VideoMediaFrame impl_IMediaFrameReference<D>::VideoMediaFrame() const
 {
     Windows::Media::Capture::Frames::VideoMediaFrame value { nullptr };
-    check_hresult(shim()->get_VideoMediaFrame(put(value)));
+    check_hresult(static_cast<const IMediaFrameReference &>(static_cast<const D &>(*this))->get_VideoMediaFrame(put(value)));
     return value;
 }
 
 template <typename D> Windows::Perception::Spatial::SpatialCoordinateSystem impl_IMediaFrameReference<D>::CoordinateSystem() const
 {
     Windows::Perception::Spatial::SpatialCoordinateSystem value { nullptr };
-    check_hresult(shim()->get_CoordinateSystem(put(value)));
+    check_hresult(static_cast<const IMediaFrameReference &>(static_cast<const D &>(*this))->get_CoordinateSystem(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Capture::Frames::MediaFrameReference impl_IBufferMediaFrame<D>::FrameReference() const
 {
     Windows::Media::Capture::Frames::MediaFrameReference value { nullptr };
-    check_hresult(shim()->get_FrameReference(put(value)));
+    check_hresult(static_cast<const IBufferMediaFrame &>(static_cast<const D &>(*this))->get_FrameReference(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IBufferMediaFrame<D>::Buffer() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(shim()->get_Buffer(put(value)));
+    check_hresult(static_cast<const IBufferMediaFrame &>(static_cast<const D &>(*this))->get_Buffer(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Capture::Frames::MediaFrameReference impl_IVideoMediaFrame<D>::FrameReference() const
 {
     Windows::Media::Capture::Frames::MediaFrameReference value { nullptr };
-    check_hresult(shim()->get_FrameReference(put(value)));
+    check_hresult(static_cast<const IVideoMediaFrame &>(static_cast<const D &>(*this))->get_FrameReference(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Capture::Frames::VideoMediaFrameFormat impl_IVideoMediaFrame<D>::VideoFormat() const
 {
     Windows::Media::Capture::Frames::VideoMediaFrameFormat value { nullptr };
-    check_hresult(shim()->get_VideoFormat(put(value)));
+    check_hresult(static_cast<const IVideoMediaFrame &>(static_cast<const D &>(*this))->get_VideoFormat(put(value)));
     return value;
 }
 
 template <typename D> Windows::Graphics::Imaging::SoftwareBitmap impl_IVideoMediaFrame<D>::SoftwareBitmap() const
 {
     Windows::Graphics::Imaging::SoftwareBitmap value { nullptr };
-    check_hresult(shim()->get_SoftwareBitmap(put(value)));
+    check_hresult(static_cast<const IVideoMediaFrame &>(static_cast<const D &>(*this))->get_SoftwareBitmap(put(value)));
     return value;
 }
 
 template <typename D> Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface impl_IVideoMediaFrame<D>::Direct3DSurface() const
 {
     Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface value;
-    check_hresult(shim()->get_Direct3DSurface(put(value)));
+    check_hresult(static_cast<const IVideoMediaFrame &>(static_cast<const D &>(*this))->get_Direct3DSurface(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::Core::CameraIntrinsics impl_IVideoMediaFrame<D>::CameraIntrinsics() const
 {
     Windows::Media::Devices::Core::CameraIntrinsics value { nullptr };
-    check_hresult(shim()->get_CameraIntrinsics(put(value)));
+    check_hresult(static_cast<const IVideoMediaFrame &>(static_cast<const D &>(*this))->get_CameraIntrinsics(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Capture::Frames::InfraredMediaFrame impl_IVideoMediaFrame<D>::InfraredMediaFrame() const
 {
     Windows::Media::Capture::Frames::InfraredMediaFrame value { nullptr };
-    check_hresult(shim()->get_InfraredMediaFrame(put(value)));
+    check_hresult(static_cast<const IVideoMediaFrame &>(static_cast<const D &>(*this))->get_InfraredMediaFrame(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Capture::Frames::DepthMediaFrame impl_IVideoMediaFrame<D>::DepthMediaFrame() const
 {
     Windows::Media::Capture::Frames::DepthMediaFrame value { nullptr };
-    check_hresult(shim()->get_DepthMediaFrame(put(value)));
+    check_hresult(static_cast<const IVideoMediaFrame &>(static_cast<const D &>(*this))->get_DepthMediaFrame(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::VideoFrame impl_IVideoMediaFrame<D>::GetVideoFrame() const
 {
     Windows::Media::VideoFrame value { nullptr };
-    check_hresult(shim()->abi_GetVideoFrame(put(value)));
+    check_hresult(static_cast<const IVideoMediaFrame &>(static_cast<const D &>(*this))->abi_GetVideoFrame(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Capture::Frames::MediaFrameReference impl_IInfraredMediaFrame<D>::FrameReference() const
 {
     Windows::Media::Capture::Frames::MediaFrameReference value { nullptr };
-    check_hresult(shim()->get_FrameReference(put(value)));
+    check_hresult(static_cast<const IInfraredMediaFrame &>(static_cast<const D &>(*this))->get_FrameReference(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Capture::Frames::VideoMediaFrame impl_IInfraredMediaFrame<D>::VideoMediaFrame() const
 {
     Windows::Media::Capture::Frames::VideoMediaFrame value { nullptr };
-    check_hresult(shim()->get_VideoMediaFrame(put(value)));
+    check_hresult(static_cast<const IInfraredMediaFrame &>(static_cast<const D &>(*this))->get_VideoMediaFrame(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IInfraredMediaFrame<D>::IsIlluminated() const
 {
     bool value {};
-    check_hresult(shim()->get_IsIlluminated(&value));
+    check_hresult(static_cast<const IInfraredMediaFrame &>(static_cast<const D &>(*this))->get_IsIlluminated(&value));
     return value;
 }
 
 template <typename D> Windows::Media::Capture::Frames::MediaFrameReference impl_IDepthMediaFrame<D>::FrameReference() const
 {
     Windows::Media::Capture::Frames::MediaFrameReference value { nullptr };
-    check_hresult(shim()->get_FrameReference(put(value)));
+    check_hresult(static_cast<const IDepthMediaFrame &>(static_cast<const D &>(*this))->get_FrameReference(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Capture::Frames::VideoMediaFrame impl_IDepthMediaFrame<D>::VideoMediaFrame() const
 {
     Windows::Media::Capture::Frames::VideoMediaFrame value { nullptr };
-    check_hresult(shim()->get_VideoMediaFrame(put(value)));
+    check_hresult(static_cast<const IDepthMediaFrame &>(static_cast<const D &>(*this))->get_VideoMediaFrame(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Capture::Frames::DepthMediaFrameFormat impl_IDepthMediaFrame<D>::DepthFormat() const
 {
     Windows::Media::Capture::Frames::DepthMediaFrameFormat value { nullptr };
-    check_hresult(shim()->get_DepthFormat(put(value)));
+    check_hresult(static_cast<const IDepthMediaFrame &>(static_cast<const D &>(*this))->get_DepthFormat(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Devices::Core::DepthCorrelatedCoordinateMapper impl_IDepthMediaFrame<D>::TryCreateCoordinateMapper(const Windows::Media::Devices::Core::CameraIntrinsics & cameraIntrinsics, const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const
 {
     Windows::Media::Devices::Core::DepthCorrelatedCoordinateMapper value { nullptr };
-    check_hresult(shim()->abi_TryCreateCoordinateMapper(get(cameraIntrinsics), get(coordinateSystem), put(value)));
+    check_hresult(static_cast<const IDepthMediaFrame &>(static_cast<const D &>(*this))->abi_TryCreateCoordinateMapper(get(cameraIntrinsics), get(coordinateSystem), put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Capture::Frames::VideoMediaFrameFormat impl_IDepthMediaFrameFormat<D>::VideoFormat() const
 {
     Windows::Media::Capture::Frames::VideoMediaFrameFormat value { nullptr };
-    check_hresult(shim()->get_VideoFormat(put(value)));
+    check_hresult(static_cast<const IDepthMediaFrameFormat &>(static_cast<const D &>(*this))->get_VideoFormat(put(value)));
     return value;
 }
 
 template <typename D> double impl_IDepthMediaFrameFormat<D>::DepthScaleInMeters() const
 {
     double value {};
-    check_hresult(shim()->get_DepthScaleInMeters(&value));
+    check_hresult(static_cast<const IDepthMediaFrameFormat &>(static_cast<const D &>(*this))->get_DepthScaleInMeters(&value));
     return value;
 }
 

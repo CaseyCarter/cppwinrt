@@ -29,8 +29,8 @@ namespace ABI {
 
 namespace Windows::Graphics::Effects {
 
-template <typename T> class impl_IGraphicsEffect;
-template <typename T> class impl_IGraphicsEffectSource;
+template <typename T> struct impl_IGraphicsEffect;
+template <typename T> struct impl_IGraphicsEffectSource;
 
 }
 

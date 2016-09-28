@@ -31,22 +31,14 @@ template <> struct __declspec(uuid("07e1dc01-18ba-596a-b745-79f9cde44ccc")) __de
 namespace Windows::ApplicationModel::ExtendedExecution::Foreground {
 
 template <typename D>
-class WINRT_EBO impl_IExtendedExecutionForegroundRevokedEventArgs
+struct WINRT_EBO impl_IExtendedExecutionForegroundRevokedEventArgs
 {
-    auto shim() const { return impl::shim<D, IExtendedExecutionForegroundRevokedEventArgs>(this); }
-
-public:
-
     Windows::ApplicationModel::ExtendedExecution::Foreground::ExtendedExecutionForegroundRevokedReason Reason() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IExtendedExecutionForegroundSession
+struct WINRT_EBO impl_IExtendedExecutionForegroundSession
 {
-    auto shim() const { return impl::shim<D, IExtendedExecutionForegroundSession>(this); }
-
-public:
-
     hstring Description() const;
     void Description(hstring_ref value) const;
     event_token Revoked(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::ApplicationModel::ExtendedExecution::Foreground::ExtendedExecutionForegroundRevokedEventArgs> & handler) const;

@@ -83,13 +83,13 @@ template <> struct traits<Windows::Devices::Spi::SpiDevice> { using default_inte
 
 namespace Windows::Devices::Spi {
 
-template <typename T> class impl_ISpiBusInfo;
-template <typename T> class impl_ISpiConnectionSettings;
-template <typename T> class impl_ISpiConnectionSettingsFactory;
-template <typename T> class impl_ISpiController;
-template <typename T> class impl_ISpiControllerStatics;
-template <typename T> class impl_ISpiDevice;
-template <typename T> class impl_ISpiDeviceStatics;
+template <typename T> struct impl_ISpiBusInfo;
+template <typename T> struct impl_ISpiConnectionSettings;
+template <typename T> struct impl_ISpiConnectionSettingsFactory;
+template <typename T> struct impl_ISpiController;
+template <typename T> struct impl_ISpiControllerStatics;
+template <typename T> struct impl_ISpiDevice;
+template <typename T> struct impl_ISpiDeviceStatics;
 
 }
 

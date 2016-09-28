@@ -31,12 +31,8 @@ template <> struct __declspec(uuid("191a8c6e-60dd-5a21-a53c-bf3f940a1dde")) __de
 namespace Windows::Devices::Lights {
 
 template <typename D>
-class WINRT_EBO impl_ILamp
+struct WINRT_EBO impl_ILamp
 {
-    auto shim() const { return impl::shim<D, ILamp>(this); }
-
-public:
-
     hstring DeviceId() const;
     bool IsEnabled() const;
     void IsEnabled(bool value) const;
@@ -52,22 +48,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ILampAvailabilityChangedEventArgs
+struct WINRT_EBO impl_ILampAvailabilityChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, ILampAvailabilityChangedEventArgs>(this); }
-
-public:
-
     bool IsAvailable() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILampStatics
+struct WINRT_EBO impl_ILampStatics
 {
-    auto shim() const { return impl::shim<D, ILampStatics>(this); }
-
-public:
-
     hstring GetDeviceSelector() const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Lights::Lamp> FromIdAsync(hstring_ref deviceId) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Lights::Lamp> GetDefaultAsync() const;

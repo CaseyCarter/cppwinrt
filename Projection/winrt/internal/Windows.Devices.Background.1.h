@@ -35,8 +35,8 @@ template <> struct traits<Windows::Devices::Background::DeviceUseDetails> { usin
 
 namespace Windows::Devices::Background {
 
-template <typename T> class impl_IDeviceServicingDetails;
-template <typename T> class impl_IDeviceUseDetails;
+template <typename T> struct impl_IDeviceServicingDetails;
+template <typename T> struct impl_IDeviceUseDetails;
 
 }
 

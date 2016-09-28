@@ -331,12 +331,8 @@ template <> struct __declspec(uuid("098f29cb-bc91-5639-a541-d5a4811ec35b")) __de
 namespace Windows::Devices::Sensors {
 
 template <typename D>
-class WINRT_EBO impl_IAccelerometer
+struct WINRT_EBO impl_IAccelerometer
 {
-    auto shim() const { return impl::shim<D, IAccelerometer>(this); }
-
-public:
-
     Windows::Devices::Sensors::AccelerometerReading GetCurrentReading() const;
     uint32_t MinimumReportInterval() const;
     void ReportInterval(uint32_t value) const;
@@ -352,55 +348,35 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAccelerometer2
+struct WINRT_EBO impl_IAccelerometer2
 {
-    auto shim() const { return impl::shim<D, IAccelerometer2>(this); }
-
-public:
-
     void ReadingTransform(Windows::Graphics::Display::DisplayOrientations value) const;
     Windows::Graphics::Display::DisplayOrientations ReadingTransform() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAccelerometer3
+struct WINRT_EBO impl_IAccelerometer3
 {
-    auto shim() const { return impl::shim<D, IAccelerometer3>(this); }
-
-public:
-
     void ReportLatency(uint32_t value) const;
     uint32_t ReportLatency() const;
     uint32_t MaxBatchSize() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAccelerometer4
+struct WINRT_EBO impl_IAccelerometer4
 {
-    auto shim() const { return impl::shim<D, IAccelerometer4>(this); }
-
-public:
-
     Windows::Devices::Sensors::AccelerometerReadingType ReadingType() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAccelerometerDeviceId
+struct WINRT_EBO impl_IAccelerometerDeviceId
 {
-    auto shim() const { return impl::shim<D, IAccelerometerDeviceId>(this); }
-
-public:
-
     hstring DeviceId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAccelerometerReading
+struct WINRT_EBO impl_IAccelerometerReading
 {
-    auto shim() const { return impl::shim<D, IAccelerometerReading>(this); }
-
-public:
-
     Windows::Foundation::DateTime Timestamp() const;
     double AccelerationX() const;
     double AccelerationY() const;
@@ -408,52 +384,32 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAccelerometerReadingChangedEventArgs
+struct WINRT_EBO impl_IAccelerometerReadingChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IAccelerometerReadingChangedEventArgs>(this); }
-
-public:
-
     Windows::Devices::Sensors::AccelerometerReading Reading() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAccelerometerShakenEventArgs
+struct WINRT_EBO impl_IAccelerometerShakenEventArgs
 {
-    auto shim() const { return impl::shim<D, IAccelerometerShakenEventArgs>(this); }
-
-public:
-
     Windows::Foundation::DateTime Timestamp() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAccelerometerStatics
+struct WINRT_EBO impl_IAccelerometerStatics
 {
-    auto shim() const { return impl::shim<D, IAccelerometerStatics>(this); }
-
-public:
-
     Windows::Devices::Sensors::Accelerometer GetDefault() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAccelerometerStatics2
+struct WINRT_EBO impl_IAccelerometerStatics2
 {
-    auto shim() const { return impl::shim<D, IAccelerometerStatics2>(this); }
-
-public:
-
     Windows::Devices::Sensors::Accelerometer GetDefault(Windows::Devices::Sensors::AccelerometerReadingType readingType) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IActivitySensor
+struct WINRT_EBO impl_IActivitySensor
 {
-    auto shim() const { return impl::shim<D, IActivitySensor>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::ActivitySensorReading> GetCurrentReadingAsync() const;
     Windows::Foundation::Collections::IVector<winrt::Windows::Devices::Sensors::ActivityType> SubscribedActivities() const;
     double PowerInMilliwatts() const;
@@ -467,44 +423,28 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IActivitySensorReading
+struct WINRT_EBO impl_IActivitySensorReading
 {
-    auto shim() const { return impl::shim<D, IActivitySensorReading>(this); }
-
-public:
-
     Windows::Foundation::DateTime Timestamp() const;
     Windows::Devices::Sensors::ActivityType Activity() const;
     Windows::Devices::Sensors::ActivitySensorReadingConfidence Confidence() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IActivitySensorReadingChangeReport
+struct WINRT_EBO impl_IActivitySensorReadingChangeReport
 {
-    auto shim() const { return impl::shim<D, IActivitySensorReadingChangeReport>(this); }
-
-public:
-
     Windows::Devices::Sensors::ActivitySensorReading Reading() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IActivitySensorReadingChangedEventArgs
+struct WINRT_EBO impl_IActivitySensorReadingChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IActivitySensorReadingChangedEventArgs>(this); }
-
-public:
-
     Windows::Devices::Sensors::ActivitySensorReading Reading() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IActivitySensorStatics
+struct WINRT_EBO impl_IActivitySensorStatics
 {
-    auto shim() const { return impl::shim<D, IActivitySensorStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::ActivitySensor> GetDefaultAsync() const;
     hstring GetDeviceSelector() const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::ActivitySensor> FromIdAsync(hstring_ref deviceId) const;
@@ -513,22 +453,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IActivitySensorTriggerDetails
+struct WINRT_EBO impl_IActivitySensorTriggerDetails
 {
-    auto shim() const { return impl::shim<D, IActivitySensorTriggerDetails>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Sensors::ActivitySensorReadingChangeReport> ReadReports() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAltimeter
+struct WINRT_EBO impl_IAltimeter
 {
-    auto shim() const { return impl::shim<D, IAltimeter>(this); }
-
-public:
-
     Windows::Devices::Sensors::AltimeterReading GetCurrentReading() const;
     hstring DeviceId() const;
     uint32_t MinimumReportInterval() const;
@@ -541,43 +473,27 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAltimeterReading
+struct WINRT_EBO impl_IAltimeterReading
 {
-    auto shim() const { return impl::shim<D, IAltimeterReading>(this); }
-
-public:
-
     Windows::Foundation::DateTime Timestamp() const;
     double AltitudeChangeInMeters() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAltimeterReadingChangedEventArgs
+struct WINRT_EBO impl_IAltimeterReadingChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IAltimeterReadingChangedEventArgs>(this); }
-
-public:
-
     Windows::Devices::Sensors::AltimeterReading Reading() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAltimeterStatics
+struct WINRT_EBO impl_IAltimeterStatics
 {
-    auto shim() const { return impl::shim<D, IAltimeterStatics>(this); }
-
-public:
-
     Windows::Devices::Sensors::Altimeter GetDefault() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBarometer
+struct WINRT_EBO impl_IBarometer
 {
-    auto shim() const { return impl::shim<D, IBarometer>(this); }
-
-public:
-
     Windows::Devices::Sensors::BarometerReading GetCurrentReading() const;
     hstring DeviceId() const;
     uint32_t MinimumReportInterval() const;
@@ -590,43 +506,27 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBarometerReading
+struct WINRT_EBO impl_IBarometerReading
 {
-    auto shim() const { return impl::shim<D, IBarometerReading>(this); }
-
-public:
-
     Windows::Foundation::DateTime Timestamp() const;
     double StationPressureInHectopascals() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBarometerReadingChangedEventArgs
+struct WINRT_EBO impl_IBarometerReadingChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IBarometerReadingChangedEventArgs>(this); }
-
-public:
-
     Windows::Devices::Sensors::BarometerReading Reading() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBarometerStatics
+struct WINRT_EBO impl_IBarometerStatics
 {
-    auto shim() const { return impl::shim<D, IBarometerStatics>(this); }
-
-public:
-
     Windows::Devices::Sensors::Barometer GetDefault() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompass
+struct WINRT_EBO impl_ICompass
 {
-    auto shim() const { return impl::shim<D, ICompass>(this); }
-
-public:
-
     Windows::Devices::Sensors::CompassReading GetCurrentReading() const;
     uint32_t MinimumReportInterval() const;
     void ReportInterval(uint32_t value) const;
@@ -638,75 +538,47 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompass2
+struct WINRT_EBO impl_ICompass2
 {
-    auto shim() const { return impl::shim<D, ICompass2>(this); }
-
-public:
-
     void ReadingTransform(Windows::Graphics::Display::DisplayOrientations value) const;
     Windows::Graphics::Display::DisplayOrientations ReadingTransform() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompassDeviceId
+struct WINRT_EBO impl_ICompassDeviceId
 {
-    auto shim() const { return impl::shim<D, ICompassDeviceId>(this); }
-
-public:
-
     hstring DeviceId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompassReading
+struct WINRT_EBO impl_ICompassReading
 {
-    auto shim() const { return impl::shim<D, ICompassReading>(this); }
-
-public:
-
     Windows::Foundation::DateTime Timestamp() const;
     double HeadingMagneticNorth() const;
     Windows::Foundation::IReference<double> HeadingTrueNorth() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompassReadingChangedEventArgs
+struct WINRT_EBO impl_ICompassReadingChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, ICompassReadingChangedEventArgs>(this); }
-
-public:
-
     Windows::Devices::Sensors::CompassReading Reading() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompassReadingHeadingAccuracy
+struct WINRT_EBO impl_ICompassReadingHeadingAccuracy
 {
-    auto shim() const { return impl::shim<D, ICompassReadingHeadingAccuracy>(this); }
-
-public:
-
     Windows::Devices::Sensors::MagnetometerAccuracy HeadingAccuracy() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICompassStatics
+struct WINRT_EBO impl_ICompassStatics
 {
-    auto shim() const { return impl::shim<D, ICompassStatics>(this); }
-
-public:
-
     Windows::Devices::Sensors::Compass GetDefault() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGyrometer
+struct WINRT_EBO impl_IGyrometer
 {
-    auto shim() const { return impl::shim<D, IGyrometer>(this); }
-
-public:
-
     Windows::Devices::Sensors::GyrometerReading GetCurrentReading() const;
     uint32_t MinimumReportInterval() const;
     void ReportInterval(uint32_t value) const;
@@ -718,33 +590,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IGyrometer2
+struct WINRT_EBO impl_IGyrometer2
 {
-    auto shim() const { return impl::shim<D, IGyrometer2>(this); }
-
-public:
-
     void ReadingTransform(Windows::Graphics::Display::DisplayOrientations value) const;
     Windows::Graphics::Display::DisplayOrientations ReadingTransform() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGyrometerDeviceId
+struct WINRT_EBO impl_IGyrometerDeviceId
 {
-    auto shim() const { return impl::shim<D, IGyrometerDeviceId>(this); }
-
-public:
-
     hstring DeviceId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGyrometerReading
+struct WINRT_EBO impl_IGyrometerReading
 {
-    auto shim() const { return impl::shim<D, IGyrometerReading>(this); }
-
-public:
-
     Windows::Foundation::DateTime Timestamp() const;
     double AngularVelocityX() const;
     double AngularVelocityY() const;
@@ -752,32 +612,20 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IGyrometerReadingChangedEventArgs
+struct WINRT_EBO impl_IGyrometerReadingChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IGyrometerReadingChangedEventArgs>(this); }
-
-public:
-
     Windows::Devices::Sensors::GyrometerReading Reading() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGyrometerStatics
+struct WINRT_EBO impl_IGyrometerStatics
 {
-    auto shim() const { return impl::shim<D, IGyrometerStatics>(this); }
-
-public:
-
     Windows::Devices::Sensors::Gyrometer GetDefault() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInclinometer
+struct WINRT_EBO impl_IInclinometer
 {
-    auto shim() const { return impl::shim<D, IInclinometer>(this); }
-
-public:
-
     Windows::Devices::Sensors::InclinometerReading GetCurrentReading() const;
     uint32_t MinimumReportInterval() const;
     void ReportInterval(uint32_t value) const;
@@ -789,34 +637,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IInclinometer2
+struct WINRT_EBO impl_IInclinometer2
 {
-    auto shim() const { return impl::shim<D, IInclinometer2>(this); }
-
-public:
-
     void ReadingTransform(Windows::Graphics::Display::DisplayOrientations value) const;
     Windows::Graphics::Display::DisplayOrientations ReadingTransform() const;
     Windows::Devices::Sensors::SensorReadingType ReadingType() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInclinometerDeviceId
+struct WINRT_EBO impl_IInclinometerDeviceId
 {
-    auto shim() const { return impl::shim<D, IInclinometerDeviceId>(this); }
-
-public:
-
     hstring DeviceId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInclinometerReading
+struct WINRT_EBO impl_IInclinometerReading
 {
-    auto shim() const { return impl::shim<D, IInclinometerReading>(this); }
-
-public:
-
     Windows::Foundation::DateTime Timestamp() const;
     float PitchDegrees() const;
     float RollDegrees() const;
@@ -824,62 +660,38 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IInclinometerReadingChangedEventArgs
+struct WINRT_EBO impl_IInclinometerReadingChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IInclinometerReadingChangedEventArgs>(this); }
-
-public:
-
     Windows::Devices::Sensors::InclinometerReading Reading() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInclinometerReadingYawAccuracy
+struct WINRT_EBO impl_IInclinometerReadingYawAccuracy
 {
-    auto shim() const { return impl::shim<D, IInclinometerReadingYawAccuracy>(this); }
-
-public:
-
     Windows::Devices::Sensors::MagnetometerAccuracy YawAccuracy() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInclinometerStatics
+struct WINRT_EBO impl_IInclinometerStatics
 {
-    auto shim() const { return impl::shim<D, IInclinometerStatics>(this); }
-
-public:
-
     Windows::Devices::Sensors::Inclinometer GetDefault() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInclinometerStatics2
+struct WINRT_EBO impl_IInclinometerStatics2
 {
-    auto shim() const { return impl::shim<D, IInclinometerStatics2>(this); }
-
-public:
-
     Windows::Devices::Sensors::Inclinometer GetDefaultForRelativeReadings() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInclinometerStatics3
+struct WINRT_EBO impl_IInclinometerStatics3
 {
-    auto shim() const { return impl::shim<D, IInclinometerStatics3>(this); }
-
-public:
-
     Windows::Devices::Sensors::Inclinometer GetDefault(Windows::Devices::Sensors::SensorReadingType sensorReadingtype) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILightSensor
+struct WINRT_EBO impl_ILightSensor
 {
-    auto shim() const { return impl::shim<D, ILightSensor>(this); }
-
-public:
-
     Windows::Devices::Sensors::LightSensorReading GetCurrentReading() const;
     uint32_t MinimumReportInterval() const;
     void ReportInterval(uint32_t value) const;
@@ -891,53 +703,33 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ILightSensorDeviceId
+struct WINRT_EBO impl_ILightSensorDeviceId
 {
-    auto shim() const { return impl::shim<D, ILightSensorDeviceId>(this); }
-
-public:
-
     hstring DeviceId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILightSensorReading
+struct WINRT_EBO impl_ILightSensorReading
 {
-    auto shim() const { return impl::shim<D, ILightSensorReading>(this); }
-
-public:
-
     Windows::Foundation::DateTime Timestamp() const;
     float IlluminanceInLux() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILightSensorReadingChangedEventArgs
+struct WINRT_EBO impl_ILightSensorReadingChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, ILightSensorReadingChangedEventArgs>(this); }
-
-public:
-
     Windows::Devices::Sensors::LightSensorReading Reading() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILightSensorStatics
+struct WINRT_EBO impl_ILightSensorStatics
 {
-    auto shim() const { return impl::shim<D, ILightSensorStatics>(this); }
-
-public:
-
     Windows::Devices::Sensors::LightSensor GetDefault() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMagnetometer
+struct WINRT_EBO impl_IMagnetometer
 {
-    auto shim() const { return impl::shim<D, IMagnetometer>(this); }
-
-public:
-
     Windows::Devices::Sensors::MagnetometerReading GetCurrentReading() const;
     uint32_t MinimumReportInterval() const;
     void ReportInterval(uint32_t value) const;
@@ -949,33 +741,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMagnetometer2
+struct WINRT_EBO impl_IMagnetometer2
 {
-    auto shim() const { return impl::shim<D, IMagnetometer2>(this); }
-
-public:
-
     void ReadingTransform(Windows::Graphics::Display::DisplayOrientations value) const;
     Windows::Graphics::Display::DisplayOrientations ReadingTransform() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMagnetometerDeviceId
+struct WINRT_EBO impl_IMagnetometerDeviceId
 {
-    auto shim() const { return impl::shim<D, IMagnetometerDeviceId>(this); }
-
-public:
-
     hstring DeviceId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMagnetometerReading
+struct WINRT_EBO impl_IMagnetometerReading
 {
-    auto shim() const { return impl::shim<D, IMagnetometerReading>(this); }
-
-public:
-
     Windows::Foundation::DateTime Timestamp() const;
     float MagneticFieldX() const;
     float MagneticFieldY() const;
@@ -984,32 +764,20 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMagnetometerReadingChangedEventArgs
+struct WINRT_EBO impl_IMagnetometerReadingChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMagnetometerReadingChangedEventArgs>(this); }
-
-public:
-
     Windows::Devices::Sensors::MagnetometerReading Reading() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMagnetometerStatics
+struct WINRT_EBO impl_IMagnetometerStatics
 {
-    auto shim() const { return impl::shim<D, IMagnetometerStatics>(this); }
-
-public:
-
     Windows::Devices::Sensors::Magnetometer GetDefault() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IOrientationSensor
+struct WINRT_EBO impl_IOrientationSensor
 {
-    auto shim() const { return impl::shim<D, IOrientationSensor>(this); }
-
-public:
-
     Windows::Devices::Sensors::OrientationSensorReading GetCurrentReading() const;
     uint32_t MinimumReportInterval() const;
     void ReportInterval(uint32_t value) const;
@@ -1021,97 +789,61 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IOrientationSensor2
+struct WINRT_EBO impl_IOrientationSensor2
 {
-    auto shim() const { return impl::shim<D, IOrientationSensor2>(this); }
-
-public:
-
     void ReadingTransform(Windows::Graphics::Display::DisplayOrientations value) const;
     Windows::Graphics::Display::DisplayOrientations ReadingTransform() const;
     Windows::Devices::Sensors::SensorReadingType ReadingType() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IOrientationSensorDeviceId
+struct WINRT_EBO impl_IOrientationSensorDeviceId
 {
-    auto shim() const { return impl::shim<D, IOrientationSensorDeviceId>(this); }
-
-public:
-
     hstring DeviceId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IOrientationSensorReading
+struct WINRT_EBO impl_IOrientationSensorReading
 {
-    auto shim() const { return impl::shim<D, IOrientationSensorReading>(this); }
-
-public:
-
     Windows::Foundation::DateTime Timestamp() const;
     Windows::Devices::Sensors::SensorRotationMatrix RotationMatrix() const;
     Windows::Devices::Sensors::SensorQuaternion Quaternion() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IOrientationSensorReadingChangedEventArgs
+struct WINRT_EBO impl_IOrientationSensorReadingChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IOrientationSensorReadingChangedEventArgs>(this); }
-
-public:
-
     Windows::Devices::Sensors::OrientationSensorReading Reading() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IOrientationSensorReadingYawAccuracy
+struct WINRT_EBO impl_IOrientationSensorReadingYawAccuracy
 {
-    auto shim() const { return impl::shim<D, IOrientationSensorReadingYawAccuracy>(this); }
-
-public:
-
     Windows::Devices::Sensors::MagnetometerAccuracy YawAccuracy() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IOrientationSensorStatics
+struct WINRT_EBO impl_IOrientationSensorStatics
 {
-    auto shim() const { return impl::shim<D, IOrientationSensorStatics>(this); }
-
-public:
-
     Windows::Devices::Sensors::OrientationSensor GetDefault() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IOrientationSensorStatics2
+struct WINRT_EBO impl_IOrientationSensorStatics2
 {
-    auto shim() const { return impl::shim<D, IOrientationSensorStatics2>(this); }
-
-public:
-
     Windows::Devices::Sensors::OrientationSensor GetDefaultForRelativeReadings() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IOrientationSensorStatics3
+struct WINRT_EBO impl_IOrientationSensorStatics3
 {
-    auto shim() const { return impl::shim<D, IOrientationSensorStatics3>(this); }
-
-public:
-
     Windows::Devices::Sensors::OrientationSensor GetDefault(Windows::Devices::Sensors::SensorReadingType sensorReadingtype) const;
     Windows::Devices::Sensors::OrientationSensor GetDefault(Windows::Devices::Sensors::SensorReadingType sensorReadingType, Windows::Devices::Sensors::SensorOptimizationGoal optimizationGoal) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPedometer
+struct WINRT_EBO impl_IPedometer
 {
-    auto shim() const { return impl::shim<D, IPedometer>(this); }
-
-public:
-
     hstring DeviceId() const;
     double PowerInMilliwatts() const;
     uint32_t MinimumReportInterval() const;
@@ -1124,32 +856,20 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPedometer2
+struct WINRT_EBO impl_IPedometer2
 {
-    auto shim() const { return impl::shim<D, IPedometer2>(this); }
-
-public:
-
     Windows::Foundation::Collections::IMapView<winrt::Windows::Devices::Sensors::PedometerStepKind, Windows::Devices::Sensors::PedometerReading> GetCurrentReadings() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPedometerDataThresholdFactory
+struct WINRT_EBO impl_IPedometerDataThresholdFactory
 {
-    auto shim() const { return impl::shim<D, IPedometerDataThresholdFactory>(this); }
-
-public:
-
     Windows::Devices::Sensors::PedometerDataThreshold Create(const Windows::Devices::Sensors::Pedometer & sensor, int32_t stepGoal) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPedometerReading
+struct WINRT_EBO impl_IPedometerReading
 {
-    auto shim() const { return impl::shim<D, IPedometerReading>(this); }
-
-public:
-
     Windows::Devices::Sensors::PedometerStepKind StepKind() const;
     int32_t CumulativeSteps() const;
     Windows::Foundation::DateTime Timestamp() const;
@@ -1157,22 +877,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPedometerReadingChangedEventArgs
+struct WINRT_EBO impl_IPedometerReadingChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IPedometerReadingChangedEventArgs>(this); }
-
-public:
-
     Windows::Devices::Sensors::PedometerReading Reading() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPedometerStatics
+struct WINRT_EBO impl_IPedometerStatics
 {
-    auto shim() const { return impl::shim<D, IPedometerStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::Pedometer> FromIdAsync(hstring_ref deviceId) const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::Pedometer> GetDefaultAsync() const;
     hstring GetDeviceSelector() const;
@@ -1181,22 +893,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPedometerStatics2
+struct WINRT_EBO impl_IPedometerStatics2
 {
-    auto shim() const { return impl::shim<D, IPedometerStatics2>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Sensors::PedometerReading> GetReadingsFromTriggerDetails(const Windows::Devices::Sensors::SensorDataThresholdTriggerDetails & triggerDetails) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IProximitySensor
+struct WINRT_EBO impl_IProximitySensor
 {
-    auto shim() const { return impl::shim<D, IProximitySensor>(this); }
-
-public:
-
     hstring DeviceId() const;
     Windows::Foundation::IReference<uint32_t> MaxDistanceInMillimeters() const;
     Windows::Foundation::IReference<uint32_t> MinDistanceInMillimeters() const;
@@ -1209,85 +913,53 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IProximitySensorDataThresholdFactory
+struct WINRT_EBO impl_IProximitySensorDataThresholdFactory
 {
-    auto shim() const { return impl::shim<D, IProximitySensorDataThresholdFactory>(this); }
-
-public:
-
     Windows::Devices::Sensors::ProximitySensorDataThreshold Create(const Windows::Devices::Sensors::ProximitySensor & sensor) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IProximitySensorReading
+struct WINRT_EBO impl_IProximitySensorReading
 {
-    auto shim() const { return impl::shim<D, IProximitySensorReading>(this); }
-
-public:
-
     Windows::Foundation::DateTime Timestamp() const;
     bool IsDetected() const;
     Windows::Foundation::IReference<uint32_t> DistanceInMillimeters() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IProximitySensorReadingChangedEventArgs
+struct WINRT_EBO impl_IProximitySensorReadingChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IProximitySensorReadingChangedEventArgs>(this); }
-
-public:
-
     Windows::Devices::Sensors::ProximitySensorReading Reading() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IProximitySensorStatics
+struct WINRT_EBO impl_IProximitySensorStatics
 {
-    auto shim() const { return impl::shim<D, IProximitySensorStatics>(this); }
-
-public:
-
     hstring GetDeviceSelector() const;
     Windows::Devices::Sensors::ProximitySensor FromId(hstring_ref sensorId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IProximitySensorStatics2
+struct WINRT_EBO impl_IProximitySensorStatics2
 {
-    auto shim() const { return impl::shim<D, IProximitySensorStatics2>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Sensors::ProximitySensorReading> GetReadingsFromTriggerDetails(const Windows::Devices::Sensors::SensorDataThresholdTriggerDetails & triggerDetails) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISensorDataThreshold
+struct WINRT_EBO impl_ISensorDataThreshold
 {
-    auto shim() const { return impl::shim<D, ISensorDataThreshold>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ISensorDataThresholdTriggerDetails
+struct WINRT_EBO impl_ISensorDataThresholdTriggerDetails
 {
-    auto shim() const { return impl::shim<D, ISensorDataThresholdTriggerDetails>(this); }
-
-public:
-
     hstring DeviceId() const;
     Windows::Devices::Sensors::SensorType SensorType() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISensorQuaternion
+struct WINRT_EBO impl_ISensorQuaternion
 {
-    auto shim() const { return impl::shim<D, ISensorQuaternion>(this); }
-
-public:
-
     float W() const;
     float X() const;
     float Y() const;
@@ -1295,12 +967,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISensorRotationMatrix
+struct WINRT_EBO impl_ISensorRotationMatrix
 {
-    auto shim() const { return impl::shim<D, ISensorRotationMatrix>(this); }
-
-public:
-
     float M11() const;
     float M12() const;
     float M13() const;
@@ -1313,12 +981,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISimpleOrientationSensor
+struct WINRT_EBO impl_ISimpleOrientationSensor
 {
-    auto shim() const { return impl::shim<D, ISimpleOrientationSensor>(this); }
-
-public:
-
     Windows::Devices::Sensors::SimpleOrientation GetCurrentOrientation() const;
     event_token OrientationChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Sensors::SimpleOrientationSensor, Windows::Devices::Sensors::SimpleOrientationSensorOrientationChangedEventArgs> & handler) const;
     using OrientationChanged_revoker = event_revoker<ISimpleOrientationSensor>;
@@ -1327,44 +991,28 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISimpleOrientationSensor2
+struct WINRT_EBO impl_ISimpleOrientationSensor2
 {
-    auto shim() const { return impl::shim<D, ISimpleOrientationSensor2>(this); }
-
-public:
-
     void ReadingTransform(Windows::Graphics::Display::DisplayOrientations value) const;
     Windows::Graphics::Display::DisplayOrientations ReadingTransform() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISimpleOrientationSensorDeviceId
+struct WINRT_EBO impl_ISimpleOrientationSensorDeviceId
 {
-    auto shim() const { return impl::shim<D, ISimpleOrientationSensorDeviceId>(this); }
-
-public:
-
     hstring DeviceId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISimpleOrientationSensorOrientationChangedEventArgs
+struct WINRT_EBO impl_ISimpleOrientationSensorOrientationChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, ISimpleOrientationSensorOrientationChangedEventArgs>(this); }
-
-public:
-
     Windows::Foundation::DateTime Timestamp() const;
     Windows::Devices::Sensors::SimpleOrientation Orientation() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISimpleOrientationSensorStatics
+struct WINRT_EBO impl_ISimpleOrientationSensorStatics
 {
-    auto shim() const { return impl::shim<D, ISimpleOrientationSensorStatics>(this); }
-
-public:
-
     Windows::Devices::Sensors::SimpleOrientationSensor GetDefault() const;
 };
 

@@ -11,12 +11,8 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::UI::Composition::Effects {
 
 template <typename D>
-class WINRT_EBO impl_ISceneLightingEffect
+struct WINRT_EBO impl_ISceneLightingEffect
 {
-    auto shim() const { return impl::shim<D, ISceneLightingEffect>(this); }
-
-public:
-
     float AmbientAmount() const;
     void AmbientAmount(float value) const;
     float DiffuseAmount() const;

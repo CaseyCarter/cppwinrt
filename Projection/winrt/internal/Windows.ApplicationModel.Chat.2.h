@@ -565,12 +565,8 @@ template <> struct __declspec(uuid("f6555a8d-a624-5eb4-a2f3-f5b1c5c1a0d2")) __de
 namespace Windows::ApplicationModel::Chat {
 
 template <typename D>
-class WINRT_EBO impl_IChatCapabilities
+struct WINRT_EBO impl_IChatCapabilities
 {
-    auto shim() const { return impl::shim<D, IChatCapabilities>(this); }
-
-public:
-
     bool IsOnline() const;
     bool IsChatCapable() const;
     bool IsFileTransferCapable() const;
@@ -579,23 +575,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IChatCapabilitiesManagerStatics
+struct WINRT_EBO impl_IChatCapabilitiesManagerStatics
 {
-    auto shim() const { return impl::shim<D, IChatCapabilitiesManagerStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatCapabilities> GetCachedCapabilitiesAsync(hstring_ref address) const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatCapabilities> GetCapabilitiesFromNetworkAsync(hstring_ref address) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IChatConversation
+struct WINRT_EBO impl_IChatConversation
 {
-    auto shim() const { return impl::shim<D, IChatConversation>(this); }
-
-public:
-
     bool HasUnreadMessages() const;
     hstring Id() const;
     hstring Subject() const;
@@ -619,34 +607,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IChatConversation2
+struct WINRT_EBO impl_IChatConversation2
 {
-    auto shim() const { return impl::shim<D, IChatConversation2>(this); }
-
-public:
-
     bool CanModifyParticipants() const;
     void CanModifyParticipants(bool value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IChatConversationReader
+struct WINRT_EBO impl_IChatConversationReader
 {
-    auto shim() const { return impl::shim<D, IChatConversationReader>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Chat::ChatConversation>> ReadBatchAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Chat::ChatConversation>> ReadBatchAsync(int32_t count) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IChatConversationThreadingInfo
+struct WINRT_EBO impl_IChatConversationThreadingInfo
 {
-    auto shim() const { return impl::shim<D, IChatConversationThreadingInfo>(this); }
-
-public:
-
     hstring ContactId() const;
     void ContactId(hstring_ref value) const;
     hstring Custom() const;
@@ -659,22 +635,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IChatItem
+struct WINRT_EBO impl_IChatItem
 {
-    auto shim() const { return impl::shim<D, IChatItem>(this); }
-
-public:
-
     Windows::ApplicationModel::Chat::ChatItemKind ItemKind() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IChatMessage
+struct WINRT_EBO impl_IChatMessage
 {
-    auto shim() const { return impl::shim<D, IChatMessage>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Chat::ChatMessageAttachment> Attachments() const;
     hstring Body() const;
     void Body(hstring_ref value) const;
@@ -695,12 +663,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IChatMessage2
+struct WINRT_EBO impl_IChatMessage2
 {
-    auto shim() const { return impl::shim<D, IChatMessage2>(this); }
-
-public:
-
     uint64_t EstimatedDownloadSize() const;
     void EstimatedDownloadSize(uint64_t value) const;
     void From(hstring_ref value) const;
@@ -732,33 +696,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IChatMessage3
+struct WINRT_EBO impl_IChatMessage3
 {
-    auto shim() const { return impl::shim<D, IChatMessage3>(this); }
-
-public:
-
     hstring RemoteId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IChatMessage4
+struct WINRT_EBO impl_IChatMessage4
 {
-    auto shim() const { return impl::shim<D, IChatMessage4>(this); }
-
-public:
-
     hstring SyncId() const;
     void SyncId(hstring_ref value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IChatMessageAttachment
+struct WINRT_EBO impl_IChatMessageAttachment
 {
-    auto shim() const { return impl::shim<D, IChatMessageAttachment>(this); }
-
-public:
-
     Windows::Storage::Streams::IRandomAccessStreamReference DataStreamReference() const;
     void DataStreamReference(const Windows::Storage::Streams::IRandomAccessStreamReference & value) const;
     uint32_t GroupId() const;
@@ -770,12 +722,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IChatMessageAttachment2
+struct WINRT_EBO impl_IChatMessageAttachment2
 {
-    auto shim() const { return impl::shim<D, IChatMessageAttachment2>(this); }
-
-public:
-
     Windows::Storage::Streams::IRandomAccessStreamReference Thumbnail() const;
     void Thumbnail(const Windows::Storage::Streams::IRandomAccessStreamReference & value) const;
     double TransferProgress() const;
@@ -785,98 +733,62 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IChatMessageAttachmentFactory
+struct WINRT_EBO impl_IChatMessageAttachmentFactory
 {
-    auto shim() const { return impl::shim<D, IChatMessageAttachmentFactory>(this); }
-
-public:
-
     Windows::ApplicationModel::Chat::ChatMessageAttachment CreateChatMessageAttachment(hstring_ref mimeType, const Windows::Storage::Streams::IRandomAccessStreamReference & dataStreamReference) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IChatMessageBlockingStatic
+struct WINRT_EBO impl_IChatMessageBlockingStatic
 {
-    auto shim() const { return impl::shim<D, IChatMessageBlockingStatic>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction MarkMessageAsBlockedAsync(hstring_ref localChatMessageId, bool blocked) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IChatMessageChange
+struct WINRT_EBO impl_IChatMessageChange
 {
-    auto shim() const { return impl::shim<D, IChatMessageChange>(this); }
-
-public:
-
     Windows::ApplicationModel::Chat::ChatMessageChangeType ChangeType() const;
     Windows::ApplicationModel::Chat::ChatMessage Message() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IChatMessageChangeReader
+struct WINRT_EBO impl_IChatMessageChangeReader
 {
-    auto shim() const { return impl::shim<D, IChatMessageChangeReader>(this); }
-
-public:
-
     void AcceptChanges() const;
     void AcceptChangesThrough(const Windows::ApplicationModel::Chat::ChatMessageChange & lastChangeToAcknowledge) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Chat::ChatMessageChange>> ReadBatchAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IChatMessageChangeTracker
+struct WINRT_EBO impl_IChatMessageChangeTracker
 {
-    auto shim() const { return impl::shim<D, IChatMessageChangeTracker>(this); }
-
-public:
-
     void Enable() const;
     Windows::ApplicationModel::Chat::ChatMessageChangeReader GetChangeReader() const;
     void Reset() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IChatMessageChangedDeferral
+struct WINRT_EBO impl_IChatMessageChangedDeferral
 {
-    auto shim() const { return impl::shim<D, IChatMessageChangedDeferral>(this); }
-
-public:
-
     void Complete() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IChatMessageChangedEventArgs
+struct WINRT_EBO impl_IChatMessageChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IChatMessageChangedEventArgs>(this); }
-
-public:
-
     Windows::ApplicationModel::Chat::ChatMessageChangedDeferral GetDeferral() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IChatMessageManager2Statics
+struct WINRT_EBO impl_IChatMessageManager2Statics
 {
-    auto shim() const { return impl::shim<D, IChatMessageManager2Statics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<hstring> RegisterTransportAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatMessageTransport> GetTransportAsync(hstring_ref transportId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IChatMessageManagerStatic
+struct WINRT_EBO impl_IChatMessageManagerStatic
 {
-    auto shim() const { return impl::shim<D, IChatMessageManagerStatic>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Chat::ChatMessageTransport>> GetTransportsAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatMessageStore> RequestStoreAsync() const;
     Windows::Foundation::IAsyncAction ShowComposeSmsMessageAsync(const Windows::ApplicationModel::Chat::ChatMessage & message) const;
@@ -884,32 +796,20 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IChatMessageManagerStatics3
+struct WINRT_EBO impl_IChatMessageManagerStatics3
 {
-    auto shim() const { return impl::shim<D, IChatMessageManagerStatics3>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatSyncManager> RequestSyncManagerAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IChatMessageNotificationTriggerDetails
+struct WINRT_EBO impl_IChatMessageNotificationTriggerDetails
 {
-    auto shim() const { return impl::shim<D, IChatMessageNotificationTriggerDetails>(this); }
-
-public:
-
     Windows::ApplicationModel::Chat::ChatMessage ChatMessage() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IChatMessageNotificationTriggerDetails2
+struct WINRT_EBO impl_IChatMessageNotificationTriggerDetails2
 {
-    auto shim() const { return impl::shim<D, IChatMessageNotificationTriggerDetails2>(this); }
-
-public:
-
     bool ShouldDisplayToast() const;
     bool ShouldUpdateDetailText() const;
     bool ShouldUpdateBadge() const;
@@ -917,32 +817,20 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IChatMessageReader
+struct WINRT_EBO impl_IChatMessageReader
 {
-    auto shim() const { return impl::shim<D, IChatMessageReader>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Chat::ChatMessage>> ReadBatchAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IChatMessageReader2
+struct WINRT_EBO impl_IChatMessageReader2
 {
-    auto shim() const { return impl::shim<D, IChatMessageReader2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Chat::ChatMessage>> ReadBatchAsync(int32_t count) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IChatMessageStore
+struct WINRT_EBO impl_IChatMessageStore
 {
-    auto shim() const { return impl::shim<D, IChatMessageStore>(this); }
-
-public:
-
     Windows::ApplicationModel::Chat::ChatMessageChangeTracker ChangeTracker() const;
     Windows::Foundation::IAsyncAction DeleteMessageAsync(hstring_ref localMessageId) const;
     Windows::Foundation::IAsyncAction DownloadMessageAsync(hstring_ref localChatMessageId) const;
@@ -960,12 +848,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IChatMessageStore2
+struct WINRT_EBO impl_IChatMessageStore2
 {
-    auto shim() const { return impl::shim<D, IChatMessageStore2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatMessage> ForwardMessageAsync(hstring_ref localChatMessageId, const Windows::Foundation::Collections::IIterable<hstring> & addresses) const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatConversation> GetConversationAsync(hstring_ref conversationId) const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatConversation> GetConversationAsync(hstring_ref conversationId, const Windows::Foundation::Collections::IIterable<hstring> & transportIds) const;
@@ -988,33 +872,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IChatMessageStore3
+struct WINRT_EBO impl_IChatMessageStore3
 {
-    auto shim() const { return impl::shim<D, IChatMessageStore3>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::ChatMessage> GetMessageBySyncIdAsync(hstring_ref syncId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IChatMessageStoreChangedEventArgs
+struct WINRT_EBO impl_IChatMessageStoreChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IChatMessageStoreChangedEventArgs>(this); }
-
-public:
-
     hstring Id() const;
     Windows::ApplicationModel::Chat::ChatStoreChangedEventKind Kind() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IChatMessageTransport
+struct WINRT_EBO impl_IChatMessageTransport
 {
-    auto shim() const { return impl::shim<D, IChatMessageTransport>(this); }
-
-public:
-
     bool IsAppSetAsNotificationProvider() const;
     bool IsActive() const;
     hstring TransportFriendlyName() const;
@@ -1023,23 +895,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IChatMessageTransport2
+struct WINRT_EBO impl_IChatMessageTransport2
 {
-    auto shim() const { return impl::shim<D, IChatMessageTransport2>(this); }
-
-public:
-
     Windows::ApplicationModel::Chat::ChatMessageTransportConfiguration Configuration() const;
     Windows::ApplicationModel::Chat::ChatMessageTransportKind TransportKind() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IChatMessageTransportConfiguration
+struct WINRT_EBO impl_IChatMessageTransportConfiguration
 {
-    auto shim() const { return impl::shim<D, IChatMessageTransportConfiguration>(this); }
-
-public:
-
     int32_t MaxAttachmentCount() const;
     int32_t MaxMessageSizeInKilobytes() const;
     int32_t MaxRecipientCount() const;
@@ -1048,12 +912,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IChatMessageValidationResult
+struct WINRT_EBO impl_IChatMessageValidationResult
 {
-    auto shim() const { return impl::shim<D, IChatMessageValidationResult>(this); }
-
-public:
-
     Windows::Foundation::IReference<uint32_t> MaxPartCount() const;
     Windows::Foundation::IReference<uint32_t> PartCount() const;
     Windows::Foundation::IReference<uint32_t> RemainingCharacterCountInPart() const;
@@ -1061,23 +921,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IChatQueryOptions
+struct WINRT_EBO impl_IChatQueryOptions
 {
-    auto shim() const { return impl::shim<D, IChatQueryOptions>(this); }
-
-public:
-
     hstring SearchString() const;
     void SearchString(hstring_ref value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IChatRecipientDeliveryInfo
+struct WINRT_EBO impl_IChatRecipientDeliveryInfo
 {
-    auto shim() const { return impl::shim<D, IChatRecipientDeliveryInfo>(this); }
-
-public:
-
     hstring TransportAddress() const;
     void TransportAddress(hstring_ref value) const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> DeliveryTime() const;
@@ -1092,23 +944,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IChatSearchReader
+struct WINRT_EBO impl_IChatSearchReader
 {
-    auto shim() const { return impl::shim<D, IChatSearchReader>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Chat::IChatItem>> ReadBatchAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Chat::IChatItem>> ReadBatchAsync(int32_t count) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IChatSyncConfiguration
+struct WINRT_EBO impl_IChatSyncConfiguration
 {
-    auto shim() const { return impl::shim<D, IChatSyncConfiguration>(this); }
-
-public:
-
     bool IsSyncEnabled() const;
     void IsSyncEnabled(bool value) const;
     Windows::ApplicationModel::Chat::ChatRestoreHistorySpan RestoreHistorySpan() const;
@@ -1116,12 +960,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IChatSyncManager
+struct WINRT_EBO impl_IChatSyncManager
 {
-    auto shim() const { return impl::shim<D, IChatSyncManager>(this); }
-
-public:
-
     Windows::ApplicationModel::Chat::ChatSyncConfiguration Configuration() const;
     Windows::Foundation::IAsyncAction AssociateAccountAsync(const Windows::Security::Credentials::WebAccount & webAccount) const;
     Windows::Foundation::IAsyncAction UnassociateAccountAsync() const;
@@ -1131,12 +971,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IRcsEndUserMessage
+struct WINRT_EBO impl_IRcsEndUserMessage
 {
-    auto shim() const { return impl::shim<D, IRcsEndUserMessage>(this); }
-
-public:
-
     hstring TransportId() const;
     hstring Title() const;
     hstring Text() const;
@@ -1147,44 +983,28 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IRcsEndUserMessageAction
+struct WINRT_EBO impl_IRcsEndUserMessageAction
 {
-    auto shim() const { return impl::shim<D, IRcsEndUserMessageAction>(this); }
-
-public:
-
     hstring Label() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRcsEndUserMessageAvailableEventArgs
+struct WINRT_EBO impl_IRcsEndUserMessageAvailableEventArgs
 {
-    auto shim() const { return impl::shim<D, IRcsEndUserMessageAvailableEventArgs>(this); }
-
-public:
-
     bool IsMessageAvailable() const;
     Windows::ApplicationModel::Chat::RcsEndUserMessage Message() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRcsEndUserMessageAvailableTriggerDetails
+struct WINRT_EBO impl_IRcsEndUserMessageAvailableTriggerDetails
 {
-    auto shim() const { return impl::shim<D, IRcsEndUserMessageAvailableTriggerDetails>(this); }
-
-public:
-
     hstring Title() const;
     hstring Text() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRcsEndUserMessageManager
+struct WINRT_EBO impl_IRcsEndUserMessageManager
 {
-    auto shim() const { return impl::shim<D, IRcsEndUserMessageManager>(this); }
-
-public:
-
     event_token MessageAvailableChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Chat::RcsEndUserMessageManager, Windows::ApplicationModel::Chat::RcsEndUserMessageAvailableEventArgs> & handler) const;
     using MessageAvailableChanged_revoker = event_revoker<IRcsEndUserMessageManager>;
     MessageAvailableChanged_revoker MessageAvailableChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Chat::RcsEndUserMessageManager, Windows::ApplicationModel::Chat::RcsEndUserMessageAvailableEventArgs> & handler) const;
@@ -1192,12 +1012,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IRcsManagerStatics
+struct WINRT_EBO impl_IRcsManagerStatics
 {
-    auto shim() const { return impl::shim<D, IRcsManagerStatics>(this); }
-
-public:
-
     Windows::ApplicationModel::Chat::RcsEndUserMessageManager GetEndUserMessageManager() const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Chat::RcsTransport>> GetTransportsAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Chat::RcsTransport> GetTransportAsync(hstring_ref transportId) const;
@@ -1205,22 +1021,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IRcsServiceKindSupportedChangedEventArgs
+struct WINRT_EBO impl_IRcsServiceKindSupportedChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IRcsServiceKindSupportedChangedEventArgs>(this); }
-
-public:
-
     Windows::ApplicationModel::Chat::RcsServiceKind ServiceKind() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRcsTransport
+struct WINRT_EBO impl_IRcsTransport
 {
-    auto shim() const { return impl::shim<D, IRcsTransport>(this); }
-
-public:
-
     Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> ExtendedProperties() const;
     bool IsActive() const;
     hstring TransportFriendlyName() const;
@@ -1235,12 +1043,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IRcsTransportConfiguration
+struct WINRT_EBO impl_IRcsTransportConfiguration
 {
-    auto shim() const { return impl::shim<D, IRcsTransportConfiguration>(this); }
-
-public:
-
     int32_t MaxAttachmentCount() const;
     int32_t MaxMessageSizeInKilobytes() const;
     int32_t MaxGroupMessageSizeInKilobytes() const;
@@ -1250,12 +1054,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IRemoteParticipantComposingChangedEventArgs
+struct WINRT_EBO impl_IRemoteParticipantComposingChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IRemoteParticipantComposingChangedEventArgs>(this); }
-
-public:
-
     hstring TransportId() const;
     hstring ParticipantAddress() const;
     bool IsComposing() const;

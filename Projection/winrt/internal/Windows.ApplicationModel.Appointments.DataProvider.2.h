@@ -95,12 +95,8 @@ template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __de
 namespace Windows::ApplicationModel::Appointments::DataProvider {
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentCalendarCancelMeetingRequest
+struct WINRT_EBO impl_IAppointmentCalendarCancelMeetingRequest
 {
-    auto shim() const { return impl::shim<D, IAppointmentCalendarCancelMeetingRequest>(this); }
-
-public:
-
     hstring AppointmentCalendarLocalId() const;
     hstring AppointmentLocalId() const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> AppointmentOriginalStartTime() const;
@@ -112,23 +108,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentCalendarCancelMeetingRequestEventArgs
+struct WINRT_EBO impl_IAppointmentCalendarCancelMeetingRequestEventArgs
 {
-    auto shim() const { return impl::shim<D, IAppointmentCalendarCancelMeetingRequestEventArgs>(this); }
-
-public:
-
     Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarCancelMeetingRequest Request() const;
     Windows::Foundation::Deferral GetDeferral() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentCalendarCreateOrUpdateAppointmentRequest
+struct WINRT_EBO impl_IAppointmentCalendarCreateOrUpdateAppointmentRequest
 {
-    auto shim() const { return impl::shim<D, IAppointmentCalendarCreateOrUpdateAppointmentRequest>(this); }
-
-public:
-
     hstring AppointmentCalendarLocalId() const;
     Windows::ApplicationModel::Appointments::Appointment Appointment() const;
     bool NotifyInvitees() const;
@@ -138,23 +126,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs
+struct WINRT_EBO impl_IAppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs
 {
-    auto shim() const { return impl::shim<D, IAppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs>(this); }
-
-public:
-
     Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarCreateOrUpdateAppointmentRequest Request() const;
     Windows::Foundation::Deferral GetDeferral() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentCalendarForwardMeetingRequest
+struct WINRT_EBO impl_IAppointmentCalendarForwardMeetingRequest
 {
-    auto shim() const { return impl::shim<D, IAppointmentCalendarForwardMeetingRequest>(this); }
-
-public:
-
     hstring AppointmentCalendarLocalId() const;
     hstring AppointmentLocalId() const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> AppointmentOriginalStartTime() const;
@@ -167,23 +147,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentCalendarForwardMeetingRequestEventArgs
+struct WINRT_EBO impl_IAppointmentCalendarForwardMeetingRequestEventArgs
 {
-    auto shim() const { return impl::shim<D, IAppointmentCalendarForwardMeetingRequestEventArgs>(this); }
-
-public:
-
     Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarForwardMeetingRequest Request() const;
     Windows::Foundation::Deferral GetDeferral() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentCalendarProposeNewTimeForMeetingRequest
+struct WINRT_EBO impl_IAppointmentCalendarProposeNewTimeForMeetingRequest
 {
-    auto shim() const { return impl::shim<D, IAppointmentCalendarProposeNewTimeForMeetingRequest>(this); }
-
-public:
-
     hstring AppointmentCalendarLocalId() const;
     hstring AppointmentLocalId() const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> AppointmentOriginalStartTime() const;
@@ -196,46 +168,30 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentCalendarProposeNewTimeForMeetingRequestEventArgs
+struct WINRT_EBO impl_IAppointmentCalendarProposeNewTimeForMeetingRequestEventArgs
 {
-    auto shim() const { return impl::shim<D, IAppointmentCalendarProposeNewTimeForMeetingRequestEventArgs>(this); }
-
-public:
-
     Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarProposeNewTimeForMeetingRequest Request() const;
     Windows::Foundation::Deferral GetDeferral() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentCalendarSyncManagerSyncRequest
+struct WINRT_EBO impl_IAppointmentCalendarSyncManagerSyncRequest
 {
-    auto shim() const { return impl::shim<D, IAppointmentCalendarSyncManagerSyncRequest>(this); }
-
-public:
-
     hstring AppointmentCalendarLocalId() const;
     Windows::Foundation::IAsyncAction ReportCompletedAsync() const;
     Windows::Foundation::IAsyncAction ReportFailedAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentCalendarSyncManagerSyncRequestEventArgs
+struct WINRT_EBO impl_IAppointmentCalendarSyncManagerSyncRequestEventArgs
 {
-    auto shim() const { return impl::shim<D, IAppointmentCalendarSyncManagerSyncRequestEventArgs>(this); }
-
-public:
-
     Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarSyncManagerSyncRequest Request() const;
     Windows::Foundation::Deferral GetDeferral() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentCalendarUpdateMeetingResponseRequest
+struct WINRT_EBO impl_IAppointmentCalendarUpdateMeetingResponseRequest
 {
-    auto shim() const { return impl::shim<D, IAppointmentCalendarUpdateMeetingResponseRequest>(this); }
-
-public:
-
     hstring AppointmentCalendarLocalId() const;
     hstring AppointmentLocalId() const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> AppointmentOriginalStartTime() const;
@@ -248,23 +204,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentCalendarUpdateMeetingResponseRequestEventArgs
+struct WINRT_EBO impl_IAppointmentCalendarUpdateMeetingResponseRequestEventArgs
 {
-    auto shim() const { return impl::shim<D, IAppointmentCalendarUpdateMeetingResponseRequestEventArgs>(this); }
-
-public:
-
     Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarUpdateMeetingResponseRequest Request() const;
     Windows::Foundation::Deferral GetDeferral() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentDataProviderConnection
+struct WINRT_EBO impl_IAppointmentDataProviderConnection
 {
-    auto shim() const { return impl::shim<D, IAppointmentDataProviderConnection>(this); }
-
-public:
-
     event_token SyncRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Appointments::DataProvider::AppointmentDataProviderConnection, Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarSyncManagerSyncRequestEventArgs> & handler) const;
     using SyncRequested_revoker = event_revoker<IAppointmentDataProviderConnection>;
     SyncRequested_revoker SyncRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Appointments::DataProvider::AppointmentDataProviderConnection, Windows::ApplicationModel::Appointments::DataProvider::AppointmentCalendarSyncManagerSyncRequestEventArgs> & handler) const;
@@ -293,12 +241,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentDataProviderTriggerDetails
+struct WINRT_EBO impl_IAppointmentDataProviderTriggerDetails
 {
-    auto shim() const { return impl::shim<D, IAppointmentDataProviderTriggerDetails>(this); }
-
-public:
-
     Windows::ApplicationModel::Appointments::DataProvider::AppointmentDataProviderConnection Connection() const;
 };
 

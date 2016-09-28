@@ -39,8 +39,8 @@ namespace ABI {
 
 namespace Windows::Devices::Pwm::Provider {
 
-template <typename T> class impl_IPwmControllerProvider;
-template <typename T> class impl_IPwmProvider;
+template <typename T> struct impl_IPwmControllerProvider;
+template <typename T> struct impl_IPwmProvider;
 
 }
 

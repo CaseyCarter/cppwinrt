@@ -327,34 +327,22 @@ template <> struct __declspec(uuid("a038e80f-0b3d-5cd4-849d-13036e1f506e")) __de
 namespace Windows::Media::Capture {
 
 template <typename D>
-class WINRT_EBO impl_IAdvancedCapturedPhoto
+struct WINRT_EBO impl_IAdvancedCapturedPhoto
 {
-    auto shim() const { return impl::shim<D, IAdvancedCapturedPhoto>(this); }
-
-public:
-
     Windows::Media::Capture::CapturedFrame Frame() const;
     Windows::Media::Devices::AdvancedPhotoMode Mode() const;
     Windows::IInspectable Context() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAdvancedCapturedPhoto2
+struct WINRT_EBO impl_IAdvancedCapturedPhoto2
 {
-    auto shim() const { return impl::shim<D, IAdvancedCapturedPhoto2>(this); }
-
-public:
-
     Windows::Foundation::IReference<Windows::Foundation::Rect> FrameBoundsRelativeToReferencePhoto() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAdvancedPhotoCapture
+struct WINRT_EBO impl_IAdvancedPhotoCapture
 {
-    auto shim() const { return impl::shim<D, IAdvancedPhotoCapture>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Media::Capture::AdvancedCapturedPhoto> CaptureAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Media::Capture::AdvancedCapturedPhoto> CaptureAsync(const Windows::IInspectable & context) const;
     event_token OptionalReferencePhotoCaptured(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::AdvancedPhotoCapture, Windows::Media::Capture::OptionalReferencePhotoCapturedEventArgs> & handler) const;
@@ -369,12 +357,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppCapture
+struct WINRT_EBO impl_IAppCapture
 {
-    auto shim() const { return impl::shim<D, IAppCapture>(this); }
-
-public:
-
     bool IsCapturingAudio() const;
     bool IsCapturingVideo() const;
     event_token CapturingChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::AppCapture, Windows::IInspectable> & handler) const;
@@ -384,34 +368,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppCaptureStatics
+struct WINRT_EBO impl_IAppCaptureStatics
 {
-    auto shim() const { return impl::shim<D, IAppCaptureStatics>(this); }
-
-public:
-
     Windows::Media::Capture::AppCapture GetForCurrentView() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICameraCaptureUI
+struct WINRT_EBO impl_ICameraCaptureUI
 {
-    auto shim() const { return impl::shim<D, ICameraCaptureUI>(this); }
-
-public:
-
     Windows::Media::Capture::CameraCaptureUIPhotoCaptureSettings PhotoSettings() const;
     Windows::Media::Capture::CameraCaptureUIVideoCaptureSettings VideoSettings() const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CaptureFileAsync(Windows::Media::Capture::CameraCaptureUIMode mode) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICameraCaptureUIPhotoCaptureSettings
+struct WINRT_EBO impl_ICameraCaptureUIPhotoCaptureSettings
 {
-    auto shim() const { return impl::shim<D, ICameraCaptureUIPhotoCaptureSettings>(this); }
-
-public:
-
     Windows::Media::Capture::CameraCaptureUIPhotoFormat Format() const;
     void Format(Windows::Media::Capture::CameraCaptureUIPhotoFormat value) const;
     Windows::Media::Capture::CameraCaptureUIMaxPhotoResolution MaxResolution() const;
@@ -425,12 +397,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICameraCaptureUIVideoCaptureSettings
+struct WINRT_EBO impl_ICameraCaptureUIVideoCaptureSettings
 {
-    auto shim() const { return impl::shim<D, ICameraCaptureUIVideoCaptureSettings>(this); }
-
-public:
-
     Windows::Media::Capture::CameraCaptureUIVideoFormat Format() const;
     void Format(Windows::Media::Capture::CameraCaptureUIVideoFormat value) const;
     Windows::Media::Capture::CameraCaptureUIMaxVideoResolution MaxResolution() const;
@@ -442,23 +410,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICapturedFrame
+struct WINRT_EBO impl_ICapturedFrame
 {
-    auto shim() const { return impl::shim<D, ICapturedFrame>(this); }
-
-public:
-
     uint32_t Width() const;
     uint32_t Height() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICapturedFrameControlValues
+struct WINRT_EBO impl_ICapturedFrameControlValues
 {
-    auto shim() const { return impl::shim<D, ICapturedFrameControlValues>(this); }
-
-public:
-
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> Exposure() const;
     Windows::Foundation::IReference<float> ExposureCompensation() const;
     Windows::Foundation::IReference<uint32_t> IsoSpeed() const;
@@ -471,12 +431,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICapturedFrameControlValues2
+struct WINRT_EBO impl_ICapturedFrameControlValues2
 {
-    auto shim() const { return impl::shim<D, ICapturedFrameControlValues2>(this); }
-
-public:
-
     Windows::Foundation::IReference<winrt::Windows::Media::Devices::MediaCaptureFocusState> FocusState() const;
     Windows::Foundation::IReference<double> IsoDigitalGain() const;
     Windows::Foundation::IReference<double> IsoAnalogGain() const;
@@ -485,78 +441,50 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICapturedFrameWithSoftwareBitmap
+struct WINRT_EBO impl_ICapturedFrameWithSoftwareBitmap
 {
-    auto shim() const { return impl::shim<D, ICapturedFrameWithSoftwareBitmap>(this); }
-
-public:
-
     Windows::Graphics::Imaging::SoftwareBitmap SoftwareBitmap() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICapturedPhoto
+struct WINRT_EBO impl_ICapturedPhoto
 {
-    auto shim() const { return impl::shim<D, ICapturedPhoto>(this); }
-
-public:
-
     Windows::Media::Capture::CapturedFrame Frame() const;
     Windows::Media::Capture::CapturedFrame Thumbnail() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILowLagMediaRecording
+struct WINRT_EBO impl_ILowLagMediaRecording
 {
-    auto shim() const { return impl::shim<D, ILowLagMediaRecording>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction StartAsync() const;
     Windows::Foundation::IAsyncAction StopAsync() const;
     Windows::Foundation::IAsyncAction FinishAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILowLagMediaRecording2
+struct WINRT_EBO impl_ILowLagMediaRecording2
 {
-    auto shim() const { return impl::shim<D, ILowLagMediaRecording2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction PauseAsync(Windows::Media::Devices::MediaCapturePauseBehavior behavior) const;
     Windows::Foundation::IAsyncAction ResumeAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILowLagMediaRecording3
+struct WINRT_EBO impl_ILowLagMediaRecording3
 {
-    auto shim() const { return impl::shim<D, ILowLagMediaRecording3>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Media::Capture::MediaCapturePauseResult> PauseWithResultAsync(Windows::Media::Devices::MediaCapturePauseBehavior behavior) const;
     Windows::Foundation::IAsyncOperation<Windows::Media::Capture::MediaCaptureStopResult> StopWithResultAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILowLagPhotoCapture
+struct WINRT_EBO impl_ILowLagPhotoCapture
 {
-    auto shim() const { return impl::shim<D, ILowLagPhotoCapture>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Media::Capture::CapturedPhoto> CaptureAsync() const;
     Windows::Foundation::IAsyncAction FinishAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILowLagPhotoSequenceCapture
+struct WINRT_EBO impl_ILowLagPhotoSequenceCapture
 {
-    auto shim() const { return impl::shim<D, ILowLagPhotoSequenceCapture>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction StartAsync() const;
     Windows::Foundation::IAsyncAction StopAsync() const;
     Windows::Foundation::IAsyncAction FinishAsync() const;
@@ -567,12 +495,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaCapture
+struct WINRT_EBO impl_IMediaCapture
 {
-    auto shim() const { return impl::shim<D, IMediaCapture>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction InitializeAsync() const;
     Windows::Foundation::IAsyncAction InitializeAsync(const Windows::Media::Capture::MediaCaptureInitializationSettings & mediaCaptureInitializationSettings) const;
     Windows::Foundation::IAsyncAction StartRecordToStorageFileAsync(const Windows::Media::MediaProperties::MediaEncodingProfile & encodingProfile, const Windows::Storage::IStorageFile & file) const;
@@ -606,12 +530,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaCapture2
+struct WINRT_EBO impl_IMediaCapture2
 {
-    auto shim() const { return impl::shim<D, IMediaCapture2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Media::Capture::LowLagMediaRecording> PrepareLowLagRecordToStorageFileAsync(const Windows::Media::MediaProperties::MediaEncodingProfile & encodingProfile, const Windows::Storage::IStorageFile & file) const;
     Windows::Foundation::IAsyncOperation<Windows::Media::Capture::LowLagMediaRecording> PrepareLowLagRecordToStreamAsync(const Windows::Media::MediaProperties::MediaEncodingProfile & encodingProfile, const Windows::Storage::Streams::IRandomAccessStream & stream) const;
     Windows::Foundation::IAsyncOperation<Windows::Media::Capture::LowLagMediaRecording> PrepareLowLagRecordToCustomSinkAsync(const Windows::Media::MediaProperties::MediaEncodingProfile & encodingProfile, const Windows::Media::IMediaExtension & customMediaSink) const;
@@ -622,12 +542,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaCapture3
+struct WINRT_EBO impl_IMediaCapture3
 {
-    auto shim() const { return impl::shim<D, IMediaCapture3>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Core::VariablePhotoSequenceCapture> PrepareVariablePhotoSequenceCaptureAsync(const Windows::Media::MediaProperties::ImageEncodingProperties & type) const;
     event_token FocusChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::Media::Capture::MediaCaptureFocusChangedEventArgs> & handler) const;
     using FocusChanged_revoker = event_revoker<IMediaCapture3>;
@@ -640,12 +556,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaCapture4
+struct WINRT_EBO impl_IMediaCapture4
 {
-    auto shim() const { return impl::shim<D, IMediaCapture4>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Media::IMediaExtension> AddAudioEffectAsync(const Windows::Media::Effects::IAudioEffectDefinition & definition) const;
     Windows::Foundation::IAsyncOperation<Windows::Media::IMediaExtension> AddVideoEffectAsync(const Windows::Media::Effects::IVideoEffectDefinition & definition, Windows::Media::Capture::MediaStreamType mediaStreamType) const;
     Windows::Foundation::IAsyncAction PauseRecordAsync(Windows::Media::Devices::MediaCapturePauseBehavior behavior) const;
@@ -666,12 +578,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaCapture5
+struct WINRT_EBO impl_IMediaCapture5
 {
-    auto shim() const { return impl::shim<D, IMediaCapture5>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction RemoveEffectAsync(const Windows::Media::IMediaExtension & effect) const;
     Windows::Foundation::IAsyncOperation<Windows::Media::Capture::MediaCapturePauseResult> PauseRecordWithResultAsync(Windows::Media::Devices::MediaCapturePauseBehavior behavior) const;
     Windows::Foundation::IAsyncOperation<Windows::Media::Capture::MediaCaptureStopResult> StopRecordWithResultAsync() const;
@@ -682,33 +590,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaCaptureFailedEventArgs
+struct WINRT_EBO impl_IMediaCaptureFailedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMediaCaptureFailedEventArgs>(this); }
-
-public:
-
     hstring Message() const;
     uint32_t Code() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaCaptureFocusChangedEventArgs
+struct WINRT_EBO impl_IMediaCaptureFocusChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMediaCaptureFocusChangedEventArgs>(this); }
-
-public:
-
     Windows::Media::Devices::MediaCaptureFocusState FocusState() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaCaptureInitializationSettings
+struct WINRT_EBO impl_IMediaCaptureInitializationSettings
 {
-    auto shim() const { return impl::shim<D, IMediaCaptureInitializationSettings>(this); }
-
-public:
-
     void AudioDeviceId(hstring_ref value) const;
     hstring AudioDeviceId() const;
     void VideoDeviceId(hstring_ref value) const;
@@ -720,12 +616,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaCaptureInitializationSettings2
+struct WINRT_EBO impl_IMediaCaptureInitializationSettings2
 {
-    auto shim() const { return impl::shim<D, IMediaCaptureInitializationSettings2>(this); }
-
-public:
-
     void MediaCategory(Windows::Media::Capture::MediaCategory value) const;
     Windows::Media::Capture::MediaCategory MediaCategory() const;
     void AudioProcessing(Windows::Media::AudioProcessing value) const;
@@ -733,12 +625,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaCaptureInitializationSettings3
+struct WINRT_EBO impl_IMediaCaptureInitializationSettings3
 {
-    auto shim() const { return impl::shim<D, IMediaCaptureInitializationSettings3>(this); }
-
-public:
-
     void AudioSource(const Windows::Media::Core::IMediaSource & value) const;
     Windows::Media::Core::IMediaSource AudioSource() const;
     void VideoSource(const Windows::Media::Core::IMediaSource & value) const;
@@ -746,12 +634,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaCaptureInitializationSettings4
+struct WINRT_EBO impl_IMediaCaptureInitializationSettings4
 {
-    auto shim() const { return impl::shim<D, IMediaCaptureInitializationSettings4>(this); }
-
-public:
-
     Windows::Media::Capture::MediaCaptureVideoProfile VideoProfile() const;
     void VideoProfile(const Windows::Media::Capture::MediaCaptureVideoProfile & value) const;
     Windows::Media::Capture::MediaCaptureVideoProfileMediaDescription PreviewMediaDescription() const;
@@ -763,12 +647,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaCaptureInitializationSettings5
+struct WINRT_EBO impl_IMediaCaptureInitializationSettings5
 {
-    auto shim() const { return impl::shim<D, IMediaCaptureInitializationSettings5>(this); }
-
-public:
-
     Windows::Media::Capture::Frames::MediaFrameSourceGroup SourceGroup() const;
     void SourceGroup(const Windows::Media::Capture::Frames::MediaFrameSourceGroup & value) const;
     Windows::Media::Capture::MediaCaptureSharingMode SharingMode() const;
@@ -778,23 +658,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaCapturePauseResult
+struct WINRT_EBO impl_IMediaCapturePauseResult
 {
-    auto shim() const { return impl::shim<D, IMediaCapturePauseResult>(this); }
-
-public:
-
     Windows::Media::VideoFrame LastFrame() const;
     Windows::Foundation::TimeSpan RecordDuration() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaCaptureSettings
+struct WINRT_EBO impl_IMediaCaptureSettings
 {
-    auto shim() const { return impl::shim<D, IMediaCaptureSettings>(this); }
-
-public:
-
     hstring AudioDeviceId() const;
     hstring VideoDeviceId() const;
     Windows::Media::Capture::StreamingCaptureMode StreamingCaptureMode() const;
@@ -803,12 +675,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaCaptureSettings2
+struct WINRT_EBO impl_IMediaCaptureSettings2
 {
-    auto shim() const { return impl::shim<D, IMediaCaptureSettings2>(this); }
-
-public:
-
     bool ConcurrentRecordAndPhotoSupported() const;
     bool ConcurrentRecordAndPhotoSequenceSupported() const;
     bool CameraSoundRequiredForRegion() const;
@@ -820,12 +688,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaCaptureStatics
+struct WINRT_EBO impl_IMediaCaptureStatics
 {
-    auto shim() const { return impl::shim<D, IMediaCaptureStatics>(this); }
-
-public:
-
     bool IsVideoProfileSupported(hstring_ref videoDeviceId) const;
     Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::MediaCaptureVideoProfile> FindAllVideoProfiles(hstring_ref videoDeviceId) const;
     Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::MediaCaptureVideoProfile> FindConcurrentProfiles(hstring_ref videoDeviceId) const;
@@ -833,23 +697,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaCaptureStopResult
+struct WINRT_EBO impl_IMediaCaptureStopResult
 {
-    auto shim() const { return impl::shim<D, IMediaCaptureStopResult>(this); }
-
-public:
-
     Windows::Media::VideoFrame LastFrame() const;
     Windows::Foundation::TimeSpan RecordDuration() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaCaptureVideoPreview
+struct WINRT_EBO impl_IMediaCaptureVideoPreview
 {
-    auto shim() const { return impl::shim<D, IMediaCaptureVideoPreview>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction StartPreviewAsync() const;
     Windows::Foundation::IAsyncAction StartPreviewToCustomSinkAsync(const Windows::Media::MediaProperties::MediaEncodingProfile & encodingProfile, const Windows::Media::IMediaExtension & customMediaSink) const;
     Windows::Foundation::IAsyncAction StartPreviewToCustomSinkAsync(const Windows::Media::MediaProperties::MediaEncodingProfile & encodingProfile, hstring_ref customSinkActivationId, const Windows::Foundation::Collections::IPropertySet & customSinkSettings) const;
@@ -857,12 +713,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaCaptureVideoProfile
+struct WINRT_EBO impl_IMediaCaptureVideoProfile
 {
-    auto shim() const { return impl::shim<D, IMediaCaptureVideoProfile>(this); }
-
-public:
-
     hstring Id() const;
     hstring VideoDeviceId() const;
     Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::MediaCaptureVideoProfileMediaDescription> SupportedPreviewMediaDescription() const;
@@ -872,12 +724,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaCaptureVideoProfileMediaDescription
+struct WINRT_EBO impl_IMediaCaptureVideoProfileMediaDescription
 {
-    auto shim() const { return impl::shim<D, IMediaCaptureVideoProfileMediaDescription>(this); }
-
-public:
-
     uint32_t Width() const;
     uint32_t Height() const;
     double FrameRate() const;
@@ -886,46 +734,30 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IOptionalReferencePhotoCapturedEventArgs
+struct WINRT_EBO impl_IOptionalReferencePhotoCapturedEventArgs
 {
-    auto shim() const { return impl::shim<D, IOptionalReferencePhotoCapturedEventArgs>(this); }
-
-public:
-
     Windows::Media::Capture::CapturedFrame Frame() const;
     Windows::IInspectable Context() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPhotoCapturedEventArgs
+struct WINRT_EBO impl_IPhotoCapturedEventArgs
 {
-    auto shim() const { return impl::shim<D, IPhotoCapturedEventArgs>(this); }
-
-public:
-
     Windows::Media::Capture::CapturedFrame Frame() const;
     Windows::Media::Capture::CapturedFrame Thumbnail() const;
     Windows::Foundation::TimeSpan CaptureTimeOffset() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPhotoConfirmationCapturedEventArgs
+struct WINRT_EBO impl_IPhotoConfirmationCapturedEventArgs
 {
-    auto shim() const { return impl::shim<D, IPhotoConfirmationCapturedEventArgs>(this); }
-
-public:
-
     Windows::Media::Capture::CapturedFrame Frame() const;
     Windows::Foundation::TimeSpan CaptureTimeOffset() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVideoStreamConfiguration
+struct WINRT_EBO impl_IVideoStreamConfiguration
 {
-    auto shim() const { return impl::shim<D, IVideoStreamConfiguration>(this); }
-
-public:
-
     Windows::Media::MediaProperties::VideoEncodingProperties InputProperties() const;
     Windows::Media::MediaProperties::VideoEncodingProperties OutputProperties() const;
 };

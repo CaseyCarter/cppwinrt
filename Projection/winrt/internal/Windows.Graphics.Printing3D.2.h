@@ -570,12 +570,8 @@ template <> struct __declspec(uuid("05eb86f1-7140-5517-b88d-cbaebe57e6b1")) __de
 namespace Windows::Graphics::Printing3D {
 
 template <typename D>
-class WINRT_EBO impl_IPrint3DManager
+struct WINRT_EBO impl_IPrint3DManager
 {
-    auto shim() const { return impl::shim<D, IPrint3DManager>(this); }
-
-public:
-
     event_token TaskRequested(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing3D::Print3DManager, Windows::Graphics::Printing3D::Print3DTaskRequestedEventArgs> & eventHandler) const;
     using TaskRequested_revoker = event_revoker<IPrint3DManager>;
     TaskRequested_revoker TaskRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing3D::Print3DManager, Windows::Graphics::Printing3D::Print3DTaskRequestedEventArgs> & eventHandler) const;
@@ -583,23 +579,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrint3DManagerStatics
+struct WINRT_EBO impl_IPrint3DManagerStatics
 {
-    auto shim() const { return impl::shim<D, IPrint3DManagerStatics>(this); }
-
-public:
-
     Windows::Graphics::Printing3D::Print3DManager GetForCurrentView() const;
     Windows::Foundation::IAsyncOperation<bool> ShowPrintUIAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrint3DTask
+struct WINRT_EBO impl_IPrint3DTask
 {
-    auto shim() const { return impl::shim<D, IPrint3DTask>(this); }
-
-public:
-
     Windows::Graphics::Printing3D::Printing3D3MFPackage Source() const;
     event_token Submitting(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing3D::Print3DTask, Windows::IInspectable> & eventHandler) const;
     using Submitting_revoker = event_revoker<IPrint3DTask>;
@@ -616,63 +604,39 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrint3DTaskCompletedEventArgs
+struct WINRT_EBO impl_IPrint3DTaskCompletedEventArgs
 {
-    auto shim() const { return impl::shim<D, IPrint3DTaskCompletedEventArgs>(this); }
-
-public:
-
     Windows::Graphics::Printing3D::Print3DTaskCompletion Completion() const;
     Windows::Graphics::Printing3D::Print3DTaskDetail ExtendedStatus() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrint3DTaskRequest
+struct WINRT_EBO impl_IPrint3DTaskRequest
 {
-    auto shim() const { return impl::shim<D, IPrint3DTaskRequest>(this); }
-
-public:
-
     Windows::Graphics::Printing3D::Print3DTask CreateTask(hstring_ref title, hstring_ref printerId, const Windows::Graphics::Printing3D::Print3DTaskSourceRequestedHandler & handler) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrint3DTaskRequestedEventArgs
+struct WINRT_EBO impl_IPrint3DTaskRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, IPrint3DTaskRequestedEventArgs>(this); }
-
-public:
-
     Windows::Graphics::Printing3D::Print3DTaskRequest Request() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrint3DTaskSourceChangedEventArgs
+struct WINRT_EBO impl_IPrint3DTaskSourceChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IPrint3DTaskSourceChangedEventArgs>(this); }
-
-public:
-
     Windows::Graphics::Printing3D::Printing3D3MFPackage Source() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrint3DTaskSourceRequestedArgs
+struct WINRT_EBO impl_IPrint3DTaskSourceRequestedArgs
 {
-    auto shim() const { return impl::shim<D, IPrint3DTaskSourceRequestedArgs>(this); }
-
-public:
-
     void SetSource(const Windows::Graphics::Printing3D::Printing3D3MFPackage & source) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrinting3D3MFPackage
+struct WINRT_EBO impl_IPrinting3D3MFPackage
 {
-    auto shim() const { return impl::shim<D, IPrinting3D3MFPackage>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> SaveAsync() const;
     Windows::Storage::Streams::IRandomAccessStream PrintTicket() const;
     void PrintTicket(const Windows::Storage::Streams::IRandomAccessStream & value) const;
@@ -686,22 +650,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrinting3D3MFPackageStatics
+struct WINRT_EBO impl_IPrinting3D3MFPackageStatics
 {
-    auto shim() const { return impl::shim<D, IPrinting3D3MFPackageStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Graphics::Printing3D::Printing3D3MFPackage> LoadAsync(const Windows::Storage::Streams::IRandomAccessStream & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrinting3DBaseMaterial
+struct WINRT_EBO impl_IPrinting3DBaseMaterial
 {
-    auto shim() const { return impl::shim<D, IPrinting3DBaseMaterial>(this); }
-
-public:
-
     hstring Name() const;
     void Name(hstring_ref value) const;
     Windows::Graphics::Printing3D::Printing3DColorMaterial Color() const;
@@ -709,87 +665,55 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrinting3DBaseMaterialGroup
+struct WINRT_EBO impl_IPrinting3DBaseMaterialGroup
 {
-    auto shim() const { return impl::shim<D, IPrinting3DBaseMaterialGroup>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<Windows::Graphics::Printing3D::Printing3DBaseMaterial> Bases() const;
     uint32_t MaterialGroupId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrinting3DBaseMaterialGroupFactory
+struct WINRT_EBO impl_IPrinting3DBaseMaterialGroupFactory
 {
-    auto shim() const { return impl::shim<D, IPrinting3DBaseMaterialGroupFactory>(this); }
-
-public:
-
     Windows::Graphics::Printing3D::Printing3DBaseMaterialGroup Create(uint32_t MaterialGroupId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrinting3DBaseMaterialStatics
+struct WINRT_EBO impl_IPrinting3DBaseMaterialStatics
 {
-    auto shim() const { return impl::shim<D, IPrinting3DBaseMaterialStatics>(this); }
-
-public:
-
     hstring Abs() const;
     hstring Pla() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrinting3DColorMaterial
+struct WINRT_EBO impl_IPrinting3DColorMaterial
 {
-    auto shim() const { return impl::shim<D, IPrinting3DColorMaterial>(this); }
-
-public:
-
     uint32_t Value() const;
     void Value(uint32_t value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrinting3DColorMaterial2
+struct WINRT_EBO impl_IPrinting3DColorMaterial2
 {
-    auto shim() const { return impl::shim<D, IPrinting3DColorMaterial2>(this); }
-
-public:
-
     Windows::UI::Color Color() const;
     void Color(const Windows::UI::Color & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrinting3DColorMaterialGroup
+struct WINRT_EBO impl_IPrinting3DColorMaterialGroup
 {
-    auto shim() const { return impl::shim<D, IPrinting3DColorMaterialGroup>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<Windows::Graphics::Printing3D::Printing3DColorMaterial> Colors() const;
     uint32_t MaterialGroupId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrinting3DColorMaterialGroupFactory
+struct WINRT_EBO impl_IPrinting3DColorMaterialGroupFactory
 {
-    auto shim() const { return impl::shim<D, IPrinting3DColorMaterialGroupFactory>(this); }
-
-public:
-
     Windows::Graphics::Printing3D::Printing3DColorMaterialGroup Create(uint32_t MaterialGroupId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrinting3DComponent
+struct WINRT_EBO impl_IPrinting3DComponent
 {
-    auto shim() const { return impl::shim<D, IPrinting3DComponent>(this); }
-
-public:
-
     Windows::Graphics::Printing3D::Printing3DMesh Mesh() const;
     void Mesh(const Windows::Graphics::Printing3D::Printing3DMesh & value) const;
     Windows::Foundation::Collections::IVector<Windows::Graphics::Printing3D::Printing3DComponentWithMatrix> Components() const;
@@ -804,12 +728,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrinting3DComponentWithMatrix
+struct WINRT_EBO impl_IPrinting3DComponentWithMatrix
 {
-    auto shim() const { return impl::shim<D, IPrinting3DComponentWithMatrix>(this); }
-
-public:
-
     Windows::Graphics::Printing3D::Printing3DComponent Component() const;
     void Component(const Windows::Graphics::Printing3D::Printing3DComponent & value) const;
     Windows::Foundation::Numerics::float4x4 Matrix() const;
@@ -817,55 +737,35 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrinting3DCompositeMaterial
+struct WINRT_EBO impl_IPrinting3DCompositeMaterial
 {
-    auto shim() const { return impl::shim<D, IPrinting3DCompositeMaterial>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<double> Values() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrinting3DCompositeMaterialGroup
+struct WINRT_EBO impl_IPrinting3DCompositeMaterialGroup
 {
-    auto shim() const { return impl::shim<D, IPrinting3DCompositeMaterialGroup>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<Windows::Graphics::Printing3D::Printing3DCompositeMaterial> Composites() const;
     uint32_t MaterialGroupId() const;
     Windows::Foundation::Collections::IVector<uint32_t> MaterialIndices() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrinting3DCompositeMaterialGroup2
+struct WINRT_EBO impl_IPrinting3DCompositeMaterialGroup2
 {
-    auto shim() const { return impl::shim<D, IPrinting3DCompositeMaterialGroup2>(this); }
-
-public:
-
     Windows::Graphics::Printing3D::Printing3DBaseMaterialGroup BaseMaterialGroup() const;
     void BaseMaterialGroup(const Windows::Graphics::Printing3D::Printing3DBaseMaterialGroup & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrinting3DCompositeMaterialGroupFactory
+struct WINRT_EBO impl_IPrinting3DCompositeMaterialGroupFactory
 {
-    auto shim() const { return impl::shim<D, IPrinting3DCompositeMaterialGroupFactory>(this); }
-
-public:
-
     Windows::Graphics::Printing3D::Printing3DCompositeMaterialGroup Create(uint32_t MaterialGroupId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrinting3DFaceReductionOptions
+struct WINRT_EBO impl_IPrinting3DFaceReductionOptions
 {
-    auto shim() const { return impl::shim<D, IPrinting3DFaceReductionOptions>(this); }
-
-public:
-
     double MaxReductionArea() const;
     void MaxReductionArea(double value) const;
     uint32_t TargetTriangleCount() const;
@@ -875,12 +775,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrinting3DMaterial
+struct WINRT_EBO impl_IPrinting3DMaterial
 {
-    auto shim() const { return impl::shim<D, IPrinting3DMaterial>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<Windows::Graphics::Printing3D::Printing3DBaseMaterialGroup> BaseGroups() const;
     Windows::Foundation::Collections::IVector<Windows::Graphics::Printing3D::Printing3DColorMaterialGroup> ColorGroups() const;
     Windows::Foundation::Collections::IVector<Windows::Graphics::Printing3D::Printing3DTexture2CoordMaterialGroup> Texture2CoordGroups() const;
@@ -889,12 +785,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrinting3DMesh
+struct WINRT_EBO impl_IPrinting3DMesh
 {
-    auto shim() const { return impl::shim<D, IPrinting3DMesh>(this); }
-
-public:
-
     uint32_t VertexCount() const;
     void VertexCount(uint32_t value) const;
     uint32_t IndexCount() const;
@@ -921,24 +813,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrinting3DMeshVerificationResult
+struct WINRT_EBO impl_IPrinting3DMeshVerificationResult
 {
-    auto shim() const { return impl::shim<D, IPrinting3DMeshVerificationResult>(this); }
-
-public:
-
     bool IsValid() const;
     Windows::Foundation::Collections::IVectorView<uint32_t> NonmanifoldTriangles() const;
     Windows::Foundation::Collections::IVectorView<uint32_t> ReversedNormalTriangles() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrinting3DModel
+struct WINRT_EBO impl_IPrinting3DModel
 {
-    auto shim() const { return impl::shim<D, IPrinting3DModel>(this); }
-
-public:
-
     Windows::Graphics::Printing3D::Printing3DModelUnit Unit() const;
     void Unit(Windows::Graphics::Printing3D::Printing3DModelUnit value) const;
     Windows::Foundation::Collections::IVector<Windows::Graphics::Printing3D::Printing3DModelTexture> Textures() const;
@@ -957,12 +841,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrinting3DModel2
+struct WINRT_EBO impl_IPrinting3DModel2
 {
-    auto shim() const { return impl::shim<D, IPrinting3DModel2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<bool> TryPartialRepairAsync() const;
     Windows::Foundation::IAsyncOperation<bool> TryPartialRepairAsync(const Windows::Foundation::TimeSpan & maxWaitTime) const;
     Windows::Foundation::IAsyncOperationWithProgress<bool, double> TryReduceFacesAsync() const;
@@ -972,12 +852,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrinting3DModelTexture
+struct WINRT_EBO impl_IPrinting3DModelTexture
 {
-    auto shim() const { return impl::shim<D, IPrinting3DModelTexture>(this); }
-
-public:
-
     Windows::Graphics::Printing3D::Printing3DTextureResource TextureResource() const;
     void TextureResource(const Windows::Graphics::Printing3D::Printing3DTextureResource & value) const;
     Windows::Graphics::Printing3D::Printing3DTextureEdgeBehavior TileStyleU() const;
@@ -987,44 +863,28 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrinting3DMultiplePropertyMaterial
+struct WINRT_EBO impl_IPrinting3DMultiplePropertyMaterial
 {
-    auto shim() const { return impl::shim<D, IPrinting3DMultiplePropertyMaterial>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<uint32_t> MaterialIndices() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrinting3DMultiplePropertyMaterialGroup
+struct WINRT_EBO impl_IPrinting3DMultiplePropertyMaterialGroup
 {
-    auto shim() const { return impl::shim<D, IPrinting3DMultiplePropertyMaterialGroup>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<Windows::Graphics::Printing3D::Printing3DMultiplePropertyMaterial> MultipleProperties() const;
     Windows::Foundation::Collections::IVector<uint32_t> MaterialGroupIndices() const;
     uint32_t MaterialGroupId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrinting3DMultiplePropertyMaterialGroupFactory
+struct WINRT_EBO impl_IPrinting3DMultiplePropertyMaterialGroupFactory
 {
-    auto shim() const { return impl::shim<D, IPrinting3DMultiplePropertyMaterialGroupFactory>(this); }
-
-public:
-
     Windows::Graphics::Printing3D::Printing3DMultiplePropertyMaterialGroup Create(uint32_t MaterialGroupId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrinting3DTexture2CoordMaterial
+struct WINRT_EBO impl_IPrinting3DTexture2CoordMaterial
 {
-    auto shim() const { return impl::shim<D, IPrinting3DTexture2CoordMaterial>(this); }
-
-public:
-
     Windows::Graphics::Printing3D::Printing3DModelTexture Texture() const;
     void Texture(const Windows::Graphics::Printing3D::Printing3DModelTexture & value) const;
     double U() const;
@@ -1034,44 +894,28 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrinting3DTexture2CoordMaterialGroup
+struct WINRT_EBO impl_IPrinting3DTexture2CoordMaterialGroup
 {
-    auto shim() const { return impl::shim<D, IPrinting3DTexture2CoordMaterialGroup>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<Windows::Graphics::Printing3D::Printing3DTexture2CoordMaterial> Texture2Coords() const;
     uint32_t MaterialGroupId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrinting3DTexture2CoordMaterialGroup2
+struct WINRT_EBO impl_IPrinting3DTexture2CoordMaterialGroup2
 {
-    auto shim() const { return impl::shim<D, IPrinting3DTexture2CoordMaterialGroup2>(this); }
-
-public:
-
     Windows::Graphics::Printing3D::Printing3DModelTexture Texture() const;
     void Texture(const Windows::Graphics::Printing3D::Printing3DModelTexture & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrinting3DTexture2CoordMaterialGroupFactory
+struct WINRT_EBO impl_IPrinting3DTexture2CoordMaterialGroupFactory
 {
-    auto shim() const { return impl::shim<D, IPrinting3DTexture2CoordMaterialGroupFactory>(this); }
-
-public:
-
     Windows::Graphics::Printing3D::Printing3DTexture2CoordMaterialGroup Create(uint32_t MaterialGroupId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrinting3DTextureResource
+struct WINRT_EBO impl_IPrinting3DTextureResource
 {
-    auto shim() const { return impl::shim<D, IPrinting3DTextureResource>(this); }
-
-public:
-
     Windows::Storage::Streams::IRandomAccessStreamWithContentType TextureData() const;
     void TextureData(const Windows::Storage::Streams::IRandomAccessStreamWithContentType & value) const;
     hstring Name() const;

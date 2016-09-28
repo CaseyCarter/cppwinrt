@@ -26,7 +26,7 @@ template <> struct traits<Windows::Foundation::Collections::ValueSet> { using de
 
 namespace Windows::Foundation::Collections {
 
-template <typename T> class impl_IPropertySet;
+template <typename T> struct impl_IPropertySet;
 
 }
 

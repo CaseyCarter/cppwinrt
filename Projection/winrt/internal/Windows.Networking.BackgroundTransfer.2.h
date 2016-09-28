@@ -265,24 +265,16 @@ template <> struct __declspec(uuid("608a29a8-bbc5-5ea3-b3f7-87edc4e7bbbc")) __de
 namespace Windows::Networking::BackgroundTransfer {
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundDownloader
+struct WINRT_EBO impl_IBackgroundDownloader
 {
-    auto shim() const { return impl::shim<D, IBackgroundDownloader>(this); }
-
-public:
-
     Windows::Networking::BackgroundTransfer::DownloadOperation CreateDownload(const Windows::Foundation::Uri & uri, const Windows::Storage::IStorageFile & resultFile) const;
     Windows::Networking::BackgroundTransfer::DownloadOperation CreateDownload(const Windows::Foundation::Uri & uri, const Windows::Storage::IStorageFile & resultFile, const Windows::Storage::IStorageFile & requestBodyFile) const;
     Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::DownloadOperation> CreateDownloadAsync(const Windows::Foundation::Uri & uri, const Windows::Storage::IStorageFile & resultFile, const Windows::Storage::Streams::IInputStream & requestBodyStream) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundDownloader2
+struct WINRT_EBO impl_IBackgroundDownloader2
 {
-    auto shim() const { return impl::shim<D, IBackgroundDownloader2>(this); }
-
-public:
-
     Windows::Networking::BackgroundTransfer::BackgroundTransferGroup TransferGroup() const;
     void TransferGroup(const Windows::Networking::BackgroundTransfer::BackgroundTransferGroup & value) const;
     Windows::UI::Notifications::ToastNotification SuccessToastNotification() const;
@@ -296,63 +288,39 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundDownloader3
+struct WINRT_EBO impl_IBackgroundDownloader3
 {
-    auto shim() const { return impl::shim<D, IBackgroundDownloader3>(this); }
-
-public:
-
     Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroup CompletionGroup() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundDownloaderFactory
+struct WINRT_EBO impl_IBackgroundDownloaderFactory
 {
-    auto shim() const { return impl::shim<D, IBackgroundDownloaderFactory>(this); }
-
-public:
-
     Windows::Networking::BackgroundTransfer::BackgroundDownloader CreateWithCompletionGroup(const Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroup & completionGroup) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundDownloaderStaticMethods
+struct WINRT_EBO impl_IBackgroundDownloaderStaticMethods
 {
-    auto shim() const { return impl::shim<D, IBackgroundDownloaderStaticMethods>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>> GetCurrentDownloadsAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>> GetCurrentDownloadsAsync(hstring_ref group) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundDownloaderStaticMethods2
+struct WINRT_EBO impl_IBackgroundDownloaderStaticMethods2
 {
-    auto shim() const { return impl::shim<D, IBackgroundDownloaderStaticMethods2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>> GetCurrentDownloadsForTransferGroupAsync(const Windows::Networking::BackgroundTransfer::BackgroundTransferGroup & group) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundDownloaderUserConsent
+struct WINRT_EBO impl_IBackgroundDownloaderUserConsent
 {
-    auto shim() const { return impl::shim<D, IBackgroundDownloaderUserConsent>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult> RequestUnconstrainedDownloadsAsync(const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::DownloadOperation> & operations) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundTransferBase
+struct WINRT_EBO impl_IBackgroundTransferBase
 {
-    auto shim() const { return impl::shim<D, IBackgroundTransferBase>(this); }
-
-public:
-
     void SetRequestHeader(hstring_ref headerName, hstring_ref headerValue) const;
     Windows::Security::Credentials::PasswordCredential ServerCredential() const;
     void ServerCredential(const Windows::Security::Credentials::PasswordCredential & credential) const;
@@ -367,90 +335,58 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundTransferCompletionGroup
+struct WINRT_EBO impl_IBackgroundTransferCompletionGroup
 {
-    auto shim() const { return impl::shim<D, IBackgroundTransferCompletionGroup>(this); }
-
-public:
-
     Windows::ApplicationModel::Background::IBackgroundTrigger Trigger() const;
     bool IsEnabled() const;
     void Enable() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundTransferCompletionGroupTriggerDetails
+struct WINRT_EBO impl_IBackgroundTransferCompletionGroupTriggerDetails
 {
-    auto shim() const { return impl::shim<D, IBackgroundTransferCompletionGroupTriggerDetails>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation> Downloads() const;
     Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation> Uploads() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundTransferContentPart
+struct WINRT_EBO impl_IBackgroundTransferContentPart
 {
-    auto shim() const { return impl::shim<D, IBackgroundTransferContentPart>(this); }
-
-public:
-
     void SetHeader(hstring_ref headerName, hstring_ref headerValue) const;
     void SetText(hstring_ref value) const;
     void SetFile(const Windows::Storage::IStorageFile & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundTransferContentPartFactory
+struct WINRT_EBO impl_IBackgroundTransferContentPartFactory
 {
-    auto shim() const { return impl::shim<D, IBackgroundTransferContentPartFactory>(this); }
-
-public:
-
     Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart CreateWithName(hstring_ref name) const;
     Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart CreateWithNameAndFileName(hstring_ref name, hstring_ref fileName) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundTransferErrorStaticMethods
+struct WINRT_EBO impl_IBackgroundTransferErrorStaticMethods
 {
-    auto shim() const { return impl::shim<D, IBackgroundTransferErrorStaticMethods>(this); }
-
-public:
-
     Windows::Web::WebErrorStatus GetStatus(int32_t hresult) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundTransferGroup
+struct WINRT_EBO impl_IBackgroundTransferGroup
 {
-    auto shim() const { return impl::shim<D, IBackgroundTransferGroup>(this); }
-
-public:
-
     hstring Name() const;
     Windows::Networking::BackgroundTransfer::BackgroundTransferBehavior TransferBehavior() const;
     void TransferBehavior(Windows::Networking::BackgroundTransfer::BackgroundTransferBehavior value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundTransferGroupStatics
+struct WINRT_EBO impl_IBackgroundTransferGroupStatics
 {
-    auto shim() const { return impl::shim<D, IBackgroundTransferGroupStatics>(this); }
-
-public:
-
     Windows::Networking::BackgroundTransfer::BackgroundTransferGroup CreateGroup(hstring_ref name) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundTransferOperation
+struct WINRT_EBO impl_IBackgroundTransferOperation
 {
-    auto shim() const { return impl::shim<D, IBackgroundTransferOperation>(this); }
-
-public:
-
     GUID Guid() const;
     Windows::Foundation::Uri RequestedUri() const;
     hstring Method() const;
@@ -462,23 +398,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundTransferOperationPriority
+struct WINRT_EBO impl_IBackgroundTransferOperationPriority
 {
-    auto shim() const { return impl::shim<D, IBackgroundTransferOperationPriority>(this); }
-
-public:
-
     Windows::Networking::BackgroundTransfer::BackgroundTransferPriority Priority() const;
     void Priority(Windows::Networking::BackgroundTransfer::BackgroundTransferPriority value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundUploader
+struct WINRT_EBO impl_IBackgroundUploader
 {
-    auto shim() const { return impl::shim<D, IBackgroundUploader>(this); }
-
-public:
-
     Windows::Networking::BackgroundTransfer::UploadOperation CreateUpload(const Windows::Foundation::Uri & uri, const Windows::Storage::IStorageFile & sourceFile) const;
     Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation> CreateUploadFromStreamAsync(const Windows::Foundation::Uri & uri, const Windows::Storage::Streams::IInputStream & sourceStream) const;
     Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation> CreateUploadAsync(const Windows::Foundation::Uri & uri, const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart> & parts) const;
@@ -487,12 +415,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundUploader2
+struct WINRT_EBO impl_IBackgroundUploader2
 {
-    auto shim() const { return impl::shim<D, IBackgroundUploader2>(this); }
-
-public:
-
     Windows::Networking::BackgroundTransfer::BackgroundTransferGroup TransferGroup() const;
     void TransferGroup(const Windows::Networking::BackgroundTransfer::BackgroundTransferGroup & value) const;
     Windows::UI::Notifications::ToastNotification SuccessToastNotification() const;
@@ -506,85 +430,53 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundUploader3
+struct WINRT_EBO impl_IBackgroundUploader3
 {
-    auto shim() const { return impl::shim<D, IBackgroundUploader3>(this); }
-
-public:
-
     Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroup CompletionGroup() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundUploaderFactory
+struct WINRT_EBO impl_IBackgroundUploaderFactory
 {
-    auto shim() const { return impl::shim<D, IBackgroundUploaderFactory>(this); }
-
-public:
-
     Windows::Networking::BackgroundTransfer::BackgroundUploader CreateWithCompletionGroup(const Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroup & completionGroup) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundUploaderStaticMethods
+struct WINRT_EBO impl_IBackgroundUploaderStaticMethods
 {
-    auto shim() const { return impl::shim<D, IBackgroundUploaderStaticMethods>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>> GetCurrentUploadsAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>> GetCurrentUploadsAsync(hstring_ref group) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundUploaderStaticMethods2
+struct WINRT_EBO impl_IBackgroundUploaderStaticMethods2
 {
-    auto shim() const { return impl::shim<D, IBackgroundUploaderStaticMethods2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>> GetCurrentUploadsForTransferGroupAsync(const Windows::Networking::BackgroundTransfer::BackgroundTransferGroup & group) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundUploaderUserConsent
+struct WINRT_EBO impl_IBackgroundUploaderUserConsent
 {
-    auto shim() const { return impl::shim<D, IBackgroundUploaderUserConsent>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult> RequestUnconstrainedUploadsAsync(const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::UploadOperation> & operations) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IContentPrefetcher
+struct WINRT_EBO impl_IContentPrefetcher
 {
-    auto shim() const { return impl::shim<D, IContentPrefetcher>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<Windows::Foundation::Uri> ContentUris() const;
     void IndirectContentUri(const Windows::Foundation::Uri & value) const;
     Windows::Foundation::Uri IndirectContentUri() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IContentPrefetcherTime
+struct WINRT_EBO impl_IContentPrefetcherTime
 {
-    auto shim() const { return impl::shim<D, IContentPrefetcherTime>(this); }
-
-public:
-
     Windows::Foundation::IReference<Windows::Foundation::DateTime> LastSuccessfulPrefetchTime() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDownloadOperation
+struct WINRT_EBO impl_IDownloadOperation
 {
-    auto shim() const { return impl::shim<D, IDownloadOperation>(this); }
-
-public:
-
     Windows::Storage::IStorageFile ResultFile() const;
     Windows::Networking::BackgroundTransfer::BackgroundDownloadProgress Progress() const;
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Networking::BackgroundTransfer::DownloadOperation, Windows::Networking::BackgroundTransfer::DownloadOperation> StartAsync() const;
@@ -594,22 +486,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDownloadOperation2
+struct WINRT_EBO impl_IDownloadOperation2
 {
-    auto shim() const { return impl::shim<D, IDownloadOperation2>(this); }
-
-public:
-
     Windows::Networking::BackgroundTransfer::BackgroundTransferGroup TransferGroup() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IResponseInformation
+struct WINRT_EBO impl_IResponseInformation
 {
-    auto shim() const { return impl::shim<D, IResponseInformation>(this); }
-
-public:
-
     bool IsResumable() const;
     Windows::Foundation::Uri ActualUri() const;
     uint32_t StatusCode() const;
@@ -617,22 +501,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUnconstrainedTransferRequestResult
+struct WINRT_EBO impl_IUnconstrainedTransferRequestResult
 {
-    auto shim() const { return impl::shim<D, IUnconstrainedTransferRequestResult>(this); }
-
-public:
-
     bool IsUnconstrained() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUploadOperation
+struct WINRT_EBO impl_IUploadOperation
 {
-    auto shim() const { return impl::shim<D, IUploadOperation>(this); }
-
-public:
-
     Windows::Storage::IStorageFile SourceFile() const;
     Windows::Networking::BackgroundTransfer::BackgroundUploadProgress Progress() const;
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Networking::BackgroundTransfer::UploadOperation, Windows::Networking::BackgroundTransfer::UploadOperation> StartAsync() const;
@@ -640,12 +516,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUploadOperation2
+struct WINRT_EBO impl_IUploadOperation2
 {
-    auto shim() const { return impl::shim<D, IUploadOperation2>(this); }
-
-public:
-
     Windows::Networking::BackgroundTransfer::BackgroundTransferGroup TransferGroup() const;
 };
 

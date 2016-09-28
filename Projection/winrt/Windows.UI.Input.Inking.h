@@ -1976,102 +1976,102 @@ namespace Windows::UI::Input::Inking {
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkStroke> impl_IInkStrokesCollectedEventArgs<D>::Strokes() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkStroke> value;
-    check_hresult(shim()->get_Strokes(put(value)));
+    check_hresult(static_cast<const IInkStrokesCollectedEventArgs &>(static_cast<const D &>(*this))->get_Strokes(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkStroke> impl_IInkStrokesErasedEventArgs<D>::Strokes() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkStroke> value;
-    check_hresult(shim()->get_Strokes(put(value)));
+    check_hresult(static_cast<const IInkStrokesErasedEventArgs &>(static_cast<const D &>(*this))->get_Strokes(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IInkPresenter<D>::IsInputEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_IsInputEnabled(&value));
+    check_hresult(static_cast<const IInkPresenter &>(static_cast<const D &>(*this))->get_IsInputEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IInkPresenter<D>::IsInputEnabled(bool value) const
 {
-    check_hresult(shim()->put_IsInputEnabled(value));
+    check_hresult(static_cast<const IInkPresenter &>(static_cast<const D &>(*this))->put_IsInputEnabled(value));
 }
 
 template <typename D> Windows::UI::Core::CoreInputDeviceTypes impl_IInkPresenter<D>::InputDeviceTypes() const
 {
     Windows::UI::Core::CoreInputDeviceTypes value {};
-    check_hresult(shim()->get_InputDeviceTypes(&value));
+    check_hresult(static_cast<const IInkPresenter &>(static_cast<const D &>(*this))->get_InputDeviceTypes(&value));
     return value;
 }
 
 template <typename D> void impl_IInkPresenter<D>::InputDeviceTypes(Windows::UI::Core::CoreInputDeviceTypes value) const
 {
-    check_hresult(shim()->put_InputDeviceTypes(value));
+    check_hresult(static_cast<const IInkPresenter &>(static_cast<const D &>(*this))->put_InputDeviceTypes(value));
 }
 
 template <typename D> Windows::UI::Input::Inking::InkUnprocessedInput impl_IInkPresenter<D>::UnprocessedInput() const
 {
     Windows::UI::Input::Inking::InkUnprocessedInput value { nullptr };
-    check_hresult(shim()->get_UnprocessedInput(put(value)));
+    check_hresult(static_cast<const IInkPresenter &>(static_cast<const D &>(*this))->get_UnprocessedInput(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Inking::InkStrokeInput impl_IInkPresenter<D>::StrokeInput() const
 {
     Windows::UI::Input::Inking::InkStrokeInput value { nullptr };
-    check_hresult(shim()->get_StrokeInput(put(value)));
+    check_hresult(static_cast<const IInkPresenter &>(static_cast<const D &>(*this))->get_StrokeInput(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Inking::InkInputProcessingConfiguration impl_IInkPresenter<D>::InputProcessingConfiguration() const
 {
     Windows::UI::Input::Inking::InkInputProcessingConfiguration value { nullptr };
-    check_hresult(shim()->get_InputProcessingConfiguration(put(value)));
+    check_hresult(static_cast<const IInkPresenter &>(static_cast<const D &>(*this))->get_InputProcessingConfiguration(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Inking::InkStrokeContainer impl_IInkPresenter<D>::StrokeContainer() const
 {
     Windows::UI::Input::Inking::InkStrokeContainer value { nullptr };
-    check_hresult(shim()->get_StrokeContainer(put(value)));
+    check_hresult(static_cast<const IInkPresenter &>(static_cast<const D &>(*this))->get_StrokeContainer(put(value)));
     return value;
 }
 
 template <typename D> void impl_IInkPresenter<D>::StrokeContainer(const Windows::UI::Input::Inking::InkStrokeContainer & value) const
 {
-    check_hresult(shim()->put_StrokeContainer(get(value)));
+    check_hresult(static_cast<const IInkPresenter &>(static_cast<const D &>(*this))->put_StrokeContainer(get(value)));
 }
 
 template <typename D> Windows::UI::Input::Inking::InkDrawingAttributes impl_IInkPresenter<D>::CopyDefaultDrawingAttributes() const
 {
     Windows::UI::Input::Inking::InkDrawingAttributes value { nullptr };
-    check_hresult(shim()->abi_CopyDefaultDrawingAttributes(put(value)));
+    check_hresult(static_cast<const IInkPresenter &>(static_cast<const D &>(*this))->abi_CopyDefaultDrawingAttributes(put(value)));
     return value;
 }
 
 template <typename D> void impl_IInkPresenter<D>::UpdateDefaultDrawingAttributes(const Windows::UI::Input::Inking::InkDrawingAttributes & value) const
 {
-    check_hresult(shim()->abi_UpdateDefaultDrawingAttributes(get(value)));
+    check_hresult(static_cast<const IInkPresenter &>(static_cast<const D &>(*this))->abi_UpdateDefaultDrawingAttributes(get(value)));
 }
 
 template <typename D> Windows::UI::Input::Inking::InkSynchronizer impl_IInkPresenter<D>::ActivateCustomDrying() const
 {
     Windows::UI::Input::Inking::InkSynchronizer inkSynchronizer { nullptr };
-    check_hresult(shim()->abi_ActivateCustomDrying(put(inkSynchronizer)));
+    check_hresult(static_cast<const IInkPresenter &>(static_cast<const D &>(*this))->abi_ActivateCustomDrying(put(inkSynchronizer)));
     return inkSynchronizer;
 }
 
 template <typename D> void impl_IInkPresenter<D>::SetPredefinedConfiguration(Windows::UI::Input::Inking::InkPresenterPredefinedConfiguration value) const
 {
-    check_hresult(shim()->abi_SetPredefinedConfiguration(value));
+    check_hresult(static_cast<const IInkPresenter &>(static_cast<const D &>(*this))->abi_SetPredefinedConfiguration(value));
 }
 
 template <typename D> event_token impl_IInkPresenter<D>::StrokesCollected(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkPresenter, Windows::UI::Input::Inking::InkStrokesCollectedEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_StrokesCollected(get(handler), &cookie));
+    check_hresult(static_cast<const IInkPresenter &>(static_cast<const D &>(*this))->add_StrokesCollected(get(handler), &cookie));
     return cookie;
 }
 
@@ -2082,13 +2082,13 @@ template <typename D> event_revoker<IInkPresenter> impl_IInkPresenter<D>::Stroke
 
 template <typename D> void impl_IInkPresenter<D>::StrokesCollected(event_token cookie) const
 {
-    check_hresult(shim()->remove_StrokesCollected(cookie));
+    check_hresult(static_cast<const IInkPresenter &>(static_cast<const D &>(*this))->remove_StrokesCollected(cookie));
 }
 
 template <typename D> event_token impl_IInkPresenter<D>::StrokesErased(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkPresenter, Windows::UI::Input::Inking::InkStrokesErasedEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_StrokesErased(get(handler), &cookie));
+    check_hresult(static_cast<const IInkPresenter &>(static_cast<const D &>(*this))->add_StrokesErased(get(handler), &cookie));
     return cookie;
 }
 
@@ -2099,49 +2099,49 @@ template <typename D> event_revoker<IInkPresenter> impl_IInkPresenter<D>::Stroke
 
 template <typename D> void impl_IInkPresenter<D>::StrokesErased(event_token cookie) const
 {
-    check_hresult(shim()->remove_StrokesErased(cookie));
+    check_hresult(static_cast<const IInkPresenter &>(static_cast<const D &>(*this))->remove_StrokesErased(cookie));
 }
 
 template <typename D> Windows::UI::Input::Inking::InkInputProcessingMode impl_IInkInputProcessingConfiguration<D>::Mode() const
 {
     Windows::UI::Input::Inking::InkInputProcessingMode value {};
-    check_hresult(shim()->get_Mode(&value));
+    check_hresult(static_cast<const IInkInputProcessingConfiguration &>(static_cast<const D &>(*this))->get_Mode(&value));
     return value;
 }
 
 template <typename D> void impl_IInkInputProcessingConfiguration<D>::Mode(Windows::UI::Input::Inking::InkInputProcessingMode value) const
 {
-    check_hresult(shim()->put_Mode(value));
+    check_hresult(static_cast<const IInkInputProcessingConfiguration &>(static_cast<const D &>(*this))->put_Mode(value));
 }
 
 template <typename D> Windows::UI::Input::Inking::InkInputRightDragAction impl_IInkInputProcessingConfiguration<D>::RightDragAction() const
 {
     Windows::UI::Input::Inking::InkInputRightDragAction value {};
-    check_hresult(shim()->get_RightDragAction(&value));
+    check_hresult(static_cast<const IInkInputProcessingConfiguration &>(static_cast<const D &>(*this))->get_RightDragAction(&value));
     return value;
 }
 
 template <typename D> void impl_IInkInputProcessingConfiguration<D>::RightDragAction(Windows::UI::Input::Inking::InkInputRightDragAction value) const
 {
-    check_hresult(shim()->put_RightDragAction(value));
+    check_hresult(static_cast<const IInkInputProcessingConfiguration &>(static_cast<const D &>(*this))->put_RightDragAction(value));
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkStroke> impl_IInkSynchronizer<D>::BeginDry() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkStroke> inkStrokes;
-    check_hresult(shim()->abi_BeginDry(put(inkStrokes)));
+    check_hresult(static_cast<const IInkSynchronizer &>(static_cast<const D &>(*this))->abi_BeginDry(put(inkStrokes)));
     return inkStrokes;
 }
 
 template <typename D> void impl_IInkSynchronizer<D>::EndDry() const
 {
-    check_hresult(shim()->abi_EndDry());
+    check_hresult(static_cast<const IInkSynchronizer &>(static_cast<const D &>(*this))->abi_EndDry());
 }
 
 template <typename D> event_token impl_IInkUnprocessedInput<D>::PointerEntered(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_PointerEntered(get(handler), &cookie));
+    check_hresult(static_cast<const IInkUnprocessedInput &>(static_cast<const D &>(*this))->add_PointerEntered(get(handler), &cookie));
     return cookie;
 }
 
@@ -2152,13 +2152,13 @@ template <typename D> event_revoker<IInkUnprocessedInput> impl_IInkUnprocessedIn
 
 template <typename D> void impl_IInkUnprocessedInput<D>::PointerEntered(event_token cookie) const
 {
-    check_hresult(shim()->remove_PointerEntered(cookie));
+    check_hresult(static_cast<const IInkUnprocessedInput &>(static_cast<const D &>(*this))->remove_PointerEntered(cookie));
 }
 
 template <typename D> event_token impl_IInkUnprocessedInput<D>::PointerHovered(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_PointerHovered(get(handler), &cookie));
+    check_hresult(static_cast<const IInkUnprocessedInput &>(static_cast<const D &>(*this))->add_PointerHovered(get(handler), &cookie));
     return cookie;
 }
 
@@ -2169,13 +2169,13 @@ template <typename D> event_revoker<IInkUnprocessedInput> impl_IInkUnprocessedIn
 
 template <typename D> void impl_IInkUnprocessedInput<D>::PointerHovered(event_token cookie) const
 {
-    check_hresult(shim()->remove_PointerHovered(cookie));
+    check_hresult(static_cast<const IInkUnprocessedInput &>(static_cast<const D &>(*this))->remove_PointerHovered(cookie));
 }
 
 template <typename D> event_token impl_IInkUnprocessedInput<D>::PointerExited(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_PointerExited(get(handler), &cookie));
+    check_hresult(static_cast<const IInkUnprocessedInput &>(static_cast<const D &>(*this))->add_PointerExited(get(handler), &cookie));
     return cookie;
 }
 
@@ -2186,13 +2186,13 @@ template <typename D> event_revoker<IInkUnprocessedInput> impl_IInkUnprocessedIn
 
 template <typename D> void impl_IInkUnprocessedInput<D>::PointerExited(event_token cookie) const
 {
-    check_hresult(shim()->remove_PointerExited(cookie));
+    check_hresult(static_cast<const IInkUnprocessedInput &>(static_cast<const D &>(*this))->remove_PointerExited(cookie));
 }
 
 template <typename D> event_token impl_IInkUnprocessedInput<D>::PointerPressed(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_PointerPressed(get(handler), &cookie));
+    check_hresult(static_cast<const IInkUnprocessedInput &>(static_cast<const D &>(*this))->add_PointerPressed(get(handler), &cookie));
     return cookie;
 }
 
@@ -2203,13 +2203,13 @@ template <typename D> event_revoker<IInkUnprocessedInput> impl_IInkUnprocessedIn
 
 template <typename D> void impl_IInkUnprocessedInput<D>::PointerPressed(event_token cookie) const
 {
-    check_hresult(shim()->remove_PointerPressed(cookie));
+    check_hresult(static_cast<const IInkUnprocessedInput &>(static_cast<const D &>(*this))->remove_PointerPressed(cookie));
 }
 
 template <typename D> event_token impl_IInkUnprocessedInput<D>::PointerMoved(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_PointerMoved(get(handler), &cookie));
+    check_hresult(static_cast<const IInkUnprocessedInput &>(static_cast<const D &>(*this))->add_PointerMoved(get(handler), &cookie));
     return cookie;
 }
 
@@ -2220,13 +2220,13 @@ template <typename D> event_revoker<IInkUnprocessedInput> impl_IInkUnprocessedIn
 
 template <typename D> void impl_IInkUnprocessedInput<D>::PointerMoved(event_token cookie) const
 {
-    check_hresult(shim()->remove_PointerMoved(cookie));
+    check_hresult(static_cast<const IInkUnprocessedInput &>(static_cast<const D &>(*this))->remove_PointerMoved(cookie));
 }
 
 template <typename D> event_token impl_IInkUnprocessedInput<D>::PointerReleased(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_PointerReleased(get(handler), &cookie));
+    check_hresult(static_cast<const IInkUnprocessedInput &>(static_cast<const D &>(*this))->add_PointerReleased(get(handler), &cookie));
     return cookie;
 }
 
@@ -2237,13 +2237,13 @@ template <typename D> event_revoker<IInkUnprocessedInput> impl_IInkUnprocessedIn
 
 template <typename D> void impl_IInkUnprocessedInput<D>::PointerReleased(event_token cookie) const
 {
-    check_hresult(shim()->remove_PointerReleased(cookie));
+    check_hresult(static_cast<const IInkUnprocessedInput &>(static_cast<const D &>(*this))->remove_PointerReleased(cookie));
 }
 
 template <typename D> event_token impl_IInkUnprocessedInput<D>::PointerLost(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_PointerLost(get(handler), &cookie));
+    check_hresult(static_cast<const IInkUnprocessedInput &>(static_cast<const D &>(*this))->add_PointerLost(get(handler), &cookie));
     return cookie;
 }
 
@@ -2254,20 +2254,20 @@ template <typename D> event_revoker<IInkUnprocessedInput> impl_IInkUnprocessedIn
 
 template <typename D> void impl_IInkUnprocessedInput<D>::PointerLost(event_token cookie) const
 {
-    check_hresult(shim()->remove_PointerLost(cookie));
+    check_hresult(static_cast<const IInkUnprocessedInput &>(static_cast<const D &>(*this))->remove_PointerLost(cookie));
 }
 
 template <typename D> Windows::UI::Input::Inking::InkPresenter impl_IInkUnprocessedInput<D>::InkPresenter() const
 {
     Windows::UI::Input::Inking::InkPresenter value { nullptr };
-    check_hresult(shim()->get_InkPresenter(put(value)));
+    check_hresult(static_cast<const IInkUnprocessedInput &>(static_cast<const D &>(*this))->get_InkPresenter(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IInkStrokeInput<D>::StrokeStarted(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkStrokeInput, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_StrokeStarted(get(handler), &cookie));
+    check_hresult(static_cast<const IInkStrokeInput &>(static_cast<const D &>(*this))->add_StrokeStarted(get(handler), &cookie));
     return cookie;
 }
 
@@ -2278,13 +2278,13 @@ template <typename D> event_revoker<IInkStrokeInput> impl_IInkStrokeInput<D>::St
 
 template <typename D> void impl_IInkStrokeInput<D>::StrokeStarted(event_token cookie) const
 {
-    check_hresult(shim()->remove_StrokeStarted(cookie));
+    check_hresult(static_cast<const IInkStrokeInput &>(static_cast<const D &>(*this))->remove_StrokeStarted(cookie));
 }
 
 template <typename D> event_token impl_IInkStrokeInput<D>::StrokeContinued(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkStrokeInput, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_StrokeContinued(get(handler), &cookie));
+    check_hresult(static_cast<const IInkStrokeInput &>(static_cast<const D &>(*this))->add_StrokeContinued(get(handler), &cookie));
     return cookie;
 }
 
@@ -2295,13 +2295,13 @@ template <typename D> event_revoker<IInkStrokeInput> impl_IInkStrokeInput<D>::St
 
 template <typename D> void impl_IInkStrokeInput<D>::StrokeContinued(event_token cookie) const
 {
-    check_hresult(shim()->remove_StrokeContinued(cookie));
+    check_hresult(static_cast<const IInkStrokeInput &>(static_cast<const D &>(*this))->remove_StrokeContinued(cookie));
 }
 
 template <typename D> event_token impl_IInkStrokeInput<D>::StrokeEnded(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkStrokeInput, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_StrokeEnded(get(handler), &cookie));
+    check_hresult(static_cast<const IInkStrokeInput &>(static_cast<const D &>(*this))->add_StrokeEnded(get(handler), &cookie));
     return cookie;
 }
 
@@ -2312,13 +2312,13 @@ template <typename D> event_revoker<IInkStrokeInput> impl_IInkStrokeInput<D>::St
 
 template <typename D> void impl_IInkStrokeInput<D>::StrokeEnded(event_token cookie) const
 {
-    check_hresult(shim()->remove_StrokeEnded(cookie));
+    check_hresult(static_cast<const IInkStrokeInput &>(static_cast<const D &>(*this))->remove_StrokeEnded(cookie));
 }
 
 template <typename D> event_token impl_IInkStrokeInput<D>::StrokeCanceled(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkStrokeInput, Windows::UI::Core::PointerEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_StrokeCanceled(get(handler), &cookie));
+    check_hresult(static_cast<const IInkStrokeInput &>(static_cast<const D &>(*this))->add_StrokeCanceled(get(handler), &cookie));
     return cookie;
 }
 
@@ -2329,587 +2329,587 @@ template <typename D> event_revoker<IInkStrokeInput> impl_IInkStrokeInput<D>::St
 
 template <typename D> void impl_IInkStrokeInput<D>::StrokeCanceled(event_token cookie) const
 {
-    check_hresult(shim()->remove_StrokeCanceled(cookie));
+    check_hresult(static_cast<const IInkStrokeInput &>(static_cast<const D &>(*this))->remove_StrokeCanceled(cookie));
 }
 
 template <typename D> Windows::UI::Input::Inking::InkPresenter impl_IInkStrokeInput<D>::InkPresenter() const
 {
     Windows::UI::Input::Inking::InkPresenter value { nullptr };
-    check_hresult(shim()->get_InkPresenter(put(value)));
+    check_hresult(static_cast<const IInkStrokeInput &>(static_cast<const D &>(*this))->get_InkPresenter(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Inking::InkPresenterStencilKind impl_IInkPresenterStencil<D>::Kind() const
 {
     Windows::UI::Input::Inking::InkPresenterStencilKind value {};
-    check_hresult(shim()->get_Kind(&value));
+    check_hresult(static_cast<const IInkPresenterStencil &>(static_cast<const D &>(*this))->get_Kind(&value));
     return value;
 }
 
 template <typename D> bool impl_IInkPresenterStencil<D>::IsVisible() const
 {
     bool value {};
-    check_hresult(shim()->get_IsVisible(&value));
+    check_hresult(static_cast<const IInkPresenterStencil &>(static_cast<const D &>(*this))->get_IsVisible(&value));
     return value;
 }
 
 template <typename D> void impl_IInkPresenterStencil<D>::IsVisible(bool value) const
 {
-    check_hresult(shim()->put_IsVisible(value));
+    check_hresult(static_cast<const IInkPresenterStencil &>(static_cast<const D &>(*this))->put_IsVisible(value));
 }
 
 template <typename D> Windows::UI::Color impl_IInkPresenterStencil<D>::BackgroundColor() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_BackgroundColor(put(value)));
+    check_hresult(static_cast<const IInkPresenterStencil &>(static_cast<const D &>(*this))->get_BackgroundColor(put(value)));
     return value;
 }
 
 template <typename D> void impl_IInkPresenterStencil<D>::BackgroundColor(const Windows::UI::Color & value) const
 {
-    check_hresult(shim()->put_BackgroundColor(get(value)));
+    check_hresult(static_cast<const IInkPresenterStencil &>(static_cast<const D &>(*this))->put_BackgroundColor(get(value)));
 }
 
 template <typename D> Windows::UI::Color impl_IInkPresenterStencil<D>::ForegroundColor() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_ForegroundColor(put(value)));
+    check_hresult(static_cast<const IInkPresenterStencil &>(static_cast<const D &>(*this))->get_ForegroundColor(put(value)));
     return value;
 }
 
 template <typename D> void impl_IInkPresenterStencil<D>::ForegroundColor(const Windows::UI::Color & value) const
 {
-    check_hresult(shim()->put_ForegroundColor(get(value)));
+    check_hresult(static_cast<const IInkPresenterStencil &>(static_cast<const D &>(*this))->put_ForegroundColor(get(value)));
 }
 
 template <typename D> Windows::Foundation::Numerics::float3x2 impl_IInkPresenterStencil<D>::Transform() const
 {
     Windows::Foundation::Numerics::float3x2 value {};
-    check_hresult(shim()->get_Transform(put(value)));
+    check_hresult(static_cast<const IInkPresenterStencil &>(static_cast<const D &>(*this))->get_Transform(put(value)));
     return value;
 }
 
 template <typename D> void impl_IInkPresenterStencil<D>::Transform(const Windows::Foundation::Numerics::float3x2 & value) const
 {
-    check_hresult(shim()->put_Transform(get(value)));
+    check_hresult(static_cast<const IInkPresenterStencil &>(static_cast<const D &>(*this))->put_Transform(get(value)));
 }
 
 template <typename D> double impl_IInkPresenterRuler<D>::Length() const
 {
     double value {};
-    check_hresult(shim()->get_Length(&value));
+    check_hresult(static_cast<const IInkPresenterRuler &>(static_cast<const D &>(*this))->get_Length(&value));
     return value;
 }
 
 template <typename D> void impl_IInkPresenterRuler<D>::Length(double value) const
 {
-    check_hresult(shim()->put_Length(value));
+    check_hresult(static_cast<const IInkPresenterRuler &>(static_cast<const D &>(*this))->put_Length(value));
 }
 
 template <typename D> double impl_IInkPresenterRuler<D>::Width() const
 {
     double value {};
-    check_hresult(shim()->get_Width(&value));
+    check_hresult(static_cast<const IInkPresenterRuler &>(static_cast<const D &>(*this))->get_Width(&value));
     return value;
 }
 
 template <typename D> void impl_IInkPresenterRuler<D>::Width(double value) const
 {
-    check_hresult(shim()->put_Width(value));
+    check_hresult(static_cast<const IInkPresenterRuler &>(static_cast<const D &>(*this))->put_Width(value));
 }
 
 template <typename D> Windows::UI::Input::Inking::InkPresenterRuler impl_IInkPresenterRulerFactory<D>::Create(const Windows::UI::Input::Inking::InkPresenter & inkPresenter) const
 {
     Windows::UI::Input::Inking::InkPresenterRuler inkPresenterRuler { nullptr };
-    check_hresult(shim()->abi_Create(get(inkPresenter), put(inkPresenterRuler)));
+    check_hresult(static_cast<const IInkPresenterRulerFactory &>(static_cast<const D &>(*this))->abi_Create(get(inkPresenter), put(inkPresenterRuler)));
     return inkPresenterRuler;
 }
 
 template <typename D> Windows::Foundation::Point impl_IInkPoint<D>::Position() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(shim()->get_Position(put(value)));
+    check_hresult(static_cast<const IInkPoint &>(static_cast<const D &>(*this))->get_Position(put(value)));
     return value;
 }
 
 template <typename D> float impl_IInkPoint<D>::Pressure() const
 {
     float value {};
-    check_hresult(shim()->get_Pressure(&value));
+    check_hresult(static_cast<const IInkPoint &>(static_cast<const D &>(*this))->get_Pressure(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Inking::InkPoint impl_IInkPointFactory<D>::CreateInkPoint(const Windows::Foundation::Point & position, float pressure) const
 {
     Windows::UI::Input::Inking::InkPoint result { nullptr };
-    check_hresult(shim()->abi_CreateInkPoint(get(position), pressure, put(result)));
+    check_hresult(static_cast<const IInkPointFactory &>(static_cast<const D &>(*this))->abi_CreateInkPoint(get(position), pressure, put(result)));
     return result;
 }
 
 template <typename D> Windows::UI::Color impl_IInkDrawingAttributes<D>::Color() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Color(put(value)));
+    check_hresult(static_cast<const IInkDrawingAttributes &>(static_cast<const D &>(*this))->get_Color(put(value)));
     return value;
 }
 
 template <typename D> void impl_IInkDrawingAttributes<D>::Color(const Windows::UI::Color & value) const
 {
-    check_hresult(shim()->put_Color(get(value)));
+    check_hresult(static_cast<const IInkDrawingAttributes &>(static_cast<const D &>(*this))->put_Color(get(value)));
 }
 
 template <typename D> Windows::UI::Input::Inking::PenTipShape impl_IInkDrawingAttributes<D>::PenTip() const
 {
     Windows::UI::Input::Inking::PenTipShape value {};
-    check_hresult(shim()->get_PenTip(&value));
+    check_hresult(static_cast<const IInkDrawingAttributes &>(static_cast<const D &>(*this))->get_PenTip(&value));
     return value;
 }
 
 template <typename D> void impl_IInkDrawingAttributes<D>::PenTip(Windows::UI::Input::Inking::PenTipShape value) const
 {
-    check_hresult(shim()->put_PenTip(value));
+    check_hresult(static_cast<const IInkDrawingAttributes &>(static_cast<const D &>(*this))->put_PenTip(value));
 }
 
 template <typename D> Windows::Foundation::Size impl_IInkDrawingAttributes<D>::Size() const
 {
     Windows::Foundation::Size value {};
-    check_hresult(shim()->get_Size(put(value)));
+    check_hresult(static_cast<const IInkDrawingAttributes &>(static_cast<const D &>(*this))->get_Size(put(value)));
     return value;
 }
 
 template <typename D> void impl_IInkDrawingAttributes<D>::Size(const Windows::Foundation::Size & value) const
 {
-    check_hresult(shim()->put_Size(get(value)));
+    check_hresult(static_cast<const IInkDrawingAttributes &>(static_cast<const D &>(*this))->put_Size(get(value)));
 }
 
 template <typename D> bool impl_IInkDrawingAttributes<D>::IgnorePressure() const
 {
     bool value {};
-    check_hresult(shim()->get_IgnorePressure(&value));
+    check_hresult(static_cast<const IInkDrawingAttributes &>(static_cast<const D &>(*this))->get_IgnorePressure(&value));
     return value;
 }
 
 template <typename D> void impl_IInkDrawingAttributes<D>::IgnorePressure(bool value) const
 {
-    check_hresult(shim()->put_IgnorePressure(value));
+    check_hresult(static_cast<const IInkDrawingAttributes &>(static_cast<const D &>(*this))->put_IgnorePressure(value));
 }
 
 template <typename D> bool impl_IInkDrawingAttributes<D>::FitToCurve() const
 {
     bool value {};
-    check_hresult(shim()->get_FitToCurve(&value));
+    check_hresult(static_cast<const IInkDrawingAttributes &>(static_cast<const D &>(*this))->get_FitToCurve(&value));
     return value;
 }
 
 template <typename D> void impl_IInkDrawingAttributes<D>::FitToCurve(bool value) const
 {
-    check_hresult(shim()->put_FitToCurve(value));
+    check_hresult(static_cast<const IInkDrawingAttributes &>(static_cast<const D &>(*this))->put_FitToCurve(value));
 }
 
 template <typename D> Windows::Foundation::Numerics::float3x2 impl_IInkDrawingAttributes2<D>::PenTipTransform() const
 {
     Windows::Foundation::Numerics::float3x2 value {};
-    check_hresult(shim()->get_PenTipTransform(put(value)));
+    check_hresult(static_cast<const IInkDrawingAttributes2 &>(static_cast<const D &>(*this))->get_PenTipTransform(put(value)));
     return value;
 }
 
 template <typename D> void impl_IInkDrawingAttributes2<D>::PenTipTransform(const Windows::Foundation::Numerics::float3x2 & value) const
 {
-    check_hresult(shim()->put_PenTipTransform(get(value)));
+    check_hresult(static_cast<const IInkDrawingAttributes2 &>(static_cast<const D &>(*this))->put_PenTipTransform(get(value)));
 }
 
 template <typename D> bool impl_IInkDrawingAttributes2<D>::DrawAsHighlighter() const
 {
     bool value {};
-    check_hresult(shim()->get_DrawAsHighlighter(&value));
+    check_hresult(static_cast<const IInkDrawingAttributes2 &>(static_cast<const D &>(*this))->get_DrawAsHighlighter(&value));
     return value;
 }
 
 template <typename D> void impl_IInkDrawingAttributes2<D>::DrawAsHighlighter(bool value) const
 {
-    check_hresult(shim()->put_DrawAsHighlighter(value));
+    check_hresult(static_cast<const IInkDrawingAttributes2 &>(static_cast<const D &>(*this))->put_DrawAsHighlighter(value));
 }
 
 template <typename D> double impl_IInkDrawingAttributesPencilProperties<D>::Opacity() const
 {
     double value {};
-    check_hresult(shim()->get_Opacity(&value));
+    check_hresult(static_cast<const IInkDrawingAttributesPencilProperties &>(static_cast<const D &>(*this))->get_Opacity(&value));
     return value;
 }
 
 template <typename D> void impl_IInkDrawingAttributesPencilProperties<D>::Opacity(double value) const
 {
-    check_hresult(shim()->put_Opacity(value));
+    check_hresult(static_cast<const IInkDrawingAttributesPencilProperties &>(static_cast<const D &>(*this))->put_Opacity(value));
 }
 
 template <typename D> Windows::UI::Input::Inking::InkDrawingAttributesKind impl_IInkDrawingAttributes3<D>::Kind() const
 {
     Windows::UI::Input::Inking::InkDrawingAttributesKind value {};
-    check_hresult(shim()->get_Kind(&value));
+    check_hresult(static_cast<const IInkDrawingAttributes3 &>(static_cast<const D &>(*this))->get_Kind(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Inking::InkDrawingAttributesPencilProperties impl_IInkDrawingAttributes3<D>::PencilProperties() const
 {
     Windows::UI::Input::Inking::InkDrawingAttributesPencilProperties value { nullptr };
-    check_hresult(shim()->get_PencilProperties(put(value)));
+    check_hresult(static_cast<const IInkDrawingAttributes3 &>(static_cast<const D &>(*this))->get_PencilProperties(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Inking::InkDrawingAttributes impl_IInkDrawingAttributesStatics<D>::CreateForPencil() const
 {
     Windows::UI::Input::Inking::InkDrawingAttributes result { nullptr };
-    check_hresult(shim()->abi_CreateForPencil(put(result)));
+    check_hresult(static_cast<const IInkDrawingAttributesStatics &>(static_cast<const D &>(*this))->abi_CreateForPencil(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Point impl_IInkStrokeRenderingSegment<D>::Position() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(shim()->get_Position(put(value)));
+    check_hresult(static_cast<const IInkStrokeRenderingSegment &>(static_cast<const D &>(*this))->get_Position(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Point impl_IInkStrokeRenderingSegment<D>::BezierControlPoint1() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(shim()->get_BezierControlPoint1(put(value)));
+    check_hresult(static_cast<const IInkStrokeRenderingSegment &>(static_cast<const D &>(*this))->get_BezierControlPoint1(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Point impl_IInkStrokeRenderingSegment<D>::BezierControlPoint2() const
 {
     Windows::Foundation::Point value {};
-    check_hresult(shim()->get_BezierControlPoint2(put(value)));
+    check_hresult(static_cast<const IInkStrokeRenderingSegment &>(static_cast<const D &>(*this))->get_BezierControlPoint2(put(value)));
     return value;
 }
 
 template <typename D> float impl_IInkStrokeRenderingSegment<D>::Pressure() const
 {
     float value {};
-    check_hresult(shim()->get_Pressure(&value));
+    check_hresult(static_cast<const IInkStrokeRenderingSegment &>(static_cast<const D &>(*this))->get_Pressure(&value));
     return value;
 }
 
 template <typename D> float impl_IInkStrokeRenderingSegment<D>::TiltX() const
 {
     float value {};
-    check_hresult(shim()->get_TiltX(&value));
+    check_hresult(static_cast<const IInkStrokeRenderingSegment &>(static_cast<const D &>(*this))->get_TiltX(&value));
     return value;
 }
 
 template <typename D> float impl_IInkStrokeRenderingSegment<D>::TiltY() const
 {
     float value {};
-    check_hresult(shim()->get_TiltY(&value));
+    check_hresult(static_cast<const IInkStrokeRenderingSegment &>(static_cast<const D &>(*this))->get_TiltY(&value));
     return value;
 }
 
 template <typename D> float impl_IInkStrokeRenderingSegment<D>::Twist() const
 {
     float value {};
-    check_hresult(shim()->get_Twist(&value));
+    check_hresult(static_cast<const IInkStrokeRenderingSegment &>(static_cast<const D &>(*this))->get_Twist(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Inking::InkDrawingAttributes impl_IInkStroke<D>::DrawingAttributes() const
 {
     Windows::UI::Input::Inking::InkDrawingAttributes value { nullptr };
-    check_hresult(shim()->get_DrawingAttributes(put(value)));
+    check_hresult(static_cast<const IInkStroke &>(static_cast<const D &>(*this))->get_DrawingAttributes(put(value)));
     return value;
 }
 
 template <typename D> void impl_IInkStroke<D>::DrawingAttributes(const Windows::UI::Input::Inking::InkDrawingAttributes & value) const
 {
-    check_hresult(shim()->put_DrawingAttributes(get(value)));
+    check_hresult(static_cast<const IInkStroke &>(static_cast<const D &>(*this))->put_DrawingAttributes(get(value)));
 }
 
 template <typename D> Windows::Foundation::Rect impl_IInkStroke<D>::BoundingRect() const
 {
     Windows::Foundation::Rect value {};
-    check_hresult(shim()->get_BoundingRect(put(value)));
+    check_hresult(static_cast<const IInkStroke &>(static_cast<const D &>(*this))->get_BoundingRect(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IInkStroke<D>::Selected() const
 {
     bool value {};
-    check_hresult(shim()->get_Selected(&value));
+    check_hresult(static_cast<const IInkStroke &>(static_cast<const D &>(*this))->get_Selected(&value));
     return value;
 }
 
 template <typename D> void impl_IInkStroke<D>::Selected(bool value) const
 {
-    check_hresult(shim()->put_Selected(value));
+    check_hresult(static_cast<const IInkStroke &>(static_cast<const D &>(*this))->put_Selected(value));
 }
 
 template <typename D> bool impl_IInkStroke<D>::Recognized() const
 {
     bool value {};
-    check_hresult(shim()->get_Recognized(&value));
+    check_hresult(static_cast<const IInkStroke &>(static_cast<const D &>(*this))->get_Recognized(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkStrokeRenderingSegment> impl_IInkStroke<D>::GetRenderingSegments() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkStrokeRenderingSegment> renderingSegments;
-    check_hresult(shim()->abi_GetRenderingSegments(put(renderingSegments)));
+    check_hresult(static_cast<const IInkStroke &>(static_cast<const D &>(*this))->abi_GetRenderingSegments(put(renderingSegments)));
     return renderingSegments;
 }
 
 template <typename D> Windows::UI::Input::Inking::InkStroke impl_IInkStroke<D>::Clone() const
 {
     Windows::UI::Input::Inking::InkStroke clonedStroke { nullptr };
-    check_hresult(shim()->abi_Clone(put(clonedStroke)));
+    check_hresult(static_cast<const IInkStroke &>(static_cast<const D &>(*this))->abi_Clone(put(clonedStroke)));
     return clonedStroke;
 }
 
 template <typename D> Windows::Foundation::Numerics::float3x2 impl_IInkStroke2<D>::PointTransform() const
 {
     Windows::Foundation::Numerics::float3x2 value {};
-    check_hresult(shim()->get_PointTransform(put(value)));
+    check_hresult(static_cast<const IInkStroke2 &>(static_cast<const D &>(*this))->get_PointTransform(put(value)));
     return value;
 }
 
 template <typename D> void impl_IInkStroke2<D>::PointTransform(const Windows::Foundation::Numerics::float3x2 & value) const
 {
-    check_hresult(shim()->put_PointTransform(get(value)));
+    check_hresult(static_cast<const IInkStroke2 &>(static_cast<const D &>(*this))->put_PointTransform(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkPoint> impl_IInkStroke2<D>::GetInkPoints() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkPoint> inkPoints;
-    check_hresult(shim()->abi_GetInkPoints(put(inkPoints)));
+    check_hresult(static_cast<const IInkStroke2 &>(static_cast<const D &>(*this))->abi_GetInkPoints(put(inkPoints)));
     return inkPoints;
 }
 
 template <typename D> void impl_IInkStrokeBuilder<D>::BeginStroke(const Windows::UI::Input::PointerPoint & pointerPoint) const
 {
-    check_hresult(shim()->abi_BeginStroke(get(pointerPoint)));
+    check_hresult(static_cast<const IInkStrokeBuilder &>(static_cast<const D &>(*this))->abi_BeginStroke(get(pointerPoint)));
 }
 
 template <typename D> Windows::UI::Input::PointerPoint impl_IInkStrokeBuilder<D>::AppendToStroke(const Windows::UI::Input::PointerPoint & pointerPoint) const
 {
     Windows::UI::Input::PointerPoint previousPointerPoint { nullptr };
-    check_hresult(shim()->abi_AppendToStroke(get(pointerPoint), put(previousPointerPoint)));
+    check_hresult(static_cast<const IInkStrokeBuilder &>(static_cast<const D &>(*this))->abi_AppendToStroke(get(pointerPoint), put(previousPointerPoint)));
     return previousPointerPoint;
 }
 
 template <typename D> Windows::UI::Input::Inking::InkStroke impl_IInkStrokeBuilder<D>::EndStroke(const Windows::UI::Input::PointerPoint & pointerPoint) const
 {
     Windows::UI::Input::Inking::InkStroke stroke { nullptr };
-    check_hresult(shim()->abi_EndStroke(get(pointerPoint), put(stroke)));
+    check_hresult(static_cast<const IInkStrokeBuilder &>(static_cast<const D &>(*this))->abi_EndStroke(get(pointerPoint), put(stroke)));
     return stroke;
 }
 
 template <typename D> Windows::UI::Input::Inking::InkStroke impl_IInkStrokeBuilder<D>::CreateStroke(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Point> & points) const
 {
     Windows::UI::Input::Inking::InkStroke stroke { nullptr };
-    check_hresult(shim()->abi_CreateStroke(get(points), put(stroke)));
+    check_hresult(static_cast<const IInkStrokeBuilder &>(static_cast<const D &>(*this))->abi_CreateStroke(get(points), put(stroke)));
     return stroke;
 }
 
 template <typename D> void impl_IInkStrokeBuilder<D>::SetDefaultDrawingAttributes(const Windows::UI::Input::Inking::InkDrawingAttributes & drawingAttributes) const
 {
-    check_hresult(shim()->abi_SetDefaultDrawingAttributes(get(drawingAttributes)));
+    check_hresult(static_cast<const IInkStrokeBuilder &>(static_cast<const D &>(*this))->abi_SetDefaultDrawingAttributes(get(drawingAttributes)));
 }
 
 template <typename D> Windows::UI::Input::Inking::InkStroke impl_IInkStrokeBuilder2<D>::CreateStrokeFromInkPoints(const Windows::Foundation::Collections::IIterable<Windows::UI::Input::Inking::InkPoint> & inkPoints, const Windows::Foundation::Numerics::float3x2 & transform) const
 {
     Windows::UI::Input::Inking::InkStroke result { nullptr };
-    check_hresult(shim()->abi_CreateStrokeFromInkPoints(get(inkPoints), get(transform), put(result)));
+    check_hresult(static_cast<const IInkStrokeBuilder2 &>(static_cast<const D &>(*this))->abi_CreateStrokeFromInkPoints(get(inkPoints), get(transform), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Rect impl_IInkRecognitionResult<D>::BoundingRect() const
 {
     Windows::Foundation::Rect boundingRect {};
-    check_hresult(shim()->get_BoundingRect(put(boundingRect)));
+    check_hresult(static_cast<const IInkRecognitionResult &>(static_cast<const D &>(*this))->get_BoundingRect(put(boundingRect)));
     return boundingRect;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_IInkRecognitionResult<D>::GetTextCandidates() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> textCandidates;
-    check_hresult(shim()->abi_GetTextCandidates(put(textCandidates)));
+    check_hresult(static_cast<const IInkRecognitionResult &>(static_cast<const D &>(*this))->abi_GetTextCandidates(put(textCandidates)));
     return textCandidates;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkStroke> impl_IInkRecognitionResult<D>::GetStrokes() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkStroke> strokes;
-    check_hresult(shim()->abi_GetStrokes(put(strokes)));
+    check_hresult(static_cast<const IInkRecognitionResult &>(static_cast<const D &>(*this))->abi_GetStrokes(put(strokes)));
     return strokes;
 }
 
 template <typename D> Windows::Foundation::Rect impl_IInkStrokeContainer<D>::BoundingRect() const
 {
     Windows::Foundation::Rect value {};
-    check_hresult(shim()->get_BoundingRect(put(value)));
+    check_hresult(static_cast<const IInkStrokeContainer &>(static_cast<const D &>(*this))->get_BoundingRect(put(value)));
     return value;
 }
 
 template <typename D> void impl_IInkStrokeContainer<D>::AddStroke(const Windows::UI::Input::Inking::InkStroke & stroke) const
 {
-    check_hresult(shim()->abi_AddStroke(get(stroke)));
+    check_hresult(static_cast<const IInkStrokeContainer &>(static_cast<const D &>(*this))->abi_AddStroke(get(stroke)));
 }
 
 template <typename D> Windows::Foundation::Rect impl_IInkStrokeContainer<D>::DeleteSelected() const
 {
     Windows::Foundation::Rect invalidatedRect {};
-    check_hresult(shim()->abi_DeleteSelected(put(invalidatedRect)));
+    check_hresult(static_cast<const IInkStrokeContainer &>(static_cast<const D &>(*this))->abi_DeleteSelected(put(invalidatedRect)));
     return invalidatedRect;
 }
 
 template <typename D> Windows::Foundation::Rect impl_IInkStrokeContainer<D>::MoveSelected(const Windows::Foundation::Point & translation) const
 {
     Windows::Foundation::Rect invalidatedRectangle {};
-    check_hresult(shim()->abi_MoveSelected(get(translation), put(invalidatedRectangle)));
+    check_hresult(static_cast<const IInkStrokeContainer &>(static_cast<const D &>(*this))->abi_MoveSelected(get(translation), put(invalidatedRectangle)));
     return invalidatedRectangle;
 }
 
 template <typename D> Windows::Foundation::Rect impl_IInkStrokeContainer<D>::SelectWithPolyLine(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Point> & polyline) const
 {
     Windows::Foundation::Rect invalidatedRectangle {};
-    check_hresult(shim()->abi_SelectWithPolyLine(get(polyline), put(invalidatedRectangle)));
+    check_hresult(static_cast<const IInkStrokeContainer &>(static_cast<const D &>(*this))->abi_SelectWithPolyLine(get(polyline), put(invalidatedRectangle)));
     return invalidatedRectangle;
 }
 
 template <typename D> Windows::Foundation::Rect impl_IInkStrokeContainer<D>::SelectWithLine(const Windows::Foundation::Point & from, const Windows::Foundation::Point & to) const
 {
     Windows::Foundation::Rect invalidatedRectangle {};
-    check_hresult(shim()->abi_SelectWithLine(get(from), get(to), put(invalidatedRectangle)));
+    check_hresult(static_cast<const IInkStrokeContainer &>(static_cast<const D &>(*this))->abi_SelectWithLine(get(from), get(to), put(invalidatedRectangle)));
     return invalidatedRectangle;
 }
 
 template <typename D> void impl_IInkStrokeContainer<D>::CopySelectedToClipboard() const
 {
-    check_hresult(shim()->abi_CopySelectedToClipboard());
+    check_hresult(static_cast<const IInkStrokeContainer &>(static_cast<const D &>(*this))->abi_CopySelectedToClipboard());
 }
 
 template <typename D> Windows::Foundation::Rect impl_IInkStrokeContainer<D>::PasteFromClipboard(const Windows::Foundation::Point & position) const
 {
     Windows::Foundation::Rect invalidatedRectangle {};
-    check_hresult(shim()->abi_PasteFromClipboard(get(position), put(invalidatedRectangle)));
+    check_hresult(static_cast<const IInkStrokeContainer &>(static_cast<const D &>(*this))->abi_PasteFromClipboard(get(position), put(invalidatedRectangle)));
     return invalidatedRectangle;
 }
 
 template <typename D> bool impl_IInkStrokeContainer<D>::CanPasteFromClipboard() const
 {
     bool canPaste {};
-    check_hresult(shim()->abi_CanPasteFromClipboard(&canPaste));
+    check_hresult(static_cast<const IInkStrokeContainer &>(static_cast<const D &>(*this))->abi_CanPasteFromClipboard(&canPaste));
     return canPaste;
 }
 
 template <typename D> Windows::Foundation::IAsyncActionWithProgress<uint64_t> impl_IInkStrokeContainer<D>::LoadAsync(const Windows::Storage::Streams::IInputStream & inputStream) const
 {
     Windows::Foundation::IAsyncActionWithProgress<uint64_t> loadAction;
-    check_hresult(shim()->abi_LoadAsync(get(inputStream), put(loadAction)));
+    check_hresult(static_cast<const IInkStrokeContainer &>(static_cast<const D &>(*this))->abi_LoadAsync(get(inputStream), put(loadAction)));
     return loadAction;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<uint32_t, uint32_t> impl_IInkStrokeContainer<D>::SaveAsync(const Windows::Storage::Streams::IOutputStream & outputStream) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<uint32_t, uint32_t> outputStreamOperation;
-    check_hresult(shim()->abi_SaveAsync(get(outputStream), put(outputStreamOperation)));
+    check_hresult(static_cast<const IInkStrokeContainer &>(static_cast<const D &>(*this))->abi_SaveAsync(get(outputStream), put(outputStreamOperation)));
     return outputStreamOperation;
 }
 
 template <typename D> void impl_IInkStrokeContainer<D>::UpdateRecognitionResults(const Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkRecognitionResult> & recognitionResults) const
 {
-    check_hresult(shim()->abi_UpdateRecognitionResults(get(recognitionResults)));
+    check_hresult(static_cast<const IInkStrokeContainer &>(static_cast<const D &>(*this))->abi_UpdateRecognitionResults(get(recognitionResults)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkStroke> impl_IInkStrokeContainer<D>::GetStrokes() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkStroke> strokeView;
-    check_hresult(shim()->abi_GetStrokes(put(strokeView)));
+    check_hresult(static_cast<const IInkStrokeContainer &>(static_cast<const D &>(*this))->abi_GetStrokes(put(strokeView)));
     return strokeView;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkRecognitionResult> impl_IInkStrokeContainer<D>::GetRecognitionResults() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkRecognitionResult> recognitionResults;
-    check_hresult(shim()->abi_GetRecognitionResults(put(recognitionResults)));
+    check_hresult(static_cast<const IInkStrokeContainer &>(static_cast<const D &>(*this))->abi_GetRecognitionResults(put(recognitionResults)));
     return recognitionResults;
 }
 
 template <typename D> void impl_IInkStrokeContainer2<D>::AddStrokes(const Windows::Foundation::Collections::IIterable<Windows::UI::Input::Inking::InkStroke> & strokes) const
 {
-    check_hresult(shim()->abi_AddStrokes(get(strokes)));
+    check_hresult(static_cast<const IInkStrokeContainer2 &>(static_cast<const D &>(*this))->abi_AddStrokes(get(strokes)));
 }
 
 template <typename D> void impl_IInkStrokeContainer2<D>::Clear() const
 {
-    check_hresult(shim()->abi_Clear());
+    check_hresult(static_cast<const IInkStrokeContainer2 &>(static_cast<const D &>(*this))->abi_Clear());
 }
 
 template <typename D> hstring impl_IInkRecognizer<D>::Name() const
 {
     hstring value;
-    check_hresult(shim()->get_Name(put(value)));
+    check_hresult(static_cast<const IInkRecognizer &>(static_cast<const D &>(*this))->get_Name(put(value)));
     return value;
 }
 
 template <typename D> void impl_IInkRecognizerContainer<D>::SetDefaultRecognizer(const Windows::UI::Input::Inking::InkRecognizer & recognizer) const
 {
-    check_hresult(shim()->abi_SetDefaultRecognizer(get(recognizer)));
+    check_hresult(static_cast<const IInkRecognizerContainer &>(static_cast<const D &>(*this))->abi_SetDefaultRecognizer(get(recognizer)));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkRecognitionResult>> impl_IInkRecognizerContainer<D>::RecognizeAsync(const Windows::UI::Input::Inking::InkStrokeContainer & strokeCollection, Windows::UI::Input::Inking::InkRecognitionTarget recognitionTarget) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkRecognitionResult>> recognitionResults;
-    check_hresult(shim()->abi_RecognizeAsync(get(strokeCollection), recognitionTarget, put(recognitionResults)));
+    check_hresult(static_cast<const IInkRecognizerContainer &>(static_cast<const D &>(*this))->abi_RecognizeAsync(get(strokeCollection), recognitionTarget, put(recognitionResults)));
     return recognitionResults;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkRecognizer> impl_IInkRecognizerContainer<D>::GetRecognizers() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkRecognizer> recognizerView;
-    check_hresult(shim()->abi_GetRecognizers(put(recognizerView)));
+    check_hresult(static_cast<const IInkRecognizerContainer &>(static_cast<const D &>(*this))->abi_GetRecognizers(put(recognizerView)));
     return recognizerView;
 }
 
 template <typename D> Windows::UI::Input::Inking::InkManipulationMode impl_IInkManager<D>::Mode() const
 {
     Windows::UI::Input::Inking::InkManipulationMode value {};
-    check_hresult(shim()->get_Mode(&value));
+    check_hresult(static_cast<const IInkManager &>(static_cast<const D &>(*this))->get_Mode(&value));
     return value;
 }
 
 template <typename D> void impl_IInkManager<D>::Mode(Windows::UI::Input::Inking::InkManipulationMode value) const
 {
-    check_hresult(shim()->put_Mode(value));
+    check_hresult(static_cast<const IInkManager &>(static_cast<const D &>(*this))->put_Mode(value));
 }
 
 template <typename D> void impl_IInkManager<D>::ProcessPointerDown(const Windows::UI::Input::PointerPoint & pointerPoint) const
 {
-    check_hresult(shim()->abi_ProcessPointerDown(get(pointerPoint)));
+    check_hresult(static_cast<const IInkManager &>(static_cast<const D &>(*this))->abi_ProcessPointerDown(get(pointerPoint)));
 }
 
 template <typename D> Windows::IInspectable impl_IInkManager<D>::ProcessPointerUpdate(const Windows::UI::Input::PointerPoint & pointerPoint) const
 {
     Windows::IInspectable updateInformation;
-    check_hresult(shim()->abi_ProcessPointerUpdate(get(pointerPoint), put(updateInformation)));
+    check_hresult(static_cast<const IInkManager &>(static_cast<const D &>(*this))->abi_ProcessPointerUpdate(get(pointerPoint), put(updateInformation)));
     return updateInformation;
 }
 
 template <typename D> Windows::Foundation::Rect impl_IInkManager<D>::ProcessPointerUp(const Windows::UI::Input::PointerPoint & pointerPoint) const
 {
     Windows::Foundation::Rect updateRectangle {};
-    check_hresult(shim()->abi_ProcessPointerUp(get(pointerPoint), put(updateRectangle)));
+    check_hresult(static_cast<const IInkManager &>(static_cast<const D &>(*this))->abi_ProcessPointerUp(get(pointerPoint), put(updateRectangle)));
     return updateRectangle;
 }
 
 template <typename D> void impl_IInkManager<D>::SetDefaultDrawingAttributes(const Windows::UI::Input::Inking::InkDrawingAttributes & drawingAttributes) const
 {
-    check_hresult(shim()->abi_SetDefaultDrawingAttributes(get(drawingAttributes)));
+    check_hresult(static_cast<const IInkManager &>(static_cast<const D &>(*this))->abi_SetDefaultDrawingAttributes(get(drawingAttributes)));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkRecognitionResult>> impl_IInkManager<D>::RecognizeAsync(Windows::UI::Input::Inking::InkRecognitionTarget recognitionTarget) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkRecognitionResult>> recognitionResults;
-    check_hresult(shim()->abi_RecognizeAsync2(recognitionTarget, put(recognitionResults)));
+    check_hresult(static_cast<const IInkManager &>(static_cast<const D &>(*this))->abi_RecognizeAsync2(recognitionTarget, put(recognitionResults)));
     return recognitionResults;
 }
 

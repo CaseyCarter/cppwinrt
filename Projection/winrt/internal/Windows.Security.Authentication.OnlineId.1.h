@@ -70,11 +70,11 @@ template <> struct traits<Windows::Security::Authentication::OnlineId::UserIdent
 
 namespace Windows::Security::Authentication::OnlineId {
 
-template <typename T> class impl_IOnlineIdAuthenticator;
-template <typename T> class impl_IOnlineIdServiceTicket;
-template <typename T> class impl_IOnlineIdServiceTicketRequest;
-template <typename T> class impl_IOnlineIdServiceTicketRequestFactory;
-template <typename T> class impl_IUserIdentity;
+template <typename T> struct impl_IOnlineIdAuthenticator;
+template <typename T> struct impl_IOnlineIdServiceTicket;
+template <typename T> struct impl_IOnlineIdServiceTicketRequest;
+template <typename T> struct impl_IOnlineIdServiceTicketRequestFactory;
+template <typename T> struct impl_IUserIdentity;
 
 }
 

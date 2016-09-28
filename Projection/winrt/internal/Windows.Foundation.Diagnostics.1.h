@@ -319,29 +319,29 @@ template <> struct traits<Windows::Foundation::Diagnostics::TracingStatusChanged
 
 namespace Windows::Foundation::Diagnostics {
 
-template <typename T> class impl_IAsyncCausalityTracerStatics;
-template <typename T> class impl_IErrorDetails;
-template <typename T> class impl_IErrorDetailsStatics;
-template <typename T> class impl_IErrorReportingSettings;
-template <typename T> class impl_IFileLoggingSession;
-template <typename T> class impl_IFileLoggingSessionFactory;
-template <typename T> class impl_ILogFileGeneratedEventArgs;
-template <typename T> class impl_ILoggingActivity;
-template <typename T> class impl_ILoggingActivity2;
-template <typename T> class impl_ILoggingActivityFactory;
-template <typename T> class impl_ILoggingChannel;
-template <typename T> class impl_ILoggingChannel2;
-template <typename T> class impl_ILoggingChannelFactory;
-template <typename T> class impl_ILoggingChannelFactory2;
-template <typename T> class impl_ILoggingChannelOptions;
-template <typename T> class impl_ILoggingChannelOptionsFactory;
-template <typename T> class impl_ILoggingFields;
-template <typename T> class impl_ILoggingOptions;
-template <typename T> class impl_ILoggingOptionsFactory;
-template <typename T> class impl_ILoggingSession;
-template <typename T> class impl_ILoggingSessionFactory;
-template <typename T> class impl_ILoggingTarget;
-template <typename T> class impl_ITracingStatusChangedEventArgs;
+template <typename T> struct impl_IAsyncCausalityTracerStatics;
+template <typename T> struct impl_IErrorDetails;
+template <typename T> struct impl_IErrorDetailsStatics;
+template <typename T> struct impl_IErrorReportingSettings;
+template <typename T> struct impl_IFileLoggingSession;
+template <typename T> struct impl_IFileLoggingSessionFactory;
+template <typename T> struct impl_ILogFileGeneratedEventArgs;
+template <typename T> struct impl_ILoggingActivity;
+template <typename T> struct impl_ILoggingActivity2;
+template <typename T> struct impl_ILoggingActivityFactory;
+template <typename T> struct impl_ILoggingChannel;
+template <typename T> struct impl_ILoggingChannel2;
+template <typename T> struct impl_ILoggingChannelFactory;
+template <typename T> struct impl_ILoggingChannelFactory2;
+template <typename T> struct impl_ILoggingChannelOptions;
+template <typename T> struct impl_ILoggingChannelOptionsFactory;
+template <typename T> struct impl_ILoggingFields;
+template <typename T> struct impl_ILoggingOptions;
+template <typename T> struct impl_ILoggingOptionsFactory;
+template <typename T> struct impl_ILoggingSession;
+template <typename T> struct impl_ILoggingSessionFactory;
+template <typename T> struct impl_ILoggingTarget;
+template <typename T> struct impl_ITracingStatusChangedEventArgs;
 
 }
 

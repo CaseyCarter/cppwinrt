@@ -51,12 +51,8 @@ template <> struct __declspec(uuid("a6997f9d-7195-5972-8ecd-1c73aa5cb312")) __de
 namespace Windows::Foundation::Diagnostics {
 
 template <typename D>
-class WINRT_EBO impl_IAsyncCausalityTracerStatics
+struct WINRT_EBO impl_IAsyncCausalityTracerStatics
 {
-    auto shim() const { return impl::shim<D, IAsyncCausalityTracerStatics>(this); }
-
-public:
-
     void TraceOperationCreation(Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, Windows::Foundation::Diagnostics::CausalitySource source, GUID platformId, uint64_t operationId, hstring_ref operationName, uint64_t relatedContext) const;
     void TraceOperationCompletion(Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, Windows::Foundation::Diagnostics::CausalitySource source, GUID platformId, uint64_t operationId, Windows::Foundation::AsyncStatus status) const;
     void TraceOperationRelation(Windows::Foundation::Diagnostics::CausalityTraceLevel traceLevel, Windows::Foundation::Diagnostics::CausalitySource source, GUID platformId, uint64_t operationId, Windows::Foundation::Diagnostics::CausalityRelation relation) const;
@@ -69,45 +65,29 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IErrorDetails
+struct WINRT_EBO impl_IErrorDetails
 {
-    auto shim() const { return impl::shim<D, IErrorDetails>(this); }
-
-public:
-
     hstring Description() const;
     hstring LongDescription() const;
     Windows::Foundation::Uri HelpUri() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IErrorDetailsStatics
+struct WINRT_EBO impl_IErrorDetailsStatics
 {
-    auto shim() const { return impl::shim<D, IErrorDetailsStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Diagnostics::ErrorDetails> CreateFromHResultAsync(int32_t errorCode) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IErrorReportingSettings
+struct WINRT_EBO impl_IErrorReportingSettings
 {
-    auto shim() const { return impl::shim<D, IErrorReportingSettings>(this); }
-
-public:
-
     void SetErrorOptions(Windows::Foundation::Diagnostics::ErrorOptions value) const;
     Windows::Foundation::Diagnostics::ErrorOptions GetErrorOptions() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFileLoggingSession
+struct WINRT_EBO impl_IFileLoggingSession
 {
-    auto shim() const { return impl::shim<D, IFileLoggingSession>(this); }
-
-public:
-
     hstring Name() const;
     void AddLoggingChannel(const Windows::Foundation::Diagnostics::ILoggingChannel & loggingChannel) const;
     void AddLoggingChannel(const Windows::Foundation::Diagnostics::ILoggingChannel & loggingChannel, Windows::Foundation::Diagnostics::LoggingLevel maxLevel) const;
@@ -120,43 +100,27 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IFileLoggingSessionFactory
+struct WINRT_EBO impl_IFileLoggingSessionFactory
 {
-    auto shim() const { return impl::shim<D, IFileLoggingSessionFactory>(this); }
-
-public:
-
     Windows::Foundation::Diagnostics::FileLoggingSession Create(hstring_ref name) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILogFileGeneratedEventArgs
+struct WINRT_EBO impl_ILogFileGeneratedEventArgs
 {
-    auto shim() const { return impl::shim<D, ILogFileGeneratedEventArgs>(this); }
-
-public:
-
     Windows::Storage::StorageFile File() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILoggingActivity
+struct WINRT_EBO impl_ILoggingActivity
 {
-    auto shim() const { return impl::shim<D, ILoggingActivity>(this); }
-
-public:
-
     hstring Name() const;
     GUID Id() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILoggingActivity2
+struct WINRT_EBO impl_ILoggingActivity2
 {
-    auto shim() const { return impl::shim<D, ILoggingActivity2>(this); }
-
-public:
-
     Windows::Foundation::Diagnostics::LoggingChannel Channel() const;
     void StopActivity(hstring_ref stopEventName) const;
     void StopActivity(hstring_ref stopEventName, const Windows::Foundation::Diagnostics::LoggingFields & fields) const;
@@ -164,23 +128,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ILoggingActivityFactory
+struct WINRT_EBO impl_ILoggingActivityFactory
 {
-    auto shim() const { return impl::shim<D, ILoggingActivityFactory>(this); }
-
-public:
-
     Windows::Foundation::Diagnostics::LoggingActivity CreateLoggingActivity(hstring_ref activityName, const Windows::Foundation::Diagnostics::ILoggingChannel & loggingChannel) const;
     Windows::Foundation::Diagnostics::LoggingActivity CreateLoggingActivityWithLevel(hstring_ref activityName, const Windows::Foundation::Diagnostics::ILoggingChannel & loggingChannel, Windows::Foundation::Diagnostics::LoggingLevel level) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILoggingChannel
+struct WINRT_EBO impl_ILoggingChannel
 {
-    auto shim() const { return impl::shim<D, ILoggingChannel>(this); }
-
-public:
-
     hstring Name() const;
     bool Enabled() const;
     Windows::Foundation::Diagnostics::LoggingLevel Level() const;
@@ -195,64 +151,40 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ILoggingChannel2
+struct WINRT_EBO impl_ILoggingChannel2
 {
-    auto shim() const { return impl::shim<D, ILoggingChannel2>(this); }
-
-public:
-
     GUID Id() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILoggingChannelFactory
+struct WINRT_EBO impl_ILoggingChannelFactory
 {
-    auto shim() const { return impl::shim<D, ILoggingChannelFactory>(this); }
-
-public:
-
     Windows::Foundation::Diagnostics::LoggingChannel Create(hstring_ref name) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILoggingChannelFactory2
+struct WINRT_EBO impl_ILoggingChannelFactory2
 {
-    auto shim() const { return impl::shim<D, ILoggingChannelFactory2>(this); }
-
-public:
-
     Windows::Foundation::Diagnostics::LoggingChannel CreateWithOptions(hstring_ref name, const Windows::Foundation::Diagnostics::LoggingChannelOptions & options) const;
     Windows::Foundation::Diagnostics::LoggingChannel CreateWithOptionsAndId(hstring_ref name, const Windows::Foundation::Diagnostics::LoggingChannelOptions & options, GUID id) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILoggingChannelOptions
+struct WINRT_EBO impl_ILoggingChannelOptions
 {
-    auto shim() const { return impl::shim<D, ILoggingChannelOptions>(this); }
-
-public:
-
     GUID Group() const;
     void Group(GUID value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILoggingChannelOptionsFactory
+struct WINRT_EBO impl_ILoggingChannelOptionsFactory
 {
-    auto shim() const { return impl::shim<D, ILoggingChannelOptionsFactory>(this); }
-
-public:
-
     Windows::Foundation::Diagnostics::LoggingChannelOptions Create(GUID group) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILoggingFields
+struct WINRT_EBO impl_ILoggingFields
 {
-    auto shim() const { return impl::shim<D, ILoggingFields>(this); }
-
-public:
-
     void Clear() const;
     void BeginStruct(hstring_ref name) const;
     void BeginStruct(hstring_ref name, int32_t tags) const;
@@ -371,12 +303,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ILoggingOptions
+struct WINRT_EBO impl_ILoggingOptions
 {
-    auto shim() const { return impl::shim<D, ILoggingOptions>(this); }
-
-public:
-
     int64_t Keywords() const;
     void Keywords(int64_t value) const;
     int32_t Tags() const;
@@ -392,22 +320,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ILoggingOptionsFactory
+struct WINRT_EBO impl_ILoggingOptionsFactory
 {
-    auto shim() const { return impl::shim<D, ILoggingOptionsFactory>(this); }
-
-public:
-
     Windows::Foundation::Diagnostics::LoggingOptions CreateWithKeywords(int64_t keywords) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILoggingSession
+struct WINRT_EBO impl_ILoggingSession
 {
-    auto shim() const { return impl::shim<D, ILoggingSession>(this); }
-
-public:
-
     hstring Name() const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> SaveToFileAsync(const Windows::Storage::IStorageFolder & folder, hstring_ref fileName) const;
     void AddLoggingChannel(const Windows::Foundation::Diagnostics::ILoggingChannel & loggingChannel) const;
@@ -416,22 +336,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ILoggingSessionFactory
+struct WINRT_EBO impl_ILoggingSessionFactory
 {
-    auto shim() const { return impl::shim<D, ILoggingSessionFactory>(this); }
-
-public:
-
     Windows::Foundation::Diagnostics::LoggingSession Create(hstring_ref name) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILoggingTarget
+struct WINRT_EBO impl_ILoggingTarget
 {
-    auto shim() const { return impl::shim<D, ILoggingTarget>(this); }
-
-public:
-
     bool IsEnabled() const;
     bool IsEnabled(Windows::Foundation::Diagnostics::LoggingLevel level) const;
     bool IsEnabled(Windows::Foundation::Diagnostics::LoggingLevel level, int64_t keywords) const;
@@ -446,12 +358,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ITracingStatusChangedEventArgs
+struct WINRT_EBO impl_ITracingStatusChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, ITracingStatusChangedEventArgs>(this); }
-
-public:
-
     bool Enabled() const;
     Windows::Foundation::Diagnostics::CausalityTraceLevel TraceLevel() const;
 };

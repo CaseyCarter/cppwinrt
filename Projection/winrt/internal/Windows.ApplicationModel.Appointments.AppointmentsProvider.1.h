@@ -70,11 +70,11 @@ template <> struct traits<Windows::ApplicationModel::Appointments::AppointmentsP
 
 namespace Windows::ApplicationModel::Appointments::AppointmentsProvider {
 
-template <typename T> class impl_IAddAppointmentOperation;
-template <typename T> class impl_IAppointmentsProviderLaunchActionVerbsStatics;
-template <typename T> class impl_IAppointmentsProviderLaunchActionVerbsStatics2;
-template <typename T> class impl_IRemoveAppointmentOperation;
-template <typename T> class impl_IReplaceAppointmentOperation;
+template <typename T> struct impl_IAddAppointmentOperation;
+template <typename T> struct impl_IAppointmentsProviderLaunchActionVerbsStatics;
+template <typename T> struct impl_IAppointmentsProviderLaunchActionVerbsStatics2;
+template <typename T> struct impl_IRemoveAppointmentOperation;
+template <typename T> struct impl_IReplaceAppointmentOperation;
 
 }
 

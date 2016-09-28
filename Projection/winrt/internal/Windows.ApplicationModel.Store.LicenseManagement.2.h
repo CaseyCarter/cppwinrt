@@ -75,23 +75,15 @@ template <> struct __declspec(uuid("ac935021-e04b-5226-8119-5b73d0b8be5b")) __de
 namespace Windows::ApplicationModel::Store::LicenseManagement {
 
 template <typename D>
-class WINRT_EBO impl_ILicenseManagerStatics
+struct WINRT_EBO impl_ILicenseManagerStatics
 {
-    auto shim() const { return impl::shim<D, ILicenseManagerStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction AddLicenseAsync(const Windows::Storage::Streams::IBuffer & license) const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionResult> GetSatisfactionInfosAsync(const Windows::Foundation::Collections::IIterable<hstring> & contentIds, const Windows::Foundation::Collections::IIterable<hstring> & keyIds) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILicenseSatisfactionInfo
+struct WINRT_EBO impl_ILicenseSatisfactionInfo
 {
-    auto shim() const { return impl::shim<D, ILicenseSatisfactionInfo>(this); }
-
-public:
-
     bool SatisfiedByDevice() const;
     bool SatisfiedByOpenLicense() const;
     bool SatisfiedByTrial() const;
@@ -102,12 +94,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ILicenseSatisfactionResult
+struct WINRT_EBO impl_ILicenseSatisfactionResult
 {
-    auto shim() const { return impl::shim<D, ILicenseSatisfactionResult>(this); }
-
-public:
-
     Windows::Foundation::Collections::IMapView<hstring, Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionInfo> LicenseSatisfactionInfos() const;
     HRESULT ExtendedError() const;
 };

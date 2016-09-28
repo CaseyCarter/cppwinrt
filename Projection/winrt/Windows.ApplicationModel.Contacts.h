@@ -5526,483 +5526,483 @@ namespace Windows::ApplicationModel::Contacts {
 template <typename D> Windows::ApplicationModel::Contacts::ContactCardHeaderKind impl_IContactCardOptions<D>::HeaderKind() const
 {
     Windows::ApplicationModel::Contacts::ContactCardHeaderKind value {};
-    check_hresult(shim()->get_HeaderKind(&value));
+    check_hresult(static_cast<const IContactCardOptions &>(static_cast<const D &>(*this))->get_HeaderKind(&value));
     return value;
 }
 
 template <typename D> void impl_IContactCardOptions<D>::HeaderKind(Windows::ApplicationModel::Contacts::ContactCardHeaderKind value) const
 {
-    check_hresult(shim()->put_HeaderKind(value));
+    check_hresult(static_cast<const IContactCardOptions &>(static_cast<const D &>(*this))->put_HeaderKind(value));
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactCardTabKind impl_IContactCardOptions<D>::InitialTabKind() const
 {
     Windows::ApplicationModel::Contacts::ContactCardTabKind value {};
-    check_hresult(shim()->get_InitialTabKind(&value));
+    check_hresult(static_cast<const IContactCardOptions &>(static_cast<const D &>(*this))->get_InitialTabKind(&value));
     return value;
 }
 
 template <typename D> void impl_IContactCardOptions<D>::InitialTabKind(Windows::ApplicationModel::Contacts::ContactCardTabKind value) const
 {
-    check_hresult(shim()->put_InitialTabKind(value));
+    check_hresult(static_cast<const IContactCardOptions &>(static_cast<const D &>(*this))->put_InitialTabKind(value));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IContactCardOptions2<D>::ServerSearchContactListIds() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(shim()->get_ServerSearchContactListIds(put(value)));
+    check_hresult(static_cast<const IContactCardOptions2 &>(static_cast<const D &>(*this))->get_ServerSearchContactListIds(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::ViewManagement::ViewSizePreference impl_IFullContactCardOptions<D>::DesiredRemainingView() const
 {
     Windows::UI::ViewManagement::ViewSizePreference value {};
-    check_hresult(shim()->get_DesiredRemainingView(&value));
+    check_hresult(static_cast<const IFullContactCardOptions &>(static_cast<const D &>(*this))->get_DesiredRemainingView(&value));
     return value;
 }
 
 template <typename D> void impl_IFullContactCardOptions<D>::DesiredRemainingView(Windows::UI::ViewManagement::ViewSizePreference value) const
 {
-    check_hresult(shim()->put_DesiredRemainingView(value));
+    check_hresult(static_cast<const IFullContactCardOptions &>(static_cast<const D &>(*this))->put_DesiredRemainingView(value));
 }
 
 template <typename D> void impl_IContactManagerStatics<D>::ShowContactCard(const Windows::ApplicationModel::Contacts::Contact & contact, const Windows::Foundation::Rect & selection) const
 {
-    check_hresult(shim()->abi_ShowContactCard(get(contact), get(selection)));
+    check_hresult(static_cast<const IContactManagerStatics &>(static_cast<const D &>(*this))->abi_ShowContactCard(get(contact), get(selection)));
 }
 
 template <typename D> void impl_IContactManagerStatics<D>::ShowContactCard(const Windows::ApplicationModel::Contacts::Contact & contact, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement) const
 {
-    check_hresult(shim()->abi_ShowContactCardWithPlacement(get(contact), get(selection), preferredPlacement));
+    check_hresult(static_cast<const IContactManagerStatics &>(static_cast<const D &>(*this))->abi_ShowContactCardWithPlacement(get(contact), get(selection), preferredPlacement));
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactCardDelayedDataLoader impl_IContactManagerStatics<D>::ShowDelayLoadedContactCard(const Windows::ApplicationModel::Contacts::Contact & contact, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement) const
 {
     Windows::ApplicationModel::Contacts::ContactCardDelayedDataLoader dataLoader { nullptr };
-    check_hresult(shim()->abi_ShowDelayLoadedContactCard(get(contact), get(selection), preferredPlacement, put(dataLoader)));
+    check_hresult(static_cast<const IContactManagerStatics &>(static_cast<const D &>(*this))->abi_ShowDelayLoadedContactCard(get(contact), get(selection), preferredPlacement, put(dataLoader)));
     return dataLoader;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactStore> impl_IContactManagerStatics2<D>::RequestStoreAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactStore> store;
-    check_hresult(shim()->abi_RequestStoreAsync(put(store)));
+    check_hresult(static_cast<const IContactManagerStatics2 &>(static_cast<const D &>(*this))->abi_RequestStoreAsync(put(store)));
     return store;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::RandomAccessStreamReference> impl_IContactManagerStatics3<D>::ConvertContactToVCardAsync(const Windows::ApplicationModel::Contacts::Contact & contact) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::RandomAccessStreamReference> vCard;
-    check_hresult(shim()->abi_ConvertContactToVCardAsync(get(contact), put(vCard)));
+    check_hresult(static_cast<const IContactManagerStatics3 &>(static_cast<const D &>(*this))->abi_ConvertContactToVCardAsync(get(contact), put(vCard)));
     return vCard;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::RandomAccessStreamReference> impl_IContactManagerStatics3<D>::ConvertContactToVCardAsync(const Windows::ApplicationModel::Contacts::Contact & contact, uint32_t maxBytes) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::RandomAccessStreamReference> vCard;
-    check_hresult(shim()->abi_ConvertContactToVCardAsyncWithMaxBytes(get(contact), maxBytes, put(vCard)));
+    check_hresult(static_cast<const IContactManagerStatics3 &>(static_cast<const D &>(*this))->abi_ConvertContactToVCardAsyncWithMaxBytes(get(contact), maxBytes, put(vCard)));
     return vCard;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> impl_IContactManagerStatics3<D>::ConvertVCardToContactAsync(const Windows::Storage::Streams::IRandomAccessStreamReference & vCard) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> contact;
-    check_hresult(shim()->abi_ConvertVCardToContactAsync(get(vCard), put(contact)));
+    check_hresult(static_cast<const IContactManagerStatics3 &>(static_cast<const D &>(*this))->abi_ConvertVCardToContactAsync(get(vCard), put(contact)));
     return contact;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactStore> impl_IContactManagerStatics3<D>::RequestStoreAsync(Windows::ApplicationModel::Contacts::ContactStoreAccessType accessType) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactStore> store;
-    check_hresult(shim()->abi_RequestStoreAsyncWithAccessType(accessType, put(store)));
+    check_hresult(static_cast<const IContactManagerStatics3 &>(static_cast<const D &>(*this))->abi_RequestStoreAsyncWithAccessType(accessType, put(store)));
     return store;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationStore> impl_IContactManagerStatics3<D>::RequestAnnotationStoreAsync(Windows::ApplicationModel::Contacts::ContactAnnotationStoreAccessType accessType) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationStore> store;
-    check_hresult(shim()->abi_RequestAnnotationStoreAsync(accessType, put(store)));
+    check_hresult(static_cast<const IContactManagerStatics3 &>(static_cast<const D &>(*this))->abi_RequestAnnotationStoreAsync(accessType, put(store)));
     return store;
 }
 
 template <typename D> bool impl_IContactManagerStatics3<D>::IsShowContactCardSupported() const
 {
     bool result {};
-    check_hresult(shim()->abi_IsShowContactCardSupported(&result));
+    check_hresult(static_cast<const IContactManagerStatics3 &>(static_cast<const D &>(*this))->abi_IsShowContactCardSupported(&result));
     return result;
 }
 
 template <typename D> void impl_IContactManagerStatics3<D>::ShowContactCard(const Windows::ApplicationModel::Contacts::Contact & contact, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement, const Windows::ApplicationModel::Contacts::ContactCardOptions & contactCardOptions) const
 {
-    check_hresult(shim()->abi_ShowContactCardWithOptions(get(contact), get(selection), preferredPlacement, get(contactCardOptions)));
+    check_hresult(static_cast<const IContactManagerStatics3 &>(static_cast<const D &>(*this))->abi_ShowContactCardWithOptions(get(contact), get(selection), preferredPlacement, get(contactCardOptions)));
 }
 
 template <typename D> bool impl_IContactManagerStatics3<D>::IsShowDelayLoadedContactCardSupported() const
 {
     bool result {};
-    check_hresult(shim()->abi_IsShowDelayLoadedContactCardSupported(&result));
+    check_hresult(static_cast<const IContactManagerStatics3 &>(static_cast<const D &>(*this))->abi_IsShowDelayLoadedContactCardSupported(&result));
     return result;
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactCardDelayedDataLoader impl_IContactManagerStatics3<D>::ShowDelayLoadedContactCard(const Windows::ApplicationModel::Contacts::Contact & contact, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement, const Windows::ApplicationModel::Contacts::ContactCardOptions & contactCardOptions) const
 {
     Windows::ApplicationModel::Contacts::ContactCardDelayedDataLoader dataLoader { nullptr };
-    check_hresult(shim()->abi_ShowDelayLoadedContactCardWithOptions(get(contact), get(selection), preferredPlacement, get(contactCardOptions), put(dataLoader)));
+    check_hresult(static_cast<const IContactManagerStatics3 &>(static_cast<const D &>(*this))->abi_ShowDelayLoadedContactCardWithOptions(get(contact), get(selection), preferredPlacement, get(contactCardOptions), put(dataLoader)));
     return dataLoader;
 }
 
 template <typename D> void impl_IContactManagerStatics3<D>::ShowFullContactCard(const Windows::ApplicationModel::Contacts::Contact & contact, const Windows::ApplicationModel::Contacts::FullContactCardOptions & fullContactCardOptions) const
 {
-    check_hresult(shim()->abi_ShowFullContactCard(get(contact), get(fullContactCardOptions)));
+    check_hresult(static_cast<const IContactManagerStatics3 &>(static_cast<const D &>(*this))->abi_ShowFullContactCard(get(contact), get(fullContactCardOptions)));
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactNameOrder impl_IContactManagerStatics3<D>::SystemDisplayNameOrder() const
 {
     Windows::ApplicationModel::Contacts::ContactNameOrder value {};
-    check_hresult(shim()->get_SystemDisplayNameOrder(&value));
+    check_hresult(static_cast<const IContactManagerStatics3 &>(static_cast<const D &>(*this))->get_SystemDisplayNameOrder(&value));
     return value;
 }
 
 template <typename D> void impl_IContactManagerStatics3<D>::SystemDisplayNameOrder(Windows::ApplicationModel::Contacts::ContactNameOrder value) const
 {
-    check_hresult(shim()->put_SystemDisplayNameOrder(value));
+    check_hresult(static_cast<const IContactManagerStatics3 &>(static_cast<const D &>(*this))->put_SystemDisplayNameOrder(value));
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactNameOrder impl_IContactManagerStatics3<D>::SystemSortOrder() const
 {
     Windows::ApplicationModel::Contacts::ContactNameOrder value {};
-    check_hresult(shim()->get_SystemSortOrder(&value));
+    check_hresult(static_cast<const IContactManagerStatics3 &>(static_cast<const D &>(*this))->get_SystemSortOrder(&value));
     return value;
 }
 
 template <typename D> void impl_IContactManagerStatics3<D>::SystemSortOrder(Windows::ApplicationModel::Contacts::ContactNameOrder value) const
 {
-    check_hresult(shim()->put_SystemSortOrder(value));
+    check_hresult(static_cast<const IContactManagerStatics3 &>(static_cast<const D &>(*this))->put_SystemSortOrder(value));
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactManagerForUser impl_IContactManagerStatics4<D>::GetForUser(const Windows::System::User & user) const
 {
     Windows::ApplicationModel::Contacts::ContactManagerForUser result { nullptr };
-    check_hresult(shim()->abi_GetForUser(get(user), put(result)));
+    check_hresult(static_cast<const IContactManagerStatics4 &>(static_cast<const D &>(*this))->abi_GetForUser(get(user), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::RandomAccessStreamReference> impl_IContactManagerForUser<D>::ConvertContactToVCardAsync(const Windows::ApplicationModel::Contacts::Contact & contact) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::RandomAccessStreamReference> result;
-    check_hresult(shim()->abi_ConvertContactToVCardAsync(get(contact), put(result)));
+    check_hresult(static_cast<const IContactManagerForUser &>(static_cast<const D &>(*this))->abi_ConvertContactToVCardAsync(get(contact), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::RandomAccessStreamReference> impl_IContactManagerForUser<D>::ConvertContactToVCardAsync(const Windows::ApplicationModel::Contacts::Contact & contact, uint32_t maxBytes) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::RandomAccessStreamReference> result;
-    check_hresult(shim()->abi_ConvertContactToVCardAsyncWithMaxBytes(get(contact), maxBytes, put(result)));
+    check_hresult(static_cast<const IContactManagerForUser &>(static_cast<const D &>(*this))->abi_ConvertContactToVCardAsyncWithMaxBytes(get(contact), maxBytes, put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> impl_IContactManagerForUser<D>::ConvertVCardToContactAsync(const Windows::Storage::Streams::IRandomAccessStreamReference & vCard) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> result;
-    check_hresult(shim()->abi_ConvertVCardToContactAsync(get(vCard), put(result)));
+    check_hresult(static_cast<const IContactManagerForUser &>(static_cast<const D &>(*this))->abi_ConvertVCardToContactAsync(get(vCard), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactStore> impl_IContactManagerForUser<D>::RequestStoreAsync(Windows::ApplicationModel::Contacts::ContactStoreAccessType accessType) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactStore> result;
-    check_hresult(shim()->abi_RequestStoreAsync(accessType, put(result)));
+    check_hresult(static_cast<const IContactManagerForUser &>(static_cast<const D &>(*this))->abi_RequestStoreAsync(accessType, put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationStore> impl_IContactManagerForUser<D>::RequestAnnotationStoreAsync(Windows::ApplicationModel::Contacts::ContactAnnotationStoreAccessType accessType) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationStore> result;
-    check_hresult(shim()->abi_RequestAnnotationStoreAsync(accessType, put(result)));
+    check_hresult(static_cast<const IContactManagerForUser &>(static_cast<const D &>(*this))->abi_RequestAnnotationStoreAsync(accessType, put(result)));
     return result;
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactNameOrder impl_IContactManagerForUser<D>::SystemDisplayNameOrder() const
 {
     Windows::ApplicationModel::Contacts::ContactNameOrder value {};
-    check_hresult(shim()->get_SystemDisplayNameOrder(&value));
+    check_hresult(static_cast<const IContactManagerForUser &>(static_cast<const D &>(*this))->get_SystemDisplayNameOrder(&value));
     return value;
 }
 
 template <typename D> void impl_IContactManagerForUser<D>::SystemDisplayNameOrder(Windows::ApplicationModel::Contacts::ContactNameOrder value) const
 {
-    check_hresult(shim()->put_SystemDisplayNameOrder(value));
+    check_hresult(static_cast<const IContactManagerForUser &>(static_cast<const D &>(*this))->put_SystemDisplayNameOrder(value));
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactNameOrder impl_IContactManagerForUser<D>::SystemSortOrder() const
 {
     Windows::ApplicationModel::Contacts::ContactNameOrder value {};
-    check_hresult(shim()->get_SystemSortOrder(&value));
+    check_hresult(static_cast<const IContactManagerForUser &>(static_cast<const D &>(*this))->get_SystemSortOrder(&value));
     return value;
 }
 
 template <typename D> void impl_IContactManagerForUser<D>::SystemSortOrder(Windows::ApplicationModel::Contacts::ContactNameOrder value) const
 {
-    check_hresult(shim()->put_SystemSortOrder(value));
+    check_hresult(static_cast<const IContactManagerForUser &>(static_cast<const D &>(*this))->put_SystemSortOrder(value));
 }
 
 template <typename D> Windows::System::User impl_IContactManagerForUser<D>::User() const
 {
     Windows::System::User value { nullptr };
-    check_hresult(shim()->get_User(put(value)));
+    check_hresult(static_cast<const IContactManagerForUser &>(static_cast<const D &>(*this))->get_User(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::Contact>> impl_IAggregateContactManager<D>::FindRawContactsAsync(const Windows::ApplicationModel::Contacts::Contact & contact) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::Contact>> value;
-    check_hresult(shim()->abi_FindRawContactsAsync(get(contact), put(value)));
+    check_hresult(static_cast<const IAggregateContactManager &>(static_cast<const D &>(*this))->abi_FindRawContactsAsync(get(contact), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> impl_IAggregateContactManager<D>::TryLinkContactsAsync(const Windows::ApplicationModel::Contacts::Contact & primaryContact, const Windows::ApplicationModel::Contacts::Contact & secondaryContact) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> contact;
-    check_hresult(shim()->abi_TryLinkContactsAsync(get(primaryContact), get(secondaryContact), put(contact)));
+    check_hresult(static_cast<const IAggregateContactManager &>(static_cast<const D &>(*this))->abi_TryLinkContactsAsync(get(primaryContact), get(secondaryContact), put(contact)));
     return contact;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IAggregateContactManager<D>::UnlinkRawContactAsync(const Windows::ApplicationModel::Contacts::Contact & contact) const
 {
     Windows::Foundation::IAsyncAction value;
-    check_hresult(shim()->abi_UnlinkRawContactAsync(get(contact), put(value)));
+    check_hresult(static_cast<const IAggregateContactManager &>(static_cast<const D &>(*this))->abi_UnlinkRawContactAsync(get(contact), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAggregateContactManager<D>::TrySetPreferredSourceForPictureAsync(const Windows::ApplicationModel::Contacts::Contact & aggregateContact, const Windows::ApplicationModel::Contacts::Contact & rawContact) const
 {
     Windows::Foundation::IAsyncOperation<bool> value;
-    check_hresult(shim()->abi_TrySetPreferredSourceForPictureAsync(get(aggregateContact), get(rawContact), put(value)));
+    check_hresult(static_cast<const IAggregateContactManager &>(static_cast<const D &>(*this))->abi_TrySetPreferredSourceForPictureAsync(get(aggregateContact), get(rawContact), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IAggregateContactManager2<D>::SetRemoteIdentificationInformationAsync(hstring_ref contactListId, hstring_ref remoteSourceId, hstring_ref accountId) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(shim()->abi_SetRemoteIdentificationInformationAsync(get(contactListId), get(remoteSourceId), get(accountId), put(result)));
+    check_hresult(static_cast<const IAggregateContactManager2 &>(static_cast<const D &>(*this))->abi_SetRemoteIdentificationInformationAsync(get(contactListId), get(remoteSourceId), get(accountId), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> impl_IContactAnnotationStore<D>::FindContactIdsByEmailAsync(hstring_ref emailAddress) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> contactIds;
-    check_hresult(shim()->abi_FindContactIdsByEmailAsync(get(emailAddress), put(contactIds)));
+    check_hresult(static_cast<const IContactAnnotationStore &>(static_cast<const D &>(*this))->abi_FindContactIdsByEmailAsync(get(emailAddress), put(contactIds)));
     return contactIds;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> impl_IContactAnnotationStore<D>::FindContactIdsByPhoneNumberAsync(hstring_ref phoneNumber) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> contactIds;
-    check_hresult(shim()->abi_FindContactIdsByPhoneNumberAsync(get(phoneNumber), put(contactIds)));
+    check_hresult(static_cast<const IContactAnnotationStore &>(static_cast<const D &>(*this))->abi_FindContactIdsByPhoneNumberAsync(get(phoneNumber), put(contactIds)));
     return contactIds;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactAnnotation>> impl_IContactAnnotationStore<D>::FindAnnotationsForContactAsync(const Windows::ApplicationModel::Contacts::Contact & contact) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactAnnotation>> annotations;
-    check_hresult(shim()->abi_FindAnnotationsForContactAsync(get(contact), put(annotations)));
+    check_hresult(static_cast<const IContactAnnotationStore &>(static_cast<const D &>(*this))->abi_FindAnnotationsForContactAsync(get(contact), put(annotations)));
     return annotations;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IContactAnnotationStore<D>::DisableAnnotationAsync(const Windows::ApplicationModel::Contacts::ContactAnnotation & annotation) const
 {
     Windows::Foundation::IAsyncAction value;
-    check_hresult(shim()->abi_DisableAnnotationAsync(get(annotation), put(value)));
+    check_hresult(static_cast<const IContactAnnotationStore &>(static_cast<const D &>(*this))->abi_DisableAnnotationAsync(get(annotation), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationList> impl_IContactAnnotationStore<D>::CreateAnnotationListAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationList> value;
-    check_hresult(shim()->abi_CreateAnnotationListAsync(put(value)));
+    check_hresult(static_cast<const IContactAnnotationStore &>(static_cast<const D &>(*this))->abi_CreateAnnotationListAsync(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationList> impl_IContactAnnotationStore<D>::CreateAnnotationListAsync(hstring_ref userDataAccountId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationList> value;
-    check_hresult(shim()->abi_CreateAnnotationListInAccountAsync(get(userDataAccountId), put(value)));
+    check_hresult(static_cast<const IContactAnnotationStore &>(static_cast<const D &>(*this))->abi_CreateAnnotationListInAccountAsync(get(userDataAccountId), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationList> impl_IContactAnnotationStore<D>::GetAnnotationListAsync(hstring_ref annotationListId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotationList> value;
-    check_hresult(shim()->abi_GetAnnotationListAsync(get(annotationListId), put(value)));
+    check_hresult(static_cast<const IContactAnnotationStore &>(static_cast<const D &>(*this))->abi_GetAnnotationListAsync(get(annotationListId), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactAnnotationList>> impl_IContactAnnotationStore<D>::FindAnnotationListsAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactAnnotationList>> lists;
-    check_hresult(shim()->abi_FindAnnotationListsAsync(put(lists)));
+    check_hresult(static_cast<const IContactAnnotationStore &>(static_cast<const D &>(*this))->abi_FindAnnotationListsAsync(put(lists)));
     return lists;
 }
 
 template <typename D> hstring impl_IContactAnnotationList<D>::Id() const
 {
     hstring value;
-    check_hresult(shim()->get_Id(put(value)));
+    check_hresult(static_cast<const IContactAnnotationList &>(static_cast<const D &>(*this))->get_Id(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IContactAnnotationList<D>::ProviderPackageFamilyName() const
 {
     hstring value;
-    check_hresult(shim()->get_ProviderPackageFamilyName(put(value)));
+    check_hresult(static_cast<const IContactAnnotationList &>(static_cast<const D &>(*this))->get_ProviderPackageFamilyName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IContactAnnotationList<D>::UserDataAccountId() const
 {
     hstring value;
-    check_hresult(shim()->get_UserDataAccountId(put(value)));
+    check_hresult(static_cast<const IContactAnnotationList &>(static_cast<const D &>(*this))->get_UserDataAccountId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IContactAnnotationList<D>::DeleteAsync() const
 {
     Windows::Foundation::IAsyncAction value;
-    check_hresult(shim()->abi_DeleteAsync(put(value)));
+    check_hresult(static_cast<const IContactAnnotationList &>(static_cast<const D &>(*this))->abi_DeleteAsync(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IContactAnnotationList<D>::TrySaveAnnotationAsync(const Windows::ApplicationModel::Contacts::ContactAnnotation & annotation) const
 {
     Windows::Foundation::IAsyncOperation<bool> ppResult;
-    check_hresult(shim()->abi_TrySaveAnnotationAsync(get(annotation), put(ppResult)));
+    check_hresult(static_cast<const IContactAnnotationList &>(static_cast<const D &>(*this))->abi_TrySaveAnnotationAsync(get(annotation), put(ppResult)));
     return ppResult;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotation> impl_IContactAnnotationList<D>::GetAnnotationAsync(hstring_ref annotationId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactAnnotation> annotation;
-    check_hresult(shim()->abi_GetAnnotationAsync(get(annotationId), put(annotation)));
+    check_hresult(static_cast<const IContactAnnotationList &>(static_cast<const D &>(*this))->abi_GetAnnotationAsync(get(annotationId), put(annotation)));
     return annotation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactAnnotation>> impl_IContactAnnotationList<D>::FindAnnotationsByRemoteIdAsync(hstring_ref remoteId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactAnnotation>> annotations;
-    check_hresult(shim()->abi_FindAnnotationsByRemoteIdAsync(get(remoteId), put(annotations)));
+    check_hresult(static_cast<const IContactAnnotationList &>(static_cast<const D &>(*this))->abi_FindAnnotationsByRemoteIdAsync(get(remoteId), put(annotations)));
     return annotations;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactAnnotation>> impl_IContactAnnotationList<D>::FindAnnotationsAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactAnnotation>> annotations;
-    check_hresult(shim()->abi_FindAnnotationsAsync(put(annotations)));
+    check_hresult(static_cast<const IContactAnnotationList &>(static_cast<const D &>(*this))->abi_FindAnnotationsAsync(put(annotations)));
     return annotations;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IContactAnnotationList<D>::DeleteAnnotationAsync(const Windows::ApplicationModel::Contacts::ContactAnnotation & annotation) const
 {
     Windows::Foundation::IAsyncAction value;
-    check_hresult(shim()->abi_DeleteAnnotationAsync(get(annotation), put(value)));
+    check_hresult(static_cast<const IContactAnnotationList &>(static_cast<const D &>(*this))->abi_DeleteAnnotationAsync(get(annotation), put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IContactAnnotation<D>::Id() const
 {
     hstring value;
-    check_hresult(shim()->get_Id(put(value)));
+    check_hresult(static_cast<const IContactAnnotation &>(static_cast<const D &>(*this))->get_Id(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IContactAnnotation<D>::AnnotationListId() const
 {
     hstring value;
-    check_hresult(shim()->get_AnnotationListId(put(value)));
+    check_hresult(static_cast<const IContactAnnotation &>(static_cast<const D &>(*this))->get_AnnotationListId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IContactAnnotation<D>::ContactId() const
 {
     hstring value;
-    check_hresult(shim()->get_ContactId(put(value)));
+    check_hresult(static_cast<const IContactAnnotation &>(static_cast<const D &>(*this))->get_ContactId(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactAnnotation<D>::ContactId(hstring_ref value) const
 {
-    check_hresult(shim()->put_ContactId(get(value)));
+    check_hresult(static_cast<const IContactAnnotation &>(static_cast<const D &>(*this))->put_ContactId(get(value)));
 }
 
 template <typename D> hstring impl_IContactAnnotation<D>::RemoteId() const
 {
     hstring value;
-    check_hresult(shim()->get_RemoteId(put(value)));
+    check_hresult(static_cast<const IContactAnnotation &>(static_cast<const D &>(*this))->get_RemoteId(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactAnnotation<D>::RemoteId(hstring_ref value) const
 {
-    check_hresult(shim()->put_RemoteId(get(value)));
+    check_hresult(static_cast<const IContactAnnotation &>(static_cast<const D &>(*this))->put_RemoteId(get(value)));
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactAnnotationOperations impl_IContactAnnotation<D>::SupportedOperations() const
 {
     Windows::ApplicationModel::Contacts::ContactAnnotationOperations value {};
-    check_hresult(shim()->get_SupportedOperations(&value));
+    check_hresult(static_cast<const IContactAnnotation &>(static_cast<const D &>(*this))->get_SupportedOperations(&value));
     return value;
 }
 
 template <typename D> void impl_IContactAnnotation<D>::SupportedOperations(Windows::ApplicationModel::Contacts::ContactAnnotationOperations value) const
 {
-    check_hresult(shim()->put_SupportedOperations(value));
+    check_hresult(static_cast<const IContactAnnotation &>(static_cast<const D &>(*this))->put_SupportedOperations(value));
 }
 
 template <typename D> bool impl_IContactAnnotation<D>::IsDisabled() const
 {
     bool value {};
-    check_hresult(shim()->get_IsDisabled(&value));
+    check_hresult(static_cast<const IContactAnnotation &>(static_cast<const D &>(*this))->get_IsDisabled(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::ValueSet impl_IContactAnnotation<D>::ProviderProperties() const
 {
     Windows::Foundation::Collections::ValueSet value { nullptr };
-    check_hresult(shim()->get_ProviderProperties(put(value)));
+    check_hresult(static_cast<const IContactAnnotation &>(static_cast<const D &>(*this))->get_ProviderProperties(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::Contact>> impl_IContactStore<D>::FindContactsAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::Contact>> contacts;
-    check_hresult(shim()->abi_FindContactsAsync(put(contacts)));
+    check_hresult(static_cast<const IContactStore &>(static_cast<const D &>(*this))->abi_FindContactsAsync(put(contacts)));
     return contacts;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::Contact>> impl_IContactStore<D>::FindContactsAsync(hstring_ref searchText) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::Contact>> contacts;
-    check_hresult(shim()->abi_FindContactsWithSearchTextAsync(get(searchText), put(contacts)));
+    check_hresult(static_cast<const IContactStore &>(static_cast<const D &>(*this))->abi_FindContactsWithSearchTextAsync(get(searchText), put(contacts)));
     return contacts;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> impl_IContactStore<D>::GetContactAsync(hstring_ref contactId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> contacts;
-    check_hresult(shim()->abi_GetContactAsync(get(contactId), put(contacts)));
+    check_hresult(static_cast<const IContactStore &>(static_cast<const D &>(*this))->abi_GetContactAsync(get(contactId), put(contacts)));
     return contacts;
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactChangeTracker impl_IContactStore2<D>::ChangeTracker() const
 {
     Windows::ApplicationModel::Contacts::ContactChangeTracker value { nullptr };
-    check_hresult(shim()->get_ChangeTracker(put(value)));
+    check_hresult(static_cast<const IContactStore2 &>(static_cast<const D &>(*this))->get_ChangeTracker(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IContactStore2<D>::ContactChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactStore, Windows::ApplicationModel::Contacts::ContactChangedEventArgs> & value) const
 {
     event_token returnValue {};
-    check_hresult(shim()->add_ContactChanged(get(value), &returnValue));
+    check_hresult(static_cast<const IContactStore2 &>(static_cast<const D &>(*this))->add_ContactChanged(get(value), &returnValue));
     return returnValue;
 }
 
@@ -6013,159 +6013,159 @@ template <typename D> event_revoker<IContactStore2> impl_IContactStore2<D>::Cont
 
 template <typename D> void impl_IContactStore2<D>::ContactChanged(event_token value) const
 {
-    check_hresult(shim()->remove_ContactChanged(value));
+    check_hresult(static_cast<const IContactStore2 &>(static_cast<const D &>(*this))->remove_ContactChanged(value));
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::AggregateContactManager impl_IContactStore2<D>::AggregateContactManager() const
 {
     Windows::ApplicationModel::Contacts::AggregateContactManager value { nullptr };
-    check_hresult(shim()->get_AggregateContactManager(put(value)));
+    check_hresult(static_cast<const IContactStore2 &>(static_cast<const D &>(*this))->get_AggregateContactManager(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactList>> impl_IContactStore2<D>::FindContactListsAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactList>> value;
-    check_hresult(shim()->abi_FindContactListsAsync(put(value)));
+    check_hresult(static_cast<const IContactStore2 &>(static_cast<const D &>(*this))->abi_FindContactListsAsync(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactList> impl_IContactStore2<D>::GetContactListAsync(hstring_ref contactListId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactList> value;
-    check_hresult(shim()->abi_GetContactListAsync(get(contactListId), put(value)));
+    check_hresult(static_cast<const IContactStore2 &>(static_cast<const D &>(*this))->abi_GetContactListAsync(get(contactListId), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactList> impl_IContactStore2<D>::CreateContactListAsync(hstring_ref displayName) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactList> value;
-    check_hresult(shim()->abi_CreateContactListAsync(get(displayName), put(value)));
+    check_hresult(static_cast<const IContactStore2 &>(static_cast<const D &>(*this))->abi_CreateContactListAsync(get(displayName), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> impl_IContactStore2<D>::GetMeContactAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> meContact;
-    check_hresult(shim()->abi_GetMeContactAsync(put(meContact)));
+    check_hresult(static_cast<const IContactStore2 &>(static_cast<const D &>(*this))->abi_GetMeContactAsync(put(meContact)));
     return meContact;
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactReader impl_IContactStore2<D>::GetContactReader() const
 {
     Windows::ApplicationModel::Contacts::ContactReader value { nullptr };
-    check_hresult(shim()->abi_GetContactReader(put(value)));
+    check_hresult(static_cast<const IContactStore2 &>(static_cast<const D &>(*this))->abi_GetContactReader(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactReader impl_IContactStore2<D>::GetContactReader(const Windows::ApplicationModel::Contacts::ContactQueryOptions & options) const
 {
     Windows::ApplicationModel::Contacts::ContactReader value { nullptr };
-    check_hresult(shim()->abi_GetContactReaderWithOptions(get(options), put(value)));
+    check_hresult(static_cast<const IContactStore2 &>(static_cast<const D &>(*this))->abi_GetContactReaderWithOptions(get(options), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactList> impl_IContactStore2<D>::CreateContactListAsync(hstring_ref displayName, hstring_ref userDataAccountId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactList> value;
-    check_hresult(shim()->abi_CreateContactListInAccountAsync(get(displayName), get(userDataAccountId), put(value)));
+    check_hresult(static_cast<const IContactStore2 &>(static_cast<const D &>(*this))->abi_CreateContactListInAccountAsync(get(displayName), get(userDataAccountId), put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IContactList<D>::Id() const
 {
     hstring value;
-    check_hresult(shim()->get_Id(put(value)));
+    check_hresult(static_cast<const IContactList &>(static_cast<const D &>(*this))->get_Id(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IContactList<D>::DisplayName() const
 {
     hstring value;
-    check_hresult(shim()->get_DisplayName(put(value)));
+    check_hresult(static_cast<const IContactList &>(static_cast<const D &>(*this))->get_DisplayName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactList<D>::DisplayName(hstring_ref value) const
 {
-    check_hresult(shim()->put_DisplayName(get(value)));
+    check_hresult(static_cast<const IContactList &>(static_cast<const D &>(*this))->put_DisplayName(get(value)));
 }
 
 template <typename D> hstring impl_IContactList<D>::SourceDisplayName() const
 {
     hstring value;
-    check_hresult(shim()->get_SourceDisplayName(put(value)));
+    check_hresult(static_cast<const IContactList &>(static_cast<const D &>(*this))->get_SourceDisplayName(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IContactList<D>::IsHidden() const
 {
     bool value {};
-    check_hresult(shim()->get_IsHidden(&value));
+    check_hresult(static_cast<const IContactList &>(static_cast<const D &>(*this))->get_IsHidden(&value));
     return value;
 }
 
 template <typename D> void impl_IContactList<D>::IsHidden(bool value) const
 {
-    check_hresult(shim()->put_IsHidden(value));
+    check_hresult(static_cast<const IContactList &>(static_cast<const D &>(*this))->put_IsHidden(value));
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactListOtherAppReadAccess impl_IContactList<D>::OtherAppReadAccess() const
 {
     Windows::ApplicationModel::Contacts::ContactListOtherAppReadAccess value {};
-    check_hresult(shim()->get_OtherAppReadAccess(&value));
+    check_hresult(static_cast<const IContactList &>(static_cast<const D &>(*this))->get_OtherAppReadAccess(&value));
     return value;
 }
 
 template <typename D> void impl_IContactList<D>::OtherAppReadAccess(Windows::ApplicationModel::Contacts::ContactListOtherAppReadAccess value) const
 {
-    check_hresult(shim()->put_OtherAppReadAccess(value));
+    check_hresult(static_cast<const IContactList &>(static_cast<const D &>(*this))->put_OtherAppReadAccess(value));
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactListOtherAppWriteAccess impl_IContactList<D>::OtherAppWriteAccess() const
 {
     Windows::ApplicationModel::Contacts::ContactListOtherAppWriteAccess value {};
-    check_hresult(shim()->get_OtherAppWriteAccess(&value));
+    check_hresult(static_cast<const IContactList &>(static_cast<const D &>(*this))->get_OtherAppWriteAccess(&value));
     return value;
 }
 
 template <typename D> void impl_IContactList<D>::OtherAppWriteAccess(Windows::ApplicationModel::Contacts::ContactListOtherAppWriteAccess value) const
 {
-    check_hresult(shim()->put_OtherAppWriteAccess(value));
+    check_hresult(static_cast<const IContactList &>(static_cast<const D &>(*this))->put_OtherAppWriteAccess(value));
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactChangeTracker impl_IContactList<D>::ChangeTracker() const
 {
     Windows::ApplicationModel::Contacts::ContactChangeTracker value { nullptr };
-    check_hresult(shim()->get_ChangeTracker(put(value)));
+    check_hresult(static_cast<const IContactList &>(static_cast<const D &>(*this))->get_ChangeTracker(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactListSyncManager impl_IContactList<D>::SyncManager() const
 {
     Windows::ApplicationModel::Contacts::ContactListSyncManager value { nullptr };
-    check_hresult(shim()->get_SyncManager(put(value)));
+    check_hresult(static_cast<const IContactList &>(static_cast<const D &>(*this))->get_SyncManager(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IContactList<D>::SupportsServerSearch() const
 {
     bool value {};
-    check_hresult(shim()->get_SupportsServerSearch(&value));
+    check_hresult(static_cast<const IContactList &>(static_cast<const D &>(*this))->get_SupportsServerSearch(&value));
     return value;
 }
 
 template <typename D> hstring impl_IContactList<D>::UserDataAccountId() const
 {
     hstring value;
-    check_hresult(shim()->get_UserDataAccountId(put(value)));
+    check_hresult(static_cast<const IContactList &>(static_cast<const D &>(*this))->get_UserDataAccountId(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IContactList<D>::ContactChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactList, Windows::ApplicationModel::Contacts::ContactChangedEventArgs> & value) const
 {
     event_token returnValue {};
-    check_hresult(shim()->add_ContactChanged(get(value), &returnValue));
+    check_hresult(static_cast<const IContactList &>(static_cast<const D &>(*this))->add_ContactChanged(get(value), &returnValue));
     return returnValue;
 }
 
@@ -6176,123 +6176,123 @@ template <typename D> event_revoker<IContactList> impl_IContactList<D>::ContactC
 
 template <typename D> void impl_IContactList<D>::ContactChanged(event_token value) const
 {
-    check_hresult(shim()->remove_ContactChanged(value));
+    check_hresult(static_cast<const IContactList &>(static_cast<const D &>(*this))->remove_ContactChanged(value));
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IContactList<D>::SaveAsync() const
 {
     Windows::Foundation::IAsyncAction returnValue;
-    check_hresult(shim()->abi_SaveAsync(put(returnValue)));
+    check_hresult(static_cast<const IContactList &>(static_cast<const D &>(*this))->abi_SaveAsync(put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IContactList<D>::DeleteAsync() const
 {
     Windows::Foundation::IAsyncAction returnValue;
-    check_hresult(shim()->abi_DeleteAsync(put(returnValue)));
+    check_hresult(static_cast<const IContactList &>(static_cast<const D &>(*this))->abi_DeleteAsync(put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> impl_IContactList<D>::GetContactFromRemoteIdAsync(hstring_ref remoteId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> contact;
-    check_hresult(shim()->abi_GetContactFromRemoteIdAsync(get(remoteId), put(contact)));
+    check_hresult(static_cast<const IContactList &>(static_cast<const D &>(*this))->abi_GetContactFromRemoteIdAsync(get(remoteId), put(contact)));
     return contact;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> impl_IContactList<D>::GetMeContactAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> meContact;
-    check_hresult(shim()->abi_GetMeContactAsync(put(meContact)));
+    check_hresult(static_cast<const IContactList &>(static_cast<const D &>(*this))->abi_GetMeContactAsync(put(meContact)));
     return meContact;
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactReader impl_IContactList<D>::GetContactReader() const
 {
     Windows::ApplicationModel::Contacts::ContactReader value { nullptr };
-    check_hresult(shim()->abi_GetContactReader(put(value)));
+    check_hresult(static_cast<const IContactList &>(static_cast<const D &>(*this))->abi_GetContactReader(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactReader impl_IContactList<D>::GetContactReader(const Windows::ApplicationModel::Contacts::ContactQueryOptions & options) const
 {
     Windows::ApplicationModel::Contacts::ContactReader value { nullptr };
-    check_hresult(shim()->abi_GetContactReaderWithOptions(get(options), put(value)));
+    check_hresult(static_cast<const IContactList &>(static_cast<const D &>(*this))->abi_GetContactReaderWithOptions(get(options), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IContactList<D>::SaveContactAsync(const Windows::ApplicationModel::Contacts::Contact & contact) const
 {
     Windows::Foundation::IAsyncAction value;
-    check_hresult(shim()->abi_SaveContactAsync(get(contact), put(value)));
+    check_hresult(static_cast<const IContactList &>(static_cast<const D &>(*this))->abi_SaveContactAsync(get(contact), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IContactList<D>::DeleteContactAsync(const Windows::ApplicationModel::Contacts::Contact & contact) const
 {
     Windows::Foundation::IAsyncAction value;
-    check_hresult(shim()->abi_DeleteContactAsync(get(contact), put(value)));
+    check_hresult(static_cast<const IContactList &>(static_cast<const D &>(*this))->abi_DeleteContactAsync(get(contact), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> impl_IContactList<D>::GetContactAsync(hstring_ref contactId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> contacts;
-    check_hresult(shim()->abi_GetContactAsync(get(contactId), put(contacts)));
+    check_hresult(static_cast<const IContactList &>(static_cast<const D &>(*this))->abi_GetContactAsync(get(contactId), put(contacts)));
     return contacts;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IContactList2<D>::RegisterSyncManagerAsync() const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(shim()->abi_RegisterSyncManagerAsync(put(result)));
+    check_hresult(static_cast<const IContactList2 &>(static_cast<const D &>(*this))->abi_RegisterSyncManagerAsync(put(result)));
     return result;
 }
 
 template <typename D> void impl_IContactList2<D>::SupportsServerSearch(bool value) const
 {
-    check_hresult(shim()->put_SupportsServerSearch(value));
+    check_hresult(static_cast<const IContactList2 &>(static_cast<const D &>(*this))->put_SupportsServerSearch(value));
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactListSyncConstraints impl_IContactList2<D>::SyncConstraints() const
 {
     Windows::ApplicationModel::Contacts::ContactListSyncConstraints value { nullptr };
-    check_hresult(shim()->get_SyncConstraints(put(value)));
+    check_hresult(static_cast<const IContactList2 &>(static_cast<const D &>(*this))->get_SyncConstraints(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactListSyncStatus impl_IContactListSyncManager<D>::Status() const
 {
     Windows::ApplicationModel::Contacts::ContactListSyncStatus value {};
-    check_hresult(shim()->get_Status(&value));
+    check_hresult(static_cast<const IContactListSyncManager &>(static_cast<const D &>(*this))->get_Status(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IContactListSyncManager<D>::LastSuccessfulSyncTime() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->get_LastSuccessfulSyncTime(put(value)));
+    check_hresult(static_cast<const IContactListSyncManager &>(static_cast<const D &>(*this))->get_LastSuccessfulSyncTime(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IContactListSyncManager<D>::LastAttemptedSyncTime() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->get_LastAttemptedSyncTime(put(value)));
+    check_hresult(static_cast<const IContactListSyncManager &>(static_cast<const D &>(*this))->get_LastAttemptedSyncTime(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IContactListSyncManager<D>::SyncAsync() const
 {
     Windows::Foundation::IAsyncOperation<bool> result;
-    check_hresult(shim()->abi_SyncAsync(put(result)));
+    check_hresult(static_cast<const IContactListSyncManager &>(static_cast<const D &>(*this))->abi_SyncAsync(put(result)));
     return result;
 }
 
 template <typename D> event_token impl_IContactListSyncManager<D>::SyncStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactListSyncManager, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_SyncStatusChanged(get(handler), &token));
+    check_hresult(static_cast<const IContactListSyncManager &>(static_cast<const D &>(*this))->add_SyncStatusChanged(get(handler), &token));
     return token;
 }
 
@@ -6303,1717 +6303,1717 @@ template <typename D> event_revoker<IContactListSyncManager> impl_IContactListSy
 
 template <typename D> void impl_IContactListSyncManager<D>::SyncStatusChanged(event_token token) const
 {
-    check_hresult(shim()->remove_SyncStatusChanged(token));
+    check_hresult(static_cast<const IContactListSyncManager &>(static_cast<const D &>(*this))->remove_SyncStatusChanged(token));
 }
 
 template <typename D> void impl_IContactListSyncManager2<D>::Status(Windows::ApplicationModel::Contacts::ContactListSyncStatus value) const
 {
-    check_hresult(shim()->put_Status(value));
+    check_hresult(static_cast<const IContactListSyncManager2 &>(static_cast<const D &>(*this))->put_Status(value));
 }
 
 template <typename D> void impl_IContactListSyncManager2<D>::LastSuccessfulSyncTime(const Windows::Foundation::DateTime & value) const
 {
-    check_hresult(shim()->put_LastSuccessfulSyncTime(get(value)));
+    check_hresult(static_cast<const IContactListSyncManager2 &>(static_cast<const D &>(*this))->put_LastSuccessfulSyncTime(get(value)));
 }
 
 template <typename D> void impl_IContactListSyncManager2<D>::LastAttemptedSyncTime(const Windows::Foundation::DateTime & value) const
 {
-    check_hresult(shim()->put_LastAttemptedSyncTime(get(value)));
+    check_hresult(static_cast<const IContactListSyncManager2 &>(static_cast<const D &>(*this))->put_LastAttemptedSyncTime(get(value)));
 }
 
 template <typename D> bool impl_IContactListSyncConstraints<D>::CanSyncDescriptions() const
 {
     bool value {};
-    check_hresult(shim()->get_CanSyncDescriptions(&value));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->get_CanSyncDescriptions(&value));
     return value;
 }
 
 template <typename D> void impl_IContactListSyncConstraints<D>::CanSyncDescriptions(bool value) const
 {
-    check_hresult(shim()->put_CanSyncDescriptions(value));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->put_CanSyncDescriptions(value));
 }
 
 template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactListSyncConstraints<D>::MaxHomePhoneNumbers() const
 {
     Windows::Foundation::IReference<int32_t> value;
-    check_hresult(shim()->get_MaxHomePhoneNumbers(put(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->get_MaxHomePhoneNumbers(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactListSyncConstraints<D>::MaxHomePhoneNumbers(const Windows::Foundation::IReference<int32_t> & value) const
 {
-    check_hresult(shim()->put_MaxHomePhoneNumbers(get(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->put_MaxHomePhoneNumbers(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactListSyncConstraints<D>::MaxMobilePhoneNumbers() const
 {
     Windows::Foundation::IReference<int32_t> value;
-    check_hresult(shim()->get_MaxMobilePhoneNumbers(put(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->get_MaxMobilePhoneNumbers(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactListSyncConstraints<D>::MaxMobilePhoneNumbers(const Windows::Foundation::IReference<int32_t> & value) const
 {
-    check_hresult(shim()->put_MaxMobilePhoneNumbers(get(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->put_MaxMobilePhoneNumbers(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactListSyncConstraints<D>::MaxWorkPhoneNumbers() const
 {
     Windows::Foundation::IReference<int32_t> value;
-    check_hresult(shim()->get_MaxWorkPhoneNumbers(put(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->get_MaxWorkPhoneNumbers(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactListSyncConstraints<D>::MaxWorkPhoneNumbers(const Windows::Foundation::IReference<int32_t> & value) const
 {
-    check_hresult(shim()->put_MaxWorkPhoneNumbers(get(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->put_MaxWorkPhoneNumbers(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactListSyncConstraints<D>::MaxOtherPhoneNumbers() const
 {
     Windows::Foundation::IReference<int32_t> value;
-    check_hresult(shim()->get_MaxOtherPhoneNumbers(put(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->get_MaxOtherPhoneNumbers(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactListSyncConstraints<D>::MaxOtherPhoneNumbers(const Windows::Foundation::IReference<int32_t> & value) const
 {
-    check_hresult(shim()->put_MaxOtherPhoneNumbers(get(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->put_MaxOtherPhoneNumbers(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactListSyncConstraints<D>::MaxPagerPhoneNumbers() const
 {
     Windows::Foundation::IReference<int32_t> value;
-    check_hresult(shim()->get_MaxPagerPhoneNumbers(put(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->get_MaxPagerPhoneNumbers(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactListSyncConstraints<D>::MaxPagerPhoneNumbers(const Windows::Foundation::IReference<int32_t> & value) const
 {
-    check_hresult(shim()->put_MaxPagerPhoneNumbers(get(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->put_MaxPagerPhoneNumbers(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactListSyncConstraints<D>::MaxBusinessFaxPhoneNumbers() const
 {
     Windows::Foundation::IReference<int32_t> value;
-    check_hresult(shim()->get_MaxBusinessFaxPhoneNumbers(put(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->get_MaxBusinessFaxPhoneNumbers(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactListSyncConstraints<D>::MaxBusinessFaxPhoneNumbers(const Windows::Foundation::IReference<int32_t> & value) const
 {
-    check_hresult(shim()->put_MaxBusinessFaxPhoneNumbers(get(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->put_MaxBusinessFaxPhoneNumbers(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactListSyncConstraints<D>::MaxHomeFaxPhoneNumbers() const
 {
     Windows::Foundation::IReference<int32_t> value;
-    check_hresult(shim()->get_MaxHomeFaxPhoneNumbers(put(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->get_MaxHomeFaxPhoneNumbers(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactListSyncConstraints<D>::MaxHomeFaxPhoneNumbers(const Windows::Foundation::IReference<int32_t> & value) const
 {
-    check_hresult(shim()->put_MaxHomeFaxPhoneNumbers(get(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->put_MaxHomeFaxPhoneNumbers(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactListSyncConstraints<D>::MaxCompanyPhoneNumbers() const
 {
     Windows::Foundation::IReference<int32_t> value;
-    check_hresult(shim()->get_MaxCompanyPhoneNumbers(put(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->get_MaxCompanyPhoneNumbers(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactListSyncConstraints<D>::MaxCompanyPhoneNumbers(const Windows::Foundation::IReference<int32_t> & value) const
 {
-    check_hresult(shim()->put_MaxCompanyPhoneNumbers(get(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->put_MaxCompanyPhoneNumbers(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactListSyncConstraints<D>::MaxAssistantPhoneNumbers() const
 {
     Windows::Foundation::IReference<int32_t> value;
-    check_hresult(shim()->get_MaxAssistantPhoneNumbers(put(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->get_MaxAssistantPhoneNumbers(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactListSyncConstraints<D>::MaxAssistantPhoneNumbers(const Windows::Foundation::IReference<int32_t> & value) const
 {
-    check_hresult(shim()->put_MaxAssistantPhoneNumbers(get(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->put_MaxAssistantPhoneNumbers(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactListSyncConstraints<D>::MaxRadioPhoneNumbers() const
 {
     Windows::Foundation::IReference<int32_t> value;
-    check_hresult(shim()->get_MaxRadioPhoneNumbers(put(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->get_MaxRadioPhoneNumbers(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactListSyncConstraints<D>::MaxRadioPhoneNumbers(const Windows::Foundation::IReference<int32_t> & value) const
 {
-    check_hresult(shim()->put_MaxRadioPhoneNumbers(get(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->put_MaxRadioPhoneNumbers(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactListSyncConstraints<D>::MaxPersonalEmailAddresses() const
 {
     Windows::Foundation::IReference<int32_t> value;
-    check_hresult(shim()->get_MaxPersonalEmailAddresses(put(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->get_MaxPersonalEmailAddresses(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactListSyncConstraints<D>::MaxPersonalEmailAddresses(const Windows::Foundation::IReference<int32_t> & value) const
 {
-    check_hresult(shim()->put_MaxPersonalEmailAddresses(get(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->put_MaxPersonalEmailAddresses(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactListSyncConstraints<D>::MaxWorkEmailAddresses() const
 {
     Windows::Foundation::IReference<int32_t> value;
-    check_hresult(shim()->get_MaxWorkEmailAddresses(put(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->get_MaxWorkEmailAddresses(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactListSyncConstraints<D>::MaxWorkEmailAddresses(const Windows::Foundation::IReference<int32_t> & value) const
 {
-    check_hresult(shim()->put_MaxWorkEmailAddresses(get(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->put_MaxWorkEmailAddresses(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactListSyncConstraints<D>::MaxOtherEmailAddresses() const
 {
     Windows::Foundation::IReference<int32_t> value;
-    check_hresult(shim()->get_MaxOtherEmailAddresses(put(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->get_MaxOtherEmailAddresses(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactListSyncConstraints<D>::MaxOtherEmailAddresses(const Windows::Foundation::IReference<int32_t> & value) const
 {
-    check_hresult(shim()->put_MaxOtherEmailAddresses(get(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->put_MaxOtherEmailAddresses(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactListSyncConstraints<D>::MaxHomeAddresses() const
 {
     Windows::Foundation::IReference<int32_t> value;
-    check_hresult(shim()->get_MaxHomeAddresses(put(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->get_MaxHomeAddresses(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactListSyncConstraints<D>::MaxHomeAddresses(const Windows::Foundation::IReference<int32_t> & value) const
 {
-    check_hresult(shim()->put_MaxHomeAddresses(get(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->put_MaxHomeAddresses(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactListSyncConstraints<D>::MaxWorkAddresses() const
 {
     Windows::Foundation::IReference<int32_t> value;
-    check_hresult(shim()->get_MaxWorkAddresses(put(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->get_MaxWorkAddresses(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactListSyncConstraints<D>::MaxWorkAddresses(const Windows::Foundation::IReference<int32_t> & value) const
 {
-    check_hresult(shim()->put_MaxWorkAddresses(get(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->put_MaxWorkAddresses(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactListSyncConstraints<D>::MaxOtherAddresses() const
 {
     Windows::Foundation::IReference<int32_t> value;
-    check_hresult(shim()->get_MaxOtherAddresses(put(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->get_MaxOtherAddresses(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactListSyncConstraints<D>::MaxOtherAddresses(const Windows::Foundation::IReference<int32_t> & value) const
 {
-    check_hresult(shim()->put_MaxOtherAddresses(get(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->put_MaxOtherAddresses(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactListSyncConstraints<D>::MaxBirthdayDates() const
 {
     Windows::Foundation::IReference<int32_t> value;
-    check_hresult(shim()->get_MaxBirthdayDates(put(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->get_MaxBirthdayDates(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactListSyncConstraints<D>::MaxBirthdayDates(const Windows::Foundation::IReference<int32_t> & value) const
 {
-    check_hresult(shim()->put_MaxBirthdayDates(get(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->put_MaxBirthdayDates(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactListSyncConstraints<D>::MaxAnniversaryDates() const
 {
     Windows::Foundation::IReference<int32_t> value;
-    check_hresult(shim()->get_MaxAnniversaryDates(put(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->get_MaxAnniversaryDates(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactListSyncConstraints<D>::MaxAnniversaryDates(const Windows::Foundation::IReference<int32_t> & value) const
 {
-    check_hresult(shim()->put_MaxAnniversaryDates(get(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->put_MaxAnniversaryDates(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactListSyncConstraints<D>::MaxOtherDates() const
 {
     Windows::Foundation::IReference<int32_t> value;
-    check_hresult(shim()->get_MaxOtherDates(put(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->get_MaxOtherDates(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactListSyncConstraints<D>::MaxOtherDates(const Windows::Foundation::IReference<int32_t> & value) const
 {
-    check_hresult(shim()->put_MaxOtherDates(get(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->put_MaxOtherDates(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactListSyncConstraints<D>::MaxOtherRelationships() const
 {
     Windows::Foundation::IReference<int32_t> value;
-    check_hresult(shim()->get_MaxOtherRelationships(put(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->get_MaxOtherRelationships(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactListSyncConstraints<D>::MaxOtherRelationships(const Windows::Foundation::IReference<int32_t> & value) const
 {
-    check_hresult(shim()->put_MaxOtherRelationships(get(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->put_MaxOtherRelationships(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactListSyncConstraints<D>::MaxSpouseRelationships() const
 {
     Windows::Foundation::IReference<int32_t> value;
-    check_hresult(shim()->get_MaxSpouseRelationships(put(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->get_MaxSpouseRelationships(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactListSyncConstraints<D>::MaxSpouseRelationships(const Windows::Foundation::IReference<int32_t> & value) const
 {
-    check_hresult(shim()->put_MaxSpouseRelationships(get(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->put_MaxSpouseRelationships(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactListSyncConstraints<D>::MaxPartnerRelationships() const
 {
     Windows::Foundation::IReference<int32_t> value;
-    check_hresult(shim()->get_MaxPartnerRelationships(put(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->get_MaxPartnerRelationships(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactListSyncConstraints<D>::MaxPartnerRelationships(const Windows::Foundation::IReference<int32_t> & value) const
 {
-    check_hresult(shim()->put_MaxPartnerRelationships(get(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->put_MaxPartnerRelationships(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactListSyncConstraints<D>::MaxSiblingRelationships() const
 {
     Windows::Foundation::IReference<int32_t> value;
-    check_hresult(shim()->get_MaxSiblingRelationships(put(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->get_MaxSiblingRelationships(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactListSyncConstraints<D>::MaxSiblingRelationships(const Windows::Foundation::IReference<int32_t> & value) const
 {
-    check_hresult(shim()->put_MaxSiblingRelationships(get(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->put_MaxSiblingRelationships(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactListSyncConstraints<D>::MaxParentRelationships() const
 {
     Windows::Foundation::IReference<int32_t> value;
-    check_hresult(shim()->get_MaxParentRelationships(put(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->get_MaxParentRelationships(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactListSyncConstraints<D>::MaxParentRelationships(const Windows::Foundation::IReference<int32_t> & value) const
 {
-    check_hresult(shim()->put_MaxParentRelationships(get(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->put_MaxParentRelationships(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactListSyncConstraints<D>::MaxChildRelationships() const
 {
     Windows::Foundation::IReference<int32_t> value;
-    check_hresult(shim()->get_MaxChildRelationships(put(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->get_MaxChildRelationships(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactListSyncConstraints<D>::MaxChildRelationships(const Windows::Foundation::IReference<int32_t> & value) const
 {
-    check_hresult(shim()->put_MaxChildRelationships(get(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->put_MaxChildRelationships(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactListSyncConstraints<D>::MaxJobInfo() const
 {
     Windows::Foundation::IReference<int32_t> value;
-    check_hresult(shim()->get_MaxJobInfo(put(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->get_MaxJobInfo(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactListSyncConstraints<D>::MaxJobInfo(const Windows::Foundation::IReference<int32_t> & value) const
 {
-    check_hresult(shim()->put_MaxJobInfo(get(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->put_MaxJobInfo(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactListSyncConstraints<D>::MaxWebsites() const
 {
     Windows::Foundation::IReference<int32_t> value;
-    check_hresult(shim()->get_MaxWebsites(put(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->get_MaxWebsites(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactListSyncConstraints<D>::MaxWebsites(const Windows::Foundation::IReference<int32_t> & value) const
 {
-    check_hresult(shim()->put_MaxWebsites(get(value)));
+    check_hresult(static_cast<const IContactListSyncConstraints &>(static_cast<const D &>(*this))->put_MaxWebsites(get(value)));
 }
 
 template <typename D> hstring impl_IContactConnectedServiceAccount<D>::Id() const
 {
     hstring value;
-    check_hresult(shim()->get_Id(put(value)));
+    check_hresult(static_cast<const IContactConnectedServiceAccount &>(static_cast<const D &>(*this))->get_Id(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactConnectedServiceAccount<D>::Id(hstring_ref value) const
 {
-    check_hresult(shim()->put_Id(get(value)));
+    check_hresult(static_cast<const IContactConnectedServiceAccount &>(static_cast<const D &>(*this))->put_Id(get(value)));
 }
 
 template <typename D> hstring impl_IContactConnectedServiceAccount<D>::ServiceName() const
 {
     hstring value;
-    check_hresult(shim()->get_ServiceName(put(value)));
+    check_hresult(static_cast<const IContactConnectedServiceAccount &>(static_cast<const D &>(*this))->get_ServiceName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactConnectedServiceAccount<D>::ServiceName(hstring_ref value) const
 {
-    check_hresult(shim()->put_ServiceName(get(value)));
+    check_hresult(static_cast<const IContactConnectedServiceAccount &>(static_cast<const D &>(*this))->put_ServiceName(get(value)));
 }
 
 template <typename D> hstring impl_IContactSignificantOther<D>::Name() const
 {
     hstring value;
-    check_hresult(shim()->get_Name(put(value)));
+    check_hresult(static_cast<const IContactSignificantOther &>(static_cast<const D &>(*this))->get_Name(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactSignificantOther<D>::Name(hstring_ref value) const
 {
-    check_hresult(shim()->put_Name(get(value)));
+    check_hresult(static_cast<const IContactSignificantOther &>(static_cast<const D &>(*this))->put_Name(get(value)));
 }
 
 template <typename D> hstring impl_IContactSignificantOther<D>::Description() const
 {
     hstring value;
-    check_hresult(shim()->get_Description(put(value)));
+    check_hresult(static_cast<const IContactSignificantOther &>(static_cast<const D &>(*this))->get_Description(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactSignificantOther<D>::Description(hstring_ref value) const
 {
-    check_hresult(shim()->put_Description(get(value)));
+    check_hresult(static_cast<const IContactSignificantOther &>(static_cast<const D &>(*this))->put_Description(get(value)));
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactRelationship impl_IContactSignificantOther2<D>::Relationship() const
 {
     Windows::ApplicationModel::Contacts::ContactRelationship value {};
-    check_hresult(shim()->get_Relationship(&value));
+    check_hresult(static_cast<const IContactSignificantOther2 &>(static_cast<const D &>(*this))->get_Relationship(&value));
     return value;
 }
 
 template <typename D> void impl_IContactSignificantOther2<D>::Relationship(Windows::ApplicationModel::Contacts::ContactRelationship value) const
 {
-    check_hresult(shim()->put_Relationship(value));
+    check_hresult(static_cast<const IContactSignificantOther2 &>(static_cast<const D &>(*this))->put_Relationship(value));
 }
 
 template <typename D> Windows::Foundation::Uri impl_IContactWebsite<D>::Uri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(shim()->get_Uri(put(value)));
+    check_hresult(static_cast<const IContactWebsite &>(static_cast<const D &>(*this))->get_Uri(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactWebsite<D>::Uri(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(shim()->put_Uri(get(value)));
+    check_hresult(static_cast<const IContactWebsite &>(static_cast<const D &>(*this))->put_Uri(get(value)));
 }
 
 template <typename D> hstring impl_IContactWebsite<D>::Description() const
 {
     hstring value;
-    check_hresult(shim()->get_Description(put(value)));
+    check_hresult(static_cast<const IContactWebsite &>(static_cast<const D &>(*this))->get_Description(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactWebsite<D>::Description(hstring_ref value) const
 {
-    check_hresult(shim()->put_Description(get(value)));
+    check_hresult(static_cast<const IContactWebsite &>(static_cast<const D &>(*this))->put_Description(get(value)));
 }
 
 template <typename D> hstring impl_IContactWebsite2<D>::RawValue() const
 {
     hstring value;
-    check_hresult(shim()->get_RawValue(put(value)));
+    check_hresult(static_cast<const IContactWebsite2 &>(static_cast<const D &>(*this))->get_RawValue(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactWebsite2<D>::RawValue(hstring_ref value) const
 {
-    check_hresult(shim()->put_RawValue(get(value)));
+    check_hresult(static_cast<const IContactWebsite2 &>(static_cast<const D &>(*this))->put_RawValue(get(value)));
 }
 
 template <typename D> hstring impl_IContactEmail<D>::Address() const
 {
     hstring value;
-    check_hresult(shim()->get_Address(put(value)));
+    check_hresult(static_cast<const IContactEmail &>(static_cast<const D &>(*this))->get_Address(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactEmail<D>::Address(hstring_ref value) const
 {
-    check_hresult(shim()->put_Address(get(value)));
+    check_hresult(static_cast<const IContactEmail &>(static_cast<const D &>(*this))->put_Address(get(value)));
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactEmailKind impl_IContactEmail<D>::Kind() const
 {
     Windows::ApplicationModel::Contacts::ContactEmailKind value {};
-    check_hresult(shim()->get_Kind(&value));
+    check_hresult(static_cast<const IContactEmail &>(static_cast<const D &>(*this))->get_Kind(&value));
     return value;
 }
 
 template <typename D> void impl_IContactEmail<D>::Kind(Windows::ApplicationModel::Contacts::ContactEmailKind value) const
 {
-    check_hresult(shim()->put_Kind(value));
+    check_hresult(static_cast<const IContactEmail &>(static_cast<const D &>(*this))->put_Kind(value));
 }
 
 template <typename D> hstring impl_IContactEmail<D>::Description() const
 {
     hstring value;
-    check_hresult(shim()->get_Description(put(value)));
+    check_hresult(static_cast<const IContactEmail &>(static_cast<const D &>(*this))->get_Description(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactEmail<D>::Description(hstring_ref value) const
 {
-    check_hresult(shim()->put_Description(get(value)));
+    check_hresult(static_cast<const IContactEmail &>(static_cast<const D &>(*this))->put_Description(get(value)));
 }
 
 template <typename D> hstring impl_IContactPhone<D>::Number() const
 {
     hstring value;
-    check_hresult(shim()->get_Number(put(value)));
+    check_hresult(static_cast<const IContactPhone &>(static_cast<const D &>(*this))->get_Number(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactPhone<D>::Number(hstring_ref value) const
 {
-    check_hresult(shim()->put_Number(get(value)));
+    check_hresult(static_cast<const IContactPhone &>(static_cast<const D &>(*this))->put_Number(get(value)));
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactPhoneKind impl_IContactPhone<D>::Kind() const
 {
     Windows::ApplicationModel::Contacts::ContactPhoneKind value {};
-    check_hresult(shim()->get_Kind(&value));
+    check_hresult(static_cast<const IContactPhone &>(static_cast<const D &>(*this))->get_Kind(&value));
     return value;
 }
 
 template <typename D> void impl_IContactPhone<D>::Kind(Windows::ApplicationModel::Contacts::ContactPhoneKind value) const
 {
-    check_hresult(shim()->put_Kind(value));
+    check_hresult(static_cast<const IContactPhone &>(static_cast<const D &>(*this))->put_Kind(value));
 }
 
 template <typename D> hstring impl_IContactPhone<D>::Description() const
 {
     hstring value;
-    check_hresult(shim()->get_Description(put(value)));
+    check_hresult(static_cast<const IContactPhone &>(static_cast<const D &>(*this))->get_Description(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactPhone<D>::Description(hstring_ref value) const
 {
-    check_hresult(shim()->put_Description(get(value)));
+    check_hresult(static_cast<const IContactPhone &>(static_cast<const D &>(*this))->put_Description(get(value)));
 }
 
 template <typename D> hstring impl_IContactAddress<D>::StreetAddress() const
 {
     hstring value;
-    check_hresult(shim()->get_StreetAddress(put(value)));
+    check_hresult(static_cast<const IContactAddress &>(static_cast<const D &>(*this))->get_StreetAddress(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactAddress<D>::StreetAddress(hstring_ref value) const
 {
-    check_hresult(shim()->put_StreetAddress(get(value)));
+    check_hresult(static_cast<const IContactAddress &>(static_cast<const D &>(*this))->put_StreetAddress(get(value)));
 }
 
 template <typename D> hstring impl_IContactAddress<D>::Locality() const
 {
     hstring value;
-    check_hresult(shim()->get_Locality(put(value)));
+    check_hresult(static_cast<const IContactAddress &>(static_cast<const D &>(*this))->get_Locality(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactAddress<D>::Locality(hstring_ref value) const
 {
-    check_hresult(shim()->put_Locality(get(value)));
+    check_hresult(static_cast<const IContactAddress &>(static_cast<const D &>(*this))->put_Locality(get(value)));
 }
 
 template <typename D> hstring impl_IContactAddress<D>::Region() const
 {
     hstring value;
-    check_hresult(shim()->get_Region(put(value)));
+    check_hresult(static_cast<const IContactAddress &>(static_cast<const D &>(*this))->get_Region(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactAddress<D>::Region(hstring_ref value) const
 {
-    check_hresult(shim()->put_Region(get(value)));
+    check_hresult(static_cast<const IContactAddress &>(static_cast<const D &>(*this))->put_Region(get(value)));
 }
 
 template <typename D> hstring impl_IContactAddress<D>::Country() const
 {
     hstring value;
-    check_hresult(shim()->get_Country(put(value)));
+    check_hresult(static_cast<const IContactAddress &>(static_cast<const D &>(*this))->get_Country(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactAddress<D>::Country(hstring_ref value) const
 {
-    check_hresult(shim()->put_Country(get(value)));
+    check_hresult(static_cast<const IContactAddress &>(static_cast<const D &>(*this))->put_Country(get(value)));
 }
 
 template <typename D> hstring impl_IContactAddress<D>::PostalCode() const
 {
     hstring value;
-    check_hresult(shim()->get_PostalCode(put(value)));
+    check_hresult(static_cast<const IContactAddress &>(static_cast<const D &>(*this))->get_PostalCode(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactAddress<D>::PostalCode(hstring_ref value) const
 {
-    check_hresult(shim()->put_PostalCode(get(value)));
+    check_hresult(static_cast<const IContactAddress &>(static_cast<const D &>(*this))->put_PostalCode(get(value)));
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactAddressKind impl_IContactAddress<D>::Kind() const
 {
     Windows::ApplicationModel::Contacts::ContactAddressKind value {};
-    check_hresult(shim()->get_Kind(&value));
+    check_hresult(static_cast<const IContactAddress &>(static_cast<const D &>(*this))->get_Kind(&value));
     return value;
 }
 
 template <typename D> void impl_IContactAddress<D>::Kind(Windows::ApplicationModel::Contacts::ContactAddressKind value) const
 {
-    check_hresult(shim()->put_Kind(value));
+    check_hresult(static_cast<const IContactAddress &>(static_cast<const D &>(*this))->put_Kind(value));
 }
 
 template <typename D> hstring impl_IContactAddress<D>::Description() const
 {
     hstring value;
-    check_hresult(shim()->get_Description(put(value)));
+    check_hresult(static_cast<const IContactAddress &>(static_cast<const D &>(*this))->get_Description(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactAddress<D>::Description(hstring_ref value) const
 {
-    check_hresult(shim()->put_Description(get(value)));
+    check_hresult(static_cast<const IContactAddress &>(static_cast<const D &>(*this))->put_Description(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<uint32_t> impl_IContactDate<D>::Day() const
 {
     Windows::Foundation::IReference<uint32_t> value;
-    check_hresult(shim()->get_Day(put(value)));
+    check_hresult(static_cast<const IContactDate &>(static_cast<const D &>(*this))->get_Day(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactDate<D>::Day(const Windows::Foundation::IReference<uint32_t> & value) const
 {
-    check_hresult(shim()->put_Day(get(value)));
+    check_hresult(static_cast<const IContactDate &>(static_cast<const D &>(*this))->put_Day(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<uint32_t> impl_IContactDate<D>::Month() const
 {
     Windows::Foundation::IReference<uint32_t> value;
-    check_hresult(shim()->get_Month(put(value)));
+    check_hresult(static_cast<const IContactDate &>(static_cast<const D &>(*this))->get_Month(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactDate<D>::Month(const Windows::Foundation::IReference<uint32_t> & value) const
 {
-    check_hresult(shim()->put_Month(get(value)));
+    check_hresult(static_cast<const IContactDate &>(static_cast<const D &>(*this))->put_Month(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<int32_t> impl_IContactDate<D>::Year() const
 {
     Windows::Foundation::IReference<int32_t> value;
-    check_hresult(shim()->get_Year(put(value)));
+    check_hresult(static_cast<const IContactDate &>(static_cast<const D &>(*this))->get_Year(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactDate<D>::Year(const Windows::Foundation::IReference<int32_t> & value) const
 {
-    check_hresult(shim()->put_Year(get(value)));
+    check_hresult(static_cast<const IContactDate &>(static_cast<const D &>(*this))->put_Year(get(value)));
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactDateKind impl_IContactDate<D>::Kind() const
 {
     Windows::ApplicationModel::Contacts::ContactDateKind value {};
-    check_hresult(shim()->get_Kind(&value));
+    check_hresult(static_cast<const IContactDate &>(static_cast<const D &>(*this))->get_Kind(&value));
     return value;
 }
 
 template <typename D> void impl_IContactDate<D>::Kind(Windows::ApplicationModel::Contacts::ContactDateKind value) const
 {
-    check_hresult(shim()->put_Kind(value));
+    check_hresult(static_cast<const IContactDate &>(static_cast<const D &>(*this))->put_Kind(value));
 }
 
 template <typename D> hstring impl_IContactDate<D>::Description() const
 {
     hstring value;
-    check_hresult(shim()->get_Description(put(value)));
+    check_hresult(static_cast<const IContactDate &>(static_cast<const D &>(*this))->get_Description(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactDate<D>::Description(hstring_ref value) const
 {
-    check_hresult(shim()->put_Description(get(value)));
+    check_hresult(static_cast<const IContactDate &>(static_cast<const D &>(*this))->put_Description(get(value)));
 }
 
 template <typename D> hstring impl_IContactJobInfo<D>::CompanyName() const
 {
     hstring value;
-    check_hresult(shim()->get_CompanyName(put(value)));
+    check_hresult(static_cast<const IContactJobInfo &>(static_cast<const D &>(*this))->get_CompanyName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactJobInfo<D>::CompanyName(hstring_ref value) const
 {
-    check_hresult(shim()->put_CompanyName(get(value)));
+    check_hresult(static_cast<const IContactJobInfo &>(static_cast<const D &>(*this))->put_CompanyName(get(value)));
 }
 
 template <typename D> hstring impl_IContactJobInfo<D>::CompanyYomiName() const
 {
     hstring value;
-    check_hresult(shim()->get_CompanyYomiName(put(value)));
+    check_hresult(static_cast<const IContactJobInfo &>(static_cast<const D &>(*this))->get_CompanyYomiName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactJobInfo<D>::CompanyYomiName(hstring_ref value) const
 {
-    check_hresult(shim()->put_CompanyYomiName(get(value)));
+    check_hresult(static_cast<const IContactJobInfo &>(static_cast<const D &>(*this))->put_CompanyYomiName(get(value)));
 }
 
 template <typename D> hstring impl_IContactJobInfo<D>::Department() const
 {
     hstring value;
-    check_hresult(shim()->get_Department(put(value)));
+    check_hresult(static_cast<const IContactJobInfo &>(static_cast<const D &>(*this))->get_Department(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactJobInfo<D>::Department(hstring_ref value) const
 {
-    check_hresult(shim()->put_Department(get(value)));
+    check_hresult(static_cast<const IContactJobInfo &>(static_cast<const D &>(*this))->put_Department(get(value)));
 }
 
 template <typename D> hstring impl_IContactJobInfo<D>::Title() const
 {
     hstring value;
-    check_hresult(shim()->get_Title(put(value)));
+    check_hresult(static_cast<const IContactJobInfo &>(static_cast<const D &>(*this))->get_Title(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactJobInfo<D>::Title(hstring_ref value) const
 {
-    check_hresult(shim()->put_Title(get(value)));
+    check_hresult(static_cast<const IContactJobInfo &>(static_cast<const D &>(*this))->put_Title(get(value)));
 }
 
 template <typename D> hstring impl_IContactJobInfo<D>::Manager() const
 {
     hstring value;
-    check_hresult(shim()->get_Manager(put(value)));
+    check_hresult(static_cast<const IContactJobInfo &>(static_cast<const D &>(*this))->get_Manager(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactJobInfo<D>::Manager(hstring_ref value) const
 {
-    check_hresult(shim()->put_Manager(get(value)));
+    check_hresult(static_cast<const IContactJobInfo &>(static_cast<const D &>(*this))->put_Manager(get(value)));
 }
 
 template <typename D> hstring impl_IContactJobInfo<D>::Office() const
 {
     hstring value;
-    check_hresult(shim()->get_Office(put(value)));
+    check_hresult(static_cast<const IContactJobInfo &>(static_cast<const D &>(*this))->get_Office(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactJobInfo<D>::Office(hstring_ref value) const
 {
-    check_hresult(shim()->put_Office(get(value)));
+    check_hresult(static_cast<const IContactJobInfo &>(static_cast<const D &>(*this))->put_Office(get(value)));
 }
 
 template <typename D> hstring impl_IContactJobInfo<D>::CompanyAddress() const
 {
     hstring value;
-    check_hresult(shim()->get_CompanyAddress(put(value)));
+    check_hresult(static_cast<const IContactJobInfo &>(static_cast<const D &>(*this))->get_CompanyAddress(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactJobInfo<D>::CompanyAddress(hstring_ref value) const
 {
-    check_hresult(shim()->put_CompanyAddress(get(value)));
+    check_hresult(static_cast<const IContactJobInfo &>(static_cast<const D &>(*this))->put_CompanyAddress(get(value)));
 }
 
 template <typename D> hstring impl_IContactJobInfo<D>::Description() const
 {
     hstring value;
-    check_hresult(shim()->get_Description(put(value)));
+    check_hresult(static_cast<const IContactJobInfo &>(static_cast<const D &>(*this))->get_Description(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactJobInfo<D>::Description(hstring_ref value) const
 {
-    check_hresult(shim()->put_Description(get(value)));
+    check_hresult(static_cast<const IContactJobInfo &>(static_cast<const D &>(*this))->put_Description(get(value)));
 }
 
 template <typename D> hstring impl_IContact<D>::Name() const
 {
     hstring value;
-    check_hresult(shim()->get_Name(put(value)));
+    check_hresult(static_cast<const IContact &>(static_cast<const D &>(*this))->get_Name(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContact<D>::Name(hstring_ref value) const
 {
-    check_hresult(shim()->put_Name(get(value)));
+    check_hresult(static_cast<const IContact &>(static_cast<const D &>(*this))->put_Name(get(value)));
 }
 
 template <typename D> Windows::Storage::Streams::IRandomAccessStreamReference impl_IContact<D>::Thumbnail() const
 {
     Windows::Storage::Streams::IRandomAccessStreamReference value;
-    check_hresult(shim()->get_Thumbnail(put(value)));
+    check_hresult(static_cast<const IContact &>(static_cast<const D &>(*this))->get_Thumbnail(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContact<D>::Thumbnail(const Windows::Storage::Streams::IRandomAccessStreamReference & value) const
 {
-    check_hresult(shim()->put_Thumbnail(get(value)));
+    check_hresult(static_cast<const IContact &>(static_cast<const D &>(*this))->put_Thumbnail(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::IContactField> impl_IContact<D>::Fields() const
 {
     Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::IContactField> value;
-    check_hresult(shim()->get_Fields(put(value)));
+    check_hresult(static_cast<const IContact &>(static_cast<const D &>(*this))->get_Fields(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactFieldType impl_IContactField<D>::Type() const
 {
     Windows::ApplicationModel::Contacts::ContactFieldType value {};
-    check_hresult(shim()->get_Type(&value));
+    check_hresult(static_cast<const IContactField &>(static_cast<const D &>(*this))->get_Type(&value));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactFieldCategory impl_IContactField<D>::Category() const
 {
     Windows::ApplicationModel::Contacts::ContactFieldCategory value {};
-    check_hresult(shim()->get_Category(&value));
+    check_hresult(static_cast<const IContactField &>(static_cast<const D &>(*this))->get_Category(&value));
     return value;
 }
 
 template <typename D> hstring impl_IContactField<D>::Name() const
 {
     hstring value;
-    check_hresult(shim()->get_Name(put(value)));
+    check_hresult(static_cast<const IContactField &>(static_cast<const D &>(*this))->get_Name(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IContactField<D>::Value() const
 {
     hstring value;
-    check_hresult(shim()->get_Value(put(value)));
+    check_hresult(static_cast<const IContactField &>(static_cast<const D &>(*this))->get_Value(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IContactName<D>::FirstName() const
 {
     hstring value;
-    check_hresult(shim()->get_FirstName(put(value)));
+    check_hresult(static_cast<const IContactName &>(static_cast<const D &>(*this))->get_FirstName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactName<D>::FirstName(hstring_ref value) const
 {
-    check_hresult(shim()->put_FirstName(get(value)));
+    check_hresult(static_cast<const IContactName &>(static_cast<const D &>(*this))->put_FirstName(get(value)));
 }
 
 template <typename D> hstring impl_IContactName<D>::LastName() const
 {
     hstring value;
-    check_hresult(shim()->get_LastName(put(value)));
+    check_hresult(static_cast<const IContactName &>(static_cast<const D &>(*this))->get_LastName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactName<D>::LastName(hstring_ref value) const
 {
-    check_hresult(shim()->put_LastName(get(value)));
+    check_hresult(static_cast<const IContactName &>(static_cast<const D &>(*this))->put_LastName(get(value)));
 }
 
 template <typename D> hstring impl_IContactName<D>::MiddleName() const
 {
     hstring value;
-    check_hresult(shim()->get_MiddleName(put(value)));
+    check_hresult(static_cast<const IContactName &>(static_cast<const D &>(*this))->get_MiddleName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactName<D>::MiddleName(hstring_ref value) const
 {
-    check_hresult(shim()->put_MiddleName(get(value)));
+    check_hresult(static_cast<const IContactName &>(static_cast<const D &>(*this))->put_MiddleName(get(value)));
 }
 
 template <typename D> hstring impl_IContactName<D>::YomiGivenName() const
 {
     hstring value;
-    check_hresult(shim()->get_YomiGivenName(put(value)));
+    check_hresult(static_cast<const IContactName &>(static_cast<const D &>(*this))->get_YomiGivenName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactName<D>::YomiGivenName(hstring_ref value) const
 {
-    check_hresult(shim()->put_YomiGivenName(get(value)));
+    check_hresult(static_cast<const IContactName &>(static_cast<const D &>(*this))->put_YomiGivenName(get(value)));
 }
 
 template <typename D> hstring impl_IContactName<D>::YomiFamilyName() const
 {
     hstring value;
-    check_hresult(shim()->get_YomiFamilyName(put(value)));
+    check_hresult(static_cast<const IContactName &>(static_cast<const D &>(*this))->get_YomiFamilyName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactName<D>::YomiFamilyName(hstring_ref value) const
 {
-    check_hresult(shim()->put_YomiFamilyName(get(value)));
+    check_hresult(static_cast<const IContactName &>(static_cast<const D &>(*this))->put_YomiFamilyName(get(value)));
 }
 
 template <typename D> hstring impl_IContactName<D>::HonorificNameSuffix() const
 {
     hstring value;
-    check_hresult(shim()->get_HonorificNameSuffix(put(value)));
+    check_hresult(static_cast<const IContactName &>(static_cast<const D &>(*this))->get_HonorificNameSuffix(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactName<D>::HonorificNameSuffix(hstring_ref value) const
 {
-    check_hresult(shim()->put_HonorificNameSuffix(get(value)));
+    check_hresult(static_cast<const IContactName &>(static_cast<const D &>(*this))->put_HonorificNameSuffix(get(value)));
 }
 
 template <typename D> hstring impl_IContactName<D>::HonorificNamePrefix() const
 {
     hstring value;
-    check_hresult(shim()->get_HonorificNamePrefix(put(value)));
+    check_hresult(static_cast<const IContactName &>(static_cast<const D &>(*this))->get_HonorificNamePrefix(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactName<D>::HonorificNamePrefix(hstring_ref value) const
 {
-    check_hresult(shim()->put_HonorificNamePrefix(get(value)));
+    check_hresult(static_cast<const IContactName &>(static_cast<const D &>(*this))->put_HonorificNamePrefix(get(value)));
 }
 
 template <typename D> hstring impl_IContactName<D>::DisplayName() const
 {
     hstring value;
-    check_hresult(shim()->get_DisplayName(put(value)));
+    check_hresult(static_cast<const IContactName &>(static_cast<const D &>(*this))->get_DisplayName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IContactName<D>::YomiDisplayName() const
 {
     hstring value;
-    check_hresult(shim()->get_YomiDisplayName(put(value)));
+    check_hresult(static_cast<const IContactName &>(static_cast<const D &>(*this))->get_YomiDisplayName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IContact2<D>::Id() const
 {
     hstring value;
-    check_hresult(shim()->get_Id(put(value)));
+    check_hresult(static_cast<const IContact2 &>(static_cast<const D &>(*this))->get_Id(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContact2<D>::Id(hstring_ref value) const
 {
-    check_hresult(shim()->put_Id(get(value)));
+    check_hresult(static_cast<const IContact2 &>(static_cast<const D &>(*this))->put_Id(get(value)));
 }
 
 template <typename D> hstring impl_IContact2<D>::Notes() const
 {
     hstring value;
-    check_hresult(shim()->get_Notes(put(value)));
+    check_hresult(static_cast<const IContact2 &>(static_cast<const D &>(*this))->get_Notes(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContact2<D>::Notes(hstring_ref value) const
 {
-    check_hresult(shim()->put_Notes(get(value)));
+    check_hresult(static_cast<const IContact2 &>(static_cast<const D &>(*this))->put_Notes(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactPhone> impl_IContact2<D>::Phones() const
 {
     Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactPhone> value;
-    check_hresult(shim()->get_Phones(put(value)));
+    check_hresult(static_cast<const IContact2 &>(static_cast<const D &>(*this))->get_Phones(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactEmail> impl_IContact2<D>::Emails() const
 {
     Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactEmail> value;
-    check_hresult(shim()->get_Emails(put(value)));
+    check_hresult(static_cast<const IContact2 &>(static_cast<const D &>(*this))->get_Emails(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactAddress> impl_IContact2<D>::Addresses() const
 {
     Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactAddress> value;
-    check_hresult(shim()->get_Addresses(put(value)));
+    check_hresult(static_cast<const IContact2 &>(static_cast<const D &>(*this))->get_Addresses(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactConnectedServiceAccount> impl_IContact2<D>::ConnectedServiceAccounts() const
 {
     Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactConnectedServiceAccount> value;
-    check_hresult(shim()->get_ConnectedServiceAccounts(put(value)));
+    check_hresult(static_cast<const IContact2 &>(static_cast<const D &>(*this))->get_ConnectedServiceAccounts(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactDate> impl_IContact2<D>::ImportantDates() const
 {
     Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactDate> value;
-    check_hresult(shim()->get_ImportantDates(put(value)));
+    check_hresult(static_cast<const IContact2 &>(static_cast<const D &>(*this))->get_ImportantDates(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IContact2<D>::DataSuppliers() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(shim()->get_DataSuppliers(put(value)));
+    check_hresult(static_cast<const IContact2 &>(static_cast<const D &>(*this))->get_DataSuppliers(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactJobInfo> impl_IContact2<D>::JobInfo() const
 {
     Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactJobInfo> value;
-    check_hresult(shim()->get_JobInfo(put(value)));
+    check_hresult(static_cast<const IContact2 &>(static_cast<const D &>(*this))->get_JobInfo(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactSignificantOther> impl_IContact2<D>::SignificantOthers() const
 {
     Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactSignificantOther> value;
-    check_hresult(shim()->get_SignificantOthers(put(value)));
+    check_hresult(static_cast<const IContact2 &>(static_cast<const D &>(*this))->get_SignificantOthers(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactWebsite> impl_IContact2<D>::Websites() const
 {
     Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::ContactWebsite> value;
-    check_hresult(shim()->get_Websites(put(value)));
+    check_hresult(static_cast<const IContact2 &>(static_cast<const D &>(*this))->get_Websites(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IPropertySet impl_IContact2<D>::ProviderProperties() const
 {
     Windows::Foundation::Collections::IPropertySet value;
-    check_hresult(shim()->get_ProviderProperties(put(value)));
+    check_hresult(static_cast<const IContact2 &>(static_cast<const D &>(*this))->get_ProviderProperties(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IContact3<D>::ContactListId() const
 {
     hstring value;
-    check_hresult(shim()->get_ContactListId(put(value)));
+    check_hresult(static_cast<const IContact3 &>(static_cast<const D &>(*this))->get_ContactListId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IContact3<D>::DisplayPictureUserUpdateTime() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->get_DisplayPictureUserUpdateTime(put(value)));
+    check_hresult(static_cast<const IContact3 &>(static_cast<const D &>(*this))->get_DisplayPictureUserUpdateTime(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContact3<D>::DisplayPictureUserUpdateTime(const Windows::Foundation::DateTime & value) const
 {
-    check_hresult(shim()->put_DisplayPictureUserUpdateTime(get(value)));
+    check_hresult(static_cast<const IContact3 &>(static_cast<const D &>(*this))->put_DisplayPictureUserUpdateTime(get(value)));
 }
 
 template <typename D> bool impl_IContact3<D>::IsMe() const
 {
     bool value {};
-    check_hresult(shim()->get_IsMe(&value));
+    check_hresult(static_cast<const IContact3 &>(static_cast<const D &>(*this))->get_IsMe(&value));
     return value;
 }
 
 template <typename D> hstring impl_IContact3<D>::AggregateId() const
 {
     hstring value;
-    check_hresult(shim()->get_AggregateId(put(value)));
+    check_hresult(static_cast<const IContact3 &>(static_cast<const D &>(*this))->get_AggregateId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IContact3<D>::RemoteId() const
 {
     hstring value;
-    check_hresult(shim()->get_RemoteId(put(value)));
+    check_hresult(static_cast<const IContact3 &>(static_cast<const D &>(*this))->get_RemoteId(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContact3<D>::RemoteId(hstring_ref value) const
 {
-    check_hresult(shim()->put_RemoteId(get(value)));
+    check_hresult(static_cast<const IContact3 &>(static_cast<const D &>(*this))->put_RemoteId(get(value)));
 }
 
 template <typename D> hstring impl_IContact3<D>::RingToneToken() const
 {
     hstring value;
-    check_hresult(shim()->get_RingToneToken(put(value)));
+    check_hresult(static_cast<const IContact3 &>(static_cast<const D &>(*this))->get_RingToneToken(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContact3<D>::RingToneToken(hstring_ref value) const
 {
-    check_hresult(shim()->put_RingToneToken(get(value)));
+    check_hresult(static_cast<const IContact3 &>(static_cast<const D &>(*this))->put_RingToneToken(get(value)));
 }
 
 template <typename D> bool impl_IContact3<D>::IsDisplayPictureManuallySet() const
 {
     bool value {};
-    check_hresult(shim()->get_IsDisplayPictureManuallySet(&value));
+    check_hresult(static_cast<const IContact3 &>(static_cast<const D &>(*this))->get_IsDisplayPictureManuallySet(&value));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IRandomAccessStreamReference impl_IContact3<D>::LargeDisplayPicture() const
 {
     Windows::Storage::Streams::IRandomAccessStreamReference value;
-    check_hresult(shim()->get_LargeDisplayPicture(put(value)));
+    check_hresult(static_cast<const IContact3 &>(static_cast<const D &>(*this))->get_LargeDisplayPicture(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IRandomAccessStreamReference impl_IContact3<D>::SmallDisplayPicture() const
 {
     Windows::Storage::Streams::IRandomAccessStreamReference value;
-    check_hresult(shim()->get_SmallDisplayPicture(put(value)));
+    check_hresult(static_cast<const IContact3 &>(static_cast<const D &>(*this))->get_SmallDisplayPicture(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IRandomAccessStreamReference impl_IContact3<D>::SourceDisplayPicture() const
 {
     Windows::Storage::Streams::IRandomAccessStreamReference value;
-    check_hresult(shim()->get_SourceDisplayPicture(put(value)));
+    check_hresult(static_cast<const IContact3 &>(static_cast<const D &>(*this))->get_SourceDisplayPicture(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContact3<D>::SourceDisplayPicture(const Windows::Storage::Streams::IRandomAccessStreamReference & value) const
 {
-    check_hresult(shim()->put_SourceDisplayPicture(get(value)));
+    check_hresult(static_cast<const IContact3 &>(static_cast<const D &>(*this))->put_SourceDisplayPicture(get(value)));
 }
 
 template <typename D> hstring impl_IContact3<D>::TextToneToken() const
 {
     hstring value;
-    check_hresult(shim()->get_TextToneToken(put(value)));
+    check_hresult(static_cast<const IContact3 &>(static_cast<const D &>(*this))->get_TextToneToken(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContact3<D>::TextToneToken(hstring_ref value) const
 {
-    check_hresult(shim()->put_TextToneToken(get(value)));
+    check_hresult(static_cast<const IContact3 &>(static_cast<const D &>(*this))->put_TextToneToken(get(value)));
 }
 
 template <typename D> bool impl_IContact3<D>::IsAggregate() const
 {
     bool value {};
-    check_hresult(shim()->get_IsAggregate(&value));
+    check_hresult(static_cast<const IContact3 &>(static_cast<const D &>(*this))->get_IsAggregate(&value));
     return value;
 }
 
 template <typename D> hstring impl_IContact3<D>::FullName() const
 {
     hstring value;
-    check_hresult(shim()->get_FullName(put(value)));
+    check_hresult(static_cast<const IContact3 &>(static_cast<const D &>(*this))->get_FullName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IContact3<D>::DisplayNameOverride() const
 {
     hstring value;
-    check_hresult(shim()->get_DisplayNameOverride(put(value)));
+    check_hresult(static_cast<const IContact3 &>(static_cast<const D &>(*this))->get_DisplayNameOverride(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContact3<D>::DisplayNameOverride(hstring_ref value) const
 {
-    check_hresult(shim()->put_DisplayNameOverride(get(value)));
+    check_hresult(static_cast<const IContact3 &>(static_cast<const D &>(*this))->put_DisplayNameOverride(get(value)));
 }
 
 template <typename D> hstring impl_IContact3<D>::Nickname() const
 {
     hstring value;
-    check_hresult(shim()->get_Nickname(put(value)));
+    check_hresult(static_cast<const IContact3 &>(static_cast<const D &>(*this))->get_Nickname(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContact3<D>::Nickname(hstring_ref value) const
 {
-    check_hresult(shim()->put_Nickname(get(value)));
+    check_hresult(static_cast<const IContact3 &>(static_cast<const D &>(*this))->put_Nickname(get(value)));
 }
 
 template <typename D> hstring impl_IContact3<D>::SortName() const
 {
     hstring value;
-    check_hresult(shim()->get_SortName(put(value)));
+    check_hresult(static_cast<const IContact3 &>(static_cast<const D &>(*this))->get_SortName(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactChangeType impl_IContactChange<D>::ChangeType() const
 {
     Windows::ApplicationModel::Contacts::ContactChangeType value {};
-    check_hresult(shim()->get_ChangeType(&value));
+    check_hresult(static_cast<const IContactChange &>(static_cast<const D &>(*this))->get_ChangeType(&value));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::Contact impl_IContactChange<D>::Contact() const
 {
     Windows::ApplicationModel::Contacts::Contact value { nullptr };
-    check_hresult(shim()->get_Contact(put(value)));
+    check_hresult(static_cast<const IContactChange &>(static_cast<const D &>(*this))->get_Contact(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactChangedDeferral<D>::Complete() const
 {
-    check_hresult(shim()->abi_Complete());
+    check_hresult(static_cast<const IContactChangedDeferral &>(static_cast<const D &>(*this))->abi_Complete());
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactChangedDeferral impl_IContactChangedEventArgs<D>::GetDeferral() const
 {
     Windows::ApplicationModel::Contacts::ContactChangedDeferral value { nullptr };
-    check_hresult(shim()->abi_GetDeferral(put(value)));
+    check_hresult(static_cast<const IContactChangedEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactChangeReader<D>::AcceptChanges() const
 {
-    check_hresult(shim()->abi_AcceptChanges());
+    check_hresult(static_cast<const IContactChangeReader &>(static_cast<const D &>(*this))->abi_AcceptChanges());
 }
 
 template <typename D> void impl_IContactChangeReader<D>::AcceptChangesThrough(const Windows::ApplicationModel::Contacts::ContactChange & lastChangeToAccept) const
 {
-    check_hresult(shim()->abi_AcceptChangesThrough(get(lastChangeToAccept)));
+    check_hresult(static_cast<const IContactChangeReader &>(static_cast<const D &>(*this))->abi_AcceptChangesThrough(get(lastChangeToAccept)));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactChange>> impl_IContactChangeReader<D>::ReadBatchAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactChange>> value;
-    check_hresult(shim()->abi_ReadBatchAsync(put(value)));
+    check_hresult(static_cast<const IContactChangeReader &>(static_cast<const D &>(*this))->abi_ReadBatchAsync(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactChangeTracker<D>::Enable() const
 {
-    check_hresult(shim()->abi_Enable());
+    check_hresult(static_cast<const IContactChangeTracker &>(static_cast<const D &>(*this))->abi_Enable());
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactChangeReader impl_IContactChangeTracker<D>::GetChangeReader() const
 {
     Windows::ApplicationModel::Contacts::ContactChangeReader value { nullptr };
-    check_hresult(shim()->abi_GetChangeReader(put(value)));
+    check_hresult(static_cast<const IContactChangeTracker &>(static_cast<const D &>(*this))->abi_GetChangeReader(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactChangeTracker<D>::Reset() const
 {
-    check_hresult(shim()->abi_Reset());
+    check_hresult(static_cast<const IContactChangeTracker &>(static_cast<const D &>(*this))->abi_Reset());
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactBatch> impl_IContactReader<D>::ReadBatchAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactBatch> value;
-    check_hresult(shim()->abi_ReadBatchAsync(put(value)));
+    check_hresult(static_cast<const IContactReader &>(static_cast<const D &>(*this))->abi_ReadBatchAsync(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactMatchReason> impl_IContactReader<D>::GetMatchingPropertiesWithMatchReason(const Windows::ApplicationModel::Contacts::Contact & contact) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactMatchReason> ppRetVal;
-    check_hresult(shim()->abi_GetMatchingPropertiesWithMatchReason(get(contact), put(ppRetVal)));
+    check_hresult(static_cast<const IContactReader &>(static_cast<const D &>(*this))->abi_GetMatchingPropertiesWithMatchReason(get(contact), put(ppRetVal)));
     return ppRetVal;
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactQuerySearchFields impl_IContactQueryTextSearch<D>::Fields() const
 {
     Windows::ApplicationModel::Contacts::ContactQuerySearchFields value {};
-    check_hresult(shim()->get_Fields(&value));
+    check_hresult(static_cast<const IContactQueryTextSearch &>(static_cast<const D &>(*this))->get_Fields(&value));
     return value;
 }
 
 template <typename D> void impl_IContactQueryTextSearch<D>::Fields(Windows::ApplicationModel::Contacts::ContactQuerySearchFields value) const
 {
-    check_hresult(shim()->put_Fields(value));
+    check_hresult(static_cast<const IContactQueryTextSearch &>(static_cast<const D &>(*this))->put_Fields(value));
 }
 
 template <typename D> hstring impl_IContactQueryTextSearch<D>::Text() const
 {
     hstring value;
-    check_hresult(shim()->get_Text(put(value)));
+    check_hresult(static_cast<const IContactQueryTextSearch &>(static_cast<const D &>(*this))->get_Text(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactQueryTextSearch<D>::Text(hstring_ref value) const
 {
-    check_hresult(shim()->put_Text(get(value)));
+    check_hresult(static_cast<const IContactQueryTextSearch &>(static_cast<const D &>(*this))->put_Text(get(value)));
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactQuerySearchScope impl_IContactQueryTextSearch<D>::SearchScope() const
 {
     Windows::ApplicationModel::Contacts::ContactQuerySearchScope value {};
-    check_hresult(shim()->get_SearchScope(&value));
+    check_hresult(static_cast<const IContactQueryTextSearch &>(static_cast<const D &>(*this))->get_SearchScope(&value));
     return value;
 }
 
 template <typename D> void impl_IContactQueryTextSearch<D>::SearchScope(Windows::ApplicationModel::Contacts::ContactQuerySearchScope value) const
 {
-    check_hresult(shim()->put_SearchScope(value));
+    check_hresult(static_cast<const IContactQueryTextSearch &>(static_cast<const D &>(*this))->put_SearchScope(value));
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactQueryOptions impl_IContactQueryOptionsFactory<D>::CreateWithText(hstring_ref text) const
 {
     Windows::ApplicationModel::Contacts::ContactQueryOptions result { nullptr };
-    check_hresult(shim()->abi_CreateWithText(get(text), put(result)));
+    check_hresult(static_cast<const IContactQueryOptionsFactory &>(static_cast<const D &>(*this))->abi_CreateWithText(get(text), put(result)));
     return result;
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactQueryOptions impl_IContactQueryOptionsFactory<D>::CreateWithTextAndFields(hstring_ref text, Windows::ApplicationModel::Contacts::ContactQuerySearchFields fields) const
 {
     Windows::ApplicationModel::Contacts::ContactQueryOptions result { nullptr };
-    check_hresult(shim()->abi_CreateWithTextAndFields(get(text), fields, put(result)));
+    check_hresult(static_cast<const IContactQueryOptionsFactory &>(static_cast<const D &>(*this))->abi_CreateWithTextAndFields(get(text), fields, put(result)));
     return result;
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactQueryTextSearch impl_IContactQueryOptions<D>::TextSearch() const
 {
     Windows::ApplicationModel::Contacts::ContactQueryTextSearch value { nullptr };
-    check_hresult(shim()->get_TextSearch(put(value)));
+    check_hresult(static_cast<const IContactQueryOptions &>(static_cast<const D &>(*this))->get_TextSearch(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IContactQueryOptions<D>::ContactListIds() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(shim()->get_ContactListIds(put(value)));
+    check_hresult(static_cast<const IContactQueryOptions &>(static_cast<const D &>(*this))->get_ContactListIds(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IContactQueryOptions<D>::IncludeContactsFromHiddenLists() const
 {
     bool value {};
-    check_hresult(shim()->get_IncludeContactsFromHiddenLists(&value));
+    check_hresult(static_cast<const IContactQueryOptions &>(static_cast<const D &>(*this))->get_IncludeContactsFromHiddenLists(&value));
     return value;
 }
 
 template <typename D> void impl_IContactQueryOptions<D>::IncludeContactsFromHiddenLists(bool value) const
 {
-    check_hresult(shim()->put_IncludeContactsFromHiddenLists(value));
+    check_hresult(static_cast<const IContactQueryOptions &>(static_cast<const D &>(*this))->put_IncludeContactsFromHiddenLists(value));
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactQueryDesiredFields impl_IContactQueryOptions<D>::DesiredFields() const
 {
     Windows::ApplicationModel::Contacts::ContactQueryDesiredFields value {};
-    check_hresult(shim()->get_DesiredFields(&value));
+    check_hresult(static_cast<const IContactQueryOptions &>(static_cast<const D &>(*this))->get_DesiredFields(&value));
     return value;
 }
 
 template <typename D> void impl_IContactQueryOptions<D>::DesiredFields(Windows::ApplicationModel::Contacts::ContactQueryDesiredFields value) const
 {
-    check_hresult(shim()->put_DesiredFields(value));
+    check_hresult(static_cast<const IContactQueryOptions &>(static_cast<const D &>(*this))->put_DesiredFields(value));
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactAnnotationOperations impl_IContactQueryOptions<D>::DesiredOperations() const
 {
     Windows::ApplicationModel::Contacts::ContactAnnotationOperations value {};
-    check_hresult(shim()->get_DesiredOperations(&value));
+    check_hresult(static_cast<const IContactQueryOptions &>(static_cast<const D &>(*this))->get_DesiredOperations(&value));
     return value;
 }
 
 template <typename D> void impl_IContactQueryOptions<D>::DesiredOperations(Windows::ApplicationModel::Contacts::ContactAnnotationOperations value) const
 {
-    check_hresult(shim()->put_DesiredOperations(value));
+    check_hresult(static_cast<const IContactQueryOptions &>(static_cast<const D &>(*this))->put_DesiredOperations(value));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IContactQueryOptions<D>::AnnotationListIds() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(shim()->get_AnnotationListIds(put(value)));
+    check_hresult(static_cast<const IContactQueryOptions &>(static_cast<const D &>(*this))->get_AnnotationListIds(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::Contact> impl_IContactBatch<D>::Contacts() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::Contact> value;
-    check_hresult(shim()->get_Contacts(put(value)));
+    check_hresult(static_cast<const IContactBatch &>(static_cast<const D &>(*this))->get_Contacts(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactBatchStatus impl_IContactBatch<D>::Status() const
 {
     Windows::ApplicationModel::Contacts::ContactBatchStatus value {};
-    check_hresult(shim()->get_Status(&value));
+    check_hresult(static_cast<const IContactBatch &>(static_cast<const D &>(*this))->get_Status(&value));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactMatchReasonKind impl_IContactMatchReason<D>::Field() const
 {
     Windows::ApplicationModel::Contacts::ContactMatchReasonKind value {};
-    check_hresult(shim()->get_Field(&value));
+    check_hresult(static_cast<const IContactMatchReason &>(static_cast<const D &>(*this))->get_Field(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextSegment> impl_IContactMatchReason<D>::Segments() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextSegment> value;
-    check_hresult(shim()->get_Segments(put(value)));
+    check_hresult(static_cast<const IContactMatchReason &>(static_cast<const D &>(*this))->get_Segments(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IContactMatchReason<D>::Text() const
 {
     hstring value;
-    check_hresult(shim()->get_Text(put(value)));
+    check_hresult(static_cast<const IContactMatchReason &>(static_cast<const D &>(*this))->get_Text(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IContactLaunchActionVerbsStatics<D>::Call() const
 {
     hstring value;
-    check_hresult(shim()->get_Call(put(value)));
+    check_hresult(static_cast<const IContactLaunchActionVerbsStatics &>(static_cast<const D &>(*this))->get_Call(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IContactLaunchActionVerbsStatics<D>::Message() const
 {
     hstring value;
-    check_hresult(shim()->get_Message(put(value)));
+    check_hresult(static_cast<const IContactLaunchActionVerbsStatics &>(static_cast<const D &>(*this))->get_Message(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IContactLaunchActionVerbsStatics<D>::Map() const
 {
     hstring value;
-    check_hresult(shim()->get_Map(put(value)));
+    check_hresult(static_cast<const IContactLaunchActionVerbsStatics &>(static_cast<const D &>(*this))->get_Map(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IContactLaunchActionVerbsStatics<D>::Post() const
 {
     hstring value;
-    check_hresult(shim()->get_Post(put(value)));
+    check_hresult(static_cast<const IContactLaunchActionVerbsStatics &>(static_cast<const D &>(*this))->get_Post(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IContactLaunchActionVerbsStatics<D>::VideoCall() const
 {
     hstring value;
-    check_hresult(shim()->get_VideoCall(put(value)));
+    check_hresult(static_cast<const IContactLaunchActionVerbsStatics &>(static_cast<const D &>(*this))->get_VideoCall(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IContactLocationField<D>::UnstructuredAddress() const
 {
     hstring value;
-    check_hresult(shim()->get_UnstructuredAddress(put(value)));
+    check_hresult(static_cast<const IContactLocationField &>(static_cast<const D &>(*this))->get_UnstructuredAddress(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IContactLocationField<D>::Street() const
 {
     hstring value;
-    check_hresult(shim()->get_Street(put(value)));
+    check_hresult(static_cast<const IContactLocationField &>(static_cast<const D &>(*this))->get_Street(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IContactLocationField<D>::City() const
 {
     hstring value;
-    check_hresult(shim()->get_City(put(value)));
+    check_hresult(static_cast<const IContactLocationField &>(static_cast<const D &>(*this))->get_City(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IContactLocationField<D>::Region() const
 {
     hstring value;
-    check_hresult(shim()->get_Region(put(value)));
+    check_hresult(static_cast<const IContactLocationField &>(static_cast<const D &>(*this))->get_Region(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IContactLocationField<D>::Country() const
 {
     hstring value;
-    check_hresult(shim()->get_Country(put(value)));
+    check_hresult(static_cast<const IContactLocationField &>(static_cast<const D &>(*this))->get_Country(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IContactLocationField<D>::PostalCode() const
 {
     hstring value;
-    check_hresult(shim()->get_PostalCode(put(value)));
+    check_hresult(static_cast<const IContactLocationField &>(static_cast<const D &>(*this))->get_PostalCode(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IContactInstantMessageField<D>::UserName() const
 {
     hstring value;
-    check_hresult(shim()->get_UserName(put(value)));
+    check_hresult(static_cast<const IContactInstantMessageField &>(static_cast<const D &>(*this))->get_UserName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IContactInstantMessageField<D>::Service() const
 {
     hstring value;
-    check_hresult(shim()->get_Service(put(value)));
+    check_hresult(static_cast<const IContactInstantMessageField &>(static_cast<const D &>(*this))->get_Service(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IContactInstantMessageField<D>::DisplayText() const
 {
     hstring value;
-    check_hresult(shim()->get_DisplayText(put(value)));
+    check_hresult(static_cast<const IContactInstantMessageField &>(static_cast<const D &>(*this))->get_DisplayText(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Uri impl_IContactInstantMessageField<D>::LaunchUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(shim()->get_LaunchUri(put(value)));
+    check_hresult(static_cast<const IContactInstantMessageField &>(static_cast<const D &>(*this))->get_LaunchUri(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownContactFieldStatics<D>::Email() const
 {
     hstring value;
-    check_hresult(shim()->get_Email(put(value)));
+    check_hresult(static_cast<const IKnownContactFieldStatics &>(static_cast<const D &>(*this))->get_Email(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownContactFieldStatics<D>::PhoneNumber() const
 {
     hstring value;
-    check_hresult(shim()->get_PhoneNumber(put(value)));
+    check_hresult(static_cast<const IKnownContactFieldStatics &>(static_cast<const D &>(*this))->get_PhoneNumber(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownContactFieldStatics<D>::Location() const
 {
     hstring value;
-    check_hresult(shim()->get_Location(put(value)));
+    check_hresult(static_cast<const IKnownContactFieldStatics &>(static_cast<const D &>(*this))->get_Location(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IKnownContactFieldStatics<D>::InstantMessage() const
 {
     hstring value;
-    check_hresult(shim()->get_InstantMessage(put(value)));
+    check_hresult(static_cast<const IKnownContactFieldStatics &>(static_cast<const D &>(*this))->get_InstantMessage(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactFieldType impl_IKnownContactFieldStatics<D>::ConvertNameToType(hstring_ref name) const
 {
     Windows::ApplicationModel::Contacts::ContactFieldType type {};
-    check_hresult(shim()->abi_ConvertNameToType(get(name), &type));
+    check_hresult(static_cast<const IKnownContactFieldStatics &>(static_cast<const D &>(*this))->abi_ConvertNameToType(get(name), &type));
     return type;
 }
 
 template <typename D> hstring impl_IKnownContactFieldStatics<D>::ConvertTypeToName(Windows::ApplicationModel::Contacts::ContactFieldType type) const
 {
     hstring name;
-    check_hresult(shim()->abi_ConvertTypeToName(type, put(name)));
+    check_hresult(static_cast<const IKnownContactFieldStatics &>(static_cast<const D &>(*this))->abi_ConvertTypeToName(type, put(name)));
     return name;
 }
 
 template <typename D> hstring impl_IContactInformation<D>::Name() const
 {
     hstring value;
-    check_hresult(shim()->get_Name(put(value)));
+    check_hresult(static_cast<const IContactInformation &>(static_cast<const D &>(*this))->get_Name(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamWithContentType> impl_IContactInformation<D>::GetThumbnailAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamWithContentType> operation;
-    check_hresult(shim()->abi_GetThumbnailAsync(put(operation)));
+    check_hresult(static_cast<const IContactInformation &>(static_cast<const D &>(*this))->abi_GetThumbnailAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactField> impl_IContactInformation<D>::Emails() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactField> value;
-    check_hresult(shim()->get_Emails(put(value)));
+    check_hresult(static_cast<const IContactInformation &>(static_cast<const D &>(*this))->get_Emails(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactField> impl_IContactInformation<D>::PhoneNumbers() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactField> value;
-    check_hresult(shim()->get_PhoneNumbers(put(value)));
+    check_hresult(static_cast<const IContactInformation &>(static_cast<const D &>(*this))->get_PhoneNumbers(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactLocationField> impl_IContactInformation<D>::Locations() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactLocationField> value;
-    check_hresult(shim()->get_Locations(put(value)));
+    check_hresult(static_cast<const IContactInformation &>(static_cast<const D &>(*this))->get_Locations(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactInstantMessageField> impl_IContactInformation<D>::InstantMessages() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactInstantMessageField> value;
-    check_hresult(shim()->get_InstantMessages(put(value)));
+    check_hresult(static_cast<const IContactInformation &>(static_cast<const D &>(*this))->get_InstantMessages(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactField> impl_IContactInformation<D>::CustomFields() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactField> value;
-    check_hresult(shim()->get_CustomFields(put(value)));
+    check_hresult(static_cast<const IContactInformation &>(static_cast<const D &>(*this))->get_CustomFields(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactField> impl_IContactInformation<D>::QueryCustomFields(hstring_ref customName) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactField> value;
-    check_hresult(shim()->abi_QueryCustomFields(get(customName), put(value)));
+    check_hresult(static_cast<const IContactInformation &>(static_cast<const D &>(*this))->abi_QueryCustomFields(get(customName), put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactField impl_IContactFieldFactory<D>::CreateField(hstring_ref value, Windows::ApplicationModel::Contacts::ContactFieldType type) const
 {
     Windows::ApplicationModel::Contacts::ContactField field { nullptr };
-    check_hresult(shim()->abi_CreateField_Default(get(value), type, put(field)));
+    check_hresult(static_cast<const IContactFieldFactory &>(static_cast<const D &>(*this))->abi_CreateField_Default(get(value), type, put(field)));
     return field;
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactField impl_IContactFieldFactory<D>::CreateField(hstring_ref value, Windows::ApplicationModel::Contacts::ContactFieldType type, Windows::ApplicationModel::Contacts::ContactFieldCategory category) const
 {
     Windows::ApplicationModel::Contacts::ContactField field { nullptr };
-    check_hresult(shim()->abi_CreateField_Category(get(value), type, category, put(field)));
+    check_hresult(static_cast<const IContactFieldFactory &>(static_cast<const D &>(*this))->abi_CreateField_Category(get(value), type, category, put(field)));
     return field;
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactField impl_IContactFieldFactory<D>::CreateField(hstring_ref name, hstring_ref value, Windows::ApplicationModel::Contacts::ContactFieldType type, Windows::ApplicationModel::Contacts::ContactFieldCategory category) const
 {
     Windows::ApplicationModel::Contacts::ContactField field { nullptr };
-    check_hresult(shim()->abi_CreateField_Custom(get(name), get(value), type, category, put(field)));
+    check_hresult(static_cast<const IContactFieldFactory &>(static_cast<const D &>(*this))->abi_CreateField_Custom(get(name), get(value), type, category, put(field)));
     return field;
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactLocationField impl_IContactLocationFieldFactory<D>::CreateLocation(hstring_ref unstructuredAddress) const
 {
     Windows::ApplicationModel::Contacts::ContactLocationField field { nullptr };
-    check_hresult(shim()->abi_CreateLocation_Default(get(unstructuredAddress), put(field)));
+    check_hresult(static_cast<const IContactLocationFieldFactory &>(static_cast<const D &>(*this))->abi_CreateLocation_Default(get(unstructuredAddress), put(field)));
     return field;
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactLocationField impl_IContactLocationFieldFactory<D>::CreateLocation(hstring_ref unstructuredAddress, Windows::ApplicationModel::Contacts::ContactFieldCategory category) const
 {
     Windows::ApplicationModel::Contacts::ContactLocationField field { nullptr };
-    check_hresult(shim()->abi_CreateLocation_Category(get(unstructuredAddress), category, put(field)));
+    check_hresult(static_cast<const IContactLocationFieldFactory &>(static_cast<const D &>(*this))->abi_CreateLocation_Category(get(unstructuredAddress), category, put(field)));
     return field;
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactLocationField impl_IContactLocationFieldFactory<D>::CreateLocation(hstring_ref unstructuredAddress, Windows::ApplicationModel::Contacts::ContactFieldCategory category, hstring_ref street, hstring_ref city, hstring_ref region, hstring_ref country, hstring_ref postalCode) const
 {
     Windows::ApplicationModel::Contacts::ContactLocationField field { nullptr };
-    check_hresult(shim()->abi_CreateLocation_All(get(unstructuredAddress), category, get(street), get(city), get(region), get(country), get(postalCode), put(field)));
+    check_hresult(static_cast<const IContactLocationFieldFactory &>(static_cast<const D &>(*this))->abi_CreateLocation_All(get(unstructuredAddress), category, get(street), get(city), get(region), get(country), get(postalCode), put(field)));
     return field;
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactInstantMessageField impl_IContactInstantMessageFieldFactory<D>::CreateInstantMessage(hstring_ref userName) const
 {
     Windows::ApplicationModel::Contacts::ContactInstantMessageField field { nullptr };
-    check_hresult(shim()->abi_CreateInstantMessage_Default(get(userName), put(field)));
+    check_hresult(static_cast<const IContactInstantMessageFieldFactory &>(static_cast<const D &>(*this))->abi_CreateInstantMessage_Default(get(userName), put(field)));
     return field;
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactInstantMessageField impl_IContactInstantMessageFieldFactory<D>::CreateInstantMessage(hstring_ref userName, Windows::ApplicationModel::Contacts::ContactFieldCategory category) const
 {
     Windows::ApplicationModel::Contacts::ContactInstantMessageField field { nullptr };
-    check_hresult(shim()->abi_CreateInstantMessage_Category(get(userName), category, put(field)));
+    check_hresult(static_cast<const IContactInstantMessageFieldFactory &>(static_cast<const D &>(*this))->abi_CreateInstantMessage_Category(get(userName), category, put(field)));
     return field;
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactInstantMessageField impl_IContactInstantMessageFieldFactory<D>::CreateInstantMessage(hstring_ref userName, Windows::ApplicationModel::Contacts::ContactFieldCategory category, hstring_ref service, hstring_ref displayText, const Windows::Foundation::Uri & verb) const
 {
     Windows::ApplicationModel::Contacts::ContactInstantMessageField field { nullptr };
-    check_hresult(shim()->abi_CreateInstantMessage_All(get(userName), category, get(service), get(displayText), get(verb), put(field)));
+    check_hresult(static_cast<const IContactInstantMessageFieldFactory &>(static_cast<const D &>(*this))->abi_CreateInstantMessage_All(get(userName), category, get(service), get(displayText), get(verb), put(field)));
     return field;
 }
 
 template <typename D> hstring impl_IContactPicker<D>::CommitButtonText() const
 {
     hstring value;
-    check_hresult(shim()->get_CommitButtonText(put(value)));
+    check_hresult(static_cast<const IContactPicker &>(static_cast<const D &>(*this))->get_CommitButtonText(put(value)));
     return value;
 }
 
 template <typename D> void impl_IContactPicker<D>::CommitButtonText(hstring_ref value) const
 {
-    check_hresult(shim()->put_CommitButtonText(get(value)));
+    check_hresult(static_cast<const IContactPicker &>(static_cast<const D &>(*this))->put_CommitButtonText(get(value)));
 }
 
 template <typename D> Windows::ApplicationModel::Contacts::ContactSelectionMode impl_IContactPicker<D>::SelectionMode() const
 {
     Windows::ApplicationModel::Contacts::ContactSelectionMode value {};
-    check_hresult(shim()->get_SelectionMode(&value));
+    check_hresult(static_cast<const IContactPicker &>(static_cast<const D &>(*this))->get_SelectionMode(&value));
     return value;
 }
 
 template <typename D> void impl_IContactPicker<D>::SelectionMode(Windows::ApplicationModel::Contacts::ContactSelectionMode value) const
 {
-    check_hresult(shim()->put_SelectionMode(value));
+    check_hresult(static_cast<const IContactPicker &>(static_cast<const D &>(*this))->put_SelectionMode(value));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IContactPicker<D>::DesiredFields() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(shim()->get_DesiredFields(put(value)));
+    check_hresult(static_cast<const IContactPicker &>(static_cast<const D &>(*this))->get_DesiredFields(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactInformation> impl_IContactPicker<D>::PickSingleContactAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactInformation> result;
-    check_hresult(shim()->abi_PickSingleContactAsync(put(result)));
+    check_hresult(static_cast<const IContactPicker &>(static_cast<const D &>(*this))->abi_PickSingleContactAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactInformation>> impl_IContactPicker<D>::PickMultipleContactsAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactInformation>> result;
-    check_hresult(shim()->abi_PickMultipleContactsAsync(put(result)));
+    check_hresult(static_cast<const IContactPicker &>(static_cast<const D &>(*this))->abi_PickMultipleContactsAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<winrt::Windows::ApplicationModel::Contacts::ContactFieldType> impl_IContactPicker2<D>::DesiredFieldsWithContactFieldType() const
 {
     Windows::Foundation::Collections::IVector<winrt::Windows::ApplicationModel::Contacts::ContactFieldType> value;
-    check_hresult(shim()->get_DesiredFieldsWithContactFieldType(put(value)));
+    check_hresult(static_cast<const IContactPicker2 &>(static_cast<const D &>(*this))->get_DesiredFieldsWithContactFieldType(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> impl_IContactPicker2<D>::PickContactAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> result;
-    check_hresult(shim()->abi_PickContactAsync(put(result)));
+    check_hresult(static_cast<const IContactPicker2 &>(static_cast<const D &>(*this))->abi_PickContactAsync(put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::Contact>> impl_IContactPicker2<D>::PickContactsAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::Contact>> result;
-    check_hresult(shim()->abi_PickContactsAsync(put(result)));
+    check_hresult(static_cast<const IContactPicker2 &>(static_cast<const D &>(*this))->abi_PickContactsAsync(put(result)));
     return result;
 }
 
 template <typename D> void impl_IContactCardDelayedDataLoader<D>::SetData(const Windows::ApplicationModel::Contacts::Contact & contact) const
 {
-    check_hresult(shim()->abi_SetData(get(contact)));
+    check_hresult(static_cast<const IContactCardDelayedDataLoader &>(static_cast<const D &>(*this))->abi_SetData(get(contact)));
 }
 
 inline Contact::Contact() :

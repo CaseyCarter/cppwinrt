@@ -1672,750 +1672,750 @@ namespace Windows::Data::Xml::Dom {
 template <typename D> Windows::Data::Xml::Dom::IXmlNode impl_IXmlNodeSelector<D>::SelectSingleNode(hstring_ref xpath) const
 {
     Windows::Data::Xml::Dom::IXmlNode node;
-    check_hresult(shim()->abi_SelectSingleNode(get(xpath), put(node)));
+    check_hresult(static_cast<const IXmlNodeSelector &>(static_cast<const D &>(*this))->abi_SelectSingleNode(get(xpath), put(node)));
     return node;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlNodeList impl_IXmlNodeSelector<D>::SelectNodes(hstring_ref xpath) const
 {
     Windows::Data::Xml::Dom::XmlNodeList nodelist { nullptr };
-    check_hresult(shim()->abi_SelectNodes(get(xpath), put(nodelist)));
+    check_hresult(static_cast<const IXmlNodeSelector &>(static_cast<const D &>(*this))->abi_SelectNodes(get(xpath), put(nodelist)));
     return nodelist;
 }
 
 template <typename D> Windows::Data::Xml::Dom::IXmlNode impl_IXmlNodeSelector<D>::SelectSingleNodeNS(hstring_ref xpath, const Windows::IInspectable & namespaces) const
 {
     Windows::Data::Xml::Dom::IXmlNode node;
-    check_hresult(shim()->abi_SelectSingleNodeNS(get(xpath), get(namespaces), put(node)));
+    check_hresult(static_cast<const IXmlNodeSelector &>(static_cast<const D &>(*this))->abi_SelectSingleNodeNS(get(xpath), get(namespaces), put(node)));
     return node;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlNodeList impl_IXmlNodeSelector<D>::SelectNodesNS(hstring_ref xpath, const Windows::IInspectable & namespaces) const
 {
     Windows::Data::Xml::Dom::XmlNodeList nodelist { nullptr };
-    check_hresult(shim()->abi_SelectNodesNS(get(xpath), get(namespaces), put(nodelist)));
+    check_hresult(static_cast<const IXmlNodeSelector &>(static_cast<const D &>(*this))->abi_SelectNodesNS(get(xpath), get(namespaces), put(nodelist)));
     return nodelist;
 }
 
 template <typename D> hstring impl_IXmlNodeSerializer<D>::GetXml() const
 {
     hstring outerXml;
-    check_hresult(shim()->abi_GetXml(put(outerXml)));
+    check_hresult(static_cast<const IXmlNodeSerializer &>(static_cast<const D &>(*this))->abi_GetXml(put(outerXml)));
     return outerXml;
 }
 
 template <typename D> hstring impl_IXmlNodeSerializer<D>::InnerText() const
 {
     hstring value;
-    check_hresult(shim()->get_InnerText(put(value)));
+    check_hresult(static_cast<const IXmlNodeSerializer &>(static_cast<const D &>(*this))->get_InnerText(put(value)));
     return value;
 }
 
 template <typename D> void impl_IXmlNodeSerializer<D>::InnerText(hstring_ref value) const
 {
-    check_hresult(shim()->put_InnerText(get(value)));
+    check_hresult(static_cast<const IXmlNodeSerializer &>(static_cast<const D &>(*this))->put_InnerText(get(value)));
 }
 
 template <typename D> Windows::IInspectable impl_IXmlNode<D>::NodeValue() const
 {
     Windows::IInspectable value;
-    check_hresult(shim()->get_NodeValue(put(value)));
+    check_hresult(static_cast<const IXmlNode &>(static_cast<const D &>(*this))->get_NodeValue(put(value)));
     return value;
 }
 
 template <typename D> void impl_IXmlNode<D>::NodeValue(const Windows::IInspectable & value) const
 {
-    check_hresult(shim()->put_NodeValue(get(value)));
+    check_hresult(static_cast<const IXmlNode &>(static_cast<const D &>(*this))->put_NodeValue(get(value)));
 }
 
 template <typename D> Windows::Data::Xml::Dom::NodeType impl_IXmlNode<D>::NodeType() const
 {
     Windows::Data::Xml::Dom::NodeType value {};
-    check_hresult(shim()->get_NodeType(&value));
+    check_hresult(static_cast<const IXmlNode &>(static_cast<const D &>(*this))->get_NodeType(&value));
     return value;
 }
 
 template <typename D> hstring impl_IXmlNode<D>::NodeName() const
 {
     hstring value;
-    check_hresult(shim()->get_NodeName(put(value)));
+    check_hresult(static_cast<const IXmlNode &>(static_cast<const D &>(*this))->get_NodeName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Data::Xml::Dom::IXmlNode impl_IXmlNode<D>::ParentNode() const
 {
     Windows::Data::Xml::Dom::IXmlNode value;
-    check_hresult(shim()->get_ParentNode(put(value)));
+    check_hresult(static_cast<const IXmlNode &>(static_cast<const D &>(*this))->get_ParentNode(put(value)));
     return value;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlNodeList impl_IXmlNode<D>::ChildNodes() const
 {
     Windows::Data::Xml::Dom::XmlNodeList value { nullptr };
-    check_hresult(shim()->get_ChildNodes(put(value)));
+    check_hresult(static_cast<const IXmlNode &>(static_cast<const D &>(*this))->get_ChildNodes(put(value)));
     return value;
 }
 
 template <typename D> Windows::Data::Xml::Dom::IXmlNode impl_IXmlNode<D>::FirstChild() const
 {
     Windows::Data::Xml::Dom::IXmlNode value;
-    check_hresult(shim()->get_FirstChild(put(value)));
+    check_hresult(static_cast<const IXmlNode &>(static_cast<const D &>(*this))->get_FirstChild(put(value)));
     return value;
 }
 
 template <typename D> Windows::Data::Xml::Dom::IXmlNode impl_IXmlNode<D>::LastChild() const
 {
     Windows::Data::Xml::Dom::IXmlNode value;
-    check_hresult(shim()->get_LastChild(put(value)));
+    check_hresult(static_cast<const IXmlNode &>(static_cast<const D &>(*this))->get_LastChild(put(value)));
     return value;
 }
 
 template <typename D> Windows::Data::Xml::Dom::IXmlNode impl_IXmlNode<D>::PreviousSibling() const
 {
     Windows::Data::Xml::Dom::IXmlNode value;
-    check_hresult(shim()->get_PreviousSibling(put(value)));
+    check_hresult(static_cast<const IXmlNode &>(static_cast<const D &>(*this))->get_PreviousSibling(put(value)));
     return value;
 }
 
 template <typename D> Windows::Data::Xml::Dom::IXmlNode impl_IXmlNode<D>::NextSibling() const
 {
     Windows::Data::Xml::Dom::IXmlNode value;
-    check_hresult(shim()->get_NextSibling(put(value)));
+    check_hresult(static_cast<const IXmlNode &>(static_cast<const D &>(*this))->get_NextSibling(put(value)));
     return value;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlNamedNodeMap impl_IXmlNode<D>::Attributes() const
 {
     Windows::Data::Xml::Dom::XmlNamedNodeMap value { nullptr };
-    check_hresult(shim()->get_Attributes(put(value)));
+    check_hresult(static_cast<const IXmlNode &>(static_cast<const D &>(*this))->get_Attributes(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IXmlNode<D>::HasChildNodes() const
 {
     bool value {};
-    check_hresult(shim()->abi_HasChildNodes(&value));
+    check_hresult(static_cast<const IXmlNode &>(static_cast<const D &>(*this))->abi_HasChildNodes(&value));
     return value;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlDocument impl_IXmlNode<D>::OwnerDocument() const
 {
     Windows::Data::Xml::Dom::XmlDocument value { nullptr };
-    check_hresult(shim()->get_OwnerDocument(put(value)));
+    check_hresult(static_cast<const IXmlNode &>(static_cast<const D &>(*this))->get_OwnerDocument(put(value)));
     return value;
 }
 
 template <typename D> Windows::Data::Xml::Dom::IXmlNode impl_IXmlNode<D>::InsertBefore(const Windows::Data::Xml::Dom::IXmlNode & newChild, const Windows::Data::Xml::Dom::IXmlNode & referenceChild) const
 {
     Windows::Data::Xml::Dom::IXmlNode insertedChild;
-    check_hresult(shim()->abi_InsertBefore(get(newChild), get(referenceChild), put(insertedChild)));
+    check_hresult(static_cast<const IXmlNode &>(static_cast<const D &>(*this))->abi_InsertBefore(get(newChild), get(referenceChild), put(insertedChild)));
     return insertedChild;
 }
 
 template <typename D> Windows::Data::Xml::Dom::IXmlNode impl_IXmlNode<D>::ReplaceChild(const Windows::Data::Xml::Dom::IXmlNode & newChild, const Windows::Data::Xml::Dom::IXmlNode & referenceChild) const
 {
     Windows::Data::Xml::Dom::IXmlNode previousChild;
-    check_hresult(shim()->abi_ReplaceChild(get(newChild), get(referenceChild), put(previousChild)));
+    check_hresult(static_cast<const IXmlNode &>(static_cast<const D &>(*this))->abi_ReplaceChild(get(newChild), get(referenceChild), put(previousChild)));
     return previousChild;
 }
 
 template <typename D> Windows::Data::Xml::Dom::IXmlNode impl_IXmlNode<D>::RemoveChild(const Windows::Data::Xml::Dom::IXmlNode & childNode) const
 {
     Windows::Data::Xml::Dom::IXmlNode removedChild;
-    check_hresult(shim()->abi_RemoveChild(get(childNode), put(removedChild)));
+    check_hresult(static_cast<const IXmlNode &>(static_cast<const D &>(*this))->abi_RemoveChild(get(childNode), put(removedChild)));
     return removedChild;
 }
 
 template <typename D> Windows::Data::Xml::Dom::IXmlNode impl_IXmlNode<D>::AppendChild(const Windows::Data::Xml::Dom::IXmlNode & newChild) const
 {
     Windows::Data::Xml::Dom::IXmlNode appendedChild;
-    check_hresult(shim()->abi_AppendChild(get(newChild), put(appendedChild)));
+    check_hresult(static_cast<const IXmlNode &>(static_cast<const D &>(*this))->abi_AppendChild(get(newChild), put(appendedChild)));
     return appendedChild;
 }
 
 template <typename D> Windows::Data::Xml::Dom::IXmlNode impl_IXmlNode<D>::CloneNode(bool deep) const
 {
     Windows::Data::Xml::Dom::IXmlNode newNode;
-    check_hresult(shim()->abi_CloneNode(deep, put(newNode)));
+    check_hresult(static_cast<const IXmlNode &>(static_cast<const D &>(*this))->abi_CloneNode(deep, put(newNode)));
     return newNode;
 }
 
 template <typename D> Windows::IInspectable impl_IXmlNode<D>::NamespaceUri() const
 {
     Windows::IInspectable value;
-    check_hresult(shim()->get_NamespaceUri(put(value)));
+    check_hresult(static_cast<const IXmlNode &>(static_cast<const D &>(*this))->get_NamespaceUri(put(value)));
     return value;
 }
 
 template <typename D> Windows::IInspectable impl_IXmlNode<D>::LocalName() const
 {
     Windows::IInspectable value;
-    check_hresult(shim()->get_LocalName(put(value)));
+    check_hresult(static_cast<const IXmlNode &>(static_cast<const D &>(*this))->get_LocalName(put(value)));
     return value;
 }
 
 template <typename D> Windows::IInspectable impl_IXmlNode<D>::Prefix() const
 {
     Windows::IInspectable value;
-    check_hresult(shim()->get_Prefix(put(value)));
+    check_hresult(static_cast<const IXmlNode &>(static_cast<const D &>(*this))->get_Prefix(put(value)));
     return value;
 }
 
 template <typename D> void impl_IXmlNode<D>::Normalize() const
 {
-    check_hresult(shim()->abi_Normalize());
+    check_hresult(static_cast<const IXmlNode &>(static_cast<const D &>(*this))->abi_Normalize());
 }
 
 template <typename D> void impl_IXmlNode<D>::Prefix(const Windows::IInspectable & value) const
 {
-    check_hresult(shim()->put_Prefix(get(value)));
+    check_hresult(static_cast<const IXmlNode &>(static_cast<const D &>(*this))->put_Prefix(get(value)));
 }
 
 template <typename D> bool impl_IXmlDomImplementation<D>::HasFeature(hstring_ref feature, const Windows::IInspectable & version) const
 {
     bool featureSupported {};
-    check_hresult(shim()->abi_HasFeature(get(feature), get(version), &featureSupported));
+    check_hresult(static_cast<const IXmlDomImplementation &>(static_cast<const D &>(*this))->abi_HasFeature(get(feature), get(version), &featureSupported));
     return featureSupported;
 }
 
 template <typename D> hstring impl_IXmlDocumentType<D>::Name() const
 {
     hstring value;
-    check_hresult(shim()->get_Name(put(value)));
+    check_hresult(static_cast<const IXmlDocumentType &>(static_cast<const D &>(*this))->get_Name(put(value)));
     return value;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlNamedNodeMap impl_IXmlDocumentType<D>::Entities() const
 {
     Windows::Data::Xml::Dom::XmlNamedNodeMap value { nullptr };
-    check_hresult(shim()->get_Entities(put(value)));
+    check_hresult(static_cast<const IXmlDocumentType &>(static_cast<const D &>(*this))->get_Entities(put(value)));
     return value;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlNamedNodeMap impl_IXmlDocumentType<D>::Notations() const
 {
     Windows::Data::Xml::Dom::XmlNamedNodeMap value { nullptr };
-    check_hresult(shim()->get_Notations(put(value)));
+    check_hresult(static_cast<const IXmlDocumentType &>(static_cast<const D &>(*this))->get_Notations(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IXmlAttribute<D>::Name() const
 {
     hstring value;
-    check_hresult(shim()->get_Name(put(value)));
+    check_hresult(static_cast<const IXmlAttribute &>(static_cast<const D &>(*this))->get_Name(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IXmlAttribute<D>::Specified() const
 {
     bool value {};
-    check_hresult(shim()->get_Specified(&value));
+    check_hresult(static_cast<const IXmlAttribute &>(static_cast<const D &>(*this))->get_Specified(&value));
     return value;
 }
 
 template <typename D> hstring impl_IXmlAttribute<D>::Value() const
 {
     hstring value;
-    check_hresult(shim()->get_Value(put(value)));
+    check_hresult(static_cast<const IXmlAttribute &>(static_cast<const D &>(*this))->get_Value(put(value)));
     return value;
 }
 
 template <typename D> void impl_IXmlAttribute<D>::Value(hstring_ref value) const
 {
-    check_hresult(shim()->put_Value(get(value)));
+    check_hresult(static_cast<const IXmlAttribute &>(static_cast<const D &>(*this))->put_Value(get(value)));
 }
 
 template <typename D> hstring impl_IXmlElement<D>::TagName() const
 {
     hstring value;
-    check_hresult(shim()->get_TagName(put(value)));
+    check_hresult(static_cast<const IXmlElement &>(static_cast<const D &>(*this))->get_TagName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IXmlElement<D>::GetAttribute(hstring_ref attributeName) const
 {
     hstring attributeValue;
-    check_hresult(shim()->abi_GetAttribute(get(attributeName), put(attributeValue)));
+    check_hresult(static_cast<const IXmlElement &>(static_cast<const D &>(*this))->abi_GetAttribute(get(attributeName), put(attributeValue)));
     return attributeValue;
 }
 
 template <typename D> void impl_IXmlElement<D>::SetAttribute(hstring_ref attributeName, hstring_ref attributeValue) const
 {
-    check_hresult(shim()->abi_SetAttribute(get(attributeName), get(attributeValue)));
+    check_hresult(static_cast<const IXmlElement &>(static_cast<const D &>(*this))->abi_SetAttribute(get(attributeName), get(attributeValue)));
 }
 
 template <typename D> void impl_IXmlElement<D>::RemoveAttribute(hstring_ref attributeName) const
 {
-    check_hresult(shim()->abi_RemoveAttribute(get(attributeName)));
+    check_hresult(static_cast<const IXmlElement &>(static_cast<const D &>(*this))->abi_RemoveAttribute(get(attributeName)));
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlAttribute impl_IXmlElement<D>::GetAttributeNode(hstring_ref attributeName) const
 {
     Windows::Data::Xml::Dom::XmlAttribute attributeNode { nullptr };
-    check_hresult(shim()->abi_GetAttributeNode(get(attributeName), put(attributeNode)));
+    check_hresult(static_cast<const IXmlElement &>(static_cast<const D &>(*this))->abi_GetAttributeNode(get(attributeName), put(attributeNode)));
     return attributeNode;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlAttribute impl_IXmlElement<D>::SetAttributeNode(const Windows::Data::Xml::Dom::XmlAttribute & newAttribute) const
 {
     Windows::Data::Xml::Dom::XmlAttribute previousAttribute { nullptr };
-    check_hresult(shim()->abi_SetAttributeNode(get(newAttribute), put(previousAttribute)));
+    check_hresult(static_cast<const IXmlElement &>(static_cast<const D &>(*this))->abi_SetAttributeNode(get(newAttribute), put(previousAttribute)));
     return previousAttribute;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlAttribute impl_IXmlElement<D>::RemoveAttributeNode(const Windows::Data::Xml::Dom::XmlAttribute & attributeNode) const
 {
     Windows::Data::Xml::Dom::XmlAttribute removedAttribute { nullptr };
-    check_hresult(shim()->abi_RemoveAttributeNode(get(attributeNode), put(removedAttribute)));
+    check_hresult(static_cast<const IXmlElement &>(static_cast<const D &>(*this))->abi_RemoveAttributeNode(get(attributeNode), put(removedAttribute)));
     return removedAttribute;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlNodeList impl_IXmlElement<D>::GetElementsByTagName(hstring_ref tagName) const
 {
     Windows::Data::Xml::Dom::XmlNodeList elements { nullptr };
-    check_hresult(shim()->abi_GetElementsByTagName(get(tagName), put(elements)));
+    check_hresult(static_cast<const IXmlElement &>(static_cast<const D &>(*this))->abi_GetElementsByTagName(get(tagName), put(elements)));
     return elements;
 }
 
 template <typename D> void impl_IXmlElement<D>::SetAttributeNS(const Windows::IInspectable & namespaceUri, hstring_ref qualifiedName, hstring_ref value) const
 {
-    check_hresult(shim()->abi_SetAttributeNS(get(namespaceUri), get(qualifiedName), get(value)));
+    check_hresult(static_cast<const IXmlElement &>(static_cast<const D &>(*this))->abi_SetAttributeNS(get(namespaceUri), get(qualifiedName), get(value)));
 }
 
 template <typename D> hstring impl_IXmlElement<D>::GetAttributeNS(const Windows::IInspectable & namespaceUri, hstring_ref localName) const
 {
     hstring value;
-    check_hresult(shim()->abi_GetAttributeNS(get(namespaceUri), get(localName), put(value)));
+    check_hresult(static_cast<const IXmlElement &>(static_cast<const D &>(*this))->abi_GetAttributeNS(get(namespaceUri), get(localName), put(value)));
     return value;
 }
 
 template <typename D> void impl_IXmlElement<D>::RemoveAttributeNS(const Windows::IInspectable & namespaceUri, hstring_ref localName) const
 {
-    check_hresult(shim()->abi_RemoveAttributeNS(get(namespaceUri), get(localName)));
+    check_hresult(static_cast<const IXmlElement &>(static_cast<const D &>(*this))->abi_RemoveAttributeNS(get(namespaceUri), get(localName)));
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlAttribute impl_IXmlElement<D>::SetAttributeNodeNS(const Windows::Data::Xml::Dom::XmlAttribute & newAttribute) const
 {
     Windows::Data::Xml::Dom::XmlAttribute previousAttribute { nullptr };
-    check_hresult(shim()->abi_SetAttributeNodeNS(get(newAttribute), put(previousAttribute)));
+    check_hresult(static_cast<const IXmlElement &>(static_cast<const D &>(*this))->abi_SetAttributeNodeNS(get(newAttribute), put(previousAttribute)));
     return previousAttribute;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlAttribute impl_IXmlElement<D>::GetAttributeNodeNS(const Windows::IInspectable & namespaceUri, hstring_ref localName) const
 {
     Windows::Data::Xml::Dom::XmlAttribute previousAttribute { nullptr };
-    check_hresult(shim()->abi_GetAttributeNodeNS(get(namespaceUri), get(localName), put(previousAttribute)));
+    check_hresult(static_cast<const IXmlElement &>(static_cast<const D &>(*this))->abi_GetAttributeNodeNS(get(namespaceUri), get(localName), put(previousAttribute)));
     return previousAttribute;
 }
 
 template <typename D> Windows::IInspectable impl_IDtdNotation<D>::PublicId() const
 {
     Windows::IInspectable value;
-    check_hresult(shim()->get_PublicId(put(value)));
+    check_hresult(static_cast<const IDtdNotation &>(static_cast<const D &>(*this))->get_PublicId(put(value)));
     return value;
 }
 
 template <typename D> Windows::IInspectable impl_IDtdNotation<D>::SystemId() const
 {
     Windows::IInspectable value;
-    check_hresult(shim()->get_SystemId(put(value)));
+    check_hresult(static_cast<const IDtdNotation &>(static_cast<const D &>(*this))->get_SystemId(put(value)));
     return value;
 }
 
 template <typename D> Windows::IInspectable impl_IDtdEntity<D>::PublicId() const
 {
     Windows::IInspectable value;
-    check_hresult(shim()->get_PublicId(put(value)));
+    check_hresult(static_cast<const IDtdEntity &>(static_cast<const D &>(*this))->get_PublicId(put(value)));
     return value;
 }
 
 template <typename D> Windows::IInspectable impl_IDtdEntity<D>::SystemId() const
 {
     Windows::IInspectable value;
-    check_hresult(shim()->get_SystemId(put(value)));
+    check_hresult(static_cast<const IDtdEntity &>(static_cast<const D &>(*this))->get_SystemId(put(value)));
     return value;
 }
 
 template <typename D> Windows::IInspectable impl_IDtdEntity<D>::NotationName() const
 {
     Windows::IInspectable value;
-    check_hresult(shim()->get_NotationName(put(value)));
+    check_hresult(static_cast<const IDtdEntity &>(static_cast<const D &>(*this))->get_NotationName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IXmlProcessingInstruction<D>::Target() const
 {
     hstring value;
-    check_hresult(shim()->get_Target(put(value)));
+    check_hresult(static_cast<const IXmlProcessingInstruction &>(static_cast<const D &>(*this))->get_Target(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IXmlProcessingInstruction<D>::Data() const
 {
     hstring value;
-    check_hresult(shim()->get_Data(put(value)));
+    check_hresult(static_cast<const IXmlProcessingInstruction &>(static_cast<const D &>(*this))->get_Data(put(value)));
     return value;
 }
 
 template <typename D> void impl_IXmlProcessingInstruction<D>::Data(hstring_ref value) const
 {
-    check_hresult(shim()->put_Data(get(value)));
+    check_hresult(static_cast<const IXmlProcessingInstruction &>(static_cast<const D &>(*this))->put_Data(get(value)));
 }
 
 template <typename D> hstring impl_IXmlCharacterData<D>::Data() const
 {
     hstring value;
-    check_hresult(shim()->get_Data(put(value)));
+    check_hresult(static_cast<const IXmlCharacterData &>(static_cast<const D &>(*this))->get_Data(put(value)));
     return value;
 }
 
 template <typename D> void impl_IXmlCharacterData<D>::Data(hstring_ref value) const
 {
-    check_hresult(shim()->put_Data(get(value)));
+    check_hresult(static_cast<const IXmlCharacterData &>(static_cast<const D &>(*this))->put_Data(get(value)));
 }
 
 template <typename D> uint32_t impl_IXmlCharacterData<D>::Length() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_Length(&value));
+    check_hresult(static_cast<const IXmlCharacterData &>(static_cast<const D &>(*this))->get_Length(&value));
     return value;
 }
 
 template <typename D> hstring impl_IXmlCharacterData<D>::SubstringData(uint32_t offset, uint32_t count) const
 {
     hstring data;
-    check_hresult(shim()->abi_SubstringData(offset, count, put(data)));
+    check_hresult(static_cast<const IXmlCharacterData &>(static_cast<const D &>(*this))->abi_SubstringData(offset, count, put(data)));
     return data;
 }
 
 template <typename D> void impl_IXmlCharacterData<D>::AppendData(hstring_ref data) const
 {
-    check_hresult(shim()->abi_AppendData(get(data)));
+    check_hresult(static_cast<const IXmlCharacterData &>(static_cast<const D &>(*this))->abi_AppendData(get(data)));
 }
 
 template <typename D> void impl_IXmlCharacterData<D>::InsertData(uint32_t offset, hstring_ref data) const
 {
-    check_hresult(shim()->abi_InsertData(offset, get(data)));
+    check_hresult(static_cast<const IXmlCharacterData &>(static_cast<const D &>(*this))->abi_InsertData(offset, get(data)));
 }
 
 template <typename D> void impl_IXmlCharacterData<D>::DeleteData(uint32_t offset, uint32_t count) const
 {
-    check_hresult(shim()->abi_DeleteData(offset, count));
+    check_hresult(static_cast<const IXmlCharacterData &>(static_cast<const D &>(*this))->abi_DeleteData(offset, count));
 }
 
 template <typename D> void impl_IXmlCharacterData<D>::ReplaceData(uint32_t offset, uint32_t count, hstring_ref data) const
 {
-    check_hresult(shim()->abi_ReplaceData(offset, count, get(data)));
+    check_hresult(static_cast<const IXmlCharacterData &>(static_cast<const D &>(*this))->abi_ReplaceData(offset, count, get(data)));
 }
 
 template <typename D> Windows::Data::Xml::Dom::IXmlText impl_IXmlText<D>::SplitText(uint32_t offset) const
 {
     Windows::Data::Xml::Dom::IXmlText secondPart;
-    check_hresult(shim()->abi_SplitText(offset, put(secondPart)));
+    check_hresult(static_cast<const IXmlText &>(static_cast<const D &>(*this))->abi_SplitText(offset, put(secondPart)));
     return secondPart;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlDocumentType impl_IXmlDocument<D>::Doctype() const
 {
     Windows::Data::Xml::Dom::XmlDocumentType value { nullptr };
-    check_hresult(shim()->get_Doctype(put(value)));
+    check_hresult(static_cast<const IXmlDocument &>(static_cast<const D &>(*this))->get_Doctype(put(value)));
     return value;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlDomImplementation impl_IXmlDocument<D>::Implementation() const
 {
     Windows::Data::Xml::Dom::XmlDomImplementation value { nullptr };
-    check_hresult(shim()->get_Implementation(put(value)));
+    check_hresult(static_cast<const IXmlDocument &>(static_cast<const D &>(*this))->get_Implementation(put(value)));
     return value;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlElement impl_IXmlDocument<D>::DocumentElement() const
 {
     Windows::Data::Xml::Dom::XmlElement value { nullptr };
-    check_hresult(shim()->get_DocumentElement(put(value)));
+    check_hresult(static_cast<const IXmlDocument &>(static_cast<const D &>(*this))->get_DocumentElement(put(value)));
     return value;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlElement impl_IXmlDocument<D>::CreateElement(hstring_ref tagName) const
 {
     Windows::Data::Xml::Dom::XmlElement newElement { nullptr };
-    check_hresult(shim()->abi_CreateElement(get(tagName), put(newElement)));
+    check_hresult(static_cast<const IXmlDocument &>(static_cast<const D &>(*this))->abi_CreateElement(get(tagName), put(newElement)));
     return newElement;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlDocumentFragment impl_IXmlDocument<D>::CreateDocumentFragment() const
 {
     Windows::Data::Xml::Dom::XmlDocumentFragment newDocumentFragment { nullptr };
-    check_hresult(shim()->abi_CreateDocumentFragment(put(newDocumentFragment)));
+    check_hresult(static_cast<const IXmlDocument &>(static_cast<const D &>(*this))->abi_CreateDocumentFragment(put(newDocumentFragment)));
     return newDocumentFragment;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlText impl_IXmlDocument<D>::CreateTextNode(hstring_ref data) const
 {
     Windows::Data::Xml::Dom::XmlText newTextNode { nullptr };
-    check_hresult(shim()->abi_CreateTextNode(get(data), put(newTextNode)));
+    check_hresult(static_cast<const IXmlDocument &>(static_cast<const D &>(*this))->abi_CreateTextNode(get(data), put(newTextNode)));
     return newTextNode;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlComment impl_IXmlDocument<D>::CreateComment(hstring_ref data) const
 {
     Windows::Data::Xml::Dom::XmlComment newComment { nullptr };
-    check_hresult(shim()->abi_CreateComment(get(data), put(newComment)));
+    check_hresult(static_cast<const IXmlDocument &>(static_cast<const D &>(*this))->abi_CreateComment(get(data), put(newComment)));
     return newComment;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlProcessingInstruction impl_IXmlDocument<D>::CreateProcessingInstruction(hstring_ref target, hstring_ref data) const
 {
     Windows::Data::Xml::Dom::XmlProcessingInstruction newProcessingInstruction { nullptr };
-    check_hresult(shim()->abi_CreateProcessingInstruction(get(target), get(data), put(newProcessingInstruction)));
+    check_hresult(static_cast<const IXmlDocument &>(static_cast<const D &>(*this))->abi_CreateProcessingInstruction(get(target), get(data), put(newProcessingInstruction)));
     return newProcessingInstruction;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlAttribute impl_IXmlDocument<D>::CreateAttribute(hstring_ref name) const
 {
     Windows::Data::Xml::Dom::XmlAttribute newAttribute { nullptr };
-    check_hresult(shim()->abi_CreateAttribute(get(name), put(newAttribute)));
+    check_hresult(static_cast<const IXmlDocument &>(static_cast<const D &>(*this))->abi_CreateAttribute(get(name), put(newAttribute)));
     return newAttribute;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlEntityReference impl_IXmlDocument<D>::CreateEntityReference(hstring_ref name) const
 {
     Windows::Data::Xml::Dom::XmlEntityReference newEntityReference { nullptr };
-    check_hresult(shim()->abi_CreateEntityReference(get(name), put(newEntityReference)));
+    check_hresult(static_cast<const IXmlDocument &>(static_cast<const D &>(*this))->abi_CreateEntityReference(get(name), put(newEntityReference)));
     return newEntityReference;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlNodeList impl_IXmlDocument<D>::GetElementsByTagName(hstring_ref tagName) const
 {
     Windows::Data::Xml::Dom::XmlNodeList elements { nullptr };
-    check_hresult(shim()->abi_GetElementsByTagName(get(tagName), put(elements)));
+    check_hresult(static_cast<const IXmlDocument &>(static_cast<const D &>(*this))->abi_GetElementsByTagName(get(tagName), put(elements)));
     return elements;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlCDataSection impl_IXmlDocument<D>::CreateCDataSection(hstring_ref data) const
 {
     Windows::Data::Xml::Dom::XmlCDataSection newCDataSection { nullptr };
-    check_hresult(shim()->abi_CreateCDataSection(get(data), put(newCDataSection)));
+    check_hresult(static_cast<const IXmlDocument &>(static_cast<const D &>(*this))->abi_CreateCDataSection(get(data), put(newCDataSection)));
     return newCDataSection;
 }
 
 template <typename D> hstring impl_IXmlDocument<D>::DocumentUri() const
 {
     hstring value;
-    check_hresult(shim()->get_DocumentUri(put(value)));
+    check_hresult(static_cast<const IXmlDocument &>(static_cast<const D &>(*this))->get_DocumentUri(put(value)));
     return value;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlAttribute impl_IXmlDocument<D>::CreateAttributeNS(const Windows::IInspectable & namespaceUri, hstring_ref qualifiedName) const
 {
     Windows::Data::Xml::Dom::XmlAttribute newAttribute { nullptr };
-    check_hresult(shim()->abi_CreateAttributeNS(get(namespaceUri), get(qualifiedName), put(newAttribute)));
+    check_hresult(static_cast<const IXmlDocument &>(static_cast<const D &>(*this))->abi_CreateAttributeNS(get(namespaceUri), get(qualifiedName), put(newAttribute)));
     return newAttribute;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlElement impl_IXmlDocument<D>::CreateElementNS(const Windows::IInspectable & namespaceUri, hstring_ref qualifiedName) const
 {
     Windows::Data::Xml::Dom::XmlElement newElement { nullptr };
-    check_hresult(shim()->abi_CreateElementNS(get(namespaceUri), get(qualifiedName), put(newElement)));
+    check_hresult(static_cast<const IXmlDocument &>(static_cast<const D &>(*this))->abi_CreateElementNS(get(namespaceUri), get(qualifiedName), put(newElement)));
     return newElement;
 }
 
 template <typename D> Windows::Data::Xml::Dom::XmlElement impl_IXmlDocument<D>::GetElementById(hstring_ref elementId) const
 {
     Windows::Data::Xml::Dom::XmlElement element { nullptr };
-    check_hresult(shim()->abi_GetElementById(get(elementId), put(element)));
+    check_hresult(static_cast<const IXmlDocument &>(static_cast<const D &>(*this))->abi_GetElementById(get(elementId), put(element)));
     return element;
 }
 
 template <typename D> Windows::Data::Xml::Dom::IXmlNode impl_IXmlDocument<D>::ImportNode(const Windows::Data::Xml::Dom::IXmlNode & node, bool deep) const
 {
     Windows::Data::Xml::Dom::IXmlNode newNode;
-    check_hresult(shim()->abi_ImportNode(get(node), deep, put(newNode)));
+    check_hresult(static_cast<const IXmlDocument &>(static_cast<const D &>(*this))->abi_ImportNode(get(node), deep, put(newNode)));
     return newNode;
 }
 
 template <typename D> uint32_t impl_IXmlNamedNodeMap<D>::Length() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_Length(&value));
+    check_hresult(static_cast<const IXmlNamedNodeMap &>(static_cast<const D &>(*this))->get_Length(&value));
     return value;
 }
 
 template <typename D> Windows::Data::Xml::Dom::IXmlNode impl_IXmlNamedNodeMap<D>::Item(uint32_t index) const
 {
     Windows::Data::Xml::Dom::IXmlNode node;
-    check_hresult(shim()->abi_Item(index, put(node)));
+    check_hresult(static_cast<const IXmlNamedNodeMap &>(static_cast<const D &>(*this))->abi_Item(index, put(node)));
     return node;
 }
 
 template <typename D> Windows::Data::Xml::Dom::IXmlNode impl_IXmlNamedNodeMap<D>::GetNamedItem(hstring_ref name) const
 {
     Windows::Data::Xml::Dom::IXmlNode node;
-    check_hresult(shim()->abi_GetNamedItem(get(name), put(node)));
+    check_hresult(static_cast<const IXmlNamedNodeMap &>(static_cast<const D &>(*this))->abi_GetNamedItem(get(name), put(node)));
     return node;
 }
 
 template <typename D> Windows::Data::Xml::Dom::IXmlNode impl_IXmlNamedNodeMap<D>::SetNamedItem(const Windows::Data::Xml::Dom::IXmlNode & node) const
 {
     Windows::Data::Xml::Dom::IXmlNode previousNode;
-    check_hresult(shim()->abi_SetNamedItem(get(node), put(previousNode)));
+    check_hresult(static_cast<const IXmlNamedNodeMap &>(static_cast<const D &>(*this))->abi_SetNamedItem(get(node), put(previousNode)));
     return previousNode;
 }
 
 template <typename D> Windows::Data::Xml::Dom::IXmlNode impl_IXmlNamedNodeMap<D>::RemoveNamedItem(hstring_ref name) const
 {
     Windows::Data::Xml::Dom::IXmlNode previousNode;
-    check_hresult(shim()->abi_RemoveNamedItem(get(name), put(previousNode)));
+    check_hresult(static_cast<const IXmlNamedNodeMap &>(static_cast<const D &>(*this))->abi_RemoveNamedItem(get(name), put(previousNode)));
     return previousNode;
 }
 
 template <typename D> Windows::Data::Xml::Dom::IXmlNode impl_IXmlNamedNodeMap<D>::GetNamedItemNS(const Windows::IInspectable & namespaceUri, hstring_ref name) const
 {
     Windows::Data::Xml::Dom::IXmlNode node;
-    check_hresult(shim()->abi_GetNamedItemNS(get(namespaceUri), get(name), put(node)));
+    check_hresult(static_cast<const IXmlNamedNodeMap &>(static_cast<const D &>(*this))->abi_GetNamedItemNS(get(namespaceUri), get(name), put(node)));
     return node;
 }
 
 template <typename D> Windows::Data::Xml::Dom::IXmlNode impl_IXmlNamedNodeMap<D>::RemoveNamedItemNS(const Windows::IInspectable & namespaceUri, hstring_ref name) const
 {
     Windows::Data::Xml::Dom::IXmlNode previousNode;
-    check_hresult(shim()->abi_RemoveNamedItemNS(get(namespaceUri), get(name), put(previousNode)));
+    check_hresult(static_cast<const IXmlNamedNodeMap &>(static_cast<const D &>(*this))->abi_RemoveNamedItemNS(get(namespaceUri), get(name), put(previousNode)));
     return previousNode;
 }
 
 template <typename D> Windows::Data::Xml::Dom::IXmlNode impl_IXmlNamedNodeMap<D>::SetNamedItemNS(const Windows::Data::Xml::Dom::IXmlNode & node) const
 {
     Windows::Data::Xml::Dom::IXmlNode previousNode;
-    check_hresult(shim()->abi_SetNamedItemNS(get(node), put(previousNode)));
+    check_hresult(static_cast<const IXmlNamedNodeMap &>(static_cast<const D &>(*this))->abi_SetNamedItemNS(get(node), put(previousNode)));
     return previousNode;
 }
 
 template <typename D> uint32_t impl_IXmlNodeList<D>::Length() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_Length(&value));
+    check_hresult(static_cast<const IXmlNodeList &>(static_cast<const D &>(*this))->get_Length(&value));
     return value;
 }
 
 template <typename D> Windows::Data::Xml::Dom::IXmlNode impl_IXmlNodeList<D>::Item(uint32_t index) const
 {
     Windows::Data::Xml::Dom::IXmlNode node;
-    check_hresult(shim()->abi_Item(index, put(node)));
+    check_hresult(static_cast<const IXmlNodeList &>(static_cast<const D &>(*this))->abi_Item(index, put(node)));
     return node;
 }
 
 template <typename D> uint32_t impl_IXmlLoadSettings<D>::MaxElementDepth() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_MaxElementDepth(&value));
+    check_hresult(static_cast<const IXmlLoadSettings &>(static_cast<const D &>(*this))->get_MaxElementDepth(&value));
     return value;
 }
 
 template <typename D> void impl_IXmlLoadSettings<D>::MaxElementDepth(uint32_t value) const
 {
-    check_hresult(shim()->put_MaxElementDepth(value));
+    check_hresult(static_cast<const IXmlLoadSettings &>(static_cast<const D &>(*this))->put_MaxElementDepth(value));
 }
 
 template <typename D> bool impl_IXmlLoadSettings<D>::ProhibitDtd() const
 {
     bool value {};
-    check_hresult(shim()->get_ProhibitDtd(&value));
+    check_hresult(static_cast<const IXmlLoadSettings &>(static_cast<const D &>(*this))->get_ProhibitDtd(&value));
     return value;
 }
 
 template <typename D> void impl_IXmlLoadSettings<D>::ProhibitDtd(bool value) const
 {
-    check_hresult(shim()->put_ProhibitDtd(value));
+    check_hresult(static_cast<const IXmlLoadSettings &>(static_cast<const D &>(*this))->put_ProhibitDtd(value));
 }
 
 template <typename D> bool impl_IXmlLoadSettings<D>::ResolveExternals() const
 {
     bool value {};
-    check_hresult(shim()->get_ResolveExternals(&value));
+    check_hresult(static_cast<const IXmlLoadSettings &>(static_cast<const D &>(*this))->get_ResolveExternals(&value));
     return value;
 }
 
 template <typename D> void impl_IXmlLoadSettings<D>::ResolveExternals(bool value) const
 {
-    check_hresult(shim()->put_ResolveExternals(value));
+    check_hresult(static_cast<const IXmlLoadSettings &>(static_cast<const D &>(*this))->put_ResolveExternals(value));
 }
 
 template <typename D> bool impl_IXmlLoadSettings<D>::ValidateOnParse() const
 {
     bool value {};
-    check_hresult(shim()->get_ValidateOnParse(&value));
+    check_hresult(static_cast<const IXmlLoadSettings &>(static_cast<const D &>(*this))->get_ValidateOnParse(&value));
     return value;
 }
 
 template <typename D> void impl_IXmlLoadSettings<D>::ValidateOnParse(bool value) const
 {
-    check_hresult(shim()->put_ValidateOnParse(value));
+    check_hresult(static_cast<const IXmlLoadSettings &>(static_cast<const D &>(*this))->put_ValidateOnParse(value));
 }
 
 template <typename D> bool impl_IXmlLoadSettings<D>::ElementContentWhiteSpace() const
 {
     bool value {};
-    check_hresult(shim()->get_ElementContentWhiteSpace(&value));
+    check_hresult(static_cast<const IXmlLoadSettings &>(static_cast<const D &>(*this))->get_ElementContentWhiteSpace(&value));
     return value;
 }
 
 template <typename D> void impl_IXmlLoadSettings<D>::ElementContentWhiteSpace(bool value) const
 {
-    check_hresult(shim()->put_ElementContentWhiteSpace(value));
+    check_hresult(static_cast<const IXmlLoadSettings &>(static_cast<const D &>(*this))->put_ElementContentWhiteSpace(value));
 }
 
 template <typename D> void impl_IXmlDocumentIO<D>::LoadXml(hstring_ref xml) const
 {
-    check_hresult(shim()->abi_LoadXml(get(xml)));
+    check_hresult(static_cast<const IXmlDocumentIO &>(static_cast<const D &>(*this))->abi_LoadXml(get(xml)));
 }
 
 template <typename D> void impl_IXmlDocumentIO<D>::LoadXml(hstring_ref xml, const Windows::Data::Xml::Dom::XmlLoadSettings & loadSettings) const
 {
-    check_hresult(shim()->abi_LoadXmlWithSettings(get(xml), get(loadSettings)));
+    check_hresult(static_cast<const IXmlDocumentIO &>(static_cast<const D &>(*this))->abi_LoadXmlWithSettings(get(xml), get(loadSettings)));
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IXmlDocumentIO<D>::SaveToFileAsync(const Windows::Storage::IStorageFile & file) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(shim()->abi_SaveToFileAsync(get(file), put(asyncInfo)));
+    check_hresult(static_cast<const IXmlDocumentIO &>(static_cast<const D &>(*this))->abi_SaveToFileAsync(get(file), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> void impl_IXmlDocumentIO2<D>::LoadXmlFromBuffer(const Windows::Storage::Streams::IBuffer & buffer) const
 {
-    check_hresult(shim()->abi_LoadXmlFromBuffer(get(buffer)));
+    check_hresult(static_cast<const IXmlDocumentIO2 &>(static_cast<const D &>(*this))->abi_LoadXmlFromBuffer(get(buffer)));
 }
 
 template <typename D> void impl_IXmlDocumentIO2<D>::LoadXmlFromBuffer(const Windows::Storage::Streams::IBuffer & buffer, const Windows::Data::Xml::Dom::XmlLoadSettings & loadSettings) const
 {
-    check_hresult(shim()->abi_LoadXmlFromBufferWithSettings(get(buffer), get(loadSettings)));
+    check_hresult(static_cast<const IXmlDocumentIO2 &>(static_cast<const D &>(*this))->abi_LoadXmlFromBufferWithSettings(get(buffer), get(loadSettings)));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Data::Xml::Dom::XmlDocument> impl_IXmlDocumentStatics<D>::LoadFromUriAsync(const Windows::Foundation::Uri & uri) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Data::Xml::Dom::XmlDocument> asyncInfo;
-    check_hresult(shim()->abi_LoadFromUriAsync(get(uri), put(asyncInfo)));
+    check_hresult(static_cast<const IXmlDocumentStatics &>(static_cast<const D &>(*this))->abi_LoadFromUriAsync(get(uri), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Data::Xml::Dom::XmlDocument> impl_IXmlDocumentStatics<D>::LoadFromUriAsync(const Windows::Foundation::Uri & uri, const Windows::Data::Xml::Dom::XmlLoadSettings & loadSettings) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Data::Xml::Dom::XmlDocument> asyncInfo;
-    check_hresult(shim()->abi_LoadFromUriWithSettingsAsync(get(uri), get(loadSettings), put(asyncInfo)));
+    check_hresult(static_cast<const IXmlDocumentStatics &>(static_cast<const D &>(*this))->abi_LoadFromUriWithSettingsAsync(get(uri), get(loadSettings), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Data::Xml::Dom::XmlDocument> impl_IXmlDocumentStatics<D>::LoadFromFileAsync(const Windows::Storage::IStorageFile & file) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Data::Xml::Dom::XmlDocument> asyncInfo;
-    check_hresult(shim()->abi_LoadFromFileAsync(get(file), put(asyncInfo)));
+    check_hresult(static_cast<const IXmlDocumentStatics &>(static_cast<const D &>(*this))->abi_LoadFromFileAsync(get(file), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Data::Xml::Dom::XmlDocument> impl_IXmlDocumentStatics<D>::LoadFromFileAsync(const Windows::Storage::IStorageFile & file, const Windows::Data::Xml::Dom::XmlLoadSettings & loadSettings) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Data::Xml::Dom::XmlDocument> asyncInfo;
-    check_hresult(shim()->abi_LoadFromFileWithSettingsAsync(get(file), get(loadSettings), put(asyncInfo)));
+    check_hresult(static_cast<const IXmlDocumentStatics &>(static_cast<const D &>(*this))->abi_LoadFromFileWithSettingsAsync(get(file), get(loadSettings), put(asyncInfo)));
     return asyncInfo;
 }
 

@@ -147,17 +147,17 @@ template <> struct traits<Windows::Devices::WiFiDirect::Services::WiFiDirectServ
 
 namespace Windows::Devices::WiFiDirect::Services {
 
-template <typename T> class impl_IWiFiDirectService;
-template <typename T> class impl_IWiFiDirectServiceAdvertiser;
-template <typename T> class impl_IWiFiDirectServiceAdvertiserFactory;
-template <typename T> class impl_IWiFiDirectServiceAutoAcceptSessionConnectedEventArgs;
-template <typename T> class impl_IWiFiDirectServiceProvisioningInfo;
-template <typename T> class impl_IWiFiDirectServiceRemotePortAddedEventArgs;
-template <typename T> class impl_IWiFiDirectServiceSession;
-template <typename T> class impl_IWiFiDirectServiceSessionDeferredEventArgs;
-template <typename T> class impl_IWiFiDirectServiceSessionRequest;
-template <typename T> class impl_IWiFiDirectServiceSessionRequestedEventArgs;
-template <typename T> class impl_IWiFiDirectServiceStatics;
+template <typename T> struct impl_IWiFiDirectService;
+template <typename T> struct impl_IWiFiDirectServiceAdvertiser;
+template <typename T> struct impl_IWiFiDirectServiceAdvertiserFactory;
+template <typename T> struct impl_IWiFiDirectServiceAutoAcceptSessionConnectedEventArgs;
+template <typename T> struct impl_IWiFiDirectServiceProvisioningInfo;
+template <typename T> struct impl_IWiFiDirectServiceRemotePortAddedEventArgs;
+template <typename T> struct impl_IWiFiDirectServiceSession;
+template <typename T> struct impl_IWiFiDirectServiceSessionDeferredEventArgs;
+template <typename T> struct impl_IWiFiDirectServiceSessionRequest;
+template <typename T> struct impl_IWiFiDirectServiceSessionRequestedEventArgs;
+template <typename T> struct impl_IWiFiDirectServiceStatics;
 
 }
 

@@ -453,26 +453,26 @@ template <> struct traits<Windows::Globalization::Language> { using default_inte
 
 namespace Windows::Globalization {
 
-template <typename T> class impl_IApplicationLanguagesStatics;
-template <typename T> class impl_ICalendar;
-template <typename T> class impl_ICalendarFactory;
-template <typename T> class impl_ICalendarFactory2;
-template <typename T> class impl_ICalendarIdentifiersStatics;
-template <typename T> class impl_ICalendarIdentifiersStatics2;
-template <typename T> class impl_ICalendarIdentifiersStatics3;
-template <typename T> class impl_IClockIdentifiersStatics;
-template <typename T> class impl_ICurrencyIdentifiersStatics;
-template <typename T> class impl_IGeographicRegion;
-template <typename T> class impl_IGeographicRegionFactory;
-template <typename T> class impl_IGeographicRegionStatics;
-template <typename T> class impl_ILanguage;
-template <typename T> class impl_ILanguageExtensionSubtags;
-template <typename T> class impl_ILanguageFactory;
-template <typename T> class impl_ILanguageStatics;
-template <typename T> class impl_ILanguageStatics2;
-template <typename T> class impl_INumeralSystemIdentifiersStatics;
-template <typename T> class impl_INumeralSystemIdentifiersStatics2;
-template <typename T> class impl_ITimeZoneOnCalendar;
+template <typename T> struct impl_IApplicationLanguagesStatics;
+template <typename T> struct impl_ICalendar;
+template <typename T> struct impl_ICalendarFactory;
+template <typename T> struct impl_ICalendarFactory2;
+template <typename T> struct impl_ICalendarIdentifiersStatics;
+template <typename T> struct impl_ICalendarIdentifiersStatics2;
+template <typename T> struct impl_ICalendarIdentifiersStatics3;
+template <typename T> struct impl_IClockIdentifiersStatics;
+template <typename T> struct impl_ICurrencyIdentifiersStatics;
+template <typename T> struct impl_IGeographicRegion;
+template <typename T> struct impl_IGeographicRegionFactory;
+template <typename T> struct impl_IGeographicRegionStatics;
+template <typename T> struct impl_ILanguage;
+template <typename T> struct impl_ILanguageExtensionSubtags;
+template <typename T> struct impl_ILanguageFactory;
+template <typename T> struct impl_ILanguageStatics;
+template <typename T> struct impl_ILanguageStatics2;
+template <typename T> struct impl_INumeralSystemIdentifiersStatics;
+template <typename T> struct impl_INumeralSystemIdentifiersStatics2;
+template <typename T> struct impl_ITimeZoneOnCalendar;
 
 }
 

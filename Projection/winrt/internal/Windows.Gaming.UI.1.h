@@ -30,7 +30,7 @@ namespace ABI {
 
 namespace Windows::Gaming::UI {
 
-template <typename T> class impl_IGameBarStatics;
+template <typename T> struct impl_IGameBarStatics;
 
 }
 

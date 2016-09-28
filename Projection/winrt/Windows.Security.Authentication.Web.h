@@ -179,71 +179,71 @@ namespace Windows::Security::Authentication::Web {
 template <typename D> hstring impl_IWebAuthenticationResult<D>::ResponseData() const
 {
     hstring value;
-    check_hresult(shim()->get_ResponseData(put(value)));
+    check_hresult(static_cast<const IWebAuthenticationResult &>(static_cast<const D &>(*this))->get_ResponseData(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Authentication::Web::WebAuthenticationStatus impl_IWebAuthenticationResult<D>::ResponseStatus() const
 {
     Windows::Security::Authentication::Web::WebAuthenticationStatus value {};
-    check_hresult(shim()->get_ResponseStatus(&value));
+    check_hresult(static_cast<const IWebAuthenticationResult &>(static_cast<const D &>(*this))->get_ResponseStatus(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IWebAuthenticationResult<D>::ResponseErrorDetail() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_ResponseErrorDetail(&value));
+    check_hresult(static_cast<const IWebAuthenticationResult &>(static_cast<const D &>(*this))->get_ResponseErrorDetail(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::WebAuthenticationResult> impl_IWebAuthenticationBrokerStatics<D>::AuthenticateAsync(Windows::Security::Authentication::Web::WebAuthenticationOptions options, const Windows::Foundation::Uri & requestUri, const Windows::Foundation::Uri & callbackUri) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::WebAuthenticationResult> asyncInfo;
-    check_hresult(shim()->abi_AuthenticateWithCallbackUriAsync(options, get(requestUri), get(callbackUri), put(asyncInfo)));
+    check_hresult(static_cast<const IWebAuthenticationBrokerStatics &>(static_cast<const D &>(*this))->abi_AuthenticateWithCallbackUriAsync(options, get(requestUri), get(callbackUri), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::WebAuthenticationResult> impl_IWebAuthenticationBrokerStatics<D>::AuthenticateAsync(Windows::Security::Authentication::Web::WebAuthenticationOptions options, const Windows::Foundation::Uri & requestUri) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::WebAuthenticationResult> asyncInfo;
-    check_hresult(shim()->abi_AuthenticateWithoutCallbackUriAsync(options, get(requestUri), put(asyncInfo)));
+    check_hresult(static_cast<const IWebAuthenticationBrokerStatics &>(static_cast<const D &>(*this))->abi_AuthenticateWithoutCallbackUriAsync(options, get(requestUri), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::Uri impl_IWebAuthenticationBrokerStatics<D>::GetCurrentApplicationCallbackUri() const
 {
     Windows::Foundation::Uri callbackUri { nullptr };
-    check_hresult(shim()->abi_GetCurrentApplicationCallbackUri(put(callbackUri)));
+    check_hresult(static_cast<const IWebAuthenticationBrokerStatics &>(static_cast<const D &>(*this))->abi_GetCurrentApplicationCallbackUri(put(callbackUri)));
     return callbackUri;
 }
 
 template <typename D> void impl_IWebAuthenticationBrokerStatics2<D>::AuthenticateAndContinue(const Windows::Foundation::Uri & requestUri) const
 {
-    check_hresult(shim()->abi_AuthenticateAndContinue(get(requestUri)));
+    check_hresult(static_cast<const IWebAuthenticationBrokerStatics2 &>(static_cast<const D &>(*this))->abi_AuthenticateAndContinue(get(requestUri)));
 }
 
 template <typename D> void impl_IWebAuthenticationBrokerStatics2<D>::AuthenticateAndContinue(const Windows::Foundation::Uri & requestUri, const Windows::Foundation::Uri & callbackUri) const
 {
-    check_hresult(shim()->abi_AuthenticateWithCallbackUriAndContinue(get(requestUri), get(callbackUri)));
+    check_hresult(static_cast<const IWebAuthenticationBrokerStatics2 &>(static_cast<const D &>(*this))->abi_AuthenticateWithCallbackUriAndContinue(get(requestUri), get(callbackUri)));
 }
 
 template <typename D> void impl_IWebAuthenticationBrokerStatics2<D>::AuthenticateAndContinue(const Windows::Foundation::Uri & requestUri, const Windows::Foundation::Uri & callbackUri, const Windows::Foundation::Collections::ValueSet & continuationData, Windows::Security::Authentication::Web::WebAuthenticationOptions options) const
 {
-    check_hresult(shim()->abi_AuthenticateWithCallbackUriContinuationDataAndOptionsAndContinue(get(requestUri), get(callbackUri), get(continuationData), options));
+    check_hresult(static_cast<const IWebAuthenticationBrokerStatics2 &>(static_cast<const D &>(*this))->abi_AuthenticateWithCallbackUriContinuationDataAndOptionsAndContinue(get(requestUri), get(callbackUri), get(continuationData), options));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::WebAuthenticationResult> impl_IWebAuthenticationBrokerStatics2<D>::AuthenticateSilentlyAsync(const Windows::Foundation::Uri & requestUri) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::WebAuthenticationResult> asyncInfo;
-    check_hresult(shim()->abi_AuthenticateSilentlyAsync(get(requestUri), put(asyncInfo)));
+    check_hresult(static_cast<const IWebAuthenticationBrokerStatics2 &>(static_cast<const D &>(*this))->abi_AuthenticateSilentlyAsync(get(requestUri), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::WebAuthenticationResult> impl_IWebAuthenticationBrokerStatics2<D>::AuthenticateSilentlyAsync(const Windows::Foundation::Uri & requestUri, Windows::Security::Authentication::Web::WebAuthenticationOptions options) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::WebAuthenticationResult> asyncInfo;
-    check_hresult(shim()->abi_AuthenticateSilentlyWithOptionsAsync(get(requestUri), options, put(asyncInfo)));
+    check_hresult(static_cast<const IWebAuthenticationBrokerStatics2 &>(static_cast<const D &>(*this))->abi_AuthenticateSilentlyWithOptionsAsync(get(requestUri), options, put(asyncInfo)));
     return asyncInfo;
 }
 

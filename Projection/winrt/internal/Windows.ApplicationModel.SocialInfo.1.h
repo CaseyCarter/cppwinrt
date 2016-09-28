@@ -113,12 +113,12 @@ template <> struct traits<Windows::ApplicationModel::SocialInfo::SocialUserInfo>
 
 namespace Windows::ApplicationModel::SocialInfo {
 
-template <typename T> class impl_ISocialFeedChildItem;
-template <typename T> class impl_ISocialFeedContent;
-template <typename T> class impl_ISocialFeedItem;
-template <typename T> class impl_ISocialFeedSharedItem;
-template <typename T> class impl_ISocialItemThumbnail;
-template <typename T> class impl_ISocialUserInfo;
+template <typename T> struct impl_ISocialFeedChildItem;
+template <typename T> struct impl_ISocialFeedContent;
+template <typename T> struct impl_ISocialFeedItem;
+template <typename T> struct impl_ISocialFeedSharedItem;
+template <typename T> struct impl_ISocialItemThumbnail;
+template <typename T> struct impl_ISocialUserInfo;
 
 }
 

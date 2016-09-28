@@ -178,22 +178,22 @@ template <> struct traits<Windows::Media::Capture::Frames::VideoMediaFrameFormat
 
 namespace Windows::Media::Capture::Frames {
 
-template <typename T> class impl_IBufferMediaFrame;
-template <typename T> class impl_IDepthMediaFrame;
-template <typename T> class impl_IDepthMediaFrameFormat;
-template <typename T> class impl_IInfraredMediaFrame;
-template <typename T> class impl_IMediaFrameArrivedEventArgs;
-template <typename T> class impl_IMediaFrameFormat;
-template <typename T> class impl_IMediaFrameReader;
-template <typename T> class impl_IMediaFrameReference;
-template <typename T> class impl_IMediaFrameSource;
-template <typename T> class impl_IMediaFrameSourceController;
-template <typename T> class impl_IMediaFrameSourceGetPropertyResult;
-template <typename T> class impl_IMediaFrameSourceGroup;
-template <typename T> class impl_IMediaFrameSourceGroupStatics;
-template <typename T> class impl_IMediaFrameSourceInfo;
-template <typename T> class impl_IVideoMediaFrame;
-template <typename T> class impl_IVideoMediaFrameFormat;
+template <typename T> struct impl_IBufferMediaFrame;
+template <typename T> struct impl_IDepthMediaFrame;
+template <typename T> struct impl_IDepthMediaFrameFormat;
+template <typename T> struct impl_IInfraredMediaFrame;
+template <typename T> struct impl_IMediaFrameArrivedEventArgs;
+template <typename T> struct impl_IMediaFrameFormat;
+template <typename T> struct impl_IMediaFrameReader;
+template <typename T> struct impl_IMediaFrameReference;
+template <typename T> struct impl_IMediaFrameSource;
+template <typename T> struct impl_IMediaFrameSourceController;
+template <typename T> struct impl_IMediaFrameSourceGetPropertyResult;
+template <typename T> struct impl_IMediaFrameSourceGroup;
+template <typename T> struct impl_IMediaFrameSourceGroupStatics;
+template <typename T> struct impl_IMediaFrameSourceInfo;
+template <typename T> struct impl_IVideoMediaFrame;
+template <typename T> struct impl_IVideoMediaFrameFormat;
 
 }
 

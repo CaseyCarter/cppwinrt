@@ -131,20 +131,20 @@ template <> struct traits<Windows::UI::ApplicationSettings::WebAccountProviderCo
 
 namespace Windows::UI::ApplicationSettings {
 
-template <typename T> class impl_IAccountsSettingsPane;
-template <typename T> class impl_IAccountsSettingsPaneCommandsRequestedEventArgs;
-template <typename T> class impl_IAccountsSettingsPaneEventDeferral;
-template <typename T> class impl_IAccountsSettingsPaneStatics;
-template <typename T> class impl_IAccountsSettingsPaneStatics2;
-template <typename T> class impl_ICredentialCommand;
-template <typename T> class impl_ICredentialCommandFactory;
-template <typename T> class impl_ISettingsCommandFactory;
-template <typename T> class impl_ISettingsCommandStatics;
-template <typename T> class impl_IWebAccountCommand;
-template <typename T> class impl_IWebAccountCommandFactory;
-template <typename T> class impl_IWebAccountInvokedArgs;
-template <typename T> class impl_IWebAccountProviderCommand;
-template <typename T> class impl_IWebAccountProviderCommandFactory;
+template <typename T> struct impl_IAccountsSettingsPane;
+template <typename T> struct impl_IAccountsSettingsPaneCommandsRequestedEventArgs;
+template <typename T> struct impl_IAccountsSettingsPaneEventDeferral;
+template <typename T> struct impl_IAccountsSettingsPaneStatics;
+template <typename T> struct impl_IAccountsSettingsPaneStatics2;
+template <typename T> struct impl_ICredentialCommand;
+template <typename T> struct impl_ICredentialCommandFactory;
+template <typename T> struct impl_ISettingsCommandFactory;
+template <typename T> struct impl_ISettingsCommandStatics;
+template <typename T> struct impl_IWebAccountCommand;
+template <typename T> struct impl_IWebAccountCommandFactory;
+template <typename T> struct impl_IWebAccountInvokedArgs;
+template <typename T> struct impl_IWebAccountProviderCommand;
+template <typename T> struct impl_IWebAccountProviderCommandFactory;
 template <typename T> struct impl_CredentialCommandCredentialDeletedHandler;
 template <typename T> struct impl_WebAccountCommandInvokedHandler;
 template <typename T> struct impl_WebAccountProviderCommandInvokedHandler;

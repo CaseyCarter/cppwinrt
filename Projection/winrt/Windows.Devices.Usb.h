@@ -1903,537 +1903,537 @@ namespace Windows::Devices::Usb {
 template <typename D> Windows::Devices::Usb::UsbTransferDirection impl_IUsbControlRequestType<D>::Direction() const
 {
     Windows::Devices::Usb::UsbTransferDirection value {};
-    check_hresult(shim()->get_Direction(&value));
+    check_hresult(static_cast<const IUsbControlRequestType &>(static_cast<const D &>(*this))->get_Direction(&value));
     return value;
 }
 
 template <typename D> void impl_IUsbControlRequestType<D>::Direction(Windows::Devices::Usb::UsbTransferDirection value) const
 {
-    check_hresult(shim()->put_Direction(value));
+    check_hresult(static_cast<const IUsbControlRequestType &>(static_cast<const D &>(*this))->put_Direction(value));
 }
 
 template <typename D> Windows::Devices::Usb::UsbControlTransferType impl_IUsbControlRequestType<D>::ControlTransferType() const
 {
     Windows::Devices::Usb::UsbControlTransferType value {};
-    check_hresult(shim()->get_ControlTransferType(&value));
+    check_hresult(static_cast<const IUsbControlRequestType &>(static_cast<const D &>(*this))->get_ControlTransferType(&value));
     return value;
 }
 
 template <typename D> void impl_IUsbControlRequestType<D>::ControlTransferType(Windows::Devices::Usb::UsbControlTransferType value) const
 {
-    check_hresult(shim()->put_ControlTransferType(value));
+    check_hresult(static_cast<const IUsbControlRequestType &>(static_cast<const D &>(*this))->put_ControlTransferType(value));
 }
 
 template <typename D> Windows::Devices::Usb::UsbControlRecipient impl_IUsbControlRequestType<D>::Recipient() const
 {
     Windows::Devices::Usb::UsbControlRecipient value {};
-    check_hresult(shim()->get_Recipient(&value));
+    check_hresult(static_cast<const IUsbControlRequestType &>(static_cast<const D &>(*this))->get_Recipient(&value));
     return value;
 }
 
 template <typename D> void impl_IUsbControlRequestType<D>::Recipient(Windows::Devices::Usb::UsbControlRecipient value) const
 {
-    check_hresult(shim()->put_Recipient(value));
+    check_hresult(static_cast<const IUsbControlRequestType &>(static_cast<const D &>(*this))->put_Recipient(value));
 }
 
 template <typename D> uint8_t impl_IUsbControlRequestType<D>::AsByte() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_AsByte(&value));
+    check_hresult(static_cast<const IUsbControlRequestType &>(static_cast<const D &>(*this))->get_AsByte(&value));
     return value;
 }
 
 template <typename D> void impl_IUsbControlRequestType<D>::AsByte(uint8_t value) const
 {
-    check_hresult(shim()->put_AsByte(value));
+    check_hresult(static_cast<const IUsbControlRequestType &>(static_cast<const D &>(*this))->put_AsByte(value));
 }
 
 template <typename D> Windows::Devices::Usb::UsbSetupPacket impl_IUsbSetupPacketFactory<D>::CreateWithEightByteBuffer(const Windows::Storage::Streams::IBuffer & eightByteBuffer) const
 {
     Windows::Devices::Usb::UsbSetupPacket value { nullptr };
-    check_hresult(shim()->abi_CreateWithEightByteBuffer(get(eightByteBuffer), put(value)));
+    check_hresult(static_cast<const IUsbSetupPacketFactory &>(static_cast<const D &>(*this))->abi_CreateWithEightByteBuffer(get(eightByteBuffer), put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbControlRequestType impl_IUsbSetupPacket<D>::RequestType() const
 {
     Windows::Devices::Usb::UsbControlRequestType value { nullptr };
-    check_hresult(shim()->get_RequestType(put(value)));
+    check_hresult(static_cast<const IUsbSetupPacket &>(static_cast<const D &>(*this))->get_RequestType(put(value)));
     return value;
 }
 
 template <typename D> void impl_IUsbSetupPacket<D>::RequestType(const Windows::Devices::Usb::UsbControlRequestType & value) const
 {
-    check_hresult(shim()->put_RequestType(get(value)));
+    check_hresult(static_cast<const IUsbSetupPacket &>(static_cast<const D &>(*this))->put_RequestType(get(value)));
 }
 
 template <typename D> uint8_t impl_IUsbSetupPacket<D>::Request() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_Request(&value));
+    check_hresult(static_cast<const IUsbSetupPacket &>(static_cast<const D &>(*this))->get_Request(&value));
     return value;
 }
 
 template <typename D> void impl_IUsbSetupPacket<D>::Request(uint8_t value) const
 {
-    check_hresult(shim()->put_Request(value));
+    check_hresult(static_cast<const IUsbSetupPacket &>(static_cast<const D &>(*this))->put_Request(value));
 }
 
 template <typename D> uint32_t impl_IUsbSetupPacket<D>::Value() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_Value(&value));
+    check_hresult(static_cast<const IUsbSetupPacket &>(static_cast<const D &>(*this))->get_Value(&value));
     return value;
 }
 
 template <typename D> void impl_IUsbSetupPacket<D>::Value(uint32_t value) const
 {
-    check_hresult(shim()->put_Value(value));
+    check_hresult(static_cast<const IUsbSetupPacket &>(static_cast<const D &>(*this))->put_Value(value));
 }
 
 template <typename D> uint32_t impl_IUsbSetupPacket<D>::Index() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_Index(&value));
+    check_hresult(static_cast<const IUsbSetupPacket &>(static_cast<const D &>(*this))->get_Index(&value));
     return value;
 }
 
 template <typename D> void impl_IUsbSetupPacket<D>::Index(uint32_t value) const
 {
-    check_hresult(shim()->put_Index(value));
+    check_hresult(static_cast<const IUsbSetupPacket &>(static_cast<const D &>(*this))->put_Index(value));
 }
 
 template <typename D> uint32_t impl_IUsbSetupPacket<D>::Length() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_Length(&value));
+    check_hresult(static_cast<const IUsbSetupPacket &>(static_cast<const D &>(*this))->get_Length(&value));
     return value;
 }
 
 template <typename D> void impl_IUsbSetupPacket<D>::Length(uint32_t value) const
 {
-    check_hresult(shim()->put_Length(value));
+    check_hresult(static_cast<const IUsbSetupPacket &>(static_cast<const D &>(*this))->put_Length(value));
 }
 
 template <typename D> uint8_t impl_IUsbDeviceClass<D>::ClassCode() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_ClassCode(&value));
+    check_hresult(static_cast<const IUsbDeviceClass &>(static_cast<const D &>(*this))->get_ClassCode(&value));
     return value;
 }
 
 template <typename D> void impl_IUsbDeviceClass<D>::ClassCode(uint8_t value) const
 {
-    check_hresult(shim()->put_ClassCode(value));
+    check_hresult(static_cast<const IUsbDeviceClass &>(static_cast<const D &>(*this))->put_ClassCode(value));
 }
 
 template <typename D> Windows::Foundation::IReference<uint8_t> impl_IUsbDeviceClass<D>::SubclassCode() const
 {
     Windows::Foundation::IReference<uint8_t> value;
-    check_hresult(shim()->get_SubclassCode(put(value)));
+    check_hresult(static_cast<const IUsbDeviceClass &>(static_cast<const D &>(*this))->get_SubclassCode(put(value)));
     return value;
 }
 
 template <typename D> void impl_IUsbDeviceClass<D>::SubclassCode(const Windows::Foundation::IReference<uint8_t> & value) const
 {
-    check_hresult(shim()->put_SubclassCode(get(value)));
+    check_hresult(static_cast<const IUsbDeviceClass &>(static_cast<const D &>(*this))->put_SubclassCode(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<uint8_t> impl_IUsbDeviceClass<D>::ProtocolCode() const
 {
     Windows::Foundation::IReference<uint8_t> value;
-    check_hresult(shim()->get_ProtocolCode(put(value)));
+    check_hresult(static_cast<const IUsbDeviceClass &>(static_cast<const D &>(*this))->get_ProtocolCode(put(value)));
     return value;
 }
 
 template <typename D> void impl_IUsbDeviceClass<D>::ProtocolCode(const Windows::Foundation::IReference<uint8_t> & value) const
 {
-    check_hresult(shim()->put_ProtocolCode(get(value)));
+    check_hresult(static_cast<const IUsbDeviceClass &>(static_cast<const D &>(*this))->put_ProtocolCode(get(value)));
 }
 
 template <typename D> Windows::Devices::Usb::UsbDeviceClass impl_IUsbDeviceClassesStatics<D>::CdcControl() const
 {
     Windows::Devices::Usb::UsbDeviceClass value { nullptr };
-    check_hresult(shim()->get_CdcControl(put(value)));
+    check_hresult(static_cast<const IUsbDeviceClassesStatics &>(static_cast<const D &>(*this))->get_CdcControl(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbDeviceClass impl_IUsbDeviceClassesStatics<D>::Physical() const
 {
     Windows::Devices::Usb::UsbDeviceClass value { nullptr };
-    check_hresult(shim()->get_Physical(put(value)));
+    check_hresult(static_cast<const IUsbDeviceClassesStatics &>(static_cast<const D &>(*this))->get_Physical(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbDeviceClass impl_IUsbDeviceClassesStatics<D>::PersonalHealthcare() const
 {
     Windows::Devices::Usb::UsbDeviceClass value { nullptr };
-    check_hresult(shim()->get_PersonalHealthcare(put(value)));
+    check_hresult(static_cast<const IUsbDeviceClassesStatics &>(static_cast<const D &>(*this))->get_PersonalHealthcare(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbDeviceClass impl_IUsbDeviceClassesStatics<D>::ActiveSync() const
 {
     Windows::Devices::Usb::UsbDeviceClass value { nullptr };
-    check_hresult(shim()->get_ActiveSync(put(value)));
+    check_hresult(static_cast<const IUsbDeviceClassesStatics &>(static_cast<const D &>(*this))->get_ActiveSync(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbDeviceClass impl_IUsbDeviceClassesStatics<D>::PalmSync() const
 {
     Windows::Devices::Usb::UsbDeviceClass value { nullptr };
-    check_hresult(shim()->get_PalmSync(put(value)));
+    check_hresult(static_cast<const IUsbDeviceClassesStatics &>(static_cast<const D &>(*this))->get_PalmSync(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbDeviceClass impl_IUsbDeviceClassesStatics<D>::DeviceFirmwareUpdate() const
 {
     Windows::Devices::Usb::UsbDeviceClass value { nullptr };
-    check_hresult(shim()->get_DeviceFirmwareUpdate(put(value)));
+    check_hresult(static_cast<const IUsbDeviceClassesStatics &>(static_cast<const D &>(*this))->get_DeviceFirmwareUpdate(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbDeviceClass impl_IUsbDeviceClassesStatics<D>::Irda() const
 {
     Windows::Devices::Usb::UsbDeviceClass value { nullptr };
-    check_hresult(shim()->get_Irda(put(value)));
+    check_hresult(static_cast<const IUsbDeviceClassesStatics &>(static_cast<const D &>(*this))->get_Irda(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbDeviceClass impl_IUsbDeviceClassesStatics<D>::Measurement() const
 {
     Windows::Devices::Usb::UsbDeviceClass value { nullptr };
-    check_hresult(shim()->get_Measurement(put(value)));
+    check_hresult(static_cast<const IUsbDeviceClassesStatics &>(static_cast<const D &>(*this))->get_Measurement(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbDeviceClass impl_IUsbDeviceClassesStatics<D>::VendorSpecific() const
 {
     Windows::Devices::Usb::UsbDeviceClass value { nullptr };
-    check_hresult(shim()->get_VendorSpecific(put(value)));
+    check_hresult(static_cast<const IUsbDeviceClassesStatics &>(static_cast<const D &>(*this))->get_VendorSpecific(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IUsbDeviceStatics<D>::GetDeviceSelector(uint32_t vendorId, uint32_t productId, GUID winUsbInterfaceClass) const
 {
     hstring value;
-    check_hresult(shim()->abi_GetDeviceSelector(vendorId, productId, winUsbInterfaceClass, put(value)));
+    check_hresult(static_cast<const IUsbDeviceStatics &>(static_cast<const D &>(*this))->abi_GetDeviceSelector(vendorId, productId, winUsbInterfaceClass, put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IUsbDeviceStatics<D>::GetDeviceSelector(GUID winUsbInterfaceClass) const
 {
     hstring value;
-    check_hresult(shim()->abi_GetDeviceSelectorGuidOnly(winUsbInterfaceClass, put(value)));
+    check_hresult(static_cast<const IUsbDeviceStatics &>(static_cast<const D &>(*this))->abi_GetDeviceSelectorGuidOnly(winUsbInterfaceClass, put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IUsbDeviceStatics<D>::GetDeviceSelector(uint32_t vendorId, uint32_t productId) const
 {
     hstring value;
-    check_hresult(shim()->abi_GetDeviceSelectorVidPidOnly(vendorId, productId, put(value)));
+    check_hresult(static_cast<const IUsbDeviceStatics &>(static_cast<const D &>(*this))->abi_GetDeviceSelectorVidPidOnly(vendorId, productId, put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IUsbDeviceStatics<D>::GetDeviceClassSelector(const Windows::Devices::Usb::UsbDeviceClass & usbClass) const
 {
     hstring value;
-    check_hresult(shim()->abi_GetDeviceClassSelector(get(usbClass), put(value)));
+    check_hresult(static_cast<const IUsbDeviceStatics &>(static_cast<const D &>(*this))->abi_GetDeviceClassSelector(get(usbClass), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Usb::UsbDevice> impl_IUsbDeviceStatics<D>::FromIdAsync(hstring_ref deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Usb::UsbDevice> operation;
-    check_hresult(shim()->abi_FromIdAsync(get(deviceId), put(operation)));
+    check_hresult(static_cast<const IUsbDeviceStatics &>(static_cast<const D &>(*this))->abi_FromIdAsync(get(deviceId), put(operation)));
     return operation;
 }
 
 template <typename D> uint32_t impl_IUsbDeviceDescriptor<D>::BcdUsb() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_BcdUsb(&value));
+    check_hresult(static_cast<const IUsbDeviceDescriptor &>(static_cast<const D &>(*this))->get_BcdUsb(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IUsbDeviceDescriptor<D>::MaxPacketSize0() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_MaxPacketSize0(&value));
+    check_hresult(static_cast<const IUsbDeviceDescriptor &>(static_cast<const D &>(*this))->get_MaxPacketSize0(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IUsbDeviceDescriptor<D>::VendorId() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_VendorId(&value));
+    check_hresult(static_cast<const IUsbDeviceDescriptor &>(static_cast<const D &>(*this))->get_VendorId(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IUsbDeviceDescriptor<D>::ProductId() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_ProductId(&value));
+    check_hresult(static_cast<const IUsbDeviceDescriptor &>(static_cast<const D &>(*this))->get_ProductId(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IUsbDeviceDescriptor<D>::BcdDeviceRevision() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_BcdDeviceRevision(&value));
+    check_hresult(static_cast<const IUsbDeviceDescriptor &>(static_cast<const D &>(*this))->get_BcdDeviceRevision(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IUsbDeviceDescriptor<D>::NumberOfConfigurations() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_NumberOfConfigurations(&value));
+    check_hresult(static_cast<const IUsbDeviceDescriptor &>(static_cast<const D &>(*this))->get_NumberOfConfigurations(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IUsbConfigurationDescriptor<D>::ConfigurationValue() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_ConfigurationValue(&value));
+    check_hresult(static_cast<const IUsbConfigurationDescriptor &>(static_cast<const D &>(*this))->get_ConfigurationValue(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IUsbConfigurationDescriptor<D>::MaxPowerMilliamps() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_MaxPowerMilliamps(&value));
+    check_hresult(static_cast<const IUsbConfigurationDescriptor &>(static_cast<const D &>(*this))->get_MaxPowerMilliamps(&value));
     return value;
 }
 
 template <typename D> bool impl_IUsbConfigurationDescriptor<D>::SelfPowered() const
 {
     bool value {};
-    check_hresult(shim()->get_SelfPowered(&value));
+    check_hresult(static_cast<const IUsbConfigurationDescriptor &>(static_cast<const D &>(*this))->get_SelfPowered(&value));
     return value;
 }
 
 template <typename D> bool impl_IUsbConfigurationDescriptor<D>::RemoteWakeup() const
 {
     bool value {};
-    check_hresult(shim()->get_RemoteWakeup(&value));
+    check_hresult(static_cast<const IUsbConfigurationDescriptor &>(static_cast<const D &>(*this))->get_RemoteWakeup(&value));
     return value;
 }
 
 template <typename D> bool impl_IUsbConfigurationDescriptorStatics<D>::TryParse(const Windows::Devices::Usb::UsbDescriptor & descriptor, Windows::Devices::Usb::UsbConfigurationDescriptor & parsed) const
 {
     bool success {};
-    check_hresult(shim()->abi_TryParse(get(descriptor), put(parsed), &success));
+    check_hresult(static_cast<const IUsbConfigurationDescriptorStatics &>(static_cast<const D &>(*this))->abi_TryParse(get(descriptor), put(parsed), &success));
     return success;
 }
 
 template <typename D> Windows::Devices::Usb::UsbConfigurationDescriptor impl_IUsbConfigurationDescriptorStatics<D>::Parse(const Windows::Devices::Usb::UsbDescriptor & descriptor) const
 {
     Windows::Devices::Usb::UsbConfigurationDescriptor parsed { nullptr };
-    check_hresult(shim()->abi_Parse(get(descriptor), put(parsed)));
+    check_hresult(static_cast<const IUsbConfigurationDescriptorStatics &>(static_cast<const D &>(*this))->abi_Parse(get(descriptor), put(parsed)));
     return parsed;
 }
 
 template <typename D> uint8_t impl_IUsbInterfaceDescriptor<D>::ClassCode() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_ClassCode(&value));
+    check_hresult(static_cast<const IUsbInterfaceDescriptor &>(static_cast<const D &>(*this))->get_ClassCode(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IUsbInterfaceDescriptor<D>::SubclassCode() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_SubclassCode(&value));
+    check_hresult(static_cast<const IUsbInterfaceDescriptor &>(static_cast<const D &>(*this))->get_SubclassCode(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IUsbInterfaceDescriptor<D>::ProtocolCode() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_ProtocolCode(&value));
+    check_hresult(static_cast<const IUsbInterfaceDescriptor &>(static_cast<const D &>(*this))->get_ProtocolCode(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IUsbInterfaceDescriptor<D>::AlternateSettingNumber() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_AlternateSettingNumber(&value));
+    check_hresult(static_cast<const IUsbInterfaceDescriptor &>(static_cast<const D &>(*this))->get_AlternateSettingNumber(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IUsbInterfaceDescriptor<D>::InterfaceNumber() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_InterfaceNumber(&value));
+    check_hresult(static_cast<const IUsbInterfaceDescriptor &>(static_cast<const D &>(*this))->get_InterfaceNumber(&value));
     return value;
 }
 
 template <typename D> bool impl_IUsbInterfaceDescriptorStatics<D>::TryParse(const Windows::Devices::Usb::UsbDescriptor & descriptor, Windows::Devices::Usb::UsbInterfaceDescriptor & parsed) const
 {
     bool success {};
-    check_hresult(shim()->abi_TryParse(get(descriptor), put(parsed), &success));
+    check_hresult(static_cast<const IUsbInterfaceDescriptorStatics &>(static_cast<const D &>(*this))->abi_TryParse(get(descriptor), put(parsed), &success));
     return success;
 }
 
 template <typename D> Windows::Devices::Usb::UsbInterfaceDescriptor impl_IUsbInterfaceDescriptorStatics<D>::Parse(const Windows::Devices::Usb::UsbDescriptor & descriptor) const
 {
     Windows::Devices::Usb::UsbInterfaceDescriptor parsed { nullptr };
-    check_hresult(shim()->abi_Parse(get(descriptor), put(parsed)));
+    check_hresult(static_cast<const IUsbInterfaceDescriptorStatics &>(static_cast<const D &>(*this))->abi_Parse(get(descriptor), put(parsed)));
     return parsed;
 }
 
 template <typename D> uint8_t impl_IUsbEndpointDescriptor<D>::EndpointNumber() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_EndpointNumber(&value));
+    check_hresult(static_cast<const IUsbEndpointDescriptor &>(static_cast<const D &>(*this))->get_EndpointNumber(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbTransferDirection impl_IUsbEndpointDescriptor<D>::Direction() const
 {
     Windows::Devices::Usb::UsbTransferDirection value {};
-    check_hresult(shim()->get_Direction(&value));
+    check_hresult(static_cast<const IUsbEndpointDescriptor &>(static_cast<const D &>(*this))->get_Direction(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbEndpointType impl_IUsbEndpointDescriptor<D>::EndpointType() const
 {
     Windows::Devices::Usb::UsbEndpointType value {};
-    check_hresult(shim()->get_EndpointType(&value));
+    check_hresult(static_cast<const IUsbEndpointDescriptor &>(static_cast<const D &>(*this))->get_EndpointType(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbBulkInEndpointDescriptor impl_IUsbEndpointDescriptor<D>::AsBulkInEndpointDescriptor() const
 {
     Windows::Devices::Usb::UsbBulkInEndpointDescriptor value { nullptr };
-    check_hresult(shim()->get_AsBulkInEndpointDescriptor(put(value)));
+    check_hresult(static_cast<const IUsbEndpointDescriptor &>(static_cast<const D &>(*this))->get_AsBulkInEndpointDescriptor(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbInterruptInEndpointDescriptor impl_IUsbEndpointDescriptor<D>::AsInterruptInEndpointDescriptor() const
 {
     Windows::Devices::Usb::UsbInterruptInEndpointDescriptor value { nullptr };
-    check_hresult(shim()->get_AsInterruptInEndpointDescriptor(put(value)));
+    check_hresult(static_cast<const IUsbEndpointDescriptor &>(static_cast<const D &>(*this))->get_AsInterruptInEndpointDescriptor(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbBulkOutEndpointDescriptor impl_IUsbEndpointDescriptor<D>::AsBulkOutEndpointDescriptor() const
 {
     Windows::Devices::Usb::UsbBulkOutEndpointDescriptor value { nullptr };
-    check_hresult(shim()->get_AsBulkOutEndpointDescriptor(put(value)));
+    check_hresult(static_cast<const IUsbEndpointDescriptor &>(static_cast<const D &>(*this))->get_AsBulkOutEndpointDescriptor(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbInterruptOutEndpointDescriptor impl_IUsbEndpointDescriptor<D>::AsInterruptOutEndpointDescriptor() const
 {
     Windows::Devices::Usb::UsbInterruptOutEndpointDescriptor value { nullptr };
-    check_hresult(shim()->get_AsInterruptOutEndpointDescriptor(put(value)));
+    check_hresult(static_cast<const IUsbEndpointDescriptor &>(static_cast<const D &>(*this))->get_AsInterruptOutEndpointDescriptor(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IUsbEndpointDescriptorStatics<D>::TryParse(const Windows::Devices::Usb::UsbDescriptor & descriptor, Windows::Devices::Usb::UsbEndpointDescriptor & parsed) const
 {
     bool success {};
-    check_hresult(shim()->abi_TryParse(get(descriptor), put(parsed), &success));
+    check_hresult(static_cast<const IUsbEndpointDescriptorStatics &>(static_cast<const D &>(*this))->abi_TryParse(get(descriptor), put(parsed), &success));
     return success;
 }
 
 template <typename D> Windows::Devices::Usb::UsbEndpointDescriptor impl_IUsbEndpointDescriptorStatics<D>::Parse(const Windows::Devices::Usb::UsbDescriptor & descriptor) const
 {
     Windows::Devices::Usb::UsbEndpointDescriptor parsed { nullptr };
-    check_hresult(shim()->abi_Parse(get(descriptor), put(parsed)));
+    check_hresult(static_cast<const IUsbEndpointDescriptorStatics &>(static_cast<const D &>(*this))->abi_Parse(get(descriptor), put(parsed)));
     return parsed;
 }
 
 template <typename D> uint8_t impl_IUsbDescriptor<D>::Length() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_Length(&value));
+    check_hresult(static_cast<const IUsbDescriptor &>(static_cast<const D &>(*this))->get_Length(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IUsbDescriptor<D>::DescriptorType() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_DescriptorType(&value));
+    check_hresult(static_cast<const IUsbDescriptor &>(static_cast<const D &>(*this))->get_DescriptorType(&value));
     return value;
 }
 
 template <typename D> void impl_IUsbDescriptor<D>::ReadDescriptorBuffer(const Windows::Storage::Streams::IBuffer & buffer) const
 {
-    check_hresult(shim()->abi_ReadDescriptorBuffer(get(buffer)));
+    check_hresult(static_cast<const IUsbDescriptor &>(static_cast<const D &>(*this))->abi_ReadDescriptorBuffer(get(buffer)));
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IUsbInterruptInEventArgs<D>::InterruptData() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(shim()->get_InterruptData(put(value)));
+    check_hresult(static_cast<const IUsbInterruptInEventArgs &>(static_cast<const D &>(*this))->get_InterruptData(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IUsbBulkInPipe<D>::MaxTransferSizeBytes() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_MaxTransferSizeBytes(&value));
+    check_hresult(static_cast<const IUsbBulkInPipe &>(static_cast<const D &>(*this))->get_MaxTransferSizeBytes(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbBulkInEndpointDescriptor impl_IUsbBulkInPipe<D>::EndpointDescriptor() const
 {
     Windows::Devices::Usb::UsbBulkInEndpointDescriptor value { nullptr };
-    check_hresult(shim()->get_EndpointDescriptor(put(value)));
+    check_hresult(static_cast<const IUsbBulkInPipe &>(static_cast<const D &>(*this))->get_EndpointDescriptor(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IUsbBulkInPipe<D>::ClearStallAsync() const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_ClearStallAsync(put(operation)));
+    check_hresult(static_cast<const IUsbBulkInPipe &>(static_cast<const D &>(*this))->abi_ClearStallAsync(put(operation)));
     return operation;
 }
 
 template <typename D> void impl_IUsbBulkInPipe<D>::ReadOptions(Windows::Devices::Usb::UsbReadOptions value) const
 {
-    check_hresult(shim()->put_ReadOptions(value));
+    check_hresult(static_cast<const IUsbBulkInPipe &>(static_cast<const D &>(*this))->put_ReadOptions(value));
 }
 
 template <typename D> Windows::Devices::Usb::UsbReadOptions impl_IUsbBulkInPipe<D>::ReadOptions() const
 {
     Windows::Devices::Usb::UsbReadOptions value {};
-    check_hresult(shim()->get_ReadOptions(&value));
+    check_hresult(static_cast<const IUsbBulkInPipe &>(static_cast<const D &>(*this))->get_ReadOptions(&value));
     return value;
 }
 
 template <typename D> void impl_IUsbBulkInPipe<D>::FlushBuffer() const
 {
-    check_hresult(shim()->abi_FlushBuffer());
+    check_hresult(static_cast<const IUsbBulkInPipe &>(static_cast<const D &>(*this))->abi_FlushBuffer());
 }
 
 template <typename D> Windows::Storage::Streams::IInputStream impl_IUsbBulkInPipe<D>::InputStream() const
 {
     Windows::Storage::Streams::IInputStream value;
-    check_hresult(shim()->get_InputStream(put(value)));
+    check_hresult(static_cast<const IUsbBulkInPipe &>(static_cast<const D &>(*this))->get_InputStream(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbInterruptInEndpointDescriptor impl_IUsbInterruptInPipe<D>::EndpointDescriptor() const
 {
     Windows::Devices::Usb::UsbInterruptInEndpointDescriptor value { nullptr };
-    check_hresult(shim()->get_EndpointDescriptor(put(value)));
+    check_hresult(static_cast<const IUsbInterruptInPipe &>(static_cast<const D &>(*this))->get_EndpointDescriptor(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IUsbInterruptInPipe<D>::ClearStallAsync() const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_ClearStallAsync(put(operation)));
+    check_hresult(static_cast<const IUsbInterruptInPipe &>(static_cast<const D &>(*this))->abi_ClearStallAsync(put(operation)));
     return operation;
 }
 
 template <typename D> event_token impl_IUsbInterruptInPipe<D>::DataReceived(const Windows::Foundation::TypedEventHandler<Windows::Devices::Usb::UsbInterruptInPipe, Windows::Devices::Usb::UsbInterruptInEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_DataReceived(get(handler), &token));
+    check_hresult(static_cast<const IUsbInterruptInPipe &>(static_cast<const D &>(*this))->add_DataReceived(get(handler), &token));
     return token;
 }
 
@@ -2444,345 +2444,345 @@ template <typename D> event_revoker<IUsbInterruptInPipe> impl_IUsbInterruptInPip
 
 template <typename D> void impl_IUsbInterruptInPipe<D>::DataReceived(event_token token) const
 {
-    check_hresult(shim()->remove_DataReceived(token));
+    check_hresult(static_cast<const IUsbInterruptInPipe &>(static_cast<const D &>(*this))->remove_DataReceived(token));
 }
 
 template <typename D> Windows::Devices::Usb::UsbBulkOutEndpointDescriptor impl_IUsbBulkOutPipe<D>::EndpointDescriptor() const
 {
     Windows::Devices::Usb::UsbBulkOutEndpointDescriptor value { nullptr };
-    check_hresult(shim()->get_EndpointDescriptor(put(value)));
+    check_hresult(static_cast<const IUsbBulkOutPipe &>(static_cast<const D &>(*this))->get_EndpointDescriptor(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IUsbBulkOutPipe<D>::ClearStallAsync() const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_ClearStallAsync(put(operation)));
+    check_hresult(static_cast<const IUsbBulkOutPipe &>(static_cast<const D &>(*this))->abi_ClearStallAsync(put(operation)));
     return operation;
 }
 
 template <typename D> void impl_IUsbBulkOutPipe<D>::WriteOptions(Windows::Devices::Usb::UsbWriteOptions value) const
 {
-    check_hresult(shim()->put_WriteOptions(value));
+    check_hresult(static_cast<const IUsbBulkOutPipe &>(static_cast<const D &>(*this))->put_WriteOptions(value));
 }
 
 template <typename D> Windows::Devices::Usb::UsbWriteOptions impl_IUsbBulkOutPipe<D>::WriteOptions() const
 {
     Windows::Devices::Usb::UsbWriteOptions value {};
-    check_hresult(shim()->get_WriteOptions(&value));
+    check_hresult(static_cast<const IUsbBulkOutPipe &>(static_cast<const D &>(*this))->get_WriteOptions(&value));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IOutputStream impl_IUsbBulkOutPipe<D>::OutputStream() const
 {
     Windows::Storage::Streams::IOutputStream value;
-    check_hresult(shim()->get_OutputStream(put(value)));
+    check_hresult(static_cast<const IUsbBulkOutPipe &>(static_cast<const D &>(*this))->get_OutputStream(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbInterruptOutEndpointDescriptor impl_IUsbInterruptOutPipe<D>::EndpointDescriptor() const
 {
     Windows::Devices::Usb::UsbInterruptOutEndpointDescriptor value { nullptr };
-    check_hresult(shim()->get_EndpointDescriptor(put(value)));
+    check_hresult(static_cast<const IUsbInterruptOutPipe &>(static_cast<const D &>(*this))->get_EndpointDescriptor(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IUsbInterruptOutPipe<D>::ClearStallAsync() const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_ClearStallAsync(put(operation)));
+    check_hresult(static_cast<const IUsbInterruptOutPipe &>(static_cast<const D &>(*this))->abi_ClearStallAsync(put(operation)));
     return operation;
 }
 
 template <typename D> void impl_IUsbInterruptOutPipe<D>::WriteOptions(Windows::Devices::Usb::UsbWriteOptions value) const
 {
-    check_hresult(shim()->put_WriteOptions(value));
+    check_hresult(static_cast<const IUsbInterruptOutPipe &>(static_cast<const D &>(*this))->put_WriteOptions(value));
 }
 
 template <typename D> Windows::Devices::Usb::UsbWriteOptions impl_IUsbInterruptOutPipe<D>::WriteOptions() const
 {
     Windows::Devices::Usb::UsbWriteOptions value {};
-    check_hresult(shim()->get_WriteOptions(&value));
+    check_hresult(static_cast<const IUsbInterruptOutPipe &>(static_cast<const D &>(*this))->get_WriteOptions(&value));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IOutputStream impl_IUsbInterruptOutPipe<D>::OutputStream() const
 {
     Windows::Storage::Streams::IOutputStream value;
-    check_hresult(shim()->get_OutputStream(put(value)));
+    check_hresult(static_cast<const IUsbInterruptOutPipe &>(static_cast<const D &>(*this))->get_OutputStream(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterface> impl_IUsbConfiguration<D>::UsbInterfaces() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterface> value;
-    check_hresult(shim()->get_UsbInterfaces(put(value)));
+    check_hresult(static_cast<const IUsbConfiguration &>(static_cast<const D &>(*this))->get_UsbInterfaces(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbConfigurationDescriptor impl_IUsbConfiguration<D>::ConfigurationDescriptor() const
 {
     Windows::Devices::Usb::UsbConfigurationDescriptor value { nullptr };
-    check_hresult(shim()->get_ConfigurationDescriptor(put(value)));
+    check_hresult(static_cast<const IUsbConfiguration &>(static_cast<const D &>(*this))->get_ConfigurationDescriptor(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbDescriptor> impl_IUsbConfiguration<D>::Descriptors() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbDescriptor> value;
-    check_hresult(shim()->get_Descriptors(put(value)));
+    check_hresult(static_cast<const IUsbConfiguration &>(static_cast<const D &>(*this))->get_Descriptors(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbBulkInPipe> impl_IUsbInterface<D>::BulkInPipes() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbBulkInPipe> value;
-    check_hresult(shim()->get_BulkInPipes(put(value)));
+    check_hresult(static_cast<const IUsbInterface &>(static_cast<const D &>(*this))->get_BulkInPipes(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterruptInPipe> impl_IUsbInterface<D>::InterruptInPipes() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterruptInPipe> value;
-    check_hresult(shim()->get_InterruptInPipes(put(value)));
+    check_hresult(static_cast<const IUsbInterface &>(static_cast<const D &>(*this))->get_InterruptInPipes(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbBulkOutPipe> impl_IUsbInterface<D>::BulkOutPipes() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbBulkOutPipe> value;
-    check_hresult(shim()->get_BulkOutPipes(put(value)));
+    check_hresult(static_cast<const IUsbInterface &>(static_cast<const D &>(*this))->get_BulkOutPipes(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterruptOutPipe> impl_IUsbInterface<D>::InterruptOutPipes() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterruptOutPipe> value;
-    check_hresult(shim()->get_InterruptOutPipes(put(value)));
+    check_hresult(static_cast<const IUsbInterface &>(static_cast<const D &>(*this))->get_InterruptOutPipes(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterfaceSetting> impl_IUsbInterface<D>::InterfaceSettings() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterfaceSetting> value;
-    check_hresult(shim()->get_InterfaceSettings(put(value)));
+    check_hresult(static_cast<const IUsbInterface &>(static_cast<const D &>(*this))->get_InterfaceSettings(put(value)));
     return value;
 }
 
 template <typename D> uint8_t impl_IUsbInterface<D>::InterfaceNumber() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_InterfaceNumber(&value));
+    check_hresult(static_cast<const IUsbInterface &>(static_cast<const D &>(*this))->get_InterfaceNumber(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbDescriptor> impl_IUsbInterface<D>::Descriptors() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbDescriptor> value;
-    check_hresult(shim()->get_Descriptors(put(value)));
+    check_hresult(static_cast<const IUsbInterface &>(static_cast<const D &>(*this))->get_Descriptors(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbBulkInEndpointDescriptor> impl_IUsbInterfaceSetting<D>::BulkInEndpoints() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbBulkInEndpointDescriptor> value;
-    check_hresult(shim()->get_BulkInEndpoints(put(value)));
+    check_hresult(static_cast<const IUsbInterfaceSetting &>(static_cast<const D &>(*this))->get_BulkInEndpoints(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterruptInEndpointDescriptor> impl_IUsbInterfaceSetting<D>::InterruptInEndpoints() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterruptInEndpointDescriptor> value;
-    check_hresult(shim()->get_InterruptInEndpoints(put(value)));
+    check_hresult(static_cast<const IUsbInterfaceSetting &>(static_cast<const D &>(*this))->get_InterruptInEndpoints(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbBulkOutEndpointDescriptor> impl_IUsbInterfaceSetting<D>::BulkOutEndpoints() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbBulkOutEndpointDescriptor> value;
-    check_hresult(shim()->get_BulkOutEndpoints(put(value)));
+    check_hresult(static_cast<const IUsbInterfaceSetting &>(static_cast<const D &>(*this))->get_BulkOutEndpoints(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterruptOutEndpointDescriptor> impl_IUsbInterfaceSetting<D>::InterruptOutEndpoints() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterruptOutEndpointDescriptor> value;
-    check_hresult(shim()->get_InterruptOutEndpoints(put(value)));
+    check_hresult(static_cast<const IUsbInterfaceSetting &>(static_cast<const D &>(*this))->get_InterruptOutEndpoints(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IUsbInterfaceSetting<D>::Selected() const
 {
     bool value {};
-    check_hresult(shim()->get_Selected(&value));
+    check_hresult(static_cast<const IUsbInterfaceSetting &>(static_cast<const D &>(*this))->get_Selected(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IUsbInterfaceSetting<D>::SelectSettingAsync() const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_SelectSettingAsync(put(operation)));
+    check_hresult(static_cast<const IUsbInterfaceSetting &>(static_cast<const D &>(*this))->abi_SelectSettingAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Devices::Usb::UsbInterfaceDescriptor impl_IUsbInterfaceSetting<D>::InterfaceDescriptor() const
 {
     Windows::Devices::Usb::UsbInterfaceDescriptor value { nullptr };
-    check_hresult(shim()->get_InterfaceDescriptor(put(value)));
+    check_hresult(static_cast<const IUsbInterfaceSetting &>(static_cast<const D &>(*this))->get_InterfaceDescriptor(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbDescriptor> impl_IUsbInterfaceSetting<D>::Descriptors() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbDescriptor> value;
-    check_hresult(shim()->get_Descriptors(put(value)));
+    check_hresult(static_cast<const IUsbInterfaceSetting &>(static_cast<const D &>(*this))->get_Descriptors(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IUsbBulkInEndpointDescriptor<D>::MaxPacketSize() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_MaxPacketSize(&value));
+    check_hresult(static_cast<const IUsbBulkInEndpointDescriptor &>(static_cast<const D &>(*this))->get_MaxPacketSize(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IUsbBulkInEndpointDescriptor<D>::EndpointNumber() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_EndpointNumber(&value));
+    check_hresult(static_cast<const IUsbBulkInEndpointDescriptor &>(static_cast<const D &>(*this))->get_EndpointNumber(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbBulkInPipe impl_IUsbBulkInEndpointDescriptor<D>::Pipe() const
 {
     Windows::Devices::Usb::UsbBulkInPipe value { nullptr };
-    check_hresult(shim()->get_Pipe(put(value)));
+    check_hresult(static_cast<const IUsbBulkInEndpointDescriptor &>(static_cast<const D &>(*this))->get_Pipe(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IUsbInterruptInEndpointDescriptor<D>::MaxPacketSize() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_MaxPacketSize(&value));
+    check_hresult(static_cast<const IUsbInterruptInEndpointDescriptor &>(static_cast<const D &>(*this))->get_MaxPacketSize(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IUsbInterruptInEndpointDescriptor<D>::EndpointNumber() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_EndpointNumber(&value));
+    check_hresult(static_cast<const IUsbInterruptInEndpointDescriptor &>(static_cast<const D &>(*this))->get_EndpointNumber(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IUsbInterruptInEndpointDescriptor<D>::Interval() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_Interval(put(value)));
+    check_hresult(static_cast<const IUsbInterruptInEndpointDescriptor &>(static_cast<const D &>(*this))->get_Interval(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbInterruptInPipe impl_IUsbInterruptInEndpointDescriptor<D>::Pipe() const
 {
     Windows::Devices::Usb::UsbInterruptInPipe value { nullptr };
-    check_hresult(shim()->get_Pipe(put(value)));
+    check_hresult(static_cast<const IUsbInterruptInEndpointDescriptor &>(static_cast<const D &>(*this))->get_Pipe(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IUsbBulkOutEndpointDescriptor<D>::MaxPacketSize() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_MaxPacketSize(&value));
+    check_hresult(static_cast<const IUsbBulkOutEndpointDescriptor &>(static_cast<const D &>(*this))->get_MaxPacketSize(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IUsbBulkOutEndpointDescriptor<D>::EndpointNumber() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_EndpointNumber(&value));
+    check_hresult(static_cast<const IUsbBulkOutEndpointDescriptor &>(static_cast<const D &>(*this))->get_EndpointNumber(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbBulkOutPipe impl_IUsbBulkOutEndpointDescriptor<D>::Pipe() const
 {
     Windows::Devices::Usb::UsbBulkOutPipe value { nullptr };
-    check_hresult(shim()->get_Pipe(put(value)));
+    check_hresult(static_cast<const IUsbBulkOutEndpointDescriptor &>(static_cast<const D &>(*this))->get_Pipe(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IUsbInterruptOutEndpointDescriptor<D>::MaxPacketSize() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_MaxPacketSize(&value));
+    check_hresult(static_cast<const IUsbInterruptOutEndpointDescriptor &>(static_cast<const D &>(*this))->get_MaxPacketSize(&value));
     return value;
 }
 
 template <typename D> uint8_t impl_IUsbInterruptOutEndpointDescriptor<D>::EndpointNumber() const
 {
     uint8_t value {};
-    check_hresult(shim()->get_EndpointNumber(&value));
+    check_hresult(static_cast<const IUsbInterruptOutEndpointDescriptor &>(static_cast<const D &>(*this))->get_EndpointNumber(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IUsbInterruptOutEndpointDescriptor<D>::Interval() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_Interval(put(value)));
+    check_hresult(static_cast<const IUsbInterruptOutEndpointDescriptor &>(static_cast<const D &>(*this))->get_Interval(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbInterruptOutPipe impl_IUsbInterruptOutEndpointDescriptor<D>::Pipe() const
 {
     Windows::Devices::Usb::UsbInterruptOutPipe value { nullptr };
-    check_hresult(shim()->get_Pipe(put(value)));
+    check_hresult(static_cast<const IUsbInterruptOutEndpointDescriptor &>(static_cast<const D &>(*this))->get_Pipe(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<uint32_t> impl_IUsbDevice<D>::SendControlOutTransferAsync(const Windows::Devices::Usb::UsbSetupPacket & setupPacket, const Windows::Storage::Streams::IBuffer & buffer) const
 {
     Windows::Foundation::IAsyncOperation<uint32_t> operation;
-    check_hresult(shim()->abi_SendControlOutTransferAsync(get(setupPacket), get(buffer), put(operation)));
+    check_hresult(static_cast<const IUsbDevice &>(static_cast<const D &>(*this))->abi_SendControlOutTransferAsync(get(setupPacket), get(buffer), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<uint32_t> impl_IUsbDevice<D>::SendControlOutTransferAsync(const Windows::Devices::Usb::UsbSetupPacket & setupPacket) const
 {
     Windows::Foundation::IAsyncOperation<uint32_t> operation;
-    check_hresult(shim()->abi_SendControlOutTransferAsyncNoBuffer(get(setupPacket), put(operation)));
+    check_hresult(static_cast<const IUsbDevice &>(static_cast<const D &>(*this))->abi_SendControlOutTransferAsyncNoBuffer(get(setupPacket), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> impl_IUsbDevice<D>::SendControlInTransferAsync(const Windows::Devices::Usb::UsbSetupPacket & setupPacket, const Windows::Storage::Streams::IBuffer & buffer) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> operation;
-    check_hresult(shim()->abi_SendControlInTransferAsync(get(setupPacket), get(buffer), put(operation)));
+    check_hresult(static_cast<const IUsbDevice &>(static_cast<const D &>(*this))->abi_SendControlInTransferAsync(get(setupPacket), get(buffer), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> impl_IUsbDevice<D>::SendControlInTransferAsync(const Windows::Devices::Usb::UsbSetupPacket & setupPacket) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> operation;
-    check_hresult(shim()->abi_SendControlInTransferAsyncNoBuffer(get(setupPacket), put(operation)));
+    check_hresult(static_cast<const IUsbDevice &>(static_cast<const D &>(*this))->abi_SendControlInTransferAsyncNoBuffer(get(setupPacket), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Devices::Usb::UsbInterface impl_IUsbDevice<D>::DefaultInterface() const
 {
     Windows::Devices::Usb::UsbInterface value { nullptr };
-    check_hresult(shim()->get_DefaultInterface(put(value)));
+    check_hresult(static_cast<const IUsbDevice &>(static_cast<const D &>(*this))->get_DefaultInterface(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbDeviceDescriptor impl_IUsbDevice<D>::DeviceDescriptor() const
 {
     Windows::Devices::Usb::UsbDeviceDescriptor value { nullptr };
-    check_hresult(shim()->get_DeviceDescriptor(put(value)));
+    check_hresult(static_cast<const IUsbDevice &>(static_cast<const D &>(*this))->get_DeviceDescriptor(put(value)));
     return value;
 }
 
 template <typename D> Windows::Devices::Usb::UsbConfiguration impl_IUsbDevice<D>::Configuration() const
 {
     Windows::Devices::Usb::UsbConfiguration value { nullptr };
-    check_hresult(shim()->get_Configuration(put(value)));
+    check_hresult(static_cast<const IUsbDevice &>(static_cast<const D &>(*this))->get_Configuration(put(value)));
     return value;
 }
 

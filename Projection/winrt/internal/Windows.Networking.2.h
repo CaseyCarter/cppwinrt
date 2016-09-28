@@ -11,12 +11,8 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::Networking {
 
 template <typename D>
-class WINRT_EBO impl_IEndpointPair
+struct WINRT_EBO impl_IEndpointPair
 {
-    auto shim() const { return impl::shim<D, IEndpointPair>(this); }
-
-public:
-
     Windows::Networking::HostName LocalHostName() const;
     void LocalHostName(const Windows::Networking::HostName & value) const;
     hstring LocalServiceName() const;
@@ -28,22 +24,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IEndpointPairFactory
+struct WINRT_EBO impl_IEndpointPairFactory
 {
-    auto shim() const { return impl::shim<D, IEndpointPairFactory>(this); }
-
-public:
-
     Windows::Networking::EndpointPair CreateEndpointPair(const Windows::Networking::HostName & localHostName, hstring_ref localServiceName, const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHostName
+struct WINRT_EBO impl_IHostName
 {
-    auto shim() const { return impl::shim<D, IHostName>(this); }
-
-public:
-
     Windows::Networking::Connectivity::IPInformation IPInformation() const;
     hstring RawName() const;
     hstring DisplayName() const;
@@ -53,22 +41,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHostNameFactory
+struct WINRT_EBO impl_IHostNameFactory
 {
-    auto shim() const { return impl::shim<D, IHostNameFactory>(this); }
-
-public:
-
     Windows::Networking::HostName CreateHostName(hstring_ref hostName) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHostNameStatics
+struct WINRT_EBO impl_IHostNameStatics
 {
-    auto shim() const { return impl::shim<D, IHostNameStatics>(this); }
-
-public:
-
     int32_t Compare(hstring_ref value1, hstring_ref value2) const;
 };
 

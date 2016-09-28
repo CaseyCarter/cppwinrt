@@ -10,41 +10,25 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::UI::Xaml::Resources {
 
 template <typename D>
-class WINRT_EBO impl_ICustomXamlResourceLoader
+struct WINRT_EBO impl_ICustomXamlResourceLoader
 {
-    auto shim() const { return impl::shim<D, ICustomXamlResourceLoader>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ICustomXamlResourceLoaderFactory
+struct WINRT_EBO impl_ICustomXamlResourceLoaderFactory
 {
-    auto shim() const { return impl::shim<D, ICustomXamlResourceLoaderFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Resources::CustomXamlResourceLoader CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICustomXamlResourceLoaderOverrides
+struct WINRT_EBO impl_ICustomXamlResourceLoaderOverrides
 {
-    auto shim() const { return impl::shim<D, ICustomXamlResourceLoaderOverrides>(this); }
-
-public:
-
     Windows::IInspectable GetResource(hstring_ref resourceId, hstring_ref objectType, hstring_ref propertyName, hstring_ref propertyType) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICustomXamlResourceLoaderStatics
+struct WINRT_EBO impl_ICustomXamlResourceLoaderStatics
 {
-    auto shim() const { return impl::shim<D, ICustomXamlResourceLoaderStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::Resources::CustomXamlResourceLoader Current() const;
     void Current(const Windows::UI::Xaml::Resources::CustomXamlResourceLoader & value) const;
 };

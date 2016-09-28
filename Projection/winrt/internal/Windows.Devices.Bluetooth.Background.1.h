@@ -75,12 +75,12 @@ template <> struct traits<Windows::Devices::Bluetooth::Background::RfcommOutboun
 
 namespace Windows::Devices::Bluetooth::Background {
 
-template <typename T> class impl_IBluetoothLEAdvertisementPublisherTriggerDetails;
-template <typename T> class impl_IBluetoothLEAdvertisementWatcherTriggerDetails;
-template <typename T> class impl_IGattCharacteristicNotificationTriggerDetails;
-template <typename T> class impl_IRfcommConnectionTriggerDetails;
-template <typename T> class impl_IRfcommInboundConnectionInformation;
-template <typename T> class impl_IRfcommOutboundConnectionInformation;
+template <typename T> struct impl_IBluetoothLEAdvertisementPublisherTriggerDetails;
+template <typename T> struct impl_IBluetoothLEAdvertisementWatcherTriggerDetails;
+template <typename T> struct impl_IGattCharacteristicNotificationTriggerDetails;
+template <typename T> struct impl_IRfcommConnectionTriggerDetails;
+template <typename T> struct impl_IRfcommInboundConnectionInformation;
+template <typename T> struct impl_IRfcommOutboundConnectionInformation;
 
 }
 

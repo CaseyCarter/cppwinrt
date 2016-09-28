@@ -25,24 +25,16 @@ template <> struct __declspec(uuid("3c1ec44c-e942-54e5-bcd3-e329c951f595")) __de
 namespace Windows::Security::Authentication::Web {
 
 template <typename D>
-class WINRT_EBO impl_IWebAuthenticationBrokerStatics
+struct WINRT_EBO impl_IWebAuthenticationBrokerStatics
 {
-    auto shim() const { return impl::shim<D, IWebAuthenticationBrokerStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::WebAuthenticationResult> AuthenticateAsync(Windows::Security::Authentication::Web::WebAuthenticationOptions options, const Windows::Foundation::Uri & requestUri, const Windows::Foundation::Uri & callbackUri) const;
     Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::WebAuthenticationResult> AuthenticateAsync(Windows::Security::Authentication::Web::WebAuthenticationOptions options, const Windows::Foundation::Uri & requestUri) const;
     Windows::Foundation::Uri GetCurrentApplicationCallbackUri() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebAuthenticationBrokerStatics2
+struct WINRT_EBO impl_IWebAuthenticationBrokerStatics2
 {
-    auto shim() const { return impl::shim<D, IWebAuthenticationBrokerStatics2>(this); }
-
-public:
-
     void AuthenticateAndContinue(const Windows::Foundation::Uri & requestUri) const;
     void AuthenticateAndContinue(const Windows::Foundation::Uri & requestUri, const Windows::Foundation::Uri & callbackUri) const;
     void AuthenticateAndContinue(const Windows::Foundation::Uri & requestUri, const Windows::Foundation::Uri & callbackUri, const Windows::Foundation::Collections::ValueSet & continuationData, Windows::Security::Authentication::Web::WebAuthenticationOptions options) const;
@@ -51,12 +43,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebAuthenticationResult
+struct WINRT_EBO impl_IWebAuthenticationResult
 {
-    auto shim() const { return impl::shim<D, IWebAuthenticationResult>(this); }
-
-public:
-
     hstring ResponseData() const;
     Windows::Security::Authentication::Web::WebAuthenticationStatus ResponseStatus() const;
     uint32_t ResponseErrorDetail() const;

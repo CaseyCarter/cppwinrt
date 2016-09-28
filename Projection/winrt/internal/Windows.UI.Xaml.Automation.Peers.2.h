@@ -72,88 +72,52 @@ template <> struct __declspec(uuid("00775c79-589b-5c36-ae72-2e7aab0270c6")) __de
 namespace Windows::UI::Xaml::Automation::Peers {
 
 template <typename D>
-class WINRT_EBO impl_IAppBarAutomationPeer
+struct WINRT_EBO impl_IAppBarAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IAppBarAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppBarAutomationPeerFactory
+struct WINRT_EBO impl_IAppBarAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IAppBarAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::AppBarAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::AppBar & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppBarButtonAutomationPeer
+struct WINRT_EBO impl_IAppBarButtonAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IAppBarButtonAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppBarButtonAutomationPeerFactory
+struct WINRT_EBO impl_IAppBarButtonAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IAppBarButtonAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::AppBarButtonAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::AppBarButton & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppBarToggleButtonAutomationPeer
+struct WINRT_EBO impl_IAppBarToggleButtonAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IAppBarToggleButtonAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppBarToggleButtonAutomationPeerFactory
+struct WINRT_EBO impl_IAppBarToggleButtonAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IAppBarToggleButtonAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::AppBarToggleButtonAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::AppBarToggleButton & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAutoSuggestBoxAutomationPeer
+struct WINRT_EBO impl_IAutoSuggestBoxAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IAutoSuggestBoxAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IAutoSuggestBoxAutomationPeerFactory
+struct WINRT_EBO impl_IAutoSuggestBoxAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IAutoSuggestBoxAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::AutoSuggestBoxAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::AutoSuggestBox & owner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAutomationPeer
+struct WINRT_EBO impl_IAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IAutomationPeer>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::AutomationPeer EventsSource() const;
     void EventsSource(const Windows::UI::Xaml::Automation::Peers::AutomationPeer & value) const;
     Windows::IInspectable GetPattern(Windows::UI::Xaml::Automation::Peers::PatternInterface patternInterface) const;
@@ -190,21 +154,13 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAutomationPeer2
+struct WINRT_EBO impl_IAutomationPeer2
 {
-    auto shim() const { return impl::shim<D, IAutomationPeer2>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IAutomationPeer3
+struct WINRT_EBO impl_IAutomationPeer3
 {
-    auto shim() const { return impl::shim<D, IAutomationPeer3>(this); }
-
-public:
-
     Windows::IInspectable Navigate(Windows::UI::Xaml::Automation::Peers::AutomationNavigationDirection direction) const;
     Windows::IInspectable GetElementFromPoint(const Windows::Foundation::Point & pointInWindowCoordinates) const;
     Windows::IInspectable GetFocusedElement() const;
@@ -220,35 +176,23 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAutomationPeer4
+struct WINRT_EBO impl_IAutomationPeer4
 {
-    auto shim() const { return impl::shim<D, IAutomationPeer4>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::AutomationLandmarkType GetLandmarkType() const;
     hstring GetLocalizedLandmarkType() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAutomationPeer5
+struct WINRT_EBO impl_IAutomationPeer5
 {
-    auto shim() const { return impl::shim<D, IAutomationPeer5>(this); }
-
-public:
-
     bool IsPeripheral() const;
     bool IsDataValidForForm() const;
     hstring GetFullDescription() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAutomationPeerAnnotation
+struct WINRT_EBO impl_IAutomationPeerAnnotation
 {
-    auto shim() const { return impl::shim<D, IAutomationPeerAnnotation>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::AnnotationType Type() const;
     void Type(Windows::UI::Xaml::Automation::AnnotationType value) const;
     Windows::UI::Xaml::Automation::Peers::AutomationPeer Peer() const;
@@ -256,44 +200,28 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAutomationPeerAnnotationFactory
+struct WINRT_EBO impl_IAutomationPeerAnnotationFactory
 {
-    auto shim() const { return impl::shim<D, IAutomationPeerAnnotationFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::AutomationPeerAnnotation CreateInstance(Windows::UI::Xaml::Automation::AnnotationType type) const;
     Windows::UI::Xaml::Automation::Peers::AutomationPeerAnnotation CreateWithPeerParameter(Windows::UI::Xaml::Automation::AnnotationType type, const Windows::UI::Xaml::Automation::Peers::AutomationPeer & peer) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAutomationPeerAnnotationStatics
+struct WINRT_EBO impl_IAutomationPeerAnnotationStatics
 {
-    auto shim() const { return impl::shim<D, IAutomationPeerAnnotationStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty TypeProperty() const;
     Windows::UI::Xaml::DependencyProperty PeerProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAutomationPeerFactory
+struct WINRT_EBO impl_IAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::AutomationPeer CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAutomationPeerOverrides
+struct WINRT_EBO impl_IAutomationPeerOverrides
 {
-    auto shim() const { return impl::shim<D, IAutomationPeerOverrides>(this); }
-
-public:
-
     Windows::IInspectable GetPatternCore(Windows::UI::Xaml::Automation::Peers::PatternInterface patternInterface) const;
     hstring GetAcceleratorKeyCore() const;
     hstring GetAccessKeyCore() const;
@@ -324,23 +252,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAutomationPeerOverrides2
+struct WINRT_EBO impl_IAutomationPeerOverrides2
 {
-    auto shim() const { return impl::shim<D, IAutomationPeerOverrides2>(this); }
-
-public:
-
     void ShowContextMenuCore() const;
     Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Automation::Peers::AutomationPeer> GetControlledPeersCore() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAutomationPeerOverrides3
+struct WINRT_EBO impl_IAutomationPeerOverrides3
 {
-    auto shim() const { return impl::shim<D, IAutomationPeerOverrides3>(this); }
-
-public:
-
     Windows::IInspectable NavigateCore(Windows::UI::Xaml::Automation::Peers::AutomationNavigationDirection direction) const;
     Windows::IInspectable GetElementFromPointCore(const Windows::Foundation::Point & pointInWindowCoordinates) const;
     Windows::IInspectable GetFocusedElementCore() const;
@@ -351,23 +271,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAutomationPeerOverrides4
+struct WINRT_EBO impl_IAutomationPeerOverrides4
 {
-    auto shim() const { return impl::shim<D, IAutomationPeerOverrides4>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::AutomationLandmarkType GetLandmarkTypeCore() const;
     hstring GetLocalizedLandmarkTypeCore() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAutomationPeerOverrides5
+struct WINRT_EBO impl_IAutomationPeerOverrides5
 {
-    auto shim() const { return impl::shim<D, IAutomationPeerOverrides5>(this); }
-
-public:
-
     bool IsPeripheralCore() const;
     bool IsDataValidForFormCore() const;
     hstring GetFullDescriptionCore() const;
@@ -377,1383 +289,803 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAutomationPeerProtected
+struct WINRT_EBO impl_IAutomationPeerProtected
 {
-    auto shim() const { return impl::shim<D, IAutomationPeerProtected>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::AutomationPeer PeerFromProvider(const Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple & provider) const;
     Windows::UI::Xaml::Automation::Provider::IRawElementProviderSimple ProviderFromPeer(const Windows::UI::Xaml::Automation::Peers::AutomationPeer & peer) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAutomationPeerStatics
+struct WINRT_EBO impl_IAutomationPeerStatics
 {
-    auto shim() const { return impl::shim<D, IAutomationPeerStatics>(this); }
-
-public:
-
     bool ListenerExists(Windows::UI::Xaml::Automation::Peers::AutomationEvents eventId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAutomationPeerStatics3
+struct WINRT_EBO impl_IAutomationPeerStatics3
 {
-    auto shim() const { return impl::shim<D, IAutomationPeerStatics3>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::RawElementProviderRuntimeId GenerateRawElementProviderRuntimeId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IButtonAutomationPeer
+struct WINRT_EBO impl_IButtonAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IButtonAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IButtonAutomationPeerFactory
+struct WINRT_EBO impl_IButtonAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IButtonAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::ButtonAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::Button & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IButtonBaseAutomationPeer
+struct WINRT_EBO impl_IButtonBaseAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IButtonBaseAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IButtonBaseAutomationPeerFactory
+struct WINRT_EBO impl_IButtonBaseAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IButtonBaseAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::ButtonBaseAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::Primitives::ButtonBase & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICaptureElementAutomationPeer
+struct WINRT_EBO impl_ICaptureElementAutomationPeer
 {
-    auto shim() const { return impl::shim<D, ICaptureElementAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ICaptureElementAutomationPeerFactory
+struct WINRT_EBO impl_ICaptureElementAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, ICaptureElementAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::CaptureElementAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::CaptureElement & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICheckBoxAutomationPeer
+struct WINRT_EBO impl_ICheckBoxAutomationPeer
 {
-    auto shim() const { return impl::shim<D, ICheckBoxAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ICheckBoxAutomationPeerFactory
+struct WINRT_EBO impl_ICheckBoxAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, ICheckBoxAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::CheckBoxAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::CheckBox & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IComboBoxAutomationPeer
+struct WINRT_EBO impl_IComboBoxAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IComboBoxAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IComboBoxAutomationPeerFactory
+struct WINRT_EBO impl_IComboBoxAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IComboBoxAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::ComboBoxAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::ComboBox & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IComboBoxItemAutomationPeer
+struct WINRT_EBO impl_IComboBoxItemAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IComboBoxItemAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IComboBoxItemAutomationPeerFactory
+struct WINRT_EBO impl_IComboBoxItemAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IComboBoxItemAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::ComboBoxItemAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::ComboBoxItem & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IComboBoxItemDataAutomationPeer
+struct WINRT_EBO impl_IComboBoxItemDataAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IComboBoxItemDataAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IComboBoxItemDataAutomationPeerFactory
+struct WINRT_EBO impl_IComboBoxItemDataAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IComboBoxItemDataAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::ComboBoxItemDataAutomationPeer CreateInstanceWithParentAndItem(const Windows::IInspectable & item, const Windows::UI::Xaml::Automation::Peers::ComboBoxAutomationPeer & parent, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDatePickerAutomationPeer
+struct WINRT_EBO impl_IDatePickerAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IDatePickerAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IDatePickerAutomationPeerFactory
+struct WINRT_EBO impl_IDatePickerAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IDatePickerAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::DatePickerAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::DatePicker & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDatePickerFlyoutPresenterAutomationPeer
+struct WINRT_EBO impl_IDatePickerFlyoutPresenterAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IDatePickerFlyoutPresenterAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IFlipViewAutomationPeer
+struct WINRT_EBO impl_IFlipViewAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IFlipViewAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IFlipViewAutomationPeerFactory
+struct WINRT_EBO impl_IFlipViewAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IFlipViewAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::FlipViewAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::FlipView & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFlipViewItemAutomationPeer
+struct WINRT_EBO impl_IFlipViewItemAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IFlipViewItemAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IFlipViewItemAutomationPeerFactory
+struct WINRT_EBO impl_IFlipViewItemAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IFlipViewItemAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::FlipViewItemAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::FlipViewItem & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFlipViewItemDataAutomationPeer
+struct WINRT_EBO impl_IFlipViewItemDataAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IFlipViewItemDataAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IFlipViewItemDataAutomationPeerFactory
+struct WINRT_EBO impl_IFlipViewItemDataAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IFlipViewItemDataAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::FlipViewItemDataAutomationPeer CreateInstanceWithParentAndItem(const Windows::IInspectable & item, const Windows::UI::Xaml::Automation::Peers::FlipViewAutomationPeer & parent, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFlyoutPresenterAutomationPeer
+struct WINRT_EBO impl_IFlyoutPresenterAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IFlyoutPresenterAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IFlyoutPresenterAutomationPeerFactory
+struct WINRT_EBO impl_IFlyoutPresenterAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IFlyoutPresenterAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::FlyoutPresenterAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::FlyoutPresenter & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFrameworkElementAutomationPeer
+struct WINRT_EBO impl_IFrameworkElementAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IFrameworkElementAutomationPeer>(this); }
-
-public:
-
     Windows::UI::Xaml::UIElement Owner() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFrameworkElementAutomationPeerFactory
+struct WINRT_EBO impl_IFrameworkElementAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IFrameworkElementAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::FrameworkElementAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::FrameworkElement & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFrameworkElementAutomationPeerStatics
+struct WINRT_EBO impl_IFrameworkElementAutomationPeerStatics
 {
-    auto shim() const { return impl::shim<D, IFrameworkElementAutomationPeerStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::AutomationPeer FromElement(const Windows::UI::Xaml::UIElement & element) const;
     Windows::UI::Xaml::Automation::Peers::AutomationPeer CreatePeerForElement(const Windows::UI::Xaml::UIElement & element) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGridViewAutomationPeer
+struct WINRT_EBO impl_IGridViewAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IGridViewAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IGridViewAutomationPeerFactory
+struct WINRT_EBO impl_IGridViewAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IGridViewAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::GridViewAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::GridView & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGridViewHeaderItemAutomationPeer
+struct WINRT_EBO impl_IGridViewHeaderItemAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IGridViewHeaderItemAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IGridViewHeaderItemAutomationPeerFactory
+struct WINRT_EBO impl_IGridViewHeaderItemAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IGridViewHeaderItemAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::GridViewHeaderItemAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::GridViewHeaderItem & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGridViewItemAutomationPeer
+struct WINRT_EBO impl_IGridViewItemAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IGridViewItemAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IGridViewItemAutomationPeerFactory
+struct WINRT_EBO impl_IGridViewItemAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IGridViewItemAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::GridViewItemAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::GridViewItem & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGridViewItemDataAutomationPeer
+struct WINRT_EBO impl_IGridViewItemDataAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IGridViewItemDataAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IGridViewItemDataAutomationPeerFactory
+struct WINRT_EBO impl_IGridViewItemDataAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IGridViewItemDataAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::GridViewItemDataAutomationPeer CreateInstanceWithParentAndItem(const Windows::IInspectable & item, const Windows::UI::Xaml::Automation::Peers::GridViewAutomationPeer & parent, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGroupItemAutomationPeer
+struct WINRT_EBO impl_IGroupItemAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IGroupItemAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IGroupItemAutomationPeerFactory
+struct WINRT_EBO impl_IGroupItemAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IGroupItemAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::GroupItemAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::GroupItem & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHubAutomationPeer
+struct WINRT_EBO impl_IHubAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IHubAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IHubAutomationPeerFactory
+struct WINRT_EBO impl_IHubAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IHubAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::HubAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::Hub & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHubSectionAutomationPeer
+struct WINRT_EBO impl_IHubSectionAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IHubSectionAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IHubSectionAutomationPeerFactory
+struct WINRT_EBO impl_IHubSectionAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IHubSectionAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::HubSectionAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::HubSection & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHyperlinkButtonAutomationPeer
+struct WINRT_EBO impl_IHyperlinkButtonAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IHyperlinkButtonAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IHyperlinkButtonAutomationPeerFactory
+struct WINRT_EBO impl_IHyperlinkButtonAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IHyperlinkButtonAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::HyperlinkButtonAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::HyperlinkButton & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IImageAutomationPeer
+struct WINRT_EBO impl_IImageAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IImageAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IImageAutomationPeerFactory
+struct WINRT_EBO impl_IImageAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IImageAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::ImageAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::Image & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInkToolbarAutomationPeer
+struct WINRT_EBO impl_IInkToolbarAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IInkToolbarAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IItemAutomationPeer
+struct WINRT_EBO impl_IItemAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IItemAutomationPeer>(this); }
-
-public:
-
     Windows::IInspectable Item() const;
     Windows::UI::Xaml::Automation::Peers::ItemsControlAutomationPeer ItemsControlAutomationPeer() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IItemAutomationPeerFactory
+struct WINRT_EBO impl_IItemAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IItemAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::ItemAutomationPeer CreateInstanceWithParentAndItem(const Windows::IInspectable & item, const Windows::UI::Xaml::Automation::Peers::ItemsControlAutomationPeer & parent, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IItemsControlAutomationPeer
+struct WINRT_EBO impl_IItemsControlAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IItemsControlAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IItemsControlAutomationPeer2
+struct WINRT_EBO impl_IItemsControlAutomationPeer2
 {
-    auto shim() const { return impl::shim<D, IItemsControlAutomationPeer2>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::ItemAutomationPeer CreateItemAutomationPeer(const Windows::IInspectable & item) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IItemsControlAutomationPeerFactory
+struct WINRT_EBO impl_IItemsControlAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IItemsControlAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::ItemsControlAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::ItemsControl & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IItemsControlAutomationPeerOverrides2
+struct WINRT_EBO impl_IItemsControlAutomationPeerOverrides2
 {
-    auto shim() const { return impl::shim<D, IItemsControlAutomationPeerOverrides2>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::ItemAutomationPeer OnCreateItemAutomationPeer(const Windows::IInspectable & item) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IListBoxAutomationPeer
+struct WINRT_EBO impl_IListBoxAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IListBoxAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IListBoxAutomationPeerFactory
+struct WINRT_EBO impl_IListBoxAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IListBoxAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::ListBoxAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::ListBox & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IListBoxItemAutomationPeer
+struct WINRT_EBO impl_IListBoxItemAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IListBoxItemAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IListBoxItemAutomationPeerFactory
+struct WINRT_EBO impl_IListBoxItemAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IListBoxItemAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::ListBoxItemAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::ListBoxItem & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IListBoxItemDataAutomationPeer
+struct WINRT_EBO impl_IListBoxItemDataAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IListBoxItemDataAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IListBoxItemDataAutomationPeerFactory
+struct WINRT_EBO impl_IListBoxItemDataAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IListBoxItemDataAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::ListBoxItemDataAutomationPeer CreateInstanceWithParentAndItem(const Windows::IInspectable & item, const Windows::UI::Xaml::Automation::Peers::ListBoxAutomationPeer & parent, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IListPickerFlyoutPresenterAutomationPeer
+struct WINRT_EBO impl_IListPickerFlyoutPresenterAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IListPickerFlyoutPresenterAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IListViewAutomationPeer
+struct WINRT_EBO impl_IListViewAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IListViewAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IListViewAutomationPeerFactory
+struct WINRT_EBO impl_IListViewAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IListViewAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::ListViewAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::ListView & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IListViewBaseAutomationPeer
+struct WINRT_EBO impl_IListViewBaseAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IListViewBaseAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IListViewBaseAutomationPeerFactory
+struct WINRT_EBO impl_IListViewBaseAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IListViewBaseAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::ListViewBaseAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::ListViewBase & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IListViewBaseHeaderItemAutomationPeer
+struct WINRT_EBO impl_IListViewBaseHeaderItemAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IListViewBaseHeaderItemAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IListViewBaseHeaderItemAutomationPeerFactory
+struct WINRT_EBO impl_IListViewBaseHeaderItemAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IListViewBaseHeaderItemAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::ListViewBaseHeaderItemAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::ListViewBaseHeaderItem & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IListViewHeaderItemAutomationPeer
+struct WINRT_EBO impl_IListViewHeaderItemAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IListViewHeaderItemAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IListViewHeaderItemAutomationPeerFactory
+struct WINRT_EBO impl_IListViewHeaderItemAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IListViewHeaderItemAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::ListViewHeaderItemAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::ListViewHeaderItem & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IListViewItemAutomationPeer
+struct WINRT_EBO impl_IListViewItemAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IListViewItemAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IListViewItemAutomationPeerFactory
+struct WINRT_EBO impl_IListViewItemAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IListViewItemAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::ListViewItemAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::ListViewItem & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IListViewItemDataAutomationPeer
+struct WINRT_EBO impl_IListViewItemDataAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IListViewItemDataAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IListViewItemDataAutomationPeerFactory
+struct WINRT_EBO impl_IListViewItemDataAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IListViewItemDataAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::ListViewItemDataAutomationPeer CreateInstanceWithParentAndItem(const Windows::IInspectable & item, const Windows::UI::Xaml::Automation::Peers::ListViewBaseAutomationPeer & parent, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILoopingSelectorAutomationPeer
+struct WINRT_EBO impl_ILoopingSelectorAutomationPeer
 {
-    auto shim() const { return impl::shim<D, ILoopingSelectorAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ILoopingSelectorItemAutomationPeer
+struct WINRT_EBO impl_ILoopingSelectorItemAutomationPeer
 {
-    auto shim() const { return impl::shim<D, ILoopingSelectorItemAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ILoopingSelectorItemDataAutomationPeer
+struct WINRT_EBO impl_ILoopingSelectorItemDataAutomationPeer
 {
-    auto shim() const { return impl::shim<D, ILoopingSelectorItemDataAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IMapControlAutomationPeer
+struct WINRT_EBO impl_IMapControlAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IMapControlAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaElementAutomationPeer
+struct WINRT_EBO impl_IMediaElementAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IMediaElementAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaElementAutomationPeerFactory
+struct WINRT_EBO impl_IMediaElementAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IMediaElementAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::MediaElementAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::MediaElement & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaPlayerElementAutomationPeer
+struct WINRT_EBO impl_IMediaPlayerElementAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IMediaPlayerElementAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaPlayerElementAutomationPeerFactory
+struct WINRT_EBO impl_IMediaPlayerElementAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IMediaPlayerElementAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::MediaPlayerElementAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::MediaPlayerElement & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaTransportControlsAutomationPeer
+struct WINRT_EBO impl_IMediaTransportControlsAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IMediaTransportControlsAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaTransportControlsAutomationPeerFactory
+struct WINRT_EBO impl_IMediaTransportControlsAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IMediaTransportControlsAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::MediaTransportControlsAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::MediaTransportControls & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMenuFlyoutItemAutomationPeer
+struct WINRT_EBO impl_IMenuFlyoutItemAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IMenuFlyoutItemAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IMenuFlyoutItemAutomationPeerFactory
+struct WINRT_EBO impl_IMenuFlyoutItemAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IMenuFlyoutItemAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::MenuFlyoutItemAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::MenuFlyoutItem & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMenuFlyoutPresenterAutomationPeer
+struct WINRT_EBO impl_IMenuFlyoutPresenterAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IMenuFlyoutPresenterAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IMenuFlyoutPresenterAutomationPeerFactory
+struct WINRT_EBO impl_IMenuFlyoutPresenterAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IMenuFlyoutPresenterAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::MenuFlyoutPresenterAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::MenuFlyoutPresenter & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPasswordBoxAutomationPeer
+struct WINRT_EBO impl_IPasswordBoxAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IPasswordBoxAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IPasswordBoxAutomationPeerFactory
+struct WINRT_EBO impl_IPasswordBoxAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IPasswordBoxAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::PasswordBoxAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::PasswordBox & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPickerFlyoutPresenterAutomationPeer
+struct WINRT_EBO impl_IPickerFlyoutPresenterAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IPickerFlyoutPresenterAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IPivotAutomationPeer
+struct WINRT_EBO impl_IPivotAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IPivotAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IPivotAutomationPeerFactory
+struct WINRT_EBO impl_IPivotAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IPivotAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::PivotAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::Pivot & owner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPivotItemAutomationPeer
+struct WINRT_EBO impl_IPivotItemAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IPivotItemAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IPivotItemAutomationPeerFactory
+struct WINRT_EBO impl_IPivotItemAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IPivotItemAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::PivotItemAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::PivotItem & owner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPivotItemDataAutomationPeer
+struct WINRT_EBO impl_IPivotItemDataAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IPivotItemDataAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IPivotItemDataAutomationPeerFactory
+struct WINRT_EBO impl_IPivotItemDataAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IPivotItemDataAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::PivotItemDataAutomationPeer CreateInstanceWithParentAndItem(const Windows::IInspectable & item, const Windows::UI::Xaml::Automation::Peers::PivotAutomationPeer & parent) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IProgressBarAutomationPeer
+struct WINRT_EBO impl_IProgressBarAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IProgressBarAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IProgressBarAutomationPeerFactory
+struct WINRT_EBO impl_IProgressBarAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IProgressBarAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::ProgressBarAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::ProgressBar & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IProgressRingAutomationPeer
+struct WINRT_EBO impl_IProgressRingAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IProgressRingAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IProgressRingAutomationPeerFactory
+struct WINRT_EBO impl_IProgressRingAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IProgressRingAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::ProgressRingAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::ProgressRing & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRadioButtonAutomationPeer
+struct WINRT_EBO impl_IRadioButtonAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IRadioButtonAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IRadioButtonAutomationPeerFactory
+struct WINRT_EBO impl_IRadioButtonAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IRadioButtonAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::RadioButtonAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::RadioButton & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRangeBaseAutomationPeer
+struct WINRT_EBO impl_IRangeBaseAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IRangeBaseAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IRangeBaseAutomationPeerFactory
+struct WINRT_EBO impl_IRangeBaseAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IRangeBaseAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::RangeBaseAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::Primitives::RangeBase & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRepeatButtonAutomationPeer
+struct WINRT_EBO impl_IRepeatButtonAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IRepeatButtonAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IRepeatButtonAutomationPeerFactory
+struct WINRT_EBO impl_IRepeatButtonAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IRepeatButtonAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::RepeatButtonAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::Primitives::RepeatButton & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRichEditBoxAutomationPeer
+struct WINRT_EBO impl_IRichEditBoxAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IRichEditBoxAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IRichEditBoxAutomationPeerFactory
+struct WINRT_EBO impl_IRichEditBoxAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IRichEditBoxAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::RichEditBoxAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::RichEditBox & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRichTextBlockAutomationPeer
+struct WINRT_EBO impl_IRichTextBlockAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IRichTextBlockAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IRichTextBlockAutomationPeerFactory
+struct WINRT_EBO impl_IRichTextBlockAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IRichTextBlockAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::RichTextBlockAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::RichTextBlock & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRichTextBlockOverflowAutomationPeer
+struct WINRT_EBO impl_IRichTextBlockOverflowAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IRichTextBlockOverflowAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IRichTextBlockOverflowAutomationPeerFactory
+struct WINRT_EBO impl_IRichTextBlockOverflowAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IRichTextBlockOverflowAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::RichTextBlockOverflowAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::RichTextBlockOverflow & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IScrollBarAutomationPeer
+struct WINRT_EBO impl_IScrollBarAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IScrollBarAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IScrollBarAutomationPeerFactory
+struct WINRT_EBO impl_IScrollBarAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IScrollBarAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::ScrollBarAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::Primitives::ScrollBar & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IScrollViewerAutomationPeer
+struct WINRT_EBO impl_IScrollViewerAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IScrollViewerAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IScrollViewerAutomationPeerFactory
+struct WINRT_EBO impl_IScrollViewerAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IScrollViewerAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::ScrollViewerAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::ScrollViewer & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISearchBoxAutomationPeer
+struct WINRT_EBO impl_ISearchBoxAutomationPeer
 {
-    auto shim() const { return impl::shim<D, ISearchBoxAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ISearchBoxAutomationPeerFactory
+struct WINRT_EBO impl_ISearchBoxAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, ISearchBoxAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::SearchBoxAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::SearchBox & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISelectorAutomationPeer
+struct WINRT_EBO impl_ISelectorAutomationPeer
 {
-    auto shim() const { return impl::shim<D, ISelectorAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ISelectorAutomationPeerFactory
+struct WINRT_EBO impl_ISelectorAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, ISelectorAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::SelectorAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::Primitives::Selector & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISelectorItemAutomationPeer
+struct WINRT_EBO impl_ISelectorItemAutomationPeer
 {
-    auto shim() const { return impl::shim<D, ISelectorItemAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ISelectorItemAutomationPeerFactory
+struct WINRT_EBO impl_ISelectorItemAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, ISelectorItemAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::SelectorItemAutomationPeer CreateInstanceWithParentAndItem(const Windows::IInspectable & item, const Windows::UI::Xaml::Automation::Peers::SelectorAutomationPeer & parent, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISemanticZoomAutomationPeer
+struct WINRT_EBO impl_ISemanticZoomAutomationPeer
 {
-    auto shim() const { return impl::shim<D, ISemanticZoomAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ISemanticZoomAutomationPeerFactory
+struct WINRT_EBO impl_ISemanticZoomAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, ISemanticZoomAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::SemanticZoomAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::SemanticZoom & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISettingsFlyoutAutomationPeer
+struct WINRT_EBO impl_ISettingsFlyoutAutomationPeer
 {
-    auto shim() const { return impl::shim<D, ISettingsFlyoutAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ISettingsFlyoutAutomationPeerFactory
+struct WINRT_EBO impl_ISettingsFlyoutAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, ISettingsFlyoutAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::SettingsFlyoutAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::SettingsFlyout & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISliderAutomationPeer
+struct WINRT_EBO impl_ISliderAutomationPeer
 {
-    auto shim() const { return impl::shim<D, ISliderAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ISliderAutomationPeerFactory
+struct WINRT_EBO impl_ISliderAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, ISliderAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::SliderAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::Slider & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITextBlockAutomationPeer
+struct WINRT_EBO impl_ITextBlockAutomationPeer
 {
-    auto shim() const { return impl::shim<D, ITextBlockAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ITextBlockAutomationPeerFactory
+struct WINRT_EBO impl_ITextBlockAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, ITextBlockAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::TextBlockAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::TextBlock & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITextBoxAutomationPeer
+struct WINRT_EBO impl_ITextBoxAutomationPeer
 {
-    auto shim() const { return impl::shim<D, ITextBoxAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ITextBoxAutomationPeerFactory
+struct WINRT_EBO impl_ITextBoxAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, ITextBoxAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::TextBoxAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::TextBox & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IThumbAutomationPeer
+struct WINRT_EBO impl_IThumbAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IThumbAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IThumbAutomationPeerFactory
+struct WINRT_EBO impl_IThumbAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IThumbAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::ThumbAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::Primitives::Thumb & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITimePickerAutomationPeer
+struct WINRT_EBO impl_ITimePickerAutomationPeer
 {
-    auto shim() const { return impl::shim<D, ITimePickerAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ITimePickerAutomationPeerFactory
+struct WINRT_EBO impl_ITimePickerAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, ITimePickerAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::TimePickerAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::TimePicker & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITimePickerFlyoutPresenterAutomationPeer
+struct WINRT_EBO impl_ITimePickerFlyoutPresenterAutomationPeer
 {
-    auto shim() const { return impl::shim<D, ITimePickerFlyoutPresenterAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IToggleButtonAutomationPeer
+struct WINRT_EBO impl_IToggleButtonAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IToggleButtonAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IToggleButtonAutomationPeerFactory
+struct WINRT_EBO impl_IToggleButtonAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IToggleButtonAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::ToggleButtonAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::Primitives::ToggleButton & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IToggleMenuFlyoutItemAutomationPeer
+struct WINRT_EBO impl_IToggleMenuFlyoutItemAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IToggleMenuFlyoutItemAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IToggleMenuFlyoutItemAutomationPeerFactory
+struct WINRT_EBO impl_IToggleMenuFlyoutItemAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IToggleMenuFlyoutItemAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::ToggleMenuFlyoutItemAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::ToggleMenuFlyoutItem & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IToggleSwitchAutomationPeer
+struct WINRT_EBO impl_IToggleSwitchAutomationPeer
 {
-    auto shim() const { return impl::shim<D, IToggleSwitchAutomationPeer>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IToggleSwitchAutomationPeerFactory
+struct WINRT_EBO impl_IToggleSwitchAutomationPeerFactory
 {
-    auto shim() const { return impl::shim<D, IToggleSwitchAutomationPeerFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Automation::Peers::ToggleSwitchAutomationPeer CreateInstanceWithOwner(const Windows::UI::Xaml::Controls::ToggleSwitch & owner, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 

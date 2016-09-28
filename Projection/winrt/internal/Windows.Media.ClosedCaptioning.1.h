@@ -36,7 +36,7 @@ namespace ABI {
 
 namespace Windows::Media::ClosedCaptioning {
 
-template <typename T> class impl_IClosedCaptionPropertiesStatics;
+template <typename T> struct impl_IClosedCaptionPropertiesStatics;
 
 }
 

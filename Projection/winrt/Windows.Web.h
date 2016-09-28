@@ -52,14 +52,14 @@ namespace Windows::Web {
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IInputStream> impl_IUriToStreamResolver<D>::UriToStreamAsync(const Windows::Foundation::Uri & uri) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IInputStream> operation;
-    check_hresult(shim()->abi_UriToStreamAsync(get(uri), put(operation)));
+    check_hresult(static_cast<const IUriToStreamResolver &>(static_cast<const D &>(*this))->abi_UriToStreamAsync(get(uri), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Web::WebErrorStatus impl_IWebErrorStatics<D>::GetStatus(int32_t hresult) const
 {
     Windows::Web::WebErrorStatus status {};
-    check_hresult(shim()->abi_GetStatus(hresult, &status));
+    check_hresult(static_cast<const IWebErrorStatics &>(static_cast<const D &>(*this))->abi_GetStatus(hresult, &status));
     return status;
 }
 

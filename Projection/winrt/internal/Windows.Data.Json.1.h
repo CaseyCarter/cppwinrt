@@ -96,15 +96,15 @@ template <> struct traits<Windows::Data::Json::JsonValue> { using default_interf
 
 namespace Windows::Data::Json {
 
-template <typename T> class impl_IJsonArray;
-template <typename T> class impl_IJsonArrayStatics;
-template <typename T> class impl_IJsonErrorStatics2;
-template <typename T> class impl_IJsonObject;
-template <typename T> class impl_IJsonObjectStatics;
-template <typename T> class impl_IJsonObjectWithDefaultValues;
-template <typename T> class impl_IJsonValue;
-template <typename T> class impl_IJsonValueStatics;
-template <typename T> class impl_IJsonValueStatics2;
+template <typename T> struct impl_IJsonArray;
+template <typename T> struct impl_IJsonArrayStatics;
+template <typename T> struct impl_IJsonErrorStatics2;
+template <typename T> struct impl_IJsonObject;
+template <typename T> struct impl_IJsonObjectStatics;
+template <typename T> struct impl_IJsonObjectWithDefaultValues;
+template <typename T> struct impl_IJsonValue;
+template <typename T> struct impl_IJsonValueStatics;
+template <typename T> struct impl_IJsonValueStatics2;
 
 }
 

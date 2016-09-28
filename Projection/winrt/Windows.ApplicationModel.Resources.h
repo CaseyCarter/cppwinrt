@@ -150,56 +150,56 @@ namespace Windows::ApplicationModel::Resources {
 template <typename D> hstring impl_IResourceLoader<D>::GetString(hstring_ref resource) const
 {
     hstring value;
-    check_hresult(shim()->abi_GetString(get(resource), put(value)));
+    check_hresult(static_cast<const IResourceLoader &>(static_cast<const D &>(*this))->abi_GetString(get(resource), put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IResourceLoader2<D>::GetStringForUri(const Windows::Foundation::Uri & uri) const
 {
     hstring value;
-    check_hresult(shim()->abi_GetStringForUri(get(uri), put(value)));
+    check_hresult(static_cast<const IResourceLoader2 &>(static_cast<const D &>(*this))->abi_GetStringForUri(get(uri), put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IResourceLoaderStatics<D>::GetStringForReference(const Windows::Foundation::Uri & uri) const
 {
     hstring value;
-    check_hresult(shim()->abi_GetStringForReference(get(uri), put(value)));
+    check_hresult(static_cast<const IResourceLoaderStatics &>(static_cast<const D &>(*this))->abi_GetStringForReference(get(uri), put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Resources::ResourceLoader impl_IResourceLoaderStatics2<D>::GetForCurrentView() const
 {
     Windows::ApplicationModel::Resources::ResourceLoader loader { nullptr };
-    check_hresult(shim()->abi_GetForCurrentView(put(loader)));
+    check_hresult(static_cast<const IResourceLoaderStatics2 &>(static_cast<const D &>(*this))->abi_GetForCurrentView(put(loader)));
     return loader;
 }
 
 template <typename D> Windows::ApplicationModel::Resources::ResourceLoader impl_IResourceLoaderStatics2<D>::GetForCurrentView(hstring_ref name) const
 {
     Windows::ApplicationModel::Resources::ResourceLoader loader { nullptr };
-    check_hresult(shim()->abi_GetForCurrentViewWithName(get(name), put(loader)));
+    check_hresult(static_cast<const IResourceLoaderStatics2 &>(static_cast<const D &>(*this))->abi_GetForCurrentViewWithName(get(name), put(loader)));
     return loader;
 }
 
 template <typename D> Windows::ApplicationModel::Resources::ResourceLoader impl_IResourceLoaderStatics2<D>::GetForViewIndependentUse() const
 {
     Windows::ApplicationModel::Resources::ResourceLoader loader { nullptr };
-    check_hresult(shim()->abi_GetForViewIndependentUse(put(loader)));
+    check_hresult(static_cast<const IResourceLoaderStatics2 &>(static_cast<const D &>(*this))->abi_GetForViewIndependentUse(put(loader)));
     return loader;
 }
 
 template <typename D> Windows::ApplicationModel::Resources::ResourceLoader impl_IResourceLoaderStatics2<D>::GetForViewIndependentUse(hstring_ref name) const
 {
     Windows::ApplicationModel::Resources::ResourceLoader loader { nullptr };
-    check_hresult(shim()->abi_GetForViewIndependentUseWithName(get(name), put(loader)));
+    check_hresult(static_cast<const IResourceLoaderStatics2 &>(static_cast<const D &>(*this))->abi_GetForViewIndependentUseWithName(get(name), put(loader)));
     return loader;
 }
 
 template <typename D> Windows::ApplicationModel::Resources::ResourceLoader impl_IResourceLoaderFactory<D>::CreateResourceLoaderByName(hstring_ref name) const
 {
     Windows::ApplicationModel::Resources::ResourceLoader loader { nullptr };
-    check_hresult(shim()->abi_CreateResourceLoaderByName(get(name), put(loader)));
+    check_hresult(static_cast<const IResourceLoaderFactory &>(static_cast<const D &>(*this))->abi_CreateResourceLoaderByName(get(name), put(loader)));
     return loader;
 }
 

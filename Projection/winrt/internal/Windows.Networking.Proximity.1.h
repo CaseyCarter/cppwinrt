@@ -165,17 +165,17 @@ template <> struct traits<Windows::Networking::Proximity::TriggeredConnectionSta
 
 namespace Windows::Networking::Proximity {
 
-template <typename T> class impl_IConnectionRequestedEventArgs;
-template <typename T> class impl_IPeerFinderStatics;
-template <typename T> class impl_IPeerFinderStatics2;
-template <typename T> class impl_IPeerInformation;
-template <typename T> class impl_IPeerInformation3;
-template <typename T> class impl_IPeerInformationWithHostAndService;
-template <typename T> class impl_IPeerWatcher;
-template <typename T> class impl_IProximityDevice;
-template <typename T> class impl_IProximityDeviceStatics;
-template <typename T> class impl_IProximityMessage;
-template <typename T> class impl_ITriggeredConnectionStateChangedEventArgs;
+template <typename T> struct impl_IConnectionRequestedEventArgs;
+template <typename T> struct impl_IPeerFinderStatics;
+template <typename T> struct impl_IPeerFinderStatics2;
+template <typename T> struct impl_IPeerInformation;
+template <typename T> struct impl_IPeerInformation3;
+template <typename T> struct impl_IPeerInformationWithHostAndService;
+template <typename T> struct impl_IPeerWatcher;
+template <typename T> struct impl_IProximityDevice;
+template <typename T> struct impl_IProximityDeviceStatics;
+template <typename T> struct impl_IProximityMessage;
+template <typename T> struct impl_ITriggeredConnectionStateChangedEventArgs;
 template <typename T> struct impl_DeviceArrivedEventHandler;
 template <typename T> struct impl_DeviceDepartedEventHandler;
 template <typename T> struct impl_MessageReceivedHandler;

@@ -214,35 +214,35 @@ template <> struct traits<Windows::Devices::Midi::MidiTuneRequestMessage> { usin
 
 namespace Windows::Devices::Midi {
 
-template <typename T> class impl_IMidiChannelPressureMessage;
-template <typename T> class impl_IMidiChannelPressureMessageFactory;
-template <typename T> class impl_IMidiControlChangeMessage;
-template <typename T> class impl_IMidiControlChangeMessageFactory;
-template <typename T> class impl_IMidiInPort;
-template <typename T> class impl_IMidiInPortStatics;
-template <typename T> class impl_IMidiMessage;
-template <typename T> class impl_IMidiMessageReceivedEventArgs;
-template <typename T> class impl_IMidiNoteOffMessage;
-template <typename T> class impl_IMidiNoteOffMessageFactory;
-template <typename T> class impl_IMidiNoteOnMessage;
-template <typename T> class impl_IMidiNoteOnMessageFactory;
-template <typename T> class impl_IMidiOutPort;
-template <typename T> class impl_IMidiOutPortStatics;
-template <typename T> class impl_IMidiPitchBendChangeMessage;
-template <typename T> class impl_IMidiPitchBendChangeMessageFactory;
-template <typename T> class impl_IMidiPolyphonicKeyPressureMessage;
-template <typename T> class impl_IMidiPolyphonicKeyPressureMessageFactory;
-template <typename T> class impl_IMidiProgramChangeMessage;
-template <typename T> class impl_IMidiProgramChangeMessageFactory;
-template <typename T> class impl_IMidiSongPositionPointerMessage;
-template <typename T> class impl_IMidiSongPositionPointerMessageFactory;
-template <typename T> class impl_IMidiSongSelectMessage;
-template <typename T> class impl_IMidiSongSelectMessageFactory;
-template <typename T> class impl_IMidiSynthesizer;
-template <typename T> class impl_IMidiSynthesizerStatics;
-template <typename T> class impl_IMidiSystemExclusiveMessageFactory;
-template <typename T> class impl_IMidiTimeCodeMessage;
-template <typename T> class impl_IMidiTimeCodeMessageFactory;
+template <typename T> struct impl_IMidiChannelPressureMessage;
+template <typename T> struct impl_IMidiChannelPressureMessageFactory;
+template <typename T> struct impl_IMidiControlChangeMessage;
+template <typename T> struct impl_IMidiControlChangeMessageFactory;
+template <typename T> struct impl_IMidiInPort;
+template <typename T> struct impl_IMidiInPortStatics;
+template <typename T> struct impl_IMidiMessage;
+template <typename T> struct impl_IMidiMessageReceivedEventArgs;
+template <typename T> struct impl_IMidiNoteOffMessage;
+template <typename T> struct impl_IMidiNoteOffMessageFactory;
+template <typename T> struct impl_IMidiNoteOnMessage;
+template <typename T> struct impl_IMidiNoteOnMessageFactory;
+template <typename T> struct impl_IMidiOutPort;
+template <typename T> struct impl_IMidiOutPortStatics;
+template <typename T> struct impl_IMidiPitchBendChangeMessage;
+template <typename T> struct impl_IMidiPitchBendChangeMessageFactory;
+template <typename T> struct impl_IMidiPolyphonicKeyPressureMessage;
+template <typename T> struct impl_IMidiPolyphonicKeyPressureMessageFactory;
+template <typename T> struct impl_IMidiProgramChangeMessage;
+template <typename T> struct impl_IMidiProgramChangeMessageFactory;
+template <typename T> struct impl_IMidiSongPositionPointerMessage;
+template <typename T> struct impl_IMidiSongPositionPointerMessageFactory;
+template <typename T> struct impl_IMidiSongSelectMessage;
+template <typename T> struct impl_IMidiSongSelectMessageFactory;
+template <typename T> struct impl_IMidiSynthesizer;
+template <typename T> struct impl_IMidiSynthesizerStatics;
+template <typename T> struct impl_IMidiSystemExclusiveMessageFactory;
+template <typename T> struct impl_IMidiTimeCodeMessage;
+template <typename T> struct impl_IMidiTimeCodeMessageFactory;
 
 }
 

@@ -744,334 +744,334 @@ namespace Windows::UI::Xaml::Media::Media3D {
 template <typename D> Windows::UI::Xaml::Media::Media3D::Matrix3D impl_IMatrix3DHelperStatics<D>::Identity() const
 {
     Windows::UI::Xaml::Media::Media3D::Matrix3D value {};
-    check_hresult(shim()->get_Identity(put(value)));
+    check_hresult(static_cast<const IMatrix3DHelperStatics &>(static_cast<const D &>(*this))->get_Identity(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Media::Media3D::Matrix3D impl_IMatrix3DHelperStatics<D>::Multiply(const Windows::UI::Xaml::Media::Media3D::Matrix3D & matrix1, const Windows::UI::Xaml::Media::Media3D::Matrix3D & matrix2) const
 {
     Windows::UI::Xaml::Media::Media3D::Matrix3D returnValue {};
-    check_hresult(shim()->abi_Multiply(get(matrix1), get(matrix2), put(returnValue)));
+    check_hresult(static_cast<const IMatrix3DHelperStatics &>(static_cast<const D &>(*this))->abi_Multiply(get(matrix1), get(matrix2), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::Media::Media3D::Matrix3D impl_IMatrix3DHelperStatics<D>::FromElements(double m11, double m12, double m13, double m14, double m21, double m22, double m23, double m24, double m31, double m32, double m33, double m34, double offsetX, double offsetY, double offsetZ, double m44) const
 {
     Windows::UI::Xaml::Media::Media3D::Matrix3D returnValue {};
-    check_hresult(shim()->abi_FromElements(m11, m12, m13, m14, m21, m22, m23, m24, m31, m32, m33, m34, offsetX, offsetY, offsetZ, m44, put(returnValue)));
+    check_hresult(static_cast<const IMatrix3DHelperStatics &>(static_cast<const D &>(*this))->abi_FromElements(m11, m12, m13, m14, m21, m22, m23, m24, m31, m32, m33, m34, offsetX, offsetY, offsetZ, m44, put(returnValue)));
     return returnValue;
 }
 
 template <typename D> bool impl_IMatrix3DHelperStatics<D>::GetHasInverse(const Windows::UI::Xaml::Media::Media3D::Matrix3D & target) const
 {
     bool value {};
-    check_hresult(shim()->abi_GetHasInverse(get(target), &value));
+    check_hresult(static_cast<const IMatrix3DHelperStatics &>(static_cast<const D &>(*this))->abi_GetHasInverse(get(target), &value));
     return value;
 }
 
 template <typename D> bool impl_IMatrix3DHelperStatics<D>::GetIsIdentity(const Windows::UI::Xaml::Media::Media3D::Matrix3D & target) const
 {
     bool value {};
-    check_hresult(shim()->abi_GetIsIdentity(get(target), &value));
+    check_hresult(static_cast<const IMatrix3DHelperStatics &>(static_cast<const D &>(*this))->abi_GetIsIdentity(get(target), &value));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::Media::Media3D::Matrix3D impl_IMatrix3DHelperStatics<D>::Invert(const Windows::UI::Xaml::Media::Media3D::Matrix3D & target) const
 {
     Windows::UI::Xaml::Media::Media3D::Matrix3D returnValue {};
-    check_hresult(shim()->abi_Invert(get(target), put(returnValue)));
+    check_hresult(static_cast<const IMatrix3DHelperStatics &>(static_cast<const D &>(*this))->abi_Invert(get(target), put(returnValue)));
     return returnValue;
 }
 
 template <typename D> Windows::UI::Xaml::Media::Media3D::Transform3D impl_ITransform3DFactory<D>::CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const
 {
     Windows::UI::Xaml::Media::Media3D::Transform3D instance { nullptr };
-    check_hresult(shim()->abi_CreateInstance(get(outer), put(inner), put(instance)));
+    check_hresult(static_cast<const ITransform3DFactory &>(static_cast<const D &>(*this))->abi_CreateInstance(get(outer), put(inner), put(instance)));
     return instance;
 }
 
 template <typename D> double impl_ICompositeTransform3D<D>::CenterX() const
 {
     double value {};
-    check_hresult(shim()->get_CenterX(&value));
+    check_hresult(static_cast<const ICompositeTransform3D &>(static_cast<const D &>(*this))->get_CenterX(&value));
     return value;
 }
 
 template <typename D> void impl_ICompositeTransform3D<D>::CenterX(double value) const
 {
-    check_hresult(shim()->put_CenterX(value));
+    check_hresult(static_cast<const ICompositeTransform3D &>(static_cast<const D &>(*this))->put_CenterX(value));
 }
 
 template <typename D> double impl_ICompositeTransform3D<D>::CenterY() const
 {
     double value {};
-    check_hresult(shim()->get_CenterY(&value));
+    check_hresult(static_cast<const ICompositeTransform3D &>(static_cast<const D &>(*this))->get_CenterY(&value));
     return value;
 }
 
 template <typename D> void impl_ICompositeTransform3D<D>::CenterY(double value) const
 {
-    check_hresult(shim()->put_CenterY(value));
+    check_hresult(static_cast<const ICompositeTransform3D &>(static_cast<const D &>(*this))->put_CenterY(value));
 }
 
 template <typename D> double impl_ICompositeTransform3D<D>::CenterZ() const
 {
     double value {};
-    check_hresult(shim()->get_CenterZ(&value));
+    check_hresult(static_cast<const ICompositeTransform3D &>(static_cast<const D &>(*this))->get_CenterZ(&value));
     return value;
 }
 
 template <typename D> void impl_ICompositeTransform3D<D>::CenterZ(double value) const
 {
-    check_hresult(shim()->put_CenterZ(value));
+    check_hresult(static_cast<const ICompositeTransform3D &>(static_cast<const D &>(*this))->put_CenterZ(value));
 }
 
 template <typename D> double impl_ICompositeTransform3D<D>::RotationX() const
 {
     double value {};
-    check_hresult(shim()->get_RotationX(&value));
+    check_hresult(static_cast<const ICompositeTransform3D &>(static_cast<const D &>(*this))->get_RotationX(&value));
     return value;
 }
 
 template <typename D> void impl_ICompositeTransform3D<D>::RotationX(double value) const
 {
-    check_hresult(shim()->put_RotationX(value));
+    check_hresult(static_cast<const ICompositeTransform3D &>(static_cast<const D &>(*this))->put_RotationX(value));
 }
 
 template <typename D> double impl_ICompositeTransform3D<D>::RotationY() const
 {
     double value {};
-    check_hresult(shim()->get_RotationY(&value));
+    check_hresult(static_cast<const ICompositeTransform3D &>(static_cast<const D &>(*this))->get_RotationY(&value));
     return value;
 }
 
 template <typename D> void impl_ICompositeTransform3D<D>::RotationY(double value) const
 {
-    check_hresult(shim()->put_RotationY(value));
+    check_hresult(static_cast<const ICompositeTransform3D &>(static_cast<const D &>(*this))->put_RotationY(value));
 }
 
 template <typename D> double impl_ICompositeTransform3D<D>::RotationZ() const
 {
     double value {};
-    check_hresult(shim()->get_RotationZ(&value));
+    check_hresult(static_cast<const ICompositeTransform3D &>(static_cast<const D &>(*this))->get_RotationZ(&value));
     return value;
 }
 
 template <typename D> void impl_ICompositeTransform3D<D>::RotationZ(double value) const
 {
-    check_hresult(shim()->put_RotationZ(value));
+    check_hresult(static_cast<const ICompositeTransform3D &>(static_cast<const D &>(*this))->put_RotationZ(value));
 }
 
 template <typename D> double impl_ICompositeTransform3D<D>::ScaleX() const
 {
     double value {};
-    check_hresult(shim()->get_ScaleX(&value));
+    check_hresult(static_cast<const ICompositeTransform3D &>(static_cast<const D &>(*this))->get_ScaleX(&value));
     return value;
 }
 
 template <typename D> void impl_ICompositeTransform3D<D>::ScaleX(double value) const
 {
-    check_hresult(shim()->put_ScaleX(value));
+    check_hresult(static_cast<const ICompositeTransform3D &>(static_cast<const D &>(*this))->put_ScaleX(value));
 }
 
 template <typename D> double impl_ICompositeTransform3D<D>::ScaleY() const
 {
     double value {};
-    check_hresult(shim()->get_ScaleY(&value));
+    check_hresult(static_cast<const ICompositeTransform3D &>(static_cast<const D &>(*this))->get_ScaleY(&value));
     return value;
 }
 
 template <typename D> void impl_ICompositeTransform3D<D>::ScaleY(double value) const
 {
-    check_hresult(shim()->put_ScaleY(value));
+    check_hresult(static_cast<const ICompositeTransform3D &>(static_cast<const D &>(*this))->put_ScaleY(value));
 }
 
 template <typename D> double impl_ICompositeTransform3D<D>::ScaleZ() const
 {
     double value {};
-    check_hresult(shim()->get_ScaleZ(&value));
+    check_hresult(static_cast<const ICompositeTransform3D &>(static_cast<const D &>(*this))->get_ScaleZ(&value));
     return value;
 }
 
 template <typename D> void impl_ICompositeTransform3D<D>::ScaleZ(double value) const
 {
-    check_hresult(shim()->put_ScaleZ(value));
+    check_hresult(static_cast<const ICompositeTransform3D &>(static_cast<const D &>(*this))->put_ScaleZ(value));
 }
 
 template <typename D> double impl_ICompositeTransform3D<D>::TranslateX() const
 {
     double value {};
-    check_hresult(shim()->get_TranslateX(&value));
+    check_hresult(static_cast<const ICompositeTransform3D &>(static_cast<const D &>(*this))->get_TranslateX(&value));
     return value;
 }
 
 template <typename D> void impl_ICompositeTransform3D<D>::TranslateX(double value) const
 {
-    check_hresult(shim()->put_TranslateX(value));
+    check_hresult(static_cast<const ICompositeTransform3D &>(static_cast<const D &>(*this))->put_TranslateX(value));
 }
 
 template <typename D> double impl_ICompositeTransform3D<D>::TranslateY() const
 {
     double value {};
-    check_hresult(shim()->get_TranslateY(&value));
+    check_hresult(static_cast<const ICompositeTransform3D &>(static_cast<const D &>(*this))->get_TranslateY(&value));
     return value;
 }
 
 template <typename D> void impl_ICompositeTransform3D<D>::TranslateY(double value) const
 {
-    check_hresult(shim()->put_TranslateY(value));
+    check_hresult(static_cast<const ICompositeTransform3D &>(static_cast<const D &>(*this))->put_TranslateY(value));
 }
 
 template <typename D> double impl_ICompositeTransform3D<D>::TranslateZ() const
 {
     double value {};
-    check_hresult(shim()->get_TranslateZ(&value));
+    check_hresult(static_cast<const ICompositeTransform3D &>(static_cast<const D &>(*this))->get_TranslateZ(&value));
     return value;
 }
 
 template <typename D> void impl_ICompositeTransform3D<D>::TranslateZ(double value) const
 {
-    check_hresult(shim()->put_TranslateZ(value));
+    check_hresult(static_cast<const ICompositeTransform3D &>(static_cast<const D &>(*this))->put_TranslateZ(value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ICompositeTransform3DStatics<D>::CenterXProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_CenterXProperty(put(value)));
+    check_hresult(static_cast<const ICompositeTransform3DStatics &>(static_cast<const D &>(*this))->get_CenterXProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ICompositeTransform3DStatics<D>::CenterYProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_CenterYProperty(put(value)));
+    check_hresult(static_cast<const ICompositeTransform3DStatics &>(static_cast<const D &>(*this))->get_CenterYProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ICompositeTransform3DStatics<D>::CenterZProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_CenterZProperty(put(value)));
+    check_hresult(static_cast<const ICompositeTransform3DStatics &>(static_cast<const D &>(*this))->get_CenterZProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ICompositeTransform3DStatics<D>::RotationXProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_RotationXProperty(put(value)));
+    check_hresult(static_cast<const ICompositeTransform3DStatics &>(static_cast<const D &>(*this))->get_RotationXProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ICompositeTransform3DStatics<D>::RotationYProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_RotationYProperty(put(value)));
+    check_hresult(static_cast<const ICompositeTransform3DStatics &>(static_cast<const D &>(*this))->get_RotationYProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ICompositeTransform3DStatics<D>::RotationZProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_RotationZProperty(put(value)));
+    check_hresult(static_cast<const ICompositeTransform3DStatics &>(static_cast<const D &>(*this))->get_RotationZProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ICompositeTransform3DStatics<D>::ScaleXProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_ScaleXProperty(put(value)));
+    check_hresult(static_cast<const ICompositeTransform3DStatics &>(static_cast<const D &>(*this))->get_ScaleXProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ICompositeTransform3DStatics<D>::ScaleYProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_ScaleYProperty(put(value)));
+    check_hresult(static_cast<const ICompositeTransform3DStatics &>(static_cast<const D &>(*this))->get_ScaleYProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ICompositeTransform3DStatics<D>::ScaleZProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_ScaleZProperty(put(value)));
+    check_hresult(static_cast<const ICompositeTransform3DStatics &>(static_cast<const D &>(*this))->get_ScaleZProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ICompositeTransform3DStatics<D>::TranslateXProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_TranslateXProperty(put(value)));
+    check_hresult(static_cast<const ICompositeTransform3DStatics &>(static_cast<const D &>(*this))->get_TranslateXProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ICompositeTransform3DStatics<D>::TranslateYProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_TranslateYProperty(put(value)));
+    check_hresult(static_cast<const ICompositeTransform3DStatics &>(static_cast<const D &>(*this))->get_TranslateYProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_ICompositeTransform3DStatics<D>::TranslateZProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_TranslateZProperty(put(value)));
+    check_hresult(static_cast<const ICompositeTransform3DStatics &>(static_cast<const D &>(*this))->get_TranslateZProperty(put(value)));
     return value;
 }
 
 template <typename D> double impl_IPerspectiveTransform3D<D>::Depth() const
 {
     double value {};
-    check_hresult(shim()->get_Depth(&value));
+    check_hresult(static_cast<const IPerspectiveTransform3D &>(static_cast<const D &>(*this))->get_Depth(&value));
     return value;
 }
 
 template <typename D> void impl_IPerspectiveTransform3D<D>::Depth(double value) const
 {
-    check_hresult(shim()->put_Depth(value));
+    check_hresult(static_cast<const IPerspectiveTransform3D &>(static_cast<const D &>(*this))->put_Depth(value));
 }
 
 template <typename D> double impl_IPerspectiveTransform3D<D>::OffsetX() const
 {
     double value {};
-    check_hresult(shim()->get_OffsetX(&value));
+    check_hresult(static_cast<const IPerspectiveTransform3D &>(static_cast<const D &>(*this))->get_OffsetX(&value));
     return value;
 }
 
 template <typename D> void impl_IPerspectiveTransform3D<D>::OffsetX(double value) const
 {
-    check_hresult(shim()->put_OffsetX(value));
+    check_hresult(static_cast<const IPerspectiveTransform3D &>(static_cast<const D &>(*this))->put_OffsetX(value));
 }
 
 template <typename D> double impl_IPerspectiveTransform3D<D>::OffsetY() const
 {
     double value {};
-    check_hresult(shim()->get_OffsetY(&value));
+    check_hresult(static_cast<const IPerspectiveTransform3D &>(static_cast<const D &>(*this))->get_OffsetY(&value));
     return value;
 }
 
 template <typename D> void impl_IPerspectiveTransform3D<D>::OffsetY(double value) const
 {
-    check_hresult(shim()->put_OffsetY(value));
+    check_hresult(static_cast<const IPerspectiveTransform3D &>(static_cast<const D &>(*this))->put_OffsetY(value));
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPerspectiveTransform3DStatics<D>::DepthProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_DepthProperty(put(value)));
+    check_hresult(static_cast<const IPerspectiveTransform3DStatics &>(static_cast<const D &>(*this))->get_DepthProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPerspectiveTransform3DStatics<D>::OffsetXProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_OffsetXProperty(put(value)));
+    check_hresult(static_cast<const IPerspectiveTransform3DStatics &>(static_cast<const D &>(*this))->get_OffsetXProperty(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Xaml::DependencyProperty impl_IPerspectiveTransform3DStatics<D>::OffsetYProperty() const
 {
     Windows::UI::Xaml::DependencyProperty value { nullptr };
-    check_hresult(shim()->get_OffsetYProperty(put(value)));
+    check_hresult(static_cast<const IPerspectiveTransform3DStatics &>(static_cast<const D &>(*this))->get_OffsetYProperty(put(value)));
     return value;
 }
 

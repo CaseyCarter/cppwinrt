@@ -63,11 +63,11 @@ template <> struct traits<Windows::Media::Ocr::OcrWord> { using default_interfac
 
 namespace Windows::Media::Ocr {
 
-template <typename T> class impl_IOcrEngine;
-template <typename T> class impl_IOcrEngineStatics;
-template <typename T> class impl_IOcrLine;
-template <typename T> class impl_IOcrResult;
-template <typename T> class impl_IOcrWord;
+template <typename T> struct impl_IOcrEngine;
+template <typename T> struct impl_IOcrEngineStatics;
+template <typename T> struct impl_IOcrLine;
+template <typename T> struct impl_IOcrResult;
+template <typename T> struct impl_IOcrWord;
 
 }
 

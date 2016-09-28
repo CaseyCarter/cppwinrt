@@ -90,12 +90,8 @@ template <> struct __declspec(uuid("05eb86f1-7140-5517-b88d-cbaebe57e6b1")) __de
 namespace Windows::Foundation::Collections {
 
 template <typename D>
-class WINRT_EBO impl_IPropertySet
+struct WINRT_EBO impl_IPropertySet
 {
-    auto shim() const { return impl::shim<D, IPropertySet>(this); }
-
-public:
-
 };
 
 struct IPropertySet :

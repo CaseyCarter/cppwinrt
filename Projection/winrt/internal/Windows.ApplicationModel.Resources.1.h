@@ -49,11 +49,11 @@ template <> struct traits<Windows::ApplicationModel::Resources::ResourceLoader> 
 
 namespace Windows::ApplicationModel::Resources {
 
-template <typename T> class impl_IResourceLoader;
-template <typename T> class impl_IResourceLoader2;
-template <typename T> class impl_IResourceLoaderFactory;
-template <typename T> class impl_IResourceLoaderStatics;
-template <typename T> class impl_IResourceLoaderStatics2;
+template <typename T> struct impl_IResourceLoader;
+template <typename T> struct impl_IResourceLoader2;
+template <typename T> struct impl_IResourceLoaderFactory;
+template <typename T> struct impl_IResourceLoaderStatics;
+template <typename T> struct impl_IResourceLoaderStatics2;
 
 }
 

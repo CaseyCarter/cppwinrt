@@ -10,21 +10,13 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::UI::Text {
 
 template <typename D>
-class WINRT_EBO impl_IFontWeights
+struct WINRT_EBO impl_IFontWeights
 {
-    auto shim() const { return impl::shim<D, IFontWeights>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IFontWeightsStatics
+struct WINRT_EBO impl_IFontWeightsStatics
 {
-    auto shim() const { return impl::shim<D, IFontWeightsStatics>(this); }
-
-public:
-
     Windows::UI::Text::FontWeight Black() const;
     Windows::UI::Text::FontWeight Bold() const;
     Windows::UI::Text::FontWeight ExtraBlack() const;
@@ -39,12 +31,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ITextCharacterFormat
+struct WINRT_EBO impl_ITextCharacterFormat
 {
-    auto shim() const { return impl::shim<D, ITextCharacterFormat>(this); }
-
-public:
-
     Windows::UI::Text::FormatEffect AllCaps() const;
     void AllCaps(Windows::UI::Text::FormatEffect value) const;
     Windows::UI::Color BackgroundColor() const;
@@ -98,12 +86,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ITextConstantsStatics
+struct WINRT_EBO impl_ITextConstantsStatics
 {
-    auto shim() const { return impl::shim<D, ITextConstantsStatics>(this); }
-
-public:
-
     Windows::UI::Color AutoColor() const;
     int32_t MinUnitCount() const;
     int32_t MaxUnitCount() const;
@@ -115,12 +99,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ITextDocument
+struct WINRT_EBO impl_ITextDocument
 {
-    auto shim() const { return impl::shim<D, ITextDocument>(this); }
-
-public:
-
     Windows::UI::Text::CaretType CaretType() const;
     void CaretType(Windows::UI::Text::CaretType value) const;
     float DefaultTabStop() const;
@@ -151,12 +131,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ITextParagraphFormat
+struct WINRT_EBO impl_ITextParagraphFormat
 {
-    auto shim() const { return impl::shim<D, ITextParagraphFormat>(this); }
-
-public:
-
     Windows::UI::Text::ParagraphAlignment Alignment() const;
     void Alignment(Windows::UI::Text::ParagraphAlignment value) const;
     float FirstLineIndent() const;
@@ -208,12 +184,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ITextRange
+struct WINRT_EBO impl_ITextRange
 {
-    auto shim() const { return impl::shim<D, ITextRange>(this); }
-
-public:
-
     wchar_t Character() const;
     void Character(wchar_t value) const;
     Windows::UI::Text::ITextCharacterFormat CharacterFormat() const;
@@ -269,12 +241,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ITextSelection
+struct WINRT_EBO impl_ITextSelection
 {
-    auto shim() const { return impl::shim<D, ITextSelection>(this); }
-
-public:
-
     Windows::UI::Text::SelectionOptions Options() const;
     void Options(Windows::UI::Text::SelectionOptions value) const;
     Windows::UI::Text::SelectionType Type() const;

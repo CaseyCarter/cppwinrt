@@ -297,34 +297,34 @@ template <> struct traits<Windows::UI::Input::Inking::InkUnprocessedInput> { usi
 
 namespace Windows::UI::Input::Inking {
 
-template <typename T> class impl_IInkDrawingAttributes;
-template <typename T> class impl_IInkDrawingAttributes2;
-template <typename T> class impl_IInkDrawingAttributes3;
-template <typename T> class impl_IInkDrawingAttributesPencilProperties;
-template <typename T> class impl_IInkDrawingAttributesStatics;
-template <typename T> class impl_IInkInputProcessingConfiguration;
-template <typename T> class impl_IInkManager;
-template <typename T> class impl_IInkPoint;
-template <typename T> class impl_IInkPointFactory;
-template <typename T> class impl_IInkPresenter;
-template <typename T> class impl_IInkPresenterRuler;
-template <typename T> class impl_IInkPresenterRulerFactory;
-template <typename T> class impl_IInkPresenterStencil;
-template <typename T> class impl_IInkRecognitionResult;
-template <typename T> class impl_IInkRecognizer;
-template <typename T> class impl_IInkRecognizerContainer;
-template <typename T> class impl_IInkStroke;
-template <typename T> class impl_IInkStroke2;
-template <typename T> class impl_IInkStrokeBuilder;
-template <typename T> class impl_IInkStrokeBuilder2;
-template <typename T> class impl_IInkStrokeContainer;
-template <typename T> class impl_IInkStrokeContainer2;
-template <typename T> class impl_IInkStrokeInput;
-template <typename T> class impl_IInkStrokeRenderingSegment;
-template <typename T> class impl_IInkStrokesCollectedEventArgs;
-template <typename T> class impl_IInkStrokesErasedEventArgs;
-template <typename T> class impl_IInkSynchronizer;
-template <typename T> class impl_IInkUnprocessedInput;
+template <typename T> struct impl_IInkDrawingAttributes;
+template <typename T> struct impl_IInkDrawingAttributes2;
+template <typename T> struct impl_IInkDrawingAttributes3;
+template <typename T> struct impl_IInkDrawingAttributesPencilProperties;
+template <typename T> struct impl_IInkDrawingAttributesStatics;
+template <typename T> struct impl_IInkInputProcessingConfiguration;
+template <typename T> struct impl_IInkManager;
+template <typename T> struct impl_IInkPoint;
+template <typename T> struct impl_IInkPointFactory;
+template <typename T> struct impl_IInkPresenter;
+template <typename T> struct impl_IInkPresenterRuler;
+template <typename T> struct impl_IInkPresenterRulerFactory;
+template <typename T> struct impl_IInkPresenterStencil;
+template <typename T> struct impl_IInkRecognitionResult;
+template <typename T> struct impl_IInkRecognizer;
+template <typename T> struct impl_IInkRecognizerContainer;
+template <typename T> struct impl_IInkStroke;
+template <typename T> struct impl_IInkStroke2;
+template <typename T> struct impl_IInkStrokeBuilder;
+template <typename T> struct impl_IInkStrokeBuilder2;
+template <typename T> struct impl_IInkStrokeContainer;
+template <typename T> struct impl_IInkStrokeContainer2;
+template <typename T> struct impl_IInkStrokeInput;
+template <typename T> struct impl_IInkStrokeRenderingSegment;
+template <typename T> struct impl_IInkStrokesCollectedEventArgs;
+template <typename T> struct impl_IInkStrokesErasedEventArgs;
+template <typename T> struct impl_IInkSynchronizer;
+template <typename T> struct impl_IInkUnprocessedInput;
 
 }
 

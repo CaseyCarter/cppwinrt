@@ -66,24 +66,16 @@ template <> struct __declspec(uuid("7c4038c8-d920-53c7-a5d6-a976070d7637")) __de
 namespace Windows::Devices::Adc {
 
 template <typename D>
-class WINRT_EBO impl_IAdcChannel
+struct WINRT_EBO impl_IAdcChannel
 {
-    auto shim() const { return impl::shim<D, IAdcChannel>(this); }
-
-public:
-
     Windows::Devices::Adc::AdcController Controller() const;
     int32_t ReadValue() const;
     double ReadRatio() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAdcController
+struct WINRT_EBO impl_IAdcController
 {
-    auto shim() const { return impl::shim<D, IAdcController>(this); }
-
-public:
-
     int32_t ChannelCount() const;
     int32_t ResolutionInBits() const;
     int32_t MinValue() const;
@@ -95,22 +87,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAdcControllerStatics
+struct WINRT_EBO impl_IAdcControllerStatics
 {
-    auto shim() const { return impl::shim<D, IAdcControllerStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Adc::AdcController>> GetControllersAsync(const Windows::Devices::Adc::Provider::IAdcProvider & provider) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAdcControllerStatics2
+struct WINRT_EBO impl_IAdcControllerStatics2
 {
-    auto shim() const { return impl::shim<D, IAdcControllerStatics2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Devices::Adc::AdcController> GetDefaultAsync() const;
 };
 

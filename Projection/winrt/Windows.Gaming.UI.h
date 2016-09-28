@@ -99,7 +99,7 @@ namespace Windows::Gaming::UI {
 template <typename D> event_token impl_IGameBarStatics<D>::VisibilityChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_VisibilityChanged(get(handler), &token));
+    check_hresult(static_cast<const IGameBarStatics &>(static_cast<const D &>(*this))->add_VisibilityChanged(get(handler), &token));
     return token;
 }
 
@@ -110,13 +110,13 @@ template <typename D> event_revoker<IGameBarStatics> impl_IGameBarStatics<D>::Vi
 
 template <typename D> void impl_IGameBarStatics<D>::VisibilityChanged(event_token token) const
 {
-    check_hresult(shim()->remove_VisibilityChanged(token));
+    check_hresult(static_cast<const IGameBarStatics &>(static_cast<const D &>(*this))->remove_VisibilityChanged(token));
 }
 
 template <typename D> event_token impl_IGameBarStatics<D>::IsInputRedirectedChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_IsInputRedirectedChanged(get(handler), &token));
+    check_hresult(static_cast<const IGameBarStatics &>(static_cast<const D &>(*this))->add_IsInputRedirectedChanged(get(handler), &token));
     return token;
 }
 
@@ -127,20 +127,20 @@ template <typename D> event_revoker<IGameBarStatics> impl_IGameBarStatics<D>::Is
 
 template <typename D> void impl_IGameBarStatics<D>::IsInputRedirectedChanged(event_token token) const
 {
-    check_hresult(shim()->remove_IsInputRedirectedChanged(token));
+    check_hresult(static_cast<const IGameBarStatics &>(static_cast<const D &>(*this))->remove_IsInputRedirectedChanged(token));
 }
 
 template <typename D> bool impl_IGameBarStatics<D>::Visible() const
 {
     bool value {};
-    check_hresult(shim()->get_Visible(&value));
+    check_hresult(static_cast<const IGameBarStatics &>(static_cast<const D &>(*this))->get_Visible(&value));
     return value;
 }
 
 template <typename D> bool impl_IGameBarStatics<D>::IsInputRedirected() const
 {
     bool value {};
-    check_hresult(shim()->get_IsInputRedirected(&value));
+    check_hresult(static_cast<const IGameBarStatics &>(static_cast<const D &>(*this))->get_IsInputRedirected(&value));
     return value;
 }
 

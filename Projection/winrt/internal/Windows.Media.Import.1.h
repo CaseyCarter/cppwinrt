@@ -253,22 +253,22 @@ template <> struct traits<Windows::Media::Import::PhotoImportVideoSegment> { usi
 
 namespace Windows::Media::Import {
 
-template <typename T> class impl_IPhotoImportDeleteImportedItemsFromSourceResult;
-template <typename T> class impl_IPhotoImportFindItemsResult;
-template <typename T> class impl_IPhotoImportFindItemsResult2;
-template <typename T> class impl_IPhotoImportImportItemsResult;
-template <typename T> class impl_IPhotoImportItem;
-template <typename T> class impl_IPhotoImportItemImportedEventArgs;
-template <typename T> class impl_IPhotoImportManagerStatics;
-template <typename T> class impl_IPhotoImportOperation;
-template <typename T> class impl_IPhotoImportSelectionChangedEventArgs;
-template <typename T> class impl_IPhotoImportSession;
-template <typename T> class impl_IPhotoImportSession2;
-template <typename T> class impl_IPhotoImportSidecar;
-template <typename T> class impl_IPhotoImportSource;
-template <typename T> class impl_IPhotoImportSourceStatics;
-template <typename T> class impl_IPhotoImportStorageMedium;
-template <typename T> class impl_IPhotoImportVideoSegment;
+template <typename T> struct impl_IPhotoImportDeleteImportedItemsFromSourceResult;
+template <typename T> struct impl_IPhotoImportFindItemsResult;
+template <typename T> struct impl_IPhotoImportFindItemsResult2;
+template <typename T> struct impl_IPhotoImportImportItemsResult;
+template <typename T> struct impl_IPhotoImportItem;
+template <typename T> struct impl_IPhotoImportItemImportedEventArgs;
+template <typename T> struct impl_IPhotoImportManagerStatics;
+template <typename T> struct impl_IPhotoImportOperation;
+template <typename T> struct impl_IPhotoImportSelectionChangedEventArgs;
+template <typename T> struct impl_IPhotoImportSession;
+template <typename T> struct impl_IPhotoImportSession2;
+template <typename T> struct impl_IPhotoImportSidecar;
+template <typename T> struct impl_IPhotoImportSource;
+template <typename T> struct impl_IPhotoImportSourceStatics;
+template <typename T> struct impl_IPhotoImportStorageMedium;
+template <typename T> struct impl_IPhotoImportVideoSegment;
 
 }
 

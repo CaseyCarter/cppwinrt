@@ -236,24 +236,16 @@ template <> struct __declspec(uuid("09393d62-2316-536b-8a10-7038884ab2a7")) __de
 namespace Windows::Devices::Usb {
 
 template <typename D>
-class WINRT_EBO impl_IUsbBulkInEndpointDescriptor
+struct WINRT_EBO impl_IUsbBulkInEndpointDescriptor
 {
-    auto shim() const { return impl::shim<D, IUsbBulkInEndpointDescriptor>(this); }
-
-public:
-
     uint32_t MaxPacketSize() const;
     uint8_t EndpointNumber() const;
     Windows::Devices::Usb::UsbBulkInPipe Pipe() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUsbBulkInPipe
+struct WINRT_EBO impl_IUsbBulkInPipe
 {
-    auto shim() const { return impl::shim<D, IUsbBulkInPipe>(this); }
-
-public:
-
     uint32_t MaxTransferSizeBytes() const;
     Windows::Devices::Usb::UsbBulkInEndpointDescriptor EndpointDescriptor() const;
     Windows::Foundation::IAsyncAction ClearStallAsync() const;
@@ -264,24 +256,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUsbBulkOutEndpointDescriptor
+struct WINRT_EBO impl_IUsbBulkOutEndpointDescriptor
 {
-    auto shim() const { return impl::shim<D, IUsbBulkOutEndpointDescriptor>(this); }
-
-public:
-
     uint32_t MaxPacketSize() const;
     uint8_t EndpointNumber() const;
     Windows::Devices::Usb::UsbBulkOutPipe Pipe() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUsbBulkOutPipe
+struct WINRT_EBO impl_IUsbBulkOutPipe
 {
-    auto shim() const { return impl::shim<D, IUsbBulkOutPipe>(this); }
-
-public:
-
     Windows::Devices::Usb::UsbBulkOutEndpointDescriptor EndpointDescriptor() const;
     Windows::Foundation::IAsyncAction ClearStallAsync() const;
     void WriteOptions(Windows::Devices::Usb::UsbWriteOptions value) const;
@@ -290,24 +274,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUsbConfiguration
+struct WINRT_EBO impl_IUsbConfiguration
 {
-    auto shim() const { return impl::shim<D, IUsbConfiguration>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterface> UsbInterfaces() const;
     Windows::Devices::Usb::UsbConfigurationDescriptor ConfigurationDescriptor() const;
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbDescriptor> Descriptors() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUsbConfigurationDescriptor
+struct WINRT_EBO impl_IUsbConfigurationDescriptor
 {
-    auto shim() const { return impl::shim<D, IUsbConfigurationDescriptor>(this); }
-
-public:
-
     uint8_t ConfigurationValue() const;
     uint32_t MaxPowerMilliamps() const;
     bool SelfPowered() const;
@@ -315,23 +291,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUsbConfigurationDescriptorStatics
+struct WINRT_EBO impl_IUsbConfigurationDescriptorStatics
 {
-    auto shim() const { return impl::shim<D, IUsbConfigurationDescriptorStatics>(this); }
-
-public:
-
     bool TryParse(const Windows::Devices::Usb::UsbDescriptor & descriptor, Windows::Devices::Usb::UsbConfigurationDescriptor & parsed) const;
     Windows::Devices::Usb::UsbConfigurationDescriptor Parse(const Windows::Devices::Usb::UsbDescriptor & descriptor) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUsbControlRequestType
+struct WINRT_EBO impl_IUsbControlRequestType
 {
-    auto shim() const { return impl::shim<D, IUsbControlRequestType>(this); }
-
-public:
-
     Windows::Devices::Usb::UsbTransferDirection Direction() const;
     void Direction(Windows::Devices::Usb::UsbTransferDirection value) const;
     Windows::Devices::Usb::UsbControlTransferType ControlTransferType() const;
@@ -343,24 +311,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUsbDescriptor
+struct WINRT_EBO impl_IUsbDescriptor
 {
-    auto shim() const { return impl::shim<D, IUsbDescriptor>(this); }
-
-public:
-
     uint8_t Length() const;
     uint8_t DescriptorType() const;
     void ReadDescriptorBuffer(const Windows::Storage::Streams::IBuffer & buffer) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUsbDevice
+struct WINRT_EBO impl_IUsbDevice
 {
-    auto shim() const { return impl::shim<D, IUsbDevice>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<uint32_t> SendControlOutTransferAsync(const Windows::Devices::Usb::UsbSetupPacket & setupPacket, const Windows::Storage::Streams::IBuffer & buffer) const;
     Windows::Foundation::IAsyncOperation<uint32_t> SendControlOutTransferAsync(const Windows::Devices::Usb::UsbSetupPacket & setupPacket) const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> SendControlInTransferAsync(const Windows::Devices::Usb::UsbSetupPacket & setupPacket, const Windows::Storage::Streams::IBuffer & buffer) const;
@@ -371,12 +331,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUsbDeviceClass
+struct WINRT_EBO impl_IUsbDeviceClass
 {
-    auto shim() const { return impl::shim<D, IUsbDeviceClass>(this); }
-
-public:
-
     uint8_t ClassCode() const;
     void ClassCode(uint8_t value) const;
     Windows::Foundation::IReference<uint8_t> SubclassCode() const;
@@ -386,21 +342,13 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUsbDeviceClasses
+struct WINRT_EBO impl_IUsbDeviceClasses
 {
-    auto shim() const { return impl::shim<D, IUsbDeviceClasses>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IUsbDeviceClassesStatics
+struct WINRT_EBO impl_IUsbDeviceClassesStatics
 {
-    auto shim() const { return impl::shim<D, IUsbDeviceClassesStatics>(this); }
-
-public:
-
     Windows::Devices::Usb::UsbDeviceClass CdcControl() const;
     Windows::Devices::Usb::UsbDeviceClass Physical() const;
     Windows::Devices::Usb::UsbDeviceClass PersonalHealthcare() const;
@@ -413,12 +361,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUsbDeviceDescriptor
+struct WINRT_EBO impl_IUsbDeviceDescriptor
 {
-    auto shim() const { return impl::shim<D, IUsbDeviceDescriptor>(this); }
-
-public:
-
     uint32_t BcdUsb() const;
     uint8_t MaxPacketSize0() const;
     uint32_t VendorId() const;
@@ -428,12 +372,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUsbDeviceStatics
+struct WINRT_EBO impl_IUsbDeviceStatics
 {
-    auto shim() const { return impl::shim<D, IUsbDeviceStatics>(this); }
-
-public:
-
     hstring GetDeviceSelector(uint32_t vendorId, uint32_t productId, GUID winUsbInterfaceClass) const;
     hstring GetDeviceSelector(GUID winUsbInterfaceClass) const;
     hstring GetDeviceSelector(uint32_t vendorId, uint32_t productId) const;
@@ -442,12 +382,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUsbEndpointDescriptor
+struct WINRT_EBO impl_IUsbEndpointDescriptor
 {
-    auto shim() const { return impl::shim<D, IUsbEndpointDescriptor>(this); }
-
-public:
-
     uint8_t EndpointNumber() const;
     Windows::Devices::Usb::UsbTransferDirection Direction() const;
     Windows::Devices::Usb::UsbEndpointType EndpointType() const;
@@ -458,23 +394,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUsbEndpointDescriptorStatics
+struct WINRT_EBO impl_IUsbEndpointDescriptorStatics
 {
-    auto shim() const { return impl::shim<D, IUsbEndpointDescriptorStatics>(this); }
-
-public:
-
     bool TryParse(const Windows::Devices::Usb::UsbDescriptor & descriptor, Windows::Devices::Usb::UsbEndpointDescriptor & parsed) const;
     Windows::Devices::Usb::UsbEndpointDescriptor Parse(const Windows::Devices::Usb::UsbDescriptor & descriptor) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUsbInterface
+struct WINRT_EBO impl_IUsbInterface
 {
-    auto shim() const { return impl::shim<D, IUsbInterface>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbBulkInPipe> BulkInPipes() const;
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterruptInPipe> InterruptInPipes() const;
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbBulkOutPipe> BulkOutPipes() const;
@@ -485,12 +413,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUsbInterfaceDescriptor
+struct WINRT_EBO impl_IUsbInterfaceDescriptor
 {
-    auto shim() const { return impl::shim<D, IUsbInterfaceDescriptor>(this); }
-
-public:
-
     uint8_t ClassCode() const;
     uint8_t SubclassCode() const;
     uint8_t ProtocolCode() const;
@@ -499,23 +423,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUsbInterfaceDescriptorStatics
+struct WINRT_EBO impl_IUsbInterfaceDescriptorStatics
 {
-    auto shim() const { return impl::shim<D, IUsbInterfaceDescriptorStatics>(this); }
-
-public:
-
     bool TryParse(const Windows::Devices::Usb::UsbDescriptor & descriptor, Windows::Devices::Usb::UsbInterfaceDescriptor & parsed) const;
     Windows::Devices::Usb::UsbInterfaceDescriptor Parse(const Windows::Devices::Usb::UsbDescriptor & descriptor) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUsbInterfaceSetting
+struct WINRT_EBO impl_IUsbInterfaceSetting
 {
-    auto shim() const { return impl::shim<D, IUsbInterfaceSetting>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbBulkInEndpointDescriptor> BulkInEndpoints() const;
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbInterruptInEndpointDescriptor> InterruptInEndpoints() const;
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Usb::UsbBulkOutEndpointDescriptor> BulkOutEndpoints() const;
@@ -527,12 +443,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUsbInterruptInEndpointDescriptor
+struct WINRT_EBO impl_IUsbInterruptInEndpointDescriptor
 {
-    auto shim() const { return impl::shim<D, IUsbInterruptInEndpointDescriptor>(this); }
-
-public:
-
     uint32_t MaxPacketSize() const;
     uint8_t EndpointNumber() const;
     Windows::Foundation::TimeSpan Interval() const;
@@ -540,22 +452,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUsbInterruptInEventArgs
+struct WINRT_EBO impl_IUsbInterruptInEventArgs
 {
-    auto shim() const { return impl::shim<D, IUsbInterruptInEventArgs>(this); }
-
-public:
-
     Windows::Storage::Streams::IBuffer InterruptData() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUsbInterruptInPipe
+struct WINRT_EBO impl_IUsbInterruptInPipe
 {
-    auto shim() const { return impl::shim<D, IUsbInterruptInPipe>(this); }
-
-public:
-
     Windows::Devices::Usb::UsbInterruptInEndpointDescriptor EndpointDescriptor() const;
     Windows::Foundation::IAsyncAction ClearStallAsync() const;
     event_token DataReceived(const Windows::Foundation::TypedEventHandler<Windows::Devices::Usb::UsbInterruptInPipe, Windows::Devices::Usb::UsbInterruptInEventArgs> & handler) const;
@@ -565,12 +469,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUsbInterruptOutEndpointDescriptor
+struct WINRT_EBO impl_IUsbInterruptOutEndpointDescriptor
 {
-    auto shim() const { return impl::shim<D, IUsbInterruptOutEndpointDescriptor>(this); }
-
-public:
-
     uint32_t MaxPacketSize() const;
     uint8_t EndpointNumber() const;
     Windows::Foundation::TimeSpan Interval() const;
@@ -578,12 +478,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUsbInterruptOutPipe
+struct WINRT_EBO impl_IUsbInterruptOutPipe
 {
-    auto shim() const { return impl::shim<D, IUsbInterruptOutPipe>(this); }
-
-public:
-
     Windows::Devices::Usb::UsbInterruptOutEndpointDescriptor EndpointDescriptor() const;
     Windows::Foundation::IAsyncAction ClearStallAsync() const;
     void WriteOptions(Windows::Devices::Usb::UsbWriteOptions value) const;
@@ -592,12 +488,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUsbSetupPacket
+struct WINRT_EBO impl_IUsbSetupPacket
 {
-    auto shim() const { return impl::shim<D, IUsbSetupPacket>(this); }
-
-public:
-
     Windows::Devices::Usb::UsbControlRequestType RequestType() const;
     void RequestType(const Windows::Devices::Usb::UsbControlRequestType & value) const;
     uint8_t Request() const;
@@ -611,12 +503,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUsbSetupPacketFactory
+struct WINRT_EBO impl_IUsbSetupPacketFactory
 {
-    auto shim() const { return impl::shim<D, IUsbSetupPacketFactory>(this); }
-
-public:
-
     Windows::Devices::Usb::UsbSetupPacket CreateWithEightByteBuffer(const Windows::Storage::Streams::IBuffer & eightByteBuffer) const;
 };
 

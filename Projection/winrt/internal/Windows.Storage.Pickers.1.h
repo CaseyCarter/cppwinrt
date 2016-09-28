@@ -112,15 +112,15 @@ template <> struct traits<Windows::Storage::Pickers::FolderPicker> { using defau
 
 namespace Windows::Storage::Pickers {
 
-template <typename T> class impl_IFileOpenPicker;
-template <typename T> class impl_IFileOpenPicker2;
-template <typename T> class impl_IFileOpenPickerStatics;
-template <typename T> class impl_IFileOpenPickerWithOperationId;
-template <typename T> class impl_IFileSavePicker;
-template <typename T> class impl_IFileSavePicker2;
-template <typename T> class impl_IFileSavePicker3;
-template <typename T> class impl_IFolderPicker;
-template <typename T> class impl_IFolderPicker2;
+template <typename T> struct impl_IFileOpenPicker;
+template <typename T> struct impl_IFileOpenPicker2;
+template <typename T> struct impl_IFileOpenPickerStatics;
+template <typename T> struct impl_IFileOpenPickerWithOperationId;
+template <typename T> struct impl_IFileSavePicker;
+template <typename T> struct impl_IFileSavePicker2;
+template <typename T> struct impl_IFileSavePicker3;
+template <typename T> struct impl_IFolderPicker;
+template <typename T> struct impl_IFolderPicker2;
 
 }
 

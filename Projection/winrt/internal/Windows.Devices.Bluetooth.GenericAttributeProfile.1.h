@@ -302,26 +302,26 @@ template <> struct traits<Windows::Devices::Bluetooth::GenericAttributeProfile::
 
 namespace Windows::Devices::Bluetooth::GenericAttributeProfile {
 
-template <typename T> class impl_IGattCharacteristic;
-template <typename T> class impl_IGattCharacteristic2;
-template <typename T> class impl_IGattCharacteristicStatics;
-template <typename T> class impl_IGattCharacteristicUuidsStatics;
-template <typename T> class impl_IGattCharacteristicUuidsStatics2;
-template <typename T> class impl_IGattDescriptor;
-template <typename T> class impl_IGattDescriptorStatics;
-template <typename T> class impl_IGattDescriptorUuidsStatics;
-template <typename T> class impl_IGattDeviceService;
-template <typename T> class impl_IGattDeviceService2;
-template <typename T> class impl_IGattDeviceServiceStatics;
-template <typename T> class impl_IGattPresentationFormat;
-template <typename T> class impl_IGattPresentationFormatStatics;
-template <typename T> class impl_IGattPresentationFormatTypesStatics;
-template <typename T> class impl_IGattReadClientCharacteristicConfigurationDescriptorResult;
-template <typename T> class impl_IGattReadResult;
-template <typename T> class impl_IGattReliableWriteTransaction;
-template <typename T> class impl_IGattServiceUuidsStatics;
-template <typename T> class impl_IGattServiceUuidsStatics2;
-template <typename T> class impl_IGattValueChangedEventArgs;
+template <typename T> struct impl_IGattCharacteristic;
+template <typename T> struct impl_IGattCharacteristic2;
+template <typename T> struct impl_IGattCharacteristicStatics;
+template <typename T> struct impl_IGattCharacteristicUuidsStatics;
+template <typename T> struct impl_IGattCharacteristicUuidsStatics2;
+template <typename T> struct impl_IGattDescriptor;
+template <typename T> struct impl_IGattDescriptorStatics;
+template <typename T> struct impl_IGattDescriptorUuidsStatics;
+template <typename T> struct impl_IGattDeviceService;
+template <typename T> struct impl_IGattDeviceService2;
+template <typename T> struct impl_IGattDeviceServiceStatics;
+template <typename T> struct impl_IGattPresentationFormat;
+template <typename T> struct impl_IGattPresentationFormatStatics;
+template <typename T> struct impl_IGattPresentationFormatTypesStatics;
+template <typename T> struct impl_IGattReadClientCharacteristicConfigurationDescriptorResult;
+template <typename T> struct impl_IGattReadResult;
+template <typename T> struct impl_IGattReliableWriteTransaction;
+template <typename T> struct impl_IGattServiceUuidsStatics;
+template <typename T> struct impl_IGattServiceUuidsStatics2;
+template <typename T> struct impl_IGattValueChangedEventArgs;
 
 }
 

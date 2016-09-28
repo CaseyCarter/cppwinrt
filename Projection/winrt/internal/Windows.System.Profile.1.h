@@ -74,14 +74,14 @@ template <> struct traits<Windows::System::Profile::SystemIdentificationInfo> { 
 
 namespace Windows::System::Profile {
 
-template <typename T> class impl_IAnalyticsInfoStatics;
-template <typename T> class impl_IAnalyticsVersionInfo;
-template <typename T> class impl_IHardwareIdentificationStatics;
-template <typename T> class impl_IHardwareToken;
-template <typename T> class impl_IPlatformDiagnosticsAndUsageDataSettingsStatics;
-template <typename T> class impl_ISharedModeSettingsStatics;
-template <typename T> class impl_ISystemIdentificationInfo;
-template <typename T> class impl_ISystemIdentificationStatics;
+template <typename T> struct impl_IAnalyticsInfoStatics;
+template <typename T> struct impl_IAnalyticsVersionInfo;
+template <typename T> struct impl_IHardwareIdentificationStatics;
+template <typename T> struct impl_IHardwareToken;
+template <typename T> struct impl_IPlatformDiagnosticsAndUsageDataSettingsStatics;
+template <typename T> struct impl_ISharedModeSettingsStatics;
+template <typename T> struct impl_ISystemIdentificationInfo;
+template <typename T> struct impl_ISystemIdentificationStatics;
 
 }
 

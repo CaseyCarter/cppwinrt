@@ -144,21 +144,21 @@ template <> struct traits<Windows::Security::Credentials::WebAccountProvider> { 
 
 namespace Windows::Security::Credentials {
 
-template <typename T> class impl_ICredentialFactory;
-template <typename T> class impl_IKeyCredential;
-template <typename T> class impl_IKeyCredentialAttestationResult;
-template <typename T> class impl_IKeyCredentialManagerStatics;
-template <typename T> class impl_IKeyCredentialOperationResult;
-template <typename T> class impl_IKeyCredentialRetrievalResult;
-template <typename T> class impl_IPasswordCredential;
-template <typename T> class impl_IPasswordVault;
-template <typename T> class impl_IWebAccount;
-template <typename T> class impl_IWebAccount2;
-template <typename T> class impl_IWebAccountFactory;
-template <typename T> class impl_IWebAccountProvider;
-template <typename T> class impl_IWebAccountProvider2;
-template <typename T> class impl_IWebAccountProvider3;
-template <typename T> class impl_IWebAccountProviderFactory;
+template <typename T> struct impl_ICredentialFactory;
+template <typename T> struct impl_IKeyCredential;
+template <typename T> struct impl_IKeyCredentialAttestationResult;
+template <typename T> struct impl_IKeyCredentialManagerStatics;
+template <typename T> struct impl_IKeyCredentialOperationResult;
+template <typename T> struct impl_IKeyCredentialRetrievalResult;
+template <typename T> struct impl_IPasswordCredential;
+template <typename T> struct impl_IPasswordVault;
+template <typename T> struct impl_IWebAccount;
+template <typename T> struct impl_IWebAccount2;
+template <typename T> struct impl_IWebAccountFactory;
+template <typename T> struct impl_IWebAccountProvider;
+template <typename T> struct impl_IWebAccountProvider2;
+template <typename T> struct impl_IWebAccountProvider3;
+template <typename T> struct impl_IWebAccountProviderFactory;
 
 }
 

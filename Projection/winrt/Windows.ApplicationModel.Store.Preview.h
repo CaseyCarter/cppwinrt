@@ -545,241 +545,241 @@ namespace Windows::ApplicationModel::Store::Preview {
 template <typename D> hstring impl_IStorePreviewProductInfo<D>::ProductId() const
 {
     hstring value;
-    check_hresult(shim()->get_ProductId(put(value)));
+    check_hresult(static_cast<const IStorePreviewProductInfo &>(static_cast<const D &>(*this))->get_ProductId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStorePreviewProductInfo<D>::ProductType() const
 {
     hstring value;
-    check_hresult(shim()->get_ProductType(put(value)));
+    check_hresult(static_cast<const IStorePreviewProductInfo &>(static_cast<const D &>(*this))->get_ProductType(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStorePreviewProductInfo<D>::Title() const
 {
     hstring value;
-    check_hresult(shim()->get_Title(put(value)));
+    check_hresult(static_cast<const IStorePreviewProductInfo &>(static_cast<const D &>(*this))->get_Title(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStorePreviewProductInfo<D>::Description() const
 {
     hstring value;
-    check_hresult(shim()->get_Description(put(value)));
+    check_hresult(static_cast<const IStorePreviewProductInfo &>(static_cast<const D &>(*this))->get_Description(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::StorePreviewSkuInfo> impl_IStorePreviewProductInfo<D>::SkuInfoList() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::StorePreviewSkuInfo> value;
-    check_hresult(shim()->get_SkuInfoList(put(value)));
+    check_hresult(static_cast<const IStorePreviewProductInfo &>(static_cast<const D &>(*this))->get_SkuInfoList(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStorePreviewSkuInfo<D>::ProductId() const
 {
     hstring value;
-    check_hresult(shim()->get_ProductId(put(value)));
+    check_hresult(static_cast<const IStorePreviewSkuInfo &>(static_cast<const D &>(*this))->get_ProductId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStorePreviewSkuInfo<D>::SkuId() const
 {
     hstring value;
-    check_hresult(shim()->get_SkuId(put(value)));
+    check_hresult(static_cast<const IStorePreviewSkuInfo &>(static_cast<const D &>(*this))->get_SkuId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStorePreviewSkuInfo<D>::SkuType() const
 {
     hstring value;
-    check_hresult(shim()->get_SkuType(put(value)));
+    check_hresult(static_cast<const IStorePreviewSkuInfo &>(static_cast<const D &>(*this))->get_SkuType(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStorePreviewSkuInfo<D>::Title() const
 {
     hstring value;
-    check_hresult(shim()->get_Title(put(value)));
+    check_hresult(static_cast<const IStorePreviewSkuInfo &>(static_cast<const D &>(*this))->get_Title(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStorePreviewSkuInfo<D>::Description() const
 {
     hstring value;
-    check_hresult(shim()->get_Description(put(value)));
+    check_hresult(static_cast<const IStorePreviewSkuInfo &>(static_cast<const D &>(*this))->get_Description(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStorePreviewSkuInfo<D>::CustomDeveloperData() const
 {
     hstring value;
-    check_hresult(shim()->get_CustomDeveloperData(put(value)));
+    check_hresult(static_cast<const IStorePreviewSkuInfo &>(static_cast<const D &>(*this))->get_CustomDeveloperData(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStorePreviewSkuInfo<D>::CurrencyCode() const
 {
     hstring value;
-    check_hresult(shim()->get_CurrencyCode(put(value)));
+    check_hresult(static_cast<const IStorePreviewSkuInfo &>(static_cast<const D &>(*this))->get_CurrencyCode(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStorePreviewSkuInfo<D>::FormattedListPrice() const
 {
     hstring value;
-    check_hresult(shim()->get_FormattedListPrice(put(value)));
+    check_hresult(static_cast<const IStorePreviewSkuInfo &>(static_cast<const D &>(*this))->get_FormattedListPrice(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStorePreviewSkuInfo<D>::ExtendedData() const
 {
     hstring value;
-    check_hresult(shim()->get_ExtendedData(put(value)));
+    check_hresult(static_cast<const IStorePreviewSkuInfo &>(static_cast<const D &>(*this))->get_ExtendedData(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Store::Preview::StorePreviewProductPurchaseStatus impl_IStorePreviewPurchaseResults<D>::ProductPurchaseStatus() const
 {
     Windows::ApplicationModel::Store::Preview::StorePreviewProductPurchaseStatus value {};
-    check_hresult(shim()->get_ProductPurchaseStatus(&value));
+    check_hresult(static_cast<const IStorePreviewPurchaseResults &>(static_cast<const D &>(*this))->get_ProductPurchaseStatus(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::StorePreviewPurchaseResults> impl_IStorePreview<D>::RequestProductPurchaseByProductIdAndSkuIdAsync(hstring_ref productId, hstring_ref skuId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::StorePreviewPurchaseResults> requestPurchaseBySkuIdOperation;
-    check_hresult(shim()->abi_RequestProductPurchaseByProductIdAndSkuIdAsync(get(productId), get(skuId), put(requestPurchaseBySkuIdOperation)));
+    check_hresult(static_cast<const IStorePreview &>(static_cast<const D &>(*this))->abi_RequestProductPurchaseByProductIdAndSkuIdAsync(get(productId), get(skuId), put(requestPurchaseBySkuIdOperation)));
     return requestPurchaseBySkuIdOperation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::StorePreviewProductInfo>> impl_IStorePreview<D>::LoadAddOnProductInfosAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::StorePreviewProductInfo>> loadAddOnProductInfosOperation;
-    check_hresult(shim()->abi_LoadAddOnProductInfosAsync(put(loadAddOnProductInfosOperation)));
+    check_hresult(static_cast<const IStorePreview &>(static_cast<const D &>(*this))->abi_LoadAddOnProductInfosAsync(put(loadAddOnProductInfosOperation)));
     return loadAddOnProductInfosOperation;
 }
 
 template <typename D> hstring impl_IStoreHardwareManufacturerInfo<D>::HardwareManufacturerId() const
 {
     hstring value;
-    check_hresult(shim()->get_HardwareManufacturerId(put(value)));
+    check_hresult(static_cast<const IStoreHardwareManufacturerInfo &>(static_cast<const D &>(*this))->get_HardwareManufacturerId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStoreHardwareManufacturerInfo<D>::StoreContentModifierId() const
 {
     hstring value;
-    check_hresult(shim()->get_StoreContentModifierId(put(value)));
+    check_hresult(static_cast<const IStoreHardwareManufacturerInfo &>(static_cast<const D &>(*this))->get_StoreContentModifierId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStoreHardwareManufacturerInfo<D>::ModelName() const
 {
     hstring value;
-    check_hresult(shim()->get_ModelName(put(value)));
+    check_hresult(static_cast<const IStoreHardwareManufacturerInfo &>(static_cast<const D &>(*this))->get_ModelName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStoreHardwareManufacturerInfo<D>::ManufacturerName() const
 {
     hstring value;
-    check_hresult(shim()->get_ManufacturerName(put(value)));
+    check_hresult(static_cast<const IStoreHardwareManufacturerInfo &>(static_cast<const D &>(*this))->get_ManufacturerName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IStoreConfigurationStatics<D>::SetSystemConfiguration(hstring_ref catalogHardwareManufacturerId, hstring_ref catalogStoreContentModifierId, const Windows::Foundation::DateTime & systemConfigurationExpiration, hstring_ref catalogHardwareDescriptor) const
 {
-    check_hresult(shim()->abi_SetSystemConfiguration(get(catalogHardwareManufacturerId), get(catalogStoreContentModifierId), get(systemConfigurationExpiration), get(catalogHardwareDescriptor)));
+    check_hresult(static_cast<const IStoreConfigurationStatics &>(static_cast<const D &>(*this))->abi_SetSystemConfiguration(get(catalogHardwareManufacturerId), get(catalogStoreContentModifierId), get(systemConfigurationExpiration), get(catalogHardwareDescriptor)));
 }
 
 template <typename D> void impl_IStoreConfigurationStatics<D>::SetMobileOperatorConfiguration(hstring_ref mobileOperatorId, uint32_t appDownloadLimitInMegabytes, uint32_t updateDownloadLimitInMegabytes) const
 {
-    check_hresult(shim()->abi_SetMobileOperatorConfiguration(get(mobileOperatorId), appDownloadLimitInMegabytes, updateDownloadLimitInMegabytes));
+    check_hresult(static_cast<const IStoreConfigurationStatics &>(static_cast<const D &>(*this))->abi_SetMobileOperatorConfiguration(get(mobileOperatorId), appDownloadLimitInMegabytes, updateDownloadLimitInMegabytes));
 }
 
 template <typename D> void impl_IStoreConfigurationStatics<D>::SetStoreWebAccountId(hstring_ref webAccountId) const
 {
-    check_hresult(shim()->abi_SetStoreWebAccountId(get(webAccountId)));
+    check_hresult(static_cast<const IStoreConfigurationStatics &>(static_cast<const D &>(*this))->abi_SetStoreWebAccountId(get(webAccountId)));
 }
 
 template <typename D> bool impl_IStoreConfigurationStatics<D>::IsStoreWebAccountId(hstring_ref webAccountId) const
 {
     bool value {};
-    check_hresult(shim()->abi_IsStoreWebAccountId(get(webAccountId), &value));
+    check_hresult(static_cast<const IStoreConfigurationStatics &>(static_cast<const D &>(*this))->abi_IsStoreWebAccountId(get(webAccountId), &value));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Store::Preview::StoreHardwareManufacturerInfo impl_IStoreConfigurationStatics<D>::HardwareManufacturerInfo() const
 {
     Windows::ApplicationModel::Store::Preview::StoreHardwareManufacturerInfo value { nullptr };
-    check_hresult(shim()->get_HardwareManufacturerInfo(put(value)));
+    check_hresult(static_cast<const IStoreConfigurationStatics &>(static_cast<const D &>(*this))->get_HardwareManufacturerInfo(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<winrt::Windows::ApplicationModel::Store::Preview::StoreSystemFeature>> impl_IStoreConfigurationStatics<D>::FilterUnsupportedSystemFeaturesAsync(const Windows::Foundation::Collections::IIterable<winrt::Windows::ApplicationModel::Store::Preview::StoreSystemFeature> & systemFeatures) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<winrt::Windows::ApplicationModel::Store::Preview::StoreSystemFeature>> operation;
-    check_hresult(shim()->abi_FilterUnsupportedSystemFeaturesAsync(get(systemFeatures), put(operation)));
+    check_hresult(static_cast<const IStoreConfigurationStatics &>(static_cast<const D &>(*this))->abi_FilterUnsupportedSystemFeaturesAsync(get(systemFeatures), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IReference<uint32_t> impl_IStoreConfigurationStatics2<D>::PurchasePromptingPolicy() const
 {
     Windows::Foundation::IReference<uint32_t> value;
-    check_hresult(shim()->get_PurchasePromptingPolicy(put(value)));
+    check_hresult(static_cast<const IStoreConfigurationStatics2 &>(static_cast<const D &>(*this))->get_PurchasePromptingPolicy(put(value)));
     return value;
 }
 
 template <typename D> void impl_IStoreConfigurationStatics2<D>::PurchasePromptingPolicy(const Windows::Foundation::IReference<uint32_t> & value) const
 {
-    check_hresult(shim()->put_PurchasePromptingPolicy(get(value)));
+    check_hresult(static_cast<const IStoreConfigurationStatics2 &>(static_cast<const D &>(*this))->put_PurchasePromptingPolicy(get(value)));
 }
 
 template <typename D> bool impl_IStoreConfigurationStatics3<D>::HasStoreWebAccount() const
 {
     bool value {};
-    check_hresult(shim()->abi_HasStoreWebAccount(&value));
+    check_hresult(static_cast<const IStoreConfigurationStatics3 &>(static_cast<const D &>(*this))->abi_HasStoreWebAccount(&value));
     return value;
 }
 
 template <typename D> bool impl_IStoreConfigurationStatics3<D>::HasStoreWebAccountForUser(const Windows::System::User & user) const
 {
     bool value {};
-    check_hresult(shim()->abi_HasStoreWebAccountForUser(get(user), &value));
+    check_hresult(static_cast<const IStoreConfigurationStatics3 &>(static_cast<const D &>(*this))->abi_HasStoreWebAccountForUser(get(user), &value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamReference> impl_IStoreConfigurationStatics3<D>::GetStoreLogDataAsync(Windows::ApplicationModel::Store::Preview::StoreLogOptions options) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamReference> operation;
-    check_hresult(shim()->abi_GetStoreLogDataAsync(options, put(operation)));
+    check_hresult(static_cast<const IStoreConfigurationStatics3 &>(static_cast<const D &>(*this))->abi_GetStoreLogDataAsync(options, put(operation)));
     return operation;
 }
 
 template <typename D> void impl_IStoreConfigurationStatics3<D>::SetStoreWebAccountIdForUser(const Windows::System::User & user, hstring_ref webAccountId) const
 {
-    check_hresult(shim()->abi_SetStoreWebAccountIdForUser(get(user), get(webAccountId)));
+    check_hresult(static_cast<const IStoreConfigurationStatics3 &>(static_cast<const D &>(*this))->abi_SetStoreWebAccountIdForUser(get(user), get(webAccountId)));
 }
 
 template <typename D> bool impl_IStoreConfigurationStatics3<D>::IsStoreWebAccountIdForUser(const Windows::System::User & user, hstring_ref webAccountId) const
 {
     bool value {};
-    check_hresult(shim()->abi_IsStoreWebAccountIdForUser(get(user), get(webAccountId), &value));
+    check_hresult(static_cast<const IStoreConfigurationStatics3 &>(static_cast<const D &>(*this))->abi_IsStoreWebAccountIdForUser(get(user), get(webAccountId), &value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<uint32_t> impl_IStoreConfigurationStatics3<D>::GetPurchasePromptingPolicyForUser(const Windows::System::User & user) const
 {
     Windows::Foundation::IReference<uint32_t> value;
-    check_hresult(shim()->abi_GetPurchasePromptingPolicyForUser(get(user), put(value)));
+    check_hresult(static_cast<const IStoreConfigurationStatics3 &>(static_cast<const D &>(*this))->abi_GetPurchasePromptingPolicyForUser(get(user), put(value)));
     return value;
 }
 
 template <typename D> void impl_IStoreConfigurationStatics3<D>::SetPurchasePromptingPolicyForUser(const Windows::System::User & user, const Windows::Foundation::IReference<uint32_t> & value) const
 {
-    check_hresult(shim()->abi_SetPurchasePromptingPolicyForUser(get(user), get(value)));
+    check_hresult(static_cast<const IStoreConfigurationStatics3 &>(static_cast<const D &>(*this))->abi_SetPurchasePromptingPolicyForUser(get(user), get(value)));
 }
 
 inline void StoreConfiguration::SetSystemConfiguration(hstring_ref catalogHardwareManufacturerId, hstring_ref catalogStoreContentModifierId, const Windows::Foundation::DateTime & systemConfigurationExpiration, hstring_ref catalogHardwareDescriptor)

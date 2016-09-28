@@ -440,22 +440,14 @@ template <> struct __declspec(uuid("4f25059a-0b9a-5f25-9b9e-4b9f1d22ff65")) __de
 namespace Windows::Media::Core {
 
 template <typename D>
-class WINRT_EBO impl_IAudioStreamDescriptor
+struct WINRT_EBO impl_IAudioStreamDescriptor
 {
-    auto shim() const { return impl::shim<D, IAudioStreamDescriptor>(this); }
-
-public:
-
     Windows::Media::MediaProperties::AudioEncodingProperties EncodingProperties() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioStreamDescriptor2
+struct WINRT_EBO impl_IAudioStreamDescriptor2
 {
-    auto shim() const { return impl::shim<D, IAudioStreamDescriptor2>(this); }
-
-public:
-
     void LeadingEncoderPadding(const Windows::Foundation::IReference<uint32_t> & value) const;
     Windows::Foundation::IReference<uint32_t> LeadingEncoderPadding() const;
     void TrailingEncoderPadding(const Windows::Foundation::IReference<uint32_t> & value) const;
@@ -463,22 +455,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioStreamDescriptorFactory
+struct WINRT_EBO impl_IAudioStreamDescriptorFactory
 {
-    auto shim() const { return impl::shim<D, IAudioStreamDescriptorFactory>(this); }
-
-public:
-
     Windows::Media::Core::AudioStreamDescriptor Create(const Windows::Media::MediaProperties::AudioEncodingProperties & encodingProperties) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioTrack
+struct WINRT_EBO impl_IAudioTrack
 {
-    auto shim() const { return impl::shim<D, IAudioTrack>(this); }
-
-public:
-
     event_token OpenFailed(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::AudioTrack, Windows::Media::Core::AudioTrackOpenFailedEventArgs> & handler) const;
     using OpenFailed_revoker = event_revoker<IAudioTrack>;
     OpenFailed_revoker OpenFailed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::AudioTrack, Windows::Media::Core::AudioTrackOpenFailedEventArgs> & handler) const;
@@ -490,22 +474,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioTrackOpenFailedEventArgs
+struct WINRT_EBO impl_IAudioTrackOpenFailedEventArgs
 {
-    auto shim() const { return impl::shim<D, IAudioTrackOpenFailedEventArgs>(this); }
-
-public:
-
     HRESULT ExtendedError() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAudioTrackSupportInfo
+struct WINRT_EBO impl_IAudioTrackSupportInfo
 {
-    auto shim() const { return impl::shim<D, IAudioTrackSupportInfo>(this); }
-
-public:
-
     Windows::Media::Core::MediaDecoderStatus DecoderStatus() const;
     Windows::Media::Core::AudioDecoderDegradation Degradation() const;
     Windows::Media::Core::AudioDecoderDegradationReason DegradationReason() const;
@@ -513,33 +489,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDataCue
+struct WINRT_EBO impl_IDataCue
 {
-    auto shim() const { return impl::shim<D, IDataCue>(this); }
-
-public:
-
     void Data(const Windows::Storage::Streams::IBuffer & value) const;
     Windows::Storage::Streams::IBuffer Data() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFaceDetectedEventArgs
+struct WINRT_EBO impl_IFaceDetectedEventArgs
 {
-    auto shim() const { return impl::shim<D, IFaceDetectedEventArgs>(this); }
-
-public:
-
     Windows::Media::Core::FaceDetectionEffectFrame ResultFrame() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFaceDetectionEffect
+struct WINRT_EBO impl_IFaceDetectionEffect
 {
-    auto shim() const { return impl::shim<D, IFaceDetectionEffect>(this); }
-
-public:
-
     void Enabled(bool value) const;
     bool Enabled() const;
     void DesiredDetectionInterval(const Windows::Foundation::TimeSpan & value) const;
@@ -551,12 +515,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IFaceDetectionEffectDefinition
+struct WINRT_EBO impl_IFaceDetectionEffectDefinition
 {
-    auto shim() const { return impl::shim<D, IFaceDetectionEffectDefinition>(this); }
-
-public:
-
     void DetectionMode(Windows::Media::Core::FaceDetectionMode value) const;
     Windows::Media::Core::FaceDetectionMode DetectionMode() const;
     void SynchronousDetectionEnabled(bool value) const;
@@ -564,44 +524,28 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IFaceDetectionEffectFrame
+struct WINRT_EBO impl_IFaceDetectionEffectFrame
 {
-    auto shim() const { return impl::shim<D, IFaceDetectionEffectFrame>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Media::FaceAnalysis::DetectedFace> DetectedFaces() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHighDynamicRangeControl
+struct WINRT_EBO impl_IHighDynamicRangeControl
 {
-    auto shim() const { return impl::shim<D, IHighDynamicRangeControl>(this); }
-
-public:
-
     void Enabled(bool value) const;
     bool Enabled() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHighDynamicRangeOutput
+struct WINRT_EBO impl_IHighDynamicRangeOutput
 {
-    auto shim() const { return impl::shim<D, IHighDynamicRangeOutput>(this); }
-
-public:
-
     double Certainty() const;
     Windows::Foundation::Collections::IVectorView<Windows::Media::Devices::Core::FrameController> FrameControllers() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaBinder
+struct WINRT_EBO impl_IMediaBinder
 {
-    auto shim() const { return impl::shim<D, IMediaBinder>(this); }
-
-public:
-
     event_token Binding(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaBinder, Windows::Media::Core::MediaBindingEventArgs> & handler) const;
     using Binding_revoker = event_revoker<IMediaBinder>;
     Binding_revoker Binding(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaBinder, Windows::Media::Core::MediaBindingEventArgs> & handler) const;
@@ -612,12 +556,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaBindingEventArgs
+struct WINRT_EBO impl_IMediaBindingEventArgs
 {
-    auto shim() const { return impl::shim<D, IMediaBindingEventArgs>(this); }
-
-public:
-
     event_token Canceled(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaBindingEventArgs, Windows::IInspectable> & handler) const;
     using Canceled_revoker = event_revoker<IMediaBindingEventArgs>;
     Canceled_revoker Canceled(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaBindingEventArgs, Windows::IInspectable> & handler) const;
@@ -630,12 +570,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaCue
+struct WINRT_EBO impl_IMediaCue
 {
-    auto shim() const { return impl::shim<D, IMediaCue>(this); }
-
-public:
-
     void StartTime(const Windows::Foundation::TimeSpan & value) const;
     Windows::Foundation::TimeSpan StartTime() const;
     void Duration(const Windows::Foundation::TimeSpan & value) const;
@@ -645,31 +581,19 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaCueEventArgs
+struct WINRT_EBO impl_IMediaCueEventArgs
 {
-    auto shim() const { return impl::shim<D, IMediaCueEventArgs>(this); }
-
-public:
-
     Windows::Media::Core::IMediaCue Cue() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaSource
+struct WINRT_EBO impl_IMediaSource
 {
-    auto shim() const { return impl::shim<D, IMediaSource>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaSource2
+struct WINRT_EBO impl_IMediaSource2
 {
-    auto shim() const { return impl::shim<D, IMediaSource2>(this); }
-
-public:
-
     event_token OpenOperationCompleted(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaSource, Windows::Media::Core::MediaSourceOpenOperationCompletedEventArgs> & handler) const;
     using OpenOperationCompleted_revoker = event_revoker<IMediaSource2>;
     OpenOperationCompleted_revoker OpenOperationCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaSource, Windows::Media::Core::MediaSourceOpenOperationCompletedEventArgs> & handler) const;
@@ -682,12 +606,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaSource3
+struct WINRT_EBO impl_IMediaSource3
 {
-    auto shim() const { return impl::shim<D, IMediaSource3>(this); }
-
-public:
-
     event_token StateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaSource, Windows::Media::Core::MediaSourceStateChangedEventArgs> & handler) const;
     using StateChanged_revoker = event_revoker<IMediaSource3>;
     StateChanged_revoker StateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaSource, Windows::Media::Core::MediaSourceStateChangedEventArgs> & handler) const;
@@ -697,43 +617,27 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaSourceError
+struct WINRT_EBO impl_IMediaSourceError
 {
-    auto shim() const { return impl::shim<D, IMediaSourceError>(this); }
-
-public:
-
     HRESULT ExtendedError() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaSourceOpenOperationCompletedEventArgs
+struct WINRT_EBO impl_IMediaSourceOpenOperationCompletedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMediaSourceOpenOperationCompletedEventArgs>(this); }
-
-public:
-
     Windows::Media::Core::MediaSourceError Error() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaSourceStateChangedEventArgs
+struct WINRT_EBO impl_IMediaSourceStateChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMediaSourceStateChangedEventArgs>(this); }
-
-public:
-
     Windows::Media::Core::MediaSourceState OldState() const;
     Windows::Media::Core::MediaSourceState NewState() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaSourceStatics
+struct WINRT_EBO impl_IMediaSourceStatics
 {
-    auto shim() const { return impl::shim<D, IMediaSourceStatics>(this); }
-
-public:
-
     Windows::Media::Core::MediaSource CreateFromAdaptiveMediaSource(const Windows::Media::Streaming::Adaptive::AdaptiveMediaSource & mediaSource) const;
     Windows::Media::Core::MediaSource CreateFromMediaStreamSource(const Windows::Media::Core::MediaStreamSource & mediaSource) const;
     Windows::Media::Core::MediaSource CreateFromMseStreamSource(const Windows::Media::Core::MseStreamSource & mediaSource) const;
@@ -745,22 +649,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaSourceStatics2
+struct WINRT_EBO impl_IMediaSourceStatics2
 {
-    auto shim() const { return impl::shim<D, IMediaSourceStatics2>(this); }
-
-public:
-
     Windows::Media::Core::MediaSource CreateFromMediaBinder(const Windows::Media::Core::MediaBinder & binder) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaStreamDescriptor
+struct WINRT_EBO impl_IMediaStreamDescriptor
 {
-    auto shim() const { return impl::shim<D, IMediaStreamDescriptor>(this); }
-
-public:
-
     bool IsSelected() const;
     void Name(hstring_ref value) const;
     hstring Name() const;
@@ -769,12 +665,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaStreamSample
+struct WINRT_EBO impl_IMediaStreamSample
 {
-    auto shim() const { return impl::shim<D, IMediaStreamSample>(this); }
-
-public:
-
     event_token Processed(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSample, Windows::IInspectable> & handler) const;
     using Processed_revoker = event_revoker<IMediaStreamSample>;
     Processed_revoker Processed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSample, Windows::IInspectable> & handler) const;
@@ -794,12 +686,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaStreamSampleProtectionProperties
+struct WINRT_EBO impl_IMediaStreamSampleProtectionProperties
 {
-    auto shim() const { return impl::shim<D, IMediaStreamSampleProtectionProperties>(this); }
-
-public:
-
     void SetKeyIdentifier(array_ref<const uint8_t> value) const;
     void GetKeyIdentifier(com_array<uint8_t> & value) const;
     void SetInitializationVector(array_ref<const uint8_t> value) const;
@@ -809,23 +697,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaStreamSampleStatics
+struct WINRT_EBO impl_IMediaStreamSampleStatics
 {
-    auto shim() const { return impl::shim<D, IMediaStreamSampleStatics>(this); }
-
-public:
-
     Windows::Media::Core::MediaStreamSample CreateFromBuffer(const Windows::Storage::Streams::IBuffer & buffer, const Windows::Foundation::TimeSpan & timestamp) const;
     Windows::Foundation::IAsyncOperation<Windows::Media::Core::MediaStreamSample> CreateFromStreamAsync(const Windows::Storage::Streams::IInputStream & stream, uint32_t count, const Windows::Foundation::TimeSpan & timestamp) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaStreamSource
+struct WINRT_EBO impl_IMediaStreamSource
 {
-    auto shim() const { return impl::shim<D, IMediaStreamSource>(this); }
-
-public:
-
     event_token Closed(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSource, Windows::Media::Core::MediaStreamSourceClosedEventArgs> & handler) const;
     using Closed_revoker = event_revoker<IMediaStreamSource>;
     Closed_revoker Closed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSource, Windows::Media::Core::MediaStreamSourceClosedEventArgs> & handler) const;
@@ -865,12 +745,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaStreamSource2
+struct WINRT_EBO impl_IMediaStreamSource2
 {
-    auto shim() const { return impl::shim<D, IMediaStreamSource2>(this); }
-
-public:
-
     event_token SampleRendered(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSource, Windows::Media::Core::MediaStreamSourceSampleRenderedEventArgs> & handler) const;
     using SampleRendered_revoker = event_revoker<IMediaStreamSource2>;
     SampleRendered_revoker SampleRendered(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSource, Windows::Media::Core::MediaStreamSourceSampleRenderedEventArgs> & handler) const;
@@ -878,53 +754,33 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaStreamSourceClosedEventArgs
+struct WINRT_EBO impl_IMediaStreamSourceClosedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMediaStreamSourceClosedEventArgs>(this); }
-
-public:
-
     Windows::Media::Core::MediaStreamSourceClosedRequest Request() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaStreamSourceClosedRequest
+struct WINRT_EBO impl_IMediaStreamSourceClosedRequest
 {
-    auto shim() const { return impl::shim<D, IMediaStreamSourceClosedRequest>(this); }
-
-public:
-
     Windows::Media::Core::MediaStreamSourceClosedReason Reason() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaStreamSourceFactory
+struct WINRT_EBO impl_IMediaStreamSourceFactory
 {
-    auto shim() const { return impl::shim<D, IMediaStreamSourceFactory>(this); }
-
-public:
-
     Windows::Media::Core::MediaStreamSource CreateFromDescriptor(const Windows::Media::Core::IMediaStreamDescriptor & descriptor) const;
     Windows::Media::Core::MediaStreamSource CreateFromDescriptors(const Windows::Media::Core::IMediaStreamDescriptor & descriptor, const Windows::Media::Core::IMediaStreamDescriptor & descriptor2) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaStreamSourceSampleRenderedEventArgs
+struct WINRT_EBO impl_IMediaStreamSourceSampleRenderedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMediaStreamSourceSampleRenderedEventArgs>(this); }
-
-public:
-
     Windows::Foundation::TimeSpan SampleLag() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaStreamSourceSampleRequest
+struct WINRT_EBO impl_IMediaStreamSourceSampleRequest
 {
-    auto shim() const { return impl::shim<D, IMediaStreamSourceSampleRequest>(this); }
-
-public:
-
     Windows::Media::Core::IMediaStreamDescriptor StreamDescriptor() const;
     Windows::Media::Core::MediaStreamSourceSampleRequestDeferral GetDeferral() const;
     void Sample(const Windows::Media::Core::MediaStreamSample & value) const;
@@ -933,96 +789,60 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaStreamSourceSampleRequestDeferral
+struct WINRT_EBO impl_IMediaStreamSourceSampleRequestDeferral
 {
-    auto shim() const { return impl::shim<D, IMediaStreamSourceSampleRequestDeferral>(this); }
-
-public:
-
     void Complete() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaStreamSourceSampleRequestedEventArgs
+struct WINRT_EBO impl_IMediaStreamSourceSampleRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMediaStreamSourceSampleRequestedEventArgs>(this); }
-
-public:
-
     Windows::Media::Core::MediaStreamSourceSampleRequest Request() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaStreamSourceStartingEventArgs
+struct WINRT_EBO impl_IMediaStreamSourceStartingEventArgs
 {
-    auto shim() const { return impl::shim<D, IMediaStreamSourceStartingEventArgs>(this); }
-
-public:
-
     Windows::Media::Core::MediaStreamSourceStartingRequest Request() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaStreamSourceStartingRequest
+struct WINRT_EBO impl_IMediaStreamSourceStartingRequest
 {
-    auto shim() const { return impl::shim<D, IMediaStreamSourceStartingRequest>(this); }
-
-public:
-
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> StartPosition() const;
     Windows::Media::Core::MediaStreamSourceStartingRequestDeferral GetDeferral() const;
     void SetActualStartPosition(const Windows::Foundation::TimeSpan & position) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaStreamSourceStartingRequestDeferral
+struct WINRT_EBO impl_IMediaStreamSourceStartingRequestDeferral
 {
-    auto shim() const { return impl::shim<D, IMediaStreamSourceStartingRequestDeferral>(this); }
-
-public:
-
     void Complete() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaStreamSourceSwitchStreamsRequest
+struct WINRT_EBO impl_IMediaStreamSourceSwitchStreamsRequest
 {
-    auto shim() const { return impl::shim<D, IMediaStreamSourceSwitchStreamsRequest>(this); }
-
-public:
-
     Windows::Media::Core::IMediaStreamDescriptor OldStreamDescriptor() const;
     Windows::Media::Core::IMediaStreamDescriptor NewStreamDescriptor() const;
     Windows::Media::Core::MediaStreamSourceSwitchStreamsRequestDeferral GetDeferral() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaStreamSourceSwitchStreamsRequestDeferral
+struct WINRT_EBO impl_IMediaStreamSourceSwitchStreamsRequestDeferral
 {
-    auto shim() const { return impl::shim<D, IMediaStreamSourceSwitchStreamsRequestDeferral>(this); }
-
-public:
-
     void Complete() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaStreamSourceSwitchStreamsRequestedEventArgs
+struct WINRT_EBO impl_IMediaStreamSourceSwitchStreamsRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMediaStreamSourceSwitchStreamsRequestedEventArgs>(this); }
-
-public:
-
     Windows::Media::Core::MediaStreamSourceSwitchStreamsRequest Request() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaTrack
+struct WINRT_EBO impl_IMediaTrack
 {
-    auto shim() const { return impl::shim<D, IMediaTrack>(this); }
-
-public:
-
     hstring Id() const;
     hstring Language() const;
     Windows::Media::Core::MediaTrackKind TrackKind() const;
@@ -1031,12 +851,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMseSourceBuffer
+struct WINRT_EBO impl_IMseSourceBuffer
 {
-    auto shim() const { return impl::shim<D, IMseSourceBuffer>(this); }
-
-public:
-
     event_token UpdateStarting(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::IInspectable> & handler) const;
     using UpdateStarting_revoker = event_revoker<IMseSourceBuffer>;
     UpdateStarting_revoker UpdateStarting(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::IInspectable> & handler) const;
@@ -1075,12 +891,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMseSourceBufferList
+struct WINRT_EBO impl_IMseSourceBufferList
 {
-    auto shim() const { return impl::shim<D, IMseSourceBufferList>(this); }
-
-public:
-
     event_token SourceBufferAdded(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBufferList, Windows::IInspectable> & handler) const;
     using SourceBufferAdded_revoker = event_revoker<IMseSourceBufferList>;
     SourceBufferAdded_revoker SourceBufferAdded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBufferList, Windows::IInspectable> & handler) const;
@@ -1093,12 +905,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMseStreamSource
+struct WINRT_EBO impl_IMseStreamSource
 {
-    auto shim() const { return impl::shim<D, IMseStreamSource>(this); }
-
-public:
-
     event_token Opened(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseStreamSource, Windows::IInspectable> & handler) const;
     using Opened_revoker = event_revoker<IMseStreamSource>;
     Opened_revoker Opened(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseStreamSource, Windows::IInspectable> & handler) const;
@@ -1122,22 +930,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMseStreamSourceStatics
+struct WINRT_EBO impl_IMseStreamSourceStatics
 {
-    auto shim() const { return impl::shim<D, IMseStreamSourceStatics>(this); }
-
-public:
-
     bool IsContentTypeSupported(hstring_ref contentType) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISceneAnalysisEffect
+struct WINRT_EBO impl_ISceneAnalysisEffect
 {
-    auto shim() const { return impl::shim<D, ISceneAnalysisEffect>(this); }
-
-public:
-
     Windows::Media::Core::HighDynamicRangeControl HighDynamicRangeAnalyzer() const;
     void DesiredAnalysisInterval(const Windows::Foundation::TimeSpan & value) const;
     Windows::Foundation::TimeSpan DesiredAnalysisInterval() const;
@@ -1148,33 +948,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISceneAnalysisEffectFrame
+struct WINRT_EBO impl_ISceneAnalysisEffectFrame
 {
-    auto shim() const { return impl::shim<D, ISceneAnalysisEffectFrame>(this); }
-
-public:
-
     Windows::Media::Capture::CapturedFrameControlValues FrameControlValues() const;
     Windows::Media::Core::HighDynamicRangeOutput HighDynamicRange() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISceneAnalyzedEventArgs
+struct WINRT_EBO impl_ISceneAnalyzedEventArgs
 {
-    auto shim() const { return impl::shim<D, ISceneAnalyzedEventArgs>(this); }
-
-public:
-
     Windows::Media::Core::SceneAnalysisEffectFrame ResultFrame() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISingleSelectMediaTrackList
+struct WINRT_EBO impl_ISingleSelectMediaTrackList
 {
-    auto shim() const { return impl::shim<D, ISingleSelectMediaTrackList>(this); }
-
-public:
-
     event_token SelectedIndexChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::ISingleSelectMediaTrackList, Windows::IInspectable> & handler) const;
     using SelectedIndexChanged_revoker = event_revoker<ISingleSelectMediaTrackList>;
     SelectedIndexChanged_revoker SelectedIndexChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::ISingleSelectMediaTrackList, Windows::IInspectable> & handler) const;
@@ -1184,12 +972,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ITimedMetadataTrack
+struct WINRT_EBO impl_ITimedMetadataTrack
 {
-    auto shim() const { return impl::shim<D, ITimedMetadataTrack>(this); }
-
-public:
-
     event_token CueEntered(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::TimedMetadataTrack, Windows::Media::Core::MediaCueEventArgs> & handler) const;
     using CueEntered_revoker = event_revoker<ITimedMetadataTrack>;
     CueEntered_revoker CueEntered(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::TimedMetadataTrack, Windows::Media::Core::MediaCueEventArgs> & handler) const;
@@ -1211,54 +995,34 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ITimedMetadataTrack2
+struct WINRT_EBO impl_ITimedMetadataTrack2
 {
-    auto shim() const { return impl::shim<D, ITimedMetadataTrack2>(this); }
-
-public:
-
     Windows::Media::Playback::MediaPlaybackItem PlaybackItem() const;
     hstring Name() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITimedMetadataTrackError
+struct WINRT_EBO impl_ITimedMetadataTrackError
 {
-    auto shim() const { return impl::shim<D, ITimedMetadataTrackError>(this); }
-
-public:
-
     Windows::Media::Core::TimedMetadataTrackErrorCode ErrorCode() const;
     HRESULT ExtendedError() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITimedMetadataTrackFactory
+struct WINRT_EBO impl_ITimedMetadataTrackFactory
 {
-    auto shim() const { return impl::shim<D, ITimedMetadataTrackFactory>(this); }
-
-public:
-
     Windows::Media::Core::TimedMetadataTrack Create(hstring_ref id, hstring_ref language, Windows::Media::Core::TimedMetadataKind kind) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITimedMetadataTrackFailedEventArgs
+struct WINRT_EBO impl_ITimedMetadataTrackFailedEventArgs
 {
-    auto shim() const { return impl::shim<D, ITimedMetadataTrackFailedEventArgs>(this); }
-
-public:
-
     Windows::Media::Core::TimedMetadataTrackError Error() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITimedTextCue
+struct WINRT_EBO impl_ITimedTextCue
 {
-    auto shim() const { return impl::shim<D, ITimedTextCue>(this); }
-
-public:
-
     Windows::Media::Core::TimedTextRegion CueRegion() const;
     void CueRegion(const Windows::Media::Core::TimedTextRegion & value) const;
     Windows::Media::Core::TimedTextStyle CueStyle() const;
@@ -1267,24 +1031,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ITimedTextLine
+struct WINRT_EBO impl_ITimedTextLine
 {
-    auto shim() const { return impl::shim<D, ITimedTextLine>(this); }
-
-public:
-
     hstring Text() const;
     void Text(hstring_ref value) const;
     Windows::Foundation::Collections::IVector<Windows::Media::Core::TimedTextSubformat> Subformats() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITimedTextRegion
+struct WINRT_EBO impl_ITimedTextRegion
 {
-    auto shim() const { return impl::shim<D, ITimedTextRegion>(this); }
-
-public:
-
     hstring Name() const;
     void Name(hstring_ref value) const;
     Windows::Media::Core::TimedTextPoint Position() const;
@@ -1312,12 +1068,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ITimedTextSource
+struct WINRT_EBO impl_ITimedTextSource
 {
-    auto shim() const { return impl::shim<D, ITimedTextSource>(this); }
-
-public:
-
     event_token Resolved(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::TimedTextSource, Windows::Media::Core::TimedTextSourceResolveResultEventArgs> & handler) const;
     using Resolved_revoker = event_revoker<ITimedTextSource>;
     Resolved_revoker Resolved(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::TimedTextSource, Windows::Media::Core::TimedTextSourceResolveResultEventArgs> & handler) const;
@@ -1325,23 +1077,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ITimedTextSourceResolveResultEventArgs
+struct WINRT_EBO impl_ITimedTextSourceResolveResultEventArgs
 {
-    auto shim() const { return impl::shim<D, ITimedTextSourceResolveResultEventArgs>(this); }
-
-public:
-
     Windows::Media::Core::TimedMetadataTrackError Error() const;
     Windows::Foundation::Collections::IVectorView<Windows::Media::Core::TimedMetadataTrack> Tracks() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ITimedTextSourceStatics
+struct WINRT_EBO impl_ITimedTextSourceStatics
 {
-    auto shim() const { return impl::shim<D, ITimedTextSourceStatics>(this); }
-
-public:
-
     Windows::Media::Core::TimedTextSource CreateFromStream(const Windows::Storage::Streams::IRandomAccessStream & stream) const;
     Windows::Media::Core::TimedTextSource CreateFromUri(const Windows::Foundation::Uri & uri) const;
     Windows::Media::Core::TimedTextSource CreateFromStream(const Windows::Storage::Streams::IRandomAccessStream & stream, hstring_ref defaultLanguage) const;
@@ -1349,12 +1093,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ITimedTextStyle
+struct WINRT_EBO impl_ITimedTextStyle
 {
-    auto shim() const { return impl::shim<D, ITimedTextStyle>(this); }
-
-public:
-
     hstring Name() const;
     void Name(hstring_ref value) const;
     hstring FontFamily() const;
@@ -1382,12 +1122,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ITimedTextSubformat
+struct WINRT_EBO impl_ITimedTextSubformat
 {
-    auto shim() const { return impl::shim<D, ITimedTextSubformat>(this); }
-
-public:
-
     int32_t StartIndex() const;
     void StartIndex(int32_t value) const;
     int32_t Length() const;
@@ -1397,12 +1133,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVideoStabilizationEffect
+struct WINRT_EBO impl_IVideoStabilizationEffect
 {
-    auto shim() const { return impl::shim<D, IVideoStabilizationEffect>(this); }
-
-public:
-
     void Enabled(bool value) const;
     bool Enabled() const;
     event_token EnabledChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::VideoStabilizationEffect, Windows::Media::Core::VideoStabilizationEffectEnabledChangedEventArgs> & handler) const;
@@ -1413,42 +1145,26 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVideoStabilizationEffectEnabledChangedEventArgs
+struct WINRT_EBO impl_IVideoStabilizationEffectEnabledChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IVideoStabilizationEffectEnabledChangedEventArgs>(this); }
-
-public:
-
     Windows::Media::Core::VideoStabilizationEffectEnabledChangedReason Reason() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVideoStreamDescriptor
+struct WINRT_EBO impl_IVideoStreamDescriptor
 {
-    auto shim() const { return impl::shim<D, IVideoStreamDescriptor>(this); }
-
-public:
-
     Windows::Media::MediaProperties::VideoEncodingProperties EncodingProperties() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVideoStreamDescriptorFactory
+struct WINRT_EBO impl_IVideoStreamDescriptorFactory
 {
-    auto shim() const { return impl::shim<D, IVideoStreamDescriptorFactory>(this); }
-
-public:
-
     Windows::Media::Core::VideoStreamDescriptor Create(const Windows::Media::MediaProperties::VideoEncodingProperties & encodingProperties) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVideoTrack
+struct WINRT_EBO impl_IVideoTrack
 {
-    auto shim() const { return impl::shim<D, IVideoTrack>(this); }
-
-public:
-
     event_token OpenFailed(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::VideoTrack, Windows::Media::Core::VideoTrackOpenFailedEventArgs> & handler) const;
     using OpenFailed_revoker = event_revoker<IVideoTrack>;
     OpenFailed_revoker OpenFailed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Core::VideoTrack, Windows::Media::Core::VideoTrackOpenFailedEventArgs> & handler) const;
@@ -1460,22 +1176,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVideoTrackOpenFailedEventArgs
+struct WINRT_EBO impl_IVideoTrackOpenFailedEventArgs
 {
-    auto shim() const { return impl::shim<D, IVideoTrackOpenFailedEventArgs>(this); }
-
-public:
-
     HRESULT ExtendedError() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVideoTrackSupportInfo
+struct WINRT_EBO impl_IVideoTrackSupportInfo
 {
-    auto shim() const { return impl::shim<D, IVideoTrackSupportInfo>(this); }
-
-public:
-
     Windows::Media::Core::MediaDecoderStatus DecoderStatus() const;
     Windows::Media::Core::MediaSourceStatus MediaSourceStatus() const;
 };

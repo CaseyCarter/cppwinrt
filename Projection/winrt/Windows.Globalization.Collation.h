@@ -68,21 +68,21 @@ namespace Windows::Globalization::Collation {
 template <typename D> hstring impl_ICharacterGrouping<D>::First() const
 {
     hstring value;
-    check_hresult(shim()->get_First(put(value)));
+    check_hresult(static_cast<const ICharacterGrouping &>(static_cast<const D &>(*this))->get_First(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICharacterGrouping<D>::Label() const
 {
     hstring value;
-    check_hresult(shim()->get_Label(put(value)));
+    check_hresult(static_cast<const ICharacterGrouping &>(static_cast<const D &>(*this))->get_Label(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ICharacterGroupings<D>::Lookup(hstring_ref text) const
 {
     hstring result;
-    check_hresult(shim()->abi_Lookup(get(text), put(result)));
+    check_hresult(static_cast<const ICharacterGroupings &>(static_cast<const D &>(*this))->abi_Lookup(get(text), put(result)));
     return result;
 }
 

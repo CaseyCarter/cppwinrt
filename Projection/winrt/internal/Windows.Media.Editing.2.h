@@ -320,12 +320,8 @@ template <> struct __declspec(uuid("6683d49c-9fd5-5b08-899f-e2d7dc5cf9c4")) __de
 namespace Windows::Media::Editing {
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundAudioTrack
+struct WINRT_EBO impl_IBackgroundAudioTrack
 {
-    auto shim() const { return impl::shim<D, IBackgroundAudioTrack>(this); }
-
-public:
-
     Windows::Foundation::TimeSpan TrimTimeFromStart() const;
     void TrimTimeFromStart(const Windows::Foundation::TimeSpan & value) const;
     Windows::Foundation::TimeSpan TrimTimeFromEnd() const;
@@ -343,33 +339,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundAudioTrackStatics
+struct WINRT_EBO impl_IBackgroundAudioTrackStatics
 {
-    auto shim() const { return impl::shim<D, IBackgroundAudioTrackStatics>(this); }
-
-public:
-
     Windows::Media::Editing::BackgroundAudioTrack CreateFromEmbeddedAudioTrack(const Windows::Media::Editing::EmbeddedAudioTrack & embeddedAudioTrack) const;
     Windows::Foundation::IAsyncOperation<Windows::Media::Editing::BackgroundAudioTrack> CreateFromFileAsync(const Windows::Storage::IStorageFile & file) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IEmbeddedAudioTrack
+struct WINRT_EBO impl_IEmbeddedAudioTrack
 {
-    auto shim() const { return impl::shim<D, IEmbeddedAudioTrack>(this); }
-
-public:
-
     Windows::Media::MediaProperties::AudioEncodingProperties GetAudioEncodingProperties() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaClip
+struct WINRT_EBO impl_IMediaClip
 {
-    auto shim() const { return impl::shim<D, IMediaClip>(this); }
-
-public:
-
     Windows::Foundation::TimeSpan TrimTimeFromStart() const;
     void TrimTimeFromStart(const Windows::Foundation::TimeSpan & value) const;
     Windows::Foundation::TimeSpan TrimTimeFromEnd() const;
@@ -391,34 +375,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaClipStatics
+struct WINRT_EBO impl_IMediaClipStatics
 {
-    auto shim() const { return impl::shim<D, IMediaClipStatics>(this); }
-
-public:
-
     Windows::Media::Editing::MediaClip CreateFromColor(const Windows::UI::Color & color, const Windows::Foundation::TimeSpan & originalDuration) const;
     Windows::Foundation::IAsyncOperation<Windows::Media::Editing::MediaClip> CreateFromFileAsync(const Windows::Storage::IStorageFile & file) const;
     Windows::Foundation::IAsyncOperation<Windows::Media::Editing::MediaClip> CreateFromImageFileAsync(const Windows::Storage::IStorageFile & file, const Windows::Foundation::TimeSpan & originalDuration) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaClipStatics2
+struct WINRT_EBO impl_IMediaClipStatics2
 {
-    auto shim() const { return impl::shim<D, IMediaClipStatics2>(this); }
-
-public:
-
     Windows::Media::Editing::MediaClip CreateFromSurface(const Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface & surface, const Windows::Foundation::TimeSpan & originalDuration) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaComposition
+struct WINRT_EBO impl_IMediaComposition
 {
-    auto shim() const { return impl::shim<D, IMediaComposition>(this); }
-
-public:
-
     Windows::Foundation::TimeSpan Duration() const;
     Windows::Foundation::Collections::IVector<Windows::Media::Editing::MediaClip> Clips() const;
     Windows::Foundation::Collections::IVector<Windows::Media::Editing::BackgroundAudioTrack> BackgroundAudioTracks() const;
@@ -437,32 +409,20 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaComposition2
+struct WINRT_EBO impl_IMediaComposition2
 {
-    auto shim() const { return impl::shim<D, IMediaComposition2>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<Windows::Media::Editing::MediaOverlayLayer> OverlayLayers() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaCompositionStatics
+struct WINRT_EBO impl_IMediaCompositionStatics
 {
-    auto shim() const { return impl::shim<D, IMediaCompositionStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Media::Editing::MediaComposition> LoadAsync(const Windows::Storage::StorageFile & file) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaOverlay
+struct WINRT_EBO impl_IMediaOverlay
 {
-    auto shim() const { return impl::shim<D, IMediaOverlay>(this); }
-
-public:
-
     Windows::Foundation::Rect Position() const;
     void Position(const Windows::Foundation::Rect & value) const;
     void Delay(const Windows::Foundation::TimeSpan & value) const;
@@ -476,35 +436,23 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaOverlayFactory
+struct WINRT_EBO impl_IMediaOverlayFactory
 {
-    auto shim() const { return impl::shim<D, IMediaOverlayFactory>(this); }
-
-public:
-
     Windows::Media::Editing::MediaOverlay Create(const Windows::Media::Editing::MediaClip & clip) const;
     Windows::Media::Editing::MediaOverlay CreateWithPositionAndOpacity(const Windows::Media::Editing::MediaClip & clip, const Windows::Foundation::Rect & position, double opacity) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaOverlayLayer
+struct WINRT_EBO impl_IMediaOverlayLayer
 {
-    auto shim() const { return impl::shim<D, IMediaOverlayLayer>(this); }
-
-public:
-
     Windows::Media::Editing::MediaOverlayLayer Clone() const;
     Windows::Foundation::Collections::IVector<Windows::Media::Editing::MediaOverlay> Overlays() const;
     Windows::Media::Effects::IVideoCompositorDefinition CustomCompositorDefinition() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMediaOverlayLayerFactory
+struct WINRT_EBO impl_IMediaOverlayLayerFactory
 {
-    auto shim() const { return impl::shim<D, IMediaOverlayLayerFactory>(this); }
-
-public:
-
     Windows::Media::Editing::MediaOverlayLayer CreateWithCompositorDefinition(const Windows::Media::Effects::IVideoCompositorDefinition & compositorDefinition) const;
 };
 

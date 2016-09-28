@@ -186,72 +186,72 @@ namespace Windows::ApplicationModel::UserDataAccounts::Provider {
 template <typename D> Windows::ApplicationModel::UserDataAccounts::Provider::UserDataAccountProviderOperationKind impl_IUserDataAccountProviderOperation<D>::Kind() const
 {
     Windows::ApplicationModel::UserDataAccounts::Provider::UserDataAccountProviderOperationKind value {};
-    check_hresult(shim()->get_Kind(&value));
+    check_hresult(static_cast<const IUserDataAccountProviderOperation &>(static_cast<const D &>(*this))->get_Kind(&value));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::UserDataAccounts::UserDataAccountContentKinds impl_IUserDataAccountProviderAddAccountOperation<D>::ContentKinds() const
 {
     Windows::ApplicationModel::UserDataAccounts::UserDataAccountContentKinds value {};
-    check_hresult(shim()->get_ContentKinds(&value));
+    check_hresult(static_cast<const IUserDataAccountProviderAddAccountOperation &>(static_cast<const D &>(*this))->get_ContentKinds(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::UserDataAccounts::Provider::UserDataAccountPartnerAccountInfo> impl_IUserDataAccountProviderAddAccountOperation<D>::PartnerAccountInfos() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::UserDataAccounts::Provider::UserDataAccountPartnerAccountInfo> value;
-    check_hresult(shim()->get_PartnerAccountInfos(put(value)));
+    check_hresult(static_cast<const IUserDataAccountProviderAddAccountOperation &>(static_cast<const D &>(*this))->get_PartnerAccountInfos(put(value)));
     return value;
 }
 
 template <typename D> void impl_IUserDataAccountProviderAddAccountOperation<D>::ReportCompleted(hstring_ref userDataAccountId) const
 {
-    check_hresult(shim()->abi_ReportCompleted(get(userDataAccountId)));
+    check_hresult(static_cast<const IUserDataAccountProviderAddAccountOperation &>(static_cast<const D &>(*this))->abi_ReportCompleted(get(userDataAccountId)));
 }
 
 template <typename D> hstring impl_IUserDataAccountPartnerAccountInfo<D>::DisplayName() const
 {
     hstring value;
-    check_hresult(shim()->get_DisplayName(put(value)));
+    check_hresult(static_cast<const IUserDataAccountPartnerAccountInfo &>(static_cast<const D &>(*this))->get_DisplayName(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_IUserDataAccountPartnerAccountInfo<D>::Priority() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_Priority(&value));
+    check_hresult(static_cast<const IUserDataAccountPartnerAccountInfo &>(static_cast<const D &>(*this))->get_Priority(&value));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::UserDataAccounts::Provider::UserDataAccountProviderPartnerAccountKind impl_IUserDataAccountPartnerAccountInfo<D>::AccountKind() const
 {
     Windows::ApplicationModel::UserDataAccounts::Provider::UserDataAccountProviderPartnerAccountKind value {};
-    check_hresult(shim()->get_AccountKind(&value));
+    check_hresult(static_cast<const IUserDataAccountPartnerAccountInfo &>(static_cast<const D &>(*this))->get_AccountKind(&value));
     return value;
 }
 
 template <typename D> hstring impl_IUserDataAccountProviderSettingsOperation<D>::UserDataAccountId() const
 {
     hstring value;
-    check_hresult(shim()->get_UserDataAccountId(put(value)));
+    check_hresult(static_cast<const IUserDataAccountProviderSettingsOperation &>(static_cast<const D &>(*this))->get_UserDataAccountId(put(value)));
     return value;
 }
 
 template <typename D> void impl_IUserDataAccountProviderSettingsOperation<D>::ReportCompleted() const
 {
-    check_hresult(shim()->abi_ReportCompleted());
+    check_hresult(static_cast<const IUserDataAccountProviderSettingsOperation &>(static_cast<const D &>(*this))->abi_ReportCompleted());
 }
 
 template <typename D> hstring impl_IUserDataAccountProviderResolveErrorsOperation<D>::UserDataAccountId() const
 {
     hstring value;
-    check_hresult(shim()->get_UserDataAccountId(put(value)));
+    check_hresult(static_cast<const IUserDataAccountProviderResolveErrorsOperation &>(static_cast<const D &>(*this))->get_UserDataAccountId(put(value)));
     return value;
 }
 
 template <typename D> void impl_IUserDataAccountProviderResolveErrorsOperation<D>::ReportCompleted() const
 {
-    check_hresult(shim()->abi_ReportCompleted());
+    check_hresult(static_cast<const IUserDataAccountProviderResolveErrorsOperation &>(static_cast<const D &>(*this))->abi_ReportCompleted());
 }
 
 }

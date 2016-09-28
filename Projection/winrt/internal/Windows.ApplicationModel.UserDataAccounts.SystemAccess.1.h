@@ -133,10 +133,10 @@ template <> struct traits<Windows::ApplicationModel::UserDataAccounts::SystemAcc
 
 namespace Windows::ApplicationModel::UserDataAccounts::SystemAccess {
 
-template <typename T> class impl_IDeviceAccountConfiguration;
-template <typename T> class impl_IDeviceAccountConfiguration2;
-template <typename T> class impl_IUserDataAccountSystemAccessManagerStatics;
-template <typename T> class impl_IUserDataAccountSystemAccessManagerStatics2;
+template <typename T> struct impl_IDeviceAccountConfiguration;
+template <typename T> struct impl_IDeviceAccountConfiguration2;
+template <typename T> struct impl_IUserDataAccountSystemAccessManagerStatics;
+template <typename T> struct impl_IUserDataAccountSystemAccessManagerStatics2;
 
 }
 

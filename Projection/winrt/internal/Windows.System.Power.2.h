@@ -20,12 +20,8 @@ template <> struct __declspec(uuid("c50898f6-c536-5f47-8583-8b2c2438a13b")) __de
 namespace Windows::System::Power {
 
 template <typename D>
-class WINRT_EBO impl_IBackgroundEnergyManagerStatics
+struct WINRT_EBO impl_IBackgroundEnergyManagerStatics
 {
-    auto shim() const { return impl::shim<D, IBackgroundEnergyManagerStatics>(this); }
-
-public:
-
     uint32_t LowUsageLevel() const;
     uint32_t NearMaxAcceptableUsageLevel() const;
     uint32_t MaxAcceptableUsageLevel() const;
@@ -45,12 +41,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IForegroundEnergyManagerStatics
+struct WINRT_EBO impl_IForegroundEnergyManagerStatics
 {
-    auto shim() const { return impl::shim<D, IForegroundEnergyManagerStatics>(this); }
-
-public:
-
     uint32_t LowUsageLevel() const;
     uint32_t NearMaxAcceptableUsageLevel() const;
     uint32_t MaxAcceptableUsageLevel() const;
@@ -68,12 +60,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPowerManagerStatics
+struct WINRT_EBO impl_IPowerManagerStatics
 {
-    auto shim() const { return impl::shim<D, IPowerManagerStatics>(this); }
-
-public:
-
     Windows::System::Power::EnergySaverStatus EnergySaverStatus() const;
     event_token EnergySaverStatusChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const;
     using EnergySaverStatusChanged_revoker = event_revoker<IPowerManagerStatics>;

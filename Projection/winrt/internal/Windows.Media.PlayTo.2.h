@@ -120,32 +120,20 @@ template <> struct __declspec(uuid("5db5fa32-707c-5849-a06b-91c8eb9d10e8")) __de
 namespace Windows::Media::PlayTo {
 
 template <typename D>
-class WINRT_EBO impl_ICurrentTimeChangeRequestedEventArgs
+struct WINRT_EBO impl_ICurrentTimeChangeRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, ICurrentTimeChangeRequestedEventArgs>(this); }
-
-public:
-
     Windows::Foundation::TimeSpan Time() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMuteChangeRequestedEventArgs
+struct WINRT_EBO impl_IMuteChangeRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMuteChangeRequestedEventArgs>(this); }
-
-public:
-
     bool Mute() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayToConnection
+struct WINRT_EBO impl_IPlayToConnection
 {
-    auto shim() const { return impl::shim<D, IPlayToConnection>(this); }
-
-public:
-
     Windows::Media::PlayTo::PlayToConnectionState State() const;
     event_token StateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToConnection, Windows::Media::PlayTo::PlayToConnectionStateChangedEventArgs> & handler) const;
     using StateChanged_revoker = event_revoker<IPlayToConnection>;
@@ -162,45 +150,29 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayToConnectionErrorEventArgs
+struct WINRT_EBO impl_IPlayToConnectionErrorEventArgs
 {
-    auto shim() const { return impl::shim<D, IPlayToConnectionErrorEventArgs>(this); }
-
-public:
-
     Windows::Media::PlayTo::PlayToConnectionError Code() const;
     hstring Message() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayToConnectionStateChangedEventArgs
+struct WINRT_EBO impl_IPlayToConnectionStateChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IPlayToConnectionStateChangedEventArgs>(this); }
-
-public:
-
     Windows::Media::PlayTo::PlayToConnectionState PreviousState() const;
     Windows::Media::PlayTo::PlayToConnectionState CurrentState() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayToConnectionTransferredEventArgs
+struct WINRT_EBO impl_IPlayToConnectionTransferredEventArgs
 {
-    auto shim() const { return impl::shim<D, IPlayToConnectionTransferredEventArgs>(this); }
-
-public:
-
     Windows::Media::PlayTo::PlayToSource PreviousSource() const;
     Windows::Media::PlayTo::PlayToSource CurrentSource() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayToManager
+struct WINRT_EBO impl_IPlayToManager
 {
-    auto shim() const { return impl::shim<D, IPlayToManager>(this); }
-
-public:
-
     event_token SourceRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToManager, Windows::Media::PlayTo::PlayToSourceRequestedEventArgs> & handler) const;
     using SourceRequested_revoker = event_revoker<IPlayToManager>;
     SourceRequested_revoker SourceRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToManager, Windows::Media::PlayTo::PlayToSourceRequestedEventArgs> & handler) const;
@@ -214,23 +186,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayToManagerStatics
+struct WINRT_EBO impl_IPlayToManagerStatics
 {
-    auto shim() const { return impl::shim<D, IPlayToManagerStatics>(this); }
-
-public:
-
     Windows::Media::PlayTo::PlayToManager GetForCurrentView() const;
     void ShowPlayToUI() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayToReceiver
+struct WINRT_EBO impl_IPlayToReceiver
 {
-    auto shim() const { return impl::shim<D, IPlayToReceiver>(this); }
-
-public:
-
     event_token PlayRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> & handler) const;
     using PlayRequested_revoker = event_revoker<IPlayToReceiver>;
     PlayRequested_revoker PlayRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> & handler) const;
@@ -293,12 +257,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayToSource
+struct WINRT_EBO impl_IPlayToSource
 {
-    auto shim() const { return impl::shim<D, IPlayToSource>(this); }
-
-public:
-
     Windows::Media::PlayTo::PlayToConnection Connection() const;
     Windows::Media::PlayTo::PlayToSource Next() const;
     void Next(const Windows::Media::PlayTo::PlayToSource & value) const;
@@ -306,22 +266,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayToSourceDeferral
+struct WINRT_EBO impl_IPlayToSourceDeferral
 {
-    auto shim() const { return impl::shim<D, IPlayToSourceDeferral>(this); }
-
-public:
-
     void Complete() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayToSourceRequest
+struct WINRT_EBO impl_IPlayToSourceRequest
 {
-    auto shim() const { return impl::shim<D, IPlayToSourceRequest>(this); }
-
-public:
-
     Windows::Foundation::DateTime Deadline() const;
     void DisplayErrorString(hstring_ref errorString) const;
     Windows::Media::PlayTo::PlayToSourceDeferral GetDeferral() const;
@@ -329,22 +281,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayToSourceRequestedEventArgs
+struct WINRT_EBO impl_IPlayToSourceRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, IPlayToSourceRequestedEventArgs>(this); }
-
-public:
-
     Windows::Media::PlayTo::PlayToSourceRequest SourceRequest() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayToSourceSelectedEventArgs
+struct WINRT_EBO impl_IPlayToSourceSelectedEventArgs
 {
-    auto shim() const { return impl::shim<D, IPlayToSourceSelectedEventArgs>(this); }
-
-public:
-
     hstring FriendlyName() const;
     Windows::Storage::Streams::IRandomAccessStreamWithContentType Icon() const;
     bool SupportsImage() const;
@@ -353,33 +297,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlayToSourceWithPreferredSourceUri
+struct WINRT_EBO impl_IPlayToSourceWithPreferredSourceUri
 {
-    auto shim() const { return impl::shim<D, IPlayToSourceWithPreferredSourceUri>(this); }
-
-public:
-
     Windows::Foundation::Uri PreferredSourceUri() const;
     void PreferredSourceUri(const Windows::Foundation::Uri & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPlaybackRateChangeRequestedEventArgs
+struct WINRT_EBO impl_IPlaybackRateChangeRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, IPlaybackRateChangeRequestedEventArgs>(this); }
-
-public:
-
     double Rate() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISourceChangeRequestedEventArgs
+struct WINRT_EBO impl_ISourceChangeRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, ISourceChangeRequestedEventArgs>(this); }
-
-public:
-
     Windows::Storage::Streams::IRandomAccessStreamWithContentType Stream() const;
     hstring Title() const;
     hstring Author() const;
@@ -393,12 +325,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IVolumeChangeRequestedEventArgs
+struct WINRT_EBO impl_IVolumeChangeRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, IVolumeChangeRequestedEventArgs>(this); }
-
-public:
-
     double Volume() const;
 };
 

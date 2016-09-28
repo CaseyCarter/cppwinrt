@@ -53,10 +53,10 @@ template <> struct traits<Windows::Devices::Sensors::Custom::CustomSensorReading
 
 namespace Windows::Devices::Sensors::Custom {
 
-template <typename T> class impl_ICustomSensor;
-template <typename T> class impl_ICustomSensorReading;
-template <typename T> class impl_ICustomSensorReadingChangedEventArgs;
-template <typename T> class impl_ICustomSensorStatics;
+template <typename T> struct impl_ICustomSensor;
+template <typename T> struct impl_ICustomSensorReading;
+template <typename T> struct impl_ICustomSensorReadingChangedEventArgs;
+template <typename T> struct impl_ICustomSensorStatics;
 
 }
 

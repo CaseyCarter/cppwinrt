@@ -71,77 +71,49 @@ template <> struct __declspec(uuid("6770cf39-094f-59c5-8a5d-e3b5dc64db0f")) __de
 namespace Windows::Graphics::Printing::OptionDetails {
 
 template <typename D>
-class WINRT_EBO impl_IPrintCustomItemDetails
+struct WINRT_EBO impl_IPrintCustomItemDetails
 {
-    auto shim() const { return impl::shim<D, IPrintCustomItemDetails>(this); }
-
-public:
-
     hstring ItemId() const;
     void ItemDisplayName(hstring_ref value) const;
     hstring ItemDisplayName() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrintCustomItemListOptionDetails
+struct WINRT_EBO impl_IPrintCustomItemListOptionDetails
 {
-    auto shim() const { return impl::shim<D, IPrintCustomItemListOptionDetails>(this); }
-
-public:
-
     void AddItem(hstring_ref itemId, hstring_ref displayName) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrintCustomOptionDetails
+struct WINRT_EBO impl_IPrintCustomOptionDetails
 {
-    auto shim() const { return impl::shim<D, IPrintCustomOptionDetails>(this); }
-
-public:
-
     void DisplayName(hstring_ref value) const;
     hstring DisplayName() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrintCustomTextOptionDetails
+struct WINRT_EBO impl_IPrintCustomTextOptionDetails
 {
-    auto shim() const { return impl::shim<D, IPrintCustomTextOptionDetails>(this); }
-
-public:
-
     void MaxCharacters(uint32_t value) const;
     uint32_t MaxCharacters() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrintItemListOptionDetails
+struct WINRT_EBO impl_IPrintItemListOptionDetails
 {
-    auto shim() const { return impl::shim<D, IPrintItemListOptionDetails>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::IInspectable> Items() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrintNumberOptionDetails
+struct WINRT_EBO impl_IPrintNumberOptionDetails
 {
-    auto shim() const { return impl::shim<D, IPrintNumberOptionDetails>(this); }
-
-public:
-
     uint32_t MinValue() const;
     uint32_t MaxValue() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrintOptionDetails
+struct WINRT_EBO impl_IPrintOptionDetails
 {
-    auto shim() const { return impl::shim<D, IPrintOptionDetails>(this); }
-
-public:
-
     hstring OptionId() const;
     Windows::Graphics::Printing::OptionDetails::PrintOptionType OptionType() const;
     void ErrorText(hstring_ref value) const;
@@ -153,22 +125,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrintTaskOptionChangedEventArgs
+struct WINRT_EBO impl_IPrintTaskOptionChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IPrintTaskOptionChangedEventArgs>(this); }
-
-public:
-
     Windows::IInspectable OptionId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrintTaskOptionDetails
+struct WINRT_EBO impl_IPrintTaskOptionDetails
 {
-    auto shim() const { return impl::shim<D, IPrintTaskOptionDetails>(this); }
-
-public:
-
     Windows::Foundation::Collections::IMapView<hstring, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails> Options() const;
     Windows::Graphics::Printing::OptionDetails::PrintCustomItemListOptionDetails CreateItemListOption(hstring_ref optionId, hstring_ref displayName) const;
     Windows::Graphics::Printing::OptionDetails::PrintCustomTextOptionDetails CreateTextOption(hstring_ref optionId, hstring_ref displayName) const;
@@ -183,22 +147,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrintTaskOptionDetailsStatic
+struct WINRT_EBO impl_IPrintTaskOptionDetailsStatic
 {
-    auto shim() const { return impl::shim<D, IPrintTaskOptionDetailsStatic>(this); }
-
-public:
-
     Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails GetFromPrintTaskOptions(const Windows::Graphics::Printing::PrintTaskOptions & printTaskOptions) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrintTextOptionDetails
+struct WINRT_EBO impl_IPrintTextOptionDetails
 {
-    auto shim() const { return impl::shim<D, IPrintTextOptionDetails>(this); }
-
-public:
-
     uint32_t MaxCharacters() const;
 };
 

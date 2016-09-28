@@ -10,36 +10,24 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::System::Threading {
 
 template <typename D>
-class WINRT_EBO impl_IThreadPoolStatics
+struct WINRT_EBO impl_IThreadPoolStatics
 {
-    auto shim() const { return impl::shim<D, IThreadPoolStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction RunAsync(const Windows::System::Threading::WorkItemHandler & handler) const;
     Windows::Foundation::IAsyncAction RunAsync(const Windows::System::Threading::WorkItemHandler & handler, Windows::System::Threading::WorkItemPriority priority) const;
     Windows::Foundation::IAsyncAction RunAsync(const Windows::System::Threading::WorkItemHandler & handler, Windows::System::Threading::WorkItemPriority priority, Windows::System::Threading::WorkItemOptions options) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IThreadPoolTimer
+struct WINRT_EBO impl_IThreadPoolTimer
 {
-    auto shim() const { return impl::shim<D, IThreadPoolTimer>(this); }
-
-public:
-
     Windows::Foundation::TimeSpan Period() const;
     Windows::Foundation::TimeSpan Delay() const;
     void Cancel() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IThreadPoolTimerStatics
+struct WINRT_EBO impl_IThreadPoolTimerStatics
 {
-    auto shim() const { return impl::shim<D, IThreadPoolTimerStatics>(this); }
-
-public:
-
     Windows::System::Threading::ThreadPoolTimer CreatePeriodicTimer(const Windows::System::Threading::TimerElapsedHandler & handler, const Windows::Foundation::TimeSpan & period) const;
     Windows::System::Threading::ThreadPoolTimer CreateTimer(const Windows::System::Threading::TimerElapsedHandler & handler, const Windows::Foundation::TimeSpan & delay) const;
     Windows::System::Threading::ThreadPoolTimer CreatePeriodicTimer(const Windows::System::Threading::TimerElapsedHandler & handler, const Windows::Foundation::TimeSpan & period, const Windows::System::Threading::TimerDestroyedHandler & destroyed) const;

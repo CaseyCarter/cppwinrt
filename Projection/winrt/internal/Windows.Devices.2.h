@@ -10,12 +10,8 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::Devices {
 
 template <typename D>
-class WINRT_EBO impl_ILowLevelDevicesAggregateProvider
+struct WINRT_EBO impl_ILowLevelDevicesAggregateProvider
 {
-    auto shim() const { return impl::shim<D, ILowLevelDevicesAggregateProvider>(this); }
-
-public:
-
     Windows::Devices::Adc::Provider::IAdcControllerProvider AdcControllerProvider() const;
     Windows::Devices::Pwm::Provider::IPwmControllerProvider PwmControllerProvider() const;
     Windows::Devices::Gpio::Provider::IGpioControllerProvider GpioControllerProvider() const;
@@ -24,31 +20,19 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ILowLevelDevicesAggregateProviderFactory
+struct WINRT_EBO impl_ILowLevelDevicesAggregateProviderFactory
 {
-    auto shim() const { return impl::shim<D, ILowLevelDevicesAggregateProviderFactory>(this); }
-
-public:
-
     Windows::Devices::LowLevelDevicesAggregateProvider Create(const Windows::Devices::Adc::Provider::IAdcControllerProvider & adc, const Windows::Devices::Pwm::Provider::IPwmControllerProvider & pwm, const Windows::Devices::Gpio::Provider::IGpioControllerProvider & gpio, const Windows::Devices::I2c::Provider::II2cControllerProvider & i2c, const Windows::Devices::Spi::Provider::ISpiControllerProvider & spi) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILowLevelDevicesController
+struct WINRT_EBO impl_ILowLevelDevicesController
 {
-    auto shim() const { return impl::shim<D, ILowLevelDevicesController>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ILowLevelDevicesControllerStatics
+struct WINRT_EBO impl_ILowLevelDevicesControllerStatics
 {
-    auto shim() const { return impl::shim<D, ILowLevelDevicesControllerStatics>(this); }
-
-public:
-
     Windows::Devices::ILowLevelDevicesAggregateProvider DefaultProvider() const;
     void DefaultProvider(const Windows::Devices::ILowLevelDevicesAggregateProvider & value) const;
 };

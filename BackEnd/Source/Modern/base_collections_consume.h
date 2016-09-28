@@ -18,44 +18,6 @@ enum class CollectionChange
 
 }
 
-namespace ABI::Windows::Foundation::Collections {
-
-struct __declspec(uuid("575933df-34fe-4480-af15-07691f3d5d9b")) __declspec(novtable) IVectorChangedEventArgs : IInspectable
-{
-    virtual HRESULT __stdcall get_CollectionChange(winrt::Windows::Foundation::Collections::CollectionChange * value) = 0;
-    virtual HRESULT __stdcall get_Index(uint32_t * value) = 0;
-};
-
-}
-
-namespace Windows::Foundation::Collections {
-
-struct IVectorChangedEventArgs;
-
-template <typename D>
-class WINRT_EBO impl_IVectorChangedEventArgs
-{
-    auto shim() const { return impl::shim<D, IVectorChangedEventArgs>(this); }
-
-public:
-
-    CollectionChange CollectionChange() const
-    {
-        Collections::CollectionChange value {};
-        check_hresult(shim()->get_CollectionChange(&value));
-        return value;
-    }
-
-    uint32_t Index() const
-    {
-        uint32_t index = 0;
-        check_hresult(shim()->get_Index(&index));
-        return index;
-    }
-};
-
-}
-
 namespace impl {
 
 template <typename T>
@@ -67,24 +29,6 @@ class has_GetAt
 public:
 
     static constexpr bool value = get_value<T>(0);
-};
-
-template <> struct traits<Windows::Foundation::Collections::IVectorChangedEventArgs>
-{
-    using abi = ABI::Windows::Foundation::Collections::IVectorChangedEventArgs;
-    template <typename D> using consume = Windows::Foundation::Collections::impl_IVectorChangedEventArgs<D>;
-};
-
-}
-
-namespace Windows::Foundation::Collections {
-
-struct IVectorChangedEventArgs :
-    IInspectable,
-    impl::consume<IVectorChangedEventArgs>
-{
-    IVectorChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IVectorChangedEventArgs>(m_ptr); }
 };
 
 }
@@ -104,6 +48,12 @@ template <typename K, typename V> struct IMap;
 template <typename K> struct IMapChangedEventArgs;
 template <typename K, typename V> struct IObservableMap;
 template <typename T> struct IObservableVector;
+
+struct __declspec(uuid("575933df-34fe-4480-af15-07691f3d5d9b")) __declspec(novtable) IVectorChangedEventArgs : IInspectable
+{
+    virtual HRESULT __stdcall get_CollectionChange(winrt::Windows::Foundation::Collections::CollectionChange * value) = 0;
+    virtual HRESULT __stdcall get_Index(uint32_t * value) = 0;
+};
 
 template <typename K, typename V>
 struct __declspec(novtable) impl_MapChangedEventHandler : IUnknown
@@ -228,6 +178,7 @@ namespace Windows::Foundation::Collections {
 template <typename K, typename V> struct MapChangedEventHandler;
 template <typename T> struct VectorChangedEventHandler;
 
+struct IVectorChangedEventArgs;
 template <typename T> struct IIterator;
 template <typename T> struct IIterable;
 template <typename K, typename V> struct IKeyValuePair;
@@ -239,40 +190,20 @@ template <typename K> struct IMapChangedEventArgs;
 template <typename K, typename V> struct IObservableMap;
 template <typename T> struct IObservableVector;
 
-template <typename D, typename T>
-class impl_IIterator
+template <typename D>
+struct WINRT_EBO impl_IVectorChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IIterator<T>>(this); }
+    CollectionChange CollectionChange() const;
+    uint32_t Index() const;
+};
 
-public:
-
-    T Current() const
-    {
-        T result = impl::empty_value<T>();
-        check_hresult(shim()->get_Current(put(result)));
-        return result;
-    }
-
-    bool HasCurrent() const
-    {
-        bool temp = false;
-        check_hresult(shim()->get_HasCurrent(put(temp)));
-        return temp;
-    }
-
-    bool MoveNext() const
-    {
-        bool temp = false;
-        check_hresult(shim()->abi_MoveNext(put(temp)));
-        return temp;
-    }
-
-    uint32_t GetMany(array_ref<T> values) const
-    {
-        uint32_t actual = 0;
-        check_hresult(shim()->abi_GetMany(values.size(), get(values), &actual));
-        return actual;
-    }
+template <typename D, typename T>
+struct impl_IIterator
+{
+    T Current() const;
+    bool HasCurrent() const;
+    bool MoveNext() const;
+    uint32_t GetMany(array_ref<T> values) const;
 
     auto & operator++()
     {
@@ -291,40 +222,16 @@ public:
 };
 
 template <typename D, typename T>
-class impl_IIterable
+struct impl_IIterable
 {
-    auto shim() const { return impl::shim<D, IIterable<T>>(this); }
-
-public:
-
-    IIterator<T> First() const
-    {
-        IIterator<T> iterator;
-        check_hresult(shim()->abi_First(put(iterator)));
-        return iterator;
-    }
+    IIterator<T> First() const;
 };
 
 template <typename D, typename K, typename V>
-class impl_IKeyValuePair
+struct impl_IKeyValuePair
 {
-    auto shim() const { return impl::shim<D, IKeyValuePair<K, V>>(this); }
-
-public:
-
-    K Key() const
-    {
-        K result = impl::empty_value<K>();
-        check_hresult(shim()->get_Key(put(result)));
-        return result;
-    }
-
-    V Value() const
-    {
-        V result = impl::empty_value<V>();
-        check_hresult(shim()->get_Value(put(result)));
-        return result;
-    }
+    K Key() const;
+    V Value() const;
 
     bool operator==(const IKeyValuePair<K, V> & other) const
     {
@@ -338,246 +245,64 @@ public:
 };
 
 template <typename D, typename T>
-class impl_IVectorView
+struct impl_IVectorView
 {
-    auto shim() const { return impl::shim<D, IVectorView<T>>(this); }
-
-public:
-
-    T GetAt(const uint32_t index) const
-    {
-        T result = impl::empty_value<T>();
-        check_hresult(shim()->abi_GetAt(index, put(result)));
-        return result;
-    }
-
-    uint32_t Size() const
-    {
-        uint32_t size = 0;
-        check_hresult(shim()->get_Size(&size));
-        return size;
-    }
-
-    bool IndexOf(const T & value, uint32_t & index) const
-    {
-        bool found = false;
-        check_hresult(shim()->abi_IndexOf(get(value), &index, put(found)));
-        return found;
-    }
-
-    uint32_t GetMany(uint32_t startIndex, array_ref<T> values) const
-    {
-        uint32_t actual = 0;
-        check_hresult(shim()->abi_GetMany(startIndex, values.size(), get(values), &actual));
-        return actual;
-    }
+    T GetAt(const uint32_t index) const;
+    uint32_t Size() const;
+    bool IndexOf(const T & value, uint32_t & index) const;
+    uint32_t GetMany(uint32_t startIndex, array_ref<T> values) const;
 };
 
 template <typename D, typename T>
-class impl_IVector
+struct impl_IVector
 {
-    auto shim() const { return impl::shim<D, IVector<T>>(this); }
-
-public:
-
-    T GetAt(const uint32_t index) const
-    {
-        T result = impl::empty_value<T>();
-        check_hresult(shim()->abi_GetAt(index, put(result)));
-        return result;
-    }
-
-    uint32_t Size() const
-    {
-        uint32_t size = 0;
-        check_hresult(shim()->get_Size(&size));
-        return size;
-    }
-
-    IVectorView<T> GetView() const
-    {
-        IVectorView<T> view;
-        check_hresult(shim()->abi_GetView(put(view)));
-        return view;
-    }
-
-    bool IndexOf(const T & value, uint32_t & index) const
-    {
-        bool found = false;
-        check_hresult(shim()->abi_IndexOf(get(value), &index, put(found)));
-        return found;
-    }
-
-    void SetAt(const uint32_t index, const T & value) const
-    {
-        check_hresult(shim()->abi_SetAt(index, get(value)));
-    }
-
-    void InsertAt(const uint32_t index, const T & value) const
-    {
-        check_hresult(shim()->abi_InsertAt(index, get(value)));
-    }
-
-    void RemoveAt(const uint32_t index) const
-    {
-        check_hresult(shim()->abi_RemoveAt(index));
-    }
-
-    void Append(const T & value) const
-    {
-        check_hresult(shim()->abi_Append(get(value)));
-    }
-
-    void RemoveAtEnd() const
-    {
-        check_hresult(shim()->abi_RemoveAtEnd());
-    }
-
-    void Clear() const
-    {
-        check_hresult(shim()->abi_Clear());
-    }
-
-    uint32_t GetMany(uint32_t startIndex, array_ref<T> values) const
-    {
-        uint32_t actual = 0;
-        check_hresult(shim()->abi_GetMany(startIndex, values.size(), get(values), &actual));
-        return actual;
-    }
-
-    void ReplaceAll(array_ref<const T> value) const
-    {
-        check_hresult(shim()->abi_ReplaceAll(value.size(), get(value)));
-    }
+    T GetAt(const uint32_t index) const;
+    uint32_t Size() const;
+    IVectorView<T> GetView() const;
+    bool IndexOf(const T & value, uint32_t & index) const;
+    void SetAt(const uint32_t index, const T & value) const;
+    void InsertAt(const uint32_t index, const T & value) const;
+    void RemoveAt(const uint32_t index) const;
+    void Append(const T & value) const;
+    void RemoveAtEnd() const;
+    void Clear() const;
+    uint32_t GetMany(uint32_t startIndex, array_ref<T> values) const;
+    void ReplaceAll(array_ref<const T> value) const;
 };
 
 template <typename D, typename K, typename V>
-class impl_IMapView
+struct impl_IMapView
 {
-    auto shim() const { return impl::shim<D, IMapView<K, V>>(this); }
-
-public:
-
-    V Lookup(const K & key) const
-    {
-        V result = impl::empty_value<V>();
-        check_hresult(shim()->abi_Lookup(get(key), put(result)));
-        return result;
-    }
-
-    uint32_t Size() const
-    {
-        uint32_t size = 0;
-        check_hresult(shim()->get_Size(&size));
-        return size;
-    }
-
-    bool HasKey(const K & key) const
-    {
-        bool found = false;
-        check_hresult(shim()->abi_HasKey(get(key), put(found)));
-        return found;
-    }
-
-    void Split(IMapView<K, V> & firstPartition, IMapView<K, V> & secondPartition)
-    {
-        check_hresult(shim()->abi_Split(put(firstPartition), put(secondPartition)));
-    }
+    V Lookup(const K & key) const;
+    uint32_t Size() const;
+    bool HasKey(const K & key) const;
+    void Split(IMapView<K, V> & firstPartition, IMapView<K, V> & secondPartition);
 };
 
 template <typename D, typename K, typename V>
-class impl_IMap
+struct impl_IMap
 {
-    auto shim() const { return impl::shim<D, IMap<K, V>>(this); }
-
-public:
-
-    V Lookup(const K & key) const
-    {
-        V result = impl::empty_value<V>();
-        check_hresult(shim()->abi_Lookup(get(key), put(result)));
-        return result;
-    }
-
-    uint32_t Size() const
-    {
-        uint32_t size = 0;
-        check_hresult(shim()->get_Size(&size));
-        return size;
-    }
-
-    bool HasKey(const K & key) const
-    {
-        bool found = false;
-        check_hresult(shim()->abi_HasKey(get(key), put(found)));
-        return found;
-    }
-
-    IMapView<K, V> GetView() const
-    {
-        IMapView<K, V> view;
-        check_hresult(shim()->abi_GetView(put(view)));
-        return view;
-    }
-
-    bool Insert(const K & key, const V & value) const
-    {
-        bool replaced = false;
-        check_hresult(shim()->abi_Insert(get(key), get(value), put(replaced)));
-        return replaced;
-    }
-
-    void Remove(const K & key) const
-    {
-        check_hresult(shim()->abi_Remove(get(key)));
-    }
-
-    void Clear() const
-    {
-        check_hresult(shim()->abi_Clear());
-    }
+    V Lookup(const K & key) const;
+    uint32_t Size() const;
+    bool HasKey(const K & key) const;
+    IMapView<K, V> GetView() const;
+    bool Insert(const K & key, const V & value) const;
+    void Remove(const K & key) const;
+    void Clear() const;
 };
 
 template <typename D, typename K>
-class impl_IMapChangedEventArgs
+struct impl_IMapChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IMapChangedEventArgs<K>>(this); }
-
-public:
-
-    CollectionChange CollectionChange() const
-    {
-        Collections::CollectionChange value{};
-        check_hresult(shim()->get_CollectionChange(&value));
-        return value;
-    }
-
-    K Key() const
-    {
-        K result = impl::empty_value<K>();
-        check_hresult(shim()->get_Key(put(result)));
-        return result;
-    }
+    CollectionChange CollectionChange() const;
+    K Key() const;
 };
 
 template <typename D, typename K, typename V>
-class impl_IObservableMap
+struct impl_IObservableMap
 {
-    auto shim() const { return impl::shim<D, IObservableMap<K, V>>(this); }
-
-public:
-
-    event_token MapChanged(const MapChangedEventHandler<K, V> & handler) const
-    {
-        event_token cookie {};
-        check_hresult(shim()->add_MapChanged(get(handler), &cookie));
-        return cookie;
-    }
-
-    void MapChanged(const event_token cookie) const
-    {
-        check_hresult(shim()->remove_MapChanged(cookie));
-    }
+    event_token MapChanged(const MapChangedEventHandler<K, V> & handler) const;
+    void MapChanged(const event_token cookie) const;
 
     using MapChanged_revoker = event_revoker<IObservableMap<K, V>>;
 
@@ -588,23 +313,10 @@ public:
 };
 
 template <typename D, typename T>
-class impl_IObservableVector
+struct impl_IObservableVector
 {
-    auto shim() const { return impl::shim<D, IObservableVector<T>>(this); }
-
-public:
-
-    event_token VectorChanged(const VectorChangedEventHandler<T> & handler) const
-    {
-        event_token cookie {};
-        check_hresult(shim()->add_VectorChanged(get(handler), &cookie));
-        return cookie;
-    }
-
-    void VectorChanged(const event_token cookie) const
-    {
-        check_hresult(shim()->remove_VectorChanged(cookie));
-    }
+    event_token VectorChanged(const VectorChangedEventHandler<T> & handler) const;
+    void VectorChanged(const event_token cookie) const;
 
     using VectorChanged_revoker = event_revoker<IObservableVector<T>>;
 
@@ -617,6 +329,12 @@ public:
 }
 
 namespace impl {
+
+template <> struct traits<Windows::Foundation::Collections::IVectorChangedEventArgs>
+{
+    using abi = ABI::Windows::Foundation::Collections::IVectorChangedEventArgs;
+    template <typename D> using consume = Windows::Foundation::Collections::impl_IVectorChangedEventArgs<D>;
+};
 
 template <typename K, typename V> struct traits<Windows::Foundation::Collections::MapChangedEventHandler<K, V>>
 {
@@ -748,6 +466,14 @@ struct WINRT_EBO MapChangedEventHandler : IUnknown
     template <typename F> MapChangedEventHandler(F * handler);
     template <typename O, typename M> MapChangedEventHandler(O * object, M method);
     void operator()(const IObservableMap<K, V> & sender, const IMapChangedEventArgs<K> & args) const;
+};
+
+struct IVectorChangedEventArgs :
+    IInspectable,
+    impl::consume<IVectorChangedEventArgs>
+{
+    IVectorChangedEventArgs(std::nullptr_t = nullptr) noexcept {}
+    auto operator->() const noexcept { return ptr<IVectorChangedEventArgs>(m_ptr); }
 };
 
 template <typename T>
@@ -934,6 +660,319 @@ struct WINRT_EBO IObservableVector :
     IObservableVector(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IObservableVector>(m_ptr); }
 };
+
+template <typename D>
+CollectionChange impl_IVectorChangedEventArgs<D>::CollectionChange() const
+{
+    Collections::CollectionChange value{};
+    check_hresult(static_cast<const IVectorChangedEventArgs &>(static_cast<const D &>(*this))->get_CollectionChange(&value));
+    return value;
+}
+
+template <typename D>
+uint32_t impl_IVectorChangedEventArgs<D>::Index() const
+{
+    uint32_t index = 0;
+    check_hresult(static_cast<const IVectorChangedEventArgs &>(static_cast<const D &>(*this))->get_Index(&index));
+    return index;
+}
+
+template <typename D, typename T>
+T impl_IIterator<D, T>::Current() const
+{
+    T result = impl::empty_value<T>();
+    check_hresult(static_cast<const IIterator<T> &>(static_cast<const D &>(*this))->get_Current(put(result)));
+    return result;
+}
+
+template <typename D, typename T>
+bool impl_IIterator<D, T>::HasCurrent() const
+{
+    bool temp = false;
+    check_hresult(static_cast<const IIterator<T> &>(static_cast<const D &>(*this))->get_HasCurrent(put(temp)));
+    return temp;
+}
+
+template <typename D, typename T>
+bool impl_IIterator<D, T>::MoveNext() const
+{
+    bool temp = false;
+    check_hresult(static_cast<const IIterator<T> &>(static_cast<const D &>(*this))->abi_MoveNext(put(temp)));
+    return temp;
+}
+
+template <typename D, typename T>
+uint32_t impl_IIterator<D, T>::GetMany(array_ref<T> values) const
+{
+    uint32_t actual = 0;
+    check_hresult(static_cast<const IIterator<T> &>(static_cast<const D &>(*this))->abi_GetMany(values.size(), get(values), &actual));
+    return actual;
+}
+
+template <typename D, typename T>
+IIterator<T> impl_IIterable<D, T>::First() const
+{
+    IIterator<T> iterator;
+    check_hresult(static_cast<const IIterable<T> &>(static_cast<const D &>(*this))->abi_First(put(iterator)));
+    return iterator;
+}
+
+template <typename D, typename K, typename V>
+K impl_IKeyValuePair<D, K, V>::Key() const
+{
+    K result = impl::empty_value<K>();
+    check_hresult(static_cast<const IKeyValuePair<K, V> &>(static_cast<const D &>(*this))->get_Key(put(result)));
+    return result;
+}
+
+template <typename D, typename K, typename V>
+V impl_IKeyValuePair<D, K, V>::Value() const
+{
+    V result = impl::empty_value<V>();
+    check_hresult(static_cast<const IKeyValuePair<K, V> &>(static_cast<const D &>(*this))->get_Value(put(result)));
+    return result;
+}
+
+template <typename D, typename T>
+T impl_IVectorView<D, T>::GetAt(const uint32_t index) const
+{
+    T result = impl::empty_value<T>();
+    check_hresult(static_cast<const IVectorView<T> &>(static_cast<const D &>(*this))->abi_GetAt(index, put(result)));
+    return result;
+}
+
+template <typename D, typename T>
+uint32_t impl_IVectorView<D, T>::Size() const
+{
+    uint32_t size = 0;
+    check_hresult(static_cast<const IVectorView<T> &>(static_cast<const D &>(*this))->get_Size(&size));
+    return size;
+}
+
+template <typename D, typename T>
+bool impl_IVectorView<D, T>::IndexOf(const T & value, uint32_t & index) const
+{
+    bool found = false;
+    check_hresult(static_cast<const IVectorView<T> &>(static_cast<const D &>(*this))->abi_IndexOf(get(value), &index, put(found)));
+    return found;
+}
+
+template <typename D, typename T>
+uint32_t impl_IVectorView<D, T>::GetMany(uint32_t startIndex, array_ref<T> values) const
+{
+    uint32_t actual = 0;
+    check_hresult(static_cast<const IVectorView<T> &>(static_cast<const D &>(*this))->abi_GetMany(startIndex, values.size(), get(values), &actual));
+    return actual;
+}
+
+template <typename D, typename T>
+T impl_IVector<D, T>::GetAt(const uint32_t index) const
+{
+    T result = impl::empty_value<T>();
+    check_hresult(static_cast<const IVector<T> &>(static_cast<const D &>(*this))->abi_GetAt(index, put(result)));
+    return result;
+}
+
+template <typename D, typename T>
+uint32_t impl_IVector<D, T>::Size() const
+{
+    uint32_t size = 0;
+    check_hresult(static_cast<const IVector<T> &>(static_cast<const D &>(*this))->get_Size(&size));
+    return size;
+}
+
+template <typename D, typename T>
+IVectorView<T> impl_IVector<D, T>::GetView() const
+{
+    IVectorView<T> view;
+    check_hresult(static_cast<const IVector<T> &>(static_cast<const D &>(*this))->abi_GetView(put(view)));
+    return view;
+}
+
+template <typename D, typename T>
+bool impl_IVector<D, T>::IndexOf(const T & value, uint32_t & index) const
+{
+    bool found = false;
+    check_hresult(static_cast<const IVector<T> &>(static_cast<const D &>(*this))->abi_IndexOf(get(value), &index, put(found)));
+    return found;
+}
+
+template <typename D, typename T>
+void impl_IVector<D, T>::SetAt(const uint32_t index, const T & value) const
+{
+    check_hresult(static_cast<const IVector<T> &>(static_cast<const D &>(*this))->abi_SetAt(index, get(value)));
+}
+
+template <typename D, typename T>
+void impl_IVector<D, T>::InsertAt(const uint32_t index, const T & value) const
+{
+    check_hresult(static_cast<const IVector<T> &>(static_cast<const D &>(*this))->abi_InsertAt(index, get(value)));
+}
+
+template <typename D, typename T>
+void impl_IVector<D, T>::RemoveAt(const uint32_t index) const
+{
+    check_hresult(static_cast<const IVector<T> &>(static_cast<const D &>(*this))->abi_RemoveAt(index));
+}
+
+template <typename D, typename T>
+void impl_IVector<D, T>::Append(const T & value) const
+{
+    check_hresult(static_cast<const IVector<T> &>(static_cast<const D &>(*this))->abi_Append(get(value)));
+}
+
+template <typename D, typename T>
+void impl_IVector<D, T>::RemoveAtEnd() const
+{
+    check_hresult(static_cast<const IVector<T> &>(static_cast<const D &>(*this))->abi_RemoveAtEnd());
+}
+
+template <typename D, typename T>
+void impl_IVector<D, T>::Clear() const
+{
+    check_hresult(static_cast<const IVector<T> &>(static_cast<const D &>(*this))->abi_Clear());
+}
+
+template <typename D, typename T>
+uint32_t impl_IVector<D, T>::GetMany(uint32_t startIndex, array_ref<T> values) const
+{
+    uint32_t actual = 0;
+    check_hresult(static_cast<const IVector<T> &>(static_cast<const D &>(*this))->abi_GetMany(startIndex, values.size(), get(values), &actual));
+    return actual;
+}
+
+template <typename D, typename T>
+void impl_IVector<D, T>::ReplaceAll(array_ref<const T> value) const
+{
+    check_hresult(static_cast<const IVector<T> &>(static_cast<const D &>(*this))->abi_ReplaceAll(value.size(), get(value)));
+}
+
+template <typename D, typename K, typename V>
+V impl_IMapView<D, K, V>::Lookup(const K & key) const
+{
+    V result = impl::empty_value<V>();
+    check_hresult(static_cast<const IMapView<K, V> &>(static_cast<const D &>(*this))->abi_Lookup(get(key), put(result)));
+    return result;
+}
+
+template <typename D, typename K, typename V>
+uint32_t impl_IMapView<D, K, V>::Size() const
+{
+    uint32_t size = 0;
+    check_hresult(static_cast<const IMapView<K, V> &>(static_cast<const D &>(*this))->get_Size(&size));
+    return size;
+}
+
+template <typename D, typename K, typename V>
+bool impl_IMapView<D, K, V>::HasKey(const K & key) const
+{
+    bool found = false;
+    check_hresult(static_cast<const IMapView<K, V> &>(static_cast<const D &>(*this))->abi_HasKey(get(key), put(found)));
+    return found;
+}
+
+template <typename D, typename K, typename V>
+void impl_IMapView<D, K, V>::Split(IMapView<K, V> & firstPartition, IMapView<K, V> & secondPartition)
+{
+    check_hresult(static_cast<const IMapView<K, V> &>(static_cast<const D &>(*this))->abi_Split(put(firstPartition), put(secondPartition)));
+}
+
+template <typename D, typename K, typename V>
+V impl_IMap<D, K, V>::Lookup(const K & key) const
+{
+    V result = impl::empty_value<V>();
+    check_hresult(static_cast<const IMap<K, V> &>(static_cast<const D &>(*this))->abi_Lookup(get(key), put(result)));
+    return result;
+}
+
+template <typename D, typename K, typename V>
+uint32_t impl_IMap<D, K, V>::Size() const
+{
+    uint32_t size = 0;
+    check_hresult(static_cast<const IMap<K, V> &>(static_cast<const D &>(*this))->get_Size(&size));
+    return size;
+}
+
+template <typename D, typename K, typename V>
+bool impl_IMap<D, K, V>::HasKey(const K & key) const
+{
+    bool found = false;
+    check_hresult(static_cast<const IMap<K, V> &>(static_cast<const D &>(*this))->abi_HasKey(get(key), put(found)));
+    return found;
+}
+
+template <typename D, typename K, typename V>
+IMapView<K, V> impl_IMap<D, K, V>::GetView() const
+{
+    IMapView<K, V> view;
+    check_hresult(static_cast<const IMap<K, V> &>(static_cast<const D &>(*this))->abi_GetView(put(view)));
+    return view;
+}
+
+template <typename D, typename K, typename V>
+bool impl_IMap<D, K, V>::Insert(const K & key, const V & value) const
+{
+    bool replaced = false;
+    check_hresult(static_cast<const IMap<K, V> &>(static_cast<const D &>(*this))->abi_Insert(get(key), get(value), put(replaced)));
+    return replaced;
+}
+
+template <typename D, typename K, typename V>
+void impl_IMap<D, K, V>::Remove(const K & key) const
+{
+    check_hresult(static_cast<const IMap<K, V> &>(static_cast<const D &>(*this))->abi_Remove(get(key)));
+}
+
+template <typename D, typename K, typename V>
+void impl_IMap<D, K, V>::Clear() const
+{
+    check_hresult(static_cast<const IMap<K, V> &>(static_cast<const D &>(*this))->abi_Clear());
+}
+
+template <typename D, typename K>
+CollectionChange impl_IMapChangedEventArgs<D, K>::CollectionChange() const
+{
+    Collections::CollectionChange value{};
+    check_hresult(static_cast<const IMapChangedEventArgs<K> &>(static_cast<const D &>(*this))->get_CollectionChange(&value));
+    return value;
+}
+
+template <typename D, typename K>
+K impl_IMapChangedEventArgs<D, K>::Key() const
+{
+    K result = impl::empty_value<K>();
+    check_hresult(static_cast<const IMapChangedEventArgs<K> &>(static_cast<const D &>(*this))->get_Key(put(result)));
+    return result;
+}
+
+template <typename D, typename K, typename V>
+event_token impl_IObservableMap<D, K, V>::MapChanged(const MapChangedEventHandler<K, V> & handler) const
+{
+    event_token cookie{};
+    check_hresult(static_cast<const IObservableMap<K, V> &>(static_cast<const D &>(*this))->add_MapChanged(get(handler), &cookie));
+    return cookie;
+}
+
+template <typename D, typename K, typename V>
+void impl_IObservableMap<D, K, V>::MapChanged(const event_token cookie) const
+{
+    check_hresult(static_cast<const IObservableMap<K, V> &>(static_cast<const D &>(*this))->remove_MapChanged(cookie));
+}
+
+template <typename D, typename T>
+event_token impl_IObservableVector<D, T>::VectorChanged(const VectorChangedEventHandler<T> & handler) const
+{
+    event_token cookie{};
+    check_hresult(static_cast<const IObservableVector<T> &>(static_cast<const D &>(*this))->add_VectorChanged(get(handler), &cookie));
+    return cookie;
+}
+
+template <typename D, typename T>
+void impl_IObservableVector<D, T>::VectorChanged(const event_token cookie) const
+{
+    check_hresult(static_cast<const IObservableVector<T> &>(static_cast<const D &>(*this))->remove_VectorChanged(cookie));
+}
+
 
 }
 

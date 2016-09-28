@@ -25,12 +25,8 @@ template <> struct __declspec(uuid("51c3d2fd-b8a1-5620-b746-7ee6d533aca3")) __de
 namespace Windows::Security::Cryptography::DataProtection {
 
 template <typename D>
-class WINRT_EBO impl_IDataProtectionProvider
+struct WINRT_EBO impl_IDataProtectionProvider
 {
-    auto shim() const { return impl::shim<D, IDataProtectionProvider>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> ProtectAsync(const Windows::Storage::Streams::IBuffer & data) const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> UnprotectAsync(const Windows::Storage::Streams::IBuffer & data) const;
     Windows::Foundation::IAsyncAction ProtectStreamAsync(const Windows::Storage::Streams::IInputStream & src, const Windows::Storage::Streams::IOutputStream & dest) const;
@@ -38,12 +34,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDataProtectionProviderFactory
+struct WINRT_EBO impl_IDataProtectionProviderFactory
 {
-    auto shim() const { return impl::shim<D, IDataProtectionProviderFactory>(this); }
-
-public:
-
     Windows::Security::Cryptography::DataProtection::DataProtectionProvider CreateOverloadExplicit(hstring_ref protectionDescriptor) const;
 };
 

@@ -220,35 +220,23 @@ template <> struct __declspec(uuid("3fa6536f-7e7a-5bc9-b20f-d866cacaf81c")) __de
 namespace Windows::Security::Authentication::Web::Provider {
 
 template <typename D>
-class WINRT_EBO impl_IWebAccountClientView
+struct WINRT_EBO impl_IWebAccountClientView
 {
-    auto shim() const { return impl::shim<D, IWebAccountClientView>(this); }
-
-public:
-
     Windows::Foundation::Uri ApplicationCallbackUri() const;
     Windows::Security::Authentication::Web::Provider::WebAccountClientViewType Type() const;
     hstring AccountPairwiseId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebAccountClientViewFactory
+struct WINRT_EBO impl_IWebAccountClientViewFactory
 {
-    auto shim() const { return impl::shim<D, IWebAccountClientViewFactory>(this); }
-
-public:
-
     Windows::Security::Authentication::Web::Provider::WebAccountClientView Create(Windows::Security::Authentication::Web::Provider::WebAccountClientViewType viewType, const Windows::Foundation::Uri & applicationCallbackUri) const;
     Windows::Security::Authentication::Web::Provider::WebAccountClientView CreateWithPairwiseId(Windows::Security::Authentication::Web::Provider::WebAccountClientViewType viewType, const Windows::Foundation::Uri & applicationCallbackUri, hstring_ref accountPairwiseId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebAccountManagerStatics
+struct WINRT_EBO impl_IWebAccountManagerStatics
 {
-    auto shim() const { return impl::shim<D, IWebAccountManagerStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction UpdateWebAccountPropertiesAsync(const Windows::Security::Credentials::WebAccount & webAccount, hstring_ref webAccountUserName, const Windows::Foundation::Collections::IMapView<hstring, hstring> & additionalProperties) const;
     Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> AddWebAccountAsync(hstring_ref webAccountId, hstring_ref webAccountUserName, const Windows::Foundation::Collections::IMapView<hstring, hstring> & props) const;
     Windows::Foundation::IAsyncAction DeleteWebAccountAsync(const Windows::Security::Credentials::WebAccount & webAccount) const;
@@ -262,22 +250,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebAccountManagerStatics2
+struct WINRT_EBO impl_IWebAccountManagerStatics2
 {
-    auto shim() const { return impl::shim<D, IWebAccountManagerStatics2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction PullCookiesAsync(hstring_ref uriString, hstring_ref callerPFN) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebAccountMapManagerStatics
+struct WINRT_EBO impl_IWebAccountMapManagerStatics
 {
-    auto shim() const { return impl::shim<D, IWebAccountMapManagerStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> AddWebAccountAsync(hstring_ref webAccountId, hstring_ref webAccountUserName, const Windows::Foundation::Collections::IMapView<hstring, hstring> & props, Windows::Security::Authentication::Web::Provider::WebAccountScope scope, hstring_ref perUserWebAccountId) const;
     Windows::Foundation::IAsyncAction SetPerAppToPerUserAccountAsync(const Windows::Security::Credentials::WebAccount & perAppAccount, hstring_ref perUserWebAccountId) const;
     Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> GetPerUserFromPerAppAccountAsync(const Windows::Security::Credentials::WebAccount & perAppAccount) const;
@@ -285,64 +265,40 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebAccountProviderAddAccountOperation
+struct WINRT_EBO impl_IWebAccountProviderAddAccountOperation
 {
-    auto shim() const { return impl::shim<D, IWebAccountProviderAddAccountOperation>(this); }
-
-public:
-
     void ReportCompleted() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebAccountProviderBaseReportOperation
+struct WINRT_EBO impl_IWebAccountProviderBaseReportOperation
 {
-    auto shim() const { return impl::shim<D, IWebAccountProviderBaseReportOperation>(this); }
-
-public:
-
     void ReportCompleted() const;
     void ReportError(const Windows::Security::Authentication::Web::Core::WebProviderError & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebAccountProviderDeleteAccountOperation
+struct WINRT_EBO impl_IWebAccountProviderDeleteAccountOperation
 {
-    auto shim() const { return impl::shim<D, IWebAccountProviderDeleteAccountOperation>(this); }
-
-public:
-
     Windows::Security::Credentials::WebAccount WebAccount() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebAccountProviderManageAccountOperation
+struct WINRT_EBO impl_IWebAccountProviderManageAccountOperation
 {
-    auto shim() const { return impl::shim<D, IWebAccountProviderManageAccountOperation>(this); }
-
-public:
-
     Windows::Security::Credentials::WebAccount WebAccount() const;
     void ReportCompleted() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebAccountProviderOperation
+struct WINRT_EBO impl_IWebAccountProviderOperation
 {
-    auto shim() const { return impl::shim<D, IWebAccountProviderOperation>(this); }
-
-public:
-
     Windows::Security::Authentication::Web::Provider::WebAccountProviderOperationKind Kind() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebAccountProviderRetrieveCookiesOperation
+struct WINRT_EBO impl_IWebAccountProviderRetrieveCookiesOperation
 {
-    auto shim() const { return impl::shim<D, IWebAccountProviderRetrieveCookiesOperation>(this); }
-
-public:
-
     Windows::Foundation::Uri Context() const;
     Windows::Foundation::Collections::IVector<Windows::Web::Http::HttpCookie> Cookies() const;
     void Uri(const Windows::Foundation::Uri & uri) const;
@@ -351,45 +307,29 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebAccountProviderSignOutAccountOperation
+struct WINRT_EBO impl_IWebAccountProviderSignOutAccountOperation
 {
-    auto shim() const { return impl::shim<D, IWebAccountProviderSignOutAccountOperation>(this); }
-
-public:
-
     Windows::Security::Credentials::WebAccount WebAccount() const;
     Windows::Foundation::Uri ApplicationCallbackUri() const;
     hstring ClientId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebAccountProviderSilentReportOperation
+struct WINRT_EBO impl_IWebAccountProviderSilentReportOperation
 {
-    auto shim() const { return impl::shim<D, IWebAccountProviderSilentReportOperation>(this); }
-
-public:
-
     void ReportUserInteractionRequired() const;
     void ReportUserInteractionRequired(const Windows::Security::Authentication::Web::Core::WebProviderError & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebAccountProviderTokenObjects
+struct WINRT_EBO impl_IWebAccountProviderTokenObjects
 {
-    auto shim() const { return impl::shim<D, IWebAccountProviderTokenObjects>(this); }
-
-public:
-
     Windows::Security::Authentication::Web::Provider::IWebAccountProviderOperation Operation() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebAccountProviderTokenOperation
+struct WINRT_EBO impl_IWebAccountProviderTokenOperation
 {
-    auto shim() const { return impl::shim<D, IWebAccountProviderTokenOperation>(this); }
-
-public:
-
     Windows::Security::Authentication::Web::Provider::WebProviderTokenRequest ProviderRequest() const;
     Windows::Foundation::Collections::IVector<Windows::Security::Authentication::Web::Provider::WebProviderTokenResponse> ProviderResponses() const;
     void CacheExpirationTime(const Windows::Foundation::DateTime & value) const;
@@ -397,34 +337,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebAccountProviderUIReportOperation
+struct WINRT_EBO impl_IWebAccountProviderUIReportOperation
 {
-    auto shim() const { return impl::shim<D, IWebAccountProviderUIReportOperation>(this); }
-
-public:
-
     void ReportUserCanceled() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebAccountScopeManagerStatics
+struct WINRT_EBO impl_IWebAccountScopeManagerStatics
 {
-    auto shim() const { return impl::shim<D, IWebAccountScopeManagerStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> AddWebAccountAsync(hstring_ref webAccountId, hstring_ref webAccountUserName, const Windows::Foundation::Collections::IMapView<hstring, hstring> & props, Windows::Security::Authentication::Web::Provider::WebAccountScope scope) const;
     Windows::Foundation::IAsyncAction SetScopeAsync(const Windows::Security::Credentials::WebAccount & webAccount, Windows::Security::Authentication::Web::Provider::WebAccountScope scope) const;
     Windows::Security::Authentication::Web::Provider::WebAccountScope GetScope(const Windows::Security::Credentials::WebAccount & webAccount) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebProviderTokenRequest
+struct WINRT_EBO impl_IWebProviderTokenRequest
 {
-    auto shim() const { return impl::shim<D, IWebProviderTokenRequest>(this); }
-
-public:
-
     Windows::Security::Authentication::Web::Core::WebTokenRequest ClientRequest() const;
     Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::WebAccount> WebAccounts() const;
     Windows::Security::Authentication::Web::Provider::WebAccountSelectionOptions WebAccountSelectionOptions() const;
@@ -433,32 +361,20 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebProviderTokenRequest2
+struct WINRT_EBO impl_IWebProviderTokenRequest2
 {
-    auto shim() const { return impl::shim<D, IWebProviderTokenRequest2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> GetApplicationTokenBindingKeyIdAsync(Windows::Security::Authentication::Web::TokenBindingKeyType keyType, const Windows::Foundation::Uri & target) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebProviderTokenResponse
+struct WINRT_EBO impl_IWebProviderTokenResponse
 {
-    auto shim() const { return impl::shim<D, IWebProviderTokenResponse>(this); }
-
-public:
-
     Windows::Security::Authentication::Web::Core::WebTokenResponse ClientResponse() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWebProviderTokenResponseFactory
+struct WINRT_EBO impl_IWebProviderTokenResponseFactory
 {
-    auto shim() const { return impl::shim<D, IWebProviderTokenResponseFactory>(this); }
-
-public:
-
     Windows::Security::Authentication::Web::Provider::WebProviderTokenResponse Create(const Windows::Security::Authentication::Web::Core::WebTokenResponse & webTokenResponse) const;
 };
 

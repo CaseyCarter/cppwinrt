@@ -54,9 +54,9 @@ template <> struct traits<Windows::ApplicationModel::DataTransfer::ShareTarget::
 
 namespace Windows::ApplicationModel::DataTransfer::ShareTarget {
 
-template <typename T> class impl_IQuickLink;
-template <typename T> class impl_IShareOperation;
-template <typename T> class impl_IShareOperation2;
+template <typename T> struct impl_IQuickLink;
+template <typename T> struct impl_IShareOperation;
+template <typename T> struct impl_IShareOperation2;
 
 }
 

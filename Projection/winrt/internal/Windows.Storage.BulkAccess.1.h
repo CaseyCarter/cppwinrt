@@ -62,9 +62,9 @@ template <> struct traits<Windows::Storage::BulkAccess::FolderInformation> { usi
 
 namespace Windows::Storage::BulkAccess {
 
-template <typename T> class impl_IFileInformationFactory;
-template <typename T> class impl_IFileInformationFactoryFactory;
-template <typename T> class impl_IStorageItemInformation;
+template <typename T> struct impl_IFileInformationFactory;
+template <typename T> struct impl_IFileInformationFactoryFactory;
+template <typename T> struct impl_IStorageItemInformation;
 
 }
 

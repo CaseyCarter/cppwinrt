@@ -180,12 +180,8 @@ template <> struct __declspec(uuid("1896faee-23e2-59ca-9802-0f48eed98ef4")) __de
 namespace Windows::Security::Cryptography::Certificates {
 
 template <typename D>
-class WINRT_EBO impl_ICertificate
+struct WINRT_EBO impl_ICertificate
 {
-    auto shim() const { return impl::shim<D, ICertificate>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Certificates::CertificateChain> BuildChainAsync(const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> & certificates) const;
     Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Certificates::CertificateChain> BuildChainAsync(const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> & certificates, const Windows::Security::Cryptography::Certificates::ChainBuildingParameters & parameters) const;
     com_array<uint8_t> SerialNumber() const;
@@ -204,12 +200,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICertificate2
+struct WINRT_EBO impl_ICertificate2
 {
-    auto shim() const { return impl::shim<D, ICertificate2>(this); }
-
-public:
-
     bool IsSecurityDeviceBound() const;
     Windows::Security::Cryptography::Certificates::CertificateKeyUsages KeyUsages() const;
     hstring KeyAlgorithmName() const;
@@ -219,79 +211,51 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICertificate3
+struct WINRT_EBO impl_ICertificate3
 {
-    auto shim() const { return impl::shim<D, ICertificate3>(this); }
-
-public:
-
     bool IsPerUser() const;
     hstring StoreName() const;
     hstring KeyStorageProviderName() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICertificateChain
+struct WINRT_EBO impl_ICertificateChain
 {
-    auto shim() const { return impl::shim<D, ICertificateChain>(this); }
-
-public:
-
     Windows::Security::Cryptography::Certificates::ChainValidationResult Validate() const;
     Windows::Security::Cryptography::Certificates::ChainValidationResult Validate(const Windows::Security::Cryptography::Certificates::ChainValidationParameters & parameter) const;
     Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> GetCertificates(bool includeRoot) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICertificateEnrollmentManagerStatics
+struct WINRT_EBO impl_ICertificateEnrollmentManagerStatics
 {
-    auto shim() const { return impl::shim<D, ICertificateEnrollmentManagerStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<hstring> CreateRequestAsync(const Windows::Security::Cryptography::Certificates::CertificateRequestProperties & request) const;
     Windows::Foundation::IAsyncAction InstallCertificateAsync(hstring_ref certificate, Windows::Security::Cryptography::Certificates::InstallOptions installOption) const;
     Windows::Foundation::IAsyncAction ImportPfxDataAsync(hstring_ref pfxData, hstring_ref password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, hstring_ref friendlyName) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICertificateEnrollmentManagerStatics2
+struct WINRT_EBO impl_ICertificateEnrollmentManagerStatics2
 {
-    auto shim() const { return impl::shim<D, ICertificateEnrollmentManagerStatics2>(this); }
-
-public:
-
     Windows::Security::Cryptography::Certificates::UserCertificateEnrollmentManager UserCertificateEnrollmentManager() const;
     Windows::Foundation::IAsyncAction ImportPfxDataAsync(hstring_ref pfxData, hstring_ref password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, hstring_ref friendlyName, hstring_ref keyStorageProvider) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICertificateEnrollmentManagerStatics3
+struct WINRT_EBO impl_ICertificateEnrollmentManagerStatics3
 {
-    auto shim() const { return impl::shim<D, ICertificateEnrollmentManagerStatics3>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction ImportPfxDataAsync(hstring_ref pfxData, hstring_ref password, const Windows::Security::Cryptography::Certificates::PfxImportParameters & pfxImportParameters) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICertificateFactory
+struct WINRT_EBO impl_ICertificateFactory
 {
-    auto shim() const { return impl::shim<D, ICertificateFactory>(this); }
-
-public:
-
     Windows::Security::Cryptography::Certificates::Certificate CreateCertificate(const Windows::Storage::Streams::IBuffer & certBlob) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICertificateKeyUsages
+struct WINRT_EBO impl_ICertificateKeyUsages
 {
-    auto shim() const { return impl::shim<D, ICertificateKeyUsages>(this); }
-
-public:
-
     bool EncipherOnly() const;
     void EncipherOnly(bool value) const;
     bool CrlSign() const;
@@ -311,12 +275,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICertificateQuery
+struct WINRT_EBO impl_ICertificateQuery
 {
-    auto shim() const { return impl::shim<D, ICertificateQuery>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<hstring> EnhancedKeyUsages() const;
     hstring IssuerName() const;
     void IssuerName(hstring_ref value) const;
@@ -329,12 +289,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICertificateQuery2
+struct WINRT_EBO impl_ICertificateQuery2
 {
-    auto shim() const { return impl::shim<D, ICertificateQuery2>(this); }
-
-public:
-
     bool IncludeDuplicates() const;
     void IncludeDuplicates(bool value) const;
     bool IncludeExpiredCertificates() const;
@@ -344,12 +300,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICertificateRequestProperties
+struct WINRT_EBO impl_ICertificateRequestProperties
 {
-    auto shim() const { return impl::shim<D, ICertificateRequestProperties>(this); }
-
-public:
-
     hstring Subject() const;
     void Subject(hstring_ref value) const;
     hstring KeyAlgorithmName() const;
@@ -371,12 +323,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICertificateRequestProperties2
+struct WINRT_EBO impl_ICertificateRequestProperties2
 {
-    auto shim() const { return impl::shim<D, ICertificateRequestProperties2>(this); }
-
-public:
-
     hstring SmartcardReaderName() const;
     void SmartcardReaderName(hstring_ref value) const;
     Windows::Security::Cryptography::Certificates::Certificate SigningCertificate() const;
@@ -386,12 +334,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICertificateRequestProperties3
+struct WINRT_EBO impl_ICertificateRequestProperties3
 {
-    auto shim() const { return impl::shim<D, ICertificateRequestProperties3>(this); }
-
-public:
-
     hstring CurveName() const;
     void CurveName(hstring_ref value) const;
     com_array<uint8_t> CurveParameters() const;
@@ -405,33 +349,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICertificateStore
+struct WINRT_EBO impl_ICertificateStore
 {
-    auto shim() const { return impl::shim<D, ICertificateStore>(this); }
-
-public:
-
     void Add(const Windows::Security::Cryptography::Certificates::Certificate & certificate) const;
     void Delete(const Windows::Security::Cryptography::Certificates::Certificate & certificate) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICertificateStore2
+struct WINRT_EBO impl_ICertificateStore2
 {
-    auto shim() const { return impl::shim<D, ICertificateStore2>(this); }
-
-public:
-
     hstring Name() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICertificateStoresStatics
+struct WINRT_EBO impl_ICertificateStoresStatics
 {
-    auto shim() const { return impl::shim<D, ICertificateStoresStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>> FindAllAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>> FindAllAsync(const Windows::Security::Cryptography::Certificates::CertificateQuery & query) const;
     Windows::Security::Cryptography::Certificates::CertificateStore TrustedRootCertificationAuthorities() const;
@@ -440,22 +372,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICertificateStoresStatics2
+struct WINRT_EBO impl_ICertificateStoresStatics2
 {
-    auto shim() const { return impl::shim<D, ICertificateStoresStatics2>(this); }
-
-public:
-
     Windows::Security::Cryptography::Certificates::UserCertificateStore GetUserStoreByName(hstring_ref storeName) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IChainBuildingParameters
+struct WINRT_EBO impl_IChainBuildingParameters
 {
-    auto shim() const { return impl::shim<D, IChainBuildingParameters>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<hstring> EnhancedKeyUsages() const;
     Windows::Foundation::DateTime ValidationTimestamp() const;
     void ValidationTimestamp(const Windows::Foundation::DateTime & value) const;
@@ -471,12 +395,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IChainValidationParameters
+struct WINRT_EBO impl_IChainValidationParameters
 {
-    auto shim() const { return impl::shim<D, IChainValidationParameters>(this); }
-
-public:
-
     Windows::Security::Cryptography::Certificates::CertificateChainPolicy CertificateChainPolicy() const;
     void CertificateChainPolicy(Windows::Security::Cryptography::Certificates::CertificateChainPolicy value) const;
     Windows::Networking::HostName ServerDnsName() const;
@@ -484,12 +404,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICmsAttachedSignature
+struct WINRT_EBO impl_ICmsAttachedSignature
 {
-    auto shim() const { return impl::shim<D, ICmsAttachedSignature>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> Certificates() const;
     com_array<uint8_t> Content() const;
     Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::CmsSignerInfo> Signers() const;
@@ -497,64 +413,40 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICmsAttachedSignatureFactory
+struct WINRT_EBO impl_ICmsAttachedSignatureFactory
 {
-    auto shim() const { return impl::shim<D, ICmsAttachedSignatureFactory>(this); }
-
-public:
-
     Windows::Security::Cryptography::Certificates::CmsAttachedSignature CreateCmsAttachedSignature(const Windows::Storage::Streams::IBuffer & inputBlob) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICmsAttachedSignatureStatics
+struct WINRT_EBO impl_ICmsAttachedSignatureStatics
 {
-    auto shim() const { return impl::shim<D, ICmsAttachedSignatureStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> GenerateSignatureAsync(const Windows::Storage::Streams::IBuffer & data, const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::CmsSignerInfo> & signers, const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> & certificates) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICmsDetachedSignature
+struct WINRT_EBO impl_ICmsDetachedSignature
 {
-    auto shim() const { return impl::shim<D, ICmsDetachedSignature>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> Certificates() const;
     Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::CmsSignerInfo> Signers() const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Cryptography::Certificates::SignatureValidationResult> VerifySignatureAsync(const Windows::Storage::Streams::IInputStream & data) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICmsDetachedSignatureFactory
+struct WINRT_EBO impl_ICmsDetachedSignatureFactory
 {
-    auto shim() const { return impl::shim<D, ICmsDetachedSignatureFactory>(this); }
-
-public:
-
     Windows::Security::Cryptography::Certificates::CmsDetachedSignature CreateCmsDetachedSignature(const Windows::Storage::Streams::IBuffer & inputBlob) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICmsDetachedSignatureStatics
+struct WINRT_EBO impl_ICmsDetachedSignatureStatics
 {
-    auto shim() const { return impl::shim<D, ICmsDetachedSignatureStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> GenerateSignatureAsync(const Windows::Storage::Streams::IInputStream & data, const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::CmsSignerInfo> & signers, const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> & certificates) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICmsSignerInfo
+struct WINRT_EBO impl_ICmsSignerInfo
 {
-    auto shim() const { return impl::shim<D, ICmsSignerInfo>(this); }
-
-public:
-
     Windows::Security::Cryptography::Certificates::Certificate Certificate() const;
     void Certificate(const Windows::Security::Cryptography::Certificates::Certificate & value) const;
     hstring HashAlgorithmName() const;
@@ -563,24 +455,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICmsTimestampInfo
+struct WINRT_EBO impl_ICmsTimestampInfo
 {
-    auto shim() const { return impl::shim<D, ICmsTimestampInfo>(this); }
-
-public:
-
     Windows::Security::Cryptography::Certificates::Certificate SigningCertificate() const;
     Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> Certificates() const;
     Windows::Foundation::DateTime Timestamp() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IKeyAlgorithmNamesStatics
+struct WINRT_EBO impl_IKeyAlgorithmNamesStatics
 {
-    auto shim() const { return impl::shim<D, IKeyAlgorithmNamesStatics>(this); }
-
-public:
-
     hstring Rsa() const;
     hstring Dsa() const;
     hstring Ecdh256() const;
@@ -592,66 +476,42 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IKeyAlgorithmNamesStatics2
+struct WINRT_EBO impl_IKeyAlgorithmNamesStatics2
 {
-    auto shim() const { return impl::shim<D, IKeyAlgorithmNamesStatics2>(this); }
-
-public:
-
     hstring Ecdsa() const;
     hstring Ecdh() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IKeyAttestationHelperStatics
+struct WINRT_EBO impl_IKeyAttestationHelperStatics
 {
-    auto shim() const { return impl::shim<D, IKeyAttestationHelperStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<hstring> DecryptTpmAttestationCredentialAsync(hstring_ref credential) const;
     hstring GetTpmAttestationCredentialId(hstring_ref credential) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IKeyAttestationHelperStatics2
+struct WINRT_EBO impl_IKeyAttestationHelperStatics2
 {
-    auto shim() const { return impl::shim<D, IKeyAttestationHelperStatics2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<hstring> DecryptTpmAttestationCredentialAsync(hstring_ref credential, hstring_ref containerName) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IKeyStorageProviderNamesStatics
+struct WINRT_EBO impl_IKeyStorageProviderNamesStatics
 {
-    auto shim() const { return impl::shim<D, IKeyStorageProviderNamesStatics>(this); }
-
-public:
-
     hstring SoftwareKeyStorageProvider() const;
     hstring SmartcardKeyStorageProvider() const;
     hstring PlatformKeyStorageProvider() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IKeyStorageProviderNamesStatics2
+struct WINRT_EBO impl_IKeyStorageProviderNamesStatics2
 {
-    auto shim() const { return impl::shim<D, IKeyStorageProviderNamesStatics2>(this); }
-
-public:
-
     hstring PassportKeyStorageProvider() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPfxImportParameters
+struct WINRT_EBO impl_IPfxImportParameters
 {
-    auto shim() const { return impl::shim<D, IPfxImportParameters>(this); }
-
-public:
-
     Windows::Security::Cryptography::Certificates::ExportOption Exportable() const;
     void Exportable(Windows::Security::Cryptography::Certificates::ExportOption value) const;
     Windows::Security::Cryptography::Certificates::KeyProtectionLevel KeyProtectionLevel() const;
@@ -669,24 +529,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IStandardCertificateStoreNamesStatics
+struct WINRT_EBO impl_IStandardCertificateStoreNamesStatics
 {
-    auto shim() const { return impl::shim<D, IStandardCertificateStoreNamesStatics>(this); }
-
-public:
-
     hstring Personal() const;
     hstring TrustedRootCertificationAuthorities() const;
     hstring IntermediateCertificationAuthorities() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISubjectAlternativeNameInfo
+struct WINRT_EBO impl_ISubjectAlternativeNameInfo
 {
-    auto shim() const { return impl::shim<D, ISubjectAlternativeNameInfo>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<hstring> EmailName() const;
     Windows::Foundation::Collections::IVectorView<hstring> IPAddress() const;
     Windows::Foundation::Collections::IVectorView<hstring> Url() const;
@@ -696,12 +548,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUserCertificateEnrollmentManager
+struct WINRT_EBO impl_IUserCertificateEnrollmentManager
 {
-    auto shim() const { return impl::shim<D, IUserCertificateEnrollmentManager>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<hstring> CreateRequestAsync(const Windows::Security::Cryptography::Certificates::CertificateRequestProperties & request) const;
     Windows::Foundation::IAsyncAction InstallCertificateAsync(hstring_ref certificate, Windows::Security::Cryptography::Certificates::InstallOptions installOption) const;
     Windows::Foundation::IAsyncAction ImportPfxDataAsync(hstring_ref pfxData, hstring_ref password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, hstring_ref friendlyName) const;
@@ -709,22 +557,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUserCertificateEnrollmentManager2
+struct WINRT_EBO impl_IUserCertificateEnrollmentManager2
 {
-    auto shim() const { return impl::shim<D, IUserCertificateEnrollmentManager2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction ImportPfxDataAsync(hstring_ref pfxData, hstring_ref password, const Windows::Security::Cryptography::Certificates::PfxImportParameters & pfxImportParameters) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUserCertificateStore
+struct WINRT_EBO impl_IUserCertificateStore
 {
-    auto shim() const { return impl::shim<D, IUserCertificateStore>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<bool> RequestAddAsync(const Windows::Security::Cryptography::Certificates::Certificate & certificate) const;
     Windows::Foundation::IAsyncOperation<bool> RequestDeleteAsync(const Windows::Security::Cryptography::Certificates::Certificate & certificate) const;
     hstring Name() const;

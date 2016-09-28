@@ -192,22 +192,22 @@ template <> struct traits<Windows::Perception::Spatial::SpatialStationaryFrameOf
 
 namespace Windows::Perception::Spatial {
 
-template <typename T> class impl_ISpatialAnchor;
-template <typename T> class impl_ISpatialAnchor2;
-template <typename T> class impl_ISpatialAnchorManagerStatics;
-template <typename T> class impl_ISpatialAnchorRawCoordinateSystemAdjustedEventArgs;
-template <typename T> class impl_ISpatialAnchorStatics;
-template <typename T> class impl_ISpatialAnchorStore;
-template <typename T> class impl_ISpatialAnchorTransferManagerStatics;
-template <typename T> class impl_ISpatialBoundingVolume;
-template <typename T> class impl_ISpatialBoundingVolumeStatics;
-template <typename T> class impl_ISpatialCoordinateSystem;
-template <typename T> class impl_ISpatialLocation;
-template <typename T> class impl_ISpatialLocator;
-template <typename T> class impl_ISpatialLocatorAttachedFrameOfReference;
-template <typename T> class impl_ISpatialLocatorPositionalTrackingDeactivatingEventArgs;
-template <typename T> class impl_ISpatialLocatorStatics;
-template <typename T> class impl_ISpatialStationaryFrameOfReference;
+template <typename T> struct impl_ISpatialAnchor;
+template <typename T> struct impl_ISpatialAnchor2;
+template <typename T> struct impl_ISpatialAnchorManagerStatics;
+template <typename T> struct impl_ISpatialAnchorRawCoordinateSystemAdjustedEventArgs;
+template <typename T> struct impl_ISpatialAnchorStatics;
+template <typename T> struct impl_ISpatialAnchorStore;
+template <typename T> struct impl_ISpatialAnchorTransferManagerStatics;
+template <typename T> struct impl_ISpatialBoundingVolume;
+template <typename T> struct impl_ISpatialBoundingVolumeStatics;
+template <typename T> struct impl_ISpatialCoordinateSystem;
+template <typename T> struct impl_ISpatialLocation;
+template <typename T> struct impl_ISpatialLocator;
+template <typename T> struct impl_ISpatialLocatorAttachedFrameOfReference;
+template <typename T> struct impl_ISpatialLocatorPositionalTrackingDeactivatingEventArgs;
+template <typename T> struct impl_ISpatialLocatorStatics;
+template <typename T> struct impl_ISpatialStationaryFrameOfReference;
 
 }
 

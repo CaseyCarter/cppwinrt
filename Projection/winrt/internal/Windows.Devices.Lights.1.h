@@ -50,9 +50,9 @@ template <> struct traits<Windows::Devices::Lights::LampAvailabilityChangedEvent
 
 namespace Windows::Devices::Lights {
 
-template <typename T> class impl_ILamp;
-template <typename T> class impl_ILampAvailabilityChangedEventArgs;
-template <typename T> class impl_ILampStatics;
+template <typename T> struct impl_ILamp;
+template <typename T> struct impl_ILampAvailabilityChangedEventArgs;
+template <typename T> struct impl_ILampStatics;
 
 }
 

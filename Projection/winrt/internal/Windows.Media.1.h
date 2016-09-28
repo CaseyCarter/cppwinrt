@@ -318,37 +318,37 @@ template <> struct traits<Windows::Media::VideoFrame> { using default_interface 
 
 namespace Windows::Media {
 
-template <typename T> class impl_IAudioBuffer;
-template <typename T> class impl_IAudioFrame;
-template <typename T> class impl_IAudioFrameFactory;
-template <typename T> class impl_IAutoRepeatModeChangeRequestedEventArgs;
-template <typename T> class impl_IImageDisplayProperties;
-template <typename T> class impl_IMediaExtension;
-template <typename T> class impl_IMediaExtensionManager;
-template <typename T> class impl_IMediaFrame;
-template <typename T> class impl_IMediaMarker;
-template <typename T> class impl_IMediaMarkerTypesStatics;
-template <typename T> class impl_IMediaMarkers;
-template <typename T> class impl_IMediaProcessingTriggerDetails;
-template <typename T> class impl_IMediaTimelineController;
-template <typename T> class impl_IMusicDisplayProperties;
-template <typename T> class impl_IMusicDisplayProperties2;
-template <typename T> class impl_IMusicDisplayProperties3;
-template <typename T> class impl_IPlaybackPositionChangeRequestedEventArgs;
-template <typename T> class impl_IPlaybackRateChangeRequestedEventArgs;
-template <typename T> class impl_IShuffleEnabledChangeRequestedEventArgs;
-template <typename T> class impl_ISystemMediaTransportControls;
-template <typename T> class impl_ISystemMediaTransportControls2;
-template <typename T> class impl_ISystemMediaTransportControlsButtonPressedEventArgs;
-template <typename T> class impl_ISystemMediaTransportControlsDisplayUpdater;
-template <typename T> class impl_ISystemMediaTransportControlsPropertyChangedEventArgs;
-template <typename T> class impl_ISystemMediaTransportControlsStatics;
-template <typename T> class impl_ISystemMediaTransportControlsTimelineProperties;
-template <typename T> class impl_IVideoDisplayProperties;
-template <typename T> class impl_IVideoDisplayProperties2;
-template <typename T> class impl_IVideoEffectsStatics;
-template <typename T> class impl_IVideoFrame;
-template <typename T> class impl_IVideoFrameFactory;
+template <typename T> struct impl_IAudioBuffer;
+template <typename T> struct impl_IAudioFrame;
+template <typename T> struct impl_IAudioFrameFactory;
+template <typename T> struct impl_IAutoRepeatModeChangeRequestedEventArgs;
+template <typename T> struct impl_IImageDisplayProperties;
+template <typename T> struct impl_IMediaExtension;
+template <typename T> struct impl_IMediaExtensionManager;
+template <typename T> struct impl_IMediaFrame;
+template <typename T> struct impl_IMediaMarker;
+template <typename T> struct impl_IMediaMarkerTypesStatics;
+template <typename T> struct impl_IMediaMarkers;
+template <typename T> struct impl_IMediaProcessingTriggerDetails;
+template <typename T> struct impl_IMediaTimelineController;
+template <typename T> struct impl_IMusicDisplayProperties;
+template <typename T> struct impl_IMusicDisplayProperties2;
+template <typename T> struct impl_IMusicDisplayProperties3;
+template <typename T> struct impl_IPlaybackPositionChangeRequestedEventArgs;
+template <typename T> struct impl_IPlaybackRateChangeRequestedEventArgs;
+template <typename T> struct impl_IShuffleEnabledChangeRequestedEventArgs;
+template <typename T> struct impl_ISystemMediaTransportControls;
+template <typename T> struct impl_ISystemMediaTransportControls2;
+template <typename T> struct impl_ISystemMediaTransportControlsButtonPressedEventArgs;
+template <typename T> struct impl_ISystemMediaTransportControlsDisplayUpdater;
+template <typename T> struct impl_ISystemMediaTransportControlsPropertyChangedEventArgs;
+template <typename T> struct impl_ISystemMediaTransportControlsStatics;
+template <typename T> struct impl_ISystemMediaTransportControlsTimelineProperties;
+template <typename T> struct impl_IVideoDisplayProperties;
+template <typename T> struct impl_IVideoDisplayProperties2;
+template <typename T> struct impl_IVideoEffectsStatics;
+template <typename T> struct impl_IVideoFrame;
+template <typename T> struct impl_IVideoFrameFactory;
 
 }
 

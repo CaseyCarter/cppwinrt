@@ -346,12 +346,8 @@ template <> struct __declspec(uuid("05eb86f1-7140-5517-b88d-cbaebe57e6b1")) __de
 namespace Windows::Web::Http::Headers {
 
 template <typename D>
-class WINRT_EBO impl_IHttpCacheDirectiveHeaderValueCollection
+struct WINRT_EBO impl_IHttpCacheDirectiveHeaderValueCollection
 {
-    auto shim() const { return impl::shim<D, IHttpCacheDirectiveHeaderValueCollection>(this); }
-
-public:
-
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> MaxAge() const;
     void MaxAge(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const;
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> MaxStale() const;
@@ -365,185 +361,117 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpChallengeHeaderValue
+struct WINRT_EBO impl_IHttpChallengeHeaderValue
 {
-    auto shim() const { return impl::shim<D, IHttpChallengeHeaderValue>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpNameValueHeaderValue> Parameters() const;
     hstring Scheme() const;
     hstring Token() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpChallengeHeaderValueCollection
+struct WINRT_EBO impl_IHttpChallengeHeaderValueCollection
 {
-    auto shim() const { return impl::shim<D, IHttpChallengeHeaderValueCollection>(this); }
-
-public:
-
     void ParseAdd(hstring_ref input) const;
     bool TryParseAdd(hstring_ref input) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpChallengeHeaderValueFactory
+struct WINRT_EBO impl_IHttpChallengeHeaderValueFactory
 {
-    auto shim() const { return impl::shim<D, IHttpChallengeHeaderValueFactory>(this); }
-
-public:
-
     Windows::Web::Http::Headers::HttpChallengeHeaderValue CreateFromScheme(hstring_ref scheme) const;
     Windows::Web::Http::Headers::HttpChallengeHeaderValue CreateFromSchemeWithToken(hstring_ref scheme, hstring_ref token) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpChallengeHeaderValueStatics
+struct WINRT_EBO impl_IHttpChallengeHeaderValueStatics
 {
-    auto shim() const { return impl::shim<D, IHttpChallengeHeaderValueStatics>(this); }
-
-public:
-
     Windows::Web::Http::Headers::HttpChallengeHeaderValue Parse(hstring_ref input) const;
     bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpChallengeHeaderValue & challengeHeaderValue) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpConnectionOptionHeaderValue
+struct WINRT_EBO impl_IHttpConnectionOptionHeaderValue
 {
-    auto shim() const { return impl::shim<D, IHttpConnectionOptionHeaderValue>(this); }
-
-public:
-
     hstring Token() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpConnectionOptionHeaderValueCollection
+struct WINRT_EBO impl_IHttpConnectionOptionHeaderValueCollection
 {
-    auto shim() const { return impl::shim<D, IHttpConnectionOptionHeaderValueCollection>(this); }
-
-public:
-
     void ParseAdd(hstring_ref input) const;
     bool TryParseAdd(hstring_ref input) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpConnectionOptionHeaderValueFactory
+struct WINRT_EBO impl_IHttpConnectionOptionHeaderValueFactory
 {
-    auto shim() const { return impl::shim<D, IHttpConnectionOptionHeaderValueFactory>(this); }
-
-public:
-
     Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue Create(hstring_ref token) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpConnectionOptionHeaderValueStatics
+struct WINRT_EBO impl_IHttpConnectionOptionHeaderValueStatics
 {
-    auto shim() const { return impl::shim<D, IHttpConnectionOptionHeaderValueStatics>(this); }
-
-public:
-
     Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue Parse(hstring_ref input) const;
     bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue & connectionOptionHeaderValue) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpContentCodingHeaderValue
+struct WINRT_EBO impl_IHttpContentCodingHeaderValue
 {
-    auto shim() const { return impl::shim<D, IHttpContentCodingHeaderValue>(this); }
-
-public:
-
     hstring ContentCoding() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpContentCodingHeaderValueCollection
+struct WINRT_EBO impl_IHttpContentCodingHeaderValueCollection
 {
-    auto shim() const { return impl::shim<D, IHttpContentCodingHeaderValueCollection>(this); }
-
-public:
-
     void ParseAdd(hstring_ref input) const;
     bool TryParseAdd(hstring_ref input) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpContentCodingHeaderValueFactory
+struct WINRT_EBO impl_IHttpContentCodingHeaderValueFactory
 {
-    auto shim() const { return impl::shim<D, IHttpContentCodingHeaderValueFactory>(this); }
-
-public:
-
     Windows::Web::Http::Headers::HttpContentCodingHeaderValue Create(hstring_ref contentCoding) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpContentCodingHeaderValueStatics
+struct WINRT_EBO impl_IHttpContentCodingHeaderValueStatics
 {
-    auto shim() const { return impl::shim<D, IHttpContentCodingHeaderValueStatics>(this); }
-
-public:
-
     Windows::Web::Http::Headers::HttpContentCodingHeaderValue Parse(hstring_ref input) const;
     bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpContentCodingHeaderValue & contentCodingHeaderValue) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpContentCodingWithQualityHeaderValue
+struct WINRT_EBO impl_IHttpContentCodingWithQualityHeaderValue
 {
-    auto shim() const { return impl::shim<D, IHttpContentCodingWithQualityHeaderValue>(this); }
-
-public:
-
     hstring ContentCoding() const;
     Windows::Foundation::IReference<double> Quality() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpContentCodingWithQualityHeaderValueCollection
+struct WINRT_EBO impl_IHttpContentCodingWithQualityHeaderValueCollection
 {
-    auto shim() const { return impl::shim<D, IHttpContentCodingWithQualityHeaderValueCollection>(this); }
-
-public:
-
     void ParseAdd(hstring_ref input) const;
     bool TryParseAdd(hstring_ref input) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpContentCodingWithQualityHeaderValueFactory
+struct WINRT_EBO impl_IHttpContentCodingWithQualityHeaderValueFactory
 {
-    auto shim() const { return impl::shim<D, IHttpContentCodingWithQualityHeaderValueFactory>(this); }
-
-public:
-
     Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue CreateFromValue(hstring_ref contentCoding) const;
     Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue CreateFromValueWithQuality(hstring_ref contentCoding, double quality) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpContentCodingWithQualityHeaderValueStatics
+struct WINRT_EBO impl_IHttpContentCodingWithQualityHeaderValueStatics
 {
-    auto shim() const { return impl::shim<D, IHttpContentCodingWithQualityHeaderValueStatics>(this); }
-
-public:
-
     Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue Parse(hstring_ref input) const;
     bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue & contentCodingWithQualityHeaderValue) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpContentDispositionHeaderValue
+struct WINRT_EBO impl_IHttpContentDispositionHeaderValue
 {
-    auto shim() const { return impl::shim<D, IHttpContentDispositionHeaderValue>(this); }
-
-public:
-
     hstring DispositionType() const;
     void DispositionType(hstring_ref value) const;
     hstring FileName() const;
@@ -558,33 +486,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpContentDispositionHeaderValueFactory
+struct WINRT_EBO impl_IHttpContentDispositionHeaderValueFactory
 {
-    auto shim() const { return impl::shim<D, IHttpContentDispositionHeaderValueFactory>(this); }
-
-public:
-
     Windows::Web::Http::Headers::HttpContentDispositionHeaderValue Create(hstring_ref dispositionType) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpContentDispositionHeaderValueStatics
+struct WINRT_EBO impl_IHttpContentDispositionHeaderValueStatics
 {
-    auto shim() const { return impl::shim<D, IHttpContentDispositionHeaderValueStatics>(this); }
-
-public:
-
     Windows::Web::Http::Headers::HttpContentDispositionHeaderValue Parse(hstring_ref input) const;
     bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpContentDispositionHeaderValue & contentDispositionHeaderValue) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpContentHeaderCollection
+struct WINRT_EBO impl_IHttpContentHeaderCollection
 {
-    auto shim() const { return impl::shim<D, IHttpContentHeaderCollection>(this); }
-
-public:
-
     Windows::Web::Http::Headers::HttpContentDispositionHeaderValue ContentDisposition() const;
     void ContentDisposition(const Windows::Web::Http::Headers::HttpContentDispositionHeaderValue & value) const;
     Windows::Web::Http::Headers::HttpContentCodingHeaderValueCollection ContentEncoding() const;
@@ -608,12 +524,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpContentRangeHeaderValue
+struct WINRT_EBO impl_IHttpContentRangeHeaderValue
 {
-    auto shim() const { return impl::shim<D, IHttpContentRangeHeaderValue>(this); }
-
-public:
-
     Windows::Foundation::IReference<uint64_t> FirstBytePosition() const;
     Windows::Foundation::IReference<uint64_t> LastBytePosition() const;
     Windows::Foundation::IReference<uint64_t> Length() const;
@@ -622,136 +534,88 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpContentRangeHeaderValueFactory
+struct WINRT_EBO impl_IHttpContentRangeHeaderValueFactory
 {
-    auto shim() const { return impl::shim<D, IHttpContentRangeHeaderValueFactory>(this); }
-
-public:
-
     Windows::Web::Http::Headers::HttpContentRangeHeaderValue CreateFromLength(uint64_t length) const;
     Windows::Web::Http::Headers::HttpContentRangeHeaderValue CreateFromRange(uint64_t from, uint64_t to) const;
     Windows::Web::Http::Headers::HttpContentRangeHeaderValue CreateFromRangeWithLength(uint64_t from, uint64_t to, uint64_t length) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpContentRangeHeaderValueStatics
+struct WINRT_EBO impl_IHttpContentRangeHeaderValueStatics
 {
-    auto shim() const { return impl::shim<D, IHttpContentRangeHeaderValueStatics>(this); }
-
-public:
-
     Windows::Web::Http::Headers::HttpContentRangeHeaderValue Parse(hstring_ref input) const;
     bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpContentRangeHeaderValue & contentRangeHeaderValue) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpCookiePairHeaderValue
+struct WINRT_EBO impl_IHttpCookiePairHeaderValue
 {
-    auto shim() const { return impl::shim<D, IHttpCookiePairHeaderValue>(this); }
-
-public:
-
     hstring Name() const;
     hstring Value() const;
     void Value(hstring_ref value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpCookiePairHeaderValueCollection
+struct WINRT_EBO impl_IHttpCookiePairHeaderValueCollection
 {
-    auto shim() const { return impl::shim<D, IHttpCookiePairHeaderValueCollection>(this); }
-
-public:
-
     void ParseAdd(hstring_ref input) const;
     bool TryParseAdd(hstring_ref input) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpCookiePairHeaderValueFactory
+struct WINRT_EBO impl_IHttpCookiePairHeaderValueFactory
 {
-    auto shim() const { return impl::shim<D, IHttpCookiePairHeaderValueFactory>(this); }
-
-public:
-
     Windows::Web::Http::Headers::HttpCookiePairHeaderValue CreateFromName(hstring_ref name) const;
     Windows::Web::Http::Headers::HttpCookiePairHeaderValue CreateFromNameWithValue(hstring_ref name, hstring_ref value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpCookiePairHeaderValueStatics
+struct WINRT_EBO impl_IHttpCookiePairHeaderValueStatics
 {
-    auto shim() const { return impl::shim<D, IHttpCookiePairHeaderValueStatics>(this); }
-
-public:
-
     Windows::Web::Http::Headers::HttpCookiePairHeaderValue Parse(hstring_ref input) const;
     bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpCookiePairHeaderValue & cookiePairHeaderValue) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpCredentialsHeaderValue
+struct WINRT_EBO impl_IHttpCredentialsHeaderValue
 {
-    auto shim() const { return impl::shim<D, IHttpCredentialsHeaderValue>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpNameValueHeaderValue> Parameters() const;
     hstring Scheme() const;
     hstring Token() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpCredentialsHeaderValueFactory
+struct WINRT_EBO impl_IHttpCredentialsHeaderValueFactory
 {
-    auto shim() const { return impl::shim<D, IHttpCredentialsHeaderValueFactory>(this); }
-
-public:
-
     Windows::Web::Http::Headers::HttpCredentialsHeaderValue CreateFromScheme(hstring_ref scheme) const;
     Windows::Web::Http::Headers::HttpCredentialsHeaderValue CreateFromSchemeWithToken(hstring_ref scheme, hstring_ref token) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpCredentialsHeaderValueStatics
+struct WINRT_EBO impl_IHttpCredentialsHeaderValueStatics
 {
-    auto shim() const { return impl::shim<D, IHttpCredentialsHeaderValueStatics>(this); }
-
-public:
-
     Windows::Web::Http::Headers::HttpCredentialsHeaderValue Parse(hstring_ref input) const;
     bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpCredentialsHeaderValue & credentialsHeaderValue) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpDateOrDeltaHeaderValue
+struct WINRT_EBO impl_IHttpDateOrDeltaHeaderValue
 {
-    auto shim() const { return impl::shim<D, IHttpDateOrDeltaHeaderValue>(this); }
-
-public:
-
     Windows::Foundation::IReference<Windows::Foundation::DateTime> Date() const;
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> Delta() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpDateOrDeltaHeaderValueStatics
+struct WINRT_EBO impl_IHttpDateOrDeltaHeaderValueStatics
 {
-    auto shim() const { return impl::shim<D, IHttpDateOrDeltaHeaderValueStatics>(this); }
-
-public:
-
     Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue Parse(hstring_ref input) const;
     bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpDateOrDeltaHeaderValue & dateOrDeltaHeaderValue) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpExpectationHeaderValue
+struct WINRT_EBO impl_IHttpExpectationHeaderValue
 {
-    auto shim() const { return impl::shim<D, IHttpExpectationHeaderValue>(this); }
-
-public:
-
     hstring Name() const;
     hstring Value() const;
     void Value(hstring_ref value) const;
@@ -759,100 +623,64 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpExpectationHeaderValueCollection
+struct WINRT_EBO impl_IHttpExpectationHeaderValueCollection
 {
-    auto shim() const { return impl::shim<D, IHttpExpectationHeaderValueCollection>(this); }
-
-public:
-
     void ParseAdd(hstring_ref input) const;
     bool TryParseAdd(hstring_ref input) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpExpectationHeaderValueFactory
+struct WINRT_EBO impl_IHttpExpectationHeaderValueFactory
 {
-    auto shim() const { return impl::shim<D, IHttpExpectationHeaderValueFactory>(this); }
-
-public:
-
     Windows::Web::Http::Headers::HttpExpectationHeaderValue CreateFromName(hstring_ref name) const;
     Windows::Web::Http::Headers::HttpExpectationHeaderValue CreateFromNameWithValue(hstring_ref name, hstring_ref value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpExpectationHeaderValueStatics
+struct WINRT_EBO impl_IHttpExpectationHeaderValueStatics
 {
-    auto shim() const { return impl::shim<D, IHttpExpectationHeaderValueStatics>(this); }
-
-public:
-
     Windows::Web::Http::Headers::HttpExpectationHeaderValue Parse(hstring_ref input) const;
     bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpExpectationHeaderValue & expectationHeaderValue) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpLanguageHeaderValueCollection
+struct WINRT_EBO impl_IHttpLanguageHeaderValueCollection
 {
-    auto shim() const { return impl::shim<D, IHttpLanguageHeaderValueCollection>(this); }
-
-public:
-
     void ParseAdd(hstring_ref input) const;
     bool TryParseAdd(hstring_ref input) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpLanguageRangeWithQualityHeaderValue
+struct WINRT_EBO impl_IHttpLanguageRangeWithQualityHeaderValue
 {
-    auto shim() const { return impl::shim<D, IHttpLanguageRangeWithQualityHeaderValue>(this); }
-
-public:
-
     hstring LanguageRange() const;
     Windows::Foundation::IReference<double> Quality() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpLanguageRangeWithQualityHeaderValueCollection
+struct WINRT_EBO impl_IHttpLanguageRangeWithQualityHeaderValueCollection
 {
-    auto shim() const { return impl::shim<D, IHttpLanguageRangeWithQualityHeaderValueCollection>(this); }
-
-public:
-
     void ParseAdd(hstring_ref input) const;
     bool TryParseAdd(hstring_ref input) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpLanguageRangeWithQualityHeaderValueFactory
+struct WINRT_EBO impl_IHttpLanguageRangeWithQualityHeaderValueFactory
 {
-    auto shim() const { return impl::shim<D, IHttpLanguageRangeWithQualityHeaderValueFactory>(this); }
-
-public:
-
     Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue CreateFromLanguageRange(hstring_ref languageRange) const;
     Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue CreateFromLanguageRangeWithQuality(hstring_ref languageRange, double quality) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpLanguageRangeWithQualityHeaderValueStatics
+struct WINRT_EBO impl_IHttpLanguageRangeWithQualityHeaderValueStatics
 {
-    auto shim() const { return impl::shim<D, IHttpLanguageRangeWithQualityHeaderValueStatics>(this); }
-
-public:
-
     Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue Parse(hstring_ref input) const;
     bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue & languageRangeWithQualityHeaderValue) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpMediaTypeHeaderValue
+struct WINRT_EBO impl_IHttpMediaTypeHeaderValue
 {
-    auto shim() const { return impl::shim<D, IHttpMediaTypeHeaderValue>(this); }
-
-public:
-
     hstring CharSet() const;
     void CharSet(hstring_ref value) const;
     hstring MediaType() const;
@@ -861,33 +689,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpMediaTypeHeaderValueFactory
+struct WINRT_EBO impl_IHttpMediaTypeHeaderValueFactory
 {
-    auto shim() const { return impl::shim<D, IHttpMediaTypeHeaderValueFactory>(this); }
-
-public:
-
     Windows::Web::Http::Headers::HttpMediaTypeHeaderValue Create(hstring_ref mediaType) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpMediaTypeHeaderValueStatics
+struct WINRT_EBO impl_IHttpMediaTypeHeaderValueStatics
 {
-    auto shim() const { return impl::shim<D, IHttpMediaTypeHeaderValueStatics>(this); }
-
-public:
-
     Windows::Web::Http::Headers::HttpMediaTypeHeaderValue Parse(hstring_ref input) const;
     bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpMediaTypeHeaderValue & mediaTypeHeaderValue) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpMediaTypeWithQualityHeaderValue
+struct WINRT_EBO impl_IHttpMediaTypeWithQualityHeaderValue
 {
-    auto shim() const { return impl::shim<D, IHttpMediaTypeWithQualityHeaderValue>(this); }
-
-public:
-
     hstring CharSet() const;
     void CharSet(hstring_ref value) const;
     hstring MediaType() const;
@@ -898,167 +714,107 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpMediaTypeWithQualityHeaderValueCollection
+struct WINRT_EBO impl_IHttpMediaTypeWithQualityHeaderValueCollection
 {
-    auto shim() const { return impl::shim<D, IHttpMediaTypeWithQualityHeaderValueCollection>(this); }
-
-public:
-
     void ParseAdd(hstring_ref input) const;
     bool TryParseAdd(hstring_ref input) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpMediaTypeWithQualityHeaderValueFactory
+struct WINRT_EBO impl_IHttpMediaTypeWithQualityHeaderValueFactory
 {
-    auto shim() const { return impl::shim<D, IHttpMediaTypeWithQualityHeaderValueFactory>(this); }
-
-public:
-
     Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue CreateFromMediaType(hstring_ref mediaType) const;
     Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue CreateFromMediaTypeWithQuality(hstring_ref mediaType, double quality) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpMediaTypeWithQualityHeaderValueStatics
+struct WINRT_EBO impl_IHttpMediaTypeWithQualityHeaderValueStatics
 {
-    auto shim() const { return impl::shim<D, IHttpMediaTypeWithQualityHeaderValueStatics>(this); }
-
-public:
-
     Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue Parse(hstring_ref input) const;
     bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue & mediaTypeWithQualityHeaderValue) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpMethodHeaderValueCollection
+struct WINRT_EBO impl_IHttpMethodHeaderValueCollection
 {
-    auto shim() const { return impl::shim<D, IHttpMethodHeaderValueCollection>(this); }
-
-public:
-
     void ParseAdd(hstring_ref input) const;
     bool TryParseAdd(hstring_ref input) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpNameValueHeaderValue
+struct WINRT_EBO impl_IHttpNameValueHeaderValue
 {
-    auto shim() const { return impl::shim<D, IHttpNameValueHeaderValue>(this); }
-
-public:
-
     hstring Name() const;
     hstring Value() const;
     void Value(hstring_ref value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpNameValueHeaderValueFactory
+struct WINRT_EBO impl_IHttpNameValueHeaderValueFactory
 {
-    auto shim() const { return impl::shim<D, IHttpNameValueHeaderValueFactory>(this); }
-
-public:
-
     Windows::Web::Http::Headers::HttpNameValueHeaderValue CreateFromName(hstring_ref name) const;
     Windows::Web::Http::Headers::HttpNameValueHeaderValue CreateFromNameWithValue(hstring_ref name, hstring_ref value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpNameValueHeaderValueStatics
+struct WINRT_EBO impl_IHttpNameValueHeaderValueStatics
 {
-    auto shim() const { return impl::shim<D, IHttpNameValueHeaderValueStatics>(this); }
-
-public:
-
     Windows::Web::Http::Headers::HttpNameValueHeaderValue Parse(hstring_ref input) const;
     bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpNameValueHeaderValue & nameValueHeaderValue) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpProductHeaderValue
+struct WINRT_EBO impl_IHttpProductHeaderValue
 {
-    auto shim() const { return impl::shim<D, IHttpProductHeaderValue>(this); }
-
-public:
-
     hstring Name() const;
     hstring Version() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpProductHeaderValueFactory
+struct WINRT_EBO impl_IHttpProductHeaderValueFactory
 {
-    auto shim() const { return impl::shim<D, IHttpProductHeaderValueFactory>(this); }
-
-public:
-
     Windows::Web::Http::Headers::HttpProductHeaderValue CreateFromName(hstring_ref productName) const;
     Windows::Web::Http::Headers::HttpProductHeaderValue CreateFromNameWithVersion(hstring_ref productName, hstring_ref productVersion) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpProductHeaderValueStatics
+struct WINRT_EBO impl_IHttpProductHeaderValueStatics
 {
-    auto shim() const { return impl::shim<D, IHttpProductHeaderValueStatics>(this); }
-
-public:
-
     Windows::Web::Http::Headers::HttpProductHeaderValue Parse(hstring_ref input) const;
     bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpProductHeaderValue & productHeaderValue) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpProductInfoHeaderValue
+struct WINRT_EBO impl_IHttpProductInfoHeaderValue
 {
-    auto shim() const { return impl::shim<D, IHttpProductInfoHeaderValue>(this); }
-
-public:
-
     Windows::Web::Http::Headers::HttpProductHeaderValue Product() const;
     hstring Comment() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpProductInfoHeaderValueCollection
+struct WINRT_EBO impl_IHttpProductInfoHeaderValueCollection
 {
-    auto shim() const { return impl::shim<D, IHttpProductInfoHeaderValueCollection>(this); }
-
-public:
-
     void ParseAdd(hstring_ref input) const;
     bool TryParseAdd(hstring_ref input) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpProductInfoHeaderValueFactory
+struct WINRT_EBO impl_IHttpProductInfoHeaderValueFactory
 {
-    auto shim() const { return impl::shim<D, IHttpProductInfoHeaderValueFactory>(this); }
-
-public:
-
     Windows::Web::Http::Headers::HttpProductInfoHeaderValue CreateFromComment(hstring_ref productComment) const;
     Windows::Web::Http::Headers::HttpProductInfoHeaderValue CreateFromNameWithVersion(hstring_ref productName, hstring_ref productVersion) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpProductInfoHeaderValueStatics
+struct WINRT_EBO impl_IHttpProductInfoHeaderValueStatics
 {
-    auto shim() const { return impl::shim<D, IHttpProductInfoHeaderValueStatics>(this); }
-
-public:
-
     Windows::Web::Http::Headers::HttpProductInfoHeaderValue Parse(hstring_ref input) const;
     bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpProductInfoHeaderValue & productInfoHeaderValue) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpRequestHeaderCollection
+struct WINRT_EBO impl_IHttpRequestHeaderCollection
 {
-    auto shim() const { return impl::shim<D, IHttpRequestHeaderCollection>(this); }
-
-public:
-
     Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValueCollection Accept() const;
     Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValueCollection AcceptEncoding() const;
     Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValueCollection AcceptLanguage() const;
@@ -1091,12 +847,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpResponseHeaderCollection
+struct WINRT_EBO impl_IHttpResponseHeaderCollection
 {
-    auto shim() const { return impl::shim<D, IHttpResponseHeaderCollection>(this); }
-
-public:
-
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> Age() const;
     void Age(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const;
     Windows::Web::Http::Headers::HttpMethodHeaderValueCollection Allow() const;
@@ -1116,44 +868,28 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpTransferCodingHeaderValue
+struct WINRT_EBO impl_IHttpTransferCodingHeaderValue
 {
-    auto shim() const { return impl::shim<D, IHttpTransferCodingHeaderValue>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<Windows::Web::Http::Headers::HttpNameValueHeaderValue> Parameters() const;
     hstring Value() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpTransferCodingHeaderValueCollection
+struct WINRT_EBO impl_IHttpTransferCodingHeaderValueCollection
 {
-    auto shim() const { return impl::shim<D, IHttpTransferCodingHeaderValueCollection>(this); }
-
-public:
-
     void ParseAdd(hstring_ref input) const;
     bool TryParseAdd(hstring_ref input) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpTransferCodingHeaderValueFactory
+struct WINRT_EBO impl_IHttpTransferCodingHeaderValueFactory
 {
-    auto shim() const { return impl::shim<D, IHttpTransferCodingHeaderValueFactory>(this); }
-
-public:
-
     Windows::Web::Http::Headers::HttpTransferCodingHeaderValue Create(hstring_ref input) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpTransferCodingHeaderValueStatics
+struct WINRT_EBO impl_IHttpTransferCodingHeaderValueStatics
 {
-    auto shim() const { return impl::shim<D, IHttpTransferCodingHeaderValueStatics>(this); }
-
-public:
-
     Windows::Web::Http::Headers::HttpTransferCodingHeaderValue Parse(hstring_ref input) const;
     bool TryParse(hstring_ref input, Windows::Web::Http::Headers::HttpTransferCodingHeaderValue & transferCodingHeaderValue) const;
 };

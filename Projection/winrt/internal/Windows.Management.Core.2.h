@@ -10,21 +10,13 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::Management::Core {
 
 template <typename D>
-class WINRT_EBO impl_IApplicationDataManager
+struct WINRT_EBO impl_IApplicationDataManager
 {
-    auto shim() const { return impl::shim<D, IApplicationDataManager>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IApplicationDataManagerStatics
+struct WINRT_EBO impl_IApplicationDataManagerStatics
 {
-    auto shim() const { return impl::shim<D, IApplicationDataManagerStatics>(this); }
-
-public:
-
     Windows::Storage::ApplicationData CreateForPackageFamily(hstring_ref packageFamilyName) const;
 };
 

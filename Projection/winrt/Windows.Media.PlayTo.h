@@ -1326,105 +1326,105 @@ namespace Windows::Media::PlayTo {
 template <typename D> Windows::Storage::Streams::IRandomAccessStreamWithContentType impl_ISourceChangeRequestedEventArgs<D>::Stream() const
 {
     Windows::Storage::Streams::IRandomAccessStreamWithContentType value;
-    check_hresult(shim()->get_Stream(put(value)));
+    check_hresult(static_cast<const ISourceChangeRequestedEventArgs &>(static_cast<const D &>(*this))->get_Stream(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISourceChangeRequestedEventArgs<D>::Title() const
 {
     hstring value;
-    check_hresult(shim()->get_Title(put(value)));
+    check_hresult(static_cast<const ISourceChangeRequestedEventArgs &>(static_cast<const D &>(*this))->get_Title(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISourceChangeRequestedEventArgs<D>::Author() const
 {
     hstring value;
-    check_hresult(shim()->get_Author(put(value)));
+    check_hresult(static_cast<const ISourceChangeRequestedEventArgs &>(static_cast<const D &>(*this))->get_Author(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISourceChangeRequestedEventArgs<D>::Album() const
 {
     hstring value;
-    check_hresult(shim()->get_Album(put(value)));
+    check_hresult(static_cast<const ISourceChangeRequestedEventArgs &>(static_cast<const D &>(*this))->get_Album(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISourceChangeRequestedEventArgs<D>::Genre() const
 {
     hstring value;
-    check_hresult(shim()->get_Genre(put(value)));
+    check_hresult(static_cast<const ISourceChangeRequestedEventArgs &>(static_cast<const D &>(*this))->get_Genre(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ISourceChangeRequestedEventArgs<D>::Description() const
 {
     hstring value;
-    check_hresult(shim()->get_Description(put(value)));
+    check_hresult(static_cast<const ISourceChangeRequestedEventArgs &>(static_cast<const D &>(*this))->get_Description(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateTime> impl_ISourceChangeRequestedEventArgs<D>::Date() const
 {
     Windows::Foundation::IReference<Windows::Foundation::DateTime> value;
-    check_hresult(shim()->get_Date(put(value)));
+    check_hresult(static_cast<const ISourceChangeRequestedEventArgs &>(static_cast<const D &>(*this))->get_Date(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IRandomAccessStreamReference impl_ISourceChangeRequestedEventArgs<D>::Thumbnail() const
 {
     Windows::Storage::Streams::IRandomAccessStreamReference value;
-    check_hresult(shim()->get_Thumbnail(put(value)));
+    check_hresult(static_cast<const ISourceChangeRequestedEventArgs &>(static_cast<const D &>(*this))->get_Thumbnail(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<uint32_t> impl_ISourceChangeRequestedEventArgs<D>::Rating() const
 {
     Windows::Foundation::IReference<uint32_t> value;
-    check_hresult(shim()->get_Rating(put(value)));
+    check_hresult(static_cast<const ISourceChangeRequestedEventArgs &>(static_cast<const D &>(*this))->get_Rating(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> impl_ISourceChangeRequestedEventArgs<D>::Properties() const
 {
     Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> value;
-    check_hresult(shim()->get_Properties(put(value)));
+    check_hresult(static_cast<const ISourceChangeRequestedEventArgs &>(static_cast<const D &>(*this))->get_Properties(put(value)));
     return value;
 }
 
 template <typename D> double impl_IPlaybackRateChangeRequestedEventArgs<D>::Rate() const
 {
     double value {};
-    check_hresult(shim()->get_Rate(&value));
+    check_hresult(static_cast<const IPlaybackRateChangeRequestedEventArgs &>(static_cast<const D &>(*this))->get_Rate(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_ICurrentTimeChangeRequestedEventArgs<D>::Time() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_Time(put(value)));
+    check_hresult(static_cast<const ICurrentTimeChangeRequestedEventArgs &>(static_cast<const D &>(*this))->get_Time(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IMuteChangeRequestedEventArgs<D>::Mute() const
 {
     bool value {};
-    check_hresult(shim()->get_Mute(&value));
+    check_hresult(static_cast<const IMuteChangeRequestedEventArgs &>(static_cast<const D &>(*this))->get_Mute(&value));
     return value;
 }
 
 template <typename D> double impl_IVolumeChangeRequestedEventArgs<D>::Volume() const
 {
     double value {};
-    check_hresult(shim()->get_Volume(&value));
+    check_hresult(static_cast<const IVolumeChangeRequestedEventArgs &>(static_cast<const D &>(*this))->get_Volume(&value));
     return value;
 }
 
 template <typename D> event_token impl_IPlayToReceiver<D>::PlayRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_PlayRequested(get(handler), &token));
+    check_hresult(static_cast<const IPlayToReceiver &>(static_cast<const D &>(*this))->add_PlayRequested(get(handler), &token));
     return token;
 }
 
@@ -1435,13 +1435,13 @@ template <typename D> event_revoker<IPlayToReceiver> impl_IPlayToReceiver<D>::Pl
 
 template <typename D> void impl_IPlayToReceiver<D>::PlayRequested(event_token token) const
 {
-    check_hresult(shim()->remove_PlayRequested(token));
+    check_hresult(static_cast<const IPlayToReceiver &>(static_cast<const D &>(*this))->remove_PlayRequested(token));
 }
 
 template <typename D> event_token impl_IPlayToReceiver<D>::PauseRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_PauseRequested(get(handler), &token));
+    check_hresult(static_cast<const IPlayToReceiver &>(static_cast<const D &>(*this))->add_PauseRequested(get(handler), &token));
     return token;
 }
 
@@ -1452,13 +1452,13 @@ template <typename D> event_revoker<IPlayToReceiver> impl_IPlayToReceiver<D>::Pa
 
 template <typename D> void impl_IPlayToReceiver<D>::PauseRequested(event_token token) const
 {
-    check_hresult(shim()->remove_PauseRequested(token));
+    check_hresult(static_cast<const IPlayToReceiver &>(static_cast<const D &>(*this))->remove_PauseRequested(token));
 }
 
 template <typename D> event_token impl_IPlayToReceiver<D>::SourceChangeRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::SourceChangeRequestedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_SourceChangeRequested(get(handler), &token));
+    check_hresult(static_cast<const IPlayToReceiver &>(static_cast<const D &>(*this))->add_SourceChangeRequested(get(handler), &token));
     return token;
 }
 
@@ -1469,13 +1469,13 @@ template <typename D> event_revoker<IPlayToReceiver> impl_IPlayToReceiver<D>::So
 
 template <typename D> void impl_IPlayToReceiver<D>::SourceChangeRequested(event_token token) const
 {
-    check_hresult(shim()->remove_SourceChangeRequested(token));
+    check_hresult(static_cast<const IPlayToReceiver &>(static_cast<const D &>(*this))->remove_SourceChangeRequested(token));
 }
 
 template <typename D> event_token impl_IPlayToReceiver<D>::PlaybackRateChangeRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::PlaybackRateChangeRequestedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_PlaybackRateChangeRequested(get(handler), &token));
+    check_hresult(static_cast<const IPlayToReceiver &>(static_cast<const D &>(*this))->add_PlaybackRateChangeRequested(get(handler), &token));
     return token;
 }
 
@@ -1486,13 +1486,13 @@ template <typename D> event_revoker<IPlayToReceiver> impl_IPlayToReceiver<D>::Pl
 
 template <typename D> void impl_IPlayToReceiver<D>::PlaybackRateChangeRequested(event_token token) const
 {
-    check_hresult(shim()->remove_PlaybackRateChangeRequested(token));
+    check_hresult(static_cast<const IPlayToReceiver &>(static_cast<const D &>(*this))->remove_PlaybackRateChangeRequested(token));
 }
 
 template <typename D> event_token impl_IPlayToReceiver<D>::CurrentTimeChangeRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::CurrentTimeChangeRequestedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_CurrentTimeChangeRequested(get(handler), &token));
+    check_hresult(static_cast<const IPlayToReceiver &>(static_cast<const D &>(*this))->add_CurrentTimeChangeRequested(get(handler), &token));
     return token;
 }
 
@@ -1503,13 +1503,13 @@ template <typename D> event_revoker<IPlayToReceiver> impl_IPlayToReceiver<D>::Cu
 
 template <typename D> void impl_IPlayToReceiver<D>::CurrentTimeChangeRequested(event_token token) const
 {
-    check_hresult(shim()->remove_CurrentTimeChangeRequested(token));
+    check_hresult(static_cast<const IPlayToReceiver &>(static_cast<const D &>(*this))->remove_CurrentTimeChangeRequested(token));
 }
 
 template <typename D> event_token impl_IPlayToReceiver<D>::MuteChangeRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::MuteChangeRequestedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_MuteChangeRequested(get(handler), &token));
+    check_hresult(static_cast<const IPlayToReceiver &>(static_cast<const D &>(*this))->add_MuteChangeRequested(get(handler), &token));
     return token;
 }
 
@@ -1520,13 +1520,13 @@ template <typename D> event_revoker<IPlayToReceiver> impl_IPlayToReceiver<D>::Mu
 
 template <typename D> void impl_IPlayToReceiver<D>::MuteChangeRequested(event_token token) const
 {
-    check_hresult(shim()->remove_MuteChangeRequested(token));
+    check_hresult(static_cast<const IPlayToReceiver &>(static_cast<const D &>(*this))->remove_MuteChangeRequested(token));
 }
 
 template <typename D> event_token impl_IPlayToReceiver<D>::VolumeChangeRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::VolumeChangeRequestedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_VolumeChangeRequested(get(handler), &token));
+    check_hresult(static_cast<const IPlayToReceiver &>(static_cast<const D &>(*this))->add_VolumeChangeRequested(get(handler), &token));
     return token;
 }
 
@@ -1537,13 +1537,13 @@ template <typename D> event_revoker<IPlayToReceiver> impl_IPlayToReceiver<D>::Vo
 
 template <typename D> void impl_IPlayToReceiver<D>::VolumeChangeRequested(event_token token) const
 {
-    check_hresult(shim()->remove_VolumeChangeRequested(token));
+    check_hresult(static_cast<const IPlayToReceiver &>(static_cast<const D &>(*this))->remove_VolumeChangeRequested(token));
 }
 
 template <typename D> event_token impl_IPlayToReceiver<D>::TimeUpdateRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_TimeUpdateRequested(get(handler), &token));
+    check_hresult(static_cast<const IPlayToReceiver &>(static_cast<const D &>(*this))->add_TimeUpdateRequested(get(handler), &token));
     return token;
 }
 
@@ -1554,13 +1554,13 @@ template <typename D> event_revoker<IPlayToReceiver> impl_IPlayToReceiver<D>::Ti
 
 template <typename D> void impl_IPlayToReceiver<D>::TimeUpdateRequested(event_token token) const
 {
-    check_hresult(shim()->remove_TimeUpdateRequested(token));
+    check_hresult(static_cast<const IPlayToReceiver &>(static_cast<const D &>(*this))->remove_TimeUpdateRequested(token));
 }
 
 template <typename D> event_token impl_IPlayToReceiver<D>::StopRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_StopRequested(get(handler), &token));
+    check_hresult(static_cast<const IPlayToReceiver &>(static_cast<const D &>(*this))->add_StopRequested(get(handler), &token));
     return token;
 }
 
@@ -1571,227 +1571,227 @@ template <typename D> event_revoker<IPlayToReceiver> impl_IPlayToReceiver<D>::St
 
 template <typename D> void impl_IPlayToReceiver<D>::StopRequested(event_token token) const
 {
-    check_hresult(shim()->remove_StopRequested(token));
+    check_hresult(static_cast<const IPlayToReceiver &>(static_cast<const D &>(*this))->remove_StopRequested(token));
 }
 
 template <typename D> void impl_IPlayToReceiver<D>::NotifyVolumeChange(double volume, bool mute) const
 {
-    check_hresult(shim()->abi_NotifyVolumeChange(volume, mute));
+    check_hresult(static_cast<const IPlayToReceiver &>(static_cast<const D &>(*this))->abi_NotifyVolumeChange(volume, mute));
 }
 
 template <typename D> void impl_IPlayToReceiver<D>::NotifyRateChange(double rate) const
 {
-    check_hresult(shim()->abi_NotifyRateChange(rate));
+    check_hresult(static_cast<const IPlayToReceiver &>(static_cast<const D &>(*this))->abi_NotifyRateChange(rate));
 }
 
 template <typename D> void impl_IPlayToReceiver<D>::NotifyLoadedMetadata() const
 {
-    check_hresult(shim()->abi_NotifyLoadedMetadata());
+    check_hresult(static_cast<const IPlayToReceiver &>(static_cast<const D &>(*this))->abi_NotifyLoadedMetadata());
 }
 
 template <typename D> void impl_IPlayToReceiver<D>::NotifyTimeUpdate(const Windows::Foundation::TimeSpan & currentTime) const
 {
-    check_hresult(shim()->abi_NotifyTimeUpdate(get(currentTime)));
+    check_hresult(static_cast<const IPlayToReceiver &>(static_cast<const D &>(*this))->abi_NotifyTimeUpdate(get(currentTime)));
 }
 
 template <typename D> void impl_IPlayToReceiver<D>::NotifyDurationChange(const Windows::Foundation::TimeSpan & duration) const
 {
-    check_hresult(shim()->abi_NotifyDurationChange(get(duration)));
+    check_hresult(static_cast<const IPlayToReceiver &>(static_cast<const D &>(*this))->abi_NotifyDurationChange(get(duration)));
 }
 
 template <typename D> void impl_IPlayToReceiver<D>::NotifySeeking() const
 {
-    check_hresult(shim()->abi_NotifySeeking());
+    check_hresult(static_cast<const IPlayToReceiver &>(static_cast<const D &>(*this))->abi_NotifySeeking());
 }
 
 template <typename D> void impl_IPlayToReceiver<D>::NotifySeeked() const
 {
-    check_hresult(shim()->abi_NotifySeeked());
+    check_hresult(static_cast<const IPlayToReceiver &>(static_cast<const D &>(*this))->abi_NotifySeeked());
 }
 
 template <typename D> void impl_IPlayToReceiver<D>::NotifyPaused() const
 {
-    check_hresult(shim()->abi_NotifyPaused());
+    check_hresult(static_cast<const IPlayToReceiver &>(static_cast<const D &>(*this))->abi_NotifyPaused());
 }
 
 template <typename D> void impl_IPlayToReceiver<D>::NotifyPlaying() const
 {
-    check_hresult(shim()->abi_NotifyPlaying());
+    check_hresult(static_cast<const IPlayToReceiver &>(static_cast<const D &>(*this))->abi_NotifyPlaying());
 }
 
 template <typename D> void impl_IPlayToReceiver<D>::NotifyEnded() const
 {
-    check_hresult(shim()->abi_NotifyEnded());
+    check_hresult(static_cast<const IPlayToReceiver &>(static_cast<const D &>(*this))->abi_NotifyEnded());
 }
 
 template <typename D> void impl_IPlayToReceiver<D>::NotifyError() const
 {
-    check_hresult(shim()->abi_NotifyError());
+    check_hresult(static_cast<const IPlayToReceiver &>(static_cast<const D &>(*this))->abi_NotifyError());
 }
 
 template <typename D> void impl_IPlayToReceiver<D>::NotifyStopped() const
 {
-    check_hresult(shim()->abi_NotifyStopped());
+    check_hresult(static_cast<const IPlayToReceiver &>(static_cast<const D &>(*this))->abi_NotifyStopped());
 }
 
 template <typename D> hstring impl_IPlayToReceiver<D>::FriendlyName() const
 {
     hstring value;
-    check_hresult(shim()->get_FriendlyName(put(value)));
+    check_hresult(static_cast<const IPlayToReceiver &>(static_cast<const D &>(*this))->get_FriendlyName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPlayToReceiver<D>::FriendlyName(hstring_ref value) const
 {
-    check_hresult(shim()->put_FriendlyName(get(value)));
+    check_hresult(static_cast<const IPlayToReceiver &>(static_cast<const D &>(*this))->put_FriendlyName(get(value)));
 }
 
 template <typename D> void impl_IPlayToReceiver<D>::SupportsImage(bool value) const
 {
-    check_hresult(shim()->put_SupportsImage(value));
+    check_hresult(static_cast<const IPlayToReceiver &>(static_cast<const D &>(*this))->put_SupportsImage(value));
 }
 
 template <typename D> bool impl_IPlayToReceiver<D>::SupportsImage() const
 {
     bool value {};
-    check_hresult(shim()->get_SupportsImage(&value));
+    check_hresult(static_cast<const IPlayToReceiver &>(static_cast<const D &>(*this))->get_SupportsImage(&value));
     return value;
 }
 
 template <typename D> void impl_IPlayToReceiver<D>::SupportsAudio(bool value) const
 {
-    check_hresult(shim()->put_SupportsAudio(value));
+    check_hresult(static_cast<const IPlayToReceiver &>(static_cast<const D &>(*this))->put_SupportsAudio(value));
 }
 
 template <typename D> bool impl_IPlayToReceiver<D>::SupportsAudio() const
 {
     bool value {};
-    check_hresult(shim()->get_SupportsAudio(&value));
+    check_hresult(static_cast<const IPlayToReceiver &>(static_cast<const D &>(*this))->get_SupportsAudio(&value));
     return value;
 }
 
 template <typename D> void impl_IPlayToReceiver<D>::SupportsVideo(bool value) const
 {
-    check_hresult(shim()->put_SupportsVideo(value));
+    check_hresult(static_cast<const IPlayToReceiver &>(static_cast<const D &>(*this))->put_SupportsVideo(value));
 }
 
 template <typename D> bool impl_IPlayToReceiver<D>::SupportsVideo() const
 {
     bool value {};
-    check_hresult(shim()->get_SupportsVideo(&value));
+    check_hresult(static_cast<const IPlayToReceiver &>(static_cast<const D &>(*this))->get_SupportsVideo(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IPropertySet impl_IPlayToReceiver<D>::Properties() const
 {
     Windows::Foundation::Collections::IPropertySet value;
-    check_hresult(shim()->get_Properties(put(value)));
+    check_hresult(static_cast<const IPlayToReceiver &>(static_cast<const D &>(*this))->get_Properties(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IPlayToReceiver<D>::StartAsync() const
 {
     Windows::Foundation::IAsyncAction action;
-    check_hresult(shim()->abi_StartAsync(put(action)));
+    check_hresult(static_cast<const IPlayToReceiver &>(static_cast<const D &>(*this))->abi_StartAsync(put(action)));
     return action;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IPlayToReceiver<D>::StopAsync() const
 {
     Windows::Foundation::IAsyncAction action;
-    check_hresult(shim()->abi_StopAsync(put(action)));
+    check_hresult(static_cast<const IPlayToReceiver &>(static_cast<const D &>(*this))->abi_StopAsync(put(action)));
     return action;
 }
 
 template <typename D> Windows::Media::PlayTo::PlayToConnection impl_IPlayToSource<D>::Connection() const
 {
     Windows::Media::PlayTo::PlayToConnection value { nullptr };
-    check_hresult(shim()->get_Connection(put(value)));
+    check_hresult(static_cast<const IPlayToSource &>(static_cast<const D &>(*this))->get_Connection(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::PlayTo::PlayToSource impl_IPlayToSource<D>::Next() const
 {
     Windows::Media::PlayTo::PlayToSource value { nullptr };
-    check_hresult(shim()->get_Next(put(value)));
+    check_hresult(static_cast<const IPlayToSource &>(static_cast<const D &>(*this))->get_Next(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPlayToSource<D>::Next(const Windows::Media::PlayTo::PlayToSource & value) const
 {
-    check_hresult(shim()->put_Next(get(value)));
+    check_hresult(static_cast<const IPlayToSource &>(static_cast<const D &>(*this))->put_Next(get(value)));
 }
 
 template <typename D> void impl_IPlayToSource<D>::PlayNext() const
 {
-    check_hresult(shim()->abi_PlayNext());
+    check_hresult(static_cast<const IPlayToSource &>(static_cast<const D &>(*this))->abi_PlayNext());
 }
 
 template <typename D> Windows::Foundation::Uri impl_IPlayToSourceWithPreferredSourceUri<D>::PreferredSourceUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(shim()->get_PreferredSourceUri(put(value)));
+    check_hresult(static_cast<const IPlayToSourceWithPreferredSourceUri &>(static_cast<const D &>(*this))->get_PreferredSourceUri(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPlayToSourceWithPreferredSourceUri<D>::PreferredSourceUri(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(shim()->put_PreferredSourceUri(get(value)));
+    check_hresult(static_cast<const IPlayToSourceWithPreferredSourceUri &>(static_cast<const D &>(*this))->put_PreferredSourceUri(get(value)));
 }
 
 template <typename D> Windows::Media::PlayTo::PlayToConnectionState impl_IPlayToConnectionStateChangedEventArgs<D>::PreviousState() const
 {
     Windows::Media::PlayTo::PlayToConnectionState value {};
-    check_hresult(shim()->get_PreviousState(&value));
+    check_hresult(static_cast<const IPlayToConnectionStateChangedEventArgs &>(static_cast<const D &>(*this))->get_PreviousState(&value));
     return value;
 }
 
 template <typename D> Windows::Media::PlayTo::PlayToConnectionState impl_IPlayToConnectionStateChangedEventArgs<D>::CurrentState() const
 {
     Windows::Media::PlayTo::PlayToConnectionState value {};
-    check_hresult(shim()->get_CurrentState(&value));
+    check_hresult(static_cast<const IPlayToConnectionStateChangedEventArgs &>(static_cast<const D &>(*this))->get_CurrentState(&value));
     return value;
 }
 
 template <typename D> Windows::Media::PlayTo::PlayToSource impl_IPlayToConnectionTransferredEventArgs<D>::PreviousSource() const
 {
     Windows::Media::PlayTo::PlayToSource value { nullptr };
-    check_hresult(shim()->get_PreviousSource(put(value)));
+    check_hresult(static_cast<const IPlayToConnectionTransferredEventArgs &>(static_cast<const D &>(*this))->get_PreviousSource(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::PlayTo::PlayToSource impl_IPlayToConnectionTransferredEventArgs<D>::CurrentSource() const
 {
     Windows::Media::PlayTo::PlayToSource value { nullptr };
-    check_hresult(shim()->get_CurrentSource(put(value)));
+    check_hresult(static_cast<const IPlayToConnectionTransferredEventArgs &>(static_cast<const D &>(*this))->get_CurrentSource(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::PlayTo::PlayToConnectionError impl_IPlayToConnectionErrorEventArgs<D>::Code() const
 {
     Windows::Media::PlayTo::PlayToConnectionError value {};
-    check_hresult(shim()->get_Code(&value));
+    check_hresult(static_cast<const IPlayToConnectionErrorEventArgs &>(static_cast<const D &>(*this))->get_Code(&value));
     return value;
 }
 
 template <typename D> hstring impl_IPlayToConnectionErrorEventArgs<D>::Message() const
 {
     hstring value;
-    check_hresult(shim()->get_Message(put(value)));
+    check_hresult(static_cast<const IPlayToConnectionErrorEventArgs &>(static_cast<const D &>(*this))->get_Message(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::PlayTo::PlayToConnectionState impl_IPlayToConnection<D>::State() const
 {
     Windows::Media::PlayTo::PlayToConnectionState value {};
-    check_hresult(shim()->get_State(&value));
+    check_hresult(static_cast<const IPlayToConnection &>(static_cast<const D &>(*this))->get_State(&value));
     return value;
 }
 
 template <typename D> event_token impl_IPlayToConnection<D>::StateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToConnection, Windows::Media::PlayTo::PlayToConnectionStateChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_StateChanged(get(handler), &token));
+    check_hresult(static_cast<const IPlayToConnection &>(static_cast<const D &>(*this))->add_StateChanged(get(handler), &token));
     return token;
 }
 
@@ -1802,13 +1802,13 @@ template <typename D> event_revoker<IPlayToConnection> impl_IPlayToConnection<D>
 
 template <typename D> void impl_IPlayToConnection<D>::StateChanged(event_token token) const
 {
-    check_hresult(shim()->remove_StateChanged(token));
+    check_hresult(static_cast<const IPlayToConnection &>(static_cast<const D &>(*this))->remove_StateChanged(token));
 }
 
 template <typename D> event_token impl_IPlayToConnection<D>::Transferred(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToConnection, Windows::Media::PlayTo::PlayToConnectionTransferredEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_Transferred(get(handler), &token));
+    check_hresult(static_cast<const IPlayToConnection &>(static_cast<const D &>(*this))->add_Transferred(get(handler), &token));
     return token;
 }
 
@@ -1819,13 +1819,13 @@ template <typename D> event_revoker<IPlayToConnection> impl_IPlayToConnection<D>
 
 template <typename D> void impl_IPlayToConnection<D>::Transferred(event_token token) const
 {
-    check_hresult(shim()->remove_Transferred(token));
+    check_hresult(static_cast<const IPlayToConnection &>(static_cast<const D &>(*this))->remove_Transferred(token));
 }
 
 template <typename D> event_token impl_IPlayToConnection<D>::Error(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToConnection, Windows::Media::PlayTo::PlayToConnectionErrorEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_Error(get(handler), &token));
+    check_hresult(static_cast<const IPlayToConnection &>(static_cast<const D &>(*this))->add_Error(get(handler), &token));
     return token;
 }
 
@@ -1836,84 +1836,84 @@ template <typename D> event_revoker<IPlayToConnection> impl_IPlayToConnection<D>
 
 template <typename D> void impl_IPlayToConnection<D>::Error(event_token token) const
 {
-    check_hresult(shim()->remove_Error(token));
+    check_hresult(static_cast<const IPlayToConnection &>(static_cast<const D &>(*this))->remove_Error(token));
 }
 
 template <typename D> hstring impl_IPlayToSourceSelectedEventArgs<D>::FriendlyName() const
 {
     hstring value;
-    check_hresult(shim()->get_FriendlyName(put(value)));
+    check_hresult(static_cast<const IPlayToSourceSelectedEventArgs &>(static_cast<const D &>(*this))->get_FriendlyName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IRandomAccessStreamWithContentType impl_IPlayToSourceSelectedEventArgs<D>::Icon() const
 {
     Windows::Storage::Streams::IRandomAccessStreamWithContentType value;
-    check_hresult(shim()->get_Icon(put(value)));
+    check_hresult(static_cast<const IPlayToSourceSelectedEventArgs &>(static_cast<const D &>(*this))->get_Icon(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IPlayToSourceSelectedEventArgs<D>::SupportsImage() const
 {
     bool value {};
-    check_hresult(shim()->get_SupportsImage(&value));
+    check_hresult(static_cast<const IPlayToSourceSelectedEventArgs &>(static_cast<const D &>(*this))->get_SupportsImage(&value));
     return value;
 }
 
 template <typename D> bool impl_IPlayToSourceSelectedEventArgs<D>::SupportsAudio() const
 {
     bool value {};
-    check_hresult(shim()->get_SupportsAudio(&value));
+    check_hresult(static_cast<const IPlayToSourceSelectedEventArgs &>(static_cast<const D &>(*this))->get_SupportsAudio(&value));
     return value;
 }
 
 template <typename D> bool impl_IPlayToSourceSelectedEventArgs<D>::SupportsVideo() const
 {
     bool value {};
-    check_hresult(shim()->get_SupportsVideo(&value));
+    check_hresult(static_cast<const IPlayToSourceSelectedEventArgs &>(static_cast<const D &>(*this))->get_SupportsVideo(&value));
     return value;
 }
 
 template <typename D> void impl_IPlayToSourceDeferral<D>::Complete() const
 {
-    check_hresult(shim()->abi_Complete());
+    check_hresult(static_cast<const IPlayToSourceDeferral &>(static_cast<const D &>(*this))->abi_Complete());
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IPlayToSourceRequest<D>::Deadline() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->get_Deadline(put(value)));
+    check_hresult(static_cast<const IPlayToSourceRequest &>(static_cast<const D &>(*this))->get_Deadline(put(value)));
     return value;
 }
 
 template <typename D> void impl_IPlayToSourceRequest<D>::DisplayErrorString(hstring_ref errorString) const
 {
-    check_hresult(shim()->abi_DisplayErrorString(get(errorString)));
+    check_hresult(static_cast<const IPlayToSourceRequest &>(static_cast<const D &>(*this))->abi_DisplayErrorString(get(errorString)));
 }
 
 template <typename D> Windows::Media::PlayTo::PlayToSourceDeferral impl_IPlayToSourceRequest<D>::GetDeferral() const
 {
     Windows::Media::PlayTo::PlayToSourceDeferral deferral { nullptr };
-    check_hresult(shim()->abi_GetDeferral(put(deferral)));
+    check_hresult(static_cast<const IPlayToSourceRequest &>(static_cast<const D &>(*this))->abi_GetDeferral(put(deferral)));
     return deferral;
 }
 
 template <typename D> void impl_IPlayToSourceRequest<D>::SetSource(const Windows::Media::PlayTo::PlayToSource & value) const
 {
-    check_hresult(shim()->abi_SetSource(get(value)));
+    check_hresult(static_cast<const IPlayToSourceRequest &>(static_cast<const D &>(*this))->abi_SetSource(get(value)));
 }
 
 template <typename D> Windows::Media::PlayTo::PlayToSourceRequest impl_IPlayToSourceRequestedEventArgs<D>::SourceRequest() const
 {
     Windows::Media::PlayTo::PlayToSourceRequest value { nullptr };
-    check_hresult(shim()->get_SourceRequest(put(value)));
+    check_hresult(static_cast<const IPlayToSourceRequestedEventArgs &>(static_cast<const D &>(*this))->get_SourceRequest(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IPlayToManager<D>::SourceRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToManager, Windows::Media::PlayTo::PlayToSourceRequestedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_SourceRequested(get(handler), &token));
+    check_hresult(static_cast<const IPlayToManager &>(static_cast<const D &>(*this))->add_SourceRequested(get(handler), &token));
     return token;
 }
 
@@ -1924,13 +1924,13 @@ template <typename D> event_revoker<IPlayToManager> impl_IPlayToManager<D>::Sour
 
 template <typename D> void impl_IPlayToManager<D>::SourceRequested(event_token token) const
 {
-    check_hresult(shim()->remove_SourceRequested(token));
+    check_hresult(static_cast<const IPlayToManager &>(static_cast<const D &>(*this))->remove_SourceRequested(token));
 }
 
 template <typename D> event_token impl_IPlayToManager<D>::SourceSelected(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToManager, Windows::Media::PlayTo::PlayToSourceSelectedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_SourceSelected(get(handler), &token));
+    check_hresult(static_cast<const IPlayToManager &>(static_cast<const D &>(*this))->add_SourceSelected(get(handler), &token));
     return token;
 }
 
@@ -1941,31 +1941,31 @@ template <typename D> event_revoker<IPlayToManager> impl_IPlayToManager<D>::Sour
 
 template <typename D> void impl_IPlayToManager<D>::SourceSelected(event_token token) const
 {
-    check_hresult(shim()->remove_SourceSelected(token));
+    check_hresult(static_cast<const IPlayToManager &>(static_cast<const D &>(*this))->remove_SourceSelected(token));
 }
 
 template <typename D> void impl_IPlayToManager<D>::DefaultSourceSelection(bool value) const
 {
-    check_hresult(shim()->put_DefaultSourceSelection(value));
+    check_hresult(static_cast<const IPlayToManager &>(static_cast<const D &>(*this))->put_DefaultSourceSelection(value));
 }
 
 template <typename D> bool impl_IPlayToManager<D>::DefaultSourceSelection() const
 {
     bool value {};
-    check_hresult(shim()->get_DefaultSourceSelection(&value));
+    check_hresult(static_cast<const IPlayToManager &>(static_cast<const D &>(*this))->get_DefaultSourceSelection(&value));
     return value;
 }
 
 template <typename D> Windows::Media::PlayTo::PlayToManager impl_IPlayToManagerStatics<D>::GetForCurrentView() const
 {
     Windows::Media::PlayTo::PlayToManager playToManager { nullptr };
-    check_hresult(shim()->abi_GetForCurrentView(put(playToManager)));
+    check_hresult(static_cast<const IPlayToManagerStatics &>(static_cast<const D &>(*this))->abi_GetForCurrentView(put(playToManager)));
     return playToManager;
 }
 
 template <typename D> void impl_IPlayToManagerStatics<D>::ShowPlayToUI() const
 {
-    check_hresult(shim()->abi_ShowPlayToUI());
+    check_hresult(static_cast<const IPlayToManagerStatics &>(static_cast<const D &>(*this))->abi_ShowPlayToUI());
 }
 
 inline Windows::Media::PlayTo::PlayToManager PlayToManager::GetForCurrentView()

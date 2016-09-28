@@ -70,9 +70,9 @@ namespace ABI {
 
 namespace Windows::System::Power {
 
-template <typename T> class impl_IBackgroundEnergyManagerStatics;
-template <typename T> class impl_IForegroundEnergyManagerStatics;
-template <typename T> class impl_IPowerManagerStatics;
+template <typename T> struct impl_IBackgroundEnergyManagerStatics;
+template <typename T> struct impl_IForegroundEnergyManagerStatics;
+template <typename T> struct impl_IPowerManagerStatics;
 
 }
 

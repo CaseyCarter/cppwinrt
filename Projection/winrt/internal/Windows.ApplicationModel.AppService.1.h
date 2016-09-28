@@ -98,16 +98,16 @@ template <> struct traits<Windows::ApplicationModel::AppService::AppServiceTrigg
 
 namespace Windows::ApplicationModel::AppService {
 
-template <typename T> class impl_IAppServiceCatalogStatics;
-template <typename T> class impl_IAppServiceClosedEventArgs;
-template <typename T> class impl_IAppServiceConnection;
-template <typename T> class impl_IAppServiceConnection2;
-template <typename T> class impl_IAppServiceDeferral;
-template <typename T> class impl_IAppServiceRequest;
-template <typename T> class impl_IAppServiceRequestReceivedEventArgs;
-template <typename T> class impl_IAppServiceResponse;
-template <typename T> class impl_IAppServiceTriggerDetails;
-template <typename T> class impl_IAppServiceTriggerDetails2;
+template <typename T> struct impl_IAppServiceCatalogStatics;
+template <typename T> struct impl_IAppServiceClosedEventArgs;
+template <typename T> struct impl_IAppServiceConnection;
+template <typename T> struct impl_IAppServiceConnection2;
+template <typename T> struct impl_IAppServiceDeferral;
+template <typename T> struct impl_IAppServiceRequest;
+template <typename T> struct impl_IAppServiceRequestReceivedEventArgs;
+template <typename T> struct impl_IAppServiceResponse;
+template <typename T> struct impl_IAppServiceTriggerDetails;
+template <typename T> struct impl_IAppServiceTriggerDetails2;
 
 }
 

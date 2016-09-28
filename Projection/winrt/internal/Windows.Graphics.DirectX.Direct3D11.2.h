@@ -12,22 +12,14 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::Graphics::DirectX::Direct3D11 {
 
 template <typename D>
-class WINRT_EBO impl_IDirect3DDevice
+struct WINRT_EBO impl_IDirect3DDevice
 {
-    auto shim() const { return impl::shim<D, IDirect3DDevice>(this); }
-
-public:
-
     void Trim() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDirect3DSurface
+struct WINRT_EBO impl_IDirect3DSurface
 {
-    auto shim() const { return impl::shim<D, IDirect3DSurface>(this); }
-
-public:
-
     Windows::Graphics::DirectX::Direct3D11::Direct3DSurfaceDescription Description() const;
 };
 

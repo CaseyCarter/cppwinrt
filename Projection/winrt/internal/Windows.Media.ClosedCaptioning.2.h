@@ -10,12 +10,8 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::Media::ClosedCaptioning {
 
 template <typename D>
-class WINRT_EBO impl_IClosedCaptionPropertiesStatics
+struct WINRT_EBO impl_IClosedCaptionPropertiesStatics
 {
-    auto shim() const { return impl::shim<D, IClosedCaptionPropertiesStatics>(this); }
-
-public:
-
     Windows::Media::ClosedCaptioning::ClosedCaptionColor FontColor() const;
     Windows::UI::Color ComputedFontColor() const;
     Windows::Media::ClosedCaptioning::ClosedCaptionOpacity FontOpacity() const;

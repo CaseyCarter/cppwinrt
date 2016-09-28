@@ -86,12 +86,12 @@ template <> struct traits<Windows::Devices::I2c::I2cDevice> { using default_inte
 
 namespace Windows::Devices::I2c {
 
-template <typename T> class impl_II2cConnectionSettings;
-template <typename T> class impl_II2cConnectionSettingsFactory;
-template <typename T> class impl_II2cController;
-template <typename T> class impl_II2cControllerStatics;
-template <typename T> class impl_II2cDevice;
-template <typename T> class impl_II2cDeviceStatics;
+template <typename T> struct impl_II2cConnectionSettings;
+template <typename T> struct impl_II2cConnectionSettingsFactory;
+template <typename T> struct impl_II2cController;
+template <typename T> struct impl_II2cControllerStatics;
+template <typename T> struct impl_II2cDevice;
+template <typename T> struct impl_II2cDeviceStatics;
 
 }
 

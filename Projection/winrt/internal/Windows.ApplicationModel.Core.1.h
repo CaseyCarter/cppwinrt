@@ -165,24 +165,24 @@ template <> struct traits<Windows::ApplicationModel::Core::UnhandledErrorDetecte
 
 namespace Windows::ApplicationModel::Core {
 
-template <typename T> class impl_IAppListEntry;
-template <typename T> class impl_ICoreApplication;
-template <typename T> class impl_ICoreApplication2;
-template <typename T> class impl_ICoreApplicationExit;
-template <typename T> class impl_ICoreApplicationUnhandledError;
-template <typename T> class impl_ICoreApplicationUseCount;
-template <typename T> class impl_ICoreApplicationView;
-template <typename T> class impl_ICoreApplicationView2;
-template <typename T> class impl_ICoreApplicationView3;
-template <typename T> class impl_ICoreApplicationViewTitleBar;
-template <typename T> class impl_ICoreImmersiveApplication;
-template <typename T> class impl_ICoreImmersiveApplication2;
-template <typename T> class impl_ICoreImmersiveApplication3;
-template <typename T> class impl_IFrameworkView;
-template <typename T> class impl_IFrameworkViewSource;
-template <typename T> class impl_IHostedViewClosingEventArgs;
-template <typename T> class impl_IUnhandledError;
-template <typename T> class impl_IUnhandledErrorDetectedEventArgs;
+template <typename T> struct impl_IAppListEntry;
+template <typename T> struct impl_ICoreApplication;
+template <typename T> struct impl_ICoreApplication2;
+template <typename T> struct impl_ICoreApplicationExit;
+template <typename T> struct impl_ICoreApplicationUnhandledError;
+template <typename T> struct impl_ICoreApplicationUseCount;
+template <typename T> struct impl_ICoreApplicationView;
+template <typename T> struct impl_ICoreApplicationView2;
+template <typename T> struct impl_ICoreApplicationView3;
+template <typename T> struct impl_ICoreApplicationViewTitleBar;
+template <typename T> struct impl_ICoreImmersiveApplication;
+template <typename T> struct impl_ICoreImmersiveApplication2;
+template <typename T> struct impl_ICoreImmersiveApplication3;
+template <typename T> struct impl_IFrameworkView;
+template <typename T> struct impl_IFrameworkViewSource;
+template <typename T> struct impl_IHostedViewClosingEventArgs;
+template <typename T> struct impl_IUnhandledError;
+template <typename T> struct impl_IUnhandledErrorDetectedEventArgs;
 
 }
 

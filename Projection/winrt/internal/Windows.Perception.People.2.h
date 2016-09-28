@@ -10,12 +10,8 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::Perception::People {
 
 template <typename D>
-class WINRT_EBO impl_IHeadPose
+struct WINRT_EBO impl_IHeadPose
 {
-    auto shim() const { return impl::shim<D, IHeadPose>(this); }
-
-public:
-
     Windows::Foundation::Numerics::float3 Position() const;
     Windows::Foundation::Numerics::float3 ForwardDirection() const;
     Windows::Foundation::Numerics::float3 UpDirection() const;

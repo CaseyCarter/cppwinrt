@@ -289,34 +289,34 @@ template <> struct traits<Windows::Devices::Usb::UsbSetupPacket> { using default
 
 namespace Windows::Devices::Usb {
 
-template <typename T> class impl_IUsbBulkInEndpointDescriptor;
-template <typename T> class impl_IUsbBulkInPipe;
-template <typename T> class impl_IUsbBulkOutEndpointDescriptor;
-template <typename T> class impl_IUsbBulkOutPipe;
-template <typename T> class impl_IUsbConfiguration;
-template <typename T> class impl_IUsbConfigurationDescriptor;
-template <typename T> class impl_IUsbConfigurationDescriptorStatics;
-template <typename T> class impl_IUsbControlRequestType;
-template <typename T> class impl_IUsbDescriptor;
-template <typename T> class impl_IUsbDevice;
-template <typename T> class impl_IUsbDeviceClass;
-template <typename T> class impl_IUsbDeviceClasses;
-template <typename T> class impl_IUsbDeviceClassesStatics;
-template <typename T> class impl_IUsbDeviceDescriptor;
-template <typename T> class impl_IUsbDeviceStatics;
-template <typename T> class impl_IUsbEndpointDescriptor;
-template <typename T> class impl_IUsbEndpointDescriptorStatics;
-template <typename T> class impl_IUsbInterface;
-template <typename T> class impl_IUsbInterfaceDescriptor;
-template <typename T> class impl_IUsbInterfaceDescriptorStatics;
-template <typename T> class impl_IUsbInterfaceSetting;
-template <typename T> class impl_IUsbInterruptInEndpointDescriptor;
-template <typename T> class impl_IUsbInterruptInEventArgs;
-template <typename T> class impl_IUsbInterruptInPipe;
-template <typename T> class impl_IUsbInterruptOutEndpointDescriptor;
-template <typename T> class impl_IUsbInterruptOutPipe;
-template <typename T> class impl_IUsbSetupPacket;
-template <typename T> class impl_IUsbSetupPacketFactory;
+template <typename T> struct impl_IUsbBulkInEndpointDescriptor;
+template <typename T> struct impl_IUsbBulkInPipe;
+template <typename T> struct impl_IUsbBulkOutEndpointDescriptor;
+template <typename T> struct impl_IUsbBulkOutPipe;
+template <typename T> struct impl_IUsbConfiguration;
+template <typename T> struct impl_IUsbConfigurationDescriptor;
+template <typename T> struct impl_IUsbConfigurationDescriptorStatics;
+template <typename T> struct impl_IUsbControlRequestType;
+template <typename T> struct impl_IUsbDescriptor;
+template <typename T> struct impl_IUsbDevice;
+template <typename T> struct impl_IUsbDeviceClass;
+template <typename T> struct impl_IUsbDeviceClasses;
+template <typename T> struct impl_IUsbDeviceClassesStatics;
+template <typename T> struct impl_IUsbDeviceDescriptor;
+template <typename T> struct impl_IUsbDeviceStatics;
+template <typename T> struct impl_IUsbEndpointDescriptor;
+template <typename T> struct impl_IUsbEndpointDescriptorStatics;
+template <typename T> struct impl_IUsbInterface;
+template <typename T> struct impl_IUsbInterfaceDescriptor;
+template <typename T> struct impl_IUsbInterfaceDescriptorStatics;
+template <typename T> struct impl_IUsbInterfaceSetting;
+template <typename T> struct impl_IUsbInterruptInEndpointDescriptor;
+template <typename T> struct impl_IUsbInterruptInEventArgs;
+template <typename T> struct impl_IUsbInterruptInPipe;
+template <typename T> struct impl_IUsbInterruptOutEndpointDescriptor;
+template <typename T> struct impl_IUsbInterruptOutPipe;
+template <typename T> struct impl_IUsbSetupPacket;
+template <typename T> struct impl_IUsbSetupPacketFactory;
 
 }
 

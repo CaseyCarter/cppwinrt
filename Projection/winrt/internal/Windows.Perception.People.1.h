@@ -27,7 +27,7 @@ template <> struct traits<Windows::Perception::People::HeadPose> { using default
 
 namespace Windows::Perception::People {
 
-template <typename T> class impl_IHeadPose;
+template <typename T> struct impl_IHeadPose;
 
 }
 

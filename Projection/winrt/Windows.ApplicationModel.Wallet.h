@@ -1434,584 +1434,584 @@ namespace Windows::ApplicationModel::Wallet {
 template <typename D> Windows::ApplicationModel::Wallet::WalletBarcodeSymbology impl_IWalletBarcode<D>::Symbology() const
 {
     Windows::ApplicationModel::Wallet::WalletBarcodeSymbology value {};
-    check_hresult(shim()->get_Symbology(&value));
+    check_hresult(static_cast<const IWalletBarcode &>(static_cast<const D &>(*this))->get_Symbology(&value));
     return value;
 }
 
 template <typename D> hstring impl_IWalletBarcode<D>::Value() const
 {
     hstring value;
-    check_hresult(shim()->get_Value(put(value)));
+    check_hresult(static_cast<const IWalletBarcode &>(static_cast<const D &>(*this))->get_Value(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamReference> impl_IWalletBarcode<D>::GetImageAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamReference> operation;
-    check_hresult(shim()->abi_GetImageAsync(put(operation)));
+    check_hresult(static_cast<const IWalletBarcode &>(static_cast<const D &>(*this))->abi_GetImageAsync(put(operation)));
     return operation;
 }
 
 template <typename D> hstring impl_IWalletItemCustomProperty<D>::Name() const
 {
     hstring value;
-    check_hresult(shim()->get_Name(put(value)));
+    check_hresult(static_cast<const IWalletItemCustomProperty &>(static_cast<const D &>(*this))->get_Name(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWalletItemCustomProperty<D>::Name(hstring_ref value) const
 {
-    check_hresult(shim()->put_Name(get(value)));
+    check_hresult(static_cast<const IWalletItemCustomProperty &>(static_cast<const D &>(*this))->put_Name(get(value)));
 }
 
 template <typename D> hstring impl_IWalletItemCustomProperty<D>::Value() const
 {
     hstring value;
-    check_hresult(shim()->get_Value(put(value)));
+    check_hresult(static_cast<const IWalletItemCustomProperty &>(static_cast<const D &>(*this))->get_Value(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWalletItemCustomProperty<D>::Value(hstring_ref value) const
 {
-    check_hresult(shim()->put_Value(get(value)));
+    check_hresult(static_cast<const IWalletItemCustomProperty &>(static_cast<const D &>(*this))->put_Value(get(value)));
 }
 
 template <typename D> bool impl_IWalletItemCustomProperty<D>::AutoDetectLinks() const
 {
     bool value {};
-    check_hresult(shim()->get_AutoDetectLinks(&value));
+    check_hresult(static_cast<const IWalletItemCustomProperty &>(static_cast<const D &>(*this))->get_AutoDetectLinks(&value));
     return value;
 }
 
 template <typename D> void impl_IWalletItemCustomProperty<D>::AutoDetectLinks(bool value) const
 {
-    check_hresult(shim()->put_AutoDetectLinks(value));
+    check_hresult(static_cast<const IWalletItemCustomProperty &>(static_cast<const D &>(*this))->put_AutoDetectLinks(value));
 }
 
 template <typename D> Windows::ApplicationModel::Wallet::WalletDetailViewPosition impl_IWalletItemCustomProperty<D>::DetailViewPosition() const
 {
     Windows::ApplicationModel::Wallet::WalletDetailViewPosition value {};
-    check_hresult(shim()->get_DetailViewPosition(&value));
+    check_hresult(static_cast<const IWalletItemCustomProperty &>(static_cast<const D &>(*this))->get_DetailViewPosition(&value));
     return value;
 }
 
 template <typename D> void impl_IWalletItemCustomProperty<D>::DetailViewPosition(Windows::ApplicationModel::Wallet::WalletDetailViewPosition value) const
 {
-    check_hresult(shim()->put_DetailViewPosition(value));
+    check_hresult(static_cast<const IWalletItemCustomProperty &>(static_cast<const D &>(*this))->put_DetailViewPosition(value));
 }
 
 template <typename D> Windows::ApplicationModel::Wallet::WalletSummaryViewPosition impl_IWalletItemCustomProperty<D>::SummaryViewPosition() const
 {
     Windows::ApplicationModel::Wallet::WalletSummaryViewPosition value {};
-    check_hresult(shim()->get_SummaryViewPosition(&value));
+    check_hresult(static_cast<const IWalletItemCustomProperty &>(static_cast<const D &>(*this))->get_SummaryViewPosition(&value));
     return value;
 }
 
 template <typename D> void impl_IWalletItemCustomProperty<D>::SummaryViewPosition(Windows::ApplicationModel::Wallet::WalletSummaryViewPosition value) const
 {
-    check_hresult(shim()->put_SummaryViewPosition(value));
+    check_hresult(static_cast<const IWalletItemCustomProperty &>(static_cast<const D &>(*this))->put_SummaryViewPosition(value));
 }
 
 template <typename D> hstring impl_IWalletVerb<D>::Name() const
 {
     hstring value;
-    check_hresult(shim()->get_Name(put(value)));
+    check_hresult(static_cast<const IWalletVerb &>(static_cast<const D &>(*this))->get_Name(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWalletVerb<D>::Name(hstring_ref value) const
 {
-    check_hresult(shim()->put_Name(get(value)));
+    check_hresult(static_cast<const IWalletVerb &>(static_cast<const D &>(*this))->put_Name(get(value)));
 }
 
 template <typename D> hstring impl_IWalletItem<D>::DisplayName() const
 {
     hstring value;
-    check_hresult(shim()->get_DisplayName(put(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->get_DisplayName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWalletItem<D>::DisplayName(hstring_ref value) const
 {
-    check_hresult(shim()->put_DisplayName(get(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->put_DisplayName(get(value)));
 }
 
 template <typename D> hstring impl_IWalletItem<D>::Id() const
 {
     hstring value;
-    check_hresult(shim()->get_Id(put(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->get_Id(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IWalletItem<D>::IsAcknowledged() const
 {
     bool value {};
-    check_hresult(shim()->get_IsAcknowledged(&value));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->get_IsAcknowledged(&value));
     return value;
 }
 
 template <typename D> void impl_IWalletItem<D>::IsAcknowledged(bool value) const
 {
-    check_hresult(shim()->put_IsAcknowledged(value));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->put_IsAcknowledged(value));
 }
 
 template <typename D> hstring impl_IWalletItem<D>::IssuerDisplayName() const
 {
     hstring value;
-    check_hresult(shim()->get_IssuerDisplayName(put(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->get_IssuerDisplayName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWalletItem<D>::IssuerDisplayName(hstring_ref value) const
 {
-    check_hresult(shim()->put_IssuerDisplayName(get(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->put_IssuerDisplayName(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateTime> impl_IWalletItem<D>::LastUpdated() const
 {
     Windows::Foundation::IReference<Windows::Foundation::DateTime> value;
-    check_hresult(shim()->get_LastUpdated(put(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->get_LastUpdated(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWalletItem<D>::LastUpdated(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
 {
-    check_hresult(shim()->put_LastUpdated(get(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->put_LastUpdated(get(value)));
 }
 
 template <typename D> Windows::ApplicationModel::Wallet::WalletItemKind impl_IWalletItem<D>::Kind() const
 {
     Windows::ApplicationModel::Wallet::WalletItemKind value {};
-    check_hresult(shim()->get_Kind(&value));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->get_Kind(&value));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Wallet::WalletBarcode impl_IWalletItem<D>::Barcode() const
 {
     Windows::ApplicationModel::Wallet::WalletBarcode value { nullptr };
-    check_hresult(shim()->get_Barcode(put(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->get_Barcode(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWalletItem<D>::Barcode(const Windows::ApplicationModel::Wallet::WalletBarcode & value) const
 {
-    check_hresult(shim()->put_Barcode(get(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->put_Barcode(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateTime> impl_IWalletItem<D>::ExpirationDate() const
 {
     Windows::Foundation::IReference<Windows::Foundation::DateTime> value;
-    check_hresult(shim()->get_ExpirationDate(put(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->get_ExpirationDate(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWalletItem<D>::ExpirationDate(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
 {
-    check_hresult(shim()->put_ExpirationDate(get(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->put_ExpirationDate(get(value)));
 }
 
 template <typename D> Windows::Storage::Streams::IRandomAccessStreamReference impl_IWalletItem<D>::Logo159x159() const
 {
     Windows::Storage::Streams::IRandomAccessStreamReference value;
-    check_hresult(shim()->get_Logo159x159(put(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->get_Logo159x159(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWalletItem<D>::Logo159x159(const Windows::Storage::Streams::IRandomAccessStreamReference & value) const
 {
-    check_hresult(shim()->put_Logo159x159(get(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->put_Logo159x159(get(value)));
 }
 
 template <typename D> Windows::Storage::Streams::IRandomAccessStreamReference impl_IWalletItem<D>::Logo336x336() const
 {
     Windows::Storage::Streams::IRandomAccessStreamReference value;
-    check_hresult(shim()->get_Logo336x336(put(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->get_Logo336x336(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWalletItem<D>::Logo336x336(const Windows::Storage::Streams::IRandomAccessStreamReference & value) const
 {
-    check_hresult(shim()->put_Logo336x336(get(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->put_Logo336x336(get(value)));
 }
 
 template <typename D> Windows::Storage::Streams::IRandomAccessStreamReference impl_IWalletItem<D>::Logo99x99() const
 {
     Windows::Storage::Streams::IRandomAccessStreamReference value;
-    check_hresult(shim()->get_Logo99x99(put(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->get_Logo99x99(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWalletItem<D>::Logo99x99(const Windows::Storage::Streams::IRandomAccessStreamReference & value) const
 {
-    check_hresult(shim()->put_Logo99x99(get(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->put_Logo99x99(get(value)));
 }
 
 template <typename D> hstring impl_IWalletItem<D>::DisplayMessage() const
 {
     hstring value;
-    check_hresult(shim()->get_DisplayMessage(put(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->get_DisplayMessage(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWalletItem<D>::DisplayMessage(hstring_ref value) const
 {
-    check_hresult(shim()->put_DisplayMessage(get(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->put_DisplayMessage(get(value)));
 }
 
 template <typename D> bool impl_IWalletItem<D>::IsDisplayMessageLaunchable() const
 {
     bool value {};
-    check_hresult(shim()->get_IsDisplayMessageLaunchable(&value));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->get_IsDisplayMessageLaunchable(&value));
     return value;
 }
 
 template <typename D> void impl_IWalletItem<D>::IsDisplayMessageLaunchable(bool value) const
 {
-    check_hresult(shim()->put_IsDisplayMessageLaunchable(value));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->put_IsDisplayMessageLaunchable(value));
 }
 
 template <typename D> hstring impl_IWalletItem<D>::LogoText() const
 {
     hstring value;
-    check_hresult(shim()->get_LogoText(put(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->get_LogoText(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWalletItem<D>::LogoText(hstring_ref value) const
 {
-    check_hresult(shim()->put_LogoText(get(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->put_LogoText(get(value)));
 }
 
 template <typename D> Windows::UI::Color impl_IWalletItem<D>::HeaderColor() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_HeaderColor(put(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->get_HeaderColor(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWalletItem<D>::HeaderColor(const Windows::UI::Color & value) const
 {
-    check_hresult(shim()->put_HeaderColor(get(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->put_HeaderColor(get(value)));
 }
 
 template <typename D> Windows::UI::Color impl_IWalletItem<D>::BodyColor() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_BodyColor(put(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->get_BodyColor(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWalletItem<D>::BodyColor(const Windows::UI::Color & value) const
 {
-    check_hresult(shim()->put_BodyColor(get(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->put_BodyColor(get(value)));
 }
 
 template <typename D> Windows::UI::Color impl_IWalletItem<D>::HeaderFontColor() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_HeaderFontColor(put(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->get_HeaderFontColor(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWalletItem<D>::HeaderFontColor(const Windows::UI::Color & value) const
 {
-    check_hresult(shim()->put_HeaderFontColor(get(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->put_HeaderFontColor(get(value)));
 }
 
 template <typename D> Windows::UI::Color impl_IWalletItem<D>::BodyFontColor() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_BodyFontColor(put(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->get_BodyFontColor(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWalletItem<D>::BodyFontColor(const Windows::UI::Color & value) const
 {
-    check_hresult(shim()->put_BodyFontColor(get(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->put_BodyFontColor(get(value)));
 }
 
 template <typename D> Windows::Storage::Streams::IRandomAccessStreamReference impl_IWalletItem<D>::HeaderBackgroundImage() const
 {
     Windows::Storage::Streams::IRandomAccessStreamReference value;
-    check_hresult(shim()->get_HeaderBackgroundImage(put(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->get_HeaderBackgroundImage(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWalletItem<D>::HeaderBackgroundImage(const Windows::Storage::Streams::IRandomAccessStreamReference & value) const
 {
-    check_hresult(shim()->put_HeaderBackgroundImage(get(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->put_HeaderBackgroundImage(get(value)));
 }
 
 template <typename D> Windows::Storage::Streams::IRandomAccessStreamReference impl_IWalletItem<D>::BodyBackgroundImage() const
 {
     Windows::Storage::Streams::IRandomAccessStreamReference value;
-    check_hresult(shim()->get_BodyBackgroundImage(put(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->get_BodyBackgroundImage(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWalletItem<D>::BodyBackgroundImage(const Windows::Storage::Streams::IRandomAccessStreamReference & value) const
 {
-    check_hresult(shim()->put_BodyBackgroundImage(get(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->put_BodyBackgroundImage(get(value)));
 }
 
 template <typename D> Windows::Storage::Streams::IRandomAccessStreamReference impl_IWalletItem<D>::LogoImage() const
 {
     Windows::Storage::Streams::IRandomAccessStreamReference value;
-    check_hresult(shim()->get_LogoImage(put(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->get_LogoImage(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWalletItem<D>::LogoImage(const Windows::Storage::Streams::IRandomAccessStreamReference & value) const
 {
-    check_hresult(shim()->put_LogoImage(get(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->put_LogoImage(get(value)));
 }
 
 template <typename D> Windows::Storage::Streams::IRandomAccessStreamReference impl_IWalletItem<D>::PromotionalImage() const
 {
     Windows::Storage::Streams::IRandomAccessStreamReference value;
-    check_hresult(shim()->get_PromotionalImage(put(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->get_PromotionalImage(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWalletItem<D>::PromotionalImage(const Windows::Storage::Streams::IRandomAccessStreamReference & value) const
 {
-    check_hresult(shim()->put_PromotionalImage(get(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->put_PromotionalImage(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateTime> impl_IWalletItem<D>::RelevantDate() const
 {
     Windows::Foundation::IReference<Windows::Foundation::DateTime> value;
-    check_hresult(shim()->get_RelevantDate(put(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->get_RelevantDate(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWalletItem<D>::RelevantDate(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
 {
-    check_hresult(shim()->put_RelevantDate(get(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->put_RelevantDate(get(value)));
 }
 
 template <typename D> hstring impl_IWalletItem<D>::RelevantDateDisplayMessage() const
 {
     hstring value;
-    check_hresult(shim()->get_RelevantDateDisplayMessage(put(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->get_RelevantDateDisplayMessage(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWalletItem<D>::RelevantDateDisplayMessage(hstring_ref value) const
 {
-    check_hresult(shim()->put_RelevantDateDisplayMessage(get(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->put_RelevantDateDisplayMessage(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IMap<hstring, Windows::ApplicationModel::Wallet::WalletTransaction> impl_IWalletItem<D>::TransactionHistory() const
 {
     Windows::Foundation::Collections::IMap<hstring, Windows::ApplicationModel::Wallet::WalletTransaction> value;
-    check_hresult(shim()->get_TransactionHistory(put(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->get_TransactionHistory(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IMap<hstring, Windows::ApplicationModel::Wallet::WalletRelevantLocation> impl_IWalletItem<D>::RelevantLocations() const
 {
     Windows::Foundation::Collections::IMap<hstring, Windows::ApplicationModel::Wallet::WalletRelevantLocation> value;
-    check_hresult(shim()->get_RelevantLocations(put(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->get_RelevantLocations(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IWalletItem<D>::IsMoreTransactionHistoryLaunchable() const
 {
     bool value {};
-    check_hresult(shim()->get_IsMoreTransactionHistoryLaunchable(&value));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->get_IsMoreTransactionHistoryLaunchable(&value));
     return value;
 }
 
 template <typename D> void impl_IWalletItem<D>::IsMoreTransactionHistoryLaunchable(bool value) const
 {
-    check_hresult(shim()->put_IsMoreTransactionHistoryLaunchable(value));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->put_IsMoreTransactionHistoryLaunchable(value));
 }
 
 template <typename D> Windows::Foundation::Collections::IMap<hstring, Windows::ApplicationModel::Wallet::WalletItemCustomProperty> impl_IWalletItem<D>::DisplayProperties() const
 {
     Windows::Foundation::Collections::IMap<hstring, Windows::ApplicationModel::Wallet::WalletItemCustomProperty> value;
-    check_hresult(shim()->get_DisplayProperties(put(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->get_DisplayProperties(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IMap<hstring, Windows::ApplicationModel::Wallet::WalletVerb> impl_IWalletItem<D>::Verbs() const
 {
     Windows::Foundation::Collections::IMap<hstring, Windows::ApplicationModel::Wallet::WalletVerb> value;
-    check_hresult(shim()->get_Verbs(put(value)));
+    check_hresult(static_cast<const IWalletItem &>(static_cast<const D &>(*this))->get_Verbs(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IWalletTransaction<D>::Description() const
 {
     hstring value;
-    check_hresult(shim()->get_Description(put(value)));
+    check_hresult(static_cast<const IWalletTransaction &>(static_cast<const D &>(*this))->get_Description(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWalletTransaction<D>::Description(hstring_ref value) const
 {
-    check_hresult(shim()->put_Description(get(value)));
+    check_hresult(static_cast<const IWalletTransaction &>(static_cast<const D &>(*this))->put_Description(get(value)));
 }
 
 template <typename D> hstring impl_IWalletTransaction<D>::DisplayAmount() const
 {
     hstring value;
-    check_hresult(shim()->get_DisplayAmount(put(value)));
+    check_hresult(static_cast<const IWalletTransaction &>(static_cast<const D &>(*this))->get_DisplayAmount(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWalletTransaction<D>::DisplayAmount(hstring_ref value) const
 {
-    check_hresult(shim()->put_DisplayAmount(get(value)));
+    check_hresult(static_cast<const IWalletTransaction &>(static_cast<const D &>(*this))->put_DisplayAmount(get(value)));
 }
 
 template <typename D> bool impl_IWalletTransaction<D>::IgnoreTimeOfDay() const
 {
     bool value {};
-    check_hresult(shim()->get_IgnoreTimeOfDay(&value));
+    check_hresult(static_cast<const IWalletTransaction &>(static_cast<const D &>(*this))->get_IgnoreTimeOfDay(&value));
     return value;
 }
 
 template <typename D> void impl_IWalletTransaction<D>::IgnoreTimeOfDay(bool value) const
 {
-    check_hresult(shim()->put_IgnoreTimeOfDay(value));
+    check_hresult(static_cast<const IWalletTransaction &>(static_cast<const D &>(*this))->put_IgnoreTimeOfDay(value));
 }
 
 template <typename D> hstring impl_IWalletTransaction<D>::DisplayLocation() const
 {
     hstring value;
-    check_hresult(shim()->get_DisplayLocation(put(value)));
+    check_hresult(static_cast<const IWalletTransaction &>(static_cast<const D &>(*this))->get_DisplayLocation(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWalletTransaction<D>::DisplayLocation(hstring_ref value) const
 {
-    check_hresult(shim()->put_DisplayLocation(get(value)));
+    check_hresult(static_cast<const IWalletTransaction &>(static_cast<const D &>(*this))->put_DisplayLocation(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::DateTime> impl_IWalletTransaction<D>::TransactionDate() const
 {
     Windows::Foundation::IReference<Windows::Foundation::DateTime> value;
-    check_hresult(shim()->get_TransactionDate(put(value)));
+    check_hresult(static_cast<const IWalletTransaction &>(static_cast<const D &>(*this))->get_TransactionDate(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWalletTransaction<D>::TransactionDate(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const
 {
-    check_hresult(shim()->put_TransactionDate(get(value)));
+    check_hresult(static_cast<const IWalletTransaction &>(static_cast<const D &>(*this))->put_TransactionDate(get(value)));
 }
 
 template <typename D> bool impl_IWalletTransaction<D>::IsLaunchable() const
 {
     bool value {};
-    check_hresult(shim()->get_IsLaunchable(&value));
+    check_hresult(static_cast<const IWalletTransaction &>(static_cast<const D &>(*this))->get_IsLaunchable(&value));
     return value;
 }
 
 template <typename D> void impl_IWalletTransaction<D>::IsLaunchable(bool value) const
 {
-    check_hresult(shim()->put_IsLaunchable(value));
+    check_hresult(static_cast<const IWalletTransaction &>(static_cast<const D &>(*this))->put_IsLaunchable(value));
 }
 
 template <typename D> Windows::Devices::Geolocation::BasicGeoposition impl_IWalletRelevantLocation<D>::Position() const
 {
     Windows::Devices::Geolocation::BasicGeoposition value {};
-    check_hresult(shim()->get_Position(put(value)));
+    check_hresult(static_cast<const IWalletRelevantLocation &>(static_cast<const D &>(*this))->get_Position(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWalletRelevantLocation<D>::Position(const Windows::Devices::Geolocation::BasicGeoposition & value) const
 {
-    check_hresult(shim()->put_Position(get(value)));
+    check_hresult(static_cast<const IWalletRelevantLocation &>(static_cast<const D &>(*this))->put_Position(get(value)));
 }
 
 template <typename D> hstring impl_IWalletRelevantLocation<D>::DisplayMessage() const
 {
     hstring value;
-    check_hresult(shim()->get_DisplayMessage(put(value)));
+    check_hresult(static_cast<const IWalletRelevantLocation &>(static_cast<const D &>(*this))->get_DisplayMessage(put(value)));
     return value;
 }
 
 template <typename D> void impl_IWalletRelevantLocation<D>::DisplayMessage(hstring_ref value) const
 {
-    check_hresult(shim()->put_DisplayMessage(get(value)));
+    check_hresult(static_cast<const IWalletRelevantLocation &>(static_cast<const D &>(*this))->put_DisplayMessage(get(value)));
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IWalletItemStore<D>::AddAsync(hstring_ref id, const Windows::ApplicationModel::Wallet::WalletItem & item) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_AddAsync(get(id), get(item), put(operation)));
+    check_hresult(static_cast<const IWalletItemStore &>(static_cast<const D &>(*this))->abi_AddAsync(get(id), get(item), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IWalletItemStore<D>::ClearAsync() const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_ClearAsync(put(operation)));
+    check_hresult(static_cast<const IWalletItemStore &>(static_cast<const D &>(*this))->abi_ClearAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Wallet::WalletItem> impl_IWalletItemStore<D>::GetWalletItemAsync(hstring_ref id) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Wallet::WalletItem> operation;
-    check_hresult(shim()->abi_GetWalletItemAsync(get(id), put(operation)));
+    check_hresult(static_cast<const IWalletItemStore &>(static_cast<const D &>(*this))->abi_GetWalletItemAsync(get(id), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Wallet::WalletItem>> impl_IWalletItemStore<D>::GetItemsAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Wallet::WalletItem>> operation;
-    check_hresult(shim()->abi_GetItemsAsync(put(operation)));
+    check_hresult(static_cast<const IWalletItemStore &>(static_cast<const D &>(*this))->abi_GetItemsAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Wallet::WalletItem>> impl_IWalletItemStore<D>::GetItemsAsync(Windows::ApplicationModel::Wallet::WalletItemKind kind) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Wallet::WalletItem>> operation;
-    check_hresult(shim()->abi_GetItemsWithKindAsync(kind, put(operation)));
+    check_hresult(static_cast<const IWalletItemStore &>(static_cast<const D &>(*this))->abi_GetItemsWithKindAsync(kind, put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Wallet::WalletItem> impl_IWalletItemStore<D>::ImportItemAsync(const Windows::Storage::Streams::IRandomAccessStreamReference & stream) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Wallet::WalletItem> operation;
-    check_hresult(shim()->abi_ImportItemAsync(get(stream), put(operation)));
+    check_hresult(static_cast<const IWalletItemStore &>(static_cast<const D &>(*this))->abi_ImportItemAsync(get(stream), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IWalletItemStore<D>::DeleteAsync(hstring_ref id) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_DeleteAsync(get(id), put(operation)));
+    check_hresult(static_cast<const IWalletItemStore &>(static_cast<const D &>(*this))->abi_DeleteAsync(get(id), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IWalletItemStore<D>::ShowAsync() const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_ShowAsync(put(operation)));
+    check_hresult(static_cast<const IWalletItemStore &>(static_cast<const D &>(*this))->abi_ShowAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IWalletItemStore<D>::ShowAsync(hstring_ref id) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_ShowItemAsync(get(id), put(operation)));
+    check_hresult(static_cast<const IWalletItemStore &>(static_cast<const D &>(*this))->abi_ShowItemAsync(get(id), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IWalletItemStore<D>::UpdateAsync(const Windows::ApplicationModel::Wallet::WalletItem & item) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_UpdateAsync(get(item), put(operation)));
+    check_hresult(static_cast<const IWalletItemStore &>(static_cast<const D &>(*this))->abi_UpdateAsync(get(item), put(operation)));
     return operation;
 }
 
 template <typename D> event_token impl_IWalletItemStore2<D>::ItemsChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Wallet::WalletItemStore, Windows::IInspectable> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_ItemsChanged(get(handler), &cookie));
+    check_hresult(static_cast<const IWalletItemStore2 &>(static_cast<const D &>(*this))->add_ItemsChanged(get(handler), &cookie));
     return cookie;
 }
 
@@ -2022,48 +2022,48 @@ template <typename D> event_revoker<IWalletItemStore2> impl_IWalletItemStore2<D>
 
 template <typename D> void impl_IWalletItemStore2<D>::ItemsChanged(event_token cookie) const
 {
-    check_hresult(shim()->remove_ItemsChanged(cookie));
+    check_hresult(static_cast<const IWalletItemStore2 &>(static_cast<const D &>(*this))->remove_ItemsChanged(cookie));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Wallet::WalletItemStore> impl_IWalletManagerStatics<D>::RequestStoreAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Wallet::WalletItemStore> operation;
-    check_hresult(shim()->abi_RequestStoreAsync(put(operation)));
+    check_hresult(static_cast<const IWalletManagerStatics &>(static_cast<const D &>(*this))->abi_RequestStoreAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::ApplicationModel::Wallet::WalletItemCustomProperty impl_IWalletItemCustomPropertyFactory<D>::CreateWalletItemCustomProperty(hstring_ref name, hstring_ref value) const
 {
     Windows::ApplicationModel::Wallet::WalletItemCustomProperty walletItemCustomProperty { nullptr };
-    check_hresult(shim()->abi_CreateWalletItemCustomProperty(get(name), get(value), put(walletItemCustomProperty)));
+    check_hresult(static_cast<const IWalletItemCustomPropertyFactory &>(static_cast<const D &>(*this))->abi_CreateWalletItemCustomProperty(get(name), get(value), put(walletItemCustomProperty)));
     return walletItemCustomProperty;
 }
 
 template <typename D> Windows::ApplicationModel::Wallet::WalletVerb impl_IWalletVerbFactory<D>::CreateWalletVerb(hstring_ref name) const
 {
     Windows::ApplicationModel::Wallet::WalletVerb WalletVerb { nullptr };
-    check_hresult(shim()->abi_CreateWalletVerb(get(name), put(WalletVerb)));
+    check_hresult(static_cast<const IWalletVerbFactory &>(static_cast<const D &>(*this))->abi_CreateWalletVerb(get(name), put(WalletVerb)));
     return WalletVerb;
 }
 
 template <typename D> Windows::ApplicationModel::Wallet::WalletItem impl_IWalletItemFactory<D>::CreateWalletItem(Windows::ApplicationModel::Wallet::WalletItemKind kind, hstring_ref displayName) const
 {
     Windows::ApplicationModel::Wallet::WalletItem walletItem { nullptr };
-    check_hresult(shim()->abi_CreateWalletItem(kind, get(displayName), put(walletItem)));
+    check_hresult(static_cast<const IWalletItemFactory &>(static_cast<const D &>(*this))->abi_CreateWalletItem(kind, get(displayName), put(walletItem)));
     return walletItem;
 }
 
 template <typename D> Windows::ApplicationModel::Wallet::WalletBarcode impl_IWalletBarcodeFactory<D>::CreateWalletBarcode(Windows::ApplicationModel::Wallet::WalletBarcodeSymbology symbology, hstring_ref value) const
 {
     Windows::ApplicationModel::Wallet::WalletBarcode barcode { nullptr };
-    check_hresult(shim()->abi_CreateWalletBarcode(symbology, get(value), put(barcode)));
+    check_hresult(static_cast<const IWalletBarcodeFactory &>(static_cast<const D &>(*this))->abi_CreateWalletBarcode(symbology, get(value), put(barcode)));
     return barcode;
 }
 
 template <typename D> Windows::ApplicationModel::Wallet::WalletBarcode impl_IWalletBarcodeFactory<D>::CreateCustomWalletBarcode(const Windows::Storage::Streams::IRandomAccessStreamReference & streamToBarcodeImage) const
 {
     Windows::ApplicationModel::Wallet::WalletBarcode barcode { nullptr };
-    check_hresult(shim()->abi_CreateCustomWalletBarcode(get(streamToBarcodeImage), put(barcode)));
+    check_hresult(static_cast<const IWalletBarcodeFactory &>(static_cast<const D &>(*this))->abi_CreateCustomWalletBarcode(get(streamToBarcodeImage), put(barcode)));
     return barcode;
 }
 

@@ -80,11 +80,11 @@ template <> struct traits<Windows::Data::Pdf::PdfPageRenderOptions> { using defa
 
 namespace Windows::Data::Pdf {
 
-template <typename T> class impl_IPdfDocument;
-template <typename T> class impl_IPdfDocumentStatics;
-template <typename T> class impl_IPdfPage;
-template <typename T> class impl_IPdfPageDimensions;
-template <typename T> class impl_IPdfPageRenderOptions;
+template <typename T> struct impl_IPdfDocument;
+template <typename T> struct impl_IPdfDocumentStatics;
+template <typename T> struct impl_IPdfPage;
+template <typename T> struct impl_IPdfPageDimensions;
+template <typename T> struct impl_IPdfPageRenderOptions;
 
 }
 

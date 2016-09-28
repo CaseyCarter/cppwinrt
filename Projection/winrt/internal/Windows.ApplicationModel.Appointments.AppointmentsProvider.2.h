@@ -20,12 +20,8 @@ template <> struct __declspec(uuid("5541d8a7-497c-5aa4-86fc-7713adbf2a2c")) __de
 namespace Windows::ApplicationModel::Appointments::AppointmentsProvider {
 
 template <typename D>
-class WINRT_EBO impl_IAddAppointmentOperation
+struct WINRT_EBO impl_IAddAppointmentOperation
 {
-    auto shim() const { return impl::shim<D, IAddAppointmentOperation>(this); }
-
-public:
-
     Windows::ApplicationModel::Appointments::Appointment AppointmentInformation() const;
     hstring SourcePackageFamilyName() const;
     void ReportCompleted(hstring_ref itemId) const;
@@ -35,12 +31,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentsProviderLaunchActionVerbsStatics
+struct WINRT_EBO impl_IAppointmentsProviderLaunchActionVerbsStatics
 {
-    auto shim() const { return impl::shim<D, IAppointmentsProviderLaunchActionVerbsStatics>(this); }
-
-public:
-
     hstring AddAppointment() const;
     hstring ReplaceAppointment() const;
     hstring RemoveAppointment() const;
@@ -48,22 +40,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppointmentsProviderLaunchActionVerbsStatics2
+struct WINRT_EBO impl_IAppointmentsProviderLaunchActionVerbsStatics2
 {
-    auto shim() const { return impl::shim<D, IAppointmentsProviderLaunchActionVerbsStatics2>(this); }
-
-public:
-
     hstring ShowAppointmentDetails() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRemoveAppointmentOperation
+struct WINRT_EBO impl_IRemoveAppointmentOperation
 {
-    auto shim() const { return impl::shim<D, IRemoveAppointmentOperation>(this); }
-
-public:
-
     hstring AppointmentId() const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> InstanceStartDate() const;
     hstring SourcePackageFamilyName() const;
@@ -74,12 +58,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IReplaceAppointmentOperation
+struct WINRT_EBO impl_IReplaceAppointmentOperation
 {
-    auto shim() const { return impl::shim<D, IReplaceAppointmentOperation>(this); }
-
-public:
-
     hstring AppointmentId() const;
     Windows::ApplicationModel::Appointments::Appointment AppointmentInformation() const;
     Windows::Foundation::IReference<Windows::Foundation::DateTime> InstanceStartDate() const;

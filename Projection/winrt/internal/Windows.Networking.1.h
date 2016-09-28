@@ -60,11 +60,11 @@ template <> struct traits<Windows::Networking::HostName> { using default_interfa
 
 namespace Windows::Networking {
 
-template <typename T> class impl_IEndpointPair;
-template <typename T> class impl_IEndpointPairFactory;
-template <typename T> class impl_IHostName;
-template <typename T> class impl_IHostNameFactory;
-template <typename T> class impl_IHostNameStatics;
+template <typename T> struct impl_IEndpointPair;
+template <typename T> struct impl_IEndpointPairFactory;
+template <typename T> struct impl_IHostName;
+template <typename T> struct impl_IHostNameFactory;
+template <typename T> struct impl_IHostNameStatics;
 
 }
 

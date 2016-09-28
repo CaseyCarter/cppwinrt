@@ -1,1 +1,1 @@
-template <typename T> class impl_%;
+template <typename T> struct impl_%;

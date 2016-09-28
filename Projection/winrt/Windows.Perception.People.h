@@ -60,21 +60,21 @@ namespace Windows::Perception::People {
 template <typename D> Windows::Foundation::Numerics::float3 impl_IHeadPose<D>::Position() const
 {
     Windows::Foundation::Numerics::float3 value {};
-    check_hresult(shim()->get_Position(put(value)));
+    check_hresult(static_cast<const IHeadPose &>(static_cast<const D &>(*this))->get_Position(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Numerics::float3 impl_IHeadPose<D>::ForwardDirection() const
 {
     Windows::Foundation::Numerics::float3 value {};
-    check_hresult(shim()->get_ForwardDirection(put(value)));
+    check_hresult(static_cast<const IHeadPose &>(static_cast<const D &>(*this))->get_ForwardDirection(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Numerics::float3 impl_IHeadPose<D>::UpDirection() const
 {
     Windows::Foundation::Numerics::float3 value {};
-    check_hresult(shim()->get_UpDirection(put(value)));
+    check_hresult(static_cast<const IHeadPose &>(static_cast<const D &>(*this))->get_UpDirection(put(value)));
     return value;
 }
 

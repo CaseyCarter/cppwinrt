@@ -30,47 +30,31 @@ template <> struct __declspec(uuid("61b95949-a027-51d8-9f33-37927451502b")) __de
 namespace Windows::Gaming::Input::Custom {
 
 template <typename D>
-class WINRT_EBO impl_ICustomGameControllerFactory
+struct WINRT_EBO impl_ICustomGameControllerFactory
 {
-    auto shim() const { return impl::shim<D, ICustomGameControllerFactory>(this); }
-
-public:
-
     Windows::IInspectable CreateGameController(const Windows::Gaming::Input::Custom::IGameControllerProvider & provider) const;
     void OnGameControllerAdded(const Windows::Gaming::Input::IGameController & value) const;
     void OnGameControllerRemoved(const Windows::Gaming::Input::IGameController & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGameControllerFactoryManagerStatics
+struct WINRT_EBO impl_IGameControllerFactoryManagerStatics
 {
-    auto shim() const { return impl::shim<D, IGameControllerFactoryManagerStatics>(this); }
-
-public:
-
     void RegisterCustomFactoryForGipInterface(const Windows::Gaming::Input::Custom::ICustomGameControllerFactory & factory, GUID interfaceId) const;
     void RegisterCustomFactoryForHardwareId(const Windows::Gaming::Input::Custom::ICustomGameControllerFactory & factory, uint16_t hardwareVendorId, uint16_t hardwareProductId) const;
     void RegisterCustomFactoryForXusbType(const Windows::Gaming::Input::Custom::ICustomGameControllerFactory & factory, Windows::Gaming::Input::Custom::XusbDeviceType xusbType, Windows::Gaming::Input::Custom::XusbDeviceSubtype xusbSubtype) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGameControllerInputSink
+struct WINRT_EBO impl_IGameControllerInputSink
 {
-    auto shim() const { return impl::shim<D, IGameControllerInputSink>(this); }
-
-public:
-
     void OnInputResumed(uint64_t timestamp) const;
     void OnInputSuspended(uint64_t timestamp) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGameControllerProvider
+struct WINRT_EBO impl_IGameControllerProvider
 {
-    auto shim() const { return impl::shim<D, IGameControllerProvider>(this); }
-
-public:
-
     Windows::Gaming::Input::Custom::GameControllerVersionInfo FirmwareVersionInfo() const;
     uint16_t HardwareProductId() const;
     uint16_t HardwareVendorId() const;
@@ -79,57 +63,37 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IGipFirmwareUpdateResult
+struct WINRT_EBO impl_IGipFirmwareUpdateResult
 {
-    auto shim() const { return impl::shim<D, IGipFirmwareUpdateResult>(this); }
-
-public:
-
     uint32_t ExtendedErrorCode() const;
     uint32_t FinalComponentId() const;
     Windows::Gaming::Input::Custom::GipFirmwareUpdateStatus Status() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGipGameControllerInputSink
+struct WINRT_EBO impl_IGipGameControllerInputSink
 {
-    auto shim() const { return impl::shim<D, IGipGameControllerInputSink>(this); }
-
-public:
-
     void OnKeyReceived(uint64_t timestamp, uint8_t keyCode, bool isPressed) const;
     void OnMessageReceived(uint64_t timestamp, Windows::Gaming::Input::Custom::GipMessageClass messageClass, uint8_t messageId, uint8_t sequenceId, array_ref<const uint8_t> messageBuffer) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGipGameControllerProvider
+struct WINRT_EBO impl_IGipGameControllerProvider
 {
-    auto shim() const { return impl::shim<D, IGipGameControllerProvider>(this); }
-
-public:
-
     void SendMessage(Windows::Gaming::Input::Custom::GipMessageClass messageClass, uint8_t messageId, array_ref<const uint8_t> messageBuffer) const;
     void SendReceiveMessage(Windows::Gaming::Input::Custom::GipMessageClass messageClass, uint8_t messageId, array_ref<const uint8_t> requestMessageBuffer, array_ref<uint8_t> responseMessageBuffer) const;
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Gaming::Input::Custom::GipFirmwareUpdateResult, Windows::Gaming::Input::Custom::GipFirmwareUpdateProgress> UpdateFirmwareAsync(const Windows::Storage::Streams::IInputStream & firmwareImage) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IXusbGameControllerInputSink
+struct WINRT_EBO impl_IXusbGameControllerInputSink
 {
-    auto shim() const { return impl::shim<D, IXusbGameControllerInputSink>(this); }
-
-public:
-
     void OnInputReceived(uint64_t timestamp, uint8_t reportId, array_ref<const uint8_t> inputBuffer) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IXusbGameControllerProvider
+struct WINRT_EBO impl_IXusbGameControllerProvider
 {
-    auto shim() const { return impl::shim<D, IXusbGameControllerProvider>(this); }
-
-public:
-
     void SetVibration(double lowFrequencyMotorSpeed, double highFrequencyMotorSpeed) const;
 };
 

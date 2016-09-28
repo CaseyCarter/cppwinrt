@@ -10,12 +10,8 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::Foundation::Metadata {
 
 template <typename D>
-class WINRT_EBO impl_IApiInformationStatics
+struct WINRT_EBO impl_IApiInformationStatics
 {
-    auto shim() const { return impl::shim<D, IApiInformationStatics>(this); }
-
-public:
-
     bool IsTypePresent(hstring_ref typeName) const;
     bool IsMethodPresent(hstring_ref typeName, hstring_ref methodName) const;
     bool IsMethodPresent(hstring_ref typeName, hstring_ref methodName, uint32_t inputParameterCount) const;

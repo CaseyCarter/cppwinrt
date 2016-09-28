@@ -73,10 +73,10 @@ template <> struct traits<Windows::Networking::ServiceDiscovery::Dnssd::DnssdSer
 
 namespace Windows::Networking::ServiceDiscovery::Dnssd {
 
-template <typename T> class impl_IDnssdRegistrationResult;
-template <typename T> class impl_IDnssdServiceInstance;
-template <typename T> class impl_IDnssdServiceInstanceFactory;
-template <typename T> class impl_IDnssdServiceWatcher;
+template <typename T> struct impl_IDnssdRegistrationResult;
+template <typename T> struct impl_IDnssdServiceInstance;
+template <typename T> struct impl_IDnssdServiceInstanceFactory;
+template <typename T> struct impl_IDnssdServiceWatcher;
 
 }
 

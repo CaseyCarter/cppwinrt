@@ -74,13 +74,13 @@ template <> struct traits<Windows::Storage::Provider::FileUpdateRequestedEventAr
 
 namespace Windows::Storage::Provider {
 
-template <typename T> class impl_ICachedFileUpdaterStatics;
-template <typename T> class impl_ICachedFileUpdaterUI;
-template <typename T> class impl_ICachedFileUpdaterUI2;
-template <typename T> class impl_IFileUpdateRequest;
-template <typename T> class impl_IFileUpdateRequest2;
-template <typename T> class impl_IFileUpdateRequestDeferral;
-template <typename T> class impl_IFileUpdateRequestedEventArgs;
+template <typename T> struct impl_ICachedFileUpdaterStatics;
+template <typename T> struct impl_ICachedFileUpdaterUI;
+template <typename T> struct impl_ICachedFileUpdaterUI2;
+template <typename T> struct impl_IFileUpdateRequest;
+template <typename T> struct impl_IFileUpdateRequest2;
+template <typename T> struct impl_IFileUpdateRequestDeferral;
+template <typename T> struct impl_IFileUpdateRequestedEventArgs;
 
 }
 

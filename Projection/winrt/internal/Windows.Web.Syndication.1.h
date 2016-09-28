@@ -294,29 +294,29 @@ template <> struct traits<Windows::Web::Syndication::SyndicationText> { using de
 
 namespace Windows::Web::Syndication {
 
-template <typename T> class impl_ISyndicationAttribute;
-template <typename T> class impl_ISyndicationAttributeFactory;
-template <typename T> class impl_ISyndicationCategory;
-template <typename T> class impl_ISyndicationCategoryFactory;
-template <typename T> class impl_ISyndicationClient;
-template <typename T> class impl_ISyndicationClientFactory;
-template <typename T> class impl_ISyndicationContent;
-template <typename T> class impl_ISyndicationContentFactory;
-template <typename T> class impl_ISyndicationErrorStatics;
-template <typename T> class impl_ISyndicationFeed;
-template <typename T> class impl_ISyndicationFeedFactory;
-template <typename T> class impl_ISyndicationGenerator;
-template <typename T> class impl_ISyndicationGeneratorFactory;
-template <typename T> class impl_ISyndicationItem;
-template <typename T> class impl_ISyndicationItemFactory;
-template <typename T> class impl_ISyndicationLink;
-template <typename T> class impl_ISyndicationLinkFactory;
-template <typename T> class impl_ISyndicationNode;
-template <typename T> class impl_ISyndicationNodeFactory;
-template <typename T> class impl_ISyndicationPerson;
-template <typename T> class impl_ISyndicationPersonFactory;
-template <typename T> class impl_ISyndicationText;
-template <typename T> class impl_ISyndicationTextFactory;
+template <typename T> struct impl_ISyndicationAttribute;
+template <typename T> struct impl_ISyndicationAttributeFactory;
+template <typename T> struct impl_ISyndicationCategory;
+template <typename T> struct impl_ISyndicationCategoryFactory;
+template <typename T> struct impl_ISyndicationClient;
+template <typename T> struct impl_ISyndicationClientFactory;
+template <typename T> struct impl_ISyndicationContent;
+template <typename T> struct impl_ISyndicationContentFactory;
+template <typename T> struct impl_ISyndicationErrorStatics;
+template <typename T> struct impl_ISyndicationFeed;
+template <typename T> struct impl_ISyndicationFeedFactory;
+template <typename T> struct impl_ISyndicationGenerator;
+template <typename T> struct impl_ISyndicationGeneratorFactory;
+template <typename T> struct impl_ISyndicationItem;
+template <typename T> struct impl_ISyndicationItemFactory;
+template <typename T> struct impl_ISyndicationLink;
+template <typename T> struct impl_ISyndicationLinkFactory;
+template <typename T> struct impl_ISyndicationNode;
+template <typename T> struct impl_ISyndicationNodeFactory;
+template <typename T> struct impl_ISyndicationPerson;
+template <typename T> struct impl_ISyndicationPersonFactory;
+template <typename T> struct impl_ISyndicationText;
+template <typename T> struct impl_ISyndicationTextFactory;
 
 }
 

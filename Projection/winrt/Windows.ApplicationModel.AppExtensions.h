@@ -490,28 +490,28 @@ namespace Windows::ApplicationModel::AppExtensions {
 template <typename D> Windows::ApplicationModel::AppExtensions::AppExtensionCatalog impl_IAppExtensionCatalogStatics<D>::Open(hstring_ref appExtensionName) const
 {
     Windows::ApplicationModel::AppExtensions::AppExtensionCatalog value { nullptr };
-    check_hresult(shim()->abi_Open(get(appExtensionName), put(value)));
+    check_hresult(static_cast<const IAppExtensionCatalogStatics &>(static_cast<const D &>(*this))->abi_Open(get(appExtensionName), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppExtensions::AppExtension>> impl_IAppExtensionCatalog<D>::FindAllAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppExtensions::AppExtension>> operation;
-    check_hresult(shim()->abi_FindAllAsync(put(operation)));
+    check_hresult(static_cast<const IAppExtensionCatalog &>(static_cast<const D &>(*this))->abi_FindAllAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IAppExtensionCatalog<D>::RequestRemovePackageAsync(hstring_ref packageFullName) const
 {
     Windows::Foundation::IAsyncOperation<bool> operation;
-    check_hresult(shim()->abi_RequestRemovePackageAsync(get(packageFullName), put(operation)));
+    check_hresult(static_cast<const IAppExtensionCatalog &>(static_cast<const D &>(*this))->abi_RequestRemovePackageAsync(get(packageFullName), put(operation)));
     return operation;
 }
 
 template <typename D> event_token impl_IAppExtensionCatalog<D>::PackageInstalled(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppExtensions::AppExtensionCatalog, Windows::ApplicationModel::AppExtensions::AppExtensionPackageInstalledEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_PackageInstalled(get(handler), &token));
+    check_hresult(static_cast<const IAppExtensionCatalog &>(static_cast<const D &>(*this))->add_PackageInstalled(get(handler), &token));
     return token;
 }
 
@@ -522,13 +522,13 @@ template <typename D> event_revoker<IAppExtensionCatalog> impl_IAppExtensionCata
 
 template <typename D> void impl_IAppExtensionCatalog<D>::PackageInstalled(event_token token) const
 {
-    check_hresult(shim()->remove_PackageInstalled(token));
+    check_hresult(static_cast<const IAppExtensionCatalog &>(static_cast<const D &>(*this))->remove_PackageInstalled(token));
 }
 
 template <typename D> event_token impl_IAppExtensionCatalog<D>::PackageUpdating(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppExtensions::AppExtensionCatalog, Windows::ApplicationModel::AppExtensions::AppExtensionPackageUpdatingEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_PackageUpdating(get(handler), &token));
+    check_hresult(static_cast<const IAppExtensionCatalog &>(static_cast<const D &>(*this))->add_PackageUpdating(get(handler), &token));
     return token;
 }
 
@@ -539,13 +539,13 @@ template <typename D> event_revoker<IAppExtensionCatalog> impl_IAppExtensionCata
 
 template <typename D> void impl_IAppExtensionCatalog<D>::PackageUpdating(event_token token) const
 {
-    check_hresult(shim()->remove_PackageUpdating(token));
+    check_hresult(static_cast<const IAppExtensionCatalog &>(static_cast<const D &>(*this))->remove_PackageUpdating(token));
 }
 
 template <typename D> event_token impl_IAppExtensionCatalog<D>::PackageUpdated(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppExtensions::AppExtensionCatalog, Windows::ApplicationModel::AppExtensions::AppExtensionPackageUpdatedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_PackageUpdated(get(handler), &token));
+    check_hresult(static_cast<const IAppExtensionCatalog &>(static_cast<const D &>(*this))->add_PackageUpdated(get(handler), &token));
     return token;
 }
 
@@ -556,13 +556,13 @@ template <typename D> event_revoker<IAppExtensionCatalog> impl_IAppExtensionCata
 
 template <typename D> void impl_IAppExtensionCatalog<D>::PackageUpdated(event_token token) const
 {
-    check_hresult(shim()->remove_PackageUpdated(token));
+    check_hresult(static_cast<const IAppExtensionCatalog &>(static_cast<const D &>(*this))->remove_PackageUpdated(token));
 }
 
 template <typename D> event_token impl_IAppExtensionCatalog<D>::PackageUninstalling(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppExtensions::AppExtensionCatalog, Windows::ApplicationModel::AppExtensions::AppExtensionPackageUninstallingEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_PackageUninstalling(get(handler), &token));
+    check_hresult(static_cast<const IAppExtensionCatalog &>(static_cast<const D &>(*this))->add_PackageUninstalling(get(handler), &token));
     return token;
 }
 
@@ -573,13 +573,13 @@ template <typename D> event_revoker<IAppExtensionCatalog> impl_IAppExtensionCata
 
 template <typename D> void impl_IAppExtensionCatalog<D>::PackageUninstalling(event_token token) const
 {
-    check_hresult(shim()->remove_PackageUninstalling(token));
+    check_hresult(static_cast<const IAppExtensionCatalog &>(static_cast<const D &>(*this))->remove_PackageUninstalling(token));
 }
 
 template <typename D> event_token impl_IAppExtensionCatalog<D>::PackageStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppExtensions::AppExtensionCatalog, Windows::ApplicationModel::AppExtensions::AppExtensionPackageStatusChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_PackageStatusChanged(get(handler), &token));
+    check_hresult(static_cast<const IAppExtensionCatalog &>(static_cast<const D &>(*this))->add_PackageStatusChanged(get(handler), &token));
     return token;
 }
 
@@ -590,139 +590,139 @@ template <typename D> event_revoker<IAppExtensionCatalog> impl_IAppExtensionCata
 
 template <typename D> void impl_IAppExtensionCatalog<D>::PackageStatusChanged(event_token token) const
 {
-    check_hresult(shim()->remove_PackageStatusChanged(token));
+    check_hresult(static_cast<const IAppExtensionCatalog &>(static_cast<const D &>(*this))->remove_PackageStatusChanged(token));
 }
 
 template <typename D> hstring impl_IAppExtension<D>::Id() const
 {
     hstring value;
-    check_hresult(shim()->get_Id(put(value)));
+    check_hresult(static_cast<const IAppExtension &>(static_cast<const D &>(*this))->get_Id(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAppExtension<D>::DisplayName() const
 {
     hstring value;
-    check_hresult(shim()->get_DisplayName(put(value)));
+    check_hresult(static_cast<const IAppExtension &>(static_cast<const D &>(*this))->get_DisplayName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAppExtension<D>::Description() const
 {
     hstring value;
-    check_hresult(shim()->get_Description(put(value)));
+    check_hresult(static_cast<const IAppExtension &>(static_cast<const D &>(*this))->get_Description(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Package impl_IAppExtension<D>::Package() const
 {
     Windows::ApplicationModel::Package value { nullptr };
-    check_hresult(shim()->get_Package(put(value)));
+    check_hresult(static_cast<const IAppExtension &>(static_cast<const D &>(*this))->get_Package(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::AppInfo impl_IAppExtension<D>::AppInfo() const
 {
     Windows::ApplicationModel::AppInfo value { nullptr };
-    check_hresult(shim()->get_AppInfo(put(value)));
+    check_hresult(static_cast<const IAppExtension &>(static_cast<const D &>(*this))->get_AppInfo(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IPropertySet> impl_IAppExtension<D>::GetExtensionPropertiesAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IPropertySet> operation;
-    check_hresult(shim()->abi_GetExtensionPropertiesAsync(put(operation)));
+    check_hresult(static_cast<const IAppExtension &>(static_cast<const D &>(*this))->abi_GetExtensionPropertiesAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> impl_IAppExtension<D>::GetPublicFolderAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> operation;
-    check_hresult(shim()->abi_GetPublicFolderAsync(put(operation)));
+    check_hresult(static_cast<const IAppExtension &>(static_cast<const D &>(*this))->abi_GetPublicFolderAsync(put(operation)));
     return operation;
 }
 
 template <typename D> hstring impl_IAppExtensionPackageInstalledEventArgs<D>::AppExtensionName() const
 {
     hstring value;
-    check_hresult(shim()->get_AppExtensionName(put(value)));
+    check_hresult(static_cast<const IAppExtensionPackageInstalledEventArgs &>(static_cast<const D &>(*this))->get_AppExtensionName(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Package impl_IAppExtensionPackageInstalledEventArgs<D>::Package() const
 {
     Windows::ApplicationModel::Package value { nullptr };
-    check_hresult(shim()->get_Package(put(value)));
+    check_hresult(static_cast<const IAppExtensionPackageInstalledEventArgs &>(static_cast<const D &>(*this))->get_Package(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppExtensions::AppExtension> impl_IAppExtensionPackageInstalledEventArgs<D>::Extensions() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppExtensions::AppExtension> values;
-    check_hresult(shim()->get_Extensions(put(values)));
+    check_hresult(static_cast<const IAppExtensionPackageInstalledEventArgs &>(static_cast<const D &>(*this))->get_Extensions(put(values)));
     return values;
 }
 
 template <typename D> hstring impl_IAppExtensionPackageUpdatingEventArgs<D>::AppExtensionName() const
 {
     hstring value;
-    check_hresult(shim()->get_AppExtensionName(put(value)));
+    check_hresult(static_cast<const IAppExtensionPackageUpdatingEventArgs &>(static_cast<const D &>(*this))->get_AppExtensionName(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Package impl_IAppExtensionPackageUpdatingEventArgs<D>::Package() const
 {
     Windows::ApplicationModel::Package value { nullptr };
-    check_hresult(shim()->get_Package(put(value)));
+    check_hresult(static_cast<const IAppExtensionPackageUpdatingEventArgs &>(static_cast<const D &>(*this))->get_Package(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAppExtensionPackageUpdatedEventArgs<D>::AppExtensionName() const
 {
     hstring value;
-    check_hresult(shim()->get_AppExtensionName(put(value)));
+    check_hresult(static_cast<const IAppExtensionPackageUpdatedEventArgs &>(static_cast<const D &>(*this))->get_AppExtensionName(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Package impl_IAppExtensionPackageUpdatedEventArgs<D>::Package() const
 {
     Windows::ApplicationModel::Package value { nullptr };
-    check_hresult(shim()->get_Package(put(value)));
+    check_hresult(static_cast<const IAppExtensionPackageUpdatedEventArgs &>(static_cast<const D &>(*this))->get_Package(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppExtensions::AppExtension> impl_IAppExtensionPackageUpdatedEventArgs<D>::Extensions() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppExtensions::AppExtension> values;
-    check_hresult(shim()->get_Extensions(put(values)));
+    check_hresult(static_cast<const IAppExtensionPackageUpdatedEventArgs &>(static_cast<const D &>(*this))->get_Extensions(put(values)));
     return values;
 }
 
 template <typename D> hstring impl_IAppExtensionPackageUninstallingEventArgs<D>::AppExtensionName() const
 {
     hstring value;
-    check_hresult(shim()->get_AppExtensionName(put(value)));
+    check_hresult(static_cast<const IAppExtensionPackageUninstallingEventArgs &>(static_cast<const D &>(*this))->get_AppExtensionName(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Package impl_IAppExtensionPackageUninstallingEventArgs<D>::Package() const
 {
     Windows::ApplicationModel::Package value { nullptr };
-    check_hresult(shim()->get_Package(put(value)));
+    check_hresult(static_cast<const IAppExtensionPackageUninstallingEventArgs &>(static_cast<const D &>(*this))->get_Package(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAppExtensionPackageStatusChangedEventArgs<D>::AppExtensionName() const
 {
     hstring value;
-    check_hresult(shim()->get_AppExtensionName(put(value)));
+    check_hresult(static_cast<const IAppExtensionPackageStatusChangedEventArgs &>(static_cast<const D &>(*this))->get_AppExtensionName(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::Package impl_IAppExtensionPackageStatusChangedEventArgs<D>::Package() const
 {
     Windows::ApplicationModel::Package value { nullptr };
-    check_hresult(shim()->get_Package(put(value)));
+    check_hresult(static_cast<const IAppExtensionPackageStatusChangedEventArgs &>(static_cast<const D &>(*this))->get_Package(put(value)));
     return value;
 }
 

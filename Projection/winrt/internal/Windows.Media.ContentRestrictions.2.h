@@ -105,24 +105,16 @@ template <> struct __declspec(uuid("cf61be5d-40c3-5484-846a-3f82b8ba5738")) __de
 namespace Windows::Media::ContentRestrictions {
 
 template <typename D>
-class WINRT_EBO impl_IContentRestrictionsBrowsePolicy
+struct WINRT_EBO impl_IContentRestrictionsBrowsePolicy
 {
-    auto shim() const { return impl::shim<D, IContentRestrictionsBrowsePolicy>(this); }
-
-public:
-
     hstring GeographicRegion() const;
     Windows::Foundation::IReference<uint32_t> MaxBrowsableAgeRating() const;
     Windows::Foundation::IReference<uint32_t> PreferredAgeRating() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRatedContentDescription
+struct WINRT_EBO impl_IRatedContentDescription
 {
-    auto shim() const { return impl::shim<D, IRatedContentDescription>(this); }
-
-public:
-
     hstring Id() const;
     void Id(hstring_ref value) const;
     hstring Title() const;
@@ -136,22 +128,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IRatedContentDescriptionFactory
+struct WINRT_EBO impl_IRatedContentDescriptionFactory
 {
-    auto shim() const { return impl::shim<D, IRatedContentDescriptionFactory>(this); }
-
-public:
-
     Windows::Media::ContentRestrictions::RatedContentDescription Create(hstring_ref id, hstring_ref title, Windows::Media::ContentRestrictions::RatedContentCategory category) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRatedContentRestrictions
+struct WINRT_EBO impl_IRatedContentRestrictions
 {
-    auto shim() const { return impl::shim<D, IRatedContentRestrictions>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Media::ContentRestrictions::ContentRestrictionsBrowsePolicy> GetBrowsePolicyAsync() const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::Media::ContentRestrictions::ContentAccessRestrictionLevel> GetRestrictionLevelAsync(const Windows::Media::ContentRestrictions::RatedContentDescription & RatedContentDescription) const;
     Windows::Foundation::IAsyncOperation<bool> RequestContentAccessAsync(const Windows::Media::ContentRestrictions::RatedContentDescription & RatedContentDescription) const;
@@ -162,12 +146,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IRatedContentRestrictionsFactory
+struct WINRT_EBO impl_IRatedContentRestrictionsFactory
 {
-    auto shim() const { return impl::shim<D, IRatedContentRestrictionsFactory>(this); }
-
-public:
-
     Windows::Media::ContentRestrictions::RatedContentRestrictions CreateWithMaxAgeRating(uint32_t maxAgeRating) const;
 };
 

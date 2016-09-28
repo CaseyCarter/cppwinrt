@@ -293,63 +293,63 @@ namespace Windows::Devices::Gpio {
 template <typename D> Windows::Devices::Gpio::GpioPinEdge impl_IGpioPinValueChangedEventArgs<D>::Edge() const
 {
     Windows::Devices::Gpio::GpioPinEdge value {};
-    check_hresult(shim()->get_Edge(&value));
+    check_hresult(static_cast<const IGpioPinValueChangedEventArgs &>(static_cast<const D &>(*this))->get_Edge(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IGpioController<D>::PinCount() const
 {
     int32_t value {};
-    check_hresult(shim()->get_PinCount(&value));
+    check_hresult(static_cast<const IGpioController &>(static_cast<const D &>(*this))->get_PinCount(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Gpio::GpioPin impl_IGpioController<D>::OpenPin(int32_t pinNumber) const
 {
     Windows::Devices::Gpio::GpioPin pin { nullptr };
-    check_hresult(shim()->abi_OpenPin(pinNumber, put(pin)));
+    check_hresult(static_cast<const IGpioController &>(static_cast<const D &>(*this))->abi_OpenPin(pinNumber, put(pin)));
     return pin;
 }
 
 template <typename D> Windows::Devices::Gpio::GpioPin impl_IGpioController<D>::OpenPin(int32_t pinNumber, Windows::Devices::Gpio::GpioSharingMode sharingMode) const
 {
     Windows::Devices::Gpio::GpioPin pin { nullptr };
-    check_hresult(shim()->abi_OpenPinWithSharingMode(pinNumber, sharingMode, put(pin)));
+    check_hresult(static_cast<const IGpioController &>(static_cast<const D &>(*this))->abi_OpenPinWithSharingMode(pinNumber, sharingMode, put(pin)));
     return pin;
 }
 
 template <typename D> bool impl_IGpioController<D>::TryOpenPin(int32_t pinNumber, Windows::Devices::Gpio::GpioSharingMode sharingMode, Windows::Devices::Gpio::GpioPin & pin, Windows::Devices::Gpio::GpioOpenStatus & openStatus) const
 {
     bool succeeded {};
-    check_hresult(shim()->abi_TryOpenPin(pinNumber, sharingMode, put(pin), &openStatus, &succeeded));
+    check_hresult(static_cast<const IGpioController &>(static_cast<const D &>(*this))->abi_TryOpenPin(pinNumber, sharingMode, put(pin), &openStatus, &succeeded));
     return succeeded;
 }
 
 template <typename D> Windows::Devices::Gpio::GpioController impl_IGpioControllerStatics<D>::GetDefault() const
 {
     Windows::Devices::Gpio::GpioController value { nullptr };
-    check_hresult(shim()->abi_GetDefault(put(value)));
+    check_hresult(static_cast<const IGpioControllerStatics &>(static_cast<const D &>(*this))->abi_GetDefault(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Gpio::GpioController>> impl_IGpioControllerStatics2<D>::GetControllersAsync(const Windows::Devices::Gpio::Provider::IGpioProvider & provider) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Gpio::GpioController>> operation;
-    check_hresult(shim()->abi_GetControllersAsync(get(provider), put(operation)));
+    check_hresult(static_cast<const IGpioControllerStatics2 &>(static_cast<const D &>(*this))->abi_GetControllersAsync(get(provider), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Gpio::GpioController> impl_IGpioControllerStatics2<D>::GetDefaultAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Gpio::GpioController> operation;
-    check_hresult(shim()->abi_GetDefaultAsync(put(operation)));
+    check_hresult(static_cast<const IGpioControllerStatics2 &>(static_cast<const D &>(*this))->abi_GetDefaultAsync(put(operation)));
     return operation;
 }
 
 template <typename D> event_token impl_IGpioPin<D>::ValueChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Gpio::GpioPin, Windows::Devices::Gpio::GpioPinValueChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_ValueChanged(get(handler), &token));
+    check_hresult(static_cast<const IGpioPin &>(static_cast<const D &>(*this))->add_ValueChanged(get(handler), &token));
     return token;
 }
 
@@ -360,63 +360,63 @@ template <typename D> event_revoker<IGpioPin> impl_IGpioPin<D>::ValueChanged(aut
 
 template <typename D> void impl_IGpioPin<D>::ValueChanged(event_token token) const
 {
-    check_hresult(shim()->remove_ValueChanged(token));
+    check_hresult(static_cast<const IGpioPin &>(static_cast<const D &>(*this))->remove_ValueChanged(token));
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IGpioPin<D>::DebounceTimeout() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_DebounceTimeout(put(value)));
+    check_hresult(static_cast<const IGpioPin &>(static_cast<const D &>(*this))->get_DebounceTimeout(put(value)));
     return value;
 }
 
 template <typename D> void impl_IGpioPin<D>::DebounceTimeout(const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(shim()->put_DebounceTimeout(get(value)));
+    check_hresult(static_cast<const IGpioPin &>(static_cast<const D &>(*this))->put_DebounceTimeout(get(value)));
 }
 
 template <typename D> int32_t impl_IGpioPin<D>::PinNumber() const
 {
     int32_t value {};
-    check_hresult(shim()->get_PinNumber(&value));
+    check_hresult(static_cast<const IGpioPin &>(static_cast<const D &>(*this))->get_PinNumber(&value));
     return value;
 }
 
 template <typename D> Windows::Devices::Gpio::GpioSharingMode impl_IGpioPin<D>::SharingMode() const
 {
     Windows::Devices::Gpio::GpioSharingMode value {};
-    check_hresult(shim()->get_SharingMode(&value));
+    check_hresult(static_cast<const IGpioPin &>(static_cast<const D &>(*this))->get_SharingMode(&value));
     return value;
 }
 
 template <typename D> bool impl_IGpioPin<D>::IsDriveModeSupported(Windows::Devices::Gpio::GpioPinDriveMode driveMode) const
 {
     bool supported {};
-    check_hresult(shim()->abi_IsDriveModeSupported(driveMode, &supported));
+    check_hresult(static_cast<const IGpioPin &>(static_cast<const D &>(*this))->abi_IsDriveModeSupported(driveMode, &supported));
     return supported;
 }
 
 template <typename D> Windows::Devices::Gpio::GpioPinDriveMode impl_IGpioPin<D>::GetDriveMode() const
 {
     Windows::Devices::Gpio::GpioPinDriveMode value {};
-    check_hresult(shim()->abi_GetDriveMode(&value));
+    check_hresult(static_cast<const IGpioPin &>(static_cast<const D &>(*this))->abi_GetDriveMode(&value));
     return value;
 }
 
 template <typename D> void impl_IGpioPin<D>::SetDriveMode(Windows::Devices::Gpio::GpioPinDriveMode value) const
 {
-    check_hresult(shim()->abi_SetDriveMode(value));
+    check_hresult(static_cast<const IGpioPin &>(static_cast<const D &>(*this))->abi_SetDriveMode(value));
 }
 
 template <typename D> void impl_IGpioPin<D>::Write(Windows::Devices::Gpio::GpioPinValue value) const
 {
-    check_hresult(shim()->abi_Write(value));
+    check_hresult(static_cast<const IGpioPin &>(static_cast<const D &>(*this))->abi_Write(value));
 }
 
 template <typename D> Windows::Devices::Gpio::GpioPinValue impl_IGpioPin<D>::Read() const
 {
     Windows::Devices::Gpio::GpioPinValue value {};
-    check_hresult(shim()->abi_Read(&value));
+    check_hresult(static_cast<const IGpioPin &>(static_cast<const D &>(*this))->abi_Read(&value));
     return value;
 }
 

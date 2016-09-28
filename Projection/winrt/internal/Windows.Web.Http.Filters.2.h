@@ -86,12 +86,8 @@ template <> struct __declspec(uuid("beadb572-f9a3-5e93-b6ca-e311b65933fc")) __de
 namespace Windows::Web::Http::Filters {
 
 template <typename D>
-class WINRT_EBO impl_IHttpBaseProtocolFilter
+struct WINRT_EBO impl_IHttpBaseProtocolFilter
 {
-    auto shim() const { return impl::shim<D, IHttpBaseProtocolFilter>(this); }
-
-public:
-
     bool AllowAutoRedirect() const;
     void AllowAutoRedirect(bool value) const;
     bool AllowUI() const;
@@ -114,34 +110,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpBaseProtocolFilter2
+struct WINRT_EBO impl_IHttpBaseProtocolFilter2
 {
-    auto shim() const { return impl::shim<D, IHttpBaseProtocolFilter2>(this); }
-
-public:
-
     Windows::Web::Http::HttpVersion MaxVersion() const;
     void MaxVersion(Windows::Web::Http::HttpVersion value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpBaseProtocolFilter3
+struct WINRT_EBO impl_IHttpBaseProtocolFilter3
 {
-    auto shim() const { return impl::shim<D, IHttpBaseProtocolFilter3>(this); }
-
-public:
-
     Windows::Web::Http::Filters::HttpCookieUsageBehavior CookieUsageBehavior() const;
     void CookieUsageBehavior(Windows::Web::Http::Filters::HttpCookieUsageBehavior value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpBaseProtocolFilter4
+struct WINRT_EBO impl_IHttpBaseProtocolFilter4
 {
-    auto shim() const { return impl::shim<D, IHttpBaseProtocolFilter4>(this); }
-
-public:
-
     event_token ServerCustomValidationRequested(const Windows::Foundation::TypedEventHandler<Windows::Web::Http::Filters::HttpBaseProtocolFilter, Windows::Web::Http::Filters::HttpServerCustomValidationRequestedEventArgs> & eventHandler) const;
     using ServerCustomValidationRequested_revoker = event_revoker<IHttpBaseProtocolFilter4>;
     ServerCustomValidationRequested_revoker ServerCustomValidationRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Web::Http::Filters::HttpBaseProtocolFilter, Windows::Web::Http::Filters::HttpServerCustomValidationRequestedEventArgs> & eventHandler) const;
@@ -150,12 +134,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpCacheControl
+struct WINRT_EBO impl_IHttpCacheControl
 {
-    auto shim() const { return impl::shim<D, IHttpCacheControl>(this); }
-
-public:
-
     Windows::Web::Http::Filters::HttpCacheReadBehavior ReadBehavior() const;
     void ReadBehavior(Windows::Web::Http::Filters::HttpCacheReadBehavior value) const;
     Windows::Web::Http::Filters::HttpCacheWriteBehavior WriteBehavior() const;
@@ -163,22 +143,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpFilter
+struct WINRT_EBO impl_IHttpFilter
 {
-    auto shim() const { return impl::shim<D, IHttpFilter>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress> SendRequestAsync(const Windows::Web::Http::HttpRequestMessage & request) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHttpServerCustomValidationRequestedEventArgs
+struct WINRT_EBO impl_IHttpServerCustomValidationRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, IHttpServerCustomValidationRequestedEventArgs>(this); }
-
-public:
-
     Windows::Web::Http::HttpRequestMessage RequestMessage() const;
     Windows::Security::Cryptography::Certificates::Certificate ServerCertificate() const;
     Windows::Networking::Sockets::SocketSslErrorSeverity ServerCertificateErrorSeverity() const;

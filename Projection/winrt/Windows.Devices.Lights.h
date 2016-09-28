@@ -218,85 +218,85 @@ namespace Windows::Devices::Lights {
 template <typename D> hstring impl_ILampStatics<D>::GetDeviceSelector() const
 {
     hstring value;
-    check_hresult(shim()->abi_GetDeviceSelector(put(value)));
+    check_hresult(static_cast<const ILampStatics &>(static_cast<const D &>(*this))->abi_GetDeviceSelector(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Lights::Lamp> impl_ILampStatics<D>::FromIdAsync(hstring_ref deviceId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Lights::Lamp> operation;
-    check_hresult(shim()->abi_FromIdAsync(get(deviceId), put(operation)));
+    check_hresult(static_cast<const ILampStatics &>(static_cast<const D &>(*this))->abi_FromIdAsync(get(deviceId), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Devices::Lights::Lamp> impl_ILampStatics<D>::GetDefaultAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Devices::Lights::Lamp> operation;
-    check_hresult(shim()->abi_GetDefaultAsync(put(operation)));
+    check_hresult(static_cast<const ILampStatics &>(static_cast<const D &>(*this))->abi_GetDefaultAsync(put(operation)));
     return operation;
 }
 
 template <typename D> bool impl_ILampAvailabilityChangedEventArgs<D>::IsAvailable() const
 {
     bool value {};
-    check_hresult(shim()->get_IsAvailable(&value));
+    check_hresult(static_cast<const ILampAvailabilityChangedEventArgs &>(static_cast<const D &>(*this))->get_IsAvailable(&value));
     return value;
 }
 
 template <typename D> hstring impl_ILamp<D>::DeviceId() const
 {
     hstring value;
-    check_hresult(shim()->get_DeviceId(put(value)));
+    check_hresult(static_cast<const ILamp &>(static_cast<const D &>(*this))->get_DeviceId(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ILamp<D>::IsEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_IsEnabled(&value));
+    check_hresult(static_cast<const ILamp &>(static_cast<const D &>(*this))->get_IsEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_ILamp<D>::IsEnabled(bool value) const
 {
-    check_hresult(shim()->put_IsEnabled(value));
+    check_hresult(static_cast<const ILamp &>(static_cast<const D &>(*this))->put_IsEnabled(value));
 }
 
 template <typename D> float impl_ILamp<D>::BrightnessLevel() const
 {
     float value {};
-    check_hresult(shim()->get_BrightnessLevel(&value));
+    check_hresult(static_cast<const ILamp &>(static_cast<const D &>(*this))->get_BrightnessLevel(&value));
     return value;
 }
 
 template <typename D> void impl_ILamp<D>::BrightnessLevel(float value) const
 {
-    check_hresult(shim()->put_BrightnessLevel(value));
+    check_hresult(static_cast<const ILamp &>(static_cast<const D &>(*this))->put_BrightnessLevel(value));
 }
 
 template <typename D> bool impl_ILamp<D>::IsColorSettable() const
 {
     bool value {};
-    check_hresult(shim()->get_IsColorSettable(&value));
+    check_hresult(static_cast<const ILamp &>(static_cast<const D &>(*this))->get_IsColorSettable(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_ILamp<D>::Color() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Color(put(value)));
+    check_hresult(static_cast<const ILamp &>(static_cast<const D &>(*this))->get_Color(put(value)));
     return value;
 }
 
 template <typename D> void impl_ILamp<D>::Color(const Windows::UI::Color & value) const
 {
-    check_hresult(shim()->put_Color(get(value)));
+    check_hresult(static_cast<const ILamp &>(static_cast<const D &>(*this))->put_Color(get(value)));
 }
 
 template <typename D> event_token impl_ILamp<D>::AvailabilityChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Lights::Lamp, Windows::Devices::Lights::LampAvailabilityChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_AvailabilityChanged(get(handler), &token));
+    check_hresult(static_cast<const ILamp &>(static_cast<const D &>(*this))->add_AvailabilityChanged(get(handler), &token));
     return token;
 }
 
@@ -307,7 +307,7 @@ template <typename D> event_revoker<ILamp> impl_ILamp<D>::AvailabilityChanged(au
 
 template <typename D> void impl_ILamp<D>::AvailabilityChanged(event_token token) const
 {
-    check_hresult(shim()->remove_AvailabilityChanged(token));
+    check_hresult(static_cast<const ILamp &>(static_cast<const D &>(*this))->remove_AvailabilityChanged(token));
 }
 
 inline hstring Lamp::GetDeviceSelector()

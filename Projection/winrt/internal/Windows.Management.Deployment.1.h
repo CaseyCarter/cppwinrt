@@ -146,14 +146,14 @@ template <> struct traits<Windows::Management::Deployment::PackageVolume> { usin
 
 namespace Windows::Management::Deployment {
 
-template <typename T> class impl_IDeploymentResult;
-template <typename T> class impl_IPackageManager;
-template <typename T> class impl_IPackageManager2;
-template <typename T> class impl_IPackageManager3;
-template <typename T> class impl_IPackageManager4;
-template <typename T> class impl_IPackageUserInformation;
-template <typename T> class impl_IPackageVolume;
-template <typename T> class impl_IPackageVolume2;
+template <typename T> struct impl_IDeploymentResult;
+template <typename T> struct impl_IPackageManager;
+template <typename T> struct impl_IPackageManager2;
+template <typename T> struct impl_IPackageManager3;
+template <typename T> struct impl_IPackageManager4;
+template <typename T> struct impl_IPackageUserInformation;
+template <typename T> struct impl_IPackageVolume;
+template <typename T> struct impl_IPackageVolume2;
 
 }
 

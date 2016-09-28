@@ -30,12 +30,8 @@ template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __de
 namespace Windows::Globalization::DateTimeFormatting {
 
 template <typename D>
-class WINRT_EBO impl_IDateTimeFormatter
+struct WINRT_EBO impl_IDateTimeFormatter
 {
-    auto shim() const { return impl::shim<D, IDateTimeFormatter>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<hstring> Languages() const;
     hstring GeographicRegion() const;
     hstring Calendar() const;
@@ -57,22 +53,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDateTimeFormatter2
+struct WINRT_EBO impl_IDateTimeFormatter2
 {
-    auto shim() const { return impl::shim<D, IDateTimeFormatter2>(this); }
-
-public:
-
     hstring Format(const Windows::Foundation::DateTime & datetime, hstring_ref timeZoneId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDateTimeFormatterFactory
+struct WINRT_EBO impl_IDateTimeFormatterFactory
 {
-    auto shim() const { return impl::shim<D, IDateTimeFormatterFactory>(this); }
-
-public:
-
     Windows::Globalization::DateTimeFormatting::DateTimeFormatter CreateDateTimeFormatter(hstring_ref formatTemplate) const;
     Windows::Globalization::DateTimeFormatting::DateTimeFormatter CreateDateTimeFormatterLanguages(hstring_ref formatTemplate, const Windows::Foundation::Collections::IIterable<hstring> & languages) const;
     Windows::Globalization::DateTimeFormatting::DateTimeFormatter CreateDateTimeFormatterContext(hstring_ref formatTemplate, const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref geographicRegion, hstring_ref calendar, hstring_ref clock) const;
@@ -83,12 +71,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDateTimeFormatterStatics
+struct WINRT_EBO impl_IDateTimeFormatterStatics
 {
-    auto shim() const { return impl::shim<D, IDateTimeFormatterStatics>(this); }
-
-public:
-
     Windows::Globalization::DateTimeFormatting::DateTimeFormatter LongDate() const;
     Windows::Globalization::DateTimeFormatting::DateTimeFormatter LongTime() const;
     Windows::Globalization::DateTimeFormatting::DateTimeFormatter ShortDate() const;

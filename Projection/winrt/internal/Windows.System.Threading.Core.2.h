@@ -10,45 +10,29 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::System::Threading::Core {
 
 template <typename D>
-class WINRT_EBO impl_IPreallocatedWorkItem
+struct WINRT_EBO impl_IPreallocatedWorkItem
 {
-    auto shim() const { return impl::shim<D, IPreallocatedWorkItem>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction RunAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPreallocatedWorkItemFactory
+struct WINRT_EBO impl_IPreallocatedWorkItemFactory
 {
-    auto shim() const { return impl::shim<D, IPreallocatedWorkItemFactory>(this); }
-
-public:
-
     Windows::System::Threading::Core::PreallocatedWorkItem CreateWorkItem(const Windows::System::Threading::WorkItemHandler & handler) const;
     Windows::System::Threading::Core::PreallocatedWorkItem CreateWorkItemWithPriority(const Windows::System::Threading::WorkItemHandler & handler, Windows::System::Threading::WorkItemPriority priority) const;
     Windows::System::Threading::Core::PreallocatedWorkItem CreateWorkItemWithPriorityAndOptions(const Windows::System::Threading::WorkItemHandler & handler, Windows::System::Threading::WorkItemPriority priority, Windows::System::Threading::WorkItemOptions options) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISignalNotifier
+struct WINRT_EBO impl_ISignalNotifier
 {
-    auto shim() const { return impl::shim<D, ISignalNotifier>(this); }
-
-public:
-
     void Enable() const;
     void Terminate() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISignalNotifierStatics
+struct WINRT_EBO impl_ISignalNotifierStatics
 {
-    auto shim() const { return impl::shim<D, ISignalNotifierStatics>(this); }
-
-public:
-
     Windows::System::Threading::Core::SignalNotifier AttachToEvent(hstring_ref name, const Windows::System::Threading::Core::SignalHandler & handler) const;
     Windows::System::Threading::Core::SignalNotifier AttachToEvent(hstring_ref name, const Windows::System::Threading::Core::SignalHandler & handler, const Windows::Foundation::TimeSpan & timeout) const;
     Windows::System::Threading::Core::SignalNotifier AttachToSemaphore(hstring_ref name, const Windows::System::Threading::Core::SignalHandler & handler) const;

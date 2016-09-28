@@ -39,8 +39,8 @@ template <> struct traits<Windows::ApplicationModel::ExtendedExecution::Foregrou
 
 namespace Windows::ApplicationModel::ExtendedExecution::Foreground {
 
-template <typename T> class impl_IExtendedExecutionForegroundRevokedEventArgs;
-template <typename T> class impl_IExtendedExecutionForegroundSession;
+template <typename T> struct impl_IExtendedExecutionForegroundRevokedEventArgs;
+template <typename T> struct impl_IExtendedExecutionForegroundSession;
 
 }
 

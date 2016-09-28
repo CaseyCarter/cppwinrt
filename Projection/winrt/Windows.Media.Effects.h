@@ -975,98 +975,98 @@ namespace Windows::Media::Effects {
 template <typename D> hstring impl_IVideoCompositorDefinition<D>::ActivatableClassId() const
 {
     hstring value;
-    check_hresult(shim()->get_ActivatableClassId(put(value)));
+    check_hresult(static_cast<const IVideoCompositorDefinition &>(static_cast<const D &>(*this))->get_ActivatableClassId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IPropertySet impl_IVideoCompositorDefinition<D>::Properties() const
 {
     Windows::Foundation::Collections::IPropertySet value;
-    check_hresult(shim()->get_Properties(put(value)));
+    check_hresult(static_cast<const IVideoCompositorDefinition &>(static_cast<const D &>(*this))->get_Properties(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Effects::VideoCompositorDefinition impl_IVideoCompositorDefinitionFactory<D>::Create(hstring_ref activatableClassId) const
 {
     Windows::Media::Effects::VideoCompositorDefinition value { nullptr };
-    check_hresult(shim()->abi_Create(get(activatableClassId), put(value)));
+    check_hresult(static_cast<const IVideoCompositorDefinitionFactory &>(static_cast<const D &>(*this))->abi_Create(get(activatableClassId), put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Effects::VideoCompositorDefinition impl_IVideoCompositorDefinitionFactory<D>::CreateWithProperties(hstring_ref activatableClassId, const Windows::Foundation::Collections::IPropertySet & props) const
 {
     Windows::Media::Effects::VideoCompositorDefinition value { nullptr };
-    check_hresult(shim()->abi_CreateWithProperties(get(activatableClassId), get(props), put(value)));
+    check_hresult(static_cast<const IVideoCompositorDefinitionFactory &>(static_cast<const D &>(*this))->abi_CreateWithProperties(get(activatableClassId), get(props), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface> impl_ICompositeVideoFrameContext<D>::SurfacesToOverlay() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface> value;
-    check_hresult(shim()->get_SurfacesToOverlay(put(value)));
+    check_hresult(static_cast<const ICompositeVideoFrameContext &>(static_cast<const D &>(*this))->get_SurfacesToOverlay(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::VideoFrame impl_ICompositeVideoFrameContext<D>::BackgroundFrame() const
 {
     Windows::Media::VideoFrame value { nullptr };
-    check_hresult(shim()->get_BackgroundFrame(put(value)));
+    check_hresult(static_cast<const ICompositeVideoFrameContext &>(static_cast<const D &>(*this))->get_BackgroundFrame(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::VideoFrame impl_ICompositeVideoFrameContext<D>::OutputFrame() const
 {
     Windows::Media::VideoFrame value { nullptr };
-    check_hresult(shim()->get_OutputFrame(put(value)));
+    check_hresult(static_cast<const ICompositeVideoFrameContext &>(static_cast<const D &>(*this))->get_OutputFrame(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Editing::MediaOverlay impl_ICompositeVideoFrameContext<D>::GetOverlayForSurface(const Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface & surfaceToOverlay) const
 {
     Windows::Media::Editing::MediaOverlay value { nullptr };
-    check_hresult(shim()->abi_GetOverlayForSurface(get(surfaceToOverlay), put(value)));
+    check_hresult(static_cast<const ICompositeVideoFrameContext &>(static_cast<const D &>(*this))->abi_GetOverlayForSurface(get(surfaceToOverlay), put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Effects::AudioEffectType impl_IAudioEffect<D>::AudioEffectType() const
 {
     Windows::Media::Effects::AudioEffectType value {};
-    check_hresult(shim()->get_AudioEffectType(&value));
+    check_hresult(static_cast<const IAudioEffect &>(static_cast<const D &>(*this))->get_AudioEffectType(&value));
     return value;
 }
 
 template <typename D> Windows::Media::Effects::AudioRenderEffectsManager impl_IAudioEffectsManagerStatics<D>::CreateAudioRenderEffectsManager(hstring_ref deviceId, Windows::Media::Render::AudioRenderCategory category) const
 {
     Windows::Media::Effects::AudioRenderEffectsManager value { nullptr };
-    check_hresult(shim()->abi_CreateAudioRenderEffectsManager(get(deviceId), category, put(value)));
+    check_hresult(static_cast<const IAudioEffectsManagerStatics &>(static_cast<const D &>(*this))->abi_CreateAudioRenderEffectsManager(get(deviceId), category, put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Effects::AudioRenderEffectsManager impl_IAudioEffectsManagerStatics<D>::CreateAudioRenderEffectsManager(hstring_ref deviceId, Windows::Media::Render::AudioRenderCategory category, Windows::Media::AudioProcessing mode) const
 {
     Windows::Media::Effects::AudioRenderEffectsManager value { nullptr };
-    check_hresult(shim()->abi_CreateAudioRenderEffectsManagerWithMode(get(deviceId), category, mode, put(value)));
+    check_hresult(static_cast<const IAudioEffectsManagerStatics &>(static_cast<const D &>(*this))->abi_CreateAudioRenderEffectsManagerWithMode(get(deviceId), category, mode, put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Effects::AudioCaptureEffectsManager impl_IAudioEffectsManagerStatics<D>::CreateAudioCaptureEffectsManager(hstring_ref deviceId, Windows::Media::Capture::MediaCategory category) const
 {
     Windows::Media::Effects::AudioCaptureEffectsManager value { nullptr };
-    check_hresult(shim()->abi_CreateAudioCaptureEffectsManager(get(deviceId), category, put(value)));
+    check_hresult(static_cast<const IAudioEffectsManagerStatics &>(static_cast<const D &>(*this))->abi_CreateAudioCaptureEffectsManager(get(deviceId), category, put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Effects::AudioCaptureEffectsManager impl_IAudioEffectsManagerStatics<D>::CreateAudioCaptureEffectsManager(hstring_ref deviceId, Windows::Media::Capture::MediaCategory category, Windows::Media::AudioProcessing mode) const
 {
     Windows::Media::Effects::AudioCaptureEffectsManager value { nullptr };
-    check_hresult(shim()->abi_CreateAudioCaptureEffectsManagerWithMode(get(deviceId), category, mode, put(value)));
+    check_hresult(static_cast<const IAudioEffectsManagerStatics &>(static_cast<const D &>(*this))->abi_CreateAudioCaptureEffectsManagerWithMode(get(deviceId), category, mode, put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IAudioRenderEffectsManager<D>::AudioRenderEffectsChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioRenderEffectsManager, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_AudioRenderEffectsChanged(get(handler), &token));
+    check_hresult(static_cast<const IAudioRenderEffectsManager &>(static_cast<const D &>(*this))->add_AudioRenderEffectsChanged(get(handler), &token));
     return token;
 }
 
@@ -1077,39 +1077,39 @@ template <typename D> event_revoker<IAudioRenderEffectsManager> impl_IAudioRende
 
 template <typename D> void impl_IAudioRenderEffectsManager<D>::AudioRenderEffectsChanged(event_token token) const
 {
-    check_hresult(shim()->remove_AudioRenderEffectsChanged(token));
+    check_hresult(static_cast<const IAudioRenderEffectsManager &>(static_cast<const D &>(*this))->remove_AudioRenderEffectsChanged(token));
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::Effects::AudioEffect> impl_IAudioRenderEffectsManager<D>::GetAudioRenderEffects() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Media::Effects::AudioEffect> effects;
-    check_hresult(shim()->abi_GetAudioRenderEffects(put(effects)));
+    check_hresult(static_cast<const IAudioRenderEffectsManager &>(static_cast<const D &>(*this))->abi_GetAudioRenderEffects(put(effects)));
     return effects;
 }
 
 template <typename D> Windows::Storage::Streams::IRandomAccessStreamWithContentType impl_IAudioRenderEffectsManager2<D>::EffectsProviderThumbnail() const
 {
     Windows::Storage::Streams::IRandomAccessStreamWithContentType value;
-    check_hresult(shim()->get_EffectsProviderThumbnail(put(value)));
+    check_hresult(static_cast<const IAudioRenderEffectsManager2 &>(static_cast<const D &>(*this))->get_EffectsProviderThumbnail(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAudioRenderEffectsManager2<D>::EffectsProviderSettingsLabel() const
 {
     hstring value;
-    check_hresult(shim()->get_EffectsProviderSettingsLabel(put(value)));
+    check_hresult(static_cast<const IAudioRenderEffectsManager2 &>(static_cast<const D &>(*this))->get_EffectsProviderSettingsLabel(put(value)));
     return value;
 }
 
 template <typename D> void impl_IAudioRenderEffectsManager2<D>::ShowSettingsUI() const
 {
-    check_hresult(shim()->abi_ShowSettingsUI());
+    check_hresult(static_cast<const IAudioRenderEffectsManager2 &>(static_cast<const D &>(*this))->abi_ShowSettingsUI());
 }
 
 template <typename D> event_token impl_IAudioCaptureEffectsManager<D>::AudioCaptureEffectsChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Effects::AudioCaptureEffectsManager, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_AudioCaptureEffectsChanged(get(handler), &token));
+    check_hresult(static_cast<const IAudioCaptureEffectsManager &>(static_cast<const D &>(*this))->add_AudioCaptureEffectsChanged(get(handler), &token));
     return token;
 }
 
@@ -1120,278 +1120,278 @@ template <typename D> event_revoker<IAudioCaptureEffectsManager> impl_IAudioCapt
 
 template <typename D> void impl_IAudioCaptureEffectsManager<D>::AudioCaptureEffectsChanged(event_token token) const
 {
-    check_hresult(shim()->remove_AudioCaptureEffectsChanged(token));
+    check_hresult(static_cast<const IAudioCaptureEffectsManager &>(static_cast<const D &>(*this))->remove_AudioCaptureEffectsChanged(token));
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::Effects::AudioEffect> impl_IAudioCaptureEffectsManager<D>::GetAudioCaptureEffects() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Media::Effects::AudioEffect> effects;
-    check_hresult(shim()->abi_GetAudioCaptureEffects(put(effects)));
+    check_hresult(static_cast<const IAudioCaptureEffectsManager &>(static_cast<const D &>(*this))->abi_GetAudioCaptureEffects(put(effects)));
     return effects;
 }
 
 template <typename D> bool impl_IVideoCompositor<D>::TimeIndependent() const
 {
     bool value {};
-    check_hresult(shim()->get_TimeIndependent(&value));
+    check_hresult(static_cast<const IVideoCompositor &>(static_cast<const D &>(*this))->get_TimeIndependent(&value));
     return value;
 }
 
 template <typename D> void impl_IVideoCompositor<D>::SetEncodingProperties(const Windows::Media::MediaProperties::VideoEncodingProperties & backgroundProperties, const Windows::Graphics::DirectX::Direct3D11::IDirect3DDevice & device) const
 {
-    check_hresult(shim()->abi_SetEncodingProperties(get(backgroundProperties), get(device)));
+    check_hresult(static_cast<const IVideoCompositor &>(static_cast<const D &>(*this))->abi_SetEncodingProperties(get(backgroundProperties), get(device)));
 }
 
 template <typename D> void impl_IVideoCompositor<D>::CompositeFrame(const Windows::Media::Effects::CompositeVideoFrameContext & context) const
 {
-    check_hresult(shim()->abi_CompositeFrame(get(context)));
+    check_hresult(static_cast<const IVideoCompositor &>(static_cast<const D &>(*this))->abi_CompositeFrame(get(context)));
 }
 
 template <typename D> void impl_IVideoCompositor<D>::Close(Windows::Media::Effects::MediaEffectClosedReason reason) const
 {
-    check_hresult(shim()->abi_Close(reason));
+    check_hresult(static_cast<const IVideoCompositor &>(static_cast<const D &>(*this))->abi_Close(reason));
 }
 
 template <typename D> void impl_IVideoCompositor<D>::DiscardQueuedFrames() const
 {
-    check_hresult(shim()->abi_DiscardQueuedFrames());
+    check_hresult(static_cast<const IVideoCompositor &>(static_cast<const D &>(*this))->abi_DiscardQueuedFrames());
 }
 
 template <typename D> hstring impl_IAudioEffectDefinition<D>::ActivatableClassId() const
 {
     hstring value;
-    check_hresult(shim()->get_ActivatableClassId(put(value)));
+    check_hresult(static_cast<const IAudioEffectDefinition &>(static_cast<const D &>(*this))->get_ActivatableClassId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IPropertySet impl_IAudioEffectDefinition<D>::Properties() const
 {
     Windows::Foundation::Collections::IPropertySet value;
-    check_hresult(shim()->get_Properties(put(value)));
+    check_hresult(static_cast<const IAudioEffectDefinition &>(static_cast<const D &>(*this))->get_Properties(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IVideoEffectDefinition<D>::ActivatableClassId() const
 {
     hstring value;
-    check_hresult(shim()->get_ActivatableClassId(put(value)));
+    check_hresult(static_cast<const IVideoEffectDefinition &>(static_cast<const D &>(*this))->get_ActivatableClassId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IPropertySet impl_IVideoEffectDefinition<D>::Properties() const
 {
     Windows::Foundation::Collections::IPropertySet value;
-    check_hresult(shim()->get_Properties(put(value)));
+    check_hresult(static_cast<const IVideoEffectDefinition &>(static_cast<const D &>(*this))->get_Properties(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Effects::VideoEffectDefinition impl_IVideoEffectDefinitionFactory<D>::Create(hstring_ref activatableClassId) const
 {
     Windows::Media::Effects::VideoEffectDefinition value { nullptr };
-    check_hresult(shim()->abi_Create(get(activatableClassId), put(value)));
+    check_hresult(static_cast<const IVideoEffectDefinitionFactory &>(static_cast<const D &>(*this))->abi_Create(get(activatableClassId), put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Effects::VideoEffectDefinition impl_IVideoEffectDefinitionFactory<D>::CreateWithProperties(hstring_ref activatableClassId, const Windows::Foundation::Collections::IPropertySet & props) const
 {
     Windows::Media::Effects::VideoEffectDefinition value { nullptr };
-    check_hresult(shim()->abi_CreateWithProperties(get(activatableClassId), get(props), put(value)));
+    check_hresult(static_cast<const IVideoEffectDefinitionFactory &>(static_cast<const D &>(*this))->abi_CreateWithProperties(get(activatableClassId), get(props), put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Effects::AudioEffectDefinition impl_IAudioEffectDefinitionFactory<D>::Create(hstring_ref activatableClassId) const
 {
     Windows::Media::Effects::AudioEffectDefinition value { nullptr };
-    check_hresult(shim()->abi_Create(get(activatableClassId), put(value)));
+    check_hresult(static_cast<const IAudioEffectDefinitionFactory &>(static_cast<const D &>(*this))->abi_Create(get(activatableClassId), put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Effects::AudioEffectDefinition impl_IAudioEffectDefinitionFactory<D>::CreateWithProperties(hstring_ref activatableClassId, const Windows::Foundation::Collections::IPropertySet & props) const
 {
     Windows::Media::Effects::AudioEffectDefinition value { nullptr };
-    check_hresult(shim()->abi_CreateWithProperties(get(activatableClassId), get(props), put(value)));
+    check_hresult(static_cast<const IAudioEffectDefinitionFactory &>(static_cast<const D &>(*this))->abi_CreateWithProperties(get(activatableClassId), get(props), put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::VideoFrame impl_IProcessVideoFrameContext<D>::InputFrame() const
 {
     Windows::Media::VideoFrame value { nullptr };
-    check_hresult(shim()->get_InputFrame(put(value)));
+    check_hresult(static_cast<const IProcessVideoFrameContext &>(static_cast<const D &>(*this))->get_InputFrame(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::VideoFrame impl_IProcessVideoFrameContext<D>::OutputFrame() const
 {
     Windows::Media::VideoFrame value { nullptr };
-    check_hresult(shim()->get_OutputFrame(put(value)));
+    check_hresult(static_cast<const IProcessVideoFrameContext &>(static_cast<const D &>(*this))->get_OutputFrame(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IBasicVideoEffect<D>::IsReadOnly() const
 {
     bool value {};
-    check_hresult(shim()->get_IsReadOnly(&value));
+    check_hresult(static_cast<const IBasicVideoEffect &>(static_cast<const D &>(*this))->get_IsReadOnly(&value));
     return value;
 }
 
 template <typename D> Windows::Media::Effects::MediaMemoryTypes impl_IBasicVideoEffect<D>::SupportedMemoryTypes() const
 {
     Windows::Media::Effects::MediaMemoryTypes value {};
-    check_hresult(shim()->get_SupportedMemoryTypes(&value));
+    check_hresult(static_cast<const IBasicVideoEffect &>(static_cast<const D &>(*this))->get_SupportedMemoryTypes(&value));
     return value;
 }
 
 template <typename D> bool impl_IBasicVideoEffect<D>::TimeIndependent() const
 {
     bool value {};
-    check_hresult(shim()->get_TimeIndependent(&value));
+    check_hresult(static_cast<const IBasicVideoEffect &>(static_cast<const D &>(*this))->get_TimeIndependent(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::MediaProperties::VideoEncodingProperties> impl_IBasicVideoEffect<D>::SupportedEncodingProperties() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Media::MediaProperties::VideoEncodingProperties> value;
-    check_hresult(shim()->get_SupportedEncodingProperties(put(value)));
+    check_hresult(static_cast<const IBasicVideoEffect &>(static_cast<const D &>(*this))->get_SupportedEncodingProperties(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBasicVideoEffect<D>::SetEncodingProperties(const Windows::Media::MediaProperties::VideoEncodingProperties & encodingProperties, const Windows::Graphics::DirectX::Direct3D11::IDirect3DDevice & device) const
 {
-    check_hresult(shim()->abi_SetEncodingProperties(get(encodingProperties), get(device)));
+    check_hresult(static_cast<const IBasicVideoEffect &>(static_cast<const D &>(*this))->abi_SetEncodingProperties(get(encodingProperties), get(device)));
 }
 
 template <typename D> void impl_IBasicVideoEffect<D>::ProcessFrame(const Windows::Media::Effects::ProcessVideoFrameContext & context) const
 {
-    check_hresult(shim()->abi_ProcessFrame(get(context)));
+    check_hresult(static_cast<const IBasicVideoEffect &>(static_cast<const D &>(*this))->abi_ProcessFrame(get(context)));
 }
 
 template <typename D> void impl_IBasicVideoEffect<D>::Close(Windows::Media::Effects::MediaEffectClosedReason reason) const
 {
-    check_hresult(shim()->abi_Close(reason));
+    check_hresult(static_cast<const IBasicVideoEffect &>(static_cast<const D &>(*this))->abi_Close(reason));
 }
 
 template <typename D> void impl_IBasicVideoEffect<D>::DiscardQueuedFrames() const
 {
-    check_hresult(shim()->abi_DiscardQueuedFrames());
+    check_hresult(static_cast<const IBasicVideoEffect &>(static_cast<const D &>(*this))->abi_DiscardQueuedFrames());
 }
 
 template <typename D> Windows::Media::AudioFrame impl_IProcessAudioFrameContext<D>::InputFrame() const
 {
     Windows::Media::AudioFrame value { nullptr };
-    check_hresult(shim()->get_InputFrame(put(value)));
+    check_hresult(static_cast<const IProcessAudioFrameContext &>(static_cast<const D &>(*this))->get_InputFrame(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::AudioFrame impl_IProcessAudioFrameContext<D>::OutputFrame() const
 {
     Windows::Media::AudioFrame value { nullptr };
-    check_hresult(shim()->get_OutputFrame(put(value)));
+    check_hresult(static_cast<const IProcessAudioFrameContext &>(static_cast<const D &>(*this))->get_OutputFrame(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IBasicAudioEffect<D>::UseInputFrameForOutput() const
 {
     bool value {};
-    check_hresult(shim()->get_UseInputFrameForOutput(&value));
+    check_hresult(static_cast<const IBasicAudioEffect &>(static_cast<const D &>(*this))->get_UseInputFrameForOutput(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::MediaProperties::AudioEncodingProperties> impl_IBasicAudioEffect<D>::SupportedEncodingProperties() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Media::MediaProperties::AudioEncodingProperties> value;
-    check_hresult(shim()->get_SupportedEncodingProperties(put(value)));
+    check_hresult(static_cast<const IBasicAudioEffect &>(static_cast<const D &>(*this))->get_SupportedEncodingProperties(put(value)));
     return value;
 }
 
 template <typename D> void impl_IBasicAudioEffect<D>::SetEncodingProperties(const Windows::Media::MediaProperties::AudioEncodingProperties & encodingProperties) const
 {
-    check_hresult(shim()->abi_SetEncodingProperties(get(encodingProperties)));
+    check_hresult(static_cast<const IBasicAudioEffect &>(static_cast<const D &>(*this))->abi_SetEncodingProperties(get(encodingProperties)));
 }
 
 template <typename D> void impl_IBasicAudioEffect<D>::ProcessFrame(const Windows::Media::Effects::ProcessAudioFrameContext & context) const
 {
-    check_hresult(shim()->abi_ProcessFrame(get(context)));
+    check_hresult(static_cast<const IBasicAudioEffect &>(static_cast<const D &>(*this))->abi_ProcessFrame(get(context)));
 }
 
 template <typename D> void impl_IBasicAudioEffect<D>::Close(Windows::Media::Effects::MediaEffectClosedReason reason) const
 {
-    check_hresult(shim()->abi_Close(reason));
+    check_hresult(static_cast<const IBasicAudioEffect &>(static_cast<const D &>(*this))->abi_Close(reason));
 }
 
 template <typename D> void impl_IBasicAudioEffect<D>::DiscardQueuedFrames() const
 {
-    check_hresult(shim()->abi_DiscardQueuedFrames());
+    check_hresult(static_cast<const IBasicAudioEffect &>(static_cast<const D &>(*this))->abi_DiscardQueuedFrames());
 }
 
 template <typename D> Windows::UI::Color impl_IVideoTransformEffectDefinition<D>::PaddingColor() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_PaddingColor(put(value)));
+    check_hresult(static_cast<const IVideoTransformEffectDefinition &>(static_cast<const D &>(*this))->get_PaddingColor(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVideoTransformEffectDefinition<D>::PaddingColor(const Windows::UI::Color & value) const
 {
-    check_hresult(shim()->put_PaddingColor(get(value)));
+    check_hresult(static_cast<const IVideoTransformEffectDefinition &>(static_cast<const D &>(*this))->put_PaddingColor(get(value)));
 }
 
 template <typename D> Windows::Foundation::Size impl_IVideoTransformEffectDefinition<D>::OutputSize() const
 {
     Windows::Foundation::Size value {};
-    check_hresult(shim()->get_OutputSize(put(value)));
+    check_hresult(static_cast<const IVideoTransformEffectDefinition &>(static_cast<const D &>(*this))->get_OutputSize(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVideoTransformEffectDefinition<D>::OutputSize(const Windows::Foundation::Size & value) const
 {
-    check_hresult(shim()->put_OutputSize(get(value)));
+    check_hresult(static_cast<const IVideoTransformEffectDefinition &>(static_cast<const D &>(*this))->put_OutputSize(get(value)));
 }
 
 template <typename D> Windows::Foundation::Rect impl_IVideoTransformEffectDefinition<D>::CropRectangle() const
 {
     Windows::Foundation::Rect value {};
-    check_hresult(shim()->get_CropRectangle(put(value)));
+    check_hresult(static_cast<const IVideoTransformEffectDefinition &>(static_cast<const D &>(*this))->get_CropRectangle(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVideoTransformEffectDefinition<D>::CropRectangle(const Windows::Foundation::Rect & value) const
 {
-    check_hresult(shim()->put_CropRectangle(get(value)));
+    check_hresult(static_cast<const IVideoTransformEffectDefinition &>(static_cast<const D &>(*this))->put_CropRectangle(get(value)));
 }
 
 template <typename D> Windows::Media::MediaProperties::MediaRotation impl_IVideoTransformEffectDefinition<D>::Rotation() const
 {
     Windows::Media::MediaProperties::MediaRotation value {};
-    check_hresult(shim()->get_Rotation(&value));
+    check_hresult(static_cast<const IVideoTransformEffectDefinition &>(static_cast<const D &>(*this))->get_Rotation(&value));
     return value;
 }
 
 template <typename D> void impl_IVideoTransformEffectDefinition<D>::Rotation(Windows::Media::MediaProperties::MediaRotation value) const
 {
-    check_hresult(shim()->put_Rotation(value));
+    check_hresult(static_cast<const IVideoTransformEffectDefinition &>(static_cast<const D &>(*this))->put_Rotation(value));
 }
 
 template <typename D> Windows::Media::MediaProperties::MediaMirroringOptions impl_IVideoTransformEffectDefinition<D>::Mirror() const
 {
     Windows::Media::MediaProperties::MediaMirroringOptions value {};
-    check_hresult(shim()->get_Mirror(&value));
+    check_hresult(static_cast<const IVideoTransformEffectDefinition &>(static_cast<const D &>(*this))->get_Mirror(&value));
     return value;
 }
 
 template <typename D> void impl_IVideoTransformEffectDefinition<D>::Mirror(Windows::Media::MediaProperties::MediaMirroringOptions value) const
 {
-    check_hresult(shim()->put_Mirror(value));
+    check_hresult(static_cast<const IVideoTransformEffectDefinition &>(static_cast<const D &>(*this))->put_Mirror(value));
 }
 
 template <typename D> void impl_IVideoTransformEffectDefinition<D>::ProcessingAlgorithm(Windows::Media::Transcoding::MediaVideoProcessingAlgorithm value) const
 {
-    check_hresult(shim()->put_ProcessingAlgorithm(value));
+    check_hresult(static_cast<const IVideoTransformEffectDefinition &>(static_cast<const D &>(*this))->put_ProcessingAlgorithm(value));
 }
 
 template <typename D> Windows::Media::Transcoding::MediaVideoProcessingAlgorithm impl_IVideoTransformEffectDefinition<D>::ProcessingAlgorithm() const
 {
     Windows::Media::Transcoding::MediaVideoProcessingAlgorithm value {};
-    check_hresult(shim()->get_ProcessingAlgorithm(&value));
+    check_hresult(static_cast<const IVideoTransformEffectDefinition &>(static_cast<const D &>(*this))->get_ProcessingAlgorithm(&value));
     return value;
 }
 

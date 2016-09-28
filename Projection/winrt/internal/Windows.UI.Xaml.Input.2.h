@@ -81,51 +81,31 @@ template <> struct __declspec(uuid("fcd65a82-5328-53bc-a884-c209aafabf78")) __de
 namespace Windows::UI::Xaml::Input {
 
 template <typename D>
-class WINRT_EBO impl_IAccessKeyDisplayDismissedEventArgs
+struct WINRT_EBO impl_IAccessKeyDisplayDismissedEventArgs
 {
-    auto shim() const { return impl::shim<D, IAccessKeyDisplayDismissedEventArgs>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IAccessKeyDisplayRequestedEventArgs
+struct WINRT_EBO impl_IAccessKeyDisplayRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, IAccessKeyDisplayRequestedEventArgs>(this); }
-
-public:
-
     hstring PressedKeys() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAccessKeyInvokedEventArgs
+struct WINRT_EBO impl_IAccessKeyInvokedEventArgs
 {
-    auto shim() const { return impl::shim<D, IAccessKeyInvokedEventArgs>(this); }
-
-public:
-
     bool Handled() const;
     void Handled(bool value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAccessKeyManager
+struct WINRT_EBO impl_IAccessKeyManager
 {
-    auto shim() const { return impl::shim<D, IAccessKeyManager>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IAccessKeyManagerStatics
+struct WINRT_EBO impl_IAccessKeyManagerStatics
 {
-    auto shim() const { return impl::shim<D, IAccessKeyManagerStatics>(this); }
-
-public:
-
     bool IsDisplayModeEnabled() const;
     event_token IsDisplayModeEnabledChanged(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::IInspectable> & value) const;
     using IsDisplayModeEnabledChanged_revoker = event_revoker<IAccessKeyManagerStatics>;
@@ -135,12 +115,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICommand
+struct WINRT_EBO impl_ICommand
 {
-    auto shim() const { return impl::shim<D, ICommand>(this); }
-
-public:
-
     event_token CanExecuteChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
     using CanExecuteChanged_revoker = event_revoker<ICommand>;
     CanExecuteChanged_revoker CanExecuteChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
@@ -150,24 +126,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IContextRequestedEventArgs
+struct WINRT_EBO impl_IContextRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, IContextRequestedEventArgs>(this); }
-
-public:
-
     bool Handled() const;
     void Handled(bool value) const;
     bool TryGetPosition(const Windows::UI::Xaml::UIElement & relativeTo, Windows::Foundation::Point & point) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDoubleTappedRoutedEventArgs
+struct WINRT_EBO impl_IDoubleTappedRoutedEventArgs
 {
-    auto shim() const { return impl::shim<D, IDoubleTappedRoutedEventArgs>(this); }
-
-public:
-
     Windows::Devices::Input::PointerDeviceType PointerDeviceType() const;
     bool Handled() const;
     void Handled(bool value) const;
@@ -175,52 +143,32 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IFocusManager
+struct WINRT_EBO impl_IFocusManager
 {
-    auto shim() const { return impl::shim<D, IFocusManager>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IFocusManagerStatics
+struct WINRT_EBO impl_IFocusManagerStatics
 {
-    auto shim() const { return impl::shim<D, IFocusManagerStatics>(this); }
-
-public:
-
     Windows::IInspectable GetFocusedElement() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFocusManagerStatics2
+struct WINRT_EBO impl_IFocusManagerStatics2
 {
-    auto shim() const { return impl::shim<D, IFocusManagerStatics2>(this); }
-
-public:
-
     bool TryMoveFocus(Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFocusManagerStatics3
+struct WINRT_EBO impl_IFocusManagerStatics3
 {
-    auto shim() const { return impl::shim<D, IFocusManagerStatics3>(this); }
-
-public:
-
     Windows::UI::Xaml::UIElement FindNextFocusableElement(Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection) const;
     Windows::UI::Xaml::UIElement FindNextFocusableElement(Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection, const Windows::Foundation::Rect & hintRect) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IHoldingRoutedEventArgs
+struct WINRT_EBO impl_IHoldingRoutedEventArgs
 {
-    auto shim() const { return impl::shim<D, IHoldingRoutedEventArgs>(this); }
-
-public:
-
     Windows::Devices::Input::PointerDeviceType PointerDeviceType() const;
     Windows::UI::Input::HoldingState HoldingState() const;
     bool Handled() const;
@@ -229,12 +177,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IInertiaExpansionBehavior
+struct WINRT_EBO impl_IInertiaExpansionBehavior
 {
-    auto shim() const { return impl::shim<D, IInertiaExpansionBehavior>(this); }
-
-public:
-
     double DesiredDeceleration() const;
     void DesiredDeceleration(double value) const;
     double DesiredExpansion() const;
@@ -242,12 +186,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IInertiaRotationBehavior
+struct WINRT_EBO impl_IInertiaRotationBehavior
 {
-    auto shim() const { return impl::shim<D, IInertiaRotationBehavior>(this); }
-
-public:
-
     double DesiredDeceleration() const;
     void DesiredDeceleration(double value) const;
     double DesiredRotation() const;
@@ -255,12 +195,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IInertiaTranslationBehavior
+struct WINRT_EBO impl_IInertiaTranslationBehavior
 {
-    auto shim() const { return impl::shim<D, IInertiaTranslationBehavior>(this); }
-
-public:
-
     double DesiredDeceleration() const;
     void DesiredDeceleration(double value) const;
     double DesiredDisplacement() const;
@@ -268,43 +204,27 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IInputScope
+struct WINRT_EBO impl_IInputScope
 {
-    auto shim() const { return impl::shim<D, IInputScope>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Input::InputScopeName> Names() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInputScopeName
+struct WINRT_EBO impl_IInputScopeName
 {
-    auto shim() const { return impl::shim<D, IInputScopeName>(this); }
-
-public:
-
     Windows::UI::Xaml::Input::InputScopeNameValue NameValue() const;
     void NameValue(Windows::UI::Xaml::Input::InputScopeNameValue value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInputScopeNameFactory
+struct WINRT_EBO impl_IInputScopeNameFactory
 {
-    auto shim() const { return impl::shim<D, IInputScopeNameFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Input::InputScopeName CreateInstance(Windows::UI::Xaml::Input::InputScopeNameValue nameValue) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IKeyRoutedEventArgs
+struct WINRT_EBO impl_IKeyRoutedEventArgs
 {
-    auto shim() const { return impl::shim<D, IKeyRoutedEventArgs>(this); }
-
-public:
-
     Windows::System::VirtualKey Key() const;
     Windows::UI::Core::CorePhysicalKeyStatus KeyStatus() const;
     bool Handled() const;
@@ -312,32 +232,20 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IKeyRoutedEventArgs2
+struct WINRT_EBO impl_IKeyRoutedEventArgs2
 {
-    auto shim() const { return impl::shim<D, IKeyRoutedEventArgs2>(this); }
-
-public:
-
     Windows::System::VirtualKey OriginalKey() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IKeyRoutedEventArgs3
+struct WINRT_EBO impl_IKeyRoutedEventArgs3
 {
-    auto shim() const { return impl::shim<D, IKeyRoutedEventArgs3>(this); }
-
-public:
-
     hstring DeviceId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IManipulationCompletedRoutedEventArgs
+struct WINRT_EBO impl_IManipulationCompletedRoutedEventArgs
 {
-    auto shim() const { return impl::shim<D, IManipulationCompletedRoutedEventArgs>(this); }
-
-public:
-
     Windows::UI::Xaml::UIElement Container() const;
     Windows::Foundation::Point Position() const;
     bool IsInertial() const;
@@ -349,12 +257,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IManipulationDeltaRoutedEventArgs
+struct WINRT_EBO impl_IManipulationDeltaRoutedEventArgs
 {
-    auto shim() const { return impl::shim<D, IManipulationDeltaRoutedEventArgs>(this); }
-
-public:
-
     Windows::UI::Xaml::UIElement Container() const;
     Windows::Foundation::Point Position() const;
     bool IsInertial() const;
@@ -368,12 +272,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IManipulationInertiaStartingRoutedEventArgs
+struct WINRT_EBO impl_IManipulationInertiaStartingRoutedEventArgs
 {
-    auto shim() const { return impl::shim<D, IManipulationInertiaStartingRoutedEventArgs>(this); }
-
-public:
-
     Windows::UI::Xaml::UIElement Container() const;
     Windows::UI::Xaml::Input::InertiaExpansionBehavior ExpansionBehavior() const;
     void ExpansionBehavior(const Windows::UI::Xaml::Input::InertiaExpansionBehavior & value) const;
@@ -390,12 +290,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IManipulationPivot
+struct WINRT_EBO impl_IManipulationPivot
 {
-    auto shim() const { return impl::shim<D, IManipulationPivot>(this); }
-
-public:
-
     Windows::Foundation::Point Center() const;
     void Center(const Windows::Foundation::Point & value) const;
     double Radius() const;
@@ -403,22 +299,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IManipulationPivotFactory
+struct WINRT_EBO impl_IManipulationPivotFactory
 {
-    auto shim() const { return impl::shim<D, IManipulationPivotFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Input::ManipulationPivot CreateInstanceWithCenterAndRadius(const Windows::Foundation::Point & center, double radius) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IManipulationStartedRoutedEventArgs
+struct WINRT_EBO impl_IManipulationStartedRoutedEventArgs
 {
-    auto shim() const { return impl::shim<D, IManipulationStartedRoutedEventArgs>(this); }
-
-public:
-
     Windows::UI::Xaml::UIElement Container() const;
     Windows::Foundation::Point Position() const;
     bool Handled() const;
@@ -429,22 +317,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IManipulationStartedRoutedEventArgsFactory
+struct WINRT_EBO impl_IManipulationStartedRoutedEventArgsFactory
 {
-    auto shim() const { return impl::shim<D, IManipulationStartedRoutedEventArgsFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Input::ManipulationStartedRoutedEventArgs CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IManipulationStartingRoutedEventArgs
+struct WINRT_EBO impl_IManipulationStartingRoutedEventArgs
 {
-    auto shim() const { return impl::shim<D, IManipulationStartingRoutedEventArgs>(this); }
-
-public:
-
     Windows::UI::Xaml::Input::ManipulationModes Mode() const;
     void Mode(Windows::UI::Xaml::Input::ManipulationModes value) const;
     Windows::UI::Xaml::UIElement Container() const;
@@ -456,12 +336,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPointer
+struct WINRT_EBO impl_IPointer
 {
-    auto shim() const { return impl::shim<D, IPointer>(this); }
-
-public:
-
     uint32_t PointerId() const;
     Windows::Devices::Input::PointerDeviceType PointerDeviceType() const;
     bool IsInContact() const;
@@ -469,12 +345,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPointerRoutedEventArgs
+struct WINRT_EBO impl_IPointerRoutedEventArgs
 {
-    auto shim() const { return impl::shim<D, IPointerRoutedEventArgs>(this); }
-
-public:
-
     Windows::UI::Xaml::Input::Pointer Pointer() const;
     Windows::System::VirtualKeyModifiers KeyModifiers() const;
     bool Handled() const;
@@ -484,12 +356,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IRightTappedRoutedEventArgs
+struct WINRT_EBO impl_IRightTappedRoutedEventArgs
 {
-    auto shim() const { return impl::shim<D, IRightTappedRoutedEventArgs>(this); }
-
-public:
-
     Windows::Devices::Input::PointerDeviceType PointerDeviceType() const;
     bool Handled() const;
     void Handled(bool value) const;
@@ -497,12 +365,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ITappedRoutedEventArgs
+struct WINRT_EBO impl_ITappedRoutedEventArgs
 {
-    auto shim() const { return impl::shim<D, ITappedRoutedEventArgs>(this); }
-
-public:
-
     Windows::Devices::Input::PointerDeviceType PointerDeviceType() const;
     bool Handled() const;
     void Handled(bool value) const;

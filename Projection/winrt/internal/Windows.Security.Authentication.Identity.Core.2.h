@@ -100,12 +100,8 @@ template <> struct __declspec(uuid("6cc53e8c-d0e4-5ded-94f4-7c73b132d2a4")) __de
 namespace Windows::Security::Authentication::Identity::Core {
 
 template <typename D>
-class WINRT_EBO impl_IMicrosoftAccountMultiFactorAuthenticationManager
+struct WINRT_EBO impl_IMicrosoftAccountMultiFactorAuthenticationManager
 {
-    auto shim() const { return impl::shim<D, IMicrosoftAccountMultiFactorAuthenticationManager>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorOneTimeCodedInfo> GetOneTimePassCodeAsync(hstring_ref userAccountId, uint32_t codeLength) const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> AddDeviceAsync(hstring_ref userAccountId, hstring_ref authenticationToken, hstring_ref wnsChannelId) const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> RemoveDeviceAsync(hstring_ref userAccountId) const;
@@ -119,33 +115,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMicrosoftAccountMultiFactorAuthenticatorStatics
+struct WINRT_EBO impl_IMicrosoftAccountMultiFactorAuthenticatorStatics
 {
-    auto shim() const { return impl::shim<D, IMicrosoftAccountMultiFactorAuthenticatorStatics>(this); }
-
-public:
-
     Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorAuthenticationManager Current() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMicrosoftAccountMultiFactorGetSessionsResult
+struct WINRT_EBO impl_IMicrosoftAccountMultiFactorGetSessionsResult
 {
-    auto shim() const { return impl::shim<D, IMicrosoftAccountMultiFactorGetSessionsResult>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionInfo> Sessions() const;
     Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse ServiceResponse() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMicrosoftAccountMultiFactorOneTimeCodedInfo
+struct WINRT_EBO impl_IMicrosoftAccountMultiFactorOneTimeCodedInfo
 {
-    auto shim() const { return impl::shim<D, IMicrosoftAccountMultiFactorOneTimeCodedInfo>(this); }
-
-public:
-
     hstring Code() const;
     Windows::Foundation::TimeSpan TimeInterval() const;
     Windows::Foundation::TimeSpan TimeToLive() const;
@@ -153,12 +137,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMicrosoftAccountMultiFactorSessionInfo
+struct WINRT_EBO impl_IMicrosoftAccountMultiFactorSessionInfo
 {
-    auto shim() const { return impl::shim<D, IMicrosoftAccountMultiFactorSessionInfo>(this); }
-
-public:
-
     hstring UserAccountId() const;
     hstring SessionId() const;
     hstring DisplaySessionId() const;
@@ -169,12 +149,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo
+struct WINRT_EBO impl_IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo
 {
-    auto shim() const { return impl::shim<D, IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionInfo> Sessions() const;
     Windows::Foundation::Collections::IVectorView<hstring> UnregisteredAccounts() const;
     Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse ServiceResponse() const;

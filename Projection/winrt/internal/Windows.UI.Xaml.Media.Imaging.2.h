@@ -28,12 +28,8 @@ template <> struct __declspec(uuid("51c3d2fd-b8a1-5620-b746-7ee6d533aca3")) __de
 namespace Windows::UI::Xaml::Media::Imaging {
 
 template <typename D>
-class WINRT_EBO impl_IBitmapImage
+struct WINRT_EBO impl_IBitmapImage
 {
-    auto shim() const { return impl::shim<D, IBitmapImage>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Imaging::BitmapCreateOptions CreateOptions() const;
     void CreateOptions(Windows::UI::Xaml::Media::Imaging::BitmapCreateOptions value) const;
     Windows::Foundation::Uri UriSource() const;
@@ -57,23 +53,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBitmapImage2
+struct WINRT_EBO impl_IBitmapImage2
 {
-    auto shim() const { return impl::shim<D, IBitmapImage2>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Imaging::DecodePixelType DecodePixelType() const;
     void DecodePixelType(Windows::UI::Xaml::Media::Imaging::DecodePixelType value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBitmapImage3
+struct WINRT_EBO impl_IBitmapImage3
 {
-    auto shim() const { return impl::shim<D, IBitmapImage3>(this); }
-
-public:
-
     bool IsAnimatedBitmap() const;
     bool IsPlaying() const;
     bool AutoPlay() const;
@@ -83,22 +71,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBitmapImageFactory
+struct WINRT_EBO impl_IBitmapImageFactory
 {
-    auto shim() const { return impl::shim<D, IBitmapImageFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Imaging::BitmapImage CreateInstanceWithUriSource(const Windows::Foundation::Uri & uriSource) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBitmapImageStatics
+struct WINRT_EBO impl_IBitmapImageStatics
 {
-    auto shim() const { return impl::shim<D, IBitmapImageStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty CreateOptionsProperty() const;
     Windows::UI::Xaml::DependencyProperty UriSourceProperty() const;
     Windows::UI::Xaml::DependencyProperty DecodePixelWidthProperty() const;
@@ -106,34 +86,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBitmapImageStatics2
+struct WINRT_EBO impl_IBitmapImageStatics2
 {
-    auto shim() const { return impl::shim<D, IBitmapImageStatics2>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty DecodePixelTypeProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBitmapImageStatics3
+struct WINRT_EBO impl_IBitmapImageStatics3
 {
-    auto shim() const { return impl::shim<D, IBitmapImageStatics3>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty IsAnimatedBitmapProperty() const;
     Windows::UI::Xaml::DependencyProperty IsPlayingProperty() const;
     Windows::UI::Xaml::DependencyProperty AutoPlayProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBitmapSource
+struct WINRT_EBO impl_IBitmapSource
 {
-    auto shim() const { return impl::shim<D, IBitmapSource>(this); }
-
-public:
-
     int32_t PixelWidth() const;
     int32_t PixelHeight() const;
     void SetSource(const Windows::Storage::Streams::IRandomAccessStream & streamSource) const;
@@ -141,44 +109,28 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBitmapSourceFactory
+struct WINRT_EBO impl_IBitmapSourceFactory
 {
-    auto shim() const { return impl::shim<D, IBitmapSourceFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Imaging::BitmapSource CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBitmapSourceStatics
+struct WINRT_EBO impl_IBitmapSourceStatics
 {
-    auto shim() const { return impl::shim<D, IBitmapSourceStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty PixelWidthProperty() const;
     Windows::UI::Xaml::DependencyProperty PixelHeightProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IDownloadProgressEventArgs
+struct WINRT_EBO impl_IDownloadProgressEventArgs
 {
-    auto shim() const { return impl::shim<D, IDownloadProgressEventArgs>(this); }
-
-public:
-
     int32_t Progress() const;
     void Progress(int32_t value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRenderTargetBitmap
+struct WINRT_EBO impl_IRenderTargetBitmap
 {
-    auto shim() const { return impl::shim<D, IRenderTargetBitmap>(this); }
-
-public:
-
     int32_t PixelWidth() const;
     int32_t PixelHeight() const;
     Windows::Foundation::IAsyncAction RenderAsync(const Windows::UI::Xaml::UIElement & element) const;
@@ -187,113 +139,69 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IRenderTargetBitmapStatics
+struct WINRT_EBO impl_IRenderTargetBitmapStatics
 {
-    auto shim() const { return impl::shim<D, IRenderTargetBitmapStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty PixelWidthProperty() const;
     Windows::UI::Xaml::DependencyProperty PixelHeightProperty() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISoftwareBitmapSource
+struct WINRT_EBO impl_ISoftwareBitmapSource
 {
-    auto shim() const { return impl::shim<D, ISoftwareBitmapSource>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction SetBitmapAsync(const Windows::Graphics::Imaging::SoftwareBitmap & softwareBitmap) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISurfaceImageSource
+struct WINRT_EBO impl_ISurfaceImageSource
 {
-    auto shim() const { return impl::shim<D, ISurfaceImageSource>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_ISurfaceImageSourceFactory
+struct WINRT_EBO impl_ISurfaceImageSourceFactory
 {
-    auto shim() const { return impl::shim<D, ISurfaceImageSourceFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Imaging::SurfaceImageSource CreateInstanceWithDimensions(int32_t pixelWidth, int32_t pixelHeight, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
     Windows::UI::Xaml::Media::Imaging::SurfaceImageSource CreateInstanceWithDimensionsAndOpacity(int32_t pixelWidth, int32_t pixelHeight, bool isOpaque, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IVirtualSurfaceImageSource
+struct WINRT_EBO impl_IVirtualSurfaceImageSource
 {
-    auto shim() const { return impl::shim<D, IVirtualSurfaceImageSource>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IVirtualSurfaceImageSourceFactory
+struct WINRT_EBO impl_IVirtualSurfaceImageSourceFactory
 {
-    auto shim() const { return impl::shim<D, IVirtualSurfaceImageSourceFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Imaging::VirtualSurfaceImageSource CreateInstanceWithDimensions(int32_t pixelWidth, int32_t pixelHeight) const;
     Windows::UI::Xaml::Media::Imaging::VirtualSurfaceImageSource CreateInstanceWithDimensionsAndOpacity(int32_t pixelWidth, int32_t pixelHeight, bool isOpaque) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWriteableBitmap
+struct WINRT_EBO impl_IWriteableBitmap
 {
-    auto shim() const { return impl::shim<D, IWriteableBitmap>(this); }
-
-public:
-
     Windows::Storage::Streams::IBuffer PixelBuffer() const;
     void Invalidate() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWriteableBitmapFactory
+struct WINRT_EBO impl_IWriteableBitmapFactory
 {
-    auto shim() const { return impl::shim<D, IWriteableBitmapFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Imaging::WriteableBitmap CreateInstanceWithDimensions(int32_t pixelWidth, int32_t pixelHeight) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IXamlRenderingBackgroundTask
+struct WINRT_EBO impl_IXamlRenderingBackgroundTask
 {
-    auto shim() const { return impl::shim<D, IXamlRenderingBackgroundTask>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IXamlRenderingBackgroundTaskFactory
+struct WINRT_EBO impl_IXamlRenderingBackgroundTaskFactory
 {
-    auto shim() const { return impl::shim<D, IXamlRenderingBackgroundTaskFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Media::Imaging::XamlRenderingBackgroundTask CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IXamlRenderingBackgroundTaskOverrides
+struct WINRT_EBO impl_IXamlRenderingBackgroundTaskOverrides
 {
-    auto shim() const { return impl::shim<D, IXamlRenderingBackgroundTaskOverrides>(this); }
-
-public:
-
     void OnRun(const Windows::ApplicationModel::Background::IBackgroundTaskInstance & taskInstance) const;
 };
 

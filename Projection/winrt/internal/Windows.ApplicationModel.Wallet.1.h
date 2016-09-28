@@ -186,19 +186,19 @@ template <> struct traits<Windows::ApplicationModel::Wallet::WalletVerb> { using
 
 namespace Windows::ApplicationModel::Wallet {
 
-template <typename T> class impl_IWalletBarcode;
-template <typename T> class impl_IWalletBarcodeFactory;
-template <typename T> class impl_IWalletItem;
-template <typename T> class impl_IWalletItemCustomProperty;
-template <typename T> class impl_IWalletItemCustomPropertyFactory;
-template <typename T> class impl_IWalletItemFactory;
-template <typename T> class impl_IWalletItemStore;
-template <typename T> class impl_IWalletItemStore2;
-template <typename T> class impl_IWalletManagerStatics;
-template <typename T> class impl_IWalletRelevantLocation;
-template <typename T> class impl_IWalletTransaction;
-template <typename T> class impl_IWalletVerb;
-template <typename T> class impl_IWalletVerbFactory;
+template <typename T> struct impl_IWalletBarcode;
+template <typename T> struct impl_IWalletBarcodeFactory;
+template <typename T> struct impl_IWalletItem;
+template <typename T> struct impl_IWalletItemCustomProperty;
+template <typename T> struct impl_IWalletItemCustomPropertyFactory;
+template <typename T> struct impl_IWalletItemFactory;
+template <typename T> struct impl_IWalletItemStore;
+template <typename T> struct impl_IWalletItemStore2;
+template <typename T> struct impl_IWalletManagerStatics;
+template <typename T> struct impl_IWalletRelevantLocation;
+template <typename T> struct impl_IWalletTransaction;
+template <typename T> struct impl_IWalletVerb;
+template <typename T> struct impl_IWalletVerbFactory;
 
 }
 

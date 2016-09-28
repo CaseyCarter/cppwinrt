@@ -26,24 +26,16 @@ template <> struct __declspec(uuid("8d4950b3-629d-5d7d-84cc-04c0dcf7942b")) __de
 namespace Windows::Data::Pdf {
 
 template <typename D>
-class WINRT_EBO impl_IPdfDocument
+struct WINRT_EBO impl_IPdfDocument
 {
-    auto shim() const { return impl::shim<D, IPdfDocument>(this); }
-
-public:
-
     Windows::Data::Pdf::PdfPage GetPage(uint32_t pageIndex) const;
     uint32_t PageCount() const;
     bool IsPasswordProtected() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPdfDocumentStatics
+struct WINRT_EBO impl_IPdfDocumentStatics
 {
-    auto shim() const { return impl::shim<D, IPdfDocumentStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument> LoadFromFileAsync(const Windows::Storage::IStorageFile & file) const;
     Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument> LoadFromFileAsync(const Windows::Storage::IStorageFile & file, hstring_ref password) const;
     Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument> LoadFromStreamAsync(const Windows::Storage::Streams::IRandomAccessStream & inputStream) const;
@@ -51,12 +43,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPdfPage
+struct WINRT_EBO impl_IPdfPage
 {
-    auto shim() const { return impl::shim<D, IPdfPage>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction RenderToStreamAsync(const Windows::Storage::Streams::IRandomAccessStream & outputStream) const;
     Windows::Foundation::IAsyncAction RenderToStreamAsync(const Windows::Storage::Streams::IRandomAccessStream & outputStream, const Windows::Data::Pdf::PdfPageRenderOptions & options) const;
     Windows::Foundation::IAsyncAction PreparePageAsync() const;
@@ -68,12 +56,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPdfPageDimensions
+struct WINRT_EBO impl_IPdfPageDimensions
 {
-    auto shim() const { return impl::shim<D, IPdfPageDimensions>(this); }
-
-public:
-
     Windows::Foundation::Rect MediaBox() const;
     Windows::Foundation::Rect CropBox() const;
     Windows::Foundation::Rect BleedBox() const;
@@ -82,12 +66,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPdfPageRenderOptions
+struct WINRT_EBO impl_IPdfPageRenderOptions
 {
-    auto shim() const { return impl::shim<D, IPdfPageRenderOptions>(this); }
-
-public:
-
     Windows::Foundation::Rect SourceRect() const;
     void SourceRect(const Windows::Foundation::Rect & value) const;
     uint32_t DestinationWidth() const;

@@ -356,137 +356,137 @@ namespace Windows::Gaming::Input::Custom {
 
 template <typename D> void impl_IGameControllerInputSink<D>::OnInputResumed(uint64_t timestamp) const
 {
-    check_hresult(shim()->abi_OnInputResumed(timestamp));
+    check_hresult(static_cast<const IGameControllerInputSink &>(static_cast<const D &>(*this))->abi_OnInputResumed(timestamp));
 }
 
 template <typename D> void impl_IGameControllerInputSink<D>::OnInputSuspended(uint64_t timestamp) const
 {
-    check_hresult(shim()->abi_OnInputSuspended(timestamp));
+    check_hresult(static_cast<const IGameControllerInputSink &>(static_cast<const D &>(*this))->abi_OnInputSuspended(timestamp));
 }
 
 template <typename D> void impl_IGipGameControllerInputSink<D>::OnKeyReceived(uint64_t timestamp, uint8_t keyCode, bool isPressed) const
 {
-    check_hresult(shim()->abi_OnKeyReceived(timestamp, keyCode, isPressed));
+    check_hresult(static_cast<const IGipGameControllerInputSink &>(static_cast<const D &>(*this))->abi_OnKeyReceived(timestamp, keyCode, isPressed));
 }
 
 template <typename D> void impl_IGipGameControllerInputSink<D>::OnMessageReceived(uint64_t timestamp, Windows::Gaming::Input::Custom::GipMessageClass messageClass, uint8_t messageId, uint8_t sequenceId, array_ref<const uint8_t> messageBuffer) const
 {
-    check_hresult(shim()->abi_OnMessageReceived(timestamp, messageClass, messageId, sequenceId, messageBuffer.size(), get(messageBuffer)));
+    check_hresult(static_cast<const IGipGameControllerInputSink &>(static_cast<const D &>(*this))->abi_OnMessageReceived(timestamp, messageClass, messageId, sequenceId, messageBuffer.size(), get(messageBuffer)));
 }
 
 template <typename D> void impl_IXusbGameControllerInputSink<D>::OnInputReceived(uint64_t timestamp, uint8_t reportId, array_ref<const uint8_t> inputBuffer) const
 {
-    check_hresult(shim()->abi_OnInputReceived(timestamp, reportId, inputBuffer.size(), get(inputBuffer)));
+    check_hresult(static_cast<const IXusbGameControllerInputSink &>(static_cast<const D &>(*this))->abi_OnInputReceived(timestamp, reportId, inputBuffer.size(), get(inputBuffer)));
 }
 
 template <typename D> uint32_t impl_IGipFirmwareUpdateResult<D>::ExtendedErrorCode() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_ExtendedErrorCode(&value));
+    check_hresult(static_cast<const IGipFirmwareUpdateResult &>(static_cast<const D &>(*this))->get_ExtendedErrorCode(&value));
     return value;
 }
 
 template <typename D> uint32_t impl_IGipFirmwareUpdateResult<D>::FinalComponentId() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_FinalComponentId(&value));
+    check_hresult(static_cast<const IGipFirmwareUpdateResult &>(static_cast<const D &>(*this))->get_FinalComponentId(&value));
     return value;
 }
 
 template <typename D> Windows::Gaming::Input::Custom::GipFirmwareUpdateStatus impl_IGipFirmwareUpdateResult<D>::Status() const
 {
     Windows::Gaming::Input::Custom::GipFirmwareUpdateStatus value {};
-    check_hresult(shim()->get_Status(&value));
+    check_hresult(static_cast<const IGipFirmwareUpdateResult &>(static_cast<const D &>(*this))->get_Status(&value));
     return value;
 }
 
 template <typename D> Windows::Gaming::Input::Custom::GameControllerVersionInfo impl_IGameControllerProvider<D>::FirmwareVersionInfo() const
 {
     Windows::Gaming::Input::Custom::GameControllerVersionInfo value {};
-    check_hresult(shim()->get_FirmwareVersionInfo(put(value)));
+    check_hresult(static_cast<const IGameControllerProvider &>(static_cast<const D &>(*this))->get_FirmwareVersionInfo(put(value)));
     return value;
 }
 
 template <typename D> uint16_t impl_IGameControllerProvider<D>::HardwareProductId() const
 {
     uint16_t value {};
-    check_hresult(shim()->get_HardwareProductId(&value));
+    check_hresult(static_cast<const IGameControllerProvider &>(static_cast<const D &>(*this))->get_HardwareProductId(&value));
     return value;
 }
 
 template <typename D> uint16_t impl_IGameControllerProvider<D>::HardwareVendorId() const
 {
     uint16_t value {};
-    check_hresult(shim()->get_HardwareVendorId(&value));
+    check_hresult(static_cast<const IGameControllerProvider &>(static_cast<const D &>(*this))->get_HardwareVendorId(&value));
     return value;
 }
 
 template <typename D> Windows::Gaming::Input::Custom::GameControllerVersionInfo impl_IGameControllerProvider<D>::HardwareVersionInfo() const
 {
     Windows::Gaming::Input::Custom::GameControllerVersionInfo value {};
-    check_hresult(shim()->get_HardwareVersionInfo(put(value)));
+    check_hresult(static_cast<const IGameControllerProvider &>(static_cast<const D &>(*this))->get_HardwareVersionInfo(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IGameControllerProvider<D>::IsConnected() const
 {
     bool value {};
-    check_hresult(shim()->get_IsConnected(&value));
+    check_hresult(static_cast<const IGameControllerProvider &>(static_cast<const D &>(*this))->get_IsConnected(&value));
     return value;
 }
 
 template <typename D> void impl_IGipGameControllerProvider<D>::SendMessage(Windows::Gaming::Input::Custom::GipMessageClass messageClass, uint8_t messageId, array_ref<const uint8_t> messageBuffer) const
 {
-    check_hresult(shim()->abi_SendMessage(messageClass, messageId, messageBuffer.size(), get(messageBuffer)));
+    check_hresult(static_cast<const IGipGameControllerProvider &>(static_cast<const D &>(*this))->abi_SendMessage(messageClass, messageId, messageBuffer.size(), get(messageBuffer)));
 }
 
 template <typename D> void impl_IGipGameControllerProvider<D>::SendReceiveMessage(Windows::Gaming::Input::Custom::GipMessageClass messageClass, uint8_t messageId, array_ref<const uint8_t> requestMessageBuffer, array_ref<uint8_t> responseMessageBuffer) const
 {
-    check_hresult(shim()->abi_SendReceiveMessage(messageClass, messageId, requestMessageBuffer.size(), get(requestMessageBuffer), responseMessageBuffer.size(), get(responseMessageBuffer)));
+    check_hresult(static_cast<const IGipGameControllerProvider &>(static_cast<const D &>(*this))->abi_SendReceiveMessage(messageClass, messageId, requestMessageBuffer.size(), get(requestMessageBuffer), responseMessageBuffer.size(), get(responseMessageBuffer)));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Gaming::Input::Custom::GipFirmwareUpdateResult, Windows::Gaming::Input::Custom::GipFirmwareUpdateProgress> impl_IGipGameControllerProvider<D>::UpdateFirmwareAsync(const Windows::Storage::Streams::IInputStream & firmwareImage) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Gaming::Input::Custom::GipFirmwareUpdateResult, Windows::Gaming::Input::Custom::GipFirmwareUpdateProgress> result;
-    check_hresult(shim()->abi_UpdateFirmwareAsync(get(firmwareImage), put(result)));
+    check_hresult(static_cast<const IGipGameControllerProvider &>(static_cast<const D &>(*this))->abi_UpdateFirmwareAsync(get(firmwareImage), put(result)));
     return result;
 }
 
 template <typename D> void impl_IXusbGameControllerProvider<D>::SetVibration(double lowFrequencyMotorSpeed, double highFrequencyMotorSpeed) const
 {
-    check_hresult(shim()->abi_SetVibration(lowFrequencyMotorSpeed, highFrequencyMotorSpeed));
+    check_hresult(static_cast<const IXusbGameControllerProvider &>(static_cast<const D &>(*this))->abi_SetVibration(lowFrequencyMotorSpeed, highFrequencyMotorSpeed));
 }
 
 template <typename D> Windows::IInspectable impl_ICustomGameControllerFactory<D>::CreateGameController(const Windows::Gaming::Input::Custom::IGameControllerProvider & provider) const
 {
     Windows::IInspectable value;
-    check_hresult(shim()->abi_CreateGameController(get(provider), put(value)));
+    check_hresult(static_cast<const ICustomGameControllerFactory &>(static_cast<const D &>(*this))->abi_CreateGameController(get(provider), put(value)));
     return value;
 }
 
 template <typename D> void impl_ICustomGameControllerFactory<D>::OnGameControllerAdded(const Windows::Gaming::Input::IGameController & value) const
 {
-    check_hresult(shim()->abi_OnGameControllerAdded(get(value)));
+    check_hresult(static_cast<const ICustomGameControllerFactory &>(static_cast<const D &>(*this))->abi_OnGameControllerAdded(get(value)));
 }
 
 template <typename D> void impl_ICustomGameControllerFactory<D>::OnGameControllerRemoved(const Windows::Gaming::Input::IGameController & value) const
 {
-    check_hresult(shim()->abi_OnGameControllerRemoved(get(value)));
+    check_hresult(static_cast<const ICustomGameControllerFactory &>(static_cast<const D &>(*this))->abi_OnGameControllerRemoved(get(value)));
 }
 
 template <typename D> void impl_IGameControllerFactoryManagerStatics<D>::RegisterCustomFactoryForGipInterface(const Windows::Gaming::Input::Custom::ICustomGameControllerFactory & factory, GUID interfaceId) const
 {
-    check_hresult(shim()->abi_RegisterCustomFactoryForGipInterface(get(factory), interfaceId));
+    check_hresult(static_cast<const IGameControllerFactoryManagerStatics &>(static_cast<const D &>(*this))->abi_RegisterCustomFactoryForGipInterface(get(factory), interfaceId));
 }
 
 template <typename D> void impl_IGameControllerFactoryManagerStatics<D>::RegisterCustomFactoryForHardwareId(const Windows::Gaming::Input::Custom::ICustomGameControllerFactory & factory, uint16_t hardwareVendorId, uint16_t hardwareProductId) const
 {
-    check_hresult(shim()->abi_RegisterCustomFactoryForHardwareId(get(factory), hardwareVendorId, hardwareProductId));
+    check_hresult(static_cast<const IGameControllerFactoryManagerStatics &>(static_cast<const D &>(*this))->abi_RegisterCustomFactoryForHardwareId(get(factory), hardwareVendorId, hardwareProductId));
 }
 
 template <typename D> void impl_IGameControllerFactoryManagerStatics<D>::RegisterCustomFactoryForXusbType(const Windows::Gaming::Input::Custom::ICustomGameControllerFactory & factory, Windows::Gaming::Input::Custom::XusbDeviceType xusbType, Windows::Gaming::Input::Custom::XusbDeviceSubtype xusbSubtype) const
 {
-    check_hresult(shim()->abi_RegisterCustomFactoryForXusbType(get(factory), xusbType, xusbSubtype));
+    check_hresult(static_cast<const IGameControllerFactoryManagerStatics &>(static_cast<const D &>(*this))->abi_RegisterCustomFactoryForXusbType(get(factory), xusbType, xusbSubtype));
 }
 
 inline void GameControllerFactoryManager::RegisterCustomFactoryForGipInterface(const Windows::Gaming::Input::Custom::ICustomGameControllerFactory & factory, GUID interfaceId)

@@ -11,12 +11,8 @@ WINRT_EXPORT namespace winrt {
 namespace Windows::Globalization::PhoneNumberFormatting {
 
 template <typename D>
-class WINRT_EBO impl_IPhoneNumberFormatter
+struct WINRT_EBO impl_IPhoneNumberFormatter
 {
-    auto shim() const { return impl::shim<D, IPhoneNumberFormatter>(this); }
-
-public:
-
     hstring Format(const Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo & number) const;
     hstring Format(const Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo & number, Windows::Globalization::PhoneNumberFormatting::PhoneNumberFormat numberFormat) const;
     hstring FormatPartialString(hstring_ref number) const;
@@ -25,12 +21,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPhoneNumberFormatterStatics
+struct WINRT_EBO impl_IPhoneNumberFormatterStatics
 {
-    auto shim() const { return impl::shim<D, IPhoneNumberFormatterStatics>(this); }
-
-public:
-
     void TryCreate(hstring_ref regionCode, Windows::Globalization::PhoneNumberFormatting::PhoneNumberFormatter & phoneNumber) const;
     int32_t GetCountryCodeForRegion(hstring_ref regionCode) const;
     hstring GetNationalDirectDialingPrefixForRegion(hstring_ref regionCode, bool stripNonDigit) const;
@@ -38,12 +30,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPhoneNumberInfo
+struct WINRT_EBO impl_IPhoneNumberInfo
 {
-    auto shim() const { return impl::shim<D, IPhoneNumberInfo>(this); }
-
-public:
-
     int32_t CountryCode() const;
     hstring PhoneNumber() const;
     int32_t GetLengthOfGeographicalAreaCode() const;
@@ -55,22 +43,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPhoneNumberInfoFactory
+struct WINRT_EBO impl_IPhoneNumberInfoFactory
 {
-    auto shim() const { return impl::shim<D, IPhoneNumberInfoFactory>(this); }
-
-public:
-
     Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo Create(hstring_ref number) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPhoneNumberInfoStatics
+struct WINRT_EBO impl_IPhoneNumberInfoStatics
 {
-    auto shim() const { return impl::shim<D, IPhoneNumberInfoStatics>(this); }
-
-public:
-
     Windows::Globalization::PhoneNumberFormatting::PhoneNumberParseResult TryParse(hstring_ref input, Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo & phoneNumber) const;
     Windows::Globalization::PhoneNumberFormatting::PhoneNumberParseResult TryParse(hstring_ref input, hstring_ref regionCode, Windows::Globalization::PhoneNumberFormatting::PhoneNumberInfo & phoneNumber) const;
 };

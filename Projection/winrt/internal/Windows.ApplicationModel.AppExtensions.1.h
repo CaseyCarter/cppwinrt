@@ -94,14 +94,14 @@ template <> struct traits<Windows::ApplicationModel::AppExtensions::AppExtension
 
 namespace Windows::ApplicationModel::AppExtensions {
 
-template <typename T> class impl_IAppExtension;
-template <typename T> class impl_IAppExtensionCatalog;
-template <typename T> class impl_IAppExtensionCatalogStatics;
-template <typename T> class impl_IAppExtensionPackageInstalledEventArgs;
-template <typename T> class impl_IAppExtensionPackageStatusChangedEventArgs;
-template <typename T> class impl_IAppExtensionPackageUninstallingEventArgs;
-template <typename T> class impl_IAppExtensionPackageUpdatedEventArgs;
-template <typename T> class impl_IAppExtensionPackageUpdatingEventArgs;
+template <typename T> struct impl_IAppExtension;
+template <typename T> struct impl_IAppExtensionCatalog;
+template <typename T> struct impl_IAppExtensionCatalogStatics;
+template <typename T> struct impl_IAppExtensionPackageInstalledEventArgs;
+template <typename T> struct impl_IAppExtensionPackageStatusChangedEventArgs;
+template <typename T> struct impl_IAppExtensionPackageUninstallingEventArgs;
+template <typename T> struct impl_IAppExtensionPackageUpdatedEventArgs;
+template <typename T> struct impl_IAppExtensionPackageUpdatingEventArgs;
 
 }
 

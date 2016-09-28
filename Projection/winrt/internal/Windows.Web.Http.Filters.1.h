@@ -97,13 +97,13 @@ template <> struct traits<Windows::Web::Http::Filters::HttpServerCustomValidatio
 
 namespace Windows::Web::Http::Filters {
 
-template <typename T> class impl_IHttpBaseProtocolFilter;
-template <typename T> class impl_IHttpBaseProtocolFilter2;
-template <typename T> class impl_IHttpBaseProtocolFilter3;
-template <typename T> class impl_IHttpBaseProtocolFilter4;
-template <typename T> class impl_IHttpCacheControl;
-template <typename T> class impl_IHttpFilter;
-template <typename T> class impl_IHttpServerCustomValidationRequestedEventArgs;
+template <typename T> struct impl_IHttpBaseProtocolFilter;
+template <typename T> struct impl_IHttpBaseProtocolFilter2;
+template <typename T> struct impl_IHttpBaseProtocolFilter3;
+template <typename T> struct impl_IHttpBaseProtocolFilter4;
+template <typename T> struct impl_IHttpCacheControl;
+template <typename T> struct impl_IHttpFilter;
+template <typename T> struct impl_IHttpServerCustomValidationRequestedEventArgs;
 
 }
 

@@ -1726,493 +1726,493 @@ namespace Windows::ApplicationModel::DataTransfer {
 template <typename D> hstring impl_IStandardDataFormatsStatics<D>::Text() const
 {
     hstring value;
-    check_hresult(shim()->get_Text(put(value)));
+    check_hresult(static_cast<const IStandardDataFormatsStatics &>(static_cast<const D &>(*this))->get_Text(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStandardDataFormatsStatics<D>::Uri() const
 {
     hstring value;
-    check_hresult(shim()->get_Uri(put(value)));
+    check_hresult(static_cast<const IStandardDataFormatsStatics &>(static_cast<const D &>(*this))->get_Uri(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStandardDataFormatsStatics<D>::Html() const
 {
     hstring value;
-    check_hresult(shim()->get_Html(put(value)));
+    check_hresult(static_cast<const IStandardDataFormatsStatics &>(static_cast<const D &>(*this))->get_Html(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStandardDataFormatsStatics<D>::Rtf() const
 {
     hstring value;
-    check_hresult(shim()->get_Rtf(put(value)));
+    check_hresult(static_cast<const IStandardDataFormatsStatics &>(static_cast<const D &>(*this))->get_Rtf(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStandardDataFormatsStatics<D>::Bitmap() const
 {
     hstring value;
-    check_hresult(shim()->get_Bitmap(put(value)));
+    check_hresult(static_cast<const IStandardDataFormatsStatics &>(static_cast<const D &>(*this))->get_Bitmap(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStandardDataFormatsStatics<D>::StorageItems() const
 {
     hstring value;
-    check_hresult(shim()->get_StorageItems(put(value)));
+    check_hresult(static_cast<const IStandardDataFormatsStatics &>(static_cast<const D &>(*this))->get_StorageItems(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStandardDataFormatsStatics2<D>::WebLink() const
 {
     hstring value;
-    check_hresult(shim()->get_WebLink(put(value)));
+    check_hresult(static_cast<const IStandardDataFormatsStatics2 &>(static_cast<const D &>(*this))->get_WebLink(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IStandardDataFormatsStatics2<D>::ApplicationLink() const
 {
     hstring value;
-    check_hresult(shim()->get_ApplicationLink(put(value)));
+    check_hresult(static_cast<const IStandardDataFormatsStatics2 &>(static_cast<const D &>(*this))->get_ApplicationLink(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IDataPackagePropertySetView<D>::Title() const
 {
     hstring value;
-    check_hresult(shim()->get_Title(put(value)));
+    check_hresult(static_cast<const IDataPackagePropertySetView &>(static_cast<const D &>(*this))->get_Title(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IDataPackagePropertySetView<D>::Description() const
 {
     hstring value;
-    check_hresult(shim()->get_Description(put(value)));
+    check_hresult(static_cast<const IDataPackagePropertySetView &>(static_cast<const D &>(*this))->get_Description(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::RandomAccessStreamReference impl_IDataPackagePropertySetView<D>::Thumbnail() const
 {
     Windows::Storage::Streams::RandomAccessStreamReference value { nullptr };
-    check_hresult(shim()->get_Thumbnail(put(value)));
+    check_hresult(static_cast<const IDataPackagePropertySetView &>(static_cast<const D &>(*this))->get_Thumbnail(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_IDataPackagePropertySetView<D>::FileTypes() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(shim()->get_FileTypes(put(value)));
+    check_hresult(static_cast<const IDataPackagePropertySetView &>(static_cast<const D &>(*this))->get_FileTypes(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IDataPackagePropertySetView<D>::ApplicationName() const
 {
     hstring value;
-    check_hresult(shim()->get_ApplicationName(put(value)));
+    check_hresult(static_cast<const IDataPackagePropertySetView &>(static_cast<const D &>(*this))->get_ApplicationName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Uri impl_IDataPackagePropertySetView<D>::ApplicationListingUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(shim()->get_ApplicationListingUri(put(value)));
+    check_hresult(static_cast<const IDataPackagePropertySetView &>(static_cast<const D &>(*this))->get_ApplicationListingUri(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IDataPackagePropertySetView2<D>::PackageFamilyName() const
 {
     hstring value;
-    check_hresult(shim()->get_PackageFamilyName(put(value)));
+    check_hresult(static_cast<const IDataPackagePropertySetView2 &>(static_cast<const D &>(*this))->get_PackageFamilyName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Uri impl_IDataPackagePropertySetView2<D>::ContentSourceWebLink() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(shim()->get_ContentSourceWebLink(put(value)));
+    check_hresult(static_cast<const IDataPackagePropertySetView2 &>(static_cast<const D &>(*this))->get_ContentSourceWebLink(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Uri impl_IDataPackagePropertySetView2<D>::ContentSourceApplicationLink() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(shim()->get_ContentSourceApplicationLink(put(value)));
+    check_hresult(static_cast<const IDataPackagePropertySetView2 &>(static_cast<const D &>(*this))->get_ContentSourceApplicationLink(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IRandomAccessStreamReference impl_IDataPackagePropertySetView2<D>::Square30x30Logo() const
 {
     Windows::Storage::Streams::IRandomAccessStreamReference value;
-    check_hresult(shim()->get_Square30x30Logo(put(value)));
+    check_hresult(static_cast<const IDataPackagePropertySetView2 &>(static_cast<const D &>(*this))->get_Square30x30Logo(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Color impl_IDataPackagePropertySetView2<D>::LogoBackgroundColor() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_LogoBackgroundColor(put(value)));
+    check_hresult(static_cast<const IDataPackagePropertySetView2 &>(static_cast<const D &>(*this))->get_LogoBackgroundColor(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IDataPackagePropertySetView3<D>::EnterpriseId() const
 {
     hstring value;
-    check_hresult(shim()->get_EnterpriseId(put(value)));
+    check_hresult(static_cast<const IDataPackagePropertySetView3 &>(static_cast<const D &>(*this))->get_EnterpriseId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IDataPackagePropertySet<D>::Title() const
 {
     hstring value;
-    check_hresult(shim()->get_Title(put(value)));
+    check_hresult(static_cast<const IDataPackagePropertySet &>(static_cast<const D &>(*this))->get_Title(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDataPackagePropertySet<D>::Title(hstring_ref value) const
 {
-    check_hresult(shim()->put_Title(get(value)));
+    check_hresult(static_cast<const IDataPackagePropertySet &>(static_cast<const D &>(*this))->put_Title(get(value)));
 }
 
 template <typename D> hstring impl_IDataPackagePropertySet<D>::Description() const
 {
     hstring value;
-    check_hresult(shim()->get_Description(put(value)));
+    check_hresult(static_cast<const IDataPackagePropertySet &>(static_cast<const D &>(*this))->get_Description(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDataPackagePropertySet<D>::Description(hstring_ref value) const
 {
-    check_hresult(shim()->put_Description(get(value)));
+    check_hresult(static_cast<const IDataPackagePropertySet &>(static_cast<const D &>(*this))->put_Description(get(value)));
 }
 
 template <typename D> Windows::Storage::Streams::IRandomAccessStreamReference impl_IDataPackagePropertySet<D>::Thumbnail() const
 {
     Windows::Storage::Streams::IRandomAccessStreamReference value;
-    check_hresult(shim()->get_Thumbnail(put(value)));
+    check_hresult(static_cast<const IDataPackagePropertySet &>(static_cast<const D &>(*this))->get_Thumbnail(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDataPackagePropertySet<D>::Thumbnail(const Windows::Storage::Streams::IRandomAccessStreamReference & value) const
 {
-    check_hresult(shim()->put_Thumbnail(get(value)));
+    check_hresult(static_cast<const IDataPackagePropertySet &>(static_cast<const D &>(*this))->put_Thumbnail(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<hstring> impl_IDataPackagePropertySet<D>::FileTypes() const
 {
     Windows::Foundation::Collections::IVector<hstring> value;
-    check_hresult(shim()->get_FileTypes(put(value)));
+    check_hresult(static_cast<const IDataPackagePropertySet &>(static_cast<const D &>(*this))->get_FileTypes(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IDataPackagePropertySet<D>::ApplicationName() const
 {
     hstring value;
-    check_hresult(shim()->get_ApplicationName(put(value)));
+    check_hresult(static_cast<const IDataPackagePropertySet &>(static_cast<const D &>(*this))->get_ApplicationName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDataPackagePropertySet<D>::ApplicationName(hstring_ref value) const
 {
-    check_hresult(shim()->put_ApplicationName(get(value)));
+    check_hresult(static_cast<const IDataPackagePropertySet &>(static_cast<const D &>(*this))->put_ApplicationName(get(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_IDataPackagePropertySet<D>::ApplicationListingUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(shim()->get_ApplicationListingUri(put(value)));
+    check_hresult(static_cast<const IDataPackagePropertySet &>(static_cast<const D &>(*this))->get_ApplicationListingUri(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDataPackagePropertySet<D>::ApplicationListingUri(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(shim()->put_ApplicationListingUri(get(value)));
+    check_hresult(static_cast<const IDataPackagePropertySet &>(static_cast<const D &>(*this))->put_ApplicationListingUri(get(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_IDataPackagePropertySet2<D>::ContentSourceWebLink() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(shim()->get_ContentSourceWebLink(put(value)));
+    check_hresult(static_cast<const IDataPackagePropertySet2 &>(static_cast<const D &>(*this))->get_ContentSourceWebLink(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDataPackagePropertySet2<D>::ContentSourceWebLink(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(shim()->put_ContentSourceWebLink(get(value)));
+    check_hresult(static_cast<const IDataPackagePropertySet2 &>(static_cast<const D &>(*this))->put_ContentSourceWebLink(get(value)));
 }
 
 template <typename D> Windows::Foundation::Uri impl_IDataPackagePropertySet2<D>::ContentSourceApplicationLink() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(shim()->get_ContentSourceApplicationLink(put(value)));
+    check_hresult(static_cast<const IDataPackagePropertySet2 &>(static_cast<const D &>(*this))->get_ContentSourceApplicationLink(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDataPackagePropertySet2<D>::ContentSourceApplicationLink(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(shim()->put_ContentSourceApplicationLink(get(value)));
+    check_hresult(static_cast<const IDataPackagePropertySet2 &>(static_cast<const D &>(*this))->put_ContentSourceApplicationLink(get(value)));
 }
 
 template <typename D> hstring impl_IDataPackagePropertySet2<D>::PackageFamilyName() const
 {
     hstring value;
-    check_hresult(shim()->get_PackageFamilyName(put(value)));
+    check_hresult(static_cast<const IDataPackagePropertySet2 &>(static_cast<const D &>(*this))->get_PackageFamilyName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDataPackagePropertySet2<D>::PackageFamilyName(hstring_ref value) const
 {
-    check_hresult(shim()->put_PackageFamilyName(get(value)));
+    check_hresult(static_cast<const IDataPackagePropertySet2 &>(static_cast<const D &>(*this))->put_PackageFamilyName(get(value)));
 }
 
 template <typename D> Windows::Storage::Streams::IRandomAccessStreamReference impl_IDataPackagePropertySet2<D>::Square30x30Logo() const
 {
     Windows::Storage::Streams::IRandomAccessStreamReference value;
-    check_hresult(shim()->get_Square30x30Logo(put(value)));
+    check_hresult(static_cast<const IDataPackagePropertySet2 &>(static_cast<const D &>(*this))->get_Square30x30Logo(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDataPackagePropertySet2<D>::Square30x30Logo(const Windows::Storage::Streams::IRandomAccessStreamReference & value) const
 {
-    check_hresult(shim()->put_Square30x30Logo(get(value)));
+    check_hresult(static_cast<const IDataPackagePropertySet2 &>(static_cast<const D &>(*this))->put_Square30x30Logo(get(value)));
 }
 
 template <typename D> Windows::UI::Color impl_IDataPackagePropertySet2<D>::LogoBackgroundColor() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_LogoBackgroundColor(put(value)));
+    check_hresult(static_cast<const IDataPackagePropertySet2 &>(static_cast<const D &>(*this))->get_LogoBackgroundColor(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDataPackagePropertySet2<D>::LogoBackgroundColor(const Windows::UI::Color & value) const
 {
-    check_hresult(shim()->put_LogoBackgroundColor(get(value)));
+    check_hresult(static_cast<const IDataPackagePropertySet2 &>(static_cast<const D &>(*this))->put_LogoBackgroundColor(get(value)));
 }
 
 template <typename D> hstring impl_IDataPackagePropertySet3<D>::EnterpriseId() const
 {
     hstring value;
-    check_hresult(shim()->get_EnterpriseId(put(value)));
+    check_hresult(static_cast<const IDataPackagePropertySet3 &>(static_cast<const D &>(*this))->get_EnterpriseId(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDataPackagePropertySet3<D>::EnterpriseId(hstring_ref value) const
 {
-    check_hresult(shim()->put_EnterpriseId(get(value)));
+    check_hresult(static_cast<const IDataPackagePropertySet3 &>(static_cast<const D &>(*this))->put_EnterpriseId(get(value)));
 }
 
 template <typename D> void impl_IDataProviderDeferral<D>::Complete() const
 {
-    check_hresult(shim()->abi_Complete());
+    check_hresult(static_cast<const IDataProviderDeferral &>(static_cast<const D &>(*this))->abi_Complete());
 }
 
 template <typename D> hstring impl_IDataProviderRequest<D>::FormatId() const
 {
     hstring value;
-    check_hresult(shim()->get_FormatId(put(value)));
+    check_hresult(static_cast<const IDataProviderRequest &>(static_cast<const D &>(*this))->get_FormatId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IDataProviderRequest<D>::Deadline() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->get_Deadline(put(value)));
+    check_hresult(static_cast<const IDataProviderRequest &>(static_cast<const D &>(*this))->get_Deadline(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::DataTransfer::DataProviderDeferral impl_IDataProviderRequest<D>::GetDeferral() const
 {
     Windows::ApplicationModel::DataTransfer::DataProviderDeferral value { nullptr };
-    check_hresult(shim()->abi_GetDeferral(put(value)));
+    check_hresult(static_cast<const IDataProviderRequest &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDataProviderRequest<D>::SetData(const Windows::IInspectable & value) const
 {
-    check_hresult(shim()->abi_SetData(get(value)));
+    check_hresult(static_cast<const IDataProviderRequest &>(static_cast<const D &>(*this))->abi_SetData(get(value)));
 }
 
 template <typename D> Windows::ApplicationModel::DataTransfer::DataPackageOperation impl_IOperationCompletedEventArgs<D>::Operation() const
 {
     Windows::ApplicationModel::DataTransfer::DataPackageOperation value {};
-    check_hresult(shim()->get_Operation(&value));
+    check_hresult(static_cast<const IOperationCompletedEventArgs &>(static_cast<const D &>(*this))->get_Operation(&value));
     return value;
 }
 
 template <typename D> hstring impl_IOperationCompletedEventArgs2<D>::AcceptedFormatId() const
 {
     hstring value;
-    check_hresult(shim()->get_AcceptedFormatId(put(value)));
+    check_hresult(static_cast<const IOperationCompletedEventArgs2 &>(static_cast<const D &>(*this))->get_AcceptedFormatId(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::DataTransfer::DataPackagePropertySetView impl_IDataPackageView<D>::Properties() const
 {
     Windows::ApplicationModel::DataTransfer::DataPackagePropertySetView value { nullptr };
-    check_hresult(shim()->get_Properties(put(value)));
+    check_hresult(static_cast<const IDataPackageView &>(static_cast<const D &>(*this))->get_Properties(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::DataTransfer::DataPackageOperation impl_IDataPackageView<D>::RequestedOperation() const
 {
     Windows::ApplicationModel::DataTransfer::DataPackageOperation value {};
-    check_hresult(shim()->get_RequestedOperation(&value));
+    check_hresult(static_cast<const IDataPackageView &>(static_cast<const D &>(*this))->get_RequestedOperation(&value));
     return value;
 }
 
 template <typename D> void impl_IDataPackageView<D>::ReportOperationCompleted(Windows::ApplicationModel::DataTransfer::DataPackageOperation value) const
 {
-    check_hresult(shim()->abi_ReportOperationCompleted(value));
+    check_hresult(static_cast<const IDataPackageView &>(static_cast<const D &>(*this))->abi_ReportOperationCompleted(value));
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_IDataPackageView<D>::AvailableFormats() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> formatIds;
-    check_hresult(shim()->get_AvailableFormats(put(formatIds)));
+    check_hresult(static_cast<const IDataPackageView &>(static_cast<const D &>(*this))->get_AvailableFormats(put(formatIds)));
     return formatIds;
 }
 
 template <typename D> bool impl_IDataPackageView<D>::Contains(hstring_ref formatId) const
 {
     bool value {};
-    check_hresult(shim()->abi_Contains(get(formatId), &value));
+    check_hresult(static_cast<const IDataPackageView &>(static_cast<const D &>(*this))->abi_Contains(get(formatId), &value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::IInspectable> impl_IDataPackageView<D>::GetDataAsync(hstring_ref formatId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::IInspectable> operation;
-    check_hresult(shim()->abi_GetDataAsync(get(formatId), put(operation)));
+    check_hresult(static_cast<const IDataPackageView &>(static_cast<const D &>(*this))->abi_GetDataAsync(get(formatId), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IDataPackageView<D>::GetTextAsync() const
 {
     Windows::Foundation::IAsyncOperation<hstring> operation;
-    check_hresult(shim()->abi_GetTextAsync(put(operation)));
+    check_hresult(static_cast<const IDataPackageView &>(static_cast<const D &>(*this))->abi_GetTextAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IDataPackageView<D>::GetTextAsync(hstring_ref formatId) const
 {
     Windows::Foundation::IAsyncOperation<hstring> operation;
-    check_hresult(shim()->abi_GetCustomTextAsync(get(formatId), put(operation)));
+    check_hresult(static_cast<const IDataPackageView &>(static_cast<const D &>(*this))->abi_GetCustomTextAsync(get(formatId), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Uri> impl_IDataPackageView<D>::GetUriAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Uri> operation;
-    check_hresult(shim()->abi_GetUriAsync(put(operation)));
+    check_hresult(static_cast<const IDataPackageView &>(static_cast<const D &>(*this))->abi_GetUriAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IDataPackageView<D>::GetHtmlFormatAsync() const
 {
     Windows::Foundation::IAsyncOperation<hstring> operation;
-    check_hresult(shim()->abi_GetHtmlFormatAsync(put(operation)));
+    check_hresult(static_cast<const IDataPackageView &>(static_cast<const D &>(*this))->abi_GetHtmlFormatAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMapView<hstring, Windows::Storage::Streams::RandomAccessStreamReference>> impl_IDataPackageView<D>::GetResourceMapAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMapView<hstring, Windows::Storage::Streams::RandomAccessStreamReference>> operation;
-    check_hresult(shim()->abi_GetResourceMapAsync(put(operation)));
+    check_hresult(static_cast<const IDataPackageView &>(static_cast<const D &>(*this))->abi_GetResourceMapAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IDataPackageView<D>::GetRtfAsync() const
 {
     Windows::Foundation::IAsyncOperation<hstring> operation;
-    check_hresult(shim()->abi_GetRtfAsync(put(operation)));
+    check_hresult(static_cast<const IDataPackageView &>(static_cast<const D &>(*this))->abi_GetRtfAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::RandomAccessStreamReference> impl_IDataPackageView<D>::GetBitmapAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::RandomAccessStreamReference> operation;
-    check_hresult(shim()->abi_GetBitmapAsync(put(operation)));
+    check_hresult(static_cast<const IDataPackageView &>(static_cast<const D &>(*this))->abi_GetBitmapAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::IStorageItem>> impl_IDataPackageView<D>::GetStorageItemsAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::IStorageItem>> operation;
-    check_hresult(shim()->abi_GetStorageItemsAsync(put(operation)));
+    check_hresult(static_cast<const IDataPackageView &>(static_cast<const D &>(*this))->abi_GetStorageItemsAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Uri> impl_IDataPackageView2<D>::GetApplicationLinkAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Uri> operation;
-    check_hresult(shim()->abi_GetApplicationLinkAsync(put(operation)));
+    check_hresult(static_cast<const IDataPackageView2 &>(static_cast<const D &>(*this))->abi_GetApplicationLinkAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Uri> impl_IDataPackageView2<D>::GetWebLinkAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Uri> operation;
-    check_hresult(shim()->abi_GetWebLinkAsync(put(operation)));
+    check_hresult(static_cast<const IDataPackageView2 &>(static_cast<const D &>(*this))->abi_GetWebLinkAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult> impl_IDataPackageView3<D>::RequestAccessAsync() const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult> operation;
-    check_hresult(shim()->abi_RequestAccessAsync(put(operation)));
+    check_hresult(static_cast<const IDataPackageView3 &>(static_cast<const D &>(*this))->abi_RequestAccessAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<winrt::Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult> impl_IDataPackageView3<D>::RequestAccessAsync(hstring_ref enterpriseId) const
 {
     Windows::Foundation::IAsyncOperation<winrt::Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult> operation;
-    check_hresult(shim()->abi_RequestAccessWithEnterpriseIdAsync(get(enterpriseId), put(operation)));
+    check_hresult(static_cast<const IDataPackageView3 &>(static_cast<const D &>(*this))->abi_RequestAccessWithEnterpriseIdAsync(get(enterpriseId), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult impl_IDataPackageView3<D>::UnlockAndAssumeEnterpriseIdentity() const
 {
     Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult result {};
-    check_hresult(shim()->abi_UnlockAndAssumeEnterpriseIdentity(&result));
+    check_hresult(static_cast<const IDataPackageView3 &>(static_cast<const D &>(*this))->abi_UnlockAndAssumeEnterpriseIdentity(&result));
     return result;
 }
 
 template <typename D> void impl_IDataPackageView4<D>::SetAcceptedFormatId(hstring_ref formatId) const
 {
-    check_hresult(shim()->abi_SetAcceptedFormatId(get(formatId)));
+    check_hresult(static_cast<const IDataPackageView4 &>(static_cast<const D &>(*this))->abi_SetAcceptedFormatId(get(formatId)));
 }
 
 template <typename D> Windows::ApplicationModel::DataTransfer::DataPackageView impl_IDataPackage<D>::GetView() const
 {
     Windows::ApplicationModel::DataTransfer::DataPackageView value { nullptr };
-    check_hresult(shim()->abi_GetView(put(value)));
+    check_hresult(static_cast<const IDataPackage &>(static_cast<const D &>(*this))->abi_GetView(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::DataTransfer::DataPackagePropertySet impl_IDataPackage<D>::Properties() const
 {
     Windows::ApplicationModel::DataTransfer::DataPackagePropertySet value { nullptr };
-    check_hresult(shim()->get_Properties(put(value)));
+    check_hresult(static_cast<const IDataPackage &>(static_cast<const D &>(*this))->get_Properties(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::DataTransfer::DataPackageOperation impl_IDataPackage<D>::RequestedOperation() const
 {
     Windows::ApplicationModel::DataTransfer::DataPackageOperation value {};
-    check_hresult(shim()->get_RequestedOperation(&value));
+    check_hresult(static_cast<const IDataPackage &>(static_cast<const D &>(*this))->get_RequestedOperation(&value));
     return value;
 }
 
 template <typename D> void impl_IDataPackage<D>::RequestedOperation(Windows::ApplicationModel::DataTransfer::DataPackageOperation value) const
 {
-    check_hresult(shim()->put_RequestedOperation(value));
+    check_hresult(static_cast<const IDataPackage &>(static_cast<const D &>(*this))->put_RequestedOperation(value));
 }
 
 template <typename D> event_token impl_IDataPackage<D>::OperationCompleted(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::ApplicationModel::DataTransfer::OperationCompletedEventArgs> & handler) const
 {
     event_token eventCookie {};
-    check_hresult(shim()->add_OperationCompleted(get(handler), &eventCookie));
+    check_hresult(static_cast<const IDataPackage &>(static_cast<const D &>(*this))->add_OperationCompleted(get(handler), &eventCookie));
     return eventCookie;
 }
 
@@ -2223,13 +2223,13 @@ template <typename D> event_revoker<IDataPackage> impl_IDataPackage<D>::Operatio
 
 template <typename D> void impl_IDataPackage<D>::OperationCompleted(event_token eventCookie) const
 {
-    check_hresult(shim()->remove_OperationCompleted(eventCookie));
+    check_hresult(static_cast<const IDataPackage &>(static_cast<const D &>(*this))->remove_OperationCompleted(eventCookie));
 }
 
 template <typename D> event_token impl_IDataPackage<D>::Destroyed(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::IInspectable> & handler) const
 {
     event_token eventCookie {};
-    check_hresult(shim()->add_Destroyed(get(handler), &eventCookie));
+    check_hresult(static_cast<const IDataPackage &>(static_cast<const D &>(*this))->add_Destroyed(get(handler), &eventCookie));
     return eventCookie;
 }
 
@@ -2240,111 +2240,111 @@ template <typename D> event_revoker<IDataPackage> impl_IDataPackage<D>::Destroye
 
 template <typename D> void impl_IDataPackage<D>::Destroyed(event_token eventCookie) const
 {
-    check_hresult(shim()->remove_Destroyed(eventCookie));
+    check_hresult(static_cast<const IDataPackage &>(static_cast<const D &>(*this))->remove_Destroyed(eventCookie));
 }
 
 template <typename D> void impl_IDataPackage<D>::SetData(hstring_ref formatId, const Windows::IInspectable & value) const
 {
-    check_hresult(shim()->abi_SetData(get(formatId), get(value)));
+    check_hresult(static_cast<const IDataPackage &>(static_cast<const D &>(*this))->abi_SetData(get(formatId), get(value)));
 }
 
 template <typename D> void impl_IDataPackage<D>::SetDataProvider(hstring_ref formatId, const Windows::ApplicationModel::DataTransfer::DataProviderHandler & delayRenderer) const
 {
-    check_hresult(shim()->abi_SetDataProvider(get(formatId), get(delayRenderer)));
+    check_hresult(static_cast<const IDataPackage &>(static_cast<const D &>(*this))->abi_SetDataProvider(get(formatId), get(delayRenderer)));
 }
 
 template <typename D> void impl_IDataPackage<D>::SetText(hstring_ref value) const
 {
-    check_hresult(shim()->abi_SetText(get(value)));
+    check_hresult(static_cast<const IDataPackage &>(static_cast<const D &>(*this))->abi_SetText(get(value)));
 }
 
 template <typename D> void impl_IDataPackage<D>::SetUri(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(shim()->abi_SetUri(get(value)));
+    check_hresult(static_cast<const IDataPackage &>(static_cast<const D &>(*this))->abi_SetUri(get(value)));
 }
 
 template <typename D> void impl_IDataPackage<D>::SetHtmlFormat(hstring_ref value) const
 {
-    check_hresult(shim()->abi_SetHtmlFormat(get(value)));
+    check_hresult(static_cast<const IDataPackage &>(static_cast<const D &>(*this))->abi_SetHtmlFormat(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IMap<hstring, Windows::Storage::Streams::RandomAccessStreamReference> impl_IDataPackage<D>::ResourceMap() const
 {
     Windows::Foundation::Collections::IMap<hstring, Windows::Storage::Streams::RandomAccessStreamReference> value;
-    check_hresult(shim()->get_ResourceMap(put(value)));
+    check_hresult(static_cast<const IDataPackage &>(static_cast<const D &>(*this))->get_ResourceMap(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDataPackage<D>::SetRtf(hstring_ref value) const
 {
-    check_hresult(shim()->abi_SetRtf(get(value)));
+    check_hresult(static_cast<const IDataPackage &>(static_cast<const D &>(*this))->abi_SetRtf(get(value)));
 }
 
 template <typename D> void impl_IDataPackage<D>::SetBitmap(const Windows::Storage::Streams::RandomAccessStreamReference & value) const
 {
-    check_hresult(shim()->abi_SetBitmap(get(value)));
+    check_hresult(static_cast<const IDataPackage &>(static_cast<const D &>(*this))->abi_SetBitmap(get(value)));
 }
 
 template <typename D> void impl_IDataPackage<D>::SetStorageItems(const Windows::Foundation::Collections::IIterable<Windows::Storage::IStorageItem> & value) const
 {
-    check_hresult(shim()->abi_SetStorageItemsReadOnly(get(value)));
+    check_hresult(static_cast<const IDataPackage &>(static_cast<const D &>(*this))->abi_SetStorageItemsReadOnly(get(value)));
 }
 
 template <typename D> void impl_IDataPackage<D>::SetStorageItems(const Windows::Foundation::Collections::IIterable<Windows::Storage::IStorageItem> & value, bool readOnly) const
 {
-    check_hresult(shim()->abi_SetStorageItems(get(value), readOnly));
+    check_hresult(static_cast<const IDataPackage &>(static_cast<const D &>(*this))->abi_SetStorageItems(get(value), readOnly));
 }
 
 template <typename D> void impl_IDataPackage2<D>::SetApplicationLink(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(shim()->abi_SetApplicationLink(get(value)));
+    check_hresult(static_cast<const IDataPackage2 &>(static_cast<const D &>(*this))->abi_SetApplicationLink(get(value)));
 }
 
 template <typename D> void impl_IDataPackage2<D>::SetWebLink(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(shim()->abi_SetWebLink(get(value)));
+    check_hresult(static_cast<const IDataPackage2 &>(static_cast<const D &>(*this))->abi_SetWebLink(get(value)));
 }
 
 template <typename D> hstring impl_IHtmlFormatHelperStatics<D>::GetStaticFragment(hstring_ref htmlFormat) const
 {
     hstring htmlFragment;
-    check_hresult(shim()->abi_GetStaticFragment(get(htmlFormat), put(htmlFragment)));
+    check_hresult(static_cast<const IHtmlFormatHelperStatics &>(static_cast<const D &>(*this))->abi_GetStaticFragment(get(htmlFormat), put(htmlFragment)));
     return htmlFragment;
 }
 
 template <typename D> hstring impl_IHtmlFormatHelperStatics<D>::CreateHtmlFormat(hstring_ref htmlFragment) const
 {
     hstring htmlFormat;
-    check_hresult(shim()->abi_CreateHtmlFormat(get(htmlFragment), put(htmlFormat)));
+    check_hresult(static_cast<const IHtmlFormatHelperStatics &>(static_cast<const D &>(*this))->abi_CreateHtmlFormat(get(htmlFragment), put(htmlFormat)));
     return htmlFormat;
 }
 
 template <typename D> Windows::ApplicationModel::DataTransfer::DataPackageView impl_IClipboardStatics<D>::GetContent() const
 {
     Windows::ApplicationModel::DataTransfer::DataPackageView content { nullptr };
-    check_hresult(shim()->abi_GetContent(put(content)));
+    check_hresult(static_cast<const IClipboardStatics &>(static_cast<const D &>(*this))->abi_GetContent(put(content)));
     return content;
 }
 
 template <typename D> void impl_IClipboardStatics<D>::SetContent(const Windows::ApplicationModel::DataTransfer::DataPackage & content) const
 {
-    check_hresult(shim()->abi_SetContent(get(content)));
+    check_hresult(static_cast<const IClipboardStatics &>(static_cast<const D &>(*this))->abi_SetContent(get(content)));
 }
 
 template <typename D> void impl_IClipboardStatics<D>::Flush() const
 {
-    check_hresult(shim()->abi_Flush());
+    check_hresult(static_cast<const IClipboardStatics &>(static_cast<const D &>(*this))->abi_Flush());
 }
 
 template <typename D> void impl_IClipboardStatics<D>::Clear() const
 {
-    check_hresult(shim()->abi_Clear());
+    check_hresult(static_cast<const IClipboardStatics &>(static_cast<const D &>(*this))->abi_Clear());
 }
 
 template <typename D> event_token impl_IClipboardStatics<D>::ContentChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & changeHandler) const
 {
     event_token token {};
-    check_hresult(shim()->add_ContentChanged(get(changeHandler), &token));
+    check_hresult(static_cast<const IClipboardStatics &>(static_cast<const D &>(*this))->add_ContentChanged(get(changeHandler), &token));
     return token;
 }
 
@@ -2355,63 +2355,63 @@ template <typename D> event_revoker<IClipboardStatics> impl_IClipboardStatics<D>
 
 template <typename D> void impl_IClipboardStatics<D>::ContentChanged(event_token token) const
 {
-    check_hresult(shim()->remove_ContentChanged(token));
+    check_hresult(static_cast<const IClipboardStatics &>(static_cast<const D &>(*this))->remove_ContentChanged(token));
 }
 
 template <typename D> void impl_IDataRequestDeferral<D>::Complete() const
 {
-    check_hresult(shim()->abi_Complete());
+    check_hresult(static_cast<const IDataRequestDeferral &>(static_cast<const D &>(*this))->abi_Complete());
 }
 
 template <typename D> Windows::ApplicationModel::DataTransfer::DataPackage impl_IDataRequest<D>::Data() const
 {
     Windows::ApplicationModel::DataTransfer::DataPackage value { nullptr };
-    check_hresult(shim()->get_Data(put(value)));
+    check_hresult(static_cast<const IDataRequest &>(static_cast<const D &>(*this))->get_Data(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDataRequest<D>::Data(const Windows::ApplicationModel::DataTransfer::DataPackage & value) const
 {
-    check_hresult(shim()->put_Data(get(value)));
+    check_hresult(static_cast<const IDataRequest &>(static_cast<const D &>(*this))->put_Data(get(value)));
 }
 
 template <typename D> Windows::Foundation::DateTime impl_IDataRequest<D>::Deadline() const
 {
     Windows::Foundation::DateTime value {};
-    check_hresult(shim()->get_Deadline(put(value)));
+    check_hresult(static_cast<const IDataRequest &>(static_cast<const D &>(*this))->get_Deadline(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDataRequest<D>::FailWithDisplayText(hstring_ref value) const
 {
-    check_hresult(shim()->abi_FailWithDisplayText(get(value)));
+    check_hresult(static_cast<const IDataRequest &>(static_cast<const D &>(*this))->abi_FailWithDisplayText(get(value)));
 }
 
 template <typename D> Windows::ApplicationModel::DataTransfer::DataRequestDeferral impl_IDataRequest<D>::GetDeferral() const
 {
     Windows::ApplicationModel::DataTransfer::DataRequestDeferral value { nullptr };
-    check_hresult(shim()->abi_GetDeferral(put(value)));
+    check_hresult(static_cast<const IDataRequest &>(static_cast<const D &>(*this))->abi_GetDeferral(put(value)));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::DataTransfer::DataRequest impl_IDataRequestedEventArgs<D>::Request() const
 {
     Windows::ApplicationModel::DataTransfer::DataRequest value { nullptr };
-    check_hresult(shim()->get_Request(put(value)));
+    check_hresult(static_cast<const IDataRequestedEventArgs &>(static_cast<const D &>(*this))->get_Request(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ITargetApplicationChosenEventArgs<D>::ApplicationName() const
 {
     hstring value;
-    check_hresult(shim()->get_ApplicationName(put(value)));
+    check_hresult(static_cast<const ITargetApplicationChosenEventArgs &>(static_cast<const D &>(*this))->get_ApplicationName(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IDataTransferManager<D>::DataRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::DataRequestedEventArgs> & eventHandler) const
 {
     event_token eventCookie {};
-    check_hresult(shim()->add_DataRequested(get(eventHandler), &eventCookie));
+    check_hresult(static_cast<const IDataTransferManager &>(static_cast<const D &>(*this))->add_DataRequested(get(eventHandler), &eventCookie));
     return eventCookie;
 }
 
@@ -2422,13 +2422,13 @@ template <typename D> event_revoker<IDataTransferManager> impl_IDataTransferMana
 
 template <typename D> void impl_IDataTransferManager<D>::DataRequested(event_token eventCookie) const
 {
-    check_hresult(shim()->remove_DataRequested(eventCookie));
+    check_hresult(static_cast<const IDataTransferManager &>(static_cast<const D &>(*this))->remove_DataRequested(eventCookie));
 }
 
 template <typename D> event_token impl_IDataTransferManager<D>::TargetApplicationChosen(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::TargetApplicationChosenEventArgs> & eventHandler) const
 {
     event_token eventCookie {};
-    check_hresult(shim()->add_TargetApplicationChosen(get(eventHandler), &eventCookie));
+    check_hresult(static_cast<const IDataTransferManager &>(static_cast<const D &>(*this))->add_TargetApplicationChosen(get(eventHandler), &eventCookie));
     return eventCookie;
 }
 
@@ -2439,45 +2439,45 @@ template <typename D> event_revoker<IDataTransferManager> impl_IDataTransferMana
 
 template <typename D> void impl_IDataTransferManager<D>::TargetApplicationChosen(event_token eventCookie) const
 {
-    check_hresult(shim()->remove_TargetApplicationChosen(eventCookie));
+    check_hresult(static_cast<const IDataTransferManager &>(static_cast<const D &>(*this))->remove_TargetApplicationChosen(eventCookie));
 }
 
 template <typename D> void impl_IDataTransferManagerStatics<D>::ShowShareUI() const
 {
-    check_hresult(shim()->abi_ShowShareUI());
+    check_hresult(static_cast<const IDataTransferManagerStatics &>(static_cast<const D &>(*this))->abi_ShowShareUI());
 }
 
 template <typename D> Windows::ApplicationModel::DataTransfer::DataTransferManager impl_IDataTransferManagerStatics<D>::GetForCurrentView() const
 {
     Windows::ApplicationModel::DataTransfer::DataTransferManager value { nullptr };
-    check_hresult(shim()->abi_GetForCurrentView(put(value)));
+    check_hresult(static_cast<const IDataTransferManagerStatics &>(static_cast<const D &>(*this))->abi_GetForCurrentView(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IDataTransferManagerStatics2<D>::IsSupported() const
 {
     bool value {};
-    check_hresult(shim()->abi_IsSupported(&value));
+    check_hresult(static_cast<const IDataTransferManagerStatics2 &>(static_cast<const D &>(*this))->abi_IsSupported(&value));
     return value;
 }
 
 template <typename D> hstring impl_ISharedStorageAccessManagerStatics<D>::AddFile(const Windows::Storage::IStorageFile & file) const
 {
     hstring outToken;
-    check_hresult(shim()->abi_AddFile(get(file), put(outToken)));
+    check_hresult(static_cast<const ISharedStorageAccessManagerStatics &>(static_cast<const D &>(*this))->abi_AddFile(get(file), put(outToken)));
     return outToken;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> impl_ISharedStorageAccessManagerStatics<D>::RedeemTokenForFileAsync(hstring_ref token) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> operation;
-    check_hresult(shim()->abi_RedeemTokenForFileAsync(get(token), put(operation)));
+    check_hresult(static_cast<const ISharedStorageAccessManagerStatics &>(static_cast<const D &>(*this))->abi_RedeemTokenForFileAsync(get(token), put(operation)));
     return operation;
 }
 
 template <typename D> void impl_ISharedStorageAccessManagerStatics<D>::RemoveFile(hstring_ref token) const
 {
-    check_hresult(shim()->abi_RemoveFile(get(token)));
+    check_hresult(static_cast<const ISharedStorageAccessManagerStatics &>(static_cast<const D &>(*this))->abi_RemoveFile(get(token)));
 }
 
 inline Windows::ApplicationModel::DataTransfer::DataPackageView Clipboard::GetContent()

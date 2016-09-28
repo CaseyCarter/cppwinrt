@@ -771,12 +771,8 @@ template <> struct __declspec(uuid("589b0543-eeae-5ca2-a63b-76010c64fccb")) __de
 namespace Windows::ApplicationModel::Contacts {
 
 template <typename D>
-class WINRT_EBO impl_IAggregateContactManager
+struct WINRT_EBO impl_IAggregateContactManager
 {
-    auto shim() const { return impl::shim<D, IAggregateContactManager>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::Contact>> FindRawContactsAsync(const Windows::ApplicationModel::Contacts::Contact & contact) const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> TryLinkContactsAsync(const Windows::ApplicationModel::Contacts::Contact & primaryContact, const Windows::ApplicationModel::Contacts::Contact & secondaryContact) const;
     Windows::Foundation::IAsyncAction UnlinkRawContactAsync(const Windows::ApplicationModel::Contacts::Contact & contact) const;
@@ -784,22 +780,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAggregateContactManager2
+struct WINRT_EBO impl_IAggregateContactManager2
 {
-    auto shim() const { return impl::shim<D, IAggregateContactManager2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction SetRemoteIdentificationInformationAsync(hstring_ref contactListId, hstring_ref remoteSourceId, hstring_ref accountId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IContact
+struct WINRT_EBO impl_IContact
 {
-    auto shim() const { return impl::shim<D, IContact>(this); }
-
-public:
-
     hstring Name() const;
     void Name(hstring_ref value) const;
     Windows::Storage::Streams::IRandomAccessStreamReference Thumbnail() const;
@@ -808,12 +796,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IContact2
+struct WINRT_EBO impl_IContact2
 {
-    auto shim() const { return impl::shim<D, IContact2>(this); }
-
-public:
-
     hstring Id() const;
     void Id(hstring_ref value) const;
     hstring Notes() const;
@@ -831,12 +815,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IContact3
+struct WINRT_EBO impl_IContact3
 {
-    auto shim() const { return impl::shim<D, IContact3>(this); }
-
-public:
-
     hstring ContactListId() const;
     Windows::Foundation::DateTime DisplayPictureUserUpdateTime() const;
     void DisplayPictureUserUpdateTime(const Windows::Foundation::DateTime & value) const;
@@ -863,12 +843,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactAddress
+struct WINRT_EBO impl_IContactAddress
 {
-    auto shim() const { return impl::shim<D, IContactAddress>(this); }
-
-public:
-
     hstring StreetAddress() const;
     void StreetAddress(hstring_ref value) const;
     hstring Locality() const;
@@ -886,12 +862,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactAnnotation
+struct WINRT_EBO impl_IContactAnnotation
 {
-    auto shim() const { return impl::shim<D, IContactAnnotation>(this); }
-
-public:
-
     hstring Id() const;
     hstring AnnotationListId() const;
     hstring ContactId() const;
@@ -905,12 +877,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactAnnotationList
+struct WINRT_EBO impl_IContactAnnotationList
 {
-    auto shim() const { return impl::shim<D, IContactAnnotationList>(this); }
-
-public:
-
     hstring Id() const;
     hstring ProviderPackageFamilyName() const;
     hstring UserDataAccountId() const;
@@ -923,12 +891,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactAnnotationStore
+struct WINRT_EBO impl_IContactAnnotationStore
 {
-    auto shim() const { return impl::shim<D, IContactAnnotationStore>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> FindContactIdsByEmailAsync(hstring_ref emailAddress) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> FindContactIdsByPhoneNumberAsync(hstring_ref phoneNumber) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactAnnotation>> FindAnnotationsForContactAsync(const Windows::ApplicationModel::Contacts::Contact & contact) const;
@@ -940,33 +904,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactBatch
+struct WINRT_EBO impl_IContactBatch
 {
-    auto shim() const { return impl::shim<D, IContactBatch>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::Contact> Contacts() const;
     Windows::ApplicationModel::Contacts::ContactBatchStatus Status() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactCardDelayedDataLoader
+struct WINRT_EBO impl_IContactCardDelayedDataLoader
 {
-    auto shim() const { return impl::shim<D, IContactCardDelayedDataLoader>(this); }
-
-public:
-
     void SetData(const Windows::ApplicationModel::Contacts::Contact & contact) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactCardOptions
+struct WINRT_EBO impl_IContactCardOptions
 {
-    auto shim() const { return impl::shim<D, IContactCardOptions>(this); }
-
-public:
-
     Windows::ApplicationModel::Contacts::ContactCardHeaderKind HeaderKind() const;
     void HeaderKind(Windows::ApplicationModel::Contacts::ContactCardHeaderKind value) const;
     Windows::ApplicationModel::Contacts::ContactCardTabKind InitialTabKind() const;
@@ -974,77 +926,49 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactCardOptions2
+struct WINRT_EBO impl_IContactCardOptions2
 {
-    auto shim() const { return impl::shim<D, IContactCardOptions2>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<hstring> ServerSearchContactListIds() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactChange
+struct WINRT_EBO impl_IContactChange
 {
-    auto shim() const { return impl::shim<D, IContactChange>(this); }
-
-public:
-
     Windows::ApplicationModel::Contacts::ContactChangeType ChangeType() const;
     Windows::ApplicationModel::Contacts::Contact Contact() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactChangeReader
+struct WINRT_EBO impl_IContactChangeReader
 {
-    auto shim() const { return impl::shim<D, IContactChangeReader>(this); }
-
-public:
-
     void AcceptChanges() const;
     void AcceptChangesThrough(const Windows::ApplicationModel::Contacts::ContactChange & lastChangeToAccept) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactChange>> ReadBatchAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactChangeTracker
+struct WINRT_EBO impl_IContactChangeTracker
 {
-    auto shim() const { return impl::shim<D, IContactChangeTracker>(this); }
-
-public:
-
     void Enable() const;
     Windows::ApplicationModel::Contacts::ContactChangeReader GetChangeReader() const;
     void Reset() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactChangedDeferral
+struct WINRT_EBO impl_IContactChangedDeferral
 {
-    auto shim() const { return impl::shim<D, IContactChangedDeferral>(this); }
-
-public:
-
     void Complete() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactChangedEventArgs
+struct WINRT_EBO impl_IContactChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IContactChangedEventArgs>(this); }
-
-public:
-
     Windows::ApplicationModel::Contacts::ContactChangedDeferral GetDeferral() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactConnectedServiceAccount
+struct WINRT_EBO impl_IContactConnectedServiceAccount
 {
-    auto shim() const { return impl::shim<D, IContactConnectedServiceAccount>(this); }
-
-public:
-
     hstring Id() const;
     void Id(hstring_ref value) const;
     hstring ServiceName() const;
@@ -1052,12 +976,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactDate
+struct WINRT_EBO impl_IContactDate
 {
-    auto shim() const { return impl::shim<D, IContactDate>(this); }
-
-public:
-
     Windows::Foundation::IReference<uint32_t> Day() const;
     void Day(const Windows::Foundation::IReference<uint32_t> & value) const;
     Windows::Foundation::IReference<uint32_t> Month() const;
@@ -1071,12 +991,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactEmail
+struct WINRT_EBO impl_IContactEmail
 {
-    auto shim() const { return impl::shim<D, IContactEmail>(this); }
-
-public:
-
     hstring Address() const;
     void Address(hstring_ref value) const;
     Windows::ApplicationModel::Contacts::ContactEmailKind Kind() const;
@@ -1086,12 +1002,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactField
+struct WINRT_EBO impl_IContactField
 {
-    auto shim() const { return impl::shim<D, IContactField>(this); }
-
-public:
-
     Windows::ApplicationModel::Contacts::ContactFieldType Type() const;
     Windows::ApplicationModel::Contacts::ContactFieldCategory Category() const;
     hstring Name() const;
@@ -1099,24 +1011,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactFieldFactory
+struct WINRT_EBO impl_IContactFieldFactory
 {
-    auto shim() const { return impl::shim<D, IContactFieldFactory>(this); }
-
-public:
-
     Windows::ApplicationModel::Contacts::ContactField CreateField(hstring_ref value, Windows::ApplicationModel::Contacts::ContactFieldType type) const;
     Windows::ApplicationModel::Contacts::ContactField CreateField(hstring_ref value, Windows::ApplicationModel::Contacts::ContactFieldType type, Windows::ApplicationModel::Contacts::ContactFieldCategory category) const;
     Windows::ApplicationModel::Contacts::ContactField CreateField(hstring_ref name, hstring_ref value, Windows::ApplicationModel::Contacts::ContactFieldType type, Windows::ApplicationModel::Contacts::ContactFieldCategory category) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactInformation
+struct WINRT_EBO impl_IContactInformation
 {
-    auto shim() const { return impl::shim<D, IContactInformation>(this); }
-
-public:
-
     hstring Name() const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamWithContentType> GetThumbnailAsync() const;
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactField> Emails() const;
@@ -1128,12 +1032,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactInstantMessageField
+struct WINRT_EBO impl_IContactInstantMessageField
 {
-    auto shim() const { return impl::shim<D, IContactInstantMessageField>(this); }
-
-public:
-
     hstring UserName() const;
     hstring Service() const;
     hstring DisplayText() const;
@@ -1141,24 +1041,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactInstantMessageFieldFactory
+struct WINRT_EBO impl_IContactInstantMessageFieldFactory
 {
-    auto shim() const { return impl::shim<D, IContactInstantMessageFieldFactory>(this); }
-
-public:
-
     Windows::ApplicationModel::Contacts::ContactInstantMessageField CreateInstantMessage(hstring_ref userName) const;
     Windows::ApplicationModel::Contacts::ContactInstantMessageField CreateInstantMessage(hstring_ref userName, Windows::ApplicationModel::Contacts::ContactFieldCategory category) const;
     Windows::ApplicationModel::Contacts::ContactInstantMessageField CreateInstantMessage(hstring_ref userName, Windows::ApplicationModel::Contacts::ContactFieldCategory category, hstring_ref service, hstring_ref displayText, const Windows::Foundation::Uri & verb) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactJobInfo
+struct WINRT_EBO impl_IContactJobInfo
 {
-    auto shim() const { return impl::shim<D, IContactJobInfo>(this); }
-
-public:
-
     hstring CompanyName() const;
     void CompanyName(hstring_ref value) const;
     hstring CompanyYomiName() const;
@@ -1178,12 +1070,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactLaunchActionVerbsStatics
+struct WINRT_EBO impl_IContactLaunchActionVerbsStatics
 {
-    auto shim() const { return impl::shim<D, IContactLaunchActionVerbsStatics>(this); }
-
-public:
-
     hstring Call() const;
     hstring Message() const;
     hstring Map() const;
@@ -1192,12 +1080,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactList
+struct WINRT_EBO impl_IContactList
 {
-    auto shim() const { return impl::shim<D, IContactList>(this); }
-
-public:
-
     hstring Id() const;
     hstring DisplayName() const;
     void DisplayName(hstring_ref value) const;
@@ -1228,24 +1112,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactList2
+struct WINRT_EBO impl_IContactList2
 {
-    auto shim() const { return impl::shim<D, IContactList2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction RegisterSyncManagerAsync() const;
     void SupportsServerSearch(bool value) const;
     Windows::ApplicationModel::Contacts::ContactListSyncConstraints SyncConstraints() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactListSyncConstraints
+struct WINRT_EBO impl_IContactListSyncConstraints
 {
-    auto shim() const { return impl::shim<D, IContactListSyncConstraints>(this); }
-
-public:
-
     bool CanSyncDescriptions() const;
     void CanSyncDescriptions(bool value) const;
     Windows::Foundation::IReference<int32_t> MaxHomePhoneNumbers() const;
@@ -1305,12 +1181,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactListSyncManager
+struct WINRT_EBO impl_IContactListSyncManager
 {
-    auto shim() const { return impl::shim<D, IContactListSyncManager>(this); }
-
-public:
-
     Windows::ApplicationModel::Contacts::ContactListSyncStatus Status() const;
     Windows::Foundation::DateTime LastSuccessfulSyncTime() const;
     Windows::Foundation::DateTime LastAttemptedSyncTime() const;
@@ -1322,24 +1194,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactListSyncManager2
+struct WINRT_EBO impl_IContactListSyncManager2
 {
-    auto shim() const { return impl::shim<D, IContactListSyncManager2>(this); }
-
-public:
-
     void Status(Windows::ApplicationModel::Contacts::ContactListSyncStatus value) const;
     void LastSuccessfulSyncTime(const Windows::Foundation::DateTime & value) const;
     void LastAttemptedSyncTime(const Windows::Foundation::DateTime & value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactLocationField
+struct WINRT_EBO impl_IContactLocationField
 {
-    auto shim() const { return impl::shim<D, IContactLocationField>(this); }
-
-public:
-
     hstring UnstructuredAddress() const;
     hstring Street() const;
     hstring City() const;
@@ -1349,24 +1213,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactLocationFieldFactory
+struct WINRT_EBO impl_IContactLocationFieldFactory
 {
-    auto shim() const { return impl::shim<D, IContactLocationFieldFactory>(this); }
-
-public:
-
     Windows::ApplicationModel::Contacts::ContactLocationField CreateLocation(hstring_ref unstructuredAddress) const;
     Windows::ApplicationModel::Contacts::ContactLocationField CreateLocation(hstring_ref unstructuredAddress, Windows::ApplicationModel::Contacts::ContactFieldCategory category) const;
     Windows::ApplicationModel::Contacts::ContactLocationField CreateLocation(hstring_ref unstructuredAddress, Windows::ApplicationModel::Contacts::ContactFieldCategory category, hstring_ref street, hstring_ref city, hstring_ref region, hstring_ref country, hstring_ref postalCode) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactManagerForUser
+struct WINRT_EBO impl_IContactManagerForUser
 {
-    auto shim() const { return impl::shim<D, IContactManagerForUser>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::RandomAccessStreamReference> ConvertContactToVCardAsync(const Windows::ApplicationModel::Contacts::Contact & contact) const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::RandomAccessStreamReference> ConvertContactToVCardAsync(const Windows::ApplicationModel::Contacts::Contact & contact, uint32_t maxBytes) const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> ConvertVCardToContactAsync(const Windows::Storage::Streams::IRandomAccessStreamReference & vCard) const;
@@ -1380,34 +1236,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactManagerStatics
+struct WINRT_EBO impl_IContactManagerStatics
 {
-    auto shim() const { return impl::shim<D, IContactManagerStatics>(this); }
-
-public:
-
     void ShowContactCard(const Windows::ApplicationModel::Contacts::Contact & contact, const Windows::Foundation::Rect & selection) const;
     void ShowContactCard(const Windows::ApplicationModel::Contacts::Contact & contact, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement) const;
     Windows::ApplicationModel::Contacts::ContactCardDelayedDataLoader ShowDelayLoadedContactCard(const Windows::ApplicationModel::Contacts::Contact & contact, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactManagerStatics2
+struct WINRT_EBO impl_IContactManagerStatics2
 {
-    auto shim() const { return impl::shim<D, IContactManagerStatics2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactStore> RequestStoreAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactManagerStatics3
+struct WINRT_EBO impl_IContactManagerStatics3
 {
-    auto shim() const { return impl::shim<D, IContactManagerStatics3>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::RandomAccessStreamReference> ConvertContactToVCardAsync(const Windows::ApplicationModel::Contacts::Contact & contact) const;
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::RandomAccessStreamReference> ConvertContactToVCardAsync(const Windows::ApplicationModel::Contacts::Contact & contact, uint32_t maxBytes) const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> ConvertVCardToContactAsync(const Windows::Storage::Streams::IRandomAccessStreamReference & vCard) const;
@@ -1425,34 +1269,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactManagerStatics4
+struct WINRT_EBO impl_IContactManagerStatics4
 {
-    auto shim() const { return impl::shim<D, IContactManagerStatics4>(this); }
-
-public:
-
     Windows::ApplicationModel::Contacts::ContactManagerForUser GetForUser(const Windows::System::User & user) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactMatchReason
+struct WINRT_EBO impl_IContactMatchReason
 {
-    auto shim() const { return impl::shim<D, IContactMatchReason>(this); }
-
-public:
-
     Windows::ApplicationModel::Contacts::ContactMatchReasonKind Field() const;
     Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextSegment> Segments() const;
     hstring Text() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactName
+struct WINRT_EBO impl_IContactName
 {
-    auto shim() const { return impl::shim<D, IContactName>(this); }
-
-public:
-
     hstring FirstName() const;
     void FirstName(hstring_ref value) const;
     hstring LastName() const;
@@ -1472,12 +1304,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactPhone
+struct WINRT_EBO impl_IContactPhone
 {
-    auto shim() const { return impl::shim<D, IContactPhone>(this); }
-
-public:
-
     hstring Number() const;
     void Number(hstring_ref value) const;
     Windows::ApplicationModel::Contacts::ContactPhoneKind Kind() const;
@@ -1487,12 +1315,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactPicker
+struct WINRT_EBO impl_IContactPicker
 {
-    auto shim() const { return impl::shim<D, IContactPicker>(this); }
-
-public:
-
     hstring CommitButtonText() const;
     void CommitButtonText(hstring_ref value) const;
     Windows::ApplicationModel::Contacts::ContactSelectionMode SelectionMode() const;
@@ -1503,24 +1327,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactPicker2
+struct WINRT_EBO impl_IContactPicker2
 {
-    auto shim() const { return impl::shim<D, IContactPicker2>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<winrt::Windows::ApplicationModel::Contacts::ContactFieldType> DesiredFieldsWithContactFieldType() const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> PickContactAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Contacts::Contact>> PickContactsAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactQueryOptions
+struct WINRT_EBO impl_IContactQueryOptions
 {
-    auto shim() const { return impl::shim<D, IContactQueryOptions>(this); }
-
-public:
-
     Windows::ApplicationModel::Contacts::ContactQueryTextSearch TextSearch() const;
     Windows::Foundation::Collections::IVector<hstring> ContactListIds() const;
     bool IncludeContactsFromHiddenLists() const;
@@ -1533,23 +1349,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactQueryOptionsFactory
+struct WINRT_EBO impl_IContactQueryOptionsFactory
 {
-    auto shim() const { return impl::shim<D, IContactQueryOptionsFactory>(this); }
-
-public:
-
     Windows::ApplicationModel::Contacts::ContactQueryOptions CreateWithText(hstring_ref text) const;
     Windows::ApplicationModel::Contacts::ContactQueryOptions CreateWithTextAndFields(hstring_ref text, Windows::ApplicationModel::Contacts::ContactQuerySearchFields fields) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactQueryTextSearch
+struct WINRT_EBO impl_IContactQueryTextSearch
 {
-    auto shim() const { return impl::shim<D, IContactQueryTextSearch>(this); }
-
-public:
-
     Windows::ApplicationModel::Contacts::ContactQuerySearchFields Fields() const;
     void Fields(Windows::ApplicationModel::Contacts::ContactQuerySearchFields value) const;
     hstring Text() const;
@@ -1559,23 +1367,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactReader
+struct WINRT_EBO impl_IContactReader
 {
-    auto shim() const { return impl::shim<D, IContactReader>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::ContactBatch> ReadBatchAsync() const;
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::ContactMatchReason> GetMatchingPropertiesWithMatchReason(const Windows::ApplicationModel::Contacts::Contact & contact) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactSignificantOther
+struct WINRT_EBO impl_IContactSignificantOther
 {
-    auto shim() const { return impl::shim<D, IContactSignificantOther>(this); }
-
-public:
-
     hstring Name() const;
     void Name(hstring_ref value) const;
     hstring Description() const;
@@ -1583,35 +1383,23 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactSignificantOther2
+struct WINRT_EBO impl_IContactSignificantOther2
 {
-    auto shim() const { return impl::shim<D, IContactSignificantOther2>(this); }
-
-public:
-
     Windows::ApplicationModel::Contacts::ContactRelationship Relationship() const;
     void Relationship(Windows::ApplicationModel::Contacts::ContactRelationship value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactStore
+struct WINRT_EBO impl_IContactStore
 {
-    auto shim() const { return impl::shim<D, IContactStore>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::Contact>> FindContactsAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Contacts::Contact>> FindContactsAsync(hstring_ref searchText) const;
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Contacts::Contact> GetContactAsync(hstring_ref contactId) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactStore2
+struct WINRT_EBO impl_IContactStore2
 {
-    auto shim() const { return impl::shim<D, IContactStore2>(this); }
-
-public:
-
     Windows::ApplicationModel::Contacts::ContactChangeTracker ChangeTracker() const;
     event_token ContactChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::ContactStore, Windows::ApplicationModel::Contacts::ContactChangedEventArgs> & value) const;
     using ContactChanged_revoker = event_revoker<IContactStore2>;
@@ -1628,21 +1416,13 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactStoreNotificationTriggerDetails
+struct WINRT_EBO impl_IContactStoreNotificationTriggerDetails
 {
-    auto shim() const { return impl::shim<D, IContactStoreNotificationTriggerDetails>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactWebsite
+struct WINRT_EBO impl_IContactWebsite
 {
-    auto shim() const { return impl::shim<D, IContactWebsite>(this); }
-
-public:
-
     Windows::Foundation::Uri Uri() const;
     void Uri(const Windows::Foundation::Uri & value) const;
     hstring Description() const;
@@ -1650,34 +1430,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IContactWebsite2
+struct WINRT_EBO impl_IContactWebsite2
 {
-    auto shim() const { return impl::shim<D, IContactWebsite2>(this); }
-
-public:
-
     hstring RawValue() const;
     void RawValue(hstring_ref value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFullContactCardOptions
+struct WINRT_EBO impl_IFullContactCardOptions
 {
-    auto shim() const { return impl::shim<D, IFullContactCardOptions>(this); }
-
-public:
-
     Windows::UI::ViewManagement::ViewSizePreference DesiredRemainingView() const;
     void DesiredRemainingView(Windows::UI::ViewManagement::ViewSizePreference value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IKnownContactFieldStatics
+struct WINRT_EBO impl_IKnownContactFieldStatics
 {
-    auto shim() const { return impl::shim<D, IKnownContactFieldStatics>(this); }
-
-public:
-
     hstring Email() const;
     hstring PhoneNumber() const;
     hstring Location() const;

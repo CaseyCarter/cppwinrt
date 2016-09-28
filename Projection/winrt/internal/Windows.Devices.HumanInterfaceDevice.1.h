@@ -169,18 +169,18 @@ template <> struct traits<Windows::Devices::HumanInterfaceDevice::HidOutputRepor
 
 namespace Windows::Devices::HumanInterfaceDevice {
 
-template <typename T> class impl_IHidBooleanControl;
-template <typename T> class impl_IHidBooleanControlDescription;
-template <typename T> class impl_IHidBooleanControlDescription2;
-template <typename T> class impl_IHidCollection;
-template <typename T> class impl_IHidDevice;
-template <typename T> class impl_IHidDeviceStatics;
-template <typename T> class impl_IHidFeatureReport;
-template <typename T> class impl_IHidInputReport;
-template <typename T> class impl_IHidInputReportReceivedEventArgs;
-template <typename T> class impl_IHidNumericControl;
-template <typename T> class impl_IHidNumericControlDescription;
-template <typename T> class impl_IHidOutputReport;
+template <typename T> struct impl_IHidBooleanControl;
+template <typename T> struct impl_IHidBooleanControlDescription;
+template <typename T> struct impl_IHidBooleanControlDescription2;
+template <typename T> struct impl_IHidCollection;
+template <typename T> struct impl_IHidDevice;
+template <typename T> struct impl_IHidDeviceStatics;
+template <typename T> struct impl_IHidFeatureReport;
+template <typename T> struct impl_IHidInputReport;
+template <typename T> struct impl_IHidInputReportReceivedEventArgs;
+template <typename T> struct impl_IHidNumericControl;
+template <typename T> struct impl_IHidNumericControlDescription;
+template <typename T> struct impl_IHidOutputReport;
 
 }
 

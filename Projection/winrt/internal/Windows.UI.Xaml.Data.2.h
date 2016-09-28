@@ -102,12 +102,8 @@ template <> struct __declspec(uuid("273b8073-8c16-59c2-a616-0a534483c612")) __de
 namespace Windows::UI::Xaml::Data {
 
 template <typename D>
-class WINRT_EBO impl_IBinding
+struct WINRT_EBO impl_IBinding
 {
-    auto shim() const { return impl::shim<D, IBinding>(this); }
-
-public:
-
     Windows::UI::Xaml::PropertyPath Path() const;
     void Path(const Windows::UI::Xaml::PropertyPath & value) const;
     Windows::UI::Xaml::Data::BindingMode Mode() const;
@@ -127,12 +123,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBinding2
+struct WINRT_EBO impl_IBinding2
 {
-    auto shim() const { return impl::shim<D, IBinding2>(this); }
-
-public:
-
     Windows::IInspectable FallbackValue() const;
     void FallbackValue(const Windows::IInspectable & value) const;
     Windows::IInspectable TargetNullValue() const;
@@ -142,99 +134,59 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IBindingBase
+struct WINRT_EBO impl_IBindingBase
 {
-    auto shim() const { return impl::shim<D, IBindingBase>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IBindingBaseFactory
+struct WINRT_EBO impl_IBindingBaseFactory
 {
-    auto shim() const { return impl::shim<D, IBindingBaseFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Data::BindingBase CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBindingExpression
+struct WINRT_EBO impl_IBindingExpression
 {
-    auto shim() const { return impl::shim<D, IBindingExpression>(this); }
-
-public:
-
     Windows::IInspectable DataItem() const;
     Windows::UI::Xaml::Data::Binding ParentBinding() const;
     void UpdateSource() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBindingExpressionBase
+struct WINRT_EBO impl_IBindingExpressionBase
 {
-    auto shim() const { return impl::shim<D, IBindingExpressionBase>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IBindingExpressionBaseFactory
+struct WINRT_EBO impl_IBindingExpressionBaseFactory
 {
-    auto shim() const { return impl::shim<D, IBindingExpressionBaseFactory>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IBindingExpressionFactory
+struct WINRT_EBO impl_IBindingExpressionFactory
 {
-    auto shim() const { return impl::shim<D, IBindingExpressionFactory>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IBindingFactory
+struct WINRT_EBO impl_IBindingFactory
 {
-    auto shim() const { return impl::shim<D, IBindingFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Data::Binding CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IBindingOperations
+struct WINRT_EBO impl_IBindingOperations
 {
-    auto shim() const { return impl::shim<D, IBindingOperations>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IBindingOperationsStatics
+struct WINRT_EBO impl_IBindingOperationsStatics
 {
-    auto shim() const { return impl::shim<D, IBindingOperationsStatics>(this); }
-
-public:
-
     void SetBinding(const Windows::UI::Xaml::DependencyObject & target, const Windows::UI::Xaml::DependencyProperty & dp, const Windows::UI::Xaml::Data::BindingBase & binding) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICollectionView
+struct WINRT_EBO impl_ICollectionView
 {
-    auto shim() const { return impl::shim<D, ICollectionView>(this); }
-
-public:
-
     Windows::IInspectable CurrentItem() const;
     int32_t CurrentPosition() const;
     bool IsCurrentAfterLast() const;
@@ -259,33 +211,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICollectionViewFactory
+struct WINRT_EBO impl_ICollectionViewFactory
 {
-    auto shim() const { return impl::shim<D, ICollectionViewFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Data::ICollectionView CreateView() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICollectionViewGroup
+struct WINRT_EBO impl_ICollectionViewGroup
 {
-    auto shim() const { return impl::shim<D, ICollectionViewGroup>(this); }
-
-public:
-
     Windows::IInspectable Group() const;
     Windows::Foundation::Collections::IObservableVector<Windows::IInspectable> GroupItems() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICollectionViewSource
+struct WINRT_EBO impl_ICollectionViewSource
 {
-    auto shim() const { return impl::shim<D, ICollectionViewSource>(this); }
-
-public:
-
     Windows::IInspectable Source() const;
     void Source(const Windows::IInspectable & value) const;
     Windows::UI::Xaml::Data::ICollectionView View() const;
@@ -296,12 +236,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICollectionViewSourceStatics
+struct WINRT_EBO impl_ICollectionViewSourceStatics
 {
-    auto shim() const { return impl::shim<D, ICollectionViewSourceStatics>(this); }
-
-public:
-
     Windows::UI::Xaml::DependencyProperty SourceProperty() const;
     Windows::UI::Xaml::DependencyProperty ViewProperty() const;
     Windows::UI::Xaml::DependencyProperty IsSourceGroupedProperty() const;
@@ -309,35 +245,23 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICurrentChangingEventArgs
+struct WINRT_EBO impl_ICurrentChangingEventArgs
 {
-    auto shim() const { return impl::shim<D, ICurrentChangingEventArgs>(this); }
-
-public:
-
     bool Cancel() const;
     void Cancel(bool value) const;
     bool IsCancelable() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICurrentChangingEventArgsFactory
+struct WINRT_EBO impl_ICurrentChangingEventArgsFactory
 {
-    auto shim() const { return impl::shim<D, ICurrentChangingEventArgsFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Data::CurrentChangingEventArgs CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
     Windows::UI::Xaml::Data::CurrentChangingEventArgs CreateWithCancelableParameter(bool isCancelable, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ICustomProperty
+struct WINRT_EBO impl_ICustomProperty
 {
-    auto shim() const { return impl::shim<D, ICustomProperty>(this); }
-
-public:
-
     Windows::UI::Xaml::Interop::TypeName Type() const;
     hstring Name() const;
     Windows::IInspectable GetValue(const Windows::IInspectable & target) const;
@@ -349,12 +273,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ICustomPropertyProvider
+struct WINRT_EBO impl_ICustomPropertyProvider
 {
-    auto shim() const { return impl::shim<D, ICustomPropertyProvider>(this); }
-
-public:
-
     Windows::UI::Xaml::Data::ICustomProperty GetCustomProperty(hstring_ref name) const;
     Windows::UI::Xaml::Data::ICustomProperty GetIndexedProperty(hstring_ref name, const Windows::UI::Xaml::Interop::TypeName & type) const;
     hstring GetStringRepresentation() const;
@@ -362,44 +282,28 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IItemIndexRange
+struct WINRT_EBO impl_IItemIndexRange
 {
-    auto shim() const { return impl::shim<D, IItemIndexRange>(this); }
-
-public:
-
     int32_t FirstIndex() const;
     uint32_t Length() const;
     int32_t LastIndex() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IItemIndexRangeFactory
+struct WINRT_EBO impl_IItemIndexRangeFactory
 {
-    auto shim() const { return impl::shim<D, IItemIndexRangeFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Data::ItemIndexRange CreateInstance(int32_t firstIndex, uint32_t length, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IItemsRangeInfo
+struct WINRT_EBO impl_IItemsRangeInfo
 {
-    auto shim() const { return impl::shim<D, IItemsRangeInfo>(this); }
-
-public:
-
     void RangesChanged(const Windows::UI::Xaml::Data::ItemIndexRange & visibleRange, const Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Data::ItemIndexRange> & trackedItems) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_INotifyPropertyChanged
+struct WINRT_EBO impl_INotifyPropertyChanged
 {
-    auto shim() const { return impl::shim<D, INotifyPropertyChanged>(this); }
-
-public:
-
     event_token PropertyChanged(const Windows::UI::Xaml::Data::PropertyChangedEventHandler & value) const;
     using PropertyChanged_revoker = event_revoker<INotifyPropertyChanged>;
     PropertyChanged_revoker PropertyChanged(auto_revoke_t, const Windows::UI::Xaml::Data::PropertyChangedEventHandler & value) const;
@@ -407,53 +311,33 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPropertyChangedEventArgs
+struct WINRT_EBO impl_IPropertyChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IPropertyChangedEventArgs>(this); }
-
-public:
-
     hstring PropertyName() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IPropertyChangedEventArgsFactory
+struct WINRT_EBO impl_IPropertyChangedEventArgsFactory
 {
-    auto shim() const { return impl::shim<D, IPropertyChangedEventArgsFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Data::PropertyChangedEventArgs CreateInstance(hstring_ref name, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRelativeSource
+struct WINRT_EBO impl_IRelativeSource
 {
-    auto shim() const { return impl::shim<D, IRelativeSource>(this); }
-
-public:
-
     Windows::UI::Xaml::Data::RelativeSourceMode Mode() const;
     void Mode(Windows::UI::Xaml::Data::RelativeSourceMode value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRelativeSourceFactory
+struct WINRT_EBO impl_IRelativeSourceFactory
 {
-    auto shim() const { return impl::shim<D, IRelativeSourceFactory>(this); }
-
-public:
-
     Windows::UI::Xaml::Data::RelativeSource CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISelectionInfo
+struct WINRT_EBO impl_ISelectionInfo
 {
-    auto shim() const { return impl::shim<D, ISelectionInfo>(this); }
-
-public:
-
     void SelectRange(const Windows::UI::Xaml::Data::ItemIndexRange & itemIndexRange) const;
     void DeselectRange(const Windows::UI::Xaml::Data::ItemIndexRange & itemIndexRange) const;
     bool IsSelected(int32_t index) const;
@@ -461,23 +345,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISupportIncrementalLoading
+struct WINRT_EBO impl_ISupportIncrementalLoading
 {
-    auto shim() const { return impl::shim<D, ISupportIncrementalLoading>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::UI::Xaml::Data::LoadMoreItemsResult> LoadMoreItemsAsync(uint32_t count) const;
     bool HasMoreItems() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IValueConverter
+struct WINRT_EBO impl_IValueConverter
 {
-    auto shim() const { return impl::shim<D, IValueConverter>(this); }
-
-public:
-
     Windows::IInspectable Convert(const Windows::IInspectable & value, const Windows::UI::Xaml::Interop::TypeName & targetType, const Windows::IInspectable & parameter, hstring_ref language) const;
     Windows::IInspectable ConvertBack(const Windows::IInspectable & value, const Windows::UI::Xaml::Interop::TypeName & targetType, const Windows::IInspectable & parameter, hstring_ref language) const;
 };

@@ -87,14 +87,14 @@ template <> struct traits<Windows::Gaming::Input::ForceFeedback::RampForceEffect
 
 namespace Windows::Gaming::Input::ForceFeedback {
 
-template <typename T> class impl_IConditionForceEffect;
-template <typename T> class impl_IConditionForceEffectFactory;
-template <typename T> class impl_IConstantForceEffect;
-template <typename T> class impl_IForceFeedbackEffect;
-template <typename T> class impl_IForceFeedbackMotor;
-template <typename T> class impl_IPeriodicForceEffect;
-template <typename T> class impl_IPeriodicForceEffectFactory;
-template <typename T> class impl_IRampForceEffect;
+template <typename T> struct impl_IConditionForceEffect;
+template <typename T> struct impl_IConditionForceEffectFactory;
+template <typename T> struct impl_IConstantForceEffect;
+template <typename T> struct impl_IForceFeedbackEffect;
+template <typename T> struct impl_IForceFeedbackMotor;
+template <typename T> struct impl_IPeriodicForceEffect;
+template <typename T> struct impl_IPeriodicForceEffectFactory;
+template <typename T> struct impl_IRampForceEffect;
 
 }
 

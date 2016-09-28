@@ -1425,329 +1425,329 @@ namespace Windows::UI::Input::Spatial {
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> impl_ISpatialInteractionSourceLocation<D>::Position() const
 {
     Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> value;
-    check_hresult(shim()->get_Position(put(value)));
+    check_hresult(static_cast<const ISpatialInteractionSourceLocation &>(static_cast<const D &>(*this))->get_Position(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> impl_ISpatialInteractionSourceLocation<D>::Velocity() const
 {
     Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> value;
-    check_hresult(shim()->get_Velocity(put(value)));
+    check_hresult(static_cast<const ISpatialInteractionSourceLocation &>(static_cast<const D &>(*this))->get_Velocity(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::Numerics::quaternion> impl_ISpatialInteractionSourceLocation2<D>::Orientation() const
 {
     Windows::Foundation::IReference<Windows::Foundation::Numerics::quaternion> value;
-    check_hresult(shim()->get_Orientation(put(value)));
+    check_hresult(static_cast<const ISpatialInteractionSourceLocation2 &>(static_cast<const D &>(*this))->get_Orientation(put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_ISpatialInteractionSource<D>::Id() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_Id(&value));
+    check_hresult(static_cast<const ISpatialInteractionSource &>(static_cast<const D &>(*this))->get_Id(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Spatial::SpatialInteractionSourceKind impl_ISpatialInteractionSource<D>::Kind() const
 {
     Windows::UI::Input::Spatial::SpatialInteractionSourceKind value {};
-    check_hresult(shim()->get_Kind(&value));
+    check_hresult(static_cast<const ISpatialInteractionSource &>(static_cast<const D &>(*this))->get_Kind(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> impl_ISpatialInteractionSourceProperties<D>::TryGetSourceLossMitigationDirection(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const
 {
     Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> value;
-    check_hresult(shim()->abi_TryGetSourceLossMitigationDirection(get(coordinateSystem), put(value)));
+    check_hresult(static_cast<const ISpatialInteractionSourceProperties &>(static_cast<const D &>(*this))->abi_TryGetSourceLossMitigationDirection(get(coordinateSystem), put(value)));
     return value;
 }
 
 template <typename D> double impl_ISpatialInteractionSourceProperties<D>::SourceLossRisk() const
 {
     double value {};
-    check_hresult(shim()->get_SourceLossRisk(&value));
+    check_hresult(static_cast<const ISpatialInteractionSourceProperties &>(static_cast<const D &>(*this))->get_SourceLossRisk(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Spatial::SpatialInteractionSourceLocation impl_ISpatialInteractionSourceProperties<D>::TryGetLocation(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const
 {
     Windows::UI::Input::Spatial::SpatialInteractionSourceLocation value { nullptr };
-    check_hresult(shim()->abi_TryGetLocation(get(coordinateSystem), put(value)));
+    check_hresult(static_cast<const ISpatialInteractionSourceProperties &>(static_cast<const D &>(*this))->abi_TryGetLocation(get(coordinateSystem), put(value)));
     return value;
 }
 
 template <typename D> Windows::Perception::PerceptionTimestamp impl_ISpatialPointerPose<D>::Timestamp() const
 {
     Windows::Perception::PerceptionTimestamp value { nullptr };
-    check_hresult(shim()->get_Timestamp(put(value)));
+    check_hresult(static_cast<const ISpatialPointerPose &>(static_cast<const D &>(*this))->get_Timestamp(put(value)));
     return value;
 }
 
 template <typename D> Windows::Perception::People::HeadPose impl_ISpatialPointerPose<D>::Head() const
 {
     Windows::Perception::People::HeadPose value { nullptr };
-    check_hresult(shim()->get_Head(put(value)));
+    check_hresult(static_cast<const ISpatialPointerPose &>(static_cast<const D &>(*this))->get_Head(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Spatial::SpatialPointerPose impl_ISpatialPointerPoseStatics<D>::TryGetAtTimestamp(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem, const Windows::Perception::PerceptionTimestamp & timestamp) const
 {
     Windows::UI::Input::Spatial::SpatialPointerPose value { nullptr };
-    check_hresult(shim()->abi_TryGetAtTimestamp(get(coordinateSystem), get(timestamp), put(value)));
+    check_hresult(static_cast<const ISpatialPointerPoseStatics &>(static_cast<const D &>(*this))->abi_TryGetAtTimestamp(get(coordinateSystem), get(timestamp), put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Spatial::SpatialInteractionSource impl_ISpatialInteractionSourceState<D>::Source() const
 {
     Windows::UI::Input::Spatial::SpatialInteractionSource value { nullptr };
-    check_hresult(shim()->get_Source(put(value)));
+    check_hresult(static_cast<const ISpatialInteractionSourceState &>(static_cast<const D &>(*this))->get_Source(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Spatial::SpatialInteractionSourceProperties impl_ISpatialInteractionSourceState<D>::Properties() const
 {
     Windows::UI::Input::Spatial::SpatialInteractionSourceProperties value { nullptr };
-    check_hresult(shim()->get_Properties(put(value)));
+    check_hresult(static_cast<const ISpatialInteractionSourceState &>(static_cast<const D &>(*this))->get_Properties(put(value)));
     return value;
 }
 
 template <typename D> bool impl_ISpatialInteractionSourceState<D>::IsPressed() const
 {
     bool value {};
-    check_hresult(shim()->get_IsPressed(&value));
+    check_hresult(static_cast<const ISpatialInteractionSourceState &>(static_cast<const D &>(*this))->get_IsPressed(&value));
     return value;
 }
 
 template <typename D> Windows::Perception::PerceptionTimestamp impl_ISpatialInteractionSourceState<D>::Timestamp() const
 {
     Windows::Perception::PerceptionTimestamp value { nullptr };
-    check_hresult(shim()->get_Timestamp(put(value)));
+    check_hresult(static_cast<const ISpatialInteractionSourceState &>(static_cast<const D &>(*this))->get_Timestamp(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Spatial::SpatialPointerPose impl_ISpatialInteractionSourceState<D>::TryGetPointerPose(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const
 {
     Windows::UI::Input::Spatial::SpatialPointerPose value { nullptr };
-    check_hresult(shim()->abi_TryGetPointerPose(get(coordinateSystem), put(value)));
+    check_hresult(static_cast<const ISpatialInteractionSourceState &>(static_cast<const D &>(*this))->abi_TryGetPointerPose(get(coordinateSystem), put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Spatial::SpatialInteractionSourceKind impl_ISpatialRecognitionStartedEventArgs<D>::InteractionSourceKind() const
 {
     Windows::UI::Input::Spatial::SpatialInteractionSourceKind value {};
-    check_hresult(shim()->get_InteractionSourceKind(&value));
+    check_hresult(static_cast<const ISpatialRecognitionStartedEventArgs &>(static_cast<const D &>(*this))->get_InteractionSourceKind(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Spatial::SpatialPointerPose impl_ISpatialRecognitionStartedEventArgs<D>::TryGetPointerPose(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const
 {
     Windows::UI::Input::Spatial::SpatialPointerPose value { nullptr };
-    check_hresult(shim()->abi_TryGetPointerPose(get(coordinateSystem), put(value)));
+    check_hresult(static_cast<const ISpatialRecognitionStartedEventArgs &>(static_cast<const D &>(*this))->abi_TryGetPointerPose(get(coordinateSystem), put(value)));
     return value;
 }
 
 template <typename D> bool impl_ISpatialRecognitionStartedEventArgs<D>::IsGesturePossible(Windows::UI::Input::Spatial::SpatialGestureSettings gesture) const
 {
     bool value {};
-    check_hresult(shim()->abi_IsGesturePossible(gesture, &value));
+    check_hresult(static_cast<const ISpatialRecognitionStartedEventArgs &>(static_cast<const D &>(*this))->abi_IsGesturePossible(gesture, &value));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Spatial::SpatialInteractionSourceKind impl_ISpatialRecognitionEndedEventArgs<D>::InteractionSourceKind() const
 {
     Windows::UI::Input::Spatial::SpatialInteractionSourceKind value {};
-    check_hresult(shim()->get_InteractionSourceKind(&value));
+    check_hresult(static_cast<const ISpatialRecognitionEndedEventArgs &>(static_cast<const D &>(*this))->get_InteractionSourceKind(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Spatial::SpatialInteractionSourceKind impl_ISpatialTappedEventArgs<D>::InteractionSourceKind() const
 {
     Windows::UI::Input::Spatial::SpatialInteractionSourceKind value {};
-    check_hresult(shim()->get_InteractionSourceKind(&value));
+    check_hresult(static_cast<const ISpatialTappedEventArgs &>(static_cast<const D &>(*this))->get_InteractionSourceKind(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Spatial::SpatialPointerPose impl_ISpatialTappedEventArgs<D>::TryGetPointerPose(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const
 {
     Windows::UI::Input::Spatial::SpatialPointerPose value { nullptr };
-    check_hresult(shim()->abi_TryGetPointerPose(get(coordinateSystem), put(value)));
+    check_hresult(static_cast<const ISpatialTappedEventArgs &>(static_cast<const D &>(*this))->abi_TryGetPointerPose(get(coordinateSystem), put(value)));
     return value;
 }
 
 template <typename D> uint32_t impl_ISpatialTappedEventArgs<D>::TapCount() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_TapCount(&value));
+    check_hresult(static_cast<const ISpatialTappedEventArgs &>(static_cast<const D &>(*this))->get_TapCount(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Spatial::SpatialInteractionSourceKind impl_ISpatialHoldStartedEventArgs<D>::InteractionSourceKind() const
 {
     Windows::UI::Input::Spatial::SpatialInteractionSourceKind value {};
-    check_hresult(shim()->get_InteractionSourceKind(&value));
+    check_hresult(static_cast<const ISpatialHoldStartedEventArgs &>(static_cast<const D &>(*this))->get_InteractionSourceKind(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Spatial::SpatialPointerPose impl_ISpatialHoldStartedEventArgs<D>::TryGetPointerPose(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const
 {
     Windows::UI::Input::Spatial::SpatialPointerPose value { nullptr };
-    check_hresult(shim()->abi_TryGetPointerPose(get(coordinateSystem), put(value)));
+    check_hresult(static_cast<const ISpatialHoldStartedEventArgs &>(static_cast<const D &>(*this))->abi_TryGetPointerPose(get(coordinateSystem), put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Spatial::SpatialInteractionSourceKind impl_ISpatialHoldCompletedEventArgs<D>::InteractionSourceKind() const
 {
     Windows::UI::Input::Spatial::SpatialInteractionSourceKind value {};
-    check_hresult(shim()->get_InteractionSourceKind(&value));
+    check_hresult(static_cast<const ISpatialHoldCompletedEventArgs &>(static_cast<const D &>(*this))->get_InteractionSourceKind(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Spatial::SpatialInteractionSourceKind impl_ISpatialHoldCanceledEventArgs<D>::InteractionSourceKind() const
 {
     Windows::UI::Input::Spatial::SpatialInteractionSourceKind value {};
-    check_hresult(shim()->get_InteractionSourceKind(&value));
+    check_hresult(static_cast<const ISpatialHoldCanceledEventArgs &>(static_cast<const D &>(*this))->get_InteractionSourceKind(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Numerics::float3 impl_ISpatialManipulationDelta<D>::Translation() const
 {
     Windows::Foundation::Numerics::float3 value {};
-    check_hresult(shim()->get_Translation(put(value)));
+    check_hresult(static_cast<const ISpatialManipulationDelta &>(static_cast<const D &>(*this))->get_Translation(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Spatial::SpatialInteractionSourceKind impl_ISpatialManipulationStartedEventArgs<D>::InteractionSourceKind() const
 {
     Windows::UI::Input::Spatial::SpatialInteractionSourceKind value {};
-    check_hresult(shim()->get_InteractionSourceKind(&value));
+    check_hresult(static_cast<const ISpatialManipulationStartedEventArgs &>(static_cast<const D &>(*this))->get_InteractionSourceKind(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Spatial::SpatialPointerPose impl_ISpatialManipulationStartedEventArgs<D>::TryGetPointerPose(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const
 {
     Windows::UI::Input::Spatial::SpatialPointerPose value { nullptr };
-    check_hresult(shim()->abi_TryGetPointerPose(get(coordinateSystem), put(value)));
+    check_hresult(static_cast<const ISpatialManipulationStartedEventArgs &>(static_cast<const D &>(*this))->abi_TryGetPointerPose(get(coordinateSystem), put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Spatial::SpatialInteractionSourceKind impl_ISpatialManipulationUpdatedEventArgs<D>::InteractionSourceKind() const
 {
     Windows::UI::Input::Spatial::SpatialInteractionSourceKind value {};
-    check_hresult(shim()->get_InteractionSourceKind(&value));
+    check_hresult(static_cast<const ISpatialManipulationUpdatedEventArgs &>(static_cast<const D &>(*this))->get_InteractionSourceKind(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Spatial::SpatialManipulationDelta impl_ISpatialManipulationUpdatedEventArgs<D>::TryGetCumulativeDelta(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const
 {
     Windows::UI::Input::Spatial::SpatialManipulationDelta value { nullptr };
-    check_hresult(shim()->abi_TryGetCumulativeDelta(get(coordinateSystem), put(value)));
+    check_hresult(static_cast<const ISpatialManipulationUpdatedEventArgs &>(static_cast<const D &>(*this))->abi_TryGetCumulativeDelta(get(coordinateSystem), put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Spatial::SpatialInteractionSourceKind impl_ISpatialManipulationCompletedEventArgs<D>::InteractionSourceKind() const
 {
     Windows::UI::Input::Spatial::SpatialInteractionSourceKind value {};
-    check_hresult(shim()->get_InteractionSourceKind(&value));
+    check_hresult(static_cast<const ISpatialManipulationCompletedEventArgs &>(static_cast<const D &>(*this))->get_InteractionSourceKind(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Spatial::SpatialManipulationDelta impl_ISpatialManipulationCompletedEventArgs<D>::TryGetCumulativeDelta(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const
 {
     Windows::UI::Input::Spatial::SpatialManipulationDelta value { nullptr };
-    check_hresult(shim()->abi_TryGetCumulativeDelta(get(coordinateSystem), put(value)));
+    check_hresult(static_cast<const ISpatialManipulationCompletedEventArgs &>(static_cast<const D &>(*this))->abi_TryGetCumulativeDelta(get(coordinateSystem), put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Spatial::SpatialInteractionSourceKind impl_ISpatialManipulationCanceledEventArgs<D>::InteractionSourceKind() const
 {
     Windows::UI::Input::Spatial::SpatialInteractionSourceKind value {};
-    check_hresult(shim()->get_InteractionSourceKind(&value));
+    check_hresult(static_cast<const ISpatialManipulationCanceledEventArgs &>(static_cast<const D &>(*this))->get_InteractionSourceKind(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Spatial::SpatialInteractionSourceKind impl_ISpatialNavigationStartedEventArgs<D>::InteractionSourceKind() const
 {
     Windows::UI::Input::Spatial::SpatialInteractionSourceKind value {};
-    check_hresult(shim()->get_InteractionSourceKind(&value));
+    check_hresult(static_cast<const ISpatialNavigationStartedEventArgs &>(static_cast<const D &>(*this))->get_InteractionSourceKind(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Spatial::SpatialPointerPose impl_ISpatialNavigationStartedEventArgs<D>::TryGetPointerPose(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const
 {
     Windows::UI::Input::Spatial::SpatialPointerPose value { nullptr };
-    check_hresult(shim()->abi_TryGetPointerPose(get(coordinateSystem), put(value)));
+    check_hresult(static_cast<const ISpatialNavigationStartedEventArgs &>(static_cast<const D &>(*this))->abi_TryGetPointerPose(get(coordinateSystem), put(value)));
     return value;
 }
 
 template <typename D> bool impl_ISpatialNavigationStartedEventArgs<D>::IsNavigatingX() const
 {
     bool value {};
-    check_hresult(shim()->get_IsNavigatingX(&value));
+    check_hresult(static_cast<const ISpatialNavigationStartedEventArgs &>(static_cast<const D &>(*this))->get_IsNavigatingX(&value));
     return value;
 }
 
 template <typename D> bool impl_ISpatialNavigationStartedEventArgs<D>::IsNavigatingY() const
 {
     bool value {};
-    check_hresult(shim()->get_IsNavigatingY(&value));
+    check_hresult(static_cast<const ISpatialNavigationStartedEventArgs &>(static_cast<const D &>(*this))->get_IsNavigatingY(&value));
     return value;
 }
 
 template <typename D> bool impl_ISpatialNavigationStartedEventArgs<D>::IsNavigatingZ() const
 {
     bool value {};
-    check_hresult(shim()->get_IsNavigatingZ(&value));
+    check_hresult(static_cast<const ISpatialNavigationStartedEventArgs &>(static_cast<const D &>(*this))->get_IsNavigatingZ(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Spatial::SpatialInteractionSourceKind impl_ISpatialNavigationUpdatedEventArgs<D>::InteractionSourceKind() const
 {
     Windows::UI::Input::Spatial::SpatialInteractionSourceKind value {};
-    check_hresult(shim()->get_InteractionSourceKind(&value));
+    check_hresult(static_cast<const ISpatialNavigationUpdatedEventArgs &>(static_cast<const D &>(*this))->get_InteractionSourceKind(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Numerics::float3 impl_ISpatialNavigationUpdatedEventArgs<D>::NormalizedOffset() const
 {
     Windows::Foundation::Numerics::float3 value {};
-    check_hresult(shim()->get_NormalizedOffset(put(value)));
+    check_hresult(static_cast<const ISpatialNavigationUpdatedEventArgs &>(static_cast<const D &>(*this))->get_NormalizedOffset(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Spatial::SpatialInteractionSourceKind impl_ISpatialNavigationCompletedEventArgs<D>::InteractionSourceKind() const
 {
     Windows::UI::Input::Spatial::SpatialInteractionSourceKind value {};
-    check_hresult(shim()->get_InteractionSourceKind(&value));
+    check_hresult(static_cast<const ISpatialNavigationCompletedEventArgs &>(static_cast<const D &>(*this))->get_InteractionSourceKind(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Numerics::float3 impl_ISpatialNavigationCompletedEventArgs<D>::NormalizedOffset() const
 {
     Windows::Foundation::Numerics::float3 value {};
-    check_hresult(shim()->get_NormalizedOffset(put(value)));
+    check_hresult(static_cast<const ISpatialNavigationCompletedEventArgs &>(static_cast<const D &>(*this))->get_NormalizedOffset(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Spatial::SpatialInteractionSourceKind impl_ISpatialNavigationCanceledEventArgs<D>::InteractionSourceKind() const
 {
     Windows::UI::Input::Spatial::SpatialInteractionSourceKind value {};
-    check_hresult(shim()->get_InteractionSourceKind(&value));
+    check_hresult(static_cast<const ISpatialNavigationCanceledEventArgs &>(static_cast<const D &>(*this))->get_InteractionSourceKind(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Spatial::SpatialInteractionSourceState impl_ISpatialInteraction<D>::SourceState() const
 {
     Windows::UI::Input::Spatial::SpatialInteractionSourceState value { nullptr };
-    check_hresult(shim()->get_SourceState(put(value)));
+    check_hresult(static_cast<const ISpatialInteraction &>(static_cast<const D &>(*this))->get_SourceState(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_ISpatialGestureRecognizer<D>::RecognitionStarted(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialRecognitionStartedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_RecognitionStarted(get(handler), &token));
+    check_hresult(static_cast<const ISpatialGestureRecognizer &>(static_cast<const D &>(*this))->add_RecognitionStarted(get(handler), &token));
     return token;
 }
 
@@ -1758,13 +1758,13 @@ template <typename D> event_revoker<ISpatialGestureRecognizer> impl_ISpatialGest
 
 template <typename D> void impl_ISpatialGestureRecognizer<D>::RecognitionStarted(event_token token) const
 {
-    check_hresult(shim()->remove_RecognitionStarted(token));
+    check_hresult(static_cast<const ISpatialGestureRecognizer &>(static_cast<const D &>(*this))->remove_RecognitionStarted(token));
 }
 
 template <typename D> event_token impl_ISpatialGestureRecognizer<D>::RecognitionEnded(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialRecognitionEndedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_RecognitionEnded(get(handler), &token));
+    check_hresult(static_cast<const ISpatialGestureRecognizer &>(static_cast<const D &>(*this))->add_RecognitionEnded(get(handler), &token));
     return token;
 }
 
@@ -1775,13 +1775,13 @@ template <typename D> event_revoker<ISpatialGestureRecognizer> impl_ISpatialGest
 
 template <typename D> void impl_ISpatialGestureRecognizer<D>::RecognitionEnded(event_token token) const
 {
-    check_hresult(shim()->remove_RecognitionEnded(token));
+    check_hresult(static_cast<const ISpatialGestureRecognizer &>(static_cast<const D &>(*this))->remove_RecognitionEnded(token));
 }
 
 template <typename D> event_token impl_ISpatialGestureRecognizer<D>::Tapped(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialTappedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_Tapped(get(handler), &token));
+    check_hresult(static_cast<const ISpatialGestureRecognizer &>(static_cast<const D &>(*this))->add_Tapped(get(handler), &token));
     return token;
 }
 
@@ -1792,13 +1792,13 @@ template <typename D> event_revoker<ISpatialGestureRecognizer> impl_ISpatialGest
 
 template <typename D> void impl_ISpatialGestureRecognizer<D>::Tapped(event_token token) const
 {
-    check_hresult(shim()->remove_Tapped(token));
+    check_hresult(static_cast<const ISpatialGestureRecognizer &>(static_cast<const D &>(*this))->remove_Tapped(token));
 }
 
 template <typename D> event_token impl_ISpatialGestureRecognizer<D>::HoldStarted(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialHoldStartedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_HoldStarted(get(handler), &token));
+    check_hresult(static_cast<const ISpatialGestureRecognizer &>(static_cast<const D &>(*this))->add_HoldStarted(get(handler), &token));
     return token;
 }
 
@@ -1809,13 +1809,13 @@ template <typename D> event_revoker<ISpatialGestureRecognizer> impl_ISpatialGest
 
 template <typename D> void impl_ISpatialGestureRecognizer<D>::HoldStarted(event_token token) const
 {
-    check_hresult(shim()->remove_HoldStarted(token));
+    check_hresult(static_cast<const ISpatialGestureRecognizer &>(static_cast<const D &>(*this))->remove_HoldStarted(token));
 }
 
 template <typename D> event_token impl_ISpatialGestureRecognizer<D>::HoldCompleted(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialHoldCompletedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_HoldCompleted(get(handler), &token));
+    check_hresult(static_cast<const ISpatialGestureRecognizer &>(static_cast<const D &>(*this))->add_HoldCompleted(get(handler), &token));
     return token;
 }
 
@@ -1826,13 +1826,13 @@ template <typename D> event_revoker<ISpatialGestureRecognizer> impl_ISpatialGest
 
 template <typename D> void impl_ISpatialGestureRecognizer<D>::HoldCompleted(event_token token) const
 {
-    check_hresult(shim()->remove_HoldCompleted(token));
+    check_hresult(static_cast<const ISpatialGestureRecognizer &>(static_cast<const D &>(*this))->remove_HoldCompleted(token));
 }
 
 template <typename D> event_token impl_ISpatialGestureRecognizer<D>::HoldCanceled(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialHoldCanceledEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_HoldCanceled(get(handler), &token));
+    check_hresult(static_cast<const ISpatialGestureRecognizer &>(static_cast<const D &>(*this))->add_HoldCanceled(get(handler), &token));
     return token;
 }
 
@@ -1843,13 +1843,13 @@ template <typename D> event_revoker<ISpatialGestureRecognizer> impl_ISpatialGest
 
 template <typename D> void impl_ISpatialGestureRecognizer<D>::HoldCanceled(event_token token) const
 {
-    check_hresult(shim()->remove_HoldCanceled(token));
+    check_hresult(static_cast<const ISpatialGestureRecognizer &>(static_cast<const D &>(*this))->remove_HoldCanceled(token));
 }
 
 template <typename D> event_token impl_ISpatialGestureRecognizer<D>::ManipulationStarted(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationStartedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_ManipulationStarted(get(handler), &token));
+    check_hresult(static_cast<const ISpatialGestureRecognizer &>(static_cast<const D &>(*this))->add_ManipulationStarted(get(handler), &token));
     return token;
 }
 
@@ -1860,13 +1860,13 @@ template <typename D> event_revoker<ISpatialGestureRecognizer> impl_ISpatialGest
 
 template <typename D> void impl_ISpatialGestureRecognizer<D>::ManipulationStarted(event_token token) const
 {
-    check_hresult(shim()->remove_ManipulationStarted(token));
+    check_hresult(static_cast<const ISpatialGestureRecognizer &>(static_cast<const D &>(*this))->remove_ManipulationStarted(token));
 }
 
 template <typename D> event_token impl_ISpatialGestureRecognizer<D>::ManipulationUpdated(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationUpdatedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_ManipulationUpdated(get(handler), &token));
+    check_hresult(static_cast<const ISpatialGestureRecognizer &>(static_cast<const D &>(*this))->add_ManipulationUpdated(get(handler), &token));
     return token;
 }
 
@@ -1877,13 +1877,13 @@ template <typename D> event_revoker<ISpatialGestureRecognizer> impl_ISpatialGest
 
 template <typename D> void impl_ISpatialGestureRecognizer<D>::ManipulationUpdated(event_token token) const
 {
-    check_hresult(shim()->remove_ManipulationUpdated(token));
+    check_hresult(static_cast<const ISpatialGestureRecognizer &>(static_cast<const D &>(*this))->remove_ManipulationUpdated(token));
 }
 
 template <typename D> event_token impl_ISpatialGestureRecognizer<D>::ManipulationCompleted(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationCompletedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_ManipulationCompleted(get(handler), &token));
+    check_hresult(static_cast<const ISpatialGestureRecognizer &>(static_cast<const D &>(*this))->add_ManipulationCompleted(get(handler), &token));
     return token;
 }
 
@@ -1894,13 +1894,13 @@ template <typename D> event_revoker<ISpatialGestureRecognizer> impl_ISpatialGest
 
 template <typename D> void impl_ISpatialGestureRecognizer<D>::ManipulationCompleted(event_token token) const
 {
-    check_hresult(shim()->remove_ManipulationCompleted(token));
+    check_hresult(static_cast<const ISpatialGestureRecognizer &>(static_cast<const D &>(*this))->remove_ManipulationCompleted(token));
 }
 
 template <typename D> event_token impl_ISpatialGestureRecognizer<D>::ManipulationCanceled(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialManipulationCanceledEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_ManipulationCanceled(get(handler), &token));
+    check_hresult(static_cast<const ISpatialGestureRecognizer &>(static_cast<const D &>(*this))->add_ManipulationCanceled(get(handler), &token));
     return token;
 }
 
@@ -1911,13 +1911,13 @@ template <typename D> event_revoker<ISpatialGestureRecognizer> impl_ISpatialGest
 
 template <typename D> void impl_ISpatialGestureRecognizer<D>::ManipulationCanceled(event_token token) const
 {
-    check_hresult(shim()->remove_ManipulationCanceled(token));
+    check_hresult(static_cast<const ISpatialGestureRecognizer &>(static_cast<const D &>(*this))->remove_ManipulationCanceled(token));
 }
 
 template <typename D> event_token impl_ISpatialGestureRecognizer<D>::NavigationStarted(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationStartedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_NavigationStarted(get(handler), &token));
+    check_hresult(static_cast<const ISpatialGestureRecognizer &>(static_cast<const D &>(*this))->add_NavigationStarted(get(handler), &token));
     return token;
 }
 
@@ -1928,13 +1928,13 @@ template <typename D> event_revoker<ISpatialGestureRecognizer> impl_ISpatialGest
 
 template <typename D> void impl_ISpatialGestureRecognizer<D>::NavigationStarted(event_token token) const
 {
-    check_hresult(shim()->remove_NavigationStarted(token));
+    check_hresult(static_cast<const ISpatialGestureRecognizer &>(static_cast<const D &>(*this))->remove_NavigationStarted(token));
 }
 
 template <typename D> event_token impl_ISpatialGestureRecognizer<D>::NavigationUpdated(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationUpdatedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_NavigationUpdated(get(handler), &token));
+    check_hresult(static_cast<const ISpatialGestureRecognizer &>(static_cast<const D &>(*this))->add_NavigationUpdated(get(handler), &token));
     return token;
 }
 
@@ -1945,13 +1945,13 @@ template <typename D> event_revoker<ISpatialGestureRecognizer> impl_ISpatialGest
 
 template <typename D> void impl_ISpatialGestureRecognizer<D>::NavigationUpdated(event_token token) const
 {
-    check_hresult(shim()->remove_NavigationUpdated(token));
+    check_hresult(static_cast<const ISpatialGestureRecognizer &>(static_cast<const D &>(*this))->remove_NavigationUpdated(token));
 }
 
 template <typename D> event_token impl_ISpatialGestureRecognizer<D>::NavigationCompleted(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationCompletedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_NavigationCompleted(get(handler), &token));
+    check_hresult(static_cast<const ISpatialGestureRecognizer &>(static_cast<const D &>(*this))->add_NavigationCompleted(get(handler), &token));
     return token;
 }
 
@@ -1962,13 +1962,13 @@ template <typename D> event_revoker<ISpatialGestureRecognizer> impl_ISpatialGest
 
 template <typename D> void impl_ISpatialGestureRecognizer<D>::NavigationCompleted(event_token token) const
 {
-    check_hresult(shim()->remove_NavigationCompleted(token));
+    check_hresult(static_cast<const ISpatialGestureRecognizer &>(static_cast<const D &>(*this))->remove_NavigationCompleted(token));
 }
 
 template <typename D> event_token impl_ISpatialGestureRecognizer<D>::NavigationCanceled(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialGestureRecognizer, Windows::UI::Input::Spatial::SpatialNavigationCanceledEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_NavigationCanceled(get(handler), &token));
+    check_hresult(static_cast<const ISpatialGestureRecognizer &>(static_cast<const D &>(*this))->add_NavigationCanceled(get(handler), &token));
     return token;
 }
 
@@ -1979,72 +1979,72 @@ template <typename D> event_revoker<ISpatialGestureRecognizer> impl_ISpatialGest
 
 template <typename D> void impl_ISpatialGestureRecognizer<D>::NavigationCanceled(event_token token) const
 {
-    check_hresult(shim()->remove_NavigationCanceled(token));
+    check_hresult(static_cast<const ISpatialGestureRecognizer &>(static_cast<const D &>(*this))->remove_NavigationCanceled(token));
 }
 
 template <typename D> void impl_ISpatialGestureRecognizer<D>::CaptureInteraction(const Windows::UI::Input::Spatial::SpatialInteraction & interaction) const
 {
-    check_hresult(shim()->abi_CaptureInteraction(get(interaction)));
+    check_hresult(static_cast<const ISpatialGestureRecognizer &>(static_cast<const D &>(*this))->abi_CaptureInteraction(get(interaction)));
 }
 
 template <typename D> void impl_ISpatialGestureRecognizer<D>::CancelPendingGestures() const
 {
-    check_hresult(shim()->abi_CancelPendingGestures());
+    check_hresult(static_cast<const ISpatialGestureRecognizer &>(static_cast<const D &>(*this))->abi_CancelPendingGestures());
 }
 
 template <typename D> bool impl_ISpatialGestureRecognizer<D>::TrySetGestureSettings(Windows::UI::Input::Spatial::SpatialGestureSettings settings) const
 {
     bool succeeded {};
-    check_hresult(shim()->abi_TrySetGestureSettings(settings, &succeeded));
+    check_hresult(static_cast<const ISpatialGestureRecognizer &>(static_cast<const D &>(*this))->abi_TrySetGestureSettings(settings, &succeeded));
     return succeeded;
 }
 
 template <typename D> Windows::UI::Input::Spatial::SpatialGestureSettings impl_ISpatialGestureRecognizer<D>::GestureSettings() const
 {
     Windows::UI::Input::Spatial::SpatialGestureSettings value {};
-    check_hresult(shim()->get_GestureSettings(&value));
+    check_hresult(static_cast<const ISpatialGestureRecognizer &>(static_cast<const D &>(*this))->get_GestureSettings(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Spatial::SpatialGestureRecognizer impl_ISpatialGestureRecognizerFactory<D>::Create(Windows::UI::Input::Spatial::SpatialGestureSettings settings) const
 {
     Windows::UI::Input::Spatial::SpatialGestureRecognizer value { nullptr };
-    check_hresult(shim()->abi_Create(settings, put(value)));
+    check_hresult(static_cast<const ISpatialGestureRecognizerFactory &>(static_cast<const D &>(*this))->abi_Create(settings, put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Spatial::SpatialInteractionSourceKind impl_ISpatialInteractionDetectedEventArgs<D>::InteractionSourceKind() const
 {
     Windows::UI::Input::Spatial::SpatialInteractionSourceKind value {};
-    check_hresult(shim()->get_InteractionSourceKind(&value));
+    check_hresult(static_cast<const ISpatialInteractionDetectedEventArgs &>(static_cast<const D &>(*this))->get_InteractionSourceKind(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Spatial::SpatialPointerPose impl_ISpatialInteractionDetectedEventArgs<D>::TryGetPointerPose(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const
 {
     Windows::UI::Input::Spatial::SpatialPointerPose value { nullptr };
-    check_hresult(shim()->abi_TryGetPointerPose(get(coordinateSystem), put(value)));
+    check_hresult(static_cast<const ISpatialInteractionDetectedEventArgs &>(static_cast<const D &>(*this))->abi_TryGetPointerPose(get(coordinateSystem), put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Spatial::SpatialInteraction impl_ISpatialInteractionDetectedEventArgs<D>::Interaction() const
 {
     Windows::UI::Input::Spatial::SpatialInteraction value { nullptr };
-    check_hresult(shim()->get_Interaction(put(value)));
+    check_hresult(static_cast<const ISpatialInteractionDetectedEventArgs &>(static_cast<const D &>(*this))->get_Interaction(put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Spatial::SpatialInteractionSourceState impl_ISpatialInteractionSourceEventArgs<D>::State() const
 {
     Windows::UI::Input::Spatial::SpatialInteractionSourceState value { nullptr };
-    check_hresult(shim()->get_State(put(value)));
+    check_hresult(static_cast<const ISpatialInteractionSourceEventArgs &>(static_cast<const D &>(*this))->get_State(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_ISpatialInteractionManager<D>::SourceDetected(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_SourceDetected(get(handler), &token));
+    check_hresult(static_cast<const ISpatialInteractionManager &>(static_cast<const D &>(*this))->add_SourceDetected(get(handler), &token));
     return token;
 }
 
@@ -2055,13 +2055,13 @@ template <typename D> event_revoker<ISpatialInteractionManager> impl_ISpatialInt
 
 template <typename D> void impl_ISpatialInteractionManager<D>::SourceDetected(event_token token) const
 {
-    check_hresult(shim()->remove_SourceDetected(token));
+    check_hresult(static_cast<const ISpatialInteractionManager &>(static_cast<const D &>(*this))->remove_SourceDetected(token));
 }
 
 template <typename D> event_token impl_ISpatialInteractionManager<D>::SourceLost(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_SourceLost(get(handler), &token));
+    check_hresult(static_cast<const ISpatialInteractionManager &>(static_cast<const D &>(*this))->add_SourceLost(get(handler), &token));
     return token;
 }
 
@@ -2072,13 +2072,13 @@ template <typename D> event_revoker<ISpatialInteractionManager> impl_ISpatialInt
 
 template <typename D> void impl_ISpatialInteractionManager<D>::SourceLost(event_token token) const
 {
-    check_hresult(shim()->remove_SourceLost(token));
+    check_hresult(static_cast<const ISpatialInteractionManager &>(static_cast<const D &>(*this))->remove_SourceLost(token));
 }
 
 template <typename D> event_token impl_ISpatialInteractionManager<D>::SourceUpdated(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_SourceUpdated(get(handler), &token));
+    check_hresult(static_cast<const ISpatialInteractionManager &>(static_cast<const D &>(*this))->add_SourceUpdated(get(handler), &token));
     return token;
 }
 
@@ -2089,13 +2089,13 @@ template <typename D> event_revoker<ISpatialInteractionManager> impl_ISpatialInt
 
 template <typename D> void impl_ISpatialInteractionManager<D>::SourceUpdated(event_token token) const
 {
-    check_hresult(shim()->remove_SourceUpdated(token));
+    check_hresult(static_cast<const ISpatialInteractionManager &>(static_cast<const D &>(*this))->remove_SourceUpdated(token));
 }
 
 template <typename D> event_token impl_ISpatialInteractionManager<D>::SourcePressed(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_SourcePressed(get(handler), &token));
+    check_hresult(static_cast<const ISpatialInteractionManager &>(static_cast<const D &>(*this))->add_SourcePressed(get(handler), &token));
     return token;
 }
 
@@ -2106,13 +2106,13 @@ template <typename D> event_revoker<ISpatialInteractionManager> impl_ISpatialInt
 
 template <typename D> void impl_ISpatialInteractionManager<D>::SourcePressed(event_token token) const
 {
-    check_hresult(shim()->remove_SourcePressed(token));
+    check_hresult(static_cast<const ISpatialInteractionManager &>(static_cast<const D &>(*this))->remove_SourcePressed(token));
 }
 
 template <typename D> event_token impl_ISpatialInteractionManager<D>::SourceReleased(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionSourceEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_SourceReleased(get(handler), &token));
+    check_hresult(static_cast<const ISpatialInteractionManager &>(static_cast<const D &>(*this))->add_SourceReleased(get(handler), &token));
     return token;
 }
 
@@ -2123,13 +2123,13 @@ template <typename D> event_revoker<ISpatialInteractionManager> impl_ISpatialInt
 
 template <typename D> void impl_ISpatialInteractionManager<D>::SourceReleased(event_token token) const
 {
-    check_hresult(shim()->remove_SourceReleased(token));
+    check_hresult(static_cast<const ISpatialInteractionManager &>(static_cast<const D &>(*this))->remove_SourceReleased(token));
 }
 
 template <typename D> event_token impl_ISpatialInteractionManager<D>::InteractionDetected(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Spatial::SpatialInteractionManager, Windows::UI::Input::Spatial::SpatialInteractionDetectedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_InteractionDetected(get(handler), &token));
+    check_hresult(static_cast<const ISpatialInteractionManager &>(static_cast<const D &>(*this))->add_InteractionDetected(get(handler), &token));
     return token;
 }
 
@@ -2140,20 +2140,20 @@ template <typename D> event_revoker<ISpatialInteractionManager> impl_ISpatialInt
 
 template <typename D> void impl_ISpatialInteractionManager<D>::InteractionDetected(event_token token) const
 {
-    check_hresult(shim()->remove_InteractionDetected(token));
+    check_hresult(static_cast<const ISpatialInteractionManager &>(static_cast<const D &>(*this))->remove_InteractionDetected(token));
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Spatial::SpatialInteractionSourceState> impl_ISpatialInteractionManager<D>::GetDetectedSourcesAtTimestamp(const Windows::Perception::PerceptionTimestamp & timeStamp) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Spatial::SpatialInteractionSourceState> value;
-    check_hresult(shim()->abi_GetDetectedSourcesAtTimestamp(get(timeStamp), put(value)));
+    check_hresult(static_cast<const ISpatialInteractionManager &>(static_cast<const D &>(*this))->abi_GetDetectedSourcesAtTimestamp(get(timeStamp), put(value)));
     return value;
 }
 
 template <typename D> Windows::UI::Input::Spatial::SpatialInteractionManager impl_ISpatialInteractionManagerStatics<D>::GetForCurrentView() const
 {
     Windows::UI::Input::Spatial::SpatialInteractionManager value { nullptr };
-    check_hresult(shim()->abi_GetForCurrentView(put(value)));
+    check_hresult(static_cast<const ISpatialInteractionManagerStatics &>(static_cast<const D &>(*this))->abi_GetForCurrentView(put(value)));
     return value;
 }
 

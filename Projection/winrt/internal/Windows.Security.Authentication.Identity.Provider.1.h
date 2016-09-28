@@ -94,15 +94,15 @@ template <> struct traits<Windows::Security::Authentication::Identity::Provider:
 
 namespace Windows::Security::Authentication::Identity::Provider {
 
-template <typename T> class impl_ISecondaryAuthenticationFactorAuthentication;
-template <typename T> class impl_ISecondaryAuthenticationFactorAuthenticationResult;
-template <typename T> class impl_ISecondaryAuthenticationFactorAuthenticationStageChangedEventArgs;
-template <typename T> class impl_ISecondaryAuthenticationFactorAuthenticationStageInfo;
-template <typename T> class impl_ISecondaryAuthenticationFactorAuthenticationStatics;
-template <typename T> class impl_ISecondaryAuthenticationFactorInfo;
-template <typename T> class impl_ISecondaryAuthenticationFactorRegistration;
-template <typename T> class impl_ISecondaryAuthenticationFactorRegistrationResult;
-template <typename T> class impl_ISecondaryAuthenticationFactorRegistrationStatics;
+template <typename T> struct impl_ISecondaryAuthenticationFactorAuthentication;
+template <typename T> struct impl_ISecondaryAuthenticationFactorAuthenticationResult;
+template <typename T> struct impl_ISecondaryAuthenticationFactorAuthenticationStageChangedEventArgs;
+template <typename T> struct impl_ISecondaryAuthenticationFactorAuthenticationStageInfo;
+template <typename T> struct impl_ISecondaryAuthenticationFactorAuthenticationStatics;
+template <typename T> struct impl_ISecondaryAuthenticationFactorInfo;
+template <typename T> struct impl_ISecondaryAuthenticationFactorRegistration;
+template <typename T> struct impl_ISecondaryAuthenticationFactorRegistrationResult;
+template <typename T> struct impl_ISecondaryAuthenticationFactorRegistrationStatics;
 
 }
 

@@ -72,12 +72,12 @@ template <> struct traits<Windows::ApplicationModel::Contacts::DataProvider::Con
 
 namespace Windows::ApplicationModel::Contacts::DataProvider {
 
-template <typename T> class impl_IContactDataProviderConnection;
-template <typename T> class impl_IContactDataProviderTriggerDetails;
-template <typename T> class impl_IContactListServerSearchReadBatchRequest;
-template <typename T> class impl_IContactListServerSearchReadBatchRequestEventArgs;
-template <typename T> class impl_IContactListSyncManagerSyncRequest;
-template <typename T> class impl_IContactListSyncManagerSyncRequestEventArgs;
+template <typename T> struct impl_IContactDataProviderConnection;
+template <typename T> struct impl_IContactDataProviderTriggerDetails;
+template <typename T> struct impl_IContactListServerSearchReadBatchRequest;
+template <typename T> struct impl_IContactListServerSearchReadBatchRequestEventArgs;
+template <typename T> struct impl_IContactListSyncManagerSyncRequest;
+template <typename T> struct impl_IContactListSyncManagerSyncRequestEventArgs;
 
 }
 

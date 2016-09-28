@@ -25,12 +25,8 @@ template <> struct __declspec(uuid("b4b5ddc2-1a74-5905-9fc5-ddaae9a3ab93")) __de
 namespace Windows::Devices::Printers::Extensions {
 
 template <typename D>
-class WINRT_EBO impl_IPrint3DWorkflow
+struct WINRT_EBO impl_IPrint3DWorkflow
 {
-    auto shim() const { return impl::shim<D, IPrint3DWorkflow>(this); }
-
-public:
-
     hstring DeviceID() const;
     Windows::IInspectable GetPrintModelPackage() const;
     bool IsPrintReady() const;
@@ -42,12 +38,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrint3DWorkflow2
+struct WINRT_EBO impl_IPrint3DWorkflow2
 {
-    auto shim() const { return impl::shim<D, IPrint3DWorkflow2>(this); }
-
-public:
-
     event_token PrinterChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::Print3DWorkflow, Windows::Devices::Printers::Extensions::Print3DWorkflowPrinterChangedEventArgs> & eventHandler) const;
     using PrinterChanged_revoker = event_revoker<IPrint3DWorkflow2>;
     PrinterChanged_revoker PrinterChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Printers::Extensions::Print3DWorkflow, Windows::Devices::Printers::Extensions::Print3DWorkflowPrinterChangedEventArgs> & eventHandler) const;
@@ -55,12 +47,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrint3DWorkflowPrintRequestedEventArgs
+struct WINRT_EBO impl_IPrint3DWorkflowPrintRequestedEventArgs
 {
-    auto shim() const { return impl::shim<D, IPrint3DWorkflowPrintRequestedEventArgs>(this); }
-
-public:
-
     Windows::Devices::Printers::Extensions::Print3DWorkflowStatus Status() const;
     void SetExtendedStatus(Windows::Devices::Printers::Extensions::Print3DWorkflowDetail value) const;
     void SetSource(const Windows::IInspectable & source) const;
@@ -68,12 +56,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPrint3DWorkflowPrinterChangedEventArgs
+struct WINRT_EBO impl_IPrint3DWorkflowPrinterChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IPrint3DWorkflowPrinterChangedEventArgs>(this); }
-
-public:
-
     hstring NewDeviceId() const;
 };
 

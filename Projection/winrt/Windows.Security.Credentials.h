@@ -744,324 +744,324 @@ namespace Windows::Security::Credentials {
 template <typename D> Windows::Security::Credentials::WebAccount impl_IWebAccountFactory<D>::CreateWebAccount(const Windows::Security::Credentials::WebAccountProvider & webAccountProvider, hstring_ref userName, Windows::Security::Credentials::WebAccountState state) const
 {
     Windows::Security::Credentials::WebAccount instance { nullptr };
-    check_hresult(shim()->abi_CreateWebAccount(get(webAccountProvider), get(userName), state, put(instance)));
+    check_hresult(static_cast<const IWebAccountFactory &>(static_cast<const D &>(*this))->abi_CreateWebAccount(get(webAccountProvider), get(userName), state, put(instance)));
     return instance;
 }
 
 template <typename D> Windows::Security::Credentials::WebAccountProvider impl_IWebAccount<D>::WebAccountProvider() const
 {
     Windows::Security::Credentials::WebAccountProvider value { nullptr };
-    check_hresult(shim()->get_WebAccountProvider(put(value)));
+    check_hresult(static_cast<const IWebAccount &>(static_cast<const D &>(*this))->get_WebAccountProvider(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IWebAccount<D>::UserName() const
 {
     hstring value;
-    check_hresult(shim()->get_UserName(put(value)));
+    check_hresult(static_cast<const IWebAccount &>(static_cast<const D &>(*this))->get_UserName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Credentials::WebAccountState impl_IWebAccount<D>::State() const
 {
     Windows::Security::Credentials::WebAccountState value {};
-    check_hresult(shim()->get_State(&value));
+    check_hresult(static_cast<const IWebAccount &>(static_cast<const D &>(*this))->get_State(&value));
     return value;
 }
 
 template <typename D> hstring impl_IWebAccount2<D>::Id() const
 {
     hstring value;
-    check_hresult(shim()->get_Id(put(value)));
+    check_hresult(static_cast<const IWebAccount2 &>(static_cast<const D &>(*this))->get_Id(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IMapView<hstring, hstring> impl_IWebAccount2<D>::Properties() const
 {
     Windows::Foundation::Collections::IMapView<hstring, hstring> value;
-    check_hresult(shim()->get_Properties(put(value)));
+    check_hresult(static_cast<const IWebAccount2 &>(static_cast<const D &>(*this))->get_Properties(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> impl_IWebAccount2<D>::GetPictureAsync(Windows::Security::Credentials::WebAccountPictureSize desizedSize) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> asyncInfo;
-    check_hresult(shim()->abi_GetPictureAsync(desizedSize, put(asyncInfo)));
+    check_hresult(static_cast<const IWebAccount2 &>(static_cast<const D &>(*this))->abi_GetPictureAsync(desizedSize, put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IWebAccount2<D>::SignOutAsync() const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(shim()->abi_SignOutAsync(put(asyncInfo)));
+    check_hresult(static_cast<const IWebAccount2 &>(static_cast<const D &>(*this))->abi_SignOutAsync(put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IWebAccount2<D>::SignOutAsync(hstring_ref clientId) const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(shim()->abi_SignOutWithClientIdAsync(get(clientId), put(asyncInfo)));
+    check_hresult(static_cast<const IWebAccount2 &>(static_cast<const D &>(*this))->abi_SignOutWithClientIdAsync(get(clientId), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Security::Credentials::WebAccountProvider impl_IWebAccountProviderFactory<D>::CreateWebAccountProvider(hstring_ref id, hstring_ref displayName, const Windows::Foundation::Uri & iconUri) const
 {
     Windows::Security::Credentials::WebAccountProvider instance { nullptr };
-    check_hresult(shim()->abi_CreateWebAccountProvider(get(id), get(displayName), get(iconUri), put(instance)));
+    check_hresult(static_cast<const IWebAccountProviderFactory &>(static_cast<const D &>(*this))->abi_CreateWebAccountProvider(get(id), get(displayName), get(iconUri), put(instance)));
     return instance;
 }
 
 template <typename D> hstring impl_IWebAccountProvider<D>::Id() const
 {
     hstring value;
-    check_hresult(shim()->get_Id(put(value)));
+    check_hresult(static_cast<const IWebAccountProvider &>(static_cast<const D &>(*this))->get_Id(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IWebAccountProvider<D>::DisplayName() const
 {
     hstring value;
-    check_hresult(shim()->get_DisplayName(put(value)));
+    check_hresult(static_cast<const IWebAccountProvider &>(static_cast<const D &>(*this))->get_DisplayName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Uri impl_IWebAccountProvider<D>::IconUri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(shim()->get_IconUri(put(value)));
+    check_hresult(static_cast<const IWebAccountProvider &>(static_cast<const D &>(*this))->get_IconUri(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IWebAccountProvider2<D>::DisplayPurpose() const
 {
     hstring value;
-    check_hresult(shim()->get_DisplayPurpose(put(value)));
+    check_hresult(static_cast<const IWebAccountProvider2 &>(static_cast<const D &>(*this))->get_DisplayPurpose(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IWebAccountProvider2<D>::Authority() const
 {
     hstring value;
-    check_hresult(shim()->get_Authority(put(value)));
+    check_hresult(static_cast<const IWebAccountProvider2 &>(static_cast<const D &>(*this))->get_Authority(put(value)));
     return value;
 }
 
 template <typename D> Windows::System::User impl_IWebAccountProvider3<D>::User() const
 {
     Windows::System::User user { nullptr };
-    check_hresult(shim()->get_User(put(user)));
+    check_hresult(static_cast<const IWebAccountProvider3 &>(static_cast<const D &>(*this))->get_User(put(user)));
     return user;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<bool> impl_IKeyCredentialManagerStatics<D>::IsSupportedAsync() const
 {
     Windows::Foundation::IAsyncOperation<bool> value;
-    check_hresult(shim()->abi_IsSupportedAsync(put(value)));
+    check_hresult(static_cast<const IKeyCredentialManagerStatics &>(static_cast<const D &>(*this))->abi_IsSupportedAsync(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IKeyCredentialManagerStatics<D>::RenewAttestationAsync() const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_RenewAttestationAsync(put(operation)));
+    check_hresult(static_cast<const IKeyCredentialManagerStatics &>(static_cast<const D &>(*this))->abi_RenewAttestationAsync(put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialRetrievalResult> impl_IKeyCredentialManagerStatics<D>::RequestCreateAsync(hstring_ref name, Windows::Security::Credentials::KeyCredentialCreationOption option) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialRetrievalResult> value;
-    check_hresult(shim()->abi_RequestCreateAsync(get(name), option, put(value)));
+    check_hresult(static_cast<const IKeyCredentialManagerStatics &>(static_cast<const D &>(*this))->abi_RequestCreateAsync(get(name), option, put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialRetrievalResult> impl_IKeyCredentialManagerStatics<D>::OpenAsync(hstring_ref name) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialRetrievalResult> value;
-    check_hresult(shim()->abi_OpenAsync(get(name), put(value)));
+    check_hresult(static_cast<const IKeyCredentialManagerStatics &>(static_cast<const D &>(*this))->abi_OpenAsync(get(name), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IKeyCredentialManagerStatics<D>::DeleteAsync(hstring_ref name) const
 {
     Windows::Foundation::IAsyncAction operation;
-    check_hresult(shim()->abi_DeleteAsync(get(name), put(operation)));
+    check_hresult(static_cast<const IKeyCredentialManagerStatics &>(static_cast<const D &>(*this))->abi_DeleteAsync(get(name), put(operation)));
     return operation;
 }
 
 template <typename D> hstring impl_IKeyCredential<D>::Name() const
 {
     hstring value;
-    check_hresult(shim()->get_Name(put(value)));
+    check_hresult(static_cast<const IKeyCredential &>(static_cast<const D &>(*this))->get_Name(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IKeyCredential<D>::RetrievePublicKey() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(shim()->abi_RetrievePublicKeyWithDefaultBlobType(put(value)));
+    check_hresult(static_cast<const IKeyCredential &>(static_cast<const D &>(*this))->abi_RetrievePublicKeyWithDefaultBlobType(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IKeyCredential<D>::RetrievePublicKey(Windows::Security::Cryptography::Core::CryptographicPublicKeyBlobType blobType) const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(shim()->abi_RetrievePublicKeyWithBlobType(blobType, put(value)));
+    check_hresult(static_cast<const IKeyCredential &>(static_cast<const D &>(*this))->abi_RetrievePublicKeyWithBlobType(blobType, put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialOperationResult> impl_IKeyCredential<D>::RequestSignAsync(const Windows::Storage::Streams::IBuffer & data) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialOperationResult> value;
-    check_hresult(shim()->abi_RequestSignAsync(get(data), put(value)));
+    check_hresult(static_cast<const IKeyCredential &>(static_cast<const D &>(*this))->abi_RequestSignAsync(get(data), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialAttestationResult> impl_IKeyCredential<D>::GetAttestationAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialAttestationResult> value;
-    check_hresult(shim()->abi_GetAttestationAsync(put(value)));
+    check_hresult(static_cast<const IKeyCredential &>(static_cast<const D &>(*this))->abi_GetAttestationAsync(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Credentials::KeyCredential impl_IKeyCredentialRetrievalResult<D>::Credential() const
 {
     Windows::Security::Credentials::KeyCredential value { nullptr };
-    check_hresult(shim()->get_Credential(put(value)));
+    check_hresult(static_cast<const IKeyCredentialRetrievalResult &>(static_cast<const D &>(*this))->get_Credential(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Credentials::KeyCredentialStatus impl_IKeyCredentialRetrievalResult<D>::Status() const
 {
     Windows::Security::Credentials::KeyCredentialStatus value {};
-    check_hresult(shim()->get_Status(&value));
+    check_hresult(static_cast<const IKeyCredentialRetrievalResult &>(static_cast<const D &>(*this))->get_Status(&value));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IKeyCredentialOperationResult<D>::Result() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(shim()->get_Result(put(value)));
+    check_hresult(static_cast<const IKeyCredentialOperationResult &>(static_cast<const D &>(*this))->get_Result(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Credentials::KeyCredentialStatus impl_IKeyCredentialOperationResult<D>::Status() const
 {
     Windows::Security::Credentials::KeyCredentialStatus value {};
-    check_hresult(shim()->get_Status(&value));
+    check_hresult(static_cast<const IKeyCredentialOperationResult &>(static_cast<const D &>(*this))->get_Status(&value));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IKeyCredentialAttestationResult<D>::CertificateChainBuffer() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(shim()->get_CertificateChainBuffer(put(value)));
+    check_hresult(static_cast<const IKeyCredentialAttestationResult &>(static_cast<const D &>(*this))->get_CertificateChainBuffer(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IKeyCredentialAttestationResult<D>::AttestationBuffer() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(shim()->get_AttestationBuffer(put(value)));
+    check_hresult(static_cast<const IKeyCredentialAttestationResult &>(static_cast<const D &>(*this))->get_AttestationBuffer(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Credentials::KeyCredentialAttestationStatus impl_IKeyCredentialAttestationResult<D>::Status() const
 {
     Windows::Security::Credentials::KeyCredentialAttestationStatus value {};
-    check_hresult(shim()->get_Status(&value));
+    check_hresult(static_cast<const IKeyCredentialAttestationResult &>(static_cast<const D &>(*this))->get_Status(&value));
     return value;
 }
 
 template <typename D> hstring impl_IPasswordCredential<D>::Resource() const
 {
     hstring resource;
-    check_hresult(shim()->get_Resource(put(resource)));
+    check_hresult(static_cast<const IPasswordCredential &>(static_cast<const D &>(*this))->get_Resource(put(resource)));
     return resource;
 }
 
 template <typename D> void impl_IPasswordCredential<D>::Resource(hstring_ref resource) const
 {
-    check_hresult(shim()->put_Resource(get(resource)));
+    check_hresult(static_cast<const IPasswordCredential &>(static_cast<const D &>(*this))->put_Resource(get(resource)));
 }
 
 template <typename D> hstring impl_IPasswordCredential<D>::UserName() const
 {
     hstring userName;
-    check_hresult(shim()->get_UserName(put(userName)));
+    check_hresult(static_cast<const IPasswordCredential &>(static_cast<const D &>(*this))->get_UserName(put(userName)));
     return userName;
 }
 
 template <typename D> void impl_IPasswordCredential<D>::UserName(hstring_ref userName) const
 {
-    check_hresult(shim()->put_UserName(get(userName)));
+    check_hresult(static_cast<const IPasswordCredential &>(static_cast<const D &>(*this))->put_UserName(get(userName)));
 }
 
 template <typename D> hstring impl_IPasswordCredential<D>::Password() const
 {
     hstring password;
-    check_hresult(shim()->get_Password(put(password)));
+    check_hresult(static_cast<const IPasswordCredential &>(static_cast<const D &>(*this))->get_Password(put(password)));
     return password;
 }
 
 template <typename D> void impl_IPasswordCredential<D>::Password(hstring_ref password) const
 {
-    check_hresult(shim()->put_Password(get(password)));
+    check_hresult(static_cast<const IPasswordCredential &>(static_cast<const D &>(*this))->put_Password(get(password)));
 }
 
 template <typename D> void impl_IPasswordCredential<D>::RetrievePassword() const
 {
-    check_hresult(shim()->abi_RetrievePassword());
+    check_hresult(static_cast<const IPasswordCredential &>(static_cast<const D &>(*this))->abi_RetrievePassword());
 }
 
 template <typename D> Windows::Foundation::Collections::IPropertySet impl_IPasswordCredential<D>::Properties() const
 {
     Windows::Foundation::Collections::IPropertySet props;
-    check_hresult(shim()->get_Properties(put(props)));
+    check_hresult(static_cast<const IPasswordCredential &>(static_cast<const D &>(*this))->get_Properties(put(props)));
     return props;
 }
 
 template <typename D> Windows::Security::Credentials::PasswordCredential impl_ICredentialFactory<D>::CreatePasswordCredential(hstring_ref resource, hstring_ref userName, hstring_ref password) const
 {
     Windows::Security::Credentials::PasswordCredential credential { nullptr };
-    check_hresult(shim()->abi_CreatePasswordCredential(get(resource), get(userName), get(password), put(credential)));
+    check_hresult(static_cast<const ICredentialFactory &>(static_cast<const D &>(*this))->abi_CreatePasswordCredential(get(resource), get(userName), get(password), put(credential)));
     return credential;
 }
 
 template <typename D> void impl_IPasswordVault<D>::Add(const Windows::Security::Credentials::PasswordCredential & credential) const
 {
-    check_hresult(shim()->abi_Add(get(credential)));
+    check_hresult(static_cast<const IPasswordVault &>(static_cast<const D &>(*this))->abi_Add(get(credential)));
 }
 
 template <typename D> void impl_IPasswordVault<D>::Remove(const Windows::Security::Credentials::PasswordCredential & credential) const
 {
-    check_hresult(shim()->abi_Remove(get(credential)));
+    check_hresult(static_cast<const IPasswordVault &>(static_cast<const D &>(*this))->abi_Remove(get(credential)));
 }
 
 template <typename D> Windows::Security::Credentials::PasswordCredential impl_IPasswordVault<D>::Retrieve(hstring_ref resource, hstring_ref userName) const
 {
     Windows::Security::Credentials::PasswordCredential credential { nullptr };
-    check_hresult(shim()->abi_Retrieve(get(resource), get(userName), put(credential)));
+    check_hresult(static_cast<const IPasswordVault &>(static_cast<const D &>(*this))->abi_Retrieve(get(resource), get(userName), put(credential)));
     return credential;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::PasswordCredential> impl_IPasswordVault<D>::FindAllByResource(hstring_ref resource) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::PasswordCredential> credentials;
-    check_hresult(shim()->abi_FindAllByResource(get(resource), put(credentials)));
+    check_hresult(static_cast<const IPasswordVault &>(static_cast<const D &>(*this))->abi_FindAllByResource(get(resource), put(credentials)));
     return credentials;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::PasswordCredential> impl_IPasswordVault<D>::FindAllByUserName(hstring_ref userName) const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::PasswordCredential> credentials;
-    check_hresult(shim()->abi_FindAllByUserName(get(userName), put(credentials)));
+    check_hresult(static_cast<const IPasswordVault &>(static_cast<const D &>(*this))->abi_FindAllByUserName(get(userName), put(credentials)));
     return credentials;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::PasswordCredential> impl_IPasswordVault<D>::RetrieveAll() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::PasswordCredential> credentials;
-    check_hresult(shim()->abi_RetrieveAll(put(credentials)));
+    check_hresult(static_cast<const IPasswordVault &>(static_cast<const D &>(*this))->abi_RetrieveAll(put(credentials)));
     return credentials;
 }
 

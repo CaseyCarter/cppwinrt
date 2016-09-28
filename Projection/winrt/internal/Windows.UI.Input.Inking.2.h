@@ -230,12 +230,8 @@ template <> struct __declspec(uuid("ece8567f-8080-5ced-8988-bb0364c803d4")) __de
 namespace Windows::UI::Input::Inking {
 
 template <typename D>
-class WINRT_EBO impl_IInkDrawingAttributes
+struct WINRT_EBO impl_IInkDrawingAttributes
 {
-    auto shim() const { return impl::shim<D, IInkDrawingAttributes>(this); }
-
-public:
-
     Windows::UI::Color Color() const;
     void Color(const Windows::UI::Color & value) const;
     Windows::UI::Input::Inking::PenTipShape PenTip() const;
@@ -249,12 +245,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IInkDrawingAttributes2
+struct WINRT_EBO impl_IInkDrawingAttributes2
 {
-    auto shim() const { return impl::shim<D, IInkDrawingAttributes2>(this); }
-
-public:
-
     Windows::Foundation::Numerics::float3x2 PenTipTransform() const;
     void PenTipTransform(const Windows::Foundation::Numerics::float3x2 & value) const;
     bool DrawAsHighlighter() const;
@@ -262,44 +254,28 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IInkDrawingAttributes3
+struct WINRT_EBO impl_IInkDrawingAttributes3
 {
-    auto shim() const { return impl::shim<D, IInkDrawingAttributes3>(this); }
-
-public:
-
     Windows::UI::Input::Inking::InkDrawingAttributesKind Kind() const;
     Windows::UI::Input::Inking::InkDrawingAttributesPencilProperties PencilProperties() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInkDrawingAttributesPencilProperties
+struct WINRT_EBO impl_IInkDrawingAttributesPencilProperties
 {
-    auto shim() const { return impl::shim<D, IInkDrawingAttributesPencilProperties>(this); }
-
-public:
-
     double Opacity() const;
     void Opacity(double value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInkDrawingAttributesStatics
+struct WINRT_EBO impl_IInkDrawingAttributesStatics
 {
-    auto shim() const { return impl::shim<D, IInkDrawingAttributesStatics>(this); }
-
-public:
-
     Windows::UI::Input::Inking::InkDrawingAttributes CreateForPencil() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInkInputProcessingConfiguration
+struct WINRT_EBO impl_IInkInputProcessingConfiguration
 {
-    auto shim() const { return impl::shim<D, IInkInputProcessingConfiguration>(this); }
-
-public:
-
     Windows::UI::Input::Inking::InkInputProcessingMode Mode() const;
     void Mode(Windows::UI::Input::Inking::InkInputProcessingMode value) const;
     Windows::UI::Input::Inking::InkInputRightDragAction RightDragAction() const;
@@ -307,12 +283,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IInkManager
+struct WINRT_EBO impl_IInkManager
 {
-    auto shim() const { return impl::shim<D, IInkManager>(this); }
-
-public:
-
     Windows::UI::Input::Inking::InkManipulationMode Mode() const;
     void Mode(Windows::UI::Input::Inking::InkManipulationMode value) const;
     void ProcessPointerDown(const Windows::UI::Input::PointerPoint & pointerPoint) const;
@@ -323,33 +295,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IInkPoint
+struct WINRT_EBO impl_IInkPoint
 {
-    auto shim() const { return impl::shim<D, IInkPoint>(this); }
-
-public:
-
     Windows::Foundation::Point Position() const;
     float Pressure() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInkPointFactory
+struct WINRT_EBO impl_IInkPointFactory
 {
-    auto shim() const { return impl::shim<D, IInkPointFactory>(this); }
-
-public:
-
     Windows::UI::Input::Inking::InkPoint CreateInkPoint(const Windows::Foundation::Point & position, float pressure) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInkPresenter
+struct WINRT_EBO impl_IInkPresenter
 {
-    auto shim() const { return impl::shim<D, IInkPresenter>(this); }
-
-public:
-
     bool IsInputEnabled() const;
     void IsInputEnabled(bool value) const;
     Windows::UI::Core::CoreInputDeviceTypes InputDeviceTypes() const;
@@ -374,12 +334,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IInkPresenterRuler
+struct WINRT_EBO impl_IInkPresenterRuler
 {
-    auto shim() const { return impl::shim<D, IInkPresenterRuler>(this); }
-
-public:
-
     double Length() const;
     void Length(double value) const;
     double Width() const;
@@ -387,22 +343,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IInkPresenterRulerFactory
+struct WINRT_EBO impl_IInkPresenterRulerFactory
 {
-    auto shim() const { return impl::shim<D, IInkPresenterRulerFactory>(this); }
-
-public:
-
     Windows::UI::Input::Inking::InkPresenterRuler Create(const Windows::UI::Input::Inking::InkPresenter & inkPresenter) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInkPresenterStencil
+struct WINRT_EBO impl_IInkPresenterStencil
 {
-    auto shim() const { return impl::shim<D, IInkPresenterStencil>(this); }
-
-public:
-
     Windows::UI::Input::Inking::InkPresenterStencilKind Kind() const;
     bool IsVisible() const;
     void IsVisible(bool value) const;
@@ -415,46 +363,30 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IInkRecognitionResult
+struct WINRT_EBO impl_IInkRecognitionResult
 {
-    auto shim() const { return impl::shim<D, IInkRecognitionResult>(this); }
-
-public:
-
     Windows::Foundation::Rect BoundingRect() const;
     Windows::Foundation::Collections::IVectorView<hstring> GetTextCandidates() const;
     Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkStroke> GetStrokes() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInkRecognizer
+struct WINRT_EBO impl_IInkRecognizer
 {
-    auto shim() const { return impl::shim<D, IInkRecognizer>(this); }
-
-public:
-
     hstring Name() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInkRecognizerContainer
+struct WINRT_EBO impl_IInkRecognizerContainer
 {
-    auto shim() const { return impl::shim<D, IInkRecognizerContainer>(this); }
-
-public:
-
     void SetDefaultRecognizer(const Windows::UI::Input::Inking::InkRecognizer & recognizer) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkRecognitionResult>> RecognizeAsync(const Windows::UI::Input::Inking::InkStrokeContainer & strokeCollection, Windows::UI::Input::Inking::InkRecognitionTarget recognitionTarget) const;
     Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkRecognizer> GetRecognizers() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInkStroke
+struct WINRT_EBO impl_IInkStroke
 {
-    auto shim() const { return impl::shim<D, IInkStroke>(this); }
-
-public:
-
     Windows::UI::Input::Inking::InkDrawingAttributes DrawingAttributes() const;
     void DrawingAttributes(const Windows::UI::Input::Inking::InkDrawingAttributes & value) const;
     Windows::Foundation::Rect BoundingRect() const;
@@ -466,24 +398,16 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IInkStroke2
+struct WINRT_EBO impl_IInkStroke2
 {
-    auto shim() const { return impl::shim<D, IInkStroke2>(this); }
-
-public:
-
     Windows::Foundation::Numerics::float3x2 PointTransform() const;
     void PointTransform(const Windows::Foundation::Numerics::float3x2 & value) const;
     Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkPoint> GetInkPoints() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInkStrokeBuilder
+struct WINRT_EBO impl_IInkStrokeBuilder
 {
-    auto shim() const { return impl::shim<D, IInkStrokeBuilder>(this); }
-
-public:
-
     void BeginStroke(const Windows::UI::Input::PointerPoint & pointerPoint) const;
     Windows::UI::Input::PointerPoint AppendToStroke(const Windows::UI::Input::PointerPoint & pointerPoint) const;
     Windows::UI::Input::Inking::InkStroke EndStroke(const Windows::UI::Input::PointerPoint & pointerPoint) const;
@@ -492,22 +416,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IInkStrokeBuilder2
+struct WINRT_EBO impl_IInkStrokeBuilder2
 {
-    auto shim() const { return impl::shim<D, IInkStrokeBuilder2>(this); }
-
-public:
-
     Windows::UI::Input::Inking::InkStroke CreateStrokeFromInkPoints(const Windows::Foundation::Collections::IIterable<Windows::UI::Input::Inking::InkPoint> & inkPoints, const Windows::Foundation::Numerics::float3x2 & transform) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInkStrokeContainer
+struct WINRT_EBO impl_IInkStrokeContainer
 {
-    auto shim() const { return impl::shim<D, IInkStrokeContainer>(this); }
-
-public:
-
     Windows::Foundation::Rect BoundingRect() const;
     void AddStroke(const Windows::UI::Input::Inking::InkStroke & stroke) const;
     Windows::Foundation::Rect DeleteSelected() const;
@@ -525,23 +441,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IInkStrokeContainer2
+struct WINRT_EBO impl_IInkStrokeContainer2
 {
-    auto shim() const { return impl::shim<D, IInkStrokeContainer2>(this); }
-
-public:
-
     void AddStrokes(const Windows::Foundation::Collections::IIterable<Windows::UI::Input::Inking::InkStroke> & strokes) const;
     void Clear() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInkStrokeInput
+struct WINRT_EBO impl_IInkStrokeInput
 {
-    auto shim() const { return impl::shim<D, IInkStrokeInput>(this); }
-
-public:
-
     event_token StrokeStarted(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkStrokeInput, Windows::UI::Core::PointerEventArgs> & handler) const;
     using StrokeStarted_revoker = event_revoker<IInkStrokeInput>;
     StrokeStarted_revoker StrokeStarted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkStrokeInput, Windows::UI::Core::PointerEventArgs> & handler) const;
@@ -562,12 +470,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IInkStrokeRenderingSegment
+struct WINRT_EBO impl_IInkStrokeRenderingSegment
 {
-    auto shim() const { return impl::shim<D, IInkStrokeRenderingSegment>(this); }
-
-public:
-
     Windows::Foundation::Point Position() const;
     Windows::Foundation::Point BezierControlPoint1() const;
     Windows::Foundation::Point BezierControlPoint2() const;
@@ -578,43 +482,27 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IInkStrokesCollectedEventArgs
+struct WINRT_EBO impl_IInkStrokesCollectedEventArgs
 {
-    auto shim() const { return impl::shim<D, IInkStrokesCollectedEventArgs>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkStroke> Strokes() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInkStrokesErasedEventArgs
+struct WINRT_EBO impl_IInkStrokesErasedEventArgs
 {
-    auto shim() const { return impl::shim<D, IInkStrokesErasedEventArgs>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkStroke> Strokes() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInkSynchronizer
+struct WINRT_EBO impl_IInkSynchronizer
 {
-    auto shim() const { return impl::shim<D, IInkSynchronizer>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkStroke> BeginDry() const;
     void EndDry() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IInkUnprocessedInput
+struct WINRT_EBO impl_IInkUnprocessedInput
 {
-    auto shim() const { return impl::shim<D, IInkUnprocessedInput>(this); }
-
-public:
-
     event_token PointerEntered(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> & handler) const;
     using PointerEntered_revoker = event_revoker<IInkUnprocessedInput>;
     PointerEntered_revoker PointerEntered(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> & handler) const;

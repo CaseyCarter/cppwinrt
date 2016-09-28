@@ -30,12 +30,8 @@ template <> struct __declspec(uuid("4936ed59-b494-5128-bc7e-03e630346475")) __de
 namespace Windows::Devices::Pwm::Provider {
 
 template <typename D>
-class WINRT_EBO impl_IPwmControllerProvider
+struct WINRT_EBO impl_IPwmControllerProvider
 {
-    auto shim() const { return impl::shim<D, IPwmControllerProvider>(this); }
-
-public:
-
     int32_t PinCount() const;
     double ActualFrequency() const;
     double SetDesiredFrequency(double frequency) const;
@@ -49,12 +45,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IPwmProvider
+struct WINRT_EBO impl_IPwmProvider
 {
-    auto shim() const { return impl::shim<D, IPwmProvider>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Pwm::Provider::IPwmControllerProvider> GetControllers() const;
 };
 

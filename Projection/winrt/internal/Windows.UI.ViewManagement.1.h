@@ -286,36 +286,36 @@ template <> struct traits<Windows::UI::ViewManagement::UIViewSettings> { using d
 
 namespace Windows::UI::ViewManagement {
 
-template <typename T> class impl_IAccessibilitySettings;
-template <typename T> class impl_IActivationViewSwitcher;
-template <typename T> class impl_IApplicationView;
-template <typename T> class impl_IApplicationView2;
-template <typename T> class impl_IApplicationView3;
-template <typename T> class impl_IApplicationViewConsolidatedEventArgs;
-template <typename T> class impl_IApplicationViewFullscreenStatics;
-template <typename T> class impl_IApplicationViewInteropStatics;
-template <typename T> class impl_IApplicationViewScaling;
-template <typename T> class impl_IApplicationViewScalingStatics;
-template <typename T> class impl_IApplicationViewStatics;
-template <typename T> class impl_IApplicationViewStatics2;
-template <typename T> class impl_IApplicationViewStatics3;
-template <typename T> class impl_IApplicationViewSwitcherStatics;
-template <typename T> class impl_IApplicationViewSwitcherStatics2;
-template <typename T> class impl_IApplicationViewTitleBar;
-template <typename T> class impl_IApplicationViewTransferContext;
-template <typename T> class impl_IApplicationViewTransferContextStatics;
-template <typename T> class impl_IInputPane;
-template <typename T> class impl_IInputPane2;
-template <typename T> class impl_IInputPaneControl;
-template <typename T> class impl_IInputPaneStatics;
-template <typename T> class impl_IInputPaneVisibilityEventArgs;
-template <typename T> class impl_IProjectionManagerStatics;
-template <typename T> class impl_IProjectionManagerStatics2;
-template <typename T> class impl_IUISettings;
-template <typename T> class impl_IUISettings2;
-template <typename T> class impl_IUISettings3;
-template <typename T> class impl_IUIViewSettings;
-template <typename T> class impl_IUIViewSettingsStatics;
+template <typename T> struct impl_IAccessibilitySettings;
+template <typename T> struct impl_IActivationViewSwitcher;
+template <typename T> struct impl_IApplicationView;
+template <typename T> struct impl_IApplicationView2;
+template <typename T> struct impl_IApplicationView3;
+template <typename T> struct impl_IApplicationViewConsolidatedEventArgs;
+template <typename T> struct impl_IApplicationViewFullscreenStatics;
+template <typename T> struct impl_IApplicationViewInteropStatics;
+template <typename T> struct impl_IApplicationViewScaling;
+template <typename T> struct impl_IApplicationViewScalingStatics;
+template <typename T> struct impl_IApplicationViewStatics;
+template <typename T> struct impl_IApplicationViewStatics2;
+template <typename T> struct impl_IApplicationViewStatics3;
+template <typename T> struct impl_IApplicationViewSwitcherStatics;
+template <typename T> struct impl_IApplicationViewSwitcherStatics2;
+template <typename T> struct impl_IApplicationViewTitleBar;
+template <typename T> struct impl_IApplicationViewTransferContext;
+template <typename T> struct impl_IApplicationViewTransferContextStatics;
+template <typename T> struct impl_IInputPane;
+template <typename T> struct impl_IInputPane2;
+template <typename T> struct impl_IInputPaneControl;
+template <typename T> struct impl_IInputPaneStatics;
+template <typename T> struct impl_IInputPaneVisibilityEventArgs;
+template <typename T> struct impl_IProjectionManagerStatics;
+template <typename T> struct impl_IProjectionManagerStatics2;
+template <typename T> struct impl_IUISettings;
+template <typename T> struct impl_IUISettings2;
+template <typename T> struct impl_IUISettings3;
+template <typename T> struct impl_IUIViewSettings;
+template <typename T> struct impl_IUIViewSettingsStatics;
 
 }
 

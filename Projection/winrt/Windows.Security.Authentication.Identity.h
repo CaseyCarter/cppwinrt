@@ -127,49 +127,49 @@ namespace Windows::Security::Authentication::Identity {
 template <typename D> hstring impl_IEnterpriseKeyCredentialRegistrationInfo<D>::TenantId() const
 {
     hstring value;
-    check_hresult(shim()->get_TenantId(put(value)));
+    check_hresult(static_cast<const IEnterpriseKeyCredentialRegistrationInfo &>(static_cast<const D &>(*this))->get_TenantId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEnterpriseKeyCredentialRegistrationInfo<D>::TenantName() const
 {
     hstring value;
-    check_hresult(shim()->get_TenantName(put(value)));
+    check_hresult(static_cast<const IEnterpriseKeyCredentialRegistrationInfo &>(static_cast<const D &>(*this))->get_TenantName(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEnterpriseKeyCredentialRegistrationInfo<D>::Subject() const
 {
     hstring value;
-    check_hresult(shim()->get_Subject(put(value)));
+    check_hresult(static_cast<const IEnterpriseKeyCredentialRegistrationInfo &>(static_cast<const D &>(*this))->get_Subject(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEnterpriseKeyCredentialRegistrationInfo<D>::KeyId() const
 {
     hstring value;
-    check_hresult(shim()->get_KeyId(put(value)));
+    check_hresult(static_cast<const IEnterpriseKeyCredentialRegistrationInfo &>(static_cast<const D &>(*this))->get_KeyId(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IEnterpriseKeyCredentialRegistrationInfo<D>::KeyName() const
 {
     hstring value;
-    check_hresult(shim()->get_KeyName(put(value)));
+    check_hresult(static_cast<const IEnterpriseKeyCredentialRegistrationInfo &>(static_cast<const D &>(*this))->get_KeyName(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationManager impl_IEnterpriseKeyCredentialRegistrationManagerStatics<D>::Current() const
 {
     Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationManager value { nullptr };
-    check_hresult(shim()->get_Current(put(value)));
+    check_hresult(static_cast<const IEnterpriseKeyCredentialRegistrationManagerStatics &>(static_cast<const D &>(*this))->get_Current(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationInfo>> impl_IEnterpriseKeyCredentialRegistrationManager<D>::GetRegistrationsAsync() const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationInfo>> value;
-    check_hresult(shim()->abi_GetRegistrationsAsync(put(value)));
+    check_hresult(static_cast<const IEnterpriseKeyCredentialRegistrationManager &>(static_cast<const D &>(*this))->abi_GetRegistrationsAsync(put(value)));
     return value;
 }
 

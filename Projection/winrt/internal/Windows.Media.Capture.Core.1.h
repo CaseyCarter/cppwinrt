@@ -48,9 +48,9 @@ template <> struct traits<Windows::Media::Capture::Core::VariablePhotoSequenceCa
 
 namespace Windows::Media::Capture::Core {
 
-template <typename T> class impl_IVariablePhotoCapturedEventArgs;
-template <typename T> class impl_IVariablePhotoSequenceCapture;
-template <typename T> class impl_IVariablePhotoSequenceCapture2;
+template <typename T> struct impl_IVariablePhotoCapturedEventArgs;
+template <typename T> struct impl_IVariablePhotoSequenceCapture;
+template <typename T> struct impl_IVariablePhotoSequenceCapture2;
 
 }
 

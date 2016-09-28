@@ -1267,565 +1267,565 @@ namespace Windows::ApplicationModel::UserDataAccounts::SystemAccess {
 template <typename D> hstring impl_IDeviceAccountConfiguration<D>::AccountName() const
 {
     hstring value;
-    check_hresult(shim()->get_AccountName(put(value)));
+    check_hresult(static_cast<const IDeviceAccountConfiguration &>(static_cast<const D &>(*this))->get_AccountName(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration<D>::AccountName(hstring_ref value) const
 {
-    check_hresult(shim()->put_AccountName(get(value)));
+    check_hresult(static_cast<const IDeviceAccountConfiguration &>(static_cast<const D &>(*this))->put_AccountName(get(value)));
 }
 
 template <typename D> hstring impl_IDeviceAccountConfiguration<D>::DeviceAccountTypeId() const
 {
     hstring value;
-    check_hresult(shim()->get_DeviceAccountTypeId(put(value)));
+    check_hresult(static_cast<const IDeviceAccountConfiguration &>(static_cast<const D &>(*this))->get_DeviceAccountTypeId(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration<D>::DeviceAccountTypeId(hstring_ref value) const
 {
-    check_hresult(shim()->put_DeviceAccountTypeId(get(value)));
+    check_hresult(static_cast<const IDeviceAccountConfiguration &>(static_cast<const D &>(*this))->put_DeviceAccountTypeId(get(value)));
 }
 
 template <typename D> Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountServerType impl_IDeviceAccountConfiguration<D>::ServerType() const
 {
     Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountServerType value {};
-    check_hresult(shim()->get_ServerType(&value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration &>(static_cast<const D &>(*this))->get_ServerType(&value));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration<D>::ServerType(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountServerType value) const
 {
-    check_hresult(shim()->put_ServerType(value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration &>(static_cast<const D &>(*this))->put_ServerType(value));
 }
 
 template <typename D> hstring impl_IDeviceAccountConfiguration<D>::EmailAddress() const
 {
     hstring value;
-    check_hresult(shim()->get_EmailAddress(put(value)));
+    check_hresult(static_cast<const IDeviceAccountConfiguration &>(static_cast<const D &>(*this))->get_EmailAddress(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration<D>::EmailAddress(hstring_ref value) const
 {
-    check_hresult(shim()->put_EmailAddress(get(value)));
+    check_hresult(static_cast<const IDeviceAccountConfiguration &>(static_cast<const D &>(*this))->put_EmailAddress(get(value)));
 }
 
 template <typename D> hstring impl_IDeviceAccountConfiguration<D>::Domain() const
 {
     hstring value;
-    check_hresult(shim()->get_Domain(put(value)));
+    check_hresult(static_cast<const IDeviceAccountConfiguration &>(static_cast<const D &>(*this))->get_Domain(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration<D>::Domain(hstring_ref value) const
 {
-    check_hresult(shim()->put_Domain(get(value)));
+    check_hresult(static_cast<const IDeviceAccountConfiguration &>(static_cast<const D &>(*this))->put_Domain(get(value)));
 }
 
 template <typename D> bool impl_IDeviceAccountConfiguration<D>::EmailSyncEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_EmailSyncEnabled(&value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration &>(static_cast<const D &>(*this))->get_EmailSyncEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration<D>::EmailSyncEnabled(bool value) const
 {
-    check_hresult(shim()->put_EmailSyncEnabled(value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration &>(static_cast<const D &>(*this))->put_EmailSyncEnabled(value));
 }
 
 template <typename D> bool impl_IDeviceAccountConfiguration<D>::ContactsSyncEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_ContactsSyncEnabled(&value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration &>(static_cast<const D &>(*this))->get_ContactsSyncEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration<D>::ContactsSyncEnabled(bool value) const
 {
-    check_hresult(shim()->put_ContactsSyncEnabled(value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration &>(static_cast<const D &>(*this))->put_ContactsSyncEnabled(value));
 }
 
 template <typename D> bool impl_IDeviceAccountConfiguration<D>::CalendarSyncEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_CalendarSyncEnabled(&value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration &>(static_cast<const D &>(*this))->get_CalendarSyncEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration<D>::CalendarSyncEnabled(bool value) const
 {
-    check_hresult(shim()->put_CalendarSyncEnabled(value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration &>(static_cast<const D &>(*this))->put_CalendarSyncEnabled(value));
 }
 
 template <typename D> hstring impl_IDeviceAccountConfiguration<D>::IncomingServerAddress() const
 {
     hstring value;
-    check_hresult(shim()->get_IncomingServerAddress(put(value)));
+    check_hresult(static_cast<const IDeviceAccountConfiguration &>(static_cast<const D &>(*this))->get_IncomingServerAddress(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration<D>::IncomingServerAddress(hstring_ref value) const
 {
-    check_hresult(shim()->put_IncomingServerAddress(get(value)));
+    check_hresult(static_cast<const IDeviceAccountConfiguration &>(static_cast<const D &>(*this))->put_IncomingServerAddress(get(value)));
 }
 
 template <typename D> int32_t impl_IDeviceAccountConfiguration<D>::IncomingServerPort() const
 {
     int32_t value {};
-    check_hresult(shim()->get_IncomingServerPort(&value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration &>(static_cast<const D &>(*this))->get_IncomingServerPort(&value));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration<D>::IncomingServerPort(int32_t value) const
 {
-    check_hresult(shim()->put_IncomingServerPort(value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration &>(static_cast<const D &>(*this))->put_IncomingServerPort(value));
 }
 
 template <typename D> bool impl_IDeviceAccountConfiguration<D>::IncomingServerRequiresSsl() const
 {
     bool value {};
-    check_hresult(shim()->get_IncomingServerRequiresSsl(&value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration &>(static_cast<const D &>(*this))->get_IncomingServerRequiresSsl(&value));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration<D>::IncomingServerRequiresSsl(bool value) const
 {
-    check_hresult(shim()->put_IncomingServerRequiresSsl(value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration &>(static_cast<const D &>(*this))->put_IncomingServerRequiresSsl(value));
 }
 
 template <typename D> hstring impl_IDeviceAccountConfiguration<D>::IncomingServerUsername() const
 {
     hstring value;
-    check_hresult(shim()->get_IncomingServerUsername(put(value)));
+    check_hresult(static_cast<const IDeviceAccountConfiguration &>(static_cast<const D &>(*this))->get_IncomingServerUsername(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration<D>::IncomingServerUsername(hstring_ref value) const
 {
-    check_hresult(shim()->put_IncomingServerUsername(get(value)));
+    check_hresult(static_cast<const IDeviceAccountConfiguration &>(static_cast<const D &>(*this))->put_IncomingServerUsername(get(value)));
 }
 
 template <typename D> hstring impl_IDeviceAccountConfiguration<D>::OutgoingServerAddress() const
 {
     hstring value;
-    check_hresult(shim()->get_OutgoingServerAddress(put(value)));
+    check_hresult(static_cast<const IDeviceAccountConfiguration &>(static_cast<const D &>(*this))->get_OutgoingServerAddress(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration<D>::OutgoingServerAddress(hstring_ref value) const
 {
-    check_hresult(shim()->put_OutgoingServerAddress(get(value)));
+    check_hresult(static_cast<const IDeviceAccountConfiguration &>(static_cast<const D &>(*this))->put_OutgoingServerAddress(get(value)));
 }
 
 template <typename D> int32_t impl_IDeviceAccountConfiguration<D>::OutgoingServerPort() const
 {
     int32_t value {};
-    check_hresult(shim()->get_OutgoingServerPort(&value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration &>(static_cast<const D &>(*this))->get_OutgoingServerPort(&value));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration<D>::OutgoingServerPort(int32_t value) const
 {
-    check_hresult(shim()->put_OutgoingServerPort(value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration &>(static_cast<const D &>(*this))->put_OutgoingServerPort(value));
 }
 
 template <typename D> bool impl_IDeviceAccountConfiguration<D>::OutgoingServerRequiresSsl() const
 {
     bool value {};
-    check_hresult(shim()->get_OutgoingServerRequiresSsl(&value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration &>(static_cast<const D &>(*this))->get_OutgoingServerRequiresSsl(&value));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration<D>::OutgoingServerRequiresSsl(bool value) const
 {
-    check_hresult(shim()->put_OutgoingServerRequiresSsl(value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration &>(static_cast<const D &>(*this))->put_OutgoingServerRequiresSsl(value));
 }
 
 template <typename D> hstring impl_IDeviceAccountConfiguration<D>::OutgoingServerUsername() const
 {
     hstring value;
-    check_hresult(shim()->get_OutgoingServerUsername(put(value)));
+    check_hresult(static_cast<const IDeviceAccountConfiguration &>(static_cast<const D &>(*this))->get_OutgoingServerUsername(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration<D>::OutgoingServerUsername(hstring_ref value) const
 {
-    check_hresult(shim()->put_OutgoingServerUsername(get(value)));
+    check_hresult(static_cast<const IDeviceAccountConfiguration &>(static_cast<const D &>(*this))->put_OutgoingServerUsername(get(value)));
 }
 
 template <typename D> Windows::Security::Credentials::PasswordCredential impl_IDeviceAccountConfiguration2<D>::IncomingServerCredential() const
 {
     Windows::Security::Credentials::PasswordCredential value { nullptr };
-    check_hresult(shim()->get_IncomingServerCredential(put(value)));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->get_IncomingServerCredential(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration2<D>::IncomingServerCredential(const Windows::Security::Credentials::PasswordCredential & value) const
 {
-    check_hresult(shim()->put_IncomingServerCredential(get(value)));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->put_IncomingServerCredential(get(value)));
 }
 
 template <typename D> Windows::Security::Credentials::PasswordCredential impl_IDeviceAccountConfiguration2<D>::OutgoingServerCredential() const
 {
     Windows::Security::Credentials::PasswordCredential value { nullptr };
-    check_hresult(shim()->get_OutgoingServerCredential(put(value)));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->get_OutgoingServerCredential(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration2<D>::OutgoingServerCredential(const Windows::Security::Credentials::PasswordCredential & value) const
 {
-    check_hresult(shim()->put_OutgoingServerCredential(get(value)));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->put_OutgoingServerCredential(get(value)));
 }
 
 template <typename D> hstring impl_IDeviceAccountConfiguration2<D>::OAuthRefreshToken() const
 {
     hstring value;
-    check_hresult(shim()->get_OAuthRefreshToken(put(value)));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->get_OAuthRefreshToken(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration2<D>::OAuthRefreshToken(hstring_ref value) const
 {
-    check_hresult(shim()->put_OAuthRefreshToken(get(value)));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->put_OAuthRefreshToken(get(value)));
 }
 
 template <typename D> bool impl_IDeviceAccountConfiguration2<D>::IsExternallyManaged() const
 {
     bool value {};
-    check_hresult(shim()->get_IsExternallyManaged(&value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->get_IsExternallyManaged(&value));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration2<D>::IsExternallyManaged(bool value) const
 {
-    check_hresult(shim()->put_IsExternallyManaged(value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->put_IsExternallyManaged(value));
 }
 
 template <typename D> Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountIconId impl_IDeviceAccountConfiguration2<D>::AccountIconId() const
 {
     Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountIconId value {};
-    check_hresult(shim()->get_AccountIconId(&value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->get_AccountIconId(&value));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration2<D>::AccountIconId(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountIconId value) const
 {
-    check_hresult(shim()->put_AccountIconId(value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->put_AccountIconId(value));
 }
 
 template <typename D> Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountAuthenticationType impl_IDeviceAccountConfiguration2<D>::AuthenticationType() const
 {
     Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountAuthenticationType value {};
-    check_hresult(shim()->get_AuthenticationType(&value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->get_AuthenticationType(&value));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration2<D>::AuthenticationType(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountAuthenticationType value) const
 {
-    check_hresult(shim()->put_AuthenticationType(value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->put_AuthenticationType(value));
 }
 
 template <typename D> bool impl_IDeviceAccountConfiguration2<D>::IsSsoAuthenticationSupported() const
 {
     bool value {};
-    check_hresult(shim()->get_IsSsoAuthenticationSupported(&value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->get_IsSsoAuthenticationSupported(&value));
     return value;
 }
 
 template <typename D> hstring impl_IDeviceAccountConfiguration2<D>::SsoAccountId() const
 {
     hstring value;
-    check_hresult(shim()->get_SsoAccountId(put(value)));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->get_SsoAccountId(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration2<D>::SsoAccountId(hstring_ref value) const
 {
-    check_hresult(shim()->put_SsoAccountId(get(value)));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->put_SsoAccountId(get(value)));
 }
 
 template <typename D> bool impl_IDeviceAccountConfiguration2<D>::AlwaysDownloadFullMessage() const
 {
     bool value {};
-    check_hresult(shim()->get_AlwaysDownloadFullMessage(&value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->get_AlwaysDownloadFullMessage(&value));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration2<D>::AlwaysDownloadFullMessage(bool value) const
 {
-    check_hresult(shim()->put_AlwaysDownloadFullMessage(value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->put_AlwaysDownloadFullMessage(value));
 }
 
 template <typename D> bool impl_IDeviceAccountConfiguration2<D>::DoesPolicyAllowMailSync() const
 {
     bool value {};
-    check_hresult(shim()->get_DoesPolicyAllowMailSync(&value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->get_DoesPolicyAllowMailSync(&value));
     return value;
 }
 
 template <typename D> Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind impl_IDeviceAccountConfiguration2<D>::SyncScheduleKind() const
 {
     Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind value {};
-    check_hresult(shim()->get_SyncScheduleKind(&value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->get_SyncScheduleKind(&value));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration2<D>::SyncScheduleKind(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind value) const
 {
-    check_hresult(shim()->put_SyncScheduleKind(value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->put_SyncScheduleKind(value));
 }
 
 template <typename D> Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountMailAgeFilter impl_IDeviceAccountConfiguration2<D>::MailAgeFilter() const
 {
     Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountMailAgeFilter value {};
-    check_hresult(shim()->get_MailAgeFilter(&value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->get_MailAgeFilter(&value));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration2<D>::MailAgeFilter(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountMailAgeFilter value) const
 {
-    check_hresult(shim()->put_MailAgeFilter(value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->put_MailAgeFilter(value));
 }
 
 template <typename D> bool impl_IDeviceAccountConfiguration2<D>::IsClientAuthenticationCertificateRequired() const
 {
     bool value {};
-    check_hresult(shim()->get_IsClientAuthenticationCertificateRequired(&value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->get_IsClientAuthenticationCertificateRequired(&value));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration2<D>::IsClientAuthenticationCertificateRequired(bool value) const
 {
-    check_hresult(shim()->put_IsClientAuthenticationCertificateRequired(value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->put_IsClientAuthenticationCertificateRequired(value));
 }
 
 template <typename D> bool impl_IDeviceAccountConfiguration2<D>::AutoSelectAuthenticationCertificate() const
 {
     bool value {};
-    check_hresult(shim()->get_AutoSelectAuthenticationCertificate(&value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->get_AutoSelectAuthenticationCertificate(&value));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration2<D>::AutoSelectAuthenticationCertificate(bool value) const
 {
-    check_hresult(shim()->put_AutoSelectAuthenticationCertificate(value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->put_AutoSelectAuthenticationCertificate(value));
 }
 
 template <typename D> hstring impl_IDeviceAccountConfiguration2<D>::AuthenticationCertificateId() const
 {
     hstring value;
-    check_hresult(shim()->get_AuthenticationCertificateId(put(value)));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->get_AuthenticationCertificateId(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration2<D>::AuthenticationCertificateId(hstring_ref value) const
 {
-    check_hresult(shim()->put_AuthenticationCertificateId(get(value)));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->put_AuthenticationCertificateId(get(value)));
 }
 
 template <typename D> Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind impl_IDeviceAccountConfiguration2<D>::CardDavSyncScheduleKind() const
 {
     Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind value {};
-    check_hresult(shim()->get_CardDavSyncScheduleKind(&value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->get_CardDavSyncScheduleKind(&value));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration2<D>::CardDavSyncScheduleKind(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind value) const
 {
-    check_hresult(shim()->put_CardDavSyncScheduleKind(value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->put_CardDavSyncScheduleKind(value));
 }
 
 template <typename D> Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind impl_IDeviceAccountConfiguration2<D>::CalDavSyncScheduleKind() const
 {
     Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind value {};
-    check_hresult(shim()->get_CalDavSyncScheduleKind(&value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->get_CalDavSyncScheduleKind(&value));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration2<D>::CalDavSyncScheduleKind(Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountSyncScheduleKind value) const
 {
-    check_hresult(shim()->put_CalDavSyncScheduleKind(value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->put_CalDavSyncScheduleKind(value));
 }
 
 template <typename D> Windows::Foundation::Uri impl_IDeviceAccountConfiguration2<D>::CardDavServerUrl() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(shim()->get_CardDavServerUrl(put(value)));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->get_CardDavServerUrl(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration2<D>::CardDavServerUrl(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(shim()->put_CardDavServerUrl(get(value)));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->put_CardDavServerUrl(get(value)));
 }
 
 template <typename D> bool impl_IDeviceAccountConfiguration2<D>::CardDavRequiresSsl() const
 {
     bool value {};
-    check_hresult(shim()->get_CardDavRequiresSsl(&value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->get_CardDavRequiresSsl(&value));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration2<D>::CardDavRequiresSsl(bool value) const
 {
-    check_hresult(shim()->put_CardDavRequiresSsl(value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->put_CardDavRequiresSsl(value));
 }
 
 template <typename D> Windows::Foundation::Uri impl_IDeviceAccountConfiguration2<D>::CalDavServerUrl() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(shim()->get_CalDavServerUrl(put(value)));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->get_CalDavServerUrl(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration2<D>::CalDavServerUrl(const Windows::Foundation::Uri & value) const
 {
-    check_hresult(shim()->put_CalDavServerUrl(get(value)));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->put_CalDavServerUrl(get(value)));
 }
 
 template <typename D> bool impl_IDeviceAccountConfiguration2<D>::CalDavRequiresSsl() const
 {
     bool value {};
-    check_hresult(shim()->get_CalDavRequiresSsl(&value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->get_CalDavRequiresSsl(&value));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration2<D>::CalDavRequiresSsl(bool value) const
 {
-    check_hresult(shim()->put_CalDavRequiresSsl(value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->put_CalDavRequiresSsl(value));
 }
 
 template <typename D> bool impl_IDeviceAccountConfiguration2<D>::WasModifiedByUser() const
 {
     bool value {};
-    check_hresult(shim()->get_WasModifiedByUser(&value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->get_WasModifiedByUser(&value));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration2<D>::WasModifiedByUser(bool value) const
 {
-    check_hresult(shim()->put_WasModifiedByUser(value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->put_WasModifiedByUser(value));
 }
 
 template <typename D> bool impl_IDeviceAccountConfiguration2<D>::WasIncomingServerCertificateHashConfirmed() const
 {
     bool value {};
-    check_hresult(shim()->get_WasIncomingServerCertificateHashConfirmed(&value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->get_WasIncomingServerCertificateHashConfirmed(&value));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration2<D>::WasIncomingServerCertificateHashConfirmed(bool value) const
 {
-    check_hresult(shim()->put_WasIncomingServerCertificateHashConfirmed(value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->put_WasIncomingServerCertificateHashConfirmed(value));
 }
 
 template <typename D> hstring impl_IDeviceAccountConfiguration2<D>::IncomingServerCertificateHash() const
 {
     hstring value;
-    check_hresult(shim()->get_IncomingServerCertificateHash(put(value)));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->get_IncomingServerCertificateHash(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration2<D>::IncomingServerCertificateHash(hstring_ref value) const
 {
-    check_hresult(shim()->put_IncomingServerCertificateHash(get(value)));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->put_IncomingServerCertificateHash(get(value)));
 }
 
 template <typename D> bool impl_IDeviceAccountConfiguration2<D>::IsOutgoingServerAuthenticationRequired() const
 {
     bool value {};
-    check_hresult(shim()->get_IsOutgoingServerAuthenticationRequired(&value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->get_IsOutgoingServerAuthenticationRequired(&value));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration2<D>::IsOutgoingServerAuthenticationRequired(bool value) const
 {
-    check_hresult(shim()->put_IsOutgoingServerAuthenticationRequired(value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->put_IsOutgoingServerAuthenticationRequired(value));
 }
 
 template <typename D> bool impl_IDeviceAccountConfiguration2<D>::IsOutgoingServerAuthenticationEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_IsOutgoingServerAuthenticationEnabled(&value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->get_IsOutgoingServerAuthenticationEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration2<D>::IsOutgoingServerAuthenticationEnabled(bool value) const
 {
-    check_hresult(shim()->put_IsOutgoingServerAuthenticationEnabled(value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->put_IsOutgoingServerAuthenticationEnabled(value));
 }
 
 template <typename D> bool impl_IDeviceAccountConfiguration2<D>::WasOutgoingServerCertificateHashConfirmed() const
 {
     bool value {};
-    check_hresult(shim()->get_WasOutgoingServerCertificateHashConfirmed(&value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->get_WasOutgoingServerCertificateHashConfirmed(&value));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration2<D>::WasOutgoingServerCertificateHashConfirmed(bool value) const
 {
-    check_hresult(shim()->put_WasOutgoingServerCertificateHashConfirmed(value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->put_WasOutgoingServerCertificateHashConfirmed(value));
 }
 
 template <typename D> hstring impl_IDeviceAccountConfiguration2<D>::OutgoingServerCertificateHash() const
 {
     hstring value;
-    check_hresult(shim()->get_OutgoingServerCertificateHash(put(value)));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->get_OutgoingServerCertificateHash(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration2<D>::OutgoingServerCertificateHash(hstring_ref value) const
 {
-    check_hresult(shim()->put_OutgoingServerCertificateHash(get(value)));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->put_OutgoingServerCertificateHash(get(value)));
 }
 
 template <typename D> bool impl_IDeviceAccountConfiguration2<D>::IsSyncScheduleManagedBySystem() const
 {
     bool value {};
-    check_hresult(shim()->get_IsSyncScheduleManagedBySystem(&value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->get_IsSyncScheduleManagedBySystem(&value));
     return value;
 }
 
 template <typename D> void impl_IDeviceAccountConfiguration2<D>::IsSyncScheduleManagedBySystem(bool value) const
 {
-    check_hresult(shim()->put_IsSyncScheduleManagedBySystem(value));
+    check_hresult(static_cast<const IDeviceAccountConfiguration2 &>(static_cast<const D &>(*this))->put_IsSyncScheduleManagedBySystem(value));
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> impl_IUserDataAccountSystemAccessManagerStatics<D>::AddAndShowDeviceAccountsAsync(const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration> & accounts) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> result;
-    check_hresult(shim()->abi_AddAndShowDeviceAccountsAsync(get(accounts), put(result)));
+    check_hresult(static_cast<const IUserDataAccountSystemAccessManagerStatics &>(static_cast<const D &>(*this))->abi_AddAndShowDeviceAccountsAsync(get(accounts), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IUserDataAccountSystemAccessManagerStatics2<D>::SuppressLocalAccountWithAccountAsync(hstring_ref userDataAccountId) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(shim()->abi_SuppressLocalAccountWithAccountAsync(get(userDataAccountId), put(result)));
+    check_hresult(static_cast<const IUserDataAccountSystemAccessManagerStatics2 &>(static_cast<const D &>(*this))->abi_SuppressLocalAccountWithAccountAsync(get(userDataAccountId), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<hstring> impl_IUserDataAccountSystemAccessManagerStatics2<D>::CreateDeviceAccountAsync(const Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration & account) const
 {
     Windows::Foundation::IAsyncOperation<hstring> result;
-    check_hresult(shim()->abi_CreateDeviceAccountAsync(get(account), put(result)));
+    check_hresult(static_cast<const IUserDataAccountSystemAccessManagerStatics2 &>(static_cast<const D &>(*this))->abi_CreateDeviceAccountAsync(get(account), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IUserDataAccountSystemAccessManagerStatics2<D>::DeleteDeviceAccountAsync(hstring_ref accountId) const
 {
     Windows::Foundation::IAsyncAction result;
-    check_hresult(shim()->abi_DeleteDeviceAccountAsync(get(accountId), put(result)));
+    check_hresult(static_cast<const IUserDataAccountSystemAccessManagerStatics2 &>(static_cast<const D &>(*this))->abi_DeleteDeviceAccountAsync(get(accountId), put(result)));
     return result;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration> impl_IUserDataAccountSystemAccessManagerStatics2<D>::GetDeviceAccountConfigurationAsync(hstring_ref accountId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration> result;
-    check_hresult(shim()->abi_GetDeviceAccountConfigurationAsync(get(accountId), put(result)));
+    check_hresult(static_cast<const IUserDataAccountSystemAccessManagerStatics2 &>(static_cast<const D &>(*this))->abi_GetDeviceAccountConfigurationAsync(get(accountId), put(result)));
     return result;
 }
 

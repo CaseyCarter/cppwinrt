@@ -308,131 +308,131 @@ namespace Windows::Web::AtomPub {
 template <typename D> Windows::Web::Syndication::ISyndicationText impl_IResourceCollection<D>::Title() const
 {
     Windows::Web::Syndication::ISyndicationText value;
-    check_hresult(shim()->get_Title(put(value)));
+    check_hresult(static_cast<const IResourceCollection &>(static_cast<const D &>(*this))->get_Title(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Uri impl_IResourceCollection<D>::Uri() const
 {
     Windows::Foundation::Uri value { nullptr };
-    check_hresult(shim()->get_Uri(put(value)));
+    check_hresult(static_cast<const IResourceCollection &>(static_cast<const D &>(*this))->get_Uri(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Web::Syndication::SyndicationCategory> impl_IResourceCollection<D>::Categories() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Web::Syndication::SyndicationCategory> value;
-    check_hresult(shim()->get_Categories(put(value)));
+    check_hresult(static_cast<const IResourceCollection &>(static_cast<const D &>(*this))->get_Categories(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<hstring> impl_IResourceCollection<D>::Accepts() const
 {
     Windows::Foundation::Collections::IVectorView<hstring> value;
-    check_hresult(shim()->get_Accepts(put(value)));
+    check_hresult(static_cast<const IResourceCollection &>(static_cast<const D &>(*this))->get_Accepts(put(value)));
     return value;
 }
 
 template <typename D> Windows::Web::Syndication::ISyndicationText impl_IWorkspace<D>::Title() const
 {
     Windows::Web::Syndication::ISyndicationText value;
-    check_hresult(shim()->get_Title(put(value)));
+    check_hresult(static_cast<const IWorkspace &>(static_cast<const D &>(*this))->get_Title(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Web::AtomPub::ResourceCollection> impl_IWorkspace<D>::Collections() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Web::AtomPub::ResourceCollection> value;
-    check_hresult(shim()->get_Collections(put(value)));
+    check_hresult(static_cast<const IWorkspace &>(static_cast<const D &>(*this))->get_Collections(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Web::AtomPub::Workspace> impl_IServiceDocument<D>::Workspaces() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Web::AtomPub::Workspace> value;
-    check_hresult(shim()->get_Workspaces(put(value)));
+    check_hresult(static_cast<const IServiceDocument &>(static_cast<const D &>(*this))->get_Workspaces(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::AtomPub::ServiceDocument, Windows::Web::Syndication::RetrievalProgress> impl_IAtomPubClient<D>::RetrieveServiceDocumentAsync(const Windows::Foundation::Uri & uri) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::AtomPub::ServiceDocument, Windows::Web::Syndication::RetrievalProgress> operation;
-    check_hresult(shim()->abi_RetrieveServiceDocumentAsync(get(uri), put(operation)));
+    check_hresult(static_cast<const IAtomPubClient &>(static_cast<const D &>(*this))->abi_RetrieveServiceDocumentAsync(get(uri), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Storage::Streams::IInputStream, Windows::Web::Syndication::RetrievalProgress> impl_IAtomPubClient<D>::RetrieveMediaResourceAsync(const Windows::Foundation::Uri & uri) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Storage::Streams::IInputStream, Windows::Web::Syndication::RetrievalProgress> operation;
-    check_hresult(shim()->abi_RetrieveMediaResourceAsync(get(uri), put(operation)));
+    check_hresult(static_cast<const IAtomPubClient &>(static_cast<const D &>(*this))->abi_RetrieveMediaResourceAsync(get(uri), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Syndication::SyndicationItem, Windows::Web::Syndication::RetrievalProgress> impl_IAtomPubClient<D>::RetrieveResourceAsync(const Windows::Foundation::Uri & uri) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Syndication::SyndicationItem, Windows::Web::Syndication::RetrievalProgress> operation;
-    check_hresult(shim()->abi_RetrieveResourceAsync(get(uri), put(operation)));
+    check_hresult(static_cast<const IAtomPubClient &>(static_cast<const D &>(*this))->abi_RetrieveResourceAsync(get(uri), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Syndication::SyndicationItem, Windows::Web::Syndication::TransferProgress> impl_IAtomPubClient<D>::CreateResourceAsync(const Windows::Foundation::Uri & uri, hstring_ref description, const Windows::Web::Syndication::SyndicationItem & item) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Syndication::SyndicationItem, Windows::Web::Syndication::TransferProgress> operation;
-    check_hresult(shim()->abi_CreateResourceAsync(get(uri), get(description), get(item), put(operation)));
+    check_hresult(static_cast<const IAtomPubClient &>(static_cast<const D &>(*this))->abi_CreateResourceAsync(get(uri), get(description), get(item), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Syndication::SyndicationItem, Windows::Web::Syndication::TransferProgress> impl_IAtomPubClient<D>::CreateMediaResourceAsync(const Windows::Foundation::Uri & uri, hstring_ref mediaType, hstring_ref description, const Windows::Storage::Streams::IInputStream & mediaStream) const
 {
     Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Syndication::SyndicationItem, Windows::Web::Syndication::TransferProgress> operation;
-    check_hresult(shim()->abi_CreateMediaResourceAsync(get(uri), get(mediaType), get(description), get(mediaStream), put(operation)));
+    check_hresult(static_cast<const IAtomPubClient &>(static_cast<const D &>(*this))->abi_CreateMediaResourceAsync(get(uri), get(mediaType), get(description), get(mediaStream), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncActionWithProgress<Windows::Web::Syndication::TransferProgress> impl_IAtomPubClient<D>::UpdateMediaResourceAsync(const Windows::Foundation::Uri & uri, hstring_ref mediaType, const Windows::Storage::Streams::IInputStream & mediaStream) const
 {
     Windows::Foundation::IAsyncActionWithProgress<Windows::Web::Syndication::TransferProgress> operation;
-    check_hresult(shim()->abi_UpdateMediaResourceAsync(get(uri), get(mediaType), get(mediaStream), put(operation)));
+    check_hresult(static_cast<const IAtomPubClient &>(static_cast<const D &>(*this))->abi_UpdateMediaResourceAsync(get(uri), get(mediaType), get(mediaStream), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncActionWithProgress<Windows::Web::Syndication::TransferProgress> impl_IAtomPubClient<D>::UpdateResourceAsync(const Windows::Foundation::Uri & uri, const Windows::Web::Syndication::SyndicationItem & item) const
 {
     Windows::Foundation::IAsyncActionWithProgress<Windows::Web::Syndication::TransferProgress> operation;
-    check_hresult(shim()->abi_UpdateResourceAsync(get(uri), get(item), put(operation)));
+    check_hresult(static_cast<const IAtomPubClient &>(static_cast<const D &>(*this))->abi_UpdateResourceAsync(get(uri), get(item), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncActionWithProgress<Windows::Web::Syndication::TransferProgress> impl_IAtomPubClient<D>::UpdateResourceItemAsync(const Windows::Web::Syndication::SyndicationItem & item) const
 {
     Windows::Foundation::IAsyncActionWithProgress<Windows::Web::Syndication::TransferProgress> operation;
-    check_hresult(shim()->abi_UpdateResourceItemAsync(get(item), put(operation)));
+    check_hresult(static_cast<const IAtomPubClient &>(static_cast<const D &>(*this))->abi_UpdateResourceItemAsync(get(item), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncActionWithProgress<Windows::Web::Syndication::TransferProgress> impl_IAtomPubClient<D>::DeleteResourceAsync(const Windows::Foundation::Uri & uri) const
 {
     Windows::Foundation::IAsyncActionWithProgress<Windows::Web::Syndication::TransferProgress> operation;
-    check_hresult(shim()->abi_DeleteResourceAsync(get(uri), put(operation)));
+    check_hresult(static_cast<const IAtomPubClient &>(static_cast<const D &>(*this))->abi_DeleteResourceAsync(get(uri), put(operation)));
     return operation;
 }
 
 template <typename D> Windows::Foundation::IAsyncActionWithProgress<Windows::Web::Syndication::TransferProgress> impl_IAtomPubClient<D>::DeleteResourceItemAsync(const Windows::Web::Syndication::SyndicationItem & item) const
 {
     Windows::Foundation::IAsyncActionWithProgress<Windows::Web::Syndication::TransferProgress> operation;
-    check_hresult(shim()->abi_DeleteResourceItemAsync(get(item), put(operation)));
+    check_hresult(static_cast<const IAtomPubClient &>(static_cast<const D &>(*this))->abi_DeleteResourceItemAsync(get(item), put(operation)));
     return operation;
 }
 
 template <typename D> void impl_IAtomPubClient<D>::CancelAsyncOperations() const
 {
-    check_hresult(shim()->abi_CancelAsyncOperations());
+    check_hresult(static_cast<const IAtomPubClient &>(static_cast<const D &>(*this))->abi_CancelAsyncOperations());
 }
 
 template <typename D> Windows::Web::AtomPub::AtomPubClient impl_IAtomPubClientFactory<D>::CreateAtomPubClientWithCredentials(const Windows::Security::Credentials::PasswordCredential & serverCredential) const
 {
     Windows::Web::AtomPub::AtomPubClient atomPubClient { nullptr };
-    check_hresult(shim()->abi_CreateAtomPubClientWithCredentials(get(serverCredential), put(atomPubClient)));
+    check_hresult(static_cast<const IAtomPubClientFactory &>(static_cast<const D &>(*this))->abi_CreateAtomPubClientWithCredentials(get(serverCredential), put(atomPubClient)));
     return atomPubClient;
 }
 

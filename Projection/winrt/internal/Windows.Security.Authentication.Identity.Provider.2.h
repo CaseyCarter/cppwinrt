@@ -105,12 +105,8 @@ template <> struct __declspec(uuid("06752d25-d43e-5d2e-a305-4e1576846fee")) __de
 namespace Windows::Security::Authentication::Identity::Provider {
 
 template <typename D>
-class WINRT_EBO impl_ISecondaryAuthenticationFactorAuthentication
+struct WINRT_EBO impl_ISecondaryAuthenticationFactorAuthentication
 {
-    auto shim() const { return impl::shim<D, ISecondaryAuthenticationFactorAuthentication>(this); }
-
-public:
-
     Windows::Storage::Streams::IBuffer ServiceAuthenticationHmac() const;
     Windows::Storage::Streams::IBuffer SessionNonce() const;
     Windows::Storage::Streams::IBuffer DeviceNonce() const;
@@ -120,45 +116,29 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISecondaryAuthenticationFactorAuthenticationResult
+struct WINRT_EBO impl_ISecondaryAuthenticationFactorAuthenticationResult
 {
-    auto shim() const { return impl::shim<D, ISecondaryAuthenticationFactorAuthenticationResult>(this); }
-
-public:
-
     Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorAuthenticationStatus Status() const;
     Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorAuthentication Authentication() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISecondaryAuthenticationFactorAuthenticationStageChangedEventArgs
+struct WINRT_EBO impl_ISecondaryAuthenticationFactorAuthenticationStageChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, ISecondaryAuthenticationFactorAuthenticationStageChangedEventArgs>(this); }
-
-public:
-
     Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorAuthenticationStageInfo StageInfo() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISecondaryAuthenticationFactorAuthenticationStageInfo
+struct WINRT_EBO impl_ISecondaryAuthenticationFactorAuthenticationStageInfo
 {
-    auto shim() const { return impl::shim<D, ISecondaryAuthenticationFactorAuthenticationStageInfo>(this); }
-
-public:
-
     Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorAuthenticationStage Stage() const;
     Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorAuthenticationScenario Scenario() const;
     hstring DeviceId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISecondaryAuthenticationFactorAuthenticationStatics
+struct WINRT_EBO impl_ISecondaryAuthenticationFactorAuthenticationStatics
 {
-    auto shim() const { return impl::shim<D, ISecondaryAuthenticationFactorAuthenticationStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction ShowNotificationMessageAsync(hstring_ref deviceName, Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorAuthenticationMessage message) const;
     Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorAuthenticationResult> StartAuthenticationAsync(hstring_ref deviceId, const Windows::Storage::Streams::IBuffer & serviceAuthenticationNonce) const;
     event_token AuthenticationStageChanged(const Windows::Foundation::EventHandler<Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorAuthenticationStageChangedEventArgs> & handler) const;
@@ -169,12 +149,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISecondaryAuthenticationFactorInfo
+struct WINRT_EBO impl_ISecondaryAuthenticationFactorInfo
 {
-    auto shim() const { return impl::shim<D, ISecondaryAuthenticationFactorInfo>(this); }
-
-public:
-
     hstring DeviceId() const;
     hstring DeviceFriendlyName() const;
     hstring DeviceModelNumber() const;
@@ -182,34 +158,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISecondaryAuthenticationFactorRegistration
+struct WINRT_EBO impl_ISecondaryAuthenticationFactorRegistration
 {
-    auto shim() const { return impl::shim<D, ISecondaryAuthenticationFactorRegistration>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction FinishRegisteringDeviceAsync(const Windows::Storage::Streams::IBuffer & deviceConfigurationData) const;
     Windows::Foundation::IAsyncAction AbortRegisteringDeviceAsync(hstring_ref errorLogMessage) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISecondaryAuthenticationFactorRegistrationResult
+struct WINRT_EBO impl_ISecondaryAuthenticationFactorRegistrationResult
 {
-    auto shim() const { return impl::shim<D, ISecondaryAuthenticationFactorRegistrationResult>(this); }
-
-public:
-
     Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorRegistrationStatus Status() const;
     Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorRegistration Registration() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISecondaryAuthenticationFactorRegistrationStatics
+struct WINRT_EBO impl_ISecondaryAuthenticationFactorRegistrationStatics
 {
-    auto shim() const { return impl::shim<D, ISecondaryAuthenticationFactorRegistrationStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorRegistrationResult> RequestStartRegisteringDeviceAsync(hstring_ref deviceId, Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDeviceCapabilities capabilities, hstring_ref deviceFriendlyName, hstring_ref deviceModelNumber, const Windows::Storage::Streams::IBuffer & deviceKey, const Windows::Storage::Streams::IBuffer & mutualAuthenticationKey) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorInfo>> FindAllRegisteredDeviceInfoAsync(Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorDeviceFindScope queryType) const;
     Windows::Foundation::IAsyncAction UnregisterDeviceAsync(hstring_ref deviceId) const;

@@ -181,24 +181,24 @@ template <> struct traits<Windows::Media::Effects::VideoTransformEffectDefinitio
 
 namespace Windows::Media::Effects {
 
-template <typename T> class impl_IAudioCaptureEffectsManager;
-template <typename T> class impl_IAudioEffect;
-template <typename T> class impl_IAudioEffectDefinition;
-template <typename T> class impl_IAudioEffectDefinitionFactory;
-template <typename T> class impl_IAudioEffectsManagerStatics;
-template <typename T> class impl_IAudioRenderEffectsManager;
-template <typename T> class impl_IAudioRenderEffectsManager2;
-template <typename T> class impl_IBasicAudioEffect;
-template <typename T> class impl_IBasicVideoEffect;
-template <typename T> class impl_ICompositeVideoFrameContext;
-template <typename T> class impl_IProcessAudioFrameContext;
-template <typename T> class impl_IProcessVideoFrameContext;
-template <typename T> class impl_IVideoCompositor;
-template <typename T> class impl_IVideoCompositorDefinition;
-template <typename T> class impl_IVideoCompositorDefinitionFactory;
-template <typename T> class impl_IVideoEffectDefinition;
-template <typename T> class impl_IVideoEffectDefinitionFactory;
-template <typename T> class impl_IVideoTransformEffectDefinition;
+template <typename T> struct impl_IAudioCaptureEffectsManager;
+template <typename T> struct impl_IAudioEffect;
+template <typename T> struct impl_IAudioEffectDefinition;
+template <typename T> struct impl_IAudioEffectDefinitionFactory;
+template <typename T> struct impl_IAudioEffectsManagerStatics;
+template <typename T> struct impl_IAudioRenderEffectsManager;
+template <typename T> struct impl_IAudioRenderEffectsManager2;
+template <typename T> struct impl_IBasicAudioEffect;
+template <typename T> struct impl_IBasicVideoEffect;
+template <typename T> struct impl_ICompositeVideoFrameContext;
+template <typename T> struct impl_IProcessAudioFrameContext;
+template <typename T> struct impl_IProcessVideoFrameContext;
+template <typename T> struct impl_IVideoCompositor;
+template <typename T> struct impl_IVideoCompositorDefinition;
+template <typename T> struct impl_IVideoCompositorDefinitionFactory;
+template <typename T> struct impl_IVideoEffectDefinition;
+template <typename T> struct impl_IVideoEffectDefinitionFactory;
+template <typename T> struct impl_IVideoTransformEffectDefinition;
 
 }
 

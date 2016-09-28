@@ -99,11 +99,11 @@ template <> struct traits<Windows::Storage::AccessCache::StorageItemMostRecently
 
 namespace Windows::Storage::AccessCache {
 
-template <typename T> class impl_IItemRemovedEventArgs;
-template <typename T> class impl_IStorageApplicationPermissionsStatics;
-template <typename T> class impl_IStorageItemAccessList;
-template <typename T> class impl_IStorageItemMostRecentlyUsedList;
-template <typename T> class impl_IStorageItemMostRecentlyUsedList2;
+template <typename T> struct impl_IItemRemovedEventArgs;
+template <typename T> struct impl_IStorageApplicationPermissionsStatics;
+template <typename T> struct impl_IStorageItemAccessList;
+template <typename T> struct impl_IStorageItemMostRecentlyUsedList;
+template <typename T> struct impl_IStorageItemMostRecentlyUsedList2;
 
 }
 

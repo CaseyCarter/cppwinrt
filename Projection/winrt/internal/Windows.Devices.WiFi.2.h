@@ -115,12 +115,8 @@ template <> struct __declspec(uuid("92902a07-2f18-56e9-87fb-24fe19f70688")) __de
 namespace Windows::Devices::WiFi {
 
 template <typename D>
-class WINRT_EBO impl_IWiFiAdapter
+struct WINRT_EBO impl_IWiFiAdapter
 {
-    auto shim() const { return impl::shim<D, IWiFiAdapter>(this); }
-
-public:
-
     Windows::Networking::Connectivity::NetworkAdapter NetworkAdapter() const;
     Windows::Foundation::IAsyncAction ScanAsync() const;
     Windows::Devices::WiFi::WiFiNetworkReport NetworkReport() const;
@@ -135,12 +131,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IWiFiAdapterStatics
+struct WINRT_EBO impl_IWiFiAdapterStatics
 {
-    auto shim() const { return impl::shim<D, IWiFiAdapterStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::WiFi::WiFiAdapter>> FindAllAdaptersAsync() const;
     hstring GetDeviceSelector() const;
     Windows::Foundation::IAsyncOperation<Windows::Devices::WiFi::WiFiAdapter> FromIdAsync(hstring_ref deviceId) const;
@@ -148,12 +140,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IWiFiAvailableNetwork
+struct WINRT_EBO impl_IWiFiAvailableNetwork
 {
-    auto shim() const { return impl::shim<D, IWiFiAvailableNetwork>(this); }
-
-public:
-
     Windows::Foundation::TimeSpan Uptime() const;
     hstring Ssid() const;
     hstring Bssid() const;
@@ -168,22 +156,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IWiFiConnectionResult
+struct WINRT_EBO impl_IWiFiConnectionResult
 {
-    auto shim() const { return impl::shim<D, IWiFiConnectionResult>(this); }
-
-public:
-
     Windows::Devices::WiFi::WiFiConnectionStatus ConnectionStatus() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IWiFiNetworkReport
+struct WINRT_EBO impl_IWiFiNetworkReport
 {
-    auto shim() const { return impl::shim<D, IWiFiNetworkReport>(this); }
-
-public:
-
     Windows::Foundation::DateTime Timestamp() const;
     Windows::Foundation::Collections::IVectorView<Windows::Devices::WiFi::WiFiAvailableNetwork> AvailableNetworks() const;
 };

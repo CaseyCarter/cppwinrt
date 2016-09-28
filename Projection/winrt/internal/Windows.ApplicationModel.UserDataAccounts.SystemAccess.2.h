@@ -90,12 +90,8 @@ template <> struct __declspec(uuid("7c7899be-5f2e-5bf3-ade5-ad98b772c7cd")) __de
 namespace Windows::ApplicationModel::UserDataAccounts::SystemAccess {
 
 template <typename D>
-class WINRT_EBO impl_IDeviceAccountConfiguration
+struct WINRT_EBO impl_IDeviceAccountConfiguration
 {
-    auto shim() const { return impl::shim<D, IDeviceAccountConfiguration>(this); }
-
-public:
-
     hstring AccountName() const;
     void AccountName(hstring_ref value) const;
     hstring DeviceAccountTypeId() const;
@@ -131,12 +127,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IDeviceAccountConfiguration2
+struct WINRT_EBO impl_IDeviceAccountConfiguration2
 {
-    auto shim() const { return impl::shim<D, IDeviceAccountConfiguration2>(this); }
-
-public:
-
     Windows::Security::Credentials::PasswordCredential IncomingServerCredential() const;
     void IncomingServerCredential(const Windows::Security::Credentials::PasswordCredential & value) const;
     Windows::Security::Credentials::PasswordCredential OutgoingServerCredential() const;
@@ -196,22 +188,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUserDataAccountSystemAccessManagerStatics
+struct WINRT_EBO impl_IUserDataAccountSystemAccessManagerStatics
 {
-    auto shim() const { return impl::shim<D, IUserDataAccountSystemAccessManagerStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> AddAndShowDeviceAccountsAsync(const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration> & accounts) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUserDataAccountSystemAccessManagerStatics2
+struct WINRT_EBO impl_IUserDataAccountSystemAccessManagerStatics2
 {
-    auto shim() const { return impl::shim<D, IUserDataAccountSystemAccessManagerStatics2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncAction SuppressLocalAccountWithAccountAsync(hstring_ref userDataAccountId) const;
     Windows::Foundation::IAsyncOperation<hstring> CreateDeviceAccountAsync(const Windows::ApplicationModel::UserDataAccounts::SystemAccess::DeviceAccountConfiguration & account) const;
     Windows::Foundation::IAsyncAction DeleteDeviceAccountAsync(hstring_ref accountId) const;

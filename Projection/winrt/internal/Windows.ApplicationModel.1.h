@@ -247,30 +247,30 @@ template <> struct traits<Windows::ApplicationModel::SuspendingOperation> { usin
 
 namespace Windows::ApplicationModel {
 
-template <typename T> class impl_IAppDisplayInfo;
-template <typename T> class impl_IAppInfo;
-template <typename T> class impl_IDesignModeStatics;
-template <typename T> class impl_IEnteredBackgroundEventArgs;
-template <typename T> class impl_ILeavingBackgroundEventArgs;
-template <typename T> class impl_IPackage;
-template <typename T> class impl_IPackage2;
-template <typename T> class impl_IPackage3;
-template <typename T> class impl_IPackage4;
-template <typename T> class impl_IPackageCatalog;
-template <typename T> class impl_IPackageCatalogStatics;
-template <typename T> class impl_IPackageId;
-template <typename T> class impl_IPackageIdWithMetadata;
-template <typename T> class impl_IPackageInstallingEventArgs;
-template <typename T> class impl_IPackageStagingEventArgs;
-template <typename T> class impl_IPackageStatics;
-template <typename T> class impl_IPackageStatus;
-template <typename T> class impl_IPackageStatusChangedEventArgs;
-template <typename T> class impl_IPackageUninstallingEventArgs;
-template <typename T> class impl_IPackageUpdatingEventArgs;
-template <typename T> class impl_IPackageWithMetadata;
-template <typename T> class impl_ISuspendingDeferral;
-template <typename T> class impl_ISuspendingEventArgs;
-template <typename T> class impl_ISuspendingOperation;
+template <typename T> struct impl_IAppDisplayInfo;
+template <typename T> struct impl_IAppInfo;
+template <typename T> struct impl_IDesignModeStatics;
+template <typename T> struct impl_IEnteredBackgroundEventArgs;
+template <typename T> struct impl_ILeavingBackgroundEventArgs;
+template <typename T> struct impl_IPackage;
+template <typename T> struct impl_IPackage2;
+template <typename T> struct impl_IPackage3;
+template <typename T> struct impl_IPackage4;
+template <typename T> struct impl_IPackageCatalog;
+template <typename T> struct impl_IPackageCatalogStatics;
+template <typename T> struct impl_IPackageId;
+template <typename T> struct impl_IPackageIdWithMetadata;
+template <typename T> struct impl_IPackageInstallingEventArgs;
+template <typename T> struct impl_IPackageStagingEventArgs;
+template <typename T> struct impl_IPackageStatics;
+template <typename T> struct impl_IPackageStatus;
+template <typename T> struct impl_IPackageStatusChangedEventArgs;
+template <typename T> struct impl_IPackageUninstallingEventArgs;
+template <typename T> struct impl_IPackageUpdatingEventArgs;
+template <typename T> struct impl_IPackageWithMetadata;
+template <typename T> struct impl_ISuspendingDeferral;
+template <typename T> struct impl_ISuspendingEventArgs;
+template <typename T> struct impl_ISuspendingOperation;
 
 }
 

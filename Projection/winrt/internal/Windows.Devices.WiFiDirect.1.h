@@ -149,22 +149,22 @@ template <> struct traits<Windows::Devices::WiFiDirect::WiFiDirectLegacySettings
 
 namespace Windows::Devices::WiFiDirect {
 
-template <typename T> class impl_IWiFiDirectAdvertisement;
-template <typename T> class impl_IWiFiDirectAdvertisement2;
-template <typename T> class impl_IWiFiDirectAdvertisementPublisher;
-template <typename T> class impl_IWiFiDirectAdvertisementPublisherStatusChangedEventArgs;
-template <typename T> class impl_IWiFiDirectConnectionListener;
-template <typename T> class impl_IWiFiDirectConnectionParameters;
-template <typename T> class impl_IWiFiDirectConnectionParameters2;
-template <typename T> class impl_IWiFiDirectConnectionParametersStatics;
-template <typename T> class impl_IWiFiDirectConnectionRequest;
-template <typename T> class impl_IWiFiDirectConnectionRequestedEventArgs;
-template <typename T> class impl_IWiFiDirectDevice;
-template <typename T> class impl_IWiFiDirectDeviceStatics;
-template <typename T> class impl_IWiFiDirectDeviceStatics2;
-template <typename T> class impl_IWiFiDirectInformationElement;
-template <typename T> class impl_IWiFiDirectInformationElementStatics;
-template <typename T> class impl_IWiFiDirectLegacySettings;
+template <typename T> struct impl_IWiFiDirectAdvertisement;
+template <typename T> struct impl_IWiFiDirectAdvertisement2;
+template <typename T> struct impl_IWiFiDirectAdvertisementPublisher;
+template <typename T> struct impl_IWiFiDirectAdvertisementPublisherStatusChangedEventArgs;
+template <typename T> struct impl_IWiFiDirectConnectionListener;
+template <typename T> struct impl_IWiFiDirectConnectionParameters;
+template <typename T> struct impl_IWiFiDirectConnectionParameters2;
+template <typename T> struct impl_IWiFiDirectConnectionParametersStatics;
+template <typename T> struct impl_IWiFiDirectConnectionRequest;
+template <typename T> struct impl_IWiFiDirectConnectionRequestedEventArgs;
+template <typename T> struct impl_IWiFiDirectDevice;
+template <typename T> struct impl_IWiFiDirectDeviceStatics;
+template <typename T> struct impl_IWiFiDirectDeviceStatics2;
+template <typename T> struct impl_IWiFiDirectInformationElement;
+template <typename T> struct impl_IWiFiDirectInformationElementStatics;
+template <typename T> struct impl_IWiFiDirectLegacySettings;
 
 }
 

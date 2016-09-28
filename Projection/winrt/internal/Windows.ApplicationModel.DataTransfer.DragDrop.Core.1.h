@@ -100,15 +100,15 @@ template <> struct traits<Windows::ApplicationModel::DataTransfer::DragDrop::Cor
 
 namespace Windows::ApplicationModel::DataTransfer::DragDrop::Core {
 
-template <typename T> class impl_ICoreDragDropManager;
-template <typename T> class impl_ICoreDragDropManagerStatics;
-template <typename T> class impl_ICoreDragInfo;
-template <typename T> class impl_ICoreDragInfo2;
-template <typename T> class impl_ICoreDragOperation;
-template <typename T> class impl_ICoreDragOperation2;
-template <typename T> class impl_ICoreDragUIOverride;
-template <typename T> class impl_ICoreDropOperationTarget;
-template <typename T> class impl_ICoreDropOperationTargetRequestedEventArgs;
+template <typename T> struct impl_ICoreDragDropManager;
+template <typename T> struct impl_ICoreDragDropManagerStatics;
+template <typename T> struct impl_ICoreDragInfo;
+template <typename T> struct impl_ICoreDragInfo2;
+template <typename T> struct impl_ICoreDragOperation;
+template <typename T> struct impl_ICoreDragOperation2;
+template <typename T> struct impl_ICoreDragUIOverride;
+template <typename T> struct impl_ICoreDropOperationTarget;
+template <typename T> struct impl_ICoreDropOperationTargetRequestedEventArgs;
 
 }
 

@@ -56,10 +56,10 @@ template <> struct traits<Windows::Devices::Pwm::PwmPin> { using default_interfa
 
 namespace Windows::Devices::Pwm {
 
-template <typename T> class impl_IPwmController;
-template <typename T> class impl_IPwmControllerStatics;
-template <typename T> class impl_IPwmControllerStatics2;
-template <typename T> class impl_IPwmPin;
+template <typename T> struct impl_IPwmController;
+template <typename T> struct impl_IPwmControllerStatics;
+template <typename T> struct impl_IPwmControllerStatics2;
+template <typename T> struct impl_IPwmPin;
 
 }
 

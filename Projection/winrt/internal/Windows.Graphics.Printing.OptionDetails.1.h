@@ -112,17 +112,17 @@ template <> struct traits<Windows::Graphics::Printing::OptionDetails::PrintTaskO
 
 namespace Windows::Graphics::Printing::OptionDetails {
 
-template <typename T> class impl_IPrintCustomItemDetails;
-template <typename T> class impl_IPrintCustomItemListOptionDetails;
-template <typename T> class impl_IPrintCustomOptionDetails;
-template <typename T> class impl_IPrintCustomTextOptionDetails;
-template <typename T> class impl_IPrintItemListOptionDetails;
-template <typename T> class impl_IPrintNumberOptionDetails;
-template <typename T> class impl_IPrintOptionDetails;
-template <typename T> class impl_IPrintTaskOptionChangedEventArgs;
-template <typename T> class impl_IPrintTaskOptionDetails;
-template <typename T> class impl_IPrintTaskOptionDetailsStatic;
-template <typename T> class impl_IPrintTextOptionDetails;
+template <typename T> struct impl_IPrintCustomItemDetails;
+template <typename T> struct impl_IPrintCustomItemListOptionDetails;
+template <typename T> struct impl_IPrintCustomOptionDetails;
+template <typename T> struct impl_IPrintCustomTextOptionDetails;
+template <typename T> struct impl_IPrintItemListOptionDetails;
+template <typename T> struct impl_IPrintNumberOptionDetails;
+template <typename T> struct impl_IPrintOptionDetails;
+template <typename T> struct impl_IPrintTaskOptionChangedEventArgs;
+template <typename T> struct impl_IPrintTaskOptionDetails;
+template <typename T> struct impl_IPrintTaskOptionDetailsStatic;
+template <typename T> struct impl_IPrintTextOptionDetails;
 
 }
 

@@ -74,14 +74,14 @@ template <> struct traits<Windows::System::UserProfile::UserProfilePersonalizati
 
 namespace Windows::System::UserProfile {
 
-template <typename T> class impl_IAdvertisingManagerForUser;
-template <typename T> class impl_IAdvertisingManagerStatics;
-template <typename T> class impl_IAdvertisingManagerStatics2;
-template <typename T> class impl_IFirstSignInSettings;
-template <typename T> class impl_IFirstSignInSettingsStatics;
-template <typename T> class impl_IGlobalizationPreferencesStatics;
-template <typename T> class impl_IUserProfilePersonalizationSettings;
-template <typename T> class impl_IUserProfilePersonalizationSettingsStatics;
+template <typename T> struct impl_IAdvertisingManagerForUser;
+template <typename T> struct impl_IAdvertisingManagerStatics;
+template <typename T> struct impl_IAdvertisingManagerStatics2;
+template <typename T> struct impl_IFirstSignInSettings;
+template <typename T> struct impl_IFirstSignInSettingsStatics;
+template <typename T> struct impl_IGlobalizationPreferencesStatics;
+template <typename T> struct impl_IUserProfilePersonalizationSettings;
+template <typename T> struct impl_IUserProfilePersonalizationSettingsStatics;
 
 }
 

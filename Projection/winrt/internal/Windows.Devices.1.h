@@ -50,10 +50,10 @@ template <> struct traits<Windows::Devices::LowLevelDevicesController> { using d
 
 namespace Windows::Devices {
 
-template <typename T> class impl_ILowLevelDevicesAggregateProvider;
-template <typename T> class impl_ILowLevelDevicesAggregateProviderFactory;
-template <typename T> class impl_ILowLevelDevicesController;
-template <typename T> class impl_ILowLevelDevicesControllerStatics;
+template <typename T> struct impl_ILowLevelDevicesAggregateProvider;
+template <typename T> struct impl_ILowLevelDevicesAggregateProviderFactory;
+template <typename T> struct impl_ILowLevelDevicesController;
+template <typename T> struct impl_ILowLevelDevicesControllerStatics;
 
 }
 

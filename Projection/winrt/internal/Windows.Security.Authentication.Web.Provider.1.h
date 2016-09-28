@@ -179,27 +179,27 @@ template <> struct traits<Windows::Security::Authentication::Web::Provider::WebP
 
 namespace Windows::Security::Authentication::Web::Provider {
 
-template <typename T> class impl_IWebAccountClientView;
-template <typename T> class impl_IWebAccountClientViewFactory;
-template <typename T> class impl_IWebAccountManagerStatics;
-template <typename T> class impl_IWebAccountManagerStatics2;
-template <typename T> class impl_IWebAccountMapManagerStatics;
-template <typename T> class impl_IWebAccountProviderAddAccountOperation;
-template <typename T> class impl_IWebAccountProviderBaseReportOperation;
-template <typename T> class impl_IWebAccountProviderDeleteAccountOperation;
-template <typename T> class impl_IWebAccountProviderManageAccountOperation;
-template <typename T> class impl_IWebAccountProviderOperation;
-template <typename T> class impl_IWebAccountProviderRetrieveCookiesOperation;
-template <typename T> class impl_IWebAccountProviderSignOutAccountOperation;
-template <typename T> class impl_IWebAccountProviderSilentReportOperation;
-template <typename T> class impl_IWebAccountProviderTokenObjects;
-template <typename T> class impl_IWebAccountProviderTokenOperation;
-template <typename T> class impl_IWebAccountProviderUIReportOperation;
-template <typename T> class impl_IWebAccountScopeManagerStatics;
-template <typename T> class impl_IWebProviderTokenRequest;
-template <typename T> class impl_IWebProviderTokenRequest2;
-template <typename T> class impl_IWebProviderTokenResponse;
-template <typename T> class impl_IWebProviderTokenResponseFactory;
+template <typename T> struct impl_IWebAccountClientView;
+template <typename T> struct impl_IWebAccountClientViewFactory;
+template <typename T> struct impl_IWebAccountManagerStatics;
+template <typename T> struct impl_IWebAccountManagerStatics2;
+template <typename T> struct impl_IWebAccountMapManagerStatics;
+template <typename T> struct impl_IWebAccountProviderAddAccountOperation;
+template <typename T> struct impl_IWebAccountProviderBaseReportOperation;
+template <typename T> struct impl_IWebAccountProviderDeleteAccountOperation;
+template <typename T> struct impl_IWebAccountProviderManageAccountOperation;
+template <typename T> struct impl_IWebAccountProviderOperation;
+template <typename T> struct impl_IWebAccountProviderRetrieveCookiesOperation;
+template <typename T> struct impl_IWebAccountProviderSignOutAccountOperation;
+template <typename T> struct impl_IWebAccountProviderSilentReportOperation;
+template <typename T> struct impl_IWebAccountProviderTokenObjects;
+template <typename T> struct impl_IWebAccountProviderTokenOperation;
+template <typename T> struct impl_IWebAccountProviderUIReportOperation;
+template <typename T> struct impl_IWebAccountScopeManagerStatics;
+template <typename T> struct impl_IWebProviderTokenRequest;
+template <typename T> struct impl_IWebProviderTokenRequest2;
+template <typename T> struct impl_IWebProviderTokenResponse;
+template <typename T> struct impl_IWebProviderTokenResponseFactory;
 
 }
 

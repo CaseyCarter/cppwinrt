@@ -638,147 +638,147 @@ namespace Windows::Security::Authentication::Web::Core {
 template <typename D> Windows::Security::Credentials::WebAccountProvider impl_IWebTokenRequest<D>::WebAccountProvider() const
 {
     Windows::Security::Credentials::WebAccountProvider value { nullptr };
-    check_hresult(shim()->get_WebAccountProvider(put(value)));
+    check_hresult(static_cast<const IWebTokenRequest &>(static_cast<const D &>(*this))->get_WebAccountProvider(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IWebTokenRequest<D>::Scope() const
 {
     hstring value;
-    check_hresult(shim()->get_Scope(put(value)));
+    check_hresult(static_cast<const IWebTokenRequest &>(static_cast<const D &>(*this))->get_Scope(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IWebTokenRequest<D>::ClientId() const
 {
     hstring value;
-    check_hresult(shim()->get_ClientId(put(value)));
+    check_hresult(static_cast<const IWebTokenRequest &>(static_cast<const D &>(*this))->get_ClientId(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Authentication::Web::Core::WebTokenRequestPromptType impl_IWebTokenRequest<D>::PromptType() const
 {
     Windows::Security::Authentication::Web::Core::WebTokenRequestPromptType value {};
-    check_hresult(shim()->get_PromptType(&value));
+    check_hresult(static_cast<const IWebTokenRequest &>(static_cast<const D &>(*this))->get_PromptType(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IMap<hstring, hstring> impl_IWebTokenRequest<D>::Properties() const
 {
     Windows::Foundation::Collections::IMap<hstring, hstring> requestProperties;
-    check_hresult(shim()->get_Properties(put(requestProperties)));
+    check_hresult(static_cast<const IWebTokenRequest &>(static_cast<const D &>(*this))->get_Properties(put(requestProperties)));
     return requestProperties;
 }
 
 template <typename D> Windows::Foundation::Collections::IMap<hstring, hstring> impl_IWebTokenRequest2<D>::AppProperties() const
 {
     Windows::Foundation::Collections::IMap<hstring, hstring> requestProperties;
-    check_hresult(shim()->get_AppProperties(put(requestProperties)));
+    check_hresult(static_cast<const IWebTokenRequest2 &>(static_cast<const D &>(*this))->get_AppProperties(put(requestProperties)));
     return requestProperties;
 }
 
 template <typename D> Windows::Security::Credentials::WebAccount impl_IWebAccountEventArgs<D>::Account() const
 {
     Windows::Security::Credentials::WebAccount value { nullptr };
-    check_hresult(shim()->get_Account(put(value)));
+    check_hresult(static_cast<const IWebAccountEventArgs &>(static_cast<const D &>(*this))->get_Account(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Authentication::Web::Core::WebTokenRequest impl_IWebTokenRequestFactory<D>::Create(const Windows::Security::Credentials::WebAccountProvider & provider, hstring_ref scope, hstring_ref clientId) const
 {
     Windows::Security::Authentication::Web::Core::WebTokenRequest webTokenRequest { nullptr };
-    check_hresult(shim()->abi_Create(get(provider), get(scope), get(clientId), put(webTokenRequest)));
+    check_hresult(static_cast<const IWebTokenRequestFactory &>(static_cast<const D &>(*this))->abi_Create(get(provider), get(scope), get(clientId), put(webTokenRequest)));
     return webTokenRequest;
 }
 
 template <typename D> Windows::Security::Authentication::Web::Core::WebTokenRequest impl_IWebTokenRequestFactory<D>::CreateWithPromptType(const Windows::Security::Credentials::WebAccountProvider & provider, hstring_ref scope, hstring_ref clientId, Windows::Security::Authentication::Web::Core::WebTokenRequestPromptType promptType) const
 {
     Windows::Security::Authentication::Web::Core::WebTokenRequest webTokenRequest { nullptr };
-    check_hresult(shim()->abi_CreateWithPromptType(get(provider), get(scope), get(clientId), promptType, put(webTokenRequest)));
+    check_hresult(static_cast<const IWebTokenRequestFactory &>(static_cast<const D &>(*this))->abi_CreateWithPromptType(get(provider), get(scope), get(clientId), promptType, put(webTokenRequest)));
     return webTokenRequest;
 }
 
 template <typename D> Windows::Security::Authentication::Web::Core::WebTokenRequest impl_IWebTokenRequestFactory<D>::CreateWithProvider(const Windows::Security::Credentials::WebAccountProvider & provider) const
 {
     Windows::Security::Authentication::Web::Core::WebTokenRequest webTokenRequest { nullptr };
-    check_hresult(shim()->abi_CreateWithProvider(get(provider), put(webTokenRequest)));
+    check_hresult(static_cast<const IWebTokenRequestFactory &>(static_cast<const D &>(*this))->abi_CreateWithProvider(get(provider), put(webTokenRequest)));
     return webTokenRequest;
 }
 
 template <typename D> Windows::Security::Authentication::Web::Core::WebTokenRequest impl_IWebTokenRequestFactory<D>::CreateWithScope(const Windows::Security::Credentials::WebAccountProvider & provider, hstring_ref scope) const
 {
     Windows::Security::Authentication::Web::Core::WebTokenRequest webTokenRequest { nullptr };
-    check_hresult(shim()->abi_CreateWithScope(get(provider), get(scope), put(webTokenRequest)));
+    check_hresult(static_cast<const IWebTokenRequestFactory &>(static_cast<const D &>(*this))->abi_CreateWithScope(get(provider), get(scope), put(webTokenRequest)));
     return webTokenRequest;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::Core::WebTokenRequestResult> impl_IWebAuthenticationCoreManagerStatics<D>::GetTokenSilentlyAsync(const Windows::Security::Authentication::Web::Core::WebTokenRequest & request) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::Core::WebTokenRequestResult> asyncInfo;
-    check_hresult(shim()->abi_GetTokenSilentlyAsync(get(request), put(asyncInfo)));
+    check_hresult(static_cast<const IWebAuthenticationCoreManagerStatics &>(static_cast<const D &>(*this))->abi_GetTokenSilentlyAsync(get(request), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::Core::WebTokenRequestResult> impl_IWebAuthenticationCoreManagerStatics<D>::GetTokenSilentlyAsync(const Windows::Security::Authentication::Web::Core::WebTokenRequest & request, const Windows::Security::Credentials::WebAccount & webAccount) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::Core::WebTokenRequestResult> asyncInfo;
-    check_hresult(shim()->abi_GetTokenSilentlyWithWebAccountAsync(get(request), get(webAccount), put(asyncInfo)));
+    check_hresult(static_cast<const IWebAuthenticationCoreManagerStatics &>(static_cast<const D &>(*this))->abi_GetTokenSilentlyWithWebAccountAsync(get(request), get(webAccount), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::Core::WebTokenRequestResult> impl_IWebAuthenticationCoreManagerStatics<D>::RequestTokenAsync(const Windows::Security::Authentication::Web::Core::WebTokenRequest & request) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::Core::WebTokenRequestResult> asyncInfo;
-    check_hresult(shim()->abi_RequestTokenAsync(get(request), put(asyncInfo)));
+    check_hresult(static_cast<const IWebAuthenticationCoreManagerStatics &>(static_cast<const D &>(*this))->abi_RequestTokenAsync(get(request), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::Core::WebTokenRequestResult> impl_IWebAuthenticationCoreManagerStatics<D>::RequestTokenAsync(const Windows::Security::Authentication::Web::Core::WebTokenRequest & request, const Windows::Security::Credentials::WebAccount & webAccount) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Web::Core::WebTokenRequestResult> asyncInfo;
-    check_hresult(shim()->abi_RequestTokenWithWebAccountAsync(get(request), get(webAccount), put(asyncInfo)));
+    check_hresult(static_cast<const IWebAuthenticationCoreManagerStatics &>(static_cast<const D &>(*this))->abi_RequestTokenWithWebAccountAsync(get(request), get(webAccount), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> impl_IWebAuthenticationCoreManagerStatics<D>::FindAccountAsync(const Windows::Security::Credentials::WebAccountProvider & provider, hstring_ref webAccountId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> asyncInfo;
-    check_hresult(shim()->abi_FindAccountAsync(get(provider), get(webAccountId), put(asyncInfo)));
+    check_hresult(static_cast<const IWebAuthenticationCoreManagerStatics &>(static_cast<const D &>(*this))->abi_FindAccountAsync(get(provider), get(webAccountId), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> impl_IWebAuthenticationCoreManagerStatics<D>::FindAccountProviderAsync(hstring_ref webAccountProviderId) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> asyncInfo;
-    check_hresult(shim()->abi_FindAccountProviderAsync(get(webAccountProviderId), put(asyncInfo)));
+    check_hresult(static_cast<const IWebAuthenticationCoreManagerStatics &>(static_cast<const D &>(*this))->abi_FindAccountProviderAsync(get(webAccountProviderId), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> impl_IWebAuthenticationCoreManagerStatics<D>::FindAccountProviderAsync(hstring_ref webAccountProviderId, hstring_ref authority) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> asyncInfo;
-    check_hresult(shim()->abi_FindAccountProviderWithAuthorityAsync(get(webAccountProviderId), get(authority), put(asyncInfo)));
+    check_hresult(static_cast<const IWebAuthenticationCoreManagerStatics &>(static_cast<const D &>(*this))->abi_FindAccountProviderWithAuthorityAsync(get(webAccountProviderId), get(authority), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> impl_IWebAuthenticationCoreManagerStatics2<D>::FindAccountProviderAsync(hstring_ref webAccountProviderId, hstring_ref authority, const Windows::System::User & user) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccountProvider> asyncInfo;
-    check_hresult(shim()->abi_FindAccountProviderWithAuthorityForUserAsync(get(webAccountProviderId), get(authority), get(user), put(asyncInfo)));
+    check_hresult(static_cast<const IWebAuthenticationCoreManagerStatics2 &>(static_cast<const D &>(*this))->abi_FindAccountProviderWithAuthorityForUserAsync(get(webAccountProviderId), get(authority), get(user), put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> Windows::Security::Authentication::Web::Core::WebAccountMonitor impl_IWebAuthenticationCoreManagerStatics3<D>::CreateWebAccountMonitor(const Windows::Foundation::Collections::IIterable<Windows::Security::Credentials::WebAccount> & webAccounts) const
 {
     Windows::Security::Authentication::Web::Core::WebAccountMonitor result { nullptr };
-    check_hresult(shim()->abi_CreateWebAccountMonitor(get(webAccounts), put(result)));
+    check_hresult(static_cast<const IWebAuthenticationCoreManagerStatics3 &>(static_cast<const D &>(*this))->abi_CreateWebAccountMonitor(get(webAccounts), put(result)));
     return result;
 }
 
 template <typename D> event_token impl_IWebAccountMonitor<D>::Updated(const Windows::Foundation::TypedEventHandler<Windows::Security::Authentication::Web::Core::WebAccountMonitor, Windows::Security::Authentication::Web::Core::WebAccountEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_Updated(get(handler), &token));
+    check_hresult(static_cast<const IWebAccountMonitor &>(static_cast<const D &>(*this))->add_Updated(get(handler), &token));
     return token;
 }
 
@@ -789,13 +789,13 @@ template <typename D> event_revoker<IWebAccountMonitor> impl_IWebAccountMonitor<
 
 template <typename D> void impl_IWebAccountMonitor<D>::Updated(event_token token) const
 {
-    check_hresult(shim()->remove_Updated(token));
+    check_hresult(static_cast<const IWebAccountMonitor &>(static_cast<const D &>(*this))->remove_Updated(token));
 }
 
 template <typename D> event_token impl_IWebAccountMonitor<D>::Removed(const Windows::Foundation::TypedEventHandler<Windows::Security::Authentication::Web::Core::WebAccountMonitor, Windows::Security::Authentication::Web::Core::WebAccountEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_Removed(get(handler), &token));
+    check_hresult(static_cast<const IWebAccountMonitor &>(static_cast<const D &>(*this))->add_Removed(get(handler), &token));
     return token;
 }
 
@@ -806,13 +806,13 @@ template <typename D> event_revoker<IWebAccountMonitor> impl_IWebAccountMonitor<
 
 template <typename D> void impl_IWebAccountMonitor<D>::Removed(event_token token) const
 {
-    check_hresult(shim()->remove_Removed(token));
+    check_hresult(static_cast<const IWebAccountMonitor &>(static_cast<const D &>(*this))->remove_Removed(token));
 }
 
 template <typename D> event_token impl_IWebAccountMonitor<D>::DefaultSignInAccountChanged(const Windows::Foundation::TypedEventHandler<Windows::Security::Authentication::Web::Core::WebAccountMonitor, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_DefaultSignInAccountChanged(get(handler), &token));
+    check_hresult(static_cast<const IWebAccountMonitor &>(static_cast<const D &>(*this))->add_DefaultSignInAccountChanged(get(handler), &token));
     return token;
 }
 
@@ -823,111 +823,111 @@ template <typename D> event_revoker<IWebAccountMonitor> impl_IWebAccountMonitor<
 
 template <typename D> void impl_IWebAccountMonitor<D>::DefaultSignInAccountChanged(event_token token) const
 {
-    check_hresult(shim()->remove_DefaultSignInAccountChanged(token));
+    check_hresult(static_cast<const IWebAccountMonitor &>(static_cast<const D &>(*this))->remove_DefaultSignInAccountChanged(token));
 }
 
 template <typename D> uint32_t impl_IWebProviderError<D>::ErrorCode() const
 {
     uint32_t value {};
-    check_hresult(shim()->get_ErrorCode(&value));
+    check_hresult(static_cast<const IWebProviderError &>(static_cast<const D &>(*this))->get_ErrorCode(&value));
     return value;
 }
 
 template <typename D> hstring impl_IWebProviderError<D>::ErrorMessage() const
 {
     hstring value;
-    check_hresult(shim()->get_ErrorMessage(put(value)));
+    check_hresult(static_cast<const IWebProviderError &>(static_cast<const D &>(*this))->get_ErrorMessage(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IMap<hstring, hstring> impl_IWebProviderError<D>::Properties() const
 {
     Windows::Foundation::Collections::IMap<hstring, hstring> value;
-    check_hresult(shim()->get_Properties(put(value)));
+    check_hresult(static_cast<const IWebProviderError &>(static_cast<const D &>(*this))->get_Properties(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Authentication::Web::Core::WebProviderError impl_IWebProviderErrorFactory<D>::Create(uint32_t errorCode, hstring_ref errorMessage) const
 {
     Windows::Security::Authentication::Web::Core::WebProviderError webProviderError { nullptr };
-    check_hresult(shim()->abi_Create(errorCode, get(errorMessage), put(webProviderError)));
+    check_hresult(static_cast<const IWebProviderErrorFactory &>(static_cast<const D &>(*this))->abi_Create(errorCode, get(errorMessage), put(webProviderError)));
     return webProviderError;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Security::Authentication::Web::Core::WebTokenResponse> impl_IWebTokenRequestResult<D>::ResponseData() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Security::Authentication::Web::Core::WebTokenResponse> value;
-    check_hresult(shim()->get_ResponseData(put(value)));
+    check_hresult(static_cast<const IWebTokenRequestResult &>(static_cast<const D &>(*this))->get_ResponseData(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Authentication::Web::Core::WebTokenRequestStatus impl_IWebTokenRequestResult<D>::ResponseStatus() const
 {
     Windows::Security::Authentication::Web::Core::WebTokenRequestStatus value {};
-    check_hresult(shim()->get_ResponseStatus(&value));
+    check_hresult(static_cast<const IWebTokenRequestResult &>(static_cast<const D &>(*this))->get_ResponseStatus(&value));
     return value;
 }
 
 template <typename D> Windows::Security::Authentication::Web::Core::WebProviderError impl_IWebTokenRequestResult<D>::ResponseError() const
 {
     Windows::Security::Authentication::Web::Core::WebProviderError value { nullptr };
-    check_hresult(shim()->get_ResponseError(put(value)));
+    check_hresult(static_cast<const IWebTokenRequestResult &>(static_cast<const D &>(*this))->get_ResponseError(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncAction impl_IWebTokenRequestResult<D>::InvalidateCacheAsync() const
 {
     Windows::Foundation::IAsyncAction asyncInfo;
-    check_hresult(shim()->abi_InvalidateCacheAsync(put(asyncInfo)));
+    check_hresult(static_cast<const IWebTokenRequestResult &>(static_cast<const D &>(*this))->abi_InvalidateCacheAsync(put(asyncInfo)));
     return asyncInfo;
 }
 
 template <typename D> hstring impl_IWebTokenResponse<D>::Token() const
 {
     hstring value;
-    check_hresult(shim()->get_Token(put(value)));
+    check_hresult(static_cast<const IWebTokenResponse &>(static_cast<const D &>(*this))->get_Token(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Authentication::Web::Core::WebProviderError impl_IWebTokenResponse<D>::ProviderError() const
 {
     Windows::Security::Authentication::Web::Core::WebProviderError value { nullptr };
-    check_hresult(shim()->get_ProviderError(put(value)));
+    check_hresult(static_cast<const IWebTokenResponse &>(static_cast<const D &>(*this))->get_ProviderError(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Credentials::WebAccount impl_IWebTokenResponse<D>::WebAccount() const
 {
     Windows::Security::Credentials::WebAccount value { nullptr };
-    check_hresult(shim()->get_WebAccount(put(value)));
+    check_hresult(static_cast<const IWebTokenResponse &>(static_cast<const D &>(*this))->get_WebAccount(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IMap<hstring, hstring> impl_IWebTokenResponse<D>::Properties() const
 {
     Windows::Foundation::Collections::IMap<hstring, hstring> value;
-    check_hresult(shim()->get_Properties(put(value)));
+    check_hresult(static_cast<const IWebTokenResponse &>(static_cast<const D &>(*this))->get_Properties(put(value)));
     return value;
 }
 
 template <typename D> Windows::Security::Authentication::Web::Core::WebTokenResponse impl_IWebTokenResponseFactory<D>::CreateWithToken(hstring_ref token) const
 {
     Windows::Security::Authentication::Web::Core::WebTokenResponse webTokenResponse { nullptr };
-    check_hresult(shim()->abi_CreateWithToken(get(token), put(webTokenResponse)));
+    check_hresult(static_cast<const IWebTokenResponseFactory &>(static_cast<const D &>(*this))->abi_CreateWithToken(get(token), put(webTokenResponse)));
     return webTokenResponse;
 }
 
 template <typename D> Windows::Security::Authentication::Web::Core::WebTokenResponse impl_IWebTokenResponseFactory<D>::CreateWithTokenAndAccount(hstring_ref token, const Windows::Security::Credentials::WebAccount & webAccount) const
 {
     Windows::Security::Authentication::Web::Core::WebTokenResponse webTokenResponse { nullptr };
-    check_hresult(shim()->abi_CreateWithTokenAndAccount(get(token), get(webAccount), put(webTokenResponse)));
+    check_hresult(static_cast<const IWebTokenResponseFactory &>(static_cast<const D &>(*this))->abi_CreateWithTokenAndAccount(get(token), get(webAccount), put(webTokenResponse)));
     return webTokenResponse;
 }
 
 template <typename D> Windows::Security::Authentication::Web::Core::WebTokenResponse impl_IWebTokenResponseFactory<D>::CreateWithTokenAccountAndError(hstring_ref token, const Windows::Security::Credentials::WebAccount & webAccount, const Windows::Security::Authentication::Web::Core::WebProviderError & error) const
 {
     Windows::Security::Authentication::Web::Core::WebTokenResponse webTokenResponse { nullptr };
-    check_hresult(shim()->abi_CreateWithTokenAccountAndError(get(token), get(webAccount), get(error), put(webTokenResponse)));
+    check_hresult(static_cast<const IWebTokenResponseFactory &>(static_cast<const D &>(*this))->abi_CreateWithTokenAccountAndError(get(token), get(webAccount), get(error), put(webTokenResponse)));
     return webTokenResponse;
 }
 

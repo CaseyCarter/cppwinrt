@@ -217,24 +217,24 @@ template <> struct traits<Windows::UI::Text::Core::CoreTextTextUpdatingEventArgs
 
 namespace Windows::UI::Text::Core {
 
-template <typename T> class impl_ICoreTextCompositionCompletedEventArgs;
-template <typename T> class impl_ICoreTextCompositionSegment;
-template <typename T> class impl_ICoreTextCompositionStartedEventArgs;
-template <typename T> class impl_ICoreTextEditContext;
-template <typename T> class impl_ICoreTextEditContext2;
-template <typename T> class impl_ICoreTextFormatUpdatingEventArgs;
-template <typename T> class impl_ICoreTextLayoutBounds;
-template <typename T> class impl_ICoreTextLayoutRequest;
-template <typename T> class impl_ICoreTextLayoutRequestedEventArgs;
-template <typename T> class impl_ICoreTextSelectionRequest;
-template <typename T> class impl_ICoreTextSelectionRequestedEventArgs;
-template <typename T> class impl_ICoreTextSelectionUpdatingEventArgs;
-template <typename T> class impl_ICoreTextServicesManager;
-template <typename T> class impl_ICoreTextServicesManagerStatics;
-template <typename T> class impl_ICoreTextServicesStatics;
-template <typename T> class impl_ICoreTextTextRequest;
-template <typename T> class impl_ICoreTextTextRequestedEventArgs;
-template <typename T> class impl_ICoreTextTextUpdatingEventArgs;
+template <typename T> struct impl_ICoreTextCompositionCompletedEventArgs;
+template <typename T> struct impl_ICoreTextCompositionSegment;
+template <typename T> struct impl_ICoreTextCompositionStartedEventArgs;
+template <typename T> struct impl_ICoreTextEditContext;
+template <typename T> struct impl_ICoreTextEditContext2;
+template <typename T> struct impl_ICoreTextFormatUpdatingEventArgs;
+template <typename T> struct impl_ICoreTextLayoutBounds;
+template <typename T> struct impl_ICoreTextLayoutRequest;
+template <typename T> struct impl_ICoreTextLayoutRequestedEventArgs;
+template <typename T> struct impl_ICoreTextSelectionRequest;
+template <typename T> struct impl_ICoreTextSelectionRequestedEventArgs;
+template <typename T> struct impl_ICoreTextSelectionUpdatingEventArgs;
+template <typename T> struct impl_ICoreTextServicesManager;
+template <typename T> struct impl_ICoreTextServicesManagerStatics;
+template <typename T> struct impl_ICoreTextServicesStatics;
+template <typename T> struct impl_ICoreTextTextRequest;
+template <typename T> struct impl_ICoreTextTextRequestedEventArgs;
+template <typename T> struct impl_ICoreTextTextUpdatingEventArgs;
 
 }
 

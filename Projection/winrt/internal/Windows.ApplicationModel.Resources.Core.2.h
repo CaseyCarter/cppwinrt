@@ -220,12 +220,8 @@ template <> struct __declspec(uuid("05eb86f1-7140-5517-b88d-cbaebe57e6b1")) __de
 namespace Windows::ApplicationModel::Resources::Core {
 
 template <typename D>
-class WINRT_EBO impl_INamedResource
+struct WINRT_EBO impl_INamedResource
 {
-    auto shim() const { return impl::shim<D, INamedResource>(this); }
-
-public:
-
     Windows::Foundation::Uri Uri() const;
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Resources::Core::ResourceCandidate> Candidates() const;
     Windows::ApplicationModel::Resources::Core::ResourceCandidate Resolve() const;
@@ -235,12 +231,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IResourceCandidate
+struct WINRT_EBO impl_IResourceCandidate
 {
-    auto shim() const { return impl::shim<D, IResourceCandidate>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Resources::Core::ResourceQualifier> Qualifiers() const;
     bool IsMatch() const;
     bool IsMatchAsDefault() const;
@@ -251,22 +243,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IResourceCandidate2
+struct WINRT_EBO impl_IResourceCandidate2
 {
-    auto shim() const { return impl::shim<D, IResourceCandidate2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> GetValueAsStreamAsync() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IResourceContext
+struct WINRT_EBO impl_IResourceContext
 {
-    auto shim() const { return impl::shim<D, IResourceContext>(this); }
-
-public:
-
     Windows::Foundation::Collections::IObservableMap<hstring, hstring> QualifierValues() const;
     void Reset() const;
     void Reset(const Windows::Foundation::Collections::IIterable<hstring> & qualifierNames) const;
@@ -277,22 +261,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IResourceContextStatics
+struct WINRT_EBO impl_IResourceContextStatics
 {
-    auto shim() const { return impl::shim<D, IResourceContextStatics>(this); }
-
-public:
-
     Windows::ApplicationModel::Resources::Core::ResourceContext CreateMatchingContext(const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Resources::Core::ResourceQualifier> & result) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IResourceContextStatics2
+struct WINRT_EBO impl_IResourceContextStatics2
 {
-    auto shim() const { return impl::shim<D, IResourceContextStatics2>(this); }
-
-public:
-
     Windows::ApplicationModel::Resources::Core::ResourceContext GetForCurrentView() const;
     void SetGlobalQualifierValue(hstring_ref key, hstring_ref value) const;
     void ResetGlobalQualifierValues() const;
@@ -301,22 +277,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IResourceContextStatics3
+struct WINRT_EBO impl_IResourceContextStatics3
 {
-    auto shim() const { return impl::shim<D, IResourceContextStatics3>(this); }
-
-public:
-
     void SetGlobalQualifierValue(hstring_ref key, hstring_ref value, Windows::ApplicationModel::Resources::Core::ResourceQualifierPersistence persistence) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IResourceManager
+struct WINRT_EBO impl_IResourceManager
 {
-    auto shim() const { return impl::shim<D, IResourceManager>(this); }
-
-public:
-
     Windows::ApplicationModel::Resources::Core::ResourceMap MainResourceMap() const;
     Windows::Foundation::Collections::IMapView<hstring, Windows::ApplicationModel::Resources::Core::ResourceMap> AllResourceMaps() const;
     Windows::ApplicationModel::Resources::Core::ResourceContext DefaultContext() const;
@@ -325,34 +293,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IResourceManager2
+struct WINRT_EBO impl_IResourceManager2
 {
-    auto shim() const { return impl::shim<D, IResourceManager2>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Resources::Core::NamedResource> GetAllNamedResourcesForPackage(hstring_ref packageName, const Windows::ApplicationModel::Resources::Core::ResourceLayoutInfo & resourceLayoutInfo) const;
     Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Resources::Core::ResourceMap> GetAllSubtreesForPackage(hstring_ref packageName, const Windows::ApplicationModel::Resources::Core::ResourceLayoutInfo & resourceLayoutInfo) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IResourceManagerStatics
+struct WINRT_EBO impl_IResourceManagerStatics
 {
-    auto shim() const { return impl::shim<D, IResourceManagerStatics>(this); }
-
-public:
-
     Windows::ApplicationModel::Resources::Core::ResourceManager Current() const;
     bool IsResourceReference(hstring_ref resourceReference) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IResourceMap
+struct WINRT_EBO impl_IResourceMap
 {
-    auto shim() const { return impl::shim<D, IResourceMap>(this); }
-
-public:
-
     Windows::Foundation::Uri Uri() const;
     Windows::ApplicationModel::Resources::Core::ResourceCandidate GetValue(hstring_ref resource) const;
     Windows::ApplicationModel::Resources::Core::ResourceCandidate GetValue(hstring_ref resource, const Windows::ApplicationModel::Resources::Core::ResourceContext & context) const;
@@ -360,12 +316,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IResourceQualifier
+struct WINRT_EBO impl_IResourceQualifier
 {
-    auto shim() const { return impl::shim<D, IResourceQualifier>(this); }
-
-public:
-
     hstring QualifierName() const;
     hstring QualifierValue() const;
     bool IsDefault() const;

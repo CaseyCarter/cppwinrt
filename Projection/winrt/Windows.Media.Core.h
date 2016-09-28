@@ -4617,90 +4617,90 @@ namespace Windows::Media::Core {
 template <typename D> bool impl_IMediaStreamDescriptor<D>::IsSelected() const
 {
     bool selected {};
-    check_hresult(shim()->get_IsSelected(&selected));
+    check_hresult(static_cast<const IMediaStreamDescriptor &>(static_cast<const D &>(*this))->get_IsSelected(&selected));
     return selected;
 }
 
 template <typename D> void impl_IMediaStreamDescriptor<D>::Name(hstring_ref value) const
 {
-    check_hresult(shim()->put_Name(get(value)));
+    check_hresult(static_cast<const IMediaStreamDescriptor &>(static_cast<const D &>(*this))->put_Name(get(value)));
 }
 
 template <typename D> hstring impl_IMediaStreamDescriptor<D>::Name() const
 {
     hstring value;
-    check_hresult(shim()->get_Name(put(value)));
+    check_hresult(static_cast<const IMediaStreamDescriptor &>(static_cast<const D &>(*this))->get_Name(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaStreamDescriptor<D>::Language(hstring_ref value) const
 {
-    check_hresult(shim()->put_Language(get(value)));
+    check_hresult(static_cast<const IMediaStreamDescriptor &>(static_cast<const D &>(*this))->put_Language(get(value)));
 }
 
 template <typename D> hstring impl_IMediaStreamDescriptor<D>::Language() const
 {
     hstring value;
-    check_hresult(shim()->get_Language(put(value)));
+    check_hresult(static_cast<const IMediaStreamDescriptor &>(static_cast<const D &>(*this))->get_Language(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::MediaProperties::AudioEncodingProperties impl_IAudioStreamDescriptor<D>::EncodingProperties() const
 {
     Windows::Media::MediaProperties::AudioEncodingProperties encodingProperties { nullptr };
-    check_hresult(shim()->get_EncodingProperties(put(encodingProperties)));
+    check_hresult(static_cast<const IAudioStreamDescriptor &>(static_cast<const D &>(*this))->get_EncodingProperties(put(encodingProperties)));
     return encodingProperties;
 }
 
 template <typename D> void impl_IAudioStreamDescriptor2<D>::LeadingEncoderPadding(const Windows::Foundation::IReference<uint32_t> & value) const
 {
-    check_hresult(shim()->put_LeadingEncoderPadding(get(value)));
+    check_hresult(static_cast<const IAudioStreamDescriptor2 &>(static_cast<const D &>(*this))->put_LeadingEncoderPadding(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<uint32_t> impl_IAudioStreamDescriptor2<D>::LeadingEncoderPadding() const
 {
     Windows::Foundation::IReference<uint32_t> value;
-    check_hresult(shim()->get_LeadingEncoderPadding(put(value)));
+    check_hresult(static_cast<const IAudioStreamDescriptor2 &>(static_cast<const D &>(*this))->get_LeadingEncoderPadding(put(value)));
     return value;
 }
 
 template <typename D> void impl_IAudioStreamDescriptor2<D>::TrailingEncoderPadding(const Windows::Foundation::IReference<uint32_t> & value) const
 {
-    check_hresult(shim()->put_TrailingEncoderPadding(get(value)));
+    check_hresult(static_cast<const IAudioStreamDescriptor2 &>(static_cast<const D &>(*this))->put_TrailingEncoderPadding(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<uint32_t> impl_IAudioStreamDescriptor2<D>::TrailingEncoderPadding() const
 {
     Windows::Foundation::IReference<uint32_t> value;
-    check_hresult(shim()->get_TrailingEncoderPadding(put(value)));
+    check_hresult(static_cast<const IAudioStreamDescriptor2 &>(static_cast<const D &>(*this))->get_TrailingEncoderPadding(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Core::AudioStreamDescriptor impl_IAudioStreamDescriptorFactory<D>::Create(const Windows::Media::MediaProperties::AudioEncodingProperties & encodingProperties) const
 {
     Windows::Media::Core::AudioStreamDescriptor result { nullptr };
-    check_hresult(shim()->abi_Create(get(encodingProperties), put(result)));
+    check_hresult(static_cast<const IAudioStreamDescriptorFactory &>(static_cast<const D &>(*this))->abi_Create(get(encodingProperties), put(result)));
     return result;
 }
 
 template <typename D> Windows::Media::MediaProperties::VideoEncodingProperties impl_IVideoStreamDescriptor<D>::EncodingProperties() const
 {
     Windows::Media::MediaProperties::VideoEncodingProperties encodingProperties { nullptr };
-    check_hresult(shim()->get_EncodingProperties(put(encodingProperties)));
+    check_hresult(static_cast<const IVideoStreamDescriptor &>(static_cast<const D &>(*this))->get_EncodingProperties(put(encodingProperties)));
     return encodingProperties;
 }
 
 template <typename D> Windows::Media::Core::VideoStreamDescriptor impl_IVideoStreamDescriptorFactory<D>::Create(const Windows::Media::MediaProperties::VideoEncodingProperties & encodingProperties) const
 {
     Windows::Media::Core::VideoStreamDescriptor result { nullptr };
-    check_hresult(shim()->abi_Create(get(encodingProperties), put(result)));
+    check_hresult(static_cast<const IVideoStreamDescriptorFactory &>(static_cast<const D &>(*this))->abi_Create(get(encodingProperties), put(result)));
     return result;
 }
 
 template <typename D> event_token impl_IMediaStreamSource<D>::Closed(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSource, Windows::Media::Core::MediaStreamSourceClosedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_Closed(get(handler), &token));
+    check_hresult(static_cast<const IMediaStreamSource &>(static_cast<const D &>(*this))->add_Closed(get(handler), &token));
     return token;
 }
 
@@ -4711,13 +4711,13 @@ template <typename D> event_revoker<IMediaStreamSource> impl_IMediaStreamSource<
 
 template <typename D> void impl_IMediaStreamSource<D>::Closed(event_token token) const
 {
-    check_hresult(shim()->remove_Closed(token));
+    check_hresult(static_cast<const IMediaStreamSource &>(static_cast<const D &>(*this))->remove_Closed(token));
 }
 
 template <typename D> event_token impl_IMediaStreamSource<D>::Starting(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSource, Windows::Media::Core::MediaStreamSourceStartingEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_Starting(get(handler), &token));
+    check_hresult(static_cast<const IMediaStreamSource &>(static_cast<const D &>(*this))->add_Starting(get(handler), &token));
     return token;
 }
 
@@ -4728,13 +4728,13 @@ template <typename D> event_revoker<IMediaStreamSource> impl_IMediaStreamSource<
 
 template <typename D> void impl_IMediaStreamSource<D>::Starting(event_token token) const
 {
-    check_hresult(shim()->remove_Starting(token));
+    check_hresult(static_cast<const IMediaStreamSource &>(static_cast<const D &>(*this))->remove_Starting(token));
 }
 
 template <typename D> event_token impl_IMediaStreamSource<D>::Paused(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSource, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_Paused(get(handler), &token));
+    check_hresult(static_cast<const IMediaStreamSource &>(static_cast<const D &>(*this))->add_Paused(get(handler), &token));
     return token;
 }
 
@@ -4745,13 +4745,13 @@ template <typename D> event_revoker<IMediaStreamSource> impl_IMediaStreamSource<
 
 template <typename D> void impl_IMediaStreamSource<D>::Paused(event_token token) const
 {
-    check_hresult(shim()->remove_Paused(token));
+    check_hresult(static_cast<const IMediaStreamSource &>(static_cast<const D &>(*this))->remove_Paused(token));
 }
 
 template <typename D> event_token impl_IMediaStreamSource<D>::SampleRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSource, Windows::Media::Core::MediaStreamSourceSampleRequestedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_SampleRequested(get(handler), &token));
+    check_hresult(static_cast<const IMediaStreamSource &>(static_cast<const D &>(*this))->add_SampleRequested(get(handler), &token));
     return token;
 }
 
@@ -4762,13 +4762,13 @@ template <typename D> event_revoker<IMediaStreamSource> impl_IMediaStreamSource<
 
 template <typename D> void impl_IMediaStreamSource<D>::SampleRequested(event_token token) const
 {
-    check_hresult(shim()->remove_SampleRequested(token));
+    check_hresult(static_cast<const IMediaStreamSource &>(static_cast<const D &>(*this))->remove_SampleRequested(token));
 }
 
 template <typename D> event_token impl_IMediaStreamSource<D>::SwitchStreamsRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSource, Windows::Media::Core::MediaStreamSourceSwitchStreamsRequestedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_SwitchStreamsRequested(get(handler), &token));
+    check_hresult(static_cast<const IMediaStreamSource &>(static_cast<const D &>(*this))->add_SwitchStreamsRequested(get(handler), &token));
     return token;
 }
 
@@ -4779,107 +4779,107 @@ template <typename D> event_revoker<IMediaStreamSource> impl_IMediaStreamSource<
 
 template <typename D> void impl_IMediaStreamSource<D>::SwitchStreamsRequested(event_token token) const
 {
-    check_hresult(shim()->remove_SwitchStreamsRequested(token));
+    check_hresult(static_cast<const IMediaStreamSource &>(static_cast<const D &>(*this))->remove_SwitchStreamsRequested(token));
 }
 
 template <typename D> void impl_IMediaStreamSource<D>::NotifyError(Windows::Media::Core::MediaStreamSourceErrorStatus errorStatus) const
 {
-    check_hresult(shim()->abi_NotifyError(errorStatus));
+    check_hresult(static_cast<const IMediaStreamSource &>(static_cast<const D &>(*this))->abi_NotifyError(errorStatus));
 }
 
 template <typename D> void impl_IMediaStreamSource<D>::AddStreamDescriptor(const Windows::Media::Core::IMediaStreamDescriptor & descriptor) const
 {
-    check_hresult(shim()->abi_AddStreamDescriptor(get(descriptor)));
+    check_hresult(static_cast<const IMediaStreamSource &>(static_cast<const D &>(*this))->abi_AddStreamDescriptor(get(descriptor)));
 }
 
 template <typename D> void impl_IMediaStreamSource<D>::MediaProtectionManager(const Windows::Media::Protection::MediaProtectionManager & value) const
 {
-    check_hresult(shim()->put_MediaProtectionManager(get(value)));
+    check_hresult(static_cast<const IMediaStreamSource &>(static_cast<const D &>(*this))->put_MediaProtectionManager(get(value)));
 }
 
 template <typename D> Windows::Media::Protection::MediaProtectionManager impl_IMediaStreamSource<D>::MediaProtectionManager() const
 {
     Windows::Media::Protection::MediaProtectionManager value { nullptr };
-    check_hresult(shim()->get_MediaProtectionManager(put(value)));
+    check_hresult(static_cast<const IMediaStreamSource &>(static_cast<const D &>(*this))->get_MediaProtectionManager(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaStreamSource<D>::Duration(const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(shim()->put_Duration(get(value)));
+    check_hresult(static_cast<const IMediaStreamSource &>(static_cast<const D &>(*this))->put_Duration(get(value)));
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IMediaStreamSource<D>::Duration() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_Duration(put(value)));
+    check_hresult(static_cast<const IMediaStreamSource &>(static_cast<const D &>(*this))->get_Duration(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaStreamSource<D>::CanSeek(bool value) const
 {
-    check_hresult(shim()->put_CanSeek(value));
+    check_hresult(static_cast<const IMediaStreamSource &>(static_cast<const D &>(*this))->put_CanSeek(value));
 }
 
 template <typename D> bool impl_IMediaStreamSource<D>::CanSeek() const
 {
     bool value {};
-    check_hresult(shim()->get_CanSeek(&value));
+    check_hresult(static_cast<const IMediaStreamSource &>(static_cast<const D &>(*this))->get_CanSeek(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaStreamSource<D>::BufferTime(const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(shim()->put_BufferTime(get(value)));
+    check_hresult(static_cast<const IMediaStreamSource &>(static_cast<const D &>(*this))->put_BufferTime(get(value)));
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IMediaStreamSource<D>::BufferTime() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_BufferTime(put(value)));
+    check_hresult(static_cast<const IMediaStreamSource &>(static_cast<const D &>(*this))->get_BufferTime(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaStreamSource<D>::SetBufferedRange(const Windows::Foundation::TimeSpan & startOffset, const Windows::Foundation::TimeSpan & endOffset) const
 {
-    check_hresult(shim()->abi_SetBufferedRange(get(startOffset), get(endOffset)));
+    check_hresult(static_cast<const IMediaStreamSource &>(static_cast<const D &>(*this))->abi_SetBufferedRange(get(startOffset), get(endOffset)));
 }
 
 template <typename D> Windows::Storage::FileProperties::MusicProperties impl_IMediaStreamSource<D>::MusicProperties() const
 {
     Windows::Storage::FileProperties::MusicProperties value { nullptr };
-    check_hresult(shim()->get_MusicProperties(put(value)));
+    check_hresult(static_cast<const IMediaStreamSource &>(static_cast<const D &>(*this))->get_MusicProperties(put(value)));
     return value;
 }
 
 template <typename D> Windows::Storage::FileProperties::VideoProperties impl_IMediaStreamSource<D>::VideoProperties() const
 {
     Windows::Storage::FileProperties::VideoProperties value { nullptr };
-    check_hresult(shim()->get_VideoProperties(put(value)));
+    check_hresult(static_cast<const IMediaStreamSource &>(static_cast<const D &>(*this))->get_VideoProperties(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaStreamSource<D>::Thumbnail(const Windows::Storage::Streams::IRandomAccessStreamReference & value) const
 {
-    check_hresult(shim()->put_Thumbnail(get(value)));
+    check_hresult(static_cast<const IMediaStreamSource &>(static_cast<const D &>(*this))->put_Thumbnail(get(value)));
 }
 
 template <typename D> Windows::Storage::Streams::IRandomAccessStreamReference impl_IMediaStreamSource<D>::Thumbnail() const
 {
     Windows::Storage::Streams::IRandomAccessStreamReference value;
-    check_hresult(shim()->get_Thumbnail(put(value)));
+    check_hresult(static_cast<const IMediaStreamSource &>(static_cast<const D &>(*this))->get_Thumbnail(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaStreamSource<D>::AddProtectionKey(const Windows::Media::Core::IMediaStreamDescriptor & streamDescriptor, array_ref<const uint8_t> keyIdentifier, array_ref<const uint8_t> licenseData) const
 {
-    check_hresult(shim()->abi_AddProtectionKey(get(streamDescriptor), keyIdentifier.size(), get(keyIdentifier), licenseData.size(), get(licenseData)));
+    check_hresult(static_cast<const IMediaStreamSource &>(static_cast<const D &>(*this))->abi_AddProtectionKey(get(streamDescriptor), keyIdentifier.size(), get(keyIdentifier), licenseData.size(), get(licenseData)));
 }
 
 template <typename D> event_token impl_IMediaStreamSource2<D>::SampleRendered(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSource, Windows::Media::Core::MediaStreamSourceSampleRenderedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_SampleRendered(get(handler), &token));
+    check_hresult(static_cast<const IMediaStreamSource2 &>(static_cast<const D &>(*this))->add_SampleRendered(get(handler), &token));
     return token;
 }
 
@@ -4890,27 +4890,27 @@ template <typename D> event_revoker<IMediaStreamSource2> impl_IMediaStreamSource
 
 template <typename D> void impl_IMediaStreamSource2<D>::SampleRendered(event_token token) const
 {
-    check_hresult(shim()->remove_SampleRendered(token));
+    check_hresult(static_cast<const IMediaStreamSource2 &>(static_cast<const D &>(*this))->remove_SampleRendered(token));
 }
 
 template <typename D> Windows::Media::Core::MediaStreamSource impl_IMediaStreamSourceFactory<D>::CreateFromDescriptor(const Windows::Media::Core::IMediaStreamDescriptor & descriptor) const
 {
     Windows::Media::Core::MediaStreamSource result { nullptr };
-    check_hresult(shim()->abi_CreateFromDescriptor(get(descriptor), put(result)));
+    check_hresult(static_cast<const IMediaStreamSourceFactory &>(static_cast<const D &>(*this))->abi_CreateFromDescriptor(get(descriptor), put(result)));
     return result;
 }
 
 template <typename D> Windows::Media::Core::MediaStreamSource impl_IMediaStreamSourceFactory<D>::CreateFromDescriptors(const Windows::Media::Core::IMediaStreamDescriptor & descriptor, const Windows::Media::Core::IMediaStreamDescriptor & descriptor2) const
 {
     Windows::Media::Core::MediaStreamSource result { nullptr };
-    check_hresult(shim()->abi_CreateFromDescriptors(get(descriptor), get(descriptor2), put(result)));
+    check_hresult(static_cast<const IMediaStreamSourceFactory &>(static_cast<const D &>(*this))->abi_CreateFromDescriptors(get(descriptor), get(descriptor2), put(result)));
     return result;
 }
 
 template <typename D> event_token impl_IMediaStreamSample<D>::Processed(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaStreamSample, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_Processed(get(handler), &token));
+    check_hresult(static_cast<const IMediaStreamSample &>(static_cast<const D &>(*this))->add_Processed(get(handler), &token));
     return token;
 }
 
@@ -4921,268 +4921,268 @@ template <typename D> event_revoker<IMediaStreamSample> impl_IMediaStreamSample<
 
 template <typename D> void impl_IMediaStreamSample<D>::Processed(event_token token) const
 {
-    check_hresult(shim()->remove_Processed(token));
+    check_hresult(static_cast<const IMediaStreamSample &>(static_cast<const D &>(*this))->remove_Processed(token));
 }
 
 template <typename D> Windows::Storage::Streams::Buffer impl_IMediaStreamSample<D>::Buffer() const
 {
     Windows::Storage::Streams::Buffer value { nullptr };
-    check_hresult(shim()->get_Buffer(put(value)));
+    check_hresult(static_cast<const IMediaStreamSample &>(static_cast<const D &>(*this))->get_Buffer(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IMediaStreamSample<D>::Timestamp() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_Timestamp(put(value)));
+    check_hresult(static_cast<const IMediaStreamSample &>(static_cast<const D &>(*this))->get_Timestamp(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Core::MediaStreamSamplePropertySet impl_IMediaStreamSample<D>::ExtendedProperties() const
 {
     Windows::Media::Core::MediaStreamSamplePropertySet value { nullptr };
-    check_hresult(shim()->get_ExtendedProperties(put(value)));
+    check_hresult(static_cast<const IMediaStreamSample &>(static_cast<const D &>(*this))->get_ExtendedProperties(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Core::MediaStreamSampleProtectionProperties impl_IMediaStreamSample<D>::Protection() const
 {
     Windows::Media::Core::MediaStreamSampleProtectionProperties value { nullptr };
-    check_hresult(shim()->get_Protection(put(value)));
+    check_hresult(static_cast<const IMediaStreamSample &>(static_cast<const D &>(*this))->get_Protection(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaStreamSample<D>::DecodeTimestamp(const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(shim()->put_DecodeTimestamp(get(value)));
+    check_hresult(static_cast<const IMediaStreamSample &>(static_cast<const D &>(*this))->put_DecodeTimestamp(get(value)));
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IMediaStreamSample<D>::DecodeTimestamp() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_DecodeTimestamp(put(value)));
+    check_hresult(static_cast<const IMediaStreamSample &>(static_cast<const D &>(*this))->get_DecodeTimestamp(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaStreamSample<D>::Duration(const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(shim()->put_Duration(get(value)));
+    check_hresult(static_cast<const IMediaStreamSample &>(static_cast<const D &>(*this))->put_Duration(get(value)));
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IMediaStreamSample<D>::Duration() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_Duration(put(value)));
+    check_hresult(static_cast<const IMediaStreamSample &>(static_cast<const D &>(*this))->get_Duration(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaStreamSample<D>::KeyFrame(bool value) const
 {
-    check_hresult(shim()->put_KeyFrame(value));
+    check_hresult(static_cast<const IMediaStreamSample &>(static_cast<const D &>(*this))->put_KeyFrame(value));
 }
 
 template <typename D> bool impl_IMediaStreamSample<D>::KeyFrame() const
 {
     bool value {};
-    check_hresult(shim()->get_KeyFrame(&value));
+    check_hresult(static_cast<const IMediaStreamSample &>(static_cast<const D &>(*this))->get_KeyFrame(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaStreamSample<D>::Discontinuous(bool value) const
 {
-    check_hresult(shim()->put_Discontinuous(value));
+    check_hresult(static_cast<const IMediaStreamSample &>(static_cast<const D &>(*this))->put_Discontinuous(value));
 }
 
 template <typename D> bool impl_IMediaStreamSample<D>::Discontinuous() const
 {
     bool value {};
-    check_hresult(shim()->get_Discontinuous(&value));
+    check_hresult(static_cast<const IMediaStreamSample &>(static_cast<const D &>(*this))->get_Discontinuous(&value));
     return value;
 }
 
 template <typename D> Windows::Media::Core::MediaStreamSample impl_IMediaStreamSampleStatics<D>::CreateFromBuffer(const Windows::Storage::Streams::IBuffer & buffer, const Windows::Foundation::TimeSpan & timestamp) const
 {
     Windows::Media::Core::MediaStreamSample value { nullptr };
-    check_hresult(shim()->abi_CreateFromBuffer(get(buffer), get(timestamp), put(value)));
+    check_hresult(static_cast<const IMediaStreamSampleStatics &>(static_cast<const D &>(*this))->abi_CreateFromBuffer(get(buffer), get(timestamp), put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IAsyncOperation<Windows::Media::Core::MediaStreamSample> impl_IMediaStreamSampleStatics<D>::CreateFromStreamAsync(const Windows::Storage::Streams::IInputStream & stream, uint32_t count, const Windows::Foundation::TimeSpan & timestamp) const
 {
     Windows::Foundation::IAsyncOperation<Windows::Media::Core::MediaStreamSample> value;
-    check_hresult(shim()->abi_CreateFromStreamAsync(get(stream), count, get(timestamp), put(value)));
+    check_hresult(static_cast<const IMediaStreamSampleStatics &>(static_cast<const D &>(*this))->abi_CreateFromStreamAsync(get(stream), count, get(timestamp), put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaStreamSampleProtectionProperties<D>::SetKeyIdentifier(array_ref<const uint8_t> value) const
 {
-    check_hresult(shim()->abi_SetKeyIdentifier(value.size(), get(value)));
+    check_hresult(static_cast<const IMediaStreamSampleProtectionProperties &>(static_cast<const D &>(*this))->abi_SetKeyIdentifier(value.size(), get(value)));
 }
 
 template <typename D> void impl_IMediaStreamSampleProtectionProperties<D>::GetKeyIdentifier(com_array<uint8_t> & value) const
 {
-    check_hresult(shim()->abi_GetKeyIdentifier(put_size(value), put(value)));
+    check_hresult(static_cast<const IMediaStreamSampleProtectionProperties &>(static_cast<const D &>(*this))->abi_GetKeyIdentifier(put_size(value), put(value)));
 }
 
 template <typename D> void impl_IMediaStreamSampleProtectionProperties<D>::SetInitializationVector(array_ref<const uint8_t> value) const
 {
-    check_hresult(shim()->abi_SetInitializationVector(value.size(), get(value)));
+    check_hresult(static_cast<const IMediaStreamSampleProtectionProperties &>(static_cast<const D &>(*this))->abi_SetInitializationVector(value.size(), get(value)));
 }
 
 template <typename D> void impl_IMediaStreamSampleProtectionProperties<D>::GetInitializationVector(com_array<uint8_t> & value) const
 {
-    check_hresult(shim()->abi_GetInitializationVector(put_size(value), put(value)));
+    check_hresult(static_cast<const IMediaStreamSampleProtectionProperties &>(static_cast<const D &>(*this))->abi_GetInitializationVector(put_size(value), put(value)));
 }
 
 template <typename D> void impl_IMediaStreamSampleProtectionProperties<D>::SetSubSampleMapping(array_ref<const uint8_t> value) const
 {
-    check_hresult(shim()->abi_SetSubSampleMapping(value.size(), get(value)));
+    check_hresult(static_cast<const IMediaStreamSampleProtectionProperties &>(static_cast<const D &>(*this))->abi_SetSubSampleMapping(value.size(), get(value)));
 }
 
 template <typename D> void impl_IMediaStreamSampleProtectionProperties<D>::GetSubSampleMapping(com_array<uint8_t> & value) const
 {
-    check_hresult(shim()->abi_GetSubSampleMapping(put_size(value), put(value)));
+    check_hresult(static_cast<const IMediaStreamSampleProtectionProperties &>(static_cast<const D &>(*this))->abi_GetSubSampleMapping(put_size(value), put(value)));
 }
 
 template <typename D> Windows::Media::Core::MediaStreamSourceClosedReason impl_IMediaStreamSourceClosedRequest<D>::Reason() const
 {
     Windows::Media::Core::MediaStreamSourceClosedReason value {};
-    check_hresult(shim()->get_Reason(&value));
+    check_hresult(static_cast<const IMediaStreamSourceClosedRequest &>(static_cast<const D &>(*this))->get_Reason(&value));
     return value;
 }
 
 template <typename D> Windows::Media::Core::MediaStreamSourceClosedRequest impl_IMediaStreamSourceClosedEventArgs<D>::Request() const
 {
     Windows::Media::Core::MediaStreamSourceClosedRequest value { nullptr };
-    check_hresult(shim()->get_Request(put(value)));
+    check_hresult(static_cast<const IMediaStreamSourceClosedEventArgs &>(static_cast<const D &>(*this))->get_Request(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaStreamSourceStartingRequestDeferral<D>::Complete() const
 {
-    check_hresult(shim()->abi_Complete());
+    check_hresult(static_cast<const IMediaStreamSourceStartingRequestDeferral &>(static_cast<const D &>(*this))->abi_Complete());
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeSpan> impl_IMediaStreamSourceStartingRequest<D>::StartPosition() const
 {
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> value;
-    check_hresult(shim()->get_StartPosition(put(value)));
+    check_hresult(static_cast<const IMediaStreamSourceStartingRequest &>(static_cast<const D &>(*this))->get_StartPosition(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Core::MediaStreamSourceStartingRequestDeferral impl_IMediaStreamSourceStartingRequest<D>::GetDeferral() const
 {
     Windows::Media::Core::MediaStreamSourceStartingRequestDeferral deferral { nullptr };
-    check_hresult(shim()->abi_GetDeferral(put(deferral)));
+    check_hresult(static_cast<const IMediaStreamSourceStartingRequest &>(static_cast<const D &>(*this))->abi_GetDeferral(put(deferral)));
     return deferral;
 }
 
 template <typename D> void impl_IMediaStreamSourceStartingRequest<D>::SetActualStartPosition(const Windows::Foundation::TimeSpan & position) const
 {
-    check_hresult(shim()->abi_SetActualStartPosition(get(position)));
+    check_hresult(static_cast<const IMediaStreamSourceStartingRequest &>(static_cast<const D &>(*this))->abi_SetActualStartPosition(get(position)));
 }
 
 template <typename D> Windows::Media::Core::MediaStreamSourceStartingRequest impl_IMediaStreamSourceStartingEventArgs<D>::Request() const
 {
     Windows::Media::Core::MediaStreamSourceStartingRequest value { nullptr };
-    check_hresult(shim()->get_Request(put(value)));
+    check_hresult(static_cast<const IMediaStreamSourceStartingEventArgs &>(static_cast<const D &>(*this))->get_Request(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaStreamSourceSampleRequestDeferral<D>::Complete() const
 {
-    check_hresult(shim()->abi_Complete());
+    check_hresult(static_cast<const IMediaStreamSourceSampleRequestDeferral &>(static_cast<const D &>(*this))->abi_Complete());
 }
 
 template <typename D> Windows::Media::Core::IMediaStreamDescriptor impl_IMediaStreamSourceSampleRequest<D>::StreamDescriptor() const
 {
     Windows::Media::Core::IMediaStreamDescriptor value;
-    check_hresult(shim()->get_StreamDescriptor(put(value)));
+    check_hresult(static_cast<const IMediaStreamSourceSampleRequest &>(static_cast<const D &>(*this))->get_StreamDescriptor(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Core::MediaStreamSourceSampleRequestDeferral impl_IMediaStreamSourceSampleRequest<D>::GetDeferral() const
 {
     Windows::Media::Core::MediaStreamSourceSampleRequestDeferral deferral { nullptr };
-    check_hresult(shim()->abi_GetDeferral(put(deferral)));
+    check_hresult(static_cast<const IMediaStreamSourceSampleRequest &>(static_cast<const D &>(*this))->abi_GetDeferral(put(deferral)));
     return deferral;
 }
 
 template <typename D> void impl_IMediaStreamSourceSampleRequest<D>::Sample(const Windows::Media::Core::MediaStreamSample & value) const
 {
-    check_hresult(shim()->put_Sample(get(value)));
+    check_hresult(static_cast<const IMediaStreamSourceSampleRequest &>(static_cast<const D &>(*this))->put_Sample(get(value)));
 }
 
 template <typename D> Windows::Media::Core::MediaStreamSample impl_IMediaStreamSourceSampleRequest<D>::Sample() const
 {
     Windows::Media::Core::MediaStreamSample value { nullptr };
-    check_hresult(shim()->get_Sample(put(value)));
+    check_hresult(static_cast<const IMediaStreamSourceSampleRequest &>(static_cast<const D &>(*this))->get_Sample(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaStreamSourceSampleRequest<D>::ReportSampleProgress(uint32_t progress) const
 {
-    check_hresult(shim()->abi_ReportSampleProgress(progress));
+    check_hresult(static_cast<const IMediaStreamSourceSampleRequest &>(static_cast<const D &>(*this))->abi_ReportSampleProgress(progress));
 }
 
 template <typename D> Windows::Media::Core::MediaStreamSourceSampleRequest impl_IMediaStreamSourceSampleRequestedEventArgs<D>::Request() const
 {
     Windows::Media::Core::MediaStreamSourceSampleRequest value { nullptr };
-    check_hresult(shim()->get_Request(put(value)));
+    check_hresult(static_cast<const IMediaStreamSourceSampleRequestedEventArgs &>(static_cast<const D &>(*this))->get_Request(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaStreamSourceSwitchStreamsRequestDeferral<D>::Complete() const
 {
-    check_hresult(shim()->abi_Complete());
+    check_hresult(static_cast<const IMediaStreamSourceSwitchStreamsRequestDeferral &>(static_cast<const D &>(*this))->abi_Complete());
 }
 
 template <typename D> Windows::Media::Core::IMediaStreamDescriptor impl_IMediaStreamSourceSwitchStreamsRequest<D>::OldStreamDescriptor() const
 {
     Windows::Media::Core::IMediaStreamDescriptor value;
-    check_hresult(shim()->get_OldStreamDescriptor(put(value)));
+    check_hresult(static_cast<const IMediaStreamSourceSwitchStreamsRequest &>(static_cast<const D &>(*this))->get_OldStreamDescriptor(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Core::IMediaStreamDescriptor impl_IMediaStreamSourceSwitchStreamsRequest<D>::NewStreamDescriptor() const
 {
     Windows::Media::Core::IMediaStreamDescriptor value;
-    check_hresult(shim()->get_NewStreamDescriptor(put(value)));
+    check_hresult(static_cast<const IMediaStreamSourceSwitchStreamsRequest &>(static_cast<const D &>(*this))->get_NewStreamDescriptor(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Core::MediaStreamSourceSwitchStreamsRequestDeferral impl_IMediaStreamSourceSwitchStreamsRequest<D>::GetDeferral() const
 {
     Windows::Media::Core::MediaStreamSourceSwitchStreamsRequestDeferral deferral { nullptr };
-    check_hresult(shim()->abi_GetDeferral(put(deferral)));
+    check_hresult(static_cast<const IMediaStreamSourceSwitchStreamsRequest &>(static_cast<const D &>(*this))->abi_GetDeferral(put(deferral)));
     return deferral;
 }
 
 template <typename D> Windows::Media::Core::MediaStreamSourceSwitchStreamsRequest impl_IMediaStreamSourceSwitchStreamsRequestedEventArgs<D>::Request() const
 {
     Windows::Media::Core::MediaStreamSourceSwitchStreamsRequest value { nullptr };
-    check_hresult(shim()->get_Request(put(value)));
+    check_hresult(static_cast<const IMediaStreamSourceSwitchStreamsRequestedEventArgs &>(static_cast<const D &>(*this))->get_Request(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IMediaStreamSourceSampleRenderedEventArgs<D>::SampleLag() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_SampleLag(put(value)));
+    check_hresult(static_cast<const IMediaStreamSourceSampleRenderedEventArgs &>(static_cast<const D &>(*this))->get_SampleLag(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IMseStreamSourceStatics<D>::IsContentTypeSupported(hstring_ref contentType) const
 {
     bool value {};
-    check_hresult(shim()->abi_IsContentTypeSupported(get(contentType), &value));
+    check_hresult(static_cast<const IMseStreamSourceStatics &>(static_cast<const D &>(*this))->abi_IsContentTypeSupported(get(contentType), &value));
     return value;
 }
 
 template <typename D> event_token impl_IMseStreamSource<D>::Opened(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseStreamSource, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_Opened(get(handler), &token));
+    check_hresult(static_cast<const IMseStreamSource &>(static_cast<const D &>(*this))->add_Opened(get(handler), &token));
     return token;
 }
 
@@ -5193,13 +5193,13 @@ template <typename D> event_revoker<IMseStreamSource> impl_IMseStreamSource<D>::
 
 template <typename D> void impl_IMseStreamSource<D>::Opened(event_token token) const
 {
-    check_hresult(shim()->remove_Opened(token));
+    check_hresult(static_cast<const IMseStreamSource &>(static_cast<const D &>(*this))->remove_Opened(token));
 }
 
 template <typename D> event_token impl_IMseStreamSource<D>::Ended(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseStreamSource, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_Ended(get(handler), &token));
+    check_hresult(static_cast<const IMseStreamSource &>(static_cast<const D &>(*this))->add_Ended(get(handler), &token));
     return token;
 }
 
@@ -5210,13 +5210,13 @@ template <typename D> event_revoker<IMseStreamSource> impl_IMseStreamSource<D>::
 
 template <typename D> void impl_IMseStreamSource<D>::Ended(event_token token) const
 {
-    check_hresult(shim()->remove_Ended(token));
+    check_hresult(static_cast<const IMseStreamSource &>(static_cast<const D &>(*this))->remove_Ended(token));
 }
 
 template <typename D> event_token impl_IMseStreamSource<D>::Closed(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseStreamSource, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_Closed(get(handler), &token));
+    check_hresult(static_cast<const IMseStreamSource &>(static_cast<const D &>(*this))->add_Closed(get(handler), &token));
     return token;
 }
 
@@ -5227,63 +5227,63 @@ template <typename D> event_revoker<IMseStreamSource> impl_IMseStreamSource<D>::
 
 template <typename D> void impl_IMseStreamSource<D>::Closed(event_token token) const
 {
-    check_hresult(shim()->remove_Closed(token));
+    check_hresult(static_cast<const IMseStreamSource &>(static_cast<const D &>(*this))->remove_Closed(token));
 }
 
 template <typename D> Windows::Media::Core::MseSourceBufferList impl_IMseStreamSource<D>::SourceBuffers() const
 {
     Windows::Media::Core::MseSourceBufferList value { nullptr };
-    check_hresult(shim()->get_SourceBuffers(put(value)));
+    check_hresult(static_cast<const IMseStreamSource &>(static_cast<const D &>(*this))->get_SourceBuffers(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Core::MseSourceBufferList impl_IMseStreamSource<D>::ActiveSourceBuffers() const
 {
     Windows::Media::Core::MseSourceBufferList value { nullptr };
-    check_hresult(shim()->get_ActiveSourceBuffers(put(value)));
+    check_hresult(static_cast<const IMseStreamSource &>(static_cast<const D &>(*this))->get_ActiveSourceBuffers(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Core::MseReadyState impl_IMseStreamSource<D>::ReadyState() const
 {
     Windows::Media::Core::MseReadyState value {};
-    check_hresult(shim()->get_ReadyState(&value));
+    check_hresult(static_cast<const IMseStreamSource &>(static_cast<const D &>(*this))->get_ReadyState(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeSpan> impl_IMseStreamSource<D>::Duration() const
 {
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> value;
-    check_hresult(shim()->get_Duration(put(value)));
+    check_hresult(static_cast<const IMseStreamSource &>(static_cast<const D &>(*this))->get_Duration(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMseStreamSource<D>::Duration(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const
 {
-    check_hresult(shim()->put_Duration(get(value)));
+    check_hresult(static_cast<const IMseStreamSource &>(static_cast<const D &>(*this))->put_Duration(get(value)));
 }
 
 template <typename D> Windows::Media::Core::MseSourceBuffer impl_IMseStreamSource<D>::AddSourceBuffer(hstring_ref mimeType) const
 {
     Windows::Media::Core::MseSourceBuffer buffer { nullptr };
-    check_hresult(shim()->abi_AddSourceBuffer(get(mimeType), put(buffer)));
+    check_hresult(static_cast<const IMseStreamSource &>(static_cast<const D &>(*this))->abi_AddSourceBuffer(get(mimeType), put(buffer)));
     return buffer;
 }
 
 template <typename D> void impl_IMseStreamSource<D>::RemoveSourceBuffer(const Windows::Media::Core::MseSourceBuffer & buffer) const
 {
-    check_hresult(shim()->abi_RemoveSourceBuffer(get(buffer)));
+    check_hresult(static_cast<const IMseStreamSource &>(static_cast<const D &>(*this))->abi_RemoveSourceBuffer(get(buffer)));
 }
 
 template <typename D> void impl_IMseStreamSource<D>::EndOfStream(Windows::Media::Core::MseEndOfStreamStatus status) const
 {
-    check_hresult(shim()->abi_EndOfStream(status));
+    check_hresult(static_cast<const IMseStreamSource &>(static_cast<const D &>(*this))->abi_EndOfStream(status));
 }
 
 template <typename D> event_token impl_IMseSourceBuffer<D>::UpdateStarting(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_UpdateStarting(get(handler), &token));
+    check_hresult(static_cast<const IMseSourceBuffer &>(static_cast<const D &>(*this))->add_UpdateStarting(get(handler), &token));
     return token;
 }
 
@@ -5294,13 +5294,13 @@ template <typename D> event_revoker<IMseSourceBuffer> impl_IMseSourceBuffer<D>::
 
 template <typename D> void impl_IMseSourceBuffer<D>::UpdateStarting(event_token token) const
 {
-    check_hresult(shim()->remove_UpdateStarting(token));
+    check_hresult(static_cast<const IMseSourceBuffer &>(static_cast<const D &>(*this))->remove_UpdateStarting(token));
 }
 
 template <typename D> event_token impl_IMseSourceBuffer<D>::Updated(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_Updated(get(handler), &token));
+    check_hresult(static_cast<const IMseSourceBuffer &>(static_cast<const D &>(*this))->add_Updated(get(handler), &token));
     return token;
 }
 
@@ -5311,13 +5311,13 @@ template <typename D> event_revoker<IMseSourceBuffer> impl_IMseSourceBuffer<D>::
 
 template <typename D> void impl_IMseSourceBuffer<D>::Updated(event_token token) const
 {
-    check_hresult(shim()->remove_Updated(token));
+    check_hresult(static_cast<const IMseSourceBuffer &>(static_cast<const D &>(*this))->remove_Updated(token));
 }
 
 template <typename D> event_token impl_IMseSourceBuffer<D>::UpdateEnded(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_UpdateEnded(get(handler), &token));
+    check_hresult(static_cast<const IMseSourceBuffer &>(static_cast<const D &>(*this))->add_UpdateEnded(get(handler), &token));
     return token;
 }
 
@@ -5328,13 +5328,13 @@ template <typename D> event_revoker<IMseSourceBuffer> impl_IMseSourceBuffer<D>::
 
 template <typename D> void impl_IMseSourceBuffer<D>::UpdateEnded(event_token token) const
 {
-    check_hresult(shim()->remove_UpdateEnded(token));
+    check_hresult(static_cast<const IMseSourceBuffer &>(static_cast<const D &>(*this))->remove_UpdateEnded(token));
 }
 
 template <typename D> event_token impl_IMseSourceBuffer<D>::ErrorOccurred(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_ErrorOccurred(get(handler), &token));
+    check_hresult(static_cast<const IMseSourceBuffer &>(static_cast<const D &>(*this))->add_ErrorOccurred(get(handler), &token));
     return token;
 }
 
@@ -5345,13 +5345,13 @@ template <typename D> event_revoker<IMseSourceBuffer> impl_IMseSourceBuffer<D>::
 
 template <typename D> void impl_IMseSourceBuffer<D>::ErrorOccurred(event_token token) const
 {
-    check_hresult(shim()->remove_ErrorOccurred(token));
+    check_hresult(static_cast<const IMseSourceBuffer &>(static_cast<const D &>(*this))->remove_ErrorOccurred(token));
 }
 
 template <typename D> event_token impl_IMseSourceBuffer<D>::Aborted(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBuffer, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_Aborted(get(handler), &token));
+    check_hresult(static_cast<const IMseSourceBuffer &>(static_cast<const D &>(*this))->add_Aborted(get(handler), &token));
     return token;
 }
 
@@ -5362,100 +5362,100 @@ template <typename D> event_revoker<IMseSourceBuffer> impl_IMseSourceBuffer<D>::
 
 template <typename D> void impl_IMseSourceBuffer<D>::Aborted(event_token token) const
 {
-    check_hresult(shim()->remove_Aborted(token));
+    check_hresult(static_cast<const IMseSourceBuffer &>(static_cast<const D &>(*this))->remove_Aborted(token));
 }
 
 template <typename D> Windows::Media::Core::MseAppendMode impl_IMseSourceBuffer<D>::Mode() const
 {
     Windows::Media::Core::MseAppendMode value {};
-    check_hresult(shim()->get_Mode(&value));
+    check_hresult(static_cast<const IMseSourceBuffer &>(static_cast<const D &>(*this))->get_Mode(&value));
     return value;
 }
 
 template <typename D> void impl_IMseSourceBuffer<D>::Mode(Windows::Media::Core::MseAppendMode value) const
 {
-    check_hresult(shim()->put_Mode(value));
+    check_hresult(static_cast<const IMseSourceBuffer &>(static_cast<const D &>(*this))->put_Mode(value));
 }
 
 template <typename D> bool impl_IMseSourceBuffer<D>::IsUpdating() const
 {
     bool value {};
-    check_hresult(shim()->get_IsUpdating(&value));
+    check_hresult(static_cast<const IMseSourceBuffer &>(static_cast<const D &>(*this))->get_IsUpdating(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::Core::MseTimeRange> impl_IMseSourceBuffer<D>::Buffered() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Media::Core::MseTimeRange> value;
-    check_hresult(shim()->get_Buffered(put(value)));
+    check_hresult(static_cast<const IMseSourceBuffer &>(static_cast<const D &>(*this))->get_Buffered(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IMseSourceBuffer<D>::TimestampOffset() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_TimestampOffset(put(value)));
+    check_hresult(static_cast<const IMseSourceBuffer &>(static_cast<const D &>(*this))->get_TimestampOffset(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMseSourceBuffer<D>::TimestampOffset(const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(shim()->put_TimestampOffset(get(value)));
+    check_hresult(static_cast<const IMseSourceBuffer &>(static_cast<const D &>(*this))->put_TimestampOffset(get(value)));
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IMseSourceBuffer<D>::AppendWindowStart() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_AppendWindowStart(put(value)));
+    check_hresult(static_cast<const IMseSourceBuffer &>(static_cast<const D &>(*this))->get_AppendWindowStart(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMseSourceBuffer<D>::AppendWindowStart(const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(shim()->put_AppendWindowStart(get(value)));
+    check_hresult(static_cast<const IMseSourceBuffer &>(static_cast<const D &>(*this))->put_AppendWindowStart(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeSpan> impl_IMseSourceBuffer<D>::AppendWindowEnd() const
 {
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> value;
-    check_hresult(shim()->get_AppendWindowEnd(put(value)));
+    check_hresult(static_cast<const IMseSourceBuffer &>(static_cast<const D &>(*this))->get_AppendWindowEnd(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMseSourceBuffer<D>::AppendWindowEnd(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const
 {
-    check_hresult(shim()->put_AppendWindowEnd(get(value)));
+    check_hresult(static_cast<const IMseSourceBuffer &>(static_cast<const D &>(*this))->put_AppendWindowEnd(get(value)));
 }
 
 template <typename D> void impl_IMseSourceBuffer<D>::AppendBuffer(const Windows::Storage::Streams::IBuffer & buffer) const
 {
-    check_hresult(shim()->abi_AppendBuffer(get(buffer)));
+    check_hresult(static_cast<const IMseSourceBuffer &>(static_cast<const D &>(*this))->abi_AppendBuffer(get(buffer)));
 }
 
 template <typename D> void impl_IMseSourceBuffer<D>::AppendStream(const Windows::Storage::Streams::IInputStream & stream) const
 {
-    check_hresult(shim()->abi_AppendStream(get(stream)));
+    check_hresult(static_cast<const IMseSourceBuffer &>(static_cast<const D &>(*this))->abi_AppendStream(get(stream)));
 }
 
 template <typename D> void impl_IMseSourceBuffer<D>::AppendStream(const Windows::Storage::Streams::IInputStream & stream, uint64_t maxSize) const
 {
-    check_hresult(shim()->abi_AppendStreamMaxSize(get(stream), maxSize));
+    check_hresult(static_cast<const IMseSourceBuffer &>(static_cast<const D &>(*this))->abi_AppendStreamMaxSize(get(stream), maxSize));
 }
 
 template <typename D> void impl_IMseSourceBuffer<D>::Abort() const
 {
-    check_hresult(shim()->abi_Abort());
+    check_hresult(static_cast<const IMseSourceBuffer &>(static_cast<const D &>(*this))->abi_Abort());
 }
 
 template <typename D> void impl_IMseSourceBuffer<D>::Remove(const Windows::Foundation::TimeSpan & start, const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & end) const
 {
-    check_hresult(shim()->abi_Remove(get(start), get(end)));
+    check_hresult(static_cast<const IMseSourceBuffer &>(static_cast<const D &>(*this))->abi_Remove(get(start), get(end)));
 }
 
 template <typename D> event_token impl_IMseSourceBufferList<D>::SourceBufferAdded(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBufferList, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_SourceBufferAdded(get(handler), &token));
+    check_hresult(static_cast<const IMseSourceBufferList &>(static_cast<const D &>(*this))->add_SourceBufferAdded(get(handler), &token));
     return token;
 }
 
@@ -5466,13 +5466,13 @@ template <typename D> event_revoker<IMseSourceBufferList> impl_IMseSourceBufferL
 
 template <typename D> void impl_IMseSourceBufferList<D>::SourceBufferAdded(event_token token) const
 {
-    check_hresult(shim()->remove_SourceBufferAdded(token));
+    check_hresult(static_cast<const IMseSourceBufferList &>(static_cast<const D &>(*this))->remove_SourceBufferAdded(token));
 }
 
 template <typename D> event_token impl_IMseSourceBufferList<D>::SourceBufferRemoved(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MseSourceBufferList, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_SourceBufferRemoved(get(handler), &token));
+    check_hresult(static_cast<const IMseSourceBufferList &>(static_cast<const D &>(*this))->add_SourceBufferRemoved(get(handler), &token));
     return token;
 }
 
@@ -5483,51 +5483,51 @@ template <typename D> event_revoker<IMseSourceBufferList> impl_IMseSourceBufferL
 
 template <typename D> void impl_IMseSourceBufferList<D>::SourceBufferRemoved(event_token token) const
 {
-    check_hresult(shim()->remove_SourceBufferRemoved(token));
+    check_hresult(static_cast<const IMseSourceBufferList &>(static_cast<const D &>(*this))->remove_SourceBufferRemoved(token));
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::Core::MseSourceBuffer> impl_IMseSourceBufferList<D>::Buffers() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Media::Core::MseSourceBuffer> value;
-    check_hresult(shim()->get_Buffers(put(value)));
+    check_hresult(static_cast<const IMseSourceBufferList &>(static_cast<const D &>(*this))->get_Buffers(put(value)));
     return value;
 }
 
 template <typename D> void impl_IHighDynamicRangeControl<D>::Enabled(bool value) const
 {
-    check_hresult(shim()->put_Enabled(value));
+    check_hresult(static_cast<const IHighDynamicRangeControl &>(static_cast<const D &>(*this))->put_Enabled(value));
 }
 
 template <typename D> bool impl_IHighDynamicRangeControl<D>::Enabled() const
 {
     bool value {};
-    check_hresult(shim()->get_Enabled(&value));
+    check_hresult(static_cast<const IHighDynamicRangeControl &>(static_cast<const D &>(*this))->get_Enabled(&value));
     return value;
 }
 
 template <typename D> Windows::Media::Core::HighDynamicRangeControl impl_ISceneAnalysisEffect<D>::HighDynamicRangeAnalyzer() const
 {
     Windows::Media::Core::HighDynamicRangeControl value { nullptr };
-    check_hresult(shim()->get_HighDynamicRangeAnalyzer(put(value)));
+    check_hresult(static_cast<const ISceneAnalysisEffect &>(static_cast<const D &>(*this))->get_HighDynamicRangeAnalyzer(put(value)));
     return value;
 }
 
 template <typename D> void impl_ISceneAnalysisEffect<D>::DesiredAnalysisInterval(const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(shim()->put_DesiredAnalysisInterval(get(value)));
+    check_hresult(static_cast<const ISceneAnalysisEffect &>(static_cast<const D &>(*this))->put_DesiredAnalysisInterval(get(value)));
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_ISceneAnalysisEffect<D>::DesiredAnalysisInterval() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_DesiredAnalysisInterval(put(value)));
+    check_hresult(static_cast<const ISceneAnalysisEffect &>(static_cast<const D &>(*this))->get_DesiredAnalysisInterval(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_ISceneAnalysisEffect<D>::SceneAnalyzed(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::SceneAnalysisEffect, Windows::Media::Core::SceneAnalyzedEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_SceneAnalyzed(get(handler), &cookie));
+    check_hresult(static_cast<const ISceneAnalysisEffect &>(static_cast<const D &>(*this))->add_SceneAnalyzed(get(handler), &cookie));
     return cookie;
 }
 
@@ -5538,86 +5538,86 @@ template <typename D> event_revoker<ISceneAnalysisEffect> impl_ISceneAnalysisEff
 
 template <typename D> void impl_ISceneAnalysisEffect<D>::SceneAnalyzed(event_token cookie) const
 {
-    check_hresult(shim()->remove_SceneAnalyzed(cookie));
+    check_hresult(static_cast<const ISceneAnalysisEffect &>(static_cast<const D &>(*this))->remove_SceneAnalyzed(cookie));
 }
 
 template <typename D> double impl_IHighDynamicRangeOutput<D>::Certainty() const
 {
     double value {};
-    check_hresult(shim()->get_Certainty(&value));
+    check_hresult(static_cast<const IHighDynamicRangeOutput &>(static_cast<const D &>(*this))->get_Certainty(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::Devices::Core::FrameController> impl_IHighDynamicRangeOutput<D>::FrameControllers() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Media::Devices::Core::FrameController> value;
-    check_hresult(shim()->get_FrameControllers(put(value)));
+    check_hresult(static_cast<const IHighDynamicRangeOutput &>(static_cast<const D &>(*this))->get_FrameControllers(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Capture::CapturedFrameControlValues impl_ISceneAnalysisEffectFrame<D>::FrameControlValues() const
 {
     Windows::Media::Capture::CapturedFrameControlValues value { nullptr };
-    check_hresult(shim()->get_FrameControlValues(put(value)));
+    check_hresult(static_cast<const ISceneAnalysisEffectFrame &>(static_cast<const D &>(*this))->get_FrameControlValues(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Core::HighDynamicRangeOutput impl_ISceneAnalysisEffectFrame<D>::HighDynamicRange() const
 {
     Windows::Media::Core::HighDynamicRangeOutput value { nullptr };
-    check_hresult(shim()->get_HighDynamicRange(put(value)));
+    check_hresult(static_cast<const ISceneAnalysisEffectFrame &>(static_cast<const D &>(*this))->get_HighDynamicRange(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Core::SceneAnalysisEffectFrame impl_ISceneAnalyzedEventArgs<D>::ResultFrame() const
 {
     Windows::Media::Core::SceneAnalysisEffectFrame value { nullptr };
-    check_hresult(shim()->get_ResultFrame(put(value)));
+    check_hresult(static_cast<const ISceneAnalyzedEventArgs &>(static_cast<const D &>(*this))->get_ResultFrame(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::FaceAnalysis::DetectedFace> impl_IFaceDetectionEffectFrame<D>::DetectedFaces() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Media::FaceAnalysis::DetectedFace> value;
-    check_hresult(shim()->get_DetectedFaces(put(value)));
+    check_hresult(static_cast<const IFaceDetectionEffectFrame &>(static_cast<const D &>(*this))->get_DetectedFaces(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Core::FaceDetectionEffectFrame impl_IFaceDetectedEventArgs<D>::ResultFrame() const
 {
     Windows::Media::Core::FaceDetectionEffectFrame value { nullptr };
-    check_hresult(shim()->get_ResultFrame(put(value)));
+    check_hresult(static_cast<const IFaceDetectedEventArgs &>(static_cast<const D &>(*this))->get_ResultFrame(put(value)));
     return value;
 }
 
 template <typename D> void impl_IFaceDetectionEffect<D>::Enabled(bool value) const
 {
-    check_hresult(shim()->put_Enabled(value));
+    check_hresult(static_cast<const IFaceDetectionEffect &>(static_cast<const D &>(*this))->put_Enabled(value));
 }
 
 template <typename D> bool impl_IFaceDetectionEffect<D>::Enabled() const
 {
     bool value {};
-    check_hresult(shim()->get_Enabled(&value));
+    check_hresult(static_cast<const IFaceDetectionEffect &>(static_cast<const D &>(*this))->get_Enabled(&value));
     return value;
 }
 
 template <typename D> void impl_IFaceDetectionEffect<D>::DesiredDetectionInterval(const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(shim()->put_DesiredDetectionInterval(get(value)));
+    check_hresult(static_cast<const IFaceDetectionEffect &>(static_cast<const D &>(*this))->put_DesiredDetectionInterval(get(value)));
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IFaceDetectionEffect<D>::DesiredDetectionInterval() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_DesiredDetectionInterval(put(value)));
+    check_hresult(static_cast<const IFaceDetectionEffect &>(static_cast<const D &>(*this))->get_DesiredDetectionInterval(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IFaceDetectionEffect<D>::FaceDetected(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::FaceDetectionEffect, Windows::Media::Core::FaceDetectedEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_FaceDetected(get(handler), &cookie));
+    check_hresult(static_cast<const IFaceDetectionEffect &>(static_cast<const D &>(*this))->add_FaceDetected(get(handler), &cookie));
     return cookie;
 }
 
@@ -5628,56 +5628,56 @@ template <typename D> event_revoker<IFaceDetectionEffect> impl_IFaceDetectionEff
 
 template <typename D> void impl_IFaceDetectionEffect<D>::FaceDetected(event_token cookie) const
 {
-    check_hresult(shim()->remove_FaceDetected(cookie));
+    check_hresult(static_cast<const IFaceDetectionEffect &>(static_cast<const D &>(*this))->remove_FaceDetected(cookie));
 }
 
 template <typename D> void impl_IFaceDetectionEffectDefinition<D>::DetectionMode(Windows::Media::Core::FaceDetectionMode value) const
 {
-    check_hresult(shim()->put_DetectionMode(value));
+    check_hresult(static_cast<const IFaceDetectionEffectDefinition &>(static_cast<const D &>(*this))->put_DetectionMode(value));
 }
 
 template <typename D> Windows::Media::Core::FaceDetectionMode impl_IFaceDetectionEffectDefinition<D>::DetectionMode() const
 {
     Windows::Media::Core::FaceDetectionMode value {};
-    check_hresult(shim()->get_DetectionMode(&value));
+    check_hresult(static_cast<const IFaceDetectionEffectDefinition &>(static_cast<const D &>(*this))->get_DetectionMode(&value));
     return value;
 }
 
 template <typename D> void impl_IFaceDetectionEffectDefinition<D>::SynchronousDetectionEnabled(bool value) const
 {
-    check_hresult(shim()->put_SynchronousDetectionEnabled(value));
+    check_hresult(static_cast<const IFaceDetectionEffectDefinition &>(static_cast<const D &>(*this))->put_SynchronousDetectionEnabled(value));
 }
 
 template <typename D> bool impl_IFaceDetectionEffectDefinition<D>::SynchronousDetectionEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_SynchronousDetectionEnabled(&value));
+    check_hresult(static_cast<const IFaceDetectionEffectDefinition &>(static_cast<const D &>(*this))->get_SynchronousDetectionEnabled(&value));
     return value;
 }
 
 template <typename D> Windows::Media::Core::VideoStabilizationEffectEnabledChangedReason impl_IVideoStabilizationEffectEnabledChangedEventArgs<D>::Reason() const
 {
     Windows::Media::Core::VideoStabilizationEffectEnabledChangedReason value {};
-    check_hresult(shim()->get_Reason(&value));
+    check_hresult(static_cast<const IVideoStabilizationEffectEnabledChangedEventArgs &>(static_cast<const D &>(*this))->get_Reason(&value));
     return value;
 }
 
 template <typename D> void impl_IVideoStabilizationEffect<D>::Enabled(bool value) const
 {
-    check_hresult(shim()->put_Enabled(value));
+    check_hresult(static_cast<const IVideoStabilizationEffect &>(static_cast<const D &>(*this))->put_Enabled(value));
 }
 
 template <typename D> bool impl_IVideoStabilizationEffect<D>::Enabled() const
 {
     bool value {};
-    check_hresult(shim()->get_Enabled(&value));
+    check_hresult(static_cast<const IVideoStabilizationEffect &>(static_cast<const D &>(*this))->get_Enabled(&value));
     return value;
 }
 
 template <typename D> event_token impl_IVideoStabilizationEffect<D>::EnabledChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::VideoStabilizationEffect, Windows::Media::Core::VideoStabilizationEffectEnabledChangedEventArgs> & handler) const
 {
     event_token cookie {};
-    check_hresult(shim()->add_EnabledChanged(get(handler), &cookie));
+    check_hresult(static_cast<const IVideoStabilizationEffect &>(static_cast<const D &>(*this))->add_EnabledChanged(get(handler), &cookie));
     return cookie;
 }
 
@@ -5688,111 +5688,111 @@ template <typename D> event_revoker<IVideoStabilizationEffect> impl_IVideoStabil
 
 template <typename D> void impl_IVideoStabilizationEffect<D>::EnabledChanged(event_token cookie) const
 {
-    check_hresult(shim()->remove_EnabledChanged(cookie));
+    check_hresult(static_cast<const IVideoStabilizationEffect &>(static_cast<const D &>(*this))->remove_EnabledChanged(cookie));
 }
 
 template <typename D> Windows::Media::Capture::VideoStreamConfiguration impl_IVideoStabilizationEffect<D>::GetRecommendedStreamConfiguration(const Windows::Media::Devices::VideoDeviceController & controller, const Windows::Media::MediaProperties::VideoEncodingProperties & desiredProperties) const
 {
     Windows::Media::Capture::VideoStreamConfiguration value { nullptr };
-    check_hresult(shim()->abi_GetRecommendedStreamConfiguration(get(controller), get(desiredProperties), put(value)));
+    check_hresult(static_cast<const IVideoStabilizationEffect &>(static_cast<const D &>(*this))->abi_GetRecommendedStreamConfiguration(get(controller), get(desiredProperties), put(value)));
     return value;
 }
 
 template <typename D> HRESULT impl_IMediaSourceError<D>::ExtendedError() const
 {
     HRESULT value {};
-    check_hresult(shim()->get_ExtendedError(&value));
+    check_hresult(static_cast<const IMediaSourceError &>(static_cast<const D &>(*this))->get_ExtendedError(&value));
     return value;
 }
 
 template <typename D> Windows::Media::Core::MediaSourceError impl_IMediaSourceOpenOperationCompletedEventArgs<D>::Error() const
 {
     Windows::Media::Core::MediaSourceError value { nullptr };
-    check_hresult(shim()->get_Error(put(value)));
+    check_hresult(static_cast<const IMediaSourceOpenOperationCompletedEventArgs &>(static_cast<const D &>(*this))->get_Error(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Core::MediaSourceState impl_IMediaSourceStateChangedEventArgs<D>::OldState() const
 {
     Windows::Media::Core::MediaSourceState value {};
-    check_hresult(shim()->get_OldState(&value));
+    check_hresult(static_cast<const IMediaSourceStateChangedEventArgs &>(static_cast<const D &>(*this))->get_OldState(&value));
     return value;
 }
 
 template <typename D> Windows::Media::Core::MediaSourceState impl_IMediaSourceStateChangedEventArgs<D>::NewState() const
 {
     Windows::Media::Core::MediaSourceState value {};
-    check_hresult(shim()->get_NewState(&value));
+    check_hresult(static_cast<const IMediaSourceStateChangedEventArgs &>(static_cast<const D &>(*this))->get_NewState(&value));
     return value;
 }
 
 template <typename D> Windows::Media::Core::MediaSource impl_IMediaSourceStatics<D>::CreateFromAdaptiveMediaSource(const Windows::Media::Streaming::Adaptive::AdaptiveMediaSource & mediaSource) const
 {
     Windows::Media::Core::MediaSource result { nullptr };
-    check_hresult(shim()->abi_CreateFromAdaptiveMediaSource(get(mediaSource), put(result)));
+    check_hresult(static_cast<const IMediaSourceStatics &>(static_cast<const D &>(*this))->abi_CreateFromAdaptiveMediaSource(get(mediaSource), put(result)));
     return result;
 }
 
 template <typename D> Windows::Media::Core::MediaSource impl_IMediaSourceStatics<D>::CreateFromMediaStreamSource(const Windows::Media::Core::MediaStreamSource & mediaSource) const
 {
     Windows::Media::Core::MediaSource result { nullptr };
-    check_hresult(shim()->abi_CreateFromMediaStreamSource(get(mediaSource), put(result)));
+    check_hresult(static_cast<const IMediaSourceStatics &>(static_cast<const D &>(*this))->abi_CreateFromMediaStreamSource(get(mediaSource), put(result)));
     return result;
 }
 
 template <typename D> Windows::Media::Core::MediaSource impl_IMediaSourceStatics<D>::CreateFromMseStreamSource(const Windows::Media::Core::MseStreamSource & mediaSource) const
 {
     Windows::Media::Core::MediaSource result { nullptr };
-    check_hresult(shim()->abi_CreateFromMseStreamSource(get(mediaSource), put(result)));
+    check_hresult(static_cast<const IMediaSourceStatics &>(static_cast<const D &>(*this))->abi_CreateFromMseStreamSource(get(mediaSource), put(result)));
     return result;
 }
 
 template <typename D> Windows::Media::Core::MediaSource impl_IMediaSourceStatics<D>::CreateFromIMediaSource(const Windows::Media::Core::IMediaSource & mediaSource) const
 {
     Windows::Media::Core::MediaSource result { nullptr };
-    check_hresult(shim()->abi_CreateFromIMediaSource(get(mediaSource), put(result)));
+    check_hresult(static_cast<const IMediaSourceStatics &>(static_cast<const D &>(*this))->abi_CreateFromIMediaSource(get(mediaSource), put(result)));
     return result;
 }
 
 template <typename D> Windows::Media::Core::MediaSource impl_IMediaSourceStatics<D>::CreateFromStorageFile(const Windows::Storage::IStorageFile & file) const
 {
     Windows::Media::Core::MediaSource result { nullptr };
-    check_hresult(shim()->abi_CreateFromStorageFile(get(file), put(result)));
+    check_hresult(static_cast<const IMediaSourceStatics &>(static_cast<const D &>(*this))->abi_CreateFromStorageFile(get(file), put(result)));
     return result;
 }
 
 template <typename D> Windows::Media::Core::MediaSource impl_IMediaSourceStatics<D>::CreateFromStream(const Windows::Storage::Streams::IRandomAccessStream & stream, hstring_ref contentType) const
 {
     Windows::Media::Core::MediaSource result { nullptr };
-    check_hresult(shim()->abi_CreateFromStream(get(stream), get(contentType), put(result)));
+    check_hresult(static_cast<const IMediaSourceStatics &>(static_cast<const D &>(*this))->abi_CreateFromStream(get(stream), get(contentType), put(result)));
     return result;
 }
 
 template <typename D> Windows::Media::Core::MediaSource impl_IMediaSourceStatics<D>::CreateFromStreamReference(const Windows::Storage::Streams::IRandomAccessStreamReference & stream, hstring_ref contentType) const
 {
     Windows::Media::Core::MediaSource result { nullptr };
-    check_hresult(shim()->abi_CreateFromStreamReference(get(stream), get(contentType), put(result)));
+    check_hresult(static_cast<const IMediaSourceStatics &>(static_cast<const D &>(*this))->abi_CreateFromStreamReference(get(stream), get(contentType), put(result)));
     return result;
 }
 
 template <typename D> Windows::Media::Core::MediaSource impl_IMediaSourceStatics<D>::CreateFromUri(const Windows::Foundation::Uri & uri) const
 {
     Windows::Media::Core::MediaSource result { nullptr };
-    check_hresult(shim()->abi_CreateFromUri(get(uri), put(result)));
+    check_hresult(static_cast<const IMediaSourceStatics &>(static_cast<const D &>(*this))->abi_CreateFromUri(get(uri), put(result)));
     return result;
 }
 
 template <typename D> Windows::Media::Core::MediaSource impl_IMediaSourceStatics2<D>::CreateFromMediaBinder(const Windows::Media::Core::MediaBinder & binder) const
 {
     Windows::Media::Core::MediaSource result { nullptr };
-    check_hresult(shim()->abi_CreateFromMediaBinder(get(binder), put(result)));
+    check_hresult(static_cast<const IMediaSourceStatics2 &>(static_cast<const D &>(*this))->abi_CreateFromMediaBinder(get(binder), put(result)));
     return result;
 }
 
 template <typename D> event_token impl_IMediaBinder<D>::Binding(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaBinder, Windows::Media::Core::MediaBindingEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_Binding(get(handler), &token));
+    check_hresult(static_cast<const IMediaBinder &>(static_cast<const D &>(*this))->add_Binding(get(handler), &token));
     return token;
 }
 
@@ -5803,32 +5803,32 @@ template <typename D> event_revoker<IMediaBinder> impl_IMediaBinder<D>::Binding(
 
 template <typename D> void impl_IMediaBinder<D>::Binding(event_token token) const
 {
-    check_hresult(shim()->remove_Binding(token));
+    check_hresult(static_cast<const IMediaBinder &>(static_cast<const D &>(*this))->remove_Binding(token));
 }
 
 template <typename D> hstring impl_IMediaBinder<D>::Token() const
 {
     hstring value;
-    check_hresult(shim()->get_Token(put(value)));
+    check_hresult(static_cast<const IMediaBinder &>(static_cast<const D &>(*this))->get_Token(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaBinder<D>::Token(hstring_ref value) const
 {
-    check_hresult(shim()->put_Token(get(value)));
+    check_hresult(static_cast<const IMediaBinder &>(static_cast<const D &>(*this))->put_Token(get(value)));
 }
 
 template <typename D> Windows::Media::Core::MediaSource impl_IMediaBinder<D>::Source() const
 {
     Windows::Media::Core::MediaSource value { nullptr };
-    check_hresult(shim()->get_Source(put(value)));
+    check_hresult(static_cast<const IMediaBinder &>(static_cast<const D &>(*this))->get_Source(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IMediaBindingEventArgs<D>::Canceled(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaBindingEventArgs, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_Canceled(get(handler), &token));
+    check_hresult(static_cast<const IMediaBindingEventArgs &>(static_cast<const D &>(*this))->add_Canceled(get(handler), &token));
     return token;
 }
 
@@ -5839,42 +5839,42 @@ template <typename D> event_revoker<IMediaBindingEventArgs> impl_IMediaBindingEv
 
 template <typename D> void impl_IMediaBindingEventArgs<D>::Canceled(event_token token) const
 {
-    check_hresult(shim()->remove_Canceled(token));
+    check_hresult(static_cast<const IMediaBindingEventArgs &>(static_cast<const D &>(*this))->remove_Canceled(token));
 }
 
 template <typename D> Windows::Media::Core::MediaBinder impl_IMediaBindingEventArgs<D>::MediaBinder() const
 {
     Windows::Media::Core::MediaBinder value { nullptr };
-    check_hresult(shim()->get_MediaBinder(put(value)));
+    check_hresult(static_cast<const IMediaBindingEventArgs &>(static_cast<const D &>(*this))->get_MediaBinder(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Deferral impl_IMediaBindingEventArgs<D>::GetDeferral() const
 {
     Windows::Foundation::Deferral deferral { nullptr };
-    check_hresult(shim()->abi_GetDeferral(put(deferral)));
+    check_hresult(static_cast<const IMediaBindingEventArgs &>(static_cast<const D &>(*this))->abi_GetDeferral(put(deferral)));
     return deferral;
 }
 
 template <typename D> void impl_IMediaBindingEventArgs<D>::SetUri(const Windows::Foundation::Uri & uri) const
 {
-    check_hresult(shim()->abi_SetUri(get(uri)));
+    check_hresult(static_cast<const IMediaBindingEventArgs &>(static_cast<const D &>(*this))->abi_SetUri(get(uri)));
 }
 
 template <typename D> void impl_IMediaBindingEventArgs<D>::SetStream(const Windows::Storage::Streams::IRandomAccessStream & stream, hstring_ref contentType) const
 {
-    check_hresult(shim()->abi_SetStream(get(stream), get(contentType)));
+    check_hresult(static_cast<const IMediaBindingEventArgs &>(static_cast<const D &>(*this))->abi_SetStream(get(stream), get(contentType)));
 }
 
 template <typename D> void impl_IMediaBindingEventArgs<D>::SetStreamReference(const Windows::Storage::Streams::IRandomAccessStreamReference & stream, hstring_ref contentType) const
 {
-    check_hresult(shim()->abi_SetStreamReference(get(stream), get(contentType)));
+    check_hresult(static_cast<const IMediaBindingEventArgs &>(static_cast<const D &>(*this))->abi_SetStreamReference(get(stream), get(contentType)));
 }
 
 template <typename D> event_token impl_IMediaSource2<D>::OpenOperationCompleted(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaSource, Windows::Media::Core::MediaSourceOpenOperationCompletedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_OpenOperationCompleted(get(handler), &token));
+    check_hresult(static_cast<const IMediaSource2 &>(static_cast<const D &>(*this))->add_OpenOperationCompleted(get(handler), &token));
     return token;
 }
 
@@ -5885,48 +5885,48 @@ template <typename D> event_revoker<IMediaSource2> impl_IMediaSource2<D>::OpenOp
 
 template <typename D> void impl_IMediaSource2<D>::OpenOperationCompleted(event_token token) const
 {
-    check_hresult(shim()->remove_OpenOperationCompleted(token));
+    check_hresult(static_cast<const IMediaSource2 &>(static_cast<const D &>(*this))->remove_OpenOperationCompleted(token));
 }
 
 template <typename D> Windows::Foundation::Collections::ValueSet impl_IMediaSource2<D>::CustomProperties() const
 {
     Windows::Foundation::Collections::ValueSet value { nullptr };
-    check_hresult(shim()->get_CustomProperties(put(value)));
+    check_hresult(static_cast<const IMediaSource2 &>(static_cast<const D &>(*this))->get_CustomProperties(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::TimeSpan> impl_IMediaSource2<D>::Duration() const
 {
     Windows::Foundation::IReference<Windows::Foundation::TimeSpan> value;
-    check_hresult(shim()->get_Duration(put(value)));
+    check_hresult(static_cast<const IMediaSource2 &>(static_cast<const D &>(*this))->get_Duration(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IMediaSource2<D>::IsOpen() const
 {
     bool value {};
-    check_hresult(shim()->get_IsOpen(&value));
+    check_hresult(static_cast<const IMediaSource2 &>(static_cast<const D &>(*this))->get_IsOpen(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IObservableVector<Windows::Media::Core::TimedTextSource> impl_IMediaSource2<D>::ExternalTimedTextSources() const
 {
     Windows::Foundation::Collections::IObservableVector<Windows::Media::Core::TimedTextSource> value;
-    check_hresult(shim()->get_ExternalTimedTextSources(put(value)));
+    check_hresult(static_cast<const IMediaSource2 &>(static_cast<const D &>(*this))->get_ExternalTimedTextSources(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IObservableVector<Windows::Media::Core::TimedMetadataTrack> impl_IMediaSource2<D>::ExternalTimedMetadataTracks() const
 {
     Windows::Foundation::Collections::IObservableVector<Windows::Media::Core::TimedMetadataTrack> value;
-    check_hresult(shim()->get_ExternalTimedMetadataTracks(put(value)));
+    check_hresult(static_cast<const IMediaSource2 &>(static_cast<const D &>(*this))->get_ExternalTimedMetadataTracks(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IMediaSource3<D>::StateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::MediaSource, Windows::Media::Core::MediaSourceStateChangedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_StateChanged(get(handler), &token));
+    check_hresult(static_cast<const IMediaSource3 &>(static_cast<const D &>(*this))->add_StateChanged(get(handler), &token));
     return token;
 }
 
@@ -5937,435 +5937,435 @@ template <typename D> event_revoker<IMediaSource3> impl_IMediaSource3<D>::StateC
 
 template <typename D> void impl_IMediaSource3<D>::StateChanged(event_token token) const
 {
-    check_hresult(shim()->remove_StateChanged(token));
+    check_hresult(static_cast<const IMediaSource3 &>(static_cast<const D &>(*this))->remove_StateChanged(token));
 }
 
 template <typename D> Windows::Media::Core::MediaSourceState impl_IMediaSource3<D>::State() const
 {
     Windows::Media::Core::MediaSourceState value {};
-    check_hresult(shim()->get_State(&value));
+    check_hresult(static_cast<const IMediaSource3 &>(static_cast<const D &>(*this))->get_State(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaSource3<D>::Reset() const
 {
-    check_hresult(shim()->abi_Reset());
+    check_hresult(static_cast<const IMediaSource3 &>(static_cast<const D &>(*this))->abi_Reset());
 }
 
 template <typename D> void impl_IMediaCue<D>::StartTime(const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(shim()->put_StartTime(get(value)));
+    check_hresult(static_cast<const IMediaCue &>(static_cast<const D &>(*this))->put_StartTime(get(value)));
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IMediaCue<D>::StartTime() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_StartTime(put(value)));
+    check_hresult(static_cast<const IMediaCue &>(static_cast<const D &>(*this))->get_StartTime(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaCue<D>::Duration(const Windows::Foundation::TimeSpan & value) const
 {
-    check_hresult(shim()->put_Duration(get(value)));
+    check_hresult(static_cast<const IMediaCue &>(static_cast<const D &>(*this))->put_Duration(get(value)));
 }
 
 template <typename D> Windows::Foundation::TimeSpan impl_IMediaCue<D>::Duration() const
 {
     Windows::Foundation::TimeSpan value {};
-    check_hresult(shim()->get_Duration(put(value)));
+    check_hresult(static_cast<const IMediaCue &>(static_cast<const D &>(*this))->get_Duration(put(value)));
     return value;
 }
 
 template <typename D> void impl_IMediaCue<D>::Id(hstring_ref value) const
 {
-    check_hresult(shim()->put_Id(get(value)));
+    check_hresult(static_cast<const IMediaCue &>(static_cast<const D &>(*this))->put_Id(get(value)));
 }
 
 template <typename D> hstring impl_IMediaCue<D>::Id() const
 {
     hstring value;
-    check_hresult(shim()->get_Id(put(value)));
+    check_hresult(static_cast<const IMediaCue &>(static_cast<const D &>(*this))->get_Id(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Core::TimedTextRegion impl_ITimedTextCue<D>::CueRegion() const
 {
     Windows::Media::Core::TimedTextRegion value { nullptr };
-    check_hresult(shim()->get_CueRegion(put(value)));
+    check_hresult(static_cast<const ITimedTextCue &>(static_cast<const D &>(*this))->get_CueRegion(put(value)));
     return value;
 }
 
 template <typename D> void impl_ITimedTextCue<D>::CueRegion(const Windows::Media::Core::TimedTextRegion & value) const
 {
-    check_hresult(shim()->put_CueRegion(get(value)));
+    check_hresult(static_cast<const ITimedTextCue &>(static_cast<const D &>(*this))->put_CueRegion(get(value)));
 }
 
 template <typename D> Windows::Media::Core::TimedTextStyle impl_ITimedTextCue<D>::CueStyle() const
 {
     Windows::Media::Core::TimedTextStyle value { nullptr };
-    check_hresult(shim()->get_CueStyle(put(value)));
+    check_hresult(static_cast<const ITimedTextCue &>(static_cast<const D &>(*this))->get_CueStyle(put(value)));
     return value;
 }
 
 template <typename D> void impl_ITimedTextCue<D>::CueStyle(const Windows::Media::Core::TimedTextStyle & value) const
 {
-    check_hresult(shim()->put_CueStyle(get(value)));
+    check_hresult(static_cast<const ITimedTextCue &>(static_cast<const D &>(*this))->put_CueStyle(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Media::Core::TimedTextLine> impl_ITimedTextCue<D>::Lines() const
 {
     Windows::Foundation::Collections::IVector<Windows::Media::Core::TimedTextLine> value;
-    check_hresult(shim()->get_Lines(put(value)));
+    check_hresult(static_cast<const ITimedTextCue &>(static_cast<const D &>(*this))->get_Lines(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ITimedTextRegion<D>::Name() const
 {
     hstring value;
-    check_hresult(shim()->get_Name(put(value)));
+    check_hresult(static_cast<const ITimedTextRegion &>(static_cast<const D &>(*this))->get_Name(put(value)));
     return value;
 }
 
 template <typename D> void impl_ITimedTextRegion<D>::Name(hstring_ref value) const
 {
-    check_hresult(shim()->put_Name(get(value)));
+    check_hresult(static_cast<const ITimedTextRegion &>(static_cast<const D &>(*this))->put_Name(get(value)));
 }
 
 template <typename D> Windows::Media::Core::TimedTextPoint impl_ITimedTextRegion<D>::Position() const
 {
     Windows::Media::Core::TimedTextPoint value {};
-    check_hresult(shim()->get_Position(put(value)));
+    check_hresult(static_cast<const ITimedTextRegion &>(static_cast<const D &>(*this))->get_Position(put(value)));
     return value;
 }
 
 template <typename D> void impl_ITimedTextRegion<D>::Position(const Windows::Media::Core::TimedTextPoint & value) const
 {
-    check_hresult(shim()->put_Position(get(value)));
+    check_hresult(static_cast<const ITimedTextRegion &>(static_cast<const D &>(*this))->put_Position(get(value)));
 }
 
 template <typename D> Windows::Media::Core::TimedTextSize impl_ITimedTextRegion<D>::Extent() const
 {
     Windows::Media::Core::TimedTextSize value {};
-    check_hresult(shim()->get_Extent(put(value)));
+    check_hresult(static_cast<const ITimedTextRegion &>(static_cast<const D &>(*this))->get_Extent(put(value)));
     return value;
 }
 
 template <typename D> void impl_ITimedTextRegion<D>::Extent(const Windows::Media::Core::TimedTextSize & value) const
 {
-    check_hresult(shim()->put_Extent(get(value)));
+    check_hresult(static_cast<const ITimedTextRegion &>(static_cast<const D &>(*this))->put_Extent(get(value)));
 }
 
 template <typename D> Windows::UI::Color impl_ITimedTextRegion<D>::Background() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Background(put(value)));
+    check_hresult(static_cast<const ITimedTextRegion &>(static_cast<const D &>(*this))->get_Background(put(value)));
     return value;
 }
 
 template <typename D> void impl_ITimedTextRegion<D>::Background(const Windows::UI::Color & value) const
 {
-    check_hresult(shim()->put_Background(get(value)));
+    check_hresult(static_cast<const ITimedTextRegion &>(static_cast<const D &>(*this))->put_Background(get(value)));
 }
 
 template <typename D> Windows::Media::Core::TimedTextWritingMode impl_ITimedTextRegion<D>::WritingMode() const
 {
     Windows::Media::Core::TimedTextWritingMode value {};
-    check_hresult(shim()->get_WritingMode(&value));
+    check_hresult(static_cast<const ITimedTextRegion &>(static_cast<const D &>(*this))->get_WritingMode(&value));
     return value;
 }
 
 template <typename D> void impl_ITimedTextRegion<D>::WritingMode(Windows::Media::Core::TimedTextWritingMode value) const
 {
-    check_hresult(shim()->put_WritingMode(value));
+    check_hresult(static_cast<const ITimedTextRegion &>(static_cast<const D &>(*this))->put_WritingMode(value));
 }
 
 template <typename D> Windows::Media::Core::TimedTextDisplayAlignment impl_ITimedTextRegion<D>::DisplayAlignment() const
 {
     Windows::Media::Core::TimedTextDisplayAlignment value {};
-    check_hresult(shim()->get_DisplayAlignment(&value));
+    check_hresult(static_cast<const ITimedTextRegion &>(static_cast<const D &>(*this))->get_DisplayAlignment(&value));
     return value;
 }
 
 template <typename D> void impl_ITimedTextRegion<D>::DisplayAlignment(Windows::Media::Core::TimedTextDisplayAlignment value) const
 {
-    check_hresult(shim()->put_DisplayAlignment(value));
+    check_hresult(static_cast<const ITimedTextRegion &>(static_cast<const D &>(*this))->put_DisplayAlignment(value));
 }
 
 template <typename D> Windows::Media::Core::TimedTextDouble impl_ITimedTextRegion<D>::LineHeight() const
 {
     Windows::Media::Core::TimedTextDouble value {};
-    check_hresult(shim()->get_LineHeight(put(value)));
+    check_hresult(static_cast<const ITimedTextRegion &>(static_cast<const D &>(*this))->get_LineHeight(put(value)));
     return value;
 }
 
 template <typename D> void impl_ITimedTextRegion<D>::LineHeight(const Windows::Media::Core::TimedTextDouble & value) const
 {
-    check_hresult(shim()->put_LineHeight(get(value)));
+    check_hresult(static_cast<const ITimedTextRegion &>(static_cast<const D &>(*this))->put_LineHeight(get(value)));
 }
 
 template <typename D> bool impl_ITimedTextRegion<D>::IsOverflowClipped() const
 {
     bool value {};
-    check_hresult(shim()->get_IsOverflowClipped(&value));
+    check_hresult(static_cast<const ITimedTextRegion &>(static_cast<const D &>(*this))->get_IsOverflowClipped(&value));
     return value;
 }
 
 template <typename D> void impl_ITimedTextRegion<D>::IsOverflowClipped(bool value) const
 {
-    check_hresult(shim()->put_IsOverflowClipped(value));
+    check_hresult(static_cast<const ITimedTextRegion &>(static_cast<const D &>(*this))->put_IsOverflowClipped(value));
 }
 
 template <typename D> Windows::Media::Core::TimedTextPadding impl_ITimedTextRegion<D>::Padding() const
 {
     Windows::Media::Core::TimedTextPadding value {};
-    check_hresult(shim()->get_Padding(put(value)));
+    check_hresult(static_cast<const ITimedTextRegion &>(static_cast<const D &>(*this))->get_Padding(put(value)));
     return value;
 }
 
 template <typename D> void impl_ITimedTextRegion<D>::Padding(const Windows::Media::Core::TimedTextPadding & value) const
 {
-    check_hresult(shim()->put_Padding(get(value)));
+    check_hresult(static_cast<const ITimedTextRegion &>(static_cast<const D &>(*this))->put_Padding(get(value)));
 }
 
 template <typename D> Windows::Media::Core::TimedTextWrapping impl_ITimedTextRegion<D>::TextWrapping() const
 {
     Windows::Media::Core::TimedTextWrapping value {};
-    check_hresult(shim()->get_TextWrapping(&value));
+    check_hresult(static_cast<const ITimedTextRegion &>(static_cast<const D &>(*this))->get_TextWrapping(&value));
     return value;
 }
 
 template <typename D> void impl_ITimedTextRegion<D>::TextWrapping(Windows::Media::Core::TimedTextWrapping value) const
 {
-    check_hresult(shim()->put_TextWrapping(value));
+    check_hresult(static_cast<const ITimedTextRegion &>(static_cast<const D &>(*this))->put_TextWrapping(value));
 }
 
 template <typename D> int32_t impl_ITimedTextRegion<D>::ZIndex() const
 {
     int32_t value {};
-    check_hresult(shim()->get_ZIndex(&value));
+    check_hresult(static_cast<const ITimedTextRegion &>(static_cast<const D &>(*this))->get_ZIndex(&value));
     return value;
 }
 
 template <typename D> void impl_ITimedTextRegion<D>::ZIndex(int32_t value) const
 {
-    check_hresult(shim()->put_ZIndex(value));
+    check_hresult(static_cast<const ITimedTextRegion &>(static_cast<const D &>(*this))->put_ZIndex(value));
 }
 
 template <typename D> Windows::Media::Core::TimedTextScrollMode impl_ITimedTextRegion<D>::ScrollMode() const
 {
     Windows::Media::Core::TimedTextScrollMode value {};
-    check_hresult(shim()->get_ScrollMode(&value));
+    check_hresult(static_cast<const ITimedTextRegion &>(static_cast<const D &>(*this))->get_ScrollMode(&value));
     return value;
 }
 
 template <typename D> void impl_ITimedTextRegion<D>::ScrollMode(Windows::Media::Core::TimedTextScrollMode value) const
 {
-    check_hresult(shim()->put_ScrollMode(value));
+    check_hresult(static_cast<const ITimedTextRegion &>(static_cast<const D &>(*this))->put_ScrollMode(value));
 }
 
 template <typename D> hstring impl_ITimedTextStyle<D>::Name() const
 {
     hstring value;
-    check_hresult(shim()->get_Name(put(value)));
+    check_hresult(static_cast<const ITimedTextStyle &>(static_cast<const D &>(*this))->get_Name(put(value)));
     return value;
 }
 
 template <typename D> void impl_ITimedTextStyle<D>::Name(hstring_ref value) const
 {
-    check_hresult(shim()->put_Name(get(value)));
+    check_hresult(static_cast<const ITimedTextStyle &>(static_cast<const D &>(*this))->put_Name(get(value)));
 }
 
 template <typename D> hstring impl_ITimedTextStyle<D>::FontFamily() const
 {
     hstring value;
-    check_hresult(shim()->get_FontFamily(put(value)));
+    check_hresult(static_cast<const ITimedTextStyle &>(static_cast<const D &>(*this))->get_FontFamily(put(value)));
     return value;
 }
 
 template <typename D> void impl_ITimedTextStyle<D>::FontFamily(hstring_ref value) const
 {
-    check_hresult(shim()->put_FontFamily(get(value)));
+    check_hresult(static_cast<const ITimedTextStyle &>(static_cast<const D &>(*this))->put_FontFamily(get(value)));
 }
 
 template <typename D> Windows::Media::Core::TimedTextDouble impl_ITimedTextStyle<D>::FontSize() const
 {
     Windows::Media::Core::TimedTextDouble value {};
-    check_hresult(shim()->get_FontSize(put(value)));
+    check_hresult(static_cast<const ITimedTextStyle &>(static_cast<const D &>(*this))->get_FontSize(put(value)));
     return value;
 }
 
 template <typename D> void impl_ITimedTextStyle<D>::FontSize(const Windows::Media::Core::TimedTextDouble & value) const
 {
-    check_hresult(shim()->put_FontSize(get(value)));
+    check_hresult(static_cast<const ITimedTextStyle &>(static_cast<const D &>(*this))->put_FontSize(get(value)));
 }
 
 template <typename D> Windows::Media::Core::TimedTextWeight impl_ITimedTextStyle<D>::FontWeight() const
 {
     Windows::Media::Core::TimedTextWeight value {};
-    check_hresult(shim()->get_FontWeight(&value));
+    check_hresult(static_cast<const ITimedTextStyle &>(static_cast<const D &>(*this))->get_FontWeight(&value));
     return value;
 }
 
 template <typename D> void impl_ITimedTextStyle<D>::FontWeight(Windows::Media::Core::TimedTextWeight value) const
 {
-    check_hresult(shim()->put_FontWeight(value));
+    check_hresult(static_cast<const ITimedTextStyle &>(static_cast<const D &>(*this))->put_FontWeight(value));
 }
 
 template <typename D> Windows::UI::Color impl_ITimedTextStyle<D>::Foreground() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Foreground(put(value)));
+    check_hresult(static_cast<const ITimedTextStyle &>(static_cast<const D &>(*this))->get_Foreground(put(value)));
     return value;
 }
 
 template <typename D> void impl_ITimedTextStyle<D>::Foreground(const Windows::UI::Color & value) const
 {
-    check_hresult(shim()->put_Foreground(get(value)));
+    check_hresult(static_cast<const ITimedTextStyle &>(static_cast<const D &>(*this))->put_Foreground(get(value)));
 }
 
 template <typename D> Windows::UI::Color impl_ITimedTextStyle<D>::Background() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_Background(put(value)));
+    check_hresult(static_cast<const ITimedTextStyle &>(static_cast<const D &>(*this))->get_Background(put(value)));
     return value;
 }
 
 template <typename D> void impl_ITimedTextStyle<D>::Background(const Windows::UI::Color & value) const
 {
-    check_hresult(shim()->put_Background(get(value)));
+    check_hresult(static_cast<const ITimedTextStyle &>(static_cast<const D &>(*this))->put_Background(get(value)));
 }
 
 template <typename D> bool impl_ITimedTextStyle<D>::IsBackgroundAlwaysShown() const
 {
     bool value {};
-    check_hresult(shim()->get_IsBackgroundAlwaysShown(&value));
+    check_hresult(static_cast<const ITimedTextStyle &>(static_cast<const D &>(*this))->get_IsBackgroundAlwaysShown(&value));
     return value;
 }
 
 template <typename D> void impl_ITimedTextStyle<D>::IsBackgroundAlwaysShown(bool value) const
 {
-    check_hresult(shim()->put_IsBackgroundAlwaysShown(value));
+    check_hresult(static_cast<const ITimedTextStyle &>(static_cast<const D &>(*this))->put_IsBackgroundAlwaysShown(value));
 }
 
 template <typename D> Windows::Media::Core::TimedTextFlowDirection impl_ITimedTextStyle<D>::FlowDirection() const
 {
     Windows::Media::Core::TimedTextFlowDirection value {};
-    check_hresult(shim()->get_FlowDirection(&value));
+    check_hresult(static_cast<const ITimedTextStyle &>(static_cast<const D &>(*this))->get_FlowDirection(&value));
     return value;
 }
 
 template <typename D> void impl_ITimedTextStyle<D>::FlowDirection(Windows::Media::Core::TimedTextFlowDirection value) const
 {
-    check_hresult(shim()->put_FlowDirection(value));
+    check_hresult(static_cast<const ITimedTextStyle &>(static_cast<const D &>(*this))->put_FlowDirection(value));
 }
 
 template <typename D> Windows::Media::Core::TimedTextLineAlignment impl_ITimedTextStyle<D>::LineAlignment() const
 {
     Windows::Media::Core::TimedTextLineAlignment value {};
-    check_hresult(shim()->get_LineAlignment(&value));
+    check_hresult(static_cast<const ITimedTextStyle &>(static_cast<const D &>(*this))->get_LineAlignment(&value));
     return value;
 }
 
 template <typename D> void impl_ITimedTextStyle<D>::LineAlignment(Windows::Media::Core::TimedTextLineAlignment value) const
 {
-    check_hresult(shim()->put_LineAlignment(value));
+    check_hresult(static_cast<const ITimedTextStyle &>(static_cast<const D &>(*this))->put_LineAlignment(value));
 }
 
 template <typename D> Windows::UI::Color impl_ITimedTextStyle<D>::OutlineColor() const
 {
     Windows::UI::Color value {};
-    check_hresult(shim()->get_OutlineColor(put(value)));
+    check_hresult(static_cast<const ITimedTextStyle &>(static_cast<const D &>(*this))->get_OutlineColor(put(value)));
     return value;
 }
 
 template <typename D> void impl_ITimedTextStyle<D>::OutlineColor(const Windows::UI::Color & value) const
 {
-    check_hresult(shim()->put_OutlineColor(get(value)));
+    check_hresult(static_cast<const ITimedTextStyle &>(static_cast<const D &>(*this))->put_OutlineColor(get(value)));
 }
 
 template <typename D> Windows::Media::Core::TimedTextDouble impl_ITimedTextStyle<D>::OutlineThickness() const
 {
     Windows::Media::Core::TimedTextDouble value {};
-    check_hresult(shim()->get_OutlineThickness(put(value)));
+    check_hresult(static_cast<const ITimedTextStyle &>(static_cast<const D &>(*this))->get_OutlineThickness(put(value)));
     return value;
 }
 
 template <typename D> void impl_ITimedTextStyle<D>::OutlineThickness(const Windows::Media::Core::TimedTextDouble & value) const
 {
-    check_hresult(shim()->put_OutlineThickness(get(value)));
+    check_hresult(static_cast<const ITimedTextStyle &>(static_cast<const D &>(*this))->put_OutlineThickness(get(value)));
 }
 
 template <typename D> Windows::Media::Core::TimedTextDouble impl_ITimedTextStyle<D>::OutlineRadius() const
 {
     Windows::Media::Core::TimedTextDouble value {};
-    check_hresult(shim()->get_OutlineRadius(put(value)));
+    check_hresult(static_cast<const ITimedTextStyle &>(static_cast<const D &>(*this))->get_OutlineRadius(put(value)));
     return value;
 }
 
 template <typename D> void impl_ITimedTextStyle<D>::OutlineRadius(const Windows::Media::Core::TimedTextDouble & value) const
 {
-    check_hresult(shim()->put_OutlineRadius(get(value)));
+    check_hresult(static_cast<const ITimedTextStyle &>(static_cast<const D &>(*this))->put_OutlineRadius(get(value)));
 }
 
 template <typename D> int32_t impl_ITimedTextSubformat<D>::StartIndex() const
 {
     int32_t value {};
-    check_hresult(shim()->get_StartIndex(&value));
+    check_hresult(static_cast<const ITimedTextSubformat &>(static_cast<const D &>(*this))->get_StartIndex(&value));
     return value;
 }
 
 template <typename D> void impl_ITimedTextSubformat<D>::StartIndex(int32_t value) const
 {
-    check_hresult(shim()->put_StartIndex(value));
+    check_hresult(static_cast<const ITimedTextSubformat &>(static_cast<const D &>(*this))->put_StartIndex(value));
 }
 
 template <typename D> int32_t impl_ITimedTextSubformat<D>::Length() const
 {
     int32_t value {};
-    check_hresult(shim()->get_Length(&value));
+    check_hresult(static_cast<const ITimedTextSubformat &>(static_cast<const D &>(*this))->get_Length(&value));
     return value;
 }
 
 template <typename D> void impl_ITimedTextSubformat<D>::Length(int32_t value) const
 {
-    check_hresult(shim()->put_Length(value));
+    check_hresult(static_cast<const ITimedTextSubformat &>(static_cast<const D &>(*this))->put_Length(value));
 }
 
 template <typename D> Windows::Media::Core::TimedTextStyle impl_ITimedTextSubformat<D>::SubformatStyle() const
 {
     Windows::Media::Core::TimedTextStyle value { nullptr };
-    check_hresult(shim()->get_SubformatStyle(put(value)));
+    check_hresult(static_cast<const ITimedTextSubformat &>(static_cast<const D &>(*this))->get_SubformatStyle(put(value)));
     return value;
 }
 
 template <typename D> void impl_ITimedTextSubformat<D>::SubformatStyle(const Windows::Media::Core::TimedTextStyle & value) const
 {
-    check_hresult(shim()->put_SubformatStyle(get(value)));
+    check_hresult(static_cast<const ITimedTextSubformat &>(static_cast<const D &>(*this))->put_SubformatStyle(get(value)));
 }
 
 template <typename D> hstring impl_ITimedTextLine<D>::Text() const
 {
     hstring value;
-    check_hresult(shim()->get_Text(put(value)));
+    check_hresult(static_cast<const ITimedTextLine &>(static_cast<const D &>(*this))->get_Text(put(value)));
     return value;
 }
 
 template <typename D> void impl_ITimedTextLine<D>::Text(hstring_ref value) const
 {
-    check_hresult(shim()->put_Text(get(value)));
+    check_hresult(static_cast<const ITimedTextLine &>(static_cast<const D &>(*this))->put_Text(get(value)));
 }
 
 template <typename D> Windows::Foundation::Collections::IVector<Windows::Media::Core::TimedTextSubformat> impl_ITimedTextLine<D>::Subformats() const
 {
     Windows::Foundation::Collections::IVector<Windows::Media::Core::TimedTextSubformat> value;
-    check_hresult(shim()->get_Subformats(put(value)));
+    check_hresult(static_cast<const ITimedTextLine &>(static_cast<const D &>(*this))->get_Subformats(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_ISingleSelectMediaTrackList<D>::SelectedIndexChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::ISingleSelectMediaTrackList, Windows::IInspectable> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_SelectedIndexChanged(get(handler), &token));
+    check_hresult(static_cast<const ISingleSelectMediaTrackList &>(static_cast<const D &>(*this))->add_SelectedIndexChanged(get(handler), &token));
     return token;
 }
 
@@ -6376,105 +6376,105 @@ template <typename D> event_revoker<ISingleSelectMediaTrackList> impl_ISingleSel
 
 template <typename D> void impl_ISingleSelectMediaTrackList<D>::SelectedIndexChanged(event_token token) const
 {
-    check_hresult(shim()->remove_SelectedIndexChanged(token));
+    check_hresult(static_cast<const ISingleSelectMediaTrackList &>(static_cast<const D &>(*this))->remove_SelectedIndexChanged(token));
 }
 
 template <typename D> void impl_ISingleSelectMediaTrackList<D>::SelectedIndex(int32_t value) const
 {
-    check_hresult(shim()->put_SelectedIndex(value));
+    check_hresult(static_cast<const ISingleSelectMediaTrackList &>(static_cast<const D &>(*this))->put_SelectedIndex(value));
 }
 
 template <typename D> int32_t impl_ISingleSelectMediaTrackList<D>::SelectedIndex() const
 {
     int32_t value {};
-    check_hresult(shim()->get_SelectedIndex(&value));
+    check_hresult(static_cast<const ISingleSelectMediaTrackList &>(static_cast<const D &>(*this))->get_SelectedIndex(&value));
     return value;
 }
 
 template <typename D> hstring impl_IMediaTrack<D>::Id() const
 {
     hstring value;
-    check_hresult(shim()->get_Id(put(value)));
+    check_hresult(static_cast<const IMediaTrack &>(static_cast<const D &>(*this))->get_Id(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IMediaTrack<D>::Language() const
 {
     hstring value;
-    check_hresult(shim()->get_Language(put(value)));
+    check_hresult(static_cast<const IMediaTrack &>(static_cast<const D &>(*this))->get_Language(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Core::MediaTrackKind impl_IMediaTrack<D>::TrackKind() const
 {
     Windows::Media::Core::MediaTrackKind value {};
-    check_hresult(shim()->get_TrackKind(&value));
+    check_hresult(static_cast<const IMediaTrack &>(static_cast<const D &>(*this))->get_TrackKind(&value));
     return value;
 }
 
 template <typename D> void impl_IMediaTrack<D>::Label(hstring_ref value) const
 {
-    check_hresult(shim()->put_Label(get(value)));
+    check_hresult(static_cast<const IMediaTrack &>(static_cast<const D &>(*this))->put_Label(get(value)));
 }
 
 template <typename D> hstring impl_IMediaTrack<D>::Label() const
 {
     hstring value;
-    check_hresult(shim()->get_Label(put(value)));
+    check_hresult(static_cast<const IMediaTrack &>(static_cast<const D &>(*this))->get_Label(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Core::TimedMetadataTrackErrorCode impl_ITimedMetadataTrackError<D>::ErrorCode() const
 {
     Windows::Media::Core::TimedMetadataTrackErrorCode value {};
-    check_hresult(shim()->get_ErrorCode(&value));
+    check_hresult(static_cast<const ITimedMetadataTrackError &>(static_cast<const D &>(*this))->get_ErrorCode(&value));
     return value;
 }
 
 template <typename D> HRESULT impl_ITimedMetadataTrackError<D>::ExtendedError() const
 {
     HRESULT value {};
-    check_hresult(shim()->get_ExtendedError(&value));
+    check_hresult(static_cast<const ITimedMetadataTrackError &>(static_cast<const D &>(*this))->get_ExtendedError(&value));
     return value;
 }
 
 template <typename D> Windows::Media::Core::IMediaCue impl_IMediaCueEventArgs<D>::Cue() const
 {
     Windows::Media::Core::IMediaCue value;
-    check_hresult(shim()->get_Cue(put(value)));
+    check_hresult(static_cast<const IMediaCueEventArgs &>(static_cast<const D &>(*this))->get_Cue(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Core::TimedMetadataTrackError impl_ITimedMetadataTrackFailedEventArgs<D>::Error() const
 {
     Windows::Media::Core::TimedMetadataTrackError value { nullptr };
-    check_hresult(shim()->get_Error(put(value)));
+    check_hresult(static_cast<const ITimedMetadataTrackFailedEventArgs &>(static_cast<const D &>(*this))->get_Error(put(value)));
     return value;
 }
 
 template <typename D> void impl_IDataCue<D>::Data(const Windows::Storage::Streams::IBuffer & value) const
 {
-    check_hresult(shim()->put_Data(get(value)));
+    check_hresult(static_cast<const IDataCue &>(static_cast<const D &>(*this))->put_Data(get(value)));
 }
 
 template <typename D> Windows::Storage::Streams::IBuffer impl_IDataCue<D>::Data() const
 {
     Windows::Storage::Streams::IBuffer value;
-    check_hresult(shim()->get_Data(put(value)));
+    check_hresult(static_cast<const IDataCue &>(static_cast<const D &>(*this))->get_Data(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Core::TimedMetadataTrack impl_ITimedMetadataTrackFactory<D>::Create(hstring_ref id, hstring_ref language, Windows::Media::Core::TimedMetadataKind kind) const
 {
     Windows::Media::Core::TimedMetadataTrack value { nullptr };
-    check_hresult(shim()->abi_Create(get(id), get(language), kind, put(value)));
+    check_hresult(static_cast<const ITimedMetadataTrackFactory &>(static_cast<const D &>(*this))->abi_Create(get(id), get(language), kind, put(value)));
     return value;
 }
 
 template <typename D> event_token impl_ITimedMetadataTrack<D>::CueEntered(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::TimedMetadataTrack, Windows::Media::Core::MediaCueEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_CueEntered(get(handler), &token));
+    check_hresult(static_cast<const ITimedMetadataTrack &>(static_cast<const D &>(*this))->add_CueEntered(get(handler), &token));
     return token;
 }
 
@@ -6485,13 +6485,13 @@ template <typename D> event_revoker<ITimedMetadataTrack> impl_ITimedMetadataTrac
 
 template <typename D> void impl_ITimedMetadataTrack<D>::CueEntered(event_token token) const
 {
-    check_hresult(shim()->remove_CueEntered(token));
+    check_hresult(static_cast<const ITimedMetadataTrack &>(static_cast<const D &>(*this))->remove_CueEntered(token));
 }
 
 template <typename D> event_token impl_ITimedMetadataTrack<D>::CueExited(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::TimedMetadataTrack, Windows::Media::Core::MediaCueEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_CueExited(get(handler), &token));
+    check_hresult(static_cast<const ITimedMetadataTrack &>(static_cast<const D &>(*this))->add_CueExited(get(handler), &token));
     return token;
 }
 
@@ -6502,13 +6502,13 @@ template <typename D> event_revoker<ITimedMetadataTrack> impl_ITimedMetadataTrac
 
 template <typename D> void impl_ITimedMetadataTrack<D>::CueExited(event_token token) const
 {
-    check_hresult(shim()->remove_CueExited(token));
+    check_hresult(static_cast<const ITimedMetadataTrack &>(static_cast<const D &>(*this))->remove_CueExited(token));
 }
 
 template <typename D> event_token impl_ITimedMetadataTrack<D>::TrackFailed(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::TimedMetadataTrack, Windows::Media::Core::TimedMetadataTrackFailedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_TrackFailed(get(handler), &token));
+    check_hresult(static_cast<const ITimedMetadataTrack &>(static_cast<const D &>(*this))->add_TrackFailed(get(handler), &token));
     return token;
 }
 
@@ -6519,65 +6519,65 @@ template <typename D> event_revoker<ITimedMetadataTrack> impl_ITimedMetadataTrac
 
 template <typename D> void impl_ITimedMetadataTrack<D>::TrackFailed(event_token token) const
 {
-    check_hresult(shim()->remove_TrackFailed(token));
+    check_hresult(static_cast<const ITimedMetadataTrack &>(static_cast<const D &>(*this))->remove_TrackFailed(token));
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::Core::IMediaCue> impl_ITimedMetadataTrack<D>::Cues() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Media::Core::IMediaCue> value;
-    check_hresult(shim()->get_Cues(put(value)));
+    check_hresult(static_cast<const ITimedMetadataTrack &>(static_cast<const D &>(*this))->get_Cues(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::Core::IMediaCue> impl_ITimedMetadataTrack<D>::ActiveCues() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Media::Core::IMediaCue> value;
-    check_hresult(shim()->get_ActiveCues(put(value)));
+    check_hresult(static_cast<const ITimedMetadataTrack &>(static_cast<const D &>(*this))->get_ActiveCues(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Core::TimedMetadataKind impl_ITimedMetadataTrack<D>::TimedMetadataKind() const
 {
     Windows::Media::Core::TimedMetadataKind value {};
-    check_hresult(shim()->get_TimedMetadataKind(&value));
+    check_hresult(static_cast<const ITimedMetadataTrack &>(static_cast<const D &>(*this))->get_TimedMetadataKind(&value));
     return value;
 }
 
 template <typename D> hstring impl_ITimedMetadataTrack<D>::DispatchType() const
 {
     hstring value;
-    check_hresult(shim()->get_DispatchType(put(value)));
+    check_hresult(static_cast<const ITimedMetadataTrack &>(static_cast<const D &>(*this))->get_DispatchType(put(value)));
     return value;
 }
 
 template <typename D> void impl_ITimedMetadataTrack<D>::AddCue(const Windows::Media::Core::IMediaCue & cue) const
 {
-    check_hresult(shim()->abi_AddCue(get(cue)));
+    check_hresult(static_cast<const ITimedMetadataTrack &>(static_cast<const D &>(*this))->abi_AddCue(get(cue)));
 }
 
 template <typename D> void impl_ITimedMetadataTrack<D>::RemoveCue(const Windows::Media::Core::IMediaCue & cue) const
 {
-    check_hresult(shim()->abi_RemoveCue(get(cue)));
+    check_hresult(static_cast<const ITimedMetadataTrack &>(static_cast<const D &>(*this))->abi_RemoveCue(get(cue)));
 }
 
 template <typename D> Windows::Media::Core::TimedMetadataTrackError impl_ITimedTextSourceResolveResultEventArgs<D>::Error() const
 {
     Windows::Media::Core::TimedMetadataTrackError value { nullptr };
-    check_hresult(shim()->get_Error(put(value)));
+    check_hresult(static_cast<const ITimedTextSourceResolveResultEventArgs &>(static_cast<const D &>(*this))->get_Error(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Collections::IVectorView<Windows::Media::Core::TimedMetadataTrack> impl_ITimedTextSourceResolveResultEventArgs<D>::Tracks() const
 {
     Windows::Foundation::Collections::IVectorView<Windows::Media::Core::TimedMetadataTrack> value;
-    check_hresult(shim()->get_Tracks(put(value)));
+    check_hresult(static_cast<const ITimedTextSourceResolveResultEventArgs &>(static_cast<const D &>(*this))->get_Tracks(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_ITimedTextSource<D>::Resolved(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::TimedTextSource, Windows::Media::Core::TimedTextSourceResolveResultEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_Resolved(get(handler), &token));
+    check_hresult(static_cast<const ITimedTextSource &>(static_cast<const D &>(*this))->add_Resolved(get(handler), &token));
     return token;
 }
 
@@ -6588,97 +6588,97 @@ template <typename D> event_revoker<ITimedTextSource> impl_ITimedTextSource<D>::
 
 template <typename D> void impl_ITimedTextSource<D>::Resolved(event_token token) const
 {
-    check_hresult(shim()->remove_Resolved(token));
+    check_hresult(static_cast<const ITimedTextSource &>(static_cast<const D &>(*this))->remove_Resolved(token));
 }
 
 template <typename D> Windows::Media::Core::TimedTextSource impl_ITimedTextSourceStatics<D>::CreateFromStream(const Windows::Storage::Streams::IRandomAccessStream & stream) const
 {
     Windows::Media::Core::TimedTextSource value { nullptr };
-    check_hresult(shim()->abi_CreateFromStream(get(stream), put(value)));
+    check_hresult(static_cast<const ITimedTextSourceStatics &>(static_cast<const D &>(*this))->abi_CreateFromStream(get(stream), put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Core::TimedTextSource impl_ITimedTextSourceStatics<D>::CreateFromUri(const Windows::Foundation::Uri & uri) const
 {
     Windows::Media::Core::TimedTextSource value { nullptr };
-    check_hresult(shim()->abi_CreateFromUri(get(uri), put(value)));
+    check_hresult(static_cast<const ITimedTextSourceStatics &>(static_cast<const D &>(*this))->abi_CreateFromUri(get(uri), put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Core::TimedTextSource impl_ITimedTextSourceStatics<D>::CreateFromStream(const Windows::Storage::Streams::IRandomAccessStream & stream, hstring_ref defaultLanguage) const
 {
     Windows::Media::Core::TimedTextSource value { nullptr };
-    check_hresult(shim()->abi_CreateFromStreamWithLanguage(get(stream), get(defaultLanguage), put(value)));
+    check_hresult(static_cast<const ITimedTextSourceStatics &>(static_cast<const D &>(*this))->abi_CreateFromStreamWithLanguage(get(stream), get(defaultLanguage), put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Core::TimedTextSource impl_ITimedTextSourceStatics<D>::CreateFromUri(const Windows::Foundation::Uri & uri, hstring_ref defaultLanguage) const
 {
     Windows::Media::Core::TimedTextSource value { nullptr };
-    check_hresult(shim()->abi_CreateFromUriWithLanguage(get(uri), get(defaultLanguage), put(value)));
+    check_hresult(static_cast<const ITimedTextSourceStatics &>(static_cast<const D &>(*this))->abi_CreateFromUriWithLanguage(get(uri), get(defaultLanguage), put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Core::MediaDecoderStatus impl_IVideoTrackSupportInfo<D>::DecoderStatus() const
 {
     Windows::Media::Core::MediaDecoderStatus value {};
-    check_hresult(shim()->get_DecoderStatus(&value));
+    check_hresult(static_cast<const IVideoTrackSupportInfo &>(static_cast<const D &>(*this))->get_DecoderStatus(&value));
     return value;
 }
 
 template <typename D> Windows::Media::Core::MediaSourceStatus impl_IVideoTrackSupportInfo<D>::MediaSourceStatus() const
 {
     Windows::Media::Core::MediaSourceStatus value {};
-    check_hresult(shim()->get_MediaSourceStatus(&value));
+    check_hresult(static_cast<const IVideoTrackSupportInfo &>(static_cast<const D &>(*this))->get_MediaSourceStatus(&value));
     return value;
 }
 
 template <typename D> Windows::Media::Core::MediaDecoderStatus impl_IAudioTrackSupportInfo<D>::DecoderStatus() const
 {
     Windows::Media::Core::MediaDecoderStatus value {};
-    check_hresult(shim()->get_DecoderStatus(&value));
+    check_hresult(static_cast<const IAudioTrackSupportInfo &>(static_cast<const D &>(*this))->get_DecoderStatus(&value));
     return value;
 }
 
 template <typename D> Windows::Media::Core::AudioDecoderDegradation impl_IAudioTrackSupportInfo<D>::Degradation() const
 {
     Windows::Media::Core::AudioDecoderDegradation value {};
-    check_hresult(shim()->get_Degradation(&value));
+    check_hresult(static_cast<const IAudioTrackSupportInfo &>(static_cast<const D &>(*this))->get_Degradation(&value));
     return value;
 }
 
 template <typename D> Windows::Media::Core::AudioDecoderDegradationReason impl_IAudioTrackSupportInfo<D>::DegradationReason() const
 {
     Windows::Media::Core::AudioDecoderDegradationReason value {};
-    check_hresult(shim()->get_DegradationReason(&value));
+    check_hresult(static_cast<const IAudioTrackSupportInfo &>(static_cast<const D &>(*this))->get_DegradationReason(&value));
     return value;
 }
 
 template <typename D> Windows::Media::Core::MediaSourceStatus impl_IAudioTrackSupportInfo<D>::MediaSourceStatus() const
 {
     Windows::Media::Core::MediaSourceStatus value {};
-    check_hresult(shim()->get_MediaSourceStatus(&value));
+    check_hresult(static_cast<const IAudioTrackSupportInfo &>(static_cast<const D &>(*this))->get_MediaSourceStatus(&value));
     return value;
 }
 
 template <typename D> HRESULT impl_IVideoTrackOpenFailedEventArgs<D>::ExtendedError() const
 {
     HRESULT value {};
-    check_hresult(shim()->get_ExtendedError(&value));
+    check_hresult(static_cast<const IVideoTrackOpenFailedEventArgs &>(static_cast<const D &>(*this))->get_ExtendedError(&value));
     return value;
 }
 
 template <typename D> HRESULT impl_IAudioTrackOpenFailedEventArgs<D>::ExtendedError() const
 {
     HRESULT value {};
-    check_hresult(shim()->get_ExtendedError(&value));
+    check_hresult(static_cast<const IAudioTrackOpenFailedEventArgs &>(static_cast<const D &>(*this))->get_ExtendedError(&value));
     return value;
 }
 
 template <typename D> event_token impl_IVideoTrack<D>::OpenFailed(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::VideoTrack, Windows::Media::Core::VideoTrackOpenFailedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_OpenFailed(get(handler), &token));
+    check_hresult(static_cast<const IVideoTrack &>(static_cast<const D &>(*this))->add_OpenFailed(get(handler), &token));
     return token;
 }
 
@@ -6689,41 +6689,41 @@ template <typename D> event_revoker<IVideoTrack> impl_IVideoTrack<D>::OpenFailed
 
 template <typename D> void impl_IVideoTrack<D>::OpenFailed(event_token token) const
 {
-    check_hresult(shim()->remove_OpenFailed(token));
+    check_hresult(static_cast<const IVideoTrack &>(static_cast<const D &>(*this))->remove_OpenFailed(token));
 }
 
 template <typename D> Windows::Media::MediaProperties::VideoEncodingProperties impl_IVideoTrack<D>::GetEncodingProperties() const
 {
     Windows::Media::MediaProperties::VideoEncodingProperties value { nullptr };
-    check_hresult(shim()->abi_GetEncodingProperties(put(value)));
+    check_hresult(static_cast<const IVideoTrack &>(static_cast<const D &>(*this))->abi_GetEncodingProperties(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Playback::MediaPlaybackItem impl_IVideoTrack<D>::PlaybackItem() const
 {
     Windows::Media::Playback::MediaPlaybackItem value { nullptr };
-    check_hresult(shim()->get_PlaybackItem(put(value)));
+    check_hresult(static_cast<const IVideoTrack &>(static_cast<const D &>(*this))->get_PlaybackItem(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IVideoTrack<D>::Name() const
 {
     hstring value;
-    check_hresult(shim()->get_Name(put(value)));
+    check_hresult(static_cast<const IVideoTrack &>(static_cast<const D &>(*this))->get_Name(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Core::VideoTrackSupportInfo impl_IVideoTrack<D>::SupportInfo() const
 {
     Windows::Media::Core::VideoTrackSupportInfo value { nullptr };
-    check_hresult(shim()->get_SupportInfo(put(value)));
+    check_hresult(static_cast<const IVideoTrack &>(static_cast<const D &>(*this))->get_SupportInfo(put(value)));
     return value;
 }
 
 template <typename D> event_token impl_IAudioTrack<D>::OpenFailed(const Windows::Foundation::TypedEventHandler<Windows::Media::Core::AudioTrack, Windows::Media::Core::AudioTrackOpenFailedEventArgs> & handler) const
 {
     event_token token {};
-    check_hresult(shim()->add_OpenFailed(get(handler), &token));
+    check_hresult(static_cast<const IAudioTrack &>(static_cast<const D &>(*this))->add_OpenFailed(get(handler), &token));
     return token;
 }
 
@@ -6734,48 +6734,48 @@ template <typename D> event_revoker<IAudioTrack> impl_IAudioTrack<D>::OpenFailed
 
 template <typename D> void impl_IAudioTrack<D>::OpenFailed(event_token token) const
 {
-    check_hresult(shim()->remove_OpenFailed(token));
+    check_hresult(static_cast<const IAudioTrack &>(static_cast<const D &>(*this))->remove_OpenFailed(token));
 }
 
 template <typename D> Windows::Media::MediaProperties::AudioEncodingProperties impl_IAudioTrack<D>::GetEncodingProperties() const
 {
     Windows::Media::MediaProperties::AudioEncodingProperties value { nullptr };
-    check_hresult(shim()->abi_GetEncodingProperties(put(value)));
+    check_hresult(static_cast<const IAudioTrack &>(static_cast<const D &>(*this))->abi_GetEncodingProperties(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Playback::MediaPlaybackItem impl_IAudioTrack<D>::PlaybackItem() const
 {
     Windows::Media::Playback::MediaPlaybackItem value { nullptr };
-    check_hresult(shim()->get_PlaybackItem(put(value)));
+    check_hresult(static_cast<const IAudioTrack &>(static_cast<const D &>(*this))->get_PlaybackItem(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_IAudioTrack<D>::Name() const
 {
     hstring value;
-    check_hresult(shim()->get_Name(put(value)));
+    check_hresult(static_cast<const IAudioTrack &>(static_cast<const D &>(*this))->get_Name(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Core::AudioTrackSupportInfo impl_IAudioTrack<D>::SupportInfo() const
 {
     Windows::Media::Core::AudioTrackSupportInfo value { nullptr };
-    check_hresult(shim()->get_SupportInfo(put(value)));
+    check_hresult(static_cast<const IAudioTrack &>(static_cast<const D &>(*this))->get_SupportInfo(put(value)));
     return value;
 }
 
 template <typename D> Windows::Media::Playback::MediaPlaybackItem impl_ITimedMetadataTrack2<D>::PlaybackItem() const
 {
     Windows::Media::Playback::MediaPlaybackItem value { nullptr };
-    check_hresult(shim()->get_PlaybackItem(put(value)));
+    check_hresult(static_cast<const ITimedMetadataTrack2 &>(static_cast<const D &>(*this))->get_PlaybackItem(put(value)));
     return value;
 }
 
 template <typename D> hstring impl_ITimedMetadataTrack2<D>::Name() const
 {
     hstring value;
-    check_hresult(shim()->get_Name(put(value)));
+    check_hresult(static_cast<const ITimedMetadataTrack2 &>(static_cast<const D &>(*this))->get_Name(put(value)));
     return value;
 }
 

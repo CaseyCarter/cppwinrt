@@ -94,12 +94,12 @@ template <> struct traits<Windows::Graphics::Display::DisplayInformation> { usin
 
 namespace Windows::Graphics::Display {
 
-template <typename T> class impl_IDisplayInformation;
-template <typename T> class impl_IDisplayInformation2;
-template <typename T> class impl_IDisplayInformation3;
-template <typename T> class impl_IDisplayInformation4;
-template <typename T> class impl_IDisplayInformationStatics;
-template <typename T> class impl_IDisplayPropertiesStatics;
+template <typename T> struct impl_IDisplayInformation;
+template <typename T> struct impl_IDisplayInformation2;
+template <typename T> struct impl_IDisplayInformation3;
+template <typename T> struct impl_IDisplayInformation4;
+template <typename T> struct impl_IDisplayInformationStatics;
+template <typename T> struct impl_IDisplayPropertiesStatics;
 template <typename T> struct impl_DisplayPropertiesEventHandler;
 
 }

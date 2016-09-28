@@ -89,35 +89,35 @@ namespace Windows::Management::Workplace {
 template <typename D> bool impl_IMdmAllowPolicyStatics<D>::IsBrowserAllowed() const
 {
     bool value {};
-    check_hresult(shim()->abi_IsBrowserAllowed(&value));
+    check_hresult(static_cast<const IMdmAllowPolicyStatics &>(static_cast<const D &>(*this))->abi_IsBrowserAllowed(&value));
     return value;
 }
 
 template <typename D> bool impl_IMdmAllowPolicyStatics<D>::IsCameraAllowed() const
 {
     bool value {};
-    check_hresult(shim()->abi_IsCameraAllowed(&value));
+    check_hresult(static_cast<const IMdmAllowPolicyStatics &>(static_cast<const D &>(*this))->abi_IsCameraAllowed(&value));
     return value;
 }
 
 template <typename D> bool impl_IMdmAllowPolicyStatics<D>::IsMicrosoftAccountAllowed() const
 {
     bool value {};
-    check_hresult(shim()->abi_IsMicrosoftAccountAllowed(&value));
+    check_hresult(static_cast<const IMdmAllowPolicyStatics &>(static_cast<const D &>(*this))->abi_IsMicrosoftAccountAllowed(&value));
     return value;
 }
 
 template <typename D> bool impl_IMdmAllowPolicyStatics<D>::IsStoreAllowed() const
 {
     bool value {};
-    check_hresult(shim()->abi_IsStoreAllowed(&value));
+    check_hresult(static_cast<const IMdmAllowPolicyStatics &>(static_cast<const D &>(*this))->abi_IsStoreAllowed(&value));
     return value;
 }
 
 template <typename D> Windows::Management::Workplace::MessagingSyncPolicy impl_IMdmPolicyStatics2<D>::GetMessagingSyncPolicy() const
 {
     Windows::Management::Workplace::MessagingSyncPolicy value {};
-    check_hresult(shim()->abi_GetMessagingSyncPolicy(&value));
+    check_hresult(static_cast<const IMdmPolicyStatics2 &>(static_cast<const D &>(*this))->abi_GetMessagingSyncPolicy(&value));
     return value;
 }
 

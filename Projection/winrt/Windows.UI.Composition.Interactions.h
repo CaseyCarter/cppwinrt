@@ -1285,563 +1285,563 @@ namespace Windows::UI::Composition::Interactions {
 template <typename D> int32_t impl_ICompositionInteractionSourceCollection<D>::Count() const
 {
     int32_t value {};
-    check_hresult(shim()->get_Count(&value));
+    check_hresult(static_cast<const ICompositionInteractionSourceCollection &>(static_cast<const D &>(*this))->get_Count(&value));
     return value;
 }
 
 template <typename D> void impl_ICompositionInteractionSourceCollection<D>::Add(const Windows::UI::Composition::Interactions::ICompositionInteractionSource & value) const
 {
-    check_hresult(shim()->abi_Add(get(value)));
+    check_hresult(static_cast<const ICompositionInteractionSourceCollection &>(static_cast<const D &>(*this))->abi_Add(get(value)));
 }
 
 template <typename D> void impl_ICompositionInteractionSourceCollection<D>::Remove(const Windows::UI::Composition::Interactions::ICompositionInteractionSource & value) const
 {
-    check_hresult(shim()->abi_Remove(get(value)));
+    check_hresult(static_cast<const ICompositionInteractionSourceCollection &>(static_cast<const D &>(*this))->abi_Remove(get(value)));
 }
 
 template <typename D> void impl_ICompositionInteractionSourceCollection<D>::RemoveAll() const
 {
-    check_hresult(shim()->abi_RemoveAll());
+    check_hresult(static_cast<const ICompositionInteractionSourceCollection &>(static_cast<const D &>(*this))->abi_RemoveAll());
 }
 
 template <typename D> Windows::UI::Composition::Interactions::InteractionTracker impl_IInteractionTrackerStatics<D>::Create(const Windows::UI::Composition::Compositor & compositor) const
 {
     Windows::UI::Composition::Interactions::InteractionTracker result { nullptr };
-    check_hresult(shim()->abi_Create(get(compositor), put(result)));
+    check_hresult(static_cast<const IInteractionTrackerStatics &>(static_cast<const D &>(*this))->abi_Create(get(compositor), put(result)));
     return result;
 }
 
 template <typename D> Windows::UI::Composition::Interactions::InteractionTracker impl_IInteractionTrackerStatics<D>::CreateWithOwner(const Windows::UI::Composition::Compositor & compositor, const Windows::UI::Composition::Interactions::IInteractionTrackerOwner & owner) const
 {
     Windows::UI::Composition::Interactions::InteractionTracker result { nullptr };
-    check_hresult(shim()->abi_CreateWithOwner(get(compositor), get(owner), put(result)));
+    check_hresult(static_cast<const IInteractionTrackerStatics &>(static_cast<const D &>(*this))->abi_CreateWithOwner(get(compositor), get(owner), put(result)));
     return result;
 }
 
 template <typename D> void impl_IInteractionTrackerOwner<D>::CustomAnimationStateEntered(const Windows::UI::Composition::Interactions::InteractionTracker & sender, const Windows::UI::Composition::Interactions::InteractionTrackerCustomAnimationStateEnteredArgs & args) const
 {
-    check_hresult(shim()->abi_CustomAnimationStateEntered(get(sender), get(args)));
+    check_hresult(static_cast<const IInteractionTrackerOwner &>(static_cast<const D &>(*this))->abi_CustomAnimationStateEntered(get(sender), get(args)));
 }
 
 template <typename D> void impl_IInteractionTrackerOwner<D>::IdleStateEntered(const Windows::UI::Composition::Interactions::InteractionTracker & sender, const Windows::UI::Composition::Interactions::InteractionTrackerIdleStateEnteredArgs & args) const
 {
-    check_hresult(shim()->abi_IdleStateEntered(get(sender), get(args)));
+    check_hresult(static_cast<const IInteractionTrackerOwner &>(static_cast<const D &>(*this))->abi_IdleStateEntered(get(sender), get(args)));
 }
 
 template <typename D> void impl_IInteractionTrackerOwner<D>::InertiaStateEntered(const Windows::UI::Composition::Interactions::InteractionTracker & sender, const Windows::UI::Composition::Interactions::InteractionTrackerInertiaStateEnteredArgs & args) const
 {
-    check_hresult(shim()->abi_InertiaStateEntered(get(sender), get(args)));
+    check_hresult(static_cast<const IInteractionTrackerOwner &>(static_cast<const D &>(*this))->abi_InertiaStateEntered(get(sender), get(args)));
 }
 
 template <typename D> void impl_IInteractionTrackerOwner<D>::InteractingStateEntered(const Windows::UI::Composition::Interactions::InteractionTracker & sender, const Windows::UI::Composition::Interactions::InteractionTrackerInteractingStateEnteredArgs & args) const
 {
-    check_hresult(shim()->abi_InteractingStateEntered(get(sender), get(args)));
+    check_hresult(static_cast<const IInteractionTrackerOwner &>(static_cast<const D &>(*this))->abi_InteractingStateEntered(get(sender), get(args)));
 }
 
 template <typename D> void impl_IInteractionTrackerOwner<D>::RequestIgnored(const Windows::UI::Composition::Interactions::InteractionTracker & sender, const Windows::UI::Composition::Interactions::InteractionTrackerRequestIgnoredArgs & args) const
 {
-    check_hresult(shim()->abi_RequestIgnored(get(sender), get(args)));
+    check_hresult(static_cast<const IInteractionTrackerOwner &>(static_cast<const D &>(*this))->abi_RequestIgnored(get(sender), get(args)));
 }
 
 template <typename D> void impl_IInteractionTrackerOwner<D>::ValuesChanged(const Windows::UI::Composition::Interactions::InteractionTracker & sender, const Windows::UI::Composition::Interactions::InteractionTrackerValuesChangedArgs & args) const
 {
-    check_hresult(shim()->abi_ValuesChanged(get(sender), get(args)));
+    check_hresult(static_cast<const IInteractionTrackerOwner &>(static_cast<const D &>(*this))->abi_ValuesChanged(get(sender), get(args)));
 }
 
 template <typename D> Windows::UI::Composition::Interactions::CompositionInteractionSourceCollection impl_IInteractionTracker<D>::InteractionSources() const
 {
     Windows::UI::Composition::Interactions::CompositionInteractionSourceCollection value { nullptr };
-    check_hresult(shim()->get_InteractionSources(put(value)));
+    check_hresult(static_cast<const IInteractionTracker &>(static_cast<const D &>(*this))->get_InteractionSources(put(value)));
     return value;
 }
 
 template <typename D> bool impl_IInteractionTracker<D>::IsPositionRoundingSuggested() const
 {
     bool value {};
-    check_hresult(shim()->get_IsPositionRoundingSuggested(&value));
+    check_hresult(static_cast<const IInteractionTracker &>(static_cast<const D &>(*this))->get_IsPositionRoundingSuggested(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Numerics::float3 impl_IInteractionTracker<D>::MaxPosition() const
 {
     Windows::Foundation::Numerics::float3 value {};
-    check_hresult(shim()->get_MaxPosition(put(value)));
+    check_hresult(static_cast<const IInteractionTracker &>(static_cast<const D &>(*this))->get_MaxPosition(put(value)));
     return value;
 }
 
 template <typename D> void impl_IInteractionTracker<D>::MaxPosition(const Windows::Foundation::Numerics::float3 & value) const
 {
-    check_hresult(shim()->put_MaxPosition(get(value)));
+    check_hresult(static_cast<const IInteractionTracker &>(static_cast<const D &>(*this))->put_MaxPosition(get(value)));
 }
 
 template <typename D> float impl_IInteractionTracker<D>::MaxScale() const
 {
     float value {};
-    check_hresult(shim()->get_MaxScale(&value));
+    check_hresult(static_cast<const IInteractionTracker &>(static_cast<const D &>(*this))->get_MaxScale(&value));
     return value;
 }
 
 template <typename D> void impl_IInteractionTracker<D>::MaxScale(float value) const
 {
-    check_hresult(shim()->put_MaxScale(value));
+    check_hresult(static_cast<const IInteractionTracker &>(static_cast<const D &>(*this))->put_MaxScale(value));
 }
 
 template <typename D> Windows::Foundation::Numerics::float3 impl_IInteractionTracker<D>::MinPosition() const
 {
     Windows::Foundation::Numerics::float3 value {};
-    check_hresult(shim()->get_MinPosition(put(value)));
+    check_hresult(static_cast<const IInteractionTracker &>(static_cast<const D &>(*this))->get_MinPosition(put(value)));
     return value;
 }
 
 template <typename D> void impl_IInteractionTracker<D>::MinPosition(const Windows::Foundation::Numerics::float3 & value) const
 {
-    check_hresult(shim()->put_MinPosition(get(value)));
+    check_hresult(static_cast<const IInteractionTracker &>(static_cast<const D &>(*this))->put_MinPosition(get(value)));
 }
 
 template <typename D> float impl_IInteractionTracker<D>::MinScale() const
 {
     float value {};
-    check_hresult(shim()->get_MinScale(&value));
+    check_hresult(static_cast<const IInteractionTracker &>(static_cast<const D &>(*this))->get_MinScale(&value));
     return value;
 }
 
 template <typename D> void impl_IInteractionTracker<D>::MinScale(float value) const
 {
-    check_hresult(shim()->put_MinScale(value));
+    check_hresult(static_cast<const IInteractionTracker &>(static_cast<const D &>(*this))->put_MinScale(value));
 }
 
 template <typename D> Windows::Foundation::Numerics::float3 impl_IInteractionTracker<D>::NaturalRestingPosition() const
 {
     Windows::Foundation::Numerics::float3 value {};
-    check_hresult(shim()->get_NaturalRestingPosition(put(value)));
+    check_hresult(static_cast<const IInteractionTracker &>(static_cast<const D &>(*this))->get_NaturalRestingPosition(put(value)));
     return value;
 }
 
 template <typename D> float impl_IInteractionTracker<D>::NaturalRestingScale() const
 {
     float value {};
-    check_hresult(shim()->get_NaturalRestingScale(&value));
+    check_hresult(static_cast<const IInteractionTracker &>(static_cast<const D &>(*this))->get_NaturalRestingScale(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Composition::Interactions::IInteractionTrackerOwner impl_IInteractionTracker<D>::Owner() const
 {
     Windows::UI::Composition::Interactions::IInteractionTrackerOwner value;
-    check_hresult(shim()->get_Owner(put(value)));
+    check_hresult(static_cast<const IInteractionTracker &>(static_cast<const D &>(*this))->get_Owner(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Numerics::float3 impl_IInteractionTracker<D>::Position() const
 {
     Windows::Foundation::Numerics::float3 value {};
-    check_hresult(shim()->get_Position(put(value)));
+    check_hresult(static_cast<const IInteractionTracker &>(static_cast<const D &>(*this))->get_Position(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> impl_IInteractionTracker<D>::PositionInertiaDecayRate() const
 {
     Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> value;
-    check_hresult(shim()->get_PositionInertiaDecayRate(put(value)));
+    check_hresult(static_cast<const IInteractionTracker &>(static_cast<const D &>(*this))->get_PositionInertiaDecayRate(put(value)));
     return value;
 }
 
 template <typename D> void impl_IInteractionTracker<D>::PositionInertiaDecayRate(const Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> & value) const
 {
-    check_hresult(shim()->put_PositionInertiaDecayRate(get(value)));
+    check_hresult(static_cast<const IInteractionTracker &>(static_cast<const D &>(*this))->put_PositionInertiaDecayRate(get(value)));
 }
 
 template <typename D> Windows::Foundation::Numerics::float3 impl_IInteractionTracker<D>::PositionVelocityInPixelsPerSecond() const
 {
     Windows::Foundation::Numerics::float3 value {};
-    check_hresult(shim()->get_PositionVelocityInPixelsPerSecond(put(value)));
+    check_hresult(static_cast<const IInteractionTracker &>(static_cast<const D &>(*this))->get_PositionVelocityInPixelsPerSecond(put(value)));
     return value;
 }
 
 template <typename D> float impl_IInteractionTracker<D>::Scale() const
 {
     float value {};
-    check_hresult(shim()->get_Scale(&value));
+    check_hresult(static_cast<const IInteractionTracker &>(static_cast<const D &>(*this))->get_Scale(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<float> impl_IInteractionTracker<D>::ScaleInertiaDecayRate() const
 {
     Windows::Foundation::IReference<float> value;
-    check_hresult(shim()->get_ScaleInertiaDecayRate(put(value)));
+    check_hresult(static_cast<const IInteractionTracker &>(static_cast<const D &>(*this))->get_ScaleInertiaDecayRate(put(value)));
     return value;
 }
 
 template <typename D> void impl_IInteractionTracker<D>::ScaleInertiaDecayRate(const Windows::Foundation::IReference<float> & value) const
 {
-    check_hresult(shim()->put_ScaleInertiaDecayRate(get(value)));
+    check_hresult(static_cast<const IInteractionTracker &>(static_cast<const D &>(*this))->put_ScaleInertiaDecayRate(get(value)));
 }
 
 template <typename D> float impl_IInteractionTracker<D>::ScaleVelocityInPercentPerSecond() const
 {
     float value {};
-    check_hresult(shim()->get_ScaleVelocityInPercentPerSecond(&value));
+    check_hresult(static_cast<const IInteractionTracker &>(static_cast<const D &>(*this))->get_ScaleVelocityInPercentPerSecond(&value));
     return value;
 }
 
 template <typename D> void impl_IInteractionTracker<D>::AdjustPositionXIfGreaterThanThreshold(float adjustment, float positionThreshold) const
 {
-    check_hresult(shim()->abi_AdjustPositionXIfGreaterThanThreshold(adjustment, positionThreshold));
+    check_hresult(static_cast<const IInteractionTracker &>(static_cast<const D &>(*this))->abi_AdjustPositionXIfGreaterThanThreshold(adjustment, positionThreshold));
 }
 
 template <typename D> void impl_IInteractionTracker<D>::AdjustPositionYIfGreaterThanThreshold(float adjustment, float positionThreshold) const
 {
-    check_hresult(shim()->abi_AdjustPositionYIfGreaterThanThreshold(adjustment, positionThreshold));
+    check_hresult(static_cast<const IInteractionTracker &>(static_cast<const D &>(*this))->abi_AdjustPositionYIfGreaterThanThreshold(adjustment, positionThreshold));
 }
 
 template <typename D> void impl_IInteractionTracker<D>::ConfigurePositionXInertiaModifiers(const Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Interactions::InteractionTrackerInertiaModifier> & modifiers) const
 {
-    check_hresult(shim()->abi_ConfigurePositionXInertiaModifiers(get(modifiers)));
+    check_hresult(static_cast<const IInteractionTracker &>(static_cast<const D &>(*this))->abi_ConfigurePositionXInertiaModifiers(get(modifiers)));
 }
 
 template <typename D> void impl_IInteractionTracker<D>::ConfigurePositionYInertiaModifiers(const Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Interactions::InteractionTrackerInertiaModifier> & modifiers) const
 {
-    check_hresult(shim()->abi_ConfigurePositionYInertiaModifiers(get(modifiers)));
+    check_hresult(static_cast<const IInteractionTracker &>(static_cast<const D &>(*this))->abi_ConfigurePositionYInertiaModifiers(get(modifiers)));
 }
 
 template <typename D> void impl_IInteractionTracker<D>::ConfigureScaleInertiaModifiers(const Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Interactions::InteractionTrackerInertiaModifier> & modifiers) const
 {
-    check_hresult(shim()->abi_ConfigureScaleInertiaModifiers(get(modifiers)));
+    check_hresult(static_cast<const IInteractionTracker &>(static_cast<const D &>(*this))->abi_ConfigureScaleInertiaModifiers(get(modifiers)));
 }
 
 template <typename D> int32_t impl_IInteractionTracker<D>::TryUpdatePosition(const Windows::Foundation::Numerics::float3 & value) const
 {
     int32_t requestId {};
-    check_hresult(shim()->abi_TryUpdatePosition(get(value), &requestId));
+    check_hresult(static_cast<const IInteractionTracker &>(static_cast<const D &>(*this))->abi_TryUpdatePosition(get(value), &requestId));
     return requestId;
 }
 
 template <typename D> int32_t impl_IInteractionTracker<D>::TryUpdatePositionBy(const Windows::Foundation::Numerics::float3 & amount) const
 {
     int32_t requestId {};
-    check_hresult(shim()->abi_TryUpdatePositionBy(get(amount), &requestId));
+    check_hresult(static_cast<const IInteractionTracker &>(static_cast<const D &>(*this))->abi_TryUpdatePositionBy(get(amount), &requestId));
     return requestId;
 }
 
 template <typename D> int32_t impl_IInteractionTracker<D>::TryUpdatePositionWithAnimation(const Windows::UI::Composition::CompositionAnimation & animation) const
 {
     int32_t requestId {};
-    check_hresult(shim()->abi_TryUpdatePositionWithAnimation(get(animation), &requestId));
+    check_hresult(static_cast<const IInteractionTracker &>(static_cast<const D &>(*this))->abi_TryUpdatePositionWithAnimation(get(animation), &requestId));
     return requestId;
 }
 
 template <typename D> int32_t impl_IInteractionTracker<D>::TryUpdatePositionWithAdditionalVelocity(const Windows::Foundation::Numerics::float3 & velocityInPixelsPerSecond) const
 {
     int32_t requestId {};
-    check_hresult(shim()->abi_TryUpdatePositionWithAdditionalVelocity(get(velocityInPixelsPerSecond), &requestId));
+    check_hresult(static_cast<const IInteractionTracker &>(static_cast<const D &>(*this))->abi_TryUpdatePositionWithAdditionalVelocity(get(velocityInPixelsPerSecond), &requestId));
     return requestId;
 }
 
 template <typename D> int32_t impl_IInteractionTracker<D>::TryUpdateScale(float value, const Windows::Foundation::Numerics::float3 & centerPoint) const
 {
     int32_t requestId {};
-    check_hresult(shim()->abi_TryUpdateScale(value, get(centerPoint), &requestId));
+    check_hresult(static_cast<const IInteractionTracker &>(static_cast<const D &>(*this))->abi_TryUpdateScale(value, get(centerPoint), &requestId));
     return requestId;
 }
 
 template <typename D> int32_t impl_IInteractionTracker<D>::TryUpdateScaleWithAnimation(const Windows::UI::Composition::CompositionAnimation & animation, const Windows::Foundation::Numerics::float3 & centerPoint) const
 {
     int32_t requestId {};
-    check_hresult(shim()->abi_TryUpdateScaleWithAnimation(get(animation), get(centerPoint), &requestId));
+    check_hresult(static_cast<const IInteractionTracker &>(static_cast<const D &>(*this))->abi_TryUpdateScaleWithAnimation(get(animation), get(centerPoint), &requestId));
     return requestId;
 }
 
 template <typename D> int32_t impl_IInteractionTracker<D>::TryUpdateScaleWithAdditionalVelocity(float velocityInPercentPerSecond, const Windows::Foundation::Numerics::float3 & centerPoint) const
 {
     int32_t requestId {};
-    check_hresult(shim()->abi_TryUpdateScaleWithAdditionalVelocity(velocityInPercentPerSecond, get(centerPoint), &requestId));
+    check_hresult(static_cast<const IInteractionTracker &>(static_cast<const D &>(*this))->abi_TryUpdateScaleWithAdditionalVelocity(velocityInPercentPerSecond, get(centerPoint), &requestId));
     return requestId;
 }
 
 template <typename D> int32_t impl_IInteractionTrackerCustomAnimationStateEnteredArgs<D>::RequestId() const
 {
     int32_t value {};
-    check_hresult(shim()->get_RequestId(&value));
+    check_hresult(static_cast<const IInteractionTrackerCustomAnimationStateEnteredArgs &>(static_cast<const D &>(*this))->get_RequestId(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IInteractionTrackerIdleStateEnteredArgs<D>::RequestId() const
 {
     int32_t value {};
-    check_hresult(shim()->get_RequestId(&value));
+    check_hresult(static_cast<const IInteractionTrackerIdleStateEnteredArgs &>(static_cast<const D &>(*this))->get_RequestId(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IInteractionTrackerInteractingStateEnteredArgs<D>::RequestId() const
 {
     int32_t value {};
-    check_hresult(shim()->get_RequestId(&value));
+    check_hresult(static_cast<const IInteractionTrackerInteractingStateEnteredArgs &>(static_cast<const D &>(*this))->get_RequestId(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Composition::Interactions::InteractionTrackerInertiaRestingValue impl_IInteractionTrackerInertiaRestingValueStatics<D>::Create(const Windows::UI::Composition::Compositor & compositor) const
 {
     Windows::UI::Composition::Interactions::InteractionTrackerInertiaRestingValue result { nullptr };
-    check_hresult(shim()->abi_Create(get(compositor), put(result)));
+    check_hresult(static_cast<const IInteractionTrackerInertiaRestingValueStatics &>(static_cast<const D &>(*this))->abi_Create(get(compositor), put(result)));
     return result;
 }
 
 template <typename D> Windows::UI::Composition::ExpressionAnimation impl_IInteractionTrackerInertiaRestingValue<D>::Condition() const
 {
     Windows::UI::Composition::ExpressionAnimation value { nullptr };
-    check_hresult(shim()->get_Condition(put(value)));
+    check_hresult(static_cast<const IInteractionTrackerInertiaRestingValue &>(static_cast<const D &>(*this))->get_Condition(put(value)));
     return value;
 }
 
 template <typename D> void impl_IInteractionTrackerInertiaRestingValue<D>::Condition(const Windows::UI::Composition::ExpressionAnimation & value) const
 {
-    check_hresult(shim()->put_Condition(get(value)));
+    check_hresult(static_cast<const IInteractionTrackerInertiaRestingValue &>(static_cast<const D &>(*this))->put_Condition(get(value)));
 }
 
 template <typename D> Windows::UI::Composition::ExpressionAnimation impl_IInteractionTrackerInertiaRestingValue<D>::RestingValue() const
 {
     Windows::UI::Composition::ExpressionAnimation value { nullptr };
-    check_hresult(shim()->get_RestingValue(put(value)));
+    check_hresult(static_cast<const IInteractionTrackerInertiaRestingValue &>(static_cast<const D &>(*this))->get_RestingValue(put(value)));
     return value;
 }
 
 template <typename D> void impl_IInteractionTrackerInertiaRestingValue<D>::RestingValue(const Windows::UI::Composition::ExpressionAnimation & value) const
 {
-    check_hresult(shim()->put_RestingValue(get(value)));
+    check_hresult(static_cast<const IInteractionTrackerInertiaRestingValue &>(static_cast<const D &>(*this))->put_RestingValue(get(value)));
 }
 
 template <typename D> Windows::UI::Composition::Interactions::InteractionTrackerInertiaMotion impl_IInteractionTrackerInertiaMotionStatics<D>::Create(const Windows::UI::Composition::Compositor & compositor) const
 {
     Windows::UI::Composition::Interactions::InteractionTrackerInertiaMotion result { nullptr };
-    check_hresult(shim()->abi_Create(get(compositor), put(result)));
+    check_hresult(static_cast<const IInteractionTrackerInertiaMotionStatics &>(static_cast<const D &>(*this))->abi_Create(get(compositor), put(result)));
     return result;
 }
 
 template <typename D> Windows::UI::Composition::ExpressionAnimation impl_IInteractionTrackerInertiaMotion<D>::Condition() const
 {
     Windows::UI::Composition::ExpressionAnimation value { nullptr };
-    check_hresult(shim()->get_Condition(put(value)));
+    check_hresult(static_cast<const IInteractionTrackerInertiaMotion &>(static_cast<const D &>(*this))->get_Condition(put(value)));
     return value;
 }
 
 template <typename D> void impl_IInteractionTrackerInertiaMotion<D>::Condition(const Windows::UI::Composition::ExpressionAnimation & value) const
 {
-    check_hresult(shim()->put_Condition(get(value)));
+    check_hresult(static_cast<const IInteractionTrackerInertiaMotion &>(static_cast<const D &>(*this))->put_Condition(get(value)));
 }
 
 template <typename D> Windows::UI::Composition::ExpressionAnimation impl_IInteractionTrackerInertiaMotion<D>::Motion() const
 {
     Windows::UI::Composition::ExpressionAnimation value { nullptr };
-    check_hresult(shim()->get_Motion(put(value)));
+    check_hresult(static_cast<const IInteractionTrackerInertiaMotion &>(static_cast<const D &>(*this))->get_Motion(put(value)));
     return value;
 }
 
 template <typename D> void impl_IInteractionTrackerInertiaMotion<D>::Motion(const Windows::UI::Composition::ExpressionAnimation & value) const
 {
-    check_hresult(shim()->put_Motion(get(value)));
+    check_hresult(static_cast<const IInteractionTrackerInertiaMotion &>(static_cast<const D &>(*this))->put_Motion(get(value)));
 }
 
 template <typename D> Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> impl_IInteractionTrackerInertiaStateEnteredArgs<D>::ModifiedRestingPosition() const
 {
     Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> value;
-    check_hresult(shim()->get_ModifiedRestingPosition(put(value)));
+    check_hresult(static_cast<const IInteractionTrackerInertiaStateEnteredArgs &>(static_cast<const D &>(*this))->get_ModifiedRestingPosition(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::IReference<float> impl_IInteractionTrackerInertiaStateEnteredArgs<D>::ModifiedRestingScale() const
 {
     Windows::Foundation::IReference<float> value;
-    check_hresult(shim()->get_ModifiedRestingScale(put(value)));
+    check_hresult(static_cast<const IInteractionTrackerInertiaStateEnteredArgs &>(static_cast<const D &>(*this))->get_ModifiedRestingScale(put(value)));
     return value;
 }
 
 template <typename D> Windows::Foundation::Numerics::float3 impl_IInteractionTrackerInertiaStateEnteredArgs<D>::NaturalRestingPosition() const
 {
     Windows::Foundation::Numerics::float3 value {};
-    check_hresult(shim()->get_NaturalRestingPosition(put(value)));
+    check_hresult(static_cast<const IInteractionTrackerInertiaStateEnteredArgs &>(static_cast<const D &>(*this))->get_NaturalRestingPosition(put(value)));
     return value;
 }
 
 template <typename D> float impl_IInteractionTrackerInertiaStateEnteredArgs<D>::NaturalRestingScale() const
 {
     float value {};
-    check_hresult(shim()->get_NaturalRestingScale(&value));
+    check_hresult(static_cast<const IInteractionTrackerInertiaStateEnteredArgs &>(static_cast<const D &>(*this))->get_NaturalRestingScale(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Numerics::float3 impl_IInteractionTrackerInertiaStateEnteredArgs<D>::PositionVelocityInPixelsPerSecond() const
 {
     Windows::Foundation::Numerics::float3 value {};
-    check_hresult(shim()->get_PositionVelocityInPixelsPerSecond(put(value)));
+    check_hresult(static_cast<const IInteractionTrackerInertiaStateEnteredArgs &>(static_cast<const D &>(*this))->get_PositionVelocityInPixelsPerSecond(put(value)));
     return value;
 }
 
 template <typename D> int32_t impl_IInteractionTrackerInertiaStateEnteredArgs<D>::RequestId() const
 {
     int32_t value {};
-    check_hresult(shim()->get_RequestId(&value));
+    check_hresult(static_cast<const IInteractionTrackerInertiaStateEnteredArgs &>(static_cast<const D &>(*this))->get_RequestId(&value));
     return value;
 }
 
 template <typename D> float impl_IInteractionTrackerInertiaStateEnteredArgs<D>::ScaleVelocityInPercentPerSecond() const
 {
     float value {};
-    check_hresult(shim()->get_ScaleVelocityInPercentPerSecond(&value));
+    check_hresult(static_cast<const IInteractionTrackerInertiaStateEnteredArgs &>(static_cast<const D &>(*this))->get_ScaleVelocityInPercentPerSecond(&value));
     return value;
 }
 
 template <typename D> int32_t impl_IInteractionTrackerRequestIgnoredArgs<D>::RequestId() const
 {
     int32_t value {};
-    check_hresult(shim()->get_RequestId(&value));
+    check_hresult(static_cast<const IInteractionTrackerRequestIgnoredArgs &>(static_cast<const D &>(*this))->get_RequestId(&value));
     return value;
 }
 
 template <typename D> Windows::Foundation::Numerics::float3 impl_IInteractionTrackerValuesChangedArgs<D>::Position() const
 {
     Windows::Foundation::Numerics::float3 value {};
-    check_hresult(shim()->get_Position(put(value)));
+    check_hresult(static_cast<const IInteractionTrackerValuesChangedArgs &>(static_cast<const D &>(*this))->get_Position(put(value)));
     return value;
 }
 
 template <typename D> int32_t impl_IInteractionTrackerValuesChangedArgs<D>::RequestId() const
 {
     int32_t value {};
-    check_hresult(shim()->get_RequestId(&value));
+    check_hresult(static_cast<const IInteractionTrackerValuesChangedArgs &>(static_cast<const D &>(*this))->get_RequestId(&value));
     return value;
 }
 
 template <typename D> float impl_IInteractionTrackerValuesChangedArgs<D>::Scale() const
 {
     float value {};
-    check_hresult(shim()->get_Scale(&value));
+    check_hresult(static_cast<const IInteractionTrackerValuesChangedArgs &>(static_cast<const D &>(*this))->get_Scale(&value));
     return value;
 }
 
 template <typename D> Windows::UI::Composition::Interactions::VisualInteractionSource impl_IVisualInteractionSourceStatics<D>::Create(const Windows::UI::Composition::Visual & source) const
 {
     Windows::UI::Composition::Interactions::VisualInteractionSource result { nullptr };
-    check_hresult(shim()->abi_Create(get(source), put(result)));
+    check_hresult(static_cast<const IVisualInteractionSourceStatics &>(static_cast<const D &>(*this))->abi_Create(get(source), put(result)));
     return result;
 }
 
 template <typename D> bool impl_IVisualInteractionSource<D>::IsPositionXRailsEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_IsPositionXRailsEnabled(&value));
+    check_hresult(static_cast<const IVisualInteractionSource &>(static_cast<const D &>(*this))->get_IsPositionXRailsEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IVisualInteractionSource<D>::IsPositionXRailsEnabled(bool value) const
 {
-    check_hresult(shim()->put_IsPositionXRailsEnabled(value));
+    check_hresult(static_cast<const IVisualInteractionSource &>(static_cast<const D &>(*this))->put_IsPositionXRailsEnabled(value));
 }
 
 template <typename D> bool impl_IVisualInteractionSource<D>::IsPositionYRailsEnabled() const
 {
     bool value {};
-    check_hresult(shim()->get_IsPositionYRailsEnabled(&value));
+    check_hresult(static_cast<const IVisualInteractionSource &>(static_cast<const D &>(*this))->get_IsPositionYRailsEnabled(&value));
     return value;
 }
 
 template <typename D> void impl_IVisualInteractionSource<D>::IsPositionYRailsEnabled(bool value) const
 {
-    check_hresult(shim()->put_IsPositionYRailsEnabled(value));
+    check_hresult(static_cast<const IVisualInteractionSource &>(static_cast<const D &>(*this))->put_IsPositionYRailsEnabled(value));
 }
 
 template <typename D> Windows::UI::Composition::Interactions::VisualInteractionSourceRedirectionMode impl_IVisualInteractionSource<D>::ManipulationRedirectionMode() const
 {
     Windows::UI::Composition::Interactions::VisualInteractionSourceRedirectionMode value {};
-    check_hresult(shim()->get_ManipulationRedirectionMode(&value));
+    check_hresult(static_cast<const IVisualInteractionSource &>(static_cast<const D &>(*this))->get_ManipulationRedirectionMode(&value));
     return value;
 }
 
 template <typename D> void impl_IVisualInteractionSource<D>::ManipulationRedirectionMode(Windows::UI::Composition::Interactions::VisualInteractionSourceRedirectionMode value) const
 {
-    check_hresult(shim()->put_ManipulationRedirectionMode(value));
+    check_hresult(static_cast<const IVisualInteractionSource &>(static_cast<const D &>(*this))->put_ManipulationRedirectionMode(value));
 }
 
 template <typename D> Windows::UI::Composition::Interactions::InteractionChainingMode impl_IVisualInteractionSource<D>::PositionXChainingMode() const
 {
     Windows::UI::Composition::Interactions::InteractionChainingMode value {};
-    check_hresult(shim()->get_PositionXChainingMode(&value));
+    check_hresult(static_cast<const IVisualInteractionSource &>(static_cast<const D &>(*this))->get_PositionXChainingMode(&value));
     return value;
 }
 
 template <typename D> void impl_IVisualInteractionSource<D>::PositionXChainingMode(Windows::UI::Composition::Interactions::InteractionChainingMode value) const
 {
-    check_hresult(shim()->put_PositionXChainingMode(value));
+    check_hresult(static_cast<const IVisualInteractionSource &>(static_cast<const D &>(*this))->put_PositionXChainingMode(value));
 }
 
 template <typename D> Windows::UI::Composition::Interactions::InteractionSourceMode impl_IVisualInteractionSource<D>::PositionXSourceMode() const
 {
     Windows::UI::Composition::Interactions::InteractionSourceMode value {};
-    check_hresult(shim()->get_PositionXSourceMode(&value));
+    check_hresult(static_cast<const IVisualInteractionSource &>(static_cast<const D &>(*this))->get_PositionXSourceMode(&value));
     return value;
 }
 
 template <typename D> void impl_IVisualInteractionSource<D>::PositionXSourceMode(Windows::UI::Composition::Interactions::InteractionSourceMode value) const
 {
-    check_hresult(shim()->put_PositionXSourceMode(value));
+    check_hresult(static_cast<const IVisualInteractionSource &>(static_cast<const D &>(*this))->put_PositionXSourceMode(value));
 }
 
 template <typename D> Windows::UI::Composition::Interactions::InteractionChainingMode impl_IVisualInteractionSource<D>::PositionYChainingMode() const
 {
     Windows::UI::Composition::Interactions::InteractionChainingMode value {};
-    check_hresult(shim()->get_PositionYChainingMode(&value));
+    check_hresult(static_cast<const IVisualInteractionSource &>(static_cast<const D &>(*this))->get_PositionYChainingMode(&value));
     return value;
 }
 
 template <typename D> void impl_IVisualInteractionSource<D>::PositionYChainingMode(Windows::UI::Composition::Interactions::InteractionChainingMode value) const
 {
-    check_hresult(shim()->put_PositionYChainingMode(value));
+    check_hresult(static_cast<const IVisualInteractionSource &>(static_cast<const D &>(*this))->put_PositionYChainingMode(value));
 }
 
 template <typename D> Windows::UI::Composition::Interactions::InteractionSourceMode impl_IVisualInteractionSource<D>::PositionYSourceMode() const
 {
     Windows::UI::Composition::Interactions::InteractionSourceMode value {};
-    check_hresult(shim()->get_PositionYSourceMode(&value));
+    check_hresult(static_cast<const IVisualInteractionSource &>(static_cast<const D &>(*this))->get_PositionYSourceMode(&value));
     return value;
 }
 
 template <typename D> void impl_IVisualInteractionSource<D>::PositionYSourceMode(Windows::UI::Composition::Interactions::InteractionSourceMode value) const
 {
-    check_hresult(shim()->put_PositionYSourceMode(value));
+    check_hresult(static_cast<const IVisualInteractionSource &>(static_cast<const D &>(*this))->put_PositionYSourceMode(value));
 }
 
 template <typename D> Windows::UI::Composition::Interactions::InteractionChainingMode impl_IVisualInteractionSource<D>::ScaleChainingMode() const
 {
     Windows::UI::Composition::Interactions::InteractionChainingMode value {};
-    check_hresult(shim()->get_ScaleChainingMode(&value));
+    check_hresult(static_cast<const IVisualInteractionSource &>(static_cast<const D &>(*this))->get_ScaleChainingMode(&value));
     return value;
 }
 
 template <typename D> void impl_IVisualInteractionSource<D>::ScaleChainingMode(Windows::UI::Composition::Interactions::InteractionChainingMode value) const
 {
-    check_hresult(shim()->put_ScaleChainingMode(value));
+    check_hresult(static_cast<const IVisualInteractionSource &>(static_cast<const D &>(*this))->put_ScaleChainingMode(value));
 }
 
 template <typename D> Windows::UI::Composition::Interactions::InteractionSourceMode impl_IVisualInteractionSource<D>::ScaleSourceMode() const
 {
     Windows::UI::Composition::Interactions::InteractionSourceMode value {};
-    check_hresult(shim()->get_ScaleSourceMode(&value));
+    check_hresult(static_cast<const IVisualInteractionSource &>(static_cast<const D &>(*this))->get_ScaleSourceMode(&value));
     return value;
 }
 
 template <typename D> void impl_IVisualInteractionSource<D>::ScaleSourceMode(Windows::UI::Composition::Interactions::InteractionSourceMode value) const
 {
-    check_hresult(shim()->put_ScaleSourceMode(value));
+    check_hresult(static_cast<const IVisualInteractionSource &>(static_cast<const D &>(*this))->put_ScaleSourceMode(value));
 }
 
 template <typename D> Windows::UI::Composition::Visual impl_IVisualInteractionSource<D>::Source() const
 {
     Windows::UI::Composition::Visual value { nullptr };
-    check_hresult(shim()->get_Source(put(value)));
+    check_hresult(static_cast<const IVisualInteractionSource &>(static_cast<const D &>(*this))->get_Source(put(value)));
     return value;
 }
 
 template <typename D> void impl_IVisualInteractionSource<D>::TryRedirectForManipulation(const Windows::UI::Input::PointerPoint & pointerPoint) const
 {
-    check_hresult(shim()->abi_TryRedirectForManipulation(get(pointerPoint)));
+    check_hresult(static_cast<const IVisualInteractionSource &>(static_cast<const D &>(*this))->abi_TryRedirectForManipulation(get(pointerPoint)));
 }
 
 inline Windows::UI::Composition::Interactions::InteractionTracker InteractionTracker::Create(const Windows::UI::Composition::Compositor & compositor)

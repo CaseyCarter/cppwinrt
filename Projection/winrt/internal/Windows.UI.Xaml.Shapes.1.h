@@ -163,22 +163,22 @@ template <> struct traits<Windows::UI::Xaml::Shapes::Shape> { using default_inte
 
 namespace Windows::UI::Xaml::Shapes {
 
-template <typename T> class impl_IEllipse;
-template <typename T> class impl_ILine;
-template <typename T> class impl_ILineStatics;
-template <typename T> class impl_IPath;
-template <typename T> class impl_IPathFactory;
-template <typename T> class impl_IPathStatics;
-template <typename T> class impl_IPolygon;
-template <typename T> class impl_IPolygonStatics;
-template <typename T> class impl_IPolyline;
-template <typename T> class impl_IPolylineStatics;
-template <typename T> class impl_IRectangle;
-template <typename T> class impl_IRectangleStatics;
-template <typename T> class impl_IShape;
-template <typename T> class impl_IShape2;
-template <typename T> class impl_IShapeFactory;
-template <typename T> class impl_IShapeStatics;
+template <typename T> struct impl_IEllipse;
+template <typename T> struct impl_ILine;
+template <typename T> struct impl_ILineStatics;
+template <typename T> struct impl_IPath;
+template <typename T> struct impl_IPathFactory;
+template <typename T> struct impl_IPathStatics;
+template <typename T> struct impl_IPolygon;
+template <typename T> struct impl_IPolygonStatics;
+template <typename T> struct impl_IPolyline;
+template <typename T> struct impl_IPolylineStatics;
+template <typename T> struct impl_IRectangle;
+template <typename T> struct impl_IRectangleStatics;
+template <typename T> struct impl_IShape;
+template <typename T> struct impl_IShape2;
+template <typename T> struct impl_IShapeFactory;
+template <typename T> struct impl_IShapeStatics;
 
 }
 

@@ -41,9 +41,9 @@ template <> struct traits<Windows::Security::Authentication::Identity::Enterpris
 
 namespace Windows::Security::Authentication::Identity {
 
-template <typename T> class impl_IEnterpriseKeyCredentialRegistrationInfo;
-template <typename T> class impl_IEnterpriseKeyCredentialRegistrationManager;
-template <typename T> class impl_IEnterpriseKeyCredentialRegistrationManagerStatics;
+template <typename T> struct impl_IEnterpriseKeyCredentialRegistrationInfo;
+template <typename T> struct impl_IEnterpriseKeyCredentialRegistrationManager;
+template <typename T> struct impl_IEnterpriseKeyCredentialRegistrationManagerStatics;
 
 }
 

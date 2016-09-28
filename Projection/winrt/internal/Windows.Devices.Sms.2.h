@@ -200,12 +200,8 @@ template <> struct __declspec(uuid("05eb86f1-7140-5517-b88d-cbaebe57e6b1")) __de
 namespace Windows::Devices::Sms {
 
 template <typename D>
-class WINRT_EBO impl_ISmsAppMessage
+struct WINRT_EBO impl_ISmsAppMessage
 {
-    auto shim() const { return impl::shim<D, ISmsAppMessage>(this); }
-
-public:
-
     Windows::Foundation::DateTime Timestamp() const;
     hstring To() const;
     void To(hstring_ref value) const;
@@ -231,12 +227,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISmsBroadcastMessage
+struct WINRT_EBO impl_ISmsBroadcastMessage
 {
-    auto shim() const { return impl::shim<D, ISmsBroadcastMessage>(this); }
-
-public:
-
     Windows::Foundation::DateTime Timestamp() const;
     hstring To() const;
     hstring Body() const;
@@ -250,12 +242,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISmsDevice2
+struct WINRT_EBO impl_ISmsDevice2
 {
-    auto shim() const { return impl::shim<D, ISmsDevice2>(this); }
-
-public:
-
     hstring SmscAddress() const;
     void SmscAddress(hstring_ref value) const;
     hstring DeviceId() const;
@@ -272,12 +260,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISmsDevice2Statics
+struct WINRT_EBO impl_ISmsDevice2Statics
 {
-    auto shim() const { return impl::shim<D, ISmsDevice2Statics>(this); }
-
-public:
-
     hstring GetDeviceSelector() const;
     Windows::Devices::Sms::SmsDevice2 FromId(hstring_ref deviceId) const;
     Windows::Devices::Sms::SmsDevice2 GetDefault() const;
@@ -285,12 +269,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISmsFilterRule
+struct WINRT_EBO impl_ISmsFilterRule
 {
-    auto shim() const { return impl::shim<D, ISmsFilterRule>(this); }
-
-public:
-
     Windows::Devices::Sms::SmsMessageType MessageType() const;
     Windows::Foundation::Collections::IVector<hstring> ImsiPrefixes() const;
     Windows::Foundation::Collections::IVector<hstring> DeviceIds() const;
@@ -308,43 +288,27 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISmsFilterRuleFactory
+struct WINRT_EBO impl_ISmsFilterRuleFactory
 {
-    auto shim() const { return impl::shim<D, ISmsFilterRuleFactory>(this); }
-
-public:
-
     Windows::Devices::Sms::SmsFilterRule CreateFilterRule(Windows::Devices::Sms::SmsMessageType messageType) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISmsFilterRules
+struct WINRT_EBO impl_ISmsFilterRules
 {
-    auto shim() const { return impl::shim<D, ISmsFilterRules>(this); }
-
-public:
-
     Windows::Devices::Sms::SmsFilterActionType ActionType() const;
     Windows::Foundation::Collections::IVector<Windows::Devices::Sms::SmsFilterRule> Rules() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISmsFilterRulesFactory
+struct WINRT_EBO impl_ISmsFilterRulesFactory
 {
-    auto shim() const { return impl::shim<D, ISmsFilterRulesFactory>(this); }
-
-public:
-
     Windows::Devices::Sms::SmsFilterRules CreateFilterRules(Windows::Devices::Sms::SmsFilterActionType actionType) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISmsMessageBase
+struct WINRT_EBO impl_ISmsMessageBase
 {
-    auto shim() const { return impl::shim<D, ISmsMessageBase>(this); }
-
-public:
-
     Windows::Devices::Sms::SmsMessageType MessageType() const;
     hstring DeviceId() const;
     Windows::Devices::Sms::CellularClass CellularClass() const;
@@ -353,12 +317,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISmsMessageReceivedTriggerDetails
+struct WINRT_EBO impl_ISmsMessageReceivedTriggerDetails
 {
-    auto shim() const { return impl::shim<D, ISmsMessageReceivedTriggerDetails>(this); }
-
-public:
-
     Windows::Devices::Sms::SmsMessageType MessageType() const;
     Windows::Devices::Sms::SmsTextMessage2 TextMessage() const;
     Windows::Devices::Sms::SmsWapMessage WapMessage() const;
@@ -371,12 +331,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISmsMessageRegistration
+struct WINRT_EBO impl_ISmsMessageRegistration
 {
-    auto shim() const { return impl::shim<D, ISmsMessageRegistration>(this); }
-
-public:
-
     hstring Id() const;
     void Unregister() const;
     event_token MessageReceived(const Windows::Foundation::TypedEventHandler<Windows::Devices::Sms::SmsMessageRegistration, Windows::Devices::Sms::SmsMessageReceivedTriggerDetails> & eventHandler) const;
@@ -386,23 +342,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISmsMessageRegistrationStatics
+struct WINRT_EBO impl_ISmsMessageRegistrationStatics
 {
-    auto shim() const { return impl::shim<D, ISmsMessageRegistrationStatics>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<Windows::Devices::Sms::SmsMessageRegistration> AllRegistrations() const;
     Windows::Devices::Sms::SmsMessageRegistration Register(hstring_ref id, const Windows::Devices::Sms::SmsFilterRules & filterRules) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ISmsSendMessageResult
+struct WINRT_EBO impl_ISmsSendMessageResult
 {
-    auto shim() const { return impl::shim<D, ISmsSendMessageResult>(this); }
-
-public:
-
     bool IsSuccessful() const;
     Windows::Foundation::Collections::IVectorView<int32_t> MessageReferenceNumbers() const;
     Windows::Devices::Sms::CellularClass CellularClass() const;
@@ -413,12 +361,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISmsStatusMessage
+struct WINRT_EBO impl_ISmsStatusMessage
 {
-    auto shim() const { return impl::shim<D, ISmsStatusMessage>(this); }
-
-public:
-
     hstring To() const;
     hstring From() const;
     hstring Body() const;
@@ -429,12 +373,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISmsTextMessage2
+struct WINRT_EBO impl_ISmsTextMessage2
 {
-    auto shim() const { return impl::shim<D, ISmsTextMessage2>(this); }
-
-public:
-
     Windows::Foundation::DateTime Timestamp() const;
     hstring To() const;
     void To(hstring_ref value) const;
@@ -454,12 +394,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISmsVoicemailMessage
+struct WINRT_EBO impl_ISmsVoicemailMessage
 {
-    auto shim() const { return impl::shim<D, ISmsVoicemailMessage>(this); }
-
-public:
-
     Windows::Foundation::DateTime Timestamp() const;
     hstring To() const;
     hstring Body() const;
@@ -467,12 +403,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ISmsWapMessage
+struct WINRT_EBO impl_ISmsWapMessage
 {
-    auto shim() const { return impl::shim<D, ISmsWapMessage>(this); }
-
-public:
-
     Windows::Foundation::DateTime Timestamp() const;
     hstring To() const;
     hstring From() const;

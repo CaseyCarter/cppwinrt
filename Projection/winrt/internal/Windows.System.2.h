@@ -315,12 +315,8 @@ template <> struct __declspec(uuid("09870533-f7cb-569c-b797-dcb48debd709")) __de
 namespace Windows::System {
 
 template <typename D>
-class WINRT_EBO impl_IAppMemoryReport
+struct WINRT_EBO impl_IAppMemoryReport
 {
-    auto shim() const { return impl::shim<D, IAppMemoryReport>(this); }
-
-public:
-
     uint64_t PrivateCommitUsage() const;
     uint64_t PeakPrivateCommitUsage() const;
     uint64_t TotalCommitUsage() const;
@@ -328,33 +324,21 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IAppMemoryUsageLimitChangingEventArgs
+struct WINRT_EBO impl_IAppMemoryUsageLimitChangingEventArgs
 {
-    auto shim() const { return impl::shim<D, IAppMemoryUsageLimitChangingEventArgs>(this); }
-
-public:
-
     uint64_t OldLimit() const;
     uint64_t NewLimit() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFolderLauncherOptions
+struct WINRT_EBO impl_IFolderLauncherOptions
 {
-    auto shim() const { return impl::shim<D, IFolderLauncherOptions>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVector<Windows::Storage::IStorageItem> ItemsToSelect() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IKnownUserPropertiesStatics
+struct WINRT_EBO impl_IKnownUserPropertiesStatics
 {
-    auto shim() const { return impl::shim<D, IKnownUserPropertiesStatics>(this); }
-
-public:
-
     hstring DisplayName() const;
     hstring FirstName() const;
     hstring LastName() const;
@@ -367,23 +351,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ILaunchUriResult
+struct WINRT_EBO impl_ILaunchUriResult
 {
-    auto shim() const { return impl::shim<D, ILaunchUriResult>(this); }
-
-public:
-
     Windows::System::LaunchUriStatus Status() const;
     Windows::Foundation::Collections::ValueSet Result() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILauncherOptions
+struct WINRT_EBO impl_ILauncherOptions
 {
-    auto shim() const { return impl::shim<D, ILauncherOptions>(this); }
-
-public:
-
     bool TreatAsUntrusted() const;
     void TreatAsUntrusted(bool value) const;
     bool DisplayApplicationPicker() const;
@@ -400,12 +376,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ILauncherOptions2
+struct WINRT_EBO impl_ILauncherOptions2
 {
-    auto shim() const { return impl::shim<D, ILauncherOptions2>(this); }
-
-public:
-
     hstring TargetApplicationPackageFamilyName() const;
     void TargetApplicationPackageFamilyName(hstring_ref value) const;
     Windows::Storage::Search::StorageFileQueryResult NeighboringFilesQuery() const;
@@ -413,23 +385,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ILauncherOptions3
+struct WINRT_EBO impl_ILauncherOptions3
 {
-    auto shim() const { return impl::shim<D, ILauncherOptions3>(this); }
-
-public:
-
     bool IgnoreAppUriHandlers() const;
     void IgnoreAppUriHandlers(bool value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILauncherStatics
+struct WINRT_EBO impl_ILauncherStatics
 {
-    auto shim() const { return impl::shim<D, ILauncherStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<bool> LaunchFileAsync(const Windows::Storage::IStorageFile & file) const;
     Windows::Foundation::IAsyncOperation<bool> LaunchFileAsync(const Windows::Storage::IStorageFile & file, const Windows::System::LauncherOptions & options) const;
     Windows::Foundation::IAsyncOperation<bool> LaunchUriAsync(const Windows::Foundation::Uri & uri) const;
@@ -437,12 +401,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ILauncherStatics2
+struct WINRT_EBO impl_ILauncherStatics2
 {
-    auto shim() const { return impl::shim<D, ILauncherStatics2>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<Windows::System::LaunchUriResult> LaunchUriForResultsAsync(const Windows::Foundation::Uri & uri, const Windows::System::LauncherOptions & options) const;
     Windows::Foundation::IAsyncOperation<Windows::System::LaunchUriResult> LaunchUriForResultsAsync(const Windows::Foundation::Uri & uri, const Windows::System::LauncherOptions & options, const Windows::Foundation::Collections::ValueSet & inputData) const;
     Windows::Foundation::IAsyncOperation<bool> LaunchUriAsync(const Windows::Foundation::Uri & uri, const Windows::System::LauncherOptions & options, const Windows::Foundation::Collections::ValueSet & inputData) const;
@@ -456,23 +416,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ILauncherStatics3
+struct WINRT_EBO impl_ILauncherStatics3
 {
-    auto shim() const { return impl::shim<D, ILauncherStatics3>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<bool> LaunchFolderAsync(const Windows::Storage::IStorageFolder & folder) const;
     Windows::Foundation::IAsyncOperation<bool> LaunchFolderAsync(const Windows::Storage::IStorageFolder & folder, const Windows::System::FolderLauncherOptions & options) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_ILauncherStatics4
+struct WINRT_EBO impl_ILauncherStatics4
 {
-    auto shim() const { return impl::shim<D, ILauncherStatics4>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> QueryAppUriSupportAsync(const Windows::Foundation::Uri & uri) const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> QueryAppUriSupportAsync(const Windows::Foundation::Uri & uri, hstring_ref packageFamilyName) const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> FindAppUriHandlersAsync(const Windows::Foundation::Uri & uri) const;
@@ -484,12 +436,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ILauncherUIOptions
+struct WINRT_EBO impl_ILauncherUIOptions
 {
-    auto shim() const { return impl::shim<D, ILauncherUIOptions>(this); }
-
-public:
-
     Windows::Foundation::IReference<Windows::Foundation::Point> InvocationPoint() const;
     void InvocationPoint(const Windows::Foundation::IReference<Windows::Foundation::Point> & value) const;
     Windows::Foundation::IReference<Windows::Foundation::Rect> SelectionRect() const;
@@ -499,23 +447,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_ILauncherViewOptions
+struct WINRT_EBO impl_ILauncherViewOptions
 {
-    auto shim() const { return impl::shim<D, ILauncherViewOptions>(this); }
-
-public:
-
     Windows::UI::ViewManagement::ViewSizePreference DesiredRemainingView() const;
     void DesiredRemainingView(Windows::UI::ViewManagement::ViewSizePreference value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMemoryManagerStatics
+struct WINRT_EBO impl_IMemoryManagerStatics
 {
-    auto shim() const { return impl::shim<D, IMemoryManagerStatics>(this); }
-
-public:
-
     uint64_t AppMemoryUsage() const;
     uint64_t AppMemoryUsageLimit() const;
     Windows::System::AppMemoryUsageLevel AppMemoryUsageLevel() const;
@@ -534,78 +474,50 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IMemoryManagerStatics2
+struct WINRT_EBO impl_IMemoryManagerStatics2
 {
-    auto shim() const { return impl::shim<D, IMemoryManagerStatics2>(this); }
-
-public:
-
     Windows::System::AppMemoryReport GetAppMemoryReport() const;
     Windows::System::ProcessMemoryReport GetProcessMemoryReport() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IMemoryManagerStatics3
+struct WINRT_EBO impl_IMemoryManagerStatics3
 {
-    auto shim() const { return impl::shim<D, IMemoryManagerStatics3>(this); }
-
-public:
-
     bool TrySetAppMemoryUsageLimit(uint64_t value) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IProcessMemoryReport
+struct WINRT_EBO impl_IProcessMemoryReport
 {
-    auto shim() const { return impl::shim<D, IProcessMemoryReport>(this); }
-
-public:
-
     uint64_t PrivateWorkingSetUsage() const;
     uint64_t TotalWorkingSetUsage() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IProtocolForResultsOperation
+struct WINRT_EBO impl_IProtocolForResultsOperation
 {
-    auto shim() const { return impl::shim<D, IProtocolForResultsOperation>(this); }
-
-public:
-
     void ReportCompleted(const Windows::Foundation::Collections::ValueSet & data) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRemoteLauncherOptions
+struct WINRT_EBO impl_IRemoteLauncherOptions
 {
-    auto shim() const { return impl::shim<D, IRemoteLauncherOptions>(this); }
-
-public:
-
     Windows::Foundation::Uri FallbackUri() const;
     void FallbackUri(const Windows::Foundation::Uri & value) const;
     Windows::Foundation::Collections::IVector<hstring> PreferredAppIds() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IRemoteLauncherStatics
+struct WINRT_EBO impl_IRemoteLauncherStatics
 {
-    auto shim() const { return impl::shim<D, IRemoteLauncherStatics>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<winrt::Windows::System::RemoteLaunchUriStatus> LaunchUriAsync(const Windows::System::RemoteSystems::RemoteSystemConnectionRequest & remoteSystemConnectionRequest, const Windows::Foundation::Uri & uri) const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::System::RemoteLaunchUriStatus> LaunchUriAsync(const Windows::System::RemoteSystems::RemoteSystemConnectionRequest & remoteSystemConnectionRequest, const Windows::Foundation::Uri & uri, const Windows::System::RemoteLauncherOptions & options) const;
     Windows::Foundation::IAsyncOperation<winrt::Windows::System::RemoteLaunchUriStatus> LaunchUriAsync(const Windows::System::RemoteSystems::RemoteSystemConnectionRequest & remoteSystemConnectionRequest, const Windows::Foundation::Uri & uri, const Windows::System::RemoteLauncherOptions & options, const Windows::Foundation::Collections::ValueSet & inputData) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUser
+struct WINRT_EBO impl_IUser
 {
-    auto shim() const { return impl::shim<D, IUser>(this); }
-
-public:
-
     hstring NonRoamableId() const;
     Windows::System::UserAuthenticationStatus AuthenticationStatus() const;
     Windows::System::UserType Type() const;
@@ -615,22 +527,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUserAuthenticationStatusChangeDeferral
+struct WINRT_EBO impl_IUserAuthenticationStatusChangeDeferral
 {
-    auto shim() const { return impl::shim<D, IUserAuthenticationStatusChangeDeferral>(this); }
-
-public:
-
     void Complete() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUserAuthenticationStatusChangingEventArgs
+struct WINRT_EBO impl_IUserAuthenticationStatusChangingEventArgs
 {
-    auto shim() const { return impl::shim<D, IUserAuthenticationStatusChangingEventArgs>(this); }
-
-public:
-
     Windows::System::UserAuthenticationStatusChangeDeferral GetDeferral() const;
     Windows::System::User User() const;
     Windows::System::UserAuthenticationStatus NewStatus() const;
@@ -638,34 +542,22 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUserChangedEventArgs
+struct WINRT_EBO impl_IUserChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IUserChangedEventArgs>(this); }
-
-public:
-
     Windows::System::User User() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUserDeviceAssociationChangedEventArgs
+struct WINRT_EBO impl_IUserDeviceAssociationChangedEventArgs
 {
-    auto shim() const { return impl::shim<D, IUserDeviceAssociationChangedEventArgs>(this); }
-
-public:
-
     hstring DeviceId() const;
     Windows::System::User NewUser() const;
     Windows::System::User OldUser() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUserDeviceAssociationStatics
+struct WINRT_EBO impl_IUserDeviceAssociationStatics
 {
-    auto shim() const { return impl::shim<D, IUserDeviceAssociationStatics>(this); }
-
-public:
-
     Windows::System::User FindUserFromDeviceId(hstring_ref deviceId) const;
     event_token UserDeviceAssociationChanged(const Windows::Foundation::EventHandler<Windows::System::UserDeviceAssociationChangedEventArgs> & handler) const;
     using UserDeviceAssociationChanged_revoker = event_revoker<IUserDeviceAssociationStatics>;
@@ -674,12 +566,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUserPicker
+struct WINRT_EBO impl_IUserPicker
 {
-    auto shim() const { return impl::shim<D, IUserPicker>(this); }
-
-public:
-
     bool AllowGuestAccounts() const;
     void AllowGuestAccounts(bool value) const;
     Windows::System::User SuggestedSelectedUser() const;
@@ -688,22 +576,14 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUserPickerStatics
+struct WINRT_EBO impl_IUserPickerStatics
 {
-    auto shim() const { return impl::shim<D, IUserPickerStatics>(this); }
-
-public:
-
     bool IsSupported() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUserStatics
+struct WINRT_EBO impl_IUserStatics
 {
-    auto shim() const { return impl::shim<D, IUserStatics>(this); }
-
-public:
-
     Windows::System::UserWatcher CreateWatcher() const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::System::User>> FindAllAsync() const;
     Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::System::User>> FindAllAsync(Windows::System::UserType type) const;
@@ -712,12 +592,8 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUserWatcher
+struct WINRT_EBO impl_IUserWatcher
 {
-    auto shim() const { return impl::shim<D, IUserWatcher>(this); }
-
-public:
-
     Windows::System::UserWatcherStatus Status() const;
     void Start() const;
     void Stop() const;

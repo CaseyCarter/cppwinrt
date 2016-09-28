@@ -307,37 +307,37 @@ template <> struct traits<Windows::System::UserWatcher> { using default_interfac
 
 namespace Windows::System {
 
-template <typename T> class impl_IAppMemoryReport;
-template <typename T> class impl_IAppMemoryUsageLimitChangingEventArgs;
-template <typename T> class impl_IFolderLauncherOptions;
-template <typename T> class impl_IKnownUserPropertiesStatics;
-template <typename T> class impl_ILaunchUriResult;
-template <typename T> class impl_ILauncherOptions;
-template <typename T> class impl_ILauncherOptions2;
-template <typename T> class impl_ILauncherOptions3;
-template <typename T> class impl_ILauncherStatics;
-template <typename T> class impl_ILauncherStatics2;
-template <typename T> class impl_ILauncherStatics3;
-template <typename T> class impl_ILauncherStatics4;
-template <typename T> class impl_ILauncherUIOptions;
-template <typename T> class impl_ILauncherViewOptions;
-template <typename T> class impl_IMemoryManagerStatics;
-template <typename T> class impl_IMemoryManagerStatics2;
-template <typename T> class impl_IMemoryManagerStatics3;
-template <typename T> class impl_IProcessMemoryReport;
-template <typename T> class impl_IProtocolForResultsOperation;
-template <typename T> class impl_IRemoteLauncherOptions;
-template <typename T> class impl_IRemoteLauncherStatics;
-template <typename T> class impl_IUser;
-template <typename T> class impl_IUserAuthenticationStatusChangeDeferral;
-template <typename T> class impl_IUserAuthenticationStatusChangingEventArgs;
-template <typename T> class impl_IUserChangedEventArgs;
-template <typename T> class impl_IUserDeviceAssociationChangedEventArgs;
-template <typename T> class impl_IUserDeviceAssociationStatics;
-template <typename T> class impl_IUserPicker;
-template <typename T> class impl_IUserPickerStatics;
-template <typename T> class impl_IUserStatics;
-template <typename T> class impl_IUserWatcher;
+template <typename T> struct impl_IAppMemoryReport;
+template <typename T> struct impl_IAppMemoryUsageLimitChangingEventArgs;
+template <typename T> struct impl_IFolderLauncherOptions;
+template <typename T> struct impl_IKnownUserPropertiesStatics;
+template <typename T> struct impl_ILaunchUriResult;
+template <typename T> struct impl_ILauncherOptions;
+template <typename T> struct impl_ILauncherOptions2;
+template <typename T> struct impl_ILauncherOptions3;
+template <typename T> struct impl_ILauncherStatics;
+template <typename T> struct impl_ILauncherStatics2;
+template <typename T> struct impl_ILauncherStatics3;
+template <typename T> struct impl_ILauncherStatics4;
+template <typename T> struct impl_ILauncherUIOptions;
+template <typename T> struct impl_ILauncherViewOptions;
+template <typename T> struct impl_IMemoryManagerStatics;
+template <typename T> struct impl_IMemoryManagerStatics2;
+template <typename T> struct impl_IMemoryManagerStatics3;
+template <typename T> struct impl_IProcessMemoryReport;
+template <typename T> struct impl_IProtocolForResultsOperation;
+template <typename T> struct impl_IRemoteLauncherOptions;
+template <typename T> struct impl_IRemoteLauncherStatics;
+template <typename T> struct impl_IUser;
+template <typename T> struct impl_IUserAuthenticationStatusChangeDeferral;
+template <typename T> struct impl_IUserAuthenticationStatusChangingEventArgs;
+template <typename T> struct impl_IUserChangedEventArgs;
+template <typename T> struct impl_IUserDeviceAssociationChangedEventArgs;
+template <typename T> struct impl_IUserDeviceAssociationStatics;
+template <typename T> struct impl_IUserPicker;
+template <typename T> struct impl_IUserPickerStatics;
+template <typename T> struct impl_IUserStatics;
+template <typename T> struct impl_IUserWatcher;
 
 }
 

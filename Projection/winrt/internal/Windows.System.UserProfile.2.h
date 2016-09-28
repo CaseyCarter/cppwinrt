@@ -75,62 +75,38 @@ template <> struct __declspec(uuid("5db5fa32-707c-5849-a06b-91c8eb9d10e8")) __de
 namespace Windows::System::UserProfile {
 
 template <typename D>
-class WINRT_EBO impl_IAdvertisingManagerForUser
+struct WINRT_EBO impl_IAdvertisingManagerForUser
 {
-    auto shim() const { return impl::shim<D, IAdvertisingManagerForUser>(this); }
-
-public:
-
     hstring AdvertisingId() const;
     Windows::System::User User() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAdvertisingManagerStatics
+struct WINRT_EBO impl_IAdvertisingManagerStatics
 {
-    auto shim() const { return impl::shim<D, IAdvertisingManagerStatics>(this); }
-
-public:
-
     hstring AdvertisingId() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IAdvertisingManagerStatics2
+struct WINRT_EBO impl_IAdvertisingManagerStatics2
 {
-    auto shim() const { return impl::shim<D, IAdvertisingManagerStatics2>(this); }
-
-public:
-
     Windows::System::UserProfile::AdvertisingManagerForUser GetForUser(const Windows::System::User & user) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IFirstSignInSettings
+struct WINRT_EBO impl_IFirstSignInSettings
 {
-    auto shim() const { return impl::shim<D, IFirstSignInSettings>(this); }
-
-public:
-
 };
 
 template <typename D>
-class WINRT_EBO impl_IFirstSignInSettingsStatics
+struct WINRT_EBO impl_IFirstSignInSettingsStatics
 {
-    auto shim() const { return impl::shim<D, IFirstSignInSettingsStatics>(this); }
-
-public:
-
     Windows::System::UserProfile::FirstSignInSettings GetDefault() const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IGlobalizationPreferencesStatics
+struct WINRT_EBO impl_IGlobalizationPreferencesStatics
 {
-    auto shim() const { return impl::shim<D, IGlobalizationPreferencesStatics>(this); }
-
-public:
-
     Windows::Foundation::Collections::IVectorView<hstring> Calendars() const;
     Windows::Foundation::Collections::IVectorView<hstring> Clocks() const;
     Windows::Foundation::Collections::IVectorView<hstring> Currencies() const;
@@ -140,23 +116,15 @@ public:
 };
 
 template <typename D>
-class WINRT_EBO impl_IUserProfilePersonalizationSettings
+struct WINRT_EBO impl_IUserProfilePersonalizationSettings
 {
-    auto shim() const { return impl::shim<D, IUserProfilePersonalizationSettings>(this); }
-
-public:
-
     Windows::Foundation::IAsyncOperation<bool> TrySetLockScreenImageAsync(const Windows::Storage::StorageFile & imageFile) const;
     Windows::Foundation::IAsyncOperation<bool> TrySetWallpaperImageAsync(const Windows::Storage::StorageFile & imageFile) const;
 };
 
 template <typename D>
-class WINRT_EBO impl_IUserProfilePersonalizationSettingsStatics
+struct WINRT_EBO impl_IUserProfilePersonalizationSettingsStatics
 {
-    auto shim() const { return impl::shim<D, IUserProfilePersonalizationSettingsStatics>(this); }
-
-public:
-
     Windows::System::UserProfile::UserProfilePersonalizationSettings Current() const;
     bool IsSupported() const;
 };
