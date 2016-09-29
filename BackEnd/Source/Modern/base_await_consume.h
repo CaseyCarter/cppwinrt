@@ -1,101 +1,71 @@
 
-#ifdef WINRT_CORO
+#ifdef WINRT_ASYNC
 
-namespace Windows::Foundation {
-
-template <typename T, typename F>
-void impl_suspend(const T & object, F resume)
+namespace impl
 {
-    com_ptr<IContextCallback> context;
-    check_hresult(CoGetObjectContext(__uuidof(context), reinterpret_cast<void **>(put(context))));
-
-    object.Completed([resume, context = std::move(context)](const auto &, AsyncStatus)
+    template <typename Async>
+    struct await_adapter
     {
-        ComCallData data = {};
-        data.pUserDefined = resume.address();
+        const Async & async;
 
-        check_hresult(context->ContextCallback([](ComCallData * data)
+        bool await_ready() const
         {
-            F::from_address(data->pUserDefined)();
-            return S_OK;
-        },
-        &data,
-        IID_ICallbackWithNoReentrancyToApplicationSTA,
-        5,
-        nullptr));
-    });
+            return async.Status() == Windows::Foundation::AsyncStatus::Completed;
+        }
+
+        void await_suspend(std::experimental::coroutine_handle<> handle) const
+        {
+            com_ptr<IContextCallback> context;
+            check_hresult(CoGetObjectContext(__uuidof(context), reinterpret_cast<void **>(put(context))));
+
+            async.Completed([handle, context = std::move(context)](const auto &, Windows::Foundation::AsyncStatus)
+            {
+                ComCallData data = {};
+                data.pUserDefined = handle.address();
+
+                check_hresult(context->ContextCallback([](ComCallData * data)
+                {
+                    std::experimental::coroutine_handle<>::from_address(data->pUserDefined)();
+                    return S_OK;
+                },
+                &data,
+                IID_ICallbackWithNoReentrancyToApplicationSTA,
+                5,
+                nullptr));
+            });
+        }
+
+        auto await_resume() const
+        {
+            return async.GetResults();
+        }
+    };
 }
 
-template <typename TProgress>
-bool await_ready(const IAsyncActionWithProgress<TProgress> & object)
+namespace Windows::Foundation
 {
-    return object.Status() == AsyncStatus::Completed;
-}
+    inline impl::await_adapter<IAsyncAction> operator co_await(const IAsyncAction & async)
+    {
+        return{ async };
+    }
 
-template <typename TProgress, typename F>
-void await_suspend(const IAsyncActionWithProgress<TProgress> & object, F resume)
-{
-    impl_suspend(object, resume);
-}
+    template <typename TProgress>
+    impl::await_adapter<IAsyncActionWithProgress<TProgress>> operator co_await(const IAsyncActionWithProgress<TProgress> & async)
+    {
+        return{ async };
+    }
 
-template <typename TProgress>
-void await_resume(const IAsyncActionWithProgress<TProgress> & object)
-{
-    object.GetResults();
-}
+    template <typename TResult>
+    impl::await_adapter<IAsyncOperation<TResult>> operator co_await(const IAsyncOperation<TResult> & async)
+    {
+        return{ async };
+    }
 
-template <typename TResult, typename TProgress>
-bool await_ready(const IAsyncOperationWithProgress<TResult, TProgress> & object)
-{
-    return object.Status() == AsyncStatus::Completed;
-}
-
-template <typename TResult, typename TProgress, typename F>
-void await_suspend(const IAsyncOperationWithProgress<TResult, TProgress> & object, F resume)
-{
-    impl_suspend(object, resume);
-}
-
-template <typename TResult, typename TProgress>
-TResult await_resume(const IAsyncOperationWithProgress<TResult, TProgress> & object)
-{
-    return object.GetResults();
-}
-
-template <typename TResult>
-bool await_ready(const IAsyncOperation<TResult> & object)
-{
-    return object.Status() == AsyncStatus::Completed;
-}
-
-template <typename TResult, typename F>
-void await_suspend(const IAsyncOperation<TResult> & object, F resume)
-{
-    impl_suspend(object, resume);
-}
-
-template <typename TResult>
-TResult await_resume(const IAsyncOperation<TResult> & object)
-{
-    return object.GetResults();
-}
-
-inline bool await_ready(const IAsyncAction & object)
-{
-    return object.Status() == AsyncStatus::Completed;
-}
-
-template <typename F>
-void await_suspend(const IAsyncAction & object, F resume)
-{
-    impl_suspend(object, resume);
-}
-
-inline void await_resume(const IAsyncAction & object)
-{
-    object.GetResults();
-}
-
+    template <typename TResult, typename TProgress>
+    impl::await_adapter<IAsyncOperationWithProgress<TResult, TProgress>> operator co_await(const IAsyncOperationWithProgress<TResult, TProgress> & async)
+    {
+        return{ async };
+    }
 }
 
 #endif

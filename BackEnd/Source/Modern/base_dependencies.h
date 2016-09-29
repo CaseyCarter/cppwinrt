@@ -20,7 +20,7 @@
 #include <unordered_map>
 
 #ifdef _RESUMABLE_FUNCTIONS_SUPPORTED
-#define WINRT_CORO
+#define WINRT_ASYNC
 #include <ctxtcall.h>
 #include <experimental/resumable>
 #endif
