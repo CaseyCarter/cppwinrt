@@ -24,7 +24,7 @@
 #include <unordered_map>
 
 #ifdef _RESUMABLE_FUNCTIONS_SUPPORTED
-#define WINRT_CORO
+#define WINRT_ASYNC
 #include <ctxtcall.h>
 #include <experimental/resumable>
 #endif
@@ -425,16 +425,13 @@ using arg_out = std::conditional_t<impl::is_base_of_v< ::IUnknown, default_inter
 
 namespace impl {
 
-template <typename Crtp, typename Qi, typename Base>
-auto shim(const Base * base)
-{
-    return get(static_cast<const Qi &>(static_cast<const Crtp &>(*base)));
-}
+template <typename D, typename I = D>
+using consume = typename traits<I>::template consume<D>;
 
 template <typename D, typename I>
-struct require_one : traits<I>::template consume<D>
+struct require_one : consume<D, I>
 {
-    operator I() const noexcept
+    operator I() const
     {
         return static_cast<const D *>(this)->template as<I>();
     }
@@ -447,7 +444,7 @@ struct WINRT_EBO require : impl::require_one<D, I> ...
 template <typename D, typename I>
 struct bases_one
 {
-    operator I() const noexcept
+    operator I() const
     {
         return static_cast<const D *>(this)->template as<I>();
     }
@@ -456,9 +453,6 @@ struct bases_one
 template <typename D, typename ... I>
 struct WINRT_EBO bases : impl::bases_one<D, I> ...
 {};
-
-template <typename T>
-using consume = typename traits<T>::template consume<T>;
 
 template <typename T>
 class no_ref : public T
@@ -4048,17 +4042,6 @@ struct WINRT_EBO IKeyValuePair :
 {
     IKeyValuePair(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IKeyValuePair>(m_ptr); }
-
-private:
-    IKeyValuePair(const std::pair<const K, V> & pair) : IKeyValuePair(make<impl::key_value_pair<K, V>>(pair.first, pair.second))
-    {}
-
-    template <typename T, typename containertype>
-    friend struct impl::iterator;
-    template <typename T, typename containertype>
-    friend struct impl::iterator_standalone;
-    template<class _InIt, class _Diff, class _OutIt> 
-    friend _OutIt std::_Copy_n_unchecked2(_InIt _First, _Diff _Count, _OutIt _Dest, forward_iterator_tag);
 };
 
 template <typename T>
@@ -5272,6 +5255,39 @@ namespace impl
     };
 
     template <typename T>
+    struct collection_traits
+    {
+        static T copy(T const & value)
+        {
+            return value;
+        }
+
+        template<typename InputIt, typename Size, typename OutputIt>
+        static void copy_n(InputIt first, Size count, OutputIt result)
+        {
+            std::copy_n(first, count, result);
+        }
+    };
+
+    template <typename K, typename V>
+    struct collection_traits<Windows::Foundation::Collections::IKeyValuePair<K, V>>
+    {
+        static auto copy(std::pair<const K, V> const & value)
+        {
+            return make<impl::key_value_pair<K, V>>(value.first, value.second);
+        }
+
+        template<typename InputIt, typename Size, typename OutputIt>
+        static void copy_n(InputIt first, Size count, OutputIt result)
+        {
+            std::transform(first, std::next(first, count), result, [](std::pair<const K, V> value)
+            {
+                return make<impl::key_value_pair<K, V>>(value.first, value.second);
+            });
+        }
+    };
+
+    template <typename T>
     struct vector : implements<vector<T>,
                                Windows::Foundation::Collections::IVector<T>,
                                Windows::Foundation::Collections::IIterable<T>>
@@ -5547,7 +5563,7 @@ namespace impl
                 throw hresult_out_of_bounds();
             }
 
-            return *m_current;
+            return collection_traits<T>::copy(*m_current);
         }
 
         bool HasCurrent() const
@@ -5579,7 +5595,7 @@ namespace impl
                 actual = values.size();
             }
 
-            std::copy_n(m_current, actual, values.begin());
+            collection_traits<T>::copy_n(m_current, actual, values.begin());
             std::advance(m_current, actual);
             return actual;
         }
@@ -5609,7 +5625,7 @@ namespace impl
                 throw hresult_out_of_bounds();
             }
 
-            return *m_current;
+            return collection_traits<T>::copy(*m_current);
         }
 
         bool HasCurrent() const
@@ -5636,7 +5652,7 @@ namespace impl
                 actual = values.size();
             }
 
-            std::copy_n(m_current, actual, values.begin());
+            collection_traits<T>::copy_n(m_current, actual, values.begin());
             std::advance(m_current, actual);
             return actual;
         }
@@ -5914,6 +5930,33 @@ enum class AsyncStatus
 
 }
 
+namespace impl {
+
+template <typename Async>
+void blocking_suspend(const Async & async)
+{
+    if (async.Status() == Windows::Foundation::AsyncStatus::Completed)
+    {
+        return;
+    }
+
+    lock x;
+    condition_variable cv;
+    bool completed = false;
+
+    async.Completed([&](const Async &, Windows::Foundation::AsyncStatus)
+    {
+        const winrt::lock_guard guard(x);
+        completed = true;
+        cv.wake_one();
+    });
+
+    const winrt::lock_guard guard(x);
+    cv.wait_while(x, [&] { return !completed; });
+}
+
+}
+
 namespace ABI::Windows::Foundation {
 
 struct AsyncActionCompletedHandler;
@@ -5923,8 +5966,8 @@ template <typename TResult, typename TProgress> struct AsyncOperationProgressHan
 template <typename TResult, typename TProgress> struct AsyncOperationWithProgressCompletedHandler;
 template <typename TResult> struct AsyncOperationCompletedHandler;
 
-struct IAsyncAction;
 struct IAsyncInfo;
+struct IAsyncAction;
 template <typename TProgress> struct IAsyncActionWithProgress;
 template <typename TResult> struct IAsyncOperation;
 template <typename TResult, typename TProgress> struct IAsyncOperationWithProgress;
@@ -5964,13 +6007,6 @@ struct __declspec(novtable) impl_AsyncOperationCompletedHandler : IUnknown
     virtual HRESULT __stdcall abi_Invoke(IAsyncOperation<TResult> * asyncInfo, winrt::Windows::Foundation::AsyncStatus status) = 0;
 };
 
-struct __declspec(uuid("5a648006-843a-4da9-865b-9d26e5dfad7b")) __declspec(novtable) IAsyncAction : IInspectable
-{
-    virtual HRESULT __stdcall put_Completed(AsyncActionCompletedHandler * handler) = 0;
-    virtual HRESULT __stdcall get_Completed(AsyncActionCompletedHandler ** handler) = 0;
-    virtual HRESULT __stdcall abi_GetResults() = 0;
-};
-
 struct __declspec(uuid("00000036-0000-0000-c000-000000000046")) __declspec(novtable) IAsyncInfo : IInspectable
 {
     virtual HRESULT __stdcall get_Id(uint32_t * id) = 0;
@@ -5978,6 +6014,13 @@ struct __declspec(uuid("00000036-0000-0000-c000-000000000046")) __declspec(novta
     virtual HRESULT __stdcall get_ErrorCode(HRESULT * errorCode) = 0;
     virtual HRESULT __stdcall abi_Cancel() = 0;
     virtual HRESULT __stdcall abi_Close() = 0;
+};
+
+struct __declspec(uuid("5a648006-843a-4da9-865b-9d26e5dfad7b")) __declspec(novtable) IAsyncAction : IInspectable
+{
+    virtual HRESULT __stdcall put_Completed(AsyncActionCompletedHandler * handler) = 0;
+    virtual HRESULT __stdcall get_Completed(AsyncActionCompletedHandler ** handler) = 0;
+    virtual HRESULT __stdcall abi_GetResults() = 0;
 };
 
 template <typename TProgress>
@@ -6029,20 +6072,11 @@ template <typename TResult, typename TProgress> struct AsyncOperationProgressHan
 template <typename TResult, typename TProgress> struct AsyncOperationWithProgressCompletedHandler;
 template <typename TResult> struct AsyncOperationCompletedHandler;
 
-struct IAsyncAction;
 struct IAsyncInfo;
+struct IAsyncAction;
 template <typename TProgress> struct IAsyncActionWithProgress;
 template <typename TResult> struct IAsyncOperation;
 template <typename TResult, typename TProgress> struct IAsyncOperationWithProgress;
-
-template <typename D>
-struct WINRT_EBO impl_IAsyncAction
-{
-    void Completed(const AsyncActionCompletedHandler & handler) const;
-    AsyncActionCompletedHandler Completed() const;
-    void GetResults() const;
-
-};
 
 template <typename D>
 struct WINRT_EBO impl_IAsyncInfo
@@ -6054,6 +6088,15 @@ struct WINRT_EBO impl_IAsyncInfo
     void Close() const;
 };
 
+template <typename D>
+struct WINRT_EBO impl_IAsyncAction
+{
+    void Completed(const AsyncActionCompletedHandler & handler) const;
+    AsyncActionCompletedHandler Completed() const;
+    void GetResults() const;
+    void get() const;
+};
+
 template <typename D, typename TProgress>
 struct impl_IAsyncActionWithProgress
 {
@@ -6062,6 +6105,7 @@ struct impl_IAsyncActionWithProgress
     void Completed(const AsyncActionWithProgressCompletedHandler<TProgress> & handler) const;
     AsyncActionWithProgressCompletedHandler<TProgress> Completed() const;
     void GetResults() const;
+    void get() const;
 };
 
 template <typename D, typename TResult>
@@ -6070,6 +6114,7 @@ struct impl_IAsyncOperation
     void Completed(const AsyncOperationCompletedHandler<TResult> & handler) const;
     AsyncOperationCompletedHandler<TResult> Completed() const;
     TResult GetResults() const;
+    TResult get() const;
 };
 
 template <typename D, typename TResult, typename TProgress>
@@ -6080,6 +6125,7 @@ struct impl_IAsyncOperationWithProgress
     void Completed(const AsyncOperationWithProgressCompletedHandler<TResult, TProgress> & handler) const;
     AsyncOperationWithProgressCompletedHandler<TResult, TProgress> Completed() const;
     TResult GetResults() const;
+    TResult get() const;
 };
 
 }
@@ -6116,16 +6162,16 @@ template <typename TResult> struct traits<Windows::Foundation::AsyncOperationCom
     using abi = ABI::Windows::Foundation::AsyncOperationCompletedHandler<abi<TResult>>;
 };
 
-template <> struct traits<Windows::Foundation::IAsyncAction>
-{
-    using abi = ABI::Windows::Foundation::IAsyncAction;
-    template <typename D> using consume = Windows::Foundation::impl_IAsyncAction<D>;
-};
-
 template <> struct traits<Windows::Foundation::IAsyncInfo>
 {
     using abi = ABI::Windows::Foundation::IAsyncInfo;
     template <typename D> using consume = Windows::Foundation::impl_IAsyncInfo<D>;
+};
+
+template <> struct traits<Windows::Foundation::IAsyncAction>
+{
+    using abi = ABI::Windows::Foundation::IAsyncAction;
+    template <typename D> using consume = Windows::Foundation::impl_IAsyncAction<D>;
 };
 
 template <typename TProgress> struct traits<Windows::Foundation::IAsyncActionWithProgress<TProgress>>
@@ -6215,6 +6261,14 @@ struct WINRT_EBO AsyncOperationCompletedHandler : IUnknown
     void operator()(const IAsyncOperation<TResult> & sender, const AsyncStatus args) const;
 };
 
+struct IAsyncInfo :
+    IUnknown,
+    impl::consume<IAsyncInfo>
+{
+    IAsyncInfo(std::nullptr_t = nullptr) noexcept {}
+    auto operator->() const noexcept { return ptr<IAsyncInfo>(m_ptr); }
+};
+
 struct IAsyncAction :
     IInspectable,
     impl::consume<IAsyncAction>,
@@ -6222,14 +6276,6 @@ struct IAsyncAction :
 {
     IAsyncAction(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IAsyncAction>(m_ptr); }
-};
-
-struct IAsyncInfo :
-    IUnknown,
-    impl::consume<IAsyncInfo>
-{
-    IAsyncInfo(std::nullptr_t = nullptr) noexcept {}
-    auto operator->() const noexcept { return ptr<IAsyncInfo>(m_ptr); }
 };
 
 template <typename TProgress>
@@ -6318,6 +6364,13 @@ void impl_IAsyncAction<D>::GetResults() const
     check_hresult(static_cast<const IAsyncAction &>(static_cast<const D &>(*this))->abi_GetResults());
 }
 
+template <typename D>
+void impl_IAsyncAction<D>::get() const
+{
+    impl::blocking_suspend(static_cast<const IAsyncAction &>(static_cast<const D &>(*this)));
+    GetResults();
+}
+
 template <typename D, typename TProgress>
 void impl_IAsyncActionWithProgress<D, TProgress>::Progress(const AsyncActionProgressHandler<TProgress> & handler) const
 {
@@ -6352,6 +6405,13 @@ void impl_IAsyncActionWithProgress<D, TProgress>::GetResults() const
     check_hresult(static_cast<const IAsyncActionWithProgress<TProgress> &>(static_cast<const D &>(*this))->abi_GetResults());
 }
 
+template <typename D, typename TProgress>
+void impl_IAsyncActionWithProgress<D, TProgress>::get() const
+{
+    impl::blocking_suspend(static_cast<const IAsyncActionWithProgress<TProgress> &>(static_cast<const D &>(*this)));
+    GetResults();
+}
+
 template <typename D, typename TResult>
 void impl_IAsyncOperation<D, TResult>::Completed(const AsyncOperationCompletedHandler<TResult> & handler) const
 {
@@ -6372,6 +6432,13 @@ TResult impl_IAsyncOperation<D, TResult>::GetResults() const
     TResult result = impl::empty_value<TResult>();
     check_hresult(static_cast<const IAsyncOperation<TResult> &>(static_cast<const D &>(*this))->abi_GetResults(put(result)));
     return result;
+}
+
+template <typename D, typename TResult>
+TResult impl_IAsyncOperation<D, TResult>::get() const
+{
+    impl::blocking_suspend(static_cast<const IAsyncOperation<TResult> &>(static_cast<const D &>(*this)));
+    return GetResults();
 }
 
 template <typename D, typename TResult, typename TProgress>
@@ -6408,6 +6475,13 @@ TResult impl_IAsyncOperationWithProgress<D, TResult, TProgress>::GetResults() co
     TResult result = impl::empty_value<TResult>();
     check_hresult(static_cast<const IAsyncOperationWithProgress<TResult, TProgress> &>(static_cast<const D &>(*this))->abi_GetResults(put(result)));
     return result;
+}
+
+template <typename D, typename TResult, typename TProgress>
+TResult impl_IAsyncOperationWithProgress<D, TResult, TProgress>::get() const
+{
+    impl::blocking_suspend(static_cast<const IAsyncOperationWithProgress<TResult, TProgress> &>(static_cast<const D &>(*this)));
+    return GetResults();
 }
 
 }
@@ -6972,103 +7046,73 @@ agile_ref<T> make_agile(const T & object)
 
 #endif
 
-#ifdef WINRT_CORO
+#ifdef WINRT_ASYNC
 
-namespace Windows::Foundation {
-
-template <typename T, typename F>
-void impl_suspend(const T & object, F resume)
+namespace impl
 {
-    com_ptr<IContextCallback> context;
-    check_hresult(CoGetObjectContext(__uuidof(context), reinterpret_cast<void **>(put(context))));
-
-    object.Completed([resume, context = std::move(context)](const auto &, AsyncStatus)
+    template <typename Async>
+    struct await_adapter
     {
-        ComCallData data = {};
-        data.pUserDefined = resume.address();
+        const Async & async;
 
-        check_hresult(context->ContextCallback([](ComCallData * data)
+        bool await_ready() const
         {
-            F::from_address(data->pUserDefined)();
-            return S_OK;
-        },
-        &data,
-        IID_ICallbackWithNoReentrancyToApplicationSTA,
-        5,
-        nullptr));
-    });
+            return async.Status() == Windows::Foundation::AsyncStatus::Completed;
+        }
+
+        void await_suspend(std::experimental::coroutine_handle<> handle) const
+        {
+            com_ptr<IContextCallback> context;
+            check_hresult(CoGetObjectContext(__uuidof(context), reinterpret_cast<void **>(put(context))));
+
+            async.Completed([handle, context = std::move(context)](const auto &, Windows::Foundation::AsyncStatus)
+            {
+                ComCallData data = {};
+                data.pUserDefined = handle.address();
+
+                check_hresult(context->ContextCallback([](ComCallData * data)
+                {
+                    std::experimental::coroutine_handle<>::from_address(data->pUserDefined)();
+                    return S_OK;
+                },
+                &data,
+                IID_ICallbackWithNoReentrancyToApplicationSTA,
+                5,
+                nullptr));
+            });
+        }
+
+        auto await_resume() const
+        {
+            return async.GetResults();
+        }
+    };
 }
 
-template <typename TProgress>
-bool await_ready(const IAsyncActionWithProgress<TProgress> & object)
+namespace Windows::Foundation
 {
-    return object.Status() == AsyncStatus::Completed;
-}
+    inline impl::await_adapter<IAsyncAction> operator co_await(const IAsyncAction & async)
+    {
+        return{ async };
+    }
 
-template <typename TProgress, typename F>
-void await_suspend(const IAsyncActionWithProgress<TProgress> & object, F resume)
-{
-    impl_suspend(object, resume);
-}
+    template <typename TProgress>
+    impl::await_adapter<IAsyncActionWithProgress<TProgress>> operator co_await(const IAsyncActionWithProgress<TProgress> & async)
+    {
+        return{ async };
+    }
 
-template <typename TProgress>
-void await_resume(const IAsyncActionWithProgress<TProgress> & object)
-{
-    object.GetResults();
-}
+    template <typename TResult>
+    impl::await_adapter<IAsyncOperation<TResult>> operator co_await(const IAsyncOperation<TResult> & async)
+    {
+        return{ async };
+    }
 
-template <typename TResult, typename TProgress>
-bool await_ready(const IAsyncOperationWithProgress<TResult, TProgress> & object)
-{
-    return object.Status() == AsyncStatus::Completed;
-}
-
-template <typename TResult, typename TProgress, typename F>
-void await_suspend(const IAsyncOperationWithProgress<TResult, TProgress> & object, F resume)
-{
-    impl_suspend(object, resume);
-}
-
-template <typename TResult, typename TProgress>
-TResult await_resume(const IAsyncOperationWithProgress<TResult, TProgress> & object)
-{
-    return object.GetResults();
-}
-
-template <typename TResult>
-bool await_ready(const IAsyncOperation<TResult> & object)
-{
-    return object.Status() == AsyncStatus::Completed;
-}
-
-template <typename TResult, typename F>
-void await_suspend(const IAsyncOperation<TResult> & object, F resume)
-{
-    impl_suspend(object, resume);
-}
-
-template <typename TResult>
-TResult await_resume(const IAsyncOperation<TResult> & object)
-{
-    return object.GetResults();
-}
-
-inline bool await_ready(const IAsyncAction & object)
-{
-    return object.Status() == AsyncStatus::Completed;
-}
-
-template <typename F>
-void await_suspend(const IAsyncAction & object, F resume)
-{
-    impl_suspend(object, resume);
-}
-
-inline void await_resume(const IAsyncAction & object)
-{
-    object.GetResults();
-}
-
+    template <typename TResult, typename TProgress>
+    impl::await_adapter<IAsyncOperationWithProgress<TResult, TProgress>> operator co_await(const IAsyncOperationWithProgress<TResult, TProgress> & async)
+    {
+        return{ async };
+    }
 }
 
 #endif
