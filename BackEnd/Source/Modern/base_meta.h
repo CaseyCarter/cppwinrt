@@ -30,16 +30,13 @@ using arg_out = std::conditional_t<impl::is_base_of_v< ::IUnknown, default_inter
 
 namespace impl {
 
-template <typename Crtp, typename Qi, typename Base>
-auto shim(const Base * base)
-{
-    return get(static_cast<const Qi &>(static_cast<const Crtp &>(*base)));
-}
+template <typename D, typename I = D>
+using consume = typename traits<I>::template consume<D>;
 
 template <typename D, typename I>
-struct require_one : traits<I>::template consume<D>
+struct require_one : consume<D, I>
 {
-    operator I() const noexcept
+    operator I() const
     {
         return static_cast<const D *>(this)->template as<I>();
     }
@@ -52,7 +49,7 @@ struct WINRT_EBO require : impl::require_one<D, I> ...
 template <typename D, typename I>
 struct bases_one
 {
-    operator I() const noexcept
+    operator I() const
     {
         return static_cast<const D *>(this)->template as<I>();
     }
@@ -61,9 +58,6 @@ struct bases_one
 template <typename D, typename ... I>
 struct WINRT_EBO bases : impl::bases_one<D, I> ...
 {};
-
-template <typename T>
-using consume = typename traits<T>::template consume<T>;
 
 template <typename T>
 class no_ref : public T
