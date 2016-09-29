@@ -22,7 +22,7 @@ static void WriteLogo(Target & target)
 {
     static unsigned const year = Year();
 
-    Write(target, Strings::Logo, VERSION_COMMA, year);
+    Write(target, Strings::Logo, VERSION_STRING, year);
 }
 
 template <typename Target>

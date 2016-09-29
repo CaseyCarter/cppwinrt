@@ -35,7 +35,7 @@ int __cdecl main(int argc, char ** argv)
 
         if (Options::None == (Settings::Options & Options::NoLogo))
         {
-            Write(printf, Strings::ConsoleHeader, VERSION_COMMA, Year());
+            Write(printf, Strings::ConsoleHeader, VERSION_STRING, Year());
         }
 
         // Do setup work for command line args
@@ -54,7 +54,7 @@ int __cdecl main(int argc, char ** argv)
     }
     catch (UsageException)
     {
-        Write(printf, Strings::ConsoleHeader, VERSION_COMMA, Year());
+        Write(printf, Strings::ConsoleHeader, VERSION_STRING, Year());
         Write(printf, Strings::Usage);
     }
     catch (Exception const & e)
