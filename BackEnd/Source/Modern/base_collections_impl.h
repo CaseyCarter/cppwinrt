@@ -43,6 +43,39 @@ namespace impl
     };
 
     template <typename T>
+    struct collection_traits
+    {
+        static T copy(T const & value)
+        {
+            return value;
+        }
+
+        template<typename InputIt, typename Size, typename OutputIt>
+        static void copy_n(InputIt first, Size count, OutputIt result)
+        {
+            std::copy_n(first, count, result);
+        }
+    };
+
+    template <typename K, typename V>
+    struct collection_traits<Windows::Foundation::Collections::IKeyValuePair<K, V>>
+    {
+        static auto copy(std::pair<const K, V> const & value)
+        {
+            return make<impl::key_value_pair<K, V>>(value.first, value.second);
+        }
+
+        template<typename InputIt, typename Size, typename OutputIt>
+        static void copy_n(InputIt first, Size count, OutputIt result)
+        {
+            std::transform(first, std::next(first, count), result, [](std::pair<const K, V> value)
+            {
+                return make<impl::key_value_pair<K, V>>(value.first, value.second);
+            });
+        }
+    };
+
+    template <typename T>
     struct vector : implements<vector<T>,
                                Windows::Foundation::Collections::IVector<T>,
                                Windows::Foundation::Collections::IIterable<T>>
@@ -318,7 +351,7 @@ namespace impl
                 throw hresult_out_of_bounds();
             }
 
-            return *m_current;
+            return collection_traits<T>::copy(*m_current);
         }
 
         bool HasCurrent() const
@@ -350,7 +383,7 @@ namespace impl
                 actual = values.size();
             }
 
-            std::copy_n(m_current, actual, values.begin());
+            collection_traits<T>::copy_n(m_current, actual, values.begin());
             std::advance(m_current, actual);
             return actual;
         }
@@ -380,7 +413,7 @@ namespace impl
                 throw hresult_out_of_bounds();
             }
 
-            return *m_current;
+            return collection_traits<T>::copy(*m_current);
         }
 
         bool HasCurrent() const
@@ -407,7 +440,7 @@ namespace impl
                 actual = values.size();
             }
 
-            std::copy_n(m_current, actual, values.begin());
+            collection_traits<T>::copy_n(m_current, actual, values.begin());
             std::advance(m_current, actual);
             return actual;
         }

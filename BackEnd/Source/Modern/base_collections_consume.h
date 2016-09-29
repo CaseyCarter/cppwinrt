@@ -542,17 +542,6 @@ struct WINRT_EBO IKeyValuePair :
 {
     IKeyValuePair(std::nullptr_t = nullptr) noexcept {}
     auto operator->() const noexcept { return ptr<IKeyValuePair>(m_ptr); }
-
-private:
-    IKeyValuePair(const std::pair<const K, V> & pair) : IKeyValuePair(make<impl::key_value_pair<K, V>>(pair.first, pair.second))
-    {}
-
-    template <typename T, typename containertype>
-    friend struct impl::iterator;
-    template <typename T, typename containertype>
-    friend struct impl::iterator_standalone;
-    template<class _InIt, class _Diff, class _OutIt> 
-    friend _OutIt std::_Copy_n_unchecked2(_InIt _First, _Diff _Count, _OutIt _Dest, forward_iterator_tag);
 };
 
 template <typename T>
