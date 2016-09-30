@@ -1,8 +1,16 @@
 
 namespace impl {
 
-template <typename T, typename containertype> struct iterator;
-template <typename T, typename containertype> struct iterator_standalone;
+template <typename K, typename V, typename Container> struct map_view_standalone;
+template <typename K, typename V, typename Container> struct map_view_from_map;
+template <typename K, typename V, typename Container> struct map;
+template <typename K, typename V> struct key_value_pair;
+template <typename T, typename Container> struct iterator_standalone;
+template <typename T, typename Container> struct iterator;
+template <typename T, typename Container> struct iterable;
+template <typename T> struct vector_view_from_vector;
+template <typename T> struct vector_view_standalone;
+template <typename T> struct vector;
 
 }
 

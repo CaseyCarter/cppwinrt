@@ -3501,8 +3501,16 @@ T impl_IReference<D, T>::Value() const
 
 namespace impl {
 
-template <typename T, typename containertype> struct iterator;
-template <typename T, typename containertype> struct iterator_standalone;
+template <typename K, typename V, typename Container> struct map_view_standalone;
+template <typename K, typename V, typename Container> struct map_view_from_map;
+template <typename K, typename V, typename Container> struct map;
+template <typename K, typename V> struct key_value_pair;
+template <typename T, typename Container> struct iterator_standalone;
+template <typename T, typename Container> struct iterator;
+template <typename T, typename Container> struct iterable;
+template <typename T> struct vector_view_from_vector;
+template <typename T> struct vector_view_standalone;
+template <typename T> struct vector;
 
 }
 
@@ -5236,8 +5244,8 @@ namespace impl
     struct collection_version_validator
     {
         collection_version_validator(collection_version& owner_version, uint32_t expected_version) noexcept : 
-            m_owner_version(owner_version), 
-            m_expected_version(expected_version)
+            m_expected_version(expected_version),
+            m_owner_version(owner_version)
         {}
 
         void validate() const
@@ -5747,7 +5755,7 @@ namespace impl
 
         Windows::Foundation::Collections::IIterator<Windows::Foundation::Collections::IKeyValuePair<K, V>> First()
         {
-            return make<iterator<IKeyValuePair<K, V>, Container>>(*this, m_storage, m_version, m_version.get());
+            return make<iterator<Windows::Foundation::Collections::IKeyValuePair<K, V>, Container>>(*this, m_storage, m_version, m_version.get());
         }
 
     private:
