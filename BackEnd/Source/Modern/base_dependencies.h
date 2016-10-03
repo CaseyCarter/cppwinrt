@@ -8,6 +8,7 @@
 #include <chrono>
 #include <cstddef>
 #include <iterator>
+#include <map>
 #include <memory>
 #include <new>
 #include <string>
@@ -15,9 +16,8 @@
 #include <tuple>
 #include <type_traits>
 #include <utility>
-#include <vector>
-#include <map>
 #include <unordered_map>
+#include <vector>
 
 #ifdef _RESUMABLE_FUNCTIONS_SUPPORTED
 #define WINRT_ASYNC

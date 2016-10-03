@@ -12,6 +12,7 @@
 #include <chrono>
 #include <cstddef>
 #include <iterator>
+#include <map>
 #include <memory>
 #include <new>
 #include <string>
@@ -19,9 +20,8 @@
 #include <tuple>
 #include <type_traits>
 #include <utility>
-#include <vector>
-#include <map>
 #include <unordered_map>
+#include <vector>
 
 #ifdef _RESUMABLE_FUNCTIONS_SUPPORTED
 #define WINRT_ASYNC
@@ -2824,6 +2824,8 @@ struct implements : impl::producer<D, impl::uncloak_t<I>> ...
 
 protected:
 
+    std::atomic<uint32_t> m_references{ 1 };
+
     implements(uint32_t references = 1) :
         m_references(references)
     {}
@@ -2983,8 +2985,6 @@ private:
 
     template <typename D, typename I>
     friend struct impl::produce_base;
-
-    std::atomic<uint32_t> m_references { 1 };
 };
 
 namespace ABI::Windows {
@@ -7125,6 +7125,12 @@ namespace Windows::Foundation
 
 #endif
 
+#ifdef WINRT_ASYNC
+
+struct fire_and_forget {};
+
+#endif
+
 }
 
 namespace std {
@@ -7160,3 +7166,37 @@ template <> struct hash<winrt::hstring>
 };
 
 }
+
+#ifdef WINRT_ASYNC
+
+namespace std::experimental {
+
+template <typename ... Args>
+struct coroutine_traits<winrt::fire_and_forget, Args ...>
+{
+    struct promise_type
+    {
+        winrt::fire_and_forget get_return_object() const noexcept
+        {
+            return{};
+        }
+
+        void return_void() const noexcept
+        {
+        }
+
+        suspend_never initial_suspend() const noexcept
+        {
+            return{};
+        }
+
+        suspend_never final_suspend() const noexcept
+        {
+            return{};
+        }
+    };
+};
+
+}
+
+#endif

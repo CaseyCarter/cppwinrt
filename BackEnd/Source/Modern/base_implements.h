@@ -270,6 +270,8 @@ struct implements : impl::producer<D, impl::uncloak_t<I>> ...
 
 protected:
 
+    std::atomic<uint32_t> m_references{ 1 };
+
     implements(uint32_t references = 1) :
         m_references(references)
     {}
@@ -429,6 +431,4 @@ private:
 
     template <typename D, typename I>
     friend struct impl::produce_base;
-
-    std::atomic<uint32_t> m_references { 1 };
 };

@@ -54,7 +54,7 @@ static void WriteSupportingHeader(char const * filename, char const (&text)[Coun
 
 static void WriteBaseHeader()
 {
-    OutputFile out("..\\base.h");
+    Output out;
     WriteLogo(out);
     Write(out, Strings::PragmaOnce);
 
@@ -90,10 +90,18 @@ static void WriteBaseHeader()
     Write(out, Strings::base_async_produce);         // #include "base_async_produce.h"
     Write(out, Strings::base_agile);                 // #include "base_agile.h"
     Write(out, Strings::base_await_consume);         // #include "base_await_consume.h"
+    Write(out, Strings::base_await_produce);         // #include "base_await_produce.h"
 
     WriteRootNamespaceEnd(out);
+    Write(out, Strings::base_std_hash);
 
-    Write(out, Strings::base_std);
+    Write(out, "\r\n#ifdef WINRT_ASYNC\r\n");
+    out.WriteNamespace("std::experimental");
+    Write(out, Strings::base_std_fire_and_forget);
+    out.WriteNamespace();
+    Write(out, "\r\n#endif\r\n");
+
+    out.WriteTo("..\\base.h");
 }
 
 static void WritePplHeader()

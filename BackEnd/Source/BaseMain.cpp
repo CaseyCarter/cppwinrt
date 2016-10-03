@@ -1,4 +1,4 @@
-﻿#pragma comment(lib, "windowsapp") 
+﻿#pragma comment(lib, "windowsapp")
 #include "base_dependencies.h"
 #include "base_macros.h"
 
@@ -31,10 +31,21 @@ namespace winrt {
 #include "base_async_produce.h"
 #include "base_agile.h"
 #include "base_await_consume.h"
+#include "base_await_produce.h"
 
 }
 
-#include "base_std.h"
+#include "base_std_hash.h"
+
+#ifdef WINRT_ASYNC
+
+namespace std::experimental {
+
+#include "base_std_fire_and_forget.h"
+
+}
+
+#endif
 
 using namespace winrt;
 
