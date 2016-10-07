@@ -5,4 +5,4 @@ module winrt;
 
 #define WINRT_EXPORT export
 
-#include "winrt\winrt.h"
+#include "..\..\winrt\winrt.h"

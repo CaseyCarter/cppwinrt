@@ -1,6 +1,6 @@
 #pragma comment(lib, "windowsapp") 
 
-#include "winrt\winrt.h"
+#include "..\..\winrt\winrt.h"
 
 using namespace winrt;
 
