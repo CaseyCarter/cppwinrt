@@ -1,5 +1,5 @@
 // C++ for the Windows Runtime v1.0.private
-// Copyright (c) 2016 Microsoft Corporation
+// Copyright (c) 2016 Microsoft Corporation. All rights reserved.
 
 #pragma once
 
@@ -1479,9 +1479,14 @@ struct hresult_error
 
 private:
 
-    HRESULT m_code = S_OK;
+    HRESULT m_code = E_FAIL;
     com_ptr<IRestrictedErrorInfo> m_info;
 };
+
+[[noreturn]] inline void throw_last_error()
+{
+    throw hresult_error(HRESULT_FROM_WIN32(GetLastError()));
+}
 
 struct hresult_access_denied : hresult_error
 {
@@ -1551,6 +1556,13 @@ struct hresult_illegal_method_call : hresult_error
     hresult_illegal_method_call() : hresult_error(E_ILLEGAL_METHOD_CALL) {}
     hresult_illegal_method_call(hstring_ref message) : hresult_error(E_ILLEGAL_METHOD_CALL, message) {}
     hresult_illegal_method_call(from_abi_t) : hresult_error(E_ILLEGAL_METHOD_CALL, from_abi) {}
+};
+
+struct hresult_illegal_state_change : hresult_error
+{
+    hresult_illegal_state_change() : hresult_error(E_ILLEGAL_STATE_CHANGE) {}
+    hresult_illegal_state_change(hstring_ref message) : hresult_error(E_ILLEGAL_STATE_CHANGE, message) {}
+    hresult_illegal_state_change(from_abi_t) : hresult_error(E_ILLEGAL_STATE_CHANGE, from_abi) {}
 };
 
 struct hresult_illegal_delegate_assignment : hresult_error
@@ -1624,6 +1636,11 @@ namespace impl {
     if (result == E_ILLEGAL_METHOD_CALL)
     {
         throw hresult_illegal_method_call(hresult_error::from_abi);
+    }
+
+    if (result == E_ILLEGAL_STATE_CHANGE)
+    {
+        throw hresult_illegal_state_change(hresult_error::from_abi);
     }
 
     if (result == E_ILLEGAL_DELEGATE_ASSIGNMENT)
@@ -7180,7 +7197,7 @@ namespace impl
 
         ~promise_base() noexcept
         {
-            if (m_status == AsyncStatus::Error)
+            if (m_status == AsyncStatus::Error || m_status == AsyncStatus::Canceled)
             {
                 reinterpret_cast<std::exception_ptr *>(&m_exception)->~exception_ptr();
             }
@@ -7251,12 +7268,12 @@ namespace impl
             {
                 const lock_guard guard(m_lock);
 
-                if (m_status != AsyncStatus::Error)
+                if (m_status == AsyncStatus::Error)
                 {
-                    return S_OK;
+                    rethrow_exception(*reinterpret_cast<std::exception_ptr *>(&m_exception));
                 }
 
-                rethrow_exception(*reinterpret_cast<std::exception_ptr *>(&m_exception));
+                return S_OK;
             }
             catch (...)
             {
@@ -7271,6 +7288,16 @@ namespace impl
             if (m_status == AsyncStatus::Started)
             {
                 m_status = AsyncStatus::Canceled;
+            }
+        }
+
+        void Close()
+        {
+            const lock_guard guard(m_lock);
+
+            if (m_status == AsyncStatus::Started)
+            {
+                throw winrt::hresult_illegal_state_change();
             }
         }
 
@@ -7308,16 +7335,28 @@ namespace impl
             return{ this };
         }
 
-        void set_exception(const std::exception_ptr & exception)
+        void set_exception(std::exception_ptr && exception)
         {
             CompletedHandler handler;
             AsyncStatus status;
 
             {
                 const winrt::lock_guard guard(m_lock);
-                WINRT_ASSERT(this->m_status == AsyncStatus::Started || this->m_status == AsyncStatus::Canceled);
+                WINRT_ASSERT(m_status == AsyncStatus::Started || m_status == AsyncStatus::Canceled);
 
-                m_status = AsyncStatus::Error;
+                try
+                {
+                    rethrow_exception(exception);
+                }
+                catch (const winrt::hresult_canceled &)
+                {
+                    m_status = AsyncStatus::Canceled;
+                }
+                catch (...)
+                {
+                    m_status = AsyncStatus::Error;
+                }
+
                 new (&m_exception) std::exception_ptr(std::move(exception));
                 handler = std::move(m_completed);
                 status = m_status;
@@ -7488,22 +7527,18 @@ struct coroutine_traits<winrt::Windows::Foundation::IAsyncAction, Args ...>
         {
             const winrt::lock_guard guard(this->m_lock);
 
-            if (this->m_status == AsyncStatus::Completed || this->m_status == AsyncStatus::Canceled)
+            if (this->m_status == AsyncStatus::Completed)
             {
                 return;
             }
 
-            if (this->m_status == AsyncStatus::Error)
+            if (this->m_status == AsyncStatus::Error || this->m_status == AsyncStatus::Canceled)
             {
                 rethrow_exception(*reinterpret_cast<exception_ptr *>(&this->m_exception));
             }
 
             WINRT_ASSERT(this->m_status == AsyncStatus::Started);
             throw winrt::hresult_illegal_method_call();
-        }
-
-        void Close()
-        {
         }
 
         void return_void()
@@ -7513,11 +7548,15 @@ struct coroutine_traits<winrt::Windows::Foundation::IAsyncAction, Args ...>
 
             {
                 const winrt::lock_guard guard(this->m_lock);
-                WINRT_ASSERT(this->m_status == AsyncStatus::Started || this->m_status == AsyncStatus::Canceled);
 
                 if (this->m_status == AsyncStatus::Started)
                 {
                     this->m_status = AsyncStatus::Completed;
+                }
+                else
+                {
+                    WINRT_ASSERT(this->m_status == AsyncStatus::Canceled);
+                    new (&this->m_exception) exception_ptr(make_exception_ptr(winrt::hresult_canceled()));
                 }
 
                 handler = std::move(this->m_completed);
@@ -7572,22 +7611,18 @@ struct coroutine_traits<winrt::Windows::Foundation::IAsyncActionWithProgress<TPr
         {
             const winrt::lock_guard guard(this->m_lock);
 
-            if (this->m_status == AsyncStatus::Completed || this->m_status == AsyncStatus::Canceled)
+            if (this->m_status == AsyncStatus::Completed)
             {
                 return;
             }
 
-            if (this->m_status == AsyncStatus::Error)
+            if (this->m_status == AsyncStatus::Error || this->m_status == AsyncStatus::Canceled)
             {
                 rethrow_exception(*reinterpret_cast<exception_ptr *>(&this->m_exception));
             }
 
             WINRT_ASSERT(this->m_status == AsyncStatus::Started);
             throw winrt::hresult_illegal_method_call();
-        }
-
-        void Close()
-        {
         }
 
         void return_void()
@@ -7597,11 +7632,15 @@ struct coroutine_traits<winrt::Windows::Foundation::IAsyncActionWithProgress<TPr
 
             {
                 const winrt::lock_guard guard(this->m_lock);
-                WINRT_ASSERT(this->m_status == AsyncStatus::Started || this->m_status == AsyncStatus::Canceled);
 
                 if (this->m_status == AsyncStatus::Started)
                 {
                     this->m_status = AsyncStatus::Completed;
+                }
+                else
+                {
+                    WINRT_ASSERT(this->m_status == AsyncStatus::Canceled);
+                    new (&this->m_exception) exception_ptr(make_exception_ptr(winrt::hresult_canceled()));
                 }
 
                 handler = std::move(this->m_completed);
@@ -7657,22 +7696,18 @@ struct coroutine_traits<winrt::Windows::Foundation::IAsyncOperation<TResult>, Ar
         {
             const winrt::lock_guard guard(this->m_lock);
 
-            if (this->m_status == AsyncStatus::Completed || this->m_status == AsyncStatus::Canceled)
+            if (this->m_status == AsyncStatus::Completed)
             {
                 return m_result;
             }
 
-            if (this->m_status == AsyncStatus::Error)
+            if (this->m_status == AsyncStatus::Error || this->m_status == AsyncStatus::Canceled)
             {
                 rethrow_exception(*reinterpret_cast<exception_ptr *>(&this->m_exception));
             }
 
             WINRT_ASSERT(this->m_status == AsyncStatus::Started);
             throw winrt::hresult_illegal_method_call();
-        }
-
-        void Close()
-        {
         }
 
         void return_value(const TResult & result)
@@ -7682,14 +7717,18 @@ struct coroutine_traits<winrt::Windows::Foundation::IAsyncOperation<TResult>, Ar
 
             {
                 const winrt::lock_guard guard(this->m_lock);
-                WINRT_ASSERT(this->m_status == AsyncStatus::Started || this->m_status == AsyncStatus::Canceled);
 
                 if (this->m_status == AsyncStatus::Started)
                 {
                     this->m_status = AsyncStatus::Completed;
+                    m_result = result;
+                }
+                else
+                {
+                    WINRT_ASSERT(this->m_status == AsyncStatus::Canceled);
+                    new (&this->m_exception) exception_ptr(make_exception_ptr(winrt::hresult_canceled()));
                 }
 
-                m_result = result;
                 handler = std::move(this->m_completed);
                 status = this->m_status;
             }
@@ -7744,22 +7783,18 @@ struct coroutine_traits<winrt::Windows::Foundation::IAsyncOperationWithProgress<
         {
             const winrt::lock_guard guard(this->m_lock);
 
-            if (this->m_status == AsyncStatus::Completed || this->m_status == AsyncStatus::Canceled)
+            if (this->m_status == AsyncStatus::Completed)
             {
                 return m_result;
             }
 
-            if (this->m_status == AsyncStatus::Error)
+            if (this->m_status == AsyncStatus::Error || this->m_status == AsyncStatus::Canceled)
             {
                 rethrow_exception(*reinterpret_cast<exception_ptr *>(&this->m_exception));
             }
 
             WINRT_ASSERT(this->m_status == AsyncStatus::Started);
             throw winrt::hresult_illegal_method_call();
-        }
-
-        void Close()
-        {
         }
 
         void return_value(const TResult & result)
@@ -7769,14 +7804,18 @@ struct coroutine_traits<winrt::Windows::Foundation::IAsyncOperationWithProgress<
 
             {
                 const winrt::lock_guard guard(this->m_lock);
-                WINRT_ASSERT(this->m_status == AsyncStatus::Started || this->m_status == AsyncStatus::Canceled);
 
                 if (this->m_status == AsyncStatus::Started)
                 {
                     this->m_status = AsyncStatus::Completed;
+                    m_result = result;
+                }
+                else
+                {
+                    WINRT_ASSERT(this->m_status == AsyncStatus::Canceled);
+                    new (&this->m_exception) exception_ptr(make_exception_ptr(winrt::hresult_canceled()));
                 }
 
-                m_result = result;
                 handler = std::move(this->m_completed);
                 status = this->m_status;
             }
