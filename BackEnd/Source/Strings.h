@@ -11,7 +11,7 @@ extern char const base_async_consume[35667];
 extern char const base_async_produce[8295];
 extern char const base_await_consume[2103];
 extern char const base_await_produce[6831];
-extern char const base_collections_consume[40766];
+extern char const base_collections_consume[41317];
 extern char const base_collections_impl[19087];
 extern char const base_collections_produce[16060];
 extern char const base_composable[556];

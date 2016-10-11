@@ -3552,6 +3552,9 @@ T impl_IReference<D, T>::Value() const
 
 }
 
+struct empty_collection_t {};
+constexpr empty_collection_t empty_collection{};
+
 namespace impl {
 
 template <typename K, typename V, typename Container> struct map_view_standalone;
@@ -4060,6 +4063,9 @@ struct WINRT_EBO IIterable :
     IIterable(const std::vector<T> & values) : IIterable(std::vector<T>(values))
     {}
 
+    IIterable(empty_collection_t) : IIterable(std::vector<T>())
+    {}
+
     template<class InputIt>
     IIterable(InputIt first, InputIt last) : IIterable(std::vector<T>(first, last))
     {}
@@ -4086,6 +4092,9 @@ struct WINRT_EBO IIterable<IKeyValuePair<K, V>> :
     {}
 
     IIterable(const std::unordered_map<K, V> & values) : IIterable(std::unordered_map<K, V>(values))
+    {}
+
+    IIterable(empty_collection_t) : IIterable(std::unordered_map<K, V>())
     {}
 
     template<class InputIt>
@@ -4120,6 +4129,9 @@ struct WINRT_EBO IVectorView :
     IVectorView(const std::vector<T> & values) : IVectorView(std::vector<T>(values))
     {}
 
+    IVectorView(empty_collection_t) : IVectorView(std::vector<T>())
+    {}
+
     template<class InputIt>
     IVectorView(InputIt first, InputIt last) : IVectorView(std::vector<T>(first, last))
     {}
@@ -4141,6 +4153,9 @@ struct WINRT_EBO IVector :
     {}
 
     IVector(const std::vector<T> & values) : IVector(std::vector<T>(values))
+    {}
+
+    IVector(empty_collection_t) : IVector(std::vector<T>())
     {}
 
     template<class InputIt>
@@ -4172,6 +4187,9 @@ struct WINRT_EBO IMapView :
     IMapView(const std::unordered_map<K, V> & values) : IMapView(std::unordered_map<K, V>(values))
     {}
 
+    IMapView(empty_collection_t) : IMapView(std::unordered_map<K, V>())
+    {}
+
     template<class InputIt>
     IMapView(InputIt first, InputIt last) : IMapView(std::unordered_map<K, V>(first, last))
     {}
@@ -4199,6 +4217,9 @@ struct WINRT_EBO IMap :
     {}
 
     IMap(const std::unordered_map<K, V> & values) : IMap(std::unordered_map<K, V>(values))
+    {}
+
+    IMap(empty_collection_t) : IMap(std::unordered_map<K, V>())
     {}
 
     template<class InputIt>
