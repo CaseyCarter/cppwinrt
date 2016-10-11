@@ -98,6 +98,10 @@ static void WriteBaseHeader()
     Write(out, "\r\n#ifdef WINRT_ASYNC\r\n");
     out.WriteNamespace("std::experimental");
     Write(out, Strings::base_std_fire_and_forget);
+    Write(out, Strings::base_std_async_action);
+    Write(out, Strings::base_std_async_action_with_progress);
+    Write(out, Strings::base_std_async_operation);
+    Write(out, Strings::base_std_async_operation_with_progress);
     out.WriteNamespace();
     Write(out, "\r\n#endif\r\n");
 

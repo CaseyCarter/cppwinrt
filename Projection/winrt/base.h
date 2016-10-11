@@ -1546,6 +1546,27 @@ struct hresult_changed_state : hresult_error
     hresult_changed_state(from_abi_t) : hresult_error(E_CHANGED_STATE, from_abi) {}
 };
 
+struct hresult_illegal_method_call : hresult_error
+{
+    hresult_illegal_method_call() : hresult_error(E_ILLEGAL_METHOD_CALL) {}
+    hresult_illegal_method_call(hstring_ref message) : hresult_error(E_ILLEGAL_METHOD_CALL, message) {}
+    hresult_illegal_method_call(from_abi_t) : hresult_error(E_ILLEGAL_METHOD_CALL, from_abi) {}
+};
+
+struct hresult_illegal_delegate_assignment : hresult_error
+{
+    hresult_illegal_delegate_assignment() : hresult_error(E_ILLEGAL_DELEGATE_ASSIGNMENT) {}
+    hresult_illegal_delegate_assignment(hstring_ref message) : hresult_error(E_ILLEGAL_DELEGATE_ASSIGNMENT, message) {}
+    hresult_illegal_delegate_assignment(from_abi_t) : hresult_error(E_ILLEGAL_DELEGATE_ASSIGNMENT, from_abi) {}
+};
+
+struct hresult_canceled : hresult_error
+{
+    hresult_canceled() : hresult_error(HRESULT_FROM_WIN32(ERROR_CANCELLED)) {}
+    hresult_canceled(hstring_ref message) : hresult_error(HRESULT_FROM_WIN32(ERROR_CANCELLED), message) {}
+    hresult_canceled(from_abi_t) : hresult_error(HRESULT_FROM_WIN32(ERROR_CANCELLED), from_abi) {}
+};
+ 
 namespace impl {
 
 [[noreturn]] inline __declspec(noinline) void throw_hresult(const HRESULT result)
@@ -1598,6 +1619,21 @@ namespace impl {
     if (result == E_CHANGED_STATE)
     {
         throw hresult_changed_state(hresult_error::from_abi);
+    }
+
+    if (result == E_ILLEGAL_METHOD_CALL)
+    {
+        throw hresult_illegal_method_call(hresult_error::from_abi);
+    }
+
+    if (result == E_ILLEGAL_DELEGATE_ASSIGNMENT)
+    {
+        throw hresult_illegal_delegate_assignment(hresult_error::from_abi);
+    }
+
+    if (result == HRESULT_FROM_WIN32(ERROR_CANCELLED))
+    {
+        throw hresult_canceled(hresult_error::from_abi);
     }
 
     throw hresult_error(result, hresult_error::from_abi);
@@ -7127,7 +7163,252 @@ namespace Windows::Foundation
 
 #ifdef WINRT_ASYNC
 
+struct get_progress_token_t {};
+constexpr get_progress_token_t get_progress_token{};
+
+struct get_cancellation_token_t {};
+constexpr get_cancellation_token_t get_cancellation_token{};
+
 struct fire_and_forget {};
+
+namespace impl
+{
+    template <typename Derived, typename AsyncInterface, typename CompletedHandler>
+    struct promise_base : implements<Derived, AsyncInterface, Windows::Foundation::IAsyncInfo>
+    {
+        using AsyncStatus = Windows::Foundation::AsyncStatus;
+
+        ~promise_base() noexcept
+        {
+            if (m_status == AsyncStatus::Error)
+            {
+                reinterpret_cast<std::exception_ptr *>(&m_exception)->~exception_ptr();
+            }
+        }
+
+        unsigned long __stdcall Release() noexcept
+        {
+            const uint32_t remaining = just_release();
+
+            if (remaining == 0)
+            {
+                std::atomic_thread_fence(std::memory_order_acquire);
+                std::experimental::coroutine_handle<Derived>::from_promise(*static_cast<Derived *>(this)).destroy();
+            }
+
+            return remaining;
+        }
+
+        void Completed(const CompletedHandler & handler)
+        {
+            AsyncStatus status;
+
+            {
+                const lock_guard guard(m_lock);
+
+                if (m_completed_assigned)
+                {
+                    throw winrt::hresult_illegal_delegate_assignment();
+                }
+
+                m_completed_assigned = true;
+
+                if (m_status == AsyncStatus::Started)
+                {
+                    m_completed = handler;
+                    return;
+                }
+
+                status = m_status;
+            }
+
+            if (handler)
+            {
+                handler(*this, status);
+            }
+        }
+
+        CompletedHandler Completed() noexcept
+        {
+            const lock_guard guard(m_lock);
+            return m_completed;
+        }
+
+        uint32_t Id() const noexcept
+        {
+            return 1;
+        }
+
+        AsyncStatus Status() noexcept
+        {
+            const lock_guard guard(m_lock);
+            return m_status;
+        }
+
+        HRESULT ErrorCode() noexcept
+        {
+            try
+            {
+                const lock_guard guard(m_lock);
+
+                if (m_status != AsyncStatus::Error)
+                {
+                    return S_OK;
+                }
+
+                rethrow_exception(*reinterpret_cast<std::exception_ptr *>(&m_exception));
+            }
+            catch (...)
+            {
+                return to_hresult();
+            }
+        }
+
+        void Cancel() noexcept
+        {
+            const lock_guard guard(m_lock);
+
+            if (m_status == AsyncStatus::Started)
+            {
+                m_status = AsyncStatus::Canceled;
+            }
+        }
+
+        AsyncInterface get_return_object() const noexcept
+        {
+            return *this;
+        }
+
+        std::experimental::suspend_never initial_suspend() const noexcept
+        {
+            return{};
+        }
+
+        struct final_suspend_type
+        {
+            promise_base * promise;
+
+            bool await_ready() const noexcept
+            {
+                return false;
+            }
+
+            void await_resume() const noexcept
+            {
+            }
+
+            bool await_suspend(std::experimental::coroutine_handle<>) const noexcept
+            {
+                return 0 < promise->just_release();
+            }
+        };
+
+        final_suspend_type final_suspend() noexcept
+        {
+            return{ this };
+        }
+
+        void set_exception(const std::exception_ptr & exception)
+        {
+            CompletedHandler handler;
+            AsyncStatus status;
+
+            {
+                const winrt::lock_guard guard(m_lock);
+                WINRT_ASSERT(this->m_status == AsyncStatus::Started || this->m_status == AsyncStatus::Canceled);
+
+                m_status = AsyncStatus::Error;
+                new (&m_exception) std::exception_ptr(std::move(exception));
+                handler = std::move(m_completed);
+                status = m_status;
+            }
+
+            if (handler)
+            {
+                handler(*this, status);
+            }
+        }
+
+    protected:
+
+        std::aligned_union_t<0, std::exception_ptr> m_exception;
+        winrt::lock m_lock;
+        CompletedHandler m_completed;
+        AsyncStatus m_status{ AsyncStatus::Started };
+        bool m_completed_assigned{ false };
+
+    private:
+
+        uint32_t just_release() noexcept
+        {
+            return this->m_references.fetch_sub(1, std::memory_order_acq_rel) - 1;
+        }
+    };
+
+    template <typename Promise>
+    struct cancellation_token
+    {
+        cancellation_token(Promise * promise) noexcept :
+            m_promise(promise)
+        {
+        }
+
+        bool await_ready() const noexcept
+        {
+            return true;
+        }
+
+        void await_suspend(std::experimental::coroutine_handle<>) const noexcept
+        {
+        }
+
+        cancellation_token<Promise> await_resume() const noexcept
+        {
+            return *this;
+        }
+
+        bool operator()() const noexcept
+        {
+            return m_promise->Status() == AsyncStatus::Canceled;
+        }
+
+    private:
+
+        Promise * m_promise;
+    };
+
+    template <typename Promise, typename Progress>
+    struct progress_token
+    {
+        progress_token(Promise * promise) noexcept :
+            m_promise(promise)
+        {
+        }
+
+        bool await_ready() const noexcept
+        {
+            return true;
+        }
+
+        void await_suspend(std::experimental::coroutine_handle<>) const noexcept
+        {
+        }
+
+        progress_token<Promise, Progress> await_resume() const noexcept
+        {
+            return *this;
+        }
+
+        void operator()(const Progress & result)
+        {
+            m_promise->set_progress(result);
+        }
+
+    private:
+
+        Promise * m_promise;
+    };
+}
 
 #endif
 
@@ -7194,6 +7475,349 @@ struct coroutine_traits<winrt::fire_and_forget, Args ...>
         {
             return{};
         }
+    };
+};
+
+template <typename ... Args>
+struct coroutine_traits<winrt::Windows::Foundation::IAsyncAction, Args ...>
+{
+    struct promise_type : winrt::impl::promise_base<promise_type, winrt::Windows::Foundation::IAsyncAction,
+                                                                  winrt::Windows::Foundation::AsyncActionCompletedHandler>
+    {
+        void GetResults()
+        {
+            const winrt::lock_guard guard(this->m_lock);
+
+            if (this->m_status == AsyncStatus::Completed || this->m_status == AsyncStatus::Canceled)
+            {
+                return;
+            }
+
+            if (this->m_status == AsyncStatus::Error)
+            {
+                rethrow_exception(*reinterpret_cast<exception_ptr *>(&this->m_exception));
+            }
+
+            WINRT_ASSERT(this->m_status == AsyncStatus::Started);
+            throw winrt::hresult_illegal_method_call();
+        }
+
+        void Close()
+        {
+        }
+
+        void return_void()
+        {
+            winrt::Windows::Foundation::AsyncActionCompletedHandler handler;
+            winrt::Windows::Foundation::AsyncStatus status;
+
+            {
+                const winrt::lock_guard guard(this->m_lock);
+                WINRT_ASSERT(this->m_status == AsyncStatus::Started || this->m_status == AsyncStatus::Canceled);
+
+                if (this->m_status == AsyncStatus::Started)
+                {
+                    this->m_status = AsyncStatus::Completed;
+                }
+
+                handler = std::move(this->m_completed);
+                status = this->m_status;
+            }
+
+            if (handler)
+            {
+                handler(*this, status);
+            }
+        }
+
+        template <typename Expression>
+        Expression && await_transform(Expression && expression)
+        {
+            if (this->Status() == AsyncStatus::Canceled)
+            {
+                throw winrt::hresult_canceled();
+            }
+
+            return forward<Expression>(expression);
+        }
+
+        winrt::impl::cancellation_token<promise_type> await_transform(winrt::get_cancellation_token_t) noexcept
+        {
+            return{ this };
+        }
+    };
+};
+
+template <typename TProgress, typename ... Args>
+struct coroutine_traits<winrt::Windows::Foundation::IAsyncActionWithProgress<TProgress>, Args ...>
+{
+    struct promise_type : winrt::impl::promise_base<promise_type, winrt::Windows::Foundation::IAsyncActionWithProgress<TProgress>,
+                                                                  winrt::Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress>>
+    {
+        using ProgressHandler = winrt::Windows::Foundation::AsyncActionProgressHandler<TProgress>;
+
+        void Progress(const ProgressHandler & handler)
+        {
+            const winrt::lock_guard guard(this->m_lock);
+            m_progress = handler;
+        }
+
+        ProgressHandler Progress()
+        {
+            const winrt::lock_guard guard(this->m_lock);
+            return m_progress;
+        }
+
+        void GetResults()
+        {
+            const winrt::lock_guard guard(this->m_lock);
+
+            if (this->m_status == AsyncStatus::Completed || this->m_status == AsyncStatus::Canceled)
+            {
+                return;
+            }
+
+            if (this->m_status == AsyncStatus::Error)
+            {
+                rethrow_exception(*reinterpret_cast<exception_ptr *>(&this->m_exception));
+            }
+
+            WINRT_ASSERT(this->m_status == AsyncStatus::Started);
+            throw winrt::hresult_illegal_method_call();
+        }
+
+        void Close()
+        {
+        }
+
+        void return_void()
+        {
+            winrt::Windows::Foundation::AsyncActionWithProgressCompletedHandler<TProgress> handler;
+            winrt::Windows::Foundation::AsyncStatus status;
+
+            {
+                const winrt::lock_guard guard(this->m_lock);
+                WINRT_ASSERT(this->m_status == AsyncStatus::Started || this->m_status == AsyncStatus::Canceled);
+
+                if (this->m_status == AsyncStatus::Started)
+                {
+                    this->m_status = AsyncStatus::Completed;
+                }
+
+                handler = std::move(this->m_completed);
+                status = this->m_status;
+            }
+
+            if (handler)
+            {
+                handler(*this, status);
+            }
+        }
+
+        void set_progress(const TProgress & result)
+        {
+            if (auto handler = Progress())
+            {
+                handler(*this, result);
+            }
+        }
+
+        template <typename Expression>
+        Expression && await_transform(Expression && expression)
+        {
+            if (this->Status() == AsyncStatus::Canceled)
+            {
+                throw winrt::hresult_canceled();
+            }
+
+            return forward<Expression>(expression);
+        }
+
+        winrt::impl::cancellation_token<promise_type> await_transform(winrt::get_cancellation_token_t) noexcept
+        {
+            return{ this };
+        }
+
+        winrt::impl::progress_token<promise_type, TProgress> await_transform(winrt::get_progress_token_t) noexcept
+        {
+            return{ this };
+        }
+
+        ProgressHandler m_progress;
+    };
+};
+
+template <typename TResult, typename ... Args>
+struct coroutine_traits<winrt::Windows::Foundation::IAsyncOperation<TResult>, Args ...>
+{
+    struct promise_type : winrt::impl::promise_base<promise_type, winrt::Windows::Foundation::IAsyncOperation<TResult>,
+                                                                  winrt::Windows::Foundation::AsyncOperationCompletedHandler<TResult>>
+    {
+        TResult GetResults()
+        {
+            const winrt::lock_guard guard(this->m_lock);
+
+            if (this->m_status == AsyncStatus::Completed || this->m_status == AsyncStatus::Canceled)
+            {
+                return m_result;
+            }
+
+            if (this->m_status == AsyncStatus::Error)
+            {
+                rethrow_exception(*reinterpret_cast<exception_ptr *>(&this->m_exception));
+            }
+
+            WINRT_ASSERT(this->m_status == AsyncStatus::Started);
+            throw winrt::hresult_illegal_method_call();
+        }
+
+        void Close()
+        {
+        }
+
+        void return_value(const TResult & result)
+        {
+            winrt::Windows::Foundation::AsyncOperationCompletedHandler<TResult> handler;
+            winrt::Windows::Foundation::AsyncStatus status;
+
+            {
+                const winrt::lock_guard guard(this->m_lock);
+                WINRT_ASSERT(this->m_status == AsyncStatus::Started || this->m_status == AsyncStatus::Canceled);
+
+                if (this->m_status == AsyncStatus::Started)
+                {
+                    this->m_status = AsyncStatus::Completed;
+                }
+
+                m_result = result;
+                handler = std::move(this->m_completed);
+                status = this->m_status;
+            }
+
+            if (handler)
+            {
+                handler(*this, status);
+            }
+        }
+
+        template <typename Expression>
+        Expression && await_transform(Expression && expression)
+        {
+            if (this->Status() == AsyncStatus::Canceled)
+            {
+                throw winrt::hresult_canceled();
+            }
+
+            return forward<Expression>(expression);
+        }
+
+        winrt::impl::cancellation_token<promise_type> await_transform(winrt::get_cancellation_token_t) noexcept
+        {
+            return{ this };
+        }
+
+        TResult m_result{ winrt::impl::empty_value<TResult>() };
+    };
+};
+
+template <typename TResult, typename TProgress, typename ... Args>
+struct coroutine_traits<winrt::Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>, Args ...>
+{
+    struct promise_type : winrt::impl::promise_base<promise_type, winrt::Windows::Foundation::IAsyncOperationWithProgress<TResult, TProgress>,
+                                                                  winrt::Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress>>
+    {
+        using ProgressHandler = winrt::Windows::Foundation::AsyncOperationProgressHandler<TResult, TProgress>;
+
+        void Progress(const ProgressHandler & handler)
+        {
+            const winrt::lock_guard guard(this->m_lock);
+            m_progress = handler;
+        }
+
+        ProgressHandler Progress()
+        {
+            const winrt::lock_guard guard(this->m_lock);
+            return m_progress;
+        }
+
+        TResult GetResults()
+        {
+            const winrt::lock_guard guard(this->m_lock);
+
+            if (this->m_status == AsyncStatus::Completed || this->m_status == AsyncStatus::Canceled)
+            {
+                return m_result;
+            }
+
+            if (this->m_status == AsyncStatus::Error)
+            {
+                rethrow_exception(*reinterpret_cast<exception_ptr *>(&this->m_exception));
+            }
+
+            WINRT_ASSERT(this->m_status == AsyncStatus::Started);
+            throw winrt::hresult_illegal_method_call();
+        }
+
+        void Close()
+        {
+        }
+
+        void return_value(const TResult & result)
+        {
+            winrt::Windows::Foundation::AsyncOperationWithProgressCompletedHandler<TResult, TProgress> handler;
+            winrt::Windows::Foundation::AsyncStatus status;
+
+            {
+                const winrt::lock_guard guard(this->m_lock);
+                WINRT_ASSERT(this->m_status == AsyncStatus::Started || this->m_status == AsyncStatus::Canceled);
+
+                if (this->m_status == AsyncStatus::Started)
+                {
+                    this->m_status = AsyncStatus::Completed;
+                }
+
+                m_result = result;
+                handler = std::move(this->m_completed);
+                status = this->m_status;
+            }
+
+            if (handler)
+            {
+                handler(*this, status);
+            }
+        }
+
+        void set_progress(const TProgress & result)
+        {
+            if (auto handler = Progress())
+            {
+                handler(*this, result);
+            }
+        }
+
+        template <typename Expression>
+        Expression && await_transform(Expression && expression)
+        {
+            if (this->Status() == AsyncStatus::Canceled)
+            {
+                throw winrt::hresult_canceled();
+            }
+
+            return forward<Expression>(expression);
+        }
+
+        winrt::impl::cancellation_token<promise_type> await_transform(winrt::get_cancellation_token_t) noexcept
+        {
+            return{ this };
+        }
+
+        winrt::impl::progress_token<promise_type, TProgress> await_transform(winrt::get_progress_token_t) noexcept
+        {
+            return{ this };
+        }
+
+        TResult m_result{ winrt::impl::empty_value<TResult>() };
+        ProgressHandler m_progress;
     };
 };
 

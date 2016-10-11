@@ -42,6 +42,10 @@ namespace winrt {
 namespace std::experimental {
 
 #include "base_std_fire_and_forget.h"
+#include "base_std_async_action.h"
+#include "base_std_async_action_with_progress.h"
+#include "base_std_async_operation.h"
+#include "base_std_async_operation_with_progress.h"
 
 }
 

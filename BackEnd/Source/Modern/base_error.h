@@ -112,9 +112,14 @@ struct hresult_error
 
 private:
 
-    HRESULT m_code = S_OK;
+    HRESULT m_code = E_FAIL;
     com_ptr<IRestrictedErrorInfo> m_info;
 };
+
+[[noreturn]] inline void throw_last_error()
+{
+    throw hresult_error(HRESULT_FROM_WIN32(GetLastError()));
+}
 
 struct hresult_access_denied : hresult_error
 {
@@ -179,6 +184,34 @@ struct hresult_changed_state : hresult_error
     hresult_changed_state(from_abi_t) : hresult_error(E_CHANGED_STATE, from_abi) {}
 };
 
+struct hresult_illegal_method_call : hresult_error
+{
+    hresult_illegal_method_call() : hresult_error(E_ILLEGAL_METHOD_CALL) {}
+    hresult_illegal_method_call(hstring_ref message) : hresult_error(E_ILLEGAL_METHOD_CALL, message) {}
+    hresult_illegal_method_call(from_abi_t) : hresult_error(E_ILLEGAL_METHOD_CALL, from_abi) {}
+};
+
+struct hresult_illegal_state_change : hresult_error
+{
+    hresult_illegal_state_change() : hresult_error(E_ILLEGAL_STATE_CHANGE) {}
+    hresult_illegal_state_change(hstring_ref message) : hresult_error(E_ILLEGAL_STATE_CHANGE, message) {}
+    hresult_illegal_state_change(from_abi_t) : hresult_error(E_ILLEGAL_STATE_CHANGE, from_abi) {}
+};
+
+struct hresult_illegal_delegate_assignment : hresult_error
+{
+    hresult_illegal_delegate_assignment() : hresult_error(E_ILLEGAL_DELEGATE_ASSIGNMENT) {}
+    hresult_illegal_delegate_assignment(hstring_ref message) : hresult_error(E_ILLEGAL_DELEGATE_ASSIGNMENT, message) {}
+    hresult_illegal_delegate_assignment(from_abi_t) : hresult_error(E_ILLEGAL_DELEGATE_ASSIGNMENT, from_abi) {}
+};
+
+struct hresult_canceled : hresult_error
+{
+    hresult_canceled() : hresult_error(HRESULT_FROM_WIN32(ERROR_CANCELLED)) {}
+    hresult_canceled(hstring_ref message) : hresult_error(HRESULT_FROM_WIN32(ERROR_CANCELLED), message) {}
+    hresult_canceled(from_abi_t) : hresult_error(HRESULT_FROM_WIN32(ERROR_CANCELLED), from_abi) {}
+};
+ 
 namespace impl {
 
 [[noreturn]] inline __declspec(noinline) void throw_hresult(const HRESULT result)
@@ -231,6 +264,26 @@ namespace impl {
     if (result == E_CHANGED_STATE)
     {
         throw hresult_changed_state(hresult_error::from_abi);
+    }
+
+    if (result == E_ILLEGAL_METHOD_CALL)
+    {
+        throw hresult_illegal_method_call(hresult_error::from_abi);
+    }
+
+    if (result == E_ILLEGAL_STATE_CHANGE)
+    {
+        throw hresult_illegal_state_change(hresult_error::from_abi);
+    }
+
+    if (result == E_ILLEGAL_DELEGATE_ASSIGNMENT)
+    {
+        throw hresult_illegal_delegate_assignment(hresult_error::from_abi);
+    }
+
+    if (result == HRESULT_FROM_WIN32(ERROR_CANCELLED))
+    {
+        throw hresult_canceled(hresult_error::from_abi);
     }
 
     throw hresult_error(result, hresult_error::from_abi);
