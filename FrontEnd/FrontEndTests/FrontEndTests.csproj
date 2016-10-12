@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{224313A5-E981-47F8-81F5-884DF7E9133D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.Wtl.Tests</RootNamespace>
+    <AssemblyName>FrontEndTests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\FrontEnd\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\FrontEnd\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.1.37.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\FrontEnd\packages\System.Collections.Immutable.1.1.37\lib\dotnet\System.Collections.Immutable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.101.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\FrontEnd\packages\System.Data.SQLite.Core.1.0.101.0\lib\net45\System.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.101.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\FrontEnd\packages\System.Data.SQLite.EF6.1.0.101.0\lib\net45\System.Data.SQLite.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.101.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\FrontEnd\packages\System.Data.SQLite.Linq.1.0.101.0\lib\net45\System.Data.SQLite.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reflection.Metadata, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\FrontEnd\packages\System.Reflection.Metadata.1.1.0\lib\dotnet5.2\System.Reflection.Metadata.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="ArgumentsTests.cs" />
+    <Compile Include="AssertHelper.cs" />
+    <Compile Include="ClassConstructors.cs" />
+    <Compile Include="DatabaseTests.cs" />
+    <Compile Include="EnumerationsTests.cs" />
+    <Compile Include="FilePathsExpansionTests.cs" />
+    <Compile Include="FrontEndPhase1Tests.cs" />
+    <Compile Include="ImplicitGenericInterfaces.cs" />
+    <Compile Include="InnerGenericInterfacesTests.cs" />
+    <Compile Include="InterfaceTests.cs" />
+    <Compile Include="MetadataTestHelper.cs" />
+    <Compile Include="NamespaceToGenericInterfaceDependencyTests.cs" />
+    <Compile Include="NamespaceToTypeCategoryDependencyTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResponseFileTests.cs" />
+    <Compile Include="RuntimeclassTests.cs" />
+    <Compile Include="ClassStaticsTests.cs" />
+    <Compile Include="StructuresTests.cs" />
+    <Compile Include="ArgumentValidatorTest.cs" />
+    <Compile Include="ParameterizedTypeIIDTests.cs" />
+    <Compile Include="E2E.cs" />
+    <Compile Include="PlatformVersion.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FrontEnd\FrontEnd.csproj">
+      <Project>{a16e9eb2-3f3e-4e0f-a79a-efe85f68ef64}</Project>
+      <Name>FrontEnd</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="TestData\ClassConstructorsInput\ClassConstructors1.base" />
+    <None Include="TestData\ClassStaticsInput\ClassStatics1.base" />
+    <None Include="TestData\E2E\ClassConstructors.base" />
+    <None Include="TestData\E2E\Classes.base" />
+    <None Include="TestData\E2E\ClassInterfaces.base" />
+    <None Include="TestData\E2E\ClassInterfaces_GenericInterface.base" />
+    <None Include="TestData\E2E\ClassStatics.base" />
+    <None Include="TestData\E2E\Enumerations.base" />
+    <None Include="TestData\E2E\Enumerators.base" />
+    <None Include="TestData\E2E\Fields.base" />
+    <None Include="TestData\E2E\GenericInterfaces.base" />
+    <None Include="TestData\E2E\Interfaces.base" />
+    <None Include="TestData\E2E\Methods.base" />
+    <None Include="TestData\E2E\NamespaceToGenericInterfaceDependency.base" />
+    <None Include="TestData\E2E\NamespaceToTypeCategoryDependency.base" />
+    <None Include="TestData\E2E\Parameters.base" />
+    <None Include="TestData\E2E\RequiredInterfaces.base" />
+    <None Include="TestData\E2E\Structures.base" />
+    <None Include="TestData\E2E\Windows.Foundation.FoundationContract.winmd" />
+    <None Include="TestData\E2E\Windows.Foundation.UniversalApiContract.winmd" />
+    <None Include="TestData\E2E\windows.networking.connectivity.wwancontract.winmd" />
+    <None Include="TestData\EnumerationsInput\Enumerations1.base" />
+    <None Include="TestData\EnumerationsInput\Enumerations1_Enumerators.base" />
+    <None Include="TestData\GenericInterfacesInput\ImplicitGenericInterfaces1.base" />
+    <None Include="TestData\GenericInterfacesInput\ImplicitGenericInterfaces2.base" />
+    <None Include="TestData\GenericInterfacesInput\InnerGenericInterfaces1.base" />
+    <None Include="TestData\InterfacesInput\Interface1.base" />
+    <None Include="TestData\InterfacesInput\Interface1_Methods.base" />
+    <None Include="TestData\InterfacesInput\Interface1_Parameters.base" />
+    <None Include="TestData\InterfacesInput\Interface1_RequiredInterfaces.base" />
+    <None Include="TestData\NamespaceToGenericInterfaceDependencyInput\NamespaceToGenericInterfaceDependency1.base" />
+    <None Include="TestData\NamespaceToGenericInterfaceDependencyInput\NamespaceToGenericInterfaceDependency2.base" />
+    <None Include="TestData\NamespaceToTypeCategoryDependencyInput\NamespaceToTypeCategoryDependency1.base" />
+    <None Include="TestData\ParameterizedTypeIIDInput\ParameterizedTypeIID_Basic.base" />
+    <None Include="TestData\PlatformVersion\ClassConstructors.base" />
+    <None Include="TestData\PlatformVersion\Classes.base" />
+    <None Include="TestData\PlatformVersion\ClassStatics.base" />
+    <None Include="TestData\RuntimeclassInput\1Runtimeclass.base" />
+    <None Include="TestData\RuntimeclassInput\1Runtimeclass_ClassInterfaces.base" />
+    <None Include="TestData\SDK\Windows.ApplicationModel.Background.BackgroundAlarmApplicationContract.winmd" />
+    <None Include="TestData\SDK\Windows.ApplicationModel.Calls.CallsPhoneContract.WinMD" />
+    <None Include="TestData\SDK\Windows.ApplicationModel.Calls.CallsVoipContract.WinMD" />
+    <None Include="TestData\SDK\Windows.ApplicationModel.Calls.LockScreenCallContract.winmd" />
+    <None Include="TestData\SDK\Windows.ApplicationModel.Resources.Management.ResourceIndexerContract.winmd" />
+    <None Include="TestData\SDK\Windows.ApplicationModel.Search.SearchContract.winmd" />
+    <None Include="TestData\SDK\Windows.Devices.Custom.CustomDeviceContract.winmd" />
+    <None Include="TestData\SDK\Windows.Devices.DevicesLowLevelContract.winmd" />
+    <None Include="TestData\SDK\Windows.Devices.Printers.Extensions.ExtensionsContract.winmd" />
+    <None Include="TestData\SDK\Windows.Devices.Printers.PrintersContract.winmd" />
+    <None Include="TestData\SDK\Windows.Devices.Scanners.ScannerDeviceContract.winmd" />
+    <None Include="TestData\SDK\Windows.Devices.Sms.LegacySmsApiContract.winmd" />
+    <None Include="TestData\SDK\Windows.Foundation.FoundationContract.winmd" />
+    <None Include="TestData\SDK\Windows.Foundation.UniversalApiContract.winmd" />
+    <None Include="TestData\SDK\Windows.Gaming.Preview.GamesEnumerationContract.winmd" />
+    <None Include="TestData\SDK\Windows.Globalization.GlobalizationJapanesePhoneticAnalyzerContract.winmd" />
+    <None Include="TestData\SDK\Windows.Graphics.Printing3D.Printing3DContract.winmd" />
+    <None Include="TestData\SDK\Windows.Media.Playlists.PlaylistsContract.winmd" />
+    <None Include="TestData\SDK\Windows.Media.Protection.ProtectionRenewalContract.winmd" />
+    <None Include="TestData\SDK\Windows.Networking.Connectivity.WwanContract.winmd" />
+    <None Include="TestData\SDK\Windows.Security.EnterpriseData.EnterpriseDataContract.winmd" />
+    <None Include="TestData\SDK\Windows.Security.ExchangeActiveSyncProvisioning.EasContract.winmd" />
+    <None Include="TestData\SDK\Windows.Services.Maps.GuidanceContract.winmd" />
+    <None Include="TestData\SDK\Windows.Services.Maps.LocalSearchContract.winmd" />
+    <None Include="TestData\SDK\Windows.System.SystemManagementContract.winmd" />
+    <None Include="TestData\SDK\Windows.System.UserProfile.UserProfileContract.winmd" />
+    <None Include="TestData\SDK\Windows.UI.ApplicationSettings.ApplicationsSettingsContract.winmd" />
+    <None Include="TestData\SDK\Windows.UI.Core.AnimationMetrics.AnimationMetricsContract.winmd" />
+    <None Include="TestData\SDK\Windows.UI.Core.CoreWindowDialogsContract.winmd" />
+    <None Include="TestData\SDK\Windows.Web.Http.Diagnostics.HttpDiagnosticsContract.winmd" />
+    <None Include="TestData\StructuresInput\Structures1.base" />
+    <None Include="TestData\StructuresInput\Structures1_Fields.base" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="TestData\SQLite\sqlite.exe" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>REM only do the post-build if we're not on VSO
+IF NOT DEFINED AGENT_ID (
+ifrd /q /s "$(TargetDir)TestData"
+robocopy /MIR "$(SolutionDir)$(ConfigurationName)\TestIDLs\TestData" "$(TargetDir)TestData"
+robocopy $(ProjectDir)TestData "$(TargetDir)TestData" * /s
+robocopy /MIR "$(ProjectDir)TestData\E2E" "$(TargetDir)TestData\E2E"
+robocopy /MIR "$(ProjectDir)TestData\SDK" "$(TargetDir)TestData\SDK"
+)</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\FrontEnd\packages\System.Data.SQLite.Core.1.0.101.0\build\net45\System.Data.SQLite.Core.targets" Condition="Exists('..\FrontEnd\packages\System.Data.SQLite.Core.1.0.101.0\build\net45\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\FrontEnd\packages\System.Data.SQLite.Core.1.0.101.0\build\net45\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\FrontEnd\packages\System.Data.SQLite.Core.1.0.101.0\build\net45\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,4 +1,0 @@
-
-Modern v%.% - http://moderncpp.com
-Modern C++ for the Windows Runtime
-Copyright (c) % Kenny Kerr

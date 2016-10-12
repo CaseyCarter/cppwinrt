@@ -1,0 +1,407 @@
+#include <sdkddkver.h>
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+import "windows.foundation.idl";
+
+namespace Modern.TestBase
+{
+    [contract(Windows.Foundation.UniversalApiContract, 1)]
+    typedef struct StructFoo1
+    {
+        float value;
+    } StructFoo1;
+
+    [contract(Windows.Foundation.UniversalApiContract, 1)]
+    typedef enum EnumFoo1
+    {
+        Value1,
+        Value2
+    } EnumFoo1;
+
+    [uuid(1F81FDB4-B758-4CBF-9E29-FADB9D33D172)]
+    [contract(Windows.Foundation.UniversalApiContract, 1)]
+    interface IFoo1 : IInspectable
+    {
+        HRESULT Do();
+    }
+
+    [uuid(FF81FDB4-B758-4CBF-9E29-FADB9D33D172)]
+    [contract(Windows.Foundation.FoundationContract, 1)]
+    delegate HRESULT DelegateFoo1([in] Windows.Foundation.IAsyncAction *asyncInfo, [in] AsyncStatus asyncStatus);
+
+    [contract(Windows.Foundation.UniversalApiContract, 1)]
+    runtimeclass Foo1
+    {
+        [default] interface IFoo1;
+    }
+}
+
+// Parameters in methods of an interface.
+
+namespace Modern.InterfaceMethodParameterTest1
+{
+    [uuid(2F81FDB4-B758-4CBF-9E29-FADB9D33D172)]
+    [contract(Windows.Foundation.UniversalApiContract, 1)]
+    interface IFoo1 : IInspectable
+    {
+        HRESULT Do(Windows.Foundation.Collections.IVector<int>* value);
+    }
+}
+
+namespace Modern.InterfaceMethodParameterTest2
+{
+    [uuid(3F81FDB4-B758-4CBF-9E29-FADB9D33D172)]
+    [contract(Windows.Foundation.UniversalApiContract, 1)]
+    interface IFoo1 : IInspectable
+    {
+        HRESULT Do(Windows.Foundation.Collections.IVector<HSTRING>* value);
+    }
+}
+
+namespace Modern.InterfaceMethodParameterTest3
+{
+    [uuid(4F81FDB4-B758-4CBF-9E29-FADB9D33D172)]
+    [contract(Windows.Foundation.UniversalApiContract, 1)]
+    interface IFoo1 : IInspectable
+    {
+        HRESULT Do(Windows.Foundation.Collections.IVector<Modern.TestBase.EnumFoo1>* value);
+    }
+}
+
+namespace Modern.InterfaceMethodParameterTest4
+{
+    [uuid(5F81FDB4-B758-4CBF-9E29-FADB9D33D172)]
+    [contract(Windows.Foundation.UniversalApiContract, 1)]
+    interface IFoo1 : IInspectable
+    {
+        HRESULT Do(Windows.Foundation.Collections.IVector<Modern.TestBase.StructFoo1>* value);
+    }
+}
+
+namespace Modern.InterfaceMethodParameterTest5
+{
+    [uuid(6F81FDB4-B758-4CBF-9E29-FADB9D33D172)]
+    [contract(Windows.Foundation.UniversalApiContract, 1)]
+    interface IFoo1 : IInspectable
+    {
+        HRESULT Do(Windows.Foundation.Collections.IVector<Modern.TestBase.IFoo1*>* value);
+    }
+}
+
+namespace Modern.InterfaceMethodParameterTest6
+{
+    [uuid(7F81FDB4-B758-4CBF-9E29-FADB9D33D172)]
+    [contract(Windows.Foundation.UniversalApiContract, 1)]
+    interface IFoo1 : IInspectable
+    {
+        HRESULT Do(Windows.Foundation.Collections.IVector<Modern.TestBase.DelegateFoo1*>* value);
+    }
+}
+
+namespace Modern.InterfaceMethodParameterTest7
+{
+    // In the runtimeclass case, the TypeCategory is interface
+
+    [uuid(8F81FDB4-B758-4CBF-9E29-FADB9D33D172)]
+    [contract(Windows.Foundation.UniversalApiContract, 1)]
+    interface IFoo1 : IInspectable
+    {
+        HRESULT Do(Windows.Foundation.Collections.IVector<Modern.TestBase.Foo1*>* value);
+    }
+}
+
+// Required interfaces
+
+namespace Modern.RequiredInterfaceTest1
+{
+    [uuid(188C9A22-A562-45BF-8145-A8B8D98A8F88)]
+    [contract(Windows.Foundation.UniversalApiContract, 1)]
+    interface IFoo1 : IInspectable requires Windows.Foundation.Collections.IVector<int>
+    {
+        HRESULT Do();
+    }
+}
+
+namespace Modern.RequiredInterfaceTest2
+{
+    [uuid(288C9A22-A562-45BF-8145-A8B8D98A8F88)]
+    [contract(Windows.Foundation.UniversalApiContract, 1)]
+    interface IFoo1 : IInspectable requires Windows.Foundation.Collections.IVector<HSTRING>
+    {
+        HRESULT Do();
+    }
+}
+
+namespace Modern.RequiredInterfaceTest3
+{
+    [uuid(388C9A22-A562-45BF-8145-A8B8D98A8F88)]
+    [contract(Windows.Foundation.UniversalApiContract, 1)]
+    interface IFoo1 : IInspectable requires Windows.Foundation.Collections.IVector<Modern.TestBase.EnumFoo1>
+    {
+        HRESULT Do();
+    }
+}
+
+namespace Modern.RequiredInterfaceTest4
+{
+    [uuid(488C9A22-A562-45BF-8145-A8B8D98A8F88)]
+    [contract(Windows.Foundation.UniversalApiContract, 1)]
+    interface IFoo1 : IInspectable requires Windows.Foundation.Collections.IVector<Modern.TestBase.StructFoo1>
+    {
+        HRESULT Do();
+    }
+}
+
+namespace Modern.RequiredInterfaceTest5
+{
+    [uuid(588C9A22-A562-45BF-8145-A8B8D98A8F88)]
+    [contract(Windows.Foundation.UniversalApiContract, 1)]
+    interface IFoo1 : IInspectable requires Windows.Foundation.Collections.IVector<Modern.TestBase.IFoo1*>
+    {
+        HRESULT Do();
+    }
+}
+
+namespace Modern.RequiredInterfaceTest6
+{
+    [uuid(688C9A22-A562-45BF-8145-A8B8D98A8F88)]
+    [contract(Windows.Foundation.UniversalApiContract, 1)]
+    interface IFoo1 : IInspectable requires Windows.Foundation.Collections.IVector<Modern.TestBase.DelegateFoo1*>
+    {
+        HRESULT Do();
+    }
+}
+
+namespace Modern.RequiredInterfaceTest7
+{
+    // In the runtimeclass case, the TypeCategory is interface
+
+    [uuid(788C9A22-A562-45BF-8145-A8B8D98A8F88)]
+    [contract(Windows.Foundation.UniversalApiContract, 1)]
+    interface IFoo1 : IInspectable requires Windows.Foundation.Collections.IVector<Modern.TestBase.Foo1*>
+    {
+        HRESULT Do();
+    }
+}
+
+// In structs, only IReference<T> is supported. T can only be value types. No runtimeclass, interface, delegate and such. Strings are not supported.
+
+namespace Modern.StructTest1
+{
+    [contract(Windows.Foundation.UniversalApiContract, 1)]
+    struct Foo1
+    {
+        Windows.Foundation.IReference<int> *x;
+    };
+}
+
+namespace Modern.StructTest3
+{
+    [contract(Windows.Foundation.UniversalApiContract, 1)]
+    struct Foo1
+    {
+        Windows.Foundation.IReference<Modern.TestBase.EnumFoo1> *x;
+    };
+}
+
+namespace Modern.StructTest4
+{
+    [contract(Windows.Foundation.UniversalApiContract, 1)]
+    struct Foo1
+    {
+        Windows.Foundation.IReference<Modern.TestBase.StructFoo1> *x;
+    };
+}
+
+// Runtimeclasses default interface
+
+namespace Modern.DefaultRuntimeClassInterfaceTest1
+{
+    [contract(Windows.Foundation.UniversalApiContract, 1)]
+    runtimeclass Foo1
+    {
+        [default] interface Windows.Foundation.Collections.IVector<int>;
+    }
+}
+
+namespace Modern.DefaultRuntimeClassInterfaceTest2
+{
+    [contract(Windows.Foundation.UniversalApiContract, 1)]
+    runtimeclass Foo1
+    {
+        [default] interface Windows.Foundation.Collections.IVector<HSTRING>;
+    }
+}
+
+namespace Modern.DefaultRuntimeClassInterfaceTest3
+{
+    [contract(Windows.Foundation.UniversalApiContract, 1)]
+    runtimeclass Foo1
+    {
+        [default] interface Windows.Foundation.Collections.IVector<Modern.TestBase.EnumFoo1>;
+    }
+}
+
+namespace Modern.DefaultRuntimeClassInterfaceTest4
+{
+    [contract(Windows.Foundation.UniversalApiContract, 1)]
+    runtimeclass Foo1
+    {
+        [default] interface Windows.Foundation.Collections.IVector<Modern.TestBase.StructFoo1>;
+    }	
+}
+
+namespace Modern.DefaultRuntimeClassInterfaceTest5
+{
+    [contract(Windows.Foundation.UniversalApiContract, 1)]
+    runtimeclass Foo1
+    {
+        [default] interface Windows.Foundation.Collections.IVector<Modern.TestBase.IFoo1*>;
+    }
+}
+
+namespace Modern.DefaultRuntimeClassInterfaceTest6
+{
+    [contract(Windows.Foundation.UniversalApiContract, 1)]
+    runtimeclass Foo1
+    {
+        [default] interface Windows.Foundation.Collections.IVector<Modern.TestBase.DelegateFoo1*>;
+    }
+}
+
+namespace Modern.DefaultRuntimeClassInterfaceTest7
+{
+    // In the runtimeclass case, the TypeCategory is interface
+
+    [contract(Windows.Foundation.UniversalApiContract, 1)]
+    runtimeclass Foo1
+    {
+        [default] interface Windows.Foundation.Collections.IVector<Modern.TestBase.Foo1*>;
+    }	
+}
+
+// Runtimeclass non default interface
+
+namespace Modern.NonDefaultRuntimeClassInterfaceTest1
+{
+    [contract(Windows.Foundation.UniversalApiContract, 1)]
+    runtimeclass Foo1
+    {
+		[default] interface Modern.TestBase.IFoo1;
+        interface Windows.Foundation.Collections.IVector<int>;
+    }
+}
+
+namespace Modern.NonDefaultRuntimeClassInterfaceTest2
+{
+    [contract(Windows.Foundation.UniversalApiContract, 1)]
+    runtimeclass Foo1
+    {
+	     [default] interface Modern.TestBase.IFoo1;
+         interface Windows.Foundation.Collections.IVector<HSTRING>;
+    }
+}
+
+namespace Modern.NonDefaultRuntimeClassInterfaceTest3
+{
+    [contract(Windows.Foundation.UniversalApiContract, 1)]
+    runtimeclass Foo1
+    {
+	    [default] interface Modern.TestBase.IFoo1;
+         interface Windows.Foundation.Collections.IVector<Modern.TestBase.EnumFoo1>;
+    }
+}
+
+namespace Modern.NonDefaultRuntimeClassInterfaceTest4
+{
+    [contract(Windows.Foundation.UniversalApiContract, 1)]
+    runtimeclass Foo1
+    {
+	     [default] interface Modern.TestBase.IFoo1;
+         interface Windows.Foundation.Collections.IVector<Modern.TestBase.StructFoo1>;
+    }	
+}
+
+namespace Modern.NonDefaultRuntimeClassInterfaceTest5
+{
+    [contract(Windows.Foundation.UniversalApiContract, 1)]
+    runtimeclass Foo1
+    {
+	     [default] interface Modern.TestBase.IFoo1;
+         interface Windows.Foundation.Collections.IVector<Modern.TestBase.IFoo1*>;
+    }
+}
+
+namespace Modern.NonDefaultRuntimeClassInterfaceTest6
+{
+    [contract(Windows.Foundation.UniversalApiContract, 1)]
+    runtimeclass Foo1
+    {
+	     [default] interface Modern.TestBase.IFoo1;
+         interface Windows.Foundation.Collections.IVector<Modern.TestBase.DelegateFoo1*>;
+    }
+}
+
+namespace Modern.NonDefaultRuntimeClassInterfaceTest7
+{
+    // In the runtimeclass case, the TypeCategory is interface
+
+    [contract(Windows.Foundation.UniversalApiContract, 1)]
+    runtimeclass Foo1
+    {
+	     [default] interface Modern.TestBase.IFoo1;
+         interface Windows.Foundation.Collections.IVector<Modern.TestBase.Foo1*>;
+    }	
+}
+
+// Handle duplicates within a namespace. Only one entry in database
+
+namespace Modern.HandleDuplicates1
+{
+    [uuid(19C02F7D-3CC7-40EC-B6AE-9E61A53608E0)]
+    [contract(Windows.Foundation.UniversalApiContract, 1)]
+    interface IFoo1 : IInspectable
+    {
+        HRESULT Do(Windows.Foundation.Collections.IVector<Modern.TestBase.EnumFoo1>* value);
+    }
+
+    [uuid(29C02F7D-3CC7-40EC-B6AE-9E61A53608E0)]
+    [contract(Windows.Foundation.UniversalApiContract, 1)]
+    interface IFoo2 : IInspectable
+    {
+        HRESULT Do(Windows.Foundation.Collections.IVector<Modern.TestBase.EnumFoo1>* value);
+    }
+
+    [contract(Windows.Foundation.UniversalApiContract, 1)]
+    runtimeclass Foo1
+    {
+	     [default] interface Modern.TestBase.IFoo1;
+         interface Windows.Foundation.Collections.IVector<Modern.TestBase.Foo1*>;
+    }	
+}
+
+namespace Modern.HandleDuplicates2
+{
+    [uuid(39C02F7D-3CC7-40EC-B6AE-9E61A53608E0)]
+    [contract(Windows.Foundation.UniversalApiContract, 1)]
+    interface IFoo1 : IInspectable
+    {
+        HRESULT Do(Windows.Foundation.Collections.IVector<Modern.TestBase.EnumFoo1>* value);
+    }
+
+    [uuid(49C02F7D-3CC7-40EC-B6AE-9E61A53608E0)]
+    [contract(Windows.Foundation.UniversalApiContract, 1)]
+    interface IFoo2 : IInspectable
+    {
+        HRESULT Do(Windows.Foundation.Collections.IVector<Modern.TestBase.EnumFoo1>* value);
+    }
+
+    [contract(Windows.Foundation.UniversalApiContract, 1)]
+    runtimeclass Foo1
+    {
+	     [default] interface Modern.TestBase.IFoo1;
+         interface Windows.Foundation.Collections.IVector<Modern.TestBase.Foo1*>;
+    }	
+}

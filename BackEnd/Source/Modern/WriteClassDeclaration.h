@@ -1,0 +1,5 @@
+
+struct WINRT_EBO % :
+    %%%
+{
+%%%};

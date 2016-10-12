@@ -1,0 +1,396 @@
+// Copyright (c) Microsoft Corporation.
+// All rights reserved.
+
+//
+//  Metadata format string variations without a range() attribute (adding a "range" attribute
+//  changes the format string generation logic for all types in an IDL file MIDL which affects our
+//  ability to test the per-interface generation logic - we need to separate the "range" based
+//  tests from the "no range" based tests.
+#include <sdkddkver.h>
+
+import "unknwn.idl";
+import "Windows.Foundation.idl";
+//import "UriRuntimeClass.idl";
+import "testmetadatatypevariations.idl";
+//import "testmetadataformatstringnorange.idl";
+
+namespace NDRFormatStringGenerationWithRange {
+
+
+    [version(1)]
+    typedef enum TestEnumRange
+    {
+        MyEnumValue = 1,
+        YourEnumValue = 2
+    } TestEnumRange;
+
+    [version(1), flags]
+    typedef enum TestFlagsEnumRange
+    {
+        MyEnumValue = 1,
+        YourEnumValue = 2,
+        YourEnumValue4 = 4,
+    } TestFlagsEnumRange;
+
+    [version(1)]
+    typedef struct TestStructNoReference
+    {
+        INT16 simpleValue;
+        DOUBLE numericValue;
+        HSTRING stringValue;
+        TestFlagsEnumRange enumValue;
+    } TestStructNoReference;
+
+    [version(1)]
+    typedef struct TestStructNoPadding
+    {
+        INT16 simpleValue1;
+        INT16 simpleValue2;
+        wchar_t charValue1;
+        wchar_t charValue2;
+        BYTE byteValue1;
+        BYTE byteValue2;
+        BYTE byteValue3;
+        BYTE byteValue4;
+        int intValue;
+        float floatValue;
+        DOUBLE numericValue;
+        HSTRING stringValue;
+        GUID guidValue1;
+    } TestStructNoPadding;
+
+    [version(1)]
+    typedef struct TestStructReference
+    {
+        Windows.Foundation.IReference<INT16> *genericValue;
+        INT16 simpleValue;
+        DOUBLE numericValue;
+        HSTRING stringValue;
+    } TestStructReference;
+
+    [version(1)]
+    [uuid(653937a4-f4dc-4dc6-a16a-7f2975ac26dd)]
+    delegate HRESULT TestDelegate([in]EventRegistrationToken t);
+
+    [version(1)]
+    typedef struct TestSimpleStruct
+    {
+        INT16 simpleValue1;
+        INT16 simpleValue2;
+    } TestSimpleStruct;
+
+    //  Note: No pointer types in this so it is a sipmle struct.
+    [version(1)]
+    typedef struct TestStructPaddingVariations
+    {
+        BYTE byteValue;
+        INT16 simpleValue;
+        DOUBLE numericValue;
+        BYTE byteValue2;
+        DOUBLE floatValue2;
+        BYTE byteValue3;
+        INT16 shortValue2;
+        DOUBLE floatValue3;
+        GUID guidValue1;
+    } TestStructPaddingVariations;
+
+    [version(1)]
+    typedef struct ComboStruct1
+    {
+        TestSimpleStruct simpleStruct;
+        INT16 simpleValue1;
+        INT16 simpleValue2;
+   } ComboStruct1;
+
+    [version(1)]
+    typedef struct ComboStruct2
+    {
+        TestStructPaddingVariations paddedStruct;
+        TestSimpleStruct simpleStruct;
+    } ComboStruct2;
+
+    [version(1)]
+    typedef struct ComboStruct3
+    {
+        TestStructNoPadding noPaddedStruct;
+        TestSimpleStruct simpleStruct;
+    } ComboStruct3;
+
+    [version(1)]
+    typedef struct ComboStruct4
+    {
+        TestStructNoPadding noPaddedStruct;
+    } ComboStruct4;
+
+    [version(1)]
+    typedef struct ComboStruct5
+    {
+        ComboStruct1 struct1;
+        ComboStruct2 struct2;
+        ComboStruct3 struct3;
+        ComboStruct4 struct4;
+    } ComboStruct5;
+
+    [uuid(073533b2-50e2-4c48-8332-d750c66ecef7)]
+    [version(1)]
+    interface IInterfaceWithFundamentalInTypes : IInspectable
+    {
+        //  Fundamental types as [in] parameters
+        HRESULT MethodBoolean([in, range(0,1)] boolean param1);
+        HRESULT MethodByte([in, range(0,127)]BYTE param1);
+        HRESULT MethodWchar([in]wchar_t param1);
+        HRESULT MethodSignedShort([in, range(0,65535)] INT16 param1);
+        HRESULT MethodUnsignedShort([in, range(0, 65534)] UINT16 param1);
+        HRESULT MethodSignedInt([in, range(0, 100)] INT32 param1);
+        HRESULT MethodUnsignedInt([in, range(50,55)] UINT32 param1);
+        HRESULT MethodInt64([in] INT64 param1);
+        HRESULT MethodUInt64([in] UINT64 param1);
+        HRESULT MethodFloat([in] float param1);
+        HRESULT MethodDouble([in] double param1);
+        HRESULT MethodString([in] HSTRING param1);
+        HRESULT MethodGuid([in] GUID param1);
+    }
+
+    [uuid(ad3c490b-2244-4cbf-9d6b-74bd245c9d79)]
+    [version(1)]
+    interface IInterfaceWithEnumParameters : IInspectable
+    {
+        //  Enum types as [in] and [out] parameters
+        HRESULT MethodInEnum([in, range(0,5)] TestEnumRange enumParameter);
+        HRESULT MethodInFlagsEnum([in, range(0, 65535)] TestFlagsEnumRange enumParameter);
+        HRESULT MethodOutEnum([out] TestEnumRange *enumParameter);
+        HRESULT MethodOutFlagsEnum([out] TestFlagsEnumRange *enumParameter);
+        HRESULT MethodOutRetValEnum([out, retval] TestEnumRange *enumParameter);
+        HRESULT MethodOutRetValFlagsEnum([out, retval] TestFlagsEnumRange *enumParameter);
+    }
+
+
+    [uuid(0ca1cb56-3e7d-4696-8070-d394095cf8a4)]
+    [version(1)]
+    interface IEchoStructInterface : IInspectable
+    {
+        //  Struct types as [in] and [out] parameters
+        HRESULT MethodInOutSimpleStruct([in] TestSimpleStruct structParameter, [out] TestSimpleStruct *outstructParameter);
+        HRESULT MethodInOutStructNoReference([in] TestStructNoReference structParameter, [out]TestStructNoReference *outstructParameter);
+        HRESULT MethodInOutNoPaddingStruct([in] TestStructNoPadding structParameter, [out]TestStructNoPadding *outstructParameter);
+        HRESULT MethodInOutStructReference([in] TestStructReference structParameter, [out]TestStructReference *outstructParameter);
+        HRESULT MethodInOutStructWithPadding([in] TestStructPaddingVariations structParameter, [out]TestStructPaddingVariations *outstructParameter);
+    }
+
+
+    [version(1)]
+    [uuid(04904703-cf33-46c5-b801-317d4607a356)]
+    interface IArrayPatterns : IInspectable
+    {
+        // Array patterns
+        HRESULT MethodPassArray([in, range(1,20)] UINT32 cItems,
+            [in, size_is(cItems)] UINT32 *items,
+            [in] UINT32 cElements);
+
+        HRESULT MethodFillArray([in, range(45, 92)] UINT32 cItems,
+            [out, size_is(cItems)] boolean *items);
+
+        HRESULT MethodReceiveArray([out] UINT32 *pcSize,
+            [out, size_is(,*pcSize)] double **items);
+
+        HRESULT MethodFillArrayWithLength([in, range(0,65535)] UINT32 cItems,
+            [out, size_is(cItems), length_is(*pcLength)] float *items,
+            [out] UINT32 *pcLength);
+
+        HRESULT MethodFillArrayWithByteLength([in, range(-5, 20)] UINT32 cItems,
+            [out, size_is(cItems), length_is(*pcLength)] float *items,
+            [out] BYTE *pcLength);
+
+        HRESULT MethodReceiveArrayWithLength(
+            [out] UINT32 *pcLength,
+            [out] UINT32 *pcItems,
+            [out, size_is(,*pcItems), length_is(,*pcLength)] INT32 **items
+            );
+    }
+
+    [version(NTDDI_WINTHRESHOLD)]
+    [uuid(d7b46ca8-ac1c-4b76-ba5f-196c65e59525)]
+    interface IArrayPatternsPassArray : IInspectable
+    {
+        HRESULT MethodPassArrayBoolean([in, range(1,7)] UINT32 cItems, [in, size_is(cItems)] boolean *param1);
+        HRESULT MethodPassArrayByte([in, range(4,7)] UINT32 cItems, [in, size_is(cItems)]BYTE *param1);
+        HRESULT MethodPassArrayWchar([in, range(7,23)] UINT32 cItems, [in, size_is(cItems)]wchar_t *param1);
+        HRESULT MethodPassArraySignedShort([in, range(1,7)] UINT32 cItems, [in, size_is(cItems)] INT16 *param1);
+        HRESULT MethodPassArrayUnsignedShort([in, range(1,7)] UINT32 cItems, [in, size_is(cItems)] UINT16 *param1);
+        HRESULT MethodPassArraySignedInt([in, range(1,7)] UINT32 cItems, [in, size_is(cItems)] INT32 *param1);
+        HRESULT MethodPassArrayUnsignedInt([in, range(1,7)] UINT32 cItems, [in, size_is(cItems)] UINT32 *param1);
+        HRESULT MethodPassArrayInt64([in, range(1,7)] UINT32 cItems, [in, size_is(cItems)] INT64 *param1);
+        HRESULT MethodPassArrayUInt64([in, range(1,7)] UINT32 cItems, [in, size_is(cItems)] UINT64 *param1);
+        HRESULT MethodPassArrayFloat([in, range(1,7)] UINT32 cItems, [in, size_is(cItems)] float *param1);
+        HRESULT MethodPassArrayDouble([in, range(1,7)] UINT32 cItems, [in, size_is(cItems)] double *param1);
+        HRESULT MethodPassArrayString([in, range(1,7)] UINT32 cItems, [in, size_is(cItems)] HSTRING *param1);
+        HRESULT MethodPassArrayString2([in, range(1,7)] UINT32 cItems, [in, size_is(cItems)] HSTRING *param1);  // Same as previous so should re-use format string data.
+        HRESULT MethodPassArrayGuid([in, range(1,7)] UINT32 cItems, [in, size_is(cItems)] GUID *param1);
+
+        HRESULT MethodPassArrayInEnum([in, range(1,13)] UINT32 cItems, [in, size_is(cItems)] TestEnumRange *enumParameter);
+        HRESULT MethodPassArrayInFlagsEnum([in, range(5,35)] UINT32 cItems, [in, size_is(cItems)] TestFlagsEnumRange *enumParameter);
+        HRESULT MethodPassArrayInSimpleStruct([in, range(15,18)] UINT32 cItems, [in, size_is(cItems)] TestSimpleStruct *structParameter);
+        HRESULT MethodPassArrayInStructReference([in, range(1,10)] UINT32 cItems, [in, size_is(cItems)] TestStructReference *structParameter);
+
+        HRESULT MethodPassArrayInInterface([in, range(5,25)] UINT32 cItems, [in, size_is(cItems)] IEchoStructInterface **interfaceParameter);
+        HRESULT MethodPassArrayInDelegate([in, range(7,9)] UINT32 cItems, [in, size_is(cItems)] TestDelegate **delegateParameter);
+        HRESULT MethodPassArrayInRuntimeClass([in, range(55,155)] UINT32 cItems, [in, size_is(cItems)] Windows.Foundation.Uri **uriParameter);
+
+        HRESULT MethodPassArrayPInterfaceBaseTypeBoolean([in, range(95,100)] UINT32 cItems, [in, size_is(cItems)] IVector<boolean> **param1);
+
+        HRESULT MethodPassArrayWithLength([in, range(5,155)] UINT32 cLength,
+                  [in, range(1,20)] UINT32 cItems,
+                  [in, size_is(cItems), length_is(cLength)] UINT32 *items,
+                  [in] UINT32 cElements);
+        HRESULT MethodPassArrayWithShortLength([in, range(5,150)] SHORT cLength,
+                  [in, range(7,59)] UINT32 cItems,
+                  [in, size_is(cItems), length_is(cLength)] boolean *items,
+                  [in] UINT32 cElements);
+        HRESULT MethodPassArrayWithUShortLength([in] USHORT cLength,
+                  [in, range(5,95)] UINT32 cItems,
+                  [in, size_is(cItems), length_is(cLength)] UINT32 *items,
+                  [in] UINT32 cElements);
+        HRESULT MethodPassArrayWithIntLength([in] INT32 cLength,
+                  [in] UINT32 cItems,
+                  [in, size_is(cItems), length_is(cLength)] UINT32 *items,
+                  [in] UINT32 cElements);
+        HRESULT MethodPassArrayWithByteLength([in] BYTE cLength,
+                  [in] UINT32 cItems,
+                  [in, size_is(cItems), length_is(cLength)] UINT32 *items,
+                  [in] UINT32 cElements);
+
+        HRESULT MethodPassArrayWithLengthAfter([in, range(17,19)] UINT32 cItems,
+                  [in, size_is(cItems), length_is(cLength)] UINT32 *items,
+                  [in] UINT32 cElements, 
+                  [in] UINT32 cLength
+                  );
+        HRESULT MethodPassArrayOfPInterfaceWithLengthAfter([in] UINT32 cItems,
+                  [in, size_is(cItems), length_is(cLength)] IVector<HSTRING> **items,
+                  [in] UINT32 cElements, 
+                  [in] UINT32 cLength
+                  );
+        HRESULT MethodPassArrayGuidWithLength([in] short length, [in] UINT32 cItems, [in, size_is(cItems), length_is(length)] GUID *param1);
+
+    }
+
+    [version(NTDDI_WINTHRESHOLD)]
+    [uuid(8c5d7f30-c257-4ef3-87a3-c2c235f49e8c)]
+    interface IArrayPatternsFillArray : IInspectable
+    {
+        HRESULT MethodFillArrayBoolean([in, range(5,155)] UINT32 cItems, [out, size_is(cItems)] boolean *param1);
+        HRESULT MethodFillArrayByte([in, range(1,100)] UINT32 cItems, [out, size_is(cItems)]BYTE *param1);
+        HRESULT MethodFillArrayWchar([in] UINT32 cItems, [out, size_is(cItems)]wchar_t *param1);
+        HRESULT MethodFillArraySignedShort([in] UINT32 cItems, [out, size_is(cItems)] INT16 *param1);
+        HRESULT MethodFillArrayUnsignedShort([in] UINT32 cItems, [out, size_is(cItems)] UINT16 *param1);
+        HRESULT MethodFillArraySignedInt([in] UINT32 cItems, [out, size_is(cItems)] INT32 *param1);
+        HRESULT MethodFillArrayUnsignedInt([in] UINT32 cItems, [out, size_is(cItems)] UINT32 *param1);
+        HRESULT MethodFillArrayInt64([in] UINT32 cItems, [out, size_is(cItems)] INT64 *param1);
+        HRESULT MethodFillArrayUInt64([in] UINT32 cItems, [out, size_is(cItems)] UINT64 *param1);
+        HRESULT MethodFillArrayFloat([in] UINT32 cItems, [out, size_is(cItems)] float *param1);
+        HRESULT MethodFillArrayDouble([in] UINT32 cItems, [out, size_is(cItems)] double *param1);
+        HRESULT MethodFillArrayString([in, range(1,15)] UINT32 cItems, [out, size_is(cItems)] HSTRING *param1);
+        HRESULT MethodFillArrayString2([in] UINT32 cItems, [out, size_is(cItems)] HSTRING *param1);
+        HRESULT MethodFillArrayGuid([in] UINT32 cItems, [out, size_is(cItems)] GUID *param1);
+
+        HRESULT MethodFillArrayInEnum([in] UINT32 cItems, [out, size_is(cItems)] TestEnumRange *enumParameter);
+        HRESULT MethodFillArrayInFlagsEnum([in] UINT32 cItems, [out, size_is(cItems)] TestFlagsEnumRange *enumParameter);
+        HRESULT MethodFillArrayInSimpleStruct([in] UINT32 cItems, [out, size_is(cItems)] TestSimpleStruct *structParameter);
+        HRESULT MethodFillArrayInStructReference([in] UINT32 cItems, [out, size_is(cItems)] TestStructReference *structParameter);
+
+        HRESULT MethodFillArrayInInterface([in] UINT32 cItems, [out, size_is(cItems)] IEchoStructInterface **interfaceParameter);
+        HRESULT MethodFillArrayInDelegate([in] UINT32 cItems, [out, size_is(cItems)] TestDelegate **delegateParameter);
+        HRESULT MethodFillArrayInRuntimeClass([in] UINT32 cItems, [out, size_is(cItems)] Windows.Foundation.Uri **uriParameter);
+
+        HRESULT MethodFillArrayPInterfaceBaseTypeBoolean([in] UINT32 cItems, [in, size_is(cItems)] IVector<boolean> **param1);
+
+        HRESULT MethodFillArrayWithLength([in] UINT32 cLength,
+            [in] UINT32 cItems,
+            [out, size_is(cItems), length_is(cLength)] UINT32 *items,
+            [in] UINT32 cElements);
+        HRESULT MethodFillArrayWithShortLength([in] SHORT cLength,
+            [in] UINT32 cItems,
+            [out, size_is(cItems), length_is(cLength)] boolean *items,
+            [in] UINT32 cElements);
+        HRESULT MethodFillArrayWithUShortLength([in] USHORT cLength,
+            [in] UINT32 cItems,
+            [out, size_is(cItems), length_is(cLength)] UINT32 *items,
+            [in] UINT32 cElements);
+        HRESULT MethodFillArrayWithIntLength([in] INT32 cLength,
+            [in] UINT32 cItems,
+            [out, size_is(cItems), length_is(cLength)] UINT32 *items,
+            [in] UINT32 cElements);
+        HRESULT MethodFillArrayWithByteLength([in] BYTE cLength,
+            [in] UINT32 cItems,
+            [out, size_is(cItems), length_is(cLength)] UINT32 *items,
+            [in] UINT32 cElements);
+
+        HRESULT MethodFillArrayWithOutLength([out] UINT32 *cLength,
+            [in] UINT32 cItems,
+            [out, size_is(cItems), length_is(*cLength)] UINT32 *items,
+            [in] UINT32 cElements);
+
+        HRESULT MethodFillArrayWithLengthAfter([in] UINT32 cItems,
+            [out, size_is(cItems), length_is(cLength)] UINT32 *items,
+            [in] UINT32 cElements, 
+            [in] UINT32 cLength
+            );
+
+        HRESULT MethodFillArrayWithOutLengthAfter([in] UINT32 cItems,
+            [out, size_is(cItems), length_is(*cLength)] UINT32 *items,
+            [in] UINT32 cElements, 
+            [out] UINT32 *cLength
+            );
+        HRESULT MethodFillArrayOfPInterfaceWithLengthAfter([in] UINT32 cItems,
+            [out, size_is(cItems), length_is(cLength)] IVector<HSTRING> **items,
+            [in] UINT32 cElements, 
+            [in] UINT32 cLength
+            );
+        HRESULT MethodFillArrayGuidWithLength([in] short length, [in] UINT32 cItems, [in, size_is(cItems), length_is(length)] GUID *param1);
+
+    }
+
+    [version(1)]
+    [uuid(2dd65642-0bcb-45f3-a584-ae9020b28560)]
+    interface IArrayFromI2C : IInspectable
+    {
+        [propget] HRESULT DeviceId([out, retval] HSTRING *value);
+
+        HRESULT Write(
+            [in] UINT32 byteCount,
+            [in, size_is(byteCount)] const BYTE *buffer
+            );
+
+        HRESULT WritePartial(
+            [in] UINT32 byteCount,
+            [in, size_is(byteCount)] const BYTE *buffer,
+            [out, retval] DWORD *result
+            );
+
+        HRESULT Read(
+            [in, range(0, 65535)] UINT32 desiredByteCount,
+            [out, size_is(desiredByteCount)] BYTE *buffer
+            );
+
+        HRESULT ReadPartial(
+            [in, range(0, 2147483647 )] UINT32 desiredByteCount,
+            [out, size_is(desiredByteCount)] BYTE *buffer,
+            [out, retval] DWORD *result
+            );
+
+        HRESULT WriteRead(
+            [in] UINT32 writeBufferLength,
+            [in, size_is(writeBufferLength)] const BYTE *writeBuffer,
+            [in, range(0, 2147483647)] UINT32 desiredByteCount,
+            [out, size_is(desiredByteCount)] BYTE *readBuffer
+            );
+
+        HRESULT WriteReadPartial(
+            [in] UINT32 writeBufferLength,
+            [in, size_is(writeBufferLength)] const BYTE *writeBuffer,
+            [in, range(0, 2147483647)] UINT32 desiredByteCount,
+            [out, size_is(desiredByteCount)] BYTE *readBuffer,
+            [out, retval] DWORD *result
+            );
+    }
+
+}

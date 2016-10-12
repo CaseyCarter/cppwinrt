@@ -1,4 +1,0 @@
-) const
-{
-	% % = nullptr;
-	check(shim()->%(

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="array.cpp" />
+    <ClCompile Include="com_ptr.cpp" />
+    <ClCompile Include="delegate.cpp" />
+    <ClCompile Include="hresult_error.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="meta.cpp" />
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="hstring.cpp" />
+    <ClCompile Include="weak.cpp" />
+    <ClCompile Include="handle.cpp" />
+    <ClCompile Include="produce_async.cpp" />
+    <ClCompile Include="produce.cpp" />
+    <ClCompile Include="produce_vector.cpp" />
+    <ClCompile Include="produce_map.cpp" />
+    <ClCompile Include="struct.cpp" />
+    <ClCompile Include="Release.cpp" />
+    <ClCompile Include="event_consume.cpp" />
+    <ClCompile Include="IInspectable_GetIids.cpp" />
+    <ClCompile Include="IInspectable_GetRuntimeClassName.cpp" />
+    <ClCompile Include="IInspectable_GetTrustLevel.cpp" />
+    <ClCompile Include="IUnknown_QueryInterface.cpp" />
+    <ClCompile Include="delegate_lambda.cpp" />
+    <ClCompile Include="agility.cpp" />
+    <ClCompile Include="agile_ref.cpp" />
+    <ClCompile Include="include_required.cpp" />
+    <ClCompile Include="Collections.cpp" />
+    <ClCompile Include="implements_references.cpp" />
+    <ClCompile Include="make_self.cpp" />
+    <ClCompile Include="range_for.cpp" />
+    <ClCompile Include="ppl.cpp" />
+    <ClCompile Include="internal_vector.cpp" />
+    <ClCompile Include="internal_map.cpp" />
+    <ClCompile Include="async.cpp" />
+    <ClCompile Include="empty_collection.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="event.h" />
+    <ClInclude Include="produce_IPropertyValue.h" />
+    <ClInclude Include="vector.h" />
+    <ClInclude Include="map.h" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,84 @@
+import "oaidl.idl";
+import "ocidl.idl";
+
+import "windows.foundation.idl";
+
+#include <sdkddkver.h>
+
+// Front end supports types that use Platform version attributes as well as contract version attributes.
+// The below types are used to test the main scenarios where it matters (not all where it can appear).
+// All of them only use Platform version attributes
+// 1. Composable runtime class
+// 2. Default Activatable runtime class
+// 3. Activatable with factory runtime class
+// 4. Runtimeclass with a static factory
+
+namespace Modern.Test
+{
+
+[uuid(B33188A4-06E2-4205-B077-ABFE30D97289)]
+[version(NTDDI_WINBLUE)]
+interface IFooWithPlatformVersion : IInspectable
+{
+    HRESULT DoTest();
+}
+
+runtimeclass FooComposableWithPlatformVersion;
+
+[uuid(F60835B3-B0B0-4EE0-818A-3137AA9F848A)]
+[version(NTDDI_WINBLUE)]
+[exclusiveto(FooComposableWithPlatformVersion)]
+interface IFooComposableInterface : IInspectable
+{    
+}
+
+[uuid(B8B6901F-6397-4D73-B790-669B7289E5AC)]
+[version(NTDDI_WINBLUE)]
+interface IStatic : IInspectable
+{
+}
+
+runtimeclass FooFactoryActivatableWithPlatformVersion;
+
+[uuid(0548F7B7-BCC2-4F4C-8BBE-738435C891ED)]
+[version(NTDDI_WINBLUE)]
+interface IFactory : IInspectable
+{
+    HRESULT Create([in] HSTRING name, [out, retval] FooFactoryActivatableWithPlatformVersion ** instance);
+}
+
+[marshaling_behavior(agile)]
+[threading(both)]
+[composable(IFooComposableInterface, protected, NTDDI_WINBLUE)]
+[version(NTDDI_WINBLUE)]
+runtimeclass FooComposableWithPlatformVersion
+{
+    [default] interface IFooWithPlatformVersion;
+}
+
+[marshaling_behavior(agile)]
+[threading(both)]
+[activatable(NTDDI_WINBLUE)]
+[version(NTDDI_WINBLUE)]
+runtimeclass FooDefaultActivatableWithPlatformVersion
+{
+    [default] interface IFooWithPlatformVersion;
+}
+
+[marshaling_behavior(agile)]
+[threading(both)]
+[activatable(IFactory, NTDDI_WINBLUE)]
+[version(NTDDI_WINBLUE)]
+runtimeclass FooFactoryActivatableWithPlatformVersion
+{
+    [default] interface IFooWithPlatformVersion;
+}
+
+[version(NTDDI_WINBLUE)]
+[static(IStatic, NTDDI_WINBLUE)]
+runtimeclass FooStaticWithPlatformVersion
+{
+    [default] interface IFooWithPlatformVersion;
+}
+
+}
