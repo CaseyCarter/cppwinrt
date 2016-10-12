@@ -23,15 +23,13 @@ namespace impl
                 ComCallData data = {};
                 data.pUserDefined = handle.address();
 
-                check_hresult(context->ContextCallback([](ComCallData * data)
+                auto callback = [](ComCallData * data)
                 {
                     std::experimental::coroutine_handle<>::from_address(data->pUserDefined)();
                     return S_OK;
-                },
-                &data,
-                IID_ICallbackWithNoReentrancyToApplicationSTA,
-                5,
-                nullptr));
+                };
+
+                check_hresult(context->ContextCallback(callback, &data, IID_ICallbackWithNoReentrancyToApplicationSTA, 5, nullptr));
             });
         }
 
