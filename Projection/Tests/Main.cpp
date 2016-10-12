@@ -5,7 +5,7 @@
 
 int main(int argc, char * argv[])
 {
-    winrt::Initialize();
+    winrt::initialize();
 
     return Catch::Session().run(argc, argv);
 }

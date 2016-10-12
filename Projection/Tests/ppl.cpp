@@ -62,7 +62,7 @@ namespace
             return nullptr;
         }
 
-        void Progress(const AsyncActionProgressHandler<double> & handler)
+        void Progress(const AsyncActionProgressHandler<double> &)
         {
         }
 
@@ -88,7 +88,7 @@ namespace
             return nullptr;
         }
 
-        void Progress(const AsyncActionProgressHandler<double> & handler)
+        void Progress(const AsyncActionProgressHandler<double> &)
         {
         }
 
@@ -151,7 +151,7 @@ namespace
             return nullptr;
         }
 
-        void Progress(const AsyncOperationProgressHandler<uint64_t, uint64_t> & handler)
+        void Progress(const AsyncOperationProgressHandler<uint64_t, uint64_t> &)
         {
         }
 
@@ -178,7 +178,7 @@ namespace
             return nullptr;
         }
 
-        void Progress(const AsyncOperationProgressHandler<uint64_t, uint64_t> & handler)
+        void Progress(const AsyncOperationProgressHandler<uint64_t, uint64_t> &)
         {
         }
 

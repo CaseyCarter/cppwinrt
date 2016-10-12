@@ -94,18 +94,18 @@ IInspectable impl_IActivationFactory<D>::ActivateInstance() const
 
 }
 
-enum class InitializeType
+enum class initialize_type
 {
-    SingleThreaded,
-    MultiThreaded
+    single_threaded,
+    multi_threaded
 };
 
-inline void Initialize(const InitializeType type = InitializeType::MultiThreaded)
+inline void initialize(const initialize_type type = initialize_type::multi_threaded)
 {
     check_hresult(WINRT_RoInitialize(static_cast<uint32_t>(type)));
 }
 
-inline void Uninitialize() noexcept
+inline void uninitialize() noexcept
 {
     WINRT_RoUninitialize();
 }
