@@ -165,10 +165,12 @@
     <ClCompile Include="agile_ref.cpp" />
     <ClCompile Include="agility.cpp" />
     <ClCompile Include="array.cpp" />
+    <ClCompile Include="async.cpp" />
     <ClCompile Include="Collections.cpp" />
     <ClCompile Include="com_ptr.cpp" />
     <ClCompile Include="delegate.cpp" />
     <ClCompile Include="delegate_lambda.cpp" />
+    <ClCompile Include="empty_collection.cpp" />
     <ClCompile Include="event_consume.cpp" />
     <ClCompile Include="IInspectable_GetIids.cpp" />
     <ClCompile Include="IInspectable_GetRuntimeClassName.cpp" />

@@ -33,6 +33,8 @@
     <ClCompile Include="ppl.cpp" />
     <ClCompile Include="internal_vector.cpp" />
     <ClCompile Include="internal_map.cpp" />
+    <ClCompile Include="async.cpp" />
+    <ClCompile Include="empty_collection.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
