@@ -37,13 +37,6 @@ static void WriteRootNamespaceEnd(Target & target)
     Write(target, "\r\n}\r\n");
 }
 
-static void WriteModule()
-{
-    OutputFile target("..\\winrt.ixx");
-    WriteLogo(target);
-    Write(target, Strings::base_module);
-}
-
 template <unsigned Count>
 static void WriteSupportingHeader(char const * filename, char const (&text)[Count])
 {
@@ -293,15 +286,10 @@ static void WriteLibrary()
     Path::CreateDirectory(path);
     Path::SetCurrentDirectory(path);
 
-    WriteModule();
     WriteBaseHeader();
     WritePplHeader();
 
     std::vector<std::string> processedNamespaces;
-
-    Output out;
-    WriteLogo(out);
-    Write(out, Strings::PragmaOnce);
 
     Database::GetNamespaces([&]()
     {
@@ -312,11 +300,7 @@ static void WriteLibrary()
         GenerateInterface();
         GenerateClassDecl();
         GenerateClassImpl(GenerateOverrides(), GenerateComposables(), processedNamespaces);
-
-        Write(out, Strings::WriteInclude, Settings::FileNamespaceDotName + ".h");
     });
-
-    out.WriteTo("..\\winrt.h");
 }
 
 }
