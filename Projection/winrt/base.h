@@ -1437,17 +1437,23 @@ struct hresult_error
     {
         if (m_info)
         {
-            handle<impl::bstr_traits> unused1;
-            handle<impl::bstr_traits> unused2;
-
             HRESULT code = S_OK;
+            handle<impl::bstr_traits> fallback;
             handle<impl::bstr_traits> message;
+            handle<impl::bstr_traits> unused;
 
-            if (S_OK == m_info->GetErrorDetails(put(unused1), &code, put(message), put(unused2)))
+            if (S_OK == m_info->GetErrorDetails(put(fallback), &code, put(message), put(unused)))
             {
                 if (code == m_code)
                 {
-                    return impl::trim_hresult_message(get(message), SysStringLen(get(message)));
+                    if (message)
+                    {
+                        return impl::trim_hresult_message(get(message), SysStringLen(get(message)));
+                    }
+                    else
+                    {
+                        return impl::trim_hresult_message(get(fallback), SysStringLen(get(fallback)));
+                    }
                 }
             }
         }
