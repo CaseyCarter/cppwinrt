@@ -116,7 +116,7 @@ struct com_ptr
         m_ptr->QueryInterface(__uuidof(abi_default_interface<U>), reinterpret_cast<void **>(put(temp)));
         return temp;
     }
-
+    
     void copy_from(type * other) noexcept
     {
         copy(other);
@@ -127,7 +127,7 @@ struct com_ptr
         addref();
         *other = m_ptr;
     }
-
+    
 private:
 
     void copy(type * other) noexcept
@@ -201,9 +201,33 @@ bool operator==(const com_ptr<T> & left, const com_ptr<T> & right) noexcept
 }
 
 template <typename T>
+bool operator==(const com_ptr<T> & left, std::nullptr_t) noexcept
+{
+    return get(left) == nullptr;
+}
+
+template <typename T>
+bool operator==(std::nullptr_t, const com_ptr<T> & right) noexcept
+{
+    return nullptr == get(right);
+}
+
+template <typename T>
 bool operator!=(const com_ptr<T> & left, const com_ptr<T> & right) noexcept
 {
     return !(left == right);
+}
+
+template <typename T>
+bool operator!=(const com_ptr<T> & left, std::nullptr_t) noexcept
+{
+    return !(left == nullptr);
+}
+
+template <typename T>
+bool operator!=(std::nullptr_t, const com_ptr<T> & right) noexcept
+{
+    return !(nullptr == right);
 }
 
 template <typename T>

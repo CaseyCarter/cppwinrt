@@ -354,6 +354,7 @@ TEST_CASE("com_ptr, compare")
 {
     com_ptr<IInspectable> a = test_make_inspectable();
     com_ptr<IInspectable> b = test_make_inspectable();
+    com_ptr<IInspectable> c = nullptr;
 
     if (a > b)
     {
@@ -374,4 +375,17 @@ TEST_CASE("com_ptr, compare")
 
     REQUIRE(b >= a);
     REQUIRE(!(a >= b));
+
+    // Test ==/!= nullptr overloads
+    REQUIRE(nullptr == c);
+    REQUIRE(c == nullptr);
+
+    REQUIRE(!(nullptr == a));
+    REQUIRE(!(a == nullptr));
+
+    REQUIRE(nullptr != a);
+    REQUIRE(a != nullptr);
+
+    REQUIRE(!(nullptr != c));
+    REQUIRE(!(c != nullptr));
 }

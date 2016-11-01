@@ -76,15 +76,20 @@ TEST_CASE("async, NoSuspend_IAsyncAction")
     async.GetResults(); // should not throw
 
     bool completed = false;
+    bool objectMatches = false;
+    bool statusMatches = false;
 
     async.Completed([&](const IAsyncAction & sender, AsyncStatus status)
     {
         completed = true;
-        REQUIRE(async == sender);
-        REQUIRE(status == AsyncStatus::Completed);
+        objectMatches = (async == sender);
+        statusMatches = (status == AsyncStatus::Completed);
     });
 
     REQUIRE(completed);
+    REQUIRE(objectMatches);
+    REQUIRE(statusMatches);
+
     REQUIRE_THROWS_AS(async.Completed([&](auto && ...) {}), hresult_illegal_delegate_assignment);
 
     async.Close();
@@ -101,15 +106,20 @@ TEST_CASE("async, NoSuspend_IAsyncActionWithProgress")
     async.GetResults(); // should not throw
 
     bool completed = false;
+    bool objectMatches = false;
+    bool statusMatches = false;
 
     async.Completed([&](const IAsyncActionWithProgress<double> & sender, AsyncStatus status)
     {
         completed = true;
-        REQUIRE(async == sender);
-        REQUIRE(status == AsyncStatus::Completed);
+        objectMatches = (async == sender);
+        statusMatches = (status == AsyncStatus::Completed);
     });
 
     REQUIRE(completed);
+    REQUIRE(objectMatches);
+    REQUIRE(statusMatches);
+
     REQUIRE_THROWS_AS(async.Completed([&](auto && ...) {}), hresult_illegal_delegate_assignment);
 
     async.Close();
@@ -126,15 +136,20 @@ TEST_CASE("async, NoSuspend_IAsyncOperation")
     REQUIRE(async.GetResults() == 123);
 
     bool completed = false;
+    bool objectMatches = false;
+    bool statusMatches = false;
 
     async.Completed([&](const IAsyncOperation<uint32_t> & sender, AsyncStatus status)
     {
         completed = true;
-        REQUIRE(async == sender);
-        REQUIRE(status == AsyncStatus::Completed);
+        objectMatches = (async == sender);
+        statusMatches = (status == AsyncStatus::Completed);
     });
 
     REQUIRE(completed);
+    REQUIRE(objectMatches);
+    REQUIRE(statusMatches);
+
     REQUIRE_THROWS_AS(async.Completed([&](auto && ...) {}), hresult_illegal_delegate_assignment);
 
     async.Close();
@@ -151,15 +166,20 @@ TEST_CASE("async, NoSuspend_IAsyncOperationWithProgress")
     REQUIRE(async.GetResults() == 456);
 
     bool completed = false;
+    bool objectMatches = false;
+    bool statusMatches = false;
 
     async.Completed([&](const IAsyncOperationWithProgress<uint64_t, uint64_t> & sender, AsyncStatus status)
     {
         completed = true;
-        REQUIRE(async == sender);
-        REQUIRE(status == AsyncStatus::Completed);
+        objectMatches = (async == sender);
+        statusMatches = (status == AsyncStatus::Completed);
     });
 
     REQUIRE(completed);
+    REQUIRE(objectMatches);
+    REQUIRE(statusMatches);
+
     REQUIRE_THROWS_AS(async.Completed([&](auto && ...) {}), hresult_illegal_delegate_assignment);
 
     async.Close();
@@ -763,15 +783,19 @@ TEST_CASE("async, Cancel_IAsyncAction")
     REQUIRE(async.ErrorCode() == S_OK);
 
     bool completed = false;
+    bool objectMatches = false;
+    bool statusMatches = false;
 
     async.Completed([&](const IAsyncAction & sender, AsyncStatus status)
     {
         completed = true;
-        REQUIRE(async == sender);
-        REQUIRE(status == AsyncStatus::Canceled);
+        objectMatches = (async == sender);
+        statusMatches = (status == AsyncStatus::Canceled);
     });
 
     REQUIRE(completed);
+    REQUIRE(objectMatches);
+    REQUIRE(statusMatches);
 }
 
 TEST_CASE("async, Cancel_IAsyncAction, 2")
@@ -782,12 +806,14 @@ TEST_CASE("async, Cancel_IAsyncAction, 2")
     REQUIRE_THROWS_AS(async.GetResults(), hresult_illegal_method_call);
 
     bool completed = false;
+    bool objectMatches = false;
+    bool statusMatches = false;
 
     async.Completed([&](const IAsyncAction & sender, AsyncStatus status)
     {
         completed = true;
-        REQUIRE(async == sender);
-        REQUIRE(status == AsyncStatus::Canceled);
+        objectMatches = (async == sender);
+        statusMatches = (status == AsyncStatus::Canceled);
     });
 
     async.Cancel();
@@ -798,6 +824,8 @@ TEST_CASE("async, Cancel_IAsyncAction, 2")
     REQUIRE(async.ErrorCode() == S_OK);
 
     REQUIRE(completed);
+    REQUIRE(objectMatches);
+    REQUIRE(statusMatches);
 }
 
 TEST_CASE("async, Cancel_IAsyncActionWithProgress")
@@ -815,15 +843,19 @@ TEST_CASE("async, Cancel_IAsyncActionWithProgress")
     REQUIRE(async.ErrorCode() == S_OK);
 
     bool completed = false;
+    bool objectMatches = false;
+    bool statusMatches = false;
 
     async.Completed([&](const IAsyncActionWithProgress<double> & sender, AsyncStatus status)
     {
         completed = true;
-        REQUIRE(async == sender);
-        REQUIRE(status == AsyncStatus::Canceled);
+        objectMatches = (async == sender);
+        statusMatches = (status == AsyncStatus::Canceled);
     });
 
     REQUIRE(completed);
+    REQUIRE(objectMatches);
+    REQUIRE(statusMatches);
 }
 
 TEST_CASE("async, Cancel_IAsyncActionWithProgress, 2")
@@ -834,12 +866,14 @@ TEST_CASE("async, Cancel_IAsyncActionWithProgress, 2")
     REQUIRE_THROWS_AS(async.GetResults(), hresult_illegal_method_call);
 
     bool completed = false;
+    bool objectMatches = false;
+    bool statusMatches = false;
 
     async.Completed([&](const IAsyncActionWithProgress<double> & sender, AsyncStatus status)
     {
         completed = true;
-        REQUIRE(async == sender);
-        REQUIRE(status == AsyncStatus::Canceled);
+        objectMatches = (async == sender);
+        statusMatches = (status == AsyncStatus::Canceled);
     });
 
     async.Cancel();
@@ -850,6 +884,8 @@ TEST_CASE("async, Cancel_IAsyncActionWithProgress, 2")
     REQUIRE(async.ErrorCode() == S_OK);
 
     REQUIRE(completed);
+    REQUIRE(objectMatches);
+    REQUIRE(statusMatches);
 }
 
 TEST_CASE("async, Cancel_IAsyncOperation")
@@ -867,15 +903,19 @@ TEST_CASE("async, Cancel_IAsyncOperation")
     REQUIRE(async.ErrorCode() == S_OK);
 
     bool completed = false;
+    bool objectMatches = false;
+    bool statusMatches = false;
 
     async.Completed([&](const IAsyncOperation<uint32_t> & sender, AsyncStatus status)
     {
         completed = true;
-        REQUIRE(async == sender);
-        REQUIRE(status == AsyncStatus::Canceled);
+        objectMatches = (async == sender);
+        statusMatches = (status == AsyncStatus::Canceled);
     });
 
     REQUIRE(completed);
+    REQUIRE(objectMatches);
+    REQUIRE(statusMatches);
 }
 
 TEST_CASE("async, Cancel_IAsyncOperation, 2")
@@ -886,12 +926,14 @@ TEST_CASE("async, Cancel_IAsyncOperation, 2")
     REQUIRE_THROWS_AS(async.GetResults(), hresult_illegal_method_call);
 
     bool completed = false;
+    bool objectMatches = false;
+    bool statusMatches = false;
 
     async.Completed([&](const IAsyncOperation<uint32_t> & sender, AsyncStatus status)
     {
         completed = true;
-        REQUIRE(async == sender);
-        REQUIRE(status == AsyncStatus::Canceled);
+        objectMatches = (async == sender);
+        statusMatches = (status == AsyncStatus::Canceled);
     });
 
     async.Cancel();
@@ -902,6 +944,8 @@ TEST_CASE("async, Cancel_IAsyncOperation, 2")
     REQUIRE(async.ErrorCode() == S_OK);
 
     REQUIRE(completed);
+    REQUIRE(objectMatches);
+    REQUIRE(statusMatches);
 }
 
 TEST_CASE("async, Cancel_IAsyncOperationWithProgress")
@@ -917,16 +961,21 @@ TEST_CASE("async, Cancel_IAsyncOperationWithProgress")
     REQUIRE(async.Status() == AsyncStatus::Canceled);
     REQUIRE_THROWS_AS(async.GetResults(), hresult_canceled);
     REQUIRE(async.ErrorCode() == S_OK);
+
     bool completed = false;
+    bool objectMatches = false;
+    bool statusMatches = false;
 
     async.Completed([&](const IAsyncOperationWithProgress<uint64_t, uint64_t> & sender, AsyncStatus status)
     {
         completed = true;
-        REQUIRE(async == sender);
-        REQUIRE(status == AsyncStatus::Canceled);
+        objectMatches = (async == sender);
+        statusMatches = (status == AsyncStatus::Canceled);
     });
 
     REQUIRE(completed);
+    REQUIRE(objectMatches);
+    REQUIRE(statusMatches);
 }
 
 TEST_CASE("async, Cancel_IAsyncOperationWithProgress, 2")
@@ -937,12 +986,14 @@ TEST_CASE("async, Cancel_IAsyncOperationWithProgress, 2")
     REQUIRE_THROWS_AS(async.GetResults(), hresult_illegal_method_call);
 
     bool completed = false;
+    bool objectMatches = false;
+    bool statusMatches = false;
 
     async.Completed([&](const IAsyncOperationWithProgress<uint64_t, uint64_t> & sender, AsyncStatus status)
     {
         completed = true;
-        REQUIRE(async == sender);
-        REQUIRE(status == AsyncStatus::Canceled);
+        objectMatches = (async == sender);
+        statusMatches = (status == AsyncStatus::Canceled);
     });
 
     async.Cancel();
@@ -953,6 +1004,8 @@ TEST_CASE("async, Cancel_IAsyncOperationWithProgress, 2")
     REQUIRE(async.ErrorCode() == S_OK);
 
     REQUIRE(completed);
+    REQUIRE(objectMatches);
+    REQUIRE(statusMatches);
 }
 
 //
@@ -1020,15 +1073,19 @@ TEST_CASE("async, AutoCancel_IAsyncAction")
     REQUIRE_THROWS_AS(async.GetResults(), hresult_canceled);
 
     bool completed = false;
+    bool objectMatches = false;
+    bool statusMatches = false;
 
     async.Completed([&](const IAsyncAction & sender, AsyncStatus status)
     {
         completed = true;
-        REQUIRE(async == sender);
-        REQUIRE(status == AsyncStatus::Canceled);
+        objectMatches = (async == sender);
+        statusMatches = (status == AsyncStatus::Canceled);
     });
 
     REQUIRE(completed);
+    REQUIRE(objectMatches);
+    REQUIRE(statusMatches);
 }
 
 TEST_CASE("async, AutoCancel_IAsyncAction, 2")
@@ -1038,12 +1095,14 @@ TEST_CASE("async, AutoCancel_IAsyncAction, 2")
     REQUIRE(async.Status() == AsyncStatus::Started);
 
     bool completed = false;
+    bool objectMatches = false;
+    bool statusMatches = false;
 
     async.Completed([&](const IAsyncAction & sender, AsyncStatus status)
     {
         completed = true;
-        REQUIRE(async == sender);
-        REQUIRE(status == AsyncStatus::Canceled);
+        objectMatches = (async == sender);
+        statusMatches = (status == AsyncStatus::Canceled);
     });
 
     async.Cancel();
@@ -1053,6 +1112,8 @@ TEST_CASE("async, AutoCancel_IAsyncAction, 2")
     REQUIRE_THROWS_AS(async.GetResults(), hresult_canceled);
 
     REQUIRE(completed);
+    REQUIRE(objectMatches);
+    REQUIRE(statusMatches);
 }
 
 TEST_CASE("async, AutoCancel_IAsyncActionWithProgress")
@@ -1068,15 +1129,19 @@ TEST_CASE("async, AutoCancel_IAsyncActionWithProgress")
     REQUIRE_THROWS_AS(async.GetResults(), hresult_canceled);
 
     bool completed = false;
+    bool objectMatches = false;
+    bool statusMatches = false;
 
     async.Completed([&](const IAsyncActionWithProgress<double> & sender, AsyncStatus status)
     {
         completed = true;
-        REQUIRE(async == sender);
-        REQUIRE(status == AsyncStatus::Canceled);
+        objectMatches = (async == sender);
+        statusMatches = (status == AsyncStatus::Canceled);
     });
 
     REQUIRE(completed);
+    REQUIRE(objectMatches);
+    REQUIRE(statusMatches);
 }
 
 TEST_CASE("async, AutoCancel_IAsyncActionWithProgress, 2")
@@ -1086,12 +1151,14 @@ TEST_CASE("async, AutoCancel_IAsyncActionWithProgress, 2")
     REQUIRE(async.Status() == AsyncStatus::Started);
 
     bool completed = false;
+    bool objectMatches = false;
+    bool statusMatches = false;
 
     async.Completed([&](const IAsyncActionWithProgress<double> & sender, AsyncStatus status)
     {
         completed = true;
-        REQUIRE(async == sender);
-        REQUIRE(status == AsyncStatus::Canceled);
+        objectMatches = (async == sender);
+        statusMatches = (status == AsyncStatus::Canceled);
     });
 
     async.Cancel();
@@ -1101,6 +1168,8 @@ TEST_CASE("async, AutoCancel_IAsyncActionWithProgress, 2")
     REQUIRE_THROWS_AS(async.GetResults(), hresult_canceled);
 
     REQUIRE(completed);
+    REQUIRE(objectMatches);
+    REQUIRE(statusMatches);
 }
 
 TEST_CASE("async, AutoCancel_IAsyncOperation")
@@ -1116,15 +1185,19 @@ TEST_CASE("async, AutoCancel_IAsyncOperation")
     REQUIRE_THROWS_AS(async.GetResults(), hresult_canceled);
 
     bool completed = false;
+    bool objectMatches = false;
+    bool statusMatches = false;
 
     async.Completed([&](const IAsyncOperation<uint32_t> & sender, AsyncStatus status)
     {
         completed = true;
-        REQUIRE(async == sender);
-        REQUIRE(status == AsyncStatus::Canceled);
+        objectMatches = (async == sender);
+        statusMatches = (status == AsyncStatus::Canceled);
     });
 
     REQUIRE(completed);
+    REQUIRE(objectMatches);
+    REQUIRE(statusMatches);
 }
 
 TEST_CASE("async, AutoCancel_IAsyncOperation, 2")
@@ -1134,12 +1207,14 @@ TEST_CASE("async, AutoCancel_IAsyncOperation, 2")
     REQUIRE(async.Status() == AsyncStatus::Started);
 
     bool completed = false;
+    bool objectMatches = false;
+    bool statusMatches = false;
 
     async.Completed([&](const IAsyncOperation<uint32_t> & sender, AsyncStatus status)
     {
         completed = true;
-        REQUIRE(async == sender);
-        REQUIRE(status == AsyncStatus::Canceled);
+        objectMatches = (async == sender);
+        statusMatches = (status == AsyncStatus::Canceled);
     });
 
     async.Cancel();
@@ -1149,6 +1224,8 @@ TEST_CASE("async, AutoCancel_IAsyncOperation, 2")
     REQUIRE_THROWS_AS(async.GetResults(), hresult_canceled);
 
     REQUIRE(completed);
+    REQUIRE(objectMatches);
+    REQUIRE(statusMatches);
 }
 
 TEST_CASE("async, AutoCancel_IAsyncOperationWithProgress")
@@ -1164,15 +1241,19 @@ TEST_CASE("async, AutoCancel_IAsyncOperationWithProgress")
     REQUIRE_THROWS_AS(async.GetResults(), hresult_canceled);
 
     bool completed = false;
+    bool objectMatches = false;
+    bool statusMatches = false;
 
     async.Completed([&](const IAsyncOperationWithProgress<uint64_t, uint64_t> & sender, AsyncStatus status)
     {
         completed = true;
-        REQUIRE(async == sender);
-        REQUIRE(status == AsyncStatus::Canceled);
+        objectMatches = (async == sender);
+        statusMatches = (status == AsyncStatus::Canceled);
     });
 
     REQUIRE(completed);
+    REQUIRE(objectMatches);
+    REQUIRE(statusMatches);
 }
 
 TEST_CASE("async, AutoCancel_IAsyncOperationWithProgress, 2")
@@ -1182,12 +1263,14 @@ TEST_CASE("async, AutoCancel_IAsyncOperationWithProgress, 2")
     REQUIRE(async.Status() == AsyncStatus::Started);
 
     bool completed = false;
+    bool objectMatches = false;
+    bool statusMatches = false;
 
     async.Completed([&](const IAsyncOperationWithProgress<uint64_t, uint64_t> & sender, AsyncStatus status)
     {
         completed = true;
-        REQUIRE(async == sender);
-        REQUIRE(status == AsyncStatus::Canceled);
+        objectMatches = (async == sender);
+        statusMatches = (status == AsyncStatus::Canceled);
     });
 
     async.Cancel();
@@ -1197,6 +1280,8 @@ TEST_CASE("async, AutoCancel_IAsyncOperationWithProgress, 2")
     REQUIRE_THROWS_AS(async.GetResults(), hresult_canceled);
 
     REQUIRE(completed);
+    REQUIRE(objectMatches);
+    REQUIRE(statusMatches);
 }
 
 //
