@@ -23,6 +23,13 @@ struct MdmPolicy;
 
 namespace Windows::Management::Workplace {
 
+template <typename T> struct impl_IMdmAllowPolicyStatics;
+template <typename T> struct impl_IMdmPolicyStatics2;
+
+}
+
+namespace Windows::Management::Workplace {
+
 enum class MessagingSyncPolicy
 {
     Disallowed = 0,

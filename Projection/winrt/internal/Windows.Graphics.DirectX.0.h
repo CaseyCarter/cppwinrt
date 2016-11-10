@@ -6,6 +6,11 @@
 
 WINRT_EXPORT namespace winrt {
 
+namespace Windows::Globalization::PhoneNumberFormatting {
+
+
+}
+
 namespace Windows::Graphics::DirectX {
 
 enum class DirectXAlphaMode

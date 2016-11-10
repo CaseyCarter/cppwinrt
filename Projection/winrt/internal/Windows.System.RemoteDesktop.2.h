@@ -9,12 +9,6 @@ WINRT_EXPORT namespace winrt {
 
 namespace Windows::System::RemoteDesktop {
 
-template <typename D>
-struct WINRT_EBO impl_IInteractiveSessionStatics
-{
-    bool IsRemote() const;
-};
-
 struct IInteractiveSessionStatics :
     Windows::IInspectable,
     impl::consume<IInteractiveSessionStatics>

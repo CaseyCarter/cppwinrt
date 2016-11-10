@@ -26,7 +26,12 @@ template <> struct traits<Windows::System::Display::DisplayRequest> { using defa
 
 namespace Windows::System::Display {
 
-template <typename T> struct impl_IDisplayRequest;
+template <typename D>
+struct WINRT_EBO impl_IDisplayRequest
+{
+    void RequestActive() const;
+    void RequestRelease() const;
+};
 
 }
 

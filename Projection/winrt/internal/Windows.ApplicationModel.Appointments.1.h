@@ -405,37 +405,403 @@ template <> struct traits<Windows::ApplicationModel::Appointments::FindAppointme
 
 namespace Windows::ApplicationModel::Appointments {
 
-template <typename T> struct impl_IAppointment;
-template <typename T> struct impl_IAppointment2;
-template <typename T> struct impl_IAppointment3;
-template <typename T> struct impl_IAppointmentCalendar;
-template <typename T> struct impl_IAppointmentCalendar2;
-template <typename T> struct impl_IAppointmentCalendar3;
-template <typename T> struct impl_IAppointmentCalendarSyncManager;
-template <typename T> struct impl_IAppointmentCalendarSyncManager2;
-template <typename T> struct impl_IAppointmentConflictResult;
-template <typename T> struct impl_IAppointmentException;
-template <typename T> struct impl_IAppointmentInvitee;
-template <typename T> struct impl_IAppointmentManagerForUser;
-template <typename T> struct impl_IAppointmentManagerStatics;
-template <typename T> struct impl_IAppointmentManagerStatics2;
-template <typename T> struct impl_IAppointmentManagerStatics3;
-template <typename T> struct impl_IAppointmentParticipant;
-template <typename T> struct impl_IAppointmentPropertiesStatics;
-template <typename T> struct impl_IAppointmentPropertiesStatics2;
-template <typename T> struct impl_IAppointmentRecurrence;
-template <typename T> struct impl_IAppointmentRecurrence2;
-template <typename T> struct impl_IAppointmentRecurrence3;
-template <typename T> struct impl_IAppointmentStore;
-template <typename T> struct impl_IAppointmentStore2;
-template <typename T> struct impl_IAppointmentStoreChange;
-template <typename T> struct impl_IAppointmentStoreChange2;
-template <typename T> struct impl_IAppointmentStoreChangeReader;
-template <typename T> struct impl_IAppointmentStoreChangeTracker;
-template <typename T> struct impl_IAppointmentStoreChangedDeferral;
-template <typename T> struct impl_IAppointmentStoreChangedEventArgs;
-template <typename T> struct impl_IAppointmentStoreNotificationTriggerDetails;
-template <typename T> struct impl_IFindAppointmentsOptions;
+template <typename D>
+struct WINRT_EBO impl_IAppointment
+{
+    Windows::Foundation::DateTime StartTime() const;
+    void StartTime(const Windows::Foundation::DateTime & value) const;
+    Windows::Foundation::TimeSpan Duration() const;
+    void Duration(const Windows::Foundation::TimeSpan & value) const;
+    hstring Location() const;
+    void Location(hstring_ref value) const;
+    hstring Subject() const;
+    void Subject(hstring_ref value) const;
+    hstring Details() const;
+    void Details(hstring_ref value) const;
+    Windows::Foundation::IReference<Windows::Foundation::TimeSpan> Reminder() const;
+    void Reminder(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const;
+    Windows::ApplicationModel::Appointments::AppointmentOrganizer Organizer() const;
+    void Organizer(const Windows::ApplicationModel::Appointments::AppointmentOrganizer & value) const;
+    Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Appointments::AppointmentInvitee> Invitees() const;
+    Windows::ApplicationModel::Appointments::AppointmentRecurrence Recurrence() const;
+    void Recurrence(const Windows::ApplicationModel::Appointments::AppointmentRecurrence & value) const;
+    Windows::ApplicationModel::Appointments::AppointmentBusyStatus BusyStatus() const;
+    void BusyStatus(Windows::ApplicationModel::Appointments::AppointmentBusyStatus value) const;
+    bool AllDay() const;
+    void AllDay(bool value) const;
+    Windows::ApplicationModel::Appointments::AppointmentSensitivity Sensitivity() const;
+    void Sensitivity(Windows::ApplicationModel::Appointments::AppointmentSensitivity value) const;
+    Windows::Foundation::Uri Uri() const;
+    void Uri(const Windows::Foundation::Uri & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppointment2
+{
+    hstring LocalId() const;
+    hstring CalendarId() const;
+    hstring RoamingId() const;
+    void RoamingId(hstring_ref value) const;
+    Windows::Foundation::IReference<Windows::Foundation::DateTime> OriginalStartTime() const;
+    bool IsResponseRequested() const;
+    void IsResponseRequested(bool value) const;
+    bool AllowNewTimeProposal() const;
+    void AllowNewTimeProposal(bool value) const;
+    hstring OnlineMeetingLink() const;
+    void OnlineMeetingLink(hstring_ref value) const;
+    Windows::Foundation::IReference<Windows::Foundation::DateTime> ReplyTime() const;
+    void ReplyTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
+    Windows::ApplicationModel::Appointments::AppointmentParticipantResponse UserResponse() const;
+    void UserResponse(Windows::ApplicationModel::Appointments::AppointmentParticipantResponse value) const;
+    bool HasInvitees() const;
+    bool IsCanceledMeeting() const;
+    void IsCanceledMeeting(bool value) const;
+    bool IsOrganizedByUser() const;
+    void IsOrganizedByUser(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppointment3
+{
+    uint64_t ChangeNumber() const;
+    uint64_t RemoteChangeNumber() const;
+    void RemoteChangeNumber(uint64_t value) const;
+    Windows::ApplicationModel::Appointments::AppointmentDetailsKind DetailsKind() const;
+    void DetailsKind(Windows::ApplicationModel::Appointments::AppointmentDetailsKind value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppointmentCalendar
+{
+    Windows::UI::Color DisplayColor() const;
+    hstring DisplayName() const;
+    void DisplayName(hstring_ref value) const;
+    hstring LocalId() const;
+    bool IsHidden() const;
+    Windows::ApplicationModel::Appointments::AppointmentCalendarOtherAppReadAccess OtherAppReadAccess() const;
+    void OtherAppReadAccess(Windows::ApplicationModel::Appointments::AppointmentCalendarOtherAppReadAccess value) const;
+    Windows::ApplicationModel::Appointments::AppointmentCalendarOtherAppWriteAccess OtherAppWriteAccess() const;
+    void OtherAppWriteAccess(Windows::ApplicationModel::Appointments::AppointmentCalendarOtherAppWriteAccess value) const;
+    hstring SourceDisplayName() const;
+    Windows::ApplicationModel::Appointments::AppointmentSummaryCardView SummaryCardView() const;
+    void SummaryCardView(Windows::ApplicationModel::Appointments::AppointmentSummaryCardView value) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Appointments::Appointment>> FindAppointmentsAsync(const Windows::Foundation::DateTime & rangeStart, const Windows::Foundation::TimeSpan & rangeLength) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Appointments::Appointment>> FindAppointmentsAsync(const Windows::Foundation::DateTime & rangeStart, const Windows::Foundation::TimeSpan & rangeLength, const Windows::ApplicationModel::Appointments::FindAppointmentsOptions & options) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Appointments::AppointmentException>> FindExceptionsFromMasterAsync(hstring_ref masterLocalId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Appointments::Appointment>> FindAllInstancesAsync(hstring_ref masterLocalId, const Windows::Foundation::DateTime & rangeStart, const Windows::Foundation::TimeSpan & rangeLength) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Appointments::Appointment>> FindAllInstancesAsync(hstring_ref masterLocalId, const Windows::Foundation::DateTime & rangeStart, const Windows::Foundation::TimeSpan & rangeLength, const Windows::ApplicationModel::Appointments::FindAppointmentsOptions & pOptions) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::Appointment> GetAppointmentAsync(hstring_ref localId) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::Appointment> GetAppointmentInstanceAsync(hstring_ref localId, const Windows::Foundation::DateTime & instanceStartTime) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Appointments::Appointment>> FindUnexpandedAppointmentsAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Appointments::Appointment>> FindUnexpandedAppointmentsAsync(const Windows::ApplicationModel::Appointments::FindAppointmentsOptions & options) const;
+    Windows::Foundation::IAsyncAction DeleteAsync() const;
+    Windows::Foundation::IAsyncAction SaveAsync() const;
+    Windows::Foundation::IAsyncAction DeleteAppointmentAsync(hstring_ref localId) const;
+    Windows::Foundation::IAsyncAction DeleteAppointmentInstanceAsync(hstring_ref localId, const Windows::Foundation::DateTime & instanceStartTime) const;
+    Windows::Foundation::IAsyncAction SaveAppointmentAsync(const Windows::ApplicationModel::Appointments::Appointment & pAppointment) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppointmentCalendar2
+{
+    Windows::ApplicationModel::Appointments::AppointmentCalendarSyncManager SyncManager() const;
+    hstring RemoteId() const;
+    void RemoteId(hstring_ref value) const;
+    void DisplayColor(const Windows::UI::Color & value) const;
+    void IsHidden(bool value) const;
+    hstring UserDataAccountId() const;
+    bool CanCreateOrUpdateAppointments() const;
+    void CanCreateOrUpdateAppointments(bool value) const;
+    bool CanCancelMeetings() const;
+    void CanCancelMeetings(bool value) const;
+    bool CanForwardMeetings() const;
+    void CanForwardMeetings(bool value) const;
+    bool CanProposeNewTimeForMeetings() const;
+    void CanProposeNewTimeForMeetings(bool value) const;
+    bool CanUpdateMeetingResponses() const;
+    void CanUpdateMeetingResponses(bool value) const;
+    bool CanNotifyInvitees() const;
+    void CanNotifyInvitees(bool value) const;
+    bool MustNofityInvitees() const;
+    void MustNofityInvitees(bool value) const;
+    Windows::Foundation::IAsyncOperation<bool> TryCreateOrUpdateAppointmentAsync(const Windows::ApplicationModel::Appointments::Appointment & appointment, bool notifyInvitees) const;
+    Windows::Foundation::IAsyncOperation<bool> TryCancelMeetingAsync(const Windows::ApplicationModel::Appointments::Appointment & meeting, hstring_ref subject, hstring_ref comment, bool notifyInvitees) const;
+    Windows::Foundation::IAsyncOperation<bool> TryForwardMeetingAsync(const Windows::ApplicationModel::Appointments::Appointment & meeting, const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Appointments::AppointmentInvitee> & invitees, hstring_ref subject, hstring_ref forwardHeader, hstring_ref comment) const;
+    Windows::Foundation::IAsyncOperation<bool> TryProposeNewTimeForMeetingAsync(const Windows::ApplicationModel::Appointments::Appointment & meeting, const Windows::Foundation::DateTime & newStartTime, const Windows::Foundation::TimeSpan & newDuration, hstring_ref subject, hstring_ref comment) const;
+    Windows::Foundation::IAsyncOperation<bool> TryUpdateMeetingResponseAsync(const Windows::ApplicationModel::Appointments::Appointment & meeting, Windows::ApplicationModel::Appointments::AppointmentParticipantResponse response, hstring_ref subject, hstring_ref comment, bool sendUpdate) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppointmentCalendar3
+{
+    Windows::Foundation::IAsyncAction RegisterSyncManagerAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppointmentCalendarSyncManager
+{
+    Windows::ApplicationModel::Appointments::AppointmentCalendarSyncStatus Status() const;
+    Windows::Foundation::DateTime LastSuccessfulSyncTime() const;
+    Windows::Foundation::DateTime LastAttemptedSyncTime() const;
+    Windows::Foundation::IAsyncOperation<bool> SyncAsync() const;
+    event_token SyncStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Appointments::AppointmentCalendarSyncManager, Windows::IInspectable> & handler) const;
+    using SyncStatusChanged_revoker = event_revoker<IAppointmentCalendarSyncManager>;
+    SyncStatusChanged_revoker SyncStatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Appointments::AppointmentCalendarSyncManager, Windows::IInspectable> & handler) const;
+    void SyncStatusChanged(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppointmentCalendarSyncManager2
+{
+    void Status(Windows::ApplicationModel::Appointments::AppointmentCalendarSyncStatus value) const;
+    void LastSuccessfulSyncTime(const Windows::Foundation::DateTime & value) const;
+    void LastAttemptedSyncTime(const Windows::Foundation::DateTime & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppointmentConflictResult
+{
+    Windows::ApplicationModel::Appointments::AppointmentConflictType Type() const;
+    Windows::Foundation::DateTime Date() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppointmentException
+{
+    Windows::ApplicationModel::Appointments::Appointment Appointment() const;
+    Windows::Foundation::Collections::IVectorView<hstring> ExceptionProperties() const;
+    bool IsDeleted() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppointmentInvitee
+{
+    Windows::ApplicationModel::Appointments::AppointmentParticipantRole Role() const;
+    void Role(Windows::ApplicationModel::Appointments::AppointmentParticipantRole value) const;
+    Windows::ApplicationModel::Appointments::AppointmentParticipantResponse Response() const;
+    void Response(Windows::ApplicationModel::Appointments::AppointmentParticipantResponse value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppointmentManagerForUser
+{
+    Windows::Foundation::IAsyncOperation<hstring> ShowAddAppointmentAsync(const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection) const;
+    Windows::Foundation::IAsyncOperation<hstring> ShowAddAppointmentAsync(const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement) const;
+    Windows::Foundation::IAsyncOperation<hstring> ShowReplaceAppointmentAsync(hstring_ref appointmentId, const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection) const;
+    Windows::Foundation::IAsyncOperation<hstring> ShowReplaceAppointmentAsync(hstring_ref appointmentId, const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement) const;
+    Windows::Foundation::IAsyncOperation<hstring> ShowReplaceAppointmentAsync(hstring_ref appointmentId, const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement, const Windows::Foundation::DateTime & instanceStartDate) const;
+    Windows::Foundation::IAsyncOperation<bool> ShowRemoveAppointmentAsync(hstring_ref appointmentId, const Windows::Foundation::Rect & selection) const;
+    Windows::Foundation::IAsyncOperation<bool> ShowRemoveAppointmentAsync(hstring_ref appointmentId, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement) const;
+    Windows::Foundation::IAsyncOperation<bool> ShowRemoveAppointmentAsync(hstring_ref appointmentId, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement, const Windows::Foundation::DateTime & instanceStartDate) const;
+    Windows::Foundation::IAsyncAction ShowTimeFrameAsync(const Windows::Foundation::DateTime & timeToShow, const Windows::Foundation::TimeSpan & duration) const;
+    Windows::Foundation::IAsyncAction ShowAppointmentDetailsAsync(hstring_ref appointmentId) const;
+    Windows::Foundation::IAsyncAction ShowAppointmentDetailsAsync(hstring_ref appointmentId, const Windows::Foundation::DateTime & instanceStartDate) const;
+    Windows::Foundation::IAsyncOperation<hstring> ShowEditNewAppointmentAsync(const Windows::ApplicationModel::Appointments::Appointment & appointment) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::AppointmentStore> RequestStoreAsync(Windows::ApplicationModel::Appointments::AppointmentStoreAccessType options) const;
+    Windows::System::User User() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppointmentManagerStatics
+{
+    Windows::Foundation::IAsyncOperation<hstring> ShowAddAppointmentAsync(const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection) const;
+    Windows::Foundation::IAsyncOperation<hstring> ShowAddAppointmentAsync(const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement) const;
+    Windows::Foundation::IAsyncOperation<hstring> ShowReplaceAppointmentAsync(hstring_ref appointmentId, const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection) const;
+    Windows::Foundation::IAsyncOperation<hstring> ShowReplaceAppointmentAsync(hstring_ref appointmentId, const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement) const;
+    Windows::Foundation::IAsyncOperation<hstring> ShowReplaceAppointmentAsync(hstring_ref appointmentId, const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement, const Windows::Foundation::DateTime & instanceStartDate) const;
+    Windows::Foundation::IAsyncOperation<bool> ShowRemoveAppointmentAsync(hstring_ref appointmentId, const Windows::Foundation::Rect & selection) const;
+    Windows::Foundation::IAsyncOperation<bool> ShowRemoveAppointmentAsync(hstring_ref appointmentId, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement) const;
+    Windows::Foundation::IAsyncOperation<bool> ShowRemoveAppointmentAsync(hstring_ref appointmentId, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement, const Windows::Foundation::DateTime & instanceStartDate) const;
+    Windows::Foundation::IAsyncAction ShowTimeFrameAsync(const Windows::Foundation::DateTime & timeToShow, const Windows::Foundation::TimeSpan & duration) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppointmentManagerStatics2
+{
+    Windows::Foundation::IAsyncAction ShowAppointmentDetailsAsync(hstring_ref appointmentId) const;
+    Windows::Foundation::IAsyncAction ShowAppointmentDetailsAsync(hstring_ref appointmentId, const Windows::Foundation::DateTime & instanceStartDate) const;
+    Windows::Foundation::IAsyncOperation<hstring> ShowEditNewAppointmentAsync(const Windows::ApplicationModel::Appointments::Appointment & appointment) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::AppointmentStore> RequestStoreAsync(Windows::ApplicationModel::Appointments::AppointmentStoreAccessType options) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppointmentManagerStatics3
+{
+    Windows::ApplicationModel::Appointments::AppointmentManagerForUser GetForUser(const Windows::System::User & user) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppointmentParticipant
+{
+    hstring DisplayName() const;
+    void DisplayName(hstring_ref value) const;
+    hstring Address() const;
+    void Address(hstring_ref value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppointmentPropertiesStatics
+{
+    hstring Subject() const;
+    hstring Location() const;
+    hstring StartTime() const;
+    hstring Duration() const;
+    hstring Reminder() const;
+    hstring BusyStatus() const;
+    hstring Sensitivity() const;
+    hstring OriginalStartTime() const;
+    hstring IsResponseRequested() const;
+    hstring AllowNewTimeProposal() const;
+    hstring AllDay() const;
+    hstring Details() const;
+    hstring OnlineMeetingLink() const;
+    hstring ReplyTime() const;
+    hstring Organizer() const;
+    hstring UserResponse() const;
+    hstring HasInvitees() const;
+    hstring IsCanceledMeeting() const;
+    hstring IsOrganizedByUser() const;
+    hstring Recurrence() const;
+    hstring Uri() const;
+    hstring Invitees() const;
+    Windows::Foundation::Collections::IVector<hstring> DefaultProperties() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppointmentPropertiesStatics2
+{
+    hstring ChangeNumber() const;
+    hstring RemoteChangeNumber() const;
+    hstring DetailsKind() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppointmentRecurrence
+{
+    Windows::ApplicationModel::Appointments::AppointmentRecurrenceUnit Unit() const;
+    void Unit(Windows::ApplicationModel::Appointments::AppointmentRecurrenceUnit value) const;
+    Windows::Foundation::IReference<uint32_t> Occurrences() const;
+    void Occurrences(const Windows::Foundation::IReference<uint32_t> & value) const;
+    Windows::Foundation::IReference<Windows::Foundation::DateTime> Until() const;
+    void Until(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
+    uint32_t Interval() const;
+    void Interval(uint32_t value) const;
+    Windows::ApplicationModel::Appointments::AppointmentDaysOfWeek DaysOfWeek() const;
+    void DaysOfWeek(Windows::ApplicationModel::Appointments::AppointmentDaysOfWeek value) const;
+    Windows::ApplicationModel::Appointments::AppointmentWeekOfMonth WeekOfMonth() const;
+    void WeekOfMonth(Windows::ApplicationModel::Appointments::AppointmentWeekOfMonth value) const;
+    uint32_t Month() const;
+    void Month(uint32_t value) const;
+    uint32_t Day() const;
+    void Day(uint32_t value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppointmentRecurrence2
+{
+    Windows::ApplicationModel::Appointments::RecurrenceType RecurrenceType() const;
+    hstring TimeZone() const;
+    void TimeZone(hstring_ref value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppointmentRecurrence3
+{
+    hstring CalendarIdentifier() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppointmentStore
+{
+    Windows::ApplicationModel::Appointments::AppointmentStoreChangeTracker ChangeTracker() const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::AppointmentCalendar> CreateAppointmentCalendarAsync(hstring_ref name) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::AppointmentCalendar> GetAppointmentCalendarAsync(hstring_ref calendarId) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::Appointment> GetAppointmentAsync(hstring_ref localId) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::Appointment> GetAppointmentInstanceAsync(hstring_ref localId, const Windows::Foundation::DateTime & instanceStartTime) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Appointments::AppointmentCalendar>> FindAppointmentCalendarsAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Appointments::AppointmentCalendar>> FindAppointmentCalendarsAsync(Windows::ApplicationModel::Appointments::FindAppointmentCalendarsOptions options) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Appointments::Appointment>> FindAppointmentsAsync(const Windows::Foundation::DateTime & rangeStart, const Windows::Foundation::TimeSpan & rangeLength) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Appointments::Appointment>> FindAppointmentsAsync(const Windows::Foundation::DateTime & rangeStart, const Windows::Foundation::TimeSpan & rangeLength, const Windows::ApplicationModel::Appointments::FindAppointmentsOptions & options) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::AppointmentConflictResult> FindConflictAsync(const Windows::ApplicationModel::Appointments::Appointment & appointment) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::AppointmentConflictResult> FindConflictAsync(const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::DateTime & instanceStartTime) const;
+    Windows::Foundation::IAsyncAction MoveAppointmentAsync(const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::ApplicationModel::Appointments::AppointmentCalendar & destinationCalendar) const;
+    Windows::Foundation::IAsyncOperation<hstring> ShowAddAppointmentAsync(const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection) const;
+    Windows::Foundation::IAsyncOperation<hstring> ShowReplaceAppointmentAsync(hstring_ref localId, const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection) const;
+    Windows::Foundation::IAsyncOperation<hstring> ShowReplaceAppointmentAsync(hstring_ref localId, const Windows::ApplicationModel::Appointments::Appointment & appointment, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement, const Windows::Foundation::DateTime & instanceStartDate) const;
+    Windows::Foundation::IAsyncOperation<bool> ShowRemoveAppointmentAsync(hstring_ref localId, const Windows::Foundation::Rect & selection) const;
+    Windows::Foundation::IAsyncOperation<bool> ShowRemoveAppointmentAsync(hstring_ref localId, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement, const Windows::Foundation::DateTime & instanceStartDate) const;
+    Windows::Foundation::IAsyncAction ShowAppointmentDetailsAsync(hstring_ref localId) const;
+    Windows::Foundation::IAsyncAction ShowAppointmentDetailsAsync(hstring_ref localId, const Windows::Foundation::DateTime & instanceStartDate) const;
+    Windows::Foundation::IAsyncOperation<hstring> ShowEditNewAppointmentAsync(const Windows::ApplicationModel::Appointments::Appointment & appointment) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> FindLocalIdsFromRoamingIdAsync(hstring_ref roamingId) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppointmentStore2
+{
+    event_token StoreChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Appointments::AppointmentStore, Windows::ApplicationModel::Appointments::AppointmentStoreChangedEventArgs> & pHandler) const;
+    using StoreChanged_revoker = event_revoker<IAppointmentStore2>;
+    StoreChanged_revoker StoreChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Appointments::AppointmentStore, Windows::ApplicationModel::Appointments::AppointmentStoreChangedEventArgs> & pHandler) const;
+    void StoreChanged(event_token token) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Appointments::AppointmentCalendar> CreateAppointmentCalendarAsync(hstring_ref name, hstring_ref userDataAccountId) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppointmentStoreChange
+{
+    Windows::ApplicationModel::Appointments::Appointment Appointment() const;
+    Windows::ApplicationModel::Appointments::AppointmentStoreChangeType ChangeType() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppointmentStoreChange2
+{
+    Windows::ApplicationModel::Appointments::AppointmentCalendar AppointmentCalendar() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppointmentStoreChangeReader
+{
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Appointments::AppointmentStoreChange>> ReadBatchAsync() const;
+    void AcceptChanges() const;
+    void AcceptChangesThrough(const Windows::ApplicationModel::Appointments::AppointmentStoreChange & lastChangeToAccept) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppointmentStoreChangeTracker
+{
+    Windows::ApplicationModel::Appointments::AppointmentStoreChangeReader GetChangeReader() const;
+    void Enable() const;
+    void Reset() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppointmentStoreChangedDeferral
+{
+    void Complete() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppointmentStoreChangedEventArgs
+{
+    Windows::ApplicationModel::Appointments::AppointmentStoreChangedDeferral GetDeferral() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppointmentStoreNotificationTriggerDetails
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFindAppointmentsOptions
+{
+    Windows::Foundation::Collections::IVector<hstring> CalendarIds() const;
+    Windows::Foundation::Collections::IVector<hstring> FetchProperties() const;
+    bool IncludeHidden() const;
+    void IncludeHidden(bool value) const;
+    uint32_t MaxCount() const;
+    void MaxCount(uint32_t value) const;
+};
 
 }
 

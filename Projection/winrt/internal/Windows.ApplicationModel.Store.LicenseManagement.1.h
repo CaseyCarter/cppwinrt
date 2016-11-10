@@ -48,9 +48,31 @@ template <> struct traits<Windows::ApplicationModel::Store::LicenseManagement::L
 
 namespace Windows::ApplicationModel::Store::LicenseManagement {
 
-template <typename T> struct impl_ILicenseManagerStatics;
-template <typename T> struct impl_ILicenseSatisfactionInfo;
-template <typename T> struct impl_ILicenseSatisfactionResult;
+template <typename D>
+struct WINRT_EBO impl_ILicenseManagerStatics
+{
+    Windows::Foundation::IAsyncAction AddLicenseAsync(const Windows::Storage::Streams::IBuffer & license) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionResult> GetSatisfactionInfosAsync(const Windows::Foundation::Collections::IIterable<hstring> & contentIds, const Windows::Foundation::Collections::IIterable<hstring> & keyIds) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILicenseSatisfactionInfo
+{
+    bool SatisfiedByDevice() const;
+    bool SatisfiedByOpenLicense() const;
+    bool SatisfiedByTrial() const;
+    bool SatisfiedByPass() const;
+    bool SatisfiedByInstallMedia() const;
+    bool SatisfiedBySignedInUser() const;
+    bool IsSatisfied() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILicenseSatisfactionResult
+{
+    Windows::Foundation::Collections::IMapView<hstring, Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionInfo> LicenseSatisfactionInfos() const;
+    HRESULT ExtendedError() const;
+};
 
 }
 

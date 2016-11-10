@@ -282,36 +282,290 @@ template <> struct traits<Windows::Devices::Enumeration::EnclosureLocation> { us
 
 namespace Windows::Devices::Enumeration {
 
-template <typename T> struct impl_IDeviceAccessChangedEventArgs;
-template <typename T> struct impl_IDeviceAccessChangedEventArgs2;
-template <typename T> struct impl_IDeviceAccessInformation;
-template <typename T> struct impl_IDeviceAccessInformationStatics;
-template <typename T> struct impl_IDeviceConnectionChangeTriggerDetails;
-template <typename T> struct impl_IDeviceDisconnectButtonClickedEventArgs;
-template <typename T> struct impl_IDeviceInformation;
-template <typename T> struct impl_IDeviceInformation2;
-template <typename T> struct impl_IDeviceInformationCustomPairing;
-template <typename T> struct impl_IDeviceInformationPairing;
-template <typename T> struct impl_IDeviceInformationPairing2;
-template <typename T> struct impl_IDeviceInformationPairingStatics;
-template <typename T> struct impl_IDeviceInformationStatics;
-template <typename T> struct impl_IDeviceInformationStatics2;
-template <typename T> struct impl_IDeviceInformationUpdate;
-template <typename T> struct impl_IDeviceInformationUpdate2;
-template <typename T> struct impl_IDevicePairingRequestedEventArgs;
-template <typename T> struct impl_IDevicePairingResult;
-template <typename T> struct impl_IDevicePairingSettings;
-template <typename T> struct impl_IDevicePicker;
-template <typename T> struct impl_IDevicePickerAppearance;
-template <typename T> struct impl_IDevicePickerFilter;
-template <typename T> struct impl_IDeviceSelectedEventArgs;
-template <typename T> struct impl_IDeviceUnpairingResult;
-template <typename T> struct impl_IDeviceWatcher;
-template <typename T> struct impl_IDeviceWatcher2;
-template <typename T> struct impl_IDeviceWatcherEvent;
-template <typename T> struct impl_IDeviceWatcherTriggerDetails;
-template <typename T> struct impl_IEnclosureLocation;
-template <typename T> struct impl_IEnclosureLocation2;
+template <typename D>
+struct WINRT_EBO impl_IDeviceAccessChangedEventArgs
+{
+    Windows::Devices::Enumeration::DeviceAccessStatus Status() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDeviceAccessChangedEventArgs2
+{
+    hstring Id() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDeviceAccessInformation
+{
+    event_token AccessChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceAccessInformation, Windows::Devices::Enumeration::DeviceAccessChangedEventArgs> & handler) const;
+    using AccessChanged_revoker = event_revoker<IDeviceAccessInformation>;
+    AccessChanged_revoker AccessChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceAccessInformation, Windows::Devices::Enumeration::DeviceAccessChangedEventArgs> & handler) const;
+    void AccessChanged(event_token cookie) const;
+    Windows::Devices::Enumeration::DeviceAccessStatus CurrentStatus() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDeviceAccessInformationStatics
+{
+    Windows::Devices::Enumeration::DeviceAccessInformation CreateFromId(hstring_ref deviceId) const;
+    Windows::Devices::Enumeration::DeviceAccessInformation CreateFromDeviceClassId(GUID deviceClassId) const;
+    Windows::Devices::Enumeration::DeviceAccessInformation CreateFromDeviceClass(Windows::Devices::Enumeration::DeviceClass deviceClass) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDeviceConnectionChangeTriggerDetails
+{
+    hstring DeviceId() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDeviceDisconnectButtonClickedEventArgs
+{
+    Windows::Devices::Enumeration::DeviceInformation Device() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDeviceInformation
+{
+    hstring Id() const;
+    hstring Name() const;
+    bool IsEnabled() const;
+    bool IsDefault() const;
+    Windows::Devices::Enumeration::EnclosureLocation EnclosureLocation() const;
+    Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> Properties() const;
+    void Update(const Windows::Devices::Enumeration::DeviceInformationUpdate & updateInfo) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceThumbnail> GetThumbnailAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceThumbnail> GetGlyphThumbnailAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDeviceInformation2
+{
+    Windows::Devices::Enumeration::DeviceInformationKind Kind() const;
+    Windows::Devices::Enumeration::DeviceInformationPairing Pairing() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDeviceInformationCustomPairing
+{
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DevicePairingResult> PairAsync(Windows::Devices::Enumeration::DevicePairingKinds pairingKindsSupported) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DevicePairingResult> PairAsync(Windows::Devices::Enumeration::DevicePairingKinds pairingKindsSupported, Windows::Devices::Enumeration::DevicePairingProtectionLevel minProtectionLevel) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DevicePairingResult> PairAsync(Windows::Devices::Enumeration::DevicePairingKinds pairingKindsSupported, Windows::Devices::Enumeration::DevicePairingProtectionLevel minProtectionLevel, const Windows::Devices::Enumeration::IDevicePairingSettings & devicePairingSettings) const;
+    event_token PairingRequested(const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceInformationCustomPairing, Windows::Devices::Enumeration::DevicePairingRequestedEventArgs> & handler) const;
+    using PairingRequested_revoker = event_revoker<IDeviceInformationCustomPairing>;
+    PairingRequested_revoker PairingRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceInformationCustomPairing, Windows::Devices::Enumeration::DevicePairingRequestedEventArgs> & handler) const;
+    void PairingRequested(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDeviceInformationPairing
+{
+    bool IsPaired() const;
+    bool CanPair() const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DevicePairingResult> PairAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DevicePairingResult> PairAsync(Windows::Devices::Enumeration::DevicePairingProtectionLevel minProtectionLevel) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDeviceInformationPairing2
+{
+    Windows::Devices::Enumeration::DevicePairingProtectionLevel ProtectionLevel() const;
+    Windows::Devices::Enumeration::DeviceInformationCustomPairing Custom() const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DevicePairingResult> PairAsync(Windows::Devices::Enumeration::DevicePairingProtectionLevel minProtectionLevel, const Windows::Devices::Enumeration::IDevicePairingSettings & devicePairingSettings) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceUnpairingResult> UnpairAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDeviceInformationPairingStatics
+{
+    bool TryRegisterForAllInboundPairingRequests(Windows::Devices::Enumeration::DevicePairingKinds pairingKindsSupported) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDeviceInformationStatics
+{
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> CreateFromIdAsync(hstring_ref deviceId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> CreateFromIdAsync(hstring_ref deviceId, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync(Windows::Devices::Enumeration::DeviceClass deviceClass) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync(hstring_ref aqsFilter) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync(hstring_ref aqsFilter, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties) const;
+    Windows::Devices::Enumeration::DeviceWatcher CreateWatcher() const;
+    Windows::Devices::Enumeration::DeviceWatcher CreateWatcher(Windows::Devices::Enumeration::DeviceClass deviceClass) const;
+    Windows::Devices::Enumeration::DeviceWatcher CreateWatcher(hstring_ref aqsFilter) const;
+    Windows::Devices::Enumeration::DeviceWatcher CreateWatcher(hstring_ref aqsFilter, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDeviceInformationStatics2
+{
+    hstring GetAqsFilterFromDeviceClass(Windows::Devices::Enumeration::DeviceClass deviceClass) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> CreateFromIdAsync(hstring_ref deviceId, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformationCollection> FindAllAsync(hstring_ref aqsFilter, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind) const;
+    Windows::Devices::Enumeration::DeviceWatcher CreateWatcher(hstring_ref aqsFilter, const Windows::Foundation::Collections::IIterable<hstring> & additionalProperties, Windows::Devices::Enumeration::DeviceInformationKind kind) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDeviceInformationUpdate
+{
+    hstring Id() const;
+    Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> Properties() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDeviceInformationUpdate2
+{
+    Windows::Devices::Enumeration::DeviceInformationKind Kind() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDevicePairingRequestedEventArgs
+{
+    Windows::Devices::Enumeration::DeviceInformation DeviceInformation() const;
+    Windows::Devices::Enumeration::DevicePairingKinds PairingKind() const;
+    hstring Pin() const;
+    void Accept() const;
+    void Accept(hstring_ref pin) const;
+    Windows::Foundation::Deferral GetDeferral() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDevicePairingResult
+{
+    Windows::Devices::Enumeration::DevicePairingResultStatus Status() const;
+    Windows::Devices::Enumeration::DevicePairingProtectionLevel ProtectionLevelUsed() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDevicePairingSettings
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDevicePicker
+{
+    Windows::Devices::Enumeration::DevicePickerFilter Filter() const;
+    Windows::Devices::Enumeration::DevicePickerAppearance Appearance() const;
+    Windows::Foundation::Collections::IVector<hstring> RequestedProperties() const;
+    event_token DeviceSelected(const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Devices::Enumeration::DeviceSelectedEventArgs> & handler) const;
+    using DeviceSelected_revoker = event_revoker<IDevicePicker>;
+    DeviceSelected_revoker DeviceSelected(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Devices::Enumeration::DeviceSelectedEventArgs> & handler) const;
+    void DeviceSelected(event_token token) const;
+    event_token DisconnectButtonClicked(const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Devices::Enumeration::DeviceDisconnectButtonClickedEventArgs> & handler) const;
+    using DisconnectButtonClicked_revoker = event_revoker<IDevicePicker>;
+    DisconnectButtonClicked_revoker DisconnectButtonClicked(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::Devices::Enumeration::DeviceDisconnectButtonClickedEventArgs> & handler) const;
+    void DisconnectButtonClicked(event_token token) const;
+    event_token DevicePickerDismissed(const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::IInspectable> & handler) const;
+    using DevicePickerDismissed_revoker = event_revoker<IDevicePicker>;
+    DevicePickerDismissed_revoker DevicePickerDismissed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DevicePicker, Windows::IInspectable> & handler) const;
+    void DevicePickerDismissed(event_token token) const;
+    void Show(const Windows::Foundation::Rect & selection) const;
+    void Show(const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement placement) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> PickSingleDeviceAsync(const Windows::Foundation::Rect & selection) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Enumeration::DeviceInformation> PickSingleDeviceAsync(const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement placement) const;
+    void Hide() const;
+    void SetDisplayStatus(const Windows::Devices::Enumeration::DeviceInformation & device, hstring_ref status, Windows::Devices::Enumeration::DevicePickerDisplayStatusOptions options) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDevicePickerAppearance
+{
+    hstring Title() const;
+    void Title(hstring_ref value) const;
+    Windows::UI::Color ForegroundColor() const;
+    void ForegroundColor(const Windows::UI::Color & value) const;
+    Windows::UI::Color BackgroundColor() const;
+    void BackgroundColor(const Windows::UI::Color & value) const;
+    Windows::UI::Color AccentColor() const;
+    void AccentColor(const Windows::UI::Color & value) const;
+    Windows::UI::Color SelectedForegroundColor() const;
+    void SelectedForegroundColor(const Windows::UI::Color & value) const;
+    Windows::UI::Color SelectedBackgroundColor() const;
+    void SelectedBackgroundColor(const Windows::UI::Color & value) const;
+    Windows::UI::Color SelectedAccentColor() const;
+    void SelectedAccentColor(const Windows::UI::Color & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDevicePickerFilter
+{
+    Windows::Foundation::Collections::IVector<winrt::Windows::Devices::Enumeration::DeviceClass> SupportedDeviceClasses() const;
+    Windows::Foundation::Collections::IVector<hstring> SupportedDeviceSelectors() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDeviceSelectedEventArgs
+{
+    Windows::Devices::Enumeration::DeviceInformation SelectedDevice() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDeviceUnpairingResult
+{
+    Windows::Devices::Enumeration::DeviceUnpairingResultStatus Status() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDeviceWatcher
+{
+    event_token Added(const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformation> & handler) const;
+    using Added_revoker = event_revoker<IDeviceWatcher>;
+    Added_revoker Added(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformation> & handler) const;
+    void Added(event_token token) const;
+    event_token Updated(const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformationUpdate> & handler) const;
+    using Updated_revoker = event_revoker<IDeviceWatcher>;
+    Updated_revoker Updated(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformationUpdate> & handler) const;
+    void Updated(event_token token) const;
+    event_token Removed(const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformationUpdate> & handler) const;
+    using Removed_revoker = event_revoker<IDeviceWatcher>;
+    Removed_revoker Removed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::Devices::Enumeration::DeviceInformationUpdate> & handler) const;
+    void Removed(event_token token) const;
+    event_token EnumerationCompleted(const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::IInspectable> & handler) const;
+    using EnumerationCompleted_revoker = event_revoker<IDeviceWatcher>;
+    EnumerationCompleted_revoker EnumerationCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::IInspectable> & handler) const;
+    void EnumerationCompleted(event_token token) const;
+    event_token Stopped(const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::IInspectable> & handler) const;
+    using Stopped_revoker = event_revoker<IDeviceWatcher>;
+    Stopped_revoker Stopped(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Enumeration::DeviceWatcher, Windows::IInspectable> & handler) const;
+    void Stopped(event_token token) const;
+    Windows::Devices::Enumeration::DeviceWatcherStatus Status() const;
+    void Start() const;
+    void Stop() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDeviceWatcher2
+{
+    Windows::ApplicationModel::Background::DeviceWatcherTrigger GetBackgroundTrigger(const Windows::Foundation::Collections::IIterable<winrt::Windows::Devices::Enumeration::DeviceWatcherEventKind> & requestedEventKinds) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDeviceWatcherEvent
+{
+    Windows::Devices::Enumeration::DeviceWatcherEventKind Kind() const;
+    Windows::Devices::Enumeration::DeviceInformation DeviceInformation() const;
+    Windows::Devices::Enumeration::DeviceInformationUpdate DeviceInformationUpdate() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDeviceWatcherTriggerDetails
+{
+    Windows::Foundation::Collections::IVectorView<Windows::Devices::Enumeration::DeviceWatcherEvent> DeviceWatcherEvents() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEnclosureLocation
+{
+    bool InDock() const;
+    bool InLid() const;
+    Windows::Devices::Enumeration::Panel Panel() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEnclosureLocation2
+{
+    uint32_t RotationAngleInDegreesClockwise() const;
+};
 
 }
 

@@ -27,7 +27,13 @@ template <> struct traits<Windows::Perception::People::HeadPose> { using default
 
 namespace Windows::Perception::People {
 
-template <typename T> struct impl_IHeadPose;
+template <typename D>
+struct WINRT_EBO impl_IHeadPose
+{
+    Windows::Foundation::Numerics::float3 Position() const;
+    Windows::Foundation::Numerics::float3 ForwardDirection() const;
+    Windows::Foundation::Numerics::float3 UpDirection() const;
+};
 
 }
 

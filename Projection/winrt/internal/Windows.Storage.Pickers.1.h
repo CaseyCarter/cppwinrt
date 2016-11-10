@@ -112,15 +112,96 @@ template <> struct traits<Windows::Storage::Pickers::FolderPicker> { using defau
 
 namespace Windows::Storage::Pickers {
 
-template <typename T> struct impl_IFileOpenPicker;
-template <typename T> struct impl_IFileOpenPicker2;
-template <typename T> struct impl_IFileOpenPickerStatics;
-template <typename T> struct impl_IFileOpenPickerWithOperationId;
-template <typename T> struct impl_IFileSavePicker;
-template <typename T> struct impl_IFileSavePicker2;
-template <typename T> struct impl_IFileSavePicker3;
-template <typename T> struct impl_IFolderPicker;
-template <typename T> struct impl_IFolderPicker2;
+template <typename D>
+struct WINRT_EBO impl_IFileOpenPicker
+{
+    Windows::Storage::Pickers::PickerViewMode ViewMode() const;
+    void ViewMode(Windows::Storage::Pickers::PickerViewMode value) const;
+    hstring SettingsIdentifier() const;
+    void SettingsIdentifier(hstring_ref value) const;
+    Windows::Storage::Pickers::PickerLocationId SuggestedStartLocation() const;
+    void SuggestedStartLocation(Windows::Storage::Pickers::PickerLocationId value) const;
+    hstring CommitButtonText() const;
+    void CommitButtonText(hstring_ref value) const;
+    Windows::Foundation::Collections::IVector<hstring> FileTypeFilter() const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> PickSingleFileAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::StorageFile>> PickMultipleFilesAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFileOpenPicker2
+{
+    Windows::Foundation::Collections::ValueSet ContinuationData() const;
+    void PickSingleFileAndContinue() const;
+    void PickMultipleFilesAndContinue() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFileOpenPickerStatics
+{
+    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> ResumePickSingleFileAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFileOpenPickerWithOperationId
+{
+    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> PickSingleFileAsync(hstring_ref pickerOperationId) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFileSavePicker
+{
+    hstring SettingsIdentifier() const;
+    void SettingsIdentifier(hstring_ref value) const;
+    Windows::Storage::Pickers::PickerLocationId SuggestedStartLocation() const;
+    void SuggestedStartLocation(Windows::Storage::Pickers::PickerLocationId value) const;
+    hstring CommitButtonText() const;
+    void CommitButtonText(hstring_ref value) const;
+    Windows::Foundation::Collections::IMap<hstring, Windows::Foundation::Collections::IVector<hstring>> FileTypeChoices() const;
+    hstring DefaultFileExtension() const;
+    void DefaultFileExtension(hstring_ref value) const;
+    Windows::Storage::StorageFile SuggestedSaveFile() const;
+    void SuggestedSaveFile(const Windows::Storage::StorageFile & value) const;
+    hstring SuggestedFileName() const;
+    void SuggestedFileName(hstring_ref value) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> PickSaveFileAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFileSavePicker2
+{
+    Windows::Foundation::Collections::ValueSet ContinuationData() const;
+    void PickSaveFileAndContinue() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFileSavePicker3
+{
+    hstring EnterpriseId() const;
+    void EnterpriseId(hstring_ref value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFolderPicker
+{
+    Windows::Storage::Pickers::PickerViewMode ViewMode() const;
+    void ViewMode(Windows::Storage::Pickers::PickerViewMode value) const;
+    hstring SettingsIdentifier() const;
+    void SettingsIdentifier(hstring_ref value) const;
+    Windows::Storage::Pickers::PickerLocationId SuggestedStartLocation() const;
+    void SuggestedStartLocation(Windows::Storage::Pickers::PickerLocationId value) const;
+    hstring CommitButtonText() const;
+    void CommitButtonText(hstring_ref value) const;
+    Windows::Foundation::Collections::IVector<hstring> FileTypeFilter() const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> PickSingleFolderAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFolderPicker2
+{
+    Windows::Foundation::Collections::ValueSet ContinuationData() const;
+    void PickFolderAndContinue() const;
+};
 
 }
 

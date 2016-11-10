@@ -33,8 +33,21 @@ namespace ABI {
 
 namespace Windows::System::Power::Diagnostics {
 
-template <typename T> struct impl_IBackgroundEnergyDiagnosticsStatics;
-template <typename T> struct impl_IForegroundEnergyDiagnosticsStatics;
+template <typename D>
+struct WINRT_EBO impl_IBackgroundEnergyDiagnosticsStatics
+{
+    double DeviceSpecificConversionFactor() const;
+    uint64_t ComputeTotalEnergyUsage() const;
+    void ResetTotalEnergyUsage() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IForegroundEnergyDiagnosticsStatics
+{
+    double DeviceSpecificConversionFactor() const;
+    uint64_t ComputeTotalEnergyUsage() const;
+    void ResetTotalEnergyUsage() const;
+};
 
 }
 

@@ -189,30 +189,183 @@ template <> struct traits<Windows::UI::Xaml::Media::Imaging::XamlRenderingBackgr
 
 namespace Windows::UI::Xaml::Media::Imaging {
 
-template <typename T> struct impl_IBitmapImage;
-template <typename T> struct impl_IBitmapImage2;
-template <typename T> struct impl_IBitmapImage3;
-template <typename T> struct impl_IBitmapImageFactory;
-template <typename T> struct impl_IBitmapImageStatics;
-template <typename T> struct impl_IBitmapImageStatics2;
-template <typename T> struct impl_IBitmapImageStatics3;
-template <typename T> struct impl_IBitmapSource;
-template <typename T> struct impl_IBitmapSourceFactory;
-template <typename T> struct impl_IBitmapSourceStatics;
-template <typename T> struct impl_IDownloadProgressEventArgs;
-template <typename T> struct impl_IRenderTargetBitmap;
-template <typename T> struct impl_IRenderTargetBitmapStatics;
-template <typename T> struct impl_ISoftwareBitmapSource;
-template <typename T> struct impl_ISurfaceImageSource;
-template <typename T> struct impl_ISurfaceImageSourceFactory;
-template <typename T> struct impl_IVirtualSurfaceImageSource;
-template <typename T> struct impl_IVirtualSurfaceImageSourceFactory;
-template <typename T> struct impl_IWriteableBitmap;
-template <typename T> struct impl_IWriteableBitmapFactory;
-template <typename T> struct impl_IXamlRenderingBackgroundTask;
-template <typename T> struct impl_IXamlRenderingBackgroundTaskFactory;
-template <typename T> struct impl_IXamlRenderingBackgroundTaskOverrides;
-template <typename T> struct impl_DownloadProgressEventHandler;
+template <typename D>
+struct WINRT_EBO impl_IBitmapImage
+{
+    Windows::UI::Xaml::Media::Imaging::BitmapCreateOptions CreateOptions() const;
+    void CreateOptions(Windows::UI::Xaml::Media::Imaging::BitmapCreateOptions value) const;
+    Windows::Foundation::Uri UriSource() const;
+    void UriSource(const Windows::Foundation::Uri & value) const;
+    int32_t DecodePixelWidth() const;
+    void DecodePixelWidth(int32_t value) const;
+    int32_t DecodePixelHeight() const;
+    void DecodePixelHeight(int32_t value) const;
+    event_token DownloadProgress(const Windows::UI::Xaml::Media::Imaging::DownloadProgressEventHandler & value) const;
+    using DownloadProgress_revoker = event_revoker<IBitmapImage>;
+    DownloadProgress_revoker DownloadProgress(auto_revoke_t, const Windows::UI::Xaml::Media::Imaging::DownloadProgressEventHandler & value) const;
+    void DownloadProgress(event_token token) const;
+    event_token ImageOpened(const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    using ImageOpened_revoker = event_revoker<IBitmapImage>;
+    ImageOpened_revoker ImageOpened(auto_revoke_t, const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    void ImageOpened(event_token token) const;
+    event_token ImageFailed(const Windows::UI::Xaml::ExceptionRoutedEventHandler & value) const;
+    using ImageFailed_revoker = event_revoker<IBitmapImage>;
+    ImageFailed_revoker ImageFailed(auto_revoke_t, const Windows::UI::Xaml::ExceptionRoutedEventHandler & value) const;
+    void ImageFailed(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBitmapImage2
+{
+    Windows::UI::Xaml::Media::Imaging::DecodePixelType DecodePixelType() const;
+    void DecodePixelType(Windows::UI::Xaml::Media::Imaging::DecodePixelType value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBitmapImage3
+{
+    bool IsAnimatedBitmap() const;
+    bool IsPlaying() const;
+    bool AutoPlay() const;
+    void AutoPlay(bool value) const;
+    void Play() const;
+    void Stop() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBitmapImageFactory
+{
+    Windows::UI::Xaml::Media::Imaging::BitmapImage CreateInstanceWithUriSource(const Windows::Foundation::Uri & uriSource) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBitmapImageStatics
+{
+    Windows::UI::Xaml::DependencyProperty CreateOptionsProperty() const;
+    Windows::UI::Xaml::DependencyProperty UriSourceProperty() const;
+    Windows::UI::Xaml::DependencyProperty DecodePixelWidthProperty() const;
+    Windows::UI::Xaml::DependencyProperty DecodePixelHeightProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBitmapImageStatics2
+{
+    Windows::UI::Xaml::DependencyProperty DecodePixelTypeProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBitmapImageStatics3
+{
+    Windows::UI::Xaml::DependencyProperty IsAnimatedBitmapProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsPlayingProperty() const;
+    Windows::UI::Xaml::DependencyProperty AutoPlayProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBitmapSource
+{
+    int32_t PixelWidth() const;
+    int32_t PixelHeight() const;
+    void SetSource(const Windows::Storage::Streams::IRandomAccessStream & streamSource) const;
+    Windows::Foundation::IAsyncAction SetSourceAsync(const Windows::Storage::Streams::IRandomAccessStream & streamSource) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBitmapSourceFactory
+{
+    Windows::UI::Xaml::Media::Imaging::BitmapSource CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBitmapSourceStatics
+{
+    Windows::UI::Xaml::DependencyProperty PixelWidthProperty() const;
+    Windows::UI::Xaml::DependencyProperty PixelHeightProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDownloadProgressEventArgs
+{
+    int32_t Progress() const;
+    void Progress(int32_t value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRenderTargetBitmap
+{
+    int32_t PixelWidth() const;
+    int32_t PixelHeight() const;
+    Windows::Foundation::IAsyncAction RenderAsync(const Windows::UI::Xaml::UIElement & element) const;
+    Windows::Foundation::IAsyncAction RenderAsync(const Windows::UI::Xaml::UIElement & element, int32_t scaledWidth, int32_t scaledHeight) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> GetPixelsAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRenderTargetBitmapStatics
+{
+    Windows::UI::Xaml::DependencyProperty PixelWidthProperty() const;
+    Windows::UI::Xaml::DependencyProperty PixelHeightProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISoftwareBitmapSource
+{
+    Windows::Foundation::IAsyncAction SetBitmapAsync(const Windows::Graphics::Imaging::SoftwareBitmap & softwareBitmap) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISurfaceImageSource
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISurfaceImageSourceFactory
+{
+    Windows::UI::Xaml::Media::Imaging::SurfaceImageSource CreateInstanceWithDimensions(int32_t pixelWidth, int32_t pixelHeight, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Media::Imaging::SurfaceImageSource CreateInstanceWithDimensionsAndOpacity(int32_t pixelWidth, int32_t pixelHeight, bool isOpaque, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVirtualSurfaceImageSource
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVirtualSurfaceImageSourceFactory
+{
+    Windows::UI::Xaml::Media::Imaging::VirtualSurfaceImageSource CreateInstanceWithDimensions(int32_t pixelWidth, int32_t pixelHeight) const;
+    Windows::UI::Xaml::Media::Imaging::VirtualSurfaceImageSource CreateInstanceWithDimensionsAndOpacity(int32_t pixelWidth, int32_t pixelHeight, bool isOpaque) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWriteableBitmap
+{
+    Windows::Storage::Streams::IBuffer PixelBuffer() const;
+    void Invalidate() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWriteableBitmapFactory
+{
+    Windows::UI::Xaml::Media::Imaging::WriteableBitmap CreateInstanceWithDimensions(int32_t pixelWidth, int32_t pixelHeight) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IXamlRenderingBackgroundTask
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IXamlRenderingBackgroundTaskFactory
+{
+    Windows::UI::Xaml::Media::Imaging::XamlRenderingBackgroundTask CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IXamlRenderingBackgroundTaskOverrides
+{
+    void OnRun(const Windows::ApplicationModel::Background::IBackgroundTaskInstance & taskInstance) const;
+};
 
 }
 

@@ -4,7 +4,7 @@
 #pragma once
 
 #include "Windows.Devices.I2c.Provider.1.h"
-#include "Windows.Foundation.2.h"
+#include "Windows.Foundation.1.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -44,41 +44,6 @@ template <> struct __declspec(uuid("771e22ed-da9e-50be-b730-a3bada6bfb25")) __de
 }
 
 namespace Windows::Devices::I2c::Provider {
-
-template <typename D>
-struct WINRT_EBO impl_II2cControllerProvider
-{
-    Windows::Devices::I2c::Provider::II2cDeviceProvider GetDeviceProvider(const Windows::Devices::I2c::Provider::ProviderI2cConnectionSettings & settings) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_II2cDeviceProvider
-{
-    hstring DeviceId() const;
-    void Write(array_ref<const uint8_t> buffer) const;
-    Windows::Devices::I2c::Provider::ProviderI2cTransferResult WritePartial(array_ref<const uint8_t> buffer) const;
-    void Read(array_ref<uint8_t> buffer) const;
-    Windows::Devices::I2c::Provider::ProviderI2cTransferResult ReadPartial(array_ref<uint8_t> buffer) const;
-    void WriteRead(array_ref<const uint8_t> writeBuffer, array_ref<uint8_t> readBuffer) const;
-    Windows::Devices::I2c::Provider::ProviderI2cTransferResult WriteReadPartial(array_ref<const uint8_t> writeBuffer, array_ref<uint8_t> readBuffer) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_II2cProvider
-{
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::I2c::Provider::II2cControllerProvider>> GetControllersAsync() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IProviderI2cConnectionSettings
-{
-    int32_t SlaveAddress() const;
-    void SlaveAddress(int32_t value) const;
-    Windows::Devices::I2c::Provider::ProviderI2cBusSpeed BusSpeed() const;
-    void BusSpeed(Windows::Devices::I2c::Provider::ProviderI2cBusSpeed value) const;
-    Windows::Devices::I2c::Provider::ProviderI2cSharingMode SharingMode() const;
-    void SharingMode(Windows::Devices::I2c::Provider::ProviderI2cSharingMode value) const;
-};
 
 struct II2cControllerProvider :
     Windows::IInspectable,

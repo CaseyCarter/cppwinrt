@@ -87,14 +87,74 @@ template <> struct traits<Windows::Gaming::Input::ForceFeedback::RampForceEffect
 
 namespace Windows::Gaming::Input::ForceFeedback {
 
-template <typename T> struct impl_IConditionForceEffect;
-template <typename T> struct impl_IConditionForceEffectFactory;
-template <typename T> struct impl_IConstantForceEffect;
-template <typename T> struct impl_IForceFeedbackEffect;
-template <typename T> struct impl_IForceFeedbackMotor;
-template <typename T> struct impl_IPeriodicForceEffect;
-template <typename T> struct impl_IPeriodicForceEffectFactory;
-template <typename T> struct impl_IRampForceEffect;
+template <typename D>
+struct WINRT_EBO impl_IConditionForceEffect
+{
+    Windows::Gaming::Input::ForceFeedback::ConditionForceEffectKind Kind() const;
+    void SetParameters(const Windows::Foundation::Numerics::float3 & direction, float positiveCoefficient, float negativeCoefficient, float maxPositiveMagnitude, float maxNegativeMagnitude, float deadZone, float bias) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IConditionForceEffectFactory
+{
+    Windows::Gaming::Input::ForceFeedback::ConditionForceEffect CreateInstance(Windows::Gaming::Input::ForceFeedback::ConditionForceEffectKind effectKind) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IConstantForceEffect
+{
+    void SetParameters(const Windows::Foundation::Numerics::float3 & vector, const Windows::Foundation::TimeSpan & duration) const;
+    void SetParametersWithEnvelope(const Windows::Foundation::Numerics::float3 & vector, float attackGain, float sustainGain, float releaseGain, const Windows::Foundation::TimeSpan & startDelay, const Windows::Foundation::TimeSpan & attackDuration, const Windows::Foundation::TimeSpan & sustainDuration, const Windows::Foundation::TimeSpan & releaseDuration, uint32_t repeatCount) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IForceFeedbackEffect
+{
+    double Gain() const;
+    void Gain(double value) const;
+    Windows::Gaming::Input::ForceFeedback::ForceFeedbackEffectState State() const;
+    void Start() const;
+    void Stop() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IForceFeedbackMotor
+{
+    bool AreEffectsPaused() const;
+    double MasterGain() const;
+    void MasterGain(double value) const;
+    bool IsEnabled() const;
+    Windows::Gaming::Input::ForceFeedback::ForceFeedbackEffectAxes SupportedAxes() const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::Gaming::Input::ForceFeedback::ForceFeedbackLoadEffectResult> LoadEffectAsync(const Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect & effect) const;
+    void PauseAllEffects() const;
+    void ResumeAllEffects() const;
+    void StopAllEffects() const;
+    Windows::Foundation::IAsyncOperation<bool> TryDisableAsync() const;
+    Windows::Foundation::IAsyncOperation<bool> TryEnableAsync() const;
+    Windows::Foundation::IAsyncOperation<bool> TryResetAsync() const;
+    Windows::Foundation::IAsyncOperation<bool> TryUnloadEffectAsync(const Windows::Gaming::Input::ForceFeedback::IForceFeedbackEffect & effect) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPeriodicForceEffect
+{
+    Windows::Gaming::Input::ForceFeedback::PeriodicForceEffectKind Kind() const;
+    void SetParameters(const Windows::Foundation::Numerics::float3 & vector, float frequency, float phase, float bias, const Windows::Foundation::TimeSpan & duration) const;
+    void SetParametersWithEnvelope(const Windows::Foundation::Numerics::float3 & vector, float frequency, float phase, float bias, float attackGain, float sustainGain, float releaseGain, const Windows::Foundation::TimeSpan & startDelay, const Windows::Foundation::TimeSpan & attackDuration, const Windows::Foundation::TimeSpan & sustainDuration, const Windows::Foundation::TimeSpan & releaseDuration, uint32_t repeatCount) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPeriodicForceEffectFactory
+{
+    Windows::Gaming::Input::ForceFeedback::PeriodicForceEffect CreateInstance(Windows::Gaming::Input::ForceFeedback::PeriodicForceEffectKind effectKind) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRampForceEffect
+{
+    void SetParameters(const Windows::Foundation::Numerics::float3 & startVector, const Windows::Foundation::Numerics::float3 & endVector, const Windows::Foundation::TimeSpan & duration) const;
+    void SetParametersWithEnvelope(const Windows::Foundation::Numerics::float3 & startVector, const Windows::Foundation::Numerics::float3 & endVector, float attackGain, float sustainGain, float releaseGain, const Windows::Foundation::TimeSpan & startDelay, const Windows::Foundation::TimeSpan & attackDuration, const Windows::Foundation::TimeSpan & sustainDuration, const Windows::Foundation::TimeSpan & releaseDuration, uint32_t repeatCount) const;
+};
 
 }
 

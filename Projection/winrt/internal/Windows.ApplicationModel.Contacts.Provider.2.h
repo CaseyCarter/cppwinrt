@@ -64,33 +64,6 @@ template <> struct __declspec(uuid("39d6abda-a00a-5777-8611-82d7c326c18d")) __de
 
 namespace Windows::ApplicationModel::Contacts::Provider {
 
-template <typename D>
-struct WINRT_EBO impl_IContactPickerUI
-{
-    Windows::ApplicationModel::Contacts::Provider::AddContactResult AddContact(hstring_ref id, const Windows::ApplicationModel::Contacts::Contact & contact) const;
-    void RemoveContact(hstring_ref id) const;
-    bool ContainsContact(hstring_ref id) const;
-    Windows::Foundation::Collections::IVectorView<hstring> DesiredFields() const;
-    Windows::ApplicationModel::Contacts::ContactSelectionMode SelectionMode() const;
-    event_token ContactRemoved(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::Provider::ContactPickerUI, Windows::ApplicationModel::Contacts::Provider::ContactRemovedEventArgs> & handler) const;
-    using ContactRemoved_revoker = event_revoker<IContactPickerUI>;
-    ContactRemoved_revoker ContactRemoved(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Contacts::Provider::ContactPickerUI, Windows::ApplicationModel::Contacts::Provider::ContactRemovedEventArgs> & handler) const;
-    void ContactRemoved(event_token token) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IContactPickerUI2
-{
-    Windows::ApplicationModel::Contacts::Provider::AddContactResult AddContact(const Windows::ApplicationModel::Contacts::Contact & contact) const;
-    Windows::Foundation::Collections::IVector<winrt::Windows::ApplicationModel::Contacts::ContactFieldType> DesiredFieldsWithContactFieldType() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IContactRemovedEventArgs
-{
-    hstring Id() const;
-};
-
 struct IContactPickerUI :
     Windows::IInspectable,
     impl::consume<IContactPickerUI>

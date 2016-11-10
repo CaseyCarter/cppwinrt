@@ -362,51 +362,298 @@ template <> struct traits<Windows::UI::Xaml::Input::TappedRoutedEventArgs> { usi
 
 namespace Windows::UI::Xaml::Input {
 
-template <typename T> struct impl_IAccessKeyDisplayDismissedEventArgs;
-template <typename T> struct impl_IAccessKeyDisplayRequestedEventArgs;
-template <typename T> struct impl_IAccessKeyInvokedEventArgs;
-template <typename T> struct impl_IAccessKeyManager;
-template <typename T> struct impl_IAccessKeyManagerStatics;
-template <typename T> struct impl_ICommand;
-template <typename T> struct impl_IContextRequestedEventArgs;
-template <typename T> struct impl_IDoubleTappedRoutedEventArgs;
-template <typename T> struct impl_IFocusManager;
-template <typename T> struct impl_IFocusManagerStatics;
-template <typename T> struct impl_IFocusManagerStatics2;
-template <typename T> struct impl_IFocusManagerStatics3;
-template <typename T> struct impl_IHoldingRoutedEventArgs;
-template <typename T> struct impl_IInertiaExpansionBehavior;
-template <typename T> struct impl_IInertiaRotationBehavior;
-template <typename T> struct impl_IInertiaTranslationBehavior;
-template <typename T> struct impl_IInputScope;
-template <typename T> struct impl_IInputScopeName;
-template <typename T> struct impl_IInputScopeNameFactory;
-template <typename T> struct impl_IKeyRoutedEventArgs;
-template <typename T> struct impl_IKeyRoutedEventArgs2;
-template <typename T> struct impl_IKeyRoutedEventArgs3;
-template <typename T> struct impl_IManipulationCompletedRoutedEventArgs;
-template <typename T> struct impl_IManipulationDeltaRoutedEventArgs;
-template <typename T> struct impl_IManipulationInertiaStartingRoutedEventArgs;
-template <typename T> struct impl_IManipulationPivot;
-template <typename T> struct impl_IManipulationPivotFactory;
-template <typename T> struct impl_IManipulationStartedRoutedEventArgs;
-template <typename T> struct impl_IManipulationStartedRoutedEventArgsFactory;
-template <typename T> struct impl_IManipulationStartingRoutedEventArgs;
-template <typename T> struct impl_IPointer;
-template <typename T> struct impl_IPointerRoutedEventArgs;
-template <typename T> struct impl_IRightTappedRoutedEventArgs;
-template <typename T> struct impl_ITappedRoutedEventArgs;
-template <typename T> struct impl_DoubleTappedEventHandler;
-template <typename T> struct impl_HoldingEventHandler;
-template <typename T> struct impl_KeyEventHandler;
-template <typename T> struct impl_ManipulationCompletedEventHandler;
-template <typename T> struct impl_ManipulationDeltaEventHandler;
-template <typename T> struct impl_ManipulationInertiaStartingEventHandler;
-template <typename T> struct impl_ManipulationStartedEventHandler;
-template <typename T> struct impl_ManipulationStartingEventHandler;
-template <typename T> struct impl_PointerEventHandler;
-template <typename T> struct impl_RightTappedEventHandler;
-template <typename T> struct impl_TappedEventHandler;
+template <typename D>
+struct WINRT_EBO impl_IAccessKeyDisplayDismissedEventArgs
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAccessKeyDisplayRequestedEventArgs
+{
+    hstring PressedKeys() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAccessKeyInvokedEventArgs
+{
+    bool Handled() const;
+    void Handled(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAccessKeyManager
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAccessKeyManagerStatics
+{
+    bool IsDisplayModeEnabled() const;
+    event_token IsDisplayModeEnabledChanged(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::IInspectable> & value) const;
+    using IsDisplayModeEnabledChanged_revoker = event_revoker<IAccessKeyManagerStatics>;
+    IsDisplayModeEnabledChanged_revoker IsDisplayModeEnabledChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::IInspectable> & value) const;
+    void IsDisplayModeEnabledChanged(event_token token) const;
+    void ExitDisplayMode() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICommand
+{
+    event_token CanExecuteChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    using CanExecuteChanged_revoker = event_revoker<ICommand>;
+    CanExecuteChanged_revoker CanExecuteChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    void CanExecuteChanged(event_token token) const;
+    bool CanExecute(const Windows::IInspectable & parameter) const;
+    void Execute(const Windows::IInspectable & parameter) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContextRequestedEventArgs
+{
+    bool Handled() const;
+    void Handled(bool value) const;
+    bool TryGetPosition(const Windows::UI::Xaml::UIElement & relativeTo, Windows::Foundation::Point & point) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDoubleTappedRoutedEventArgs
+{
+    Windows::Devices::Input::PointerDeviceType PointerDeviceType() const;
+    bool Handled() const;
+    void Handled(bool value) const;
+    Windows::Foundation::Point GetPosition(const Windows::UI::Xaml::UIElement & relativeTo) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFocusManager
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFocusManagerStatics
+{
+    Windows::IInspectable GetFocusedElement() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFocusManagerStatics2
+{
+    bool TryMoveFocus(Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFocusManagerStatics3
+{
+    Windows::UI::Xaml::UIElement FindNextFocusableElement(Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection) const;
+    Windows::UI::Xaml::UIElement FindNextFocusableElement(Windows::UI::Xaml::Input::FocusNavigationDirection focusNavigationDirection, const Windows::Foundation::Rect & hintRect) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IHoldingRoutedEventArgs
+{
+    Windows::Devices::Input::PointerDeviceType PointerDeviceType() const;
+    Windows::UI::Input::HoldingState HoldingState() const;
+    bool Handled() const;
+    void Handled(bool value) const;
+    Windows::Foundation::Point GetPosition(const Windows::UI::Xaml::UIElement & relativeTo) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInertiaExpansionBehavior
+{
+    double DesiredDeceleration() const;
+    void DesiredDeceleration(double value) const;
+    double DesiredExpansion() const;
+    void DesiredExpansion(double value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInertiaRotationBehavior
+{
+    double DesiredDeceleration() const;
+    void DesiredDeceleration(double value) const;
+    double DesiredRotation() const;
+    void DesiredRotation(double value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInertiaTranslationBehavior
+{
+    double DesiredDeceleration() const;
+    void DesiredDeceleration(double value) const;
+    double DesiredDisplacement() const;
+    void DesiredDisplacement(double value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInputScope
+{
+    Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Input::InputScopeName> Names() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInputScopeName
+{
+    Windows::UI::Xaml::Input::InputScopeNameValue NameValue() const;
+    void NameValue(Windows::UI::Xaml::Input::InputScopeNameValue value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInputScopeNameFactory
+{
+    Windows::UI::Xaml::Input::InputScopeName CreateInstance(Windows::UI::Xaml::Input::InputScopeNameValue nameValue) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IKeyRoutedEventArgs
+{
+    Windows::System::VirtualKey Key() const;
+    Windows::UI::Core::CorePhysicalKeyStatus KeyStatus() const;
+    bool Handled() const;
+    void Handled(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IKeyRoutedEventArgs2
+{
+    Windows::System::VirtualKey OriginalKey() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IKeyRoutedEventArgs3
+{
+    hstring DeviceId() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IManipulationCompletedRoutedEventArgs
+{
+    Windows::UI::Xaml::UIElement Container() const;
+    Windows::Foundation::Point Position() const;
+    bool IsInertial() const;
+    Windows::UI::Input::ManipulationDelta Cumulative() const;
+    Windows::UI::Input::ManipulationVelocities Velocities() const;
+    bool Handled() const;
+    void Handled(bool value) const;
+    Windows::Devices::Input::PointerDeviceType PointerDeviceType() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IManipulationDeltaRoutedEventArgs
+{
+    Windows::UI::Xaml::UIElement Container() const;
+    Windows::Foundation::Point Position() const;
+    bool IsInertial() const;
+    Windows::UI::Input::ManipulationDelta Delta() const;
+    Windows::UI::Input::ManipulationDelta Cumulative() const;
+    Windows::UI::Input::ManipulationVelocities Velocities() const;
+    bool Handled() const;
+    void Handled(bool value) const;
+    Windows::Devices::Input::PointerDeviceType PointerDeviceType() const;
+    void Complete() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IManipulationInertiaStartingRoutedEventArgs
+{
+    Windows::UI::Xaml::UIElement Container() const;
+    Windows::UI::Xaml::Input::InertiaExpansionBehavior ExpansionBehavior() const;
+    void ExpansionBehavior(const Windows::UI::Xaml::Input::InertiaExpansionBehavior & value) const;
+    Windows::UI::Xaml::Input::InertiaRotationBehavior RotationBehavior() const;
+    void RotationBehavior(const Windows::UI::Xaml::Input::InertiaRotationBehavior & value) const;
+    Windows::UI::Xaml::Input::InertiaTranslationBehavior TranslationBehavior() const;
+    void TranslationBehavior(const Windows::UI::Xaml::Input::InertiaTranslationBehavior & value) const;
+    bool Handled() const;
+    void Handled(bool value) const;
+    Windows::Devices::Input::PointerDeviceType PointerDeviceType() const;
+    Windows::UI::Input::ManipulationDelta Delta() const;
+    Windows::UI::Input::ManipulationDelta Cumulative() const;
+    Windows::UI::Input::ManipulationVelocities Velocities() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IManipulationPivot
+{
+    Windows::Foundation::Point Center() const;
+    void Center(const Windows::Foundation::Point & value) const;
+    double Radius() const;
+    void Radius(double value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IManipulationPivotFactory
+{
+    Windows::UI::Xaml::Input::ManipulationPivot CreateInstanceWithCenterAndRadius(const Windows::Foundation::Point & center, double radius) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IManipulationStartedRoutedEventArgs
+{
+    Windows::UI::Xaml::UIElement Container() const;
+    Windows::Foundation::Point Position() const;
+    bool Handled() const;
+    void Handled(bool value) const;
+    Windows::Devices::Input::PointerDeviceType PointerDeviceType() const;
+    Windows::UI::Input::ManipulationDelta Cumulative() const;
+    void Complete() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IManipulationStartedRoutedEventArgsFactory
+{
+    Windows::UI::Xaml::Input::ManipulationStartedRoutedEventArgs CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IManipulationStartingRoutedEventArgs
+{
+    Windows::UI::Xaml::Input::ManipulationModes Mode() const;
+    void Mode(Windows::UI::Xaml::Input::ManipulationModes value) const;
+    Windows::UI::Xaml::UIElement Container() const;
+    void Container(const Windows::UI::Xaml::UIElement & value) const;
+    Windows::UI::Xaml::Input::ManipulationPivot Pivot() const;
+    void Pivot(const Windows::UI::Xaml::Input::ManipulationPivot & value) const;
+    bool Handled() const;
+    void Handled(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPointer
+{
+    uint32_t PointerId() const;
+    Windows::Devices::Input::PointerDeviceType PointerDeviceType() const;
+    bool IsInContact() const;
+    bool IsInRange() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPointerRoutedEventArgs
+{
+    Windows::UI::Xaml::Input::Pointer Pointer() const;
+    Windows::System::VirtualKeyModifiers KeyModifiers() const;
+    bool Handled() const;
+    void Handled(bool value) const;
+    Windows::UI::Input::PointerPoint GetCurrentPoint(const Windows::UI::Xaml::UIElement & relativeTo) const;
+    Windows::Foundation::Collections::IVector<Windows::UI::Input::PointerPoint> GetIntermediatePoints(const Windows::UI::Xaml::UIElement & relativeTo) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRightTappedRoutedEventArgs
+{
+    Windows::Devices::Input::PointerDeviceType PointerDeviceType() const;
+    bool Handled() const;
+    void Handled(bool value) const;
+    Windows::Foundation::Point GetPosition(const Windows::UI::Xaml::UIElement & relativeTo) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITappedRoutedEventArgs
+{
+    Windows::Devices::Input::PointerDeviceType PointerDeviceType() const;
+    bool Handled() const;
+    void Handled(bool value) const;
+    Windows::Foundation::Point GetPosition(const Windows::UI::Xaml::UIElement & relativeTo) const;
+};
 
 }
 

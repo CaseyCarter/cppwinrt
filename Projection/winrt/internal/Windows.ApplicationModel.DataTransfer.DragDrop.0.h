@@ -6,6 +6,11 @@
 
 WINRT_EXPORT namespace winrt {
 
+namespace Windows::ApplicationModel::DataTransfer {
+
+
+}
+
 namespace Windows::ApplicationModel::DataTransfer::DragDrop {
 
 enum class DragDropModifiers : unsigned

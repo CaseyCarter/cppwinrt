@@ -70,6 +70,27 @@ struct WiFiDirectLegacySettings;
 
 namespace Windows::Devices::WiFiDirect {
 
+template <typename T> struct impl_IWiFiDirectAdvertisement;
+template <typename T> struct impl_IWiFiDirectAdvertisement2;
+template <typename T> struct impl_IWiFiDirectAdvertisementPublisher;
+template <typename T> struct impl_IWiFiDirectAdvertisementPublisherStatusChangedEventArgs;
+template <typename T> struct impl_IWiFiDirectConnectionListener;
+template <typename T> struct impl_IWiFiDirectConnectionParameters;
+template <typename T> struct impl_IWiFiDirectConnectionParameters2;
+template <typename T> struct impl_IWiFiDirectConnectionParametersStatics;
+template <typename T> struct impl_IWiFiDirectConnectionRequest;
+template <typename T> struct impl_IWiFiDirectConnectionRequestedEventArgs;
+template <typename T> struct impl_IWiFiDirectDevice;
+template <typename T> struct impl_IWiFiDirectDeviceStatics;
+template <typename T> struct impl_IWiFiDirectDeviceStatics2;
+template <typename T> struct impl_IWiFiDirectInformationElement;
+template <typename T> struct impl_IWiFiDirectInformationElementStatics;
+template <typename T> struct impl_IWiFiDirectLegacySettings;
+
+}
+
+namespace Windows::Devices::WiFiDirect {
+
 enum class WiFiDirectAdvertisementListenStateDiscoverability
 {
     None = 0,

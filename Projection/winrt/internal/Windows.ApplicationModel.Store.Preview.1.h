@@ -96,14 +96,81 @@ template <> struct traits<Windows::ApplicationModel::Store::Preview::StorePrevie
 
 namespace Windows::ApplicationModel::Store::Preview {
 
-template <typename T> struct impl_IStoreConfigurationStatics;
-template <typename T> struct impl_IStoreConfigurationStatics2;
-template <typename T> struct impl_IStoreConfigurationStatics3;
-template <typename T> struct impl_IStoreHardwareManufacturerInfo;
-template <typename T> struct impl_IStorePreview;
-template <typename T> struct impl_IStorePreviewProductInfo;
-template <typename T> struct impl_IStorePreviewPurchaseResults;
-template <typename T> struct impl_IStorePreviewSkuInfo;
+template <typename D>
+struct WINRT_EBO impl_IStoreConfigurationStatics
+{
+    void SetSystemConfiguration(hstring_ref catalogHardwareManufacturerId, hstring_ref catalogStoreContentModifierId, const Windows::Foundation::DateTime & systemConfigurationExpiration, hstring_ref catalogHardwareDescriptor) const;
+    void SetMobileOperatorConfiguration(hstring_ref mobileOperatorId, uint32_t appDownloadLimitInMegabytes, uint32_t updateDownloadLimitInMegabytes) const;
+    void SetStoreWebAccountId(hstring_ref webAccountId) const;
+    bool IsStoreWebAccountId(hstring_ref webAccountId) const;
+    Windows::ApplicationModel::Store::Preview::StoreHardwareManufacturerInfo HardwareManufacturerInfo() const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<winrt::Windows::ApplicationModel::Store::Preview::StoreSystemFeature>> FilterUnsupportedSystemFeaturesAsync(const Windows::Foundation::Collections::IIterable<winrt::Windows::ApplicationModel::Store::Preview::StoreSystemFeature> & systemFeatures) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStoreConfigurationStatics2
+{
+    Windows::Foundation::IReference<uint32_t> PurchasePromptingPolicy() const;
+    void PurchasePromptingPolicy(const Windows::Foundation::IReference<uint32_t> & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStoreConfigurationStatics3
+{
+    bool HasStoreWebAccount() const;
+    bool HasStoreWebAccountForUser(const Windows::System::User & user) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamReference> GetStoreLogDataAsync(Windows::ApplicationModel::Store::Preview::StoreLogOptions options) const;
+    void SetStoreWebAccountIdForUser(const Windows::System::User & user, hstring_ref webAccountId) const;
+    bool IsStoreWebAccountIdForUser(const Windows::System::User & user, hstring_ref webAccountId) const;
+    Windows::Foundation::IReference<uint32_t> GetPurchasePromptingPolicyForUser(const Windows::System::User & user) const;
+    void SetPurchasePromptingPolicyForUser(const Windows::System::User & user, const Windows::Foundation::IReference<uint32_t> & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStoreHardwareManufacturerInfo
+{
+    hstring HardwareManufacturerId() const;
+    hstring StoreContentModifierId() const;
+    hstring ModelName() const;
+    hstring ManufacturerName() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStorePreview
+{
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::StorePreviewPurchaseResults> RequestProductPurchaseByProductIdAndSkuIdAsync(hstring_ref productId, hstring_ref skuId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::StorePreviewProductInfo>> LoadAddOnProductInfosAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStorePreviewProductInfo
+{
+    hstring ProductId() const;
+    hstring ProductType() const;
+    hstring Title() const;
+    hstring Description() const;
+    Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::StorePreviewSkuInfo> SkuInfoList() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStorePreviewPurchaseResults
+{
+    Windows::ApplicationModel::Store::Preview::StorePreviewProductPurchaseStatus ProductPurchaseStatus() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStorePreviewSkuInfo
+{
+    hstring ProductId() const;
+    hstring SkuId() const;
+    hstring SkuType() const;
+    hstring Title() const;
+    hstring Description() const;
+    hstring CustomDeveloperData() const;
+    hstring CurrencyCode() const;
+    hstring FormattedListPrice() const;
+    hstring ExtendedData() const;
+};
 
 }
 

@@ -62,6 +62,23 @@ struct HidOutputReport;
 
 namespace Windows::Devices::HumanInterfaceDevice {
 
+template <typename T> struct impl_IHidBooleanControl;
+template <typename T> struct impl_IHidBooleanControlDescription;
+template <typename T> struct impl_IHidBooleanControlDescription2;
+template <typename T> struct impl_IHidCollection;
+template <typename T> struct impl_IHidDevice;
+template <typename T> struct impl_IHidDeviceStatics;
+template <typename T> struct impl_IHidFeatureReport;
+template <typename T> struct impl_IHidInputReport;
+template <typename T> struct impl_IHidInputReportReceivedEventArgs;
+template <typename T> struct impl_IHidNumericControl;
+template <typename T> struct impl_IHidNumericControlDescription;
+template <typename T> struct impl_IHidOutputReport;
+
+}
+
+namespace Windows::Devices::HumanInterfaceDevice {
+
 enum class HidCollectionType
 {
     Physical = 0,

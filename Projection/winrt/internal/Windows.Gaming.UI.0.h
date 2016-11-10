@@ -19,4 +19,10 @@ struct GameBar;
 
 }
 
+namespace Windows::Gaming::UI {
+
+template <typename T> struct impl_IGameBarStatics;
+
+}
+
 }

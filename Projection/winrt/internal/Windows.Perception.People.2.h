@@ -9,14 +9,6 @@ WINRT_EXPORT namespace winrt {
 
 namespace Windows::Perception::People {
 
-template <typename D>
-struct WINRT_EBO impl_IHeadPose
-{
-    Windows::Foundation::Numerics::float3 Position() const;
-    Windows::Foundation::Numerics::float3 ForwardDirection() const;
-    Windows::Foundation::Numerics::float3 UpDirection() const;
-};
-
 struct IHeadPose :
     Windows::IInspectable,
     impl::consume<IHeadPose>

@@ -49,6 +49,16 @@ struct StorageItemMostRecentlyUsedList;
 
 namespace Windows::Storage::AccessCache {
 
+template <typename T> struct impl_IItemRemovedEventArgs;
+template <typename T> struct impl_IStorageApplicationPermissionsStatics;
+template <typename T> struct impl_IStorageItemAccessList;
+template <typename T> struct impl_IStorageItemMostRecentlyUsedList;
+template <typename T> struct impl_IStorageItemMostRecentlyUsedList2;
+
+}
+
+namespace Windows::Storage::AccessCache {
+
 enum class AccessCacheOptions : unsigned
 {
     None = 0x0,

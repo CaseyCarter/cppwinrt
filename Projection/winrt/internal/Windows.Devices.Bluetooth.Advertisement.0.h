@@ -71,6 +71,27 @@ struct BluetoothLEManufacturerData;
 
 namespace Windows::Devices::Bluetooth::Advertisement {
 
+template <typename T> struct impl_IBluetoothLEAdvertisement;
+template <typename T> struct impl_IBluetoothLEAdvertisementBytePattern;
+template <typename T> struct impl_IBluetoothLEAdvertisementBytePatternFactory;
+template <typename T> struct impl_IBluetoothLEAdvertisementDataSection;
+template <typename T> struct impl_IBluetoothLEAdvertisementDataSectionFactory;
+template <typename T> struct impl_IBluetoothLEAdvertisementDataTypesStatics;
+template <typename T> struct impl_IBluetoothLEAdvertisementFilter;
+template <typename T> struct impl_IBluetoothLEAdvertisementPublisher;
+template <typename T> struct impl_IBluetoothLEAdvertisementPublisherFactory;
+template <typename T> struct impl_IBluetoothLEAdvertisementPublisherStatusChangedEventArgs;
+template <typename T> struct impl_IBluetoothLEAdvertisementReceivedEventArgs;
+template <typename T> struct impl_IBluetoothLEAdvertisementWatcher;
+template <typename T> struct impl_IBluetoothLEAdvertisementWatcherFactory;
+template <typename T> struct impl_IBluetoothLEAdvertisementWatcherStoppedEventArgs;
+template <typename T> struct impl_IBluetoothLEManufacturerData;
+template <typename T> struct impl_IBluetoothLEManufacturerDataFactory;
+
+}
+
+namespace Windows::Devices::Bluetooth::Advertisement {
+
 enum class BluetoothLEAdvertisementFlags : unsigned
 {
     None = 0x0,

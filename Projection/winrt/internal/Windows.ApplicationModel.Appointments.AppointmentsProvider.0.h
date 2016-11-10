@@ -33,4 +33,14 @@ struct ReplaceAppointmentOperation;
 
 }
 
+namespace Windows::ApplicationModel::Appointments::AppointmentsProvider {
+
+template <typename T> struct impl_IAddAppointmentOperation;
+template <typename T> struct impl_IAppointmentsProviderLaunchActionVerbsStatics;
+template <typename T> struct impl_IAppointmentsProviderLaunchActionVerbsStatics2;
+template <typename T> struct impl_IRemoveAppointmentOperation;
+template <typename T> struct impl_IReplaceAppointmentOperation;
+
+}
+
 }

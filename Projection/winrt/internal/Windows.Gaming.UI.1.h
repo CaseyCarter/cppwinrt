@@ -30,7 +30,20 @@ namespace ABI {
 
 namespace Windows::Gaming::UI {
 
-template <typename T> struct impl_IGameBarStatics;
+template <typename D>
+struct WINRT_EBO impl_IGameBarStatics
+{
+    event_token VisibilityChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const;
+    using VisibilityChanged_revoker = event_revoker<IGameBarStatics>;
+    VisibilityChanged_revoker VisibilityChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const;
+    void VisibilityChanged(event_token token) const;
+    event_token IsInputRedirectedChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const;
+    using IsInputRedirectedChanged_revoker = event_revoker<IGameBarStatics>;
+    IsInputRedirectedChanged_revoker IsInputRedirectedChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const;
+    void IsInputRedirectedChanged(event_token token) const;
+    bool Visible() const;
+    bool IsInputRedirected() const;
+};
 
 }
 

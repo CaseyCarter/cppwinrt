@@ -82,6 +82,27 @@ struct ValueAndLanguage;
 
 namespace Windows::Storage::Search {
 
+template <typename T> struct impl_IContentIndexer;
+template <typename T> struct impl_IContentIndexerQuery;
+template <typename T> struct impl_IContentIndexerQueryOperations;
+template <typename T> struct impl_IContentIndexerStatics;
+template <typename T> struct impl_IIndexableContent;
+template <typename T> struct impl_IQueryOptions;
+template <typename T> struct impl_IQueryOptionsFactory;
+template <typename T> struct impl_IQueryOptionsWithProviderFilter;
+template <typename T> struct impl_IStorageFileQueryResult;
+template <typename T> struct impl_IStorageFileQueryResult2;
+template <typename T> struct impl_IStorageFolderQueryOperations;
+template <typename T> struct impl_IStorageFolderQueryResult;
+template <typename T> struct impl_IStorageItemQueryResult;
+template <typename T> struct impl_IStorageLibraryContentChangedTriggerDetails;
+template <typename T> struct impl_IStorageQueryResultBase;
+template <typename T> struct impl_IValueAndLanguage;
+
+}
+
+namespace Windows::Storage::Search {
+
 enum class CommonFileQuery
 {
     DefaultQuery = 0,

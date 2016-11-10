@@ -4,7 +4,7 @@
 #pragma once
 
 #include "Windows.Web.Http.Filters.1.h"
-#include "Windows.Foundation.2.h"
+#include "Windows.Foundation.1.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -84,81 +84,6 @@ template <> struct __declspec(uuid("beadb572-f9a3-5e93-b6ca-e311b65933fc")) __de
 }
 
 namespace Windows::Web::Http::Filters {
-
-template <typename D>
-struct WINRT_EBO impl_IHttpBaseProtocolFilter
-{
-    bool AllowAutoRedirect() const;
-    void AllowAutoRedirect(bool value) const;
-    bool AllowUI() const;
-    void AllowUI(bool value) const;
-    bool AutomaticDecompression() const;
-    void AutomaticDecompression(bool value) const;
-    Windows::Web::Http::Filters::HttpCacheControl CacheControl() const;
-    Windows::Web::Http::HttpCookieManager CookieManager() const;
-    Windows::Security::Cryptography::Certificates::Certificate ClientCertificate() const;
-    void ClientCertificate(const Windows::Security::Cryptography::Certificates::Certificate & value) const;
-    Windows::Foundation::Collections::IVector<winrt::Windows::Security::Cryptography::Certificates::ChainValidationResult> IgnorableServerCertificateErrors() const;
-    uint32_t MaxConnectionsPerServer() const;
-    void MaxConnectionsPerServer(uint32_t value) const;
-    Windows::Security::Credentials::PasswordCredential ProxyCredential() const;
-    void ProxyCredential(const Windows::Security::Credentials::PasswordCredential & value) const;
-    Windows::Security::Credentials::PasswordCredential ServerCredential() const;
-    void ServerCredential(const Windows::Security::Credentials::PasswordCredential & value) const;
-    bool UseProxy() const;
-    void UseProxy(bool value) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IHttpBaseProtocolFilter2
-{
-    Windows::Web::Http::HttpVersion MaxVersion() const;
-    void MaxVersion(Windows::Web::Http::HttpVersion value) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IHttpBaseProtocolFilter3
-{
-    Windows::Web::Http::Filters::HttpCookieUsageBehavior CookieUsageBehavior() const;
-    void CookieUsageBehavior(Windows::Web::Http::Filters::HttpCookieUsageBehavior value) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IHttpBaseProtocolFilter4
-{
-    event_token ServerCustomValidationRequested(const Windows::Foundation::TypedEventHandler<Windows::Web::Http::Filters::HttpBaseProtocolFilter, Windows::Web::Http::Filters::HttpServerCustomValidationRequestedEventArgs> & eventHandler) const;
-    using ServerCustomValidationRequested_revoker = event_revoker<IHttpBaseProtocolFilter4>;
-    ServerCustomValidationRequested_revoker ServerCustomValidationRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Web::Http::Filters::HttpBaseProtocolFilter, Windows::Web::Http::Filters::HttpServerCustomValidationRequestedEventArgs> & eventHandler) const;
-    void ServerCustomValidationRequested(event_token eventCookie) const;
-    void ClearAuthenticationCache() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IHttpCacheControl
-{
-    Windows::Web::Http::Filters::HttpCacheReadBehavior ReadBehavior() const;
-    void ReadBehavior(Windows::Web::Http::Filters::HttpCacheReadBehavior value) const;
-    Windows::Web::Http::Filters::HttpCacheWriteBehavior WriteBehavior() const;
-    void WriteBehavior(Windows::Web::Http::Filters::HttpCacheWriteBehavior value) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IHttpFilter
-{
-    Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Http::HttpResponseMessage, Windows::Web::Http::HttpProgress> SendRequestAsync(const Windows::Web::Http::HttpRequestMessage & request) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IHttpServerCustomValidationRequestedEventArgs
-{
-    Windows::Web::Http::HttpRequestMessage RequestMessage() const;
-    Windows::Security::Cryptography::Certificates::Certificate ServerCertificate() const;
-    Windows::Networking::Sockets::SocketSslErrorSeverity ServerCertificateErrorSeverity() const;
-    Windows::Foundation::Collections::IVectorView<winrt::Windows::Security::Cryptography::Certificates::ChainValidationResult> ServerCertificateErrors() const;
-    Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> ServerIntermediateCertificates() const;
-    void Reject() const;
-    Windows::Foundation::Deferral GetDeferral() const;
-};
 
 struct IHttpBaseProtocolFilter :
     Windows::IInspectable,

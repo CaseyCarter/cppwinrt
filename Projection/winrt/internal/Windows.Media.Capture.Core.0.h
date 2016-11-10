@@ -26,4 +26,12 @@ struct VariablePhotoSequenceCapture;
 
 }
 
+namespace Windows::Media::Capture::Core {
+
+template <typename T> struct impl_IVariablePhotoCapturedEventArgs;
+template <typename T> struct impl_IVariablePhotoSequenceCapture;
+template <typename T> struct impl_IVariablePhotoSequenceCapture2;
+
+}
+
 }

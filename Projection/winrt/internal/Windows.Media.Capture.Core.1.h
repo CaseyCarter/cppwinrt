@@ -48,9 +48,36 @@ template <> struct traits<Windows::Media::Capture::Core::VariablePhotoSequenceCa
 
 namespace Windows::Media::Capture::Core {
 
-template <typename T> struct impl_IVariablePhotoCapturedEventArgs;
-template <typename T> struct impl_IVariablePhotoSequenceCapture;
-template <typename T> struct impl_IVariablePhotoSequenceCapture2;
+template <typename D>
+struct WINRT_EBO impl_IVariablePhotoCapturedEventArgs
+{
+    Windows::Media::Capture::CapturedFrame Frame() const;
+    Windows::Foundation::TimeSpan CaptureTimeOffset() const;
+    Windows::Foundation::IReference<uint32_t> UsedFrameControllerIndex() const;
+    Windows::Media::Capture::CapturedFrameControlValues CapturedFrameControlValues() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVariablePhotoSequenceCapture
+{
+    Windows::Foundation::IAsyncAction StartAsync() const;
+    Windows::Foundation::IAsyncAction StopAsync() const;
+    Windows::Foundation::IAsyncAction FinishAsync() const;
+    event_token PhotoCaptured(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Core::VariablePhotoSequenceCapture, Windows::Media::Capture::Core::VariablePhotoCapturedEventArgs> & handler) const;
+    using PhotoCaptured_revoker = event_revoker<IVariablePhotoSequenceCapture>;
+    PhotoCaptured_revoker PhotoCaptured(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Core::VariablePhotoSequenceCapture, Windows::Media::Capture::Core::VariablePhotoCapturedEventArgs> & handler) const;
+    void PhotoCaptured(event_token token) const;
+    event_token Stopped(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Core::VariablePhotoSequenceCapture, Windows::IInspectable> & handler) const;
+    using Stopped_revoker = event_revoker<IVariablePhotoSequenceCapture>;
+    Stopped_revoker Stopped(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::Core::VariablePhotoSequenceCapture, Windows::IInspectable> & handler) const;
+    void Stopped(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVariablePhotoSequenceCapture2
+{
+    Windows::Foundation::IAsyncAction UpdateSettingsAsync() const;
+};
 
 }
 

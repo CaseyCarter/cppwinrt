@@ -32,6 +32,16 @@ struct HostName;
 
 namespace Windows::Networking {
 
+template <typename T> struct impl_IEndpointPair;
+template <typename T> struct impl_IEndpointPairFactory;
+template <typename T> struct impl_IHostName;
+template <typename T> struct impl_IHostNameFactory;
+template <typename T> struct impl_IHostNameStatics;
+
+}
+
+namespace Windows::Networking {
+
 enum class DomainNameType
 {
     Suffix = 0,

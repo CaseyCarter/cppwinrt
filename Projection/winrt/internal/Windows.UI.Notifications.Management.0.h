@@ -24,6 +24,13 @@ struct UserNotificationListener;
 
 namespace Windows::UI::Notifications::Management {
 
+template <typename T> struct impl_IUserNotificationListener;
+template <typename T> struct impl_IUserNotificationListenerStatics;
+
+}
+
+namespace Windows::UI::Notifications::Management {
+
 enum class UserNotificationListenerAccessStatus
 {
     Unspecified = 0,

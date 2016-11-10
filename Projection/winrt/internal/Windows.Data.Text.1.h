@@ -185,26 +185,151 @@ template <> struct traits<Windows::Data::Text::WordsSegmenter> { using default_i
 
 namespace Windows::Data::Text {
 
-template <typename T> struct impl_IAlternateWordForm;
-template <typename T> struct impl_ISelectableWordSegment;
-template <typename T> struct impl_ISelectableWordsSegmenter;
-template <typename T> struct impl_ISelectableWordsSegmenterFactory;
-template <typename T> struct impl_ISemanticTextQuery;
-template <typename T> struct impl_ISemanticTextQueryFactory;
-template <typename T> struct impl_ITextConversionGenerator;
-template <typename T> struct impl_ITextConversionGeneratorFactory;
-template <typename T> struct impl_ITextPhoneme;
-template <typename T> struct impl_ITextPredictionGenerator;
-template <typename T> struct impl_ITextPredictionGeneratorFactory;
-template <typename T> struct impl_ITextReverseConversionGenerator;
-template <typename T> struct impl_ITextReverseConversionGenerator2;
-template <typename T> struct impl_ITextReverseConversionGeneratorFactory;
-template <typename T> struct impl_IUnicodeCharactersStatics;
-template <typename T> struct impl_IWordSegment;
-template <typename T> struct impl_IWordsSegmenter;
-template <typename T> struct impl_IWordsSegmenterFactory;
-template <typename T> struct impl_SelectableWordSegmentsTokenizingHandler;
-template <typename T> struct impl_WordSegmentsTokenizingHandler;
+template <typename D>
+struct WINRT_EBO impl_IAlternateWordForm
+{
+    Windows::Data::Text::TextSegment SourceTextSegment() const;
+    hstring AlternateText() const;
+    Windows::Data::Text::AlternateNormalizationFormat NormalizationFormat() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISelectableWordSegment
+{
+    hstring Text() const;
+    Windows::Data::Text::TextSegment SourceTextSegment() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISelectableWordsSegmenter
+{
+    hstring ResolvedLanguage() const;
+    Windows::Data::Text::SelectableWordSegment GetTokenAt(hstring_ref text, uint32_t startIndex) const;
+    Windows::Foundation::Collections::IVectorView<Windows::Data::Text::SelectableWordSegment> GetTokens(hstring_ref text) const;
+    void Tokenize(hstring_ref text, uint32_t startIndex, const Windows::Data::Text::SelectableWordSegmentsTokenizingHandler & handler) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISelectableWordsSegmenterFactory
+{
+    Windows::Data::Text::SelectableWordsSegmenter CreateWithLanguage(hstring_ref language) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISemanticTextQuery
+{
+    Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextSegment> Find(hstring_ref content) const;
+    Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextSegment> FindInProperty(hstring_ref propertyContent, hstring_ref propertyName) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISemanticTextQueryFactory
+{
+    Windows::Data::Text::SemanticTextQuery Create(hstring_ref aqsFilter) const;
+    Windows::Data::Text::SemanticTextQuery CreateWithLanguage(hstring_ref aqsFilter, hstring_ref filterLanguage) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITextConversionGenerator
+{
+    hstring ResolvedLanguage() const;
+    bool LanguageAvailableButNotInstalled() const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> GetCandidatesAsync(hstring_ref input) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> GetCandidatesAsync(hstring_ref input, uint32_t maxCandidates) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITextConversionGeneratorFactory
+{
+    Windows::Data::Text::TextConversionGenerator Create(hstring_ref languageTag) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITextPhoneme
+{
+    hstring DisplayText() const;
+    hstring ReadingText() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITextPredictionGenerator
+{
+    hstring ResolvedLanguage() const;
+    bool LanguageAvailableButNotInstalled() const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> GetCandidatesAsync(hstring_ref input) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> GetCandidatesAsync(hstring_ref input, uint32_t maxCandidates) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITextPredictionGeneratorFactory
+{
+    Windows::Data::Text::TextPredictionGenerator Create(hstring_ref languageTag) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITextReverseConversionGenerator
+{
+    hstring ResolvedLanguage() const;
+    bool LanguageAvailableButNotInstalled() const;
+    Windows::Foundation::IAsyncOperation<hstring> ConvertBackAsync(hstring_ref input) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITextReverseConversionGenerator2
+{
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Data::Text::TextPhoneme>> GetPhonemesAsync(hstring_ref input) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITextReverseConversionGeneratorFactory
+{
+    Windows::Data::Text::TextReverseConversionGenerator Create(hstring_ref languageTag) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUnicodeCharactersStatics
+{
+    uint32_t GetCodepointFromSurrogatePair(uint32_t highSurrogate, uint32_t lowSurrogate) const;
+    void GetSurrogatePairFromCodepoint(uint32_t codepoint, wchar_t & highSurrogate, wchar_t & lowSurrogate) const;
+    bool IsHighSurrogate(uint32_t codepoint) const;
+    bool IsLowSurrogate(uint32_t codepoint) const;
+    bool IsSupplementary(uint32_t codepoint) const;
+    bool IsNoncharacter(uint32_t codepoint) const;
+    bool IsWhitespace(uint32_t codepoint) const;
+    bool IsAlphabetic(uint32_t codepoint) const;
+    bool IsCased(uint32_t codepoint) const;
+    bool IsUppercase(uint32_t codepoint) const;
+    bool IsLowercase(uint32_t codepoint) const;
+    bool IsIdStart(uint32_t codepoint) const;
+    bool IsIdContinue(uint32_t codepoint) const;
+    bool IsGraphemeBase(uint32_t codepoint) const;
+    bool IsGraphemeExtend(uint32_t codepoint) const;
+    Windows::Data::Text::UnicodeNumericType GetNumericType(uint32_t codepoint) const;
+    Windows::Data::Text::UnicodeGeneralCategory GetGeneralCategory(uint32_t codepoint) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWordSegment
+{
+    hstring Text() const;
+    Windows::Data::Text::TextSegment SourceTextSegment() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Data::Text::AlternateWordForm> AlternateForms() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWordsSegmenter
+{
+    hstring ResolvedLanguage() const;
+    Windows::Data::Text::WordSegment GetTokenAt(hstring_ref text, uint32_t startIndex) const;
+    Windows::Foundation::Collections::IVectorView<Windows::Data::Text::WordSegment> GetTokens(hstring_ref text) const;
+    void Tokenize(hstring_ref text, uint32_t startIndex, const Windows::Data::Text::WordSegmentsTokenizingHandler & handler) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWordsSegmenterFactory
+{
+    Windows::Data::Text::WordsSegmenter CreateWithLanguage(hstring_ref language) const;
+};
 
 }
 

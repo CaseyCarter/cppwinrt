@@ -39,42 +39,6 @@ template <> struct __declspec(uuid("94d64ac6-4491-53ef-8be8-36481f3ff1e8")) __de
 
 namespace Windows::Media::Transcoding {
 
-template <typename D>
-struct WINRT_EBO impl_IMediaTranscoder
-{
-    void TrimStartTime(const Windows::Foundation::TimeSpan & value) const;
-    Windows::Foundation::TimeSpan TrimStartTime() const;
-    void TrimStopTime(const Windows::Foundation::TimeSpan & value) const;
-    Windows::Foundation::TimeSpan TrimStopTime() const;
-    void AlwaysReencode(bool value) const;
-    bool AlwaysReencode() const;
-    void HardwareAccelerationEnabled(bool value) const;
-    bool HardwareAccelerationEnabled() const;
-    void AddAudioEffect(hstring_ref activatableClassId) const;
-    void AddAudioEffect(hstring_ref activatableClassId, bool effectRequired, const Windows::Foundation::Collections::IPropertySet & configuration) const;
-    void AddVideoEffect(hstring_ref activatableClassId) const;
-    void AddVideoEffect(hstring_ref activatableClassId, bool effectRequired, const Windows::Foundation::Collections::IPropertySet & configuration) const;
-    void ClearEffects() const;
-    Windows::Foundation::IAsyncOperation<Windows::Media::Transcoding::PrepareTranscodeResult> PrepareFileTranscodeAsync(const Windows::Storage::IStorageFile & source, const Windows::Storage::IStorageFile & destination, const Windows::Media::MediaProperties::MediaEncodingProfile & profile) const;
-    Windows::Foundation::IAsyncOperation<Windows::Media::Transcoding::PrepareTranscodeResult> PrepareStreamTranscodeAsync(const Windows::Storage::Streams::IRandomAccessStream & source, const Windows::Storage::Streams::IRandomAccessStream & destination, const Windows::Media::MediaProperties::MediaEncodingProfile & profile) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IMediaTranscoder2
-{
-    Windows::Foundation::IAsyncOperation<Windows::Media::Transcoding::PrepareTranscodeResult> PrepareMediaStreamSourceTranscodeAsync(const Windows::Media::Core::IMediaSource & source, const Windows::Storage::Streams::IRandomAccessStream & destination, const Windows::Media::MediaProperties::MediaEncodingProfile & profile) const;
-    void VideoProcessingAlgorithm(Windows::Media::Transcoding::MediaVideoProcessingAlgorithm value) const;
-    Windows::Media::Transcoding::MediaVideoProcessingAlgorithm VideoProcessingAlgorithm() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IPrepareTranscodeResult
-{
-    bool CanTranscode() const;
-    Windows::Media::Transcoding::TranscodeFailureReason FailureReason() const;
-    Windows::Foundation::IAsyncActionWithProgress<double> TranscodeAsync() const;
-};
-
 struct IMediaTranscoder :
     Windows::IInspectable,
     impl::consume<IMediaTranscoder>

@@ -134,12 +134,85 @@ template <> struct traits<Windows::UI::Input::Preview::Injection::InputInjector>
 
 namespace Windows::UI::Input::Preview::Injection {
 
-template <typename T> struct impl_IInjectedInputKeyboardInfo;
-template <typename T> struct impl_IInjectedInputMouseInfo;
-template <typename T> struct impl_IInjectedInputPenInfo;
-template <typename T> struct impl_IInjectedInputTouchInfo;
-template <typename T> struct impl_IInputInjector;
-template <typename T> struct impl_IInputInjectorStatics;
+template <typename D>
+struct WINRT_EBO impl_IInjectedInputKeyboardInfo
+{
+    Windows::UI::Input::Preview::Injection::InjectedInputKeyOptions KeyOptions() const;
+    void KeyOptions(Windows::UI::Input::Preview::Injection::InjectedInputKeyOptions value) const;
+    uint16_t ScanCode() const;
+    void ScanCode(uint16_t value) const;
+    uint16_t VirtualKey() const;
+    void VirtualKey(uint16_t value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInjectedInputMouseInfo
+{
+    Windows::UI::Input::Preview::Injection::InjectedInputMouseOptions MouseOptions() const;
+    void MouseOptions(Windows::UI::Input::Preview::Injection::InjectedInputMouseOptions value) const;
+    uint32_t MouseData() const;
+    void MouseData(uint32_t value) const;
+    int32_t DeltaY() const;
+    void DeltaY(int32_t value) const;
+    int32_t DeltaX() const;
+    void DeltaX(int32_t value) const;
+    uint32_t TimeOffsetInMilliseconds() const;
+    void TimeOffsetInMilliseconds(uint32_t value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInjectedInputPenInfo
+{
+    Windows::UI::Input::Preview::Injection::InjectedInputPointerInfo PointerInfo() const;
+    void PointerInfo(const Windows::UI::Input::Preview::Injection::InjectedInputPointerInfo & value) const;
+    Windows::UI::Input::Preview::Injection::InjectedInputPenButtons PenButtons() const;
+    void PenButtons(Windows::UI::Input::Preview::Injection::InjectedInputPenButtons value) const;
+    Windows::UI::Input::Preview::Injection::InjectedInputPenParameters PenParameters() const;
+    void PenParameters(Windows::UI::Input::Preview::Injection::InjectedInputPenParameters value) const;
+    double Pressure() const;
+    void Pressure(double value) const;
+    double Rotation() const;
+    void Rotation(double value) const;
+    int32_t TiltX() const;
+    void TiltX(int32_t value) const;
+    int32_t TiltY() const;
+    void TiltY(int32_t value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInjectedInputTouchInfo
+{
+    Windows::UI::Input::Preview::Injection::InjectedInputRectangle Contact() const;
+    void Contact(const Windows::UI::Input::Preview::Injection::InjectedInputRectangle & value) const;
+    int32_t Orientation() const;
+    void Orientation(int32_t value) const;
+    Windows::UI::Input::Preview::Injection::InjectedInputPointerInfo PointerInfo() const;
+    void PointerInfo(const Windows::UI::Input::Preview::Injection::InjectedInputPointerInfo & value) const;
+    double Pressure() const;
+    void Pressure(double value) const;
+    Windows::UI::Input::Preview::Injection::InjectedInputTouchParameters TouchParameters() const;
+    void TouchParameters(Windows::UI::Input::Preview::Injection::InjectedInputTouchParameters value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInputInjector
+{
+    void InjectKeyboardInput(const Windows::Foundation::Collections::IIterable<Windows::UI::Input::Preview::Injection::InjectedInputKeyboardInfo> & input) const;
+    void InjectMouseInput(const Windows::Foundation::Collections::IIterable<Windows::UI::Input::Preview::Injection::InjectedInputMouseInfo> & input) const;
+    void InitializeTouchInjection(Windows::UI::Input::Preview::Injection::InjectedInputVisualizationMode visualMode) const;
+    void InjectTouchInput(const Windows::Foundation::Collections::IIterable<Windows::UI::Input::Preview::Injection::InjectedInputTouchInfo> & input) const;
+    void UninitializeTouchInjection() const;
+    void InitializePenInjection(Windows::UI::Input::Preview::Injection::InjectedInputVisualizationMode visualMode) const;
+    void InjectPenInput(const Windows::UI::Input::Preview::Injection::InjectedInputPenInfo & input) const;
+    void UninitializePenInjection() const;
+    void InjectShortcut(Windows::UI::Input::Preview::Injection::InjectedInputShortcut shortcut) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInputInjectorStatics
+{
+    Windows::UI::Input::Preview::Injection::InputInjector TryCreate() const;
+};
 
 }
 

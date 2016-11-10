@@ -73,6 +73,30 @@ struct VideoEncodingProperties;
 
 namespace Windows::Media::MediaProperties {
 
+template <typename T> struct impl_IAudioEncodingProperties;
+template <typename T> struct impl_IAudioEncodingPropertiesStatics;
+template <typename T> struct impl_IAudioEncodingPropertiesWithFormatUserData;
+template <typename T> struct impl_IContainerEncodingProperties;
+template <typename T> struct impl_IH264ProfileIdsStatics;
+template <typename T> struct impl_IImageEncodingProperties;
+template <typename T> struct impl_IImageEncodingPropertiesStatics;
+template <typename T> struct impl_IImageEncodingPropertiesStatics2;
+template <typename T> struct impl_IMediaEncodingProfile;
+template <typename T> struct impl_IMediaEncodingProfileStatics;
+template <typename T> struct impl_IMediaEncodingProfileStatics2;
+template <typename T> struct impl_IMediaEncodingProperties;
+template <typename T> struct impl_IMediaEncodingSubtypesStatics;
+template <typename T> struct impl_IMediaRatio;
+template <typename T> struct impl_IMpeg2ProfileIdsStatics;
+template <typename T> struct impl_IVideoEncodingProperties;
+template <typename T> struct impl_IVideoEncodingProperties2;
+template <typename T> struct impl_IVideoEncodingProperties3;
+template <typename T> struct impl_IVideoEncodingPropertiesStatics;
+
+}
+
+namespace Windows::Media::MediaProperties {
+
 enum class AudioEncodingQuality
 {
     Auto = 0,

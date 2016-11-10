@@ -24,66 +24,6 @@ template <> struct __declspec(uuid("45fdd443-c0b9-57b0-a84f-7d876edc3149")) __de
 
 namespace Windows::Storage::Provider {
 
-template <typename D>
-struct WINRT_EBO impl_ICachedFileUpdaterStatics
-{
-    void SetUpdateInformation(const Windows::Storage::IStorageFile & file, hstring_ref contentId, Windows::Storage::Provider::ReadActivationMode readMode, Windows::Storage::Provider::WriteActivationMode writeMode, Windows::Storage::Provider::CachedFileOptions options) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_ICachedFileUpdaterUI
-{
-    hstring Title() const;
-    void Title(hstring_ref value) const;
-    Windows::Storage::Provider::CachedFileTarget UpdateTarget() const;
-    event_token FileUpdateRequested(const Windows::Foundation::TypedEventHandler<Windows::Storage::Provider::CachedFileUpdaterUI, Windows::Storage::Provider::FileUpdateRequestedEventArgs> & handler) const;
-    using FileUpdateRequested_revoker = event_revoker<ICachedFileUpdaterUI>;
-    FileUpdateRequested_revoker FileUpdateRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Storage::Provider::CachedFileUpdaterUI, Windows::Storage::Provider::FileUpdateRequestedEventArgs> & handler) const;
-    void FileUpdateRequested(event_token token) const;
-    event_token UIRequested(const Windows::Foundation::TypedEventHandler<Windows::Storage::Provider::CachedFileUpdaterUI, Windows::IInspectable> & handler) const;
-    using UIRequested_revoker = event_revoker<ICachedFileUpdaterUI>;
-    UIRequested_revoker UIRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Storage::Provider::CachedFileUpdaterUI, Windows::IInspectable> & handler) const;
-    void UIRequested(event_token token) const;
-    Windows::Storage::Provider::UIStatus UIStatus() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_ICachedFileUpdaterUI2
-{
-    Windows::Storage::Provider::FileUpdateRequest UpdateRequest() const;
-    Windows::Storage::Provider::FileUpdateRequestDeferral GetDeferral() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IFileUpdateRequest
-{
-    hstring ContentId() const;
-    Windows::Storage::StorageFile File() const;
-    Windows::Storage::Provider::FileUpdateStatus Status() const;
-    void Status(Windows::Storage::Provider::FileUpdateStatus value) const;
-    Windows::Storage::Provider::FileUpdateRequestDeferral GetDeferral() const;
-    void UpdateLocalFile(const Windows::Storage::IStorageFile & value) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IFileUpdateRequest2
-{
-    hstring UserInputNeededMessage() const;
-    void UserInputNeededMessage(hstring_ref value) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IFileUpdateRequestDeferral
-{
-    void Complete() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IFileUpdateRequestedEventArgs
-{
-    Windows::Storage::Provider::FileUpdateRequest Request() const;
-};
-
 struct ICachedFileUpdaterStatics :
     Windows::IInspectable,
     impl::consume<ICachedFileUpdaterStatics>

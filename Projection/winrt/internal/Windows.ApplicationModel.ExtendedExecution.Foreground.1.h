@@ -39,8 +39,25 @@ template <> struct traits<Windows::ApplicationModel::ExtendedExecution::Foregrou
 
 namespace Windows::ApplicationModel::ExtendedExecution::Foreground {
 
-template <typename T> struct impl_IExtendedExecutionForegroundRevokedEventArgs;
-template <typename T> struct impl_IExtendedExecutionForegroundSession;
+template <typename D>
+struct WINRT_EBO impl_IExtendedExecutionForegroundRevokedEventArgs
+{
+    Windows::ApplicationModel::ExtendedExecution::Foreground::ExtendedExecutionForegroundRevokedReason Reason() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IExtendedExecutionForegroundSession
+{
+    hstring Description() const;
+    void Description(hstring_ref value) const;
+    event_token Revoked(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::ApplicationModel::ExtendedExecution::Foreground::ExtendedExecutionForegroundRevokedEventArgs> & handler) const;
+    using Revoked_revoker = event_revoker<IExtendedExecutionForegroundSession>;
+    Revoked_revoker Revoked(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::ApplicationModel::ExtendedExecution::Foreground::ExtendedExecutionForegroundRevokedEventArgs> & handler) const;
+    void Revoked(event_token token) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::ExtendedExecution::Foreground::ExtendedExecutionForegroundResult> RequestExtensionAsync() const;
+    Windows::ApplicationModel::ExtendedExecution::Foreground::ExtendedExecutionForegroundReason Reason() const;
+    void Reason(Windows::ApplicationModel::ExtendedExecution::Foreground::ExtendedExecutionForegroundReason value) const;
+};
 
 }
 

@@ -92,14 +92,77 @@ template <> struct traits<Windows::System::Diagnostics::ProcessMemoryUsageReport
 
 namespace Windows::System::Diagnostics {
 
-template <typename T> struct impl_IProcessCpuUsage;
-template <typename T> struct impl_IProcessCpuUsageReport;
-template <typename T> struct impl_IProcessDiagnosticInfo;
-template <typename T> struct impl_IProcessDiagnosticInfoStatics;
-template <typename T> struct impl_IProcessDiskUsage;
-template <typename T> struct impl_IProcessDiskUsageReport;
-template <typename T> struct impl_IProcessMemoryUsage;
-template <typename T> struct impl_IProcessMemoryUsageReport;
+template <typename D>
+struct WINRT_EBO impl_IProcessCpuUsage
+{
+    Windows::System::Diagnostics::ProcessCpuUsageReport GetReport() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IProcessCpuUsageReport
+{
+    Windows::Foundation::TimeSpan KernelTime() const;
+    Windows::Foundation::TimeSpan UserTime() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IProcessDiagnosticInfo
+{
+    uint32_t ProcessId() const;
+    hstring ExecutableFileName() const;
+    Windows::System::Diagnostics::ProcessDiagnosticInfo Parent() const;
+    Windows::Foundation::DateTime ProcessStartTime() const;
+    Windows::System::Diagnostics::ProcessDiskUsage DiskUsage() const;
+    Windows::System::Diagnostics::ProcessMemoryUsage MemoryUsage() const;
+    Windows::System::Diagnostics::ProcessCpuUsage CpuUsage() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IProcessDiagnosticInfoStatics
+{
+    Windows::Foundation::Collections::IVectorView<Windows::System::Diagnostics::ProcessDiagnosticInfo> GetForProcesses() const;
+    Windows::System::Diagnostics::ProcessDiagnosticInfo GetForCurrentProcess() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IProcessDiskUsage
+{
+    Windows::System::Diagnostics::ProcessDiskUsageReport GetReport() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IProcessDiskUsageReport
+{
+    int64_t ReadOperationCount() const;
+    int64_t WriteOperationCount() const;
+    int64_t OtherOperationCount() const;
+    int64_t BytesReadCount() const;
+    int64_t BytesWrittenCount() const;
+    int64_t OtherBytesCount() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IProcessMemoryUsage
+{
+    Windows::System::Diagnostics::ProcessMemoryUsageReport GetReport() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IProcessMemoryUsageReport
+{
+    uint64_t NonPagedPoolSizeInBytes() const;
+    uint32_t PageFaultCount() const;
+    uint64_t PageFileSizeInBytes() const;
+    uint64_t PagedPoolSizeInBytes() const;
+    uint64_t PeakNonPagedPoolSizeInBytes() const;
+    uint64_t PeakPageFileSizeInBytes() const;
+    uint64_t PeakPagedPoolSizeInBytes() const;
+    uint64_t PeakVirtualMemorySizeInBytes() const;
+    uint64_t PeakWorkingSetSizeInBytes() const;
+    uint64_t PrivatePageCount() const;
+    uint64_t VirtualMemorySizeInBytes() const;
+    uint64_t WorkingSetSizeInBytes() const;
+};
 
 }
 

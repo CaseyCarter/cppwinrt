@@ -34,4 +34,14 @@ struct Workspace;
 
 }
 
+namespace Windows::Web::AtomPub {
+
+template <typename T> struct impl_IAtomPubClient;
+template <typename T> struct impl_IAtomPubClientFactory;
+template <typename T> struct impl_IResourceCollection;
+template <typename T> struct impl_IServiceDocument;
+template <typename T> struct impl_IWorkspace;
+
+}
+
 }

@@ -691,76 +691,697 @@ template <> struct traits<Windows::UI::Composition::VisualUnorderedCollection> {
 
 namespace Windows::UI::Composition {
 
-template <typename T> struct impl_IAmbientLight;
-template <typename T> struct impl_IColorKeyFrameAnimation;
-template <typename T> struct impl_ICompositionAnimation;
-template <typename T> struct impl_ICompositionAnimation2;
-template <typename T> struct impl_ICompositionAnimationBase;
-template <typename T> struct impl_ICompositionAnimationFactory;
-template <typename T> struct impl_ICompositionAnimationGroup;
-template <typename T> struct impl_ICompositionBackdropBrush;
-template <typename T> struct impl_ICompositionBatchCompletedEventArgs;
-template <typename T> struct impl_ICompositionBrush;
-template <typename T> struct impl_ICompositionBrushFactory;
-template <typename T> struct impl_ICompositionClip;
-template <typename T> struct impl_ICompositionClip2;
-template <typename T> struct impl_ICompositionClipFactory;
-template <typename T> struct impl_ICompositionColorBrush;
-template <typename T> struct impl_ICompositionCommitBatch;
-template <typename T> struct impl_ICompositionDrawingSurface;
-template <typename T> struct impl_ICompositionEasingFunction;
-template <typename T> struct impl_ICompositionEasingFunctionFactory;
-template <typename T> struct impl_ICompositionEffectBrush;
-template <typename T> struct impl_ICompositionEffectFactory;
-template <typename T> struct impl_ICompositionEffectSourceParameter;
-template <typename T> struct impl_ICompositionEffectSourceParameterFactory;
-template <typename T> struct impl_ICompositionGraphicsDevice;
-template <typename T> struct impl_ICompositionLight;
-template <typename T> struct impl_ICompositionLightFactory;
-template <typename T> struct impl_ICompositionMaskBrush;
-template <typename T> struct impl_ICompositionNineGridBrush;
-template <typename T> struct impl_ICompositionObject;
-template <typename T> struct impl_ICompositionObject2;
-template <typename T> struct impl_ICompositionObjectFactory;
-template <typename T> struct impl_ICompositionPropertySet;
-template <typename T> struct impl_ICompositionPropertySet2;
-template <typename T> struct impl_ICompositionScopedBatch;
-template <typename T> struct impl_ICompositionShadow;
-template <typename T> struct impl_ICompositionShadowFactory;
-template <typename T> struct impl_ICompositionSurface;
-template <typename T> struct impl_ICompositionSurfaceBrush;
-template <typename T> struct impl_ICompositionSurfaceBrush2;
-template <typename T> struct impl_ICompositionTarget;
-template <typename T> struct impl_ICompositor;
-template <typename T> struct impl_ICompositor2;
-template <typename T> struct impl_IContainerVisual;
-template <typename T> struct impl_IContainerVisualFactory;
-template <typename T> struct impl_ICubicBezierEasingFunction;
-template <typename T> struct impl_IDistantLight;
-template <typename T> struct impl_IDropShadow;
-template <typename T> struct impl_IExpressionAnimation;
-template <typename T> struct impl_IImplicitAnimationCollection;
-template <typename T> struct impl_IInsetClip;
-template <typename T> struct impl_IKeyFrameAnimation;
-template <typename T> struct impl_IKeyFrameAnimation2;
-template <typename T> struct impl_IKeyFrameAnimationFactory;
-template <typename T> struct impl_ILayerVisual;
-template <typename T> struct impl_ILinearEasingFunction;
-template <typename T> struct impl_IPointLight;
-template <typename T> struct impl_IQuaternionKeyFrameAnimation;
-template <typename T> struct impl_IRenderingDeviceReplacedEventArgs;
-template <typename T> struct impl_IScalarKeyFrameAnimation;
-template <typename T> struct impl_ISpotLight;
-template <typename T> struct impl_ISpriteVisual;
-template <typename T> struct impl_ISpriteVisual2;
-template <typename T> struct impl_IStepEasingFunction;
-template <typename T> struct impl_IVector2KeyFrameAnimation;
-template <typename T> struct impl_IVector3KeyFrameAnimation;
-template <typename T> struct impl_IVector4KeyFrameAnimation;
-template <typename T> struct impl_IVisual;
-template <typename T> struct impl_IVisualCollection;
-template <typename T> struct impl_IVisualFactory;
-template <typename T> struct impl_IVisualUnorderedCollection;
+template <typename D>
+struct WINRT_EBO impl_IAmbientLight
+{
+    Windows::UI::Color Color() const;
+    void Color(const Windows::UI::Color & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IColorKeyFrameAnimation
+{
+    Windows::UI::Composition::CompositionColorSpace InterpolationColorSpace() const;
+    void InterpolationColorSpace(Windows::UI::Composition::CompositionColorSpace value) const;
+    void InsertKeyFrame(float normalizedProgressKey, const Windows::UI::Color & value) const;
+    void InsertKeyFrame(float normalizedProgressKey, const Windows::UI::Color & value, const Windows::UI::Composition::CompositionEasingFunction & easingFunction) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionAnimation
+{
+    void ClearAllParameters() const;
+    void ClearParameter(hstring_ref key) const;
+    void SetColorParameter(hstring_ref key, const Windows::UI::Color & value) const;
+    void SetMatrix3x2Parameter(hstring_ref key, const Windows::Foundation::Numerics::float3x2 & value) const;
+    void SetMatrix4x4Parameter(hstring_ref key, const Windows::Foundation::Numerics::float4x4 & value) const;
+    void SetQuaternionParameter(hstring_ref key, const Windows::Foundation::Numerics::quaternion & value) const;
+    void SetReferenceParameter(hstring_ref key, const Windows::UI::Composition::CompositionObject & compositionObject) const;
+    void SetScalarParameter(hstring_ref key, float value) const;
+    void SetVector2Parameter(hstring_ref key, const Windows::Foundation::Numerics::float2 & value) const;
+    void SetVector3Parameter(hstring_ref key, const Windows::Foundation::Numerics::float3 & value) const;
+    void SetVector4Parameter(hstring_ref key, const Windows::Foundation::Numerics::float4 & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionAnimation2
+{
+    void SetBooleanParameter(hstring_ref key, bool value) const;
+    hstring Target() const;
+    void Target(hstring_ref value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionAnimationBase
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionAnimationFactory
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionAnimationGroup
+{
+    int32_t Count() const;
+    void Add(const Windows::UI::Composition::CompositionAnimation & value) const;
+    void Remove(const Windows::UI::Composition::CompositionAnimation & value) const;
+    void RemoveAll() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionBackdropBrush
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionBatchCompletedEventArgs
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionBrush
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionBrushFactory
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionClip
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionClip2
+{
+    Windows::Foundation::Numerics::float2 AnchorPoint() const;
+    void AnchorPoint(const Windows::Foundation::Numerics::float2 & value) const;
+    Windows::Foundation::Numerics::float2 CenterPoint() const;
+    void CenterPoint(const Windows::Foundation::Numerics::float2 & value) const;
+    Windows::Foundation::Numerics::float2 Offset() const;
+    void Offset(const Windows::Foundation::Numerics::float2 & value) const;
+    float RotationAngle() const;
+    void RotationAngle(float value) const;
+    float RotationAngleInDegrees() const;
+    void RotationAngleInDegrees(float value) const;
+    Windows::Foundation::Numerics::float2 Scale() const;
+    void Scale(const Windows::Foundation::Numerics::float2 & value) const;
+    Windows::Foundation::Numerics::float3x2 TransformMatrix() const;
+    void TransformMatrix(const Windows::Foundation::Numerics::float3x2 & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionClipFactory
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionColorBrush
+{
+    Windows::UI::Color Color() const;
+    void Color(const Windows::UI::Color & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionCommitBatch
+{
+    bool IsActive() const;
+    bool IsEnded() const;
+    event_token Completed(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> & handler) const;
+    using Completed_revoker = event_revoker<ICompositionCommitBatch>;
+    Completed_revoker Completed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> & handler) const;
+    void Completed(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionDrawingSurface
+{
+    Windows::Graphics::DirectX::DirectXAlphaMode AlphaMode() const;
+    Windows::Graphics::DirectX::DirectXPixelFormat PixelFormat() const;
+    Windows::Foundation::Size Size() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionEasingFunction
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionEasingFunctionFactory
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionEffectBrush
+{
+    Windows::UI::Composition::CompositionBrush GetSourceParameter(hstring_ref name) const;
+    void SetSourceParameter(hstring_ref name, const Windows::UI::Composition::CompositionBrush & source) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionEffectFactory
+{
+    Windows::UI::Composition::CompositionEffectBrush CreateBrush() const;
+    HRESULT ExtendedError() const;
+    Windows::UI::Composition::CompositionEffectFactoryLoadStatus LoadStatus() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionEffectSourceParameter
+{
+    hstring Name() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionEffectSourceParameterFactory
+{
+    Windows::UI::Composition::CompositionEffectSourceParameter Create(hstring_ref name) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionGraphicsDevice
+{
+    Windows::UI::Composition::CompositionDrawingSurface CreateDrawingSurface(const Windows::Foundation::Size & sizePixels, Windows::Graphics::DirectX::DirectXPixelFormat pixelFormat, Windows::Graphics::DirectX::DirectXAlphaMode alphaMode) const;
+    event_token RenderingDeviceReplaced(const Windows::Foundation::TypedEventHandler<Windows::UI::Composition::CompositionGraphicsDevice, Windows::UI::Composition::RenderingDeviceReplacedEventArgs> & handler) const;
+    using RenderingDeviceReplaced_revoker = event_revoker<ICompositionGraphicsDevice>;
+    RenderingDeviceReplaced_revoker RenderingDeviceReplaced(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Composition::CompositionGraphicsDevice, Windows::UI::Composition::RenderingDeviceReplacedEventArgs> & handler) const;
+    void RenderingDeviceReplaced(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionLight
+{
+    Windows::UI::Composition::VisualUnorderedCollection Targets() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionLightFactory
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionMaskBrush
+{
+    Windows::UI::Composition::CompositionBrush Mask() const;
+    void Mask(const Windows::UI::Composition::CompositionBrush & value) const;
+    Windows::UI::Composition::CompositionBrush Source() const;
+    void Source(const Windows::UI::Composition::CompositionBrush & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionNineGridBrush
+{
+    float BottomInset() const;
+    void BottomInset(float value) const;
+    float BottomInsetScale() const;
+    void BottomInsetScale(float value) const;
+    bool IsCenterHollow() const;
+    void IsCenterHollow(bool value) const;
+    float LeftInset() const;
+    void LeftInset(float value) const;
+    float LeftInsetScale() const;
+    void LeftInsetScale(float value) const;
+    float RightInset() const;
+    void RightInset(float value) const;
+    float RightInsetScale() const;
+    void RightInsetScale(float value) const;
+    Windows::UI::Composition::CompositionBrush Source() const;
+    void Source(const Windows::UI::Composition::CompositionBrush & value) const;
+    float TopInset() const;
+    void TopInset(float value) const;
+    float TopInsetScale() const;
+    void TopInsetScale(float value) const;
+    void SetInsets(float inset) const;
+    void SetInsets(float left, float top, float right, float bottom) const;
+    void SetInsetScales(float scale) const;
+    void SetInsetScales(float left, float top, float right, float bottom) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionObject
+{
+    Windows::UI::Composition::Compositor Compositor() const;
+    Windows::UI::Core::CoreDispatcher Dispatcher() const;
+    Windows::UI::Composition::CompositionPropertySet Properties() const;
+    void StartAnimation(hstring_ref propertyName, const Windows::UI::Composition::CompositionAnimation & animation) const;
+    void StopAnimation(hstring_ref propertyName) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionObject2
+{
+    hstring Comment() const;
+    void Comment(hstring_ref value) const;
+    Windows::UI::Composition::ImplicitAnimationCollection ImplicitAnimations() const;
+    void ImplicitAnimations(const Windows::UI::Composition::ImplicitAnimationCollection & value) const;
+    void StartAnimationGroup(const Windows::UI::Composition::ICompositionAnimationBase & value) const;
+    void StopAnimationGroup(const Windows::UI::Composition::ICompositionAnimationBase & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionObjectFactory
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionPropertySet
+{
+    void InsertColor(hstring_ref propertyName, const Windows::UI::Color & value) const;
+    void InsertMatrix3x2(hstring_ref propertyName, const Windows::Foundation::Numerics::float3x2 & value) const;
+    void InsertMatrix4x4(hstring_ref propertyName, const Windows::Foundation::Numerics::float4x4 & value) const;
+    void InsertQuaternion(hstring_ref propertyName, const Windows::Foundation::Numerics::quaternion & value) const;
+    void InsertScalar(hstring_ref propertyName, float value) const;
+    void InsertVector2(hstring_ref propertyName, const Windows::Foundation::Numerics::float2 & value) const;
+    void InsertVector3(hstring_ref propertyName, const Windows::Foundation::Numerics::float3 & value) const;
+    void InsertVector4(hstring_ref propertyName, const Windows::Foundation::Numerics::float4 & value) const;
+    Windows::UI::Composition::CompositionGetValueStatus TryGetColor(hstring_ref propertyName, Windows::UI::Color & value) const;
+    Windows::UI::Composition::CompositionGetValueStatus TryGetMatrix3x2(hstring_ref propertyName, Windows::Foundation::Numerics::float3x2 & value) const;
+    Windows::UI::Composition::CompositionGetValueStatus TryGetMatrix4x4(hstring_ref propertyName, Windows::Foundation::Numerics::float4x4 & value) const;
+    Windows::UI::Composition::CompositionGetValueStatus TryGetQuaternion(hstring_ref propertyName, Windows::Foundation::Numerics::quaternion & value) const;
+    Windows::UI::Composition::CompositionGetValueStatus TryGetScalar(hstring_ref propertyName, float & value) const;
+    Windows::UI::Composition::CompositionGetValueStatus TryGetVector2(hstring_ref propertyName, Windows::Foundation::Numerics::float2 & value) const;
+    Windows::UI::Composition::CompositionGetValueStatus TryGetVector3(hstring_ref propertyName, Windows::Foundation::Numerics::float3 & value) const;
+    Windows::UI::Composition::CompositionGetValueStatus TryGetVector4(hstring_ref propertyName, Windows::Foundation::Numerics::float4 & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionPropertySet2
+{
+    void InsertBoolean(hstring_ref propertyName, bool value) const;
+    Windows::UI::Composition::CompositionGetValueStatus TryGetBoolean(hstring_ref propertyName, bool & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionScopedBatch
+{
+    bool IsActive() const;
+    bool IsEnded() const;
+    void End() const;
+    void Resume() const;
+    void Suspend() const;
+    event_token Completed(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> & handler) const;
+    using Completed_revoker = event_revoker<ICompositionScopedBatch>;
+    Completed_revoker Completed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::UI::Composition::CompositionBatchCompletedEventArgs> & handler) const;
+    void Completed(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionShadow
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionShadowFactory
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionSurface
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionSurfaceBrush
+{
+    Windows::UI::Composition::CompositionBitmapInterpolationMode BitmapInterpolationMode() const;
+    void BitmapInterpolationMode(Windows::UI::Composition::CompositionBitmapInterpolationMode value) const;
+    float HorizontalAlignmentRatio() const;
+    void HorizontalAlignmentRatio(float value) const;
+    Windows::UI::Composition::CompositionStretch Stretch() const;
+    void Stretch(Windows::UI::Composition::CompositionStretch value) const;
+    Windows::UI::Composition::ICompositionSurface Surface() const;
+    void Surface(const Windows::UI::Composition::ICompositionSurface & value) const;
+    float VerticalAlignmentRatio() const;
+    void VerticalAlignmentRatio(float value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionSurfaceBrush2
+{
+    Windows::Foundation::Numerics::float2 AnchorPoint() const;
+    void AnchorPoint(const Windows::Foundation::Numerics::float2 & value) const;
+    Windows::Foundation::Numerics::float2 CenterPoint() const;
+    void CenterPoint(const Windows::Foundation::Numerics::float2 & value) const;
+    Windows::Foundation::Numerics::float2 Offset() const;
+    void Offset(const Windows::Foundation::Numerics::float2 & value) const;
+    float RotationAngle() const;
+    void RotationAngle(float value) const;
+    float RotationAngleInDegrees() const;
+    void RotationAngleInDegrees(float value) const;
+    Windows::Foundation::Numerics::float2 Scale() const;
+    void Scale(const Windows::Foundation::Numerics::float2 & value) const;
+    Windows::Foundation::Numerics::float3x2 TransformMatrix() const;
+    void TransformMatrix(const Windows::Foundation::Numerics::float3x2 & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionTarget
+{
+    Windows::UI::Composition::Visual Root() const;
+    void Root(const Windows::UI::Composition::Visual & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositor
+{
+    Windows::UI::Composition::ColorKeyFrameAnimation CreateColorKeyFrameAnimation() const;
+    Windows::UI::Composition::CompositionColorBrush CreateColorBrush() const;
+    Windows::UI::Composition::CompositionColorBrush CreateColorBrush(const Windows::UI::Color & color) const;
+    Windows::UI::Composition::ContainerVisual CreateContainerVisual() const;
+    Windows::UI::Composition::CubicBezierEasingFunction CreateCubicBezierEasingFunction(const Windows::Foundation::Numerics::float2 & controlPoint1, const Windows::Foundation::Numerics::float2 & controlPoint2) const;
+    Windows::UI::Composition::CompositionEffectFactory CreateEffectFactory(const Windows::Graphics::Effects::IGraphicsEffect & graphicsEffect) const;
+    Windows::UI::Composition::CompositionEffectFactory CreateEffectFactory(const Windows::Graphics::Effects::IGraphicsEffect & graphicsEffect, const Windows::Foundation::Collections::IIterable<hstring> & animatableProperties) const;
+    Windows::UI::Composition::ExpressionAnimation CreateExpressionAnimation() const;
+    Windows::UI::Composition::ExpressionAnimation CreateExpressionAnimation(hstring_ref expression) const;
+    Windows::UI::Composition::InsetClip CreateInsetClip() const;
+    Windows::UI::Composition::InsetClip CreateInsetClip(float leftInset, float topInset, float rightInset, float bottomInset) const;
+    Windows::UI::Composition::LinearEasingFunction CreateLinearEasingFunction() const;
+    Windows::UI::Composition::CompositionPropertySet CreatePropertySet() const;
+    Windows::UI::Composition::QuaternionKeyFrameAnimation CreateQuaternionKeyFrameAnimation() const;
+    Windows::UI::Composition::ScalarKeyFrameAnimation CreateScalarKeyFrameAnimation() const;
+    Windows::UI::Composition::CompositionScopedBatch CreateScopedBatch(Windows::UI::Composition::CompositionBatchTypes batchType) const;
+    Windows::UI::Composition::SpriteVisual CreateSpriteVisual() const;
+    Windows::UI::Composition::CompositionSurfaceBrush CreateSurfaceBrush() const;
+    Windows::UI::Composition::CompositionSurfaceBrush CreateSurfaceBrush(const Windows::UI::Composition::ICompositionSurface & surface) const;
+    Windows::UI::Composition::CompositionTarget CreateTargetForCurrentView() const;
+    Windows::UI::Composition::Vector2KeyFrameAnimation CreateVector2KeyFrameAnimation() const;
+    Windows::UI::Composition::Vector3KeyFrameAnimation CreateVector3KeyFrameAnimation() const;
+    Windows::UI::Composition::Vector4KeyFrameAnimation CreateVector4KeyFrameAnimation() const;
+    Windows::UI::Composition::CompositionCommitBatch GetCommitBatch(Windows::UI::Composition::CompositionBatchTypes batchType) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositor2
+{
+    Windows::UI::Composition::AmbientLight CreateAmbientLight() const;
+    Windows::UI::Composition::CompositionAnimationGroup CreateAnimationGroup() const;
+    Windows::UI::Composition::CompositionBackdropBrush CreateBackdropBrush() const;
+    Windows::UI::Composition::DistantLight CreateDistantLight() const;
+    Windows::UI::Composition::DropShadow CreateDropShadow() const;
+    Windows::UI::Composition::ImplicitAnimationCollection CreateImplicitAnimationCollection() const;
+    Windows::UI::Composition::LayerVisual CreateLayerVisual() const;
+    Windows::UI::Composition::CompositionMaskBrush CreateMaskBrush() const;
+    Windows::UI::Composition::CompositionNineGridBrush CreateNineGridBrush() const;
+    Windows::UI::Composition::PointLight CreatePointLight() const;
+    Windows::UI::Composition::SpotLight CreateSpotLight() const;
+    Windows::UI::Composition::StepEasingFunction CreateStepEasingFunction() const;
+    Windows::UI::Composition::StepEasingFunction CreateStepEasingFunction(int32_t stepCount) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContainerVisual
+{
+    Windows::UI::Composition::VisualCollection Children() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContainerVisualFactory
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICubicBezierEasingFunction
+{
+    Windows::Foundation::Numerics::float2 ControlPoint1() const;
+    Windows::Foundation::Numerics::float2 ControlPoint2() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDistantLight
+{
+    Windows::UI::Color Color() const;
+    void Color(const Windows::UI::Color & value) const;
+    Windows::UI::Composition::Visual CoordinateSpace() const;
+    void CoordinateSpace(const Windows::UI::Composition::Visual & value) const;
+    Windows::Foundation::Numerics::float3 Direction() const;
+    void Direction(const Windows::Foundation::Numerics::float3 & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDropShadow
+{
+    float BlurRadius() const;
+    void BlurRadius(float value) const;
+    Windows::UI::Color Color() const;
+    void Color(const Windows::UI::Color & value) const;
+    Windows::UI::Composition::CompositionBrush Mask() const;
+    void Mask(const Windows::UI::Composition::CompositionBrush & value) const;
+    Windows::Foundation::Numerics::float3 Offset() const;
+    void Offset(const Windows::Foundation::Numerics::float3 & value) const;
+    float Opacity() const;
+    void Opacity(float value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IExpressionAnimation
+{
+    hstring Expression() const;
+    void Expression(hstring_ref value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IImplicitAnimationCollection
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInsetClip
+{
+    float BottomInset() const;
+    void BottomInset(float value) const;
+    float LeftInset() const;
+    void LeftInset(float value) const;
+    float RightInset() const;
+    void RightInset(float value) const;
+    float TopInset() const;
+    void TopInset(float value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IKeyFrameAnimation
+{
+    Windows::Foundation::TimeSpan DelayTime() const;
+    void DelayTime(const Windows::Foundation::TimeSpan & value) const;
+    Windows::Foundation::TimeSpan Duration() const;
+    void Duration(const Windows::Foundation::TimeSpan & value) const;
+    Windows::UI::Composition::AnimationIterationBehavior IterationBehavior() const;
+    void IterationBehavior(Windows::UI::Composition::AnimationIterationBehavior value) const;
+    int32_t IterationCount() const;
+    void IterationCount(int32_t value) const;
+    int32_t KeyFrameCount() const;
+    Windows::UI::Composition::AnimationStopBehavior StopBehavior() const;
+    void StopBehavior(Windows::UI::Composition::AnimationStopBehavior value) const;
+    void InsertExpressionKeyFrame(float normalizedProgressKey, hstring_ref value) const;
+    void InsertExpressionKeyFrame(float normalizedProgressKey, hstring_ref value, const Windows::UI::Composition::CompositionEasingFunction & easingFunction) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IKeyFrameAnimation2
+{
+    Windows::UI::Composition::AnimationDirection Direction() const;
+    void Direction(Windows::UI::Composition::AnimationDirection value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IKeyFrameAnimationFactory
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILayerVisual
+{
+    Windows::UI::Composition::CompositionEffectBrush Effect() const;
+    void Effect(const Windows::UI::Composition::CompositionEffectBrush & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILinearEasingFunction
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPointLight
+{
+    Windows::UI::Color Color() const;
+    void Color(const Windows::UI::Color & value) const;
+    float ConstantAttenuation() const;
+    void ConstantAttenuation(float value) const;
+    Windows::UI::Composition::Visual CoordinateSpace() const;
+    void CoordinateSpace(const Windows::UI::Composition::Visual & value) const;
+    float LinearAttenuation() const;
+    void LinearAttenuation(float value) const;
+    Windows::Foundation::Numerics::float3 Offset() const;
+    void Offset(const Windows::Foundation::Numerics::float3 & value) const;
+    float QuadraticAttenuation() const;
+    void QuadraticAttenuation(float value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IQuaternionKeyFrameAnimation
+{
+    void InsertKeyFrame(float normalizedProgressKey, const Windows::Foundation::Numerics::quaternion & value) const;
+    void InsertKeyFrame(float normalizedProgressKey, const Windows::Foundation::Numerics::quaternion & value, const Windows::UI::Composition::CompositionEasingFunction & easingFunction) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRenderingDeviceReplacedEventArgs
+{
+    Windows::UI::Composition::CompositionGraphicsDevice GraphicsDevice() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IScalarKeyFrameAnimation
+{
+    void InsertKeyFrame(float normalizedProgressKey, float value) const;
+    void InsertKeyFrame(float normalizedProgressKey, float value, const Windows::UI::Composition::CompositionEasingFunction & easingFunction) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpotLight
+{
+    float ConstantAttenuation() const;
+    void ConstantAttenuation(float value) const;
+    Windows::UI::Composition::Visual CoordinateSpace() const;
+    void CoordinateSpace(const Windows::UI::Composition::Visual & value) const;
+    Windows::Foundation::Numerics::float3 Direction() const;
+    void Direction(const Windows::Foundation::Numerics::float3 & value) const;
+    float InnerConeAngle() const;
+    void InnerConeAngle(float value) const;
+    float InnerConeAngleInDegrees() const;
+    void InnerConeAngleInDegrees(float value) const;
+    Windows::UI::Color InnerConeColor() const;
+    void InnerConeColor(const Windows::UI::Color & value) const;
+    float LinearAttenuation() const;
+    void LinearAttenuation(float value) const;
+    Windows::Foundation::Numerics::float3 Offset() const;
+    void Offset(const Windows::Foundation::Numerics::float3 & value) const;
+    float OuterConeAngle() const;
+    void OuterConeAngle(float value) const;
+    float OuterConeAngleInDegrees() const;
+    void OuterConeAngleInDegrees(float value) const;
+    Windows::UI::Color OuterConeColor() const;
+    void OuterConeColor(const Windows::UI::Color & value) const;
+    float QuadraticAttenuation() const;
+    void QuadraticAttenuation(float value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpriteVisual
+{
+    Windows::UI::Composition::CompositionBrush Brush() const;
+    void Brush(const Windows::UI::Composition::CompositionBrush & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpriteVisual2
+{
+    Windows::UI::Composition::CompositionShadow Shadow() const;
+    void Shadow(const Windows::UI::Composition::CompositionShadow & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStepEasingFunction
+{
+    int32_t FinalStep() const;
+    void FinalStep(int32_t value) const;
+    int32_t InitialStep() const;
+    void InitialStep(int32_t value) const;
+    bool IsFinalStepSingleFrame() const;
+    void IsFinalStepSingleFrame(bool value) const;
+    bool IsInitialStepSingleFrame() const;
+    void IsInitialStepSingleFrame(bool value) const;
+    int32_t StepCount() const;
+    void StepCount(int32_t value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVector2KeyFrameAnimation
+{
+    void InsertKeyFrame(float normalizedProgressKey, const Windows::Foundation::Numerics::float2 & value) const;
+    void InsertKeyFrame(float normalizedProgressKey, const Windows::Foundation::Numerics::float2 & value, const Windows::UI::Composition::CompositionEasingFunction & easingFunction) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVector3KeyFrameAnimation
+{
+    void InsertKeyFrame(float normalizedProgressKey, const Windows::Foundation::Numerics::float3 & value) const;
+    void InsertKeyFrame(float normalizedProgressKey, const Windows::Foundation::Numerics::float3 & value, const Windows::UI::Composition::CompositionEasingFunction & easingFunction) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVector4KeyFrameAnimation
+{
+    void InsertKeyFrame(float normalizedProgressKey, const Windows::Foundation::Numerics::float4 & value) const;
+    void InsertKeyFrame(float normalizedProgressKey, const Windows::Foundation::Numerics::float4 & value, const Windows::UI::Composition::CompositionEasingFunction & easingFunction) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVisual
+{
+    Windows::Foundation::Numerics::float2 AnchorPoint() const;
+    void AnchorPoint(const Windows::Foundation::Numerics::float2 & value) const;
+    Windows::UI::Composition::CompositionBackfaceVisibility BackfaceVisibility() const;
+    void BackfaceVisibility(Windows::UI::Composition::CompositionBackfaceVisibility value) const;
+    Windows::UI::Composition::CompositionBorderMode BorderMode() const;
+    void BorderMode(Windows::UI::Composition::CompositionBorderMode value) const;
+    Windows::Foundation::Numerics::float3 CenterPoint() const;
+    void CenterPoint(const Windows::Foundation::Numerics::float3 & value) const;
+    Windows::UI::Composition::CompositionClip Clip() const;
+    void Clip(const Windows::UI::Composition::CompositionClip & value) const;
+    Windows::UI::Composition::CompositionCompositeMode CompositeMode() const;
+    void CompositeMode(Windows::UI::Composition::CompositionCompositeMode value) const;
+    bool IsVisible() const;
+    void IsVisible(bool value) const;
+    Windows::Foundation::Numerics::float3 Offset() const;
+    void Offset(const Windows::Foundation::Numerics::float3 & value) const;
+    float Opacity() const;
+    void Opacity(float value) const;
+    Windows::Foundation::Numerics::quaternion Orientation() const;
+    void Orientation(const Windows::Foundation::Numerics::quaternion & value) const;
+    Windows::UI::Composition::ContainerVisual Parent() const;
+    float RotationAngle() const;
+    void RotationAngle(float value) const;
+    float RotationAngleInDegrees() const;
+    void RotationAngleInDegrees(float value) const;
+    Windows::Foundation::Numerics::float3 RotationAxis() const;
+    void RotationAxis(const Windows::Foundation::Numerics::float3 & value) const;
+    Windows::Foundation::Numerics::float3 Scale() const;
+    void Scale(const Windows::Foundation::Numerics::float3 & value) const;
+    Windows::Foundation::Numerics::float2 Size() const;
+    void Size(const Windows::Foundation::Numerics::float2 & value) const;
+    Windows::Foundation::Numerics::float4x4 TransformMatrix() const;
+    void TransformMatrix(const Windows::Foundation::Numerics::float4x4 & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVisualCollection
+{
+    int32_t Count() const;
+    void InsertAbove(const Windows::UI::Composition::Visual & newChild, const Windows::UI::Composition::Visual & sibling) const;
+    void InsertAtBottom(const Windows::UI::Composition::Visual & newChild) const;
+    void InsertAtTop(const Windows::UI::Composition::Visual & newChild) const;
+    void InsertBelow(const Windows::UI::Composition::Visual & newChild, const Windows::UI::Composition::Visual & sibling) const;
+    void Remove(const Windows::UI::Composition::Visual & child) const;
+    void RemoveAll() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVisualFactory
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVisualUnorderedCollection
+{
+    int32_t Count() const;
+    void Add(const Windows::UI::Composition::Visual & newVisual) const;
+    void Remove(const Windows::UI::Composition::Visual & visual) const;
+    void RemoveAll() const;
+};
 
 }
 

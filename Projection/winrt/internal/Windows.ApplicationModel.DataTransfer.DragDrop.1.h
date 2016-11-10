@@ -13,11 +13,6 @@ namespace ABI {
 
 }
 
-namespace Windows::ApplicationModel::DataTransfer::DragDrop {
-
-
-}
-
 namespace impl {
 
 }

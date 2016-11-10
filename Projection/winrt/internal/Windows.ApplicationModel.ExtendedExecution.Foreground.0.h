@@ -26,6 +26,13 @@ struct ExtendedExecutionForegroundSession;
 
 namespace Windows::ApplicationModel::ExtendedExecution::Foreground {
 
+template <typename T> struct impl_IExtendedExecutionForegroundRevokedEventArgs;
+template <typename T> struct impl_IExtendedExecutionForegroundSession;
+
+}
+
+namespace Windows::ApplicationModel::ExtendedExecution::Foreground {
+
 enum class ExtendedExecutionForegroundReason
 {
     Unspecified = 0,

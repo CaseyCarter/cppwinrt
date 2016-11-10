@@ -74,32 +74,6 @@ template <> struct __declspec(uuid("ac935021-e04b-5226-8119-5b73d0b8be5b")) __de
 
 namespace Windows::ApplicationModel::Store::LicenseManagement {
 
-template <typename D>
-struct WINRT_EBO impl_ILicenseManagerStatics
-{
-    Windows::Foundation::IAsyncAction AddLicenseAsync(const Windows::Storage::Streams::IBuffer & license) const;
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionResult> GetSatisfactionInfosAsync(const Windows::Foundation::Collections::IIterable<hstring> & contentIds, const Windows::Foundation::Collections::IIterable<hstring> & keyIds) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_ILicenseSatisfactionInfo
-{
-    bool SatisfiedByDevice() const;
-    bool SatisfiedByOpenLicense() const;
-    bool SatisfiedByTrial() const;
-    bool SatisfiedByPass() const;
-    bool SatisfiedByInstallMedia() const;
-    bool SatisfiedBySignedInUser() const;
-    bool IsSatisfied() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_ILicenseSatisfactionResult
-{
-    Windows::Foundation::Collections::IMapView<hstring, Windows::ApplicationModel::Store::LicenseManagement::LicenseSatisfactionInfo> LicenseSatisfactionInfos() const;
-    HRESULT ExtendedError() const;
-};
-
 struct ILicenseManagerStatics :
     Windows::IInspectable,
     impl::consume<ILicenseManagerStatics>

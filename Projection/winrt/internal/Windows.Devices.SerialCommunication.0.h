@@ -32,6 +32,15 @@ struct SerialDevice;
 
 namespace Windows::Devices::SerialCommunication {
 
+template <typename T> struct impl_IErrorReceivedEventArgs;
+template <typename T> struct impl_IPinChangedEventArgs;
+template <typename T> struct impl_ISerialDevice;
+template <typename T> struct impl_ISerialDeviceStatics;
+
+}
+
+namespace Windows::Devices::SerialCommunication {
+
 enum class SerialError
 {
     Frame = 0,

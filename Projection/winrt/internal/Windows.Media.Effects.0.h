@@ -75,6 +75,29 @@ struct VideoTransformEffectDefinition;
 
 namespace Windows::Media::Effects {
 
+template <typename T> struct impl_IAudioCaptureEffectsManager;
+template <typename T> struct impl_IAudioEffect;
+template <typename T> struct impl_IAudioEffectDefinition;
+template <typename T> struct impl_IAudioEffectDefinitionFactory;
+template <typename T> struct impl_IAudioEffectsManagerStatics;
+template <typename T> struct impl_IAudioRenderEffectsManager;
+template <typename T> struct impl_IAudioRenderEffectsManager2;
+template <typename T> struct impl_IBasicAudioEffect;
+template <typename T> struct impl_IBasicVideoEffect;
+template <typename T> struct impl_ICompositeVideoFrameContext;
+template <typename T> struct impl_IProcessAudioFrameContext;
+template <typename T> struct impl_IProcessVideoFrameContext;
+template <typename T> struct impl_IVideoCompositor;
+template <typename T> struct impl_IVideoCompositorDefinition;
+template <typename T> struct impl_IVideoCompositorDefinitionFactory;
+template <typename T> struct impl_IVideoEffectDefinition;
+template <typename T> struct impl_IVideoEffectDefinitionFactory;
+template <typename T> struct impl_IVideoTransformEffectDefinition;
+
+}
+
+namespace Windows::Media::Effects {
+
 enum class AudioEffectType
 {
     Other = 0,

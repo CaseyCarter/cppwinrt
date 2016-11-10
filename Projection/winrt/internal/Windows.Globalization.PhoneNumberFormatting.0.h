@@ -32,6 +32,16 @@ struct PhoneNumberInfo;
 
 namespace Windows::Globalization::PhoneNumberFormatting {
 
+template <typename T> struct impl_IPhoneNumberFormatter;
+template <typename T> struct impl_IPhoneNumberFormatterStatics;
+template <typename T> struct impl_IPhoneNumberInfo;
+template <typename T> struct impl_IPhoneNumberInfoFactory;
+template <typename T> struct impl_IPhoneNumberInfoStatics;
+
+}
+
+namespace Windows::Globalization::PhoneNumberFormatting {
+
 enum class PhoneNumberFormat
 {
     E164 = 0,

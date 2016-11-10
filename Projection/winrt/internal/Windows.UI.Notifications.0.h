@@ -177,6 +177,61 @@ struct UserNotificationChangedEventArgs;
 
 namespace Windows::UI::Notifications {
 
+template <typename T> struct impl_IAdaptiveNotificationContent;
+template <typename T> struct impl_IAdaptiveNotificationText;
+template <typename T> struct impl_IBadgeNotification;
+template <typename T> struct impl_IBadgeNotificationFactory;
+template <typename T> struct impl_IBadgeUpdateManagerForUser;
+template <typename T> struct impl_IBadgeUpdateManagerStatics;
+template <typename T> struct impl_IBadgeUpdateManagerStatics2;
+template <typename T> struct impl_IBadgeUpdater;
+template <typename T> struct impl_IKnownAdaptiveNotificationHintsStatics;
+template <typename T> struct impl_IKnownAdaptiveNotificationTextStylesStatics;
+template <typename T> struct impl_IKnownNotificationBindingsStatics;
+template <typename T> struct impl_INotification;
+template <typename T> struct impl_INotificationBinding;
+template <typename T> struct impl_INotificationVisual;
+template <typename T> struct impl_IScheduledTileNotification;
+template <typename T> struct impl_IScheduledTileNotificationFactory;
+template <typename T> struct impl_IScheduledToastNotification;
+template <typename T> struct impl_IScheduledToastNotification2;
+template <typename T> struct impl_IScheduledToastNotification3;
+template <typename T> struct impl_IScheduledToastNotificationFactory;
+template <typename T> struct impl_IShownTileNotification;
+template <typename T> struct impl_ITileFlyoutNotification;
+template <typename T> struct impl_ITileFlyoutNotificationFactory;
+template <typename T> struct impl_ITileFlyoutUpdateManagerStatics;
+template <typename T> struct impl_ITileFlyoutUpdater;
+template <typename T> struct impl_ITileNotification;
+template <typename T> struct impl_ITileNotificationFactory;
+template <typename T> struct impl_ITileUpdateManagerForUser;
+template <typename T> struct impl_ITileUpdateManagerStatics;
+template <typename T> struct impl_ITileUpdateManagerStatics2;
+template <typename T> struct impl_ITileUpdater;
+template <typename T> struct impl_ITileUpdater2;
+template <typename T> struct impl_IToastActivatedEventArgs;
+template <typename T> struct impl_IToastDismissedEventArgs;
+template <typename T> struct impl_IToastFailedEventArgs;
+template <typename T> struct impl_IToastNotification;
+template <typename T> struct impl_IToastNotification2;
+template <typename T> struct impl_IToastNotification3;
+template <typename T> struct impl_IToastNotificationActionTriggerDetail;
+template <typename T> struct impl_IToastNotificationFactory;
+template <typename T> struct impl_IToastNotificationHistory;
+template <typename T> struct impl_IToastNotificationHistory2;
+template <typename T> struct impl_IToastNotificationHistoryChangedTriggerDetail;
+template <typename T> struct impl_IToastNotificationManagerForUser;
+template <typename T> struct impl_IToastNotificationManagerStatics;
+template <typename T> struct impl_IToastNotificationManagerStatics2;
+template <typename T> struct impl_IToastNotificationManagerStatics4;
+template <typename T> struct impl_IToastNotifier;
+template <typename T> struct impl_IUserNotification;
+template <typename T> struct impl_IUserNotificationChangedEventArgs;
+
+}
+
+namespace Windows::UI::Notifications {
+
 enum class AdaptiveNotificationContentKind
 {
     Text = 0,

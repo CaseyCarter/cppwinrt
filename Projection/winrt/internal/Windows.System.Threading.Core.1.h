@@ -54,11 +54,35 @@ template <> struct traits<Windows::System::Threading::Core::SignalNotifier> { us
 
 namespace Windows::System::Threading::Core {
 
-template <typename T> struct impl_IPreallocatedWorkItem;
-template <typename T> struct impl_IPreallocatedWorkItemFactory;
-template <typename T> struct impl_ISignalNotifier;
-template <typename T> struct impl_ISignalNotifierStatics;
-template <typename T> struct impl_SignalHandler;
+template <typename D>
+struct WINRT_EBO impl_IPreallocatedWorkItem
+{
+    Windows::Foundation::IAsyncAction RunAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPreallocatedWorkItemFactory
+{
+    Windows::System::Threading::Core::PreallocatedWorkItem CreateWorkItem(const Windows::System::Threading::WorkItemHandler & handler) const;
+    Windows::System::Threading::Core::PreallocatedWorkItem CreateWorkItemWithPriority(const Windows::System::Threading::WorkItemHandler & handler, Windows::System::Threading::WorkItemPriority priority) const;
+    Windows::System::Threading::Core::PreallocatedWorkItem CreateWorkItemWithPriorityAndOptions(const Windows::System::Threading::WorkItemHandler & handler, Windows::System::Threading::WorkItemPriority priority, Windows::System::Threading::WorkItemOptions options) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISignalNotifier
+{
+    void Enable() const;
+    void Terminate() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISignalNotifierStatics
+{
+    Windows::System::Threading::Core::SignalNotifier AttachToEvent(hstring_ref name, const Windows::System::Threading::Core::SignalHandler & handler) const;
+    Windows::System::Threading::Core::SignalNotifier AttachToEvent(hstring_ref name, const Windows::System::Threading::Core::SignalHandler & handler, const Windows::Foundation::TimeSpan & timeout) const;
+    Windows::System::Threading::Core::SignalNotifier AttachToSemaphore(hstring_ref name, const Windows::System::Threading::Core::SignalHandler & handler) const;
+    Windows::System::Threading::Core::SignalNotifier AttachToSemaphore(hstring_ref name, const Windows::System::Threading::Core::SignalHandler & handler, const Windows::Foundation::TimeSpan & timeout) const;
+};
 
 }
 

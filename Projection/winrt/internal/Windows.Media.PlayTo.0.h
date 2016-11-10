@@ -86,6 +86,29 @@ struct VolumeChangeRequestedEventArgs;
 
 namespace Windows::Media::PlayTo {
 
+template <typename T> struct impl_ICurrentTimeChangeRequestedEventArgs;
+template <typename T> struct impl_IMuteChangeRequestedEventArgs;
+template <typename T> struct impl_IPlayToConnection;
+template <typename T> struct impl_IPlayToConnectionErrorEventArgs;
+template <typename T> struct impl_IPlayToConnectionStateChangedEventArgs;
+template <typename T> struct impl_IPlayToConnectionTransferredEventArgs;
+template <typename T> struct impl_IPlayToManager;
+template <typename T> struct impl_IPlayToManagerStatics;
+template <typename T> struct impl_IPlayToReceiver;
+template <typename T> struct impl_IPlayToSource;
+template <typename T> struct impl_IPlayToSourceDeferral;
+template <typename T> struct impl_IPlayToSourceRequest;
+template <typename T> struct impl_IPlayToSourceRequestedEventArgs;
+template <typename T> struct impl_IPlayToSourceSelectedEventArgs;
+template <typename T> struct impl_IPlayToSourceWithPreferredSourceUri;
+template <typename T> struct impl_IPlaybackRateChangeRequestedEventArgs;
+template <typename T> struct impl_ISourceChangeRequestedEventArgs;
+template <typename T> struct impl_IVolumeChangeRequestedEventArgs;
+
+}
+
+namespace Windows::Media::PlayTo {
+
 enum class PlayToConnectionError
 {
     None = 0,

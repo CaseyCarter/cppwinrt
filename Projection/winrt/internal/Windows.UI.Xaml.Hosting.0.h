@@ -22,4 +22,11 @@ struct ElementCompositionPreview;
 
 }
 
+namespace Windows::UI::Xaml::Hosting {
+
+template <typename T> struct impl_IElementCompositionPreview;
+template <typename T> struct impl_IElementCompositionPreviewStatics;
+
+}
+
 }

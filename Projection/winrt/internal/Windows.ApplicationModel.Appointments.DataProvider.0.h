@@ -72,4 +72,23 @@ struct AppointmentDataProviderTriggerDetails;
 
 }
 
+namespace Windows::ApplicationModel::Appointments::DataProvider {
+
+template <typename T> struct impl_IAppointmentCalendarCancelMeetingRequest;
+template <typename T> struct impl_IAppointmentCalendarCancelMeetingRequestEventArgs;
+template <typename T> struct impl_IAppointmentCalendarCreateOrUpdateAppointmentRequest;
+template <typename T> struct impl_IAppointmentCalendarCreateOrUpdateAppointmentRequestEventArgs;
+template <typename T> struct impl_IAppointmentCalendarForwardMeetingRequest;
+template <typename T> struct impl_IAppointmentCalendarForwardMeetingRequestEventArgs;
+template <typename T> struct impl_IAppointmentCalendarProposeNewTimeForMeetingRequest;
+template <typename T> struct impl_IAppointmentCalendarProposeNewTimeForMeetingRequestEventArgs;
+template <typename T> struct impl_IAppointmentCalendarSyncManagerSyncRequest;
+template <typename T> struct impl_IAppointmentCalendarSyncManagerSyncRequestEventArgs;
+template <typename T> struct impl_IAppointmentCalendarUpdateMeetingResponseRequest;
+template <typename T> struct impl_IAppointmentCalendarUpdateMeetingResponseRequestEventArgs;
+template <typename T> struct impl_IAppointmentDataProviderConnection;
+template <typename T> struct impl_IAppointmentDataProviderTriggerDetails;
+
+}
+
 }

@@ -114,15 +114,73 @@ template <> struct traits<Windows::Devices::Input::TouchCapabilities> { using de
 
 namespace Windows::Devices::Input {
 
-template <typename T> struct impl_IKeyboardCapabilities;
-template <typename T> struct impl_IMouseCapabilities;
-template <typename T> struct impl_IMouseDevice;
-template <typename T> struct impl_IMouseDeviceStatics;
-template <typename T> struct impl_IMouseEventArgs;
-template <typename T> struct impl_IPointerDevice;
-template <typename T> struct impl_IPointerDevice2;
-template <typename T> struct impl_IPointerDeviceStatics;
-template <typename T> struct impl_ITouchCapabilities;
+template <typename D>
+struct WINRT_EBO impl_IKeyboardCapabilities
+{
+    int32_t KeyboardPresent() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMouseCapabilities
+{
+    int32_t MousePresent() const;
+    int32_t VerticalWheelPresent() const;
+    int32_t HorizontalWheelPresent() const;
+    int32_t SwapButtons() const;
+    uint32_t NumberOfButtons() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMouseDevice
+{
+    event_token MouseMoved(const Windows::Foundation::TypedEventHandler<Windows::Devices::Input::MouseDevice, Windows::Devices::Input::MouseEventArgs> & handler) const;
+    using MouseMoved_revoker = event_revoker<IMouseDevice>;
+    MouseMoved_revoker MouseMoved(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Input::MouseDevice, Windows::Devices::Input::MouseEventArgs> & handler) const;
+    void MouseMoved(event_token cookie) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMouseDeviceStatics
+{
+    Windows::Devices::Input::MouseDevice GetForCurrentView() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMouseEventArgs
+{
+    Windows::Devices::Input::MouseDelta MouseDelta() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPointerDevice
+{
+    Windows::Devices::Input::PointerDeviceType PointerDeviceType() const;
+    bool IsIntegrated() const;
+    uint32_t MaxContacts() const;
+    Windows::Foundation::Rect PhysicalDeviceRect() const;
+    Windows::Foundation::Rect ScreenRect() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Devices::Input::PointerDeviceUsage> SupportedUsages() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPointerDevice2
+{
+    uint32_t MaxPointersWithZDistance() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPointerDeviceStatics
+{
+    Windows::Devices::Input::PointerDevice GetPointerDevice(uint32_t pointerId) const;
+    Windows::Foundation::Collections::IVectorView<Windows::Devices::Input::PointerDevice> GetPointerDevices() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITouchCapabilities
+{
+    int32_t TouchPresent() const;
+    uint32_t Contacts() const;
+};
 
 }
 

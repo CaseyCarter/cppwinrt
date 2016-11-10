@@ -69,6 +69,27 @@ struct RemoteSystemWatcher;
 
 namespace Windows::System::RemoteSystems {
 
+template <typename T> struct impl_IRemoteSystem;
+template <typename T> struct impl_IRemoteSystemAddedEventArgs;
+template <typename T> struct impl_IRemoteSystemConnectionRequest;
+template <typename T> struct impl_IRemoteSystemConnectionRequestFactory;
+template <typename T> struct impl_IRemoteSystemDiscoveryTypeFilter;
+template <typename T> struct impl_IRemoteSystemDiscoveryTypeFilterFactory;
+template <typename T> struct impl_IRemoteSystemFilter;
+template <typename T> struct impl_IRemoteSystemKindFilter;
+template <typename T> struct impl_IRemoteSystemKindFilterFactory;
+template <typename T> struct impl_IRemoteSystemKindStatics;
+template <typename T> struct impl_IRemoteSystemRemovedEventArgs;
+template <typename T> struct impl_IRemoteSystemStatics;
+template <typename T> struct impl_IRemoteSystemStatusTypeFilter;
+template <typename T> struct impl_IRemoteSystemStatusTypeFilterFactory;
+template <typename T> struct impl_IRemoteSystemUpdatedEventArgs;
+template <typename T> struct impl_IRemoteSystemWatcher;
+
+}
+
+namespace Windows::System::RemoteSystems {
+
 enum class RemoteSystemAccessStatus
 {
     Unspecified = 0,

@@ -294,38 +294,262 @@ template <> struct traits<Windows::Networking::BackgroundTransfer::UploadOperati
 
 namespace Windows::Networking::BackgroundTransfer {
 
-template <typename T> struct impl_IBackgroundDownloader;
-template <typename T> struct impl_IBackgroundDownloader2;
-template <typename T> struct impl_IBackgroundDownloader3;
-template <typename T> struct impl_IBackgroundDownloaderFactory;
-template <typename T> struct impl_IBackgroundDownloaderStaticMethods;
-template <typename T> struct impl_IBackgroundDownloaderStaticMethods2;
-template <typename T> struct impl_IBackgroundDownloaderUserConsent;
-template <typename T> struct impl_IBackgroundTransferBase;
-template <typename T> struct impl_IBackgroundTransferCompletionGroup;
-template <typename T> struct impl_IBackgroundTransferCompletionGroupTriggerDetails;
-template <typename T> struct impl_IBackgroundTransferContentPart;
-template <typename T> struct impl_IBackgroundTransferContentPartFactory;
-template <typename T> struct impl_IBackgroundTransferErrorStaticMethods;
-template <typename T> struct impl_IBackgroundTransferGroup;
-template <typename T> struct impl_IBackgroundTransferGroupStatics;
-template <typename T> struct impl_IBackgroundTransferOperation;
-template <typename T> struct impl_IBackgroundTransferOperationPriority;
-template <typename T> struct impl_IBackgroundUploader;
-template <typename T> struct impl_IBackgroundUploader2;
-template <typename T> struct impl_IBackgroundUploader3;
-template <typename T> struct impl_IBackgroundUploaderFactory;
-template <typename T> struct impl_IBackgroundUploaderStaticMethods;
-template <typename T> struct impl_IBackgroundUploaderStaticMethods2;
-template <typename T> struct impl_IBackgroundUploaderUserConsent;
-template <typename T> struct impl_IContentPrefetcher;
-template <typename T> struct impl_IContentPrefetcherTime;
-template <typename T> struct impl_IDownloadOperation;
-template <typename T> struct impl_IDownloadOperation2;
-template <typename T> struct impl_IResponseInformation;
-template <typename T> struct impl_IUnconstrainedTransferRequestResult;
-template <typename T> struct impl_IUploadOperation;
-template <typename T> struct impl_IUploadOperation2;
+template <typename D>
+struct WINRT_EBO impl_IBackgroundDownloader
+{
+    Windows::Networking::BackgroundTransfer::DownloadOperation CreateDownload(const Windows::Foundation::Uri & uri, const Windows::Storage::IStorageFile & resultFile) const;
+    Windows::Networking::BackgroundTransfer::DownloadOperation CreateDownload(const Windows::Foundation::Uri & uri, const Windows::Storage::IStorageFile & resultFile, const Windows::Storage::IStorageFile & requestBodyFile) const;
+    Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::DownloadOperation> CreateDownloadAsync(const Windows::Foundation::Uri & uri, const Windows::Storage::IStorageFile & resultFile, const Windows::Storage::Streams::IInputStream & requestBodyStream) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundDownloader2
+{
+    Windows::Networking::BackgroundTransfer::BackgroundTransferGroup TransferGroup() const;
+    void TransferGroup(const Windows::Networking::BackgroundTransfer::BackgroundTransferGroup & value) const;
+    Windows::UI::Notifications::ToastNotification SuccessToastNotification() const;
+    void SuccessToastNotification(const Windows::UI::Notifications::ToastNotification & value) const;
+    Windows::UI::Notifications::ToastNotification FailureToastNotification() const;
+    void FailureToastNotification(const Windows::UI::Notifications::ToastNotification & value) const;
+    Windows::UI::Notifications::TileNotification SuccessTileNotification() const;
+    void SuccessTileNotification(const Windows::UI::Notifications::TileNotification & value) const;
+    Windows::UI::Notifications::TileNotification FailureTileNotification() const;
+    void FailureTileNotification(const Windows::UI::Notifications::TileNotification & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundDownloader3
+{
+    Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroup CompletionGroup() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundDownloaderFactory
+{
+    Windows::Networking::BackgroundTransfer::BackgroundDownloader CreateWithCompletionGroup(const Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroup & completionGroup) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundDownloaderStaticMethods
+{
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>> GetCurrentDownloadsAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>> GetCurrentDownloadsAsync(hstring_ref group) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundDownloaderStaticMethods2
+{
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation>> GetCurrentDownloadsForTransferGroupAsync(const Windows::Networking::BackgroundTransfer::BackgroundTransferGroup & group) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundDownloaderUserConsent
+{
+    Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult> RequestUnconstrainedDownloadsAsync(const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::DownloadOperation> & operations) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundTransferBase
+{
+    void SetRequestHeader(hstring_ref headerName, hstring_ref headerValue) const;
+    Windows::Security::Credentials::PasswordCredential ServerCredential() const;
+    void ServerCredential(const Windows::Security::Credentials::PasswordCredential & credential) const;
+    Windows::Security::Credentials::PasswordCredential ProxyCredential() const;
+    void ProxyCredential(const Windows::Security::Credentials::PasswordCredential & credential) const;
+    hstring Method() const;
+    void Method(hstring_ref value) const;
+    hstring Group() const;
+    void Group(hstring_ref value) const;
+    Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy CostPolicy() const;
+    void CostPolicy(Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundTransferCompletionGroup
+{
+    Windows::ApplicationModel::Background::IBackgroundTrigger Trigger() const;
+    bool IsEnabled() const;
+    void Enable() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundTransferCompletionGroupTriggerDetails
+{
+    Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::DownloadOperation> Downloads() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation> Uploads() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundTransferContentPart
+{
+    void SetHeader(hstring_ref headerName, hstring_ref headerValue) const;
+    void SetText(hstring_ref value) const;
+    void SetFile(const Windows::Storage::IStorageFile & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundTransferContentPartFactory
+{
+    Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart CreateWithName(hstring_ref name) const;
+    Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart CreateWithNameAndFileName(hstring_ref name, hstring_ref fileName) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundTransferErrorStaticMethods
+{
+    Windows::Web::WebErrorStatus GetStatus(int32_t hresult) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundTransferGroup
+{
+    hstring Name() const;
+    Windows::Networking::BackgroundTransfer::BackgroundTransferBehavior TransferBehavior() const;
+    void TransferBehavior(Windows::Networking::BackgroundTransfer::BackgroundTransferBehavior value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundTransferGroupStatics
+{
+    Windows::Networking::BackgroundTransfer::BackgroundTransferGroup CreateGroup(hstring_ref name) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundTransferOperation
+{
+    GUID Guid() const;
+    Windows::Foundation::Uri RequestedUri() const;
+    hstring Method() const;
+    hstring Group() const;
+    Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy CostPolicy() const;
+    void CostPolicy(Windows::Networking::BackgroundTransfer::BackgroundTransferCostPolicy value) const;
+    Windows::Storage::Streams::IInputStream GetResultStreamAt(uint64_t position) const;
+    Windows::Networking::BackgroundTransfer::ResponseInformation GetResponseInformation() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundTransferOperationPriority
+{
+    Windows::Networking::BackgroundTransfer::BackgroundTransferPriority Priority() const;
+    void Priority(Windows::Networking::BackgroundTransfer::BackgroundTransferPriority value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundUploader
+{
+    Windows::Networking::BackgroundTransfer::UploadOperation CreateUpload(const Windows::Foundation::Uri & uri, const Windows::Storage::IStorageFile & sourceFile) const;
+    Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation> CreateUploadFromStreamAsync(const Windows::Foundation::Uri & uri, const Windows::Storage::Streams::IInputStream & sourceStream) const;
+    Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation> CreateUploadAsync(const Windows::Foundation::Uri & uri, const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart> & parts) const;
+    Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation> CreateUploadAsync(const Windows::Foundation::Uri & uri, const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart> & parts, hstring_ref subType) const;
+    Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UploadOperation> CreateUploadAsync(const Windows::Foundation::Uri & uri, const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart> & parts, hstring_ref subType, hstring_ref boundary) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundUploader2
+{
+    Windows::Networking::BackgroundTransfer::BackgroundTransferGroup TransferGroup() const;
+    void TransferGroup(const Windows::Networking::BackgroundTransfer::BackgroundTransferGroup & value) const;
+    Windows::UI::Notifications::ToastNotification SuccessToastNotification() const;
+    void SuccessToastNotification(const Windows::UI::Notifications::ToastNotification & value) const;
+    Windows::UI::Notifications::ToastNotification FailureToastNotification() const;
+    void FailureToastNotification(const Windows::UI::Notifications::ToastNotification & value) const;
+    Windows::UI::Notifications::TileNotification SuccessTileNotification() const;
+    void SuccessTileNotification(const Windows::UI::Notifications::TileNotification & value) const;
+    Windows::UI::Notifications::TileNotification FailureTileNotification() const;
+    void FailureTileNotification(const Windows::UI::Notifications::TileNotification & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundUploader3
+{
+    Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroup CompletionGroup() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundUploaderFactory
+{
+    Windows::Networking::BackgroundTransfer::BackgroundUploader CreateWithCompletionGroup(const Windows::Networking::BackgroundTransfer::BackgroundTransferCompletionGroup & completionGroup) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundUploaderStaticMethods
+{
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>> GetCurrentUploadsAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>> GetCurrentUploadsAsync(hstring_ref group) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundUploaderStaticMethods2
+{
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Networking::BackgroundTransfer::UploadOperation>> GetCurrentUploadsForTransferGroupAsync(const Windows::Networking::BackgroundTransfer::BackgroundTransferGroup & group) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundUploaderUserConsent
+{
+    Windows::Foundation::IAsyncOperation<Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult> RequestUnconstrainedUploadsAsync(const Windows::Foundation::Collections::IIterable<Windows::Networking::BackgroundTransfer::UploadOperation> & operations) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContentPrefetcher
+{
+    Windows::Foundation::Collections::IVector<Windows::Foundation::Uri> ContentUris() const;
+    void IndirectContentUri(const Windows::Foundation::Uri & value) const;
+    Windows::Foundation::Uri IndirectContentUri() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContentPrefetcherTime
+{
+    Windows::Foundation::IReference<Windows::Foundation::DateTime> LastSuccessfulPrefetchTime() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDownloadOperation
+{
+    Windows::Storage::IStorageFile ResultFile() const;
+    Windows::Networking::BackgroundTransfer::BackgroundDownloadProgress Progress() const;
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Networking::BackgroundTransfer::DownloadOperation, Windows::Networking::BackgroundTransfer::DownloadOperation> StartAsync() const;
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Networking::BackgroundTransfer::DownloadOperation, Windows::Networking::BackgroundTransfer::DownloadOperation> AttachAsync() const;
+    void Pause() const;
+    void Resume() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDownloadOperation2
+{
+    Windows::Networking::BackgroundTransfer::BackgroundTransferGroup TransferGroup() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IResponseInformation
+{
+    bool IsResumable() const;
+    Windows::Foundation::Uri ActualUri() const;
+    uint32_t StatusCode() const;
+    Windows::Foundation::Collections::IMapView<hstring, hstring> Headers() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUnconstrainedTransferRequestResult
+{
+    bool IsUnconstrained() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUploadOperation
+{
+    Windows::Storage::IStorageFile SourceFile() const;
+    Windows::Networking::BackgroundTransfer::BackgroundUploadProgress Progress() const;
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Networking::BackgroundTransfer::UploadOperation, Windows::Networking::BackgroundTransfer::UploadOperation> StartAsync() const;
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Networking::BackgroundTransfer::UploadOperation, Windows::Networking::BackgroundTransfer::UploadOperation> AttachAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUploadOperation2
+{
+    Windows::Networking::BackgroundTransfer::BackgroundTransferGroup TransferGroup() const;
+};
 
 }
 

@@ -114,51 +114,6 @@ template <> struct __declspec(uuid("b0a53153-2015-58b3-9dd0-bdf291b856b2")) __de
 
 namespace Windows::Media::FaceAnalysis {
 
-template <typename D>
-struct WINRT_EBO impl_IDetectedFace
-{
-    Windows::Graphics::Imaging::BitmapBounds FaceBox() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IFaceDetector
-{
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::Media::FaceAnalysis::DetectedFace>> DetectFacesAsync(const Windows::Graphics::Imaging::SoftwareBitmap & image) const;
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::Media::FaceAnalysis::DetectedFace>> DetectFacesAsync(const Windows::Graphics::Imaging::SoftwareBitmap & image, const Windows::Graphics::Imaging::BitmapBounds & searchArea) const;
-    Windows::Graphics::Imaging::BitmapSize MinDetectableFaceSize() const;
-    void MinDetectableFaceSize(const Windows::Graphics::Imaging::BitmapSize & value) const;
-    Windows::Graphics::Imaging::BitmapSize MaxDetectableFaceSize() const;
-    void MaxDetectableFaceSize(const Windows::Graphics::Imaging::BitmapSize & value) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IFaceDetectorStatics
-{
-    Windows::Foundation::IAsyncOperation<Windows::Media::FaceAnalysis::FaceDetector> CreateAsync() const;
-    Windows::Foundation::Collections::IVectorView<winrt::Windows::Graphics::Imaging::BitmapPixelFormat> GetSupportedBitmapPixelFormats() const;
-    bool IsBitmapPixelFormatSupported(Windows::Graphics::Imaging::BitmapPixelFormat bitmapPixelFormat) const;
-    bool IsSupported() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IFaceTracker
-{
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVector<Windows::Media::FaceAnalysis::DetectedFace>> ProcessNextFrameAsync(const Windows::Media::VideoFrame & videoFrame) const;
-    Windows::Graphics::Imaging::BitmapSize MinDetectableFaceSize() const;
-    void MinDetectableFaceSize(const Windows::Graphics::Imaging::BitmapSize & value) const;
-    Windows::Graphics::Imaging::BitmapSize MaxDetectableFaceSize() const;
-    void MaxDetectableFaceSize(const Windows::Graphics::Imaging::BitmapSize & value) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IFaceTrackerStatics
-{
-    Windows::Foundation::IAsyncOperation<Windows::Media::FaceAnalysis::FaceTracker> CreateAsync() const;
-    Windows::Foundation::Collections::IVectorView<winrt::Windows::Graphics::Imaging::BitmapPixelFormat> GetSupportedBitmapPixelFormats() const;
-    bool IsBitmapPixelFormatSupported(Windows::Graphics::Imaging::BitmapPixelFormat bitmapPixelFormat) const;
-    bool IsSupported() const;
-};
-
 struct IDetectedFace :
     Windows::IInspectable,
     impl::consume<IDetectedFace>

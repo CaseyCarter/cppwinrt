@@ -4,7 +4,7 @@
 #pragma once
 
 #include "Windows.Devices.Gpio.1.h"
-#include "Windows.Foundation.2.h"
+#include "Windows.Foundation.1.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -69,52 +69,6 @@ template <> struct __declspec(uuid("ee427f2e-7d37-558f-9718-9cbcbff40c94")) __de
 }
 
 namespace Windows::Devices::Gpio {
-
-template <typename D>
-struct WINRT_EBO impl_IGpioController
-{
-    int32_t PinCount() const;
-    Windows::Devices::Gpio::GpioPin OpenPin(int32_t pinNumber) const;
-    Windows::Devices::Gpio::GpioPin OpenPin(int32_t pinNumber, Windows::Devices::Gpio::GpioSharingMode sharingMode) const;
-    bool TryOpenPin(int32_t pinNumber, Windows::Devices::Gpio::GpioSharingMode sharingMode, Windows::Devices::Gpio::GpioPin & pin, Windows::Devices::Gpio::GpioOpenStatus & openStatus) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IGpioControllerStatics
-{
-    Windows::Devices::Gpio::GpioController GetDefault() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IGpioControllerStatics2
-{
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Gpio::GpioController>> GetControllersAsync(const Windows::Devices::Gpio::Provider::IGpioProvider & provider) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Gpio::GpioController> GetDefaultAsync() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IGpioPin
-{
-    event_token ValueChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Gpio::GpioPin, Windows::Devices::Gpio::GpioPinValueChangedEventArgs> & handler) const;
-    using ValueChanged_revoker = event_revoker<IGpioPin>;
-    ValueChanged_revoker ValueChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Gpio::GpioPin, Windows::Devices::Gpio::GpioPinValueChangedEventArgs> & handler) const;
-    void ValueChanged(event_token token) const;
-    Windows::Foundation::TimeSpan DebounceTimeout() const;
-    void DebounceTimeout(const Windows::Foundation::TimeSpan & value) const;
-    int32_t PinNumber() const;
-    Windows::Devices::Gpio::GpioSharingMode SharingMode() const;
-    bool IsDriveModeSupported(Windows::Devices::Gpio::GpioPinDriveMode driveMode) const;
-    Windows::Devices::Gpio::GpioPinDriveMode GetDriveMode() const;
-    void SetDriveMode(Windows::Devices::Gpio::GpioPinDriveMode value) const;
-    void Write(Windows::Devices::Gpio::GpioPinValue value) const;
-    Windows::Devices::Gpio::GpioPinValue Read() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IGpioPinValueChangedEventArgs
-{
-    Windows::Devices::Gpio::GpioPinEdge Edge() const;
-};
 
 struct IGpioController :
     Windows::IInspectable,

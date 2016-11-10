@@ -19,4 +19,10 @@ struct HtmlUtilities;
 
 }
 
+namespace Windows::Data::Html {
+
+template <typename T> struct impl_IHtmlUtilities;
+
+}
+
 }

@@ -9,31 +9,6 @@ WINRT_EXPORT namespace winrt {
 
 namespace Windows::System::Threading {
 
-template <typename D>
-struct WINRT_EBO impl_IThreadPoolStatics
-{
-    Windows::Foundation::IAsyncAction RunAsync(const Windows::System::Threading::WorkItemHandler & handler) const;
-    Windows::Foundation::IAsyncAction RunAsync(const Windows::System::Threading::WorkItemHandler & handler, Windows::System::Threading::WorkItemPriority priority) const;
-    Windows::Foundation::IAsyncAction RunAsync(const Windows::System::Threading::WorkItemHandler & handler, Windows::System::Threading::WorkItemPriority priority, Windows::System::Threading::WorkItemOptions options) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IThreadPoolTimer
-{
-    Windows::Foundation::TimeSpan Period() const;
-    Windows::Foundation::TimeSpan Delay() const;
-    void Cancel() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IThreadPoolTimerStatics
-{
-    Windows::System::Threading::ThreadPoolTimer CreatePeriodicTimer(const Windows::System::Threading::TimerElapsedHandler & handler, const Windows::Foundation::TimeSpan & period) const;
-    Windows::System::Threading::ThreadPoolTimer CreateTimer(const Windows::System::Threading::TimerElapsedHandler & handler, const Windows::Foundation::TimeSpan & delay) const;
-    Windows::System::Threading::ThreadPoolTimer CreatePeriodicTimer(const Windows::System::Threading::TimerElapsedHandler & handler, const Windows::Foundation::TimeSpan & period, const Windows::System::Threading::TimerDestroyedHandler & destroyed) const;
-    Windows::System::Threading::ThreadPoolTimer CreateTimer(const Windows::System::Threading::TimerElapsedHandler & handler, const Windows::Foundation::TimeSpan & delay, const Windows::System::Threading::TimerDestroyedHandler & destroyed) const;
-};
-
 struct TimerDestroyedHandler : Windows::IUnknown
 {
     TimerDestroyedHandler(std::nullptr_t = nullptr) noexcept {}

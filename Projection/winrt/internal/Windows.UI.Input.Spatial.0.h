@@ -126,6 +126,40 @@ struct SpatialTappedEventArgs;
 
 namespace Windows::UI::Input::Spatial {
 
+template <typename T> struct impl_ISpatialGestureRecognizer;
+template <typename T> struct impl_ISpatialGestureRecognizerFactory;
+template <typename T> struct impl_ISpatialHoldCanceledEventArgs;
+template <typename T> struct impl_ISpatialHoldCompletedEventArgs;
+template <typename T> struct impl_ISpatialHoldStartedEventArgs;
+template <typename T> struct impl_ISpatialInteraction;
+template <typename T> struct impl_ISpatialInteractionDetectedEventArgs;
+template <typename T> struct impl_ISpatialInteractionManager;
+template <typename T> struct impl_ISpatialInteractionManagerStatics;
+template <typename T> struct impl_ISpatialInteractionSource;
+template <typename T> struct impl_ISpatialInteractionSourceEventArgs;
+template <typename T> struct impl_ISpatialInteractionSourceLocation;
+template <typename T> struct impl_ISpatialInteractionSourceLocation2;
+template <typename T> struct impl_ISpatialInteractionSourceProperties;
+template <typename T> struct impl_ISpatialInteractionSourceState;
+template <typename T> struct impl_ISpatialManipulationCanceledEventArgs;
+template <typename T> struct impl_ISpatialManipulationCompletedEventArgs;
+template <typename T> struct impl_ISpatialManipulationDelta;
+template <typename T> struct impl_ISpatialManipulationStartedEventArgs;
+template <typename T> struct impl_ISpatialManipulationUpdatedEventArgs;
+template <typename T> struct impl_ISpatialNavigationCanceledEventArgs;
+template <typename T> struct impl_ISpatialNavigationCompletedEventArgs;
+template <typename T> struct impl_ISpatialNavigationStartedEventArgs;
+template <typename T> struct impl_ISpatialNavigationUpdatedEventArgs;
+template <typename T> struct impl_ISpatialPointerPose;
+template <typename T> struct impl_ISpatialPointerPoseStatics;
+template <typename T> struct impl_ISpatialRecognitionEndedEventArgs;
+template <typename T> struct impl_ISpatialRecognitionStartedEventArgs;
+template <typename T> struct impl_ISpatialTappedEventArgs;
+
+}
+
+namespace Windows::UI::Input::Spatial {
+
 enum class SpatialGestureSettings : unsigned
 {
     None = 0x0,

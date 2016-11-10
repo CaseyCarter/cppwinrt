@@ -70,11 +70,49 @@ template <> struct traits<Windows::Web::AtomPub::Workspace> { using default_inte
 
 namespace Windows::Web::AtomPub {
 
-template <typename T> struct impl_IAtomPubClient;
-template <typename T> struct impl_IAtomPubClientFactory;
-template <typename T> struct impl_IResourceCollection;
-template <typename T> struct impl_IServiceDocument;
-template <typename T> struct impl_IWorkspace;
+template <typename D>
+struct WINRT_EBO impl_IAtomPubClient
+{
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::AtomPub::ServiceDocument, Windows::Web::Syndication::RetrievalProgress> RetrieveServiceDocumentAsync(const Windows::Foundation::Uri & uri) const;
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Storage::Streams::IInputStream, Windows::Web::Syndication::RetrievalProgress> RetrieveMediaResourceAsync(const Windows::Foundation::Uri & uri) const;
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Syndication::SyndicationItem, Windows::Web::Syndication::RetrievalProgress> RetrieveResourceAsync(const Windows::Foundation::Uri & uri) const;
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Syndication::SyndicationItem, Windows::Web::Syndication::TransferProgress> CreateResourceAsync(const Windows::Foundation::Uri & uri, hstring_ref description, const Windows::Web::Syndication::SyndicationItem & item) const;
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Web::Syndication::SyndicationItem, Windows::Web::Syndication::TransferProgress> CreateMediaResourceAsync(const Windows::Foundation::Uri & uri, hstring_ref mediaType, hstring_ref description, const Windows::Storage::Streams::IInputStream & mediaStream) const;
+    Windows::Foundation::IAsyncActionWithProgress<Windows::Web::Syndication::TransferProgress> UpdateMediaResourceAsync(const Windows::Foundation::Uri & uri, hstring_ref mediaType, const Windows::Storage::Streams::IInputStream & mediaStream) const;
+    Windows::Foundation::IAsyncActionWithProgress<Windows::Web::Syndication::TransferProgress> UpdateResourceAsync(const Windows::Foundation::Uri & uri, const Windows::Web::Syndication::SyndicationItem & item) const;
+    Windows::Foundation::IAsyncActionWithProgress<Windows::Web::Syndication::TransferProgress> UpdateResourceItemAsync(const Windows::Web::Syndication::SyndicationItem & item) const;
+    Windows::Foundation::IAsyncActionWithProgress<Windows::Web::Syndication::TransferProgress> DeleteResourceAsync(const Windows::Foundation::Uri & uri) const;
+    Windows::Foundation::IAsyncActionWithProgress<Windows::Web::Syndication::TransferProgress> DeleteResourceItemAsync(const Windows::Web::Syndication::SyndicationItem & item) const;
+    void CancelAsyncOperations() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAtomPubClientFactory
+{
+    Windows::Web::AtomPub::AtomPubClient CreateAtomPubClientWithCredentials(const Windows::Security::Credentials::PasswordCredential & serverCredential) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IResourceCollection
+{
+    Windows::Web::Syndication::ISyndicationText Title() const;
+    Windows::Foundation::Uri Uri() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Web::Syndication::SyndicationCategory> Categories() const;
+    Windows::Foundation::Collections::IVectorView<hstring> Accepts() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IServiceDocument
+{
+    Windows::Foundation::Collections::IVectorView<Windows::Web::AtomPub::Workspace> Workspaces() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWorkspace
+{
+    Windows::Web::Syndication::ISyndicationText Title() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Web::AtomPub::ResourceCollection> Collections() const;
+};
 
 }
 

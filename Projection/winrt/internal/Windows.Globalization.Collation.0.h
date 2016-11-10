@@ -24,4 +24,11 @@ struct CharacterGroupings;
 
 }
 
+namespace Windows::Globalization::Collation {
+
+template <typename T> struct impl_ICharacterGrouping;
+template <typename T> struct impl_ICharacterGroupings;
+
+}
+
 }

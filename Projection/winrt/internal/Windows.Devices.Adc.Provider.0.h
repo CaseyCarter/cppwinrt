@@ -22,6 +22,13 @@ struct IAdcProvider;
 
 namespace Windows::Devices::Adc::Provider {
 
+template <typename T> struct impl_IAdcControllerProvider;
+template <typename T> struct impl_IAdcProvider;
+
+}
+
+namespace Windows::Devices::Adc::Provider {
+
 enum class ProviderAdcChannelMode
 {
     SingleEnded = 0,

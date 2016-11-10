@@ -44,28 +44,6 @@ template <> struct __declspec(uuid("67746c40-ade0-5981-ae23-104891748853")) __de
 
 namespace Windows::Security::Authentication::Identity {
 
-template <typename D>
-struct WINRT_EBO impl_IEnterpriseKeyCredentialRegistrationInfo
-{
-    hstring TenantId() const;
-    hstring TenantName() const;
-    hstring Subject() const;
-    hstring KeyId() const;
-    hstring KeyName() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IEnterpriseKeyCredentialRegistrationManager
-{
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationInfo>> GetRegistrationsAsync() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IEnterpriseKeyCredentialRegistrationManagerStatics
-{
-    Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationManager Current() const;
-};
-
 struct IEnterpriseKeyCredentialRegistrationInfo :
     Windows::IInspectable,
     impl::consume<IEnterpriseKeyCredentialRegistrationInfo>

@@ -36,6 +36,16 @@ struct WiFiNetworkReport;
 
 namespace Windows::Devices::WiFi {
 
+template <typename T> struct impl_IWiFiAdapter;
+template <typename T> struct impl_IWiFiAdapterStatics;
+template <typename T> struct impl_IWiFiAvailableNetwork;
+template <typename T> struct impl_IWiFiConnectionResult;
+template <typename T> struct impl_IWiFiNetworkReport;
+
+}
+
+namespace Windows::Devices::WiFi {
+
 enum class WiFiAccessStatus
 {
     Unspecified = 0,

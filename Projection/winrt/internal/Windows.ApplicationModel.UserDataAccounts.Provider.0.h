@@ -36,6 +36,16 @@ struct UserDataAccountProviderSettingsOperation;
 
 namespace Windows::ApplicationModel::UserDataAccounts::Provider {
 
+template <typename T> struct impl_IUserDataAccountPartnerAccountInfo;
+template <typename T> struct impl_IUserDataAccountProviderAddAccountOperation;
+template <typename T> struct impl_IUserDataAccountProviderOperation;
+template <typename T> struct impl_IUserDataAccountProviderResolveErrorsOperation;
+template <typename T> struct impl_IUserDataAccountProviderSettingsOperation;
+
+}
+
+namespace Windows::ApplicationModel::UserDataAccounts::Provider {
+
 enum class UserDataAccountProviderOperationKind
 {
     AddAccount = 0,

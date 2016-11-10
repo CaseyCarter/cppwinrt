@@ -24,4 +24,11 @@ struct DeviceUseDetails;
 
 }
 
+namespace Windows::Devices::Background {
+
+template <typename T> struct impl_IDeviceServicingDetails;
+template <typename T> struct impl_IDeviceUseDetails;
+
+}
+
 }

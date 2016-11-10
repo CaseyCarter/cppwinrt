@@ -28,6 +28,15 @@ struct DateTimeFormatter;
 
 namespace Windows::Globalization::DateTimeFormatting {
 
+template <typename T> struct impl_IDateTimeFormatter;
+template <typename T> struct impl_IDateTimeFormatter2;
+template <typename T> struct impl_IDateTimeFormatterFactory;
+template <typename T> struct impl_IDateTimeFormatterStatics;
+
+}
+
+namespace Windows::Globalization::DateTimeFormatting {
+
 enum class DayFormat
 {
     None = 0,

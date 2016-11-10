@@ -214,35 +214,205 @@ template <> struct traits<Windows::Devices::Midi::MidiTuneRequestMessage> { usin
 
 namespace Windows::Devices::Midi {
 
-template <typename T> struct impl_IMidiChannelPressureMessage;
-template <typename T> struct impl_IMidiChannelPressureMessageFactory;
-template <typename T> struct impl_IMidiControlChangeMessage;
-template <typename T> struct impl_IMidiControlChangeMessageFactory;
-template <typename T> struct impl_IMidiInPort;
-template <typename T> struct impl_IMidiInPortStatics;
-template <typename T> struct impl_IMidiMessage;
-template <typename T> struct impl_IMidiMessageReceivedEventArgs;
-template <typename T> struct impl_IMidiNoteOffMessage;
-template <typename T> struct impl_IMidiNoteOffMessageFactory;
-template <typename T> struct impl_IMidiNoteOnMessage;
-template <typename T> struct impl_IMidiNoteOnMessageFactory;
-template <typename T> struct impl_IMidiOutPort;
-template <typename T> struct impl_IMidiOutPortStatics;
-template <typename T> struct impl_IMidiPitchBendChangeMessage;
-template <typename T> struct impl_IMidiPitchBendChangeMessageFactory;
-template <typename T> struct impl_IMidiPolyphonicKeyPressureMessage;
-template <typename T> struct impl_IMidiPolyphonicKeyPressureMessageFactory;
-template <typename T> struct impl_IMidiProgramChangeMessage;
-template <typename T> struct impl_IMidiProgramChangeMessageFactory;
-template <typename T> struct impl_IMidiSongPositionPointerMessage;
-template <typename T> struct impl_IMidiSongPositionPointerMessageFactory;
-template <typename T> struct impl_IMidiSongSelectMessage;
-template <typename T> struct impl_IMidiSongSelectMessageFactory;
-template <typename T> struct impl_IMidiSynthesizer;
-template <typename T> struct impl_IMidiSynthesizerStatics;
-template <typename T> struct impl_IMidiSystemExclusiveMessageFactory;
-template <typename T> struct impl_IMidiTimeCodeMessage;
-template <typename T> struct impl_IMidiTimeCodeMessageFactory;
+template <typename D>
+struct WINRT_EBO impl_IMidiChannelPressureMessage
+{
+    uint8_t Channel() const;
+    uint8_t Pressure() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMidiChannelPressureMessageFactory
+{
+    Windows::Devices::Midi::MidiChannelPressureMessage CreateMidiChannelPressureMessage(uint8_t channel, uint8_t pressure) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMidiControlChangeMessage
+{
+    uint8_t Channel() const;
+    uint8_t Controller() const;
+    uint8_t ControlValue() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMidiControlChangeMessageFactory
+{
+    Windows::Devices::Midi::MidiControlChangeMessage CreateMidiControlChangeMessage(uint8_t channel, uint8_t controller, uint8_t controlValue) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMidiInPort
+{
+    event_token MessageReceived(const Windows::Foundation::TypedEventHandler<Windows::Devices::Midi::MidiInPort, Windows::Devices::Midi::MidiMessageReceivedEventArgs> & handler) const;
+    using MessageReceived_revoker = event_revoker<IMidiInPort>;
+    MessageReceived_revoker MessageReceived(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Midi::MidiInPort, Windows::Devices::Midi::MidiMessageReceivedEventArgs> & handler) const;
+    void MessageReceived(event_token token) const;
+    hstring DeviceId() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMidiInPortStatics
+{
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::MidiInPort> FromIdAsync(hstring_ref deviceId) const;
+    hstring GetDeviceSelector() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMidiMessage
+{
+    Windows::Foundation::TimeSpan Timestamp() const;
+    Windows::Storage::Streams::IBuffer RawData() const;
+    Windows::Devices::Midi::MidiMessageType Type() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMidiMessageReceivedEventArgs
+{
+    Windows::Devices::Midi::IMidiMessage Message() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMidiNoteOffMessage
+{
+    uint8_t Channel() const;
+    uint8_t Note() const;
+    uint8_t Velocity() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMidiNoteOffMessageFactory
+{
+    Windows::Devices::Midi::MidiNoteOffMessage CreateMidiNoteOffMessage(uint8_t channel, uint8_t note, uint8_t velocity) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMidiNoteOnMessage
+{
+    uint8_t Channel() const;
+    uint8_t Note() const;
+    uint8_t Velocity() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMidiNoteOnMessageFactory
+{
+    Windows::Devices::Midi::MidiNoteOnMessage CreateMidiNoteOnMessage(uint8_t channel, uint8_t note, uint8_t velocity) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMidiOutPort
+{
+    void SendMessage(const Windows::Devices::Midi::IMidiMessage & midiMessage) const;
+    void SendBuffer(const Windows::Storage::Streams::IBuffer & midiData) const;
+    hstring DeviceId() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMidiOutPortStatics
+{
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::IMidiOutPort> FromIdAsync(hstring_ref deviceId) const;
+    hstring GetDeviceSelector() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMidiPitchBendChangeMessage
+{
+    uint8_t Channel() const;
+    uint16_t Bend() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMidiPitchBendChangeMessageFactory
+{
+    Windows::Devices::Midi::MidiPitchBendChangeMessage CreateMidiPitchBendChangeMessage(uint8_t channel, uint16_t bend) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMidiPolyphonicKeyPressureMessage
+{
+    uint8_t Channel() const;
+    uint8_t Note() const;
+    uint8_t Pressure() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMidiPolyphonicKeyPressureMessageFactory
+{
+    Windows::Devices::Midi::MidiPolyphonicKeyPressureMessage CreateMidiPolyphonicKeyPressureMessage(uint8_t channel, uint8_t note, uint8_t pressure) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMidiProgramChangeMessage
+{
+    uint8_t Channel() const;
+    uint8_t Program() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMidiProgramChangeMessageFactory
+{
+    Windows::Devices::Midi::MidiProgramChangeMessage CreateMidiProgramChangeMessage(uint8_t channel, uint8_t program) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMidiSongPositionPointerMessage
+{
+    uint16_t Beats() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMidiSongPositionPointerMessageFactory
+{
+    Windows::Devices::Midi::MidiSongPositionPointerMessage CreateMidiSongPositionPointerMessage(uint16_t beats) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMidiSongSelectMessage
+{
+    uint8_t Song() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMidiSongSelectMessageFactory
+{
+    Windows::Devices::Midi::MidiSongSelectMessage CreateMidiSongSelectMessage(uint8_t song) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMidiSynthesizer
+{
+    Windows::Devices::Enumeration::DeviceInformation AudioDevice() const;
+    double Volume() const;
+    void Volume(double value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMidiSynthesizerStatics
+{
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::MidiSynthesizer> CreateAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Midi::MidiSynthesizer> CreateAsync(const Windows::Devices::Enumeration::DeviceInformation & audioDevice) const;
+    bool IsSynthesizer(const Windows::Devices::Enumeration::DeviceInformation & midiDevice) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMidiSystemExclusiveMessageFactory
+{
+    Windows::Devices::Midi::MidiSystemExclusiveMessage CreateMidiSystemExclusiveMessage(const Windows::Storage::Streams::IBuffer & rawData) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMidiTimeCodeMessage
+{
+    uint8_t FrameType() const;
+    uint8_t Values() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMidiTimeCodeMessageFactory
+{
+    Windows::Devices::Midi::MidiTimeCodeMessage CreateMidiTimeCodeMessage(uint8_t frameType, uint8_t values) const;
+};
 
 }
 

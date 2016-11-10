@@ -54,9 +54,38 @@ template <> struct traits<Windows::ApplicationModel::DataTransfer::ShareTarget::
 
 namespace Windows::ApplicationModel::DataTransfer::ShareTarget {
 
-template <typename T> struct impl_IQuickLink;
-template <typename T> struct impl_IShareOperation;
-template <typename T> struct impl_IShareOperation2;
+template <typename D>
+struct WINRT_EBO impl_IQuickLink
+{
+    hstring Title() const;
+    void Title(hstring_ref value) const;
+    Windows::Storage::Streams::RandomAccessStreamReference Thumbnail() const;
+    void Thumbnail(const Windows::Storage::Streams::RandomAccessStreamReference & value) const;
+    hstring Id() const;
+    void Id(hstring_ref value) const;
+    Windows::Foundation::Collections::IVector<hstring> SupportedDataFormats() const;
+    Windows::Foundation::Collections::IVector<hstring> SupportedFileTypes() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IShareOperation
+{
+    Windows::ApplicationModel::DataTransfer::DataPackageView Data() const;
+    hstring QuickLinkId() const;
+    void RemoveThisQuickLink() const;
+    void ReportStarted() const;
+    void ReportDataRetrieved() const;
+    void ReportSubmittedBackgroundTask() const;
+    void ReportCompleted(const Windows::ApplicationModel::DataTransfer::ShareTarget::QuickLink & quicklink) const;
+    void ReportCompleted() const;
+    void ReportError(hstring_ref value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IShareOperation2
+{
+    void DismissUI() const;
+};
 
 }
 

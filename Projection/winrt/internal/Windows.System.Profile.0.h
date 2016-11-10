@@ -45,6 +45,19 @@ struct SystemIdentificationInfo;
 
 namespace Windows::System::Profile {
 
+template <typename T> struct impl_IAnalyticsInfoStatics;
+template <typename T> struct impl_IAnalyticsVersionInfo;
+template <typename T> struct impl_IHardwareIdentificationStatics;
+template <typename T> struct impl_IHardwareToken;
+template <typename T> struct impl_IPlatformDiagnosticsAndUsageDataSettingsStatics;
+template <typename T> struct impl_ISharedModeSettingsStatics;
+template <typename T> struct impl_ISystemIdentificationInfo;
+template <typename T> struct impl_ISystemIdentificationStatics;
+
+}
+
+namespace Windows::System::Profile {
+
 enum class PlatformDataCollectionLevel
 {
     Security = 0,

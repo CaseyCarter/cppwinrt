@@ -29,19 +29,6 @@ template <> struct __declspec(uuid("57e89bbc-9220-5df2-844b-ddfe6605db5f")) __de
 
 namespace Windows::Globalization::Collation {
 
-template <typename D>
-struct WINRT_EBO impl_ICharacterGrouping
-{
-    hstring First() const;
-    hstring Label() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_ICharacterGroupings
-{
-    hstring Lookup(hstring_ref text) const;
-};
-
 struct ICharacterGrouping :
     Windows::IInspectable,
     impl::consume<ICharacterGrouping>

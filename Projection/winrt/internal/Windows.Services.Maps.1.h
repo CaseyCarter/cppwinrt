@@ -188,26 +188,181 @@ template <> struct traits<Windows::Services::Maps::MapRouteManeuver> { using def
 
 namespace Windows::Services::Maps {
 
-template <typename T> struct impl_IMapAddress;
-template <typename T> struct impl_IMapAddress2;
-template <typename T> struct impl_IMapLocation;
-template <typename T> struct impl_IMapLocationFinderResult;
-template <typename T> struct impl_IMapLocationFinderStatics;
-template <typename T> struct impl_IMapLocationFinderStatics2;
-template <typename T> struct impl_IMapManagerStatics;
-template <typename T> struct impl_IMapRoute;
-template <typename T> struct impl_IMapRoute2;
-template <typename T> struct impl_IMapRouteDrivingOptions;
-template <typename T> struct impl_IMapRouteFinderResult;
-template <typename T> struct impl_IMapRouteFinderResult2;
-template <typename T> struct impl_IMapRouteFinderStatics;
-template <typename T> struct impl_IMapRouteFinderStatics2;
-template <typename T> struct impl_IMapRouteLeg;
-template <typename T> struct impl_IMapRouteManeuver;
-template <typename T> struct impl_IMapRouteManeuver2;
-template <typename T> struct impl_IMapServiceStatics;
-template <typename T> struct impl_IMapServiceStatics2;
-template <typename T> struct impl_IMapServiceStatics3;
+template <typename D>
+struct WINRT_EBO impl_IMapAddress
+{
+    hstring BuildingName() const;
+    hstring BuildingFloor() const;
+    hstring BuildingRoom() const;
+    hstring BuildingWing() const;
+    hstring StreetNumber() const;
+    hstring Street() const;
+    hstring Neighborhood() const;
+    hstring District() const;
+    hstring Town() const;
+    hstring Region() const;
+    hstring RegionCode() const;
+    hstring Country() const;
+    hstring CountryCode() const;
+    hstring PostCode() const;
+    hstring Continent() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMapAddress2
+{
+    hstring FormattedAddress() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMapLocation
+{
+    Windows::Devices::Geolocation::Geopoint Point() const;
+    hstring DisplayName() const;
+    hstring Description() const;
+    Windows::Services::Maps::MapAddress Address() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMapLocationFinderResult
+{
+    Windows::Foundation::Collections::IVectorView<Windows::Services::Maps::MapLocation> Locations() const;
+    Windows::Services::Maps::MapLocationFinderStatus Status() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMapLocationFinderStatics
+{
+    Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> FindLocationsAtAsync(const Windows::Devices::Geolocation::Geopoint & queryPoint) const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> FindLocationsAsync(hstring_ref searchText, const Windows::Devices::Geolocation::Geopoint & referencePoint) const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> FindLocationsAsync(hstring_ref searchText, const Windows::Devices::Geolocation::Geopoint & referencePoint, uint32_t maxCount) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMapLocationFinderStatics2
+{
+    Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapLocationFinderResult> FindLocationsAtAsync(const Windows::Devices::Geolocation::Geopoint & queryPoint, Windows::Services::Maps::MapLocationDesiredAccuracy accuracy) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMapManagerStatics
+{
+    void ShowDownloadedMapsUI() const;
+    void ShowMapsUpdateUI() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMapRoute
+{
+    Windows::Devices::Geolocation::GeoboundingBox BoundingBox() const;
+    double LengthInMeters() const;
+    Windows::Foundation::TimeSpan EstimatedDuration() const;
+    Windows::Devices::Geolocation::Geopath Path() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Services::Maps::MapRouteLeg> Legs() const;
+    bool IsTrafficBased() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMapRoute2
+{
+    Windows::Services::Maps::MapRouteRestrictions ViolatedRestrictions() const;
+    bool HasBlockedRoads() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMapRouteDrivingOptions
+{
+    uint32_t MaxAlternateRouteCount() const;
+    void MaxAlternateRouteCount(uint32_t value) const;
+    Windows::Foundation::IReference<double> InitialHeading() const;
+    void InitialHeading(const Windows::Foundation::IReference<double> & value) const;
+    Windows::Services::Maps::MapRouteOptimization RouteOptimization() const;
+    void RouteOptimization(Windows::Services::Maps::MapRouteOptimization value) const;
+    Windows::Services::Maps::MapRouteRestrictions RouteRestrictions() const;
+    void RouteRestrictions(Windows::Services::Maps::MapRouteRestrictions value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMapRouteFinderResult
+{
+    Windows::Services::Maps::MapRoute Route() const;
+    Windows::Services::Maps::MapRouteFinderStatus Status() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMapRouteFinderResult2
+{
+    Windows::Foundation::Collections::IVectorView<Windows::Services::Maps::MapRoute> AlternateRoutes() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMapRouteFinderStatics
+{
+    Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> GetDrivingRouteAsync(const Windows::Devices::Geolocation::Geopoint & startPoint, const Windows::Devices::Geolocation::Geopoint & endPoint) const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> GetDrivingRouteAsync(const Windows::Devices::Geolocation::Geopoint & startPoint, const Windows::Devices::Geolocation::Geopoint & endPoint, Windows::Services::Maps::MapRouteOptimization optimization) const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> GetDrivingRouteAsync(const Windows::Devices::Geolocation::Geopoint & startPoint, const Windows::Devices::Geolocation::Geopoint & endPoint, Windows::Services::Maps::MapRouteOptimization optimization, Windows::Services::Maps::MapRouteRestrictions restrictions) const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> GetDrivingRouteAsync(const Windows::Devices::Geolocation::Geopoint & startPoint, const Windows::Devices::Geolocation::Geopoint & endPoint, Windows::Services::Maps::MapRouteOptimization optimization, Windows::Services::Maps::MapRouteRestrictions restrictions, double headingInDegrees) const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> GetDrivingRouteFromWaypointsAsync(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> & wayPoints) const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> GetDrivingRouteFromWaypointsAsync(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> & wayPoints, Windows::Services::Maps::MapRouteOptimization optimization) const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> GetDrivingRouteFromWaypointsAsync(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> & wayPoints, Windows::Services::Maps::MapRouteOptimization optimization, Windows::Services::Maps::MapRouteRestrictions restrictions) const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> GetDrivingRouteFromWaypointsAsync(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> & wayPoints, Windows::Services::Maps::MapRouteOptimization optimization, Windows::Services::Maps::MapRouteRestrictions restrictions, double headingInDegrees) const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> GetWalkingRouteAsync(const Windows::Devices::Geolocation::Geopoint & startPoint, const Windows::Devices::Geolocation::Geopoint & endPoint) const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> GetWalkingRouteFromWaypointsAsync(const Windows::Foundation::Collections::IIterable<Windows::Devices::Geolocation::Geopoint> & wayPoints) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMapRouteFinderStatics2
+{
+    Windows::Foundation::IAsyncOperation<Windows::Services::Maps::MapRouteFinderResult> GetDrivingRouteAsync(const Windows::Devices::Geolocation::Geopoint & startPoint, const Windows::Devices::Geolocation::Geopoint & endPoint, const Windows::Services::Maps::MapRouteDrivingOptions & options) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMapRouteLeg
+{
+    Windows::Devices::Geolocation::GeoboundingBox BoundingBox() const;
+    Windows::Devices::Geolocation::Geopath Path() const;
+    double LengthInMeters() const;
+    Windows::Foundation::TimeSpan EstimatedDuration() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Services::Maps::MapRouteManeuver> Maneuvers() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMapRouteManeuver
+{
+    Windows::Devices::Geolocation::Geopoint StartingPoint() const;
+    double LengthInMeters() const;
+    hstring InstructionText() const;
+    Windows::Services::Maps::MapRouteManeuverKind Kind() const;
+    hstring ExitNumber() const;
+    Windows::Services::Maps::MapManeuverNotices ManeuverNotices() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMapRouteManeuver2
+{
+    double StartHeading() const;
+    double EndHeading() const;
+    hstring StreetName() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMapServiceStatics
+{
+    void ServiceToken(hstring_ref value) const;
+    hstring ServiceToken() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMapServiceStatics2
+{
+    hstring WorldViewRegionCode() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMapServiceStatics3
+{
+    hstring DataAttributions() const;
+};
 
 }
 

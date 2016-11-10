@@ -172,18 +172,124 @@ template <> struct traits<Windows::UI::Xaml::Markup::XamlReader> { using default
 
 namespace Windows::UI::Xaml::Markup {
 
-template <typename T> struct impl_IComponentConnector;
-template <typename T> struct impl_IComponentConnector2;
-template <typename T> struct impl_IDataTemplateComponent;
-template <typename T> struct impl_IXamlBinaryWriter;
-template <typename T> struct impl_IXamlBinaryWriterStatics;
-template <typename T> struct impl_IXamlBindingHelper;
-template <typename T> struct impl_IXamlBindingHelperStatics;
-template <typename T> struct impl_IXamlMember;
-template <typename T> struct impl_IXamlMetadataProvider;
-template <typename T> struct impl_IXamlReader;
-template <typename T> struct impl_IXamlReaderStatics;
-template <typename T> struct impl_IXamlType;
+template <typename D>
+struct WINRT_EBO impl_IComponentConnector
+{
+    void Connect(int32_t connectionId, const Windows::IInspectable & target) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IComponentConnector2
+{
+    Windows::UI::Xaml::Markup::IComponentConnector GetBindingConnector(int32_t connectionId, const Windows::IInspectable & target) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataTemplateComponent
+{
+    void Recycle() const;
+    void ProcessBindings(const Windows::IInspectable & item, int32_t itemIndex, int32_t phase, int32_t & nextPhase) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IXamlBinaryWriter
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IXamlBinaryWriterStatics
+{
+    Windows::UI::Xaml::Markup::XamlBinaryWriterErrorInformation Write(const Windows::Foundation::Collections::IVector<Windows::Storage::Streams::IRandomAccessStream> & inputStreams, const Windows::Foundation::Collections::IVector<Windows::Storage::Streams::IRandomAccessStream> & outputStreams, const Windows::UI::Xaml::Markup::IXamlMetadataProvider & xamlMetadataProvider) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IXamlBindingHelper
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IXamlBindingHelperStatics
+{
+    Windows::UI::Xaml::DependencyProperty DataTemplateComponentProperty() const;
+    Windows::UI::Xaml::Markup::IDataTemplateComponent GetDataTemplateComponent(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetDataTemplateComponent(const Windows::UI::Xaml::DependencyObject & element, const Windows::UI::Xaml::Markup::IDataTemplateComponent & value) const;
+    void SuspendRendering(const Windows::UI::Xaml::UIElement & target) const;
+    void ResumeRendering(const Windows::UI::Xaml::UIElement & target) const;
+    Windows::IInspectable ConvertValue(const Windows::UI::Xaml::Interop::TypeName & type, const Windows::IInspectable & value) const;
+    void SetPropertyFromString(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, hstring_ref value) const;
+    void SetPropertyFromBoolean(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, bool value) const;
+    void SetPropertyFromChar16(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, wchar_t value) const;
+    void SetPropertyFromDateTime(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::DateTime & value) const;
+    void SetPropertyFromDouble(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, double value) const;
+    void SetPropertyFromInt32(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, int32_t value) const;
+    void SetPropertyFromUInt32(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, uint32_t value) const;
+    void SetPropertyFromInt64(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, int64_t value) const;
+    void SetPropertyFromUInt64(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, uint64_t value) const;
+    void SetPropertyFromSingle(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, float value) const;
+    void SetPropertyFromPoint(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::Point & value) const;
+    void SetPropertyFromRect(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::Rect & value) const;
+    void SetPropertyFromSize(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::Size & value) const;
+    void SetPropertyFromTimeSpan(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::TimeSpan & value) const;
+    void SetPropertyFromByte(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, uint8_t value) const;
+    void SetPropertyFromUri(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::Foundation::Uri & value) const;
+    void SetPropertyFromObject(const Windows::IInspectable & dependencyObject, const Windows::UI::Xaml::DependencyProperty & propertyToSet, const Windows::IInspectable & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IXamlMember
+{
+    bool IsAttachable() const;
+    bool IsDependencyProperty() const;
+    bool IsReadOnly() const;
+    hstring Name() const;
+    Windows::UI::Xaml::Markup::IXamlType TargetType() const;
+    Windows::UI::Xaml::Markup::IXamlType Type() const;
+    Windows::IInspectable GetValue(const Windows::IInspectable & instance) const;
+    void SetValue(const Windows::IInspectable & instance, const Windows::IInspectable & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IXamlMetadataProvider
+{
+    Windows::UI::Xaml::Markup::IXamlType GetXamlType(const Windows::UI::Xaml::Interop::TypeName & type) const;
+    Windows::UI::Xaml::Markup::IXamlType GetXamlType(hstring_ref fullName) const;
+    com_array<Windows::UI::Xaml::Markup::XmlnsDefinition> GetXmlnsDefinitions() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IXamlReader
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IXamlReaderStatics
+{
+    Windows::IInspectable Load(hstring_ref xaml) const;
+    Windows::IInspectable LoadWithInitialTemplateValidation(hstring_ref xaml) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IXamlType
+{
+    Windows::UI::Xaml::Markup::IXamlType BaseType() const;
+    Windows::UI::Xaml::Markup::IXamlMember ContentProperty() const;
+    hstring FullName() const;
+    bool IsArray() const;
+    bool IsCollection() const;
+    bool IsConstructible() const;
+    bool IsDictionary() const;
+    bool IsMarkupExtension() const;
+    bool IsBindable() const;
+    Windows::UI::Xaml::Markup::IXamlType ItemType() const;
+    Windows::UI::Xaml::Markup::IXamlType KeyType() const;
+    Windows::UI::Xaml::Interop::TypeName UnderlyingType() const;
+    Windows::IInspectable ActivateInstance() const;
+    Windows::IInspectable CreateFromString(hstring_ref value) const;
+    Windows::UI::Xaml::Markup::IXamlMember GetMember(hstring_ref name) const;
+    void AddToVector(const Windows::IInspectable & instance, const Windows::IInspectable & value) const;
+    void AddToMap(const Windows::IInspectable & instance, const Windows::IInspectable & key, const Windows::IInspectable & value) const;
+    void RunInitializer() const;
+};
 
 }
 

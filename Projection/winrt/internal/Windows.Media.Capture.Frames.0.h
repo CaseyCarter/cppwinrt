@@ -80,6 +80,27 @@ struct VideoMediaFrameFormat;
 
 namespace Windows::Media::Capture::Frames {
 
+template <typename T> struct impl_IBufferMediaFrame;
+template <typename T> struct impl_IDepthMediaFrame;
+template <typename T> struct impl_IDepthMediaFrameFormat;
+template <typename T> struct impl_IInfraredMediaFrame;
+template <typename T> struct impl_IMediaFrameArrivedEventArgs;
+template <typename T> struct impl_IMediaFrameFormat;
+template <typename T> struct impl_IMediaFrameReader;
+template <typename T> struct impl_IMediaFrameReference;
+template <typename T> struct impl_IMediaFrameSource;
+template <typename T> struct impl_IMediaFrameSourceController;
+template <typename T> struct impl_IMediaFrameSourceGetPropertyResult;
+template <typename T> struct impl_IMediaFrameSourceGroup;
+template <typename T> struct impl_IMediaFrameSourceGroupStatics;
+template <typename T> struct impl_IMediaFrameSourceInfo;
+template <typename T> struct impl_IVideoMediaFrame;
+template <typename T> struct impl_IVideoMediaFrameFormat;
+
+}
+
+namespace Windows::Media::Capture::Frames {
+
 enum class MediaFrameReaderStartStatus
 {
     Success = 0,

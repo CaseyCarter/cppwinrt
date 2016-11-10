@@ -79,56 +79,6 @@ template <> struct __declspec(uuid("d1a0a6c4-889d-519b-8508-26241b329b7e")) __de
 
 namespace Windows::Storage::AccessCache {
 
-template <typename D>
-struct WINRT_EBO impl_IItemRemovedEventArgs
-{
-    Windows::Storage::AccessCache::AccessListEntry RemovedEntry() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IStorageApplicationPermissionsStatics
-{
-    Windows::Storage::AccessCache::StorageItemAccessList FutureAccessList() const;
-    Windows::Storage::AccessCache::StorageItemMostRecentlyUsedList MostRecentlyUsedList() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IStorageItemAccessList
-{
-    hstring Add(const Windows::Storage::IStorageItem & file) const;
-    hstring Add(const Windows::Storage::IStorageItem & file, hstring_ref metadata) const;
-    void AddOrReplace(hstring_ref token, const Windows::Storage::IStorageItem & file) const;
-    void AddOrReplace(hstring_ref token, const Windows::Storage::IStorageItem & file, hstring_ref metadata) const;
-    Windows::Foundation::IAsyncOperation<Windows::Storage::IStorageItem> GetItemAsync(hstring_ref token) const;
-    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> GetFileAsync(hstring_ref token) const;
-    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> GetFolderAsync(hstring_ref token) const;
-    Windows::Foundation::IAsyncOperation<Windows::Storage::IStorageItem> GetItemAsync(hstring_ref token, Windows::Storage::AccessCache::AccessCacheOptions options) const;
-    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> GetFileAsync(hstring_ref token, Windows::Storage::AccessCache::AccessCacheOptions options) const;
-    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFolder> GetFolderAsync(hstring_ref token, Windows::Storage::AccessCache::AccessCacheOptions options) const;
-    void Remove(hstring_ref token) const;
-    bool ContainsItem(hstring_ref token) const;
-    void Clear() const;
-    bool CheckAccess(const Windows::Storage::IStorageItem & file) const;
-    Windows::Storage::AccessCache::AccessListEntryView Entries() const;
-    uint32_t MaximumItemsAllowed() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IStorageItemMostRecentlyUsedList
-{
-    event_token ItemRemoved(const Windows::Foundation::TypedEventHandler<Windows::Storage::AccessCache::StorageItemMostRecentlyUsedList, Windows::Storage::AccessCache::ItemRemovedEventArgs> & handler) const;
-    using ItemRemoved_revoker = event_revoker<IStorageItemMostRecentlyUsedList>;
-    ItemRemoved_revoker ItemRemoved(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Storage::AccessCache::StorageItemMostRecentlyUsedList, Windows::Storage::AccessCache::ItemRemovedEventArgs> & handler) const;
-    void ItemRemoved(event_token eventCookie) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IStorageItemMostRecentlyUsedList2
-{
-    hstring Add(const Windows::Storage::IStorageItem & file, hstring_ref metadata, Windows::Storage::AccessCache::RecentStorageItemVisibility visibility) const;
-    void AddOrReplace(hstring_ref token, const Windows::Storage::IStorageItem & file, hstring_ref metadata, Windows::Storage::AccessCache::RecentStorageItemVisibility visibility) const;
-};
-
 struct IItemRemovedEventArgs :
     Windows::IInspectable,
     impl::consume<IItemRemovedEventArgs>

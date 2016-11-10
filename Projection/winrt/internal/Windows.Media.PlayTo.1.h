@@ -205,24 +205,216 @@ template <> struct traits<Windows::Media::PlayTo::VolumeChangeRequestedEventArgs
 
 namespace Windows::Media::PlayTo {
 
-template <typename T> struct impl_ICurrentTimeChangeRequestedEventArgs;
-template <typename T> struct impl_IMuteChangeRequestedEventArgs;
-template <typename T> struct impl_IPlayToConnection;
-template <typename T> struct impl_IPlayToConnectionErrorEventArgs;
-template <typename T> struct impl_IPlayToConnectionStateChangedEventArgs;
-template <typename T> struct impl_IPlayToConnectionTransferredEventArgs;
-template <typename T> struct impl_IPlayToManager;
-template <typename T> struct impl_IPlayToManagerStatics;
-template <typename T> struct impl_IPlayToReceiver;
-template <typename T> struct impl_IPlayToSource;
-template <typename T> struct impl_IPlayToSourceDeferral;
-template <typename T> struct impl_IPlayToSourceRequest;
-template <typename T> struct impl_IPlayToSourceRequestedEventArgs;
-template <typename T> struct impl_IPlayToSourceSelectedEventArgs;
-template <typename T> struct impl_IPlayToSourceWithPreferredSourceUri;
-template <typename T> struct impl_IPlaybackRateChangeRequestedEventArgs;
-template <typename T> struct impl_ISourceChangeRequestedEventArgs;
-template <typename T> struct impl_IVolumeChangeRequestedEventArgs;
+template <typename D>
+struct WINRT_EBO impl_ICurrentTimeChangeRequestedEventArgs
+{
+    Windows::Foundation::TimeSpan Time() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMuteChangeRequestedEventArgs
+{
+    bool Mute() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPlayToConnection
+{
+    Windows::Media::PlayTo::PlayToConnectionState State() const;
+    event_token StateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToConnection, Windows::Media::PlayTo::PlayToConnectionStateChangedEventArgs> & handler) const;
+    using StateChanged_revoker = event_revoker<IPlayToConnection>;
+    StateChanged_revoker StateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToConnection, Windows::Media::PlayTo::PlayToConnectionStateChangedEventArgs> & handler) const;
+    void StateChanged(event_token token) const;
+    event_token Transferred(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToConnection, Windows::Media::PlayTo::PlayToConnectionTransferredEventArgs> & handler) const;
+    using Transferred_revoker = event_revoker<IPlayToConnection>;
+    Transferred_revoker Transferred(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToConnection, Windows::Media::PlayTo::PlayToConnectionTransferredEventArgs> & handler) const;
+    void Transferred(event_token token) const;
+    event_token Error(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToConnection, Windows::Media::PlayTo::PlayToConnectionErrorEventArgs> & handler) const;
+    using Error_revoker = event_revoker<IPlayToConnection>;
+    Error_revoker Error(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToConnection, Windows::Media::PlayTo::PlayToConnectionErrorEventArgs> & handler) const;
+    void Error(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPlayToConnectionErrorEventArgs
+{
+    Windows::Media::PlayTo::PlayToConnectionError Code() const;
+    hstring Message() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPlayToConnectionStateChangedEventArgs
+{
+    Windows::Media::PlayTo::PlayToConnectionState PreviousState() const;
+    Windows::Media::PlayTo::PlayToConnectionState CurrentState() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPlayToConnectionTransferredEventArgs
+{
+    Windows::Media::PlayTo::PlayToSource PreviousSource() const;
+    Windows::Media::PlayTo::PlayToSource CurrentSource() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPlayToManager
+{
+    event_token SourceRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToManager, Windows::Media::PlayTo::PlayToSourceRequestedEventArgs> & handler) const;
+    using SourceRequested_revoker = event_revoker<IPlayToManager>;
+    SourceRequested_revoker SourceRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToManager, Windows::Media::PlayTo::PlayToSourceRequestedEventArgs> & handler) const;
+    void SourceRequested(event_token token) const;
+    event_token SourceSelected(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToManager, Windows::Media::PlayTo::PlayToSourceSelectedEventArgs> & handler) const;
+    using SourceSelected_revoker = event_revoker<IPlayToManager>;
+    SourceSelected_revoker SourceSelected(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToManager, Windows::Media::PlayTo::PlayToSourceSelectedEventArgs> & handler) const;
+    void SourceSelected(event_token token) const;
+    void DefaultSourceSelection(bool value) const;
+    bool DefaultSourceSelection() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPlayToManagerStatics
+{
+    Windows::Media::PlayTo::PlayToManager GetForCurrentView() const;
+    void ShowPlayToUI() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPlayToReceiver
+{
+    event_token PlayRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> & handler) const;
+    using PlayRequested_revoker = event_revoker<IPlayToReceiver>;
+    PlayRequested_revoker PlayRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> & handler) const;
+    void PlayRequested(event_token token) const;
+    event_token PauseRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> & handler) const;
+    using PauseRequested_revoker = event_revoker<IPlayToReceiver>;
+    PauseRequested_revoker PauseRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> & handler) const;
+    void PauseRequested(event_token token) const;
+    event_token SourceChangeRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::SourceChangeRequestedEventArgs> & handler) const;
+    using SourceChangeRequested_revoker = event_revoker<IPlayToReceiver>;
+    SourceChangeRequested_revoker SourceChangeRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::SourceChangeRequestedEventArgs> & handler) const;
+    void SourceChangeRequested(event_token token) const;
+    event_token PlaybackRateChangeRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::PlaybackRateChangeRequestedEventArgs> & handler) const;
+    using PlaybackRateChangeRequested_revoker = event_revoker<IPlayToReceiver>;
+    PlaybackRateChangeRequested_revoker PlaybackRateChangeRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::PlaybackRateChangeRequestedEventArgs> & handler) const;
+    void PlaybackRateChangeRequested(event_token token) const;
+    event_token CurrentTimeChangeRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::CurrentTimeChangeRequestedEventArgs> & handler) const;
+    using CurrentTimeChangeRequested_revoker = event_revoker<IPlayToReceiver>;
+    CurrentTimeChangeRequested_revoker CurrentTimeChangeRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::CurrentTimeChangeRequestedEventArgs> & handler) const;
+    void CurrentTimeChangeRequested(event_token token) const;
+    event_token MuteChangeRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::MuteChangeRequestedEventArgs> & handler) const;
+    using MuteChangeRequested_revoker = event_revoker<IPlayToReceiver>;
+    MuteChangeRequested_revoker MuteChangeRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::MuteChangeRequestedEventArgs> & handler) const;
+    void MuteChangeRequested(event_token token) const;
+    event_token VolumeChangeRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::VolumeChangeRequestedEventArgs> & handler) const;
+    using VolumeChangeRequested_revoker = event_revoker<IPlayToReceiver>;
+    VolumeChangeRequested_revoker VolumeChangeRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::Media::PlayTo::VolumeChangeRequestedEventArgs> & handler) const;
+    void VolumeChangeRequested(event_token token) const;
+    event_token TimeUpdateRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> & handler) const;
+    using TimeUpdateRequested_revoker = event_revoker<IPlayToReceiver>;
+    TimeUpdateRequested_revoker TimeUpdateRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> & handler) const;
+    void TimeUpdateRequested(event_token token) const;
+    event_token StopRequested(const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> & handler) const;
+    using StopRequested_revoker = event_revoker<IPlayToReceiver>;
+    StopRequested_revoker StopRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::PlayTo::PlayToReceiver, Windows::IInspectable> & handler) const;
+    void StopRequested(event_token token) const;
+    void NotifyVolumeChange(double volume, bool mute) const;
+    void NotifyRateChange(double rate) const;
+    void NotifyLoadedMetadata() const;
+    void NotifyTimeUpdate(const Windows::Foundation::TimeSpan & currentTime) const;
+    void NotifyDurationChange(const Windows::Foundation::TimeSpan & duration) const;
+    void NotifySeeking() const;
+    void NotifySeeked() const;
+    void NotifyPaused() const;
+    void NotifyPlaying() const;
+    void NotifyEnded() const;
+    void NotifyError() const;
+    void NotifyStopped() const;
+    hstring FriendlyName() const;
+    void FriendlyName(hstring_ref value) const;
+    void SupportsImage(bool value) const;
+    bool SupportsImage() const;
+    void SupportsAudio(bool value) const;
+    bool SupportsAudio() const;
+    void SupportsVideo(bool value) const;
+    bool SupportsVideo() const;
+    Windows::Foundation::Collections::IPropertySet Properties() const;
+    Windows::Foundation::IAsyncAction StartAsync() const;
+    Windows::Foundation::IAsyncAction StopAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPlayToSource
+{
+    Windows::Media::PlayTo::PlayToConnection Connection() const;
+    Windows::Media::PlayTo::PlayToSource Next() const;
+    void Next(const Windows::Media::PlayTo::PlayToSource & value) const;
+    void PlayNext() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPlayToSourceDeferral
+{
+    void Complete() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPlayToSourceRequest
+{
+    Windows::Foundation::DateTime Deadline() const;
+    void DisplayErrorString(hstring_ref errorString) const;
+    Windows::Media::PlayTo::PlayToSourceDeferral GetDeferral() const;
+    void SetSource(const Windows::Media::PlayTo::PlayToSource & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPlayToSourceRequestedEventArgs
+{
+    Windows::Media::PlayTo::PlayToSourceRequest SourceRequest() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPlayToSourceSelectedEventArgs
+{
+    hstring FriendlyName() const;
+    Windows::Storage::Streams::IRandomAccessStreamWithContentType Icon() const;
+    bool SupportsImage() const;
+    bool SupportsAudio() const;
+    bool SupportsVideo() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPlayToSourceWithPreferredSourceUri
+{
+    Windows::Foundation::Uri PreferredSourceUri() const;
+    void PreferredSourceUri(const Windows::Foundation::Uri & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPlaybackRateChangeRequestedEventArgs
+{
+    double Rate() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISourceChangeRequestedEventArgs
+{
+    Windows::Storage::Streams::IRandomAccessStreamWithContentType Stream() const;
+    hstring Title() const;
+    hstring Author() const;
+    hstring Album() const;
+    hstring Genre() const;
+    hstring Description() const;
+    Windows::Foundation::IReference<Windows::Foundation::DateTime> Date() const;
+    Windows::Storage::Streams::IRandomAccessStreamReference Thumbnail() const;
+    Windows::Foundation::IReference<uint32_t> Rating() const;
+    Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> Properties() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVolumeChangeRequestedEventArgs
+{
+    double Volume() const;
+};
 
 }
 

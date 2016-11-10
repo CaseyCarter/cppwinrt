@@ -6,6 +6,11 @@
 
 WINRT_EXPORT namespace winrt {
 
+namespace Windows::UI::Xaml::Automation::Provider {
+
+
+}
+
 namespace Windows::UI::Xaml::Automation::Text {
 
 enum class TextPatternRangeEndpoint

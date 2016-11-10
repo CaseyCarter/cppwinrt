@@ -326,31 +326,277 @@ template <> struct traits<Windows::Services::Store::StoreVideo> { using default_
 
 namespace Windows::Services::Store {
 
-template <typename T> struct impl_IStoreAcquireLicenseResult;
-template <typename T> struct impl_IStoreAppLicense;
-template <typename T> struct impl_IStoreAvailability;
-template <typename T> struct impl_IStoreCollectionData;
-template <typename T> struct impl_IStoreConsumableResult;
-template <typename T> struct impl_IStoreContext;
-template <typename T> struct impl_IStoreContextStatics;
-template <typename T> struct impl_IStoreImage;
-template <typename T> struct impl_IStoreLicense;
-template <typename T> struct impl_IStorePackageLicense;
-template <typename T> struct impl_IStorePackageUpdate;
-template <typename T> struct impl_IStorePackageUpdateResult;
-template <typename T> struct impl_IStorePrice;
-template <typename T> struct impl_IStoreProduct;
-template <typename T> struct impl_IStoreProductPagedQueryResult;
-template <typename T> struct impl_IStoreProductQueryResult;
-template <typename T> struct impl_IStoreProductResult;
-template <typename T> struct impl_IStorePurchaseProperties;
-template <typename T> struct impl_IStorePurchasePropertiesFactory;
-template <typename T> struct impl_IStorePurchaseResult;
-template <typename T> struct impl_IStoreRequestHelperStatics;
-template <typename T> struct impl_IStoreSendRequestResult;
-template <typename T> struct impl_IStoreSku;
-template <typename T> struct impl_IStoreSubscriptionInfo;
-template <typename T> struct impl_IStoreVideo;
+template <typename D>
+struct WINRT_EBO impl_IStoreAcquireLicenseResult
+{
+    Windows::Services::Store::StorePackageLicense StorePackageLicense() const;
+    HRESULT ExtendedError() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStoreAppLicense
+{
+    hstring SkuStoreId() const;
+    bool IsActive() const;
+    bool IsTrial() const;
+    Windows::Foundation::DateTime ExpirationDate() const;
+    hstring ExtendedJsonData() const;
+    Windows::Foundation::Collections::IMapView<hstring, Windows::Services::Store::StoreLicense> AddOnLicenses() const;
+    Windows::Foundation::TimeSpan TrialTimeRemaining() const;
+    bool IsTrialOwnedByThisUser() const;
+    hstring TrialUniqueId() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStoreAvailability
+{
+    hstring StoreId() const;
+    Windows::Foundation::DateTime EndDate() const;
+    Windows::Services::Store::StorePrice Price() const;
+    hstring ExtendedJsonData() const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StorePurchaseResult> RequestPurchaseAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StorePurchaseResult> RequestPurchaseAsync(const Windows::Services::Store::StorePurchaseProperties & storePurchaseProperties) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStoreCollectionData
+{
+    bool IsTrial() const;
+    hstring CampaignId() const;
+    hstring DeveloperOfferId() const;
+    Windows::Foundation::DateTime AcquiredDate() const;
+    Windows::Foundation::DateTime StartDate() const;
+    Windows::Foundation::DateTime EndDate() const;
+    Windows::Foundation::TimeSpan TrialTimeRemaining() const;
+    hstring ExtendedJsonData() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStoreConsumableResult
+{
+    Windows::Services::Store::StoreConsumableStatus Status() const;
+    GUID TrackingId() const;
+    uint32_t BalanceRemaining() const;
+    HRESULT ExtendedError() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStoreContext
+{
+    Windows::System::User User() const;
+    event_token OfflineLicensesChanged(const Windows::Foundation::TypedEventHandler<Windows::Services::Store::StoreContext, Windows::IInspectable> & handler) const;
+    using OfflineLicensesChanged_revoker = event_revoker<IStoreContext>;
+    OfflineLicensesChanged_revoker OfflineLicensesChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Services::Store::StoreContext, Windows::IInspectable> & handler) const;
+    void OfflineLicensesChanged(event_token token) const;
+    Windows::Foundation::IAsyncOperation<hstring> GetCustomerPurchaseIdAsync(hstring_ref serviceTicket, hstring_ref publisherUserId) const;
+    Windows::Foundation::IAsyncOperation<hstring> GetCustomerCollectionsIdAsync(hstring_ref serviceTicket, hstring_ref publisherUserId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreAppLicense> GetAppLicenseAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductResult> GetStoreProductForCurrentAppAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductQueryResult> GetStoreProductsAsync(const Windows::Foundation::Collections::IIterable<hstring> & productKinds, const Windows::Foundation::Collections::IIterable<hstring> & storeIds) const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductQueryResult> GetAssociatedStoreProductsAsync(const Windows::Foundation::Collections::IIterable<hstring> & productKinds) const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductPagedQueryResult> GetAssociatedStoreProductsWithPagingAsync(const Windows::Foundation::Collections::IIterable<hstring> & productKinds, uint32_t maxItemsToRetrievePerPage) const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductQueryResult> GetUserCollectionAsync(const Windows::Foundation::Collections::IIterable<hstring> & productKinds) const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductPagedQueryResult> GetUserCollectionWithPagingAsync(const Windows::Foundation::Collections::IIterable<hstring> & productKinds, uint32_t maxItemsToRetrievePerPage) const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreConsumableResult> ReportConsumableFulfillmentAsync(hstring_ref productStoreId, uint32_t quantity, GUID trackingId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreConsumableResult> GetConsumableBalanceRemainingAsync(hstring_ref productStoreId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreAcquireLicenseResult> AcquireStoreLicenseForOptionalPackageAsync(const Windows::ApplicationModel::Package & optionalPackage) const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StorePurchaseResult> RequestPurchaseAsync(hstring_ref storeId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StorePurchaseResult> RequestPurchaseAsync(hstring_ref storeId, const Windows::Services::Store::StorePurchaseProperties & storePurchaseProperties) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Services::Store::StorePackageUpdate>> GetAppAndOptionalStorePackageUpdatesAsync() const;
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Services::Store::StorePackageUpdateResult, Windows::Services::Store::StorePackageUpdateStatus> RequestDownloadStorePackageUpdatesAsync(const Windows::Foundation::Collections::IIterable<Windows::Services::Store::StorePackageUpdate> & storePackageUpdates) const;
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Services::Store::StorePackageUpdateResult, Windows::Services::Store::StorePackageUpdateStatus> RequestDownloadAndInstallStorePackageUpdatesAsync(const Windows::Foundation::Collections::IIterable<Windows::Services::Store::StorePackageUpdate> & storePackageUpdates) const;
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Services::Store::StorePackageUpdateResult, Windows::Services::Store::StorePackageUpdateStatus> RequestDownloadAndInstallStorePackagesAsync(const Windows::Foundation::Collections::IIterable<hstring> & storeIds) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStoreContextStatics
+{
+    Windows::Services::Store::StoreContext GetDefault() const;
+    Windows::Services::Store::StoreContext GetForUser(const Windows::System::User & user) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStoreImage
+{
+    Windows::Foundation::Uri Uri() const;
+    hstring ImagePurposeTag() const;
+    uint32_t Width() const;
+    uint32_t Height() const;
+    hstring Caption() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStoreLicense
+{
+    hstring SkuStoreId() const;
+    bool IsActive() const;
+    Windows::Foundation::DateTime ExpirationDate() const;
+    hstring ExtendedJsonData() const;
+    hstring InAppOfferToken() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStorePackageLicense
+{
+    event_token LicenseLost(const Windows::Foundation::TypedEventHandler<Windows::Services::Store::StorePackageLicense, Windows::IInspectable> & handler) const;
+    using LicenseLost_revoker = event_revoker<IStorePackageLicense>;
+    LicenseLost_revoker LicenseLost(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Services::Store::StorePackageLicense, Windows::IInspectable> & handler) const;
+    void LicenseLost(event_token token) const;
+    Windows::ApplicationModel::Package Package() const;
+    bool IsValid() const;
+    void ReleaseLicense() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStorePackageUpdate
+{
+    Windows::ApplicationModel::Package Package() const;
+    bool Mandatory() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStorePackageUpdateResult
+{
+    Windows::Services::Store::StorePackageUpdateState OverallState() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Services::Store::StorePackageUpdateStatus> StorePackageUpdateStatuses() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStorePrice
+{
+    hstring FormattedBasePrice() const;
+    hstring FormattedPrice() const;
+    bool IsOnSale() const;
+    Windows::Foundation::DateTime SaleEndDate() const;
+    hstring CurrencyCode() const;
+    hstring FormattedRecurrencePrice() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStoreProduct
+{
+    hstring StoreId() const;
+    hstring Language() const;
+    hstring Title() const;
+    hstring Description() const;
+    hstring ProductKind() const;
+    bool HasDigitalDownload() const;
+    Windows::Foundation::Collections::IVectorView<hstring> Keywords() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Services::Store::StoreImage> Images() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Services::Store::StoreVideo> Videos() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Services::Store::StoreSku> Skus() const;
+    bool IsInUserCollection() const;
+    Windows::Services::Store::StorePrice Price() const;
+    hstring ExtendedJsonData() const;
+    Windows::Foundation::Uri LinkUri() const;
+    Windows::Foundation::IAsyncOperation<bool> GetIsAnySkuInstalledAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StorePurchaseResult> RequestPurchaseAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StorePurchaseResult> RequestPurchaseAsync(const Windows::Services::Store::StorePurchaseProperties & storePurchaseProperties) const;
+    hstring InAppOfferToken() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStoreProductPagedQueryResult
+{
+    Windows::Foundation::Collections::IMapView<hstring, Windows::Services::Store::StoreProduct> Products() const;
+    bool HasMoreResults() const;
+    HRESULT ExtendedError() const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreProductPagedQueryResult> GetNextAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStoreProductQueryResult
+{
+    Windows::Foundation::Collections::IMapView<hstring, Windows::Services::Store::StoreProduct> Products() const;
+    HRESULT ExtendedError() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStoreProductResult
+{
+    Windows::Services::Store::StoreProduct Product() const;
+    HRESULT ExtendedError() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStorePurchaseProperties
+{
+    hstring Name() const;
+    void Name(hstring_ref value) const;
+    hstring ExtendedJsonData() const;
+    void ExtendedJsonData(hstring_ref value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStorePurchasePropertiesFactory
+{
+    Windows::Services::Store::StorePurchaseProperties Create(hstring_ref name) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStorePurchaseResult
+{
+    Windows::Services::Store::StorePurchaseStatus Status() const;
+    HRESULT ExtendedError() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStoreRequestHelperStatics
+{
+    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StoreSendRequestResult> SendRequestAsync(const Windows::Services::Store::StoreContext & context, uint32_t requestKind, hstring_ref parametersAsJson) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStoreSendRequestResult
+{
+    hstring Response() const;
+    HRESULT ExtendedError() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStoreSku
+{
+    hstring StoreId() const;
+    hstring Language() const;
+    hstring Title() const;
+    hstring Description() const;
+    bool IsTrial() const;
+    hstring CustomDeveloperData() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Services::Store::StoreImage> Images() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Services::Store::StoreVideo> Videos() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Services::Store::StoreAvailability> Availabilities() const;
+    Windows::Services::Store::StorePrice Price() const;
+    hstring ExtendedJsonData() const;
+    bool IsInUserCollection() const;
+    Windows::Foundation::Collections::IVectorView<hstring> BundledSkus() const;
+    Windows::Services::Store::StoreCollectionData CollectionData() const;
+    Windows::Foundation::IAsyncOperation<bool> GetIsInstalledAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StorePurchaseResult> RequestPurchaseAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Services::Store::StorePurchaseResult> RequestPurchaseAsync(const Windows::Services::Store::StorePurchaseProperties & storePurchaseProperties) const;
+    bool IsSubscription() const;
+    Windows::Services::Store::StoreSubscriptionInfo SubscriptionInfo() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStoreSubscriptionInfo
+{
+    uint32_t BillingPeriod() const;
+    Windows::Services::Store::StoreDurationUnit BillingPeriodUnit() const;
+    bool HasTrialPeriod() const;
+    uint32_t TrialPeriod() const;
+    Windows::Services::Store::StoreDurationUnit TrialPeriodUnit() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStoreVideo
+{
+    Windows::Foundation::Uri Uri() const;
+    hstring VideoPurposeTag() const;
+    uint32_t Width() const;
+    uint32_t Height() const;
+    hstring Caption() const;
+    Windows::Services::Store::StoreImage PreviewImage() const;
+};
 
 }
 

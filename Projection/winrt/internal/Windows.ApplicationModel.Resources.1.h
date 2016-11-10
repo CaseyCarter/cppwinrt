@@ -49,11 +49,38 @@ template <> struct traits<Windows::ApplicationModel::Resources::ResourceLoader> 
 
 namespace Windows::ApplicationModel::Resources {
 
-template <typename T> struct impl_IResourceLoader;
-template <typename T> struct impl_IResourceLoader2;
-template <typename T> struct impl_IResourceLoaderFactory;
-template <typename T> struct impl_IResourceLoaderStatics;
-template <typename T> struct impl_IResourceLoaderStatics2;
+template <typename D>
+struct WINRT_EBO impl_IResourceLoader
+{
+    hstring GetString(hstring_ref resource) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IResourceLoader2
+{
+    hstring GetStringForUri(const Windows::Foundation::Uri & uri) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IResourceLoaderFactory
+{
+    Windows::ApplicationModel::Resources::ResourceLoader CreateResourceLoaderByName(hstring_ref name) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IResourceLoaderStatics
+{
+    hstring GetStringForReference(const Windows::Foundation::Uri & uri) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IResourceLoaderStatics2
+{
+    Windows::ApplicationModel::Resources::ResourceLoader GetForCurrentView() const;
+    Windows::ApplicationModel::Resources::ResourceLoader GetForCurrentView(hstring_ref name) const;
+    Windows::ApplicationModel::Resources::ResourceLoader GetForViewIndependentUse() const;
+    Windows::ApplicationModel::Resources::ResourceLoader GetForViewIndependentUse(hstring_ref name) const;
+};
 
 }
 

@@ -34,6 +34,16 @@ struct CoreWetStrokeUpdateSource;
 
 namespace Windows::UI::Input::Inking::Core {
 
+template <typename T> struct impl_ICoreInkIndependentInputSource;
+template <typename T> struct impl_ICoreInkIndependentInputSourceStatics;
+template <typename T> struct impl_ICoreWetStrokeUpdateEventArgs;
+template <typename T> struct impl_ICoreWetStrokeUpdateSource;
+template <typename T> struct impl_ICoreWetStrokeUpdateSourceStatics;
+
+}
+
+namespace Windows::UI::Input::Inking::Core {
+
 enum class CoreWetStrokeDisposition
 {
     Inking = 0,

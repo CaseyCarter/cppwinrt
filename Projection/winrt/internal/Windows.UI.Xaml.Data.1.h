@@ -278,39 +278,262 @@ template <> struct traits<Windows::UI::Xaml::Data::RelativeSource> { using defau
 
 namespace Windows::UI::Xaml::Data {
 
-template <typename T> struct impl_IBinding;
-template <typename T> struct impl_IBinding2;
-template <typename T> struct impl_IBindingBase;
-template <typename T> struct impl_IBindingBaseFactory;
-template <typename T> struct impl_IBindingExpression;
-template <typename T> struct impl_IBindingExpressionBase;
-template <typename T> struct impl_IBindingExpressionBaseFactory;
-template <typename T> struct impl_IBindingExpressionFactory;
-template <typename T> struct impl_IBindingFactory;
-template <typename T> struct impl_IBindingOperations;
-template <typename T> struct impl_IBindingOperationsStatics;
-template <typename T> struct impl_ICollectionView;
-template <typename T> struct impl_ICollectionViewFactory;
-template <typename T> struct impl_ICollectionViewGroup;
-template <typename T> struct impl_ICollectionViewSource;
-template <typename T> struct impl_ICollectionViewSourceStatics;
-template <typename T> struct impl_ICurrentChangingEventArgs;
-template <typename T> struct impl_ICurrentChangingEventArgsFactory;
-template <typename T> struct impl_ICustomProperty;
-template <typename T> struct impl_ICustomPropertyProvider;
-template <typename T> struct impl_IItemIndexRange;
-template <typename T> struct impl_IItemIndexRangeFactory;
-template <typename T> struct impl_IItemsRangeInfo;
-template <typename T> struct impl_INotifyPropertyChanged;
-template <typename T> struct impl_IPropertyChangedEventArgs;
-template <typename T> struct impl_IPropertyChangedEventArgsFactory;
-template <typename T> struct impl_IRelativeSource;
-template <typename T> struct impl_IRelativeSourceFactory;
-template <typename T> struct impl_ISelectionInfo;
-template <typename T> struct impl_ISupportIncrementalLoading;
-template <typename T> struct impl_IValueConverter;
-template <typename T> struct impl_CurrentChangingEventHandler;
-template <typename T> struct impl_PropertyChangedEventHandler;
+template <typename D>
+struct WINRT_EBO impl_IBinding
+{
+    Windows::UI::Xaml::PropertyPath Path() const;
+    void Path(const Windows::UI::Xaml::PropertyPath & value) const;
+    Windows::UI::Xaml::Data::BindingMode Mode() const;
+    void Mode(Windows::UI::Xaml::Data::BindingMode value) const;
+    Windows::IInspectable Source() const;
+    void Source(const Windows::IInspectable & value) const;
+    Windows::UI::Xaml::Data::RelativeSource RelativeSource() const;
+    void RelativeSource(const Windows::UI::Xaml::Data::RelativeSource & value) const;
+    hstring ElementName() const;
+    void ElementName(hstring_ref value) const;
+    Windows::UI::Xaml::Data::IValueConverter Converter() const;
+    void Converter(const Windows::UI::Xaml::Data::IValueConverter & value) const;
+    Windows::IInspectable ConverterParameter() const;
+    void ConverterParameter(const Windows::IInspectable & value) const;
+    hstring ConverterLanguage() const;
+    void ConverterLanguage(hstring_ref value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBinding2
+{
+    Windows::IInspectable FallbackValue() const;
+    void FallbackValue(const Windows::IInspectable & value) const;
+    Windows::IInspectable TargetNullValue() const;
+    void TargetNullValue(const Windows::IInspectable & value) const;
+    Windows::UI::Xaml::Data::UpdateSourceTrigger UpdateSourceTrigger() const;
+    void UpdateSourceTrigger(Windows::UI::Xaml::Data::UpdateSourceTrigger value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBindingBase
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBindingBaseFactory
+{
+    Windows::UI::Xaml::Data::BindingBase CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBindingExpression
+{
+    Windows::IInspectable DataItem() const;
+    Windows::UI::Xaml::Data::Binding ParentBinding() const;
+    void UpdateSource() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBindingExpressionBase
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBindingExpressionBaseFactory
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBindingExpressionFactory
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBindingFactory
+{
+    Windows::UI::Xaml::Data::Binding CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBindingOperations
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBindingOperationsStatics
+{
+    void SetBinding(const Windows::UI::Xaml::DependencyObject & target, const Windows::UI::Xaml::DependencyProperty & dp, const Windows::UI::Xaml::Data::BindingBase & binding) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICollectionView
+{
+    Windows::IInspectable CurrentItem() const;
+    int32_t CurrentPosition() const;
+    bool IsCurrentAfterLast() const;
+    bool IsCurrentBeforeFirst() const;
+    Windows::Foundation::Collections::IObservableVector<Windows::IInspectable> CollectionGroups() const;
+    bool HasMoreItems() const;
+    event_token CurrentChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    using CurrentChanged_revoker = event_revoker<ICollectionView>;
+    CurrentChanged_revoker CurrentChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    void CurrentChanged(event_token token) const;
+    event_token CurrentChanging(const Windows::UI::Xaml::Data::CurrentChangingEventHandler & value) const;
+    using CurrentChanging_revoker = event_revoker<ICollectionView>;
+    CurrentChanging_revoker CurrentChanging(auto_revoke_t, const Windows::UI::Xaml::Data::CurrentChangingEventHandler & value) const;
+    void CurrentChanging(event_token token) const;
+    bool MoveCurrentTo(const Windows::IInspectable & item) const;
+    bool MoveCurrentToPosition(int32_t index) const;
+    bool MoveCurrentToFirst() const;
+    bool MoveCurrentToLast() const;
+    bool MoveCurrentToNext() const;
+    bool MoveCurrentToPrevious() const;
+    Windows::Foundation::IAsyncOperation<Windows::UI::Xaml::Data::LoadMoreItemsResult> LoadMoreItemsAsync(uint32_t count) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICollectionViewFactory
+{
+    Windows::UI::Xaml::Data::ICollectionView CreateView() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICollectionViewGroup
+{
+    Windows::IInspectable Group() const;
+    Windows::Foundation::Collections::IObservableVector<Windows::IInspectable> GroupItems() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICollectionViewSource
+{
+    Windows::IInspectable Source() const;
+    void Source(const Windows::IInspectable & value) const;
+    Windows::UI::Xaml::Data::ICollectionView View() const;
+    bool IsSourceGrouped() const;
+    void IsSourceGrouped(bool value) const;
+    Windows::UI::Xaml::PropertyPath ItemsPath() const;
+    void ItemsPath(const Windows::UI::Xaml::PropertyPath & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICollectionViewSourceStatics
+{
+    Windows::UI::Xaml::DependencyProperty SourceProperty() const;
+    Windows::UI::Xaml::DependencyProperty ViewProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsSourceGroupedProperty() const;
+    Windows::UI::Xaml::DependencyProperty ItemsPathProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICurrentChangingEventArgs
+{
+    bool Cancel() const;
+    void Cancel(bool value) const;
+    bool IsCancelable() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICurrentChangingEventArgsFactory
+{
+    Windows::UI::Xaml::Data::CurrentChangingEventArgs CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::Data::CurrentChangingEventArgs CreateWithCancelableParameter(bool isCancelable, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICustomProperty
+{
+    Windows::UI::Xaml::Interop::TypeName Type() const;
+    hstring Name() const;
+    Windows::IInspectable GetValue(const Windows::IInspectable & target) const;
+    void SetValue(const Windows::IInspectable & target, const Windows::IInspectable & value) const;
+    Windows::IInspectable GetIndexedValue(const Windows::IInspectable & target, const Windows::IInspectable & index) const;
+    void SetIndexedValue(const Windows::IInspectable & target, const Windows::IInspectable & value, const Windows::IInspectable & index) const;
+    bool CanWrite() const;
+    bool CanRead() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICustomPropertyProvider
+{
+    Windows::UI::Xaml::Data::ICustomProperty GetCustomProperty(hstring_ref name) const;
+    Windows::UI::Xaml::Data::ICustomProperty GetIndexedProperty(hstring_ref name, const Windows::UI::Xaml::Interop::TypeName & type) const;
+    hstring GetStringRepresentation() const;
+    Windows::UI::Xaml::Interop::TypeName Type() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IItemIndexRange
+{
+    int32_t FirstIndex() const;
+    uint32_t Length() const;
+    int32_t LastIndex() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IItemIndexRangeFactory
+{
+    Windows::UI::Xaml::Data::ItemIndexRange CreateInstance(int32_t firstIndex, uint32_t length, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IItemsRangeInfo
+{
+    void RangesChanged(const Windows::UI::Xaml::Data::ItemIndexRange & visibleRange, const Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Data::ItemIndexRange> & trackedItems) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_INotifyPropertyChanged
+{
+    event_token PropertyChanged(const Windows::UI::Xaml::Data::PropertyChangedEventHandler & value) const;
+    using PropertyChanged_revoker = event_revoker<INotifyPropertyChanged>;
+    PropertyChanged_revoker PropertyChanged(auto_revoke_t, const Windows::UI::Xaml::Data::PropertyChangedEventHandler & value) const;
+    void PropertyChanged(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPropertyChangedEventArgs
+{
+    hstring PropertyName() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPropertyChangedEventArgsFactory
+{
+    Windows::UI::Xaml::Data::PropertyChangedEventArgs CreateInstance(hstring_ref name, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRelativeSource
+{
+    Windows::UI::Xaml::Data::RelativeSourceMode Mode() const;
+    void Mode(Windows::UI::Xaml::Data::RelativeSourceMode value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRelativeSourceFactory
+{
+    Windows::UI::Xaml::Data::RelativeSource CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISelectionInfo
+{
+    void SelectRange(const Windows::UI::Xaml::Data::ItemIndexRange & itemIndexRange) const;
+    void DeselectRange(const Windows::UI::Xaml::Data::ItemIndexRange & itemIndexRange) const;
+    bool IsSelected(int32_t index) const;
+    Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Data::ItemIndexRange> GetSelectedRanges() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISupportIncrementalLoading
+{
+    Windows::Foundation::IAsyncOperation<Windows::UI::Xaml::Data::LoadMoreItemsResult> LoadMoreItemsAsync(uint32_t count) const;
+    bool HasMoreItems() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IValueConverter
+{
+    Windows::IInspectable Convert(const Windows::IInspectable & value, const Windows::UI::Xaml::Interop::TypeName & targetType, const Windows::IInspectable & parameter, hstring_ref language) const;
+    Windows::IInspectable ConvertBack(const Windows::IInspectable & value, const Windows::UI::Xaml::Interop::TypeName & targetType, const Windows::IInspectable & parameter, hstring_ref language) const;
+};
 
 }
 

@@ -39,8 +39,26 @@ namespace ABI {
 
 namespace Windows::Devices::Adc::Provider {
 
-template <typename T> struct impl_IAdcControllerProvider;
-template <typename T> struct impl_IAdcProvider;
+template <typename D>
+struct WINRT_EBO impl_IAdcControllerProvider
+{
+    int32_t ChannelCount() const;
+    int32_t ResolutionInBits() const;
+    int32_t MinValue() const;
+    int32_t MaxValue() const;
+    Windows::Devices::Adc::Provider::ProviderAdcChannelMode ChannelMode() const;
+    void ChannelMode(Windows::Devices::Adc::Provider::ProviderAdcChannelMode value) const;
+    bool IsChannelModeSupported(Windows::Devices::Adc::Provider::ProviderAdcChannelMode channelMode) const;
+    void AcquireChannel(int32_t channel) const;
+    void ReleaseChannel(int32_t channel) const;
+    int32_t ReadValue(int32_t channelNumber) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAdcProvider
+{
+    Windows::Foundation::Collections::IVectorView<Windows::Devices::Adc::Provider::IAdcControllerProvider> GetControllers() const;
+};
 
 }
 

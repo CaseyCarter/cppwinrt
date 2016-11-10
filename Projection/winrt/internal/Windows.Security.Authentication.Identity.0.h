@@ -26,4 +26,12 @@ struct EnterpriseKeyCredentialRegistrationManager;
 
 }
 
+namespace Windows::Security::Authentication::Identity {
+
+template <typename T> struct impl_IEnterpriseKeyCredentialRegistrationInfo;
+template <typename T> struct impl_IEnterpriseKeyCredentialRegistrationManager;
+template <typename T> struct impl_IEnterpriseKeyCredentialRegistrationManagerStatics;
+
+}
+
 }

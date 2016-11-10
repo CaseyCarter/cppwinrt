@@ -83,6 +83,32 @@ struct WebProviderTokenResponse;
 
 namespace Windows::Security::Authentication::Web::Provider {
 
+template <typename T> struct impl_IWebAccountClientView;
+template <typename T> struct impl_IWebAccountClientViewFactory;
+template <typename T> struct impl_IWebAccountManagerStatics;
+template <typename T> struct impl_IWebAccountManagerStatics2;
+template <typename T> struct impl_IWebAccountMapManagerStatics;
+template <typename T> struct impl_IWebAccountProviderAddAccountOperation;
+template <typename T> struct impl_IWebAccountProviderBaseReportOperation;
+template <typename T> struct impl_IWebAccountProviderDeleteAccountOperation;
+template <typename T> struct impl_IWebAccountProviderManageAccountOperation;
+template <typename T> struct impl_IWebAccountProviderOperation;
+template <typename T> struct impl_IWebAccountProviderRetrieveCookiesOperation;
+template <typename T> struct impl_IWebAccountProviderSignOutAccountOperation;
+template <typename T> struct impl_IWebAccountProviderSilentReportOperation;
+template <typename T> struct impl_IWebAccountProviderTokenObjects;
+template <typename T> struct impl_IWebAccountProviderTokenOperation;
+template <typename T> struct impl_IWebAccountProviderUIReportOperation;
+template <typename T> struct impl_IWebAccountScopeManagerStatics;
+template <typename T> struct impl_IWebProviderTokenRequest;
+template <typename T> struct impl_IWebProviderTokenRequest2;
+template <typename T> struct impl_IWebProviderTokenResponse;
+template <typename T> struct impl_IWebProviderTokenResponseFactory;
+
+}
+
+namespace Windows::Security::Authentication::Web::Provider {
+
 enum class WebAccountClientViewType
 {
     IdOnly = 0,

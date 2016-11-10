@@ -4,7 +4,7 @@
 #pragma once
 
 #include "Windows.ApplicationModel.ExtendedExecution.1.h"
-#include "Windows.Foundation.2.h"
+#include "Windows.Foundation.1.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -29,28 +29,6 @@ template <> struct __declspec(uuid("873c5c7a-c638-5a33-9b03-215c72471663")) __de
 }
 
 namespace Windows::ApplicationModel::ExtendedExecution {
-
-template <typename D>
-struct WINRT_EBO impl_IExtendedExecutionRevokedEventArgs
-{
-    Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionRevokedReason Reason() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IExtendedExecutionSession
-{
-    Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionReason Reason() const;
-    void Reason(Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionReason value) const;
-    hstring Description() const;
-    void Description(hstring_ref value) const;
-    uint32_t PercentProgress() const;
-    void PercentProgress(uint32_t value) const;
-    event_token Revoked(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionRevokedEventArgs> & handler) const;
-    using Revoked_revoker = event_revoker<IExtendedExecutionSession>;
-    Revoked_revoker Revoked(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionRevokedEventArgs> & handler) const;
-    void Revoked(event_token token) const;
-    Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::ExtendedExecution::ExtendedExecutionResult> RequestExtensionAsync() const;
-};
 
 struct IExtendedExecutionRevokedEventArgs :
     Windows::IInspectable,

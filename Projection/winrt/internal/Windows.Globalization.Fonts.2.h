@@ -9,38 +9,6 @@ WINRT_EXPORT namespace winrt {
 
 namespace Windows::Globalization::Fonts {
 
-template <typename D>
-struct WINRT_EBO impl_ILanguageFont
-{
-    hstring FontFamily() const;
-    Windows::UI::Text::FontWeight FontWeight() const;
-    Windows::UI::Text::FontStretch FontStretch() const;
-    Windows::UI::Text::FontStyle FontStyle() const;
-    double ScaleFactor() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_ILanguageFontGroup
-{
-    Windows::Globalization::Fonts::LanguageFont UITextFont() const;
-    Windows::Globalization::Fonts::LanguageFont UIHeadingFont() const;
-    Windows::Globalization::Fonts::LanguageFont UITitleFont() const;
-    Windows::Globalization::Fonts::LanguageFont UICaptionFont() const;
-    Windows::Globalization::Fonts::LanguageFont UINotificationHeadingFont() const;
-    Windows::Globalization::Fonts::LanguageFont TraditionalDocumentFont() const;
-    Windows::Globalization::Fonts::LanguageFont ModernDocumentFont() const;
-    Windows::Globalization::Fonts::LanguageFont DocumentHeadingFont() const;
-    Windows::Globalization::Fonts::LanguageFont FixedWidthTextFont() const;
-    Windows::Globalization::Fonts::LanguageFont DocumentAlternate1Font() const;
-    Windows::Globalization::Fonts::LanguageFont DocumentAlternate2Font() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_ILanguageFontGroupFactory
-{
-    Windows::Globalization::Fonts::LanguageFontGroup CreateLanguageFontGroup(hstring_ref languageTag) const;
-};
-
 struct ILanguageFont :
     Windows::IInspectable,
     impl::consume<ILanguageFont>

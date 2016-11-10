@@ -97,6 +97,29 @@ struct CoreTextTextUpdatingEventArgs;
 
 namespace Windows::UI::Text::Core {
 
+template <typename T> struct impl_ICoreTextCompositionCompletedEventArgs;
+template <typename T> struct impl_ICoreTextCompositionSegment;
+template <typename T> struct impl_ICoreTextCompositionStartedEventArgs;
+template <typename T> struct impl_ICoreTextEditContext;
+template <typename T> struct impl_ICoreTextEditContext2;
+template <typename T> struct impl_ICoreTextFormatUpdatingEventArgs;
+template <typename T> struct impl_ICoreTextLayoutBounds;
+template <typename T> struct impl_ICoreTextLayoutRequest;
+template <typename T> struct impl_ICoreTextLayoutRequestedEventArgs;
+template <typename T> struct impl_ICoreTextSelectionRequest;
+template <typename T> struct impl_ICoreTextSelectionRequestedEventArgs;
+template <typename T> struct impl_ICoreTextSelectionUpdatingEventArgs;
+template <typename T> struct impl_ICoreTextServicesManager;
+template <typename T> struct impl_ICoreTextServicesManagerStatics;
+template <typename T> struct impl_ICoreTextServicesStatics;
+template <typename T> struct impl_ICoreTextTextRequest;
+template <typename T> struct impl_ICoreTextTextRequestedEventArgs;
+template <typename T> struct impl_ICoreTextTextUpdatingEventArgs;
+
+}
+
+namespace Windows::UI::Text::Core {
+
 enum class CoreTextFormatUpdatingReason
 {
     None = 0,

@@ -57,6 +57,20 @@ struct XusbGameControllerProvider;
 
 namespace Windows::Gaming::Input::Custom {
 
+template <typename T> struct impl_ICustomGameControllerFactory;
+template <typename T> struct impl_IGameControllerFactoryManagerStatics;
+template <typename T> struct impl_IGameControllerInputSink;
+template <typename T> struct impl_IGameControllerProvider;
+template <typename T> struct impl_IGipFirmwareUpdateResult;
+template <typename T> struct impl_IGipGameControllerInputSink;
+template <typename T> struct impl_IGipGameControllerProvider;
+template <typename T> struct impl_IXusbGameControllerInputSink;
+template <typename T> struct impl_IXusbGameControllerProvider;
+
+}
+
+namespace Windows::Gaming::Input::Custom {
+
 enum class GipFirmwareUpdateStatus
 {
     Completed = 0,

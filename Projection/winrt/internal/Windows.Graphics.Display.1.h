@@ -94,13 +94,98 @@ template <> struct traits<Windows::Graphics::Display::DisplayInformation> { usin
 
 namespace Windows::Graphics::Display {
 
-template <typename T> struct impl_IDisplayInformation;
-template <typename T> struct impl_IDisplayInformation2;
-template <typename T> struct impl_IDisplayInformation3;
-template <typename T> struct impl_IDisplayInformation4;
-template <typename T> struct impl_IDisplayInformationStatics;
-template <typename T> struct impl_IDisplayPropertiesStatics;
-template <typename T> struct impl_DisplayPropertiesEventHandler;
+template <typename D>
+struct WINRT_EBO impl_IDisplayInformation
+{
+    Windows::Graphics::Display::DisplayOrientations CurrentOrientation() const;
+    Windows::Graphics::Display::DisplayOrientations NativeOrientation() const;
+    event_token OrientationChanged(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> & handler) const;
+    using OrientationChanged_revoker = event_revoker<IDisplayInformation>;
+    OrientationChanged_revoker OrientationChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> & handler) const;
+    void OrientationChanged(event_token token) const;
+    Windows::Graphics::Display::ResolutionScale ResolutionScale() const;
+    float LogicalDpi() const;
+    float RawDpiX() const;
+    float RawDpiY() const;
+    event_token DpiChanged(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> & handler) const;
+    using DpiChanged_revoker = event_revoker<IDisplayInformation>;
+    DpiChanged_revoker DpiChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> & handler) const;
+    void DpiChanged(event_token token) const;
+    bool StereoEnabled() const;
+    event_token StereoEnabledChanged(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> & handler) const;
+    using StereoEnabledChanged_revoker = event_revoker<IDisplayInformation>;
+    StereoEnabledChanged_revoker StereoEnabledChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> & handler) const;
+    void StereoEnabledChanged(event_token token) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> GetColorProfileAsync() const;
+    event_token ColorProfileChanged(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> & handler) const;
+    using ColorProfileChanged_revoker = event_revoker<IDisplayInformation>;
+    ColorProfileChanged_revoker ColorProfileChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> & handler) const;
+    void ColorProfileChanged(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDisplayInformation2
+{
+    double RawPixelsPerViewPixel() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDisplayInformation3
+{
+    Windows::Foundation::IReference<double> DiagonalSizeInInches() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDisplayInformation4
+{
+    uint32_t ScreenWidthInRawPixels() const;
+    uint32_t ScreenHeightInRawPixels() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDisplayInformationStatics
+{
+    Windows::Graphics::Display::DisplayInformation GetForCurrentView() const;
+    Windows::Graphics::Display::DisplayOrientations AutoRotationPreferences() const;
+    void AutoRotationPreferences(Windows::Graphics::Display::DisplayOrientations value) const;
+    event_token DisplayContentsInvalidated(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> & handler) const;
+    using DisplayContentsInvalidated_revoker = event_revoker<IDisplayInformationStatics>;
+    DisplayContentsInvalidated_revoker DisplayContentsInvalidated(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Graphics::Display::DisplayInformation, Windows::IInspectable> & handler) const;
+    void DisplayContentsInvalidated(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDisplayPropertiesStatics
+{
+    Windows::Graphics::Display::DisplayOrientations CurrentOrientation() const;
+    Windows::Graphics::Display::DisplayOrientations NativeOrientation() const;
+    Windows::Graphics::Display::DisplayOrientations AutoRotationPreferences() const;
+    void AutoRotationPreferences(Windows::Graphics::Display::DisplayOrientations value) const;
+    event_token OrientationChanged(const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler) const;
+    using OrientationChanged_revoker = event_revoker<IDisplayPropertiesStatics>;
+    OrientationChanged_revoker OrientationChanged(auto_revoke_t, const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler) const;
+    void OrientationChanged(event_token token) const;
+    Windows::Graphics::Display::ResolutionScale ResolutionScale() const;
+    float LogicalDpi() const;
+    event_token LogicalDpiChanged(const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler) const;
+    using LogicalDpiChanged_revoker = event_revoker<IDisplayPropertiesStatics>;
+    LogicalDpiChanged_revoker LogicalDpiChanged(auto_revoke_t, const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler) const;
+    void LogicalDpiChanged(event_token token) const;
+    bool StereoEnabled() const;
+    event_token StereoEnabledChanged(const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler) const;
+    using StereoEnabledChanged_revoker = event_revoker<IDisplayPropertiesStatics>;
+    StereoEnabledChanged_revoker StereoEnabledChanged(auto_revoke_t, const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler) const;
+    void StereoEnabledChanged(event_token token) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> GetColorProfileAsync() const;
+    event_token ColorProfileChanged(const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler) const;
+    using ColorProfileChanged_revoker = event_revoker<IDisplayPropertiesStatics>;
+    ColorProfileChanged_revoker ColorProfileChanged(auto_revoke_t, const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler) const;
+    void ColorProfileChanged(event_token token) const;
+    event_token DisplayContentsInvalidated(const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler) const;
+    using DisplayContentsInvalidated_revoker = event_revoker<IDisplayPropertiesStatics>;
+    DisplayContentsInvalidated_revoker DisplayContentsInvalidated(auto_revoke_t, const Windows::Graphics::Display::DisplayPropertiesEventHandler & handler) const;
+    void DisplayContentsInvalidated(event_token token) const;
+};
 
 }
 

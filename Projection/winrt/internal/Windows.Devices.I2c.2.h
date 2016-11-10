@@ -4,7 +4,7 @@
 #pragma once
 
 #include "Windows.Devices.I2c.1.h"
-#include "Windows.Foundation.2.h"
+#include "Windows.Foundation.1.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -79,57 +79,6 @@ template <> struct __declspec(uuid("3b9d7cb1-ae0b-56af-8ed5-6856b1e7cd5b")) __de
 }
 
 namespace Windows::Devices::I2c {
-
-template <typename D>
-struct WINRT_EBO impl_II2cConnectionSettings
-{
-    int32_t SlaveAddress() const;
-    void SlaveAddress(int32_t value) const;
-    Windows::Devices::I2c::I2cBusSpeed BusSpeed() const;
-    void BusSpeed(Windows::Devices::I2c::I2cBusSpeed value) const;
-    Windows::Devices::I2c::I2cSharingMode SharingMode() const;
-    void SharingMode(Windows::Devices::I2c::I2cSharingMode value) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_II2cConnectionSettingsFactory
-{
-    Windows::Devices::I2c::I2cConnectionSettings Create(int32_t slaveAddress) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_II2cController
-{
-    Windows::Devices::I2c::I2cDevice GetDevice(const Windows::Devices::I2c::I2cConnectionSettings & settings) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_II2cControllerStatics
-{
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::I2c::I2cController>> GetControllersAsync(const Windows::Devices::I2c::Provider::II2cProvider & provider) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::I2c::I2cController> GetDefaultAsync() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_II2cDevice
-{
-    hstring DeviceId() const;
-    Windows::Devices::I2c::I2cConnectionSettings ConnectionSettings() const;
-    void Write(array_ref<const uint8_t> buffer) const;
-    Windows::Devices::I2c::I2cTransferResult WritePartial(array_ref<const uint8_t> buffer) const;
-    void Read(array_ref<uint8_t> buffer) const;
-    Windows::Devices::I2c::I2cTransferResult ReadPartial(array_ref<uint8_t> buffer) const;
-    void WriteRead(array_ref<const uint8_t> writeBuffer, array_ref<uint8_t> readBuffer) const;
-    Windows::Devices::I2c::I2cTransferResult WriteReadPartial(array_ref<const uint8_t> writeBuffer, array_ref<uint8_t> readBuffer) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_II2cDeviceStatics
-{
-    hstring GetDeviceSelector() const;
-    hstring GetDeviceSelector(hstring_ref friendlyName) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::I2c::I2cDevice> FromIdAsync(hstring_ref deviceId, const Windows::Devices::I2c::I2cConnectionSettings & settings) const;
-};
 
 struct II2cConnectionSettings :
     Windows::IInspectable,

@@ -32,6 +32,15 @@ struct Print3DWorkflowPrinterChangedEventArgs;
 
 namespace Windows::Devices::Printers::Extensions {
 
+template <typename T> struct impl_IPrint3DWorkflow;
+template <typename T> struct impl_IPrint3DWorkflow2;
+template <typename T> struct impl_IPrint3DWorkflowPrintRequestedEventArgs;
+template <typename T> struct impl_IPrint3DWorkflowPrinterChangedEventArgs;
+
+}
+
+namespace Windows::Devices::Printers::Extensions {
+
 enum class Print3DWorkflowDetail
 {
     Unknown = 0,

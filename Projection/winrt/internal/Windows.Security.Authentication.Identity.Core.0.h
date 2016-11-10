@@ -40,6 +40,17 @@ struct MicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo;
 
 namespace Windows::Security::Authentication::Identity::Core {
 
+template <typename T> struct impl_IMicrosoftAccountMultiFactorAuthenticationManager;
+template <typename T> struct impl_IMicrosoftAccountMultiFactorAuthenticatorStatics;
+template <typename T> struct impl_IMicrosoftAccountMultiFactorGetSessionsResult;
+template <typename T> struct impl_IMicrosoftAccountMultiFactorOneTimeCodedInfo;
+template <typename T> struct impl_IMicrosoftAccountMultiFactorSessionInfo;
+template <typename T> struct impl_IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo;
+
+}
+
+namespace Windows::Security::Authentication::Identity::Core {
+
 enum class MicrosoftAccountMultiFactorAuthenticationType
 {
     User = 0,

@@ -49,6 +49,19 @@ struct TextConstants;
 
 namespace Windows::UI::Text {
 
+template <typename T> struct impl_IFontWeights;
+template <typename T> struct impl_IFontWeightsStatics;
+template <typename T> struct impl_ITextCharacterFormat;
+template <typename T> struct impl_ITextConstantsStatics;
+template <typename T> struct impl_ITextDocument;
+template <typename T> struct impl_ITextParagraphFormat;
+template <typename T> struct impl_ITextRange;
+template <typename T> struct impl_ITextSelection;
+
+}
+
+namespace Windows::UI::Text {
+
 enum class CaretType
 {
     Normal = 0,

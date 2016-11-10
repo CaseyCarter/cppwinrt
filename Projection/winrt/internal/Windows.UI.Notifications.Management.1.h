@@ -40,8 +40,26 @@ template <> struct traits<Windows::UI::Notifications::Management::UserNotificati
 
 namespace Windows::UI::Notifications::Management {
 
-template <typename T> struct impl_IUserNotificationListener;
-template <typename T> struct impl_IUserNotificationListenerStatics;
+template <typename D>
+struct WINRT_EBO impl_IUserNotificationListener
+{
+    Windows::Foundation::IAsyncOperation<winrt::Windows::UI::Notifications::Management::UserNotificationListenerAccessStatus> RequestAccessAsync() const;
+    Windows::UI::Notifications::Management::UserNotificationListenerAccessStatus GetAccessStatus() const;
+    event_token NotificationChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::Management::UserNotificationListener, Windows::UI::Notifications::UserNotificationChangedEventArgs> & handler) const;
+    using NotificationChanged_revoker = event_revoker<IUserNotificationListener>;
+    NotificationChanged_revoker NotificationChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Notifications::Management::UserNotificationListener, Windows::UI::Notifications::UserNotificationChangedEventArgs> & handler) const;
+    void NotificationChanged(event_token token) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::UserNotification>> GetNotificationsAsync(Windows::UI::Notifications::NotificationKinds kinds) const;
+    Windows::UI::Notifications::UserNotification GetNotification(uint32_t notificationId) const;
+    void ClearNotifications() const;
+    void RemoveNotification(uint32_t notificationId) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUserNotificationListenerStatics
+{
+    Windows::UI::Notifications::Management::UserNotificationListener Current() const;
+};
 
 }
 

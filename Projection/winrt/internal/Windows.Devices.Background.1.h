@@ -35,8 +35,20 @@ template <> struct traits<Windows::Devices::Background::DeviceUseDetails> { usin
 
 namespace Windows::Devices::Background {
 
-template <typename T> struct impl_IDeviceServicingDetails;
-template <typename T> struct impl_IDeviceUseDetails;
+template <typename D>
+struct WINRT_EBO impl_IDeviceServicingDetails
+{
+    hstring DeviceId() const;
+    hstring Arguments() const;
+    Windows::Foundation::TimeSpan ExpectedDuration() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDeviceUseDetails
+{
+    hstring DeviceId() const;
+    hstring Arguments() const;
+};
 
 }
 

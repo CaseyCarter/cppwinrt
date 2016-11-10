@@ -4,26 +4,11 @@
 #pragma once
 
 #include "Windows.UI.Composition.Effects.1.h"
-#include "Windows.Graphics.Effects.2.h"
+#include "Windows.Graphics.Effects.1.h"
 
 WINRT_EXPORT namespace winrt {
 
 namespace Windows::UI::Composition::Effects {
-
-template <typename D>
-struct WINRT_EBO impl_ISceneLightingEffect
-{
-    float AmbientAmount() const;
-    void AmbientAmount(float value) const;
-    float DiffuseAmount() const;
-    void DiffuseAmount(float value) const;
-    Windows::Graphics::Effects::IGraphicsEffectSource NormalMapSource() const;
-    void NormalMapSource(const Windows::Graphics::Effects::IGraphicsEffectSource & value) const;
-    float SpecularAmount() const;
-    void SpecularAmount(float value) const;
-    float SpecularShine() const;
-    void SpecularShine(float value) const;
-};
 
 struct ISceneLightingEffect :
     Windows::IInspectable,

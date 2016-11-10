@@ -5469,572 +5469,5941 @@ template <> struct traits<Windows::UI::Xaml::Controls::WrapGrid> { using default
 
 namespace Windows::UI::Xaml::Controls {
 
-template <typename T> struct impl_IAppBar;
-template <typename T> struct impl_IAppBar2;
-template <typename T> struct impl_IAppBar3;
-template <typename T> struct impl_IAppBar4;
-template <typename T> struct impl_IAppBarButton;
-template <typename T> struct impl_IAppBarButton3;
-template <typename T> struct impl_IAppBarButtonFactory;
-template <typename T> struct impl_IAppBarButtonStatics;
-template <typename T> struct impl_IAppBarButtonStatics3;
-template <typename T> struct impl_IAppBarFactory;
-template <typename T> struct impl_IAppBarOverrides;
-template <typename T> struct impl_IAppBarOverrides3;
-template <typename T> struct impl_IAppBarSeparator;
-template <typename T> struct impl_IAppBarSeparatorFactory;
-template <typename T> struct impl_IAppBarSeparatorStatics;
-template <typename T> struct impl_IAppBarSeparatorStatics3;
-template <typename T> struct impl_IAppBarStatics;
-template <typename T> struct impl_IAppBarStatics2;
-template <typename T> struct impl_IAppBarStatics4;
-template <typename T> struct impl_IAppBarToggleButton;
-template <typename T> struct impl_IAppBarToggleButton3;
-template <typename T> struct impl_IAppBarToggleButtonFactory;
-template <typename T> struct impl_IAppBarToggleButtonStatics;
-template <typename T> struct impl_IAppBarToggleButtonStatics3;
-template <typename T> struct impl_IAutoSuggestBox;
-template <typename T> struct impl_IAutoSuggestBox2;
-template <typename T> struct impl_IAutoSuggestBox3;
-template <typename T> struct impl_IAutoSuggestBoxQuerySubmittedEventArgs;
-template <typename T> struct impl_IAutoSuggestBoxStatics;
-template <typename T> struct impl_IAutoSuggestBoxStatics2;
-template <typename T> struct impl_IAutoSuggestBoxStatics3;
-template <typename T> struct impl_IAutoSuggestBoxSuggestionChosenEventArgs;
-template <typename T> struct impl_IAutoSuggestBoxTextChangedEventArgs;
-template <typename T> struct impl_IAutoSuggestBoxTextChangedEventArgsStatics;
-template <typename T> struct impl_IBackClickEventArgs;
-template <typename T> struct impl_IBitmapIcon;
-template <typename T> struct impl_IBitmapIconFactory;
-template <typename T> struct impl_IBitmapIconStatics;
-template <typename T> struct impl_IBorder;
-template <typename T> struct impl_IBorderStatics;
-template <typename T> struct impl_IButton;
-template <typename T> struct impl_IButtonFactory;
-template <typename T> struct impl_IButtonStaticsWithFlyout;
-template <typename T> struct impl_IButtonWithFlyout;
-template <typename T> struct impl_ICalendarDatePicker;
-template <typename T> struct impl_ICalendarDatePicker2;
-template <typename T> struct impl_ICalendarDatePickerDateChangedEventArgs;
-template <typename T> struct impl_ICalendarDatePickerFactory;
-template <typename T> struct impl_ICalendarDatePickerStatics;
-template <typename T> struct impl_ICalendarDatePickerStatics2;
-template <typename T> struct impl_ICalendarView;
-template <typename T> struct impl_ICalendarViewDayItem;
-template <typename T> struct impl_ICalendarViewDayItemChangingEventArgs;
-template <typename T> struct impl_ICalendarViewDayItemFactory;
-template <typename T> struct impl_ICalendarViewDayItemStatics;
-template <typename T> struct impl_ICalendarViewFactory;
-template <typename T> struct impl_ICalendarViewSelectedDatesChangedEventArgs;
-template <typename T> struct impl_ICalendarViewStatics;
-template <typename T> struct impl_ICandidateWindowBoundsChangedEventArgs;
-template <typename T> struct impl_ICanvas;
-template <typename T> struct impl_ICanvasFactory;
-template <typename T> struct impl_ICanvasStatics;
-template <typename T> struct impl_ICaptureElement;
-template <typename T> struct impl_ICaptureElementStatics;
-template <typename T> struct impl_ICheckBox;
-template <typename T> struct impl_ICheckBoxFactory;
-template <typename T> struct impl_IChoosingGroupHeaderContainerEventArgs;
-template <typename T> struct impl_IChoosingItemContainerEventArgs;
-template <typename T> struct impl_ICleanUpVirtualizedItemEventArgs;
-template <typename T> struct impl_IColumnDefinition;
-template <typename T> struct impl_IColumnDefinitionStatics;
-template <typename T> struct impl_IComboBox;
-template <typename T> struct impl_IComboBox2;
-template <typename T> struct impl_IComboBox3;
-template <typename T> struct impl_IComboBoxFactory;
-template <typename T> struct impl_IComboBoxItem;
-template <typename T> struct impl_IComboBoxItemFactory;
-template <typename T> struct impl_IComboBoxOverrides;
-template <typename T> struct impl_IComboBoxStatics;
-template <typename T> struct impl_IComboBoxStatics2;
-template <typename T> struct impl_IComboBoxStatics3;
-template <typename T> struct impl_ICommandBar;
-template <typename T> struct impl_ICommandBar2;
-template <typename T> struct impl_ICommandBar3;
-template <typename T> struct impl_ICommandBarElement;
-template <typename T> struct impl_ICommandBarElement2;
-template <typename T> struct impl_ICommandBarFactory;
-template <typename T> struct impl_ICommandBarOverflowPresenter;
-template <typename T> struct impl_ICommandBarOverflowPresenterFactory;
-template <typename T> struct impl_ICommandBarStatics;
-template <typename T> struct impl_ICommandBarStatics2;
-template <typename T> struct impl_ICommandBarStatics3;
-template <typename T> struct impl_IContainerContentChangingEventArgs;
-template <typename T> struct impl_IContentControl;
-template <typename T> struct impl_IContentControl2;
-template <typename T> struct impl_IContentControlFactory;
-template <typename T> struct impl_IContentControlOverrides;
-template <typename T> struct impl_IContentControlStatics;
-template <typename T> struct impl_IContentDialog;
-template <typename T> struct impl_IContentDialogButtonClickDeferral;
-template <typename T> struct impl_IContentDialogButtonClickEventArgs;
-template <typename T> struct impl_IContentDialogClosedEventArgs;
-template <typename T> struct impl_IContentDialogClosingDeferral;
-template <typename T> struct impl_IContentDialogClosingEventArgs;
-template <typename T> struct impl_IContentDialogFactory;
-template <typename T> struct impl_IContentDialogOpenedEventArgs;
-template <typename T> struct impl_IContentDialogStatics;
-template <typename T> struct impl_IContentPresenter;
-template <typename T> struct impl_IContentPresenter2;
-template <typename T> struct impl_IContentPresenter3;
-template <typename T> struct impl_IContentPresenter4;
-template <typename T> struct impl_IContentPresenterFactory;
-template <typename T> struct impl_IContentPresenterOverrides;
-template <typename T> struct impl_IContentPresenterStatics;
-template <typename T> struct impl_IContentPresenterStatics2;
-template <typename T> struct impl_IContentPresenterStatics3;
-template <typename T> struct impl_IContentPresenterStatics4;
-template <typename T> struct impl_IContextMenuEventArgs;
-template <typename T> struct impl_IControl;
-template <typename T> struct impl_IControl2;
-template <typename T> struct impl_IControl3;
-template <typename T> struct impl_IControl4;
-template <typename T> struct impl_IControlFactory;
-template <typename T> struct impl_IControlOverrides;
-template <typename T> struct impl_IControlProtected;
-template <typename T> struct impl_IControlStatics;
-template <typename T> struct impl_IControlStatics2;
-template <typename T> struct impl_IControlStatics3;
-template <typename T> struct impl_IControlStatics4;
-template <typename T> struct impl_IControlTemplate;
-template <typename T> struct impl_IDataTemplateSelector;
-template <typename T> struct impl_IDataTemplateSelector2;
-template <typename T> struct impl_IDataTemplateSelectorFactory;
-template <typename T> struct impl_IDataTemplateSelectorOverrides;
-template <typename T> struct impl_IDataTemplateSelectorOverrides2;
-template <typename T> struct impl_IDatePickedEventArgs;
-template <typename T> struct impl_IDatePicker;
-template <typename T> struct impl_IDatePicker2;
-template <typename T> struct impl_IDatePickerFactory;
-template <typename T> struct impl_IDatePickerFlyout;
-template <typename T> struct impl_IDatePickerFlyout2;
-template <typename T> struct impl_IDatePickerFlyoutItem;
-template <typename T> struct impl_IDatePickerFlyoutItemStatics;
-template <typename T> struct impl_IDatePickerFlyoutPresenter;
-template <typename T> struct impl_IDatePickerFlyoutStatics;
-template <typename T> struct impl_IDatePickerFlyoutStatics2;
-template <typename T> struct impl_IDatePickerStatics;
-template <typename T> struct impl_IDatePickerStatics2;
-template <typename T> struct impl_IDatePickerValueChangedEventArgs;
-template <typename T> struct impl_IDragItemsCompletedEventArgs;
-template <typename T> struct impl_IDragItemsStartingEventArgs;
-template <typename T> struct impl_IDynamicOverflowItemsChangingEventArgs;
-template <typename T> struct impl_IFlipView;
-template <typename T> struct impl_IFlipView2;
-template <typename T> struct impl_IFlipViewFactory;
-template <typename T> struct impl_IFlipViewItem;
-template <typename T> struct impl_IFlipViewItemFactory;
-template <typename T> struct impl_IFlipViewStatics2;
-template <typename T> struct impl_IFlyout;
-template <typename T> struct impl_IFlyoutFactory;
-template <typename T> struct impl_IFlyoutPresenter;
-template <typename T> struct impl_IFlyoutPresenterFactory;
-template <typename T> struct impl_IFlyoutStatics;
-template <typename T> struct impl_IFocusDisengagedEventArgs;
-template <typename T> struct impl_IFocusEngagedEventArgs;
-template <typename T> struct impl_IFontIcon;
-template <typename T> struct impl_IFontIcon2;
-template <typename T> struct impl_IFontIcon3;
-template <typename T> struct impl_IFontIconFactory;
-template <typename T> struct impl_IFontIconStatics;
-template <typename T> struct impl_IFontIconStatics2;
-template <typename T> struct impl_IFontIconStatics3;
-template <typename T> struct impl_IFrame;
-template <typename T> struct impl_IFrame2;
-template <typename T> struct impl_IFrame3;
-template <typename T> struct impl_IFrameFactory;
-template <typename T> struct impl_IFrameStatics;
-template <typename T> struct impl_IFrameStatics2;
-template <typename T> struct impl_IGrid;
-template <typename T> struct impl_IGrid2;
-template <typename T> struct impl_IGridFactory;
-template <typename T> struct impl_IGridStatics;
-template <typename T> struct impl_IGridStatics2;
-template <typename T> struct impl_IGridView;
-template <typename T> struct impl_IGridViewFactory;
-template <typename T> struct impl_IGridViewHeaderItem;
-template <typename T> struct impl_IGridViewHeaderItemFactory;
-template <typename T> struct impl_IGridViewItem;
-template <typename T> struct impl_IGridViewItemFactory;
-template <typename T> struct impl_IGroupItem;
-template <typename T> struct impl_IGroupItemFactory;
-template <typename T> struct impl_IGroupStyle;
-template <typename T> struct impl_IGroupStyle2;
-template <typename T> struct impl_IGroupStyleFactory;
-template <typename T> struct impl_IGroupStyleSelector;
-template <typename T> struct impl_IGroupStyleSelectorFactory;
-template <typename T> struct impl_IGroupStyleSelectorOverrides;
-template <typename T> struct impl_IHub;
-template <typename T> struct impl_IHubFactory;
-template <typename T> struct impl_IHubSection;
-template <typename T> struct impl_IHubSectionFactory;
-template <typename T> struct impl_IHubSectionHeaderClickEventArgs;
-template <typename T> struct impl_IHubSectionStatics;
-template <typename T> struct impl_IHubStatics;
-template <typename T> struct impl_IHyperlinkButton;
-template <typename T> struct impl_IHyperlinkButtonFactory;
-template <typename T> struct impl_IHyperlinkButtonStatics;
-template <typename T> struct impl_IIconElement;
-template <typename T> struct impl_IIconElementFactory;
-template <typename T> struct impl_IIconElementStatics;
-template <typename T> struct impl_IImage;
-template <typename T> struct impl_IImage2;
-template <typename T> struct impl_IImage3;
-template <typename T> struct impl_IImageStatics;
-template <typename T> struct impl_IInkCanvas;
-template <typename T> struct impl_IInkCanvasFactory;
-template <typename T> struct impl_IInkToolbar;
-template <typename T> struct impl_IInkToolbarBallpointPenButton;
-template <typename T> struct impl_IInkToolbarBallpointPenButtonFactory;
-template <typename T> struct impl_IInkToolbarCustomPen;
-template <typename T> struct impl_IInkToolbarCustomPenButton;
-template <typename T> struct impl_IInkToolbarCustomPenButtonFactory;
-template <typename T> struct impl_IInkToolbarCustomPenButtonStatics;
-template <typename T> struct impl_IInkToolbarCustomPenFactory;
-template <typename T> struct impl_IInkToolbarCustomPenOverrides;
-template <typename T> struct impl_IInkToolbarCustomToggleButton;
-template <typename T> struct impl_IInkToolbarCustomToggleButtonFactory;
-template <typename T> struct impl_IInkToolbarCustomToolButton;
-template <typename T> struct impl_IInkToolbarCustomToolButtonFactory;
-template <typename T> struct impl_IInkToolbarCustomToolButtonStatics;
-template <typename T> struct impl_IInkToolbarEraserButton;
-template <typename T> struct impl_IInkToolbarEraserButtonFactory;
-template <typename T> struct impl_IInkToolbarFactory;
-template <typename T> struct impl_IInkToolbarHighlighterButton;
-template <typename T> struct impl_IInkToolbarHighlighterButtonFactory;
-template <typename T> struct impl_IInkToolbarPenButton;
-template <typename T> struct impl_IInkToolbarPenButtonFactory;
-template <typename T> struct impl_IInkToolbarPenButtonStatics;
-template <typename T> struct impl_IInkToolbarPenConfigurationControl;
-template <typename T> struct impl_IInkToolbarPenConfigurationControlFactory;
-template <typename T> struct impl_IInkToolbarPenConfigurationControlStatics;
-template <typename T> struct impl_IInkToolbarPencilButton;
-template <typename T> struct impl_IInkToolbarPencilButtonFactory;
-template <typename T> struct impl_IInkToolbarRulerButton;
-template <typename T> struct impl_IInkToolbarRulerButtonFactory;
-template <typename T> struct impl_IInkToolbarRulerButtonStatics;
-template <typename T> struct impl_IInkToolbarStatics;
-template <typename T> struct impl_IInkToolbarToggleButton;
-template <typename T> struct impl_IInkToolbarToggleButtonFactory;
-template <typename T> struct impl_IInkToolbarToolButton;
-template <typename T> struct impl_IInkToolbarToolButtonFactory;
-template <typename T> struct impl_IInkToolbarToolButtonStatics;
-template <typename T> struct impl_IInsertionPanel;
-template <typename T> struct impl_IItemClickEventArgs;
-template <typename T> struct impl_IItemContainerGenerator;
-template <typename T> struct impl_IItemContainerMapping;
-template <typename T> struct impl_IItemsControl;
-template <typename T> struct impl_IItemsControl2;
-template <typename T> struct impl_IItemsControl3;
-template <typename T> struct impl_IItemsControlFactory;
-template <typename T> struct impl_IItemsControlOverrides;
-template <typename T> struct impl_IItemsControlStatics;
-template <typename T> struct impl_IItemsPanelTemplate;
-template <typename T> struct impl_IItemsPickedEventArgs;
-template <typename T> struct impl_IItemsPresenter;
-template <typename T> struct impl_IItemsPresenter2;
-template <typename T> struct impl_IItemsPresenterStatics;
-template <typename T> struct impl_IItemsPresenterStatics2;
-template <typename T> struct impl_IItemsStackPanel;
-template <typename T> struct impl_IItemsStackPanel2;
-template <typename T> struct impl_IItemsStackPanelStatics;
-template <typename T> struct impl_IItemsStackPanelStatics2;
-template <typename T> struct impl_IItemsWrapGrid;
-template <typename T> struct impl_IItemsWrapGrid2;
-template <typename T> struct impl_IItemsWrapGridStatics;
-template <typename T> struct impl_IItemsWrapGridStatics2;
-template <typename T> struct impl_IListBox;
-template <typename T> struct impl_IListBox2;
-template <typename T> struct impl_IListBoxFactory;
-template <typename T> struct impl_IListBoxItem;
-template <typename T> struct impl_IListBoxItemFactory;
-template <typename T> struct impl_IListBoxStatics;
-template <typename T> struct impl_IListBoxStatics2;
-template <typename T> struct impl_IListPickerFlyout;
-template <typename T> struct impl_IListPickerFlyoutPresenter;
-template <typename T> struct impl_IListPickerFlyoutStatics;
-template <typename T> struct impl_IListView;
-template <typename T> struct impl_IListViewBase;
-template <typename T> struct impl_IListViewBase2;
-template <typename T> struct impl_IListViewBase3;
-template <typename T> struct impl_IListViewBase4;
-template <typename T> struct impl_IListViewBase5;
-template <typename T> struct impl_IListViewBaseFactory;
-template <typename T> struct impl_IListViewBaseHeaderItem;
-template <typename T> struct impl_IListViewBaseHeaderItemFactory;
-template <typename T> struct impl_IListViewBaseStatics;
-template <typename T> struct impl_IListViewBaseStatics2;
-template <typename T> struct impl_IListViewBaseStatics3;
-template <typename T> struct impl_IListViewBaseStatics4;
-template <typename T> struct impl_IListViewBaseStatics5;
-template <typename T> struct impl_IListViewFactory;
-template <typename T> struct impl_IListViewHeaderItem;
-template <typename T> struct impl_IListViewHeaderItemFactory;
-template <typename T> struct impl_IListViewItem;
-template <typename T> struct impl_IListViewItemFactory;
-template <typename T> struct impl_IListViewPersistenceHelper;
-template <typename T> struct impl_IListViewPersistenceHelperStatics;
-template <typename T> struct impl_IMediaElement;
-template <typename T> struct impl_IMediaElement2;
-template <typename T> struct impl_IMediaElement3;
-template <typename T> struct impl_IMediaElementStatics;
-template <typename T> struct impl_IMediaElementStatics2;
-template <typename T> struct impl_IMediaPlayerElement;
-template <typename T> struct impl_IMediaPlayerElementFactory;
-template <typename T> struct impl_IMediaPlayerElementStatics;
-template <typename T> struct impl_IMediaPlayerPresenter;
-template <typename T> struct impl_IMediaPlayerPresenterFactory;
-template <typename T> struct impl_IMediaPlayerPresenterStatics;
-template <typename T> struct impl_IMediaTransportControls;
-template <typename T> struct impl_IMediaTransportControls2;
-template <typename T> struct impl_IMediaTransportControlsFactory;
-template <typename T> struct impl_IMediaTransportControlsHelper;
-template <typename T> struct impl_IMediaTransportControlsHelperStatics;
-template <typename T> struct impl_IMediaTransportControlsStatics;
-template <typename T> struct impl_IMediaTransportControlsStatics2;
-template <typename T> struct impl_IMenuFlyout;
-template <typename T> struct impl_IMenuFlyout2;
-template <typename T> struct impl_IMenuFlyoutFactory;
-template <typename T> struct impl_IMenuFlyoutItem;
-template <typename T> struct impl_IMenuFlyoutItemBase;
-template <typename T> struct impl_IMenuFlyoutItemBaseFactory;
-template <typename T> struct impl_IMenuFlyoutItemFactory;
-template <typename T> struct impl_IMenuFlyoutItemStatics;
-template <typename T> struct impl_IMenuFlyoutPresenter;
-template <typename T> struct impl_IMenuFlyoutPresenter2;
-template <typename T> struct impl_IMenuFlyoutPresenterFactory;
-template <typename T> struct impl_IMenuFlyoutSeparator;
-template <typename T> struct impl_IMenuFlyoutSeparatorFactory;
-template <typename T> struct impl_IMenuFlyoutStatics;
-template <typename T> struct impl_IMenuFlyoutSubItem;
-template <typename T> struct impl_IMenuFlyoutSubItemStatics;
-template <typename T> struct impl_INavigate;
-template <typename T> struct impl_INotifyEventArgs;
-template <typename T> struct impl_INotifyEventArgs2;
-template <typename T> struct impl_IPage;
-template <typename T> struct impl_IPageFactory;
-template <typename T> struct impl_IPageOverrides;
-template <typename T> struct impl_IPageStatics;
-template <typename T> struct impl_IPanel;
-template <typename T> struct impl_IPanelFactory;
-template <typename T> struct impl_IPanelStatics;
-template <typename T> struct impl_IPasswordBox;
-template <typename T> struct impl_IPasswordBox2;
-template <typename T> struct impl_IPasswordBox3;
-template <typename T> struct impl_IPasswordBoxStatics;
-template <typename T> struct impl_IPasswordBoxStatics2;
-template <typename T> struct impl_IPasswordBoxStatics3;
-template <typename T> struct impl_IPathIcon;
-template <typename T> struct impl_IPathIconFactory;
-template <typename T> struct impl_IPathIconStatics;
-template <typename T> struct impl_IPickerConfirmedEventArgs;
-template <typename T> struct impl_IPickerFlyout;
-template <typename T> struct impl_IPickerFlyoutPresenter;
-template <typename T> struct impl_IPickerFlyoutStatics;
-template <typename T> struct impl_IPivot;
-template <typename T> struct impl_IPivot2;
-template <typename T> struct impl_IPivot3;
-template <typename T> struct impl_IPivotFactory;
-template <typename T> struct impl_IPivotItem;
-template <typename T> struct impl_IPivotItemEventArgs;
-template <typename T> struct impl_IPivotItemFactory;
-template <typename T> struct impl_IPivotItemStatics;
-template <typename T> struct impl_IPivotStatics;
-template <typename T> struct impl_IPivotStatics2;
-template <typename T> struct impl_IPivotStatics3;
-template <typename T> struct impl_IProgressBar;
-template <typename T> struct impl_IProgressBarFactory;
-template <typename T> struct impl_IProgressBarStatics;
-template <typename T> struct impl_IProgressRing;
-template <typename T> struct impl_IProgressRingStatics;
-template <typename T> struct impl_IRadioButton;
-template <typename T> struct impl_IRadioButtonFactory;
-template <typename T> struct impl_IRadioButtonStatics;
-template <typename T> struct impl_IRelativePanel;
-template <typename T> struct impl_IRelativePanelFactory;
-template <typename T> struct impl_IRelativePanelStatics;
-template <typename T> struct impl_IRichEditBox;
-template <typename T> struct impl_IRichEditBox2;
-template <typename T> struct impl_IRichEditBox3;
-template <typename T> struct impl_IRichEditBox4;
-template <typename T> struct impl_IRichEditBoxFactory;
-template <typename T> struct impl_IRichEditBoxStatics;
-template <typename T> struct impl_IRichEditBoxStatics2;
-template <typename T> struct impl_IRichEditBoxStatics3;
-template <typename T> struct impl_IRichEditBoxStatics4;
-template <typename T> struct impl_IRichEditBoxTextChangingEventArgs;
-template <typename T> struct impl_IRichTextBlock;
-template <typename T> struct impl_IRichTextBlock2;
-template <typename T> struct impl_IRichTextBlock3;
-template <typename T> struct impl_IRichTextBlockOverflow;
-template <typename T> struct impl_IRichTextBlockOverflow2;
-template <typename T> struct impl_IRichTextBlockOverflowStatics;
-template <typename T> struct impl_IRichTextBlockOverflowStatics2;
-template <typename T> struct impl_IRichTextBlockStatics;
-template <typename T> struct impl_IRichTextBlockStatics2;
-template <typename T> struct impl_IRichTextBlockStatics3;
-template <typename T> struct impl_IRowDefinition;
-template <typename T> struct impl_IRowDefinitionStatics;
-template <typename T> struct impl_IScrollContentPresenter;
-template <typename T> struct impl_IScrollViewer;
-template <typename T> struct impl_IScrollViewer2;
-template <typename T> struct impl_IScrollViewer3;
-template <typename T> struct impl_IScrollViewerStatics;
-template <typename T> struct impl_IScrollViewerStatics2;
-template <typename T> struct impl_IScrollViewerView;
-template <typename T> struct impl_IScrollViewerViewChangedEventArgs;
-template <typename T> struct impl_IScrollViewerViewChangingEventArgs;
-template <typename T> struct impl_ISearchBox;
-template <typename T> struct impl_ISearchBoxFactory;
-template <typename T> struct impl_ISearchBoxQueryChangedEventArgs;
-template <typename T> struct impl_ISearchBoxQuerySubmittedEventArgs;
-template <typename T> struct impl_ISearchBoxResultSuggestionChosenEventArgs;
-template <typename T> struct impl_ISearchBoxStatics;
-template <typename T> struct impl_ISearchBoxSuggestionsRequestedEventArgs;
-template <typename T> struct impl_ISectionsInViewChangedEventArgs;
-template <typename T> struct impl_ISectionsInViewChangedEventArgsFactory;
-template <typename T> struct impl_ISelectionChangedEventArgs;
-template <typename T> struct impl_ISelectionChangedEventArgsFactory;
-template <typename T> struct impl_ISemanticZoom;
-template <typename T> struct impl_ISemanticZoomInformation;
-template <typename T> struct impl_ISemanticZoomLocation;
-template <typename T> struct impl_ISemanticZoomStatics;
-template <typename T> struct impl_ISemanticZoomViewChangedEventArgs;
-template <typename T> struct impl_ISettingsFlyout;
-template <typename T> struct impl_ISettingsFlyoutFactory;
-template <typename T> struct impl_ISettingsFlyoutStatics;
-template <typename T> struct impl_ISlider;
-template <typename T> struct impl_ISlider2;
-template <typename T> struct impl_ISliderFactory;
-template <typename T> struct impl_ISliderStatics;
-template <typename T> struct impl_ISliderStatics2;
-template <typename T> struct impl_ISplitView;
-template <typename T> struct impl_ISplitView2;
-template <typename T> struct impl_ISplitViewFactory;
-template <typename T> struct impl_ISplitViewPaneClosingEventArgs;
-template <typename T> struct impl_ISplitViewStatics;
-template <typename T> struct impl_ISplitViewStatics2;
-template <typename T> struct impl_IStackPanel;
-template <typename T> struct impl_IStackPanel2;
-template <typename T> struct impl_IStackPanelFactory;
-template <typename T> struct impl_IStackPanelStatics;
-template <typename T> struct impl_IStackPanelStatics2;
-template <typename T> struct impl_IStyleSelector;
-template <typename T> struct impl_IStyleSelectorFactory;
-template <typename T> struct impl_IStyleSelectorOverrides;
-template <typename T> struct impl_ISwapChainBackgroundPanel;
-template <typename T> struct impl_ISwapChainBackgroundPanel2;
-template <typename T> struct impl_ISwapChainBackgroundPanelFactory;
-template <typename T> struct impl_ISwapChainPanel;
-template <typename T> struct impl_ISwapChainPanelFactory;
-template <typename T> struct impl_ISwapChainPanelStatics;
-template <typename T> struct impl_ISymbolIcon;
-template <typename T> struct impl_ISymbolIconFactory;
-template <typename T> struct impl_ISymbolIconStatics;
-template <typename T> struct impl_ITextBlock;
-template <typename T> struct impl_ITextBlock2;
-template <typename T> struct impl_ITextBlock3;
-template <typename T> struct impl_ITextBlock4;
-template <typename T> struct impl_ITextBlockStatics;
-template <typename T> struct impl_ITextBlockStatics2;
-template <typename T> struct impl_ITextBlockStatics3;
-template <typename T> struct impl_ITextBox;
-template <typename T> struct impl_ITextBox2;
-template <typename T> struct impl_ITextBox3;
-template <typename T> struct impl_ITextBox4;
-template <typename T> struct impl_ITextBoxFactory;
-template <typename T> struct impl_ITextBoxStatics;
-template <typename T> struct impl_ITextBoxStatics2;
-template <typename T> struct impl_ITextBoxStatics3;
-template <typename T> struct impl_ITextBoxTextChangingEventArgs;
-template <typename T> struct impl_ITextChangedEventArgs;
-template <typename T> struct impl_ITextCompositionChangedEventArgs;
-template <typename T> struct impl_ITextCompositionEndedEventArgs;
-template <typename T> struct impl_ITextCompositionStartedEventArgs;
-template <typename T> struct impl_ITextControlPasteEventArgs;
-template <typename T> struct impl_ITimePickedEventArgs;
-template <typename T> struct impl_ITimePicker;
-template <typename T> struct impl_ITimePicker2;
-template <typename T> struct impl_ITimePickerFactory;
-template <typename T> struct impl_ITimePickerFlyout;
-template <typename T> struct impl_ITimePickerFlyoutPresenter;
-template <typename T> struct impl_ITimePickerFlyoutStatics;
-template <typename T> struct impl_ITimePickerStatics;
-template <typename T> struct impl_ITimePickerStatics2;
-template <typename T> struct impl_ITimePickerValueChangedEventArgs;
-template <typename T> struct impl_IToggleMenuFlyoutItem;
-template <typename T> struct impl_IToggleMenuFlyoutItemFactory;
-template <typename T> struct impl_IToggleMenuFlyoutItemStatics;
-template <typename T> struct impl_IToggleSwitch;
-template <typename T> struct impl_IToggleSwitchOverrides;
-template <typename T> struct impl_IToggleSwitchStatics;
-template <typename T> struct impl_IToolTip;
-template <typename T> struct impl_IToolTipFactory;
-template <typename T> struct impl_IToolTipService;
-template <typename T> struct impl_IToolTipServiceStatics;
-template <typename T> struct impl_IToolTipStatics;
-template <typename T> struct impl_IUIElementCollection;
-template <typename T> struct impl_IUserControl;
-template <typename T> struct impl_IUserControlFactory;
-template <typename T> struct impl_IUserControlStatics;
-template <typename T> struct impl_IVariableSizedWrapGrid;
-template <typename T> struct impl_IVariableSizedWrapGridStatics;
-template <typename T> struct impl_IViewbox;
-template <typename T> struct impl_IViewboxStatics;
-template <typename T> struct impl_IVirtualizingPanel;
-template <typename T> struct impl_IVirtualizingPanelFactory;
-template <typename T> struct impl_IVirtualizingPanelOverrides;
-template <typename T> struct impl_IVirtualizingPanelProtected;
-template <typename T> struct impl_IVirtualizingStackPanel;
-template <typename T> struct impl_IVirtualizingStackPanelOverrides;
-template <typename T> struct impl_IVirtualizingStackPanelStatics;
-template <typename T> struct impl_IWebView;
-template <typename T> struct impl_IWebView2;
-template <typename T> struct impl_IWebView3;
-template <typename T> struct impl_IWebView4;
-template <typename T> struct impl_IWebView5;
-template <typename T> struct impl_IWebViewBrush;
-template <typename T> struct impl_IWebViewBrushStatics;
-template <typename T> struct impl_IWebViewContentLoadingEventArgs;
-template <typename T> struct impl_IWebViewDOMContentLoadedEventArgs;
-template <typename T> struct impl_IWebViewDeferredPermissionRequest;
-template <typename T> struct impl_IWebViewFactory4;
-template <typename T> struct impl_IWebViewLongRunningScriptDetectedEventArgs;
-template <typename T> struct impl_IWebViewNavigationCompletedEventArgs;
-template <typename T> struct impl_IWebViewNavigationFailedEventArgs;
-template <typename T> struct impl_IWebViewNavigationStartingEventArgs;
-template <typename T> struct impl_IWebViewNewWindowRequestedEventArgs;
-template <typename T> struct impl_IWebViewPermissionRequest;
-template <typename T> struct impl_IWebViewPermissionRequestedEventArgs;
-template <typename T> struct impl_IWebViewSettings;
-template <typename T> struct impl_IWebViewStatics;
-template <typename T> struct impl_IWebViewStatics2;
-template <typename T> struct impl_IWebViewStatics3;
-template <typename T> struct impl_IWebViewStatics4;
-template <typename T> struct impl_IWebViewStatics5;
-template <typename T> struct impl_IWebViewUnsupportedUriSchemeIdentifiedEventArgs;
-template <typename T> struct impl_IWebViewUnviewableContentIdentifiedEventArgs;
-template <typename T> struct impl_IWebViewUnviewableContentIdentifiedEventArgs2;
-template <typename T> struct impl_IWrapGrid;
-template <typename T> struct impl_IWrapGridStatics;
-template <typename T> struct impl_BackClickEventHandler;
-template <typename T> struct impl_CalendarViewDayItemChangingEventHandler;
-template <typename T> struct impl_CleanUpVirtualizedItemEventHandler;
-template <typename T> struct impl_ContextMenuOpeningEventHandler;
-template <typename T> struct impl_DragItemsStartingEventHandler;
-template <typename T> struct impl_HubSectionHeaderClickEventHandler;
-template <typename T> struct impl_ItemClickEventHandler;
-template <typename T> struct impl_ListViewItemToKeyHandler;
-template <typename T> struct impl_ListViewKeyToItemHandler;
-template <typename T> struct impl_NotifyEventHandler;
-template <typename T> struct impl_SectionsInViewChangedEventHandler;
-template <typename T> struct impl_SelectionChangedEventHandler;
-template <typename T> struct impl_SemanticZoomViewChangedEventHandler;
-template <typename T> struct impl_TextChangedEventHandler;
-template <typename T> struct impl_TextControlPasteEventHandler;
-template <typename T> struct impl_WebViewNavigationFailedEventHandler;
+template <typename D>
+struct WINRT_EBO impl_IAppBar
+{
+    bool IsOpen() const;
+    void IsOpen(bool value) const;
+    bool IsSticky() const;
+    void IsSticky(bool value) const;
+    event_token Opened(const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    using Opened_revoker = event_revoker<IAppBar>;
+    Opened_revoker Opened(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    void Opened(event_token token) const;
+    event_token Closed(const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    using Closed_revoker = event_revoker<IAppBar>;
+    Closed_revoker Closed(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    void Closed(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppBar2
+{
+    Windows::UI::Xaml::Controls::AppBarClosedDisplayMode ClosedDisplayMode() const;
+    void ClosedDisplayMode(Windows::UI::Xaml::Controls::AppBarClosedDisplayMode value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppBar3
+{
+    Windows::UI::Xaml::Controls::Primitives::AppBarTemplateSettings TemplateSettings() const;
+    event_token Opening(const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    using Opening_revoker = event_revoker<IAppBar3>;
+    Opening_revoker Opening(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    void Opening(event_token token) const;
+    event_token Closing(const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    using Closing_revoker = event_revoker<IAppBar3>;
+    Closing_revoker Closing(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    void Closing(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppBar4
+{
+    Windows::UI::Xaml::Controls::LightDismissOverlayMode LightDismissOverlayMode() const;
+    void LightDismissOverlayMode(Windows::UI::Xaml::Controls::LightDismissOverlayMode value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppBarButton
+{
+    hstring Label() const;
+    void Label(hstring_ref value) const;
+    Windows::UI::Xaml::Controls::IconElement Icon() const;
+    void Icon(const Windows::UI::Xaml::Controls::IconElement & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppBarButton3
+{
+    Windows::UI::Xaml::Controls::CommandBarLabelPosition LabelPosition() const;
+    void LabelPosition(Windows::UI::Xaml::Controls::CommandBarLabelPosition value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppBarButtonFactory
+{
+    Windows::UI::Xaml::Controls::AppBarButton CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppBarButtonStatics
+{
+    Windows::UI::Xaml::DependencyProperty LabelProperty() const;
+    Windows::UI::Xaml::DependencyProperty IconProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsCompactProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppBarButtonStatics3
+{
+    Windows::UI::Xaml::DependencyProperty LabelPositionProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsInOverflowProperty() const;
+    Windows::UI::Xaml::DependencyProperty DynamicOverflowOrderProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppBarFactory
+{
+    Windows::UI::Xaml::Controls::AppBar CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppBarOverrides
+{
+    void OnClosed(const Windows::IInspectable & e) const;
+    void OnOpened(const Windows::IInspectable & e) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppBarOverrides3
+{
+    void OnClosing(const Windows::IInspectable & e) const;
+    void OnOpening(const Windows::IInspectable & e) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppBarSeparator
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppBarSeparatorFactory
+{
+    Windows::UI::Xaml::Controls::AppBarSeparator CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppBarSeparatorStatics
+{
+    Windows::UI::Xaml::DependencyProperty IsCompactProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppBarSeparatorStatics3
+{
+    Windows::UI::Xaml::DependencyProperty IsInOverflowProperty() const;
+    Windows::UI::Xaml::DependencyProperty DynamicOverflowOrderProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppBarStatics
+{
+    Windows::UI::Xaml::DependencyProperty IsOpenProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsStickyProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppBarStatics2
+{
+    Windows::UI::Xaml::DependencyProperty ClosedDisplayModeProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppBarStatics4
+{
+    Windows::UI::Xaml::DependencyProperty LightDismissOverlayModeProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppBarToggleButton
+{
+    hstring Label() const;
+    void Label(hstring_ref value) const;
+    Windows::UI::Xaml::Controls::IconElement Icon() const;
+    void Icon(const Windows::UI::Xaml::Controls::IconElement & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppBarToggleButton3
+{
+    Windows::UI::Xaml::Controls::CommandBarLabelPosition LabelPosition() const;
+    void LabelPosition(Windows::UI::Xaml::Controls::CommandBarLabelPosition value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppBarToggleButtonFactory
+{
+    Windows::UI::Xaml::Controls::AppBarToggleButton CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppBarToggleButtonStatics
+{
+    Windows::UI::Xaml::DependencyProperty LabelProperty() const;
+    Windows::UI::Xaml::DependencyProperty IconProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsCompactProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppBarToggleButtonStatics3
+{
+    Windows::UI::Xaml::DependencyProperty LabelPositionProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsInOverflowProperty() const;
+    Windows::UI::Xaml::DependencyProperty DynamicOverflowOrderProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAutoSuggestBox
+{
+    double MaxSuggestionListHeight() const;
+    void MaxSuggestionListHeight(double value) const;
+    bool IsSuggestionListOpen() const;
+    void IsSuggestionListOpen(bool value) const;
+    hstring TextMemberPath() const;
+    void TextMemberPath(hstring_ref value) const;
+    hstring Text() const;
+    void Text(hstring_ref value) const;
+    bool UpdateTextOnSelect() const;
+    void UpdateTextOnSelect(bool value) const;
+    hstring PlaceholderText() const;
+    void PlaceholderText(hstring_ref value) const;
+    Windows::IInspectable Header() const;
+    void Header(const Windows::IInspectable & value) const;
+    bool AutoMaximizeSuggestionArea() const;
+    void AutoMaximizeSuggestionArea(bool value) const;
+    Windows::UI::Xaml::Style TextBoxStyle() const;
+    void TextBoxStyle(const Windows::UI::Xaml::Style & value) const;
+    event_token SuggestionChosen(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::AutoSuggestBox, Windows::UI::Xaml::Controls::AutoSuggestBoxSuggestionChosenEventArgs> & value) const;
+    using SuggestionChosen_revoker = event_revoker<IAutoSuggestBox>;
+    SuggestionChosen_revoker SuggestionChosen(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::AutoSuggestBox, Windows::UI::Xaml::Controls::AutoSuggestBoxSuggestionChosenEventArgs> & value) const;
+    void SuggestionChosen(event_token token) const;
+    event_token TextChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::AutoSuggestBox, Windows::UI::Xaml::Controls::AutoSuggestBoxTextChangedEventArgs> & value) const;
+    using TextChanged_revoker = event_revoker<IAutoSuggestBox>;
+    TextChanged_revoker TextChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::AutoSuggestBox, Windows::UI::Xaml::Controls::AutoSuggestBoxTextChangedEventArgs> & value) const;
+    void TextChanged(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAutoSuggestBox2
+{
+    Windows::UI::Xaml::Controls::IconElement QueryIcon() const;
+    void QueryIcon(const Windows::UI::Xaml::Controls::IconElement & value) const;
+    event_token QuerySubmitted(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::AutoSuggestBox, Windows::UI::Xaml::Controls::AutoSuggestBoxQuerySubmittedEventArgs> & value) const;
+    using QuerySubmitted_revoker = event_revoker<IAutoSuggestBox2>;
+    QuerySubmitted_revoker QuerySubmitted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::AutoSuggestBox, Windows::UI::Xaml::Controls::AutoSuggestBoxQuerySubmittedEventArgs> & value) const;
+    void QuerySubmitted(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAutoSuggestBox3
+{
+    Windows::UI::Xaml::Controls::LightDismissOverlayMode LightDismissOverlayMode() const;
+    void LightDismissOverlayMode(Windows::UI::Xaml::Controls::LightDismissOverlayMode value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAutoSuggestBoxQuerySubmittedEventArgs
+{
+    hstring QueryText() const;
+    Windows::IInspectable ChosenSuggestion() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAutoSuggestBoxStatics
+{
+    Windows::UI::Xaml::DependencyProperty MaxSuggestionListHeightProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsSuggestionListOpenProperty() const;
+    Windows::UI::Xaml::DependencyProperty TextMemberPathProperty() const;
+    Windows::UI::Xaml::DependencyProperty TextProperty() const;
+    Windows::UI::Xaml::DependencyProperty UpdateTextOnSelectProperty() const;
+    Windows::UI::Xaml::DependencyProperty PlaceholderTextProperty() const;
+    Windows::UI::Xaml::DependencyProperty HeaderProperty() const;
+    Windows::UI::Xaml::DependencyProperty AutoMaximizeSuggestionAreaProperty() const;
+    Windows::UI::Xaml::DependencyProperty TextBoxStyleProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAutoSuggestBoxStatics2
+{
+    Windows::UI::Xaml::DependencyProperty QueryIconProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAutoSuggestBoxStatics3
+{
+    Windows::UI::Xaml::DependencyProperty LightDismissOverlayModeProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAutoSuggestBoxSuggestionChosenEventArgs
+{
+    Windows::IInspectable SelectedItem() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAutoSuggestBoxTextChangedEventArgs
+{
+    Windows::UI::Xaml::Controls::AutoSuggestionBoxTextChangeReason Reason() const;
+    void Reason(Windows::UI::Xaml::Controls::AutoSuggestionBoxTextChangeReason value) const;
+    bool CheckCurrent() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAutoSuggestBoxTextChangedEventArgsStatics
+{
+    Windows::UI::Xaml::DependencyProperty ReasonProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackClickEventArgs
+{
+    bool Handled() const;
+    void Handled(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBitmapIcon
+{
+    Windows::Foundation::Uri UriSource() const;
+    void UriSource(const Windows::Foundation::Uri & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBitmapIconFactory
+{
+    Windows::UI::Xaml::Controls::BitmapIcon CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBitmapIconStatics
+{
+    Windows::UI::Xaml::DependencyProperty UriSourceProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBorder
+{
+    Windows::UI::Xaml::Media::Brush BorderBrush() const;
+    void BorderBrush(const Windows::UI::Xaml::Media::Brush & value) const;
+    Windows::UI::Xaml::Thickness BorderThickness() const;
+    void BorderThickness(const Windows::UI::Xaml::Thickness & value) const;
+    Windows::UI::Xaml::Media::Brush Background() const;
+    void Background(const Windows::UI::Xaml::Media::Brush & value) const;
+    Windows::UI::Xaml::CornerRadius CornerRadius() const;
+    void CornerRadius(const Windows::UI::Xaml::CornerRadius & value) const;
+    Windows::UI::Xaml::Thickness Padding() const;
+    void Padding(const Windows::UI::Xaml::Thickness & value) const;
+    Windows::UI::Xaml::UIElement Child() const;
+    void Child(const Windows::UI::Xaml::UIElement & value) const;
+    Windows::UI::Xaml::Media::Animation::TransitionCollection ChildTransitions() const;
+    void ChildTransitions(const Windows::UI::Xaml::Media::Animation::TransitionCollection & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBorderStatics
+{
+    Windows::UI::Xaml::DependencyProperty BorderBrushProperty() const;
+    Windows::UI::Xaml::DependencyProperty BorderThicknessProperty() const;
+    Windows::UI::Xaml::DependencyProperty BackgroundProperty() const;
+    Windows::UI::Xaml::DependencyProperty CornerRadiusProperty() const;
+    Windows::UI::Xaml::DependencyProperty PaddingProperty() const;
+    Windows::UI::Xaml::DependencyProperty ChildTransitionsProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IButton
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IButtonFactory
+{
+    Windows::UI::Xaml::Controls::Button CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IButtonStaticsWithFlyout
+{
+    Windows::UI::Xaml::DependencyProperty FlyoutProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IButtonWithFlyout
+{
+    Windows::UI::Xaml::Controls::Primitives::FlyoutBase Flyout() const;
+    void Flyout(const Windows::UI::Xaml::Controls::Primitives::FlyoutBase & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICalendarDatePicker
+{
+    Windows::Foundation::IReference<Windows::Foundation::DateTime> Date() const;
+    void Date(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
+    bool IsCalendarOpen() const;
+    void IsCalendarOpen(bool value) const;
+    hstring DateFormat() const;
+    void DateFormat(hstring_ref value) const;
+    hstring PlaceholderText() const;
+    void PlaceholderText(hstring_ref value) const;
+    Windows::IInspectable Header() const;
+    void Header(const Windows::IInspectable & value) const;
+    Windows::UI::Xaml::DataTemplate HeaderTemplate() const;
+    void HeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
+    Windows::UI::Xaml::Style CalendarViewStyle() const;
+    void CalendarViewStyle(const Windows::UI::Xaml::Style & value) const;
+    Windows::Foundation::DateTime MinDate() const;
+    void MinDate(const Windows::Foundation::DateTime & value) const;
+    Windows::Foundation::DateTime MaxDate() const;
+    void MaxDate(const Windows::Foundation::DateTime & value) const;
+    bool IsTodayHighlighted() const;
+    void IsTodayHighlighted(bool value) const;
+    Windows::UI::Xaml::Controls::CalendarViewDisplayMode DisplayMode() const;
+    void DisplayMode(Windows::UI::Xaml::Controls::CalendarViewDisplayMode value) const;
+    Windows::Globalization::DayOfWeek FirstDayOfWeek() const;
+    void FirstDayOfWeek(Windows::Globalization::DayOfWeek value) const;
+    hstring DayOfWeekFormat() const;
+    void DayOfWeekFormat(hstring_ref value) const;
+    hstring CalendarIdentifier() const;
+    void CalendarIdentifier(hstring_ref value) const;
+    bool IsOutOfScopeEnabled() const;
+    void IsOutOfScopeEnabled(bool value) const;
+    bool IsGroupLabelVisible() const;
+    void IsGroupLabelVisible(bool value) const;
+    event_token CalendarViewDayItemChanging(const Windows::UI::Xaml::Controls::CalendarViewDayItemChangingEventHandler & value) const;
+    using CalendarViewDayItemChanging_revoker = event_revoker<ICalendarDatePicker>;
+    CalendarViewDayItemChanging_revoker CalendarViewDayItemChanging(auto_revoke_t, const Windows::UI::Xaml::Controls::CalendarViewDayItemChangingEventHandler & value) const;
+    void CalendarViewDayItemChanging(event_token token) const;
+    event_token DateChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::CalendarDatePicker, Windows::UI::Xaml::Controls::CalendarDatePickerDateChangedEventArgs> & value) const;
+    using DateChanged_revoker = event_revoker<ICalendarDatePicker>;
+    DateChanged_revoker DateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::CalendarDatePicker, Windows::UI::Xaml::Controls::CalendarDatePickerDateChangedEventArgs> & value) const;
+    void DateChanged(event_token token) const;
+    event_token Opened(const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    using Opened_revoker = event_revoker<ICalendarDatePicker>;
+    Opened_revoker Opened(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    void Opened(event_token token) const;
+    event_token Closed(const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    using Closed_revoker = event_revoker<ICalendarDatePicker>;
+    Closed_revoker Closed(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    void Closed(event_token token) const;
+    void SetDisplayDate(const Windows::Foundation::DateTime & date) const;
+    void SetYearDecadeDisplayDimensions(int32_t columns, int32_t rows) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICalendarDatePicker2
+{
+    Windows::UI::Xaml::Controls::LightDismissOverlayMode LightDismissOverlayMode() const;
+    void LightDismissOverlayMode(Windows::UI::Xaml::Controls::LightDismissOverlayMode value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICalendarDatePickerDateChangedEventArgs
+{
+    Windows::Foundation::IReference<Windows::Foundation::DateTime> NewDate() const;
+    Windows::Foundation::IReference<Windows::Foundation::DateTime> OldDate() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICalendarDatePickerFactory
+{
+    Windows::UI::Xaml::Controls::CalendarDatePicker CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICalendarDatePickerStatics
+{
+    Windows::UI::Xaml::DependencyProperty DateProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsCalendarOpenProperty() const;
+    Windows::UI::Xaml::DependencyProperty DateFormatProperty() const;
+    Windows::UI::Xaml::DependencyProperty PlaceholderTextProperty() const;
+    Windows::UI::Xaml::DependencyProperty HeaderProperty() const;
+    Windows::UI::Xaml::DependencyProperty HeaderTemplateProperty() const;
+    Windows::UI::Xaml::DependencyProperty CalendarViewStyleProperty() const;
+    Windows::UI::Xaml::DependencyProperty MinDateProperty() const;
+    Windows::UI::Xaml::DependencyProperty MaxDateProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsTodayHighlightedProperty() const;
+    Windows::UI::Xaml::DependencyProperty DisplayModeProperty() const;
+    Windows::UI::Xaml::DependencyProperty FirstDayOfWeekProperty() const;
+    Windows::UI::Xaml::DependencyProperty DayOfWeekFormatProperty() const;
+    Windows::UI::Xaml::DependencyProperty CalendarIdentifierProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsOutOfScopeEnabledProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsGroupLabelVisibleProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICalendarDatePickerStatics2
+{
+    Windows::UI::Xaml::DependencyProperty LightDismissOverlayModeProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICalendarView
+{
+    hstring CalendarIdentifier() const;
+    void CalendarIdentifier(hstring_ref value) const;
+    hstring DayOfWeekFormat() const;
+    void DayOfWeekFormat(hstring_ref value) const;
+    bool IsGroupLabelVisible() const;
+    void IsGroupLabelVisible(bool value) const;
+    Windows::UI::Xaml::Controls::CalendarViewDisplayMode DisplayMode() const;
+    void DisplayMode(Windows::UI::Xaml::Controls::CalendarViewDisplayMode value) const;
+    Windows::Globalization::DayOfWeek FirstDayOfWeek() const;
+    void FirstDayOfWeek(Windows::Globalization::DayOfWeek value) const;
+    bool IsOutOfScopeEnabled() const;
+    void IsOutOfScopeEnabled(bool value) const;
+    bool IsTodayHighlighted() const;
+    void IsTodayHighlighted(bool value) const;
+    Windows::Foundation::DateTime MaxDate() const;
+    void MaxDate(const Windows::Foundation::DateTime & value) const;
+    Windows::Foundation::DateTime MinDate() const;
+    void MinDate(const Windows::Foundation::DateTime & value) const;
+    int32_t NumberOfWeeksInView() const;
+    void NumberOfWeeksInView(int32_t value) const;
+    Windows::Foundation::Collections::IVector<Windows::Foundation::DateTime> SelectedDates() const;
+    Windows::UI::Xaml::Controls::CalendarViewSelectionMode SelectionMode() const;
+    void SelectionMode(Windows::UI::Xaml::Controls::CalendarViewSelectionMode value) const;
+    Windows::UI::Xaml::Controls::Primitives::CalendarViewTemplateSettings TemplateSettings() const;
+    Windows::UI::Xaml::Media::Brush FocusBorderBrush() const;
+    void FocusBorderBrush(const Windows::UI::Xaml::Media::Brush & value) const;
+    Windows::UI::Xaml::Media::Brush SelectedHoverBorderBrush() const;
+    void SelectedHoverBorderBrush(const Windows::UI::Xaml::Media::Brush & value) const;
+    Windows::UI::Xaml::Media::Brush SelectedPressedBorderBrush() const;
+    void SelectedPressedBorderBrush(const Windows::UI::Xaml::Media::Brush & value) const;
+    Windows::UI::Xaml::Media::Brush SelectedBorderBrush() const;
+    void SelectedBorderBrush(const Windows::UI::Xaml::Media::Brush & value) const;
+    Windows::UI::Xaml::Media::Brush HoverBorderBrush() const;
+    void HoverBorderBrush(const Windows::UI::Xaml::Media::Brush & value) const;
+    Windows::UI::Xaml::Media::Brush PressedBorderBrush() const;
+    void PressedBorderBrush(const Windows::UI::Xaml::Media::Brush & value) const;
+    Windows::UI::Xaml::Media::Brush CalendarItemBorderBrush() const;
+    void CalendarItemBorderBrush(const Windows::UI::Xaml::Media::Brush & value) const;
+    Windows::UI::Xaml::Media::Brush OutOfScopeBackground() const;
+    void OutOfScopeBackground(const Windows::UI::Xaml::Media::Brush & value) const;
+    Windows::UI::Xaml::Media::Brush CalendarItemBackground() const;
+    void CalendarItemBackground(const Windows::UI::Xaml::Media::Brush & value) const;
+    Windows::UI::Xaml::Media::Brush PressedForeground() const;
+    void PressedForeground(const Windows::UI::Xaml::Media::Brush & value) const;
+    Windows::UI::Xaml::Media::Brush TodayForeground() const;
+    void TodayForeground(const Windows::UI::Xaml::Media::Brush & value) const;
+    Windows::UI::Xaml::Media::Brush BlackoutForeground() const;
+    void BlackoutForeground(const Windows::UI::Xaml::Media::Brush & value) const;
+    Windows::UI::Xaml::Media::Brush SelectedForeground() const;
+    void SelectedForeground(const Windows::UI::Xaml::Media::Brush & value) const;
+    Windows::UI::Xaml::Media::Brush OutOfScopeForeground() const;
+    void OutOfScopeForeground(const Windows::UI::Xaml::Media::Brush & value) const;
+    Windows::UI::Xaml::Media::Brush CalendarItemForeground() const;
+    void CalendarItemForeground(const Windows::UI::Xaml::Media::Brush & value) const;
+    Windows::UI::Xaml::Media::FontFamily DayItemFontFamily() const;
+    void DayItemFontFamily(const Windows::UI::Xaml::Media::FontFamily & value) const;
+    double DayItemFontSize() const;
+    void DayItemFontSize(double value) const;
+    Windows::UI::Text::FontStyle DayItemFontStyle() const;
+    void DayItemFontStyle(Windows::UI::Text::FontStyle value) const;
+    Windows::UI::Text::FontWeight DayItemFontWeight() const;
+    void DayItemFontWeight(const Windows::UI::Text::FontWeight & value) const;
+    Windows::UI::Text::FontWeight TodayFontWeight() const;
+    void TodayFontWeight(const Windows::UI::Text::FontWeight & value) const;
+    Windows::UI::Xaml::Media::FontFamily FirstOfMonthLabelFontFamily() const;
+    void FirstOfMonthLabelFontFamily(const Windows::UI::Xaml::Media::FontFamily & value) const;
+    double FirstOfMonthLabelFontSize() const;
+    void FirstOfMonthLabelFontSize(double value) const;
+    Windows::UI::Text::FontStyle FirstOfMonthLabelFontStyle() const;
+    void FirstOfMonthLabelFontStyle(Windows::UI::Text::FontStyle value) const;
+    Windows::UI::Text::FontWeight FirstOfMonthLabelFontWeight() const;
+    void FirstOfMonthLabelFontWeight(const Windows::UI::Text::FontWeight & value) const;
+    Windows::UI::Xaml::Media::FontFamily MonthYearItemFontFamily() const;
+    void MonthYearItemFontFamily(const Windows::UI::Xaml::Media::FontFamily & value) const;
+    double MonthYearItemFontSize() const;
+    void MonthYearItemFontSize(double value) const;
+    Windows::UI::Text::FontStyle MonthYearItemFontStyle() const;
+    void MonthYearItemFontStyle(Windows::UI::Text::FontStyle value) const;
+    Windows::UI::Text::FontWeight MonthYearItemFontWeight() const;
+    void MonthYearItemFontWeight(const Windows::UI::Text::FontWeight & value) const;
+    Windows::UI::Xaml::Media::FontFamily FirstOfYearDecadeLabelFontFamily() const;
+    void FirstOfYearDecadeLabelFontFamily(const Windows::UI::Xaml::Media::FontFamily & value) const;
+    double FirstOfYearDecadeLabelFontSize() const;
+    void FirstOfYearDecadeLabelFontSize(double value) const;
+    Windows::UI::Text::FontStyle FirstOfYearDecadeLabelFontStyle() const;
+    void FirstOfYearDecadeLabelFontStyle(Windows::UI::Text::FontStyle value) const;
+    Windows::UI::Text::FontWeight FirstOfYearDecadeLabelFontWeight() const;
+    void FirstOfYearDecadeLabelFontWeight(const Windows::UI::Text::FontWeight & value) const;
+    Windows::UI::Xaml::HorizontalAlignment HorizontalDayItemAlignment() const;
+    void HorizontalDayItemAlignment(Windows::UI::Xaml::HorizontalAlignment value) const;
+    Windows::UI::Xaml::VerticalAlignment VerticalDayItemAlignment() const;
+    void VerticalDayItemAlignment(Windows::UI::Xaml::VerticalAlignment value) const;
+    Windows::UI::Xaml::HorizontalAlignment HorizontalFirstOfMonthLabelAlignment() const;
+    void HorizontalFirstOfMonthLabelAlignment(Windows::UI::Xaml::HorizontalAlignment value) const;
+    Windows::UI::Xaml::VerticalAlignment VerticalFirstOfMonthLabelAlignment() const;
+    void VerticalFirstOfMonthLabelAlignment(Windows::UI::Xaml::VerticalAlignment value) const;
+    Windows::UI::Xaml::Thickness CalendarItemBorderThickness() const;
+    void CalendarItemBorderThickness(const Windows::UI::Xaml::Thickness & value) const;
+    Windows::UI::Xaml::Style CalendarViewDayItemStyle() const;
+    void CalendarViewDayItemStyle(const Windows::UI::Xaml::Style & value) const;
+    event_token CalendarViewDayItemChanging(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::CalendarView, Windows::UI::Xaml::Controls::CalendarViewDayItemChangingEventArgs> & value) const;
+    using CalendarViewDayItemChanging_revoker = event_revoker<ICalendarView>;
+    CalendarViewDayItemChanging_revoker CalendarViewDayItemChanging(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::CalendarView, Windows::UI::Xaml::Controls::CalendarViewDayItemChangingEventArgs> & value) const;
+    void CalendarViewDayItemChanging(event_token token) const;
+    event_token SelectedDatesChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::CalendarView, Windows::UI::Xaml::Controls::CalendarViewSelectedDatesChangedEventArgs> & value) const;
+    using SelectedDatesChanged_revoker = event_revoker<ICalendarView>;
+    SelectedDatesChanged_revoker SelectedDatesChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::CalendarView, Windows::UI::Xaml::Controls::CalendarViewSelectedDatesChangedEventArgs> & value) const;
+    void SelectedDatesChanged(event_token token) const;
+    void SetDisplayDate(const Windows::Foundation::DateTime & date) const;
+    void SetYearDecadeDisplayDimensions(int32_t columns, int32_t rows) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICalendarViewDayItem
+{
+    bool IsBlackout() const;
+    void IsBlackout(bool value) const;
+    Windows::Foundation::DateTime Date() const;
+    void SetDensityColors(const Windows::Foundation::Collections::IIterable<Windows::UI::Color> & colors) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICalendarViewDayItemChangingEventArgs
+{
+    bool InRecycleQueue() const;
+    Windows::UI::Xaml::Controls::CalendarViewDayItem Item() const;
+    uint32_t Phase() const;
+    void RegisterUpdateCallback(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::CalendarView, Windows::UI::Xaml::Controls::CalendarViewDayItemChangingEventArgs> & callback) const;
+    void RegisterUpdateCallback(uint32_t callbackPhase, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::CalendarView, Windows::UI::Xaml::Controls::CalendarViewDayItemChangingEventArgs> & callback) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICalendarViewDayItemFactory
+{
+    Windows::UI::Xaml::Controls::CalendarViewDayItem CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICalendarViewDayItemStatics
+{
+    Windows::UI::Xaml::DependencyProperty IsBlackoutProperty() const;
+    Windows::UI::Xaml::DependencyProperty DateProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICalendarViewFactory
+{
+    Windows::UI::Xaml::Controls::CalendarView CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICalendarViewSelectedDatesChangedEventArgs
+{
+    Windows::Foundation::Collections::IVectorView<Windows::Foundation::DateTime> AddedDates() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Foundation::DateTime> RemovedDates() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICalendarViewStatics
+{
+    Windows::UI::Xaml::DependencyProperty CalendarIdentifierProperty() const;
+    Windows::UI::Xaml::DependencyProperty DayOfWeekFormatProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsGroupLabelVisibleProperty() const;
+    Windows::UI::Xaml::DependencyProperty DisplayModeProperty() const;
+    Windows::UI::Xaml::DependencyProperty FirstDayOfWeekProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsOutOfScopeEnabledProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsTodayHighlightedProperty() const;
+    Windows::UI::Xaml::DependencyProperty MaxDateProperty() const;
+    Windows::UI::Xaml::DependencyProperty MinDateProperty() const;
+    Windows::UI::Xaml::DependencyProperty NumberOfWeeksInViewProperty() const;
+    Windows::UI::Xaml::DependencyProperty SelectedDatesProperty() const;
+    Windows::UI::Xaml::DependencyProperty SelectionModeProperty() const;
+    Windows::UI::Xaml::DependencyProperty TemplateSettingsProperty() const;
+    Windows::UI::Xaml::DependencyProperty FocusBorderBrushProperty() const;
+    Windows::UI::Xaml::DependencyProperty SelectedHoverBorderBrushProperty() const;
+    Windows::UI::Xaml::DependencyProperty SelectedPressedBorderBrushProperty() const;
+    Windows::UI::Xaml::DependencyProperty SelectedBorderBrushProperty() const;
+    Windows::UI::Xaml::DependencyProperty HoverBorderBrushProperty() const;
+    Windows::UI::Xaml::DependencyProperty PressedBorderBrushProperty() const;
+    Windows::UI::Xaml::DependencyProperty CalendarItemBorderBrushProperty() const;
+    Windows::UI::Xaml::DependencyProperty OutOfScopeBackgroundProperty() const;
+    Windows::UI::Xaml::DependencyProperty CalendarItemBackgroundProperty() const;
+    Windows::UI::Xaml::DependencyProperty PressedForegroundProperty() const;
+    Windows::UI::Xaml::DependencyProperty TodayForegroundProperty() const;
+    Windows::UI::Xaml::DependencyProperty BlackoutForegroundProperty() const;
+    Windows::UI::Xaml::DependencyProperty SelectedForegroundProperty() const;
+    Windows::UI::Xaml::DependencyProperty OutOfScopeForegroundProperty() const;
+    Windows::UI::Xaml::DependencyProperty CalendarItemForegroundProperty() const;
+    Windows::UI::Xaml::DependencyProperty DayItemFontFamilyProperty() const;
+    Windows::UI::Xaml::DependencyProperty DayItemFontSizeProperty() const;
+    Windows::UI::Xaml::DependencyProperty DayItemFontStyleProperty() const;
+    Windows::UI::Xaml::DependencyProperty DayItemFontWeightProperty() const;
+    Windows::UI::Xaml::DependencyProperty TodayFontWeightProperty() const;
+    Windows::UI::Xaml::DependencyProperty FirstOfMonthLabelFontFamilyProperty() const;
+    Windows::UI::Xaml::DependencyProperty FirstOfMonthLabelFontSizeProperty() const;
+    Windows::UI::Xaml::DependencyProperty FirstOfMonthLabelFontStyleProperty() const;
+    Windows::UI::Xaml::DependencyProperty FirstOfMonthLabelFontWeightProperty() const;
+    Windows::UI::Xaml::DependencyProperty MonthYearItemFontFamilyProperty() const;
+    Windows::UI::Xaml::DependencyProperty MonthYearItemFontSizeProperty() const;
+    Windows::UI::Xaml::DependencyProperty MonthYearItemFontStyleProperty() const;
+    Windows::UI::Xaml::DependencyProperty MonthYearItemFontWeightProperty() const;
+    Windows::UI::Xaml::DependencyProperty FirstOfYearDecadeLabelFontFamilyProperty() const;
+    Windows::UI::Xaml::DependencyProperty FirstOfYearDecadeLabelFontSizeProperty() const;
+    Windows::UI::Xaml::DependencyProperty FirstOfYearDecadeLabelFontStyleProperty() const;
+    Windows::UI::Xaml::DependencyProperty FirstOfYearDecadeLabelFontWeightProperty() const;
+    Windows::UI::Xaml::DependencyProperty HorizontalDayItemAlignmentProperty() const;
+    Windows::UI::Xaml::DependencyProperty VerticalDayItemAlignmentProperty() const;
+    Windows::UI::Xaml::DependencyProperty HorizontalFirstOfMonthLabelAlignmentProperty() const;
+    Windows::UI::Xaml::DependencyProperty VerticalFirstOfMonthLabelAlignmentProperty() const;
+    Windows::UI::Xaml::DependencyProperty CalendarItemBorderThicknessProperty() const;
+    Windows::UI::Xaml::DependencyProperty CalendarViewDayItemStyleProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICandidateWindowBoundsChangedEventArgs
+{
+    Windows::Foundation::Rect Bounds() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICanvas
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICanvasFactory
+{
+    Windows::UI::Xaml::Controls::Canvas CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICanvasStatics
+{
+    Windows::UI::Xaml::DependencyProperty LeftProperty() const;
+    double GetLeft(const Windows::UI::Xaml::UIElement & element) const;
+    void SetLeft(const Windows::UI::Xaml::UIElement & element, double length) const;
+    Windows::UI::Xaml::DependencyProperty TopProperty() const;
+    double GetTop(const Windows::UI::Xaml::UIElement & element) const;
+    void SetTop(const Windows::UI::Xaml::UIElement & element, double length) const;
+    Windows::UI::Xaml::DependencyProperty ZIndexProperty() const;
+    int32_t GetZIndex(const Windows::UI::Xaml::UIElement & element) const;
+    void SetZIndex(const Windows::UI::Xaml::UIElement & element, int32_t value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICaptureElement
+{
+    Windows::Media::Capture::MediaCapture Source() const;
+    void Source(const Windows::Media::Capture::MediaCapture & value) const;
+    Windows::UI::Xaml::Media::Stretch Stretch() const;
+    void Stretch(Windows::UI::Xaml::Media::Stretch value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICaptureElementStatics
+{
+    Windows::UI::Xaml::DependencyProperty SourceProperty() const;
+    Windows::UI::Xaml::DependencyProperty StretchProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICheckBox
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICheckBoxFactory
+{
+    Windows::UI::Xaml::Controls::CheckBox CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IChoosingGroupHeaderContainerEventArgs
+{
+    Windows::UI::Xaml::Controls::ListViewBaseHeaderItem GroupHeaderContainer() const;
+    void GroupHeaderContainer(const Windows::UI::Xaml::Controls::ListViewBaseHeaderItem & value) const;
+    int32_t GroupIndex() const;
+    Windows::IInspectable Group() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IChoosingItemContainerEventArgs
+{
+    int32_t ItemIndex() const;
+    Windows::IInspectable Item() const;
+    Windows::UI::Xaml::Controls::Primitives::SelectorItem ItemContainer() const;
+    void ItemContainer(const Windows::UI::Xaml::Controls::Primitives::SelectorItem & value) const;
+    bool IsContainerPrepared() const;
+    void IsContainerPrepared(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICleanUpVirtualizedItemEventArgs
+{
+    Windows::IInspectable Value() const;
+    Windows::UI::Xaml::UIElement UIElement() const;
+    bool Cancel() const;
+    void Cancel(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IColumnDefinition
+{
+    Windows::UI::Xaml::GridLength Width() const;
+    void Width(const Windows::UI::Xaml::GridLength & value) const;
+    double MaxWidth() const;
+    void MaxWidth(double value) const;
+    double MinWidth() const;
+    void MinWidth(double value) const;
+    double ActualWidth() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IColumnDefinitionStatics
+{
+    Windows::UI::Xaml::DependencyProperty WidthProperty() const;
+    Windows::UI::Xaml::DependencyProperty MaxWidthProperty() const;
+    Windows::UI::Xaml::DependencyProperty MinWidthProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IComboBox
+{
+    bool IsDropDownOpen() const;
+    void IsDropDownOpen(bool value) const;
+    bool IsEditable() const;
+    bool IsSelectionBoxHighlighted() const;
+    double MaxDropDownHeight() const;
+    void MaxDropDownHeight(double value) const;
+    Windows::IInspectable SelectionBoxItem() const;
+    Windows::UI::Xaml::DataTemplate SelectionBoxItemTemplate() const;
+    Windows::UI::Xaml::Controls::Primitives::ComboBoxTemplateSettings TemplateSettings() const;
+    event_token DropDownClosed(const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    using DropDownClosed_revoker = event_revoker<IComboBox>;
+    DropDownClosed_revoker DropDownClosed(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    void DropDownClosed(event_token token) const;
+    event_token DropDownOpened(const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    using DropDownOpened_revoker = event_revoker<IComboBox>;
+    DropDownOpened_revoker DropDownOpened(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    void DropDownOpened(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IComboBox2
+{
+    Windows::IInspectable Header() const;
+    void Header(const Windows::IInspectable & value) const;
+    Windows::UI::Xaml::DataTemplate HeaderTemplate() const;
+    void HeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
+    hstring PlaceholderText() const;
+    void PlaceholderText(hstring_ref value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IComboBox3
+{
+    Windows::UI::Xaml::Controls::LightDismissOverlayMode LightDismissOverlayMode() const;
+    void LightDismissOverlayMode(Windows::UI::Xaml::Controls::LightDismissOverlayMode value) const;
+    bool IsTextSearchEnabled() const;
+    void IsTextSearchEnabled(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IComboBoxFactory
+{
+    Windows::UI::Xaml::Controls::ComboBox CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IComboBoxItem
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IComboBoxItemFactory
+{
+    Windows::UI::Xaml::Controls::ComboBoxItem CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IComboBoxOverrides
+{
+    void OnDropDownClosed(const Windows::IInspectable & e) const;
+    void OnDropDownOpened(const Windows::IInspectable & e) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IComboBoxStatics
+{
+    Windows::UI::Xaml::DependencyProperty IsDropDownOpenProperty() const;
+    Windows::UI::Xaml::DependencyProperty MaxDropDownHeightProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IComboBoxStatics2
+{
+    Windows::UI::Xaml::DependencyProperty HeaderProperty() const;
+    Windows::UI::Xaml::DependencyProperty HeaderTemplateProperty() const;
+    Windows::UI::Xaml::DependencyProperty PlaceholderTextProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IComboBoxStatics3
+{
+    Windows::UI::Xaml::DependencyProperty LightDismissOverlayModeProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsTextSearchEnabledProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICommandBar
+{
+    Windows::Foundation::Collections::IObservableVector<Windows::UI::Xaml::Controls::ICommandBarElement> PrimaryCommands() const;
+    Windows::Foundation::Collections::IObservableVector<Windows::UI::Xaml::Controls::ICommandBarElement> SecondaryCommands() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICommandBar2
+{
+    Windows::UI::Xaml::Style CommandBarOverflowPresenterStyle() const;
+    void CommandBarOverflowPresenterStyle(const Windows::UI::Xaml::Style & value) const;
+    Windows::UI::Xaml::Controls::Primitives::CommandBarTemplateSettings CommandBarTemplateSettings() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICommandBar3
+{
+    Windows::UI::Xaml::Controls::CommandBarDefaultLabelPosition DefaultLabelPosition() const;
+    void DefaultLabelPosition(Windows::UI::Xaml::Controls::CommandBarDefaultLabelPosition value) const;
+    Windows::UI::Xaml::Controls::CommandBarOverflowButtonVisibility OverflowButtonVisibility() const;
+    void OverflowButtonVisibility(Windows::UI::Xaml::Controls::CommandBarOverflowButtonVisibility value) const;
+    bool IsDynamicOverflowEnabled() const;
+    void IsDynamicOverflowEnabled(bool value) const;
+    event_token DynamicOverflowItemsChanging(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::CommandBar, Windows::UI::Xaml::Controls::DynamicOverflowItemsChangingEventArgs> & value) const;
+    using DynamicOverflowItemsChanging_revoker = event_revoker<ICommandBar3>;
+    DynamicOverflowItemsChanging_revoker DynamicOverflowItemsChanging(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::CommandBar, Windows::UI::Xaml::Controls::DynamicOverflowItemsChangingEventArgs> & value) const;
+    void DynamicOverflowItemsChanging(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICommandBarElement
+{
+    bool IsCompact() const;
+    void IsCompact(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICommandBarElement2
+{
+    bool IsInOverflow() const;
+    int32_t DynamicOverflowOrder() const;
+    void DynamicOverflowOrder(int32_t value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICommandBarFactory
+{
+    Windows::UI::Xaml::Controls::CommandBar CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICommandBarOverflowPresenter
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICommandBarOverflowPresenterFactory
+{
+    Windows::UI::Xaml::Controls::CommandBarOverflowPresenter CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICommandBarStatics
+{
+    Windows::UI::Xaml::DependencyProperty PrimaryCommandsProperty() const;
+    Windows::UI::Xaml::DependencyProperty SecondaryCommandsProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICommandBarStatics2
+{
+    Windows::UI::Xaml::DependencyProperty CommandBarOverflowPresenterStyleProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICommandBarStatics3
+{
+    Windows::UI::Xaml::DependencyProperty DefaultLabelPositionProperty() const;
+    Windows::UI::Xaml::DependencyProperty OverflowButtonVisibilityProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsDynamicOverflowEnabledProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContainerContentChangingEventArgs
+{
+    Windows::UI::Xaml::Controls::Primitives::SelectorItem ItemContainer() const;
+    bool InRecycleQueue() const;
+    int32_t ItemIndex() const;
+    Windows::IInspectable Item() const;
+    uint32_t Phase() const;
+    bool Handled() const;
+    void Handled(bool value) const;
+    void RegisterUpdateCallback(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::ListViewBase, Windows::UI::Xaml::Controls::ContainerContentChangingEventArgs> & callback) const;
+    void RegisterUpdateCallback(uint32_t callbackPhase, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::ListViewBase, Windows::UI::Xaml::Controls::ContainerContentChangingEventArgs> & callback) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContentControl
+{
+    Windows::IInspectable Content() const;
+    void Content(const Windows::IInspectable & value) const;
+    Windows::UI::Xaml::DataTemplate ContentTemplate() const;
+    void ContentTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
+    Windows::UI::Xaml::Controls::DataTemplateSelector ContentTemplateSelector() const;
+    void ContentTemplateSelector(const Windows::UI::Xaml::Controls::DataTemplateSelector & value) const;
+    Windows::UI::Xaml::Media::Animation::TransitionCollection ContentTransitions() const;
+    void ContentTransitions(const Windows::UI::Xaml::Media::Animation::TransitionCollection & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContentControl2
+{
+    Windows::UI::Xaml::UIElement ContentTemplateRoot() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContentControlFactory
+{
+    Windows::UI::Xaml::Controls::ContentControl CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContentControlOverrides
+{
+    void OnContentChanged(const Windows::IInspectable & oldContent, const Windows::IInspectable & newContent) const;
+    void OnContentTemplateChanged(const Windows::UI::Xaml::DataTemplate & oldContentTemplate, const Windows::UI::Xaml::DataTemplate & newContentTemplate) const;
+    void OnContentTemplateSelectorChanged(const Windows::UI::Xaml::Controls::DataTemplateSelector & oldContentTemplateSelector, const Windows::UI::Xaml::Controls::DataTemplateSelector & newContentTemplateSelector) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContentControlStatics
+{
+    Windows::UI::Xaml::DependencyProperty ContentProperty() const;
+    Windows::UI::Xaml::DependencyProperty ContentTemplateProperty() const;
+    Windows::UI::Xaml::DependencyProperty ContentTemplateSelectorProperty() const;
+    Windows::UI::Xaml::DependencyProperty ContentTransitionsProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContentDialog
+{
+    Windows::IInspectable Title() const;
+    void Title(const Windows::IInspectable & value) const;
+    Windows::UI::Xaml::DataTemplate TitleTemplate() const;
+    void TitleTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
+    bool FullSizeDesired() const;
+    void FullSizeDesired(bool value) const;
+    hstring PrimaryButtonText() const;
+    void PrimaryButtonText(hstring_ref value) const;
+    hstring SecondaryButtonText() const;
+    void SecondaryButtonText(hstring_ref value) const;
+    Windows::UI::Xaml::Input::ICommand PrimaryButtonCommand() const;
+    void PrimaryButtonCommand(const Windows::UI::Xaml::Input::ICommand & value) const;
+    Windows::UI::Xaml::Input::ICommand SecondaryButtonCommand() const;
+    void SecondaryButtonCommand(const Windows::UI::Xaml::Input::ICommand & value) const;
+    Windows::IInspectable PrimaryButtonCommandParameter() const;
+    void PrimaryButtonCommandParameter(const Windows::IInspectable & value) const;
+    Windows::IInspectable SecondaryButtonCommandParameter() const;
+    void SecondaryButtonCommandParameter(const Windows::IInspectable & value) const;
+    bool IsPrimaryButtonEnabled() const;
+    void IsPrimaryButtonEnabled(bool value) const;
+    bool IsSecondaryButtonEnabled() const;
+    void IsSecondaryButtonEnabled(bool value) const;
+    event_token Closing(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::ContentDialog, Windows::UI::Xaml::Controls::ContentDialogClosingEventArgs> & value) const;
+    using Closing_revoker = event_revoker<IContentDialog>;
+    Closing_revoker Closing(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::ContentDialog, Windows::UI::Xaml::Controls::ContentDialogClosingEventArgs> & value) const;
+    void Closing(event_token token) const;
+    event_token Closed(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::ContentDialog, Windows::UI::Xaml::Controls::ContentDialogClosedEventArgs> & value) const;
+    using Closed_revoker = event_revoker<IContentDialog>;
+    Closed_revoker Closed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::ContentDialog, Windows::UI::Xaml::Controls::ContentDialogClosedEventArgs> & value) const;
+    void Closed(event_token token) const;
+    event_token Opened(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::ContentDialog, Windows::UI::Xaml::Controls::ContentDialogOpenedEventArgs> & value) const;
+    using Opened_revoker = event_revoker<IContentDialog>;
+    Opened_revoker Opened(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::ContentDialog, Windows::UI::Xaml::Controls::ContentDialogOpenedEventArgs> & value) const;
+    void Opened(event_token token) const;
+    event_token PrimaryButtonClick(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::ContentDialog, Windows::UI::Xaml::Controls::ContentDialogButtonClickEventArgs> & value) const;
+    using PrimaryButtonClick_revoker = event_revoker<IContentDialog>;
+    PrimaryButtonClick_revoker PrimaryButtonClick(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::ContentDialog, Windows::UI::Xaml::Controls::ContentDialogButtonClickEventArgs> & value) const;
+    void PrimaryButtonClick(event_token token) const;
+    event_token SecondaryButtonClick(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::ContentDialog, Windows::UI::Xaml::Controls::ContentDialogButtonClickEventArgs> & value) const;
+    using SecondaryButtonClick_revoker = event_revoker<IContentDialog>;
+    SecondaryButtonClick_revoker SecondaryButtonClick(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::ContentDialog, Windows::UI::Xaml::Controls::ContentDialogButtonClickEventArgs> & value) const;
+    void SecondaryButtonClick(event_token token) const;
+    void Hide() const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::UI::Xaml::Controls::ContentDialogResult> ShowAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContentDialogButtonClickDeferral
+{
+    void Complete() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContentDialogButtonClickEventArgs
+{
+    bool Cancel() const;
+    void Cancel(bool value) const;
+    Windows::UI::Xaml::Controls::ContentDialogButtonClickDeferral GetDeferral() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContentDialogClosedEventArgs
+{
+    Windows::UI::Xaml::Controls::ContentDialogResult Result() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContentDialogClosingDeferral
+{
+    void Complete() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContentDialogClosingEventArgs
+{
+    Windows::UI::Xaml::Controls::ContentDialogResult Result() const;
+    bool Cancel() const;
+    void Cancel(bool value) const;
+    Windows::UI::Xaml::Controls::ContentDialogClosingDeferral GetDeferral() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContentDialogFactory
+{
+    Windows::UI::Xaml::Controls::ContentDialog CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContentDialogOpenedEventArgs
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContentDialogStatics
+{
+    Windows::UI::Xaml::DependencyProperty TitleProperty() const;
+    Windows::UI::Xaml::DependencyProperty TitleTemplateProperty() const;
+    Windows::UI::Xaml::DependencyProperty FullSizeDesiredProperty() const;
+    Windows::UI::Xaml::DependencyProperty PrimaryButtonTextProperty() const;
+    Windows::UI::Xaml::DependencyProperty SecondaryButtonTextProperty() const;
+    Windows::UI::Xaml::DependencyProperty PrimaryButtonCommandProperty() const;
+    Windows::UI::Xaml::DependencyProperty SecondaryButtonCommandProperty() const;
+    Windows::UI::Xaml::DependencyProperty PrimaryButtonCommandParameterProperty() const;
+    Windows::UI::Xaml::DependencyProperty SecondaryButtonCommandParameterProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsPrimaryButtonEnabledProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsSecondaryButtonEnabledProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContentPresenter
+{
+    Windows::IInspectable Content() const;
+    void Content(const Windows::IInspectable & value) const;
+    Windows::UI::Xaml::DataTemplate ContentTemplate() const;
+    void ContentTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
+    Windows::UI::Xaml::Controls::DataTemplateSelector ContentTemplateSelector() const;
+    void ContentTemplateSelector(const Windows::UI::Xaml::Controls::DataTemplateSelector & value) const;
+    Windows::UI::Xaml::Media::Animation::TransitionCollection ContentTransitions() const;
+    void ContentTransitions(const Windows::UI::Xaml::Media::Animation::TransitionCollection & value) const;
+    double FontSize() const;
+    void FontSize(double value) const;
+    Windows::UI::Xaml::Media::FontFamily FontFamily() const;
+    void FontFamily(const Windows::UI::Xaml::Media::FontFamily & value) const;
+    Windows::UI::Text::FontWeight FontWeight() const;
+    void FontWeight(const Windows::UI::Text::FontWeight & value) const;
+    Windows::UI::Text::FontStyle FontStyle() const;
+    void FontStyle(Windows::UI::Text::FontStyle value) const;
+    Windows::UI::Text::FontStretch FontStretch() const;
+    void FontStretch(Windows::UI::Text::FontStretch value) const;
+    int32_t CharacterSpacing() const;
+    void CharacterSpacing(int32_t value) const;
+    Windows::UI::Xaml::Media::Brush Foreground() const;
+    void Foreground(const Windows::UI::Xaml::Media::Brush & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContentPresenter2
+{
+    Windows::UI::Xaml::OpticalMarginAlignment OpticalMarginAlignment() const;
+    void OpticalMarginAlignment(Windows::UI::Xaml::OpticalMarginAlignment value) const;
+    Windows::UI::Xaml::TextLineBounds TextLineBounds() const;
+    void TextLineBounds(Windows::UI::Xaml::TextLineBounds value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContentPresenter3
+{
+    bool IsTextScaleFactorEnabled() const;
+    void IsTextScaleFactorEnabled(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContentPresenter4
+{
+    Windows::UI::Xaml::TextWrapping TextWrapping() const;
+    void TextWrapping(Windows::UI::Xaml::TextWrapping value) const;
+    int32_t MaxLines() const;
+    void MaxLines(int32_t value) const;
+    Windows::UI::Xaml::LineStackingStrategy LineStackingStrategy() const;
+    void LineStackingStrategy(Windows::UI::Xaml::LineStackingStrategy value) const;
+    double LineHeight() const;
+    void LineHeight(double value) const;
+    Windows::UI::Xaml::Media::Brush BorderBrush() const;
+    void BorderBrush(const Windows::UI::Xaml::Media::Brush & value) const;
+    Windows::UI::Xaml::Thickness BorderThickness() const;
+    void BorderThickness(const Windows::UI::Xaml::Thickness & value) const;
+    Windows::UI::Xaml::CornerRadius CornerRadius() const;
+    void CornerRadius(const Windows::UI::Xaml::CornerRadius & value) const;
+    Windows::UI::Xaml::Thickness Padding() const;
+    void Padding(const Windows::UI::Xaml::Thickness & value) const;
+    Windows::UI::Xaml::Media::Brush Background() const;
+    void Background(const Windows::UI::Xaml::Media::Brush & value) const;
+    Windows::UI::Xaml::HorizontalAlignment HorizontalContentAlignment() const;
+    void HorizontalContentAlignment(Windows::UI::Xaml::HorizontalAlignment value) const;
+    Windows::UI::Xaml::VerticalAlignment VerticalContentAlignment() const;
+    void VerticalContentAlignment(Windows::UI::Xaml::VerticalAlignment value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContentPresenterFactory
+{
+    Windows::UI::Xaml::Controls::ContentPresenter CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContentPresenterOverrides
+{
+    void OnContentTemplateChanged(const Windows::UI::Xaml::DataTemplate & oldContentTemplate, const Windows::UI::Xaml::DataTemplate & newContentTemplate) const;
+    void OnContentTemplateSelectorChanged(const Windows::UI::Xaml::Controls::DataTemplateSelector & oldContentTemplateSelector, const Windows::UI::Xaml::Controls::DataTemplateSelector & newContentTemplateSelector) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContentPresenterStatics
+{
+    Windows::UI::Xaml::DependencyProperty ContentProperty() const;
+    Windows::UI::Xaml::DependencyProperty ContentTemplateProperty() const;
+    Windows::UI::Xaml::DependencyProperty ContentTemplateSelectorProperty() const;
+    Windows::UI::Xaml::DependencyProperty ContentTransitionsProperty() const;
+    Windows::UI::Xaml::DependencyProperty FontSizeProperty() const;
+    Windows::UI::Xaml::DependencyProperty FontFamilyProperty() const;
+    Windows::UI::Xaml::DependencyProperty FontWeightProperty() const;
+    Windows::UI::Xaml::DependencyProperty FontStyleProperty() const;
+    Windows::UI::Xaml::DependencyProperty FontStretchProperty() const;
+    Windows::UI::Xaml::DependencyProperty CharacterSpacingProperty() const;
+    Windows::UI::Xaml::DependencyProperty ForegroundProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContentPresenterStatics2
+{
+    Windows::UI::Xaml::DependencyProperty OpticalMarginAlignmentProperty() const;
+    Windows::UI::Xaml::DependencyProperty TextLineBoundsProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContentPresenterStatics3
+{
+    Windows::UI::Xaml::DependencyProperty IsTextScaleFactorEnabledProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContentPresenterStatics4
+{
+    Windows::UI::Xaml::DependencyProperty TextWrappingProperty() const;
+    Windows::UI::Xaml::DependencyProperty MaxLinesProperty() const;
+    Windows::UI::Xaml::DependencyProperty LineStackingStrategyProperty() const;
+    Windows::UI::Xaml::DependencyProperty LineHeightProperty() const;
+    Windows::UI::Xaml::DependencyProperty BorderBrushProperty() const;
+    Windows::UI::Xaml::DependencyProperty BorderThicknessProperty() const;
+    Windows::UI::Xaml::DependencyProperty CornerRadiusProperty() const;
+    Windows::UI::Xaml::DependencyProperty PaddingProperty() const;
+    Windows::UI::Xaml::DependencyProperty BackgroundProperty() const;
+    Windows::UI::Xaml::DependencyProperty HorizontalContentAlignmentProperty() const;
+    Windows::UI::Xaml::DependencyProperty VerticalContentAlignmentProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContextMenuEventArgs
+{
+    bool Handled() const;
+    void Handled(bool value) const;
+    double CursorLeft() const;
+    double CursorTop() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IControl
+{
+    double FontSize() const;
+    void FontSize(double value) const;
+    Windows::UI::Xaml::Media::FontFamily FontFamily() const;
+    void FontFamily(const Windows::UI::Xaml::Media::FontFamily & value) const;
+    Windows::UI::Text::FontWeight FontWeight() const;
+    void FontWeight(const Windows::UI::Text::FontWeight & value) const;
+    Windows::UI::Text::FontStyle FontStyle() const;
+    void FontStyle(Windows::UI::Text::FontStyle value) const;
+    Windows::UI::Text::FontStretch FontStretch() const;
+    void FontStretch(Windows::UI::Text::FontStretch value) const;
+    int32_t CharacterSpacing() const;
+    void CharacterSpacing(int32_t value) const;
+    Windows::UI::Xaml::Media::Brush Foreground() const;
+    void Foreground(const Windows::UI::Xaml::Media::Brush & value) const;
+    bool IsTabStop() const;
+    void IsTabStop(bool value) const;
+    bool IsEnabled() const;
+    void IsEnabled(bool value) const;
+    int32_t TabIndex() const;
+    void TabIndex(int32_t value) const;
+    Windows::UI::Xaml::Input::KeyboardNavigationMode TabNavigation() const;
+    void TabNavigation(Windows::UI::Xaml::Input::KeyboardNavigationMode value) const;
+    Windows::UI::Xaml::Controls::ControlTemplate Template() const;
+    void Template(const Windows::UI::Xaml::Controls::ControlTemplate & value) const;
+    Windows::UI::Xaml::Thickness Padding() const;
+    void Padding(const Windows::UI::Xaml::Thickness & value) const;
+    Windows::UI::Xaml::HorizontalAlignment HorizontalContentAlignment() const;
+    void HorizontalContentAlignment(Windows::UI::Xaml::HorizontalAlignment value) const;
+    Windows::UI::Xaml::VerticalAlignment VerticalContentAlignment() const;
+    void VerticalContentAlignment(Windows::UI::Xaml::VerticalAlignment value) const;
+    Windows::UI::Xaml::Media::Brush Background() const;
+    void Background(const Windows::UI::Xaml::Media::Brush & value) const;
+    Windows::UI::Xaml::Thickness BorderThickness() const;
+    void BorderThickness(const Windows::UI::Xaml::Thickness & value) const;
+    Windows::UI::Xaml::Media::Brush BorderBrush() const;
+    void BorderBrush(const Windows::UI::Xaml::Media::Brush & value) const;
+    Windows::UI::Xaml::FocusState FocusState() const;
+    event_token IsEnabledChanged(const Windows::UI::Xaml::DependencyPropertyChangedEventHandler & value) const;
+    using IsEnabledChanged_revoker = event_revoker<IControl>;
+    IsEnabledChanged_revoker IsEnabledChanged(auto_revoke_t, const Windows::UI::Xaml::DependencyPropertyChangedEventHandler & value) const;
+    void IsEnabledChanged(event_token token) const;
+    bool ApplyTemplate() const;
+    bool Focus(Windows::UI::Xaml::FocusState value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IControl2
+{
+    bool IsTextScaleFactorEnabled() const;
+    void IsTextScaleFactorEnabled(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IControl3
+{
+    bool UseSystemFocusVisuals() const;
+    void UseSystemFocusVisuals(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IControl4
+{
+    bool IsFocusEngagementEnabled() const;
+    void IsFocusEngagementEnabled(bool value) const;
+    bool IsFocusEngaged() const;
+    void IsFocusEngaged(bool value) const;
+    Windows::UI::Xaml::Controls::RequiresPointer RequiresPointer() const;
+    void RequiresPointer(Windows::UI::Xaml::Controls::RequiresPointer value) const;
+    Windows::UI::Xaml::DependencyObject XYFocusLeft() const;
+    void XYFocusLeft(const Windows::UI::Xaml::DependencyObject & value) const;
+    Windows::UI::Xaml::DependencyObject XYFocusRight() const;
+    void XYFocusRight(const Windows::UI::Xaml::DependencyObject & value) const;
+    Windows::UI::Xaml::DependencyObject XYFocusUp() const;
+    void XYFocusUp(const Windows::UI::Xaml::DependencyObject & value) const;
+    Windows::UI::Xaml::DependencyObject XYFocusDown() const;
+    void XYFocusDown(const Windows::UI::Xaml::DependencyObject & value) const;
+    Windows::UI::Xaml::ElementSoundMode ElementSoundMode() const;
+    void ElementSoundMode(Windows::UI::Xaml::ElementSoundMode value) const;
+    event_token FocusEngaged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Control, Windows::UI::Xaml::Controls::FocusEngagedEventArgs> & value) const;
+    using FocusEngaged_revoker = event_revoker<IControl4>;
+    FocusEngaged_revoker FocusEngaged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Control, Windows::UI::Xaml::Controls::FocusEngagedEventArgs> & value) const;
+    void FocusEngaged(event_token token) const;
+    event_token FocusDisengaged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Control, Windows::UI::Xaml::Controls::FocusDisengagedEventArgs> & value) const;
+    using FocusDisengaged_revoker = event_revoker<IControl4>;
+    FocusDisengaged_revoker FocusDisengaged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Control, Windows::UI::Xaml::Controls::FocusDisengagedEventArgs> & value) const;
+    void FocusDisengaged(event_token token) const;
+    void RemoveFocusEngagement() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IControlFactory
+{
+    Windows::UI::Xaml::Controls::Control CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IControlOverrides
+{
+    void OnPointerEntered(const Windows::UI::Xaml::Input::PointerRoutedEventArgs & e) const;
+    void OnPointerPressed(const Windows::UI::Xaml::Input::PointerRoutedEventArgs & e) const;
+    void OnPointerMoved(const Windows::UI::Xaml::Input::PointerRoutedEventArgs & e) const;
+    void OnPointerReleased(const Windows::UI::Xaml::Input::PointerRoutedEventArgs & e) const;
+    void OnPointerExited(const Windows::UI::Xaml::Input::PointerRoutedEventArgs & e) const;
+    void OnPointerCaptureLost(const Windows::UI::Xaml::Input::PointerRoutedEventArgs & e) const;
+    void OnPointerCanceled(const Windows::UI::Xaml::Input::PointerRoutedEventArgs & e) const;
+    void OnPointerWheelChanged(const Windows::UI::Xaml::Input::PointerRoutedEventArgs & e) const;
+    void OnTapped(const Windows::UI::Xaml::Input::TappedRoutedEventArgs & e) const;
+    void OnDoubleTapped(const Windows::UI::Xaml::Input::DoubleTappedRoutedEventArgs & e) const;
+    void OnHolding(const Windows::UI::Xaml::Input::HoldingRoutedEventArgs & e) const;
+    void OnRightTapped(const Windows::UI::Xaml::Input::RightTappedRoutedEventArgs & e) const;
+    void OnManipulationStarting(const Windows::UI::Xaml::Input::ManipulationStartingRoutedEventArgs & e) const;
+    void OnManipulationInertiaStarting(const Windows::UI::Xaml::Input::ManipulationInertiaStartingRoutedEventArgs & e) const;
+    void OnManipulationStarted(const Windows::UI::Xaml::Input::ManipulationStartedRoutedEventArgs & e) const;
+    void OnManipulationDelta(const Windows::UI::Xaml::Input::ManipulationDeltaRoutedEventArgs & e) const;
+    void OnManipulationCompleted(const Windows::UI::Xaml::Input::ManipulationCompletedRoutedEventArgs & e) const;
+    void OnKeyUp(const Windows::UI::Xaml::Input::KeyRoutedEventArgs & e) const;
+    void OnKeyDown(const Windows::UI::Xaml::Input::KeyRoutedEventArgs & e) const;
+    void OnGotFocus(const Windows::UI::Xaml::RoutedEventArgs & e) const;
+    void OnLostFocus(const Windows::UI::Xaml::RoutedEventArgs & e) const;
+    void OnDragEnter(const Windows::UI::Xaml::DragEventArgs & e) const;
+    void OnDragLeave(const Windows::UI::Xaml::DragEventArgs & e) const;
+    void OnDragOver(const Windows::UI::Xaml::DragEventArgs & e) const;
+    void OnDrop(const Windows::UI::Xaml::DragEventArgs & e) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IControlProtected
+{
+    Windows::IInspectable DefaultStyleKey() const;
+    void DefaultStyleKey(const Windows::IInspectable & value) const;
+    Windows::UI::Xaml::DependencyObject GetTemplateChild(hstring_ref childName) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IControlStatics
+{
+    Windows::UI::Xaml::DependencyProperty FontSizeProperty() const;
+    Windows::UI::Xaml::DependencyProperty FontFamilyProperty() const;
+    Windows::UI::Xaml::DependencyProperty FontWeightProperty() const;
+    Windows::UI::Xaml::DependencyProperty FontStyleProperty() const;
+    Windows::UI::Xaml::DependencyProperty FontStretchProperty() const;
+    Windows::UI::Xaml::DependencyProperty CharacterSpacingProperty() const;
+    Windows::UI::Xaml::DependencyProperty ForegroundProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsTabStopProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsEnabledProperty() const;
+    Windows::UI::Xaml::DependencyProperty TabIndexProperty() const;
+    Windows::UI::Xaml::DependencyProperty TabNavigationProperty() const;
+    Windows::UI::Xaml::DependencyProperty TemplateProperty() const;
+    Windows::UI::Xaml::DependencyProperty PaddingProperty() const;
+    Windows::UI::Xaml::DependencyProperty HorizontalContentAlignmentProperty() const;
+    Windows::UI::Xaml::DependencyProperty VerticalContentAlignmentProperty() const;
+    Windows::UI::Xaml::DependencyProperty BackgroundProperty() const;
+    Windows::UI::Xaml::DependencyProperty BorderThicknessProperty() const;
+    Windows::UI::Xaml::DependencyProperty BorderBrushProperty() const;
+    Windows::UI::Xaml::DependencyProperty DefaultStyleKeyProperty() const;
+    Windows::UI::Xaml::DependencyProperty FocusStateProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IControlStatics2
+{
+    Windows::UI::Xaml::DependencyProperty IsTextScaleFactorEnabledProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IControlStatics3
+{
+    Windows::UI::Xaml::DependencyProperty UseSystemFocusVisualsProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsTemplateFocusTargetProperty() const;
+    bool GetIsTemplateFocusTarget(const Windows::UI::Xaml::FrameworkElement & element) const;
+    void SetIsTemplateFocusTarget(const Windows::UI::Xaml::FrameworkElement & element, bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IControlStatics4
+{
+    Windows::UI::Xaml::DependencyProperty IsFocusEngagementEnabledProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsFocusEngagedProperty() const;
+    Windows::UI::Xaml::DependencyProperty RequiresPointerProperty() const;
+    Windows::UI::Xaml::DependencyProperty XYFocusLeftProperty() const;
+    Windows::UI::Xaml::DependencyProperty XYFocusRightProperty() const;
+    Windows::UI::Xaml::DependencyProperty XYFocusUpProperty() const;
+    Windows::UI::Xaml::DependencyProperty XYFocusDownProperty() const;
+    Windows::UI::Xaml::DependencyProperty ElementSoundModeProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IControlTemplate
+{
+    Windows::UI::Xaml::Interop::TypeName TargetType() const;
+    void TargetType(const Windows::UI::Xaml::Interop::TypeName & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataTemplateSelector
+{
+    Windows::UI::Xaml::DataTemplate SelectTemplate(const Windows::IInspectable & item, const Windows::UI::Xaml::DependencyObject & container) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataTemplateSelector2
+{
+    Windows::UI::Xaml::DataTemplate SelectTemplate(const Windows::IInspectable & item) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataTemplateSelectorFactory
+{
+    Windows::UI::Xaml::Controls::DataTemplateSelector CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataTemplateSelectorOverrides
+{
+    Windows::UI::Xaml::DataTemplate SelectTemplateCore(const Windows::IInspectable & item, const Windows::UI::Xaml::DependencyObject & container) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataTemplateSelectorOverrides2
+{
+    Windows::UI::Xaml::DataTemplate SelectTemplateCore(const Windows::IInspectable & item) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDatePickedEventArgs
+{
+    Windows::Foundation::DateTime OldDate() const;
+    Windows::Foundation::DateTime NewDate() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDatePicker
+{
+    Windows::IInspectable Header() const;
+    void Header(const Windows::IInspectable & value) const;
+    Windows::UI::Xaml::DataTemplate HeaderTemplate() const;
+    void HeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
+    hstring CalendarIdentifier() const;
+    void CalendarIdentifier(hstring_ref value) const;
+    Windows::Foundation::DateTime Date() const;
+    void Date(const Windows::Foundation::DateTime & value) const;
+    bool DayVisible() const;
+    void DayVisible(bool value) const;
+    bool MonthVisible() const;
+    void MonthVisible(bool value) const;
+    bool YearVisible() const;
+    void YearVisible(bool value) const;
+    hstring DayFormat() const;
+    void DayFormat(hstring_ref value) const;
+    hstring MonthFormat() const;
+    void MonthFormat(hstring_ref value) const;
+    hstring YearFormat() const;
+    void YearFormat(hstring_ref value) const;
+    Windows::Foundation::DateTime MinYear() const;
+    void MinYear(const Windows::Foundation::DateTime & value) const;
+    Windows::Foundation::DateTime MaxYear() const;
+    void MaxYear(const Windows::Foundation::DateTime & value) const;
+    Windows::UI::Xaml::Controls::Orientation Orientation() const;
+    void Orientation(Windows::UI::Xaml::Controls::Orientation value) const;
+    event_token DateChanged(const Windows::Foundation::EventHandler<Windows::UI::Xaml::Controls::DatePickerValueChangedEventArgs> & value) const;
+    using DateChanged_revoker = event_revoker<IDatePicker>;
+    DateChanged_revoker DateChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::UI::Xaml::Controls::DatePickerValueChangedEventArgs> & value) const;
+    void DateChanged(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDatePicker2
+{
+    Windows::UI::Xaml::Controls::LightDismissOverlayMode LightDismissOverlayMode() const;
+    void LightDismissOverlayMode(Windows::UI::Xaml::Controls::LightDismissOverlayMode value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDatePickerFactory
+{
+    Windows::UI::Xaml::Controls::DatePicker CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDatePickerFlyout
+{
+    hstring CalendarIdentifier() const;
+    void CalendarIdentifier(hstring_ref value) const;
+    Windows::Foundation::DateTime Date() const;
+    void Date(const Windows::Foundation::DateTime & value) const;
+    bool DayVisible() const;
+    void DayVisible(bool value) const;
+    bool MonthVisible() const;
+    void MonthVisible(bool value) const;
+    bool YearVisible() const;
+    void YearVisible(bool value) const;
+    Windows::Foundation::DateTime MinYear() const;
+    void MinYear(const Windows::Foundation::DateTime & value) const;
+    Windows::Foundation::DateTime MaxYear() const;
+    void MaxYear(const Windows::Foundation::DateTime & value) const;
+    event_token DatePicked(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::DatePickerFlyout, Windows::UI::Xaml::Controls::DatePickedEventArgs> & value) const;
+    using DatePicked_revoker = event_revoker<IDatePickerFlyout>;
+    DatePicked_revoker DatePicked(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::DatePickerFlyout, Windows::UI::Xaml::Controls::DatePickedEventArgs> & value) const;
+    void DatePicked(event_token token) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::IReference<Windows::Foundation::DateTime>> ShowAtAsync(const Windows::UI::Xaml::FrameworkElement & target) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDatePickerFlyout2
+{
+    hstring DayFormat() const;
+    void DayFormat(hstring_ref value) const;
+    hstring MonthFormat() const;
+    void MonthFormat(hstring_ref value) const;
+    hstring YearFormat() const;
+    void YearFormat(hstring_ref value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDatePickerFlyoutItem
+{
+    hstring PrimaryText() const;
+    void PrimaryText(hstring_ref value) const;
+    hstring SecondaryText() const;
+    void SecondaryText(hstring_ref value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDatePickerFlyoutItemStatics
+{
+    Windows::UI::Xaml::DependencyProperty PrimaryTextProperty() const;
+    Windows::UI::Xaml::DependencyProperty SecondaryTextProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDatePickerFlyoutPresenter
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDatePickerFlyoutStatics
+{
+    Windows::UI::Xaml::DependencyProperty CalendarIdentifierProperty() const;
+    Windows::UI::Xaml::DependencyProperty DateProperty() const;
+    Windows::UI::Xaml::DependencyProperty DayVisibleProperty() const;
+    Windows::UI::Xaml::DependencyProperty MonthVisibleProperty() const;
+    Windows::UI::Xaml::DependencyProperty YearVisibleProperty() const;
+    Windows::UI::Xaml::DependencyProperty MinYearProperty() const;
+    Windows::UI::Xaml::DependencyProperty MaxYearProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDatePickerFlyoutStatics2
+{
+    Windows::UI::Xaml::DependencyProperty DayFormatProperty() const;
+    Windows::UI::Xaml::DependencyProperty MonthFormatProperty() const;
+    Windows::UI::Xaml::DependencyProperty YearFormatProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDatePickerStatics
+{
+    Windows::UI::Xaml::DependencyProperty HeaderProperty() const;
+    Windows::UI::Xaml::DependencyProperty HeaderTemplateProperty() const;
+    Windows::UI::Xaml::DependencyProperty CalendarIdentifierProperty() const;
+    Windows::UI::Xaml::DependencyProperty DateProperty() const;
+    Windows::UI::Xaml::DependencyProperty DayVisibleProperty() const;
+    Windows::UI::Xaml::DependencyProperty MonthVisibleProperty() const;
+    Windows::UI::Xaml::DependencyProperty YearVisibleProperty() const;
+    Windows::UI::Xaml::DependencyProperty DayFormatProperty() const;
+    Windows::UI::Xaml::DependencyProperty MonthFormatProperty() const;
+    Windows::UI::Xaml::DependencyProperty YearFormatProperty() const;
+    Windows::UI::Xaml::DependencyProperty MinYearProperty() const;
+    Windows::UI::Xaml::DependencyProperty MaxYearProperty() const;
+    Windows::UI::Xaml::DependencyProperty OrientationProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDatePickerStatics2
+{
+    Windows::UI::Xaml::DependencyProperty LightDismissOverlayModeProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDatePickerValueChangedEventArgs
+{
+    Windows::Foundation::DateTime OldDate() const;
+    Windows::Foundation::DateTime NewDate() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDragItemsCompletedEventArgs
+{
+    Windows::Foundation::Collections::IVectorView<Windows::IInspectable> Items() const;
+    Windows::ApplicationModel::DataTransfer::DataPackageOperation DropResult() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDragItemsStartingEventArgs
+{
+    bool Cancel() const;
+    void Cancel(bool value) const;
+    Windows::Foundation::Collections::IVector<Windows::IInspectable> Items() const;
+    Windows::ApplicationModel::DataTransfer::DataPackage Data() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDynamicOverflowItemsChangingEventArgs
+{
+    Windows::UI::Xaml::Controls::CommandBarDynamicOverflowAction Action() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFlipView
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFlipView2
+{
+    bool UseTouchAnimationsForAllNavigation() const;
+    void UseTouchAnimationsForAllNavigation(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFlipViewFactory
+{
+    Windows::UI::Xaml::Controls::FlipView CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFlipViewItem
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFlipViewItemFactory
+{
+    Windows::UI::Xaml::Controls::FlipViewItem CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFlipViewStatics2
+{
+    Windows::UI::Xaml::DependencyProperty UseTouchAnimationsForAllNavigationProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFlyout
+{
+    Windows::UI::Xaml::UIElement Content() const;
+    void Content(const Windows::UI::Xaml::UIElement & value) const;
+    Windows::UI::Xaml::Style FlyoutPresenterStyle() const;
+    void FlyoutPresenterStyle(const Windows::UI::Xaml::Style & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFlyoutFactory
+{
+    Windows::UI::Xaml::Controls::Flyout CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFlyoutPresenter
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFlyoutPresenterFactory
+{
+    Windows::UI::Xaml::Controls::FlyoutPresenter CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFlyoutStatics
+{
+    Windows::UI::Xaml::DependencyProperty ContentProperty() const;
+    Windows::UI::Xaml::DependencyProperty FlyoutPresenterStyleProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFocusDisengagedEventArgs
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFocusEngagedEventArgs
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFontIcon
+{
+    hstring Glyph() const;
+    void Glyph(hstring_ref value) const;
+    double FontSize() const;
+    void FontSize(double value) const;
+    Windows::UI::Xaml::Media::FontFamily FontFamily() const;
+    void FontFamily(const Windows::UI::Xaml::Media::FontFamily & value) const;
+    Windows::UI::Text::FontWeight FontWeight() const;
+    void FontWeight(const Windows::UI::Text::FontWeight & value) const;
+    Windows::UI::Text::FontStyle FontStyle() const;
+    void FontStyle(Windows::UI::Text::FontStyle value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFontIcon2
+{
+    bool IsTextScaleFactorEnabled() const;
+    void IsTextScaleFactorEnabled(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFontIcon3
+{
+    bool MirroredWhenRightToLeft() const;
+    void MirroredWhenRightToLeft(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFontIconFactory
+{
+    Windows::UI::Xaml::Controls::FontIcon CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFontIconStatics
+{
+    Windows::UI::Xaml::DependencyProperty GlyphProperty() const;
+    Windows::UI::Xaml::DependencyProperty FontSizeProperty() const;
+    Windows::UI::Xaml::DependencyProperty FontFamilyProperty() const;
+    Windows::UI::Xaml::DependencyProperty FontWeightProperty() const;
+    Windows::UI::Xaml::DependencyProperty FontStyleProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFontIconStatics2
+{
+    Windows::UI::Xaml::DependencyProperty IsTextScaleFactorEnabledProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFontIconStatics3
+{
+    Windows::UI::Xaml::DependencyProperty MirroredWhenRightToLeftProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFrame
+{
+    int32_t CacheSize() const;
+    void CacheSize(int32_t value) const;
+    bool CanGoBack() const;
+    bool CanGoForward() const;
+    Windows::UI::Xaml::Interop::TypeName CurrentSourcePageType() const;
+    Windows::UI::Xaml::Interop::TypeName SourcePageType() const;
+    void SourcePageType(const Windows::UI::Xaml::Interop::TypeName & value) const;
+    int32_t BackStackDepth() const;
+    event_token Navigated(const Windows::UI::Xaml::Navigation::NavigatedEventHandler & value) const;
+    using Navigated_revoker = event_revoker<IFrame>;
+    Navigated_revoker Navigated(auto_revoke_t, const Windows::UI::Xaml::Navigation::NavigatedEventHandler & value) const;
+    void Navigated(event_token token) const;
+    event_token Navigating(const Windows::UI::Xaml::Navigation::NavigatingCancelEventHandler & value) const;
+    using Navigating_revoker = event_revoker<IFrame>;
+    Navigating_revoker Navigating(auto_revoke_t, const Windows::UI::Xaml::Navigation::NavigatingCancelEventHandler & value) const;
+    void Navigating(event_token token) const;
+    event_token NavigationFailed(const Windows::UI::Xaml::Navigation::NavigationFailedEventHandler & value) const;
+    using NavigationFailed_revoker = event_revoker<IFrame>;
+    NavigationFailed_revoker NavigationFailed(auto_revoke_t, const Windows::UI::Xaml::Navigation::NavigationFailedEventHandler & value) const;
+    void NavigationFailed(event_token token) const;
+    event_token NavigationStopped(const Windows::UI::Xaml::Navigation::NavigationStoppedEventHandler & value) const;
+    using NavigationStopped_revoker = event_revoker<IFrame>;
+    NavigationStopped_revoker NavigationStopped(auto_revoke_t, const Windows::UI::Xaml::Navigation::NavigationStoppedEventHandler & value) const;
+    void NavigationStopped(event_token token) const;
+    void GoBack() const;
+    void GoForward() const;
+    bool Navigate(const Windows::UI::Xaml::Interop::TypeName & sourcePageType, const Windows::IInspectable & parameter) const;
+    hstring GetNavigationState() const;
+    void SetNavigationState(hstring_ref navigationState) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFrame2
+{
+    Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Navigation::PageStackEntry> BackStack() const;
+    Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Navigation::PageStackEntry> ForwardStack() const;
+    bool Navigate(const Windows::UI::Xaml::Interop::TypeName & sourcePageType, const Windows::IInspectable & parameter, const Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo & infoOverride) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFrame3
+{
+    void GoBack(const Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo & transitionInfoOverride) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFrameFactory
+{
+    Windows::UI::Xaml::Controls::Frame CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFrameStatics
+{
+    Windows::UI::Xaml::DependencyProperty CacheSizeProperty() const;
+    Windows::UI::Xaml::DependencyProperty CanGoBackProperty() const;
+    Windows::UI::Xaml::DependencyProperty CanGoForwardProperty() const;
+    Windows::UI::Xaml::DependencyProperty CurrentSourcePageTypeProperty() const;
+    Windows::UI::Xaml::DependencyProperty SourcePageTypeProperty() const;
+    Windows::UI::Xaml::DependencyProperty BackStackDepthProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFrameStatics2
+{
+    Windows::UI::Xaml::DependencyProperty BackStackProperty() const;
+    Windows::UI::Xaml::DependencyProperty ForwardStackProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGrid
+{
+    Windows::UI::Xaml::Controls::RowDefinitionCollection RowDefinitions() const;
+    Windows::UI::Xaml::Controls::ColumnDefinitionCollection ColumnDefinitions() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGrid2
+{
+    Windows::UI::Xaml::Media::Brush BorderBrush() const;
+    void BorderBrush(const Windows::UI::Xaml::Media::Brush & value) const;
+    Windows::UI::Xaml::Thickness BorderThickness() const;
+    void BorderThickness(const Windows::UI::Xaml::Thickness & value) const;
+    Windows::UI::Xaml::CornerRadius CornerRadius() const;
+    void CornerRadius(const Windows::UI::Xaml::CornerRadius & value) const;
+    Windows::UI::Xaml::Thickness Padding() const;
+    void Padding(const Windows::UI::Xaml::Thickness & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGridFactory
+{
+    Windows::UI::Xaml::Controls::Grid CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGridStatics
+{
+    Windows::UI::Xaml::DependencyProperty RowProperty() const;
+    int32_t GetRow(const Windows::UI::Xaml::FrameworkElement & element) const;
+    void SetRow(const Windows::UI::Xaml::FrameworkElement & element, int32_t value) const;
+    Windows::UI::Xaml::DependencyProperty ColumnProperty() const;
+    int32_t GetColumn(const Windows::UI::Xaml::FrameworkElement & element) const;
+    void SetColumn(const Windows::UI::Xaml::FrameworkElement & element, int32_t value) const;
+    Windows::UI::Xaml::DependencyProperty RowSpanProperty() const;
+    int32_t GetRowSpan(const Windows::UI::Xaml::FrameworkElement & element) const;
+    void SetRowSpan(const Windows::UI::Xaml::FrameworkElement & element, int32_t value) const;
+    Windows::UI::Xaml::DependencyProperty ColumnSpanProperty() const;
+    int32_t GetColumnSpan(const Windows::UI::Xaml::FrameworkElement & element) const;
+    void SetColumnSpan(const Windows::UI::Xaml::FrameworkElement & element, int32_t value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGridStatics2
+{
+    Windows::UI::Xaml::DependencyProperty BorderBrushProperty() const;
+    Windows::UI::Xaml::DependencyProperty BorderThicknessProperty() const;
+    Windows::UI::Xaml::DependencyProperty CornerRadiusProperty() const;
+    Windows::UI::Xaml::DependencyProperty PaddingProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGridView
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGridViewFactory
+{
+    Windows::UI::Xaml::Controls::GridView CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGridViewHeaderItem
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGridViewHeaderItemFactory
+{
+    Windows::UI::Xaml::Controls::GridViewHeaderItem CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGridViewItem
+{
+    Windows::UI::Xaml::Controls::Primitives::GridViewItemTemplateSettings TemplateSettings() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGridViewItemFactory
+{
+    Windows::UI::Xaml::Controls::GridViewItem CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGroupItem
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGroupItemFactory
+{
+    Windows::UI::Xaml::Controls::GroupItem CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGroupStyle
+{
+    Windows::UI::Xaml::Controls::ItemsPanelTemplate Panel() const;
+    void Panel(const Windows::UI::Xaml::Controls::ItemsPanelTemplate & value) const;
+    Windows::UI::Xaml::Style ContainerStyle() const;
+    void ContainerStyle(const Windows::UI::Xaml::Style & value) const;
+    Windows::UI::Xaml::Controls::StyleSelector ContainerStyleSelector() const;
+    void ContainerStyleSelector(const Windows::UI::Xaml::Controls::StyleSelector & value) const;
+    Windows::UI::Xaml::DataTemplate HeaderTemplate() const;
+    void HeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
+    Windows::UI::Xaml::Controls::DataTemplateSelector HeaderTemplateSelector() const;
+    void HeaderTemplateSelector(const Windows::UI::Xaml::Controls::DataTemplateSelector & value) const;
+    bool HidesIfEmpty() const;
+    void HidesIfEmpty(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGroupStyle2
+{
+    Windows::UI::Xaml::Style HeaderContainerStyle() const;
+    void HeaderContainerStyle(const Windows::UI::Xaml::Style & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGroupStyleFactory
+{
+    Windows::UI::Xaml::Controls::GroupStyle CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGroupStyleSelector
+{
+    Windows::UI::Xaml::Controls::GroupStyle SelectGroupStyle(const Windows::IInspectable & group, uint32_t level) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGroupStyleSelectorFactory
+{
+    Windows::UI::Xaml::Controls::GroupStyleSelector CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGroupStyleSelectorOverrides
+{
+    Windows::UI::Xaml::Controls::GroupStyle SelectGroupStyleCore(const Windows::IInspectable & group, uint32_t level) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IHub
+{
+    Windows::IInspectable Header() const;
+    void Header(const Windows::IInspectable & value) const;
+    Windows::UI::Xaml::DataTemplate HeaderTemplate() const;
+    void HeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
+    Windows::UI::Xaml::Controls::Orientation Orientation() const;
+    void Orientation(Windows::UI::Xaml::Controls::Orientation value) const;
+    int32_t DefaultSectionIndex() const;
+    void DefaultSectionIndex(int32_t value) const;
+    Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Controls::HubSection> Sections() const;
+    Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Controls::HubSection> SectionsInView() const;
+    Windows::Foundation::Collections::IObservableVector<Windows::IInspectable> SectionHeaders() const;
+    event_token SectionHeaderClick(const Windows::UI::Xaml::Controls::HubSectionHeaderClickEventHandler & value) const;
+    using SectionHeaderClick_revoker = event_revoker<IHub>;
+    SectionHeaderClick_revoker SectionHeaderClick(auto_revoke_t, const Windows::UI::Xaml::Controls::HubSectionHeaderClickEventHandler & value) const;
+    void SectionHeaderClick(event_token token) const;
+    event_token SectionsInViewChanged(const Windows::UI::Xaml::Controls::SectionsInViewChangedEventHandler & value) const;
+    using SectionsInViewChanged_revoker = event_revoker<IHub>;
+    SectionsInViewChanged_revoker SectionsInViewChanged(auto_revoke_t, const Windows::UI::Xaml::Controls::SectionsInViewChangedEventHandler & value) const;
+    void SectionsInViewChanged(event_token token) const;
+    void ScrollToSection(const Windows::UI::Xaml::Controls::HubSection & section) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IHubFactory
+{
+    Windows::UI::Xaml::Controls::Hub CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IHubSection
+{
+    Windows::IInspectable Header() const;
+    void Header(const Windows::IInspectable & value) const;
+    Windows::UI::Xaml::DataTemplate HeaderTemplate() const;
+    void HeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
+    Windows::UI::Xaml::DataTemplate ContentTemplate() const;
+    void ContentTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
+    bool IsHeaderInteractive() const;
+    void IsHeaderInteractive(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IHubSectionFactory
+{
+    Windows::UI::Xaml::Controls::HubSection CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IHubSectionHeaderClickEventArgs
+{
+    Windows::UI::Xaml::Controls::HubSection Section() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IHubSectionStatics
+{
+    Windows::UI::Xaml::DependencyProperty HeaderProperty() const;
+    Windows::UI::Xaml::DependencyProperty HeaderTemplateProperty() const;
+    Windows::UI::Xaml::DependencyProperty ContentTemplateProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsHeaderInteractiveProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IHubStatics
+{
+    Windows::UI::Xaml::DependencyProperty HeaderProperty() const;
+    Windows::UI::Xaml::DependencyProperty HeaderTemplateProperty() const;
+    Windows::UI::Xaml::DependencyProperty OrientationProperty() const;
+    Windows::UI::Xaml::DependencyProperty DefaultSectionIndexProperty() const;
+    Windows::UI::Xaml::DependencyProperty SemanticZoomOwnerProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsActiveViewProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsZoomedInViewProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IHyperlinkButton
+{
+    Windows::Foundation::Uri NavigateUri() const;
+    void NavigateUri(const Windows::Foundation::Uri & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IHyperlinkButtonFactory
+{
+    Windows::UI::Xaml::Controls::HyperlinkButton CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IHyperlinkButtonStatics
+{
+    Windows::UI::Xaml::DependencyProperty NavigateUriProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IIconElement
+{
+    Windows::UI::Xaml::Media::Brush Foreground() const;
+    void Foreground(const Windows::UI::Xaml::Media::Brush & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IIconElementFactory
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IIconElementStatics
+{
+    Windows::UI::Xaml::DependencyProperty ForegroundProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IImage
+{
+    Windows::UI::Xaml::Media::ImageSource Source() const;
+    void Source(const Windows::UI::Xaml::Media::ImageSource & value) const;
+    Windows::UI::Xaml::Media::Stretch Stretch() const;
+    void Stretch(Windows::UI::Xaml::Media::Stretch value) const;
+    Windows::UI::Xaml::Thickness NineGrid() const;
+    void NineGrid(const Windows::UI::Xaml::Thickness & value) const;
+    Windows::Media::PlayTo::PlayToSource PlayToSource() const;
+    event_token ImageFailed(const Windows::UI::Xaml::ExceptionRoutedEventHandler & value) const;
+    using ImageFailed_revoker = event_revoker<IImage>;
+    ImageFailed_revoker ImageFailed(auto_revoke_t, const Windows::UI::Xaml::ExceptionRoutedEventHandler & value) const;
+    void ImageFailed(event_token token) const;
+    event_token ImageOpened(const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    using ImageOpened_revoker = event_revoker<IImage>;
+    ImageOpened_revoker ImageOpened(auto_revoke_t, const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    void ImageOpened(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IImage2
+{
+    Windows::Media::Casting::CastingSource GetAsCastingSource() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IImage3
+{
+    Windows::UI::Composition::CompositionBrush GetAlphaMask() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IImageStatics
+{
+    Windows::UI::Xaml::DependencyProperty SourceProperty() const;
+    Windows::UI::Xaml::DependencyProperty StretchProperty() const;
+    Windows::UI::Xaml::DependencyProperty NineGridProperty() const;
+    Windows::UI::Xaml::DependencyProperty PlayToSourceProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkCanvas
+{
+    Windows::UI::Input::Inking::InkPresenter InkPresenter() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkCanvasFactory
+{
+    Windows::UI::Xaml::Controls::InkCanvas CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbar
+{
+    Windows::UI::Xaml::Controls::InkToolbarInitialControls InitialControls() const;
+    void InitialControls(Windows::UI::Xaml::Controls::InkToolbarInitialControls value) const;
+    Windows::UI::Xaml::DependencyObjectCollection Children() const;
+    Windows::UI::Xaml::Controls::InkToolbarToolButton ActiveTool() const;
+    void ActiveTool(const Windows::UI::Xaml::Controls::InkToolbarToolButton & value) const;
+    Windows::UI::Input::Inking::InkDrawingAttributes InkDrawingAttributes() const;
+    bool IsRulerButtonChecked() const;
+    void IsRulerButtonChecked(bool value) const;
+    Windows::UI::Xaml::Controls::InkCanvas TargetInkCanvas() const;
+    void TargetInkCanvas(const Windows::UI::Xaml::Controls::InkCanvas & value) const;
+    event_token ActiveToolChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::IInspectable> & value) const;
+    using ActiveToolChanged_revoker = event_revoker<IInkToolbar>;
+    ActiveToolChanged_revoker ActiveToolChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::IInspectable> & value) const;
+    void ActiveToolChanged(event_token token) const;
+    event_token InkDrawingAttributesChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::IInspectable> & value) const;
+    using InkDrawingAttributesChanged_revoker = event_revoker<IInkToolbar>;
+    InkDrawingAttributesChanged_revoker InkDrawingAttributesChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::IInspectable> & value) const;
+    void InkDrawingAttributesChanged(event_token token) const;
+    event_token EraseAllClicked(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::IInspectable> & value) const;
+    using EraseAllClicked_revoker = event_revoker<IInkToolbar>;
+    EraseAllClicked_revoker EraseAllClicked(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::IInspectable> & value) const;
+    void EraseAllClicked(event_token token) const;
+    event_token IsRulerButtonCheckedChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::IInspectable> & value) const;
+    using IsRulerButtonCheckedChanged_revoker = event_revoker<IInkToolbar>;
+    IsRulerButtonCheckedChanged_revoker IsRulerButtonCheckedChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::InkToolbar, Windows::IInspectable> & value) const;
+    void IsRulerButtonCheckedChanged(event_token token) const;
+    Windows::UI::Xaml::Controls::InkToolbarToolButton GetToolButton(Windows::UI::Xaml::Controls::InkToolbarTool tool) const;
+    Windows::UI::Xaml::Controls::InkToolbarToggleButton GetToggleButton(Windows::UI::Xaml::Controls::InkToolbarToggle tool) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarBallpointPenButton
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarBallpointPenButtonFactory
+{
+    Windows::UI::Xaml::Controls::InkToolbarBallpointPenButton CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarCustomPen
+{
+    Windows::UI::Input::Inking::InkDrawingAttributes CreateInkDrawingAttributes(const Windows::UI::Xaml::Media::Brush & brush, double strokeWidth) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarCustomPenButton
+{
+    Windows::UI::Xaml::Controls::InkToolbarCustomPen CustomPen() const;
+    void CustomPen(const Windows::UI::Xaml::Controls::InkToolbarCustomPen & value) const;
+    Windows::UI::Xaml::UIElement ConfigurationContent() const;
+    void ConfigurationContent(const Windows::UI::Xaml::UIElement & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarCustomPenButtonFactory
+{
+    Windows::UI::Xaml::Controls::InkToolbarCustomPenButton CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarCustomPenButtonStatics
+{
+    Windows::UI::Xaml::DependencyProperty CustomPenProperty() const;
+    Windows::UI::Xaml::DependencyProperty ConfigurationContentProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarCustomPenFactory
+{
+    Windows::UI::Xaml::Controls::InkToolbarCustomPen CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarCustomPenOverrides
+{
+    Windows::UI::Input::Inking::InkDrawingAttributes CreateInkDrawingAttributesCore(const Windows::UI::Xaml::Media::Brush & brush, double strokeWidth) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarCustomToggleButton
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarCustomToggleButtonFactory
+{
+    Windows::UI::Xaml::Controls::InkToolbarCustomToggleButton CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarCustomToolButton
+{
+    Windows::UI::Xaml::UIElement ConfigurationContent() const;
+    void ConfigurationContent(const Windows::UI::Xaml::UIElement & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarCustomToolButtonFactory
+{
+    Windows::UI::Xaml::Controls::InkToolbarCustomToolButton CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarCustomToolButtonStatics
+{
+    Windows::UI::Xaml::DependencyProperty ConfigurationContentProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarEraserButton
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarEraserButtonFactory
+{
+    Windows::UI::Xaml::Controls::InkToolbarEraserButton CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarFactory
+{
+    Windows::UI::Xaml::Controls::InkToolbar CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarHighlighterButton
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarHighlighterButtonFactory
+{
+    Windows::UI::Xaml::Controls::InkToolbarHighlighterButton CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarPenButton
+{
+    Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::Brush> Palette() const;
+    void Palette(const Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Media::Brush> & value) const;
+    double MinStrokeWidth() const;
+    void MinStrokeWidth(double value) const;
+    double MaxStrokeWidth() const;
+    void MaxStrokeWidth(double value) const;
+    Windows::UI::Xaml::Media::Brush SelectedBrush() const;
+    int32_t SelectedBrushIndex() const;
+    void SelectedBrushIndex(int32_t value) const;
+    double SelectedStrokeWidth() const;
+    void SelectedStrokeWidth(double value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarPenButtonFactory
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarPenButtonStatics
+{
+    Windows::UI::Xaml::DependencyProperty PaletteProperty() const;
+    Windows::UI::Xaml::DependencyProperty MinStrokeWidthProperty() const;
+    Windows::UI::Xaml::DependencyProperty MaxStrokeWidthProperty() const;
+    Windows::UI::Xaml::DependencyProperty SelectedBrushProperty() const;
+    Windows::UI::Xaml::DependencyProperty SelectedBrushIndexProperty() const;
+    Windows::UI::Xaml::DependencyProperty SelectedStrokeWidthProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarPenConfigurationControl
+{
+    Windows::UI::Xaml::Controls::InkToolbarPenButton PenButton() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarPenConfigurationControlFactory
+{
+    Windows::UI::Xaml::Controls::InkToolbarPenConfigurationControl CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarPenConfigurationControlStatics
+{
+    Windows::UI::Xaml::DependencyProperty PenButtonProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarPencilButton
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarPencilButtonFactory
+{
+    Windows::UI::Xaml::Controls::InkToolbarPencilButton CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarRulerButton
+{
+    Windows::UI::Input::Inking::InkPresenterRuler Ruler() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarRulerButtonFactory
+{
+    Windows::UI::Xaml::Controls::InkToolbarRulerButton CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarRulerButtonStatics
+{
+    Windows::UI::Xaml::DependencyProperty RulerProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarStatics
+{
+    Windows::UI::Xaml::DependencyProperty InitialControlsProperty() const;
+    Windows::UI::Xaml::DependencyProperty ChildrenProperty() const;
+    Windows::UI::Xaml::DependencyProperty ActiveToolProperty() const;
+    Windows::UI::Xaml::DependencyProperty InkDrawingAttributesProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsRulerButtonCheckedProperty() const;
+    Windows::UI::Xaml::DependencyProperty TargetInkCanvasProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarToggleButton
+{
+    Windows::UI::Xaml::Controls::InkToolbarToggle ToggleKind() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarToggleButtonFactory
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarToolButton
+{
+    Windows::UI::Xaml::Controls::InkToolbarTool ToolKind() const;
+    bool IsExtensionGlyphShown() const;
+    void IsExtensionGlyphShown(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarToolButtonFactory
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkToolbarToolButtonStatics
+{
+    Windows::UI::Xaml::DependencyProperty IsExtensionGlyphShownProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInsertionPanel
+{
+    void GetInsertionIndexes(const Windows::Foundation::Point & position, int32_t & first, int32_t & second) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IItemClickEventArgs
+{
+    Windows::IInspectable ClickedItem() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IItemContainerGenerator
+{
+    event_token ItemsChanged(const Windows::UI::Xaml::Controls::Primitives::ItemsChangedEventHandler & value) const;
+    using ItemsChanged_revoker = event_revoker<IItemContainerGenerator>;
+    ItemsChanged_revoker ItemsChanged(auto_revoke_t, const Windows::UI::Xaml::Controls::Primitives::ItemsChangedEventHandler & value) const;
+    void ItemsChanged(event_token token) const;
+    Windows::IInspectable ItemFromContainer(const Windows::UI::Xaml::DependencyObject & container) const;
+    Windows::UI::Xaml::DependencyObject ContainerFromItem(const Windows::IInspectable & item) const;
+    int32_t IndexFromContainer(const Windows::UI::Xaml::DependencyObject & container) const;
+    Windows::UI::Xaml::DependencyObject ContainerFromIndex(int32_t index) const;
+    Windows::UI::Xaml::Controls::ItemContainerGenerator GetItemContainerGeneratorForPanel(const Windows::UI::Xaml::Controls::Panel & panel) const;
+    void StartAt(const Windows::UI::Xaml::Controls::Primitives::GeneratorPosition & position, Windows::UI::Xaml::Controls::Primitives::GeneratorDirection direction, bool allowStartAtRealizedItem) const;
+    void Stop() const;
+    Windows::UI::Xaml::DependencyObject GenerateNext(bool & isNewlyRealized) const;
+    void PrepareItemContainer(const Windows::UI::Xaml::DependencyObject & container) const;
+    void RemoveAll() const;
+    void Remove(const Windows::UI::Xaml::Controls::Primitives::GeneratorPosition & position, int32_t count) const;
+    Windows::UI::Xaml::Controls::Primitives::GeneratorPosition GeneratorPositionFromIndex(int32_t itemIndex) const;
+    int32_t IndexFromGeneratorPosition(const Windows::UI::Xaml::Controls::Primitives::GeneratorPosition & position) const;
+    void Recycle(const Windows::UI::Xaml::Controls::Primitives::GeneratorPosition & position, int32_t count) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IItemContainerMapping
+{
+    Windows::IInspectable ItemFromContainer(const Windows::UI::Xaml::DependencyObject & container) const;
+    Windows::UI::Xaml::DependencyObject ContainerFromItem(const Windows::IInspectable & item) const;
+    int32_t IndexFromContainer(const Windows::UI::Xaml::DependencyObject & container) const;
+    Windows::UI::Xaml::DependencyObject ContainerFromIndex(int32_t index) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IItemsControl
+{
+    Windows::IInspectable ItemsSource() const;
+    void ItemsSource(const Windows::IInspectable & value) const;
+    Windows::UI::Xaml::Controls::ItemCollection Items() const;
+    Windows::UI::Xaml::DataTemplate ItemTemplate() const;
+    void ItemTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
+    Windows::UI::Xaml::Controls::DataTemplateSelector ItemTemplateSelector() const;
+    void ItemTemplateSelector(const Windows::UI::Xaml::Controls::DataTemplateSelector & value) const;
+    Windows::UI::Xaml::Controls::ItemsPanelTemplate ItemsPanel() const;
+    void ItemsPanel(const Windows::UI::Xaml::Controls::ItemsPanelTemplate & value) const;
+    hstring DisplayMemberPath() const;
+    void DisplayMemberPath(hstring_ref value) const;
+    Windows::UI::Xaml::Style ItemContainerStyle() const;
+    void ItemContainerStyle(const Windows::UI::Xaml::Style & value) const;
+    Windows::UI::Xaml::Controls::StyleSelector ItemContainerStyleSelector() const;
+    void ItemContainerStyleSelector(const Windows::UI::Xaml::Controls::StyleSelector & value) const;
+    Windows::UI::Xaml::Controls::ItemContainerGenerator ItemContainerGenerator() const;
+    Windows::UI::Xaml::Media::Animation::TransitionCollection ItemContainerTransitions() const;
+    void ItemContainerTransitions(const Windows::UI::Xaml::Media::Animation::TransitionCollection & value) const;
+    Windows::Foundation::Collections::IObservableVector<Windows::UI::Xaml::Controls::GroupStyle> GroupStyle() const;
+    Windows::UI::Xaml::Controls::GroupStyleSelector GroupStyleSelector() const;
+    void GroupStyleSelector(const Windows::UI::Xaml::Controls::GroupStyleSelector & value) const;
+    bool IsGrouping() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IItemsControl2
+{
+    Windows::UI::Xaml::Controls::Panel ItemsPanelRoot() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IItemsControl3
+{
+    Windows::UI::Xaml::DependencyObject GroupHeaderContainerFromItemContainer(const Windows::UI::Xaml::DependencyObject & itemContainer) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IItemsControlFactory
+{
+    Windows::UI::Xaml::Controls::ItemsControl CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IItemsControlOverrides
+{
+    bool IsItemItsOwnContainerOverride(const Windows::IInspectable & item) const;
+    Windows::UI::Xaml::DependencyObject GetContainerForItemOverride() const;
+    void ClearContainerForItemOverride(const Windows::UI::Xaml::DependencyObject & element, const Windows::IInspectable & item) const;
+    void PrepareContainerForItemOverride(const Windows::UI::Xaml::DependencyObject & element, const Windows::IInspectable & item) const;
+    void OnItemsChanged(const Windows::IInspectable & e) const;
+    void OnItemContainerStyleChanged(const Windows::UI::Xaml::Style & oldItemContainerStyle, const Windows::UI::Xaml::Style & newItemContainerStyle) const;
+    void OnItemContainerStyleSelectorChanged(const Windows::UI::Xaml::Controls::StyleSelector & oldItemContainerStyleSelector, const Windows::UI::Xaml::Controls::StyleSelector & newItemContainerStyleSelector) const;
+    void OnItemTemplateChanged(const Windows::UI::Xaml::DataTemplate & oldItemTemplate, const Windows::UI::Xaml::DataTemplate & newItemTemplate) const;
+    void OnItemTemplateSelectorChanged(const Windows::UI::Xaml::Controls::DataTemplateSelector & oldItemTemplateSelector, const Windows::UI::Xaml::Controls::DataTemplateSelector & newItemTemplateSelector) const;
+    void OnGroupStyleSelectorChanged(const Windows::UI::Xaml::Controls::GroupStyleSelector & oldGroupStyleSelector, const Windows::UI::Xaml::Controls::GroupStyleSelector & newGroupStyleSelector) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IItemsControlStatics
+{
+    Windows::UI::Xaml::DependencyProperty ItemsSourceProperty() const;
+    Windows::UI::Xaml::DependencyProperty ItemTemplateProperty() const;
+    Windows::UI::Xaml::DependencyProperty ItemTemplateSelectorProperty() const;
+    Windows::UI::Xaml::DependencyProperty ItemsPanelProperty() const;
+    Windows::UI::Xaml::DependencyProperty DisplayMemberPathProperty() const;
+    Windows::UI::Xaml::DependencyProperty ItemContainerStyleProperty() const;
+    Windows::UI::Xaml::DependencyProperty ItemContainerStyleSelectorProperty() const;
+    Windows::UI::Xaml::DependencyProperty ItemContainerTransitionsProperty() const;
+    Windows::UI::Xaml::DependencyProperty GroupStyleSelectorProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsGroupingProperty() const;
+    Windows::UI::Xaml::Controls::ItemsControl GetItemsOwner(const Windows::UI::Xaml::DependencyObject & element) const;
+    Windows::UI::Xaml::Controls::ItemsControl ItemsControlFromItemContainer(const Windows::UI::Xaml::DependencyObject & container) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IItemsPanelTemplate
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IItemsPickedEventArgs
+{
+    Windows::Foundation::Collections::IVector<Windows::IInspectable> AddedItems() const;
+    Windows::Foundation::Collections::IVector<Windows::IInspectable> RemovedItems() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IItemsPresenter
+{
+    Windows::IInspectable Header() const;
+    void Header(const Windows::IInspectable & value) const;
+    Windows::UI::Xaml::DataTemplate HeaderTemplate() const;
+    void HeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
+    Windows::UI::Xaml::Media::Animation::TransitionCollection HeaderTransitions() const;
+    void HeaderTransitions(const Windows::UI::Xaml::Media::Animation::TransitionCollection & value) const;
+    Windows::UI::Xaml::Thickness Padding() const;
+    void Padding(const Windows::UI::Xaml::Thickness & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IItemsPresenter2
+{
+    Windows::IInspectable Footer() const;
+    void Footer(const Windows::IInspectable & value) const;
+    Windows::UI::Xaml::DataTemplate FooterTemplate() const;
+    void FooterTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
+    Windows::UI::Xaml::Media::Animation::TransitionCollection FooterTransitions() const;
+    void FooterTransitions(const Windows::UI::Xaml::Media::Animation::TransitionCollection & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IItemsPresenterStatics
+{
+    Windows::UI::Xaml::DependencyProperty HeaderProperty() const;
+    Windows::UI::Xaml::DependencyProperty HeaderTemplateProperty() const;
+    Windows::UI::Xaml::DependencyProperty HeaderTransitionsProperty() const;
+    Windows::UI::Xaml::DependencyProperty PaddingProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IItemsPresenterStatics2
+{
+    Windows::UI::Xaml::DependencyProperty FooterProperty() const;
+    Windows::UI::Xaml::DependencyProperty FooterTemplateProperty() const;
+    Windows::UI::Xaml::DependencyProperty FooterTransitionsProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IItemsStackPanel
+{
+    Windows::UI::Xaml::Thickness GroupPadding() const;
+    void GroupPadding(const Windows::UI::Xaml::Thickness & value) const;
+    Windows::UI::Xaml::Controls::Orientation Orientation() const;
+    void Orientation(Windows::UI::Xaml::Controls::Orientation value) const;
+    int32_t FirstCacheIndex() const;
+    int32_t FirstVisibleIndex() const;
+    int32_t LastVisibleIndex() const;
+    int32_t LastCacheIndex() const;
+    Windows::UI::Xaml::Controls::PanelScrollingDirection ScrollingDirection() const;
+    Windows::UI::Xaml::Controls::Primitives::GroupHeaderPlacement GroupHeaderPlacement() const;
+    void GroupHeaderPlacement(Windows::UI::Xaml::Controls::Primitives::GroupHeaderPlacement value) const;
+    Windows::UI::Xaml::Controls::ItemsUpdatingScrollMode ItemsUpdatingScrollMode() const;
+    void ItemsUpdatingScrollMode(Windows::UI::Xaml::Controls::ItemsUpdatingScrollMode value) const;
+    double CacheLength() const;
+    void CacheLength(double value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IItemsStackPanel2
+{
+    bool AreStickyGroupHeadersEnabled() const;
+    void AreStickyGroupHeadersEnabled(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IItemsStackPanelStatics
+{
+    Windows::UI::Xaml::DependencyProperty GroupPaddingProperty() const;
+    Windows::UI::Xaml::DependencyProperty OrientationProperty() const;
+    Windows::UI::Xaml::DependencyProperty GroupHeaderPlacementProperty() const;
+    Windows::UI::Xaml::DependencyProperty CacheLengthProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IItemsStackPanelStatics2
+{
+    Windows::UI::Xaml::DependencyProperty AreStickyGroupHeadersEnabledProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IItemsWrapGrid
+{
+    Windows::UI::Xaml::Thickness GroupPadding() const;
+    void GroupPadding(const Windows::UI::Xaml::Thickness & value) const;
+    Windows::UI::Xaml::Controls::Orientation Orientation() const;
+    void Orientation(Windows::UI::Xaml::Controls::Orientation value) const;
+    int32_t MaximumRowsOrColumns() const;
+    void MaximumRowsOrColumns(int32_t value) const;
+    double ItemWidth() const;
+    void ItemWidth(double value) const;
+    double ItemHeight() const;
+    void ItemHeight(double value) const;
+    int32_t FirstCacheIndex() const;
+    int32_t FirstVisibleIndex() const;
+    int32_t LastVisibleIndex() const;
+    int32_t LastCacheIndex() const;
+    Windows::UI::Xaml::Controls::PanelScrollingDirection ScrollingDirection() const;
+    Windows::UI::Xaml::Controls::Primitives::GroupHeaderPlacement GroupHeaderPlacement() const;
+    void GroupHeaderPlacement(Windows::UI::Xaml::Controls::Primitives::GroupHeaderPlacement value) const;
+    double CacheLength() const;
+    void CacheLength(double value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IItemsWrapGrid2
+{
+    bool AreStickyGroupHeadersEnabled() const;
+    void AreStickyGroupHeadersEnabled(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IItemsWrapGridStatics
+{
+    Windows::UI::Xaml::DependencyProperty GroupPaddingProperty() const;
+    Windows::UI::Xaml::DependencyProperty OrientationProperty() const;
+    Windows::UI::Xaml::DependencyProperty MaximumRowsOrColumnsProperty() const;
+    Windows::UI::Xaml::DependencyProperty ItemWidthProperty() const;
+    Windows::UI::Xaml::DependencyProperty ItemHeightProperty() const;
+    Windows::UI::Xaml::DependencyProperty GroupHeaderPlacementProperty() const;
+    Windows::UI::Xaml::DependencyProperty CacheLengthProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IItemsWrapGridStatics2
+{
+    Windows::UI::Xaml::DependencyProperty AreStickyGroupHeadersEnabledProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IListBox
+{
+    Windows::Foundation::Collections::IVector<Windows::IInspectable> SelectedItems() const;
+    Windows::UI::Xaml::Controls::SelectionMode SelectionMode() const;
+    void SelectionMode(Windows::UI::Xaml::Controls::SelectionMode value) const;
+    void ScrollIntoView(const Windows::IInspectable & item) const;
+    void SelectAll() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IListBox2
+{
+    bool SingleSelectionFollowsFocus() const;
+    void SingleSelectionFollowsFocus(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IListBoxFactory
+{
+    Windows::UI::Xaml::Controls::ListBox CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IListBoxItem
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IListBoxItemFactory
+{
+    Windows::UI::Xaml::Controls::ListBoxItem CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IListBoxStatics
+{
+    Windows::UI::Xaml::DependencyProperty SelectionModeProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IListBoxStatics2
+{
+    Windows::UI::Xaml::DependencyProperty SingleSelectionFollowsFocusProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IListPickerFlyout
+{
+    Windows::IInspectable ItemsSource() const;
+    void ItemsSource(const Windows::IInspectable & value) const;
+    Windows::UI::Xaml::DataTemplate ItemTemplate() const;
+    void ItemTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
+    hstring DisplayMemberPath() const;
+    void DisplayMemberPath(hstring_ref value) const;
+    Windows::UI::Xaml::Controls::ListPickerFlyoutSelectionMode SelectionMode() const;
+    void SelectionMode(Windows::UI::Xaml::Controls::ListPickerFlyoutSelectionMode value) const;
+    int32_t SelectedIndex() const;
+    void SelectedIndex(int32_t value) const;
+    Windows::IInspectable SelectedItem() const;
+    void SelectedItem(const Windows::IInspectable & value) const;
+    Windows::IInspectable SelectedValue() const;
+    void SelectedValue(const Windows::IInspectable & value) const;
+    hstring SelectedValuePath() const;
+    void SelectedValuePath(hstring_ref value) const;
+    Windows::Foundation::Collections::IVector<Windows::IInspectable> SelectedItems() const;
+    event_token ItemsPicked(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::ListPickerFlyout, Windows::UI::Xaml::Controls::ItemsPickedEventArgs> & value) const;
+    using ItemsPicked_revoker = event_revoker<IListPickerFlyout>;
+    ItemsPicked_revoker ItemsPicked(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::ListPickerFlyout, Windows::UI::Xaml::Controls::ItemsPickedEventArgs> & value) const;
+    void ItemsPicked(event_token token) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::IInspectable>> ShowAtAsync(const Windows::UI::Xaml::FrameworkElement & target) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IListPickerFlyoutPresenter
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IListPickerFlyoutStatics
+{
+    Windows::UI::Xaml::DependencyProperty ItemsSourceProperty() const;
+    Windows::UI::Xaml::DependencyProperty ItemTemplateProperty() const;
+    Windows::UI::Xaml::DependencyProperty DisplayMemberPathProperty() const;
+    Windows::UI::Xaml::DependencyProperty SelectionModeProperty() const;
+    Windows::UI::Xaml::DependencyProperty SelectedIndexProperty() const;
+    Windows::UI::Xaml::DependencyProperty SelectedItemProperty() const;
+    Windows::UI::Xaml::DependencyProperty SelectedValueProperty() const;
+    Windows::UI::Xaml::DependencyProperty SelectedValuePathProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IListView
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IListViewBase
+{
+    Windows::Foundation::Collections::IVector<Windows::IInspectable> SelectedItems() const;
+    Windows::UI::Xaml::Controls::ListViewSelectionMode SelectionMode() const;
+    void SelectionMode(Windows::UI::Xaml::Controls::ListViewSelectionMode value) const;
+    bool IsSwipeEnabled() const;
+    void IsSwipeEnabled(bool value) const;
+    bool CanDragItems() const;
+    void CanDragItems(bool value) const;
+    bool CanReorderItems() const;
+    void CanReorderItems(bool value) const;
+    bool IsItemClickEnabled() const;
+    void IsItemClickEnabled(bool value) const;
+    double DataFetchSize() const;
+    void DataFetchSize(double value) const;
+    double IncrementalLoadingThreshold() const;
+    void IncrementalLoadingThreshold(double value) const;
+    Windows::UI::Xaml::Controls::IncrementalLoadingTrigger IncrementalLoadingTrigger() const;
+    void IncrementalLoadingTrigger(Windows::UI::Xaml::Controls::IncrementalLoadingTrigger value) const;
+    event_token ItemClick(const Windows::UI::Xaml::Controls::ItemClickEventHandler & value) const;
+    using ItemClick_revoker = event_revoker<IListViewBase>;
+    ItemClick_revoker ItemClick(auto_revoke_t, const Windows::UI::Xaml::Controls::ItemClickEventHandler & value) const;
+    void ItemClick(event_token token) const;
+    event_token DragItemsStarting(const Windows::UI::Xaml::Controls::DragItemsStartingEventHandler & value) const;
+    using DragItemsStarting_revoker = event_revoker<IListViewBase>;
+    DragItemsStarting_revoker DragItemsStarting(auto_revoke_t, const Windows::UI::Xaml::Controls::DragItemsStartingEventHandler & value) const;
+    void DragItemsStarting(event_token token) const;
+    void ScrollIntoView(const Windows::IInspectable & item) const;
+    void SelectAll() const;
+    Windows::Foundation::IAsyncOperation<Windows::UI::Xaml::Data::LoadMoreItemsResult> LoadMoreItemsAsync() const;
+    void ScrollIntoView(const Windows::IInspectable & item, Windows::UI::Xaml::Controls::ScrollIntoViewAlignment alignment) const;
+    Windows::IInspectable Header() const;
+    void Header(const Windows::IInspectable & value) const;
+    Windows::UI::Xaml::DataTemplate HeaderTemplate() const;
+    void HeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
+    Windows::UI::Xaml::Media::Animation::TransitionCollection HeaderTransitions() const;
+    void HeaderTransitions(const Windows::UI::Xaml::Media::Animation::TransitionCollection & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IListViewBase2
+{
+    bool ShowsScrollingPlaceholders() const;
+    void ShowsScrollingPlaceholders(bool value) const;
+    event_token ContainerContentChanging(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::ListViewBase, Windows::UI::Xaml::Controls::ContainerContentChangingEventArgs> & value) const;
+    using ContainerContentChanging_revoker = event_revoker<IListViewBase2>;
+    ContainerContentChanging_revoker ContainerContentChanging(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::ListViewBase, Windows::UI::Xaml::Controls::ContainerContentChangingEventArgs> & value) const;
+    void ContainerContentChanging(event_token token) const;
+    void SetDesiredContainerUpdateDuration(const Windows::Foundation::TimeSpan & duration) const;
+    Windows::IInspectable Footer() const;
+    void Footer(const Windows::IInspectable & value) const;
+    Windows::UI::Xaml::DataTemplate FooterTemplate() const;
+    void FooterTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
+    Windows::UI::Xaml::Media::Animation::TransitionCollection FooterTransitions() const;
+    void FooterTransitions(const Windows::UI::Xaml::Media::Animation::TransitionCollection & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IListViewBase3
+{
+    Windows::UI::Xaml::Controls::ListViewReorderMode ReorderMode() const;
+    void ReorderMode(Windows::UI::Xaml::Controls::ListViewReorderMode value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IListViewBase4
+{
+    Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Data::ItemIndexRange> SelectedRanges() const;
+    bool IsMultiSelectCheckBoxEnabled() const;
+    void IsMultiSelectCheckBoxEnabled(bool value) const;
+    event_token DragItemsCompleted(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::ListViewBase, Windows::UI::Xaml::Controls::DragItemsCompletedEventArgs> & value) const;
+    using DragItemsCompleted_revoker = event_revoker<IListViewBase4>;
+    DragItemsCompleted_revoker DragItemsCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::ListViewBase, Windows::UI::Xaml::Controls::DragItemsCompletedEventArgs> & value) const;
+    void DragItemsCompleted(event_token token) const;
+    event_token ChoosingItemContainer(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::ListViewBase, Windows::UI::Xaml::Controls::ChoosingItemContainerEventArgs> & value) const;
+    using ChoosingItemContainer_revoker = event_revoker<IListViewBase4>;
+    ChoosingItemContainer_revoker ChoosingItemContainer(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::ListViewBase, Windows::UI::Xaml::Controls::ChoosingItemContainerEventArgs> & value) const;
+    void ChoosingItemContainer(event_token token) const;
+    event_token ChoosingGroupHeaderContainer(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::ListViewBase, Windows::UI::Xaml::Controls::ChoosingGroupHeaderContainerEventArgs> & value) const;
+    using ChoosingGroupHeaderContainer_revoker = event_revoker<IListViewBase4>;
+    ChoosingGroupHeaderContainer_revoker ChoosingGroupHeaderContainer(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::ListViewBase, Windows::UI::Xaml::Controls::ChoosingGroupHeaderContainerEventArgs> & value) const;
+    void ChoosingGroupHeaderContainer(event_token token) const;
+    void SelectRange(const Windows::UI::Xaml::Data::ItemIndexRange & itemIndexRange) const;
+    void DeselectRange(const Windows::UI::Xaml::Data::ItemIndexRange & itemIndexRange) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IListViewBase5
+{
+    bool SingleSelectionFollowsFocus() const;
+    void SingleSelectionFollowsFocus(bool value) const;
+    bool IsDragSource() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IListViewBaseFactory
+{
+    Windows::UI::Xaml::Controls::ListViewBase CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IListViewBaseHeaderItem
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IListViewBaseHeaderItemFactory
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IListViewBaseStatics
+{
+    Windows::UI::Xaml::DependencyProperty SelectionModeProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsSwipeEnabledProperty() const;
+    Windows::UI::Xaml::DependencyProperty CanDragItemsProperty() const;
+    Windows::UI::Xaml::DependencyProperty CanReorderItemsProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsItemClickEnabledProperty() const;
+    Windows::UI::Xaml::DependencyProperty DataFetchSizeProperty() const;
+    Windows::UI::Xaml::DependencyProperty IncrementalLoadingThresholdProperty() const;
+    Windows::UI::Xaml::DependencyProperty IncrementalLoadingTriggerProperty() const;
+    Windows::UI::Xaml::DependencyProperty SemanticZoomOwnerProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsActiveViewProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsZoomedInViewProperty() const;
+    Windows::UI::Xaml::DependencyProperty HeaderProperty() const;
+    Windows::UI::Xaml::DependencyProperty HeaderTemplateProperty() const;
+    Windows::UI::Xaml::DependencyProperty HeaderTransitionsProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IListViewBaseStatics2
+{
+    Windows::UI::Xaml::DependencyProperty ShowsScrollingPlaceholdersProperty() const;
+    Windows::UI::Xaml::DependencyProperty FooterProperty() const;
+    Windows::UI::Xaml::DependencyProperty FooterTemplateProperty() const;
+    Windows::UI::Xaml::DependencyProperty FooterTransitionsProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IListViewBaseStatics3
+{
+    Windows::UI::Xaml::DependencyProperty ReorderModeProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IListViewBaseStatics4
+{
+    Windows::UI::Xaml::DependencyProperty IsMultiSelectCheckBoxEnabledProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IListViewBaseStatics5
+{
+    Windows::UI::Xaml::DependencyProperty SingleSelectionFollowsFocusProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IListViewFactory
+{
+    Windows::UI::Xaml::Controls::ListView CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IListViewHeaderItem
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IListViewHeaderItemFactory
+{
+    Windows::UI::Xaml::Controls::ListViewHeaderItem CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IListViewItem
+{
+    Windows::UI::Xaml::Controls::Primitives::ListViewItemTemplateSettings TemplateSettings() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IListViewItemFactory
+{
+    Windows::UI::Xaml::Controls::ListViewItem CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IListViewPersistenceHelper
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IListViewPersistenceHelperStatics
+{
+    hstring GetRelativeScrollPosition(const Windows::UI::Xaml::Controls::ListViewBase & listViewBase, const Windows::UI::Xaml::Controls::ListViewItemToKeyHandler & itemToKeyHandler) const;
+    Windows::Foundation::IAsyncAction SetRelativeScrollPositionAsync(const Windows::UI::Xaml::Controls::ListViewBase & listViewBase, hstring_ref relativeScrollPosition, const Windows::UI::Xaml::Controls::ListViewKeyToItemHandler & keyToItemHandler) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaElement
+{
+    Windows::UI::Xaml::Media::ImageSource PosterSource() const;
+    void PosterSource(const Windows::UI::Xaml::Media::ImageSource & value) const;
+    Windows::Foundation::Uri Source() const;
+    void Source(const Windows::Foundation::Uri & value) const;
+    bool IsMuted() const;
+    void IsMuted(bool value) const;
+    bool IsAudioOnly() const;
+    bool AutoPlay() const;
+    void AutoPlay(bool value) const;
+    double Volume() const;
+    void Volume(double value) const;
+    double Balance() const;
+    void Balance(double value) const;
+    int32_t NaturalVideoHeight() const;
+    int32_t NaturalVideoWidth() const;
+    Windows::UI::Xaml::Duration NaturalDuration() const;
+    Windows::Foundation::TimeSpan Position() const;
+    void Position(const Windows::Foundation::TimeSpan & value) const;
+    double DownloadProgress() const;
+    double BufferingProgress() const;
+    double DownloadProgressOffset() const;
+    Windows::UI::Xaml::Media::MediaElementState CurrentState() const;
+    Windows::UI::Xaml::Media::TimelineMarkerCollection Markers() const;
+    bool CanSeek() const;
+    bool CanPause() const;
+    int32_t AudioStreamCount() const;
+    Windows::Foundation::IReference<int32_t> AudioStreamIndex() const;
+    void AudioStreamIndex(const Windows::Foundation::IReference<int32_t> & value) const;
+    double PlaybackRate() const;
+    void PlaybackRate(double value) const;
+    bool IsLooping() const;
+    void IsLooping(bool value) const;
+    Windows::Media::PlayTo::PlayToSource PlayToSource() const;
+    double DefaultPlaybackRate() const;
+    void DefaultPlaybackRate(double value) const;
+    int32_t AspectRatioWidth() const;
+    int32_t AspectRatioHeight() const;
+    bool RealTimePlayback() const;
+    void RealTimePlayback(bool value) const;
+    Windows::UI::Xaml::Media::AudioCategory AudioCategory() const;
+    void AudioCategory(Windows::UI::Xaml::Media::AudioCategory value) const;
+    Windows::UI::Xaml::Media::AudioDeviceType AudioDeviceType() const;
+    void AudioDeviceType(Windows::UI::Xaml::Media::AudioDeviceType value) const;
+    Windows::Media::Protection::MediaProtectionManager ProtectionManager() const;
+    void ProtectionManager(const Windows::Media::Protection::MediaProtectionManager & value) const;
+    Windows::UI::Xaml::Media::Stereo3DVideoPackingMode Stereo3DVideoPackingMode() const;
+    void Stereo3DVideoPackingMode(Windows::UI::Xaml::Media::Stereo3DVideoPackingMode value) const;
+    Windows::UI::Xaml::Media::Stereo3DVideoRenderMode Stereo3DVideoRenderMode() const;
+    void Stereo3DVideoRenderMode(Windows::UI::Xaml::Media::Stereo3DVideoRenderMode value) const;
+    bool IsStereo3DVideo() const;
+    event_token MediaOpened(const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    using MediaOpened_revoker = event_revoker<IMediaElement>;
+    MediaOpened_revoker MediaOpened(auto_revoke_t, const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    void MediaOpened(event_token token) const;
+    event_token MediaEnded(const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    using MediaEnded_revoker = event_revoker<IMediaElement>;
+    MediaEnded_revoker MediaEnded(auto_revoke_t, const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    void MediaEnded(event_token token) const;
+    event_token MediaFailed(const Windows::UI::Xaml::ExceptionRoutedEventHandler & value) const;
+    using MediaFailed_revoker = event_revoker<IMediaElement>;
+    MediaFailed_revoker MediaFailed(auto_revoke_t, const Windows::UI::Xaml::ExceptionRoutedEventHandler & value) const;
+    void MediaFailed(event_token token) const;
+    event_token DownloadProgressChanged(const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    using DownloadProgressChanged_revoker = event_revoker<IMediaElement>;
+    DownloadProgressChanged_revoker DownloadProgressChanged(auto_revoke_t, const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    void DownloadProgressChanged(event_token token) const;
+    event_token BufferingProgressChanged(const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    using BufferingProgressChanged_revoker = event_revoker<IMediaElement>;
+    BufferingProgressChanged_revoker BufferingProgressChanged(auto_revoke_t, const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    void BufferingProgressChanged(event_token token) const;
+    event_token CurrentStateChanged(const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    using CurrentStateChanged_revoker = event_revoker<IMediaElement>;
+    CurrentStateChanged_revoker CurrentStateChanged(auto_revoke_t, const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    void CurrentStateChanged(event_token token) const;
+    event_token MarkerReached(const Windows::UI::Xaml::Media::TimelineMarkerRoutedEventHandler & value) const;
+    using MarkerReached_revoker = event_revoker<IMediaElement>;
+    MarkerReached_revoker MarkerReached(auto_revoke_t, const Windows::UI::Xaml::Media::TimelineMarkerRoutedEventHandler & value) const;
+    void MarkerReached(event_token token) const;
+    event_token RateChanged(const Windows::UI::Xaml::Media::RateChangedRoutedEventHandler & value) const;
+    using RateChanged_revoker = event_revoker<IMediaElement>;
+    RateChanged_revoker RateChanged(auto_revoke_t, const Windows::UI::Xaml::Media::RateChangedRoutedEventHandler & value) const;
+    void RateChanged(event_token token) const;
+    event_token VolumeChanged(const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    using VolumeChanged_revoker = event_revoker<IMediaElement>;
+    VolumeChanged_revoker VolumeChanged(auto_revoke_t, const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    void VolumeChanged(event_token token) const;
+    event_token SeekCompleted(const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    using SeekCompleted_revoker = event_revoker<IMediaElement>;
+    SeekCompleted_revoker SeekCompleted(auto_revoke_t, const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    void SeekCompleted(event_token token) const;
+    void Stop() const;
+    void Play() const;
+    void Pause() const;
+    Windows::UI::Xaml::Media::MediaCanPlayResponse CanPlayType(hstring_ref type) const;
+    void SetSource(const Windows::Storage::Streams::IRandomAccessStream & stream, hstring_ref mimeType) const;
+    hstring GetAudioStreamLanguage(const Windows::Foundation::IReference<int32_t> & index) const;
+    void AddAudioEffect(hstring_ref effectID, bool effectOptional, const Windows::Foundation::Collections::IPropertySet & effectConfiguration) const;
+    void AddVideoEffect(hstring_ref effectID, bool effectOptional, const Windows::Foundation::Collections::IPropertySet & effectConfiguration) const;
+    void RemoveAllEffects() const;
+    Windows::UI::Xaml::Media::Stereo3DVideoPackingMode ActualStereo3DVideoPackingMode() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaElement2
+{
+    bool AreTransportControlsEnabled() const;
+    void AreTransportControlsEnabled(bool value) const;
+    Windows::UI::Xaml::Media::Stretch Stretch() const;
+    void Stretch(Windows::UI::Xaml::Media::Stretch value) const;
+    bool IsFullWindow() const;
+    void IsFullWindow(bool value) const;
+    void SetMediaStreamSource(const Windows::Media::Core::IMediaSource & source) const;
+    Windows::Foundation::Uri PlayToPreferredSourceUri() const;
+    void PlayToPreferredSourceUri(const Windows::Foundation::Uri & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaElement3
+{
+    Windows::UI::Xaml::Controls::MediaTransportControls TransportControls() const;
+    void TransportControls(const Windows::UI::Xaml::Controls::MediaTransportControls & value) const;
+    event_token PartialMediaFailureDetected(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::MediaElement, Windows::UI::Xaml::Media::PartialMediaFailureDetectedEventArgs> & value) const;
+    using PartialMediaFailureDetected_revoker = event_revoker<IMediaElement3>;
+    PartialMediaFailureDetected_revoker PartialMediaFailureDetected(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::MediaElement, Windows::UI::Xaml::Media::PartialMediaFailureDetectedEventArgs> & value) const;
+    void PartialMediaFailureDetected(event_token token) const;
+    void SetPlaybackSource(const Windows::Media::Playback::IMediaPlaybackSource & source) const;
+    Windows::Media::Casting::CastingSource GetAsCastingSource() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaElementStatics
+{
+    Windows::UI::Xaml::DependencyProperty PosterSourceProperty() const;
+    Windows::UI::Xaml::DependencyProperty SourceProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsMutedProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsAudioOnlyProperty() const;
+    Windows::UI::Xaml::DependencyProperty AutoPlayProperty() const;
+    Windows::UI::Xaml::DependencyProperty VolumeProperty() const;
+    Windows::UI::Xaml::DependencyProperty BalanceProperty() const;
+    Windows::UI::Xaml::DependencyProperty NaturalVideoHeightProperty() const;
+    Windows::UI::Xaml::DependencyProperty NaturalVideoWidthProperty() const;
+    Windows::UI::Xaml::DependencyProperty NaturalDurationProperty() const;
+    Windows::UI::Xaml::DependencyProperty PositionProperty() const;
+    Windows::UI::Xaml::DependencyProperty DownloadProgressProperty() const;
+    Windows::UI::Xaml::DependencyProperty BufferingProgressProperty() const;
+    Windows::UI::Xaml::DependencyProperty DownloadProgressOffsetProperty() const;
+    Windows::UI::Xaml::DependencyProperty CurrentStateProperty() const;
+    Windows::UI::Xaml::DependencyProperty CanSeekProperty() const;
+    Windows::UI::Xaml::DependencyProperty CanPauseProperty() const;
+    Windows::UI::Xaml::DependencyProperty AudioStreamCountProperty() const;
+    Windows::UI::Xaml::DependencyProperty AudioStreamIndexProperty() const;
+    Windows::UI::Xaml::DependencyProperty PlaybackRateProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsLoopingProperty() const;
+    Windows::UI::Xaml::DependencyProperty PlayToSourceProperty() const;
+    Windows::UI::Xaml::DependencyProperty DefaultPlaybackRateProperty() const;
+    Windows::UI::Xaml::DependencyProperty AspectRatioWidthProperty() const;
+    Windows::UI::Xaml::DependencyProperty AspectRatioHeightProperty() const;
+    Windows::UI::Xaml::DependencyProperty RealTimePlaybackProperty() const;
+    Windows::UI::Xaml::DependencyProperty AudioCategoryProperty() const;
+    Windows::UI::Xaml::DependencyProperty AudioDeviceTypeProperty() const;
+    Windows::UI::Xaml::DependencyProperty ProtectionManagerProperty() const;
+    Windows::UI::Xaml::DependencyProperty Stereo3DVideoPackingModeProperty() const;
+    Windows::UI::Xaml::DependencyProperty Stereo3DVideoRenderModeProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsStereo3DVideoProperty() const;
+    Windows::UI::Xaml::DependencyProperty ActualStereo3DVideoPackingModeProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaElementStatics2
+{
+    Windows::UI::Xaml::DependencyProperty AreTransportControlsEnabledProperty() const;
+    Windows::UI::Xaml::DependencyProperty StretchProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsFullWindowProperty() const;
+    Windows::UI::Xaml::DependencyProperty PlayToPreferredSourceUriProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaPlayerElement
+{
+    Windows::Media::Playback::IMediaPlaybackSource Source() const;
+    void Source(const Windows::Media::Playback::IMediaPlaybackSource & value) const;
+    Windows::UI::Xaml::Controls::MediaTransportControls TransportControls() const;
+    void TransportControls(const Windows::UI::Xaml::Controls::MediaTransportControls & value) const;
+    bool AreTransportControlsEnabled() const;
+    void AreTransportControlsEnabled(bool value) const;
+    Windows::UI::Xaml::Media::ImageSource PosterSource() const;
+    void PosterSource(const Windows::UI::Xaml::Media::ImageSource & value) const;
+    Windows::UI::Xaml::Media::Stretch Stretch() const;
+    void Stretch(Windows::UI::Xaml::Media::Stretch value) const;
+    bool AutoPlay() const;
+    void AutoPlay(bool value) const;
+    bool IsFullWindow() const;
+    void IsFullWindow(bool value) const;
+    Windows::Media::Playback::MediaPlayer MediaPlayer() const;
+    void SetMediaPlayer(const Windows::Media::Playback::MediaPlayer & mediaPlayer) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaPlayerElementFactory
+{
+    Windows::UI::Xaml::Controls::MediaPlayerElement CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaPlayerElementStatics
+{
+    Windows::UI::Xaml::DependencyProperty SourceProperty() const;
+    Windows::UI::Xaml::DependencyProperty AreTransportControlsEnabledProperty() const;
+    Windows::UI::Xaml::DependencyProperty PosterSourceProperty() const;
+    Windows::UI::Xaml::DependencyProperty StretchProperty() const;
+    Windows::UI::Xaml::DependencyProperty AutoPlayProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsFullWindowProperty() const;
+    Windows::UI::Xaml::DependencyProperty MediaPlayerProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaPlayerPresenter
+{
+    Windows::Media::Playback::MediaPlayer MediaPlayer() const;
+    void MediaPlayer(const Windows::Media::Playback::MediaPlayer & value) const;
+    Windows::UI::Xaml::Media::Stretch Stretch() const;
+    void Stretch(Windows::UI::Xaml::Media::Stretch value) const;
+    bool IsFullWindow() const;
+    void IsFullWindow(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaPlayerPresenterFactory
+{
+    Windows::UI::Xaml::Controls::MediaPlayerPresenter CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaPlayerPresenterStatics
+{
+    Windows::UI::Xaml::DependencyProperty MediaPlayerProperty() const;
+    Windows::UI::Xaml::DependencyProperty StretchProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsFullWindowProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaTransportControls
+{
+    bool IsFullWindowButtonVisible() const;
+    void IsFullWindowButtonVisible(bool value) const;
+    bool IsFullWindowEnabled() const;
+    void IsFullWindowEnabled(bool value) const;
+    bool IsZoomButtonVisible() const;
+    void IsZoomButtonVisible(bool value) const;
+    bool IsZoomEnabled() const;
+    void IsZoomEnabled(bool value) const;
+    bool IsFastForwardButtonVisible() const;
+    void IsFastForwardButtonVisible(bool value) const;
+    bool IsFastForwardEnabled() const;
+    void IsFastForwardEnabled(bool value) const;
+    bool IsFastRewindButtonVisible() const;
+    void IsFastRewindButtonVisible(bool value) const;
+    bool IsFastRewindEnabled() const;
+    void IsFastRewindEnabled(bool value) const;
+    bool IsStopButtonVisible() const;
+    void IsStopButtonVisible(bool value) const;
+    bool IsStopEnabled() const;
+    void IsStopEnabled(bool value) const;
+    bool IsVolumeButtonVisible() const;
+    void IsVolumeButtonVisible(bool value) const;
+    bool IsVolumeEnabled() const;
+    void IsVolumeEnabled(bool value) const;
+    bool IsPlaybackRateButtonVisible() const;
+    void IsPlaybackRateButtonVisible(bool value) const;
+    bool IsPlaybackRateEnabled() const;
+    void IsPlaybackRateEnabled(bool value) const;
+    bool IsSeekBarVisible() const;
+    void IsSeekBarVisible(bool value) const;
+    bool IsSeekEnabled() const;
+    void IsSeekEnabled(bool value) const;
+    bool IsCompact() const;
+    void IsCompact(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaTransportControls2
+{
+    bool IsSkipForwardButtonVisible() const;
+    void IsSkipForwardButtonVisible(bool value) const;
+    bool IsSkipForwardEnabled() const;
+    void IsSkipForwardEnabled(bool value) const;
+    bool IsSkipBackwardButtonVisible() const;
+    void IsSkipBackwardButtonVisible(bool value) const;
+    bool IsSkipBackwardEnabled() const;
+    void IsSkipBackwardEnabled(bool value) const;
+    bool IsNextTrackButtonVisible() const;
+    void IsNextTrackButtonVisible(bool value) const;
+    bool IsPreviousTrackButtonVisible() const;
+    void IsPreviousTrackButtonVisible(bool value) const;
+    Windows::UI::Xaml::Media::FastPlayFallbackBehaviour FastPlayFallbackBehaviour() const;
+    void FastPlayFallbackBehaviour(Windows::UI::Xaml::Media::FastPlayFallbackBehaviour value) const;
+    event_token ThumbnailRequested(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::MediaTransportControls, Windows::UI::Xaml::Media::MediaTransportControlsThumbnailRequestedEventArgs> & value) const;
+    using ThumbnailRequested_revoker = event_revoker<IMediaTransportControls2>;
+    ThumbnailRequested_revoker ThumbnailRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::MediaTransportControls, Windows::UI::Xaml::Media::MediaTransportControlsThumbnailRequestedEventArgs> & value) const;
+    void ThumbnailRequested(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaTransportControlsFactory
+{
+    Windows::UI::Xaml::Controls::MediaTransportControls CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaTransportControlsHelper
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaTransportControlsHelperStatics
+{
+    Windows::UI::Xaml::DependencyProperty DropoutOrderProperty() const;
+    Windows::Foundation::IReference<int32_t> GetDropoutOrder(const Windows::UI::Xaml::UIElement & element) const;
+    void SetDropoutOrder(const Windows::UI::Xaml::UIElement & element, const Windows::Foundation::IReference<int32_t> & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaTransportControlsStatics
+{
+    Windows::UI::Xaml::DependencyProperty IsFullWindowButtonVisibleProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsFullWindowEnabledProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsZoomButtonVisibleProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsZoomEnabledProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsFastForwardButtonVisibleProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsFastForwardEnabledProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsFastRewindButtonVisibleProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsFastRewindEnabledProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsStopButtonVisibleProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsStopEnabledProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsVolumeButtonVisibleProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsVolumeEnabledProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsPlaybackRateButtonVisibleProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsPlaybackRateEnabledProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsSeekBarVisibleProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsSeekEnabledProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsCompactProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaTransportControlsStatics2
+{
+    Windows::UI::Xaml::DependencyProperty IsSkipForwardButtonVisibleProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsSkipForwardEnabledProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsSkipBackwardButtonVisibleProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsSkipBackwardEnabledProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsNextTrackButtonVisibleProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsPreviousTrackButtonVisibleProperty() const;
+    Windows::UI::Xaml::DependencyProperty FastPlayFallbackBehaviourProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMenuFlyout
+{
+    Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Controls::MenuFlyoutItemBase> Items() const;
+    Windows::UI::Xaml::Style MenuFlyoutPresenterStyle() const;
+    void MenuFlyoutPresenterStyle(const Windows::UI::Xaml::Style & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMenuFlyout2
+{
+    void ShowAt(const Windows::UI::Xaml::UIElement & targetElement, const Windows::Foundation::Point & point) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMenuFlyoutFactory
+{
+    Windows::UI::Xaml::Controls::MenuFlyout CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMenuFlyoutItem
+{
+    hstring Text() const;
+    void Text(hstring_ref value) const;
+    Windows::UI::Xaml::Input::ICommand Command() const;
+    void Command(const Windows::UI::Xaml::Input::ICommand & value) const;
+    Windows::IInspectable CommandParameter() const;
+    void CommandParameter(const Windows::IInspectable & value) const;
+    event_token Click(const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    using Click_revoker = event_revoker<IMenuFlyoutItem>;
+    Click_revoker Click(auto_revoke_t, const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    void Click(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMenuFlyoutItemBase
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMenuFlyoutItemBaseFactory
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMenuFlyoutItemFactory
+{
+    Windows::UI::Xaml::Controls::MenuFlyoutItem CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMenuFlyoutItemStatics
+{
+    Windows::UI::Xaml::DependencyProperty TextProperty() const;
+    Windows::UI::Xaml::DependencyProperty CommandProperty() const;
+    Windows::UI::Xaml::DependencyProperty CommandParameterProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMenuFlyoutPresenter
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMenuFlyoutPresenter2
+{
+    Windows::UI::Xaml::Controls::Primitives::MenuFlyoutPresenterTemplateSettings TemplateSettings() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMenuFlyoutPresenterFactory
+{
+    Windows::UI::Xaml::Controls::MenuFlyoutPresenter CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMenuFlyoutSeparator
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMenuFlyoutSeparatorFactory
+{
+    Windows::UI::Xaml::Controls::MenuFlyoutSeparator CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMenuFlyoutStatics
+{
+    Windows::UI::Xaml::DependencyProperty MenuFlyoutPresenterStyleProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMenuFlyoutSubItem
+{
+    Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Controls::MenuFlyoutItemBase> Items() const;
+    hstring Text() const;
+    void Text(hstring_ref value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMenuFlyoutSubItemStatics
+{
+    Windows::UI::Xaml::DependencyProperty TextProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_INavigate
+{
+    bool Navigate(const Windows::UI::Xaml::Interop::TypeName & sourcePageType) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_INotifyEventArgs
+{
+    hstring Value() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_INotifyEventArgs2
+{
+    Windows::Foundation::Uri CallingUri() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPage
+{
+    Windows::UI::Xaml::Controls::Frame Frame() const;
+    Windows::UI::Xaml::Navigation::NavigationCacheMode NavigationCacheMode() const;
+    void NavigationCacheMode(Windows::UI::Xaml::Navigation::NavigationCacheMode value) const;
+    Windows::UI::Xaml::Controls::AppBar TopAppBar() const;
+    void TopAppBar(const Windows::UI::Xaml::Controls::AppBar & value) const;
+    Windows::UI::Xaml::Controls::AppBar BottomAppBar() const;
+    void BottomAppBar(const Windows::UI::Xaml::Controls::AppBar & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPageFactory
+{
+    Windows::UI::Xaml::Controls::Page CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPageOverrides
+{
+    void OnNavigatedFrom(const Windows::UI::Xaml::Navigation::NavigationEventArgs & e) const;
+    void OnNavigatedTo(const Windows::UI::Xaml::Navigation::NavigationEventArgs & e) const;
+    void OnNavigatingFrom(const Windows::UI::Xaml::Navigation::NavigatingCancelEventArgs & e) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPageStatics
+{
+    Windows::UI::Xaml::DependencyProperty FrameProperty() const;
+    Windows::UI::Xaml::DependencyProperty TopAppBarProperty() const;
+    Windows::UI::Xaml::DependencyProperty BottomAppBarProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPanel
+{
+    Windows::UI::Xaml::Controls::UIElementCollection Children() const;
+    Windows::UI::Xaml::Media::Brush Background() const;
+    void Background(const Windows::UI::Xaml::Media::Brush & value) const;
+    bool IsItemsHost() const;
+    Windows::UI::Xaml::Media::Animation::TransitionCollection ChildrenTransitions() const;
+    void ChildrenTransitions(const Windows::UI::Xaml::Media::Animation::TransitionCollection & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPanelFactory
+{
+    Windows::UI::Xaml::Controls::Panel CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPanelStatics
+{
+    Windows::UI::Xaml::DependencyProperty BackgroundProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsItemsHostProperty() const;
+    Windows::UI::Xaml::DependencyProperty ChildrenTransitionsProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPasswordBox
+{
+    hstring Password() const;
+    void Password(hstring_ref value) const;
+    hstring PasswordChar() const;
+    void PasswordChar(hstring_ref value) const;
+    bool IsPasswordRevealButtonEnabled() const;
+    void IsPasswordRevealButtonEnabled(bool value) const;
+    int32_t MaxLength() const;
+    void MaxLength(int32_t value) const;
+    event_token PasswordChanged(const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    using PasswordChanged_revoker = event_revoker<IPasswordBox>;
+    PasswordChanged_revoker PasswordChanged(auto_revoke_t, const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    void PasswordChanged(event_token token) const;
+    event_token ContextMenuOpening(const Windows::UI::Xaml::Controls::ContextMenuOpeningEventHandler & value) const;
+    using ContextMenuOpening_revoker = event_revoker<IPasswordBox>;
+    ContextMenuOpening_revoker ContextMenuOpening(auto_revoke_t, const Windows::UI::Xaml::Controls::ContextMenuOpeningEventHandler & value) const;
+    void ContextMenuOpening(event_token token) const;
+    void SelectAll() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPasswordBox2
+{
+    Windows::IInspectable Header() const;
+    void Header(const Windows::IInspectable & value) const;
+    Windows::UI::Xaml::DataTemplate HeaderTemplate() const;
+    void HeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
+    hstring PlaceholderText() const;
+    void PlaceholderText(hstring_ref value) const;
+    Windows::UI::Xaml::Media::SolidColorBrush SelectionHighlightColor() const;
+    void SelectionHighlightColor(const Windows::UI::Xaml::Media::SolidColorBrush & value) const;
+    bool PreventKeyboardDisplayOnProgrammaticFocus() const;
+    void PreventKeyboardDisplayOnProgrammaticFocus(bool value) const;
+    event_token Paste(const Windows::UI::Xaml::Controls::TextControlPasteEventHandler & value) const;
+    using Paste_revoker = event_revoker<IPasswordBox2>;
+    Paste_revoker Paste(auto_revoke_t, const Windows::UI::Xaml::Controls::TextControlPasteEventHandler & value) const;
+    void Paste(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPasswordBox3
+{
+    Windows::UI::Xaml::Controls::PasswordRevealMode PasswordRevealMode() const;
+    void PasswordRevealMode(Windows::UI::Xaml::Controls::PasswordRevealMode value) const;
+    Windows::UI::Xaml::TextReadingOrder TextReadingOrder() const;
+    void TextReadingOrder(Windows::UI::Xaml::TextReadingOrder value) const;
+    Windows::UI::Xaml::Input::InputScope InputScope() const;
+    void InputScope(const Windows::UI::Xaml::Input::InputScope & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPasswordBoxStatics
+{
+    Windows::UI::Xaml::DependencyProperty PasswordProperty() const;
+    Windows::UI::Xaml::DependencyProperty PasswordCharProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsPasswordRevealButtonEnabledProperty() const;
+    Windows::UI::Xaml::DependencyProperty MaxLengthProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPasswordBoxStatics2
+{
+    Windows::UI::Xaml::DependencyProperty HeaderProperty() const;
+    Windows::UI::Xaml::DependencyProperty HeaderTemplateProperty() const;
+    Windows::UI::Xaml::DependencyProperty PlaceholderTextProperty() const;
+    Windows::UI::Xaml::DependencyProperty SelectionHighlightColorProperty() const;
+    Windows::UI::Xaml::DependencyProperty PreventKeyboardDisplayOnProgrammaticFocusProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPasswordBoxStatics3
+{
+    Windows::UI::Xaml::DependencyProperty PasswordRevealModeProperty() const;
+    Windows::UI::Xaml::DependencyProperty TextReadingOrderProperty() const;
+    Windows::UI::Xaml::DependencyProperty InputScopeProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPathIcon
+{
+    Windows::UI::Xaml::Media::Geometry Data() const;
+    void Data(const Windows::UI::Xaml::Media::Geometry & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPathIconFactory
+{
+    Windows::UI::Xaml::Controls::PathIcon CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPathIconStatics
+{
+    Windows::UI::Xaml::DependencyProperty DataProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPickerConfirmedEventArgs
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPickerFlyout
+{
+    Windows::UI::Xaml::UIElement Content() const;
+    void Content(const Windows::UI::Xaml::UIElement & value) const;
+    bool ConfirmationButtonsVisible() const;
+    void ConfirmationButtonsVisible(bool value) const;
+    event_token Confirmed(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::PickerFlyout, Windows::UI::Xaml::Controls::PickerConfirmedEventArgs> & value) const;
+    using Confirmed_revoker = event_revoker<IPickerFlyout>;
+    Confirmed_revoker Confirmed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::PickerFlyout, Windows::UI::Xaml::Controls::PickerConfirmedEventArgs> & value) const;
+    void Confirmed(event_token token) const;
+    Windows::Foundation::IAsyncOperation<bool> ShowAtAsync(const Windows::UI::Xaml::FrameworkElement & target) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPickerFlyoutPresenter
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPickerFlyoutStatics
+{
+    Windows::UI::Xaml::DependencyProperty ContentProperty() const;
+    Windows::UI::Xaml::DependencyProperty ConfirmationButtonsVisibleProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPivot
+{
+    Windows::IInspectable Title() const;
+    void Title(const Windows::IInspectable & value) const;
+    Windows::UI::Xaml::DataTemplate TitleTemplate() const;
+    void TitleTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
+    Windows::UI::Xaml::DataTemplate HeaderTemplate() const;
+    void HeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
+    int32_t SelectedIndex() const;
+    void SelectedIndex(int32_t value) const;
+    Windows::IInspectable SelectedItem() const;
+    void SelectedItem(const Windows::IInspectable & value) const;
+    bool IsLocked() const;
+    void IsLocked(bool value) const;
+    event_token SelectionChanged(const Windows::UI::Xaml::Controls::SelectionChangedEventHandler & value) const;
+    using SelectionChanged_revoker = event_revoker<IPivot>;
+    SelectionChanged_revoker SelectionChanged(auto_revoke_t, const Windows::UI::Xaml::Controls::SelectionChangedEventHandler & value) const;
+    void SelectionChanged(event_token token) const;
+    event_token PivotItemLoading(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Pivot, Windows::UI::Xaml::Controls::PivotItemEventArgs> & value) const;
+    using PivotItemLoading_revoker = event_revoker<IPivot>;
+    PivotItemLoading_revoker PivotItemLoading(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Pivot, Windows::UI::Xaml::Controls::PivotItemEventArgs> & value) const;
+    void PivotItemLoading(event_token token) const;
+    event_token PivotItemLoaded(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Pivot, Windows::UI::Xaml::Controls::PivotItemEventArgs> & value) const;
+    using PivotItemLoaded_revoker = event_revoker<IPivot>;
+    PivotItemLoaded_revoker PivotItemLoaded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Pivot, Windows::UI::Xaml::Controls::PivotItemEventArgs> & value) const;
+    void PivotItemLoaded(event_token token) const;
+    event_token PivotItemUnloading(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Pivot, Windows::UI::Xaml::Controls::PivotItemEventArgs> & value) const;
+    using PivotItemUnloading_revoker = event_revoker<IPivot>;
+    PivotItemUnloading_revoker PivotItemUnloading(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Pivot, Windows::UI::Xaml::Controls::PivotItemEventArgs> & value) const;
+    void PivotItemUnloading(event_token token) const;
+    event_token PivotItemUnloaded(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Pivot, Windows::UI::Xaml::Controls::PivotItemEventArgs> & value) const;
+    using PivotItemUnloaded_revoker = event_revoker<IPivot>;
+    PivotItemUnloaded_revoker PivotItemUnloaded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::Pivot, Windows::UI::Xaml::Controls::PivotItemEventArgs> & value) const;
+    void PivotItemUnloaded(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPivot2
+{
+    Windows::IInspectable LeftHeader() const;
+    void LeftHeader(const Windows::IInspectable & value) const;
+    Windows::UI::Xaml::DataTemplate LeftHeaderTemplate() const;
+    void LeftHeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
+    Windows::IInspectable RightHeader() const;
+    void RightHeader(const Windows::IInspectable & value) const;
+    Windows::UI::Xaml::DataTemplate RightHeaderTemplate() const;
+    void RightHeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPivot3
+{
+    Windows::UI::Xaml::Controls::PivotHeaderFocusVisualPlacement HeaderFocusVisualPlacement() const;
+    void HeaderFocusVisualPlacement(Windows::UI::Xaml::Controls::PivotHeaderFocusVisualPlacement value) const;
+    bool IsHeaderItemsCarouselEnabled() const;
+    void IsHeaderItemsCarouselEnabled(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPivotFactory
+{
+    Windows::UI::Xaml::Controls::Pivot CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPivotItem
+{
+    Windows::IInspectable Header() const;
+    void Header(const Windows::IInspectable & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPivotItemEventArgs
+{
+    Windows::UI::Xaml::Controls::PivotItem Item() const;
+    void Item(const Windows::UI::Xaml::Controls::PivotItem & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPivotItemFactory
+{
+    Windows::UI::Xaml::Controls::PivotItem CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPivotItemStatics
+{
+    Windows::UI::Xaml::DependencyProperty HeaderProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPivotStatics
+{
+    Windows::UI::Xaml::DependencyProperty TitleProperty() const;
+    Windows::UI::Xaml::DependencyProperty TitleTemplateProperty() const;
+    Windows::UI::Xaml::DependencyProperty HeaderTemplateProperty() const;
+    Windows::UI::Xaml::DependencyProperty SelectedIndexProperty() const;
+    Windows::UI::Xaml::DependencyProperty SelectedItemProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsLockedProperty() const;
+    Windows::UI::Xaml::DependencyProperty SlideInAnimationGroupProperty() const;
+    Windows::UI::Xaml::Controls::PivotSlideInAnimationGroup GetSlideInAnimationGroup(const Windows::UI::Xaml::FrameworkElement & element) const;
+    void SetSlideInAnimationGroup(const Windows::UI::Xaml::FrameworkElement & element, Windows::UI::Xaml::Controls::PivotSlideInAnimationGroup value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPivotStatics2
+{
+    Windows::UI::Xaml::DependencyProperty LeftHeaderProperty() const;
+    Windows::UI::Xaml::DependencyProperty LeftHeaderTemplateProperty() const;
+    Windows::UI::Xaml::DependencyProperty RightHeaderProperty() const;
+    Windows::UI::Xaml::DependencyProperty RightHeaderTemplateProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPivotStatics3
+{
+    Windows::UI::Xaml::DependencyProperty HeaderFocusVisualPlacementProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsHeaderItemsCarouselEnabledProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IProgressBar
+{
+    bool IsIndeterminate() const;
+    void IsIndeterminate(bool value) const;
+    bool ShowError() const;
+    void ShowError(bool value) const;
+    bool ShowPaused() const;
+    void ShowPaused(bool value) const;
+    Windows::UI::Xaml::Controls::Primitives::ProgressBarTemplateSettings TemplateSettings() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IProgressBarFactory
+{
+    Windows::UI::Xaml::Controls::ProgressBar CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IProgressBarStatics
+{
+    Windows::UI::Xaml::DependencyProperty IsIndeterminateProperty() const;
+    Windows::UI::Xaml::DependencyProperty ShowErrorProperty() const;
+    Windows::UI::Xaml::DependencyProperty ShowPausedProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IProgressRing
+{
+    bool IsActive() const;
+    void IsActive(bool value) const;
+    Windows::UI::Xaml::Controls::Primitives::ProgressRingTemplateSettings TemplateSettings() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IProgressRingStatics
+{
+    Windows::UI::Xaml::DependencyProperty IsActiveProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRadioButton
+{
+    hstring GroupName() const;
+    void GroupName(hstring_ref value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRadioButtonFactory
+{
+    Windows::UI::Xaml::Controls::RadioButton CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRadioButtonStatics
+{
+    Windows::UI::Xaml::DependencyProperty GroupNameProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRelativePanel
+{
+    Windows::UI::Xaml::Media::Brush BorderBrush() const;
+    void BorderBrush(const Windows::UI::Xaml::Media::Brush & value) const;
+    Windows::UI::Xaml::Thickness BorderThickness() const;
+    void BorderThickness(const Windows::UI::Xaml::Thickness & value) const;
+    Windows::UI::Xaml::CornerRadius CornerRadius() const;
+    void CornerRadius(const Windows::UI::Xaml::CornerRadius & value) const;
+    Windows::UI::Xaml::Thickness Padding() const;
+    void Padding(const Windows::UI::Xaml::Thickness & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRelativePanelFactory
+{
+    Windows::UI::Xaml::Controls::RelativePanel CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRelativePanelStatics
+{
+    Windows::UI::Xaml::DependencyProperty LeftOfProperty() const;
+    Windows::IInspectable GetLeftOf(const Windows::UI::Xaml::UIElement & element) const;
+    void SetLeftOf(const Windows::UI::Xaml::UIElement & element, const Windows::IInspectable & value) const;
+    Windows::UI::Xaml::DependencyProperty AboveProperty() const;
+    Windows::IInspectable GetAbove(const Windows::UI::Xaml::UIElement & element) const;
+    void SetAbove(const Windows::UI::Xaml::UIElement & element, const Windows::IInspectable & value) const;
+    Windows::UI::Xaml::DependencyProperty RightOfProperty() const;
+    Windows::IInspectable GetRightOf(const Windows::UI::Xaml::UIElement & element) const;
+    void SetRightOf(const Windows::UI::Xaml::UIElement & element, const Windows::IInspectable & value) const;
+    Windows::UI::Xaml::DependencyProperty BelowProperty() const;
+    Windows::IInspectable GetBelow(const Windows::UI::Xaml::UIElement & element) const;
+    void SetBelow(const Windows::UI::Xaml::UIElement & element, const Windows::IInspectable & value) const;
+    Windows::UI::Xaml::DependencyProperty AlignHorizontalCenterWithProperty() const;
+    Windows::IInspectable GetAlignHorizontalCenterWith(const Windows::UI::Xaml::UIElement & element) const;
+    void SetAlignHorizontalCenterWith(const Windows::UI::Xaml::UIElement & element, const Windows::IInspectable & value) const;
+    Windows::UI::Xaml::DependencyProperty AlignVerticalCenterWithProperty() const;
+    Windows::IInspectable GetAlignVerticalCenterWith(const Windows::UI::Xaml::UIElement & element) const;
+    void SetAlignVerticalCenterWith(const Windows::UI::Xaml::UIElement & element, const Windows::IInspectable & value) const;
+    Windows::UI::Xaml::DependencyProperty AlignLeftWithProperty() const;
+    Windows::IInspectable GetAlignLeftWith(const Windows::UI::Xaml::UIElement & element) const;
+    void SetAlignLeftWith(const Windows::UI::Xaml::UIElement & element, const Windows::IInspectable & value) const;
+    Windows::UI::Xaml::DependencyProperty AlignTopWithProperty() const;
+    Windows::IInspectable GetAlignTopWith(const Windows::UI::Xaml::UIElement & element) const;
+    void SetAlignTopWith(const Windows::UI::Xaml::UIElement & element, const Windows::IInspectable & value) const;
+    Windows::UI::Xaml::DependencyProperty AlignRightWithProperty() const;
+    Windows::IInspectable GetAlignRightWith(const Windows::UI::Xaml::UIElement & element) const;
+    void SetAlignRightWith(const Windows::UI::Xaml::UIElement & element, const Windows::IInspectable & value) const;
+    Windows::UI::Xaml::DependencyProperty AlignBottomWithProperty() const;
+    Windows::IInspectable GetAlignBottomWith(const Windows::UI::Xaml::UIElement & element) const;
+    void SetAlignBottomWith(const Windows::UI::Xaml::UIElement & element, const Windows::IInspectable & value) const;
+    Windows::UI::Xaml::DependencyProperty AlignLeftWithPanelProperty() const;
+    bool GetAlignLeftWithPanel(const Windows::UI::Xaml::UIElement & element) const;
+    void SetAlignLeftWithPanel(const Windows::UI::Xaml::UIElement & element, bool value) const;
+    Windows::UI::Xaml::DependencyProperty AlignTopWithPanelProperty() const;
+    bool GetAlignTopWithPanel(const Windows::UI::Xaml::UIElement & element) const;
+    void SetAlignTopWithPanel(const Windows::UI::Xaml::UIElement & element, bool value) const;
+    Windows::UI::Xaml::DependencyProperty AlignRightWithPanelProperty() const;
+    bool GetAlignRightWithPanel(const Windows::UI::Xaml::UIElement & element) const;
+    void SetAlignRightWithPanel(const Windows::UI::Xaml::UIElement & element, bool value) const;
+    Windows::UI::Xaml::DependencyProperty AlignBottomWithPanelProperty() const;
+    bool GetAlignBottomWithPanel(const Windows::UI::Xaml::UIElement & element) const;
+    void SetAlignBottomWithPanel(const Windows::UI::Xaml::UIElement & element, bool value) const;
+    Windows::UI::Xaml::DependencyProperty AlignHorizontalCenterWithPanelProperty() const;
+    bool GetAlignHorizontalCenterWithPanel(const Windows::UI::Xaml::UIElement & element) const;
+    void SetAlignHorizontalCenterWithPanel(const Windows::UI::Xaml::UIElement & element, bool value) const;
+    Windows::UI::Xaml::DependencyProperty AlignVerticalCenterWithPanelProperty() const;
+    bool GetAlignVerticalCenterWithPanel(const Windows::UI::Xaml::UIElement & element) const;
+    void SetAlignVerticalCenterWithPanel(const Windows::UI::Xaml::UIElement & element, bool value) const;
+    Windows::UI::Xaml::DependencyProperty BorderBrushProperty() const;
+    Windows::UI::Xaml::DependencyProperty BorderThicknessProperty() const;
+    Windows::UI::Xaml::DependencyProperty CornerRadiusProperty() const;
+    Windows::UI::Xaml::DependencyProperty PaddingProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRichEditBox
+{
+    bool IsReadOnly() const;
+    void IsReadOnly(bool value) const;
+    bool AcceptsReturn() const;
+    void AcceptsReturn(bool value) const;
+    Windows::UI::Xaml::TextAlignment TextAlignment() const;
+    void TextAlignment(Windows::UI::Xaml::TextAlignment value) const;
+    Windows::UI::Xaml::TextWrapping TextWrapping() const;
+    void TextWrapping(Windows::UI::Xaml::TextWrapping value) const;
+    bool IsSpellCheckEnabled() const;
+    void IsSpellCheckEnabled(bool value) const;
+    bool IsTextPredictionEnabled() const;
+    void IsTextPredictionEnabled(bool value) const;
+    Windows::UI::Text::ITextDocument Document() const;
+    Windows::UI::Xaml::Input::InputScope InputScope() const;
+    void InputScope(const Windows::UI::Xaml::Input::InputScope & value) const;
+    event_token TextChanged(const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    using TextChanged_revoker = event_revoker<IRichEditBox>;
+    TextChanged_revoker TextChanged(auto_revoke_t, const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    void TextChanged(event_token token) const;
+    event_token SelectionChanged(const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    using SelectionChanged_revoker = event_revoker<IRichEditBox>;
+    SelectionChanged_revoker SelectionChanged(auto_revoke_t, const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    void SelectionChanged(event_token token) const;
+    event_token ContextMenuOpening(const Windows::UI::Xaml::Controls::ContextMenuOpeningEventHandler & value) const;
+    using ContextMenuOpening_revoker = event_revoker<IRichEditBox>;
+    ContextMenuOpening_revoker ContextMenuOpening(auto_revoke_t, const Windows::UI::Xaml::Controls::ContextMenuOpeningEventHandler & value) const;
+    void ContextMenuOpening(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRichEditBox2
+{
+    Windows::IInspectable Header() const;
+    void Header(const Windows::IInspectable & value) const;
+    Windows::UI::Xaml::DataTemplate HeaderTemplate() const;
+    void HeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
+    hstring PlaceholderText() const;
+    void PlaceholderText(hstring_ref value) const;
+    Windows::UI::Xaml::Media::SolidColorBrush SelectionHighlightColor() const;
+    void SelectionHighlightColor(const Windows::UI::Xaml::Media::SolidColorBrush & value) const;
+    bool PreventKeyboardDisplayOnProgrammaticFocus() const;
+    void PreventKeyboardDisplayOnProgrammaticFocus(bool value) const;
+    bool IsColorFontEnabled() const;
+    void IsColorFontEnabled(bool value) const;
+    event_token Paste(const Windows::UI::Xaml::Controls::TextControlPasteEventHandler & value) const;
+    using Paste_revoker = event_revoker<IRichEditBox2>;
+    Paste_revoker Paste(auto_revoke_t, const Windows::UI::Xaml::Controls::TextControlPasteEventHandler & value) const;
+    void Paste(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRichEditBox3
+{
+    event_token TextCompositionStarted(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::TextCompositionStartedEventArgs> & value) const;
+    using TextCompositionStarted_revoker = event_revoker<IRichEditBox3>;
+    TextCompositionStarted_revoker TextCompositionStarted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::TextCompositionStartedEventArgs> & value) const;
+    void TextCompositionStarted(event_token token) const;
+    event_token TextCompositionChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::TextCompositionChangedEventArgs> & value) const;
+    using TextCompositionChanged_revoker = event_revoker<IRichEditBox3>;
+    TextCompositionChanged_revoker TextCompositionChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::TextCompositionChangedEventArgs> & value) const;
+    void TextCompositionChanged(event_token token) const;
+    event_token TextCompositionEnded(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::TextCompositionEndedEventArgs> & value) const;
+    using TextCompositionEnded_revoker = event_revoker<IRichEditBox3>;
+    TextCompositionEnded_revoker TextCompositionEnded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::TextCompositionEndedEventArgs> & value) const;
+    void TextCompositionEnded(event_token token) const;
+    Windows::UI::Xaml::TextReadingOrder TextReadingOrder() const;
+    void TextReadingOrder(Windows::UI::Xaml::TextReadingOrder value) const;
+    Windows::UI::Xaml::Controls::CandidateWindowAlignment DesiredCandidateWindowAlignment() const;
+    void DesiredCandidateWindowAlignment(Windows::UI::Xaml::Controls::CandidateWindowAlignment value) const;
+    event_token CandidateWindowBoundsChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::CandidateWindowBoundsChangedEventArgs> & value) const;
+    using CandidateWindowBoundsChanged_revoker = event_revoker<IRichEditBox3>;
+    CandidateWindowBoundsChanged_revoker CandidateWindowBoundsChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::CandidateWindowBoundsChangedEventArgs> & value) const;
+    void CandidateWindowBoundsChanged(event_token token) const;
+    event_token TextChanging(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::RichEditBoxTextChangingEventArgs> & value) const;
+    using TextChanging_revoker = event_revoker<IRichEditBox3>;
+    TextChanging_revoker TextChanging(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::RichEditBox, Windows::UI::Xaml::Controls::RichEditBoxTextChangingEventArgs> & value) const;
+    void TextChanging(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRichEditBox4
+{
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> GetLinguisticAlternativesAsync() const;
+    Windows::UI::Xaml::Controls::RichEditClipboardFormat ClipboardCopyFormat() const;
+    void ClipboardCopyFormat(Windows::UI::Xaml::Controls::RichEditClipboardFormat value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRichEditBoxFactory
+{
+    Windows::UI::Xaml::Controls::RichEditBox CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRichEditBoxStatics
+{
+    Windows::UI::Xaml::DependencyProperty IsReadOnlyProperty() const;
+    Windows::UI::Xaml::DependencyProperty AcceptsReturnProperty() const;
+    Windows::UI::Xaml::DependencyProperty TextAlignmentProperty() const;
+    Windows::UI::Xaml::DependencyProperty TextWrappingProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsSpellCheckEnabledProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsTextPredictionEnabledProperty() const;
+    Windows::UI::Xaml::DependencyProperty InputScopeProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRichEditBoxStatics2
+{
+    Windows::UI::Xaml::DependencyProperty HeaderProperty() const;
+    Windows::UI::Xaml::DependencyProperty HeaderTemplateProperty() const;
+    Windows::UI::Xaml::DependencyProperty PlaceholderTextProperty() const;
+    Windows::UI::Xaml::DependencyProperty SelectionHighlightColorProperty() const;
+    Windows::UI::Xaml::DependencyProperty PreventKeyboardDisplayOnProgrammaticFocusProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsColorFontEnabledProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRichEditBoxStatics3
+{
+    Windows::UI::Xaml::DependencyProperty DesiredCandidateWindowAlignmentProperty() const;
+    Windows::UI::Xaml::DependencyProperty TextReadingOrderProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRichEditBoxStatics4
+{
+    Windows::UI::Xaml::DependencyProperty ClipboardCopyFormatProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRichEditBoxTextChangingEventArgs
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRichTextBlock
+{
+    double FontSize() const;
+    void FontSize(double value) const;
+    Windows::UI::Xaml::Media::FontFamily FontFamily() const;
+    void FontFamily(const Windows::UI::Xaml::Media::FontFamily & value) const;
+    Windows::UI::Text::FontWeight FontWeight() const;
+    void FontWeight(const Windows::UI::Text::FontWeight & value) const;
+    Windows::UI::Text::FontStyle FontStyle() const;
+    void FontStyle(Windows::UI::Text::FontStyle value) const;
+    Windows::UI::Text::FontStretch FontStretch() const;
+    void FontStretch(Windows::UI::Text::FontStretch value) const;
+    Windows::UI::Xaml::Media::Brush Foreground() const;
+    void Foreground(const Windows::UI::Xaml::Media::Brush & value) const;
+    Windows::UI::Xaml::TextWrapping TextWrapping() const;
+    void TextWrapping(Windows::UI::Xaml::TextWrapping value) const;
+    Windows::UI::Xaml::TextTrimming TextTrimming() const;
+    void TextTrimming(Windows::UI::Xaml::TextTrimming value) const;
+    Windows::UI::Xaml::TextAlignment TextAlignment() const;
+    void TextAlignment(Windows::UI::Xaml::TextAlignment value) const;
+    Windows::UI::Xaml::Documents::BlockCollection Blocks() const;
+    Windows::UI::Xaml::Thickness Padding() const;
+    void Padding(const Windows::UI::Xaml::Thickness & value) const;
+    double LineHeight() const;
+    void LineHeight(double value) const;
+    Windows::UI::Xaml::LineStackingStrategy LineStackingStrategy() const;
+    void LineStackingStrategy(Windows::UI::Xaml::LineStackingStrategy value) const;
+    int32_t CharacterSpacing() const;
+    void CharacterSpacing(int32_t value) const;
+    Windows::UI::Xaml::Controls::RichTextBlockOverflow OverflowContentTarget() const;
+    void OverflowContentTarget(const Windows::UI::Xaml::Controls::RichTextBlockOverflow & value) const;
+    bool IsTextSelectionEnabled() const;
+    void IsTextSelectionEnabled(bool value) const;
+    bool HasOverflowContent() const;
+    hstring SelectedText() const;
+    Windows::UI::Xaml::Documents::TextPointer ContentStart() const;
+    Windows::UI::Xaml::Documents::TextPointer ContentEnd() const;
+    Windows::UI::Xaml::Documents::TextPointer SelectionStart() const;
+    Windows::UI::Xaml::Documents::TextPointer SelectionEnd() const;
+    double BaselineOffset() const;
+    event_token SelectionChanged(const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    using SelectionChanged_revoker = event_revoker<IRichTextBlock>;
+    SelectionChanged_revoker SelectionChanged(auto_revoke_t, const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    void SelectionChanged(event_token token) const;
+    event_token ContextMenuOpening(const Windows::UI::Xaml::Controls::ContextMenuOpeningEventHandler & value) const;
+    using ContextMenuOpening_revoker = event_revoker<IRichTextBlock>;
+    ContextMenuOpening_revoker ContextMenuOpening(auto_revoke_t, const Windows::UI::Xaml::Controls::ContextMenuOpeningEventHandler & value) const;
+    void ContextMenuOpening(event_token token) const;
+    void SelectAll() const;
+    void Select(const Windows::UI::Xaml::Documents::TextPointer & start, const Windows::UI::Xaml::Documents::TextPointer & end) const;
+    Windows::UI::Xaml::Documents::TextPointer GetPositionFromPoint(const Windows::Foundation::Point & point) const;
+    bool Focus(Windows::UI::Xaml::FocusState value) const;
+    double TextIndent() const;
+    void TextIndent(double value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRichTextBlock2
+{
+    int32_t MaxLines() const;
+    void MaxLines(int32_t value) const;
+    Windows::UI::Xaml::TextLineBounds TextLineBounds() const;
+    void TextLineBounds(Windows::UI::Xaml::TextLineBounds value) const;
+    Windows::UI::Xaml::Media::SolidColorBrush SelectionHighlightColor() const;
+    void SelectionHighlightColor(const Windows::UI::Xaml::Media::SolidColorBrush & value) const;
+    Windows::UI::Xaml::OpticalMarginAlignment OpticalMarginAlignment() const;
+    void OpticalMarginAlignment(Windows::UI::Xaml::OpticalMarginAlignment value) const;
+    bool IsColorFontEnabled() const;
+    void IsColorFontEnabled(bool value) const;
+    Windows::UI::Xaml::TextReadingOrder TextReadingOrder() const;
+    void TextReadingOrder(Windows::UI::Xaml::TextReadingOrder value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRichTextBlock3
+{
+    bool IsTextScaleFactorEnabled() const;
+    void IsTextScaleFactorEnabled(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRichTextBlockOverflow
+{
+    Windows::UI::Xaml::Controls::RichTextBlockOverflow OverflowContentTarget() const;
+    void OverflowContentTarget(const Windows::UI::Xaml::Controls::RichTextBlockOverflow & value) const;
+    Windows::UI::Xaml::Thickness Padding() const;
+    void Padding(const Windows::UI::Xaml::Thickness & value) const;
+    Windows::UI::Xaml::Controls::RichTextBlock ContentSource() const;
+    bool HasOverflowContent() const;
+    Windows::UI::Xaml::Documents::TextPointer ContentStart() const;
+    Windows::UI::Xaml::Documents::TextPointer ContentEnd() const;
+    double BaselineOffset() const;
+    Windows::UI::Xaml::Documents::TextPointer GetPositionFromPoint(const Windows::Foundation::Point & point) const;
+    bool Focus(Windows::UI::Xaml::FocusState value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRichTextBlockOverflow2
+{
+    int32_t MaxLines() const;
+    void MaxLines(int32_t value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRichTextBlockOverflowStatics
+{
+    Windows::UI::Xaml::DependencyProperty OverflowContentTargetProperty() const;
+    Windows::UI::Xaml::DependencyProperty PaddingProperty() const;
+    Windows::UI::Xaml::DependencyProperty HasOverflowContentProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRichTextBlockOverflowStatics2
+{
+    Windows::UI::Xaml::DependencyProperty MaxLinesProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRichTextBlockStatics
+{
+    Windows::UI::Xaml::DependencyProperty FontSizeProperty() const;
+    Windows::UI::Xaml::DependencyProperty FontFamilyProperty() const;
+    Windows::UI::Xaml::DependencyProperty FontWeightProperty() const;
+    Windows::UI::Xaml::DependencyProperty FontStyleProperty() const;
+    Windows::UI::Xaml::DependencyProperty FontStretchProperty() const;
+    Windows::UI::Xaml::DependencyProperty ForegroundProperty() const;
+    Windows::UI::Xaml::DependencyProperty TextWrappingProperty() const;
+    Windows::UI::Xaml::DependencyProperty TextTrimmingProperty() const;
+    Windows::UI::Xaml::DependencyProperty TextAlignmentProperty() const;
+    Windows::UI::Xaml::DependencyProperty PaddingProperty() const;
+    Windows::UI::Xaml::DependencyProperty LineHeightProperty() const;
+    Windows::UI::Xaml::DependencyProperty LineStackingStrategyProperty() const;
+    Windows::UI::Xaml::DependencyProperty CharacterSpacingProperty() const;
+    Windows::UI::Xaml::DependencyProperty OverflowContentTargetProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsTextSelectionEnabledProperty() const;
+    Windows::UI::Xaml::DependencyProperty HasOverflowContentProperty() const;
+    Windows::UI::Xaml::DependencyProperty SelectedTextProperty() const;
+    Windows::UI::Xaml::DependencyProperty TextIndentProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRichTextBlockStatics2
+{
+    Windows::UI::Xaml::DependencyProperty MaxLinesProperty() const;
+    Windows::UI::Xaml::DependencyProperty TextLineBoundsProperty() const;
+    Windows::UI::Xaml::DependencyProperty SelectionHighlightColorProperty() const;
+    Windows::UI::Xaml::DependencyProperty OpticalMarginAlignmentProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsColorFontEnabledProperty() const;
+    Windows::UI::Xaml::DependencyProperty TextReadingOrderProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRichTextBlockStatics3
+{
+    Windows::UI::Xaml::DependencyProperty IsTextScaleFactorEnabledProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRowDefinition
+{
+    Windows::UI::Xaml::GridLength Height() const;
+    void Height(const Windows::UI::Xaml::GridLength & value) const;
+    double MaxHeight() const;
+    void MaxHeight(double value) const;
+    double MinHeight() const;
+    void MinHeight(double value) const;
+    double ActualHeight() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRowDefinitionStatics
+{
+    Windows::UI::Xaml::DependencyProperty HeightProperty() const;
+    Windows::UI::Xaml::DependencyProperty MaxHeightProperty() const;
+    Windows::UI::Xaml::DependencyProperty MinHeightProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IScrollContentPresenter
+{
+    bool CanVerticallyScroll() const;
+    void CanVerticallyScroll(bool value) const;
+    bool CanHorizontallyScroll() const;
+    void CanHorizontallyScroll(bool value) const;
+    double ExtentWidth() const;
+    double ExtentHeight() const;
+    double ViewportWidth() const;
+    double ViewportHeight() const;
+    double HorizontalOffset() const;
+    double VerticalOffset() const;
+    Windows::IInspectable ScrollOwner() const;
+    void ScrollOwner(const Windows::IInspectable & value) const;
+    void LineUp() const;
+    void LineDown() const;
+    void LineLeft() const;
+    void LineRight() const;
+    void PageUp() const;
+    void PageDown() const;
+    void PageLeft() const;
+    void PageRight() const;
+    void MouseWheelUp() const;
+    void MouseWheelDown() const;
+    void MouseWheelLeft() const;
+    void MouseWheelRight() const;
+    void SetHorizontalOffset(double offset) const;
+    void SetVerticalOffset(double offset) const;
+    Windows::Foundation::Rect MakeVisible(const Windows::UI::Xaml::UIElement & visual, const Windows::Foundation::Rect & rectangle) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IScrollViewer
+{
+    Windows::UI::Xaml::Controls::ScrollBarVisibility HorizontalScrollBarVisibility() const;
+    void HorizontalScrollBarVisibility(Windows::UI::Xaml::Controls::ScrollBarVisibility value) const;
+    Windows::UI::Xaml::Controls::ScrollBarVisibility VerticalScrollBarVisibility() const;
+    void VerticalScrollBarVisibility(Windows::UI::Xaml::Controls::ScrollBarVisibility value) const;
+    bool IsHorizontalRailEnabled() const;
+    void IsHorizontalRailEnabled(bool value) const;
+    bool IsVerticalRailEnabled() const;
+    void IsVerticalRailEnabled(bool value) const;
+    bool IsHorizontalScrollChainingEnabled() const;
+    void IsHorizontalScrollChainingEnabled(bool value) const;
+    bool IsVerticalScrollChainingEnabled() const;
+    void IsVerticalScrollChainingEnabled(bool value) const;
+    bool IsZoomChainingEnabled() const;
+    void IsZoomChainingEnabled(bool value) const;
+    bool IsScrollInertiaEnabled() const;
+    void IsScrollInertiaEnabled(bool value) const;
+    bool IsZoomInertiaEnabled() const;
+    void IsZoomInertiaEnabled(bool value) const;
+    Windows::UI::Xaml::Controls::ScrollMode HorizontalScrollMode() const;
+    void HorizontalScrollMode(Windows::UI::Xaml::Controls::ScrollMode value) const;
+    Windows::UI::Xaml::Controls::ScrollMode VerticalScrollMode() const;
+    void VerticalScrollMode(Windows::UI::Xaml::Controls::ScrollMode value) const;
+    Windows::UI::Xaml::Controls::ZoomMode ZoomMode() const;
+    void ZoomMode(Windows::UI::Xaml::Controls::ZoomMode value) const;
+    Windows::UI::Xaml::Controls::Primitives::SnapPointsAlignment HorizontalSnapPointsAlignment() const;
+    void HorizontalSnapPointsAlignment(Windows::UI::Xaml::Controls::Primitives::SnapPointsAlignment value) const;
+    Windows::UI::Xaml::Controls::Primitives::SnapPointsAlignment VerticalSnapPointsAlignment() const;
+    void VerticalSnapPointsAlignment(Windows::UI::Xaml::Controls::Primitives::SnapPointsAlignment value) const;
+    Windows::UI::Xaml::Controls::SnapPointsType HorizontalSnapPointsType() const;
+    void HorizontalSnapPointsType(Windows::UI::Xaml::Controls::SnapPointsType value) const;
+    Windows::UI::Xaml::Controls::SnapPointsType VerticalSnapPointsType() const;
+    void VerticalSnapPointsType(Windows::UI::Xaml::Controls::SnapPointsType value) const;
+    Windows::UI::Xaml::Controls::SnapPointsType ZoomSnapPointsType() const;
+    void ZoomSnapPointsType(Windows::UI::Xaml::Controls::SnapPointsType value) const;
+    double HorizontalOffset() const;
+    double ViewportWidth() const;
+    double ScrollableWidth() const;
+    Windows::UI::Xaml::Visibility ComputedHorizontalScrollBarVisibility() const;
+    double ExtentWidth() const;
+    double VerticalOffset() const;
+    double ViewportHeight() const;
+    double ScrollableHeight() const;
+    Windows::UI::Xaml::Visibility ComputedVerticalScrollBarVisibility() const;
+    double ExtentHeight() const;
+    float MinZoomFactor() const;
+    void MinZoomFactor(float value) const;
+    float MaxZoomFactor() const;
+    void MaxZoomFactor(float value) const;
+    float ZoomFactor() const;
+    Windows::Foundation::Collections::IVector<float> ZoomSnapPoints() const;
+    event_token ViewChanged(const Windows::Foundation::EventHandler<Windows::UI::Xaml::Controls::ScrollViewerViewChangedEventArgs> & value) const;
+    using ViewChanged_revoker = event_revoker<IScrollViewer>;
+    ViewChanged_revoker ViewChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::UI::Xaml::Controls::ScrollViewerViewChangedEventArgs> & value) const;
+    void ViewChanged(event_token token) const;
+    void ScrollToHorizontalOffset(double offset) const;
+    void ScrollToVerticalOffset(double offset) const;
+    void ZoomToFactor(float factor) const;
+    void InvalidateScrollInfo() const;
+    bool IsDeferredScrollingEnabled() const;
+    void IsDeferredScrollingEnabled(bool value) const;
+    bool BringIntoViewOnFocusChange() const;
+    void BringIntoViewOnFocusChange(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IScrollViewer2
+{
+    Windows::UI::Xaml::UIElement TopLeftHeader() const;
+    void TopLeftHeader(const Windows::UI::Xaml::UIElement & value) const;
+    Windows::UI::Xaml::UIElement LeftHeader() const;
+    void LeftHeader(const Windows::UI::Xaml::UIElement & value) const;
+    Windows::UI::Xaml::UIElement TopHeader() const;
+    void TopHeader(const Windows::UI::Xaml::UIElement & value) const;
+    event_token ViewChanging(const Windows::Foundation::EventHandler<Windows::UI::Xaml::Controls::ScrollViewerViewChangingEventArgs> & value) const;
+    using ViewChanging_revoker = event_revoker<IScrollViewer2>;
+    ViewChanging_revoker ViewChanging(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::UI::Xaml::Controls::ScrollViewerViewChangingEventArgs> & value) const;
+    void ViewChanging(event_token token) const;
+    bool ChangeView(const Windows::Foundation::IReference<double> & horizontalOffset, const Windows::Foundation::IReference<double> & verticalOffset, const Windows::Foundation::IReference<float> & zoomFactor) const;
+    bool ChangeView(const Windows::Foundation::IReference<double> & horizontalOffset, const Windows::Foundation::IReference<double> & verticalOffset, const Windows::Foundation::IReference<float> & zoomFactor, bool disableAnimation) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IScrollViewer3
+{
+    event_token DirectManipulationStarted(const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    using DirectManipulationStarted_revoker = event_revoker<IScrollViewer3>;
+    DirectManipulationStarted_revoker DirectManipulationStarted(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    void DirectManipulationStarted(event_token token) const;
+    event_token DirectManipulationCompleted(const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    using DirectManipulationCompleted_revoker = event_revoker<IScrollViewer3>;
+    DirectManipulationCompleted_revoker DirectManipulationCompleted(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    void DirectManipulationCompleted(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IScrollViewerStatics
+{
+    Windows::UI::Xaml::DependencyProperty HorizontalSnapPointsAlignmentProperty() const;
+    Windows::UI::Xaml::DependencyProperty VerticalSnapPointsAlignmentProperty() const;
+    Windows::UI::Xaml::DependencyProperty HorizontalSnapPointsTypeProperty() const;
+    Windows::UI::Xaml::DependencyProperty VerticalSnapPointsTypeProperty() const;
+    Windows::UI::Xaml::DependencyProperty ZoomSnapPointsTypeProperty() const;
+    Windows::UI::Xaml::DependencyProperty HorizontalOffsetProperty() const;
+    Windows::UI::Xaml::DependencyProperty ViewportWidthProperty() const;
+    Windows::UI::Xaml::DependencyProperty ScrollableWidthProperty() const;
+    Windows::UI::Xaml::DependencyProperty ComputedHorizontalScrollBarVisibilityProperty() const;
+    Windows::UI::Xaml::DependencyProperty ExtentWidthProperty() const;
+    Windows::UI::Xaml::DependencyProperty VerticalOffsetProperty() const;
+    Windows::UI::Xaml::DependencyProperty ViewportHeightProperty() const;
+    Windows::UI::Xaml::DependencyProperty ScrollableHeightProperty() const;
+    Windows::UI::Xaml::DependencyProperty ComputedVerticalScrollBarVisibilityProperty() const;
+    Windows::UI::Xaml::DependencyProperty ExtentHeightProperty() const;
+    Windows::UI::Xaml::DependencyProperty MinZoomFactorProperty() const;
+    Windows::UI::Xaml::DependencyProperty MaxZoomFactorProperty() const;
+    Windows::UI::Xaml::DependencyProperty ZoomFactorProperty() const;
+    Windows::UI::Xaml::DependencyProperty ZoomSnapPointsProperty() const;
+    Windows::UI::Xaml::DependencyProperty HorizontalScrollBarVisibilityProperty() const;
+    Windows::UI::Xaml::Controls::ScrollBarVisibility GetHorizontalScrollBarVisibility(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetHorizontalScrollBarVisibility(const Windows::UI::Xaml::DependencyObject & element, Windows::UI::Xaml::Controls::ScrollBarVisibility horizontalScrollBarVisibility) const;
+    Windows::UI::Xaml::DependencyProperty VerticalScrollBarVisibilityProperty() const;
+    Windows::UI::Xaml::Controls::ScrollBarVisibility GetVerticalScrollBarVisibility(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetVerticalScrollBarVisibility(const Windows::UI::Xaml::DependencyObject & element, Windows::UI::Xaml::Controls::ScrollBarVisibility verticalScrollBarVisibility) const;
+    Windows::UI::Xaml::DependencyProperty IsHorizontalRailEnabledProperty() const;
+    bool GetIsHorizontalRailEnabled(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetIsHorizontalRailEnabled(const Windows::UI::Xaml::DependencyObject & element, bool isHorizontalRailEnabled) const;
+    Windows::UI::Xaml::DependencyProperty IsVerticalRailEnabledProperty() const;
+    bool GetIsVerticalRailEnabled(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetIsVerticalRailEnabled(const Windows::UI::Xaml::DependencyObject & element, bool isVerticalRailEnabled) const;
+    Windows::UI::Xaml::DependencyProperty IsHorizontalScrollChainingEnabledProperty() const;
+    bool GetIsHorizontalScrollChainingEnabled(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetIsHorizontalScrollChainingEnabled(const Windows::UI::Xaml::DependencyObject & element, bool isHorizontalScrollChainingEnabled) const;
+    Windows::UI::Xaml::DependencyProperty IsVerticalScrollChainingEnabledProperty() const;
+    bool GetIsVerticalScrollChainingEnabled(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetIsVerticalScrollChainingEnabled(const Windows::UI::Xaml::DependencyObject & element, bool isVerticalScrollChainingEnabled) const;
+    Windows::UI::Xaml::DependencyProperty IsZoomChainingEnabledProperty() const;
+    bool GetIsZoomChainingEnabled(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetIsZoomChainingEnabled(const Windows::UI::Xaml::DependencyObject & element, bool isZoomChainingEnabled) const;
+    Windows::UI::Xaml::DependencyProperty IsScrollInertiaEnabledProperty() const;
+    bool GetIsScrollInertiaEnabled(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetIsScrollInertiaEnabled(const Windows::UI::Xaml::DependencyObject & element, bool isScrollInertiaEnabled) const;
+    Windows::UI::Xaml::DependencyProperty IsZoomInertiaEnabledProperty() const;
+    bool GetIsZoomInertiaEnabled(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetIsZoomInertiaEnabled(const Windows::UI::Xaml::DependencyObject & element, bool isZoomInertiaEnabled) const;
+    Windows::UI::Xaml::DependencyProperty HorizontalScrollModeProperty() const;
+    Windows::UI::Xaml::Controls::ScrollMode GetHorizontalScrollMode(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetHorizontalScrollMode(const Windows::UI::Xaml::DependencyObject & element, Windows::UI::Xaml::Controls::ScrollMode horizontalScrollMode) const;
+    Windows::UI::Xaml::DependencyProperty VerticalScrollModeProperty() const;
+    Windows::UI::Xaml::Controls::ScrollMode GetVerticalScrollMode(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetVerticalScrollMode(const Windows::UI::Xaml::DependencyObject & element, Windows::UI::Xaml::Controls::ScrollMode verticalScrollMode) const;
+    Windows::UI::Xaml::DependencyProperty ZoomModeProperty() const;
+    Windows::UI::Xaml::Controls::ZoomMode GetZoomMode(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetZoomMode(const Windows::UI::Xaml::DependencyObject & element, Windows::UI::Xaml::Controls::ZoomMode zoomMode) const;
+    Windows::UI::Xaml::DependencyProperty IsDeferredScrollingEnabledProperty() const;
+    bool GetIsDeferredScrollingEnabled(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetIsDeferredScrollingEnabled(const Windows::UI::Xaml::DependencyObject & element, bool isDeferredScrollingEnabled) const;
+    Windows::UI::Xaml::DependencyProperty BringIntoViewOnFocusChangeProperty() const;
+    bool GetBringIntoViewOnFocusChange(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetBringIntoViewOnFocusChange(const Windows::UI::Xaml::DependencyObject & element, bool bringIntoViewOnFocusChange) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IScrollViewerStatics2
+{
+    Windows::UI::Xaml::DependencyProperty TopLeftHeaderProperty() const;
+    Windows::UI::Xaml::DependencyProperty LeftHeaderProperty() const;
+    Windows::UI::Xaml::DependencyProperty TopHeaderProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IScrollViewerView
+{
+    double HorizontalOffset() const;
+    double VerticalOffset() const;
+    float ZoomFactor() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IScrollViewerViewChangedEventArgs
+{
+    bool IsIntermediate() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IScrollViewerViewChangingEventArgs
+{
+    Windows::UI::Xaml::Controls::ScrollViewerView NextView() const;
+    Windows::UI::Xaml::Controls::ScrollViewerView FinalView() const;
+    bool IsInertial() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISearchBox
+{
+    bool SearchHistoryEnabled() const;
+    void SearchHistoryEnabled(bool value) const;
+    hstring SearchHistoryContext() const;
+    void SearchHistoryContext(hstring_ref value) const;
+    hstring PlaceholderText() const;
+    void PlaceholderText(hstring_ref value) const;
+    hstring QueryText() const;
+    void QueryText(hstring_ref value) const;
+    bool FocusOnKeyboardInput() const;
+    void FocusOnKeyboardInput(bool value) const;
+    bool ChooseSuggestionOnEnter() const;
+    void ChooseSuggestionOnEnter(bool value) const;
+    event_token QueryChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::SearchBox, Windows::UI::Xaml::Controls::SearchBoxQueryChangedEventArgs> & value) const;
+    using QueryChanged_revoker = event_revoker<ISearchBox>;
+    QueryChanged_revoker QueryChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::SearchBox, Windows::UI::Xaml::Controls::SearchBoxQueryChangedEventArgs> & value) const;
+    void QueryChanged(event_token token) const;
+    event_token SuggestionsRequested(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::SearchBox, Windows::UI::Xaml::Controls::SearchBoxSuggestionsRequestedEventArgs> & value) const;
+    using SuggestionsRequested_revoker = event_revoker<ISearchBox>;
+    SuggestionsRequested_revoker SuggestionsRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::SearchBox, Windows::UI::Xaml::Controls::SearchBoxSuggestionsRequestedEventArgs> & value) const;
+    void SuggestionsRequested(event_token token) const;
+    event_token QuerySubmitted(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::SearchBox, Windows::UI::Xaml::Controls::SearchBoxQuerySubmittedEventArgs> & value) const;
+    using QuerySubmitted_revoker = event_revoker<ISearchBox>;
+    QuerySubmitted_revoker QuerySubmitted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::SearchBox, Windows::UI::Xaml::Controls::SearchBoxQuerySubmittedEventArgs> & value) const;
+    void QuerySubmitted(event_token token) const;
+    event_token ResultSuggestionChosen(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::SearchBox, Windows::UI::Xaml::Controls::SearchBoxResultSuggestionChosenEventArgs> & value) const;
+    using ResultSuggestionChosen_revoker = event_revoker<ISearchBox>;
+    ResultSuggestionChosen_revoker ResultSuggestionChosen(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::SearchBox, Windows::UI::Xaml::Controls::SearchBoxResultSuggestionChosenEventArgs> & value) const;
+    void ResultSuggestionChosen(event_token token) const;
+    event_token PrepareForFocusOnKeyboardInput(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::SearchBox, Windows::UI::Xaml::RoutedEventArgs> & value) const;
+    using PrepareForFocusOnKeyboardInput_revoker = event_revoker<ISearchBox>;
+    PrepareForFocusOnKeyboardInput_revoker PrepareForFocusOnKeyboardInput(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::SearchBox, Windows::UI::Xaml::RoutedEventArgs> & value) const;
+    void PrepareForFocusOnKeyboardInput(event_token token) const;
+    void SetLocalContentSuggestionSettings(const Windows::ApplicationModel::Search::LocalContentSuggestionSettings & settings) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISearchBoxFactory
+{
+    Windows::UI::Xaml::Controls::SearchBox CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISearchBoxQueryChangedEventArgs
+{
+    hstring QueryText() const;
+    hstring Language() const;
+    Windows::ApplicationModel::Search::SearchQueryLinguisticDetails LinguisticDetails() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISearchBoxQuerySubmittedEventArgs
+{
+    hstring QueryText() const;
+    hstring Language() const;
+    Windows::ApplicationModel::Search::SearchQueryLinguisticDetails LinguisticDetails() const;
+    Windows::System::VirtualKeyModifiers KeyModifiers() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISearchBoxResultSuggestionChosenEventArgs
+{
+    hstring Tag() const;
+    Windows::System::VirtualKeyModifiers KeyModifiers() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISearchBoxStatics
+{
+    Windows::UI::Xaml::DependencyProperty SearchHistoryEnabledProperty() const;
+    Windows::UI::Xaml::DependencyProperty SearchHistoryContextProperty() const;
+    Windows::UI::Xaml::DependencyProperty PlaceholderTextProperty() const;
+    Windows::UI::Xaml::DependencyProperty QueryTextProperty() const;
+    Windows::UI::Xaml::DependencyProperty FocusOnKeyboardInputProperty() const;
+    Windows::UI::Xaml::DependencyProperty ChooseSuggestionOnEnterProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISearchBoxSuggestionsRequestedEventArgs
+{
+    hstring QueryText() const;
+    hstring Language() const;
+    Windows::ApplicationModel::Search::SearchQueryLinguisticDetails LinguisticDetails() const;
+    Windows::ApplicationModel::Search::SearchSuggestionsRequest Request() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISectionsInViewChangedEventArgs
+{
+    Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Controls::HubSection> AddedSections() const;
+    Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Controls::HubSection> RemovedSections() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISectionsInViewChangedEventArgsFactory
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISelectionChangedEventArgs
+{
+    Windows::Foundation::Collections::IVector<Windows::IInspectable> AddedItems() const;
+    Windows::Foundation::Collections::IVector<Windows::IInspectable> RemovedItems() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISelectionChangedEventArgsFactory
+{
+    Windows::UI::Xaml::Controls::SelectionChangedEventArgs CreateInstanceWithRemovedItemsAndAddedItems(const Windows::Foundation::Collections::IVector<Windows::IInspectable> & removedItems, const Windows::Foundation::Collections::IVector<Windows::IInspectable> & addedItems, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISemanticZoom
+{
+    Windows::UI::Xaml::Controls::ISemanticZoomInformation ZoomedInView() const;
+    void ZoomedInView(const Windows::UI::Xaml::Controls::ISemanticZoomInformation & value) const;
+    Windows::UI::Xaml::Controls::ISemanticZoomInformation ZoomedOutView() const;
+    void ZoomedOutView(const Windows::UI::Xaml::Controls::ISemanticZoomInformation & value) const;
+    bool IsZoomedInViewActive() const;
+    void IsZoomedInViewActive(bool value) const;
+    bool CanChangeViews() const;
+    void CanChangeViews(bool value) const;
+    event_token ViewChangeStarted(const Windows::UI::Xaml::Controls::SemanticZoomViewChangedEventHandler & value) const;
+    using ViewChangeStarted_revoker = event_revoker<ISemanticZoom>;
+    ViewChangeStarted_revoker ViewChangeStarted(auto_revoke_t, const Windows::UI::Xaml::Controls::SemanticZoomViewChangedEventHandler & value) const;
+    void ViewChangeStarted(event_token token) const;
+    event_token ViewChangeCompleted(const Windows::UI::Xaml::Controls::SemanticZoomViewChangedEventHandler & value) const;
+    using ViewChangeCompleted_revoker = event_revoker<ISemanticZoom>;
+    ViewChangeCompleted_revoker ViewChangeCompleted(auto_revoke_t, const Windows::UI::Xaml::Controls::SemanticZoomViewChangedEventHandler & value) const;
+    void ViewChangeCompleted(event_token token) const;
+    void ToggleActiveView() const;
+    bool IsZoomOutButtonEnabled() const;
+    void IsZoomOutButtonEnabled(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISemanticZoomInformation
+{
+    Windows::UI::Xaml::Controls::SemanticZoom SemanticZoomOwner() const;
+    void SemanticZoomOwner(const Windows::UI::Xaml::Controls::SemanticZoom & value) const;
+    bool IsActiveView() const;
+    void IsActiveView(bool value) const;
+    bool IsZoomedInView() const;
+    void IsZoomedInView(bool value) const;
+    void InitializeViewChange() const;
+    void CompleteViewChange() const;
+    void MakeVisible(const Windows::UI::Xaml::Controls::SemanticZoomLocation & item) const;
+    void StartViewChangeFrom(const Windows::UI::Xaml::Controls::SemanticZoomLocation & source, const Windows::UI::Xaml::Controls::SemanticZoomLocation & destination) const;
+    void StartViewChangeTo(const Windows::UI::Xaml::Controls::SemanticZoomLocation & source, const Windows::UI::Xaml::Controls::SemanticZoomLocation & destination) const;
+    void CompleteViewChangeFrom(const Windows::UI::Xaml::Controls::SemanticZoomLocation & source, const Windows::UI::Xaml::Controls::SemanticZoomLocation & destination) const;
+    void CompleteViewChangeTo(const Windows::UI::Xaml::Controls::SemanticZoomLocation & source, const Windows::UI::Xaml::Controls::SemanticZoomLocation & destination) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISemanticZoomLocation
+{
+    Windows::IInspectable Item() const;
+    void Item(const Windows::IInspectable & value) const;
+    Windows::Foundation::Rect Bounds() const;
+    void Bounds(const Windows::Foundation::Rect & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISemanticZoomStatics
+{
+    Windows::UI::Xaml::DependencyProperty ZoomedInViewProperty() const;
+    Windows::UI::Xaml::DependencyProperty ZoomedOutViewProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsZoomedInViewActiveProperty() const;
+    Windows::UI::Xaml::DependencyProperty CanChangeViewsProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsZoomOutButtonEnabledProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISemanticZoomViewChangedEventArgs
+{
+    bool IsSourceZoomedInView() const;
+    void IsSourceZoomedInView(bool value) const;
+    Windows::UI::Xaml::Controls::SemanticZoomLocation SourceItem() const;
+    void SourceItem(const Windows::UI::Xaml::Controls::SemanticZoomLocation & value) const;
+    Windows::UI::Xaml::Controls::SemanticZoomLocation DestinationItem() const;
+    void DestinationItem(const Windows::UI::Xaml::Controls::SemanticZoomLocation & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISettingsFlyout
+{
+    hstring Title() const;
+    void Title(hstring_ref value) const;
+    Windows::UI::Xaml::Media::Brush HeaderBackground() const;
+    void HeaderBackground(const Windows::UI::Xaml::Media::Brush & value) const;
+    Windows::UI::Xaml::Media::Brush HeaderForeground() const;
+    void HeaderForeground(const Windows::UI::Xaml::Media::Brush & value) const;
+    Windows::UI::Xaml::Media::ImageSource IconSource() const;
+    void IconSource(const Windows::UI::Xaml::Media::ImageSource & value) const;
+    Windows::UI::Xaml::Controls::Primitives::SettingsFlyoutTemplateSettings TemplateSettings() const;
+    event_token BackClick(const Windows::UI::Xaml::Controls::BackClickEventHandler & value) const;
+    using BackClick_revoker = event_revoker<ISettingsFlyout>;
+    BackClick_revoker BackClick(auto_revoke_t, const Windows::UI::Xaml::Controls::BackClickEventHandler & value) const;
+    void BackClick(event_token token) const;
+    void Show() const;
+    void ShowIndependent() const;
+    void Hide() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISettingsFlyoutFactory
+{
+    Windows::UI::Xaml::Controls::SettingsFlyout CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISettingsFlyoutStatics
+{
+    Windows::UI::Xaml::DependencyProperty TitleProperty() const;
+    Windows::UI::Xaml::DependencyProperty HeaderBackgroundProperty() const;
+    Windows::UI::Xaml::DependencyProperty HeaderForegroundProperty() const;
+    Windows::UI::Xaml::DependencyProperty IconSourceProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISlider
+{
+    double IntermediateValue() const;
+    void IntermediateValue(double value) const;
+    double StepFrequency() const;
+    void StepFrequency(double value) const;
+    Windows::UI::Xaml::Controls::Primitives::SliderSnapsTo SnapsTo() const;
+    void SnapsTo(Windows::UI::Xaml::Controls::Primitives::SliderSnapsTo value) const;
+    double TickFrequency() const;
+    void TickFrequency(double value) const;
+    Windows::UI::Xaml::Controls::Primitives::TickPlacement TickPlacement() const;
+    void TickPlacement(Windows::UI::Xaml::Controls::Primitives::TickPlacement value) const;
+    Windows::UI::Xaml::Controls::Orientation Orientation() const;
+    void Orientation(Windows::UI::Xaml::Controls::Orientation value) const;
+    bool IsDirectionReversed() const;
+    void IsDirectionReversed(bool value) const;
+    bool IsThumbToolTipEnabled() const;
+    void IsThumbToolTipEnabled(bool value) const;
+    Windows::UI::Xaml::Data::IValueConverter ThumbToolTipValueConverter() const;
+    void ThumbToolTipValueConverter(const Windows::UI::Xaml::Data::IValueConverter & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISlider2
+{
+    Windows::IInspectable Header() const;
+    void Header(const Windows::IInspectable & value) const;
+    Windows::UI::Xaml::DataTemplate HeaderTemplate() const;
+    void HeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISliderFactory
+{
+    Windows::UI::Xaml::Controls::Slider CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISliderStatics
+{
+    Windows::UI::Xaml::DependencyProperty IntermediateValueProperty() const;
+    Windows::UI::Xaml::DependencyProperty StepFrequencyProperty() const;
+    Windows::UI::Xaml::DependencyProperty SnapsToProperty() const;
+    Windows::UI::Xaml::DependencyProperty TickFrequencyProperty() const;
+    Windows::UI::Xaml::DependencyProperty TickPlacementProperty() const;
+    Windows::UI::Xaml::DependencyProperty OrientationProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsDirectionReversedProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsThumbToolTipEnabledProperty() const;
+    Windows::UI::Xaml::DependencyProperty ThumbToolTipValueConverterProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISliderStatics2
+{
+    Windows::UI::Xaml::DependencyProperty HeaderProperty() const;
+    Windows::UI::Xaml::DependencyProperty HeaderTemplateProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISplitView
+{
+    Windows::UI::Xaml::UIElement Content() const;
+    void Content(const Windows::UI::Xaml::UIElement & value) const;
+    Windows::UI::Xaml::UIElement Pane() const;
+    void Pane(const Windows::UI::Xaml::UIElement & value) const;
+    bool IsPaneOpen() const;
+    void IsPaneOpen(bool value) const;
+    double OpenPaneLength() const;
+    void OpenPaneLength(double value) const;
+    double CompactPaneLength() const;
+    void CompactPaneLength(double value) const;
+    Windows::UI::Xaml::Controls::SplitViewPanePlacement PanePlacement() const;
+    void PanePlacement(Windows::UI::Xaml::Controls::SplitViewPanePlacement value) const;
+    Windows::UI::Xaml::Controls::SplitViewDisplayMode DisplayMode() const;
+    void DisplayMode(Windows::UI::Xaml::Controls::SplitViewDisplayMode value) const;
+    Windows::UI::Xaml::Controls::Primitives::SplitViewTemplateSettings TemplateSettings() const;
+    Windows::UI::Xaml::Media::Brush PaneBackground() const;
+    void PaneBackground(const Windows::UI::Xaml::Media::Brush & value) const;
+    event_token PaneClosing(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::SplitView, Windows::UI::Xaml::Controls::SplitViewPaneClosingEventArgs> & value) const;
+    using PaneClosing_revoker = event_revoker<ISplitView>;
+    PaneClosing_revoker PaneClosing(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::SplitView, Windows::UI::Xaml::Controls::SplitViewPaneClosingEventArgs> & value) const;
+    void PaneClosing(event_token token) const;
+    event_token PaneClosed(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::SplitView, Windows::IInspectable> & value) const;
+    using PaneClosed_revoker = event_revoker<ISplitView>;
+    PaneClosed_revoker PaneClosed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::SplitView, Windows::IInspectable> & value) const;
+    void PaneClosed(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISplitView2
+{
+    Windows::UI::Xaml::Controls::LightDismissOverlayMode LightDismissOverlayMode() const;
+    void LightDismissOverlayMode(Windows::UI::Xaml::Controls::LightDismissOverlayMode value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISplitViewFactory
+{
+    Windows::UI::Xaml::Controls::SplitView CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISplitViewPaneClosingEventArgs
+{
+    bool Cancel() const;
+    void Cancel(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISplitViewStatics
+{
+    Windows::UI::Xaml::DependencyProperty ContentProperty() const;
+    Windows::UI::Xaml::DependencyProperty PaneProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsPaneOpenProperty() const;
+    Windows::UI::Xaml::DependencyProperty OpenPaneLengthProperty() const;
+    Windows::UI::Xaml::DependencyProperty CompactPaneLengthProperty() const;
+    Windows::UI::Xaml::DependencyProperty PanePlacementProperty() const;
+    Windows::UI::Xaml::DependencyProperty DisplayModeProperty() const;
+    Windows::UI::Xaml::DependencyProperty TemplateSettingsProperty() const;
+    Windows::UI::Xaml::DependencyProperty PaneBackgroundProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISplitViewStatics2
+{
+    Windows::UI::Xaml::DependencyProperty LightDismissOverlayModeProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStackPanel
+{
+    bool AreScrollSnapPointsRegular() const;
+    void AreScrollSnapPointsRegular(bool value) const;
+    Windows::UI::Xaml::Controls::Orientation Orientation() const;
+    void Orientation(Windows::UI::Xaml::Controls::Orientation value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStackPanel2
+{
+    Windows::UI::Xaml::Media::Brush BorderBrush() const;
+    void BorderBrush(const Windows::UI::Xaml::Media::Brush & value) const;
+    Windows::UI::Xaml::Thickness BorderThickness() const;
+    void BorderThickness(const Windows::UI::Xaml::Thickness & value) const;
+    Windows::UI::Xaml::CornerRadius CornerRadius() const;
+    void CornerRadius(const Windows::UI::Xaml::CornerRadius & value) const;
+    Windows::UI::Xaml::Thickness Padding() const;
+    void Padding(const Windows::UI::Xaml::Thickness & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStackPanelFactory
+{
+    Windows::UI::Xaml::Controls::StackPanel CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStackPanelStatics
+{
+    Windows::UI::Xaml::DependencyProperty AreScrollSnapPointsRegularProperty() const;
+    Windows::UI::Xaml::DependencyProperty OrientationProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStackPanelStatics2
+{
+    Windows::UI::Xaml::DependencyProperty BorderBrushProperty() const;
+    Windows::UI::Xaml::DependencyProperty BorderThicknessProperty() const;
+    Windows::UI::Xaml::DependencyProperty CornerRadiusProperty() const;
+    Windows::UI::Xaml::DependencyProperty PaddingProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStyleSelector
+{
+    Windows::UI::Xaml::Style SelectStyle(const Windows::IInspectable & item, const Windows::UI::Xaml::DependencyObject & container) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStyleSelectorFactory
+{
+    Windows::UI::Xaml::Controls::StyleSelector CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStyleSelectorOverrides
+{
+    Windows::UI::Xaml::Style SelectStyleCore(const Windows::IInspectable & item, const Windows::UI::Xaml::DependencyObject & container) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISwapChainBackgroundPanel
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISwapChainBackgroundPanel2
+{
+    Windows::UI::Core::CoreIndependentInputSource CreateCoreIndependentInputSource(Windows::UI::Core::CoreInputDeviceTypes deviceTypes) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISwapChainBackgroundPanelFactory
+{
+    Windows::UI::Xaml::Controls::SwapChainBackgroundPanel CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISwapChainPanel
+{
+    float CompositionScaleX() const;
+    float CompositionScaleY() const;
+    event_token CompositionScaleChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::SwapChainPanel, Windows::IInspectable> & value) const;
+    using CompositionScaleChanged_revoker = event_revoker<ISwapChainPanel>;
+    CompositionScaleChanged_revoker CompositionScaleChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::SwapChainPanel, Windows::IInspectable> & value) const;
+    void CompositionScaleChanged(event_token token) const;
+    Windows::UI::Core::CoreIndependentInputSource CreateCoreIndependentInputSource(Windows::UI::Core::CoreInputDeviceTypes deviceTypes) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISwapChainPanelFactory
+{
+    Windows::UI::Xaml::Controls::SwapChainPanel CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISwapChainPanelStatics
+{
+    Windows::UI::Xaml::DependencyProperty CompositionScaleXProperty() const;
+    Windows::UI::Xaml::DependencyProperty CompositionScaleYProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISymbolIcon
+{
+    Windows::UI::Xaml::Controls::Symbol Symbol() const;
+    void Symbol(Windows::UI::Xaml::Controls::Symbol value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISymbolIconFactory
+{
+    Windows::UI::Xaml::Controls::SymbolIcon CreateInstanceWithSymbol(Windows::UI::Xaml::Controls::Symbol symbol) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISymbolIconStatics
+{
+    Windows::UI::Xaml::DependencyProperty SymbolProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITextBlock
+{
+    double FontSize() const;
+    void FontSize(double value) const;
+    Windows::UI::Xaml::Media::FontFamily FontFamily() const;
+    void FontFamily(const Windows::UI::Xaml::Media::FontFamily & value) const;
+    Windows::UI::Text::FontWeight FontWeight() const;
+    void FontWeight(const Windows::UI::Text::FontWeight & value) const;
+    Windows::UI::Text::FontStyle FontStyle() const;
+    void FontStyle(Windows::UI::Text::FontStyle value) const;
+    Windows::UI::Text::FontStretch FontStretch() const;
+    void FontStretch(Windows::UI::Text::FontStretch value) const;
+    int32_t CharacterSpacing() const;
+    void CharacterSpacing(int32_t value) const;
+    Windows::UI::Xaml::Media::Brush Foreground() const;
+    void Foreground(const Windows::UI::Xaml::Media::Brush & value) const;
+    Windows::UI::Xaml::TextWrapping TextWrapping() const;
+    void TextWrapping(Windows::UI::Xaml::TextWrapping value) const;
+    Windows::UI::Xaml::TextTrimming TextTrimming() const;
+    void TextTrimming(Windows::UI::Xaml::TextTrimming value) const;
+    Windows::UI::Xaml::TextAlignment TextAlignment() const;
+    void TextAlignment(Windows::UI::Xaml::TextAlignment value) const;
+    hstring Text() const;
+    void Text(hstring_ref value) const;
+    Windows::UI::Xaml::Documents::InlineCollection Inlines() const;
+    Windows::UI::Xaml::Thickness Padding() const;
+    void Padding(const Windows::UI::Xaml::Thickness & value) const;
+    double LineHeight() const;
+    void LineHeight(double value) const;
+    Windows::UI::Xaml::LineStackingStrategy LineStackingStrategy() const;
+    void LineStackingStrategy(Windows::UI::Xaml::LineStackingStrategy value) const;
+    bool IsTextSelectionEnabled() const;
+    void IsTextSelectionEnabled(bool value) const;
+    hstring SelectedText() const;
+    Windows::UI::Xaml::Documents::TextPointer ContentStart() const;
+    Windows::UI::Xaml::Documents::TextPointer ContentEnd() const;
+    Windows::UI::Xaml::Documents::TextPointer SelectionStart() const;
+    Windows::UI::Xaml::Documents::TextPointer SelectionEnd() const;
+    double BaselineOffset() const;
+    event_token SelectionChanged(const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    using SelectionChanged_revoker = event_revoker<ITextBlock>;
+    SelectionChanged_revoker SelectionChanged(auto_revoke_t, const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    void SelectionChanged(event_token token) const;
+    event_token ContextMenuOpening(const Windows::UI::Xaml::Controls::ContextMenuOpeningEventHandler & value) const;
+    using ContextMenuOpening_revoker = event_revoker<ITextBlock>;
+    ContextMenuOpening_revoker ContextMenuOpening(auto_revoke_t, const Windows::UI::Xaml::Controls::ContextMenuOpeningEventHandler & value) const;
+    void ContextMenuOpening(event_token token) const;
+    void SelectAll() const;
+    void Select(const Windows::UI::Xaml::Documents::TextPointer & start, const Windows::UI::Xaml::Documents::TextPointer & end) const;
+    bool Focus(Windows::UI::Xaml::FocusState value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITextBlock2
+{
+    Windows::UI::Xaml::Media::SolidColorBrush SelectionHighlightColor() const;
+    void SelectionHighlightColor(const Windows::UI::Xaml::Media::SolidColorBrush & value) const;
+    int32_t MaxLines() const;
+    void MaxLines(int32_t value) const;
+    Windows::UI::Xaml::TextLineBounds TextLineBounds() const;
+    void TextLineBounds(Windows::UI::Xaml::TextLineBounds value) const;
+    Windows::UI::Xaml::OpticalMarginAlignment OpticalMarginAlignment() const;
+    void OpticalMarginAlignment(Windows::UI::Xaml::OpticalMarginAlignment value) const;
+    bool IsColorFontEnabled() const;
+    void IsColorFontEnabled(bool value) const;
+    Windows::UI::Xaml::TextReadingOrder TextReadingOrder() const;
+    void TextReadingOrder(Windows::UI::Xaml::TextReadingOrder value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITextBlock3
+{
+    bool IsTextScaleFactorEnabled() const;
+    void IsTextScaleFactorEnabled(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITextBlock4
+{
+    Windows::UI::Composition::CompositionBrush GetAlphaMask() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITextBlockStatics
+{
+    Windows::UI::Xaml::DependencyProperty FontSizeProperty() const;
+    Windows::UI::Xaml::DependencyProperty FontFamilyProperty() const;
+    Windows::UI::Xaml::DependencyProperty FontWeightProperty() const;
+    Windows::UI::Xaml::DependencyProperty FontStyleProperty() const;
+    Windows::UI::Xaml::DependencyProperty FontStretchProperty() const;
+    Windows::UI::Xaml::DependencyProperty CharacterSpacingProperty() const;
+    Windows::UI::Xaml::DependencyProperty ForegroundProperty() const;
+    Windows::UI::Xaml::DependencyProperty TextWrappingProperty() const;
+    Windows::UI::Xaml::DependencyProperty TextTrimmingProperty() const;
+    Windows::UI::Xaml::DependencyProperty TextAlignmentProperty() const;
+    Windows::UI::Xaml::DependencyProperty TextProperty() const;
+    Windows::UI::Xaml::DependencyProperty PaddingProperty() const;
+    Windows::UI::Xaml::DependencyProperty LineHeightProperty() const;
+    Windows::UI::Xaml::DependencyProperty LineStackingStrategyProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsTextSelectionEnabledProperty() const;
+    Windows::UI::Xaml::DependencyProperty SelectedTextProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITextBlockStatics2
+{
+    Windows::UI::Xaml::DependencyProperty SelectionHighlightColorProperty() const;
+    Windows::UI::Xaml::DependencyProperty MaxLinesProperty() const;
+    Windows::UI::Xaml::DependencyProperty TextLineBoundsProperty() const;
+    Windows::UI::Xaml::DependencyProperty OpticalMarginAlignmentProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsColorFontEnabledProperty() const;
+    Windows::UI::Xaml::DependencyProperty TextReadingOrderProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITextBlockStatics3
+{
+    Windows::UI::Xaml::DependencyProperty IsTextScaleFactorEnabledProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITextBox
+{
+    hstring Text() const;
+    void Text(hstring_ref value) const;
+    hstring SelectedText() const;
+    void SelectedText(hstring_ref value) const;
+    int32_t SelectionLength() const;
+    void SelectionLength(int32_t value) const;
+    int32_t SelectionStart() const;
+    void SelectionStart(int32_t value) const;
+    int32_t MaxLength() const;
+    void MaxLength(int32_t value) const;
+    bool IsReadOnly() const;
+    void IsReadOnly(bool value) const;
+    bool AcceptsReturn() const;
+    void AcceptsReturn(bool value) const;
+    Windows::UI::Xaml::TextAlignment TextAlignment() const;
+    void TextAlignment(Windows::UI::Xaml::TextAlignment value) const;
+    Windows::UI::Xaml::TextWrapping TextWrapping() const;
+    void TextWrapping(Windows::UI::Xaml::TextWrapping value) const;
+    bool IsSpellCheckEnabled() const;
+    void IsSpellCheckEnabled(bool value) const;
+    bool IsTextPredictionEnabled() const;
+    void IsTextPredictionEnabled(bool value) const;
+    Windows::UI::Xaml::Input::InputScope InputScope() const;
+    void InputScope(const Windows::UI::Xaml::Input::InputScope & value) const;
+    event_token TextChanged(const Windows::UI::Xaml::Controls::TextChangedEventHandler & value) const;
+    using TextChanged_revoker = event_revoker<ITextBox>;
+    TextChanged_revoker TextChanged(auto_revoke_t, const Windows::UI::Xaml::Controls::TextChangedEventHandler & value) const;
+    void TextChanged(event_token token) const;
+    event_token SelectionChanged(const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    using SelectionChanged_revoker = event_revoker<ITextBox>;
+    SelectionChanged_revoker SelectionChanged(auto_revoke_t, const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    void SelectionChanged(event_token token) const;
+    event_token ContextMenuOpening(const Windows::UI::Xaml::Controls::ContextMenuOpeningEventHandler & value) const;
+    using ContextMenuOpening_revoker = event_revoker<ITextBox>;
+    ContextMenuOpening_revoker ContextMenuOpening(auto_revoke_t, const Windows::UI::Xaml::Controls::ContextMenuOpeningEventHandler & value) const;
+    void ContextMenuOpening(event_token token) const;
+    void Select(int32_t start, int32_t length) const;
+    void SelectAll() const;
+    Windows::Foundation::Rect GetRectFromCharacterIndex(int32_t charIndex, bool trailingEdge) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITextBox2
+{
+    Windows::IInspectable Header() const;
+    void Header(const Windows::IInspectable & value) const;
+    Windows::UI::Xaml::DataTemplate HeaderTemplate() const;
+    void HeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
+    hstring PlaceholderText() const;
+    void PlaceholderText(hstring_ref value) const;
+    Windows::UI::Xaml::Media::SolidColorBrush SelectionHighlightColor() const;
+    void SelectionHighlightColor(const Windows::UI::Xaml::Media::SolidColorBrush & value) const;
+    bool PreventKeyboardDisplayOnProgrammaticFocus() const;
+    void PreventKeyboardDisplayOnProgrammaticFocus(bool value) const;
+    bool IsColorFontEnabled() const;
+    void IsColorFontEnabled(bool value) const;
+    event_token Paste(const Windows::UI::Xaml::Controls::TextControlPasteEventHandler & value) const;
+    using Paste_revoker = event_revoker<ITextBox2>;
+    Paste_revoker Paste(auto_revoke_t, const Windows::UI::Xaml::Controls::TextControlPasteEventHandler & value) const;
+    void Paste(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITextBox3
+{
+    event_token TextCompositionStarted(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::TextBox, Windows::UI::Xaml::Controls::TextCompositionStartedEventArgs> & value) const;
+    using TextCompositionStarted_revoker = event_revoker<ITextBox3>;
+    TextCompositionStarted_revoker TextCompositionStarted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::TextBox, Windows::UI::Xaml::Controls::TextCompositionStartedEventArgs> & value) const;
+    void TextCompositionStarted(event_token token) const;
+    event_token TextCompositionChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::TextBox, Windows::UI::Xaml::Controls::TextCompositionChangedEventArgs> & value) const;
+    using TextCompositionChanged_revoker = event_revoker<ITextBox3>;
+    TextCompositionChanged_revoker TextCompositionChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::TextBox, Windows::UI::Xaml::Controls::TextCompositionChangedEventArgs> & value) const;
+    void TextCompositionChanged(event_token token) const;
+    event_token TextCompositionEnded(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::TextBox, Windows::UI::Xaml::Controls::TextCompositionEndedEventArgs> & value) const;
+    using TextCompositionEnded_revoker = event_revoker<ITextBox3>;
+    TextCompositionEnded_revoker TextCompositionEnded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::TextBox, Windows::UI::Xaml::Controls::TextCompositionEndedEventArgs> & value) const;
+    void TextCompositionEnded(event_token token) const;
+    Windows::UI::Xaml::TextReadingOrder TextReadingOrder() const;
+    void TextReadingOrder(Windows::UI::Xaml::TextReadingOrder value) const;
+    Windows::UI::Xaml::Controls::CandidateWindowAlignment DesiredCandidateWindowAlignment() const;
+    void DesiredCandidateWindowAlignment(Windows::UI::Xaml::Controls::CandidateWindowAlignment value) const;
+    event_token CandidateWindowBoundsChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::TextBox, Windows::UI::Xaml::Controls::CandidateWindowBoundsChangedEventArgs> & value) const;
+    using CandidateWindowBoundsChanged_revoker = event_revoker<ITextBox3>;
+    CandidateWindowBoundsChanged_revoker CandidateWindowBoundsChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::TextBox, Windows::UI::Xaml::Controls::CandidateWindowBoundsChangedEventArgs> & value) const;
+    void CandidateWindowBoundsChanged(event_token token) const;
+    event_token TextChanging(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::TextBox, Windows::UI::Xaml::Controls::TextBoxTextChangingEventArgs> & value) const;
+    using TextChanging_revoker = event_revoker<ITextBox3>;
+    TextChanging_revoker TextChanging(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::TextBox, Windows::UI::Xaml::Controls::TextBoxTextChangingEventArgs> & value) const;
+    void TextChanging(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITextBox4
+{
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<hstring>> GetLinguisticAlternativesAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITextBoxFactory
+{
+    Windows::UI::Xaml::Controls::TextBox CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITextBoxStatics
+{
+    Windows::UI::Xaml::DependencyProperty TextProperty() const;
+    Windows::UI::Xaml::DependencyProperty MaxLengthProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsReadOnlyProperty() const;
+    Windows::UI::Xaml::DependencyProperty AcceptsReturnProperty() const;
+    Windows::UI::Xaml::DependencyProperty TextAlignmentProperty() const;
+    Windows::UI::Xaml::DependencyProperty TextWrappingProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsSpellCheckEnabledProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsTextPredictionEnabledProperty() const;
+    Windows::UI::Xaml::DependencyProperty InputScopeProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITextBoxStatics2
+{
+    Windows::UI::Xaml::DependencyProperty HeaderProperty() const;
+    Windows::UI::Xaml::DependencyProperty HeaderTemplateProperty() const;
+    Windows::UI::Xaml::DependencyProperty PlaceholderTextProperty() const;
+    Windows::UI::Xaml::DependencyProperty SelectionHighlightColorProperty() const;
+    Windows::UI::Xaml::DependencyProperty PreventKeyboardDisplayOnProgrammaticFocusProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsColorFontEnabledProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITextBoxStatics3
+{
+    Windows::UI::Xaml::DependencyProperty DesiredCandidateWindowAlignmentProperty() const;
+    Windows::UI::Xaml::DependencyProperty TextReadingOrderProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITextBoxTextChangingEventArgs
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITextChangedEventArgs
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITextCompositionChangedEventArgs
+{
+    int32_t StartIndex() const;
+    int32_t Length() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITextCompositionEndedEventArgs
+{
+    int32_t StartIndex() const;
+    int32_t Length() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITextCompositionStartedEventArgs
+{
+    int32_t StartIndex() const;
+    int32_t Length() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITextControlPasteEventArgs
+{
+    bool Handled() const;
+    void Handled(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITimePickedEventArgs
+{
+    Windows::Foundation::TimeSpan OldTime() const;
+    Windows::Foundation::TimeSpan NewTime() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITimePicker
+{
+    Windows::IInspectable Header() const;
+    void Header(const Windows::IInspectable & value) const;
+    Windows::UI::Xaml::DataTemplate HeaderTemplate() const;
+    void HeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
+    hstring ClockIdentifier() const;
+    void ClockIdentifier(hstring_ref value) const;
+    int32_t MinuteIncrement() const;
+    void MinuteIncrement(int32_t value) const;
+    Windows::Foundation::TimeSpan Time() const;
+    void Time(const Windows::Foundation::TimeSpan & value) const;
+    event_token TimeChanged(const Windows::Foundation::EventHandler<Windows::UI::Xaml::Controls::TimePickerValueChangedEventArgs> & value) const;
+    using TimeChanged_revoker = event_revoker<ITimePicker>;
+    TimeChanged_revoker TimeChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::UI::Xaml::Controls::TimePickerValueChangedEventArgs> & value) const;
+    void TimeChanged(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITimePicker2
+{
+    Windows::UI::Xaml::Controls::LightDismissOverlayMode LightDismissOverlayMode() const;
+    void LightDismissOverlayMode(Windows::UI::Xaml::Controls::LightDismissOverlayMode value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITimePickerFactory
+{
+    Windows::UI::Xaml::Controls::TimePicker CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITimePickerFlyout
+{
+    hstring ClockIdentifier() const;
+    void ClockIdentifier(hstring_ref value) const;
+    Windows::Foundation::TimeSpan Time() const;
+    void Time(const Windows::Foundation::TimeSpan & value) const;
+    int32_t MinuteIncrement() const;
+    void MinuteIncrement(int32_t value) const;
+    event_token TimePicked(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::TimePickerFlyout, Windows::UI::Xaml::Controls::TimePickedEventArgs> & value) const;
+    using TimePicked_revoker = event_revoker<ITimePickerFlyout>;
+    TimePicked_revoker TimePicked(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::TimePickerFlyout, Windows::UI::Xaml::Controls::TimePickedEventArgs> & value) const;
+    void TimePicked(event_token token) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::IReference<Windows::Foundation::TimeSpan>> ShowAtAsync(const Windows::UI::Xaml::FrameworkElement & target) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITimePickerFlyoutPresenter
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITimePickerFlyoutStatics
+{
+    Windows::UI::Xaml::DependencyProperty ClockIdentifierProperty() const;
+    Windows::UI::Xaml::DependencyProperty TimeProperty() const;
+    Windows::UI::Xaml::DependencyProperty MinuteIncrementProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITimePickerStatics
+{
+    Windows::UI::Xaml::DependencyProperty HeaderProperty() const;
+    Windows::UI::Xaml::DependencyProperty HeaderTemplateProperty() const;
+    Windows::UI::Xaml::DependencyProperty ClockIdentifierProperty() const;
+    Windows::UI::Xaml::DependencyProperty MinuteIncrementProperty() const;
+    Windows::UI::Xaml::DependencyProperty TimeProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITimePickerStatics2
+{
+    Windows::UI::Xaml::DependencyProperty LightDismissOverlayModeProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITimePickerValueChangedEventArgs
+{
+    Windows::Foundation::TimeSpan OldTime() const;
+    Windows::Foundation::TimeSpan NewTime() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IToggleMenuFlyoutItem
+{
+    bool IsChecked() const;
+    void IsChecked(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IToggleMenuFlyoutItemFactory
+{
+    Windows::UI::Xaml::Controls::ToggleMenuFlyoutItem CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IToggleMenuFlyoutItemStatics
+{
+    Windows::UI::Xaml::DependencyProperty IsCheckedProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IToggleSwitch
+{
+    bool IsOn() const;
+    void IsOn(bool value) const;
+    Windows::IInspectable Header() const;
+    void Header(const Windows::IInspectable & value) const;
+    Windows::UI::Xaml::DataTemplate HeaderTemplate() const;
+    void HeaderTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
+    Windows::IInspectable OnContent() const;
+    void OnContent(const Windows::IInspectable & value) const;
+    Windows::UI::Xaml::DataTemplate OnContentTemplate() const;
+    void OnContentTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
+    Windows::IInspectable OffContent() const;
+    void OffContent(const Windows::IInspectable & value) const;
+    Windows::UI::Xaml::DataTemplate OffContentTemplate() const;
+    void OffContentTemplate(const Windows::UI::Xaml::DataTemplate & value) const;
+    Windows::UI::Xaml::Controls::Primitives::ToggleSwitchTemplateSettings TemplateSettings() const;
+    event_token Toggled(const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    using Toggled_revoker = event_revoker<IToggleSwitch>;
+    Toggled_revoker Toggled(auto_revoke_t, const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    void Toggled(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IToggleSwitchOverrides
+{
+    void OnToggled() const;
+    void OnOnContentChanged(const Windows::IInspectable & oldContent, const Windows::IInspectable & newContent) const;
+    void OnOffContentChanged(const Windows::IInspectable & oldContent, const Windows::IInspectable & newContent) const;
+    void OnHeaderChanged(const Windows::IInspectable & oldContent, const Windows::IInspectable & newContent) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IToggleSwitchStatics
+{
+    Windows::UI::Xaml::DependencyProperty IsOnProperty() const;
+    Windows::UI::Xaml::DependencyProperty HeaderProperty() const;
+    Windows::UI::Xaml::DependencyProperty HeaderTemplateProperty() const;
+    Windows::UI::Xaml::DependencyProperty OnContentProperty() const;
+    Windows::UI::Xaml::DependencyProperty OnContentTemplateProperty() const;
+    Windows::UI::Xaml::DependencyProperty OffContentProperty() const;
+    Windows::UI::Xaml::DependencyProperty OffContentTemplateProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IToolTip
+{
+    double HorizontalOffset() const;
+    void HorizontalOffset(double value) const;
+    bool IsOpen() const;
+    void IsOpen(bool value) const;
+    Windows::UI::Xaml::Controls::Primitives::PlacementMode Placement() const;
+    void Placement(Windows::UI::Xaml::Controls::Primitives::PlacementMode value) const;
+    Windows::UI::Xaml::UIElement PlacementTarget() const;
+    void PlacementTarget(const Windows::UI::Xaml::UIElement & value) const;
+    double VerticalOffset() const;
+    void VerticalOffset(double value) const;
+    Windows::UI::Xaml::Controls::Primitives::ToolTipTemplateSettings TemplateSettings() const;
+    event_token Closed(const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    using Closed_revoker = event_revoker<IToolTip>;
+    Closed_revoker Closed(auto_revoke_t, const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    void Closed(event_token token) const;
+    event_token Opened(const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    using Opened_revoker = event_revoker<IToolTip>;
+    Opened_revoker Opened(auto_revoke_t, const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    void Opened(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IToolTipFactory
+{
+    Windows::UI::Xaml::Controls::ToolTip CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IToolTipService
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IToolTipServiceStatics
+{
+    Windows::UI::Xaml::DependencyProperty PlacementProperty() const;
+    Windows::UI::Xaml::Controls::Primitives::PlacementMode GetPlacement(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetPlacement(const Windows::UI::Xaml::DependencyObject & element, Windows::UI::Xaml::Controls::Primitives::PlacementMode value) const;
+    Windows::UI::Xaml::DependencyProperty PlacementTargetProperty() const;
+    Windows::UI::Xaml::UIElement GetPlacementTarget(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetPlacementTarget(const Windows::UI::Xaml::DependencyObject & element, const Windows::UI::Xaml::UIElement & value) const;
+    Windows::UI::Xaml::DependencyProperty ToolTipProperty() const;
+    Windows::IInspectable GetToolTip(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetToolTip(const Windows::UI::Xaml::DependencyObject & element, const Windows::IInspectable & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IToolTipStatics
+{
+    Windows::UI::Xaml::DependencyProperty HorizontalOffsetProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsOpenProperty() const;
+    Windows::UI::Xaml::DependencyProperty PlacementProperty() const;
+    Windows::UI::Xaml::DependencyProperty PlacementTargetProperty() const;
+    Windows::UI::Xaml::DependencyProperty VerticalOffsetProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUIElementCollection
+{
+    void Move(uint32_t oldIndex, uint32_t newIndex) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUserControl
+{
+    Windows::UI::Xaml::UIElement Content() const;
+    void Content(const Windows::UI::Xaml::UIElement & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUserControlFactory
+{
+    Windows::UI::Xaml::Controls::UserControl CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUserControlStatics
+{
+    Windows::UI::Xaml::DependencyProperty ContentProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVariableSizedWrapGrid
+{
+    double ItemHeight() const;
+    void ItemHeight(double value) const;
+    double ItemWidth() const;
+    void ItemWidth(double value) const;
+    Windows::UI::Xaml::Controls::Orientation Orientation() const;
+    void Orientation(Windows::UI::Xaml::Controls::Orientation value) const;
+    Windows::UI::Xaml::HorizontalAlignment HorizontalChildrenAlignment() const;
+    void HorizontalChildrenAlignment(Windows::UI::Xaml::HorizontalAlignment value) const;
+    Windows::UI::Xaml::VerticalAlignment VerticalChildrenAlignment() const;
+    void VerticalChildrenAlignment(Windows::UI::Xaml::VerticalAlignment value) const;
+    int32_t MaximumRowsOrColumns() const;
+    void MaximumRowsOrColumns(int32_t value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVariableSizedWrapGridStatics
+{
+    Windows::UI::Xaml::DependencyProperty ItemHeightProperty() const;
+    Windows::UI::Xaml::DependencyProperty ItemWidthProperty() const;
+    Windows::UI::Xaml::DependencyProperty OrientationProperty() const;
+    Windows::UI::Xaml::DependencyProperty HorizontalChildrenAlignmentProperty() const;
+    Windows::UI::Xaml::DependencyProperty VerticalChildrenAlignmentProperty() const;
+    Windows::UI::Xaml::DependencyProperty MaximumRowsOrColumnsProperty() const;
+    Windows::UI::Xaml::DependencyProperty RowSpanProperty() const;
+    int32_t GetRowSpan(const Windows::UI::Xaml::UIElement & element) const;
+    void SetRowSpan(const Windows::UI::Xaml::UIElement & element, int32_t value) const;
+    Windows::UI::Xaml::DependencyProperty ColumnSpanProperty() const;
+    int32_t GetColumnSpan(const Windows::UI::Xaml::UIElement & element) const;
+    void SetColumnSpan(const Windows::UI::Xaml::UIElement & element, int32_t value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IViewbox
+{
+    Windows::UI::Xaml::UIElement Child() const;
+    void Child(const Windows::UI::Xaml::UIElement & value) const;
+    Windows::UI::Xaml::Media::Stretch Stretch() const;
+    void Stretch(Windows::UI::Xaml::Media::Stretch value) const;
+    Windows::UI::Xaml::Controls::StretchDirection StretchDirection() const;
+    void StretchDirection(Windows::UI::Xaml::Controls::StretchDirection value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IViewboxStatics
+{
+    Windows::UI::Xaml::DependencyProperty StretchProperty() const;
+    Windows::UI::Xaml::DependencyProperty StretchDirectionProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVirtualizingPanel
+{
+    Windows::UI::Xaml::Controls::ItemContainerGenerator ItemContainerGenerator() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVirtualizingPanelFactory
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVirtualizingPanelOverrides
+{
+    void OnItemsChanged(const Windows::IInspectable & sender, const Windows::UI::Xaml::Controls::Primitives::ItemsChangedEventArgs & args) const;
+    void OnClearChildren() const;
+    void BringIndexIntoView(int32_t index) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVirtualizingPanelProtected
+{
+    void AddInternalChild(const Windows::UI::Xaml::UIElement & child) const;
+    void InsertInternalChild(int32_t index, const Windows::UI::Xaml::UIElement & child) const;
+    void RemoveInternalChildRange(int32_t index, int32_t range) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVirtualizingStackPanel
+{
+    bool AreScrollSnapPointsRegular() const;
+    void AreScrollSnapPointsRegular(bool value) const;
+    Windows::UI::Xaml::Controls::Orientation Orientation() const;
+    void Orientation(Windows::UI::Xaml::Controls::Orientation value) const;
+    event_token CleanUpVirtualizedItemEvent(const Windows::UI::Xaml::Controls::CleanUpVirtualizedItemEventHandler & value) const;
+    using CleanUpVirtualizedItemEvent_revoker = event_revoker<IVirtualizingStackPanel>;
+    CleanUpVirtualizedItemEvent_revoker CleanUpVirtualizedItemEvent(auto_revoke_t, const Windows::UI::Xaml::Controls::CleanUpVirtualizedItemEventHandler & value) const;
+    void CleanUpVirtualizedItemEvent(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVirtualizingStackPanelOverrides
+{
+    void OnCleanUpVirtualizedItem(const Windows::UI::Xaml::Controls::CleanUpVirtualizedItemEventArgs & e) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVirtualizingStackPanelStatics
+{
+    Windows::UI::Xaml::DependencyProperty AreScrollSnapPointsRegularProperty() const;
+    Windows::UI::Xaml::DependencyProperty OrientationProperty() const;
+    Windows::UI::Xaml::DependencyProperty VirtualizationModeProperty() const;
+    Windows::UI::Xaml::Controls::VirtualizationMode GetVirtualizationMode(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetVirtualizationMode(const Windows::UI::Xaml::DependencyObject & element, Windows::UI::Xaml::Controls::VirtualizationMode value) const;
+    Windows::UI::Xaml::DependencyProperty IsVirtualizingProperty() const;
+    bool GetIsVirtualizing(const Windows::UI::Xaml::DependencyObject & o) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebView
+{
+    Windows::Foundation::Uri Source() const;
+    void Source(const Windows::Foundation::Uri & value) const;
+    Windows::Foundation::Collections::IVector<Windows::Foundation::Uri> AllowedScriptNotifyUris() const;
+    void AllowedScriptNotifyUris(const Windows::Foundation::Collections::IVector<Windows::Foundation::Uri> & value) const;
+    Windows::ApplicationModel::DataTransfer::DataPackage DataTransferPackage() const;
+    event_token LoadCompleted(const Windows::UI::Xaml::Navigation::LoadCompletedEventHandler & value) const;
+    using LoadCompleted_revoker = event_revoker<IWebView>;
+    LoadCompleted_revoker LoadCompleted(auto_revoke_t, const Windows::UI::Xaml::Navigation::LoadCompletedEventHandler & value) const;
+    void LoadCompleted(event_token token) const;
+    event_token ScriptNotify(const Windows::UI::Xaml::Controls::NotifyEventHandler & value) const;
+    using ScriptNotify_revoker = event_revoker<IWebView>;
+    ScriptNotify_revoker ScriptNotify(auto_revoke_t, const Windows::UI::Xaml::Controls::NotifyEventHandler & value) const;
+    void ScriptNotify(event_token token) const;
+    event_token NavigationFailed(const Windows::UI::Xaml::Controls::WebViewNavigationFailedEventHandler & value) const;
+    using NavigationFailed_revoker = event_revoker<IWebView>;
+    NavigationFailed_revoker NavigationFailed(auto_revoke_t, const Windows::UI::Xaml::Controls::WebViewNavigationFailedEventHandler & value) const;
+    void NavigationFailed(event_token token) const;
+    hstring InvokeScript(hstring_ref scriptName, array_ref<const hstring> arguments) const;
+    void Navigate(const Windows::Foundation::Uri & source) const;
+    void NavigateToString(hstring_ref text) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebView2
+{
+    bool CanGoBack() const;
+    bool CanGoForward() const;
+    hstring DocumentTitle() const;
+    event_token NavigationStarting(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::UI::Xaml::Controls::WebViewNavigationStartingEventArgs> & value) const;
+    using NavigationStarting_revoker = event_revoker<IWebView2>;
+    NavigationStarting_revoker NavigationStarting(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::UI::Xaml::Controls::WebViewNavigationStartingEventArgs> & value) const;
+    void NavigationStarting(event_token token) const;
+    event_token ContentLoading(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::UI::Xaml::Controls::WebViewContentLoadingEventArgs> & value) const;
+    using ContentLoading_revoker = event_revoker<IWebView2>;
+    ContentLoading_revoker ContentLoading(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::UI::Xaml::Controls::WebViewContentLoadingEventArgs> & value) const;
+    void ContentLoading(event_token token) const;
+    event_token DOMContentLoaded(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::UI::Xaml::Controls::WebViewDOMContentLoadedEventArgs> & value) const;
+    using DOMContentLoaded_revoker = event_revoker<IWebView2>;
+    DOMContentLoaded_revoker DOMContentLoaded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::UI::Xaml::Controls::WebViewDOMContentLoadedEventArgs> & value) const;
+    void DOMContentLoaded(event_token token) const;
+    void GoForward() const;
+    void GoBack() const;
+    void Refresh() const;
+    void Stop() const;
+    Windows::Foundation::IAsyncAction CapturePreviewToStreamAsync(const Windows::Storage::Streams::IRandomAccessStream & stream) const;
+    Windows::Foundation::IAsyncOperation<hstring> InvokeScriptAsync(hstring_ref scriptName, const Windows::Foundation::Collections::IIterable<hstring> & arguments) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::DataTransfer::DataPackage> CaptureSelectedContentToDataPackageAsync() const;
+    void NavigateToLocalStreamUri(const Windows::Foundation::Uri & source, const Windows::Web::IUriToStreamResolver & streamResolver) const;
+    Windows::Foundation::Uri BuildLocalStreamUri(hstring_ref contentIdentifier, hstring_ref relativePath) const;
+    Windows::UI::Color DefaultBackgroundColor() const;
+    void DefaultBackgroundColor(const Windows::UI::Color & value) const;
+    event_token NavigationCompleted(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::UI::Xaml::Controls::WebViewNavigationCompletedEventArgs> & value) const;
+    using NavigationCompleted_revoker = event_revoker<IWebView2>;
+    NavigationCompleted_revoker NavigationCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::UI::Xaml::Controls::WebViewNavigationCompletedEventArgs> & value) const;
+    void NavigationCompleted(event_token token) const;
+    event_token FrameNavigationStarting(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::UI::Xaml::Controls::WebViewNavigationStartingEventArgs> & value) const;
+    using FrameNavigationStarting_revoker = event_revoker<IWebView2>;
+    FrameNavigationStarting_revoker FrameNavigationStarting(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::UI::Xaml::Controls::WebViewNavigationStartingEventArgs> & value) const;
+    void FrameNavigationStarting(event_token token) const;
+    event_token FrameContentLoading(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::UI::Xaml::Controls::WebViewContentLoadingEventArgs> & value) const;
+    using FrameContentLoading_revoker = event_revoker<IWebView2>;
+    FrameContentLoading_revoker FrameContentLoading(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::UI::Xaml::Controls::WebViewContentLoadingEventArgs> & value) const;
+    void FrameContentLoading(event_token token) const;
+    event_token FrameDOMContentLoaded(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::UI::Xaml::Controls::WebViewDOMContentLoadedEventArgs> & value) const;
+    using FrameDOMContentLoaded_revoker = event_revoker<IWebView2>;
+    FrameDOMContentLoaded_revoker FrameDOMContentLoaded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::UI::Xaml::Controls::WebViewDOMContentLoadedEventArgs> & value) const;
+    void FrameDOMContentLoaded(event_token token) const;
+    event_token FrameNavigationCompleted(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::UI::Xaml::Controls::WebViewNavigationCompletedEventArgs> & value) const;
+    using FrameNavigationCompleted_revoker = event_revoker<IWebView2>;
+    FrameNavigationCompleted_revoker FrameNavigationCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::UI::Xaml::Controls::WebViewNavigationCompletedEventArgs> & value) const;
+    void FrameNavigationCompleted(event_token token) const;
+    event_token LongRunningScriptDetected(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::UI::Xaml::Controls::WebViewLongRunningScriptDetectedEventArgs> & value) const;
+    using LongRunningScriptDetected_revoker = event_revoker<IWebView2>;
+    LongRunningScriptDetected_revoker LongRunningScriptDetected(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::UI::Xaml::Controls::WebViewLongRunningScriptDetectedEventArgs> & value) const;
+    void LongRunningScriptDetected(event_token token) const;
+    event_token UnsafeContentWarningDisplaying(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::IInspectable> & value) const;
+    using UnsafeContentWarningDisplaying_revoker = event_revoker<IWebView2>;
+    UnsafeContentWarningDisplaying_revoker UnsafeContentWarningDisplaying(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::IInspectable> & value) const;
+    void UnsafeContentWarningDisplaying(event_token token) const;
+    event_token UnviewableContentIdentified(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::UI::Xaml::Controls::WebViewUnviewableContentIdentifiedEventArgs> & value) const;
+    using UnviewableContentIdentified_revoker = event_revoker<IWebView2>;
+    UnviewableContentIdentified_revoker UnviewableContentIdentified(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::UI::Xaml::Controls::WebViewUnviewableContentIdentifiedEventArgs> & value) const;
+    void UnviewableContentIdentified(event_token token) const;
+    void NavigateWithHttpRequestMessage(const Windows::Web::Http::HttpRequestMessage & requestMessage) const;
+    bool Focus(Windows::UI::Xaml::FocusState value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebView3
+{
+    bool ContainsFullScreenElement() const;
+    event_token ContainsFullScreenElementChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::IInspectable> & value) const;
+    using ContainsFullScreenElementChanged_revoker = event_revoker<IWebView3>;
+    ContainsFullScreenElementChanged_revoker ContainsFullScreenElementChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::IInspectable> & value) const;
+    void ContainsFullScreenElementChanged(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebView4
+{
+    Windows::UI::Xaml::Controls::WebViewExecutionMode ExecutionMode() const;
+    Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Controls::WebViewDeferredPermissionRequest> DeferredPermissionRequests() const;
+    Windows::UI::Xaml::Controls::WebViewSettings Settings() const;
+    event_token UnsupportedUriSchemeIdentified(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::UI::Xaml::Controls::WebViewUnsupportedUriSchemeIdentifiedEventArgs> & value) const;
+    using UnsupportedUriSchemeIdentified_revoker = event_revoker<IWebView4>;
+    UnsupportedUriSchemeIdentified_revoker UnsupportedUriSchemeIdentified(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::UI::Xaml::Controls::WebViewUnsupportedUriSchemeIdentifiedEventArgs> & value) const;
+    void UnsupportedUriSchemeIdentified(event_token token) const;
+    event_token NewWindowRequested(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::UI::Xaml::Controls::WebViewNewWindowRequestedEventArgs> & value) const;
+    using NewWindowRequested_revoker = event_revoker<IWebView4>;
+    NewWindowRequested_revoker NewWindowRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::UI::Xaml::Controls::WebViewNewWindowRequestedEventArgs> & value) const;
+    void NewWindowRequested(event_token token) const;
+    event_token PermissionRequested(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::UI::Xaml::Controls::WebViewPermissionRequestedEventArgs> & value) const;
+    using PermissionRequested_revoker = event_revoker<IWebView4>;
+    PermissionRequested_revoker PermissionRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Controls::WebView, Windows::UI::Xaml::Controls::WebViewPermissionRequestedEventArgs> & value) const;
+    void PermissionRequested(event_token token) const;
+    void AddWebAllowedObject(hstring_ref name, const Windows::IInspectable & pObject) const;
+    Windows::UI::Xaml::Controls::WebViewDeferredPermissionRequest DeferredPermissionRequestById(uint32_t id) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebView5
+{
+    Windows::UI::Xaml::DependencyObject XYFocusLeft() const;
+    void XYFocusLeft(const Windows::UI::Xaml::DependencyObject & value) const;
+    Windows::UI::Xaml::DependencyObject XYFocusRight() const;
+    void XYFocusRight(const Windows::UI::Xaml::DependencyObject & value) const;
+    Windows::UI::Xaml::DependencyObject XYFocusUp() const;
+    void XYFocusUp(const Windows::UI::Xaml::DependencyObject & value) const;
+    Windows::UI::Xaml::DependencyObject XYFocusDown() const;
+    void XYFocusDown(const Windows::UI::Xaml::DependencyObject & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebViewBrush
+{
+    hstring SourceName() const;
+    void SourceName(hstring_ref value) const;
+    void Redraw() const;
+    void SetSource(const Windows::UI::Xaml::Controls::WebView & source) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebViewBrushStatics
+{
+    Windows::UI::Xaml::DependencyProperty SourceNameProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebViewContentLoadingEventArgs
+{
+    Windows::Foundation::Uri Uri() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebViewDOMContentLoadedEventArgs
+{
+    Windows::Foundation::Uri Uri() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebViewDeferredPermissionRequest
+{
+    Windows::Foundation::Uri Uri() const;
+    Windows::UI::Xaml::Controls::WebViewPermissionType PermissionType() const;
+    uint32_t Id() const;
+    void Allow() const;
+    void Deny() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebViewFactory4
+{
+    Windows::UI::Xaml::Controls::WebView CreateInstanceWithExecutionMode(Windows::UI::Xaml::Controls::WebViewExecutionMode executionMode) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebViewLongRunningScriptDetectedEventArgs
+{
+    Windows::Foundation::TimeSpan ExecutionTime() const;
+    bool StopPageScriptExecution() const;
+    void StopPageScriptExecution(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebViewNavigationCompletedEventArgs
+{
+    Windows::Foundation::Uri Uri() const;
+    bool IsSuccess() const;
+    Windows::Web::WebErrorStatus WebErrorStatus() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebViewNavigationFailedEventArgs
+{
+    Windows::Foundation::Uri Uri() const;
+    Windows::Web::WebErrorStatus WebErrorStatus() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebViewNavigationStartingEventArgs
+{
+    Windows::Foundation::Uri Uri() const;
+    bool Cancel() const;
+    void Cancel(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebViewNewWindowRequestedEventArgs
+{
+    Windows::Foundation::Uri Uri() const;
+    Windows::Foundation::Uri Referrer() const;
+    bool Handled() const;
+    void Handled(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebViewPermissionRequest
+{
+    Windows::Foundation::Uri Uri() const;
+    Windows::UI::Xaml::Controls::WebViewPermissionType PermissionType() const;
+    uint32_t Id() const;
+    Windows::UI::Xaml::Controls::WebViewPermissionState State() const;
+    void Defer() const;
+    void Allow() const;
+    void Deny() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebViewPermissionRequestedEventArgs
+{
+    Windows::UI::Xaml::Controls::WebViewPermissionRequest PermissionRequest() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebViewSettings
+{
+    bool IsJavaScriptEnabled() const;
+    void IsJavaScriptEnabled(bool value) const;
+    bool IsIndexedDBEnabled() const;
+    void IsIndexedDBEnabled(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebViewStatics
+{
+    Windows::Foundation::Collections::IVector<Windows::Foundation::Uri> AnyScriptNotifyUri() const;
+    Windows::UI::Xaml::DependencyProperty SourceProperty() const;
+    Windows::UI::Xaml::DependencyProperty AllowedScriptNotifyUrisProperty() const;
+    Windows::UI::Xaml::DependencyProperty DataTransferPackageProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebViewStatics2
+{
+    Windows::UI::Xaml::DependencyProperty CanGoBackProperty() const;
+    Windows::UI::Xaml::DependencyProperty CanGoForwardProperty() const;
+    Windows::UI::Xaml::DependencyProperty DocumentTitleProperty() const;
+    Windows::UI::Xaml::DependencyProperty DefaultBackgroundColorProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebViewStatics3
+{
+    Windows::UI::Xaml::DependencyProperty ContainsFullScreenElementProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebViewStatics4
+{
+    Windows::UI::Xaml::Controls::WebViewExecutionMode DefaultExecutionMode() const;
+    Windows::Foundation::IAsyncAction ClearTemporaryWebDataAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebViewStatics5
+{
+    Windows::UI::Xaml::DependencyProperty XYFocusLeftProperty() const;
+    Windows::UI::Xaml::DependencyProperty XYFocusRightProperty() const;
+    Windows::UI::Xaml::DependencyProperty XYFocusUpProperty() const;
+    Windows::UI::Xaml::DependencyProperty XYFocusDownProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebViewUnsupportedUriSchemeIdentifiedEventArgs
+{
+    Windows::Foundation::Uri Uri() const;
+    bool Handled() const;
+    void Handled(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebViewUnviewableContentIdentifiedEventArgs
+{
+    Windows::Foundation::Uri Uri() const;
+    Windows::Foundation::Uri Referrer() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebViewUnviewableContentIdentifiedEventArgs2
+{
+    hstring MediaType() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWrapGrid
+{
+    double ItemWidth() const;
+    void ItemWidth(double value) const;
+    double ItemHeight() const;
+    void ItemHeight(double value) const;
+    Windows::UI::Xaml::Controls::Orientation Orientation() const;
+    void Orientation(Windows::UI::Xaml::Controls::Orientation value) const;
+    Windows::UI::Xaml::HorizontalAlignment HorizontalChildrenAlignment() const;
+    void HorizontalChildrenAlignment(Windows::UI::Xaml::HorizontalAlignment value) const;
+    Windows::UI::Xaml::VerticalAlignment VerticalChildrenAlignment() const;
+    void VerticalChildrenAlignment(Windows::UI::Xaml::VerticalAlignment value) const;
+    int32_t MaximumRowsOrColumns() const;
+    void MaximumRowsOrColumns(int32_t value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWrapGridStatics
+{
+    Windows::UI::Xaml::DependencyProperty ItemWidthProperty() const;
+    Windows::UI::Xaml::DependencyProperty ItemHeightProperty() const;
+    Windows::UI::Xaml::DependencyProperty OrientationProperty() const;
+    Windows::UI::Xaml::DependencyProperty HorizontalChildrenAlignmentProperty() const;
+    Windows::UI::Xaml::DependencyProperty VerticalChildrenAlignmentProperty() const;
+    Windows::UI::Xaml::DependencyProperty MaximumRowsOrColumnsProperty() const;
+};
 
 }
 

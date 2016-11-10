@@ -27,6 +27,14 @@ struct PowerManager;
 
 namespace Windows::System::Power {
 
+template <typename T> struct impl_IBackgroundEnergyManagerStatics;
+template <typename T> struct impl_IForegroundEnergyManagerStatics;
+template <typename T> struct impl_IPowerManagerStatics;
+
+}
+
+namespace Windows::System::Power {
+
 enum class BatteryStatus
 {
     NotPresent = 0,

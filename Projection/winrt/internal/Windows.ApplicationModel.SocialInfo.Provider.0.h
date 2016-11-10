@@ -27,4 +27,12 @@ struct SocialInfoProviderManager;
 
 }
 
+namespace Windows::ApplicationModel::SocialInfo::Provider {
+
+template <typename T> struct impl_ISocialDashboardItemUpdater;
+template <typename T> struct impl_ISocialFeedUpdater;
+template <typename T> struct impl_ISocialInfoProviderManagerStatics;
+
+}
+
 }

@@ -26,4 +26,12 @@ struct LanguageFontGroup;
 
 }
 
+namespace Windows::Globalization::Fonts {
+
+template <typename T> struct impl_ILanguageFont;
+template <typename T> struct impl_ILanguageFontGroup;
+template <typename T> struct impl_ILanguageFontGroupFactory;
+
+}
+
 }

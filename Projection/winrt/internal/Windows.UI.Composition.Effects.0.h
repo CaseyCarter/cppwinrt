@@ -20,4 +20,10 @@ struct SceneLightingEffect;
 
 }
 
+namespace Windows::UI::Composition::Effects {
+
+template <typename T> struct impl_ISceneLightingEffect;
+
+}
+
 }

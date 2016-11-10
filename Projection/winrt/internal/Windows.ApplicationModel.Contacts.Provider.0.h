@@ -28,6 +28,14 @@ struct ContactRemovedEventArgs;
 
 namespace Windows::ApplicationModel::Contacts::Provider {
 
+template <typename T> struct impl_IContactPickerUI;
+template <typename T> struct impl_IContactPickerUI2;
+template <typename T> struct impl_IContactRemovedEventArgs;
+
+}
+
+namespace Windows::ApplicationModel::Contacts::Provider {
+
 enum class AddContactResult
 {
     Added = 0,

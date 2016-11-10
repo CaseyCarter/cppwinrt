@@ -46,4 +46,17 @@ struct ProcessMemoryUsageReport;
 
 }
 
+namespace Windows::System::Diagnostics {
+
+template <typename T> struct impl_IProcessCpuUsage;
+template <typename T> struct impl_IProcessCpuUsageReport;
+template <typename T> struct impl_IProcessDiagnosticInfo;
+template <typename T> struct impl_IProcessDiagnosticInfoStatics;
+template <typename T> struct impl_IProcessDiskUsage;
+template <typename T> struct impl_IProcessDiskUsageReport;
+template <typename T> struct impl_IProcessMemoryUsage;
+template <typename T> struct impl_IProcessMemoryUsageReport;
+
+}
+
 }

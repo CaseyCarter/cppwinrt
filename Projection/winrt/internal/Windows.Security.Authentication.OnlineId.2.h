@@ -64,53 +64,6 @@ template <> struct __declspec(uuid("cded76fd-7841-52a0-a771-76cd751d13cd")) __de
 
 namespace Windows::Security::Authentication::OnlineId {
 
-template <typename D>
-struct WINRT_EBO impl_IOnlineIdAuthenticator
-{
-    Windows::Security::Authentication::OnlineId::UserAuthenticationOperation AuthenticateUserAsync(const Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest & request) const;
-    Windows::Security::Authentication::OnlineId::UserAuthenticationOperation AuthenticateUserAsync(const Windows::Foundation::Collections::IIterable<Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest> & requests, Windows::Security::Authentication::OnlineId::CredentialPromptType credentialPromptType) const;
-    Windows::Security::Authentication::OnlineId::SignOutUserOperation SignOutUserAsync() const;
-    void ApplicationId(GUID value) const;
-    GUID ApplicationId() const;
-    bool CanSignOut() const;
-    hstring AuthenticatedSafeCustomerId() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IOnlineIdServiceTicket
-{
-    hstring Value() const;
-    Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest Request() const;
-    int32_t ErrorCode() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IOnlineIdServiceTicketRequest
-{
-    hstring Service() const;
-    hstring Policy() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IOnlineIdServiceTicketRequestFactory
-{
-    Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest CreateOnlineIdServiceTicketRequest(hstring_ref service, hstring_ref policy) const;
-    Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest CreateOnlineIdServiceTicketRequestAdvanced(hstring_ref service) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IUserIdentity
-{
-    Windows::Foundation::Collections::IVectorView<Windows::Security::Authentication::OnlineId::OnlineIdServiceTicket> Tickets() const;
-    hstring Id() const;
-    hstring SafeCustomerId() const;
-    hstring SignInName() const;
-    hstring FirstName() const;
-    hstring LastName() const;
-    bool IsBetaAccount() const;
-    bool IsConfirmedPC() const;
-};
-
 struct IOnlineIdAuthenticator :
     Windows::IInspectable,
     impl::consume<IOnlineIdAuthenticator>

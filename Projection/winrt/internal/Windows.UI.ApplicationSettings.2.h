@@ -4,6 +4,7 @@
 #pragma once
 
 #include "Windows.UI.ApplicationSettings.1.h"
+#include "Windows.UI.Popups.1.h"
 #include "Windows.UI.Popups.2.h"
 
 WINRT_EXPORT namespace winrt {
@@ -109,106 +110,6 @@ template <> struct __declspec(uuid("67b64d17-4245-5d7c-bfb4-6b68dd525877")) __de
 }
 
 namespace Windows::UI::ApplicationSettings {
-
-template <typename D>
-struct WINRT_EBO impl_IAccountsSettingsPane
-{
-    event_token AccountCommandsRequested(const Windows::Foundation::TypedEventHandler<Windows::UI::ApplicationSettings::AccountsSettingsPane, Windows::UI::ApplicationSettings::AccountsSettingsPaneCommandsRequestedEventArgs> & handler) const;
-    using AccountCommandsRequested_revoker = event_revoker<IAccountsSettingsPane>;
-    AccountCommandsRequested_revoker AccountCommandsRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::ApplicationSettings::AccountsSettingsPane, Windows::UI::ApplicationSettings::AccountsSettingsPaneCommandsRequestedEventArgs> & handler) const;
-    void AccountCommandsRequested(event_token cookie) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IAccountsSettingsPaneCommandsRequestedEventArgs
-{
-    Windows::Foundation::Collections::IVector<Windows::UI::ApplicationSettings::WebAccountProviderCommand> WebAccountProviderCommands() const;
-    Windows::Foundation::Collections::IVector<Windows::UI::ApplicationSettings::WebAccountCommand> WebAccountCommands() const;
-    Windows::Foundation::Collections::IVector<Windows::UI::ApplicationSettings::CredentialCommand> CredentialCommands() const;
-    Windows::Foundation::Collections::IVector<Windows::UI::ApplicationSettings::SettingsCommand> Commands() const;
-    hstring HeaderText() const;
-    void HeaderText(hstring_ref value) const;
-    Windows::UI::ApplicationSettings::AccountsSettingsPaneEventDeferral GetDeferral() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IAccountsSettingsPaneEventDeferral
-{
-    void Complete() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IAccountsSettingsPaneStatics
-{
-    Windows::UI::ApplicationSettings::AccountsSettingsPane GetForCurrentView() const;
-    void Show() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IAccountsSettingsPaneStatics2
-{
-    Windows::Foundation::IAsyncAction ShowManageAccountsAsync() const;
-    Windows::Foundation::IAsyncAction ShowAddAccountAsync() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_ICredentialCommand
-{
-    Windows::Security::Credentials::PasswordCredential PasswordCredential() const;
-    Windows::UI::ApplicationSettings::CredentialCommandCredentialDeletedHandler CredentialDeleted() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_ICredentialCommandFactory
-{
-    Windows::UI::ApplicationSettings::CredentialCommand CreateCredentialCommand(const Windows::Security::Credentials::PasswordCredential & passwordCredential) const;
-    Windows::UI::ApplicationSettings::CredentialCommand CreateCredentialCommandWithHandler(const Windows::Security::Credentials::PasswordCredential & passwordCredential, const Windows::UI::ApplicationSettings::CredentialCommandCredentialDeletedHandler & deleted) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_ISettingsCommandFactory
-{
-    Windows::UI::ApplicationSettings::SettingsCommand CreateSettingsCommand(const Windows::IInspectable & settingsCommandId, hstring_ref label, const Windows::UI::Popups::UICommandInvokedHandler & handler) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_ISettingsCommandStatics
-{
-    Windows::UI::ApplicationSettings::SettingsCommand AccountsCommand() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IWebAccountCommand
-{
-    Windows::Security::Credentials::WebAccount WebAccount() const;
-    Windows::UI::ApplicationSettings::WebAccountCommandInvokedHandler Invoked() const;
-    Windows::UI::ApplicationSettings::SupportedWebAccountActions Actions() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IWebAccountCommandFactory
-{
-    Windows::UI::ApplicationSettings::WebAccountCommand CreateWebAccountCommand(const Windows::Security::Credentials::WebAccount & webAccount, const Windows::UI::ApplicationSettings::WebAccountCommandInvokedHandler & invoked, Windows::UI::ApplicationSettings::SupportedWebAccountActions actions) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IWebAccountInvokedArgs
-{
-    Windows::UI::ApplicationSettings::WebAccountAction Action() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IWebAccountProviderCommand
-{
-    Windows::Security::Credentials::WebAccountProvider WebAccountProvider() const;
-    Windows::UI::ApplicationSettings::WebAccountProviderCommandInvokedHandler Invoked() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IWebAccountProviderCommandFactory
-{
-    Windows::UI::ApplicationSettings::WebAccountProviderCommand CreateWebAccountProviderCommand(const Windows::Security::Credentials::WebAccountProvider & webAccountProvider, const Windows::UI::ApplicationSettings::WebAccountProviderCommandInvokedHandler & invoked) const;
-};
 
 struct CredentialCommandCredentialDeletedHandler : Windows::IUnknown
 {

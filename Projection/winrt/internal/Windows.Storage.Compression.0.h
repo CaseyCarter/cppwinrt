@@ -30,6 +30,15 @@ struct Decompressor;
 
 namespace Windows::Storage::Compression {
 
+template <typename T> struct impl_ICompressor;
+template <typename T> struct impl_ICompressorFactory;
+template <typename T> struct impl_IDecompressor;
+template <typename T> struct impl_IDecompressorFactory;
+
+}
+
+namespace Windows::Storage::Compression {
+
 enum class CompressAlgorithm
 {
     InvalidAlgorithm = 0,

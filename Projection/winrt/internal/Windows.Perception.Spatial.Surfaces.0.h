@@ -40,4 +40,16 @@ struct SpatialSurfaceObserver;
 
 }
 
+namespace Windows::Perception::Spatial::Surfaces {
+
+template <typename T> struct impl_ISpatialSurfaceInfo;
+template <typename T> struct impl_ISpatialSurfaceMesh;
+template <typename T> struct impl_ISpatialSurfaceMeshBuffer;
+template <typename T> struct impl_ISpatialSurfaceMeshOptions;
+template <typename T> struct impl_ISpatialSurfaceMeshOptionsStatics;
+template <typename T> struct impl_ISpatialSurfaceObserver;
+template <typename T> struct impl_ISpatialSurfaceObserverStatics;
+
+}
+
 }

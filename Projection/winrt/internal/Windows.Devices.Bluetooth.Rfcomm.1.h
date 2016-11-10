@@ -111,17 +111,95 @@ template <> struct traits<Windows::Devices::Bluetooth::Rfcomm::RfcommServiceProv
 
 namespace Windows::Devices::Bluetooth::Rfcomm {
 
-template <typename T> struct impl_IRfcommDeviceService;
-template <typename T> struct impl_IRfcommDeviceService2;
-template <typename T> struct impl_IRfcommDeviceService3;
-template <typename T> struct impl_IRfcommDeviceServiceStatics;
-template <typename T> struct impl_IRfcommDeviceServiceStatics2;
-template <typename T> struct impl_IRfcommDeviceServicesResult;
-template <typename T> struct impl_IRfcommServiceId;
-template <typename T> struct impl_IRfcommServiceIdStatics;
-template <typename T> struct impl_IRfcommServiceProvider;
-template <typename T> struct impl_IRfcommServiceProvider2;
-template <typename T> struct impl_IRfcommServiceProviderStatics;
+template <typename D>
+struct WINRT_EBO impl_IRfcommDeviceService
+{
+    Windows::Networking::HostName ConnectionHostName() const;
+    hstring ConnectionServiceName() const;
+    Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId ServiceId() const;
+    Windows::Networking::Sockets::SocketProtectionLevel ProtectionLevel() const;
+    Windows::Networking::Sockets::SocketProtectionLevel MaxProtectionLevel() const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMapView<uint32_t, Windows::Storage::Streams::IBuffer>> GetSdpRawAttributesAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMapView<uint32_t, Windows::Storage::Streams::IBuffer>> GetSdpRawAttributesAsync(Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRfcommDeviceService2
+{
+    Windows::Devices::Bluetooth::BluetoothDevice Device() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRfcommDeviceService3
+{
+    Windows::Devices::Enumeration::DeviceAccessInformation DeviceAccessInformation() const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Enumeration::DeviceAccessStatus> RequestAccessAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRfcommDeviceServiceStatics
+{
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceService> FromIdAsync(hstring_ref deviceId) const;
+    hstring GetDeviceSelector(const Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId & serviceId) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRfcommDeviceServiceStatics2
+{
+    hstring GetDeviceSelectorForBluetoothDevice(const Windows::Devices::Bluetooth::BluetoothDevice & bluetoothDevice) const;
+    hstring GetDeviceSelectorForBluetoothDevice(const Windows::Devices::Bluetooth::BluetoothDevice & bluetoothDevice, Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode) const;
+    hstring GetDeviceSelectorForBluetoothDeviceAndServiceId(const Windows::Devices::Bluetooth::BluetoothDevice & bluetoothDevice, const Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId & serviceId) const;
+    hstring GetDeviceSelectorForBluetoothDeviceAndServiceId(const Windows::Devices::Bluetooth::BluetoothDevice & bluetoothDevice, const Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId & serviceId, Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRfcommDeviceServicesResult
+{
+    Windows::Devices::Bluetooth::BluetoothError Error() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceService> Services() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRfcommServiceId
+{
+    GUID Uuid() const;
+    uint32_t AsShortId() const;
+    hstring AsString() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRfcommServiceIdStatics
+{
+    Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId FromUuid(GUID uuid) const;
+    Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId FromShortId(uint32_t shortId) const;
+    Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId SerialPort() const;
+    Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId ObexObjectPush() const;
+    Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId ObexFileTransfer() const;
+    Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId PhoneBookAccessPce() const;
+    Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId PhoneBookAccessPse() const;
+    Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId GenericFileTransfer() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRfcommServiceProvider
+{
+    Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId ServiceId() const;
+    Windows::Foundation::Collections::IMap<uint32_t, Windows::Storage::Streams::IBuffer> SdpRawAttributes() const;
+    void StartAdvertising(const Windows::Networking::Sockets::StreamSocketListener & listener) const;
+    void StopAdvertising() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRfcommServiceProvider2
+{
+    void StartAdvertising(const Windows::Networking::Sockets::StreamSocketListener & listener, bool radioDiscoverable) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRfcommServiceProviderStatics
+{
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::Rfcomm::RfcommServiceProvider> CreateAsync(const Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId & serviceId) const;
+};
 
 }
 

@@ -96,15 +96,86 @@ template <> struct traits<Windows::Data::Json::JsonValue> { using default_interf
 
 namespace Windows::Data::Json {
 
-template <typename T> struct impl_IJsonArray;
-template <typename T> struct impl_IJsonArrayStatics;
-template <typename T> struct impl_IJsonErrorStatics2;
-template <typename T> struct impl_IJsonObject;
-template <typename T> struct impl_IJsonObjectStatics;
-template <typename T> struct impl_IJsonObjectWithDefaultValues;
-template <typename T> struct impl_IJsonValue;
-template <typename T> struct impl_IJsonValueStatics;
-template <typename T> struct impl_IJsonValueStatics2;
+template <typename D>
+struct WINRT_EBO impl_IJsonArray
+{
+    Windows::Data::Json::JsonObject GetObjectAt(uint32_t index) const;
+    Windows::Data::Json::JsonArray GetArrayAt(uint32_t index) const;
+    hstring GetStringAt(uint32_t index) const;
+    double GetNumberAt(uint32_t index) const;
+    bool GetBooleanAt(uint32_t index) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IJsonArrayStatics
+{
+    Windows::Data::Json::JsonArray Parse(hstring_ref input) const;
+    bool TryParse(hstring_ref input, Windows::Data::Json::JsonArray & result) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IJsonErrorStatics2
+{
+    Windows::Data::Json::JsonErrorStatus GetJsonStatus(int32_t hresult) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IJsonObject
+{
+    Windows::Data::Json::JsonValue GetNamedValue(hstring_ref name) const;
+    void SetNamedValue(hstring_ref name, const Windows::Data::Json::IJsonValue & value) const;
+    Windows::Data::Json::JsonObject GetNamedObject(hstring_ref name) const;
+    Windows::Data::Json::JsonArray GetNamedArray(hstring_ref name) const;
+    hstring GetNamedString(hstring_ref name) const;
+    double GetNamedNumber(hstring_ref name) const;
+    bool GetNamedBoolean(hstring_ref name) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IJsonObjectStatics
+{
+    Windows::Data::Json::JsonObject Parse(hstring_ref input) const;
+    bool TryParse(hstring_ref input, Windows::Data::Json::JsonObject & result) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IJsonObjectWithDefaultValues
+{
+    Windows::Data::Json::JsonValue GetNamedValue(hstring_ref name, const Windows::Data::Json::JsonValue & defaultValue) const;
+    Windows::Data::Json::JsonObject GetNamedObject(hstring_ref name, const Windows::Data::Json::JsonObject & defaultValue) const;
+    hstring GetNamedString(hstring_ref name, hstring_ref defaultValue) const;
+    Windows::Data::Json::JsonArray GetNamedArray(hstring_ref name, const Windows::Data::Json::JsonArray & defaultValue) const;
+    double GetNamedNumber(hstring_ref name, double defaultValue) const;
+    bool GetNamedBoolean(hstring_ref name, bool defaultValue) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IJsonValue
+{
+    Windows::Data::Json::JsonValueType ValueType() const;
+    hstring Stringify() const;
+    hstring GetString() const;
+    double GetNumber() const;
+    bool GetBoolean() const;
+    Windows::Data::Json::JsonArray GetArray() const;
+    Windows::Data::Json::JsonObject GetObject() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IJsonValueStatics
+{
+    Windows::Data::Json::JsonValue Parse(hstring_ref input) const;
+    bool TryParse(hstring_ref input, Windows::Data::Json::JsonValue & result) const;
+    Windows::Data::Json::JsonValue CreateBooleanValue(bool input) const;
+    Windows::Data::Json::JsonValue CreateNumberValue(double input) const;
+    Windows::Data::Json::JsonValue CreateStringValue(hstring_ref input) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IJsonValueStatics2
+{
+    Windows::Data::Json::JsonValue CreateNullValue() const;
+};
 
 }
 

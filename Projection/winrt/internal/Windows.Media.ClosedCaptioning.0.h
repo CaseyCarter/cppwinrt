@@ -21,6 +21,12 @@ struct ClosedCaptionProperties;
 
 namespace Windows::Media::ClosedCaptioning {
 
+template <typename T> struct impl_IClosedCaptionPropertiesStatics;
+
+}
+
+namespace Windows::Media::ClosedCaptioning {
+
 enum class ClosedCaptionColor
 {
     Default = 0,

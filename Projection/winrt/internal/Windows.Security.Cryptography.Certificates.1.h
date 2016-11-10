@@ -392,46 +392,396 @@ template <> struct traits<Windows::Security::Cryptography::Certificates::UserCer
 
 namespace Windows::Security::Cryptography::Certificates {
 
-template <typename T> struct impl_ICertificate;
-template <typename T> struct impl_ICertificate2;
-template <typename T> struct impl_ICertificate3;
-template <typename T> struct impl_ICertificateChain;
-template <typename T> struct impl_ICertificateEnrollmentManagerStatics;
-template <typename T> struct impl_ICertificateEnrollmentManagerStatics2;
-template <typename T> struct impl_ICertificateEnrollmentManagerStatics3;
-template <typename T> struct impl_ICertificateFactory;
-template <typename T> struct impl_ICertificateKeyUsages;
-template <typename T> struct impl_ICertificateQuery;
-template <typename T> struct impl_ICertificateQuery2;
-template <typename T> struct impl_ICertificateRequestProperties;
-template <typename T> struct impl_ICertificateRequestProperties2;
-template <typename T> struct impl_ICertificateRequestProperties3;
-template <typename T> struct impl_ICertificateStore;
-template <typename T> struct impl_ICertificateStore2;
-template <typename T> struct impl_ICertificateStoresStatics;
-template <typename T> struct impl_ICertificateStoresStatics2;
-template <typename T> struct impl_IChainBuildingParameters;
-template <typename T> struct impl_IChainValidationParameters;
-template <typename T> struct impl_ICmsAttachedSignature;
-template <typename T> struct impl_ICmsAttachedSignatureFactory;
-template <typename T> struct impl_ICmsAttachedSignatureStatics;
-template <typename T> struct impl_ICmsDetachedSignature;
-template <typename T> struct impl_ICmsDetachedSignatureFactory;
-template <typename T> struct impl_ICmsDetachedSignatureStatics;
-template <typename T> struct impl_ICmsSignerInfo;
-template <typename T> struct impl_ICmsTimestampInfo;
-template <typename T> struct impl_IKeyAlgorithmNamesStatics;
-template <typename T> struct impl_IKeyAlgorithmNamesStatics2;
-template <typename T> struct impl_IKeyAttestationHelperStatics;
-template <typename T> struct impl_IKeyAttestationHelperStatics2;
-template <typename T> struct impl_IKeyStorageProviderNamesStatics;
-template <typename T> struct impl_IKeyStorageProviderNamesStatics2;
-template <typename T> struct impl_IPfxImportParameters;
-template <typename T> struct impl_IStandardCertificateStoreNamesStatics;
-template <typename T> struct impl_ISubjectAlternativeNameInfo;
-template <typename T> struct impl_IUserCertificateEnrollmentManager;
-template <typename T> struct impl_IUserCertificateEnrollmentManager2;
-template <typename T> struct impl_IUserCertificateStore;
+template <typename D>
+struct WINRT_EBO impl_ICertificate
+{
+    Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Certificates::CertificateChain> BuildChainAsync(const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> & certificates) const;
+    Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Certificates::CertificateChain> BuildChainAsync(const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> & certificates, const Windows::Security::Cryptography::Certificates::ChainBuildingParameters & parameters) const;
+    com_array<uint8_t> SerialNumber() const;
+    com_array<uint8_t> GetHashValue() const;
+    com_array<uint8_t> GetHashValue(hstring_ref hashAlgorithmName) const;
+    Windows::Storage::Streams::IBuffer GetCertificateBlob() const;
+    hstring Subject() const;
+    hstring Issuer() const;
+    bool HasPrivateKey() const;
+    bool IsStronglyProtected() const;
+    Windows::Foundation::DateTime ValidFrom() const;
+    Windows::Foundation::DateTime ValidTo() const;
+    Windows::Foundation::Collections::IVectorView<hstring> EnhancedKeyUsages() const;
+    void FriendlyName(hstring_ref value) const;
+    hstring FriendlyName() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICertificate2
+{
+    bool IsSecurityDeviceBound() const;
+    Windows::Security::Cryptography::Certificates::CertificateKeyUsages KeyUsages() const;
+    hstring KeyAlgorithmName() const;
+    hstring SignatureAlgorithmName() const;
+    hstring SignatureHashAlgorithmName() const;
+    Windows::Security::Cryptography::Certificates::SubjectAlternativeNameInfo SubjectAlternativeName() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICertificate3
+{
+    bool IsPerUser() const;
+    hstring StoreName() const;
+    hstring KeyStorageProviderName() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICertificateChain
+{
+    Windows::Security::Cryptography::Certificates::ChainValidationResult Validate() const;
+    Windows::Security::Cryptography::Certificates::ChainValidationResult Validate(const Windows::Security::Cryptography::Certificates::ChainValidationParameters & parameter) const;
+    Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> GetCertificates(bool includeRoot) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICertificateEnrollmentManagerStatics
+{
+    Windows::Foundation::IAsyncOperation<hstring> CreateRequestAsync(const Windows::Security::Cryptography::Certificates::CertificateRequestProperties & request) const;
+    Windows::Foundation::IAsyncAction InstallCertificateAsync(hstring_ref certificate, Windows::Security::Cryptography::Certificates::InstallOptions installOption) const;
+    Windows::Foundation::IAsyncAction ImportPfxDataAsync(hstring_ref pfxData, hstring_ref password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, hstring_ref friendlyName) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICertificateEnrollmentManagerStatics2
+{
+    Windows::Security::Cryptography::Certificates::UserCertificateEnrollmentManager UserCertificateEnrollmentManager() const;
+    Windows::Foundation::IAsyncAction ImportPfxDataAsync(hstring_ref pfxData, hstring_ref password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, hstring_ref friendlyName, hstring_ref keyStorageProvider) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICertificateEnrollmentManagerStatics3
+{
+    Windows::Foundation::IAsyncAction ImportPfxDataAsync(hstring_ref pfxData, hstring_ref password, const Windows::Security::Cryptography::Certificates::PfxImportParameters & pfxImportParameters) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICertificateFactory
+{
+    Windows::Security::Cryptography::Certificates::Certificate CreateCertificate(const Windows::Storage::Streams::IBuffer & certBlob) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICertificateKeyUsages
+{
+    bool EncipherOnly() const;
+    void EncipherOnly(bool value) const;
+    bool CrlSign() const;
+    void CrlSign(bool value) const;
+    bool KeyCertificateSign() const;
+    void KeyCertificateSign(bool value) const;
+    bool KeyAgreement() const;
+    void KeyAgreement(bool value) const;
+    bool DataEncipherment() const;
+    void DataEncipherment(bool value) const;
+    bool KeyEncipherment() const;
+    void KeyEncipherment(bool value) const;
+    bool NonRepudiation() const;
+    void NonRepudiation(bool value) const;
+    bool DigitalSignature() const;
+    void DigitalSignature(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICertificateQuery
+{
+    Windows::Foundation::Collections::IVector<hstring> EnhancedKeyUsages() const;
+    hstring IssuerName() const;
+    void IssuerName(hstring_ref value) const;
+    hstring FriendlyName() const;
+    void FriendlyName(hstring_ref value) const;
+    com_array<uint8_t> Thumbprint() const;
+    void Thumbprint(array_ref<const uint8_t> value) const;
+    bool HardwareOnly() const;
+    void HardwareOnly(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICertificateQuery2
+{
+    bool IncludeDuplicates() const;
+    void IncludeDuplicates(bool value) const;
+    bool IncludeExpiredCertificates() const;
+    void IncludeExpiredCertificates(bool value) const;
+    hstring StoreName() const;
+    void StoreName(hstring_ref value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICertificateRequestProperties
+{
+    hstring Subject() const;
+    void Subject(hstring_ref value) const;
+    hstring KeyAlgorithmName() const;
+    void KeyAlgorithmName(hstring_ref value) const;
+    uint32_t KeySize() const;
+    void KeySize(uint32_t value) const;
+    hstring FriendlyName() const;
+    void FriendlyName(hstring_ref value) const;
+    hstring HashAlgorithmName() const;
+    void HashAlgorithmName(hstring_ref value) const;
+    Windows::Security::Cryptography::Certificates::ExportOption Exportable() const;
+    void Exportable(Windows::Security::Cryptography::Certificates::ExportOption value) const;
+    Windows::Security::Cryptography::Certificates::EnrollKeyUsages KeyUsages() const;
+    void KeyUsages(Windows::Security::Cryptography::Certificates::EnrollKeyUsages value) const;
+    Windows::Security::Cryptography::Certificates::KeyProtectionLevel KeyProtectionLevel() const;
+    void KeyProtectionLevel(Windows::Security::Cryptography::Certificates::KeyProtectionLevel value) const;
+    hstring KeyStorageProviderName() const;
+    void KeyStorageProviderName(hstring_ref value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICertificateRequestProperties2
+{
+    hstring SmartcardReaderName() const;
+    void SmartcardReaderName(hstring_ref value) const;
+    Windows::Security::Cryptography::Certificates::Certificate SigningCertificate() const;
+    void SigningCertificate(const Windows::Security::Cryptography::Certificates::Certificate & value) const;
+    Windows::Security::Cryptography::Certificates::Certificate AttestationCredentialCertificate() const;
+    void AttestationCredentialCertificate(const Windows::Security::Cryptography::Certificates::Certificate & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICertificateRequestProperties3
+{
+    hstring CurveName() const;
+    void CurveName(hstring_ref value) const;
+    com_array<uint8_t> CurveParameters() const;
+    void CurveParameters(array_ref<const uint8_t> value) const;
+    hstring ContainerNamePrefix() const;
+    void ContainerNamePrefix(hstring_ref value) const;
+    hstring ContainerName() const;
+    void ContainerName(hstring_ref value) const;
+    bool UseExistingKey() const;
+    void UseExistingKey(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICertificateStore
+{
+    void Add(const Windows::Security::Cryptography::Certificates::Certificate & certificate) const;
+    void Delete(const Windows::Security::Cryptography::Certificates::Certificate & certificate) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICertificateStore2
+{
+    hstring Name() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICertificateStoresStatics
+{
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>> FindAllAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate>> FindAllAsync(const Windows::Security::Cryptography::Certificates::CertificateQuery & query) const;
+    Windows::Security::Cryptography::Certificates::CertificateStore TrustedRootCertificationAuthorities() const;
+    Windows::Security::Cryptography::Certificates::CertificateStore IntermediateCertificationAuthorities() const;
+    Windows::Security::Cryptography::Certificates::CertificateStore GetStoreByName(hstring_ref storeName) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICertificateStoresStatics2
+{
+    Windows::Security::Cryptography::Certificates::UserCertificateStore GetUserStoreByName(hstring_ref storeName) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IChainBuildingParameters
+{
+    Windows::Foundation::Collections::IVector<hstring> EnhancedKeyUsages() const;
+    Windows::Foundation::DateTime ValidationTimestamp() const;
+    void ValidationTimestamp(const Windows::Foundation::DateTime & value) const;
+    bool RevocationCheckEnabled() const;
+    void RevocationCheckEnabled(bool value) const;
+    bool NetworkRetrievalEnabled() const;
+    void NetworkRetrievalEnabled(bool value) const;
+    bool AuthorityInformationAccessEnabled() const;
+    void AuthorityInformationAccessEnabled(bool value) const;
+    bool CurrentTimeValidationEnabled() const;
+    void CurrentTimeValidationEnabled(bool value) const;
+    Windows::Foundation::Collections::IVector<Windows::Security::Cryptography::Certificates::Certificate> ExclusiveTrustRoots() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IChainValidationParameters
+{
+    Windows::Security::Cryptography::Certificates::CertificateChainPolicy CertificateChainPolicy() const;
+    void CertificateChainPolicy(Windows::Security::Cryptography::Certificates::CertificateChainPolicy value) const;
+    Windows::Networking::HostName ServerDnsName() const;
+    void ServerDnsName(const Windows::Networking::HostName & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICmsAttachedSignature
+{
+    Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> Certificates() const;
+    com_array<uint8_t> Content() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::CmsSignerInfo> Signers() const;
+    Windows::Security::Cryptography::Certificates::SignatureValidationResult VerifySignature() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICmsAttachedSignatureFactory
+{
+    Windows::Security::Cryptography::Certificates::CmsAttachedSignature CreateCmsAttachedSignature(const Windows::Storage::Streams::IBuffer & inputBlob) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICmsAttachedSignatureStatics
+{
+    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> GenerateSignatureAsync(const Windows::Storage::Streams::IBuffer & data, const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::CmsSignerInfo> & signers, const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> & certificates) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICmsDetachedSignature
+{
+    Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> Certificates() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::CmsSignerInfo> Signers() const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Cryptography::Certificates::SignatureValidationResult> VerifySignatureAsync(const Windows::Storage::Streams::IInputStream & data) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICmsDetachedSignatureFactory
+{
+    Windows::Security::Cryptography::Certificates::CmsDetachedSignature CreateCmsDetachedSignature(const Windows::Storage::Streams::IBuffer & inputBlob) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICmsDetachedSignatureStatics
+{
+    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> GenerateSignatureAsync(const Windows::Storage::Streams::IInputStream & data, const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::CmsSignerInfo> & signers, const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> & certificates) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICmsSignerInfo
+{
+    Windows::Security::Cryptography::Certificates::Certificate Certificate() const;
+    void Certificate(const Windows::Security::Cryptography::Certificates::Certificate & value) const;
+    hstring HashAlgorithmName() const;
+    void HashAlgorithmName(hstring_ref value) const;
+    Windows::Security::Cryptography::Certificates::CmsTimestampInfo TimestampInfo() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICmsTimestampInfo
+{
+    Windows::Security::Cryptography::Certificates::Certificate SigningCertificate() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> Certificates() const;
+    Windows::Foundation::DateTime Timestamp() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IKeyAlgorithmNamesStatics
+{
+    hstring Rsa() const;
+    hstring Dsa() const;
+    hstring Ecdh256() const;
+    hstring Ecdh384() const;
+    hstring Ecdh521() const;
+    hstring Ecdsa256() const;
+    hstring Ecdsa384() const;
+    hstring Ecdsa521() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IKeyAlgorithmNamesStatics2
+{
+    hstring Ecdsa() const;
+    hstring Ecdh() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IKeyAttestationHelperStatics
+{
+    Windows::Foundation::IAsyncOperation<hstring> DecryptTpmAttestationCredentialAsync(hstring_ref credential) const;
+    hstring GetTpmAttestationCredentialId(hstring_ref credential) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IKeyAttestationHelperStatics2
+{
+    Windows::Foundation::IAsyncOperation<hstring> DecryptTpmAttestationCredentialAsync(hstring_ref credential, hstring_ref containerName) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IKeyStorageProviderNamesStatics
+{
+    hstring SoftwareKeyStorageProvider() const;
+    hstring SmartcardKeyStorageProvider() const;
+    hstring PlatformKeyStorageProvider() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IKeyStorageProviderNamesStatics2
+{
+    hstring PassportKeyStorageProvider() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPfxImportParameters
+{
+    Windows::Security::Cryptography::Certificates::ExportOption Exportable() const;
+    void Exportable(Windows::Security::Cryptography::Certificates::ExportOption value) const;
+    Windows::Security::Cryptography::Certificates::KeyProtectionLevel KeyProtectionLevel() const;
+    void KeyProtectionLevel(Windows::Security::Cryptography::Certificates::KeyProtectionLevel value) const;
+    Windows::Security::Cryptography::Certificates::InstallOptions InstallOptions() const;
+    void InstallOptions(Windows::Security::Cryptography::Certificates::InstallOptions value) const;
+    hstring FriendlyName() const;
+    void FriendlyName(hstring_ref value) const;
+    hstring KeyStorageProviderName() const;
+    void KeyStorageProviderName(hstring_ref value) const;
+    hstring ContainerNamePrefix() const;
+    void ContainerNamePrefix(hstring_ref value) const;
+    hstring ReaderName() const;
+    void ReaderName(hstring_ref value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStandardCertificateStoreNamesStatics
+{
+    hstring Personal() const;
+    hstring TrustedRootCertificationAuthorities() const;
+    hstring IntermediateCertificationAuthorities() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISubjectAlternativeNameInfo
+{
+    Windows::Foundation::Collections::IVectorView<hstring> EmailName() const;
+    Windows::Foundation::Collections::IVectorView<hstring> IPAddress() const;
+    Windows::Foundation::Collections::IVectorView<hstring> Url() const;
+    Windows::Foundation::Collections::IVectorView<hstring> DnsName() const;
+    Windows::Foundation::Collections::IVectorView<hstring> DistinguishedName() const;
+    Windows::Foundation::Collections::IVectorView<hstring> PrincipalName() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUserCertificateEnrollmentManager
+{
+    Windows::Foundation::IAsyncOperation<hstring> CreateRequestAsync(const Windows::Security::Cryptography::Certificates::CertificateRequestProperties & request) const;
+    Windows::Foundation::IAsyncAction InstallCertificateAsync(hstring_ref certificate, Windows::Security::Cryptography::Certificates::InstallOptions installOption) const;
+    Windows::Foundation::IAsyncAction ImportPfxDataAsync(hstring_ref pfxData, hstring_ref password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, hstring_ref friendlyName) const;
+    Windows::Foundation::IAsyncAction ImportPfxDataAsync(hstring_ref pfxData, hstring_ref password, Windows::Security::Cryptography::Certificates::ExportOption exportable, Windows::Security::Cryptography::Certificates::KeyProtectionLevel keyProtectionLevel, Windows::Security::Cryptography::Certificates::InstallOptions installOption, hstring_ref friendlyName, hstring_ref keyStorageProvider) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUserCertificateEnrollmentManager2
+{
+    Windows::Foundation::IAsyncAction ImportPfxDataAsync(hstring_ref pfxData, hstring_ref password, const Windows::Security::Cryptography::Certificates::PfxImportParameters & pfxImportParameters) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUserCertificateStore
+{
+    Windows::Foundation::IAsyncOperation<bool> RequestAddAsync(const Windows::Security::Cryptography::Certificates::Certificate & certificate) const;
+    Windows::Foundation::IAsyncOperation<bool> RequestDeleteAsync(const Windows::Security::Cryptography::Certificates::Certificate & certificate) const;
+    hstring Name() const;
+};
 
 }
 

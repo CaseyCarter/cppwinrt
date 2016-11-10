@@ -4,8 +4,8 @@
 #pragma once
 
 #include "Windows.Devices.WiFiDirect.1.h"
-#include "Windows.Devices.Enumeration.2.h"
-#include "Windows.Foundation.2.h"
+#include "Windows.Devices.Enumeration.1.h"
+#include "Windows.Foundation.1.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -130,141 +130,6 @@ template <> struct __declspec(uuid("c899ff9f-e6f5-5673-810c-04e2ff98704f")) __de
 }
 
 namespace Windows::Devices::WiFiDirect {
-
-template <typename D>
-struct WINRT_EBO impl_IWiFiDirectAdvertisement
-{
-    Windows::Foundation::Collections::IVector<Windows::Devices::WiFiDirect::WiFiDirectInformationElement> InformationElements() const;
-    void InformationElements(const Windows::Foundation::Collections::IVector<Windows::Devices::WiFiDirect::WiFiDirectInformationElement> & value) const;
-    Windows::Devices::WiFiDirect::WiFiDirectAdvertisementListenStateDiscoverability ListenStateDiscoverability() const;
-    void ListenStateDiscoverability(Windows::Devices::WiFiDirect::WiFiDirectAdvertisementListenStateDiscoverability value) const;
-    bool IsAutonomousGroupOwnerEnabled() const;
-    void IsAutonomousGroupOwnerEnabled(bool value) const;
-    Windows::Devices::WiFiDirect::WiFiDirectLegacySettings LegacySettings() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IWiFiDirectAdvertisement2
-{
-    Windows::Foundation::Collections::IVector<winrt::Windows::Devices::WiFiDirect::WiFiDirectConfigurationMethod> SupportedConfigurationMethods() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IWiFiDirectAdvertisementPublisher
-{
-    Windows::Devices::WiFiDirect::WiFiDirectAdvertisement Advertisement() const;
-    Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisherStatus Status() const;
-    event_token StatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisher, Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisherStatusChangedEventArgs> & handler) const;
-    using StatusChanged_revoker = event_revoker<IWiFiDirectAdvertisementPublisher>;
-    StatusChanged_revoker StatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisher, Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisherStatusChangedEventArgs> & handler) const;
-    void StatusChanged(event_token token) const;
-    void Start() const;
-    void Stop() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IWiFiDirectAdvertisementPublisherStatusChangedEventArgs
-{
-    Windows::Devices::WiFiDirect::WiFiDirectAdvertisementPublisherStatus Status() const;
-    Windows::Devices::WiFiDirect::WiFiDirectError Error() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IWiFiDirectConnectionListener
-{
-    event_token ConnectionRequested(const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectConnectionListener, Windows::Devices::WiFiDirect::WiFiDirectConnectionRequestedEventArgs> & handler) const;
-    using ConnectionRequested_revoker = event_revoker<IWiFiDirectConnectionListener>;
-    ConnectionRequested_revoker ConnectionRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectConnectionListener, Windows::Devices::WiFiDirect::WiFiDirectConnectionRequestedEventArgs> & handler) const;
-    void ConnectionRequested(event_token token) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IWiFiDirectConnectionParameters
-{
-    int16_t GroupOwnerIntent() const;
-    void GroupOwnerIntent(int16_t value) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IWiFiDirectConnectionParameters2
-{
-    Windows::Foundation::Collections::IVector<winrt::Windows::Devices::WiFiDirect::WiFiDirectConfigurationMethod> PreferenceOrderedConfigurationMethods() const;
-    Windows::Devices::WiFiDirect::WiFiDirectPairingProcedure PreferredPairingProcedure() const;
-    void PreferredPairingProcedure(Windows::Devices::WiFiDirect::WiFiDirectPairingProcedure value) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IWiFiDirectConnectionParametersStatics
-{
-    Windows::Devices::Enumeration::DevicePairingKinds GetDevicePairingKinds(Windows::Devices::WiFiDirect::WiFiDirectConfigurationMethod configurationMethod) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IWiFiDirectConnectionRequest
-{
-    Windows::Devices::Enumeration::DeviceInformation DeviceInformation() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IWiFiDirectConnectionRequestedEventArgs
-{
-    Windows::Devices::WiFiDirect::WiFiDirectConnectionRequest GetConnectionRequest() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IWiFiDirectDevice
-{
-    Windows::Devices::WiFiDirect::WiFiDirectConnectionStatus ConnectionStatus() const;
-    hstring DeviceId() const;
-    event_token ConnectionStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectDevice, Windows::IInspectable> & handler) const;
-    using ConnectionStatusChanged_revoker = event_revoker<IWiFiDirectDevice>;
-    ConnectionStatusChanged_revoker ConnectionStatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFiDirect::WiFiDirectDevice, Windows::IInspectable> & handler) const;
-    void ConnectionStatusChanged(event_token token) const;
-    Windows::Foundation::Collections::IVectorView<Windows::Networking::EndpointPair> GetConnectionEndpointPairs() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IWiFiDirectDeviceStatics
-{
-    hstring GetDeviceSelector() const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::WiFiDirectDevice> FromIdAsync(hstring_ref deviceId) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IWiFiDirectDeviceStatics2
-{
-    hstring GetDeviceSelector(Windows::Devices::WiFiDirect::WiFiDirectDeviceSelectorType type) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::WiFiDirect::WiFiDirectDevice> FromIdAsync(hstring_ref deviceId, const Windows::Devices::WiFiDirect::WiFiDirectConnectionParameters & connectionParameters) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IWiFiDirectInformationElement
-{
-    Windows::Storage::Streams::IBuffer Oui() const;
-    void Oui(const Windows::Storage::Streams::IBuffer & value) const;
-    uint8_t OuiType() const;
-    void OuiType(uint8_t value) const;
-    Windows::Storage::Streams::IBuffer Value() const;
-    void Value(const Windows::Storage::Streams::IBuffer & value) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IWiFiDirectInformationElementStatics
-{
-    Windows::Foundation::Collections::IVector<Windows::Devices::WiFiDirect::WiFiDirectInformationElement> CreateFromBuffer(const Windows::Storage::Streams::IBuffer & buffer) const;
-    Windows::Foundation::Collections::IVector<Windows::Devices::WiFiDirect::WiFiDirectInformationElement> CreateFromDeviceInformation(const Windows::Devices::Enumeration::DeviceInformation & deviceInformation) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IWiFiDirectLegacySettings
-{
-    bool IsEnabled() const;
-    void IsEnabled(bool value) const;
-    hstring Ssid() const;
-    void Ssid(hstring_ref value) const;
-    Windows::Security::Credentials::PasswordCredential Passphrase() const;
-    void Passphrase(const Windows::Security::Credentials::PasswordCredential & value) const;
-};
 
 struct IWiFiDirectAdvertisement :
     Windows::IInspectable,

@@ -62,9 +62,47 @@ template <> struct traits<Windows::Storage::BulkAccess::FolderInformation> { usi
 
 namespace Windows::Storage::BulkAccess {
 
-template <typename T> struct impl_IFileInformationFactory;
-template <typename T> struct impl_IFileInformationFactoryFactory;
-template <typename T> struct impl_IStorageItemInformation;
+template <typename D>
+struct WINRT_EBO impl_IFileInformationFactory
+{
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::BulkAccess::IStorageItemInformation>> GetItemsAsync(uint32_t startIndex, uint32_t maxItemsToRetrieve) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::BulkAccess::IStorageItemInformation>> GetItemsAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::BulkAccess::FileInformation>> GetFilesAsync(uint32_t startIndex, uint32_t maxItemsToRetrieve) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::BulkAccess::FileInformation>> GetFilesAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::BulkAccess::FolderInformation>> GetFoldersAsync(uint32_t startIndex, uint32_t maxItemsToRetrieve) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::BulkAccess::FolderInformation>> GetFoldersAsync() const;
+    Windows::IInspectable GetVirtualizedItemsVector() const;
+    Windows::IInspectable GetVirtualizedFilesVector() const;
+    Windows::IInspectable GetVirtualizedFoldersVector() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFileInformationFactoryFactory
+{
+    Windows::Storage::BulkAccess::FileInformationFactory CreateWithMode(const Windows::Storage::Search::IStorageQueryResultBase & queryResult, Windows::Storage::FileProperties::ThumbnailMode mode) const;
+    Windows::Storage::BulkAccess::FileInformationFactory CreateWithModeAndSize(const Windows::Storage::Search::IStorageQueryResultBase & queryResult, Windows::Storage::FileProperties::ThumbnailMode mode, uint32_t requestedThumbnailSize) const;
+    Windows::Storage::BulkAccess::FileInformationFactory CreateWithModeAndSizeAndOptions(const Windows::Storage::Search::IStorageQueryResultBase & queryResult, Windows::Storage::FileProperties::ThumbnailMode mode, uint32_t requestedThumbnailSize, Windows::Storage::FileProperties::ThumbnailOptions thumbnailOptions) const;
+    Windows::Storage::BulkAccess::FileInformationFactory CreateWithModeAndSizeAndOptionsAndFlags(const Windows::Storage::Search::IStorageQueryResultBase & queryResult, Windows::Storage::FileProperties::ThumbnailMode mode, uint32_t requestedThumbnailSize, Windows::Storage::FileProperties::ThumbnailOptions thumbnailOptions, bool delayLoad) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStorageItemInformation
+{
+    Windows::Storage::FileProperties::MusicProperties MusicProperties() const;
+    Windows::Storage::FileProperties::VideoProperties VideoProperties() const;
+    Windows::Storage::FileProperties::ImageProperties ImageProperties() const;
+    Windows::Storage::FileProperties::DocumentProperties DocumentProperties() const;
+    Windows::Storage::FileProperties::BasicProperties BasicProperties() const;
+    Windows::Storage::FileProperties::StorageItemThumbnail Thumbnail() const;
+    event_token ThumbnailUpdated(const Windows::Foundation::TypedEventHandler<Windows::Storage::BulkAccess::IStorageItemInformation, Windows::IInspectable> & changedHandler) const;
+    using ThumbnailUpdated_revoker = event_revoker<IStorageItemInformation>;
+    ThumbnailUpdated_revoker ThumbnailUpdated(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Storage::BulkAccess::IStorageItemInformation, Windows::IInspectable> & changedHandler) const;
+    void ThumbnailUpdated(event_token eventCookie) const;
+    event_token PropertiesUpdated(const Windows::Foundation::TypedEventHandler<Windows::Storage::BulkAccess::IStorageItemInformation, Windows::IInspectable> & changedHandler) const;
+    using PropertiesUpdated_revoker = event_revoker<IStorageItemInformation>;
+    PropertiesUpdated_revoker PropertiesUpdated(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Storage::BulkAccess::IStorageItemInformation, Windows::IInspectable> & changedHandler) const;
+    void PropertiesUpdated(event_token eventCookie) const;
+};
 
 }
 

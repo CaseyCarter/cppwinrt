@@ -72,12 +72,58 @@ template <> struct traits<Windows::Networking::PushNotifications::RawNotificatio
 
 namespace Windows::Networking::PushNotifications {
 
-template <typename T> struct impl_IPushNotificationChannel;
-template <typename T> struct impl_IPushNotificationChannelManagerForUser;
-template <typename T> struct impl_IPushNotificationChannelManagerStatics;
-template <typename T> struct impl_IPushNotificationChannelManagerStatics2;
-template <typename T> struct impl_IPushNotificationReceivedEventArgs;
-template <typename T> struct impl_IRawNotification;
+template <typename D>
+struct WINRT_EBO impl_IPushNotificationChannel
+{
+    hstring Uri() const;
+    Windows::Foundation::DateTime ExpirationTime() const;
+    void Close() const;
+    event_token PushNotificationReceived(const Windows::Foundation::TypedEventHandler<Windows::Networking::PushNotifications::PushNotificationChannel, Windows::Networking::PushNotifications::PushNotificationReceivedEventArgs> & handler) const;
+    using PushNotificationReceived_revoker = event_revoker<IPushNotificationChannel>;
+    PushNotificationReceived_revoker PushNotificationReceived(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Networking::PushNotifications::PushNotificationChannel, Windows::Networking::PushNotifications::PushNotificationReceivedEventArgs> & handler) const;
+    void PushNotificationReceived(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPushNotificationChannelManagerForUser
+{
+    Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> CreatePushNotificationChannelForApplicationAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> CreatePushNotificationChannelForApplicationAsync(hstring_ref applicationId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> CreatePushNotificationChannelForSecondaryTileAsync(hstring_ref tileId) const;
+    Windows::System::User User() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPushNotificationChannelManagerStatics
+{
+    Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> CreatePushNotificationChannelForApplicationAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> CreatePushNotificationChannelForApplicationAsync(hstring_ref applicationId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Networking::PushNotifications::PushNotificationChannel> CreatePushNotificationChannelForSecondaryTileAsync(hstring_ref tileId) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPushNotificationChannelManagerStatics2
+{
+    Windows::Networking::PushNotifications::PushNotificationChannelManagerForUser GetForUser(const Windows::System::User & user) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPushNotificationReceivedEventArgs
+{
+    void Cancel(bool value) const;
+    bool Cancel() const;
+    Windows::Networking::PushNotifications::PushNotificationType NotificationType() const;
+    Windows::UI::Notifications::ToastNotification ToastNotification() const;
+    Windows::UI::Notifications::TileNotification TileNotification() const;
+    Windows::UI::Notifications::BadgeNotification BadgeNotification() const;
+    Windows::Networking::PushNotifications::RawNotification RawNotification() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRawNotification
+{
+    hstring Content() const;
+};
 
 }
 

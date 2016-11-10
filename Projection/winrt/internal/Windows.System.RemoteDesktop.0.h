@@ -19,4 +19,10 @@ struct InteractiveSession;
 
 }
 
+namespace Windows::System::RemoteDesktop {
+
+template <typename T> struct impl_IInteractiveSessionStatics;
+
+}
+
 }

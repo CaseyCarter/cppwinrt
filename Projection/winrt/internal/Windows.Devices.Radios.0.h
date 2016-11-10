@@ -24,6 +24,13 @@ struct Radio;
 
 namespace Windows::Devices::Radios {
 
+template <typename T> struct impl_IRadio;
+template <typename T> struct impl_IRadioStatics;
+
+}
+
+namespace Windows::Devices::Radios {
+
 enum class RadioAccessStatus
 {
     Unspecified = 0,

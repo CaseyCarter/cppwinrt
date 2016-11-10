@@ -34,6 +34,16 @@ struct GeofenceStateChangeReport;
 
 namespace Windows::Devices::Geolocation::Geofencing {
 
+template <typename T> struct impl_IGeofence;
+template <typename T> struct impl_IGeofenceFactory;
+template <typename T> struct impl_IGeofenceMonitor;
+template <typename T> struct impl_IGeofenceMonitorStatics;
+template <typename T> struct impl_IGeofenceStateChangeReport;
+
+}
+
+namespace Windows::Devices::Geolocation::Geofencing {
+
 enum class GeofenceMonitorStatus
 {
     Ready = 0,

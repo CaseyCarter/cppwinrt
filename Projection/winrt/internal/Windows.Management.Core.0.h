@@ -22,4 +22,11 @@ struct ApplicationDataManager;
 
 }
 
+namespace Windows::Management::Core {
+
+template <typename T> struct impl_IApplicationDataManager;
+template <typename T> struct impl_IApplicationDataManagerStatics;
+
+}
+
 }

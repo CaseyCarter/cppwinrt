@@ -28,6 +28,14 @@ struct PrepareTranscodeResult;
 
 namespace Windows::Media::Transcoding {
 
+template <typename T> struct impl_IMediaTranscoder;
+template <typename T> struct impl_IMediaTranscoder2;
+template <typename T> struct impl_IPrepareTranscodeResult;
+
+}
+
+namespace Windows::Media::Transcoding {
+
 enum class MediaVideoProcessingAlgorithm
 {
     Default = 0,

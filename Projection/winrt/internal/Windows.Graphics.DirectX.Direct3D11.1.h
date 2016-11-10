@@ -55,8 +55,17 @@ namespace ABI {
 
 namespace Windows::Graphics::DirectX::Direct3D11 {
 
-template <typename T> struct impl_IDirect3DDevice;
-template <typename T> struct impl_IDirect3DSurface;
+template <typename D>
+struct WINRT_EBO impl_IDirect3DDevice
+{
+    void Trim() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDirect3DSurface
+{
+    Windows::Graphics::DirectX::Direct3D11::Direct3DSurfaceDescription Description() const;
+};
 
 }
 

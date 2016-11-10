@@ -42,9 +42,26 @@ template <> struct traits<Windows::Devices::Printers::PrintSchema> { using defau
 
 namespace Windows::Devices::Printers {
 
-template <typename T> struct impl_IPrint3DDevice;
-template <typename T> struct impl_IPrint3DDeviceStatics;
-template <typename T> struct impl_IPrintSchema;
+template <typename D>
+struct WINRT_EBO impl_IPrint3DDevice
+{
+    Windows::Devices::Printers::PrintSchema PrintSchema() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPrint3DDeviceStatics
+{
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Printers::Print3DDevice> FromIdAsync(hstring_ref deviceId) const;
+    hstring GetDeviceSelector() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPrintSchema
+{
+    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamWithContentType> GetDefaultPrintTicketAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamWithContentType> GetCapabilitiesAsync(const Windows::Storage::Streams::IRandomAccessStreamWithContentType & constrainTicket) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamWithContentType> MergeAndValidateWithDefaultPrintTicketAsync(const Windows::Storage::Streams::IRandomAccessStreamWithContentType & deltaTicket) const;
+};
 
 }
 

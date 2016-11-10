@@ -32,8 +32,20 @@ namespace ABI {
 
 namespace Windows::Management::Workplace {
 
-template <typename T> struct impl_IMdmAllowPolicyStatics;
-template <typename T> struct impl_IMdmPolicyStatics2;
+template <typename D>
+struct WINRT_EBO impl_IMdmAllowPolicyStatics
+{
+    bool IsBrowserAllowed() const;
+    bool IsCameraAllowed() const;
+    bool IsMicrosoftAccountAllowed() const;
+    bool IsStoreAllowed() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMdmPolicyStatics2
+{
+    Windows::Management::Workplace::MessagingSyncPolicy GetMessagingSyncPolicy() const;
+};
 
 }
 

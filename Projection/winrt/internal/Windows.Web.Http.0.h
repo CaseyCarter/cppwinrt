@@ -102,6 +102,33 @@ struct HttpTransportInformation;
 
 namespace Windows::Web::Http {
 
+template <typename T> struct impl_IHttpBufferContentFactory;
+template <typename T> struct impl_IHttpClient;
+template <typename T> struct impl_IHttpClientFactory;
+template <typename T> struct impl_IHttpContent;
+template <typename T> struct impl_IHttpCookie;
+template <typename T> struct impl_IHttpCookieFactory;
+template <typename T> struct impl_IHttpCookieManager;
+template <typename T> struct impl_IHttpFormUrlEncodedContentFactory;
+template <typename T> struct impl_IHttpMethod;
+template <typename T> struct impl_IHttpMethodFactory;
+template <typename T> struct impl_IHttpMethodStatics;
+template <typename T> struct impl_IHttpMultipartContent;
+template <typename T> struct impl_IHttpMultipartContentFactory;
+template <typename T> struct impl_IHttpMultipartFormDataContent;
+template <typename T> struct impl_IHttpMultipartFormDataContentFactory;
+template <typename T> struct impl_IHttpRequestMessage;
+template <typename T> struct impl_IHttpRequestMessageFactory;
+template <typename T> struct impl_IHttpResponseMessage;
+template <typename T> struct impl_IHttpResponseMessageFactory;
+template <typename T> struct impl_IHttpStreamContentFactory;
+template <typename T> struct impl_IHttpStringContentFactory;
+template <typename T> struct impl_IHttpTransportInformation;
+
+}
+
+namespace Windows::Web::Http {
+
 enum class HttpCompletionOption
 {
     ResponseContentRead = 0,

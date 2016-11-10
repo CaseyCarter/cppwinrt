@@ -4,7 +4,7 @@
 #pragma once
 
 #include "Windows.ApplicationModel.ExtendedExecution.Foreground.1.h"
-#include "Windows.Foundation.2.h"
+#include "Windows.Foundation.1.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -29,26 +29,6 @@ template <> struct __declspec(uuid("07e1dc01-18ba-596a-b745-79f9cde44ccc")) __de
 }
 
 namespace Windows::ApplicationModel::ExtendedExecution::Foreground {
-
-template <typename D>
-struct WINRT_EBO impl_IExtendedExecutionForegroundRevokedEventArgs
-{
-    Windows::ApplicationModel::ExtendedExecution::Foreground::ExtendedExecutionForegroundRevokedReason Reason() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IExtendedExecutionForegroundSession
-{
-    hstring Description() const;
-    void Description(hstring_ref value) const;
-    event_token Revoked(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::ApplicationModel::ExtendedExecution::Foreground::ExtendedExecutionForegroundRevokedEventArgs> & handler) const;
-    using Revoked_revoker = event_revoker<IExtendedExecutionForegroundSession>;
-    Revoked_revoker Revoked(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::ApplicationModel::ExtendedExecution::Foreground::ExtendedExecutionForegroundRevokedEventArgs> & handler) const;
-    void Revoked(event_token token) const;
-    Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::ExtendedExecution::Foreground::ExtendedExecutionForegroundResult> RequestExtensionAsync() const;
-    Windows::ApplicationModel::ExtendedExecution::Foreground::ExtendedExecutionForegroundReason Reason() const;
-    void Reason(Windows::ApplicationModel::ExtendedExecution::Foreground::ExtendedExecutionForegroundReason value) const;
-};
 
 struct IExtendedExecutionForegroundRevokedEventArgs :
     Windows::IInspectable,

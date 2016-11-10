@@ -156,6 +156,56 @@ struct TappedRoutedEventArgs;
 
 namespace Windows::UI::Xaml::Input {
 
+template <typename T> struct impl_IAccessKeyDisplayDismissedEventArgs;
+template <typename T> struct impl_IAccessKeyDisplayRequestedEventArgs;
+template <typename T> struct impl_IAccessKeyInvokedEventArgs;
+template <typename T> struct impl_IAccessKeyManager;
+template <typename T> struct impl_IAccessKeyManagerStatics;
+template <typename T> struct impl_ICommand;
+template <typename T> struct impl_IContextRequestedEventArgs;
+template <typename T> struct impl_IDoubleTappedRoutedEventArgs;
+template <typename T> struct impl_IFocusManager;
+template <typename T> struct impl_IFocusManagerStatics;
+template <typename T> struct impl_IFocusManagerStatics2;
+template <typename T> struct impl_IFocusManagerStatics3;
+template <typename T> struct impl_IHoldingRoutedEventArgs;
+template <typename T> struct impl_IInertiaExpansionBehavior;
+template <typename T> struct impl_IInertiaRotationBehavior;
+template <typename T> struct impl_IInertiaTranslationBehavior;
+template <typename T> struct impl_IInputScope;
+template <typename T> struct impl_IInputScopeName;
+template <typename T> struct impl_IInputScopeNameFactory;
+template <typename T> struct impl_IKeyRoutedEventArgs;
+template <typename T> struct impl_IKeyRoutedEventArgs2;
+template <typename T> struct impl_IKeyRoutedEventArgs3;
+template <typename T> struct impl_IManipulationCompletedRoutedEventArgs;
+template <typename T> struct impl_IManipulationDeltaRoutedEventArgs;
+template <typename T> struct impl_IManipulationInertiaStartingRoutedEventArgs;
+template <typename T> struct impl_IManipulationPivot;
+template <typename T> struct impl_IManipulationPivotFactory;
+template <typename T> struct impl_IManipulationStartedRoutedEventArgs;
+template <typename T> struct impl_IManipulationStartedRoutedEventArgsFactory;
+template <typename T> struct impl_IManipulationStartingRoutedEventArgs;
+template <typename T> struct impl_IPointer;
+template <typename T> struct impl_IPointerRoutedEventArgs;
+template <typename T> struct impl_IRightTappedRoutedEventArgs;
+template <typename T> struct impl_ITappedRoutedEventArgs;
+template <typename T> struct impl_DoubleTappedEventHandler;
+template <typename T> struct impl_HoldingEventHandler;
+template <typename T> struct impl_KeyEventHandler;
+template <typename T> struct impl_ManipulationCompletedEventHandler;
+template <typename T> struct impl_ManipulationDeltaEventHandler;
+template <typename T> struct impl_ManipulationInertiaStartingEventHandler;
+template <typename T> struct impl_ManipulationStartedEventHandler;
+template <typename T> struct impl_ManipulationStartingEventHandler;
+template <typename T> struct impl_PointerEventHandler;
+template <typename T> struct impl_RightTappedEventHandler;
+template <typename T> struct impl_TappedEventHandler;
+
+}
+
+namespace Windows::UI::Xaml::Input {
+
 enum class FocusNavigationDirection
 {
     Next = 0,

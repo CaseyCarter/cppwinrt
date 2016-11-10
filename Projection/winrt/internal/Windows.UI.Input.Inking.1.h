@@ -297,34 +297,310 @@ template <> struct traits<Windows::UI::Input::Inking::InkUnprocessedInput> { usi
 
 namespace Windows::UI::Input::Inking {
 
-template <typename T> struct impl_IInkDrawingAttributes;
-template <typename T> struct impl_IInkDrawingAttributes2;
-template <typename T> struct impl_IInkDrawingAttributes3;
-template <typename T> struct impl_IInkDrawingAttributesPencilProperties;
-template <typename T> struct impl_IInkDrawingAttributesStatics;
-template <typename T> struct impl_IInkInputProcessingConfiguration;
-template <typename T> struct impl_IInkManager;
-template <typename T> struct impl_IInkPoint;
-template <typename T> struct impl_IInkPointFactory;
-template <typename T> struct impl_IInkPresenter;
-template <typename T> struct impl_IInkPresenterRuler;
-template <typename T> struct impl_IInkPresenterRulerFactory;
-template <typename T> struct impl_IInkPresenterStencil;
-template <typename T> struct impl_IInkRecognitionResult;
-template <typename T> struct impl_IInkRecognizer;
-template <typename T> struct impl_IInkRecognizerContainer;
-template <typename T> struct impl_IInkStroke;
-template <typename T> struct impl_IInkStroke2;
-template <typename T> struct impl_IInkStrokeBuilder;
-template <typename T> struct impl_IInkStrokeBuilder2;
-template <typename T> struct impl_IInkStrokeContainer;
-template <typename T> struct impl_IInkStrokeContainer2;
-template <typename T> struct impl_IInkStrokeInput;
-template <typename T> struct impl_IInkStrokeRenderingSegment;
-template <typename T> struct impl_IInkStrokesCollectedEventArgs;
-template <typename T> struct impl_IInkStrokesErasedEventArgs;
-template <typename T> struct impl_IInkSynchronizer;
-template <typename T> struct impl_IInkUnprocessedInput;
+template <typename D>
+struct WINRT_EBO impl_IInkDrawingAttributes
+{
+    Windows::UI::Color Color() const;
+    void Color(const Windows::UI::Color & value) const;
+    Windows::UI::Input::Inking::PenTipShape PenTip() const;
+    void PenTip(Windows::UI::Input::Inking::PenTipShape value) const;
+    Windows::Foundation::Size Size() const;
+    void Size(const Windows::Foundation::Size & value) const;
+    bool IgnorePressure() const;
+    void IgnorePressure(bool value) const;
+    bool FitToCurve() const;
+    void FitToCurve(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkDrawingAttributes2
+{
+    Windows::Foundation::Numerics::float3x2 PenTipTransform() const;
+    void PenTipTransform(const Windows::Foundation::Numerics::float3x2 & value) const;
+    bool DrawAsHighlighter() const;
+    void DrawAsHighlighter(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkDrawingAttributes3
+{
+    Windows::UI::Input::Inking::InkDrawingAttributesKind Kind() const;
+    Windows::UI::Input::Inking::InkDrawingAttributesPencilProperties PencilProperties() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkDrawingAttributesPencilProperties
+{
+    double Opacity() const;
+    void Opacity(double value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkDrawingAttributesStatics
+{
+    Windows::UI::Input::Inking::InkDrawingAttributes CreateForPencil() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkInputProcessingConfiguration
+{
+    Windows::UI::Input::Inking::InkInputProcessingMode Mode() const;
+    void Mode(Windows::UI::Input::Inking::InkInputProcessingMode value) const;
+    Windows::UI::Input::Inking::InkInputRightDragAction RightDragAction() const;
+    void RightDragAction(Windows::UI::Input::Inking::InkInputRightDragAction value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkManager
+{
+    Windows::UI::Input::Inking::InkManipulationMode Mode() const;
+    void Mode(Windows::UI::Input::Inking::InkManipulationMode value) const;
+    void ProcessPointerDown(const Windows::UI::Input::PointerPoint & pointerPoint) const;
+    Windows::IInspectable ProcessPointerUpdate(const Windows::UI::Input::PointerPoint & pointerPoint) const;
+    Windows::Foundation::Rect ProcessPointerUp(const Windows::UI::Input::PointerPoint & pointerPoint) const;
+    void SetDefaultDrawingAttributes(const Windows::UI::Input::Inking::InkDrawingAttributes & drawingAttributes) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkRecognitionResult>> RecognizeAsync(Windows::UI::Input::Inking::InkRecognitionTarget recognitionTarget) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkPoint
+{
+    Windows::Foundation::Point Position() const;
+    float Pressure() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkPointFactory
+{
+    Windows::UI::Input::Inking::InkPoint CreateInkPoint(const Windows::Foundation::Point & position, float pressure) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkPresenter
+{
+    bool IsInputEnabled() const;
+    void IsInputEnabled(bool value) const;
+    Windows::UI::Core::CoreInputDeviceTypes InputDeviceTypes() const;
+    void InputDeviceTypes(Windows::UI::Core::CoreInputDeviceTypes value) const;
+    Windows::UI::Input::Inking::InkUnprocessedInput UnprocessedInput() const;
+    Windows::UI::Input::Inking::InkStrokeInput StrokeInput() const;
+    Windows::UI::Input::Inking::InkInputProcessingConfiguration InputProcessingConfiguration() const;
+    Windows::UI::Input::Inking::InkStrokeContainer StrokeContainer() const;
+    void StrokeContainer(const Windows::UI::Input::Inking::InkStrokeContainer & value) const;
+    Windows::UI::Input::Inking::InkDrawingAttributes CopyDefaultDrawingAttributes() const;
+    void UpdateDefaultDrawingAttributes(const Windows::UI::Input::Inking::InkDrawingAttributes & value) const;
+    Windows::UI::Input::Inking::InkSynchronizer ActivateCustomDrying() const;
+    void SetPredefinedConfiguration(Windows::UI::Input::Inking::InkPresenterPredefinedConfiguration value) const;
+    event_token StrokesCollected(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkPresenter, Windows::UI::Input::Inking::InkStrokesCollectedEventArgs> & handler) const;
+    using StrokesCollected_revoker = event_revoker<IInkPresenter>;
+    StrokesCollected_revoker StrokesCollected(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkPresenter, Windows::UI::Input::Inking::InkStrokesCollectedEventArgs> & handler) const;
+    void StrokesCollected(event_token cookie) const;
+    event_token StrokesErased(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkPresenter, Windows::UI::Input::Inking::InkStrokesErasedEventArgs> & handler) const;
+    using StrokesErased_revoker = event_revoker<IInkPresenter>;
+    StrokesErased_revoker StrokesErased(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkPresenter, Windows::UI::Input::Inking::InkStrokesErasedEventArgs> & handler) const;
+    void StrokesErased(event_token cookie) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkPresenterRuler
+{
+    double Length() const;
+    void Length(double value) const;
+    double Width() const;
+    void Width(double value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkPresenterRulerFactory
+{
+    Windows::UI::Input::Inking::InkPresenterRuler Create(const Windows::UI::Input::Inking::InkPresenter & inkPresenter) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkPresenterStencil
+{
+    Windows::UI::Input::Inking::InkPresenterStencilKind Kind() const;
+    bool IsVisible() const;
+    void IsVisible(bool value) const;
+    Windows::UI::Color BackgroundColor() const;
+    void BackgroundColor(const Windows::UI::Color & value) const;
+    Windows::UI::Color ForegroundColor() const;
+    void ForegroundColor(const Windows::UI::Color & value) const;
+    Windows::Foundation::Numerics::float3x2 Transform() const;
+    void Transform(const Windows::Foundation::Numerics::float3x2 & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkRecognitionResult
+{
+    Windows::Foundation::Rect BoundingRect() const;
+    Windows::Foundation::Collections::IVectorView<hstring> GetTextCandidates() const;
+    Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkStroke> GetStrokes() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkRecognizer
+{
+    hstring Name() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkRecognizerContainer
+{
+    void SetDefaultRecognizer(const Windows::UI::Input::Inking::InkRecognizer & recognizer) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkRecognitionResult>> RecognizeAsync(const Windows::UI::Input::Inking::InkStrokeContainer & strokeCollection, Windows::UI::Input::Inking::InkRecognitionTarget recognitionTarget) const;
+    Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkRecognizer> GetRecognizers() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkStroke
+{
+    Windows::UI::Input::Inking::InkDrawingAttributes DrawingAttributes() const;
+    void DrawingAttributes(const Windows::UI::Input::Inking::InkDrawingAttributes & value) const;
+    Windows::Foundation::Rect BoundingRect() const;
+    bool Selected() const;
+    void Selected(bool value) const;
+    bool Recognized() const;
+    Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkStrokeRenderingSegment> GetRenderingSegments() const;
+    Windows::UI::Input::Inking::InkStroke Clone() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkStroke2
+{
+    Windows::Foundation::Numerics::float3x2 PointTransform() const;
+    void PointTransform(const Windows::Foundation::Numerics::float3x2 & value) const;
+    Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkPoint> GetInkPoints() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkStrokeBuilder
+{
+    void BeginStroke(const Windows::UI::Input::PointerPoint & pointerPoint) const;
+    Windows::UI::Input::PointerPoint AppendToStroke(const Windows::UI::Input::PointerPoint & pointerPoint) const;
+    Windows::UI::Input::Inking::InkStroke EndStroke(const Windows::UI::Input::PointerPoint & pointerPoint) const;
+    Windows::UI::Input::Inking::InkStroke CreateStroke(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Point> & points) const;
+    void SetDefaultDrawingAttributes(const Windows::UI::Input::Inking::InkDrawingAttributes & drawingAttributes) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkStrokeBuilder2
+{
+    Windows::UI::Input::Inking::InkStroke CreateStrokeFromInkPoints(const Windows::Foundation::Collections::IIterable<Windows::UI::Input::Inking::InkPoint> & inkPoints, const Windows::Foundation::Numerics::float3x2 & transform) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkStrokeContainer
+{
+    Windows::Foundation::Rect BoundingRect() const;
+    void AddStroke(const Windows::UI::Input::Inking::InkStroke & stroke) const;
+    Windows::Foundation::Rect DeleteSelected() const;
+    Windows::Foundation::Rect MoveSelected(const Windows::Foundation::Point & translation) const;
+    Windows::Foundation::Rect SelectWithPolyLine(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Point> & polyline) const;
+    Windows::Foundation::Rect SelectWithLine(const Windows::Foundation::Point & from, const Windows::Foundation::Point & to) const;
+    void CopySelectedToClipboard() const;
+    Windows::Foundation::Rect PasteFromClipboard(const Windows::Foundation::Point & position) const;
+    bool CanPasteFromClipboard() const;
+    Windows::Foundation::IAsyncActionWithProgress<uint64_t> LoadAsync(const Windows::Storage::Streams::IInputStream & inputStream) const;
+    Windows::Foundation::IAsyncOperationWithProgress<uint32_t, uint32_t> SaveAsync(const Windows::Storage::Streams::IOutputStream & outputStream) const;
+    void UpdateRecognitionResults(const Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkRecognitionResult> & recognitionResults) const;
+    Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkStroke> GetStrokes() const;
+    Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkRecognitionResult> GetRecognitionResults() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkStrokeContainer2
+{
+    void AddStrokes(const Windows::Foundation::Collections::IIterable<Windows::UI::Input::Inking::InkStroke> & strokes) const;
+    void Clear() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkStrokeInput
+{
+    event_token StrokeStarted(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkStrokeInput, Windows::UI::Core::PointerEventArgs> & handler) const;
+    using StrokeStarted_revoker = event_revoker<IInkStrokeInput>;
+    StrokeStarted_revoker StrokeStarted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkStrokeInput, Windows::UI::Core::PointerEventArgs> & handler) const;
+    void StrokeStarted(event_token cookie) const;
+    event_token StrokeContinued(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkStrokeInput, Windows::UI::Core::PointerEventArgs> & handler) const;
+    using StrokeContinued_revoker = event_revoker<IInkStrokeInput>;
+    StrokeContinued_revoker StrokeContinued(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkStrokeInput, Windows::UI::Core::PointerEventArgs> & handler) const;
+    void StrokeContinued(event_token cookie) const;
+    event_token StrokeEnded(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkStrokeInput, Windows::UI::Core::PointerEventArgs> & handler) const;
+    using StrokeEnded_revoker = event_revoker<IInkStrokeInput>;
+    StrokeEnded_revoker StrokeEnded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkStrokeInput, Windows::UI::Core::PointerEventArgs> & handler) const;
+    void StrokeEnded(event_token cookie) const;
+    event_token StrokeCanceled(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkStrokeInput, Windows::UI::Core::PointerEventArgs> & handler) const;
+    using StrokeCanceled_revoker = event_revoker<IInkStrokeInput>;
+    StrokeCanceled_revoker StrokeCanceled(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkStrokeInput, Windows::UI::Core::PointerEventArgs> & handler) const;
+    void StrokeCanceled(event_token cookie) const;
+    Windows::UI::Input::Inking::InkPresenter InkPresenter() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkStrokeRenderingSegment
+{
+    Windows::Foundation::Point Position() const;
+    Windows::Foundation::Point BezierControlPoint1() const;
+    Windows::Foundation::Point BezierControlPoint2() const;
+    float Pressure() const;
+    float TiltX() const;
+    float TiltY() const;
+    float Twist() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkStrokesCollectedEventArgs
+{
+    Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkStroke> Strokes() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkStrokesErasedEventArgs
+{
+    Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkStroke> Strokes() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkSynchronizer
+{
+    Windows::Foundation::Collections::IVectorView<Windows::UI::Input::Inking::InkStroke> BeginDry() const;
+    void EndDry() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInkUnprocessedInput
+{
+    event_token PointerEntered(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> & handler) const;
+    using PointerEntered_revoker = event_revoker<IInkUnprocessedInput>;
+    PointerEntered_revoker PointerEntered(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> & handler) const;
+    void PointerEntered(event_token cookie) const;
+    event_token PointerHovered(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> & handler) const;
+    using PointerHovered_revoker = event_revoker<IInkUnprocessedInput>;
+    PointerHovered_revoker PointerHovered(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> & handler) const;
+    void PointerHovered(event_token cookie) const;
+    event_token PointerExited(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> & handler) const;
+    using PointerExited_revoker = event_revoker<IInkUnprocessedInput>;
+    PointerExited_revoker PointerExited(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> & handler) const;
+    void PointerExited(event_token cookie) const;
+    event_token PointerPressed(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> & handler) const;
+    using PointerPressed_revoker = event_revoker<IInkUnprocessedInput>;
+    PointerPressed_revoker PointerPressed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> & handler) const;
+    void PointerPressed(event_token cookie) const;
+    event_token PointerMoved(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> & handler) const;
+    using PointerMoved_revoker = event_revoker<IInkUnprocessedInput>;
+    PointerMoved_revoker PointerMoved(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> & handler) const;
+    void PointerMoved(event_token cookie) const;
+    event_token PointerReleased(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> & handler) const;
+    using PointerReleased_revoker = event_revoker<IInkUnprocessedInput>;
+    PointerReleased_revoker PointerReleased(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> & handler) const;
+    void PointerReleased(event_token cookie) const;
+    event_token PointerLost(const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> & handler) const;
+    using PointerLost_revoker = event_revoker<IInkUnprocessedInput>;
+    PointerLost_revoker PointerLost(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Input::Inking::InkUnprocessedInput, Windows::UI::Core::PointerEventArgs> & handler) const;
+    void PointerLost(event_token cookie) const;
+    Windows::UI::Input::Inking::InkPresenter InkPresenter() const;
+};
 
 }
 

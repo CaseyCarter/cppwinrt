@@ -66,6 +66,26 @@ struct ServiceRequestedEventArgs;
 
 namespace Windows::Media::Protection {
 
+template <typename T> struct impl_IComponentLoadFailedEventArgs;
+template <typename T> struct impl_IHdcpSession;
+template <typename T> struct impl_IMediaProtectionManager;
+template <typename T> struct impl_IMediaProtectionPMPServer;
+template <typename T> struct impl_IMediaProtectionPMPServerFactory;
+template <typename T> struct impl_IMediaProtectionServiceCompletion;
+template <typename T> struct impl_IMediaProtectionServiceRequest;
+template <typename T> struct impl_IProtectionCapabilities;
+template <typename T> struct impl_IRevocationAndRenewalInformation;
+template <typename T> struct impl_IRevocationAndRenewalItem;
+template <typename T> struct impl_IServiceRequestedEventArgs;
+template <typename T> struct impl_IServiceRequestedEventArgs2;
+template <typename T> struct impl_ComponentLoadFailedEventHandler;
+template <typename T> struct impl_RebootNeededEventHandler;
+template <typename T> struct impl_ServiceRequestedEventHandler;
+
+}
+
+namespace Windows::Media::Protection {
+
 enum class GraphicsTrustStatus
 {
     TrustNotRequired = 0,

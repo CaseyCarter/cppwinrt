@@ -44,6 +44,19 @@ struct StorePreviewSkuInfo;
 
 namespace Windows::ApplicationModel::Store::Preview {
 
+template <typename T> struct impl_IStoreConfigurationStatics;
+template <typename T> struct impl_IStoreConfigurationStatics2;
+template <typename T> struct impl_IStoreConfigurationStatics3;
+template <typename T> struct impl_IStoreHardwareManufacturerInfo;
+template <typename T> struct impl_IStorePreview;
+template <typename T> struct impl_IStorePreviewProductInfo;
+template <typename T> struct impl_IStorePreviewPurchaseResults;
+template <typename T> struct impl_IStorePreviewSkuInfo;
+
+}
+
+namespace Windows::ApplicationModel::Store::Preview {
+
 enum class StoreLogOptions : unsigned
 {
     None = 0x0,

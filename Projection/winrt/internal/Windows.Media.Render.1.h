@@ -13,11 +13,6 @@ namespace ABI {
 
 }
 
-namespace Windows::Media::Render {
-
-
-}
-
 namespace impl {
 
 }

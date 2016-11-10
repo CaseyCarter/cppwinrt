@@ -213,6 +213,69 @@ struct KnownContactField;
 
 namespace Windows::ApplicationModel::Contacts {
 
+template <typename T> struct impl_IAggregateContactManager;
+template <typename T> struct impl_IAggregateContactManager2;
+template <typename T> struct impl_IContact;
+template <typename T> struct impl_IContact2;
+template <typename T> struct impl_IContact3;
+template <typename T> struct impl_IContactAddress;
+template <typename T> struct impl_IContactAnnotation;
+template <typename T> struct impl_IContactAnnotationList;
+template <typename T> struct impl_IContactAnnotationStore;
+template <typename T> struct impl_IContactBatch;
+template <typename T> struct impl_IContactCardDelayedDataLoader;
+template <typename T> struct impl_IContactCardOptions;
+template <typename T> struct impl_IContactCardOptions2;
+template <typename T> struct impl_IContactChange;
+template <typename T> struct impl_IContactChangeReader;
+template <typename T> struct impl_IContactChangeTracker;
+template <typename T> struct impl_IContactChangedDeferral;
+template <typename T> struct impl_IContactChangedEventArgs;
+template <typename T> struct impl_IContactConnectedServiceAccount;
+template <typename T> struct impl_IContactDate;
+template <typename T> struct impl_IContactEmail;
+template <typename T> struct impl_IContactField;
+template <typename T> struct impl_IContactFieldFactory;
+template <typename T> struct impl_IContactInformation;
+template <typename T> struct impl_IContactInstantMessageField;
+template <typename T> struct impl_IContactInstantMessageFieldFactory;
+template <typename T> struct impl_IContactJobInfo;
+template <typename T> struct impl_IContactLaunchActionVerbsStatics;
+template <typename T> struct impl_IContactList;
+template <typename T> struct impl_IContactList2;
+template <typename T> struct impl_IContactListSyncConstraints;
+template <typename T> struct impl_IContactListSyncManager;
+template <typename T> struct impl_IContactListSyncManager2;
+template <typename T> struct impl_IContactLocationField;
+template <typename T> struct impl_IContactLocationFieldFactory;
+template <typename T> struct impl_IContactManagerForUser;
+template <typename T> struct impl_IContactManagerStatics;
+template <typename T> struct impl_IContactManagerStatics2;
+template <typename T> struct impl_IContactManagerStatics3;
+template <typename T> struct impl_IContactManagerStatics4;
+template <typename T> struct impl_IContactMatchReason;
+template <typename T> struct impl_IContactName;
+template <typename T> struct impl_IContactPhone;
+template <typename T> struct impl_IContactPicker;
+template <typename T> struct impl_IContactPicker2;
+template <typename T> struct impl_IContactQueryOptions;
+template <typename T> struct impl_IContactQueryOptionsFactory;
+template <typename T> struct impl_IContactQueryTextSearch;
+template <typename T> struct impl_IContactReader;
+template <typename T> struct impl_IContactSignificantOther;
+template <typename T> struct impl_IContactSignificantOther2;
+template <typename T> struct impl_IContactStore;
+template <typename T> struct impl_IContactStore2;
+template <typename T> struct impl_IContactStoreNotificationTriggerDetails;
+template <typename T> struct impl_IContactWebsite;
+template <typename T> struct impl_IContactWebsite2;
+template <typename T> struct impl_IFullContactCardOptions;
+template <typename T> struct impl_IKnownContactFieldStatics;
+
+}
+
+namespace Windows::ApplicationModel::Contacts {
+
 enum class ContactAddressKind
 {
     Home = 0,

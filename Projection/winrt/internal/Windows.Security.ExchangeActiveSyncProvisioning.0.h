@@ -22,4 +22,11 @@ struct EasClientDeviceInformation;
 
 }
 
+namespace Windows::Security::ExchangeActiveSyncProvisioning {
+
+template <typename T> struct impl_IEasClientDeviceInformation;
+template <typename T> struct impl_IEasClientDeviceInformation2;
+
+}
+
 }

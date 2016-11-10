@@ -48,6 +48,19 @@ struct CastingSource;
 
 namespace Windows::Media::Casting {
 
+template <typename T> struct impl_ICastingConnection;
+template <typename T> struct impl_ICastingConnectionErrorOccurredEventArgs;
+template <typename T> struct impl_ICastingDevice;
+template <typename T> struct impl_ICastingDevicePicker;
+template <typename T> struct impl_ICastingDevicePickerFilter;
+template <typename T> struct impl_ICastingDeviceSelectedEventArgs;
+template <typename T> struct impl_ICastingDeviceStatics;
+template <typename T> struct impl_ICastingSource;
+
+}
+
+namespace Windows::Media::Casting {
+
 enum class CastingConnectionErrorStatus
 {
     Succeeded = 0,

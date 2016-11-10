@@ -302,26 +302,297 @@ template <> struct traits<Windows::Devices::Bluetooth::GenericAttributeProfile::
 
 namespace Windows::Devices::Bluetooth::GenericAttributeProfile {
 
-template <typename T> struct impl_IGattCharacteristic;
-template <typename T> struct impl_IGattCharacteristic2;
-template <typename T> struct impl_IGattCharacteristicStatics;
-template <typename T> struct impl_IGattCharacteristicUuidsStatics;
-template <typename T> struct impl_IGattCharacteristicUuidsStatics2;
-template <typename T> struct impl_IGattDescriptor;
-template <typename T> struct impl_IGattDescriptorStatics;
-template <typename T> struct impl_IGattDescriptorUuidsStatics;
-template <typename T> struct impl_IGattDeviceService;
-template <typename T> struct impl_IGattDeviceService2;
-template <typename T> struct impl_IGattDeviceServiceStatics;
-template <typename T> struct impl_IGattPresentationFormat;
-template <typename T> struct impl_IGattPresentationFormatStatics;
-template <typename T> struct impl_IGattPresentationFormatTypesStatics;
-template <typename T> struct impl_IGattReadClientCharacteristicConfigurationDescriptorResult;
-template <typename T> struct impl_IGattReadResult;
-template <typename T> struct impl_IGattReliableWriteTransaction;
-template <typename T> struct impl_IGattServiceUuidsStatics;
-template <typename T> struct impl_IGattServiceUuidsStatics2;
-template <typename T> struct impl_IGattValueChangedEventArgs;
+template <typename D>
+struct WINRT_EBO impl_IGattCharacteristic
+{
+    Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptor> GetDescriptors(GUID descriptorUuid) const;
+    Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicProperties CharacteristicProperties() const;
+    Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel ProtectionLevel() const;
+    void ProtectionLevel(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel value) const;
+    hstring UserDescription() const;
+    GUID Uuid() const;
+    uint16_t AttributeHandle() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattPresentationFormat> PresentationFormats() const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadResult> ReadValueAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadResult> ReadValueAsync(Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus> WriteValueAsync(const Windows::Storage::Streams::IBuffer & value) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus> WriteValueAsync(const Windows::Storage::Streams::IBuffer & value, Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteOption writeOption) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadClientCharacteristicConfigurationDescriptorResult> ReadClientCharacteristicConfigurationDescriptorAsync() const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus> WriteClientCharacteristicConfigurationDescriptorAsync(Windows::Devices::Bluetooth::GenericAttributeProfile::GattClientCharacteristicConfigurationDescriptorValue clientCharacteristicConfigurationDescriptorValue) const;
+    event_token ValueChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic, Windows::Devices::Bluetooth::GenericAttributeProfile::GattValueChangedEventArgs> & valueChangedHandler) const;
+    using ValueChanged_revoker = event_revoker<IGattCharacteristic>;
+    ValueChanged_revoker ValueChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic, Windows::Devices::Bluetooth::GenericAttributeProfile::GattValueChangedEventArgs> & valueChangedHandler) const;
+    void ValueChanged(event_token valueChangedEventCookie) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGattCharacteristic2
+{
+    Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService Service() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptor> GetAllDescriptors() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGattCharacteristicStatics
+{
+    GUID ConvertShortIdToUuid(uint16_t shortId) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGattCharacteristicUuidsStatics
+{
+    GUID BatteryLevel() const;
+    GUID BloodPressureFeature() const;
+    GUID BloodPressureMeasurement() const;
+    GUID BodySensorLocation() const;
+    GUID CscFeature() const;
+    GUID CscMeasurement() const;
+    GUID GlucoseFeature() const;
+    GUID GlucoseMeasurement() const;
+    GUID GlucoseMeasurementContext() const;
+    GUID HeartRateControlPoint() const;
+    GUID HeartRateMeasurement() const;
+    GUID IntermediateCuffPressure() const;
+    GUID IntermediateTemperature() const;
+    GUID MeasurementInterval() const;
+    GUID RecordAccessControlPoint() const;
+    GUID RscFeature() const;
+    GUID RscMeasurement() const;
+    GUID SCControlPoint() const;
+    GUID SensorLocation() const;
+    GUID TemperatureMeasurement() const;
+    GUID TemperatureType() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGattCharacteristicUuidsStatics2
+{
+    GUID AlertCategoryId() const;
+    GUID AlertCategoryIdBitMask() const;
+    GUID AlertLevel() const;
+    GUID AlertNotificationControlPoint() const;
+    GUID AlertStatus() const;
+    GUID GapAppearance() const;
+    GUID BootKeyboardInputReport() const;
+    GUID BootKeyboardOutputReport() const;
+    GUID BootMouseInputReport() const;
+    GUID CurrentTime() const;
+    GUID CyclingPowerControlPoint() const;
+    GUID CyclingPowerFeature() const;
+    GUID CyclingPowerMeasurement() const;
+    GUID CyclingPowerVector() const;
+    GUID DateTime() const;
+    GUID DayDateTime() const;
+    GUID DayOfWeek() const;
+    GUID GapDeviceName() const;
+    GUID DstOffset() const;
+    GUID ExactTime256() const;
+    GUID FirmwareRevisionString() const;
+    GUID HardwareRevisionString() const;
+    GUID HidControlPoint() const;
+    GUID HidInformation() const;
+    GUID Ieee1107320601RegulatoryCertificationDataList() const;
+    GUID LnControlPoint() const;
+    GUID LnFeature() const;
+    GUID LocalTimeInformation() const;
+    GUID LocationAndSpeed() const;
+    GUID ManufacturerNameString() const;
+    GUID ModelNumberString() const;
+    GUID Navigation() const;
+    GUID NewAlert() const;
+    GUID GapPeripheralPreferredConnectionParameters() const;
+    GUID GapPeripheralPrivacyFlag() const;
+    GUID PnpId() const;
+    GUID PositionQuality() const;
+    GUID ProtocolMode() const;
+    GUID GapReconnectionAddress() const;
+    GUID ReferenceTimeInformation() const;
+    GUID Report() const;
+    GUID ReportMap() const;
+    GUID RingerControlPoint() const;
+    GUID RingerSetting() const;
+    GUID ScanIntervalWindow() const;
+    GUID ScanRefresh() const;
+    GUID SerialNumberString() const;
+    GUID GattServiceChanged() const;
+    GUID SoftwareRevisionString() const;
+    GUID SupportedNewAlertCategory() const;
+    GUID SupportUnreadAlertCategory() const;
+    GUID SystemId() const;
+    GUID TimeAccuracy() const;
+    GUID TimeSource() const;
+    GUID TimeUpdateControlPoint() const;
+    GUID TimeUpdateState() const;
+    GUID TimeWithDst() const;
+    GUID TimeZone() const;
+    GUID TxPowerLevel() const;
+    GUID UnreadAlertStatus() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGattDescriptor
+{
+    Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel ProtectionLevel() const;
+    void ProtectionLevel(Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel value) const;
+    GUID Uuid() const;
+    uint16_t AttributeHandle() const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadResult> ReadValueAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadResult> ReadValueAsync(Windows::Devices::Bluetooth::BluetoothCacheMode cacheMode) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus> WriteValueAsync(const Windows::Storage::Streams::IBuffer & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGattDescriptorStatics
+{
+    GUID ConvertShortIdToUuid(uint16_t shortId) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGattDescriptorUuidsStatics
+{
+    GUID CharacteristicAggregateFormat() const;
+    GUID CharacteristicExtendedProperties() const;
+    GUID CharacteristicPresentationFormat() const;
+    GUID CharacteristicUserDescription() const;
+    GUID ClientCharacteristicConfiguration() const;
+    GUID ServerCharacteristicConfiguration() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGattDeviceService
+{
+    Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic> GetCharacteristics(GUID characteristicUuid) const;
+    Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> GetIncludedServices(GUID serviceUuid) const;
+    hstring DeviceId() const;
+    GUID Uuid() const;
+    uint16_t AttributeHandle() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGattDeviceService2
+{
+    Windows::Devices::Bluetooth::BluetoothLEDevice Device() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> ParentServices() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic> GetAllCharacteristics() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> GetAllIncludedServices() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGattDeviceServiceStatics
+{
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService> FromIdAsync(hstring_ref deviceId) const;
+    hstring GetDeviceSelectorFromUuid(GUID serviceUuid) const;
+    hstring GetDeviceSelectorFromShortId(uint16_t serviceShortId) const;
+    GUID ConvertShortIdToUuid(uint16_t shortId) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGattPresentationFormat
+{
+    uint8_t FormatType() const;
+    int32_t Exponent() const;
+    uint16_t Unit() const;
+    uint8_t Namespace() const;
+    uint16_t Description() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGattPresentationFormatStatics
+{
+    uint8_t BluetoothSigAssignedNumbers() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGattPresentationFormatTypesStatics
+{
+    uint8_t Boolean() const;
+    uint8_t Bit2() const;
+    uint8_t Nibble() const;
+    uint8_t UInt8() const;
+    uint8_t UInt12() const;
+    uint8_t UInt16() const;
+    uint8_t UInt24() const;
+    uint8_t UInt32() const;
+    uint8_t UInt48() const;
+    uint8_t UInt64() const;
+    uint8_t UInt128() const;
+    uint8_t SInt8() const;
+    uint8_t SInt12() const;
+    uint8_t SInt16() const;
+    uint8_t SInt24() const;
+    uint8_t SInt32() const;
+    uint8_t SInt48() const;
+    uint8_t SInt64() const;
+    uint8_t SInt128() const;
+    uint8_t Float32() const;
+    uint8_t Float64() const;
+    uint8_t SFloat() const;
+    uint8_t Float() const;
+    uint8_t DUInt16() const;
+    uint8_t Utf8() const;
+    uint8_t Utf16() const;
+    uint8_t Struct() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGattReadClientCharacteristicConfigurationDescriptorResult
+{
+    Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus Status() const;
+    Windows::Devices::Bluetooth::GenericAttributeProfile::GattClientCharacteristicConfigurationDescriptorValue ClientCharacteristicConfigurationDescriptor() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGattReadResult
+{
+    Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus Status() const;
+    Windows::Storage::Streams::IBuffer Value() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGattReliableWriteTransaction
+{
+    void WriteValue(const Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic & characteristic, const Windows::Storage::Streams::IBuffer & value) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus> CommitAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGattServiceUuidsStatics
+{
+    GUID Battery() const;
+    GUID BloodPressure() const;
+    GUID CyclingSpeedAndCadence() const;
+    GUID GenericAccess() const;
+    GUID GenericAttribute() const;
+    GUID Glucose() const;
+    GUID HealthThermometer() const;
+    GUID HeartRate() const;
+    GUID RunningSpeedAndCadence() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGattServiceUuidsStatics2
+{
+    GUID AlertNotification() const;
+    GUID CurrentTime() const;
+    GUID CyclingPower() const;
+    GUID DeviceInformation() const;
+    GUID HumanInterfaceDevice() const;
+    GUID ImmediateAlert() const;
+    GUID LinkLoss() const;
+    GUID LocationAndNavigation() const;
+    GUID NextDstChange() const;
+    GUID PhoneAlertStatus() const;
+    GUID ReferenceTimeUpdate() const;
+    GUID ScanParameters() const;
+    GUID TxPower() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGattValueChangedEventArgs
+{
+    Windows::Storage::Streams::IBuffer CharacteristicValue() const;
+    Windows::Foundation::DateTime Timestamp() const;
+};
 
 }
 

@@ -76,12 +76,69 @@ template <> struct traits<Windows::ApplicationModel::LockScreen::LockScreenUnloc
 
 namespace Windows::ApplicationModel::LockScreen {
 
-template <typename T> struct impl_ILockApplicationHost;
-template <typename T> struct impl_ILockApplicationHostStatics;
-template <typename T> struct impl_ILockScreenBadge;
-template <typename T> struct impl_ILockScreenInfo;
-template <typename T> struct impl_ILockScreenUnlockingDeferral;
-template <typename T> struct impl_ILockScreenUnlockingEventArgs;
+template <typename D>
+struct WINRT_EBO impl_ILockApplicationHost
+{
+    void RequestUnlock() const;
+    event_token Unlocking(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockApplicationHost, Windows::ApplicationModel::LockScreen::LockScreenUnlockingEventArgs> & handler) const;
+    using Unlocking_revoker = event_revoker<ILockApplicationHost>;
+    Unlocking_revoker Unlocking(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockApplicationHost, Windows::ApplicationModel::LockScreen::LockScreenUnlockingEventArgs> & handler) const;
+    void Unlocking(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILockApplicationHostStatics
+{
+    Windows::ApplicationModel::LockScreen::LockApplicationHost GetForCurrentView() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILockScreenBadge
+{
+    Windows::Storage::Streams::IRandomAccessStream Logo() const;
+    Windows::Storage::Streams::IRandomAccessStream Glyph() const;
+    Windows::Foundation::IReference<uint32_t> Number() const;
+    hstring AutomationName() const;
+    void LaunchApp() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILockScreenInfo
+{
+    event_token LockScreenImageChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::IInspectable> & handler) const;
+    using LockScreenImageChanged_revoker = event_revoker<ILockScreenInfo>;
+    LockScreenImageChanged_revoker LockScreenImageChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::IInspectable> & handler) const;
+    void LockScreenImageChanged(event_token token) const;
+    Windows::Storage::Streams::IRandomAccessStream LockScreenImage() const;
+    event_token BadgesChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::IInspectable> & handler) const;
+    using BadgesChanged_revoker = event_revoker<ILockScreenInfo>;
+    BadgesChanged_revoker BadgesChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::IInspectable> & handler) const;
+    void BadgesChanged(event_token token) const;
+    Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::LockScreen::LockScreenBadge> Badges() const;
+    event_token DetailTextChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::IInspectable> & handler) const;
+    using DetailTextChanged_revoker = event_revoker<ILockScreenInfo>;
+    DetailTextChanged_revoker DetailTextChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::IInspectable> & handler) const;
+    void DetailTextChanged(event_token token) const;
+    Windows::Foundation::Collections::IVectorView<hstring> DetailText() const;
+    event_token AlarmIconChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::IInspectable> & handler) const;
+    using AlarmIconChanged_revoker = event_revoker<ILockScreenInfo>;
+    AlarmIconChanged_revoker AlarmIconChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::LockScreen::LockScreenInfo, Windows::IInspectable> & handler) const;
+    void AlarmIconChanged(event_token token) const;
+    Windows::Storage::Streams::IRandomAccessStream AlarmIcon() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILockScreenUnlockingDeferral
+{
+    void Complete() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILockScreenUnlockingEventArgs
+{
+    Windows::ApplicationModel::LockScreen::LockScreenUnlockingDeferral GetDeferral() const;
+    Windows::Foundation::DateTime Deadline() const;
+};
 
 }
 

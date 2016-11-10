@@ -20,4 +20,11 @@ struct IGraphicsEffectSource;
 
 }
 
+namespace Windows::Graphics::Effects {
+
+template <typename T> struct impl_IGraphicsEffect;
+template <typename T> struct impl_IGraphicsEffectSource;
+
+}
+
 }

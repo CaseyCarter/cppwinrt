@@ -36,8 +36,23 @@ template <> struct traits<Windows::Security::ExchangeActiveSyncProvisioning::Eas
 
 namespace Windows::Security::ExchangeActiveSyncProvisioning {
 
-template <typename T> struct impl_IEasClientDeviceInformation;
-template <typename T> struct impl_IEasClientDeviceInformation2;
+template <typename D>
+struct WINRT_EBO impl_IEasClientDeviceInformation
+{
+    GUID Id() const;
+    hstring OperatingSystem() const;
+    hstring FriendlyName() const;
+    hstring SystemManufacturer() const;
+    hstring SystemProductName() const;
+    hstring SystemSku() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEasClientDeviceInformation2
+{
+    hstring SystemHardwareVersion() const;
+    hstring SystemFirmwareVersion() const;
+};
 
 }
 

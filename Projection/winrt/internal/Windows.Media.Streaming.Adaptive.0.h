@@ -64,6 +64,24 @@ struct AdaptiveMediaSourcePlaybackBitrateChangedEventArgs;
 
 namespace Windows::Media::Streaming::Adaptive {
 
+template <typename T> struct impl_IAdaptiveMediaSource;
+template <typename T> struct impl_IAdaptiveMediaSource2;
+template <typename T> struct impl_IAdaptiveMediaSourceAdvancedSettings;
+template <typename T> struct impl_IAdaptiveMediaSourceCreationResult;
+template <typename T> struct impl_IAdaptiveMediaSourceDownloadBitrateChangedEventArgs;
+template <typename T> struct impl_IAdaptiveMediaSourceDownloadCompletedEventArgs;
+template <typename T> struct impl_IAdaptiveMediaSourceDownloadFailedEventArgs;
+template <typename T> struct impl_IAdaptiveMediaSourceDownloadRequestedDeferral;
+template <typename T> struct impl_IAdaptiveMediaSourceDownloadRequestedEventArgs;
+template <typename T> struct impl_IAdaptiveMediaSourceDownloadResult;
+template <typename T> struct impl_IAdaptiveMediaSourceDownloadResult2;
+template <typename T> struct impl_IAdaptiveMediaSourcePlaybackBitrateChangedEventArgs;
+template <typename T> struct impl_IAdaptiveMediaSourceStatics;
+
+}
+
+namespace Windows::Media::Streaming::Adaptive {
+
 enum class AdaptiveMediaSourceCreationStatus
 {
     Success = 0,

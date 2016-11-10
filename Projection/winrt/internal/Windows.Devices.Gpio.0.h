@@ -34,6 +34,16 @@ struct GpioPinValueChangedEventArgs;
 
 namespace Windows::Devices::Gpio {
 
+template <typename T> struct impl_IGpioController;
+template <typename T> struct impl_IGpioControllerStatics;
+template <typename T> struct impl_IGpioControllerStatics2;
+template <typename T> struct impl_IGpioPin;
+template <typename T> struct impl_IGpioPinValueChangedEventArgs;
+
+}
+
+namespace Windows::Devices::Gpio {
+
 enum class GpioOpenStatus
 {
     PinOpened = 0,

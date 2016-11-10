@@ -66,6 +66,20 @@ struct HolographicSpaceCameraRemovedEventArgs;
 
 namespace Windows::Graphics::Holographic {
 
+template <typename T> struct impl_IHolographicCamera;
+template <typename T> struct impl_IHolographicCameraPose;
+template <typename T> struct impl_IHolographicCameraRenderingParameters;
+template <typename T> struct impl_IHolographicFrame;
+template <typename T> struct impl_IHolographicFramePrediction;
+template <typename T> struct impl_IHolographicSpace;
+template <typename T> struct impl_IHolographicSpaceCameraAddedEventArgs;
+template <typename T> struct impl_IHolographicSpaceCameraRemovedEventArgs;
+template <typename T> struct impl_IHolographicSpaceStatics;
+
+}
+
+namespace Windows::Graphics::Holographic {
+
 enum class HolographicFramePresentResult
 {
     Success = 0,

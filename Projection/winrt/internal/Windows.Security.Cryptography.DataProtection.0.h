@@ -22,4 +22,11 @@ struct DataProtectionProvider;
 
 }
 
+namespace Windows::Security::Cryptography::DataProtection {
+
+template <typename T> struct impl_IDataProtectionProvider;
+template <typename T> struct impl_IDataProtectionProviderFactory;
+
+}
+
 }

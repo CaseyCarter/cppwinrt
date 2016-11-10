@@ -78,6 +78,31 @@ struct GattValueChangedEventArgs;
 
 namespace Windows::Devices::Bluetooth::GenericAttributeProfile {
 
+template <typename T> struct impl_IGattCharacteristic;
+template <typename T> struct impl_IGattCharacteristic2;
+template <typename T> struct impl_IGattCharacteristicStatics;
+template <typename T> struct impl_IGattCharacteristicUuidsStatics;
+template <typename T> struct impl_IGattCharacteristicUuidsStatics2;
+template <typename T> struct impl_IGattDescriptor;
+template <typename T> struct impl_IGattDescriptorStatics;
+template <typename T> struct impl_IGattDescriptorUuidsStatics;
+template <typename T> struct impl_IGattDeviceService;
+template <typename T> struct impl_IGattDeviceService2;
+template <typename T> struct impl_IGattDeviceServiceStatics;
+template <typename T> struct impl_IGattPresentationFormat;
+template <typename T> struct impl_IGattPresentationFormatStatics;
+template <typename T> struct impl_IGattPresentationFormatTypesStatics;
+template <typename T> struct impl_IGattReadClientCharacteristicConfigurationDescriptorResult;
+template <typename T> struct impl_IGattReadResult;
+template <typename T> struct impl_IGattReliableWriteTransaction;
+template <typename T> struct impl_IGattServiceUuidsStatics;
+template <typename T> struct impl_IGattServiceUuidsStatics2;
+template <typename T> struct impl_IGattValueChangedEventArgs;
+
+}
+
+namespace Windows::Devices::Bluetooth::GenericAttributeProfile {
+
 enum class GattCharacteristicProperties : unsigned
 {
     None = 0x0,

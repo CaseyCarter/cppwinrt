@@ -201,25 +201,190 @@ template <> struct traits<Windows::UI::Composition::Interactions::VisualInteract
 
 namespace Windows::UI::Composition::Interactions {
 
-template <typename T> struct impl_ICompositionInteractionSource;
-template <typename T> struct impl_ICompositionInteractionSourceCollection;
-template <typename T> struct impl_IInteractionTracker;
-template <typename T> struct impl_IInteractionTrackerCustomAnimationStateEnteredArgs;
-template <typename T> struct impl_IInteractionTrackerIdleStateEnteredArgs;
-template <typename T> struct impl_IInteractionTrackerInertiaModifier;
-template <typename T> struct impl_IInteractionTrackerInertiaModifierFactory;
-template <typename T> struct impl_IInteractionTrackerInertiaMotion;
-template <typename T> struct impl_IInteractionTrackerInertiaMotionStatics;
-template <typename T> struct impl_IInteractionTrackerInertiaRestingValue;
-template <typename T> struct impl_IInteractionTrackerInertiaRestingValueStatics;
-template <typename T> struct impl_IInteractionTrackerInertiaStateEnteredArgs;
-template <typename T> struct impl_IInteractionTrackerInteractingStateEnteredArgs;
-template <typename T> struct impl_IInteractionTrackerOwner;
-template <typename T> struct impl_IInteractionTrackerRequestIgnoredArgs;
-template <typename T> struct impl_IInteractionTrackerStatics;
-template <typename T> struct impl_IInteractionTrackerValuesChangedArgs;
-template <typename T> struct impl_IVisualInteractionSource;
-template <typename T> struct impl_IVisualInteractionSourceStatics;
+template <typename D>
+struct WINRT_EBO impl_ICompositionInteractionSource
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompositionInteractionSourceCollection
+{
+    int32_t Count() const;
+    void Add(const Windows::UI::Composition::Interactions::ICompositionInteractionSource & value) const;
+    void Remove(const Windows::UI::Composition::Interactions::ICompositionInteractionSource & value) const;
+    void RemoveAll() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInteractionTracker
+{
+    Windows::UI::Composition::Interactions::CompositionInteractionSourceCollection InteractionSources() const;
+    bool IsPositionRoundingSuggested() const;
+    Windows::Foundation::Numerics::float3 MaxPosition() const;
+    void MaxPosition(const Windows::Foundation::Numerics::float3 & value) const;
+    float MaxScale() const;
+    void MaxScale(float value) const;
+    Windows::Foundation::Numerics::float3 MinPosition() const;
+    void MinPosition(const Windows::Foundation::Numerics::float3 & value) const;
+    float MinScale() const;
+    void MinScale(float value) const;
+    Windows::Foundation::Numerics::float3 NaturalRestingPosition() const;
+    float NaturalRestingScale() const;
+    Windows::UI::Composition::Interactions::IInteractionTrackerOwner Owner() const;
+    Windows::Foundation::Numerics::float3 Position() const;
+    Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> PositionInertiaDecayRate() const;
+    void PositionInertiaDecayRate(const Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> & value) const;
+    Windows::Foundation::Numerics::float3 PositionVelocityInPixelsPerSecond() const;
+    float Scale() const;
+    Windows::Foundation::IReference<float> ScaleInertiaDecayRate() const;
+    void ScaleInertiaDecayRate(const Windows::Foundation::IReference<float> & value) const;
+    float ScaleVelocityInPercentPerSecond() const;
+    void AdjustPositionXIfGreaterThanThreshold(float adjustment, float positionThreshold) const;
+    void AdjustPositionYIfGreaterThanThreshold(float adjustment, float positionThreshold) const;
+    void ConfigurePositionXInertiaModifiers(const Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Interactions::InteractionTrackerInertiaModifier> & modifiers) const;
+    void ConfigurePositionYInertiaModifiers(const Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Interactions::InteractionTrackerInertiaModifier> & modifiers) const;
+    void ConfigureScaleInertiaModifiers(const Windows::Foundation::Collections::IIterable<Windows::UI::Composition::Interactions::InteractionTrackerInertiaModifier> & modifiers) const;
+    int32_t TryUpdatePosition(const Windows::Foundation::Numerics::float3 & value) const;
+    int32_t TryUpdatePositionBy(const Windows::Foundation::Numerics::float3 & amount) const;
+    int32_t TryUpdatePositionWithAnimation(const Windows::UI::Composition::CompositionAnimation & animation) const;
+    int32_t TryUpdatePositionWithAdditionalVelocity(const Windows::Foundation::Numerics::float3 & velocityInPixelsPerSecond) const;
+    int32_t TryUpdateScale(float value, const Windows::Foundation::Numerics::float3 & centerPoint) const;
+    int32_t TryUpdateScaleWithAnimation(const Windows::UI::Composition::CompositionAnimation & animation, const Windows::Foundation::Numerics::float3 & centerPoint) const;
+    int32_t TryUpdateScaleWithAdditionalVelocity(float velocityInPercentPerSecond, const Windows::Foundation::Numerics::float3 & centerPoint) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInteractionTrackerCustomAnimationStateEnteredArgs
+{
+    int32_t RequestId() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInteractionTrackerIdleStateEnteredArgs
+{
+    int32_t RequestId() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInteractionTrackerInertiaModifier
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInteractionTrackerInertiaModifierFactory
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInteractionTrackerInertiaMotion
+{
+    Windows::UI::Composition::ExpressionAnimation Condition() const;
+    void Condition(const Windows::UI::Composition::ExpressionAnimation & value) const;
+    Windows::UI::Composition::ExpressionAnimation Motion() const;
+    void Motion(const Windows::UI::Composition::ExpressionAnimation & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInteractionTrackerInertiaMotionStatics
+{
+    Windows::UI::Composition::Interactions::InteractionTrackerInertiaMotion Create(const Windows::UI::Composition::Compositor & compositor) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInteractionTrackerInertiaRestingValue
+{
+    Windows::UI::Composition::ExpressionAnimation Condition() const;
+    void Condition(const Windows::UI::Composition::ExpressionAnimation & value) const;
+    Windows::UI::Composition::ExpressionAnimation RestingValue() const;
+    void RestingValue(const Windows::UI::Composition::ExpressionAnimation & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInteractionTrackerInertiaRestingValueStatics
+{
+    Windows::UI::Composition::Interactions::InteractionTrackerInertiaRestingValue Create(const Windows::UI::Composition::Compositor & compositor) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInteractionTrackerInertiaStateEnteredArgs
+{
+    Windows::Foundation::IReference<Windows::Foundation::Numerics::float3> ModifiedRestingPosition() const;
+    Windows::Foundation::IReference<float> ModifiedRestingScale() const;
+    Windows::Foundation::Numerics::float3 NaturalRestingPosition() const;
+    float NaturalRestingScale() const;
+    Windows::Foundation::Numerics::float3 PositionVelocityInPixelsPerSecond() const;
+    int32_t RequestId() const;
+    float ScaleVelocityInPercentPerSecond() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInteractionTrackerInteractingStateEnteredArgs
+{
+    int32_t RequestId() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInteractionTrackerOwner
+{
+    void CustomAnimationStateEntered(const Windows::UI::Composition::Interactions::InteractionTracker & sender, const Windows::UI::Composition::Interactions::InteractionTrackerCustomAnimationStateEnteredArgs & args) const;
+    void IdleStateEntered(const Windows::UI::Composition::Interactions::InteractionTracker & sender, const Windows::UI::Composition::Interactions::InteractionTrackerIdleStateEnteredArgs & args) const;
+    void InertiaStateEntered(const Windows::UI::Composition::Interactions::InteractionTracker & sender, const Windows::UI::Composition::Interactions::InteractionTrackerInertiaStateEnteredArgs & args) const;
+    void InteractingStateEntered(const Windows::UI::Composition::Interactions::InteractionTracker & sender, const Windows::UI::Composition::Interactions::InteractionTrackerInteractingStateEnteredArgs & args) const;
+    void RequestIgnored(const Windows::UI::Composition::Interactions::InteractionTracker & sender, const Windows::UI::Composition::Interactions::InteractionTrackerRequestIgnoredArgs & args) const;
+    void ValuesChanged(const Windows::UI::Composition::Interactions::InteractionTracker & sender, const Windows::UI::Composition::Interactions::InteractionTrackerValuesChangedArgs & args) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInteractionTrackerRequestIgnoredArgs
+{
+    int32_t RequestId() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInteractionTrackerStatics
+{
+    Windows::UI::Composition::Interactions::InteractionTracker Create(const Windows::UI::Composition::Compositor & compositor) const;
+    Windows::UI::Composition::Interactions::InteractionTracker CreateWithOwner(const Windows::UI::Composition::Compositor & compositor, const Windows::UI::Composition::Interactions::IInteractionTrackerOwner & owner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInteractionTrackerValuesChangedArgs
+{
+    Windows::Foundation::Numerics::float3 Position() const;
+    int32_t RequestId() const;
+    float Scale() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVisualInteractionSource
+{
+    bool IsPositionXRailsEnabled() const;
+    void IsPositionXRailsEnabled(bool value) const;
+    bool IsPositionYRailsEnabled() const;
+    void IsPositionYRailsEnabled(bool value) const;
+    Windows::UI::Composition::Interactions::VisualInteractionSourceRedirectionMode ManipulationRedirectionMode() const;
+    void ManipulationRedirectionMode(Windows::UI::Composition::Interactions::VisualInteractionSourceRedirectionMode value) const;
+    Windows::UI::Composition::Interactions::InteractionChainingMode PositionXChainingMode() const;
+    void PositionXChainingMode(Windows::UI::Composition::Interactions::InteractionChainingMode value) const;
+    Windows::UI::Composition::Interactions::InteractionSourceMode PositionXSourceMode() const;
+    void PositionXSourceMode(Windows::UI::Composition::Interactions::InteractionSourceMode value) const;
+    Windows::UI::Composition::Interactions::InteractionChainingMode PositionYChainingMode() const;
+    void PositionYChainingMode(Windows::UI::Composition::Interactions::InteractionChainingMode value) const;
+    Windows::UI::Composition::Interactions::InteractionSourceMode PositionYSourceMode() const;
+    void PositionYSourceMode(Windows::UI::Composition::Interactions::InteractionSourceMode value) const;
+    Windows::UI::Composition::Interactions::InteractionChainingMode ScaleChainingMode() const;
+    void ScaleChainingMode(Windows::UI::Composition::Interactions::InteractionChainingMode value) const;
+    Windows::UI::Composition::Interactions::InteractionSourceMode ScaleSourceMode() const;
+    void ScaleSourceMode(Windows::UI::Composition::Interactions::InteractionSourceMode value) const;
+    Windows::UI::Composition::Visual Source() const;
+    void TryRedirectForManipulation(const Windows::UI::Input::PointerPoint & pointerPoint) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVisualInteractionSourceStatics
+{
+    Windows::UI::Composition::Interactions::VisualInteractionSource Create(const Windows::UI::Composition::Visual & source) const;
+};
 
 }
 

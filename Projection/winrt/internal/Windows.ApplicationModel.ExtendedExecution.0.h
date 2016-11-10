@@ -26,6 +26,13 @@ struct ExtendedExecutionSession;
 
 namespace Windows::ApplicationModel::ExtendedExecution {
 
+template <typename T> struct impl_IExtendedExecutionRevokedEventArgs;
+template <typename T> struct impl_IExtendedExecutionSession;
+
+}
+
+namespace Windows::ApplicationModel::ExtendedExecution {
+
 enum class ExtendedExecutionReason
 {
     Unspecified = 0,

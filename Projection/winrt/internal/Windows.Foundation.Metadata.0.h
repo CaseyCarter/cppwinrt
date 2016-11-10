@@ -21,6 +21,12 @@ struct ApiInformation;
 
 namespace Windows::Foundation::Metadata {
 
+template <typename T> struct impl_IApiInformationStatics;
+
+}
+
+namespace Windows::Foundation::Metadata {
+
 enum class GCPressureAmount
 {
     Low = 0,

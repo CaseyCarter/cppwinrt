@@ -13,11 +13,6 @@ namespace ABI {
 
 }
 
-namespace Windows::UI::Xaml::Automation::Text {
-
-
-}
-
 namespace impl {
 
 }

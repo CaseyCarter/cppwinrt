@@ -27,4 +27,12 @@ struct LicenseSatisfactionResult;
 
 }
 
+namespace Windows::ApplicationModel::Store::LicenseManagement {
+
+template <typename T> struct impl_ILicenseManagerStatics;
+template <typename T> struct impl_ILicenseSatisfactionInfo;
+template <typename T> struct impl_ILicenseSatisfactionResult;
+
+}
+
 }

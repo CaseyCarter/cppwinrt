@@ -20,4 +20,11 @@ struct IPwmProvider;
 
 }
 
+namespace Windows::Devices::Pwm::Provider {
+
+template <typename T> struct impl_IPwmControllerProvider;
+template <typename T> struct impl_IPwmProvider;
+
+}
+
 }

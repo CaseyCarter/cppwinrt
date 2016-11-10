@@ -30,4 +30,13 @@ struct CustomSensorReadingChangedEventArgs;
 
 }
 
+namespace Windows::Devices::Sensors::Custom {
+
+template <typename T> struct impl_ICustomSensor;
+template <typename T> struct impl_ICustomSensorReading;
+template <typename T> struct impl_ICustomSensorReadingChangedEventArgs;
+template <typename T> struct impl_ICustomSensorStatics;
+
+}
+
 }

@@ -28,4 +28,13 @@ struct LowLevelDevicesController;
 
 }
 
+namespace Windows::Devices {
+
+template <typename T> struct impl_ILowLevelDevicesAggregateProvider;
+template <typename T> struct impl_ILowLevelDevicesAggregateProviderFactory;
+template <typename T> struct impl_ILowLevelDevicesController;
+template <typename T> struct impl_ILowLevelDevicesControllerStatics;
+
+}
+
 }

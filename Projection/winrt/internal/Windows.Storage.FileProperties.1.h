@@ -155,15 +155,136 @@ template <> struct traits<Windows::Storage::FileProperties::VideoProperties> { u
 
 namespace Windows::Storage::FileProperties {
 
-template <typename T> struct impl_IBasicProperties;
-template <typename T> struct impl_IDocumentProperties;
-template <typename T> struct impl_IGeotagHelperStatics;
-template <typename T> struct impl_IImageProperties;
-template <typename T> struct impl_IMusicProperties;
-template <typename T> struct impl_IStorageItemContentProperties;
-template <typename T> struct impl_IStorageItemExtraProperties;
-template <typename T> struct impl_IThumbnailProperties;
-template <typename T> struct impl_IVideoProperties;
+template <typename D>
+struct WINRT_EBO impl_IBasicProperties
+{
+    uint64_t Size() const;
+    Windows::Foundation::DateTime DateModified() const;
+    Windows::Foundation::DateTime ItemDate() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDocumentProperties
+{
+    Windows::Foundation::Collections::IVector<hstring> Author() const;
+    hstring Title() const;
+    void Title(hstring_ref value) const;
+    Windows::Foundation::Collections::IVector<hstring> Keywords() const;
+    hstring Comment() const;
+    void Comment(hstring_ref value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGeotagHelperStatics
+{
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Geolocation::Geopoint> GetGeotagAsync(const Windows::Storage::IStorageFile & file) const;
+    Windows::Foundation::IAsyncAction SetGeotagFromGeolocatorAsync(const Windows::Storage::IStorageFile & file, const Windows::Devices::Geolocation::Geolocator & geolocator) const;
+    Windows::Foundation::IAsyncAction SetGeotagAsync(const Windows::Storage::IStorageFile & file, const Windows::Devices::Geolocation::Geopoint & geopoint) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IImageProperties
+{
+    uint32_t Rating() const;
+    void Rating(uint32_t value) const;
+    Windows::Foundation::Collections::IVector<hstring> Keywords() const;
+    Windows::Foundation::DateTime DateTaken() const;
+    void DateTaken(const Windows::Foundation::DateTime & value) const;
+    uint32_t Width() const;
+    uint32_t Height() const;
+    hstring Title() const;
+    void Title(hstring_ref value) const;
+    Windows::Foundation::IReference<double> Latitude() const;
+    Windows::Foundation::IReference<double> Longitude() const;
+    hstring CameraManufacturer() const;
+    void CameraManufacturer(hstring_ref value) const;
+    hstring CameraModel() const;
+    void CameraModel(hstring_ref value) const;
+    Windows::Storage::FileProperties::PhotoOrientation Orientation() const;
+    Windows::Foundation::Collections::IVectorView<hstring> PeopleNames() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMusicProperties
+{
+    hstring Album() const;
+    void Album(hstring_ref value) const;
+    hstring Artist() const;
+    void Artist(hstring_ref value) const;
+    Windows::Foundation::Collections::IVector<hstring> Genre() const;
+    uint32_t TrackNumber() const;
+    void TrackNumber(uint32_t value) const;
+    hstring Title() const;
+    void Title(hstring_ref value) const;
+    uint32_t Rating() const;
+    void Rating(uint32_t value) const;
+    Windows::Foundation::TimeSpan Duration() const;
+    uint32_t Bitrate() const;
+    hstring AlbumArtist() const;
+    void AlbumArtist(hstring_ref value) const;
+    Windows::Foundation::Collections::IVector<hstring> Composers() const;
+    Windows::Foundation::Collections::IVector<hstring> Conductors() const;
+    hstring Subtitle() const;
+    void Subtitle(hstring_ref value) const;
+    Windows::Foundation::Collections::IVector<hstring> Producers() const;
+    hstring Publisher() const;
+    void Publisher(hstring_ref value) const;
+    Windows::Foundation::Collections::IVector<hstring> Writers() const;
+    uint32_t Year() const;
+    void Year(uint32_t value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStorageItemContentProperties
+{
+    Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::MusicProperties> GetMusicPropertiesAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::VideoProperties> GetVideoPropertiesAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::ImageProperties> GetImagePropertiesAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::FileProperties::DocumentProperties> GetDocumentPropertiesAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStorageItemExtraProperties
+{
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMap<hstring, Windows::IInspectable>> RetrievePropertiesAsync(const Windows::Foundation::Collections::IIterable<hstring> & propertiesToRetrieve) const;
+    Windows::Foundation::IAsyncAction SavePropertiesAsync(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::IInspectable>> & propertiesToSave) const;
+    Windows::Foundation::IAsyncAction SavePropertiesAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IThumbnailProperties
+{
+    uint32_t OriginalWidth() const;
+    uint32_t OriginalHeight() const;
+    bool ReturnedSmallerCachedSize() const;
+    Windows::Storage::FileProperties::ThumbnailType Type() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVideoProperties
+{
+    uint32_t Rating() const;
+    void Rating(uint32_t value) const;
+    Windows::Foundation::Collections::IVector<hstring> Keywords() const;
+    uint32_t Width() const;
+    uint32_t Height() const;
+    Windows::Foundation::TimeSpan Duration() const;
+    Windows::Foundation::IReference<double> Latitude() const;
+    Windows::Foundation::IReference<double> Longitude() const;
+    hstring Title() const;
+    void Title(hstring_ref value) const;
+    hstring Subtitle() const;
+    void Subtitle(hstring_ref value) const;
+    Windows::Foundation::Collections::IVector<hstring> Producers() const;
+    hstring Publisher() const;
+    void Publisher(hstring_ref value) const;
+    Windows::Foundation::Collections::IVector<hstring> Writers() const;
+    uint32_t Year() const;
+    void Year(uint32_t value) const;
+    uint32_t Bitrate() const;
+    Windows::Foundation::Collections::IVector<hstring> Directors() const;
+    Windows::Storage::FileProperties::VideoOrientation Orientation() const;
+};
 
 }
 

@@ -118,6 +118,7 @@ static void GenerateForward()
     WriteRootNamespaceBegin(out);
 
     WriteForwards(out);
+    WriteInterfaceImplForwards(out);
     WriteEnumerations(out);
 
     out.WriteNamespace();
@@ -140,7 +141,7 @@ static void GenerateAbi()
     WriteAbiInterfaces(out);
     WriteAbiClassDeclarations(out);
 
-    WriteInterfaceImplForwards(out);
+    WriteInterfaceConsumers(out);
 
     WriteInterfaceTraits(out);
 
@@ -163,7 +164,6 @@ static void GenerateInterface()
     WriteRootNamespaceBegin(out);
 
     WriteGenericInterfaces(out);
-    WriteInterfaceConsumers(out);
     WriteInterfaceDefinitions(out);
 
     out.WriteNamespace();

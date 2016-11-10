@@ -1324,154 +1324,1322 @@ template <> struct traits<Windows::UI::Xaml::WindowCreatedEventArgs> { using def
 
 namespace Windows::UI::Xaml {
 
-template <typename T> struct impl_IAdaptiveTrigger;
-template <typename T> struct impl_IAdaptiveTriggerFactory;
-template <typename T> struct impl_IAdaptiveTriggerStatics;
-template <typename T> struct impl_IApplication;
-template <typename T> struct impl_IApplication2;
-template <typename T> struct impl_IApplicationFactory;
-template <typename T> struct impl_IApplicationInitializationCallbackParams;
-template <typename T> struct impl_IApplicationOverrides;
-template <typename T> struct impl_IApplicationOverrides2;
-template <typename T> struct impl_IApplicationStatics;
-template <typename T> struct impl_IBindingFailedEventArgs;
-template <typename T> struct impl_ICornerRadiusHelper;
-template <typename T> struct impl_ICornerRadiusHelperStatics;
-template <typename T> struct impl_IDataContextChangedEventArgs;
-template <typename T> struct impl_IDataTemplate;
-template <typename T> struct impl_IDataTemplateExtension;
-template <typename T> struct impl_IDataTemplateFactory;
-template <typename T> struct impl_IDataTemplateKey;
-template <typename T> struct impl_IDataTemplateKeyFactory;
-template <typename T> struct impl_IDataTemplateStatics2;
-template <typename T> struct impl_IDebugSettings;
-template <typename T> struct impl_IDebugSettings2;
-template <typename T> struct impl_IDebugSettings3;
-template <typename T> struct impl_IDependencyObject;
-template <typename T> struct impl_IDependencyObject2;
-template <typename T> struct impl_IDependencyObjectCollectionFactory;
-template <typename T> struct impl_IDependencyObjectFactory;
-template <typename T> struct impl_IDependencyProperty;
-template <typename T> struct impl_IDependencyPropertyChangedEventArgs;
-template <typename T> struct impl_IDependencyPropertyStatics;
-template <typename T> struct impl_IDispatcherTimer;
-template <typename T> struct impl_IDispatcherTimerFactory;
-template <typename T> struct impl_IDragEventArgs;
-template <typename T> struct impl_IDragEventArgs2;
-template <typename T> struct impl_IDragEventArgs3;
-template <typename T> struct impl_IDragOperationDeferral;
-template <typename T> struct impl_IDragStartingEventArgs;
-template <typename T> struct impl_IDragStartingEventArgs2;
-template <typename T> struct impl_IDragUI;
-template <typename T> struct impl_IDragUIOverride;
-template <typename T> struct impl_IDropCompletedEventArgs;
-template <typename T> struct impl_IDurationHelper;
-template <typename T> struct impl_IDurationHelperStatics;
-template <typename T> struct impl_IElementSoundPlayer;
-template <typename T> struct impl_IElementSoundPlayerStatics;
-template <typename T> struct impl_IEventTrigger;
-template <typename T> struct impl_IExceptionRoutedEventArgs;
-template <typename T> struct impl_IExceptionRoutedEventArgsFactory;
-template <typename T> struct impl_IFrameworkElement;
-template <typename T> struct impl_IFrameworkElement2;
-template <typename T> struct impl_IFrameworkElement3;
-template <typename T> struct impl_IFrameworkElement4;
-template <typename T> struct impl_IFrameworkElementFactory;
-template <typename T> struct impl_IFrameworkElementOverrides;
-template <typename T> struct impl_IFrameworkElementOverrides2;
-template <typename T> struct impl_IFrameworkElementStatics;
-template <typename T> struct impl_IFrameworkElementStatics2;
-template <typename T> struct impl_IFrameworkElementStatics4;
-template <typename T> struct impl_IFrameworkTemplate;
-template <typename T> struct impl_IFrameworkTemplateFactory;
-template <typename T> struct impl_IFrameworkView;
-template <typename T> struct impl_IFrameworkViewSource;
-template <typename T> struct impl_IGridLengthHelper;
-template <typename T> struct impl_IGridLengthHelperStatics;
-template <typename T> struct impl_IMediaFailedRoutedEventArgs;
-template <typename T> struct impl_IPointHelper;
-template <typename T> struct impl_IPointHelperStatics;
-template <typename T> struct impl_IPropertyMetadata;
-template <typename T> struct impl_IPropertyMetadataFactory;
-template <typename T> struct impl_IPropertyMetadataStatics;
-template <typename T> struct impl_IPropertyPath;
-template <typename T> struct impl_IPropertyPathFactory;
-template <typename T> struct impl_IRectHelper;
-template <typename T> struct impl_IRectHelperStatics;
-template <typename T> struct impl_IResourceDictionary;
-template <typename T> struct impl_IResourceDictionaryFactory;
-template <typename T> struct impl_IRoutedEvent;
-template <typename T> struct impl_IRoutedEventArgs;
-template <typename T> struct impl_IRoutedEventArgsFactory;
-template <typename T> struct impl_ISetter;
-template <typename T> struct impl_ISetter2;
-template <typename T> struct impl_ISetterBase;
-template <typename T> struct impl_ISetterBaseCollection;
-template <typename T> struct impl_ISetterBaseFactory;
-template <typename T> struct impl_ISetterFactory;
-template <typename T> struct impl_ISizeChangedEventArgs;
-template <typename T> struct impl_ISizeHelper;
-template <typename T> struct impl_ISizeHelperStatics;
-template <typename T> struct impl_IStateTrigger;
-template <typename T> struct impl_IStateTriggerBase;
-template <typename T> struct impl_IStateTriggerBaseFactory;
-template <typename T> struct impl_IStateTriggerBaseProtected;
-template <typename T> struct impl_IStateTriggerStatics;
-template <typename T> struct impl_IStyle;
-template <typename T> struct impl_IStyleFactory;
-template <typename T> struct impl_ITargetPropertyPath;
-template <typename T> struct impl_ITargetPropertyPathFactory;
-template <typename T> struct impl_IThicknessHelper;
-template <typename T> struct impl_IThicknessHelperStatics;
-template <typename T> struct impl_ITriggerAction;
-template <typename T> struct impl_ITriggerActionFactory;
-template <typename T> struct impl_ITriggerBase;
-template <typename T> struct impl_ITriggerBaseFactory;
-template <typename T> struct impl_IUIElement;
-template <typename T> struct impl_IUIElement2;
-template <typename T> struct impl_IUIElement3;
-template <typename T> struct impl_IUIElement4;
-template <typename T> struct impl_IUIElementFactory;
-template <typename T> struct impl_IUIElementOverrides;
-template <typename T> struct impl_IUIElementStatics;
-template <typename T> struct impl_IUIElementStatics2;
-template <typename T> struct impl_IUIElementStatics3;
-template <typename T> struct impl_IUIElementStatics4;
-template <typename T> struct impl_IUnhandledExceptionEventArgs;
-template <typename T> struct impl_IVisualState;
-template <typename T> struct impl_IVisualState2;
-template <typename T> struct impl_IVisualStateChangedEventArgs;
-template <typename T> struct impl_IVisualStateGroup;
-template <typename T> struct impl_IVisualStateManager;
-template <typename T> struct impl_IVisualStateManagerFactory;
-template <typename T> struct impl_IVisualStateManagerOverrides;
-template <typename T> struct impl_IVisualStateManagerProtected;
-template <typename T> struct impl_IVisualStateManagerStatics;
-template <typename T> struct impl_IVisualTransition;
-template <typename T> struct impl_IVisualTransitionFactory;
-template <typename T> struct impl_IWindow;
-template <typename T> struct impl_IWindow2;
-template <typename T> struct impl_IWindowCreatedEventArgs;
-template <typename T> struct impl_IWindowStatics;
-template <typename T> struct impl_ApplicationInitializationCallback;
-template <typename T> struct impl_BindingFailedEventHandler;
-template <typename T> struct impl_CreateDefaultValueCallback;
-template <typename T> struct impl_DependencyPropertyChangedCallback;
-template <typename T> struct impl_DependencyPropertyChangedEventHandler;
-template <typename T> struct impl_DragEventHandler;
-template <typename T> struct impl_EnteredBackgroundEventHandler;
-template <typename T> struct impl_ExceptionRoutedEventHandler;
-template <typename T> struct impl_LeavingBackgroundEventHandler;
-template <typename T> struct impl_PropertyChangedCallback;
-template <typename T> struct impl_RoutedEventHandler;
-template <typename T> struct impl_SizeChangedEventHandler;
-template <typename T> struct impl_SuspendingEventHandler;
-template <typename T> struct impl_UnhandledExceptionEventHandler;
-template <typename T> struct impl_VisualStateChangedEventHandler;
-template <typename T> struct impl_WindowActivatedEventHandler;
-template <typename T> struct impl_WindowClosedEventHandler;
-template <typename T> struct impl_WindowSizeChangedEventHandler;
-template <typename T> struct impl_WindowVisibilityChangedEventHandler;
+template <typename D>
+struct WINRT_EBO impl_IAdaptiveTrigger
+{
+    double MinWindowWidth() const;
+    void MinWindowWidth(double value) const;
+    double MinWindowHeight() const;
+    void MinWindowHeight(double value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAdaptiveTriggerFactory
+{
+    Windows::UI::Xaml::AdaptiveTrigger CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAdaptiveTriggerStatics
+{
+    Windows::UI::Xaml::DependencyProperty MinWindowWidthProperty() const;
+    Windows::UI::Xaml::DependencyProperty MinWindowHeightProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IApplication
+{
+    Windows::UI::Xaml::ResourceDictionary Resources() const;
+    void Resources(const Windows::UI::Xaml::ResourceDictionary & value) const;
+    Windows::UI::Xaml::DebugSettings DebugSettings() const;
+    Windows::UI::Xaml::ApplicationTheme RequestedTheme() const;
+    void RequestedTheme(Windows::UI::Xaml::ApplicationTheme value) const;
+    event_token UnhandledException(const Windows::UI::Xaml::UnhandledExceptionEventHandler & value) const;
+    using UnhandledException_revoker = event_revoker<IApplication>;
+    UnhandledException_revoker UnhandledException(auto_revoke_t, const Windows::UI::Xaml::UnhandledExceptionEventHandler & value) const;
+    void UnhandledException(event_token token) const;
+    event_token Suspending(const Windows::UI::Xaml::SuspendingEventHandler & value) const;
+    using Suspending_revoker = event_revoker<IApplication>;
+    Suspending_revoker Suspending(auto_revoke_t, const Windows::UI::Xaml::SuspendingEventHandler & value) const;
+    void Suspending(event_token token) const;
+    event_token Resuming(const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    using Resuming_revoker = event_revoker<IApplication>;
+    Resuming_revoker Resuming(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    void Resuming(event_token token) const;
+    void Exit() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IApplication2
+{
+    Windows::UI::Xaml::FocusVisualKind FocusVisualKind() const;
+    void FocusVisualKind(Windows::UI::Xaml::FocusVisualKind value) const;
+    Windows::UI::Xaml::ApplicationRequiresPointerMode RequiresPointerMode() const;
+    void RequiresPointerMode(Windows::UI::Xaml::ApplicationRequiresPointerMode value) const;
+    event_token LeavingBackground(const Windows::UI::Xaml::LeavingBackgroundEventHandler & value) const;
+    using LeavingBackground_revoker = event_revoker<IApplication2>;
+    LeavingBackground_revoker LeavingBackground(auto_revoke_t, const Windows::UI::Xaml::LeavingBackgroundEventHandler & value) const;
+    void LeavingBackground(event_token token) const;
+    event_token EnteredBackground(const Windows::UI::Xaml::EnteredBackgroundEventHandler & value) const;
+    using EnteredBackground_revoker = event_revoker<IApplication2>;
+    EnteredBackground_revoker EnteredBackground(auto_revoke_t, const Windows::UI::Xaml::EnteredBackgroundEventHandler & value) const;
+    void EnteredBackground(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IApplicationFactory
+{
+    Windows::UI::Xaml::Application CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IApplicationInitializationCallbackParams
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IApplicationOverrides
+{
+    void OnActivated(const Windows::ApplicationModel::Activation::IActivatedEventArgs & args) const;
+    void OnLaunched(const Windows::ApplicationModel::Activation::LaunchActivatedEventArgs & args) const;
+    void OnFileActivated(const Windows::ApplicationModel::Activation::FileActivatedEventArgs & args) const;
+    void OnSearchActivated(const Windows::ApplicationModel::Activation::SearchActivatedEventArgs & args) const;
+    void OnShareTargetActivated(const Windows::ApplicationModel::Activation::ShareTargetActivatedEventArgs & args) const;
+    void OnFileOpenPickerActivated(const Windows::ApplicationModel::Activation::FileOpenPickerActivatedEventArgs & args) const;
+    void OnFileSavePickerActivated(const Windows::ApplicationModel::Activation::FileSavePickerActivatedEventArgs & args) const;
+    void OnCachedFileUpdaterActivated(const Windows::ApplicationModel::Activation::CachedFileUpdaterActivatedEventArgs & args) const;
+    void OnWindowCreated(const Windows::UI::Xaml::WindowCreatedEventArgs & args) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IApplicationOverrides2
+{
+    void OnBackgroundActivated(const Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs & args) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IApplicationStatics
+{
+    Windows::UI::Xaml::Application Current() const;
+    void Start(const Windows::UI::Xaml::ApplicationInitializationCallback & callback) const;
+    void LoadComponent(const Windows::IInspectable & component, const Windows::Foundation::Uri & resourceLocator) const;
+    void LoadComponent(const Windows::IInspectable & component, const Windows::Foundation::Uri & resourceLocator, Windows::UI::Xaml::Controls::Primitives::ComponentResourceLocation componentResourceLocation) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBindingFailedEventArgs
+{
+    hstring Message() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICornerRadiusHelper
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICornerRadiusHelperStatics
+{
+    Windows::UI::Xaml::CornerRadius FromRadii(double topLeft, double topRight, double bottomRight, double bottomLeft) const;
+    Windows::UI::Xaml::CornerRadius FromUniformRadius(double uniformRadius) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataContextChangedEventArgs
+{
+    Windows::IInspectable NewValue() const;
+    bool Handled() const;
+    void Handled(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataTemplate
+{
+    Windows::UI::Xaml::DependencyObject LoadContent() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataTemplateExtension
+{
+    void ResetTemplate() const;
+    bool ProcessBinding(uint32_t phase) const;
+    int32_t ProcessBindings(const Windows::UI::Xaml::Controls::ContainerContentChangingEventArgs & arg) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataTemplateFactory
+{
+    Windows::UI::Xaml::DataTemplate CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataTemplateKey
+{
+    Windows::IInspectable DataType() const;
+    void DataType(const Windows::IInspectable & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataTemplateKeyFactory
+{
+    Windows::UI::Xaml::DataTemplateKey CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::DataTemplateKey CreateInstanceWithType(const Windows::IInspectable & dataType, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataTemplateStatics2
+{
+    Windows::UI::Xaml::DependencyProperty ExtensionInstanceProperty() const;
+    Windows::UI::Xaml::IDataTemplateExtension GetExtensionInstance(const Windows::UI::Xaml::FrameworkElement & element) const;
+    void SetExtensionInstance(const Windows::UI::Xaml::FrameworkElement & element, const Windows::UI::Xaml::IDataTemplateExtension & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDebugSettings
+{
+    bool EnableFrameRateCounter() const;
+    void EnableFrameRateCounter(bool value) const;
+    bool IsBindingTracingEnabled() const;
+    void IsBindingTracingEnabled(bool value) const;
+    bool IsOverdrawHeatMapEnabled() const;
+    void IsOverdrawHeatMapEnabled(bool value) const;
+    event_token BindingFailed(const Windows::UI::Xaml::BindingFailedEventHandler & value) const;
+    using BindingFailed_revoker = event_revoker<IDebugSettings>;
+    BindingFailed_revoker BindingFailed(auto_revoke_t, const Windows::UI::Xaml::BindingFailedEventHandler & value) const;
+    void BindingFailed(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDebugSettings2
+{
+    bool EnableRedrawRegions() const;
+    void EnableRedrawRegions(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDebugSettings3
+{
+    bool IsTextPerformanceVisualizationEnabled() const;
+    void IsTextPerformanceVisualizationEnabled(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDependencyObject
+{
+    Windows::IInspectable GetValue(const Windows::UI::Xaml::DependencyProperty & dp) const;
+    void SetValue(const Windows::UI::Xaml::DependencyProperty & dp, const Windows::IInspectable & value) const;
+    void ClearValue(const Windows::UI::Xaml::DependencyProperty & dp) const;
+    Windows::IInspectable ReadLocalValue(const Windows::UI::Xaml::DependencyProperty & dp) const;
+    Windows::IInspectable GetAnimationBaseValue(const Windows::UI::Xaml::DependencyProperty & dp) const;
+    Windows::UI::Core::CoreDispatcher Dispatcher() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDependencyObject2
+{
+    int64_t RegisterPropertyChangedCallback(const Windows::UI::Xaml::DependencyProperty & dp, const Windows::UI::Xaml::DependencyPropertyChangedCallback & callback) const;
+    void UnregisterPropertyChangedCallback(const Windows::UI::Xaml::DependencyProperty & dp, int64_t token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDependencyObjectCollectionFactory
+{
+    Windows::UI::Xaml::DependencyObjectCollection CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDependencyObjectFactory
+{
+    Windows::UI::Xaml::DependencyObject CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDependencyProperty
+{
+    Windows::UI::Xaml::PropertyMetadata GetMetadata(const Windows::UI::Xaml::Interop::TypeName & forType) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDependencyPropertyChangedEventArgs
+{
+    Windows::UI::Xaml::DependencyProperty Property() const;
+    Windows::IInspectable OldValue() const;
+    Windows::IInspectable NewValue() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDependencyPropertyStatics
+{
+    Windows::IInspectable UnsetValue() const;
+    Windows::UI::Xaml::DependencyProperty Register(hstring_ref name, const Windows::UI::Xaml::Interop::TypeName & propertyType, const Windows::UI::Xaml::Interop::TypeName & ownerType, const Windows::UI::Xaml::PropertyMetadata & typeMetadata) const;
+    Windows::UI::Xaml::DependencyProperty RegisterAttached(hstring_ref name, const Windows::UI::Xaml::Interop::TypeName & propertyType, const Windows::UI::Xaml::Interop::TypeName & ownerType, const Windows::UI::Xaml::PropertyMetadata & defaultMetadata) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDispatcherTimer
+{
+    Windows::Foundation::TimeSpan Interval() const;
+    void Interval(const Windows::Foundation::TimeSpan & value) const;
+    bool IsEnabled() const;
+    event_token Tick(const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    using Tick_revoker = event_revoker<IDispatcherTimer>;
+    Tick_revoker Tick(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    void Tick(event_token token) const;
+    void Start() const;
+    void Stop() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDispatcherTimerFactory
+{
+    Windows::UI::Xaml::DispatcherTimer CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDragEventArgs
+{
+    bool Handled() const;
+    void Handled(bool value) const;
+    Windows::ApplicationModel::DataTransfer::DataPackage Data() const;
+    void Data(const Windows::ApplicationModel::DataTransfer::DataPackage & value) const;
+    Windows::Foundation::Point GetPosition(const Windows::UI::Xaml::UIElement & relativeTo) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDragEventArgs2
+{
+    Windows::ApplicationModel::DataTransfer::DataPackageView DataView() const;
+    Windows::UI::Xaml::DragUIOverride DragUIOverride() const;
+    Windows::ApplicationModel::DataTransfer::DragDrop::DragDropModifiers Modifiers() const;
+    Windows::ApplicationModel::DataTransfer::DataPackageOperation AcceptedOperation() const;
+    void AcceptedOperation(Windows::ApplicationModel::DataTransfer::DataPackageOperation value) const;
+    Windows::UI::Xaml::DragOperationDeferral GetDeferral() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDragEventArgs3
+{
+    Windows::ApplicationModel::DataTransfer::DataPackageOperation AllowedOperations() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDragOperationDeferral
+{
+    void Complete() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDragStartingEventArgs
+{
+    bool Cancel() const;
+    void Cancel(bool value) const;
+    Windows::ApplicationModel::DataTransfer::DataPackage Data() const;
+    Windows::UI::Xaml::DragUI DragUI() const;
+    Windows::UI::Xaml::DragOperationDeferral GetDeferral() const;
+    Windows::Foundation::Point GetPosition(const Windows::UI::Xaml::UIElement & relativeTo) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDragStartingEventArgs2
+{
+    Windows::ApplicationModel::DataTransfer::DataPackageOperation AllowedOperations() const;
+    void AllowedOperations(Windows::ApplicationModel::DataTransfer::DataPackageOperation value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDragUI
+{
+    void SetContentFromBitmapImage(const Windows::UI::Xaml::Media::Imaging::BitmapImage & bitmapImage) const;
+    void SetContentFromBitmapImage(const Windows::UI::Xaml::Media::Imaging::BitmapImage & bitmapImage, const Windows::Foundation::Point & anchorPoint) const;
+    void SetContentFromSoftwareBitmap(const Windows::Graphics::Imaging::SoftwareBitmap & softwareBitmap) const;
+    void SetContentFromSoftwareBitmap(const Windows::Graphics::Imaging::SoftwareBitmap & softwareBitmap, const Windows::Foundation::Point & anchorPoint) const;
+    void SetContentFromDataPackage() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDragUIOverride
+{
+    hstring Caption() const;
+    void Caption(hstring_ref value) const;
+    bool IsContentVisible() const;
+    void IsContentVisible(bool value) const;
+    bool IsCaptionVisible() const;
+    void IsCaptionVisible(bool value) const;
+    bool IsGlyphVisible() const;
+    void IsGlyphVisible(bool value) const;
+    void Clear() const;
+    void SetContentFromBitmapImage(const Windows::UI::Xaml::Media::Imaging::BitmapImage & bitmapImage) const;
+    void SetContentFromBitmapImage(const Windows::UI::Xaml::Media::Imaging::BitmapImage & bitmapImage, const Windows::Foundation::Point & anchorPoint) const;
+    void SetContentFromSoftwareBitmap(const Windows::Graphics::Imaging::SoftwareBitmap & softwareBitmap) const;
+    void SetContentFromSoftwareBitmap(const Windows::Graphics::Imaging::SoftwareBitmap & softwareBitmap, const Windows::Foundation::Point & anchorPoint) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDropCompletedEventArgs
+{
+    Windows::ApplicationModel::DataTransfer::DataPackageOperation DropResult() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDurationHelper
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDurationHelperStatics
+{
+    Windows::UI::Xaml::Duration Automatic() const;
+    Windows::UI::Xaml::Duration Forever() const;
+    int32_t Compare(const Windows::UI::Xaml::Duration & duration1, const Windows::UI::Xaml::Duration & duration2) const;
+    Windows::UI::Xaml::Duration FromTimeSpan(const Windows::Foundation::TimeSpan & timeSpan) const;
+    bool GetHasTimeSpan(const Windows::UI::Xaml::Duration & target) const;
+    Windows::UI::Xaml::Duration Add(const Windows::UI::Xaml::Duration & target, const Windows::UI::Xaml::Duration & duration) const;
+    bool Equals(const Windows::UI::Xaml::Duration & target, const Windows::UI::Xaml::Duration & value) const;
+    Windows::UI::Xaml::Duration Subtract(const Windows::UI::Xaml::Duration & target, const Windows::UI::Xaml::Duration & duration) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IElementSoundPlayer
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IElementSoundPlayerStatics
+{
+    double Volume() const;
+    void Volume(double value) const;
+    Windows::UI::Xaml::ElementSoundPlayerState State() const;
+    void State(Windows::UI::Xaml::ElementSoundPlayerState value) const;
+    void Play(Windows::UI::Xaml::ElementSoundKind sound) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEventTrigger
+{
+    Windows::UI::Xaml::RoutedEvent RoutedEvent() const;
+    void RoutedEvent(const Windows::UI::Xaml::RoutedEvent & value) const;
+    Windows::UI::Xaml::TriggerActionCollection Actions() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IExceptionRoutedEventArgs
+{
+    hstring ErrorMessage() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IExceptionRoutedEventArgsFactory
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFrameworkElement
+{
+    Windows::UI::Xaml::TriggerCollection Triggers() const;
+    Windows::UI::Xaml::ResourceDictionary Resources() const;
+    void Resources(const Windows::UI::Xaml::ResourceDictionary & value) const;
+    Windows::IInspectable Tag() const;
+    void Tag(const Windows::IInspectable & value) const;
+    hstring Language() const;
+    void Language(hstring_ref value) const;
+    double ActualWidth() const;
+    double ActualHeight() const;
+    double Width() const;
+    void Width(double value) const;
+    double Height() const;
+    void Height(double value) const;
+    double MinWidth() const;
+    void MinWidth(double value) const;
+    double MaxWidth() const;
+    void MaxWidth(double value) const;
+    double MinHeight() const;
+    void MinHeight(double value) const;
+    double MaxHeight() const;
+    void MaxHeight(double value) const;
+    Windows::UI::Xaml::HorizontalAlignment HorizontalAlignment() const;
+    void HorizontalAlignment(Windows::UI::Xaml::HorizontalAlignment value) const;
+    Windows::UI::Xaml::VerticalAlignment VerticalAlignment() const;
+    void VerticalAlignment(Windows::UI::Xaml::VerticalAlignment value) const;
+    Windows::UI::Xaml::Thickness Margin() const;
+    void Margin(const Windows::UI::Xaml::Thickness & value) const;
+    hstring Name() const;
+    void Name(hstring_ref value) const;
+    Windows::Foundation::Uri BaseUri() const;
+    Windows::IInspectable DataContext() const;
+    void DataContext(const Windows::IInspectable & value) const;
+    Windows::UI::Xaml::Style Style() const;
+    void Style(const Windows::UI::Xaml::Style & value) const;
+    Windows::UI::Xaml::DependencyObject Parent() const;
+    Windows::UI::Xaml::FlowDirection FlowDirection() const;
+    void FlowDirection(Windows::UI::Xaml::FlowDirection value) const;
+    event_token Loaded(const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    using Loaded_revoker = event_revoker<IFrameworkElement>;
+    Loaded_revoker Loaded(auto_revoke_t, const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    void Loaded(event_token token) const;
+    event_token Unloaded(const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    using Unloaded_revoker = event_revoker<IFrameworkElement>;
+    Unloaded_revoker Unloaded(auto_revoke_t, const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    void Unloaded(event_token token) const;
+    event_token SizeChanged(const Windows::UI::Xaml::SizeChangedEventHandler & value) const;
+    using SizeChanged_revoker = event_revoker<IFrameworkElement>;
+    SizeChanged_revoker SizeChanged(auto_revoke_t, const Windows::UI::Xaml::SizeChangedEventHandler & value) const;
+    void SizeChanged(event_token token) const;
+    event_token LayoutUpdated(const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    using LayoutUpdated_revoker = event_revoker<IFrameworkElement>;
+    LayoutUpdated_revoker LayoutUpdated(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    void LayoutUpdated(event_token token) const;
+    Windows::IInspectable FindName(hstring_ref name) const;
+    void SetBinding(const Windows::UI::Xaml::DependencyProperty & dp, const Windows::UI::Xaml::Data::BindingBase & binding) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFrameworkElement2
+{
+    Windows::UI::Xaml::ElementTheme RequestedTheme() const;
+    void RequestedTheme(Windows::UI::Xaml::ElementTheme value) const;
+    event_token DataContextChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::FrameworkElement, Windows::UI::Xaml::DataContextChangedEventArgs> & value) const;
+    using DataContextChanged_revoker = event_revoker<IFrameworkElement2>;
+    DataContextChanged_revoker DataContextChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::FrameworkElement, Windows::UI::Xaml::DataContextChangedEventArgs> & value) const;
+    void DataContextChanged(event_token token) const;
+    Windows::UI::Xaml::Data::BindingExpression GetBindingExpression(const Windows::UI::Xaml::DependencyProperty & dp) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFrameworkElement3
+{
+    event_token Loading(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::FrameworkElement, Windows::IInspectable> & value) const;
+    using Loading_revoker = event_revoker<IFrameworkElement3>;
+    Loading_revoker Loading(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::FrameworkElement, Windows::IInspectable> & value) const;
+    void Loading(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFrameworkElement4
+{
+    bool AllowFocusOnInteraction() const;
+    void AllowFocusOnInteraction(bool value) const;
+    Windows::UI::Xaml::Thickness FocusVisualMargin() const;
+    void FocusVisualMargin(const Windows::UI::Xaml::Thickness & value) const;
+    Windows::UI::Xaml::Thickness FocusVisualSecondaryThickness() const;
+    void FocusVisualSecondaryThickness(const Windows::UI::Xaml::Thickness & value) const;
+    Windows::UI::Xaml::Thickness FocusVisualPrimaryThickness() const;
+    void FocusVisualPrimaryThickness(const Windows::UI::Xaml::Thickness & value) const;
+    Windows::UI::Xaml::Media::Brush FocusVisualSecondaryBrush() const;
+    void FocusVisualSecondaryBrush(const Windows::UI::Xaml::Media::Brush & value) const;
+    Windows::UI::Xaml::Media::Brush FocusVisualPrimaryBrush() const;
+    void FocusVisualPrimaryBrush(const Windows::UI::Xaml::Media::Brush & value) const;
+    bool AllowFocusWhenDisabled() const;
+    void AllowFocusWhenDisabled(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFrameworkElementFactory
+{
+    Windows::UI::Xaml::FrameworkElement CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFrameworkElementOverrides
+{
+    Windows::Foundation::Size MeasureOverride(const Windows::Foundation::Size & availableSize) const;
+    Windows::Foundation::Size ArrangeOverride(const Windows::Foundation::Size & finalSize) const;
+    void OnApplyTemplate() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFrameworkElementOverrides2
+{
+    bool GoToElementStateCore(hstring_ref stateName, bool useTransitions) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFrameworkElementStatics
+{
+    Windows::UI::Xaml::DependencyProperty TagProperty() const;
+    Windows::UI::Xaml::DependencyProperty LanguageProperty() const;
+    Windows::UI::Xaml::DependencyProperty ActualWidthProperty() const;
+    Windows::UI::Xaml::DependencyProperty ActualHeightProperty() const;
+    Windows::UI::Xaml::DependencyProperty WidthProperty() const;
+    Windows::UI::Xaml::DependencyProperty HeightProperty() const;
+    Windows::UI::Xaml::DependencyProperty MinWidthProperty() const;
+    Windows::UI::Xaml::DependencyProperty MaxWidthProperty() const;
+    Windows::UI::Xaml::DependencyProperty MinHeightProperty() const;
+    Windows::UI::Xaml::DependencyProperty MaxHeightProperty() const;
+    Windows::UI::Xaml::DependencyProperty HorizontalAlignmentProperty() const;
+    Windows::UI::Xaml::DependencyProperty VerticalAlignmentProperty() const;
+    Windows::UI::Xaml::DependencyProperty MarginProperty() const;
+    Windows::UI::Xaml::DependencyProperty NameProperty() const;
+    Windows::UI::Xaml::DependencyProperty DataContextProperty() const;
+    Windows::UI::Xaml::DependencyProperty StyleProperty() const;
+    Windows::UI::Xaml::DependencyProperty FlowDirectionProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFrameworkElementStatics2
+{
+    Windows::UI::Xaml::DependencyProperty RequestedThemeProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFrameworkElementStatics4
+{
+    Windows::UI::Xaml::DependencyProperty AllowFocusOnInteractionProperty() const;
+    Windows::UI::Xaml::DependencyProperty FocusVisualMarginProperty() const;
+    Windows::UI::Xaml::DependencyProperty FocusVisualSecondaryThicknessProperty() const;
+    Windows::UI::Xaml::DependencyProperty FocusVisualPrimaryThicknessProperty() const;
+    Windows::UI::Xaml::DependencyProperty FocusVisualSecondaryBrushProperty() const;
+    Windows::UI::Xaml::DependencyProperty FocusVisualPrimaryBrushProperty() const;
+    Windows::UI::Xaml::DependencyProperty AllowFocusWhenDisabledProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFrameworkTemplate
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFrameworkTemplateFactory
+{
+    Windows::UI::Xaml::FrameworkTemplate CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFrameworkView
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFrameworkViewSource
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGridLengthHelper
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGridLengthHelperStatics
+{
+    Windows::UI::Xaml::GridLength Auto() const;
+    Windows::UI::Xaml::GridLength FromPixels(double pixels) const;
+    Windows::UI::Xaml::GridLength FromValueAndType(double value, Windows::UI::Xaml::GridUnitType type) const;
+    bool GetIsAbsolute(const Windows::UI::Xaml::GridLength & target) const;
+    bool GetIsAuto(const Windows::UI::Xaml::GridLength & target) const;
+    bool GetIsStar(const Windows::UI::Xaml::GridLength & target) const;
+    bool Equals(const Windows::UI::Xaml::GridLength & target, const Windows::UI::Xaml::GridLength & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaFailedRoutedEventArgs
+{
+    hstring ErrorTrace() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPointHelper
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPointHelperStatics
+{
+    Windows::Foundation::Point FromCoordinates(float x, float y) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPropertyMetadata
+{
+    Windows::IInspectable DefaultValue() const;
+    Windows::UI::Xaml::CreateDefaultValueCallback CreateDefaultValueCallback() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPropertyMetadataFactory
+{
+    Windows::UI::Xaml::PropertyMetadata CreateInstanceWithDefaultValue(const Windows::IInspectable & defaultValue, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+    Windows::UI::Xaml::PropertyMetadata CreateInstanceWithDefaultValueAndCallback(const Windows::IInspectable & defaultValue, const Windows::UI::Xaml::PropertyChangedCallback & propertyChangedCallback, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPropertyMetadataStatics
+{
+    Windows::UI::Xaml::PropertyMetadata Create(const Windows::IInspectable & defaultValue) const;
+    Windows::UI::Xaml::PropertyMetadata Create(const Windows::IInspectable & defaultValue, const Windows::UI::Xaml::PropertyChangedCallback & propertyChangedCallback) const;
+    Windows::UI::Xaml::PropertyMetadata Create(const Windows::UI::Xaml::CreateDefaultValueCallback & createDefaultValueCallback) const;
+    Windows::UI::Xaml::PropertyMetadata Create(const Windows::UI::Xaml::CreateDefaultValueCallback & createDefaultValueCallback, const Windows::UI::Xaml::PropertyChangedCallback & propertyChangedCallback) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPropertyPath
+{
+    hstring Path() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPropertyPathFactory
+{
+    Windows::UI::Xaml::PropertyPath CreateInstance(hstring_ref path) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRectHelper
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRectHelperStatics
+{
+    Windows::Foundation::Rect Empty() const;
+    Windows::Foundation::Rect FromCoordinatesAndDimensions(float x, float y, float width, float height) const;
+    Windows::Foundation::Rect FromPoints(const Windows::Foundation::Point & point1, const Windows::Foundation::Point & point2) const;
+    Windows::Foundation::Rect FromLocationAndSize(const Windows::Foundation::Point & location, const Windows::Foundation::Size & size) const;
+    bool GetIsEmpty(const Windows::Foundation::Rect & target) const;
+    float GetBottom(const Windows::Foundation::Rect & target) const;
+    float GetLeft(const Windows::Foundation::Rect & target) const;
+    float GetRight(const Windows::Foundation::Rect & target) const;
+    float GetTop(const Windows::Foundation::Rect & target) const;
+    bool Contains(const Windows::Foundation::Rect & target, const Windows::Foundation::Point & point) const;
+    bool Equals(const Windows::Foundation::Rect & target, const Windows::Foundation::Rect & value) const;
+    Windows::Foundation::Rect Intersect(const Windows::Foundation::Rect & target, const Windows::Foundation::Rect & rect) const;
+    Windows::Foundation::Rect Union(const Windows::Foundation::Rect & target, const Windows::Foundation::Point & point) const;
+    Windows::Foundation::Rect Union(const Windows::Foundation::Rect & target, const Windows::Foundation::Rect & rect) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IResourceDictionary
+{
+    Windows::Foundation::Uri Source() const;
+    void Source(const Windows::Foundation::Uri & value) const;
+    Windows::Foundation::Collections::IVector<Windows::UI::Xaml::ResourceDictionary> MergedDictionaries() const;
+    Windows::Foundation::Collections::IMap<Windows::IInspectable, Windows::IInspectable> ThemeDictionaries() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IResourceDictionaryFactory
+{
+    Windows::UI::Xaml::ResourceDictionary CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRoutedEvent
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRoutedEventArgs
+{
+    Windows::IInspectable OriginalSource() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRoutedEventArgsFactory
+{
+    Windows::UI::Xaml::RoutedEventArgs CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISetter
+{
+    Windows::UI::Xaml::DependencyProperty Property() const;
+    void Property(const Windows::UI::Xaml::DependencyProperty & value) const;
+    Windows::IInspectable Value() const;
+    void Value(const Windows::IInspectable & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISetter2
+{
+    Windows::UI::Xaml::TargetPropertyPath Target() const;
+    void Target(const Windows::UI::Xaml::TargetPropertyPath & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISetterBase
+{
+    bool IsSealed() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISetterBaseCollection
+{
+    bool IsSealed() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISetterBaseFactory
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISetterFactory
+{
+    Windows::UI::Xaml::Setter CreateInstance(const Windows::UI::Xaml::DependencyProperty & targetProperty, const Windows::IInspectable & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISizeChangedEventArgs
+{
+    Windows::Foundation::Size PreviousSize() const;
+    Windows::Foundation::Size NewSize() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISizeHelper
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISizeHelperStatics
+{
+    Windows::Foundation::Size Empty() const;
+    Windows::Foundation::Size FromDimensions(float width, float height) const;
+    bool GetIsEmpty(const Windows::Foundation::Size & target) const;
+    bool Equals(const Windows::Foundation::Size & target, const Windows::Foundation::Size & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStateTrigger
+{
+    bool IsActive() const;
+    void IsActive(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStateTriggerBase
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStateTriggerBaseFactory
+{
+    Windows::UI::Xaml::StateTriggerBase CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStateTriggerBaseProtected
+{
+    void SetActive(bool IsActive) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStateTriggerStatics
+{
+    Windows::UI::Xaml::DependencyProperty IsActiveProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStyle
+{
+    bool IsSealed() const;
+    Windows::UI::Xaml::SetterBaseCollection Setters() const;
+    Windows::UI::Xaml::Interop::TypeName TargetType() const;
+    void TargetType(const Windows::UI::Xaml::Interop::TypeName & value) const;
+    Windows::UI::Xaml::Style BasedOn() const;
+    void BasedOn(const Windows::UI::Xaml::Style & value) const;
+    void Seal() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStyleFactory
+{
+    Windows::UI::Xaml::Style CreateInstance(const Windows::UI::Xaml::Interop::TypeName & targetType) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITargetPropertyPath
+{
+    Windows::UI::Xaml::PropertyPath Path() const;
+    void Path(const Windows::UI::Xaml::PropertyPath & value) const;
+    Windows::IInspectable Target() const;
+    void Target(const Windows::IInspectable & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITargetPropertyPathFactory
+{
+    Windows::UI::Xaml::TargetPropertyPath CreateInstance(const Windows::UI::Xaml::DependencyProperty & targetProperty) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IThicknessHelper
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IThicknessHelperStatics
+{
+    Windows::UI::Xaml::Thickness FromLengths(double left, double top, double right, double bottom) const;
+    Windows::UI::Xaml::Thickness FromUniformLength(double uniformLength) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITriggerAction
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITriggerActionFactory
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITriggerBase
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITriggerBaseFactory
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUIElement
+{
+    Windows::Foundation::Size DesiredSize() const;
+    bool AllowDrop() const;
+    void AllowDrop(bool value) const;
+    double Opacity() const;
+    void Opacity(double value) const;
+    Windows::UI::Xaml::Media::RectangleGeometry Clip() const;
+    void Clip(const Windows::UI::Xaml::Media::RectangleGeometry & value) const;
+    Windows::UI::Xaml::Media::Transform RenderTransform() const;
+    void RenderTransform(const Windows::UI::Xaml::Media::Transform & value) const;
+    Windows::UI::Xaml::Media::Projection Projection() const;
+    void Projection(const Windows::UI::Xaml::Media::Projection & value) const;
+    Windows::Foundation::Point RenderTransformOrigin() const;
+    void RenderTransformOrigin(const Windows::Foundation::Point & value) const;
+    bool IsHitTestVisible() const;
+    void IsHitTestVisible(bool value) const;
+    Windows::UI::Xaml::Visibility Visibility() const;
+    void Visibility(Windows::UI::Xaml::Visibility value) const;
+    Windows::Foundation::Size RenderSize() const;
+    bool UseLayoutRounding() const;
+    void UseLayoutRounding(bool value) const;
+    Windows::UI::Xaml::Media::Animation::TransitionCollection Transitions() const;
+    void Transitions(const Windows::UI::Xaml::Media::Animation::TransitionCollection & value) const;
+    Windows::UI::Xaml::Media::CacheMode CacheMode() const;
+    void CacheMode(const Windows::UI::Xaml::Media::CacheMode & value) const;
+    bool IsTapEnabled() const;
+    void IsTapEnabled(bool value) const;
+    bool IsDoubleTapEnabled() const;
+    void IsDoubleTapEnabled(bool value) const;
+    bool IsRightTapEnabled() const;
+    void IsRightTapEnabled(bool value) const;
+    bool IsHoldingEnabled() const;
+    void IsHoldingEnabled(bool value) const;
+    Windows::UI::Xaml::Input::ManipulationModes ManipulationMode() const;
+    void ManipulationMode(Windows::UI::Xaml::Input::ManipulationModes value) const;
+    Windows::Foundation::Collections::IVectorView<Windows::UI::Xaml::Input::Pointer> PointerCaptures() const;
+    event_token KeyUp(const Windows::UI::Xaml::Input::KeyEventHandler & value) const;
+    using KeyUp_revoker = event_revoker<IUIElement>;
+    KeyUp_revoker KeyUp(auto_revoke_t, const Windows::UI::Xaml::Input::KeyEventHandler & value) const;
+    void KeyUp(event_token token) const;
+    event_token KeyDown(const Windows::UI::Xaml::Input::KeyEventHandler & value) const;
+    using KeyDown_revoker = event_revoker<IUIElement>;
+    KeyDown_revoker KeyDown(auto_revoke_t, const Windows::UI::Xaml::Input::KeyEventHandler & value) const;
+    void KeyDown(event_token token) const;
+    event_token GotFocus(const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    using GotFocus_revoker = event_revoker<IUIElement>;
+    GotFocus_revoker GotFocus(auto_revoke_t, const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    void GotFocus(event_token token) const;
+    event_token LostFocus(const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    using LostFocus_revoker = event_revoker<IUIElement>;
+    LostFocus_revoker LostFocus(auto_revoke_t, const Windows::UI::Xaml::RoutedEventHandler & value) const;
+    void LostFocus(event_token token) const;
+    event_token DragEnter(const Windows::UI::Xaml::DragEventHandler & value) const;
+    using DragEnter_revoker = event_revoker<IUIElement>;
+    DragEnter_revoker DragEnter(auto_revoke_t, const Windows::UI::Xaml::DragEventHandler & value) const;
+    void DragEnter(event_token token) const;
+    event_token DragLeave(const Windows::UI::Xaml::DragEventHandler & value) const;
+    using DragLeave_revoker = event_revoker<IUIElement>;
+    DragLeave_revoker DragLeave(auto_revoke_t, const Windows::UI::Xaml::DragEventHandler & value) const;
+    void DragLeave(event_token token) const;
+    event_token DragOver(const Windows::UI::Xaml::DragEventHandler & value) const;
+    using DragOver_revoker = event_revoker<IUIElement>;
+    DragOver_revoker DragOver(auto_revoke_t, const Windows::UI::Xaml::DragEventHandler & value) const;
+    void DragOver(event_token token) const;
+    event_token Drop(const Windows::UI::Xaml::DragEventHandler & value) const;
+    using Drop_revoker = event_revoker<IUIElement>;
+    Drop_revoker Drop(auto_revoke_t, const Windows::UI::Xaml::DragEventHandler & value) const;
+    void Drop(event_token token) const;
+    event_token PointerPressed(const Windows::UI::Xaml::Input::PointerEventHandler & value) const;
+    using PointerPressed_revoker = event_revoker<IUIElement>;
+    PointerPressed_revoker PointerPressed(auto_revoke_t, const Windows::UI::Xaml::Input::PointerEventHandler & value) const;
+    void PointerPressed(event_token token) const;
+    event_token PointerMoved(const Windows::UI::Xaml::Input::PointerEventHandler & value) const;
+    using PointerMoved_revoker = event_revoker<IUIElement>;
+    PointerMoved_revoker PointerMoved(auto_revoke_t, const Windows::UI::Xaml::Input::PointerEventHandler & value) const;
+    void PointerMoved(event_token token) const;
+    event_token PointerReleased(const Windows::UI::Xaml::Input::PointerEventHandler & value) const;
+    using PointerReleased_revoker = event_revoker<IUIElement>;
+    PointerReleased_revoker PointerReleased(auto_revoke_t, const Windows::UI::Xaml::Input::PointerEventHandler & value) const;
+    void PointerReleased(event_token token) const;
+    event_token PointerEntered(const Windows::UI::Xaml::Input::PointerEventHandler & value) const;
+    using PointerEntered_revoker = event_revoker<IUIElement>;
+    PointerEntered_revoker PointerEntered(auto_revoke_t, const Windows::UI::Xaml::Input::PointerEventHandler & value) const;
+    void PointerEntered(event_token token) const;
+    event_token PointerExited(const Windows::UI::Xaml::Input::PointerEventHandler & value) const;
+    using PointerExited_revoker = event_revoker<IUIElement>;
+    PointerExited_revoker PointerExited(auto_revoke_t, const Windows::UI::Xaml::Input::PointerEventHandler & value) const;
+    void PointerExited(event_token token) const;
+    event_token PointerCaptureLost(const Windows::UI::Xaml::Input::PointerEventHandler & value) const;
+    using PointerCaptureLost_revoker = event_revoker<IUIElement>;
+    PointerCaptureLost_revoker PointerCaptureLost(auto_revoke_t, const Windows::UI::Xaml::Input::PointerEventHandler & value) const;
+    void PointerCaptureLost(event_token token) const;
+    event_token PointerCanceled(const Windows::UI::Xaml::Input::PointerEventHandler & value) const;
+    using PointerCanceled_revoker = event_revoker<IUIElement>;
+    PointerCanceled_revoker PointerCanceled(auto_revoke_t, const Windows::UI::Xaml::Input::PointerEventHandler & value) const;
+    void PointerCanceled(event_token token) const;
+    event_token PointerWheelChanged(const Windows::UI::Xaml::Input::PointerEventHandler & value) const;
+    using PointerWheelChanged_revoker = event_revoker<IUIElement>;
+    PointerWheelChanged_revoker PointerWheelChanged(auto_revoke_t, const Windows::UI::Xaml::Input::PointerEventHandler & value) const;
+    void PointerWheelChanged(event_token token) const;
+    event_token Tapped(const Windows::UI::Xaml::Input::TappedEventHandler & value) const;
+    using Tapped_revoker = event_revoker<IUIElement>;
+    Tapped_revoker Tapped(auto_revoke_t, const Windows::UI::Xaml::Input::TappedEventHandler & value) const;
+    void Tapped(event_token token) const;
+    event_token DoubleTapped(const Windows::UI::Xaml::Input::DoubleTappedEventHandler & value) const;
+    using DoubleTapped_revoker = event_revoker<IUIElement>;
+    DoubleTapped_revoker DoubleTapped(auto_revoke_t, const Windows::UI::Xaml::Input::DoubleTappedEventHandler & value) const;
+    void DoubleTapped(event_token token) const;
+    event_token Holding(const Windows::UI::Xaml::Input::HoldingEventHandler & value) const;
+    using Holding_revoker = event_revoker<IUIElement>;
+    Holding_revoker Holding(auto_revoke_t, const Windows::UI::Xaml::Input::HoldingEventHandler & value) const;
+    void Holding(event_token token) const;
+    event_token RightTapped(const Windows::UI::Xaml::Input::RightTappedEventHandler & value) const;
+    using RightTapped_revoker = event_revoker<IUIElement>;
+    RightTapped_revoker RightTapped(auto_revoke_t, const Windows::UI::Xaml::Input::RightTappedEventHandler & value) const;
+    void RightTapped(event_token token) const;
+    event_token ManipulationStarting(const Windows::UI::Xaml::Input::ManipulationStartingEventHandler & value) const;
+    using ManipulationStarting_revoker = event_revoker<IUIElement>;
+    ManipulationStarting_revoker ManipulationStarting(auto_revoke_t, const Windows::UI::Xaml::Input::ManipulationStartingEventHandler & value) const;
+    void ManipulationStarting(event_token token) const;
+    event_token ManipulationInertiaStarting(const Windows::UI::Xaml::Input::ManipulationInertiaStartingEventHandler & value) const;
+    using ManipulationInertiaStarting_revoker = event_revoker<IUIElement>;
+    ManipulationInertiaStarting_revoker ManipulationInertiaStarting(auto_revoke_t, const Windows::UI::Xaml::Input::ManipulationInertiaStartingEventHandler & value) const;
+    void ManipulationInertiaStarting(event_token token) const;
+    event_token ManipulationStarted(const Windows::UI::Xaml::Input::ManipulationStartedEventHandler & value) const;
+    using ManipulationStarted_revoker = event_revoker<IUIElement>;
+    ManipulationStarted_revoker ManipulationStarted(auto_revoke_t, const Windows::UI::Xaml::Input::ManipulationStartedEventHandler & value) const;
+    void ManipulationStarted(event_token token) const;
+    event_token ManipulationDelta(const Windows::UI::Xaml::Input::ManipulationDeltaEventHandler & value) const;
+    using ManipulationDelta_revoker = event_revoker<IUIElement>;
+    ManipulationDelta_revoker ManipulationDelta(auto_revoke_t, const Windows::UI::Xaml::Input::ManipulationDeltaEventHandler & value) const;
+    void ManipulationDelta(event_token token) const;
+    event_token ManipulationCompleted(const Windows::UI::Xaml::Input::ManipulationCompletedEventHandler & value) const;
+    using ManipulationCompleted_revoker = event_revoker<IUIElement>;
+    ManipulationCompleted_revoker ManipulationCompleted(auto_revoke_t, const Windows::UI::Xaml::Input::ManipulationCompletedEventHandler & value) const;
+    void ManipulationCompleted(event_token token) const;
+    void Measure(const Windows::Foundation::Size & availableSize) const;
+    void Arrange(const Windows::Foundation::Rect & finalRect) const;
+    bool CapturePointer(const Windows::UI::Xaml::Input::Pointer & value) const;
+    void ReleasePointerCapture(const Windows::UI::Xaml::Input::Pointer & value) const;
+    void ReleasePointerCaptures() const;
+    void AddHandler(const Windows::UI::Xaml::RoutedEvent & routedEvent, const Windows::IInspectable & handler, bool handledEventsToo) const;
+    void RemoveHandler(const Windows::UI::Xaml::RoutedEvent & routedEvent, const Windows::IInspectable & handler) const;
+    Windows::UI::Xaml::Media::GeneralTransform TransformToVisual(const Windows::UI::Xaml::UIElement & visual) const;
+    void InvalidateMeasure() const;
+    void InvalidateArrange() const;
+    void UpdateLayout() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUIElement2
+{
+    Windows::UI::Xaml::Media::ElementCompositeMode CompositeMode() const;
+    void CompositeMode(Windows::UI::Xaml::Media::ElementCompositeMode value) const;
+    bool CancelDirectManipulations() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUIElement3
+{
+    Windows::UI::Xaml::Media::Media3D::Transform3D Transform3D() const;
+    void Transform3D(const Windows::UI::Xaml::Media::Media3D::Transform3D & value) const;
+    bool CanDrag() const;
+    void CanDrag(bool value) const;
+    event_token DragStarting(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::DragStartingEventArgs> & value) const;
+    using DragStarting_revoker = event_revoker<IUIElement3>;
+    DragStarting_revoker DragStarting(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::DragStartingEventArgs> & value) const;
+    void DragStarting(event_token token) const;
+    event_token DropCompleted(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::DropCompletedEventArgs> & value) const;
+    using DropCompleted_revoker = event_revoker<IUIElement3>;
+    DropCompleted_revoker DropCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::DropCompletedEventArgs> & value) const;
+    void DropCompleted(event_token token) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::DataTransfer::DataPackageOperation> StartDragAsync(const Windows::UI::Input::PointerPoint & pointerPoint) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUIElement4
+{
+    Windows::UI::Xaml::Controls::Primitives::FlyoutBase ContextFlyout() const;
+    void ContextFlyout(const Windows::UI::Xaml::Controls::Primitives::FlyoutBase & value) const;
+    bool ExitDisplayModeOnAccessKeyInvoked() const;
+    void ExitDisplayModeOnAccessKeyInvoked(bool value) const;
+    bool IsAccessKeyScope() const;
+    void IsAccessKeyScope(bool value) const;
+    Windows::UI::Xaml::DependencyObject AccessKeyScopeOwner() const;
+    void AccessKeyScopeOwner(const Windows::UI::Xaml::DependencyObject & value) const;
+    hstring AccessKey() const;
+    void AccessKey(hstring_ref value) const;
+    event_token ContextRequested(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::ContextRequestedEventArgs> & value) const;
+    using ContextRequested_revoker = event_revoker<IUIElement4>;
+    ContextRequested_revoker ContextRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::ContextRequestedEventArgs> & value) const;
+    void ContextRequested(event_token token) const;
+    event_token ContextCanceled(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::RoutedEventArgs> & value) const;
+    using ContextCanceled_revoker = event_revoker<IUIElement4>;
+    ContextCanceled_revoker ContextCanceled(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::RoutedEventArgs> & value) const;
+    void ContextCanceled(event_token token) const;
+    event_token AccessKeyDisplayRequested(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::AccessKeyDisplayRequestedEventArgs> & value) const;
+    using AccessKeyDisplayRequested_revoker = event_revoker<IUIElement4>;
+    AccessKeyDisplayRequested_revoker AccessKeyDisplayRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::AccessKeyDisplayRequestedEventArgs> & value) const;
+    void AccessKeyDisplayRequested(event_token token) const;
+    event_token AccessKeyDisplayDismissed(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::AccessKeyDisplayDismissedEventArgs> & value) const;
+    using AccessKeyDisplayDismissed_revoker = event_revoker<IUIElement4>;
+    AccessKeyDisplayDismissed_revoker AccessKeyDisplayDismissed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::AccessKeyDisplayDismissedEventArgs> & value) const;
+    void AccessKeyDisplayDismissed(event_token token) const;
+    event_token AccessKeyInvoked(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::AccessKeyInvokedEventArgs> & value) const;
+    using AccessKeyInvoked_revoker = event_revoker<IUIElement4>;
+    AccessKeyInvoked_revoker AccessKeyInvoked(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::UIElement, Windows::UI::Xaml::Input::AccessKeyInvokedEventArgs> & value) const;
+    void AccessKeyInvoked(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUIElementFactory
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUIElementOverrides
+{
+    Windows::UI::Xaml::Automation::Peers::AutomationPeer OnCreateAutomationPeer() const;
+    void OnDisconnectVisualChildren() const;
+    Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IIterable<Windows::Foundation::Point>> FindSubElementsForTouchTargeting(const Windows::Foundation::Point & point, const Windows::Foundation::Rect & boundingRect) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUIElementStatics
+{
+    Windows::UI::Xaml::RoutedEvent KeyDownEvent() const;
+    Windows::UI::Xaml::RoutedEvent KeyUpEvent() const;
+    Windows::UI::Xaml::RoutedEvent PointerEnteredEvent() const;
+    Windows::UI::Xaml::RoutedEvent PointerPressedEvent() const;
+    Windows::UI::Xaml::RoutedEvent PointerMovedEvent() const;
+    Windows::UI::Xaml::RoutedEvent PointerReleasedEvent() const;
+    Windows::UI::Xaml::RoutedEvent PointerExitedEvent() const;
+    Windows::UI::Xaml::RoutedEvent PointerCaptureLostEvent() const;
+    Windows::UI::Xaml::RoutedEvent PointerCanceledEvent() const;
+    Windows::UI::Xaml::RoutedEvent PointerWheelChangedEvent() const;
+    Windows::UI::Xaml::RoutedEvent TappedEvent() const;
+    Windows::UI::Xaml::RoutedEvent DoubleTappedEvent() const;
+    Windows::UI::Xaml::RoutedEvent HoldingEvent() const;
+    Windows::UI::Xaml::RoutedEvent RightTappedEvent() const;
+    Windows::UI::Xaml::RoutedEvent ManipulationStartingEvent() const;
+    Windows::UI::Xaml::RoutedEvent ManipulationInertiaStartingEvent() const;
+    Windows::UI::Xaml::RoutedEvent ManipulationStartedEvent() const;
+    Windows::UI::Xaml::RoutedEvent ManipulationDeltaEvent() const;
+    Windows::UI::Xaml::RoutedEvent ManipulationCompletedEvent() const;
+    Windows::UI::Xaml::RoutedEvent DragEnterEvent() const;
+    Windows::UI::Xaml::RoutedEvent DragLeaveEvent() const;
+    Windows::UI::Xaml::RoutedEvent DragOverEvent() const;
+    Windows::UI::Xaml::RoutedEvent DropEvent() const;
+    Windows::UI::Xaml::DependencyProperty AllowDropProperty() const;
+    Windows::UI::Xaml::DependencyProperty OpacityProperty() const;
+    Windows::UI::Xaml::DependencyProperty ClipProperty() const;
+    Windows::UI::Xaml::DependencyProperty RenderTransformProperty() const;
+    Windows::UI::Xaml::DependencyProperty ProjectionProperty() const;
+    Windows::UI::Xaml::DependencyProperty RenderTransformOriginProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsHitTestVisibleProperty() const;
+    Windows::UI::Xaml::DependencyProperty VisibilityProperty() const;
+    Windows::UI::Xaml::DependencyProperty UseLayoutRoundingProperty() const;
+    Windows::UI::Xaml::DependencyProperty TransitionsProperty() const;
+    Windows::UI::Xaml::DependencyProperty CacheModeProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsTapEnabledProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsDoubleTapEnabledProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsRightTapEnabledProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsHoldingEnabledProperty() const;
+    Windows::UI::Xaml::DependencyProperty ManipulationModeProperty() const;
+    Windows::UI::Xaml::DependencyProperty PointerCapturesProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUIElementStatics2
+{
+    Windows::UI::Xaml::DependencyProperty CompositeModeProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUIElementStatics3
+{
+    Windows::UI::Xaml::DependencyProperty Transform3DProperty() const;
+    Windows::UI::Xaml::DependencyProperty CanDragProperty() const;
+    bool TryStartDirectManipulation(const Windows::UI::Xaml::Input::Pointer & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUIElementStatics4
+{
+    Windows::UI::Xaml::DependencyProperty ContextFlyoutProperty() const;
+    Windows::UI::Xaml::DependencyProperty ExitDisplayModeOnAccessKeyInvokedProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsAccessKeyScopeProperty() const;
+    Windows::UI::Xaml::DependencyProperty AccessKeyScopeOwnerProperty() const;
+    Windows::UI::Xaml::DependencyProperty AccessKeyProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUnhandledExceptionEventArgs
+{
+    HRESULT Exception() const;
+    hstring Message() const;
+    bool Handled() const;
+    void Handled(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVisualState
+{
+    hstring Name() const;
+    Windows::UI::Xaml::Media::Animation::Storyboard Storyboard() const;
+    void Storyboard(const Windows::UI::Xaml::Media::Animation::Storyboard & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVisualState2
+{
+    Windows::UI::Xaml::SetterBaseCollection Setters() const;
+    Windows::Foundation::Collections::IVector<Windows::UI::Xaml::StateTriggerBase> StateTriggers() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVisualStateChangedEventArgs
+{
+    Windows::UI::Xaml::VisualState OldState() const;
+    void OldState(const Windows::UI::Xaml::VisualState & value) const;
+    Windows::UI::Xaml::VisualState NewState() const;
+    void NewState(const Windows::UI::Xaml::VisualState & value) const;
+    Windows::UI::Xaml::Controls::Control Control() const;
+    void Control(const Windows::UI::Xaml::Controls::Control & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVisualStateGroup
+{
+    hstring Name() const;
+    Windows::Foundation::Collections::IVector<Windows::UI::Xaml::VisualTransition> Transitions() const;
+    Windows::Foundation::Collections::IVector<Windows::UI::Xaml::VisualState> States() const;
+    Windows::UI::Xaml::VisualState CurrentState() const;
+    event_token CurrentStateChanged(const Windows::UI::Xaml::VisualStateChangedEventHandler & value) const;
+    using CurrentStateChanged_revoker = event_revoker<IVisualStateGroup>;
+    CurrentStateChanged_revoker CurrentStateChanged(auto_revoke_t, const Windows::UI::Xaml::VisualStateChangedEventHandler & value) const;
+    void CurrentStateChanged(event_token token) const;
+    event_token CurrentStateChanging(const Windows::UI::Xaml::VisualStateChangedEventHandler & value) const;
+    using CurrentStateChanging_revoker = event_revoker<IVisualStateGroup>;
+    CurrentStateChanging_revoker CurrentStateChanging(auto_revoke_t, const Windows::UI::Xaml::VisualStateChangedEventHandler & value) const;
+    void CurrentStateChanging(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVisualStateManager
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVisualStateManagerFactory
+{
+    Windows::UI::Xaml::VisualStateManager CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVisualStateManagerOverrides
+{
+    bool GoToStateCore(const Windows::UI::Xaml::Controls::Control & control, const Windows::UI::Xaml::FrameworkElement & templateRoot, hstring_ref stateName, const Windows::UI::Xaml::VisualStateGroup & group, const Windows::UI::Xaml::VisualState & state, bool useTransitions) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVisualStateManagerProtected
+{
+    void RaiseCurrentStateChanging(const Windows::UI::Xaml::VisualStateGroup & stateGroup, const Windows::UI::Xaml::VisualState & oldState, const Windows::UI::Xaml::VisualState & newState, const Windows::UI::Xaml::Controls::Control & control) const;
+    void RaiseCurrentStateChanged(const Windows::UI::Xaml::VisualStateGroup & stateGroup, const Windows::UI::Xaml::VisualState & oldState, const Windows::UI::Xaml::VisualState & newState, const Windows::UI::Xaml::Controls::Control & control) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVisualStateManagerStatics
+{
+    Windows::Foundation::Collections::IVector<Windows::UI::Xaml::VisualStateGroup> GetVisualStateGroups(const Windows::UI::Xaml::FrameworkElement & obj) const;
+    Windows::UI::Xaml::DependencyProperty CustomVisualStateManagerProperty() const;
+    Windows::UI::Xaml::VisualStateManager GetCustomVisualStateManager(const Windows::UI::Xaml::FrameworkElement & obj) const;
+    void SetCustomVisualStateManager(const Windows::UI::Xaml::FrameworkElement & obj, const Windows::UI::Xaml::VisualStateManager & value) const;
+    bool GoToState(const Windows::UI::Xaml::Controls::Control & control, hstring_ref stateName, bool useTransitions) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVisualTransition
+{
+    Windows::UI::Xaml::Duration GeneratedDuration() const;
+    void GeneratedDuration(const Windows::UI::Xaml::Duration & value) const;
+    Windows::UI::Xaml::Media::Animation::EasingFunctionBase GeneratedEasingFunction() const;
+    void GeneratedEasingFunction(const Windows::UI::Xaml::Media::Animation::EasingFunctionBase & value) const;
+    hstring To() const;
+    void To(hstring_ref value) const;
+    hstring From() const;
+    void From(hstring_ref value) const;
+    Windows::UI::Xaml::Media::Animation::Storyboard Storyboard() const;
+    void Storyboard(const Windows::UI::Xaml::Media::Animation::Storyboard & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVisualTransitionFactory
+{
+    Windows::UI::Xaml::VisualTransition CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWindow
+{
+    Windows::Foundation::Rect Bounds() const;
+    bool Visible() const;
+    Windows::UI::Xaml::UIElement Content() const;
+    void Content(const Windows::UI::Xaml::UIElement & value) const;
+    Windows::UI::Core::CoreWindow CoreWindow() const;
+    Windows::UI::Core::CoreDispatcher Dispatcher() const;
+    event_token Activated(const Windows::UI::Xaml::WindowActivatedEventHandler & value) const;
+    using Activated_revoker = event_revoker<IWindow>;
+    Activated_revoker Activated(auto_revoke_t, const Windows::UI::Xaml::WindowActivatedEventHandler & value) const;
+    void Activated(event_token token) const;
+    event_token Closed(const Windows::UI::Xaml::WindowClosedEventHandler & value) const;
+    using Closed_revoker = event_revoker<IWindow>;
+    Closed_revoker Closed(auto_revoke_t, const Windows::UI::Xaml::WindowClosedEventHandler & value) const;
+    void Closed(event_token token) const;
+    event_token SizeChanged(const Windows::UI::Xaml::WindowSizeChangedEventHandler & value) const;
+    using SizeChanged_revoker = event_revoker<IWindow>;
+    SizeChanged_revoker SizeChanged(auto_revoke_t, const Windows::UI::Xaml::WindowSizeChangedEventHandler & value) const;
+    void SizeChanged(event_token token) const;
+    event_token VisibilityChanged(const Windows::UI::Xaml::WindowVisibilityChangedEventHandler & value) const;
+    using VisibilityChanged_revoker = event_revoker<IWindow>;
+    VisibilityChanged_revoker VisibilityChanged(auto_revoke_t, const Windows::UI::Xaml::WindowVisibilityChangedEventHandler & value) const;
+    void VisibilityChanged(event_token token) const;
+    void Activate() const;
+    void Close() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWindow2
+{
+    void SetTitleBar(const Windows::UI::Xaml::UIElement & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWindowCreatedEventArgs
+{
+    Windows::UI::Xaml::Window Window() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWindowStatics
+{
+    Windows::UI::Xaml::Window Current() const;
+};
 
 }
 

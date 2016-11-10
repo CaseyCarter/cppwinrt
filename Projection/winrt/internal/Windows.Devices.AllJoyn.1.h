@@ -377,48 +377,394 @@ template <> struct traits<Windows::Devices::AllJoyn::AllJoynWatcherStoppedEventA
 
 namespace Windows::Devices::AllJoyn {
 
-template <typename T> struct impl_IAllJoynAboutData;
-template <typename T> struct impl_IAllJoynAboutDataView;
-template <typename T> struct impl_IAllJoynAboutDataViewStatics;
-template <typename T> struct impl_IAllJoynAcceptSessionJoiner;
-template <typename T> struct impl_IAllJoynAcceptSessionJoinerEventArgs;
-template <typename T> struct impl_IAllJoynAcceptSessionJoinerEventArgsFactory;
-template <typename T> struct impl_IAllJoynAuthenticationCompleteEventArgs;
-template <typename T> struct impl_IAllJoynBusAttachment;
-template <typename T> struct impl_IAllJoynBusAttachment2;
-template <typename T> struct impl_IAllJoynBusAttachmentFactory;
-template <typename T> struct impl_IAllJoynBusAttachmentStateChangedEventArgs;
-template <typename T> struct impl_IAllJoynBusAttachmentStatics;
-template <typename T> struct impl_IAllJoynBusObject;
-template <typename T> struct impl_IAllJoynBusObjectFactory;
-template <typename T> struct impl_IAllJoynBusObjectStoppedEventArgs;
-template <typename T> struct impl_IAllJoynBusObjectStoppedEventArgsFactory;
-template <typename T> struct impl_IAllJoynCredentials;
-template <typename T> struct impl_IAllJoynCredentialsRequestedEventArgs;
-template <typename T> struct impl_IAllJoynCredentialsVerificationRequestedEventArgs;
-template <typename T> struct impl_IAllJoynMessageInfo;
-template <typename T> struct impl_IAllJoynMessageInfoFactory;
-template <typename T> struct impl_IAllJoynProducer;
-template <typename T> struct impl_IAllJoynProducerStoppedEventArgs;
-template <typename T> struct impl_IAllJoynProducerStoppedEventArgsFactory;
-template <typename T> struct impl_IAllJoynServiceInfo;
-template <typename T> struct impl_IAllJoynServiceInfoFactory;
-template <typename T> struct impl_IAllJoynServiceInfoRemovedEventArgs;
-template <typename T> struct impl_IAllJoynServiceInfoRemovedEventArgsFactory;
-template <typename T> struct impl_IAllJoynServiceInfoStatics;
-template <typename T> struct impl_IAllJoynSession;
-template <typename T> struct impl_IAllJoynSessionJoinedEventArgs;
-template <typename T> struct impl_IAllJoynSessionJoinedEventArgsFactory;
-template <typename T> struct impl_IAllJoynSessionLostEventArgs;
-template <typename T> struct impl_IAllJoynSessionLostEventArgsFactory;
-template <typename T> struct impl_IAllJoynSessionMemberAddedEventArgs;
-template <typename T> struct impl_IAllJoynSessionMemberAddedEventArgsFactory;
-template <typename T> struct impl_IAllJoynSessionMemberRemovedEventArgs;
-template <typename T> struct impl_IAllJoynSessionMemberRemovedEventArgsFactory;
-template <typename T> struct impl_IAllJoynSessionStatics;
-template <typename T> struct impl_IAllJoynStatusStatics;
-template <typename T> struct impl_IAllJoynWatcherStoppedEventArgs;
-template <typename T> struct impl_IAllJoynWatcherStoppedEventArgsFactory;
+template <typename D>
+struct WINRT_EBO impl_IAllJoynAboutData
+{
+    bool IsEnabled() const;
+    void IsEnabled(bool value) const;
+    hstring DefaultAppName() const;
+    void DefaultAppName(hstring_ref value) const;
+    Windows::Foundation::Collections::IMap<hstring, hstring> AppNames() const;
+    Windows::Foundation::IReference<Windows::Foundation::DateTime> DateOfManufacture() const;
+    void DateOfManufacture(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
+    hstring DefaultDescription() const;
+    void DefaultDescription(hstring_ref value) const;
+    Windows::Foundation::Collections::IMap<hstring, hstring> Descriptions() const;
+    hstring DefaultManufacturer() const;
+    void DefaultManufacturer(hstring_ref value) const;
+    Windows::Foundation::Collections::IMap<hstring, hstring> Manufacturers() const;
+    hstring ModelNumber() const;
+    void ModelNumber(hstring_ref value) const;
+    hstring SoftwareVersion() const;
+    void SoftwareVersion(hstring_ref value) const;
+    Windows::Foundation::Uri SupportUrl() const;
+    void SupportUrl(const Windows::Foundation::Uri & value) const;
+    GUID AppId() const;
+    void AppId(GUID value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAllJoynAboutDataView
+{
+    int32_t Status() const;
+    Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> Properties() const;
+    hstring AJSoftwareVersion() const;
+    GUID AppId() const;
+    Windows::Foundation::IReference<Windows::Foundation::DateTime> DateOfManufacture() const;
+    Windows::Globalization::Language DefaultLanguage() const;
+    hstring DeviceId() const;
+    hstring HardwareVersion() const;
+    hstring ModelNumber() const;
+    hstring SoftwareVersion() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Globalization::Language> SupportedLanguages() const;
+    Windows::Foundation::Uri SupportUrl() const;
+    hstring AppName() const;
+    hstring Description() const;
+    hstring DeviceName() const;
+    hstring Manufacturer() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAllJoynAboutDataViewStatics
+{
+    Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> GetDataBySessionPortAsync(hstring_ref uniqueName, const Windows::Devices::AllJoyn::AllJoynBusAttachment & busAttachment, uint16_t sessionPort) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> GetDataBySessionPortAsync(hstring_ref uniqueName, const Windows::Devices::AllJoyn::AllJoynBusAttachment & busAttachment, uint16_t sessionPort, const Windows::Globalization::Language & language) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAllJoynAcceptSessionJoiner
+{
+    void Accept() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAllJoynAcceptSessionJoinerEventArgs
+{
+    hstring UniqueName() const;
+    uint16_t SessionPort() const;
+    Windows::Devices::AllJoyn::AllJoynTrafficType TrafficType() const;
+    bool SamePhysicalNode() const;
+    bool SameNetwork() const;
+    void Accept() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAllJoynAcceptSessionJoinerEventArgsFactory
+{
+    Windows::Devices::AllJoyn::AllJoynAcceptSessionJoinerEventArgs Create(hstring_ref uniqueName, uint16_t sessionPort, Windows::Devices::AllJoyn::AllJoynTrafficType trafficType, uint8_t proximity, const Windows::Devices::AllJoyn::IAllJoynAcceptSessionJoiner & acceptSessionJoiner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAllJoynAuthenticationCompleteEventArgs
+{
+    Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism AuthenticationMechanism() const;
+    hstring PeerUniqueName() const;
+    bool Succeeded() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAllJoynBusAttachment
+{
+    Windows::Devices::AllJoyn::AllJoynAboutData AboutData() const;
+    hstring ConnectionSpecification() const;
+    Windows::Devices::AllJoyn::AllJoynBusAttachmentState State() const;
+    hstring UniqueName() const;
+    Windows::Foundation::IAsyncOperation<int32_t> PingAsync(hstring_ref uniqueName) const;
+    void Connect() const;
+    void Disconnect() const;
+    event_token StateChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynBusAttachmentStateChangedEventArgs> & handler) const;
+    using StateChanged_revoker = event_revoker<IAllJoynBusAttachment>;
+    StateChanged_revoker StateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynBusAttachmentStateChangedEventArgs> & handler) const;
+    void StateChanged(event_token token) const;
+    Windows::Foundation::Collections::IVector<winrt::Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism> AuthenticationMechanisms() const;
+    event_token CredentialsRequested(const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsRequestedEventArgs> & handler) const;
+    using CredentialsRequested_revoker = event_revoker<IAllJoynBusAttachment>;
+    CredentialsRequested_revoker CredentialsRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsRequestedEventArgs> & handler) const;
+    void CredentialsRequested(event_token token) const;
+    event_token CredentialsVerificationRequested(const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsVerificationRequestedEventArgs> & handler) const;
+    using CredentialsVerificationRequested_revoker = event_revoker<IAllJoynBusAttachment>;
+    CredentialsVerificationRequested_revoker CredentialsVerificationRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynCredentialsVerificationRequestedEventArgs> & handler) const;
+    void CredentialsVerificationRequested(event_token token) const;
+    event_token AuthenticationComplete(const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAuthenticationCompleteEventArgs> & handler) const;
+    using AuthenticationComplete_revoker = event_revoker<IAllJoynBusAttachment>;
+    AuthenticationComplete_revoker AuthenticationComplete(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAuthenticationCompleteEventArgs> & handler) const;
+    void AuthenticationComplete(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAllJoynBusAttachment2
+{
+    Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> GetAboutDataAsync(const Windows::Devices::AllJoyn::AllJoynServiceInfo & serviceInfo) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynAboutDataView> GetAboutDataAsync(const Windows::Devices::AllJoyn::AllJoynServiceInfo & serviceInfo, const Windows::Globalization::Language & language) const;
+    event_token AcceptSessionJoinerRequested(const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAcceptSessionJoinerEventArgs> & handler) const;
+    using AcceptSessionJoinerRequested_revoker = event_revoker<IAllJoynBusAttachment2>;
+    AcceptSessionJoinerRequested_revoker AcceptSessionJoinerRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynAcceptSessionJoinerEventArgs> & handler) const;
+    void AcceptSessionJoinerRequested(event_token token) const;
+    event_token SessionJoined(const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynSessionJoinedEventArgs> & handler) const;
+    using SessionJoined_revoker = event_revoker<IAllJoynBusAttachment2>;
+    SessionJoined_revoker SessionJoined(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusAttachment, Windows::Devices::AllJoyn::AllJoynSessionJoinedEventArgs> & handler) const;
+    void SessionJoined(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAllJoynBusAttachmentFactory
+{
+    Windows::Devices::AllJoyn::AllJoynBusAttachment Create(hstring_ref connectionSpecification) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAllJoynBusAttachmentStateChangedEventArgs
+{
+    Windows::Devices::AllJoyn::AllJoynBusAttachmentState State() const;
+    int32_t Status() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAllJoynBusAttachmentStatics
+{
+    Windows::Devices::AllJoyn::AllJoynBusAttachment GetDefault() const;
+    Windows::Devices::Enumeration::DeviceWatcher GetWatcher(const Windows::Foundation::Collections::IIterable<hstring> & requiredInterfaces) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAllJoynBusObject
+{
+    void Start() const;
+    void Stop() const;
+    void AddProducer(const Windows::Devices::AllJoyn::IAllJoynProducer & producer) const;
+    Windows::Devices::AllJoyn::AllJoynBusAttachment BusAttachment() const;
+    Windows::Devices::AllJoyn::AllJoynSession Session() const;
+    event_token Stopped(const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusObject, Windows::Devices::AllJoyn::AllJoynBusObjectStoppedEventArgs> & handler) const;
+    using Stopped_revoker = event_revoker<IAllJoynBusObject>;
+    Stopped_revoker Stopped(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynBusObject, Windows::Devices::AllJoyn::AllJoynBusObjectStoppedEventArgs> & handler) const;
+    void Stopped(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAllJoynBusObjectFactory
+{
+    Windows::Devices::AllJoyn::AllJoynBusObject Create(hstring_ref objectPath) const;
+    Windows::Devices::AllJoyn::AllJoynBusObject CreateWithBusAttachment(hstring_ref objectPath, const Windows::Devices::AllJoyn::AllJoynBusAttachment & busAttachment) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAllJoynBusObjectStoppedEventArgs
+{
+    int32_t Status() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAllJoynBusObjectStoppedEventArgsFactory
+{
+    Windows::Devices::AllJoyn::AllJoynBusObjectStoppedEventArgs Create(int32_t status) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAllJoynCredentials
+{
+    Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism AuthenticationMechanism() const;
+    Windows::Security::Cryptography::Certificates::Certificate Certificate() const;
+    void Certificate(const Windows::Security::Cryptography::Certificates::Certificate & value) const;
+    Windows::Security::Credentials::PasswordCredential PasswordCredential() const;
+    void PasswordCredential(const Windows::Security::Credentials::PasswordCredential & value) const;
+    Windows::Foundation::TimeSpan Timeout() const;
+    void Timeout(const Windows::Foundation::TimeSpan & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAllJoynCredentialsRequestedEventArgs
+{
+    uint16_t AttemptCount() const;
+    Windows::Devices::AllJoyn::AllJoynCredentials Credentials() const;
+    hstring PeerUniqueName() const;
+    hstring RequestedUserName() const;
+    Windows::Foundation::Deferral GetDeferral() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAllJoynCredentialsVerificationRequestedEventArgs
+{
+    Windows::Devices::AllJoyn::AllJoynAuthenticationMechanism AuthenticationMechanism() const;
+    hstring PeerUniqueName() const;
+    Windows::Security::Cryptography::Certificates::Certificate PeerCertificate() const;
+    Windows::Networking::Sockets::SocketSslErrorSeverity PeerCertificateErrorSeverity() const;
+    Windows::Foundation::Collections::IVectorView<winrt::Windows::Security::Cryptography::Certificates::ChainValidationResult> PeerCertificateErrors() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> PeerIntermediateCertificates() const;
+    void Accept() const;
+    Windows::Foundation::Deferral GetDeferral() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAllJoynMessageInfo
+{
+    hstring SenderUniqueName() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAllJoynMessageInfoFactory
+{
+    Windows::Devices::AllJoyn::AllJoynMessageInfo Create(hstring_ref senderUniqueName) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAllJoynProducer
+{
+    void SetBusObject(const Windows::Devices::AllJoyn::AllJoynBusObject & busObject) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAllJoynProducerStoppedEventArgs
+{
+    int32_t Status() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAllJoynProducerStoppedEventArgsFactory
+{
+    Windows::Devices::AllJoyn::AllJoynProducerStoppedEventArgs Create(int32_t status) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAllJoynServiceInfo
+{
+    hstring UniqueName() const;
+    hstring ObjectPath() const;
+    uint16_t SessionPort() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAllJoynServiceInfoFactory
+{
+    Windows::Devices::AllJoyn::AllJoynServiceInfo Create(hstring_ref uniqueName, hstring_ref objectPath, uint16_t sessionPort) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAllJoynServiceInfoRemovedEventArgs
+{
+    hstring UniqueName() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAllJoynServiceInfoRemovedEventArgsFactory
+{
+    Windows::Devices::AllJoyn::AllJoynServiceInfoRemovedEventArgs Create(hstring_ref uniqueName) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAllJoynServiceInfoStatics
+{
+    Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynServiceInfo> FromIdAsync(hstring_ref deviceId) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAllJoynSession
+{
+    int32_t Id() const;
+    int32_t Status() const;
+    Windows::Foundation::IAsyncOperation<int32_t> RemoveMemberAsync(hstring_ref uniqueName) const;
+    event_token MemberAdded(const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberAddedEventArgs> & handler) const;
+    using MemberAdded_revoker = event_revoker<IAllJoynSession>;
+    MemberAdded_revoker MemberAdded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberAddedEventArgs> & handler) const;
+    void MemberAdded(event_token token) const;
+    event_token MemberRemoved(const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberRemovedEventArgs> & handler) const;
+    using MemberRemoved_revoker = event_revoker<IAllJoynSession>;
+    MemberRemoved_revoker MemberRemoved(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionMemberRemovedEventArgs> & handler) const;
+    void MemberRemoved(event_token token) const;
+    event_token Lost(const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionLostEventArgs> & handler) const;
+    using Lost_revoker = event_revoker<IAllJoynSession>;
+    Lost_revoker Lost(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::AllJoyn::AllJoynSession, Windows::Devices::AllJoyn::AllJoynSessionLostEventArgs> & handler) const;
+    void Lost(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAllJoynSessionJoinedEventArgs
+{
+    Windows::Devices::AllJoyn::AllJoynSession Session() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAllJoynSessionJoinedEventArgsFactory
+{
+    Windows::Devices::AllJoyn::AllJoynSessionJoinedEventArgs Create(const Windows::Devices::AllJoyn::AllJoynSession & session) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAllJoynSessionLostEventArgs
+{
+    Windows::Devices::AllJoyn::AllJoynSessionLostReason Reason() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAllJoynSessionLostEventArgsFactory
+{
+    Windows::Devices::AllJoyn::AllJoynSessionLostEventArgs Create(Windows::Devices::AllJoyn::AllJoynSessionLostReason reason) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAllJoynSessionMemberAddedEventArgs
+{
+    hstring UniqueName() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAllJoynSessionMemberAddedEventArgsFactory
+{
+    Windows::Devices::AllJoyn::AllJoynSessionMemberAddedEventArgs Create(hstring_ref uniqueName) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAllJoynSessionMemberRemovedEventArgs
+{
+    hstring UniqueName() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAllJoynSessionMemberRemovedEventArgsFactory
+{
+    Windows::Devices::AllJoyn::AllJoynSessionMemberRemovedEventArgs Create(hstring_ref uniqueName) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAllJoynSessionStatics
+{
+    Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynSession> GetFromServiceInfoAsync(const Windows::Devices::AllJoyn::AllJoynServiceInfo & serviceInfo) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::AllJoyn::AllJoynSession> GetFromServiceInfoAsync(const Windows::Devices::AllJoyn::AllJoynServiceInfo & serviceInfo, const Windows::Devices::AllJoyn::AllJoynBusAttachment & busAttachment) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAllJoynStatusStatics
+{
+    int32_t Ok() const;
+    int32_t Fail() const;
+    int32_t OperationTimedOut() const;
+    int32_t OtherEndClosed() const;
+    int32_t ConnectionRefused() const;
+    int32_t AuthenticationFailed() const;
+    int32_t AuthenticationRejectedByUser() const;
+    int32_t SslConnectFailed() const;
+    int32_t SslIdentityVerificationFailed() const;
+    int32_t InsufficientSecurity() const;
+    int32_t InvalidArgument1() const;
+    int32_t InvalidArgument2() const;
+    int32_t InvalidArgument3() const;
+    int32_t InvalidArgument4() const;
+    int32_t InvalidArgument5() const;
+    int32_t InvalidArgument6() const;
+    int32_t InvalidArgument7() const;
+    int32_t InvalidArgument8() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAllJoynWatcherStoppedEventArgs
+{
+    int32_t Status() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAllJoynWatcherStoppedEventArgsFactory
+{
+    Windows::Devices::AllJoyn::AllJoynWatcherStoppedEventArgs Create(int32_t status) const;
+};
 
 }
 

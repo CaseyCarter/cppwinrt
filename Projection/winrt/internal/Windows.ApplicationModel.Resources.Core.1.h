@@ -151,18 +151,111 @@ template <> struct traits<Windows::ApplicationModel::Resources::Core::ResourceQu
 
 namespace Windows::ApplicationModel::Resources::Core {
 
-template <typename T> struct impl_INamedResource;
-template <typename T> struct impl_IResourceCandidate;
-template <typename T> struct impl_IResourceCandidate2;
-template <typename T> struct impl_IResourceContext;
-template <typename T> struct impl_IResourceContextStatics;
-template <typename T> struct impl_IResourceContextStatics2;
-template <typename T> struct impl_IResourceContextStatics3;
-template <typename T> struct impl_IResourceManager;
-template <typename T> struct impl_IResourceManager2;
-template <typename T> struct impl_IResourceManagerStatics;
-template <typename T> struct impl_IResourceMap;
-template <typename T> struct impl_IResourceQualifier;
+template <typename D>
+struct WINRT_EBO impl_INamedResource
+{
+    Windows::Foundation::Uri Uri() const;
+    Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Resources::Core::ResourceCandidate> Candidates() const;
+    Windows::ApplicationModel::Resources::Core::ResourceCandidate Resolve() const;
+    Windows::ApplicationModel::Resources::Core::ResourceCandidate Resolve(const Windows::ApplicationModel::Resources::Core::ResourceContext & resourceContext) const;
+    Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Resources::Core::ResourceCandidate> ResolveAll() const;
+    Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Resources::Core::ResourceCandidate> ResolveAll(const Windows::ApplicationModel::Resources::Core::ResourceContext & resourceContext) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IResourceCandidate
+{
+    Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Resources::Core::ResourceQualifier> Qualifiers() const;
+    bool IsMatch() const;
+    bool IsMatchAsDefault() const;
+    bool IsDefault() const;
+    hstring ValueAsString() const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> GetValueAsFileAsync() const;
+    hstring GetQualifierValue(hstring_ref qualifierName) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IResourceCandidate2
+{
+    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> GetValueAsStreamAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IResourceContext
+{
+    Windows::Foundation::Collections::IObservableMap<hstring, hstring> QualifierValues() const;
+    void Reset() const;
+    void Reset(const Windows::Foundation::Collections::IIterable<hstring> & qualifierNames) const;
+    void OverrideToMatch(const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Resources::Core::ResourceQualifier> & result) const;
+    Windows::ApplicationModel::Resources::Core::ResourceContext Clone() const;
+    Windows::Foundation::Collections::IVectorView<hstring> Languages() const;
+    void Languages(const Windows::Foundation::Collections::IVectorView<hstring> & languages) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IResourceContextStatics
+{
+    Windows::ApplicationModel::Resources::Core::ResourceContext CreateMatchingContext(const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Resources::Core::ResourceQualifier> & result) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IResourceContextStatics2
+{
+    Windows::ApplicationModel::Resources::Core::ResourceContext GetForCurrentView() const;
+    void SetGlobalQualifierValue(hstring_ref key, hstring_ref value) const;
+    void ResetGlobalQualifierValues() const;
+    void ResetGlobalQualifierValues(const Windows::Foundation::Collections::IIterable<hstring> & qualifierNames) const;
+    Windows::ApplicationModel::Resources::Core::ResourceContext GetForViewIndependentUse() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IResourceContextStatics3
+{
+    void SetGlobalQualifierValue(hstring_ref key, hstring_ref value, Windows::ApplicationModel::Resources::Core::ResourceQualifierPersistence persistence) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IResourceManager
+{
+    Windows::ApplicationModel::Resources::Core::ResourceMap MainResourceMap() const;
+    Windows::Foundation::Collections::IMapView<hstring, Windows::ApplicationModel::Resources::Core::ResourceMap> AllResourceMaps() const;
+    Windows::ApplicationModel::Resources::Core::ResourceContext DefaultContext() const;
+    void LoadPriFiles(const Windows::Foundation::Collections::IIterable<Windows::Storage::IStorageFile> & files) const;
+    void UnloadPriFiles(const Windows::Foundation::Collections::IIterable<Windows::Storage::IStorageFile> & files) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IResourceManager2
+{
+    Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Resources::Core::NamedResource> GetAllNamedResourcesForPackage(hstring_ref packageName, const Windows::ApplicationModel::Resources::Core::ResourceLayoutInfo & resourceLayoutInfo) const;
+    Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Resources::Core::ResourceMap> GetAllSubtreesForPackage(hstring_ref packageName, const Windows::ApplicationModel::Resources::Core::ResourceLayoutInfo & resourceLayoutInfo) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IResourceManagerStatics
+{
+    Windows::ApplicationModel::Resources::Core::ResourceManager Current() const;
+    bool IsResourceReference(hstring_ref resourceReference) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IResourceMap
+{
+    Windows::Foundation::Uri Uri() const;
+    Windows::ApplicationModel::Resources::Core::ResourceCandidate GetValue(hstring_ref resource) const;
+    Windows::ApplicationModel::Resources::Core::ResourceCandidate GetValue(hstring_ref resource, const Windows::ApplicationModel::Resources::Core::ResourceContext & context) const;
+    Windows::ApplicationModel::Resources::Core::ResourceMap GetSubtree(hstring_ref reference) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IResourceQualifier
+{
+    hstring QualifierName() const;
+    hstring QualifierValue() const;
+    bool IsDefault() const;
+    bool IsMatch() const;
+    double Score() const;
+};
 
 }
 

@@ -80,11 +80,62 @@ template <> struct traits<Windows::Data::Pdf::PdfPageRenderOptions> { using defa
 
 namespace Windows::Data::Pdf {
 
-template <typename T> struct impl_IPdfDocument;
-template <typename T> struct impl_IPdfDocumentStatics;
-template <typename T> struct impl_IPdfPage;
-template <typename T> struct impl_IPdfPageDimensions;
-template <typename T> struct impl_IPdfPageRenderOptions;
+template <typename D>
+struct WINRT_EBO impl_IPdfDocument
+{
+    Windows::Data::Pdf::PdfPage GetPage(uint32_t pageIndex) const;
+    uint32_t PageCount() const;
+    bool IsPasswordProtected() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPdfDocumentStatics
+{
+    Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument> LoadFromFileAsync(const Windows::Storage::IStorageFile & file) const;
+    Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument> LoadFromFileAsync(const Windows::Storage::IStorageFile & file, hstring_ref password) const;
+    Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument> LoadFromStreamAsync(const Windows::Storage::Streams::IRandomAccessStream & inputStream) const;
+    Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument> LoadFromStreamAsync(const Windows::Storage::Streams::IRandomAccessStream & inputStream, hstring_ref password) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPdfPage
+{
+    Windows::Foundation::IAsyncAction RenderToStreamAsync(const Windows::Storage::Streams::IRandomAccessStream & outputStream) const;
+    Windows::Foundation::IAsyncAction RenderToStreamAsync(const Windows::Storage::Streams::IRandomAccessStream & outputStream, const Windows::Data::Pdf::PdfPageRenderOptions & options) const;
+    Windows::Foundation::IAsyncAction PreparePageAsync() const;
+    uint32_t Index() const;
+    Windows::Foundation::Size Size() const;
+    Windows::Data::Pdf::PdfPageDimensions Dimensions() const;
+    Windows::Data::Pdf::PdfPageRotation Rotation() const;
+    float PreferredZoom() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPdfPageDimensions
+{
+    Windows::Foundation::Rect MediaBox() const;
+    Windows::Foundation::Rect CropBox() const;
+    Windows::Foundation::Rect BleedBox() const;
+    Windows::Foundation::Rect TrimBox() const;
+    Windows::Foundation::Rect ArtBox() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPdfPageRenderOptions
+{
+    Windows::Foundation::Rect SourceRect() const;
+    void SourceRect(const Windows::Foundation::Rect & value) const;
+    uint32_t DestinationWidth() const;
+    void DestinationWidth(uint32_t value) const;
+    uint32_t DestinationHeight() const;
+    void DestinationHeight(uint32_t value) const;
+    Windows::UI::Color BackgroundColor() const;
+    void BackgroundColor(const Windows::UI::Color & value) const;
+    bool IsIgnoringHighContrast() const;
+    void IsIgnoringHighContrast(bool value) const;
+    GUID BitmapEncoderId() const;
+    void BitmapEncoderId(GUID value) const;
+};
 
 }
 

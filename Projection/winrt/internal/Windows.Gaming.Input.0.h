@@ -70,6 +70,22 @@ struct UINavigationController;
 
 namespace Windows::Gaming::Input {
 
+template <typename T> struct impl_IArcadeStick;
+template <typename T> struct impl_IArcadeStickStatics;
+template <typename T> struct impl_IGameController;
+template <typename T> struct impl_IGamepad;
+template <typename T> struct impl_IGamepad2;
+template <typename T> struct impl_IGamepadStatics;
+template <typename T> struct impl_IHeadset;
+template <typename T> struct impl_IRacingWheel;
+template <typename T> struct impl_IRacingWheelStatics;
+template <typename T> struct impl_IUINavigationController;
+template <typename T> struct impl_IUINavigationControllerStatics;
+
+}
+
+namespace Windows::Gaming::Input {
+
 enum class ArcadeStickButtons : unsigned
 {
     None = 0x0,

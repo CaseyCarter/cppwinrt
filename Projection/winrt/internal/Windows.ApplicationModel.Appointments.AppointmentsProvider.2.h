@@ -19,57 +19,6 @@ template <> struct __declspec(uuid("5541d8a7-497c-5aa4-86fc-7713adbf2a2c")) __de
 
 namespace Windows::ApplicationModel::Appointments::AppointmentsProvider {
 
-template <typename D>
-struct WINRT_EBO impl_IAddAppointmentOperation
-{
-    Windows::ApplicationModel::Appointments::Appointment AppointmentInformation() const;
-    hstring SourcePackageFamilyName() const;
-    void ReportCompleted(hstring_ref itemId) const;
-    void ReportCanceled() const;
-    void ReportError(hstring_ref value) const;
-    void DismissUI() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IAppointmentsProviderLaunchActionVerbsStatics
-{
-    hstring AddAppointment() const;
-    hstring ReplaceAppointment() const;
-    hstring RemoveAppointment() const;
-    hstring ShowTimeFrame() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IAppointmentsProviderLaunchActionVerbsStatics2
-{
-    hstring ShowAppointmentDetails() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IRemoveAppointmentOperation
-{
-    hstring AppointmentId() const;
-    Windows::Foundation::IReference<Windows::Foundation::DateTime> InstanceStartDate() const;
-    hstring SourcePackageFamilyName() const;
-    void ReportCompleted() const;
-    void ReportCanceled() const;
-    void ReportError(hstring_ref value) const;
-    void DismissUI() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IReplaceAppointmentOperation
-{
-    hstring AppointmentId() const;
-    Windows::ApplicationModel::Appointments::Appointment AppointmentInformation() const;
-    Windows::Foundation::IReference<Windows::Foundation::DateTime> InstanceStartDate() const;
-    hstring SourcePackageFamilyName() const;
-    void ReportCompleted(hstring_ref itemId) const;
-    void ReportCanceled() const;
-    void ReportError(hstring_ref value) const;
-    void DismissUI() const;
-};
-
 struct IAddAppointmentOperation :
     Windows::IInspectable,
     impl::consume<IAddAppointmentOperation>

@@ -87,6 +87,27 @@ struct PhotoImportVideoSegment;
 
 namespace Windows::Media::Import {
 
+template <typename T> struct impl_IPhotoImportDeleteImportedItemsFromSourceResult;
+template <typename T> struct impl_IPhotoImportFindItemsResult;
+template <typename T> struct impl_IPhotoImportFindItemsResult2;
+template <typename T> struct impl_IPhotoImportImportItemsResult;
+template <typename T> struct impl_IPhotoImportItem;
+template <typename T> struct impl_IPhotoImportItemImportedEventArgs;
+template <typename T> struct impl_IPhotoImportManagerStatics;
+template <typename T> struct impl_IPhotoImportOperation;
+template <typename T> struct impl_IPhotoImportSelectionChangedEventArgs;
+template <typename T> struct impl_IPhotoImportSession;
+template <typename T> struct impl_IPhotoImportSession2;
+template <typename T> struct impl_IPhotoImportSidecar;
+template <typename T> struct impl_IPhotoImportSource;
+template <typename T> struct impl_IPhotoImportSourceStatics;
+template <typename T> struct impl_IPhotoImportStorageMedium;
+template <typename T> struct impl_IPhotoImportVideoSegment;
+
+}
+
+namespace Windows::Media::Import {
+
 enum class PhotoImportAccessMode
 {
     ReadWrite = 0,

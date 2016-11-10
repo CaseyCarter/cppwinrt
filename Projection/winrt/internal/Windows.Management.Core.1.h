@@ -30,8 +30,16 @@ template <> struct traits<Windows::Management::Core::ApplicationDataManager> { u
 
 namespace Windows::Management::Core {
 
-template <typename T> struct impl_IApplicationDataManager;
-template <typename T> struct impl_IApplicationDataManagerStatics;
+template <typename D>
+struct WINRT_EBO impl_IApplicationDataManager
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IApplicationDataManagerStatics
+{
+    Windows::Storage::ApplicationData CreateForPackageFamily(hstring_ref packageFamilyName) const;
+};
 
 }
 

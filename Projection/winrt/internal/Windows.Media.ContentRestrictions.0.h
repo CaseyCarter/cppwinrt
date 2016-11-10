@@ -34,6 +34,16 @@ struct RatedContentRestrictions;
 
 namespace Windows::Media::ContentRestrictions {
 
+template <typename T> struct impl_IContentRestrictionsBrowsePolicy;
+template <typename T> struct impl_IRatedContentDescription;
+template <typename T> struct impl_IRatedContentDescriptionFactory;
+template <typename T> struct impl_IRatedContentRestrictions;
+template <typename T> struct impl_IRatedContentRestrictionsFactory;
+
+}
+
+namespace Windows::Media::ContentRestrictions {
+
 enum class ContentAccessRestrictionLevel
 {
     Allow = 0,

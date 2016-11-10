@@ -159,24 +159,154 @@ template <> struct traits<Windows::Globalization::NumberFormatting::SignificantD
 
 namespace Windows::Globalization::NumberFormatting {
 
-template <typename T> struct impl_ICurrencyFormatter;
-template <typename T> struct impl_ICurrencyFormatter2;
-template <typename T> struct impl_ICurrencyFormatterFactory;
-template <typename T> struct impl_IDecimalFormatterFactory;
-template <typename T> struct impl_IIncrementNumberRounder;
-template <typename T> struct impl_INumberFormatter;
-template <typename T> struct impl_INumberFormatter2;
-template <typename T> struct impl_INumberFormatterOptions;
-template <typename T> struct impl_INumberParser;
-template <typename T> struct impl_INumberRounder;
-template <typename T> struct impl_INumberRounderOption;
-template <typename T> struct impl_INumeralSystemTranslator;
-template <typename T> struct impl_INumeralSystemTranslatorFactory;
-template <typename T> struct impl_IPercentFormatterFactory;
-template <typename T> struct impl_IPermilleFormatterFactory;
-template <typename T> struct impl_ISignedZeroOption;
-template <typename T> struct impl_ISignificantDigitsNumberRounder;
-template <typename T> struct impl_ISignificantDigitsOption;
+template <typename D>
+struct WINRT_EBO impl_ICurrencyFormatter
+{
+    hstring Currency() const;
+    void Currency(hstring_ref value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICurrencyFormatter2
+{
+    Windows::Globalization::NumberFormatting::CurrencyFormatterMode Mode() const;
+    void Mode(Windows::Globalization::NumberFormatting::CurrencyFormatterMode value) const;
+    void ApplyRoundingForCurrency(Windows::Globalization::NumberFormatting::RoundingAlgorithm roundingAlgorithm) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICurrencyFormatterFactory
+{
+    Windows::Globalization::NumberFormatting::CurrencyFormatter CreateCurrencyFormatterCode(hstring_ref currencyCode) const;
+    Windows::Globalization::NumberFormatting::CurrencyFormatter CreateCurrencyFormatterCodeContext(hstring_ref currencyCode, const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref geographicRegion) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDecimalFormatterFactory
+{
+    Windows::Globalization::NumberFormatting::DecimalFormatter CreateDecimalFormatter(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref geographicRegion) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IIncrementNumberRounder
+{
+    Windows::Globalization::NumberFormatting::RoundingAlgorithm RoundingAlgorithm() const;
+    void RoundingAlgorithm(Windows::Globalization::NumberFormatting::RoundingAlgorithm value) const;
+    double Increment() const;
+    void Increment(double value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_INumberFormatter
+{
+    hstring Format(int64_t value) const;
+    hstring Format(uint64_t value) const;
+    hstring Format(double value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_INumberFormatter2
+{
+    hstring FormatInt(int64_t value) const;
+    hstring FormatUInt(uint64_t value) const;
+    hstring FormatDouble(double value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_INumberFormatterOptions
+{
+    Windows::Foundation::Collections::IVectorView<hstring> Languages() const;
+    hstring GeographicRegion() const;
+    int32_t IntegerDigits() const;
+    void IntegerDigits(int32_t value) const;
+    int32_t FractionDigits() const;
+    void FractionDigits(int32_t value) const;
+    bool IsGrouped() const;
+    void IsGrouped(bool value) const;
+    bool IsDecimalPointAlwaysDisplayed() const;
+    void IsDecimalPointAlwaysDisplayed(bool value) const;
+    hstring NumeralSystem() const;
+    void NumeralSystem(hstring_ref value) const;
+    hstring ResolvedLanguage() const;
+    hstring ResolvedGeographicRegion() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_INumberParser
+{
+    Windows::Foundation::IReference<int64_t> ParseInt(hstring_ref text) const;
+    Windows::Foundation::IReference<uint64_t> ParseUInt(hstring_ref text) const;
+    Windows::Foundation::IReference<double> ParseDouble(hstring_ref text) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_INumberRounder
+{
+    int32_t RoundInt32(int32_t value) const;
+    uint32_t RoundUInt32(uint32_t value) const;
+    int64_t RoundInt64(int64_t value) const;
+    uint64_t RoundUInt64(uint64_t value) const;
+    float RoundSingle(float value) const;
+    double RoundDouble(double value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_INumberRounderOption
+{
+    Windows::Globalization::NumberFormatting::INumberRounder NumberRounder() const;
+    void NumberRounder(const Windows::Globalization::NumberFormatting::INumberRounder & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_INumeralSystemTranslator
+{
+    Windows::Foundation::Collections::IVectorView<hstring> Languages() const;
+    hstring ResolvedLanguage() const;
+    hstring NumeralSystem() const;
+    void NumeralSystem(hstring_ref value) const;
+    hstring TranslateNumerals(hstring_ref value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_INumeralSystemTranslatorFactory
+{
+    Windows::Globalization::NumberFormatting::NumeralSystemTranslator Create(const Windows::Foundation::Collections::IIterable<hstring> & languages) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPercentFormatterFactory
+{
+    Windows::Globalization::NumberFormatting::PercentFormatter CreatePercentFormatter(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref geographicRegion) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPermilleFormatterFactory
+{
+    Windows::Globalization::NumberFormatting::PermilleFormatter CreatePermilleFormatter(const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref geographicRegion) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISignedZeroOption
+{
+    bool IsZeroSigned() const;
+    void IsZeroSigned(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISignificantDigitsNumberRounder
+{
+    Windows::Globalization::NumberFormatting::RoundingAlgorithm RoundingAlgorithm() const;
+    void RoundingAlgorithm(Windows::Globalization::NumberFormatting::RoundingAlgorithm value) const;
+    uint32_t SignificantDigits() const;
+    void SignificantDigits(uint32_t value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISignificantDigitsOption
+{
+    int32_t SignificantDigits() const;
+    void SignificantDigits(int32_t value) const;
+};
 
 }
 

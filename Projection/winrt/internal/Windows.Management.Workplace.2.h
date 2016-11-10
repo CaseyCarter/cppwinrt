@@ -9,21 +9,6 @@ WINRT_EXPORT namespace winrt {
 
 namespace Windows::Management::Workplace {
 
-template <typename D>
-struct WINRT_EBO impl_IMdmAllowPolicyStatics
-{
-    bool IsBrowserAllowed() const;
-    bool IsCameraAllowed() const;
-    bool IsMicrosoftAccountAllowed() const;
-    bool IsStoreAllowed() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IMdmPolicyStatics2
-{
-    Windows::Management::Workplace::MessagingSyncPolicy GetMessagingSyncPolicy() const;
-};
-
 struct IMdmAllowPolicyStatics :
     Windows::IInspectable,
     impl::consume<IMdmAllowPolicyStatics>

@@ -44,6 +44,19 @@ struct RampForceEffect;
 
 namespace Windows::Gaming::Input::ForceFeedback {
 
+template <typename T> struct impl_IConditionForceEffect;
+template <typename T> struct impl_IConditionForceEffectFactory;
+template <typename T> struct impl_IConstantForceEffect;
+template <typename T> struct impl_IForceFeedbackEffect;
+template <typename T> struct impl_IForceFeedbackMotor;
+template <typename T> struct impl_IPeriodicForceEffect;
+template <typename T> struct impl_IPeriodicForceEffectFactory;
+template <typename T> struct impl_IRampForceEffect;
+
+}
+
+namespace Windows::Gaming::Input::ForceFeedback {
+
 enum class ConditionForceEffectKind
 {
     Spring = 0,

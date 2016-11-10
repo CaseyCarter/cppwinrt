@@ -34,35 +34,6 @@ template <> struct __declspec(uuid("97f82115-3822-507b-82e6-2777b336e98e")) __de
 
 namespace Windows::Devices::Power {
 
-template <typename D>
-struct WINRT_EBO impl_IBattery
-{
-    hstring DeviceId() const;
-    Windows::Devices::Power::BatteryReport GetReport() const;
-    event_token ReportUpdated(const Windows::Foundation::TypedEventHandler<Windows::Devices::Power::Battery, Windows::IInspectable> & handler) const;
-    using ReportUpdated_revoker = event_revoker<IBattery>;
-    ReportUpdated_revoker ReportUpdated(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Power::Battery, Windows::IInspectable> & handler) const;
-    void ReportUpdated(event_token token) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IBatteryReport
-{
-    Windows::Foundation::IReference<int32_t> ChargeRateInMilliwatts() const;
-    Windows::Foundation::IReference<int32_t> DesignCapacityInMilliwattHours() const;
-    Windows::Foundation::IReference<int32_t> FullChargeCapacityInMilliwattHours() const;
-    Windows::Foundation::IReference<int32_t> RemainingCapacityInMilliwattHours() const;
-    Windows::System::Power::BatteryStatus Status() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IBatteryStatics
-{
-    Windows::Devices::Power::Battery AggregateBattery() const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Power::Battery> FromIdAsync(hstring_ref deviceId) const;
-    hstring GetDeviceSelector() const;
-};
-
 struct IBattery :
     Windows::IInspectable,
     impl::consume<IBattery>

@@ -198,22 +198,196 @@ template <> struct traits<Windows::ApplicationModel::Calls::VoipPhoneCall> { usi
 
 namespace Windows::ApplicationModel::Calls {
 
-template <typename T> struct impl_ICallAnswerEventArgs;
-template <typename T> struct impl_ICallRejectEventArgs;
-template <typename T> struct impl_ICallStateChangeEventArgs;
-template <typename T> struct impl_IMuteChangeEventArgs;
-template <typename T> struct impl_IPhoneCallHistoryEntry;
-template <typename T> struct impl_IPhoneCallHistoryEntryAddress;
-template <typename T> struct impl_IPhoneCallHistoryEntryAddressFactory;
-template <typename T> struct impl_IPhoneCallHistoryEntryQueryOptions;
-template <typename T> struct impl_IPhoneCallHistoryEntryReader;
-template <typename T> struct impl_IPhoneCallHistoryManagerForUser;
-template <typename T> struct impl_IPhoneCallHistoryManagerStatics;
-template <typename T> struct impl_IPhoneCallHistoryManagerStatics2;
-template <typename T> struct impl_IPhoneCallHistoryStore;
-template <typename T> struct impl_IVoipCallCoordinator;
-template <typename T> struct impl_IVoipCallCoordinatorStatics;
-template <typename T> struct impl_IVoipPhoneCall;
+template <typename D>
+struct WINRT_EBO impl_ICallAnswerEventArgs
+{
+    Windows::ApplicationModel::Calls::VoipPhoneCallMedia AcceptedMedia() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICallRejectEventArgs
+{
+    Windows::ApplicationModel::Calls::VoipPhoneCallRejectReason RejectReason() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICallStateChangeEventArgs
+{
+    Windows::ApplicationModel::Calls::VoipPhoneCallState State() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMuteChangeEventArgs
+{
+    bool Muted() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPhoneCallHistoryEntry
+{
+    hstring Id() const;
+    Windows::ApplicationModel::Calls::PhoneCallHistoryEntryAddress Address() const;
+    void Address(const Windows::ApplicationModel::Calls::PhoneCallHistoryEntryAddress & value) const;
+    Windows::Foundation::IReference<Windows::Foundation::TimeSpan> Duration() const;
+    void Duration(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const;
+    bool IsCallerIdBlocked() const;
+    void IsCallerIdBlocked(bool value) const;
+    bool IsEmergency() const;
+    void IsEmergency(bool value) const;
+    bool IsIncoming() const;
+    void IsIncoming(bool value) const;
+    bool IsMissed() const;
+    void IsMissed(bool value) const;
+    bool IsRinging() const;
+    void IsRinging(bool value) const;
+    bool IsSeen() const;
+    void IsSeen(bool value) const;
+    bool IsSuppressed() const;
+    void IsSuppressed(bool value) const;
+    bool IsVoicemail() const;
+    void IsVoicemail(bool value) const;
+    Windows::ApplicationModel::Calls::PhoneCallHistoryEntryMedia Media() const;
+    void Media(Windows::ApplicationModel::Calls::PhoneCallHistoryEntryMedia value) const;
+    Windows::ApplicationModel::Calls::PhoneCallHistoryEntryOtherAppReadAccess OtherAppReadAccess() const;
+    void OtherAppReadAccess(Windows::ApplicationModel::Calls::PhoneCallHistoryEntryOtherAppReadAccess value) const;
+    hstring RemoteId() const;
+    void RemoteId(hstring_ref value) const;
+    hstring SourceDisplayName() const;
+    hstring SourceId() const;
+    void SourceId(hstring_ref value) const;
+    Windows::ApplicationModel::Calls::PhoneCallHistorySourceIdKind SourceIdKind() const;
+    void SourceIdKind(Windows::ApplicationModel::Calls::PhoneCallHistorySourceIdKind value) const;
+    Windows::Foundation::DateTime StartTime() const;
+    void StartTime(const Windows::Foundation::DateTime & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPhoneCallHistoryEntryAddress
+{
+    hstring ContactId() const;
+    void ContactId(hstring_ref value) const;
+    hstring DisplayName() const;
+    void DisplayName(hstring_ref value) const;
+    hstring RawAddress() const;
+    void RawAddress(hstring_ref value) const;
+    Windows::ApplicationModel::Calls::PhoneCallHistoryEntryRawAddressKind RawAddressKind() const;
+    void RawAddressKind(Windows::ApplicationModel::Calls::PhoneCallHistoryEntryRawAddressKind value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPhoneCallHistoryEntryAddressFactory
+{
+    Windows::ApplicationModel::Calls::PhoneCallHistoryEntryAddress Create(hstring_ref rawAddress, Windows::ApplicationModel::Calls::PhoneCallHistoryEntryRawAddressKind rawAddressKind) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPhoneCallHistoryEntryQueryOptions
+{
+    Windows::ApplicationModel::Calls::PhoneCallHistoryEntryQueryDesiredMedia DesiredMedia() const;
+    void DesiredMedia(Windows::ApplicationModel::Calls::PhoneCallHistoryEntryQueryDesiredMedia value) const;
+    Windows::Foundation::Collections::IVector<hstring> SourceIds() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPhoneCallHistoryEntryReader
+{
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Calls::PhoneCallHistoryEntry>> ReadBatchAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPhoneCallHistoryManagerForUser
+{
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Calls::PhoneCallHistoryStore> RequestStoreAsync(Windows::ApplicationModel::Calls::PhoneCallHistoryStoreAccessType accessType) const;
+    Windows::System::User User() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPhoneCallHistoryManagerStatics
+{
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Calls::PhoneCallHistoryStore> RequestStoreAsync(Windows::ApplicationModel::Calls::PhoneCallHistoryStoreAccessType accessType) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPhoneCallHistoryManagerStatics2
+{
+    Windows::ApplicationModel::Calls::PhoneCallHistoryManagerForUser GetForUser(const Windows::System::User & user) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPhoneCallHistoryStore
+{
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Calls::PhoneCallHistoryEntry> GetEntryAsync(hstring_ref callHistoryEntryId) const;
+    Windows::ApplicationModel::Calls::PhoneCallHistoryEntryReader GetEntryReader() const;
+    Windows::ApplicationModel::Calls::PhoneCallHistoryEntryReader GetEntryReader(const Windows::ApplicationModel::Calls::PhoneCallHistoryEntryQueryOptions & queryOptions) const;
+    Windows::Foundation::IAsyncAction SaveEntryAsync(const Windows::ApplicationModel::Calls::PhoneCallHistoryEntry & callHistoryEntry) const;
+    Windows::Foundation::IAsyncAction DeleteEntryAsync(const Windows::ApplicationModel::Calls::PhoneCallHistoryEntry & callHistoryEntry) const;
+    Windows::Foundation::IAsyncAction DeleteEntriesAsync(const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Calls::PhoneCallHistoryEntry> & callHistoryEntries) const;
+    Windows::Foundation::IAsyncAction MarkEntryAsSeenAsync(const Windows::ApplicationModel::Calls::PhoneCallHistoryEntry & callHistoryEntry) const;
+    Windows::Foundation::IAsyncAction MarkEntriesAsSeenAsync(const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Calls::PhoneCallHistoryEntry> & callHistoryEntries) const;
+    Windows::Foundation::IAsyncOperation<uint32_t> GetUnseenCountAsync() const;
+    Windows::Foundation::IAsyncAction MarkAllAsSeenAsync() const;
+    Windows::Foundation::IAsyncOperation<uint32_t> GetSourcesUnseenCountAsync(const Windows::Foundation::Collections::IIterable<hstring> & sourceIds) const;
+    Windows::Foundation::IAsyncAction MarkSourcesAsSeenAsync(const Windows::Foundation::Collections::IIterable<hstring> & sourceIds) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVoipCallCoordinator
+{
+    Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Calls::VoipPhoneCallResourceReservationStatus> ReserveCallResourcesAsync(hstring_ref taskEntryPoint) const;
+    event_token MuteStateChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Calls::VoipCallCoordinator, Windows::ApplicationModel::Calls::MuteChangeEventArgs> & muteChangeHandler) const;
+    using MuteStateChanged_revoker = event_revoker<IVoipCallCoordinator>;
+    MuteStateChanged_revoker MuteStateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Calls::VoipCallCoordinator, Windows::ApplicationModel::Calls::MuteChangeEventArgs> & muteChangeHandler) const;
+    void MuteStateChanged(event_token token) const;
+    Windows::ApplicationModel::Calls::VoipPhoneCall RequestNewIncomingCall(hstring_ref context, hstring_ref contactName, hstring_ref contactNumber, const Windows::Foundation::Uri & contactImage, hstring_ref serviceName, const Windows::Foundation::Uri & brandingImage, hstring_ref callDetails, const Windows::Foundation::Uri & ringtone, Windows::ApplicationModel::Calls::VoipPhoneCallMedia media, const Windows::Foundation::TimeSpan & ringTimeout) const;
+    Windows::ApplicationModel::Calls::VoipPhoneCall RequestNewOutgoingCall(hstring_ref context, hstring_ref contactName, hstring_ref serviceName, Windows::ApplicationModel::Calls::VoipPhoneCallMedia media) const;
+    void NotifyMuted() const;
+    void NotifyUnmuted() const;
+    Windows::ApplicationModel::Calls::VoipPhoneCall RequestOutgoingUpgradeToVideoCall(GUID callUpgradeGuid, hstring_ref context, hstring_ref contactName, hstring_ref serviceName) const;
+    Windows::ApplicationModel::Calls::VoipPhoneCall RequestIncomingUpgradeToVideoCall(hstring_ref context, hstring_ref contactName, hstring_ref contactNumber, const Windows::Foundation::Uri & contactImage, hstring_ref serviceName, const Windows::Foundation::Uri & brandingImage, hstring_ref callDetails, const Windows::Foundation::Uri & ringtone, const Windows::Foundation::TimeSpan & ringTimeout) const;
+    void TerminateCellularCall(GUID callUpgradeGuid) const;
+    void CancelUpgrade(GUID callUpgradeGuid) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVoipCallCoordinatorStatics
+{
+    Windows::ApplicationModel::Calls::VoipCallCoordinator GetDefault() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVoipPhoneCall
+{
+    event_token EndRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Calls::VoipPhoneCall, Windows::ApplicationModel::Calls::CallStateChangeEventArgs> & handler) const;
+    using EndRequested_revoker = event_revoker<IVoipPhoneCall>;
+    EndRequested_revoker EndRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Calls::VoipPhoneCall, Windows::ApplicationModel::Calls::CallStateChangeEventArgs> & handler) const;
+    void EndRequested(event_token token) const;
+    event_token HoldRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Calls::VoipPhoneCall, Windows::ApplicationModel::Calls::CallStateChangeEventArgs> & handler) const;
+    using HoldRequested_revoker = event_revoker<IVoipPhoneCall>;
+    HoldRequested_revoker HoldRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Calls::VoipPhoneCall, Windows::ApplicationModel::Calls::CallStateChangeEventArgs> & handler) const;
+    void HoldRequested(event_token token) const;
+    event_token ResumeRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Calls::VoipPhoneCall, Windows::ApplicationModel::Calls::CallStateChangeEventArgs> & handler) const;
+    using ResumeRequested_revoker = event_revoker<IVoipPhoneCall>;
+    ResumeRequested_revoker ResumeRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Calls::VoipPhoneCall, Windows::ApplicationModel::Calls::CallStateChangeEventArgs> & handler) const;
+    void ResumeRequested(event_token token) const;
+    event_token AnswerRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Calls::VoipPhoneCall, Windows::ApplicationModel::Calls::CallAnswerEventArgs> & acceptHandler) const;
+    using AnswerRequested_revoker = event_revoker<IVoipPhoneCall>;
+    AnswerRequested_revoker AnswerRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Calls::VoipPhoneCall, Windows::ApplicationModel::Calls::CallAnswerEventArgs> & acceptHandler) const;
+    void AnswerRequested(event_token token) const;
+    event_token RejectRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Calls::VoipPhoneCall, Windows::ApplicationModel::Calls::CallRejectEventArgs> & rejectHandler) const;
+    using RejectRequested_revoker = event_revoker<IVoipPhoneCall>;
+    RejectRequested_revoker RejectRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Calls::VoipPhoneCall, Windows::ApplicationModel::Calls::CallRejectEventArgs> & rejectHandler) const;
+    void RejectRequested(event_token token) const;
+    void NotifyCallHeld() const;
+    void NotifyCallActive() const;
+    void NotifyCallEnded() const;
+    hstring ContactName() const;
+    void ContactName(hstring_ref value) const;
+    Windows::Foundation::DateTime StartTime() const;
+    void StartTime(const Windows::Foundation::DateTime & value) const;
+    Windows::ApplicationModel::Calls::VoipPhoneCallMedia CallMedia() const;
+    void CallMedia(Windows::ApplicationModel::Calls::VoipPhoneCallMedia value) const;
+    void NotifyCallReady() const;
+};
 
 }
 

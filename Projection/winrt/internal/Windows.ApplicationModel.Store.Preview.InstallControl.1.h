@@ -117,14 +117,111 @@ template <> struct traits<Windows::ApplicationModel::Store::Preview::InstallCont
 
 namespace Windows::ApplicationModel::Store::Preview::InstallControl {
 
-template <typename T> struct impl_IAppInstallItem;
-template <typename T> struct impl_IAppInstallItem2;
-template <typename T> struct impl_IAppInstallManager;
-template <typename T> struct impl_IAppInstallManager2;
-template <typename T> struct impl_IAppInstallManager3;
-template <typename T> struct impl_IAppInstallManagerItemEventArgs;
-template <typename T> struct impl_IAppInstallStatus;
-template <typename T> struct impl_IAppInstallStatus2;
+template <typename D>
+struct WINRT_EBO impl_IAppInstallItem
+{
+    hstring ProductId() const;
+    hstring PackageFamilyName() const;
+    Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallType InstallType() const;
+    bool IsUserInitiated() const;
+    Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallStatus GetCurrentStatus() const;
+    void Cancel() const;
+    void Pause() const;
+    void Restart() const;
+    event_token Completed(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::IInspectable> & handler) const;
+    using Completed_revoker = event_revoker<IAppInstallItem>;
+    Completed_revoker Completed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::IInspectable> & handler) const;
+    void Completed(event_token token) const;
+    event_token StatusChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::IInspectable> & handler) const;
+    using StatusChanged_revoker = event_revoker<IAppInstallItem>;
+    StatusChanged_revoker StatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem, Windows::IInspectable> & handler) const;
+    void StatusChanged(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppInstallItem2
+{
+    void Cancel(hstring_ref correlationVector) const;
+    void Pause(hstring_ref correlationVector) const;
+    void Restart(hstring_ref correlationVector) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppInstallManager
+{
+    Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> AppInstallItems() const;
+    void Cancel(hstring_ref productId) const;
+    void Pause(hstring_ref productId) const;
+    void Restart(hstring_ref productId) const;
+    event_token ItemCompleted(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManager, Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManagerItemEventArgs> & handler) const;
+    using ItemCompleted_revoker = event_revoker<IAppInstallManager>;
+    ItemCompleted_revoker ItemCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManager, Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManagerItemEventArgs> & handler) const;
+    void ItemCompleted(event_token token) const;
+    event_token ItemStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManager, Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManagerItemEventArgs> & handler) const;
+    using ItemStatusChanged_revoker = event_revoker<IAppInstallManager>;
+    ItemStatusChanged_revoker ItemStatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManager, Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallManagerItemEventArgs> & handler) const;
+    void ItemStatusChanged(event_token token) const;
+    Windows::ApplicationModel::Store::Preview::InstallControl::AutoUpdateSetting AutoUpdateSetting() const;
+    void AutoUpdateSetting(Windows::ApplicationModel::Store::Preview::InstallControl::AutoUpdateSetting value) const;
+    hstring AcquisitionIdentity() const;
+    void AcquisitionIdentity(hstring_ref value) const;
+    Windows::Foundation::IAsyncOperation<bool> GetIsApplicableAsync(hstring_ref productId, hstring_ref skuId) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> StartAppInstallAsync(hstring_ref productId, hstring_ref skuId, bool repair, bool forceUseOfNonRemovableStorage) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> UpdateAppByPackageFamilyNameAsync(hstring_ref packageFamilyName) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> SearchForUpdatesAsync(hstring_ref productId, hstring_ref skuId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>> SearchForAllUpdatesAsync() const;
+    Windows::Foundation::IAsyncOperation<bool> IsStoreBlockedByPolicyAsync(hstring_ref storeClientName, hstring_ref storeClientPublisher) const;
+    Windows::Foundation::IAsyncOperation<bool> GetIsAppAllowedToInstallAsync(hstring_ref productId) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppInstallManager2
+{
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> StartAppInstallAsync(hstring_ref productId, hstring_ref skuId, bool repair, bool forceUseOfNonRemovableStorage, hstring_ref catalogId, hstring_ref bundleId, hstring_ref correlationVector) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> UpdateAppByPackageFamilyNameAsync(hstring_ref packageFamilyName, hstring_ref correlationVector) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> SearchForUpdatesAsync(hstring_ref productId, hstring_ref skuId, hstring_ref catalogId, hstring_ref correlationVector) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>> SearchForAllUpdatesAsync(hstring_ref correlationVector) const;
+    Windows::Foundation::IAsyncOperation<bool> GetIsAppAllowedToInstallAsync(hstring_ref productId, hstring_ref skuId, hstring_ref catalogId, hstring_ref correlationVector) const;
+    void Cancel(hstring_ref productId, hstring_ref correlationVector) const;
+    void Pause(hstring_ref productId, hstring_ref correlationVector) const;
+    void Restart(hstring_ref productId, hstring_ref correlationVector) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppInstallManager3
+{
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>> StartProductInstallAsync(hstring_ref productId, hstring_ref catalogId, hstring_ref flightId, hstring_ref clientId, bool repair, bool forceUseOfNonRemovableStorage, hstring_ref correlationVector, const Windows::Management::Deployment::PackageVolume & targetVolume) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>> StartProductInstallForUserAsync(const Windows::System::User & user, hstring_ref productId, hstring_ref catalogId, hstring_ref flightId, hstring_ref clientId, bool repair, bool forceUseOfNonRemovableStorage, hstring_ref correlationVector, const Windows::Management::Deployment::PackageVolume & targetVolume) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> UpdateAppByPackageFamilyNameForUserAsync(const Windows::System::User & user, hstring_ref packageFamilyName, hstring_ref correlationVector) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem> SearchForUpdatesForUserAsync(const Windows::System::User & user, hstring_ref productId, hstring_ref skuId, hstring_ref catalogId, hstring_ref correlationVector) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem>> SearchForAllUpdatesForUserAsync(const Windows::System::User & user, hstring_ref correlationVector) const;
+    Windows::Foundation::IAsyncOperation<bool> GetIsAppAllowedToInstallForUserAsync(const Windows::System::User & user, hstring_ref productId, hstring_ref skuId, hstring_ref catalogId, hstring_ref correlationVector) const;
+    Windows::Foundation::IAsyncOperation<bool> GetIsApplicableForUserAsync(const Windows::System::User & user, hstring_ref productId, hstring_ref skuId) const;
+    void MoveToFrontOfDownloadQueue(hstring_ref productId, hstring_ref correlationVector) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppInstallManagerItemEventArgs
+{
+    Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallItem Item() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppInstallStatus
+{
+    Windows::ApplicationModel::Store::Preview::InstallControl::AppInstallState InstallState() const;
+    uint64_t DownloadSizeInBytes() const;
+    uint64_t BytesDownloaded() const;
+    double PercentComplete() const;
+    HRESULT ErrorCode() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppInstallStatus2
+{
+    Windows::System::User User() const;
+    bool ReadyForLaunch() const;
+};
 
 }
 

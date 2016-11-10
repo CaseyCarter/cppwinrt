@@ -40,4 +40,15 @@ struct ContactListSyncManagerSyncRequestEventArgs;
 
 }
 
+namespace Windows::ApplicationModel::Contacts::DataProvider {
+
+template <typename T> struct impl_IContactDataProviderConnection;
+template <typename T> struct impl_IContactDataProviderTriggerDetails;
+template <typename T> struct impl_IContactListServerSearchReadBatchRequest;
+template <typename T> struct impl_IContactListServerSearchReadBatchRequestEventArgs;
+template <typename T> struct impl_IContactListSyncManagerSyncRequest;
+template <typename T> struct impl_IContactListSyncManagerSyncRequestEventArgs;
+
+}
+
 }

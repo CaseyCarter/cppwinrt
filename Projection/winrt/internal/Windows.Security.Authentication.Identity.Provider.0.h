@@ -50,6 +50,20 @@ struct SecondaryAuthenticationFactorRegistrationResult;
 
 namespace Windows::Security::Authentication::Identity::Provider {
 
+template <typename T> struct impl_ISecondaryAuthenticationFactorAuthentication;
+template <typename T> struct impl_ISecondaryAuthenticationFactorAuthenticationResult;
+template <typename T> struct impl_ISecondaryAuthenticationFactorAuthenticationStageChangedEventArgs;
+template <typename T> struct impl_ISecondaryAuthenticationFactorAuthenticationStageInfo;
+template <typename T> struct impl_ISecondaryAuthenticationFactorAuthenticationStatics;
+template <typename T> struct impl_ISecondaryAuthenticationFactorInfo;
+template <typename T> struct impl_ISecondaryAuthenticationFactorRegistration;
+template <typename T> struct impl_ISecondaryAuthenticationFactorRegistrationResult;
+template <typename T> struct impl_ISecondaryAuthenticationFactorRegistrationStatics;
+
+}
+
+namespace Windows::Security::Authentication::Identity::Provider {
+
 enum class SecondaryAuthenticationFactorAuthenticationMessage
 {
     Invalid = 0,

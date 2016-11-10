@@ -75,6 +75,27 @@ struct VoipPhoneCall;
 
 namespace Windows::ApplicationModel::Calls {
 
+template <typename T> struct impl_ICallAnswerEventArgs;
+template <typename T> struct impl_ICallRejectEventArgs;
+template <typename T> struct impl_ICallStateChangeEventArgs;
+template <typename T> struct impl_IMuteChangeEventArgs;
+template <typename T> struct impl_IPhoneCallHistoryEntry;
+template <typename T> struct impl_IPhoneCallHistoryEntryAddress;
+template <typename T> struct impl_IPhoneCallHistoryEntryAddressFactory;
+template <typename T> struct impl_IPhoneCallHistoryEntryQueryOptions;
+template <typename T> struct impl_IPhoneCallHistoryEntryReader;
+template <typename T> struct impl_IPhoneCallHistoryManagerForUser;
+template <typename T> struct impl_IPhoneCallHistoryManagerStatics;
+template <typename T> struct impl_IPhoneCallHistoryManagerStatics2;
+template <typename T> struct impl_IPhoneCallHistoryStore;
+template <typename T> struct impl_IVoipCallCoordinator;
+template <typename T> struct impl_IVoipCallCoordinatorStatics;
+template <typename T> struct impl_IVoipPhoneCall;
+
+}
+
+namespace Windows::ApplicationModel::Calls {
+
 enum class PhoneCallHistoryEntryMedia
 {
     Audio = 0,

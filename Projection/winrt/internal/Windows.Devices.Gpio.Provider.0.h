@@ -30,6 +30,16 @@ struct GpioPinProviderValueChangedEventArgs;
 
 namespace Windows::Devices::Gpio::Provider {
 
+template <typename T> struct impl_IGpioControllerProvider;
+template <typename T> struct impl_IGpioPinProvider;
+template <typename T> struct impl_IGpioPinProviderValueChangedEventArgs;
+template <typename T> struct impl_IGpioPinProviderValueChangedEventArgsFactory;
+template <typename T> struct impl_IGpioProvider;
+
+}
+
+namespace Windows::Devices::Gpio::Provider {
+
 enum class ProviderGpioPinDriveMode
 {
     Input = 0,
