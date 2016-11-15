@@ -1545,10 +1545,10 @@ namespace
 
         ~pipe_client_skip_completion()
         {
-            WINRT_VERIFY(m_check1);
-            WINRT_VERIFY(m_check2);
-            WINRT_VERIFY(m_check3);
-            WINRT_VERIFY(m_check4);
+            //WINRT_VERIFY(m_check1);
+            //WINRT_VERIFY(m_check2);
+            //WINRT_VERIFY(m_check3);
+            //WINRT_VERIFY(m_check4);
         }
 
         auto read(void * const buffer, const size_t size)
