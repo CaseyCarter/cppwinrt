@@ -7,6 +7,30 @@ constexpr bool is_base_of_v = std::is_base_of<Base, Derived>::value;
 template<typename T, typename U>
 constexpr bool is_same_v = std::is_same<T, U>::value;
 
+template<typename ...>
+struct disjunction : std::false_type {};
+
+template<typename B>
+struct disjunction<B> : B {};
+
+template<typename B1, typename ... Bn>
+struct disjunction<B1, Bn ...> : std::conditional_t<B1::value, B1, disjunction<Bn ...>> {};
+
+template<typename ... B>
+constexpr bool disjunction_v = disjunction<B ...>::value;
+
+template<typename ...>
+struct conjunction : std::true_type {};
+
+template<typename B>
+struct conjunction<B> : B {};
+
+template<typename B1, typename ... Bn>
+struct conjunction<B1, Bn ...> : std::conditional_t<B1::value, conjunction<Bn ...>, B1> {};
+
+template<typename ... B>
+constexpr bool conjunction_v = conjunction<B ...>::value;
+
 }
 
 namespace ABI {

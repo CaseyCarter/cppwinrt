@@ -1,13 +1,4 @@
 
-namespace ABI::Windows::Foundation {
-
-struct __declspec(uuid("00000035-0000-0000-c000-000000000046")) __declspec(novtable) IActivationFactory : IInspectable
-{
-    virtual HRESULT __stdcall abi_ActivateInstance(IInspectable ** instance) = 0;
-};
-
-}
-
 namespace Windows::Foundation {
 
 struct IActivationFactory;

@@ -345,7 +345,7 @@ namespace impl
 
         unsigned long __stdcall Release() noexcept
         {
-            const uint32_t remaining = just_release();
+            const uint32_t remaining = this->subtract_reference();
 
             if (remaining == 0)
             {
@@ -466,7 +466,14 @@ namespace impl
 
             bool await_suspend(std::experimental::coroutine_handle<>) const noexcept
             {
-                return 0 < promise->just_release();
+                const uint32_t remaining = promise->subtract_reference();
+
+                if (remaining == 0)
+                {
+                    std::atomic_thread_fence(std::memory_order_acquire);
+                }
+
+                return remaining > 0;
             }
         };
 
@@ -515,13 +522,6 @@ namespace impl
         CompletedHandler m_completed;
         AsyncStatus m_status{ AsyncStatus::Started };
         bool m_completed_assigned{ false };
-
-    private:
-
-        uint32_t just_release() noexcept
-        {
-            return this->m_references.fetch_sub(1, std::memory_order_acq_rel) - 1;
-        }
     };
 
     template <typename Promise>

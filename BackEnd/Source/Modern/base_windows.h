@@ -21,6 +21,15 @@ struct __declspec(uuid("af86e2e0-b12d-4c6a-9c5a-d7aa65101e90")) __declspec(novta
 
 }
 
+namespace ABI::Windows::Foundation {
+
+struct __declspec(uuid("00000035-0000-0000-c000-000000000046")) __declspec(novtable) IActivationFactory : IInspectable
+{
+    virtual HRESULT __stdcall abi_ActivateInstance(IInspectable ** instance) = 0;
+};
+
+}
+
 namespace Windows {
 
 struct IUnknown
