@@ -4,6 +4,9 @@
 *.suo
 *.exe
 *.obj
+*_h.h
+*.c
+*.user
 
 x86
 x64
@@ -12,3 +15,5 @@ bin
 obj
 packages
 debug
+release
+.vs

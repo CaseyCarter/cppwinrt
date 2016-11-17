@@ -20,7 +20,7 @@ extern char const base_delegate[4341];
 extern char const base_dependencies[2098];
 extern char const base_error[10109];
 extern char const base_event_consume[2355];
-extern char const base_event_produce[6291];
+extern char const base_event_produce[5967];
 extern char const base_foundation[1125];
 extern char const base_handle[2972];
 extern char const base_implements[21801];
