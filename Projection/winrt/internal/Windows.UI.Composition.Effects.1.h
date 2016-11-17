@@ -35,7 +35,20 @@ template <> struct traits<Windows::UI::Composition::Effects::SceneLightingEffect
 
 namespace Windows::UI::Composition::Effects {
 
-template <typename T> struct impl_ISceneLightingEffect;
+template <typename D>
+struct WINRT_EBO impl_ISceneLightingEffect
+{
+    float AmbientAmount() const;
+    void AmbientAmount(float value) const;
+    float DiffuseAmount() const;
+    void DiffuseAmount(float value) const;
+    Windows::Graphics::Effects::IGraphicsEffectSource NormalMapSource() const;
+    void NormalMapSource(const Windows::Graphics::Effects::IGraphicsEffectSource & value) const;
+    float SpecularAmount() const;
+    void SpecularAmount(float value) const;
+    float SpecularShine() const;
+    void SpecularShine(float value) const;
+};
 
 }
 

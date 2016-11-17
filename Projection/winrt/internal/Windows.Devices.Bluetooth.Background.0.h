@@ -40,4 +40,15 @@ struct RfcommOutboundConnectionInformation;
 
 }
 
+namespace Windows::Devices::Bluetooth::Background {
+
+template <typename T> struct impl_IBluetoothLEAdvertisementPublisherTriggerDetails;
+template <typename T> struct impl_IBluetoothLEAdvertisementWatcherTriggerDetails;
+template <typename T> struct impl_IGattCharacteristicNotificationTriggerDetails;
+template <typename T> struct impl_IRfcommConnectionTriggerDetails;
+template <typename T> struct impl_IRfcommInboundConnectionInformation;
+template <typename T> struct impl_IRfcommOutboundConnectionInformation;
+
+}
+
 }

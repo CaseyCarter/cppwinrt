@@ -130,6 +130,28 @@ struct WebUIWebAuthenticationBrokerContinuationEventArgs;
 
 namespace Windows::UI::WebUI {
 
+template <typename T> struct impl_IActivatedDeferral;
+template <typename T> struct impl_IActivatedEventArgsDeferral;
+template <typename T> struct impl_IActivatedOperation;
+template <typename T> struct impl_IHtmlPrintDocumentSource;
+template <typename T> struct impl_IWebUIActivationStatics;
+template <typename T> struct impl_IWebUIActivationStatics2;
+template <typename T> struct impl_IWebUIBackgroundTaskInstance;
+template <typename T> struct impl_IWebUIBackgroundTaskInstanceStatics;
+template <typename T> struct impl_IWebUINavigatedDeferral;
+template <typename T> struct impl_IWebUINavigatedEventArgs;
+template <typename T> struct impl_IWebUINavigatedOperation;
+template <typename T> struct impl_ActivatedEventHandler;
+template <typename T> struct impl_EnteredBackgroundEventHandler;
+template <typename T> struct impl_LeavingBackgroundEventHandler;
+template <typename T> struct impl_NavigatedEventHandler;
+template <typename T> struct impl_ResumingEventHandler;
+template <typename T> struct impl_SuspendingEventHandler;
+
+}
+
+namespace Windows::UI::WebUI {
+
 enum class PrintContent
 {
     AllPages = 0,

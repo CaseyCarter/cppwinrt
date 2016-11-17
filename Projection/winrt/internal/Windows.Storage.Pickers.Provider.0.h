@@ -54,6 +54,20 @@ struct TargetFileRequestedEventArgs;
 
 namespace Windows::Storage::Pickers::Provider {
 
+template <typename T> struct impl_IFileOpenPickerUI;
+template <typename T> struct impl_IFileRemovedEventArgs;
+template <typename T> struct impl_IFileSavePickerUI;
+template <typename T> struct impl_IPickerClosingDeferral;
+template <typename T> struct impl_IPickerClosingEventArgs;
+template <typename T> struct impl_IPickerClosingOperation;
+template <typename T> struct impl_ITargetFileRequest;
+template <typename T> struct impl_ITargetFileRequestDeferral;
+template <typename T> struct impl_ITargetFileRequestedEventArgs;
+
+}
+
+namespace Windows::Storage::Pickers::Provider {
+
 enum class AddFileResult
 {
     Added = 0,

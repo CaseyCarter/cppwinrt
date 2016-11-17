@@ -106,19 +106,67 @@ template <> struct traits<Windows::UI::Xaml::Navigation::PageStackEntry> { using
 
 namespace Windows::UI::Xaml::Navigation {
 
-template <typename T> struct impl_INavigatingCancelEventArgs;
-template <typename T> struct impl_INavigatingCancelEventArgs2;
-template <typename T> struct impl_INavigationEventArgs;
-template <typename T> struct impl_INavigationEventArgs2;
-template <typename T> struct impl_INavigationFailedEventArgs;
-template <typename T> struct impl_IPageStackEntry;
-template <typename T> struct impl_IPageStackEntryFactory;
-template <typename T> struct impl_IPageStackEntryStatics;
-template <typename T> struct impl_LoadCompletedEventHandler;
-template <typename T> struct impl_NavigatedEventHandler;
-template <typename T> struct impl_NavigatingCancelEventHandler;
-template <typename T> struct impl_NavigationFailedEventHandler;
-template <typename T> struct impl_NavigationStoppedEventHandler;
+template <typename D>
+struct WINRT_EBO impl_INavigatingCancelEventArgs
+{
+    bool Cancel() const;
+    void Cancel(bool value) const;
+    Windows::UI::Xaml::Navigation::NavigationMode NavigationMode() const;
+    Windows::UI::Xaml::Interop::TypeName SourcePageType() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_INavigatingCancelEventArgs2
+{
+    Windows::IInspectable Parameter() const;
+    Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo NavigationTransitionInfo() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_INavigationEventArgs
+{
+    Windows::IInspectable Content() const;
+    Windows::IInspectable Parameter() const;
+    Windows::UI::Xaml::Interop::TypeName SourcePageType() const;
+    Windows::UI::Xaml::Navigation::NavigationMode NavigationMode() const;
+    Windows::Foundation::Uri Uri() const;
+    void Uri(const Windows::Foundation::Uri & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_INavigationEventArgs2
+{
+    Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo NavigationTransitionInfo() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_INavigationFailedEventArgs
+{
+    HRESULT Exception() const;
+    bool Handled() const;
+    void Handled(bool value) const;
+    Windows::UI::Xaml::Interop::TypeName SourcePageType() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPageStackEntry
+{
+    Windows::UI::Xaml::Interop::TypeName SourcePageType() const;
+    Windows::IInspectable Parameter() const;
+    Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo NavigationTransitionInfo() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPageStackEntryFactory
+{
+    Windows::UI::Xaml::Navigation::PageStackEntry CreateInstance(const Windows::UI::Xaml::Interop::TypeName & sourcePageType, const Windows::IInspectable & parameter, const Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo & navigationTransitionInfo) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPageStackEntryStatics
+{
+    Windows::UI::Xaml::DependencyProperty SourcePageTypeProperty() const;
+};
 
 }
 

@@ -42,6 +42,17 @@ struct SocialUserInfo;
 
 namespace Windows::ApplicationModel::SocialInfo {
 
+template <typename T> struct impl_ISocialFeedChildItem;
+template <typename T> struct impl_ISocialFeedContent;
+template <typename T> struct impl_ISocialFeedItem;
+template <typename T> struct impl_ISocialFeedSharedItem;
+template <typename T> struct impl_ISocialItemThumbnail;
+template <typename T> struct impl_ISocialUserInfo;
+
+}
+
+namespace Windows::ApplicationModel::SocialInfo {
+
 enum class SocialFeedItemStyle
 {
     Default = 0,

@@ -60,11 +60,47 @@ template <> struct traits<Windows::Networking::HostName> { using default_interfa
 
 namespace Windows::Networking {
 
-template <typename T> struct impl_IEndpointPair;
-template <typename T> struct impl_IEndpointPairFactory;
-template <typename T> struct impl_IHostName;
-template <typename T> struct impl_IHostNameFactory;
-template <typename T> struct impl_IHostNameStatics;
+template <typename D>
+struct WINRT_EBO impl_IEndpointPair
+{
+    Windows::Networking::HostName LocalHostName() const;
+    void LocalHostName(const Windows::Networking::HostName & value) const;
+    hstring LocalServiceName() const;
+    void LocalServiceName(hstring_ref value) const;
+    Windows::Networking::HostName RemoteHostName() const;
+    void RemoteHostName(const Windows::Networking::HostName & value) const;
+    hstring RemoteServiceName() const;
+    void RemoteServiceName(hstring_ref value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEndpointPairFactory
+{
+    Windows::Networking::EndpointPair CreateEndpointPair(const Windows::Networking::HostName & localHostName, hstring_ref localServiceName, const Windows::Networking::HostName & remoteHostName, hstring_ref remoteServiceName) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IHostName
+{
+    Windows::Networking::Connectivity::IPInformation IPInformation() const;
+    hstring RawName() const;
+    hstring DisplayName() const;
+    hstring CanonicalName() const;
+    Windows::Networking::HostNameType Type() const;
+    bool IsEqual(const Windows::Networking::HostName & hostName) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IHostNameFactory
+{
+    Windows::Networking::HostName CreateHostName(hstring_ref hostName) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IHostNameStatics
+{
+    int32_t Compare(hstring_ref value1, hstring_ref value2) const;
+};
 
 }
 

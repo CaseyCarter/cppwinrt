@@ -274,35 +274,271 @@ template <> struct traits<Windows::ApplicationModel::DataTransfer::TargetApplica
 
 namespace Windows::ApplicationModel::DataTransfer {
 
-template <typename T> struct impl_IClipboardStatics;
-template <typename T> struct impl_IDataPackage;
-template <typename T> struct impl_IDataPackage2;
-template <typename T> struct impl_IDataPackagePropertySet;
-template <typename T> struct impl_IDataPackagePropertySet2;
-template <typename T> struct impl_IDataPackagePropertySet3;
-template <typename T> struct impl_IDataPackagePropertySetView;
-template <typename T> struct impl_IDataPackagePropertySetView2;
-template <typename T> struct impl_IDataPackagePropertySetView3;
-template <typename T> struct impl_IDataPackageView;
-template <typename T> struct impl_IDataPackageView2;
-template <typename T> struct impl_IDataPackageView3;
-template <typename T> struct impl_IDataPackageView4;
-template <typename T> struct impl_IDataProviderDeferral;
-template <typename T> struct impl_IDataProviderRequest;
-template <typename T> struct impl_IDataRequest;
-template <typename T> struct impl_IDataRequestDeferral;
-template <typename T> struct impl_IDataRequestedEventArgs;
-template <typename T> struct impl_IDataTransferManager;
-template <typename T> struct impl_IDataTransferManagerStatics;
-template <typename T> struct impl_IDataTransferManagerStatics2;
-template <typename T> struct impl_IHtmlFormatHelperStatics;
-template <typename T> struct impl_IOperationCompletedEventArgs;
-template <typename T> struct impl_IOperationCompletedEventArgs2;
-template <typename T> struct impl_ISharedStorageAccessManagerStatics;
-template <typename T> struct impl_IStandardDataFormatsStatics;
-template <typename T> struct impl_IStandardDataFormatsStatics2;
-template <typename T> struct impl_ITargetApplicationChosenEventArgs;
-template <typename T> struct impl_DataProviderHandler;
+template <typename D>
+struct WINRT_EBO impl_IClipboardStatics
+{
+    Windows::ApplicationModel::DataTransfer::DataPackageView GetContent() const;
+    void SetContent(const Windows::ApplicationModel::DataTransfer::DataPackage & content) const;
+    void Flush() const;
+    void Clear() const;
+    event_token ContentChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & changeHandler) const;
+    using ContentChanged_revoker = event_revoker<IClipboardStatics>;
+    ContentChanged_revoker ContentChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & changeHandler) const;
+    void ContentChanged(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataPackage
+{
+    Windows::ApplicationModel::DataTransfer::DataPackageView GetView() const;
+    Windows::ApplicationModel::DataTransfer::DataPackagePropertySet Properties() const;
+    Windows::ApplicationModel::DataTransfer::DataPackageOperation RequestedOperation() const;
+    void RequestedOperation(Windows::ApplicationModel::DataTransfer::DataPackageOperation value) const;
+    event_token OperationCompleted(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::ApplicationModel::DataTransfer::OperationCompletedEventArgs> & handler) const;
+    using OperationCompleted_revoker = event_revoker<IDataPackage>;
+    OperationCompleted_revoker OperationCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::ApplicationModel::DataTransfer::OperationCompletedEventArgs> & handler) const;
+    void OperationCompleted(event_token eventCookie) const;
+    event_token Destroyed(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::IInspectable> & handler) const;
+    using Destroyed_revoker = event_revoker<IDataPackage>;
+    Destroyed_revoker Destroyed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataPackage, Windows::IInspectable> & handler) const;
+    void Destroyed(event_token eventCookie) const;
+    void SetData(hstring_ref formatId, const Windows::IInspectable & value) const;
+    void SetDataProvider(hstring_ref formatId, const Windows::ApplicationModel::DataTransfer::DataProviderHandler & delayRenderer) const;
+    void SetText(hstring_ref value) const;
+    void SetUri(const Windows::Foundation::Uri & value) const;
+    void SetHtmlFormat(hstring_ref value) const;
+    Windows::Foundation::Collections::IMap<hstring, Windows::Storage::Streams::RandomAccessStreamReference> ResourceMap() const;
+    void SetRtf(hstring_ref value) const;
+    void SetBitmap(const Windows::Storage::Streams::RandomAccessStreamReference & value) const;
+    void SetStorageItems(const Windows::Foundation::Collections::IIterable<Windows::Storage::IStorageItem> & value) const;
+    void SetStorageItems(const Windows::Foundation::Collections::IIterable<Windows::Storage::IStorageItem> & value, bool readOnly) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataPackage2
+{
+    void SetApplicationLink(const Windows::Foundation::Uri & value) const;
+    void SetWebLink(const Windows::Foundation::Uri & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataPackagePropertySet
+{
+    hstring Title() const;
+    void Title(hstring_ref value) const;
+    hstring Description() const;
+    void Description(hstring_ref value) const;
+    Windows::Storage::Streams::IRandomAccessStreamReference Thumbnail() const;
+    void Thumbnail(const Windows::Storage::Streams::IRandomAccessStreamReference & value) const;
+    Windows::Foundation::Collections::IVector<hstring> FileTypes() const;
+    hstring ApplicationName() const;
+    void ApplicationName(hstring_ref value) const;
+    Windows::Foundation::Uri ApplicationListingUri() const;
+    void ApplicationListingUri(const Windows::Foundation::Uri & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataPackagePropertySet2
+{
+    Windows::Foundation::Uri ContentSourceWebLink() const;
+    void ContentSourceWebLink(const Windows::Foundation::Uri & value) const;
+    Windows::Foundation::Uri ContentSourceApplicationLink() const;
+    void ContentSourceApplicationLink(const Windows::Foundation::Uri & value) const;
+    hstring PackageFamilyName() const;
+    void PackageFamilyName(hstring_ref value) const;
+    Windows::Storage::Streams::IRandomAccessStreamReference Square30x30Logo() const;
+    void Square30x30Logo(const Windows::Storage::Streams::IRandomAccessStreamReference & value) const;
+    Windows::UI::Color LogoBackgroundColor() const;
+    void LogoBackgroundColor(const Windows::UI::Color & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataPackagePropertySet3
+{
+    hstring EnterpriseId() const;
+    void EnterpriseId(hstring_ref value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataPackagePropertySetView
+{
+    hstring Title() const;
+    hstring Description() const;
+    Windows::Storage::Streams::RandomAccessStreamReference Thumbnail() const;
+    Windows::Foundation::Collections::IVectorView<hstring> FileTypes() const;
+    hstring ApplicationName() const;
+    Windows::Foundation::Uri ApplicationListingUri() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataPackagePropertySetView2
+{
+    hstring PackageFamilyName() const;
+    Windows::Foundation::Uri ContentSourceWebLink() const;
+    Windows::Foundation::Uri ContentSourceApplicationLink() const;
+    Windows::Storage::Streams::IRandomAccessStreamReference Square30x30Logo() const;
+    Windows::UI::Color LogoBackgroundColor() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataPackagePropertySetView3
+{
+    hstring EnterpriseId() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataPackageView
+{
+    Windows::ApplicationModel::DataTransfer::DataPackagePropertySetView Properties() const;
+    Windows::ApplicationModel::DataTransfer::DataPackageOperation RequestedOperation() const;
+    void ReportOperationCompleted(Windows::ApplicationModel::DataTransfer::DataPackageOperation value) const;
+    Windows::Foundation::Collections::IVectorView<hstring> AvailableFormats() const;
+    bool Contains(hstring_ref formatId) const;
+    Windows::Foundation::IAsyncOperation<Windows::IInspectable> GetDataAsync(hstring_ref formatId) const;
+    Windows::Foundation::IAsyncOperation<hstring> GetTextAsync() const;
+    Windows::Foundation::IAsyncOperation<hstring> GetTextAsync(hstring_ref formatId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Uri> GetUriAsync() const;
+    Windows::Foundation::IAsyncOperation<hstring> GetHtmlFormatAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMapView<hstring, Windows::Storage::Streams::RandomAccessStreamReference>> GetResourceMapAsync() const;
+    Windows::Foundation::IAsyncOperation<hstring> GetRtfAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::RandomAccessStreamReference> GetBitmapAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Storage::IStorageItem>> GetStorageItemsAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataPackageView2
+{
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Uri> GetApplicationLinkAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Uri> GetWebLinkAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataPackageView3
+{
+    Windows::Foundation::IAsyncOperation<winrt::Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult> RequestAccessAsync() const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult> RequestAccessAsync(hstring_ref enterpriseId) const;
+    Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult UnlockAndAssumeEnterpriseIdentity() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataPackageView4
+{
+    void SetAcceptedFormatId(hstring_ref formatId) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataProviderDeferral
+{
+    void Complete() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataProviderRequest
+{
+    hstring FormatId() const;
+    Windows::Foundation::DateTime Deadline() const;
+    Windows::ApplicationModel::DataTransfer::DataProviderDeferral GetDeferral() const;
+    void SetData(const Windows::IInspectable & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataRequest
+{
+    Windows::ApplicationModel::DataTransfer::DataPackage Data() const;
+    void Data(const Windows::ApplicationModel::DataTransfer::DataPackage & value) const;
+    Windows::Foundation::DateTime Deadline() const;
+    void FailWithDisplayText(hstring_ref value) const;
+    Windows::ApplicationModel::DataTransfer::DataRequestDeferral GetDeferral() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataRequestDeferral
+{
+    void Complete() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataRequestedEventArgs
+{
+    Windows::ApplicationModel::DataTransfer::DataRequest Request() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataTransferManager
+{
+    event_token DataRequested(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::DataRequestedEventArgs> & eventHandler) const;
+    using DataRequested_revoker = event_revoker<IDataTransferManager>;
+    DataRequested_revoker DataRequested(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::DataRequestedEventArgs> & eventHandler) const;
+    void DataRequested(event_token eventCookie) const;
+    event_token TargetApplicationChosen(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::TargetApplicationChosenEventArgs> & eventHandler) const;
+    using TargetApplicationChosen_revoker = event_revoker<IDataTransferManager>;
+    TargetApplicationChosen_revoker TargetApplicationChosen(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::DataTransfer::DataTransferManager, Windows::ApplicationModel::DataTransfer::TargetApplicationChosenEventArgs> & eventHandler) const;
+    void TargetApplicationChosen(event_token eventCookie) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataTransferManagerStatics
+{
+    void ShowShareUI() const;
+    Windows::ApplicationModel::DataTransfer::DataTransferManager GetForCurrentView() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataTransferManagerStatics2
+{
+    bool IsSupported() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IHtmlFormatHelperStatics
+{
+    hstring GetStaticFragment(hstring_ref htmlFormat) const;
+    hstring CreateHtmlFormat(hstring_ref htmlFragment) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IOperationCompletedEventArgs
+{
+    Windows::ApplicationModel::DataTransfer::DataPackageOperation Operation() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IOperationCompletedEventArgs2
+{
+    hstring AcceptedFormatId() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISharedStorageAccessManagerStatics
+{
+    hstring AddFile(const Windows::Storage::IStorageFile & file) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> RedeemTokenForFileAsync(hstring_ref token) const;
+    void RemoveFile(hstring_ref token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStandardDataFormatsStatics
+{
+    hstring Text() const;
+    hstring Uri() const;
+    hstring Html() const;
+    hstring Rtf() const;
+    hstring Bitmap() const;
+    hstring StorageItems() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStandardDataFormatsStatics2
+{
+    hstring WebLink() const;
+    hstring ApplicationLink() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITargetApplicationChosenEventArgs
+{
+    hstring ApplicationName() const;
+};
 
 }
 

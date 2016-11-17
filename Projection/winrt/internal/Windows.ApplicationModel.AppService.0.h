@@ -53,6 +53,21 @@ struct AppServiceTriggerDetails;
 
 namespace Windows::ApplicationModel::AppService {
 
+template <typename T> struct impl_IAppServiceCatalogStatics;
+template <typename T> struct impl_IAppServiceClosedEventArgs;
+template <typename T> struct impl_IAppServiceConnection;
+template <typename T> struct impl_IAppServiceConnection2;
+template <typename T> struct impl_IAppServiceDeferral;
+template <typename T> struct impl_IAppServiceRequest;
+template <typename T> struct impl_IAppServiceRequestReceivedEventArgs;
+template <typename T> struct impl_IAppServiceResponse;
+template <typename T> struct impl_IAppServiceTriggerDetails;
+template <typename T> struct impl_IAppServiceTriggerDetails2;
+
+}
+
+namespace Windows::ApplicationModel::AppService {
+
 enum class AppServiceClosedStatus
 {
     Completed = 0,

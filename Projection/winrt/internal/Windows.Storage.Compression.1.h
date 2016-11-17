@@ -46,10 +46,31 @@ template <> struct traits<Windows::Storage::Compression::Decompressor> { using d
 
 namespace Windows::Storage::Compression {
 
-template <typename T> struct impl_ICompressor;
-template <typename T> struct impl_ICompressorFactory;
-template <typename T> struct impl_IDecompressor;
-template <typename T> struct impl_IDecompressorFactory;
+template <typename D>
+struct WINRT_EBO impl_ICompressor
+{
+    Windows::Foundation::IAsyncOperation<bool> FinishAsync() const;
+    Windows::Storage::Streams::IOutputStream DetachStream() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICompressorFactory
+{
+    Windows::Storage::Compression::Compressor CreateCompressor(const Windows::Storage::Streams::IOutputStream & underlyingStream) const;
+    Windows::Storage::Compression::Compressor CreateCompressorEx(const Windows::Storage::Streams::IOutputStream & underlyingStream, Windows::Storage::Compression::CompressAlgorithm algorithm, uint32_t blockSize) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDecompressor
+{
+    Windows::Storage::Streams::IInputStream DetachStream() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDecompressorFactory
+{
+    Windows::Storage::Compression::Decompressor CreateDecompressor(const Windows::Storage::Streams::IInputStream & underlyingStream) const;
+};
 
 }
 

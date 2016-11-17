@@ -1,6 +1,5 @@
 #include "pch.h"
 #include "catch.hpp"
-#include "event.h"
 
 using namespace winrt;
 using namespace Windows;
@@ -38,7 +37,7 @@ struct TestSplashScreen : implements<TestSplashScreen, ISplashScreen, ABI::Windo
 
     event<TypedEventHandler<SplashScreen, Windows::IInspectable>> m_dismissed;
 
-    Rect ImageLocation() const
+    Rect ImageLocation()
     {
         m_dismissed(*this, nullptr);
 
@@ -78,7 +77,7 @@ struct TestClipboardStatics : implements<TestClipboardStatics, IClipboardStatics
     void Flush() const {}
     void Clear() const {}
 
-    void SetContent(const DataPackage &) const
+    void SetContent(const DataPackage &)
     {
         m_contentChanged(*this, nullptr);
     }

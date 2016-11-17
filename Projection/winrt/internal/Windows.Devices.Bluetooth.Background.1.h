@@ -75,12 +75,53 @@ template <> struct traits<Windows::Devices::Bluetooth::Background::RfcommOutboun
 
 namespace Windows::Devices::Bluetooth::Background {
 
-template <typename T> struct impl_IBluetoothLEAdvertisementPublisherTriggerDetails;
-template <typename T> struct impl_IBluetoothLEAdvertisementWatcherTriggerDetails;
-template <typename T> struct impl_IGattCharacteristicNotificationTriggerDetails;
-template <typename T> struct impl_IRfcommConnectionTriggerDetails;
-template <typename T> struct impl_IRfcommInboundConnectionInformation;
-template <typename T> struct impl_IRfcommOutboundConnectionInformation;
+template <typename D>
+struct WINRT_EBO impl_IBluetoothLEAdvertisementPublisherTriggerDetails
+{
+    Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisherStatus Status() const;
+    Windows::Devices::Bluetooth::BluetoothError Error() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBluetoothLEAdvertisementWatcherTriggerDetails
+{
+    Windows::Devices::Bluetooth::BluetoothError Error() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementReceivedEventArgs> Advertisements() const;
+    Windows::Devices::Bluetooth::BluetoothSignalStrengthFilter SignalStrengthFilter() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGattCharacteristicNotificationTriggerDetails
+{
+    Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic Characteristic() const;
+    Windows::Storage::Streams::IBuffer Value() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRfcommConnectionTriggerDetails
+{
+    Windows::Networking::Sockets::StreamSocket Socket() const;
+    bool Incoming() const;
+    Windows::Devices::Bluetooth::BluetoothDevice RemoteDevice() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRfcommInboundConnectionInformation
+{
+    Windows::Storage::Streams::IBuffer SdpRecord() const;
+    void SdpRecord(const Windows::Storage::Streams::IBuffer & value) const;
+    Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId LocalServiceId() const;
+    void LocalServiceId(const Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId & value) const;
+    Windows::Devices::Bluetooth::BluetoothServiceCapabilities ServiceCapabilities() const;
+    void ServiceCapabilities(Windows::Devices::Bluetooth::BluetoothServiceCapabilities value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRfcommOutboundConnectionInformation
+{
+    Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId RemoteServiceId() const;
+    void RemoteServiceId(const Windows::Devices::Bluetooth::Rfcomm::RfcommServiceId & value) const;
+};
 
 }
 

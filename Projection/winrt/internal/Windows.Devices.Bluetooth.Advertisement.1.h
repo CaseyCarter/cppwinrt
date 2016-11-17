@@ -182,22 +182,175 @@ template <> struct traits<Windows::Devices::Bluetooth::Advertisement::BluetoothL
 
 namespace Windows::Devices::Bluetooth::Advertisement {
 
-template <typename T> struct impl_IBluetoothLEAdvertisement;
-template <typename T> struct impl_IBluetoothLEAdvertisementBytePattern;
-template <typename T> struct impl_IBluetoothLEAdvertisementBytePatternFactory;
-template <typename T> struct impl_IBluetoothLEAdvertisementDataSection;
-template <typename T> struct impl_IBluetoothLEAdvertisementDataSectionFactory;
-template <typename T> struct impl_IBluetoothLEAdvertisementDataTypesStatics;
-template <typename T> struct impl_IBluetoothLEAdvertisementFilter;
-template <typename T> struct impl_IBluetoothLEAdvertisementPublisher;
-template <typename T> struct impl_IBluetoothLEAdvertisementPublisherFactory;
-template <typename T> struct impl_IBluetoothLEAdvertisementPublisherStatusChangedEventArgs;
-template <typename T> struct impl_IBluetoothLEAdvertisementReceivedEventArgs;
-template <typename T> struct impl_IBluetoothLEAdvertisementWatcher;
-template <typename T> struct impl_IBluetoothLEAdvertisementWatcherFactory;
-template <typename T> struct impl_IBluetoothLEAdvertisementWatcherStoppedEventArgs;
-template <typename T> struct impl_IBluetoothLEManufacturerData;
-template <typename T> struct impl_IBluetoothLEManufacturerDataFactory;
+template <typename D>
+struct WINRT_EBO impl_IBluetoothLEAdvertisement
+{
+    Windows::Foundation::IReference<winrt::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFlags> Flags() const;
+    void Flags(const Windows::Foundation::IReference<winrt::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFlags> & value) const;
+    hstring LocalName() const;
+    void LocalName(hstring_ref value) const;
+    Windows::Foundation::Collections::IVector<GUID> ServiceUuids() const;
+    Windows::Foundation::Collections::IVector<Windows::Devices::Bluetooth::Advertisement::BluetoothLEManufacturerData> ManufacturerData() const;
+    Windows::Foundation::Collections::IVector<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementDataSection> DataSections() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::Advertisement::BluetoothLEManufacturerData> GetManufacturerDataByCompanyId(uint16_t companyId) const;
+    Windows::Foundation::Collections::IVectorView<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementDataSection> GetSectionsByType(uint8_t type) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBluetoothLEAdvertisementBytePattern
+{
+    uint8_t DataType() const;
+    void DataType(uint8_t value) const;
+    int16_t Offset() const;
+    void Offset(int16_t value) const;
+    Windows::Storage::Streams::IBuffer Data() const;
+    void Data(const Windows::Storage::Streams::IBuffer & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBluetoothLEAdvertisementBytePatternFactory
+{
+    Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementBytePattern Create(uint8_t dataType, int16_t offset, const Windows::Storage::Streams::IBuffer & data) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBluetoothLEAdvertisementDataSection
+{
+    uint8_t DataType() const;
+    void DataType(uint8_t value) const;
+    Windows::Storage::Streams::IBuffer Data() const;
+    void Data(const Windows::Storage::Streams::IBuffer & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBluetoothLEAdvertisementDataSectionFactory
+{
+    Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementDataSection Create(uint8_t dataType, const Windows::Storage::Streams::IBuffer & data) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBluetoothLEAdvertisementDataTypesStatics
+{
+    uint8_t Flags() const;
+    uint8_t IncompleteService16BitUuids() const;
+    uint8_t CompleteService16BitUuids() const;
+    uint8_t IncompleteService32BitUuids() const;
+    uint8_t CompleteService32BitUuids() const;
+    uint8_t IncompleteService128BitUuids() const;
+    uint8_t CompleteService128BitUuids() const;
+    uint8_t ShortenedLocalName() const;
+    uint8_t CompleteLocalName() const;
+    uint8_t TxPowerLevel() const;
+    uint8_t SlaveConnectionIntervalRange() const;
+    uint8_t ServiceSolicitation16BitUuids() const;
+    uint8_t ServiceSolicitation32BitUuids() const;
+    uint8_t ServiceSolicitation128BitUuids() const;
+    uint8_t ServiceData16BitUuids() const;
+    uint8_t ServiceData32BitUuids() const;
+    uint8_t ServiceData128BitUuids() const;
+    uint8_t PublicTargetAddress() const;
+    uint8_t RandomTargetAddress() const;
+    uint8_t Appearance() const;
+    uint8_t AdvertisingInterval() const;
+    uint8_t ManufacturerSpecificData() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBluetoothLEAdvertisementFilter
+{
+    Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisement Advertisement() const;
+    void Advertisement(const Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisement & value) const;
+    Windows::Foundation::Collections::IVector<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementBytePattern> BytePatterns() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBluetoothLEAdvertisementPublisher
+{
+    Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisherStatus Status() const;
+    Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisement Advertisement() const;
+    void Start() const;
+    void Stop() const;
+    event_token StatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisher, Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisherStatusChangedEventArgs> & handler) const;
+    using StatusChanged_revoker = event_revoker<IBluetoothLEAdvertisementPublisher>;
+    StatusChanged_revoker StatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisher, Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisherStatusChangedEventArgs> & handler) const;
+    void StatusChanged(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBluetoothLEAdvertisementPublisherFactory
+{
+    Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisher Create(const Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisement & advertisement) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBluetoothLEAdvertisementPublisherStatusChangedEventArgs
+{
+    Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementPublisherStatus Status() const;
+    Windows::Devices::Bluetooth::BluetoothError Error() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBluetoothLEAdvertisementReceivedEventArgs
+{
+    int16_t RawSignalStrengthInDBm() const;
+    uint64_t BluetoothAddress() const;
+    Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementType AdvertisementType() const;
+    Windows::Foundation::DateTime Timestamp() const;
+    Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisement Advertisement() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBluetoothLEAdvertisementWatcher
+{
+    Windows::Foundation::TimeSpan MinSamplingInterval() const;
+    Windows::Foundation::TimeSpan MaxSamplingInterval() const;
+    Windows::Foundation::TimeSpan MinOutOfRangeTimeout() const;
+    Windows::Foundation::TimeSpan MaxOutOfRangeTimeout() const;
+    Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcherStatus Status() const;
+    Windows::Devices::Bluetooth::Advertisement::BluetoothLEScanningMode ScanningMode() const;
+    void ScanningMode(Windows::Devices::Bluetooth::Advertisement::BluetoothLEScanningMode value) const;
+    Windows::Devices::Bluetooth::BluetoothSignalStrengthFilter SignalStrengthFilter() const;
+    void SignalStrengthFilter(const Windows::Devices::Bluetooth::BluetoothSignalStrengthFilter & value) const;
+    Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFilter AdvertisementFilter() const;
+    void AdvertisementFilter(const Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFilter & value) const;
+    void Start() const;
+    void Stop() const;
+    event_token Received(const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcher, Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementReceivedEventArgs> & handler) const;
+    using Received_revoker = event_revoker<IBluetoothLEAdvertisementWatcher>;
+    Received_revoker Received(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcher, Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementReceivedEventArgs> & handler) const;
+    void Received(event_token token) const;
+    event_token Stopped(const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcher, Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcherStoppedEventArgs> & handler) const;
+    using Stopped_revoker = event_revoker<IBluetoothLEAdvertisementWatcher>;
+    Stopped_revoker Stopped(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcher, Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcherStoppedEventArgs> & handler) const;
+    void Stopped(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBluetoothLEAdvertisementWatcherFactory
+{
+    Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcher Create(const Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFilter & advertisementFilter) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBluetoothLEAdvertisementWatcherStoppedEventArgs
+{
+    Windows::Devices::Bluetooth::BluetoothError Error() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBluetoothLEManufacturerData
+{
+    uint16_t CompanyId() const;
+    void CompanyId(uint16_t value) const;
+    Windows::Storage::Streams::IBuffer Data() const;
+    void Data(const Windows::Storage::Streams::IBuffer & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBluetoothLEManufacturerDataFactory
+{
+    Windows::Devices::Bluetooth::Advertisement::BluetoothLEManufacturerData Create(uint16_t companyId, const Windows::Storage::Streams::IBuffer & data) const;
+};
 
 }
 

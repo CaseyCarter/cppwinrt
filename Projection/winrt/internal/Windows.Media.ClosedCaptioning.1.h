@@ -36,7 +36,22 @@ namespace ABI {
 
 namespace Windows::Media::ClosedCaptioning {
 
-template <typename T> struct impl_IClosedCaptionPropertiesStatics;
+template <typename D>
+struct WINRT_EBO impl_IClosedCaptionPropertiesStatics
+{
+    Windows::Media::ClosedCaptioning::ClosedCaptionColor FontColor() const;
+    Windows::UI::Color ComputedFontColor() const;
+    Windows::Media::ClosedCaptioning::ClosedCaptionOpacity FontOpacity() const;
+    Windows::Media::ClosedCaptioning::ClosedCaptionSize FontSize() const;
+    Windows::Media::ClosedCaptioning::ClosedCaptionStyle FontStyle() const;
+    Windows::Media::ClosedCaptioning::ClosedCaptionEdgeEffect FontEffect() const;
+    Windows::Media::ClosedCaptioning::ClosedCaptionColor BackgroundColor() const;
+    Windows::UI::Color ComputedBackgroundColor() const;
+    Windows::Media::ClosedCaptioning::ClosedCaptionOpacity BackgroundOpacity() const;
+    Windows::Media::ClosedCaptioning::ClosedCaptionColor RegionColor() const;
+    Windows::UI::Color ComputedRegionColor() const;
+    Windows::Media::ClosedCaptioning::ClosedCaptionOpacity RegionOpacity() const;
+};
 
 }
 

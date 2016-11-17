@@ -114,60 +114,6 @@ template <> struct __declspec(uuid("92902a07-2f18-56e9-87fb-24fe19f70688")) __de
 
 namespace Windows::Devices::WiFi {
 
-template <typename D>
-struct WINRT_EBO impl_IWiFiAdapter
-{
-    Windows::Networking::Connectivity::NetworkAdapter NetworkAdapter() const;
-    Windows::Foundation::IAsyncAction ScanAsync() const;
-    Windows::Devices::WiFi::WiFiNetworkReport NetworkReport() const;
-    event_token AvailableNetworksChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFi::WiFiAdapter, Windows::IInspectable> & args) const;
-    using AvailableNetworksChanged_revoker = event_revoker<IWiFiAdapter>;
-    AvailableNetworksChanged_revoker AvailableNetworksChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::WiFi::WiFiAdapter, Windows::IInspectable> & args) const;
-    void AvailableNetworksChanged(event_token eventCookie) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::WiFi::WiFiConnectionResult> ConnectAsync(const Windows::Devices::WiFi::WiFiAvailableNetwork & availableNetwork, Windows::Devices::WiFi::WiFiReconnectionKind reconnectionKind) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::WiFi::WiFiConnectionResult> ConnectAsync(const Windows::Devices::WiFi::WiFiAvailableNetwork & availableNetwork, Windows::Devices::WiFi::WiFiReconnectionKind reconnectionKind, const Windows::Security::Credentials::PasswordCredential & passwordCredential) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::WiFi::WiFiConnectionResult> ConnectAsync(const Windows::Devices::WiFi::WiFiAvailableNetwork & availableNetwork, Windows::Devices::WiFi::WiFiReconnectionKind reconnectionKind, const Windows::Security::Credentials::PasswordCredential & passwordCredential, hstring_ref ssid) const;
-    void Disconnect() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IWiFiAdapterStatics
-{
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::WiFi::WiFiAdapter>> FindAllAdaptersAsync() const;
-    hstring GetDeviceSelector() const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::WiFi::WiFiAdapter> FromIdAsync(hstring_ref deviceId) const;
-    Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::WiFi::WiFiAccessStatus> RequestAccessAsync() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IWiFiAvailableNetwork
-{
-    Windows::Foundation::TimeSpan Uptime() const;
-    hstring Ssid() const;
-    hstring Bssid() const;
-    int32_t ChannelCenterFrequencyInKilohertz() const;
-    double NetworkRssiInDecibelMilliwatts() const;
-    uint8_t SignalBars() const;
-    Windows::Devices::WiFi::WiFiNetworkKind NetworkKind() const;
-    Windows::Devices::WiFi::WiFiPhyKind PhyKind() const;
-    Windows::Networking::Connectivity::NetworkSecuritySettings SecuritySettings() const;
-    Windows::Foundation::TimeSpan BeaconInterval() const;
-    bool IsWiFiDirect() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IWiFiConnectionResult
-{
-    Windows::Devices::WiFi::WiFiConnectionStatus ConnectionStatus() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IWiFiNetworkReport
-{
-    Windows::Foundation::DateTime Timestamp() const;
-    Windows::Foundation::Collections::IVectorView<Windows::Devices::WiFi::WiFiAvailableNetwork> AvailableNetworks() const;
-};
-
 struct IWiFiAdapter :
     Windows::IInspectable,
     impl::consume<IWiFiAdapter>

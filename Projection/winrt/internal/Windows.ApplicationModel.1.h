@@ -247,30 +247,226 @@ template <> struct traits<Windows::ApplicationModel::SuspendingOperation> { usin
 
 namespace Windows::ApplicationModel {
 
-template <typename T> struct impl_IAppDisplayInfo;
-template <typename T> struct impl_IAppInfo;
-template <typename T> struct impl_IDesignModeStatics;
-template <typename T> struct impl_IEnteredBackgroundEventArgs;
-template <typename T> struct impl_ILeavingBackgroundEventArgs;
-template <typename T> struct impl_IPackage;
-template <typename T> struct impl_IPackage2;
-template <typename T> struct impl_IPackage3;
-template <typename T> struct impl_IPackage4;
-template <typename T> struct impl_IPackageCatalog;
-template <typename T> struct impl_IPackageCatalogStatics;
-template <typename T> struct impl_IPackageId;
-template <typename T> struct impl_IPackageIdWithMetadata;
-template <typename T> struct impl_IPackageInstallingEventArgs;
-template <typename T> struct impl_IPackageStagingEventArgs;
-template <typename T> struct impl_IPackageStatics;
-template <typename T> struct impl_IPackageStatus;
-template <typename T> struct impl_IPackageStatusChangedEventArgs;
-template <typename T> struct impl_IPackageUninstallingEventArgs;
-template <typename T> struct impl_IPackageUpdatingEventArgs;
-template <typename T> struct impl_IPackageWithMetadata;
-template <typename T> struct impl_ISuspendingDeferral;
-template <typename T> struct impl_ISuspendingEventArgs;
-template <typename T> struct impl_ISuspendingOperation;
+template <typename D>
+struct WINRT_EBO impl_IAppDisplayInfo
+{
+    hstring DisplayName() const;
+    hstring Description() const;
+    Windows::Storage::Streams::RandomAccessStreamReference GetLogo(const Windows::Foundation::Size & size) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppInfo
+{
+    hstring Id() const;
+    hstring AppUserModelId() const;
+    Windows::ApplicationModel::AppDisplayInfo DisplayInfo() const;
+    hstring PackageFamilyName() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDesignModeStatics
+{
+    bool DesignModeEnabled() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEnteredBackgroundEventArgs
+{
+    Windows::Foundation::Deferral GetDeferral() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILeavingBackgroundEventArgs
+{
+    Windows::Foundation::Deferral GetDeferral() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPackage
+{
+    Windows::ApplicationModel::PackageId Id() const;
+    Windows::Storage::StorageFolder InstalledLocation() const;
+    bool IsFramework() const;
+    Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Package> Dependencies() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPackage2
+{
+    hstring DisplayName() const;
+    hstring PublisherDisplayName() const;
+    hstring Description() const;
+    Windows::Foundation::Uri Logo() const;
+    bool IsResourcePackage() const;
+    bool IsBundle() const;
+    bool IsDevelopmentMode() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPackage3
+{
+    Windows::ApplicationModel::PackageStatus Status() const;
+    Windows::Foundation::DateTime InstalledDate() const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Core::AppListEntry>> GetAppListEntriesAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPackage4
+{
+    Windows::ApplicationModel::PackageSignatureKind SignatureKind() const;
+    bool IsOptional() const;
+    Windows::Foundation::IAsyncOperation<bool> VerifyContentIntegrityAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPackageCatalog
+{
+    event_token PackageStaging(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageStagingEventArgs> & handler) const;
+    using PackageStaging_revoker = event_revoker<IPackageCatalog>;
+    PackageStaging_revoker PackageStaging(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageStagingEventArgs> & handler) const;
+    void PackageStaging(event_token token) const;
+    event_token PackageInstalling(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageInstallingEventArgs> & handler) const;
+    using PackageInstalling_revoker = event_revoker<IPackageCatalog>;
+    PackageInstalling_revoker PackageInstalling(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageInstallingEventArgs> & handler) const;
+    void PackageInstalling(event_token token) const;
+    event_token PackageUpdating(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageUpdatingEventArgs> & handler) const;
+    using PackageUpdating_revoker = event_revoker<IPackageCatalog>;
+    PackageUpdating_revoker PackageUpdating(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageUpdatingEventArgs> & handler) const;
+    void PackageUpdating(event_token token) const;
+    event_token PackageUninstalling(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageUninstallingEventArgs> & handler) const;
+    using PackageUninstalling_revoker = event_revoker<IPackageCatalog>;
+    PackageUninstalling_revoker PackageUninstalling(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageUninstallingEventArgs> & handler) const;
+    void PackageUninstalling(event_token token) const;
+    event_token PackageStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageStatusChangedEventArgs> & handler) const;
+    using PackageStatusChanged_revoker = event_revoker<IPackageCatalog>;
+    PackageStatusChanged_revoker PackageStatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::PackageCatalog, Windows::ApplicationModel::PackageStatusChangedEventArgs> & handler) const;
+    void PackageStatusChanged(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPackageCatalogStatics
+{
+    Windows::ApplicationModel::PackageCatalog OpenForCurrentPackage() const;
+    Windows::ApplicationModel::PackageCatalog OpenForCurrentUser() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPackageId
+{
+    hstring Name() const;
+    Windows::ApplicationModel::PackageVersion Version() const;
+    Windows::System::ProcessorArchitecture Architecture() const;
+    hstring ResourceId() const;
+    hstring Publisher() const;
+    hstring PublisherId() const;
+    hstring FullName() const;
+    hstring FamilyName() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPackageIdWithMetadata
+{
+    hstring ProductId() const;
+    hstring Author() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPackageInstallingEventArgs
+{
+    GUID ActivityId() const;
+    Windows::ApplicationModel::Package Package() const;
+    double Progress() const;
+    bool IsComplete() const;
+    HRESULT ErrorCode() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPackageStagingEventArgs
+{
+    GUID ActivityId() const;
+    Windows::ApplicationModel::Package Package() const;
+    double Progress() const;
+    bool IsComplete() const;
+    HRESULT ErrorCode() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPackageStatics
+{
+    Windows::ApplicationModel::Package Current() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPackageStatus
+{
+    bool VerifyIsOK() const;
+    bool NotAvailable() const;
+    bool PackageOffline() const;
+    bool DataOffline() const;
+    bool Disabled() const;
+    bool NeedsRemediation() const;
+    bool LicenseIssue() const;
+    bool Modified() const;
+    bool Tampered() const;
+    bool DependencyIssue() const;
+    bool Servicing() const;
+    bool DeploymentInProgress() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPackageStatusChangedEventArgs
+{
+    Windows::ApplicationModel::Package Package() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPackageUninstallingEventArgs
+{
+    GUID ActivityId() const;
+    Windows::ApplicationModel::Package Package() const;
+    double Progress() const;
+    bool IsComplete() const;
+    HRESULT ErrorCode() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPackageUpdatingEventArgs
+{
+    GUID ActivityId() const;
+    Windows::ApplicationModel::Package SourcePackage() const;
+    Windows::ApplicationModel::Package TargetPackage() const;
+    double Progress() const;
+    bool IsComplete() const;
+    HRESULT ErrorCode() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPackageWithMetadata
+{
+    Windows::Foundation::DateTime InstallDate() const;
+    hstring GetThumbnailToken() const;
+    void Launch(hstring_ref parameters) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISuspendingDeferral
+{
+    void Complete() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISuspendingEventArgs
+{
+    Windows::ApplicationModel::SuspendingOperation SuspendingOperation() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISuspendingOperation
+{
+    Windows::ApplicationModel::SuspendingDeferral GetDeferral() const;
+    Windows::Foundation::DateTime Deadline() const;
+};
 
 }
 

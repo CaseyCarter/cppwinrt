@@ -40,6 +40,15 @@ struct ProviderI2cConnectionSettings;
 
 namespace Windows::Devices::I2c::Provider {
 
+template <typename T> struct impl_II2cControllerProvider;
+template <typename T> struct impl_II2cDeviceProvider;
+template <typename T> struct impl_II2cProvider;
+template <typename T> struct impl_IProviderI2cConnectionSettings;
+
+}
+
+namespace Windows::Devices::I2c::Provider {
+
 enum class ProviderI2cBusSpeed
 {
     StandardMode = 0,

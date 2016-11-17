@@ -40,4 +40,13 @@ struct Colors;
 
 }
 
+namespace Windows::UI {
+
+template <typename T> struct impl_IColorHelper;
+template <typename T> struct impl_IColorHelperStatics;
+template <typename T> struct impl_IColors;
+template <typename T> struct impl_IColorsStatics;
+
+}
+
 }

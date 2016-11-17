@@ -46,4 +46,17 @@ struct AppExtensionPackageUpdatingEventArgs;
 
 }
 
+namespace Windows::ApplicationModel::AppExtensions {
+
+template <typename T> struct impl_IAppExtension;
+template <typename T> struct impl_IAppExtensionCatalog;
+template <typename T> struct impl_IAppExtensionCatalogStatics;
+template <typename T> struct impl_IAppExtensionPackageInstalledEventArgs;
+template <typename T> struct impl_IAppExtensionPackageStatusChangedEventArgs;
+template <typename T> struct impl_IAppExtensionPackageUninstallingEventArgs;
+template <typename T> struct impl_IAppExtensionPackageUpdatedEventArgs;
+template <typename T> struct impl_IAppExtensionPackageUpdatingEventArgs;
+
+}
+
 }

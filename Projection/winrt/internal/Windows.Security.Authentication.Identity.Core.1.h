@@ -78,12 +78,62 @@ template <> struct traits<Windows::Security::Authentication::Identity::Core::Mic
 
 namespace Windows::Security::Authentication::Identity::Core {
 
-template <typename T> struct impl_IMicrosoftAccountMultiFactorAuthenticationManager;
-template <typename T> struct impl_IMicrosoftAccountMultiFactorAuthenticatorStatics;
-template <typename T> struct impl_IMicrosoftAccountMultiFactorGetSessionsResult;
-template <typename T> struct impl_IMicrosoftAccountMultiFactorOneTimeCodedInfo;
-template <typename T> struct impl_IMicrosoftAccountMultiFactorSessionInfo;
-template <typename T> struct impl_IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo;
+template <typename D>
+struct WINRT_EBO impl_IMicrosoftAccountMultiFactorAuthenticationManager
+{
+    Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorOneTimeCodedInfo> GetOneTimePassCodeAsync(hstring_ref userAccountId, uint32_t codeLength) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> AddDeviceAsync(hstring_ref userAccountId, hstring_ref authenticationToken, hstring_ref wnsChannelId) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> RemoveDeviceAsync(hstring_ref userAccountId) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> UpdateWnsChannelAsync(hstring_ref userAccountId, hstring_ref channelUri) const;
+    Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorGetSessionsResult> GetSessionsAsync(const Windows::Foundation::Collections::IIterable<hstring> & userAccountIdList) const;
+    Windows::Foundation::IAsyncOperation<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo> GetSessionsAndUnregisteredAccountsAsync(const Windows::Foundation::Collections::IIterable<hstring> & userAccountIdList) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> ApproveSessionAsync(Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionAuthenticationStatus sessionAuthentictionStatus, const Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionInfo & authenticationSessionInfo) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> ApproveSessionAsync(Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionAuthenticationStatus sessionAuthentictionStatus, hstring_ref userAccountId, hstring_ref sessionId, Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorAuthenticationType sessionAuthenticationType) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> DenySessionAsync(const Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionInfo & authenticationSessionInfo) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse> DenySessionAsync(hstring_ref userAccountId, hstring_ref sessionId, Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorAuthenticationType sessionAuthenticationType) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMicrosoftAccountMultiFactorAuthenticatorStatics
+{
+    Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorAuthenticationManager Current() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMicrosoftAccountMultiFactorGetSessionsResult
+{
+    Windows::Foundation::Collections::IVectorView<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionInfo> Sessions() const;
+    Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse ServiceResponse() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMicrosoftAccountMultiFactorOneTimeCodedInfo
+{
+    hstring Code() const;
+    Windows::Foundation::TimeSpan TimeInterval() const;
+    Windows::Foundation::TimeSpan TimeToLive() const;
+    Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse ServiceResponse() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMicrosoftAccountMultiFactorSessionInfo
+{
+    hstring UserAccountId() const;
+    hstring SessionId() const;
+    hstring DisplaySessionId() const;
+    Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionApprovalStatus ApprovalStatus() const;
+    Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorAuthenticationType AuthenticationType() const;
+    Windows::Foundation::DateTime RequestTime() const;
+    Windows::Foundation::DateTime ExpirationTime() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMicrosoftAccountMultiFactorUnregisteredAccountsAndSessionInfo
+{
+    Windows::Foundation::Collections::IVectorView<Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorSessionInfo> Sessions() const;
+    Windows::Foundation::Collections::IVectorView<hstring> UnregisteredAccounts() const;
+    Windows::Security::Authentication::Identity::Core::MicrosoftAccountMultiFactorServiceResponse ServiceResponse() const;
+};
 
 }
 

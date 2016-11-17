@@ -37,8 +37,20 @@ template <> struct traits<Windows::Security::Cryptography::DataProtection::DataP
 
 namespace Windows::Security::Cryptography::DataProtection {
 
-template <typename T> struct impl_IDataProtectionProvider;
-template <typename T> struct impl_IDataProtectionProviderFactory;
+template <typename D>
+struct WINRT_EBO impl_IDataProtectionProvider
+{
+    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> ProtectAsync(const Windows::Storage::Streams::IBuffer & data) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> UnprotectAsync(const Windows::Storage::Streams::IBuffer & data) const;
+    Windows::Foundation::IAsyncAction ProtectStreamAsync(const Windows::Storage::Streams::IInputStream & src, const Windows::Storage::Streams::IOutputStream & dest) const;
+    Windows::Foundation::IAsyncAction UnprotectStreamAsync(const Windows::Storage::Streams::IInputStream & src, const Windows::Storage::Streams::IOutputStream & dest) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataProtectionProviderFactory
+{
+    Windows::Security::Cryptography::DataProtection::DataProtectionProvider CreateOverloadExplicit(hstring_ref protectionDescriptor) const;
+};
 
 }
 

@@ -60,4 +60,21 @@ struct XamlReader;
 
 }
 
+namespace Windows::UI::Xaml::Markup {
+
+template <typename T> struct impl_IComponentConnector;
+template <typename T> struct impl_IComponentConnector2;
+template <typename T> struct impl_IDataTemplateComponent;
+template <typename T> struct impl_IXamlBinaryWriter;
+template <typename T> struct impl_IXamlBinaryWriterStatics;
+template <typename T> struct impl_IXamlBindingHelper;
+template <typename T> struct impl_IXamlBindingHelperStatics;
+template <typename T> struct impl_IXamlMember;
+template <typename T> struct impl_IXamlMetadataProvider;
+template <typename T> struct impl_IXamlReader;
+template <typename T> struct impl_IXamlReaderStatics;
+template <typename T> struct impl_IXamlType;
+
+}
+
 }

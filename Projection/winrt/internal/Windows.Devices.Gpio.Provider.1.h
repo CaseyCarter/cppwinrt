@@ -59,11 +59,48 @@ template <> struct traits<Windows::Devices::Gpio::Provider::GpioPinProviderValue
 
 namespace Windows::Devices::Gpio::Provider {
 
-template <typename T> struct impl_IGpioControllerProvider;
-template <typename T> struct impl_IGpioPinProvider;
-template <typename T> struct impl_IGpioPinProviderValueChangedEventArgs;
-template <typename T> struct impl_IGpioPinProviderValueChangedEventArgsFactory;
-template <typename T> struct impl_IGpioProvider;
+template <typename D>
+struct WINRT_EBO impl_IGpioControllerProvider
+{
+    int32_t PinCount() const;
+    Windows::Devices::Gpio::Provider::IGpioPinProvider OpenPinProvider(int32_t pin, Windows::Devices::Gpio::Provider::ProviderGpioSharingMode sharingMode) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGpioPinProvider
+{
+    event_token ValueChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Gpio::Provider::IGpioPinProvider, Windows::Devices::Gpio::Provider::GpioPinProviderValueChangedEventArgs> & handler) const;
+    using ValueChanged_revoker = event_revoker<IGpioPinProvider>;
+    ValueChanged_revoker ValueChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Gpio::Provider::IGpioPinProvider, Windows::Devices::Gpio::Provider::GpioPinProviderValueChangedEventArgs> & handler) const;
+    void ValueChanged(event_token token) const;
+    Windows::Foundation::TimeSpan DebounceTimeout() const;
+    void DebounceTimeout(const Windows::Foundation::TimeSpan & value) const;
+    int32_t PinNumber() const;
+    Windows::Devices::Gpio::Provider::ProviderGpioSharingMode SharingMode() const;
+    bool IsDriveModeSupported(Windows::Devices::Gpio::Provider::ProviderGpioPinDriveMode driveMode) const;
+    Windows::Devices::Gpio::Provider::ProviderGpioPinDriveMode GetDriveMode() const;
+    void SetDriveMode(Windows::Devices::Gpio::Provider::ProviderGpioPinDriveMode value) const;
+    void Write(Windows::Devices::Gpio::Provider::ProviderGpioPinValue value) const;
+    Windows::Devices::Gpio::Provider::ProviderGpioPinValue Read() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGpioPinProviderValueChangedEventArgs
+{
+    Windows::Devices::Gpio::Provider::ProviderGpioPinEdge Edge() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGpioPinProviderValueChangedEventArgsFactory
+{
+    Windows::Devices::Gpio::Provider::GpioPinProviderValueChangedEventArgs Create(Windows::Devices::Gpio::Provider::ProviderGpioPinEdge edge) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGpioProvider
+{
+    Windows::Foundation::Collections::IVectorView<Windows::Devices::Gpio::Provider::IGpioControllerProvider> GetControllers() const;
+};
 
 }
 

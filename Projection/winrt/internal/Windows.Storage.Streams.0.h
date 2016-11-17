@@ -79,6 +79,28 @@ struct RandomAccessStreamReference;
 
 namespace Windows::Storage::Streams {
 
+template <typename T> struct impl_IBuffer;
+template <typename T> struct impl_IBufferFactory;
+template <typename T> struct impl_IBufferStatics;
+template <typename T> struct impl_IContentTypeProvider;
+template <typename T> struct impl_IDataReader;
+template <typename T> struct impl_IDataReaderFactory;
+template <typename T> struct impl_IDataReaderStatics;
+template <typename T> struct impl_IDataWriter;
+template <typename T> struct impl_IDataWriterFactory;
+template <typename T> struct impl_IInputStream;
+template <typename T> struct impl_IInputStreamReference;
+template <typename T> struct impl_IOutputStream;
+template <typename T> struct impl_IRandomAccessStream;
+template <typename T> struct impl_IRandomAccessStreamReference;
+template <typename T> struct impl_IRandomAccessStreamReferenceStatics;
+template <typename T> struct impl_IRandomAccessStreamStatics;
+template <typename T> struct impl_IRandomAccessStreamWithContentType;
+
+}
+
+namespace Windows::Storage::Streams {
+
 enum class ByteOrder
 {
     LittleEndian = 0,

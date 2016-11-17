@@ -4,7 +4,7 @@
 #pragma once
 
 #include "Windows.ApplicationModel.AppService.1.h"
-#include "Windows.Foundation.2.h"
+#include "Windows.Foundation.1.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -99,86 +99,6 @@ template <> struct __declspec(uuid("07f25b6f-f054-5649-a5ce-b348ddc618b6")) __de
 }
 
 namespace Windows::ApplicationModel::AppService {
-
-template <typename D>
-struct WINRT_EBO impl_IAppServiceCatalogStatics
-{
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> FindAppServiceProvidersAsync(hstring_ref appServiceName) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IAppServiceClosedEventArgs
-{
-    Windows::ApplicationModel::AppService::AppServiceClosedStatus Status() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IAppServiceConnection
-{
-    hstring AppServiceName() const;
-    void AppServiceName(hstring_ref value) const;
-    hstring PackageFamilyName() const;
-    void PackageFamilyName(hstring_ref value) const;
-    Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::AppService::AppServiceConnectionStatus> OpenAsync() const;
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::AppService::AppServiceResponse> SendMessageAsync(const Windows::Foundation::Collections::ValueSet & message) const;
-    event_token RequestReceived(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppService::AppServiceConnection, Windows::ApplicationModel::AppService::AppServiceRequestReceivedEventArgs> & handler) const;
-    using RequestReceived_revoker = event_revoker<IAppServiceConnection>;
-    RequestReceived_revoker RequestReceived(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppService::AppServiceConnection, Windows::ApplicationModel::AppService::AppServiceRequestReceivedEventArgs> & handler) const;
-    void RequestReceived(event_token token) const;
-    event_token ServiceClosed(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppService::AppServiceConnection, Windows::ApplicationModel::AppService::AppServiceClosedEventArgs> & handler) const;
-    using ServiceClosed_revoker = event_revoker<IAppServiceConnection>;
-    ServiceClosed_revoker ServiceClosed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::AppService::AppServiceConnection, Windows::ApplicationModel::AppService::AppServiceClosedEventArgs> & handler) const;
-    void ServiceClosed(event_token token) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IAppServiceConnection2
-{
-    Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::AppService::AppServiceConnectionStatus> OpenRemoteAsync(const Windows::System::RemoteSystems::RemoteSystemConnectionRequest & remoteSystemConnectionRequest) const;
-    Windows::System::User User() const;
-    void User(const Windows::System::User & value) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IAppServiceDeferral
-{
-    void Complete() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IAppServiceRequest
-{
-    Windows::Foundation::Collections::ValueSet Message() const;
-    Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::AppService::AppServiceResponseStatus> SendResponseAsync(const Windows::Foundation::Collections::ValueSet & message) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IAppServiceRequestReceivedEventArgs
-{
-    Windows::ApplicationModel::AppService::AppServiceRequest Request() const;
-    Windows::ApplicationModel::AppService::AppServiceDeferral GetDeferral() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IAppServiceResponse
-{
-    Windows::Foundation::Collections::ValueSet Message() const;
-    Windows::ApplicationModel::AppService::AppServiceResponseStatus Status() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IAppServiceTriggerDetails
-{
-    hstring Name() const;
-    hstring CallerPackageFamilyName() const;
-    Windows::ApplicationModel::AppService::AppServiceConnection AppServiceConnection() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IAppServiceTriggerDetails2
-{
-    bool IsRemoteSystemConnection() const;
-};
 
 struct IAppServiceCatalogStatics :
     Windows::IInspectable,

@@ -4,7 +4,7 @@
 #pragma once
 
 #include "Windows.Devices.Pwm.1.h"
-#include "Windows.Foundation.2.h"
+#include "Windows.Foundation.1.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -64,42 +64,6 @@ template <> struct __declspec(uuid("e72bd078-ce02-55ac-a7b9-abd01248d888")) __de
 }
 
 namespace Windows::Devices::Pwm {
-
-template <typename D>
-struct WINRT_EBO impl_IPwmController
-{
-    int32_t PinCount() const;
-    double ActualFrequency() const;
-    double SetDesiredFrequency(double desiredFrequency) const;
-    double MinFrequency() const;
-    double MaxFrequency() const;
-    Windows::Devices::Pwm::PwmPin OpenPin(int32_t pinNumber) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IPwmControllerStatics
-{
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Pwm::PwmController>> GetControllersAsync(const Windows::Devices::Pwm::Provider::IPwmProvider & provider) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IPwmControllerStatics2
-{
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Pwm::PwmController> GetDefaultAsync() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IPwmPin
-{
-    Windows::Devices::Pwm::PwmController Controller() const;
-    double GetActiveDutyCyclePercentage() const;
-    void SetActiveDutyCyclePercentage(double dutyCyclePercentage) const;
-    Windows::Devices::Pwm::PwmPulsePolarity Polarity() const;
-    void Polarity(Windows::Devices::Pwm::PwmPulsePolarity value) const;
-    void Start() const;
-    void Stop() const;
-    bool IsStarted() const;
-};
 
 struct IPwmController :
     Windows::IInspectable,

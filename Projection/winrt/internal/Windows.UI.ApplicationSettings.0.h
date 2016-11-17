@@ -68,6 +68,28 @@ struct WebAccountProviderCommand;
 
 namespace Windows::UI::ApplicationSettings {
 
+template <typename T> struct impl_IAccountsSettingsPane;
+template <typename T> struct impl_IAccountsSettingsPaneCommandsRequestedEventArgs;
+template <typename T> struct impl_IAccountsSettingsPaneEventDeferral;
+template <typename T> struct impl_IAccountsSettingsPaneStatics;
+template <typename T> struct impl_IAccountsSettingsPaneStatics2;
+template <typename T> struct impl_ICredentialCommand;
+template <typename T> struct impl_ICredentialCommandFactory;
+template <typename T> struct impl_ISettingsCommandFactory;
+template <typename T> struct impl_ISettingsCommandStatics;
+template <typename T> struct impl_IWebAccountCommand;
+template <typename T> struct impl_IWebAccountCommandFactory;
+template <typename T> struct impl_IWebAccountInvokedArgs;
+template <typename T> struct impl_IWebAccountProviderCommand;
+template <typename T> struct impl_IWebAccountProviderCommandFactory;
+template <typename T> struct impl_CredentialCommandCredentialDeletedHandler;
+template <typename T> struct impl_WebAccountCommandInvokedHandler;
+template <typename T> struct impl_WebAccountProviderCommandInvokedHandler;
+
+}
+
+namespace Windows::UI::ApplicationSettings {
+
 enum class SupportedWebAccountActions : unsigned
 {
     None = 0x0,

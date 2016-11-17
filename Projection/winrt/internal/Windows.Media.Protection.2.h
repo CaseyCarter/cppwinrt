@@ -4,7 +4,7 @@
 #pragma once
 
 #include "Windows.Media.Protection.1.h"
-#include "Windows.Foundation.2.h"
+#include "Windows.Foundation.1.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -69,103 +69,6 @@ template <> struct __declspec(uuid("19344a58-a5c1-5168-803e-632771628143")) __de
 }
 
 namespace Windows::Media::Protection {
-
-template <typename D>
-struct WINRT_EBO impl_IComponentLoadFailedEventArgs
-{
-    Windows::Media::Protection::RevocationAndRenewalInformation Information() const;
-    Windows::Media::Protection::MediaProtectionServiceCompletion Completion() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IHdcpSession
-{
-    bool IsEffectiveProtectionAtLeast(Windows::Media::Protection::HdcpProtection protection) const;
-    Windows::Foundation::IReference<winrt::Windows::Media::Protection::HdcpProtection> GetEffectiveProtection() const;
-    Windows::Foundation::IAsyncOperation<winrt::Windows::Media::Protection::HdcpSetProtectionResult> SetDesiredMinProtectionAsync(Windows::Media::Protection::HdcpProtection protection) const;
-    event_token ProtectionChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::HdcpSession, Windows::IInspectable> & handler) const;
-    using ProtectionChanged_revoker = event_revoker<IHdcpSession>;
-    ProtectionChanged_revoker ProtectionChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Protection::HdcpSession, Windows::IInspectable> & handler) const;
-    void ProtectionChanged(event_token token) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IMediaProtectionManager
-{
-    event_token ServiceRequested(const Windows::Media::Protection::ServiceRequestedEventHandler & handler) const;
-    using ServiceRequested_revoker = event_revoker<IMediaProtectionManager>;
-    ServiceRequested_revoker ServiceRequested(auto_revoke_t, const Windows::Media::Protection::ServiceRequestedEventHandler & handler) const;
-    void ServiceRequested(event_token cookie) const;
-    event_token RebootNeeded(const Windows::Media::Protection::RebootNeededEventHandler & handler) const;
-    using RebootNeeded_revoker = event_revoker<IMediaProtectionManager>;
-    RebootNeeded_revoker RebootNeeded(auto_revoke_t, const Windows::Media::Protection::RebootNeededEventHandler & handler) const;
-    void RebootNeeded(event_token cookie) const;
-    event_token ComponentLoadFailed(const Windows::Media::Protection::ComponentLoadFailedEventHandler & handler) const;
-    using ComponentLoadFailed_revoker = event_revoker<IMediaProtectionManager>;
-    ComponentLoadFailed_revoker ComponentLoadFailed(auto_revoke_t, const Windows::Media::Protection::ComponentLoadFailedEventHandler & handler) const;
-    void ComponentLoadFailed(event_token cookie) const;
-    Windows::Foundation::Collections::IPropertySet Properties() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IMediaProtectionPMPServer
-{
-    Windows::Foundation::Collections::IPropertySet Properties() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IMediaProtectionPMPServerFactory
-{
-    Windows::Media::Protection::MediaProtectionPMPServer CreatePMPServer(const Windows::Foundation::Collections::IPropertySet & pProperties) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IMediaProtectionServiceCompletion
-{
-    void Complete(bool success) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IMediaProtectionServiceRequest
-{
-    GUID ProtectionSystem() const;
-    GUID Type() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IProtectionCapabilities
-{
-    Windows::Media::Protection::ProtectionCapabilityResult IsTypeSupported(hstring_ref type, hstring_ref keySystem) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IRevocationAndRenewalInformation
-{
-    Windows::Foundation::Collections::IVector<Windows::Media::Protection::RevocationAndRenewalItem> Items() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IRevocationAndRenewalItem
-{
-    Windows::Media::Protection::RevocationAndRenewalReasons Reasons() const;
-    hstring HeaderHash() const;
-    hstring PublicKeyHash() const;
-    hstring Name() const;
-    hstring RenewalId() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IServiceRequestedEventArgs
-{
-    Windows::Media::Protection::IMediaProtectionServiceRequest Request() const;
-    Windows::Media::Protection::MediaProtectionServiceCompletion Completion() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IServiceRequestedEventArgs2
-{
-    Windows::Media::Playback::MediaPlaybackItem MediaPlaybackItem() const;
-};
 
 struct ComponentLoadFailedEventHandler : Windows::IUnknown
 {

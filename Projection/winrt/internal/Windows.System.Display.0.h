@@ -20,4 +20,10 @@ struct DisplayRequest;
 
 }
 
+namespace Windows::System::Display {
+
+template <typename T> struct impl_IDisplayRequest;
+
+}
+
 }

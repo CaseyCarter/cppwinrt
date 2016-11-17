@@ -56,11 +56,41 @@ template <> struct traits<Windows::ApplicationModel::UserDataAccounts::Provider:
 
 namespace Windows::ApplicationModel::UserDataAccounts::Provider {
 
-template <typename T> struct impl_IUserDataAccountPartnerAccountInfo;
-template <typename T> struct impl_IUserDataAccountProviderAddAccountOperation;
-template <typename T> struct impl_IUserDataAccountProviderOperation;
-template <typename T> struct impl_IUserDataAccountProviderResolveErrorsOperation;
-template <typename T> struct impl_IUserDataAccountProviderSettingsOperation;
+template <typename D>
+struct WINRT_EBO impl_IUserDataAccountPartnerAccountInfo
+{
+    hstring DisplayName() const;
+    uint32_t Priority() const;
+    Windows::ApplicationModel::UserDataAccounts::Provider::UserDataAccountProviderPartnerAccountKind AccountKind() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUserDataAccountProviderAddAccountOperation
+{
+    Windows::ApplicationModel::UserDataAccounts::UserDataAccountContentKinds ContentKinds() const;
+    Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::UserDataAccounts::Provider::UserDataAccountPartnerAccountInfo> PartnerAccountInfos() const;
+    void ReportCompleted(hstring_ref userDataAccountId) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUserDataAccountProviderOperation
+{
+    Windows::ApplicationModel::UserDataAccounts::Provider::UserDataAccountProviderOperationKind Kind() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUserDataAccountProviderResolveErrorsOperation
+{
+    hstring UserDataAccountId() const;
+    void ReportCompleted() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUserDataAccountProviderSettingsOperation
+{
+    hstring UserDataAccountId() const;
+    void ReportCompleted() const;
+};
 
 }
 

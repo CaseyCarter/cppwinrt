@@ -9,17 +9,6 @@ WINRT_EXPORT namespace winrt {
 
 namespace Windows::Management::Core {
 
-template <typename D>
-struct WINRT_EBO impl_IApplicationDataManager
-{
-};
-
-template <typename D>
-struct WINRT_EBO impl_IApplicationDataManagerStatics
-{
-    Windows::Storage::ApplicationData CreateForPackageFamily(hstring_ref packageFamilyName) const;
-};
-
 struct IApplicationDataManager :
     Windows::IInspectable,
     impl::consume<IApplicationDataManager>

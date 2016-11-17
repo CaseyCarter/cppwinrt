@@ -4,7 +4,7 @@
 #pragma once
 
 #include "Windows.Devices.Spi.Provider.1.h"
-#include "Windows.Foundation.2.h"
+#include "Windows.Foundation.1.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -44,50 +44,6 @@ template <> struct __declspec(uuid("e9e2ae03-42d6-5211-ab52-325e722e2611")) __de
 }
 
 namespace Windows::Devices::Spi::Provider {
-
-template <typename D>
-struct WINRT_EBO impl_IProviderSpiConnectionSettings
-{
-    int32_t ChipSelectLine() const;
-    void ChipSelectLine(int32_t value) const;
-    Windows::Devices::Spi::Provider::ProviderSpiMode Mode() const;
-    void Mode(Windows::Devices::Spi::Provider::ProviderSpiMode value) const;
-    int32_t DataBitLength() const;
-    void DataBitLength(int32_t value) const;
-    int32_t ClockFrequency() const;
-    void ClockFrequency(int32_t value) const;
-    Windows::Devices::Spi::Provider::ProviderSpiSharingMode SharingMode() const;
-    void SharingMode(Windows::Devices::Spi::Provider::ProviderSpiSharingMode value) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IProviderSpiConnectionSettingsFactory
-{
-    Windows::Devices::Spi::Provider::ProviderSpiConnectionSettings Create(int32_t chipSelectLine) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_ISpiControllerProvider
-{
-    Windows::Devices::Spi::Provider::ISpiDeviceProvider GetDeviceProvider(const Windows::Devices::Spi::Provider::ProviderSpiConnectionSettings & settings) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_ISpiDeviceProvider
-{
-    hstring DeviceId() const;
-    Windows::Devices::Spi::Provider::ProviderSpiConnectionSettings ConnectionSettings() const;
-    void Write(array_ref<const uint8_t> buffer) const;
-    void Read(array_ref<uint8_t> buffer) const;
-    void TransferSequential(array_ref<const uint8_t> writeBuffer, array_ref<uint8_t> readBuffer) const;
-    void TransferFullDuplex(array_ref<const uint8_t> writeBuffer, array_ref<uint8_t> readBuffer) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_ISpiProvider
-{
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Spi::Provider::ISpiControllerProvider>> GetControllersAsync() const;
-};
 
 struct IProviderSpiConnectionSettings :
     Windows::IInspectable,

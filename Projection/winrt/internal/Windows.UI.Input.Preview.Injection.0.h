@@ -56,6 +56,17 @@ struct InputInjector;
 
 namespace Windows::UI::Input::Preview::Injection {
 
+template <typename T> struct impl_IInjectedInputKeyboardInfo;
+template <typename T> struct impl_IInjectedInputMouseInfo;
+template <typename T> struct impl_IInjectedInputPenInfo;
+template <typename T> struct impl_IInjectedInputTouchInfo;
+template <typename T> struct impl_IInputInjector;
+template <typename T> struct impl_IInputInjectorStatics;
+
+}
+
+namespace Windows::UI::Input::Preview::Injection {
+
 enum class InjectedInputButtonChangeKind
 {
     None = 0,

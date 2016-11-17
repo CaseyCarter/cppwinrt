@@ -38,6 +38,18 @@ struct HttpServerCustomValidationRequestedEventArgs;
 
 namespace Windows::Web::Http::Filters {
 
+template <typename T> struct impl_IHttpBaseProtocolFilter;
+template <typename T> struct impl_IHttpBaseProtocolFilter2;
+template <typename T> struct impl_IHttpBaseProtocolFilter3;
+template <typename T> struct impl_IHttpBaseProtocolFilter4;
+template <typename T> struct impl_IHttpCacheControl;
+template <typename T> struct impl_IHttpFilter;
+template <typename T> struct impl_IHttpServerCustomValidationRequestedEventArgs;
+
+}
+
+namespace Windows::Web::Http::Filters {
+
 enum class HttpCacheReadBehavior
 {
     Default = 0,

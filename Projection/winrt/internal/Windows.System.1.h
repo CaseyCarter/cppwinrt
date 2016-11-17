@@ -307,37 +307,318 @@ template <> struct traits<Windows::System::UserWatcher> { using default_interfac
 
 namespace Windows::System {
 
-template <typename T> struct impl_IAppMemoryReport;
-template <typename T> struct impl_IAppMemoryUsageLimitChangingEventArgs;
-template <typename T> struct impl_IFolderLauncherOptions;
-template <typename T> struct impl_IKnownUserPropertiesStatics;
-template <typename T> struct impl_ILaunchUriResult;
-template <typename T> struct impl_ILauncherOptions;
-template <typename T> struct impl_ILauncherOptions2;
-template <typename T> struct impl_ILauncherOptions3;
-template <typename T> struct impl_ILauncherStatics;
-template <typename T> struct impl_ILauncherStatics2;
-template <typename T> struct impl_ILauncherStatics3;
-template <typename T> struct impl_ILauncherStatics4;
-template <typename T> struct impl_ILauncherUIOptions;
-template <typename T> struct impl_ILauncherViewOptions;
-template <typename T> struct impl_IMemoryManagerStatics;
-template <typename T> struct impl_IMemoryManagerStatics2;
-template <typename T> struct impl_IMemoryManagerStatics3;
-template <typename T> struct impl_IProcessMemoryReport;
-template <typename T> struct impl_IProtocolForResultsOperation;
-template <typename T> struct impl_IRemoteLauncherOptions;
-template <typename T> struct impl_IRemoteLauncherStatics;
-template <typename T> struct impl_IUser;
-template <typename T> struct impl_IUserAuthenticationStatusChangeDeferral;
-template <typename T> struct impl_IUserAuthenticationStatusChangingEventArgs;
-template <typename T> struct impl_IUserChangedEventArgs;
-template <typename T> struct impl_IUserDeviceAssociationChangedEventArgs;
-template <typename T> struct impl_IUserDeviceAssociationStatics;
-template <typename T> struct impl_IUserPicker;
-template <typename T> struct impl_IUserPickerStatics;
-template <typename T> struct impl_IUserStatics;
-template <typename T> struct impl_IUserWatcher;
+template <typename D>
+struct WINRT_EBO impl_IAppMemoryReport
+{
+    uint64_t PrivateCommitUsage() const;
+    uint64_t PeakPrivateCommitUsage() const;
+    uint64_t TotalCommitUsage() const;
+    uint64_t TotalCommitLimit() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppMemoryUsageLimitChangingEventArgs
+{
+    uint64_t OldLimit() const;
+    uint64_t NewLimit() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFolderLauncherOptions
+{
+    Windows::Foundation::Collections::IVector<Windows::Storage::IStorageItem> ItemsToSelect() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IKnownUserPropertiesStatics
+{
+    hstring DisplayName() const;
+    hstring FirstName() const;
+    hstring LastName() const;
+    hstring ProviderName() const;
+    hstring AccountName() const;
+    hstring GuestHost() const;
+    hstring PrincipalName() const;
+    hstring DomainName() const;
+    hstring SessionInitiationProtocolUri() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILaunchUriResult
+{
+    Windows::System::LaunchUriStatus Status() const;
+    Windows::Foundation::Collections::ValueSet Result() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILauncherOptions
+{
+    bool TreatAsUntrusted() const;
+    void TreatAsUntrusted(bool value) const;
+    bool DisplayApplicationPicker() const;
+    void DisplayApplicationPicker(bool value) const;
+    Windows::System::LauncherUIOptions UI() const;
+    hstring PreferredApplicationPackageFamilyName() const;
+    void PreferredApplicationPackageFamilyName(hstring_ref value) const;
+    hstring PreferredApplicationDisplayName() const;
+    void PreferredApplicationDisplayName(hstring_ref value) const;
+    Windows::Foundation::Uri FallbackUri() const;
+    void FallbackUri(const Windows::Foundation::Uri & value) const;
+    hstring ContentType() const;
+    void ContentType(hstring_ref value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILauncherOptions2
+{
+    hstring TargetApplicationPackageFamilyName() const;
+    void TargetApplicationPackageFamilyName(hstring_ref value) const;
+    Windows::Storage::Search::StorageFileQueryResult NeighboringFilesQuery() const;
+    void NeighboringFilesQuery(const Windows::Storage::Search::StorageFileQueryResult & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILauncherOptions3
+{
+    bool IgnoreAppUriHandlers() const;
+    void IgnoreAppUriHandlers(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILauncherStatics
+{
+    Windows::Foundation::IAsyncOperation<bool> LaunchFileAsync(const Windows::Storage::IStorageFile & file) const;
+    Windows::Foundation::IAsyncOperation<bool> LaunchFileAsync(const Windows::Storage::IStorageFile & file, const Windows::System::LauncherOptions & options) const;
+    Windows::Foundation::IAsyncOperation<bool> LaunchUriAsync(const Windows::Foundation::Uri & uri) const;
+    Windows::Foundation::IAsyncOperation<bool> LaunchUriAsync(const Windows::Foundation::Uri & uri, const Windows::System::LauncherOptions & options) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILauncherStatics2
+{
+    Windows::Foundation::IAsyncOperation<Windows::System::LaunchUriResult> LaunchUriForResultsAsync(const Windows::Foundation::Uri & uri, const Windows::System::LauncherOptions & options) const;
+    Windows::Foundation::IAsyncOperation<Windows::System::LaunchUriResult> LaunchUriForResultsAsync(const Windows::Foundation::Uri & uri, const Windows::System::LauncherOptions & options, const Windows::Foundation::Collections::ValueSet & inputData) const;
+    Windows::Foundation::IAsyncOperation<bool> LaunchUriAsync(const Windows::Foundation::Uri & uri, const Windows::System::LauncherOptions & options, const Windows::Foundation::Collections::ValueSet & inputData) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> QueryUriSupportAsync(const Windows::Foundation::Uri & uri, Windows::System::LaunchQuerySupportType launchQuerySupportType) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> QueryUriSupportAsync(const Windows::Foundation::Uri & uri, Windows::System::LaunchQuerySupportType launchQuerySupportType, hstring_ref packageFamilyName) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> QueryFileSupportAsync(const Windows::Storage::StorageFile & file) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> QueryFileSupportAsync(const Windows::Storage::StorageFile & file, hstring_ref packageFamilyName) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> FindUriSchemeHandlersAsync(hstring_ref scheme) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> FindUriSchemeHandlersAsync(hstring_ref scheme, Windows::System::LaunchQuerySupportType launchQuerySupportType) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> FindFileHandlersAsync(hstring_ref extension) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILauncherStatics3
+{
+    Windows::Foundation::IAsyncOperation<bool> LaunchFolderAsync(const Windows::Storage::IStorageFolder & folder) const;
+    Windows::Foundation::IAsyncOperation<bool> LaunchFolderAsync(const Windows::Storage::IStorageFolder & folder, const Windows::System::FolderLauncherOptions & options) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILauncherStatics4
+{
+    Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> QueryAppUriSupportAsync(const Windows::Foundation::Uri & uri) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchQuerySupportStatus> QueryAppUriSupportAsync(const Windows::Foundation::Uri & uri, hstring_ref packageFamilyName) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::AppInfo>> FindAppUriHandlersAsync(const Windows::Foundation::Uri & uri) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchUriStatus> LaunchUriForUserAsync(const Windows::System::User & user, const Windows::Foundation::Uri & uri) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchUriStatus> LaunchUriForUserAsync(const Windows::System::User & user, const Windows::Foundation::Uri & uri, const Windows::System::LauncherOptions & options) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::System::LaunchUriStatus> LaunchUriForUserAsync(const Windows::System::User & user, const Windows::Foundation::Uri & uri, const Windows::System::LauncherOptions & options, const Windows::Foundation::Collections::ValueSet & inputData) const;
+    Windows::Foundation::IAsyncOperation<Windows::System::LaunchUriResult> LaunchUriForResultsForUserAsync(const Windows::System::User & user, const Windows::Foundation::Uri & uri, const Windows::System::LauncherOptions & options) const;
+    Windows::Foundation::IAsyncOperation<Windows::System::LaunchUriResult> LaunchUriForResultsForUserAsync(const Windows::System::User & user, const Windows::Foundation::Uri & uri, const Windows::System::LauncherOptions & options, const Windows::Foundation::Collections::ValueSet & inputData) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILauncherUIOptions
+{
+    Windows::Foundation::IReference<Windows::Foundation::Point> InvocationPoint() const;
+    void InvocationPoint(const Windows::Foundation::IReference<Windows::Foundation::Point> & value) const;
+    Windows::Foundation::IReference<Windows::Foundation::Rect> SelectionRect() const;
+    void SelectionRect(const Windows::Foundation::IReference<Windows::Foundation::Rect> & value) const;
+    Windows::UI::Popups::Placement PreferredPlacement() const;
+    void PreferredPlacement(Windows::UI::Popups::Placement value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILauncherViewOptions
+{
+    Windows::UI::ViewManagement::ViewSizePreference DesiredRemainingView() const;
+    void DesiredRemainingView(Windows::UI::ViewManagement::ViewSizePreference value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMemoryManagerStatics
+{
+    uint64_t AppMemoryUsage() const;
+    uint64_t AppMemoryUsageLimit() const;
+    Windows::System::AppMemoryUsageLevel AppMemoryUsageLevel() const;
+    event_token AppMemoryUsageIncreased(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const;
+    using AppMemoryUsageIncreased_revoker = event_revoker<IMemoryManagerStatics>;
+    AppMemoryUsageIncreased_revoker AppMemoryUsageIncreased(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const;
+    void AppMemoryUsageIncreased(event_token token) const;
+    event_token AppMemoryUsageDecreased(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const;
+    using AppMemoryUsageDecreased_revoker = event_revoker<IMemoryManagerStatics>;
+    AppMemoryUsageDecreased_revoker AppMemoryUsageDecreased(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const;
+    void AppMemoryUsageDecreased(event_token token) const;
+    event_token AppMemoryUsageLimitChanging(const Windows::Foundation::EventHandler<Windows::System::AppMemoryUsageLimitChangingEventArgs> & handler) const;
+    using AppMemoryUsageLimitChanging_revoker = event_revoker<IMemoryManagerStatics>;
+    AppMemoryUsageLimitChanging_revoker AppMemoryUsageLimitChanging(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::System::AppMemoryUsageLimitChangingEventArgs> & handler) const;
+    void AppMemoryUsageLimitChanging(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMemoryManagerStatics2
+{
+    Windows::System::AppMemoryReport GetAppMemoryReport() const;
+    Windows::System::ProcessMemoryReport GetProcessMemoryReport() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMemoryManagerStatics3
+{
+    bool TrySetAppMemoryUsageLimit(uint64_t value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IProcessMemoryReport
+{
+    uint64_t PrivateWorkingSetUsage() const;
+    uint64_t TotalWorkingSetUsage() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IProtocolForResultsOperation
+{
+    void ReportCompleted(const Windows::Foundation::Collections::ValueSet & data) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRemoteLauncherOptions
+{
+    Windows::Foundation::Uri FallbackUri() const;
+    void FallbackUri(const Windows::Foundation::Uri & value) const;
+    Windows::Foundation::Collections::IVector<hstring> PreferredAppIds() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRemoteLauncherStatics
+{
+    Windows::Foundation::IAsyncOperation<winrt::Windows::System::RemoteLaunchUriStatus> LaunchUriAsync(const Windows::System::RemoteSystems::RemoteSystemConnectionRequest & remoteSystemConnectionRequest, const Windows::Foundation::Uri & uri) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::System::RemoteLaunchUriStatus> LaunchUriAsync(const Windows::System::RemoteSystems::RemoteSystemConnectionRequest & remoteSystemConnectionRequest, const Windows::Foundation::Uri & uri, const Windows::System::RemoteLauncherOptions & options) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::System::RemoteLaunchUriStatus> LaunchUriAsync(const Windows::System::RemoteSystems::RemoteSystemConnectionRequest & remoteSystemConnectionRequest, const Windows::Foundation::Uri & uri, const Windows::System::RemoteLauncherOptions & options, const Windows::Foundation::Collections::ValueSet & inputData) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUser
+{
+    hstring NonRoamableId() const;
+    Windows::System::UserAuthenticationStatus AuthenticationStatus() const;
+    Windows::System::UserType Type() const;
+    Windows::Foundation::IAsyncOperation<Windows::IInspectable> GetPropertyAsync(hstring_ref value) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IPropertySet> GetPropertiesAsync(const Windows::Foundation::Collections::IVectorView<hstring> & values) const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamReference> GetPictureAsync(Windows::System::UserPictureSize desiredSize) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUserAuthenticationStatusChangeDeferral
+{
+    void Complete() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUserAuthenticationStatusChangingEventArgs
+{
+    Windows::System::UserAuthenticationStatusChangeDeferral GetDeferral() const;
+    Windows::System::User User() const;
+    Windows::System::UserAuthenticationStatus NewStatus() const;
+    Windows::System::UserAuthenticationStatus CurrentStatus() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUserChangedEventArgs
+{
+    Windows::System::User User() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUserDeviceAssociationChangedEventArgs
+{
+    hstring DeviceId() const;
+    Windows::System::User NewUser() const;
+    Windows::System::User OldUser() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUserDeviceAssociationStatics
+{
+    Windows::System::User FindUserFromDeviceId(hstring_ref deviceId) const;
+    event_token UserDeviceAssociationChanged(const Windows::Foundation::EventHandler<Windows::System::UserDeviceAssociationChangedEventArgs> & handler) const;
+    using UserDeviceAssociationChanged_revoker = event_revoker<IUserDeviceAssociationStatics>;
+    UserDeviceAssociationChanged_revoker UserDeviceAssociationChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::System::UserDeviceAssociationChangedEventArgs> & handler) const;
+    void UserDeviceAssociationChanged(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUserPicker
+{
+    bool AllowGuestAccounts() const;
+    void AllowGuestAccounts(bool value) const;
+    Windows::System::User SuggestedSelectedUser() const;
+    void SuggestedSelectedUser(const Windows::System::User & value) const;
+    Windows::Foundation::IAsyncOperation<Windows::System::User> PickSingleUserAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUserPickerStatics
+{
+    bool IsSupported() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUserStatics
+{
+    Windows::System::UserWatcher CreateWatcher() const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::System::User>> FindAllAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::System::User>> FindAllAsync(Windows::System::UserType type) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::System::User>> FindAllAsync(Windows::System::UserType type, Windows::System::UserAuthenticationStatus status) const;
+    Windows::System::User GetFromId(hstring_ref nonRoamableId) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUserWatcher
+{
+    Windows::System::UserWatcherStatus Status() const;
+    void Start() const;
+    void Stop() const;
+    event_token Added(const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::System::UserChangedEventArgs> & handler) const;
+    using Added_revoker = event_revoker<IUserWatcher>;
+    Added_revoker Added(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::System::UserChangedEventArgs> & handler) const;
+    void Added(event_token token) const;
+    event_token Removed(const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::System::UserChangedEventArgs> & handler) const;
+    using Removed_revoker = event_revoker<IUserWatcher>;
+    Removed_revoker Removed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::System::UserChangedEventArgs> & handler) const;
+    void Removed(event_token token) const;
+    event_token Updated(const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::System::UserChangedEventArgs> & handler) const;
+    using Updated_revoker = event_revoker<IUserWatcher>;
+    Updated_revoker Updated(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::System::UserChangedEventArgs> & handler) const;
+    void Updated(event_token token) const;
+    event_token AuthenticationStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::System::UserChangedEventArgs> & handler) const;
+    using AuthenticationStatusChanged_revoker = event_revoker<IUserWatcher>;
+    AuthenticationStatusChanged_revoker AuthenticationStatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::System::UserChangedEventArgs> & handler) const;
+    void AuthenticationStatusChanged(event_token token) const;
+    event_token AuthenticationStatusChanging(const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::System::UserAuthenticationStatusChangingEventArgs> & handler) const;
+    using AuthenticationStatusChanging_revoker = event_revoker<IUserWatcher>;
+    AuthenticationStatusChanging_revoker AuthenticationStatusChanging(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::System::UserAuthenticationStatusChangingEventArgs> & handler) const;
+    void AuthenticationStatusChanging(event_token token) const;
+    event_token EnumerationCompleted(const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::IInspectable> & handler) const;
+    using EnumerationCompleted_revoker = event_revoker<IUserWatcher>;
+    EnumerationCompleted_revoker EnumerationCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::IInspectable> & handler) const;
+    void EnumerationCompleted(event_token token) const;
+    event_token Stopped(const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::IInspectable> & handler) const;
+    using Stopped_revoker = event_revoker<IUserWatcher>;
+    Stopped_revoker Stopped(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::System::UserWatcher, Windows::IInspectable> & handler) const;
+    void Stopped(event_token token) const;
+};
 
 }
 

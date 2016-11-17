@@ -36,6 +36,16 @@ struct PdfPageRenderOptions;
 
 namespace Windows::Data::Pdf {
 
+template <typename T> struct impl_IPdfDocument;
+template <typename T> struct impl_IPdfDocumentStatics;
+template <typename T> struct impl_IPdfPage;
+template <typename T> struct impl_IPdfPageDimensions;
+template <typename T> struct impl_IPdfPageRenderOptions;
+
+}
+
+namespace Windows::Data::Pdf {
+
 enum class PdfPageRotation
 {
     Normal = 0,

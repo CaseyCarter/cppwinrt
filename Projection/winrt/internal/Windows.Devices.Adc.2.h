@@ -4,7 +4,7 @@
 #pragma once
 
 #include "Windows.Devices.Adc.1.h"
-#include "Windows.Foundation.2.h"
+#include "Windows.Foundation.1.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -64,39 +64,6 @@ template <> struct __declspec(uuid("7c4038c8-d920-53c7-a5d6-a976070d7637")) __de
 }
 
 namespace Windows::Devices::Adc {
-
-template <typename D>
-struct WINRT_EBO impl_IAdcChannel
-{
-    Windows::Devices::Adc::AdcController Controller() const;
-    int32_t ReadValue() const;
-    double ReadRatio() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IAdcController
-{
-    int32_t ChannelCount() const;
-    int32_t ResolutionInBits() const;
-    int32_t MinValue() const;
-    int32_t MaxValue() const;
-    Windows::Devices::Adc::AdcChannelMode ChannelMode() const;
-    void ChannelMode(Windows::Devices::Adc::AdcChannelMode value) const;
-    bool IsChannelModeSupported(Windows::Devices::Adc::AdcChannelMode channelMode) const;
-    Windows::Devices::Adc::AdcChannel OpenChannel(int32_t channelNumber) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IAdcControllerStatics
-{
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Adc::AdcController>> GetControllersAsync(const Windows::Devices::Adc::Provider::IAdcProvider & provider) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IAdcControllerStatics2
-{
-    Windows::Foundation::IAsyncOperation<Windows::Devices::Adc::AdcController> GetDefaultAsync() const;
-};
 
 struct IAdcChannel :
     Windows::IInspectable,

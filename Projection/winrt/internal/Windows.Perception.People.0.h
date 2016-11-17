@@ -20,4 +20,10 @@ struct HeadPose;
 
 }
 
+namespace Windows::Perception::People {
+
+template <typename T> struct impl_IHeadPose;
+
+}
+
 }

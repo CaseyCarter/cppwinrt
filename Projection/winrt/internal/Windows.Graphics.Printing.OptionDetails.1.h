@@ -112,17 +112,93 @@ template <> struct traits<Windows::Graphics::Printing::OptionDetails::PrintTaskO
 
 namespace Windows::Graphics::Printing::OptionDetails {
 
-template <typename T> struct impl_IPrintCustomItemDetails;
-template <typename T> struct impl_IPrintCustomItemListOptionDetails;
-template <typename T> struct impl_IPrintCustomOptionDetails;
-template <typename T> struct impl_IPrintCustomTextOptionDetails;
-template <typename T> struct impl_IPrintItemListOptionDetails;
-template <typename T> struct impl_IPrintNumberOptionDetails;
-template <typename T> struct impl_IPrintOptionDetails;
-template <typename T> struct impl_IPrintTaskOptionChangedEventArgs;
-template <typename T> struct impl_IPrintTaskOptionDetails;
-template <typename T> struct impl_IPrintTaskOptionDetailsStatic;
-template <typename T> struct impl_IPrintTextOptionDetails;
+template <typename D>
+struct WINRT_EBO impl_IPrintCustomItemDetails
+{
+    hstring ItemId() const;
+    void ItemDisplayName(hstring_ref value) const;
+    hstring ItemDisplayName() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPrintCustomItemListOptionDetails
+{
+    void AddItem(hstring_ref itemId, hstring_ref displayName) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPrintCustomOptionDetails
+{
+    void DisplayName(hstring_ref value) const;
+    hstring DisplayName() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPrintCustomTextOptionDetails
+{
+    void MaxCharacters(uint32_t value) const;
+    uint32_t MaxCharacters() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPrintItemListOptionDetails
+{
+    Windows::Foundation::Collections::IVectorView<Windows::IInspectable> Items() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPrintNumberOptionDetails
+{
+    uint32_t MinValue() const;
+    uint32_t MaxValue() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPrintOptionDetails
+{
+    hstring OptionId() const;
+    Windows::Graphics::Printing::OptionDetails::PrintOptionType OptionType() const;
+    void ErrorText(hstring_ref value) const;
+    hstring ErrorText() const;
+    void State(Windows::Graphics::Printing::OptionDetails::PrintOptionStates value) const;
+    Windows::Graphics::Printing::OptionDetails::PrintOptionStates State() const;
+    Windows::IInspectable Value() const;
+    bool TrySetValue(const Windows::IInspectable & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPrintTaskOptionChangedEventArgs
+{
+    Windows::IInspectable OptionId() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPrintTaskOptionDetails
+{
+    Windows::Foundation::Collections::IMapView<hstring, Windows::Graphics::Printing::OptionDetails::IPrintOptionDetails> Options() const;
+    Windows::Graphics::Printing::OptionDetails::PrintCustomItemListOptionDetails CreateItemListOption(hstring_ref optionId, hstring_ref displayName) const;
+    Windows::Graphics::Printing::OptionDetails::PrintCustomTextOptionDetails CreateTextOption(hstring_ref optionId, hstring_ref displayName) const;
+    event_token OptionChanged(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::Graphics::Printing::OptionDetails::PrintTaskOptionChangedEventArgs> & eventHandler) const;
+    using OptionChanged_revoker = event_revoker<IPrintTaskOptionDetails>;
+    OptionChanged_revoker OptionChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::Graphics::Printing::OptionDetails::PrintTaskOptionChangedEventArgs> & eventHandler) const;
+    void OptionChanged(event_token eventCookie) const;
+    event_token BeginValidation(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::IInspectable> & eventHandler) const;
+    using BeginValidation_revoker = event_revoker<IPrintTaskOptionDetails>;
+    BeginValidation_revoker BeginValidation(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails, Windows::IInspectable> & eventHandler) const;
+    void BeginValidation(event_token eventCookie) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPrintTaskOptionDetailsStatic
+{
+    Windows::Graphics::Printing::OptionDetails::PrintTaskOptionDetails GetFromPrintTaskOptions(const Windows::Graphics::Printing::PrintTaskOptions & printTaskOptions) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPrintTextOptionDetails
+{
+    uint32_t MaxCharacters() const;
+};
 
 }
 

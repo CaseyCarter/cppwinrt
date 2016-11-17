@@ -74,14 +74,60 @@ template <> struct traits<Windows::System::UserProfile::UserProfilePersonalizati
 
 namespace Windows::System::UserProfile {
 
-template <typename T> struct impl_IAdvertisingManagerForUser;
-template <typename T> struct impl_IAdvertisingManagerStatics;
-template <typename T> struct impl_IAdvertisingManagerStatics2;
-template <typename T> struct impl_IFirstSignInSettings;
-template <typename T> struct impl_IFirstSignInSettingsStatics;
-template <typename T> struct impl_IGlobalizationPreferencesStatics;
-template <typename T> struct impl_IUserProfilePersonalizationSettings;
-template <typename T> struct impl_IUserProfilePersonalizationSettingsStatics;
+template <typename D>
+struct WINRT_EBO impl_IAdvertisingManagerForUser
+{
+    hstring AdvertisingId() const;
+    Windows::System::User User() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAdvertisingManagerStatics
+{
+    hstring AdvertisingId() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAdvertisingManagerStatics2
+{
+    Windows::System::UserProfile::AdvertisingManagerForUser GetForUser(const Windows::System::User & user) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFirstSignInSettings
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFirstSignInSettingsStatics
+{
+    Windows::System::UserProfile::FirstSignInSettings GetDefault() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGlobalizationPreferencesStatics
+{
+    Windows::Foundation::Collections::IVectorView<hstring> Calendars() const;
+    Windows::Foundation::Collections::IVectorView<hstring> Clocks() const;
+    Windows::Foundation::Collections::IVectorView<hstring> Currencies() const;
+    Windows::Foundation::Collections::IVectorView<hstring> Languages() const;
+    hstring HomeGeographicRegion() const;
+    Windows::Globalization::DayOfWeek WeekStartsOn() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUserProfilePersonalizationSettings
+{
+    Windows::Foundation::IAsyncOperation<bool> TrySetLockScreenImageAsync(const Windows::Storage::StorageFile & imageFile) const;
+    Windows::Foundation::IAsyncOperation<bool> TrySetWallpaperImageAsync(const Windows::Storage::StorageFile & imageFile) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUserProfilePersonalizationSettingsStatics
+{
+    Windows::System::UserProfile::UserProfilePersonalizationSettings Current() const;
+    bool IsSupported() const;
+};
 
 }
 

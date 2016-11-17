@@ -32,8 +32,17 @@ namespace ABI {
 
 namespace Windows::Web {
 
-template <typename T> struct impl_IUriToStreamResolver;
-template <typename T> struct impl_IWebErrorStatics;
+template <typename D>
+struct WINRT_EBO impl_IUriToStreamResolver
+{
+    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IInputStream> UriToStreamAsync(const Windows::Foundation::Uri & uri) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebErrorStatics
+{
+    Windows::Web::WebErrorStatus GetStatus(int32_t hresult) const;
+};
 
 }
 

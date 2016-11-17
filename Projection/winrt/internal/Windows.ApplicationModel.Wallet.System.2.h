@@ -94,31 +94,6 @@ template <> struct __declspec(uuid("9302d49e-dda3-5971-b48a-dfdf02c572af")) __de
 
 namespace Windows::ApplicationModel::Wallet::System {
 
-template <typename D>
-struct WINRT_EBO impl_IWalletItemSystemStore
-{
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Wallet::WalletItem>> GetItemsAsync() const;
-    Windows::Foundation::IAsyncAction DeleteAsync(const Windows::ApplicationModel::Wallet::WalletItem & item) const;
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Wallet::WalletItem> ImportItemAsync(const Windows::Storage::Streams::IRandomAccessStreamReference & stream) const;
-    Windows::ApplicationModel::Wallet::System::WalletItemAppAssociation GetAppStatusForItem(const Windows::ApplicationModel::Wallet::WalletItem & item) const;
-    Windows::Foundation::IAsyncOperation<bool> LaunchAppForItemAsync(const Windows::ApplicationModel::Wallet::WalletItem & item) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IWalletItemSystemStore2
-{
-    event_token ItemsChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Wallet::System::WalletItemSystemStore, Windows::IInspectable> & handler) const;
-    using ItemsChanged_revoker = event_revoker<IWalletItemSystemStore2>;
-    ItemsChanged_revoker ItemsChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Wallet::System::WalletItemSystemStore, Windows::IInspectable> & handler) const;
-    void ItemsChanged(event_token cookie) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IWalletManagerSystemStatics
-{
-    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Wallet::System::WalletItemSystemStore> RequestStoreAsync() const;
-};
-
 struct IWalletItemSystemStore :
     Windows::IInspectable,
     impl::consume<IWalletItemSystemStore>

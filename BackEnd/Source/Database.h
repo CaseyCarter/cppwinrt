@@ -117,9 +117,9 @@ template <typename T> void GetFields(T callback)
     }
 }
 
-template <typename T> void GetFieldNamespaces(T callback)
+template <typename T> void GetRequiredAbis(T callback)
 {
-    static Statement s = Prepare(Strings::DatabaseGetFieldNamespaces);
+    static Statement s = Prepare(Strings::DatabaseGetRequiredAbis);
     s.Reset(Settings::FileNamespace);
 
     while (s.Step())

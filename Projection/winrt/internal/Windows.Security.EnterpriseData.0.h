@@ -6,6 +6,11 @@
 
 WINRT_EXPORT namespace winrt {
 
+namespace Windows::Security::Cryptography::DataProtection {
+
+
+}
+
 namespace Windows::Security::EnterpriseData {
 
 enum class ProtectionPolicyEvaluationResult

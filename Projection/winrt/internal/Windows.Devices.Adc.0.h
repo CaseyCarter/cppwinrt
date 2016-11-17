@@ -30,6 +30,15 @@ struct AdcController;
 
 namespace Windows::Devices::Adc {
 
+template <typename T> struct impl_IAdcChannel;
+template <typename T> struct impl_IAdcController;
+template <typename T> struct impl_IAdcControllerStatics;
+template <typename T> struct impl_IAdcControllerStatics2;
+
+}
+
+namespace Windows::Devices::Adc {
+
 enum class AdcChannelMode
 {
     SingleEnded = 0,

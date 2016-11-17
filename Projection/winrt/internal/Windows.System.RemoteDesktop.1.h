@@ -24,7 +24,11 @@ namespace ABI {
 
 namespace Windows::System::RemoteDesktop {
 
-template <typename T> struct impl_IInteractiveSessionStatics;
+template <typename D>
+struct WINRT_EBO impl_IInteractiveSessionStatics
+{
+    bool IsRemote() const;
+};
 
 }
 

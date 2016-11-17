@@ -39,8 +39,27 @@ template <> struct traits<Windows::Devices::Radios::Radio> { using default_inter
 
 namespace Windows::Devices::Radios {
 
-template <typename T> struct impl_IRadio;
-template <typename T> struct impl_IRadioStatics;
+template <typename D>
+struct WINRT_EBO impl_IRadio
+{
+    Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Radios::RadioAccessStatus> SetStateAsync(Windows::Devices::Radios::RadioState value) const;
+    event_token StateChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Radios::Radio, Windows::IInspectable> & handler) const;
+    using StateChanged_revoker = event_revoker<IRadio>;
+    StateChanged_revoker StateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Radios::Radio, Windows::IInspectable> & handler) const;
+    void StateChanged(event_token eventCookie) const;
+    Windows::Devices::Radios::RadioState State() const;
+    hstring Name() const;
+    Windows::Devices::Radios::RadioKind Kind() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRadioStatics
+{
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Radios::Radio>> GetRadiosAsync() const;
+    hstring GetDeviceSelector() const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Radios::Radio> FromIdAsync(hstring_ref deviceId) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::Radios::RadioAccessStatus> RequestAccessAsync() const;
+};
 
 }
 

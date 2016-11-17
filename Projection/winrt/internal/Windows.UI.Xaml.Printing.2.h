@@ -4,65 +4,12 @@
 #pragma once
 
 #include "Windows.UI.Xaml.Printing.1.h"
+#include "Windows.UI.Xaml.1.h"
 #include "Windows.UI.Xaml.2.h"
 
 WINRT_EXPORT namespace winrt {
 
 namespace Windows::UI::Xaml::Printing {
-
-template <typename D>
-struct WINRT_EBO impl_IAddPagesEventArgs
-{
-    Windows::Graphics::Printing::PrintTaskOptions PrintTaskOptions() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IGetPreviewPageEventArgs
-{
-    int32_t PageNumber() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IPaginateEventArgs
-{
-    Windows::Graphics::Printing::PrintTaskOptions PrintTaskOptions() const;
-    int32_t CurrentPreviewPageNumber() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IPrintDocument
-{
-    Windows::Graphics::Printing::IPrintDocumentSource DocumentSource() const;
-    event_token Paginate(const Windows::UI::Xaml::Printing::PaginateEventHandler & value) const;
-    using Paginate_revoker = event_revoker<IPrintDocument>;
-    Paginate_revoker Paginate(auto_revoke_t, const Windows::UI::Xaml::Printing::PaginateEventHandler & value) const;
-    void Paginate(event_token token) const;
-    event_token GetPreviewPage(const Windows::UI::Xaml::Printing::GetPreviewPageEventHandler & value) const;
-    using GetPreviewPage_revoker = event_revoker<IPrintDocument>;
-    GetPreviewPage_revoker GetPreviewPage(auto_revoke_t, const Windows::UI::Xaml::Printing::GetPreviewPageEventHandler & value) const;
-    void GetPreviewPage(event_token token) const;
-    event_token AddPages(const Windows::UI::Xaml::Printing::AddPagesEventHandler & value) const;
-    using AddPages_revoker = event_revoker<IPrintDocument>;
-    AddPages_revoker AddPages(auto_revoke_t, const Windows::UI::Xaml::Printing::AddPagesEventHandler & value) const;
-    void AddPages(event_token token) const;
-    void AddPage(const Windows::UI::Xaml::UIElement & pageVisual) const;
-    void AddPagesComplete() const;
-    void SetPreviewPageCount(int32_t count, Windows::UI::Xaml::Printing::PreviewPageCountType type) const;
-    void SetPreviewPage(int32_t pageNumber, const Windows::UI::Xaml::UIElement & pageVisual) const;
-    void InvalidatePreview() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IPrintDocumentFactory
-{
-    Windows::UI::Xaml::Printing::PrintDocument CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IPrintDocumentStatics
-{
-    Windows::UI::Xaml::DependencyProperty DocumentSourceProperty() const;
-};
 
 struct AddPagesEventHandler : Windows::IUnknown
 {

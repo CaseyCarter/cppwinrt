@@ -30,6 +30,15 @@ struct PwmPin;
 
 namespace Windows::Devices::Pwm {
 
+template <typename T> struct impl_IPwmController;
+template <typename T> struct impl_IPwmControllerStatics;
+template <typename T> struct impl_IPwmControllerStatics2;
+template <typename T> struct impl_IPwmPin;
+
+}
+
+namespace Windows::Devices::Pwm {
+
 enum class PwmPulsePolarity
 {
     ActiveHigh = 0,

@@ -9,13 +9,6 @@ WINRT_EXPORT namespace winrt {
 
 namespace Windows::System::Display {
 
-template <typename D>
-struct WINRT_EBO impl_IDisplayRequest
-{
-    void RequestActive() const;
-    void RequestRelease() const;
-};
-
 struct IDisplayRequest :
     Windows::IInspectable,
     impl::consume<IDisplayRequest>

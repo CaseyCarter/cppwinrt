@@ -62,6 +62,20 @@ struct TouchCapabilities;
 
 namespace Windows::Devices::Input {
 
+template <typename T> struct impl_IKeyboardCapabilities;
+template <typename T> struct impl_IMouseCapabilities;
+template <typename T> struct impl_IMouseDevice;
+template <typename T> struct impl_IMouseDeviceStatics;
+template <typename T> struct impl_IMouseEventArgs;
+template <typename T> struct impl_IPointerDevice;
+template <typename T> struct impl_IPointerDevice2;
+template <typename T> struct impl_IPointerDeviceStatics;
+template <typename T> struct impl_ITouchCapabilities;
+
+}
+
+namespace Windows::Devices::Input {
+
 enum class PointerDeviceType
 {
     Touch = 0,

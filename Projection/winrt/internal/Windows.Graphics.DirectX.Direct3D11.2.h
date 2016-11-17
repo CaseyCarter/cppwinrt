@@ -4,24 +4,12 @@
 #pragma once
 
 #include "Windows.Graphics.DirectX.Direct3D11.1.h"
+#include "Windows.Foundation.1.h"
 #include "Windows.Graphics.DirectX.1.h"
-#include "Windows.Foundation.2.h"
 
 WINRT_EXPORT namespace winrt {
 
 namespace Windows::Graphics::DirectX::Direct3D11 {
-
-template <typename D>
-struct WINRT_EBO impl_IDirect3DDevice
-{
-    void Trim() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IDirect3DSurface
-{
-    Windows::Graphics::DirectX::Direct3D11::Direct3DSurfaceDescription Description() const;
-};
 
 struct IDirect3DDevice :
     Windows::IInspectable,

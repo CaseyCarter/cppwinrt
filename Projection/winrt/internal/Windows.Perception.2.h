@@ -9,19 +9,6 @@ WINRT_EXPORT namespace winrt {
 
 namespace Windows::Perception {
 
-template <typename D>
-struct WINRT_EBO impl_IPerceptionTimestamp
-{
-    Windows::Foundation::DateTime TargetTime() const;
-    Windows::Foundation::TimeSpan PredictionAmount() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IPerceptionTimestampHelperStatics
-{
-    Windows::Perception::PerceptionTimestamp FromHistoricalTargetTime(const Windows::Foundation::DateTime & targetTime) const;
-};
-
 struct IPerceptionTimestamp :
     Windows::IInspectable,
     impl::consume<IPerceptionTimestamp>

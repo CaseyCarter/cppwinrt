@@ -9,30 +9,6 @@ WINRT_EXPORT namespace winrt {
 
 namespace Windows::UI::Xaml::Resources {
 
-template <typename D>
-struct WINRT_EBO impl_ICustomXamlResourceLoader
-{
-};
-
-template <typename D>
-struct WINRT_EBO impl_ICustomXamlResourceLoaderFactory
-{
-    Windows::UI::Xaml::Resources::CustomXamlResourceLoader CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_ICustomXamlResourceLoaderOverrides
-{
-    Windows::IInspectable GetResource(hstring_ref resourceId, hstring_ref objectType, hstring_ref propertyName, hstring_ref propertyType) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_ICustomXamlResourceLoaderStatics
-{
-    Windows::UI::Xaml::Resources::CustomXamlResourceLoader Current() const;
-    void Current(const Windows::UI::Xaml::Resources::CustomXamlResourceLoader & value) const;
-};
-
 struct ICustomXamlResourceLoader :
     Windows::IInspectable,
     impl::consume<ICustomXamlResourceLoader>

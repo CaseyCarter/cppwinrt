@@ -36,9 +36,23 @@ template <> struct traits<Windows::Data::Xml::Xsl::XsltProcessor> { using defaul
 
 namespace Windows::Data::Xml::Xsl {
 
-template <typename T> struct impl_IXsltProcessor;
-template <typename T> struct impl_IXsltProcessor2;
-template <typename T> struct impl_IXsltProcessorFactory;
+template <typename D>
+struct WINRT_EBO impl_IXsltProcessor
+{
+    hstring TransformToString(const Windows::Data::Xml::Dom::IXmlNode & inputNode) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IXsltProcessor2
+{
+    Windows::Data::Xml::Dom::XmlDocument TransformToDocument(const Windows::Data::Xml::Dom::IXmlNode & inputNode) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IXsltProcessorFactory
+{
+    Windows::Data::Xml::Xsl::XsltProcessor CreateInstance(const Windows::Data::Xml::Dom::XmlDocument & document) const;
+};
 
 }
 

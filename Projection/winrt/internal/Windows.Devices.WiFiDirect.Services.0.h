@@ -58,6 +58,22 @@ struct WiFiDirectServiceSessionRequestedEventArgs;
 
 namespace Windows::Devices::WiFiDirect::Services {
 
+template <typename T> struct impl_IWiFiDirectService;
+template <typename T> struct impl_IWiFiDirectServiceAdvertiser;
+template <typename T> struct impl_IWiFiDirectServiceAdvertiserFactory;
+template <typename T> struct impl_IWiFiDirectServiceAutoAcceptSessionConnectedEventArgs;
+template <typename T> struct impl_IWiFiDirectServiceProvisioningInfo;
+template <typename T> struct impl_IWiFiDirectServiceRemotePortAddedEventArgs;
+template <typename T> struct impl_IWiFiDirectServiceSession;
+template <typename T> struct impl_IWiFiDirectServiceSessionDeferredEventArgs;
+template <typename T> struct impl_IWiFiDirectServiceSessionRequest;
+template <typename T> struct impl_IWiFiDirectServiceSessionRequestedEventArgs;
+template <typename T> struct impl_IWiFiDirectServiceStatics;
+
+}
+
+namespace Windows::Devices::WiFiDirect::Services {
+
 enum class WiFiDirectServiceAdvertisementStatus
 {
     Created = 0,

@@ -118,16 +118,76 @@ template <> struct traits<Windows::UI::Xaml::Interop::NotifyCollectionChangedEve
 
 namespace Windows::UI::Xaml::Interop {
 
-template <typename T> struct impl_IBindableIterable;
-template <typename T> struct impl_IBindableIterator;
-template <typename T> struct impl_IBindableObservableVector;
-template <typename T> struct impl_IBindableVector;
-template <typename T> struct impl_IBindableVectorView;
-template <typename T> struct impl_INotifyCollectionChanged;
-template <typename T> struct impl_INotifyCollectionChangedEventArgs;
-template <typename T> struct impl_INotifyCollectionChangedEventArgsFactory;
-template <typename T> struct impl_BindableVectorChangedEventHandler;
-template <typename T> struct impl_NotifyCollectionChangedEventHandler;
+template <typename D>
+struct WINRT_EBO impl_IBindableIterable
+{
+    Windows::UI::Xaml::Interop::IBindableIterator First() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBindableIterator
+{
+    Windows::IInspectable Current() const;
+    bool HasCurrent() const;
+    bool MoveNext() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBindableObservableVector
+{
+    event_token VectorChanged(const Windows::UI::Xaml::Interop::BindableVectorChangedEventHandler & value) const;
+    using VectorChanged_revoker = event_revoker<IBindableObservableVector>;
+    VectorChanged_revoker VectorChanged(auto_revoke_t, const Windows::UI::Xaml::Interop::BindableVectorChangedEventHandler & value) const;
+    void VectorChanged(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBindableVector
+{
+    Windows::IInspectable GetAt(uint32_t index) const;
+    uint32_t Size() const;
+    Windows::UI::Xaml::Interop::IBindableVectorView GetView() const;
+    bool IndexOf(const Windows::IInspectable & value, uint32_t & index) const;
+    void SetAt(uint32_t index, const Windows::IInspectable & value) const;
+    void InsertAt(uint32_t index, const Windows::IInspectable & value) const;
+    void RemoveAt(uint32_t index) const;
+    void Append(const Windows::IInspectable & value) const;
+    void RemoveAtEnd() const;
+    void Clear() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBindableVectorView
+{
+    Windows::IInspectable GetAt(uint32_t index) const;
+    uint32_t Size() const;
+    bool IndexOf(const Windows::IInspectable & value, uint32_t & index) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_INotifyCollectionChanged
+{
+    event_token CollectionChanged(const Windows::UI::Xaml::Interop::NotifyCollectionChangedEventHandler & value) const;
+    using CollectionChanged_revoker = event_revoker<INotifyCollectionChanged>;
+    CollectionChanged_revoker CollectionChanged(auto_revoke_t, const Windows::UI::Xaml::Interop::NotifyCollectionChangedEventHandler & value) const;
+    void CollectionChanged(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_INotifyCollectionChangedEventArgs
+{
+    Windows::UI::Xaml::Interop::NotifyCollectionChangedAction Action() const;
+    Windows::UI::Xaml::Interop::IBindableVector NewItems() const;
+    Windows::UI::Xaml::Interop::IBindableVector OldItems() const;
+    int32_t NewStartingIndex() const;
+    int32_t OldStartingIndex() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_INotifyCollectionChangedEventArgsFactory
+{
+    Windows::UI::Xaml::Interop::NotifyCollectionChangedEventArgs CreateInstanceWithAllParameters(Windows::UI::Xaml::Interop::NotifyCollectionChangedAction action, const Windows::UI::Xaml::Interop::IBindableVector & newItems, const Windows::UI::Xaml::Interop::IBindableVector & oldItems, int32_t newIndex, int32_t oldIndex, const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
 
 }
 

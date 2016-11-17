@@ -26,4 +26,12 @@ struct BatteryReport;
 
 }
 
+namespace Windows::Devices::Power {
+
+template <typename T> struct impl_IBattery;
+template <typename T> struct impl_IBatteryReport;
+template <typename T> struct impl_IBatteryStatics;
+
+}
+
 }

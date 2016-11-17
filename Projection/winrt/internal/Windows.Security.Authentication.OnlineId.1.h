@@ -70,11 +70,52 @@ template <> struct traits<Windows::Security::Authentication::OnlineId::UserIdent
 
 namespace Windows::Security::Authentication::OnlineId {
 
-template <typename T> struct impl_IOnlineIdAuthenticator;
-template <typename T> struct impl_IOnlineIdServiceTicket;
-template <typename T> struct impl_IOnlineIdServiceTicketRequest;
-template <typename T> struct impl_IOnlineIdServiceTicketRequestFactory;
-template <typename T> struct impl_IUserIdentity;
+template <typename D>
+struct WINRT_EBO impl_IOnlineIdAuthenticator
+{
+    Windows::Security::Authentication::OnlineId::UserAuthenticationOperation AuthenticateUserAsync(const Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest & request) const;
+    Windows::Security::Authentication::OnlineId::UserAuthenticationOperation AuthenticateUserAsync(const Windows::Foundation::Collections::IIterable<Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest> & requests, Windows::Security::Authentication::OnlineId::CredentialPromptType credentialPromptType) const;
+    Windows::Security::Authentication::OnlineId::SignOutUserOperation SignOutUserAsync() const;
+    void ApplicationId(GUID value) const;
+    GUID ApplicationId() const;
+    bool CanSignOut() const;
+    hstring AuthenticatedSafeCustomerId() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IOnlineIdServiceTicket
+{
+    hstring Value() const;
+    Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest Request() const;
+    int32_t ErrorCode() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IOnlineIdServiceTicketRequest
+{
+    hstring Service() const;
+    hstring Policy() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IOnlineIdServiceTicketRequestFactory
+{
+    Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest CreateOnlineIdServiceTicketRequest(hstring_ref service, hstring_ref policy) const;
+    Windows::Security::Authentication::OnlineId::OnlineIdServiceTicketRequest CreateOnlineIdServiceTicketRequestAdvanced(hstring_ref service) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUserIdentity
+{
+    Windows::Foundation::Collections::IVectorView<Windows::Security::Authentication::OnlineId::OnlineIdServiceTicket> Tickets() const;
+    hstring Id() const;
+    hstring SafeCustomerId() const;
+    hstring SignInName() const;
+    hstring FirstName() const;
+    hstring LastName() const;
+    bool IsBetaAccount() const;
+    bool IsConfirmedPC() const;
+};
 
 }
 

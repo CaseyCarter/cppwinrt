@@ -32,4 +32,14 @@ struct FaceTracker;
 
 }
 
+namespace Windows::Media::FaceAnalysis {
+
+template <typename T> struct impl_IDetectedFace;
+template <typename T> struct impl_IFaceDetector;
+template <typename T> struct impl_IFaceDetectorStatics;
+template <typename T> struct impl_IFaceTracker;
+template <typename T> struct impl_IFaceTrackerStatics;
+
+}
+
 }

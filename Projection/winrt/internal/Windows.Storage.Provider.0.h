@@ -41,6 +41,18 @@ struct FileUpdateRequestedEventArgs;
 
 namespace Windows::Storage::Provider {
 
+template <typename T> struct impl_ICachedFileUpdaterStatics;
+template <typename T> struct impl_ICachedFileUpdaterUI;
+template <typename T> struct impl_ICachedFileUpdaterUI2;
+template <typename T> struct impl_IFileUpdateRequest;
+template <typename T> struct impl_IFileUpdateRequest2;
+template <typename T> struct impl_IFileUpdateRequestDeferral;
+template <typename T> struct impl_IFileUpdateRequestedEventArgs;
+
+}
+
+namespace Windows::Storage::Provider {
+
 enum class CachedFileOptions : unsigned
 {
     None = 0x0,

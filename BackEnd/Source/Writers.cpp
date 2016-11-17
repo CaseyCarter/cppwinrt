@@ -1549,7 +1549,7 @@ void WriteRequiredAbiHeadersForAbi(Output & out)
 
 void WriteRequiredAbiHeadersForInterface(Output & out)
 {
-    GetFieldNamespaces([&]
+    GetRequiredAbis([&]
     {
         Write(out, Strings::WriteInclude, Settings::NamespaceDotName + Settings::AbiLayerExtension);
     });

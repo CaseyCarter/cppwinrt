@@ -40,6 +40,16 @@ struct UserIdentity;
 
 namespace Windows::Security::Authentication::OnlineId {
 
+template <typename T> struct impl_IOnlineIdAuthenticator;
+template <typename T> struct impl_IOnlineIdServiceTicket;
+template <typename T> struct impl_IOnlineIdServiceTicketRequest;
+template <typename T> struct impl_IOnlineIdServiceTicketRequestFactory;
+template <typename T> struct impl_IUserIdentity;
+
+}
+
+namespace Windows::Security::Authentication::OnlineId {
+
 enum class CredentialPromptType
 {
     PromptIfNeeded = 0,

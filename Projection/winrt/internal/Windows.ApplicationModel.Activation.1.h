@@ -310,51 +310,291 @@ template <> struct traits<Windows::ApplicationModel::Activation::WebAuthenticati
 
 namespace Windows::ApplicationModel::Activation {
 
-template <typename T> struct impl_IActivatedEventArgs;
-template <typename T> struct impl_IActivatedEventArgsWithUser;
-template <typename T> struct impl_IApplicationViewActivatedEventArgs;
-template <typename T> struct impl_IAppointmentsProviderActivatedEventArgs;
-template <typename T> struct impl_IAppointmentsProviderAddAppointmentActivatedEventArgs;
-template <typename T> struct impl_IAppointmentsProviderRemoveAppointmentActivatedEventArgs;
-template <typename T> struct impl_IAppointmentsProviderReplaceAppointmentActivatedEventArgs;
-template <typename T> struct impl_IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs;
-template <typename T> struct impl_IAppointmentsProviderShowTimeFrameActivatedEventArgs;
-template <typename T> struct impl_IBackgroundActivatedEventArgs;
-template <typename T> struct impl_ICachedFileUpdaterActivatedEventArgs;
-template <typename T> struct impl_IContinuationActivatedEventArgs;
-template <typename T> struct impl_IDeviceActivatedEventArgs;
-template <typename T> struct impl_IDevicePairingActivatedEventArgs;
-template <typename T> struct impl_IDialReceiverActivatedEventArgs;
-template <typename T> struct impl_IFileActivatedEventArgs;
-template <typename T> struct impl_IFileActivatedEventArgsWithCallerPackageFamilyName;
-template <typename T> struct impl_IFileActivatedEventArgsWithNeighboringFiles;
-template <typename T> struct impl_IFileOpenPickerActivatedEventArgs;
-template <typename T> struct impl_IFileOpenPickerActivatedEventArgs2;
-template <typename T> struct impl_IFileOpenPickerContinuationEventArgs;
-template <typename T> struct impl_IFileSavePickerActivatedEventArgs;
-template <typename T> struct impl_IFileSavePickerActivatedEventArgs2;
-template <typename T> struct impl_IFileSavePickerContinuationEventArgs;
-template <typename T> struct impl_IFolderPickerContinuationEventArgs;
-template <typename T> struct impl_ILaunchActivatedEventArgs;
-template <typename T> struct impl_ILaunchActivatedEventArgs2;
-template <typename T> struct impl_ILockScreenActivatedEventArgs;
-template <typename T> struct impl_IPickerReturnedActivatedEventArgs;
-template <typename T> struct impl_IPrelaunchActivatedEventArgs;
-template <typename T> struct impl_IProtocolActivatedEventArgs;
-template <typename T> struct impl_IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData;
-template <typename T> struct impl_IProtocolForResultsActivatedEventArgs;
-template <typename T> struct impl_IRestrictedLaunchActivatedEventArgs;
-template <typename T> struct impl_ISearchActivatedEventArgs;
-template <typename T> struct impl_ISearchActivatedEventArgsWithLinguisticDetails;
-template <typename T> struct impl_IShareTargetActivatedEventArgs;
-template <typename T> struct impl_ISplashScreen;
-template <typename T> struct impl_ITileActivatedInfo;
-template <typename T> struct impl_IToastNotificationActivatedEventArgs;
-template <typename T> struct impl_IUserDataAccountProviderActivatedEventArgs;
-template <typename T> struct impl_IViewSwitcherProvider;
-template <typename T> struct impl_IVoiceCommandActivatedEventArgs;
-template <typename T> struct impl_IWebAccountProviderActivatedEventArgs;
-template <typename T> struct impl_IWebAuthenticationBrokerContinuationEventArgs;
+template <typename D>
+struct WINRT_EBO impl_IActivatedEventArgs
+{
+    Windows::ApplicationModel::Activation::ActivationKind Kind() const;
+    Windows::ApplicationModel::Activation::ApplicationExecutionState PreviousExecutionState() const;
+    Windows::ApplicationModel::Activation::SplashScreen SplashScreen() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IActivatedEventArgsWithUser
+{
+    Windows::System::User User() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IApplicationViewActivatedEventArgs
+{
+    int32_t CurrentlyShownApplicationViewId() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppointmentsProviderActivatedEventArgs
+{
+    hstring Verb() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppointmentsProviderAddAppointmentActivatedEventArgs
+{
+    Windows::ApplicationModel::Appointments::AppointmentsProvider::AddAppointmentOperation AddAppointmentOperation() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppointmentsProviderRemoveAppointmentActivatedEventArgs
+{
+    Windows::ApplicationModel::Appointments::AppointmentsProvider::RemoveAppointmentOperation RemoveAppointmentOperation() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppointmentsProviderReplaceAppointmentActivatedEventArgs
+{
+    Windows::ApplicationModel::Appointments::AppointmentsProvider::ReplaceAppointmentOperation ReplaceAppointmentOperation() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppointmentsProviderShowAppointmentDetailsActivatedEventArgs
+{
+    Windows::Foundation::IReference<Windows::Foundation::DateTime> InstanceStartDate() const;
+    hstring LocalId() const;
+    hstring RoamingId() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppointmentsProviderShowTimeFrameActivatedEventArgs
+{
+    Windows::Foundation::DateTime TimeToShow() const;
+    Windows::Foundation::TimeSpan Duration() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundActivatedEventArgs
+{
+    Windows::ApplicationModel::Background::IBackgroundTaskInstance TaskInstance() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICachedFileUpdaterActivatedEventArgs
+{
+    Windows::Storage::Provider::CachedFileUpdaterUI CachedFileUpdaterUI() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContinuationActivatedEventArgs
+{
+    Windows::Foundation::Collections::ValueSet ContinuationData() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDeviceActivatedEventArgs
+{
+    hstring DeviceInformationId() const;
+    hstring Verb() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDevicePairingActivatedEventArgs
+{
+    Windows::Devices::Enumeration::DeviceInformation DeviceInformation() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDialReceiverActivatedEventArgs
+{
+    hstring AppName() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFileActivatedEventArgs
+{
+    Windows::Foundation::Collections::IVectorView<Windows::Storage::IStorageItem> Files() const;
+    hstring Verb() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFileActivatedEventArgsWithCallerPackageFamilyName
+{
+    hstring CallerPackageFamilyName() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFileActivatedEventArgsWithNeighboringFiles
+{
+    Windows::Storage::Search::StorageFileQueryResult NeighboringFilesQuery() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFileOpenPickerActivatedEventArgs
+{
+    Windows::Storage::Pickers::Provider::FileOpenPickerUI FileOpenPickerUI() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFileOpenPickerActivatedEventArgs2
+{
+    hstring CallerPackageFamilyName() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFileOpenPickerContinuationEventArgs
+{
+    Windows::Foundation::Collections::IVectorView<Windows::Storage::StorageFile> Files() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFileSavePickerActivatedEventArgs
+{
+    Windows::Storage::Pickers::Provider::FileSavePickerUI FileSavePickerUI() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFileSavePickerActivatedEventArgs2
+{
+    hstring CallerPackageFamilyName() const;
+    hstring EnterpriseId() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFileSavePickerContinuationEventArgs
+{
+    Windows::Storage::StorageFile File() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFolderPickerContinuationEventArgs
+{
+    Windows::Storage::StorageFolder Folder() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILaunchActivatedEventArgs
+{
+    hstring Arguments() const;
+    hstring TileId() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILaunchActivatedEventArgs2
+{
+    Windows::ApplicationModel::Activation::TileActivatedInfo TileActivatedInfo() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILockScreenActivatedEventArgs
+{
+    Windows::IInspectable Info() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPickerReturnedActivatedEventArgs
+{
+    hstring PickerOperationId() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPrelaunchActivatedEventArgs
+{
+    bool PrelaunchActivated() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IProtocolActivatedEventArgs
+{
+    Windows::Foundation::Uri Uri() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IProtocolActivatedEventArgsWithCallerPackageFamilyNameAndData
+{
+    hstring CallerPackageFamilyName() const;
+    Windows::Foundation::Collections::ValueSet Data() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IProtocolForResultsActivatedEventArgs
+{
+    Windows::System::ProtocolForResultsOperation ProtocolForResultsOperation() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRestrictedLaunchActivatedEventArgs
+{
+    Windows::IInspectable SharedContext() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISearchActivatedEventArgs
+{
+    hstring QueryText() const;
+    hstring Language() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISearchActivatedEventArgsWithLinguisticDetails
+{
+    Windows::ApplicationModel::Search::SearchPaneQueryLinguisticDetails LinguisticDetails() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IShareTargetActivatedEventArgs
+{
+    Windows::ApplicationModel::DataTransfer::ShareTarget::ShareOperation ShareOperation() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISplashScreen
+{
+    Windows::Foundation::Rect ImageLocation() const;
+    event_token Dismissed(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Activation::SplashScreen, Windows::IInspectable> & handler) const;
+    using Dismissed_revoker = event_revoker<ISplashScreen>;
+    Dismissed_revoker Dismissed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Activation::SplashScreen, Windows::IInspectable> & handler) const;
+    void Dismissed(event_token cookie) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITileActivatedInfo
+{
+    Windows::Foundation::Collections::IVectorView<Windows::UI::Notifications::ShownTileNotification> RecentlyShownNotifications() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IToastNotificationActivatedEventArgs
+{
+    hstring Argument() const;
+    Windows::Foundation::Collections::ValueSet UserInput() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUserDataAccountProviderActivatedEventArgs
+{
+    Windows::ApplicationModel::UserDataAccounts::Provider::IUserDataAccountProviderOperation Operation() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IViewSwitcherProvider
+{
+    Windows::UI::ViewManagement::ActivationViewSwitcher ViewSwitcher() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVoiceCommandActivatedEventArgs
+{
+    Windows::Media::SpeechRecognition::SpeechRecognitionResult Result() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebAccountProviderActivatedEventArgs
+{
+    Windows::Security::Authentication::Web::Provider::IWebAccountProviderOperation Operation() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebAuthenticationBrokerContinuationEventArgs
+{
+    Windows::Security::Authentication::Web::WebAuthenticationResult WebAuthenticationResult() const;
+};
 
 }
 

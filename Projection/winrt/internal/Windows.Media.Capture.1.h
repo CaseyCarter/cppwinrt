@@ -463,50 +463,441 @@ template <> struct traits<Windows::Media::Capture::VideoStreamConfiguration> { u
 
 namespace Windows::Media::Capture {
 
-template <typename T> struct impl_IAdvancedCapturedPhoto;
-template <typename T> struct impl_IAdvancedCapturedPhoto2;
-template <typename T> struct impl_IAdvancedPhotoCapture;
-template <typename T> struct impl_IAppCapture;
-template <typename T> struct impl_IAppCaptureStatics;
-template <typename T> struct impl_ICameraCaptureUI;
-template <typename T> struct impl_ICameraCaptureUIPhotoCaptureSettings;
-template <typename T> struct impl_ICameraCaptureUIVideoCaptureSettings;
-template <typename T> struct impl_ICapturedFrame;
-template <typename T> struct impl_ICapturedFrameControlValues;
-template <typename T> struct impl_ICapturedFrameControlValues2;
-template <typename T> struct impl_ICapturedFrameWithSoftwareBitmap;
-template <typename T> struct impl_ICapturedPhoto;
-template <typename T> struct impl_ILowLagMediaRecording;
-template <typename T> struct impl_ILowLagMediaRecording2;
-template <typename T> struct impl_ILowLagMediaRecording3;
-template <typename T> struct impl_ILowLagPhotoCapture;
-template <typename T> struct impl_ILowLagPhotoSequenceCapture;
-template <typename T> struct impl_IMediaCapture;
-template <typename T> struct impl_IMediaCapture2;
-template <typename T> struct impl_IMediaCapture3;
-template <typename T> struct impl_IMediaCapture4;
-template <typename T> struct impl_IMediaCapture5;
-template <typename T> struct impl_IMediaCaptureFailedEventArgs;
-template <typename T> struct impl_IMediaCaptureFocusChangedEventArgs;
-template <typename T> struct impl_IMediaCaptureInitializationSettings;
-template <typename T> struct impl_IMediaCaptureInitializationSettings2;
-template <typename T> struct impl_IMediaCaptureInitializationSettings3;
-template <typename T> struct impl_IMediaCaptureInitializationSettings4;
-template <typename T> struct impl_IMediaCaptureInitializationSettings5;
-template <typename T> struct impl_IMediaCapturePauseResult;
-template <typename T> struct impl_IMediaCaptureSettings;
-template <typename T> struct impl_IMediaCaptureSettings2;
-template <typename T> struct impl_IMediaCaptureStatics;
-template <typename T> struct impl_IMediaCaptureStopResult;
-template <typename T> struct impl_IMediaCaptureVideoPreview;
-template <typename T> struct impl_IMediaCaptureVideoProfile;
-template <typename T> struct impl_IMediaCaptureVideoProfileMediaDescription;
-template <typename T> struct impl_IOptionalReferencePhotoCapturedEventArgs;
-template <typename T> struct impl_IPhotoCapturedEventArgs;
-template <typename T> struct impl_IPhotoConfirmationCapturedEventArgs;
-template <typename T> struct impl_IVideoStreamConfiguration;
-template <typename T> struct impl_MediaCaptureFailedEventHandler;
-template <typename T> struct impl_RecordLimitationExceededEventHandler;
+template <typename D>
+struct WINRT_EBO impl_IAdvancedCapturedPhoto
+{
+    Windows::Media::Capture::CapturedFrame Frame() const;
+    Windows::Media::Devices::AdvancedPhotoMode Mode() const;
+    Windows::IInspectable Context() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAdvancedCapturedPhoto2
+{
+    Windows::Foundation::IReference<Windows::Foundation::Rect> FrameBoundsRelativeToReferencePhoto() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAdvancedPhotoCapture
+{
+    Windows::Foundation::IAsyncOperation<Windows::Media::Capture::AdvancedCapturedPhoto> CaptureAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::Capture::AdvancedCapturedPhoto> CaptureAsync(const Windows::IInspectable & context) const;
+    event_token OptionalReferencePhotoCaptured(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::AdvancedPhotoCapture, Windows::Media::Capture::OptionalReferencePhotoCapturedEventArgs> & handler) const;
+    using OptionalReferencePhotoCaptured_revoker = event_revoker<IAdvancedPhotoCapture>;
+    OptionalReferencePhotoCaptured_revoker OptionalReferencePhotoCaptured(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::AdvancedPhotoCapture, Windows::Media::Capture::OptionalReferencePhotoCapturedEventArgs> & handler) const;
+    void OptionalReferencePhotoCaptured(event_token token) const;
+    event_token AllPhotosCaptured(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::AdvancedPhotoCapture, Windows::IInspectable> & handler) const;
+    using AllPhotosCaptured_revoker = event_revoker<IAdvancedPhotoCapture>;
+    AllPhotosCaptured_revoker AllPhotosCaptured(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::AdvancedPhotoCapture, Windows::IInspectable> & handler) const;
+    void AllPhotosCaptured(event_token token) const;
+    Windows::Foundation::IAsyncAction FinishAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppCapture
+{
+    bool IsCapturingAudio() const;
+    bool IsCapturingVideo() const;
+    event_token CapturingChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::AppCapture, Windows::IInspectable> & handler) const;
+    using CapturingChanged_revoker = event_revoker<IAppCapture>;
+    CapturingChanged_revoker CapturingChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::AppCapture, Windows::IInspectable> & handler) const;
+    void CapturingChanged(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppCaptureStatics
+{
+    Windows::Media::Capture::AppCapture GetForCurrentView() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICameraCaptureUI
+{
+    Windows::Media::Capture::CameraCaptureUIPhotoCaptureSettings PhotoSettings() const;
+    Windows::Media::Capture::CameraCaptureUIVideoCaptureSettings VideoSettings() const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::StorageFile> CaptureFileAsync(Windows::Media::Capture::CameraCaptureUIMode mode) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICameraCaptureUIPhotoCaptureSettings
+{
+    Windows::Media::Capture::CameraCaptureUIPhotoFormat Format() const;
+    void Format(Windows::Media::Capture::CameraCaptureUIPhotoFormat value) const;
+    Windows::Media::Capture::CameraCaptureUIMaxPhotoResolution MaxResolution() const;
+    void MaxResolution(Windows::Media::Capture::CameraCaptureUIMaxPhotoResolution value) const;
+    Windows::Foundation::Size CroppedSizeInPixels() const;
+    void CroppedSizeInPixels(const Windows::Foundation::Size & value) const;
+    Windows::Foundation::Size CroppedAspectRatio() const;
+    void CroppedAspectRatio(const Windows::Foundation::Size & value) const;
+    bool AllowCropping() const;
+    void AllowCropping(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICameraCaptureUIVideoCaptureSettings
+{
+    Windows::Media::Capture::CameraCaptureUIVideoFormat Format() const;
+    void Format(Windows::Media::Capture::CameraCaptureUIVideoFormat value) const;
+    Windows::Media::Capture::CameraCaptureUIMaxVideoResolution MaxResolution() const;
+    void MaxResolution(Windows::Media::Capture::CameraCaptureUIMaxVideoResolution value) const;
+    float MaxDurationInSeconds() const;
+    void MaxDurationInSeconds(float value) const;
+    bool AllowTrimming() const;
+    void AllowTrimming(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICapturedFrame
+{
+    uint32_t Width() const;
+    uint32_t Height() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICapturedFrameControlValues
+{
+    Windows::Foundation::IReference<Windows::Foundation::TimeSpan> Exposure() const;
+    Windows::Foundation::IReference<float> ExposureCompensation() const;
+    Windows::Foundation::IReference<uint32_t> IsoSpeed() const;
+    Windows::Foundation::IReference<uint32_t> Focus() const;
+    Windows::Foundation::IReference<winrt::Windows::Media::Devices::CaptureSceneMode> SceneMode() const;
+    Windows::Foundation::IReference<bool> Flashed() const;
+    Windows::Foundation::IReference<float> FlashPowerPercent() const;
+    Windows::Foundation::IReference<uint32_t> WhiteBalance() const;
+    Windows::Foundation::IReference<float> ZoomFactor() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICapturedFrameControlValues2
+{
+    Windows::Foundation::IReference<winrt::Windows::Media::Devices::MediaCaptureFocusState> FocusState() const;
+    Windows::Foundation::IReference<double> IsoDigitalGain() const;
+    Windows::Foundation::IReference<double> IsoAnalogGain() const;
+    Windows::Media::MediaProperties::MediaRatio SensorFrameRate() const;
+    Windows::Foundation::IReference<Windows::Media::Capture::WhiteBalanceGain> WhiteBalanceGain() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICapturedFrameWithSoftwareBitmap
+{
+    Windows::Graphics::Imaging::SoftwareBitmap SoftwareBitmap() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICapturedPhoto
+{
+    Windows::Media::Capture::CapturedFrame Frame() const;
+    Windows::Media::Capture::CapturedFrame Thumbnail() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILowLagMediaRecording
+{
+    Windows::Foundation::IAsyncAction StartAsync() const;
+    Windows::Foundation::IAsyncAction StopAsync() const;
+    Windows::Foundation::IAsyncAction FinishAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILowLagMediaRecording2
+{
+    Windows::Foundation::IAsyncAction PauseAsync(Windows::Media::Devices::MediaCapturePauseBehavior behavior) const;
+    Windows::Foundation::IAsyncAction ResumeAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILowLagMediaRecording3
+{
+    Windows::Foundation::IAsyncOperation<Windows::Media::Capture::MediaCapturePauseResult> PauseWithResultAsync(Windows::Media::Devices::MediaCapturePauseBehavior behavior) const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::Capture::MediaCaptureStopResult> StopWithResultAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILowLagPhotoCapture
+{
+    Windows::Foundation::IAsyncOperation<Windows::Media::Capture::CapturedPhoto> CaptureAsync() const;
+    Windows::Foundation::IAsyncAction FinishAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILowLagPhotoSequenceCapture
+{
+    Windows::Foundation::IAsyncAction StartAsync() const;
+    Windows::Foundation::IAsyncAction StopAsync() const;
+    Windows::Foundation::IAsyncAction FinishAsync() const;
+    event_token PhotoCaptured(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::LowLagPhotoSequenceCapture, Windows::Media::Capture::PhotoCapturedEventArgs> & handler) const;
+    using PhotoCaptured_revoker = event_revoker<ILowLagPhotoSequenceCapture>;
+    PhotoCaptured_revoker PhotoCaptured(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::LowLagPhotoSequenceCapture, Windows::Media::Capture::PhotoCapturedEventArgs> & handler) const;
+    void PhotoCaptured(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaCapture
+{
+    Windows::Foundation::IAsyncAction InitializeAsync() const;
+    Windows::Foundation::IAsyncAction InitializeAsync(const Windows::Media::Capture::MediaCaptureInitializationSettings & mediaCaptureInitializationSettings) const;
+    Windows::Foundation::IAsyncAction StartRecordToStorageFileAsync(const Windows::Media::MediaProperties::MediaEncodingProfile & encodingProfile, const Windows::Storage::IStorageFile & file) const;
+    Windows::Foundation::IAsyncAction StartRecordToStreamAsync(const Windows::Media::MediaProperties::MediaEncodingProfile & encodingProfile, const Windows::Storage::Streams::IRandomAccessStream & stream) const;
+    Windows::Foundation::IAsyncAction StartRecordToCustomSinkAsync(const Windows::Media::MediaProperties::MediaEncodingProfile & encodingProfile, const Windows::Media::IMediaExtension & customMediaSink) const;
+    Windows::Foundation::IAsyncAction StartRecordToCustomSinkAsync(const Windows::Media::MediaProperties::MediaEncodingProfile & encodingProfile, hstring_ref customSinkActivationId, const Windows::Foundation::Collections::IPropertySet & customSinkSettings) const;
+    Windows::Foundation::IAsyncAction StopRecordAsync() const;
+    Windows::Foundation::IAsyncAction CapturePhotoToStorageFileAsync(const Windows::Media::MediaProperties::ImageEncodingProperties & type, const Windows::Storage::IStorageFile & file) const;
+    Windows::Foundation::IAsyncAction CapturePhotoToStreamAsync(const Windows::Media::MediaProperties::ImageEncodingProperties & type, const Windows::Storage::Streams::IRandomAccessStream & stream) const;
+    Windows::Foundation::IAsyncAction AddEffectAsync(Windows::Media::Capture::MediaStreamType mediaStreamType, hstring_ref effectActivationID, const Windows::Foundation::Collections::IPropertySet & effectSettings) const;
+    Windows::Foundation::IAsyncAction ClearEffectsAsync(Windows::Media::Capture::MediaStreamType mediaStreamType) const;
+    void SetEncoderProperty(Windows::Media::Capture::MediaStreamType mediaStreamType, GUID propertyId, const Windows::IInspectable & propertyValue) const;
+    Windows::IInspectable GetEncoderProperty(Windows::Media::Capture::MediaStreamType mediaStreamType, GUID propertyId) const;
+    event_token Failed(const Windows::Media::Capture::MediaCaptureFailedEventHandler & errorEventHandler) const;
+    using Failed_revoker = event_revoker<IMediaCapture>;
+    Failed_revoker Failed(auto_revoke_t, const Windows::Media::Capture::MediaCaptureFailedEventHandler & errorEventHandler) const;
+    void Failed(event_token eventCookie) const;
+    event_token RecordLimitationExceeded(const Windows::Media::Capture::RecordLimitationExceededEventHandler & recordLimitationExceededEventHandler) const;
+    using RecordLimitationExceeded_revoker = event_revoker<IMediaCapture>;
+    RecordLimitationExceeded_revoker RecordLimitationExceeded(auto_revoke_t, const Windows::Media::Capture::RecordLimitationExceededEventHandler & recordLimitationExceededEventHandler) const;
+    void RecordLimitationExceeded(event_token eventCookie) const;
+    Windows::Media::Capture::MediaCaptureSettings MediaCaptureSettings() const;
+    Windows::Media::Devices::AudioDeviceController AudioDeviceController() const;
+    Windows::Media::Devices::VideoDeviceController VideoDeviceController() const;
+    void SetPreviewMirroring(bool value) const;
+    bool GetPreviewMirroring() const;
+    void SetPreviewRotation(Windows::Media::Capture::VideoRotation value) const;
+    Windows::Media::Capture::VideoRotation GetPreviewRotation() const;
+    void SetRecordRotation(Windows::Media::Capture::VideoRotation value) const;
+    Windows::Media::Capture::VideoRotation GetRecordRotation() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaCapture2
+{
+    Windows::Foundation::IAsyncOperation<Windows::Media::Capture::LowLagMediaRecording> PrepareLowLagRecordToStorageFileAsync(const Windows::Media::MediaProperties::MediaEncodingProfile & encodingProfile, const Windows::Storage::IStorageFile & file) const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::Capture::LowLagMediaRecording> PrepareLowLagRecordToStreamAsync(const Windows::Media::MediaProperties::MediaEncodingProfile & encodingProfile, const Windows::Storage::Streams::IRandomAccessStream & stream) const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::Capture::LowLagMediaRecording> PrepareLowLagRecordToCustomSinkAsync(const Windows::Media::MediaProperties::MediaEncodingProfile & encodingProfile, const Windows::Media::IMediaExtension & customMediaSink) const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::Capture::LowLagMediaRecording> PrepareLowLagRecordToCustomSinkAsync(const Windows::Media::MediaProperties::MediaEncodingProfile & encodingProfile, hstring_ref customSinkActivationId, const Windows::Foundation::Collections::IPropertySet & customSinkSettings) const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::Capture::LowLagPhotoCapture> PrepareLowLagPhotoCaptureAsync(const Windows::Media::MediaProperties::ImageEncodingProperties & type) const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::Capture::LowLagPhotoSequenceCapture> PrepareLowLagPhotoSequenceCaptureAsync(const Windows::Media::MediaProperties::ImageEncodingProperties & type) const;
+    Windows::Foundation::IAsyncAction SetEncodingPropertiesAsync(Windows::Media::Capture::MediaStreamType mediaStreamType, const Windows::Media::MediaProperties::IMediaEncodingProperties & mediaEncodingProperties, const Windows::Media::MediaProperties::MediaPropertySet & encoderProperties) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaCapture3
+{
+    Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Core::VariablePhotoSequenceCapture> PrepareVariablePhotoSequenceCaptureAsync(const Windows::Media::MediaProperties::ImageEncodingProperties & type) const;
+    event_token FocusChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::Media::Capture::MediaCaptureFocusChangedEventArgs> & handler) const;
+    using FocusChanged_revoker = event_revoker<IMediaCapture3>;
+    FocusChanged_revoker FocusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::Media::Capture::MediaCaptureFocusChangedEventArgs> & handler) const;
+    void FocusChanged(event_token token) const;
+    event_token PhotoConfirmationCaptured(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::Media::Capture::PhotoConfirmationCapturedEventArgs> & handler) const;
+    using PhotoConfirmationCaptured_revoker = event_revoker<IMediaCapture3>;
+    PhotoConfirmationCaptured_revoker PhotoConfirmationCaptured(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::Media::Capture::PhotoConfirmationCapturedEventArgs> & handler) const;
+    void PhotoConfirmationCaptured(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaCapture4
+{
+    Windows::Foundation::IAsyncOperation<Windows::Media::IMediaExtension> AddAudioEffectAsync(const Windows::Media::Effects::IAudioEffectDefinition & definition) const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::IMediaExtension> AddVideoEffectAsync(const Windows::Media::Effects::IVideoEffectDefinition & definition, Windows::Media::Capture::MediaStreamType mediaStreamType) const;
+    Windows::Foundation::IAsyncAction PauseRecordAsync(Windows::Media::Devices::MediaCapturePauseBehavior behavior) const;
+    Windows::Foundation::IAsyncAction ResumeRecordAsync() const;
+    event_token CameraStreamStateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::IInspectable> & handler) const;
+    using CameraStreamStateChanged_revoker = event_revoker<IMediaCapture4>;
+    CameraStreamStateChanged_revoker CameraStreamStateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::IInspectable> & handler) const;
+    void CameraStreamStateChanged(event_token token) const;
+    Windows::Media::Devices::CameraStreamState CameraStreamState() const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::VideoFrame> GetPreviewFrameAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::VideoFrame> GetPreviewFrameAsync(const Windows::Media::VideoFrame & destination) const;
+    event_token ThermalStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::IInspectable> & handler) const;
+    using ThermalStatusChanged_revoker = event_revoker<IMediaCapture4>;
+    ThermalStatusChanged_revoker ThermalStatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Capture::MediaCapture, Windows::IInspectable> & handler) const;
+    void ThermalStatusChanged(event_token token) const;
+    Windows::Media::Capture::MediaCaptureThermalStatus ThermalStatus() const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::Capture::AdvancedPhotoCapture> PrepareAdvancedPhotoCaptureAsync(const Windows::Media::MediaProperties::ImageEncodingProperties & encodingProperties) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaCapture5
+{
+    Windows::Foundation::IAsyncAction RemoveEffectAsync(const Windows::Media::IMediaExtension & effect) const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::Capture::MediaCapturePauseResult> PauseRecordWithResultAsync(Windows::Media::Devices::MediaCapturePauseBehavior behavior) const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::Capture::MediaCaptureStopResult> StopRecordWithResultAsync() const;
+    Windows::Foundation::Collections::IMapView<hstring, Windows::Media::Capture::Frames::MediaFrameSource> FrameSources() const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Frames::MediaFrameReader> CreateFrameReaderAsync(const Windows::Media::Capture::Frames::MediaFrameSource & inputSource) const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Frames::MediaFrameReader> CreateFrameReaderAsync(const Windows::Media::Capture::Frames::MediaFrameSource & inputSource, hstring_ref outputSubtype) const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::Capture::Frames::MediaFrameReader> CreateFrameReaderAsync(const Windows::Media::Capture::Frames::MediaFrameSource & inputSource, hstring_ref outputSubtype, const Windows::Graphics::Imaging::BitmapSize & outputSize) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaCaptureFailedEventArgs
+{
+    hstring Message() const;
+    uint32_t Code() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaCaptureFocusChangedEventArgs
+{
+    Windows::Media::Devices::MediaCaptureFocusState FocusState() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaCaptureInitializationSettings
+{
+    void AudioDeviceId(hstring_ref value) const;
+    hstring AudioDeviceId() const;
+    void VideoDeviceId(hstring_ref value) const;
+    hstring VideoDeviceId() const;
+    void StreamingCaptureMode(Windows::Media::Capture::StreamingCaptureMode value) const;
+    Windows::Media::Capture::StreamingCaptureMode StreamingCaptureMode() const;
+    void PhotoCaptureSource(Windows::Media::Capture::PhotoCaptureSource value) const;
+    Windows::Media::Capture::PhotoCaptureSource PhotoCaptureSource() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaCaptureInitializationSettings2
+{
+    void MediaCategory(Windows::Media::Capture::MediaCategory value) const;
+    Windows::Media::Capture::MediaCategory MediaCategory() const;
+    void AudioProcessing(Windows::Media::AudioProcessing value) const;
+    Windows::Media::AudioProcessing AudioProcessing() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaCaptureInitializationSettings3
+{
+    void AudioSource(const Windows::Media::Core::IMediaSource & value) const;
+    Windows::Media::Core::IMediaSource AudioSource() const;
+    void VideoSource(const Windows::Media::Core::IMediaSource & value) const;
+    Windows::Media::Core::IMediaSource VideoSource() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaCaptureInitializationSettings4
+{
+    Windows::Media::Capture::MediaCaptureVideoProfile VideoProfile() const;
+    void VideoProfile(const Windows::Media::Capture::MediaCaptureVideoProfile & value) const;
+    Windows::Media::Capture::MediaCaptureVideoProfileMediaDescription PreviewMediaDescription() const;
+    void PreviewMediaDescription(const Windows::Media::Capture::MediaCaptureVideoProfileMediaDescription & value) const;
+    Windows::Media::Capture::MediaCaptureVideoProfileMediaDescription RecordMediaDescription() const;
+    void RecordMediaDescription(const Windows::Media::Capture::MediaCaptureVideoProfileMediaDescription & value) const;
+    Windows::Media::Capture::MediaCaptureVideoProfileMediaDescription PhotoMediaDescription() const;
+    void PhotoMediaDescription(const Windows::Media::Capture::MediaCaptureVideoProfileMediaDescription & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaCaptureInitializationSettings5
+{
+    Windows::Media::Capture::Frames::MediaFrameSourceGroup SourceGroup() const;
+    void SourceGroup(const Windows::Media::Capture::Frames::MediaFrameSourceGroup & value) const;
+    Windows::Media::Capture::MediaCaptureSharingMode SharingMode() const;
+    void SharingMode(Windows::Media::Capture::MediaCaptureSharingMode value) const;
+    Windows::Media::Capture::MediaCaptureMemoryPreference MemoryPreference() const;
+    void MemoryPreference(Windows::Media::Capture::MediaCaptureMemoryPreference value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaCapturePauseResult
+{
+    Windows::Media::VideoFrame LastFrame() const;
+    Windows::Foundation::TimeSpan RecordDuration() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaCaptureSettings
+{
+    hstring AudioDeviceId() const;
+    hstring VideoDeviceId() const;
+    Windows::Media::Capture::StreamingCaptureMode StreamingCaptureMode() const;
+    Windows::Media::Capture::PhotoCaptureSource PhotoCaptureSource() const;
+    Windows::Media::Capture::VideoDeviceCharacteristic VideoDeviceCharacteristic() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaCaptureSettings2
+{
+    bool ConcurrentRecordAndPhotoSupported() const;
+    bool ConcurrentRecordAndPhotoSequenceSupported() const;
+    bool CameraSoundRequiredForRegion() const;
+    Windows::Foundation::IReference<uint32_t> Horizontal35mmEquivalentFocalLength() const;
+    Windows::Foundation::IReference<int32_t> PitchOffsetDegrees() const;
+    Windows::Foundation::IReference<uint32_t> Vertical35mmEquivalentFocalLength() const;
+    Windows::Media::Capture::MediaCategory MediaCategory() const;
+    Windows::Media::AudioProcessing AudioProcessing() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaCaptureStatics
+{
+    bool IsVideoProfileSupported(hstring_ref videoDeviceId) const;
+    Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::MediaCaptureVideoProfile> FindAllVideoProfiles(hstring_ref videoDeviceId) const;
+    Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::MediaCaptureVideoProfile> FindConcurrentProfiles(hstring_ref videoDeviceId) const;
+    Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::MediaCaptureVideoProfile> FindKnownVideoProfiles(hstring_ref videoDeviceId, Windows::Media::Capture::KnownVideoProfile name) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaCaptureStopResult
+{
+    Windows::Media::VideoFrame LastFrame() const;
+    Windows::Foundation::TimeSpan RecordDuration() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaCaptureVideoPreview
+{
+    Windows::Foundation::IAsyncAction StartPreviewAsync() const;
+    Windows::Foundation::IAsyncAction StartPreviewToCustomSinkAsync(const Windows::Media::MediaProperties::MediaEncodingProfile & encodingProfile, const Windows::Media::IMediaExtension & customMediaSink) const;
+    Windows::Foundation::IAsyncAction StartPreviewToCustomSinkAsync(const Windows::Media::MediaProperties::MediaEncodingProfile & encodingProfile, hstring_ref customSinkActivationId, const Windows::Foundation::Collections::IPropertySet & customSinkSettings) const;
+    Windows::Foundation::IAsyncAction StopPreviewAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaCaptureVideoProfile
+{
+    hstring Id() const;
+    hstring VideoDeviceId() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::MediaCaptureVideoProfileMediaDescription> SupportedPreviewMediaDescription() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::MediaCaptureVideoProfileMediaDescription> SupportedRecordMediaDescription() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::MediaCaptureVideoProfileMediaDescription> SupportedPhotoMediaDescription() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Media::Capture::MediaCaptureVideoProfile> GetConcurrency() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaCaptureVideoProfileMediaDescription
+{
+    uint32_t Width() const;
+    uint32_t Height() const;
+    double FrameRate() const;
+    bool IsVariablePhotoSequenceSupported() const;
+    bool IsHdrVideoSupported() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IOptionalReferencePhotoCapturedEventArgs
+{
+    Windows::Media::Capture::CapturedFrame Frame() const;
+    Windows::IInspectable Context() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPhotoCapturedEventArgs
+{
+    Windows::Media::Capture::CapturedFrame Frame() const;
+    Windows::Media::Capture::CapturedFrame Thumbnail() const;
+    Windows::Foundation::TimeSpan CaptureTimeOffset() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPhotoConfirmationCapturedEventArgs
+{
+    Windows::Media::Capture::CapturedFrame Frame() const;
+    Windows::Foundation::TimeSpan CaptureTimeOffset() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVideoStreamConfiguration
+{
+    Windows::Media::MediaProperties::VideoEncodingProperties InputProperties() const;
+    Windows::Media::MediaProperties::VideoEncodingProperties OutputProperties() const;
+};
 
 }
 

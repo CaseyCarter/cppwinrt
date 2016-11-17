@@ -21,6 +21,12 @@ struct CryptographicBuffer;
 
 namespace Windows::Security::Cryptography {
 
+template <typename T> struct impl_ICryptographicBufferStatics;
+
+}
+
+namespace Windows::Security::Cryptography {
+
 enum class BinaryStringEncoding
 {
     Utf8 = 0,

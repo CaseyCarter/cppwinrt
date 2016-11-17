@@ -96,6 +96,29 @@ struct SoftwareBitmap;
 
 namespace Windows::Graphics::Imaging {
 
+template <typename T> struct impl_IBitmapBuffer;
+template <typename T> struct impl_IBitmapCodecInformation;
+template <typename T> struct impl_IBitmapDecoder;
+template <typename T> struct impl_IBitmapDecoderStatics;
+template <typename T> struct impl_IBitmapEncoder;
+template <typename T> struct impl_IBitmapEncoderStatics;
+template <typename T> struct impl_IBitmapEncoderWithSoftwareBitmap;
+template <typename T> struct impl_IBitmapFrame;
+template <typename T> struct impl_IBitmapFrameWithSoftwareBitmap;
+template <typename T> struct impl_IBitmapProperties;
+template <typename T> struct impl_IBitmapPropertiesView;
+template <typename T> struct impl_IBitmapTransform;
+template <typename T> struct impl_IBitmapTypedValue;
+template <typename T> struct impl_IBitmapTypedValueFactory;
+template <typename T> struct impl_IPixelDataProvider;
+template <typename T> struct impl_ISoftwareBitmap;
+template <typename T> struct impl_ISoftwareBitmapFactory;
+template <typename T> struct impl_ISoftwareBitmapStatics;
+
+}
+
+namespace Windows::Graphics::Imaging {
+
 enum class BitmapAlphaMode
 {
     Premultiplied = 0,

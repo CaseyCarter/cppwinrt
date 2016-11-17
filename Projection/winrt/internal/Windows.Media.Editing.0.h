@@ -56,6 +56,24 @@ struct MediaOverlayLayer;
 
 namespace Windows::Media::Editing {
 
+template <typename T> struct impl_IBackgroundAudioTrack;
+template <typename T> struct impl_IBackgroundAudioTrackStatics;
+template <typename T> struct impl_IEmbeddedAudioTrack;
+template <typename T> struct impl_IMediaClip;
+template <typename T> struct impl_IMediaClipStatics;
+template <typename T> struct impl_IMediaClipStatics2;
+template <typename T> struct impl_IMediaComposition;
+template <typename T> struct impl_IMediaComposition2;
+template <typename T> struct impl_IMediaCompositionStatics;
+template <typename T> struct impl_IMediaOverlay;
+template <typename T> struct impl_IMediaOverlayFactory;
+template <typename T> struct impl_IMediaOverlayLayer;
+template <typename T> struct impl_IMediaOverlayLayerFactory;
+
+}
+
+namespace Windows::Media::Editing {
+
 enum class MediaTrimmingPreference
 {
     Fast = 0,

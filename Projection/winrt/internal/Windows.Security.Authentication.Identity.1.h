@@ -41,9 +41,27 @@ template <> struct traits<Windows::Security::Authentication::Identity::Enterpris
 
 namespace Windows::Security::Authentication::Identity {
 
-template <typename T> struct impl_IEnterpriseKeyCredentialRegistrationInfo;
-template <typename T> struct impl_IEnterpriseKeyCredentialRegistrationManager;
-template <typename T> struct impl_IEnterpriseKeyCredentialRegistrationManagerStatics;
+template <typename D>
+struct WINRT_EBO impl_IEnterpriseKeyCredentialRegistrationInfo
+{
+    hstring TenantId() const;
+    hstring TenantName() const;
+    hstring Subject() const;
+    hstring KeyId() const;
+    hstring KeyName() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEnterpriseKeyCredentialRegistrationManager
+{
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationInfo>> GetRegistrationsAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEnterpriseKeyCredentialRegistrationManagerStatics
+{
+    Windows::Security::Authentication::Identity::EnterpriseKeyCredentialRegistrationManager Current() const;
+};
 
 }
 

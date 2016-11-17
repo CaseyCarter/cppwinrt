@@ -34,6 +34,15 @@ struct DnssdServiceWatcher;
 
 namespace Windows::Networking::ServiceDiscovery::Dnssd {
 
+template <typename T> struct impl_IDnssdRegistrationResult;
+template <typename T> struct impl_IDnssdServiceInstance;
+template <typename T> struct impl_IDnssdServiceInstanceFactory;
+template <typename T> struct impl_IDnssdServiceWatcher;
+
+}
+
+namespace Windows::Networking::ServiceDiscovery::Dnssd {
+
 enum class DnssdRegistrationStatus
 {
     Success = 0,

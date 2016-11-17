@@ -38,4 +38,15 @@ struct LockScreenUnlockingEventArgs;
 
 }
 
+namespace Windows::ApplicationModel::LockScreen {
+
+template <typename T> struct impl_ILockApplicationHost;
+template <typename T> struct impl_ILockApplicationHostStatics;
+template <typename T> struct impl_ILockScreenBadge;
+template <typename T> struct impl_ILockScreenInfo;
+template <typename T> struct impl_ILockScreenUnlockingDeferral;
+template <typename T> struct impl_ILockScreenUnlockingEventArgs;
+
+}
+
 }

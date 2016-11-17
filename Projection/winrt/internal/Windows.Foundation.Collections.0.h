@@ -24,4 +24,10 @@ struct ValueSet;
 
 }
 
+namespace Windows::Foundation::Collections {
+
+template <typename T> struct impl_IPropertySet;
+
+}
+
 }

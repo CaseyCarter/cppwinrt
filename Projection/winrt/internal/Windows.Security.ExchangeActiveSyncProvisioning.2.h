@@ -9,24 +9,6 @@ WINRT_EXPORT namespace winrt {
 
 namespace Windows::Security::ExchangeActiveSyncProvisioning {
 
-template <typename D>
-struct WINRT_EBO impl_IEasClientDeviceInformation
-{
-    GUID Id() const;
-    hstring OperatingSystem() const;
-    hstring FriendlyName() const;
-    hstring SystemManufacturer() const;
-    hstring SystemProductName() const;
-    hstring SystemSku() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IEasClientDeviceInformation2
-{
-    hstring SystemHardwareVersion() const;
-    hstring SystemFirmwareVersion() const;
-};
-
 struct IEasClientDeviceInformation :
     Windows::IInspectable,
     impl::consume<IEasClientDeviceInformation>

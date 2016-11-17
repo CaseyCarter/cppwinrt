@@ -146,14 +146,115 @@ template <> struct traits<Windows::Management::Deployment::PackageVolume> { usin
 
 namespace Windows::Management::Deployment {
 
-template <typename T> struct impl_IDeploymentResult;
-template <typename T> struct impl_IPackageManager;
-template <typename T> struct impl_IPackageManager2;
-template <typename T> struct impl_IPackageManager3;
-template <typename T> struct impl_IPackageManager4;
-template <typename T> struct impl_IPackageUserInformation;
-template <typename T> struct impl_IPackageVolume;
-template <typename T> struct impl_IPackageVolume2;
+template <typename D>
+struct WINRT_EBO impl_IDeploymentResult
+{
+    hstring ErrorText() const;
+    GUID ActivityId() const;
+    HRESULT ExtendedErrorCode() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPackageManager
+{
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> AddPackageAsync(const Windows::Foundation::Uri & packageUri, const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> & dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions) const;
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> UpdatePackageAsync(const Windows::Foundation::Uri & packageUri, const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> & dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions) const;
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> RemovePackageAsync(hstring_ref packageFullName) const;
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> StagePackageAsync(const Windows::Foundation::Uri & packageUri, const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> & dependencyPackageUris) const;
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> RegisterPackageAsync(const Windows::Foundation::Uri & manifestUri, const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> & dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions) const;
+    Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> FindPackages() const;
+    Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> FindPackagesForUser(hstring_ref userSecurityId) const;
+    Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> FindPackages(hstring_ref packageName, hstring_ref packagePublisher) const;
+    Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> FindPackagesForUser(hstring_ref userSecurityId, hstring_ref packageName, hstring_ref packagePublisher) const;
+    Windows::Foundation::Collections::IIterable<Windows::Management::Deployment::PackageUserInformation> FindUsers(hstring_ref packageFullName) const;
+    void SetPackageState(hstring_ref packageFullName, Windows::Management::Deployment::PackageState packageState) const;
+    Windows::ApplicationModel::Package FindPackage(hstring_ref packageFullName) const;
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> CleanupPackageForUserAsync(hstring_ref packageName, hstring_ref userSecurityId) const;
+    Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> FindPackages(hstring_ref packageFamilyName) const;
+    Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> FindPackagesForUser(hstring_ref userSecurityId, hstring_ref packageFamilyName) const;
+    Windows::ApplicationModel::Package FindPackageForUser(hstring_ref userSecurityId, hstring_ref packageFullName) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPackageManager2
+{
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> RemovePackageAsync(hstring_ref packageFullName, Windows::Management::Deployment::RemovalOptions removalOptions) const;
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> StagePackageAsync(const Windows::Foundation::Uri & packageUri, const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> & dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions) const;
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> RegisterPackageByFullNameAsync(hstring_ref mainPackageFullName, const Windows::Foundation::Collections::IIterable<hstring> & dependencyPackageFullNames, Windows::Management::Deployment::DeploymentOptions deploymentOptions) const;
+    Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> FindPackagesWithPackageTypes(Windows::Management::Deployment::PackageTypes packageTypes) const;
+    Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> FindPackagesForUserWithPackageTypes(hstring_ref userSecurityId, Windows::Management::Deployment::PackageTypes packageTypes) const;
+    Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> FindPackagesWithPackageTypes(hstring_ref packageName, hstring_ref packagePublisher, Windows::Management::Deployment::PackageTypes packageTypes) const;
+    Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> FindPackagesForUserWithPackageTypes(hstring_ref userSecurityId, hstring_ref packageName, hstring_ref packagePublisher, Windows::Management::Deployment::PackageTypes packageTypes) const;
+    Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> FindPackagesWithPackageTypes(hstring_ref packageFamilyName, Windows::Management::Deployment::PackageTypes packageTypes) const;
+    Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Package> FindPackagesForUserWithPackageTypes(hstring_ref userSecurityId, hstring_ref packageFamilyName, Windows::Management::Deployment::PackageTypes packageTypes) const;
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> StageUserDataAsync(hstring_ref packageFullName) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPackageManager3
+{
+    Windows::Foundation::IAsyncOperation<Windows::Management::Deployment::PackageVolume> AddPackageVolumeAsync(hstring_ref packageStorePath) const;
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> AddPackageAsync(const Windows::Foundation::Uri & packageUri, const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> & dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, const Windows::Management::Deployment::PackageVolume & targetVolume) const;
+    void ClearPackageStatus(hstring_ref packageFullName, Windows::Management::Deployment::PackageStatus status) const;
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> RegisterPackageAsync(const Windows::Foundation::Uri & manifestUri, const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> & dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, const Windows::Management::Deployment::PackageVolume & appDataVolume) const;
+    Windows::Management::Deployment::PackageVolume FindPackageVolume(hstring_ref volumeName) const;
+    Windows::Foundation::Collections::IIterable<Windows::Management::Deployment::PackageVolume> FindPackageVolumes() const;
+    Windows::Management::Deployment::PackageVolume GetDefaultPackageVolume() const;
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> MovePackageToVolumeAsync(hstring_ref packageFullName, Windows::Management::Deployment::DeploymentOptions deploymentOptions, const Windows::Management::Deployment::PackageVolume & targetVolume) const;
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> RemovePackageVolumeAsync(const Windows::Management::Deployment::PackageVolume & volume) const;
+    void SetDefaultPackageVolume(const Windows::Management::Deployment::PackageVolume & volume) const;
+    void SetPackageStatus(hstring_ref packageFullName, Windows::Management::Deployment::PackageStatus status) const;
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> SetPackageVolumeOfflineAsync(const Windows::Management::Deployment::PackageVolume & packageVolume) const;
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> SetPackageVolumeOnlineAsync(const Windows::Management::Deployment::PackageVolume & packageVolume) const;
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> StagePackageAsync(const Windows::Foundation::Uri & packageUri, const Windows::Foundation::Collections::IIterable<Windows::Foundation::Uri> & dependencyPackageUris, Windows::Management::Deployment::DeploymentOptions deploymentOptions, const Windows::Management::Deployment::PackageVolume & targetVolume) const;
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Management::Deployment::DeploymentResult, Windows::Management::Deployment::DeploymentProgress> StageUserDataAsync(hstring_ref packageFullName, Windows::Management::Deployment::DeploymentOptions deploymentOptions) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPackageManager4
+{
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Management::Deployment::PackageVolume>> GetPackageVolumesAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPackageUserInformation
+{
+    hstring UserSecurityId() const;
+    Windows::Management::Deployment::PackageInstallState InstallState() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPackageVolume
+{
+    bool IsOffline() const;
+    bool IsSystemVolume() const;
+    hstring MountPoint() const;
+    hstring Name() const;
+    hstring PackageStorePath() const;
+    bool SupportsHardLinks() const;
+    Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> FindPackages() const;
+    Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> FindPackages(hstring_ref packageName, hstring_ref packagePublisher) const;
+    Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> FindPackages(hstring_ref packageFamilyName) const;
+    Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> FindPackagesWithPackageTypes(Windows::Management::Deployment::PackageTypes packageTypes) const;
+    Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> FindPackagesWithPackageTypes(Windows::Management::Deployment::PackageTypes packageTypes, hstring_ref packageName, hstring_ref packagePublisher) const;
+    Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> FindPackagesWithPackageTypes(Windows::Management::Deployment::PackageTypes packageTypes, hstring_ref packageFamilyName) const;
+    Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> FindPackage(hstring_ref packageFullName) const;
+    Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> FindPackagesForUser(hstring_ref userSecurityId) const;
+    Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> FindPackagesForUser(hstring_ref userSecurityId, hstring_ref packageName, hstring_ref packagePublisher) const;
+    Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> FindPackagesForUser(hstring_ref userSecurityId, hstring_ref packageFamilyName) const;
+    Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> FindPackagesForUserWithPackageTypes(hstring_ref userSecurityId, Windows::Management::Deployment::PackageTypes packageTypes) const;
+    Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> FindPackagesForUserWithPackageTypes(hstring_ref userSecurityId, Windows::Management::Deployment::PackageTypes packageTypes, hstring_ref packageName, hstring_ref packagePublisher) const;
+    Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> FindPackagesForUserWithPackageTypes(hstring_ref userSecurityId, Windows::Management::Deployment::PackageTypes packageTypes, hstring_ref packageFamilyName) const;
+    Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Package> FindPackageForUser(hstring_ref userSecurityId, hstring_ref packageFullName) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPackageVolume2
+{
+    bool IsFullTrustPackageSupported() const;
+    bool IsAppxInstallSupported() const;
+    Windows::Foundation::IAsyncOperation<uint64_t> GetAvailableSpaceAsync() const;
+};
 
 }
 

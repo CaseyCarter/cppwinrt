@@ -83,13 +83,68 @@ template <> struct traits<Windows::Devices::Spi::SpiDevice> { using default_inte
 
 namespace Windows::Devices::Spi {
 
-template <typename T> struct impl_ISpiBusInfo;
-template <typename T> struct impl_ISpiConnectionSettings;
-template <typename T> struct impl_ISpiConnectionSettingsFactory;
-template <typename T> struct impl_ISpiController;
-template <typename T> struct impl_ISpiControllerStatics;
-template <typename T> struct impl_ISpiDevice;
-template <typename T> struct impl_ISpiDeviceStatics;
+template <typename D>
+struct WINRT_EBO impl_ISpiBusInfo
+{
+    int32_t ChipSelectLineCount() const;
+    int32_t MinClockFrequency() const;
+    int32_t MaxClockFrequency() const;
+    Windows::Foundation::Collections::IVectorView<int32_t> SupportedDataBitLengths() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpiConnectionSettings
+{
+    int32_t ChipSelectLine() const;
+    void ChipSelectLine(int32_t value) const;
+    Windows::Devices::Spi::SpiMode Mode() const;
+    void Mode(Windows::Devices::Spi::SpiMode value) const;
+    int32_t DataBitLength() const;
+    void DataBitLength(int32_t value) const;
+    int32_t ClockFrequency() const;
+    void ClockFrequency(int32_t value) const;
+    Windows::Devices::Spi::SpiSharingMode SharingMode() const;
+    void SharingMode(Windows::Devices::Spi::SpiSharingMode value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpiConnectionSettingsFactory
+{
+    Windows::Devices::Spi::SpiConnectionSettings Create(int32_t chipSelectLine) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpiController
+{
+    Windows::Devices::Spi::SpiDevice GetDevice(const Windows::Devices::Spi::SpiConnectionSettings & settings) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpiControllerStatics
+{
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Spi::SpiController> GetDefaultAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Spi::SpiController>> GetControllersAsync(const Windows::Devices::Spi::Provider::ISpiProvider & provider) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpiDevice
+{
+    hstring DeviceId() const;
+    Windows::Devices::Spi::SpiConnectionSettings ConnectionSettings() const;
+    void Write(array_ref<const uint8_t> buffer) const;
+    void Read(array_ref<uint8_t> buffer) const;
+    void TransferSequential(array_ref<const uint8_t> writeBuffer, array_ref<uint8_t> readBuffer) const;
+    void TransferFullDuplex(array_ref<const uint8_t> writeBuffer, array_ref<uint8_t> readBuffer) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpiDeviceStatics
+{
+    hstring GetDeviceSelector() const;
+    hstring GetDeviceSelector(hstring_ref friendlyName) const;
+    Windows::Devices::Spi::SpiBusInfo GetBusInfo(hstring_ref busId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Spi::SpiDevice> FromIdAsync(hstring_ref busId, const Windows::Devices::Spi::SpiConnectionSettings & settings) const;
+};
 
 }
 

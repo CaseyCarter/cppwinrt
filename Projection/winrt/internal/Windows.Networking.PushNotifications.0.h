@@ -39,6 +39,17 @@ struct RawNotification;
 
 namespace Windows::Networking::PushNotifications {
 
+template <typename T> struct impl_IPushNotificationChannel;
+template <typename T> struct impl_IPushNotificationChannelManagerForUser;
+template <typename T> struct impl_IPushNotificationChannelManagerStatics;
+template <typename T> struct impl_IPushNotificationChannelManagerStatics2;
+template <typename T> struct impl_IPushNotificationReceivedEventArgs;
+template <typename T> struct impl_IRawNotification;
+
+}
+
+namespace Windows::Networking::PushNotifications {
+
 enum class PushNotificationType
 {
     Toast = 0,

@@ -186,23 +186,173 @@ template <> struct traits<Windows::Storage::Streams::RandomAccessStreamReference
 
 namespace Windows::Storage::Streams {
 
-template <typename T> struct impl_IBuffer;
-template <typename T> struct impl_IBufferFactory;
-template <typename T> struct impl_IBufferStatics;
-template <typename T> struct impl_IContentTypeProvider;
-template <typename T> struct impl_IDataReader;
-template <typename T> struct impl_IDataReaderFactory;
-template <typename T> struct impl_IDataReaderStatics;
-template <typename T> struct impl_IDataWriter;
-template <typename T> struct impl_IDataWriterFactory;
-template <typename T> struct impl_IInputStream;
-template <typename T> struct impl_IInputStreamReference;
-template <typename T> struct impl_IOutputStream;
-template <typename T> struct impl_IRandomAccessStream;
-template <typename T> struct impl_IRandomAccessStreamReference;
-template <typename T> struct impl_IRandomAccessStreamReferenceStatics;
-template <typename T> struct impl_IRandomAccessStreamStatics;
-template <typename T> struct impl_IRandomAccessStreamWithContentType;
+template <typename D>
+struct WINRT_EBO impl_IBuffer
+{
+    uint32_t Capacity() const;
+    uint32_t Length() const;
+    void Length(uint32_t value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBufferFactory
+{
+    Windows::Storage::Streams::Buffer Create(uint32_t capacity) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBufferStatics
+{
+    Windows::Storage::Streams::Buffer CreateCopyFromMemoryBuffer(const Windows::Foundation::IMemoryBuffer & input) const;
+    Windows::Foundation::MemoryBuffer CreateMemoryBufferOverIBuffer(const Windows::Storage::Streams::IBuffer & input) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContentTypeProvider
+{
+    hstring ContentType() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataReader
+{
+    uint32_t UnconsumedBufferLength() const;
+    Windows::Storage::Streams::UnicodeEncoding UnicodeEncoding() const;
+    void UnicodeEncoding(Windows::Storage::Streams::UnicodeEncoding value) const;
+    Windows::Storage::Streams::ByteOrder ByteOrder() const;
+    void ByteOrder(Windows::Storage::Streams::ByteOrder value) const;
+    Windows::Storage::Streams::InputStreamOptions InputStreamOptions() const;
+    void InputStreamOptions(Windows::Storage::Streams::InputStreamOptions value) const;
+    uint8_t ReadByte() const;
+    void ReadBytes(array_ref<uint8_t> value) const;
+    Windows::Storage::Streams::IBuffer ReadBuffer(uint32_t length) const;
+    bool ReadBoolean() const;
+    GUID ReadGuid() const;
+    int16_t ReadInt16() const;
+    int32_t ReadInt32() const;
+    int64_t ReadInt64() const;
+    uint16_t ReadUInt16() const;
+    uint32_t ReadUInt32() const;
+    uint64_t ReadUInt64() const;
+    float ReadSingle() const;
+    double ReadDouble() const;
+    hstring ReadString(uint32_t codeUnitCount) const;
+    Windows::Foundation::DateTime ReadDateTime() const;
+    Windows::Foundation::TimeSpan ReadTimeSpan() const;
+    Windows::Storage::Streams::DataReaderLoadOperation LoadAsync(uint32_t count) const;
+    Windows::Storage::Streams::IBuffer DetachBuffer() const;
+    Windows::Storage::Streams::IInputStream DetachStream() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataReaderFactory
+{
+    Windows::Storage::Streams::DataReader CreateDataReader(const Windows::Storage::Streams::IInputStream & inputStream) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataReaderStatics
+{
+    Windows::Storage::Streams::DataReader FromBuffer(const Windows::Storage::Streams::IBuffer & buffer) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataWriter
+{
+    uint32_t UnstoredBufferLength() const;
+    Windows::Storage::Streams::UnicodeEncoding UnicodeEncoding() const;
+    void UnicodeEncoding(Windows::Storage::Streams::UnicodeEncoding value) const;
+    Windows::Storage::Streams::ByteOrder ByteOrder() const;
+    void ByteOrder(Windows::Storage::Streams::ByteOrder value) const;
+    void WriteByte(uint8_t value) const;
+    void WriteBytes(array_ref<const uint8_t> value) const;
+    void WriteBuffer(const Windows::Storage::Streams::IBuffer & buffer) const;
+    void WriteBuffer(const Windows::Storage::Streams::IBuffer & buffer, uint32_t start, uint32_t count) const;
+    void WriteBoolean(bool value) const;
+    void WriteGuid(GUID value) const;
+    void WriteInt16(int16_t value) const;
+    void WriteInt32(int32_t value) const;
+    void WriteInt64(int64_t value) const;
+    void WriteUInt16(uint16_t value) const;
+    void WriteUInt32(uint32_t value) const;
+    void WriteUInt64(uint64_t value) const;
+    void WriteSingle(float value) const;
+    void WriteDouble(double value) const;
+    void WriteDateTime(const Windows::Foundation::DateTime & value) const;
+    void WriteTimeSpan(const Windows::Foundation::TimeSpan & value) const;
+    uint32_t WriteString(hstring_ref value) const;
+    uint32_t MeasureString(hstring_ref value) const;
+    Windows::Storage::Streams::DataWriterStoreOperation StoreAsync() const;
+    Windows::Foundation::IAsyncOperation<bool> FlushAsync() const;
+    Windows::Storage::Streams::IBuffer DetachBuffer() const;
+    Windows::Storage::Streams::IOutputStream DetachStream() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDataWriterFactory
+{
+    Windows::Storage::Streams::DataWriter CreateDataWriter(const Windows::Storage::Streams::IOutputStream & outputStream) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInputStream
+{
+    Windows::Foundation::IAsyncOperationWithProgress<Windows::Storage::Streams::IBuffer, uint32_t> ReadAsync(const Windows::Storage::Streams::IBuffer & buffer, uint32_t count, Windows::Storage::Streams::InputStreamOptions options) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInputStreamReference
+{
+    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IInputStream> OpenSequentialReadAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IOutputStream
+{
+    Windows::Foundation::IAsyncOperationWithProgress<uint32_t, uint32_t> WriteAsync(const Windows::Storage::Streams::IBuffer & buffer) const;
+    Windows::Foundation::IAsyncOperation<bool> FlushAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRandomAccessStream
+{
+    uint64_t Size() const;
+    void Size(uint64_t value) const;
+    Windows::Storage::Streams::IInputStream GetInputStreamAt(uint64_t position) const;
+    Windows::Storage::Streams::IOutputStream GetOutputStreamAt(uint64_t position) const;
+    uint64_t Position() const;
+    void Seek(uint64_t position) const;
+    Windows::Storage::Streams::IRandomAccessStream CloneStream() const;
+    bool CanRead() const;
+    bool CanWrite() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRandomAccessStreamReference
+{
+    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStreamWithContentType> OpenReadAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRandomAccessStreamReferenceStatics
+{
+    Windows::Storage::Streams::RandomAccessStreamReference CreateFromFile(const Windows::Storage::IStorageFile & file) const;
+    Windows::Storage::Streams::RandomAccessStreamReference CreateFromUri(const Windows::Foundation::Uri & uri) const;
+    Windows::Storage::Streams::RandomAccessStreamReference CreateFromStream(const Windows::Storage::Streams::IRandomAccessStream & stream) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRandomAccessStreamStatics
+{
+    Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t> CopyAsync(const Windows::Storage::Streams::IInputStream & source, const Windows::Storage::Streams::IOutputStream & destination) const;
+    Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t> CopyAsync(const Windows::Storage::Streams::IInputStream & source, const Windows::Storage::Streams::IOutputStream & destination, uint64_t bytesToCopy) const;
+    Windows::Foundation::IAsyncOperationWithProgress<uint64_t, uint64_t> CopyAndCloseAsync(const Windows::Storage::Streams::IInputStream & source, const Windows::Storage::Streams::IOutputStream & destination) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRandomAccessStreamWithContentType
+{
+};
 
 }
 

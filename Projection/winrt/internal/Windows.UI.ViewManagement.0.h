@@ -102,6 +102,41 @@ struct UIViewSettings;
 
 namespace Windows::UI::ViewManagement {
 
+template <typename T> struct impl_IAccessibilitySettings;
+template <typename T> struct impl_IActivationViewSwitcher;
+template <typename T> struct impl_IApplicationView;
+template <typename T> struct impl_IApplicationView2;
+template <typename T> struct impl_IApplicationView3;
+template <typename T> struct impl_IApplicationViewConsolidatedEventArgs;
+template <typename T> struct impl_IApplicationViewFullscreenStatics;
+template <typename T> struct impl_IApplicationViewInteropStatics;
+template <typename T> struct impl_IApplicationViewScaling;
+template <typename T> struct impl_IApplicationViewScalingStatics;
+template <typename T> struct impl_IApplicationViewStatics;
+template <typename T> struct impl_IApplicationViewStatics2;
+template <typename T> struct impl_IApplicationViewStatics3;
+template <typename T> struct impl_IApplicationViewSwitcherStatics;
+template <typename T> struct impl_IApplicationViewSwitcherStatics2;
+template <typename T> struct impl_IApplicationViewTitleBar;
+template <typename T> struct impl_IApplicationViewTransferContext;
+template <typename T> struct impl_IApplicationViewTransferContextStatics;
+template <typename T> struct impl_IInputPane;
+template <typename T> struct impl_IInputPane2;
+template <typename T> struct impl_IInputPaneControl;
+template <typename T> struct impl_IInputPaneStatics;
+template <typename T> struct impl_IInputPaneVisibilityEventArgs;
+template <typename T> struct impl_IProjectionManagerStatics;
+template <typename T> struct impl_IProjectionManagerStatics2;
+template <typename T> struct impl_IUISettings;
+template <typename T> struct impl_IUISettings2;
+template <typename T> struct impl_IUISettings3;
+template <typename T> struct impl_IUIViewSettings;
+template <typename T> struct impl_IUIViewSettingsStatics;
+
+}
+
+namespace Windows::UI::ViewManagement {
+
 enum class ApplicationViewBoundsMode
 {
     UseVisible = 0,

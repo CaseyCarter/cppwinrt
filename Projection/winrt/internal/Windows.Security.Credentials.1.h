@@ -144,21 +144,128 @@ template <> struct traits<Windows::Security::Credentials::WebAccountProvider> { 
 
 namespace Windows::Security::Credentials {
 
-template <typename T> struct impl_ICredentialFactory;
-template <typename T> struct impl_IKeyCredential;
-template <typename T> struct impl_IKeyCredentialAttestationResult;
-template <typename T> struct impl_IKeyCredentialManagerStatics;
-template <typename T> struct impl_IKeyCredentialOperationResult;
-template <typename T> struct impl_IKeyCredentialRetrievalResult;
-template <typename T> struct impl_IPasswordCredential;
-template <typename T> struct impl_IPasswordVault;
-template <typename T> struct impl_IWebAccount;
-template <typename T> struct impl_IWebAccount2;
-template <typename T> struct impl_IWebAccountFactory;
-template <typename T> struct impl_IWebAccountProvider;
-template <typename T> struct impl_IWebAccountProvider2;
-template <typename T> struct impl_IWebAccountProvider3;
-template <typename T> struct impl_IWebAccountProviderFactory;
+template <typename D>
+struct WINRT_EBO impl_ICredentialFactory
+{
+    Windows::Security::Credentials::PasswordCredential CreatePasswordCredential(hstring_ref resource, hstring_ref userName, hstring_ref password) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IKeyCredential
+{
+    hstring Name() const;
+    Windows::Storage::Streams::IBuffer RetrievePublicKey() const;
+    Windows::Storage::Streams::IBuffer RetrievePublicKey(Windows::Security::Cryptography::Core::CryptographicPublicKeyBlobType blobType) const;
+    Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialOperationResult> RequestSignAsync(const Windows::Storage::Streams::IBuffer & data) const;
+    Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialAttestationResult> GetAttestationAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IKeyCredentialAttestationResult
+{
+    Windows::Storage::Streams::IBuffer CertificateChainBuffer() const;
+    Windows::Storage::Streams::IBuffer AttestationBuffer() const;
+    Windows::Security::Credentials::KeyCredentialAttestationStatus Status() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IKeyCredentialManagerStatics
+{
+    Windows::Foundation::IAsyncOperation<bool> IsSupportedAsync() const;
+    Windows::Foundation::IAsyncAction RenewAttestationAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialRetrievalResult> RequestCreateAsync(hstring_ref name, Windows::Security::Credentials::KeyCredentialCreationOption option) const;
+    Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::KeyCredentialRetrievalResult> OpenAsync(hstring_ref name) const;
+    Windows::Foundation::IAsyncAction DeleteAsync(hstring_ref name) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IKeyCredentialOperationResult
+{
+    Windows::Storage::Streams::IBuffer Result() const;
+    Windows::Security::Credentials::KeyCredentialStatus Status() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IKeyCredentialRetrievalResult
+{
+    Windows::Security::Credentials::KeyCredential Credential() const;
+    Windows::Security::Credentials::KeyCredentialStatus Status() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPasswordCredential
+{
+    hstring Resource() const;
+    void Resource(hstring_ref resource) const;
+    hstring UserName() const;
+    void UserName(hstring_ref userName) const;
+    hstring Password() const;
+    void Password(hstring_ref password) const;
+    void RetrievePassword() const;
+    Windows::Foundation::Collections::IPropertySet Properties() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPasswordVault
+{
+    void Add(const Windows::Security::Credentials::PasswordCredential & credential) const;
+    void Remove(const Windows::Security::Credentials::PasswordCredential & credential) const;
+    Windows::Security::Credentials::PasswordCredential Retrieve(hstring_ref resource, hstring_ref userName) const;
+    Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::PasswordCredential> FindAllByResource(hstring_ref resource) const;
+    Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::PasswordCredential> FindAllByUserName(hstring_ref userName) const;
+    Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::PasswordCredential> RetrieveAll() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebAccount
+{
+    Windows::Security::Credentials::WebAccountProvider WebAccountProvider() const;
+    hstring UserName() const;
+    Windows::Security::Credentials::WebAccountState State() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebAccount2
+{
+    hstring Id() const;
+    Windows::Foundation::Collections::IMapView<hstring, hstring> Properties() const;
+    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IRandomAccessStream> GetPictureAsync(Windows::Security::Credentials::WebAccountPictureSize desizedSize) const;
+    Windows::Foundation::IAsyncAction SignOutAsync() const;
+    Windows::Foundation::IAsyncAction SignOutAsync(hstring_ref clientId) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebAccountFactory
+{
+    Windows::Security::Credentials::WebAccount CreateWebAccount(const Windows::Security::Credentials::WebAccountProvider & webAccountProvider, hstring_ref userName, Windows::Security::Credentials::WebAccountState state) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebAccountProvider
+{
+    hstring Id() const;
+    hstring DisplayName() const;
+    Windows::Foundation::Uri IconUri() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebAccountProvider2
+{
+    hstring DisplayPurpose() const;
+    hstring Authority() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebAccountProvider3
+{
+    Windows::System::User User() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebAccountProviderFactory
+{
+    Windows::Security::Credentials::WebAccountProvider CreateWebAccountProvider(hstring_ref id, hstring_ref displayName, const Windows::Foundation::Uri & iconUri) const;
+};
 
 }
 

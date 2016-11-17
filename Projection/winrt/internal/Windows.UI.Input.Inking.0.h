@@ -112,6 +112,39 @@ struct InkUnprocessedInput;
 
 namespace Windows::UI::Input::Inking {
 
+template <typename T> struct impl_IInkDrawingAttributes;
+template <typename T> struct impl_IInkDrawingAttributes2;
+template <typename T> struct impl_IInkDrawingAttributes3;
+template <typename T> struct impl_IInkDrawingAttributesPencilProperties;
+template <typename T> struct impl_IInkDrawingAttributesStatics;
+template <typename T> struct impl_IInkInputProcessingConfiguration;
+template <typename T> struct impl_IInkManager;
+template <typename T> struct impl_IInkPoint;
+template <typename T> struct impl_IInkPointFactory;
+template <typename T> struct impl_IInkPresenter;
+template <typename T> struct impl_IInkPresenterRuler;
+template <typename T> struct impl_IInkPresenterRulerFactory;
+template <typename T> struct impl_IInkPresenterStencil;
+template <typename T> struct impl_IInkRecognitionResult;
+template <typename T> struct impl_IInkRecognizer;
+template <typename T> struct impl_IInkRecognizerContainer;
+template <typename T> struct impl_IInkStroke;
+template <typename T> struct impl_IInkStroke2;
+template <typename T> struct impl_IInkStrokeBuilder;
+template <typename T> struct impl_IInkStrokeBuilder2;
+template <typename T> struct impl_IInkStrokeContainer;
+template <typename T> struct impl_IInkStrokeContainer2;
+template <typename T> struct impl_IInkStrokeInput;
+template <typename T> struct impl_IInkStrokeRenderingSegment;
+template <typename T> struct impl_IInkStrokesCollectedEventArgs;
+template <typename T> struct impl_IInkStrokesErasedEventArgs;
+template <typename T> struct impl_IInkSynchronizer;
+template <typename T> struct impl_IInkUnprocessedInput;
+
+}
+
+namespace Windows::UI::Input::Inking {
+
 enum class InkDrawingAttributesKind
 {
     Default = 0,

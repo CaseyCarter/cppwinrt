@@ -30,6 +30,16 @@ struct ProviderSpiConnectionSettings;
 
 namespace Windows::Devices::Spi::Provider {
 
+template <typename T> struct impl_IProviderSpiConnectionSettings;
+template <typename T> struct impl_IProviderSpiConnectionSettingsFactory;
+template <typename T> struct impl_ISpiControllerProvider;
+template <typename T> struct impl_ISpiDeviceProvider;
+template <typename T> struct impl_ISpiProvider;
+
+}
+
+namespace Windows::Devices::Spi::Provider {
+
 enum class ProviderSpiMode
 {
     Mode0 = 0,

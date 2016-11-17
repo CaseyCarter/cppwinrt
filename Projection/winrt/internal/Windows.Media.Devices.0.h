@@ -147,6 +147,48 @@ struct ZoomSettings;
 
 namespace Windows::Media::Devices {
 
+template <typename T> struct impl_IAdvancedPhotoCaptureSettings;
+template <typename T> struct impl_IAdvancedPhotoControl;
+template <typename T> struct impl_IAdvancedVideoCaptureDeviceController;
+template <typename T> struct impl_IAdvancedVideoCaptureDeviceController2;
+template <typename T> struct impl_IAdvancedVideoCaptureDeviceController3;
+template <typename T> struct impl_IAdvancedVideoCaptureDeviceController4;
+template <typename T> struct impl_IAudioDeviceController;
+template <typename T> struct impl_IDefaultAudioDeviceChangedEventArgs;
+template <typename T> struct impl_IExposureCompensationControl;
+template <typename T> struct impl_IExposureControl;
+template <typename T> struct impl_IExposurePriorityVideoControl;
+template <typename T> struct impl_IFlashControl;
+template <typename T> struct impl_IFlashControl2;
+template <typename T> struct impl_IFocusControl;
+template <typename T> struct impl_IFocusControl2;
+template <typename T> struct impl_IFocusSettings;
+template <typename T> struct impl_IHdrVideoControl;
+template <typename T> struct impl_IIsoSpeedControl;
+template <typename T> struct impl_IIsoSpeedControl2;
+template <typename T> struct impl_ILowLagPhotoControl;
+template <typename T> struct impl_ILowLagPhotoSequenceControl;
+template <typename T> struct impl_IMediaDeviceControl;
+template <typename T> struct impl_IMediaDeviceControlCapabilities;
+template <typename T> struct impl_IMediaDeviceController;
+template <typename T> struct impl_IMediaDeviceStatics;
+template <typename T> struct impl_IOpticalImageStabilizationControl;
+template <typename T> struct impl_IPhotoConfirmationControl;
+template <typename T> struct impl_IRegionOfInterest;
+template <typename T> struct impl_IRegionOfInterest2;
+template <typename T> struct impl_IRegionsOfInterestControl;
+template <typename T> struct impl_ISceneModeControl;
+template <typename T> struct impl_ITorchControl;
+template <typename T> struct impl_IVideoDeviceController;
+template <typename T> struct impl_IWhiteBalanceControl;
+template <typename T> struct impl_IZoomControl;
+template <typename T> struct impl_IZoomControl2;
+template <typename T> struct impl_IZoomSettings;
+
+}
+
+namespace Windows::Media::Devices {
+
 enum class AdvancedPhotoMode
 {
     Auto = 0,

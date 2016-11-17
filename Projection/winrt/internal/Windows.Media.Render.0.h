@@ -6,6 +6,11 @@
 
 WINRT_EXPORT namespace winrt {
 
+namespace Windows::Media::Protection::PlayReady {
+
+
+}
+
 namespace Windows::Media::Render {
 
 enum class AudioRenderCategory

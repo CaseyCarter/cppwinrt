@@ -54,63 +54,6 @@ template <> struct __declspec(uuid("4669befc-ae5c-52b1-8a97-5466ce61e94e")) __de
 
 namespace Windows::ApplicationModel::Search {
 
-template <typename D>
-struct WINRT_EBO impl_ILocalContentSuggestionSettings
-{
-    void Enabled(bool value) const;
-    bool Enabled() const;
-    Windows::Foundation::Collections::IVector<Windows::Storage::StorageFolder> Locations() const;
-    void AqsFilter(hstring_ref value) const;
-    hstring AqsFilter() const;
-    Windows::Foundation::Collections::IVector<hstring> PropertiesToMatch() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_ISearchPaneQueryLinguisticDetails
-{
-    Windows::Foundation::Collections::IVectorView<hstring> QueryTextAlternatives() const;
-    uint32_t QueryTextCompositionStart() const;
-    uint32_t QueryTextCompositionLength() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_ISearchQueryLinguisticDetails
-{
-    Windows::Foundation::Collections::IVectorView<hstring> QueryTextAlternatives() const;
-    uint32_t QueryTextCompositionStart() const;
-    uint32_t QueryTextCompositionLength() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_ISearchQueryLinguisticDetailsFactory
-{
-    Windows::ApplicationModel::Search::SearchQueryLinguisticDetails CreateInstance(const Windows::Foundation::Collections::IIterable<hstring> & queryTextAlternatives, uint32_t queryTextCompositionStart, uint32_t queryTextCompositionLength) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_ISearchSuggestionCollection
-{
-    uint32_t Size() const;
-    void AppendQuerySuggestion(hstring_ref text) const;
-    void AppendQuerySuggestions(const Windows::Foundation::Collections::IIterable<hstring> & suggestions) const;
-    void AppendResultSuggestion(hstring_ref text, hstring_ref detailText, hstring_ref tag, const Windows::Storage::Streams::IRandomAccessStreamReference & image, hstring_ref imageAlternateText) const;
-    void AppendSearchSeparator(hstring_ref label) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_ISearchSuggestionsRequest
-{
-    bool IsCanceled() const;
-    Windows::ApplicationModel::Search::SearchSuggestionCollection SearchSuggestionCollection() const;
-    Windows::ApplicationModel::Search::SearchSuggestionsRequestDeferral GetDeferral() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_ISearchSuggestionsRequestDeferral
-{
-    void Complete() const;
-};
-
 struct ILocalContentSuggestionSettings :
     Windows::IInspectable,
     impl::consume<ILocalContentSuggestionSettings>

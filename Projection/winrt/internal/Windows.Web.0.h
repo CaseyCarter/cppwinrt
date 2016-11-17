@@ -23,6 +23,13 @@ struct WebError;
 
 namespace Windows::Web {
 
+template <typename T> struct impl_IUriToStreamResolver;
+template <typename T> struct impl_IWebErrorStatics;
+
+}
+
+namespace Windows::Web {
+
 enum class WebErrorStatus
 {
     Unknown = 0,

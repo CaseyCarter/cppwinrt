@@ -29,27 +29,6 @@ template <> struct __declspec(uuid("4936ed59-b494-5128-bc7e-03e630346475")) __de
 
 namespace Windows::Devices::Pwm::Provider {
 
-template <typename D>
-struct WINRT_EBO impl_IPwmControllerProvider
-{
-    int32_t PinCount() const;
-    double ActualFrequency() const;
-    double SetDesiredFrequency(double frequency) const;
-    double MaxFrequency() const;
-    double MinFrequency() const;
-    void AcquirePin(int32_t pin) const;
-    void ReleasePin(int32_t pin) const;
-    void EnablePin(int32_t pin) const;
-    void DisablePin(int32_t pin) const;
-    void SetPulseParameters(int32_t pin, double dutyCycle, bool invertPolarity) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IPwmProvider
-{
-    Windows::Foundation::Collections::IVectorView<Windows::Devices::Pwm::Provider::IPwmControllerProvider> GetControllers() const;
-};
-
 struct IPwmControllerProvider :
     Windows::IInspectable,
     impl::consume<IPwmControllerProvider>

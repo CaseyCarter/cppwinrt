@@ -35,6 +35,18 @@ struct DisplayProperties;
 
 namespace Windows::Graphics::Display {
 
+template <typename T> struct impl_IDisplayInformation;
+template <typename T> struct impl_IDisplayInformation2;
+template <typename T> struct impl_IDisplayInformation3;
+template <typename T> struct impl_IDisplayInformation4;
+template <typename T> struct impl_IDisplayInformationStatics;
+template <typename T> struct impl_IDisplayPropertiesStatics;
+template <typename T> struct impl_DisplayPropertiesEventHandler;
+
+}
+
+namespace Windows::Graphics::Display {
+
 enum class DisplayOrientations : unsigned
 {
     None = 0x0,

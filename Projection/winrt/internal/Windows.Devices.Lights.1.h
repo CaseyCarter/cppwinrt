@@ -50,9 +50,36 @@ template <> struct traits<Windows::Devices::Lights::LampAvailabilityChangedEvent
 
 namespace Windows::Devices::Lights {
 
-template <typename T> struct impl_ILamp;
-template <typename T> struct impl_ILampAvailabilityChangedEventArgs;
-template <typename T> struct impl_ILampStatics;
+template <typename D>
+struct WINRT_EBO impl_ILamp
+{
+    hstring DeviceId() const;
+    bool IsEnabled() const;
+    void IsEnabled(bool value) const;
+    float BrightnessLevel() const;
+    void BrightnessLevel(float value) const;
+    bool IsColorSettable() const;
+    Windows::UI::Color Color() const;
+    void Color(const Windows::UI::Color & value) const;
+    event_token AvailabilityChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Lights::Lamp, Windows::Devices::Lights::LampAvailabilityChangedEventArgs> & handler) const;
+    using AvailabilityChanged_revoker = event_revoker<ILamp>;
+    AvailabilityChanged_revoker AvailabilityChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Lights::Lamp, Windows::Devices::Lights::LampAvailabilityChangedEventArgs> & handler) const;
+    void AvailabilityChanged(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILampAvailabilityChangedEventArgs
+{
+    bool IsAvailable() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILampStatics
+{
+    hstring GetDeviceSelector() const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Lights::Lamp> FromIdAsync(hstring_ref deviceId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Lights::Lamp> GetDefaultAsync() const;
+};
 
 }
 

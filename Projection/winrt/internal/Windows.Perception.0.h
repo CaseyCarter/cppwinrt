@@ -23,4 +23,11 @@ struct PerceptionTimestampHelper;
 
 }
 
+namespace Windows::Perception {
+
+template <typename T> struct impl_IPerceptionTimestamp;
+template <typename T> struct impl_IPerceptionTimestampHelperStatics;
+
+}
+
 }

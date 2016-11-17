@@ -176,23 +176,112 @@ template <> struct traits<Windows::UI::WebUI::WebUIWebAuthenticationBrokerContin
 
 namespace Windows::UI::WebUI {
 
-template <typename T> struct impl_IActivatedDeferral;
-template <typename T> struct impl_IActivatedEventArgsDeferral;
-template <typename T> struct impl_IActivatedOperation;
-template <typename T> struct impl_IHtmlPrintDocumentSource;
-template <typename T> struct impl_IWebUIActivationStatics;
-template <typename T> struct impl_IWebUIActivationStatics2;
-template <typename T> struct impl_IWebUIBackgroundTaskInstance;
-template <typename T> struct impl_IWebUIBackgroundTaskInstanceStatics;
-template <typename T> struct impl_IWebUINavigatedDeferral;
-template <typename T> struct impl_IWebUINavigatedEventArgs;
-template <typename T> struct impl_IWebUINavigatedOperation;
-template <typename T> struct impl_ActivatedEventHandler;
-template <typename T> struct impl_EnteredBackgroundEventHandler;
-template <typename T> struct impl_LeavingBackgroundEventHandler;
-template <typename T> struct impl_NavigatedEventHandler;
-template <typename T> struct impl_ResumingEventHandler;
-template <typename T> struct impl_SuspendingEventHandler;
+template <typename D>
+struct WINRT_EBO impl_IActivatedDeferral
+{
+    void Complete() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IActivatedEventArgsDeferral
+{
+    Windows::UI::WebUI::ActivatedOperation ActivatedOperation() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IActivatedOperation
+{
+    Windows::UI::WebUI::ActivatedDeferral GetDeferral() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IHtmlPrintDocumentSource
+{
+    Windows::UI::WebUI::PrintContent Content() const;
+    void Content(Windows::UI::WebUI::PrintContent value) const;
+    float LeftMargin() const;
+    void LeftMargin(float value) const;
+    float TopMargin() const;
+    void TopMargin(float value) const;
+    float RightMargin() const;
+    void RightMargin(float value) const;
+    float BottomMargin() const;
+    void BottomMargin(float value) const;
+    bool EnableHeaderFooter() const;
+    void EnableHeaderFooter(bool value) const;
+    bool ShrinkToFit() const;
+    void ShrinkToFit(bool value) const;
+    float PercentScale() const;
+    void PercentScale(float scalePercent) const;
+    hstring PageRange() const;
+    bool TrySetPageRange(hstring_ref strPageRange) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebUIActivationStatics
+{
+    event_token Activated(const Windows::UI::WebUI::ActivatedEventHandler & handler) const;
+    using Activated_revoker = event_revoker<IWebUIActivationStatics>;
+    Activated_revoker Activated(auto_revoke_t, const Windows::UI::WebUI::ActivatedEventHandler & handler) const;
+    void Activated(event_token token) const;
+    event_token Suspending(const Windows::UI::WebUI::SuspendingEventHandler & handler) const;
+    using Suspending_revoker = event_revoker<IWebUIActivationStatics>;
+    Suspending_revoker Suspending(auto_revoke_t, const Windows::UI::WebUI::SuspendingEventHandler & handler) const;
+    void Suspending(event_token token) const;
+    event_token Resuming(const Windows::UI::WebUI::ResumingEventHandler & handler) const;
+    using Resuming_revoker = event_revoker<IWebUIActivationStatics>;
+    Resuming_revoker Resuming(auto_revoke_t, const Windows::UI::WebUI::ResumingEventHandler & handler) const;
+    void Resuming(event_token token) const;
+    event_token Navigated(const Windows::UI::WebUI::NavigatedEventHandler & handler) const;
+    using Navigated_revoker = event_revoker<IWebUIActivationStatics>;
+    Navigated_revoker Navigated(auto_revoke_t, const Windows::UI::WebUI::NavigatedEventHandler & handler) const;
+    void Navigated(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebUIActivationStatics2
+{
+    event_token LeavingBackground(const Windows::UI::WebUI::LeavingBackgroundEventHandler & handler) const;
+    using LeavingBackground_revoker = event_revoker<IWebUIActivationStatics2>;
+    LeavingBackground_revoker LeavingBackground(auto_revoke_t, const Windows::UI::WebUI::LeavingBackgroundEventHandler & handler) const;
+    void LeavingBackground(event_token token) const;
+    event_token EnteredBackground(const Windows::UI::WebUI::EnteredBackgroundEventHandler & handler) const;
+    using EnteredBackground_revoker = event_revoker<IWebUIActivationStatics2>;
+    EnteredBackground_revoker EnteredBackground(auto_revoke_t, const Windows::UI::WebUI::EnteredBackgroundEventHandler & handler) const;
+    void EnteredBackground(event_token token) const;
+    void EnablePrelaunch(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebUIBackgroundTaskInstance
+{
+    bool Succeeded() const;
+    void Succeeded(bool succeeded) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebUIBackgroundTaskInstanceStatics
+{
+    Windows::UI::WebUI::IWebUIBackgroundTaskInstance Current() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebUINavigatedDeferral
+{
+    void Complete() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebUINavigatedEventArgs
+{
+    Windows::UI::WebUI::WebUINavigatedOperation NavigatedOperation() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebUINavigatedOperation
+{
+    Windows::UI::WebUI::WebUINavigatedDeferral GetDeferral() const;
+};
 
 }
 

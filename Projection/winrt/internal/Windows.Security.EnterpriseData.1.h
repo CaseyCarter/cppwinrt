@@ -13,11 +13,6 @@ namespace ABI {
 
 }
 
-namespace Windows::Security::EnterpriseData {
-
-
-}
-
 namespace impl {
 
 }

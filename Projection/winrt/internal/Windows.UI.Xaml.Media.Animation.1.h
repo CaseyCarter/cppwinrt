@@ -1112,148 +1112,1129 @@ template <> struct traits<Windows::UI::Xaml::Media::Animation::TransitionCollect
 
 namespace Windows::UI::Xaml::Media::Animation {
 
-template <typename T> struct impl_IAddDeleteThemeTransition;
-template <typename T> struct impl_IBackEase;
-template <typename T> struct impl_IBackEaseStatics;
-template <typename T> struct impl_IBeginStoryboard;
-template <typename T> struct impl_IBeginStoryboardStatics;
-template <typename T> struct impl_IBounceEase;
-template <typename T> struct impl_IBounceEaseStatics;
-template <typename T> struct impl_ICircleEase;
-template <typename T> struct impl_IColorAnimation;
-template <typename T> struct impl_IColorAnimationStatics;
-template <typename T> struct impl_IColorAnimationUsingKeyFrames;
-template <typename T> struct impl_IColorAnimationUsingKeyFramesStatics;
-template <typename T> struct impl_IColorKeyFrame;
-template <typename T> struct impl_IColorKeyFrameFactory;
-template <typename T> struct impl_IColorKeyFrameStatics;
-template <typename T> struct impl_ICommonNavigationTransitionInfo;
-template <typename T> struct impl_ICommonNavigationTransitionInfoStatics;
-template <typename T> struct impl_IConnectedAnimation;
-template <typename T> struct impl_IConnectedAnimationService;
-template <typename T> struct impl_IConnectedAnimationServiceStatics;
-template <typename T> struct impl_IContentThemeTransition;
-template <typename T> struct impl_IContentThemeTransitionStatics;
-template <typename T> struct impl_IContinuumNavigationTransitionInfo;
-template <typename T> struct impl_IContinuumNavigationTransitionInfoStatics;
-template <typename T> struct impl_ICubicEase;
-template <typename T> struct impl_IDiscreteColorKeyFrame;
-template <typename T> struct impl_IDiscreteDoubleKeyFrame;
-template <typename T> struct impl_IDiscreteObjectKeyFrame;
-template <typename T> struct impl_IDiscretePointKeyFrame;
-template <typename T> struct impl_IDoubleAnimation;
-template <typename T> struct impl_IDoubleAnimationStatics;
-template <typename T> struct impl_IDoubleAnimationUsingKeyFrames;
-template <typename T> struct impl_IDoubleAnimationUsingKeyFramesStatics;
-template <typename T> struct impl_IDoubleKeyFrame;
-template <typename T> struct impl_IDoubleKeyFrameFactory;
-template <typename T> struct impl_IDoubleKeyFrameStatics;
-template <typename T> struct impl_IDragItemThemeAnimation;
-template <typename T> struct impl_IDragItemThemeAnimationStatics;
-template <typename T> struct impl_IDragOverThemeAnimation;
-template <typename T> struct impl_IDragOverThemeAnimationStatics;
-template <typename T> struct impl_IDrillInNavigationTransitionInfo;
-template <typename T> struct impl_IDrillInThemeAnimation;
-template <typename T> struct impl_IDrillInThemeAnimationStatics;
-template <typename T> struct impl_IDrillOutThemeAnimation;
-template <typename T> struct impl_IDrillOutThemeAnimationStatics;
-template <typename T> struct impl_IDropTargetItemThemeAnimation;
-template <typename T> struct impl_IDropTargetItemThemeAnimationStatics;
-template <typename T> struct impl_IEasingColorKeyFrame;
-template <typename T> struct impl_IEasingColorKeyFrameStatics;
-template <typename T> struct impl_IEasingDoubleKeyFrame;
-template <typename T> struct impl_IEasingDoubleKeyFrameStatics;
-template <typename T> struct impl_IEasingFunctionBase;
-template <typename T> struct impl_IEasingFunctionBaseFactory;
-template <typename T> struct impl_IEasingFunctionBaseStatics;
-template <typename T> struct impl_IEasingPointKeyFrame;
-template <typename T> struct impl_IEasingPointKeyFrameStatics;
-template <typename T> struct impl_IEdgeUIThemeTransition;
-template <typename T> struct impl_IEdgeUIThemeTransitionStatics;
-template <typename T> struct impl_IElasticEase;
-template <typename T> struct impl_IElasticEaseStatics;
-template <typename T> struct impl_IEntranceNavigationTransitionInfo;
-template <typename T> struct impl_IEntranceNavigationTransitionInfoStatics;
-template <typename T> struct impl_IEntranceThemeTransition;
-template <typename T> struct impl_IEntranceThemeTransitionStatics;
-template <typename T> struct impl_IExponentialEase;
-template <typename T> struct impl_IExponentialEaseStatics;
-template <typename T> struct impl_IFadeInThemeAnimation;
-template <typename T> struct impl_IFadeInThemeAnimationStatics;
-template <typename T> struct impl_IFadeOutThemeAnimation;
-template <typename T> struct impl_IFadeOutThemeAnimationStatics;
-template <typename T> struct impl_IKeySpline;
-template <typename T> struct impl_IKeyTimeHelper;
-template <typename T> struct impl_IKeyTimeHelperStatics;
-template <typename T> struct impl_ILinearColorKeyFrame;
-template <typename T> struct impl_ILinearDoubleKeyFrame;
-template <typename T> struct impl_ILinearPointKeyFrame;
-template <typename T> struct impl_INavigationThemeTransition;
-template <typename T> struct impl_INavigationThemeTransitionStatics;
-template <typename T> struct impl_INavigationTransitionInfo;
-template <typename T> struct impl_INavigationTransitionInfoFactory;
-template <typename T> struct impl_INavigationTransitionInfoOverrides;
-template <typename T> struct impl_IObjectAnimationUsingKeyFrames;
-template <typename T> struct impl_IObjectAnimationUsingKeyFramesStatics;
-template <typename T> struct impl_IObjectKeyFrame;
-template <typename T> struct impl_IObjectKeyFrameFactory;
-template <typename T> struct impl_IObjectKeyFrameStatics;
-template <typename T> struct impl_IPaneThemeTransition;
-template <typename T> struct impl_IPaneThemeTransitionStatics;
-template <typename T> struct impl_IPointAnimation;
-template <typename T> struct impl_IPointAnimationStatics;
-template <typename T> struct impl_IPointAnimationUsingKeyFrames;
-template <typename T> struct impl_IPointAnimationUsingKeyFramesStatics;
-template <typename T> struct impl_IPointKeyFrame;
-template <typename T> struct impl_IPointKeyFrameFactory;
-template <typename T> struct impl_IPointKeyFrameStatics;
-template <typename T> struct impl_IPointerDownThemeAnimation;
-template <typename T> struct impl_IPointerDownThemeAnimationStatics;
-template <typename T> struct impl_IPointerUpThemeAnimation;
-template <typename T> struct impl_IPointerUpThemeAnimationStatics;
-template <typename T> struct impl_IPopInThemeAnimation;
-template <typename T> struct impl_IPopInThemeAnimationStatics;
-template <typename T> struct impl_IPopOutThemeAnimation;
-template <typename T> struct impl_IPopOutThemeAnimationStatics;
-template <typename T> struct impl_IPopupThemeTransition;
-template <typename T> struct impl_IPopupThemeTransitionStatics;
-template <typename T> struct impl_IPowerEase;
-template <typename T> struct impl_IPowerEaseStatics;
-template <typename T> struct impl_IQuadraticEase;
-template <typename T> struct impl_IQuarticEase;
-template <typename T> struct impl_IQuinticEase;
-template <typename T> struct impl_IReorderThemeTransition;
-template <typename T> struct impl_IRepeatBehaviorHelper;
-template <typename T> struct impl_IRepeatBehaviorHelperStatics;
-template <typename T> struct impl_IRepositionThemeAnimation;
-template <typename T> struct impl_IRepositionThemeAnimationStatics;
-template <typename T> struct impl_IRepositionThemeTransition;
-template <typename T> struct impl_IRepositionThemeTransition2;
-template <typename T> struct impl_IRepositionThemeTransitionStatics2;
-template <typename T> struct impl_ISineEase;
-template <typename T> struct impl_ISlideNavigationTransitionInfo;
-template <typename T> struct impl_ISplineColorKeyFrame;
-template <typename T> struct impl_ISplineColorKeyFrameStatics;
-template <typename T> struct impl_ISplineDoubleKeyFrame;
-template <typename T> struct impl_ISplineDoubleKeyFrameStatics;
-template <typename T> struct impl_ISplinePointKeyFrame;
-template <typename T> struct impl_ISplinePointKeyFrameStatics;
-template <typename T> struct impl_ISplitCloseThemeAnimation;
-template <typename T> struct impl_ISplitCloseThemeAnimationStatics;
-template <typename T> struct impl_ISplitOpenThemeAnimation;
-template <typename T> struct impl_ISplitOpenThemeAnimationStatics;
-template <typename T> struct impl_IStoryboard;
-template <typename T> struct impl_IStoryboardStatics;
-template <typename T> struct impl_ISuppressNavigationTransitionInfo;
-template <typename T> struct impl_ISwipeBackThemeAnimation;
-template <typename T> struct impl_ISwipeBackThemeAnimationStatics;
-template <typename T> struct impl_ISwipeHintThemeAnimation;
-template <typename T> struct impl_ISwipeHintThemeAnimationStatics;
-template <typename T> struct impl_ITimeline;
-template <typename T> struct impl_ITimelineFactory;
-template <typename T> struct impl_ITimelineStatics;
-template <typename T> struct impl_ITransition;
-template <typename T> struct impl_ITransitionFactory;
+template <typename D>
+struct WINRT_EBO impl_IAddDeleteThemeTransition
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackEase
+{
+    double Amplitude() const;
+    void Amplitude(double value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackEaseStatics
+{
+    Windows::UI::Xaml::DependencyProperty AmplitudeProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBeginStoryboard
+{
+    Windows::UI::Xaml::Media::Animation::Storyboard Storyboard() const;
+    void Storyboard(const Windows::UI::Xaml::Media::Animation::Storyboard & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBeginStoryboardStatics
+{
+    Windows::UI::Xaml::DependencyProperty StoryboardProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBounceEase
+{
+    int32_t Bounces() const;
+    void Bounces(int32_t value) const;
+    double Bounciness() const;
+    void Bounciness(double value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBounceEaseStatics
+{
+    Windows::UI::Xaml::DependencyProperty BouncesProperty() const;
+    Windows::UI::Xaml::DependencyProperty BouncinessProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICircleEase
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IColorAnimation
+{
+    Windows::Foundation::IReference<Windows::UI::Color> From() const;
+    void From(const Windows::Foundation::IReference<Windows::UI::Color> & value) const;
+    Windows::Foundation::IReference<Windows::UI::Color> To() const;
+    void To(const Windows::Foundation::IReference<Windows::UI::Color> & value) const;
+    Windows::Foundation::IReference<Windows::UI::Color> By() const;
+    void By(const Windows::Foundation::IReference<Windows::UI::Color> & value) const;
+    Windows::UI::Xaml::Media::Animation::EasingFunctionBase EasingFunction() const;
+    void EasingFunction(const Windows::UI::Xaml::Media::Animation::EasingFunctionBase & value) const;
+    bool EnableDependentAnimation() const;
+    void EnableDependentAnimation(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IColorAnimationStatics
+{
+    Windows::UI::Xaml::DependencyProperty FromProperty() const;
+    Windows::UI::Xaml::DependencyProperty ToProperty() const;
+    Windows::UI::Xaml::DependencyProperty ByProperty() const;
+    Windows::UI::Xaml::DependencyProperty EasingFunctionProperty() const;
+    Windows::UI::Xaml::DependencyProperty EnableDependentAnimationProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IColorAnimationUsingKeyFrames
+{
+    Windows::UI::Xaml::Media::Animation::ColorKeyFrameCollection KeyFrames() const;
+    bool EnableDependentAnimation() const;
+    void EnableDependentAnimation(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IColorAnimationUsingKeyFramesStatics
+{
+    Windows::UI::Xaml::DependencyProperty EnableDependentAnimationProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IColorKeyFrame
+{
+    Windows::UI::Color Value() const;
+    void Value(const Windows::UI::Color & value) const;
+    Windows::UI::Xaml::Media::Animation::KeyTime KeyTime() const;
+    void KeyTime(const Windows::UI::Xaml::Media::Animation::KeyTime & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IColorKeyFrameFactory
+{
+    Windows::UI::Xaml::Media::Animation::ColorKeyFrame CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IColorKeyFrameStatics
+{
+    Windows::UI::Xaml::DependencyProperty ValueProperty() const;
+    Windows::UI::Xaml::DependencyProperty KeyTimeProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICommonNavigationTransitionInfo
+{
+    bool IsStaggeringEnabled() const;
+    void IsStaggeringEnabled(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICommonNavigationTransitionInfoStatics
+{
+    Windows::UI::Xaml::DependencyProperty IsStaggeringEnabledProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsStaggerElementProperty() const;
+    bool GetIsStaggerElement(const Windows::UI::Xaml::UIElement & element) const;
+    void SetIsStaggerElement(const Windows::UI::Xaml::UIElement & element, bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IConnectedAnimation
+{
+    event_token Completed(const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Animation::ConnectedAnimation, Windows::IInspectable> & value) const;
+    using Completed_revoker = event_revoker<IConnectedAnimation>;
+    Completed_revoker Completed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::Xaml::Media::Animation::ConnectedAnimation, Windows::IInspectable> & value) const;
+    void Completed(event_token token) const;
+    bool TryStart(const Windows::UI::Xaml::UIElement & destination) const;
+    void Cancel() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IConnectedAnimationService
+{
+    Windows::Foundation::TimeSpan DefaultDuration() const;
+    void DefaultDuration(const Windows::Foundation::TimeSpan & value) const;
+    Windows::UI::Composition::CompositionEasingFunction DefaultEasingFunction() const;
+    void DefaultEasingFunction(const Windows::UI::Composition::CompositionEasingFunction & value) const;
+    Windows::UI::Xaml::Media::Animation::ConnectedAnimation PrepareToAnimate(hstring_ref key, const Windows::UI::Xaml::UIElement & source) const;
+    Windows::UI::Xaml::Media::Animation::ConnectedAnimation GetAnimation(hstring_ref key) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IConnectedAnimationServiceStatics
+{
+    Windows::UI::Xaml::Media::Animation::ConnectedAnimationService GetForCurrentView() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContentThemeTransition
+{
+    double HorizontalOffset() const;
+    void HorizontalOffset(double value) const;
+    double VerticalOffset() const;
+    void VerticalOffset(double value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContentThemeTransitionStatics
+{
+    Windows::UI::Xaml::DependencyProperty HorizontalOffsetProperty() const;
+    Windows::UI::Xaml::DependencyProperty VerticalOffsetProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContinuumNavigationTransitionInfo
+{
+    Windows::UI::Xaml::UIElement ExitElement() const;
+    void ExitElement(const Windows::UI::Xaml::UIElement & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContinuumNavigationTransitionInfoStatics
+{
+    Windows::UI::Xaml::DependencyProperty ExitElementProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsEntranceElementProperty() const;
+    bool GetIsEntranceElement(const Windows::UI::Xaml::UIElement & element) const;
+    void SetIsEntranceElement(const Windows::UI::Xaml::UIElement & element, bool value) const;
+    Windows::UI::Xaml::DependencyProperty IsExitElementProperty() const;
+    bool GetIsExitElement(const Windows::UI::Xaml::UIElement & element) const;
+    void SetIsExitElement(const Windows::UI::Xaml::UIElement & element, bool value) const;
+    Windows::UI::Xaml::DependencyProperty ExitElementContainerProperty() const;
+    bool GetExitElementContainer(const Windows::UI::Xaml::Controls::ListViewBase & element) const;
+    void SetExitElementContainer(const Windows::UI::Xaml::Controls::ListViewBase & element, bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICubicEase
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDiscreteColorKeyFrame
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDiscreteDoubleKeyFrame
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDiscreteObjectKeyFrame
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDiscretePointKeyFrame
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDoubleAnimation
+{
+    Windows::Foundation::IReference<double> From() const;
+    void From(const Windows::Foundation::IReference<double> & value) const;
+    Windows::Foundation::IReference<double> To() const;
+    void To(const Windows::Foundation::IReference<double> & value) const;
+    Windows::Foundation::IReference<double> By() const;
+    void By(const Windows::Foundation::IReference<double> & value) const;
+    Windows::UI::Xaml::Media::Animation::EasingFunctionBase EasingFunction() const;
+    void EasingFunction(const Windows::UI::Xaml::Media::Animation::EasingFunctionBase & value) const;
+    bool EnableDependentAnimation() const;
+    void EnableDependentAnimation(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDoubleAnimationStatics
+{
+    Windows::UI::Xaml::DependencyProperty FromProperty() const;
+    Windows::UI::Xaml::DependencyProperty ToProperty() const;
+    Windows::UI::Xaml::DependencyProperty ByProperty() const;
+    Windows::UI::Xaml::DependencyProperty EasingFunctionProperty() const;
+    Windows::UI::Xaml::DependencyProperty EnableDependentAnimationProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDoubleAnimationUsingKeyFrames
+{
+    Windows::UI::Xaml::Media::Animation::DoubleKeyFrameCollection KeyFrames() const;
+    bool EnableDependentAnimation() const;
+    void EnableDependentAnimation(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDoubleAnimationUsingKeyFramesStatics
+{
+    Windows::UI::Xaml::DependencyProperty EnableDependentAnimationProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDoubleKeyFrame
+{
+    double Value() const;
+    void Value(double value) const;
+    Windows::UI::Xaml::Media::Animation::KeyTime KeyTime() const;
+    void KeyTime(const Windows::UI::Xaml::Media::Animation::KeyTime & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDoubleKeyFrameFactory
+{
+    Windows::UI::Xaml::Media::Animation::DoubleKeyFrame CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDoubleKeyFrameStatics
+{
+    Windows::UI::Xaml::DependencyProperty ValueProperty() const;
+    Windows::UI::Xaml::DependencyProperty KeyTimeProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDragItemThemeAnimation
+{
+    hstring TargetName() const;
+    void TargetName(hstring_ref value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDragItemThemeAnimationStatics
+{
+    Windows::UI::Xaml::DependencyProperty TargetNameProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDragOverThemeAnimation
+{
+    hstring TargetName() const;
+    void TargetName(hstring_ref value) const;
+    double ToOffset() const;
+    void ToOffset(double value) const;
+    Windows::UI::Xaml::Controls::Primitives::AnimationDirection Direction() const;
+    void Direction(Windows::UI::Xaml::Controls::Primitives::AnimationDirection value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDragOverThemeAnimationStatics
+{
+    Windows::UI::Xaml::DependencyProperty TargetNameProperty() const;
+    Windows::UI::Xaml::DependencyProperty ToOffsetProperty() const;
+    Windows::UI::Xaml::DependencyProperty DirectionProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDrillInNavigationTransitionInfo
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDrillInThemeAnimation
+{
+    hstring EntranceTargetName() const;
+    void EntranceTargetName(hstring_ref value) const;
+    Windows::UI::Xaml::DependencyObject EntranceTarget() const;
+    void EntranceTarget(const Windows::UI::Xaml::DependencyObject & value) const;
+    hstring ExitTargetName() const;
+    void ExitTargetName(hstring_ref value) const;
+    Windows::UI::Xaml::DependencyObject ExitTarget() const;
+    void ExitTarget(const Windows::UI::Xaml::DependencyObject & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDrillInThemeAnimationStatics
+{
+    Windows::UI::Xaml::DependencyProperty EntranceTargetNameProperty() const;
+    Windows::UI::Xaml::DependencyProperty EntranceTargetProperty() const;
+    Windows::UI::Xaml::DependencyProperty ExitTargetNameProperty() const;
+    Windows::UI::Xaml::DependencyProperty ExitTargetProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDrillOutThemeAnimation
+{
+    hstring EntranceTargetName() const;
+    void EntranceTargetName(hstring_ref value) const;
+    Windows::UI::Xaml::DependencyObject EntranceTarget() const;
+    void EntranceTarget(const Windows::UI::Xaml::DependencyObject & value) const;
+    hstring ExitTargetName() const;
+    void ExitTargetName(hstring_ref value) const;
+    Windows::UI::Xaml::DependencyObject ExitTarget() const;
+    void ExitTarget(const Windows::UI::Xaml::DependencyObject & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDrillOutThemeAnimationStatics
+{
+    Windows::UI::Xaml::DependencyProperty EntranceTargetNameProperty() const;
+    Windows::UI::Xaml::DependencyProperty EntranceTargetProperty() const;
+    Windows::UI::Xaml::DependencyProperty ExitTargetNameProperty() const;
+    Windows::UI::Xaml::DependencyProperty ExitTargetProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDropTargetItemThemeAnimation
+{
+    hstring TargetName() const;
+    void TargetName(hstring_ref value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDropTargetItemThemeAnimationStatics
+{
+    Windows::UI::Xaml::DependencyProperty TargetNameProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEasingColorKeyFrame
+{
+    Windows::UI::Xaml::Media::Animation::EasingFunctionBase EasingFunction() const;
+    void EasingFunction(const Windows::UI::Xaml::Media::Animation::EasingFunctionBase & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEasingColorKeyFrameStatics
+{
+    Windows::UI::Xaml::DependencyProperty EasingFunctionProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEasingDoubleKeyFrame
+{
+    Windows::UI::Xaml::Media::Animation::EasingFunctionBase EasingFunction() const;
+    void EasingFunction(const Windows::UI::Xaml::Media::Animation::EasingFunctionBase & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEasingDoubleKeyFrameStatics
+{
+    Windows::UI::Xaml::DependencyProperty EasingFunctionProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEasingFunctionBase
+{
+    Windows::UI::Xaml::Media::Animation::EasingMode EasingMode() const;
+    void EasingMode(Windows::UI::Xaml::Media::Animation::EasingMode value) const;
+    double Ease(double normalizedTime) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEasingFunctionBaseFactory
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEasingFunctionBaseStatics
+{
+    Windows::UI::Xaml::DependencyProperty EasingModeProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEasingPointKeyFrame
+{
+    Windows::UI::Xaml::Media::Animation::EasingFunctionBase EasingFunction() const;
+    void EasingFunction(const Windows::UI::Xaml::Media::Animation::EasingFunctionBase & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEasingPointKeyFrameStatics
+{
+    Windows::UI::Xaml::DependencyProperty EasingFunctionProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEdgeUIThemeTransition
+{
+    Windows::UI::Xaml::Controls::Primitives::EdgeTransitionLocation Edge() const;
+    void Edge(Windows::UI::Xaml::Controls::Primitives::EdgeTransitionLocation value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEdgeUIThemeTransitionStatics
+{
+    Windows::UI::Xaml::DependencyProperty EdgeProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IElasticEase
+{
+    int32_t Oscillations() const;
+    void Oscillations(int32_t value) const;
+    double Springiness() const;
+    void Springiness(double value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IElasticEaseStatics
+{
+    Windows::UI::Xaml::DependencyProperty OscillationsProperty() const;
+    Windows::UI::Xaml::DependencyProperty SpringinessProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEntranceNavigationTransitionInfo
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEntranceNavigationTransitionInfoStatics
+{
+    Windows::UI::Xaml::DependencyProperty IsTargetElementProperty() const;
+    bool GetIsTargetElement(const Windows::UI::Xaml::UIElement & element) const;
+    void SetIsTargetElement(const Windows::UI::Xaml::UIElement & element, bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEntranceThemeTransition
+{
+    double FromHorizontalOffset() const;
+    void FromHorizontalOffset(double value) const;
+    double FromVerticalOffset() const;
+    void FromVerticalOffset(double value) const;
+    bool IsStaggeringEnabled() const;
+    void IsStaggeringEnabled(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEntranceThemeTransitionStatics
+{
+    Windows::UI::Xaml::DependencyProperty FromHorizontalOffsetProperty() const;
+    Windows::UI::Xaml::DependencyProperty FromVerticalOffsetProperty() const;
+    Windows::UI::Xaml::DependencyProperty IsStaggeringEnabledProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IExponentialEase
+{
+    double Exponent() const;
+    void Exponent(double value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IExponentialEaseStatics
+{
+    Windows::UI::Xaml::DependencyProperty ExponentProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFadeInThemeAnimation
+{
+    hstring TargetName() const;
+    void TargetName(hstring_ref value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFadeInThemeAnimationStatics
+{
+    Windows::UI::Xaml::DependencyProperty TargetNameProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFadeOutThemeAnimation
+{
+    hstring TargetName() const;
+    void TargetName(hstring_ref value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFadeOutThemeAnimationStatics
+{
+    Windows::UI::Xaml::DependencyProperty TargetNameProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IKeySpline
+{
+    Windows::Foundation::Point ControlPoint1() const;
+    void ControlPoint1(const Windows::Foundation::Point & value) const;
+    Windows::Foundation::Point ControlPoint2() const;
+    void ControlPoint2(const Windows::Foundation::Point & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IKeyTimeHelper
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IKeyTimeHelperStatics
+{
+    Windows::UI::Xaml::Media::Animation::KeyTime FromTimeSpan(const Windows::Foundation::TimeSpan & timeSpan) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILinearColorKeyFrame
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILinearDoubleKeyFrame
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILinearPointKeyFrame
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_INavigationThemeTransition
+{
+    Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo DefaultNavigationTransitionInfo() const;
+    void DefaultNavigationTransitionInfo(const Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_INavigationThemeTransitionStatics
+{
+    Windows::UI::Xaml::DependencyProperty DefaultNavigationTransitionInfoProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_INavigationTransitionInfo
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_INavigationTransitionInfoFactory
+{
+    Windows::UI::Xaml::Media::Animation::NavigationTransitionInfo CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_INavigationTransitionInfoOverrides
+{
+    hstring GetNavigationStateCore() const;
+    void SetNavigationStateCore(hstring_ref navigationState) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IObjectAnimationUsingKeyFrames
+{
+    Windows::UI::Xaml::Media::Animation::ObjectKeyFrameCollection KeyFrames() const;
+    bool EnableDependentAnimation() const;
+    void EnableDependentAnimation(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IObjectAnimationUsingKeyFramesStatics
+{
+    Windows::UI::Xaml::DependencyProperty EnableDependentAnimationProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IObjectKeyFrame
+{
+    Windows::IInspectable Value() const;
+    void Value(const Windows::IInspectable & value) const;
+    Windows::UI::Xaml::Media::Animation::KeyTime KeyTime() const;
+    void KeyTime(const Windows::UI::Xaml::Media::Animation::KeyTime & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IObjectKeyFrameFactory
+{
+    Windows::UI::Xaml::Media::Animation::ObjectKeyFrame CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IObjectKeyFrameStatics
+{
+    Windows::UI::Xaml::DependencyProperty ValueProperty() const;
+    Windows::UI::Xaml::DependencyProperty KeyTimeProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPaneThemeTransition
+{
+    Windows::UI::Xaml::Controls::Primitives::EdgeTransitionLocation Edge() const;
+    void Edge(Windows::UI::Xaml::Controls::Primitives::EdgeTransitionLocation value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPaneThemeTransitionStatics
+{
+    Windows::UI::Xaml::DependencyProperty EdgeProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPointAnimation
+{
+    Windows::Foundation::IReference<Windows::Foundation::Point> From() const;
+    void From(const Windows::Foundation::IReference<Windows::Foundation::Point> & value) const;
+    Windows::Foundation::IReference<Windows::Foundation::Point> To() const;
+    void To(const Windows::Foundation::IReference<Windows::Foundation::Point> & value) const;
+    Windows::Foundation::IReference<Windows::Foundation::Point> By() const;
+    void By(const Windows::Foundation::IReference<Windows::Foundation::Point> & value) const;
+    Windows::UI::Xaml::Media::Animation::EasingFunctionBase EasingFunction() const;
+    void EasingFunction(const Windows::UI::Xaml::Media::Animation::EasingFunctionBase & value) const;
+    bool EnableDependentAnimation() const;
+    void EnableDependentAnimation(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPointAnimationStatics
+{
+    Windows::UI::Xaml::DependencyProperty FromProperty() const;
+    Windows::UI::Xaml::DependencyProperty ToProperty() const;
+    Windows::UI::Xaml::DependencyProperty ByProperty() const;
+    Windows::UI::Xaml::DependencyProperty EasingFunctionProperty() const;
+    Windows::UI::Xaml::DependencyProperty EnableDependentAnimationProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPointAnimationUsingKeyFrames
+{
+    Windows::UI::Xaml::Media::Animation::PointKeyFrameCollection KeyFrames() const;
+    bool EnableDependentAnimation() const;
+    void EnableDependentAnimation(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPointAnimationUsingKeyFramesStatics
+{
+    Windows::UI::Xaml::DependencyProperty EnableDependentAnimationProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPointKeyFrame
+{
+    Windows::Foundation::Point Value() const;
+    void Value(const Windows::Foundation::Point & value) const;
+    Windows::UI::Xaml::Media::Animation::KeyTime KeyTime() const;
+    void KeyTime(const Windows::UI::Xaml::Media::Animation::KeyTime & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPointKeyFrameFactory
+{
+    Windows::UI::Xaml::Media::Animation::PointKeyFrame CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPointKeyFrameStatics
+{
+    Windows::UI::Xaml::DependencyProperty ValueProperty() const;
+    Windows::UI::Xaml::DependencyProperty KeyTimeProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPointerDownThemeAnimation
+{
+    hstring TargetName() const;
+    void TargetName(hstring_ref value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPointerDownThemeAnimationStatics
+{
+    Windows::UI::Xaml::DependencyProperty TargetNameProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPointerUpThemeAnimation
+{
+    hstring TargetName() const;
+    void TargetName(hstring_ref value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPointerUpThemeAnimationStatics
+{
+    Windows::UI::Xaml::DependencyProperty TargetNameProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPopInThemeAnimation
+{
+    hstring TargetName() const;
+    void TargetName(hstring_ref value) const;
+    double FromHorizontalOffset() const;
+    void FromHorizontalOffset(double value) const;
+    double FromVerticalOffset() const;
+    void FromVerticalOffset(double value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPopInThemeAnimationStatics
+{
+    Windows::UI::Xaml::DependencyProperty TargetNameProperty() const;
+    Windows::UI::Xaml::DependencyProperty FromHorizontalOffsetProperty() const;
+    Windows::UI::Xaml::DependencyProperty FromVerticalOffsetProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPopOutThemeAnimation
+{
+    hstring TargetName() const;
+    void TargetName(hstring_ref value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPopOutThemeAnimationStatics
+{
+    Windows::UI::Xaml::DependencyProperty TargetNameProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPopupThemeTransition
+{
+    double FromHorizontalOffset() const;
+    void FromHorizontalOffset(double value) const;
+    double FromVerticalOffset() const;
+    void FromVerticalOffset(double value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPopupThemeTransitionStatics
+{
+    Windows::UI::Xaml::DependencyProperty FromHorizontalOffsetProperty() const;
+    Windows::UI::Xaml::DependencyProperty FromVerticalOffsetProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPowerEase
+{
+    double Power() const;
+    void Power(double value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPowerEaseStatics
+{
+    Windows::UI::Xaml::DependencyProperty PowerProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IQuadraticEase
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IQuarticEase
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IQuinticEase
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IReorderThemeTransition
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRepeatBehaviorHelper
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRepeatBehaviorHelperStatics
+{
+    Windows::UI::Xaml::Media::Animation::RepeatBehavior Forever() const;
+    Windows::UI::Xaml::Media::Animation::RepeatBehavior FromCount(double count) const;
+    Windows::UI::Xaml::Media::Animation::RepeatBehavior FromDuration(const Windows::Foundation::TimeSpan & duration) const;
+    bool GetHasCount(const Windows::UI::Xaml::Media::Animation::RepeatBehavior & target) const;
+    bool GetHasDuration(const Windows::UI::Xaml::Media::Animation::RepeatBehavior & target) const;
+    bool Equals(const Windows::UI::Xaml::Media::Animation::RepeatBehavior & target, const Windows::UI::Xaml::Media::Animation::RepeatBehavior & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRepositionThemeAnimation
+{
+    hstring TargetName() const;
+    void TargetName(hstring_ref value) const;
+    double FromHorizontalOffset() const;
+    void FromHorizontalOffset(double value) const;
+    double FromVerticalOffset() const;
+    void FromVerticalOffset(double value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRepositionThemeAnimationStatics
+{
+    Windows::UI::Xaml::DependencyProperty TargetNameProperty() const;
+    Windows::UI::Xaml::DependencyProperty FromHorizontalOffsetProperty() const;
+    Windows::UI::Xaml::DependencyProperty FromVerticalOffsetProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRepositionThemeTransition
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRepositionThemeTransition2
+{
+    bool IsStaggeringEnabled() const;
+    void IsStaggeringEnabled(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRepositionThemeTransitionStatics2
+{
+    Windows::UI::Xaml::DependencyProperty IsStaggeringEnabledProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISineEase
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISlideNavigationTransitionInfo
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISplineColorKeyFrame
+{
+    Windows::UI::Xaml::Media::Animation::KeySpline KeySpline() const;
+    void KeySpline(const Windows::UI::Xaml::Media::Animation::KeySpline & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISplineColorKeyFrameStatics
+{
+    Windows::UI::Xaml::DependencyProperty KeySplineProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISplineDoubleKeyFrame
+{
+    Windows::UI::Xaml::Media::Animation::KeySpline KeySpline() const;
+    void KeySpline(const Windows::UI::Xaml::Media::Animation::KeySpline & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISplineDoubleKeyFrameStatics
+{
+    Windows::UI::Xaml::DependencyProperty KeySplineProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISplinePointKeyFrame
+{
+    Windows::UI::Xaml::Media::Animation::KeySpline KeySpline() const;
+    void KeySpline(const Windows::UI::Xaml::Media::Animation::KeySpline & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISplinePointKeyFrameStatics
+{
+    Windows::UI::Xaml::DependencyProperty KeySplineProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISplitCloseThemeAnimation
+{
+    hstring OpenedTargetName() const;
+    void OpenedTargetName(hstring_ref value) const;
+    Windows::UI::Xaml::DependencyObject OpenedTarget() const;
+    void OpenedTarget(const Windows::UI::Xaml::DependencyObject & value) const;
+    hstring ClosedTargetName() const;
+    void ClosedTargetName(hstring_ref value) const;
+    Windows::UI::Xaml::DependencyObject ClosedTarget() const;
+    void ClosedTarget(const Windows::UI::Xaml::DependencyObject & value) const;
+    hstring ContentTargetName() const;
+    void ContentTargetName(hstring_ref value) const;
+    Windows::UI::Xaml::DependencyObject ContentTarget() const;
+    void ContentTarget(const Windows::UI::Xaml::DependencyObject & value) const;
+    double OpenedLength() const;
+    void OpenedLength(double value) const;
+    double ClosedLength() const;
+    void ClosedLength(double value) const;
+    double OffsetFromCenter() const;
+    void OffsetFromCenter(double value) const;
+    Windows::UI::Xaml::Controls::Primitives::AnimationDirection ContentTranslationDirection() const;
+    void ContentTranslationDirection(Windows::UI::Xaml::Controls::Primitives::AnimationDirection value) const;
+    double ContentTranslationOffset() const;
+    void ContentTranslationOffset(double value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISplitCloseThemeAnimationStatics
+{
+    Windows::UI::Xaml::DependencyProperty OpenedTargetNameProperty() const;
+    Windows::UI::Xaml::DependencyProperty OpenedTargetProperty() const;
+    Windows::UI::Xaml::DependencyProperty ClosedTargetNameProperty() const;
+    Windows::UI::Xaml::DependencyProperty ClosedTargetProperty() const;
+    Windows::UI::Xaml::DependencyProperty ContentTargetNameProperty() const;
+    Windows::UI::Xaml::DependencyProperty ContentTargetProperty() const;
+    Windows::UI::Xaml::DependencyProperty OpenedLengthProperty() const;
+    Windows::UI::Xaml::DependencyProperty ClosedLengthProperty() const;
+    Windows::UI::Xaml::DependencyProperty OffsetFromCenterProperty() const;
+    Windows::UI::Xaml::DependencyProperty ContentTranslationDirectionProperty() const;
+    Windows::UI::Xaml::DependencyProperty ContentTranslationOffsetProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISplitOpenThemeAnimation
+{
+    hstring OpenedTargetName() const;
+    void OpenedTargetName(hstring_ref value) const;
+    Windows::UI::Xaml::DependencyObject OpenedTarget() const;
+    void OpenedTarget(const Windows::UI::Xaml::DependencyObject & value) const;
+    hstring ClosedTargetName() const;
+    void ClosedTargetName(hstring_ref value) const;
+    Windows::UI::Xaml::DependencyObject ClosedTarget() const;
+    void ClosedTarget(const Windows::UI::Xaml::DependencyObject & value) const;
+    hstring ContentTargetName() const;
+    void ContentTargetName(hstring_ref value) const;
+    Windows::UI::Xaml::DependencyObject ContentTarget() const;
+    void ContentTarget(const Windows::UI::Xaml::DependencyObject & value) const;
+    double OpenedLength() const;
+    void OpenedLength(double value) const;
+    double ClosedLength() const;
+    void ClosedLength(double value) const;
+    double OffsetFromCenter() const;
+    void OffsetFromCenter(double value) const;
+    Windows::UI::Xaml::Controls::Primitives::AnimationDirection ContentTranslationDirection() const;
+    void ContentTranslationDirection(Windows::UI::Xaml::Controls::Primitives::AnimationDirection value) const;
+    double ContentTranslationOffset() const;
+    void ContentTranslationOffset(double value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISplitOpenThemeAnimationStatics
+{
+    Windows::UI::Xaml::DependencyProperty OpenedTargetNameProperty() const;
+    Windows::UI::Xaml::DependencyProperty OpenedTargetProperty() const;
+    Windows::UI::Xaml::DependencyProperty ClosedTargetNameProperty() const;
+    Windows::UI::Xaml::DependencyProperty ClosedTargetProperty() const;
+    Windows::UI::Xaml::DependencyProperty ContentTargetNameProperty() const;
+    Windows::UI::Xaml::DependencyProperty ContentTargetProperty() const;
+    Windows::UI::Xaml::DependencyProperty OpenedLengthProperty() const;
+    Windows::UI::Xaml::DependencyProperty ClosedLengthProperty() const;
+    Windows::UI::Xaml::DependencyProperty OffsetFromCenterProperty() const;
+    Windows::UI::Xaml::DependencyProperty ContentTranslationDirectionProperty() const;
+    Windows::UI::Xaml::DependencyProperty ContentTranslationOffsetProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStoryboard
+{
+    Windows::UI::Xaml::Media::Animation::TimelineCollection Children() const;
+    void Seek(const Windows::Foundation::TimeSpan & offset) const;
+    void Stop() const;
+    void Begin() const;
+    void Pause() const;
+    void Resume() const;
+    Windows::UI::Xaml::Media::Animation::ClockState GetCurrentState() const;
+    Windows::Foundation::TimeSpan GetCurrentTime() const;
+    void SeekAlignedToLastTick(const Windows::Foundation::TimeSpan & offset) const;
+    void SkipToFill() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStoryboardStatics
+{
+    Windows::UI::Xaml::DependencyProperty TargetPropertyProperty() const;
+    hstring GetTargetProperty(const Windows::UI::Xaml::Media::Animation::Timeline & element) const;
+    void SetTargetProperty(const Windows::UI::Xaml::Media::Animation::Timeline & element, hstring_ref path) const;
+    Windows::UI::Xaml::DependencyProperty TargetNameProperty() const;
+    hstring GetTargetName(const Windows::UI::Xaml::Media::Animation::Timeline & element) const;
+    void SetTargetName(const Windows::UI::Xaml::Media::Animation::Timeline & element, hstring_ref name) const;
+    void SetTarget(const Windows::UI::Xaml::Media::Animation::Timeline & timeline, const Windows::UI::Xaml::DependencyObject & target) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISuppressNavigationTransitionInfo
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISwipeBackThemeAnimation
+{
+    hstring TargetName() const;
+    void TargetName(hstring_ref value) const;
+    double FromHorizontalOffset() const;
+    void FromHorizontalOffset(double value) const;
+    double FromVerticalOffset() const;
+    void FromVerticalOffset(double value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISwipeBackThemeAnimationStatics
+{
+    Windows::UI::Xaml::DependencyProperty TargetNameProperty() const;
+    Windows::UI::Xaml::DependencyProperty FromHorizontalOffsetProperty() const;
+    Windows::UI::Xaml::DependencyProperty FromVerticalOffsetProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISwipeHintThemeAnimation
+{
+    hstring TargetName() const;
+    void TargetName(hstring_ref value) const;
+    double ToHorizontalOffset() const;
+    void ToHorizontalOffset(double value) const;
+    double ToVerticalOffset() const;
+    void ToVerticalOffset(double value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISwipeHintThemeAnimationStatics
+{
+    Windows::UI::Xaml::DependencyProperty TargetNameProperty() const;
+    Windows::UI::Xaml::DependencyProperty ToHorizontalOffsetProperty() const;
+    Windows::UI::Xaml::DependencyProperty ToVerticalOffsetProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITimeline
+{
+    bool AutoReverse() const;
+    void AutoReverse(bool value) const;
+    Windows::Foundation::IReference<Windows::Foundation::TimeSpan> BeginTime() const;
+    void BeginTime(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const;
+    Windows::UI::Xaml::Duration Duration() const;
+    void Duration(const Windows::UI::Xaml::Duration & value) const;
+    double SpeedRatio() const;
+    void SpeedRatio(double value) const;
+    Windows::UI::Xaml::Media::Animation::FillBehavior FillBehavior() const;
+    void FillBehavior(Windows::UI::Xaml::Media::Animation::FillBehavior value) const;
+    Windows::UI::Xaml::Media::Animation::RepeatBehavior RepeatBehavior() const;
+    void RepeatBehavior(const Windows::UI::Xaml::Media::Animation::RepeatBehavior & value) const;
+    event_token Completed(const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    using Completed_revoker = event_revoker<ITimeline>;
+    Completed_revoker Completed(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & value) const;
+    void Completed(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITimelineFactory
+{
+    Windows::UI::Xaml::Media::Animation::Timeline CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITimelineStatics
+{
+    bool AllowDependentAnimations() const;
+    void AllowDependentAnimations(bool value) const;
+    Windows::UI::Xaml::DependencyProperty AutoReverseProperty() const;
+    Windows::UI::Xaml::DependencyProperty BeginTimeProperty() const;
+    Windows::UI::Xaml::DependencyProperty DurationProperty() const;
+    Windows::UI::Xaml::DependencyProperty SpeedRatioProperty() const;
+    Windows::UI::Xaml::DependencyProperty FillBehaviorProperty() const;
+    Windows::UI::Xaml::DependencyProperty RepeatBehaviorProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITransition
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITransitionFactory
+{
+};
 
 }
 

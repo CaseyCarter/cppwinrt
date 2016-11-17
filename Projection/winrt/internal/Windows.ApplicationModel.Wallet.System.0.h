@@ -27,6 +27,14 @@ struct WalletManagerSystem;
 
 namespace Windows::ApplicationModel::Wallet::System {
 
+template <typename T> struct impl_IWalletItemSystemStore;
+template <typename T> struct impl_IWalletItemSystemStore2;
+template <typename T> struct impl_IWalletManagerSystemStatics;
+
+}
+
+namespace Windows::ApplicationModel::Wallet::System {
+
 enum class WalletItemAppAssociation
 {
     None = 0,

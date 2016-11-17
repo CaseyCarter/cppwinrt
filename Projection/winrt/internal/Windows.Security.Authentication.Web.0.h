@@ -27,6 +27,14 @@ struct WebAuthenticationResult;
 
 namespace Windows::Security::Authentication::Web {
 
+template <typename T> struct impl_IWebAuthenticationBrokerStatics;
+template <typename T> struct impl_IWebAuthenticationBrokerStatics2;
+template <typename T> struct impl_IWebAuthenticationResult;
+
+}
+
+namespace Windows::Security::Authentication::Web {
+
 enum class TokenBindingKeyType
 {
     Rsa2048 = 0,

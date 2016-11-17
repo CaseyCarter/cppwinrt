@@ -46,6 +46,20 @@ struct CoreDropOperationTargetRequestedEventArgs;
 
 namespace Windows::ApplicationModel::DataTransfer::DragDrop::Core {
 
+template <typename T> struct impl_ICoreDragDropManager;
+template <typename T> struct impl_ICoreDragDropManagerStatics;
+template <typename T> struct impl_ICoreDragInfo;
+template <typename T> struct impl_ICoreDragInfo2;
+template <typename T> struct impl_ICoreDragOperation;
+template <typename T> struct impl_ICoreDragOperation2;
+template <typename T> struct impl_ICoreDragUIOverride;
+template <typename T> struct impl_ICoreDropOperationTarget;
+template <typename T> struct impl_ICoreDropOperationTargetRequestedEventArgs;
+
+}
+
+namespace Windows::ApplicationModel::DataTransfer::DragDrop::Core {
+
 enum class CoreDragUIContentMode : unsigned
 {
     Auto = 0x0,

@@ -163,22 +163,155 @@ template <> struct traits<Windows::UI::Xaml::Shapes::Shape> { using default_inte
 
 namespace Windows::UI::Xaml::Shapes {
 
-template <typename T> struct impl_IEllipse;
-template <typename T> struct impl_ILine;
-template <typename T> struct impl_ILineStatics;
-template <typename T> struct impl_IPath;
-template <typename T> struct impl_IPathFactory;
-template <typename T> struct impl_IPathStatics;
-template <typename T> struct impl_IPolygon;
-template <typename T> struct impl_IPolygonStatics;
-template <typename T> struct impl_IPolyline;
-template <typename T> struct impl_IPolylineStatics;
-template <typename T> struct impl_IRectangle;
-template <typename T> struct impl_IRectangleStatics;
-template <typename T> struct impl_IShape;
-template <typename T> struct impl_IShape2;
-template <typename T> struct impl_IShapeFactory;
-template <typename T> struct impl_IShapeStatics;
+template <typename D>
+struct WINRT_EBO impl_IEllipse
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILine
+{
+    double X1() const;
+    void X1(double value) const;
+    double Y1() const;
+    void Y1(double value) const;
+    double X2() const;
+    void X2(double value) const;
+    double Y2() const;
+    void Y2(double value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILineStatics
+{
+    Windows::UI::Xaml::DependencyProperty X1Property() const;
+    Windows::UI::Xaml::DependencyProperty Y1Property() const;
+    Windows::UI::Xaml::DependencyProperty X2Property() const;
+    Windows::UI::Xaml::DependencyProperty Y2Property() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPath
+{
+    Windows::UI::Xaml::Media::Geometry Data() const;
+    void Data(const Windows::UI::Xaml::Media::Geometry & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPathFactory
+{
+    Windows::UI::Xaml::Shapes::Path CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPathStatics
+{
+    Windows::UI::Xaml::DependencyProperty DataProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPolygon
+{
+    Windows::UI::Xaml::Media::FillRule FillRule() const;
+    void FillRule(Windows::UI::Xaml::Media::FillRule value) const;
+    Windows::UI::Xaml::Media::PointCollection Points() const;
+    void Points(const Windows::UI::Xaml::Media::PointCollection & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPolygonStatics
+{
+    Windows::UI::Xaml::DependencyProperty FillRuleProperty() const;
+    Windows::UI::Xaml::DependencyProperty PointsProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPolyline
+{
+    Windows::UI::Xaml::Media::FillRule FillRule() const;
+    void FillRule(Windows::UI::Xaml::Media::FillRule value) const;
+    Windows::UI::Xaml::Media::PointCollection Points() const;
+    void Points(const Windows::UI::Xaml::Media::PointCollection & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPolylineStatics
+{
+    Windows::UI::Xaml::DependencyProperty FillRuleProperty() const;
+    Windows::UI::Xaml::DependencyProperty PointsProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRectangle
+{
+    double RadiusX() const;
+    void RadiusX(double value) const;
+    double RadiusY() const;
+    void RadiusY(double value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRectangleStatics
+{
+    Windows::UI::Xaml::DependencyProperty RadiusXProperty() const;
+    Windows::UI::Xaml::DependencyProperty RadiusYProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IShape
+{
+    Windows::UI::Xaml::Media::Brush Fill() const;
+    void Fill(const Windows::UI::Xaml::Media::Brush & value) const;
+    Windows::UI::Xaml::Media::Brush Stroke() const;
+    void Stroke(const Windows::UI::Xaml::Media::Brush & value) const;
+    double StrokeMiterLimit() const;
+    void StrokeMiterLimit(double value) const;
+    double StrokeThickness() const;
+    void StrokeThickness(double value) const;
+    Windows::UI::Xaml::Media::PenLineCap StrokeStartLineCap() const;
+    void StrokeStartLineCap(Windows::UI::Xaml::Media::PenLineCap value) const;
+    Windows::UI::Xaml::Media::PenLineCap StrokeEndLineCap() const;
+    void StrokeEndLineCap(Windows::UI::Xaml::Media::PenLineCap value) const;
+    Windows::UI::Xaml::Media::PenLineJoin StrokeLineJoin() const;
+    void StrokeLineJoin(Windows::UI::Xaml::Media::PenLineJoin value) const;
+    double StrokeDashOffset() const;
+    void StrokeDashOffset(double value) const;
+    Windows::UI::Xaml::Media::PenLineCap StrokeDashCap() const;
+    void StrokeDashCap(Windows::UI::Xaml::Media::PenLineCap value) const;
+    Windows::UI::Xaml::Media::DoubleCollection StrokeDashArray() const;
+    void StrokeDashArray(const Windows::UI::Xaml::Media::DoubleCollection & value) const;
+    Windows::UI::Xaml::Media::Stretch Stretch() const;
+    void Stretch(Windows::UI::Xaml::Media::Stretch value) const;
+    Windows::UI::Xaml::Media::Transform GeometryTransform() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IShape2
+{
+    Windows::UI::Composition::CompositionBrush GetAlphaMask() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IShapeFactory
+{
+    Windows::UI::Xaml::Shapes::Shape CreateInstance(const Windows::IInspectable & outer, Windows::IInspectable & inner) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IShapeStatics
+{
+    Windows::UI::Xaml::DependencyProperty FillProperty() const;
+    Windows::UI::Xaml::DependencyProperty StrokeProperty() const;
+    Windows::UI::Xaml::DependencyProperty StrokeMiterLimitProperty() const;
+    Windows::UI::Xaml::DependencyProperty StrokeThicknessProperty() const;
+    Windows::UI::Xaml::DependencyProperty StrokeStartLineCapProperty() const;
+    Windows::UI::Xaml::DependencyProperty StrokeEndLineCapProperty() const;
+    Windows::UI::Xaml::DependencyProperty StrokeLineJoinProperty() const;
+    Windows::UI::Xaml::DependencyProperty StrokeDashOffsetProperty() const;
+    Windows::UI::Xaml::DependencyProperty StrokeDashCapProperty() const;
+    Windows::UI::Xaml::DependencyProperty StrokeDashArrayProperty() const;
+    Windows::UI::Xaml::DependencyProperty StretchProperty() const;
+};
 
 }
 

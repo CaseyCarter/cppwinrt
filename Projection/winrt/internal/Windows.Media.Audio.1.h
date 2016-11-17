@@ -451,49 +451,450 @@ template <> struct traits<Windows::Media::Audio::ReverbEffectDefinition> { using
 
 namespace Windows::Media::Audio {
 
-template <typename T> struct impl_IAudioDeviceInputNode;
-template <typename T> struct impl_IAudioDeviceOutputNode;
-template <typename T> struct impl_IAudioFileInputNode;
-template <typename T> struct impl_IAudioFileOutputNode;
-template <typename T> struct impl_IAudioFrameCompletedEventArgs;
-template <typename T> struct impl_IAudioFrameInputNode;
-template <typename T> struct impl_IAudioFrameOutputNode;
-template <typename T> struct impl_IAudioGraph;
-template <typename T> struct impl_IAudioGraph2;
-template <typename T> struct impl_IAudioGraphConnection;
-template <typename T> struct impl_IAudioGraphSettings;
-template <typename T> struct impl_IAudioGraphSettingsFactory;
-template <typename T> struct impl_IAudioGraphStatics;
-template <typename T> struct impl_IAudioGraphUnrecoverableErrorOccurredEventArgs;
-template <typename T> struct impl_IAudioInputNode;
-template <typename T> struct impl_IAudioInputNode2;
-template <typename T> struct impl_IAudioNode;
-template <typename T> struct impl_IAudioNodeEmitter;
-template <typename T> struct impl_IAudioNodeEmitter2;
-template <typename T> struct impl_IAudioNodeEmitterConeProperties;
-template <typename T> struct impl_IAudioNodeEmitterDecayModel;
-template <typename T> struct impl_IAudioNodeEmitterDecayModelStatics;
-template <typename T> struct impl_IAudioNodeEmitterFactory;
-template <typename T> struct impl_IAudioNodeEmitterNaturalDecayModelProperties;
-template <typename T> struct impl_IAudioNodeEmitterShape;
-template <typename T> struct impl_IAudioNodeEmitterShapeStatics;
-template <typename T> struct impl_IAudioNodeListener;
-template <typename T> struct impl_IAudioNodeWithListener;
-template <typename T> struct impl_ICreateAudioDeviceInputNodeResult;
-template <typename T> struct impl_ICreateAudioDeviceOutputNodeResult;
-template <typename T> struct impl_ICreateAudioFileInputNodeResult;
-template <typename T> struct impl_ICreateAudioFileOutputNodeResult;
-template <typename T> struct impl_ICreateAudioGraphResult;
-template <typename T> struct impl_IEchoEffectDefinition;
-template <typename T> struct impl_IEchoEffectDefinitionFactory;
-template <typename T> struct impl_IEqualizerBand;
-template <typename T> struct impl_IEqualizerEffectDefinition;
-template <typename T> struct impl_IEqualizerEffectDefinitionFactory;
-template <typename T> struct impl_IFrameInputNodeQuantumStartedEventArgs;
-template <typename T> struct impl_ILimiterEffectDefinition;
-template <typename T> struct impl_ILimiterEffectDefinitionFactory;
-template <typename T> struct impl_IReverbEffectDefinition;
-template <typename T> struct impl_IReverbEffectDefinitionFactory;
+template <typename D>
+struct WINRT_EBO impl_IAudioDeviceInputNode
+{
+    Windows::Devices::Enumeration::DeviceInformation Device() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAudioDeviceOutputNode
+{
+    Windows::Devices::Enumeration::DeviceInformation Device() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAudioFileInputNode
+{
+    void PlaybackSpeedFactor(double value) const;
+    double PlaybackSpeedFactor() const;
+    Windows::Foundation::TimeSpan Position() const;
+    void Seek(const Windows::Foundation::TimeSpan & position) const;
+    Windows::Foundation::IReference<Windows::Foundation::TimeSpan> StartTime() const;
+    void StartTime(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const;
+    Windows::Foundation::IReference<Windows::Foundation::TimeSpan> EndTime() const;
+    void EndTime(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & value) const;
+    Windows::Foundation::IReference<int32_t> LoopCount() const;
+    void LoopCount(const Windows::Foundation::IReference<int32_t> & value) const;
+    Windows::Foundation::TimeSpan Duration() const;
+    Windows::Storage::StorageFile SourceFile() const;
+    event_token FileCompleted(const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFileInputNode, Windows::IInspectable> & handler) const;
+    using FileCompleted_revoker = event_revoker<IAudioFileInputNode>;
+    FileCompleted_revoker FileCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFileInputNode, Windows::IInspectable> & handler) const;
+    void FileCompleted(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAudioFileOutputNode
+{
+    Windows::Storage::IStorageFile File() const;
+    Windows::Media::MediaProperties::MediaEncodingProfile FileEncodingProfile() const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::Media::Transcoding::TranscodeFailureReason> FinalizeAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAudioFrameCompletedEventArgs
+{
+    Windows::Media::AudioFrame Frame() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAudioFrameInputNode
+{
+    void PlaybackSpeedFactor(double value) const;
+    double PlaybackSpeedFactor() const;
+    void AddFrame(const Windows::Media::AudioFrame & frame) const;
+    void DiscardQueuedFrames() const;
+    uint64_t QueuedSampleCount() const;
+    event_token AudioFrameCompleted(const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFrameInputNode, Windows::Media::Audio::AudioFrameCompletedEventArgs> & handler) const;
+    using AudioFrameCompleted_revoker = event_revoker<IAudioFrameInputNode>;
+    AudioFrameCompleted_revoker AudioFrameCompleted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFrameInputNode, Windows::Media::Audio::AudioFrameCompletedEventArgs> & handler) const;
+    void AudioFrameCompleted(event_token token) const;
+    event_token QuantumStarted(const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFrameInputNode, Windows::Media::Audio::FrameInputNodeQuantumStartedEventArgs> & handler) const;
+    using QuantumStarted_revoker = event_revoker<IAudioFrameInputNode>;
+    QuantumStarted_revoker QuantumStarted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioFrameInputNode, Windows::Media::Audio::FrameInputNodeQuantumStartedEventArgs> & handler) const;
+    void QuantumStarted(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAudioFrameOutputNode
+{
+    Windows::Media::AudioFrame GetFrame() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAudioGraph
+{
+    Windows::Media::Audio::AudioFrameInputNode CreateFrameInputNode() const;
+    Windows::Media::Audio::AudioFrameInputNode CreateFrameInputNode(const Windows::Media::MediaProperties::AudioEncodingProperties & encodingProperties) const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioDeviceInputNodeResult> CreateDeviceInputNodeAsync(Windows::Media::Capture::MediaCategory category) const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioDeviceInputNodeResult> CreateDeviceInputNodeAsync(Windows::Media::Capture::MediaCategory category, const Windows::Media::MediaProperties::AudioEncodingProperties & encodingProperties) const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioDeviceInputNodeResult> CreateDeviceInputNodeAsync(Windows::Media::Capture::MediaCategory category, const Windows::Media::MediaProperties::AudioEncodingProperties & encodingProperties, const Windows::Devices::Enumeration::DeviceInformation & device) const;
+    Windows::Media::Audio::AudioFrameOutputNode CreateFrameOutputNode() const;
+    Windows::Media::Audio::AudioFrameOutputNode CreateFrameOutputNode(const Windows::Media::MediaProperties::AudioEncodingProperties & encodingProperties) const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioDeviceOutputNodeResult> CreateDeviceOutputNodeAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioFileInputNodeResult> CreateFileInputNodeAsync(const Windows::Storage::IStorageFile & file) const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioFileOutputNodeResult> CreateFileOutputNodeAsync(const Windows::Storage::IStorageFile & file) const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioFileOutputNodeResult> CreateFileOutputNodeAsync(const Windows::Storage::IStorageFile & file, const Windows::Media::MediaProperties::MediaEncodingProfile & fileEncodingProfile) const;
+    Windows::Media::Audio::AudioSubmixNode CreateSubmixNode() const;
+    Windows::Media::Audio::AudioSubmixNode CreateSubmixNode(const Windows::Media::MediaProperties::AudioEncodingProperties & encodingProperties) const;
+    void Start() const;
+    void Stop() const;
+    void ResetAllNodes() const;
+    event_token QuantumStarted(const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::IInspectable> & handler) const;
+    using QuantumStarted_revoker = event_revoker<IAudioGraph>;
+    QuantumStarted_revoker QuantumStarted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::IInspectable> & handler) const;
+    void QuantumStarted(event_token token) const;
+    event_token QuantumProcessed(const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::IInspectable> & handler) const;
+    using QuantumProcessed_revoker = event_revoker<IAudioGraph>;
+    QuantumProcessed_revoker QuantumProcessed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::IInspectable> & handler) const;
+    void QuantumProcessed(event_token token) const;
+    event_token UnrecoverableErrorOccurred(const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::Media::Audio::AudioGraphUnrecoverableErrorOccurredEventArgs> & handler) const;
+    using UnrecoverableErrorOccurred_revoker = event_revoker<IAudioGraph>;
+    UnrecoverableErrorOccurred_revoker UnrecoverableErrorOccurred(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::Audio::AudioGraph, Windows::Media::Audio::AudioGraphUnrecoverableErrorOccurredEventArgs> & handler) const;
+    void UnrecoverableErrorOccurred(event_token token) const;
+    uint64_t CompletedQuantumCount() const;
+    Windows::Media::MediaProperties::AudioEncodingProperties EncodingProperties() const;
+    int32_t LatencyInSamples() const;
+    Windows::Devices::Enumeration::DeviceInformation PrimaryRenderDevice() const;
+    Windows::Media::AudioProcessing RenderDeviceAudioProcessing() const;
+    int32_t SamplesPerQuantum() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAudioGraph2
+{
+    Windows::Media::Audio::AudioFrameInputNode CreateFrameInputNode(const Windows::Media::MediaProperties::AudioEncodingProperties & encodingProperties, const Windows::Media::Audio::AudioNodeEmitter & emitter) const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioDeviceInputNodeResult> CreateDeviceInputNodeAsync(Windows::Media::Capture::MediaCategory category, const Windows::Media::MediaProperties::AudioEncodingProperties & encodingProperties, const Windows::Devices::Enumeration::DeviceInformation & device, const Windows::Media::Audio::AudioNodeEmitter & emitter) const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioFileInputNodeResult> CreateFileInputNodeAsync(const Windows::Storage::IStorageFile & file, const Windows::Media::Audio::AudioNodeEmitter & emitter) const;
+    Windows::Media::Audio::AudioSubmixNode CreateSubmixNode(const Windows::Media::MediaProperties::AudioEncodingProperties & encodingProperties, const Windows::Media::Audio::AudioNodeEmitter & emitter) const;
+    Windows::Media::Audio::AudioGraphBatchUpdater CreateBatchUpdater() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAudioGraphConnection
+{
+    Windows::Media::Audio::IAudioNode Destination() const;
+    void Gain(double value) const;
+    double Gain() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAudioGraphSettings
+{
+    Windows::Media::MediaProperties::AudioEncodingProperties EncodingProperties() const;
+    void EncodingProperties(const Windows::Media::MediaProperties::AudioEncodingProperties & value) const;
+    Windows::Devices::Enumeration::DeviceInformation PrimaryRenderDevice() const;
+    void PrimaryRenderDevice(const Windows::Devices::Enumeration::DeviceInformation & value) const;
+    Windows::Media::Audio::QuantumSizeSelectionMode QuantumSizeSelectionMode() const;
+    void QuantumSizeSelectionMode(Windows::Media::Audio::QuantumSizeSelectionMode value) const;
+    int32_t DesiredSamplesPerQuantum() const;
+    void DesiredSamplesPerQuantum(int32_t value) const;
+    Windows::Media::Render::AudioRenderCategory AudioRenderCategory() const;
+    void AudioRenderCategory(Windows::Media::Render::AudioRenderCategory value) const;
+    Windows::Media::AudioProcessing DesiredRenderDeviceAudioProcessing() const;
+    void DesiredRenderDeviceAudioProcessing(Windows::Media::AudioProcessing value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAudioGraphSettingsFactory
+{
+    Windows::Media::Audio::AudioGraphSettings Create(Windows::Media::Render::AudioRenderCategory audioRenderCategory) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAudioGraphStatics
+{
+    Windows::Foundation::IAsyncOperation<Windows::Media::Audio::CreateAudioGraphResult> CreateAsync(const Windows::Media::Audio::AudioGraphSettings & settings) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAudioGraphUnrecoverableErrorOccurredEventArgs
+{
+    Windows::Media::Audio::AudioGraphUnrecoverableError Error() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAudioInputNode
+{
+    Windows::Foundation::Collections::IVectorView<Windows::Media::Audio::AudioGraphConnection> OutgoingConnections() const;
+    void AddOutgoingConnection(const Windows::Media::Audio::IAudioNode & destination) const;
+    void AddOutgoingConnection(const Windows::Media::Audio::IAudioNode & destination, double gain) const;
+    void RemoveOutgoingConnection(const Windows::Media::Audio::IAudioNode & destination) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAudioInputNode2
+{
+    Windows::Media::Audio::AudioNodeEmitter Emitter() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAudioNode
+{
+    Windows::Foundation::Collections::IVector<Windows::Media::Effects::IAudioEffectDefinition> EffectDefinitions() const;
+    void OutgoingGain(double value) const;
+    double OutgoingGain() const;
+    Windows::Media::MediaProperties::AudioEncodingProperties EncodingProperties() const;
+    bool ConsumeInput() const;
+    void ConsumeInput(bool value) const;
+    void Start() const;
+    void Stop() const;
+    void Reset() const;
+    void DisableEffectsByDefinition(const Windows::Media::Effects::IAudioEffectDefinition & definition) const;
+    void EnableEffectsByDefinition(const Windows::Media::Effects::IAudioEffectDefinition & definition) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAudioNodeEmitter
+{
+    Windows::Foundation::Numerics::float3 Position() const;
+    void Position(const Windows::Foundation::Numerics::float3 & value) const;
+    Windows::Foundation::Numerics::float3 Direction() const;
+    void Direction(const Windows::Foundation::Numerics::float3 & value) const;
+    Windows::Media::Audio::AudioNodeEmitterShape Shape() const;
+    Windows::Media::Audio::AudioNodeEmitterDecayModel DecayModel() const;
+    double Gain() const;
+    void Gain(double value) const;
+    double DistanceScale() const;
+    void DistanceScale(double value) const;
+    double DopplerScale() const;
+    void DopplerScale(double value) const;
+    Windows::Foundation::Numerics::float3 DopplerVelocity() const;
+    void DopplerVelocity(const Windows::Foundation::Numerics::float3 & value) const;
+    bool IsDopplerDisabled() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAudioNodeEmitter2
+{
+    Windows::Media::Audio::SpatialAudioModel SpatialAudioModel() const;
+    void SpatialAudioModel(Windows::Media::Audio::SpatialAudioModel value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAudioNodeEmitterConeProperties
+{
+    double InnerAngle() const;
+    double OuterAngle() const;
+    double OuterAngleGain() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAudioNodeEmitterDecayModel
+{
+    Windows::Media::Audio::AudioNodeEmitterDecayKind Kind() const;
+    double MinGain() const;
+    double MaxGain() const;
+    Windows::Media::Audio::AudioNodeEmitterNaturalDecayModelProperties NaturalProperties() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAudioNodeEmitterDecayModelStatics
+{
+    Windows::Media::Audio::AudioNodeEmitterDecayModel CreateNatural(double minGain, double maxGain, double unityGainDistance, double cutoffDistance) const;
+    Windows::Media::Audio::AudioNodeEmitterDecayModel CreateCustom(double minGain, double maxGain) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAudioNodeEmitterFactory
+{
+    Windows::Media::Audio::AudioNodeEmitter CreateAudioNodeEmitter(const Windows::Media::Audio::AudioNodeEmitterShape & shape, const Windows::Media::Audio::AudioNodeEmitterDecayModel & decayModel, Windows::Media::Audio::AudioNodeEmitterSettings settings) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAudioNodeEmitterNaturalDecayModelProperties
+{
+    double UnityGainDistance() const;
+    double CutoffDistance() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAudioNodeEmitterShape
+{
+    Windows::Media::Audio::AudioNodeEmitterShapeKind Kind() const;
+    Windows::Media::Audio::AudioNodeEmitterConeProperties ConeProperties() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAudioNodeEmitterShapeStatics
+{
+    Windows::Media::Audio::AudioNodeEmitterShape CreateCone(double innerAngle, double outerAngle, double outerAngleGain) const;
+    Windows::Media::Audio::AudioNodeEmitterShape CreateOmnidirectional() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAudioNodeListener
+{
+    Windows::Foundation::Numerics::float3 Position() const;
+    void Position(const Windows::Foundation::Numerics::float3 & value) const;
+    Windows::Foundation::Numerics::quaternion Orientation() const;
+    void Orientation(const Windows::Foundation::Numerics::quaternion & value) const;
+    double SpeedOfSound() const;
+    void SpeedOfSound(double value) const;
+    Windows::Foundation::Numerics::float3 DopplerVelocity() const;
+    void DopplerVelocity(const Windows::Foundation::Numerics::float3 & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAudioNodeWithListener
+{
+    void Listener(const Windows::Media::Audio::AudioNodeListener & value) const;
+    Windows::Media::Audio::AudioNodeListener Listener() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICreateAudioDeviceInputNodeResult
+{
+    Windows::Media::Audio::AudioDeviceNodeCreationStatus Status() const;
+    Windows::Media::Audio::AudioDeviceInputNode DeviceInputNode() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICreateAudioDeviceOutputNodeResult
+{
+    Windows::Media::Audio::AudioDeviceNodeCreationStatus Status() const;
+    Windows::Media::Audio::AudioDeviceOutputNode DeviceOutputNode() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICreateAudioFileInputNodeResult
+{
+    Windows::Media::Audio::AudioFileNodeCreationStatus Status() const;
+    Windows::Media::Audio::AudioFileInputNode FileInputNode() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICreateAudioFileOutputNodeResult
+{
+    Windows::Media::Audio::AudioFileNodeCreationStatus Status() const;
+    Windows::Media::Audio::AudioFileOutputNode FileOutputNode() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICreateAudioGraphResult
+{
+    Windows::Media::Audio::AudioGraphCreationStatus Status() const;
+    Windows::Media::Audio::AudioGraph Graph() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEchoEffectDefinition
+{
+    void WetDryMix(double value) const;
+    double WetDryMix() const;
+    void Feedback(double value) const;
+    double Feedback() const;
+    void Delay(double value) const;
+    double Delay() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEchoEffectDefinitionFactory
+{
+    Windows::Media::Audio::EchoEffectDefinition Create(const Windows::Media::Audio::AudioGraph & audioGraph) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEqualizerBand
+{
+    double Bandwidth() const;
+    void Bandwidth(double value) const;
+    double FrequencyCenter() const;
+    void FrequencyCenter(double value) const;
+    double Gain() const;
+    void Gain(double value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEqualizerEffectDefinition
+{
+    Windows::Foundation::Collections::IVectorView<Windows::Media::Audio::EqualizerBand> Bands() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEqualizerEffectDefinitionFactory
+{
+    Windows::Media::Audio::EqualizerEffectDefinition Create(const Windows::Media::Audio::AudioGraph & audioGraph) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFrameInputNodeQuantumStartedEventArgs
+{
+    int32_t RequiredSamples() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILimiterEffectDefinition
+{
+    void Release(uint32_t value) const;
+    uint32_t Release() const;
+    void Loudness(uint32_t value) const;
+    uint32_t Loudness() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILimiterEffectDefinitionFactory
+{
+    Windows::Media::Audio::LimiterEffectDefinition Create(const Windows::Media::Audio::AudioGraph & audioGraph) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IReverbEffectDefinition
+{
+    void WetDryMix(double value) const;
+    double WetDryMix() const;
+    void ReflectionsDelay(uint32_t value) const;
+    uint32_t ReflectionsDelay() const;
+    void ReverbDelay(uint8_t value) const;
+    uint8_t ReverbDelay() const;
+    void RearDelay(uint8_t value) const;
+    uint8_t RearDelay() const;
+    void PositionLeft(uint8_t value) const;
+    uint8_t PositionLeft() const;
+    void PositionRight(uint8_t value) const;
+    uint8_t PositionRight() const;
+    void PositionMatrixLeft(uint8_t value) const;
+    uint8_t PositionMatrixLeft() const;
+    void PositionMatrixRight(uint8_t value) const;
+    uint8_t PositionMatrixRight() const;
+    void EarlyDiffusion(uint8_t value) const;
+    uint8_t EarlyDiffusion() const;
+    void LateDiffusion(uint8_t value) const;
+    uint8_t LateDiffusion() const;
+    void LowEQGain(uint8_t value) const;
+    uint8_t LowEQGain() const;
+    void LowEQCutoff(uint8_t value) const;
+    uint8_t LowEQCutoff() const;
+    void HighEQGain(uint8_t value) const;
+    uint8_t HighEQGain() const;
+    void HighEQCutoff(uint8_t value) const;
+    uint8_t HighEQCutoff() const;
+    void RoomFilterFreq(double value) const;
+    double RoomFilterFreq() const;
+    void RoomFilterMain(double value) const;
+    double RoomFilterMain() const;
+    void RoomFilterHF(double value) const;
+    double RoomFilterHF() const;
+    void ReflectionsGain(double value) const;
+    double ReflectionsGain() const;
+    void ReverbGain(double value) const;
+    double ReverbGain() const;
+    void DecayTime(double value) const;
+    double DecayTime() const;
+    void Density(double value) const;
+    double Density() const;
+    void RoomSize(double value) const;
+    double RoomSize() const;
+    void DisableLateField(bool value) const;
+    bool DisableLateField() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IReverbEffectDefinitionFactory
+{
+    Windows::Media::Audio::ReverbEffectDefinition Create(const Windows::Media::Audio::AudioGraph & audioGraph) const;
+};
 
 }
 

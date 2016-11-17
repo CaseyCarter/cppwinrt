@@ -223,31 +223,221 @@ template <> struct traits<Windows::Media::SpeechRecognition::SpeechRecognizerUIO
 
 namespace Windows::Media::SpeechRecognition {
 
-template <typename T> struct impl_ISpeechContinuousRecognitionCompletedEventArgs;
-template <typename T> struct impl_ISpeechContinuousRecognitionResultGeneratedEventArgs;
-template <typename T> struct impl_ISpeechContinuousRecognitionSession;
-template <typename T> struct impl_ISpeechRecognitionCompilationResult;
-template <typename T> struct impl_ISpeechRecognitionConstraint;
-template <typename T> struct impl_ISpeechRecognitionGrammarFileConstraint;
-template <typename T> struct impl_ISpeechRecognitionGrammarFileConstraintFactory;
-template <typename T> struct impl_ISpeechRecognitionHypothesis;
-template <typename T> struct impl_ISpeechRecognitionHypothesisGeneratedEventArgs;
-template <typename T> struct impl_ISpeechRecognitionListConstraint;
-template <typename T> struct impl_ISpeechRecognitionListConstraintFactory;
-template <typename T> struct impl_ISpeechRecognitionQualityDegradingEventArgs;
-template <typename T> struct impl_ISpeechRecognitionResult;
-template <typename T> struct impl_ISpeechRecognitionResult2;
-template <typename T> struct impl_ISpeechRecognitionSemanticInterpretation;
-template <typename T> struct impl_ISpeechRecognitionTopicConstraint;
-template <typename T> struct impl_ISpeechRecognitionTopicConstraintFactory;
-template <typename T> struct impl_ISpeechRecognitionVoiceCommandDefinitionConstraint;
-template <typename T> struct impl_ISpeechRecognizer;
-template <typename T> struct impl_ISpeechRecognizer2;
-template <typename T> struct impl_ISpeechRecognizerFactory;
-template <typename T> struct impl_ISpeechRecognizerStateChangedEventArgs;
-template <typename T> struct impl_ISpeechRecognizerStatics;
-template <typename T> struct impl_ISpeechRecognizerTimeouts;
-template <typename T> struct impl_ISpeechRecognizerUIOptions;
+template <typename D>
+struct WINRT_EBO impl_ISpeechContinuousRecognitionCompletedEventArgs
+{
+    Windows::Media::SpeechRecognition::SpeechRecognitionResultStatus Status() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpeechContinuousRecognitionResultGeneratedEventArgs
+{
+    Windows::Media::SpeechRecognition::SpeechRecognitionResult Result() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpeechContinuousRecognitionSession
+{
+    Windows::Foundation::TimeSpan AutoStopSilenceTimeout() const;
+    void AutoStopSilenceTimeout(const Windows::Foundation::TimeSpan & value) const;
+    Windows::Foundation::IAsyncAction StartAsync() const;
+    Windows::Foundation::IAsyncAction StartAsync(Windows::Media::SpeechRecognition::SpeechContinuousRecognitionMode mode) const;
+    Windows::Foundation::IAsyncAction StopAsync() const;
+    Windows::Foundation::IAsyncAction CancelAsync() const;
+    Windows::Foundation::IAsyncAction PauseAsync() const;
+    void Resume() const;
+    event_token Completed(const Windows::Foundation::TypedEventHandler<Windows::Media::SpeechRecognition::SpeechContinuousRecognitionSession, Windows::Media::SpeechRecognition::SpeechContinuousRecognitionCompletedEventArgs> & value) const;
+    using Completed_revoker = event_revoker<ISpeechContinuousRecognitionSession>;
+    Completed_revoker Completed(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::SpeechRecognition::SpeechContinuousRecognitionSession, Windows::Media::SpeechRecognition::SpeechContinuousRecognitionCompletedEventArgs> & value) const;
+    void Completed(event_token value) const;
+    event_token ResultGenerated(const Windows::Foundation::TypedEventHandler<Windows::Media::SpeechRecognition::SpeechContinuousRecognitionSession, Windows::Media::SpeechRecognition::SpeechContinuousRecognitionResultGeneratedEventArgs> & value) const;
+    using ResultGenerated_revoker = event_revoker<ISpeechContinuousRecognitionSession>;
+    ResultGenerated_revoker ResultGenerated(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::SpeechRecognition::SpeechContinuousRecognitionSession, Windows::Media::SpeechRecognition::SpeechContinuousRecognitionResultGeneratedEventArgs> & value) const;
+    void ResultGenerated(event_token value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpeechRecognitionCompilationResult
+{
+    Windows::Media::SpeechRecognition::SpeechRecognitionResultStatus Status() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpeechRecognitionConstraint
+{
+    bool IsEnabled() const;
+    void IsEnabled(bool value) const;
+    hstring Tag() const;
+    void Tag(hstring_ref value) const;
+    Windows::Media::SpeechRecognition::SpeechRecognitionConstraintType Type() const;
+    Windows::Media::SpeechRecognition::SpeechRecognitionConstraintProbability Probability() const;
+    void Probability(Windows::Media::SpeechRecognition::SpeechRecognitionConstraintProbability value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpeechRecognitionGrammarFileConstraint
+{
+    Windows::Storage::StorageFile GrammarFile() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpeechRecognitionGrammarFileConstraintFactory
+{
+    Windows::Media::SpeechRecognition::SpeechRecognitionGrammarFileConstraint Create(const Windows::Storage::StorageFile & file) const;
+    Windows::Media::SpeechRecognition::SpeechRecognitionGrammarFileConstraint CreateWithTag(const Windows::Storage::StorageFile & file, hstring_ref tag) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpeechRecognitionHypothesis
+{
+    hstring Text() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpeechRecognitionHypothesisGeneratedEventArgs
+{
+    Windows::Media::SpeechRecognition::SpeechRecognitionHypothesis Hypothesis() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpeechRecognitionListConstraint
+{
+    Windows::Foundation::Collections::IVector<hstring> Commands() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpeechRecognitionListConstraintFactory
+{
+    Windows::Media::SpeechRecognition::SpeechRecognitionListConstraint Create(const Windows::Foundation::Collections::IIterable<hstring> & commands) const;
+    Windows::Media::SpeechRecognition::SpeechRecognitionListConstraint CreateWithTag(const Windows::Foundation::Collections::IIterable<hstring> & commands, hstring_ref tag) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpeechRecognitionQualityDegradingEventArgs
+{
+    Windows::Media::SpeechRecognition::SpeechRecognitionAudioProblem Problem() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpeechRecognitionResult
+{
+    Windows::Media::SpeechRecognition::SpeechRecognitionResultStatus Status() const;
+    hstring Text() const;
+    Windows::Media::SpeechRecognition::SpeechRecognitionConfidence Confidence() const;
+    Windows::Media::SpeechRecognition::SpeechRecognitionSemanticInterpretation SemanticInterpretation() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Media::SpeechRecognition::SpeechRecognitionResult> GetAlternates(uint32_t maxAlternates) const;
+    Windows::Media::SpeechRecognition::ISpeechRecognitionConstraint Constraint() const;
+    Windows::Foundation::Collections::IVectorView<hstring> RulePath() const;
+    double RawConfidence() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpeechRecognitionResult2
+{
+    Windows::Foundation::DateTime PhraseStartTime() const;
+    Windows::Foundation::TimeSpan PhraseDuration() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpeechRecognitionSemanticInterpretation
+{
+    Windows::Foundation::Collections::IMapView<hstring, Windows::Foundation::Collections::IVectorView<hstring>> Properties() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpeechRecognitionTopicConstraint
+{
+    Windows::Media::SpeechRecognition::SpeechRecognitionScenario Scenario() const;
+    hstring TopicHint() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpeechRecognitionTopicConstraintFactory
+{
+    Windows::Media::SpeechRecognition::SpeechRecognitionTopicConstraint Create(Windows::Media::SpeechRecognition::SpeechRecognitionScenario scenario, hstring_ref topicHint) const;
+    Windows::Media::SpeechRecognition::SpeechRecognitionTopicConstraint CreateWithTag(Windows::Media::SpeechRecognition::SpeechRecognitionScenario scenario, hstring_ref topicHint, hstring_ref tag) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpeechRecognitionVoiceCommandDefinitionConstraint
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpeechRecognizer
+{
+    Windows::Globalization::Language CurrentLanguage() const;
+    Windows::Foundation::Collections::IVector<Windows::Media::SpeechRecognition::ISpeechRecognitionConstraint> Constraints() const;
+    Windows::Media::SpeechRecognition::SpeechRecognizerTimeouts Timeouts() const;
+    Windows::Media::SpeechRecognition::SpeechRecognizerUIOptions UIOptions() const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::SpeechRecognition::SpeechRecognitionCompilationResult> CompileConstraintsAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::SpeechRecognition::SpeechRecognitionResult> RecognizeAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::SpeechRecognition::SpeechRecognitionResult> RecognizeWithUIAsync() const;
+    event_token RecognitionQualityDegrading(const Windows::Foundation::TypedEventHandler<Windows::Media::SpeechRecognition::SpeechRecognizer, Windows::Media::SpeechRecognition::SpeechRecognitionQualityDegradingEventArgs> & speechRecognitionQualityDegradingHandler) const;
+    using RecognitionQualityDegrading_revoker = event_revoker<ISpeechRecognizer>;
+    RecognitionQualityDegrading_revoker RecognitionQualityDegrading(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::SpeechRecognition::SpeechRecognizer, Windows::Media::SpeechRecognition::SpeechRecognitionQualityDegradingEventArgs> & speechRecognitionQualityDegradingHandler) const;
+    void RecognitionQualityDegrading(event_token cookie) const;
+    event_token StateChanged(const Windows::Foundation::TypedEventHandler<Windows::Media::SpeechRecognition::SpeechRecognizer, Windows::Media::SpeechRecognition::SpeechRecognizerStateChangedEventArgs> & stateChangedHandler) const;
+    using StateChanged_revoker = event_revoker<ISpeechRecognizer>;
+    StateChanged_revoker StateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::SpeechRecognition::SpeechRecognizer, Windows::Media::SpeechRecognition::SpeechRecognizerStateChangedEventArgs> & stateChangedHandler) const;
+    void StateChanged(event_token cookie) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpeechRecognizer2
+{
+    Windows::Media::SpeechRecognition::SpeechContinuousRecognitionSession ContinuousRecognitionSession() const;
+    Windows::Media::SpeechRecognition::SpeechRecognizerState State() const;
+    Windows::Foundation::IAsyncAction StopRecognitionAsync() const;
+    event_token HypothesisGenerated(const Windows::Foundation::TypedEventHandler<Windows::Media::SpeechRecognition::SpeechRecognizer, Windows::Media::SpeechRecognition::SpeechRecognitionHypothesisGeneratedEventArgs> & value) const;
+    using HypothesisGenerated_revoker = event_revoker<ISpeechRecognizer2>;
+    HypothesisGenerated_revoker HypothesisGenerated(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Media::SpeechRecognition::SpeechRecognizer, Windows::Media::SpeechRecognition::SpeechRecognitionHypothesisGeneratedEventArgs> & value) const;
+    void HypothesisGenerated(event_token value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpeechRecognizerFactory
+{
+    Windows::Media::SpeechRecognition::SpeechRecognizer Create(const Windows::Globalization::Language & language) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpeechRecognizerStateChangedEventArgs
+{
+    Windows::Media::SpeechRecognition::SpeechRecognizerState State() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpeechRecognizerStatics
+{
+    Windows::Globalization::Language SystemSpeechLanguage() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Globalization::Language> SupportedTopicLanguages() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Globalization::Language> SupportedGrammarLanguages() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpeechRecognizerTimeouts
+{
+    Windows::Foundation::TimeSpan InitialSilenceTimeout() const;
+    void InitialSilenceTimeout(const Windows::Foundation::TimeSpan & value) const;
+    Windows::Foundation::TimeSpan EndSilenceTimeout() const;
+    void EndSilenceTimeout(const Windows::Foundation::TimeSpan & value) const;
+    Windows::Foundation::TimeSpan BabbleTimeout() const;
+    void BabbleTimeout(const Windows::Foundation::TimeSpan & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpeechRecognizerUIOptions
+{
+    hstring ExampleText() const;
+    void ExampleText(hstring_ref value) const;
+    hstring AudiblePrompt() const;
+    void AudiblePrompt(hstring_ref value) const;
+    bool IsReadBackEnabled() const;
+    void IsReadBackEnabled(bool value) const;
+    bool ShowConfirmation() const;
+    void ShowConfirmation(bool value) const;
+};
 
 }
 

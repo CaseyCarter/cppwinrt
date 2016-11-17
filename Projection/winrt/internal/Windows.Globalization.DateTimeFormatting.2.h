@@ -29,56 +29,6 @@ template <> struct __declspec(uuid("8c304ebb-6615-50a4-8829-879ecd443236")) __de
 
 namespace Windows::Globalization::DateTimeFormatting {
 
-template <typename D>
-struct WINRT_EBO impl_IDateTimeFormatter
-{
-    Windows::Foundation::Collections::IVectorView<hstring> Languages() const;
-    hstring GeographicRegion() const;
-    hstring Calendar() const;
-    hstring Clock() const;
-    hstring NumeralSystem() const;
-    void NumeralSystem(hstring_ref value) const;
-    Windows::Foundation::Collections::IVectorView<hstring> Patterns() const;
-    hstring Template() const;
-    hstring Format(const Windows::Foundation::DateTime & value) const;
-    Windows::Globalization::DateTimeFormatting::YearFormat IncludeYear() const;
-    Windows::Globalization::DateTimeFormatting::MonthFormat IncludeMonth() const;
-    Windows::Globalization::DateTimeFormatting::DayOfWeekFormat IncludeDayOfWeek() const;
-    Windows::Globalization::DateTimeFormatting::DayFormat IncludeDay() const;
-    Windows::Globalization::DateTimeFormatting::HourFormat IncludeHour() const;
-    Windows::Globalization::DateTimeFormatting::MinuteFormat IncludeMinute() const;
-    Windows::Globalization::DateTimeFormatting::SecondFormat IncludeSecond() const;
-    hstring ResolvedLanguage() const;
-    hstring ResolvedGeographicRegion() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IDateTimeFormatter2
-{
-    hstring Format(const Windows::Foundation::DateTime & datetime, hstring_ref timeZoneId) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IDateTimeFormatterFactory
-{
-    Windows::Globalization::DateTimeFormatting::DateTimeFormatter CreateDateTimeFormatter(hstring_ref formatTemplate) const;
-    Windows::Globalization::DateTimeFormatting::DateTimeFormatter CreateDateTimeFormatterLanguages(hstring_ref formatTemplate, const Windows::Foundation::Collections::IIterable<hstring> & languages) const;
-    Windows::Globalization::DateTimeFormatting::DateTimeFormatter CreateDateTimeFormatterContext(hstring_ref formatTemplate, const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref geographicRegion, hstring_ref calendar, hstring_ref clock) const;
-    Windows::Globalization::DateTimeFormatting::DateTimeFormatter CreateDateTimeFormatterDate(Windows::Globalization::DateTimeFormatting::YearFormat yearFormat, Windows::Globalization::DateTimeFormatting::MonthFormat monthFormat, Windows::Globalization::DateTimeFormatting::DayFormat dayFormat, Windows::Globalization::DateTimeFormatting::DayOfWeekFormat dayOfWeekFormat) const;
-    Windows::Globalization::DateTimeFormatting::DateTimeFormatter CreateDateTimeFormatterTime(Windows::Globalization::DateTimeFormatting::HourFormat hourFormat, Windows::Globalization::DateTimeFormatting::MinuteFormat minuteFormat, Windows::Globalization::DateTimeFormatting::SecondFormat secondFormat) const;
-    Windows::Globalization::DateTimeFormatting::DateTimeFormatter CreateDateTimeFormatterDateTimeLanguages(Windows::Globalization::DateTimeFormatting::YearFormat yearFormat, Windows::Globalization::DateTimeFormatting::MonthFormat monthFormat, Windows::Globalization::DateTimeFormatting::DayFormat dayFormat, Windows::Globalization::DateTimeFormatting::DayOfWeekFormat dayOfWeekFormat, Windows::Globalization::DateTimeFormatting::HourFormat hourFormat, Windows::Globalization::DateTimeFormatting::MinuteFormat minuteFormat, Windows::Globalization::DateTimeFormatting::SecondFormat secondFormat, const Windows::Foundation::Collections::IIterable<hstring> & languages) const;
-    Windows::Globalization::DateTimeFormatting::DateTimeFormatter CreateDateTimeFormatterDateTimeContext(Windows::Globalization::DateTimeFormatting::YearFormat yearFormat, Windows::Globalization::DateTimeFormatting::MonthFormat monthFormat, Windows::Globalization::DateTimeFormatting::DayFormat dayFormat, Windows::Globalization::DateTimeFormatting::DayOfWeekFormat dayOfWeekFormat, Windows::Globalization::DateTimeFormatting::HourFormat hourFormat, Windows::Globalization::DateTimeFormatting::MinuteFormat minuteFormat, Windows::Globalization::DateTimeFormatting::SecondFormat secondFormat, const Windows::Foundation::Collections::IIterable<hstring> & languages, hstring_ref geographicRegion, hstring_ref calendar, hstring_ref clock) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IDateTimeFormatterStatics
-{
-    Windows::Globalization::DateTimeFormatting::DateTimeFormatter LongDate() const;
-    Windows::Globalization::DateTimeFormatting::DateTimeFormatter LongTime() const;
-    Windows::Globalization::DateTimeFormatting::DateTimeFormatter ShortDate() const;
-    Windows::Globalization::DateTimeFormatting::DateTimeFormatter ShortTime() const;
-};
-
 struct IDateTimeFormatter :
     Windows::IInspectable,
     impl::consume<IDateTimeFormatter>

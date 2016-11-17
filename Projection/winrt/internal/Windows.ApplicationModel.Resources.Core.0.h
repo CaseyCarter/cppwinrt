@@ -82,6 +82,23 @@ struct ResourceQualifierVectorView;
 
 namespace Windows::ApplicationModel::Resources::Core {
 
+template <typename T> struct impl_INamedResource;
+template <typename T> struct impl_IResourceCandidate;
+template <typename T> struct impl_IResourceCandidate2;
+template <typename T> struct impl_IResourceContext;
+template <typename T> struct impl_IResourceContextStatics;
+template <typename T> struct impl_IResourceContextStatics2;
+template <typename T> struct impl_IResourceContextStatics3;
+template <typename T> struct impl_IResourceManager;
+template <typename T> struct impl_IResourceManager2;
+template <typename T> struct impl_IResourceManagerStatics;
+template <typename T> struct impl_IResourceMap;
+template <typename T> struct impl_IResourceQualifier;
+
+}
+
+namespace Windows::ApplicationModel::Resources::Core {
+
 enum class ResourceQualifierPersistence
 {
     None = 0,

@@ -643,60 +643,648 @@ template <> struct traits<Windows::ApplicationModel::Email::EmailStoreNotificati
 
 namespace Windows::ApplicationModel::Email {
 
-template <typename T> struct impl_IEmailAttachment;
-template <typename T> struct impl_IEmailAttachment2;
-template <typename T> struct impl_IEmailAttachmentFactory;
-template <typename T> struct impl_IEmailAttachmentFactory2;
-template <typename T> struct impl_IEmailConversation;
-template <typename T> struct impl_IEmailConversationBatch;
-template <typename T> struct impl_IEmailConversationReader;
-template <typename T> struct impl_IEmailFolder;
-template <typename T> struct impl_IEmailIrmInfo;
-template <typename T> struct impl_IEmailIrmInfoFactory;
-template <typename T> struct impl_IEmailIrmTemplate;
-template <typename T> struct impl_IEmailIrmTemplateFactory;
-template <typename T> struct impl_IEmailItemCounts;
-template <typename T> struct impl_IEmailMailbox;
-template <typename T> struct impl_IEmailMailbox2;
-template <typename T> struct impl_IEmailMailbox3;
-template <typename T> struct impl_IEmailMailbox4;
-template <typename T> struct impl_IEmailMailboxAction;
-template <typename T> struct impl_IEmailMailboxAutoReply;
-template <typename T> struct impl_IEmailMailboxAutoReplySettings;
-template <typename T> struct impl_IEmailMailboxCapabilities;
-template <typename T> struct impl_IEmailMailboxCapabilities2;
-template <typename T> struct impl_IEmailMailboxCapabilities3;
-template <typename T> struct impl_IEmailMailboxChange;
-template <typename T> struct impl_IEmailMailboxChangeReader;
-template <typename T> struct impl_IEmailMailboxChangeTracker;
-template <typename T> struct impl_IEmailMailboxChangedDeferral;
-template <typename T> struct impl_IEmailMailboxChangedEventArgs;
-template <typename T> struct impl_IEmailMailboxCreateFolderResult;
-template <typename T> struct impl_IEmailMailboxPolicies;
-template <typename T> struct impl_IEmailMailboxPolicies2;
-template <typename T> struct impl_IEmailMailboxPolicies3;
-template <typename T> struct impl_IEmailMailboxSyncManager;
-template <typename T> struct impl_IEmailMailboxSyncManager2;
-template <typename T> struct impl_IEmailManagerForUser;
-template <typename T> struct impl_IEmailManagerStatics;
-template <typename T> struct impl_IEmailManagerStatics2;
-template <typename T> struct impl_IEmailManagerStatics3;
-template <typename T> struct impl_IEmailMeetingInfo;
-template <typename T> struct impl_IEmailMeetingInfo2;
-template <typename T> struct impl_IEmailMessage;
-template <typename T> struct impl_IEmailMessage2;
-template <typename T> struct impl_IEmailMessage3;
-template <typename T> struct impl_IEmailMessageBatch;
-template <typename T> struct impl_IEmailMessageReader;
-template <typename T> struct impl_IEmailQueryOptions;
-template <typename T> struct impl_IEmailQueryOptionsFactory;
-template <typename T> struct impl_IEmailQueryTextSearch;
-template <typename T> struct impl_IEmailRecipient;
-template <typename T> struct impl_IEmailRecipientFactory;
-template <typename T> struct impl_IEmailRecipientResolutionResult;
-template <typename T> struct impl_IEmailRecipientResolutionResult2;
-template <typename T> struct impl_IEmailStore;
-template <typename T> struct impl_IEmailStoreNotificationTriggerDetails;
+template <typename D>
+struct WINRT_EBO impl_IEmailAttachment
+{
+    hstring FileName() const;
+    void FileName(hstring_ref value) const;
+    Windows::Storage::Streams::IRandomAccessStreamReference Data() const;
+    void Data(const Windows::Storage::Streams::IRandomAccessStreamReference & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailAttachment2
+{
+    hstring Id() const;
+    hstring ContentId() const;
+    void ContentId(hstring_ref value) const;
+    hstring ContentLocation() const;
+    void ContentLocation(hstring_ref value) const;
+    Windows::ApplicationModel::Email::EmailAttachmentDownloadState DownloadState() const;
+    void DownloadState(Windows::ApplicationModel::Email::EmailAttachmentDownloadState value) const;
+    uint64_t EstimatedDownloadSizeInBytes() const;
+    void EstimatedDownloadSizeInBytes(uint64_t value) const;
+    bool IsFromBaseMessage() const;
+    bool IsInline() const;
+    void IsInline(bool value) const;
+    hstring MimeType() const;
+    void MimeType(hstring_ref value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailAttachmentFactory
+{
+    Windows::ApplicationModel::Email::EmailAttachment Create(hstring_ref fileName, const Windows::Storage::Streams::IRandomAccessStreamReference & data) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailAttachmentFactory2
+{
+    Windows::ApplicationModel::Email::EmailAttachment Create(hstring_ref fileName, const Windows::Storage::Streams::IRandomAccessStreamReference & data, hstring_ref mimeType) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailConversation
+{
+    hstring Id() const;
+    hstring MailboxId() const;
+    Windows::ApplicationModel::Email::EmailFlagState FlagState() const;
+    bool HasAttachment() const;
+    Windows::ApplicationModel::Email::EmailImportance Importance() const;
+    Windows::ApplicationModel::Email::EmailMessageResponseKind LastEmailResponseKind() const;
+    uint32_t MessageCount() const;
+    hstring MostRecentMessageId() const;
+    Windows::Foundation::DateTime MostRecentMessageTime() const;
+    hstring Preview() const;
+    Windows::ApplicationModel::Email::EmailRecipient LatestSender() const;
+    hstring Subject() const;
+    uint32_t UnreadMessageCount() const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailMessage>> FindMessagesAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailMessage>> FindMessagesAsync(uint32_t count) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailConversationBatch
+{
+    Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailConversation> Conversations() const;
+    Windows::ApplicationModel::Email::EmailBatchStatus Status() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailConversationReader
+{
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailConversationBatch> ReadBatchAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailFolder
+{
+    hstring Id() const;
+    hstring RemoteId() const;
+    void RemoteId(hstring_ref value) const;
+    hstring MailboxId() const;
+    hstring ParentFolderId() const;
+    hstring DisplayName() const;
+    void DisplayName(hstring_ref value) const;
+    bool IsSyncEnabled() const;
+    void IsSyncEnabled(bool value) const;
+    Windows::Foundation::DateTime LastSuccessfulSyncTime() const;
+    void LastSuccessfulSyncTime(const Windows::Foundation::DateTime & value) const;
+    Windows::ApplicationModel::Email::EmailSpecialFolderKind Kind() const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailFolder> CreateFolderAsync(hstring_ref name) const;
+    Windows::Foundation::IAsyncAction DeleteAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailFolder>> FindChildFoldersAsync() const;
+    Windows::ApplicationModel::Email::EmailConversationReader GetConversationReader() const;
+    Windows::ApplicationModel::Email::EmailConversationReader GetConversationReader(const Windows::ApplicationModel::Email::EmailQueryOptions & options) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMessage> GetMessageAsync(hstring_ref id) const;
+    Windows::ApplicationModel::Email::EmailMessageReader GetMessageReader() const;
+    Windows::ApplicationModel::Email::EmailMessageReader GetMessageReader(const Windows::ApplicationModel::Email::EmailQueryOptions & options) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailItemCounts> GetMessageCountsAsync() const;
+    Windows::Foundation::IAsyncOperation<bool> TryMoveAsync(const Windows::ApplicationModel::Email::EmailFolder & newParentFolder) const;
+    Windows::Foundation::IAsyncOperation<bool> TryMoveAsync(const Windows::ApplicationModel::Email::EmailFolder & newParentFolder, hstring_ref newFolderName) const;
+    Windows::Foundation::IAsyncOperation<bool> TrySaveAsync() const;
+    Windows::Foundation::IAsyncAction SaveMessageAsync(const Windows::ApplicationModel::Email::EmailMessage & message) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailIrmInfo
+{
+    bool CanEdit() const;
+    void CanEdit(bool value) const;
+    bool CanExtractData() const;
+    void CanExtractData(bool value) const;
+    bool CanForward() const;
+    void CanForward(bool value) const;
+    bool CanModifyRecipientsOnResponse() const;
+    void CanModifyRecipientsOnResponse(bool value) const;
+    bool CanPrintData() const;
+    void CanPrintData(bool value) const;
+    bool CanRemoveIrmOnResponse() const;
+    void CanRemoveIrmOnResponse(bool value) const;
+    bool CanReply() const;
+    void CanReply(bool value) const;
+    bool CanReplyAll() const;
+    void CanReplyAll(bool value) const;
+    Windows::Foundation::DateTime ExpirationDate() const;
+    void ExpirationDate(const Windows::Foundation::DateTime & value) const;
+    bool IsIrmOriginator() const;
+    void IsIrmOriginator(bool value) const;
+    bool IsProgramaticAccessAllowed() const;
+    void IsProgramaticAccessAllowed(bool value) const;
+    Windows::ApplicationModel::Email::EmailIrmTemplate Template() const;
+    void Template(const Windows::ApplicationModel::Email::EmailIrmTemplate & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailIrmInfoFactory
+{
+    Windows::ApplicationModel::Email::EmailIrmInfo Create(const Windows::Foundation::DateTime & expiration, const Windows::ApplicationModel::Email::EmailIrmTemplate & irmTemplate) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailIrmTemplate
+{
+    hstring Id() const;
+    void Id(hstring_ref value) const;
+    hstring Description() const;
+    void Description(hstring_ref value) const;
+    hstring Name() const;
+    void Name(hstring_ref value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailIrmTemplateFactory
+{
+    Windows::ApplicationModel::Email::EmailIrmTemplate Create(hstring_ref id, hstring_ref name, hstring_ref description) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailItemCounts
+{
+    uint32_t Flagged() const;
+    uint32_t Important() const;
+    uint32_t Total() const;
+    uint32_t Unread() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailMailbox
+{
+    Windows::ApplicationModel::Email::EmailMailboxCapabilities Capabilities() const;
+    Windows::ApplicationModel::Email::EmailMailboxChangeTracker ChangeTracker() const;
+    hstring DisplayName() const;
+    void DisplayName(hstring_ref value) const;
+    hstring Id() const;
+    bool IsOwnedByCurrentApp() const;
+    bool IsDataEncryptedUnderLock() const;
+    hstring MailAddress() const;
+    void MailAddress(hstring_ref value) const;
+    Windows::Foundation::Collections::IVector<hstring> MailAddressAliases() const;
+    Windows::ApplicationModel::Email::EmailMailboxOtherAppReadAccess OtherAppReadAccess() const;
+    void OtherAppReadAccess(Windows::ApplicationModel::Email::EmailMailboxOtherAppReadAccess value) const;
+    Windows::ApplicationModel::Email::EmailMailboxOtherAppWriteAccess OtherAppWriteAccess() const;
+    void OtherAppWriteAccess(Windows::ApplicationModel::Email::EmailMailboxOtherAppWriteAccess value) const;
+    Windows::ApplicationModel::Email::EmailMailboxPolicies Policies() const;
+    hstring SourceDisplayName() const;
+    Windows::ApplicationModel::Email::EmailMailboxSyncManager SyncManager() const;
+    hstring UserDataAccountId() const;
+    Windows::ApplicationModel::Email::EmailConversationReader GetConversationReader() const;
+    Windows::ApplicationModel::Email::EmailConversationReader GetConversationReader(const Windows::ApplicationModel::Email::EmailQueryOptions & options) const;
+    Windows::ApplicationModel::Email::EmailMessageReader GetMessageReader() const;
+    Windows::ApplicationModel::Email::EmailMessageReader GetMessageReader(const Windows::ApplicationModel::Email::EmailQueryOptions & options) const;
+    Windows::Foundation::IAsyncAction DeleteAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailConversation> GetConversationAsync(hstring_ref id) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailFolder> GetFolderAsync(hstring_ref id) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMessage> GetMessageAsync(hstring_ref id) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailFolder> GetSpecialFolderAsync(Windows::ApplicationModel::Email::EmailSpecialFolderKind folderType) const;
+    Windows::Foundation::IAsyncAction SaveAsync() const;
+    Windows::Foundation::IAsyncAction MarkMessageAsSeenAsync(hstring_ref messageId) const;
+    Windows::Foundation::IAsyncAction MarkFolderAsSeenAsync(hstring_ref folderId) const;
+    Windows::Foundation::IAsyncAction MarkMessageReadAsync(hstring_ref messageId, bool isRead) const;
+    Windows::Foundation::IAsyncAction ChangeMessageFlagStateAsync(hstring_ref messageId, Windows::ApplicationModel::Email::EmailFlagState flagState) const;
+    Windows::Foundation::IAsyncOperation<bool> TryMoveMessageAsync(hstring_ref messageId, hstring_ref newParentFolderId) const;
+    Windows::Foundation::IAsyncOperation<bool> TryMoveFolderAsync(hstring_ref folderId, hstring_ref newParentFolderId) const;
+    Windows::Foundation::IAsyncOperation<bool> TryMoveFolderAsync(hstring_ref folderId, hstring_ref newParentFolderId, hstring_ref newFolderName) const;
+    Windows::Foundation::IAsyncAction DeleteMessageAsync(hstring_ref messageId) const;
+    Windows::Foundation::IAsyncAction MarkFolderSyncEnabledAsync(hstring_ref folderId, bool isSyncEnabled) const;
+    Windows::Foundation::IAsyncAction SendMessageAsync(const Windows::ApplicationModel::Email::EmailMessage & message) const;
+    Windows::Foundation::IAsyncAction SaveDraftAsync(const Windows::ApplicationModel::Email::EmailMessage & message) const;
+    Windows::Foundation::IAsyncAction DownloadMessageAsync(hstring_ref messageId) const;
+    Windows::Foundation::IAsyncAction DownloadAttachmentAsync(hstring_ref attachmentId) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMessage> CreateResponseMessageAsync(hstring_ref messageId, Windows::ApplicationModel::Email::EmailMessageResponseKind responseType, hstring_ref subject, Windows::ApplicationModel::Email::EmailMessageBodyKind responseHeaderType, hstring_ref responseHeader) const;
+    Windows::Foundation::IAsyncOperation<bool> TryUpdateMeetingResponseAsync(const Windows::ApplicationModel::Email::EmailMessage & meeting, Windows::ApplicationModel::Email::EmailMeetingResponseType response, hstring_ref subject, hstring_ref comment, bool sendUpdate) const;
+    Windows::Foundation::IAsyncOperation<bool> TryForwardMeetingAsync(const Windows::ApplicationModel::Email::EmailMessage & meeting, const Windows::Foundation::Collections::IIterable<Windows::ApplicationModel::Email::EmailRecipient> & recipients, hstring_ref subject, Windows::ApplicationModel::Email::EmailMessageBodyKind forwardHeaderType, hstring_ref forwardHeader, hstring_ref comment) const;
+    Windows::Foundation::IAsyncOperation<bool> TryProposeNewTimeForMeetingAsync(const Windows::ApplicationModel::Email::EmailMessage & meeting, const Windows::Foundation::DateTime & newStartTime, const Windows::Foundation::TimeSpan & newDuration, hstring_ref subject, hstring_ref comment) const;
+    event_token MailboxChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::EmailMailbox, Windows::ApplicationModel::Email::EmailMailboxChangedEventArgs> & pHandler) const;
+    using MailboxChanged_revoker = event_revoker<IEmailMailbox>;
+    MailboxChanged_revoker MailboxChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::EmailMailbox, Windows::ApplicationModel::Email::EmailMailboxChangedEventArgs> & pHandler) const;
+    void MailboxChanged(event_token token) const;
+    Windows::Foundation::IAsyncAction SendMessageAsync(const Windows::ApplicationModel::Email::EmailMessage & message, bool smartSend) const;
+    Windows::Foundation::IAsyncOperation<bool> TrySetAutoReplySettingsAsync(const Windows::ApplicationModel::Email::EmailMailboxAutoReplySettings & autoReplySettings) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMailboxAutoReplySettings> TryGetAutoReplySettingsAsync(Windows::ApplicationModel::Email::EmailMailboxAutoReplyMessageResponseKind requestedFormat) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailMailbox2
+{
+    hstring LinkedMailboxId() const;
+    hstring NetworkAccountId() const;
+    hstring NetworkId() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailMailbox3
+{
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailRecipientResolutionResult>> ResolveRecipientsAsync(const Windows::Foundation::Collections::IIterable<hstring> & recipients) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<winrt::Windows::ApplicationModel::Email::EmailCertificateValidationStatus>> ValidateCertificatesAsync(const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> & certificates) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Email::EmailMailboxEmptyFolderStatus> TryEmptyFolderAsync(hstring_ref folderId) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMailboxCreateFolderResult> TryCreateFolderAsync(hstring_ref parentFolderId, hstring_ref name) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Email::EmailMailboxDeleteFolderStatus> TryDeleteFolderAsync(hstring_ref folderId) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailMailbox4
+{
+    Windows::Foundation::IAsyncAction RegisterSyncManagerAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailMailboxAction
+{
+    Windows::ApplicationModel::Email::EmailMailboxActionKind Kind() const;
+    uint64_t ChangeNumber() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailMailboxAutoReply
+{
+    bool IsEnabled() const;
+    void IsEnabled(bool value) const;
+    hstring Response() const;
+    void Response(hstring_ref value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailMailboxAutoReplySettings
+{
+    bool IsEnabled() const;
+    void IsEnabled(bool value) const;
+    Windows::ApplicationModel::Email::EmailMailboxAutoReplyMessageResponseKind ResponseKind() const;
+    void ResponseKind(Windows::ApplicationModel::Email::EmailMailboxAutoReplyMessageResponseKind value) const;
+    Windows::Foundation::IReference<Windows::Foundation::DateTime> StartTime() const;
+    void StartTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
+    Windows::Foundation::IReference<Windows::Foundation::DateTime> EndTime() const;
+    void EndTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
+    Windows::ApplicationModel::Email::EmailMailboxAutoReply InternalReply() const;
+    Windows::ApplicationModel::Email::EmailMailboxAutoReply KnownExternalReply() const;
+    Windows::ApplicationModel::Email::EmailMailboxAutoReply UnknownExternalReply() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailMailboxCapabilities
+{
+    bool CanForwardMeetings() const;
+    bool CanGetAndSetExternalAutoReplies() const;
+    bool CanGetAndSetInternalAutoReplies() const;
+    bool CanUpdateMeetingResponses() const;
+    bool CanServerSearchFolders() const;
+    bool CanServerSearchMailbox() const;
+    bool CanProposeNewTimeForMeetings() const;
+    bool CanSmartSend() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailMailboxCapabilities2
+{
+    bool CanResolveRecipients() const;
+    bool CanValidateCertificates() const;
+    bool CanEmptyFolder() const;
+    bool CanCreateFolder() const;
+    bool CanDeleteFolder() const;
+    bool CanMoveFolder() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailMailboxCapabilities3
+{
+    void CanForwardMeetings(bool value) const;
+    void CanGetAndSetExternalAutoReplies(bool value) const;
+    void CanGetAndSetInternalAutoReplies(bool value) const;
+    void CanUpdateMeetingResponses(bool value) const;
+    void CanServerSearchFolders(bool value) const;
+    void CanServerSearchMailbox(bool value) const;
+    void CanProposeNewTimeForMeetings(bool value) const;
+    void CanSmartSend(bool value) const;
+    void CanResolveRecipients(bool value) const;
+    void CanValidateCertificates(bool value) const;
+    void CanEmptyFolder(bool value) const;
+    void CanCreateFolder(bool value) const;
+    void CanDeleteFolder(bool value) const;
+    void CanMoveFolder(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailMailboxChange
+{
+    Windows::ApplicationModel::Email::EmailMailboxChangeType ChangeType() const;
+    Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Email::EmailMailboxAction> MailboxActions() const;
+    Windows::ApplicationModel::Email::EmailMessage Message() const;
+    Windows::ApplicationModel::Email::EmailFolder Folder() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailMailboxChangeReader
+{
+    void AcceptChanges() const;
+    void AcceptChangesThrough(const Windows::ApplicationModel::Email::EmailMailboxChange & lastChangeToAcknowledge) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailMailboxChange>> ReadBatchAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailMailboxChangeTracker
+{
+    bool IsTracking() const;
+    void Enable() const;
+    Windows::ApplicationModel::Email::EmailMailboxChangeReader GetChangeReader() const;
+    void Reset() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailMailboxChangedDeferral
+{
+    void Complete() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailMailboxChangedEventArgs
+{
+    Windows::ApplicationModel::Email::EmailMailboxChangedDeferral GetDeferral() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailMailboxCreateFolderResult
+{
+    Windows::ApplicationModel::Email::EmailMailboxCreateFolderStatus Status() const;
+    Windows::ApplicationModel::Email::EmailFolder Folder() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailMailboxPolicies
+{
+    Windows::ApplicationModel::Email::EmailMailboxAllowedSmimeEncryptionAlgorithmNegotiation AllowedSmimeEncryptionAlgorithmNegotiation() const;
+    bool AllowSmimeSoftCertificates() const;
+    Windows::Foundation::IReference<winrt::Windows::ApplicationModel::Email::EmailMailboxSmimeEncryptionAlgorithm> RequiredSmimeEncryptionAlgorithm() const;
+    Windows::Foundation::IReference<winrt::Windows::ApplicationModel::Email::EmailMailboxSmimeSigningAlgorithm> RequiredSmimeSigningAlgorithm() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailMailboxPolicies2
+{
+    bool MustEncryptSmimeMessages() const;
+    bool MustSignSmimeMessages() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailMailboxPolicies3
+{
+    void AllowedSmimeEncryptionAlgorithmNegotiation(Windows::ApplicationModel::Email::EmailMailboxAllowedSmimeEncryptionAlgorithmNegotiation value) const;
+    void AllowSmimeSoftCertificates(bool value) const;
+    void RequiredSmimeEncryptionAlgorithm(const Windows::Foundation::IReference<winrt::Windows::ApplicationModel::Email::EmailMailboxSmimeEncryptionAlgorithm> & value) const;
+    void RequiredSmimeSigningAlgorithm(const Windows::Foundation::IReference<winrt::Windows::ApplicationModel::Email::EmailMailboxSmimeSigningAlgorithm> & value) const;
+    void MustEncryptSmimeMessages(bool value) const;
+    void MustSignSmimeMessages(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailMailboxSyncManager
+{
+    Windows::ApplicationModel::Email::EmailMailboxSyncStatus Status() const;
+    Windows::Foundation::DateTime LastSuccessfulSyncTime() const;
+    Windows::Foundation::DateTime LastAttemptedSyncTime() const;
+    Windows::Foundation::IAsyncOperation<bool> SyncAsync() const;
+    event_token SyncStatusChanged(const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::EmailMailboxSyncManager, Windows::IInspectable> & handler) const;
+    using SyncStatusChanged_revoker = event_revoker<IEmailMailboxSyncManager>;
+    SyncStatusChanged_revoker SyncStatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::ApplicationModel::Email::EmailMailboxSyncManager, Windows::IInspectable> & handler) const;
+    void SyncStatusChanged(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailMailboxSyncManager2
+{
+    void Status(Windows::ApplicationModel::Email::EmailMailboxSyncStatus value) const;
+    void LastSuccessfulSyncTime(const Windows::Foundation::DateTime & value) const;
+    void LastAttemptedSyncTime(const Windows::Foundation::DateTime & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailManagerForUser
+{
+    Windows::Foundation::IAsyncAction ShowComposeNewEmailAsync(const Windows::ApplicationModel::Email::EmailMessage & message) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailStore> RequestStoreAsync(Windows::ApplicationModel::Email::EmailStoreAccessType accessType) const;
+    Windows::System::User User() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailManagerStatics
+{
+    Windows::Foundation::IAsyncAction ShowComposeNewEmailAsync(const Windows::ApplicationModel::Email::EmailMessage & message) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailManagerStatics2
+{
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailStore> RequestStoreAsync(Windows::ApplicationModel::Email::EmailStoreAccessType accessType) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailManagerStatics3
+{
+    Windows::ApplicationModel::Email::EmailManagerForUser GetForUser(const Windows::System::User & user) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailMeetingInfo
+{
+    bool AllowNewTimeProposal() const;
+    void AllowNewTimeProposal(bool value) const;
+    hstring AppointmentRoamingId() const;
+    void AppointmentRoamingId(hstring_ref value) const;
+    Windows::Foundation::IReference<Windows::Foundation::DateTime> AppointmentOriginalStartTime() const;
+    void AppointmentOriginalStartTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
+    Windows::Foundation::TimeSpan Duration() const;
+    void Duration(const Windows::Foundation::TimeSpan & value) const;
+    bool IsAllDay() const;
+    void IsAllDay(bool value) const;
+    bool IsResponseRequested() const;
+    void IsResponseRequested(bool value) const;
+    hstring Location() const;
+    void Location(hstring_ref value) const;
+    Windows::Foundation::IReference<Windows::Foundation::DateTime> ProposedStartTime() const;
+    void ProposedStartTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & proposedStartTime) const;
+    Windows::Foundation::IReference<Windows::Foundation::TimeSpan> ProposedDuration() const;
+    void ProposedDuration(const Windows::Foundation::IReference<Windows::Foundation::TimeSpan> & duration) const;
+    Windows::Foundation::IReference<Windows::Foundation::DateTime> RecurrenceStartTime() const;
+    void RecurrenceStartTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
+    Windows::ApplicationModel::Appointments::AppointmentRecurrence Recurrence() const;
+    void Recurrence(const Windows::ApplicationModel::Appointments::AppointmentRecurrence & value) const;
+    uint64_t RemoteChangeNumber() const;
+    void RemoteChangeNumber(uint64_t value) const;
+    Windows::Foundation::DateTime StartTime() const;
+    void StartTime(const Windows::Foundation::DateTime & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailMeetingInfo2
+{
+    bool IsReportedOutOfDateByServer() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailMessage
+{
+    hstring Subject() const;
+    void Subject(hstring_ref value) const;
+    hstring Body() const;
+    void Body(hstring_ref value) const;
+    Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Email::EmailRecipient> To() const;
+    Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Email::EmailRecipient> CC() const;
+    Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Email::EmailRecipient> Bcc() const;
+    Windows::Foundation::Collections::IVector<Windows::ApplicationModel::Email::EmailAttachment> Attachments() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailMessage2
+{
+    hstring Id() const;
+    hstring RemoteId() const;
+    void RemoteId(hstring_ref value) const;
+    hstring MailboxId() const;
+    hstring ConversationId() const;
+    hstring FolderId() const;
+    bool AllowInternetImages() const;
+    void AllowInternetImages(bool value) const;
+    uint64_t ChangeNumber() const;
+    Windows::ApplicationModel::Email::EmailMessageDownloadState DownloadState() const;
+    void DownloadState(Windows::ApplicationModel::Email::EmailMessageDownloadState value) const;
+    uint32_t EstimatedDownloadSizeInBytes() const;
+    void EstimatedDownloadSizeInBytes(uint32_t value) const;
+    Windows::ApplicationModel::Email::EmailFlagState FlagState() const;
+    void FlagState(Windows::ApplicationModel::Email::EmailFlagState value) const;
+    bool HasPartialBodies() const;
+    Windows::ApplicationModel::Email::EmailImportance Importance() const;
+    void Importance(Windows::ApplicationModel::Email::EmailImportance value) const;
+    hstring InResponseToMessageId() const;
+    Windows::ApplicationModel::Email::EmailIrmInfo IrmInfo() const;
+    void IrmInfo(const Windows::ApplicationModel::Email::EmailIrmInfo & value) const;
+    bool IsDraftMessage() const;
+    bool IsRead() const;
+    void IsRead(bool value) const;
+    bool IsSeen() const;
+    void IsSeen(bool value) const;
+    bool IsServerSearchMessage() const;
+    bool IsSmartSendable() const;
+    hstring MessageClass() const;
+    void MessageClass(hstring_ref value) const;
+    hstring NormalizedSubject() const;
+    int32_t OriginalCodePage() const;
+    void OriginalCodePage(int32_t value) const;
+    hstring Preview() const;
+    void Preview(hstring_ref value) const;
+    Windows::ApplicationModel::Email::EmailMessageResponseKind LastResponseKind() const;
+    void LastResponseKind(Windows::ApplicationModel::Email::EmailMessageResponseKind value) const;
+    Windows::ApplicationModel::Email::EmailRecipient Sender() const;
+    void Sender(const Windows::ApplicationModel::Email::EmailRecipient & value) const;
+    Windows::Foundation::IReference<Windows::Foundation::DateTime> SentTime() const;
+    void SentTime(const Windows::Foundation::IReference<Windows::Foundation::DateTime> & value) const;
+    Windows::ApplicationModel::Email::EmailMeetingInfo MeetingInfo() const;
+    void MeetingInfo(const Windows::ApplicationModel::Email::EmailMeetingInfo & value) const;
+    Windows::Storage::Streams::IRandomAccessStreamReference GetBodyStream(Windows::ApplicationModel::Email::EmailMessageBodyKind type) const;
+    void SetBodyStream(Windows::ApplicationModel::Email::EmailMessageBodyKind type, const Windows::Storage::Streams::IRandomAccessStreamReference & stream) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailMessage3
+{
+    Windows::Storage::Streams::IRandomAccessStreamReference SmimeData() const;
+    void SmimeData(const Windows::Storage::Streams::IRandomAccessStreamReference & value) const;
+    Windows::ApplicationModel::Email::EmailMessageSmimeKind SmimeKind() const;
+    void SmimeKind(Windows::ApplicationModel::Email::EmailMessageSmimeKind value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailMessageBatch
+{
+    Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailMessage> Messages() const;
+    Windows::ApplicationModel::Email::EmailBatchStatus Status() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailMessageReader
+{
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMessageBatch> ReadBatchAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailQueryOptions
+{
+    Windows::ApplicationModel::Email::EmailQueryTextSearch TextSearch() const;
+    Windows::ApplicationModel::Email::EmailQuerySortDirection SortDirection() const;
+    void SortDirection(Windows::ApplicationModel::Email::EmailQuerySortDirection value) const;
+    Windows::ApplicationModel::Email::EmailQuerySortProperty SortProperty() const;
+    void SortProperty(Windows::ApplicationModel::Email::EmailQuerySortProperty value) const;
+    Windows::ApplicationModel::Email::EmailQueryKind Kind() const;
+    void Kind(Windows::ApplicationModel::Email::EmailQueryKind value) const;
+    Windows::Foundation::Collections::IVector<hstring> FolderIds() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailQueryOptionsFactory
+{
+    Windows::ApplicationModel::Email::EmailQueryOptions CreateWithText(hstring_ref text) const;
+    Windows::ApplicationModel::Email::EmailQueryOptions CreateWithTextAndFields(hstring_ref text, Windows::ApplicationModel::Email::EmailQuerySearchFields fields) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailQueryTextSearch
+{
+    Windows::ApplicationModel::Email::EmailQuerySearchFields Fields() const;
+    void Fields(Windows::ApplicationModel::Email::EmailQuerySearchFields value) const;
+    Windows::ApplicationModel::Email::EmailQuerySearchScope SearchScope() const;
+    void SearchScope(Windows::ApplicationModel::Email::EmailQuerySearchScope value) const;
+    hstring Text() const;
+    void Text(hstring_ref value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailRecipient
+{
+    hstring Name() const;
+    void Name(hstring_ref value) const;
+    hstring Address() const;
+    void Address(hstring_ref value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailRecipientFactory
+{
+    Windows::ApplicationModel::Email::EmailRecipient Create(hstring_ref address) const;
+    Windows::ApplicationModel::Email::EmailRecipient CreateWithName(hstring_ref address, hstring_ref name) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailRecipientResolutionResult
+{
+    Windows::ApplicationModel::Email::EmailRecipientResolutionStatus Status() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Security::Cryptography::Certificates::Certificate> PublicKeys() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailRecipientResolutionResult2
+{
+    void Status(Windows::ApplicationModel::Email::EmailRecipientResolutionStatus value) const;
+    void SetPublicKeys(const Windows::Foundation::Collections::IIterable<Windows::Security::Cryptography::Certificates::Certificate> & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailStore
+{
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Email::EmailMailbox>> FindMailboxesAsync() const;
+    Windows::ApplicationModel::Email::EmailConversationReader GetConversationReader() const;
+    Windows::ApplicationModel::Email::EmailConversationReader GetConversationReader(const Windows::ApplicationModel::Email::EmailQueryOptions & options) const;
+    Windows::ApplicationModel::Email::EmailMessageReader GetMessageReader() const;
+    Windows::ApplicationModel::Email::EmailMessageReader GetMessageReader(const Windows::ApplicationModel::Email::EmailQueryOptions & options) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMailbox> GetMailboxAsync(hstring_ref id) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailConversation> GetConversationAsync(hstring_ref id) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailFolder> GetFolderAsync(hstring_ref id) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMessage> GetMessageAsync(hstring_ref id) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMailbox> CreateMailboxAsync(hstring_ref accountName, hstring_ref accountAddress) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Email::EmailMailbox> CreateMailboxAsync(hstring_ref accountName, hstring_ref accountAddress, hstring_ref userDataAccountId) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailStoreNotificationTriggerDetails
+{
+};
 
 }
 

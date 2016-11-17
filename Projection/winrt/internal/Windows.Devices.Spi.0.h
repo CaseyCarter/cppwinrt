@@ -40,6 +40,18 @@ struct SpiDevice;
 
 namespace Windows::Devices::Spi {
 
+template <typename T> struct impl_ISpiBusInfo;
+template <typename T> struct impl_ISpiConnectionSettings;
+template <typename T> struct impl_ISpiConnectionSettingsFactory;
+template <typename T> struct impl_ISpiController;
+template <typename T> struct impl_ISpiControllerStatics;
+template <typename T> struct impl_ISpiDevice;
+template <typename T> struct impl_ISpiDeviceStatics;
+
+}
+
+namespace Windows::Devices::Spi {
+
 enum class SpiMode
 {
     Mode0 = 0,

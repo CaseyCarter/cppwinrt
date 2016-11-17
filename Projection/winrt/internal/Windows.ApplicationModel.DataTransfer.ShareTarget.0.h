@@ -26,4 +26,12 @@ struct ShareOperation;
 
 }
 
+namespace Windows::ApplicationModel::DataTransfer::ShareTarget {
+
+template <typename T> struct impl_IQuickLink;
+template <typename T> struct impl_IShareOperation;
+template <typename T> struct impl_IShareOperation2;
+
+}
+
 }

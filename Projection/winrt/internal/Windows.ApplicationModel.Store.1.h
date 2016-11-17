@@ -204,29 +204,198 @@ template <> struct traits<Windows::ApplicationModel::Store::UnfulfilledConsumabl
 
 namespace Windows::ApplicationModel::Store {
 
-template <typename T> struct impl_ICurrentApp;
-template <typename T> struct impl_ICurrentApp2Statics;
-template <typename T> struct impl_ICurrentAppSimulator;
-template <typename T> struct impl_ICurrentAppSimulatorStaticsWithFiltering;
-template <typename T> struct impl_ICurrentAppSimulatorWithCampaignId;
-template <typename T> struct impl_ICurrentAppSimulatorWithConsumables;
-template <typename T> struct impl_ICurrentAppStaticsWithFiltering;
-template <typename T> struct impl_ICurrentAppWithCampaignId;
-template <typename T> struct impl_ICurrentAppWithConsumables;
-template <typename T> struct impl_ILicenseInformation;
-template <typename T> struct impl_IListingInformation;
-template <typename T> struct impl_IListingInformation2;
-template <typename T> struct impl_IProductLicense;
-template <typename T> struct impl_IProductLicenseWithFulfillment;
-template <typename T> struct impl_IProductListing;
-template <typename T> struct impl_IProductListing2;
-template <typename T> struct impl_IProductListingWithConsumables;
-template <typename T> struct impl_IProductListingWithMetadata;
-template <typename T> struct impl_IProductPurchaseDisplayProperties;
-template <typename T> struct impl_IProductPurchaseDisplayPropertiesFactory;
-template <typename T> struct impl_IPurchaseResults;
-template <typename T> struct impl_IUnfulfilledConsumable;
-template <typename T> struct impl_LicenseChangedEventHandler;
+template <typename D>
+struct WINRT_EBO impl_ICurrentApp
+{
+    Windows::ApplicationModel::Store::LicenseInformation LicenseInformation() const;
+    Windows::Foundation::Uri LinkUri() const;
+    GUID AppId() const;
+    Windows::Foundation::IAsyncOperation<hstring> RequestAppPurchaseAsync(bool includeReceipt) const;
+    Windows::Foundation::IAsyncOperation<hstring> RequestProductPurchaseAsync(hstring_ref productId, bool includeReceipt) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> LoadListingInformationAsync() const;
+    Windows::Foundation::IAsyncOperation<hstring> GetAppReceiptAsync() const;
+    Windows::Foundation::IAsyncOperation<hstring> GetProductReceiptAsync(hstring_ref productId) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICurrentApp2Statics
+{
+    Windows::Foundation::IAsyncOperation<hstring> GetCustomerPurchaseIdAsync(hstring_ref serviceTicket, hstring_ref publisherUserId) const;
+    Windows::Foundation::IAsyncOperation<hstring> GetCustomerCollectionsIdAsync(hstring_ref serviceTicket, hstring_ref publisherUserId) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICurrentAppSimulator
+{
+    Windows::ApplicationModel::Store::LicenseInformation LicenseInformation() const;
+    Windows::Foundation::Uri LinkUri() const;
+    GUID AppId() const;
+    Windows::Foundation::IAsyncOperation<hstring> RequestAppPurchaseAsync(bool includeReceipt) const;
+    Windows::Foundation::IAsyncOperation<hstring> RequestProductPurchaseAsync(hstring_ref productId, bool includeReceipt) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> LoadListingInformationAsync() const;
+    Windows::Foundation::IAsyncOperation<hstring> GetAppReceiptAsync() const;
+    Windows::Foundation::IAsyncOperation<hstring> GetProductReceiptAsync(hstring_ref productId) const;
+    Windows::Foundation::IAsyncAction ReloadSimulatorAsync(const Windows::Storage::StorageFile & simulatorSettingsFile) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICurrentAppSimulatorStaticsWithFiltering
+{
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> LoadListingInformationByProductIdsAsync(const Windows::Foundation::Collections::IIterable<hstring> & productIds) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> LoadListingInformationByKeywordsAsync(const Windows::Foundation::Collections::IIterable<hstring> & keywords) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICurrentAppSimulatorWithCampaignId
+{
+    Windows::Foundation::IAsyncOperation<hstring> GetAppPurchaseCampaignIdAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICurrentAppSimulatorWithConsumables
+{
+    Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Store::FulfillmentResult> ReportConsumableFulfillmentAsync(hstring_ref productId, GUID transactionId) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> RequestProductPurchaseAsync(hstring_ref productId) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> RequestProductPurchaseAsync(hstring_ref productId, hstring_ref offerId, const Windows::ApplicationModel::Store::ProductPurchaseDisplayProperties & displayProperties) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::UnfulfilledConsumable>> GetUnfulfilledConsumablesAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICurrentAppStaticsWithFiltering
+{
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> LoadListingInformationByProductIdsAsync(const Windows::Foundation::Collections::IIterable<hstring> & productIds) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::ListingInformation> LoadListingInformationByKeywordsAsync(const Windows::Foundation::Collections::IIterable<hstring> & keywords) const;
+    void ReportProductFulfillment(hstring_ref productId) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICurrentAppWithCampaignId
+{
+    Windows::Foundation::IAsyncOperation<hstring> GetAppPurchaseCampaignIdAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICurrentAppWithConsumables
+{
+    Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Store::FulfillmentResult> ReportConsumableFulfillmentAsync(hstring_ref productId, GUID transactionId) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> RequestProductPurchaseAsync(hstring_ref productId) const;
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Store::PurchaseResults> RequestProductPurchaseAsync(hstring_ref productId, hstring_ref offerId, const Windows::ApplicationModel::Store::ProductPurchaseDisplayProperties & displayProperties) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::ApplicationModel::Store::UnfulfilledConsumable>> GetUnfulfilledConsumablesAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILicenseInformation
+{
+    Windows::Foundation::Collections::IMapView<hstring, Windows::ApplicationModel::Store::ProductLicense> ProductLicenses() const;
+    bool IsActive() const;
+    bool IsTrial() const;
+    Windows::Foundation::DateTime ExpirationDate() const;
+    event_token LicenseChanged(const Windows::ApplicationModel::Store::LicenseChangedEventHandler & handler) const;
+    using LicenseChanged_revoker = event_revoker<ILicenseInformation>;
+    LicenseChanged_revoker LicenseChanged(auto_revoke_t, const Windows::ApplicationModel::Store::LicenseChangedEventHandler & handler) const;
+    void LicenseChanged(event_token cookie) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IListingInformation
+{
+    hstring CurrentMarket() const;
+    hstring Description() const;
+    Windows::Foundation::Collections::IMapView<hstring, Windows::ApplicationModel::Store::ProductListing> ProductListings() const;
+    hstring FormattedPrice() const;
+    hstring Name() const;
+    uint32_t AgeRating() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IListingInformation2
+{
+    hstring FormattedBasePrice() const;
+    Windows::Foundation::DateTime SaleEndDate() const;
+    bool IsOnSale() const;
+    hstring CurrencyCode() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IProductLicense
+{
+    hstring ProductId() const;
+    bool IsActive() const;
+    Windows::Foundation::DateTime ExpirationDate() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IProductLicenseWithFulfillment
+{
+    bool IsConsumable() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IProductListing
+{
+    hstring ProductId() const;
+    hstring FormattedPrice() const;
+    hstring Name() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IProductListing2
+{
+    hstring FormattedBasePrice() const;
+    Windows::Foundation::DateTime SaleEndDate() const;
+    bool IsOnSale() const;
+    hstring CurrencyCode() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IProductListingWithConsumables
+{
+    Windows::ApplicationModel::Store::ProductType ProductType() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IProductListingWithMetadata
+{
+    hstring Description() const;
+    Windows::Foundation::Collections::IIterable<hstring> Keywords() const;
+    Windows::ApplicationModel::Store::ProductType ProductType() const;
+    hstring Tag() const;
+    Windows::Foundation::Uri ImageUri() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IProductPurchaseDisplayProperties
+{
+    hstring Name() const;
+    void Name(hstring_ref value) const;
+    hstring Description() const;
+    void Description(hstring_ref value) const;
+    Windows::Foundation::Uri Image() const;
+    void Image(const Windows::Foundation::Uri & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IProductPurchaseDisplayPropertiesFactory
+{
+    Windows::ApplicationModel::Store::ProductPurchaseDisplayProperties CreateProductPurchaseDisplayProperties(hstring_ref name) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPurchaseResults
+{
+    Windows::ApplicationModel::Store::ProductPurchaseStatus Status() const;
+    GUID TransactionId() const;
+    hstring ReceiptXml() const;
+    hstring OfferId() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUnfulfilledConsumable
+{
+    hstring ProductId() const;
+    GUID TransactionId() const;
+    hstring OfferId() const;
+};
 
 }
 

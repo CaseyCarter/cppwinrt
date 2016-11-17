@@ -56,10 +56,41 @@ template <> struct traits<Windows::Devices::Pwm::PwmPin> { using default_interfa
 
 namespace Windows::Devices::Pwm {
 
-template <typename T> struct impl_IPwmController;
-template <typename T> struct impl_IPwmControllerStatics;
-template <typename T> struct impl_IPwmControllerStatics2;
-template <typename T> struct impl_IPwmPin;
+template <typename D>
+struct WINRT_EBO impl_IPwmController
+{
+    int32_t PinCount() const;
+    double ActualFrequency() const;
+    double SetDesiredFrequency(double desiredFrequency) const;
+    double MinFrequency() const;
+    double MaxFrequency() const;
+    Windows::Devices::Pwm::PwmPin OpenPin(int32_t pinNumber) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPwmControllerStatics
+{
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Pwm::PwmController>> GetControllersAsync(const Windows::Devices::Pwm::Provider::IPwmProvider & provider) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPwmControllerStatics2
+{
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Pwm::PwmController> GetDefaultAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPwmPin
+{
+    Windows::Devices::Pwm::PwmController Controller() const;
+    double GetActiveDutyCyclePercentage() const;
+    void SetActiveDutyCyclePercentage(double dutyCyclePercentage) const;
+    Windows::Devices::Pwm::PwmPulsePolarity Polarity() const;
+    void Polarity(Windows::Devices::Pwm::PwmPulsePolarity value) const;
+    void Start() const;
+    void Stop() const;
+    bool IsStarted() const;
+};
 
 }
 

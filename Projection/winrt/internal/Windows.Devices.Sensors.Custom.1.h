@@ -53,10 +53,39 @@ template <> struct traits<Windows::Devices::Sensors::Custom::CustomSensorReading
 
 namespace Windows::Devices::Sensors::Custom {
 
-template <typename T> struct impl_ICustomSensor;
-template <typename T> struct impl_ICustomSensorReading;
-template <typename T> struct impl_ICustomSensorReadingChangedEventArgs;
-template <typename T> struct impl_ICustomSensorStatics;
+template <typename D>
+struct WINRT_EBO impl_ICustomSensor
+{
+    Windows::Devices::Sensors::Custom::CustomSensorReading GetCurrentReading() const;
+    uint32_t MinimumReportInterval() const;
+    void ReportInterval(uint32_t value) const;
+    uint32_t ReportInterval() const;
+    hstring DeviceId() const;
+    event_token ReadingChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Sensors::Custom::CustomSensor, Windows::Devices::Sensors::Custom::CustomSensorReadingChangedEventArgs> & handler) const;
+    using ReadingChanged_revoker = event_revoker<ICustomSensor>;
+    ReadingChanged_revoker ReadingChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Sensors::Custom::CustomSensor, Windows::Devices::Sensors::Custom::CustomSensorReadingChangedEventArgs> & handler) const;
+    void ReadingChanged(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICustomSensorReading
+{
+    Windows::Foundation::DateTime Timestamp() const;
+    Windows::Foundation::Collections::IMapView<hstring, Windows::IInspectable> Properties() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICustomSensorReadingChangedEventArgs
+{
+    Windows::Devices::Sensors::Custom::CustomSensorReading Reading() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICustomSensorStatics
+{
+    hstring GetDeviceSelector(GUID interfaceId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::Sensors::Custom::CustomSensor> FromIdAsync(hstring_ref sensorId) const;
+};
 
 }
 

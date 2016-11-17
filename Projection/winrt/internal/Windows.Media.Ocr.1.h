@@ -63,11 +63,44 @@ template <> struct traits<Windows::Media::Ocr::OcrWord> { using default_interfac
 
 namespace Windows::Media::Ocr {
 
-template <typename T> struct impl_IOcrEngine;
-template <typename T> struct impl_IOcrEngineStatics;
-template <typename T> struct impl_IOcrLine;
-template <typename T> struct impl_IOcrResult;
-template <typename T> struct impl_IOcrWord;
+template <typename D>
+struct WINRT_EBO impl_IOcrEngine
+{
+    Windows::Foundation::IAsyncOperation<Windows::Media::Ocr::OcrResult> RecognizeAsync(const Windows::Graphics::Imaging::SoftwareBitmap & bitmap) const;
+    Windows::Globalization::Language RecognizerLanguage() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IOcrEngineStatics
+{
+    uint32_t MaxImageDimension() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Globalization::Language> AvailableRecognizerLanguages() const;
+    bool IsLanguageSupported(const Windows::Globalization::Language & language) const;
+    Windows::Media::Ocr::OcrEngine TryCreateFromLanguage(const Windows::Globalization::Language & language) const;
+    Windows::Media::Ocr::OcrEngine TryCreateFromUserProfileLanguages() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IOcrLine
+{
+    Windows::Foundation::Collections::IVectorView<Windows::Media::Ocr::OcrWord> Words() const;
+    hstring Text() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IOcrResult
+{
+    Windows::Foundation::Collections::IVectorView<Windows::Media::Ocr::OcrLine> Lines() const;
+    Windows::Foundation::IReference<double> TextAngle() const;
+    hstring Text() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IOcrWord
+{
+    Windows::Foundation::Rect BoundingRect() const;
+    hstring Text() const;
+};
 
 }
 

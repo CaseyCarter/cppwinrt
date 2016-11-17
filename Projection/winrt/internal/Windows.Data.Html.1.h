@@ -24,7 +24,11 @@ namespace ABI {
 
 namespace Windows::Data::Html {
 
-template <typename T> struct impl_IHtmlUtilities;
+template <typename D>
+struct WINRT_EBO impl_IHtmlUtilities
+{
+    hstring ConvertToText(hstring_ref html) const;
+};
 
 }
 

@@ -55,10 +55,37 @@ template <> struct traits<Windows::Media::SpeechSynthesis::VoiceInformation> { u
 
 namespace Windows::Media::SpeechSynthesis {
 
-template <typename T> struct impl_IInstalledVoicesStatic;
-template <typename T> struct impl_ISpeechSynthesisStream;
-template <typename T> struct impl_ISpeechSynthesizer;
-template <typename T> struct impl_IVoiceInformation;
+template <typename D>
+struct WINRT_EBO impl_IInstalledVoicesStatic
+{
+    Windows::Foundation::Collections::IVectorView<Windows::Media::SpeechSynthesis::VoiceInformation> AllVoices() const;
+    Windows::Media::SpeechSynthesis::VoiceInformation DefaultVoice() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpeechSynthesisStream
+{
+    Windows::Foundation::Collections::IVectorView<Windows::Media::IMediaMarker> Markers() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpeechSynthesizer
+{
+    Windows::Foundation::IAsyncOperation<Windows::Media::SpeechSynthesis::SpeechSynthesisStream> SynthesizeTextToStreamAsync(hstring_ref text) const;
+    Windows::Foundation::IAsyncOperation<Windows::Media::SpeechSynthesis::SpeechSynthesisStream> SynthesizeSsmlToStreamAsync(hstring_ref Ssml) const;
+    void Voice(const Windows::Media::SpeechSynthesis::VoiceInformation & value) const;
+    Windows::Media::SpeechSynthesis::VoiceInformation Voice() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVoiceInformation
+{
+    hstring DisplayName() const;
+    hstring Id() const;
+    hstring Language() const;
+    hstring Description() const;
+    Windows::Media::SpeechSynthesis::VoiceGender Gender() const;
+};
 
 }
 

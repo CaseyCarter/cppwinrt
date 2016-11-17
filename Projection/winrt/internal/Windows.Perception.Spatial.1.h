@@ -192,22 +192,144 @@ template <> struct traits<Windows::Perception::Spatial::SpatialStationaryFrameOf
 
 namespace Windows::Perception::Spatial {
 
-template <typename T> struct impl_ISpatialAnchor;
-template <typename T> struct impl_ISpatialAnchor2;
-template <typename T> struct impl_ISpatialAnchorManagerStatics;
-template <typename T> struct impl_ISpatialAnchorRawCoordinateSystemAdjustedEventArgs;
-template <typename T> struct impl_ISpatialAnchorStatics;
-template <typename T> struct impl_ISpatialAnchorStore;
-template <typename T> struct impl_ISpatialAnchorTransferManagerStatics;
-template <typename T> struct impl_ISpatialBoundingVolume;
-template <typename T> struct impl_ISpatialBoundingVolumeStatics;
-template <typename T> struct impl_ISpatialCoordinateSystem;
-template <typename T> struct impl_ISpatialLocation;
-template <typename T> struct impl_ISpatialLocator;
-template <typename T> struct impl_ISpatialLocatorAttachedFrameOfReference;
-template <typename T> struct impl_ISpatialLocatorPositionalTrackingDeactivatingEventArgs;
-template <typename T> struct impl_ISpatialLocatorStatics;
-template <typename T> struct impl_ISpatialStationaryFrameOfReference;
+template <typename D>
+struct WINRT_EBO impl_ISpatialAnchor
+{
+    Windows::Perception::Spatial::SpatialCoordinateSystem CoordinateSystem() const;
+    Windows::Perception::Spatial::SpatialCoordinateSystem RawCoordinateSystem() const;
+    event_token RawCoordinateSystemAdjusted(const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialAnchor, Windows::Perception::Spatial::SpatialAnchorRawCoordinateSystemAdjustedEventArgs> & handler) const;
+    using RawCoordinateSystemAdjusted_revoker = event_revoker<ISpatialAnchor>;
+    RawCoordinateSystemAdjusted_revoker RawCoordinateSystemAdjusted(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialAnchor, Windows::Perception::Spatial::SpatialAnchorRawCoordinateSystemAdjustedEventArgs> & handler) const;
+    void RawCoordinateSystemAdjusted(event_token cookie) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpatialAnchor2
+{
+    bool RemovedByUser() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpatialAnchorManagerStatics
+{
+    Windows::Foundation::IAsyncOperation<Windows::Perception::Spatial::SpatialAnchorStore> RequestStoreAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpatialAnchorRawCoordinateSystemAdjustedEventArgs
+{
+    Windows::Foundation::Numerics::float4x4 OldRawCoordinateSystemToNewRawCoordinateSystemTransform() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpatialAnchorStatics
+{
+    Windows::Perception::Spatial::SpatialAnchor TryCreateRelativeTo(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const;
+    Windows::Perception::Spatial::SpatialAnchor TryCreateRelativeTo(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem, const Windows::Foundation::Numerics::float3 & position) const;
+    Windows::Perception::Spatial::SpatialAnchor TryCreateRelativeTo(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem, const Windows::Foundation::Numerics::float3 & position, const Windows::Foundation::Numerics::quaternion & orientation) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpatialAnchorStore
+{
+    Windows::Foundation::Collections::IMapView<hstring, Windows::Perception::Spatial::SpatialAnchor> GetAllSavedAnchors() const;
+    bool TrySave(hstring_ref id, const Windows::Perception::Spatial::SpatialAnchor & anchor) const;
+    void Remove(hstring_ref id) const;
+    void Clear() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpatialAnchorTransferManagerStatics
+{
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IMapView<hstring, Windows::Perception::Spatial::SpatialAnchor>> TryImportAnchorsAsync(const Windows::Storage::Streams::IInputStream & stream) const;
+    Windows::Foundation::IAsyncOperation<bool> TryExportAnchorsAsync(const Windows::Foundation::Collections::IIterable<Windows::Foundation::Collections::IKeyValuePair<hstring, Windows::Perception::Spatial::SpatialAnchor>> & anchors, const Windows::Storage::Streams::IOutputStream & stream) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::Perception::Spatial::SpatialPerceptionAccessStatus> RequestAccessAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpatialBoundingVolume
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpatialBoundingVolumeStatics
+{
+    Windows::Perception::Spatial::SpatialBoundingVolume FromBox(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem, const Windows::Perception::Spatial::SpatialBoundingBox & box) const;
+    Windows::Perception::Spatial::SpatialBoundingVolume FromOrientedBox(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem, const Windows::Perception::Spatial::SpatialBoundingOrientedBox & box) const;
+    Windows::Perception::Spatial::SpatialBoundingVolume FromSphere(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem, const Windows::Perception::Spatial::SpatialBoundingSphere & sphere) const;
+    Windows::Perception::Spatial::SpatialBoundingVolume FromFrustum(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem, const Windows::Perception::Spatial::SpatialBoundingFrustum & frustum) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpatialCoordinateSystem
+{
+    Windows::Foundation::IReference<Windows::Foundation::Numerics::float4x4> TryGetTransformTo(const Windows::Perception::Spatial::SpatialCoordinateSystem & target) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpatialLocation
+{
+    Windows::Foundation::Numerics::float3 Position() const;
+    Windows::Foundation::Numerics::quaternion Orientation() const;
+    Windows::Foundation::Numerics::float3 AbsoluteLinearVelocity() const;
+    Windows::Foundation::Numerics::float3 AbsoluteLinearAcceleration() const;
+    Windows::Foundation::Numerics::quaternion AbsoluteAngularVelocity() const;
+    Windows::Foundation::Numerics::quaternion AbsoluteAngularAcceleration() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpatialLocator
+{
+    Windows::Perception::Spatial::SpatialLocatability Locatability() const;
+    event_token LocatabilityChanged(const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::IInspectable> & handler) const;
+    using LocatabilityChanged_revoker = event_revoker<ISpatialLocator>;
+    LocatabilityChanged_revoker LocatabilityChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::IInspectable> & handler) const;
+    void LocatabilityChanged(event_token cookie) const;
+    event_token PositionalTrackingDeactivating(const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::Perception::Spatial::SpatialLocatorPositionalTrackingDeactivatingEventArgs> & handler) const;
+    using PositionalTrackingDeactivating_revoker = event_revoker<ISpatialLocator>;
+    PositionalTrackingDeactivating_revoker PositionalTrackingDeactivating(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Perception::Spatial::SpatialLocator, Windows::Perception::Spatial::SpatialLocatorPositionalTrackingDeactivatingEventArgs> & handler) const;
+    void PositionalTrackingDeactivating(event_token cookie) const;
+    Windows::Perception::Spatial::SpatialLocation TryLocateAtTimestamp(const Windows::Perception::PerceptionTimestamp & timestamp, const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const;
+    Windows::Perception::Spatial::SpatialLocatorAttachedFrameOfReference CreateAttachedFrameOfReferenceAtCurrentHeading() const;
+    Windows::Perception::Spatial::SpatialLocatorAttachedFrameOfReference CreateAttachedFrameOfReferenceAtCurrentHeading(const Windows::Foundation::Numerics::float3 & relativePosition) const;
+    Windows::Perception::Spatial::SpatialLocatorAttachedFrameOfReference CreateAttachedFrameOfReferenceAtCurrentHeading(const Windows::Foundation::Numerics::float3 & relativePosition, const Windows::Foundation::Numerics::quaternion & relativeOrientation) const;
+    Windows::Perception::Spatial::SpatialLocatorAttachedFrameOfReference CreateAttachedFrameOfReferenceAtCurrentHeading(const Windows::Foundation::Numerics::float3 & relativePosition, const Windows::Foundation::Numerics::quaternion & relativeOrientation, double relativeHeadingInRadians) const;
+    Windows::Perception::Spatial::SpatialStationaryFrameOfReference CreateStationaryFrameOfReferenceAtCurrentLocation() const;
+    Windows::Perception::Spatial::SpatialStationaryFrameOfReference CreateStationaryFrameOfReferenceAtCurrentLocation(const Windows::Foundation::Numerics::float3 & relativePosition) const;
+    Windows::Perception::Spatial::SpatialStationaryFrameOfReference CreateStationaryFrameOfReferenceAtCurrentLocation(const Windows::Foundation::Numerics::float3 & relativePosition, const Windows::Foundation::Numerics::quaternion & relativeOrientation) const;
+    Windows::Perception::Spatial::SpatialStationaryFrameOfReference CreateStationaryFrameOfReferenceAtCurrentLocation(const Windows::Foundation::Numerics::float3 & relativePosition, const Windows::Foundation::Numerics::quaternion & relativeOrientation, double relativeHeadingInRadians) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpatialLocatorAttachedFrameOfReference
+{
+    Windows::Foundation::Numerics::float3 RelativePosition() const;
+    void RelativePosition(const Windows::Foundation::Numerics::float3 & value) const;
+    Windows::Foundation::Numerics::quaternion RelativeOrientation() const;
+    void RelativeOrientation(const Windows::Foundation::Numerics::quaternion & value) const;
+    void AdjustHeading(double headingOffsetInRadians) const;
+    Windows::Perception::Spatial::SpatialCoordinateSystem GetStationaryCoordinateSystemAtTimestamp(const Windows::Perception::PerceptionTimestamp & timestamp) const;
+    Windows::Foundation::IReference<double> TryGetRelativeHeadingAtTimestamp(const Windows::Perception::PerceptionTimestamp & timestamp) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpatialLocatorPositionalTrackingDeactivatingEventArgs
+{
+    bool Canceled() const;
+    void Canceled(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpatialLocatorStatics
+{
+    Windows::Perception::Spatial::SpatialLocator GetDefault() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpatialStationaryFrameOfReference
+{
+    Windows::Perception::Spatial::SpatialCoordinateSystem CoordinateSystem() const;
+};
 
 }
 

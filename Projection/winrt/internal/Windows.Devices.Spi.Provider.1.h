@@ -60,11 +60,49 @@ template <> struct traits<Windows::Devices::Spi::Provider::ProviderSpiConnection
 
 namespace Windows::Devices::Spi::Provider {
 
-template <typename T> struct impl_IProviderSpiConnectionSettings;
-template <typename T> struct impl_IProviderSpiConnectionSettingsFactory;
-template <typename T> struct impl_ISpiControllerProvider;
-template <typename T> struct impl_ISpiDeviceProvider;
-template <typename T> struct impl_ISpiProvider;
+template <typename D>
+struct WINRT_EBO impl_IProviderSpiConnectionSettings
+{
+    int32_t ChipSelectLine() const;
+    void ChipSelectLine(int32_t value) const;
+    Windows::Devices::Spi::Provider::ProviderSpiMode Mode() const;
+    void Mode(Windows::Devices::Spi::Provider::ProviderSpiMode value) const;
+    int32_t DataBitLength() const;
+    void DataBitLength(int32_t value) const;
+    int32_t ClockFrequency() const;
+    void ClockFrequency(int32_t value) const;
+    Windows::Devices::Spi::Provider::ProviderSpiSharingMode SharingMode() const;
+    void SharingMode(Windows::Devices::Spi::Provider::ProviderSpiSharingMode value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IProviderSpiConnectionSettingsFactory
+{
+    Windows::Devices::Spi::Provider::ProviderSpiConnectionSettings Create(int32_t chipSelectLine) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpiControllerProvider
+{
+    Windows::Devices::Spi::Provider::ISpiDeviceProvider GetDeviceProvider(const Windows::Devices::Spi::Provider::ProviderSpiConnectionSettings & settings) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpiDeviceProvider
+{
+    hstring DeviceId() const;
+    Windows::Devices::Spi::Provider::ProviderSpiConnectionSettings ConnectionSettings() const;
+    void Write(array_ref<const uint8_t> buffer) const;
+    void Read(array_ref<uint8_t> buffer) const;
+    void TransferSequential(array_ref<const uint8_t> writeBuffer, array_ref<uint8_t> readBuffer) const;
+    void TransferFullDuplex(array_ref<const uint8_t> writeBuffer, array_ref<uint8_t> readBuffer) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpiProvider
+{
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::Spi::Provider::ISpiControllerProvider>> GetControllersAsync() const;
+};
 
 }
 

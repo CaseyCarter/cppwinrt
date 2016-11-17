@@ -61,6 +61,26 @@ struct TriggeredConnectionStateChangedEventArgs;
 
 namespace Windows::Networking::Proximity {
 
+template <typename T> struct impl_IConnectionRequestedEventArgs;
+template <typename T> struct impl_IPeerFinderStatics;
+template <typename T> struct impl_IPeerFinderStatics2;
+template <typename T> struct impl_IPeerInformation;
+template <typename T> struct impl_IPeerInformation3;
+template <typename T> struct impl_IPeerInformationWithHostAndService;
+template <typename T> struct impl_IPeerWatcher;
+template <typename T> struct impl_IProximityDevice;
+template <typename T> struct impl_IProximityDeviceStatics;
+template <typename T> struct impl_IProximityMessage;
+template <typename T> struct impl_ITriggeredConnectionStateChangedEventArgs;
+template <typename T> struct impl_DeviceArrivedEventHandler;
+template <typename T> struct impl_DeviceDepartedEventHandler;
+template <typename T> struct impl_MessageReceivedHandler;
+template <typename T> struct impl_MessageTransmittedHandler;
+
+}
+
+namespace Windows::Networking::Proximity {
+
 enum class PeerDiscoveryTypes : unsigned
 {
     None = 0x0,

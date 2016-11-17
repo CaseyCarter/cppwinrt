@@ -32,6 +32,15 @@ struct VoiceInformation;
 
 namespace Windows::Media::SpeechSynthesis {
 
+template <typename T> struct impl_IInstalledVoicesStatic;
+template <typename T> struct impl_ISpeechSynthesisStream;
+template <typename T> struct impl_ISpeechSynthesizer;
+template <typename T> struct impl_IVoiceInformation;
+
+}
+
+namespace Windows::Media::SpeechSynthesis {
+
 enum class VoiceGender
 {
     Male = 0,

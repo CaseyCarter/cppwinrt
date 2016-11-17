@@ -163,25 +163,142 @@ template <> struct traits<Windows::Devices::Perception::Provider::PerceptionVide
 
 namespace Windows::Devices::Perception::Provider {
 
-template <typename T> struct impl_IKnownPerceptionFrameKindStatics;
-template <typename T> struct impl_IPerceptionControlGroup;
-template <typename T> struct impl_IPerceptionControlGroupFactory;
-template <typename T> struct impl_IPerceptionCorrelation;
-template <typename T> struct impl_IPerceptionCorrelationFactory;
-template <typename T> struct impl_IPerceptionCorrelationGroup;
-template <typename T> struct impl_IPerceptionCorrelationGroupFactory;
-template <typename T> struct impl_IPerceptionFaceAuthenticationGroup;
-template <typename T> struct impl_IPerceptionFaceAuthenticationGroupFactory;
-template <typename T> struct impl_IPerceptionFrame;
-template <typename T> struct impl_IPerceptionFrameProvider;
-template <typename T> struct impl_IPerceptionFrameProviderInfo;
-template <typename T> struct impl_IPerceptionFrameProviderManager;
-template <typename T> struct impl_IPerceptionFrameProviderManagerServiceStatics;
-template <typename T> struct impl_IPerceptionPropertyChangeRequest;
-template <typename T> struct impl_IPerceptionVideoFrameAllocator;
-template <typename T> struct impl_IPerceptionVideoFrameAllocatorFactory;
-template <typename T> struct impl_PerceptionStartFaceAuthenticationHandler;
-template <typename T> struct impl_PerceptionStopFaceAuthenticationHandler;
+template <typename D>
+struct WINRT_EBO impl_IKnownPerceptionFrameKindStatics
+{
+    hstring Color() const;
+    hstring Depth() const;
+    hstring Infrared() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPerceptionControlGroup
+{
+    Windows::Foundation::Collections::IVectorView<hstring> FrameProviderIds() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPerceptionControlGroupFactory
+{
+    Windows::Devices::Perception::Provider::PerceptionControlGroup Create(const Windows::Foundation::Collections::IIterable<hstring> & ids) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPerceptionCorrelation
+{
+    hstring TargetId() const;
+    Windows::Foundation::Numerics::float3 Position() const;
+    Windows::Foundation::Numerics::quaternion Orientation() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPerceptionCorrelationFactory
+{
+    Windows::Devices::Perception::Provider::PerceptionCorrelation Create(hstring_ref targetId, const Windows::Foundation::Numerics::float3 & position, const Windows::Foundation::Numerics::quaternion & orientation) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPerceptionCorrelationGroup
+{
+    Windows::Foundation::Collections::IVectorView<Windows::Devices::Perception::Provider::PerceptionCorrelation> RelativeLocations() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPerceptionCorrelationGroupFactory
+{
+    Windows::Devices::Perception::Provider::PerceptionCorrelationGroup Create(const Windows::Foundation::Collections::IIterable<Windows::Devices::Perception::Provider::PerceptionCorrelation> & relativeLocations) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPerceptionFaceAuthenticationGroup
+{
+    Windows::Foundation::Collections::IVectorView<hstring> FrameProviderIds() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPerceptionFaceAuthenticationGroupFactory
+{
+    Windows::Devices::Perception::Provider::PerceptionFaceAuthenticationGroup Create(const Windows::Foundation::Collections::IIterable<hstring> & ids, const Windows::Devices::Perception::Provider::PerceptionStartFaceAuthenticationHandler & startHandler, const Windows::Devices::Perception::Provider::PerceptionStopFaceAuthenticationHandler & stopHandler) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPerceptionFrame
+{
+    Windows::Foundation::TimeSpan RelativeTime() const;
+    void RelativeTime(const Windows::Foundation::TimeSpan & value) const;
+    Windows::Foundation::Collections::ValueSet Properties() const;
+    Windows::Foundation::IMemoryBuffer FrameData() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPerceptionFrameProvider
+{
+    Windows::Devices::Perception::Provider::PerceptionFrameProviderInfo FrameProviderInfo() const;
+    bool Available() const;
+    Windows::Foundation::Collections::IPropertySet Properties() const;
+    void Start() const;
+    void Stop() const;
+    void SetProperty(const Windows::Devices::Perception::Provider::PerceptionPropertyChangeRequest & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPerceptionFrameProviderInfo
+{
+    hstring Id() const;
+    void Id(hstring_ref value) const;
+    hstring DisplayName() const;
+    void DisplayName(hstring_ref value) const;
+    hstring DeviceKind() const;
+    void DeviceKind(hstring_ref value) const;
+    hstring FrameKind() const;
+    void FrameKind(hstring_ref value) const;
+    bool Hidden() const;
+    void Hidden(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPerceptionFrameProviderManager
+{
+    Windows::Devices::Perception::Provider::IPerceptionFrameProvider GetFrameProvider(const Windows::Devices::Perception::Provider::PerceptionFrameProviderInfo & frameProviderInfo) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPerceptionFrameProviderManagerServiceStatics
+{
+    void RegisterFrameProviderInfo(const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager & manager, const Windows::Devices::Perception::Provider::PerceptionFrameProviderInfo & frameProviderInfo) const;
+    void UnregisterFrameProviderInfo(const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager & manager, const Windows::Devices::Perception::Provider::PerceptionFrameProviderInfo & frameProviderInfo) const;
+    void RegisterFaceAuthenticationGroup(const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager & manager, const Windows::Devices::Perception::Provider::PerceptionFaceAuthenticationGroup & faceAuthenticationGroup) const;
+    void UnregisterFaceAuthenticationGroup(const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager & manager, const Windows::Devices::Perception::Provider::PerceptionFaceAuthenticationGroup & faceAuthenticationGroup) const;
+    void RegisterControlGroup(const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager & manager, const Windows::Devices::Perception::Provider::PerceptionControlGroup & controlGroup) const;
+    void UnregisterControlGroup(const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager & manager, const Windows::Devices::Perception::Provider::PerceptionControlGroup & controlGroup) const;
+    void RegisterCorrelationGroup(const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager & manager, const Windows::Devices::Perception::Provider::PerceptionCorrelationGroup & correlationGroup) const;
+    void UnregisterCorrelationGroup(const Windows::Devices::Perception::Provider::IPerceptionFrameProviderManager & manager, const Windows::Devices::Perception::Provider::PerceptionCorrelationGroup & correlationGroup) const;
+    void UpdateAvailabilityForProvider(const Windows::Devices::Perception::Provider::IPerceptionFrameProvider & provider, bool available) const;
+    void PublishFrameForProvider(const Windows::Devices::Perception::Provider::IPerceptionFrameProvider & provider, const Windows::Devices::Perception::Provider::PerceptionFrame & frame) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPerceptionPropertyChangeRequest
+{
+    hstring Name() const;
+    Windows::IInspectable Value() const;
+    Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeStatus Status() const;
+    void Status(Windows::Devices::Perception::PerceptionFrameSourcePropertyChangeStatus value) const;
+    Windows::Foundation::Deferral GetDeferral() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPerceptionVideoFrameAllocator
+{
+    Windows::Devices::Perception::Provider::PerceptionFrame AllocateFrame() const;
+    Windows::Devices::Perception::Provider::PerceptionFrame CopyFromVideoFrame(const Windows::Media::VideoFrame & frame) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPerceptionVideoFrameAllocatorFactory
+{
+    Windows::Devices::Perception::Provider::PerceptionVideoFrameAllocator Create(uint32_t maxOutstandingFrameCountForWrite, Windows::Graphics::Imaging::BitmapPixelFormat format, const Windows::Foundation::Size & resolution, Windows::Graphics::Imaging::BitmapAlphaMode alpha) const;
+};
 
 }
 

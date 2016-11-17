@@ -84,6 +84,35 @@ struct XamlRenderingBackgroundTask;
 
 namespace Windows::UI::Xaml::Media::Imaging {
 
+template <typename T> struct impl_IBitmapImage;
+template <typename T> struct impl_IBitmapImage2;
+template <typename T> struct impl_IBitmapImage3;
+template <typename T> struct impl_IBitmapImageFactory;
+template <typename T> struct impl_IBitmapImageStatics;
+template <typename T> struct impl_IBitmapImageStatics2;
+template <typename T> struct impl_IBitmapImageStatics3;
+template <typename T> struct impl_IBitmapSource;
+template <typename T> struct impl_IBitmapSourceFactory;
+template <typename T> struct impl_IBitmapSourceStatics;
+template <typename T> struct impl_IDownloadProgressEventArgs;
+template <typename T> struct impl_IRenderTargetBitmap;
+template <typename T> struct impl_IRenderTargetBitmapStatics;
+template <typename T> struct impl_ISoftwareBitmapSource;
+template <typename T> struct impl_ISurfaceImageSource;
+template <typename T> struct impl_ISurfaceImageSourceFactory;
+template <typename T> struct impl_IVirtualSurfaceImageSource;
+template <typename T> struct impl_IVirtualSurfaceImageSourceFactory;
+template <typename T> struct impl_IWriteableBitmap;
+template <typename T> struct impl_IWriteableBitmapFactory;
+template <typename T> struct impl_IXamlRenderingBackgroundTask;
+template <typename T> struct impl_IXamlRenderingBackgroundTaskFactory;
+template <typename T> struct impl_IXamlRenderingBackgroundTaskOverrides;
+template <typename T> struct impl_DownloadProgressEventHandler;
+
+}
+
+namespace Windows::UI::Xaml::Media::Imaging {
+
 enum class BitmapCreateOptions : unsigned
 {
     None = 0x0,

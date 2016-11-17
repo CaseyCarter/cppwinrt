@@ -64,59 +64,6 @@ template <> struct __declspec(uuid("76f50b4e-7aa7-565b-aada-b0c1cc144ed0")) __de
 
 namespace Windows::Devices::Geolocation::Geofencing {
 
-template <typename D>
-struct WINRT_EBO impl_IGeofence
-{
-    Windows::Foundation::DateTime StartTime() const;
-    Windows::Foundation::TimeSpan Duration() const;
-    Windows::Foundation::TimeSpan DwellTime() const;
-    hstring Id() const;
-    Windows::Devices::Geolocation::Geofencing::MonitoredGeofenceStates MonitoredStates() const;
-    Windows::Devices::Geolocation::IGeoshape Geoshape() const;
-    bool SingleUse() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IGeofenceFactory
-{
-    Windows::Devices::Geolocation::Geofencing::Geofence Create(hstring_ref id, const Windows::Devices::Geolocation::IGeoshape & geoshape) const;
-    Windows::Devices::Geolocation::Geofencing::Geofence CreateWithMonitorStates(hstring_ref id, const Windows::Devices::Geolocation::IGeoshape & geoshape, Windows::Devices::Geolocation::Geofencing::MonitoredGeofenceStates monitoredStates, bool singleUse) const;
-    Windows::Devices::Geolocation::Geofencing::Geofence CreateWithMonitorStatesAndDwellTime(hstring_ref id, const Windows::Devices::Geolocation::IGeoshape & geoshape, Windows::Devices::Geolocation::Geofencing::MonitoredGeofenceStates monitoredStates, bool singleUse, const Windows::Foundation::TimeSpan & dwellTime) const;
-    Windows::Devices::Geolocation::Geofencing::Geofence CreateWithMonitorStatesDwellTimeStartTimeAndDuration(hstring_ref id, const Windows::Devices::Geolocation::IGeoshape & geoshape, Windows::Devices::Geolocation::Geofencing::MonitoredGeofenceStates monitoredStates, bool singleUse, const Windows::Foundation::TimeSpan & dwellTime, const Windows::Foundation::DateTime & startTime, const Windows::Foundation::TimeSpan & duration) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IGeofenceMonitor
-{
-    Windows::Devices::Geolocation::Geofencing::GeofenceMonitorStatus Status() const;
-    Windows::Foundation::Collections::IVector<Windows::Devices::Geolocation::Geofencing::Geofence> Geofences() const;
-    Windows::Devices::Geolocation::Geoposition LastKnownGeoposition() const;
-    event_token GeofenceStateChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geofencing::GeofenceMonitor, Windows::IInspectable> & eventHandler) const;
-    using GeofenceStateChanged_revoker = event_revoker<IGeofenceMonitor>;
-    GeofenceStateChanged_revoker GeofenceStateChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geofencing::GeofenceMonitor, Windows::IInspectable> & eventHandler) const;
-    void GeofenceStateChanged(event_token token) const;
-    Windows::Foundation::Collections::IVectorView<Windows::Devices::Geolocation::Geofencing::GeofenceStateChangeReport> ReadReports() const;
-    event_token StatusChanged(const Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geofencing::GeofenceMonitor, Windows::IInspectable> & eventHandler) const;
-    using StatusChanged_revoker = event_revoker<IGeofenceMonitor>;
-    StatusChanged_revoker StatusChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::Geolocation::Geofencing::GeofenceMonitor, Windows::IInspectable> & eventHandler) const;
-    void StatusChanged(event_token token) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IGeofenceMonitorStatics
-{
-    Windows::Devices::Geolocation::Geofencing::GeofenceMonitor Current() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IGeofenceStateChangeReport
-{
-    Windows::Devices::Geolocation::Geofencing::GeofenceState NewState() const;
-    Windows::Devices::Geolocation::Geofencing::Geofence Geofence() const;
-    Windows::Devices::Geolocation::Geoposition Geoposition() const;
-    Windows::Devices::Geolocation::Geofencing::GeofenceRemovalReason RemovalReason() const;
-};
-
 struct IGeofence :
     Windows::IInspectable,
     impl::consume<IGeofence>

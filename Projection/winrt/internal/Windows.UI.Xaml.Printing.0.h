@@ -44,6 +44,20 @@ struct PrintDocument;
 
 namespace Windows::UI::Xaml::Printing {
 
+template <typename T> struct impl_IAddPagesEventArgs;
+template <typename T> struct impl_IGetPreviewPageEventArgs;
+template <typename T> struct impl_IPaginateEventArgs;
+template <typename T> struct impl_IPrintDocument;
+template <typename T> struct impl_IPrintDocumentFactory;
+template <typename T> struct impl_IPrintDocumentStatics;
+template <typename T> struct impl_AddPagesEventHandler;
+template <typename T> struct impl_GetPreviewPageEventHandler;
+template <typename T> struct impl_PaginateEventHandler;
+
+}
+
+namespace Windows::UI::Xaml::Printing {
+
 enum class PreviewPageCountType
 {
     Final = 0,

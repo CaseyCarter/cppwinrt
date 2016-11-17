@@ -104,6 +104,41 @@ struct SymmetricKeyAlgorithmProvider;
 
 namespace Windows::Security::Cryptography::Core {
 
+template <typename T> struct impl_IAsymmetricAlgorithmNamesStatics;
+template <typename T> struct impl_IAsymmetricAlgorithmNamesStatics2;
+template <typename T> struct impl_IAsymmetricKeyAlgorithmProvider;
+template <typename T> struct impl_IAsymmetricKeyAlgorithmProvider2;
+template <typename T> struct impl_IAsymmetricKeyAlgorithmProviderStatics;
+template <typename T> struct impl_ICryptographicEngineStatics;
+template <typename T> struct impl_ICryptographicEngineStatics2;
+template <typename T> struct impl_ICryptographicKey;
+template <typename T> struct impl_IEccCurveNamesStatics;
+template <typename T> struct impl_IEncryptedAndAuthenticatedData;
+template <typename T> struct impl_IHashAlgorithmNamesStatics;
+template <typename T> struct impl_IHashAlgorithmProvider;
+template <typename T> struct impl_IHashAlgorithmProviderStatics;
+template <typename T> struct impl_IHashComputation;
+template <typename T> struct impl_IKeyDerivationAlgorithmNamesStatics;
+template <typename T> struct impl_IKeyDerivationAlgorithmNamesStatics2;
+template <typename T> struct impl_IKeyDerivationAlgorithmProvider;
+template <typename T> struct impl_IKeyDerivationAlgorithmProviderStatics;
+template <typename T> struct impl_IKeyDerivationParameters;
+template <typename T> struct impl_IKeyDerivationParameters2;
+template <typename T> struct impl_IKeyDerivationParametersStatics;
+template <typename T> struct impl_IKeyDerivationParametersStatics2;
+template <typename T> struct impl_IMacAlgorithmNamesStatics;
+template <typename T> struct impl_IMacAlgorithmProvider;
+template <typename T> struct impl_IMacAlgorithmProvider2;
+template <typename T> struct impl_IMacAlgorithmProviderStatics;
+template <typename T> struct impl_IPersistedKeyProviderStatics;
+template <typename T> struct impl_ISymmetricAlgorithmNamesStatics;
+template <typename T> struct impl_ISymmetricKeyAlgorithmProvider;
+template <typename T> struct impl_ISymmetricKeyAlgorithmProviderStatics;
+
+}
+
+namespace Windows::Security::Cryptography::Core {
+
 enum class Capi1KdfTargetAlgorithm
 {
     NotAes = 0,

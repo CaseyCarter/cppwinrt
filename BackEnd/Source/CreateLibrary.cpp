@@ -71,7 +71,9 @@ static void WriteBaseHeader()
     Write(out, Strings::base_weak);                  // #include "base_weak.h"
     Write(out, Strings::base_implements);            // #include "base_implements.h"
     Write(out, Strings::base_composable);            // #include "base_composable.h"
+    Write(out, Strings::base_agile);                 // #include "base_agile.h"
     Write(out, Strings::base_event_consume);         // #include "base_event_consume.h"
+    Write(out, Strings::base_event_produce);         // #include "base_event_produce.h"
     Write(out, Strings::base_activation);            // #include "base_activation.h"
     Write(out, Strings::base_delegate);              // #include "base_delegate.h"
     Write(out, Strings::base_reference);             // #include "base_reference.h"
@@ -81,7 +83,6 @@ static void WriteBaseHeader()
     Write(out, Strings::base_foundation);            // #include "base_foundation.h"
     Write(out, Strings::base_async_consume);         // #include "base_async_consume.h"
     Write(out, Strings::base_async_produce);         // #include "base_async_produce.h"
-    Write(out, Strings::base_agile);                 // #include "base_agile.h"
     Write(out, Strings::base_await_consume);         // #include "base_await_consume.h"
     Write(out, Strings::base_await_produce);         // #include "base_await_produce.h"
 
@@ -118,6 +119,7 @@ static void GenerateForward()
     WriteRootNamespaceBegin(out);
 
     WriteForwards(out);
+    WriteInterfaceImplForwards(out);
     WriteEnumerations(out);
 
     out.WriteNamespace();
@@ -140,7 +142,7 @@ static void GenerateAbi()
     WriteAbiInterfaces(out);
     WriteAbiClassDeclarations(out);
 
-    WriteInterfaceImplForwards(out);
+    WriteInterfaceConsumers(out);
 
     WriteInterfaceTraits(out);
 
@@ -163,7 +165,6 @@ static void GenerateInterface()
     WriteRootNamespaceBegin(out);
 
     WriteGenericInterfaces(out);
-    WriteInterfaceConsumers(out);
     WriteInterfaceDefinitions(out);
 
     out.WriteNamespace();

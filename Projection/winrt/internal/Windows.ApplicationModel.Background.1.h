@@ -485,77 +485,465 @@ template <> struct traits<Windows::ApplicationModel::Background::UserNotificatio
 
 namespace Windows::ApplicationModel::Background {
 
-template <typename T> struct impl_IActivitySensorTrigger;
-template <typename T> struct impl_IActivitySensorTriggerFactory;
-template <typename T> struct impl_IApplicationTrigger;
-template <typename T> struct impl_IApplicationTriggerDetails;
-template <typename T> struct impl_IAppointmentStoreNotificationTrigger;
-template <typename T> struct impl_IBackgroundCondition;
-template <typename T> struct impl_IBackgroundExecutionManagerStatics;
-template <typename T> struct impl_IBackgroundTask;
-template <typename T> struct impl_IBackgroundTaskBuilder;
-template <typename T> struct impl_IBackgroundTaskBuilder2;
-template <typename T> struct impl_IBackgroundTaskBuilder3;
-template <typename T> struct impl_IBackgroundTaskCompletedEventArgs;
-template <typename T> struct impl_IBackgroundTaskDeferral;
-template <typename T> struct impl_IBackgroundTaskInstance;
-template <typename T> struct impl_IBackgroundTaskInstance2;
-template <typename T> struct impl_IBackgroundTaskInstance4;
-template <typename T> struct impl_IBackgroundTaskProgressEventArgs;
-template <typename T> struct impl_IBackgroundTaskRegistration;
-template <typename T> struct impl_IBackgroundTaskRegistration2;
-template <typename T> struct impl_IBackgroundTaskRegistrationStatics;
-template <typename T> struct impl_IBackgroundTrigger;
-template <typename T> struct impl_IBackgroundWorkCostStatics;
-template <typename T> struct impl_IBluetoothLEAdvertisementPublisherTrigger;
-template <typename T> struct impl_IBluetoothLEAdvertisementWatcherTrigger;
-template <typename T> struct impl_ICachedFileUpdaterTrigger;
-template <typename T> struct impl_ICachedFileUpdaterTriggerDetails;
-template <typename T> struct impl_IChatMessageNotificationTrigger;
-template <typename T> struct impl_IChatMessageReceivedNotificationTrigger;
-template <typename T> struct impl_IContactStoreNotificationTrigger;
-template <typename T> struct impl_IContentPrefetchTrigger;
-template <typename T> struct impl_IContentPrefetchTriggerFactory;
-template <typename T> struct impl_IDeviceConnectionChangeTrigger;
-template <typename T> struct impl_IDeviceConnectionChangeTriggerStatics;
-template <typename T> struct impl_IDeviceManufacturerNotificationTrigger;
-template <typename T> struct impl_IDeviceManufacturerNotificationTriggerFactory;
-template <typename T> struct impl_IDeviceServicingTrigger;
-template <typename T> struct impl_IDeviceUseTrigger;
-template <typename T> struct impl_IDeviceWatcherTrigger;
-template <typename T> struct impl_IEmailStoreNotificationTrigger;
-template <typename T> struct impl_IGattCharacteristicNotificationTrigger;
-template <typename T> struct impl_IGattCharacteristicNotificationTriggerFactory;
-template <typename T> struct impl_ILocationTrigger;
-template <typename T> struct impl_ILocationTriggerFactory;
-template <typename T> struct impl_IMaintenanceTrigger;
-template <typename T> struct impl_IMaintenanceTriggerFactory;
-template <typename T> struct impl_IMediaProcessingTrigger;
-template <typename T> struct impl_INetworkOperatorHotspotAuthenticationTrigger;
-template <typename T> struct impl_INetworkOperatorNotificationTrigger;
-template <typename T> struct impl_INetworkOperatorNotificationTriggerFactory;
-template <typename T> struct impl_IPushNotificationTriggerFactory;
-template <typename T> struct impl_IRcsEndUserMessageAvailableTrigger;
-template <typename T> struct impl_IRfcommConnectionTrigger;
-template <typename T> struct impl_ISecondaryAuthenticationFactorAuthenticationTrigger;
-template <typename T> struct impl_ISensorDataThresholdTrigger;
-template <typename T> struct impl_ISensorDataThresholdTriggerFactory;
-template <typename T> struct impl_ISmsMessageReceivedTriggerFactory;
-template <typename T> struct impl_ISocketActivityTrigger;
-template <typename T> struct impl_IStorageLibraryContentChangedTrigger;
-template <typename T> struct impl_IStorageLibraryContentChangedTriggerStatics;
-template <typename T> struct impl_ISystemCondition;
-template <typename T> struct impl_ISystemConditionFactory;
-template <typename T> struct impl_ISystemTrigger;
-template <typename T> struct impl_ISystemTriggerFactory;
-template <typename T> struct impl_ITimeTrigger;
-template <typename T> struct impl_ITimeTriggerFactory;
-template <typename T> struct impl_IToastNotificationActionTriggerFactory;
-template <typename T> struct impl_IToastNotificationHistoryChangedTriggerFactory;
-template <typename T> struct impl_IUserNotificationChangedTriggerFactory;
-template <typename T> struct impl_BackgroundTaskCanceledEventHandler;
-template <typename T> struct impl_BackgroundTaskCompletedEventHandler;
-template <typename T> struct impl_BackgroundTaskProgressEventHandler;
+template <typename D>
+struct WINRT_EBO impl_IActivitySensorTrigger
+{
+    Windows::Foundation::Collections::IVector<winrt::Windows::Devices::Sensors::ActivityType> SubscribedActivities() const;
+    uint32_t ReportInterval() const;
+    Windows::Foundation::Collections::IVectorView<winrt::Windows::Devices::Sensors::ActivityType> SupportedActivities() const;
+    uint32_t MinimumReportInterval() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IActivitySensorTriggerFactory
+{
+    Windows::ApplicationModel::Background::ActivitySensorTrigger Create(uint32_t reportIntervalInMilliseconds) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IApplicationTrigger
+{
+    Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::ApplicationTriggerResult> RequestAsync() const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::ApplicationTriggerResult> RequestAsync(const Windows::Foundation::Collections::ValueSet & arguments) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IApplicationTriggerDetails
+{
+    Windows::Foundation::Collections::ValueSet Arguments() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAppointmentStoreNotificationTrigger
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundCondition
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundExecutionManagerStatics
+{
+    Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::BackgroundAccessStatus> RequestAccessAsync() const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::BackgroundAccessStatus> RequestAccessAsync(hstring_ref applicationId) const;
+    void RemoveAccess() const;
+    void RemoveAccess(hstring_ref applicationId) const;
+    Windows::ApplicationModel::Background::BackgroundAccessStatus GetAccessStatus() const;
+    Windows::ApplicationModel::Background::BackgroundAccessStatus GetAccessStatus(hstring_ref applicationId) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundTask
+{
+    void Run(const Windows::ApplicationModel::Background::IBackgroundTaskInstance & taskInstance) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundTaskBuilder
+{
+    void TaskEntryPoint(hstring_ref value) const;
+    hstring TaskEntryPoint() const;
+    void SetTrigger(const Windows::ApplicationModel::Background::IBackgroundTrigger & trigger) const;
+    void AddCondition(const Windows::ApplicationModel::Background::IBackgroundCondition & condition) const;
+    void Name(hstring_ref value) const;
+    hstring Name() const;
+    Windows::ApplicationModel::Background::BackgroundTaskRegistration Register() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundTaskBuilder2
+{
+    void CancelOnConditionLoss(bool value) const;
+    bool CancelOnConditionLoss() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundTaskBuilder3
+{
+    void IsNetworkRequested(bool value) const;
+    bool IsNetworkRequested() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundTaskCompletedEventArgs
+{
+    GUID InstanceId() const;
+    void CheckResult() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundTaskDeferral
+{
+    void Complete() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundTaskInstance
+{
+    GUID InstanceId() const;
+    Windows::ApplicationModel::Background::BackgroundTaskRegistration Task() const;
+    uint32_t Progress() const;
+    void Progress(uint32_t value) const;
+    Windows::IInspectable TriggerDetails() const;
+    event_token Canceled(const Windows::ApplicationModel::Background::BackgroundTaskCanceledEventHandler & cancelHandler) const;
+    using Canceled_revoker = event_revoker<IBackgroundTaskInstance>;
+    Canceled_revoker Canceled(auto_revoke_t, const Windows::ApplicationModel::Background::BackgroundTaskCanceledEventHandler & cancelHandler) const;
+    void Canceled(event_token cookie) const;
+    uint32_t SuspendedCount() const;
+    Windows::ApplicationModel::Background::BackgroundTaskDeferral GetDeferral() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundTaskInstance2
+{
+    uint32_t GetThrottleCount(Windows::ApplicationModel::Background::BackgroundTaskThrottleCounter counter) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundTaskInstance4
+{
+    Windows::System::User User() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundTaskProgressEventArgs
+{
+    GUID InstanceId() const;
+    uint32_t Progress() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundTaskRegistration
+{
+    GUID TaskId() const;
+    hstring Name() const;
+    event_token Progress(const Windows::ApplicationModel::Background::BackgroundTaskProgressEventHandler & handler) const;
+    using Progress_revoker = event_revoker<IBackgroundTaskRegistration>;
+    Progress_revoker Progress(auto_revoke_t, const Windows::ApplicationModel::Background::BackgroundTaskProgressEventHandler & handler) const;
+    void Progress(event_token cookie) const;
+    event_token Completed(const Windows::ApplicationModel::Background::BackgroundTaskCompletedEventHandler & handler) const;
+    using Completed_revoker = event_revoker<IBackgroundTaskRegistration>;
+    Completed_revoker Completed(auto_revoke_t, const Windows::ApplicationModel::Background::BackgroundTaskCompletedEventHandler & handler) const;
+    void Completed(event_token cookie) const;
+    void Unregister(bool cancelTask) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundTaskRegistration2
+{
+    Windows::ApplicationModel::Background::IBackgroundTrigger Trigger() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundTaskRegistrationStatics
+{
+    Windows::Foundation::Collections::IMapView<GUID, Windows::ApplicationModel::Background::IBackgroundTaskRegistration> AllTasks() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundTrigger
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBackgroundWorkCostStatics
+{
+    Windows::ApplicationModel::Background::BackgroundWorkCostValue CurrentBackgroundWorkCost() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBluetoothLEAdvertisementPublisherTrigger
+{
+    Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisement Advertisement() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IBluetoothLEAdvertisementWatcherTrigger
+{
+    Windows::Foundation::TimeSpan MinSamplingInterval() const;
+    Windows::Foundation::TimeSpan MaxSamplingInterval() const;
+    Windows::Foundation::TimeSpan MinOutOfRangeTimeout() const;
+    Windows::Foundation::TimeSpan MaxOutOfRangeTimeout() const;
+    Windows::Devices::Bluetooth::BluetoothSignalStrengthFilter SignalStrengthFilter() const;
+    void SignalStrengthFilter(const Windows::Devices::Bluetooth::BluetoothSignalStrengthFilter & value) const;
+    Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFilter AdvertisementFilter() const;
+    void AdvertisementFilter(const Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementFilter & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICachedFileUpdaterTrigger
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICachedFileUpdaterTriggerDetails
+{
+    Windows::Storage::Provider::CachedFileTarget UpdateTarget() const;
+    Windows::Storage::Provider::FileUpdateRequest UpdateRequest() const;
+    bool CanRequestUserInput() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IChatMessageNotificationTrigger
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IChatMessageReceivedNotificationTrigger
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContactStoreNotificationTrigger
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContentPrefetchTrigger
+{
+    Windows::Foundation::TimeSpan WaitInterval() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IContentPrefetchTriggerFactory
+{
+    Windows::ApplicationModel::Background::ContentPrefetchTrigger Create(const Windows::Foundation::TimeSpan & waitInterval) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDeviceConnectionChangeTrigger
+{
+    hstring DeviceId() const;
+    bool CanMaintainConnection() const;
+    bool MaintainConnection() const;
+    void MaintainConnection(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDeviceConnectionChangeTriggerStatics
+{
+    Windows::Foundation::IAsyncOperation<Windows::ApplicationModel::Background::DeviceConnectionChangeTrigger> FromIdAsync(hstring_ref deviceId) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDeviceManufacturerNotificationTrigger
+{
+    hstring TriggerQualifier() const;
+    bool OneShot() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDeviceManufacturerNotificationTriggerFactory
+{
+    Windows::ApplicationModel::Background::DeviceManufacturerNotificationTrigger Create(hstring_ref triggerQualifier, bool oneShot) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDeviceServicingTrigger
+{
+    Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> RequestAsync(hstring_ref deviceId, const Windows::Foundation::TimeSpan & expectedDuration) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> RequestAsync(hstring_ref deviceId, const Windows::Foundation::TimeSpan & expectedDuration, hstring_ref arguments) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDeviceUseTrigger
+{
+    Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> RequestAsync(hstring_ref deviceId) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::DeviceTriggerResult> RequestAsync(hstring_ref deviceId, hstring_ref arguments) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDeviceWatcherTrigger
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IEmailStoreNotificationTrigger
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGattCharacteristicNotificationTrigger
+{
+    Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic Characteristic() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGattCharacteristicNotificationTriggerFactory
+{
+    Windows::ApplicationModel::Background::GattCharacteristicNotificationTrigger Create(const Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic & characteristic) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILocationTrigger
+{
+    Windows::ApplicationModel::Background::LocationTriggerType TriggerType() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILocationTriggerFactory
+{
+    Windows::ApplicationModel::Background::LocationTrigger Create(Windows::ApplicationModel::Background::LocationTriggerType triggerType) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMaintenanceTrigger
+{
+    uint32_t FreshnessTime() const;
+    bool OneShot() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMaintenanceTriggerFactory
+{
+    Windows::ApplicationModel::Background::MaintenanceTrigger Create(uint32_t freshnessTime, bool oneShot) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaProcessingTrigger
+{
+    Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::MediaProcessingTriggerResult> RequestAsync() const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::ApplicationModel::Background::MediaProcessingTriggerResult> RequestAsync(const Windows::Foundation::Collections::ValueSet & arguments) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_INetworkOperatorHotspotAuthenticationTrigger
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_INetworkOperatorNotificationTrigger
+{
+    hstring NetworkAccountId() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_INetworkOperatorNotificationTriggerFactory
+{
+    Windows::ApplicationModel::Background::NetworkOperatorNotificationTrigger Create(hstring_ref networkAccountId) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPushNotificationTriggerFactory
+{
+    Windows::ApplicationModel::Background::PushNotificationTrigger Create(hstring_ref applicationId) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRcsEndUserMessageAvailableTrigger
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRfcommConnectionTrigger
+{
+    Windows::Devices::Bluetooth::Background::RfcommInboundConnectionInformation InboundConnection() const;
+    Windows::Devices::Bluetooth::Background::RfcommOutboundConnectionInformation OutboundConnection() const;
+    bool AllowMultipleConnections() const;
+    void AllowMultipleConnections(bool value) const;
+    Windows::Networking::Sockets::SocketProtectionLevel ProtectionLevel() const;
+    void ProtectionLevel(Windows::Networking::Sockets::SocketProtectionLevel value) const;
+    Windows::Networking::HostName RemoteHostName() const;
+    void RemoteHostName(const Windows::Networking::HostName & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISecondaryAuthenticationFactorAuthenticationTrigger
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISensorDataThresholdTrigger
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISensorDataThresholdTriggerFactory
+{
+    Windows::ApplicationModel::Background::SensorDataThresholdTrigger Create(const Windows::Devices::Sensors::ISensorDataThreshold & threshold) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISmsMessageReceivedTriggerFactory
+{
+    Windows::ApplicationModel::Background::SmsMessageReceivedTrigger Create(const Windows::Devices::Sms::SmsFilterRules & filterRules) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISocketActivityTrigger
+{
+    bool IsWakeFromLowPowerSupported() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStorageLibraryContentChangedTrigger
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStorageLibraryContentChangedTriggerStatics
+{
+    Windows::ApplicationModel::Background::StorageLibraryContentChangedTrigger Create(const Windows::Storage::StorageLibrary & storageLibrary) const;
+    Windows::ApplicationModel::Background::StorageLibraryContentChangedTrigger CreateFromLibraries(const Windows::Foundation::Collections::IIterable<Windows::Storage::StorageLibrary> & storageLibraries) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISystemCondition
+{
+    Windows::ApplicationModel::Background::SystemConditionType ConditionType() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISystemConditionFactory
+{
+    Windows::ApplicationModel::Background::SystemCondition Create(Windows::ApplicationModel::Background::SystemConditionType conditionType) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISystemTrigger
+{
+    bool OneShot() const;
+    Windows::ApplicationModel::Background::SystemTriggerType TriggerType() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISystemTriggerFactory
+{
+    Windows::ApplicationModel::Background::SystemTrigger Create(Windows::ApplicationModel::Background::SystemTriggerType triggerType, bool oneShot) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITimeTrigger
+{
+    uint32_t FreshnessTime() const;
+    bool OneShot() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITimeTriggerFactory
+{
+    Windows::ApplicationModel::Background::TimeTrigger Create(uint32_t freshnessTime, bool oneShot) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IToastNotificationActionTriggerFactory
+{
+    Windows::ApplicationModel::Background::ToastNotificationActionTrigger Create(hstring_ref applicationId) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IToastNotificationHistoryChangedTriggerFactory
+{
+    Windows::ApplicationModel::Background::ToastNotificationHistoryChangedTrigger Create(hstring_ref applicationId) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUserNotificationChangedTriggerFactory
+{
+    Windows::ApplicationModel::Background::UserNotificationChangedTrigger Create(Windows::UI::Notifications::NotificationKinds notificationKinds) const;
+};
 
 }
 

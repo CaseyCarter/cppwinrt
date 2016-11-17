@@ -36,6 +36,13 @@ struct IDirect3DSurface;
 
 namespace Windows::Graphics::DirectX::Direct3D11 {
 
+template <typename T> struct impl_IDirect3DDevice;
+template <typename T> struct impl_IDirect3DSurface;
+
+}
+
+namespace Windows::Graphics::DirectX::Direct3D11 {
+
 enum class Direct3DBindings : unsigned
 {
     VertexBuffer = 0x1,

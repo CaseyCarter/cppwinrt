@@ -29,6 +29,15 @@ struct UserDataAccountSystemAccessManager;
 
 namespace Windows::ApplicationModel::UserDataAccounts::SystemAccess {
 
+template <typename T> struct impl_IDeviceAccountConfiguration;
+template <typename T> struct impl_IDeviceAccountConfiguration2;
+template <typename T> struct impl_IUserDataAccountSystemAccessManagerStatics;
+template <typename T> struct impl_IUserDataAccountSystemAccessManagerStatics2;
+
+}
+
+namespace Windows::ApplicationModel::UserDataAccounts::SystemAccess {
+
 enum class DeviceAccountAuthenticationType
 {
     Basic = 0,

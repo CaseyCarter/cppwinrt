@@ -26,4 +26,12 @@ struct LampAvailabilityChangedEventArgs;
 
 }
 
+namespace Windows::Devices::Lights {
+
+template <typename T> struct impl_ILamp;
+template <typename T> struct impl_ILampAvailabilityChangedEventArgs;
+template <typename T> struct impl_ILampStatics;
+
+}
+
 }

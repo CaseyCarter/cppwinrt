@@ -179,27 +179,164 @@ template <> struct traits<Windows::Security::Authentication::Web::Provider::WebP
 
 namespace Windows::Security::Authentication::Web::Provider {
 
-template <typename T> struct impl_IWebAccountClientView;
-template <typename T> struct impl_IWebAccountClientViewFactory;
-template <typename T> struct impl_IWebAccountManagerStatics;
-template <typename T> struct impl_IWebAccountManagerStatics2;
-template <typename T> struct impl_IWebAccountMapManagerStatics;
-template <typename T> struct impl_IWebAccountProviderAddAccountOperation;
-template <typename T> struct impl_IWebAccountProviderBaseReportOperation;
-template <typename T> struct impl_IWebAccountProviderDeleteAccountOperation;
-template <typename T> struct impl_IWebAccountProviderManageAccountOperation;
-template <typename T> struct impl_IWebAccountProviderOperation;
-template <typename T> struct impl_IWebAccountProviderRetrieveCookiesOperation;
-template <typename T> struct impl_IWebAccountProviderSignOutAccountOperation;
-template <typename T> struct impl_IWebAccountProviderSilentReportOperation;
-template <typename T> struct impl_IWebAccountProviderTokenObjects;
-template <typename T> struct impl_IWebAccountProviderTokenOperation;
-template <typename T> struct impl_IWebAccountProviderUIReportOperation;
-template <typename T> struct impl_IWebAccountScopeManagerStatics;
-template <typename T> struct impl_IWebProviderTokenRequest;
-template <typename T> struct impl_IWebProviderTokenRequest2;
-template <typename T> struct impl_IWebProviderTokenResponse;
-template <typename T> struct impl_IWebProviderTokenResponseFactory;
+template <typename D>
+struct WINRT_EBO impl_IWebAccountClientView
+{
+    Windows::Foundation::Uri ApplicationCallbackUri() const;
+    Windows::Security::Authentication::Web::Provider::WebAccountClientViewType Type() const;
+    hstring AccountPairwiseId() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebAccountClientViewFactory
+{
+    Windows::Security::Authentication::Web::Provider::WebAccountClientView Create(Windows::Security::Authentication::Web::Provider::WebAccountClientViewType viewType, const Windows::Foundation::Uri & applicationCallbackUri) const;
+    Windows::Security::Authentication::Web::Provider::WebAccountClientView CreateWithPairwiseId(Windows::Security::Authentication::Web::Provider::WebAccountClientViewType viewType, const Windows::Foundation::Uri & applicationCallbackUri, hstring_ref accountPairwiseId) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebAccountManagerStatics
+{
+    Windows::Foundation::IAsyncAction UpdateWebAccountPropertiesAsync(const Windows::Security::Credentials::WebAccount & webAccount, hstring_ref webAccountUserName, const Windows::Foundation::Collections::IMapView<hstring, hstring> & additionalProperties) const;
+    Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> AddWebAccountAsync(hstring_ref webAccountId, hstring_ref webAccountUserName, const Windows::Foundation::Collections::IMapView<hstring, hstring> & props) const;
+    Windows::Foundation::IAsyncAction DeleteWebAccountAsync(const Windows::Security::Credentials::WebAccount & webAccount) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::WebAccount>> FindAllProviderWebAccountsAsync() const;
+    Windows::Foundation::IAsyncAction PushCookiesAsync(const Windows::Foundation::Uri & uri, const Windows::Foundation::Collections::IVectorView<Windows::Web::Http::HttpCookie> & cookies) const;
+    Windows::Foundation::IAsyncAction SetViewAsync(const Windows::Security::Credentials::WebAccount & webAccount, const Windows::Security::Authentication::Web::Provider::WebAccountClientView & view) const;
+    Windows::Foundation::IAsyncAction ClearViewAsync(const Windows::Security::Credentials::WebAccount & webAccount, const Windows::Foundation::Uri & applicationCallbackUri) const;
+    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Security::Authentication::Web::Provider::WebAccountClientView>> GetViewsAsync(const Windows::Security::Credentials::WebAccount & webAccount) const;
+    Windows::Foundation::IAsyncAction SetWebAccountPictureAsync(const Windows::Security::Credentials::WebAccount & webAccount, const Windows::Storage::Streams::IRandomAccessStream & webAccountPicture) const;
+    Windows::Foundation::IAsyncAction ClearWebAccountPictureAsync(const Windows::Security::Credentials::WebAccount & webAccount) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebAccountManagerStatics2
+{
+    Windows::Foundation::IAsyncAction PullCookiesAsync(hstring_ref uriString, hstring_ref callerPFN) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebAccountMapManagerStatics
+{
+    Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> AddWebAccountAsync(hstring_ref webAccountId, hstring_ref webAccountUserName, const Windows::Foundation::Collections::IMapView<hstring, hstring> & props, Windows::Security::Authentication::Web::Provider::WebAccountScope scope, hstring_ref perUserWebAccountId) const;
+    Windows::Foundation::IAsyncAction SetPerAppToPerUserAccountAsync(const Windows::Security::Credentials::WebAccount & perAppAccount, hstring_ref perUserWebAccountId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> GetPerUserFromPerAppAccountAsync(const Windows::Security::Credentials::WebAccount & perAppAccount) const;
+    Windows::Foundation::IAsyncAction ClearPerUserFromPerAppAccountAsync(const Windows::Security::Credentials::WebAccount & perAppAccount) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebAccountProviderAddAccountOperation
+{
+    void ReportCompleted() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebAccountProviderBaseReportOperation
+{
+    void ReportCompleted() const;
+    void ReportError(const Windows::Security::Authentication::Web::Core::WebProviderError & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebAccountProviderDeleteAccountOperation
+{
+    Windows::Security::Credentials::WebAccount WebAccount() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebAccountProviderManageAccountOperation
+{
+    Windows::Security::Credentials::WebAccount WebAccount() const;
+    void ReportCompleted() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebAccountProviderOperation
+{
+    Windows::Security::Authentication::Web::Provider::WebAccountProviderOperationKind Kind() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebAccountProviderRetrieveCookiesOperation
+{
+    Windows::Foundation::Uri Context() const;
+    Windows::Foundation::Collections::IVector<Windows::Web::Http::HttpCookie> Cookies() const;
+    void Uri(const Windows::Foundation::Uri & uri) const;
+    Windows::Foundation::Uri Uri() const;
+    Windows::Foundation::Uri ApplicationCallbackUri() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebAccountProviderSignOutAccountOperation
+{
+    Windows::Security::Credentials::WebAccount WebAccount() const;
+    Windows::Foundation::Uri ApplicationCallbackUri() const;
+    hstring ClientId() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebAccountProviderSilentReportOperation
+{
+    void ReportUserInteractionRequired() const;
+    void ReportUserInteractionRequired(const Windows::Security::Authentication::Web::Core::WebProviderError & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebAccountProviderTokenObjects
+{
+    Windows::Security::Authentication::Web::Provider::IWebAccountProviderOperation Operation() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebAccountProviderTokenOperation
+{
+    Windows::Security::Authentication::Web::Provider::WebProviderTokenRequest ProviderRequest() const;
+    Windows::Foundation::Collections::IVector<Windows::Security::Authentication::Web::Provider::WebProviderTokenResponse> ProviderResponses() const;
+    void CacheExpirationTime(const Windows::Foundation::DateTime & value) const;
+    Windows::Foundation::DateTime CacheExpirationTime() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebAccountProviderUIReportOperation
+{
+    void ReportUserCanceled() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebAccountScopeManagerStatics
+{
+    Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::WebAccount> AddWebAccountAsync(hstring_ref webAccountId, hstring_ref webAccountUserName, const Windows::Foundation::Collections::IMapView<hstring, hstring> & props, Windows::Security::Authentication::Web::Provider::WebAccountScope scope) const;
+    Windows::Foundation::IAsyncAction SetScopeAsync(const Windows::Security::Credentials::WebAccount & webAccount, Windows::Security::Authentication::Web::Provider::WebAccountScope scope) const;
+    Windows::Security::Authentication::Web::Provider::WebAccountScope GetScope(const Windows::Security::Credentials::WebAccount & webAccount) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebProviderTokenRequest
+{
+    Windows::Security::Authentication::Web::Core::WebTokenRequest ClientRequest() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Security::Credentials::WebAccount> WebAccounts() const;
+    Windows::Security::Authentication::Web::Provider::WebAccountSelectionOptions WebAccountSelectionOptions() const;
+    Windows::Foundation::Uri ApplicationCallbackUri() const;
+    Windows::Foundation::IAsyncOperation<Windows::Security::Cryptography::Core::CryptographicKey> GetApplicationTokenBindingKeyAsync(Windows::Security::Authentication::Web::TokenBindingKeyType keyType, const Windows::Foundation::Uri & target) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebProviderTokenRequest2
+{
+    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> GetApplicationTokenBindingKeyIdAsync(Windows::Security::Authentication::Web::TokenBindingKeyType keyType, const Windows::Foundation::Uri & target) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebProviderTokenResponse
+{
+    Windows::Security::Authentication::Web::Core::WebTokenResponse ClientResponse() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWebProviderTokenResponseFactory
+{
+    Windows::Security::Authentication::Web::Provider::WebProviderTokenResponse Create(const Windows::Security::Authentication::Web::Core::WebTokenResponse & webTokenResponse) const;
+};
 
 }
 

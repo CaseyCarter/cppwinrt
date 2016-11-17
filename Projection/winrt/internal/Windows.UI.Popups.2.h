@@ -59,58 +59,6 @@ template <> struct __declspec(uuid("dd33fd5b-a24d-5a44-91fe-dd6441770103")) __de
 
 namespace Windows::UI::Popups {
 
-template <typename D>
-struct WINRT_EBO impl_IMessageDialog
-{
-    hstring Title() const;
-    void Title(hstring_ref value) const;
-    Windows::Foundation::Collections::IVector<Windows::UI::Popups::IUICommand> Commands() const;
-    uint32_t DefaultCommandIndex() const;
-    void DefaultCommandIndex(uint32_t value) const;
-    uint32_t CancelCommandIndex() const;
-    void CancelCommandIndex(uint32_t value) const;
-    hstring Content() const;
-    void Content(hstring_ref value) const;
-    Windows::Foundation::IAsyncOperation<Windows::UI::Popups::IUICommand> ShowAsync() const;
-    Windows::UI::Popups::MessageDialogOptions Options() const;
-    void Options(Windows::UI::Popups::MessageDialogOptions value) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IMessageDialogFactory
-{
-    Windows::UI::Popups::MessageDialog Create(hstring_ref content) const;
-    Windows::UI::Popups::MessageDialog CreateWithTitle(hstring_ref content, hstring_ref title) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IPopupMenu
-{
-    Windows::Foundation::Collections::IVector<Windows::UI::Popups::IUICommand> Commands() const;
-    Windows::Foundation::IAsyncOperation<Windows::UI::Popups::IUICommand> ShowAsync(const Windows::Foundation::Point & invocationPoint) const;
-    Windows::Foundation::IAsyncOperation<Windows::UI::Popups::IUICommand> ShowForSelectionAsync(const Windows::Foundation::Rect & selection) const;
-    Windows::Foundation::IAsyncOperation<Windows::UI::Popups::IUICommand> ShowForSelectionAsync(const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement preferredPlacement) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IUICommand
-{
-    hstring Label() const;
-    void Label(hstring_ref value) const;
-    Windows::UI::Popups::UICommandInvokedHandler Invoked() const;
-    void Invoked(const Windows::UI::Popups::UICommandInvokedHandler & value) const;
-    Windows::IInspectable Id() const;
-    void Id(const Windows::IInspectable & value) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IUICommandFactory
-{
-    Windows::UI::Popups::UICommand Create(hstring_ref label) const;
-    Windows::UI::Popups::UICommand CreateWithHandler(hstring_ref label, const Windows::UI::Popups::UICommandInvokedHandler & action) const;
-    Windows::UI::Popups::UICommand CreateWithHandlerAndId(hstring_ref label, const Windows::UI::Popups::UICommandInvokedHandler & action, const Windows::IInspectable & commandId) const;
-};
-
 struct UICommandInvokedHandler : Windows::IUnknown
 {
     UICommandInvokedHandler(std::nullptr_t = nullptr) noexcept {}

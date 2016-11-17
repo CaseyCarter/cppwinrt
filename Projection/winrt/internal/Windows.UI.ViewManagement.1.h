@@ -286,36 +286,300 @@ template <> struct traits<Windows::UI::ViewManagement::UIViewSettings> { using d
 
 namespace Windows::UI::ViewManagement {
 
-template <typename T> struct impl_IAccessibilitySettings;
-template <typename T> struct impl_IActivationViewSwitcher;
-template <typename T> struct impl_IApplicationView;
-template <typename T> struct impl_IApplicationView2;
-template <typename T> struct impl_IApplicationView3;
-template <typename T> struct impl_IApplicationViewConsolidatedEventArgs;
-template <typename T> struct impl_IApplicationViewFullscreenStatics;
-template <typename T> struct impl_IApplicationViewInteropStatics;
-template <typename T> struct impl_IApplicationViewScaling;
-template <typename T> struct impl_IApplicationViewScalingStatics;
-template <typename T> struct impl_IApplicationViewStatics;
-template <typename T> struct impl_IApplicationViewStatics2;
-template <typename T> struct impl_IApplicationViewStatics3;
-template <typename T> struct impl_IApplicationViewSwitcherStatics;
-template <typename T> struct impl_IApplicationViewSwitcherStatics2;
-template <typename T> struct impl_IApplicationViewTitleBar;
-template <typename T> struct impl_IApplicationViewTransferContext;
-template <typename T> struct impl_IApplicationViewTransferContextStatics;
-template <typename T> struct impl_IInputPane;
-template <typename T> struct impl_IInputPane2;
-template <typename T> struct impl_IInputPaneControl;
-template <typename T> struct impl_IInputPaneStatics;
-template <typename T> struct impl_IInputPaneVisibilityEventArgs;
-template <typename T> struct impl_IProjectionManagerStatics;
-template <typename T> struct impl_IProjectionManagerStatics2;
-template <typename T> struct impl_IUISettings;
-template <typename T> struct impl_IUISettings2;
-template <typename T> struct impl_IUISettings3;
-template <typename T> struct impl_IUIViewSettings;
-template <typename T> struct impl_IUIViewSettingsStatics;
+template <typename D>
+struct WINRT_EBO impl_IAccessibilitySettings
+{
+    bool HighContrast() const;
+    hstring HighContrastScheme() const;
+    event_token HighContrastChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::AccessibilitySettings, Windows::IInspectable> & handler) const;
+    using HighContrastChanged_revoker = event_revoker<IAccessibilitySettings>;
+    HighContrastChanged_revoker HighContrastChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::AccessibilitySettings, Windows::IInspectable> & handler) const;
+    void HighContrastChanged(event_token cookie) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IActivationViewSwitcher
+{
+    Windows::Foundation::IAsyncAction ShowAsStandaloneAsync(int32_t viewId) const;
+    Windows::Foundation::IAsyncAction ShowAsStandaloneAsync(int32_t viewId, Windows::UI::ViewManagement::ViewSizePreference sizePreference) const;
+    bool IsViewPresentedOnActivationVirtualDesktop(int32_t viewId) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IApplicationView
+{
+    Windows::UI::ViewManagement::ApplicationViewOrientation Orientation() const;
+    bool AdjacentToLeftDisplayEdge() const;
+    bool AdjacentToRightDisplayEdge() const;
+    bool IsFullScreen() const;
+    bool IsOnLockScreen() const;
+    bool IsScreenCaptureEnabled() const;
+    void IsScreenCaptureEnabled(bool value) const;
+    void Title(hstring_ref value) const;
+    hstring Title() const;
+    int32_t Id() const;
+    event_token Consolidated(const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::ApplicationView, Windows::UI::ViewManagement::ApplicationViewConsolidatedEventArgs> & handler) const;
+    using Consolidated_revoker = event_revoker<IApplicationView>;
+    Consolidated_revoker Consolidated(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::ApplicationView, Windows::UI::ViewManagement::ApplicationViewConsolidatedEventArgs> & handler) const;
+    void Consolidated(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IApplicationView2
+{
+    bool SuppressSystemOverlays() const;
+    void SuppressSystemOverlays(bool value) const;
+    Windows::Foundation::Rect VisibleBounds() const;
+    event_token VisibleBoundsChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::ApplicationView, Windows::IInspectable> & handler) const;
+    using VisibleBoundsChanged_revoker = event_revoker<IApplicationView2>;
+    VisibleBoundsChanged_revoker VisibleBoundsChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::ApplicationView, Windows::IInspectable> & handler) const;
+    void VisibleBoundsChanged(event_token token) const;
+    bool SetDesiredBoundsMode(Windows::UI::ViewManagement::ApplicationViewBoundsMode boundsMode) const;
+    Windows::UI::ViewManagement::ApplicationViewBoundsMode DesiredBoundsMode() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IApplicationView3
+{
+    Windows::UI::ViewManagement::ApplicationViewTitleBar TitleBar() const;
+    Windows::UI::ViewManagement::FullScreenSystemOverlayMode FullScreenSystemOverlayMode() const;
+    void FullScreenSystemOverlayMode(Windows::UI::ViewManagement::FullScreenSystemOverlayMode value) const;
+    bool IsFullScreenMode() const;
+    bool TryEnterFullScreenMode() const;
+    void ExitFullScreenMode() const;
+    void ShowStandardSystemOverlays() const;
+    bool TryResizeView(const Windows::Foundation::Size & value) const;
+    void SetPreferredMinSize(const Windows::Foundation::Size & minSize) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IApplicationViewConsolidatedEventArgs
+{
+    bool IsUserInitiated() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IApplicationViewFullscreenStatics
+{
+    bool TryUnsnapToFullscreen() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IApplicationViewInteropStatics
+{
+    int32_t GetApplicationViewIdForWindow(const Windows::UI::Core::ICoreWindow & window) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IApplicationViewScaling
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IApplicationViewScalingStatics
+{
+    bool DisableLayoutScaling() const;
+    bool TrySetDisableLayoutScaling(bool disableLayoutScaling) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IApplicationViewStatics
+{
+    Windows::UI::ViewManagement::ApplicationViewState Value() const;
+    bool TryUnsnap() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IApplicationViewStatics2
+{
+    Windows::UI::ViewManagement::ApplicationView GetForCurrentView() const;
+    bool TerminateAppOnFinalViewClose() const;
+    void TerminateAppOnFinalViewClose(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IApplicationViewStatics3
+{
+    Windows::UI::ViewManagement::ApplicationViewWindowingMode PreferredLaunchWindowingMode() const;
+    void PreferredLaunchWindowingMode(Windows::UI::ViewManagement::ApplicationViewWindowingMode value) const;
+    Windows::Foundation::Size PreferredLaunchViewSize() const;
+    void PreferredLaunchViewSize(const Windows::Foundation::Size & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IApplicationViewSwitcherStatics
+{
+    void DisableShowingMainViewOnActivation() const;
+    Windows::Foundation::IAsyncOperation<bool> TryShowAsStandaloneAsync(int32_t viewId) const;
+    Windows::Foundation::IAsyncOperation<bool> TryShowAsStandaloneAsync(int32_t viewId, Windows::UI::ViewManagement::ViewSizePreference sizePreference) const;
+    Windows::Foundation::IAsyncOperation<bool> TryShowAsStandaloneAsync(int32_t viewId, Windows::UI::ViewManagement::ViewSizePreference sizePreference, int32_t anchorViewId, Windows::UI::ViewManagement::ViewSizePreference anchorSizePreference) const;
+    Windows::Foundation::IAsyncAction SwitchAsync(int32_t viewId) const;
+    Windows::Foundation::IAsyncAction SwitchAsync(int32_t toViewId, int32_t fromViewId) const;
+    Windows::Foundation::IAsyncAction SwitchAsync(int32_t toViewId, int32_t fromViewId, Windows::UI::ViewManagement::ApplicationViewSwitchingOptions options) const;
+    Windows::Foundation::IAsyncOperation<bool> PrepareForCustomAnimatedSwitchAsync(int32_t toViewId, int32_t fromViewId, Windows::UI::ViewManagement::ApplicationViewSwitchingOptions options) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IApplicationViewSwitcherStatics2
+{
+    void DisableSystemViewActivationPolicy() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IApplicationViewTitleBar
+{
+    void ForegroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const;
+    Windows::Foundation::IReference<Windows::UI::Color> ForegroundColor() const;
+    void BackgroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const;
+    Windows::Foundation::IReference<Windows::UI::Color> BackgroundColor() const;
+    void ButtonForegroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const;
+    Windows::Foundation::IReference<Windows::UI::Color> ButtonForegroundColor() const;
+    void ButtonBackgroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const;
+    Windows::Foundation::IReference<Windows::UI::Color> ButtonBackgroundColor() const;
+    void ButtonHoverForegroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const;
+    Windows::Foundation::IReference<Windows::UI::Color> ButtonHoverForegroundColor() const;
+    void ButtonHoverBackgroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const;
+    Windows::Foundation::IReference<Windows::UI::Color> ButtonHoverBackgroundColor() const;
+    void ButtonPressedForegroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const;
+    Windows::Foundation::IReference<Windows::UI::Color> ButtonPressedForegroundColor() const;
+    void ButtonPressedBackgroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const;
+    Windows::Foundation::IReference<Windows::UI::Color> ButtonPressedBackgroundColor() const;
+    void InactiveForegroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const;
+    Windows::Foundation::IReference<Windows::UI::Color> InactiveForegroundColor() const;
+    void InactiveBackgroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const;
+    Windows::Foundation::IReference<Windows::UI::Color> InactiveBackgroundColor() const;
+    void ButtonInactiveForegroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const;
+    Windows::Foundation::IReference<Windows::UI::Color> ButtonInactiveForegroundColor() const;
+    void ButtonInactiveBackgroundColor(const Windows::Foundation::IReference<Windows::UI::Color> & value) const;
+    Windows::Foundation::IReference<Windows::UI::Color> ButtonInactiveBackgroundColor() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IApplicationViewTransferContext
+{
+    int32_t ViewId() const;
+    void ViewId(int32_t value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IApplicationViewTransferContextStatics
+{
+    hstring DataPackageFormatId() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInputPane
+{
+    event_token Showing(const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::InputPane, Windows::UI::ViewManagement::InputPaneVisibilityEventArgs> & handler) const;
+    using Showing_revoker = event_revoker<IInputPane>;
+    Showing_revoker Showing(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::InputPane, Windows::UI::ViewManagement::InputPaneVisibilityEventArgs> & handler) const;
+    void Showing(event_token token) const;
+    event_token Hiding(const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::InputPane, Windows::UI::ViewManagement::InputPaneVisibilityEventArgs> & handler) const;
+    using Hiding_revoker = event_revoker<IInputPane>;
+    Hiding_revoker Hiding(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::InputPane, Windows::UI::ViewManagement::InputPaneVisibilityEventArgs> & handler) const;
+    void Hiding(event_token token) const;
+    Windows::Foundation::Rect OccludedRect() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInputPane2
+{
+    bool TryShow() const;
+    bool TryHide() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInputPaneControl
+{
+    bool Visible() const;
+    void Visible(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInputPaneStatics
+{
+    Windows::UI::ViewManagement::InputPane GetForCurrentView() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IInputPaneVisibilityEventArgs
+{
+    Windows::Foundation::Rect OccludedRect() const;
+    void EnsuredFocusedElementInView(bool value) const;
+    bool EnsuredFocusedElementInView() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IProjectionManagerStatics
+{
+    Windows::Foundation::IAsyncAction StartProjectingAsync(int32_t projectionViewId, int32_t anchorViewId) const;
+    Windows::Foundation::IAsyncAction SwapDisplaysForViewsAsync(int32_t projectionViewId, int32_t anchorViewId) const;
+    Windows::Foundation::IAsyncAction StopProjectingAsync(int32_t projectionViewId, int32_t anchorViewId) const;
+    bool ProjectionDisplayAvailable() const;
+    event_token ProjectionDisplayAvailableChanged(const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const;
+    using ProjectionDisplayAvailableChanged_revoker = event_revoker<IProjectionManagerStatics>;
+    ProjectionDisplayAvailableChanged_revoker ProjectionDisplayAvailableChanged(auto_revoke_t, const Windows::Foundation::EventHandler<Windows::IInspectable> & handler) const;
+    void ProjectionDisplayAvailableChanged(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IProjectionManagerStatics2
+{
+    Windows::Foundation::IAsyncAction StartProjectingAsync(int32_t projectionViewId, int32_t anchorViewId, const Windows::Devices::Enumeration::DeviceInformation & displayDeviceInfo) const;
+    Windows::Foundation::IAsyncOperation<bool> RequestStartProjectingAsync(int32_t projectionViewId, int32_t anchorViewId, const Windows::Foundation::Rect & selection) const;
+    Windows::Foundation::IAsyncOperation<bool> RequestStartProjectingAsync(int32_t projectionViewId, int32_t anchorViewId, const Windows::Foundation::Rect & selection, Windows::UI::Popups::Placement prefferedPlacement) const;
+    hstring GetDeviceSelector() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUISettings
+{
+    Windows::UI::ViewManagement::HandPreference HandPreference() const;
+    Windows::Foundation::Size CursorSize() const;
+    Windows::Foundation::Size ScrollBarSize() const;
+    Windows::Foundation::Size ScrollBarArrowSize() const;
+    Windows::Foundation::Size ScrollBarThumbBoxSize() const;
+    uint32_t MessageDuration() const;
+    bool AnimationsEnabled() const;
+    bool CaretBrowsingEnabled() const;
+    uint32_t CaretBlinkRate() const;
+    uint32_t CaretWidth() const;
+    uint32_t DoubleClickTime() const;
+    uint32_t MouseHoverTime() const;
+    Windows::UI::Color UIElementColor(Windows::UI::ViewManagement::UIElementType desiredElement) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUISettings2
+{
+    double TextScaleFactor() const;
+    event_token TextScaleFactorChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::IInspectable> & handler) const;
+    using TextScaleFactorChanged_revoker = event_revoker<IUISettings2>;
+    TextScaleFactorChanged_revoker TextScaleFactorChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::IInspectable> & handler) const;
+    void TextScaleFactorChanged(event_token cookie) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUISettings3
+{
+    Windows::UI::Color GetColorValue(Windows::UI::ViewManagement::UIColorType desiredColor) const;
+    event_token ColorValuesChanged(const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::IInspectable> & handler) const;
+    using ColorValuesChanged_revoker = event_revoker<IUISettings3>;
+    ColorValuesChanged_revoker ColorValuesChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::UI::ViewManagement::UISettings, Windows::IInspectable> & handler) const;
+    void ColorValuesChanged(event_token cookie) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUIViewSettings
+{
+    Windows::UI::ViewManagement::UserInteractionMode UserInteractionMode() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUIViewSettingsStatics
+{
+    Windows::UI::ViewManagement::UIViewSettings GetForCurrentView() const;
+};
 
 }
 

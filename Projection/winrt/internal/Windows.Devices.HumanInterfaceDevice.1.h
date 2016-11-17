@@ -169,18 +169,154 @@ template <> struct traits<Windows::Devices::HumanInterfaceDevice::HidOutputRepor
 
 namespace Windows::Devices::HumanInterfaceDevice {
 
-template <typename T> struct impl_IHidBooleanControl;
-template <typename T> struct impl_IHidBooleanControlDescription;
-template <typename T> struct impl_IHidBooleanControlDescription2;
-template <typename T> struct impl_IHidCollection;
-template <typename T> struct impl_IHidDevice;
-template <typename T> struct impl_IHidDeviceStatics;
-template <typename T> struct impl_IHidFeatureReport;
-template <typename T> struct impl_IHidInputReport;
-template <typename T> struct impl_IHidInputReportReceivedEventArgs;
-template <typename T> struct impl_IHidNumericControl;
-template <typename T> struct impl_IHidNumericControlDescription;
-template <typename T> struct impl_IHidOutputReport;
+template <typename D>
+struct WINRT_EBO impl_IHidBooleanControl
+{
+    uint32_t Id() const;
+    uint16_t UsagePage() const;
+    uint16_t UsageId() const;
+    bool IsActive() const;
+    void IsActive(bool value) const;
+    Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription ControlDescription() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IHidBooleanControlDescription
+{
+    uint32_t Id() const;
+    uint16_t ReportId() const;
+    Windows::Devices::HumanInterfaceDevice::HidReportType ReportType() const;
+    uint16_t UsagePage() const;
+    uint16_t UsageId() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidCollection> ParentCollections() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IHidBooleanControlDescription2
+{
+    bool IsAbsolute() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IHidCollection
+{
+    uint32_t Id() const;
+    Windows::Devices::HumanInterfaceDevice::HidCollectionType Type() const;
+    uint32_t UsagePage() const;
+    uint32_t UsageId() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IHidDevice
+{
+    uint16_t VendorId() const;
+    uint16_t ProductId() const;
+    uint16_t Version() const;
+    uint16_t UsagePage() const;
+    uint16_t UsageId() const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidInputReport> GetInputReportAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidInputReport> GetInputReportAsync(uint16_t reportId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidFeatureReport> GetFeatureReportAsync() const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidFeatureReport> GetFeatureReportAsync(uint16_t reportId) const;
+    Windows::Devices::HumanInterfaceDevice::HidOutputReport CreateOutputReport() const;
+    Windows::Devices::HumanInterfaceDevice::HidOutputReport CreateOutputReport(uint16_t reportId) const;
+    Windows::Devices::HumanInterfaceDevice::HidFeatureReport CreateFeatureReport() const;
+    Windows::Devices::HumanInterfaceDevice::HidFeatureReport CreateFeatureReport(uint16_t reportId) const;
+    Windows::Foundation::IAsyncOperation<uint32_t> SendOutputReportAsync(const Windows::Devices::HumanInterfaceDevice::HidOutputReport & outputReport) const;
+    Windows::Foundation::IAsyncOperation<uint32_t> SendFeatureReportAsync(const Windows::Devices::HumanInterfaceDevice::HidFeatureReport & featureReport) const;
+    Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription> GetBooleanControlDescriptions(Windows::Devices::HumanInterfaceDevice::HidReportType reportType, uint16_t usagePage, uint16_t usageId) const;
+    Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription> GetNumericControlDescriptions(Windows::Devices::HumanInterfaceDevice::HidReportType reportType, uint16_t usagePage, uint16_t usageId) const;
+    event_token InputReportReceived(const Windows::Foundation::TypedEventHandler<Windows::Devices::HumanInterfaceDevice::HidDevice, Windows::Devices::HumanInterfaceDevice::HidInputReportReceivedEventArgs> & reportHandler) const;
+    using InputReportReceived_revoker = event_revoker<IHidDevice>;
+    InputReportReceived_revoker InputReportReceived(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::HumanInterfaceDevice::HidDevice, Windows::Devices::HumanInterfaceDevice::HidInputReportReceivedEventArgs> & reportHandler) const;
+    void InputReportReceived(event_token token) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IHidDeviceStatics
+{
+    hstring GetDeviceSelector(uint16_t usagePage, uint16_t usageId) const;
+    hstring GetDeviceSelector(uint16_t usagePage, uint16_t usageId, uint16_t vendorId, uint16_t productId) const;
+    Windows::Foundation::IAsyncOperation<Windows::Devices::HumanInterfaceDevice::HidDevice> FromIdAsync(hstring_ref deviceId, Windows::Storage::FileAccessMode accessMode) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IHidFeatureReport
+{
+    uint16_t Id() const;
+    Windows::Storage::Streams::IBuffer Data() const;
+    void Data(const Windows::Storage::Streams::IBuffer & value) const;
+    Windows::Devices::HumanInterfaceDevice::HidBooleanControl GetBooleanControl(uint16_t usagePage, uint16_t usageId) const;
+    Windows::Devices::HumanInterfaceDevice::HidBooleanControl GetBooleanControlByDescription(const Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription & controlDescription) const;
+    Windows::Devices::HumanInterfaceDevice::HidNumericControl GetNumericControl(uint16_t usagePage, uint16_t usageId) const;
+    Windows::Devices::HumanInterfaceDevice::HidNumericControl GetNumericControlByDescription(const Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription & controlDescription) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IHidInputReport
+{
+    uint16_t Id() const;
+    Windows::Storage::Streams::IBuffer Data() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidBooleanControl> ActivatedBooleanControls() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidBooleanControl> TransitionedBooleanControls() const;
+    Windows::Devices::HumanInterfaceDevice::HidBooleanControl GetBooleanControl(uint16_t usagePage, uint16_t usageId) const;
+    Windows::Devices::HumanInterfaceDevice::HidBooleanControl GetBooleanControlByDescription(const Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription & controlDescription) const;
+    Windows::Devices::HumanInterfaceDevice::HidNumericControl GetNumericControl(uint16_t usagePage, uint16_t usageId) const;
+    Windows::Devices::HumanInterfaceDevice::HidNumericControl GetNumericControlByDescription(const Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription & controlDescription) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IHidInputReportReceivedEventArgs
+{
+    Windows::Devices::HumanInterfaceDevice::HidInputReport Report() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IHidNumericControl
+{
+    uint32_t Id() const;
+    bool IsGrouped() const;
+    uint16_t UsagePage() const;
+    uint16_t UsageId() const;
+    int64_t Value() const;
+    void Value(int64_t value) const;
+    int64_t ScaledValue() const;
+    void ScaledValue(int64_t value) const;
+    Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription ControlDescription() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IHidNumericControlDescription
+{
+    uint32_t Id() const;
+    uint16_t ReportId() const;
+    Windows::Devices::HumanInterfaceDevice::HidReportType ReportType() const;
+    uint32_t ReportSize() const;
+    uint32_t ReportCount() const;
+    uint16_t UsagePage() const;
+    uint16_t UsageId() const;
+    int32_t LogicalMinimum() const;
+    int32_t LogicalMaximum() const;
+    int32_t PhysicalMinimum() const;
+    int32_t PhysicalMaximum() const;
+    uint32_t UnitExponent() const;
+    uint32_t Unit() const;
+    bool IsAbsolute() const;
+    bool HasNull() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Devices::HumanInterfaceDevice::HidCollection> ParentCollections() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IHidOutputReport
+{
+    uint16_t Id() const;
+    Windows::Storage::Streams::IBuffer Data() const;
+    void Data(const Windows::Storage::Streams::IBuffer & value) const;
+    Windows::Devices::HumanInterfaceDevice::HidBooleanControl GetBooleanControl(uint16_t usagePage, uint16_t usageId) const;
+    Windows::Devices::HumanInterfaceDevice::HidBooleanControl GetBooleanControlByDescription(const Windows::Devices::HumanInterfaceDevice::HidBooleanControlDescription & controlDescription) const;
+    Windows::Devices::HumanInterfaceDevice::HidNumericControl GetNumericControl(uint16_t usagePage, uint16_t usageId) const;
+    Windows::Devices::HumanInterfaceDevice::HidNumericControl GetNumericControlByDescription(const Windows::Devices::HumanInterfaceDevice::HidNumericControlDescription & controlDescription) const;
+};
 
 }
 

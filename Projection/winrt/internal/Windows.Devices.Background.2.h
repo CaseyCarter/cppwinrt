@@ -9,21 +9,6 @@ WINRT_EXPORT namespace winrt {
 
 namespace Windows::Devices::Background {
 
-template <typename D>
-struct WINRT_EBO impl_IDeviceServicingDetails
-{
-    hstring DeviceId() const;
-    hstring Arguments() const;
-    Windows::Foundation::TimeSpan ExpectedDuration() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IDeviceUseDetails
-{
-    hstring DeviceId() const;
-    hstring Arguments() const;
-};
-
 struct IDeviceServicingDetails :
     Windows::IInspectable,
     impl::consume<IDeviceServicingDetails>

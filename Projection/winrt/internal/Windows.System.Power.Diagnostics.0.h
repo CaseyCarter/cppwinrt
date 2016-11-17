@@ -22,4 +22,11 @@ struct ForegroundEnergyDiagnostics;
 
 }
 
+namespace Windows::System::Power::Diagnostics {
+
+template <typename T> struct impl_IBackgroundEnergyDiagnosticsStatics;
+template <typename T> struct impl_IForegroundEnergyDiagnosticsStatics;
+
+}
+
 }

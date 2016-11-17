@@ -128,22 +128,124 @@ template <> struct traits<Windows::System::RemoteSystems::RemoteSystemWatcher> {
 
 namespace Windows::System::RemoteSystems {
 
-template <typename T> struct impl_IRemoteSystem;
-template <typename T> struct impl_IRemoteSystemAddedEventArgs;
-template <typename T> struct impl_IRemoteSystemConnectionRequest;
-template <typename T> struct impl_IRemoteSystemConnectionRequestFactory;
-template <typename T> struct impl_IRemoteSystemDiscoveryTypeFilter;
-template <typename T> struct impl_IRemoteSystemDiscoveryTypeFilterFactory;
-template <typename T> struct impl_IRemoteSystemFilter;
-template <typename T> struct impl_IRemoteSystemKindFilter;
-template <typename T> struct impl_IRemoteSystemKindFilterFactory;
-template <typename T> struct impl_IRemoteSystemKindStatics;
-template <typename T> struct impl_IRemoteSystemRemovedEventArgs;
-template <typename T> struct impl_IRemoteSystemStatics;
-template <typename T> struct impl_IRemoteSystemStatusTypeFilter;
-template <typename T> struct impl_IRemoteSystemStatusTypeFilterFactory;
-template <typename T> struct impl_IRemoteSystemUpdatedEventArgs;
-template <typename T> struct impl_IRemoteSystemWatcher;
+template <typename D>
+struct WINRT_EBO impl_IRemoteSystem
+{
+    hstring DisplayName() const;
+    hstring Id() const;
+    hstring Kind() const;
+    Windows::System::RemoteSystems::RemoteSystemStatus Status() const;
+    bool IsAvailableByProximity() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRemoteSystemAddedEventArgs
+{
+    Windows::System::RemoteSystems::RemoteSystem RemoteSystem() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRemoteSystemConnectionRequest
+{
+    Windows::System::RemoteSystems::RemoteSystem RemoteSystem() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRemoteSystemConnectionRequestFactory
+{
+    Windows::System::RemoteSystems::RemoteSystemConnectionRequest Create(const Windows::System::RemoteSystems::RemoteSystem & remoteSystem) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRemoteSystemDiscoveryTypeFilter
+{
+    Windows::System::RemoteSystems::RemoteSystemDiscoveryType RemoteSystemDiscoveryType() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRemoteSystemDiscoveryTypeFilterFactory
+{
+    Windows::System::RemoteSystems::RemoteSystemDiscoveryTypeFilter Create(Windows::System::RemoteSystems::RemoteSystemDiscoveryType discoveryType) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRemoteSystemFilter
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRemoteSystemKindFilter
+{
+    Windows::Foundation::Collections::IVectorView<hstring> RemoteSystemKinds() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRemoteSystemKindFilterFactory
+{
+    Windows::System::RemoteSystems::RemoteSystemKindFilter Create(const Windows::Foundation::Collections::IIterable<hstring> & remoteSystemKinds) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRemoteSystemKindStatics
+{
+    hstring Phone() const;
+    hstring Hub() const;
+    hstring Holographic() const;
+    hstring Desktop() const;
+    hstring Xbox() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRemoteSystemRemovedEventArgs
+{
+    hstring RemoteSystemId() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRemoteSystemStatics
+{
+    Windows::Foundation::IAsyncOperation<Windows::System::RemoteSystems::RemoteSystem> FindByHostNameAsync(const Windows::Networking::HostName & hostName) const;
+    Windows::System::RemoteSystems::RemoteSystemWatcher CreateWatcher() const;
+    Windows::System::RemoteSystems::RemoteSystemWatcher CreateWatcher(const Windows::Foundation::Collections::IIterable<Windows::System::RemoteSystems::IRemoteSystemFilter> & filters) const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::System::RemoteSystems::RemoteSystemAccessStatus> RequestAccessAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRemoteSystemStatusTypeFilter
+{
+    Windows::System::RemoteSystems::RemoteSystemStatusType RemoteSystemStatusType() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRemoteSystemStatusTypeFilterFactory
+{
+    Windows::System::RemoteSystems::RemoteSystemStatusTypeFilter Create(Windows::System::RemoteSystems::RemoteSystemStatusType remoteSystemStatusType) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRemoteSystemUpdatedEventArgs
+{
+    Windows::System::RemoteSystems::RemoteSystem RemoteSystem() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRemoteSystemWatcher
+{
+    void Start() const;
+    void Stop() const;
+    event_token RemoteSystemAdded(const Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemWatcher, Windows::System::RemoteSystems::RemoteSystemAddedEventArgs> & handler) const;
+    using RemoteSystemAdded_revoker = event_revoker<IRemoteSystemWatcher>;
+    RemoteSystemAdded_revoker RemoteSystemAdded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemWatcher, Windows::System::RemoteSystems::RemoteSystemAddedEventArgs> & handler) const;
+    void RemoteSystemAdded(event_token token) const;
+    event_token RemoteSystemUpdated(const Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemWatcher, Windows::System::RemoteSystems::RemoteSystemUpdatedEventArgs> & handler) const;
+    using RemoteSystemUpdated_revoker = event_revoker<IRemoteSystemWatcher>;
+    RemoteSystemUpdated_revoker RemoteSystemUpdated(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemWatcher, Windows::System::RemoteSystems::RemoteSystemUpdatedEventArgs> & handler) const;
+    void RemoteSystemUpdated(event_token token) const;
+    event_token RemoteSystemRemoved(const Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemWatcher, Windows::System::RemoteSystems::RemoteSystemRemovedEventArgs> & handler) const;
+    using RemoteSystemRemoved_revoker = event_revoker<IRemoteSystemWatcher>;
+    RemoteSystemRemoved_revoker RemoteSystemRemoved(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::System::RemoteSystems::RemoteSystemWatcher, Windows::System::RemoteSystems::RemoteSystemRemovedEventArgs> & handler) const;
+    void RemoteSystemRemoved(event_token token) const;
+};
 
 }
 

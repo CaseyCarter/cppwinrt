@@ -256,6 +256,82 @@ struct UserNotificationChangedTrigger;
 
 namespace Windows::ApplicationModel::Background {
 
+template <typename T> struct impl_IActivitySensorTrigger;
+template <typename T> struct impl_IActivitySensorTriggerFactory;
+template <typename T> struct impl_IApplicationTrigger;
+template <typename T> struct impl_IApplicationTriggerDetails;
+template <typename T> struct impl_IAppointmentStoreNotificationTrigger;
+template <typename T> struct impl_IBackgroundCondition;
+template <typename T> struct impl_IBackgroundExecutionManagerStatics;
+template <typename T> struct impl_IBackgroundTask;
+template <typename T> struct impl_IBackgroundTaskBuilder;
+template <typename T> struct impl_IBackgroundTaskBuilder2;
+template <typename T> struct impl_IBackgroundTaskBuilder3;
+template <typename T> struct impl_IBackgroundTaskCompletedEventArgs;
+template <typename T> struct impl_IBackgroundTaskDeferral;
+template <typename T> struct impl_IBackgroundTaskInstance;
+template <typename T> struct impl_IBackgroundTaskInstance2;
+template <typename T> struct impl_IBackgroundTaskInstance4;
+template <typename T> struct impl_IBackgroundTaskProgressEventArgs;
+template <typename T> struct impl_IBackgroundTaskRegistration;
+template <typename T> struct impl_IBackgroundTaskRegistration2;
+template <typename T> struct impl_IBackgroundTaskRegistrationStatics;
+template <typename T> struct impl_IBackgroundTrigger;
+template <typename T> struct impl_IBackgroundWorkCostStatics;
+template <typename T> struct impl_IBluetoothLEAdvertisementPublisherTrigger;
+template <typename T> struct impl_IBluetoothLEAdvertisementWatcherTrigger;
+template <typename T> struct impl_ICachedFileUpdaterTrigger;
+template <typename T> struct impl_ICachedFileUpdaterTriggerDetails;
+template <typename T> struct impl_IChatMessageNotificationTrigger;
+template <typename T> struct impl_IChatMessageReceivedNotificationTrigger;
+template <typename T> struct impl_IContactStoreNotificationTrigger;
+template <typename T> struct impl_IContentPrefetchTrigger;
+template <typename T> struct impl_IContentPrefetchTriggerFactory;
+template <typename T> struct impl_IDeviceConnectionChangeTrigger;
+template <typename T> struct impl_IDeviceConnectionChangeTriggerStatics;
+template <typename T> struct impl_IDeviceManufacturerNotificationTrigger;
+template <typename T> struct impl_IDeviceManufacturerNotificationTriggerFactory;
+template <typename T> struct impl_IDeviceServicingTrigger;
+template <typename T> struct impl_IDeviceUseTrigger;
+template <typename T> struct impl_IDeviceWatcherTrigger;
+template <typename T> struct impl_IEmailStoreNotificationTrigger;
+template <typename T> struct impl_IGattCharacteristicNotificationTrigger;
+template <typename T> struct impl_IGattCharacteristicNotificationTriggerFactory;
+template <typename T> struct impl_ILocationTrigger;
+template <typename T> struct impl_ILocationTriggerFactory;
+template <typename T> struct impl_IMaintenanceTrigger;
+template <typename T> struct impl_IMaintenanceTriggerFactory;
+template <typename T> struct impl_IMediaProcessingTrigger;
+template <typename T> struct impl_INetworkOperatorHotspotAuthenticationTrigger;
+template <typename T> struct impl_INetworkOperatorNotificationTrigger;
+template <typename T> struct impl_INetworkOperatorNotificationTriggerFactory;
+template <typename T> struct impl_IPushNotificationTriggerFactory;
+template <typename T> struct impl_IRcsEndUserMessageAvailableTrigger;
+template <typename T> struct impl_IRfcommConnectionTrigger;
+template <typename T> struct impl_ISecondaryAuthenticationFactorAuthenticationTrigger;
+template <typename T> struct impl_ISensorDataThresholdTrigger;
+template <typename T> struct impl_ISensorDataThresholdTriggerFactory;
+template <typename T> struct impl_ISmsMessageReceivedTriggerFactory;
+template <typename T> struct impl_ISocketActivityTrigger;
+template <typename T> struct impl_IStorageLibraryContentChangedTrigger;
+template <typename T> struct impl_IStorageLibraryContentChangedTriggerStatics;
+template <typename T> struct impl_ISystemCondition;
+template <typename T> struct impl_ISystemConditionFactory;
+template <typename T> struct impl_ISystemTrigger;
+template <typename T> struct impl_ISystemTriggerFactory;
+template <typename T> struct impl_ITimeTrigger;
+template <typename T> struct impl_ITimeTriggerFactory;
+template <typename T> struct impl_IToastNotificationActionTriggerFactory;
+template <typename T> struct impl_IToastNotificationHistoryChangedTriggerFactory;
+template <typename T> struct impl_IUserNotificationChangedTriggerFactory;
+template <typename T> struct impl_BackgroundTaskCanceledEventHandler;
+template <typename T> struct impl_BackgroundTaskCompletedEventHandler;
+template <typename T> struct impl_BackgroundTaskProgressEventHandler;
+
+}
+
+namespace Windows::ApplicationModel::Background {
+
 enum class ApplicationTriggerResult
 {
     Allowed = 0,

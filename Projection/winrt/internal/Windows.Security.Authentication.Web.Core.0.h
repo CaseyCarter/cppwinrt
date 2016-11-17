@@ -57,6 +57,24 @@ struct WebTokenResponse;
 
 namespace Windows::Security::Authentication::Web::Core {
 
+template <typename T> struct impl_IWebAccountEventArgs;
+template <typename T> struct impl_IWebAccountMonitor;
+template <typename T> struct impl_IWebAuthenticationCoreManagerStatics;
+template <typename T> struct impl_IWebAuthenticationCoreManagerStatics2;
+template <typename T> struct impl_IWebAuthenticationCoreManagerStatics3;
+template <typename T> struct impl_IWebProviderError;
+template <typename T> struct impl_IWebProviderErrorFactory;
+template <typename T> struct impl_IWebTokenRequest;
+template <typename T> struct impl_IWebTokenRequest2;
+template <typename T> struct impl_IWebTokenRequestFactory;
+template <typename T> struct impl_IWebTokenRequestResult;
+template <typename T> struct impl_IWebTokenResponse;
+template <typename T> struct impl_IWebTokenResponseFactory;
+
+}
+
+namespace Windows::Security::Authentication::Web::Core {
+
 enum class WebTokenRequestPromptType
 {
     Default = 0,

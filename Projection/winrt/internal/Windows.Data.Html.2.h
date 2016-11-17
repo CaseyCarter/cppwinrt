@@ -9,12 +9,6 @@ WINRT_EXPORT namespace winrt {
 
 namespace Windows::Data::Html {
 
-template <typename D>
-struct WINRT_EBO impl_IHtmlUtilities
-{
-    hstring ConvertToText(hstring_ref html) const;
-};
-
 struct IHtmlUtilities :
     Windows::IInspectable,
     impl::consume<IHtmlUtilities>

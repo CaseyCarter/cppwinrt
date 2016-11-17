@@ -43,6 +43,20 @@ struct JsonValue;
 
 namespace Windows::Data::Json {
 
+template <typename T> struct impl_IJsonArray;
+template <typename T> struct impl_IJsonArrayStatics;
+template <typename T> struct impl_IJsonErrorStatics2;
+template <typename T> struct impl_IJsonObject;
+template <typename T> struct impl_IJsonObjectStatics;
+template <typename T> struct impl_IJsonObjectWithDefaultValues;
+template <typename T> struct impl_IJsonValue;
+template <typename T> struct impl_IJsonValueStatics;
+template <typename T> struct impl_IJsonValueStatics2;
+
+}
+
+namespace Windows::Data::Json {
+
 enum class JsonErrorStatus
 {
     Unknown = 0,

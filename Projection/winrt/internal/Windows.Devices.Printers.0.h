@@ -26,4 +26,12 @@ struct PrintSchema;
 
 }
 
+namespace Windows::Devices::Printers {
+
+template <typename T> struct impl_IPrint3DDevice;
+template <typename T> struct impl_IPrint3DDeviceStatics;
+template <typename T> struct impl_IPrintSchema;
+
+}
+
 }

@@ -4,8 +4,8 @@
 #pragma once
 
 #include "Windows.Media.SpeechSynthesis.1.h"
-#include "Windows.Foundation.2.h"
-#include "Windows.Storage.Streams.2.h"
+#include "Windows.Foundation.1.h"
+#include "Windows.Storage.Streams.1.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -70,38 +70,6 @@ template <> struct __declspec(uuid("c972b996-6165-50d4-af60-a8c3df51d092")) __de
 }
 
 namespace Windows::Media::SpeechSynthesis {
-
-template <typename D>
-struct WINRT_EBO impl_IInstalledVoicesStatic
-{
-    Windows::Foundation::Collections::IVectorView<Windows::Media::SpeechSynthesis::VoiceInformation> AllVoices() const;
-    Windows::Media::SpeechSynthesis::VoiceInformation DefaultVoice() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_ISpeechSynthesisStream
-{
-    Windows::Foundation::Collections::IVectorView<Windows::Media::IMediaMarker> Markers() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_ISpeechSynthesizer
-{
-    Windows::Foundation::IAsyncOperation<Windows::Media::SpeechSynthesis::SpeechSynthesisStream> SynthesizeTextToStreamAsync(hstring_ref text) const;
-    Windows::Foundation::IAsyncOperation<Windows::Media::SpeechSynthesis::SpeechSynthesisStream> SynthesizeSsmlToStreamAsync(hstring_ref Ssml) const;
-    void Voice(const Windows::Media::SpeechSynthesis::VoiceInformation & value) const;
-    Windows::Media::SpeechSynthesis::VoiceInformation Voice() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IVoiceInformation
-{
-    hstring DisplayName() const;
-    hstring Id() const;
-    hstring Language() const;
-    hstring Description() const;
-    Windows::Media::SpeechSynthesis::VoiceGender Gender() const;
-};
 
 struct IInstalledVoicesStatic :
     Windows::IInspectable,

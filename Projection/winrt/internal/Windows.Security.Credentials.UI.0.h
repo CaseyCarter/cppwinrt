@@ -32,6 +32,15 @@ struct UserConsentVerifier;
 
 namespace Windows::Security::Credentials::UI {
 
+template <typename T> struct impl_ICredentialPickerOptions;
+template <typename T> struct impl_ICredentialPickerResults;
+template <typename T> struct impl_ICredentialPickerStatics;
+template <typename T> struct impl_IUserConsentVerifierStatics;
+
+}
+
+namespace Windows::Security::Credentials::UI {
+
 enum class AuthenticationProtocol
 {
     Basic = 0,

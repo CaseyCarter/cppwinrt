@@ -33,6 +33,17 @@ struct ThreadPoolTimer;
 
 namespace Windows::System::Threading {
 
+template <typename T> struct impl_IThreadPoolStatics;
+template <typename T> struct impl_IThreadPoolTimer;
+template <typename T> struct impl_IThreadPoolTimerStatics;
+template <typename T> struct impl_TimerDestroyedHandler;
+template <typename T> struct impl_TimerElapsedHandler;
+template <typename T> struct impl_WorkItemHandler;
+
+}
+
+namespace Windows::System::Threading {
+
 enum class WorkItemOptions : unsigned
 {
     None = 0x0,

@@ -4,7 +4,7 @@
 #pragma once
 
 #include "Windows.Data.Pdf.1.h"
-#include "Windows.Foundation.2.h"
+#include "Windows.Foundation.1.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -24,63 +24,6 @@ template <> struct __declspec(uuid("8d4950b3-629d-5d7d-84cc-04c0dcf7942b")) __de
 }
 
 namespace Windows::Data::Pdf {
-
-template <typename D>
-struct WINRT_EBO impl_IPdfDocument
-{
-    Windows::Data::Pdf::PdfPage GetPage(uint32_t pageIndex) const;
-    uint32_t PageCount() const;
-    bool IsPasswordProtected() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IPdfDocumentStatics
-{
-    Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument> LoadFromFileAsync(const Windows::Storage::IStorageFile & file) const;
-    Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument> LoadFromFileAsync(const Windows::Storage::IStorageFile & file, hstring_ref password) const;
-    Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument> LoadFromStreamAsync(const Windows::Storage::Streams::IRandomAccessStream & inputStream) const;
-    Windows::Foundation::IAsyncOperation<Windows::Data::Pdf::PdfDocument> LoadFromStreamAsync(const Windows::Storage::Streams::IRandomAccessStream & inputStream, hstring_ref password) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IPdfPage
-{
-    Windows::Foundation::IAsyncAction RenderToStreamAsync(const Windows::Storage::Streams::IRandomAccessStream & outputStream) const;
-    Windows::Foundation::IAsyncAction RenderToStreamAsync(const Windows::Storage::Streams::IRandomAccessStream & outputStream, const Windows::Data::Pdf::PdfPageRenderOptions & options) const;
-    Windows::Foundation::IAsyncAction PreparePageAsync() const;
-    uint32_t Index() const;
-    Windows::Foundation::Size Size() const;
-    Windows::Data::Pdf::PdfPageDimensions Dimensions() const;
-    Windows::Data::Pdf::PdfPageRotation Rotation() const;
-    float PreferredZoom() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IPdfPageDimensions
-{
-    Windows::Foundation::Rect MediaBox() const;
-    Windows::Foundation::Rect CropBox() const;
-    Windows::Foundation::Rect BleedBox() const;
-    Windows::Foundation::Rect TrimBox() const;
-    Windows::Foundation::Rect ArtBox() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IPdfPageRenderOptions
-{
-    Windows::Foundation::Rect SourceRect() const;
-    void SourceRect(const Windows::Foundation::Rect & value) const;
-    uint32_t DestinationWidth() const;
-    void DestinationWidth(uint32_t value) const;
-    uint32_t DestinationHeight() const;
-    void DestinationHeight(uint32_t value) const;
-    Windows::UI::Color BackgroundColor() const;
-    void BackgroundColor(const Windows::UI::Color & value) const;
-    bool IsIgnoringHighContrast() const;
-    void IsIgnoringHighContrast(bool value) const;
-    GUID BitmapEncoderId() const;
-    void BitmapEncoderId(GUID value) const;
-};
 
 struct IPdfDocument :
     Windows::IInspectable,

@@ -68,6 +68,29 @@ struct SignificantDigitsNumberRounder;
 
 namespace Windows::Globalization::NumberFormatting {
 
+template <typename T> struct impl_ICurrencyFormatter;
+template <typename T> struct impl_ICurrencyFormatter2;
+template <typename T> struct impl_ICurrencyFormatterFactory;
+template <typename T> struct impl_IDecimalFormatterFactory;
+template <typename T> struct impl_IIncrementNumberRounder;
+template <typename T> struct impl_INumberFormatter;
+template <typename T> struct impl_INumberFormatter2;
+template <typename T> struct impl_INumberFormatterOptions;
+template <typename T> struct impl_INumberParser;
+template <typename T> struct impl_INumberRounder;
+template <typename T> struct impl_INumberRounderOption;
+template <typename T> struct impl_INumeralSystemTranslator;
+template <typename T> struct impl_INumeralSystemTranslatorFactory;
+template <typename T> struct impl_IPercentFormatterFactory;
+template <typename T> struct impl_IPermilleFormatterFactory;
+template <typename T> struct impl_ISignedZeroOption;
+template <typename T> struct impl_ISignificantDigitsNumberRounder;
+template <typename T> struct impl_ISignificantDigitsOption;
+
+}
+
+namespace Windows::Globalization::NumberFormatting {
+
 enum class CurrencyFormatterMode
 {
     UseSymbol = 0,

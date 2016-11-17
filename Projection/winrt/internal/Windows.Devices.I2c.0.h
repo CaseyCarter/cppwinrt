@@ -48,6 +48,17 @@ struct I2cDevice;
 
 namespace Windows::Devices::I2c {
 
+template <typename T> struct impl_II2cConnectionSettings;
+template <typename T> struct impl_II2cConnectionSettingsFactory;
+template <typename T> struct impl_II2cController;
+template <typename T> struct impl_II2cControllerStatics;
+template <typename T> struct impl_II2cDevice;
+template <typename T> struct impl_II2cDeviceStatics;
+
+}
+
+namespace Windows::Devices::I2c {
+
 enum class I2cBusSpeed
 {
     StandardMode = 0,

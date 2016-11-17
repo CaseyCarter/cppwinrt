@@ -38,6 +38,17 @@ struct UICommandSeparator;
 
 namespace Windows::UI::Popups {
 
+template <typename T> struct impl_IMessageDialog;
+template <typename T> struct impl_IMessageDialogFactory;
+template <typename T> struct impl_IPopupMenu;
+template <typename T> struct impl_IUICommand;
+template <typename T> struct impl_IUICommandFactory;
+template <typename T> struct impl_UICommandInvokedHandler;
+
+}
+
+namespace Windows::UI::Popups {
+
 enum class MessageDialogOptions : unsigned
 {
     None = 0x0,

@@ -29,8 +29,17 @@ namespace ABI {
 
 namespace Windows::Graphics::Effects {
 
-template <typename T> struct impl_IGraphicsEffect;
-template <typename T> struct impl_IGraphicsEffectSource;
+template <typename D>
+struct WINRT_EBO impl_IGraphicsEffect
+{
+    hstring Name() const;
+    void Name(hstring_ref name) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGraphicsEffectSource
+{
+};
 
 }
 

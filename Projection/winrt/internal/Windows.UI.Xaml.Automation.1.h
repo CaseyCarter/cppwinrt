@@ -463,64 +463,478 @@ template <> struct traits<Windows::UI::Xaml::Automation::WindowPatternIdentifier
 
 namespace Windows::UI::Xaml::Automation {
 
-template <typename T> struct impl_IAnnotationPatternIdentifiers;
-template <typename T> struct impl_IAnnotationPatternIdentifiersStatics;
-template <typename T> struct impl_IAutomationAnnotation;
-template <typename T> struct impl_IAutomationAnnotationFactory;
-template <typename T> struct impl_IAutomationAnnotationStatics;
-template <typename T> struct impl_IAutomationElementIdentifiers;
-template <typename T> struct impl_IAutomationElementIdentifiersStatics;
-template <typename T> struct impl_IAutomationElementIdentifiersStatics2;
-template <typename T> struct impl_IAutomationElementIdentifiersStatics3;
-template <typename T> struct impl_IAutomationElementIdentifiersStatics4;
-template <typename T> struct impl_IAutomationElementIdentifiersStatics5;
-template <typename T> struct impl_IAutomationProperties;
-template <typename T> struct impl_IAutomationPropertiesStatics;
-template <typename T> struct impl_IAutomationPropertiesStatics2;
-template <typename T> struct impl_IAutomationPropertiesStatics3;
-template <typename T> struct impl_IAutomationPropertiesStatics4;
-template <typename T> struct impl_IAutomationPropertiesStatics5;
-template <typename T> struct impl_IAutomationProperty;
-template <typename T> struct impl_IDockPatternIdentifiers;
-template <typename T> struct impl_IDockPatternIdentifiersStatics;
-template <typename T> struct impl_IDragPatternIdentifiers;
-template <typename T> struct impl_IDragPatternIdentifiersStatics;
-template <typename T> struct impl_IDropTargetPatternIdentifiers;
-template <typename T> struct impl_IDropTargetPatternIdentifiersStatics;
-template <typename T> struct impl_IExpandCollapsePatternIdentifiers;
-template <typename T> struct impl_IExpandCollapsePatternIdentifiersStatics;
-template <typename T> struct impl_IGridItemPatternIdentifiers;
-template <typename T> struct impl_IGridItemPatternIdentifiersStatics;
-template <typename T> struct impl_IGridPatternIdentifiers;
-template <typename T> struct impl_IGridPatternIdentifiersStatics;
-template <typename T> struct impl_IMultipleViewPatternIdentifiers;
-template <typename T> struct impl_IMultipleViewPatternIdentifiersStatics;
-template <typename T> struct impl_IRangeValuePatternIdentifiers;
-template <typename T> struct impl_IRangeValuePatternIdentifiersStatics;
-template <typename T> struct impl_IScrollPatternIdentifiers;
-template <typename T> struct impl_IScrollPatternIdentifiersStatics;
-template <typename T> struct impl_ISelectionItemPatternIdentifiers;
-template <typename T> struct impl_ISelectionItemPatternIdentifiersStatics;
-template <typename T> struct impl_ISelectionPatternIdentifiers;
-template <typename T> struct impl_ISelectionPatternIdentifiersStatics;
-template <typename T> struct impl_ISpreadsheetItemPatternIdentifiers;
-template <typename T> struct impl_ISpreadsheetItemPatternIdentifiersStatics;
-template <typename T> struct impl_IStylesPatternIdentifiers;
-template <typename T> struct impl_IStylesPatternIdentifiersStatics;
-template <typename T> struct impl_ITableItemPatternIdentifiers;
-template <typename T> struct impl_ITableItemPatternIdentifiersStatics;
-template <typename T> struct impl_ITablePatternIdentifiers;
-template <typename T> struct impl_ITablePatternIdentifiersStatics;
-template <typename T> struct impl_ITogglePatternIdentifiers;
-template <typename T> struct impl_ITogglePatternIdentifiersStatics;
-template <typename T> struct impl_ITransformPattern2Identifiers;
-template <typename T> struct impl_ITransformPattern2IdentifiersStatics;
-template <typename T> struct impl_ITransformPatternIdentifiers;
-template <typename T> struct impl_ITransformPatternIdentifiersStatics;
-template <typename T> struct impl_IValuePatternIdentifiers;
-template <typename T> struct impl_IValuePatternIdentifiersStatics;
-template <typename T> struct impl_IWindowPatternIdentifiers;
-template <typename T> struct impl_IWindowPatternIdentifiersStatics;
+template <typename D>
+struct WINRT_EBO impl_IAnnotationPatternIdentifiers
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAnnotationPatternIdentifiersStatics
+{
+    Windows::UI::Xaml::Automation::AutomationProperty AnnotationTypeIdProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty AnnotationTypeNameProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty AuthorProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty DateTimeProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty TargetProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAutomationAnnotation
+{
+    Windows::UI::Xaml::Automation::AnnotationType Type() const;
+    void Type(Windows::UI::Xaml::Automation::AnnotationType value) const;
+    Windows::UI::Xaml::UIElement Element() const;
+    void Element(const Windows::UI::Xaml::UIElement & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAutomationAnnotationFactory
+{
+    Windows::UI::Xaml::Automation::AutomationAnnotation CreateInstance(Windows::UI::Xaml::Automation::AnnotationType type) const;
+    Windows::UI::Xaml::Automation::AutomationAnnotation CreateWithElementParameter(Windows::UI::Xaml::Automation::AnnotationType type, const Windows::UI::Xaml::UIElement & element) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAutomationAnnotationStatics
+{
+    Windows::UI::Xaml::DependencyProperty TypeProperty() const;
+    Windows::UI::Xaml::DependencyProperty ElementProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAutomationElementIdentifiers
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAutomationElementIdentifiersStatics
+{
+    Windows::UI::Xaml::Automation::AutomationProperty AcceleratorKeyProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty AccessKeyProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty AutomationIdProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty BoundingRectangleProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty ClassNameProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty ClickablePointProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty ControlTypeProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty HasKeyboardFocusProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty HelpTextProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty IsContentElementProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty IsControlElementProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty IsEnabledProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty IsKeyboardFocusableProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty IsOffscreenProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty IsPasswordProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty IsRequiredForFormProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty ItemStatusProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty ItemTypeProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty LabeledByProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty LocalizedControlTypeProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty NameProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty OrientationProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty LiveSettingProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAutomationElementIdentifiersStatics2
+{
+    Windows::UI::Xaml::Automation::AutomationProperty ControlledPeersProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAutomationElementIdentifiersStatics3
+{
+    Windows::UI::Xaml::Automation::AutomationProperty PositionInSetProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty SizeOfSetProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty LevelProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty AnnotationsProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAutomationElementIdentifiersStatics4
+{
+    Windows::UI::Xaml::Automation::AutomationProperty LandmarkTypeProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty LocalizedLandmarkTypeProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAutomationElementIdentifiersStatics5
+{
+    Windows::UI::Xaml::Automation::AutomationProperty IsPeripheralProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty IsDataValidForFormProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty FullDescriptionProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty DescribedByProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty FlowsToProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty FlowsFromProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAutomationProperties
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAutomationPropertiesStatics
+{
+    Windows::UI::Xaml::DependencyProperty AcceleratorKeyProperty() const;
+    hstring GetAcceleratorKey(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetAcceleratorKey(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const;
+    Windows::UI::Xaml::DependencyProperty AccessKeyProperty() const;
+    hstring GetAccessKey(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetAccessKey(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const;
+    Windows::UI::Xaml::DependencyProperty AutomationIdProperty() const;
+    hstring GetAutomationId(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetAutomationId(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const;
+    Windows::UI::Xaml::DependencyProperty HelpTextProperty() const;
+    hstring GetHelpText(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetHelpText(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const;
+    Windows::UI::Xaml::DependencyProperty IsRequiredForFormProperty() const;
+    bool GetIsRequiredForForm(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetIsRequiredForForm(const Windows::UI::Xaml::DependencyObject & element, bool value) const;
+    Windows::UI::Xaml::DependencyProperty ItemStatusProperty() const;
+    hstring GetItemStatus(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetItemStatus(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const;
+    Windows::UI::Xaml::DependencyProperty ItemTypeProperty() const;
+    hstring GetItemType(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetItemType(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const;
+    Windows::UI::Xaml::DependencyProperty LabeledByProperty() const;
+    Windows::UI::Xaml::UIElement GetLabeledBy(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetLabeledBy(const Windows::UI::Xaml::DependencyObject & element, const Windows::UI::Xaml::UIElement & value) const;
+    Windows::UI::Xaml::DependencyProperty NameProperty() const;
+    hstring GetName(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetName(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const;
+    Windows::UI::Xaml::DependencyProperty LiveSettingProperty() const;
+    Windows::UI::Xaml::Automation::Peers::AutomationLiveSetting GetLiveSetting(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetLiveSetting(const Windows::UI::Xaml::DependencyObject & element, Windows::UI::Xaml::Automation::Peers::AutomationLiveSetting value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAutomationPropertiesStatics2
+{
+    Windows::UI::Xaml::DependencyProperty AccessibilityViewProperty() const;
+    Windows::UI::Xaml::Automation::Peers::AccessibilityView GetAccessibilityView(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetAccessibilityView(const Windows::UI::Xaml::DependencyObject & element, Windows::UI::Xaml::Automation::Peers::AccessibilityView value) const;
+    Windows::UI::Xaml::DependencyProperty ControlledPeersProperty() const;
+    Windows::Foundation::Collections::IVector<Windows::UI::Xaml::UIElement> GetControlledPeers(const Windows::UI::Xaml::DependencyObject & element) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAutomationPropertiesStatics3
+{
+    Windows::UI::Xaml::DependencyProperty PositionInSetProperty() const;
+    int32_t GetPositionInSet(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetPositionInSet(const Windows::UI::Xaml::DependencyObject & element, int32_t value) const;
+    Windows::UI::Xaml::DependencyProperty SizeOfSetProperty() const;
+    int32_t GetSizeOfSet(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetSizeOfSet(const Windows::UI::Xaml::DependencyObject & element, int32_t value) const;
+    Windows::UI::Xaml::DependencyProperty LevelProperty() const;
+    int32_t GetLevel(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetLevel(const Windows::UI::Xaml::DependencyObject & element, int32_t value) const;
+    Windows::UI::Xaml::DependencyProperty AnnotationsProperty() const;
+    Windows::Foundation::Collections::IVector<Windows::UI::Xaml::Automation::AutomationAnnotation> GetAnnotations(const Windows::UI::Xaml::DependencyObject & element) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAutomationPropertiesStatics4
+{
+    Windows::UI::Xaml::DependencyProperty LandmarkTypeProperty() const;
+    Windows::UI::Xaml::Automation::Peers::AutomationLandmarkType GetLandmarkType(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetLandmarkType(const Windows::UI::Xaml::DependencyObject & element, Windows::UI::Xaml::Automation::Peers::AutomationLandmarkType value) const;
+    Windows::UI::Xaml::DependencyProperty LocalizedLandmarkTypeProperty() const;
+    hstring GetLocalizedLandmarkType(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetLocalizedLandmarkType(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAutomationPropertiesStatics5
+{
+    Windows::UI::Xaml::DependencyProperty IsPeripheralProperty() const;
+    bool GetIsPeripheral(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetIsPeripheral(const Windows::UI::Xaml::DependencyObject & element, bool value) const;
+    Windows::UI::Xaml::DependencyProperty IsDataValidForFormProperty() const;
+    bool GetIsDataValidForForm(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetIsDataValidForForm(const Windows::UI::Xaml::DependencyObject & element, bool value) const;
+    Windows::UI::Xaml::DependencyProperty FullDescriptionProperty() const;
+    hstring GetFullDescription(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetFullDescription(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const;
+    Windows::UI::Xaml::DependencyProperty LocalizedControlTypeProperty() const;
+    hstring GetLocalizedControlType(const Windows::UI::Xaml::DependencyObject & element) const;
+    void SetLocalizedControlType(const Windows::UI::Xaml::DependencyObject & element, hstring_ref value) const;
+    Windows::UI::Xaml::DependencyProperty DescribedByProperty() const;
+    Windows::Foundation::Collections::IVector<Windows::UI::Xaml::DependencyObject> GetDescribedBy(const Windows::UI::Xaml::DependencyObject & element) const;
+    Windows::UI::Xaml::DependencyProperty FlowsToProperty() const;
+    Windows::Foundation::Collections::IVector<Windows::UI::Xaml::DependencyObject> GetFlowsTo(const Windows::UI::Xaml::DependencyObject & element) const;
+    Windows::UI::Xaml::DependencyProperty FlowsFromProperty() const;
+    Windows::Foundation::Collections::IVector<Windows::UI::Xaml::DependencyObject> GetFlowsFrom(const Windows::UI::Xaml::DependencyObject & element) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAutomationProperty
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDockPatternIdentifiers
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDockPatternIdentifiersStatics
+{
+    Windows::UI::Xaml::Automation::AutomationProperty DockPositionProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDragPatternIdentifiers
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDragPatternIdentifiersStatics
+{
+    Windows::UI::Xaml::Automation::AutomationProperty DropEffectProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty DropEffectsProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty GrabbedItemsProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty IsGrabbedProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDropTargetPatternIdentifiers
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDropTargetPatternIdentifiersStatics
+{
+    Windows::UI::Xaml::Automation::AutomationProperty DropTargetEffectProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty DropTargetEffectsProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IExpandCollapsePatternIdentifiers
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IExpandCollapsePatternIdentifiersStatics
+{
+    Windows::UI::Xaml::Automation::AutomationProperty ExpandCollapseStateProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGridItemPatternIdentifiers
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGridItemPatternIdentifiersStatics
+{
+    Windows::UI::Xaml::Automation::AutomationProperty ColumnProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty ColumnSpanProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty ContainingGridProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty RowProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty RowSpanProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGridPatternIdentifiers
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IGridPatternIdentifiersStatics
+{
+    Windows::UI::Xaml::Automation::AutomationProperty ColumnCountProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty RowCountProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMultipleViewPatternIdentifiers
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMultipleViewPatternIdentifiersStatics
+{
+    Windows::UI::Xaml::Automation::AutomationProperty CurrentViewProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty SupportedViewsProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRangeValuePatternIdentifiers
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRangeValuePatternIdentifiersStatics
+{
+    Windows::UI::Xaml::Automation::AutomationProperty IsReadOnlyProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty LargeChangeProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty MaximumProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty MinimumProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty SmallChangeProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty ValueProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IScrollPatternIdentifiers
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IScrollPatternIdentifiersStatics
+{
+    Windows::UI::Xaml::Automation::AutomationProperty HorizontallyScrollableProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty HorizontalScrollPercentProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty HorizontalViewSizeProperty() const;
+    double NoScroll() const;
+    Windows::UI::Xaml::Automation::AutomationProperty VerticallyScrollableProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty VerticalScrollPercentProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty VerticalViewSizeProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISelectionItemPatternIdentifiers
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISelectionItemPatternIdentifiersStatics
+{
+    Windows::UI::Xaml::Automation::AutomationProperty IsSelectedProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty SelectionContainerProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISelectionPatternIdentifiers
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISelectionPatternIdentifiersStatics
+{
+    Windows::UI::Xaml::Automation::AutomationProperty CanSelectMultipleProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty IsSelectionRequiredProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty SelectionProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpreadsheetItemPatternIdentifiers
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISpreadsheetItemPatternIdentifiersStatics
+{
+    Windows::UI::Xaml::Automation::AutomationProperty FormulaProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStylesPatternIdentifiers
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IStylesPatternIdentifiersStatics
+{
+    Windows::UI::Xaml::Automation::AutomationProperty ExtendedPropertiesProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty FillColorProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty FillPatternColorProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty FillPatternStyleProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty ShapeProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty StyleIdProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty StyleNameProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITableItemPatternIdentifiers
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITableItemPatternIdentifiersStatics
+{
+    Windows::UI::Xaml::Automation::AutomationProperty ColumnHeaderItemsProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty RowHeaderItemsProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITablePatternIdentifiers
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITablePatternIdentifiersStatics
+{
+    Windows::UI::Xaml::Automation::AutomationProperty ColumnHeadersProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty RowHeadersProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty RowOrColumnMajorProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITogglePatternIdentifiers
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITogglePatternIdentifiersStatics
+{
+    Windows::UI::Xaml::Automation::AutomationProperty ToggleStateProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITransformPattern2Identifiers
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITransformPattern2IdentifiersStatics
+{
+    Windows::UI::Xaml::Automation::AutomationProperty CanZoomProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty ZoomLevelProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty MaxZoomProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty MinZoomProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITransformPatternIdentifiers
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITransformPatternIdentifiersStatics
+{
+    Windows::UI::Xaml::Automation::AutomationProperty CanMoveProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty CanResizeProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty CanRotateProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IValuePatternIdentifiers
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IValuePatternIdentifiersStatics
+{
+    Windows::UI::Xaml::Automation::AutomationProperty IsReadOnlyProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty ValueProperty() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWindowPatternIdentifiers
+{
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWindowPatternIdentifiersStatics
+{
+    Windows::UI::Xaml::Automation::AutomationProperty CanMaximizeProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty CanMinimizeProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty IsModalProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty IsTopmostProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty WindowInteractionStateProperty() const;
+    Windows::UI::Xaml::Automation::AutomationProperty WindowVisualStateProperty() const;
+};
 
 }
 

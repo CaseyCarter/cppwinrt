@@ -69,6 +69,31 @@ struct NumeralSystemIdentifiers;
 
 namespace Windows::Globalization {
 
+template <typename T> struct impl_IApplicationLanguagesStatics;
+template <typename T> struct impl_ICalendar;
+template <typename T> struct impl_ICalendarFactory;
+template <typename T> struct impl_ICalendarFactory2;
+template <typename T> struct impl_ICalendarIdentifiersStatics;
+template <typename T> struct impl_ICalendarIdentifiersStatics2;
+template <typename T> struct impl_ICalendarIdentifiersStatics3;
+template <typename T> struct impl_IClockIdentifiersStatics;
+template <typename T> struct impl_ICurrencyIdentifiersStatics;
+template <typename T> struct impl_IGeographicRegion;
+template <typename T> struct impl_IGeographicRegionFactory;
+template <typename T> struct impl_IGeographicRegionStatics;
+template <typename T> struct impl_ILanguage;
+template <typename T> struct impl_ILanguageExtensionSubtags;
+template <typename T> struct impl_ILanguageFactory;
+template <typename T> struct impl_ILanguageStatics;
+template <typename T> struct impl_ILanguageStatics2;
+template <typename T> struct impl_INumeralSystemIdentifiersStatics;
+template <typename T> struct impl_INumeralSystemIdentifiersStatics2;
+template <typename T> struct impl_ITimeZoneOnCalendar;
+
+}
+
+namespace Windows::Globalization {
+
 enum class DayOfWeek
 {
     Sunday = 0,

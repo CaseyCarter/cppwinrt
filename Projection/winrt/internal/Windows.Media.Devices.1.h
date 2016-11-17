@@ -437,43 +437,430 @@ template <> struct traits<Windows::Media::Devices::ZoomSettings> { using default
 
 namespace Windows::Media::Devices {
 
-template <typename T> struct impl_IAdvancedPhotoCaptureSettings;
-template <typename T> struct impl_IAdvancedPhotoControl;
-template <typename T> struct impl_IAdvancedVideoCaptureDeviceController;
-template <typename T> struct impl_IAdvancedVideoCaptureDeviceController2;
-template <typename T> struct impl_IAdvancedVideoCaptureDeviceController3;
-template <typename T> struct impl_IAdvancedVideoCaptureDeviceController4;
-template <typename T> struct impl_IAudioDeviceController;
-template <typename T> struct impl_IDefaultAudioDeviceChangedEventArgs;
-template <typename T> struct impl_IExposureCompensationControl;
-template <typename T> struct impl_IExposureControl;
-template <typename T> struct impl_IExposurePriorityVideoControl;
-template <typename T> struct impl_IFlashControl;
-template <typename T> struct impl_IFlashControl2;
-template <typename T> struct impl_IFocusControl;
-template <typename T> struct impl_IFocusControl2;
-template <typename T> struct impl_IFocusSettings;
-template <typename T> struct impl_IHdrVideoControl;
-template <typename T> struct impl_IIsoSpeedControl;
-template <typename T> struct impl_IIsoSpeedControl2;
-template <typename T> struct impl_ILowLagPhotoControl;
-template <typename T> struct impl_ILowLagPhotoSequenceControl;
-template <typename T> struct impl_IMediaDeviceControl;
-template <typename T> struct impl_IMediaDeviceControlCapabilities;
-template <typename T> struct impl_IMediaDeviceController;
-template <typename T> struct impl_IMediaDeviceStatics;
-template <typename T> struct impl_IOpticalImageStabilizationControl;
-template <typename T> struct impl_IPhotoConfirmationControl;
-template <typename T> struct impl_IRegionOfInterest;
-template <typename T> struct impl_IRegionOfInterest2;
-template <typename T> struct impl_IRegionsOfInterestControl;
-template <typename T> struct impl_ISceneModeControl;
-template <typename T> struct impl_ITorchControl;
-template <typename T> struct impl_IVideoDeviceController;
-template <typename T> struct impl_IWhiteBalanceControl;
-template <typename T> struct impl_IZoomControl;
-template <typename T> struct impl_IZoomControl2;
-template <typename T> struct impl_IZoomSettings;
+template <typename D>
+struct WINRT_EBO impl_IAdvancedPhotoCaptureSettings
+{
+    Windows::Media::Devices::AdvancedPhotoMode Mode() const;
+    void Mode(Windows::Media::Devices::AdvancedPhotoMode value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAdvancedPhotoControl
+{
+    bool Supported() const;
+    Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::AdvancedPhotoMode> SupportedModes() const;
+    Windows::Media::Devices::AdvancedPhotoMode Mode() const;
+    void Configure(const Windows::Media::Devices::AdvancedPhotoCaptureSettings & settings) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAdvancedVideoCaptureDeviceController
+{
+    void SetDeviceProperty(hstring_ref propertyId, const Windows::IInspectable & propertyValue) const;
+    Windows::IInspectable GetDeviceProperty(hstring_ref propertyId) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAdvancedVideoCaptureDeviceController2
+{
+    Windows::Media::Devices::LowLagPhotoSequenceControl LowLagPhotoSequence() const;
+    Windows::Media::Devices::LowLagPhotoControl LowLagPhoto() const;
+    Windows::Media::Devices::SceneModeControl SceneModeControl() const;
+    Windows::Media::Devices::TorchControl TorchControl() const;
+    Windows::Media::Devices::FlashControl FlashControl() const;
+    Windows::Media::Devices::WhiteBalanceControl WhiteBalanceControl() const;
+    Windows::Media::Devices::ExposureControl ExposureControl() const;
+    Windows::Media::Devices::FocusControl FocusControl() const;
+    Windows::Media::Devices::ExposureCompensationControl ExposureCompensationControl() const;
+    Windows::Media::Devices::IsoSpeedControl IsoSpeedControl() const;
+    Windows::Media::Devices::RegionsOfInterestControl RegionsOfInterestControl() const;
+    Windows::Media::Devices::CaptureUse PrimaryUse() const;
+    void PrimaryUse(Windows::Media::Devices::CaptureUse value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAdvancedVideoCaptureDeviceController3
+{
+    Windows::Media::Devices::Core::VariablePhotoSequenceController VariablePhotoSequenceController() const;
+    Windows::Media::Devices::PhotoConfirmationControl PhotoConfirmationControl() const;
+    Windows::Media::Devices::ZoomControl ZoomControl() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAdvancedVideoCaptureDeviceController4
+{
+    Windows::Media::Devices::ExposurePriorityVideoControl ExposurePriorityVideoControl() const;
+    Windows::Media::Devices::MediaCaptureOptimization DesiredOptimization() const;
+    void DesiredOptimization(Windows::Media::Devices::MediaCaptureOptimization value) const;
+    Windows::Media::Devices::HdrVideoControl HdrVideoControl() const;
+    Windows::Media::Devices::OpticalImageStabilizationControl OpticalImageStabilizationControl() const;
+    Windows::Media::Devices::AdvancedPhotoControl AdvancedPhotoControl() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IAudioDeviceController
+{
+    void Muted(bool value) const;
+    bool Muted() const;
+    void VolumePercent(float value) const;
+    float VolumePercent() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IDefaultAudioDeviceChangedEventArgs
+{
+    hstring Id() const;
+    Windows::Media::Devices::AudioDeviceRole Role() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IExposureCompensationControl
+{
+    bool Supported() const;
+    float Min() const;
+    float Max() const;
+    float Step() const;
+    float Value() const;
+    Windows::Foundation::IAsyncAction SetValueAsync(float value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IExposureControl
+{
+    bool Supported() const;
+    bool Auto() const;
+    Windows::Foundation::IAsyncAction SetAutoAsync(bool value) const;
+    Windows::Foundation::TimeSpan Min() const;
+    Windows::Foundation::TimeSpan Max() const;
+    Windows::Foundation::TimeSpan Step() const;
+    Windows::Foundation::TimeSpan Value() const;
+    Windows::Foundation::IAsyncAction SetValueAsync(const Windows::Foundation::TimeSpan & shutterDuration) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IExposurePriorityVideoControl
+{
+    bool Supported() const;
+    bool Enabled() const;
+    void Enabled(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFlashControl
+{
+    bool Supported() const;
+    bool PowerSupported() const;
+    bool RedEyeReductionSupported() const;
+    bool Enabled() const;
+    void Enabled(bool value) const;
+    bool Auto() const;
+    void Auto(bool value) const;
+    bool RedEyeReduction() const;
+    void RedEyeReduction(bool value) const;
+    float PowerPercent() const;
+    void PowerPercent(float value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFlashControl2
+{
+    bool AssistantLightSupported() const;
+    bool AssistantLightEnabled() const;
+    void AssistantLightEnabled(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFocusControl
+{
+    bool Supported() const;
+    Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::FocusPreset> SupportedPresets() const;
+    Windows::Media::Devices::FocusPreset Preset() const;
+    Windows::Foundation::IAsyncAction SetPresetAsync(Windows::Media::Devices::FocusPreset preset) const;
+    Windows::Foundation::IAsyncAction SetPresetAsync(Windows::Media::Devices::FocusPreset preset, bool completeBeforeFocus) const;
+    uint32_t Min() const;
+    uint32_t Max() const;
+    uint32_t Step() const;
+    uint32_t Value() const;
+    Windows::Foundation::IAsyncAction SetValueAsync(uint32_t focus) const;
+    Windows::Foundation::IAsyncAction FocusAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFocusControl2
+{
+    bool FocusChangedSupported() const;
+    bool WaitForFocusSupported() const;
+    Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::FocusMode> SupportedFocusModes() const;
+    Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::ManualFocusDistance> SupportedFocusDistances() const;
+    Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::AutoFocusRange> SupportedFocusRanges() const;
+    Windows::Media::Devices::FocusMode Mode() const;
+    Windows::Media::Devices::MediaCaptureFocusState FocusState() const;
+    Windows::Foundation::IAsyncAction UnlockAsync() const;
+    Windows::Foundation::IAsyncAction LockAsync() const;
+    void Configure(const Windows::Media::Devices::FocusSettings & settings) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IFocusSettings
+{
+    Windows::Media::Devices::FocusMode Mode() const;
+    void Mode(Windows::Media::Devices::FocusMode value) const;
+    Windows::Media::Devices::AutoFocusRange AutoFocusRange() const;
+    void AutoFocusRange(Windows::Media::Devices::AutoFocusRange value) const;
+    Windows::Foundation::IReference<uint32_t> Value() const;
+    void Value(const Windows::Foundation::IReference<uint32_t> & value) const;
+    Windows::Foundation::IReference<winrt::Windows::Media::Devices::ManualFocusDistance> Distance() const;
+    void Distance(const Windows::Foundation::IReference<winrt::Windows::Media::Devices::ManualFocusDistance> & value) const;
+    bool WaitForFocus() const;
+    void WaitForFocus(bool value) const;
+    bool DisableDriverFallback() const;
+    void DisableDriverFallback(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IHdrVideoControl
+{
+    bool Supported() const;
+    Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::HdrVideoMode> SupportedModes() const;
+    Windows::Media::Devices::HdrVideoMode Mode() const;
+    void Mode(Windows::Media::Devices::HdrVideoMode value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IIsoSpeedControl
+{
+    bool Supported() const;
+    Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::IsoSpeedPreset> SupportedPresets() const;
+    Windows::Media::Devices::IsoSpeedPreset Preset() const;
+    Windows::Foundation::IAsyncAction SetPresetAsync(Windows::Media::Devices::IsoSpeedPreset preset) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IIsoSpeedControl2
+{
+    uint32_t Min() const;
+    uint32_t Max() const;
+    uint32_t Step() const;
+    uint32_t Value() const;
+    Windows::Foundation::IAsyncAction SetValueAsync(uint32_t isoSpeed) const;
+    bool Auto() const;
+    Windows::Foundation::IAsyncAction SetAutoAsync() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILowLagPhotoControl
+{
+    Windows::Media::MediaProperties::MediaRatio GetHighestConcurrentFrameRate(const Windows::Media::MediaProperties::IMediaEncodingProperties & captureProperties) const;
+    Windows::Media::MediaProperties::MediaRatio GetCurrentFrameRate() const;
+    bool ThumbnailEnabled() const;
+    void ThumbnailEnabled(bool value) const;
+    Windows::Media::MediaProperties::MediaThumbnailFormat ThumbnailFormat() const;
+    void ThumbnailFormat(Windows::Media::MediaProperties::MediaThumbnailFormat value) const;
+    uint32_t DesiredThumbnailSize() const;
+    void DesiredThumbnailSize(uint32_t value) const;
+    uint32_t HardwareAcceleratedThumbnailSupported() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ILowLagPhotoSequenceControl
+{
+    bool Supported() const;
+    uint32_t MaxPastPhotos() const;
+    float MaxPhotosPerSecond() const;
+    uint32_t PastPhotoLimit() const;
+    void PastPhotoLimit(uint32_t value) const;
+    float PhotosPerSecondLimit() const;
+    void PhotosPerSecondLimit(float value) const;
+    Windows::Media::MediaProperties::MediaRatio GetHighestConcurrentFrameRate(const Windows::Media::MediaProperties::IMediaEncodingProperties & captureProperties) const;
+    Windows::Media::MediaProperties::MediaRatio GetCurrentFrameRate() const;
+    bool ThumbnailEnabled() const;
+    void ThumbnailEnabled(bool value) const;
+    Windows::Media::MediaProperties::MediaThumbnailFormat ThumbnailFormat() const;
+    void ThumbnailFormat(Windows::Media::MediaProperties::MediaThumbnailFormat value) const;
+    uint32_t DesiredThumbnailSize() const;
+    void DesiredThumbnailSize(uint32_t value) const;
+    uint32_t HardwareAcceleratedThumbnailSupported() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaDeviceControl
+{
+    Windows::Media::Devices::MediaDeviceControlCapabilities Capabilities() const;
+    bool TryGetValue(double & value) const;
+    bool TrySetValue(double value) const;
+    bool TryGetAuto(bool & value) const;
+    bool TrySetAuto(bool value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaDeviceControlCapabilities
+{
+    bool Supported() const;
+    double Min() const;
+    double Max() const;
+    double Step() const;
+    double Default() const;
+    bool AutoModeSupported() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaDeviceController
+{
+    Windows::Foundation::Collections::IVectorView<Windows::Media::MediaProperties::IMediaEncodingProperties> GetAvailableMediaStreamProperties(Windows::Media::Capture::MediaStreamType mediaStreamType) const;
+    Windows::Media::MediaProperties::IMediaEncodingProperties GetMediaStreamProperties(Windows::Media::Capture::MediaStreamType mediaStreamType) const;
+    Windows::Foundation::IAsyncAction SetMediaStreamPropertiesAsync(Windows::Media::Capture::MediaStreamType mediaStreamType, const Windows::Media::MediaProperties::IMediaEncodingProperties & mediaEncodingProperties) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IMediaDeviceStatics
+{
+    hstring GetAudioCaptureSelector() const;
+    hstring GetAudioRenderSelector() const;
+    hstring GetVideoCaptureSelector() const;
+    hstring GetDefaultAudioCaptureId(Windows::Media::Devices::AudioDeviceRole role) const;
+    hstring GetDefaultAudioRenderId(Windows::Media::Devices::AudioDeviceRole role) const;
+    event_token DefaultAudioCaptureDeviceChanged(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> & handler) const;
+    using DefaultAudioCaptureDeviceChanged_revoker = event_revoker<IMediaDeviceStatics>;
+    DefaultAudioCaptureDeviceChanged_revoker DefaultAudioCaptureDeviceChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs> & handler) const;
+    void DefaultAudioCaptureDeviceChanged(event_token cookie) const;
+    event_token DefaultAudioRenderDeviceChanged(const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> & handler) const;
+    using DefaultAudioRenderDeviceChanged_revoker = event_revoker<IMediaDeviceStatics>;
+    DefaultAudioRenderDeviceChanged_revoker DefaultAudioRenderDeviceChanged(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::IInspectable, Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs> & handler) const;
+    void DefaultAudioRenderDeviceChanged(event_token cookie) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IOpticalImageStabilizationControl
+{
+    bool Supported() const;
+    Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::OpticalImageStabilizationMode> SupportedModes() const;
+    Windows::Media::Devices::OpticalImageStabilizationMode Mode() const;
+    void Mode(Windows::Media::Devices::OpticalImageStabilizationMode value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IPhotoConfirmationControl
+{
+    bool Supported() const;
+    bool Enabled() const;
+    void Enabled(bool value) const;
+    Windows::Media::MediaProperties::MediaPixelFormat PixelFormat() const;
+    void PixelFormat(Windows::Media::MediaProperties::MediaPixelFormat format) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRegionOfInterest
+{
+    bool AutoFocusEnabled() const;
+    void AutoFocusEnabled(bool value) const;
+    bool AutoWhiteBalanceEnabled() const;
+    void AutoWhiteBalanceEnabled(bool value) const;
+    bool AutoExposureEnabled() const;
+    void AutoExposureEnabled(bool value) const;
+    Windows::Foundation::Rect Bounds() const;
+    void Bounds(const Windows::Foundation::Rect & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRegionOfInterest2
+{
+    Windows::Media::Devices::RegionOfInterestType Type() const;
+    void Type(Windows::Media::Devices::RegionOfInterestType value) const;
+    bool BoundsNormalized() const;
+    void BoundsNormalized(bool value) const;
+    uint32_t Weight() const;
+    void Weight(uint32_t value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IRegionsOfInterestControl
+{
+    uint32_t MaxRegions() const;
+    Windows::Foundation::IAsyncAction SetRegionsAsync(const Windows::Foundation::Collections::IIterable<Windows::Media::Devices::RegionOfInterest> & regions) const;
+    Windows::Foundation::IAsyncAction SetRegionsAsync(const Windows::Foundation::Collections::IIterable<Windows::Media::Devices::RegionOfInterest> & regions, bool lockValues) const;
+    Windows::Foundation::IAsyncAction ClearRegionsAsync() const;
+    bool AutoFocusSupported() const;
+    bool AutoWhiteBalanceSupported() const;
+    bool AutoExposureSupported() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ISceneModeControl
+{
+    Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::CaptureSceneMode> SupportedModes() const;
+    Windows::Media::Devices::CaptureSceneMode Value() const;
+    Windows::Foundation::IAsyncAction SetValueAsync(Windows::Media::Devices::CaptureSceneMode sceneMode) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ITorchControl
+{
+    bool Supported() const;
+    bool PowerSupported() const;
+    bool Enabled() const;
+    void Enabled(bool value) const;
+    float PowerPercent() const;
+    void PowerPercent(float value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IVideoDeviceController
+{
+    Windows::Media::Devices::MediaDeviceControl Brightness() const;
+    Windows::Media::Devices::MediaDeviceControl Contrast() const;
+    Windows::Media::Devices::MediaDeviceControl Hue() const;
+    Windows::Media::Devices::MediaDeviceControl WhiteBalance() const;
+    Windows::Media::Devices::MediaDeviceControl BacklightCompensation() const;
+    Windows::Media::Devices::MediaDeviceControl Pan() const;
+    Windows::Media::Devices::MediaDeviceControl Tilt() const;
+    Windows::Media::Devices::MediaDeviceControl Zoom() const;
+    Windows::Media::Devices::MediaDeviceControl Roll() const;
+    Windows::Media::Devices::MediaDeviceControl Exposure() const;
+    Windows::Media::Devices::MediaDeviceControl Focus() const;
+    bool TrySetPowerlineFrequency(Windows::Media::Capture::PowerlineFrequency value) const;
+    bool TryGetPowerlineFrequency(Windows::Media::Capture::PowerlineFrequency & value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IWhiteBalanceControl
+{
+    bool Supported() const;
+    Windows::Media::Devices::ColorTemperaturePreset Preset() const;
+    Windows::Foundation::IAsyncAction SetPresetAsync(Windows::Media::Devices::ColorTemperaturePreset preset) const;
+    uint32_t Min() const;
+    uint32_t Max() const;
+    uint32_t Step() const;
+    uint32_t Value() const;
+    Windows::Foundation::IAsyncAction SetValueAsync(uint32_t temperature) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IZoomControl
+{
+    bool Supported() const;
+    float Min() const;
+    float Max() const;
+    float Step() const;
+    float Value() const;
+    void Value(float value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IZoomControl2
+{
+    Windows::Foundation::Collections::IVectorView<winrt::Windows::Media::Devices::ZoomTransitionMode> SupportedModes() const;
+    Windows::Media::Devices::ZoomTransitionMode Mode() const;
+    void Configure(const Windows::Media::Devices::ZoomSettings & settings) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IZoomSettings
+{
+    Windows::Media::Devices::ZoomTransitionMode Mode() const;
+    void Mode(Windows::Media::Devices::ZoomTransitionMode value) const;
+    float Value() const;
+    void Value(float value) const;
+};
 
 }
 

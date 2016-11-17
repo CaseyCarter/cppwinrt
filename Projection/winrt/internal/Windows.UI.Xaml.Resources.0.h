@@ -26,4 +26,13 @@ struct CustomXamlResourceLoader;
 
 }
 
+namespace Windows::UI::Xaml::Resources {
+
+template <typename T> struct impl_ICustomXamlResourceLoader;
+template <typename T> struct impl_ICustomXamlResourceLoaderFactory;
+template <typename T> struct impl_ICustomXamlResourceLoaderOverrides;
+template <typename T> struct impl_ICustomXamlResourceLoaderStatics;
+
+}
+
 }

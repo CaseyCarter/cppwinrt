@@ -136,15 +136,96 @@ template <> struct traits<Windows::Graphics::Holographic::HolographicSpaceCamera
 
 namespace Windows::Graphics::Holographic {
 
-template <typename T> struct impl_IHolographicCamera;
-template <typename T> struct impl_IHolographicCameraPose;
-template <typename T> struct impl_IHolographicCameraRenderingParameters;
-template <typename T> struct impl_IHolographicFrame;
-template <typename T> struct impl_IHolographicFramePrediction;
-template <typename T> struct impl_IHolographicSpace;
-template <typename T> struct impl_IHolographicSpaceCameraAddedEventArgs;
-template <typename T> struct impl_IHolographicSpaceCameraRemovedEventArgs;
-template <typename T> struct impl_IHolographicSpaceStatics;
+template <typename D>
+struct WINRT_EBO impl_IHolographicCamera
+{
+    Windows::Foundation::Size RenderTargetSize() const;
+    double ViewportScaleFactor() const;
+    void ViewportScaleFactor(double value) const;
+    bool IsStereo() const;
+    uint32_t Id() const;
+    void SetNearPlaneDistance(double value) const;
+    void SetFarPlaneDistance(double value) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IHolographicCameraPose
+{
+    Windows::Graphics::Holographic::HolographicCamera HolographicCamera() const;
+    Windows::Foundation::Rect Viewport() const;
+    Windows::Foundation::IReference<Windows::Graphics::Holographic::HolographicStereoTransform> TryGetViewTransform(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const;
+    Windows::Graphics::Holographic::HolographicStereoTransform ProjectionTransform() const;
+    Windows::Foundation::IReference<Windows::Perception::Spatial::SpatialBoundingFrustum> TryGetCullingFrustum(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const;
+    Windows::Foundation::IReference<Windows::Perception::Spatial::SpatialBoundingFrustum> TryGetVisibleFrustum(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem) const;
+    double NearPlaneDistance() const;
+    double FarPlaneDistance() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IHolographicCameraRenderingParameters
+{
+    void SetFocusPoint(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem, const Windows::Foundation::Numerics::float3 & position) const;
+    void SetFocusPoint(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem, const Windows::Foundation::Numerics::float3 & position, const Windows::Foundation::Numerics::float3 & normal) const;
+    void SetFocusPoint(const Windows::Perception::Spatial::SpatialCoordinateSystem & coordinateSystem, const Windows::Foundation::Numerics::float3 & position, const Windows::Foundation::Numerics::float3 & normal, const Windows::Foundation::Numerics::float3 & linearVelocity) const;
+    Windows::Graphics::DirectX::Direct3D11::IDirect3DDevice Direct3D11Device() const;
+    Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface Direct3D11BackBuffer() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IHolographicFrame
+{
+    Windows::Foundation::Collections::IVectorView<Windows::Graphics::Holographic::HolographicCamera> AddedCameras() const;
+    Windows::Foundation::Collections::IVectorView<Windows::Graphics::Holographic::HolographicCamera> RemovedCameras() const;
+    Windows::Graphics::Holographic::HolographicCameraRenderingParameters GetRenderingParameters(const Windows::Graphics::Holographic::HolographicCameraPose & cameraPose) const;
+    Windows::Foundation::TimeSpan Duration() const;
+    Windows::Graphics::Holographic::HolographicFramePrediction CurrentPrediction() const;
+    void UpdateCurrentPrediction() const;
+    Windows::Graphics::Holographic::HolographicFramePresentResult PresentUsingCurrentPrediction() const;
+    Windows::Graphics::Holographic::HolographicFramePresentResult PresentUsingCurrentPrediction(Windows::Graphics::Holographic::HolographicFramePresentWaitBehavior waitBehavior) const;
+    void WaitForFrameToFinish() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IHolographicFramePrediction
+{
+    Windows::Foundation::Collections::IVectorView<Windows::Graphics::Holographic::HolographicCameraPose> CameraPoses() const;
+    Windows::Perception::PerceptionTimestamp Timestamp() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IHolographicSpace
+{
+    Windows::Graphics::Holographic::HolographicAdapterId PrimaryAdapterId() const;
+    void SetDirect3D11Device(const Windows::Graphics::DirectX::Direct3D11::IDirect3DDevice & value) const;
+    event_token CameraAdded(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Holographic::HolographicSpace, Windows::Graphics::Holographic::HolographicSpaceCameraAddedEventArgs> & handler) const;
+    using CameraAdded_revoker = event_revoker<IHolographicSpace>;
+    CameraAdded_revoker CameraAdded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Graphics::Holographic::HolographicSpace, Windows::Graphics::Holographic::HolographicSpaceCameraAddedEventArgs> & handler) const;
+    void CameraAdded(event_token cookie) const;
+    event_token CameraRemoved(const Windows::Foundation::TypedEventHandler<Windows::Graphics::Holographic::HolographicSpace, Windows::Graphics::Holographic::HolographicSpaceCameraRemovedEventArgs> & handler) const;
+    using CameraRemoved_revoker = event_revoker<IHolographicSpace>;
+    CameraRemoved_revoker CameraRemoved(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Graphics::Holographic::HolographicSpace, Windows::Graphics::Holographic::HolographicSpaceCameraRemovedEventArgs> & handler) const;
+    void CameraRemoved(event_token cookie) const;
+    Windows::Graphics::Holographic::HolographicFrame CreateNextFrame() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IHolographicSpaceCameraAddedEventArgs
+{
+    Windows::Graphics::Holographic::HolographicCamera Camera() const;
+    Windows::Foundation::Deferral GetDeferral() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IHolographicSpaceCameraRemovedEventArgs
+{
+    Windows::Graphics::Holographic::HolographicCamera Camera() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IHolographicSpaceStatics
+{
+    Windows::Graphics::Holographic::HolographicSpace CreateForCoreWindow(const Windows::UI::Core::CoreWindow & window) const;
+};
 
 }
 

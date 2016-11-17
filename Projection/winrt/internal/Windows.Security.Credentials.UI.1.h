@@ -71,10 +71,57 @@ template <> struct traits<Windows::Security::Credentials::UI::CredentialPickerRe
 
 namespace Windows::Security::Credentials::UI {
 
-template <typename T> struct impl_ICredentialPickerOptions;
-template <typename T> struct impl_ICredentialPickerResults;
-template <typename T> struct impl_ICredentialPickerStatics;
-template <typename T> struct impl_IUserConsentVerifierStatics;
+template <typename D>
+struct WINRT_EBO impl_ICredentialPickerOptions
+{
+    void Caption(hstring_ref value) const;
+    hstring Caption() const;
+    void Message(hstring_ref value) const;
+    hstring Message() const;
+    void ErrorCode(uint32_t value) const;
+    uint32_t ErrorCode() const;
+    void TargetName(hstring_ref value) const;
+    hstring TargetName() const;
+    void AuthenticationProtocol(Windows::Security::Credentials::UI::AuthenticationProtocol value) const;
+    Windows::Security::Credentials::UI::AuthenticationProtocol AuthenticationProtocol() const;
+    void CustomAuthenticationProtocol(hstring_ref value) const;
+    hstring CustomAuthenticationProtocol() const;
+    void PreviousCredential(const Windows::Storage::Streams::IBuffer & value) const;
+    Windows::Storage::Streams::IBuffer PreviousCredential() const;
+    void AlwaysDisplayDialog(bool value) const;
+    bool AlwaysDisplayDialog() const;
+    void CallerSavesCredential(bool value) const;
+    bool CallerSavesCredential() const;
+    void CredentialSaveOption(Windows::Security::Credentials::UI::CredentialSaveOption value) const;
+    Windows::Security::Credentials::UI::CredentialSaveOption CredentialSaveOption() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICredentialPickerResults
+{
+    uint32_t ErrorCode() const;
+    Windows::Security::Credentials::UI::CredentialSaveOption CredentialSaveOption() const;
+    bool CredentialSaved() const;
+    Windows::Storage::Streams::IBuffer Credential() const;
+    hstring CredentialDomainName() const;
+    hstring CredentialUserName() const;
+    hstring CredentialPassword() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICredentialPickerStatics
+{
+    Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> PickAsync(const Windows::Security::Credentials::UI::CredentialPickerOptions & options) const;
+    Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> PickAsync(hstring_ref targetName, hstring_ref message) const;
+    Windows::Foundation::IAsyncOperation<Windows::Security::Credentials::UI::CredentialPickerResults> PickAsync(hstring_ref targetName, hstring_ref message, hstring_ref caption) const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_IUserConsentVerifierStatics
+{
+    Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Credentials::UI::UserConsentVerifierAvailability> CheckAvailabilityAsync() const;
+    Windows::Foundation::IAsyncOperation<winrt::Windows::Security::Credentials::UI::UserConsentVerificationResult> RequestVerificationAsync(hstring_ref message) const;
+};
 
 }
 

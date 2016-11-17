@@ -45,6 +45,20 @@ struct UserDataAccountStoreChangedEventArgs;
 
 namespace Windows::ApplicationModel::UserDataAccounts {
 
+template <typename T> struct impl_IUserDataAccount;
+template <typename T> struct impl_IUserDataAccount2;
+template <typename T> struct impl_IUserDataAccount3;
+template <typename T> struct impl_IUserDataAccountManagerForUser;
+template <typename T> struct impl_IUserDataAccountManagerStatics;
+template <typename T> struct impl_IUserDataAccountManagerStatics2;
+template <typename T> struct impl_IUserDataAccountStore;
+template <typename T> struct impl_IUserDataAccountStore2;
+template <typename T> struct impl_IUserDataAccountStoreChangedEventArgs;
+
+}
+
+namespace Windows::ApplicationModel::UserDataAccounts {
+
 enum class UserDataAccountContentKinds : unsigned
 {
     Email = 0x1,

@@ -4,8 +4,8 @@
 #pragma once
 
 #include "Windows.Storage.Compression.1.h"
-#include "Windows.Foundation.2.h"
-#include "Windows.Storage.Streams.2.h"
+#include "Windows.Foundation.1.h"
+#include "Windows.Storage.Streams.1.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -25,32 +25,6 @@ template <> struct __declspec(uuid("c1d3d1a2-ae17-5a5f-b5a2-bdcc8844889a")) __de
 }
 
 namespace Windows::Storage::Compression {
-
-template <typename D>
-struct WINRT_EBO impl_ICompressor
-{
-    Windows::Foundation::IAsyncOperation<bool> FinishAsync() const;
-    Windows::Storage::Streams::IOutputStream DetachStream() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_ICompressorFactory
-{
-    Windows::Storage::Compression::Compressor CreateCompressor(const Windows::Storage::Streams::IOutputStream & underlyingStream) const;
-    Windows::Storage::Compression::Compressor CreateCompressorEx(const Windows::Storage::Streams::IOutputStream & underlyingStream, Windows::Storage::Compression::CompressAlgorithm algorithm, uint32_t blockSize) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IDecompressor
-{
-    Windows::Storage::Streams::IInputStream DetachStream() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_IDecompressorFactory
-{
-    Windows::Storage::Compression::Decompressor CreateDecompressor(const Windows::Storage::Streams::IInputStream & underlyingStream) const;
-};
 
 struct ICompressor :
     Windows::IInspectable,

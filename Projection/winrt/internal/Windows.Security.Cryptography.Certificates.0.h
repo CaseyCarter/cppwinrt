@@ -136,6 +136,51 @@ struct UserCertificateStore;
 
 namespace Windows::Security::Cryptography::Certificates {
 
+template <typename T> struct impl_ICertificate;
+template <typename T> struct impl_ICertificate2;
+template <typename T> struct impl_ICertificate3;
+template <typename T> struct impl_ICertificateChain;
+template <typename T> struct impl_ICertificateEnrollmentManagerStatics;
+template <typename T> struct impl_ICertificateEnrollmentManagerStatics2;
+template <typename T> struct impl_ICertificateEnrollmentManagerStatics3;
+template <typename T> struct impl_ICertificateFactory;
+template <typename T> struct impl_ICertificateKeyUsages;
+template <typename T> struct impl_ICertificateQuery;
+template <typename T> struct impl_ICertificateQuery2;
+template <typename T> struct impl_ICertificateRequestProperties;
+template <typename T> struct impl_ICertificateRequestProperties2;
+template <typename T> struct impl_ICertificateRequestProperties3;
+template <typename T> struct impl_ICertificateStore;
+template <typename T> struct impl_ICertificateStore2;
+template <typename T> struct impl_ICertificateStoresStatics;
+template <typename T> struct impl_ICertificateStoresStatics2;
+template <typename T> struct impl_IChainBuildingParameters;
+template <typename T> struct impl_IChainValidationParameters;
+template <typename T> struct impl_ICmsAttachedSignature;
+template <typename T> struct impl_ICmsAttachedSignatureFactory;
+template <typename T> struct impl_ICmsAttachedSignatureStatics;
+template <typename T> struct impl_ICmsDetachedSignature;
+template <typename T> struct impl_ICmsDetachedSignatureFactory;
+template <typename T> struct impl_ICmsDetachedSignatureStatics;
+template <typename T> struct impl_ICmsSignerInfo;
+template <typename T> struct impl_ICmsTimestampInfo;
+template <typename T> struct impl_IKeyAlgorithmNamesStatics;
+template <typename T> struct impl_IKeyAlgorithmNamesStatics2;
+template <typename T> struct impl_IKeyAttestationHelperStatics;
+template <typename T> struct impl_IKeyAttestationHelperStatics2;
+template <typename T> struct impl_IKeyStorageProviderNamesStatics;
+template <typename T> struct impl_IKeyStorageProviderNamesStatics2;
+template <typename T> struct impl_IPfxImportParameters;
+template <typename T> struct impl_IStandardCertificateStoreNamesStatics;
+template <typename T> struct impl_ISubjectAlternativeNameInfo;
+template <typename T> struct impl_IUserCertificateEnrollmentManager;
+template <typename T> struct impl_IUserCertificateEnrollmentManager2;
+template <typename T> struct impl_IUserCertificateStore;
+
+}
+
+namespace Windows::Security::Cryptography::Certificates {
+
 enum class CertificateChainPolicy
 {
     Base = 0,

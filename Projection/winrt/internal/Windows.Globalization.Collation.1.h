@@ -33,8 +33,18 @@ template <> struct traits<Windows::Globalization::Collation::CharacterGroupings>
 
 namespace Windows::Globalization::Collation {
 
-template <typename T> struct impl_ICharacterGrouping;
-template <typename T> struct impl_ICharacterGroupings;
+template <typename D>
+struct WINRT_EBO impl_ICharacterGrouping
+{
+    hstring First() const;
+    hstring Label() const;
+};
+
+template <typename D>
+struct WINRT_EBO impl_ICharacterGroupings
+{
+    hstring Lookup(hstring_ref text) const;
+};
 
 }
 

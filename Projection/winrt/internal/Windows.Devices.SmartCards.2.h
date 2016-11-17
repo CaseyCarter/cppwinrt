@@ -4,7 +4,7 @@
 #pragma once
 
 #include "Windows.Devices.SmartCards.1.h"
-#include "Windows.Foundation.2.h"
+#include "Windows.Foundation.1.h"
 
 WINRT_EXPORT namespace winrt {
 
@@ -169,139 +169,6 @@ template <> struct __declspec(uuid("bfea3fad-411e-5721-88f5-92c9b9fbbe14")) __de
 }
 
 namespace Windows::Devices::SmartCards {
-
-template <typename D>
-struct WINRT_EBO impl_ICardAddedEventArgs
-{
-    Windows::Devices::SmartCards::SmartCard SmartCard() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_ICardRemovedEventArgs
-{
-    Windows::Devices::SmartCards::SmartCard SmartCard() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_ISmartCard
-{
-    Windows::Devices::SmartCards::SmartCardReader Reader() const;
-    Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::SmartCards::SmartCardStatus> GetStatusAsync() const;
-    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> GetAnswerToResetAsync() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_ISmartCardChallengeContext
-{
-    Windows::Storage::Streams::IBuffer Challenge() const;
-    Windows::Foundation::IAsyncOperation<bool> VerifyResponseAsync(const Windows::Storage::Streams::IBuffer & response) const;
-    Windows::Foundation::IAsyncAction ProvisionAsync(const Windows::Storage::Streams::IBuffer & response, bool formatCard) const;
-    Windows::Foundation::IAsyncAction ProvisionAsync(const Windows::Storage::Streams::IBuffer & response, bool formatCard, GUID newCardId) const;
-    Windows::Foundation::IAsyncAction ChangeAdministrativeKeyAsync(const Windows::Storage::Streams::IBuffer & response, const Windows::Storage::Streams::IBuffer & newAdministrativeKey) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_ISmartCardConnect
-{
-    Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardConnection> ConnectAsync() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_ISmartCardConnection
-{
-    Windows::Foundation::IAsyncOperation<Windows::Storage::Streams::IBuffer> TransmitAsync(const Windows::Storage::Streams::IBuffer & command) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_ISmartCardPinPolicy
-{
-    uint32_t MinLength() const;
-    void MinLength(uint32_t value) const;
-    uint32_t MaxLength() const;
-    void MaxLength(uint32_t value) const;
-    Windows::Devices::SmartCards::SmartCardPinCharacterPolicyOption UppercaseLetters() const;
-    void UppercaseLetters(Windows::Devices::SmartCards::SmartCardPinCharacterPolicyOption value) const;
-    Windows::Devices::SmartCards::SmartCardPinCharacterPolicyOption LowercaseLetters() const;
-    void LowercaseLetters(Windows::Devices::SmartCards::SmartCardPinCharacterPolicyOption value) const;
-    Windows::Devices::SmartCards::SmartCardPinCharacterPolicyOption Digits() const;
-    void Digits(Windows::Devices::SmartCards::SmartCardPinCharacterPolicyOption value) const;
-    Windows::Devices::SmartCards::SmartCardPinCharacterPolicyOption SpecialCharacters() const;
-    void SpecialCharacters(Windows::Devices::SmartCards::SmartCardPinCharacterPolicyOption value) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_ISmartCardPinResetDeferral
-{
-    void Complete() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_ISmartCardPinResetRequest
-{
-    Windows::Storage::Streams::IBuffer Challenge() const;
-    Windows::Foundation::DateTime Deadline() const;
-    Windows::Devices::SmartCards::SmartCardPinResetDeferral GetDeferral() const;
-    void SetResponse(const Windows::Storage::Streams::IBuffer & response) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_ISmartCardProvisioning
-{
-    Windows::Devices::SmartCards::SmartCard SmartCard() const;
-    Windows::Foundation::IAsyncOperation<GUID> GetIdAsync() const;
-    Windows::Foundation::IAsyncOperation<hstring> GetNameAsync() const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardChallengeContext> GetChallengeContextAsync() const;
-    Windows::Foundation::IAsyncOperation<bool> RequestPinChangeAsync() const;
-    Windows::Foundation::IAsyncOperation<bool> RequestPinResetAsync(const Windows::Devices::SmartCards::SmartCardPinResetHandler & handler) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_ISmartCardProvisioning2
-{
-    Windows::Foundation::IAsyncOperation<hstring> GetAuthorityKeyContainerNameAsync() const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_ISmartCardProvisioningStatics
-{
-    Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning> FromSmartCardAsync(const Windows::Devices::SmartCards::SmartCard & card) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning> RequestVirtualSmartCardCreationAsync(hstring_ref friendlyName, const Windows::Storage::Streams::IBuffer & administrativeKey, const Windows::Devices::SmartCards::SmartCardPinPolicy & pinPolicy) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning> RequestVirtualSmartCardCreationAsync(hstring_ref friendlyName, const Windows::Storage::Streams::IBuffer & administrativeKey, const Windows::Devices::SmartCards::SmartCardPinPolicy & pinPolicy, GUID cardId) const;
-    Windows::Foundation::IAsyncOperation<bool> RequestVirtualSmartCardDeletionAsync(const Windows::Devices::SmartCards::SmartCard & card) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_ISmartCardProvisioningStatics2
-{
-    Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning> RequestAttestedVirtualSmartCardCreationAsync(hstring_ref friendlyName, const Windows::Storage::Streams::IBuffer & administrativeKey, const Windows::Devices::SmartCards::SmartCardPinPolicy & pinPolicy) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardProvisioning> RequestAttestedVirtualSmartCardCreationAsync(hstring_ref friendlyName, const Windows::Storage::Streams::IBuffer & administrativeKey, const Windows::Devices::SmartCards::SmartCardPinPolicy & pinPolicy, GUID cardId) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_ISmartCardReader
-{
-    hstring DeviceId() const;
-    hstring Name() const;
-    Windows::Devices::SmartCards::SmartCardReaderKind Kind() const;
-    Windows::Foundation::IAsyncOperation<winrt::Windows::Devices::SmartCards::SmartCardReaderStatus> GetStatusAsync() const;
-    Windows::Foundation::IAsyncOperation<Windows::Foundation::Collections::IVectorView<Windows::Devices::SmartCards::SmartCard>> FindAllCardsAsync() const;
-    event_token CardAdded(const Windows::Foundation::TypedEventHandler<Windows::Devices::SmartCards::SmartCardReader, Windows::Devices::SmartCards::CardAddedEventArgs> & handler) const;
-    using CardAdded_revoker = event_revoker<ISmartCardReader>;
-    CardAdded_revoker CardAdded(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::SmartCards::SmartCardReader, Windows::Devices::SmartCards::CardAddedEventArgs> & handler) const;
-    void CardAdded(event_token token) const;
-    event_token CardRemoved(const Windows::Foundation::TypedEventHandler<Windows::Devices::SmartCards::SmartCardReader, Windows::Devices::SmartCards::CardRemovedEventArgs> & handler) const;
-    using CardRemoved_revoker = event_revoker<ISmartCardReader>;
-    CardRemoved_revoker CardRemoved(auto_revoke_t, const Windows::Foundation::TypedEventHandler<Windows::Devices::SmartCards::SmartCardReader, Windows::Devices::SmartCards::CardRemovedEventArgs> & handler) const;
-    void CardRemoved(event_token token) const;
-};
-
-template <typename D>
-struct WINRT_EBO impl_ISmartCardReaderStatics
-{
-    hstring GetDeviceSelector() const;
-    hstring GetDeviceSelector(Windows::Devices::SmartCards::SmartCardReaderKind kind) const;
-    Windows::Foundation::IAsyncOperation<Windows::Devices::SmartCards::SmartCardReader> FromIdAsync(hstring_ref deviceId) const;
-};
 
 struct SmartCardPinResetHandler : Windows::IUnknown
 {

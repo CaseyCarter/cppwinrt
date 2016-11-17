@@ -13,11 +13,6 @@ namespace ABI {
 
 }
 
-namespace Windows::Graphics::DirectX {
-
-
-}
-
 namespace impl {
 
 }

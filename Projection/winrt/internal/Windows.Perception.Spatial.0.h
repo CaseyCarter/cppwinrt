@@ -90,6 +90,27 @@ struct SpatialStationaryFrameOfReference;
 
 namespace Windows::Perception::Spatial {
 
+template <typename T> struct impl_ISpatialAnchor;
+template <typename T> struct impl_ISpatialAnchor2;
+template <typename T> struct impl_ISpatialAnchorManagerStatics;
+template <typename T> struct impl_ISpatialAnchorRawCoordinateSystemAdjustedEventArgs;
+template <typename T> struct impl_ISpatialAnchorStatics;
+template <typename T> struct impl_ISpatialAnchorStore;
+template <typename T> struct impl_ISpatialAnchorTransferManagerStatics;
+template <typename T> struct impl_ISpatialBoundingVolume;
+template <typename T> struct impl_ISpatialBoundingVolumeStatics;
+template <typename T> struct impl_ISpatialCoordinateSystem;
+template <typename T> struct impl_ISpatialLocation;
+template <typename T> struct impl_ISpatialLocator;
+template <typename T> struct impl_ISpatialLocatorAttachedFrameOfReference;
+template <typename T> struct impl_ISpatialLocatorPositionalTrackingDeactivatingEventArgs;
+template <typename T> struct impl_ISpatialLocatorStatics;
+template <typename T> struct impl_ISpatialStationaryFrameOfReference;
+
+}
+
+namespace Windows::Perception::Spatial {
+
 enum class SpatialLocatability
 {
     Unavailable = 0,

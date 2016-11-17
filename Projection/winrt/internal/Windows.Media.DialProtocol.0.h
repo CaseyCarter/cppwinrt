@@ -50,6 +50,20 @@ struct DialDisconnectButtonClickedEventArgs;
 
 namespace Windows::Media::DialProtocol {
 
+template <typename T> struct impl_IDialApp;
+template <typename T> struct impl_IDialAppStateDetails;
+template <typename T> struct impl_IDialDevice;
+template <typename T> struct impl_IDialDevice2;
+template <typename T> struct impl_IDialDevicePicker;
+template <typename T> struct impl_IDialDevicePickerFilter;
+template <typename T> struct impl_IDialDeviceSelectedEventArgs;
+template <typename T> struct impl_IDialDeviceStatics;
+template <typename T> struct impl_IDialDisconnectButtonClickedEventArgs;
+
+}
+
+namespace Windows::Media::DialProtocol {
+
 enum class DialAppLaunchResult
 {
     Launched = 0,

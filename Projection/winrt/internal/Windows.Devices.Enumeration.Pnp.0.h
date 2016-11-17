@@ -34,6 +34,15 @@ struct PnpObjectWatcher;
 
 namespace Windows::Devices::Enumeration::Pnp {
 
+template <typename T> struct impl_IPnpObject;
+template <typename T> struct impl_IPnpObjectStatics;
+template <typename T> struct impl_IPnpObjectUpdate;
+template <typename T> struct impl_IPnpObjectWatcher;
+
+}
+
+namespace Windows::Devices::Enumeration::Pnp {
+
 enum class PnpObjectType
 {
     Unknown = 0,
